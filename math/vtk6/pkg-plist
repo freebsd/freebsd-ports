@@ -4519,4 +4519,3 @@ lib/cmake/vtk-%%VER2%%/vtkWrapPythonSIP.cmake
 lib/cmake/vtk-%%VER2%%/vtkWrapTcl.cmake
 lib/cmake/vtk-%%VER2%%/vtkWrapperInit.data.in
 lib/cmake/vtk-%%VER2%%/vtkWrapping.cmake
-share/cmake/hdf5/libhdf5.settings
