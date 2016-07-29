@@ -462,7 +462,6 @@ share/doc/gimp/libgimp/GimpSelectButton.html
 share/doc/gimp/libgimp/GimpZoomPreview.html
 share/doc/gimp/libgimp/home.png
 share/doc/gimp/libgimp/index.html
-share/doc/gimp/libgimp/index.sgml
 share/doc/gimp/libgimp/left-insensitive.png
 share/doc/gimp/libgimp/left.png
 share/doc/gimp/libgimp/libgimp-Gimp.html
@@ -551,7 +550,6 @@ share/doc/gimp/libgimp/up-insensitive.png
 share/doc/gimp/libgimp/up.png
 share/doc/gimp/libgimpbase/home.png
 share/doc/gimp/libgimpbase/index.html
-share/doc/gimp/libgimpbase/index.sgml
 share/doc/gimp/libgimpbase/left-insensitive.png
 share/doc/gimp/libgimpbase/left.png
 share/doc/gimp/libgimpbase/libgimpbase-gimpbaseenums.html
@@ -585,7 +583,6 @@ share/doc/gimp/libgimpbase/up-insensitive.png
 share/doc/gimp/libgimpbase/up.png
 share/doc/gimp/libgimpcolor/home.png
 share/doc/gimp/libgimpcolor/index.html
-share/doc/gimp/libgimpcolor/index.sgml
 share/doc/gimp/libgimpcolor/left-insensitive.png
 share/doc/gimp/libgimpcolor/left.png
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
@@ -612,7 +609,6 @@ share/doc/gimp/libgimpcolor/up.png
 share/doc/gimp/libgimpconfig/GimpColorConfig.html
 share/doc/gimp/libgimpconfig/home.png
 share/doc/gimp/libgimpconfig/index.html
-share/doc/gimp/libgimpconfig/index.sgml
 share/doc/gimp/libgimpconfig/left-insensitive.png
 share/doc/gimp/libgimpconfig/left.png
 share/doc/gimp/libgimpconfig/libgimpconfig-GimpConfig-deserialize.html
@@ -639,7 +635,6 @@ share/doc/gimp/libgimpconfig/up-insensitive.png
 share/doc/gimp/libgimpconfig/up.png
 share/doc/gimp/libgimpmath/home.png
 share/doc/gimp/libgimpmath/index.html
-share/doc/gimp/libgimpmath/index.sgml
 share/doc/gimp/libgimpmath/left-insensitive.png
 share/doc/gimp/libgimpmath/left.png
 share/doc/gimp/libgimpmath/libgimpmath-GimpMD5.html
@@ -662,7 +657,6 @@ share/doc/gimp/libgimpmodule/GimpModule.html
 share/doc/gimp/libgimpmodule/GimpModuleDB.html
 share/doc/gimp/libgimpmodule/home.png
 share/doc/gimp/libgimpmodule/index.html
-share/doc/gimp/libgimpmodule/index.sgml
 share/doc/gimp/libgimpmodule/left-insensitive.png
 share/doc/gimp/libgimpmodule/left.png
 share/doc/gimp/libgimpmodule/libgimpmodule-index-deprecated.html
@@ -681,7 +675,6 @@ share/doc/gimp/libgimpmodule/up.png
 share/doc/gimp/libgimpthumb/GimpThumbnail.html
 share/doc/gimp/libgimpthumb/home.png
 share/doc/gimp/libgimpthumb/index.html
-share/doc/gimp/libgimpthumb/index.sgml
 share/doc/gimp/libgimpthumb/left-insensitive.png
 share/doc/gimp/libgimpthumb/left.png
 share/doc/gimp/libgimpthumb/libgimpthumb-GimpThumb-enums.html
@@ -770,7 +763,6 @@ share/doc/gimp/libgimpwidgets/gimp-string-combo-box.png
 share/doc/gimp/libgimpwidgets/gimp-unit-menu.png
 share/doc/gimp/libgimpwidgets/home.png
 share/doc/gimp/libgimpwidgets/index.html
-share/doc/gimp/libgimpwidgets/index.sgml
 share/doc/gimp/libgimpwidgets/left-insensitive.png
 share/doc/gimp/libgimpwidgets/left.png
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpCairoUtils.html
