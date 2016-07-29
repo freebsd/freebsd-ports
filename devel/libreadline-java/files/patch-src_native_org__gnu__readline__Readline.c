@@ -1,6 +1,6 @@
---- src/native/org_gnu_readline_Readline.c.orig	2003-01-07 11:14:35.000000000 +0100
-+++ src/native/org_gnu_readline_Readline.c	2013-12-12 20:40:36.000000000 +0100
-@@ -430,7 +430,7 @@
+--- src/native/org_gnu_readline_Readline.c.orig	2003-01-07 10:14:35 UTC
++++ src/native/org_gnu_readline_Readline.c
+@@ -430,7 +430,7 @@ const char *java_completer(char *text, i
    jtext = (*jniEnv)->NewStringUTF(jniEnv,text);
  
    if (jniMethodId == 0) {
@@ -9,7 +9,7 @@
    }
  
    completion = (*jniEnv)->CallObjectMethod(jniEnv, jniObject,
-@@ -560,6 +560,21 @@
+@@ -560,6 +560,21 @@ JNIEXPORT void JNICALL 
  #endif
  
  /* -------------------------------------------------------------------------- */
