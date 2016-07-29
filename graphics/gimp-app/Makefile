@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gimp-app
-PORTVERSION=	2.8.16
-PORTREVISION?=	2
+PORTVERSION=	2.8.18
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -20,14 +19,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		liblcms2.so:graphics/lcms2 \
 		libgegl-0.2.so:graphics/gegl \
-		libbabl-0.1.so:x11/babl
+		libbabl-0.1.so:x11/babl \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libdbus-1.so:devel/dbus \
+		libsoup-2.4.so:devel/libsoup \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 GNU_CONFIGURE=	yes
 USES+=		cpe desktop-file-utils execinfo gettext gmake jpeg libtool \
 		localbase pathfix pkgconfig tar:bzip2
-USE_XORG=	xpm xmu xext
-USE_GNOME+=	intlhack gtk20
+USE_XORG=	ice sm xcursor xext xfixes xmu xpm xt x11
+USE_GNOME+=	cairo gtk20 intlhack
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
@@ -47,7 +50,7 @@ LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
-PLIST_SUB+=	LIBVER=0.800.16
+PLIST_SUB+=	LIBVER=0.800.18
 
 .if !defined(GIMP_SLAVE)
 
