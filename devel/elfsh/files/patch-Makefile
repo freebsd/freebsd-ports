@@ -1,5 +1,5 @@
---- Makefile	Wed Aug 13 16:31:55 2003
-+++ Makefile.patch	Sat Aug 16 02:11:52 2003
+--- Makefile.orig	2003-08-21 01:11:03 UTC
++++ Makefile
 @@ -7,10 +7,10 @@
  
  RM	= rm -f
@@ -15,3 +15,34 @@
  
  all	:
  	@echo 'Builting libelfsh...'
+@@ -32,22 +32,22 @@ all	:
+ 	#$(MAKE) -s tags
+ 
+ install	: mod_install
+-	@cp vm/elfsh $(BINPATH)/
+-	@cp libelfsh/libelfsh.a libelfsh/libelfsh.so $(LIBPATH)
+-	@cp libelfsh/include/libelfsh*.h $(INCPATH)
+-	@chmod 755 $(BINPATH)/elfsh $(LIBPATH)libelfsh.so $(LIBPATH)libelfsh.a $(INCPATH)libelfsh*.h
++	@cp vm/elfsh $(DESTDIR)$(BINPATH)/
++	@cp libelfsh/libelfsh.a libelfsh/libelfsh.so $(DESTDIR)$(LIBPATH)
++	@cp libelfsh/include/libelfsh*.h $(DESTDIR)$(INCPATH)
++	@chmod 755 $(DESTDIR)$(BINPATH)/elfsh $(DESTDIR)$(LIBPATH)libelfsh.so $(DESTDIR)$(LIBPATH)libelfsh.a $(DESTDIR)$(INCPATH)libelfsh*.h
+ 	@echo 'ELFsh and Libelfsh installed successfully .'
+ 
+ mod_install:
+-	@mkdir $(MODPATH) 2>/dev/null || true
+-	@cp modules/*.so $(MODPATH)
+-	@chmod -R 755 $(MODPATH)
++	@mkdir $(DESTDIR)$(MODPATH) 2>/dev/null || true
++	@cp modules/*.so $(DESTDIR)$(MODPATH)
++	@chmod -R 755 $(DESTDIR)$(MODPATH)
+ 
+ uninstall:
+ 	rm -f /usr/bin/elfsh
+ 	rm -f /usr/lib/libelfsh*
+ 	rm -f /usr/include/libelfsh*.h
+-	rm -fr $(MODPATH)
++	rm -fr $(DESTDIR)$(MODPATH)
+ 	@echo 'ELFsh and Libelfsh uninstalled successfully'
+ 
+ clean	: cleandoc

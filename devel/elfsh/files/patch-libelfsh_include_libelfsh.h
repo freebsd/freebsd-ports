@@ -1,6 +1,6 @@
---- libelfsh/include/libelfsh.h	Thu Aug 21 04:11:03 2003
-+++ libelfsh/include/libelfsh.h.patch	Fri Oct 10 14:33:43 2003
-@@ -713,5 +713,17 @@
+--- libelfsh/include/libelfsh.h.orig	2003-08-21 01:11:03 UTC
++++ libelfsh/include/libelfsh.h
+@@ -713,5 +713,17 @@ int		elfsh_inject_etrel(elfshobj_t *file
  int		elfsh_sync_sorted_symtab(elfshsect_t *sect);
  int		elfsh_sort_symtab(Elf32_Sym *symtab, int size, int type);
  

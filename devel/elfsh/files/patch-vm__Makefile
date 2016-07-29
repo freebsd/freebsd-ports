@@ -1,5 +1,5 @@
---- vm/Makefile.orig	2003-08-20 21:23:17.000000000 -0400
-+++ vm/Makefile	2014-08-15 13:03:43.000000000 -0400
+--- vm/Makefile.orig	2003-08-21 01:23:17 UTC
++++ vm/Makefile
 @@ -19,8 +19,8 @@
  #LDASMOPT		= -lasm
  
@@ -11,7 +11,7 @@
  
  
  # End of configurable Makefile
-@@ -36,15 +36,15 @@
+@@ -36,15 +36,15 @@ SRC			= grammar.c disasm.c dyn.c hdr.c m
  OBJ			= $(SRC:.c=.o)
  SRC_DYN			= elfsh_etdyn.c
  OBJ_DYN			= $(SRC_DYN:.c=.o)
