@@ -2,6 +2,7 @@
 
 PORTNAME=	acts-as-taggable-on
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Tag a single model on several contexts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rails>=3.0:www/rubygem-rails
+RUN_DEPENDS=	rubygem-rails4>=3.0:www/rubygem-rails4
 
 NO_ARCH=	yes
 USE_RUBY=	YES
