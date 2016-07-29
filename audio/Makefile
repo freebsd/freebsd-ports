@@ -370,6 +370,7 @@
     SUBDIR += libechonest
     SUBDIR += libfilteraudio
     SUBDIR += libfishsound
+    SUBDIR += libg722
     SUBDIR += libgig
     SUBDIR += libgme
     SUBDIR += libgpod
