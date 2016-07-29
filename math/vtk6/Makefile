@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -216,5 +216,9 @@ BUILD_DEPENDS+=	doxygen:devel/doxygen
 .else
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=OFF
 .endif
+
+post-install:
+# So that this port doesn't clash with science/paraview:
+	${RM} ${STAGEDIR}${PREFIX}/share/cmake/hdf5/libhdf5.settings
 
 .include <bsd.port.mk>
