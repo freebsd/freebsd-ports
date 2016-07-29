@@ -4,7 +4,7 @@
 PORTNAME=     	libg722
 PORTVERSION=	1.0.0
 #PORTREVISION= 	1
-CATEGORIES= 	misc
+CATEGORIES= 	audio
 
 MAINTAINER=	ports@sippysoft.com
 COMMENT=	Software G.722 decoding/encoding library
