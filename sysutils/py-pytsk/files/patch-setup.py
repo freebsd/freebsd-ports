@@ -1,6 +1,6 @@
 # Unbundle sleuthkit and talloc
 
---- setup.py.orig	2016-03-25 08:41:14 UTC
+--- setup.py.orig	2016-07-21 19:02:40 UTC
 +++ setup.py
 @@ -169,9 +169,9 @@ class BuildExtCommand(build_ext):
  
@@ -14,7 +14,7 @@
  
          if not os.access("pytsk3.c", os.R_OK):
              # Generate the Python binding code (pytsk3.c).
-@@ -322,7 +322,7 @@ class ProjectBuilder(object):
+@@ -325,7 +325,7 @@ class ProjectBuilder(object):
          self._argv = argv
  
          # The path to the "tsk" directory.
@@ -23,7 +23,7 @@
  
          # paths under the tsk/ directory which contain files we need to compile.
          self._sub_library_names = "auto  base  docs  fs  hashdb  img vs".split()
-@@ -330,14 +330,14 @@ class ProjectBuilder(object):
+@@ -333,14 +333,14 @@ class ProjectBuilder(object):
          # The args for the extension builder.
          self.extension_args = dict(
              define_macros=[],
