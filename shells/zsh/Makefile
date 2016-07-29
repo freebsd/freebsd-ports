@@ -45,16 +45,16 @@ OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MEM PCRE STATIC \
 		DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-GDBM_DESC=	Enable GDBM support (GPL)
 ETCDIR_DESC=	System-wide defaults in /etc (instead of $${PREFIX}/etc)
+GDBM_DESC=	Enable GDBM support (GPL)
 MEM_DESC=	Enable zsh-mem options
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
-GDBM_CONFIGURE_ENABLE=	gdbm
 ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
+GDBM_CONFIGURE_ENABLE=	gdbm
 MEM_CONFIGURE_ENABLE=	zsh-mem
 PCRE_CONFIGURE_ENABLE=	pcre
 
