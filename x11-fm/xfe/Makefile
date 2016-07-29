@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfe
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -33,7 +33,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/share/xfe|${DATADIR}|g' ${WRKSRC}/src/${i}
 .endfor
-	@${REINPLACE_CMD} -e \
-		'/<utmp.h>/d' ${WRKSRC}/xvt/ttyinit.c
 
 .include <bsd.port.mk>
