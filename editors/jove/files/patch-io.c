@@ -1,6 +1,6 @@
---- io.c.orig	Fri Mar  8 02:34:42 1996
-+++ io.c	Wed Dec 20 05:19:17 2000
-@@ -1193,10 +1193,16 @@
+--- io.c.orig	1996-03-07 17:34:42 UTC
++++ io.c
+@@ -1193,10 +1193,16 @@ tmpinit()
  #endif
  		);
  	tfname = copystr(buf);
@@ -17,3 +17,15 @@
  #else /* MSFILESYSTEM */
  	tmpfd = open(tfname, O_CREAT|O_EXCL|O_BINARY|O_RDWR, S_IWRITE|S_IREAD);
  #endif /* MSFILESYSTEM */
+@@ -1240,9 +1246,9 @@ int	Jr_Len;		/* length of Just Read Line
+ 
+ void
+ #ifdef USE_PROTOTYPES
+-getline proto((daddr addr, register char *buf))
++get_line proto((daddr addr, register char *buf))
+ #else
+-getline(addr, buf)
++get_line(addr, buf)
+ daddr	addr;
+ register char	*buf;
+ #endif

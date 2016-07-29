@@ -1,6 +1,6 @@
---- rec.c.orig	Fri Mar  8 02:34:43 1996
-+++ rec.c	Wed Dec 20 05:19:50 2000
-@@ -55,8 +55,12 @@
+--- rec.c.orig	1996-03-07 17:34:43 UTC
++++ rec.c
+@@ -55,8 +55,12 @@ recinit()
  #endif
  		);
  	recfname = copystr(buf);
