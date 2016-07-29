@@ -55,6 +55,8 @@ post-extract:
 	${REINPLACE_CMD} -e 's|(owner)|(uucpowner)|' \
 		${WRKSRC}/uucp/uustat/Makefile
 	${REINPLACE_CMD} -e 's|0770|0750|' ${WRKSRC}/local.mtree
+	${REINPLACE_CMD} -e 's/getline (/get_line (/g' \
+		${WRKSRC}/uucp/libuucp/getlin.c
 
 do-configure:
 	${REINPLACE_CMD} -e "s=/usr/local/=${PREFIX}/=" \
