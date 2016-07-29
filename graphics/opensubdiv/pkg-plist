@@ -68,10 +68,10 @@ include/opensubdiv/vtr/stackBuffer.h
 include/opensubdiv/vtr/types.h
 lib/libosdCPU.a
 lib/libosdCPU.so
-lib/libosdCPU.so.3.0.3
+lib/libosdCPU.so.3.0.5
 lib/libosdGPU.a
 lib/libosdGPU.so
-lib/libosdGPU.so.3.0.3
+lib/libosdGPU.so.3.0.5
 %%PORTDOCS%%%%DOCSDIR%%/additional_resources.html
 %%PORTDOCS%%%%DOCSDIR%%/api_overview.html
 %%PORTDOCS%%%%DOCSDIR%%/cmake_build.html
