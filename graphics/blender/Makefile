@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.76b
-PORTREVISION=	1
+PORTVERSION=	2.77a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -15,12 +14,17 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libboost_regex.so:devel/boost-libs
+
+# libboost_regex.so just acts as a placeholder; several boost
+# libraries are used, if either of the most common options in blender
+# are set. We will pull boost in just to be on the safe side.
 
 USE_XORG=	x11 xext xmu
-USE_GL=		glew
+USE_GL=		gl glu glew
 USES=		cmake:outsource compiler:features desktop-file-utils \
-		jpeg python:3.4 shebangfix
+		jpeg python:3.5 shebangfix
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \
@@ -31,7 +35,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
 
-BL_VERSION=	2.76
+BL_VERSION=	2.77
 OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
 
 PLIST_SUB+=	VER=${BL_VERSION}
@@ -41,7 +45,6 @@ OPTIONS_SUB=	yes
 
 MOD_BOOLEAN_CMAKE_ON=		-DWITH_MOD_BOOLEAN:BOOL=ON
 MOD_BOOLEAN_CMAKE_OFF=		-DWITH_MOD_BOOLEAN:BOOL=OFF
-MOD_BOOLEAN_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 MOD_FLUID_CMAKE_ON=		-DWITH_MOD_FLUID:BOOL=ON
 MOD_FLUID_CMAKE_OFF=		-DWITH_MOD_FLUID:BOOL=OFF
 MOD_REMESH_CMAKE_ON=		-DWITH_MOD_REMESH:BOOL=ON
@@ -61,7 +64,9 @@ CAMERATRACK_CMAKE_OFF=		-DWITH_LIBMV:BOOL=OFF
 CAMERATRACK_LIB_DEPENDS=	libunwind.so:devel/libunwind
 COLLADA_CMAKE_ON=		-DWITH_OPENCOLLADA:BOOL=ON
 COLLADA_CMAKE_OFF=		-DWITH_OPENCOLLADA:BOOL=OFF
-COLLADA_LIB_DEPENDS=		libOpenCOLLADABaseUtils.so:graphics/opencollada
+COLLADA_LIB_DEPENDS=		libOpenCOLLADABaseUtils.so:graphics/opencollada \
+				libpcre.so:devel/pcre
+COLLADA_USE=			GNOME=libxml2
 COMPOSITOR_CMAKE_ON=		-DWITH_COMPOSITOR:BOOL=ON
 COMPOSITOR_CMAKE_OFF=		-DWITH_COMPOSITOR:BOOL=OFF
 DDS_CMAKE_ON=			-DWITH_IMAGE_DDS:BOOL=ON
@@ -107,10 +112,13 @@ OPENAL_CMAKE_OFF=		-DWITH_OPENAL:BOOL=OFF
 OPENAL_USES=			openal:al,alut
 OPENCOLORIO_CMAKE_ON=		-DWITH_OPENCOLORIO:BOOL=ON
 OPENCOLORIO_CMAKE_OFF=		-DWITH_OPENCOLORIO:BOOL=OFF
-OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
+OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
+				libyaml-cpp03.so:devel/yaml-cpp03 \
+				libtinyxml.so:textproc/tinyxml
 OPENEXR_CMAKE_ON=		-DWITH_IMAGE_OPENEXR:BOOL=ON
 OPENEXR_CMAKE_OFF=		-DWITH_IMAGE_OPENEXR:BOOL=OFF
-OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/OpenEXR \
+				libHalf.so:graphics/ilmbase
 OPENIMAGEIO_CMAKE_ON=		-DWITH_OPENIMAGEIO:BOOL=ON
 OPENIMAGEIO_CMAKE_OFF=		-DWITH_OPENIMAGEIO:BOOL=OFF
 OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
@@ -134,7 +142,7 @@ REDCODE_CMAKE_ON=		-DWITH_IMAGE_REDCODE:BOOL=ON
 REDCODE_CMAKE_OFF=		-DWITH_IMAGE_REDCODE:BOOL=OFF
 SDL_CMAKE_ON=			-DWITH_SDL:BOOL=ON
 SDL_CMAKE_OFF=			-DWITH_SDL:BOOL=OFF
-SDL_USE=			SDL=sdl
+SDL_USE=			SDL=sdl2
 SNDFILE_CMAKE_ON=		-DWITH_CODEC_SNDFILE:BOOL=ON
 SNDFILE_CMAKE_OFF=		-DWITH_CODEC_SNDFILE:BOOL=OFF
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
@@ -171,8 +179,8 @@ CMAKE_ARGS+=	-DWITH_CYCLES_OSL:BOOL=ON \
 		-DWITH_LLVM:BOOL=ON \
 		-DLLVM_VERSION:STRING="3.4" \
 		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config34"
-LIB_DEPENDS+=	liboslexec.so:graphics/openshadinglanguage
-BUILD_DEPENDS+=	llvm-config34:devel/llvm34
+LIB_DEPENDS+=	liboslexec.so:graphics/openshadinglanguage \
+		libLLVM-3.4.so:devel/llvm34
 .else
 CMAKE_ARGS+=	-DWITH_CYCLES_OSL:BOOL=OFF
 .endif
