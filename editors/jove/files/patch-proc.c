@@ -1,6 +1,6 @@
---- proc.c.orig	Sat Mar  9 06:46:40 1996
-+++ proc.c	Wed Dec 20 05:20:13 2000
-@@ -827,8 +827,14 @@
+--- proc.c.orig	1996-03-08 21:46:40 UTC
++++ proc.c
+@@ -827,8 +827,14 @@ UnixToBuf(flags, bnm, InFName, cmd)
  		int	ph;
  
  		swritef(pnbuf, sizeof(pnbuf), "%s/%s", TmpDir, "jpXXXXXX");
@@ -16,7 +16,7 @@
  			complain("cannot make pipe for filter: %s", strerror(errno));
  		close(1);
  		close(2);
-@@ -923,7 +929,18 @@
+@@ -923,7 +929,18 @@ bool	wrap;
  	jmp_buf	sav_jmp;
  
  	swritef(tnambuf, sizeof(tnambuf), "%s/%s", TmpDir, "jfXXXXXX");
