@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install.bin install.man
 USES=		cpe
+EXTRA_PATCHES=	${FILESDIR}/procmail-3.22-getline.patch:-p1
 
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
