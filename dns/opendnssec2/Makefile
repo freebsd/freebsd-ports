@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USES=		perl5
 USES=		ssl
 USE_LDCONFIG=	yes
 
@@ -48,37 +47,27 @@ SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 MYSQL_DESC=		Use MYSQL backend
 SQLITE_DESC=		Use SQLite backend
 
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--with-enforcer-database=mysql
-USES+=		mysql
-.endif
+MYSQL_CONFIGURE_ON=	--with-enforcer-database=mysql
+MYSQL_USES=		mysql
+ 
+SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_ON=	--with-enforcer-database=sqlite3
+SQLITE_BUILD_DEPENDS=	sqlite3>=3.3.9:databases/sqlite3
 
-.if ${PORT_OPTIONS:MSQLITE}
-USES=		sqlite
-CONFIGURE_ARGS+=	--with-enforcer-database=sqlite3
-BUILD_DEPENDS+=	sqlite3>=3.3.9:databases/sqlite3
-.endif
 
-.if ${PORT_OPTIONS:MSOFTHSM}
-CONFIGURE_ARGS+=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
-RUN_DEPENDS+=	softhsm>=1.2.0:security/softhsm
-.endif
+SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
+SOFTHSM_RUN_DEPENDS=	softhsm>=1.2.0:security/softhsm
 
-pre-install:
-.if ${PORT_OPTIONS:MMYSQL}
+pre-install-MYSQL-on:
 	${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/opendnssec
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/1.4-2.0_db_convert
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/1.4-2.0_db_convert
 	${INSTALL_DATA} \
 		${MIGRATE:S|^|${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/|} \
 		${STAGEDIR}${DOCSDIR}/1.4-2.0_db_convert
-.endif
 
 .include <bsd.port.mk>
