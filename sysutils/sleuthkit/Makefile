@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sleuthkit
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	sysutils security
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-${PORTVERSION}/
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tools and library for filesystem forensic analysis
