@@ -1,6 +1,6 @@
---- src/native/Makefile.orig	2003-01-07 05:14:35.000000000 -0500
-+++ src/native/Makefile	2014-08-16 14:17:39.000000000 -0400
-@@ -38,25 +38,31 @@
+--- src/native/Makefile.orig	2003-01-07 10:14:35 UTC
++++ src/native/Makefile
+@@ -38,25 +38,31 @@ ifeq (MSC,$(WIN32))
  INCLUDES = -I "c:/Programme/DevStudio/VC/include" \
  			-I $(JAVAINCLUDE) -I $(JAVANATINC)
  LIB = "c:/Programme/DevStudio/VC/lib"
@@ -13,6 +13,8 @@
  else
 -INCLUDES          = -I $(JAVAINCLUDE) -I $(JAVANATINC)
 -LIBPATH           = -L/usr/lib/termcap 
+-JavaReadline_LIBS = -lreadline -ltermcap -lhistory
+-JavaEditline_LIBS = -ledit -ltermcap
 +INCLUDES          = -I $(JAVAINCLUDE) -I $(JAVANATINC) -I $(LOCALBASE)/include
 +ifeq (JavaEditline,$(TG))
 +LIBPATH           = -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
@@ -20,9 +22,8 @@
 +ifeq (JavaReadline,$(TG))
 +LIBPATH           = -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
 +endif
- JavaReadline_LIBS = -lreadline -ltermcap -lhistory
--JavaEditline_LIBS = -ledit -ltermcap
-+JavaEditline_LIBS = $(LOCALBASE)/lib/libedit.so -ltermcap
++JavaReadline_LIBS = -lreadline -lncurses -lhistory
++JavaEditline_LIBS = $(LOCALBASE)/lib/libedit.so -lncurses
  ifeq (cygwin,$(WIN32))
  JavaGetline_LIBS = -lcygwin
  endif
@@ -38,7 +39,7 @@
  
  
  OBJECTS := org_gnu_readline_Readline.$(OBJ_EXT)
-@@ -69,13 +75,13 @@
+@@ -69,13 +75,13 @@ all: $(T_LIBS) 
  lib: $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT)
  
  JavaReadline:
@@ -55,7 +56,7 @@
  
  $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT): $(OBJECTS)
  ifeq (MSC,$(WIN32))
-@@ -110,7 +116,7 @@
+@@ -110,7 +116,7 @@ org_gnu_readline_Readline.$(OBJ_EXT): or
  	                                   -c org_gnu_readline_Readline.c
  
  org_gnu_readline_Readline.h: $(BUILDDIR)/org/gnu/readline/Readline.class

@@ -1,6 +1,6 @@
---- src/org/gnu/readline/Readline.java.orig	2003-01-07 11:14:35.000000000 +0100
-+++ src/org/gnu/readline/Readline.java	2007-09-27 08:52:01.000000000 +0200
-@@ -568,6 +568,31 @@
+--- src/org/gnu/readline/Readline.java.orig	2003-01-07 10:14:35 UTC
++++ src/org/gnu/readline/Readline.java
+@@ -568,6 +568,31 @@ public class Readline {
    /////////////////////////////////////////////////////////////////////////////
  
    /**
@@ -32,7 +32,7 @@
       Query the current line buffer. This returns the current content of
       the internal line buffer. You might need this in a 
       {@link ReadlineCompleter} implementation to access the full text
-@@ -838,4 +863,17 @@
+@@ -838,4 +863,17 @@ public class Readline {
    private native static void 
      setWordBreakCharactersImpl(String wordBreakCharacters)
                                throws UnsupportedEncodingException;

@@ -1,6 +1,6 @@
---- Makefile	2003-01-07 11:14:35.000000000 +0100
-+++ /tmp/libreadline-java-0.8.0/Makefile	2007-09-22 22:11:13.000000000 +0200
-@@ -54,11 +54,11 @@
+--- Makefile.orig	2003-01-07 10:14:35 UTC
++++ Makefile
+@@ -54,11 +54,11 @@ DOCDIR    = $(PREFIX)/doc
  JAVALIBDIR= $(PREFIX)/share/java
  
  # libraries to build
@@ -14,7 +14,7 @@
  
  ifeq (MSC,$(WIN32))
  JAVA_HOME := c:/j2sdk1.4.0
-@@ -69,9 +69,14 @@
+@@ -69,9 +69,14 @@ ARGS      = Getline
  endif
  
  ## normal javac
@@ -30,7 +30,7 @@
  ## with jikes
  #JAVAC = jikes
  #JC_FLAGS = -O +E
-@@ -86,7 +91,7 @@
+@@ -86,7 +91,7 @@ RPM_BASE        = `pwd`/$(BUILDDIR)/
  world : jar build-native
  
  jar: build-java
@@ -39,7 +39,7 @@
  
  $(JAR):
  	cd $(BUILDDIR) ; jar -cvmf ../$(MF_STUB) ../$(JAR) *
-@@ -96,7 +101,7 @@
+@@ -96,7 +101,7 @@ build-java: $(BUILDDIR)
  
  build-native: 
  	cd src; $(MAKE) T_LIBS="$(T_LIBS)" JAVAINCLUDE="$(JAVAINCLUDE)" \
@@ -48,7 +48,7 @@
  
  apidoc: $(APIDIR)
  	javadoc -sourcepath src -d $(APIDIR) -windowtitle $(WTITLE) \
-@@ -140,7 +145,7 @@
+@@ -140,7 +145,7 @@ rpm: src-dist
  	rpm --define _topdir$(RPM_BASE) -ba $(RPM_BASE)/SPECS/libreadline-java.spec
  
  test: $(JAR) build-native
