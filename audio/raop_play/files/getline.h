@@ -13,7 +13,7 @@
 
 #ifndef _WITH_GETLINE
 int
-  getline __PROTO ((char **_lineptr, size_t *_n, FILE *_stream));
+  get_line __PROTO ((char **_lineptr, size_t *_n, FILE *_stream));
 int
   getline_safe __PROTO ((char **_lineptr, size_t *_n, FILE *_stream,
                          int limit));
