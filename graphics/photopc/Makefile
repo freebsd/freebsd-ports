@@ -18,11 +18,11 @@ PLIST_FILES=	bin/epinfo \
 		lib/libeph_io.a \
 		man/man1/epinfo.1.gz \
 		man/man1/photopc.1.gz
-
 PORTDOCS=	README protocol.htm usage.htm
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
