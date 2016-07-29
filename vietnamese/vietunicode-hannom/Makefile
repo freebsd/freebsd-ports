@@ -3,7 +3,7 @@
 
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/hannom/hannom%20v2005
 DISTNAME=	hannom

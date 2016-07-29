@@ -3,7 +3,7 @@
 
 PORTNAME=	moettf
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	LOCAL/marino/zh-moettf
 DISTFILES=	edustds1.exe edustds2.exe edustd-15.exe \
