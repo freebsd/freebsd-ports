@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Mar 19 13:44:33 1996
-+++ Makefile	Wed Dec 20 05:39:12 2000
+--- Makefile.orig	1996-03-19 04:44:33 UTC
++++ Makefile
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -22,7 +22,7 @@
  
  # The install commands of BSD and System V differ in unpleasant ways:
  # -c: copy (BSD); -c dir: destination directory (SysV)
-@@ -50,12 +50,12 @@
+@@ -50,12 +50,12 @@ DFLTSHELL = /bin/csh
  INSTALLFLAGS = # -g bin -o root
  
  # to install executable files
@@ -39,7 +39,7 @@
  
  # These should all just be right if the above ones are.
  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
-@@ -79,7 +79,7 @@
+@@ -79,7 +79,7 @@ JOVETOOLM = $(MANDIR)/jovetool.$(MANEXT)
  # compiler, adding -Xa -v will increase compiler checking.
  # On DEC OSF/1, -std1 -O
  
@@ -48,7 +48,7 @@
  
  # For making dependencies under BSD systems
  DEPENDFLAG = -M
-@@ -163,13 +163,13 @@
+@@ -163,13 +163,13 @@ LDFLAGS =
  #
  # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
  
@@ -64,7 +64,7 @@
  
  # For SYSVR4 (/usr/ucb/cc will NOT work because of setjmp.h):
  # CC = /usr/bin/cc
-@@ -213,7 +213,7 @@
+@@ -213,7 +213,7 @@ NROFF = nroff
  TROFF = troff -Tpost
  TROFFPOST = | /usr/lib/lp/postscript/dpost - >troff.out.ps
  
