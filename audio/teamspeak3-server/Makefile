@@ -17,6 +17,8 @@ LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
+BROKEN_FreeBSD_11=Will not start on 11
+
 USES=		tar:bz2
 NO_BUILD=	yes
 USE_LDCONFIG=	${LIBDIR}
