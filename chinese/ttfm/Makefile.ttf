@@ -70,7 +70,7 @@ add-plist-post: add-plist-ttf
 add-plist-ttf:
 .for module in ${_TTF_MODULES}
 .	for ttf in ${TTF}
-		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${STAGEDIR}${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
 .	endfor
 .endfor
 .for ttf in ${TTF}
@@ -78,7 +78,7 @@ add-plist-ttf:
 .endfor
 .for module in ${_TTF_MODULES}
 .	for ttf in ${TTF}
-		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${STAGEDIR}${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
 .	endfor
 .endfor
 .if ${PORT_OPTIONS:MX11}
