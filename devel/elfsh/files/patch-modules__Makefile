@@ -1,5 +1,5 @@
---- modules/Makefile.orig	2003-08-21 09:11:03.000000000 +0800
-+++ modules/Makefile	2011-10-03 16:34:46.000000000 +0800
+--- modules/Makefile.orig	2003-08-21 01:11:03 UTC
++++ modules/Makefile
 @@ -18,9 +18,9 @@ SRC3	= modremap.c
  OBJ3	= $(SRC3:.c=.o)
  NAM3	= modremap.so

@@ -1,5 +1,5 @@
---- libelfsh/Makefile.orig	2003-08-21 09:11:03.000000000 +0800
-+++ libelfsh/Makefile	2011-10-03 16:33:33.000000000 +0800
+--- libelfsh/Makefile.orig	2003-08-21 01:11:03 UTC
++++ libelfsh/Makefile
 @@ -5,10 +5,10 @@
  ## Last update Tue Jun  3 09:30:50 2003 mayhem
  ##
