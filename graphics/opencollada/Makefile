@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	opencollada
-PORTVERSION=	1.2.2.20150519
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.6.25
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mva@FreeBSD.org
@@ -9,14 +10,13 @@ COMMENT=	Library for reading and writing COLLADA files
 
 LICENSE=	MIT
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
+
+BROKEN_powerpc64=	Does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	OpenCOLLADA
-GH_TAGNAME=	a59a438
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/opencollada
