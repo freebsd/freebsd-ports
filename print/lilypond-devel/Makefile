@@ -32,6 +32,9 @@ LIB_DEPENDS=	libguile.so:lang/guile \
 		libfreetype.so:print/freetype2
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
+BROKEN=		pkgconf detection is broken
+DEPRECATED=	unstable branch requires maintainer, many releases behind already (stick with stable)
+EXPIRATION_DATE=	2016-08-31
 
 INFO=		internals \
 		lilypond-changes \
