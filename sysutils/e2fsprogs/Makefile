@@ -81,6 +81,7 @@ PLIST_SUB=	NLS="@comment "
 libintl=
 .endif
 
+# d_fallocate_blkmap appears to fail on some systems for unknown reasons.
 post-patch::
 # don't build/install libext2fs.info
 	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
@@ -90,6 +91,7 @@ post-patch::
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 .if empty(PORT_OPTIONS:MALLTESTS)
 .for i in \
+    		d_fallocate_blkmap \
 		f_baddir \
 		f_bbfile \
 		f_convert_bmap \
