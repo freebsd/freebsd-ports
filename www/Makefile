@@ -1765,6 +1765,7 @@
     SUBDIR += py-slimit
     SUBDIR += py-slimmer
     SUBDIR += py-slumber
+    SUBDIR += py-sockjs-tornado
     SUBDIR += py-splinter
     SUBDIR += py-spyne
     SUBDIR += py-surl
