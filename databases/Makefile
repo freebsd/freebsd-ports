@@ -973,6 +973,7 @@
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
     SUBDIR += tora
+    SUBDIR += tsearch_extras
     SUBDIR += tuning-primer
     SUBDIR += twemproxy
     SUBDIR += unixODBC
