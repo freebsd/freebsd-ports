@@ -9,6 +9,7 @@
     SUBDIR += bluej
     SUBDIR += bootstrap-openjdk
     SUBDIR += bouncycastle
+    SUBDIR += bouncycastle15
     SUBDIR += cacao
     SUBDIR += castor
     SUBDIR += classpath
