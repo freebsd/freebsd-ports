@@ -3,7 +3,7 @@
 
 PORTNAME=	musixtex
 PORTVERSION=	T112
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://icking-music-archive.org/software/musixtex/
 DISTFILES=	musixtex-${PORTVERSION}.tar.gz \
@@ -12,8 +12,7 @@ DISTFILES=	musixtex-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of TeX macros to typeset music
 
-BUILD_DEPENDS=	initex:print/tex
-RUN_DEPENDS=	initex:print/tex
+USE_TEX=	basic
 
 EXAMPLE_VERSION=	T112
 
