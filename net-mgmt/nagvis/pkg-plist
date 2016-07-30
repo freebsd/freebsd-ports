@@ -107,7 +107,7 @@
 %%WWWDIR%%/etc/maps/demo-load.cfg
 %%WWWDIR%%/etc/maps/demo-muc-srv1.cfg
 %%WWWDIR%%/etc/maps/demo-overview.cfg
-%%WWWDIR%%/%%ETCDIR%%.ini.php-sample
+%%WWWDIR%%/etc/nagvis.ini.php-sample
 %%WWWDIR%%/etc/perms.db-sample
 %%WWWDIR%%/install_lib
 %%WWWDIR%%/nagvis-make-admin
