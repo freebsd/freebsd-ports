@@ -1,5 +1,5 @@
---- ./common/autoconf/build-performance.m4	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/build-performance.m4	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/build-performance.m4	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/build-performance.m4	Sun Jul 24 16:26:25 2016 -0700
 @@ -41,6 +41,10 @@
      # Looks like a MacOSX system
      NUM_CORES=`/usr/sbin/system_profiler -detailLevel full SPHardwareDataType | grep 'Cores' | awk  '{print [$]5}'`
@@ -38,8 +38,8 @@
        AC_MSG_RESULT([no, disabling ccache])
        CCACHE=
      else
---- ./common/autoconf/generated-configure.sh	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/generated-configure.sh	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/generated-configure.sh	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/generated-configure.sh	Sun Jul 24 16:26:25 2016 -0700
 @@ -646,6 +646,8 @@
  LIBM
  LIBZIP_CAN_USE_MMAP
@@ -628,8 +628,8 @@
        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no, disabling ccache" >&5
  $as_echo "no, disabling ccache" >&6; }
        CCACHE=
---- ./common/autoconf/jdk-options.m4	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/jdk-options.m4	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/jdk-options.m4	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/jdk-options.m4	Sun Jul 24 16:26:25 2016 -0700
 @@ -410,6 +410,20 @@
  
    ###############################################################################
@@ -651,8 +651,8 @@
    # Enable or disable the elliptic curve crypto implementation
    #
    AC_DEFUN_ONCE([JDKOPT_DETECT_INTREE_EC],
---- ./common/autoconf/libraries.m4	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/libraries.m4	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/libraries.m4	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/libraries.m4	Sun Jul 24 16:26:25 2016 -0700
 @@ -69,9 +69,15 @@
    fi
  
@@ -790,8 +790,8 @@
 +
    AC_SUBST(LIBCXX)
  ])
---- ./common/autoconf/platform.m4	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/platform.m4	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/platform.m4	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/platform.m4	Sun Jul 24 16:26:25 2016 -0700
 @@ -30,7 +30,7 @@
  [
    # First argument is the cpu name from the trip/quad
@@ -851,8 +851,8 @@
      OPENJDK_TARGET_CPU_OSARCH="i386"
    elif test "x$OPENJDK_TARGET_OS" != xmacosx && test "x$OPENJDK_TARGET_CPU" = xx86_64; then
      # On all platforms except macosx, we replace x86_64 with amd64.
---- ./common/autoconf/spec.gmk.in	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/spec.gmk.in	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/spec.gmk.in	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/spec.gmk.in	Sun Jul 24 16:26:25 2016 -0700
 @@ -76,6 +76,7 @@
  OPENJDK_TARGET_OS:=@OPENJDK_TARGET_OS@
  OPENJDK_TARGET_OS_API:=@OPENJDK_TARGET_OS_API@
@@ -889,8 +889,8 @@
  USE_EXTERNAL_LIBZ:=@USE_EXTERNAL_LIBZ@
  LIBZIP_CAN_USE_MMAP:=@LIBZIP_CAN_USE_MMAP@
  MSVCR_DLL:=@MSVCR_DLL@
---- ./common/autoconf/toolchain.m4	Tue Mar 22 11:03:36 2016 -0700
-+++ ./common/autoconf/toolchain.m4	Sun May 01 23:37:49 2016 -0700
+--- ./common/autoconf/toolchain.m4	Tue Jun 21 18:38:32 2016 -0700
++++ ./common/autoconf/toolchain.m4	Sun Jul 24 16:26:25 2016 -0700
 @@ -72,7 +72,7 @@
    else
      COMPILER_VERSION_TEST=`$COMPILER --version 2>&1 | $HEAD -n 1`
@@ -985,16 +985,16 @@
    fi
    if test "x$OPENJDK_TARGET_OS" = xlinux; then
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
---- ./configure	Tue Mar 22 11:03:36 2016 -0700
-+++ ./configure	Sun May 01 23:37:49 2016 -0700
+--- ./configure	Tue Jun 21 18:38:32 2016 -0700
++++ ./configure	Sun Jul 24 16:26:25 2016 -0700
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
---- ./make/Javadoc.gmk	Tue Mar 22 11:03:36 2016 -0700
-+++ ./make/Javadoc.gmk	Sun May 01 23:37:49 2016 -0700
+--- ./make/Javadoc.gmk	Tue Jun 21 18:38:32 2016 -0700
++++ ./make/Javadoc.gmk	Sun Jul 24 16:26:25 2016 -0700
 @@ -46,8 +46,18 @@
  
  BUILD_NUMBER=$(JDK_BUILD_NUMBER)
@@ -1015,8 +1015,8 @@
      -Djava.awt.headless=true \
      $(NEW_JAVADOC) \
      -bootclasspath $(JDK_OUTPUTDIR)/classes
---- ./make/Main.gmk	Tue Mar 22 11:03:36 2016 -0700
-+++ ./make/Main.gmk	Sun May 01 23:37:49 2016 -0700
+--- ./make/Main.gmk	Tue Jun 21 18:38:32 2016 -0700
++++ ./make/Main.gmk	Sun Jul 24 16:26:25 2016 -0700
 @@ -58,7 +58,11 @@
  
  # Setup number of jobs to use. -jN is unfortunately not available for us to parse from the command line,
@@ -1029,8 +1029,8 @@
  
  ### Main targets
  
---- ./make/common/MakeBase.gmk	Tue Mar 22 11:03:36 2016 -0700
-+++ ./make/common/MakeBase.gmk	Sun May 01 23:37:49 2016 -0700
+--- ./make/common/MakeBase.gmk	Tue Jun 21 18:38:32 2016 -0700
++++ ./make/common/MakeBase.gmk	Sun Jul 24 16:26:25 2016 -0700
 @@ -338,7 +338,7 @@
      # (and causing a crash on Cygwin).
      # Default shell seems to always be /bin/sh. Must override with bash to get this to work on Solaris.
@@ -1051,8 +1051,8 @@
  endef
  
  # Make directory without forking mkdir if not needed
---- ./make/common/NativeCompilation.gmk	Tue Mar 22 11:03:36 2016 -0700
-+++ ./make/common/NativeCompilation.gmk	Sun May 01 23:37:49 2016 -0700
+--- ./make/common/NativeCompilation.gmk	Tue Jun 21 18:38:32 2016 -0700
++++ ./make/common/NativeCompilation.gmk	Sun Jul 24 16:26:25 2016 -0700
 @@ -151,9 +151,9 @@
    #   CC the compiler to use, default is $(CC)
    #   LDEXE the linker to use for linking executables, default is $(LDEXE)
@@ -1066,8 +1066,8 @@
  
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
---- ./hotspot/make/bsd/Makefile	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/Makefile	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/Makefile	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/Makefile	Tue Jul 26 18:37:25 2016 -0700
 @@ -66,6 +66,10 @@
      FORCE_TIERED=1
    endif
@@ -1079,8 +1079,8 @@
  
  ifdef LP64
    ifeq ("$(filter $(LP64_ARCH),$(BUILDARCH))","")
---- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Jul 26 18:37:25 2016 -0700
 @@ -1,12 +1,28 @@
  #!/bin/sh
  
@@ -1116,8 +1116,8 @@
 +        if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
 +    }' | sort -u ;;
 +esac
---- ./hotspot/make/bsd/makefiles/debug.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/debug.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/debug.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/debug.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -35,7 +35,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1130,8 +1130,8 @@
  
  VERSION = debug
  SYSDEFS += -DASSERT
---- ./hotspot/make/bsd/makefiles/defs.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/defs.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/defs.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/defs.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -29,7 +29,15 @@
  SLASH_JAVA ?= /java
  
@@ -1193,8 +1193,8 @@
  endif
  
  # Serviceability Binaries
---- ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/fastdebug.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -56,7 +56,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1207,8 +1207,8 @@
  
  VERSION = fastdebug
  SYSDEFS += -DASSERT -DCHECK_UNHANDLED_OOPS
---- ./hotspot/make/bsd/makefiles/gcc.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/gcc.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/gcc.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/gcc.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -168,6 +168,9 @@
    CFLAGS += -DDONT_USE_PRECOMPILED_HEADER
  endif
@@ -1335,7 +1335,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/launcher.make	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/make/bsd/makefiles/launcher.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,117 @@
 +#
 +# Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -1454,8 +1454,8 @@
 +	$(QUIETLY) sed -e 's/@@LIBARCH@@/$(LIBARCH)/g' $< > $@
 +	$(QUIETLY) chmod +x $@
 +
---- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Jul 26 18:37:25 2016 -0700
 @@ -21,246 +21,254 @@
  # questions.
  #
@@ -1944,7 +1944,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,266 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2212,8 +2212,8 @@
 +
 +                # INSERT VTABLE SYMBOLS HERE
 +
---- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Jul 26 18:37:25 2016 -0700
 @@ -21,241 +21,249 @@
  # questions.
  #
@@ -2693,7 +2693,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,261 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2956,8 +2956,8 @@
 +
 +                # INSERT VTABLE SYMBOLS HERE
 +
---- ./hotspot/make/bsd/makefiles/optimized.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/optimized.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/optimized.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/optimized.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -38,6 +38,9 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -2970,7 +2970,7 @@
  
  VERSION = optimized
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/ppc64.make	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/make/bsd/makefiles/ppc64.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,51 @@
 +#
 +# Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -3023,8 +3023,8 @@
 +  # Use Power8, this is the first CPU to support PPC64 LE with ELFv2 ABI.
 +  CFLAGS += -mcpu=power7 -mtune=power8 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
 +endif
---- ./hotspot/make/bsd/makefiles/product.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/product.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/product.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/product.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -38,7 +38,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -3037,8 +3037,8 @@
  
  SYSDEFS += -DPRODUCT
  VERSION = optimized
---- ./hotspot/make/bsd/makefiles/rules.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/rules.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/rules.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/rules.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -34,7 +34,7 @@
  CC_COMPILE       = $(CC) $(CXXFLAGS) $(CFLAGS)
  CXX_COMPILE      = $(CXX) $(CXXFLAGS) $(CFLAGS)
@@ -3048,8 +3048,8 @@
  
  COMPILE.CC       = $(CC_COMPILE) -c
  GENASM.CC        = $(CC_COMPILE) -S
---- ./hotspot/make/bsd/makefiles/vm.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/vm.make	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/make/bsd/makefiles/vm.make	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/make/bsd/makefiles/vm.make	Tue Jul 26 18:37:25 2016 -0700
 @@ -107,7 +107,7 @@
  # File specific flags
  CXXFLAGS += $(CXXFLAGS/BYFILE)
@@ -3060,7 +3060,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/platform_ppc64	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/make/bsd/platform_ppc64	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,17 @@
 +os_family = bsd
 +
@@ -3079,8 +3079,8 @@
 +gnu_dis_arch = ppc64
 +
 +sysdefs = -DBSD -D_ALLBSD_SOURCE -D_GNU_SOURCE -DPPC64
---- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -277,5 +277,9 @@
  #if defined(TARGET_OS_ARCH_linux_ppc)
  #include "bytes_linux_ppc.inline.hpp"
@@ -3091,8 +3091,8 @@
 +
  
  #endif // CPU_PPC_VM_BYTES_PPC_HPP
---- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -307,6 +307,8 @@
    // Although AIX runs on big endian CPU, float is in most significant
    // word of an argument slot.
@@ -3102,8 +3102,8 @@
  #else
  #error "unknown OS"
  #endif
---- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -778,6 +778,8 @@
        // Although AIX runs on big endian CPU, float is in the most
        // significant word of an argument slot.
@@ -3113,8 +3113,8 @@
  #else
  #error "unknown OS"
  #endif
---- ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Jul 26 18:37:25 2016 -0700
 @@ -34,7 +34,7 @@
  #ifndef __has_attribute
    #define __has_attribute(x) 0
@@ -3124,8 +3124,8 @@
    #define JNIEXPORT     __attribute__((visibility("default")))
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
---- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -2266,7 +2266,7 @@
    if (!is_critical_native) {
      // reset handle block
@@ -3135,8 +3135,24 @@
  
      // Any exception pending?
      __ cmpptr(Address(thread, in_bytes(Thread::pending_exception_offset())), (int32_t)NULL_WORD);
---- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Tue Jul 26 18:37:25 2016 -0700
+@@ -23,9 +23,12 @@
+  */
+ 
+ #include "precompiled.hpp"
+-#ifndef _WINDOWS
++#if !defined(_WINDOWS) && !defined(_ALLBSD_SOURCE)
+ #include "alloca.h"
+ #endif
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#endif
+ #include "asm/macroAssembler.hpp"
+ #include "asm/macroAssembler.inline.hpp"
+ #include "code/debugInfoRec.hpp"
+--- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -1293,7 +1293,7 @@
  
    // reset handle block
@@ -3146,8 +3162,8 @@
  
    // If result was an oop then unbox and save it in the frame
    { Label L;
---- ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Jul 26 18:37:25 2016 -0700
 @@ -1250,6 +1250,7 @@
  
  
@@ -3156,8 +3172,8 @@
  }
  
  #ifndef PRODUCT
---- ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/aix/vm/os_aix.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -5236,6 +5236,10 @@
      return 0;
    }
@@ -3170,7 +3186,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,53 @@
 +/*
 + * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -3225,8 +3241,8 @@
 +  return false;
 +}
 +#endif
---- ./hotspot/src/os/bsd/vm/jsig.c	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jsig.c	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/jsig.c	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jsig.c	Tue Jul 26 18:37:25 2016 -0700
 @@ -165,9 +165,8 @@
  }
  
@@ -3239,8 +3255,8 @@
  
  static int call_os_sigaction(int sig, const struct sigaction  *act,
                               struct sigaction *oact) {
---- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -50,6 +50,7 @@
      case INTERRUPT_SIGNAL:
      case SIGFPE:
@@ -3350,8 +3366,8 @@
 +  jio_snprintf(buf, len, "SIG%s", signame);
 +  return true;
  }
---- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Jul 26 18:37:25 2016 -0700
 @@ -112,20 +112,6 @@
  #define SHUTDOWN2_SIGNAL SIGINT
  #define SHUTDOWN3_SIGNAL SIGTERM
@@ -3373,8 +3389,8 @@
  #endif /* JVM_MD_H */
  
  #endif // OS_BSD_VM_JVM_BSD_H
---- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -30,7 +30,7 @@
  
  void OSThread::pd_initialize() {
@@ -3384,8 +3400,8 @@
    _thread_id        = 0;
  #else
    _thread_id        = NULL;
---- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -97,16 +97,31 @@
  # include <sys/shm.h>
  #ifndef __APPLE__
@@ -3947,8 +3963,8 @@
  }
  
  #ifndef PRODUCT
---- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -58,12 +58,16 @@
    // For signal flags diagnostics
    static int sigflags[MAXSIGNUM];
@@ -3976,8 +3992,8 @@
    static int page_size(void)                                        { return _page_size; }
    static void set_page_size(int val)                                { _page_size = val; }
  
---- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -33,30 +33,50 @@
  #include <sys/syscall.h>
  #include <unistd.h>
@@ -4039,8 +4055,8 @@
        os::fork_and_exec(buf);
        yes = false;
      }
---- ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/linux/vm/os_linux.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -6048,6 +6048,10 @@
      return 0;
    }
@@ -4052,8 +4068,8 @@
    return strlen(buffer);
  }
  
---- ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/posix/vm/os_posix.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -53,12 +53,11 @@
    n = get_core_path(buffer, bufferSize);
  
@@ -4103,7 +4119,7 @@
    // if there was an error when calling getrlimit, assume that there is no limitation
    // on virtual memory.
    bool result;
-@@ -706,8 +714,12 @@
+@@ -721,8 +729,12 @@
      { SI_USER,      "SI_USER",     "Signal sent by kill()." },
      { SI_QUEUE,     "SI_QUEUE",    "Signal sent by the sigqueue()." },
      { SI_TIMER,     "SI_TIMER",    "Signal generated by expiration of a timer set by timer_settime()." },
@@ -4116,8 +4132,8 @@
      // Linux specific
  #ifdef SI_TKILL
      { SI_TKILL,     "SI_TKILL",    "Signal sent by tkill (pthread_kill)" },
---- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -6375,6 +6375,10 @@
      return 0;
    }
@@ -4130,7 +4146,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,400 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4533,7 +4549,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4575,7 +4591,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,54 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4632,7 +4648,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,149 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4784,7 +4800,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,666 @@
 +/*
 + * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5453,7 +5469,7 @@
 +}
 +#endif
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,35 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5491,7 +5507,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,50 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5544,7 +5560,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5586,7 +5602,7 @@
 +  os::thread_local_storage_at_put(ThreadLocalStorage::thread_index(), thread);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5625,7 +5641,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5664,7 +5680,7 @@
 +
 +void JavaThread::cache_global_variables() { }
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,83 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5750,7 +5766,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -0,0 +1,55 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5807,8 +5823,22 @@
 +#define VM_LONG_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant)
 +
 +#endif // OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
---- ./hotspot/src/share/vm/opto/node.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/opto/node.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Tue Jul 26 18:37:25 2016 -0700
+@@ -594,7 +594,11 @@
+           stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
+       }
+     } else if (thread->thread_state() == _thread_in_vm &&
++#ifdef __FreeBSD__
++               (sig == SIGBUS || sig == SIGSEGV) && 
++#else
+                sig == SIGBUS && /* info->si_code == BUS_OBJERR && */
++#endif
+                thread->doing_unsafe_access()) {
+         stub = StubRoutines::handler_for_unsafe_access();
+     }
+--- ./hotspot/src/share/vm/opto/node.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/opto/node.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -286,6 +286,10 @@
  #ifdef _MSC_VER // the IDX_INIT hack falls foul of warning C4355
  #pragma warning( disable:4355 ) // 'this' : used in base member initializer list
@@ -5831,8 +5861,8 @@
  
  //------------------------------clone------------------------------------------
  // Clone a Node.
---- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -5843,8 +5873,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "atomic_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/globals.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/globals.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/globals.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/globals.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -94,6 +94,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "globals_aix_ppc.hpp"
@@ -5855,8 +5885,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "globals_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -64,6 +64,9 @@
  #endif
  
@@ -5867,9 +5897,9 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "orderAccess_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/os.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.cpp	Fri Jun 17 22:08:33 2016 -0700
-@@ -420,15 +420,6 @@
+--- ./hotspot/src/share/vm/runtime/os.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/os.cpp	Tue Jul 26 18:37:25 2016 -0700
+@@ -424,15 +424,6 @@
      if (_native_java_library == NULL) {
        vm_exit_during_initialization("Unable to load native library", ebuf);
      }
@@ -5885,8 +5915,8 @@
    }
    static jboolean onLoaded = JNI_FALSE;
    if (onLoaded) {
---- ./hotspot/src/share/vm/runtime/os.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/os.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/os.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -835,6 +835,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "os_aix_ppc.hpp"
@@ -5897,8 +5927,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "os_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -5909,8 +5939,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "prefetch_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/thread.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/thread.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/thread.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/thread.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -1732,6 +1732,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "thread_aix_ppc.hpp"
@@ -5921,8 +5951,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "thread_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -75,6 +75,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "threadLS_aix_ppc.hpp"
@@ -5933,8 +5963,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "threadLS_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -146,6 +146,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "vmStructs_aix_ppc.hpp"
@@ -5945,7 +5975,7 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "vmStructs_bsd_x86.hpp"
  #endif
-@@ -2553,6 +2556,8 @@
+@@ -2555,6 +2558,8 @@
    /**********************/                                                \
    /* frame              */                                                \
    /**********************/                                                \
@@ -5954,8 +5984,8 @@
                                                                            \
    NOT_ZERO(X86_ONLY(declare_constant(frame::entry_frame_call_wrapper_offset)))      \
    declare_constant(frame::pc_return_offset)                               \
---- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -30,6 +30,11 @@
  // This file holds compiler-dependent includes,
  // globally used constants & types, class (forward)
@@ -5987,8 +6017,8 @@
  #define CAN_USE_NAN_DEFINE 1
  #endif
  
---- ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/vmError.cpp	Fri Jun 17 22:08:33 2016 -0700
+--- ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Jun 21 18:40:46 2016 -0700
++++ ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Jul 26 18:37:25 2016 -0700
 @@ -22,7 +22,6 @@
   *
   */
@@ -5997,8 +6027,8 @@
  #include "precompiled.hpp"
  #include "compiler/compileBroker.hpp"
  #include "gc_interface/collectedHeap.hpp"
---- ./jdk/make/CompileDemos.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileDemos.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/CompileDemos.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/CompileDemos.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -323,7 +323,7 @@
  $(eval $(call SetupJVMTIDemo,hprof, java_crw_demo, \
      -I$(JDK_TOPDIR)/src/share/npt -I$(JDK_TOPDIR)/src/$(OPENJDK_TARGET_OS_API_DIR)/npt \
@@ -6008,8 +6038,8 @@
  
  $(eval $(call SetupJVMTIDemo,minst, agent_util java_crw_demo))
  $(eval $(call SetupJVMTIDemo,mtrace, agent_util java_crw_demo))
---- ./jdk/make/CompileJavaClasses.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileJavaClasses.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/CompileJavaClasses.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/CompileJavaClasses.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -128,23 +128,32 @@
        sun/nio/fs/LinuxFileStore.java \
        sun/nio/fs/LinuxFileSystem.java \
@@ -6111,8 +6141,8 @@
          $(CLOSED_SRC_DIRS), \
      INCLUDES := $(SECURITY_PKGS), \
      EXCLUDES := $(EXCLUDES), \
---- ./jdk/make/CompileLaunchers.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileLaunchers.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/CompileLaunchers.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/CompileLaunchers.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -49,7 +49,7 @@
    ORIGIN_ROOT := /..
  endif
@@ -6217,8 +6247,8 @@
    BUILD_JSPAWNHELPER := 1
  endif
  
---- ./jdk/make/CopyFiles.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CopyFiles.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/CopyFiles.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/CopyFiles.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -29,6 +29,8 @@
  
  ifeq ($(OPENJDK_TARGET_OS), windows)
@@ -6261,8 +6291,8 @@
              endif
            endif
          endif
---- ./jdk/make/Images.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/Images.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/Images.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/Images.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -236,11 +236,11 @@
  endif
  
@@ -6333,7 +6363,7 @@
  
  ################################################################################
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/data/classlist/classlist.bsd	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/make/data/classlist/classlist.bsd	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,2559 @@
 +java/lang/Object
 +java/lang/String
@@ -8894,8 +8924,8 @@
 +java/awt/MenuBar
 +sun/awt/X11/XErrorEvent
 +# eea35d9d56e0006e
---- ./jdk/make/gendata/GendataFontConfig.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/gendata/GendataFontConfig.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/gendata/GendataFontConfig.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/gendata/GendataFontConfig.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -73,6 +73,13 @@
    GENDATA_FONT_CONFIG_SRC_PREFIX := aix.
  endif
@@ -8910,8 +8940,8 @@
  ###
  
  $(GENDATA_FONT_CONFIG_DST)/%.src: \
---- ./jdk/make/lib/Awt2dLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/Awt2dLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/Awt2dLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/Awt2dLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -309,7 +309,7 @@
      debug_trace.c \
      debug_util.c
@@ -9036,8 +9066,8 @@
    else	# .. all other Unixes can use X_LIBS
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif
---- ./jdk/make/lib/CoreLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/CoreLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/CoreLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/CoreLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -82,7 +82,7 @@
  endif
  
@@ -9124,8 +9154,8 @@
      LDFLAGS_macosx := -liconv, \
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
---- ./jdk/make/lib/NetworkingLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/NetworkingLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/NetworkingLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/NetworkingLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -42,7 +42,7 @@
    LIBNET_EXCLUDE_FILES += linux_close.c
  endif
@@ -9154,8 +9184,8 @@
      LDFLAGS_SUFFIX_windows := ws2_32.lib jvm.lib secur32.lib iphlpapi.lib \
          delayimp.lib $(WIN_JAVA_LIB) advapi32.lib \
          -DELAYLOAD:secur32.dll -DELAYLOAD:iphlpapi.dll, \
---- ./jdk/make/lib/NioLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/NioLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/NioLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/NioLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -77,9 +77,28 @@
        UnixNativeDispatcher.c
  endif
@@ -9216,8 +9246,8 @@
    endif
 +  endif
  endif
---- ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -34,7 +34,7 @@
  ifneq ($(OPENJDK_TARGET_OS), linux)
    LIBATTACH_EXCLUDE_FILES += LinuxVirtualMachine.c
@@ -9307,8 +9337,8 @@
    ifeq ($(ENABLE_DEBUG_SYMBOLS), true)
      LIBHPROF_OPTIMIZATION := LOW
    endif
---- ./jdk/make/lib/SoundLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/SoundLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/lib/SoundLibraries.gmk	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/lib/SoundLibraries.gmk	Sun Jul 24 16:26:51 2016 -0700
 @@ -75,6 +75,13 @@
    LIBJSOUND_CFLAGS += -DX_PLATFORM=X_AIX
  endif # OPENJDK_TARGET_OS aix
@@ -9340,8 +9370,8 @@
        LDFLAGS_SUFFIX := $(ALSA_LIBS) -ljava -ljvm, \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
        DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
---- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Sun Jul 24 16:26:51 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9350,8 +9380,8 @@
  
  	local:
  		*;
---- ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86	Sun Jul 24 16:26:51 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9360,8 +9390,8 @@
  		___Argv;	# The following are private, but as they are
  		_start;		# exported from ctr1/crtn, the clever hacker
  		_init;		# might know about them.  However note, that
---- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Sun Jul 24 16:26:51 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9371,7 +9401,7 @@
  	local:
  		*;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,42 @@
 +#
 +# Copyright (c) 2005, Oracle and/or its affiliates. All rights reserved.
@@ -9416,7 +9446,7 @@
 +		*;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,195 @@
 +#
 +# Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -9613,8 +9643,8 @@
 +	local:
 +		*;
 +};
---- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Sun Jul 24 16:26:51 2016 -0700
 @@ -26,6 +26,9 @@
  # Define library interface.
  
@@ -9626,7 +9656,7 @@
  	    *;
  };
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-sources.ent	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/make/netbeans/common/bsd-sources.ent	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,45 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -9674,7 +9704,7 @@
 +    <location>${root}/src/bsd/classes</location>
 +</source-folder>
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-view.ent	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/make/netbeans/common/bsd-view.ent	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,39 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -9715,8 +9745,8 @@
 +    <includes>${includes}</includes>
 +    <excludes>${excludes}</excludes>
 +</source-folder>
---- ./jdk/make/netbeans/common/java-data-native.ent	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/common/java-data-native.ent	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/netbeans/common/java-data-native.ent	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/netbeans/common/java-data-native.ent	Sun Jul 24 16:26:51 2016 -0700
 @@ -34,6 +34,7 @@
  <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
      <compilation-unit>
@@ -9725,8 +9755,8 @@
          <package-root>${root}/src/macosx/classes</package-root>
          <package-root>${root}/src/solaris/classes</package-root>
          <package-root>${root}/src/windows/classes</package-root>
---- ./jdk/make/netbeans/common/make.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/common/make.xml	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/netbeans/common/make.xml	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/netbeans/common/make.xml	Sun Jul 24 16:26:51 2016 -0700
 @@ -32,16 +32,21 @@
  -->
  
@@ -9761,8 +9791,8 @@
      <macrodef name="make-run">
              <attribute name="target"/>
              <attribute name="dir"/>
---- ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Sun Jul 24 16:26:51 2016 -0700
 @@ -34,6 +34,7 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -9795,8 +9825,8 @@
                      &macosx-view;
                      &unix-view;
                      &windows-view;
---- ./jdk/make/netbeans/world/nbproject/project.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/world/nbproject/project.xml	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/make/netbeans/world/nbproject/project.xml	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/make/netbeans/world/nbproject/project.xml	Sun Jul 24 16:26:51 2016 -0700
 @@ -34,12 +34,14 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -9829,7 +9859,7 @@
                      &unix-view;
                      &windows-view;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,97 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -9929,7 +9959,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,48 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -9980,7 +10010,7 @@
 +
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,213 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -10196,7 +10226,7 @@
 +    private static native void interrupt(int fd);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,263 @@
 +/*
 + * Copyright (c) 2011, 2015, Oracle and/or its affiliates. All rights reserved.
@@ -10462,7 +10492,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -10508,8 +10538,8 @@
 +        return new KQueueSelectorImpl(this);
 +    }
 +}
---- ./jdk/src/bsd/doc/man/javah.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/javah.1	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/bsd/doc/man/javah.1	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/bsd/doc/man/javah.1	Sun Jul 24 16:26:51 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10528,8 +10558,8 @@
  
  \fIWindows\fR:
  
---- ./jdk/src/bsd/doc/man/rmic.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmic.1	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/bsd/doc/man/rmic.1	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/bsd/doc/man/rmic.1	Sun Jul 24 16:26:51 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10557,8 +10587,8 @@
  .SH SEE\ ALSO    
  .TP 0.2i    
  \(bu
---- ./jdk/src/bsd/doc/man/rmid.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmid.1	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/bsd/doc/man/rmid.1	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/bsd/doc/man/rmid.1	Sun Jul 24 16:26:51 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10578,7 +10608,7 @@
  .TP 0.2i    
  \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,171 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -10751,7 +10781,7 @@
 +    }
 +}
 +
---- ./jdk/src/macosx/classes/java/net/DefaultInterface.java	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/classes/java/net/DefaultInterface.java	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,97 +0,0 @@
 -/*
@@ -10851,7 +10881,7 @@
 -        return (ppp != null) ? ppp : loopback;
 -    }
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,48 +0,0 @@
 -/*
@@ -10902,7 +10932,7 @@
 -    }
 -
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,213 +0,0 @@
 -/*
@@ -11118,7 +11148,7 @@
 -                               long timeout);
 -    private static native void interrupt(int fd);
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,263 +0,0 @@
 -/*
@@ -11384,7 +11414,7 @@
 -        return this;
 -    }
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,44 +0,0 @@
 -/*
@@ -11431,7 +11461,7 @@
 -        return new KQueueSelectorImpl(this);
 -    }
 -}
---- ./jdk/src/macosx/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Mar 22 11:33:41 2016 -0700
+--- ./jdk/src/macosx/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Jun 21 18:44:47 2016 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,171 +0,0 @@
 -/*
@@ -11605,8 +11635,8 @@
 -    }
 -}
 -
---- ./jdk/src/share/bin/jli_util.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/bin/jli_util.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/bin/jli_util.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/bin/jli_util.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -87,7 +87,7 @@
  #define _LARGFILE64_SOURCE
  #define JLI_Lseek                       lseek64
@@ -11616,8 +11646,8 @@
  #define JLI_Lseek                       lseek
  #endif
  #ifdef _AIX
---- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -1146,7 +1146,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -11627,8 +11657,8 @@
              return false;
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
---- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -39,6 +39,7 @@
          WINDOWS,
          LINUX,
@@ -11648,8 +11678,8 @@
              if (osName.contains("OS X")) {
                  return MACOSX;
              }
---- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -48,6 +48,8 @@
  
      public static boolean isLinux;
@@ -11668,8 +11698,8 @@
                  isMacOSX = osName.contains("OS X"); // TODO: MacOSX
  
                  String t2kStr = System.getProperty("sun.java2d.font.scaler");
---- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -418,7 +418,7 @@
                           * registerFonts method as on-screen these JRE fonts
                           * always go through the T2K rasteriser.
@@ -11679,8 +11709,8 @@
                              /* Linux font configuration uses these fonts */
                              registerFontDir(jreFontDirName);
                          }
---- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -1306,7 +1306,7 @@
          String osName = AccessController.doPrivileged(
              new GetPropertyAction("os.name"));
@@ -11690,8 +11720,8 @@
              charset("x-COMPOUND_TEXT", "COMPOUND_TEXT",
                      new String[] {
                          "COMPOUND_TEXT",        // JDK historical
---- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -1587,9 +1587,31 @@
          }
  
@@ -11726,8 +11756,8 @@
              if ((pFlags & PRINTER) != 0) {
                  execCmd[n++] = "-P" + printer;
              }
---- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -48,6 +48,7 @@
                      public Boolean run() {
                              String osname = System.getProperty("os.name");
@@ -11736,8 +11766,8 @@
                                  osname.contains("OS X") ||
                                  osname.startsWith("Linux")) {
                                  return new Boolean(System.getProperty
---- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -90,6 +90,12 @@
                                      "libgssapi_krb5.so",
                                      "libgssapi_krb5.so.2",
@@ -11751,8 +11781,8 @@
                              } else if (osname.contains("OS X")) {
                                  gssLibs = new String[]{
                                      "libgssapi_krb5.dylib",
---- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Sun Jul 24 16:26:51 2016 -0700
 @@ -31,4 +31,5 @@
  #[windows]sun.tools.attach.WindowsAttachProvider
  #[linux]sun.tools.attach.LinuxAttachProvider
@@ -11760,7 +11790,7 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
  #[aix]sun.tools.attach.AixAttachProvider
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/share/lib/security/java.security-bsd	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/share/lib/security/java.security-bsd	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,626 @@
 +#
 +# This is the "master security properties file".
@@ -12388,8 +12418,8 @@
 +#       E485B576 625E7EC6 F44C42E9 A637ED6B 0BFF5CB6 F406B7ED \
 +#       EE386BFB 5A899FA5 AE9F2411 7C4B1FE6 49286651 ECE65381 \
 +#       FFFFFFFF FFFFFFFF, 2}
---- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Sun Jul 24 16:26:51 2016 -0700
 @@ -62,7 +62,7 @@
  
  #endif // End of ZLIB
@@ -12399,8 +12429,8 @@
  #define SWAP_BYTES(a) \
      ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
  #else
---- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -121,7 +121,7 @@
  }
  
@@ -12428,8 +12458,8 @@
  #define MAP_NATIVE2LE16(a) (a)
  #define MAP_NATIVE2BE16(a) MAP_SWAP16_impl(a)
  #define MAP_NATIVE2LE32(a) (a)
---- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -28,7 +28,7 @@
  
  
@@ -12439,8 +12469,8 @@
      return 0;
  #else
      return 1;
---- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -40,7 +40,7 @@
  #endif
  #endif
@@ -12450,8 +12480,8 @@
  #define __HI(x) *(1+(int*)&x)
  #define __LO(x) *(int*)&x
  #define __HIp(x) *(1+(int*)x)
---- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -624,7 +624,7 @@
      switch(type) {
          case java_awt_image_BufferedImage_TYPE_INT_ARGB:
@@ -12479,8 +12509,8 @@
              colorOrder[0] = 2;
              colorOrder[1] = 1;
              colorOrder[2] = 0;
---- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -1176,7 +1176,7 @@
  
  #define NLUT 8
@@ -12490,8 +12520,8 @@
  #define INDEXES    { 3, 2, 1, 0, 7, 6, 5, 4 }
  #else
  #define INDEXES    { 0, 1, 2, 3, 4, 5, 6, 7 }
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -12531,8 +12561,8 @@
  
  #endif /* _NO_LONGLONG */
  
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12572,8 +12602,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12613,8 +12643,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12654,8 +12684,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12695,8 +12725,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12736,8 +12766,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12777,8 +12807,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -12998,8 +13028,8 @@
    }
  
  #else  /* _LONGLONG */
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -168,7 +168,7 @@
  }
  
@@ -13280,8 +13310,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -13433,8 +13463,8 @@
  
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -13444,8 +13474,8 @@
      mlib_s32 int1, int0;
  #else
      mlib_s32 int0, int1;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -13544,8 +13574,8 @@
          s0 = s1;
          dp += SIZE;
          sp += SIZE;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -13628,1011 +13658,6 @@
 +#endif /* VM_LITTLE_ENDIAN */
          sp = (mlib_u8 *) sa;
          i += 5;
- 
-@@ -1226,505 +1226,505 @@
- 
-       sa = (mlib_u32 *) sp;
- 
--      if (((mlib_addr) dp & 3) == 0) {
--        da = (mlib_u32 *) dp;
--
--        s0 = sa[0];
--        sa++;
--
--#ifdef __SUNPRO_C
--#pragma pipeloop(0)
--#endif /* __SUNPRO_C */
--        for (i = 0; i < size - 7; i += 4, da += 2, sa++) {
--          READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
--          res1 = (t0 << 16) + t1;
--          res2 = (t2 << 16) + t3;
--          s0 = sa[0];
--          da[0] = res1;
--          da[1] = res2;
--        }
--
--        READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
--        res1 = (t0 << 16) + t1;
--        res2 = (t2 << 16) + t3;
--        da[0] = res1;
--        da[1] = res2;
--        da += 2;
--        dp = (mlib_u16 *) da;
--        sp = (mlib_u8 *) sa;
--        i += 4;
--
--        if (i < size) {
--          *dp++ = tab0[(*sp)];
--          i++;
--          sp++;
--        }
--
--        if (i < size) {
--          *dp++ = tab1[(*sp)];
--          i++;
--          sp++;
--        }
--
--        if (i < size) {
--          *dp = tab2[(*sp)];
--        }
--
--      }
--      else {
--
--        *dp++ = tab0[(*sp)];
--        size--;
--        da = (mlib_u32 *) dp;
--
--        s0 = sa[0];
--        s1 = sa[1];
--        sa += 2;
--
--#ifdef __SUNPRO_C
--#pragma pipeloop(0)
--#endif /* __SUNPRO_C */
--        for (i = 0; i < size - 10; i += 4, da += 2, sa++) {
--          READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
--          s0 = s1;
--          res1 = (t0 << 16) + t1;
--          res2 = (t2 << 16) + t3;
--          s1 = sa[0];
--          da[0] = res1;
--          da[1] = res2;
--        }
--
--        READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
--        res1 = (t0 << 16) + t1;
--        res2 = (t2 << 16) + t3;
--        da[0] = res1;
--        da[1] = res2;
--        ADD_READ_U8_S16_NOTALIGN(tab1, tab2, tab3);
--        res1 = (t0 << 16) + t1;
--        da[2] = res1;
--        da += 3;
--        dp = (mlib_u16 *) da;
--        *dp++ = (mlib_u16) t2;
--        sp = (mlib_u8 *) sa;
--        i += 7;
--
--        if (i < size) {
--          *dp++ = tab0[(*sp)];
--          i++;
--          sp++;
--        }
--
--        if (i < size) {
--          *dp++ = tab1[(*sp)];
--          i++;
--          sp++;
--        }
--
--        if (i < size) {
--          *dp = tab2[(*sp)];
--        }
--      }
--    }
--  }
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_S16_S16(const mlib_s16 *src,
--                                mlib_s32       slb,
--                                mlib_s16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][32768];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s16, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_U16_S16(const mlib_u16 *src,
--                                mlib_s32       slb,
--                                mlib_s16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][0];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_u16, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_S32_S16(const mlib_s32 *src,
--                                mlib_s32       slb,
--                                mlib_s16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][TABLE_SHIFT_S32];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s32, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_S16_U16(const mlib_s16 *src,
--                                mlib_s32       slb,
--                                mlib_u16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][32768];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s16, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_U16_U16(const mlib_u16 *src,
--                                mlib_s32       slb,
--                                mlib_u16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][0];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_u16, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_S32_U16(const mlib_s32 *src,
--                                mlib_s32       slb,
--                                mlib_u16       *dst,
--                                mlib_s32       dlb,
--                                mlib_s32       xsize,
--                                mlib_s32       ysize,
--                                mlib_s32       csize,
--                                const mlib_s16 **table)
--{
--  const mlib_s16 *table_base[4];
--  mlib_s32 c;
--
--  for (c = 0; c < csize; c++) {
--    table_base[c] = &table[c][TABLE_SHIFT_S32];
--  }
--
--  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s32, table_base);
--}
--
--/***************************************************************/
--void mlib_c_ImageLookUp_U8_S32(const mlib_u8  *src,
--                               mlib_s32       slb,
--                               mlib_s32       *dst,
--                               mlib_s32       dlb,
--                               mlib_s32       xsize,
--                               mlib_s32       ysize,
--                               mlib_s32       csize,
--                               const mlib_s32 **table)
--{
--
--  if (xsize * csize < 7) {
--    MLIB_C_IMAGELOOKUP(mlib_s32, mlib_u8, table);
--  }
--  else if (csize == 1) {
--    mlib_s32 i, j;
--
--    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
--      mlib_u32 *sa;
--      mlib_u32 *tab = (mlib_u32 *) table[0];
--      mlib_u32 s0, t0, t1, t2, t3;
--      mlib_s32 off;
--      mlib_s32 size = xsize;
--      mlib_u32 *dp = (mlib_u32 *) dst;
--      mlib_u8 *sp = (void *)src;
--
--      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
--
--      for (i = 0; i < off; i++, sp++) {
--        *dp++ = tab[sp[0]];
--        size--;
--      }
--
--      sa = (mlib_u32 *) sp;
--
--      s0 = sa[0];
--      sa++;
--
--#ifdef __SUNPRO_C
--#pragma pipeloop(0)
--#endif /* __SUNPRO_C */
--      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
--        READ_U8_S32(tab, tab, tab, tab);
--        s0 = sa[0];
--        dp[0] = t0;
--        dp[1] = t1;
--        dp[2] = t2;
--        dp[3] = t3;
--      }
--
--      READ_U8_S32(tab, tab, tab, tab);
--      dp[0] = t0;
--      dp[1] = t1;
--      dp[2] = t2;
--      dp[3] = t3;
--      dp += 4;
--      sp = (mlib_u8 *) sa;
--      i += 4;
--      for (; i < size; i++, dp++, sp++)
--        dp[0] = tab[sp[0]];
--    }
--
--  }
--  else if (csize == 2) {
--    mlib_s32 i, j;
--
--    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
--      mlib_u32 *sa;
--      mlib_u32 *tab0 = (mlib_u32 *) table[0];
--      mlib_u32 *tab1 = (mlib_u32 *) table[1];
--      mlib_u32 *tab;
--      mlib_u32 s0, t0, t1, t2, t3;
--      mlib_s32 off;
--      mlib_s32 size = xsize * 2;
--      mlib_u32 *dp = (mlib_u32 *) dst;
--      mlib_u8 *sp = (void *)src;
--
--      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
--
--      for (i = 0; i < off - 1; i += 2, sp += 2) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--        size -= 2;
--      }
--
--      if ((off & 1) != 0) {
--        *dp++ = tab0[*sp];
--        size--;
--        sp++;
--        tab = tab0;
--        tab0 = tab1;
--        tab1 = tab;
--      }
--
--      sa = (mlib_u32 *) sp;
--
--      s0 = sa[0];
--      sa++;
--
--#ifdef __SUNPRO_C
--#pragma pipeloop(0)
--#endif /* __SUNPRO_C */
--      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
--        READ_U8_S32(tab0, tab1, tab0, tab1);
--        s0 = sa[0];
--        dp[0] = t0;
--        dp[1] = t1;
--        dp[2] = t2;
--        dp[3] = t3;
--      }
--
--      READ_U8_S32(tab0, tab1, tab0, tab1);
--      dp[0] = t0;
--      dp[1] = t1;
--      dp[2] = t2;
--      dp[3] = t3;
--      dp += 4;
--      sp = (mlib_u8 *) sa;
--      i += 4;
--
--      for (; i < size - 1; i += 2, sp += 2) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--      }
--
--      if (i < size)
--        *dp = tab0[(*sp)];
--    }
--
--  }
--  else if (csize == 3) {
--    mlib_s32 i, j;
--
--    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
--      mlib_u32 *sa;
--      mlib_u32 *tab0 = (mlib_u32 *) table[0];
--      mlib_u32 *tab1 = (mlib_u32 *) table[1];
--      mlib_u32 *tab2 = (mlib_u32 *) table[2];
--      mlib_u32 *tab;
--      mlib_u32 s0, t0, t1, t2, t3;
--      mlib_s32 off;
--      mlib_s32 size = xsize * 3;
--      mlib_u32 *dp = (mlib_u32 *) dst;
--      mlib_u8 *sp = (void *)src;
--
--      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
--
--      if (off == 1) {
--        *dp++ = tab0[(*sp)];
--        tab = tab0;
--        tab0 = tab1;
--        tab1 = tab2;
--        tab2 = tab;
--        size--;
--        sp++;
--      }
--      else if (off == 2) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--        tab = tab2;
--        tab2 = tab1;
--        tab1 = tab0;
--        tab0 = tab;
--        size -= 2;
--        sp += 2;
--      }
--      else if (off == 3) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--        *dp++ = tab2[sp[2]];
--        size -= 3;
--        sp += 3;
--      }
--
--      sa = (mlib_u32 *) sp;
--
--      s0 = sa[0];
--      sa++;
--
--#ifdef __SUNPRO_C
--#pragma pipeloop(0)
--#endif /* __SUNPRO_C */
--      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
--        READ_U8_S32(tab0, tab1, tab2, tab0);
--        tab = tab0;
--        tab0 = tab1;
--        tab1 = tab2;
--        tab2 = tab;
--        s0 = sa[0];
--        dp[0] = t0;
--        dp[1] = t1;
--        dp[2] = t2;
--        dp[3] = t3;
--      }
--
--      READ_U8_S32(tab0, tab1, tab2, tab0);
--      dp[0] = t0;
--      dp[1] = t1;
--      dp[2] = t2;
--      dp[3] = t3;
--      dp += 4;
--      sp = (mlib_u8 *) sa;
--      i += 4;
--
--      if (i < size) {
--        *dp++ = tab1[(*sp)];
--        i++;
--        sp++;
--      }
--
--      if (i < size) {
--        *dp++ = tab2[(*sp)];
--        i++;
--        sp++;
--      }
--
--      if (i < size) {
--        *dp = tab0[(*sp)];
--      }
--    }
--
--  }
--  else if (csize == 4) {
--    mlib_s32 i, j;
--
--    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
--      mlib_u32 *sa;
--      mlib_u32 *tab0 = (mlib_u32 *) table[0];
--      mlib_u32 *tab1 = (mlib_u32 *) table[1];
--      mlib_u32 *tab2 = (mlib_u32 *) table[2];
--      mlib_u32 *tab3 = (mlib_u32 *) table[3];
--      mlib_u32 *tab;
--      mlib_u32 s0, t0, t1, t2, t3;
--      mlib_s32 off;
--      mlib_s32 size = xsize * 4;
--      mlib_u32 *dp = (mlib_u32 *) dst;
--      mlib_u8 *sp = (void *)src;
--
--      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
--
--      if (off == 1) {
--        *dp++ = tab0[(*sp)];
--        tab = tab0;
--        tab0 = tab1;
--        tab1 = tab2;
--        tab2 = tab3;
--        tab3 = tab;
--        size--;
--        sp++;
--      }
--      else if (off == 2) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--        tab = tab0;
--        tab0 = tab2;
--        tab2 = tab;
--        tab = tab1;
--        tab1 = tab3;
--        tab3 = tab;
--        size -= 2;
--        sp += 2;
--      }
--      else if (off == 3) {
--        *dp++ = tab0[sp[0]];
--        *dp++ = tab1[sp[1]];
--        *dp++ = tab2[sp[2]];
--        tab = tab3;
--        tab3 = tab2;
--        tab2 = tab1;
--        tab1 = tab0;
--        tab0 = tab;
--        size -= 3;
--        sp += 3;
--      }
--
--      sa = (mlib_u32 *) sp;
--
-+      if (((mlib_addr) dp & 3) == 0) {
-+        da = (mlib_u32 *) dp;
-+
-+        s0 = sa[0];
-+        sa++;
-+
-+#ifdef __SUNPRO_C
-+#pragma pipeloop(0)
-+#endif /* __SUNPRO_C */
-+        for (i = 0; i < size - 7; i += 4, da += 2, sa++) {
-+          READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
-+          res1 = (t0 << 16) + t1;
-+          res2 = (t2 << 16) + t3;
-+          s0 = sa[0];
-+          da[0] = res1;
-+          da[1] = res2;
-+        }
-+
-+        READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
-+        res1 = (t0 << 16) + t1;
-+        res2 = (t2 << 16) + t3;
-+        da[0] = res1;
-+        da[1] = res2;
-+        da += 2;
-+        dp = (mlib_u16 *) da;
-+        sp = (mlib_u8 *) sa;
-+        i += 4;
-+
-+        if (i < size) {
-+          *dp++ = tab0[(*sp)];
-+          i++;
-+          sp++;
-+        }
-+
-+        if (i < size) {
-+          *dp++ = tab1[(*sp)];
-+          i++;
-+          sp++;
-+        }
-+
-+        if (i < size) {
-+          *dp = tab2[(*sp)];
-+        }
-+
-+      }
-+      else {
-+
-+        *dp++ = tab0[(*sp)];
-+        size--;
-+        da = (mlib_u32 *) dp;
-+
-+        s0 = sa[0];
-+        s1 = sa[1];
-+        sa += 2;
-+
-+#ifdef __SUNPRO_C
-+#pragma pipeloop(0)
-+#endif /* __SUNPRO_C */
-+        for (i = 0; i < size - 10; i += 4, da += 2, sa++) {
-+          READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
-+          s0 = s1;
-+          res1 = (t0 << 16) + t1;
-+          res2 = (t2 << 16) + t3;
-+          s1 = sa[0];
-+          da[0] = res1;
-+          da[1] = res2;
-+        }
-+
-+        READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
-+        res1 = (t0 << 16) + t1;
-+        res2 = (t2 << 16) + t3;
-+        da[0] = res1;
-+        da[1] = res2;
-+        ADD_READ_U8_S16_NOTALIGN(tab1, tab2, tab3);
-+        res1 = (t0 << 16) + t1;
-+        da[2] = res1;
-+        da += 3;
-+        dp = (mlib_u16 *) da;
-+        *dp++ = (mlib_u16) t2;
-+        sp = (mlib_u8 *) sa;
-+        i += 7;
-+
-+        if (i < size) {
-+          *dp++ = tab0[(*sp)];
-+          i++;
-+          sp++;
-+        }
-+
-+        if (i < size) {
-+          *dp++ = tab1[(*sp)];
-+          i++;
-+          sp++;
-+        }
-+
-+        if (i < size) {
-+          *dp = tab2[(*sp)];
-+        }
-+      }
-+    }
-+  }
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_S16_S16(const mlib_s16 *src,
-+                                mlib_s32       slb,
-+                                mlib_s16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][32768];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s16, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_U16_S16(const mlib_u16 *src,
-+                                mlib_s32       slb,
-+                                mlib_s16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][0];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_u16, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_S32_S16(const mlib_s32 *src,
-+                                mlib_s32       slb,
-+                                mlib_s16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][TABLE_SHIFT_S32];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s32, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_S16_U16(const mlib_s16 *src,
-+                                mlib_s32       slb,
-+                                mlib_u16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][32768];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s16, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_U16_U16(const mlib_u16 *src,
-+                                mlib_s32       slb,
-+                                mlib_u16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][0];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_u16, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_S32_U16(const mlib_s32 *src,
-+                                mlib_s32       slb,
-+                                mlib_u16       *dst,
-+                                mlib_s32       dlb,
-+                                mlib_s32       xsize,
-+                                mlib_s32       ysize,
-+                                mlib_s32       csize,
-+                                const mlib_s16 **table)
-+{
-+  const mlib_s16 *table_base[4];
-+  mlib_s32 c;
-+
-+  for (c = 0; c < csize; c++) {
-+    table_base[c] = &table[c][TABLE_SHIFT_S32];
-+  }
-+
-+  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s32, table_base);
-+}
-+
-+/***************************************************************/
-+void mlib_c_ImageLookUp_U8_S32(const mlib_u8  *src,
-+                               mlib_s32       slb,
-+                               mlib_s32       *dst,
-+                               mlib_s32       dlb,
-+                               mlib_s32       xsize,
-+                               mlib_s32       ysize,
-+                               mlib_s32       csize,
-+                               const mlib_s32 **table)
-+{
-+
-+  if (xsize * csize < 7) {
-+    MLIB_C_IMAGELOOKUP(mlib_s32, mlib_u8, table);
-+  }
-+  else if (csize == 1) {
-+    mlib_s32 i, j;
-+
-+    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
-+      mlib_u32 *sa;
-+      mlib_u32 *tab = (mlib_u32 *) table[0];
-+      mlib_u32 s0, t0, t1, t2, t3;
-+      mlib_s32 off;
-+      mlib_s32 size = xsize;
-+      mlib_u32 *dp = (mlib_u32 *) dst;
-+      mlib_u8 *sp = (void *)src;
-+
-+      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
-+
-+      for (i = 0; i < off; i++, sp++) {
-+        *dp++ = tab[sp[0]];
-+        size--;
-+      }
-+
-+      sa = (mlib_u32 *) sp;
-+
-+      s0 = sa[0];
-+      sa++;
-+
-+#ifdef __SUNPRO_C
-+#pragma pipeloop(0)
-+#endif /* __SUNPRO_C */
-+      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
-+        READ_U8_S32(tab, tab, tab, tab);
-+        s0 = sa[0];
-+        dp[0] = t0;
-+        dp[1] = t1;
-+        dp[2] = t2;
-+        dp[3] = t3;
-+      }
-+
-+      READ_U8_S32(tab, tab, tab, tab);
-+      dp[0] = t0;
-+      dp[1] = t1;
-+      dp[2] = t2;
-+      dp[3] = t3;
-+      dp += 4;
-+      sp = (mlib_u8 *) sa;
-+      i += 4;
-+      for (; i < size; i++, dp++, sp++)
-+        dp[0] = tab[sp[0]];
-+    }
-+
-+  }
-+  else if (csize == 2) {
-+    mlib_s32 i, j;
-+
-+    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
-+      mlib_u32 *sa;
-+      mlib_u32 *tab0 = (mlib_u32 *) table[0];
-+      mlib_u32 *tab1 = (mlib_u32 *) table[1];
-+      mlib_u32 *tab;
-+      mlib_u32 s0, t0, t1, t2, t3;
-+      mlib_s32 off;
-+      mlib_s32 size = xsize * 2;
-+      mlib_u32 *dp = (mlib_u32 *) dst;
-+      mlib_u8 *sp = (void *)src;
-+
-+      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
-+
-+      for (i = 0; i < off - 1; i += 2, sp += 2) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+        size -= 2;
-+      }
-+
-+      if ((off & 1) != 0) {
-+        *dp++ = tab0[*sp];
-+        size--;
-+        sp++;
-+        tab = tab0;
-+        tab0 = tab1;
-+        tab1 = tab;
-+      }
-+
-+      sa = (mlib_u32 *) sp;
-+
-+      s0 = sa[0];
-+      sa++;
-+
-+#ifdef __SUNPRO_C
-+#pragma pipeloop(0)
-+#endif /* __SUNPRO_C */
-+      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
-+        READ_U8_S32(tab0, tab1, tab0, tab1);
-+        s0 = sa[0];
-+        dp[0] = t0;
-+        dp[1] = t1;
-+        dp[2] = t2;
-+        dp[3] = t3;
-+      }
-+
-+      READ_U8_S32(tab0, tab1, tab0, tab1);
-+      dp[0] = t0;
-+      dp[1] = t1;
-+      dp[2] = t2;
-+      dp[3] = t3;
-+      dp += 4;
-+      sp = (mlib_u8 *) sa;
-+      i += 4;
-+
-+      for (; i < size - 1; i += 2, sp += 2) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+      }
-+
-+      if (i < size)
-+        *dp = tab0[(*sp)];
-+    }
-+
-+  }
-+  else if (csize == 3) {
-+    mlib_s32 i, j;
-+
-+    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
-+      mlib_u32 *sa;
-+      mlib_u32 *tab0 = (mlib_u32 *) table[0];
-+      mlib_u32 *tab1 = (mlib_u32 *) table[1];
-+      mlib_u32 *tab2 = (mlib_u32 *) table[2];
-+      mlib_u32 *tab;
-+      mlib_u32 s0, t0, t1, t2, t3;
-+      mlib_s32 off;
-+      mlib_s32 size = xsize * 3;
-+      mlib_u32 *dp = (mlib_u32 *) dst;
-+      mlib_u8 *sp = (void *)src;
-+
-+      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
-+
-+      if (off == 1) {
-+        *dp++ = tab0[(*sp)];
-+        tab = tab0;
-+        tab0 = tab1;
-+        tab1 = tab2;
-+        tab2 = tab;
-+        size--;
-+        sp++;
-+      }
-+      else if (off == 2) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+        tab = tab2;
-+        tab2 = tab1;
-+        tab1 = tab0;
-+        tab0 = tab;
-+        size -= 2;
-+        sp += 2;
-+      }
-+      else if (off == 3) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+        *dp++ = tab2[sp[2]];
-+        size -= 3;
-+        sp += 3;
-+      }
-+
-+      sa = (mlib_u32 *) sp;
-+
-+      s0 = sa[0];
-+      sa++;
-+
-+#ifdef __SUNPRO_C
-+#pragma pipeloop(0)
-+#endif /* __SUNPRO_C */
-+      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
-+        READ_U8_S32(tab0, tab1, tab2, tab0);
-+        tab = tab0;
-+        tab0 = tab1;
-+        tab1 = tab2;
-+        tab2 = tab;
-+        s0 = sa[0];
-+        dp[0] = t0;
-+        dp[1] = t1;
-+        dp[2] = t2;
-+        dp[3] = t3;
-+      }
-+
-+      READ_U8_S32(tab0, tab1, tab2, tab0);
-+      dp[0] = t0;
-+      dp[1] = t1;
-+      dp[2] = t2;
-+      dp[3] = t3;
-+      dp += 4;
-+      sp = (mlib_u8 *) sa;
-+      i += 4;
-+
-+      if (i < size) {
-+        *dp++ = tab1[(*sp)];
-+        i++;
-+        sp++;
-+      }
-+
-+      if (i < size) {
-+        *dp++ = tab2[(*sp)];
-+        i++;
-+        sp++;
-+      }
-+
-+      if (i < size) {
-+        *dp = tab0[(*sp)];
-+      }
-+    }
-+
-+  }
-+  else if (csize == 4) {
-+    mlib_s32 i, j;
-+
-+    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
-+      mlib_u32 *sa;
-+      mlib_u32 *tab0 = (mlib_u32 *) table[0];
-+      mlib_u32 *tab1 = (mlib_u32 *) table[1];
-+      mlib_u32 *tab2 = (mlib_u32 *) table[2];
-+      mlib_u32 *tab3 = (mlib_u32 *) table[3];
-+      mlib_u32 *tab;
-+      mlib_u32 s0, t0, t1, t2, t3;
-+      mlib_s32 off;
-+      mlib_s32 size = xsize * 4;
-+      mlib_u32 *dp = (mlib_u32 *) dst;
-+      mlib_u8 *sp = (void *)src;
-+
-+      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
-+
-+      if (off == 1) {
-+        *dp++ = tab0[(*sp)];
-+        tab = tab0;
-+        tab0 = tab1;
-+        tab1 = tab2;
-+        tab2 = tab3;
-+        tab3 = tab;
-+        size--;
-+        sp++;
-+      }
-+      else if (off == 2) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+        tab = tab0;
-+        tab0 = tab2;
-+        tab2 = tab;
-+        tab = tab1;
-+        tab1 = tab3;
-+        tab3 = tab;
-+        size -= 2;
-+        sp += 2;
-+      }
-+      else if (off == 3) {
-+        *dp++ = tab0[sp[0]];
-+        *dp++ = tab1[sp[1]];
-+        *dp++ = tab2[sp[2]];
-+        tab = tab3;
-+        tab3 = tab2;
-+        tab2 = tab1;
-+        tab1 = tab0;
-+        tab0 = tab;
-+        size -= 3;
-+        sp += 3;
-+      }
-+
-+      sa = (mlib_u32 *) sp;
-+
-       s0 = sa[0];
-       sa++;
  
 @@ -1852,21 +1852,21 @@
      s0 = tab0[0];
@@ -15783,8 +14808,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -27,9 +27,6 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -15795,8 +14820,8 @@
  #include <mlib_types.h>
  #include <mlib_status.h>
  #include <mlib_sys.h>
---- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -29,7 +29,7 @@
  #ifdef MACOSX
  #include <unistd.h>
@@ -15816,8 +14841,8 @@
  #else
    return (void *) memalign(8, size);
  #endif /* _MSC_VER */
---- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -136,7 +136,7 @@
  #define U_CAPI extern "C"
  
@@ -15827,8 +14852,8 @@
          #define U_IS_BIG_ENDIAN 0
      #endif
  #endif
---- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -182,7 +182,7 @@
          return 0L;
      }
@@ -15838,8 +14863,8 @@
      /* Reversing data packed into int for LE archs */
      if (isInIntPacked) {
          inFormatter ^= DOSWAP_SH(1);
---- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -27,6 +27,7 @@
  #include <jni.h>
  #include "management.h"
@@ -15848,8 +14873,8 @@
  
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
---- ./jdk/src/solaris/back/util_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/back/util_md.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/back/util_md.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/back/util_md.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -51,7 +51,7 @@
  
  /* On little endian machines, convert java big endian numbers. */
@@ -15859,8 +14884,8 @@
  
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
---- ./jdk/src/solaris/bin/ergo_i586.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/ergo_i586.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/bin/ergo_i586.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/bin/ergo_i586.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -106,7 +106,7 @@
  
  #endif /* __solaris__ */
@@ -15879,8 +14904,8 @@
  
  /*
   * Routines shared by solaris-i586 and linux-i586.
---- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -15972,8 +14997,8 @@
  }
  
  int
---- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -26,17 +26,26 @@
  #ifndef JAVA_MD_SOLINUX_H
  #define JAVA_MD_SOLINUX_H
@@ -16014,8 +15039,8 @@
  #else /* !__solaris__, i.e. Linux, AIX,.. */
  static const char *system_dir   = "/usr/java";
  static const char *user_dir     = "/java";
---- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -82,6 +82,8 @@
  
          LINUX(LaunchMechanism.VFORK, LaunchMechanism.FORK),
@@ -16047,7 +15072,7 @@
              if (osName.equals("SunOS")) { return SOLARIS; }
              if (osName.equals("AIX")) { return AIX; }
  
-@@ -273,6 +277,7 @@
+@@ -272,6 +276,7 @@
      void initStreams(int[] fds) throws IOException {
          switch (platform) {
              case LINUX:
@@ -16055,7 +15080,7 @@
              case BSD:
                  stdin = (fds[0] == -1) ?
                          ProcessBuilder.NullOutputStream.INSTANCE :
-@@ -431,6 +436,7 @@
+@@ -430,6 +435,7 @@
      private void destroy(boolean force) {
          switch (platform) {
              case LINUX:
@@ -16063,8 +15088,8 @@
              case BSD:
              case AIX:
                  // There is a risk that pid will be recycled, causing us to
---- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -234,7 +234,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -16092,8 +15117,8 @@
               (!mFontConfig.foundOsSpecificFile() ||
                !mFontConfig.fontFilesArePresent()) ||
               (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
---- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Sun Jul 24 16:26:51 2016 -0700
 @@ -26,134 +26,134 @@
  
  # Version
@@ -16377,8 +15402,8 @@
 +filename.NanumGothic_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumGothicBold.ttf
 +filename.NanumMyeongjo=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjo.ttf
 +filename.NanumMyeongjo_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjoBold.ttf
---- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -52,7 +52,7 @@
                      } else if (os.startsWith("SunOS")) {
                          defaultLower = 32768;
@@ -16388,8 +15413,8 @@
                          defaultLower = 49152;
                          defaultUpper = 65535;
                      } else if (os.startsWith("AIX")) {
---- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -66,7 +66,7 @@
              return createProvider("sun.nio.ch.SolarisAsynchronousChannelProvider");
          if (osname.equals("Linux"))
@@ -16399,8 +15424,8 @@
              return createProvider("sun.nio.ch.BsdAsynchronousChannelProvider");
          if (osname.equals("AIX"))
              return createProvider("sun.nio.ch.AixAsynchronousChannelProvider");
---- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -25,10 +25,14 @@
  
  package sun.nio.fs;
@@ -16434,8 +15459,8 @@
 +                     new MagicFileTypeDetector());
 +    }
  }
---- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -61,6 +61,8 @@
              return createProvider("sun.nio.fs.SolarisFileSystemProvider");
          if (osname.equals("Linux"))
@@ -16445,8 +15470,8 @@
          if (osname.contains("OS X"))
              return createProvider("sun.nio.fs.MacOSXFileSystemProvider");
          if (osname.equals("AIX"))
---- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -161,6 +161,7 @@
  
      static boolean isBSD() {
@@ -16470,8 +15495,8 @@
          "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
      };
  
---- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Sun Jul 24 16:26:51 2016 -0700
 @@ -273,7 +273,7 @@
              try {
                  b = s.getBytes("UTF-8");
@@ -16481,8 +15506,8 @@
              }
              BsdVirtualMachine.write(fd, b, 0, b.length);
          }
---- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -672,6 +672,7 @@
              return -1;
          }
@@ -16499,8 +15524,8 @@
      } else if (err == -EAGAIN) {
          TRACE0("xrun_recovery: EAGAIN try again flag.\n");
          return 0;
---- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -140,7 +140,7 @@
                                        (float) ((int) sr->samp_rates[s]),
                                        DAUDIO_PCM, /* encoding - let's only do PCM */
@@ -16510,8 +15535,8 @@
                                        FALSE /* little endian */
  #else
                                        (bits[b] > 8)?TRUE:FALSE  /* big endian */
---- ./jdk/src/solaris/native/common/jni_util_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/common/jni_util_md.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/common/jni_util_md.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/common/jni_util_md.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -28,6 +28,7 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -16520,8 +15545,8 @@
  
  jstring nativeNewStringPlatform(JNIEnv *env, const char *str) {
      return NULL;
---- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -151,7 +151,7 @@
      lc = setlocale(cat, NULL);
  #endif
@@ -16556,8 +15581,8 @@
  
      /* user properties */
      {
---- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -36,20 +36,13 @@
  #include <stdlib.h>
  #include <ctype.h>
@@ -16598,8 +15623,8 @@
      error = getaddrinfo(hostname, NULL, &hints, &res);
  
      if (error) {
---- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -33,7 +33,7 @@
  #include <strings.h>
  #include <stdlib.h>
@@ -16641,8 +15666,8 @@
  #ifdef AF_INET6
      /* Try once, with our static buffer. */
      memset(&hints, 0, sizeof(hints));
---- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -67,14 +67,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
@@ -16665,8 +15690,8 @@
  
  #include "jvm.h"
  #include "jni_util.h"
---- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -2210,7 +2210,7 @@
                  }
              }
@@ -16676,8 +15701,8 @@
              if (family == AF_INET6 && index == 0) {
                  index = getDefaultScopeID(env);
              }
---- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/bsd_close.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -316,11 +316,8 @@
  }
  
@@ -16775,8 +15800,8 @@
      }
 +#endif
  }
---- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -45,6 +45,10 @@
  #endif
  #endif
@@ -16788,7 +15813,7 @@
  #ifdef __solaris__
  #include <sys/sockio.h>
  #include <stropts.h>
-@@ -87,7 +91,7 @@
+@@ -80,7 +84,7 @@
  
  void setDefaultScopeID(JNIEnv *env, struct sockaddr *him)
  {
@@ -16797,8 +15822,8 @@
      static jclass ni_class = NULL;
      static jfieldID ni_defaultIndexID;
      if (ni_class == NULL) {
---- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -47,7 +47,7 @@
     close subroutine does not return until the select call returns.
     ...
@@ -16808,8 +15833,8 @@
  extern int NET_Timeout(int s, long timeout);
  extern int NET_Read(int s, void* buf, size_t len);
  extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
---- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -56,7 +56,11 @@
  #endif
  
@@ -16873,8 +15898,8 @@
  }
 -#endif /* MACOSX */
 +#endif /* _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -255,7 +255,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -16884,8 +15909,8 @@
              if (!strcmp(family, "lucidasans")) {
                  family = "lucida";
              }
---- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -121,7 +121,7 @@
   */
  
@@ -16970,8 +15995,8 @@
  #endif /* HEADLESS */
      return point;
  }
---- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -52,7 +52,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -17191,8 +16216,8 @@
      AWT_LOCK();
      adjustStatusWindow(window);
      AWT_UNLOCK();
---- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -45,7 +45,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -17202,8 +16227,8 @@
  #include <sys/socket.h>
  #endif
  
---- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/extutil.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -17219,8 +16244,8 @@
  
 -#endif /* __linux__ || MACOSX */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -23,9 +23,9 @@
   * questions.
   */
@@ -17309,8 +16334,8 @@
                  && (strcmp((char*)fontformat, "Type 1") != 0)
  #endif
               ) {
---- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -28,11 +28,11 @@
  #include <sys/types.h>
  
@@ -17326,8 +16351,8 @@
  
  typedef unsigned char   jubyte;
  typedef unsigned short  jushort;
---- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -63,9 +63,6 @@
   *    MLIB_EDGE_SRC_PADDED
   */
@@ -17432,8 +16457,8 @@
          LOGIC(da[0], dtmp, dtmp1, |);
        }
        else {                                               /* aligned */
---- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -804,7 +804,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -17444,7 +16469,7 @@
  #else
  #   define ULTRA_CHIP   "sun4u"
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Tue Jun 14 11:51:15 2016 -0700
++++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -0,0 +1,42 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -17488,8 +16513,8 @@
 +{
 +    return (jdouble) -1;
 +}
---- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -56,6 +56,9 @@
  #include <limits.h>
  #include <stdlib.h>
@@ -17644,8 +16669,8 @@
          return -1;
      }
  
---- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/net/portconfig.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -67,6 +67,24 @@
          range->lower = net_getParam("/dev/tcp", "tcp_smallest_anon_port");
          return 0;
@@ -17671,8 +16696,8 @@
  #elif defined(_ALLBSD_SOURCE)
      {
          int ret;
---- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Sun Jul 24 16:26:51 2016 -0700
 @@ -67,7 +67,7 @@
  
  
@@ -17721,8 +16746,8 @@
  jboolean loadSocketExtensionFuncs(JNIEnv* env);
  
  #endif /* !SUN_NIO_CH_SCTP_H */
---- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -58,6 +58,7 @@
   */
  jboolean loadSocketExtensionFuncs
@@ -17739,8 +16764,8 @@
  
      funcsLoaded = JNI_TRUE;
      return JNI_TRUE;
---- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -31,6 +31,12 @@
  #include <dlfcn.h>
  #include <string.h>
@@ -17763,8 +16788,8 @@
          if (magic_handle == NULL) {
              return JNI_FALSE;
          }
---- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -54,7 +54,7 @@
      }
  
@@ -17774,8 +16799,8 @@
      void *hModule = dlopen(libName, RTLD_LAZY);
  #else
      void *hModule = dlopen(libName, RTLD_NOLOAD);
---- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -37,7 +37,9 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -17786,8 +16811,8 @@
  #include <sys/un.h>
  #include <fcntl.h>
  
---- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Sun Jul 24 16:26:51 2016 -0700
 @@ -886,7 +886,7 @@
  {
      KeySym originalKeysym = *keysym;
@@ -17797,8 +16822,8 @@
      /* The following code on Linux will cause the keypad keys
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
---- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Jun 14 11:51:15 2016 -0700
+--- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Jun 21 18:44:47 2016 -0700
++++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Sun Jul 24 16:26:51 2016 -0700
 @@ -308,7 +308,7 @@
                                        DAUDIO_PCM,
                                        (bitsArray[bitIndex]==8)?FALSE:TRUE,  /* signed */
