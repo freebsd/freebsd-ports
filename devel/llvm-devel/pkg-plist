@@ -2077,7 +2077,7 @@ llvm-devel/include/llvm/Transforms/Vectorize/SLPVectorizer.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/lsan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/msan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface_atomic.h
-llvm-devel/include/xray/xray_interface.h
+%%COMPILER_RT%%llvm-devel/include/xray/xray_interface.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
 %%GOLD%%llvm-devel/lib/LLVMgold.so
