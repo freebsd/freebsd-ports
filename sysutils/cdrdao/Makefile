@@ -87,6 +87,9 @@ post-patch:
 .for i in include/schily.h libschily/fexec.c
 	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/scsilib/${i}
 .endfor
+	@${REINPLACE_CMD} -e 's|int	getline|int	get_line|g' ${WRKSRC}/scsilib/include/schily.h
+	@${REINPLACE_CMD} -e 's|(getline|(get_line|g' ${WRKSRC}/scsilib/libscg/scsitransp.c
+	@${REINPLACE_CMD} -e 's|^getline|get_line|g' ${WRKSRC}/scsilib/libschily/stdio/fgetline.c
 .if ${PORTNAME} == "gcdmaster"
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
