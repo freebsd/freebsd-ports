@@ -1,0 +1,36 @@
+--- lib/Makefile.orig	2016-07-16 18:17:53 UTC
++++ lib/Makefile
+@@ -99,7 +99,7 @@ clean:
+ 
+ #------------------------------------------------------------------------
+ #make install is validated only for Linux, OSX, kFreeBSD and Hurd targets
+-ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU))
++ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU FreeBSD DragonFly))
+ 
+ libzstd.pc:
+ libzstd.pc: libzstd.pc.in
+@@ -111,15 +111,15 @@ libzstd.pc: libzstd.pc.in
+              $< >$@
+ 
+ install: libzstd libzstd.pc
+-	@install -d -m 755 $(DESTDIR)$(LIBDIR)/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
+-	@install -m 755 libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_VER)
+-	@cp -a libzstd.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)
+-	@cp -a libzstd.$(SHARED_EXT) $(DESTDIR)$(LIBDIR)
+-	@cp -a libzstd.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
+-	@install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
+-	@install -m 644 common/zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
+-	@install -m 644 common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h
+-	@install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
++	@install -d -m 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
++	@$(BSD_INSTALL_LIB) libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_VER)
++	@ln -sf libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR)
++	@ln -sf libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT)
++	@$(BSD_INSTALL_DATA) libzstd.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
++	@$(BSD_INSTALL_LIB) libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
++	@$(BSD_INSTALL_DATA) common/zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
++	@$(BSD_INSTALL_DATA) common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h
++	@$(BSD_INSTALL_DATA) dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
+ 	@echo zstd static and shared library installed
+ 
+ uninstall:
