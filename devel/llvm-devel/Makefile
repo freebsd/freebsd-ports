@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -158,6 +159,10 @@ COMMANDS+=	c-index-test \
 MAN1SRCS+=	clang.1 \
 		scan-build.1
 CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
+.endif
+
+.if ${PORT_OPTIONS:MCOMPILER_RT}
+COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -373,7 +378,7 @@ build-plist:
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /omp.h|${EXTRAS_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
-	    if ($$0 ~ /asan_blacklist.txt|sanitizer/) \
+	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
