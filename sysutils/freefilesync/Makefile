@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freefilesync
-PORTVERSION=	8.2
+PORTVERSION=	8.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.freefilesync.org/download/ \
 		http://www.freefilesync.org/archive/
@@ -11,12 +11,15 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Backup software to synchronize files and folders
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnotify.so:devel/libnotify
+
+FETCH_ARGS=	--user-agent=firefox
 
 WRKSRC=		${WRKDIR}/FreeFileSync/Source
 DOS2UNIX_WRKSRC=${WRKDIR}
