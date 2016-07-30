@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		LOCAL/ehaupt
@@ -15,10 +14,12 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 USES=		gettext iconv gmake pkgconfig tar:bzip2 desktop-file-utils \
 		libtool
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -54,11 +55,16 @@ COMPFACE_CONFIGURE_ENABLE=	compface
 
 CURL_RUN_DEPENDS=		curl:ftp/curl
 
-GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
+GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme \
+				libgpg-error.so:security/libgpg-error \
+				libassuan.so:security/libassuan
 GPGME_RUN_DEPENDS=		gpg:security/gnupg
 GPGME_CONFIGURE_ENABLE=		gpgme
 
-GTKSPELL_LIB_DEPENDS=		libgtkspell.so:textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=		libgtkspell.so:textproc/gtkspell \
+				libenchant.so:textproc/enchant \
+				libdbus-glib-1.so:devel/dbus-glib \
+				libdbus-1.so:devel/dbus
 GTKSPELL_CONFIGURE_ENABLE=	gtkspell
 
 HIDE_OSSIG_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main.c
