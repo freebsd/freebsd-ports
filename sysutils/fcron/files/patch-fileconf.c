@@ -1,6 +1,6 @@
 We don't need to fflush the file, since it is opened read-only.
 
---- fileconf.c.orig	2014-05-10 17:03:59 UTC
+--- fileconf.c.orig	2016-06-26 17:42:39 UTC
 +++ fileconf.c
 @@ -278,10 +278,6 @@ read_file(char *filename, int fd)
      cf->cf_next = file_base;
@@ -11,5 +11,5 @@ We don't need to fflush the file, since it is opened read-only.
 -        error_e("could not fflush() file_name");
 -
      Free_safe(default_line.cl_runas);
+     Free_safe(default_line.cl_mailfrom);
      Free_safe(default_line.cl_mailto);
-     Free_safe(default_line.cl_tz);
