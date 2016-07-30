@@ -187,6 +187,7 @@
     SUBDIR += ezxml
     SUBDIR += fa-aspell
     SUBDIR += fcitx-m17n
+    SUBDIR += fcitx-qt5
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
