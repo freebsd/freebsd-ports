@@ -1,0 +1,12 @@
+Zstd, short for Zstandard, is a real-time compression algorithm providing
+high compression ratios.  It offers a very wide range of compression vs.
+speed trade-offs while being backed by a very fast decoder.  It offers
+a special mode for small data called "dictionary compression" and it can
+create dictionaries from any sample set.  Zstd is BSD-licensed.
+
+Using Izbench on the Silesia compression corpus, zstd ranked at the
+top with a compression ratio of 2.877, a compression rate of 325 Mb/s,
+and a decompression rate of 325.  Zlib followed at 2.730, 95 Mb/s (C)
+and 360 Mb/s (D).  See WWW page for the full benchmark results.
+
+WWW: http://cyan4973.github.io/zstd/
