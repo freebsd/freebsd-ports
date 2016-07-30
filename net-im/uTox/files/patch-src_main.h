@@ -1,6 +1,6 @@
---- src/main.h.orig	2016-05-13 18:05:27.586256000 +0300
-+++ src/main.h	2016-05-13 18:06:21.738883000 +0300
-@@ -74,7 +74,7 @@
+--- src/main.h.orig	2016-07-26 23:53:18 UTC
++++ src/main.h
+@@ -45,7 +45,7 @@
  #define volatile(x) (*((volatile typeof(x)*)&x))
  #endif */
  
