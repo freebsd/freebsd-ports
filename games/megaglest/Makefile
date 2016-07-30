@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/docs/gnu_gpl_3.0.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
-		libxerces-c.so:textproc/xerces-c3 \
 		libftgl.so:graphics/ftgl \
-		libvorbis.so:audio/libvorbis
+		libvorbis.so:audio/libvorbis \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libminiupnpc.so:net/miniupnpc
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
 		${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
 RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
@@ -30,7 +32,7 @@ USES=		cmake compiler:c++11-lib display:build dos2unix jpeg lua \
 		openal:al,alut pkgconfig
 USE_GL=		glew gl glu
 USE_SDL=	sdl2
-USE_WX=		3.0
+USE_XORG=	sm ice x11 xext
 USE_CXXSTD=	c++11
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -40,6 +42,16 @@ OPTIONS_DEFINE=	EDITOR DOCS VIEWER
 OPTIONS_SUB=	yes
 EDITOR_DESC=	Install MegaGlest Editor
 VIEWER_DESC=	Install Megaglest G3D viewer
+
+EDITOR_CMAKE_ON=	-DBUILD_MEGAGLEST_MAP_EDITOR=On
+EDITOR_CMAKE_OFF=	-DBUILD_MEGAGLEST_MAP_EDITOR=Off
+EDITOR_USE=		WX=3.0
+
+VIEWER_CMAKE_ON=	-DBUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS=On \
+					-BUILD_MEGAGLEST_MODEL_VIEWER=On
+VIEWER_CMAKE_OFF=	-DBUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS=Off \
+					-DBUILD_MEGAGLEST_MODEL_VIEWER=Off
+VIEWER_USE=		WX=3.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/include/lua51,${LUA_INCDIR},g ; \
