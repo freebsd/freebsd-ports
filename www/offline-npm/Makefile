@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	offline-npm
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -15,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	npm>0:www/npm
 RUN_DEPENDS=	npm>0:www/npm
+
+BROKEN=	Support for this project is broken with npm >= v3.x
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	commenthol
