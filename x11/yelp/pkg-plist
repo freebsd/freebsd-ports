@@ -26,6 +26,7 @@ lib/yelp/libyelpcommon.a
 lib/yelp/libyelpcommon.so
 lib/yelp/web-extensions/libyelpwebextension.a
 lib/yelp/web-extensions/libyelpwebextension.so
+libexec/yelp-groff
 share/applications/yelp.desktop
 share/gtk-doc/html/libyelp/YelpDocument.html
 share/gtk-doc/html/libyelp/YelpSettings.html
