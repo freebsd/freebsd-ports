@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysha3
-PORTVERSION=	0.3
-PORTREVISION=	1
+DISTVERSION=	1.0b1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,16 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	SHA-3 (Keccak) for Python
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Actually Python 2.7,3.4+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_sha3.so
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
