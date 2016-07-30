@@ -3,6 +3,7 @@ include/libfilezilla/event.hpp
 include/libfilezilla/event_handler.hpp
 include/libfilezilla/event_loop.hpp
 include/libfilezilla/file.hpp
+include/libfilezilla/format.hpp
 include/libfilezilla/glue/wx.hpp
 include/libfilezilla/iputils.hpp
 include/libfilezilla/libfilezilla.hpp
