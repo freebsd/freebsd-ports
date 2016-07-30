@@ -44,6 +44,14 @@ post-patch:
 .for i in include/schily.h libschily/fexec.c libschily/libschily-mapvers
 	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/${i}
 .endfor
+	@${REINPLACE_CMD} -e 's|int	getline|int	get_line|g' ${WRKSRC}/include/schily.h
+	@${REINPLACE_CMD} -e 's|(getline(|(get_line(|g' ${WRKSRC}/sformat/io.c \
+		${WRKSRC}/libscg/scsitransp.c
+	@${REINPLACE_CMD} -e 's| getline(| get_line(|g' ${WRKSRC}/sformat/io.c \
+		${WRKSRC}/sformat/defect.c
+	@${REINPLACE_CMD} -e 's|^getline|get_line|g' ${WRKSRC}/libschily/stdio/fgetline.c
+	@${REINPLACE_CMD} -e 's|)getline|)get_line|g' ${WRKSRC}/sformat/diskfmt.c
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${SFMTTARGET}/sformat \
