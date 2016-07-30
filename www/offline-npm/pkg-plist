@@ -1,5 +1,6 @@
 bin/offline-npm
 lib/node_modules/.bin/offline-npm
+lib/node_modules/offline-npm/BROKEN.md
 lib/node_modules/offline-npm/LICENSE
 lib/node_modules/offline-npm/README.md
 lib/node_modules/offline-npm/TUTORIAL.md
