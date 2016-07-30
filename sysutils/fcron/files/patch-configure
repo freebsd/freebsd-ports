@@ -1,6 +1,6 @@
---- configure.orig	2014-07-06 10:05:56 UTC
+--- configure.orig	2016-06-26 17:46:37 UTC
 +++ configure
-@@ -5153,7 +5153,7 @@ if ${ax_cv_lib_readline+:} false; then :
+@@ -5164,7 +5164,7 @@ if ${ax_cv_lib_readline+:} false; then :
  else
  
      ORIG_LIBS="$LIBS"
