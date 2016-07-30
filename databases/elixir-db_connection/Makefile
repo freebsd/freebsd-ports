@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	db_connection
-DISTVERSION=	1.0.0-rc.3
+DISTVERSION=	1.0.0-rc.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
