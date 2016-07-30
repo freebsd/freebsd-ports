@@ -2,6 +2,7 @@
 
 PORTNAME=	dnsviz
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	dns
 
@@ -20,5 +21,8 @@ USE_GITHUB=	yes
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 
 BROKEN_FreeBSD_9=	dependency py-m2crypto requires OpenSSL 1.0.1e+.
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|share/man/man1|man/man1|" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
