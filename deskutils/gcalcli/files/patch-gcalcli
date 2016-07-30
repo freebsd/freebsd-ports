@@ -1,0 +1,33 @@
+# ERROR: Missing module - cannot import name run (revisit #204)
+# https://github.com/insanum/gcalcli/issues/229
+
+--- gcalcli.orig	2014-12-17 01:50:24 UTC
++++ gcalcli
+@@ -185,7 +185,8 @@ try:
+     from apiclient.discovery import build
+     from oauth2client.file import Storage
+     from oauth2client.client import OAuth2WebServerFlow
+-    from oauth2client.tools import run
++    from oauth2client.tools import run_flow
++    from oauth2client.tools import argparser
+ except ImportError as e:
+     print "ERROR: Missing module - %s" % e.args[0]
+     sys.exit(1)
+@@ -627,14 +628,15 @@ class gcalcli:
+             credentials = storage.get()
+ 
+             if credentials is None or credentials.invalid:
+-                credentials = run(
++		args, unknown = argparser.parse_known_args(sys.argv)
++                credentials = run_flow(
+                     OAuth2WebServerFlow(
+                         client_id=self.client_id,
+                         client_secret=self.client_secret,
+                         scope=['https://www.googleapis.com/auth/calendar',
+                                'https://www.googleapis.com/auth/urlshortener'],
+                         user_agent=__program__+'/'+__version__),
+-                    storage)
++                    storage, args)
+ 
+             self.authHttp = credentials.authorize(httplib2.Http())
+ 
