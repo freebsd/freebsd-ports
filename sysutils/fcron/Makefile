@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcron
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fcron.free.fr/archives/ \
 		ftp://ftp.seul.org/pub/fcron/

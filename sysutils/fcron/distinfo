@@ -1,2 +1,3 @@
-SHA256 (fcron-3.2.0.src.tar.gz) = eb13b86ed96805d117e19847f1da30b834f1990f7ef4c38f5007234d44679564
-SIZE (fcron-3.2.0.src.tar.gz) = 595408
+TIMESTAMP = 1469650893
+SHA256 (fcron-3.2.1.src.tar.gz) = 6114d0a39a32853669c0c0ba0f96d92920e7cabca3ff1edf37d25750403e5f6a
+SIZE (fcron-3.2.1.src.tar.gz) = 601142
