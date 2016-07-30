@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	13.1.20160602
-CATEGORIES=	devel
+PORTVERSION=	13.1.20160702
+CATEGORIES=	devel java
 MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce${PORTVERSION:R}/${PORTVERSION:E}/
 DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
 
@@ -31,5 +31,10 @@ post-patch:
 do-install:
 	@${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}/${EXTRACT_NAME} && ${COPYTREE_SHARE} \* ${INSTALLDIR} && ${CP} -R .install4j ${INSTALLDIR}
+
+post-install:
+	@${CHMOD} +w ${STAGEDIR}${PREFIX}/visualparadigm/Application/bin/vp_windows/ci
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/visualparadigm/Application/bin/vp_windows/ci
+	@${CHMOD} -w ${STAGEDIR}${PREFIX}/visualparadigm/Application/bin/vp_windows/ci
 
 .include <bsd.port.mk>
