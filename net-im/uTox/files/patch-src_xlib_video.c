@@ -1,6 +1,6 @@
---- src/xlib/video.c.orig	2016-05-13 18:12:01.175591000 +0300
-+++ src/xlib/video.c	2016-05-13 18:12:27.944571000 +0300
-@@ -152,6 +152,9 @@
+--- src/xlib/video.c.orig	2016-07-26 23:53:18 UTC
++++ src/xlib/video.c
+@@ -152,6 +152,9 @@ _Bool native_video_init(void *handle) {
      if(isdesktop(handle)) {
          utox_v4l_fd = -1;
  
