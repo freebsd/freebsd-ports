@@ -897,12 +897,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_redis2}
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.1.7
+NGINX_RTMP_VERSION=	1.1.8
 GH_ACCOUNT+=	arut:rtmp
 GH_PROJECT+=	nginx-rtmp-module:rtmp
 GH_TAGNAME+=	v${NGINX_RTMP_VERSION}:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_rtmp_core_module.c
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
