@@ -539,6 +539,7 @@
     SUBDIR += py-authres
     SUBDIR += py-cyruslib
     SUBDIR += py-dkimpy
+    SUBDIR += py-fuglu
     SUBDIR += py-libgmail
     SUBDIR += py-milter
     SUBDIR += py-notmuch
