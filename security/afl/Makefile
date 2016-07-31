@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.19
+PORTVERSION=	2.22
 DISTVERSIONSUFFIX=	b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
