@@ -1,0 +1,10 @@
+--- wx-scintilla/src/scintilla/src/Editor.cxx.orig	2016-07-10 12:18:20.419137000 +0200
++++ wx-scintilla/src/scintilla/src/Editor.cxx	2016-07-10 12:18:29.917664000 +0200
+@@ -16,6 +16,7 @@
+ #include <map>
+ #include <algorithm>
+ #include <memory>
++#include <cmath>
+ 
+ #include "Platform.h"
+ 
