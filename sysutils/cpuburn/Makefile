@@ -3,7 +3,7 @@
 
 PORTNAME=	cpuburn
 DISTVERSION=	1_4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://atarininja.org/distfiles/ \
@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 PORTDOCS=	README Design
 CPUS=		BX K6 K7 MMX P5 P6
 PLIST_FILES=	${CPUS:S+^+bin/burn+}
-USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
 
