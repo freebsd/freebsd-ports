@@ -6,6 +6,7 @@
 %%T%%/Welcome.html
 %%T%%/bin/ControlPanel
 %%T%%/bin/java
+@javavm %%T%%/bin/java
 %%T%%/bin/javaws
 %%T%%/bin/jcontrol
 %%T%%/bin/jjs
@@ -298,6 +299,4 @@
 %%T%%/plugin/desktop/sun_java.desktop
 %%T%%/plugin/desktop/sun_java.png
 %%T%%/release
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Oracle-JRE%%PORTVERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dir %%T%%/lib/applet
