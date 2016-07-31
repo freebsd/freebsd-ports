@@ -1,10 +1,10 @@
-TIMESTAMP = 1467919676
-SHA256 (aseprite-aseprite-v1.1.6_GH0.tar.gz) = 770c2d1a8b68264f10204d815c72df4e25de5e1aeb482348e6909b107048b3fd
-SIZE (aseprite-aseprite-v1.1.6_GH0.tar.gz) = 2576949
-SHA256 (aseprite-clip-8e92c5d_GH0.tar.gz) = 65cd36c5942fb23d4128ff31381a1170264655af8180a4e2f8c0aade489525bf
-SIZE (aseprite-clip-8e92c5d_GH0.tar.gz) = 10561
-SHA256 (aseprite-flic-da184cb_GH0.tar.gz) = 118f422957ea59121a14f0474471cfb09fcf62fe9834b9b683671e53fb675075
-SIZE (aseprite-flic-da184cb_GH0.tar.gz) = 6552
+TIMESTAMP = 1469961993
+SHA256 (aseprite-aseprite-v1.1.7_GH0.tar.gz) = 441f67342e97c31a43b24b44268a73874998f3c8660f9c151357497ed290743a
+SIZE (aseprite-aseprite-v1.1.7_GH0.tar.gz) = 2578676
+SHA256 (aseprite-clip-96ed960_GH0.tar.gz) = 9fc2e3f612290e44d194d2e63cdd2696f78ed0ff7403ef9a2954511325b746ac
+SIZE (aseprite-clip-96ed960_GH0.tar.gz) = 10667
+SHA256 (aseprite-flic-65a6072_GH0.tar.gz) = 659ccc01206e94b18246c0b1cb8dd0b6e27027c8adf774f69b1fd791549f2027
+SIZE (aseprite-flic-65a6072_GH0.tar.gz) = 6558
 SHA256 (aseprite-gtest-d63c625_GH0.tar.gz) = 9f8be975b8672f7e2e14053744bc9433aa8d0f613378ca1a9ab99ac87ba11a39
 SIZE (aseprite-gtest-d63c625_GH0.tar.gz) = 989187
 SHA256 (aseprite-simpleini-0687587_GH0.tar.gz) = 136c942b13809f3bd3f1ff3bdcc160039217a7006d052e5f005f38a0bd80174b
