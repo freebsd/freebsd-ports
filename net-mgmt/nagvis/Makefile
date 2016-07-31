@@ -1,6 +1,5 @@
 # Created by: Andrew 'derfi' Sidorov <derfi@vei.ru>
 # $FreeBSD$
-# head/net-mgmt/nagvis/Makefile 412348 2016-04-01 14:17:44Z mat
 
 PORTNAME=	nagvis
 PORTVERSION=	1.8.5
