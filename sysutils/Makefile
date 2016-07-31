@@ -536,6 +536,7 @@
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
+    SUBDIR += lr
     SUBDIR += lsof
     SUBDIR += ltrace
     SUBDIR += luckybackup
