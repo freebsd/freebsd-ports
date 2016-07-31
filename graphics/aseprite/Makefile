@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		aseprite
-PORTVERSION=		1.1.6
+PORTVERSION=		1.1.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=		graphics
 
@@ -29,8 +29,8 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USE_GITHUB=		yes
 GH_TUPLE=		aseprite:aseprite:${DISTVERSIONFULL}
-GH_TUPLE+=		aseprite:clip:8e92c5d:clip
-GH_TUPLE+=		aseprite:flic:da184cb:flic
+GH_TUPLE+=		aseprite:clip:96ed960:clip
+GH_TUPLE+=		aseprite:flic:65a6072:flic
 GH_TUPLE+=		aseprite:gtest:d63c625:gtest
 GH_TUPLE+=		aseprite:simpleini:0687587:simpleini
 GH_TUPLE+=		aseprite:duktape:0de771c:duk
