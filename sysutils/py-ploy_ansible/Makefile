@@ -3,6 +3,7 @@
 
 PORTNAME=	ploy_ansible
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +16,19 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX} \
 		${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}execnet>0:sysutils/py-execnet \
-		ansible>=1.8.0:sysutils/ansible
+		ansible1<2.0:sysutils/ansible1
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>0:devel/py-pytest-capturelog
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && \
+	${RM} tox.ini && \
+	${PYTHON_CMD} -m pytest -rsw ploy_ansible
 
 .include <bsd.port.mk>
