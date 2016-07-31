@@ -1,6 +1,6 @@
---- lib/Padre/Wx.pm.orig
+--- lib/Padre/Wx.pm.orig	2013-11-09 03:43:41 UTC
 +++ lib/Padre/Wx.pm
-@@ -67,6 +67,7 @@
+@@ -158,6 +158,7 @@ sub aui_pane_info {
  
  sub launch_browser {
  	require Padre::Task::LaunchDefaultBrowser;
