@@ -197,7 +197,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 	    ${STAGEDIR}${INSTALLDIR}/lib/security/cacerts
 .endif
-	@${ECHO} "@javawm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
+	@${ECHO} "@javavm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -type d -empty | ${SORT} -r | \
