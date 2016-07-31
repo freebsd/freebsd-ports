@@ -25,13 +25,11 @@
  
  ifdef GLIB_SUBST
    GLIB_SUBST_OBJ = ipod/glibsubst.o
-@@ -29,8 +29,8 @@ endif
- 
+@@ -30,7 +30,7 @@ endif
  all: $(TARGET)
  
--$(TARGET): aexcl_gui.o aexcl_play.o ipod_browser.o ../raop_play/aexcl_lib.o ipod/itunesdb.o $(GLIB_SUBST_OBJ)
+ $(TARGET): aexcl_gui.o aexcl_play.o ipod_browser.o ../raop_play/aexcl_lib.o ipod/itunesdb.o $(GLIB_SUBST_OBJ)
 -	$(CXX) -o $@  $^ -lfltk $(GLIB_LINK)
-+$(TARGET): aexcl_gui.o aexcl_play.o ipod_browser.o ../raop_play/aexcl_lib.o ipod/itunesdb.o ../rendezvous/getline.o $(GLIB_SUBST_OBJ)
 +	$(CXX) $(LDFLAGS) -o $@  $^ -lfltk $(GLIB_LINK)
  
  install:
