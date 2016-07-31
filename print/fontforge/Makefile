@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-PORTVERSION=	20150824
-PORTREVISION=	2
+PORTVERSION=	20160404
 CATEGORIES=	print
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	# Empty but needed because of the freetype distfile
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -21,17 +20,18 @@ LIB_DEPENDS=	libuninameslist.so:textproc/libuninameslist \
 		libgif.so:graphics/giflib \
 		libspiro.so:graphics/libspiro \
 		libfreetype.so:print/freetype2 \
-		libltdl.so:devel/libltdl
+		libltdl.so:devel/libltdl \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	yes
 
-USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv \
-		jpeg libtool pkgconfig python shared-mime-info shebangfix \
-		compiler
+USES=		autoreconf:build compiler desktop-file-utils execinfo gettext \
+		gmake iconv jpeg libtool pkgconfig python readline:port \
+		shared-mime-info shebangfix
 SHEBANG_FILES=	pycontrib/gdraw/__init__.py \
 		pycontrib/gdraw/gdraw.py
-USE_XORG=	ice x11 xi xkbui
-USE_GNOME=	glib20 gtk20 libxml2 pango
+USE_XORG=	ice sm x11 xi xkbui xft
+USE_GNOME=	cairo glib20 gtk20 libxml2 pango
 
 CONFIGURE_ARGS=	--enable-tile-path --enable-gtk2-use
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -50,7 +50,6 @@ FREETYPE_DESC=	Include freetype's internal debugger
 
 PYTHON_CONFIGURE_ENABLE=	python-scripting python-extension
 
-CAIRO_USE=	GNOME=cairo
 CAIRO_CONFIGURE_WITH=	cairo
 
 .include <bsd.port.options.mk>
@@ -62,7 +61,7 @@ MASTER_SITES+=	http://savannah.nongnu.org/download/freetype/:freetype \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/:freetype \
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
 		ftp://ftp.freetype.org/freetype/freetype2/:freetype
-FREETYPE_VERSION=	2.6.2
+FREETYPE_VERSION=	2.6.3
 FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
 DISTFILES+=	${FREETYPE_SRC:C/$/:freetype/}
 CONFIGURE_ARGS+=	--enable-freetype-debugger=${WRKDIR}/freetype-${FREETYPE_VERSION}
