@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -23,6 +23,7 @@ PORTDOCS=	*
 USES=		dos2unix desktop-file-utils
 USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11
+USE_XORG=	x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
 WANT_GNOME=	yes
 
@@ -112,7 +113,9 @@ WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .if ${PORT_OPTIONS:MGTK2}
 LCL_PLATFORM=	gtk2
+USE_GNOME+=	cairo gdkpixbuf2
 .elif ${PORT_OPTIONS:MQT4}
+BROKEN=		Does not build
 LCL_PLATFORM=	qt
 .endif
 
