@@ -13,6 +13,8 @@ COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
 USES=		ncurses
 OPTIONS_DEFINE=	DOCS
 
+CONFLICTS_INSTALL=	lrfiles-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/bin/lesspipe.sh)
