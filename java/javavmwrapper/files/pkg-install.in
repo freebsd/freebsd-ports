@@ -9,17 +9,6 @@ if [ "x${2}" != "xPOST-INSTALL" ]; then
     exit 0
 fi
 
-# The option configuration file
-OPTION_CONF="${PKG_PREFIX}/etc/javavm_opts.conf"
-
-# Install default javavm options configuration
-if [ ! -e "${OPTION_CONF}" ]; then
-    cp "${OPTION_CONF}.dist" "${OPTION_CONF}"
-else
-    echo "${OPTION_CONF} already exists - not installing."
-    echo "You may need to hand merge changes."
-fi
-
 # Ensure all JDKs and JREs are installed
 _excl_dirs='bootstrap-openjdk'
 _find_expr='-depth 2 -regex .*/bin/java'

@@ -4,7 +4,7 @@ bin/javavm
 bin/manvm
 bin/registervm
 bin/unregistervm
-etc/javavm_opts.conf.dist
+@sample etc/javavm_opts.conf.dist etc/javavm_opts.conf
 man/man1/checkvms.1.gz
 man/man1/javavm.1.gz
 man/man1/manvm.1.gz

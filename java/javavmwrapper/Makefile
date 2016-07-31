@@ -3,6 +3,7 @@
 
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
