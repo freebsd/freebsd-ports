@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		bison gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
