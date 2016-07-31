@@ -17,14 +17,12 @@
  
  TARGET = mDNSClient
  DESTDIR =
-@@ -17,8 +18,8 @@ DESTDIR =
- all: $(TARGET)
+@@ -18,7 +19,7 @@ all: $(TARGET)
  
  
--mDNSClient: mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o
+ mDNSClient: mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o
 -	$(CC) $(LFLAGS) $^ -o $@
-+mDNSClient: mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o getline.o
-+	$(CC) $(LDFLAGS) mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o getline.o -o $@
++	$(CC) $(LDFLAGS) mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o -o $@
  
  install:
  	$(mkinstalldirs) $(DESTDIR)$(bindir)/
