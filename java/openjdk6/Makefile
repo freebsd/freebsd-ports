@@ -324,7 +324,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6-jre/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '@javawm ${PREFIX}/openjdk6-jre/bin/java' >> ${TMPPLIST}
+	@${ECHO_CMD} '@javavm ${PREFIX}/openjdk6-jre/bin/java' >> ${TMPPLIST}
 .else
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -not -type d | \
@@ -332,7 +332,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '@javawm ${PREFIX}/openjdk6/bin/java' >> ${TMPPLIST}
+	@${ECHO_CMD} '@javavm ${PREFIX}/openjdk6/bin/java' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -not -type d | \
