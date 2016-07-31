@@ -1,4 +1,4 @@
---- matc/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
+--- matc/src/CMakeLists.txt.orig	2016-07-15 11:02:59 UTC
 +++ matc/src/CMakeLists.txt
 @@ -12,7 +12,7 @@ TARGET_LINK_LIBRARIES(Matc_bin matc)
  

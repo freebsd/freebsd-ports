@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elmerfem
-PORTVERSION=	8.2.20160404
+PORTVERSION=	8.2.20160715
 CATEGORIES=	cad science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libparpack.so:math/arpack-ng-mpich	\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-GH_TAGNAME=	2f5a55c
+GH_TAGNAME=	e69732a
 
 USES=		blaslapack:netlib cmake fortran gmake tcl
 
