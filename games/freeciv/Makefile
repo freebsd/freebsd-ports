@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://download.gna.org/freeciv/stable/
@@ -14,7 +14,8 @@ RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python sqlite
+USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python sqlite \
+		readline
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,7 +31,7 @@ OPTIONS_SUB=		yes
 SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
 SDL_USE=		SDL=sdl,image,ttf,gfx
 MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES+=		mysql
 IPV6_CONFIGURE_EANBALE=	ipv6
 
 .include <bsd.port.options.mk>
@@ -48,7 +49,7 @@ LIB_DEPENDS+=	libtiff.so:graphics/tiff \
 		libggzmod.so:games/ggz-client-libs
 USE_XORG=	xpm
 USE_SDL+=	mixer
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo
 INSTALLS_ICONS=	yes
 . if ! ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=--enable-client=gtk
