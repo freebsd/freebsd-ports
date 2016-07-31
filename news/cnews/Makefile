@@ -3,7 +3,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -38,7 +38,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:Z
-USE_GCC=	any
+CFLAGS+=	-Wno-return-type
 
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
@@ -93,6 +93,10 @@ pre-patch:
 	${SED} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 		${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} \
 		> ${WRKSRC}/${PGPVERIFY}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/getline/get_line/g' ${WRKSRC}/readnews/active.c \
+		${WRKSRC}/readnews/newsrc.c
 
 pre-configure:
 .for i in conf/quiz.def conf/substitutions include/config.make
