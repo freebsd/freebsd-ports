@@ -5,6 +5,6 @@ export PATH
 
 if [ "$2" = "POST-INSTALL" ]; then
     echo "Running fc-cache to build fontconfig cache..."
-    fc-cache -f -v
+    fc-cache -f -s -v
     exit 0
 fi
