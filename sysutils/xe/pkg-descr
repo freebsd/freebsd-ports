@@ -1,0 +1,11 @@
+xe is a tool for constructing command lines from file listings or
+arguments, which includes the best features of xargs(1) and apply(1).
+
+Benefits over xargs:
+- Sane defaults (behaves like xargs -d'\n' -I{} -n1 -r).
+- No weird parsing, arguments are separated linewise or by NUL byte.
+- Can also take arguments from command-line.
+- No shell involved unless -s is used.
+- {} replacing possible with multiple arguments.
+
+WWW: https://github.com/chneukirchen/xe/
