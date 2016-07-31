@@ -46,9 +46,6 @@ FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
 .endif
 
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
-
 USES=		compiler gmake iconv motif tar:xz
 
 .include <bsd.port.options.mk>
@@ -320,8 +317,6 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}
 .endif
 .endif
-	@${ECHO_CMD} "#!/bin/sh" > ${PKGDEINSTALL}
-	@${ECHO_CMD} "#!/bin/sh" > ${PKGINSTALL}
 .if defined(BUILD_JRE)
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -not -type d | \
@@ -329,8 +324,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6-jre/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"' >> ${PKGINSTALL}
+	@${ECHO_CMD} '@javawm ${PREFIX}/openjdk6-jre/bin/java' >> ${TMPPLIST}
 .else
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -not -type d | \
@@ -338,8 +332,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} '@javawm ${PREFIX}/openjdk6/bin/java' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -not -type d | \
@@ -347,11 +340,8 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6-fastdebug/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} "@javavm ${PREFIX}/openjdk6-fastdebug/bin/java" >> ${TMPPLIST}
 .endif
 .endif
-	@${ECHO_CMD} "exit 0" >> ${PKGDEINSTALL}
-	@${ECHO_CMD} "exit 0" >> ${PKGINSTALL}
 
 .include <bsd.port.post.mk>
