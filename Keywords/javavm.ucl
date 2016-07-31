@@ -1,0 +1,11 @@
+# $FreeBSD$
+#
+# MAINAINER: java@FreeBSD.org
+
+actions: []
+post-install: <<EOD
+    registervm %@
+EOD
+pre-deinstall: <<EOD
+    unregistervm %@
+EOD
