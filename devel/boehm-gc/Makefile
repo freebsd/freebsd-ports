@@ -57,10 +57,6 @@ PORTDOCS=	*
 
 NOT_FOR_ARCHS=	ia64
 
-# no rule to get .lo from .S in subdirectory
-pre-build:
-	${LN} -sf ${WRKSRC}/src/sparc_mach_dep.S ${WRKSRC}
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
