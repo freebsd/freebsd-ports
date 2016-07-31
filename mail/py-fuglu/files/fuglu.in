@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: fuglu
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fuglu_enable (bool):	Set to NO by default.
+#				Set it to YES to enable fuglu.
+
+. /etc/rc.subr
+
+name=fuglu
+rcvar=fuglu_enable
+
+load_rc_config $name
+: ${fuglu_enable:=no}
+: ${fuglu_pidfile="/var/run/${name}.pid"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=${fuglu_pidfile}
+
+command_interpreter=%%PYTHON_CMD%%
+
+run_rc_command "$1"
