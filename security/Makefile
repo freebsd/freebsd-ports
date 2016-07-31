@@ -1008,6 +1008,7 @@
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-java
+    SUBDIR += rubygem-rex-ole
     SUBDIR += rubygem-rex-powershell
     SUBDIR += rubygem-rex-random_identifier
     SUBDIR += rubygem-rex-registry
