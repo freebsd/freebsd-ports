@@ -320,6 +320,7 @@
     SUBDIR += xautomation
     SUBDIR += xbacklight
     SUBDIR += xballoon
+    SUBDIR += xbanish
     SUBDIR += xbanner
     SUBDIR += xbelld
     SUBDIR += xbiff
