@@ -10,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive viewer for 3- and 4-D geometric objects
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+ # COPYING mentions LGPL21, source files LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
@@ -43,9 +44,13 @@ post-build:
 post-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} geomview.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH})
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README \
 		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.c *.tcl \
 		${STAGEDIR}${EXAMPLESDIR})
