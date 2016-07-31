@@ -1,0 +1,4 @@
+This Ruby Exploitation(Rex) library contains architecture specific information
+such as registers, opcodes, and stack manipulation routines.
+
+WWW: https://github.com/rapid7/rex-arch
