@@ -22,6 +22,7 @@ RUN_DEPENDS=	mpg321:audio/mpg321 \
 		flac:audio/flac
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-D_WITH_GETLINE
 LDFLAGS+=	`fltk-config --ldflags`
 USES=		gmake
 USE_GNOME=	glib20
@@ -29,8 +30,5 @@ USE_GNOME=	glib20
 post-patch:
 	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' \
 		${WRKSRC}/configure ${WRKSRC}/raop_play/Makefile.in
-
-pre-build:
-	${CP} ${FILESDIR}/getline.c ${FILESDIR}/getline.h ${WRKSRC}/rendezvous/
 
 .include <bsd.port.mk>

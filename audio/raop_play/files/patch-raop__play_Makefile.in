@@ -8,7 +8,7 @@
  LIBS = @LIBS@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
-@@ -12,15 +13,15 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/m
+@@ -12,7 +13,7 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/m
  TARGET=raop_play
  DESTDIR =
  
@@ -16,9 +16,8 @@
 +CFLAGS=-Wall -I$(prefix)/include/
  OBJS := raop_play.o raop_client.o rtsp_client.o aexcl_lib.o base64.o aes.o m4a_stream.o \
  audio_stream.o wav_stream.o mp3_stream.o flac_stream.o ogg_stream.o aac_stream.o pls_stream.o \
--pcm_stream.o flac_stream.o
-+pcm_stream.o flac_stream.o ../rendezvous/getline.o
- 
+ pcm_stream.o flac_stream.o
+@@ -20,7 +21,7 @@ pcm_stream.o flac_stream.o
  all: $(TARGET)
  
  raop_play: $(OBJS)
