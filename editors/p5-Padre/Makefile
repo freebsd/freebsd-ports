@@ -3,7 +3,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	1.00
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN/${PORTNAME}/ CPAN/Wx/:wxsc
 PKGNAMEPREFIX=	p5-
@@ -66,12 +66,13 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Module-Build>=0.36:devel/p5-Module-Build
 
-USES=		compiler:c++11-lib gettext perl5
+USES=		compiler:c++11-lib dos2unix gettext perl5
 USE_PERL5=	configure
 USE_WX=		3.0
 WX_COMPS=	wx
-WX_UNICODE=	yes
 MAKE_JOBS_UNSAFE=	yes
+DOS2UNIX_WRKSRC=${WRKDIR}/${WXSC_DISTNAME}
+DOS2UNIX_FILES=	wx-scintilla/src/scintilla/src/Editor.cxx
 
 BROKEN_FreeBSD_9=	Does not build.
 
@@ -104,12 +105,16 @@ IGNORE=		needs a threaded Perl, build with enabling THREADS option and try again
 .endif
 .endif
 
+pre-patch:
+	(cd ${WRKDIR}/${WXSC_DISTNAME} && \
+		${PATCH} < ${FILESDIR}/extra-patch-editor )
+
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/my /s|wx-config|${WX_CONFIG:T}|g' \
 		-e '/ret/ s|urn .flags;|urn $$flags . " -std=c++11";|' \
 		${WRKDIR}/${WXSC_DISTNAME}/inc/Module/Build/Scintilla.pm
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|_scintilla-|_scintilla| ; \
 		 s|$$major.*$$release \.|| ; \
 		 /$$major.*$$release;/s|^|#| ; \
@@ -121,15 +126,15 @@ post-patch:
 		${WRKDIR}/${WXSC_DISTNAME}/inc/Module/Build/Scintilla/GTK.pm
 
 pre-configure:
-	@(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} ${CONFIGURE_ENV} \
+	(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} ${CONFIGURE_ENV} \
 		${PERL} Build.PL ${CONFIGURE_ARGS} --destdir=${STAGEDIR})
 
 pre-build:
-	@(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} CC="$$(${WHICH} ${CC})" \
+	(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} CC="$$(${WHICH} ${CC})" \
 		${PERL} Build)
 
 pre-install:
-	@(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} CC="$$(${WHICH} ${CC})" \
+	(cd ${WRKDIR}/${WXSC_DISTNAME} && ${SETENV} CC="$$(${WHICH} ${CC})" \
 		${PERL} Build install)
 
 post-install:
