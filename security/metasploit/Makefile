@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.15
+PORTVERSION=	4.12.16
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -42,7 +42,9 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
+		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-java>=0:security/rubygem-rex-java \
+		rubygem-rex-ole>=0:security/rubygem-rex-ole \
 		rubygem-rex-powershell>=0:security/rubygem-rex-powershell \
 		rubygem-rex-random_identifier>=0:security/rubygem-rex-random_identifier \
 		rubygem-rex-registry>=0:security/rubygem-rex-registry \
@@ -64,7 +66,6 @@ GH_PROJECT=	metasploit-framework
 
 NO_ARCH=	yes
 
-USES=		ncurses:port
 USE_RUBY=	yes
 
 post-patch:
