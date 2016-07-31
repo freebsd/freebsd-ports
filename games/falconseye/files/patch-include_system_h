@@ -5,7 +5,7 @@
  # endif
  # if !defined(SUNOS4) || defined(RANDOM)
 -E void FDECL(srandom, (unsigned int));
-+E void FDECL(srandom, (unsigned long));
++#include <stdlib.h> /* srandom() differs between versions of FreeBSD. */
  # else
  #  if !defined(bsdi) && !defined(__FreeBSD__)
  E int FDECL(srandom, (unsigned int));
