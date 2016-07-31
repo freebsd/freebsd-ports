@@ -1,0 +1,8 @@
+bin/lr
+%%CONTRIB%%bin/lrls
+%%CONTRIB%%bin/lrocate
+man/man1/lr.1.gz
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/lr.el
+%%NEOVIM%%share/nvim/runtime/plugin/lr.vim
+%%VIM%%share/vim/vimfiles/plugin/lr.vim
+share/zsh/site-functions/_lr
