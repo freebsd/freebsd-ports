@@ -1,4 +1,4 @@
---- elmergrid/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
+--- elmergrid/src/CMakeLists.txt.orig	2016-07-15 11:02:59 UTC
 +++ elmergrid/src/CMakeLists.txt
 @@ -29,7 +29,7 @@ ADD_EXECUTABLE(ElmerGrid ${elmergrid_SRC
  

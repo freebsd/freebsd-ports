@@ -1,6 +1,6 @@
---- fem/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
+--- fem/src/CMakeLists.txt.orig	2016-07-15 11:02:59 UTC
 +++ fem/src/CMakeLists.txt
-@@ -131,9 +131,9 @@ ENDIF()
+@@ -132,9 +132,9 @@ ENDIF()
  
  
  ADD_EXECUTABLE(Solver_TGT Solver.F90)
@@ -12,7 +12,7 @@
  ENDIF()
  
  IF(NOT(WITH_MPI))
-@@ -229,7 +229,7 @@ TARGET_LINK_LIBRARIES(ViewFactors ${ELME
+@@ -235,7 +235,7 @@ TARGET_LINK_LIBRARIES(ViewFactors ${ELME
  INSTALL(TARGETS ViewFactors RUNTIME DESTINATION "bin")
  
  IF(NOT(WIN32))
@@ -21,7 +21,7 @@
  ENDIF()
  
  # GebhardFactors
-@@ -238,7 +238,7 @@ TARGET_LINK_LIBRARIES(GebhardtFactors ${
+@@ -244,7 +244,7 @@ TARGET_LINK_LIBRARIES(GebhardtFactors ${
                                        mpi_stubs elmersolver)
  
  IF(NOT(WIN32))
@@ -30,7 +30,7 @@
  ENDIF()
  
  IF(WITH_Trilinos)
-@@ -282,9 +282,10 @@ INSTALL(DIRECTORY ${CMAKE_Fortran_MODULE
+@@ -288,9 +288,10 @@ INSTALL(DIRECTORY ${CMAKE_Fortran_MODULE
  
  IF(WITH_MPI)
    IF(NOT(WIN32))

@@ -44,6 +44,7 @@ share/elmersolver/include/gebhardtfactorglobals.mod
 share/elmersolver/include/generalutils.mod
 share/elmersolver/include/globmat.mod
 share/elmersolver/include/globmatc.mod
+share/elmersolver/include/h1elementbasisfunctions.mod
 share/elmersolver/include/harmutils.mod
 share/elmersolver/include/hashtable.mod
 share/elmersolver/include/huti_aux.mod
@@ -63,6 +64,7 @@ share/elmersolver/include/iterativemethods.mod
 share/elmersolver/include/itersolve.mod
 share/elmersolver/include/kinds.mod
 share/elmersolver/include/linearalgebra.mod
+share/elmersolver/include/linearforms.mod
 share/elmersolver/include/listmatrix.mod
 share/elmersolver/include/lists.mod
 share/elmersolver/include/loadmod.mod
