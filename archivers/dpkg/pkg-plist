@@ -161,6 +161,7 @@ libexec/libdpkg.a
 libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man1/dpkg-architecture.1.gz
 %%NLS%%man/de/man1/dpkg-buildflags.1.gz
+%%NLS%%man/de/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/de/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/de/man1/dpkg-deb.1.gz
 %%NLS%%man/de/man1/dpkg-distaddfile.1.gz
@@ -186,6 +187,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man1/update-alternatives.1.gz
 %%NLS%%man/de/man5/deb-changelog.5.gz
 %%NLS%%man/de/man5/deb-changes.5.gz
+%%NLS%%man/de/man5/deb-conffiles.5.gz
 %%NLS%%man/de/man5/deb-control.5.gz
 %%NLS%%man/de/man5/deb-extra-override.5.gz
 %%NLS%%man/de/man5/deb-old.5.gz
@@ -378,6 +380,7 @@ man/man3/Dpkg::Vendor::Ubuntu.3.gz
 man/man3/Dpkg::Version.3.gz
 man/man5/deb-changelog.5.gz
 man/man5/deb-changes.5.gz
+man/man5/deb-conffiles.5.gz
 man/man5/deb-control.5.gz
 man/man5/deb-extra-override.5.gz
 man/man5/deb-old.5.gz
