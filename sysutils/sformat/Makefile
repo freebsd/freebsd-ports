@@ -50,7 +50,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| getline(| get_line(|g' ${WRKSRC}/sformat/io.c \
 		${WRKSRC}/sformat/defect.c
 	@${REINPLACE_CMD} -e 's|^getline|get_line|g' ${WRKSRC}/libschily/stdio/fgetline.c
-	@${REINPLACE_CMD} -e 's|)getline|)get_line|g' ${WRKSRC}/sformat/diskfmt.c
+	@${REINPLACE_CMD} -e 's|)getline|)get_line|g' ${WRKSRC}/sformat/diskfmt.c \
+		${WRKSRC}/sformat/makelabel.c
 
 
 do-install:
