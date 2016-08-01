@@ -3,7 +3,7 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
 		http://tmp.chruetertee.ch/ \
@@ -17,6 +17,7 @@ BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
+USE_GCC=	any
 USES=		autoreconf:build gmake makeinfo
 CFLAGS+=	-D_WITH_GETLINE=1 -D_WITH_DPRINTF=1
 
