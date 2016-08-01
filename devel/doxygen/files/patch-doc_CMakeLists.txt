@@ -1,0 +1,11 @@
+--- doc/CMakeLists.txt.orig	2015-09-01 12:42:06 UTC
++++ doc/CMakeLists.txt
+@@ -169,7 +169,7 @@ install(FILES
+         "${PROJECT_BINARY_DIR}/man/doxywizard.1"
+         "${PROJECT_BINARY_DIR}/man/doxysearch.1"
+         "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
+-        DESTINATION share/man/man1
++        DESTINATION man/man1
+ )
+ 
+ install(FILES
