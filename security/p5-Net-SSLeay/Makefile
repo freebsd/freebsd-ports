@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSLeay
-PORTVERSION=	1.74
+PORTVERSION=	1.77
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ENV=	OPENSSL_PREFIX=${OPENSSLBASE}
-USES=		perl5 shebangfix
-USE_OPENSSL=	yes
+USES=		perl5 shebangfix ssl
 USE_PERL5=	configure
 
 PORTEXAMPLES=	*
@@ -29,6 +28,8 @@ SHEBANG_FILES=	examples/*.pl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/SSLeay/SSLeay.so
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${STAGEDIR}${EXAMPLESDIR}/req.conf
