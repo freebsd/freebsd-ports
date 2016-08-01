@@ -9,8 +9,7 @@ MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Command-line interface for Telegram
 
 LICENSE=	GPLv2
-
-BROKEN_powerpc64=	Does not build
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libevent.so:devel/libevent2 \
@@ -20,8 +19,7 @@ BROKEN_mips=	Missing header
 BROKEN_mips64=	Missing header
 BROKEN_powerpc64=	Does not build
 
-USES=		execinfo gmake lua:52 ncurses pkgconfig readline
-USE_OPENSSL=	yes
+USES=		execinfo gmake lua:52 ncurses pkgconfig readline ssl
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
