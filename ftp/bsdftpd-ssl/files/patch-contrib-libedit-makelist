@@ -1,6 +1,6 @@
---- contrib/libedit/makelist.orig	2001-12-17 07:55:26.000000000 +0800
-+++ contrib/libedit/makelist	2007-08-31 20:32:51.000000000 +0800
-@@ -128,8 +128,8 @@
+--- contrib/libedit/makelist.orig	2001-12-16 23:55:26 UTC
++++ contrib/libedit/makelist
+@@ -128,8 +128,8 @@ case $FLAG in
  	    printf("#endif /* _h_help_c */\n");
  	}' /dev/null;;
  -fh)
@@ -11,5 +11,3 @@
  	BEGIN { 
  	    printf("/* Automatically generated file, do not edit */\n");
  	    printf("#ifndef _h_fcns_c\n#define _h_fcns_c\n");
-
-	
