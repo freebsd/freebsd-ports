@@ -1746,6 +1746,9 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-requestbuilder
     SUBDIR += py-requests
+    SUBDIR += py33-requests
+    SUBDIR += py34-requests
+    SUBDIR += py35-requests
     SUBDIR += py-requests-futures
     SUBDIR += py-requests-oauthlib
     SUBDIR += py-requests-toolbelt
