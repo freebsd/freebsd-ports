@@ -570,6 +570,7 @@ include/wine/windows/msxml6.idl
 include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/nb30.h
+include/wine/windows/ncrypt.h
 include/wine/windows/ndrtypes.h
 include/wine/windows/netcfgx.h
 include/wine/windows/netcfgx.idl
@@ -1999,6 +2000,7 @@ lib32/wine/fakedlls/softpub.dll
 lib32/wine/fakedlls/sound.drv16
 lib32/wine/fakedlls/spoolss.dll
 lib32/wine/fakedlls/spoolsv.exe
+lib32/wine/fakedlls/sspicli.dll
 lib32/wine/fakedlls/start.exe
 lib32/wine/fakedlls/stdole2.tlb
 lib32/wine/fakedlls/stdole32.tlb
@@ -2603,6 +2605,7 @@ lib32/wine/softpub.dll.so
 lib32/wine/sound.drv16.so
 lib32/wine/spoolss.dll.so
 lib32/wine/spoolsv.exe.so
+lib32/wine/sspicli.dll.so
 lib32/wine/start.exe.so
 lib32/wine/stdole2.tlb.so
 lib32/wine/stdole32.tlb.so
