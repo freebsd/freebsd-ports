@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.10
-PORTREVISION=	3
+PORTVERSION=	1.8.11
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
@@ -20,6 +19,8 @@ USES=		bison cmake:outsource iconv python:2 shebangfix
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
 REINPLACE_ARGS=	-i ''
+# I need to look into why it doesn't work with parallel jobs
+MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	--exclude '*/libmd5' \
 			--exclude '*/libpng' \

@@ -239,6 +239,7 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_a.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_b.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_c.html
@@ -248,6 +249,7 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_f.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_a.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_b.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_c.html
@@ -270,7 +272,6 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_v.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_w.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_x.html
-%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_func_~.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_g.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_h.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_i.html
@@ -289,7 +290,6 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_w.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_x.html
-%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/functions_~.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/gain__group_8hpp.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/gain__group_8hpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/globals.html

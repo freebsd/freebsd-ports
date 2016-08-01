@@ -1,4 +1,4 @@
---- src/dot.cpp.orig	2015-03-15 12:15:52 UTC
+--- src/dot.cpp.orig	2015-12-28 19:46:20 UTC
 +++ src/dot.cpp
 @@ -39,6 +39,7 @@
  #include "dirdef.h"
@@ -8,7 +8,7 @@
  #include "md5.h"
  #include "memberlist.h"
  #include "groupdef.h"
-@@ -2311,10 +2312,8 @@ void DotGfxHierarchyTable::createGraph(D
+@@ -2305,10 +2306,8 @@ void DotGfxHierarchyTable::createGraph(D
    }
    writeGraphFooter(md5stream);
    resetReNumbering();
@@ -20,7 +20,7 @@
    bool regenerate=FALSE;
    if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
        !checkDeliverables(absImgName,absMapName))
-@@ -3073,10 +3072,8 @@ QCString computeMd5Signature(DotNode *ro
+@@ -3072,10 +3071,8 @@ QCString computeMd5Signature(DotNode *ro
      }
    }
    writeGraphFooter(md5stream);
@@ -32,10 +32,10 @@
    if (reNumber)
    {
      resetReNumbering();
-@@ -4007,10 +4004,8 @@ QCString DotDirDeps::writeGraph(FTextStr
-   QGString theGraph;
+@@ -4009,10 +4006,8 @@ QCString DotDirDeps::writeGraph(FTextStr
    FTextStream md5stream(&theGraph);
-   m_dir->writeDepGraph(md5stream);
+   //m_dir->writeDepGraph(md5stream);
+   writeDotDirDepGraph(md5stream,m_dir,linkRelations);
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
@@ -44,7 +44,7 @@
    bool regenerate=FALSE;
    if (checkAndUpdateMd5Signature(absBaseName,sigStr) ||
        !checkDeliverables(graphFormat==GOF_BITMAP ? absImgName :
-@@ -4152,10 +4147,8 @@ void generateGraphLegend(const char *pat
+@@ -4154,10 +4149,8 @@ void generateGraphLegend(const char *pat
    md5stream << "  Node18 -> Node9 [dir=\"back\",color=\"darkorchid3\",fontsize=\"" << FONTSIZE << "\",style=\"dashed\",label=\"m_usedClass\",fontname=\"" << FONTNAME << "\"];\n";
    md5stream << "  Node18 [shape=\"box\",label=\"Used\",fontsize=\"" << FONTSIZE << "\",height=0.2,width=0.4,fontname=\"" << FONTNAME << "\",color=\"black\",URL=\"$classUsed" << Doxygen::htmlFileExtension << "\"];\n";
    writeGraphFooter(md5stream);
@@ -56,7 +56,7 @@
    QCString absBaseName = (QCString)path+"/graph_legend";
    QCString absDotName  = absBaseName+".dot";
    QCString imgExt = getDotImageExtension();
-@@ -4555,10 +4548,8 @@ QCString DotGroupCollaboration::writeGra
+@@ -4557,10 +4550,8 @@ QCString DotGroupCollaboration::writeGra
  
    writeGraphFooter(md5stream);
    resetReNumbering();
