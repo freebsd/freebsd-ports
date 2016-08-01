@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		ghostscript:run gmake
 MAKEFILE=	makefile
@@ -22,13 +23,15 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/epstool man/man1/epstool.1.gz
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	epstool.htm gsview.css
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/epstool.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/epstool.htm ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gsview.css ${STAGEDIR}${DOCSDIR}
