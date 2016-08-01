@@ -1,0 +1,43 @@
+From e469db25d6b2e5c71cd15451889226641c53a5cd Mon Sep 17 00:00:00 2001
+From: P J P <ppandit@redhat.com>
+Date: Mon, 25 Jul 2016 17:37:18 +0530
+Subject: [PATCH] virtio: error out if guest exceeds virtqueue size
+
+A broken or malicious guest can submit more requests than the virtqueue
+size permits.
+
+The guest can submit requests without bothering to wait for completion
+and is therefore not bound by virtqueue size.  This requires reusing
+vring descriptors in more than one request, which is incorrect but
+possible.  Processing a request allocates a VirtQueueElement and
+therefore causes unbounded memory allocation controlled by the guest.
+
+Exit with an error if the guest provides more requests than the
+virtqueue size permits.  This bounds memory allocation and makes the
+buggy guest visible to the user.
+
+Reported-by: Zhenhao Hong <zhenhaohong@gmail.com>
+Signed-off-by: Stefan Hajnoczi <stefanha@redhat.com>
+---
+ hw/virtio/virtio.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/hw/virtio/virtio.c b/hw/virtio/virtio.c
+index d24f775..f8ac0fb 100644
+--- a/hw/virtio/virtio.c
++++ b/hw/virtio/virtio.c
+@@ -483,6 +483,11 @@ int virtqueue_pop(VirtQueue *vq, VirtQueueElement *elem)
+ 
+     max = vq->vring.num;
+ 
++    if (vq->inuse >= max) {
++        error_report("Virtqueue size exceeded");
++        exit(1);
++    }
++
+     i = head = virtqueue_get_head(vq, vq->last_avail_idx++);
+     if (virtio_vdev_has_feature(vdev, VIRTIO_RING_F_EVENT_IDX)) {
+         vring_set_avail_event(vq, vq->last_avail_idx);
+-- 
+2.1.4
+

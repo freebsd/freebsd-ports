@@ -1,0 +1,75 @@
+From 2fd4f34058fb5f87fbd80978dbd2cb458aff565d Mon Sep 17 00:00:00 2001
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Wed, 15 Jun 2016 18:32:14 +0100
+Subject: [PATCH] x86/entry: Avoid SMAP violation in
+ compat_create_bounce_frame()
+
+A 32bit guest kernel might be running on user mappings.
+compat_create_bounce_frame() must whitelist its guest accesses to avoid
+risking a SMAP violation.
+
+For both variants of create_bounce_frame(), re-blacklist user accesses if
+execution exits via an exception table redirection.
+
+This is XSA-183 / CVE-2016-6259
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+v2:
+ * Include CLAC on the exit paths from compat_create_bounce_frame which occur
+   from faults attempting to load %fs
+ * Reposition ASM_STAC to avoid breaking the macro-op fusion of test/jz
+---
+ xen/arch/x86/x86_64/compat/entry.S | 3 +++
+ xen/arch/x86/x86_64/entry.S        | 2 ++
+ 2 files changed, 5 insertions(+)
+
+diff --git a/xen/arch/x86/x86_64/compat/entry.S b/xen/arch/x86/x86_64/compat/entry.S
+index 7f02afd..e80c53c 100644
+--- a/xen/arch/x86/x86_64/compat/entry.S
++++ b/xen/arch/x86/x86_64/compat/entry.S
+@@ -318,6 +318,7 @@ ENTRY(compat_int80_direct_trap)
+ compat_create_bounce_frame:
+         ASSERT_INTERRUPTS_ENABLED
+         mov   %fs,%edi
++        ASM_STAC
+         testb $2,UREGS_cs+8(%rsp)
+         jz    1f
+         /* Push new frame at registered guest-OS stack base. */
+@@ -364,6 +365,7 @@ compat_create_bounce_frame:
+         movl  TRAPBOUNCE_error_code(%rdx),%eax
+ .Lft8:  movl  %eax,%fs:(%rsi)           # ERROR CODE
+ 1:
++        ASM_CLAC
+         /* Rewrite our stack frame and return to guest-OS mode. */
+         /* IA32 Ref. Vol. 3: TF, VM, RF and NT flags are cleared on trap. */
+         andl  $~(X86_EFLAGS_VM|X86_EFLAGS_RF|\
+@@ -403,6 +405,7 @@ compat_crash_page_fault_4:
+         addl  $4,%esi
+ compat_crash_page_fault:
+ .Lft14: mov   %edi,%fs
++        ASM_CLAC
+         movl  %esi,%edi
+         call  show_page_walk
+         jmp   dom_crash_sync_extable
+diff --git a/xen/arch/x86/x86_64/entry.S b/xen/arch/x86/x86_64/entry.S
+index ad8c64c..f7178cd 100644
+--- a/xen/arch/x86/x86_64/entry.S
++++ b/xen/arch/x86/x86_64/entry.S
+@@ -420,9 +420,11 @@ domain_crash_page_fault_16:
+ domain_crash_page_fault_8:
+         addq  $8,%rsi
+ domain_crash_page_fault:
++        ASM_CLAC
+         movq  %rsi,%rdi
+         call  show_page_walk
+ ENTRY(dom_crash_sync_extable)
++        ASM_CLAC
+         # Get out of the guest-save area of the stack.
+         GET_STACK_END(ax)
+         leaq  STACK_CPUINFO_FIELD(guest_cpu_user_regs)(%rax),%rsp
+-- 
+2.1.4
+
