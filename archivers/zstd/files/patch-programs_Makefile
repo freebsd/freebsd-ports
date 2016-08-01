@@ -1,12 +1,6 @@
---- programs/Makefile.orig	2016-07-16 18:17:53 UTC
+--- programs/Makefile.orig	2016-08-01 07:51:18 UTC
 +++ programs/Makefile
-@@ -157,16 +157,16 @@ clean:
- #---------------------------------------------------------------------------------
- #make install is validated only for Linux, OSX, kFreeBSD, Hurd and OpenBSD targets
- #---------------------------------------------------------------------------------
--ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU OpenBSD))
-+ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU OpenBSD FreeBSD DragonFly))
- HOST_OS = POSIX
+@@ -181,11 +181,11 @@ HOST_OS = POSIX
  install: zstd
  	@echo Installing binaries
  	@install -d -m 755 $(DESTDIR)$(BINDIR)/ $(DESTDIR)$(MANDIR)/
