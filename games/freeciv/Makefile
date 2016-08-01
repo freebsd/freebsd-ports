@@ -31,7 +31,7 @@ OPTIONS_SUB=		yes
 SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
 SDL_USE=		SDL=sdl,image,ttf,gfx
 MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
-MYSQL_USES+=		mysql
+MYSQL_USES=		mysql
 IPV6_CONFIGURE_EANBALE=	ipv6
 
 .include <bsd.port.options.mk>
