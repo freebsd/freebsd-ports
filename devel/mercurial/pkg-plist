@@ -114,9 +114,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.py
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.pyc
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.pyo
-%%PYTHON_SITELIBDIR%%/hgext/hgcia.py
-%%PYTHON_SITELIBDIR%%/hgext/hgcia.pyc
-%%PYTHON_SITELIBDIR%%/hgext/hgcia.pyo
 %%PYTHON_SITELIBDIR%%/hgext/hgk.py
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyc
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyo
@@ -129,6 +126,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/histedit.py
 %%PYTHON_SITELIBDIR%%/hgext/histedit.pyc
 %%PYTHON_SITELIBDIR%%/hgext/histedit.pyo
+%%PYTHON_SITELIBDIR%%/hgext/journal.py
+%%PYTHON_SITELIBDIR%%/hgext/journal.pyc
+%%PYTHON_SITELIBDIR%%/hgext/journal.pyo
 %%PYTHON_SITELIBDIR%%/hgext/keyword.py
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyc
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyo
@@ -159,6 +159,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.py
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.pyc
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/storefactory.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/storefactory.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/storefactory.pyo
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.py
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.pyc
 %%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.pyo
@@ -411,9 +414,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/httpclient/_readers.py
 %%PYTHON_SITELIBDIR%%/mercurial/httpclient/_readers.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/httpclient/_readers.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/httpclient/socketutil.py
-%%PYTHON_SITELIBDIR%%/mercurial/httpclient/socketutil.pyc
-%%PYTHON_SITELIBDIR%%/mercurial/httpclient/socketutil.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/httpconnection.py
 %%PYTHON_SITELIBDIR%%/mercurial/httpconnection.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/httpconnection.pyo
@@ -495,6 +495,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/phases.py
 %%PYTHON_SITELIBDIR%%/mercurial/phases.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/phases.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/policy.py
+%%PYTHON_SITELIBDIR%%/mercurial/policy.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/policy.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/posix.py
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyo
@@ -812,7 +815,6 @@ man/man5/hgrc.5.gz
 %%DATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
 %%DATA%%%%DATADIR%%/contrib/mercurial.el
 %%DATA%%%%DATADIR%%/contrib/mq.el
-%%DATA%%%%DATADIR%%/contrib/perf.py
 %%DATA%%%%DATADIR%%/contrib/pylintrc
 %%DATA%%%%DATADIR%%/contrib/python-hook-examples.py
 %%DATA%%%%DATADIR%%/contrib/simplemerge
@@ -826,6 +828,5 @@ man/man5/hgrc.5.gz
 %%DATA%%%%DATADIR%%/contrib/vim/patchreview.txt
 %%DATA%%%%DATADIR%%/contrib/vim/patchreview.vim
 %%DATA%%%%DATADIR%%/contrib/zsh_completion
-%%DATA%%%%DATADIR%%/www/hgweb.cgi
 %%DATA%%%%DATADIR%%/www/hgweb.fcgi
 %%DATA%%%%DATADIR%%/www/hgweb.wsgi
