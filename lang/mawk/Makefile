@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mawk
-DISTVERSION=	1.3.4-20150503
+DISTVERSION=	1.3.4-20160615
 CATEGORIES=	lang
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 
