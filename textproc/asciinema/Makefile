@@ -18,6 +18,9 @@ STRIP=		# stripping can break go binaries
 
 PORTDOCS=	CHANGELOG.md LICENSE README.md
 
+DEPRECATED=	use textproc/py3-asciinema instead
+EXPIRATION_DATE=	2016-09-02
+
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT} ; \
 		${MKDIR} Godeps/_workspace/src/github.com/${GH_ACCOUNT} ; \
