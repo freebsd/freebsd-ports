@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.7.0
-PORTREVISION=   3
+PORTREVISION=   4
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 

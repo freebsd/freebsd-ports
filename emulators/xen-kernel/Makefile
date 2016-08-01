@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
 PORTVERSION=	4.7.0
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
@@ -39,7 +39,9 @@ PLIST_FILES=	/boot/xen \
 		/boot/xen.4th
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
-		${FILESDIR}/kconf_arch.patch:-p1
+		${FILESDIR}/kconf_arch.patch:-p1 \
+		${FILESDIR}/xsa182-unstable.patch:-p1 \
+		${FILESDIR}/xsa183-unstable.patch:-p1
 
 
 .include <bsd.port.options.mk>
