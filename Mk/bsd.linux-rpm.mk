@@ -156,7 +156,7 @@ EXTRACT_BEFORE_ARGS?=	<
 EXTRACT_AFTER_ARGS?=	| ${TAR} xf - --no-same-permissions --no-same-owner
 .endif
 
-DISTINFO_FILE?=				${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+DISTINFO_FILE?=				${MASTERDIR}/distinfo.${LINUX_REPO_ARCH}
 
 BRANDELF_DIRS?=
 BRANDELF_FILES?=
@@ -176,7 +176,7 @@ linux-rpm-clean-portdocs:
 .  endif
 
 .  if ${USE_LINUX} != "f10"
-PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
+PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_REPO_ARCH}
 .  endif
 
 .  if defined(AUTOMATIC_PLIST)
