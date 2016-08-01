@@ -1324,7 +1324,6 @@
     SUBDIR += trafshow3
     SUBDIR += tramp
     SUBDIR += trickle
-    SUBDIR += tridiavnc
     SUBDIR += tsclient
     SUBDIR += tshark
     SUBDIR += tshark-lite
