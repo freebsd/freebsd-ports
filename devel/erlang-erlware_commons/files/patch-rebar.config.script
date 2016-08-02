@@ -1,0 +1,10 @@
+--- rebar.config.script.orig	2016-08-02 12:50:27 UTC
++++ rebar.config.script
+@@ -7,7 +7,6 @@ IsRebar3 = case application:get_key(reba
+            end,
+ 
+ Rebar2Deps = [
+-              {cf, ".*", {git, "https://github.com/project-fifo/cf", {tag, "0.2.0"}}}
+              ],
+ 
+ case IsRebar3 of
