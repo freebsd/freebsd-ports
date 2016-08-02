@@ -3,12 +3,13 @@
 
 PORTNAME=	xcalib
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11 graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Program for display calibration of X11-Servers with ICC profiles
+COMMENT=	Program for X11 display calibration with ICC profiles
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,7 +26,7 @@ DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
 CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
