@@ -3,11 +3,12 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.632
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/:plugin \
 		LOCAL/nox:suplib
-PKGNAMEPREFIX=	linux-${USE_LINUX}-
-DISTFILES?=	install_flash_player_11_linux.i386.tar.gz:plugin
+PKGNAMEPREFIX?=	linux-c6-
+DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,54 +16,34 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX?=	c6
-USE_LINUX_APPS?=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss # libssh2 openldap
-WANT_GNOME=	yes
-
-DISTINFO_FILE?=	${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
-PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
+USE_LINUX_APPS=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-WRKSRC:=		${WRKDIR}/linux-${USE_LINUX}-${DISTNAME}
 
 USES=		webplugin:linux desktop-file-utils cpe
 WEBPLUGIN_FILES=	libflashplayer.so
 
-OPTIONS_DEFINE=	ALSA GNOME
+OPTIONS_DEFINE=	ALSA
 OPTIONS_SUB=	yes
 
 ALSA_DESC=	ALSA audio output (broken, needs lemul)
-ALSA_RUN_DEPENDS?=	linux-${USE_LINUX}-alsa-lib>=1.0.22_2:audio/linux-c6-alsa-lib
+ALSA_USE=	LINUX_APPS=alsalib,alsa-plugins-oss
+ALSA_USE_OFF?=	LINUX_APPS=openssl-compat
 ALSA_DISTFILES_OFF=	linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
-ALSA_PLIST_SUB_OFF=	LINUXBASE="${LINUXBASE}" COMPATDIR="${LINUXBASE:H}"
-
-GNOME_DESC=	include gnome support for .desktop file
-GNOME_USES=	desktop-file-utils
+ALSA_PLIST_SUB_OFF=	LINUXBASE="${LINUXBASE}"
 
 CPE_VENDOR=	adobe
 CPE_PRODUCT=	flash_player
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MALSA}
-USE_LINUX_APPS+=alsalib alsa-plugins-oss
-.else
-.if ${USE_LINUX} == "f10"
-USE_LINUX_APPS+=	openssl
-.else
-USE_LINUX_APPS+=	openssl-compat
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-INSTALLS_ICONS=	yes
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e '/^NotShowIn=KDE/d' ${WRKSRC}/usr/share/applications/flash-player-properties.desktop
+	@${REINPLACE_CMD} '/^NotShowIn=KDE/d' \
+		${WRKSRC}/usr/share/applications/flash-player-properties.desktop
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
