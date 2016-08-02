@@ -12,16 +12,26 @@ DISTNAME=	${PORTNAME}17
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare/diff two (comma) separated files with each other
 
-NO_BUILD=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	csvdiff.pl
-PLIST_FILES=	bin/csvdiff
+NO_BUILD=	yes
+NO_ARCH=	yes
+
 WRKSRC=		${WRKDIR}
+
 PORTDOCS=	CHANGES README TODO
+PLIST_FILES=	bin/csvdiff
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
