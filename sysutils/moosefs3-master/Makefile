@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		moosefs3
-PORTVERSION=		3.0.80
+PORTVERSION=		3.0.81
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 			--with-default-user=${MFS_USER} \
 			--with-default-group=${MFS_GROUP}
 
-CONFLICTS=	moosefs2-${MFS_COMPONENT}-*
+CONFLICTS=		moosefs2-${MFS_COMPONENT}-*
 
 .if ${MFS_COMPONENT} == cgi
 MFS_CGIDIR=		${PREFIX}/share/mfscgi
