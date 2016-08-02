@@ -6,6 +6,7 @@ usr/lib/libcrypto.so.%%PORTVERSION%%
 usr/lib/libcrypto.so.6
 usr/lib/libssl.so.%%PORTVERSION%%
 usr/lib/libssl.so.6
+usr/lib/libssl.so.7
 usr/lib/openssl098e/engines/lib4758cca.so
 usr/lib/openssl098e/engines/libaep.so
 usr/lib/openssl098e/engines/libatalla.so
@@ -23,7 +24,6 @@ usr/lib64/libcrypto.so.%%PORTVERSION%%
 usr/lib64/libcrypto.so.6
 usr/lib64/libssl.so.%%PORTVERSION%%
 usr/lib64/libssl.so.6
-usr/lib64/libssl.so.7
 usr/lib64/openssl098e/engines/lib4758cca.so
 usr/lib64/openssl098e/engines/libaep.so
 usr/lib64/openssl098e/engines/libatalla.so
