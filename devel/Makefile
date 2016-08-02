@@ -476,6 +476,7 @@
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
     SUBDIR += erlang-certifi
+    SUBDIR += erlang-cf
     SUBDIR += erlang-clique
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cuttlefish
