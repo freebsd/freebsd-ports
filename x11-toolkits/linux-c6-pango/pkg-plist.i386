@@ -1,4 +1,5 @@
-@comment file listing
+@postexec %D/usr/bin/pango-querymodules-32 > %D/etc/pango/i386-redhat-linux-gnu/pango.modules
+@preunexec rm -f %D/etc/pango/i386-redhat-linux-gnu/pango.modules
 etc/pango/pangox.aliases
 usr/bin/pango-querymodules-32
 usr/bin/pango-view
@@ -31,6 +32,4 @@ usr/share/doc/pango-1.28.1/NEWS
 usr/share/doc/pango-1.28.1/README
 usr/share/man/man1/pango-querymodules.1.gz
 usr/share/man/man1/pango-view.1.gz
-@comment deal with empty directories created by the port
-@exec /bin/mkdir -p %D/etc/pango/i386-redhat-linux-gnu
 @dir etc/pango/i386-redhat-linux-gnu
