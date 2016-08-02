@@ -63,7 +63,7 @@ _LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
 					arts aspell atk avahi-libs cairo cups-libs curl dri devtools esound expat \
 					flac fontconfig freealut gdkpixbuf gdkpixbuf2 gnutls gtk2 hicontheme imlib jpeg libaudiofile \
 					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
-					libpciaccess libsigcpp20 libsndfile libtasn1 libtheora libvorbis libxml2 mikmod \
+					libpciaccess libsigcpp20 libsndfile libtasn1 libthai libtheora libvorbis libxml2 mikmod \
 					naslibs ncurses-base openal openmotif openssl openssl-compat pango png \
 					pulseaudio-libs scimgtk scimlibs sdl12 sdlimage sdlmixer sdlttf tiff \
 					tcp_wrappers-libs xorglibs ucl ungif upx webauth
@@ -354,6 +354,11 @@ libtasn1_c6_FILE=	${LINUXBASE}/usr/lib/libtasn1.so.3.1.6
 libtasn1_c6_64_FILE=	${LINUXBASE}/usr/lib64/libtasn1.so.3.1.6
 libtasn1_DETECT=	${libtasn1${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libtasn1_PORT=		security/linux${LINUX_BASEPORT_NAME}-libtasn1
+
+libthai_c6_FILE=	${LINUXBASE}/usr/lib/libthai.so.0.1.4
+libthai_c6_64_FILE=	${LINUXBASE}/usr/lib64/libthai.so.0.1.4
+libthai_DETECT=		${libthai${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libthai_PORT=		devel/linux${LINUX_BASEPORT_NAME}-libthai
 
 libtheora_f10_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.3
 libtheora_c6_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.9
