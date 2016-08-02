@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.15.2.0
+PORTVERSION=	3.15.4.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	cad
@@ -65,7 +65,7 @@ do-install:
 	${LN} -sf qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
 .for lib in ${SHRLIBS:C|^|lib|:C|$|.so|}
 	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}.0
-	${LN} -sf lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
+	${LN} -sf ../lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
 	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
