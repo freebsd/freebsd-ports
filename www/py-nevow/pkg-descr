@@ -11,4 +11,5 @@ automatically, and form posts will be validated and input coerced, rendering
 error pages if appropriate. Once a form post has validated successfully, the
 method will be called with the coerced values.
 
-WWW: http://divmod.org/trac/wiki/DivmodNevow
+WWW: https://github.com/twisted/nevow
+WWW: https://pypi.python.org/pypi/Nevow
