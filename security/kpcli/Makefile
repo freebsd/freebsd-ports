@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kpcli
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
 EXTRACT_SUFX=	.pl
@@ -27,6 +27,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5 shebangfix
 SHEBANG_FILES=	kpcli
 PLIST_FILES=	bin/kpcli man/man1/${PORTNAME}.1.gz
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		PWSAFE3
 PWSAFE3_DESC=		Password Safe V3 file importing
