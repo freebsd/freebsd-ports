@@ -54,13 +54,6 @@ TCL_USES=	tcl
 
 PORTDOCS=	README.md
 
-pre-configure:
-# No need to cast to char** in AM_ICONV, fixes charset/iconv detection
-# and by extension, successfully builds charset module
-	@${REINPLACE_CMD} -e \
-		's#(char \*\*)##g' \
-		${WRKSRC}/configure
-
 # Instead of using bundled swig generated files, delete them to force
 # regeneration using swig 2.0.11+ (fixes port compilation using clang)
 #
