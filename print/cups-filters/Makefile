@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -17,15 +17,15 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 CONFLICTS=	cups-pstoraster-[0-9]* foomatic-filters-[0-9]*
 
-USES=		compiler:c++11-lib cpe ghostscript gmake gnome libtool pathfix \
-		pkgconfig shebangfix tar:xz
+USES=		compiler:c++11-lib cpe gettext ghostscript gmake gnome libtool \
+		iconv pathfix pkgconfig shebangfix tar:xz
 CPE_VENDOR=	linuxfoundation
 SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 		filter/braille/drivers/index/imageubrltoindexv3.in \
 		filter/braille/drivers/index/imageubrltoindexv4.in \
 		filter/braille/drivers/index/textbrftoindexv3.in \
 		filter/braille/filters/imagetobrf.in \
-		filter/braille/filters/texttobrf.in filter/textonly
+		filter/braille/filters/texttobrf.in
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--disable-silent-rules --with-shell=/bin/sh \
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=			BRAILLE COLORD DOCS IJS IMAGEFILTERS

@@ -31,6 +31,7 @@ libexec/cups/filter/bannertopdf
 libexec/cups/filter/commandtoescpx
 libexec/cups/filter/commandtopclx
 libexec/cups/filter/foomatic-rip
+libexec/cups/filter/gstopdf
 libexec/cups/filter/gstopxl
 libexec/cups/filter/gstoraster
 %%BRAILLE%%libexec/cups/filter/imagetobrf
@@ -45,17 +46,17 @@ libexec/cups/filter/pdftoopvp
 libexec/cups/filter/pdftopdf
 libexec/cups/filter/pdftops
 libexec/cups/filter/pdftoraster
-libexec/cups/filter/pstopdf
 libexec/cups/filter/rastertoescpx
 libexec/cups/filter/rastertopclx
 libexec/cups/filter/rastertopdf
+libexec/cups/filter/rastertops
 libexec/cups/filter/sys5ippprinter
 %%BRAILLE%%libexec/cups/filter/textbrftoindexv3
 %%BRAILLE%%libexec/cups/filter/textbrftoindexv4
-libexec/cups/filter/textonly
 %%BRAILLE%%libexec/cups/filter/texttobrf
 libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
+libexec/cups/filter/texttotext
 libexec/cups/filter/urftopdf
 man/man1/foomatic-rip.1.gz
 man/man5/cups-browsed.conf.5.gz
@@ -121,4 +122,3 @@ share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
-share/ppd/cupsfilters/textonly.ppd
