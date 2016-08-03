@@ -4,8 +4,8 @@
 PORTNAME=	showbeastie
 PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=
-DISTFILES=
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	t@tobik.me
 COMMENT=	Preview FreeBSD loader logos
@@ -25,6 +25,8 @@ PLIST_FILES=	bin/${PORTNAME}
 # Make sure building succeeds on HEAD
 MAKE_ARGS+=	-m ${SRC_BASE}/share/mk
 
+BROKEN_FreeBSD_9=	builds but expects newer loader environment
+
 pre-patch:
 	@${MKDIR} ${WRKSRC}
 	@${TAR} -C ${SRC_BASE}/sys/boot/ficl \
@@ -34,6 +36,10 @@ pre-patch:
 post-patch:
 	${REINPLACE_CMD} 's|-I.*/\.\./common|-I${SRC_BASE}/sys/boot/common|g' \
 		${WRKSRC}/Makefile
+
+# Make sure building on FreeBSD 11.0/i386 works. Calls to biospci_* are not
+# needed for this program.
+	${REINPLACE_CMD} 's|ifdef __i386__|if 0|g' ${WRKSRC}/loader.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/testmain ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
