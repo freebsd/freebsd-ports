@@ -4,4 +4,4 @@ SQLAlchemy to have database changeset handling. It provides a database
 change repository mechanism which can be used from the command line as
 well as from inside python code.
 
-WWW: http://code.google.com/p/sqlalchemy-migrate/
+WWW: https://github.com/openstack/sqlalchemy-migrate

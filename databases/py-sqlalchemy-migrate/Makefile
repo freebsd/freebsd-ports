@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sqlalchemy-migrate
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	databases python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +12,8 @@ COMMENT=	Database schema migrations for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7:databases/py-sqlalchemy07 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.8.1:devel/py-pbr
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>0:textproc/py-Tempita \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator
 
