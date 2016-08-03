@@ -242,6 +242,7 @@ riakcs:*:668:667::0:0:Riak CS user:/usr/local/lib/riak-cs:/bin/sh
 stanchion:*:669:667::0:0:Stanchion user:/usr/local/lib/stanchion:/bin/sh
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 fastnetmon:*:701:701::0:0:FastNetMon user:/nonexistent:/usr/sbin/nologin
+_sndio:*:702:702::0:0:sndio privsep:/var/empty:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/nologin
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
