@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Authen-ExternalAuth
-DISTVERSION=	0.25
-PORTREVISION=	2
+DISTVERSION=	0.26
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,12 +22,12 @@ NO_ARCH=	yes
 USES+=		perl5
 USE_PERL5=	configure
 
+# This module has been made part of core rt-4.4.x 
 OPTIONS_SINGLE=			RTVERSION
-OPTIONS_SINGLE_RTVERSION=	RT40 RT42 RT44
+OPTIONS_SINGLE_RTVERSION=	RT40 RT42
 RT40_DESC=			Install for rt-4.0.x (www/rt40)
 RT42_DESC=			Install for rt-4.2.x (www/rt42)
-RT44_DESC=			Install for rt-4.4.x (www/rt44)
-OPTIONS_DEFAULT=		RT44
+OPTIONS_DEFAULT=		RT42
 
 .include <bsd.port.options.mk>
 
@@ -49,7 +48,7 @@ MAN3PREFIX=	${PREFIX}
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{40,42,44}.  Hence ignore
+# matches the $PREFIX used to install www/rt{40,42}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 
 do-configure:
