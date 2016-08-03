@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-05-25 08:46:44 UTC
+--- CMakeLists.txt.orig	2016-06-16 16:16:01 UTC
 +++ CMakeLists.txt
 @@ -368,12 +368,12 @@ if(NOT INSTALL_LIB_DIR)
        message(STATUS "*** Detected 64 bit system")
