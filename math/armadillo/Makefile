@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	armadillo
-PORTVERSION=	7.100.3
+PORTVERSION=	7.300.1
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -11,6 +11,7 @@ COMMENT=	C++ linear algebra library
 LICENSE=	MPL
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libopenblasp.so:math/openblas \
 		libarpack.so:math/arpack \
 		libhdf5.so:science/hdf5 \
 		libsuperlu.so:math/superlu

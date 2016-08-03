@@ -137,6 +137,8 @@ include/armadillo_bits/fn_find_unique.hpp
 include/armadillo_bits/fn_flip.hpp
 include/armadillo_bits/fn_hist.hpp
 include/armadillo_bits/fn_histc.hpp
+include/armadillo_bits/fn_index_max.hpp
+include/armadillo_bits/fn_index_min.hpp
 include/armadillo_bits/fn_inplace_strans.hpp
 include/armadillo_bits/fn_inplace_trans.hpp
 include/armadillo_bits/fn_interp1.hpp
@@ -323,6 +325,10 @@ include/armadillo_bits/op_hist_bones.hpp
 include/armadillo_bits/op_hist_meat.hpp
 include/armadillo_bits/op_htrans_bones.hpp
 include/armadillo_bits/op_htrans_meat.hpp
+include/armadillo_bits/op_index_max_bones.hpp
+include/armadillo_bits/op_index_max_meat.hpp
+include/armadillo_bits/op_index_min_bones.hpp
+include/armadillo_bits/op_index_min_meat.hpp
 include/armadillo_bits/op_inv_bones.hpp
 include/armadillo_bits/op_inv_meat.hpp
 include/armadillo_bits/op_logmat_bones.hpp
@@ -474,7 +480,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.7
-lib/libarmadillo.so.7.100.3
+lib/libarmadillo.so.7.300.0
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
