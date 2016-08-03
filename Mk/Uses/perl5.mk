@@ -51,7 +51,6 @@ THIS_IS_OLD_PERL=	yes
 # end of remove
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .if ${PERL5_DEFAULT} == 5.18
 .include "${PORTSDIR}/lang/perl5.18/version.mk"
 .elif ${PERL5_DEFAULT} == 5.20

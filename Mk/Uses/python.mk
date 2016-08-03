@@ -260,9 +260,6 @@ _PYTHON_RUN_DEP=	yes
 _PYTHON_TEST_DEP=	yes
 .endif
 
-# Determine version number of Python to use
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .if defined(PYTHON_DEFAULT_VERSION)
 WARNING+=	"PYTHON_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=python=${PYTHON_DEFAULT_VERSION:S/^python//} instead"
 .endif

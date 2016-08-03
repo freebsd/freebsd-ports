@@ -26,8 +26,6 @@
 .if !defined(_INCLUDE_USES_MYSQL_MK)
 _INCLUDE_USES_MYSQL_MK=	yes
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .if !empty(mysql_ARGS)
 .undef _WANT_MYSQL_VER
 .undef _WANT_MYSQL_SERVER

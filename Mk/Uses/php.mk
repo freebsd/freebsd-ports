@@ -38,8 +38,6 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 _INCLUDE_USES_PHP_MK=	yes
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .  if defined(DEFAULT_PHP_VER)
 WARNING+=	"DEFAULT_PHP_VER is defined, consider using DEFAULT_VERSIONS=php=${DEFAULT_PHP_VER} instead"
 .  endif

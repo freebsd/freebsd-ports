@@ -31,8 +31,6 @@
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
 # When adding a version, please keep the comment in
