@@ -1,9 +1,19 @@
-OnionCat creates a transparent IP layer on top of Tor's hidden services.
-It transmits any kind of IP-based data transparently through the Tor
-network on a location hidden basis.
+OnionCat is a VPN-adapter which allows to connect two or more computers or
+networks through VPN-tunnels. It is designed to use the anonymization networks
+Tor or I2P as its transport, hence, it provides location-based anonymity while
+still creating tunnel end points with private unique IP addresses.
 
-You can think of it as a point-to-multipoint VPN between hidden services.
+OnionCat uses IPv6 as native layer 3 network protocol. The clients
+connected by it appear as on a single logical IPv6 network as being connected
+by a virtual switch. OnionCat automatically calculates and assigns unique IPv6
+addresses to the tunnel end points which are derived from the hidden service
+ID (onion ID) of the hidden service of the local Tor client, or the local I2P
+server destination, respectively. This technique provides authentication
+between the onion ID and the layer 3 address, hence, defeats IP spoofing
+within the OnionCat VPN.
 
-OnionCat is based on anonymizing transport layers like Tor.
+If necessary, OnionCat can of course transport IPv4 as well. Although it has
+native IP support, the suggested way to do this is to configure an
+IPv4-in-IPv6 tunnel.
 
-WWW: http://www.cypherpunk.at/onioncat/
+WWW: https://www.onioncat.org/
