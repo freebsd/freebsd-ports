@@ -266,6 +266,7 @@
     SUBDIR += setlayout
     SUBDIR += setxkbmap
     SUBDIR += simdock
+    SUBDIR += simplestroke
     SUBDIR += sisctrl
     SUBDIR += slim
     SUBDIR += slock
