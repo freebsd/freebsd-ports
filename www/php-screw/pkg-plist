@@ -1,2 +1,3 @@
 bin/screw
 lib/php/%%PHP_EXT_DIR%%/php_screw.so
+etc/php/ext-30-screw.ini
