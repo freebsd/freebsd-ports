@@ -14,7 +14,6 @@ _INCLUDE_USES_LUA_MK=	yes
 # Mk/bsd.default-versions.mk in sync.
 _LUA_VALID_VERSIONS=	53 52 51
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _LUA_DEFAULT_VERSION=	${LUA_DEFAULT:S/.//}
 .if ! ${_LUA_VALID_VERSIONS:M${_LUA_DEFAULT_VERSION}}
 IGNORE=	Invalid lua version ${LUA_DEFAULT}

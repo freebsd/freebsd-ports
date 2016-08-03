@@ -1275,6 +1275,8 @@ WITH_DEBUG=	yes
 
 _PREMKINCLUDED=	yes
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
 .if defined(PORTVERSION)
 .if ${PORTVERSION:M*[-_,]*}x != x
 IGNORE=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','

@@ -16,7 +16,6 @@ fortran_ARGS=	gcc
 .endif
 
 .if ${fortran_ARGS} == gcc
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _GCC_VER=	${GCC_DEFAULT:S/.//}
 .if ${GCC_DEFAULT} == ${LANG_GCC_IS}
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc

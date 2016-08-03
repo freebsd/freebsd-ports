@@ -7,7 +7,6 @@
 
 .if !defined(_INCLUDE_USES_FIREBIRD_MK)
 _INCLUDE_USES_FIREBIRD_MK=	yes
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if !empty(firebird_ARGS)
 FIREBIRD_VER=	${firebird_ARGS}

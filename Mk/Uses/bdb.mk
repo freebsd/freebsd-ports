@@ -65,8 +65,6 @@ WARNING+=	"WITH_BDB_VER is deprecated and will be removed on 2016-08-01. Use DEF
 BDB_DEFAULT:=${WITH_BDB_VER}
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 _BDB_DEFAULT_save:=${BDB_DEFAULT}
 
 _DB_PORTS=		48 5 6

@@ -78,7 +78,6 @@ _TCLTK_VALID_VERSIONS=	84 85 86
 # Bring in the default and check that the specified version is in the list of
 # valid versions.
 #
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _TCLTK_DEFAULT_VERSION=	${TCLTK_DEFAULT:S/.//}
 .if ! ${_TCLTK_VALID_VERSIONS:M${_TCLTK_DEFAULT_VERSION}}
 IGNORE=	Invalid tcltk version ${TCLTK_DEFAULT}
