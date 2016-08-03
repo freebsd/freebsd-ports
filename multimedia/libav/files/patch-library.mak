@@ -1,6 +1,6 @@
---- library.mak.orig	2014-04-08 18:27:40.000000000 +0200
-+++ library.mak	2014-03-23 17:47:44.000000000 +0100
-@@ -80,7 +80,7 @@
+--- library.mak.orig	2016-05-25 00:36:32 UTC
++++ library.mak
+@@ -80,7 +80,7 @@ install-lib$(NAME)-headers: $(addprefix 
  	$(Q)mkdir -p "$(INCINSTDIR)"
  	$$(INSTALL) -m 644 $$^ "$(INCINSTDIR)"
  

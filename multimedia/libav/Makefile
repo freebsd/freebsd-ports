@@ -1,20 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.6
-PORTREVISION=	3
+PORTVERSION=	11.7
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Realtime audio/video conversion library
 
 BUILD_DEPENDS=	yasm:devel/yasm
+LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+		libgmp.so:math/gmp \
+		libvdpau.so:multimedia/libvdpau \
+		libhogweed.so:security/nettle
 
 USES=		cpe gmake perl5 pkgconfig tar:xz
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+USE_XORG=	x11
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -101,7 +105,7 @@ OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=			ssl
 
 OPUS_LIB_DEPENDS=		libopus.so:audio/opus
 OPUS_CONFIGURE_ENABLE=		libopus
