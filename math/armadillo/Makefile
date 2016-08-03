@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	armadillo
-PORTVERSION=	6.700.7
+PORTVERSION=	7.100.3
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -10,14 +10,14 @@ COMMENT=	C++ linear algebra library
 
 LICENSE=	MPL
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libarpack.so:math/arpack \
 		libhdf5.so:science/hdf5 \
 		libsuperlu.so:math/superlu
 
-USES=		cmake blaslapack
+USES=		blaslapack cmake compiler:c++11-lang tar:xz
 USE_LDCONFIG=	yes
+
+BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.mk>
