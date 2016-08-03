@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	2.1.1
-PORTREVISION=	5
+PORTVERSION=	2.1.2
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -23,7 +23,7 @@ USE_SUBMAKE=	yes
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 NLS DBI EXTRAOPTS SSH_PORTABLE
 OPTIONS_SINGLE=	DNS
-OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS DNS_BIND99 DNS_BIND910
+OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS DNS_BIND99 DNS_BIND910 DNS_BIND911
 OPTIONS_DEFAULT=EXTRAOPTS DNS_BASE
 OPTIONS_SUB=	yes
 
@@ -44,6 +44,7 @@ DNS_BASE_DESC=	>= 10 means drill for check_dig and no check_dns
 DNS_BINDTOOLS_DESC=	Use dig and nslookup from dns/bind-tools
 DNS_BIND99_DESC=	Use dig and nslookup from dns/bind99
 DNS_BIND910_DESC=	Use dig and nslookup from dns/bind910
+DNS_BIND911_DESC=	Use dig and nslookup from dns/bind911
 
 EXTRAOPTS_CONFIGURE_ENABLE=	extra-opts
 
@@ -126,6 +127,9 @@ DNS_BIND99_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
 DNS_BIND910_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind910
 DNS_BIND910_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
+				--with-nslookup-command=${LOCALBASE}/bin/nslookup
+DNS_BIND911_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind911
+DNS_BIND911_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
 
 SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:security/openssh-portable

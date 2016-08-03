@@ -1,11 +1,11 @@
---- configure.orig	2015-07-31 17:47:20 UTC
+--- configure.orig	2016-08-01 16:28:00 UTC
 +++ configure
-@@ -22224,7 +22224,7 @@ then
+@@ -21947,7 +21947,7 @@ then
  $as_echo "$ac_cv_ps_command" >&6; }
  
- elif ps -axwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
+ elif ps -axwwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
 -	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
 +	egrep -i "^ *STAT +COMMAND +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
  then
  	ac_cv_ps_varlist="procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos"
- 	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
+ 	ac_cv_ps_command="$PATH_TO_PS -axwwo 'stat uid pid ppid vsz rss pcpu comm args'"
