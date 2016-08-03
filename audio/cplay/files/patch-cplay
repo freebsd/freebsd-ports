@@ -1,42 +1,9 @@
---- cplay.orig	2003-12-05 08:20:56 UTC
+--- cplay.orig	2011-04-27 16:33:40 UTC
 +++ cplay
-@@ -63,7 +63,7 @@ except:
- 
- # ------------------------------------------
- XTERM = re.search("rxvt|xterm", os.environ["TERM"])
--CONTROL_FIFO = "/var/tmp/cplay_control"
-+CONTROL_FIFO = "%s/cplay-control-%s" % (os.environ.get("TMPDIR", "/tmp"), os.environ["USER"])
- 
- # ------------------------------------------
- def which(program):
-@@ -906,11 +906,20 @@ class PlaylistWindow(TagListWindow):
- 
-     def command_change_viewpoint(self, klass=PlaylistEntry):
-         if not globals().get("ID3"):
-+            global ID3, ogg, codecs
-+            have_meta = 0
-             try:
--                global ID3, ogg, codecs
--                import ID3, ogg.vorbis, codecs
-+                import ID3
-+                have_meta = 1
-+            except ImportError:
-+                pass
-+            try:
-+                import ogg.vorbis, codecs
-+                have_meta = 1
-+            except ImportError:
-+                pass
-+            if have_meta:
-                 klass.vps.append([_("metadata"), klass.vp_metadata])
--            except ImportError: pass
-         TagListWindow.command_change_viewpoint(self, klass)
- 
-     def get_title(self):
-@@ -962,9 +971,11 @@ class PlaylistWindow(TagListWindow):
+@@ -967,9 +967,11 @@ class PlaylistWindow(TagListWindow):
          try:
              if os.path.isdir(pathname):
-                 app.status(_("Working..."))
+                 quiet or app.status(_("Working..."))
 -                self.add_dir(pathname)
 +                self.add_dir(os.path.abspath(pathname))
              elif VALID_PLAYLIST(pathname):
@@ -46,87 +13,13 @@
              else:
                  pathname = self.fix_url(pathname)
                  self.append(PlaylistEntry(pathname))
-@@ -1301,6 +1312,17 @@ class TimeOffsetPlayer(Player):
-             self.set_position(head, head+tail, [head, tail])
- 
- # ------------------------------------------
-+class MplayerOffsetPlayer(Player):
-+    re_progress = re.compile("(\d+).*\sof (\d+)")
-+
-+    def parse_buf(self):
-+        match = self.re_progress.search(self.buf)
-+        if match:
-+            s1, s2 = map(string.atoi, match.groups())
-+            head, tail = s1, s2-s1
-+            self.set_position(head, head+tail, [head,tail])
-+
-+# ------------------------------------------
- class NoOffsetPlayer(Player):
- 
-     def parse_buf(self):
-@@ -1334,8 +1356,6 @@ class Timeout:
- # ------------------------------------------
- class FIFOControl:
-     def __init__(self):
--        try: self.fd = open(CONTROL_FIFO, "rb+", 0)
--        except: self.fd = None
-         self.commands = {"pause" : app.toggle_pause,
-                          "next" : app.next_song,
-                          "prev" : app.prev_song,
-@@ -1346,6 +1366,15 @@ class FIFOControl:
-                          "volup" : app.inc_volume,
-                          "voldown" : app.dec_volume,
-                          "quit" : app.quit}
-+        self.fd = None
-+        try:
-+            if os.path.exists(CONTROL_FIFO):
-+                os.unlink(CONTROL_FIFO)
-+            os.mkfifo(CONTROL_FIFO, 0600)
-+            self.fd = open(CONTROL_FIFO, "rb+", 0)
-+        except IOError:
-+            # warn that we're disabling the fifo because someone raced us?
-+            return
- 
-     def handle_command(self):
-         command = string.strip(self.fd.readline())
-@@ -1419,6 +1448,11 @@ class Application:
-         XTERM and sys.stderr.write("\033]0;%s\a" % "xterm")
-         tty and tty.tcsetattr(sys.stdin.fileno(), tty.TCSADRAIN, self.tcattr)
-         print
-+        # remove temporary files
-+        try:
-+            if os.path.exists(CONTROL_FIFO): os.unlink(CONTROL_FIFO)
-+        except IOError:
-+            pass
- 
-     def run(self):
-         while 1:
-@@ -1615,7 +1649,7 @@ def main():
-             if opt == "-v": app.mixer("toggle")
-         if args or playlist:
-             for i in args or playlist:
--                app.win_playlist.add(os.path.abspath(i))
-+                app.win_playlist.add(i)
-             app.win_tab.change_window()
-         app.run()
-     except SystemExit:
-@@ -1627,15 +1661,17 @@ def main():
- 
- # ------------------------------------------
- PLAYERS = [
--    FrameOffsetPlayer("ogg123 -q -v -k %d %s", "\.ogg$"),
-+    FrameOffsetPlayer("ogg123 -q -v -k %d %s", "\.(ogg|flac)$"),
-     FrameOffsetPlayer("splay -f -k %d %s", "(^http://|\.mp[123]$)", 38.28),
-     FrameOffsetPlayer("mpg123 -q -v -k %d %s", "(^http://|\.mp[123]$)", 38.28),
-     FrameOffsetPlayer("mpg321 -q -v -k %d %s", "(^http://|\.mp[123]$)", 38.28),
-     TimeOffsetPlayer("madplay -v --display-time=remaining -s %d %s", "\.mp[123]$"),
-+    MplayerOffsetPlayer("mplayer -vo null -noconsolecontrols -ss %d %s", "\.(mp[123]|ogg|flac|wav|aiff|wma)$"),
-     NoOffsetPlayer("mikmod -q -p0 %s", "\.(mod|xm|fm|s3m|med|col|669|it|mtm)$"),
-     NoOffsetPlayer("xmp -q %s", "\.(mod|xm|fm|s3m|med|col|669|it|mtm|stm)$"),
-     NoOffsetPlayer("play %s", "\.(aiff|au|cdr|mp3|ogg|wav)$"),
--    NoOffsetPlayer("speexdec %s", "\.spx$")
-+    NoOffsetPlayer("speexdec %s", "\.spx$"),
-+    NoOffsetPlayer("mplayer -noconsolecontrols -playlist %s", "\.(ram|pls|asx)$")
-     ]
- 
- def VALID_SONG(name):
+@@ -1837,6 +1839,9 @@ PLAYERS = [
+     MPlayer("mplayer -slave -vc null -vo null {file}",
+             "^http://|\.(mp[123]|ogg|oga|flac|spx|mp[cp+]|mod|xm|fm|s3m|" +
+                 "med|col|669|it|mtm|stm|aiff|au|cdr|wav|wma|m4a|m4b)$"),
++    MPlayer("mpv -vo null {file}",
++            "^http://|\.(mp[123]|ogg|oga|flac|spx|mp[cp+]|mod|xm|fm|s3m|" +
++                "med|col|669|it|mtm|stm|aiff|au|cdr|wav|wma|m4a|m4b)$"),
+     FrameOffsetPlayer("ogg123 -q -v -k {offset} {file}", "\.(ogg|flac|spx)$"),
+     FrameOffsetPlayer("splay -f -k {offset} {file}", "(^http://|\.mp[123]$)", 38.28),
+     FrameOffsetPlayer("mpg123 -q -v -k {offset} {file}", "(^http://|\.mp[123]$)", 38.28),
