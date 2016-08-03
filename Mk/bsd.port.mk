@@ -2167,7 +2167,7 @@ PKGINSTALL?=	${PKGDIR}/pkg-install
 PKGDEINSTALL?=	${PKGDIR}/pkg-deinstall
 PKGREQ?=		${PKGDIR}/pkg-req
 PKGMESSAGE?=	${PKGDIR}/pkg-message
-PKGMESSAGES+=	${PKGMESSAGE}
+_PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
@@ -4252,7 +4252,7 @@ create-manifest:
 			dp_PKGBASE='${PKGBASE}'                               \
 			dp_PKGDEINSTALL='${PKGDEINSTALL}'                     \
 			dp_PKGINSTALL='${PKGINSTALL}'                         \
-			dp_PKGMESSAGES='${PKGMESSAGES}'                         \
+			dp_PKGMESSAGES='${_PKGMESSAGES}'                      \
 			dp_PKGORIGIN='${PKGORIGIN}'                           \
 			dp_PKGPOSTDEINSTALL='${PKGPOSTDEINSTALL}'             \
 			dp_PKGPOSTINSTALL='${PKGPOSTINSTALL}'                 \
