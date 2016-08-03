@@ -1,0 +1,10 @@
+Sndio is a small audio and MIDI framework part of the OpenBSD project.
+
+It provides an lightweight audio & MIDI server and a fully documented
+user-space API to access either the server or directly the hardware in
+a uniform way.  Sndio is designed to work for desktop applications,
+but pays special attention to synchronization mechanisms and
+reliability required by music applications.  Reliability through
+simplicity are part of the project goals.
+
+WWW: http://www.sndio.org/
