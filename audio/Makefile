@@ -697,6 +697,7 @@
     SUBDIR += smasher
     SUBDIR += snack
     SUBDIR += snd
+    SUBDIR += sndio
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sooperlooper

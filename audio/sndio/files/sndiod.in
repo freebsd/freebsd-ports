@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: sndiod
+# REQUIRE: NETWORKING sysctl
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+# By default sndiod will use the audio device from
+# hw.snd.default_unit.  You can override this by setting sndiod_flags.
+#
+# To connect to a remote sndiod use e.g.
+# sndiod_flags="-f snd@remotehost/0"
+#
+# To use /dev/dsp5
+# sndiod_flags="-f rsnd/5"
+
+. /etc/rc.subr
+
+name=sndiod
+rcvar=sndiod_enable
+
+load_rc_config $name
+
+_sndiod_devnum=$($SYSCTL -n hw.snd.default_unit)
+: ${sndiod_enable="NO"}
+: ${sndiod_flags="-f rsnd/$_sndiod_devnum"}
+
+command="%%PREFIX%%/bin/sndiod"
+
+run_rc_command "$1"
