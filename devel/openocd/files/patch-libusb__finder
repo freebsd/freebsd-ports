@@ -1,0 +1,30 @@
+--- libusb_finder.orig	2016-07-22 13:59:36 UTC
++++ libusb_finder
+@@ -0,0 +1,27 @@
++#!/bin/sh
++
++set -e
++
++case `uname -r` in
++	9.*) ;;
++	*) pkg-config $@ && exit 0;;
++esac
++
++if [ ! -e /usr/lib/libusb.so ]; then
++	echo "$0: libusb does not seem to be available" > /dev/stderr
++	exit 1
++fi
++
++for param in $@; do
++	case $param in
++		"--exists") ;;
++		"--cflags") ;;
++                "--libs") echo "-lusb" ;;
++		"--short-errors") ;;
++		"--print-errors") ;;
++		libusb*) ;;
++		*)
++			echo "$0: Unhandled parameters: $@" > /dev/stderr
++			exit 1 ;;
++	esac
++done

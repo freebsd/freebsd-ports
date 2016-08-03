@@ -1,32 +1,101 @@
---- configure.orig	2015-05-17 21:09:56.000000000 +0000
-+++ configure	2015-10-17 23:52:10.459092000 +0000
-@@ -15226,11 +15226,11 @@
+--- configure.orig	2015-05-17 21:09:56 UTC
++++ configure
+@@ -15124,12 +15124,12 @@ if test -n "$LIBUSB1_CFLAGS"; then
+     pkg_cv_LIBUSB1_CFLAGS="$LIBUSB1_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
-     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb\""; } >&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb-1.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libusb-1.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: ./libusb_finder --exists --print-errors \"libusb-1.0\""; } >&5
++  (./libusb_finder --exists --print-errors "libusb-1.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBUSB1_CFLAGS=`$PKG_CONFIG --cflags "libusb-1.0" 2>/dev/null`
++  pkg_cv_LIBUSB1_CFLAGS=`./libusb_finder --cflags "libusb-1.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -15141,12 +15141,12 @@ if test -n "$LIBUSB1_LIBS"; then
+     pkg_cv_LIBUSB1_LIBS="$LIBUSB1_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb-1.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libusb-1.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: ./libusb_finder --exists --print-errors \"libusb-1.0\""; } >&5
++  (./libusb_finder --exists --print-errors "libusb-1.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBUSB1_LIBS=`$PKG_CONFIG --libs "libusb-1.0" 2>/dev/null`
++  pkg_cv_LIBUSB1_LIBS=`./libusb_finder --libs "libusb-1.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -15167,9 +15167,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBUSB1_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libusb-1.0" 2>&1`
++	        LIBUSB1_PKG_ERRORS=`./libusb_finder --short-errors --print-errors --cflags --libs "libusb-1.0" 2>&1`
+         else
+-	        LIBUSB1_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libusb-1.0" 2>&1`
++	        LIBUSB1_PKG_ERRORS=`./libusb_finder --print-errors --cflags --libs "libusb-1.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBUSB1_PKG_ERRORS" >&5
+@@ -15198,8 +15198,8 @@ $as_echo "yes" >&6; }
+ $as_echo "#define HAVE_LIBUSB1 1" >>confdefs.h
+ 
+ 	if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb-1.0 >= 1.0.9\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libusb-1.0 >= 1.0.9") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: ./libusb_finder --exists --print-errors \"libusb-1.0 >= 1.0.9\""; } >&5
++  (./libusb_finder --exists --print-errors "libusb-1.0 >= 1.0.9") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+@@ -15225,12 +15225,12 @@ if test -n "$LIBUSB0_CFLAGS"; then
+     pkg_cv_LIBUSB0_CFLAGS="$LIBUSB0_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "libusb") 2>&5
-+  ($PKG_CONFIG --exists --print-errors "libusb-0.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: ./libusb_finder --exists --print-errors \"libusb\""; } >&5
++  (./libusb_finder --exists --print-errors "libusb-0.1") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_LIBUSB0_CFLAGS=`$PKG_CONFIG --cflags "libusb" 2>/dev/null`
-+  pkg_cv_LIBUSB0_CFLAGS=`$PKG_CONFIG --cflags "libusb-0.1" 2>/dev/null`
++  pkg_cv_LIBUSB0_CFLAGS=`./libusb_finder --cflags "libusb-0.1" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -15242,12 +15242,12 @@
+@@ -15242,12 +15242,12 @@ if test -n "$LIBUSB0_LIBS"; then
      pkg_cv_LIBUSB0_LIBS="$LIBUSB0_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
 -    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "libusb") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb-0.1\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "libusb-0.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: ./libusb_finder --exists --print-errors \"libusb-0.1\""; } >&5
++  (./libusb_finder --exists --print-errors "libusb-0.1") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_LIBUSB0_LIBS=`$PKG_CONFIG --libs "libusb" 2>/dev/null`
-+  pkg_cv_LIBUSB0_LIBS=`$PKG_CONFIG --libs "libusb-0.1" 2>/dev/null`
++  pkg_cv_LIBUSB0_LIBS=`./libusb_finder --libs "libusb-0.1" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
+@@ -15268,9 +15268,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBUSB0_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libusb" 2>&1`
++	        LIBUSB0_PKG_ERRORS=`./libusb_finder --short-errors --print-errors --cflags --libs "libusb" 2>&1`
+         else
+-	        LIBUSB0_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libusb" 2>&1`
++	        LIBUSB0_PKG_ERRORS=`./libusb_finder --print-errors --cflags --libs "libusb" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBUSB0_PKG_ERRORS" >&5
