@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -15,13 +15,13 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libnotify.so:devel/libnotify \
 		libjson-glib-1.0.so:devel/json-glib \
-		librest-0.7.so:devel/librest \
-		libgee-0.8.so:devel/libgee
+		librest-0.7.so:devel/librest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USES=		autoreconf gettext gmake libtool pkgconfig sqlite
+USES=		autoreconf compiler:c++11-lang gettext gmake libtool pkgconfig sqlite
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
 INSTALLS_ICONS=	yes
@@ -34,8 +34,8 @@ GSTREAMER_CONFIGURE_OFF=	--disable-video
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml
 
 post-extract:
-	cd ${WRKSRC}/data && ${MV} org.baedert.corebird.desktop.in.in \
-		corebird.desktop.in.in
+	cd ${WRKSRC}/data && ${MV} org.baedert.corebird.desktop.in \
+		corebird.desktop.in
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/m4
