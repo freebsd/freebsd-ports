@@ -43,8 +43,6 @@ PGSQL_LIBVER=	5
 PGSQL$v_LIBVER?=	${PGSQL_LIBVER}
 .endfor
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .for v in ${PGSQL_DEFAULT}
 .  if ! ${VALID_PGSQL_VER:M$v}
 IGNORE=		Invalid PGSQL default version ${PGSQL_DEFAULT}; valid versions are ${VALID_PGSQL_VER}

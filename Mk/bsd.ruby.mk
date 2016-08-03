@@ -128,8 +128,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .if defined(RUBY_DEFAULT_VER)
 WARNING+=	"RUBY_DEFAULT_VER is defined, consider using DEFAULT_VERSIONS=ruby=${RUBY_DEFAULT_VER} instead"
 .endif

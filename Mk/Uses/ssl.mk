@@ -32,8 +32,6 @@ _INCLUDE_USES_SSL_MK=	yes
 IGNORE=	"USES=ssl does not take any argument."
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
 .if ${SSL_DEFAULT} == base
 OPENSSLBASE=		/usr
 OPENSSLDIR?=		/etc/ssl
