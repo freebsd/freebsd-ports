@@ -3,6 +3,7 @@
 
 PORTNAME=	automap
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

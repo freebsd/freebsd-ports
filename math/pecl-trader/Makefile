@@ -3,6 +3,7 @@
 
 PORTNAME=	trader
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

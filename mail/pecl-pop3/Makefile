@@ -3,6 +3,7 @@
 
 PORTNAME=	pop3
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

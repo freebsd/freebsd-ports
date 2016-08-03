@@ -125,11 +125,9 @@ CMAKE_ARGS+=		-DWITH_POSTGIS=0
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:lang/php56
-RUN_BUILDS+=		${LOCALBASE}/bin/php-config:lang/php56
-PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e "s,/usr/local/,,"
+USES+=			php:build
+IGNORE_WITH_PHP=	55 70
 CMAKE_ARGS+=		-DWITH_PHP=1
-PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
 PLIST_SUB+=		PHP=""
 .else
 CMAKE_ARGS+=		-DWITH_PHP=0
@@ -188,22 +186,20 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
-.if ${PORT_OPTIONS:MPHP}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mapscript/php/php_mapscript.so \
-		${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}/
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
-	(cd ${BUILD_WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
-.endif
-
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
-.if ${PORT_OPTIONS:MPHP}
-	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${PREFIX}/etc/php/extensions.ini"
-.endif
+do-install-PHP-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mapscript/php/php_mapscript.so \
+		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
+	@${ECHO_CMD} "extension=php_mapscript.so" > ${STAGEDIR}${PREFIX}/etc/php/ext-20-php_mapscript.ini
+
+
+do-install-PYTHON-on:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	(cd ${BUILD_WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
+
 
 .include <bsd.port.mk>

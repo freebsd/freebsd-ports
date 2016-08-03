@@ -3,6 +3,7 @@
 
 PORTNAME=	gearman
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

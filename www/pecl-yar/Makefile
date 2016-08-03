@@ -3,6 +3,7 @@
 
 PORTNAME=	yar
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

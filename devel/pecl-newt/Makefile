@@ -2,6 +2,7 @@
 
 PORTNAME=	newt
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

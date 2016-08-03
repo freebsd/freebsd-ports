@@ -3,6 +3,7 @@
 
 PORTNAME=	perl
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

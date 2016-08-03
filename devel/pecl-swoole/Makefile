@@ -3,6 +3,7 @@
 
 PORTNAME=	swoole
 PORTVERSION=	1.7.22
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

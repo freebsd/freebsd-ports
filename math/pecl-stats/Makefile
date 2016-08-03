@@ -3,6 +3,7 @@
 
 PORTNAME=	stats
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	math textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

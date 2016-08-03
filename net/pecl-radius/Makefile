@@ -3,6 +3,7 @@
 
 PORTNAME=	radius
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
