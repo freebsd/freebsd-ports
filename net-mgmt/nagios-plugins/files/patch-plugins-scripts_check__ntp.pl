@@ -1,6 +1,6 @@
---- plugins-scripts/check_ntp.pl.orig	2015-07-30 21:40:06 UTC
+--- plugins-scripts/check_ntp.pl.orig	2016-08-01 16:27:46 UTC
 +++ plugins-scripts/check_ntp.pl
-@@ -313,7 +313,6 @@ if ($have_ntpq) {
+@@ -314,7 +314,6 @@ if ($have_ntpq) {
  				}
  			} else {
  				print "No match!\n" if $verbose;
@@ -8,7 +8,7 @@
  			}
  			
  		}
-@@ -427,7 +426,7 @@ if ($ntpdate_error != $ERRORS{'OK'}) {
+@@ -428,7 +427,7 @@ if ($ntpdate_error != $ERRORS{'OK'}) {
  foreach my $key (keys %ERRORS) {
  	if ($state==$ERRORS{$key}) {
  #		print ("NTP $key: $answer");
