@@ -1,2 +1,16 @@
 %%SITE_PERL%%/WebService/Dropbox.pm
+%%SITE_PERL%%/WebService/Dropbox/Auth.pm
+%%SITE_PERL%%/WebService/Dropbox/Files.pm
+%%SITE_PERL%%/WebService/Dropbox/Files/CopyReference.pm
+%%SITE_PERL%%/WebService/Dropbox/Files/ListFolder.pm
+%%SITE_PERL%%/WebService/Dropbox/Files/UploadSession.pm
+%%SITE_PERL%%/WebService/Dropbox/TokenFromOAuth1.pm
+%%SITE_PERL%%/WebService/Dropbox/Users.pm
 %%PERL5_MAN3%%/WebService::Dropbox.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Auth.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Files.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Files::CopyReference.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Files::ListFolder.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Files::UploadSession.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::TokenFromOAuth1.3.gz
+%%PERL5_MAN3%%/WebService::Dropbox::Users.3.gz

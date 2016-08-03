@@ -2,42 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	WebService-Dropbox
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	2.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ASKADNA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	changlp@cs.nctu.edu.tw
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Perl interface to Dropbox API
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-JSON>=2.53:converters/p5-JSON \
+
+MY_DEPENDS=	p5-HTTP-Message>=6.06:www/p5-HTTP-Message \
+		p5-JSON>=2.59:converters/p5-JSON \
+		p5-LWP-Protocol-https>=6.04:www/p5-LWP-Protocol-https \
 		p5-Net-OAuth>=0.28:net/p5-Net-OAuth \
-		p5-URI>=1.60:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		p5-URI>=1.60:net/p5-URI \
+		p5-libwww>=6.05:www/p5-libwww
+BUILD_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS}
 
-OPTIONS_DEFINE=	LWP
-LWP_DESC=	Use LWP instead of Furl
+OPTIONS_DEFINE=	FURL
+OPTIONS_DEFAULT=FURL
+FURL_DESC=	Support the (faster) Furl HTTP client library
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLWP}
-BUILD_DEPENDS+=	p5-LWP-Protocol-https>=6.03:www/p5-LWP-Protocol-https \
-		p5-libwww>=6.04:www/p5-libwww
-RUN_DEPENDS+=	p5-LWP-Protocol-https>=6.03:www/p5-LWP-Protocol-https \
-		p5-libwww>=6.04:www/p5-libwww
-.else
-BUILD_DEPENDS+=	p5-Furl>=1.01:www/p5-Furl \
-		p5-IO-Socket-SSL>=1.77:security/p5-IO-Socket-SSL
-RUN_DEPENDS+=	p5-Furl>=1.01:www/p5-Furl \
-		p5-IO-Socket-SSL>=1.77:security/p5-IO-Socket-SSL
-.endif
+FURL_BUILD_DEPENDS=	p5-Furl>=2.19:www/p5-Furl \
+			p5-IO-Socket-SSL>=1.954:security/p5-IO-Socket-SSL \
+			p5-JSON-XS>=3.02:converters/p5-JSON-XS
+FURL_RUN_DEPENDS=	${FURL_BUILD_DEPENDS}
 
 .include <bsd.port.mk>
