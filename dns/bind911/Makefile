@@ -29,7 +29,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0b2
+ISCVERSION=	9.11.0b3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -72,7 +72,7 @@ OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	RRL DLZ_FILESYSTEM
 OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
-			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE
+			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE LMDB
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -99,6 +99,7 @@ MINCACHE_DESC=		Use the mincachettl patch
 PORTREVISION_DESC=	Show PORTREVISION in the version string
 FETCHLIMIT_DESC=	Enable the query quotas for resolvers
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
+LMDB_DESC=		Use LMDB for zone management
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -129,6 +130,9 @@ CONFLICTS+=		bind-tools-9.*
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USES=		ssl
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
+
+LMDB_CONFIGURE_WITH=	lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 NEWSTATS_CONFIGURE_ENABLE=	newstats
 
