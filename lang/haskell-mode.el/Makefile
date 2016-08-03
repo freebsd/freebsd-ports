@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haskell-mode
-PORTVERSION=	13.20
+PORTVERSION=	13.20.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	lang elisp
 
@@ -20,6 +20,7 @@ PORTDOCS=	NEWS README.md
 USE_GITHUB=	yes
 USES=		gmake
 ALL_TARGET=	haskell-mode-autoloads.el
+NO_ARCH=	yes
 
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
 ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \
