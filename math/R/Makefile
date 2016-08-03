@@ -163,6 +163,7 @@ PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 .include "compiler.mk"
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD
 .if ${OSVERSION} > 1000052 && \
 (${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64 || ${ARCH} == pc98 || \
 ${ARCH} == sparc64)
@@ -222,6 +223,7 @@ pre-configure:
 		compiler and architecture: please enable the MISSING option."; \
 	fi
 .endif
+.endif  # ${OPSYS} == FreeBSD
 
 post-install:
 .for L in R Rblas Rlapack
