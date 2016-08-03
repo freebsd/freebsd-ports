@@ -222,7 +222,7 @@ _INCLUDE_USES_PHP_POST_MK=yes
 .  if ${php_ARGS:Mext} || ${php_ARGS:Mzend}
 PHP_MODNAME?=	${PORTNAME}
 PHP_EXT_PKGMESSAGE=	${WRKDIR}/php-ext-pkg-message
-PKGMESSAGES+=	${PHP_EXT_PKGMESSAGE}
+_PKGMESSAGES+=	${PHP_EXT_PKGMESSAGE}
 PHP_HEADER_DIRS+=	.
 # If there is no priority defined, we wing it.
 .    if !defined(PHP_MOD_PRIO)
