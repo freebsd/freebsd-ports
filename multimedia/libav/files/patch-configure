@@ -1,6 +1,6 @@
---- configure.orig	2015-01-15 05:50:49.000000000 +0900
-+++ configure	2015-01-21 16:23:01.000000000 +0900
-@@ -779,8 +779,8 @@
+--- configure.orig	2016-05-25 00:36:32 UTC
++++ configure
+@@ -780,8 +780,8 @@ ld_o(){
  
  check_ld(){
      log check_ld "$@"
@@ -11,7 +11,7 @@
      check_cc $($cflags_filter $flags) || return
      flags=$($ldflags_filter $flags)
      libs=$($ldflags_filter $libs)
-@@ -4606,7 +4606,7 @@
+@@ -4644,7 +4644,7 @@ DOCDIR=\$(DESTDIR)$docdir
  MANDIR=\$(DESTDIR)$mandir
  SRC_PATH=$source_path
  CC_IDENT=$cc_ident
@@ -20,7 +20,7 @@
  INTRINSICS=$intrinsics
  CC=$cc
  AS=$as
-@@ -4783,7 +4783,7 @@
+@@ -4821,7 +4821,7 @@ pkgconfig_generate(){
      requires=${requires%, }
      enabled ${name#lib} || return 0
      mkdir -p $name

@@ -1,5 +1,5 @@
---- libavcodec/libilbc.c.orig	2015-03-09 02:54:09.000000000 +0100
-+++ libavcodec/libilbc.c	2015-04-03 19:12:02.210836254 +0200
+--- libavcodec/libilbc.c.orig	2016-05-25 00:36:32 UTC
++++ libavcodec/libilbc.c
 @@ -20,6 +20,7 @@
   */
  
@@ -8,7 +8,7 @@
  
  #include "libavutil/channel_layout.h"
  #include "libavutil/common.h"
-@@ -95,8 +96,8 @@
+@@ -95,8 +96,8 @@ static int ilbc_decode_frame(AVCodecCont
          return ret;
      }
  
@@ -19,7 +19,7 @@
  
      *got_frame_ptr = 1;
  
-@@ -168,7 +169,7 @@
+@@ -168,7 +169,7 @@ static int ilbc_encode_frame(AVCodecCont
          return ret;
      }
  

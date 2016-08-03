@@ -1,6 +1,6 @@
---- libavcodec/Makefile.orig	2014-04-08 16:36:02.000000000 +0200
-+++ libavcodec/Makefile	2014-04-08 16:36:14.000000000 +0200
-@@ -687,7 +687,7 @@
+--- libavcodec/Makefile.orig	2016-05-25 00:36:32 UTC
++++ libavcodec/Makefile
+@@ -704,7 +704,7 @@ SKIPHEADERS                            +
                                            aac_tablegen_decl.h           \
                                            fft-internal.h                \
                                            tableprint.h                  \

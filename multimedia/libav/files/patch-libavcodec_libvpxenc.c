@@ -9,15 +9,9 @@ Date:   Mon Oct 19 22:44:11 2015 -0700
     
     Reviewed-by: Michael Niedermayer <michael@niedermayer.cc>
     Signed-off-by: James Zern <jzern@google.com>
----
- libavcodec/libvpxenc.c | 8 --------
- 1 file changed, 8 deletions(-)
-
-diff --git libavcodec/libvpxenc.c libavcodec/libvpxenc.c
-index 5f39783..992122c 100644
---- libavcodec/libvpxenc.c
+--- libavcodec/libvpxenc.c.orig	2016-05-25 00:36:32 UTC
 +++ libavcodec/libvpxenc.c
-@@ -104,19 +104,11 @@ typedef struct VP8EncoderContext {
+@@ -70,19 +70,11 @@ typedef struct VP8EncoderContext {
  
  /** String mappings for enum vp8e_enc_control_id */
  static const char *const ctlidstr[] = {
