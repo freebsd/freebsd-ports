@@ -1,0 +1,6 @@
+bin/dropbox-api
+bin/upload-to-dropbox
+%%SITE_PERL%%/App/dropboxapi.pm
+%%PERL5_MAN1%%/dropbox-api.1.gz
+%%PERL5_MAN1%%/upload-to-dropbox.1.gz
+%%PERL5_MAN3%%/App::dropboxapi.3.gz
