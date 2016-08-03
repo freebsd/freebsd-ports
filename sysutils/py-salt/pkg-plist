@@ -655,6 +655,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/dbhandle.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/exceptions.py
 %%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/kiwiproc.py
+%%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/kiwiproc.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/query.py
 %%PYTHON_SITELIBDIR%%/salt/modules/inspectlib/query.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/introspect.py
