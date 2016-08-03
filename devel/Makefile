@@ -718,6 +718,7 @@
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
+    SUBDIR += go-bayesian
     SUBDIR += go-bindata
     SUBDIR += go-btree
     SUBDIR += go-cobra
