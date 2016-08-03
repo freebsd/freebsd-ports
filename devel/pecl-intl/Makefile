@@ -3,7 +3,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

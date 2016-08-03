@@ -3,7 +3,7 @@
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/release/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/

@@ -3,6 +3,7 @@
 
 PORTNAME=	strict
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

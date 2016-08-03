@@ -3,6 +3,7 @@
 
 PORTNAME=	pdo_user
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

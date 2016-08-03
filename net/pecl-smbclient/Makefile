@@ -2,6 +2,7 @@
 
 PORTNAME=	smbclient
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

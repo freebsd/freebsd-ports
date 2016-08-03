@@ -3,7 +3,7 @@
 
 PORTNAME=	wbxml
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

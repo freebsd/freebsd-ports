@@ -34,27 +34,12 @@ PHP_MODNAME?=	IcePHP
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/*.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
-
-add-plist-info:
-	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec grep -v extension=${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
-		>> ${TMPPLIST}
+	@${ECHO_CMD} "extension=${PHP_MODNAME}.so" > ${STAGEDIR}${PREFIX}/etc/php/ext-20-ice.ini
 
 security-check:
 	@${ECHO_CMD} "****************************************************************************"
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/extensions.ini"
+	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/ext-20-ice.ini"
 	@${ECHO_CMD} "configuration file to automatically load the installed extension:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "extension=${PHP_MODNAME}.so"

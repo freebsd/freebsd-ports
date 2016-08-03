@@ -31,5 +31,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader.so
 	${INSTALL_DATA} ${WRKSRC}/ioncube_loader_fre_${PHP_INSTVER}_ts.so \
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader_ts.so
+# Put it before opcache, like the previous pkg-message was saying
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
+	@${ECHO_CMD} "[Zend]" > ${STAGEDIR}${PREFIX}/etc/php/ext-05-ioncube.ini
+	@${ECHO_CMD} "zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader.so" >> ${STAGEDIR}${PREFIX}/etc/php/ext-05-ioncube.ini
+	@${ECHO_CMD} "zend_extension_ts=${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader_ts.so" >> ${STAGEDIR}${PREFIX}/etc/php/ext-05-ioncube.ini
 
 .include <bsd.port.mk>

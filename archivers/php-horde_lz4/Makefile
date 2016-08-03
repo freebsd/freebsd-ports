@@ -3,6 +3,7 @@
 
 PORTNAME=	horde_lz4
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pear.horde.org/get/
 PKGNAMEPREFIX=	php-

@@ -2,6 +2,7 @@
 
 PORTNAME=	dio
 DISTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

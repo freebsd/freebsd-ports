@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160803:
+AUTHOR: mat@FreeBSD.org
+
+  Every PHP (or Zend) extension now installs its own .ini file in
+  /usr/local/etc/php.  A PHP extension will be automatically activated when
+  installed.  The order into which extensions are loaded is automatically
+  guessed.  In some very rare cases, the guess will be wrong, and PHP_MOD_PRIO
+  will need to be set.  Refer to the USES=php section of the Porter's Handbook
+  for more information.
+
 20160628:
 AUTHOR: mat@FreeBSD.org
 

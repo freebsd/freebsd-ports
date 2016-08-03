@@ -3,6 +3,7 @@
 
 PORTNAME=	yac
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/

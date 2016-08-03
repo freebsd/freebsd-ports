@@ -1,3 +1,4 @@
+etc/php/ext-20-ice.ini
 lib/php/%%PHP_EXT_DIR%%/IcePHP.so
 share/pear/Glacier2.php
 share/pear/Glacier2/Metrics.php

@@ -3,6 +3,7 @@
 
 PORTNAME=	cvsclient
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

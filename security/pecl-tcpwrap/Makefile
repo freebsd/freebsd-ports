@@ -3,6 +3,7 @@
 
 PORTNAME=	tcpwrap
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
