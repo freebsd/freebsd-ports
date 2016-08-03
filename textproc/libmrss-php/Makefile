@@ -3,7 +3,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 PKGNAMESUFFIX=	-php

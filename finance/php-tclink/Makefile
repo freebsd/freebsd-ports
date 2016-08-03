@@ -3,7 +3,7 @@
 
 PORTNAME=	tclink
 PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	https://vault.trustcommerce.com/downloads/
 PKGNAMEPREFIX=	php-

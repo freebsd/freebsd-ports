@@ -3,6 +3,7 @@
 
 PORTNAME=	blitz
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alexeyrybak.com/blitz/
 PKGNAMEPREFIX=	php5-

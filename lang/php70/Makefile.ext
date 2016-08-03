@@ -209,6 +209,8 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
+# This is needed by Zend extensions, keep before everything.
+PHP_MOD_PRIO=	10
 CONFIGURE_ARGS+=--enable-opcache
 USES+=	localbase
 .endif

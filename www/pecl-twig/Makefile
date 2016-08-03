@@ -3,6 +3,7 @@
 
 PORTNAME=	twig
 PORTVERSION=	1.24.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pear.twig-project.org/get/
 PKGNAMEPREFIX=	pecl-

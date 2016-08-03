@@ -3,6 +3,7 @@
 
 PORTNAME=	hrtime
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

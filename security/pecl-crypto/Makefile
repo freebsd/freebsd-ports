@@ -3,6 +3,7 @@
 
 PORTNAME=	crypto
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

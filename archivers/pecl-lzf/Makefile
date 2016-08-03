@@ -3,6 +3,7 @@
 
 PORTNAME=	lzf
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

@@ -3,6 +3,7 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

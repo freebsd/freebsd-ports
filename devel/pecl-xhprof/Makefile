@@ -3,6 +3,7 @@
 
 PORTNAME=	xhprof
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

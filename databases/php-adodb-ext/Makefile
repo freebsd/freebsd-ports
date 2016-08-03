@@ -3,7 +3,7 @@
 
 PORTNAME=	adodb-ext
 PORTVERSION=	5.04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://phplens.com/lens/dl/
 PKGNAMEPREFIX=	php-
@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/adodb-${PORTVERSION:S/.//}
 
 USES=		dos2unix php:ext zip
 IGNORE_WITH_PHP=56 70
-
-SUB_FILES=	pkg-message
+PHP_MODNAME=	adodb
 
 .include <bsd.port.pre.mk>
 

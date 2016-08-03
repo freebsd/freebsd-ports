@@ -3,6 +3,7 @@
 
 PORTNAME=	bitset
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

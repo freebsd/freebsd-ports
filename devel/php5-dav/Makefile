@@ -3,7 +3,7 @@
 
 PORTNAME=	dav
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.pureftpd.org/php-webdav/
 PKGNAMEPREFIX=	php5-

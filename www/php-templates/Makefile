@@ -31,5 +31,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}-doc/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
+	@${ECHO_CMD} "extension="${PREFIX}/lib/php/${PHP_EXT_DIR}/templates.so" > \
+		${STAGEDIR}${PREFIX}/etc/php/ext-20-templates.ini
 
 .include <bsd.port.mk>

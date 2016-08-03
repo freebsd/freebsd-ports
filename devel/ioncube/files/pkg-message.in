@@ -1,14 +1,8 @@
-
 You have installed the ionCube loader package.
 
-Edit %%LOCALBASE%%/etc/php.ini or %%LOCALBASE%%/etc/php/extensions.ini
-and add this three lines:
+The following lines have been added to %%PREFIX%%/etc/php/ext-05-ioncube.ini so
+that the extension has been automatically activated.
 
---------------------------------------------------------------------------------
 [Zend]
-zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader.so"
-zend_extension_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader_ts.so"
---------------------------------------------------------------------------------
-
-NOTE: If you have any Zend Extension already installed - you need put this before
-existing zend_extension lines.
+zend_extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader.so
+zend_extension_ts=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader_ts.so

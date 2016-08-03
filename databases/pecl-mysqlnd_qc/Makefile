@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqlnd_qc
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

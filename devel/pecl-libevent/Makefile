@@ -3,6 +3,7 @@
 
 PORTNAME=	libevent
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
