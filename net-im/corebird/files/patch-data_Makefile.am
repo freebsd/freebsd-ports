@@ -1,10 +1,11 @@
---- data/Makefile.am.orig	2016-02-29 16:55:42 UTC
+--- data/Makefile.am.orig	2016-08-01 21:45:23 UTC
 +++ data/Makefile.am
-@@ -1,6 +1,6 @@
+@@ -2,7 +2,7 @@ iconprefix=$(datarootdir)/icons/hicolor/
+ SUBDIRS = 256x256 128x128 96x96 64x64 48x48 32x32 24x24 16x16
  
  desktopdir = $(datarootdir)/applications
 -desktop_in_files = org.baedert.corebird.desktop.in
 +desktop_in_files = corebird.desktop.in
  desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
- @INTLTOOL_DESKTOP_RULE@
  
+ appdatadir = $(datarootdir)/appdata
