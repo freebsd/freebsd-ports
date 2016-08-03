@@ -1,9 +1,11 @@
+bin/arpaname
 bin/bind9-config
 bin/delv
 bin/dig
 bin/host
 bin/isc-config.sh
 bin/mdig
+bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
 include/bind9/check.h
@@ -270,7 +272,6 @@ man/man1/arpaname.1.gz
 man/man1/bind9-config.1.gz
 man/man1/delv.1.gz
 man/man1/dig.1.gz
-man/man1/dnstap-read.1.gz
 man/man1/host.1.gz
 man/man1/isc-config.sh.1.gz
 man/man1/mdig.1.gz
@@ -383,6 +384,7 @@ man/man8/named-checkconf.8.gz
 man/man8/named-checkzone.8.gz
 man/man8/named-compilezone.8.gz
 man/man8/named-journalprint.8.gz
+%%LMDB%%man/man8/named-nzd2nzf.8.gz
 man/man8/named.8.gz
 man/man8/nsec3hash.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
@@ -392,7 +394,6 @@ man/man8/nsec3hash.8.gz
 man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
 man/man8/tsig-keygen.8.gz
-sbin/arpaname
 sbin/ddns-confgen
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage
@@ -413,7 +414,7 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/named-compilezone
 sbin/named-journalprint
-sbin/named-rrchecker
+%%LMDB%%sbin/named-nzd2nzf
 sbin/nsec3hash
 %%NATIVE_PKCS11%%sbin/pkcs11-destroy
 %%NATIVE_PKCS11%%sbin/pkcs11-keygen

@@ -1,4 +1,4 @@
---- bin/tests/system/dlzexternal/Makefile.in.orig	2016-06-27 17:38:13 UTC
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2016-07-28 12:26:36 UTC
 +++ bin/tests/system/dlzexternal/Makefile.in
 @@ -35,7 +35,7 @@ OBJS =          ${DLOPENOBJS}
  @BIND9_MAKE_RULES@
