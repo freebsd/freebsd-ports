@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20160509
+PORTVERSION=	3.20160728
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -36,6 +36,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gettext perl5 gmake cpe
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 CONFIGURE_ARGS=	PERL=${PERL} FULLPERL=${PERL}
 MAKE_ENV=	SYSCONFDIR=${ETCDIR} \
@@ -62,33 +63,37 @@ PORTEXAMPLES=	*
 
 post-patch:
 	@${REINPLACE_CMD} -i '' \
-		-e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
+		-e 's|/usr/bin/markdown|${LOCALBASE}/bin/markdown|' \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${REINPLACE_CMD} -i '' \
-		-e "s|/etc/ikiwiki|${ETCDIR}|" \
+		-e 's|/etc/ikiwiki|${ETCDIR}|' \
 		${WRKSRC}/auto.setup ${WRKSRC}/auto-blog.setup \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/doc/ikiwiki-update-wikilist.mdwn
 	@${REINPLACE_CMD} -i '' \
-		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
-		-e 's|share/ikiwiki/examples|${EXAMPLESDIR_REL}|' \
-		-e 's/\.\/pm_filter/$$(PERL) &/' \
+		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|; \
+		    s|share/ikiwiki/examples|${EXAMPLESDIR_REL}|; \
+		    s|\./pm_filter|$$(PERL) &|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -i '' \
-		-e "s|share/ikiwiki/examples|${EXAMPLESDIR_REL}|" \
+		-e 's|share/ikiwiki/examples|${EXAMPLESDIR_REL}|' \
 		${WRKSRC}/IkiWiki/Setup/Automator.pm
 	@${REINPLACE_CMD} -i '' \
-		-e "s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
+		-e 's|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g' \
 		${WRKSRC}/IkiWiki/Plugin/search.pm
 	@${REINPLACE_CMD} -i '' \
-		-e "s|/etc/highlight|${LOCALBASE}/etc/highlight|" \
-		-e "s|/usr/share/highlight|${LOCALBASE}/share/highlight|" \
+		-e 's|/etc/highlight|${LOCALBASE}/etc/highlight|; \
+		    s|/usr/share/highlight|${LOCALBASE}/share/highlight|' \
 		${WRKSRC}/IkiWiki/Plugin/highlight.pm
 
 post-install:
 	for i in ${STAGEDIR}${ETCDIR}/*; do ${MV} $$i $$i.sample; done
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/wikilist ${STAGEDIR}${EXAMPLESDIR}
