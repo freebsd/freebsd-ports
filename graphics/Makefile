@@ -879,6 +879,7 @@
     SUBDIR += py-soya3d
     SUBDIR += py-stltools
     SUBDIR += py-toyplot
+    SUBDIR += py-traitsui
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py3-cairo
