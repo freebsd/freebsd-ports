@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lastpass-cli
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,14 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig ssl
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	lastpass
 
-PLIST_FILES=	bin/lpass
+PLIST_FILES=	bin/lpass share/bash-completion/completions/lpass
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
 OPTIONS_DEFINE=		MANPAGES PINENTRY XCLIP XSEL
