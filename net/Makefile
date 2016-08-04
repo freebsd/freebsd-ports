@@ -1008,6 +1008,7 @@
     SUBDIR += py-qt5-network
     SUBDIR += py-radix
     SUBDIR += py-raet
+    SUBDIR += py-rainbowstream
     SUBDIR += py-ripe.atlas.cousteau
     SUBDIR += py-ripe.atlas.sagan
     SUBDIR += py-ripe.atlas.tools
