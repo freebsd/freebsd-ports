@@ -1,0 +1,5 @@
+This module provides a cross-platform way to retrieve system uptime and boot
+time. See documentation for a full list of supported platforms (yours is likely
+one of them).
+
+WWW: https://github.com/Cairnarvon/uptime
