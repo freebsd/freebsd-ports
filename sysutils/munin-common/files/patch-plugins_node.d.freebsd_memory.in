@@ -1,0 +1,8 @@
+--- plugins/node.d.freebsd/memory.in.orig	2014-11-24 21:46:24 UTC
++++ plugins/node.d.freebsd/memory.in
+@@ -74,4 +74,4 @@ echo wired.value $(($WIRED_COUNT*$PAGESI
+ echo buffers.value $(($BUFFERS_COUNT))
+ echo cached.value $(($CACHE_COUNT*$PAGESIZE))
+ echo free.value $(($FREE_COUNT*$PAGESIZE))
+-echo swap.value $(swapinfo -k | awk '{sum += $3}; END {print sum * 1024}')
++echo swap.value $(swapinfo -k | awk '!/^Total/ && !/^Device/ {sum += $3}; END {print sum * 1024}')
