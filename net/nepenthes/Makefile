@@ -3,7 +3,7 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Determine the malware activity on a network
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libadns.so:dns/adns \
 		libcurl.so:ftp/curl \
-		libmagic.so:sysutils/file
+		libmagic.so.1:sysutils/file
 
 USES=		dos2unix libtool perl5
 DOS2UNIX_FILE=	modules/shellcode-generic/sch_generic_connect_trans.cpp
