@@ -11,7 +11,6 @@ COMMENT=	Tiny sh(1) wrapper to simplify decompression of files
 
 RUN_DEPENDS=	unace:archivers/unace \
 		unrar:archivers/unrar \
-		unzip:archivers/unzip \
 		7z:archivers/p7zip
 
 USE_GITHUB=	yes
