@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
-LICENSE=	PHP202
+LICENSE=	PHP301
 
 USES=		php:ext tar:tgz
 
