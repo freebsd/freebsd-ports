@@ -1,6 +1,6 @@
---- ./prettypacket.h.orig	2012-12-04 10:31:27.000000000 +0100
-+++ ./prettypacket.h	2014-03-06 14:57:20.000000000 +0100
-@@ -102,7 +102,7 @@
+--- prettypacket.h.orig	2012-12-04 09:31:27 UTC
++++ prettypacket.h
+@@ -102,7 +102,7 @@ const char *next_color() {
   * @param counter protocol number offset
   * @return protocol number in host format
   */
@@ -9,7 +9,7 @@
      return *(packet_buffer + counter);
  }
  
-@@ -113,7 +113,7 @@
+@@ -113,7 +113,7 @@ inline uint8_t protocol_8bit_extract(con
   * @param counter protocol number offset
   * @return protocol number in host format
   */
@@ -18,7 +18,7 @@
      return ntohs(*((uint16_t *)(packet_buffer + counter)));
  }
  
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ inline uint16_t protocol_16bit_extract(c
   * @param counter protocol number offset
   * @return protocol number in host format
   */
@@ -27,7 +27,7 @@
      uint64_t value = 0;
  
      int i;
-@@ -144,7 +144,7 @@
+@@ -144,7 +144,7 @@ inline uint64_t protocol_48bit_extract(c
   * @param counter read bytes counter
   * @param field_text description of the field
   */
