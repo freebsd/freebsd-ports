@@ -2,46 +2,67 @@
 # $FreeBSD$
 
 PORTNAME=	workrave
-PORTVERSION=	1.10.1
-PORTREVISION=	2
-CATEGORIES=	x11 gnome
-MASTER_SITES=	SF
+PORTVERSION=	1.10.15
+CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	t@tobik.me
 COMMENT=	RSI prevention tool
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=		gettext gmake pathfix pkgconfig python:2.7
-USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
-USE_GNOME=	intlhack gconf2 gtkmm24
+USES=	autoreconf:build gettext gmake libtool pathfix pkgconfig
+USE_XORG=	ice recordproto sm x11 xext xmu xscrnsaver xtst
+USE_GNOME=	intltool intlhack introspection gtkmm30
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --enable-gconf --disable-gnome3 \
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-gsettings \
+		--disable-pulse \
+		--disable-gconf \
+		--disable-mate \
+		--disable-gnome2 \
+		--disable-gnome3 \
+		--disable-xfce \
 		--disable-indicator
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	rcaelers
+GH_TAGNAME=	v${PORTVERSION:S/./_/g}
 
-OPTIONS_DEFINE=		GNOME GSTREAMER PULSEAUDIO
-OPTIONS_DEFAULT=	GSTREAMER
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=		DBUS DISTRIBUTION GSTREAMER
+OPTIONS_DEFAULT=	DBUS GSTREAMER
 OPTIONS_SUB=		yes
 
-GNOME_USE=		gnome=gnomepanel
-GNOME_LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26
-GNOME_CONFIGURE_ENABLE=	gnome2
-GSTREAMER_USE=		gstreamer=good
-GSTREAMER_CONFIGURE_ENABLE=	gstreamer
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+DISTRIBUTION_DESC=	Build with networking support
 
+DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah
+DBUS_CONFIGURE_ENABLE=	dbus
+DBUS_USES=	python:2.7
+
+DISTRIBUTION_CONFIGURE_ENABLE=	distribution
+
+GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
+GSTREAMER_CONFIGURE_ENABLE=	gstreamer
+GSTREAMER_USE=		gstreamer1=good
+
+# Remove gnome-shell cinnamon subdirs from build, so it doesn't install
+# unused files
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/if test/s|==|=|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's| gnome-shell$$||' ${WRKSRC}/frontend/applets/Makefile.in
+	@${REINPLACE_CMD} -e 's| gnome-shell cinnamon | |' \
+		${WRKSRC}/frontend/applets/Makefile.am
+
+# Run bundled autogen.sh instead of relying on USES=autoreconf which
+# leads to errors like
+# config.status: error: po/Makefile.in.in was not created by intltoolize.
+pre-configure:
+	@cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>
