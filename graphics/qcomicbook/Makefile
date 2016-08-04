@@ -3,7 +3,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.9.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.org/releases/
 
@@ -18,7 +18,7 @@ USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib gui linguisttools_build moc_build qmake_build rcc_build \
 		uic_build xml
 
-OPTIONS_DEFINE=	7ZIP ACE RAR ZIP
+OPTIONS_DEFINE=	7ZIP ACE RAR
 
 7ZIP_DESC=	7-Zip (.cb7) comic book archives support
 7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
@@ -28,9 +28,6 @@ ACE_RUN_DEPENDS=	unace:archivers/unace
 
 RAR_DESC=	Rar (.cbr) comic book archives support
 RAR_RUN_DEPENDS=	unrar:archivers/unrar
-
-ZIP_DESC=	Zip (.cbz) comic book archives support
-ZIP_RUN_DEPENDS=	unzip:archivers/unzip
 
 post-patch:
 # fix man install directory
