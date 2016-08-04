@@ -4324,6 +4324,7 @@
     SUBDIR += py-pyee
     SUBDIR += py-pyelftools
     SUBDIR += py-pyev
+    SUBDIR += py-pyface
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
