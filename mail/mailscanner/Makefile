@@ -82,8 +82,7 @@ RUN_DEPENDS+=	p5-Mail-ClamAV>=0:mail/p5-Mail-ClamAV
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV} || ${PORT_OPTIONS:MCLAMAVMODULE}
-RUN_DEPENDS+=	unzip:archivers/unzip \
-		unrar:archivers/unrar \
+RUN_DEPENDS+=	unrar:archivers/unrar \
 		zoo:archivers/zoo \
 		unarj:archivers/unarj \
 		unace:archivers/unace \
