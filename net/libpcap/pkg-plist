@@ -4,6 +4,8 @@ include/pcap-namedb.h
 include/pcap.h
 include/pcap/bluetooth.h
 include/pcap/bpf.h
+include/pcap/dlt.h
+include/pcap/export-defs.h
 include/pcap/ipnet.h
 include/pcap/namedb.h
 include/pcap/nflog.h
