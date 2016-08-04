@@ -11,7 +11,6 @@ DISTNAME=	PHPEclipse-${PLIST_VER}-src
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
-BUILD_DEPENDS+=	unzip:archivers/unzip
 RUN_DEPENDS=	eclipse:java/eclipse
 
 PLUGIN_PATHS=	features plugins
