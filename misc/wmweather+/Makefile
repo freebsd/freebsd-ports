@@ -14,7 +14,8 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
@@ -26,14 +27,14 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
 USES=		iconv jpeg
-USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libwraster=${LOCALBASE} \
+		--with-libpcre=${LOCALBASE} \
+		--with-libcurl=${LOCALBASE} \
+		--with-xpm-includes=${LOCALBASE} \
+		--with-xpm-libraries=${LOCALBASE}
+USE_XORG=	x11 xext xpm sm ice
 LDFLAGS+=	-lm
-CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \
-			--with-libpcre=${LOCALBASE} \
-			--with-libcurl=${LOCALBASE} \
-			--with-xpm-includes=${LOCALBASE} \
-			--with-xpm-libraries=${LOCALBASE}
 
 SUB_FILES=	pkg-message
 
@@ -44,19 +45,14 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	ChangeLog README
 PORTEXAMPLES=	HINTS example.conf
 
-OPTIONS_DEFINE=	DOCS EXAMPLES WM
-WM_DESC=	Depend on Window Maker port (otherwise only libwraster)
-
 DESKTOP_ENTRIES="${PORTNAME}" "" "${PORTNAME}" \
 		"${PORTNAME}" "System;Monitor;" ""
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES WM
+WM_DESC=	Depend on Window Maker port (otherwise only libwraster)
 
-.if ${PORT_OPTIONS:MWM}
-LIB_DEPENDS+=	libWMaker.so:x11-wm/windowmaker
-.else
-LIB_DEPENDS+=	libwraster.so:x11-wm/libwraster
-.endif
+WM_LIB_DEPENDS=		libWMaker.so:x11-wm/windowmaker
+WM_LIB_DEPENDS_OFF=	libwraster.so:x11-wm/libwraster
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| __THROW __attribute__ ((__noreturn__))|| ; \
@@ -73,9 +69,11 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
