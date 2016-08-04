@@ -859,6 +859,7 @@
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-tmuxp
+    SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += pydf
