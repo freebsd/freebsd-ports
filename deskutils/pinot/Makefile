@@ -33,7 +33,6 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 		xdg-open:devel/xdg-utils			\
 		${LOCALBASE}/libexec/xpdf/pdftotext:graphics/xpdf	\
 		catppt:textproc/catdoc			\
-		unzip:archivers/unzip			\
 		unrtf:textproc/unrtf			\
 		catdvi:print/catdvi				\
 		bash:shells/bash
