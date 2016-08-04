@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, open source, Java EE blogging tool
 
-PATCH_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/catalina.sh:www/tomcat6
 
 USES=		cpe zip:infozip
