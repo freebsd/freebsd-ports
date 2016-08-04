@@ -3,16 +3,21 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netams.com/files/
 
-MAINTAINER=	jura@netams.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
-LICENSE=	GPLv2
+BROKEN_FreeBSD_10=	PR 197249
+BROKEN_FreeBSD_11=	PR 197249
+BROKEN_FreeBSD_12=	PR 197249
 
-LIB_DEPENDS=	libpcap.so:net/libpcap
+DEPRECATED=	unmaintained, broken on most FreeBSD platforms
+EXPIRATION_DATE=	2016-08-18
+
+LICENSE=	GPLv2
 
 SSP_UNSAFE=	kernel module does not support ssp
 USE_SUBMAKE=	yes
@@ -32,6 +37,7 @@ CGI_DESC=	Install admin/user CGI scripts
 OPTIONS_SUB=	yes
 PGSQL_USES=	pgsql
 MYSQL_USE=	MYSQL=yes
+CGI_USES=	jpeg
 
 .include <bsd.port.options.mk>
 
@@ -73,7 +79,6 @@ RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
 		p5-Crypt-GeneratePassword>=0:security/p5-Crypt-GeneratePassword
 
 LIB_DEPENDS+=	libgd.so:graphics/gd
-USES+=		jpeg
 
 . if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
@@ -136,10 +141,4 @@ do-install:
 .endif
 	${INSTALL_MAN} ${MAN_8:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${PREFIX}/man/man8
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		does not build on 10.x+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
