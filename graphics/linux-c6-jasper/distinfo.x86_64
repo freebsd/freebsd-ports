@@ -1,0 +1,7 @@
+TIMESTAMP = 1470330517
+SHA256 (rpm/x86_64/centos/6.8/jasper-libs-1.900.1-16.el6_6.3.i686.rpm) = 867485f066f16b8d4067771a01f6f8c60dda135f27c5a6441b2089d8e9255533
+SIZE (rpm/x86_64/centos/6.8/jasper-libs-1.900.1-16.el6_6.3.i686.rpm) = 140456
+SHA256 (rpm/x86_64/centos/6.8/jasper-libs-1.900.1-16.el6_6.3.x86_64.rpm) = f97f6af75d7ac6140e4f126e4e34b8e5b2eba7a0c6ed65694cecaaf88100d806
+SIZE (rpm/x86_64/centos/6.8/jasper-libs-1.900.1-16.el6_6.3.x86_64.rpm) = 140540
+SHA256 (rpm/x86_64/centos/6.8/jasper-1.900.1-16.el6_6.3.src.rpm) = 28ef9fb9cc889fc9f43cd360125de42994829a92c5ede0b3d82dc9e0159f4605
+SIZE (rpm/x86_64/centos/6.8/jasper-1.900.1-16.el6_6.3.src.rpm) = 1404135

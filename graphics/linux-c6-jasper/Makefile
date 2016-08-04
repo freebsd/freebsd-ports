@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+PORTNAME=	jasper
+PORTVERSION=	1.900.1
+CATEGORIES=	graphics linux
+LIB_DISTFILES=	${PORTNAME}-libs-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
+SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	JPEG-2000 reference implementation (Linux CentOS ${LINUX_DIST_VER})
+
+ONLY_FOR_ARCHS=	i386 amd64
+RPMVERSION=	16.el6_6.3
+USES=		linux:c6
+USE_LINUX_RPM=	yes
+USE_LDCONFIG=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+
+.include <bsd.port.mk>
