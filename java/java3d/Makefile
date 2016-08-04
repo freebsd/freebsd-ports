@@ -10,7 +10,7 @@ MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides API for creating and manipulation of 3D geometry
 
-LICENSE=	GPLv2 MIT
+LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 USES=		tar:bzip2
@@ -29,7 +29,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e "s/gcc/${CC}/g" \
+	${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
 		${WRKSRC}/j3d-core/src/native/ogl/build-freebsd.xml
 
 do-build:
