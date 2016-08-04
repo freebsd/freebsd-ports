@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.14.3
+PORTVERSION=	0.15.0
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,7 +17,8 @@ CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
 
 USES=		cmake gettext
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
-		concurrent core gui network opengl serialport widgets
+		concurrent core gui network opengl printsupport \
+		serialport widgets
 
 PORTDOCS=	AUTHORS ChangeLog README
 
@@ -50,7 +51,7 @@ DISTFILES+=	textures-1K.zip:gfx
 .if ${PORT_OPTIONS:MMULTIMEDIA}
 USE_QT5+=	multimedia
 .else
-CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
+CMAKE_ARGS+=	-DENABLE_MEDIA:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MSCRIPTING}
