@@ -1,0 +1,4 @@
+The pywapi module provides a python wrapper around the Yahoo! Weather, 
+Weather.com and NOAA APIs.
+
+WWW: https://code.google.com/archive/p/python-weather-api/
