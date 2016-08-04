@@ -3,7 +3,7 @@
 
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org

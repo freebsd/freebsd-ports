@@ -17,6 +17,7 @@ usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
+@rmtry usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
 usr/lib/libgdk_pixbuf-2.0.so.0
 usr/lib/libgdk_pixbuf-2.0.so.0.2400.1
 usr/lib/libgdk_pixbuf_xlib-2.0.so.0
@@ -37,6 +38,7 @@ usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.so
 usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.so
 usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
 usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
+@rmtry usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders.cache
 usr/lib64/libgdk_pixbuf-2.0.so.0
 usr/lib64/libgdk_pixbuf-2.0.so.0.2400.1
 usr/lib64/libgdk_pixbuf_xlib-2.0.so.0
@@ -146,3 +148,5 @@ usr/share/locale/zh_CN/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/man/man1/gdk-pixbuf-query-loaders.1.gz
+@postexec %D/usr/bin/gdk-pixbuf-query-loaders-32 --update-cache
+@postexec %D/usr/bin/gdk-pixbuf-query-loaders-64 --update-cache
