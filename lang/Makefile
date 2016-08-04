@@ -261,7 +261,7 @@
     SUBDIR += py-prolog
     SUBDIR += py-qt5-qml
     SUBDIR += pypy
-    SUBDIR += pypy3-devel
+    SUBDIR += pypy3
     SUBDIR += python
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
