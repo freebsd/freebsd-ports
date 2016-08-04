@@ -3,14 +3,14 @@
 
 PORTNAME=	libtrace
 PORTVERSION=	3.0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://research.wand.net.nz/software/libtrace/
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	C library for network packet capture and processing
 
-LIB_DEPENDS=	libpcap.so:net/libpcap
+LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
 CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 		libtrace_doxygen=false
