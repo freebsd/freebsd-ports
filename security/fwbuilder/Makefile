@@ -4,7 +4,7 @@
 PORTNAME=	fwbuilder
 DISTVERSION=	5.1.0
 PORTVERSION=	${DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 BUILD=		3599
 # XXX in developement version of this port: PKGNAMESUFFIX=	-devel
@@ -66,9 +66,9 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if  ${OSVERSION} >= 1000055
+.if !exists (/usr/bin/rcs)
 # IMPORTANT: Newer versions of rcs will NOT work with fwbuilder.
-RUN_DEPENDS=	rcs:devel/rcs57
+RUN_DEPENDS+=	rcs:devel/rcs57
 .endif
 
 .if empty(PORT_OPTIONS:MDOCS)
