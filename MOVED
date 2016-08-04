@@ -8610,3 +8610,4 @@ net/lam||2016-07-12|Has expired: Broken for more than 6 months
 java/wildfly82||2016-07-17|Has expired: Fully EOL when version 10.0 was released
 print/tex|print/texlive-base|2016-07-30|Superceeded by texlive
 net/tridiavnc|net/tigervnc|2016-08-01|No upstream 2005
+lang/pypy3-devel|lang/pypy3|2016-08-04|Renamed to lang/pypy3
