@@ -21,10 +21,6 @@ usr/lib/libgdk-x11-2.0.so.0
 usr/lib/libgdk-x11-2.0.so.0.2400.23
 usr/lib/libgtk-x11-2.0.so.0
 usr/lib/libgtk-x11-2.0.so.0.2400.23
-usr/lib/libjasper.so.1
-usr/lib/libjasper.so.1.0.0
-usr/lib/libpixman-1.so.0
-usr/lib/libpixman-1.so.0.32.8
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/AUTHORS
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/COPYING
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/NEWS
