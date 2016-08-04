@@ -15,4 +15,4 @@ used. Please note that this package is not meant to be deployed for
 cryptographic purposes for which more comprehensive (and widely
 tested) libraries such as OpenSSL should be used.
 
-WWW: http://cran.r-project.org/web/packages/digest/
+WWW: https://cran.r-project.org/web/packages/digest/
