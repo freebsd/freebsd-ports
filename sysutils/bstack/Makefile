@@ -2,6 +2,7 @@
 
 PORTNAME=	bstack
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	luca.pizzamiglio@gmail.com
@@ -9,7 +10,7 @@ COMMENT=	Debug tool that shows the stack trace of a running process
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	gdb:devel/gdb
+RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pizzamig
