@@ -7,7 +7,7 @@ CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Command line client for the musicpd
 
 LICENSE=	GPLv2+
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
-USES=		pkgconfig tar:xz
+USES=		autoreconf iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mpc man/man1/mpc.1.gz
@@ -27,11 +27,8 @@ OPTIONS_DEFINE=	EXAMPLES DOCS ICONV
 OPTIONS_DEFAULT=	ICONV
 
 ICONV_USES=	iconv
-ICONV_LDFLAGS=	${ICONV_LIB}
+ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 ICONV_CONFIGURE_ENABLE=	iconv
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lintl|${ICONV_LIB}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${STAGEDIR}${PREFIX}/bin
