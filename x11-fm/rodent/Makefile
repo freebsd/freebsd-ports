@@ -3,6 +3,7 @@
 
 PORTNAME=	rodent
 PORTVERSION=	5.3.16.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	gawk:lang/gawk \
 		bash:shells/bash \
 		intltoolize:textproc/intltool
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libmagic.so:sysutils/file \
+		libmagic.so.1:sysutils/file \
 		librfm.so:x11-fm/librfm
 
 USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2 shebangfix
