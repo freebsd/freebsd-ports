@@ -64,7 +64,7 @@ _LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
 					flac fontconfig freealut gdkpixbuf gdkpixbuf2 gnutls gtk2 hicontheme imlib jasper jpeg libaudiofile \
 					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
 					libpciaccess libsigcpp20 libsndfile libtasn1 libthai libtheora libvorbis libxml2 mikmod \
-					naslibs ncurses-base openal openmotif openssl openssl-compat pango png \
+					naslibs ncurses-base openal openmotif openssl openssl-compat pango pixman png \
 					pulseaudio-libs scimgtk scimlibs sdl12 sdlimage sdlmixer sdlttf tiff \
 					tcp_wrappers-libs xorglibs ucl ungif upx webauth
 
@@ -458,6 +458,11 @@ pango_c6_64_FILE=	${LINUXBASE}/usr/lib64/libpango-1.0.so.0.2800.1
 pango_DETECT=		${pango${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 pango_PORT=			x11-toolkits/linux${LINUX_BASEPORT_NAME}-pango
 pango_DEPENDS=		cairo expat fontconfig xorglibs
+
+pixman_c6_FILE=		${LINUXBASE}/usr/lib/libpixman-1.so.0.32.8
+pixman_c6_64_FILE=	${LINUXBASE}/usr/lib64/libpixman-1.so.0.32.8
+pixman_DETECT=		${pixman${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+pixman_PORT=		x11/linux${LINUX_BASEPORT_NAME}-pixman
 
 png_f10_FILE=		${LINUXBASE}/usr/lib/libpng.so.3.37.0
 png_c6_FILE=		${LINUXBASE}/usr/lib/libpng.so.3.49.0
