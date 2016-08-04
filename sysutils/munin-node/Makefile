@@ -3,7 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -73,6 +73,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DBDIR}/plugin-state ${STAGEDIR}${SPOOLDIR}/async
+	${INSTALL_SCRIPT} ${.CURDIR}/plugins/* ${STAGEDIR}${DATADIR}/plugins/
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
 		${STAGEDIR}${ETCDIR}/munin-node.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
