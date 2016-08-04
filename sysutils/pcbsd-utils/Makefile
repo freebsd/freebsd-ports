@@ -11,8 +11,7 @@ COMMENT=	PC-BSD Command-Line Utilities
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	sipcalc:net-mgmt/sipcalc \
-		eject:sysutils/eject \
-		unzip:archivers/unzip
+		eject:sysutils/eject
 
 WRKSRC_SUBDIR=	src-sh/pcbsd-utils
 USE_QT5=	core network buildtools qmake

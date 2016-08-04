@@ -14,8 +14,6 @@ COMMENT=	Simple HTML-based presentation system
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	unzip:archivers/unzip
-
 USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.(css|htc|html|js|txt)
 WRKSRC=		${WRKDIR}

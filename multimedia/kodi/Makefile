@@ -15,7 +15,6 @@ BUILD_DEPENDS=	enca:converters/enca \
 		gperf:devel/gperf \
 		cmake:devel/cmake \
 		zip:archivers/zip \
-		unzip:archivers/unzip \
 		nasm:devel/nasm \
 		gtk-update-icon-cache:x11-toolkits/gtk20 \
 		swig3.0:devel/swig30

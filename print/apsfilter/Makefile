@@ -90,7 +90,6 @@ _DEPENDS_COMPRESS= \
 		rar:archivers/rar \
 		rpm:archivers/rpm4 \
 		unarj:archivers/unarj \
-		unzip:archivers/unzip \
 		zoo:archivers/zoo
 _DEPENDS_PSUTILS= \
 		psnup:print/psutils \
