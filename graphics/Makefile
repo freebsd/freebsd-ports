@@ -545,6 +545,7 @@
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-gdk-pixbuf2
     SUBDIR += linux-c6-glx-utils
+    SUBDIR += linux-c6-jasper
     SUBDIR += linux-c6-jpeg
     SUBDIR += linux-c6-libGLU
     SUBDIR += linux-c6-png

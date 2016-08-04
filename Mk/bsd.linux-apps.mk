@@ -61,7 +61,7 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
 					arts aspell atk avahi-libs cairo cups-libs curl dri devtools esound expat \
-					flac fontconfig freealut gdkpixbuf gdkpixbuf2 gnutls gtk2 hicontheme imlib jpeg libaudiofile \
+					flac fontconfig freealut gdkpixbuf gdkpixbuf2 gnutls gtk2 hicontheme imlib jasper jpeg libaudiofile \
 					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
 					libpciaccess libsigcpp20 libsndfile libtasn1 libthai libtheora libvorbis libxml2 mikmod \
 					naslibs ncurses-base openal openmotif openssl openssl-compat pango png \
@@ -258,6 +258,11 @@ hicontheme_PORT=	x11-themes/linux${LINUX_BASEPORT_NAME}-hicolor-icon-theme
 imlib_f10_FILE=		${LINUXBASE}/usr/lib/libgdk_imlib.so.1.9.15
 imlib_DETECT=		${imlib${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 imlib_PORT=			graphics/linux${LINUX_BASEPORT_NAME}-imlib
+
+jasper_c6_FILE=		${LINUXBASE}/usr/lib/libjasper.so.1.0.0
+jasper_c6_64_FILE=	${LINUXBASE}/usr/lib64/libjasper.so.1.0.0
+jasper_DETECT=		${jasper${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+jasper_PORT=		graphics/linux${LINUX_BASEPORT_NAME}-jasper
 
 jpeg_f10_FILE=		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0
 jpeg_c6_FILE=		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0
