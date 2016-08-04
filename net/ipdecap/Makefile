@@ -2,6 +2,7 @@
 
 PORTNAME=	ipdecap
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pcap/vlan.h:net/libpcap
-LIB_DEPENDS=	libpcap.so:net/libpcap
+LIB_DEPENDS=	libpcap.so.1:net/libpcap	# require ports libpcap	
 
 PLIST_FILES=	bin/ipdecap\
 		man/man1/ipdecap.1.gz
