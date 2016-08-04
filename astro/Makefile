@@ -84,6 +84,7 @@
     SUBDIR += py-astropy
     SUBDIR += py-pyfits
     SUBDIR += py-pymetar
+    SUBDIR += py-pywapi
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
