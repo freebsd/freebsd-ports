@@ -47,7 +47,7 @@ OPTIONS_DEFAULT=	DBUS X11
 OPTIONS_SUB=	yes
 
 DBUS_CONFIGURE_OFF=	--disable-dbus
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 
 .include <bsd.port.options.mk>
