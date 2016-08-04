@@ -163,8 +163,7 @@ PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 .include "compiler.mk"
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} > 1000052 && \
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000052 && \
 (${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64 || ${ARCH} == pc98 || \
 ${ARCH} == sparc64)
 .for i in coshl erfcl erfl lgammal powl sinhl tanhl tgammal
@@ -174,6 +173,7 @@ LDFLAGS+=		-fno-builtin-${i}
 .endif
 
 post-patch:
+.if ${OPSYS} == FreeBSD
 .if !${PORT_OPTIONS:MMISSING}
 .if ${OSVERSION} < 1000016
 	@${REINPLACE_CMD} -e \
@@ -204,6 +204,7 @@ ${ARCH} == sparc64)
 '\|#[[:blank:]]*include[[:blank:]]*<complex.h>|{x;s|^.*$$|#include "missing_complex.h"|;H;x;}' \
 		${WRKSRC}/src/main/complex.c
 .endif # !PORT_OPTIONS:MMISSING
+.endif  # ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e \
 '\|#[[:blank:]]*include[[:blank:]]*<math.h>|{x;s|^.*$$|#include ${LIBMH}|;H;x;}'\
 		${WRKSRC}/src/nmath/nmath.h \
@@ -223,7 +224,6 @@ pre-configure:
 		compiler and architecture: please enable the MISSING option."; \
 	fi
 .endif
-.endif  # ${OPSYS} == FreeBSD
 
 post-install:
 .for L in R Rblas Rlapack
