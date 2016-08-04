@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-ethereum
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -13,6 +13,11 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	go:lang/go
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ethereum
+
+USE_GCC=	yes
+
 OPTIONS_DEFINE=	BOOTNODE ETHTEST EVM DISASM RLPDUMP
 OPTIONS_SUB=	yes
 
@@ -22,27 +27,22 @@ EVM_DESC=	A generic Ethereum Virtual Machine
 DISASM_DESC=	Disassembles EVM code
 RLPDUMP_DESC=	Prints RLP structures
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ethereum
-
-USE_GCC=	yes
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/geth ${STAGEDIR}${PREFIX}/bin
-	@if [ ${PORT_OPTIONS:MBOOTNODE} ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/bootnode ${STAGEDIR}${PREFIX}/bin; \
-	fi;
-	@if [ ${PORT_OPTIONS:METHTEST} ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/ethtest ${STAGEDIR}${PREFIX}/bin; \
-	fi;
-	@if [ ${PORT_OPTIONS:MEVM} ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/evm ${STAGEDIR}${PREFIX}/bin; \
-	fi;
-	@if [ ${PORT_OPTIONS:MDISASM} ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/disasm ${STAGEDIR}${PREFIX}/bin; \
-	fi;
-	@if [ ${PORT_OPTIONS:MRLPDUMP} ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/rlpdump ${STAGEDIR}${PREFIX}/bin; \
-	fi;
+
+do-install-BOOTNODE-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/bootnode ${STAGEDIR}${PREFIX}/bin
+
+do-install-ETHTEST-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/ethtest ${STAGEDIR}${PREFIX}/bin
+
+do-install-EVM-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/evm ${STAGEDIR}${PREFIX}/bin
+
+do-install-DISASM-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/disasm ${STAGEDIR}${PREFIX}/bin
+
+do-install-RLPDUMP-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/rlpdump ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
