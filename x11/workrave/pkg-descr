@@ -1,10 +1,6 @@
 Workrave is a program that assists in the recovery and prevention of
-Repetitive Strain Injury (RSI). The program frequently alerts you to
+Repetitive Strain Injury (RSI).  The program frequently alerts you to
 take micro-pauses, rest breaks and restricts you to your daily limit.
 These can be customized and it stops the counter when you stop.
-
-The program can be run distributed on one or more PCs. All connected
-PCs share the same timing information. When you switch computers, you
-will still be asked to pause on time.
 
 WWW: http://www.workrave.org/
