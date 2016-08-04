@@ -3,7 +3,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics linux
 MASTER_SITES=	CENTOS_LINUX
 
@@ -15,7 +15,7 @@ CONFLICTS=	linux-cairo-[0-9]* linux-f10-cairo-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	fontconfig png xorglibs
+USE_LINUX_APPS=	fontconfig pixman png xorglibs
 
 RPMVERSION=	6.el6_6
 USE_LDCONFIG=	yes
