@@ -15,8 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # needed to save/load games
-RUN_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+RUN_DEPENDS=	zip:archivers/zip
 
 USES=		gettext pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
