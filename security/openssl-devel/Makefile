@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	1.1.0-pre5
+DISTVERSION=	1.1.0-pre6
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -72,7 +72,6 @@ USES=		cpe localbase perl5
 USE_PERL5=	build
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
-SUB_FILES=	pkg-message
 TEST_TARGET=	test
 
 CPE_VERSION=	${DISTVERSION}
@@ -109,12 +108,6 @@ OPTIONS_GROUP_OPTIMIZE+=	I386
 .endif
 I386_CONFIGURE_ON=	386
 
-post-patch:
-	${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
-		${WRKSRC}/crypto/des/Makefile.in
-	${REINPLACE_CMD} -e 's|ERR_R_MALLOC_ERROR|ERR_R_MALLOC_FAILURE|' \
-		${WRKSRC}/crypto/bio/bss_dgram.c
-
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
@@ -134,7 +127,7 @@ post-install-SHARED-on:
 	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
 .endfor
 .for i in capi dasync padlock
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines/${i}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-1.1/${i}.so
 .endfor
 
 post-install-MAN3-off:
