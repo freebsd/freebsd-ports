@@ -13,14 +13,13 @@ LICENSE=	GPLv2
 BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libyajl.so:devel/yajl \
-		libexecinfo.so:devel/libexecinfo # for better debugging
+		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
-USES=		alias bison cmake libedit
+USES=		alias bison cmake execinfo libedit
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
