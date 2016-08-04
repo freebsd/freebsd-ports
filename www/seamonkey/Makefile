@@ -27,8 +27,7 @@ BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
-		zip:archivers/zip \
-		unzip:archivers/unzip
+		zip:archivers/zip
 #		opus>=1.1:audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
