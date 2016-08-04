@@ -3,7 +3,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
@@ -19,21 +19,24 @@ CONFLICTS=	lynx-2.8.[8-9]d*
 
 USES=		cpe ncurses shebangfix tar:bzip2
 SHEBANG_FILES=	samples/mailto-form.pl
-USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
+CONFIGURE_ARGS+=--with-zlib --libdir="${PREFIX}/etc" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-nested-tables --enable-gzip-help \
 		--with-screen=ncursesw
 CPE_VERSION=	${PORTVERSION:R}
 CPE_UPDATE=	rel.${PORTVERSION:E}
 
+MAKEFILE=	makefile
+L_HELP=		${PREFIX}/share/lynx_help
+SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL DOCS
-OPTIONS_DEFAULT=	SSL
+OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL DOCS EXTERNALS
+OPTIONS_DEFAULT=	SSL EXTERNALS
 DEFAULT_COLORS_DESC=	Colors support
+EXTERNALS_DESC=	External application support
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext iconv
@@ -47,25 +50,16 @@ DEFAULT_COLORS_CONFIGURE_ENABLE=	default-colors
 DOCS_CONFIGURE_ENABLE=	local-docs
 DOCS_INSTALL_TARGET=	install-full
 DOCS_MAKE_ARGS=		helpdir=${L_HELP} docdir=${DOCSDIR}
-L_HELP=			${PREFIX}/share/lynx_help
 
-.include <bsd.port.options.mk>
+EXTERNALS_CONFIGURE_ENABLE=externs
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
+SSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
+SSL_USES=		ssl
 
-MAKEFILE=	makefile
-
-L_LIB=		${PREFIX}/etc
-
-SUB_FILES=	pkg-message
-
-post-install:
+post-install-DOCS-on:
 # Fix some stage symlinks
-	${LN} -sf ${DOCSDIR}/COPYHEADER ${STAGEDIR}${L_HELP}
-	${LN} -sf ${DOCSDIR}/COPYING ${STAGEDIR}${L_HELP}
-	${LN} -sf ${DOCSDIR}/COPYHEADER.asc ${STAGEDIR}${L_HELP}
-	${LN} -sf ${DOCSDIR}/COPYING.asc ${STAGEDIR}${L_HELP}
+.for doc in COPYHEADER COPYING COPYHEADER.asc COPYING.asc
+	(cd ${STAGEDIR}${L_HELP} && ln -sf ../doc/lynx/${doc} .)
+.endfor
 
 .include <bsd.port.mk>
