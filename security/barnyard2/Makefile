@@ -3,6 +3,7 @@
 PORTNAME=	barnyard2
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v2-
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -63,7 +64,7 @@ TCL_USES=		tcl
 TCL_CONFIGURE_ON=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
 TCL_CONFIGURE_OFF=	--without-tcl
 WANT_PGSQL_VER=		92+
-PORT_PCAP_LIB_DEPENDS=	libpcap.so:net/libpcap
+PORT_PCAP_LIB_DEPENDS=	libpcap.so.1:net/libpcap
 PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
 
