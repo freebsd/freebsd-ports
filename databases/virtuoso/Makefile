@@ -19,8 +19,7 @@ BROKEN_powerpc64=	Does not build
 BUILD_DEPENDS=	gawk:lang/gawk\
 		htmldoc:textproc/htmldoc\
 		flex>2.5.4:textproc/flex\
-		gperf>=3.0.3:devel/gperf\
-		unzip:archivers/unzip
+		gperf>=3.0.3:devel/gperf
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		gmake libtool readline uidfix
