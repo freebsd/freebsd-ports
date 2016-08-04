@@ -15,7 +15,6 @@ LICENSE=	MPL
 BUILD_DEPENDS=	erl:lang/erlang \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \
 		xmlto:textproc/xmlto \
-		unzip:archivers/unzip \
 		zip:archivers/zip \
 		rsync:net/rsync
 RUN_DEPENDS=	erl:lang/erlang
