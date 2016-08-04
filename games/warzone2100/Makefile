@@ -11,8 +11,7 @@ COMMENT=	Innovative 3D real-time strategy game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
