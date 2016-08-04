@@ -2,7 +2,8 @@
 
 PORTNAME=	cdpsnarf
 PORTVERSION=	0.1.6
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 MASTER_SITES=	GH
 
@@ -10,8 +11,6 @@ MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Tool to extract information from CDP packets
 
 LICENSE=	GPLv2
-
-LIB_DEPENDS=	libpcap.so:net/libpcap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Zapotek
