@@ -21,7 +21,7 @@ command_args="-D"
 load_rc_config $name
 
 : ${spoofer_enable="NO"}
-: ${spoofer_flags="-s 1"}
+: ${spoofer_flags=""}
 
 spoofer_stop()
 {
