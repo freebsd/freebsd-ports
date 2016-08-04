@@ -9,8 +9,7 @@ MASTER_SITES=	SF/multimail/MultiMail/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Offline BBS mail packet reader supporting QWK/OMEN/SOUP/OPX/BLUEWAVE
 
-RUN_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+RUN_DEPENDS=	zip:archivers/zip
 
 USES=		gmake ncurses
 MAKE_ARGS=	OPTS="" LIBS="${LDFLAGS} -lncurses"
