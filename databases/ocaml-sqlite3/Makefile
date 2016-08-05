@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	OCaml bindings to sqlite3 library
 
 LICENSE=	OCSQLT3
