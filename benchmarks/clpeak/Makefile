@@ -3,6 +3,7 @@
 
 PORTNAME=	clpeak
 PORTVERSION=	1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -13,8 +14,7 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	opencl>=0:devel/opencl
-LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
-		libGL.so:graphics/libGL
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
 BROKEN_FreeBSD_9=	clpeak is only supported on FreeBSD 10.1 and newer
@@ -26,6 +26,7 @@ GH_ACCOUNT=	krrishnarraj
 GH_PROJECT=	clpeak
 
 USE_LDCONFIG=	yes
+USE_GL=		gl
 USES=		cmake
 
 CXXFLAGS+=	-std=c++11
