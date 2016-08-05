@@ -2,9 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20160610
+PORTVERSION=	20160704
 CATEGORIES=	games
-MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32
+MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
+		http://www.duke4.org/files/nightfright/hrp/:hrp \
+		http://burnbit.com/download/447717/:hrp \
+		https://anongoth.pl/:hrp \
+		https://anongoth.pl/:xxx \
+		http://www.duke4.org/files/nightfright/:xxx \
+		ftp://ftp.3drealms.com/share/:shareware
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
@@ -17,18 +23,21 @@ LICENSE_FILE=	${WRKSRC}/source/gpl-2.0.txt
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libvpx.so:multimedia/libvpx
+		libvpx.so:multimedia/libvpx \
+		libpng16.so:graphics/png
 
-USES=		execinfo gmake tar:xz
+USES=		execinfo gmake pkgconfig tar:xz
 USE_GCC=	any
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	5775
+SVNREVISION=	5811
 DATADIR=	${LOCALBASE}/share/duke3d
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
+
+CFLAGS+=	-flax-vector-conversions
 
 PLIST_FILES=	bin/eduke32 bin/mapster32
 PORTDOCS=	*
@@ -45,46 +54,21 @@ OPTIONS_DEFAULT_i386=	ASM
 
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 HRP_DESC=	Install High Resolution Pack
+HRP_DISTFILES=	duke3d_hrp.zip:hrp
+HRP_PLIST_FILES=	${DATADIR}/duke3d_hrp.zip
 MIDI_DESC=	MIDI music support
 OFFENSIVE_DESC=	Install full XXX Pack
 OFFENSIVE_IMPLIES=	HRP
+OFFENSIVE_DISTFILES=	duke3d_xxx.zip:xxx
+OFFENSIVE_PLIST_FILES=	${DATADIR}/duke3d_xxx.zip
 SHAREWARE_DESC=	Install shareware game data version 1.3
+SHAREWARE_EXTRACT_ONLY=	3dduke13.zip
+SHAREWARE_DISTFILES=	3dduke13.zip:shareware
+SHAREWARE_PLIST_FILES=	${DATADIR}/duke3d.grp
 TIMIDITY_DESC=	Use Timidity for music support
 TIMIDITY_RUN_DEPENDS=	timidity:audio/timidity
 TIMIDITYPLUS_DESC=	Use Timidity++ for music support
 TIMIDITYPLUS_RUN_DEPENDS=	timidity:audio/timidity++
-
-CFLAGS+=	-flax-vector-conversions
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHRP}
-DISTFILES+=	duke3d_hrp.zip:hrp
-PLIST_SUB+=	HRP=""
-PLIST_FILES+=	${DATADIR}/duke3d_hrp.zip
-MASTER_SITES+=	http://www.duke4.org/files/nightfright/hrp/:hrp
-.else
-PLIST_SUB+=	HRP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOFFENSIVE}
-DISTFILES+=	duke3d_xxx.zip:xxx
-PLIST_SUB+=	OFFENSIVE=""
-PLIST_FILES+=	 ${DATADIR}/duke3d_xxx.zip
-MASTER_SITES+=	http://www.duke4.org/files/nightfright/:xxx
-.else
-PLIST_SUB+=	XXX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSHAREWARE}
-EXTRACT_ONLY+=	3dduke13.zip
-DISTFILES+=	3dduke13.zip:shareware
-PLIST_SUB+=	SHAREWARE=""
-PLIST_FILES+=	${DATADIR}/duke3d.grp
-MASTER_SITES+=	ftp://ftp.3drealms.com/share/:shareware
-.else
-PLIST_SUB+=	SHAREWARE="@comment "
-.endif
 
 post-extract-SHAREWARE-on:
 	@cd ${WRKDIR} && ${UNZIP_NATIVE_CMD} -qo DN3DSW13.SHR
