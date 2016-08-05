@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	15.0
+PORTVERSION=	15.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_15.x_Situla/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
@@ -15,11 +15,13 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_powerpc64=	Does not build
 
-USE_PHP=	dom gettext pcre posix session xml zlib
-WANT_PHP_WEB=	yes
+USES=		php:web
+USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt pcre \
+		posix session xml zip zlib
 
 NO_BUILD=	yes
 NO_MTREE=	yes
+NO_ARCH=	yes
 TIKIWIKI_DIR?=	www/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 SUB_LIST+=	TIKIWIKI_DIR=${TIKIWIKI_DIR}
