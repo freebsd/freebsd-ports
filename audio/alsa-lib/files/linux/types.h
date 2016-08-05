@@ -11,7 +11,5 @@
 typedef pid_t __kernel_pid_t;
 typedef off_t __kernel_off_t;
 
-typedef uint16_t __u16;
-typedef uint32_t __u32;
 typedef uint64_t __u64;
 #endif /* _LINUX_TYPES_H */
