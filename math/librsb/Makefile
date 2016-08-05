@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librsb
-PORTVERSION=	1.2.0r1
-PORTREVISION=	1
+PORTVERSION=	1.2.0r4
 CATEGORIES=	math
 MASTER_SITES=	SF/librsb
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
@@ -17,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gsed:textproc/gsed \
 		bash:shells/bash
 
-USES=		fortran compiler:openmp gmake shebangfix
+USES=		fortran compiler:openmp gmake shebangfix libtool
+INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--enable-fortran-module-install \
