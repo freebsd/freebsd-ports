@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-05-27 04:25:19.498867720 +0600
-+++ src/Makefile.in	2014-05-27 04:28:22.097854573 +0600
-@@ -60,13 +60,9 @@
+--- src/Makefile.in.orig	2016-07-29 17:03:04 UTC
++++ src/Makefile.in
+@@ -68,13 +68,9 @@ log2ndo: log2ndo.c $(COMMON_INC) $(COMMO
  	$(CC) $(CFLAGS) -o $@ log2ndo.c $(COMMON_OBJS) $(LDFLAGS) $(LIBS) $(MATHLIBS) $(SOCKETLIBS) $(OTHERLIBS)
  
  ndo2db:
@@ -8,27 +8,27 @@
  	$(MAKE) ndo2db-3x
  	$(MAKE) ndo2db-4x
  
--ndo2db-2x: queue.c ndo2db.c $(NDO_INC) $(NDO_OBJS) $(COMMON_INC) $(COMMON_OBJS) dbhandlers-2x.o
--	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_2X -o ndo2db-2x queue.c ndo2db.c dbhandlers-2x.o $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
+-ndo2db-2x: queue.c ndo2db.c $(NDO_INC) $(NDO_OBJS) $(COMMON_INC) $(COMMON_OBJS) dbhandlers-2x.o $(SNPRINTF_O)
+-	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_2X -o ndo2db-2x queue.c ndo2db.c dbhandlers-2x.o $(SNPRINTF_O) $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
 -
- ndo2db-3x: queue.c ndo2db.c $(NDO_INC) $(NDO_OBJS) $(COMMON_INC) $(COMMON_OBJS) dbhandlers-3x.o
- 	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_3X -o ndo2db-3x queue.c ndo2db.c dbhandlers-3x.o $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
+ ndo2db-3x: queue.c ndo2db.c $(NDO_INC) $(NDO_OBJS) $(COMMON_INC) $(COMMON_OBJS) dbhandlers-3x.o $(SNPRINTF_O)
+ 	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_3X -o ndo2db-3x queue.c ndo2db.c dbhandlers-3x.o $(SNPRINTF_O) $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
  
-@@ -74,13 +70,9 @@
- 	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_4X -o ndo2db-4x queue.c ndo2db.c dbhandlers-4x.o $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
+@@ -82,13 +78,9 @@ ndo2db-4x: queue.c ndo2db.c $(NDO_INC) $
+ 	$(CC) $(CFLAGS) $(DBCFLAGS) -D BUILD_NAGIOS_4X -o ndo2db-4x queue.c ndo2db.c dbhandlers-4x.o $(SNPRINTF_O) $(COMMON_OBJS) $(NDO_OBJS) $(LDFLAGS) $(DBLDFLAGS) $(LIBS) $(SOCKETLIBS) $(DBLIBS) $(MATHLIBS) $(OTHERLIBS)
  
  ndomod: 
 -	$(MAKE) ndomod-2x.o
  	$(MAKE) ndomod-3x.o
  	$(MAKE) ndomod-4x.o
  
--ndomod-2x.o: ndomod.c $(COMMON_INC) $(COMMON_OBJS)
--	$(CC) $(MOD_CFLAGS) $(CFLAGS) -D BUILD_NAGIOS_2X -o ndomod-2x.o ndomod.c $(COMMON_OBJS) $(MOD_LDFLAGS) $(LDFLAGS) $(LIBS) $(SOCKETLIBS) $(OTHERLIBS)
+-ndomod-2x.o: ndomod.c $(COMMON_INC) $(COMMON_OBJS) $(SNPRINTF_O)
+-	$(CC) $(MOD_CFLAGS) $(CFLAGS) -D BUILD_NAGIOS_2X -o ndomod-2x.o ndomod.c $(SNPRINTF_O) $(COMMON_OBJS) $(MOD_LDFLAGS) $(LDFLAGS) $(LIBS) $(SOCKETLIBS) $(OTHERLIBS)
 -
- ndomod-3x.o: ndomod.c $(COMMON_INC) $(COMMON_OBJS)
- 	$(CC) $(MOD_CFLAGS) $(CFLAGS) -D BUILD_NAGIOS_3X -o ndomod-3x.o ndomod.c $(COMMON_OBJS) $(MOD_LDFLAGS) $(LDFLAGS) $(LIBS) $(SOCKETLIBS) $(OTHERLIBS)
+ ndomod-3x.o: ndomod.c $(COMMON_INC) $(COMMON_OBJS) $(SNPRINTF_O)
+ 	$(CC) $(MOD_CFLAGS) $(CFLAGS) -D BUILD_NAGIOS_3X -o ndomod-3x.o ndomod.c $(SNPRINTF_O) $(COMMON_OBJS) $(MOD_LDFLAGS) $(LDFLAGS) $(LIBS) $(SOCKETLIBS) $(OTHERLIBS)
  
-@@ -99,9 +91,6 @@
+@@ -107,9 +99,6 @@ utils.o: utils.c $(SRC_INCLUDE)/utils.h
  db.o: db.c $(SRC_INCLUDE)/db.h
  	$(CC) $(CFLAGS) -c -o $@ db.c
  
@@ -38,7 +38,7 @@
  dbhandlers-3x.o: dbhandlers.c $(SRC_INCLUDE)/dbhandlers.h
  	$(CC) $(CFLAGS) -D BUILD_NAGIOS_3X -c -o $@ dbhandlers.c
  
-@@ -109,7 +98,7 @@
+@@ -117,7 +106,7 @@ dbhandlers-4x.o: dbhandlers.c $(SRC_INCL
  	$(CC) $(CFLAGS) $(CFLAGS_4X) -D BUILD_NAGIOS_4X -c -o $@ dbhandlers.c
  
  clean:
@@ -47,7 +47,7 @@
  	rm -f *~ */*~
  
  distclean: clean
-@@ -128,27 +117,24 @@
+@@ -136,30 +125,26 @@ install: install-4x
  	@echo "  If you want to install NDOUtils for Nagios v3.x"
  	@echo "  please type  'make install-3x"
  	@echo ""
@@ -62,22 +62,25 @@
  	@echo ""
  
 -install-2x:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
--	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-2x $(DESTDIR)$(BINDIR)/ndo2db
--	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-2x.o $(DESTDIR)$(BINDIR)/ndomod.o
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(PIPEDIR)
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(BINDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-2x $(BINDIR)/ndo2db
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-2x.o $(BINDIR)/ndomod.o
 -
  install-3x:
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(PIPEDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) file2sock $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) log2ndo $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) sockdebug $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-3x $(DESTDIR)$(BINDIR)/ndo2db
- 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-3x.o $(DESTDIR)$(BINDIR)/ndomod.o
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-3x $(BINDIR)/ndo2db
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-3x.o $(BINDIR)/ndomod.o
  
  install-4x:
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(PIPEDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) file2sock $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) log2ndo $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 774 $(INSTALL_OPTS) sockdebug $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-4x $(DESTDIR)$(BINDIR)/ndo2db
- 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-4x.o $(DESTDIR)$(BINDIR)/ndomod.o
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndo2db-4x $(BINDIR)/ndo2db
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) ndomod-4x.o $(BINDIR)/ndomod.o
