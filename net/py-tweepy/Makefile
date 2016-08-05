@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Twitter API library for Python!
+COMMENT=	Twitter API library for Python
 
 LICENSE=	MIT
 
