@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndoutils
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -27,14 +27,9 @@ NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios
 NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios4
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 
-USE_MYSQL=	yes
-USES=		perl5
+USES=		mysql perl5
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
-
-MAKE_JOBS_UNSAFE=	yes
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/file2sock ${STAGEDIR}${PREFIX}/bin
@@ -46,17 +41,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/nagios.cfg ${STAGEDIR}${PREFIX}/etc/nagios/ndoutils.cfg-sample
 	${INSTALL_DATA} ${WRKSRC}/config/ndo2db.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndo2db.cfg-sample
 	${INSTALL_DATA} ${WRKSRC}/config/ndomod.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndomod.cfg-sample
-.if ${PORT_OPTIONS:MNAGIOS3X}
+
+do-install-NAGIOS3X-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-3x ${STAGEDIR}${PREFIX}/bin/ndo2db
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-3x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
-.endif
-.if ${PORT_OPTIONS:MNAGIOS4X}
+
+do-install-NAGIOS4X-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-4x ${STAGEDIR}${PREFIX}/bin/ndo2db
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-4x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
-.endif
 
 .include <bsd.port.mk>
