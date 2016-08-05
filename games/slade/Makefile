@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-PORTVERSION=	3.1.1.2
+PORTVERSION=	3.1.1.3
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
