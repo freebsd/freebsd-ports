@@ -8,7 +8,6 @@ include/alsa/control_external.h
 include/alsa/error.h
 include/alsa/global.h
 include/alsa/hwdep.h
-include/alsa/iatomic.h
 include/alsa/input.h
 include/alsa/mixer.h
 include/alsa/mixer_abst.h
@@ -134,6 +133,25 @@ share/alsa/pcm/surround71.conf
 share/alsa/smixer.conf
 share/alsa/sndo-mixer.alisp
 share/alsa/topology/broadwell/broadwell.conf
+share/alsa/topology/sklrt286/codec0_in-cpr-1.bin
+share/alsa/topology/sklrt286/codec0_in-mi.bin
+share/alsa/topology/sklrt286/codec0_out-cpr-4.bin
+share/alsa/topology/sklrt286/codec0_out-mo.bin
+share/alsa/topology/sklrt286/codec1_out-cpr-5.bin
+share/alsa/topology/sklrt286/codec1_out-mo.bin
+share/alsa/topology/sklrt286/dmic01_hifi_in-cpr-3.bin
+share/alsa/topology/sklrt286/dmic01_hifi_in-mi.bin
+share/alsa/topology/sklrt286/hdmi1_pt_out-cpr-7.bin
+share/alsa/topology/sklrt286/hdmi1_pt_out-cpr-8.bin
+share/alsa/topology/sklrt286/hdmi2_pt_out-cpr-10.bin
+share/alsa/topology/sklrt286/hdmi2_pt_out-cpr-9.bin
+share/alsa/topology/sklrt286/hdmi3_pt_out-cpr-11.bin
+share/alsa/topology/sklrt286/hdmi3_pt_out-cpr-12.bin
+share/alsa/topology/sklrt286/media0_in-cpr-0.bin
+share/alsa/topology/sklrt286/media0_in-mi.bin
+share/alsa/topology/sklrt286/media0_out-cpr-6.bin
+share/alsa/topology/sklrt286/media0_out-mo.bin
+share/alsa/topology/sklrt286/skl_i2s.conf
 share/alsa/ucm/DAISY-I2S/DAISY-I2S.conf
 share/alsa/ucm/DAISY-I2S/HiFi.conf
 share/alsa/ucm/GoogleNyan/GoogleNyan.conf
@@ -162,7 +180,11 @@ share/alsa/ucm/SDP4430/hifiLP
 share/alsa/ucm/SDP4430/record
 share/alsa/ucm/SDP4430/voice
 share/alsa/ucm/SDP4430/voiceCall
+share/alsa/ucm/VEYRON-I2S/HiFi.conf
+share/alsa/ucm/VEYRON-I2S/VEYRON-I2S.conf
 share/alsa/ucm/broadwell-rt286/HiFi
 share/alsa/ucm/broadwell-rt286/broadwell-rt286.conf
+share/alsa/ucm/chtrt5645/HiFi.conf
+share/alsa/ucm/chtrt5645/chtrt5645.conf
 share/alsa/ucm/tegraalc5632/tegraalc5632.conf
 @sample etc/asound.conf.sample
