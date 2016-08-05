@@ -1,6 +1,8 @@
 # This file lists the Dictionary files to not bloat Makefile
 # $FreeBSD$
 
+.include "${.CURDIR}/Makefile.options"
+
 AF_ZA_FILE=	spell-af-ZA.xpi
 BG_FILE=	spell-bg.xpi
 CA_FILE=	spell-ca.xpi
@@ -45,5 +47,4 @@ SV_FILE=	spell-sv.xpi
 UK_FILE=	spell-uk.xpi
 ZU_ZA_FILE=	spell-zu-ZA.xpi
 
-ALLDICTS_CMD:=	${GREP} FILE ${.CURDIR}/Makefile.dict | ${GREP} -v ALLDICTS_CMD | ${SED} s/_FILE.*//g | ${XARGS} | ${GREP} .
-ALLDICTS!=	${ALLDICTS_CMD}
+ALLDICTS=	${OPTIONS_MULTI_DICT}
