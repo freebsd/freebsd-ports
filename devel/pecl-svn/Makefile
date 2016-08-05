@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	svn
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
