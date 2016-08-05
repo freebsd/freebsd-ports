@@ -3,7 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.163
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/${PORTVERSION}/
 

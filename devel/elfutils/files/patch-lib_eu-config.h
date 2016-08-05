@@ -1,6 +1,6 @@
 --- lib/eu-config.h.orig	2015-06-11 11:38:55 UTC
 +++ lib/eu-config.h
-@@ -187,4 +187,147 @@ asm (".section predict_data, \"aw\"; .pr
+@@ -187,4 +187,167 @@ asm (".section predict_data, \"aw\"; .pr
  #endif
  
  
@@ -56,6 +56,26 @@
 +
 +	return (realpath(path, NULL));
 +}
++
++/*
++ * A GNU-like basename().
++ *
++ * Unlike POSIX basename(3), this version never modifies its argument.  If the
++ * argument ends in a slash, it returns the empty string.
++ */
++static inline char *
++eu_basename(const char *path)
++{
++	const char *slash;
++
++	slash = strrchr(path, '/');
++	if (slash != NULL)
++		slash++;
++	else
++		slash = path;
++	return (__DECONST(char *, slash));
++}
++#define	basename	eu_basename
 +
 +#ifndef	TEMP_FAILURE_RETRY
 +#define	TEMP_FAILURE_RETRY(expr)	({		\
