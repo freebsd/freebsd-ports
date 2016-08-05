@@ -655,6 +655,7 @@
     SUBDIR += p5-Net-OpenID-Server
     SUBDIR += p5-Net-Radius-Server
     SUBDIR += p5-Net-SAML
+    SUBDIR += p5-Net-SSH-AuthorizedKeysFile
     SUBDIR += p5-Net-SSL-ExpireDate
     SUBDIR += p5-Net-SSLGlue
     SUBDIR += p5-Net-SSLeay
