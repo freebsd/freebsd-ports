@@ -296,8 +296,8 @@ share/applications/darktable.desktop
 %%DATADIR%%/pixmaps/plugins/darkroom/watermark.svg
 %%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.png
 %%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.svg
-%%RAWSPEED%%%%DATADIR%%/rawspeed/cameras.xml
-%%RAWSPEED%%%%DATADIR%%/rawspeed/showcameras.xsl
+%%DATADIR%%/rawspeed/cameras.xml
+%%DATADIR%%/rawspeed/showcameras.xsl
 %%DATADIR%%/style/bullet.gif
 %%DATADIR%%/style/close.gif
 %%DATADIR%%/style/closelabel.gif
