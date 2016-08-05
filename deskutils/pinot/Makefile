@@ -22,7 +22,6 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libdbus-glib-1.so:devel/dbus-glib		\
 		libxml++-2.6.so:textproc/libxml++26	\
 		libboost_thread.so:devel/boost-libs		\
-		libexecinfo.so:devel/libexecinfo		\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
 		libgmime-2.4.so:mail/gmime24		\
@@ -46,7 +45,8 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		gettext libarchive libtool pkgconfig python shebangfix sqlite:3
+USES=		execinfo gettext libarchive libtool pkgconfig python \
+		shebangfix sqlite:3
 USE_OPENSSL=	yes
 USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
