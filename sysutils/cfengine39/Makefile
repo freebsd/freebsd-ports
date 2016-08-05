@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 # XXX Remember to update files/patch-configure.am with any new version number.
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
@@ -30,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf:EXPLICIT_VERSION=${PORTVERSION} \
+USES=		autoreconf:build \
 		cpe gmake libtool shebangfix
 SHEBANG_FILES=	examples/remake_outputs.pl
 CFLAGS+=	-Wno-return-type
@@ -38,6 +38,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
+MAKE_ENV=	EXPLICIT_VERSION=${PORTVERSION}
+CONFIGURE_ENV=	EXPLICIT_VERSION=${PORTVERSION}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--libexecdir=${PREFIX}/libexec \

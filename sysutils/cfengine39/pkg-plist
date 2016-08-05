@@ -1,5 +1,4 @@
 libexec/cfengine/libpromises.so
-libexec/cfengine/libpromises.so.3
 libexec/cfengine/libpromises.so.3.0.6
 sbin/cf-agent
 sbin/cf-execd
@@ -309,6 +308,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/service_catalogue_separate.cf
 %%DOCSDIR%%/examples/service_disable.cf
 %%DOCSDIR%%/examples/service_start.cf
+%%DOCSDIR%%/examples/services.cf
 %%DOCSDIR%%/examples/services_concept.cf
 %%DOCSDIR%%/examples/services_win.cf
 %%DOCSDIR%%/examples/setuidlog.cf
