@@ -3,7 +3,7 @@
 
 PORTNAME=		crits
 PORTVERSION=		3.1.0
-PORTREVISION=		3
+PORTREVISION=		4
 DISTVERSIONPREFIX=	v
 CATEGORIES=		security
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ USE_APACHE_RUN=	22+
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre  \
 		libcurl.so:ftp/curl    \
-		libpcap.so:net/libpcap
+		libpcap.so.1:net/libpcap
 
 RUN_DEPENDS+=	7z:archivers/p7zip     \
 		unrar:archivers/unrar  \
