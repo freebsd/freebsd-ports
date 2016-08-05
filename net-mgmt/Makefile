@@ -269,6 +269,7 @@
     SUBDIR += pmacct
     SUBDIR += pnp
     SUBDIR += pnp-icinga
+    SUBDIR += pnp-icinga2
     SUBDIR += portmon
     SUBDIR += py-flowtools
     SUBDIR += py-ipcalc
