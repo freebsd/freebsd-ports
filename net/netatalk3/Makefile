@@ -92,6 +92,7 @@ SUB_LIST+=		ZEROCONF="avahi_daemon"
 
 .if ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
+CONFIGURE_ENV+=		ac_cv_lib_avahi_client_avahi_client_new=no
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=		libdns_sd.so:net/mDNSResponder
