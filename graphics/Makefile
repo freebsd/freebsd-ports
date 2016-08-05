@@ -847,6 +847,7 @@
     SUBDIR += py-gvgen
     SUBDIR += py-imageio
     SUBDIR += py-imagesize
+    SUBDIR += py-imgurpython
     SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-nwdiag
