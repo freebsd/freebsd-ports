@@ -136,6 +136,7 @@
     SUBDIR += py-skype4py
     SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
+    SUBDIR += py-telepot
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
