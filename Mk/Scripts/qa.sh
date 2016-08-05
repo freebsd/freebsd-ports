@@ -351,7 +351,7 @@ proxydeps_suggest_uses() {
 
 	# miscellaneous USE clauses
 	if [ ${pkg} = 'devel/gettext-runtime' ]; then
-		warn "you need USES+=gettext"
+		warn "you need USES+=gettext-runtime"
 	elif [ ${pkg} = 'databases/sqlite3' ]; then
 		warn "you need USES+=sqlite"
 	elif [ ${pkg} = 'databases/sqlite2' ]; then
