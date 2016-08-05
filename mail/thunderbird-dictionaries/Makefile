@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	MOZDEV/dictionaries
 DISTFILES=	# filled in later after options
@@ -18,35 +18,19 @@ USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
-.include "${.CURDIR}/Makefile.options"
-
-.include <bsd.port.pre.mk>
-
+# All available dictionaries are listed in Makefile.dict
+# Makefile.dict pulls in Makefile.options
 .include "${.CURDIR}/Makefile.dict"
 
-# For batch building, build all dictionaries
-.if defined(BATCH)
-PORT_OPTIONS+=	${ALLDICTS}
-.endif
-
-# All available dictionaries are listed in Makefile.dict
+.include <bsd.port.options.mk>
 
 # this dictionary requires special handling in do-install
 BG_DICT=	BG
 
-# Build and install all dictionaries
-.if ${PORT_OPTIONS:MALL}
-PORT_OPTIONS+=	${ALLDICTS}
-.endif
-
 # Figure out which distfiles to use, and how to construct the plist
 .for f in ${ALLDICTS}
 .if ${PORT_OPTIONS:M${f}}
-PLIST_SUB+=	${f}=""
-HAVE_DICT=	yes
 DISTFILES+=	${${f}_FILE}
-.else
-PLIST_SUB+=	${f}="@comment "
 .endif
 .endfor
 
@@ -82,4 +66,4 @@ do-install:
 .endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
