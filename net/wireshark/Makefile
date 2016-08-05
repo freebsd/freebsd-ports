@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -27,10 +27,9 @@ DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
-USES=		alias cpe gmake libtool perl5 pkgconfig python:build tar:bzip2
+USES=		alias cpe gmake libtool perl5 pkgconfig python:build ssl tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
@@ -63,7 +62,7 @@ OPTIONS_RADIO_ASYNCDNS=	ADNS CARES
 OPTIONS_RADIO_GUI=	GTK2 GTK3 QT5
 OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
 
-OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3
+OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3 DECRYPT
 
 RTP_DESC=		Enable support for playing back RTP streams
 DECRYPT_DESC=		Decryption support for SSL and IPSec
