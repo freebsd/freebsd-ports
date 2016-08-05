@@ -1159,6 +1159,7 @@
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz
+    SUBDIR += zdoom
     SUBDIR += zephulor
     SUBDIR += zhlt
     SUBDIR += znibbles
