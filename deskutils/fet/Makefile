@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.30.1
+PORTVERSION=	5.30.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -16,8 +16,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake tar:bzip2
-USE_QT4=	corelib xml \
-		moc_build rcc_build uic_build
 
 PORTEXAMPLES=	*
 
@@ -29,14 +27,29 @@ DESKTOP_ENTRIES="FET" \
 		true
 
 OPTIONS_DEFINE=	EXAMPLES NLS ONLYCL
-ONLYCL_DESC=	Build only command line version (without Qt4 GUI)
+OPTIONS_SINGLE=	QTVER
+OPTIONS_SINGLE_QTVER=	QT4 QT5
+OPTIONS_DEFAULT=	EXAMPLES NLS QT4
+ONLYCL_DESC=	Build only command line version (without Qt GUI)
 
 OPTIONS_SUB=	yes
 
-ONLYCL_INSTALL_TARGET=	${WRKSRC}/fet-cl
-ONLYCL_VARS=	QMAKE_SOURCE_PATH=${WRKSRC}/src/src-cl.pro
-ONLYCL_USE_OFF=	qt4=gui,network
-ONLYCL_INSTALL_TARGET_OFF=	${WRKSRC}/fet
+QT4_USE=	QT4=corelib,moc_build,rcc_build,uic_build,xml
+QT5_USE=	QT5=buildtools_build,core,xml GL=gl
+
+.include <bsd.port.options.mk>
+
+INSTALL_TARGET=	${WRKSRC}/fet-cl
+.if ${PORT_OPTIONS:MONLYCL}
+QMAKE_SOURCE_PATH=	${WRKSRC}/src/src-cl.pro
+.else
+INSTALL_TARGET+=	${WRKSRC}/fet
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4+=gui network
+.else
+USE_QT5+=gui network printsupport widgets
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
