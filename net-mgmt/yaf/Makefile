@@ -3,6 +3,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 		libltdl.so:devel/libltdl \
-		libpcap.so:net/libpcap \
+		libpcap.so.1:net/libpcap \
 		libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
