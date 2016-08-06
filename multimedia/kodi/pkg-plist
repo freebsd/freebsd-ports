@@ -1501,7 +1501,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/shaders/guishader_video.hlsl
 %%DATADIR%%/system/shaders/guishader_video_control.hlsl
 %%DATADIR%%/system/shaders/stretch.glsl
-%%DATADIR%%/system/shaders/testshader.fx
 %%DATADIR%%/system/shaders/yuv2rgb_basic.glsl
 %%DATADIR%%/system/shaders/yuv2rgb_basic_2d.arb
 %%DATADIR%%/system/shaders/yuv2rgb_basic_2d_UYVY.arb
