@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Net_URL2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	PEAR Class for parsing and handling URL
 
 LICENSE=	BSD3CLAUSE
