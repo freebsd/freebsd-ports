@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	5.0.9
+PORTVERSION=	5.0.10
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -177,6 +177,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/article
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/httpd/htdocs/js/js-cache/
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/tmp
+
+# otrs.SetPermissions.pl does not work in stage environment due to missing otrs user
+#post-install:
+#	cd ${STAGEDIR}/${OTRSDIR} && ${PERL} ./bin/otrs.SetPermissions.pl \
+#	--web-group=${WWWOWN} \
+#	--otrs-user=${PORTNAME} \
+#	--admin-group=wheel  ${STAGEDIR}${OTRSDIR}
 
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
