@@ -1,11 +1,12 @@
 # Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
 
-PORTNAME=	Text_password
-PORTVERSION=	1.2.0
+PORTNAME=	Text_Password
+PORTVERSION=	1.2.1
 CATEGORIES=	security www pear
+DISTNAME=	Text_password-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	PEAR random password creator
 
 USES=	pear
