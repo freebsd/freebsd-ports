@@ -1482,6 +1482,7 @@
     SUBDIR += py-bjoern
     SUBDIR += py-bleach
     SUBDIR += py-blogofile
+    SUBDIR += py-boto3
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
     SUBDIR += py-cachecontrol
