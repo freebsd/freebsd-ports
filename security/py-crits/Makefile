@@ -56,7 +56,7 @@ RUN_DEPENDS+=	7z:archivers/p7zip     \
 		${PYTHON_PKGNAMEPREFIX}kombu>=2.5.4:net/py-kombu               \
 		${PYTHON_PKGNAMEPREFIX}celery>=3.0.12:devel/py-celery          \
 		${PYTHON_PKGNAMEPREFIX}requests1>=1.1.0_9:www/py-requests1     \
-		${PKGNAMEPREFIX}pillow>=2.4.0:graphics/py-pillow               \
+		${PYTHON_PKGNAMEPREFIX}pillow>=2.4.0:graphics/py-pillow               \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=1.5.1:devel/py-pyparsing     \
 		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.15:net/py-ldap                \
 		${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic                  \
