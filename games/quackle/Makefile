@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quackle
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -14,11 +14,11 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 
 USES=		compiler:c++11-lib gmake qmake
-USE_QT4=	gui moc_build
+USE_QT4=	corelib gui moc_build
 
 BUILD_WRKSRC=	${WRKSRC}/quacker
 
-DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
+DESKTOP_ENTRIES="Quackle" "" "" "quackle" "Game;BoardGame;" "true"
 
 post-patch:
 	@${REINPLACE_CMD} '/-Wno-unused-local-typedefs/d' \
