@@ -642,6 +642,7 @@ otrs/Kernel/System/Console/Command/Dev/Tools/ConsoleStats.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/Database/RandomDataInsert.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/Database/XML2SQL.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/Database/XMLExecute.pm
+otrs/Kernel/System/Console/Command/Dev/Tools/GenericInterface/DebugRead.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/Migrate/DTL2TT.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/RPMSpecGenerate.pm
 otrs/Kernel/System/Console/Command/Dev/Tools/TranslationsUpdate.pm
@@ -1186,6 +1187,7 @@ otrs/var/httpd/htdocs/js/Core.UI.Autocomplete.js
 otrs/var/httpd/htdocs/js/Core.UI.Datepicker.js
 otrs/var/httpd/htdocs/js/Core.UI.Dialog.js
 otrs/var/httpd/htdocs/js/Core.UI.DnD.js
+otrs/var/httpd/htdocs/js/Core.UI.Floater.js
 otrs/var/httpd/htdocs/js/Core.UI.InputFields.js
 otrs/var/httpd/htdocs/js/Core.UI.Notification.js
 otrs/var/httpd/htdocs/js/Core.UI.Popup.js
@@ -2411,6 +2413,7 @@ otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.14.0/jquery.validate.js
 otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.6.4/jsplumb.js
 otrs/var/httpd/htdocs/js/thirdparty/jsplumb-labelspacer/label-spacer.js
 otrs/var/httpd/htdocs/js/thirdparty/momentjs-2.10.6/moment.min.js
+otrs/var/httpd/htdocs/js/thirdparty/nvd3-1.7.1/models/OTRSLineChart.js
 otrs/var/httpd/htdocs/js/thirdparty/nvd3-1.7.1/models/OTRSMultiBarChart.js
 otrs/var/httpd/htdocs/js/thirdparty/nvd3-1.7.1/models/OTRSStackedAreaChart.js
 otrs/var/httpd/htdocs/js/thirdparty/nvd3-1.7.1/nvd3.min.js
