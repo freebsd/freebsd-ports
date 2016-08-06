@@ -18,7 +18,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	3.02a04
+PORTVERSION=	3.02a06
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF/${PORTNAME}/alpha
