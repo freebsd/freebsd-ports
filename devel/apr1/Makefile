@@ -3,6 +3,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
 DISTFILES=	apr-${APR_VERSION}.tar.gz \
@@ -40,7 +41,7 @@ NSS_DESC=		NSS crypto driver
 SSL_DESC=		OpenSSL crypto driver
 
 # APR-Util Options
-BDB_USE=		BDB=5+
+BDB_USES=		bdb:5+
 FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 LDAP_USE=		OPENLDAP=yes
@@ -48,7 +49,7 @@ MYSQL_USE=		MYSQL=yes
 NSS_LIB_DEPENDS=	libnss3.so:security/nss
 PGSQL_USES=		pgsql
 SQLITE_USES=		sqlite
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
@@ -204,7 +205,6 @@ do-install:
 	@${ECHO_MSG} "# ===> ${.TARGET} apr-util-${APU_VERSION}"
 	(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET} ${MAKE_ARGS})
 
-post-install:
 	-${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
 test: build
