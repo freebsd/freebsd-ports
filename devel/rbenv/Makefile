@@ -27,7 +27,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-local-exec ${STAGEDIR}${PREFIX}/bin
 	( ${INSTALL_SCRIPT} ${WRKSRC}/libexec/* ${STAGEDIR}${PREFIX}/libexec/ )
-	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ../libexec/rbenv .)
+	@${LN} -sf ../libexec/rbenv ${STAGEDIR}${PREFIX}/bin/rbenv
 	@${MKDIR} ${STAGEDIR}${DATADIR}/completions
 	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/completions )
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rbenv.d
