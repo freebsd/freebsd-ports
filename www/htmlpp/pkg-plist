@@ -11,14 +11,3 @@ bin/guru.fmt
 %%SITE_PERL%%/sfldate.pl
 %%SITE_PERL%%/shellwd.pl
 %%SITE_PERL%%/textdb.pl
-share/doc/htmlpp/index.htm
-share/doc/htmlpp/index1.htm
-share/doc/htmlpp/index2.htm
-share/doc/htmlpp/index3.htm
-share/doc/htmlpp/index4.htm
-share/doc/htmlpp/index5.htm
-share/doc/htmlpp/htmlpp1.gif
-share/doc/htmlpp/im0096c.gif
-share/doc/htmlpp/newstone.gif
-share/doc/htmlpp/gurutst.txt
-share/doc/htmlpp/htmlpp.txt
