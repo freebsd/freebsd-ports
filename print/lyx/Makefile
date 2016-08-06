@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
 
 MAJOR_VERSION=	2.2
-MINOR_VERSION=	0
+MINOR_VERSION=	1
 
 USES=		desktop-file-utils execinfo gmake iconv pkgconfig perl5 \
 		python:2 tar:xz
