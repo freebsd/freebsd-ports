@@ -3,6 +3,7 @@
 
 PORTNAME=	xorp
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
@@ -12,9 +13,7 @@ COMMENT=	EXtensible Open Router Platform
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libpcap.so:net/libpcap
-
-CONFLICTS_INSTALL=	xorp-devel-*
+		libpcap.so.1:net/libpcap	# avoid base libpcap
 
 USES=		tar:bzip2 ncurses scons shebangfix compiler:env python:2,build
 USE_GITHUB=	yes
