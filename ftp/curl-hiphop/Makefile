@@ -6,6 +6,10 @@ PKGNAMESUFFIX=	-hiphop
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Static libcurl with custom patches for HipHop
 
+BROKEN=		fails to build
+DEPRECATED=	useful only for removed hiphop-php
+EXPIRATION_DATE=	2016-09-07
+
 SSP_UNSAFE=	Refuses -l in LDFLAGS
 
 BUILDING_HIPHOP=	yes
