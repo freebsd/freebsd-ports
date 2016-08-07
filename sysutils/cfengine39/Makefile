@@ -28,10 +28,10 @@ USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build \
-		cpe gmake libtool shebangfix
+		cpe gmake libtool shebangfix ssl
+USE_GNOME=	libxml2
 SHEBANG_FILES=	examples/remake_outputs.pl
 CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -52,14 +52,16 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
-		liblmdb.so:databases/lmdb
+		liblmdb.so:databases/lmdb \
+		libyaml.so:textproc/libyaml \
+		libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
 
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
 MYSQL_LIB_DEPENDS=		libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
