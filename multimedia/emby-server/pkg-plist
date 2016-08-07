@@ -163,6 +163,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-apiclient/credentials.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/events.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/fileupload.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/localassetmanager.js
+lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery-chrome.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/contentuploader.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/mediasync.js
@@ -186,11 +187,16 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/backdrop/style.
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/bower.json
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/browser.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/browserdeviceprofile.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/card.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/cardbuilder.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/chaptercardbuilder.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/peoplecardbuilder.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/clearbutton.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/collectioneditor/collectioneditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/confirm.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/nativeconfirm.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/datetime.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialoghelper/dialoghelper.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialoghelper/dialoghelper.js
@@ -295,14 +301,15 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemcontextmenu
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemhelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemhovermenu/itemhovermenu.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemhovermenu/itemhovermenu.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemidentifier/itemidentifier.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/itemidentifier/itemidentifier.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/layoutmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/listview/listview.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/listview/listview.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-legacy.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-legacy.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-lite.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-lite.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-smarttv.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading.css
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/mediainfo/fresh.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/mediainfo/mediainfo.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/mediainfo/mediainfo.js
@@ -957,6 +964,7 @@ lib/emby-server/dashboard-ui/bower_components/paper-material/paper-material.html
 lib/emby-server/dashboard-ui/bower_components/paper-material/test/index.html
 lib/emby-server/dashboard-ui/bower_components/paper-material/test/paper-material.html
 lib/emby-server/dashboard-ui/bower_components/paper-progress/.bower.json
+lib/emby-server/dashboard-ui/bower_components/paper-progress/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/paper-progress/.gitignore
 lib/emby-server/dashboard-ui/bower_components/paper-progress/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/paper-progress/CONTRIBUTING.md
@@ -1070,8 +1078,6 @@ lib/emby-server/dashboard-ui/components/imageeditor/imageeditor.js
 lib/emby-server/dashboard-ui/components/imageeditor/imageeditor.template.html
 lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.js
 lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.template.html
-lib/emby-server/dashboard-ui/components/itemidentifier/itemidentifier.js
-lib/emby-server/dashboard-ui/components/itemidentifier/itemidentifier.template.html
 lib/emby-server/dashboard-ui/components/medialibrarycreator/medialibrarycreator.js
 lib/emby-server/dashboard-ui/components/medialibrarycreator/medialibrarycreator.template.html
 lib/emby-server/dashboard-ui/components/medialibraryeditor/medialibraryeditor.js
@@ -1086,7 +1092,6 @@ lib/emby-server/dashboard-ui/components/tvproviders/xmltv.js
 lib/emby-server/dashboard-ui/components/tvproviders/xmltv.template.html
 lib/emby-server/dashboard-ui/components/viewcontainer-lite.js
 lib/emby-server/dashboard-ui/connectlogin.html
-lib/emby-server/dashboard-ui/css/card.css
 lib/emby-server/dashboard-ui/css/chromecast.css
 lib/emby-server/dashboard-ui/css/dashboard.css
 lib/emby-server/dashboard-ui/css/detailtable.css
@@ -1178,7 +1183,6 @@ lib/emby-server/dashboard-ui/css/notifications.css
 lib/emby-server/dashboard-ui/css/nowplaying.css
 lib/emby-server/dashboard-ui/css/nowplayingbar.css
 lib/emby-server/dashboard-ui/css/site.css
-lib/emby-server/dashboard-ui/css/tileitem.css
 lib/emby-server/dashboard-ui/dashboard.html
 lib/emby-server/dashboard-ui/dashboardgeneral.html
 lib/emby-server/dashboard-ui/dashboardhosting.html
