@@ -22,8 +22,6 @@ LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTRIB}
