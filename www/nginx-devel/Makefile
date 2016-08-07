@@ -632,9 +632,12 @@ LIB_DEPENDS+=	libmsgpuck.so:devel/msgpuck \
 		libyajl.so:devel/yajl
 GH_ACCOUNT+=	tarantool:nginx_tarantool
 GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
-GH_TAGNAME+=	b852195:nginx_tarantool
-CFLAGS+=	-I${LOCALBASE}/include/msgpuck
+GH_TAGNAME+=	1278ee5:nginx_tarantool
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_nginx_tarantool}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
+.endif
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 .endif
 
