@@ -1,6 +1,6 @@
 bin/redis-benchmark
 bin/redis-check-aof
-bin/redis-check-dump
+bin/redis-check-rdb
 bin/redis-cli
 bin/redis-sentinel
 bin/redis-server
