@@ -2,6 +2,7 @@
 
 PORTNAME=	HoroscopeGenerator
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,6 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk
 
 .include <bsd.port.mk>
