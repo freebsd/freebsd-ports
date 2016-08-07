@@ -24,7 +24,6 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-do-test:
-	${MAKE} -C ${WRKSRC} test
+TEST_TARGET=	test
 
 .include <bsd.port.mk>
