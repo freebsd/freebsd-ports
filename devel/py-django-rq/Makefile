@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-rq
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ COMMENT=	Provides Django integration for RQ (Redis Queue)
 
 LICENSE=	MIT
 
+TEST_DEPENDS=	redis-server:databases/redis
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:devel/py-rq
 
@@ -22,5 +23,8 @@ NO_ARCH=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+do-test:
+	${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>
