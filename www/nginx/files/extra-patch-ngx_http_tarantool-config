@@ -1,11 +1,20 @@
---- ../nginx_upstream_module-b852195/config.orig	2015-08-20 23:33:02.000000000 +0300
-+++ ../nginx_upstream_module-b852195/config	2015-08-23 16:04:59.572045669 +0300
-@@ -4,7 +4,7 @@
+--- ../nginx_upstream_module-1278ee5/config.orig	2016-08-07 15:39:47.000000000 -0400
++++ ../nginx_upstream_module-1278ee5/config	2016-08-07 16:38:59.298414000 -0400
+@@ -1,14 +1,14 @@
+ ngx_addon_name="ngx_http_tnt_module"
+ 
+-__lib_yajl="$ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/lib/libyajl_s.a"
++__lib_yajl="%%PREFIX%%/lib/libyajl.so"
+ 
+ __module_src_dir="$ngx_addon_dir/src"
+ 
+ __include_paths=" \
+           $ngx_addon_dir/src                                       \
+           $ngx_addon_dir/third_party                               \
+-          $ngx_addon_dir/third_party/msgpuck                       \
+-          $ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/include \
++          %%PREFIX%%/include/msgpuck \
++          %%PREFIX%%/include/yajl \
            "
  
- CORE_LIBS="$CORE_LIBS $ngx_feature_libs \
--           $ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/lib/libyajl_s.a \
-+           %%PREFIX%%/lib/libyajl_s.a \
-            "
- 
- HTTP_MODULES="$HTTP_MODULES               \
+ __sources=" \
