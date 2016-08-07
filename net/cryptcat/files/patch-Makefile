@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May 22 21:06:42 2001
-+++ Makefile	Fri Oct 28 15:07:46 2005
+--- Makefile.orig	2005-10-18 00:41:01 UTC
++++ Makefile
 @@ -10,13 +10,11 @@
  # debugging
  # DFLAGS = -DTEST -DDEBUG
@@ -15,7 +15,7 @@
  o = o		# object extension
  
  ALL = cryptcat
-@@ -28,8 +26,11 @@
+@@ -28,8 +26,11 @@ bogus:
  
  ### HARD TARGETS
  
@@ -29,7 +29,7 @@
  
  nc-dos:
  	@echo "DOS?!  Maybe someday, but not now"
-@@ -113,10 +114,10 @@
+@@ -115,10 +116,10 @@ next:
  	make -e $(ALL) $(MFLAGS) XFLAGS='-DNEXT' STATIC=-Bstatic
  
  farm9crypt.o: farm9crypt.cc farm9crypt.h
