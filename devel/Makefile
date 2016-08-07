@@ -1439,6 +1439,7 @@
     SUBDIR += llvm36
     SUBDIR += llvm37
     SUBDIR += llvm38
+    SUBDIR += llvm39
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
