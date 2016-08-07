@@ -241,6 +241,14 @@
 %%WWWDIR%%/node_modules/angular-route/bower.json
 %%WWWDIR%%/node_modules/angular-route/index.js
 %%WWWDIR%%/node_modules/angular-route/package.json
+%%WWWDIR%%/node_modules/angular-sanitize/LICENSE.md
+%%WWWDIR%%/node_modules/angular-sanitize/README.md
+%%WWWDIR%%/node_modules/angular-sanitize/angular-sanitize.js
+%%WWWDIR%%/node_modules/angular-sanitize/angular-sanitize.min.js
+%%WWWDIR%%/node_modules/angular-sanitize/angular-sanitize.min.js.map
+%%WWWDIR%%/node_modules/angular-sanitize/bower.json
+%%WWWDIR%%/node_modules/angular-sanitize/index.js
+%%WWWDIR%%/node_modules/angular-sanitize/package.json
 %%WWWDIR%%/node_modules/angular/README.md
 %%WWWDIR%%/node_modules/angular/angular-csp.css
 %%WWWDIR%%/node_modules/angular/angular.js
@@ -874,7 +882,6 @@
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/CHANGELOG.md
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/Gruntfile.js
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/LICENSE
-%%WWWDIR%%/node_modules/babel-core/node_modules/core-js/README.md
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/bower.json
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/build/Gruntfile.ls
 %%WWWDIR%%/node_modules/babel-core/node_modules/core-js/build/build.ls
@@ -2288,7 +2295,6 @@
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/CHANGELOG.md
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/Gruntfile.js
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/LICENSE
-%%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/README.md
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/bower.json
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/build/Gruntfile.ls
 %%WWWDIR%%/node_modules/babel-runtime/node_modules/core-js/build/build.ls
@@ -8242,6 +8248,7 @@
 %%WWWDIR%%/node_modules/lodash/utility/uniqueId.js
 %%WWWDIR%%/node_modules/marked/.npmignore
 %%WWWDIR%%/node_modules/marked/.travis.yml
+%%WWWDIR%%/node_modules/marked/Gulpfile.js
 %%WWWDIR%%/node_modules/marked/LICENSE
 %%WWWDIR%%/node_modules/marked/Makefile
 %%WWWDIR%%/node_modules/marked/README.md
@@ -10364,18 +10371,15 @@
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/.npmignore
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/.travis.yml
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/README.md
-%%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/Gruntfile.js
-%%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/HISTORY.md
+%%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/CHANGELOG.md
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/LICENSE
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/README.md
-%%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/bower.json
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako.min.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_deflate.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_deflate.min.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_inflate.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_inflate.min.js
-%%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/doc/index.html
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/index.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/lib/deflate.js
 %%WWWDIR%%/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/lib/inflate.js
@@ -11068,6 +11072,7 @@
 %%WWWDIR%%/node_modules/wreck/node_modules/hoek/lib/index.js
 %%WWWDIR%%/node_modules/wreck/node_modules/hoek/package.json
 %%WWWDIR%%/node_modules/wreck/package.json
+%%WWWDIR%%/optimize/.babelcache.json
 %%WWWDIR%%/package.json
 %%WWWDIR%%/src/cli/Command.js
 %%WWWDIR%%/src/cli/Log.js
