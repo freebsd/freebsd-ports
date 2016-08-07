@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portshaker-config
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	romain@FreeBSD.org
