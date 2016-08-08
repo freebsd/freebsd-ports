@@ -3,7 +3,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils www
 MASTER_SITES=	GOOGLE_CODE LOCAL/ehaupt
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libftgl.so:graphics/ftgl \
 
 GNU_CONFIGURE=	yes
 USES=		jpeg pkgconfig
-USE_SDL=	sdl image
+USE_GL=		gl glu
+USE_SDL=	image sdl
 
 CFLAGS+=	-L${LOCALBASE}/lib
 

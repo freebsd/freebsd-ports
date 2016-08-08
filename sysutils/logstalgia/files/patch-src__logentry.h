@@ -1,6 +1,6 @@
---- ./src/logentry.h.orig	2011-02-16 00:52:06.000000000 +0100
-+++ ./src/logentry.h	2011-10-31 23:20:56.000000000 +0100
-@@ -41,7 +41,7 @@
+--- src/logentry.h.orig	2011-02-15 23:52:06 UTC
++++ src/logentry.h
+@@ -41,7 +41,7 @@ public:
      void setSuccess();
      void setResponseColour();
  
