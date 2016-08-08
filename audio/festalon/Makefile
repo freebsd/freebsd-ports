@@ -3,7 +3,7 @@
 
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 		LOCAL/ehaupt
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libsamplerate.so:audio/libsamplerate
 
-USES=		libtool pkgconfig tar:bzip2
+USES+=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
