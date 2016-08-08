@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fsharp
-PORTVERSION=	3.1.2.5
+PORTVERSION=	4.0.1.10
 CATEGORIES=	lang
 
 MAINTAINER=	mono@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	mono>=3.0:lang/mono
 
 USE_GITHUB=	yes
 
-USES=		gmake mono pkgconfig
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf gmake mono pkgconfig
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
