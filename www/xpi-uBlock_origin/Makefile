@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ublock_origin
-PORTVERSION=	1.8.0
-DISTVERSIONSUFFIX=	-an+tb+sm+fx
+PORTVERSION=	1.8.4
+DISTVERSIONSUFFIX=	-fx+tb+sm+an
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
