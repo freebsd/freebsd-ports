@@ -675,7 +675,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	int	no_host_authentication_for_localhost;
 --- work.clean/openssh-6.8p1/scp.c	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/scp.c	2015-04-02 16:51:25.108407000 -0500
-@@ -750,7 +750,7 @@
+@@ -764,7 +764,7 @@ source(int argc, char **argv)
  	off_t i, statbytes;
  	size_t amt, nr;
  	int fd = -1, haderr, indx;
@@ -684,12 +684,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	int len;
  
  	for (indx = 0; indx < argc; ++indx) {
-@@ -919,7 +919,7 @@
+@@ -932,7 +932,7 @@ sink(int argc, char **argv)
  	off_t size, statbytes;
  	unsigned long long ull;
  	int setimes, targisdir, wrerrno = 0;
--	char ch, *cp, *np, *targ, *why, *vect[1], buf[2048];
-+	char ch, *cp, *np, *targ, *why, *vect[1], buf[16384];
+-	char ch, *cp, *np, *targ, *why, *vect[1], buf[2048], visbuf[2048];
++	char ch, *cp, *np, *targ, *why, *vect[1], buf[16384], visbuf[16384];
  	struct timeval tv[2];
  
  #define	atime	tv[0]

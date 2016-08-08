@@ -29,10 +29,11 @@ Submitted by:   delphij@
  #include <sys/wait.h>
  #include <sys/un.h>
  
-@@ -281,7 +282,19 @@ add_local_forward(Options *options, cons
+@@ -311,8 +312,19 @@ add_local_forward(Options *options, cons
  	struct Forward *fwd;
- #ifndef NO_IPPORT_RESERVED_CONCEPT
  	extern uid_t original_real_uid;
+ 	int i;
+-
 -	if (newfwd->listen_port < IPPORT_RESERVED && original_real_uid != 0 &&
 +	int ipport_reserved;
 +#ifdef __FreeBSD__
@@ -49,8 +50,8 @@ Submitted by:   delphij@
 +	if (newfwd->listen_port < ipport_reserved && original_real_uid != 0 &&
  	    newfwd->listen_path == NULL)
  		fatal("Privileged ports can only be forwarded by root.");
- #endif
-@@ -1674,7 +1687,7 @@ fill_default_options(Options * options)
+ 	/* Don't add duplicates */
+@@ -1934,7 +1946,7 @@ fill_default_options(Options * options)
  	if (options->batch_mode == -1)
  		options->batch_mode = 0;
  	if (options->check_host_ip == -1)
