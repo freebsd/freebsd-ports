@@ -3,7 +3,7 @@
 
 PORTNAME=	fldiff
 PORTVERSION=	1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -13,9 +13,13 @@ COMMENT=	Graphical diff program using FLTK
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpng16.so:graphics/png
 
 GNU_CONFIGURE=	yes
+USES=		jpeg
+USE_XORG=	x11 xext xfixes xft
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

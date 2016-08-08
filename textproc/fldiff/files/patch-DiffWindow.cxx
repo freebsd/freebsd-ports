@@ -1,6 +1,6 @@
---- ./DiffWindow.cxx.orig	2006-11-13 19:54:02.000000000 +0100
-+++ ./DiffWindow.cxx	2011-09-08 10:20:08.000000000 +0200
-@@ -1126,11 +1126,11 @@
+--- DiffWindow.cxx.orig	2006-11-13 18:54:02 UTC
++++ DiffWindow.cxx
+@@ -1126,11 +1126,11 @@ void
  DiffWindow::save_prefs()
  {
    // Save the window prefs for the next run...
