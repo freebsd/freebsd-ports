@@ -19,8 +19,7 @@ WIDECHAR_DESC=	Enable wide-character support (UTF-8)
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-USES=			iconv libtool ncurses pkgconfig tar:bzip2
-USE_BDB=		42+
+USES=			bdb iconv libtool ncurses pkgconfig tar:bzip2
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
 CONFIGURE_SCRIPT=	../dist/configure

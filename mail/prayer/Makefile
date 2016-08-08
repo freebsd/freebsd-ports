@@ -33,9 +33,9 @@ SESSIONCACHE_DESC=	Activate Session Cache
 USERS=		_prayer
 GROUPS=		prayer
 
-SESSIONCACHE_USE=	BDB=5+
+SESSIONCACHE_USES=	bdb:5+
 LDAP_USE=		OPENLDAP=yes
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 TIDY_LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 GID!=		id -g

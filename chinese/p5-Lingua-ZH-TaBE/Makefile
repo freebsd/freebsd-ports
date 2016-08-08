@@ -13,10 +13,9 @@ COMMENT=	Chinese processing via libtabe
 
 LIB_DEPENDS=	libtabe.so:chinese/libtabe
 
-USES=		perl5
+USES=		bdb perl5
 USE_PERL5=	configure
 
-USE_BDB=	yes
 OBSOLETE_BDB_VAR=	WITH_DB
 
 CONFIGURE_ARGS=	DB="${BDB_LIB_NAME}"

@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES+=		autoreconf gmake libtool pkgconfig shebangfix
+USES+=		autoreconf gmake libtool pkgconfig shebangfix ssl
 SHEBANG_FILES=	src/test/*.py
 USE_GITHUB=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 SLAVE_PORT?=	no
@@ -71,7 +70,7 @@ QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 WALLET_CONFIGURE_ENABLE=	wallet
 WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}
 WALLET_LIBS=			-L${BDB_LIB_DIR}
-WALLET_USE=			BDB=48
+WALLET_USES=			bdb:48
 
 GH_ACCOUNT=	litecoin-project
 

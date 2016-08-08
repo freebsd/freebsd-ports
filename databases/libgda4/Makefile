@@ -86,7 +86,7 @@ USE_GNOME+=	libgda4
 .endif
 
 .if ${LIBGDA4_SLAVE}=="bdb"
-USE_BDB=		yes
+USES+=			bdb
 CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-bdb
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${LIBGDA4_SLAVE}=="mysql"
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mysql

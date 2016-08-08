@@ -71,8 +71,9 @@ MAKE_ENV+=	MTA_NETINET6=1
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
+# Why keep the option if it can't work ?
 BROKEN=		port version of Berkeley DB is not compatible
-USE_BDB=	42+
+USES+=		bdb
 INVALID_BDB_VER=	46 47 48 5 6
 BERKELEYDB_SUFFIX=	-db${BDB_VER}
 CONFIGURE_ARGS+=	--disable-included-bdb
@@ -85,7 +86,7 @@ PLIST_SUB+=	WITH_BDBINT=""
 .endif
 
 .if ${PORT_OPTIONS:MPMILTER}
-USE_OPENSSL=	yes
+USES+=		ssl
 .else
 PMILTER_SUFFIX?=	-nopmilter
 .endif

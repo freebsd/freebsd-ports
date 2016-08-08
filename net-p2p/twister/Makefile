@@ -26,9 +26,7 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 
-USE_BDB=	48
-USE_OPENSSL=	yes
-USES=		autoreconf:build gmake iconv libtool
+USES=		bdb:48 autoreconf:build gmake iconv libtool ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/libtorrent

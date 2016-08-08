@@ -17,8 +17,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
-USE_BDB=	yes
+USES=		bdb perl5
 USE_PERL5=	configure
 
 pre-configure:

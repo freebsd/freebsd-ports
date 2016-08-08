@@ -24,14 +24,12 @@ QRCODES_DESC=	Build with QR code display
 
 USE_GITHUB=	yes
 
-USES=		gmake compiler:c++11-lib pkgconfig autoreconf
+USES=		bdb:5 gmake compiler:c++11-lib pkgconfig autoreconf ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-incompatible-bdb \
 		SSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" SSL_LIBS="-lssl" \
 		CRYPTO_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" CRYPTO_LIBS="-lcrypto"
 CONFIGURE_ENV+=	OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
-USE_OPENSSL=	yes
-USE_BDB=	5
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} \
 		-L${LOCALBASE}/lib -L${BDB_LIB_DIR}

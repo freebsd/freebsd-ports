@@ -51,7 +51,7 @@ JPEG_USES=		jpeg
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	40+
+USES+=		bdb
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-l${BDB_LIB_NAME}
 .endif

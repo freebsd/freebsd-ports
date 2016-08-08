@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake libtool ncurses pkgconfig tar:bzip2
+USES=		bdb gmake libtool ncurses pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_BDB=	yes
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}

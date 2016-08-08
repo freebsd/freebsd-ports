@@ -17,8 +17,7 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-MLDBM>=0:databases/p5-MLDBM \
 		p5-Test-Pod>=1:devel/p5-Test-Pod
 
-USES=		perl5 shebangfix
-USE_BDB=	yes
+USES=		bdb perl5 shebangfix
 USE_PERL5=	configure
 
 SHEBANG_FILES=	mkconsts.pl

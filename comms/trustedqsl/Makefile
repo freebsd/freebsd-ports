@@ -18,15 +18,12 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2
 
-USE_BDB=	5+
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		bdb:5+ cmake compiler:c++11-lib pkgconfig ssl
 CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
 USE_WX=		2.8+
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	GEN_CRQ LOAD_CERT STATION_LOC CONVERTER
 GEN_CRQ_DESC=	Build gen_crq

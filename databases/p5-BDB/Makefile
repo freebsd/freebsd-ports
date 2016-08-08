@@ -21,9 +21,8 @@ PORTSCOUT=	skipv:1.801
 
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-lpthread
-USE_BDB=	yes
 USE_PERL5=	configure
-USES=		perl5
+USES=		bdb perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/Makefile.PL

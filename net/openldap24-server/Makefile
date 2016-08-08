@@ -42,8 +42,7 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
-USES=			cpe libtool:keepla
-USE_OPENSSL=		yes
+USES=			cpe libtool:keepla ssl
 .if !defined(CLIENT_ONLY)
 USERS=			ldap
 GROUPS=			ldap
@@ -359,7 +358,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
-USE_BDB=		48+
+USES+=			bdb
 INVALID_BDB_VER=	6
 
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \

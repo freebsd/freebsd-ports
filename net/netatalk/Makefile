@@ -13,8 +13,7 @@ COMMENT=	File server for Mac OS X
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		gmake iconv libtool perl5 tar:bzip2
-USE_BDB=	46+
+USES=		bdb gmake iconv libtool perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_IPP_PRIVATE_STRUCTURES
 INSTALL_TARGET=	install-strip
