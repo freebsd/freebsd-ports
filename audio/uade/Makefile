@@ -3,7 +3,7 @@
 
 PORTNAME=	uade
 PORTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		LOCAL/ehaupt
@@ -60,5 +60,7 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uade123 \
+		${STAGEDIR}${PREFIX}/lib/uade2/uadecore
 
 .include <bsd.port.mk>
