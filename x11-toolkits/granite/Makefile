@@ -3,10 +3,10 @@
 #
 
 PORTNAME=	granite
-PORTVERSION=	0.4
+PORTVERSION=	0.4.0.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://launchpadlibrarian.net/264917936/ \
-	https://launchpad.net/${PORTNAME}/${PORTVERSION}/loki-alpha1/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/277504431/ \
+	https://launchpad.net/${PORTNAME}/0.4/loki-beta2/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Extensions of GTK+3 toolkit
