@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://errements.eu/distfiles/
 DIST_SUBDIR=	xfce4
@@ -16,8 +17,9 @@ COMMENT=	Visually-appealing notification daemon for Xfce
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libnotify.so:devel/libnotify
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libnotify.so:devel/libnotify \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake gettext-tools libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
