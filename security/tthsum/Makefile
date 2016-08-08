@@ -3,6 +3,7 @@
 
 PORTNAME=	tthsum
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		LOCAL/ehaupt
@@ -20,6 +21,9 @@ PLIST_FILES=	bin/tthsum man/man1/tthsum.1.gz
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test runtest
