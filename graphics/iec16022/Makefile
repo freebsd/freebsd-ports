@@ -3,7 +3,7 @@
 
 PORTNAME=	iec16022
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
 		LOCAL/ehaupt
@@ -20,6 +20,8 @@ USE_LDCONFIG=	yes
 USES=		libtool pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -fPIC
+
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/iec16022.c \
