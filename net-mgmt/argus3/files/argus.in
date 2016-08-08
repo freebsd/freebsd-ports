@@ -28,7 +28,7 @@ argus_start()
         return 1
     fi
     echo "Starting ${name}."
-    /usr/sbin/daemon -p $pidfile ${command} -d ${argus_flags}
+    /usr/sbin/daemon -p $pidfile ${command} ${argus_flags}
     _run_rc_postcmd
 }
 
