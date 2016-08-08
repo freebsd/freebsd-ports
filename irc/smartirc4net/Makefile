@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	smartirc4net
-PORTVERSION=	0.4.5.1
+PORTVERSION=	1.0
 CATEGORIES=	irc
-MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
+MASTER_SITES=	https://smuxi.im/jaws/data/files/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Multi-layered IRC library
