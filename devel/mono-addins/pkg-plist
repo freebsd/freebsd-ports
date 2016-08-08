@@ -3,6 +3,8 @@ lib/mono/gac/Mono.Addins.CecilReflector/%%VER%%.0__0738eb9f132ed756/Mono.Addins.
 lib/mono/gac/Mono.Addins.CecilReflector/%%VER%%.0__0738eb9f132ed756/Mono.Addins.CecilReflector.dll.mdb
 %%GTK2%%lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll.mdb
+%%GTK3%%lib/mono/gac/Mono.Addins.GuiGtk3/1.0.6060.21481__0738eb9f132ed756/Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/Mono.Addins.GuiGtk3/1.0.6060.21481__0738eb9f132ed756/Mono.Addins.GuiGtk3.dll.mdb
 lib/mono/gac/Mono.Addins.MSBuild/%%VER%%.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll
 lib/mono/gac/Mono.Addins.MSBuild/%%VER%%.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll.mdb
 lib/mono/gac/Mono.Addins.Setup/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Setup.dll
@@ -13,6 +15,8 @@ lib/mono/gac/policy.0.2.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/pol
 lib/mono/gac/policy.0.2.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.2.config
 %%GTK2%%lib/mono/gac/policy.0.2.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.2.Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/policy.0.2.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.2.config
+%%GTK3%%lib/mono/gac/policy.0.2.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.2.Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/policy.0.2.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.2.config
 lib/mono/gac/policy.0.2.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.2.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.2.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.2.config
 lib/mono/gac/policy.0.2.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.2.Mono.Addins.Setup.dll
@@ -23,6 +27,8 @@ lib/mono/gac/policy.0.3.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/pol
 lib/mono/gac/policy.0.3.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.3.config
 %%GTK2%%lib/mono/gac/policy.0.3.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.3.Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/policy.0.3.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.3.config
+%%GTK3%%lib/mono/gac/policy.0.3.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.3.Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/policy.0.3.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.3.config
 lib/mono/gac/policy.0.3.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.3.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.3.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.3.config
 lib/mono/gac/policy.0.3.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.3.Mono.Addins.Setup.dll
@@ -33,6 +39,8 @@ lib/mono/gac/policy.0.4.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/pol
 lib/mono/gac/policy.0.4.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.4.config
 %%GTK2%%lib/mono/gac/policy.0.4.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.4.Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/policy.0.4.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.4.config
+%%GTK3%%lib/mono/gac/policy.0.4.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.4.Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/policy.0.4.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.4.config
 lib/mono/gac/policy.0.4.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.4.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.4.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.4.config
 lib/mono/gac/policy.0.4.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.4.Mono.Addins.Setup.dll
@@ -43,6 +51,8 @@ lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/pol
 lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.5.config
 %%GTK2%%lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.config
+%%GTK3%%lib/mono/gac/policy.0.5.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/policy.0.5.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.5.config
 lib/mono/gac/policy.0.5.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.5.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.5.config
 lib/mono/gac/policy.0.5.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.Setup.dll
@@ -53,6 +63,8 @@ lib/mono/gac/policy.0.6.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/pol
 lib/mono/gac/policy.0.6.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.6.config
 %%GTK2%%lib/mono/gac/policy.0.6.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.6.Mono.Addins.Gui.dll
 %%GTK2%%lib/mono/gac/policy.0.6.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.6.config
+%%GTK3%%lib/mono/gac/policy.0.6.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.6.Mono.Addins.GuiGtk3.dll
+%%GTK3%%lib/mono/gac/policy.0.6.Mono.Addins.GuiGtk3/0.0.0.0__0738eb9f132ed756/policy.0.6.config
 lib/mono/gac/policy.0.6.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.6.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.6.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.6.config
 lib/mono/gac/policy.0.6.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.6.Mono.Addins.Setup.dll
@@ -61,11 +73,13 @@ lib/mono/gac/policy.0.6.Mono.Addins/0.0.0.0__0738eb9f132ed756/policy.0.6.Mono.Ad
 lib/mono/gac/policy.0.6.Mono.Addins/0.0.0.0__0738eb9f132ed756/policy.0.6.config
 lib/mono/mono-addins/Mono.Addins.CecilReflector.dll
 %%GTK2%%lib/mono/mono-addins/Mono.Addins.Gui.dll
+%%GTK3%%lib/mono/mono-addins/Mono.Addins.GuiGtk3.dll
 lib/mono/mono-addins/Mono.Addins.MSBuild.dll
 lib/mono/mono-addins/Mono.Addins.Setup.dll
 lib/mono/mono-addins/Mono.Addins.dll
 lib/mono/mono-addins/mautil.exe
 %%GTK2%%libdata/pkgconfig/mono-addins-gui.pc
+%%GTK3%%libdata/pkgconfig/mono-addins-gui-gtk3.pc
 libdata/pkgconfig/mono-addins-msbuild.pc
 libdata/pkgconfig/mono-addins-setup.pc
 libdata/pkgconfig/mono-addins.pc
