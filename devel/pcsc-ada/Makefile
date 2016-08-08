@@ -41,15 +41,8 @@ INTF_TEST_ALL_TARGET=	itests
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"-lpcsclite"|${GPRLINK}|' \
+		${WRKSRC}/pcscada_common.gpr \
 		${WRKSRC}/pcscada_lib.gpr
-	${REINPLACE_CMD} -e 's|gnaty.*|gnatyd",|' ${WRKSRC}/pcscada_common.gpr
-	(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|"-lpcsclite");|"-L${LOCALBASE}/lib"); pragma Linker_Options ("-lpcsclite");|' \
-		examples/cardd/cardd.adb \
-		examples/sample/sample.adb \
-		examples/pinverify/pinpad.adb \
-		examples/thin/thin_example.adb \
-		tests/runner.adb \
-		tests/test_pcscada.adb)
 
 do-build:
 #	We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
