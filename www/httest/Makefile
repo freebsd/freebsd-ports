@@ -3,6 +3,7 @@
 
 PORTNAME=	httest
 PORTVERSION=	2.4.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -11,8 +12,10 @@ COMMENT=	HTTP Test Tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-		libpcre.so:devel/pcre
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libgdbm.so:databases/gdbm \
+		libpcre.so:devel/pcre \
+		libapr-1.so:devel/apr1
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -24,7 +27,7 @@ CONFIGURE_ARGS=	--enable-lua-module \
 		--with-ssl="${OPENSSLLIB}"
 CPPFLAGS+=	-I${LUA_INCDIR}
 GNU_CONFIGURE=	yes
-USES=		iconv lua libtool
+USES=		iconv lua libtool bdb
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
