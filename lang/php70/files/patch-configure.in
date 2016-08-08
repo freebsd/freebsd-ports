@@ -1,6 +1,6 @@
---- configure.in.orig	2014-04-01 12:32:03.000000000 +0000
-+++ configure.in	2014-04-09 07:56:27.824397653 +0000
-@@ -370,7 +370,6 @@
+--- configure.in.orig	2016-07-20 13:11:23 UTC
++++ configure.in
+@@ -370,7 +370,6 @@ sinclude(TSRM/tsrm.m4)
  dnl .
  dnl -------------------------------------------------------------------------
  
@@ -8,7 +8,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_BUILD_PROGRAM
-@@ -401,15 +400,9 @@
+@@ -401,15 +400,9 @@ else
    AC_MSG_RESULT([none])
  fi
  
@@ -24,7 +24,7 @@
  fi
  
  dnl Starting system checks.
-@@ -688,7 +681,7 @@
+@@ -700,7 +693,7 @@ nanosleep \
  )
  
  dnl Some systems (like OpenSolaris) do not have nanosleep in libc
@@ -33,7 +33,7 @@
  
  dnl Check for getaddrinfo, should be a better way, but...
  dnl Also check for working getaddrinfo
-@@ -1225,7 +1218,7 @@
+@@ -1251,7 +1244,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -42,12 +42,12 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1435,7 +1428,7 @@
+@@ -1460,7 +1453,7 @@ PHP_SUBST(all_targets)
  PHP_SUBST(install_targets)
  PHP_SUBST(install_binary_targets)
  
 -PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
 +PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])
  
- PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
+ PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c, -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
  
