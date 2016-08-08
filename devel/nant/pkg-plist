@@ -37,12 +37,6 @@ libdata/pkgconfig/nant.pc
 %%DATADIR%%/bin/NDoc.Documenter.NAnt.dll
 %%DATADIR%%/bin/NDoc.Documenter.NAnt.dll.mdb
 %%DATADIR%%/bin/NDoc.Documenter.NAnt.xml
-%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll
-%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll.mdb
-%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.xml
-%%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.dll
-%%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.dll.mdb
-%%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.xml
 %%DATADIR%%/bin/lib/common/2.0/nunit-console-runner.dll
 %%DATADIR%%/bin/lib/common/2.0/nunit-console.exe
 %%DATADIR%%/bin/lib/common/2.0/nunit-console.exe.config
