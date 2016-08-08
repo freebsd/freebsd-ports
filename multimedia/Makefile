@@ -219,7 +219,6 @@
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
-    SUBDIR += linux-xmovie
     SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += lives
     SUBDIR += livestreamer
