@@ -1,6 +1,6 @@
---- ./src/settings/main.c.orig	2012-05-29 15:07:41.000000000 +0200
-+++ ./src/settings/main.c	2012-05-29 15:08:08.000000000 +0200
-@@ -187,8 +187,7 @@
+--- src/settings/main.c.orig	2007-05-26 09:52:28 UTC
++++ src/settings/main.c
+@@ -187,8 +187,7 @@ notification_settings_preview (GtkWidget
    /* create new preview notification */
    preview = notify_notification_new (_("Preview notification"),
      _("Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
