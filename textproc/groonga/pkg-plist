@@ -25,11 +25,13 @@ bin/groonga-benchmark
 %%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
 include/groonga/groonga/array.h
+include/groonga/groonga/column.h
 include/groonga/groonga/command.h
 include/groonga/groonga/config.h
 include/groonga/groonga/dat.h
 include/groonga/groonga/db.h
 include/groonga/groonga/dump.h
+include/groonga/groonga/error.h
 include/groonga/groonga/expr.h
 include/groonga/groonga/file_reader.h
 include/groonga/groonga/geo.h
