@@ -8612,3 +8612,4 @@ print/tex|print/texlive-base|2016-07-30|Superceeded by texlive
 net/tridiavnc|net/tigervnc|2016-08-01|No upstream 2005
 lang/pypy3-devel|lang/pypy3|2016-08-04|Renamed to lang/pypy3
 net/qt5-enginio||2016-08-06|Has expired: Deprecated by upstream from Qt 5.6 on, do not use for development
+multimedia/linux-xmovie||2016-08-08|Has expired: Not maintained upstream, contains security issues
