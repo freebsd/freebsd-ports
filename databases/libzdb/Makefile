@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE SSL
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 
-MYSQL_USE=		mysql=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_CONFIGURE_OFF=	--without-mysql
 PGSQL_USES=		pgsql
@@ -34,7 +34,7 @@ PGSQL_CONFIGURE_OFF=	--without-postgresql
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_CONFIGURE_OFF=	--without-sqlite
-SSL_USE=		openssl=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--disable-openssl
 
