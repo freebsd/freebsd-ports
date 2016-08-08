@@ -3,7 +3,7 @@
 
 PORTNAME=	exrtools
 PORTVERSION=	0.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		LOCAL/ehaupt
@@ -13,8 +13,9 @@ COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
-		libpng.so:graphics/png
+LIB_DEPENDS=	libImath-2_2.so:graphics/ilmbase \
+		libpng.so:graphics/png \
+		libIlmImf.so:graphics/OpenEXR
 
 GNU_CONFIGURE=	yes
 USES=		gmake jpeg pkgconfig
