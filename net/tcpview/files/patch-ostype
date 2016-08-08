@@ -1,0 +1,13 @@
+Workaround if /etc/motd is missing
+
+--- ostype.orig	1993-04-19 19:18:37.000000000 +0300
++++ ostype
+@@ -6,6 +6,8 @@
+ set os="UNKNOWN"
+ if ( -f /etc/motd ) then
+ 	set os=`awk -f ostype.awk /etc/motd`
++else
++	set os=$(uname -a | awk -f ostype.awk /tmp/motd)
+ endif
+ if ($os == "") exit 1
+ if ($os == "UNKNOWN") then
