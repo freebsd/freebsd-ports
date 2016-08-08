@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.3.2.b1.04082016
+PORTVERSION=	1.3.3.a1.08082016
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -18,11 +18,11 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
 
-RSPAMD_VERSION=	1.3.2
+RSPAMD_VERSION=	1.3.3
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	a569362
+GH_TAGNAME=	7311960
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
 GPERF_DESC=		Google perf-tools profiling
@@ -102,7 +102,7 @@ post-stage:
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/usr/local/etc/newsyslog.conf.d
-	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}/usr/local/etc/newsyslog.conf.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 
 .include <bsd.port.mk>
