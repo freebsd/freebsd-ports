@@ -3,7 +3,7 @@
 
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.29
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/43419242/ \
 		LOCAL/ehaupt
@@ -15,14 +15,16 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libnotify.so:devel/libnotify
+		libfreetype.so:print/freetype2 \
+		libnotify.so:devel/libnotify \
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 
 CONFLICTS=	xfce4-notification-daemon-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
-USE_GNOME=	libwnck gconf2
+USES=		gettext-runtime gmake libtool pkgconfig
+USE_GNOME=	cairo gconf2 gdkpixbuf2 libwnck
 USE_XORG=	pixman x11
 
 LIBS+=		-L${LOCALBASE}/lib -lpixman-1 -lX11
