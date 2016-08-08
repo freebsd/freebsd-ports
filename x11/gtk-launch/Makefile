@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-launch
 DISTVERSION=	1.1b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
 		LOCAL/ehaupt
@@ -11,7 +11,9 @@ MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast GTK+ program launcher
 
+USES=		gettext-runtime
 USE_GNOME=	gtk12
+USE_XORG=	x11 xext xi
 
 PLIST_FILES=	bin/gtk-launch
 PORTDOCS=	INSTALL
