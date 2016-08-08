@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puush
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	ultima1252@gmail.com
