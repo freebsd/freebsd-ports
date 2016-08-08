@@ -59,14 +59,14 @@ LIB_DEPENDS+=	libpcre.so:devel/pcre \
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
 PGSQL_USES=		pgsql
-PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
+PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
 
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
 MYSQL_LIB_DEPENDS=		libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
-LIBVIRT_CONFIGURE_ON=	--with-libvirt=${LOCALBASE}
+LIBVIRT_CONFIGURE_WITH=	--with-libvirt=${LOCALBASE}
 LIBVIRT_LIB_DEPENDS+=		libvirt.so:devel/libvirt
 
 .include <bsd.port.mk>
