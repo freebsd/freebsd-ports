@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.5.1
-PORTREVISION=	4
+PORTVERSION=	5.5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
