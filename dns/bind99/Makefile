@@ -92,7 +92,7 @@ FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-SSL_USE=		openssl=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
 NEWSTATS_CONFIGURE_ENABLE=	newstats
