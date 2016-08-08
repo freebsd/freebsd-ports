@@ -105,6 +105,9 @@ man/man1/seaf-daemon.1.gz
 %%SEAFILE_SERVER%%/upgrade/sql/5.1.0/mysql/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/sql/5.1.0/sqlite3/seafile.sql
 %%SEAFILE_SERVER%%/upgrade/sql/5.1.0/sqlite3/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.0.0/mysql/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.0.0/sqlite3/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/upgrade_5.1_6.0.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_5.0_5.1.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_4.4_5.0.sh
 @dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%
