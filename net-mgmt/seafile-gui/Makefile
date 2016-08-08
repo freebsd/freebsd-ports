@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
