@@ -108,17 +108,17 @@ share/applications/obs.desktop
 share/icons/hicolor/256x256/apps/obs.png
 share/obs/libobs/bicubic_scale.effect
 share/obs/libobs/bilinear_lowres_scale.effect
-share/obs/libobs/default.effect
 share/obs/libobs/default_rect.effect
+share/obs/libobs/default.effect
 share/obs/libobs/deinterlace_base.effect
-share/obs/libobs/deinterlace_blend.effect
 share/obs/libobs/deinterlace_blend_2x.effect
-share/obs/libobs/deinterlace_discard.effect
+share/obs/libobs/deinterlace_blend.effect
 share/obs/libobs/deinterlace_discard_2x.effect
-share/obs/libobs/deinterlace_linear.effect
+share/obs/libobs/deinterlace_discard.effect
 share/obs/libobs/deinterlace_linear_2x.effect
-share/obs/libobs/deinterlace_yadif.effect
+share/obs/libobs/deinterlace_linear.effect
 share/obs/libobs/deinterlace_yadif_2x.effect
+share/obs/libobs/deinterlace_yadif.effect
 share/obs/libobs/format_conversion.effect
 share/obs/libobs/lanczos_scale.effect
 share/obs/libobs/opaque.effect
@@ -373,6 +373,7 @@ share/obs/obs-plugins/obs-filters/locale/sr-SP.ini
 share/obs/obs-plugins/obs-filters/locale/sv-SE.ini
 share/obs/obs-plugins/obs-filters/locale/tr-TR.ini
 share/obs/obs-plugins/obs-filters/locale/zh-CN.ini
+share/obs/obs-plugins/obs-filters/locale/zh-TW.ini
 share/obs/obs-plugins/obs-filters/mask_alpha_filter.effect
 share/obs/obs-plugins/obs-filters/mask_color_filter.effect
 share/obs/obs-plugins/obs-filters/sharpness.effect
@@ -462,11 +463,14 @@ share/obs/obs-plugins/obs-transitions/locale/gl-ES.ini
 share/obs/obs-plugins/obs-transitions/locale/he-IL.ini
 share/obs/obs-plugins/obs-transitions/locale/hr-HR.ini
 share/obs/obs-plugins/obs-transitions/locale/hu-HU.ini
+share/obs/obs-plugins/obs-transitions/locale/it-IT.ini
 share/obs/obs-plugins/obs-transitions/locale/ja-JP.ini
 share/obs/obs-plugins/obs-transitions/locale/ko-KR.ini
+share/obs/obs-plugins/obs-transitions/locale/nb-NO.ini
 share/obs/obs-plugins/obs-transitions/locale/nl-NL.ini
 share/obs/obs-plugins/obs-transitions/locale/pl-PL.ini
 share/obs/obs-plugins/obs-transitions/locale/pt-BR.ini
+share/obs/obs-plugins/obs-transitions/locale/pt-PT.ini
 share/obs/obs-plugins/obs-transitions/locale/ro-RO.ini
 share/obs/obs-plugins/obs-transitions/locale/ru-RU.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-CS.ini
@@ -474,6 +478,7 @@ share/obs/obs-plugins/obs-transitions/locale/sr-SP.ini
 share/obs/obs-plugins/obs-transitions/locale/sv-SE.ini
 share/obs/obs-plugins/obs-transitions/locale/tr-TR.ini
 share/obs/obs-plugins/obs-transitions/locale/zh-CN.ini
+share/obs/obs-plugins/obs-transitions/locale/zh-TW.ini
 share/obs/obs-plugins/obs-transitions/slide_transition.effect
 share/obs/obs-plugins/obs-transitions/swipe_transition.effect
 share/obs/obs-plugins/obs-x264/locale/ar-SA.ini
@@ -485,6 +490,7 @@ share/obs/obs-plugins/obs-x264/locale/de-DE.ini
 share/obs/obs-plugins/obs-x264/locale/el-GR.ini
 share/obs/obs-plugins/obs-x264/locale/en-US.ini
 share/obs/obs-plugins/obs-x264/locale/es-ES.ini
+share/obs/obs-plugins/obs-x264/locale/et-EE.ini
 share/obs/obs-plugins/obs-x264/locale/eu-ES.ini
 share/obs/obs-plugins/obs-x264/locale/fi-FI.ini
 share/obs/obs-plugins/obs-x264/locale/fr-FR.ini
@@ -595,6 +601,7 @@ share/obs/obs-studio/locale/de-DE.ini
 share/obs/obs-studio/locale/el-GR.ini
 share/obs/obs-studio/locale/en-US.ini
 share/obs/obs-studio/locale/es-ES.ini
+share/obs/obs-studio/locale/et-EE.ini
 share/obs/obs-studio/locale/eu-ES.ini
 share/obs/obs-studio/locale/fi-FI.ini
 share/obs/obs-studio/locale/fr-FR.ini
@@ -605,6 +612,7 @@ share/obs/obs-studio/locale/hu-HU.ini
 share/obs/obs-studio/locale/it-IT.ini
 share/obs/obs-studio/locale/ja-JP.ini
 share/obs/obs-studio/locale/ko-KR.ini
+share/obs/obs-studio/locale/lt-LT.ini
 share/obs/obs-studio/locale/ms-MY.ini
 share/obs/obs-studio/locale/nb-NO.ini
 share/obs/obs-studio/locale/nl-NL.ini
@@ -618,6 +626,7 @@ share/obs/obs-studio/locale/sl-SI.ini
 share/obs/obs-studio/locale/sr-CS.ini
 share/obs/obs-studio/locale/sr-SP.ini
 share/obs/obs-studio/locale/sv-SE.ini
+share/obs/obs-studio/locale/ta-IN.ini
 share/obs/obs-studio/locale/th-TH.ini
 share/obs/obs-studio/locale/tr-TR.ini
 share/obs/obs-studio/locale/uk-UA.ini
