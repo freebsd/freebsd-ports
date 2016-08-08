@@ -1,6 +1,6 @@
---- ./src/daemon/daemon.c.orig	2010-05-05 10:54:14.000000000 +0200
-+++ ./src/daemon/daemon.c	2010-05-05 10:54:50.000000000 +0200
-@@ -1091,10 +1091,6 @@
+--- src/daemon/daemon.c.orig	2007-05-26 09:52:28 UTC
++++ src/daemon/daemon.c
+@@ -1091,10 +1091,6 @@ main(int argc, char **argv)
  	
  	g_set_application_name ("notification-daemon-xfce");
  
