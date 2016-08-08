@@ -127,7 +127,7 @@ CONFLICTS+=		bind-tools-9.*
 .endif	# BIND_TOOLS_SLAVE
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-SSL_USE=		openssl=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
 NEWSTATS_CONFIGURE_ENABLE=	newstats
