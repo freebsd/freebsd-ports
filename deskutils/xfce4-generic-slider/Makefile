@@ -12,8 +12,12 @@ COMMENT=	Slider plugin to adjust and/or monitor any numeric variable
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig xfce
-USE_XFCE=	panel libgui
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		gettext-runtime pkgconfig xfce
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_XFCE=	libgui panel
 
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`
