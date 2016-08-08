@@ -3,7 +3,7 @@
 
 PORTNAME=	schism
 PORTVERSION=	20100101
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://schismtracker.org/dl/ \
 		LOCAL/ehaupt
@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		tar:bzip2
 USE_SDL=	yes
+USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
