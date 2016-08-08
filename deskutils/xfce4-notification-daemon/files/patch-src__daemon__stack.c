@@ -1,6 +1,6 @@
---- ./src/daemon/stack.c.orig	2007-05-26 11:52:28.000000000 +0200
-+++ ./src/daemon/stack.c	2010-05-05 10:54:02.000000000 +0200
-@@ -40,51 +40,18 @@
+--- src/daemon/stack.c.orig	2007-05-26 09:52:28 UTC
++++ src/daemon/stack.c
+@@ -40,51 +40,18 @@ struct _NotifyStack
  static gboolean
  get_work_area(GtkWidget *nw, GdkRectangle *rect)
  {

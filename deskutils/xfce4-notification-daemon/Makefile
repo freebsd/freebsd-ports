@@ -3,7 +3,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	LOCAL/ehaupt/
 PKGNAMEPREFIX=	xfce4-
@@ -17,15 +17,20 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libsexy.so:x11-toolkits/libsexy \
-		libdbus-glib-1.so:devel/dbus-glib
+		libdbus-glib-1.so:devel/dbus-glib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	librsvg2
+USE_GNOME=	librsvg2 gtk20 cairo
 USE_LDCONFIG=	yes
 USE_XFCE=	libgui
+USE_XORG=	x11
+
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
