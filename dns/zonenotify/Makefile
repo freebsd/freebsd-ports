@@ -3,6 +3,7 @@
 
 PORTNAME=	zonenotify
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.morettoni.net/bsd/ \
 		LOCAL/ehaupt
@@ -18,6 +19,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} ${WRKSRC}/zonenotify.c
+	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
