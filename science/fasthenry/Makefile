@@ -9,11 +9,11 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipole-accelerated inductance analysis program
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC=		${WRKDIR}/fasthenry-3.0wr
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/CFLAGS =/{s/=/+=/;s/-O[[:digit:]]*//;}' \
@@ -48,15 +48,19 @@ post-patch:
 		${WRKSRC}/src/fasthenry/mulMats.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/fasthenry ${STAGEDIR}${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/zbuf ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/fasthenry ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/zbuf ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CAT} ${WRKSRC}/README ${WRKSRC}/README.mit > ${STAGEDIR}${DOCSDIR}/readme
 	${CAT} ${WRKSRC}/doc/manual_*.ps > ${STAGEDIR}${DOCSDIR}/manual.ps
 	${CAT} ${WRKSRC}/doc/nonuniform_manual_*.ps > ${STAGEDIR}${DOCSDIR}/nonuniform_manual.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/ms_thesis.ps ${STAGEDIR}${DOCSDIR}
 	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/*
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
