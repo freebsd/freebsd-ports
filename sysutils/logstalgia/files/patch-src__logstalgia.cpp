@@ -1,6 +1,6 @@
---- ./src/logstalgia.cpp.orig	2011-10-31 23:21:18.000000000 +0100
-+++ ./src/logstalgia.cpp	2011-10-31 23:21:35.000000000 +0100
-@@ -392,7 +392,7 @@
+--- src/logstalgia.cpp.orig	2011-02-15 23:52:06 UTC
++++ src/logstalgia.cpp
+@@ -392,7 +392,7 @@ std::string Logstalgia::dateAtPosition(f
              //display date
              char datestr[256];
  
