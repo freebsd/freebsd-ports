@@ -27,6 +27,9 @@ DOCSDIR=	${PREFIX}/share/doc/NAnt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
+	@${REINPLACE_CMD} -e 's|lib/mono/4.0|lib/mono/4.0-api|' \
+		${WRKSRC}/src/NAnt.Console/App.config \
+		${WRKSRC}/tests/NAnt.Core/Framework.config
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
