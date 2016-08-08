@@ -57,10 +57,10 @@ PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
-MYSQL_LIB_DEPENDS=		libmysqlclient.so:${_MYSQL_CLIENT}
+MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
 LIBVIRT_CONFIGURE_WITH=	--with-libvirt=${LOCALBASE}
-LIBVIRT_LIB_DEPENDS+=		libvirt.so:devel/libvirt
+LIBVIRT_LIB_DEPENDS+=	libvirt.so:devel/libvirt
 
 .include <bsd.port.mk>
