@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-nsf
 PORTVERSION=	0.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		LOCAL/ehaupt
@@ -17,7 +17,9 @@ BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS=	xmms:multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USES=		libtool
+USES=		gettext-runtime libtool
+USE_GNOME=	glib12 gtk12
+USE_XORG=	x11 xext xi
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 CONFIGURE_ARGS=	--disable-static --with-pic
@@ -32,5 +34,8 @@ SUB_LIST=	VERSION=${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/nes/nestypes.h
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xmms/Input/libnsf.so
 
 .include <bsd.port.mk>
