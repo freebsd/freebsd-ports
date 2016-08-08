@@ -3,7 +3,7 @@
 
 PORTNAME=	libbinio
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -21,6 +21,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
+
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.in
