@@ -1,0 +1,35 @@
+
+$FreeBSD$
+
+--- Mono.Addins.GuiGtk3/Mono.Addins.GuiGtk3.csproj.orig
++++ Mono.Addins.GuiGtk3/Mono.Addins.GuiGtk3.csproj
+@@ -141,25 +141,25 @@
+       <LogicalName>plugin-22.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22%402x.png">
+-      <LogicalName>plugin-22.png</LogicalName>
++      <LogicalName>plugin-22@2x.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~dark.png">
+       <LogicalName>plugin-22~dark.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~dark%402x.png">
+-      <LogicalName>plugin-22~dark.png</LogicalName>
++      <LogicalName>plugin-22~dark@2x.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~sel.png">
+       <LogicalName>plugin-22~sel.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~sel%402x.png">
+-      <LogicalName>plugin-22~sel.png</LogicalName>
++      <LogicalName>plugin-22~sel@2x.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~dark~sel.png">
+       <LogicalName>plugin-22~dark~sel.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-22~dark~sel%402x.png">
+-      <LogicalName>plugin-22~dark~sel.png</LogicalName>
++      <LogicalName>plugin-22~dark~sel@2x.png</LogicalName>
+     </EmbeddedResource>
+     <EmbeddedResource Include="icons\plugin-32.png">
+       <LogicalName>plugin-32.png</LogicalName>
