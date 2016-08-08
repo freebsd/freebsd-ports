@@ -3,7 +3,7 @@
 
 PORTNAME=	grafx2
 PORTVERSION=	2.4.2035
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -50,5 +50,8 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|Extract_path(program_dir, argv0);|strcpy(program_dir,"${PREFIX}/bin/");|' \
 		${WRKSRC}/setup.c
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grafx2
 
 .include <bsd.port.mk>
