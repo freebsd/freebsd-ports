@@ -3,7 +3,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		LOCAL/ehaupt
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libImlib2.so:graphics/imlib2
 
 USES=		gmake
+USE_XORG=	x11
 
 ALL_TARGET=	${PORTNAME}
 
