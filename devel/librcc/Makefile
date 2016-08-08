@@ -35,7 +35,7 @@ BDB_DESC=		Translation database support
 BDB_CONFIGURE_ENABLE=	bdb
 BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
-BDB_USE=		BDB=41+
+BDB_USES=		bdb
 
 TRANSLATE_DESC=			Online translation support
 TRANSLATE_CONFIGURE_ENABLE=	libtranslate

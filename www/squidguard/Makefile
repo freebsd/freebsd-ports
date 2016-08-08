@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:www/squid
 
-USE_BDB=	yes
+USES=		bdb
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \

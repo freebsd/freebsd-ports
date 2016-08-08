@@ -13,14 +13,13 @@ COMMENT=	Graph management system for GNUstep
 
 LICENSE=	LGPL21
 
-USES=		gnustep
+USES=		bdb gnustep
 USE_GNUSTEP=	back build
 
 LIB_DEPENDS=	libEncore.so:devel/fortytwo-encore \
 		libBDB.so:databases/fortytwo-bdb
 DEFAULT_LIBVERSION=	0.1
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
-USE_BDB=	43+
 
 WRKSRC=		${WRKDIR}/FT-${PORTVERSION}
 DOCSDIR=	${GNUSTEP_PREFIX}/Local/Library/Documentation/FT

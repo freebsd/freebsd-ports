@@ -26,9 +26,8 @@ NLS_USES=	gettext
 NLS_LIBS=	-lintl
 PORTDOCS=	*
 
-USES=		alias gmake libarchive libtool lua:51 pathfix pkgconfig \
+USES=		alias bdb gmake libarchive libtool lua:51 pathfix pkgconfig \
 		shebangfix tar:bzip2
-USE_BDB=	46+
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -60,7 +60,7 @@ LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 
 .if ${PORT_OPTIONS:MGEODB}
 .if empty(PORT_OPTIONS:MBDB1)
-WITH_BDB=	yes
+USES+=		bdb
 .endif
 PLIST_SUB+=	WITH_GEODB=""
 .else
@@ -83,8 +83,7 @@ PLIST_SUB+=	WITH_GEOIP="@comment "
 .endif
 
 .if defined(WITH_BDB_VER) || ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
-INVALID_BDB_VER=	2 3 40
+USES+=		bdb
 LDFLAGS+=	-L${BDB_LIB_DIR}
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 .else

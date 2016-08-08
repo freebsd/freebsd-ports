@@ -44,7 +44,7 @@ PLIST_SUB=	LIB_VERSION=${PORTVERSION} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB4}
-USE_BDB=	yes
+USES+=		bdb
 CMAKE_ARGS+=	-DDB4_INCLUDE_DIR="${BDB_INCLUDE_DIR}"
 .else
 CMAKE_ARGS+=	-DWITHOUT_DB4=TRUE
@@ -65,7 +65,7 @@ CMAKE_ARGS+=	-DWITHOUT_LDAP=TRUE
 
 .if ${PORT_OPTIONS:MMYSQL}
 LIB_DEPENDS+=	libzdb.so:databases/libzdb
-USE_MYSQL=	yes
+USES+=		mysql
 _REQUIRE+=	mysql
 .endif
 

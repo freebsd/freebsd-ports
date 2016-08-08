@@ -18,10 +18,9 @@ RUN_DEPENDS=	evolution>=3.0.0:mail/evolution
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig sqlite tar:xz
+USES=		bdb:5 gettext gmake gnome libtool pathfix pkgconfig sqlite tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-USE_BDB=	5
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

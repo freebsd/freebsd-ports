@@ -31,7 +31,7 @@ OPTIONS_SINGLE_BACKEND=	BDB GDBM
 OPTIONS_DEFAULT=	GDBM
 
 BACKEND_DESC=		Database backend
-BDB_USE=		bdb=yes
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-berkeley \
 			--with-bdb-include-dir=${BDB_INCLUDE_DIR} \
 			--with-bdb-lib-dir=${BDB_LIB_DIR}

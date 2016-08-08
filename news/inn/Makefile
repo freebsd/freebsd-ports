@@ -60,7 +60,7 @@ PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBERKELEYDB}
-USE_BDB=		44+
+USES+=			bdb
 CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE} \
 			--with-bdb-lib=${LOCALBASE}/lib \
 			--with-bdb-include=${BDB_INCLUDE_DIR}
@@ -108,7 +108,7 @@ PLIST_SUB+=		WITHOUT_TAGGED_HASH=""
 SUB_LIST+=		DBZ_FILES="${DBZ_FILES}"
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
+USES+=		ssl
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 

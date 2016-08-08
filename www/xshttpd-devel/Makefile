@@ -17,8 +17,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	xshttpd-[0-9]* publicfile-[0-9]*
 
-USES=		tar:bzip2
-USE_OPENSSL=	yes
+USES=		ssl tar:bzip2
 USE_RC_SUBR=	xshttpd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-hier=bsd --with-userid=${WWWOWN}:${WWWGRP}
@@ -26,7 +25,7 @@ CONFIGURE_ARGS=	--enable-hier=bsd --with-userid=${WWWOWN}:${WWWGRP}
 OPTIONS_DEFINE=		BDB CURL LDAP M4 NETPBM PERL
 OPTIONS_DEFAULT=	BDB CURL M4 NETPBM
 OPTIONS_SUB=		yes
-BDB_USE=		BDB=5+
+BDB_USES=		bdb:5+
 BDB_CONFIGURE_ON=	--with-db-libdir=${BDB_LIB_DIR} \
 			--with-db-include-dir=${BDB_INCLUDE_DIR}
 BDB_CONFIGURE_WITH=	db

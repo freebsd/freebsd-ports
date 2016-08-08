@@ -67,7 +67,7 @@ RTREE_CONFIGURE_WITH=	rtree
 
 ERRORPOP_CONFIGURE_WITH=	errorpopups
 
-BDB_USE=		BDB=41+
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
 
 OPTCFLAGS_CFLAGS=	-O2 -pipe

@@ -27,7 +27,7 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:devel/libsoup-gnome \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext gmake gnome gperf libtool pathfix pkgconfig \
+USES=		bdb:5 bison gettext gmake gnome gperf libtool pathfix pkgconfig \
 		sqlite tar:xz
 # Unbreak mail/evolution with webkit-gtk3 on FreeBSD 8 and 9.  Normally
 # this change would be done there, but it is not a C++ application, so it
@@ -37,7 +37,6 @@ USES+=		compiler:c++11-lib
 USE_GNOME=	gtk30 intltool introspection:build libxml2
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-USE_BDB=	5
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--with-openldap=yes \
