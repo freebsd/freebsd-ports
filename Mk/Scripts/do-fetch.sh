@@ -17,7 +17,9 @@ validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
 
 set -u
 
-mkdir -p "${dp_DISTDIR}"
+if [ ! -d "${dp_DISTDIR}" ]; then
+	mkdir -p "${dp_DISTDIR}"
+fi
 cd "${dp_DISTDIR}"
 
 for _file in "${@}"; do
