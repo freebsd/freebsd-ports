@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xsp
-PORTVERSION=	3.0.11
+PORTVERSION=	4.2
 CATEGORIES=	www
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono based web server
@@ -13,16 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 
-GH_ACCOUNT=	mono
-USE_GITHUB=	yes
-USES=		gmake mono pathfix pkgconfig sqlite
+USES=		gmake libtool mono pathfix pkgconfig sqlite
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
-USE_AUTOTOOLS=	automake autoconf aclocal
-PATHFIX_MAKEFILEIN=Makefile.am
-
-AUTOMAKE_ARGS=	--add-missing --copy
-ACLOCAL_ARGS=	-I build/m4/shamrock -I build/m4/shave
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
