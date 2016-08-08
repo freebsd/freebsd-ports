@@ -12,8 +12,7 @@ COMMENT=	Anti-spam SMTP server
 
 LICENSE=	GPLv2+ # though COPYING is GPLv3
 
-USE_BDB=	42+
-USE_OPENSSL=	yes
+USES=		bdb ssl
 GNU_CONFIGURE=	yes
 
 USERS=		${PORTNAME}

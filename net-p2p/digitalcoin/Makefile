@@ -21,9 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	baritus
 GH_TAGNAME=	96b098a
 
-USES=		desktop-file-utils gmake
-USE_OPENSSL=	yes
-USE_BDB=	48
+USES=		bdb:48 desktop-file-utils gmake ssl
 USE_QT4=	corelib gui qmake_build linguisttools_build uic_build \
 		moc_build rcc_build
 

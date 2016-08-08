@@ -16,9 +16,8 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USE_BDB=	43+
 USE_PYTHON=	distutils autoplist
-USES=		python tar:xz
+USES=		bdb python tar:xz
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo

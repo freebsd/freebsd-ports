@@ -28,9 +28,8 @@ CONFLICTS=	dovecot2-2.[0-9].*
 # consult the maintainer of those ports before updating this one.    #
 ######################################################################
 
-USES=		cpe iconv libtool:keepla
+USES=		cpe iconv libtool:keepla ssl
 USE_RC_SUBR=	dovecot
-USE_OPENSSL=	yes
 
 PORTSCOUT=	limit:^1\.2
 
@@ -65,7 +64,7 @@ VPOPMAIL_DESC=		VPopMail support
 OPTIONS_SUB=		yes
 BDB_CFLAGS=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
 BDB_CONFIGURE_WITH=	db
-BDB_USE=		BDB=48+
+BDB_USES=		bdb
 DOCS_CONFIGURE_WITH=	docs
 GSSAPI_CONFIGURE_WITH=	gssapi
 GSSAPI_LDFLAGS=		-lgssapi_krb5

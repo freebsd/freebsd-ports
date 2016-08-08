@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
 # building master port
-USE_BDB=	5+
-INVALID_BDB_VER=48
+USES+=		bdb:5+
 .endif
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS

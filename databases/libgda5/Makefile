@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--without-ui
 .endif
 
 .if ${LIBGDA5_SLAVE}==bdb
-USE_BDB=		5
+USES+=			bdb:5
 CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-bdb
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${LIBGDA5_SLAVE}==mysql
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mysql

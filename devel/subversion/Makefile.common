@@ -37,7 +37,7 @@ OPTIONS_NAME=		devel_subversion
 OPTIONS_SUB=			yes
 
 BDB_CONFIGURE_OFF=		--without-berkeley-db
-BDB_USE=			BDB=42+
+BDB_USES=			bdb
 
 MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
 

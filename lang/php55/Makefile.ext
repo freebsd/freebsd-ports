@@ -461,7 +461,7 @@ CONFIGURE_ARGS+=--without-cdb
 .	if ${PORT_OPTIONS:MDB4}
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 
-USE_BDB=		40+
+USES+=			bdb
 WITH_BDB_HIGHEST=	yes
 .	endif
 .	if ${PORT_OPTIONS:MGDBM}

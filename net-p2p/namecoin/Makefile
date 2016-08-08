@@ -24,10 +24,8 @@ QRCODES_DESC=	Build with QR code display
 
 USE_GITHUB=	yes
 
-USES=		gmake compiler:c++11-lib
+USES=		bdb:48 gmake compiler:c++11-lib ssl
 MAKE_JOBS_UNSAFE=yes
-USE_OPENSSL=	yes
-USE_BDB=	48
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}

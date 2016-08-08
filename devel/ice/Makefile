@@ -17,7 +17,7 @@ SLAVE_PORT?=		no
 .if ${SLAVE_PORT} == "no"
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libmcpp.so:devel/mcpp
-USE_OPENSSL=		yes
+USES+=			ssl
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
 LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice
@@ -37,8 +37,8 @@ BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib
 
 WRKSRC=			${WRKDIR}/ice-${PORTVERSION}
 
-USE_BDB=		5
-INVALID_BDB_VER=	40 41 42 43 44 46 47 48 6
+USES+=			bdb:5
+INVALID_BDB_VER=	48 6
 USE_LDCONFIG=		yes
 BUILD_WRKSRC?=		${WRKSRC}/cpp
 INSTALL_WRKSRC?=	${WRKSRC}/cpp

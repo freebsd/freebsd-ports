@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk
-USE_OPENSSL=	yes
+USES+=		ssl
 
 .if !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -46,8 +46,7 @@ OPTIONS_DEFINE=	DOCS
 IGNORE=		does not work with base bdb
 SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
 . else
-USE_BDB=	41+
-INVALID_BDB_VER=	2 40
+USES+=		bdb
 SITE_SUB+=	-e 's|%%BDB%%||g' \
 		-e "s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g" \
 		-e "s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g" \

@@ -22,11 +22,10 @@ LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
-USES=		libtool perl5 pkgconfig shebangfix
+USES=		libtool perl5 pkgconfig shebangfix ssl
 USE_PERL5=	run
 SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* \
 		reprrd/opendkim-reprrdimport*
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -148,7 +147,7 @@ CONFIGURE_ARGS+=	--with-db-lib=c
 CONFIGURE_ARGS+=	--with-db-incdir=${BDB_INCLUDE_DIR} \
 			--with-db-libdir=${BDB_LIB_DIR}     \
 			--with-db-lib=${BDB_LIB_NAME}
-USE_BDB=		40+
+USES+=		bdb
 . endif
 .endif
 

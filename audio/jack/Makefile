@@ -21,8 +21,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig libtool
-USE_BDB=	48+
+USES=		gmake pathfix pkgconfig libtool bdb
 
 CONFIGURE_ARGS=	--disable-portaudio \
 		--with-default-tmpdir=/tmp

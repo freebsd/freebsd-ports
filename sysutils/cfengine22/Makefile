@@ -20,11 +20,9 @@ CONFLICTS=	cfengine-3* cfengine-devel-*
 
 USE_RC_SUBR=	cfexecd cfservd
 
-USES=		cpe libtool makeinfo shebangfix
+USES=		bdb cpe libtool makeinfo shebangfix ssl
 SHEBANG_FILES=	contrib/cfdoc
 
-USE_BDB=	48+
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docs \
 		--docdir=${DOCSDIR} \

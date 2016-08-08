@@ -41,7 +41,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_SUB=	yes
 
 AUTH_SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-BDB_USE=	bdb=yes
+BDB_USES=	bdb
 DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
 EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
@@ -262,7 +262,7 @@ SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
 .if ${PORT_OPTIONS:MTLS}
 SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 .if ! ${PORT_OPTIONS:MGNUTLS}
-USE_OPENSSL=	yes
+USES+=		ssl
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lssl[[:space:]]),\1,'
 .else
 SEDLIST+=	-e 's,^\# (USE_GNUTLS=),\1,'

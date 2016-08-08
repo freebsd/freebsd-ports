@@ -14,10 +14,9 @@ COMMENT=	Unified library for Chinese text processing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
+USES=		bdb gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
 DATADIR=	${PREFIX}/share/tabe
 DOCSDIR=	${PREFIX}/share/doc/tabe

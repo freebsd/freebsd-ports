@@ -58,7 +58,7 @@ PERL_USES=		perl5
 PERL_CONFIGURE_ON=	--with-perl=${PERL}
 PERL_CONFIGURE_OFF=	--without-perl
 
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 BDB_CFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
 BDB_CONFIGURE_ON=	--with-bdb=yes

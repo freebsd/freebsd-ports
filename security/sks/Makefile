@@ -13,8 +13,7 @@ PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
-USE_BDB=	5
-USES=		perl5 gmake shebangfix tar:tgz
+USES=		bdb:5 perl5 gmake shebangfix tar:tgz
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 SHEBANG_FILES=	sks_build.sh

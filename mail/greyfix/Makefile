@@ -13,7 +13,7 @@ COMMENT=	Greylisting policy daemon for Postfix
 
 SUB_FILES=	pkg-message
 
-USE_BDB=	5+
+USES=		bdb:5+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-berkeleydb-libdir=${BDB_LIB_DIR} \
 		--with-berkeleydb-includedir=${BDB_INCLUDE_DIR} \
