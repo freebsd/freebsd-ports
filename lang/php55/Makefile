@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2016-10-20
 
 LICENSE=	PHP301
 
-USES+=		tar:bz2 cpe
+USES+=		tar:xz cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
