@@ -28,6 +28,7 @@ SRCS+=	diagnose_usb.cpp
 .PATH: ${.CURDIR}/../base
 SRCS+=	errors_unix.cpp
 SRCS+=	file.cpp
+SRCS+=	logging.cpp
 SRCS+=	parsenetaddress.cpp
 SRCS+=	stringprintf.cpp
 SRCS+=	strings.cpp
@@ -124,8 +125,8 @@ CXXFLAGS+=	${CPPFLAGS}
 
 LDADD+=	$$(${PKG_CONFIG} libpcre --libs 2>/dev/null || echo -lpcre)
 LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
-LDADD+=	-lz
-DPADD+=	${LIBPCRE} ${LIBUSB} ${LIBZ}
+LDADD+=	-lz \-lpthread
+DPADD+=	${LIBPCRE} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 
 GIT?=		git
 PKG_CONFIG?=	pkg-config

@@ -41,6 +41,9 @@ TEST_SRCS+= transport_test.cpp
 .PATH: ${.CURDIR}/client
 SRCS+= main.cpp
 
+.PATH: ${.CURDIR}/sysdeps
+TEST_SRCS+= stat_test.cpp
+
 .PATH: ${EXTRADIR}
 SRCS+= get_my_path_freebsd.cpp
 SRCS+= usb_libusb.cpp
