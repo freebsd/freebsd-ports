@@ -3,7 +3,7 @@
 
 PORTNAME=	suhosin
 PORTVERSION=	0.9.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.suhosin.org/
 PKGNAMEPREFIX=	php-
@@ -18,7 +18,6 @@ BROKEN_powerpc64=	Does not build
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=		php:ext
-USE_PHP=	session:build
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-suhosin
