@@ -33,6 +33,7 @@ share/applications/lumina-xconfig.desktop
 share/pixmaps/Lumina-DE.png
 share/pixmaps/Insight-FileManager.png
 share/xsessions/Lumina-DE.desktop
+share/lumina-desktop/compton.conf
 share/lumina-desktop/desktop-background.jpg
 share/lumina-desktop/luminaDesktop.conf
 share/lumina-desktop/fluxbox-init-rc
