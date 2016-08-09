@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dygraphs
-PORTVERSION=	1.1.1.0
+DISTVERSION=	1.1.1-1
 CATEGORIES=	graphics
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Interface to Dygraphs Interactive Time Series Charting Library
