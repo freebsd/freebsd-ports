@@ -3,7 +3,7 @@
 
 PORTNAME=	igbinary
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://pecl.php.net/get/ \
 		LOCAL/sunpoet
@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_powerpc64=	does not build
 
 IGNORE_WITH_PHP=70
-USE_PHP=	session:build
 USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>
