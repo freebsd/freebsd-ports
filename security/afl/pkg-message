@@ -1,1 +1,1 @@
-If you want to use afl-plot also install math/gnuplot.
+To use afl-plot you also need to install math/gnuplot
