@@ -2,6 +2,7 @@ bin/ocp
 bin/ocp-curses
 %%XORG%%bin/ocp-x11
 %%SDL%%bin/ocp-sdl
+%%SDL%%lib/ocp/devpsdl.so
 bin/ultrafix.sh
 lib/ocp/autoload/10-compat.so
 lib/ocp/autoload/10-devi.so
@@ -30,7 +31,6 @@ lib/ocp/autoload/40-cphlpif.so
 lib/ocp/devpdisk.so
 lib/ocp/devpnone.so
 lib/ocp/devposs.so
-lib/ocp/devpsdl.so
 lib/ocp/devsnone.so
 lib/ocp/devsoss.so
 lib/ocp/devwmix.so
