@@ -3,6 +3,7 @@
 
 PORTNAME=	DateTime
 PORTVERSION=	1.36
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-DateTime-Locale>=1.05:devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=2.00:devel/p5-DateTime-TimeZone \
 		p5-Params-Validate>=1.03:devel/p5-Params-Validate \
-		p5-Try-Tiny>=0:lang/p5-Try-Tiny
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
