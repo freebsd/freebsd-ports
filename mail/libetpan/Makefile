@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libetpan
-PORTVERSION=	1.7
+PORTVERSION=	1.7.2
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -30,12 +30,13 @@ OPTIONS_DEFAULT=	OPENSSL
 
 GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libgcrypt.so:security/libgcrypt
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 pre-configure:
 	@(cd ${WRKSRC} && ${LN} -s README.md README)
