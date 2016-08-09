@@ -60,6 +60,9 @@ USES=		compiler gmake libedit python:2,build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind \
 		${CHOSEN_COMPILER_TYPE:Mclang:C/.+/--enable-&/} \
+		--prefix=${PREFIX}	\
+		--musl-root=${PREFIX}	\
+		--local-rust-root=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
 		--release-channel=${RUST_CHANNEL}
 
