@@ -1,10 +1,11 @@
+TIMESTAMP = 1470755379
 SHA256 (fastboot.1?id=706e754) = 2af01b064440952a82f1602691a0fecc030302722a71444946fb70d9c423d283
 SIZE (fastboot.1?id=706e754) = 5906
-SHA256 (android-platform_system_core-android-n-preview-4-74-g80beb506cf84_GH0.tar.gz) = 552cd8e6500e7ee0149c59116ea2a560906fc1ecd3b557ea714f8c11269e6a7a
-SIZE (android-platform_system_core-android-n-preview-4-74-g80beb506cf84_GH0.tar.gz) = 1558004
-SHA256 (jbeich-platform_system_extras-android-n-preview-4-38-gd937202_GH0.tar.gz) = 2a6b991d4c5921ca89dc30f40361c71d4ebf55eb86744032e5efcc7a2af277c9
-SIZE (jbeich-platform_system_extras-android-n-preview-4-38-gd937202_GH0.tar.gz) = 81924921
-SHA256 (jbeich-platform_external_libselinux-android-n-preview-4_GH0.tar.gz) = 303f8c77786413cf6ea2a24a502c2e9e8a0348ae168f85a710f46b8acce0211c
-SIZE (jbeich-platform_external_libselinux-android-n-preview-4_GH0.tar.gz) = 63010
+SHA256 (android-platform_system_core-android-n-preview-5-126-g2f21b7cecda2_GH0.tar.gz) = 61256486af01cfefeee6779f9926ba32334b9fb1a5aacfa2cd4a682d66f01a2a
+SIZE (android-platform_system_core-android-n-preview-5-126-g2f21b7cecda2_GH0.tar.gz) = 1561372
+SHA256 (jbeich-platform_system_extras-android-n-preview-5-64-g8cd939bd7af7_GH0.tar.gz) = 8506118d4606458f098d2e7b089c3304fee935c8e50ae9bb1e1ae8caab654be7
+SIZE (jbeich-platform_system_extras-android-n-preview-5-64-g8cd939bd7af7_GH0.tar.gz) = 82049260
+SHA256 (jbeich-platform_external_libselinux-android-n-preview-5-1-g1fdb726_GH0.tar.gz) = a898cb59e585de2ec51c6c13759069e62480efe785fb808d991043a469649624
+SIZE (jbeich-platform_external_libselinux-android-n-preview-5-1-g1fdb726_GH0.tar.gz) = 63005
 SHA256 (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = dc774f101acd9514baf3e7a0ac610068116f2c093b94987ba59203a39a6439dc
 SIZE (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = 5948
