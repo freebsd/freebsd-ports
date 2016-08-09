@@ -4240,7 +4240,7 @@ create-manifest:
 			dp_CATEGORIES='${CATEGORIES:u:S/$/,/}'                \
 			dp_COMMENT=${COMMENT:Q}                               \
 			dp_COMPLETE_OPTIONS_LIST='${COMPLETE_OPTIONS_LIST}'   \
-			dp_DEPRECATED='${DEPRECATED:Q}'                       \
+			dp_DEPRECATED=${DEPRECATED:Q}                         \
 			dp_DESCR='${DESCR}'                                   \
 			dp_EXPIRATION_DATE='${EXPIRATION_DATE}'               \
 			dp_GROUPS='${GROUPS:u:S/$/,/}'                        \
