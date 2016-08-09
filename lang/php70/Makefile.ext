@@ -292,9 +292,6 @@ CONFIGURE_ARGS+=--enable-posix
 LIB_DEPENDS+=	libaspell.so:textproc/aspell
 
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
-
-# Ugly hack to load session before psell to avoid crashes
-USE_PHP=	session:build
 .endif
 
 .if ${PHP_MODNAME} == "readline"
@@ -310,6 +307,7 @@ CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
 
 .if ${PHP_MODNAME} == "session"
 CONFIGURE_ARGS+=--enable-session
+PHP_MOD_PRIO=	18
 .endif
 
 .if ${PHP_MODNAME} == "shmop"
@@ -341,8 +339,6 @@ CONFIGURE_ARGS+=--enable-soap \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
-
-USE_PHP=	session:build
 .endif
 
 .if ${PHP_MODNAME} == "sockets"
