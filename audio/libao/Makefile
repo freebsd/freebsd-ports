@@ -16,13 +16,14 @@ USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
+		--disable-alsa \
 		--disable-arts
 INSTALL_TARGET=	install-strip
 
 # do not install
 MAKE_ARGS=	ckport_DATA=""
 
-OPTIONS_DEFINE=	DOCS ESOUND NAS PULSEAUDIO
+OPTIONS_DEFINE=	DOCS ESOUND NAS PULSEAUDIO SNDIO
 OPTIONS_SUB=	yes
 
 NAS_LIB_DEPENDS=libaudio.so:audio/nas
@@ -33,6 +34,9 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 ESOUND_CONFIGURE_ENABLE=esd
 ESOUND_USE=	GNOME=esound
+
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_USES=	localbase
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \
