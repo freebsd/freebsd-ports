@@ -56,7 +56,6 @@ OPTIONS_DEFINE_${_arch}+=	RTCPU
 ASS_DESC=	Enable ASS/SSA subtitle rendering
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
-REALPLAYER_DESC=Enable realplayer plugin
 RTC_DESC=	Enable kernel realtime clock timing
 RTCPU_DESC=	Allow runtime CPU detection
 WIN32_DESC=	Enable win32 codec set on the IA32 arch
