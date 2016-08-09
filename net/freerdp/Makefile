@@ -3,18 +3,17 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net comms ipv6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdports@kyle-evans.net
 COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib
+USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
@@ -65,7 +64,8 @@ X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
 X11_CMAKE_ON=		-DWITH_X11=ON
 X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi,xfixes
+X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext \
+			xcursor,xrandr,xi,xfixes,xrender
 
 .include <bsd.port.options.mk>
 
