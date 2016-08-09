@@ -9,6 +9,7 @@ lib/ao/plugins-4/liboss.so
 %%ESOUND%%lib/ao/plugins-4/libesd.so
 %%NAS%%lib/ao/plugins-4/libnas.so
 %%PULSEAUDIO%%lib/ao/plugins-4/libpulse.so
+%%SNDIO%%lib/ao/plugins-4/libsndio.so
 libdata/pkgconfig/ao.pc
 man/man5/libao.conf.5.gz
 share/aclocal/ao.m4
