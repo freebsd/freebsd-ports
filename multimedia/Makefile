@@ -217,7 +217,6 @@
     SUBDIR += linux-c6-libv4l
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
-    SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
     SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += lives
