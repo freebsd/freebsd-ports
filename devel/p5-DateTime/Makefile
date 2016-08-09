@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-DateTime-Locale>=1.05:devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=2.00:devel/p5-DateTime-TimeZone \
 		p5-Params-Validate>=1.03:devel/p5-Params-Validate \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
-		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.19:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
