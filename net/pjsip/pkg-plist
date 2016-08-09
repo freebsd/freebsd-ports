@@ -342,6 +342,9 @@ lib/libpjsua-%%CONFIGURE_TARGET%%.a
 lib/libpjsua2-%%CONFIGURE_TARGET%%.a
 %%SHARED%%lib/libpjsua2.so
 %%SHARED%%lib/libpjsua2.so.2
+%%SHARED%%%%VIDEO%%lib/libyuv.so
+%%SHARED%%%%VIDEO%%lib/libyuv.so.2
+%%VIDEO%%lib/libyuv-%%CONFIGURE_TARGET%%.a
 %%NO_SAMPLERATE%%%%RESAMPLE%%lib/libresample-%%CONFIGURE_TARGET%%.a
 %%NO_SAMPLERATE%%%%RESAMPLE%%%%RESAMPLEDLL%%lib/libresample.so
 %%NO_SAMPLERATE%%%%RESAMPLE%%%%RESAMPLEDLL%%lib/libresample.so.2
