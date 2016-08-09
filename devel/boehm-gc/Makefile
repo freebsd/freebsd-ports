@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.4.4
+PORTVERSION=	7.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 PKGNAMEPREFIX=	boehm-
