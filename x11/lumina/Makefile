@@ -4,9 +4,8 @@
 PORTNAME=	lumina
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-Beta2
-PORTREVISION=1
-PORTEPOCH=	1
+DISTVERSIONSUFFIX=	-Release-p1
+PORTEPOCH=	2
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -21,6 +20,10 @@ RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		compton:x11-wm/compton \
 		xrandr:x11/xrandr \
 		numlockx:x11/numlockx
+LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
+		libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-image.so:x11/xcb-util-image \
+		libxcb-util.so:x11/xcb-util
 
 CONFLICTS=	lumina-devel-0*
 
@@ -37,8 +40,8 @@ RUN_DEPENDS+=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
 
 MAKE_JOBS_UNSAFE=yes
 
+USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
-USE_XCB=	x11extras wm ewmh util-wm
 USE_LDCONFIG=	yes
 USE_QT5=	core gui widgets network svg multimedia imageformats \
 		buildtools_build x11extras concurrent
