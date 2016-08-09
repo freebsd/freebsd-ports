@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	php5-
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP extension for interfacing with MessagePack
 
+DEPRECATED=	This is an older version of the software, please use devel/pecl-msgpack.
+EXPIRATION_DATE=	2016-08-31
+
 BROKEN_powerpc64=	Does not build
 
 USE_GITHUB=	yes
