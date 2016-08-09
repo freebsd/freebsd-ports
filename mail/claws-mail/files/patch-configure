@@ -1,6 +1,6 @@
---- configure.orig	2015-07-19 11:19:39 UTC
+--- configure.orig	2016-08-07 08:08:37 UTC
 +++ configure
-@@ -20652,7 +20652,7 @@ $as_echo "#define HAVE_LIBSOUP_GNOME 1" 
+@@ -21130,7 +21130,7 @@ $as_echo "#define HAVE_LIBSOUP_GNOME 1" 
  fi
  
  
@@ -9,7 +9,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for archive_read_new in -larchive" >&5
  $as_echo_n "checking for archive_read_new in -larchive... " >&6; }
  if ${ac_cv_lib_archive_archive_read_new+:} false; then :
-@@ -20697,6 +20697,7 @@ else
+@@ -21175,6 +21175,7 @@ else
    HAVE_ARCHIVE=no
  
  fi
@@ -17,11 +17,3 @@
  
  
  
-@@ -21553,7 +21554,6 @@ $as_echo "$as_me: WARNING: python-config
- 		if test x"$platform_win32" = xno; then
- 			# libpython.so
- 			PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}.so"
--			LIBS="-ldl"
- 			{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to dlopen $PYTHON_SHARED_LIB works" >&5
- $as_echo_n "checking whether to dlopen $PYTHON_SHARED_LIB works... " >&6; }
- 			if test "$cross_compiling" = yes; then :
