@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
-PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
 
-LIB_DEPENDS=	libetpan.so:mail/libetpan \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libetpan.so:mail/libetpan \
+		libfreetype.so:print/freetype2 \
+		libsasl2.so:security/cyrus-sasl2 \
 		libgnutls.so:security/gnutls \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	mime-support>0:misc/mime-support
 
-USE_GNOME=	gtk20
-USES=		cpe desktop-file-utils execinfo pathfix shebangfix
+USE_XORG=	ice sm
+USE_GNOME=	cairo gtk20
+USES=		cpe desktop-file-utils execinfo pathfix shebangfix ssl
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 INSTALLS_ICONS=	yes
 
