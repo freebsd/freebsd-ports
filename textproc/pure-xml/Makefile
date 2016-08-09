@@ -10,22 +10,27 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure language interface for libxml2 and libxslt
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		pkgconfig pure
 USE_GNOME=	libxml2 libxslt
+
 PORTDOCS=	README
 PORTEXAMPLES=	*
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PLIST_FILES=	lib/pure/xml.pure \
 		lib/pure/xml.so
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/xml.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
