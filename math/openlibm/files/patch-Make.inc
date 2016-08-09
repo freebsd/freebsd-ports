@@ -1,13 +1,8 @@
---- Make.inc.orig	2016-05-23 11:57:41 UTC
+--- Make.inc.orig	2016-08-06 15:00:31 UTC
 +++ Make.inc
-@@ -3,11 +3,11 @@
- OS := $(shell uname)
- # Do not forget to bump SOMINOR when changing VERSION,
- # and SOMAJOR when breaking ABI in a backward-incompatible way
--VERSION = 0.5.1-dev
-+VERSION = 0.5.1
+@@ -7,7 +7,7 @@ VERSION = 0.5.2
  SOMAJOR = 2
- SOMINOR = 2
+ SOMINOR = 3
  DESTDIR =
 -prefix = /usr/local
 +prefix ?= /usr/local

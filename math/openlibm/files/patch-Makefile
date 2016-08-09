@@ -1,16 +1,27 @@
---- Makefile.orig	2016-05-23 11:53:14 UTC
+--- Makefile.orig	2016-08-06 15:00:31 UTC
 +++ Makefile
-@@ -78,8 +78,8 @@ install: all openlibm.pc
- 	mkdir -p $(DESTDIR)$(shlibdir)
- 	mkdir -p $(DESTDIR)$(pkgconfigdir)
- 	mkdir -p $(DESTDIR)$(includedir)/openlibm
--	cp -f -a libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
+@@ -77,19 +77,19 @@ openlibm.pc: openlibm.pc.in Make.inc Mak
+ 
+ install-static: libopenlibm.a
+ 	mkdir -p $(DESTDIR)$(libdir)
 -	cp -f -a libopenlibm.a $(DESTDIR)$(libdir)/
++	$(BSD_INSTALL_DATA) libopenlibm.a $(DESTDIR)$(libdir)/
+ 
+ install-shared: libopenlibm.$(OLM_MAJOR_MINOR_SHLIB_EXT)
+ 	mkdir -p $(DESTDIR)$(shlibdir)
+-	cp -f -a libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
++	$(BSD_INSTALL_LIB) libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
+ 
+ install-pkgconfig: openlibm.pc
+ 	mkdir -p $(DESTDIR)$(pkgconfigdir)
+-	cp -f -a openlibm.pc $(DESTDIR)$(pkgconfigdir)/
++	$(BSD_INSTALL_DATA) openlibm.pc $(DESTDIR)$(pkgconfigdir)/
+ 
+ install-headers:
+ 	mkdir -p $(DESTDIR)$(includedir)/openlibm
 -	cp -f -a include/*.h $(DESTDIR)$(includedir)/openlibm
 -	cp -f -a src/*.h $(DESTDIR)$(includedir)/openlibm
--	cp -f -a openlibm.pc $(DESTDIR)$(pkgconfigdir)/
-+	${BSD_INSTALL_LIB} libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
-+	${BSD_INSTALL_DATA} libopenlibm.a $(DESTDIR)$(libdir)/
-+	${BSD_INSTALL_DATA} include/*.h $(DESTDIR)$(includedir)/openlibm
-+	${BSD_INSTALL_DATA} src/*.h $(DESTDIR)$(includedir)/openlibm
-+	${BSD_INSTALL_DATA} openlibm.pc $(DESTDIR)$(pkgconfigdir)/
++	$(BSD_INSTALL_DATA) include/*.h $(DESTDIR)$(includedir)/openlibm
++	$(BSD_INSTALL_DATA) src/*.h $(DESTDIR)$(includedir)/openlibm
+ 
+ install: install-static install-shared install-pkgconfig install-headers
