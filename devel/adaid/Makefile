@@ -1,8 +1,8 @@
 # Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	adaid
-PORTVERSION=	0.0.0
+PORTNAME=	AdaID
+PORTVERSION=	0.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -18,7 +18,6 @@ TEST_DEPENDS=	${LOCALBASE}/lib/gnat/aunit.gpr:devel/aunit
 USES=		ada:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	anthony-arnold
-GH_PROJECT=	AdaID
 
 LIB_VERSION=	1.0.2	# get from ${WRKSRC}/Makefile
 
