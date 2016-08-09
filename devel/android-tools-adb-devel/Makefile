@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-# Hint: git describe --abbrev=12 --match android-n-preview-4
-DISTVERSION=	n-preview-4-74
-DISTVERSIONSUFFIX=	-g80beb506cf84
+# Hint: git describe --abbrev=12 --match android-n-preview-5
+DISTVERSION=	n-preview-5-126
+DISTVERSIONSUFFIX=	-g2f21b7cecda2
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +21,7 @@ TEST_BROKEN=	logging.* tests always fail after 4e5fd111d84d
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
 TEST_PYTHON_GH_PROJECT=	platform_development:development
-TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-6-g256e246:development
+TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-14-g735aab1:development
 TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 TEST_PYTHON_USES=	python:2.7,build
 
