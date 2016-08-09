@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pjsip
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.5.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -10,7 +9,7 @@ DISTNAME=	pjproject-${DISTVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Multimedia communication library written in C language
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
@@ -19,7 +18,7 @@ CONFLICTS=	pjsip-extsrtp-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
 		--disable-silk
-USES=		gmake localbase pathfix tar:bz2
+USES=		gmake localbase pathfix ssl tar:bz2
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
