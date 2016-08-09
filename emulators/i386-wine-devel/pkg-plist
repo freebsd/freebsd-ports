@@ -239,6 +239,7 @@ include/wine/windows/d3dx10.h
 include/wine/windows/d3dx10async.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
+include/wine/windows/d3dx10math.h
 include/wine/windows/d3dx10tex.h
 include/wine/windows/d3dx11.h
 include/wine/windows/d3dx11async.h
@@ -1851,6 +1852,7 @@ lib32/wine/fakedlls/msvcp100.dll
 lib32/wine/fakedlls/msvcp110.dll
 lib32/wine/fakedlls/msvcp120.dll
 lib32/wine/fakedlls/msvcp120_app.dll
+lib32/wine/fakedlls/msvcp140.dll
 lib32/wine/fakedlls/msvcp60.dll
 lib32/wine/fakedlls/msvcp70.dll
 lib32/wine/fakedlls/msvcp71.dll
@@ -2349,6 +2351,7 @@ lib32/wine/libstrmiids.a
 lib32/wine/libsxs.def
 lib32/wine/libt2embed.def
 lib32/wine/libtapi32.def
+lib32/wine/libucrtbase.def
 lib32/wine/libunicows.def
 lib32/wine/liburl.def
 lib32/wine/liburlmon.def
@@ -2456,6 +2459,7 @@ lib32/wine/msvcp100.dll.so
 lib32/wine/msvcp110.dll.so
 lib32/wine/msvcp120.dll.so
 lib32/wine/msvcp120_app.dll.so
+lib32/wine/msvcp140.dll.so
 lib32/wine/msvcp60.dll.so
 lib32/wine/msvcp70.dll.so
 lib32/wine/msvcp71.dll.so
