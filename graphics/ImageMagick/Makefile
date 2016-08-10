@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.4-3
+DISTVERSION=	6.9.5-5
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -36,13 +36,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-PORTSCOUT=      limit:6.*$$
+PORTSCOUT?=	limit:6.*$$
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		cpe gmake libtool:keepla localbase pathfix perl5 \
-		pkgconfig:both shebangfix tar:xz
+USES=		cpe gettext-runtime gmake gnome libtool:keepla \
+		localbase pathfix perl5 pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -50,7 +50,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2
+USE_GNOME=	glib20 libxml2
+USE_XORG=	sm ice x11
 
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
@@ -338,6 +339,7 @@ PLIST_SUB+=		WMF="@comment "
 # SVG (Scalable Vector Graphics) requires both libxml2 and X11
 .if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=		librsvg-2.so:graphics/librsvg2
+USE_GNOME+=		cairo gdkpixbuf2
 CONFIGURE_ARGS+=	--with-rsvg
 .else
 CONFIGURE_ARGS+=	--without-rsvg
@@ -370,7 +372,7 @@ PKGNAMESUFFIX=		-nox11
 CONFLICTS_INSTALL+=	ImageMagick-nox11-6*
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
-USE_XORG=		xext xt
+USE_XORG+=		xext xt
 PLIST_SUB+=		X11=''
 .endif
 

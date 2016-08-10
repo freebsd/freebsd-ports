@@ -1454,6 +1454,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/search.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/security-policy.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/sitemap.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/analyze.c
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/coder.xml
