@@ -144,6 +144,7 @@
     SUBDIR += avro-cpp
     SUBDIR += awscli
     SUBDIR += b2
+    SUBDIR += babeltrace
     SUBDIR += bam
     SUBDIR += bbfreeze
     SUBDIR += bbfreeze-loader

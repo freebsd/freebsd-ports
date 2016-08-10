@@ -1,0 +1,11 @@
+babeltrace provides trace read and write libraries, as well as a trace
+converter. A plugin can be created for any trace format to allow its conversion
+to/from another trace format.
+The main format expected to be converted to/from is the Common Trace
+Format (CTF). The latest version of the CTF specification can be found at
+git://git.efficios.com/ctf.git
+gitweb:     http://git.efficios.com/?p=ctf.git
+The CE Workgroup of the Linux Foundation, Ericsson, and EfficiOS have
+sponsored this work.
+
+WWW: http://www.efficios.com/babeltrace
