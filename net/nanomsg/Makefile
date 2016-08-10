@@ -22,13 +22,7 @@ OPTIONS_SUB=			yes
 DOCS_DESC=			Build and/or install HTML and manpages
 
 DOCS_BUILD_DEPENDS=		asciidoctor:textproc/rubygem-asciidoctor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:STRING=man
-.else
-CMAKE_ARGS+=	-DNN_ENABLE_DOC=OFF
-.endif
+DOCS_CMAKE_BOOL=		NN_ENABLE_DOC
+DOCS_CMAKE_ON=			-DCMAKE_INSTALL_MANDIR:STRING=man
 
 .include <bsd.port.mk>
