@@ -1,8 +1,11 @@
---- gollum-lib.gemspec.orig	2016-03-28 14:47:01.120754000 +0000
-+++ gollum-lib.gemspec	2016-03-28 14:49:12.906782000 +0000
-@@ -28,8 +28,8 @@
+--- gollum-lib.gemspec.orig	2016-07-27 16:31:57 UTC
++++ gollum-lib.gemspec
+@@ -26,10 +26,10 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<gollum-grit_adapter>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<rouge>.freeze, ["~> 1.10"])
+-      s.add_runtime_dependency(%q<rouge>.freeze, ["~> 1.10"])
++      s.add_runtime_dependency(%q<rouge>.freeze, [">= 1.10"])
        s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.6.4"])
 -      s.add_runtime_dependency(%q<stringex>.freeze, ["~> 2.5.1"])
 -      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.1.0"])
