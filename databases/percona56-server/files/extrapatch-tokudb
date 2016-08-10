@@ -60,3 +60,33 @@
          va_end(op);
          return real_open(file, oflag, mode);
      } else {
+--- storage/tokudb/PerconaFT/CMakeLists.txt.orig	2016-06-30 13:35:08.000000000 +0200
++++ storage/tokudb/PerconaFT/CMakeLists.txt	2016-07-29 23:07:37.871068000 +0200
+@@ -82,7 +82,7 @@
+ 
+ install(
+   FILES README.md COPYING.AGPLv3 COPYING.GPLv2 PATENTS
+-  DESTINATION .
++  DESTINATION ${INSTALL_DOCDIR}
+   COMPONENT tokukv_misc
+   )
+ 
+--- storage/tokudb/PerconaFT/buildheader/CMakeLists.txt.orig	2016-07-29 23:30:26.557847000 +0200
++++ storage/tokudb/PerconaFT/buildheader/CMakeLists.txt	2016-07-29 23:30:32.695950000 +0200
+@@ -1,6 +1,6 @@
+ set_directory_properties(PROPERTIES INCLUDE_DIRECTORIES "")
+ 
+-file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/runcat.sh" "#!/bin/bash
++file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/runcat.sh" "#!/bin/sh
+ out=$1; shift
+ exec \"$@\" >$out")
+ 
+@@ -8,7 +8,7 @@
+ set_property(TARGET make_tdb APPEND PROPERTY COMPILE_DEFINITIONS _GNU_SOURCE)
+ add_custom_command(
+   OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/db.h"
+-  COMMAND bash runcat.sh "${CMAKE_CURRENT_BINARY_DIR}/db.h" $<TARGET_FILE:make_tdb>
++  COMMAND sh runcat.sh "${CMAKE_CURRENT_BINARY_DIR}/db.h" $<TARGET_FILE:make_tdb>
+   DEPENDS make_tdb)
+ add_custom_target(install_tdb_h DEPENDS
+   "${CMAKE_CURRENT_BINARY_DIR}/db.h")
