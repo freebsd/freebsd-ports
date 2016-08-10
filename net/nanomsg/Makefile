@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=			nanomsg
-DISTVERSION=			0.8-beta
+PORTVERSION=			1.0.0
 CATEGORIES=			net
 
 MAINTAINER=			crest@bultmann.eu
@@ -13,36 +13,22 @@ LICENSE_FILE=			${WRKSRC}/COPYING
 USE_GITHUB=			yes
 GH_ACCOUNT=			nanomsg
 
-USES=				autoreconf libtool pathfix
+USES=				cmake pathfix
 USE_LDCONFIG=			yes
-GNU_CONFIGURE=			yes
-INSTALL_TARGET=			install-strip
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=		--disable-silent-rules
-.endif
-CONFIGURE_ARGS+=		--datadir=${PREFIX}/libdata
-
-OPTIONS_DEFINE=			DOCS MANPAGES
-OPTIONS_DEFAULT=		MANPAGES
+OPTIONS_DEFINE=			DOCS
 OPTIONS_SUB=			yes
 
-DOCS_DESC=			Build and/or install HTML documentation
+DOCS_DESC=			Build and/or install HTML and manpages
 
-MANPAGES_BUILD_DEPENDS+=	asciidoc:textproc/asciidoc \
-				xmlto:textproc/xmlto
+DOCS_BUILD_DEPENDS=		asciidoctor:textproc/rubygem-asciidoctor
 
 .include <bsd.port.options.mk>
 
-# Avoid duplication
-.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ARGS+=	--enable-doc
-BUILD_DEPENDS+=		asciidoc:textproc/asciidoc \
-			xmlto:textproc/xmlto
+.if ${PORT_OPTIONS:MDOCS}
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:STRING=man
+.else
+CMAKE_ARGS+=	-DNN_ENABLE_DOC=OFF
 .endif
-
-post-extract:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(datadir)/pkgconfig|' \
-		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

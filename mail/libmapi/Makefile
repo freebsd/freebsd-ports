@@ -3,6 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/openchange/openchange/archive/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
@@ -74,6 +75,8 @@ post-patch:
 		s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,g" \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|g' \
+		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|libnanomsg|nanomsg|g' \
 		${WRKSRC}/configure.ac
 
 pre-configure:
