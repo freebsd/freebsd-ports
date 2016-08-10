@@ -19,6 +19,10 @@ RUN_DEPENDS=	rubygem-devise>=1.3:devel/rubygem-devise \
 		rubygem-dm-serializer>=1.0.2:databases/rubygem-dm-serializer \
 		rubygem-dm-timestamps>=1.0.2:databases/rubygem-dm-timestamps
 
+BROKEN=	Not compatible with devel/rubygem-devise > 3
+DEPRECATED=	Not compatible with devel/rubygem-devise > 3
+EXPIRED_DATE=	2016-12-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
