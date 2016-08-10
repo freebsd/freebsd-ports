@@ -2,6 +2,10 @@ bin/hotkernel
 bin/opensnoop
 bin/procsystime
 bin/shellsnoop
+man/man1/hotkernel.1.gz
+man/man1/opensnoop.1.gz
+man/man1/procsystime.1.gz
+man/man1/shellsnoop.1.gz
 %%DATADIR%%/Apps/Readme
 %%DATADIR%%/Apps/httpdstat.d
 %%DATADIR%%/Apps/nfswizard.d
