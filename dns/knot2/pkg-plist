@@ -25,6 +25,9 @@ include/libknot/binary.h
 include/libknot/codes.h
 include/libknot/consts.h
 include/libknot/control/control.h
+include/libknot/cookies/alg-fnv64.h
+include/libknot/cookies/client.h
+include/libknot/cookies/server.h
 include/libknot/db/db.h
 include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
@@ -39,9 +42,6 @@ include/libknot/packet/compr.h
 include/libknot/packet/pkt.h
 include/libknot/packet/rrset-wire.h
 include/libknot/packet/wire.h
-include/libknot/processing/layer.h
-include/libknot/processing/overlay.h
-include/libknot/processing/requestor.h
 include/libknot/rdata.h
 include/libknot/rdataset.h
 include/libknot/rrset-dump.h
@@ -53,6 +53,7 @@ include/libknot/rrtype/naptr.h
 include/libknot/rrtype/nsec.h
 include/libknot/rrtype/nsec3.h
 include/libknot/rrtype/nsec3param.h
+include/libknot/rrtype/opt-cookie.h
 include/libknot/rrtype/opt.h
 include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
@@ -67,12 +68,12 @@ include/zscanner/scanner.h
 include/zscanner/version.h
 lib/libdnssec.a
 lib/libdnssec.so
-lib/libdnssec.so.1
-lib/libdnssec.so.1.0.0
+lib/libdnssec.so.2
+lib/libdnssec.so.2.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.2
-lib/libknot.so.2.0.0
+lib/libknot.so.3
+lib/libknot.so.3.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.1
@@ -86,6 +87,7 @@ man/man1/khost.1.gz
 man/man1/knot1to2.1.gz
 man/man1/knsec3hash.1.gz
 man/man1/knsupdate.1.gz
+man/man1/kzonecheck.1.gz
 man/man5/knot.conf.5.gz
 man/man8/keymgr.8.gz
 man/man8/knotc.8.gz
@@ -93,3 +95,4 @@ man/man8/knotd.8.gz
 sbin/keymgr
 sbin/knotc
 sbin/knotd
+sbin/kzonecheck
