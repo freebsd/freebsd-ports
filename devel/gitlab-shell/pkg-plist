@@ -8,6 +8,7 @@
 %%DATADIR%%/Gemfile.lock
 %%DATADIR%%/Guardfile
 %%DATADIR%%/LICENSE
+%%DATADIR%%/Makefile
 %%DATADIR%%/README.md
 %%DATADIR%%/VERSION
 @(,,555) %%DATADIR%%/bin/authorized_keys
@@ -35,6 +36,20 @@
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
 %%DATADIR%%/lib/names_helper.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/client.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection/command_helper.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection/hiredis.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection/registry.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection/ruby.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/connection/synchrony.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/distributed.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/errors.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/hash_ring.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/pipeline.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/subscribe.rb
+%%DATADIR%%/lib/vendor/redis/lib/redis/version.rb
 %%DATADIR%%/spec/gitlab_access_spec.rb
 %%DATADIR%%/spec/gitlab_config_spec.rb
 %%DATADIR%%/spec/gitlab_keys_spec.rb
