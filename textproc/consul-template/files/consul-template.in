@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: consul_template
+# REQUIRE: LOGIN
+# KEYWORD: shtudown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_template_enable (bool):        Set to NO by default.
+#                                          Set it to YES to enable consul-template.
+# consul_template_user (user):          Set user to run consul-template.
+#                                          Default is "root".
+# consul_template_group (group):        Set group to run consul-template.
+#                                          Default is "wheel".
+# consul_template_env (string):         Set environment variables used with consul-template.
+#                                          Default is "".
+# consul_template_args (string):        Set flags used with consul-template.
+#                                          Default is "".
+
+. /etc/rc.subr
+
+name=consul_template
+rcvar=consul_template_enable
+
+load_rc_config $name
+
+: ${consul_template_enable:="NO"}
+: ${consul_template_user:="root"}
+: ${consul_template_group:="wheel"}
+: ${consul_template_env:=""}
+: ${consul_template_args:=""}
+
+pidfile=/var/run/consul-template.pid
+procname="%%PREFIX%%/bin/consul-template"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env ${consul_template_env} ${procname} -config=%%PREFIX%%/etc/consul-template.d ${consul_template_args}"
+
+start_precmd=consul_template_startprecmd
+
+consul_template_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${consul_template_user} -g ${consul_template_group} /dev/null ${pidfile}
+    fi
+}
+
+run_rc_command "$1"
