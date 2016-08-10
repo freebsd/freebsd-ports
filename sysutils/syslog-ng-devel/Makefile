@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.3
+PORTVERSION=	3.8.0b1
 PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/balabit/syslog-ng/pull/
+PATCHFILES=	1141.patch:-p1
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
@@ -37,27 +39,22 @@ REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (and modules, like Elastic)
 PYTHON_DESC=		Build with Python 2.7 support
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
-USE_OPENSSL=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/ \
-		--with-docbook-dir=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
+		--datadir=${PREFIX}/share/
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
-
-BUILD_DEPENDS+=		xsltproc:textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -125,6 +122,7 @@ CONFIGURE_ARGS+=        --disable-json
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
+BROKEN=			As per upstream, JAVA option is currently broken.
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
 BUILD_DEPENDS+=		gradle:devel/gradle
