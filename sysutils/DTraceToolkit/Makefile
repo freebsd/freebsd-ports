@@ -3,6 +3,7 @@
 
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -80,5 +81,10 @@ do-install:
 	${LN} -fs ${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
 	${LN} -fs ${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
 	${LN} -fs ${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
+
+.for MANPAGE in hotkernel procsystime opensnoop shellsnoop
+	${INSTALL_MAN} ${WRKSRC}/Man/man1m/${MANPAGE}.1m \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${MANPAGE}.1
+.endfor
 
 .include <bsd.port.mk>
