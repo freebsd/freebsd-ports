@@ -191,6 +191,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/car
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/cardbuilder.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/chaptercardbuilder.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/peoplecardbuilder.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/roundcard.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/clearbutton.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/collectioneditor/collectioneditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/confirm.js
