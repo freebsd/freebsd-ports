@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTVERSION=	09.05.0210
+PORTVERSION=	09.05.0400
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USES=		libtool pgsql
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -33,10 +32,12 @@ PLIST_FILES=	lib/psqlodbcw.so
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${EXAMPLESDIR}/
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
