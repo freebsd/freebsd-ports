@@ -3,6 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -134,7 +135,10 @@ GROUPS=	clamav mail
 .endif
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
-CONFIGURE_ARGS+=--enable-llvm
+CONFIGURE_ARGS+=--enable-llvm --with-system-llvm=${LOCALBASE}/llvm${LLVMVER}
+BUILD_DEPENDS+=	llvm${LLVMVER}>=0:devel/llvm${LLVMVER}
+# Beware: ClamAV doesn't support LLVM 3.7 or higher yet
+LLVMVER=	36
 . if ${PORT_OPTIONS:MTESTS}
 USES+=		python:build
 . endif
