@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	41.1.1
+PORTVERSION=	42.0.0
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -16,8 +16,8 @@ OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL HUNSPELL
 OPTIONS_DEFAULT=	ASPELL
 
-USES=		qmake tar:bzip2
-USE_QT4=	gui moc_build network rcc_build
+USES=		pkgconfig:build qmake tar:bzip2
+USE_QT4=	corelib gui moc_build network rcc_build
 
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
 PORTDOCS=	*
@@ -26,12 +26,10 @@ DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
 
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-ASPELL_QMAKE_ON=	USE_ASPELL=true
-ASPELL_QMAKE_OFF=	USE_ASPELL=false
+ASPELL_QMAKE_ON=	CONFIG=nohunspell
 
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
-HUNSPELL_QMAKE_ON=	USE_HUNSPELL=true
-HUNSPELL_QMAKE_OFF=	USE_HUNSPELL=false
+HUNSPELL_QMAKE_ON=	CONFIG=noaspell
 
 post-patch:
 	@${REINPLACE_CMD} -e \
