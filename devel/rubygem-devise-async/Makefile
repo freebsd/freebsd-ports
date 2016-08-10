@@ -16,6 +16,10 @@ RUN_DEPENDS?=	rubygem-devise>=3.2:devel/rubygem-devise
 
 SLAVEDIRS=	devel/rubygem-devise-async-rails4
 
+BROKEN=		Not compatible with devel/rubygem-devise > 3
+DEPRECATED=	Not compatible with devel/rubygem-devise > 3
+EXPIRED_DATE=	2016-12-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
