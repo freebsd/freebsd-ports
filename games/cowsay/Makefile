@@ -4,6 +4,7 @@
 PORTNAME=	cowsay
 PORTVERSION=	3.04
 DISTVERSIONPREFIX=	cowsay-
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	lifanov@mail.lifanov.com
