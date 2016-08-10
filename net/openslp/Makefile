@@ -3,6 +3,7 @@
 
 PORTNAME=	openslp
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/${PORTVERSION}%20Release
 
@@ -16,6 +17,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 		--localstatedir=/var
+CPPFLAGS+=	-DHAVE_STRNCASECMP
 
 USE_RC_SUBR=	slpd
 
