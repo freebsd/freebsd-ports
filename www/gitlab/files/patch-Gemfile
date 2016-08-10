@@ -1,4 +1,4 @@
---- Gemfile.orig	2016-06-15 01:41:18 UTC
+--- Gemfile.orig	2016-07-11 19:38:44 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
  source "https://rubygems.org"
@@ -8,7 +8,7 @@
  gem 'rails-deprecated_sanitizer', '~> 1.0.3'
  
  # Responders respond_to and respond_with
-@@ -8,19 +8,18 @@ gem 'responders', '~> 2.0'
+@@ -8,13 +8,12 @@ gem 'responders', '~> 2.0'
  
  # Specify a sprockets version due to increased performance
  # See https://gitlab.com/gitlab-org/gitlab-ce/issues/6069
@@ -24,14 +24,7 @@
  gem "pg", '~> 0.18.2', group: :postgres
  
  # Authentication libraries
- gem 'devise',                 '~> 3.5.4'
- gem 'doorkeeper',             '~> 3.1'
--gem 'devise-async',           '~> 0.9.0'
-+gem 'devise-async',           '>= 0.9.0'
- gem 'omniauth',               '~> 1.3.1'
- gem 'omniauth-auth0',         '~> 1.4.1'
- gem 'omniauth-azure-oauth2',  '~> 0.0.6'
-@@ -29,13 +28,12 @@ gem 'omniauth-cas3',          '~> 1.1.2'
+@@ -28,13 +27,12 @@ gem 'omniauth-cas3',          '~> 1.1.2'
  gem 'omniauth-facebook',      '~> 3.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
  gem 'omniauth-gitlab',        '~> 1.0.0'
@@ -47,22 +40,6 @@
  gem 'jwt'
  
  # Spam and anti-bot protection
-@@ -43,12 +41,12 @@ gem 'recaptcha', require: 'recaptcha/rai
- gem 'akismet', '~> 2.0'
- 
- # Two-factor authentication
--gem 'devise-two-factor', '~> 2.0.0'
-+gem 'devise-two-factor', '>= 2.0.0'
- gem 'rqrcode-rails3', '~> 0.1.7'
--gem 'attr_encrypted', '~> 1.3.4'
-+gem 'attr_encrypted', '>= 1.3.4'
- 
- # Browser detection
--gem "browser", '~> 1.0.0'
-+gem "browser", '>= 1.0.0'
- 
- # Extracting information from a git repository
- # Provide access to Gitlab::Git library
 @@ -61,15 +59,15 @@ gem 'gitlab_omniauth-ldap', '~> 1.2.1', 
  
  # Git Wiki
@@ -83,7 +60,7 @@
  gem 'rack-cors',    '~> 0.4.0', require: 'rack/cors'
  
  # Pagination
-@@ -79,13 +77,13 @@ gem "kaminari", "~> 0.16.3"
+@@ -79,7 +77,7 @@ gem "kaminari", "~> 0.17.0"
  gem "haml-rails", '~> 0.9.0'
  
  # Files attachments
@@ -92,21 +69,14 @@
  
  # Drag and Drop UI
  gem 'dropzonejs-rails', '~> 0.7.1'
- 
- # for aws storage
--gem "fog", "~> 1.36.0"
-+gem "fog", ">= 1.36.0"
- gem "unf", '~> 0.1.4'
- 
- # Authorization
-@@ -97,13 +95,13 @@ gem "seed-fu", '~> 2.3.5'
+@@ -104,26 +102,26 @@ gem "seed-fu", '~> 2.3.5'
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
  gem 'task_list',     '~> 1.0.2', require: 'task_list/railtie'
 -gem 'github-markup', '~> 1.3.1'
 +gem 'github-markup', '>= 1.3.1'
  gem 'redcarpet',     '~> 3.3.3'
- gem 'RedCloth',      '~> 4.2.9'
+ gem 'RedCloth',      '~> 4.3.2'
 -gem 'rdoc',          '~>3.6'
 +gem 'rdoc',          '>= 3.6'
  gem 'org-ruby',      '~> 0.9.12'
@@ -114,9 +84,11 @@
 -gem 'wikicloth',     '0.8.1'
 +gem 'wikicloth',     '>= 0.8.1'
  gem 'asciidoctor',   '~> 1.5.2'
- gem 'rouge',         '~> 1.10.1'
+-gem 'rouge',         '~> 1.11'
++gem 'rouge',         '>= 1.11'
  
-@@ -112,16 +110,16 @@ gem 'rouge',         '~> 1.10.1'
+ # See https://groups.google.com/forum/#!topic/ruby-security-ann/aSbgDiwb24s
+ # and https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM
  gem 'nokogiri', '~> 1.6.7', '>= 1.6.7.2'
  
  # Diffs
@@ -130,13 +102,7 @@
    gem 'unicorn-worker-killer', '~> 0.4.2'
  end
  
- # State machine
--gem "state_machines-activerecord", '~> 0.3.0'
-+gem "state_machines-activerecord", '>= 0.3.0'
- # Run events after state machine commits
- gem 'after_commit_queue'
- 
-@@ -167,10 +165,10 @@ gem "gitlab-flowdock-git-hook", "~> 1.0.
+@@ -174,10 +172,10 @@ gem "gitlab-flowdock-git-hook", "~> 1.0.
  gem "gemnasium-gitlab-service", "~> 0.2"
  
  # Slack integration
@@ -149,7 +115,7 @@
  
  # FogBugz integration
  gem 'ruby-fogbugz', '~> 0.2.1'
-@@ -185,17 +183,17 @@ gem 'cal-heatmap-rails', '~> 3.6.0'
+@@ -189,17 +187,17 @@ gem 'd3_rails', '~> 3.5.0'
  gem "underscore-rails", "~> 1.8.0"
  
  # Sanitize user input
@@ -170,7 +136,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.0.2'
-@@ -208,11 +206,11 @@ gem 'charlock_holmes', '~> 0.7.3'
+@@ -215,11 +213,11 @@ gem 'chronic_duration', '~> 0.10.6'
  
  gem "sass-rails", '~> 5.0.0'
  gem "coffee-rails", '~> 4.1.0'
@@ -182,12 +148,12 @@
 -gem 'addressable',        '~> 2.3.8'
 +gem 'addressable',        '>= 2.3.8'
  gem 'bootstrap-sass',     '~> 3.3.0'
- gem 'font-awesome-rails', '~> 4.2'
+ gem 'font-awesome-rails', '~> 4.6.1'
  gem 'gitlab_emoji',       '~> 0.3.0'
-@@ -221,10 +219,10 @@ gem 'jquery-atwho-rails', '~> 1.3.2'
+@@ -227,10 +225,10 @@ gem 'gon',                '~> 6.0.1'
+ gem 'jquery-atwho-rails', '~> 1.3.2'
  gem 'jquery-rails',       '~> 4.1.0'
  gem 'jquery-ui-rails',    '~> 5.0.0'
- gem 'raphael-rails',      '~> 2.1.2'
 -gem 'request_store',      '~> 1.3.0'
 +gem 'request_store',      '>= 1.3.0'
  gem 'select2-rails',      '~> 3.5.9'
@@ -197,7 +163,7 @@
  gem 'base32',             '~> 0.3.0'
  
  # Sentry integration
-@@ -232,86 +230,6 @@ gem 'sentry-raven', '~> 0.15'
+@@ -238,90 +236,6 @@ gem 'sentry-raven', '~> 0.15'
  
  gem 'premailer-rails', '~> 1.9.0'
  
@@ -210,7 +176,7 @@
 -
 -group :development do
 -  gem "foreman"
--  gem 'brakeman', '~> 3.2.0', require: false
+-  gem 'brakeman', '~> 3.3.0', require: false
 -
 -  gem 'letter_opener_web', '~> 1.3.0'
 -  gem 'quiet_assets', '~> 1.0.2'
@@ -262,15 +228,19 @@
 -  gem 'spring-commands-spinach',  '~> 1.1.0'
 -  gem 'spring-commands-teaspoon', '~> 0.0.2'
 -
--  gem 'rubocop', '~> 0.38.0', require: false
+-  gem 'rubocop', '~> 0.40.0', require: false
+-  gem 'rubocop-rspec', '~> 1.5.0', require: false
 -  gem 'scss_lint', '~> 0.47.0', require: false
--  gem 'coveralls',  '~> 0.8.2', require: false
+-  gem 'coveralls', '~> 0.8.2', require: false
 -  gem 'simplecov', '~> 0.11.0', require: false
 -  gem 'flog', require: false
 -  gem 'flay', require: false
 -  gem 'bundler-audit', require: false
 -
 -  gem 'benchmark-ips', require: false
+-
+-  gem "license_finder", require: false
+-  gem 'knapsack'
 -end
 -
 -group :test do
@@ -284,7 +254,7 @@
  group :production do
    gem "gitlab_meta", '7.0'
  end
-@@ -329,10 +247,12 @@ gem 'activerecord-session_store', '~> 0.
+@@ -339,10 +253,12 @@ gem 'activerecord-session_store', '~> 1.
  gem "nested_form", '~> 0.3.2'
  
  # OAuth
