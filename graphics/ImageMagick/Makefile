@@ -51,7 +51,6 @@ CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxml2
-USE_XORG=	sm ice x11
 
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
@@ -372,7 +371,7 @@ PKGNAMESUFFIX=		-nox11
 CONFLICTS_INSTALL+=	ImageMagick-nox11-6*
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
-USE_XORG+=		xext xt
+USE_XORG=		sm ice x11 xext xt
 PLIST_SUB+=		X11=''
 .endif
 
