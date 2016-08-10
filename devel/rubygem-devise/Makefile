@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	devise
-PORTVERSION=	3.5.6
+PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-bcrypt>=3.0:security/rubygem-bcrypt \
 		rubygem-orm_adapter>=0.1:devel/rubygem-orm_adapter \
 		rubygem-thread_safe>=0.1:devel/rubygem-thread_safe \
+		rubygem-responders>=0:www/rubygem-responders \
 		rubygem-warden>=1.2.3:devel/rubygem-warden
 
 NO_ARCH=	yes
