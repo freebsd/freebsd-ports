@@ -532,13 +532,13 @@
     SUBDIR += procmail
     SUBDIR += prom-wl
     SUBDIR += proxsmtp
-    SUBDIR += py-email-reply-parser
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-apolicy
     SUBDIR += py-authres
     SUBDIR += py-cyruslib
     SUBDIR += py-dkimpy
+    SUBDIR += py-email-reply-parser
     SUBDIR += py-fuglu
     SUBDIR += py-libgmail
     SUBDIR += py-milter
