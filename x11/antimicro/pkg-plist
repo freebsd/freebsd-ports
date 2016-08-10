@@ -2,10 +2,14 @@ bin/antimicro
 %%DATADIR%%/translations/antimicro_br.qm
 %%DATADIR%%/translations/antimicro_de.qm
 %%DATADIR%%/translations/antimicro_en.qm
+%%DATADIR%%/translations/antimicro_es.qm
 %%DATADIR%%/translations/antimicro_fr.qm
+%%DATADIR%%/translations/antimicro_it.qm
+%%DATADIR%%/translations/antimicro_ja.qm
 %%DATADIR%%/translations/antimicro_ru.qm
 %%DATADIR%%/translations/antimicro_sr.qm
 %%DATADIR%%/translations/antimicro_uk.qm
+%%DATADIR%%/translations/antimicro_zh_CN.qm
 %%DATADIR%%/translations/antimicro.qm
 share/applications/antimicro.desktop
 share/man/man1/antimicro.1.gz
