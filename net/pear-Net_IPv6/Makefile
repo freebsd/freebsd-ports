@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Net_IPv6
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0.b2
 CATEGORIES=	net pear
+DISTNAME=	${PORTNAME}-1.3.0b2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
 
-USES=	pear
+LICENSE=	BSD2CLAUSE
 
-PORTSCOUT=		skipv:1.2.2b,1.2.2b2
+USES=		pear
+
+PORTSCOUT=	skipv:1.2.2b,1.2.2b2
 
 .include <bsd.port.mk>
