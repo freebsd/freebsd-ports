@@ -540,8 +540,8 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm2
     SUBDIR += npm012
+    SUBDIR += npm2
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
@@ -1728,6 +1728,7 @@
     SUBDIR += py-prewikka
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
+    SUBDIR += py-pySmartDL
     SUBDIR += py-pyjwt
     SUBDIR += py-pylons
     SUBDIR += py-pyocclient
@@ -1735,7 +1736,6 @@
     SUBDIR += py-pyramid
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysearch
-    SUBDIR += py-pySmartDL
     SUBDIR += py-python-digitalocean
     SUBDIR += py-pywebdav
     SUBDIR += py-pywikibot
@@ -1748,9 +1748,6 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-requestbuilder
     SUBDIR += py-requests
-    SUBDIR += py33-requests
-    SUBDIR += py34-requests
-    SUBDIR += py35-requests
     SUBDIR += py-requests-futures
     SUBDIR += py-requests-oauthlib
     SUBDIR += py-requests-toolbelt
@@ -1807,6 +1804,9 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
+    SUBDIR += py33-requests
+    SUBDIR += py34-requests
+    SUBDIR += py35-requests
     SUBDIR += pyblosxom
     SUBDIR += pycarddav
     SUBDIR += pydio
@@ -2082,8 +2082,8 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += sogo2
-    SUBDIR += sogo3
     SUBDIR += sogo2-activesync
+    SUBDIR += sogo3
     SUBDIR += sogo3-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay

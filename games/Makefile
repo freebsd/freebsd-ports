@@ -14,7 +14,6 @@
     SUBDIR += 54321
     SUBDIR += 7kaa
     SUBDIR += CaribbeanStud
-    SUBDIR += cockatrice
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += abbayedesmorts
@@ -145,6 +144,7 @@
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
     SUBDIR += cleanq3
+    SUBDIR += cockatrice
     SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
