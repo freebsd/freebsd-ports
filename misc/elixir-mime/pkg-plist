@@ -1,0 +1,5 @@
+lib/elixir/lib/mime/ebin/Elixir.MIME.beam
+lib/elixir/lib/mime/ebin/mime.app
+lib/elixir/lib/mime/lib/mime.ex
+lib/elixir/lib/mime/lib/mime.types
+%%PORTDOCS%%%%DOCSDIR%%/README.md
