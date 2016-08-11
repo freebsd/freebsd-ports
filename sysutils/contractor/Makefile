@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	contractor
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://launchpadlibrarian.net/176424633/ \
-	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
-DIST_SUBDIR=	eos
+MASTER_SITES=	https://launchpadlibrarian.net/278375346/ \
+	https://launchpad.net/${PORTNAME}/loki/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Desktop-wide extension service
@@ -15,10 +13,10 @@ COMMENT=	Desktop-wide extension service
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+	libdbus-glib-1.so:devel/dbus-glib
 
-USE_GCC=	yes
-USES=	cmake pkgconfig
+USES=	cmake:outsource gettext-runtime pkgconfig tar:xz
 USE_GNOME=	glib20
 
 .include <bsd.port.mk>
