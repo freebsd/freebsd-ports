@@ -557,7 +557,7 @@ freeswitch:*:610:
 # free: 613
 # free: 614
 ntpa:*:615:
-# free: 616
+taskd:*:616:
 # free: 617
 # free: 618
 # free: 619
