@@ -1,11 +1,20 @@
---- t/porting/customized.dat.orig	2015-10-31 13:36:16 UTC
+--- t/porting/customized.dat.orig	2016-07-24 17:18:14 UTC
 +++ t/porting/customized.dat
-@@ -14,7 +14,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm ab80029ab16d38d4f2e41dc88d2ceb9f3790e477
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm 453e0abbc4bb38db4c0820ad5c4846f313b66291
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm c1b1babda8f43ae7a2caba1cb4f70f92af5a0e34
--ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 6f90d94ad3e7aa0045a3b1a10a1bb18391f89f57
-+ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 07b63f89d6ccacdecec90da43fbf1ba5af1e3c4c
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm cab2b3ce08b71a4ce89aa630f236eb08b852439d
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm 61fced0faf518bf87c265fcb51ed330ba354623f
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm ae0ef51a7b6dd0b05aa61c779df7167dda5f5119
+@@ -33,7 +33,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 81ebde56af5860edc646518fb64e5c427754ac4f
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm fb83ad4184016de85de92e8a428ec2e48b8fbc18
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm 6917a5d775e4e6f348abebe59ac4362e75885c51
+-ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 843e15e58fe1a1bd7f6054dc8a8e839aaa03003b
++ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm bd4ed63f26a87a14f8113c95842984812a68b674
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm 4cadf37f823fef47a4862c44a3d34aa38315600b
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm ee5298707a26912989934f1d44bf25460394ef60
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm e247f2f2ba5d6283418ec6125d64a7a2b477ae43
+@@ -86,7 +86,7 @@ JSON::PP cpan/JSON-PP/bin/json_pp 22e1b3
+ JSON::PP cpan/JSON-PP/lib/JSON/PP.pm 817730a21b9be855d844e4d26023758960039e99
+ Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
+ Memoize cpan/Memoize/Memoize.pm 902092ff91cdec9c7b4bd06202eb179e1ce26ca2
+-Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 6928fb8a381cfba8204886c656844bcf1abc60f5
++Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 42a1d360fc745560352956bd1dfb62d6b43cdb9c
+ Sys::Syslog cpan/Sys-Syslog/Syslog.pm 181d7541a6aa2a0a4d15f5beec32d16c17c76caf
+ Test cpan/Test/lib/Test.pm 785c02014198ec3dae35e41def2cb24766fcf1cb
+ Test::Harness cpan/Test-Harness/bin/prove 9b2866928cb1125de2c68f9773b25723e02c54c0
