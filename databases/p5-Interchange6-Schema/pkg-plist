@@ -23,6 +23,7 @@ bin/interchange6-create-schema-png
 %%SITE_PERL%%/Interchange6/Schema/Result/Inventory.pm
 %%SITE_PERL%%/Interchange6/Schema/Result/Media.pm
 %%SITE_PERL%%/Interchange6/Schema/Result/MediaDisplay.pm
+%%SITE_PERL%%/Interchange6/Schema/Result/MediaMessage.pm
 %%SITE_PERL%%/Interchange6/Schema/Result/MediaNavigation.pm
 %%SITE_PERL%%/Interchange6/Schema/Result/MediaProduct.pm
 %%SITE_PERL%%/Interchange6/Schema/Result/MediaType.pm
@@ -103,6 +104,7 @@ bin/interchange6-create-schema-png
 %%PERL5_MAN3%%/Interchange6::Schema::Result::Inventory.3.gz
 %%PERL5_MAN3%%/Interchange6::Schema::Result::Media.3.gz
 %%PERL5_MAN3%%/Interchange6::Schema::Result::MediaDisplay.3.gz
+%%PERL5_MAN3%%/Interchange6::Schema::Result::MediaMessage.3.gz
 %%PERL5_MAN3%%/Interchange6::Schema::Result::MediaNavigation.3.gz
 %%PERL5_MAN3%%/Interchange6::Schema::Result::MediaProduct.3.gz
 %%PERL5_MAN3%%/Interchange6::Schema::Result::MediaType.3.gz
