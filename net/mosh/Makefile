@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	net
 MASTER_SITES=	http://mosh.mit.edu/ \
 		http://mirrors.rit.edu/zi/
@@ -17,11 +17,10 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter --without-ncurses
-CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
-USE_OPENSSL=	yes
-USES=		autoreconf:autoconf ncurses perl5 pkgconfig
+USES=		autoreconf:autoconf ncurses perl5 pkgconfig ssl
 
 CONFLICTS_INSTALL=	mosh-0.[2-9].*
 
