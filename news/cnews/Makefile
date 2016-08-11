@@ -3,7 +3,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -38,6 +38,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:Z
+USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 
 DIST_SUBDIR=	${DISTNAME}
@@ -147,7 +148,7 @@ do-install:
 .endfor
 
 test:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	(cd ${WRKSRC} && ${SETENV} LANG=C ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
 
 .include <bsd.port.mk>
