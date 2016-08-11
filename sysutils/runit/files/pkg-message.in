@@ -1,0 +1,43 @@
+Using runit with FreeBSD init:
+
+# mkdir %%SERVICE_DIR%%
+# cp -R %%PREFIX%%/etc/runit /etc/runit
+# echo runsvdir_enable=yes >> /etc/rc.conf
+
+runit is very easily used instead of init on FreeBSD, but the port maintainer
+suggests the following alternative method (as opposed to the website method):
+
+1. Copy all of the etc files from %%PREFIX%%/etc/runit to /etc/runit;
+
+# cp -R %%PREFIX%%/etc/runit /etc/runit
+
+2. Copy runit-init AND runit into /sbin;
+
+# cp /usr/local/sbin/runit* /sbin
+
+3. Create service directories, enable ttyv4 and disable it in ttys:
+
+# mkdir %%SERVICE_DIR%%
+# cp -R /etc/runit/getty-ttyv4 %%SERVICE_DIR%%
+# sed 's/^ttyv4/#&/' /etc/ttys
+
+(The getty-ttyvx directory will getty on whichever vtty x is on, for example
+ # cp -R %%SERVICE_DIR%%/getty-ttyv4 %%SERVICE_DIR%%/getty-ttyv3
+ will result in a tty on ttyv3 as well)
+
+4. Don't replace FreeBSD init in place, tell loader to use runit instead:
+
+# echo 'init_path="/sbin/runit-init:/sbin/init:/sbin/oinit:/sbin/init.bak:/rescue/init"' >> /boot/loader.conf
+
+5. Reboot!
+
+Note: On FreeBSD, runit-init works in %%PREFIX%%/sbin, but
+      *only* if %%PREFIX%%/sbin is on the same filesystem as /; check with:
+
+# df %%PREFIX%%/sbin/runit | sed -ne 's,.* /,/,p' # If this does not return "/"
+
+      If the output is "/", you may skip step 2 and modify step 4:
+
+# echo 'init_path="%%PREFIX%%/sbin/runit-init:/sbin/init:/sbin/oninit:/sbin/init.bak:/rescue/init"' >> /boot/loader.conf
+
+      making upgrades easier.
