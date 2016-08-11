@@ -2,7 +2,7 @@
 
 PKGNAMESUFFIX=	-${MODEL}
 
-COMMENT=	Cross-build U-Boot loader for OrangePi One
+COMMENT=	Cross-build U-Boot loader for Linksprite pcDuino3
 
 LICENSE=	GPLv2
 
