@@ -6,8 +6,10 @@ DISTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PEAR class that provides multiple interfaces for sending emails
+
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	PEAR_NET_SMTP
 PEAR_NET_SMTP_DESC=	PEAR::Net_SMTP support
