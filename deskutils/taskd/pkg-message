@@ -1,0 +1,22 @@
+=======================================================================
+taskd requires user directed configuration prior to use.
+
+See taskwarrior.org/docs/taskserver/configure.html for configuration
+information. The generate script has been installed to
+/usr/local/share/taskd.
+
+After completing configuration to start taskd at system startup add
+taskd_enable="YES" to rc.conf. If you configured taskd with a TASKDDATA
+other than /var/db/taskd you will also need to set taskd_data in rc.conf
+to that path.
+
+The rc script will start taskd as the unprivileged user taskd, this
+requires that your TASKDDATA directory and /var/log/taskd.log be owned
+by taskd:taskd. If you prefer to use another user specify this in
+rc.conf using taskd_user.
+
+To add users see: taskwarrior.org/docs/taskserver/user.html
+
+To configure taskwarrior to use your taskd server see:
+taskwarrior.org/docs/taskserver/taskwarrior.html
+=======================================================================

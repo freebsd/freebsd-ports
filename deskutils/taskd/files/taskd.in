@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: taskd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# taskd_enable (bool):		Set to NO by default.
+#				Set it to YES to enable taskd.
+# taskd_data (path):		Set to %%TASKD_DBDIR%% by default.
+#				Taskd data directory (TASKDDATA)
+# taskd_user (str):		Set to taskd by default.
+#				User to run taskd as.
+
+. /etc/rc.subr
+
+name=taskd
+rcvar=taskd_enable
+
+load_rc_config $name
+
+: ${taskd_enable="NO"}
+: ${taskd_data="%%TASKD_DBDIR%%"}
+: ${taskd_user="taskd"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=$(${command} config --data $taskd_data | awk '/pid.file/ {print $2}')
+
+command_args="server --data $taskd_data --daemon"
+
+run_rc_command "$1"

@@ -3,7 +3,7 @@
 
 PORTNAME=	taskd
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 
@@ -16,6 +16,19 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource compiler:c++11-lib shebangfix
+USE_RC_SUBR=	taskd
+
+USERS=		taskd
+GROUPS=		taskd
+
+TASKD_DBDIR?=	/var/db/${PORTNAME}
+
+PLIST_SUB+=	TASKD_DBDIR="${TASKD_DBDIR}" \
+		TASKD_USER="${USERS}" \
+		TASKD_GROUP="${GROUPS}"
+
+SUB_LIST+=	TASKD_DBDIR="${TASKD_DBDIR}"
+
 SHEBANG_FILES=	demo/client/case* \
 		demo/client/malformed* \
 		demo/client/run \
@@ -33,25 +46,10 @@ SHEBANG_FILES=	demo/client/case* \
 
 CFLAGS+=	-g -O0
 
-PLIST_FILES=	bin/taskd \
-		bin/taskdctl \
-		man/man1/taskd.1.gz \
-		man/man1/taskdctl.1.gz \
-		man/man5/taskdrc.5.gz \
-		share/taskd/README \
-		share/taskd/generate \
-		share/taskd/generate.ca \
-		share/taskd/generate.client \
-		share/taskd/generate.crl \
-		share/taskd/generate.server \
-		share/taskd/vars
-
 PORTDOCS=	*
 
 post-install:
 	(cd ${WRKSRC}/pki && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-.for s in generate generate.ca generate.client generate.crl generate.server
-	${CHMOD} 755 ${STAGEDIR}${DATADIR}/${s}
-.endfor
+	${MKDIR} ${STAGEDIR}${TASKD_DBDIR}
 
 .include <bsd.port.mk>
