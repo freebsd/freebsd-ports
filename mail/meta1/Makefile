@@ -54,6 +54,8 @@ MSP_DESC=	Enable mail submision program
 SASL2_DESC=	Adds SASL2 support
 SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 
+BDB_USES=		bdb
+PMILTER_USES=		ssl
 PMILTER_CONFIGURE_ENABLE=	pmilter
 DKIM_CONFIGURE_ENABLE=	DKIM
 MSP_CONFIGURE_ENABLE=	msp
@@ -71,10 +73,8 @@ MAKE_ENV+=	MTA_NETINET6=1
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-# Why keep the option if it can't work ?
 BROKEN=		port version of Berkeley DB is not compatible
-USES+=		bdb
-INVALID_BDB_VER=	46 47 48 5 6
+INVALID_BDB_VER=	48 5 6
 BERKELEYDB_SUFFIX=	-db${BDB_VER}
 CONFIGURE_ARGS+=	--disable-included-bdb
 CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR}
@@ -85,9 +85,7 @@ BERKELEYDB_SUFFIX=	-intbdb
 PLIST_SUB+=	WITH_BDBINT=""
 .endif
 
-.if ${PORT_OPTIONS:MPMILTER}
-USES+=		ssl
-.else
+.if ! ${PORT_OPTIONS:MPMILTER}
 PMILTER_SUFFIX?=	-nopmilter
 .endif
 
