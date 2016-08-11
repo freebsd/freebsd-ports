@@ -70,6 +70,5 @@
     SUBDIR += synth
     SUBDIR += tinderbox
     SUBDIR += wanted-ports
-    SUBDIR += xps
 
 .include <bsd.port.subdir.mk>
