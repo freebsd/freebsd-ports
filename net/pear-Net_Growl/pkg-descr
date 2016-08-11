@@ -1,0 +1,6 @@
+Growl is a MACOSX application that listen to notifications sent by
+applications and displays them on the desktop using different display
+styles. Net_Growl offers the possibility to send notifications to Growl
+from your PHP application through network communication using UDP.
+
+WWW: https://pear.php.net/package/Net_Growl/
