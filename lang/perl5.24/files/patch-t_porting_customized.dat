@@ -1,20 +1,20 @@
---- t/porting/customized.dat.orig	2016-04-04 04:52:21 UTC
+--- t/porting/customized.dat.orig	2016-07-25 09:12:22 UTC
 +++ t/porting/customized.dat
-@@ -14,7 +14,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 23a4b33b974e036d59bf55aa02e025506a408048
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm 288df61e9ba7be3505b58b6345091fe1f310a117
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm 8578f2ea4ec9e764a789f6ecf620ea449ddca8c1
--ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 9f1f6c51fb0337726c99332facc52159c0619fe2
-+ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm fc5a731797f5c4fedf02ea2b5277aa720f0880ab
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm a0ec076bedfa0c2e52fc2b735fbc75b4c2706bbf
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm 976b10ec76d1fe6f7ee9000b5596e8950434880b
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm bc4b33fa5296ab35bcb1be1c18759b93c4de2598
-@@ -44,7 +44,7 @@ IPC::SysV cpan/IPC-SysV/lib/IPC/SharedMe
- IPC::SysV cpan/IPC-SysV/lib/IPC/SysV.pm 9a0d1c3dcd67321ef1322f29102a1bc7eb91c61c
- IPC::SysV cpan/IPC-SysV/t/ipcsysv.t ee2c95e846ea201afe13c9ec53b09cef62c8ac68
+@@ -33,7 +33,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 8559ef191b4371d0c381472464856a8a73825b2a
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm 09d579ed9daea95c3bf47de2e0b8fe3aa0ff6447
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm f720c13748293b792f7073aa96e7daecb590b183
+-ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 243649a399d293ae7ad0f26b7eab2668aa864ce8
++ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm bb5266915618d6da7b30559b378dd30820d64308
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm b63c90129303b2c17d084fb828aa2c02a2ad85b8
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm cabd1c97eaa427067811d92807e34c17940c7350
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm 6a185d897a600c34615a6073f4de0ac2f54fef3e
+@@ -97,7 +97,7 @@ JSON::PP cpan/JSON-PP/lib/JSON/PP.pm 817
+ Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
  Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b
--Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm fe0bc906fb74b69cfd3fb289316ba669d770d465
-+Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 07e7d337de37d19b3cc7025af17b9111fb2ba265
+ Memoize cpan/Memoize/Memoize.pm 902092ff91cdec9c7b4bd06202eb179e1ce26ca2
+-Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm ba3072a6af793b410b02594ed8fe109ac16a1d43
++Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm e9e98b26450ceb3bae1e54ac8a57dab88932de96
  Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm 3b501b7332480b34929bc4df5d48581df3307267
  Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util/XS.pm ebd169113d3df79d31ad5535dbd7a538a8c14fd2
  Scalar-List-Utils cpan/Scalar-List-Utils/lib/Scalar/Util.pm def601405bac7a4d6690b8c4207e0f05d65eb4ca
