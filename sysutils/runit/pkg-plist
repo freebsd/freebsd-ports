@@ -4,6 +4,7 @@
 @sample %%ETCDIR%%/ctrlaltdel.sample
 @sample %%ETCDIR%%/getty-ttyv4/run.sample
 @sample %%ETCDIR%%/getty-ttyv4/finish.sample
+@sample %%ETCDIR%%/getty-ttyv4/whichtty.sample
 man/man8/chpst.8.gz
 man/man8/runit-init.8.gz
 man/man8/runit.8.gz
