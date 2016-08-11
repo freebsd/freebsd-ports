@@ -1,0 +1,23 @@
+--- commit.h.gen.orig	2016-08-08 08:53:04 UTC
++++ commit.h.gen
+@@ -20,19 +20,7 @@
+ 
+ set -e
+ 
+-if ! (command -v git && git status) >/dev/null 2>&1
+-then
+-  if test -r commit.h
+-  then
+-    echo "No git available. Assuming everything is up-to-date."
+-    exit 0
+-  else
+-    echo >&2 "No git available. Can't reconstruct commit.h"
+-    exit 1
+-  fi
+-fi
+-
+-GIT_COMMIT=`git rev-parse HEAD | cut -c1-10`
++GIT_COMMIT="0340e4f14b"
+ 
+ if grep -scq "${GIT_COMMIT}" commit.h
+ then

@@ -3,6 +3,8 @@ lib/purple-2/telegram-purple.so
 share/appdata/telegram-purple.metainfo.xml
 %%NLS%%share/locale/de_DE/LC_MESSAGES/telegram-purple.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/telegram-purple.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/telegram-purple.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/telegram-purple.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/telegram-purple.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/telegram-purple.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/telegram-purple.mo

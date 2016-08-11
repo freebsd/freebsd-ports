@@ -1,8 +1,0 @@
---- tgl/Makefile.tl-parser.orig	2016-02-27 14:10:53 UTC
-+++ tgl/Makefile.tl-parser
-@@ -1,4 +1,4 @@
--TL_PARSER_OBJECTS=${OBJ}/tl-parser.o ${OBJ}/tlc.o
-+TL_PARSER_OBJECTS=${OBJ}/tl-parser.o ${OBJ}/tlc.o ${OBJ}/crc32.o
- 
- ${TL_PARSER_OBJECTS}: ${OBJ}/%.o: ${srcdir}/tl-parser/%.c | create_dirs
- 	${CC} ${INCLUDE} ${COMPILE_FLAGS} -iquote ${srcdir}/tl-parser -c -MP -MD -MF ${DEP}/$*.d -MQ ${OBJ}/$*.o -o $@ $<
