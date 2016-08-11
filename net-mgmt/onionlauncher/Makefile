@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onionlauncher
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
