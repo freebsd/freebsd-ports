@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160811:
+  AFFECTS: users of databases/postgresqlNN-server with ICU patch
+  AUTHOR: girgen@FreeBSD.org
+
+  The ICU patch is added to the PostgreSQL-9.5 server. Please note that you
+  must never change between using the ICU patch and using system locale for the
+  same database cluster without REINDEXing all TEXT/VARCHAR columns or
+  dump+restore your database. Failing to do so will result in corrupted indexes
+  due to the differences between the locale definitions. ICU will always be the
+  better choice for speed and correctness. :) 
+
+  Also, the ICU patch used to support other unicode encodings than UTF-8, but
+  that has been removed due to lack of demand and the complicated testing
+  required. If you use another unicode encoding and rely on ICU for collation,
+  please refrain from upgrading the postgresql server and instead contact the
+  author named above.
+
 20160722:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: jkim@FreeBSD.org

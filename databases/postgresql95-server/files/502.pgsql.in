@@ -76,7 +76,7 @@ pgsql_backup() {
 	fi
 
 	# cleaning up old data
-	find ${backupdir} \( -name 'pgdump_*' -o -name 'pgglobals_*' \) \
+	find ${backupdir} \( -name 'pgdump_*' -o -name 'pgglobals_*' -o -name '*.dat.gz' -o -name 'toc.dat' \) \
 	    -a -mtime +${daily_pgsql_savedays} -delete
 	echo
 }
