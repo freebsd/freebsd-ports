@@ -310,6 +310,7 @@
     SUBDIR += ptx-kmod
     SUBDIR += pwcbsd
     SUBDIR += pwcview
+    SUBDIR += py-cec
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg
     SUBDIR += py-gstreamer
