@@ -1,7 +1,7 @@
-TIMESTAMP = 1469087090
-SHA256 (majn-telegram-purple-v1.2.6_GH0.tar.gz) = 9ad59002764a98169a8fc85199a7788856df209d0869b1711049d25f94d70fe8
-SIZE (majn-telegram-purple-v1.2.6_GH0.tar.gz) = 168295
-SHA256 (majn-tgl-bec66c2_GH0.tar.gz) = 8ea1e1c96580c29ad3c3f3af8b79107d5de24bbd154c873925b5e93a4c47d8db
-SIZE (majn-tgl-bec66c2_GH0.tar.gz) = 240102
-SHA256 (vysheng-tl-parser-1659d87_GH0.tar.gz) = 6b9538b0c3be3bb25e4f4750ecbea42ce7be58b005a3eeb372b9d15fbaa92e0b
-SIZE (vysheng-tl-parser-1659d87_GH0.tar.gz) = 78615
+TIMESTAMP = 1470894472
+SHA256 (majn-telegram-purple-v1.3.0_GH0.tar.gz) = 27ec26a0b1d387860a385ad35fe9fb059d6c3ec10ff6c1c018127471d97419e5
+SIZE (majn-telegram-purple-v1.3.0_GH0.tar.gz) = 190298
+SHA256 (majn-tgl-624cf5a_GH0.tar.gz) = 4b15fb4140d3c4b0c2caf954636b0579e1ddde4dfe84705688f9aae996feb149
+SIZE (majn-tgl-624cf5a_GH0.tar.gz) = 242452
+SHA256 (vysheng-tl-parser-36bf190_GH0.tar.gz) = 9c4222cfc39f1f58061678c2a22dac5d2391e2594d4ec00e5ab9a7c12e606789
+SIZE (vysheng-tl-parser-36bf190_GH0.tar.gz) = 66898

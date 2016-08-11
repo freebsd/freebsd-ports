@@ -1,22 +1,13 @@
---- Makefile.in.orig	2016-03-11 14:06:35 UTC
+--- Makefile.in.orig	2016-08-08 08:53:04 UTC
 +++ Makefile.in
-@@ -80,7 +80,7 @@ tgl/Makefile: tgl/Makefile.in
- 	cd tgl && ./configure -q ${CRYPTO_FLAG} --disable-extf CFLAGS="@CFLAGS@" LDFLAGS="@LDFLAGS@"
- 
- tgl/libs/libtgl.a: tgl/Makefile
--	+make -C tgl
-+	+gmake -C tgl
- 
- po/%.mo: po/%.po
- 	${MSGFMT_PATH} -cf -o $@ $<
-@@ -103,8 +103,8 @@ strip: $(PRPL_LIBNAME)
- install: $(PRPL_LIBNAME) $(LOCALE_MOS)
+@@ -118,8 +118,8 @@ ${PRPL_LIBNAME}: ${PLUGIN_OBJECTS} tgl/l
+ noicon_install: $(PRPL_LIBNAME) $(LOCALE_MOS)
  	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(PLUGIN_DIR_PURPLE)
  	install -m $(FILE_PERM) $(PRPL_LIBNAME) $(DESTDIR)$(PLUGIN_DIR_PURPLE)/$(PRPL_NAME)
 -	mkdir -m $(DIR_PERM) -p $(DESTDIR)/etc/telegram-purple
 -	install -m $(FILE_PERM) tg-server.tglpub $(DESTDIR)/etc/telegram-purple/server.tglpub
 +	mkdir -m $(DIR_PERM) -p $(DESTDIR)/$(PREFIX)/etc/telegram-purple
 +	install -m $(FILE_PERM) tg-server.tglpub $(DESTDIR)/$(PREFIX)/etc/telegram-purple/server.tglpub
- 	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(datarootdir)/appdata
- 	install -m $(FILE_PERM) telegram-purple.metainfo.xml $(DESTDIR)$(datarootdir)/appdata/telegram-purple.metainfo.xml
- ifeq ($(COPY_ICONS),no)
+ # Assume that the user does not use AppStream if she doesn't want icons
+ 	@for lang in $(LOCALES); do \
+ 		mkdir -p $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
