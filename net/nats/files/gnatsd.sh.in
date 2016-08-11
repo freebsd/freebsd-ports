@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# PROVIDE: gnatsd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run NATS:
+#
+# gnatsd_enable (bool):		Set it to "YES" to enable gnatsd server.
+#				Default is "NO".
+# gnatsd_username:		User name to run as. default "nobody"
+# gnatsd_options:		Options to pass gnatsd server
+#
+
+. /etc/rc.subr
+
+name="gnatsd"
+rcvar=`set_rcvar`
+
+: ${gnatsd_enable="NO"}
+: ${gnatsd_username="nobody"}
+: ${gnatsd_options="-m 8222 -s"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/gnatsd
+command_args="-u ${gnatsd_username} ${procname} ${gnatsd_options}"
+
+load_rc_config ${name}
+
+run_rc_command "$1"
