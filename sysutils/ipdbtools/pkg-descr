@@ -1,0 +1,22 @@
+Tools for generating IP based Geo-block-ing and Geo-routing tables in
+order to configure the system's firewall and/or routing facilities
+
+In general, routing is determined by destination IP addresses, and access
+control by the firewall is established by selectors that can be attrib-
+uted to incoming and outgoing IP packets, like physical interfaces on
+which the packets are going, source and target IP addresses, protocol
+types, port numbers, content types and content, etc. The Geo-location
+would be just another selector, but this information is not carried
+explicitly with IP packets, however, it can be obtained using an IP
+address as a key for looking-up the location in an IP database.
+
+Online databases do exist, but these are usually limited to single queries
+and in addition the look-up in an online database is by far too slow for
+even thinking about being utilized at the firewall level, where IP packets
+need to be processed in a microsecond time scale. Therefore, a locally
+maintained Geo-location database is indispensable in the given respect.
+The System's own routing and filtering tables can be configured to do
+these tasks if there is a source of the appropriate data. The ipdbtools(1)
+are designed to provide this data and to assist managing and using it.
+
+WWW: https://cyclaero.github.io/ipdb/
