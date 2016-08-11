@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
