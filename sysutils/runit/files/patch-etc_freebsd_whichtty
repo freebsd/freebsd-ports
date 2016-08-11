@@ -1,0 +1,8 @@
+--- etc/freebsd/getty-ttyv4/whichtty	1970-01-01 01:00:00.000000000 +0100
++++ etc/freebsd/getty-ttyv4/whichtty	2016-08-10 22:34:36.558752671 +0100
+@@ -0,0 +1,5 @@
++realpath=`realpath $0`
++dirname=`dirname $realpath`
++dirname=`basename $dirname`
++tty=`expr $dirname : 'getty-\(ttyv[0-9]\)'`
++[ -z "${tty%0}" ] && echo "Name of directory must be getty-ttyvx, where x is 0-9" && exit 1
