@@ -1,7 +1,7 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.5.3
+DISTVERSION?=	9.5.4
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
@@ -15,6 +15,6 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_test_fsync src/bin/pg_test_timing \
 		src/bin/pg_xlogdump src/bin/pg_upgrade
 
-ICU_PATCHFILE=	sorry-icu-patch-is-not-quite-ready-for-95-yet
+ICU_PATCHFILE=	pg-954-icu-2016-08-10.diff.gz
 
 .include "${.CURDIR}/../postgresql92-server/Makefile"
