@@ -452,6 +452,7 @@
     SUBDIR += ioping
     SUBDIR += ipa
     SUBDIR += ipad_charge
+    SUBDIR += ipdbtools
     SUBDIR += ipfs-go
     SUBDIR += ipmitool
     SUBDIR += ipsc
