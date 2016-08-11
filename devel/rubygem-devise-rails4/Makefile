@@ -3,7 +3,9 @@
 
 PKGNAMESUFFIX=	-rails4
 
-RAILS4=		yes
+DEPRECATED=	Please use devel/rubygem-devise instead
+EXPIRED_DATE=	2016-12-31
+
 MASTERDIR=	${.CURDIR}/../rubygem-devise
 
 .include "${MASTERDIR}/Makefile"

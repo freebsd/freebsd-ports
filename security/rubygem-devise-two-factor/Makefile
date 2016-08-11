@@ -3,6 +3,7 @@
 
 PORTNAME=	devise-two-factor
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-attr_encrypted>=1.3:security/rubygem-attr_encrypted \
-		rubygem-devise-rails4>=4.0:devel/rubygem-devise-rails4 \
+		rubygem-devise>=4.0:devel/rubygem-devise \
 		rubygem-railties4>=0:www/rubygem-railties4 \
 		rubygem-rotp>=2.0:devel/rubygem-rotp
 

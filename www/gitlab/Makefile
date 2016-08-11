@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab
 PORTVERSION=	8.9.6
+PORTREVISiON=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -25,7 +26,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sprockets3>=3.6:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-pg>=0.18.2:databases/rubygem-pg \
-	rubygem-devise-rails4>=4.0:devel/rubygem-devise-rails4 \
+	rubygem-devise>=4.0:devel/rubygem-devise \
 	rubygem-doorkeeper>=3.1:security/rubygem-doorkeeper \
 	rubygem-omniauth>=1.3.1:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=1.4.1:net/rubygem-omniauth-auth0 \
