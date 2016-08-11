@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keyczar
-PORTVERSION=	0.715
+PORTVERSION=	0.716
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ COMMENT=	Toolkit for safe and simple cryptography
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1
 
 NO_ARCH=	yes
 USES=		python:2
