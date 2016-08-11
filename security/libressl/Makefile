@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.3.7
+PORTVERSION=	2.4.2
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -32,15 +32,15 @@ CFLAGS+=	-fpic -DPIC
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-post-install-NC-on:
+post-stage-NC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
 	${INSTALL_MAN} ${WRKSRC}/apps/nc/nc.1 ${STAGEDIR}/${PREFIX}/man/man1/nc.1
+
+post-stage:
+	${RM} -rf ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
 post-install-MAN3-off:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
 	${REINPLACE_CMD} -e '/^man\/man3/d' ${TMPPLIST}
-
-post-install:
-	${RM} -rf ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
