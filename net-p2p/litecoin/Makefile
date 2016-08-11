@@ -83,6 +83,8 @@ CONFIGURE_ARGS?=	--without-libs \
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl"
 
+CONFIGURE_ENV+= OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
+
 PLIST_FILES?=	bin/litecoin-qt share/applications/litecoin-qt.desktop \
 		share/pixmaps/litecoin128.png
 
