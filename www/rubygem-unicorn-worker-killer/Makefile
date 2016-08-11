@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-get_process_mem>=0:devel/rubygem-get_process_mem \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

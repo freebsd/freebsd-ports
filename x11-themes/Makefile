@@ -15,6 +15,7 @@
     SUBDIR += clearlooks-phenix-theme
     SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
+    SUBDIR += cursor-ardoise-theme
     SUBDIR += cursor-chameleon-anthracite
     SUBDIR += cursor-chameleon-darkskyblue
     SUBDIR += cursor-chameleon-pearl
@@ -149,9 +150,12 @@
     SUBDIR += numix-theme
     SUBDIR += openbox-themes
     SUBDIR += plank-theme-moka
+    SUBDIR += qt4-style-Kvantum
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
+    SUBDIR += qt5-style-Kvantum
+    SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde4

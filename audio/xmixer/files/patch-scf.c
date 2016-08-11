@@ -1,6 +1,6 @@
---- scf.c.orig	Mon Sep  6 11:02:44 2004
-+++ scf.c	Mon Sep  6 11:03:05 2004
-@@ -1009,7 +1009,7 @@
+--- scf.c.orig	2000-11-16 08:15:33 UTC
++++ scf.c
+@@ -1009,7 +1009,7 @@ key_value_pair (SCF *scf, uchar *line, s
  			if (*(p+1) == '\0')
  				break;
  		}

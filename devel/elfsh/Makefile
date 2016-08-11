@@ -16,10 +16,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-post-patch:
-	@${REINPLACE_CMD} -E 's,(BIN|INC|LIB|MOD)PATH),DESTDIR)$$(&,g' \
-		${WRKSRC}/Makefile
-
 pre-install:
 	@(cd ${WRKSRC} && ${STRIP_CMD} vm/elfsh libelfsh/libelfsh.so modules/*.so)
 

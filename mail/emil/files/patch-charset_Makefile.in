@@ -1,5 +1,5 @@
---- charset/Makefile.in.orig	2014-01-25 18:34:47.000000000 +0100
-+++ charset/Makefile.in	2014-01-25 18:34:49.000000000 +0100
+--- charset/Makefile.in.orig	1994-12-23 07:33:00 UTC
++++ charset/Makefile.in
 @@ -1,7 +1,6 @@
  srcdir = @srcdir@
  VPATH = @srcdir@

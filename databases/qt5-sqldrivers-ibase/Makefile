@@ -3,6 +3,6 @@
 DB=		IBase
 DB_DESC=	InterBase/Firebird
 
-USE_FIREBIRD=	yes
+USES=		firebird
 
 .include "${.CURDIR:H:H}/devel/qt5/Makefile.sqldrivers"

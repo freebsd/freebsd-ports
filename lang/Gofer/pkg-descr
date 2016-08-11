@@ -2,7 +2,7 @@
 Gofer is an interactive functional programming environment (i.e. an
 interpreter) supporting a language based on the draft report for Haskell
 version 1.2.
- 
+
 Gofer is intended as an experimental language, particularly where type classes
 are involved.  Gofer extends the Haskell type class system in several ways.
 

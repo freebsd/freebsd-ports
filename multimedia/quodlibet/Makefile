@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quodlibet
-PORTVERSION=	2.6.3
-PORTREVISION=	3
+PORTVERSION=	3.6.2
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://bitbucket.org/lazka/${PORTNAME}-files/raw/default/releases/
 
@@ -11,49 +10,48 @@ MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	GTK+-based audio player written in Python
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0.4:audio/py-musicbrainzngs \
+		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen \
+		${LOCALBASE}/libexec/notification-daemon:deskutils/notification-daemon
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USE_PYTHON=	distutils autoplist
-USE_GNOME=	intltool pygtk2
-USES=		display gettext python
+USE_GNOME=	gtk30 intltool pygobject3
+USES=		desktop-file-utils display gettext python
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-pydistutils
+USE_GSTREAMER1=	good
 
-USE_GSTREAMER=	gconf good python
-
-OPTIONS_DEFINE=		FLAC MP3 AAC MUSEPACK OGG SPEEX VORBIS WAVPACK DBUS REMOTE
+OPTIONS_DEFINE=		AAC DBUS FLAC MP3 OGG REMOTE SPEEX VORBIS WAVPACK
 OPTIONS_DEFINE_i386=	SPC
-OPTIONS_DEFAULT=	FLAC MP3 AAC MUSEPACK OGG SPEEX VORBIS WAVPACK DBUS REMOTE
+OPTIONS_DEFAULT=	AAC DBUS FLAC MP3 OGG REMOTE SPEEX VORBIS WAVPACK
 OPTIONS_DEFAULT_i386=	SPC
 
 SPC_DESC=	SPC (SNES ROM audio) support on i386
 SPEEX_DESC=	OGG/Speex audio support
 REMOTE_DESC=	Enable remote playback
 
-OGG_USE=	GSTREAMER=ogg
-VORBIS_USE=	GSTREAMER=vorbis
-SPC_USE=	GSTREAMER=spc
-SPEEX_USE=	GSTREAMER=speex
-MP3_USE=	GSTREAMER=mp3
-FLAC_USE=	GSTREAMER=flac
-
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
-MUSEPACK_USE=		GSTREAMER=musepack
+OGG_USE=	GSTREAMER1=ogg
+VORBIS_USE=	GSTREAMER1=vorbis
+SPC_USE=	GSTREAMER1=spc
+SPEEX_USE=	GSTREAMER1=speex
+MP3_USE=	GSTREAMER1=mad
+FLAC_USE=	GSTREAMER1=flac
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
-WAVPACK_USE=		GSTREAMER=wavpack
+WAVPACK_USE=		GSTREAMER1=wavpack
 
 AAC_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
-AAC_USE=		GSTREAMER=faad
+AAC_USE=		GSTREAMER1=faad
 
 DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
 
 REMOTE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser
 REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser
-REMOTE_USE=		GSTREAMER=gnomevfs
 
 .include <bsd.port.mk>

@@ -37,8 +37,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/exampleConfig.js ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/exampleProxyConfig.js ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/stats.js ${STAGEDIR}${DATADIR}/
-
-post-install:
 	${INSTALL_DATA} ${WRKSRC}/exampleConfig.js \
 		${STAGEDIR}${PREFIX}/etc/statsd.js.sample
 

@@ -53,7 +53,7 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session
+USE_PHP+=	curl pcre bcmath pdo mcrypt hash session
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif
@@ -93,7 +93,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/log.sh ${STAGEDIR}${PREFIX}/thunder/sbin/
 	@${MKDIR} -m 755 ${STAGEDIR}/var/run/thunder
 
-post-install:
 	@(${CHMOD} +x ${WRKDIR}/test-deps.sh ; \
 	if ! ${WRKDIR}/test-deps.sh > /dev/null 2>&1 ; then \
 		${ECHO_MSG} "**** FATAL **** " ; \

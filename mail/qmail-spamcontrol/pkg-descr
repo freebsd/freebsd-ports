@@ -2,7 +2,7 @@ SpamControl is a collection of patches for qmail developed and maintained
 by Erwin Hoffmann (feh@fehcom.de).
 
 Some SpamControl features: smtp-auth (plain, login and cram-md5),
-requirement of brackets on addresses, qmail-queue, bigtodo, moreipme, 
+requirement of brackets on addresses, qmail-queue, bigtodo, moreipme,
 recipients, STARTTLS...
 
 WWW: http://www.fehcom.de/qmail/spamcontrol.html

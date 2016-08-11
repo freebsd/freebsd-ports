@@ -2,4 +2,4 @@ SmartIrc4net is a multi-threaded and thread-safe IRC library written in C#. It
 allows you to communicate with IRC servers. The API features full channel
 syncing and is splitted in 3 layers: IrcConnection, IrcCommands and IrcClient.
 
-WWW:	http://smartirc4net.meebey.net/jaws/
+WWW: http://smartirc4net.meebey.net/jaws/

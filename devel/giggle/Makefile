@@ -19,7 +19,6 @@ BUILD_DEPENDS=	git:devel/git \
 RUN_DEPENDS=	git:devel/git
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
 #VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes

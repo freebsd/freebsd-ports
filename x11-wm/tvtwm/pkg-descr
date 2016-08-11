@@ -1,4 +1,4 @@
 tvtwm is a version of twm which incorporates virtual desktops, similar
-to vtwm and swm. It is nearly identical to twm until you specify a 
+to vtwm and swm. It is nearly identical to twm until you specify a
 virtual desktop size in your .[tv]twmrc file, which is when you start
 getting the benefits of this window manager.

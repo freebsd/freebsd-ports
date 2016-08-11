@@ -21,4 +21,4 @@ manipulated via built-in JSON-RPC and XML-RPC interfaces. Its features include:
   aria2 supports RPC interface to control the aria2 process. The supported
   interfaces are JSON-RPC (over HTTP and WebSocket) and XML-RPC.
 
-WWW: http://aria2.sourceforge.net/
+WWW: https://aria2.github.io/

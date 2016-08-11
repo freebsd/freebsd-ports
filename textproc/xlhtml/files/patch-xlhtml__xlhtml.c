@@ -1,7 +1,7 @@
---- xlhtml/xlhtml.c	2002/02/27 18:10:01	1.1
-+++ xlhtml/xlhtml.c	2002/02/27 18:12:58
-@@ -746,8 +746,13 @@
- 					ws_array[i]->ws_title.str, ws_array[i]->biggest_row, ws_array[i]->biggest_col);
+--- xlhtml/xlhtml.c.orig	2002-04-11 03:25:17 UTC
++++ xlhtml/xlhtml.c
+@@ -616,8 +616,13 @@ void scan_file(COLEDIRENT *cde, void *_i
+ 					ws_array[i]->biggest_row, ws_array[i]->biggest_col);
  			}
  		}
 -		else if (Xtract)

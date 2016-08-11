@@ -211,6 +211,7 @@ lib/webmin/virtual-server/framefwd-template
 lib/webmin/virtual-server/ftp-lib.pl
 lib/webmin/virtual-server/functional-test.pl
 lib/webmin/virtual-server/generate-cert.pl
+lib/webmin/virtual-server/generate-letsencrypt-cert.pl
 lib/webmin/virtual-server/generate-script-sites.pl
 lib/webmin/virtual-server/get-command.pl
 lib/webmin/virtual-server/get-dns.pl
@@ -1730,6 +1731,7 @@ lib/webmin/virtual-server/lang/en_GB
 lib/webmin/virtual-server/lang/es
 lib/webmin/virtual-server/lang/fi
 lib/webmin/virtual-server/lang/fr
+lib/webmin/virtual-server/lang/fr.UTF-8
 lib/webmin/virtual-server/lang/it
 lib/webmin/virtual-server/lang/nl
 lib/webmin/virtual-server/lang/no
@@ -1950,6 +1952,7 @@ lib/webmin/virtual-server/newfeatures-all/4.19/1-cloudmail
 lib/webmin/virtual-server/newfeatures-all/4.19/2-letsencrypt
 lib/webmin/virtual-server/newfeatures-all/5.0/1-excludes
 lib/webmin/virtual-server/newfeatures-all/5.0/2-backuplogs
+lib/webmin/virtual-server/newfeatures-all/5.01/1-lets
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1992,6 +1995,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.16/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.17/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.18/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.19/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/5.02/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi

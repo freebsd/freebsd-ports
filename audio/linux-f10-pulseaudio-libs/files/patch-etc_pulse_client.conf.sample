@@ -1,5 +1,5 @@
---- etc/pulse/client.conf.sample.orig	2011-04-01 15:42:58.548733177 +0300
-+++ etc/pulse/client.conf.sample	2011-04-01 15:53:03.306719164 +0300
+--- etc/pulse/client.conf.sample.orig	2011-04-26 07:29:20 UTC
++++ etc/pulse/client.conf.sample
 @@ -23,11 +23,11 @@
  ; default-source =
  ; default-server =

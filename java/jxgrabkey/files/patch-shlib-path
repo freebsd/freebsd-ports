@@ -1,0 +1,9 @@
+--- JXGrabKey/Java/test/jxgrabkey/JXGrabKeyTest.java	2010-02-28 10:11:49.000000000 -0500
++++ JXGrabKey/Java/test/jxgrabkey/JXGrabKeyTest.java	2016-06-30 02:51:50.285529000 -0400
+@@ -16,5 +16,5 @@
+     @BeforeClass
+     public static void setUpClass() throws Exception {
+-        System.load(new File("../C++/dist/Release/GNU-Linux-x86/libJXGrabKey.so").getCanonicalPath());
++        System.loadLibrary("JXGrabKey");
+         JXGrabKey.setDebugOutput(true);
+         JXGrabKey.getInstance();

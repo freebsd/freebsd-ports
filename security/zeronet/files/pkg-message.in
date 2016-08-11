@@ -1,0 +1,30 @@
+======================================================================
+You installed ZeroNet: Decentralized websites using Bitcoin crypto.
+
+It is recommended to run ZeroNet as a service:
+# sysrc zeronet_enable="YES"
+# service zeronet start
+
+To access ZeroNet please navigate to:
+http://localhost:43110
+
+You can also run ZeroNet manually (not recommended) with the command:
+# su -m %%USER%% -c zeronet
+
+To run ZeroNet commands:
+# su -m %%USER%% zeronet cmd {arg1 {arg2 {...}}}
+For example, to create a new ZeroNet site:
+# su -m %%USER%% zeronet siteCreate
+
+For Tor integration (recommended) please have these items:
+* option TOR=on in zeronet package
+* make sure %%LOCALBASE%%/etc/tor/torrc has "ControlPort 9051"
+* make sure tor service runs (service tor start)
+* zeronet_args in /etc/rc.conf has "--tor enable" or "--tor always"
+
+Without the Tor integration, you need to make sure that your router
+has either UPnP enabled, or port 15441 open.
+
+For more details please see ZeroNet documentation here:
+http://zeronet.readthedocs.io/en/latest
+======================================================================

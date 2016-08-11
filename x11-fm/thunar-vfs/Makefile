@@ -28,7 +28,7 @@ USES=		desktop-file-utils gettext-tools gmake jpeg libtool pathfix perl5 pkgconf
 CONFIGURE_ARGS=	--disable-debug --without-html-dir
 
 OPTIONS_DEFINE=	NLS HAL DBUS STARTUP GCONF
-OPTIONS_DEFAULT=	NLS HAL DBUS STARTUP
+OPTIONS_DEFAULT=	HAL DBUS STARTUP
 STARTUP_DESC=	Startup notification
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls

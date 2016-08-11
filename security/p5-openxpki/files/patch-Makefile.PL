@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2014-12-02 20:05:23 UTC
+--- Makefile.PL.orig	2016-04-07 09:30:16 UTC
 +++ Makefile.PL
-@@ -249,49 +249,6 @@ else {
+@@ -267,49 +267,6 @@ else {
    print STDERR "Logger is not installed. Continue anyway.\n";
  }
  
@@ -50,7 +50,7 @@
  # See lib/ExtUtils/MakeMaker.pm for details of how to influence
  # the contents of the Makefile that is written.
  WriteMakefile(
-@@ -299,7 +256,6 @@ WriteMakefile(
+@@ -317,7 +274,6 @@ WriteMakefile(
      'VERSION'   => $openxpki_version,
      'LIBS'      => ["-L$openssl_lib_dir -lcrypto"],
      'INC'       => "-I. -I$openssl_inc_dir",
@@ -58,7 +58,7 @@
      'PREREQ_PM' => {
  #    'Class::Accessor::Fast'  => '0.31', # Constituent of module Class::Accessor
  #					 # which is a prerequisite of Class::Accessor::Chained, see below
-@@ -397,5 +353,4 @@ WriteMakefile(
+@@ -420,5 +376,4 @@ WriteMakefile(
                                't/cfg.binary.openssl']},
      'XSPROTOARG' => '-noprototypes',
      'EXE_FILES' => [ 'bin/openxpkictl','bin/openxpkicmd', 'bin/openxpkiadm', 'bin/openxpkicli'],    

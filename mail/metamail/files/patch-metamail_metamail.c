@@ -1,6 +1,6 @@
---- metamail/metamail.c.orig	1994-02-17 10:57:19.000000000 +0900
-+++ metamail/metamail.c	2012-10-16 01:27:14.000000000 +0900
-@@ -20,6 +20,8 @@
+--- metamail/metamail.c.orig	1994-02-17 01:57:19 UTC
++++ metamail/metamail.c
+@@ -20,6 +20,8 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  
   ******************************************************* */
  #include <stdio.h>
@@ -9,7 +9,7 @@
  #include <ctype.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -46,8 +48,8 @@
+@@ -46,8 +48,8 @@ extern char *mktemp(char *);
  #include <signal.h>
  
  #ifndef AMIGA
@@ -20,7 +20,7 @@
  #include <unistd.h>
  #else /* SYSV */
  #include <sgtty.h>
-@@ -83,7 +85,7 @@
+@@ -83,7 +85,7 @@ extern char *MkRmScript();
  #define MAX_FILE_NAME_SIZE 256
  #define WRITE_BINARY	"w"
  #else /* AMIGA */
@@ -29,7 +29,7 @@
  #define CATCOMMAND  "cat"
  #define CATTEMPLATE "cat %s"
  #define METAMAIL    "metamail"
-@@ -100,6 +102,7 @@
+@@ -100,6 +102,7 @@ extern char **environ, *gets();
  #define CMDSIZE 1200 /* Maximum size of command to execute */
  
  #define LINE_BUF_SIZE       2000
@@ -37,7 +37,7 @@
  #ifndef MICROSOFT
  extern char *malloc();
  extern char *realloc();
-@@ -107,10 +110,12 @@
+@@ -107,10 +110,12 @@ extern char *realloc();
  extern char *getenv();
  extern char *index();
  extern char *rindex();
@@ -51,7 +51,7 @@
  static char *nomem = "Out of memory!";
  static char *mmversion = MM_VERSTRING;
  static char *NoAskDefault = "text,text/plain,text/richtext";
-@@ -540,6 +545,7 @@
+@@ -540,6 +545,7 @@ int nestingdepth;
                      ans = 2;
                  } else {
                      printf("\nWhat do you want to do with the %s data?\n1 -- See it as text\n2 -- Write it to a file\n3 -- Just skip it\n\n", octetstream ? "raw" : ContentType);
@@ -59,7 +59,7 @@
                      fgets(Fname, sizeof(Fname), stdin);
                      ans = atoi(Fname);
                  }
-@@ -554,8 +560,10 @@
+@@ -554,8 +560,10 @@ int nestingdepth;
                              needname = 0;
                              printf("Please enter the name of a file to which the data should be written\n(Default: %s) > ", suggestedname);
                              fflush(stdout);
@@ -71,7 +71,7 @@
  #if !defined(AMIGA) && !defined(MSDOS)
                              if (!Fname[0]) strcpy(Fname, suggestedname);
                              if (Fname[0] == '~' && Fname[1] == '/') {
-@@ -579,10 +587,12 @@
+@@ -579,10 +587,12 @@ int nestingdepth;
                                  int overwriteans = -1;
                                  do {
                                      printf("File %s exists.  Do you want to overwrite it (y/n) ?\n", Fname);
@@ -85,7 +85,7 @@
                                          while (s && *s && isspace((unsigned char) *s)) ++s;
                                          if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') {
                                              overwriteans = 1;
-@@ -1202,9 +1212,9 @@
+@@ -1202,9 +1212,9 @@ char *SquirrelFile;
      fprintf(outfp, "Content-type: %s", ContentType);
      for (j=0; j<CParamsUsed; ++j) {
          fprintf(outfp, " ; ");
@@ -97,7 +97,7 @@
      }
      fprintf(outfp, "\n\n"); 
      TranslateInputToOutput(InputFP, outfp, EncodingCode, ContentType);
-@@ -1823,8 +1833,9 @@
+@@ -1823,8 +1833,9 @@ char *ctype, *progname, *label;
          } else {
              printf("This message contains '%s'-format data.\nDo you want to view it using the '%s' command (y/n) [y] ? ", ctype, ShortCommand(progname));
          }
@@ -108,7 +108,7 @@
  	while (s && *s && isspace((unsigned char) *s)) ++s;
  	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
  	if (*s == 'n' || *s == 'N' || *s == 'q' || *s == 'Q') {
-@@ -1915,18 +1926,18 @@
+@@ -1915,18 +1926,18 @@ char *hdr;
              if (!strcmp(KeyHeadList[numkeys], "*")
                   || !lc2strncmp(hdr, KeyHeadList[numkeys], len)) {
  		if (!KeyKeep) phead(hdr);
@@ -130,7 +130,7 @@
  	    }
  	}
  	if (KeyKeep) phead(hdr);
-@@ -2022,7 +2033,8 @@
+@@ -2022,7 +2033,8 @@ int ShowLeadingWhitespace;
      if (lc2strcmp(charset, PrevCharset)) {
          char *s2, *charsetinuse;
  
@@ -140,7 +140,7 @@
          for (s2=PrevCharset; *s2; ++s2) {
              if (isupper((unsigned char) *s2)) *s2 = tolower((unsigned char) *s2);
          }
-@@ -2032,7 +2044,7 @@
+@@ -2032,7 +2044,7 @@ int ShowLeadingWhitespace;
          }
      }
      if (ecode == ENCODING_NONE) {
@@ -149,7 +149,7 @@
      } else {
          /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
          MkTmpFileName(TmpFile);
-@@ -2375,8 +2387,8 @@
+@@ -2375,8 +2387,8 @@ char *Prefix;
  
  int HasSavedTtyState=0;
  #if !defined(AMIGA) && !defined(MSDOS)
@@ -160,7 +160,7 @@
  #else
  static struct sgttyb MyTtyStateIn, MyTtyStateOut;
  #endif
-@@ -2385,9 +2397,9 @@
+@@ -2385,9 +2397,9 @@ static struct sgttyb MyTtyStateIn, MyTty
  SaveTtyState() {
      /* Bogus -- would like a good portable way to reset the terminal state here */
  #if !defined(AMIGA) && !defined(MSDOS)
@@ -173,7 +173,7 @@
  #else
      gtty(fileno(stdin), &MyTtyStateIn);
      gtty(fileno(stdout), &MyTtyStateOut);
-@@ -2398,10 +2410,10 @@
+@@ -2398,10 +2410,10 @@ SaveTtyState() {
  
  RestoreTtyState() {
  #if !defined(AMIGA) && !defined(MSDOS)
@@ -187,7 +187,7 @@
      }
  #else
      if (HasSavedTtyState) {
-@@ -2660,7 +2672,7 @@
+@@ -2660,7 +2672,7 @@ PauseForUser() {
      char Buf[100];
  #endif
  
@@ -196,7 +196,7 @@
  #if defined(MSDOS) || defined(AMIGA)
      printf("Press RETURN to go on\n");
      gets(Buf);
-@@ -2681,15 +2693,15 @@
+@@ -2681,15 +2693,15 @@ PauseForUser() {
  
  StartRawStdin() {
  #if !defined(AMIGA) && !defined(MSDOS)

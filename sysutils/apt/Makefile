@@ -19,11 +19,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		gettext iconv gmake shebangfix
+USES=		bdb gettext iconv gmake shebangfix
 SHEBANG_FILES=	dselect/install \
 		dselect/setup \
 		dselect/update
-USE_BDB=	44+
 USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER} -I${LOCALBASE}/include

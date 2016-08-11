@@ -258,13 +258,13 @@ lib/girepository-1.0/WebKit2-3.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-3.0.typelib
 lib/libjavascriptcoregtk-3.0.so
 lib/libjavascriptcoregtk-3.0.so.0
-lib/libjavascriptcoregtk-3.0.so.0.16.17
+lib/libjavascriptcoregtk-3.0.so.0.16.19
 lib/libwebkit2gtk-3.0.so
 lib/libwebkit2gtk-3.0.so.25
-lib/libwebkit2gtk-3.0.so.25.10.12
+lib/libwebkit2gtk-3.0.so.25.10.14
 lib/libwebkitgtk-3.0.so
 lib/libwebkitgtk-3.0.so.0
-lib/libwebkitgtk-3.0.so.0.22.15
+lib/libwebkitgtk-3.0.so.0.22.17
 lib/webkit2gtk-3.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-3.0.pc
 libdata/pkgconfig/webkit2gtk-3.0.pc
@@ -320,7 +320,6 @@ share/gtk-doc/html/webkit2gtk/ch02.html
 share/gtk-doc/html/webkit2gtk/home.png
 share/gtk-doc/html/webkit2gtk/index-all.html
 share/gtk-doc/html/webkit2gtk/index.html
-share/gtk-doc/html/webkit2gtk/index.sgml
 share/gtk-doc/html/webkit2gtk/left-insensitive.png
 share/gtk-doc/html/webkit2gtk/left.png
 share/gtk-doc/html/webkit2gtk/right-insensitive.png
@@ -494,7 +493,6 @@ share/gtk-doc/html/webkitdomgtk/ch01.html
 share/gtk-doc/html/webkitdomgtk/home.png
 share/gtk-doc/html/webkitdomgtk/index-all.html
 share/gtk-doc/html/webkitdomgtk/index.html
-share/gtk-doc/html/webkitdomgtk/index.sgml
 share/gtk-doc/html/webkitdomgtk/left-insensitive.png
 share/gtk-doc/html/webkitdomgtk/left.png
 share/gtk-doc/html/webkitdomgtk/right-insensitive.png
@@ -567,7 +565,6 @@ share/gtk-doc/html/webkitgtk/index-1.3.8.html
 share/gtk-doc/html/webkitgtk/index-all.html
 share/gtk-doc/html/webkitgtk/index-deprecated.html
 share/gtk-doc/html/webkitgtk/index.html
-share/gtk-doc/html/webkitgtk/index.sgml
 share/gtk-doc/html/webkitgtk/left-insensitive.png
 share/gtk-doc/html/webkitgtk/left.png
 share/gtk-doc/html/webkitgtk/right-insensitive.png
@@ -600,6 +597,7 @@ share/locale/hi/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/hu/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/id/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/it/LC_MESSAGES/WebKitGTK-3.0.mo
+share/locale/ja/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/kn/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/ko/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/lt/LC_MESSAGES/WebKitGTK-3.0.mo
@@ -624,6 +622,7 @@ share/locale/te/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/WebKitGTK-3.0.mo
+share/locale/zh_TW/LC_MESSAGES/WebKitGTK-3.0.mo
 share/webkitgtk-3.0/images/deleteButton.png
 share/webkitgtk-3.0/images/inputSpeech.png
 share/webkitgtk-3.0/images/missingImage.png

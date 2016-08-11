@@ -12,14 +12,12 @@ COMMENT=	Unified interface to key/value stores
 
 NO_ARCH=	yes
 
-USES=		shebangfix
+USE_RUBY=	yes
+USES=		gem shebangfix
 SHEBANG_FILES=	script/install-kyotocabinet \
 		script/kill-travis \
 		script/start-services \
 		script/upload-bundle \
 		script/wait-services
-USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

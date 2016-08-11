@@ -9,6 +9,8 @@ EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE SKY iconset
 
+BROKEN=		does not fetch (403 forbidden)
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

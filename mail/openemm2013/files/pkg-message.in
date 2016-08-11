@@ -22,7 +22,7 @@ vi TOMCAT_HOME/conf/server.xml
 	<!-- add this part END -->
    </Engine>
 
-Don't forget securing tomcat, or add a httpd in front secured 
+Don't forget securing tomcat, or add a httpd in front secured
 
 # IMPORTANT sendmail is completly controlled from OpenEMM!
 # It stops and starts sendmail
@@ -36,7 +36,7 @@ ln -s /etc/rc.d/sendmail /etc/rc.d/
 chmod 644 /var/log/maillog
 
 # to keep this change permanent change cron info in /etc/newsyslog.conf
-# change line /var/log/maillog                      644  7     *    @T00  JC 
+# change line /var/log/maillog                      644  7     *    @T00  JC
 
 if not change tracking of mail sending / bounces is not working correct
 
@@ -44,7 +44,7 @@ if not change tracking of mail sending / bounces is not working correct
 ln -s %%PREFIX%%/share/java/classes/mysql-connector-java.jar TOMCAT_HOME/lib
 chown -h www TOMCAT_HOME/lib/mysql-connector-java.jar
 
-# setup the database scripts 
+# setup the database scripts
 
 in the installed mysql add 2 databases
 
@@ -52,7 +52,7 @@ create database openemm;
 create database openemm_cms;
 
 grant the privileges for the 2 db's from where you want to access
-grant all privileges on openemm.* to agnitas@'X.Y.%' identified by 'openemm'; 
+grant all privileges on openemm.* to agnitas@'X.Y.%' identified by 'openemm';
 grant all privileges on openemm_cms.* to agnitas@'X.Y.%' identified by 'openemm';
 
 flush privileges;
@@ -61,7 +61,7 @@ flush privileges;
 mysql -u root -p openemm < %%PREFIX%%/share/doc/openemm2013/openemm-2013.sql
 mysql -u root -p openemm_cms < %%PREFIX%%/share/doc/openemm2013/openemm_cms-2013.sql
 
-#additional config for db acces can be done 
+#additional config for db acces can be done
 %%PREFIX%%/openemm2013/webapps/openemm/WEB-INF/classes/emm.properties
 or
 %%PREFIX%%/openemm2013/webapps/openemm/WEB-INF/classes/cms.properties

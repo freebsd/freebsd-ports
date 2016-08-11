@@ -8,12 +8,12 @@
   recursively following links.
 - A table of contents can be generated, either from the links in a document,
   or automatically from document headings.
-- Configurable page headers/footers, that for example can contain 
-  document title, URL, page number, current heading, and date. 
-- When converting the PostScript document to PDF - using some other 
+- Configurable page headers/footers, that for example can contain
+  document title, URL, page number, current heading, and date.
+- When converting the PostScript document to PDF - using some other
   program such as version 5.0 or later of Aladdin Ghostscript, or
-  Adobe Acrobat Distiller - the original hyperlinks in the HTML 
-  documents will be retained in the PDF document. 
-- Automatic hyphenation and text justification can be selected. 
+  Adobe Acrobat Distiller - the original hyperlinks in the HTML
+  documents will be retained in the PDF document.
+- Automatic hyphenation and text justification can be selected.
 
 WWW: http://www.tdb.uu.se/~jan/html2ps.html

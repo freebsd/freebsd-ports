@@ -1,5 +1,5 @@
    The program adds nicely shaped icons a little bit like those of window
-manager. You can launch programs by clicking on them. The layout of the icons 
+manager. You can launch programs by clicking on them. The layout of the icons
 is remembered and restored on the next run.
 
  Right now I have put into tycoon support for OffiX drag-and-drop,

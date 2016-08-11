@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
+DISTVERSIONPREFIX=	v
 PORTREVISION?=	0
 CATEGORIES=	security
 USE_GITHUB=	yes
@@ -28,41 +29,57 @@ GROUPS=		ossec
 
 .if !defined(CLIENT_ONLY)
 OPTIONS_DEFINE=	MYSQL PGSQL
+
+MYSQL_VARS=	WITH_DB=yes
+MYSQL_USE=	MYSQL=client
+MYSQL_PORTDOCS=	mysql.schema
+
+PGSQL_VARS=	WITH_DB=yes
+PGSQL_USES=	pgsql
+PGSQL_PORTDOCS=	postgresql.schema
+
+RUN_DEPENDS=	expect:lang/expect
+
+USES+=		shebangfix
+SHEBANG_LANG=	expect
+expect_OLD_CMD=	"/usr/bin/env expect"
+expect_CMD=	${LOCALBASE}/bin/expect
+SHEBANG_FILES=	src/agentlessd/scripts/main.exp \
+		src/agentlessd/scripts/ssh.exp \
+		src/agentlessd/scripts/ssh_asa-fwsmconfig_diff \
+		src/agentlessd/scripts/ssh_foundry_diff \
+		src/agentlessd/scripts/ssh_generic_diff \
+		src/agentlessd/scripts/ssh_integrity_check_bsd \
+		src/agentlessd/scripts/ssh_integrity_check_linux \
+		src/agentlessd/scripts/ssh_nopass.exp \
+		src/agentlessd/scripts/ssh_pixconfig_diff \
+		src/agentlessd/scripts/sshlogin.exp \
+		src/agentlessd/scripts/su.exp
 .endif
 OPTIONS_DEFINE+=	DOCS
 
 SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	PORTNAME=${PORTNAME}
-PORTDOCS=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE
+DOCSFILES=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE
+PORTDOCS=	${DOCSFILES}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(CLIENT_ONLY)
-.if ${PORT_OPTIONS:MMYSQL}
-WITH_DB=	yes
-USE_MYSQL=	client
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-WITH_DB=	yes
-USES+=		pgsql
-.endif
-.endif
 
 STRIP_FILES=	ossec-luac agent_control ossec-lua ossec-dbd ossec-regex ossec-monitord ossec-makelists verify-agent-conf ossec-analysisd ossec-agentlessd syscheck_control ossec-execd manage_agents ossec-csyslogd ossec-syscheckd ossec-logtest ossec-authd ossec-logcollector list_agents ossec-maild clear_stats ossec-remoted ossec-reportd rootcheck_control syscheck_update
 .if defined(CLIENT_ONLY)
 SUB_LIST+=	PRECMD=:
 PKGNAMESUFFIX=	-client
-CONFLICTS=	ossec-hids-server-[0-9]* ossec-hids-local-[0-9]*
+CONFLICTS_INSTALL=	ossec-hids-server-[0-9]* ossec-hids-local-[0-9]*
 STRIP_FILES=	agent-auth manage_agents ossec-agentd ossec-execd ossec-logcollector ossec-lua ossec-luac ossec-syscheckd
 .elif defined(LOCAL_ONLY)
 SUB_LIST+=	PRECMD=ossechids_start_precmd
 PKGNAMESUFFIX=	-local
-CONFLICTS=	ossec-hids-client-[0-9]* ossec-hids-server-[0-9]*
+CONFLICTS_INSTALL=	ossec-hids-client-[0-9]* ossec-hids-server-[0-9]*
 .else
 SUB_LIST+=	PRECMD=ossechids_start_precmd
-CONFLICTS=	ossec-hids-client-[0-9]* ossec-hids-local-[0-9]*
+CONFLICTS_INSTALL=	ossec-hids-client-[0-9]* ossec-hids-local-[0-9]*
 .endif
 
 post-patch:
@@ -116,6 +133,14 @@ do-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCSFILES} ${STAGEDIR}${DOCSDIR}
+
+post-install-MYSQL-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} src/os_dbd/mysql.schema ${STAGEDIR}${DOCSDIR}
+
+post-install-PGSQL-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} src/os_dbd/postgresql.schema ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

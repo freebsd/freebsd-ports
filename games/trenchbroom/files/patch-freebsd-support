@@ -42,6 +42,17 @@
              }
  #endif
              
+--- common/src/View/ViewConstants.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/ViewConstants.cpp
+@@ -32,7 +32,7 @@ namespace TrenchBroom {
+ 
+             const wxColour& highlightText() {
+                 static const wxColour col =
+-#if defined __APPLE__
++#if defined __APPLE__ || defined __FreeBSD__
+                 wxColour(26, 79, 189);
+ #else
+                 wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT);
 --- common/src/View/KeyboardShortcut.cpp.orig	2016-03-09 20:19:17 UTC
 +++ common/src/View/KeyboardShortcut.cpp
 @@ -74,7 +74,7 @@ namespace TrenchBroom {

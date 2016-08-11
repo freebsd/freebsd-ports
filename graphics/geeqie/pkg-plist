@@ -20,6 +20,7 @@ share/locale/ca/LC_MESSAGES/geeqie.mo
 share/locale/cs/LC_MESSAGES/geeqie.mo
 share/locale/da/LC_MESSAGES/geeqie.mo
 share/locale/de/LC_MESSAGES/geeqie.mo
+share/locale/el/LC_MESSAGES/geeqie.mo
 share/locale/eo/LC_MESSAGES/geeqie.mo
 share/locale/es/LC_MESSAGES/geeqie.mo
 share/locale/et/LC_MESSAGES/geeqie.mo
@@ -43,6 +44,7 @@ share/locale/sr/LC_MESSAGES/geeqie.mo
 share/locale/sr@latin/LC_MESSAGES/geeqie.mo
 share/locale/sv/LC_MESSAGES/geeqie.mo
 share/locale/th/LC_MESSAGES/geeqie.mo
+share/locale/tlh/LC_MESSAGES/geeqie.mo
 share/locale/tr/LC_MESSAGES/geeqie.mo
 share/locale/uk/LC_MESSAGES/geeqie.mo
 share/locale/vi/LC_MESSAGES/geeqie.mo

@@ -1,5 +1,5 @@
---- src/glocal/score.cpp.orig	2006-09-15 05:40:19.000000000 +0900
-+++ src/glocal/score.cpp	2012-10-03 00:22:50.000000000 +0900
+--- src/glocal/score.cpp.orig	2006-09-14 20:40:19 UTC
++++ src/glocal/score.cpp
 @@ -2,7 +2,7 @@
  #include<score.h>
  #include<leftinfluence.h>

@@ -1,6 +1,6 @@
---- libavutil/x86/asm.h.orig	2013-11-07 22:15:35.000000000 +0100
-+++ libavutil/x86/asm.h	2013-11-07 22:15:52.000000000 +0100
-@@ -68,7 +68,7 @@
+--- libavutil/x86/asm.h.orig	2016-05-25 00:36:32 UTC
++++ libavutil/x86/asm.h
+@@ -70,7 +70,7 @@ typedef int32_t x86_reg;
  typedef int x86_reg;
  #endif
  

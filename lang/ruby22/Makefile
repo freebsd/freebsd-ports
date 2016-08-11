@@ -18,6 +18,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
@@ -96,13 +98,13 @@ CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .endif
 
+.if ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
+USE_GCC=	4.9+
+.endif
+
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
 CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
-.endif
-
-.if ${PORT_OPTIONS:MCAPIDOCS}
-MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
@@ -235,9 +237,9 @@ regression-test test:
 
 validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
-	rm -rf ${WRKSRC}/rubyspec/*
+	${RM} -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
-	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)
+	(cd ${WRKSRC}/rubyspec/rubyspec && ${SETENV} PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)
 
 .include <bsd.port.post.mk>

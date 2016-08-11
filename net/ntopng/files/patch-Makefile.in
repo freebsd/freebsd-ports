@@ -1,0 +1,160 @@
+--- Makefile.in.orig	2016-05-05 13:23:53 UTC
++++ Makefile.in
+@@ -9,72 +9,28 @@ INSTALL_DIR=$(DESTDIR)$(prefix)
+ MAN_DIR=$(DESTDIR)@MAN_DIR@
+ 
+ ######
+-HAS_NDPI=$(shell pkg-config --exists libndpi; echo $$?)
+-ifeq ($(HAS_NDPI), 0)
+-    NDPI_INC = $(shell pkg-config --cflags libndpi | sed -e 's/\(-I[^ \t]*\)/\1\/libndpi/g')
+-    NDPI_LIB = $(shell pkg-config --libs libndpi)
+-    NDPI_LIB_DEP =
+-else
+-    NDPI_INC=-I@NDPI_HOME@/src/include
+-    NDPI_LIB=@NDPI_HOME@/src/lib/.libs/libndpi.a
+-    NDPI_LIB_DEP=$(NDPI_LIB)
+-endif
++NDPI_INC = $(shell pkg-config --cflags libndpi | sed -e 's/\(-I[^ \t]*\)/\1\/libndpi/g')
++NDPI_LIB = $(shell pkg-config --libs libndpi)
++NDPI_LIB_DEP =
+ ######
+ LIBPCAP=-lpcap
+ ######
+ MONGOOSE_HOME=${PWD}/third-party/mongoose
+ MONGOOSE_INC=-I$(MONGOOSE_HOME)
+ ######
+-HAS_LUAJIT=$(shell pkg-config --exists luajit; echo $$?)
+-ifeq ($(HAS_LUAJIT), 0)
+-	LUAJIT_INC = $(shell pkg-config --cflags luajit)
+-	LUAJIT_LIB = $(shell pkg-config --libs luajit)
+-else
+-	LUAJIT_HOME=${PWD}/third-party/LuaJIT-2.0.3
+-	LUAJIT_INC=-I$(LUAJIT_HOME)/src
+-	LUAJIT_LIB=$(LUAJIT_HOME)/src/libluajit.a
+-endif
++LUAJIT_INC = $(shell pkg-config --cflags luajit)
++LUAJIT_LIB = $(shell pkg-config --libs luajit)
+ ######
+-LIBRRDTOOL_HOME=${PWD}/third-party/rrdtool-1.4.8
+-HAS_LIBRRDTOOL=$(shell pkg-config --exists librrd; echo $$?)
+-ifeq ($(HAS_LIBRRDTOOL), 0)
+-	LIBRRDTOOL_INC = $(shell pkg-config --cflags librrd)
+-	LIBRRDTOOL_LIB = $(shell pkg-config --libs librrd)
+-else
+-	LIBRRDTOOL_INC=-I$(LIBRRDTOOL_HOME)/src/
+-	ifeq ($(OS), OpenBSD)
+-		LIBRRDTOOL_LIB=$(LIBRRDTOOL_HOME)/src/.libs/librrd_th.a -lm -lgobject-2.0 -lgmodule-2.0 -lglib-2.0	
+-	else
+-		LIBRRDTOOL_LIB=$(LIBRRDTOOL_HOME)/src/.libs/librrd_th.a -lm -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0
+-	endif
+-endif
++LIBRRDTOOL_INC = $(shell pkg-config --cflags librrd)
++LIBRRDTOOL_LIB = $(shell pkg-config --libs librrd)
+ ######
+ HTTPCLIENT_INC=${PWD}/third-party/http-client-c/src/
+ ######
+-HAS_JSON=$(shell pkg-config --exists json-c; echo $$?)
+-ifeq ($(HAS_JSON), 0)
+-	JSON_INC = $(shell pkg-config --cflags json-c)
+-	JSON_LIB = $(shell pkg-config --libs json-c)
+-else
+-	JSON_HOME=${PWD}/third-party/json-c
+-	JSON_INC=-I$(JSON_HOME)
+-	JSON_LIB=$(JSON_HOME)/.libs/libjson-c.a
+-endif
++JSON_INC = $(shell pkg-config --cflags json-c)
++JSON_LIB = $(shell pkg-config --libs json-c)
+ ######
+-HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
+-ifeq ($(HAS_ZEROMQ), 0)
+-	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
+-	ZMQ_STATIC=/usr/local/lib/libzmq.a
+-	ifeq ($(wildcard $(ZMQ_STATIC)),)
+-		ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
+-	else
+-		ZEROMQ_LIB = $(ZMQ_STATIC)
+-	endif
+-else
+-	ZEROMQ_HOME=${PWD}/third-party/zeromq-4.1.3
+-	ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
+-	ZEROMQ_LIB=$(ZEROMQ_HOME)/.libs/libzmq.a
+-endif
++ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
++ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
+ ######
+ TARGET = ntopng
+ LIBS = $(NDPI_LIB) $(LIBPCAP) $(LUAJIT_LIB) $(LIBRRDTOOL_LIB) $(ZEROMQ_LIB) $(JSON_LIB) @HIREDIS_LIB@ @SQLITE_LIB@ @MYSQL_LIB@ @LINK_OPTS@ @GEOIP_LIB@ @LDFLAGS@ @PRO_LIBS@ -lm -lpthread
+@@ -93,29 +49,11 @@ ifeq ($(OS),Darwin)
+ LIBS += -lstdc++.6
+ endif
+ 
+-LIB_TARGETS =
+-
+-ifneq ($(HAS_LUAJIT), 0)
+-LIB_TARGETS += $(LUAJIT_LIB)
+- endif
+-
+-ifneq ($(HAS_ZEROMQ), 0)
+-LIB_TARGETS += $(ZEROMQ_LIB)
+-endif
+-
+-ifneq ($(HAS_LIBRRDTOOL), 0)
+-LIB_TARGETS += $(LIBRRDTOOL_LIB)
+-endif
+-
+-ifneq ($(HAS_JSON), 0)
+-LIB_TARGETS += $(JSON_LIB)
+-endif
+-
+ .PHONY: default all clean docs test
+ 
+ .NOTPARALLEL: default all
+ 
+-default: $(NDPI_LIB_DEP) $(LIB_TARGETS) $(TARGET)
++default: $(TARGET)
+ 
+ all: default
+ 
+@@ -133,19 +71,6 @@ HEADERS = $(wildcard include/*.h) @PRO_H
+ $(TARGET): $(OBJECTS) $(LIBRRDTOOL) Makefile
+ 	$(GPP) $(OBJECTS) -Wall $(LIBS) -o $@
+ 
+-$(LUAJIT_LIB):
+-	cd $(LUAJIT_HOME); @GMAKE@
+-
+-$(ZEROMQ_LIB):
+-	cd $(ZEROMQ_HOME); ./configure --without-documentation --without-libsodium; @GMAKE@
+-
+-# --disable-rrd_graph
+-$(LIBRRDTOOL_LIB):
+-	cd $(LIBRRDTOOL_HOME); ./configure --disable-libdbi --disable-libwrap --disable-rrdcgi --disable-libtool-lock --disable-nls --disable-rpath --disable-perl --disable-ruby --disable-lua --disable-tcl --disable-python --disable-dependency-tracking --disable-rrd_graph ; cd src; @GMAKE@ librrd_th.la
+-
+-$(JSON_LIB):
+-	cd $(JSON_HOME); ./autogen.sh; ./configure; @GMAKE@
+-
+ clean:
+ 	-rm -f src/*.o src/*~ include/*~ *~ #config.h
+ 	-rm -f $(TARGET)
+@@ -155,18 +80,15 @@ cert:
+ 	cat privkey.pem cert.pem > httpdocs/ssl/ntopng-cert.pem
+ 	/bin/rm -f privkey.pem cert.pem
+ 
+-veryclean: clean
+-	-rm -rf nDPI
+-
+ geoip:
+ 	@if test -d ~/dat_files ; then \
+ 	  cp ~/dat_files/* httpdocs/geoip; gunzip -f httpdocs/geoip/*.dat.gz ; \
+ 	else \
+ 	  cd httpdocs/geoip; \
+-	  wget -nc http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz; \
+-	  wget -nc http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz; \
+-	  wget -nc http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz; \
+-	  wget -nc http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNumv6.dat.gz; \
++	  fetch http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz; \
++	  fetch http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz; \
++	  fetch http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz; \
++	  fetch http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNumv6.dat.gz; \
+ 	  gunzip -f *.dat.gz ; \
+ 	fi
+ 

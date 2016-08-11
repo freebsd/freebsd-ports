@@ -13,6 +13,7 @@ COMMENT=	Is an application, language, and network arch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
 BROKEN_armv6=	does not build
 BROKEN_mips=	does not build (tests segfault)
 BROKEN_mips64=	does not build (tests segfault)

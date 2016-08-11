@@ -1,6 +1,6 @@
-tcpxd is a general purpose TCP/IP relay program designed 
-to be simple to get going, requiring only three parameters; 
-the port to listen on, the host to forward to, and the port 
+tcpxd is a general purpose TCP/IP relay program designed
+to be simple to get going, requiring only three parameters;
+the port to listen on, the host to forward to, and the port
 on that host to connect to.
 
 WWW: http://quozl.us.netrek.org/tcpxd/

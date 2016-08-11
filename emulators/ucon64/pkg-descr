@@ -1,6 +1,6 @@
 uCON64 is the video game backup tool and emulator Swiss Army knife program.
-It supports almost every system (Consoles, Handheld, and Arcade) with very 
-verbose ROM information, ROM and SRAM convertion to various backup tool 
+It supports almost every system (Consoles, Handheld, and Arcade) with very
+verbose ROM information, ROM and SRAM convertion to various backup tool
 formats, IPS/APS/BSL/PPF patching, bad dump detection via RomCenter DAT files,
 and more.
 

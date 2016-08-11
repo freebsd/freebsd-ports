@@ -3,12 +3,15 @@
 
 PORTNAME=	objecthash
 PORTVERSION=	20160121
+PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-language way to cryptographically hash JSON objects
 
 LICENSE=	APACHE20
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libjson-c.so:devel/json-c

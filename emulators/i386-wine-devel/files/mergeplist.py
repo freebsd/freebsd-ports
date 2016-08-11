@@ -101,8 +101,9 @@ def gen_list(plists):
             plists[i] = OrderedSet(line.strip() for line in file.readlines())
     empty = sum(len(plist) == 0 for plist in plists)
     while empty < plists_len:
-        line = plists[0].peek()
         # Test if the top of the plists are all common
+        if not empty:
+            line = plists[0].peek()
         if not empty and all(line == plist.peek() for plist in plists):
             yield line
             for plist in plists:

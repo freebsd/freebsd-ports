@@ -3,8 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.071.0
-PORTREVISION=	1
+PORTVERSION=	2.071.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -34,6 +33,8 @@ LICENSE=	ART10 DMD BSL
 LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
+BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	DOCS
 

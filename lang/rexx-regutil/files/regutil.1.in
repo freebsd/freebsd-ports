@@ -1,4 +1,4 @@
-.Dd September 3, 2010
+.Dd May 8, 2016
 .Dt REGUTIL 1 CON
 .Os
 .Sh NAME
@@ -11,10 +11,14 @@ These closely mirror the functions contained in the
 .Em RexxUtil
 library provided
 on IBM systems (e.g. OS/2).
+As it stands,
+.Nm
+will not work with another REXX interpreter.
 .Pp
 Details of usage are in the full manual, which is normally found at:
 .br
 .Pa %%DOCSDIR%%/regutil.pdf
+(if installed).
 .Sh SEE ALSO
 The original author's web site at
 .Em http://pages.interlog.com/~pjtm/

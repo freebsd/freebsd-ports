@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-PORTREVISION=	1
-DISTVERSION=	0.46-7
+DISTVERSION=	0.47-1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
@@ -24,7 +23,6 @@ USES=		autoreconf gettext gmake libtool pkgconfig shebangfix \
 		tcl:wrapper tk:wrapper
 SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
 SHEBANG_LANG=	tclsh
-tclsh_OLD_CMD=	/usr/bin/tclsh
 tclsh_CMD=	${LOCALBASE}/bin/tclsh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
@@ -32,9 +30,10 @@ CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" false
+DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" ${FALSE}
 
 OPTIONS_DEFINE=		ALSA DOCS JACK
+OPTIONS_DEFAULT=	JACK
 
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -44,8 +43,9 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack
 post-patch:
 	${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|__FreeBSD_kernel__|__FreeBSD__|g ; \
-		 s|__x86_64__|__amd64__|g ; \
-		 s|<alloca\.h>|<stdlib.h>|g'
+		 s|__x86_64__|__amd64__|g'
+	${FIND} ${WRKSRC}/extra -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		 's|<alloca\.h>|<stdlib.h>|g'
 	${REINPLACE_CMD} -e \
 		's|\*kfreebsd\*gnu\*)|*freebsd*)| ; \
 		 s|portaudio=yes|portaudio=no| ; \
@@ -64,10 +64,6 @@ post-patch:
 		's|-O2 | | ; \
 		 s|-lc ||g' ${WRKSRC}/extra/makefile.subdir
 	${REINPLACE_CMD} -e \
-		's|-O2 |$$(CFLAGS) | ; \
-		 s|-g ||g ; \
-		 s|-lc ||g' ${WRKSRC}/extra/expr~/makefile
-	${REINPLACE_CMD} -e \
 		'/libpthread/s|_ERROR|_WARN|' ${WRKSRC}/portaudio/configure.in
 
 do-install:
@@ -83,7 +79,7 @@ do-install:
 .for i in LICENSE.txt README.txt
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/pd/doc
+	${LN} -sf ../../${DOCSDIR_REL} ${STAGEDIR}${PREFIX}/lib/pd/doc
 	${FIND} ${STAGEDIR}${PREFIX}/lib/pd -name "*.pd_linux" | ${XARGS} \
 		${STRIP_CMD}
 

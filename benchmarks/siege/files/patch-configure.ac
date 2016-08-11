@@ -1,4 +1,4 @@
---- configure.ac.orig	2016-03-25 13:07:35 UTC
+--- configure.ac.orig	2016-05-20 11:41:06 UTC
 +++ configure.ac
 @@ -12,6 +12,7 @@ AC_CONFIG_AUX_DIR(utils)  
  AM_INIT_AUTOMAKE

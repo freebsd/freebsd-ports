@@ -1,6 +1,6 @@
---- /usr/ports/audio/ascd/work/ascd-0.13.2/faktory.c	Mon Jul  5 20:52:38 1999
-+++ faktory.c	Sat Sep  2 17:26:31 2000
-@@ -58,9 +58,9 @@
+--- faktory.c.orig	1999-07-05 16:52:38 UTC
++++ faktory.c
+@@ -58,9 +58,9 @@ int fak_parse_line(char *ligne, char *ke
      unsigned int pos = 0;
  
      if ((strlen(ligne) > 0) && (ligne[0] != '#')) {

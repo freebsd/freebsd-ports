@@ -1,5 +1,5 @@
---- cffolder.cpp.orig	1999-10-24 02:13:29.000000000 -0400
-+++ cffolder.cpp	2014-02-21 15:53:49.255245183 -0500
+--- cffolder.cpp.orig	1999-10-24 06:13:29 UTC
++++ cffolder.cpp
 @@ -17,7 +17,7 @@
  #ifndef __CFFOLDER_CPP__
  #define __CFFOLDER_CPP__
@@ -9,7 +9,7 @@
  #include "cftypes.h"
  #include "cfheader.h"
  #include "cffolder.h"
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ Error cabinet_folder_header::read(istrea
  			ra_size = cab_header.get_folder_ra_size();
  			reserved_area = new byte[ra_size];
  
@@ -18,7 +18,7 @@
  			{
  				return (in.fail()) ? READ_ERROR : UNEXPECTED_EOF;
  			}
-@@ -90,7 +90,7 @@
+@@ -90,7 +90,7 @@ Error cabinet_folder_header::write(ostre
  
  	if(ra_size)					// If reserved area present
  	{

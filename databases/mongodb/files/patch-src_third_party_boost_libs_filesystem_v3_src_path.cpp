@@ -1,5 +1,5 @@
---- src/third_party/boost/libs/filesystem/v3/src/path.cpp.orig	2013-04-22 16:48:39.000000000 +0200
-+++ src/third_party/boost/libs/filesystem/v3/src/path.cpp	2013-05-03 14:46:44.000000000 +0200
+--- src/third_party/boost/libs/filesystem/v3/src/path.cpp.orig	2016-03-21 17:09:46.000000000 +0100
++++ src/third_party/boost/libs/filesystem/v3/src/path.cpp	2016-05-02 12:44:35.410331831 +0200
 @@ -35,7 +35,7 @@
  #ifdef BOOST_WINDOWS_API
  # include "windows_file_codecvt.hpp"
@@ -9,7 +9,7 @@
  # include <boost/filesystem/detail/utf8_codecvt_facet.hpp>
  #endif
  
-@@ -766,7 +766,7 @@
+@@ -766,7 +766,7 @@ namespace
      codecvt_facet(&std::use_facet<std::codecvt<wchar_t, char, std::mbstate_t> >
        (path_locale));
  
@@ -18,7 +18,7 @@
  
    // "All BSD system functions expect their string parameters to be in UTF-8 encoding
    // and nothing else." See
-@@ -822,7 +822,7 @@
+@@ -822,7 +822,7 @@ namespace filesystem3
    const path::codecvt_type*& path::wchar_t_codecvt_facet()
    {
  #   if defined(BOOST_POSIX_API) && \

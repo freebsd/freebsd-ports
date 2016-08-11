@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.upgrade
-PORTVERSION=	1.3.19
+PORTVERSION=	1.3.22
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:security/py-borg.localrole
 		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>=2.13.4:devel/py-Products.ZCatalog
 
 NO_ARCH=	yes
-USES=		python zope
+USES=		python:2.7 zope
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

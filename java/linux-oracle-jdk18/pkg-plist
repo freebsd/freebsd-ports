@@ -10,6 +10,7 @@
 %%T%%/bin/jar
 %%T%%/bin/jarsigner
 %%T%%/bin/java
+@javavm %%T%%/bin/java
 %%T%%/bin/java-rmi.cgi
 %%T%%/bin/javac
 %%T%%/bin/javadoc
@@ -1730,6 +1731,9 @@
 %%T%%/jre/lib/i386/libattach.so
 %%T%%/jre/lib/i386/libavplugin-53.so
 %%T%%/jre/lib/i386/libavplugin-54.so
+%%T%%/jre/lib/i386/libavplugin-55.so
+%%T%%/jre/lib/i386/libavplugin-56.so
+%%T%%/jre/lib/i386/libavplugin-ffmpeg-56.so
 %%T%%/jre/lib/i386/libawt.so
 %%T%%/jre/lib/i386/libawt_headless.so
 %%T%%/jre/lib/i386/libawt_xawt.so
@@ -3413,7 +3417,5 @@
 %%DEMO%%%%T%%/sample/webservices/EbayServer/src/ebay/server/ImageProvider.java
 %%DEMO%%%%T%%/sample/webservices/EbayServer/src/ebay/server/Main.java
 %%T%%/src.zip
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Oracle-JDK%%PORTVERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dir %%T%%/jre/lib/applet
 @dir %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.data

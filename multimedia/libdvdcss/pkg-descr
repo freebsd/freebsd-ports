@@ -1,5 +1,5 @@
 libdvdcss is a simple library designed for accessing DVDs like a block device
-without having to bother about the decryption. The important features are: 
+without having to bother about the decryption. The important features are:
 
    - Portability. Currently supported platforms are GNU/Linux, FreeBSD, BeOS
      and Windows.

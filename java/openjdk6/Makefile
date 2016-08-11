@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b38
+PORTVERSION=	b39
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
@@ -27,10 +27,10 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	20_jan_2016
+OPENJDK_BUILDDATE=	03_may_2016
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
-OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
+OPTIONS_DEFAULT=ICEDTEA TZUPDATE
 ICEDTEA_DESC=	Apply additional patches from IcedTea
 POLICY_DESC=	Install the Unlimited Strength Policy Files
 SOUND_DESC=	Enable sound support
@@ -45,9 +45,6 @@ DEBUG_DESC=	Enable legacy debugging support
 FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
 .endif
-
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
 
 USES=		compiler gmake iconv motif tar:xz
 
@@ -320,8 +317,6 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}
 .endif
 .endif
-	@${ECHO_CMD} "#!/bin/sh" > ${PKGDEINSTALL}
-	@${ECHO_CMD} "#!/bin/sh" > ${PKGINSTALL}
 .if defined(BUILD_JRE)
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -not -type d | \
@@ -329,8 +324,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6-jre/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"' >> ${PKGINSTALL}
+	@${ECHO_CMD} '@javavm ${PREFIX}/openjdk6-jre/bin/java' >> ${TMPPLIST}
 .else
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -not -type d | \
@@ -338,8 +332,7 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} '@javavm ${PREFIX}/openjdk6/bin/java' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -not -type d | \
@@ -347,11 +340,8 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -type d -empty | \
 	    ${SED} 's,^\./,@dir openjdk6-fastdebug/,' >> ${TMPPLIST}
-	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} "@javavm ${PREFIX}/openjdk6-fastdebug/bin/java" >> ${TMPPLIST}
 .endif
 .endif
-	@${ECHO_CMD} "exit 0" >> ${PKGDEINSTALL}
-	@${ECHO_CMD} "exit 0" >> ${PKGINSTALL}
 
 .include <bsd.port.post.mk>

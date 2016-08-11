@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-freebsdport
 PORTREVISION=	2
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Powerful e-book reader
 
 LICENSE=	GPLv2+
@@ -27,9 +27,8 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		compiler gmake iconv pkgconfig tar:tgz
+USES=		compiler gmake iconv pkgconfig sqlite tar:tgz
 USE_LDCONFIG=	yes
-USE_SQLITE=	yes
 
 INSTALL_TARGET=	do_install
 

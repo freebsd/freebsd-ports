@@ -1,5 +1,5 @@
 This is yet another Getopt related module. Getopt::Compact is geared towards
-compactly and yet quite powerfully describing an option syntax. Options can 
+compactly and yet quite powerfully describing an option syntax. Options can
 be parsed, returned as a hashref of values, and/or displayed as a usage string
 or within the script POD.
 

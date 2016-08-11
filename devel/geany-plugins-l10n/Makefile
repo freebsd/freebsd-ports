@@ -4,7 +4,7 @@ PORTNAME=	geany-plugins-l10n
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Localization messages for Geany plugins
 
 NO_ARCH=	yes

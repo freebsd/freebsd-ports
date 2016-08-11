@@ -1,7 +1,7 @@
-Libsx is a library of code that sits on top of and to the side of the 
-Athena widget set.  Its purpose is to make writing X applications 
-*much* easier.  To accomplish this, libsx encapsulates a large 
-portion of the uglier details that arise while programming in X and 
-it fills in some gaps that exist with the Athena Widget set (such as 
-a widget for drawing graphics); libsx tries to simplify the common 
+Libsx is a library of code that sits on top of and to the side of the
+Athena widget set.  Its purpose is to make writing X applications
+*much* easier.  To accomplish this, libsx encapsulates a large
+portion of the uglier details that arise while programming in X and
+it fills in some gaps that exist with the Athena Widget set (such as
+a widget for drawing graphics); libsx tries to simplify the common
 case down to a single function call with only a few arguments.

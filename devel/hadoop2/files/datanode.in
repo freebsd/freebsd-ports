@@ -22,10 +22,12 @@ load_rc_config "${name}"
 : ${datanode_user:=%%HDFS_USER%%}
 
 command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 command_args='--config %%ETCDIR%% start datanode'
 
 start_postcmd="start_postcmd"
 stop_cmd=datanode_stop
+status_precmd=find_pid
 
 start_postcmd () {
   rc_pid=$(check_pidfile ${pidfile} %%JAVA_HOME%%/bin/java)
@@ -36,6 +38,10 @@ start_postcmd () {
 
 datanode_stop () {
   su -m ${datanode_user} -c "${command} --config %%ETCDIR%% stop datanode"
+}
+
+find_pid () {
+  rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
 }
 
 run_rc_command "$1"

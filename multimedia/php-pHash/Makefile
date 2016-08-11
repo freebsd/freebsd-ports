@@ -3,6 +3,7 @@
 
 PORTNAME=	pHash
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	http://phash.org/releases/ \
 		http://www.cyberbotx.com/pHash/
@@ -16,10 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpHash.so:multimedia/pHash
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext
 
 WRKSRC_SUBDIR=	bindings/php
 

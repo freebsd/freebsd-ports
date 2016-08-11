@@ -8,6 +8,8 @@ PKGNAMESUFFIX=	-libss
 MAINTAINER=	kaduk-fbsd@mit.edu
 COMMENT=	Command-line interface parsing library from e2fsprogs
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS=	heimdal-[0-9]*
 CONFLICTS+=	krb4-[0-9]*
 

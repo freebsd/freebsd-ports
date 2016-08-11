@@ -2,6 +2,7 @@ lib/rivet/init.tcl
 lib/rivet/librivetlib.so
 lib/rivet/librivetparser.so
 lib/rivet/packages/README
+lib/rivet/packages/asciiglyphs/asciiglyphs.tcl
 lib/rivet/packages/calendar/calendar.tcl
 lib/rivet/packages/commserver/commserver.tcl
 lib/rivet/packages/commserver/server.tcl
@@ -37,6 +38,7 @@ lib/rivet/packages/tclrivet/tclrivet.tcl
 lib/rivet/packages/tclrivet/tclrivetparser.tcl
 lib/rivet/pkgIndex.tcl
 lib/rivet/rivet-tcl/README
+lib/rivet/rivet-tcl/catch.tcl
 lib/rivet/rivet-tcl/cookie.tcl
 lib/rivet/rivet-tcl/debug.tcl
 lib/rivet/rivet-tcl/html.tcl
@@ -55,6 +57,7 @@ lib/rivet/rivet-tcl/read_file.tcl
 lib/rivet/rivet-tcl/redirect.tcl
 lib/rivet/rivet-tcl/rivet_command_document.tcl
 lib/rivet/rivet-tcl/tclIndex
+lib/rivet/rivet-tcl/try.tcl
 lib/rivet/rivet-tcl/wrap.tcl
 lib/rivet/rivet-tcl/xml.tcl
 %%APACHEMODDIR%%/mod_rivet.so

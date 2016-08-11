@@ -13,7 +13,7 @@ COMMENT=	Perl bindings for Qt
 LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5
 
-USE_KDE4=	kdeprefix smokeqt qimageblitz
+USE_KDE4=	smokeqt qimageblitz
 USE_QT4=	corelib dbus gui network xml \
 		qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource perl5 tar:xz

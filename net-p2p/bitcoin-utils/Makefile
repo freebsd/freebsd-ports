@@ -18,8 +18,7 @@ CONFIGURE_ARGS=	--without-daemon \
 		--without-libs \
 		--without-qrencode \
 		--with-utils \
-		--disable-wallet \
-		--disable-reduce-exports
+		--disable-wallet
 
 PLIST_FILES=	bin/bitcoin-cli bin/bitcoin-tx
 

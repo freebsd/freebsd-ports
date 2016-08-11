@@ -1,0 +1,38 @@
+--- base/configure.ac.orig	2012-08-08 08:01:36 UTC
++++ base/configure.ac
+@@ -1303,7 +1303,7 @@ X_CFLAGS=""
+ X_DEVS=""
+ X_LIBS=""
+ 
+-if test x$no_x != xyes; then
++if test x$with_x != xno; then
+         if test "$x_libraries" = "/usr/lib"; then
+                 echo "Ignoring X library directory \"$x_libraries\" requested by configure."
+                 x_libraries="NONE"
+@@ -1701,7 +1701,10 @@ AC_ARG_ENABLE([dynamic], AC_HELP_STRING(
+                         DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
+                         ;;
+                         *BSD)
+-                        DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++	 		if test "x$X_DEVS" != x; then
++				INSTALL_SHARED="install-shared"
++	 		fi
++	 		DYNAMIC_DEVS=""
+                         DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
+                         X11_DEVS=""
+                         OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
+@@ -1758,11 +1761,11 @@ if test "x$fontpath" = "x"; then
+         fontpath="${fontpath}:$datadir/fonts/default/TrueType"
+ 
+         # These font directories are used by IRIX...
+-        fontpath="${fontpath}:/usr/lib/DPS/outline/base"
++        # fontpath="${fontpath}:/usr/lib/DPS/outline/base"
+ 
+         # These font directories are used by Solaris...
+-        fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/Type1"
+-        fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/TrueType"
++        # fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/Type1"
++        # fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/TrueType"
+ 
+         # This font directory is used by CUPS...
+         if test "x$CUPSCONFIG" != x; then

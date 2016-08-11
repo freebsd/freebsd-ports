@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv2+

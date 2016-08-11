@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lmms
-PORTVERSION=	0.4.15
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -20,7 +19,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
 		libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float
+		libfftw3f.so:math/fftw3-float \
+		libsamplerate.so:audio/libsamplerate \
+		libfltk.so:x11-toolkits/fltk
 RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
@@ -45,7 +46,7 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_VST:BOOL=OFF \
 		-DHAVE_STRTOLL=ON
 
-DOS2UNIX_FILES=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp CMakeLists.txt
+DOS2UNIX_FILES=	CMakeLists.txt
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_OFF=		-DWANT_JACK:BOOL=OFF

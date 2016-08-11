@@ -25,8 +25,6 @@ USE_PERL5=	run
 USE_TEX=	latex dvipsk
 USES=		perl5 shebangfix zip
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

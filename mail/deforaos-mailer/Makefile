@@ -36,7 +36,7 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 # openssl from base doesn't install a .pc file and pkg-config didn't like it
 CONFIGURE_ENV+=	libssl_CFLAGS="-I${OPENSSLINC}" libssl_LIBS="-L${OPENSSLLIB} -lssl"
 .endif

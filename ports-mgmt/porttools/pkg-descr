@@ -3,7 +3,6 @@ FreeBSD Port Tools includes the following commands:
 - port diff: generate a diff against a previous version of the port
 - port fetch: fetch distfile(s) of a new version of the port
 - port help: display usage summary for port(1) commands
-- port submit: submit a PR with new port, or port change/update
 - port test: automate testing a new port or a port update
 
-WWW: http://github.com/xmj/porttools/
+WWW: https://github.com/skreuzer/porttools/

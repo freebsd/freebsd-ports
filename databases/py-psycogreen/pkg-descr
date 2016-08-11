@@ -1,5 +1,5 @@
 The psycogreen package enables psycopg2 to work with coroutine libraries,
-using asynchronous calls internally but offering a blocking interface so 
+using asynchronous calls internally but offering a blocking interface so
 that regular code can run unmodified.
 
 WWW: https://bitbucket.org/dvarrazzo/psycogreen

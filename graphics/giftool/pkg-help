@@ -1,0 +1,12 @@
+RETVALUE
+
+This option, suggested by Sergei Chechetkin
+<csl@whale.sunbay.crimea.ua>, causes GIFTool to provide a return
+value so may be used in pipes or with programs like make(1).
+
+MALLOCSIZE
+
+This option, suggested by Hidetoshi Shimokawa
+<simokawa@sat.t.u-tokyo.ac.jp>, increases the size of a malloc, to
+avoid a segmentation fault when pre-reading some images.
+

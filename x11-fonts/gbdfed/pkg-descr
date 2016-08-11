@@ -6,4 +6,4 @@ gbdfed is a GTK-based BDF font editor. It can import:
 Alternatively it can load a font from the X server. Export is
 supported to PSF2 Linux console fonts and HEX fonts.
 
-WWW:	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
+WWW: http://sofia.nmsu.edu/~mleisher/Software/gbdfed/

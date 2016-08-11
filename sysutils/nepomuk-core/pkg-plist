@@ -134,11 +134,11 @@ lib/kde4/nepomuktaglibextractor.so
 lib/libkdeinit4_nepomukserver.so
 lib/libnepomukcleaner.so
 lib/libnepomukcleaner.so.4
-lib/libnepomukcleaner.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libnepomukcleaner.so.%%KDE4_KDELIBS_VERSION%%
 lib/libnepomukcommon.so
 lib/libnepomukcore.so
 lib/libnepomukcore.so.4
-lib/libnepomukcore.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libnepomukcore.so.%%KDE4_KDELIBS_VERSION%%
 lib/libnepomukextractor.so
 share/applications/kde4/nepomukbackup.desktop
 share/applications/kde4/nepomukcleaner.desktop

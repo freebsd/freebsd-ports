@@ -1,5 +1,5 @@
---- lib/unprtt.h.orig	Thu Sep 30 11:13:16 1999
-+++ lib/unprtt.h	Thu Sep 30 11:13:37 1999
+--- lib/unprtt.h.orig	1997-09-02 17:39:54 UTC
++++ lib/unprtt.h
 @@ -1,7 +1,7 @@
  #ifndef	__unp_rtt_h
  #define	__unp_rtt_h

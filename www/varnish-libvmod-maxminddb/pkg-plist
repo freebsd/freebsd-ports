@@ -1,0 +1,4 @@
+lib/varnish/vmods/libvmod_maxminddb.so
+man/man3/vmod_maxminddb.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.rst

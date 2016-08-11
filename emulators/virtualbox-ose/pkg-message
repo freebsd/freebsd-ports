@@ -46,7 +46,7 @@ Then restart devfs to load the new rules:
 Troubleshooting:
 ================
 
-Running VirtualBox as non-root user may fail with a fatal error 
+Running VirtualBox as non-root user may fail with a fatal error
 NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
 
 If you experience "Network: write Failed: Cannot allocate memory" errors

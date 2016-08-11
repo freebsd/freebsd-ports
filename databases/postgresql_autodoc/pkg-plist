@@ -1,8 +1,0 @@
-bin/postgresql_autodoc
-man/man1/postgresql_autodoc.1.gz
-%%DATADIR%%/dia.tmpl
-%%DATADIR%%/dot.tmpl
-%%DATADIR%%/html.tmpl
-%%DATADIR%%/neato.tmpl
-%%DATADIR%%/xml.tmpl
-%%DATADIR%%/zigzag.dia.tmpl

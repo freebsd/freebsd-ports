@@ -4,7 +4,7 @@ PORTNAME=	cairo-dock
 PORTVERSION=	3.4.1
 CATEGORIES=	deskutils
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock is a light and eye-candy dock
 
 LICENSE=	GPLv3

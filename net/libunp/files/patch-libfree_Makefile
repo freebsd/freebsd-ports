@@ -1,5 +1,5 @@
---- libfree/Makefile.orig	Fri Oct  3 12:52:41 1997
-+++ libfree/Makefile	Thu Sep 30 11:34:21 1999
+--- libfree/Makefile.orig	1997-10-03 16:52:41 UTC
++++ libfree/Makefile
 @@ -1,8 +1,12 @@
  include ../Make.defines
  

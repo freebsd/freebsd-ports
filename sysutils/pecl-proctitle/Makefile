@@ -3,6 +3,7 @@
 
 PORTNAME=	proctitle
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -12,7 +13,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PECL extension that allows changing the current process' name
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 
 .include <bsd.port.mk>

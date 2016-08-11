@@ -1,7 +1,7 @@
-utf8proc is a library for processing UTF-8 encoded Unicode strings. 
-Some features are Unicode normalization, stripping of default ignorable 
-characters, case folding and detection of grapheme cluster boundaries. 
-A special character mapping is available, which converts for example the 
+utf8proc is a library for processing UTF-8 encoded Unicode strings.
+Some features are Unicode normalization, stripping of default ignorable
+characters, case folding and detection of grapheme cluster boundaries.
+A special character mapping is available, which converts for example the
 characters "Hyphen" (U+2010), "Minus" (U+2212) and
 "Hyphen-Minus" (U+002D, ASCII Minus) all into the ASCII minus sign, to
 make them equal for comparisons.

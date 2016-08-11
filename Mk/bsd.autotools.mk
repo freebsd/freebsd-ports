@@ -190,52 +190,29 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 # Make targets
 #---------------------------------------------------------------------------
 
-.if !target(run-autotools)
-.ORDER:		run-autotools run-autotools-aclocal \
-		run-autotools-autoconf run-autotools-autoheader \
-		run-autotools-automake
+_USES_configure+=460:run-autotools-aclocal 461:run-autotools-autoconf \
+	462:run-autotools-autoheader 463:run-autotools-automake
 
-run-autotools::	run-autotools-aclocal \
-		run-autotools-autoconf run-autotools-autoheader \
-		run-autotools-automake
-.endif
-
-.if !target(run-autotools-aclocal)
+.if defined(_AUTOTOOL_rule_aclocal) && !target(run-autotools-aclocal)
 run-autotools-aclocal:
-. if defined(_AUTOTOOL_rule_aclocal)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
 		${ACLOCAL_ARGS})
-. else
-	@${DO_NADA}
-. endif
 .endif
 
-.if !target(run-autotools-automake)
-run-autotools-automake:
-. if defined(_AUTOTOOL_rule_automake)
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
-		${AUTOMAKE_ARGS})
-. else
-	@${DO_NADA}
-. endif
-.endif
-
-.if !target(run-autotools-autoconf)
+.if defined(_AUTOTOOL_rule_autoconf) && !target(run-autotools-autoconf)
 run-autotools-autoconf:
-. if defined(_AUTOTOOL_rule_autoconf)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
-. else
-	@${DO_NADA}
-. endif
 .endif
 
-.if !target(run-autotools-autoheader)
+.if defined(_AUTOTOOL_rule_automake) && !target(run-autotools-automake)
+run-autotools-automake:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+.endif
+
+.if defined(_AUTOTOOL_rule_autoheader) && !target(run-autotools-autoheader)
 run-autotools-autoheader:
-. if defined(_AUTOTOOL_rule_autoheader)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
-. else
-	@${DO_NADA}
-. endif
 .endif

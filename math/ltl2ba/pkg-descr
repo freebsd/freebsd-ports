@@ -8,4 +8,4 @@ is simplified before any treatment.  ltl2ba is more efficient than
 Spin 3.4.1, with regard to the size of the resulting automaton,
 the time of the computation, and the memory used.
 
-WWW:	http://www.lsv.ens-cachan.fr/~gastin/ltl2ba/
+WWW: http://www.lsv.ens-cachan.fr/~gastin/ltl2ba/

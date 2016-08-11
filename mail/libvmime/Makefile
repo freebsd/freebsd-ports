@@ -6,7 +6,7 @@ PORTVERSION=	0.9.2.s20140721
 PORTREVISION=	3
 CATEGORIES=	mail
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-in-one Internet mail library
 
 LICENSE=	GPLv3

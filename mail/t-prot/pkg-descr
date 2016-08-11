@@ -1,7 +1,7 @@
 This program is a filter which shall improve the readability for messages
 (emails and posts) by *hiding* some annoying parts, including:
 - mailing list footers
-- excessive quoting 
+- excessive quoting
 - overlong signatures
 - Outlook-style "TOFU" (text above - full quote below)
 - squeeze sequences of blank lines or punctuation

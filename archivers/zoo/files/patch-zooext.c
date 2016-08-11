@@ -1,6 +1,6 @@
---- ./zooext.c.orig	1993-05-01 05:58:50.000000000 +0200
-+++ ./zooext.c	2011-12-22 14:03:37.000000000 +0100
-@@ -163,7 +163,11 @@
+--- zooext.c.orig	1993-05-01 03:58:50 UTC
++++ zooext.c
+@@ -163,7 +163,11 @@ if (fiz_ofs != 0L) {                /* i
  } else {
     /* read header */
     frd_zooh (&zoo_header, zoo_file);
@@ -12,7 +12,7 @@
        prterror ('w', failed_consistency);
        bad_header++;
  		exit_status = 1;
-@@ -184,7 +188,8 @@
+@@ -184,7 +188,8 @@ if (null_device) {
     this_file = STDOUT;    /* standard output */
  
  while (1) {

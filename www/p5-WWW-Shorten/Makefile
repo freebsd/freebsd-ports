@@ -21,4 +21,6 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+PORTSCOUT=	limit:^[0-9\.]+$$
+
 .include <bsd.port.mk>

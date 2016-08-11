@@ -3,7 +3,7 @@
 
 PORTNAME=	phpweathermap
 PORTVERSION=	0.97a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.network-weathermap.com/files/
 DISTNAME=	php-weathermap-${PORTVERSION}

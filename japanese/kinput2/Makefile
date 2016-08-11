@@ -32,23 +32,23 @@ WNN6_DESC=		Wnn6 support
 WNN6_LIB_DEPENDS=	libwnn6.so:japanese/Wnn6-lib
 WNN6_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
-			WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
-			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
+			WNNINCDIR=${LOCALBASE}/include/wnn6/wnn \
+			WNNLIB="-L${LOCALBASE}/lib -lwnn6 -lcrypt"
 WNN6_PLIST_FILES=	${WNN_PLIST_FILES}
 
 WNN7_DESC=		Wnn7 support
 WNN7_LIB_DEPENDS=	libwnn7.so:japanese/Wnn7-lib
 WNN7_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
-			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
-			WNNLIB="-L$(LOCALBASE)/lib -lwnn7 -lcrypt"
+			WNNINCDIR=${LOCALBASE}/include/wnn7/wnn \
+			WNNLIB="-L${LOCALBASE}/lib -lwnn7 -lcrypt"
 WNN7_PLIST_FILES=	${WNN_PLIST_FILES}
 
 FREEWNN_DESC=		FreeWnn support
 FREEWNN_LIB_DEPENDS=	libwnn.so:japanese/FreeWnn-lib
 FREEWNN_CONF=		'\#define UseWnn' \
-			WNNINCDIR=$(LOCALBASE)/include/wnn \
-			WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
+			WNNINCDIR=${LOCALBASE}/include/wnn \
+			WNNLIB="-L${LOCALBASE}/lib -lwnn -lcrypt"
 FREEWNN_PLIST_FILES=	${WNN_PLIST_FILES}
 
 SJ3_DESC=		SJ3 support

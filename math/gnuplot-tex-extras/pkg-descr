@@ -5,6 +5,6 @@ non-interactive uses such as web scripting. It is also used as a plotting engine
 by third-party applications like Octave. Gnuplot has been supported and under
 active development since 1986.
 
-This port installs extra files for TeX terminals (latex, epslatex, Tikz, etc). 
+This port installs extra files for TeX terminals (latex, epslatex, Tikz, etc).
 
 WWW: http://www.gnuplot.info/

@@ -1,2 +1,2 @@
-It is recommended to edit %%PREFIX%%/etc/healthd.conf  
+It is recommended to edit %%PREFIX%%/etc/healthd.conf
 so it match the monitored system before running the program.

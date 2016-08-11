@@ -1,0 +1,36 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: filebeat
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable logstash-forwarder:
+# filebeat_enable (bool):	Set to YES to enable filebeat
+# 				Default: NO
+# filebeat_flags (str):		Extra flags passed to filebeat
+# filebeat_conf (str):		filebeat configuration file
+#				Default: ${PREFIX}/etc/filebeat.yml
+
+. /etc/rc.subr
+
+name="filebeat"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${filebeat_enable:="NO"}
+: ${filebeat_config:="%%PREFIX%%/etc/${name}.yml"}
+
+# daemon
+start_precmd=filebeat_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} -c ${filebeat_config}"
+
+filebeat_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+run_rc_command "$1"

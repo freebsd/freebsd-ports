@@ -1,0 +1,7 @@
+To activate pg_stat_kcache on your PostgreSQL server, add 'pg_stat_kcache' to
+shared_preload_libraries in ~pgsql/data/postgresql.conf. For every database,
+run
+	CREATE EXTENSION IF NOT EXISTS pg_stat_kcache
+
+Using databases/powa-web and databases/powa-archivist together with
+pg_stat_kcache is warmly recommended.

@@ -1,0 +1,4 @@
+This port holds the source for various packages and tools that support the Go
+programming language.
+
+WWW: https://godoc.org/golang.org/x/tools

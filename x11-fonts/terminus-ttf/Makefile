@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminus-ttf
-PORTVERSION=	4.39
+PORTVERSION=	4.40.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 
@@ -19,6 +19,7 @@ USES=		fonts zip
 
 FONTNAME=	TerminusTTF
 SUB_FILES=	pkg-message
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/

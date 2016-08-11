@@ -3,6 +3,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	55.1
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -17,7 +18,6 @@ LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/../license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-GNU_CONFIGURE=		yes
 OPTIONS_DEFINE=	THREADS
 OPTIONS_DEFAULT=	THREADS
 THREADS_DESC=	Build thread-safe version of the library

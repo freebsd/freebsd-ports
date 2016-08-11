@@ -10,10 +10,10 @@ Tcl and Java Support:	SpecTcl generates both Tcl and Java code.
 Platform Independent:	SpecTcl runs on all major platforms:
 			Solaris, SunOS, Linux, Windows 95,
 			Windows NT Server 3.51, Windows NT Workstation 3.51,
-			MacOS, and Irix. 
+			MacOS, and Irix.
 
 Constraint Based	Alignment and resizing of widgets (buttons,
 Geometry Manager:	check boxes, etc.) is automatic. This makes
-			creating dynamic UIs and cross platform UIs a snap! 
+			creating dynamic UIs and cross platform UIs a snap!
 
 WWW: http://spectcl.sourceforge.net/

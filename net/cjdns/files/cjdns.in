@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cjdns
+# REQUIRE: LOGIN
+
+. /etc/rc.subr
+
+name="cjdns"
+rcvar=cjdns_enable
+command="%%PREFIX%%/bin/cjdroute"
+command_args="< %%PREFIX%%/etc/cjdroute.conf"
+
+if expr "$1" : ".*start" > /dev/null && ! [ -r %%PREFIX%%/etc/cjdroute.conf ]; then
+  %%PREFIX%%/bin/cjdroute --genconf > %%PREFIX%%/etc/cjdroute.conf &&
+  echo "$name: (!!!) generated the initial config file %%PREFIX%%/etc/cjdroute.conf" &&
+  echo "$name: (!!!) keep this file secret because it contains your secret key"
+  chmod 0600 %%PREFIX%%/etc/cjdroute.conf
+fi
+
+load_rc_config $name
+run_rc_command "$1"

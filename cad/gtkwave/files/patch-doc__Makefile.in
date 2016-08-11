@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2013-05-13 14:24:11.641084031 +0200
-+++ doc/Makefile.in	2013-05-13 14:24:58.487075336 +0200
-@@ -32,7 +32,7 @@
+--- doc/Makefile.in.orig	2014-01-03 04:17:31 UTC
++++ doc/Makefile.in
+@@ -32,7 +32,7 @@ am__make_dryrun = \
      esac; \
      test $$am__dry = yes; \
    }

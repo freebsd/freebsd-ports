@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	iozone
-PORTVERSION=	3.420
+DISTVERSION=	3_457
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
-EXTRACT_SUFX=	.tar
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O
-
-CONFLICTS=	iozone-2.* iozone21-*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 
+USES=		tar
 MAKEFILE=	makefile
 MAKE_ARGS=	${MAKE_ENV}
 ALL_TARGET=	freebsd

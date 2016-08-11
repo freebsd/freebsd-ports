@@ -1,14 +1,14 @@
-# Created by: Ben Woods <woodsb02@gmail.com>
+# Created by: Ben Woods <woodsb02@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=.469-47a90f01
 CATEGORIES=	multimedia
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Media center frontend to multimedia/plexmediaserver
 
 LICENSE=	GPLv2
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	enca:converters/enca \
 		gperf:devel/gperf \
 		cmake:devel/cmake \
 		zip:archivers/zip \
-		unzip:archivers/unzip \
 		nasm:devel/nasm \
 		gtk-update-icon-cache:x11-toolkits/gtk20 \
 		swig2.0:devel/swig20
@@ -103,7 +102,7 @@ CEC_DESC=	Control plexhometheater over HDMI with TV remote
 
 OPTIONS_DEFAULT=	CEC LIRC
 
-CEC_BUILD_DEPENDS=	libcec>=2.2.0:multimedia/libcec
+CEC_BUILD_DEPENDS=	libcec>=3.0.0:multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
 CEC_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_CEC:BOOL=true
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	migration
-PORTVERSION=	0.17
+PORTVERSION=	1.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch-plugin-
@@ -20,7 +20,7 @@ GH_PROJECT=	elasticsearch-migration
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/migration/_site
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/migration/_site
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/migration
+	cd ${WRKSRC} && ${COPYTREE_SHARE} _site ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/migration
 
 .include <bsd.port.mk>

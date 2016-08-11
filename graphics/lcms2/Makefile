@@ -5,7 +5,9 @@ PORTNAME=	lcms2
 PORTVERSION=	2.7
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lcms/lcms/${PORTVERSION}
+MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
+		http://www.littlecms.com/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Accurate, fast, and small-footprint color management engine

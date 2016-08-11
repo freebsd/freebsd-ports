@@ -9,7 +9,7 @@ the PC or to debug system code.
     * User mode emulation (Linux host only). In this mode, QEMU can launch
 Linux processes compiled for one CPU on another CPU. It can be used to
 launch the Wine Windows API emulator or to ease cross-compilation and
-cross-debugging. 
+cross-debugging.
 
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
 

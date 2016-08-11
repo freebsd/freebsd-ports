@@ -1,10 +1,10 @@
-This module provides a way to obtain filesystem disk space information. 
-This is a Unix only distribution. If you want to gather this information 
-for Unix and Windows, use Filesys::DfPortable. The only major benefit of 
-using Filesys::Df over Filesys::DfPortable, is that Filesys::Df supports 
+This module provides a way to obtain filesystem disk space information.
+This is a Unix only distribution. If you want to gather this information
+for Unix and Windows, use Filesys::DfPortable. The only major benefit of
+using Filesys::Df over Filesys::DfPortable, is that Filesys::Df supports
 the use of open filehandles as arguments.
 
-The module should work with all flavors of Unix, including Mac OS X 
+The module should work with all flavors of Unix, including Mac OS X
 (Darwin, Tiger, etc), and Cygwin.
 
 WWW: http://search.cpan.org/dist/Filesys-Df/

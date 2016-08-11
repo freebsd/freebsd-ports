@@ -15,6 +15,6 @@ downloaded in the JSON file format. Furthermore, standard PNG images can
 be generated on-the-fly from the DICOM instances by Orthanc.
 
 Orthanc lets its users focus on the content of the DICOM files, hiding
-the complexity of the DICOM format and of the DICOM protocol. 
+the complexity of the DICOM format and of the DICOM protocol.
 
 WWW: http://www.orthanc-server.com/

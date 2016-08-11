@@ -1,0 +1,11 @@
+--- lib/pdf2dsc.ps.orig	2008-02-25 05:48:45 UTC
++++ lib/pdf2dsc.ps
+@@ -116,7 +116,7 @@ systemdict /.setsafe known { .setsafe } 
+    DSCfile PDFname write==only
+    ( \(r\) file { DELAYSAFER { .setsafe } if } stopped pop\n) puts
+    ( pdfopen begin\n) puts
+-   ( copy_trailer_attrs\n) puts
++   ( process_trailer_attrs\n) puts
+    (%%EndSetup\n) puts
+ 
+    /.hasPageLabels false def % see "Page Labels" in the PDF Reference

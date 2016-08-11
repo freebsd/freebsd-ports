@@ -1,0 +1,12 @@
+Perl bindings to the 3.x series of the gtk+ toolkit. This module
+allows you to write graphical user interfaces in a Perlish and
+object-oriented way, freeing you from the casting and memory
+management in C, yet remaining very close in spirit to original
+API. Find out more about gtk+ at http://www.gtk.org.
+
+The gtk+ reference manual is also a handy companion when writing
+Gtk3 programs in Perl: http://developer.gnome.org/gtk3/stable/. The
+Perl bindings follow the C API very closely, and the C reference
+documentation should be considered the canonical source.
+
+WWW: https://metacpan.org/pod/Gtk3

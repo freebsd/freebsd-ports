@@ -1,5 +1,5 @@
 This is a port of lingoteach, which aims to be a language
-teaching program. Until now nearly 17 languages are supported, 
+teaching program. Until now nearly 17 languages are supported,
 some with sound of native speakers. You can add your own lessons
 by using an integrated editor or edit the XML-files manually.
 Different types of learning are available for many words and

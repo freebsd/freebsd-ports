@@ -1,6 +1,6 @@
-This module will provide a coherent API to bring together 
-the various JSON modules currently on CPAN. This module will 
-allow you to code to any JSON API and have it work regardless 
+This module will provide a coherent API to bring together
+the various JSON modules currently on CPAN. This module will
+allow you to code to any JSON API and have it work regardless
 of which JSON module is actually installed.
 
 WWW: http://search.cpan.org/dist/JSON-Any/

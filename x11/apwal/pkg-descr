@@ -1,6 +1,6 @@
 Apwal is a simple and powerful application launcher.
 It is composed in 2 parts: the application launcher itself and
-a good looking easy to use editor. 
+a good looking easy to use editor.
 
 Apwal is developed under GPL. It is written in C and is using the
 GTK+ toolkit for the Editor interface and XML format to save the

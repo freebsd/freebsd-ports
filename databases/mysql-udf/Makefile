@@ -12,7 +12,7 @@ COMMENT=	Set of user-defined functions for the MySQL server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_MYSQL=	yes
+USES=		mysql
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \
@@ -31,7 +31,7 @@ CFLAGS+=	-fPIC
 do-build:
 .for MODULE in ${MODULES}
 	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include/mysql -c -o udf_${MODULE}.o udf_${MODULE}.cc && \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -c -o udf_${MODULE}.o udf_${MODULE}.cc && \
 	${CC} -shared -o udf_${MODULE}.so udf_${MODULE}.o
 .endfor
 

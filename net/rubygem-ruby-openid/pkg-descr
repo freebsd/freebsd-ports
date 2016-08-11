@@ -1,5 +1,5 @@
-A Ruby library for verifying and serving OpenID identities.  
-Ruby OpenID makes it easy to add OpenID authentication to your web 
+A Ruby library for verifying and serving OpenID identities.
+Ruby OpenID makes it easy to add OpenID authentication to your web
 applications.
 
 This library is a port of the Python OpenID library, and features:
@@ -14,7 +14,7 @@ This library is a port of the Python OpenID library, and features:
 * Example code to help you get started, including:
   o WEBrick based consumer
   o Ruby on rails based server
-  o OpenIDLoginGenerator for quickly creating a rails app that uses OpenID 
+  o OpenIDLoginGenerator for quickly creating a rails app that uses OpenID
     for authentication
   o ActiveRecord adapter for using an SQL store in rails
 

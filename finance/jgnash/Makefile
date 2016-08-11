@@ -30,7 +30,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${CP} ${WRKSRC}/jgnash2.jar ${STAGEDIR}${DATADIR}
 	@${CP} -R ${WRKSRC}/lib ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	@${CP} ${WRKDIR}/jgnash.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

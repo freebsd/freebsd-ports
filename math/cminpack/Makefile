@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	cminpack
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	http://devernay.free.fr/hacks/${PORTNAME}/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Solving nonlinear equations and nonlinear least squares problems
 
+LICENSE_FILE=	${WRKSRC}/CopyrightMINPACK.txt
+
 USES=		cmake:outsource
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	devernay
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "*.[ch] testdata" \
 		${STAGEDIR}${EXAMPLESDIR})

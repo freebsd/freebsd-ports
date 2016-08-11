@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-colored>=1.2:textproc/rubygem-colored
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

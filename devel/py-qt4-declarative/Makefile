@@ -10,8 +10,9 @@ CONFIGURE_ARGS=	--enable QtDeclarative
 PYQT_DIST=	yes
 
 USES=		python pyqt:4
-USE_PYQT=	sip_build gui_run network_run
-USE_QT4=	declarative qmake_build moc_build
+USE_PYQT=	sip_build core_run gui_run network_run
+USE_QT4=	corelib declarative gui network script sql svg xmlpatterns \
+		qmake_build moc_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

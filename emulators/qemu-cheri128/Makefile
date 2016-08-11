@@ -9,7 +9,7 @@ RUN_DEPENDS=	qemu-system-cheri:emulators/qemu-cheri
 
 MASTERDIR=	${.CURDIR}/../qemu-cheri
 
-EXTRA_CFLAGS=	-DCHERI_MAGIC128
+EXTRA_CFLAGS=	-DCHERI_128
 PLIST=		/dev/null
 PLIST_FILES=	bin/qemu-system-cheri128
 

@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Captures a VNC desktop session and saves as a flv
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 

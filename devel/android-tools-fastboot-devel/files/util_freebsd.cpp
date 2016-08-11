@@ -30,8 +30,10 @@
 #include <unistd.h>
 #include <limits.h>
 
-void 
-get_my_path(char *path)
+std::string
+get_my_path()
 {
-	getcwd(path, PATH_MAX - 1);
+	char path[PATH_MAX + 1];
+	getcwd(path, sizeof(path) - 1);
+	return path;
 }

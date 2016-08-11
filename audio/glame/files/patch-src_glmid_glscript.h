@@ -1,5 +1,5 @@
---- src/glmid/glscript.h.orig	2008-03-02 14:07:01.000000000 -0500
-+++ src/glmid/glscript.h	2008-03-02 14:07:39.000000000 -0500
+--- src/glmid/glscript.h.orig	2004-10-23 13:09:23 UTC
++++ src/glmid/glscript.h
 @@ -32,6 +32,12 @@
  #include "gpsm.h"
  #include "swapfile.h"

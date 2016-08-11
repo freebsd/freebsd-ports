@@ -1,5 +1,5 @@
---- src/plugins/Makefile.in.orig	2014-05-28 16:19:02.000000000 +0200
-+++ src/plugins/Makefile.in	2014-05-28 16:25:33.000000000 +0200
+--- src/plugins/Makefile.in.orig	2014-01-27 23:57:41 UTC
++++ src/plugins/Makefile.in
 @@ -388,7 +388,7 @@ $(am__recursive_targets):
  	  else \
  	    local_target="$$target"; \

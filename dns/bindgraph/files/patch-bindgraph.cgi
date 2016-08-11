@@ -1,5 +1,5 @@
---- bindgraph.cgi.orig	2003-05-05 06:26:18.000000000 +0800
-+++ bindgraph.cgi	2008-03-30 18:04:38.000000000 +0800
+--- bindgraph.cgi.orig	2016-05-23 13:30:02 UTC
++++ bindgraph.cgi
 @@ -8,13 +8,14 @@
  
  use RRDs;
@@ -17,7 +17,7 @@
  # temporary directory where the images will be saved
  my $tmp_dir = '/tmp/bindgraph';
  
-@@ -89,6 +90,10 @@
+@@ -89,6 +90,10 @@ sub graph($$$;$) {
  		}
  	}
  
@@ -28,7 +28,7 @@
  	my ($text, $xs, $ys) = RRDs::graph(
  		$file,
  		'--imgformat', 'PNG',
-@@ -102,8 +107,7 @@
+@@ -102,8 +107,7 @@ sub graph($$$;$) {
  		@rrdef,
  		@rrprint,
  		'COMMENT:\s',
@@ -38,7 +38,7 @@
  	);
  	my $err = RRDs::error;
  	die_fatal("RRDs::graph($file, ...): $err") if $err;
-@@ -209,6 +213,7 @@
+@@ -209,6 +213,7 @@ sub main {
  	$uri =~ s#/#,#g;
  	$uri =~ s#~#tilde,#g;
  

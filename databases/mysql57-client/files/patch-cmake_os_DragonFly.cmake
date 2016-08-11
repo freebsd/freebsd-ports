@@ -1,4 +1,4 @@
---- cmake/os/DragonFly.cmake.orig	2015-12-17 10:53:10 UTC
+--- cmake/os/DragonFly.cmake.orig	2016-04-14 10:16:17 UTC
 +++ cmake/os/DragonFly.cmake
 @@ -0,0 +1,24 @@
 +INCLUDE(CheckCSourceRuns)

@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libadns.so:dns/adns
 RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 
-USES=		perl5 tar:bzip2
-USE_BDB=	yes
+USES=		bdb perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} \
 		djm_cv_lib_db_Dbopen=yes

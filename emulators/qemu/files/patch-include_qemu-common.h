@@ -1,6 +1,6 @@
---- include/qemu-common.h.orig	2015-11-03 20:01:34 UTC
+--- include/qemu-common.h.orig	2016-03-30 18:14:31 UTC
 +++ include/qemu-common.h
-@@ -568,7 +568,9 @@ void qemu_hexdump(const char *buf, FILE 
+@@ -469,7 +469,9 @@ void qemu_hexdump(const char *buf, FILE 
  #define VEC_OR(v1, v2) ((v1) | (v2))
  /* altivec.h may redefine the bool macro as vector type.
   * Reset it to POSIX semantics. */

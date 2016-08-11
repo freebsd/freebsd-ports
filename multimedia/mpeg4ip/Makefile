@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--disable-static
 
 OPTIONS_DEFINE=		ESOUND IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
-OPTIONS_DEFAULT=	IPV6 XVID
+OPTIONS_DEFAULT=	XVID
 
 DOC_FILES=	${PORTDOCS}
 PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
@@ -97,8 +97,7 @@ pre-configure:
 		${WRKSRC}/lib/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|-I$(top_srcdir)/lib/mp4v2||; \
-		s|$$(top_builddir)/lib/mp4v2/libmp4v2.la||; \
+		's|$$(top_builddir)/lib/mp4v2/libmp4v2.la||; \
 		s|$$(top_srcdir)/lib/mp4v2/libmp4v2.la||; \
 		s|@LIBS@|@LIBS@ -lmp4v2|; \
 		s|nasm|yasm|'

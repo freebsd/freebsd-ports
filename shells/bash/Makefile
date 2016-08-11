@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		42
+PATCHLEVEL=		46
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		1
 CATEGORIES=		shells
@@ -24,13 +24,13 @@ LICENSE=		GPLv3
 
 OPTIONS_DEFINE=		IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
 OPTIONS_DEFINE+=	IMPORTFUNCTIONS
-OPTIONS_DEFAULT=	IMPLICITCD COLONBREAKSWORDS HELP NLS
+OPTIONS_DEFAULT=	IMPLICITCD COLONBREAKSWORDS HELP
 IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 IMPORTFUNCTIONS_DESC=	Import function from env without --import-functions
 
-USES=			bison cpe makeinfo
+USES=			bison cpe iconv makeinfo
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
@@ -41,7 +41,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/extrapatch-import-functions
 
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext iconv
+NLS_USES=		gettext
 
 INFO=			bash
 
@@ -52,7 +52,8 @@ PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
 
 CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
-			--enable-disabled-builtins
+			--enable-disabled-builtins \
+			--with-libiconv-prefix=${ICONV_PREFIX}
 
 CFLAGS+=		-DUSE_MKTEMP=1 -DUSE_MKSTEMP=1
 
@@ -89,17 +90,10 @@ post-patch:
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
 .endif
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e "s|@LIBICONV@||g" ${WRKSRC}/Makefile.in
-.endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" \
-		${WRKSRC}/config.h
-.endif
 
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build

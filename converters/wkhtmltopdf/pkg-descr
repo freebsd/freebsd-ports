@@ -10,7 +10,7 @@ Features of the static version:
 * Adding headers and footers
 * TOC generation
 * Batch mode conversions
-* XServer is not required (however the X11 client libs must be installed) 
+* XServer is not required (however the X11 client libs must be installed)
 
 For proper functionality you may need to install the following port(s):
 x11-fonts/webfonts

@@ -13,7 +13,7 @@ COMMENT=	Base artwork for the KDE Plasma Desktop
 LICENSE=	GPLv2
 
 USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 NO_BUILD=	yes
 

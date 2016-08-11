@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	x11
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"meta-port" of the LXDE desktop slimmed down for FreeBSD releases
 
 RUN_DEPENDS=	openbox:x11-wm/openbox \

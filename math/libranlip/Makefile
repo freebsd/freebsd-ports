@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	LOCAL/bf \
 		http://www.deakin.edu.au/~gleb/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Random variate generator for Lipschitz-continuous densities
 
 USES=		libtool

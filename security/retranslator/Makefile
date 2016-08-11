@@ -30,8 +30,6 @@ do-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.bin \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 

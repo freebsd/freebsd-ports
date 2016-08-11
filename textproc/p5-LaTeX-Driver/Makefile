@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeX-Driver
-PORTVERSION=	0.20.02
-PORTREVISION=	1
+PORTVERSION=	0.300.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module of LaTeX Driver
@@ -22,6 +20,9 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Readonly>=0:devel/p5-Readonly
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.2002
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 USE_TEX=	latex

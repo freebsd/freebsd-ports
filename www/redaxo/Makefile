@@ -20,7 +20,7 @@ USES=		cpe zip:infozip
 
 OPTIONS_DEFINE=	APACHE MYSQLS GD
 
-APACHE_DESC=	Use Apache (2.2) as http server
+APACHE_DESC=	Use Apache as http server
 MYSQLS_DESC=	Use MySQL database server
 GD_DESC=	Enable Image Manager extension (requires gd)
 
@@ -28,15 +28,9 @@ OPTIONS_DEFAULT=	APACHE MYSQLS GD
 
 MYSQLS_USE=	MYSQL=server
 
-APACHE_USE=	APACHE_RUN=22
+APACHE_VARS=	WANT_PHP_MOD=yes
 
 GD_USE=	PHP=gd
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-WANT_PHP_MOD=	yes
-.endif
 
 do-extract:
 	@${INSTALL} -d ${WRKDIR}

@@ -1,9 +1,0 @@
-#
-# Officially exported symbols.
-#
-
-{
-global:
-    nss_module_register;
-local: *;
-};

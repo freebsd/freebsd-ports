@@ -1,6 +1,6 @@
---- src/VBox/Main/src-server/VirtualBoxImpl.cpp.orig	2013-12-18 11:10:25.000000000 -0500
-+++ src/VBox/Main/src-server/VirtualBoxImpl.cpp	2014-02-20 19:51:23.000000000 -0500
-@@ -2355,7 +2355,7 @@
+--- src/VBox/Main/src-server/VirtualBoxImpl.cpp.orig	2015-04-01 12:15:14.000000000 -0400
++++ src/VBox/Main/src-server/VirtualBoxImpl.cpp	2015-04-07 12:25:59.226583000 -0400
+@@ -2172,7 +2172,7 @@
      if (aCiphertextSize < 32)
          return VERR_INVALID_PARAMETER;
  

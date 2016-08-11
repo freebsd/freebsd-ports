@@ -14,9 +14,7 @@ COMMENT=	DBI driver for InterBase/Firebird/Yaffil RDBMS server
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_FIREBIRD=	yes
-
-USES=		perl5
+USES=		perl5 firebird
 USE_PERL5=	patch configure
 
 post-patch:

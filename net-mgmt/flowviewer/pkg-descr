@@ -1,6 +1,6 @@
 FlowViewer, FlowGrapher, and now FlowTracker are tools that provide an easy
 web-based user interface for selecting, viewing, graphing, and now tracking
-NetFlow data stored using Mark Fullmer's flow-tools software. 
+NetFlow data stored using Mark Fullmer's flow-tools software.
 
 The user is able to filter data (inclusion or exclusion) by device, IP address
 range, port, router interface, autonomous system (AS), specified time interval,

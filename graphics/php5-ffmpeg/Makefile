@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0.20120114
+PORTREVISION=	2
 DISTVERSIONPREFIX=	php-
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
@@ -18,9 +19,6 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg
 
 IGNORE_WITH_PHP=70
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USES=		localbase tar:xz
+USES=		localbase php:ext tar:xz
 
 .include <bsd.port.mk>

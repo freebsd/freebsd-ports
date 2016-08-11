@@ -1,0 +1,14 @@
+bin/unzstd
+bin/zstd
+bin/zstdcat
+include/zbuff.h
+include/zdict.h
+include/zstd.h
+lib/libzstd.a
+lib/libzstd.so
+lib/libzstd.so.0
+lib/libzstd.so.%%LIBVER%%
+libdata/pkgconfig/libzstd.pc
+man/man1/unzstd.1.gz
+man/man1/zstd.1.gz
+man/man1/zstdcat.1.gz

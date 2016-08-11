@@ -1,4 +1,4 @@
-This module provides basic functions for parsing mime-type names and matching 
+This module provides basic functions for parsing mime-type names and matching
 them against a list of media-ranges.
 
 WWW: http://code.google.com/p/mimeparse/

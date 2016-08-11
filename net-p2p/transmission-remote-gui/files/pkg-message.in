@@ -6,7 +6,7 @@ The Transmisson remote gui was installed
 
    # transgui
 
-2) Don't forget that you need a transmission-daemon program configurated and 
+2) Don't forget that you need a transmission-daemon program configurated and
    running before of use transgui.
 
 3) Run "transmission-daemon --help" for more configuration options

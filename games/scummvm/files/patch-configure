@@ -1,16 +1,16 @@
---- configure.orig	2014-07-11 21:10:26 UTC
+--- configure.orig	2016-04-28 17:55:03 UTC
 +++ configure
-@@ -2300,7 +2300,7 @@ case $_host_os in
- 		LDFLAGS="$LDFLAGS -L$DEVKITPRO/libnds/lib"
- 		LIBS="$LIBS -lnds9"
+@@ -2380,7 +2380,7 @@ case $_host_os in
+ 		append_var LDFLAGS "-L$DEVKITPRO/libnds/lib"
+ 		append_var LIBS "-lnds9"
  		;;
 -	freebsd*)
 +	dragonfly*|freebsd*)
- 		LDFLAGS="$LDFLAGS -L/usr/local/lib"
- 		CXXFLAGS="$CXXFLAGS -I/usr/local/include"
+ 		append_var LDFLAGS "-L/usr/local/lib"
+ 		append_var CXXFLAGS "-I/usr/local/include"
  		;;
-@@ -3106,6 +3106,9 @@ case $_host_os in
- 	android | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | uclinux* | webos)
+@@ -3259,6 +3259,9 @@ case $_host_os in
+ 	android | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | ios7 | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | uclinux* | webos)
  		_posix=yes
  		;;
 +	dragonfly*)

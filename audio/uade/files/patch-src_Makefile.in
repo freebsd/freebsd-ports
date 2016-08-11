@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-10-29 21:01:12 UTC
++++ src/Makefile.in
+@@ -8,7 +8,7 @@ ARCHFLAGS = {ARCHFLAGS}
+ ARCHLIBS = {ARCHLIBS}
+ DEBUGFLAGS = {DEBUGFLAGS}
+ 
+-COMMONGCCOPTS = -Wall -Wno-unused -Wno-format -Wmissing-prototypes -Wstrict-prototypes -fno-exceptions -O2
++COMMONGCCOPTS = -Wno-unused -Wno-format -Wmissing-prototypes -Wstrict-prototypes -fno-exceptions
+ 
+ TARGETCFLAGS = -fomit-frame-pointer $(COMMONGCCOPTS) $(DEBUGFLAGS) $(ARCHFLAGS)
+ LIBRARIES = -lm $(AUDIOLIBS) $(ARCHLIBS)

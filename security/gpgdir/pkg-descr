@@ -1,4 +1,4 @@
-gpgdir is a perl script that uses the CPAN GnuPG::Interface module 
-to encrypt and decrypt directories using a gpg key specified in ~/.gpgdirrc. 
+gpgdir is a perl script that uses the CPAN GnuPG::Interface module
+to encrypt and decrypt directories using a gpg key specified in ~/.gpgdirrc.
 
 WWW: http://www.cipherdyne.org/gpgdir/

@@ -146,6 +146,7 @@
 @sample %%ETCDIR%%/lists/refererexceptionsitelist.sample
 @sample %%ETCDIR%%/lists/refererexceptionurllist.sample
 @sample %%ETCDIR%%/lists/searchregexplist.sample
+@sample %%ETCDIR%%/lists/sslsiteregexplist.sample
 @sample %%ETCDIR%%/lists/urlredirectregexplist.sample
 @sample %%ETCDIR%%/lists/urlregexplist.sample
 @sample %%ETCDIR%%/lists/weightedphraselist.sample

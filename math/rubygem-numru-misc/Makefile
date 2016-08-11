@@ -13,8 +13,6 @@ RUN_DEPENDS=	rubygem-narray>0:math/rubygem-narray \
 		rubygem-narray_miss>0:math/rubygem-narray_miss
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

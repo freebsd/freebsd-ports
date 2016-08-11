@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${ECHO_MSG} "===>  Converting Kanji code for ${DISTNAME}"
-	@(cd ${WRKSRC} && $(SH) EUCsetup )
+	@(cd ${WRKSRC} && ${SH} EUCsetup )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xtr ${STAGEDIR}${PREFIX}/bin/xtr

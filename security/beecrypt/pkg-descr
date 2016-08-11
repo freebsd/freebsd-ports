@@ -5,19 +5,19 @@ some other crypto libraries, BeeCrypt is not designed to solve one
 specific problem, like file encryption, but to be a general purpose
 toolkit which can be used in a variety of applications.
 
-The BeeCrypt library currently includes: 
-   - Entropy sources for initializing pseudo-random generators 
-   - Pseudo-random generators: FIPS-186, Mersenne Twister 
-   - Block ciphers: Blowfish 
-   - Hash functions: MD5, SHA-1, SHA-256 
-   - Keyed hash functions: MD5/HMAC, SHA-1/HMAC, SHA-256/HMAC 
-   - Multi-precision integer library, with assembler-optimized routines 
+The BeeCrypt library currently includes:
+   - Entropy sources for initializing pseudo-random generators
+   - Pseudo-random generators: FIPS-186, Mersenne Twister
+   - Block ciphers: Blowfish
+   - Hash functions: MD5, SHA-1, SHA-256
+   - Keyed hash functions: MD5/HMAC, SHA-1/HMAC, SHA-256/HMAC
+   - Multi-precision integer library, with assembler-optimized routines
    - Probabilistic primality testing, with optimized small prime trial
-     division 
-   - Discrete logarithm parameter generation over a prime field 
-   - Diffie-Hellman key agreement 
-   - DHAES encryption scheme 
-   - ElGamal signature scheme (two variants) 
-   - Basic RSA primitives and key pair generation 
+     division
+   - Discrete logarithm parameter generation over a prime field
+   - Diffie-Hellman key agreement
+   - DHAES encryption scheme
+   - ElGamal signature scheme (two variants)
+   - Basic RSA primitives and key pair generation
 
 WWW: http://sourceforge.net/projects/beecrypt

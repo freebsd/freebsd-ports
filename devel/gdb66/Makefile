@@ -12,6 +12,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
 
+BROKEN_powerpc64=	Does not build
+
 PKGNAMESUFFIX=	66
 
 OPTIONS_DEFINE=	INSIGHT

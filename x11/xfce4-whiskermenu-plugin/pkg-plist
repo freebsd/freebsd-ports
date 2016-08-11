@@ -10,6 +10,7 @@ share/icons/hicolor/32x32/apps/xfce4-whiskermenu.png
 share/icons/hicolor/48x48/apps/xfce4-whiskermenu.png
 share/icons/hicolor/64x64/apps/xfce4-whiskermenu.png
 share/icons/hicolor/scalable/apps/xfce4-whiskermenu.svg
+share/locale/am/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ar/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -29,6 +30,7 @@ share/locale/he/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/is/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo

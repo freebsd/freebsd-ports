@@ -1,20 +1,20 @@
 elinks is the links text WWW browser with many bugfixes and enhancements.
 
-So far elinks adds the following to links: 
+So far elinks adds the following to links:
 
      many bugfixes
-     new translations and some updates of the original ones 
+     new translations and some updates of the original ones
      some very minor features not worth mentioning here
      code cleanup
      lua support (from links-lua project)
-     HTTP referrer support 
+     HTTP referrer support
      updated manpage
-     --help lists all options now 
+     --help lists all options now
      cookie expiration and saving/loading from disk
-     ability to modify user-agent string 
-     unhistory 
-     support for editing textareas in external editor 
-     ability to switch off document-specific colors 
+     ability to modify user-agent string
+     unhistory
+     support for editing textareas in external editor
+     ability to switch off document-specific colors
      Spidermonkey-based ECMAScript support
      Syntax highlighting for HTML, RSS, and XBEL
 

@@ -19,6 +19,8 @@ CFLAGS+=	-DWITH_LONGOPTS
 
 SUB_FILES=	pkg-message
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/etc|' \
 		${WRKSRC}/fconf/unicorn.conf

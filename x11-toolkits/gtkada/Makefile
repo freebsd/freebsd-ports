@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	2.24.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

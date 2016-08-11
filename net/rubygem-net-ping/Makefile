@@ -11,7 +11,6 @@ COMMENT=	Collection of classes that provide different ways to ping computers
 LICENSE=	APACHE20
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

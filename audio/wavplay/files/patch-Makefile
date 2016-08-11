@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec  4 09:06:42 1999
-+++ Makefile	Thu Jun 22 01:50:48 2000
+--- Makefile.orig	1999-12-04 00:06:42 UTC
++++ Makefile
 @@ -38,7 +38,7 @@
  #----------------------------------------------------------------------
  # If you are running a 386 you should comment this line out.
@@ -9,7 +9,7 @@
  
  #----------------------------------------------------------------------
  # If you are experiencing troubles (like core dumps!), then uncomment
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ CPU=-m486
  # adjust the STRIP option to suit compile mode:
  #
  #DEBUG=-g
@@ -18,7 +18,7 @@
  
  #----------------------------------------------------------------------
  # When using 'DEBUG=-g' above, then comment out the 'strip' line:
-@@ -59,7 +59,9 @@
+@@ -59,7 +59,9 @@ STRIP=strip
  # This parameter indicates where the program binaries should be
  # placed (wavplay, wavrec, and xltwavplay)
  #
@@ -29,7 +29,7 @@
  
  #----------------------------------------------------------------------
  # Uncomment this line if you want to install the xltwavplay.res resource
-@@ -81,14 +83,14 @@
+@@ -81,14 +83,14 @@ RESDIR=/usr/X11R6/lib/X11/app-defaults
  # to disable the EDITRES facility. If you're not compiling xltwavplay
  # then this setting can be left asis.
  #
@@ -46,7 +46,7 @@
  
  #----------------------------------------------------------------------
  # These are the non X load options (for wavplay/wavrec)
-@@ -106,7 +108,13 @@
+@@ -106,7 +108,13 @@ XLDOPTS=-L/usr/X11R6/lib/ -L/usr/local/l
  # only the standard getopt() routine. When commented out, the long options like --help
  # are recognized, with the help of the getopt_long() routine.
  #
@@ -61,7 +61,7 @@
  
  #----------------------------------------------------------------------
  # The next option specifies the pathname that the xltwavplay X client should exec
-@@ -133,7 +141,7 @@
+@@ -133,7 +141,7 @@ PLAYPATH= -DWAVPLAYPATH=\"$(INSTDIR)/wav
  # Environment variable DSPPATH will override this value at runtime, if
  # present.
  #
@@ -70,7 +70,7 @@
  
  #----------------------------------------------------------------------
  # Semaphore IPC Key for the Play & Record locks (Default is 0x33333333)
-@@ -163,19 +171,19 @@
+@@ -163,19 +171,19 @@ INSTALL=install
  # this should be unecessary if the appropriate symlinks are
  # installed).
  #
@@ -95,7 +95,7 @@
  CP=	g++
  
  HDRFIL= client.h server.h wavfile.h wavplay.h xltwavplay.h xmsprint.h
-@@ -189,9 +197,9 @@
+@@ -189,9 +197,9 @@ WVDMPO= wavdump.o
  .c.o:
  	$(CC) $(CFLAGS) $(INCL) $<
  
@@ -107,7 +107,7 @@
  
  # wavdump: $(WVDMPO)
  #	$(CP) $(WVDMPO) $(LDOPTS) $(DEBUG) -o wavdump -lRIFF
-@@ -209,18 +217,21 @@
+@@ -209,18 +217,21 @@ xltwavplay: $(CLNOBJ) xltwavplay.o
  	$(STRIP) xltwavplay
  	ls -l xltwavplay
  
@@ -134,7 +134,7 @@
  xltwavplay_test: wavplay xltwavplay
  	WAVPLAYPATH=./wavplay ./xltwavplay
  
-@@ -234,9 +245,9 @@
+@@ -234,9 +245,9 @@ setuid_root:
  	@echo
  
  install_xltwavplay: xltwavplay

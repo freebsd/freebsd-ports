@@ -1,4 +1,4 @@
---- lrzip_private.h.orig	2015-03-10 09:25:42 UTC
+--- lrzip_private.h.orig	2016-06-09 05:01:44 UTC
 +++ lrzip_private.h
 @@ -47,7 +47,7 @@
  #ifdef HAVE_ALLOCA_H

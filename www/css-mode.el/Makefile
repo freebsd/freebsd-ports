@@ -37,7 +37,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${XELISP_SUBDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/${XELISP_SUBDIR}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DISTDIR}/doco.html ${STAGEDIR}${DOCSDIR}/css-mode-doc.html
 

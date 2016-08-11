@@ -1,6 +1,0 @@
-ArrowLISP is an interpreter for a purely symbolic,
-side effect-free, lexically scoped dialect of LISP.
-It may be considered an implementation of pure LISP
-plus global definitions.
-
-WWW: http://www.t3x.org/alisp/

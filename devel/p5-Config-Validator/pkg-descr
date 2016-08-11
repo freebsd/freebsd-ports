@@ -1,9 +1,9 @@
 This module allows to perform schema based configuration validation.
- 
+
 The idea is to define in a schema what valid data is. This schema can
 be used to create a validator object that can in turn be used to make
 sure that some data indeed conforms to the schema.
- 
+
 Although the primary focus is on "configuration" (for instance as
 provided by modules like Config::General) and, to a lesser extent,
 "options" (for instance as provided by modules like Getopt::Long),

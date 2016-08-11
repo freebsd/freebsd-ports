@@ -3,7 +3,7 @@
 
 PORTNAME=	inotify
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,10 +17,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

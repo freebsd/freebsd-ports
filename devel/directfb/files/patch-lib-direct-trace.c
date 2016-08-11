@@ -1,4 +1,4 @@
---- lib/direct/trace.c
+--- lib/direct/trace.c.orig	2012-05-23 13:43:12 UTC
 +++ lib/direct/trace.c
 @@ -90,7 +90,7 @@ struct __D_DirectTraceBuffer {
  

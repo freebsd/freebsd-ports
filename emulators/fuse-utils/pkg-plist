@@ -1,4 +1,4 @@
-%%AUDIOTOOLS%%bin/audio2tape
+bin/audio2tape
 bin/createhdf
 bin/fmfconv
 bin/listbasic
@@ -10,7 +10,8 @@ bin/rzxtool
 bin/scl2trd
 bin/snap2tzx
 bin/snapconv
-%%AUDIOTOOLS%%bin/tape2wav
+bin/tape2pulses
+bin/tape2wav
 bin/tapeconv
 bin/tzxlist
 man/man1/createhdf.1.gz
@@ -27,8 +28,9 @@ man/man1/snapconv.1.gz
 man/man1/tapeconv.1.gz
 man/man1/tzxlist.1.gz
 man/man1/profile2map.1.gz
-%%AUDIOTOOLS%%man/man1/audio2tape.1.gz
-%%AUDIOTOOLS%%man/man1/tape2wav.1.gz
+man/man1/audio2tape.1.gz
+man/man1/tape2pulses.1.gz
+man/man1/tape2wav.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

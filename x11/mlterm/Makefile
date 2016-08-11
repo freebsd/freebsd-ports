@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mlterm
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
+
+LICENSE=	BSD3CLAUSE
 
 USES=		gettext libtool perl5 pkgconfig
 USE_XORG=	sm xft

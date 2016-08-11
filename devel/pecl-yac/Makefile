@@ -3,6 +3,7 @@
 
 PORTNAME=	yac
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
@@ -14,9 +15,7 @@ COMMENT=	Yac is a shared memory user data cache for PHP
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 OPTIONS_DEFINE=	MSGPACK

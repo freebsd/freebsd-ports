@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.20.2
+PORTVERSION=	0.21
 CATEGORIES=	mail python
 MASTER_SITES=	http://notmuchmail.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

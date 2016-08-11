@@ -11,8 +11,6 @@ COMMENT=	Dot-forward reads sendmail's .forward files under qmail
 
 USES=	gmake
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/dot-forward \

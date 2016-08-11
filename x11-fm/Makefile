@@ -3,7 +3,6 @@
 
     COMMENT = X11 file managers
 
-    SUBDIR += asfiles
     SUBDIR += caja
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser

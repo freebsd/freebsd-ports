@@ -45,12 +45,13 @@ ICONV_LIB_PATH=		/usr/lib/libc.so
  || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100069))) \
  || exists(${LOCALBASE}/include/iconv.h)
 BUILD_DEPENDS+=	libiconv>=1.14_9:converters/libiconv
+ICONV_INCLUDE_PATH=	${LOCALBASE}/include
+.endif
+
 CPPFLAGS+=	-DLIBICONV_PLUG
 CFLAGS+=	-DLIBICONV_PLUG
 CXXFLAGS+=	-DLIBICONV_PLUG
 OBJCFLAGS+=	-DLIBICONV_PLUG
-ICONV_INCLUDE_PATH=	${LOCALBASE}/include
-.endif
 
 .endif
 

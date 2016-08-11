@@ -1,4 +1,4 @@
-Provides inflation and deflation for Authen::Passphrase instances from 
+Provides inflation and deflation for Authen::Passphrase instances from
 and to either RFC 2307 or crypt encoding.
 
 WWW: http://search.cpan.org/dist/DBIx-Class-InflateColumn-Authen-Passphrase/

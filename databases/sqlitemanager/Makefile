@@ -12,6 +12,8 @@ COMMENT=	Multilingual web based tool to manage SQLite database
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=		${WRKDIR}/SQLiteManager-${PORTVERSION}
 USES=		dos2unix
 NO_BUILD=	yes

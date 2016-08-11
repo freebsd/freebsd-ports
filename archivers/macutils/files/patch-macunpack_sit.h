@@ -1,5 +1,5 @@
---- macunpack/sit.h.orig	Fri Apr 16 00:15:41 1999
-+++ macunpack/sit.h	Fri Apr 16 00:15:56 1999
+--- macunpack/sit.h.orig	1993-10-02 20:16:00 UTC
++++ macunpack/sit.h
 @@ -24,7 +24,7 @@
  
  typedef long OSType;
@@ -9,7 +9,7 @@
  	OSType	signature;		/* = 'SIT!' -- for verification */
  	unsigned short	numFiles;	/* number of files in archive */
  	unsigned long	arcLength;	/* length of entire archive incl.
-@@ -34,7 +34,7 @@
+@@ -34,7 +34,7 @@ typedef struct sitHdr {			/* 22 bytes */
  	char reserved[7];
  };
  

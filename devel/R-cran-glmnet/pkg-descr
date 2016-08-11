@@ -4,4 +4,4 @@ multinomial regression models, poisson regression and the Cox model.
 Two recent additions are the multiresponse gaussian, and the grouped
 multinomial.
 
-WWW:	http://cran.r-project.org/web/packages/glmnet/
+WWW: http://cran.r-project.org/web/packages/glmnet/

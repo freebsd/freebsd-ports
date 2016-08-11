@@ -4,4 +4,4 @@ Adds a 'Spam' tab to the 'Personal Settings' to allow the user to change
 their SpamAssassin preferences. Preferences must be stored in a SQL
 database. Default preferences are used when no user preference is found.
 
-WWW:	http://www.tehinterweb.co.uk/roundcube/
+WWW: http://www.tehinterweb.co.uk/roundcube/

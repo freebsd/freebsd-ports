@@ -1,0 +1,247 @@
+Description: Replace deprecated FFmpeg API
+Author: Andreas Cadhalpun <Andreas.Cadhalpun@googlemail.com>
+Last-Update: <2015-11-02>
+
+--- plugins/video/H.263-1998/h263-1998.cxx.orig
++++ plugins/video/H.263-1998/h263-1998.cxx
+@@ -230,11 +230,10 @@ bool H263_Base_EncoderContext::Init(AVCo
+ 
+   m_context->opaque = this;
+ 
+-  m_context->flags = CODEC_FLAG_EMU_EDGE   // don't draw edges
+-                   | CODEC_FLAG_TRUNCATED  // Possible missing packets
++  m_context->flags = CODEC_FLAG_TRUNCATED  // Possible missing packets
+                    ;
+ 
+-  m_context->pix_fmt = PIX_FMT_YUV420P;
++  m_context->pix_fmt = AV_PIX_FMT_YUV420P;
+   m_context->gop_size = H263_KEY_FRAME_INTERVAL;
+ 
+   // X-Lite does not like Custom Picture frequency clocks... stick to 29.97Hz
+@@ -440,9 +439,6 @@ bool H263_Base_EncoderContext::OpenCodec
+   m_inputFrame->data[1] = m_inputFrame->data[0] + planeSize;
+   m_inputFrame->data[2] = m_inputFrame->data[1] + (planeSize / 4);
+ 
+-  if (m_context->width > 352)
+-    m_context->flags &= ~CODEC_FLAG_EMU_EDGE; // Totally bizarre! FFMPEG crashes if on for CIF4
+-
+   // Dump info
+   PTRACE(5, m_prefix, "Size is " << m_context->width << "x" << m_context->height);
+   PTRACE(5, m_prefix, "GOP is " << m_context->gop_size);
+@@ -456,7 +452,7 @@ bool H263_Base_EncoderContext::OpenCodec
+   PTRACE(5, m_prefix, "qmax set to " << m_context->qmax);
+   PTRACE(5, m_prefix, "payload size set to " << m_context->rtp_payload_size);
+ 
+-  return FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec) == 0;
++  return FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec, NULL) == 0;
+ }
+ 
+ void H263_Base_EncoderContext::CloseCodec()
+@@ -707,7 +703,7 @@ bool H263_Base_DecoderContext::OpenCodec
+     return 0;
+   }
+ 
+-  if (FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec) < 0) {
++  if (FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec, NULL) < 0) {
+     PTRACE(1, m_prefix, "Failed to open H.263 decoder");
+     return false;
+   }
+--- plugins/video/H.264/h264-x264.cxx.orig
++++ plugins/video/H.264/h264-x264.cxx
+@@ -1074,7 +1074,6 @@ class MyDecoder : public PluginCodec<MY_
+       m_context->workaround_bugs = FF_BUG_AUTODETECT;
+       m_context->idct_algo = FF_IDCT_H264;
+       m_context->error_concealment = FF_EC_GUESS_MVS | FF_EC_DEBLOCK;
+-      m_context->flags = CODEC_FLAG_INPUT_PRESERVED | CODEC_FLAG_EMU_EDGE;
+       m_context->flags2 = CODEC_FLAG2_DROP_FRAME_TIMECODE |
+                           CODEC_FLAG2_SKIP_RD |
+                           CODEC_FLAG2_CHUNKS;
+@@ -1084,7 +1083,7 @@ class MyDecoder : public PluginCodec<MY_
+       if ((m_picture = FFMPEGLibraryInstance.AvcodecAllocFrame()) == NULL)
+         return false;
+ 
+-      if (FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec) < 0)
++      if (FFMPEGLibraryInstance.AvcodecOpen(m_context, m_codec, NULL) < 0)
+         return false;
+ 
+       PTRACE(4, MY_CODEC_LOG, "Opened decoder (SVN $Revision: 28048 $)");
+--- plugins/video/MPEG4-ffmpeg/mpeg4.cxx.orig
++++ plugins/video/MPEG4-ffmpeg/mpeg4.cxx
+@@ -539,7 +539,7 @@ void MPEG4EncoderContext::ResetBitCounte
+ //
+ 
+ void MPEG4EncoderContext::SetStaticEncodingParams(){
+-    m_avcontext->pix_fmt = PIX_FMT_YUV420P;
++    m_avcontext->pix_fmt = AV_PIX_FMT_YUV420P;
+     m_avcontext->mb_decision = FF_MB_DECISION_SIMPLE;    // high quality off
+     m_avcontext->rtp_payload_size = 750;                 // ffh263 uses 750
+     m_avcontext->rtp_callback = &MPEG4EncoderContext::RtpCallback;
+@@ -595,7 +595,6 @@ void MPEG4EncoderContext::SetStaticEncod
+     m_avcontext->flags|=CODEC_FLAG_AC_PRED;
+     /*c->flags|=CODEC_FLAG_QPEL;*/ /*don't enable this one: this forces profile_level to advanced simple profile */
+     m_avcontext->flags|=CODEC_FLAG_4MV;
+-    m_avcontext->flags|=CODEC_FLAG_GMC;
+     m_avcontext->flags|=CODEC_FLAG_LOOP_FILTER;
+ #endif
+     m_avcontext->opaque = this;              // for use in RTP callback
+@@ -710,13 +709,15 @@ bool MPEG4EncoderContext::OpenCodec()
+   if (PTRACE_CHECK(4)) {
+     m_avcontext->debug |= FF_DEBUG_RC;
+     m_avcontext->debug |= FF_DEBUG_PICT_INFO;
+-    m_avcontext->debug |= FF_DEBUG_MV;
++//    m_avcontext->debug |= FF_DEBUG_MV;
+   }
+ #endif
+   
+   SetStaticEncodingParams();
+   SetDynamicEncodingParams(false);    // don't force a restart, it's not open
+-  if (FFMPEGLibraryInstance.AvcodecOpen(m_avcontext, m_avcodec) < 0)
++  AVDictionary *opts = NULL;
++  av_dict_set_int(&opts, "gmc", 1, 0);
++  if (FFMPEGLibraryInstance.AvcodecOpen(m_avcontext, m_avcodec, &opts) < 0)
+   {
+     PTRACE(1, "MPEG4", "Encoder could not be opened");
+     return false;
+@@ -1411,7 +1412,7 @@ bool MPEG4DecoderContext::OpenCodec()
+ 
+     SetStaticDecodingParams();
+     SetDynamicDecodingParams(false);    // don't force a restart, it's not open
+-    if (FFMPEGLibraryInstance.AvcodecOpen(m_avcontext, m_avcodec) < 0) {
++    if (FFMPEGLibraryInstance.AvcodecOpen(m_avcontext, m_avcodec, NULL) < 0) {
+         PTRACE(1, "MPEG4", "Decoder failed to open");
+         return false;
+     }
+--- plugins/video/common/dyna.h.orig
++++ plugins/video/common/dyna.h
+@@ -97,7 +97,7 @@ class FFMPEGLibrary
+     AVCodec *AvcodecFindDecoder(enum AVCodecID id);
+     AVCodecContext *AvcodecAllocContext(AVCodec*);
+     AVFrame *AvcodecAllocFrame(void);
+-    int AvcodecOpen(AVCodecContext *ctx, AVCodec *codec);
++    int AvcodecOpen(AVCodecContext *ctx, AVCodec *codec, AVDictionary **options);
+     int AvcodecClose(AVCodecContext *ctx);
+     int AvcodecEncodeVideo(AVCodecContext *ctx, BYTE *buf, int buf_size, const AVFrame *pict);
+     int AvcodecDecodeVideo(AVCodecContext *ctx, AVFrame *pict, int *got_picture_ptr, BYTE *buf, int buf_size);
+--- plugins/video/common/ffmpeg.h.orig
++++ plugins/video/common/ffmpeg.h
+@@ -47,6 +47,7 @@
+ 
+ extern "C" {
+ #include "libavcodec/avcodec.h"
++#include "libavutil/imgutils.h"
+ // AVPacket was declared in avformat.h before April 2009
+ #if LIBAVCODEC_VERSION_INT <= AV_VERSION_INT(52, 25, 0)
+ #include <libavformat/avformat.h>
+--- plugins/video/H.263-1998/h263-1998.cxx.orig
++++ plugins/video/H.263-1998/h263-1998.cxx
+@@ -98,7 +98,7 @@
+   { CIF16_WIDTH, CIF16_HEIGHT, PLUGINCODEC_CIF16_MPI },
+ };
+ 
+-static FFMPEGLibrary FFMPEGLibraryInstance(CODEC_ID_H263P);
++static FFMPEGLibrary FFMPEGLibraryInstance(AV_CODEC_ID_H263P);
+ 
+ 
+ /////////////////////////////////////////////////////////////////////////////
+@@ -583,7 +583,7 @@
+ 
+ bool H263_RFC2190_EncoderContext::Init()
+ {
+-  if (!H263_Base_EncoderContext::Init(CODEC_ID_H263))
++  if (!H263_Base_EncoderContext::Init(AV_CODEC_ID_H263))
+     return false;
+ 
+ #if LIBAVCODEC_RTP_MODE
+@@ -620,7 +620,7 @@
+ 
+ bool H263_RFC2429_EncoderContext::Init()
+ {
+-  return H263_Base_EncoderContext::Init(CODEC_ID_H263P);
++  return H263_Base_EncoderContext::Init(AV_CODEC_ID_H263P);
+ }
+ 
+ 
+@@ -644,7 +644,7 @@
+   if (!FFMPEGLibraryInstance.Load())
+     return;
+ 
+-  if ((m_codec = FFMPEGLibraryInstance.AvcodecFindDecoder(CODEC_ID_H263)) == NULL) {
++  if ((m_codec = FFMPEGLibraryInstance.AvcodecFindDecoder(AV_CODEC_ID_H263)) == NULL) {
+     PTRACE(1, m_prefix, "Codec not found for decoder");
+     return;
+   }
+--- plugins/video/common/dyna.cxx.orig
++++ plugins/video/common/dyna.cxx
+@@ -213,11 +213,11 @@
+ FFMPEGLibrary::FFMPEGLibrary(AVCodecID codec)
+ {
+   m_codec = codec;
+-  if (m_codec==CODEC_ID_H264)
++  if (m_codec==AV_CODEC_ID_H264)
+       snprintf( m_codecString, sizeof(m_codecString), "H264");
+-  if (m_codec==CODEC_ID_H263P)
++  if (m_codec==AV_CODEC_ID_H263P)
+       snprintf( m_codecString, sizeof(m_codecString), "H263+");
+-  if (m_codec==CODEC_ID_MPEG4)
++  if (m_codec==AV_CODEC_ID_MPEG4)
+       snprintf( m_codecString, sizeof(m_codecString), "MPEG4");
+   m_isLoadedOK = false;
+ }
+@@ -374,7 +374,7 @@
+   return Favcodec_alloc_frame();
+ }
+ 
+-int FFMPEGLibrary::AvcodecOpen(AVCodecContext *ctx, AVCodec *codec)
++int FFMPEGLibrary::AvcodecOpen(AVCodecContext *ctx, AVCodec *codec, AVDictionary **options)
+ {
+   WaitAndSignal m(processLock);
+ 
+--- plugins/video/MPEG4-ffmpeg/mpeg4.cxx.orig
++++ plugins/video/MPEG4-ffmpeg/mpeg4.cxx
+@@ -206,7 +206,7 @@
+     { 0 }
+ };
+ 
+-FFMPEGLibrary FFMPEGLibraryInstance(CODEC_ID_MPEG4);
++FFMPEGLibrary FFMPEGLibraryInstance(AV_CODEC_ID_MPEG4);
+ 
+ 
+ static bool mpeg4IsIframe (BYTE * frameBuffer, unsigned int frameLen )
+@@ -703,7 +703,7 @@
+     return false;
+   }
+ 
+-  if((m_avcodec = FFMPEGLibraryInstance.AvcodecFindEncoder(CODEC_ID_MPEG4)) == NULL){
++  if((m_avcodec = FFMPEGLibraryInstance.AvcodecFindEncoder(AV_CODEC_ID_MPEG4)) == NULL){
+     PTRACE(1, "MPEG4", "Encoder not found");
+     return false;
+   }
+@@ -1396,7 +1396,7 @@
+ 
+ bool MPEG4DecoderContext::OpenCodec()
+ {
+-    if ((m_avcodec = FFMPEGLibraryInstance.AvcodecFindDecoder(CODEC_ID_MPEG4)) == NULL) {
++    if ((m_avcodec = FFMPEGLibraryInstance.AvcodecFindDecoder(AV_CODEC_ID_MPEG4)) == NULL) {
+         PTRACE(1, "MPEG4", "Decoder not found for encoder");
+         return false;
+     }
+--- plugins/video/H.264/h264-x264.cxx.orig
++++ plugins/video/H.264/h264-x264.cxx
+@@ -107,7 +107,7 @@
+ 
+ ///////////////////////////////////////////////////////////////////////////////
+ 
+-FFMPEGLibrary FFMPEGLibraryInstance(CODEC_ID_H264);
++FFMPEGLibrary FFMPEGLibraryInstance(AV_CODEC_ID_H264);
+ 
+ PLUGINCODEC_CONTROL_LOG_FUNCTION_DEF
+ 
+@@ -1067,7 +1067,7 @@
+          allows you to fail the create operation (return false), which cannot
+          be done in the normal C++ constructor. */
+ 
+-      if ((m_codec = FFMPEGLibraryInstance.AvcodecFindDecoder(CODEC_ID_H264)) == NULL)
++      if ((m_codec = FFMPEGLibraryInstance.AvcodecFindDecoder(AV_CODEC_ID_H264)) == NULL)
+         return false;
+ 
+       if ((m_context = FFMPEGLibraryInstance.AvcodecAllocContext()) == NULL)

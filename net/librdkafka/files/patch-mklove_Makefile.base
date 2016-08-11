@@ -1,0 +1,11 @@
+--- mklove/Makefile.base.orig	2016-06-16 02:56:41 UTC
++++ mklove/Makefile.base
+@@ -54,7 +54,7 @@ docdir?=	$(datarootdir)/doc/$(PKGNAME)
+ infodir?=	$(datarootdir)/info
+ libdir?=	$(prefix)/lib
+ localedir?=	$(datarootdir)/locale
+-pkgconfigdir?=	$(libdir)/pkgconfig
++pkgconfigdir?=	$(prefix)/libdata/pkgconfig
+ mandir?=	$(datarootdir)/man
+ man1dir?=	$(mandir)/man1
+ man2dir?=	$(mandir)/man2

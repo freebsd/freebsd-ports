@@ -3,7 +3,7 @@
  To use Maia-Mailguard, you need to install at least one virus scanner.
  The following virus scanners are available in the FreeBSD ports
  collection:
- 
+
     security/clamav	Clam Antivirus
     security/f-prot	F-Prot Antivirus
     security/drweb	DrWeb antivirus suite

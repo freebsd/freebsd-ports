@@ -1,5 +1,5 @@
-Vnc2flv is a cross-platform screen recording tool for UNIX, Windows or Mac. 
-It captures a VNC desktop session (either your own screen or a remote computer) 
+Vnc2flv is a cross-platform screen recording tool for UNIX, Windows or Mac.
+It captures a VNC desktop session (either your own screen or a remote computer)
 and saves as a Flash Video (FLV) file.
 
 WWW: http://www.unixuser.org/~euske/python/vnc2flv

@@ -6,4 +6,4 @@ and no auxiliary storage is required. A set of numerically orthogonal Schur
 basis vectors for the desired k-dimensional eigen-space is computed.
 Numerically accurate eigenvectors are available on request.
 
-WWW:	http://www.caam.rice.edu/software/ARPACK/
+WWW: http://www.caam.rice.edu/software/ARPACK/

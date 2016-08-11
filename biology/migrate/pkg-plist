@@ -1,8 +1,8 @@
-bin/%%PORTNAME%%
-bin/%%PORTNAME%%-n
-man/man1/%%PORTNAME%%-n.1.gz
-man/man1/%%PORTNAME%%.1.gz
+bin/migrate
+bin/migrate-n
+man/man1/migrate-n.1.gz
+man/man1/migrate.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/graphics/librarian.gif
 %%PORTDOCS%%%%DOCSDIR%%/graphics/mail.gif
-%%PORTDOCS%%%%DOCSDIR%%/graphics/%%PORTNAME%%.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/migrate.gif
 %%PORTDOCS%%%%DOCSDIR%%/graphics/packet.gif

@@ -3,7 +3,7 @@
 
 PORTNAME=	resid
 PORTVERSION=	0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio emulators
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -17,5 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=		--enable-shared
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

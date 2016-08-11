@@ -1,6 +1,6 @@
---- lua/cairo.pkg.orig
+--- lua/cairo.pkg.orig	2012-05-03 21:08:27 UTC
 +++ lua/cairo.pkg
-@@ -4,6 +4,7 @@
+@@ -4,6 +4,7 @@ $#include <cairo.h>
  $#include <cairo-xlib.h>
  $#include <X11/Xlib.h>
  $#include "libcairo-helper.h"

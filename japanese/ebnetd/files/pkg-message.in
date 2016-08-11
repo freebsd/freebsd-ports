@@ -1,5 +1,5 @@
 **********************************************************************
-You'll need manual configurations to actually activate EBNETD servers 
+You'll need manual configurations to actually activate EBNETD servers
 (ebhttpd/ebnetd/ndtpd).
 
 Step 0(optional):

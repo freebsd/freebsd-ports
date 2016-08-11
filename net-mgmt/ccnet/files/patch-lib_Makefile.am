@@ -1,6 +1,6 @@
---- lib/Makefile.am.orig	2015-01-27 22:48:22.000000000 -0500
-+++ lib/Makefile.am	2015-01-27 22:49:06.000000000 -0500
-@@ -61,6 +61,7 @@
+--- lib/Makefile.am.orig	2015-11-26 15:34:14 UTC
++++ lib/Makefile.am
+@@ -61,6 +61,7 @@ libccnetd_la_SOURCES = utils.c db.c job-
  libccnetd_la_LDFLAGS = -no-undefined
  libccnetd_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_GDI32@ \
  	                  -lsqlite3 @LIBEVENT_LIBS@ @LIB_WS32@ @LIB_UUID@ \

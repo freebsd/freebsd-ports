@@ -10,6 +10,8 @@ MASTER_SITES=	http://people.freebsd.org/~demon/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	User-Agent detection library
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libpcre.so:devel/pcre \
 		libxml2.so:textproc/libxml2

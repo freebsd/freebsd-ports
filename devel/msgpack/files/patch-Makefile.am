@@ -1,8 +1,8 @@
---- Makefile.am.orig	2015-05-07 00:17:43.206572341 +0900
-+++ Makefile.am	2015-05-07 00:18:35.853568427 +0900
-@@ -11,7 +11,7 @@
+--- Makefile.am.orig	2016-05-27 09:08:08 UTC
++++ Makefile.am
+@@ -11,7 +11,7 @@ DOC_FILES = \
  EXTRA_DIST = \
- 		$(DOC_FILES) CMakeLists.txt test/CMakeLists.txt
+ 		$(DOC_FILES) CMakeLists.txt test/CMakeLists.txt example
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig

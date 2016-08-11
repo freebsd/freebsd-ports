@@ -22,7 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|$(CXX)|' -e 's|gcc|$(CC)|' \
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|' -e 's|gcc|${CC}|' \
 		${WRKSRC}/src/Makefile
 
 do-install:

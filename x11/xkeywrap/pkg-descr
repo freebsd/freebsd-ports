@@ -9,9 +9,8 @@ and
     % man xkeywrap
 
 If you want to see a demonstration of XKeyWrap, type
-    % cp /usr/X11R6/share/doc/xkeywrap/demo.dat .
-    % cp /usr/X11R6/share/doc/xkeywrap/xkeywrap_demo.c .
+    % cp /usr/local/share/examples/xkeywrap/demo.dat .
+    % cp /usr/local/share/examples/xkeywrap/xkeywrap_demo.c .
     % xkeywrap -p -s 2 -f demo.dat -x emacs -geometry 80x25 xkeywrap_demo.c
 
-If you want to get the full or newest original destribution package
-of XKeyWrap, see
+WWW: http://kozos.jp/myfreesoft/

@@ -1,6 +1,0 @@
-===================================================
-Edit the wwwstat.rc and splitlog.rc file ...
-If needed, edit wwwstat and splitlog directly ...
-These files are located in:
- %%SITE_PERL%%
-===================================================

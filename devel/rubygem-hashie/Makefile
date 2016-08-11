@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashie
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

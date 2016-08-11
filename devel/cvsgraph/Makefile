@@ -3,7 +3,7 @@
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
@@ -14,8 +14,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes

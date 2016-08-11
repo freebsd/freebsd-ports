@@ -12,4 +12,4 @@ The wheel project provides a bdist_wheel command for setuptools (requires
 setuptools >= 0.8.0). Wheel files can be installed with a newer pip from
 https://github.com/pypa/pip or with wheel's own command line utility.
 
-WWW: http://bitbucket.org/dholth/wheel/
+WWW: https://bitbucket.org/pypa/wheel

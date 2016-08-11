@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.6.0
-PORTREVISION?=	1
+PORTVERSION=	1.6.1
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -142,7 +142,7 @@ NCURSES_USES=	ncurses
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
-NLS_IMPLIES= 	ICONV
+NLS_IMPLIES=	ICONV
 
 # Handle GSSAPI from various places
 GSSAPI_BASE_USES=	gssapi
@@ -179,7 +179,7 @@ LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ON=	--with-idn
 IDN_CONFIGURE_OFF=	--without-idn
-IDN_IMPLIES= 	ICONV
+IDN_IMPLIES=	ICONV
 
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ON=	--enable-gpgme
@@ -198,7 +198,7 @@ QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 QUOTE_PATCH_VARS=	XML_NEEDED=yes
 
-NNTP_DISTFILES= patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv \
+NNTP_DISTFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
@@ -211,6 +211,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
+VVV_PATCH_VERSION:=	1.6.0
+RR_PATCH_VERSION:=	1.6.0
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -236,9 +238,6 @@ CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
 
 PATCH_DIST_STRIP=	-p1
-
-pre-patch-ICONV-off:
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-idna_no_iconv
 
 pre-patch-PARENT_CHILD_MATCH_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
@@ -317,7 +316,7 @@ pre-configure::
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
 LIB_DEPENDS+=		libtokyocabinet.so:databases/tokyocabinet
 .else
-USE_BDB=		42+
+USES+=			bdb:42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 pre-configure::

@@ -3,7 +3,7 @@
 
 PORTNAME=	pdumpfs
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://0xcc.net/pdumpfs/
 
@@ -14,9 +14,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RUBY=	yes
+USES=		shebangfix
 NO_ARCH=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/pdumpfs.in
+SHEBANG_FILES=	${WRKSRC}/pdumpfs.in
 ALL_TARGET=	pdumpfs
 
 PLIST_FILES=	man/ja/man8/pdumpfs.8.gz \

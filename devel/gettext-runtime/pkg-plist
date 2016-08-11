@@ -11,7 +11,7 @@ lib/libasprintf.so.0.0.0
 lib/libintl.a
 lib/libintl.so
 lib/libintl.so.8
-lib/libintl.so.8.1.4
+lib/libintl.so.8.1.5
 lib/libintl.so.9
 man/man1/envsubst.1.gz
 man/man1/gettext.1.gz

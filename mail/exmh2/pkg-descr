@@ -1,4 +1,4 @@
-exmh is a TCL/TK based interface to the MH mail system.  It provides 
+exmh is a TCL/TK based interface to the MH mail system.  It provides
 the usual layer on top of MH commands, as well as many other features:
 
     MIME support!  Displays richtext and enriched directly.

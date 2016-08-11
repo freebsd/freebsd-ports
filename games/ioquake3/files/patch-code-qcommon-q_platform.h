@@ -1,6 +1,6 @@
---- code/qcommon/q_platform.h.orig	2009-08-30 19:30:01.000000000 +0200
-+++ code/qcommon/q_platform.h	2009-08-30 19:28:38.000000000 +0200
-@@ -199,6 +199,8 @@
+--- code/qcommon/q_platform.h.orig	2009-03-02 17:29:30 UTC
++++ code/qcommon/q_platform.h
+@@ -199,6 +199,8 @@ Foundation, Inc., 51 Franklin St, Fifth 
  
  #ifdef __i386__
  #define ARCH_STRING "i386"

@@ -1,4 +1,4 @@
-libsrs2 is the next generation SRS library from the original designer of SRS. 
+libsrs2 is the next generation SRS library from the original designer of SRS.
 It implements the Sender Rewriting Scheme, a part of the SPF/SRS protocol pair.
 
 WWW: http://www.libsrs2.org/

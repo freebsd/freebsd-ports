@@ -5,7 +5,7 @@ information into a `hash table' data structure, which can then be
 searched very rapidly for matches.
 
 SSAHA: a fast search method for large DNA databases (2001).
-Ning Z, Cox AJ, Mullikin JC. Genome Res. 11: 1725-9. 
+Ning Z, Cox AJ, Mullikin JC. Genome Res. 11: 1725-9.
 PMID: 11591649
 
 WWW: http://www.sanger.ac.uk/resources/software/ssaha/

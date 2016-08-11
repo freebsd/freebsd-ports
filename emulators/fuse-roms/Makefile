@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/rele
 		ftp://ftp.ntua.gr/pub/linux/rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
 		ftp://ftp.pbone.net/mirror/rpmfusion.org/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
 		ftp://ftp.icm.edu.pl/vol/rzm2/linux-rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
-		http://zxspectrum.it.omegahg.com/rom/:2
+		https://rene-ladan.nl/distfiles/:2
 DISTFILES=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm:1 Opus-22.rom:2
 EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm
 

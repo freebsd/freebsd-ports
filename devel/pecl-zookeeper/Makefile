@@ -3,7 +3,7 @@
 
 PORTNAME=	zookeeper
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,10 +16,8 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
-USE_PHP=	session
-USE_PHP_BUILD=	session
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USE_PHP=	session:build
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 post-install:

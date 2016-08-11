@@ -20,8 +20,6 @@ RUN_DEPENDS=	ut:games/linux-ut
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
-NO_PACKAGE=	Distribution is 131MB; set FORCE_PACKAGE if you really want\
-		to build this package
 RESTRICTED=	Redistribution is limited, see license
 
 PLIST_SUB+=	UT="" UG=""

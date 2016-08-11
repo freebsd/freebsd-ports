@@ -1,5 +1,5 @@
---- uuencode.c.orig	1996-06-04 15:37:02.000000000 +0200
-+++ uuencode.c	2011-07-25 20:21:13.000000000 +0200
+--- uuencode.c.orig	1996-06-04 13:37:02 UTC
++++ uuencode.c
 @@ -116,7 +116,7 @@ encode_uuencode(struct message *m)
    /* Start with uuencode preamble */
    fix_filename(m);
@@ -18,3 +18,12 @@
      {
  #ifdef DEBUG
        if (edebug)
+@@ -290,7 +290,7 @@ decode_uuencode(struct message *m)
+ 	  /* Check for end */
+ 	  if (strncmp(inb, "end", 3) == 0)
+ 	    {
+-	      inbuf->offset += getline(inbuf);
++	      inbuf->offset += get_line(inbuf);
+ 	      inbuf->loffset += 1;
+ 	      inbuf->bodyend = inbuf->offset;
+ 	      if (process)

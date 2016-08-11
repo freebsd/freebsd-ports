@@ -1,0 +1,4 @@
+The GDSII Ruby Library provides an easy-to-use interface using
+Ruby to reading and writing GDSII files.
+
+WWW: http://rubyforge.org/projects/gdsii/

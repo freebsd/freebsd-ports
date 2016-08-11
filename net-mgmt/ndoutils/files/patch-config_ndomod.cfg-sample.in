@@ -1,0 +1,11 @@
+--- config/ndomod.cfg-sample.in.orig	2016-07-29 17:03:04 UTC
++++ config/ndomod.cfg-sample.in
+@@ -82,7 +82,7 @@ output_buffer_items=5000
+ # Nagios (re)starts, the NDO NEB module will read the contents of this
+ # file and send it to the NDO2DB daemon for processing.
+ 
+-buffer_file=@localstatedir@/ndomod.tmp
++buffer_file=/var/spool/nagios/ndomod.tmp
+ 
+ 
+ 

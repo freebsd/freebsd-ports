@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	MySQL-Diff
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	0.48
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module for comparing the table structure of two MySQL databases
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-MakeMethods>=0:devel/p5-Class-MakeMethods \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \

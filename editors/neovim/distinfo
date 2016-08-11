@@ -1,2 +1,4 @@
-SHA256 (neovim-neovim-0.1.2-b33c777_GH0.tar.gz) = abb394c0f206859f31d781af7b22cda2a0b74378ed56485c111d30e8b9016652
-SIZE (neovim-neovim-0.1.2-b33c777_GH0.tar.gz) = 7611302
+SHA256 (neovim-neovim-v0.1.4_GH0.tar.gz) = bb7e359eb83db20c5ec5984b470b249372b6dcd813ae2ccf72c01cce560f93e9
+SIZE (neovim-neovim-v0.1.4_GH0.tar.gz) = 7678847
+SHA256 (tarruda-libmpack-1.0.2_GH0.tar.gz) = 9c570b2aab81b0c56d97cbd8fc483dc431b69510fd9becb4a1845291563e8bc9
+SIZE (tarruda-libmpack-1.0.2_GH0.tar.gz) = 44671

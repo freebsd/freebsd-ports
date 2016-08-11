@@ -3,6 +3,6 @@ Netlag often causes players to lose valuable seconds or even minutes on their
 chess clocks. Transmission time is counted against you, unless the chess
 server can tell exactly when information is transmitted. The timeseal program
 acts as a relay station and keeps track of transmission times. What timeseal
-does is record your thinking time, so that transmission time is not counted 
-against you. Timeseal will not prevent netlag but it makes the games fairer 
+does is record your thinking time, so that transmission time is not counted
+against you. Timeseal will not prevent netlag but it makes the games fairer
 when lag occurs.

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.4.13
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -25,8 +25,9 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG
+OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG PYTHON
 OPTIONS_DEFAULT=
+OPTIONS_SUB=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
@@ -41,9 +42,16 @@ JPEG_LDFLAGS=		-L${LOCALBASE}/lib
 
 PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
+PIXBUF_USES=		gettext
+PIXBUF_USE=		gnome=glib20
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
+
+PYTHON_DESC=		Python interface
+PYTHON_USES=		python
+PYTHON_USE=		python=py3kplist
+PYTHON_CONFIGURE_ENABLE=	python
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

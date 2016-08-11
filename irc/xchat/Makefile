@@ -4,7 +4,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	2.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	SF/${PORTNAME}/ \
 		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/

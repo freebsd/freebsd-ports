@@ -3,7 +3,7 @@ If you want to run logstash-forwarder, add to /etc/rc.conf
 
 	logstash_forwarder_enable="YES"
 
-Do not forget to edit your configuration file: 
+Do not forget to edit your configuration file:
 
 	Default: ${PREFIX}/etc/logstash-forwarder.conf
 

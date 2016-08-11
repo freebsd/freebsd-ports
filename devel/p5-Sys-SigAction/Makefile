@@ -16,11 +16,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Time-HiRes>=1.9726:devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure
-
-post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>

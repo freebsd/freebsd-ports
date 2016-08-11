@@ -1,4 +1,4 @@
---- test/resize/resize_impl_sse2_test.cpp.orig	2016-01-22 18:12:28 UTC
+--- test/resize/resize_impl_sse2_test.cpp.orig	2016-05-08 20:08:38 UTC
 +++ test/resize/resize_impl_sse2_test.cpp
 @@ -7,6 +7,8 @@
  #include "gtest/gtest.h"
@@ -6,6 +6,6 @@
  
 +#include <cmath> // INFINITY
 +
- namespace {;
+ namespace {
  
  void test_case(const zimg::resize::Filter &filter, bool horizontal, unsigned src_w, unsigned src_h, unsigned dst_w, unsigned dst_h,

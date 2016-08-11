@@ -1,6 +1,6 @@
---- mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp~
-+++ mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp
-@@ -400,6 +400,14 @@ mozHunspell::LoadDictionaryList(bool aNo
+--- mozilla/extensions/spellcheck/hunspell/glue/mozHunspell.cpp~
++++ mozilla/extensions/spellcheck/hunspell/glue/mozHunspell.cpp
+@@ -392,6 +392,14 @@ mozHunspell::LoadDictionaryList(bool aNo
      }
    }
  

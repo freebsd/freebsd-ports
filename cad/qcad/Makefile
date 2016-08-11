@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.12.5.0
+PORTVERSION=	3.15.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -41,7 +41,7 @@ RESDIR=		${WRKSRC}/release
 .endif
 
 SHRLIBS=	qcadcore qcadecmaapi qcadentity qcadgrid qcadgui qcadoperations	\
-		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel qcadzip 
+		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel qcadzip
 STALIBS=	dxflib stemmer
 SHRDIR=		fonts libraries patterns plugins scripts ts
 #QSCRIPTS should not be installed to avoid conflicts with texlive-base
@@ -62,10 +62,10 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${STAGEDIR}${PREFIX}/bin/
-	${LN} -sf ${PREFIX}/bin/qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
+	${LN} -sf qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
 .for lib in ${SHRLIBS:C|^|lib|:C|$|.so|}
 	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}.0
-	${LN} -sf ${PREFIX}/lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
+	${LN} -sf ../lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
 	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/

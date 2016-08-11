@@ -31,7 +31,7 @@ Date:   Mon Nov 24 01:37:06 2014 +0200
     Conflicts:
     	part/part.cpp
 
---- app/mainwindow.cpp
+--- app/mainwindow.cpp.orig	2014-10-25 12:53:24 UTC
 +++ app/mainwindow.cpp
 @@ -38,6 +38,7 @@
  #include <KDebug>
@@ -50,7 +50,7 @@ Date:   Mon Nov 24 01:37:06 2014 +0200
      delete m_part;
      m_part = 0;
  }
---- part/part.cpp
+--- part/part.cpp.orig	2014-10-25 12:53:24 UTC
 +++ part/part.cpp
 @@ -53,7 +53,6 @@
  #include <KStandardGuiItem>
@@ -60,7 +60,7 @@ Date:   Mon Nov 24 01:37:06 2014 +0200
  
  #include <QAction>
  #include <QCursor>
-@@ -138,8 +137,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QVariantList& args)
+@@ -138,8 +137,6 @@ Part::Part(QWidget *parentWidget, QObjec
  
  Part::~Part()
  {

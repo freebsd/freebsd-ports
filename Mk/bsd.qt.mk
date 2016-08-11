@@ -103,7 +103,7 @@ LDFLAGS+=		-Wl,--as-needed
 	defined(DISABLE_SIZE) && defined(NO_CHECKSUM)
 # Ensure that the "makesum" target (with its inner "fetch" one) uses
 # devel/qt*/distinfo for every port.
-QT_DIST=		3d base canvas3d connectivity declarative doc enginio graphicaleffects imageformats \
+QT_DIST=		3d base canvas3d connectivity declarative doc graphicaleffects imageformats \
 				location multimedia quick1 quickcontrols script sensors serialport svg tools \
 				translations webchannel webkit webkit-examples websockets x11extras xmlpatterns
 .  endif
@@ -298,7 +298,7 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
 				--with-extra-libs=${LOCALBASE}/lib
 .endif # !defined(QT_NONSTANDARD)
 
-_USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
+_USE_QT_ALL=	assistant clucene dbus declarative designer doc gui help \
 				imageformats l10n linguist linguisttools multimedia \
 				network opengl pixeltool qdbusviewer qmake script \
 				scripttools sql sql-ibase sql-mysql sql-odbc sql-pgsql \
@@ -306,13 +306,13 @@ _USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
 				xml xmlpatterns
 
 _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
-				codecs-kr codecs-tw corelib demo doc graphicssystems-opengl \
+				codecs-kr codecs-tw corelib demo graphicssystems-opengl \
 				help-tools iconengines inputmethods makeqpf moc phonon \
 				phonon-gst porting qdoc3 qmlviewer qt3support qtconfig \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
 _USE_QT5_ONLY=	3d buildtools canvas3d concurrent connectivity core \
-				enginio graphicaleffects location paths phonon4 \
+				examples graphicaleffects location paths phonon4 \
 				printsupport qdbus qdoc qev qml quick quickcontrols \
 				sensors serialport sql-tds uiplugin uitools webchannel \
 				websockets widgets x11extras
@@ -380,8 +380,8 @@ designer_PATH=		${QT_BINDIR}/designer${_QT_BINSUFX}
 doc_PORT=			misc/${_QT_RELNAME}-doc
 doc_PATH=			${_QT_RELNAME}-doc>=${_QT_VERSION:R:R}
 
-enginio_PORT=		net/${_QT_RELNAME}-enginio
-enginio_PATH=		${QT_LIBDIR}/libEnginio.so
+examples_PORT=		misc/${_QT_RELNAME}-examples
+examples_PATH=		${_QT_RELNAME}-examples>=${_QT_VERSION:R:R}
 
 graphicaleffects_PORT=	graphics/${_QT_RELNAME}-graphicaleffects
 graphicaleffects_PATH=	${QT_QMLDIR}/QtGraphicalEffects/qmldir

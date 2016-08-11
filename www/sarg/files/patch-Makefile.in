@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-08-30 14:23:05.000000000 -0300
-+++ Makefile.in	2012-11-20 11:50:32.000000000 -0200
-@@ -27,11 +27,11 @@
+--- Makefile.in.orig	2015-04-12 14:38:36 UTC
++++ Makefile.in
+@@ -27,11 +27,11 @@ DEFS        = $(IBINDIR) $(ISYSCONFDIR) 
  LIBS        = @LIBS@ -lm
  SRCDIR      = .
  VPATH       = .
@@ -14,7 +14,7 @@
  
  SRCS = util.c log.c report.c topuser.c email.c sort.c html.c \
         index.c getconf.c usage.c decomp.c ip2name.c ip2name_dns.c \
-@@ -93,14 +93,11 @@
+@@ -93,14 +93,11 @@ install: all install-po
  		mkdir -p $(DESTDIR)$(IMAGEDIR); \
  	fi
  	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(bindir)/sarg

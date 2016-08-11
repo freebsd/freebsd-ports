@@ -1,6 +1,6 @@
---- decoder.h.orig	2013-10-21 12:47:16.077685162 -0200
-+++ decoder.h	2013-10-21 12:47:47.588683149 -0200
-@@ -35,6 +35,10 @@
+--- decoder.h.orig	2012-09-05 18:43:51 UTC
++++ decoder.h
+@@ -35,6 +35,10 @@ extern "C" {
  }
  #include "fingerprintcalculator.h"
  

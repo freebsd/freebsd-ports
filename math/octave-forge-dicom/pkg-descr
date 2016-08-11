@@ -7,6 +7,6 @@ This is dicom.
 
  Digital communications in medicine (DICOM) file io. Depends on Grassroots
  DICOM (GDCM). This package is not available in repos for all distros.
- Contributors: Judd Storrs, Kris Thielemans. 
+ Contributors: Judd Storrs, Kris Thielemans.
 
 WWW: http://octave.sourceforge.net/

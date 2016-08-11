@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix3
-PORTVERSION=	3.0.1
-PORTREVISION?=	1
+PORTVERSION=	3.0.2
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	pakhom@pakhom.spb.ru
+MAINTAINER=	pg@pakhom.spb.ru
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
 
 LICENSE=	GPLv2
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--with-net-snmp
 OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW \
 			LIBXML2
 
-OPTIONS_DEFAULT=	IPV6 FPING JABBER CURL UNIXODBC MYSQL SSH OPENSSL
+OPTIONS_DEFAULT=	FPING JABBER CURL UNIXODBC MYSQL SSH OPENSSL
 OPTIONS_SUB=		yes
 
 CURL_DESC=		Support for web monitoring
@@ -99,7 +99,7 @@ PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES=		pgsql
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_USE=		SQLITE=3
+SQLITE_USES=		sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
@@ -150,10 +150,10 @@ GNUTLS_LIB_DEPENDS=     libgnutls.so:security/gnutls
 POLARSSL_CONFIGURE_WITH=mbedtls
 POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
-IGNORE=   OpenSSL from the base system is too old, add WITH_OPENSSL_PORT to your /etc/make.conf and rebuild everything that needs SSL.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
+IGNORE=   OpenSSL from the base system is too old, add DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything that needs SSL.
 .endif
 
 post-patch:
@@ -192,6 +192,8 @@ post-install:
 		${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database/)
 .endif
+.else # frontend
+.include <bsd.port.pre.mk>
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

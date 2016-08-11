@@ -12,6 +12,8 @@ COMMENT=	CalTech mathematical subprogram libraries for Fortran 77
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		fortran gmake tar:tgz
 WRKSRC=		${WRKDIR}/MATH77
 MAKEFILE=	makefile

@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan 10 13:13:12 2000
-+++ Makefile	Mon May 12 15:15:36 2003
+--- Makefile.orig	2000-01-10 21:13:12 UTC
++++ Makefile
 @@ -1,7 +1,7 @@
 -CFLAGS=
 +#CFLAGS=
@@ -10,7 +10,7 @@
  
  default:
  	@clear
-@@ -11,7 +11,7 @@
+@@ -11,7 +11,7 @@ default:
  	@echo "to suit your operating system, then use 'make gag'"
  
  gag:	gag.o

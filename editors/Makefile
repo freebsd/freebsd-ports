@@ -51,9 +51,10 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += fb
     SUBDIR += fileobj
     SUBDIR += flim
+    SUBDIR += focuswriter
+    SUBDIR += focuswriter-qt4
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += fxite
@@ -215,6 +216,7 @@
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
+    SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += pluma
     SUBDIR += plume-creator-devel
@@ -228,7 +230,6 @@
     SUBDIR += semi
     SUBDIR += shed
     SUBDIR += slime
-    SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago

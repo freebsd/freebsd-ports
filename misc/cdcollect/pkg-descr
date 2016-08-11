@@ -1,15 +1,15 @@
 CDCollect is a CD/DVD catalog application for gnome.
 
 It's goal is to be able to catalog your entire CD collection allowing for
-searches of your CD/DVD files with a clean and simple interface. 
+searches of your CD/DVD files with a clean and simple interface.
 
 Features:
 
-* Easy to use interface. 
+* Easy to use interface.
 * Allow the use of plugins (external programs) to collect information for
-  each file of a CD in your catalog. 
-* Searches can be performed on CDs or files in the collection. 
+  each file of a CD in your catalog.
+* Searches can be performed on CDs or files in the collection.
 * It also catalogs compressed files
-  (using external programs such as unzip, unrar, etc.). 
+  (using external programs such as unzip, unrar, etc.).
 
 WWW: http://cdcollect.sourceforge.net

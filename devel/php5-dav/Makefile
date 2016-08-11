@@ -3,7 +3,7 @@
 
 PORTNAME=	dav
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.pureftpd.org/php-webdav/
 PKGNAMEPREFIX=	php5-
@@ -16,10 +16,7 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libneon.so:www/neon
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	dav
+USES=		php:ext
 
 IGNORE_WITH_PHP=	70
 

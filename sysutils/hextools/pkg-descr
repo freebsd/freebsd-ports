@@ -6,6 +6,6 @@ watching output from slow devices (e.g., serial devices like mice). The
 hex2bin-utility (the reverse-hexdump) not only accepts hexbytes for input,
 but also double-quoted strings with most of the escape-chars known
 from C and makes good attempts at undumping even hexdumps with repetition-lines
-(a "*" on its own line). It's written in ANSI C. 
+(a "*" on its own line). It's written in ANSI C.
 
 WWW: http://gnuwin32.sourceforge.net/packages/hextools.htm

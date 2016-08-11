@@ -1,4 +1,4 @@
-SVN::Log retrieves and parses the commit logs from Subversion 
+SVN::Log retrieves and parses the commit logs from Subversion
 repositories.
 
 WWW: http://search.cpan.org/dist/SVN-Log

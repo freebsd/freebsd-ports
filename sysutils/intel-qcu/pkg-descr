@@ -1,0 +1,8 @@
+The Intel(R) QSFP+ Configuration Utility is a command line utility that allows 
+users to change the link type of the installed QSFP+ module. The supported 
+types are defined within the adapter's NVM. This utility displays only the 
+devices that potentially support QSFP+ reconfiguration. Only one port per 
+device is displayed, since changes affect the device as a whole, not individual
+ports.
+
+WWW: https://downloadcenter.intel.com/

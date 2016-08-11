@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	repoze.who
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

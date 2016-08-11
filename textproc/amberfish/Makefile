@@ -11,6 +11,9 @@ MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 USES=		gmake makeinfo
@@ -23,7 +26,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	${INSTALL_DATA} ${FILESDIR}/porter.cc ${WRKSRC}/src
+	${CP} ${FILESDIR}/porter.cc ${WRKSRC}/src
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -35,7 +38,7 @@ post-patch:
 		s|make strip|| ; \
 		s|cp |$${BSD_INSTALL_PROGRAM} |' ${WRKSRC}/src/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/amberfish.png ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${STAGEDIR}${DOCSDIR}

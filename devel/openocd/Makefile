@@ -15,8 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
 CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 
-BROKEN_FreeBSD_9=	libusb does not install pkgconfig files
-
 OPTIONS_DEFINE=	DOC JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
 	USBBLASTER EP93XX AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK \
 	ARMJTAGEW BUSPIRATE TIICDI STLINK OSBDM OPENDOUS SYSFSGPIO RMTBITBANG \
@@ -57,6 +55,9 @@ CMSISDAP_DESC=Support for CMSIS-DAP Compliant Debugger
 USES=		gmake libtool pkgconfig tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 INFO=		openocd
+
+post-patch:
+	chmod +x ${WRKSRC}/libusb_finder
 
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.

@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.nongnu.org/libntlm/releases/
 
-MAINTAINER=	jochen@daten-chaos.de
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Library that implement Microsoft's NTLM authentication
 
 LICENSE=	LGPL21+

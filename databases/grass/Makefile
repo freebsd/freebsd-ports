@@ -111,7 +111,7 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_ON=	--with-odbc
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite
 
 .include <bsd.port.options.mk>

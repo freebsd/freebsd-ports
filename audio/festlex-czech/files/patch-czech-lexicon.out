@@ -1,6 +1,6 @@
---- czech-lexicon.out.orig	Wed Dec 26 17:22:12 2007
-+++ czech-lexicon.out	Wed Dec 26 17:28:09 2007
-@@ -45,7 +45,9 @@
+--- czech-lexicon.out.orig	2006-06-21 07:32:07 UTC
++++ czech-lexicon.out
+@@ -45,7 +45,9 @@ MNCL
  ("a" nil (((a) 0)))
  ("a" sym (((a:) 0)))
  ("b" nil (((b e:) 0)))
@@ -10,7 +10,7 @@
  ("cca" nil (((c i r k a) 0)))
  ("ch" nil (((ch a:) 0)))
  ("Chocomy¹l" nil (((ch o c o m i s~ l) 0)))
-@@ -78,7 +80,16 @@
+@@ -78,7 +80,16 @@ MNCL
  ("copyrightùm" nil (((k o p i r a j t u: m) 0)))
  ("czech" nil (((c~ e k) 0)))
  ("d" nil (((d e:) 0)))
@@ -27,7 +27,7 @@
  ("Emacs" nil (((i: m e k s) 0)))
  ("Emacsech" nil (((i: m e k s e ch) 0)))
  ("Emacsem" nil (((i: m e k s e m) 0)))
-@@ -101,6 +112,7 @@
+@@ -101,6 +112,7 @@ MNCL
  ("Emacsùm" nil (((i: m e k s u: m) 0)))
  ("escape" nil (((i s k e j p) 0)))
  ("f" nil (((e f) 0)))
@@ -35,7 +35,7 @@
  ("foundation" nil (((f a u n d e j s~ n) 0)))
  ("freeware" nil (((f r i: v e: r e) 0)))
  ("freewarech" nil (((f r i: v e: r e ch) 0)))
-@@ -145,15 +157,45 @@
+@@ -145,15 +157,45 @@ MNCL
  ("hardwary" nil (((h a r d v e: r i) 0)))
  ("hardwarù" nil (((h a r d v e: r u:) 0)))
  ("hardwarùm" nil (((h a r d v e: r u: m) 0)))
@@ -81,7 +81,7 @@
  ("p" nil (((p e:) 0)))
  ("pst" nil (((p s t) 0)))
  ("q" nil (((k v e:) 0)))
-@@ -205,10 +247,16 @@
+@@ -205,10 +247,16 @@ MNCL
  ("softwarù" nil (((s o f t v e: r u:) 0)))
  ("softwarùm" nil (((s o f t v e: r u: m) 0)))
  ("t" nil (((t e:) 0)))

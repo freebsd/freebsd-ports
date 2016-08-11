@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enum34
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,13 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python:2.7-3.3
 USE_PYTHON=	distutils autoplist
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+NO_ARCH=	yes
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/enum/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

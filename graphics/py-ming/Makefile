@@ -13,8 +13,8 @@ COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/../LICENSE_GPL2
-LICENSE_FILE_LGPL21=	${WRKSRC}/../LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL2
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
@@ -29,17 +29,17 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		autoreconf libtool localbase python
 
-CONFIGURE_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/py_ext
+BUILD_WRKSRC=	${WRKSRC}/py_ext
+INSTALL_WRKSRC=	${WRKSRC}/py_ext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lib${PORTNAME}
 GH_PROJECT=	lib${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/setup.py.in
-	@${LN} -fs ${LOCALBASE}/include/ming ${WRKSRC}/../src
+	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/py_ext/Makefile.am
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py.in
+	@${LN} -fs ${LOCALBASE}/include/ming ${WRKSRC}/src
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mingc.so

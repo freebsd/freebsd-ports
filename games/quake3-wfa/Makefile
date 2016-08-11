@@ -13,8 +13,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Weapons Factory Arena
 
-MANUAL_PACKAGE_BUILD=	huge (200MB)
-
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

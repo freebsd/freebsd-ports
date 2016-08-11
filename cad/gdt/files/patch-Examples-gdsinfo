@@ -1,6 +1,6 @@
---- Examples/gdsinfo.orig	2008-06-20 02:04:27.000000000 +0900
-+++ Examples/gdsinfo	2013-05-30 10:54:47.000000000 +0900
-@@ -75,10 +75,7 @@
+--- Examples/gdsinfo.orig	2016-05-16 17:46:24 UTC
++++ Examples/gdsinfo
+@@ -75,10 +75,7 @@ $topCellNames =~ s/,/ /g;
  $topCellNames =~ s/\s+/ /g;
  
  # help find gds2gdt

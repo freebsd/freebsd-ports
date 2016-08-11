@@ -12,6 +12,8 @@ COMMENT=	LISP like scripting language
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 CONFLICTS=	newlisp-[0-9]*

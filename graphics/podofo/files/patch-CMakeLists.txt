@@ -1,18 +1,14 @@
---- CMakeLists.txt.orig	2014-06-15 18:53:10.000000000 +0200
-+++ CMakeLists.txt	2014-07-08 16:13:02.647407659 +0200
-@@ -16,6 +16,11 @@
+--- CMakeLists.txt.orig	2016-06-08 20:55:08 UTC
++++ CMakeLists.txt
+@@ -16,7 +16,6 @@ SET(PODOFO_VERSION_PATCH "4" CACHE STRIN
  SET(PODOFO_SOVERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  SET(PODOFO_LIBVERSION "${PODOFO_SOVERSION}")
  
-+INCLUDE_DIRECTORIES(
-+    ${PoDoFo_BINARY_DIR}
-+    ${PoDoFo_SOURCE_DIR}
-+    ${PoDoFo_SOURCE_DIR}/src
-+)
- 
+-
  #
  # Main includes
-@@ -340,6 +345,7 @@
+ #
+@@ -345,6 +344,7 @@ ELSE(LIBIDN_FOUND)
  	MESSAGE("Libidn not found. AES-256 Encryption support will be disabled")
  ENDIF(LIBIDN_FOUND)
  
@@ -20,7 +16,7 @@
  FIND_PACKAGE(LIBJPEG)
  
  IF(LIBJPEG_FOUND)
-@@ -349,7 +355,9 @@
+@@ -354,7 +354,9 @@ IF(LIBJPEG_FOUND)
  ELSE(LIBJPEG_FOUND)
    MESSAGE("Libjpeg not found. JPEG support will be disabled")
  ENDIF(LIBJPEG_FOUND)
@@ -30,7 +26,7 @@
  FIND_PACKAGE(TIFF)
  
  IF(TIFF_FOUND)
-@@ -359,7 +367,9 @@
+@@ -364,7 +366,9 @@ IF(TIFF_FOUND)
  ELSE(TIFF_FOUND)
    MESSAGE("Libtiff not found. TIFF support will be disabled")
  ENDIF(TIFF_FOUND)
@@ -40,7 +36,7 @@
  FIND_PACKAGE(PNG)
  
  IF(PNG_FOUND)
-@@ -369,9 +379,11 @@
+@@ -374,9 +378,11 @@ IF(PNG_FOUND)
  ELSE(PNG_FOUND)
    MESSAGE("LibPng not found. PNG support will be disabled")
  ENDIF(PNG_FOUND)
@@ -52,7 +48,7 @@
  FIND_PACKAGE(CppUnit)
  
  IF(CppUnit_FOUND)
-@@ -381,6 +393,7 @@
+@@ -386,6 +392,7 @@ IF(CppUnit_FOUND)
  ELSE(CppUnit_FOUND)
    MESSAGE("Cppunit not found. No unit tests will be built.")
  ENDIF(CppUnit_FOUND)
@@ -60,15 +56,15 @@
  
  ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
  
-@@ -443,6 +456,7 @@
- ENDIF(DEFINED JPEG_RUNTIME_COMPATIBLE)
+@@ -426,6 +433,7 @@ ELSE(WANT_FONTCONFIG)
+ ENDIF(WANT_FONTCONFIG)
  
  IF(NOT PODOFO_BUILD_LIB_ONLY)
 +IF(WANT_LUA)
  FIND_PACKAGE(LUA)
  IF(LUA_FOUND)
  	# If we have lua, we can build podofoimpose.
-@@ -454,6 +468,7 @@
+@@ -437,6 +445,7 @@ IF(LUA_FOUND)
  ELSE(LUA_FOUND)
  	MESSAGE("Lua not found - PoDoFoImpose and PoDoFoColor will be built without Lua support")
  ENDIF(LUA_FOUND)
@@ -76,17 +72,7 @@
  ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
  
  
-@@ -482,9 +497,6 @@
- ENDIF(WANT_BOOST)
- 
- INCLUDE_DIRECTORIES(
--    ${PoDoFo_BINARY_DIR}
--    ${PoDoFo_SOURCE_DIR}
--    ${PoDoFo_SOURCE_DIR}/src
-     ${FREETYPE_INCLUDE_DIR}
-     ${ZLIB_INCLUDE_DIR}
-     ${EXTRA_INCLUDES}
-@@ -524,7 +536,7 @@
+@@ -510,7 +519,7 @@ SET(PODOFO_LIB
  #
  # Setup directories we will need
  #

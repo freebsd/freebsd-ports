@@ -89,7 +89,7 @@ USES+=		cpe compiler:c++11-lang gmake iconv perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
-USE_XORG=	xext xrender xt
+USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xt
 
 .if ${MOZILLA} != "libxul"
 BUNDLE_LIBS=	yes
@@ -126,7 +126,8 @@ MOZ_OPTIONS+=	${CONFIGURE_TARGET} --prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
+LDFLAGS+=		-L${LOCALBASE}/lib \
+			-Wl,-rpath,${PREFIX}/lib/${MOZILLA} -Wl,--as-needed
 
 .if ${OPSYS} != DragonFly # XXX xpcshell crash during install
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
@@ -212,10 +213,10 @@ sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora
 
-tremor_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
+tremor_LIB_DEPENDS=	libogg.so:audio/libogg libvorbisidec.so:audio/libtremor
 tremor_MOZ_OPTIONS=	--with-system-tremor --with-system-ogg
 
-vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+vorbis_LIB_DEPENDS=	libogg.so:audio/libogg libvorbis.so:audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
 .endif
 
@@ -226,6 +227,9 @@ vpx_MOZ_OPTIONS=	--with-system-libvpx
 .for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
 .endfor
+
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 .for dep in ${_ALL_DEPENDS} ${USE_MOZILLA:M+*:S/+//}
 .if !defined(_WITHOUT_${dep})
@@ -282,21 +286,14 @@ MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 MOZ_TOOLKIT=	cairo-gtk3
 .endif
 
-.if ${MOZ_TOOLKIT:Mcairo-qt}
-# don't use - transparent backgrounds (bug 521582),
-USE_MOZILLA+=	-cairo # ports/169343
-USE_DISPLAY=yes # install
-USE_GNOME+=	pango
-USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
-MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
-.elif ${MOZ_TOOLKIT:Mcairo-gtk3}
+.if ${MOZ_TOOLKIT:Mcairo-gtk3}
 BUILD_DEPENDS+=	gtk3>=3.14.6:x11-toolkits/gtk30
-USE_GNOME+=	gtk30
+USE_GNOME+=	gdkpixbuf2 gtk30
 . if ${MOZILLA_VER:R:R} >= 32
 USE_GNOME+= gtk20 # bug 624422
 . endif
 .else # gtk2, cairo-gtk2
-USE_GNOME+=	gtk20
+USE_GNOME+=	gdkpixbuf2 gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -317,7 +314,8 @@ RUN_DEPENDS+=	libcanberra>0:audio/libcanberra
 
 .if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	libnotify>0:devel/libnotify
-LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib \
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus \
+				libdbus-glib-1.so:devel/dbus-glib \
 				libstartup-notification-1.so:x11/startup-notification
 MOZ_OPTIONS+=	--enable-startup-notification
 .else
@@ -327,8 +325,6 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .if ${PORT_OPTIONS:MFFMPEG}
 # dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
 RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
-.else
-MOZ_OPTIONS+=	--disable-ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
@@ -347,7 +343,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${PORT_OPTIONS:MGIO} && ! ${MOZ_TOOLKIT:Mcairo-qt}
+.if ${PORT_OPTIONS:MGIO}
 MOZ_OPTIONS+=	--enable-gio
 .else
 MOZ_OPTIONS+=	--disable-gio
@@ -379,7 +375,7 @@ MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.1.1_1:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
 .endif
 
@@ -413,7 +409,8 @@ MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-MOZ_OPTIONS+=	--enable-dtrace
+MOZ_OPTIONS+=	--enable-dtrace \
+		--disable-gold
 . if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100061
 LIBS+=			-lelf
 . endif
@@ -614,13 +611,6 @@ gecko-do-configure:
 
 pre-install: gecko-moz-pis-pre-install
 post-install-script: gecko-create-plist
-
-gecko-create-plist: port-post-install
-
-.if !target(port-post-install)
-port-post-install:
-		@${DO_NADA}
-.endif
 
 gecko-create-plist:
 # Create the plist

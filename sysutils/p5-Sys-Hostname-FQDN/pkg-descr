@@ -1,9 +1,9 @@
-Sys::Hostname::FQDN uses the host 'C' library 
-to discover the (usually) short host name, 
+Sys::Hostname::FQDN uses the host 'C' library
+to discover the (usually) short host name,
 then uses (perl) gethostbyname to extract the real hostname.
 
-The results from gethostbyname are exported as gethostinfo 
-and asciihostinfo as a convenience since they are available. 
+The results from gethostbyname are exported as gethostinfo
+and asciihostinfo as a convenience since they are available.
 Similarly, the 'C' library functions inet_ntoa and inet_aton are exported.
 
 WWW: http://search.cpan.org/dist/Sys-Hostname-FQDN/

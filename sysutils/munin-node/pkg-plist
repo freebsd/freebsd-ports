@@ -50,6 +50,8 @@ sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
 sbin/munin-sched
+%%DATADIR%%/munin-async
+%%DATADIR%%/munin-asyncd
 %%JAVA%%%%DATADIR%%/munin-jmx-plugins.jar
 %%DATADIR%%/plugins/amavis
 %%DATADIR%%/plugins/apache_accesses
@@ -248,7 +250,12 @@ sbin/munin-sched
 %%DATADIR%%/plugins/users
 %%PERL%%%%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
+%%DATADIR%%/plugins/zfs_compress
 %%DATADIR%%/plugins/zimbra_
+%%DATADIR%%/plugins/zpool_chksum
+%%DATADIR%%/plugins/zpool_dedup
 @dir(%%USER%%,%%GROUP%%,) %%DBDIRNODE%%/plugin-state
 @dir %%ETCDIR%%/plugins
+@dir(%%USER%%,%%GROUP%%,) %%SPOOLDIR%%/async
+@comment @dir %%SPOOLDIR%%
 @comment @dir %%DBDIRNODE%%

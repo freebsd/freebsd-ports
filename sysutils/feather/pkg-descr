@@ -1,12 +1,12 @@
 Feather is a tarsnap wrapper script that performs and maintains a
-set of backups as defined by a YAML configuration file.  
+set of backups as defined by a YAML configuration file.
 
-Features: 
+Features:
  - Dynamic scheduling
  - Keep an arbitrary number of backups of each schedule type
  - Restrict schedules based on time of day
  - Restrict feather run to a certain amount of wall time (max_runtime)
- - Multiple backup paths per tarsnap 
+ - Multiple backup paths per tarsnap
  - Multiple exclude list per tarsnap
 
-WWW:	https://github.com/danrue/feather
+WWW: https://github.com/danrue/feather

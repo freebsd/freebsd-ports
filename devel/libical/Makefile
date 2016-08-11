@@ -3,6 +3,7 @@
 
 PORTNAME=	libical
 PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE_COMB=	dual
 LICENSE=	MPL LGPL21
 
 USE_GITHUB=	yes
-GH_TAGNAME=	da69aae
 
 USES=		cmake pathfix perl5
 USE_PERL5=	build

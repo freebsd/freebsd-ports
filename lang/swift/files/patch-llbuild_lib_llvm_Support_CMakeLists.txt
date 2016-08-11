@@ -1,0 +1,10 @@
+--- llbuild/lib/llvm/Support/CMakeLists.txt.orig	2016-03-15 20:15:59 UTC
++++ llbuild/lib/llvm/Support/CMakeLists.txt
+@@ -41,3 +41,7 @@ raw_ostream.cpp
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+   target_link_libraries(llvmSupport pthread dl)
+ endif()
++
++if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++  target_link_libraries(llvmSupport pthread execinfo)
++endif()

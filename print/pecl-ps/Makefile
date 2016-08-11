@@ -3,6 +3,7 @@
 
 PORTNAME=	ps
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,10 +16,7 @@ LICENSE=	PHP202
 
 LIB_DEPENDS=	libps.so:print/pslib
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	${PORTNAME}
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 post-patch:

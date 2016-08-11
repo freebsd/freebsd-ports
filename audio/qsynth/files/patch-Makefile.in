@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-09-07 14:59:23 UTC
+--- Makefile.in.orig	2016-04-05 15:57:45 UTC
 +++ Makefile.in
 @@ -57,6 +57,7 @@ forms = \
  	src/qsynthSetupForm.ui

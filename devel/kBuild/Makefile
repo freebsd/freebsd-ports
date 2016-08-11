@@ -3,7 +3,7 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
 		http://tmp.chruetertee.ch/ \
@@ -13,8 +13,11 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}r2695-src
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
+USE_GCC=	any
 USES=		autoreconf:build gmake makeinfo
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
@@ -26,8 +29,8 @@ KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
 		AUTORECONF=${AUTORECONF} \
-		AUTOPOINT=true
-USE_GCC=	any
+		AUTOPOINT=true \
+		CFLAGS="-D_WITH_GETLINE -D_WITH_DPRINTF"
 KBUILD_TARGET=	${OPSYS:tl}
 
 KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \

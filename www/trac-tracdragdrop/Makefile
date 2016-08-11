@@ -15,15 +15,15 @@ COMMENT=	Provides extends attachments list of Trac
 
 LICENSE=	BSD3CLAUSE
 
-SVN_REV=	12822
+RUN_DEPENDS=	tracd:www/trac
 
-RUN_DEPENDS+=	tracd:www/trac
+SVN_REV=	12822
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

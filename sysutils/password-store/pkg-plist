@@ -1,6 +1,5 @@
 %%CONTRIB%%%%DATADIR%%/dmenu/README.md
 %%CONTRIB%%%%DATADIR%%/dmenu/passmenu
-%%CONTRIB%%%%DATADIR%%/emacs/.gitignore
 %%CONTRIB%%%%DATADIR%%/emacs/Cask
 %%CONTRIB%%%%DATADIR%%/emacs/README.md
 %%CONTRIB%%%%DATADIR%%/emacs/password-store.el
@@ -18,7 +17,11 @@
 %%CONTRIB%%%%DATADIR%%/pass.fish-completion
 %%CONTRIB%%%%DATADIR%%/pass.zsh-completion
 %%CONTRIB%%%%DATADIR%%/related-projects.txt
-%%PORTDOCS%%man/man1/pass.1.gz
+%%CONTRIB%%%%DATADIR%%/vim/noplaintext.vim
+%%CONTRIB%%etc/bash_completion.d/password-store
+%%CONTRIB%%share/fish/completions/password-store.fish
+%%CONTRIB%%share/zsh/site-functions/_pass
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-filter.sh
 bin/pass
 libexec/pass
+man/man1/pass.1.gz

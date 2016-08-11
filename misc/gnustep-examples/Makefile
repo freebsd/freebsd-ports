@@ -31,8 +31,6 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-
-post-install:
 	${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Calculator.app/Calculator \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/CurrencyConverter.app/CurrencyConverter \

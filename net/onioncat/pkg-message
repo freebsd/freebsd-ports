@@ -5,4 +5,4 @@ service in torrc:
 
 HiddenServicePort 8060 127.0.0.1:8060
 
-Finally, please consider setting up an IPv6 firewall. 
+Finally, please consider setting up an IPv6 firewall.

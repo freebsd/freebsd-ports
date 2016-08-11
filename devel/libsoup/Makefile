@@ -20,10 +20,9 @@ PORTSCOUT=	limitw:1,even
 .if !defined(REFERENCE_PORT)
 
 USES+=		gettext gmake gnome libtool pathfix pkgconfig \
-		python:3:build tar:xz
+		python:3:build sqlite:3 tar:xz
 USE_GNOME=	glib20 intlhack introspection:build \
 		libxml2 referencehack
-USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-more-warnings \
@@ -36,7 +35,7 @@ LIBVERSION=	1.7.0
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
-USE_SQLITE=	yes
+USES+=		sqlite
 LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 CONFIGURE_ARGS+=--with-gnome
 .else

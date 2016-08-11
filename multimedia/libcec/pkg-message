@@ -16,4 +16,4 @@ devfs_system_ruleset="system"
 
 Then restart devfs to load the new rule:
 
-% /etc/rc.d/devfs restart
+% service devfs restart

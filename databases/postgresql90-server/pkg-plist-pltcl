@@ -1,6 +1,0 @@
-%%DOCSDIR%%/README-pltcl
-lib/postgresql/pltcl.so
-bin/pltcl_loadmod
-bin/pltcl_delmod
-bin/pltcl_listmod
-%%DATADIR%%/unknown.pltcl

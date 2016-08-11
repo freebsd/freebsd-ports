@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.7
+DISTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -57,7 +58,7 @@ CONFLICTS?=	redis-devel-3.*
 USES+=		gmake
 MAKE_ENV=	"V=yo"
 USE_RC_SUBR=	redis sentinel
-BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
+BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
 		redis-cli redis-sentinel redis-server
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

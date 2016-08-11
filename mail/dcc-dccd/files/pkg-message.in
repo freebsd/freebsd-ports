@@ -4,8 +4,8 @@
 Installation Notes
 ------------------
 
-Make certain you edit %%DCCHOME%%/dcc_conf to enable the daemons you 
-wish to run, in addition to adding their respective dcc*_enable="YES" 
+Make certain you edit %%DCCHOME%%/dcc_conf to enable the daemons you
+wish to run, in addition to adding their respective dcc*_enable="YES"
 lines to /etc/rc.conf or /etc/rc.conf.local.
 
 Daemon startup flags are also specified in %%DCCHOME%%/dcc_conf.
@@ -23,8 +23,8 @@ variable controls the number of days to keep logs.
 
 If your site handles more than 100,000 messages per day, to decrease the
 load on the public DCC servers and increase the responsiveness of your
-DCC clients, you should set up your own, local DCC server connected to 
-the global network of DCC servers.  See: 
+DCC clients, you should set up your own, local DCC server connected to
+the global network of DCC servers.  See:
 
 http://www.dcc-servers.net/dcc/#local-server
 

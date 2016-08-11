@@ -3,7 +3,7 @@
 
 PORTNAME=	meshlab
 PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
 DISTNAME=	MeshLabSrc_AllInc_v${PORTVERSION:C|\.||g}
@@ -52,6 +52,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/shaders
 	cd ${WRKSRC}/distrib/shaders && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/meshlab/shaders
 	${INSTALL_PROGRAM} ${WRKSRC}/distrib/meshlab ${STAGEDIR}${PREFIX}/lib/meshlab
-	${LN} -sf ${PREFIX}/lib/meshlab/meshlab ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ../lib/meshlab/meshlab ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

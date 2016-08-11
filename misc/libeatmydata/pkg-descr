@@ -1,7 +1,7 @@
-libeatmydata is a small LD_PRELOAD library designed to (transparently) disable 
-fsync (and friends, like open(O_SYNC)). This has two side-effects: making 
-software that writes data safely to disk a lot quicker and making this 
+libeatmydata is a small LD_PRELOAD library designed to (transparently) disable
+fsync (and friends, like open(O_SYNC)). This has two side-effects: making
+software that writes data safely to disk a lot quicker and making this
 software no longer crash safe.
 
-DO NOT use libeatmydata on software where you care about what it 
+DO NOT use libeatmydata on software where you care about what it
 stores. It's called libEAT-MY-DATA for a reason.

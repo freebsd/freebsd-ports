@@ -2,6 +2,7 @@
 
 PORTNAME=	rrd-ffi
 PORTVERSION=	0.2.14
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +18,6 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

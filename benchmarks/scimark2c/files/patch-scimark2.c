@@ -1,6 +1,6 @@
---- scimark2.c.orig	Sat Apr 29 06:21:12 2000
-+++ scimark2.c	Sat Apr  5 23:13:45 2003
-@@ -58,7 +58,7 @@
+--- scimark2.c.orig	2006-07-25 20:11:47 UTC
++++ scimark2.c
+@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
  
  	
  		print_banner();

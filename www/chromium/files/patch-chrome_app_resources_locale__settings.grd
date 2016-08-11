@@ -1,0 +1,11 @@
+--- chrome/app/resources/locale_settings.grd.orig	2016-05-11 19:02:13 UTC
++++ chrome/app/resources/locale_settings.grd
+@@ -156,7 +156,7 @@
+         55
+       </message>
+ 
+-      <if expr="is_win or is_linux or chromeos">
++      <if expr="is_win or is_linux or chromeos or is_bsd">
+         <!-- The width of the ash/ChromeOS system tray menu in pixels. -->
+         <message name="IDS_SYSTEM_TRAY_MENU_BUBBLE_WIDTH_PIXELS" use_name_for_id="true">
+           300

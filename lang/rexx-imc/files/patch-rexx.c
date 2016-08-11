@@ -1,6 +1,6 @@
---- rexx.c.upper	Tue Feb 26 12:29:20 2002
-+++ rexx.c	Thu Jun 20 16:33:44 2002
-@@ -1366,6 +1366,39 @@
+--- rexx.c.orig	2002-02-26 12:29:20 UTC
++++ rexx.c
+@@ -1366,6 +1366,39 @@ signal:        while(pstacklev&&((stype=
                 if(write(rxstacksock,pull,8)<8||
                    (len>0&&write(rxstacksock,exp,len)<len)) die(Esys);
                 break;

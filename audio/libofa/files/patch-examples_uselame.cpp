@@ -1,5 +1,5 @@
---- examples/uselame.cpp.orig	2013-09-12 09:10:31.000000000 +0000
-+++ examples/uselame.cpp	2013-09-12 09:10:42.000000000 +0000
+--- examples/uselame.cpp.orig	2016-07-26 15:10:24 UTC
++++ examples/uselame.cpp
 @@ -12,6 +12,7 @@
  #else
  #include <sys/wait.h>

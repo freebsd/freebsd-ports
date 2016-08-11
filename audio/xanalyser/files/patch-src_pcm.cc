@@ -1,5 +1,5 @@
---- src/pcm.cc.orig	Mon Apr 16 17:16:58 2007
-+++ src/pcm.cc	Mon Apr 16 17:26:52 2007
+--- src/pcm.cc.orig	2007-03-15 18:22:14 UTC
++++ src/pcm.cc
 @@ -11,6 +11,9 @@
  #  include <machine/byte_swap.h>
  #elif __FreeBSD__

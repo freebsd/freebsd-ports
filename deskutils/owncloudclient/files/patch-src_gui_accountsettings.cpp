@@ -1,8 +1,8 @@
---- src/gui/accountsettings.cpp.orig	2015-03-16 14:28:58 UTC
+--- src/gui/accountsettings.cpp.orig	2016-05-12 07:59:12 UTC
 +++ src/gui/accountsettings.cpp
-@@ -30,7 +30,8 @@
- #include "selectivesyncdialog.h"
+@@ -31,7 +31,8 @@
  #include "creds/abstractcredentials.h"
+ #include "tooltipupdater.h"
  
 -#include <math.h>
 +#include <climits>

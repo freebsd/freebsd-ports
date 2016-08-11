@@ -5,6 +5,476 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160722:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: jkim@FreeBSD.org
+
+  VirtualBox has been updated to 5.0.26 and it is incompatible with old
+  kernel modules.  You should upgrade emulators/virtualbox-ose-kmod and
+  load new kernel modules before starting new version, e.g.,
+
+  # service vboxnet restart
+
+20160722:
+  AFFECTS: users of games/stonesoup-*
+  AUTHOR: lifanov@mail.lifanov.com
+
+  The WIZARD option has been renamed to NOWIZARD and is now an opt-out to
+  better reflect the upstream. If you run a shared game server and would
+  like the Wizard mode support disabled, please update port options.
+
+20160718:
+  AFFECTS: users of www/awstats
+  AUTHOR: adamw@FreeBSD.org
+
+  The directory containing icons has changed from ".../icons" to ".../icon".
+  awstats has, in its suggested configuration file, contained an alias
+  from /awstatsicons. After applying the awstats-7.5 update, you must
+  update that alias to point to /usr/local/www/awstats/icon (just remove
+  the "s" at the end).
+
+20160708:
+  AFFECTS: users of sysutils/screen
+  AUTHOR: cy@FreeBSD.org
+
+  As of GNU Screen 4.4.0 (r417201):
+  
+  Note that there was fix to screen message structure field
+  responsible for $TERM handling, making it impossible
+  to attach to older versions.
+
+20160704:
+  AFFECTS: users of databases/mysql57-*
+  AUTHOR: riggs@FreeBSD.org
+
+  The default location for my.cnf has changed from "/var/db/mysql/my.cnf"
+  to "/usr/local/etc/mysql/my.cnf". Existing my.cnf files must be merged
+  manually with the new default and moved to the new location. To
+  continue using the my.cnf file at the old location, set "mysql_optfile"
+  in /etc/rc.conf to point to the location of the existing my.cnf file.
+
+20160701:
+  AFFECTS: users of www/node5
+  AUTHOR: bradleythughes@fastmail.fm
+
+  Node.js v5.x has reached end of life and has been removed. Users that
+  have not yet moved to v6.x should do so now by switching to the www/node
+  port.
+
+20160627:
+  AFFECTS: users of sysutils/rsyslog7
+  AUTHOR: brd@FreeBSD.org
+
+  Rsyslog 7.x has reached end of life status and is being marked as
+  depreciated.  Rsyslog 8 has been made the default.
+
+20160626:
+  AFFECTS: users of www/calendarserver
+  AUTHOR: pi@FreeBSD.org
+
+  Please note that updating from the previous version (5.1) to the current
+  version (8.0) requires manual steps. Please consult the pkg-message for
+  details.
+
+20160624:
+  AFFECTS: users of shells/zsh
+  AUTHOR: adamw@FreeBSD.org
+
+  zsh now looks for system-wide conf files in ${PREFIX}/etc, instead of
+  /etc. If you have files like zshrc, zshenv, zprofile, zlogin, or zlogout
+  in /etc, either move them to /usr/local/etc or rebuild zsh with the
+  ETCDIR option on.
+
+  Note that this change only affects system-wide conf files, which are not
+  installed or created by a default installation.
+
+20160621:
+  AFFECTS: users of www/redmine
+  AUTHOR: tz@FreeBSD.org
+
+  Redmine was updated from 2.6.9 to 3.2.3. Since this an update over
+  major versions be careful with your update.
+  For further update instructions please have a look at:
+  https://www.redmine.org/projects/redmine/wiki/RedmineUpgrade
+
+20160621:
+  AFFECTS: users of ftp/wget
+  AUTHOR: vd@FreeBSD.org
+
+  Wget 1.18 fixes a security vulnerability (CVE-2016-4971) and the fix
+  introduces a backward-incompatibility for HTTP->FTP redirects. Any script that
+  relies on the old behaviour must use --trust-server-names in order to trust
+  the HTTP response and redirect to the new filename.
+
+20160619:
+  AFFECTS: users of databases/py-apsw
+  AUTHOR: rm@FreeBSD.org
+
+  SQLite 3.12 completely changed the semantics of VFS.xGetLastError() in an
+  incompatible way. This required a rewrite of the relevant C, Python and test
+  code. If you implement or use this method then you have to rewrite your code
+  too. Also note that running the test suite from an earlier version of APSW
+  against this or future SQLite versions will result in consuming all memory,
+  swap or address space (an underlying integer changed meaning).
+
+20160616:
+  AFFECTS: users of security/openssl*, security/libressl*
+  AUTHOR: mat@FreeBSD.org
+
+  Previously, to tell the ports tree, you needed to set:
+
+  WITH_OPENSSL_PORT=yes
+  
+  And if you wanted a port that was not security/openssl, you needed to add,
+  for example:
+
+  OPENSSL_PORT=	security/libressl
+
+  Now, all you need to do is:
+
+  DEFAULT_VERSIONS+=  ssl=libressl
+  
+  Valid values are base, openssl, openssl-devel, libressl, and libressl-devel.
+
+20160614:
+  AFFECTS: users of www/node, www/node5, and www/node4
+  AUTHOR: adamw@FreeBSD.org
+
+  node now prefers a few libraries from ports to the versions bundled
+  with node. However, node cannot use the libssl from LibreSSL. If you
+  are using LibreSSL as your SSL provider, you must enable the
+  "BUNDLED_SSL" option when building node.
+
+20160611:
+  AFFECTS: users of textproc/xmlroff
+  AUTHOR: hrs@FreeBSD.org
+
+  The library part of xmlroff has been separated into textproc/libfo.
+  Remove the installed xmlroff first when upgrading it because older
+  xmlroff than 0.6.2_6 have files which libfo installs.  A typical
+  error message is the following:
+
+  pkg-static: libfo-0.6.2 conflicts with xmlroff-0.6.2_5 (installs files into the same place).  Problematic file: /usr/local/include/libfo-0.6/libfo/area/fo-area.h
+
+20160610:
+  AFFECTS: users of databases/postgresql-repmgr
+  AUTHOR: bofh@FreeBSD.org
+
+  The port has been repocopied to databases/postgresql-repmgr2 and current
+  post has been updated to 3.x series. If anyone is still looking forward
+  to use the 2.x please upgrade as following.
+
+  # portmaster -o databases/postgresql-repmgr2 databases/postgresql-repmgr
+    or
+  # portupgrade -o databases/postgresql-repmgr2 databases/postgresql-repmgr
+
+  Otherwise if you want to move on with 3.x series just use
+
+  # portmaster -r databases/postgresql-repmgr
+    or
+  # portupgrade -fr databases/postgresql-repmgr
+
+20160605:
+  AFFECTS: Users of www/h2o
+  AUTHOR: junovitch@FreeBSD.org
+
+  File paths no longer have a trailing / appended to them. This enables
+  directing specific paths to a file but may break existing configurations.
+  Refer to https://h2o.examp1e.net/configure/file_directives.html and
+  revise your yaml config appropriately.
+
+20160601:
+  AFFECTS: users of security/libressl-devel
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest "unstable" version of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+  With this update, the patch for the OPENSSL_VERSION_NUMBER has been
+  removed. This causes issues with a number of ports. Patches for many of
+  these issues can be found on
+  https://wiki.freebsd.org/LibreSSL/Ports#OPENSSL_VERSION_NUMBER
+
+  After upgrading to 2.4.0, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl-devel
+
+  Then you should rebuild all ports depending on libressl-devel to avoid
+  dangling shared library dependencies. Poudriere and pkg handle this
+  correctly, portmaster and portupgrade users can use the following to
+  rebuild all dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl-devel
+  Portupgrade users:
+      portupgrade -fr security/libressl-devel
+
+20160527:
+  AFFECTS: Users of mail/opensmtpd-extras (any of them)
+  AUTHOR: adamw@FreeBSD.org
+
+  The invocation for extras has changed. Some extras might fail unless
+  you pass all options/arguments separated by quotes:
+
+      filter myfilter dnsbl "-c /var/chroot/dnsbl" "-h my.dnsbl.com"
+
+  Additionally, extras now run in a chroot. Either pass "-C" to skip the
+  chroot entirely (not recommended), or put all required config files,
+  resolv.conf, and external binaries into the chroot. For example:
+
+      # mkdir -p /var/chroot/dnsbl/etc
+      # cp /etc/resolv.conf /var/chroot/dnsbl/etc
+
+      And pass "-c /var/chroot/dnsbl" to the filter.
+
+20160526:
+  AFFECTS: Users of mail/opensmtpd
+  AUTHOR: brnrd@FreeBSD.org
+
+  Due to changes to the rc-script you must stop smtpd prior to upgrading
+  mail/opensmtpd to version 5.9.2
+
+  # service smtpd stop
+
+  Then upgrade OpenSMTPD to version 5.9.2.
+  Additionally version 5.9.2 changes the file mode bits for two directories.
+  To allow existing installations to start succesfully you must apply the
+  following changes
+
+  # chown -R root:_smtpq /var/spool/smtpd/offline
+  # chmod -R 770 /var/spool/smtpd/offline
+  # chmod -R 700 /var/spool/smtpd/purge
+
+  After applying the changes, the smtpd daemon can succesfully be started.
+
+20160525:
+  AFFECTS: Users of devel/qtcreator
+  AUTHOR: nolden@kde.org
+
+  QBS (Qt Build System) was previously shipped as part of qtcreator, now
+  it is independently available as devel/qbs. However, on upgrading
+  qtcreator to 3.6.1, the depends will detect qbs through a previously
+  installed qtcreator port and will not build/install correctly
+  (devel/qbs won't be installed automatically as depends)
+
+  The solution is to pkg remove qtcreator, then building works correctly.
+
+20160523:
+  AFFECTS: Users of databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  The databases/db6 port has been updated to release 6.2.23.
+
+  This requires manual action in two places:
+    1. dependent applications need to be recompiled,
+    2. SQL databases, if any, need to be reindexed.
+
+  To obtain a list of ports needing a recompilation,
+  the following command should provide it:
+
+  # pkg info -r db6
+
+  Then rebuild db6 and the dependent ports.  For pkg users, this should
+  be transparent.
+
+  Portmaster users:
+  #  portmaster -r databases/db6
+  Portupgrade users:
+  #  portupgrade -fr databases/db6
+
+  In order to reindex SQL databases, a db6-upgrade61.sh script is
+  provided in ${PREFIX}/bin, if and only if the port's SQL option is
+  enabled.  For detailed reindexing instructions, see
+  http://docs.oracle.com/cd/E17076_05/html/installation/sqlite_ver61.html
+  and note that the FreeBSD port installs the upgrade61.sh script with a
+  db6- prefix that you need to add.
+
+20160511:
+  AFFECTS: Users of audio/clementine-player
+  AUTHOR: sbruno@FreeBSD.org
+
+  The audio/clementine-player port has been updated to v1.3.1, the latest
+  upstream release.  The music database code now has a hard dependency on
+  databases/sqlite having the FTS3_TOKENIZER option enabled.  This has
+  been made the default option in databases/sqlite.
+
+  Without this option, clementine-player will crash on startup.
+
+20160510:
+  AFFECTS: Users of biology/seqan
+  AUTHOR: junovitch@FreeBSD.org
+
+  The biology/seqan port has been split into biology/seqan (only the
+  library) and biology/seqan-apps for the programs based on SeqAn. Both
+  ports are based on version 2.1.1 of the SeqAn repository. There is a new
+  biology/seqan1 port with version 1.3 of SeqAn for backwards compatibility,
+  but this port will likely be deprecated in the next year so please update
+  your software to SeqAn2.
+
+20160505:
+  AFFECTS: Users of www/node
+  AUTHOR: bradleythughes@fastmail.fm
+
+  The www/node port has been updated to node.js v6.0.0, the latest
+  upstream release. Users of node.js v5.x are encouraged to upgrade as
+  soon as possible, as upstream support will end two months from now.
+
+  The www/node5 port has been created to aid users transition. Use one of
+  the following commands to continue using node.js v5.x:
+
+  # pkg install node5
+    or
+  # portmaster -o www/node5 www/node
+    or
+  # portupgrade -o www/node5 www/node
+
+20160503:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  LibreSSL 2.3 has removed SSLv3 support completely which leads to issues
+  with a number of ports. Patches for many of these issues can be found
+  on https://wiki.freebsd.org/OpenSSL/No-SSLv3
+
+  After upgrading to 2.3.4, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies. Poudriere and pkg handle this correctly,
+  portmaster and portupgrade users can use the following to rebuild all
+  dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl
+  Portupgrade users:
+      portupgrade -fr security/libressl
+
+20160501:
+  AFFECTS: Users of mail/dspam
+  AUTHOR: junovitch@FreeBSD.org
+
+  dspam has been modified to no longer run as root:mail by default.
+  Existing configuration must be adjusted to reflect using a non-privileged
+  port and the /var/run/dspam directory for PID and socket files.  If you
+  need dspam to run as root for your mail setup, you can use the SETUID
+  config option to enable the old insecure behavior.
+
+20160229:
+  AFFECTS: users of www/nginx and www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
+  The ${MODULESDIR}, default directory for dynamic modules, has been
+  changed from ${ETCDIR}/modules to ${PREFIX}/libexec/${PORTNAME}.
+  It's highly recommended to review existing configuration files of
+  nginx, i.e. ${PREFIX}/etc/nginx/nginx.conf.
+
+20160424:
+  AFFECTS: Users of net-mgmt/icinga2
+  AUTHOR: lme@FreeBSD.org
+
+  The creation of Icinga2 directories and files in /var is now controlled
+  by the /etc/rc.conf variable icinga2_mkvar.  Earlier ports always
+  created the /var entries, but could slow startup significantly when /var
+  was a normal disk rather than a RAM disk.  icinga2_mkvar defaults to
+  "NO".
+
+20160415:
+  AFFECTS: users of audio/chromaprint
+  AUTHOR: jhale@FreeBSD.org
+
+  chromaprint has been updated to version 1.3.1 and includes a shared
+  library bump. PORTREVISIONS have been bumped on affected ports.
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade must rebuild all ports which depend
+  on chromaprint.
+
+  Portmaster users:
+      portmaster -w -r chromaprint
+  Portupgrade users:
+      portupgrade -fr audio/chromaprint
+
+20160414:
+  AFFECTS: Users of www/tt-rss
+  AUTHOR: thierry@FreeBSD.org
+
+  Tiny Tiny RSS can use a database running on a separate server.
+  Previously, in this case, you had to set the option DBLOCAL; this option
+  has been removed and replaced by a settable run-time flag: now you
+  should set
+  ttrssd_local_db="NO"
+  in your /etc/rc.conf .
+
+20160414:
+  AFFECTS: Users of graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  AUTHOR: kde@FreeBSD.org
+
+  DigiKam and its related ports have been updated to 4.14.0, the latest
+  stable upstream release.
+
+  The graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  have both been merged into the new graphics/kipi-plugin-googleservices
+  following a move done upstream.
+
+  Those two ports must be removed, and graphics/kipi-plugin-googleservices
+  should be used instead.
+
+20160413:
+  AFFECTS: All users of www/node-devel
+  AUTHOR: bradleythughes@fastmail.fm
+
+  www/node-devel was outdated and has been removed. Upstream no longer
+  releases a development version. You can use the www/node port to get
+  node.js 5.x by running one of the following commands:
+
+  # pkg install node
+    or
+  # portmaster -o www/node www/node-devel
+    or
+  # portupgrade -o www/node www/node-devel
+
+20160413:
+  AFFECTS: multimedia/x264
+  AUTHOR: jbeich@FreeBSD.org
+
+  LSMASH replaced GPAC by default. If you use BATCH=y in /etc/make.conf
+  and hit below error make sure to re-run "make config".
+
+  ====> You cannot select multiple options from the MP4 radio
+  *** Error code 1
+
+20160412:
+  AFFECTS: Users of net/samba42 and net/samba/43
+  AUTHOR: timur@FreeBSD.org
+
+  Samba 4.2.x and 4.3.x ports have been updated to address
+  BadLock(http://badlock.org) vulnerability, as well as few other
+  discovered.
+
+  Please note that Samba 4.1.x and older versions are also affected by
+  the issues fixed with this release but are not supported anymore. It is
+  strongly recommend to upgrade to a recent version at your earliest
+  convenience.
+
+  The security updates include new smb.conf options and a number of
+  stricter behaviours to prevent Man in the Middle attacks. Between these
+  changes, compatibility with a large number of older software versions
+  has been lost in the default configuration.
+
+  For more information about the related behaviour changes and the
+  security issues please visit:
+
+     https://www.samba.org/samba/latest_news.html#4.4.2
+     https://www.samba.org/samba/history/samba-4.3.8.html
+     https://www.samba.org/samba/history/samba-4.2.11.html
+
 20160411:
   AFFECTS: Users if databases/influxdb
   AUTHOR: cheffo@freebsd-bg.org
@@ -23,7 +493,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: All users of www/pecl-http
   AUTHOR: bofh
 
-  www/pecl-http has been updated to the latest 3.x stable release, which 
+  www/pecl-http has been updated to the latest 3.x stable release, which
   supports php70+ and a new port www/pecl-http2 has been created for the
   2.x branch.
 
@@ -1173,7 +1643,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade:
         portupgrade -fr devel/icu
 
-20150419
+20150419:
   AFFECTS: Users of emulators/wine-devel
   AUTHOR: gerald@FreeBSD.org
 
@@ -1226,7 +1696,8 @@ you update your ports collection, before attempting any port upgrades.
   once converted.
 
 20150331:
-AUTHOR: ohauer@FreeBSD.org
+  AFFECTS: Users of www/mod_dav_svn
+  AUTHOR: ohauer@FreeBSD.org
 
   Subversion modules are no longer activated in httpd.conf!
   To activate the subversion apache modules a dedicated file

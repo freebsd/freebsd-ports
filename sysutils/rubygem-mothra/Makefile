@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-colorize>=0.7.3:devel/rubygem-colorize \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/mothra
 
 .include <bsd.port.mk>

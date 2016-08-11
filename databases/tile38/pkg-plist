@@ -1,0 +1,4 @@
+bin/tile38-server
+bin/tile38-cli
+@dir(%%TILE38_USER%%,%%TILE38_GROUP%%,) %%TILE38_DBDIR%%
+@dir(%%TILE38_USER%%,%%TILE38_GROUP%%,) %%TILE38_RUNDIR%%

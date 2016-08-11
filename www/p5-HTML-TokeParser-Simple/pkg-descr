@@ -5,7 +5,7 @@ constants for them, you can now do something like:
 
  $token->is_start_tag( 'form' )
 
-Instead of 
+Instead of
 
  $token->[0] eq 'S' and $token->[1] eq 'form'
 

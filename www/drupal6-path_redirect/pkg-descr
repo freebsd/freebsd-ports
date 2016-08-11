@@ -1,5 +1,0 @@
-drupal6-path_redirect is a Drupal module which allows you to specify a
-redirect from one path to another path or an external URL, using any HTTP
-redirect status.
-
-WWW: http://drupal.org/project/path_redirect

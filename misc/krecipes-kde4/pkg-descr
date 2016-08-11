@@ -1,4 +1,4 @@
-Krecipes lets you manage your recipes, create shopping lists, choose a 
+Krecipes lets you manage your recipes, create shopping lists, choose a
 recipe based on available ingredients, and plan your menu/diet in advance.
 Uses your choice of SQLite, MySQL, or PostgreSQL as a database backend.
 

@@ -1,0 +1,13 @@
+--- arm-trusted-firmware/Makefile.orig	2016-03-24 04:57:16.613720732 -0500
++++ arm-trusted-firmware/Makefile	2016-06-16 21:28:30.382863000 -0500
+@@ -421,10 +421,6 @@
+ 	@echo
+ 	@echo "Built $$@ successfully"
+ 	@echo
+-ifeq (bl31.bin,$(notdir ${BIN}))
+-	$${Q}git show HEAD --pretty=format:"%H" | head -n 1 > cur.log
+-	$${Q}./tools/add_hash_bl31.sh -f $$@ -m bl31
+-endif
+ 
+ .PHONY : bl$(1)
+ bl$(1) : $(BUILD_DIR) $(BIN) $(DUMP)

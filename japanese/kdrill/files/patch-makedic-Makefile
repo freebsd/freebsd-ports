@@ -1,5 +1,5 @@
---- makedic/Makefile.orig	Sun Nov 12 16:18:27 2000
-+++ makedic/Makefile	Sun Nov 12 16:19:21 2000
+--- makedic/Makefile.orig	2000-08-02 21:18:48 UTC
++++ makedic/Makefile
 @@ -5,13 +5,13 @@
  all:	makeedict makedic
  

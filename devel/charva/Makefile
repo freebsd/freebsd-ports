@@ -17,22 +17,17 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging
 OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix zip
-DOS2UNIX_FILES=	c/src/Makefile.freebsd.txt
+DOS2UNIX_GLOB=	build.xml Makefile.freebsd.txt *.c *.java
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	clean makeDLL dist
 
-PLIST_SUB=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
-		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libTerminal.so
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
+		${JAVA_HOME}/jre/lib/${MACHINE_ARCH}/libTerminal.so
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-.endif
+DOCS_ALL_TARGET=	javadoc
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
@@ -44,12 +39,12 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/c/lib/libTerminal.so \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/${MACHINE_ARCH}/libTerminal.so
 	@${ECHO_MSG} " [DONE]"
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${FIND} * \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
-.endif
 
 .include <bsd.port.mk>

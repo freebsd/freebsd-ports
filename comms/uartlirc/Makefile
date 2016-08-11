@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 
+BROKEN_powerpc64=	Does not build
+
 USES=		kmod
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

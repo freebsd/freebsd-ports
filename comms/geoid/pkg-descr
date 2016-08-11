@@ -1,5 +1,5 @@
 Geodetic computer for amateur radio use.
- 
+
 Converts Lat / Lon to Maidenhead Grid Square and reverse
 Computes range in kilometers and great circle bearing between
 QTH and remote site specified by Lat/Lon or Maidenhead Grid Square

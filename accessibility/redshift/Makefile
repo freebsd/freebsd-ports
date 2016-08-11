@@ -25,6 +25,8 @@ GUI_DESC=	Tray icon
 RANDR_DESC=	Support RANDR for changing colors
 VIDMODE_DESC=	Support VIDMODE for changing colors (NVIDIA)
 
+USE_XORG+=	x11 xcb
+
 NLS_USES=		gettext iconv
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} \
 			--with-libintl-prefix=${LOCALBASE}

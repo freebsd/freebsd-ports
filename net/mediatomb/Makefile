@@ -55,13 +55,15 @@ EXTERNAL_TRANSCODING_DESC=	external transcoding support
 ID3LIB_DESC=			id3lib support
 LIBEXTRACTOR_DESC=		libextractor support
 
+SQLITE_USES=	sqlite
+MYSQL_USES=	mysql
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--enable-sqlite3 \
 			--with-sqlite3-h="${LOCALBASE}/include" \
 			--with-sqlite3-libs="${LOCALBASE}/lib"
-LIB_DEPENDS+=		libsqlite3.so:databases/sqlite3
 .else
 CONFIGURE_ARGS+=	--disable-sqlite3
 .endif
@@ -69,7 +71,6 @@ CONFIGURE_ARGS+=	--disable-sqlite3
 .if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql \
 			--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
-USE_MYSQL=		yes
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif

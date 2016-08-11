@@ -104,7 +104,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/enc/utf_16le.so
 %%RUBY_ARCHLIBDIR%%/enc/utf_32be.so
 %%RUBY_ARCHLIBDIR%%/enc/utf_32le.so
+%%RUBY_ARCHLIBDIR%%/enc/windows_1250.so
 %%RUBY_ARCHLIBDIR%%/enc/windows_1251.so
+%%RUBY_ARCHLIBDIR%%/enc/windows_1252.so
 %%RUBY_ARCHLIBDIR%%/enc/windows_31j.so
 %%RUBY_ARCHLIBDIR%%/etc.so
 %%RUBY_ARCHLIBDIR%%/fcntl.so
@@ -15932,7 +15934,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/userinfo-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/HTTP/build-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/HTTP/cdesc-HTTP.ri
-%%RDOC%%%%RUBY_RIDIR%%/URI/HTTP/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/HTTP/request_uri-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/HTTPS/cdesc-HTTPS.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/InvalidComponentError/cdesc-InvalidComponentError.ri
@@ -16433,6 +16434,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/cdesc-Client.ri
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/cookie-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/do_rpc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/dup_net_http-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/gen_multicall-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/http-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/XMLRPC/Client/http_header_extra-i.ri

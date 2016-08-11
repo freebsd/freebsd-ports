@@ -11,8 +11,8 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
 WRKSRC=		${WRKDIR}
-USES=		gmake zip
-PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
+USES=		dos2unix gmake zip
+DOS2UNIX_FILES=	Makefile netio.c
 PLIST_FILES=	bin/netio
 
 CFLAGS+=	-DUNIX -DSOCKLEN_T

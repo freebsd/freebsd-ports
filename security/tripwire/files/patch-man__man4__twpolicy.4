@@ -1,5 +1,5 @@
---- man/man4/twpolicy.4.orig	Sat Mar  3 16:28:30 2001
-+++ man/man4/twpolicy.4	Sat Feb 23 13:50:10 2002
+--- man/man4/twpolicy.4.orig	2016-04-23 19:12:41.000000000 -0700
++++ man/man4/twpolicy.4	2016-04-30 00:04:18.371172000 -0700
 @@ -36,7 +36,7 @@
  .\"
  .nh
@@ -9,6 +9,15 @@
  .SH NAME
  twpolicy \- \fITripwire\fP policy file reference
  .SH DESCRIPTION
+@@ -51,7 +51,7 @@
+ \fITripwire\fP checks the integrity of any system.
+ .PP
+ During installation, an encoded and signed policy file (\fItw.pol\fP)
+-will be created in the \fI/etc/tripwire\fP directory,
++will be created in the \fI/usr/local/etc/tripwire\fP directory,
+ and a plain text copy of this policy file (\fItwpol.txt\fP) will be
+ generated in the same directory.  An additional text file
+ (\fIpolicyguide.txt\fP) illustrates all of the features of the policy
 @@ -544,5 +544,5 @@
  .BR twadmin (8),
  .BR twprint (8),

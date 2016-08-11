@@ -11,9 +11,7 @@ COMMENT=	Fast and stable php opcode cacher
 
 LICENSE=	BSD3CLAUSE
 
-USES=		tar:bzip2
-USE_PHP=	yes
-USE_PHPIZE=	yes
+USES=		php:phpize tar:bzip2
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 

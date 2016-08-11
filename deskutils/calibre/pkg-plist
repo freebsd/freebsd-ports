@@ -107,6 +107,7 @@ lib/calibre/calibre/devices/kobo/__init__.py
 lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/driver.py
+lib/calibre/calibre/devices/kobo/kobotouch_config.py
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/mime.py
 lib/calibre/calibre/devices/misc.py
@@ -130,6 +131,8 @@ lib/calibre/calibre/devices/nook/__init__.py
 lib/calibre/calibre/devices/nook/driver.py
 lib/calibre/calibre/devices/nuut2/__init__.py
 lib/calibre/calibre/devices/nuut2/driver.py
+lib/calibre/calibre/devices/paladin/__init__.py
+lib/calibre/calibre/devices/paladin/driver.py
 lib/calibre/calibre/devices/prs505/__init__.py
 lib/calibre/calibre/devices/prs505/driver.py
 lib/calibre/calibre/devices/prs505/sony_cache.py
@@ -348,7 +351,10 @@ lib/calibre/calibre/ebooks/metadata/lrx.py
 lib/calibre/calibre/ebooks/metadata/meta.py
 lib/calibre/calibre/ebooks/metadata/mobi.py
 lib/calibre/calibre/ebooks/metadata/odt.py
+lib/calibre/calibre/ebooks/metadata/opf.py
 lib/calibre/calibre/ebooks/metadata/opf2.py
+lib/calibre/calibre/ebooks/metadata/opf3.py
+lib/calibre/calibre/ebooks/metadata/opf3_test.py
 lib/calibre/calibre/ebooks/metadata/pdb.py
 lib/calibre/calibre/ebooks/metadata/pdf.py
 lib/calibre/calibre/ebooks/metadata/plucker.py
@@ -379,6 +385,7 @@ lib/calibre/calibre/ebooks/metadata/tag_mapper.py
 lib/calibre/calibre/ebooks/metadata/toc.py
 lib/calibre/calibre/ebooks/metadata/topaz.py
 lib/calibre/calibre/ebooks/metadata/txt.py
+lib/calibre/calibre/ebooks/metadata/utils.py
 lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/xisbn.py
 lib/calibre/calibre/ebooks/metadata/xmp.py
@@ -425,6 +432,7 @@ lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
 lib/calibre/calibre/ebooks/oeb/display/__init__.py
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
+lib/calibre/calibre/ebooks/oeb/display/test-cfi/run_rapydscript.py
 lib/calibre/calibre/ebooks/oeb/display/webview.py
 lib/calibre/calibre/ebooks/oeb/iterator/__init__.py
 lib/calibre/calibre/ebooks/oeb/iterator/book.py
@@ -433,6 +441,7 @@ lib/calibre/calibre/ebooks/oeb/iterator/spine.py
 lib/calibre/calibre/ebooks/oeb/normalize_css.py
 lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/polish/__init__.py
+lib/calibre/calibre/ebooks/oeb/polish/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/check/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/check/base.py
 lib/calibre/calibre/ebooks/oeb/polish/check/fonts.py
@@ -463,9 +472,11 @@ lib/calibre/calibre/ebooks/oeb/polish/stats.py
 lib/calibre/calibre/ebooks/oeb/polish/subset.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/base.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/structure.py
 lib/calibre/calibre/ebooks/oeb/polish/toc.py
 lib/calibre/calibre/ebooks/oeb/polish/utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
@@ -764,6 +775,7 @@ lib/calibre/calibre/gui2/device_drivers/configwidget.py
 lib/calibre/calibre/gui2/device_drivers/configwidget_ui.py
 lib/calibre/calibre/gui2/device_drivers/mtp_config.py
 lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
+lib/calibre/calibre/gui2/device_drivers/tabbed_device_config.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
@@ -1089,6 +1101,7 @@ lib/calibre/calibre/gui2/tweak_book/save.py
 lib/calibre/calibre/gui2/tweak_book/search.py
 lib/calibre/calibre/gui2/tweak_book/spell.py
 lib/calibre/calibre/gui2/tweak_book/templates.py
+lib/calibre/calibre/gui2/tweak_book/text_search.py
 lib/calibre/calibre/gui2/tweak_book/toc.py
 lib/calibre/calibre/gui2/tweak_book/ui.py
 lib/calibre/calibre/gui2/tweak_book/undo.py
@@ -1115,6 +1128,7 @@ lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/ui.py
 lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/widgets2.py
+lib/calibre/calibre/gui2/win_file_dialogs.py
 lib/calibre/calibre/gui2/wizard/__init__.py
 lib/calibre/calibre/gui2/wizard/device_ui.py
 lib/calibre/calibre/gui2/wizard/finish_ui.py
@@ -1172,10 +1186,10 @@ lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
+lib/calibre/calibre/plugins/imageops.so
 lib/calibre/calibre/plugins/libheadless.so
 lib/calibre/calibre/plugins/lzma_binding.so
 lib/calibre/calibre/plugins/lzx.so
-lib/calibre/calibre/plugins/magick.so
 lib/calibre/calibre/plugins/matcher.so
 lib/calibre/calibre/plugins/monotonic.so
 lib/calibre/calibre/plugins/msdes.so
@@ -1187,7 +1201,7 @@ lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
 lib/calibre/calibre/plugins/tokenizer.so
 lib/calibre/calibre/plugins/unrar.so
-lib/calibre/calibre/plugins/z%%QT_LIBDIR%%2.so
+lib/calibre/calibre/plugins/zlib2.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/rpdb.py
 lib/calibre/calibre/spell/__init__.py
@@ -1299,6 +1313,7 @@ lib/calibre/calibre/utils/ipc/simple_worker.py
 lib/calibre/calibre/utils/ipc/worker.py
 lib/calibre/calibre/utils/iphlpapi.py
 lib/calibre/calibre/utils/ipython.py
+lib/calibre/calibre/utils/iso8601.py
 lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/localization.py
 lib/calibre/calibre/utils/localunzip.py
@@ -1307,7 +1322,7 @@ lib/calibre/calibre/utils/logging.py
 lib/calibre/calibre/utils/lru_cache.py
 lib/calibre/calibre/utils/magick/__init__.py
 lib/calibre/calibre/utils/magick/draw.py
-lib/calibre/calibre/utils/magick/generate.py
+lib/calibre/calibre/utils/magick/legacy.py
 lib/calibre/calibre/utils/matcher.py
 lib/calibre/calibre/utils/mdns.py
 lib/calibre/calibre/utils/mem.py
@@ -1336,6 +1351,7 @@ lib/calibre/calibre/utils/rapydscript.py
 lib/calibre/calibre/utils/recycle_bin.py
 lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/rss_gen.py
+lib/calibre/calibre/utils/run_tests.py
 lib/calibre/calibre/utils/search_query_parser.py
 lib/calibre/calibre/utils/serve_coffee.py
 lib/calibre/calibre/utils/sftp.py
@@ -1346,6 +1362,7 @@ lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
 lib/calibre/calibre/utils/socket_inheritance.py
 lib/calibre/calibre/utils/soupparser.py
+lib/calibre/calibre/utils/speedups.py
 lib/calibre/calibre/utils/spell/__init__.py
 lib/calibre/calibre/utils/terminal.py
 lib/calibre/calibre/utils/text2int.py
@@ -1365,20 +1382,14 @@ lib/calibre/calibre/utils/zipfile.py
 lib/calibre/calibre/web/__init__.py
 lib/calibre/calibre/web/feeds/__init__.py
 lib/calibre/calibre/web/feeds/feedparser.py
-lib/calibre/calibre/web/feeds/jsnews.py
 lib/calibre/calibre/web/feeds/news.py
 lib/calibre/calibre/web/feeds/recipes/__init__.py
 lib/calibre/calibre/web/feeds/recipes/collection.py
 lib/calibre/calibre/web/feeds/recipes/model.py
 lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
-lib/calibre/calibre/web/fetch/javascript.py
 lib/calibre/calibre/web/fetch/simple.py
-lib/calibre/calibre/web/jsbrowser/__init__.py
-lib/calibre/calibre/web/jsbrowser/browser.py
-lib/calibre/calibre/web/jsbrowser/forms.py
-lib/calibre/calibre/web/jsbrowser/login.py
-lib/calibre/calibre/web/jsbrowser/test.py
+lib/calibre/calibre/web/fetch/utils.py
 lib/calibre/chardet/__init__.py
 lib/calibre/chardet/big5freq.py
 lib/calibre/chardet/big5prober.py
@@ -1574,7 +1585,6 @@ lib/calibre/tinycss/tests/tokenizing.py
 lib/calibre/tinycss/token_data.py
 lib/calibre/tinycss/tokenizer.py
 lib/calibre/tinycss/version.py
-%%PYTHON_SITELIBDIR%%/init_calibre.py
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
 %%DATADIR%%/calibre-ebook-root-CA.crt
@@ -1587,20 +1597,16 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/catalog/stylesheet.css
 %%DATADIR%%/catalog/template.xhtml
 %%DATADIR%%/coffee-script.js
+%%DATADIR%%/common-user-agents.txt
 %%DATADIR%%/compiled_coffeescript.zip
 %%DATADIR%%/content-server/autoreload.js
 %%DATADIR%%/content-server/calibre.png
 %%DATADIR%%/content-server/empty.html
-%%DATADIR%%/content-server/font-awesome/FontAwesome.otf
-%%DATADIR%%/content-server/font-awesome/fa.css
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.eot
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.svg
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.ttf
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff2
 %%DATADIR%%/content-server/index-generated.html
 %%DATADIR%%/content-server/index.html
 %%DATADIR%%/content-server/locales.zip
+%%DATADIR%%/content-server/mathjax.version
+%%DATADIR%%/content-server/mathjax.zip.xz
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/content_server/av.jpg
@@ -1925,8 +1931,10 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/rapydscript/lib/gettext.pyj
 %%DATADIR%%/rapydscript/lib/math.pyj
 %%DATADIR%%/rapydscript/lib/operator.pyj
+%%DATADIR%%/rapydscript/lib/pythonize.pyj
 %%DATADIR%%/rapydscript/lib/random.pyj
 %%DATADIR%%/rapydscript/lib/re.pyj
+%%DATADIR%%/rapydscript/lib/traceback.pyj
 %%DATADIR%%/scripts.pickle
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
@@ -1938,6 +1946,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/templates/inline_toc_styles.css
 %%DATADIR%%/templates/lrf.xsl
 %%DATADIR%%/templates/new_book.html
+%%DATADIR%%/templates/new_nav.html
 %%DATADIR%%/templates/rtf.xsl
 %%DATADIR%%/tracer.epub
 %%DATADIR%%/user-manual-translation-stats.json
@@ -2151,6 +2160,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
 %%DATADIR%%/viewer/referencing.js
+%%PYTHON_SITELIBDIR%%/init_calibre.py
 share/bash-completion/completions/calibre
 share/appdata/calibre-ebook-edit.appdata.xml
 share/appdata/calibre-ebook-viewer.appdata.xml

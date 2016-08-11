@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2016-04-20 07:33:47 UTC
++++ CMakeLists.txt
+@@ -401,7 +401,7 @@ configure_file(
+ @ONLY)
+ install(
+   FILES ${CMAKE_CURRENT_BINARY_DIR}/libmongoc-1.0.pc ${CMAKE_CURRENT_BINARY_DIR}/libmongoc-priv.pc
+-  DESTINATION lib/pkgconfig
++  DESTINATION libdata/pkgconfig
+ )
+ if (MONGOC_ENABLE_SSL)
+   configure_file(
+@@ -410,6 +410,6 @@ if (MONGOC_ENABLE_SSL)
+   @ONLY)
+   install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/libmongoc-ssl-1.0.pc
+-    DESTINATION lib/pkgconfig
++    DESTINATION libdata/pkgconfig
+   )
+ endif()

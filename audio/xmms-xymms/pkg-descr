@@ -1,7 +1,7 @@
 XymMS is an XMMS input plugin capable of playing Sega Genesis GYM files by
 rendering FM, DAC, and PSG signals through emulation of the YM2612 and SN76496
 sound chips found in the video game console. It supports zlib compression and
-decompression, and other various settings for output quality, etc. You can 
+decompression, and other various settings for output quality, etc. You can
 compress and decompress files along with updating ID tags using the File Info
 window.
 

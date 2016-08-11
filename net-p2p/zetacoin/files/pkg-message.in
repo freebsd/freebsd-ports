@@ -1,5 +1,5 @@
 *******************************************************************
-To configure the Zetacoin server please edit: 
+To configure the Zetacoin server please edit:
 %%PREFIX%%/etc/%%PORTNAME%%.conf
 
 You must at least set a "rpcpassword" in the configuration file above.

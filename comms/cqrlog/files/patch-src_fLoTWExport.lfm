@@ -1,0 +1,11 @@
+--- src/fLoTWExport.lfm.orig	2016-04-20 16:06:15 UTC
++++ src/fLoTWExport.lfm
+@@ -182,7 +182,7 @@ object frmLoTWExport: TfrmLoTWExport
+           Top = 29
+           Width = 424
+           TabOrder = 0
+-          Text = '/usr/bin/tqsl -d -l "your qth name" %f -x'
++          Text = '%%LOCALBASE%%/bin/tqsl -d -l "your qth name" %f -x'
+         end
+       end
+       object GroupBox6: TGroupBox

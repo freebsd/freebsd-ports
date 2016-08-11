@@ -1,5 +1,5 @@
---- stream.c.orig	2010-03-31 21:10:00.000000000 +0900
-+++ stream.c	2010-03-31 21:17:50.000000000 +0900
+--- stream.c.orig	2003-11-13 03:08:19 UTC
++++ stream.c
 @@ -43,6 +43,8 @@
  
  private byte *gz_filter = "zcat";
@@ -9,7 +9,7 @@
  
  private stream_t *StreamAlloc()
  {
-@@ -75,6 +77,10 @@
+@@ -75,6 +77,10 @@ public stream_t *StreamOpen( byte *file 
        filter = gz_filter;
      else if( !strcmp( "bz2", exts ) || !strcmp( "BZ2", exts ) )
        filter = bz2_filter;

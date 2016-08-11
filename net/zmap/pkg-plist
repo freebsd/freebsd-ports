@@ -1,0 +1,8 @@
+%%ETCDIR%%/blacklist.conf
+%%ETCDIR%%/zmap.conf
+man/man1/zblacklist.1.gz
+man/man1/zmap.1.gz
+man/man1/ztee.1.gz
+sbin/zblacklist
+sbin/zmap
+sbin/ztee

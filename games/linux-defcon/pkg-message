@@ -9,6 +9,6 @@ accomplished by adding the following line to your /etc/fstab file:
 and then, as root, executing the commands:
 
 kldload linprocfs
-mount /compat/linux/proc 
+mount /compat/linux/proc
 
 ======================================================================

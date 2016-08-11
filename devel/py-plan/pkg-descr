@@ -1,4 +1,4 @@
-Plan is a Python package for writing and deploying cron jobs. Plan will 
+Plan is a Python package for writing and deploying cron jobs. Plan will
 convert Python code to cron syntax. You can easily manage your cron jobs
 with Plan like a charm. It is designed for elegancy and writing cron jobs
 with as little amount of code as possible. It's extensible but comes with

@@ -29,5 +29,5 @@ include/netcdf
 lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.so
 lib/libnetcdf_c++4.so.1
-lib/libnetcdf_c++4.so.1.0.2
+lib/libnetcdf_c++4.so.1.0.3
 libdata/pkgconfig/netcdf-cxx4.pc

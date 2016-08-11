@@ -2,12 +2,12 @@ Togl is a Tk widget for OpenGL rendering. Togl is based on OGLTK,
 originally written by Benjamin Bederson at the University of New Mexico
 (who has since moved to the University of Maryland). Togl adds the new
 features:
-     - color-index mode support including color allocation functions 
-     - support for requesting stencil, accumulation, alpha buffers, etc 
-     - multiple OpenGL drawing widgets 
-     - OpenGL extension testing from Tcl 
-     - simple, portable font support 
-     - overlay plane support 
+     - color-index mode support including color allocation functions
+     - support for requesting stencil, accumulation, alpha buffers, etc
+     - multiple OpenGL drawing widgets
+     - OpenGL extension testing from Tcl
+     - simple, portable font support
+     - overlay plane support
 
 Togl allows one to create and manage a special Tk/OpenGL widget with Tcl
 and render into it with a C program. That is, a typical Togl program will

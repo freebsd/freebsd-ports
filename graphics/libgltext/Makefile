@@ -27,7 +27,6 @@ EXAMPLES_DESC=	Compile examples, need libglut
 .if ${PORT_OPTIONS:MEXAMPLES}
 USE_GL+=	glut
 USE_XORG=	xmu
-FLAG_EXAMPLES=	true
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -45,13 +44,13 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/lib && \
 		${LN} -s ${PORTNAME}.so.0 ${PORTNAME}.so
 
-post-install:
+post-install-DOCS-on:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if defined(FLAG_EXAMPLES)
+post-install-EXAMPLES-on:
 .for DIRE in alpha fps simple sizes
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${DIRE}
 	@cd ${WRKSRC}/examples && \
@@ -60,6 +59,5 @@ post-install:
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"		Examples source and binary on ${STAGEDIR}${EXAMPLESDIR}"
 	@${ECHO_MSG}	""
-.endif
 
 .include <bsd.port.mk>

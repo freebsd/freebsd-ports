@@ -1,4 +1,4 @@
 pyobfuscate is a source code obfuscator: It makes Python source code hard to
 read for humans, while still being executable for the Python interpreter.
 
-WWW: http://www.lysator.liu.se/~astrand/projects/pyobfuscate/
+WWW: https://github.com/astrand/pyobfuscate

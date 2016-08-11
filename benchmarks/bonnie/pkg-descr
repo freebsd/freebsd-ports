@@ -3,7 +3,7 @@ Bonnie: Filesystem Benchmark Program
 Bonnie tests the speed of file I/O using standard C library calls.
 It does reads and writes of blocks, testing for the limit of sustained
 data rate (usually limited by the drive or controller) and updates on
-a file (better simulating normal operating conditions and quite dependent 
+a file (better simulating normal operating conditions and quite dependent
 on drive and OS optimisations).
 
 The per-character read and write tests are generally limited by CPU speed
@@ -11,11 +11,11 @@ only on current-generation hardware. It takes some 35 SPECint92 to read
 or write a file at a rate of 1MB/s using getc() and putc().
 
 The seek tests are dependent on the buffer cache size, since the fraction
-of disk blocks that fits into the buffer cache will be found without any 
-disk operation and will contribute zero seek time readings. I.e. if the 
-buffer cache is 16MB and the Bonnie test file is 32MB in size, then the 
-seek time will come out as half its real value. The seek time includes 
-rotational delay, and will thus always come out higher than specified for 
+of disk blocks that fits into the buffer cache will be found without any
+disk operation and will contribute zero seek time readings. I.e. if the
+buffer cache is 16MB and the Bonnie test file is 32MB in size, then the
+seek time will come out as half its real value. The seek time includes
+rotational delay, and will thus always come out higher than specified for
 a drive.
 
 WWW: http://www.textuality.com/bonnie/

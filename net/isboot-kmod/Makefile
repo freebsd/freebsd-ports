@@ -2,6 +2,7 @@
 
 PORTNAME=	isboot-kmod
 PORTVERSION=	0.2.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/isboot/
 DISTNAME=	isboot-${PORTVERSION}

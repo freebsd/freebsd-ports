@@ -1,0 +1,16 @@
+--- po/CMakeLists.txt.orig	2016-06-16 08:10:11 UTC
++++ po/CMakeLists.txt
+@@ -1,10 +1,11 @@
+ # Translated languages.
++INCLUDE(ManageTranslation)
+ INCLUDE(ManageZanata)
+ 
+ FILE(GLOB IBUS_CHEWING_SOURCE_TO_TRANSLATE
+-    ../src/*.c ../*.gob)
++    ../src/*.c ../src/*.gob)
+ 
+-MANAGE_GETTEXT(ALL SRCS ${IBUS_CHEWING_SOURCE_TO_TRANSLATE} MO_LOCALE_DIR ${CMAKE_CURRENT_BINARY_DIR})
++MANAGE_GETTEXT(ALL SRCS ${IBUS_CHEWING_SOURCE_TO_TRANSLATE})
+ 
+ MANAGE_ZANATA("https://fedora.zanata.org/" 
+     YES

@@ -1,0 +1,15 @@
+During the build process all of the RAs are run to gather their meta-data.
+This patch prevents directories from being created during build causing
+poudriere to complain about the file system being modified.
+
+--- heartbeat/tomcat.orig	2016-04-05 14:11:59 UTC
++++ heartbeat/tomcat
+@@ -597,7 +597,7 @@ CATALINA_BASE="${OCF_RESKEY_catalina_bas
+ CATALINA_OUT="${OCF_RESKEY_catalina_out-$CATALINA_BASE/logs/catalina.out}"
+ 
+ CATALINA_PID=$OCF_RESKEY_catalina_pid
+-if [ -z "$CATALINA_PID" ]; then
++if [ -z "$CATALINA_PID" -a "$COMMAND" != "meta-data" ]; then
+ 	mkdir -p "${HA_RSCTMP}/${TOMCAT_NAME}_tomcatstate/"
+ 	if [ "${RESOURCE_TOMCAT_USER}" != "root" ]; then
+ 		chown ${RESOURCE_TOMCAT_USER} "${HA_RSCTMP}/${TOMCAT_NAME}_tomcatstate/"

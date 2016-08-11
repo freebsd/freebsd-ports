@@ -1,6 +1,6 @@
 Template-Magic is a "magic" interface between programming and design. It makes
 "magically" available all the runtime values - stored in your variables or
-returned by your subroutines - inside a static template file. Usually no need 
+returned by your subroutines - inside a static template file. Usually no need
 to assign values to the object.
 
 WWW: http://search.cpan.org/dist/Template-Magic/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-feed
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-Shftool is the reference implementation for the new, 
-XML-based Standard Hex Format (SHF). 
-Shftool is also a working converter/generator/extractor 
+Shftool is the reference implementation for the new,
+XML-based Standard Hex Format (SHF).
+Shftool is also a working converter/generator/extractor
 between/to/of SHF-files and other hex formats.
 
 SHF is specified in the following Internet Draft:

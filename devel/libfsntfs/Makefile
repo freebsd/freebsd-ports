@@ -3,7 +3,7 @@
 
 PORTNAME=	libfsntfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20160108
+DISTVERSION=	experimental-20160418
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -11,10 +11,13 @@ MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSIO
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the New Technology File System (NTFS)
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+
+LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} \
+		--with-libfwnt=${LOCALBASE}
 USES=		gettext libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

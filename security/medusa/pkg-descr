@@ -1,5 +1,5 @@
 Medusa is intended to be a speedy, massively parallel, modular, login
 brute-forcer. The goal is to support as many services which allow remote
-authentication as possible. 
+authentication as possible.
 
 WWW: http://www.foofus.net/jmk/medusa/medusa.html

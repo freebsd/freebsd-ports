@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jan  6 11:28:39 1999
-+++ Makefile	Thu Aug  3 21:28:34 2000
-@@ -18,12 +18,12 @@
+--- Makefile.orig	2015-04-01 21:05:45 UTC
++++ Makefile
+@@ -18,12 +18,12 @@ LIBS   = -lXpm -lX11 -lXext -lm
  OBJS   = wmSun.o SunRise.o ../wmgeneral/wmgeneral.o
  
  .c.o:

@@ -12,11 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to simplify distributing and deploying themes and styles
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	tracd:www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

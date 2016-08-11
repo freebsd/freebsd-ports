@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf-fortran
-PORTVERSION=	4.4.3
+PORTVERSION=	4.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science
 

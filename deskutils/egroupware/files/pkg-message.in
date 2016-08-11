@@ -19,12 +19,12 @@ upload_max_filesize >= 8M
    <Directory %%PREFIX%%/%%EG_DIR%%>
       AllowOverride None
       Order Allow,Deny
-      Allow from all 
+      Allow from all
    </Directory>
    <Directory %%PREFIX%%/%%EG_DATA%%>
       AllowOverride None
       Order Allow,Deny
-      Deny from all 
+      Deny from all
    </Directory>
 
 3) Visit your eGroupware site with a browser (i.e.,

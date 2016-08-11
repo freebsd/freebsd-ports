@@ -1,5 +1,5 @@
---- crc.c.orig	Mon Jun  2 20:41:23 2003
-+++ crc.c	Mon Jun  2 20:43:24 2003
+--- crc.c.orig	2003-01-10 22:19:35 UTC
++++ crc.c
 @@ -25,7 +25,7 @@
  
  #include <stdio.h>

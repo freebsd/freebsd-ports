@@ -48,7 +48,7 @@ CONFIGURE_SHELL=	${bash_CMD}
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
-OPTIONS_DEFAULT=DOCS PLUGIN
+OPTIONS_DEFAULT=PLUGIN
 OPTIONS_SUB=	yes
 
 PLUGIN_DESC=	Enable the browser plug-in
@@ -98,7 +98,6 @@ post-patch:
 	    ${WRKSRC}/*.desktop.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${DESKTOPDIR}
 .for lang in cs de en pl
 .for man in javaws policyeditor

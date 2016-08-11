@@ -6,7 +6,7 @@ League:
     High level abstraction of localization and internationalization. Also
     provides calendrical calculations, regular expressions, and JSON.
 
-XML processor: 
+XML processor:
     Sax reader and writer, supports XML 1.0 and 1.1 as well as namespaces.
     It also has an XML catalogs resolver.
 

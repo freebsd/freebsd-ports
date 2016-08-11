@@ -3,6 +3,7 @@
 
 PORTNAME=	swoole
 PORTVERSION=	1.7.22
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,10 +15,8 @@ COMMENT=	Asynchronous & concurrent & distributed networking framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 CFLAGS+=	-I${LOCALBASE}/include
-PHP_MODNAME=	${PORTNAME}
 USE_PHP=	pcre
-USE_PHPEXT=	yes
 
 .include <bsd.port.mk>

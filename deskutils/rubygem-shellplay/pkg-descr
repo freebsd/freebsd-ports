@@ -1,6 +1,6 @@
-CLI tool for recording and presenting step by step 
-operations from the console. It is targeted at 
-presentations that would simulate live coding, 
+CLI tool for recording and presenting step by step
+operations from the console. It is targeted at
+presentations that would simulate live coding,
 without the random murphy factor of it.
 
 WWW: https://github.com/mose/shellplay

@@ -14,7 +14,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	strophe
-GH_TAGNAME=	cd92f69
 USES=		libtool pkgconfig autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig

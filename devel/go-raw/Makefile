@@ -10,12 +10,11 @@ COMMENT=	Go library for high-level interface to unsafe and reflection packages
 
 #LICENSE=	MIT based, but with no-evil clause
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	feyeleanor
 GH_TAGNAME=	724aedf
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

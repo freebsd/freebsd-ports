@@ -4,7 +4,7 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GNOME/sources/${PORTNAME:S/lib//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	audiofile-${PORTVERSION}
@@ -13,6 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound library for SGI audio file
 
 LICENSE=	LGPL21
+
+LIB_DEPENDS=	libFLAC.so:audio/flac
 
 CONFLICTS=	osalp-0.7.*
 

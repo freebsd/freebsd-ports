@@ -1,7 +1,7 @@
-Crypt::GOST_PP is a pure perl implementation of GOST, a 64-bit 
+Crypt::GOST_PP is a pure perl implementation of GOST, a 64-bit
 symmetrical block cipher with a 256-bit key from the former Soviet
-Union. Please read the Pod documentation contained in the module 
-itself for additional information, including the rationale behind 
+Union. Please read the Pod documentation contained in the module
+itself for additional information, including the rationale behind
 the writing of this module.
 
 WWW: http://search.cpan.org/dist/Crypt-GOST_PP/

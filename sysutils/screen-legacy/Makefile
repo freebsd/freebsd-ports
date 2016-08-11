@@ -19,6 +19,9 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 
+DEPRECATED=     Old version released 2008-08-07 no longer upline maintained.
+EXPIRATION_DATE=	2016-12-31
+
 OPTIONS_DEFINE=	CJK INFO MAN NETHACK XTERM_256 HOSTINLOCKED SHOWENC
 OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256
 CJK_DESC=		Treat CJK ambiguous characters as full width

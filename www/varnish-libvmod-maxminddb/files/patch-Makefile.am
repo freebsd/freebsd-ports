@@ -1,0 +1,16 @@
+--- Makefile.am.orig	2016-05-15 22:29:56 UTC
++++ Makefile.am
+@@ -2,11 +2,11 @@ ACLOCAL_AMFLAGS = -I m4
+ 
+ SUBDIRS = src
+ 
+-dist_man_MANS = vmod_geoip.3
++dist_man_MANS = vmod_maxminddb.3
+ MAINTAINERCLEANFILES = $(dist_man_MANS)
+ doc_DATA = README.rst LICENSE
+ 
+-vmod_geoip.3: README.rst
++vmod_maxminddb.3: README.rst
+ if HAVE_RST2MAN
+ 	${RST2MAN} README.rst $@
+ else

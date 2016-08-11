@@ -32,14 +32,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/radiusplugin.so ${STAGEDIR}${LOCALBASE}/lib
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/radiusplugin.cnf ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- 915resolution.c.orig	Sun Apr 15 06:46:56 2007
-+++ 915resolution.c	Sun Apr 15 06:46:56 2007
+--- 915resolution.c.orig	2007-04-15 10:46:56 UTC
++++ 915resolution.c
 @@ -21,8 +21,10 @@
  #define __USE_GNU
  #include <string.h>
@@ -12,7 +12,7 @@
  #include <unistd.h>
  #include <assert.h>
  
-@@ -165,7 +167,8 @@
+@@ -165,7 +167,8 @@ typedef struct {
  void initialize_system(char * filename) {
  
      if (!filename) {
@@ -22,7 +22,7 @@
              perror("Unable to obtain the proper IO permissions");
              exit(2);
          }
-@@ -173,7 +176,7 @@
+@@ -173,7 +176,7 @@ void initialize_system(char * filename) 
  }
  
  cardinal get_chipset_id(void) {
@@ -31,7 +31,7 @@
      return inl(0xcfc);
  }
  
-@@ -496,11 +499,11 @@
+@@ -496,11 +499,11 @@ void unlock_vbios(vbios_map * map) {
          break;
      case CT_830:
      case CT_855GM:
@@ -46,7 +46,7 @@
          break;
      case CT_845G:
      case CT_865G:
-@@ -511,13 +514,13 @@
+@@ -511,13 +514,13 @@ void unlock_vbios(vbios_map * map) {
      case CT_946GZ:
      case CT_G965:
      case CT_Q965:
@@ -64,7 +64,7 @@
          break;
      }
  
-@@ -539,8 +542,8 @@
+@@ -539,8 +542,8 @@ void relock_vbios(vbios_map * map) {
          break;
      case CT_830:
      case CT_855GM:
@@ -75,7 +75,7 @@
          break;
      case CT_845G:
      case CT_865G:
-@@ -551,9 +554,9 @@
+@@ -551,9 +554,9 @@ void relock_vbios(vbios_map * map) {
      case CT_946GZ:
      case CT_G965:
      case CT_Q965:

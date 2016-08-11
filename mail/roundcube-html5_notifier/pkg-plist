@@ -6,10 +6,15 @@
 %%WWWDIR%%/html5_notifier.js
 %%WWWDIR%%/html5_notifier.php
 %%WWWDIR%%/images/new_mail.png
+%%WWWDIR%%/localization/cs_CZ.inc
 %%WWWDIR%%/localization/de_DE.inc
 %%WWWDIR%%/localization/en_US.inc
 %%WWWDIR%%/localization/es_ES.inc
 %%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/localization/it_IT.inc
 %%WWWDIR%%/localization/ja_JP.inc
 %%WWWDIR%%/localization/nl_NL.inc
+%%WWWDIR%%/localization/pl_PL.inc
+%%WWWDIR%%/localization/ru_RU.inc
 %%WWWDIR%%/localization/sk_SK.inc
+%%WWWDIR%%/screenshot.png

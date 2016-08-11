@@ -12,14 +12,13 @@ COMMENT=	GWMetadata for GNUstep workspace manager
 
 LICENSE=	GPLv2
 
-USES=		gnustep
+USES=		gnustep sqlite
 USE_GNUSTEP=	back build
 GNU_CONFIGURE=	yes
 LIB_DEPENDS=	libDBKit.so:deskutils/gworkspace \
 		libPreferencePanes.so:deskutils/systempreferences
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
-USE_SQLITE=	yes
 LDFLAGS+=	-lpthread
 
 WRKSRC=		${WRKDIR}/gworkspace-${PORTVERSION}/GWMetadata

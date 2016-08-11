@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-skypeweb
-PORTVERSION=	1.1
+PORTVERSION=	1.2
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-im
 
@@ -14,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/gpl3.txt
 
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libpurple.so:net-im/libpurple
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	skype4pidgin
 
-USES=		cmake dos2unix pkgconfig
+USES=		cmake dos2unix gettext-runtime pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,9 +39,5 @@ DOS2UNIX_FILES=	gpl3.txt \
 
 CONFLICTS_INSTALL=	pidgin-skype-*
 WRKSRC_SUBDIR=	skypeweb
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/emotes/skype
-	${INSTALL_DATA} ${WRKSRC}/theme ${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/emotes/skype
 
 .include <bsd.port.mk>

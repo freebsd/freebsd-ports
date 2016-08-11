@@ -1,6 +1,6 @@
 Mixlib::shellout provides a simplified interface to shelling out
-yet still collecting both standard out and standard error 
-and providing full control over environment, working directory, 
+yet still collecting both standard out and standard error
+and providing full control over environment, working directory,
 uid, gid, etc.
 
 WWW: http://www.opscode.com

@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	1997-02-25 18:47:26.000000000 +0000
-+++ ./Makefile.in	2014-02-12 19:07:37.000000000 +0000
-@@ -38,9 +38,9 @@
+--- Makefile.in.orig	1997-02-25 18:47:26 UTC
++++ Makefile.in
+@@ -38,9 +38,9 @@ INSTALL_DATA	=	@INSTALL_DATA@
  all				:	$(BINS)
  
  install			:	all

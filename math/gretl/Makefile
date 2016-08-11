@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
 LICENSE=	GPLv3

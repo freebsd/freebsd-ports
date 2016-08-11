@@ -1,16 +1,16 @@
-This plugin implements logging functionality for your webmail interface. 
-You can choose to log to a database, a file, your system log, or any 
-combination thereof. You can also choose which kinds of events to log, 
-including login events, logout events, login error events, all outgoing 
+This plugin implements logging functionality for your webmail interface.
+You can choose to log to a database, a file, your system log, or any
+combination thereof. You can also choose which kinds of events to log,
+including login events, logout events, login error events, all outgoing
 messages, possible outgoing spam messages, and other error events.
 
-Also included is monitoring functionality that will send alert emails to 
+Also included is monitoring functionality that will send alert emails to
 the administrator when certain events trigger.
 
-If you use the timeout_user plugin, logout events caused by user timeouts 
+If you use the timeout_user plugin, logout events caused by user timeouts
 will be captured.
 
-Log message format is also completely custom-defined to meet your needs 
+Log message format is also completely custom-defined to meet your needs
 in the configuration file.
 
 WWW: http://www.squirrelmail.org/plugin_view.php?id=52

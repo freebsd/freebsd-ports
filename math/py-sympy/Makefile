@@ -3,6 +3,7 @@
 
 PORTNAME=	sympy
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Library For Symbolic Mathematics
 
 LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpmath>=0.19:math/py-mpmath
 
 USES=		python
 USE_PYTHON=	autoplist distutils

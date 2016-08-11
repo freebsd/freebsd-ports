@@ -42,7 +42,7 @@ you may have to follow this steps to make it work correctly:
    DirectoryIndex index.php
 
    DocumentRoot "/usr/local/share/cacti"
- 
+
    Alias /cacti "/usr/local/share/cacti/"
    Alias /Cacti "/usr/local/share/cacti/"
 
@@ -71,7 +71,7 @@ NOTEs as of 10Aug2014:
    found in Cacti's SQL database and MUST be updated. These two SQL
    commands should do the trick:
 
-   UPDATE settings SET value='/var/log/cacti/log' \ 
+   UPDATE settings SET value='/var/log/cacti/log' \
      WHERE name='path_cactilog';
 
    UPDATE poller_item SET rrd_path=\

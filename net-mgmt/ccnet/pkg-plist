@@ -2,6 +2,7 @@ bin/ccnet
 bin/ccnet-demo-client
 bin/ccnet-demo-server
 bin/ccnet-tool
+bin/ccnet-server
 include/ccnet.h
 include/ccnet/async-rpc-proc.h
 include/ccnet/ccnet-client.h
@@ -83,4 +84,4 @@ libdata/pkgconfig/libccnet.pc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/utils.py
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/utils.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/utils.pyo
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%HAIWENDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%

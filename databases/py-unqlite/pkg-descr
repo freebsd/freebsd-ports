@@ -1,0 +1,4 @@
+Fast Python bindings for UnQLite, a lightweight, embedded NoSQL database and
+JSON document store.
+
+WWW: https://github.com/coleifer/unqlite-python

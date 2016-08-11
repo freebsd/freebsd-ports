@@ -19,6 +19,9 @@
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/s3.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/s3.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/s3.pyo
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/swift.py
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/swift.pyc
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/backends/swift.pyo
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/blocks.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/blocks.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/blocks.pyo
@@ -40,5 +43,8 @@
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/ceph_utils.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/ceph_utils.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/ceph_utils.pyo
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%SEAHUBDIR%%
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%HAIWENDIR%%
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/crypto.py
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/crypto.pyc
+%%SEAFILE_SERVER%%/seahub/thirdpart/seafobj/utils/crypto.pyo
+@dir(%%USERS%%,%%GROUPS%%,755) %%SEAHUBDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%

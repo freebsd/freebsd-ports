@@ -1,4 +1,4 @@
 This Python module can generate both LANMAN and NT
 password hashes, suitable for use with Samba.
 
-WWW:	http://barryp.org/software/py-smbpasswd
+WWW: http://barryp.org/software/py-smbpasswd

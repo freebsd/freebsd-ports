@@ -1,0 +1,23 @@
+==============================================================================
+
+THIS PACKAGE INSTALLS THE NEWER VERSION OF THE SOFTWARE WHICH CAN CAUSE SYSTEM
+INSTABILITY WHILE USED. USE THE UPDATED VERSION ONLY IF YOU EXPERIENCE
+PROBLEMS WITH THE DRIVER PRESENT IN THE KERNEL DISTRIBUTION
+
+Usage:
+To load the updated version of the driver add this:
+
+if_%%PORTNAME%%_updated_load="YES"
+
+to your /boot/loader.conf and reboot the machine.
+There's no need to recompile the GENERIC kernel without if_%%PORTNAME%% driver
+
+After the reboot you may see this kind of messaged in the dmesg:
+
+module_register: module pci/%%PORTNAME%% already exists!
+Module pci/%%PORTNAME%% failed to register: 17
+
+This is the side effect of the newer version of the driver overriding the
+older one and can be safely disregarded
+
+==============================================================================

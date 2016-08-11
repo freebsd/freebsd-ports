@@ -5,7 +5,7 @@ PORTNAME=	mopesnake
 PORTVERSION=	0.5
 PORTREVISION=	5
 CATEGORIES=	games python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/games/:icons
 DISTFILES=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
@@ -26,12 +26,12 @@ NO_ARCH=	yes
 
 PORTDOCS=	index.html
 
-OPTIONS_DEFINE=	DOCS
-
 SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Master Of Pain (Eating) - Snake" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
@@ -42,9 +42,11 @@ do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
-do-install:
+pre-install:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 		${WRKDIR}/${PORTNAME}
+
+do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .for d in images mopelib music sounds
@@ -58,7 +60,8 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

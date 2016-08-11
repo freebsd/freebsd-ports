@@ -1,11 +1,11 @@
 libtasn1 library was developed for ASN1 (Abstract Syntax Notation One)
-structures management. 
+structures management.
 
 The main features of this library are:
 
-- on-line ASN1 structure management that does not require any C code 
+- on-line ASN1 structure management that does not require any C code
   file generation;
-- off-line ASN1 structure management with C code file generation 
+- off-line ASN1 structure management with C code file generation
   containing an array;
 - DER (Distinguish Encoding Rules) encoding;
 - no limits for INTEGER and ENUMERATED values

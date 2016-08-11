@@ -1,5 +1,5 @@
 This is QUISK, a Software Defined Radio (SDR).
-- Quisk can control the HiQSDR. 
+- Quisk can control the HiQSDR.
 - As a receiver it can use the SDR-IQ by RfSpace as a sample source.
 - As a receiver it can use your soundcard as a sample source.
 - Quisk can control SoftRock hardware for both receive and transmit.

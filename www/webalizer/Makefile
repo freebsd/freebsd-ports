@@ -2,7 +2,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
@@ -60,7 +60,7 @@ LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 
 .if ${PORT_OPTIONS:MGEODB}
 .if empty(PORT_OPTIONS:MBDB1)
-WITH_BDB=	yes
+USES+=		bdb
 .endif
 PLIST_SUB+=	WITH_GEODB=""
 .else
@@ -83,8 +83,7 @@ PLIST_SUB+=	WITH_GEOIP="@comment "
 .endif
 
 .if defined(WITH_BDB_VER) || ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
-INVALID_BDB_VER=	2 3 40
+USES+=		bdb
 LDFLAGS+=	-L${BDB_LIB_DIR}
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 .else
@@ -176,8 +175,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
 		${STAGEDIR}${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
-
-post-install:
 .for i in ${LMAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/man/man1/${i}
 .endfor

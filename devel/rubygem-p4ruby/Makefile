@@ -14,8 +14,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/perforce/libclient.a:devel/p4api
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 CONFIGURE_ARGS=	--with-p4api-dir=${LOCALBASE} --with-p4api-lib=${LOCALBASE}/lib/perforce
 

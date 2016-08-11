@@ -20,8 +20,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 #java-linux required
 JAVA_OS=	linux
-#all vendors except forbidden: ibm
-JAVA_VENDOR=	sun
 DATADIR=	${JAVASHAREDIR}/dimes
 
 post-extract:

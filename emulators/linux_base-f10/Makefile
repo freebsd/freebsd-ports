@@ -3,7 +3,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		emulators linux
 MASTER_SITES=		LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION} \
 			FEDORA_LINUX/../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages/

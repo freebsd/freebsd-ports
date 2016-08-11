@@ -3,6 +3,7 @@
 
 PORTNAME=	bitset
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,8 +16,6 @@ LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 IGNORE_WITH_PHP=55 56
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

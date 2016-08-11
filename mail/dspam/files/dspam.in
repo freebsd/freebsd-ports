@@ -25,7 +25,9 @@ load_rc_config $name
 #defaults
 : ${dspam_enable="NO"}
 : ${dspam_debug="NO"}
-: ${dspam_pidfile:-/var/run/dspam.pid}
+: ${dspam_pidfile:-/var/run/dspam/dspam.pid}
+: ${dspam_user="%%DSPAM_OWNER%%"}
+: ${dspam_group="%%DSPAM_GROUP%%"}
 
 command=%%PREFIX%%/bin/${name}
 

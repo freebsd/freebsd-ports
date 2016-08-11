@@ -14,7 +14,4 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-post-install:
-	@${RM} -f ${PREFIX}/lib/zzuf/libzzuf.la
-
 .include <bsd.port.mk>

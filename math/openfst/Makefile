@@ -11,6 +11,8 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	${LOCALBASE}/lib/fst
 GNU_CONFIGURE=	yes

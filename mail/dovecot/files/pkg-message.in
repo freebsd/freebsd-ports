@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------
- 
+
  You can get basic IMAP and POP3 services running by enabling
  dovecot in the /etc/rc.conf file.
 

@@ -1,0 +1,20 @@
+--- docs/Makefile.am.orig	2009-03-11 21:08:57 UTC
++++ docs/Makefile.am
+@@ -186,7 +186,7 @@ GTKDOC_CFLAGS = \
+ 	-I$(top_builddir)
+ 
+ GTKDOC_LIBS = \
+-	../libfo/libfo-0.6.la \
++	$(LIBFO_LIBS) \
+ 	$(PANGO_LIBS) \
+ 	$(GNOMEPRINT_LIBS) \
+ 	$(GDKPIXBUF_LIBS)	\
+@@ -228,7 +228,7 @@ dist-hook-local:
+ DOCBOOK_XSL=http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl
+ 
+ xmlroff.fo:	xmlroff.xml ../libfo-compat.xsl
+-	xsltproc $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
++	env XML_CATALOG_FILES=file://${LOCALBASE}/share/xml/catalog xsltproc --nonet $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
+ 	xsltproc ../libfo-compat.xsl xmlroff.tmp > xmlroff.fo
+ 	rm -f xmlroff.tmp
+ 

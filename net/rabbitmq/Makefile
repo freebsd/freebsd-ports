@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -15,7 +15,6 @@ LICENSE=	MPL
 BUILD_DEPENDS=	erl:lang/erlang \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \
 		xmlto:textproc/xmlto \
-		unzip:archivers/unzip \
 		zip:archivers/zip \
 		rsync:net/rsync
 RUN_DEPENDS=	erl:lang/erlang

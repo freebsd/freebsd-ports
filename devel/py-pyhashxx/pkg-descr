@@ -1,0 +1,3 @@
+Python wrapper of xxhash that supports concurrency
+
+WWW: https://github.com/ewencp/pyhashxx

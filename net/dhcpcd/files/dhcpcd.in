@@ -11,26 +11,30 @@ name="dhcpcd"
 ifn="$2"
 command="%%PREFIX%%/sbin/dhcpcd"
 command_args="$ifn"
-pidfile="/var/run/dhcpcd-$ifn.pid"
+if [ -n "$ifn" ]; then
+	specific="$(get_if_var $ifn dhcpcd_flags_IF)"
+	if [ -z "$flags" -a -n "$specific" ]; then
+		rc_flags="$specific"
+	fi
+	pidfile="/var/run/dhcpcd-$ifn.pid"
+else
+	pidfile="$($command -P $rc_flags)"
+fi
 start_precmd="dhcpcd_precmd"
 
 dhcpcd_precmd()
 {
-	# Override for $ifn specific flags (see rc.subr for $flags setting)
-	specific=`get_if_var $ifn dhcpcd_flags_IF`
-	if [ -z "$flags" -a -n "$specific" ]; then
-		rc_flags=$specific
-	fi
-
 	# dhcpcd may need local binaries
-	export PATH=${PATH}:%%PREFIX%%/sbin
+	export PATH=${PATH}:/usr/local/sbin
 }
 
 load_rc_config $name
 load_rc_config network
 
-if ! dhcpif $ifn; then
-	return 1
+if [ -n "$ifn" ]; then
+	if ! dhcpif $ifn; then
+		err 1 "$ifn is not enabled for DHCP"
+	fi
 fi
 
 run_rc_command "$1"

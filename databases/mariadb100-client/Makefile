@@ -19,7 +19,8 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 CLIENT_ONLY=	yes
 
-post-install:
+post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4
+	${RM} -rf ${STAGEDIR}${PREFIX}/include/mysql/private
 
 .include "${MASTERDIR}/Makefile"

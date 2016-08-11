@@ -10,6 +10,8 @@ MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP address management and tracking
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	nmap:security/nmap
 
 USES=		perl5 shebangfix
@@ -55,7 +57,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
-post-install:
 	# make /var dirs
 	${MKDIR} ${STAGEDIR}/var/spool/ipplan/dhcpexport
 	${MKDIR} ${STAGEDIR}/var/spool/ipplan/exportdns

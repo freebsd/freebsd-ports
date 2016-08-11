@@ -1,5 +1,5 @@
 %%PKGNAME%% has been installed into:
-    
+
 	%%WWWDIR%%
 
 ****************************************************
@@ -11,13 +11,13 @@ Then, edit %%WWWDIR%%/config/config.php
 Also, please note that MailZu needs PHP's short_open_tag
 boolean to be "on" (this is detault in typical installations
 of PHP). To be certain, you can set "short_open_tag = on" in
-%%LOCALBASE%%/etc/php.ini. 
+%%LOCALBASE%%/etc/php.ini.
 
-Finally, make MailZu available through your web site.  An 
+Finally, make MailZu available through your web site.  An
 example for httpd.conf:
 
 Alias /mailzu/ "%%WWWDIR%%/"
-  
+
 <Directory "%%WWWDIR%%/">
     Options none
     AllowOverride Limit

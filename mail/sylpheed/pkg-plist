@@ -1,5 +1,6 @@
 bin/sylpheed
 include/sylpheed/plugin.h
+include/sylpheed/plugin-types.h
 include/sylpheed/sylph/account.h
 include/sylpheed/sylph/base64.h
 include/sylpheed/sylph/codeconv.h

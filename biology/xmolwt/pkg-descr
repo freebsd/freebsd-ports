@@ -1,7 +1,7 @@
 Xmolwt (Motif version)/Gmolwt (GTK+ version)
 
 This program calculates the formula weight and percent of each element
-for a given chemical formula. 
+for a given chemical formula.
 
 This port is builds a GTK+ version of the program.  If you want to
 use/build a Motif version, then use Makefile.motif which is included in

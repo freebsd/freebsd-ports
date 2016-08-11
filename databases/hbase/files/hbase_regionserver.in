@@ -21,6 +21,7 @@ load_rc_config "${name}"
 : ${hbase_regionserver_user:=%%HBASE_USER%%}
 
 command="%%PREFIX%%/hbase/bin/hbase-daemon.sh"
+command_interpreter="bash"
 command_args='--config %%ETCDIR%% start regionserver'
 
 stop_cmd=hbase_regionserver_stop

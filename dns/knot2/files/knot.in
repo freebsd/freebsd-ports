@@ -90,7 +90,7 @@ knot_prestart()
 	if [ ! -d /var/db/${name} ]; then
 		install -d -o ${diruser} -g ${dirgroup} /var/db/${name}
 	fi
-	${control} -c ${configfile} checkconf
+	${control} -c ${configfile} conf-check
 }
 
 knot_reload()

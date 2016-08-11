@@ -49,6 +49,7 @@
     SUBDIR += leocad
     SUBDIR += librecad
     SUBDIR += linux-eagle5
+    SUBDIR += linuxcnc-devel
     SUBDIR += logisim
     SUBDIR += magic
     SUBDIR += meshdev
@@ -62,15 +63,17 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
+    SUBDIR += py-gdspy
+    SUBDIR += py-lcapy
     SUBDIR += py-pycam
     SUBDIR += pythoncad
     SUBDIR += qcad
-    SUBDIR += qcad-partslib
     SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += qucs
     SUBDIR += repsnapper
+    SUBDIR += rubygem-gdsii
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += spice

@@ -2,4 +2,4 @@ Backport of the Apache 2.3 module that replaces the apparent client
 remote IP address and hostname for the request with the IP address
 list presented by a proxy or load balancer via the request headers.
 
-WWW:	http://httpd.apache.org/docs/2.3/mod/mod_remoteip.html
+WWW: http://httpd.apache.org/docs/2.3/mod/mod_remoteip.html

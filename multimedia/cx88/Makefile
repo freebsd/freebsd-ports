@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.11
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -14,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:textproc/ezxml \
-		libtuner>=1.1.2:multimedia/libtuner
+		libtuner>=1.1.3:multimedia/libtuner
 
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
@@ -44,6 +43,10 @@ LIB_DEPENDS+=	libhal.so:sysutils/hal \
 		libdbus-1.so:devel/dbus
 MAKE_ARGS+=	-D WITH_HAL
 .endif
+.endif
+
+.if (${OSVERSION} >= 1003500)
+MAKE_ARGS+=	-D CX88_USE_IIC
 .endif
 
 MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"

@@ -22,7 +22,7 @@ be stored in the /var/mpd/music directory.
 NOTE: The musicpd server is pretty useless without a client.
       You might want to install one of the following ports too:
 
-      Command line: musicpc, ncmpc (Curses)
+      Command line: musicpc, ncmpc (Curses), ncmpcpp (Curses)
       GNOME / GTK: glurp, gmpc
       KDE / Qt: quimup, qmpdlient
       Web: phpmp

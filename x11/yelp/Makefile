@@ -3,6 +3,7 @@
 
 PORTNAME=	yelp
 PORTVERSION=	3.18.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +21,7 @@ RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
+USES=		autoreconf desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig tar:xz
 USE_XORG=	x11 ice
 USE_GNOME=	gtk30 intlhack libxml2 libxslt
@@ -38,5 +39,11 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
 		YELP_LZMA_LIBS="-L/usr/lib -llzma"
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/yelp-groff ${WRKSRC}/libyelp
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/yelp-groff ${STAGEDIR}${PREFIX}/libexec
 
 .include <bsd.port.mk>

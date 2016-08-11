@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome
-PORTVERSION=	3.5.8
+PORTVERSION=	3.5.9
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
@@ -10,7 +10,8 @@ MASTER_SITES=	http://awesome.naquadah.org/download/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		convert:graphics/ImageMagick \
@@ -32,7 +33,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libImlib2.so:graphics/imlib2
 
-USES=		cmake execinfo iconv pkgconfig lua tar:xz
+USES=		cmake execinfo gettext iconv pkgconfig lua tar:xz
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
@@ -42,7 +43,7 @@ LDFLAGS+=	${ICONV_LIB}
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
 OPTIONS_DEFINE=	DBUS DOCS
-OPTIONS_DEFAULT=DBUS DOCS
+OPTIONS_DEFAULT=DBUS
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_ON=		-DWITH_DBUS=YES

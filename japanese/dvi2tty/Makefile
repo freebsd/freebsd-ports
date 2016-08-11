@@ -22,6 +22,9 @@ PLIST_FILES=	bin/jdvi2tty \
 		bin/jdisdvi \
 		man/man1/jdvi2tty.1.gz
 
+post-patch:
+	${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/dvistuff.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jdvi2tty ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/disdvi ${STAGEDIR}${PREFIX}/bin/jdisdvi

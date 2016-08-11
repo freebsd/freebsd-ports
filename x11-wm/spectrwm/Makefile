@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	spectrwm
-PORTVERSION=	2.7.2
+DISTVERSIONPREFIX=	SPECTRWM_
+DISTVERSION=	3_0_2
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Small, dynamic tiling window manager for X11
@@ -16,6 +15,9 @@ LIB_DEPENDS+=	libxcb-util.so:x11/xcb-util \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 RUN_DEPENDS+=	dmenu:x11/dmenu
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	conformal
 
 USE_XORG=	x11 xcb xcursor xft xrandr xt
 
@@ -35,7 +37,7 @@ do-build:
 		-I${LOCALBASE}/include/freetype2 -I${WRKSRC}/freebsd \
 		-lutil -L${LOCALBASE}/lib -lX11 -lX11-xcb -lxcb -lxcb-icccm \
 		-lxcb-keysyms -lxcb-randr -lxcb-util -lxcb-xtest -lXcursor \
-		-lXft -lXrandr -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
+		-lXft -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fpic -DPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c

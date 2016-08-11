@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
-USES+=		libarchive
+USES+=		execinfo libarchive
 HAS_CONFIGURE=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

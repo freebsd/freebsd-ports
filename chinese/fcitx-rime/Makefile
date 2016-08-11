@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-rime
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx

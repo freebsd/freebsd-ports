@@ -1,5 +1,5 @@
---- src/freebsd.h.orig	2012-12-04 04:24:41.000000000 +0200
-+++ src/freebsd.h	2012-12-04 04:24:52.000000000 +0200
+--- src/freebsd.h.orig	2012-05-03 21:08:27 UTC
++++ src/freebsd.h
 @@ -10,6 +10,7 @@
  #include <fcntl.h>
  #include <kvm.h>

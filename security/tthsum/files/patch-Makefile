@@ -1,6 +1,6 @@
---- ./Makefile.orig	2013-08-13 20:58:36.000000000 +0200
-+++ ./Makefile	2013-08-14 14:40:58.335943659 +0200
-@@ -11,16 +11,6 @@
+--- Makefile.orig	2013-08-13 18:58:36 UTC
++++ Makefile
+@@ -11,16 +11,6 @@ ifeq ($(MAN),)
    MAN = $(DESTDIR)/usr/local/man
  endif
  
@@ -17,7 +17,7 @@
  CC ?= gcc
  GZIP = gzip -9 -c
  RM = rm -rf
-@@ -47,12 +37,12 @@
+@@ -47,12 +37,12 @@ TSTENTRY = $(BINS)/test.o
  override CPPFLAGS += $(shell cat $(BINS)/autoconf.cppflags)
  
  

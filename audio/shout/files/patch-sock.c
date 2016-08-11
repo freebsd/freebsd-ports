@@ -1,5 +1,5 @@
---- sock.c	Thu Apr 20 03:31:50 2000
-+++ sock.c.new	Wed Jun 14 15:43:59 2000
+--- sock.c.orig	2000-04-20 07:31:50 UTC
++++ sock.c
 @@ -12,8 +12,10 @@
  #include <process.h>
  #include <winbase.h>

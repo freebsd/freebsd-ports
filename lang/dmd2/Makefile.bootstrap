@@ -8,6 +8,7 @@ CATEGORIES=	lang
 DISTNAME=	dmd.${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler bootstrap
 
 WRKDIR=		${BOOTDIR}/.host_dmd-2.067.1

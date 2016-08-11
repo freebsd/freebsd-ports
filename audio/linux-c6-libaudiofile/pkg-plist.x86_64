@@ -1,5 +1,7 @@
 usr/bin/sfconvert
 usr/bin/sfinfo
+usr/lib/libaudiofile.so.0
+usr/lib/libaudiofile.so.0.0.2
 usr/lib64/libaudiofile.so.0
 usr/lib64/libaudiofile.so.0.0.2
 usr/share/doc/audiofile-0.2.6/COPYING

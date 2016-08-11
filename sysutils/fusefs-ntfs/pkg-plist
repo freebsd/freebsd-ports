@@ -49,8 +49,8 @@ include/ntfs-3g/volume.h
 include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.so
-lib/libntfs-3g.so.86
-lib/libntfs-3g.so.86.0.0
+lib/libntfs-3g.so.87
+lib/libntfs-3g.so.87.0.0
 libdata/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz
@@ -69,6 +69,7 @@ man/man8/ntfsinfo.8.gz
 man/man8/ntfslabel.8.gz
 man/man8/ntfsls.8.gz
 man/man8/ntfsprogs.8.gz
+man/man8/ntfsrecover.8.gz
 man/man8/ntfsresize.8.gz
 man/man8/ntfstruncate.8.gz
 man/man8/ntfsundelete.8.gz
@@ -77,6 +78,7 @@ sbin/mkntfs
 sbin/ntfsclone
 sbin/ntfscp
 sbin/ntfslabel
+sbin/ntfsrecover
 sbin/ntfsresize
 sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README

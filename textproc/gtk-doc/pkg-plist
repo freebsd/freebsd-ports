@@ -61,6 +61,4 @@ share/help/te/gtk-doc-manual/fdl-appendix.xml
 share/help/te/gtk-doc-manual/index.docbook
 share/help/zh_CN/gtk-doc-manual/fdl-appendix.xml
 share/help/zh_CN/gtk-doc-manual/index.docbook
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
-share/sgml/gtk-doc/gtk-doc.cat
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
+@xmlcatmgr share/sgml/gtk-doc/gtk-doc.cat

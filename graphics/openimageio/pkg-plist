@@ -15,6 +15,7 @@ include/OpenImageIO/export.h
 include/OpenImageIO/filesystem.h
 include/OpenImageIO/filter.h
 include/OpenImageIO/fmath.h
+include/OpenImageIO/fstream_mingw.h
 include/OpenImageIO/hash.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h

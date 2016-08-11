@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-07-08 19:10:05 UTC
++++ Makefile
+@@ -7,7 +7,7 @@ all::
+ 
+ ### Defaults
+ 
+-BASIC_CFLAGS = -O2 -std=c99 -Wall -I./argparse
++BASIC_CFLAGS = -std=c99 -Wall -I./argparse
+ BASIC_LDFLAGS = -lm -lsodium
+ 
+ # Guard against environment variables
+@@ -29,13 +29,13 @@ uname_P := $(shell sh -c 'uname -p 2>/de
+ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo not')
+ 
+ # CFLAGS and LDFLAGS are for users to override
+-CFLAGS = -g -O2 -Wall
+-LDFLAGS =
++CFLAGS ?= -g -O2 -Wall
++LDFLAGS ?=
+ STRIP ?= strip
+ 
+ # We use ALL_* variants
+-ALL_CFLAGS = $(CFLAGS) $(BASIC_CFLAGS)
+-ALL_LDFLAGS = $(LDFLAGS) $(BASIC_LDFLAGS)
++ALL_CFLAGS = $(BASIC_CFLAGS) $(CFLAGS)
++ALL_LDFLAGS = $(BASIC_LDFLAGS) $(LDFLAGS)
+ 
+ ifdef PREFIX
+ 	prefix = $(PREFIX)

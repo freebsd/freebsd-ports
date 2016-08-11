@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	www tcl
 MASTER_SITES=	APACHE/tcl/rivet
 DISTNAME=	rivet-${PORTVERSION}
@@ -15,18 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libitcl.so:lang/itcl
 
-GNU_CONFIGURE=	yes
 USE_APACHE=	22+
 USE_LDCONFIG=	${PREFIX}/lib/rivet
-USES+=		gmake libtool tcl:85+
+USES+=		gmake libtool tcl:85+,tea
 
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--with-apache-version=2 \
-		--prefix=${PREFIX} --with-apxs=${APXS} \
-		--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
+CONFIGURE_ARGS+=--with-apxs=${APXS} \
 		--with-rivet-target-dir=${PREFIX}/lib/rivet
 
 post-patch:

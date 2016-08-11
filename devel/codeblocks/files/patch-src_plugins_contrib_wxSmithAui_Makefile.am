@@ -1,0 +1,11 @@
+--- src/plugins/contrib/wxSmithAui/Makefile.am.orig	2016-05-06 22:24:09 UTC
++++ src/plugins/contrib/wxSmithAui/Makefile.am
+@@ -45,7 +45,7 @@ libwxSmithAui_la_SOURCES = \
+ ./wxAuiToolBar/wxSmithAuiToolBar.cpp \
+ ./wxSmithAui.cpp
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = wxsmithaui.pc
+ 
+ noinst_HEADERS = \

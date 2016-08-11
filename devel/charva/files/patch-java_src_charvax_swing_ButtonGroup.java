@@ -1,6 +1,6 @@
---- java/src/charvax/swing/ButtonGroup.java.orig	2005-12-17 15:27:30.000000000 +0100
-+++ java/src/charvax/swing/ButtonGroup.java	2009-11-16 10:26:42.000000000 +0100
-@@ -63,9 +63,10 @@
+--- java/src/charvax/swing/ButtonGroup.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charvax/swing/ButtonGroup.java
+@@ -63,9 +63,10 @@ public class ButtonGroup
       * Adds the specified button to the group.
       */
      public void add(AbstractButton button_) {
@@ -12,7 +12,7 @@
      }
  
      /**
-@@ -133,10 +134,9 @@
+@@ -133,10 +134,9 @@ public class ButtonGroup
          for (Enumeration e = _buttons.elements(); e.hasMoreElements();) {
  
              AbstractButton b = (AbstractButton) e.nextElement();

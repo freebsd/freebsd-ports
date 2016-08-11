@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	8.2
+PORTVERSION=	8.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION}/
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS

@@ -2,7 +2,7 @@ C2html is a syntax highlighter for C source code that produces a
 highlighted html file as output.
 
 C2html offers the following features:
-   
+
     - fast (single pass conversion using flex)
     - doesn't change formatting - only adds <FONT COLOR=#XXXX> tags
         and properly escapes non-ascii characters

@@ -1,6 +1,6 @@
---- lib/fusion/lock.c
+--- lib/fusion/lock.c.orig	2012-05-23 13:43:12 UTC
 +++ lib/fusion/lock.c
-@@ -485,7 +485,7 @@ fusion_skirmish_wait( FusionSkirmish *skirmish, unsigned int timeout )
+@@ -646,7 +646,7 @@ fusion_skirmish_wait( FusionSkirmish *sk
        
       /* Install a (fake) signal handler for SIGRESTART. */
       act.sa_handler = restart_handler;

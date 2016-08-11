@@ -3,6 +3,8 @@
 
 PORTNAME=	cadubi
 PORTVERSION=	1.3.1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics editors
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,8 +15,6 @@ LICENSE=	ART10
 RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 GH_ACCOUNT=	statico
-GH_PROJECT=	cadubi
-GH_TAGNAME=	v1.3
 USE_GITHUB=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	cadubi
@@ -40,7 +40,7 @@ do-install:
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/extras/ansi_term_codes.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

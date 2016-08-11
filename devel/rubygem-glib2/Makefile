@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-pkg-config>=0:devel/rubygem-pkg-config
 
 USE_GNOME=	glib20
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

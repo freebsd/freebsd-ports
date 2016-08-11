@@ -43,9 +43,6 @@ do-install:
 	      holiday_quebec holiday_slovak holiday_spain holiday_swedish holiday_uk		\
 	      holiday_us ${STAGEDIR}${EXAMPLESDIR}
 
-.if !target(post-install)
-post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/netplan.dir
-.endif
 
 .include <bsd.port.mk>

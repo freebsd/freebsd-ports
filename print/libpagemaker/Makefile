@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpagemaker
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	print graphics devel
 MASTER_SITES=	LIBREOFFICE_DEV
 

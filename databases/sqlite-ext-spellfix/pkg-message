@@ -1,0 +1,11 @@
+*********************************************************************
+Loading extensions is by default prohibited as a security measure;
+see "Security Considerations" in
+http://www.sqlite.org/cvstrac/wiki?p=LoadableExtensions.
+
+If the sqlite3 program and library are built this way, you cannot
+use these functions from the program, you must write your own program
+using the sqlite3 API, and call sqlite3_enable_load_extension as
+described above, or else rebuilt the sqlite3 program to allow
+loadable extensions.
+*********************************************************************

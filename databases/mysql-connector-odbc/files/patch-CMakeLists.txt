@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2011-10-04 23:19:00.000000000 +0300
-+++ CMakeLists.txt	2011-10-15 11:36:44.000000000 +0300
-@@ -201,7 +201,7 @@
+--- CMakeLists.txt.orig	2014-06-18 22:50:16 UTC
++++ CMakeLists.txt
+@@ -269,7 +269,7 @@ ENDIF(NOT DISABLE_GUI)
  ADD_SUBDIRECTORY(dltest)
  ADD_SUBDIRECTORY(installer)
  
@@ -9,7 +9,7 @@
  
  ##############################################################################
  #
-@@ -281,18 +281,18 @@
+@@ -382,18 +382,17 @@ IF(WIN32)
  
  ELSE(WIN32)
  
@@ -23,7 +23,6 @@
 +  INSTALL(FILES INSTALL      DESTINATION ./share/doc/mysql-connector-odbc/)
    IF(EXISTS "${CMAKE_SOURCE_DIR}/COPYING")
 -    INSTALL(FILES COPYING       DESTINATION .)
-+    INSTALL(FILES COPYING       DESTINATION ./share/doc/mysql-connector-odbc/)
    ELSE()
 -    INSTALL(FILES LICENSE.mysql DESTINATION .)
 +    INSTALL(FILES LICENSE.mysql DESTINATION ./share/doc/mysql-connector-odbc/)

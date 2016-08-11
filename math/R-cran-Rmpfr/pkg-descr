@@ -1,0 +1,7 @@
+Arithmetic (via S4 classes and methods) for arbitrary precision
+floating point numbers, including transcendental ("special")
+functions. To this end, Rmpfr interfaces to the LGPL'ed MPFR (Multiple
+Precision Floating-Point Reliable) Library which itself is based
+on the GMP (GNU Multiple Precision) Library.
+
+WWW: https://cran.r-project.org/web/packages/Rmpfr/

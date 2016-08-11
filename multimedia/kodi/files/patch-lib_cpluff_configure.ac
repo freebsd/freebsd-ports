@@ -1,0 +1,30 @@
+--- lib/cpluff/configure.ac.orig	2016-02-20 15:21:19 UTC
++++ lib/cpluff/configure.ac
+@@ -109,12 +109,12 @@ if test "$enable_threads" != no; then
+     AC_LINK_IFELSE(
+ [AC_LANG_SOURCE([#include <pthread.h>
+ 
+-int main(int argc, char **argv) {
++[int main(int argc, char **argv) {
+ 	pthread_mutex_t mutex;
+ 	
+ 	pthread_mutex_init(&mutex, NULL);
+ 	return 0;
+-}
++}]
+ ])], [AC_MSG_RESULT([yes])
+ cp_threads=Posix], AC_MSG_RESULT([no]))
+   fi
+@@ -126,10 +126,10 @@ cp_threads=Posix], AC_MSG_RESULT([no]))
+     AC_LINK_IFELSE(
+ [AC_LANG_SOURCE([#include <windows.h>
+ 
+-int main(int argc, char **argv) {
++[int main(int argc, char **argv) {
+   CreateMutex(NULL, FALSE, NULL);
+   return 0;
+-}
++}]
+ ])], [AC_MSG_RESULT([yes])
+ cp_threads=Windows], AC_MSG_RESULT([no]))
+   fi

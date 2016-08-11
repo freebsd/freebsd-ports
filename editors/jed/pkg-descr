@@ -1,8 +1,8 @@
 	JED is a highly customizable text editor offering most of the
 commonly used features of EMACS without the proportions of EMACS.  The default
 configuration uses EMACS keystrokes, though WordStar keystrokes are
-available, and most any keystrokes can be programmed.n  JED is customizable 
-and programmable in the language SLANG, which can look like forth or c, 
+available, and most any keystrokes can be programmed.n  JED is customizable
+and programmable in the language SLANG, which can look like forth or c,
 depending on your preferences.
 
 WWW: http://www.jedsoft.org/jed/

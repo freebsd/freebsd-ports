@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+BASEDIR="%%PREFIX%%/etc/letsencrypt"
+SSLDIR="%%PREFIX%%/etc/ssl/letsencrypt"
+DOMAINSFILE="${BASEDIR}/domains.txt"
+CHALLENGEDIR="/usr/jails/http/usr/local/www/.well-known/acme-challenge"
+
+[ ! -d "${SSLDIR}/priv" ] && mkdir -pm700 "${SSLDIR}/private"
+
+cat "${DOMAINSFILE}" | while read domain line ; do
+   CERTSDIR="${SSLDIR}/${domain}"
+   [ ! -d "${CERTSDIR}" ] && mkdir -pm755 "${CERTSDIR}"
+   letskencrypt -C "${CHALLENGEDIR}" \
+                -k "${SSLDIR}/private/${domain}.pem" \
+                -c "${CERTSDIR}" \
+                ${domain} ${line}
+done

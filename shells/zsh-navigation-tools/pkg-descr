@@ -1,0 +1,16 @@
+Set of Zsh tools with features like incremental multi-word searching,
+approximate matching, ANSI coloring, themes, unique mode, horizontal
+scroll and advanced history management. Selected tools provided:
+    - n-history - full-screen history searcher and manager
+    - n-kill - browses process list, allows quick searching and
+      sending signal to selected process
+    - n-panelize - loads output of given command for browsing and
+      multi-word searching
+    - n-cd - browses dirstack and bookmarked directories, allows to
+      enter selected directory
+    - n-functions - browses functions, relegates editing to vared
+
+Written in pure Zsh, with use of curses module. Can be configured from
+zshrc. Binds n-history to Ctrl-R. Provides widgets for n-cd and n-kill.
+
+WWW: https://github.com/psprint/zsh-navigation-tools

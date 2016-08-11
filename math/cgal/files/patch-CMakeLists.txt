@@ -1,28 +1,20 @@
---- CMakeLists.txt.orig	2012-10-17 14:00:39.000000000 -0500
-+++ CMakeLists.txt	2013-03-17 15:51:01.000000000 -0500
-@@ -801,9 +801,9 @@
+--- CMakeLists.txt.orig	2016-06-13 12:37:16 UTC
++++ CMakeLists.txt
+@@ -729,7 +729,7 @@ set ( CGAL_INSTALL_DOC_DIR "share/doc/${
+   CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX" 
+   )
  
+-set ( CGAL_INSTALL_MAN_DIR "share/man/man1"  
++set ( CGAL_INSTALL_MAN_DIR "man/man1"  
+   CACHE STRING "The folder where manual pages for CGAL scripts will be installed, relative to CMAKE_INSTALL_PREFIX" 
+   )
+ 
+@@ -816,7 +816,7 @@ create_CGALconfig_files()
  # DESTINATION option is mandatory; skipping it breaks CPack!
  
--if(CGAL_INSTALL_DOC_DIR)
+ if(CGAL_INSTALL_DOC_DIR)
 -  install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
--endif()
-+#if(CGAL_INSTALL_DOC_DIR)
 +#  install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
-+#endif()
+ endif()
  
  #install all includes collected in trunk et cetera
- 
-@@ -843,9 +843,9 @@
- 
- install(FILES ${CMAKE_BINARY_DIR}/config/CGALConfig.cmake DESTINATION ${CGAL_INSTALL_CMAKE_DIR} )
- 
--if(CGAL_INSTALL_MAN_DIR)
--  install(FILES auxiliary/cgal_create_cmake_script.1 DESTINATION ${CGAL_INSTALL_MAN_DIR} )
--endif()
-+#if(CGAL_INSTALL_MAN_DIR)
-+#  install(FILES auxiliary/cgal_create_cmake_script.1 DESTINATION ${CGAL_INSTALL_MAN_DIR} )
-+#endif()
- 
- #--------------------------------------------------------------------------------------------------
- #

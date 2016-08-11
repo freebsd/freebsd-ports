@@ -2,7 +2,7 @@
 
 PORTNAME=	prosearch
 PORTVERSION=	0.19.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
@@ -22,26 +22,25 @@ NO_ARCH=	yes
 SEARCHDIR?=	www/search
 PLIST_SUB+=	SEARCHDIR=${SEARCHDIR} WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-SAMBA_PORT?=	net/samba36
-
-#todo
-# user and group for crawler, nginx
+#TODO user and group for crawler
 OPTIONS_DEFINE=	CRAWLER SAMBA RSYNC APACHE MOD_PERL2 MOD_FASTCGI \
-		DB MYSQL MARIA PGSQL PGPP SQLITE SPHINX
+		DB MYSQL PGSQL PGPP SQLITE SPHINX
 OPTIONS_DEFAULT=	CRAWLER SAMBA APACHE DB MYSQL
-CRAWLER_DESC=		With crawler deps (nmap, p5-libwww)
+CRAWLER_DESC=		With crawler (nmap, p5-libwww)
 SAMBA_DESC=		crawler with SAMBA (file://)
 RSYNC_DESC=		crawler with RSYNC
 APACHE_DESC=		With web server apache2.2+
 MOD_PERL2_DESC=		With MOD_PERL2
 MOD_FASTCGI_DESC=	With MOD_FASTCGI
-DB_DESC=		With database server deps
-MARIA_DESC=		maria (mysql replace)
+DB_DESC=		With both database server and client
+#MARIA_DESC=		mariaDB
 PGPP_DESC=		postgres pure Perl connection driver
 SPHINX_DESC=		sphinx fulltext search engine
+#NGINX_DESC=		With web server (NGINX)
 
-#		NGINX "With web server deps (NGINX)" off
-
+#RG1_DESC=	Database backend
+#OPTIONS_RADIO=	RG1
+#OPTIONS_RADIO_RG1=	MYSQL MARIA
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\
@@ -58,7 +57,7 @@ p5-Net-DirectConnect>=0:net-p2p/p5-Net-DirectConnect
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	smbclient:net/samba-smbclient
+RUN_DEPENDS+=smbclient:net/samba44
 .endif
 
 .if ${PORT_OPTIONS:MRSYNC}
@@ -92,24 +91,24 @@ searchd:textproc/sphinxsearch-devel
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	client
+USES+=	mysql
 RUN_DEPENDS+=\
 p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
+USES+=	mysql:server
 .endif
 
 .if ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
 p5-DBD-mysql>=0:databases/p5-DBD-mysql \
-${LOCALBASE}bin/mysql:databases/mariadb-client
+${LOCALBASE}bin/mysql:databases/mariadb100-client
 .endif
 
 .if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
-${LOCALBASE}/libexec/mysqld:databases/mariadb-server
+${LOCALBASE}/libexec/mysqld:databases/mariadb100-server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

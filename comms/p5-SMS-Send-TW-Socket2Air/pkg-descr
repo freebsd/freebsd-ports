@@ -1,4 +1,4 @@
-SMS::Send::TW::Socket2Air is a SMS::Send driver 
+SMS::Send::TW::Socket2Air is a SMS::Send driver
 which allows you to send messages through http://sms.hinet.net/
 
 WWW: http://search.cpan.org/dist/SMS-Send-TW-Socket2Air/

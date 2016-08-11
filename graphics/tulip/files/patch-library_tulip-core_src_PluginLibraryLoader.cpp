@@ -1,6 +1,6 @@
---- library/tulip-core/src/PluginLibraryLoader.cpp.orig	2015-04-18 20:15:27 UTC
+--- library/tulip-core/src/PluginLibraryLoader.cpp.orig	2016-07-07 20:15:54 UTC
 +++ library/tulip-core/src/PluginLibraryLoader.cpp
-@@ -130,7 +130,14 @@ bool PluginLibraryLoader::loadPluginLibr
+@@ -138,7 +138,14 @@ bool PluginLibraryLoader::loadPluginLibr
  }
  
  // accepts only file whose name matches *.so or *.dylib

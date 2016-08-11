@@ -1,10 +1,10 @@
 Main Memory Relational Database Management System
 
-   - Fastest query execution 
-   - Post-relational features 
-   - Tight integration with C++ 
-   - Automatic scheme evaluation 
-   - Efficient log-less transactions 
-   - Zero time recovery 
+   - Fastest query execution
+   - Post-relational features
+   - Tight integration with C++
+   - Automatic scheme evaluation
+   - Efficient log-less transactions
+   - Zero time recovery
 
 WWW: http://sourceforge.net/projects/fastdb

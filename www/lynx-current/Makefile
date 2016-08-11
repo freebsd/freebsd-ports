@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.9d8
+PORTVERSION=	2.8.9d9
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://invisible-island.net/lynx/tarballs/
@@ -47,7 +47,7 @@ L_HELP=		${PREFIX}/share/lynx_help
 DOCSDIR=	${L_DOC}
 
 OPTIONS_DEFINE=	IDN NLS DOCS
-OPTIONS_DEFAULT=IDN NLS
+OPTIONS_DEFAULT=IDN
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

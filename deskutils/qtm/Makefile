@@ -9,7 +9,8 @@ MASTER_SITES=	SF/catkin/${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake tar:bzip2
 USE_QT4=	corelib dbus gui network xml \
@@ -23,7 +24,7 @@ PORTDOCS=	Changelog INSTALL README
 PLIST_FILES=	bin/qtm man/man1/qtm.1.gz share/applications/qtm.desktop \
 		share/pixmaps/qtm-logo1.png
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -33,10 +34,10 @@ post-patch:
 		 /^Categories/s|;X-.*;|;| ; \
 		 /^# /d' ${WRKSRC}/qtm-desktop.sh
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in Changelog INSTALL README
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

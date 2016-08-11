@@ -1,6 +1,6 @@
 This module allows you to validate XML documents against a W3C XML
 Schema. This module does not implement the full W3C XML Schema
-recommendation, but a useful subset. See the SCHEMA SUPPORT section 
+recommendation, but a useful subset. See the SCHEMA SUPPORT section
 in the module documention.
 
 WWW: http://search.cpan.org/dist/XML-Validator-Schema/

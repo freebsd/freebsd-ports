@@ -11,6 +11,8 @@ COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USE_GITHUB=	yes
@@ -21,7 +23,7 @@ USES=		cmake
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ASSERT PYTHON SNAPPY EXAMPLES TESTS
-OPTIONS_DEFAULT=PYTHON SNAPPY EXAMPLES TESTS
+OPTIONS_DEFAULT=PYTHON SNAPPY TESTS
 TESTS_DESC=	Build tests
 
 .include <bsd.port.options.mk>

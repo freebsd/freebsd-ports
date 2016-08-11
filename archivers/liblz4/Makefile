@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	r
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@waschbuesch.de
 COMMENT=	LZ4 compression library, lossless and very fast
 
 LICENSE=	BSD2CLAUSE GPLv2

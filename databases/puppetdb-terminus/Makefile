@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	puppet38>=0:sysutils/puppet38
 
-CONFLICTS_INSTALL=	puppetdb-terminus4-*
+CONFLICTS_INSTALL=	puppetdb-terminus3-* puppetdb-terminus4-*
 USE_RUBY=	yes
 NO_BUILD=	yes
 

@@ -8,4 +8,4 @@ spam, it can be passed to jmba. jmba will queue it and send an email to the
 sender containing a key; if the sender replies, the original email is
 "unfrozen" from the queue and delivered.
 
-WWW:	http://www.ivarch.com/programs/jmba.shtml
+WWW: http://www.ivarch.com/programs/jmba.shtml

@@ -17,6 +17,4 @@ share/sgml/iso8879/ISOlat2
 share/sgml/iso8879/ISOnum
 share/sgml/iso8879/ISOpub
 share/sgml/iso8879/ISOtech
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
-share/sgml/iso8879/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/catalog
+@xmlcatmgr share/sgml/iso8879/catalog

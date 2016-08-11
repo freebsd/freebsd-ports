@@ -63,7 +63,6 @@
     SUBDIR += rawdog
     SUBDIR += s-news
     SUBDIR += sabnzbdplus
-    SUBDIR += slnr
     SUBDIR += slrn
     SUBDIR += slrnconf
     SUBDIR += slrnface

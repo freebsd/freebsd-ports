@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr|PREFIX=${PREFIX}|' \
 		-e 's|CC = g++|CC ?= g++|' \
 		-e 's|CC|CXX|' \
-		-e 's|sdl-config|$(SDL_CONFIG)|' \
+		-e 's|sdl-config|${SDL_CONFIG}|' \
 		-e '/^MY_CFLAGS/ s| = | = ${CXXFLAGS} |' \
 		${WRKSRC}/Makefile
 

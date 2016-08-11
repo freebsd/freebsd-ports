@@ -1,0 +1,5 @@
+The Inspector is an UPnP Device and Service analyzer, and a debugging tool,
+based on the Coherence DLNA/UPnP framework.
+Modeled loosely after the Intel UPnP Device Spy and Device Validator.
+
+WWW: http://coherence.beebits.net/wiki/UPnP-Inspector/

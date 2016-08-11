@@ -1,3 +1,4 @@
+lib/erlang/lib/pooler-%%VERSION%%/ebin/pooled_gs.beam
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler.app
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler.beam
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler_app.beam
@@ -7,6 +8,7 @@ lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler_pooled_worker_sup.beam
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler_starter.beam
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler_starter_sup.beam
 lib/erlang/lib/pooler-%%VERSION%%/ebin/pooler_sup.beam
+lib/erlang/lib/pooler-%%VERSION%%/src/pooled_gs.erl
 lib/erlang/lib/pooler-%%VERSION%%/src/pooler.app.src
 lib/erlang/lib/pooler-%%VERSION%%/src/pooler.erl
 lib/erlang/lib/pooler-%%VERSION%%/src/pooler.hrl

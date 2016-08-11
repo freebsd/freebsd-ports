@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text based card game, the objective is to get rid of all your cards
 
+USES=	dos2unix
+DOS2UNIX_FILES=	eights.c
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/eights
 

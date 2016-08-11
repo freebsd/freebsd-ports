@@ -17,7 +17,7 @@ For example:
 %%PREFIX%%/otrs
 
 
-If you are upgrading from an earlier version, follow the instructions for 
-upgrading your database schema and configuration files given in 
+If you are upgrading from an earlier version, follow the instructions for
+upgrading your database schema and configuration files given in
 %%DOCSDIR%%/UPGRADING.md
 ==========================================================================

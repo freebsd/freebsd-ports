@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Dancer2/Session/DBIC.pm
+%%SITE_PERL%%/Dancer2/Session/DBIC/Role/Serializer.pm
+%%SITE_PERL%%/Dancer2/Session/DBIC/Serializer/JSON.pm
+%%SITE_PERL%%/Dancer2/Session/DBIC/Serializer/Sereal.pm
+%%SITE_PERL%%/Dancer2/Session/DBIC/Serializer/YAML.pm
+%%PERL5_MAN3%%/Dancer2::Session::DBIC.3.gz
+%%PERL5_MAN3%%/Dancer2::Session::DBIC::Role::Serializer.3.gz
+%%PERL5_MAN3%%/Dancer2::Session::DBIC::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/Dancer2::Session::DBIC::Serializer::Sereal.3.gz
+%%PERL5_MAN3%%/Dancer2::Session::DBIC::Serializer::YAML.3.gz

@@ -1,6 +1,6 @@
---- lib/direct/stream.c.orig	2007-12-15 14:30:28.000000000 +0200
-+++ lib/direct/stream.c	2008-03-16 14:51:44.000000000 +0200
-@@ -429,7 +429,7 @@
+--- lib/direct/stream.c.orig	2012-05-23 13:43:12 UTC
++++ lib/direct/stream.c
+@@ -429,7 +429,7 @@ net_connect( struct addrinfo *addr, int 
                           req.imr_multiaddr.s_addr = saddr->sin_addr.s_addr;
                           req.imr_interface.s_addr = 0;
  

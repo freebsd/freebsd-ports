@@ -1,4 +1,5 @@
 %%SITE_ARCH%%/DateTime.pm
+%%SITE_ARCH%%/DateTime/Conflicts.pm
 %%SITE_ARCH%%/DateTime/Duration.pm
 %%SITE_ARCH%%/DateTime/Helpers.pm
 %%SITE_ARCH%%/DateTime/Infinite.pm

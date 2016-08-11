@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weberp
-PORTVERSION=	4.12.3
-PORTREVISION=	2
+PORTVERSION=	4.13
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/
 DISTNAME=	webERP_${PORTVERSION}
@@ -12,6 +11,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source Web-Based ERP System
 
 LICENSE=	GPLv2
+
+BROKEN_powerpc64=	Does not build
 
 PORTSCOUT=	skipv:3.12
 

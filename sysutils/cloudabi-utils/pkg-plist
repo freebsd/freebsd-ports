@@ -2,6 +2,6 @@ bin/cloudabi-run
 include/cloudabi/argdata.h
 include/cloudabi/program.h
 lib/libcloudabi.so
-lib/libcloudabi.so.0
+lib/libcloudabi.so.1
 libexec/cloudabi-reexec
 man/man1/cloudabi-run.1.gz

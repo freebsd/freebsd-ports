@@ -7,4 +7,4 @@ that are removed, allowing for correct incremental backups.
 An example script named rdup-simple is included to show how to implement
 a simple snapshot-style backup strategy.
 
-WWW: http://archive.miek.nl/projects/rdup/index.html
+WWW: https://github.com/miekg/rdup

@@ -1,7 +1,7 @@
 PEAR::DB_DataObject performs 2 tasks:
 1. Builds SQL statements based on the objects vars and the builder methods.
 2. acts as a datastore for a table row.
-The core class is designed to be extended for each of your tables so that you 
+The core class is designed to be extended for each of your tables so that you
 put the data logic inside the data classes.
 included is a Generator to make your configuration files and your base classes.
 

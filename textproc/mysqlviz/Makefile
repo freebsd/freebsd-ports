@@ -12,9 +12,7 @@ COMMENT=	MySQL and SQLite Database Visualisation Tool
 LICENSE=	GPLv3
 
 NO_BUILD=	yes
-USES=	tar:bzip2
-USE_PHP=	yes
-WANT_PHP_CLI=	yes
+USES=	php:cli tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME}
 

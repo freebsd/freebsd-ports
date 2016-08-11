@@ -1,14 +1,14 @@
-Yadis is a service discovery system allowing relying parties 
-(aka identity consumers or membersites) to determine automatically, 
+Yadis is a service discovery system allowing relying parties
+(aka identity consumers or membersites) to determine automatically,
 without end-user intervention, the most appropriate protocol to use.
 
 Examples of such services are:
 
 * Single sign-on across web sites
 * Profile exchange and form filling
-* Blog anti-spam 
+* Blog anti-spam
 
-Yadis provides the first step for any service that uses identifiers for 
-authentication, accountability, privacy controlled data exchange and more. 
+Yadis provides the first step for any service that uses identifiers for
+authentication, accountability, privacy controlled data exchange and more.
 
 WWW: http://search.cpan.org/dist/Net-Yadis/

@@ -1,5 +1,14 @@
 --- misc/llppac.orig	2015-10-13 20:12:27 UTC
 +++ misc/llppac
+@@ -7,7 +7,7 @@ die() {
+ }
+ 
+ cachedir="${XDG_CACHE_HOME:-$HOME/.cache}/llpp"
+-test -d "$cachedir" || die "cache directory '$cachedir' does not exist"
++mkdir -p "$cachedir"
+ 
+ caspsuf=
+ type=
 @@ -197,7 +197,7 @@ EOF
      *) die "unhandled filter type: '$type'";;
  esac

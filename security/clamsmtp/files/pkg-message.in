@@ -3,11 +3,11 @@ Edit /etc/rc.conf and set
 
 clamsmtpd_enable="YES"
 
-to enable clamsmtpd. 
+to enable clamsmtpd.
 
-Also, there is a clamsmtpd.conf-sample in %%PREFIX%%/etc/, 
+Also, there is a clamsmtpd.conf-sample in %%PREFIX%%/etc/,
 rename to clamsmtpd.conf, otherwise specify -f option to your
-config file. 
+config file.
 
 To work with postfix, See also
 http://memberwebs.com/nielsen/software/clamsmtp/postfix.html

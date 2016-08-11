@@ -15,13 +15,12 @@ LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
-USES=		gmake jpeg shebangfix tk zip
+USES=		gmake jpeg shebangfix tk:tea zip
 SHEBANG_FILES=	demos/scripts/xcolors.tcl
 SHEBANG_LANG=	bltwish
 bltwish_OLD_CMD=../bltwish
 bltwish_CMD=	${PREFIX}/bin/bltwish # installed by this port, so not LOCALBASE
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR}/generic \
 		-I${TK_INCLUDEDIR}/generic \
 		-I${TK_INCLUDEDIR}/unix
@@ -30,13 +29,7 @@ MAKE_JOBS_UNSAFE=yes
 PLIST_SUB+=	BLTVER=${PORTVERSION:R} \
 		BLTSHORTVER=${PORTVERSION:R:S/.//}
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--exec_prefix=${PREFIX} \
-		--enable-jpeg=${LOCALBASE} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-tcllibs=${LOCALBASE}/lib \
-		--with-tklibs=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-jpeg=${LOCALBASE} \
 
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \

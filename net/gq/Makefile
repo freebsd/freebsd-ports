@@ -19,9 +19,8 @@ DND_DESC=	Enable Drag and drop support in browse mode
 CACHE_DESC=	Support the OpenLDAP experimental client cache
 
 USE_GNOME=	intltool libglade2 gnomedocutils
-USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
-USES=		gettext gmake pkgconfig shared-mime-info desktop-file-utils
+USES=		desktop-file-utils gettext pkgconfig gmake shared-mime-info ssl 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 DND_CONFIGURE_ENABLE=	browser-dns

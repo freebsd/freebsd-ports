@@ -1,0 +1,39 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: kapacitord
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable telegrafb:
+# kapacitord_enable="YES"
+#
+# kapacitord_enable (bool):       Set to YES to enable telegraf
+#                               Default: NO
+# kapacitord_conf (str):          telegraf configuration file
+#                               Default: ${PREFIX}/etc/telegraf.conf
+# kapacitord_flags (str):         Extra flags passed to telegraf
+
+. /etc/rc.subr
+
+name="kapacitord"
+rcvar=kapacitord_enable
+load_rc_config $name
+
+: ${kapacitord_enable:="NO"}
+: ${kapacitord_flags:=""}
+: ${kapacitord_conf:="%%PREFIX%%/etc/kapacitor.conf"}
+
+# daemon
+start_precmd=kapacitord_prestart
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${kapacitord_flags} -config=${kapacitord_conf} 2>> /var/log/kapacitord.log"
+
+kapacitord_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+        rc_flags=""
+}
+
+run_rc_command "$1"

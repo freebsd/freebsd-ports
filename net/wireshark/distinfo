@@ -1,2 +1,3 @@
-SHA256 (wireshark-2.0.2.tar.bz2) = e921fb072085a5654d899949bb561d0687f4819f7b63ba35777bb949a9b6b9c1
-SIZE (wireshark-2.0.2.tar.bz2) = 31073440
+TIMESTAMP = 1470427617
+SHA256 (wireshark-2.0.5.tar.bz2) = 0ce0241330828973f5b4efee422a3760cab8ce0b41e7721c4b9fd185be1bb10b
+SIZE (wireshark-2.0.5.tar.bz2) = 31124989

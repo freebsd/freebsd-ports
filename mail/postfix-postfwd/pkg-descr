@@ -1,8 +1,8 @@
-The program uses the postfix policy delegation protocol to control access to 
-the mail system before a message has been accepted (please visit 
-http://www.postfix.org/SMTPD_POLICY_README.html for more information). It 
-allows you to choose an action (e.g. reject, dunno) for a combination of 
-several smtp parameters (like sender and recipient address, size or the 
+The program uses the postfix policy delegation protocol to control access to
+the mail system before a message has been accepted (please visit
+http://www.postfix.org/SMTPD_POLICY_README.html for more information). It
+allows you to choose an action (e.g. reject, dunno) for a combination of
+several smtp parameters (like sender and recipient address, size or the
 client's TLS fingerprint).
 
 WWW: http://www.postfwd.org/

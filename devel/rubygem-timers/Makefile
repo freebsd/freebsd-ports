@@ -10,12 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby one-shot and periodic timers
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hitimes>=0:devel/rubygem-hitimes
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

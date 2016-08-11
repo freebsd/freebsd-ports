@@ -5,9 +5,9 @@ command separately.
 It uses open3 to run each chunk of the pipe.
 
     use IO::MultiPipe;
-    
+
     my $pipes = IO::MultiPipe->new();
-	    
+
     #This sets the pipe that will be run.
     $pipes->set('sed s/-// | sed s/123/abc/ | sed s/ABC/abc/');
     if ($pipes->{error}){

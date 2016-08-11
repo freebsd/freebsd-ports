@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	4.3-2
+DISTVERSION=	5.0-5
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME} \
-		LOCAL/decke
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	json session soap simplexml xml
-USES=		dos2unix zip
+USE_PHP=	json session simplexml soap xml
+USES=		dos2unix php zip
 
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 ETCDIR=		${WWWDIR}

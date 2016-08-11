@@ -1,5 +1,5 @@
---- ../clang/lib/Headers/CMakeLists.txt.orig
-+++ ../clang/lib/Headers/CMakeLists.txt
+--- clang/lib/Headers/CMakeLists.txt.orig	2014-11-10 18:04:47 UTC
++++ clang/lib/Headers/CMakeLists.txt
 @@ -17,7 +17,7 @@ set(files
  if (MSVC_IDE OR XCODE)
    set(output_dir ${LLVM_BINARY_DIR}/bin/lib/clang/${CLANG_VERSION}/include)

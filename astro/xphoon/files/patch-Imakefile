@@ -1,5 +1,5 @@
---- ./Imakefile.org	Wed Sep 18 12:57:31 1991
-+++ ./Imakefile	Tue Feb 14 18:44:28 1995
+--- Imakefile.orig	2000-06-13 21:55:44 UTC
++++ Imakefile
 @@ -11,7 +11,7 @@
  
  

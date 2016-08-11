@@ -1,0 +1,11 @@
+CppUTest is a C /C++ based unit xUnit test framework for unit testing and for
+test-driving your code. It is written in C++ but is used in C and C++ projects
+and frequently used in embedded systems.
+
+CppUTest's core design principles:
+
+* Simple to use and small
+* Portable to old and new platforms
+* Build with Test-driven Development in mind
+
+WWW: https://cpputest.github.io/

@@ -1,0 +1,4 @@
+%%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5Widgets_.cmake
+%%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so
+%%QT_PLUGINDIR%%/styles/libqmotifstyle.so
+%%QT_PLUGINDIR%%/styles/libqplastiquestyle.so

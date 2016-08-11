@@ -1,5 +1,5 @@
---- gitlab_git.gemspec.orig	2016-03-28 15:12:57.632719000 +0000
-+++ gitlab_git.gemspec	2016-03-28 15:15:22.614886000 +0000
+--- gitlab_git.gemspec.orig	2016-03-28 15:12:58 UTC
++++ gitlab_git.gemspec
 @@ -21,7 +21,7 @@
      s.specification_version = 4
  

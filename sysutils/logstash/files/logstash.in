@@ -29,7 +29,7 @@
 #   Log file path.
 #
 # logstash_java_home (string):
-#   Default value: "/usr/local/openjdk6"
+#   Default value: "/usr/local/openjdk8"
 #   Root directory of the desired Java SDK.
 #   The JAVA_HOME environment variable is set with the contents of this
 #   variable.
@@ -40,9 +40,9 @@
 #   The JAVA_OPTS environment variable is set with the contents of this
 #   variable.
 #
-# logstash_elastic_datadir (string):
-#   Default value: "/var/db/logstash".
-#   Data directory of the embedded ElasticSearch instance.
+# logstash_opts (string):
+#   Default value: ""
+#   Additional command line flags for logstash, eg. "-r"
 #
 
 . /etc/rc.subr
@@ -61,7 +61,7 @@ logdir="/var/log"
 : ${logstash_log_file="${logdir}/${name}.log"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
 : ${logstash_java_opts=""}
-: ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
+: ${logstash_opts=""}
 
 piddir=/var/run/${name}
 pidfile=${piddir}/${name}.pid
@@ -75,16 +75,14 @@ procname="${logstash_java_home}/bin/java"
 
 logstash_chdir=${logstash_home}
 logstash_log_options=""
-logstash_elastic_options=""
 
 if checkyesno logstash_log; then
   logstash_log_options=" --log ${logstash_log_file}" 
 fi
 
-logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
-logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
+logstash_args="agent -f ${logstash_config} ${logstash_log_options} ${logstash_opts}"
 
-JAVA_OPTS="${logstash_java_opts} ${logstash_elastic_options}"
+JAVA_OPTS="${logstash_java_opts}"
 JAVA_HOME="${logstash_java_home}"
 export JAVA_OPTS
 export JAVA_HOME

@@ -3,12 +3,16 @@
 
 PORTNAME=	calamaris
 PORTVERSION=	2.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
-MASTER_SITES=	http://cord.de/tools/squid/calamaris/
+MASTER_SITES=	http://cord.de/files/calamaris/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl script to produce statistics out of Squid log files
+
+LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	calamaris-devel-[0-9]*
 
 USES=		shebangfix perl5
 NO_BUILD=	yes

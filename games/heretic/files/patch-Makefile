@@ -1,5 +1,5 @@
---- Makefile.orig	Mon May  1 22:56:45 2000
-+++ Makefile	Fri Aug 30 01:43:32 2002
+--- Makefile.orig	2000-05-02 01:57:07 UTC
++++ Makefile
 @@ -1,19 +1,19 @@
  # Makefile for Linux Heretic/GLHeretic
  
@@ -23,7 +23,7 @@
  
  #
  # For old SVGALIB, comment out -D__NEWVGALIB__
-@@ -21,7 +21,7 @@
+@@ -21,7 +21,7 @@ CC = gcc -pipe
  CDEFS.ipx = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DHAVE_VALUES_H -DLINUX_MOUSE \
  	-DIPX_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
  	-D__NEWVGALIB__ # -DIPX_DEBUG -DEXTRA_WADS
@@ -32,7 +32,7 @@
  	-DUDP_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
  	-D__NEWVGALIB__ # -DEXTRA_WADS
  
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ COPT.m68k = -m68020-60 -O2 -fomit-frame-
  
  COPT.alpha = -O2 -D__64BIT__ -DHAVE_ALLOCA_H
  
@@ -41,7 +41,7 @@
  
  COPT.arm = -O2 -D__32BIT__ -fsigned-char -fomit-frame-pointer \
             -DHAVE_ALLOCA_H -D__PACKED__=__attribute__\ \(\(packed\)\)
-@@ -57,12 +57,12 @@
+@@ -57,12 +57,12 @@ endif
  endif
  
  # Change this to change the platform
@@ -57,7 +57,7 @@
  
  # Uncomment the line below if you want to use original "[" and "]" keys
  # for inventory access, instead of "k" and "l".
-@@ -85,18 +85,18 @@
+@@ -85,18 +85,18 @@ SOUND_REFS = soundclient/i_sound.c sound
  COPT.sound = -D__DOSOUND__ -DSNDSERV -Isoundclient -D__DOMUSIC__ -DMUSSERV # -D_DEBUGSOUND
  X11LIBS = -lXext -lX11
  
@@ -80,7 +80,7 @@
  
  OBJS =	am_map.o ct_chat.o d_main.o d_net.o f_finale.o g_game.o \
  	p_ceilng.o p_doors.o p_enemy.o p_floor.o p_inter.o p_lights.o \
-@@ -104,7 +104,7 @@
+@@ -104,7 +104,7 @@ OBJS =	am_map.o ct_chat.o d_main.o d_net
  	p_spec.o p_switch.o p_telept.o  p_tick.o p_user.o r_bsp.o r_data.o \
  	r_draw.o r_plane.o r_segs.o r_things.o r_main.o mn_menu.o sb_bar.o \
  	tables.o v_video.o w_wad.o z_zone.o in_lude.o \

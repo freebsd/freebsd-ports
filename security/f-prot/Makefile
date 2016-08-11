@@ -42,7 +42,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/f-prot.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/man/fpupdate.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 	${CP} ${WRKSRC}/doc/CHANGES ${STAGEDIR}${DOCSDIR}

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdepim-runtime
-PORTVERSION=	${KDE4_VERSION}
+PORTVERSION=	${KDE4_KDELIBS_VERSION}
 CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 CONFLICTS_INSTALL=	kdepim-runtime44-4.*
 
 USE_GNOME=	libxml2 libxslt:build
-USE_KDE4=	kdelibs kdeprefix pimlibs \
+USE_KDE4=	kdelibs pimlibs \
 		akonadi automoc4
 USES=		cmake:outsource shared-mime-info tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui network qtestlib \

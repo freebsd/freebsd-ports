@@ -1,44 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective-nrpe-agent
-PORTVERSION=	20130805
-CATEGORIES=	sysutils
+PORTEPOCH=	1
 
-MAINTAINER=	robak@FreeBSD.org
-COMMENT=	MCollective NRPE agent plugin
+COMMENT=	MCollective agent to interact with the NRPE monitoring system
 
-RUN_DEPENDS=	mcollective>=2:sysutils/mcollective
+# See MASTERDIR for MAINTAINER.
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	puppetlabs
-GH_TAGNAME=	ee29242
+RUN_DEPENDS=	mcollective-nrpe-common>=${PORTVERSION}:sysutils/mcollective-nrpe-common
 
-PLIST_FILES=	share/mcollective/agent/nrpe.ddl \
-		share/mcollective/agent/nrpe.rb \
-		share/mcollective/aggregate/nagios_states.rb \
-		share/mcollective/application/nrpe.rb \
-		share/mcollective/data/nrpe_data.ddl \
-		share/mcollective/data/nrpe_data.rb \
-		sbin/check-mc-nrpe
-PLIST_DIRS=	share/mcollective/agent \
-		share/mcollective/aggregate \
-		share/mcollective/application \
-		share/mcollective/data
+MASTERDIR=	${.CURDIR}/../mcollective-nrpe-common
 
-NO_BUILD=	yes
+PLIST_FILES=	share/mcollective/agent/nrpe.rb
 
 do-install:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "agent/*.rb" ${STAGEDIR}${PREFIX}/share/mcollective
 
-.for dir in ${PLIST_DIRS}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${dir}
-.endfor
-
-	${INSTALL_DATA} ${WRKSRC}/agent/nrpe.ddl ${STAGEDIR}${PREFIX}/share/mcollective/agent/
-	${INSTALL_DATA} ${WRKSRC}/agent/nrpe.rb ${STAGEDIR}${PREFIX}/share/mcollective/agent/
-	${INSTALL_DATA} ${WRKSRC}/aggregate/nagios_states.rb ${STAGEDIR}${PREFIX}/share/mcollective/aggregate/
-	${INSTALL_DATA} ${WRKSRC}/application/nrpe.rb ${STAGEDIR}${PREFIX}/share/mcollective/application/
-	${INSTALL_DATA} ${WRKSRC}/data/nrpe_data.ddl ${STAGEDIR}${PREFIX}/share/mcollective/data/
-	${INSTALL_DATA} ${WRKSRC}/data/nrpe_data.rb ${STAGEDIR}${PREFIX}/share/mcollective/data/
-	${INSTALL_SCRIPT} ${WRKSRC}/sbin/check-mc-nrpe ${STAGEDIR}${PREFIX}/sbin/
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

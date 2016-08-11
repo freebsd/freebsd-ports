@@ -2,6 +2,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -60,7 +61,7 @@ PLIST_SUB+=	QT="" KDE="@comment "
 .else
 CONFLICTS_INSTALL+=	kid3-qt4-3.* kid3-qt5-3.*
 
-USE_KDE4=	kdelibs automoc4 kdeprefix
+USE_KDE4=	kdelibs automoc4
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif

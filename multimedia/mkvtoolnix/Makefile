@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.0.1
+PORTVERSION=	9.3.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
 LICENSE=	GPLv2

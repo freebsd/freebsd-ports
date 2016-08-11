@@ -1,0 +1,11 @@
+--- util_d/Imakefile.orig	2004-04-21 19:27:24 UTC
++++ util_d/Imakefile
+@@ -43,7 +43,7 @@
+  * #include "Motif.tmpl"
+  * #include "Motif.rules"
+  */
+-LOCAL_LIBRARIES= XmClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
+ 
+ 
+ /**** Optional defines:  Change as you see fit. *****************************

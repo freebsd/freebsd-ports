@@ -1,6 +1,6 @@
-xwatchwin allows you to peek at a window on another X server. 
+xwatchwin allows you to peek at a window on another X server.
 To use it, you must specify the display name of the machine you want
-to watch, then the name of the window on that machine. 
+to watch, then the name of the window on that machine.
 Xwatchwin will attempt to connect with the X server
 hostname:0.0, and if successful, will try to retrieve a copy of
 the window in which you specified interest.

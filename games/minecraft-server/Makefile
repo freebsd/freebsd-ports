@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.2
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTFILES=	minecraft_server.${PORTVERSION}.jar
@@ -9,6 +9,11 @@ EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
 COMMENT=	Dedicated server for the game Minecraft
+
+LICENSE=	minecraft
+LICENSE_NAME=	Minecraft End User License Agreement
+LICENSE_TEXT=	The license can be viewed at: https://account.mojang.com/documents/minecraft_eula
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 OPTIONS_SINGLE=		RUN
 OPTIONS_SINGLE_RUN=	DAEMON STANDALONE
@@ -53,6 +58,7 @@ do-install:
 	${LN} -sf /var/log/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/logs
 	${LN} -sf /var/log/minecraft-server/debug ${STAGEDIR}${PREFIX}/${PORTNAME}/debug
 	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
+	${LN} -sf ${PREFIX}/${PORTNAME}/${DISTFILES} ${STAGEDIR}${PREFIX}/${PORTNAME}/minecraft_server.jar
 
 post-install-STANDALONE-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin

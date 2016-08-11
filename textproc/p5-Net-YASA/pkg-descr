@@ -1,4 +1,4 @@
-YASA is a simple implementation of Suffix Array for counting 
+YASA is a simple implementation of Suffix Array for counting
 frequency of given text/string.
 
 This module provides a Perl interface to YASA via REST.

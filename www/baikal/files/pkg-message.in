@@ -1,8 +1,10 @@
+If this is a new installation, please follow the instructions there:
 
-To finish installing Baikal:
-	1) Set up an httpd directive
-	   See %%EXAMPLESDIR%%
-	2) touch %%WWWDIR%%/Specific/ENABLE_INSTALL
-	3) Browse http://your.host.here/admin
-	4) rm %%WWWDIR%%/Specific/ENABLE_INSTALL
+http://sabre.io/baikal/install/
 
+Baikal has been installed in %%WWWDIR%%
+
+If you are upgrading from a previous version of Baikal, please
+follow the instructions here:
+
+http://sabre.io/baikal/upgrade/

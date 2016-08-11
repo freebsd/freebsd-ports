@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
-PORTVERSION=	2.002000
+PORTVERSION=	2.003001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -13,6 +13,7 @@ COMMENT=	Perl API for MaxMind GeoIP2 web services and databases
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-Validate-IP>=0.19:net-mgmt/p5-Data-Validate-IP \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
@@ -30,7 +31,8 @@ BUILD_DEPENDS=	p5-Data-Validate-IP>=0.19:net-mgmt/p5-Data-Validate-IP \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Path-Class>=0:devel/p5-Path-Class \
-		p5-Test-Fatal>=0:devel/p5-Test-Fatal
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
 
 NO_ARCH=	yes
 USE_PERL5=	configure

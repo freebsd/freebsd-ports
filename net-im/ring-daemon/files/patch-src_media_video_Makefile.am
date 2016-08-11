@@ -1,0 +1,11 @@
+--- src/media/video/Makefile.am.orig	2016-05-10 20:45:50 UTC
++++ src/media/video/Makefile.am
+@@ -2,7 +2,7 @@ include $(top_srcdir)/globals.mak
+ 
+ SUBDIRS= test
+ 
+-if HAVE_LINUX
++if HAVE_FREEBSD
+ if HAVE_ANDROID
+ SUBDIRS+= \
+ 	androidvideo

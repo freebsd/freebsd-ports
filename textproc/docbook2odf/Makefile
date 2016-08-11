@@ -6,7 +6,7 @@ PORTVERSION=	0.244
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert docbook document to Oasis Open Document
 
 LICENSE=	GPLv2

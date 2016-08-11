@@ -12,6 +12,8 @@ COMMENT=	ZPU gcc compiler
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

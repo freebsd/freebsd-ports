@@ -7,7 +7,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Utilities to limit user accounts to specific files and/or commands
 
 LICENSE=	BSD3CLAUSE

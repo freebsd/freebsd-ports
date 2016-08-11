@@ -39,9 +39,6 @@ USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
-PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
-
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
@@ -54,7 +51,7 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64=	MULTILIB
 OPTIONS_DEFAULT_powerpc64=	MULTILIB
-MULTILIB_DESC=		Build support for 32-bit and 64-bit target types
+MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
 CONFIGURE_ARGS+=	--disable-multilib
@@ -64,8 +61,6 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64
@@ -73,11 +68,10 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
-WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 .if empty(PORT_OPTIONS:MBOOTSTRAP)
 CONFIGURE_ARGS+=--disable-bootstrap
 .else
@@ -137,14 +131,13 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
-	cd ${SRCDIR} ; contrib/gcc_update --touch
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${WRKSRC} ; contrib/gcc_update --touch
+	@${RM} -f ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${MAKE_CMD} -sk check \
-	; ${SRCDIR}/contrib/test_summary
+	cd ${TEST_WRKSRC}; ${MAKE_CMD} -sk check \
+	; ${WRKSRC}/contrib/test_summary
 .endif
 
 post-stage:

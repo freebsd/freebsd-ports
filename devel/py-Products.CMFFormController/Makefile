@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFFormController
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:devel/py-transaction
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

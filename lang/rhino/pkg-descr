@@ -12,6 +12,6 @@ Rhino contains
     * A JavaScript shell for executing JavaScript scripts
     * A JavaScript compiler to transform JavaScript source files
       into Java class files
-    * A JavaScript debugger for scripts executed with Rhino 
+    * A JavaScript debugger for scripts executed with Rhino
 
 WWW: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino

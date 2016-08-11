@@ -1,581 +1,582 @@
-@comment keep this sorted with env LC_ALL=C sort -f
 bin/clementine-player
 bin/clementine-tagreader
+share/appdata/clementine.appdata.xml
 share/applications/clementine.desktop
-share/icons/hicolor/64x64/apps/application-x-clementine.png
-share/icons/hicolor/scalable/apps/application-x-clementine.svg
+share/icons/hicolor/128x128/apps/clementine.png
+share/icons/hicolor/64x64/apps/clementine.png
+share/icons/hicolor/scalable/apps/clementine.svg
 share/kde4/services/clementine-feed.protocol
 share/kde4/services/clementine-itms.protocol
 share/kde4/services/clementine-itpc.protocol
 share/kde4/services/clementine-zune.protocol
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Agitator.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Airhandler (Menagerie Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Airs (Windy Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Anchorpulse (Pulse Of A Ghast II Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Anchorpulse (Verified Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Anomalous Material Science (Pure Splinter Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Antidote (Aqualung Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Antidote (Side Effects Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Antidote.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Antique Abyss.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Arise! (Padded Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Ashes Of Air (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Bitterfeld (Crystal Border Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Blender.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Bow To Gravity.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Brakefreak.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Candy Avian.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams (Nightmare Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams (REMix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Chromatic Abyss (The Other Side).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Circlefacade.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Contortion (Xenomorph Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Contortion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Crystal Storm.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Dark Matter (Converse Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Elastoid.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Floater Society.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Flowing Form.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Making Time (Swamp Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Potion of Spirits.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Songflower (Moss Posy).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - Spillswirl.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - What Cannot Be Undone.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Aderrasi - What cannot be.milk
-%%VISUALISATION%%share/clementine/projectm-presets/baked - mushroom rainbows[2].milk
-%%VISUALISATION%%share/clementine/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Centred Journey Mix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Lonely Signal Gone .milk
-%%VISUALISATION%%share/clementine/projectm-presets/Bmelgren - Godhead.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Bmelgren - Pentultimate Nerual Slipstream (Tweak 2).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Bmelgren - Take This Highway.milk
-%%VISUALISATION%%share/clementine/projectm-presets/che - adela the flower.milk
-%%VISUALISATION%%share/clementine/projectm-presets/che - burning hus (oil mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Che - Burning Hus.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Che - Escape.milk
-%%VISUALISATION%%share/clementine/projectm-presets/che - terracarbon stream.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Che - Watch & Fly.milk
-%%VISUALISATION%%share/clementine/projectm-presets/CrystalHigh - mad ravetriping.milk
-%%VISUALISATION%%share/clementine/projectm-presets/DaNOnE - Highway to Heaven (rotating).milk
-%%VISUALISATION%%share/clementine/projectm-presets/EMPR - Random - Changing Polyevolution.milk
-%%VISUALISATION%%share/clementine/projectm-presets/EMPR - Random - Look mama I'm on TV! 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/EMPR - Random - They're so cute Dad can I keep one!.milk
-%%VISUALISATION%%share/clementine/projectm-presets/EMPR - Random - Turbulence Sandwich.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. + Phat - chasers 18 hallway.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - glowsticks v2 03 music.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - glowsticks v2 04 music minimal.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix02b.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix07 recursive demons.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - heater core C_Phat's_class + sparks_mix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - heater core C_Phat's_on route_mix+beam.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - repeater 05 - rave on acid.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S. - repeater 15 - kaleidoscope b.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S.+Phat - Arm_upgrades - transformer.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Eo.S.+Phat Cool Bug v2 + (Krash's beat detection).milk
-%%VISUALISATION%%share/clementine/projectm-presets/EvilJim - Follow the ball.milk
-%%VISUALISATION%%share/clementine/projectm-presets/EvilJim - Ice Drops.milk
-%%VISUALISATION%%share/clementine/projectm-presets/fiShbRaiN - blueprint.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese & Idiot24-7 - Rearview Mirror.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - 0 To 60.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - A Blur.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Lifesavor Anyone.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - New meetings.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Quicksand.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Round and Round (geiss gamma mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - simple.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Stand Still!.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - The Tunnel (Final Stage Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Window Reflection 6.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Fvese - Zoom Effects (Remix 2).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss & Rovastar - Julia Fractal (Vectrip Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss & Rovastar - Notions Of Tonality 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss & Rovastar - The Chaos Of Colours (sprouting dimentia mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss & Rovastar - Tokamak (Naked Intrusion Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss & Sperl - Feedback (projectM idle HDR mix).prjm
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Aieeeeee!!!.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Anomaly 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Anomaly 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Approach.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Asymptote.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bass Kaleidosphere.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bass Zoom.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bipolar 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bipolar 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bipolar 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bipolar 4.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bipolar 5.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Blasto.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bonfire.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bright Fiber Matrix 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Bright Fiber Matrix 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Calligraphy.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Casino.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cepiasound.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Churn.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Constant Velocity.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Coral.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Corpus Callosum.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cosmic Dust 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cosmic Dust 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cruzin'.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cycloid 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Cycloid 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Davod The Pod.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - De La Moutard 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - De La Moutard 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Demonic Distortion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Descent.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Destruction.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Diffraction.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Digital Smoke.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Downward Spiral.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Drift.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Dynamic Swirls 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Dynamic Swirls 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Eddies 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Eddies 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Eggs.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - El Cubismo.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Feedback 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Feedback.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Festive.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Fiberglass.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Flotsam.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Flower Blossom.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Flower.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Four Kinds of Amphetamines.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Galaxy 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Galaxy 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Greenland.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Heavenly 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Heavenly 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Heavenly 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - High Dynamic Range.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Hovering.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Hyperion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Inkblot.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Iris.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Journey.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Julia Fractal 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Julia Fractal 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Luz.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Mega Swirl 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Mega Swirl 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Mega Swirl 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Microcosm.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Monotone Ripples.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Music Box.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Nautilus.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus Blue.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus Ever Changing.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus Fat and Ever Changing.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus Gold with Dots.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus Gold.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Octopus.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Oldskool Mellowstyle.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Pelota De Fuego.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Pinch.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Pistons.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Planet 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Planet 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Quasilinear Submanifolds.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Reducto Absurdum.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Reducto Ad Nauseum.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Rocket.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Runoff.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Scary.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Script.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Serpent.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Shake.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Shift.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Sinews 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Sinews 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Smoke.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Solar Flare (Blue).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Solar Flare (Reptile).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Solar Flare.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Sound And The Fury.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Space Voyage (High-Warp).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Space Voyage Bright.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Space Voyage.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Spacedust.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Starfish 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Starfish 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Sunsets.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Supernova 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Supernova 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Surface.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirl 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirl 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirlie 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirlie 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirlie 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirlie 4.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Swirlie 5.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Symmetry.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - The Fatty Lumpkin Sunkle Tweaker.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Three And A Half Kinds Of Amphetamines.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Three Kinds Of Amphetamines.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Tokamak.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Tornado.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Toy.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Trampoline.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Tube.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Two-Pointed Pulsagon.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Ultrafast.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Volume Zoom.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Vortex 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Vortex 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Warp Of Dali 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Warp Of Dali 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Warp Of Dali Bright.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss - Waterfall.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Geiss and Rovastar - The Chaos Of Colours (sprouting diment.milk
-%%VISUALISATION%%share/clementine/projectm-presets/headphones.tga
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot & Che - Various Abstract Effects.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot & Rovastar - Altars Of Madness 2 (X.42 Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot & Zylot - Unhealthy Love (Idiot's STDs Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - 9-7-02 (Remix) (sustain fixed).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Cortex (Spiritual Visions Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Madness Within The Void (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - MOTIVATION!.milk
-%%VISUALISATION%%share/clementine/projectm-presets/idiot - Nothing Yet - 03 - The worst of the pack.milk
-%%VISUALISATION%%share/clementine/projectm-presets/idiot - Nucleus.milk
-%%VISUALISATION%%share/clementine/projectm-presets/idiot - Sinful Code (unchained style).milk
-%%VISUALISATION%%share/clementine/projectm-presets/idiot - Some big word I learned.milk
-%%VISUALISATION%%share/clementine/projectm-presets/idiot - Spectrum.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Tentacle Dreams (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Texture Boxes (Remix 2).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Texture Boxes (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - Typomatic (Remix 2).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - What Is.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot - What Shall Come.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot24-7 - Ascending to heaven 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Idiot24-7 - Meeting place.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Che - Return Of The King.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Che - The Piper.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Rovastar - Clouded Bottle.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Rovastar - Snowflake Delight.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Rovastar - Snowflake Return.milk
-%%VISUALISATION%%share/clementine/projectm-presets/illusion & studio music - charged bliss.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Unchained - Frozen Eye 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Unchained - Invade My Mind.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion & Unchained - Re-Enter Homeworld.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion - Figure Eight.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Illusion - Heavenly Eye.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Jess - Trying To Trap A Twister.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Idiot - Memories Of The Castle.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Illusion - Indecisive Mosaic.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Illusion - Spiral Movement.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - A Million Miles from Earth (Ripple Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - Altars Of Madness (Mad Ocean Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - Cerebral Demons (Distant Memory Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - Cerebral Demons - Phat + Eo.S. hall of ghouls Remix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - Switching Polygons.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Rovastar - The Devil Is In The Details.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & TEcHNO - Rhythmic Mantas.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash & Zylot - Inside The Planar Portal (Indecision Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - 3D Shapes Demo 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - 3D Shapes Demo.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Digital Flame.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Dynamic Borders 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Framed Geometry.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Pulse.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Season's Greetings 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Twisting Indecision.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - War Machine (Shifting Complexity Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash - Windowframe To Mega Swirl 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash and Fvese - Molten Indecision (Fvese Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Krash and Rovastar - Rainbow Orb.milk
-%%VISUALISATION%%share/clementine/projectm-presets/M.tga
-%%VISUALISATION%%share/clementine/projectm-presets/Mstress & Juppy - Dancer.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Mstress & Juppy - Dancers In The Dark.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Mstress - Acoustic Nerve Impulses (Under Drug Effetcs (Hypn.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Mstress - Snowing Fiber City.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Can't Stop the Blithering.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Can't Stop the Cramming.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Cid and Lucy.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Disco Comet.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Singularity in My Oscilloscope.milk
-%%VISUALISATION%%share/clementine/projectm-presets/nil - Vortex of Vortices.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix - www.eos4life.com.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/PieturP - triptrap_(getting_concrete_visions_through_a_diafragma_version).milk
-%%VISUALISATION%%share/clementine/projectm-presets/PieturP - triptrap_(ultimate-trip-mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/project.tga
-%%VISUALISATION%%share/clementine/projectm-presets/Redi Jedi - acid in your brain.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Redi Jedi - multiple points of origin, one destination.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Reenen - phoenix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rocke - Cold Love (Tei Zwaa).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rocke - Personal Comet.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Aderrasi - Oceanic Bassograph (Underwater Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Che - Adela The Flower (Altars Of Madness Mix 2).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Che - Asylum Animations.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Dark Subconscious.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Deadly Flower.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Mosaic Waves.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Paranormal Static.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Stranger Minds (Astral Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Fvese - Stranger Minds.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Approach (Vectrip Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Bipolar 2 (Vectrip Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Broken Destiny Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Mysticial Awakening Mi.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Poltergiest Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoke Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoking Delusion Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Voyage Of Twisted Soul.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Ice Planet.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Octoplasm.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Octotrip (MultiTrip Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Geiss - Octotrip.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Idiot24-7 - Balk Acid.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mi.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Illusion - Shifting Sphere.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Krash - Cerebral Demons.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Krash - Flowing Synergy.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Krash - Interwoven (Contra Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Rocke - Answer.42 (Trippy S. Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Rocke - Headspin.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Rocke - Sugar Spun Sister.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Sperl - Tuxflower.prjm
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & StudioMusic - More Cherished Desires.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & StudioMusic - Twisted Spider Web.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Telek - Altars of Madness (Rolling Oceans Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Telek - Cosmic Fireworks.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Ambrosia Mystic (Dark Heart Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Centre Of Gravity.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Demonology (Vampire Soul Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Oddball World.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Voodoo Chess Magnet (Everglow Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Unchained - Xen Traffic.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Zylot - Azirphaeli's Plan (Multiplan Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Zylot - Narell's Fever.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Zylot - Passion Flower.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar & Zylot - Sea Of Zigrot.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - A Million Miles from Earth (Pathfinder Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - A Million Miles From Earth (Wormhole Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - A Million Miles from Earth.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Harlequin's Maddess.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Harlequin's Madness (Dark Disorder Mix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness (A Million Miles From Earth Mi.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness (Boxfresh Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness (Duel Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness (Surealist Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness 2 (Frozen Time Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness 4 (Spirit Of Twisted Madness M.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Altars Of Madness.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Attacking Freedom.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Bellanova (New Wave Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Biohazard Warning.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Chapel Of Ghouls.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Chemical Spirituality.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Clouded Judgement 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Cosmic Echoes 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Cosmic Echoes 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Cosmic Havoc.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Cosmic Mosaic (Active Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Denied Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Decreasing Dreams (Extended Movement Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Dreamcatcher.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Explosive Minds.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Forgotten Moon.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Fractopia (Fantic Dancing Lights Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Fractopia (Galaxy Swirl Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Fractopia (Upspoken Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Fractopia (Upspoken Mix)_Phat_Speak_When_Spoken_2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Frozen Rapture .milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Future Speakers.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Halcyon Dreams 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Hallucinogenic Pyramids (Beat Time Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Delight (Endless Tunnel Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Crazed Spiral Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Dual Spiral Mix ).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Fractal Encounter 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Fractal Encounter.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Spirit (Twisted Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Harlequin's Spirit.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Hyperspace (Frozen Rapture Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Hyperspace (Hyper Speed Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Hyperspace.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Inner Thoughts (Clouded Judgement Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Inner Thoughts (Dark Secret Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Inner Thoughts (Distant Memories Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Inner Thoughts (Frantic Thoughts Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Inner Thoughts (Strange Cargo Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Kalideostars (Altars Of Madness MIx).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Kalideostars (Round  Round Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Kalideostars.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - LabFunk.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Lost Souls of the Bermuda Triangle (Darkest Soul.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Magic Carpet.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Mosaics Of Ages.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Multiverse Starfield 1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Multiverse Starfield 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Omnipresence Resurrection (Raw Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Omnipresence Resurrection.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Oozing Resistance.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Pandora's Volcano.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Parallel Universe.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Sea Shells.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Snapshot Of Space.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Solarized Space (Space DNA Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Solarized Space.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Space (Twisted Dimension Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Space.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Starquake (Sunquake Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - The Awakening.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - The Chaos Of Colours (Drifting Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - The Chaos Of Colours.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - The Shroomery.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Timeless Voyage.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Touchdown on Mars (Detailed Pictures Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - Tripmaker.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - twisted bytes.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - VooV's Movement (After Dark Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar - VooV's Movement.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar and Krash - Hallucinogenic Pyramids (Extra Beat Ti.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar and Unchained - Braindance Visions.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rovastar and Unchained - Life After Pie (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzer & Zylot - Force Field Generator (Slowtime Tweak).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor & Aderrasi - Canon.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor & Che - Inside The House Of Nil.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor & Rovastar - Oozing Resistance (Waveform Mod).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor - Learning Curve (Invert tweak).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and che - Inside the House of nil.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and Idiot - Any Other Deep Rising.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak with .milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and StudioMusic - Vertigyny (Geiss shape mod).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Rozzor and Zylot - Associative Order.milk
-%%VISUALISATION%%share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Studio Music - Cherished Desires.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Studio Music and Unchained - Rapid Alteration.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic & Unchained - Entity.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic & Unchained - Minor Alteration.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic & Unchained - So Much Love.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic & Unchained - State Of Discretion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic & Unchained - Wrenched Fate.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic - Harmonic Bliss (elated mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic - It's Only Make Believe.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic - Numerosity.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic - Twisted Galaxy.milk
-%%VISUALISATION%%share/clementine/projectm-presets/StudioMusic Aderrasi & nil - LA movement (Intellectual Sens.milk
-%%VISUALISATION%%share/clementine/projectm-presets/TEcHNO and SandStorm - Psychodelic Highway.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - City Helix Lattice.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Directive Swagger (Spectral Inferno) (fix...) maybe.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Flicker (xis).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Flicker.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Lost Star (Flash).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Recirculate (Cool).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Sine Wave.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Slow Shift Matrix (bb4.5).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Slow Shift Matrix (Ethereal Drift).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Slow Shift Matrix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Slow Thing (Spiderman Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Spiral Tabletop (New and Improved!).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Spokes (More Dynamic).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek - Target Practice (tracking retreat slide).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Telek EMPR - Scanner - Trust me I've got a Melways.milk
-%%VISUALISATION%%share/clementine/projectm-presets/TobiasWolfBoi - Cataract.milk
-%%VISUALISATION%%share/clementine/projectm-presets/TobiasWolfBoi - The Pit.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Tschoey - Music Flower.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Tux.tga
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Che - Oddnezz 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Che - Oddnezz 4 (Done it again).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & CTho - Bad Vibes.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Illusion - Dual Wave 3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Illusion - Logic Morph.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Illusion - Spirit Morph.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - For The Seagull.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Luckless.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Rainbow Obscura.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Slow Solstice.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Triptionary.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Wormhole Pillars (Hall of Shadows mi.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Wormhole Pillars.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained & Rovastar - Xen Traffic.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - A Matter Of Taste (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - All You Can Eat.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Bad Karma Oddnezz Style.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo (Demonology Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 1.0.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 10.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 2.0.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 2.1.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 2.2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Beat Demo 2.3.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Cartoon Factory.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Cranked On Failure.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Custom Gramatix (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Deeper Logic.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Free to Feel (Valium Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - French Clothing.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Games With Light & Sound.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Ghostlight Whisper.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - God Of The Game (Remix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Goo Kung Fu.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Goofy Beat Detection.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Housed In A Childish Mind.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - In Memory Of Peg.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Invariant Under Rigorous Motions.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Jaded Emotion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Jaundice.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Making a Science of It 4.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Morat's Final Voyage.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Non-Professional Music Analyzer.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Painful Plasma (Multi-Wave Mirrored Rage) -- Ro.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Perverted Dialect.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Picture Of Exile.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Picture Of Nectar.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Picture Of Poison.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - ReAwoke.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Resistance.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Ribald Ballad.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Shaping The Grid.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Subjective Experience Of The Manifold.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Unclaimed Wreckage 2 (Shamanic).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Unclaimed Wreckage.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Unified Drag 2.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - ventilation.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Unchained - Working the Grid.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Aderrasi - Oceanic Bassograph (New Jersey Shore Mix.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Idiot - ATan2 Demo (Spiraling Mad Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Krash - Extremophile.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Mstress - Celebrate.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Mstress - Toxic Storm On Acid Sea (The End Of The W.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot & Rovastar - Crystal Ball (Cerimonial Decor Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Azirphaeli's Mirror.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Block Of Sound (Abstract Architecture Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Block Of Sound (Fractal Construction Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Color Of Music.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Crystal Ball (Magical Reaction Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - De(-a)range(d)(ment) complex.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - De(-a)range(d)(ment) strain.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Digiscape Advanced Processor.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Ether Storm.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Global Earthquake.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Inside The Planar Portal.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - light of the path.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Mixing Pot.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Puddle Of Music.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Rainbow Planet Under Attack.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Rush.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - S Pulse Virus.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - String.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Tangent Universe (Collapsed With Artifact Mix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - The Deeper.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - The Inner Workings of my New Computer.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Visionarie (geiss aspect ratio fix).milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Waves Of Blood.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot - Wisps.milk
-%%VISUALISATION%%share/clementine/projectm-presets/Zylot and Rovastar - Iouo Stone Morphic Fusion.milk
-%%VISUALISATION%%share/clementine/projectm-presets/[Ishan] - Life in the drains.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Agitator.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Airhandler (Menagerie Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Airs (Windy Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Anchorpulse (Pulse Of A Ghast II Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Anchorpulse (Verified Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Anomalous Material Science (Pure Splinter Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Antidote (Aqualung Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Antidote (Side Effects Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Antidote.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Antique Abyss.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Arise! (Padded Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Ashes Of Air (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Bitterfeld (Crystal Border Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Blender.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Bow To Gravity.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Brakefreak.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Candy Avian.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Causeway Of Dreams (Nightmare Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Causeway Of Dreams (REMix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Causeway Of Dreams.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Chromatic Abyss (The Other Side).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Circlefacade.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Contortion (Xenomorph Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Contortion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Crystal Storm.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Dark Matter (Converse Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Elastoid.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Floater Society.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Flowing Form.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Making Time (Swamp Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Potion of Spirits.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Songflower (Moss Posy).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Spillswirl.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - What Cannot Be Undone.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - What cannot be.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Centred Journey Mix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Lonely Signal Gone .milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Bmelgren - Godhead.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Bmelgren - Pentultimate Nerual Slipstream (Tweak 2).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Bmelgren - Take This Highway.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Che - Burning Hus.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Che - Escape.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Che - Watch & Fly.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/CrystalHigh - mad ravetriping.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/DaNOnE - Highway to Heaven (rotating).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EMPR - Random - Changing Polyevolution.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EMPR - Random - Look mama I'm on TV! 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EMPR - Random - They're so cute Dad can I keep one!.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EMPR - Random - Turbulence Sandwich.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. + Phat - chasers 18 hallway.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - glowsticks v2 03 music.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - glowsticks v2 04 music minimal.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix02b.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix07 recursive demons.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - heater core C_Phat's_class + sparks_mix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - heater core C_Phat's_on route_mix+beam.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - repeater 05 - rave on acid.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S. - repeater 15 - kaleidoscope b.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S.+Phat - Arm_upgrades - transformer.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Eo.S.+Phat Cool Bug v2 + (Krash's beat detection).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EvilJim - Follow the ball.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/EvilJim - Ice Drops.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese & Idiot24-7 - Rearview Mirror.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - 0 To 60.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - A Blur.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Lifesavor Anyone.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - New meetings.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Quicksand.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Round and Round (geiss gamma mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Stand Still!.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - The Tunnel (Final Stage Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Window Reflection 6.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - Zoom Effects (Remix 2).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Fvese - simple.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss & Rovastar - Julia Fractal (Vectrip Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss & Rovastar - Notions Of Tonality 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss & Rovastar - The Chaos Of Colours (sprouting dimentia mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss & Rovastar - Tokamak (Naked Intrusion Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss & Sperl - Feedback (projectM idle HDR mix).prjm
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Aieeeeee!!!.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Anomaly 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Anomaly 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Approach.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Asymptote.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bass Kaleidosphere.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bass Zoom.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bipolar 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bipolar 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bipolar 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bipolar 4.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bipolar 5.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Blasto.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bonfire.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bright Fiber Matrix 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Bright Fiber Matrix 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Calligraphy.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Casino.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cepiasound.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Churn.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Constant Velocity.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Coral.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Corpus Callosum.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cosmic Dust 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cosmic Dust 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cruzin'.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cycloid 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Cycloid 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Davod The Pod.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - De La Moutard 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - De La Moutard 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Demonic Distortion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Descent.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Destruction.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Diffraction.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Digital Smoke.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Downward Spiral.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Drift.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Dynamic Swirls 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Dynamic Swirls 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Eddies 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Eddies 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Eggs.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - El Cubismo.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Feedback 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Feedback.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Festive.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Fiberglass.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Flotsam.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Flower Blossom.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Flower.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Four Kinds of Amphetamines.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Galaxy 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Galaxy 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Greenland.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Heavenly 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Heavenly 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Heavenly 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - High Dynamic Range.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Hovering.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Hyperion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Inkblot.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Iris.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Journey.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Julia Fractal 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Julia Fractal 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Luz.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Mega Swirl 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Mega Swirl 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Mega Swirl 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Microcosm.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Monotone Ripples.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Music Box.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Nautilus.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus Blue.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus Ever Changing.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus Fat and Ever Changing.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus Gold with Dots.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus Gold.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Octopus.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Oldskool Mellowstyle.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Pelota De Fuego.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Pinch.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Pistons.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Planet 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Planet 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Quasilinear Submanifolds.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Reducto Absurdum.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Reducto Ad Nauseum.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Rocket.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Runoff.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Scary.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Script.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Serpent.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Shake.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Shift.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Sinews 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Sinews 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Smoke.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Solar Flare (Blue).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Solar Flare (Reptile).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Solar Flare.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Sound And The Fury.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Space Voyage (High-Warp).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Space Voyage Bright.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Space Voyage.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Spacedust.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Starfish 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Starfish 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Sunsets.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Supernova 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Supernova 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Surface.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirl 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirl 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirlie 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirlie 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirlie 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirlie 4.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Swirlie 5.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Symmetry.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - The Fatty Lumpkin Sunkle Tweaker.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Three And A Half Kinds Of Amphetamines.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Three Kinds Of Amphetamines.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Tokamak.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Tornado.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Toy.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Trampoline.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Tube.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Two-Pointed Pulsagon.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Ultrafast.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Volume Zoom.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Vortex 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Vortex 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Warp Of Dali 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Warp Of Dali 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Warp Of Dali Bright.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss - Waterfall.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Geiss and Rovastar - The Chaos Of Colours (sprouting diment.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot & Che - Various Abstract Effects.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot & Rovastar - Altars Of Madness 2 (X.42 Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot & Zylot - Unhealthy Love (Idiot's STDs Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - 9-7-02 (Remix) (sustain fixed).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Cortex (Spiritual Visions Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - MOTIVATION!.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Madness Within The Void (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Tentacle Dreams (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Texture Boxes (Remix 2).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Texture Boxes (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - Typomatic (Remix 2).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - What Is.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot - What Shall Come.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot24-7 - Ascending to heaven 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Idiot24-7 - Meeting place.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Che - Return Of The King.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Che - The Piper.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Rovastar - Clouded Bottle.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Rovastar - Snowflake Delight.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Rovastar - Snowflake Return.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Unchained - Frozen Eye 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Unchained - Invade My Mind.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion & Unchained - Re-Enter Homeworld.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion - Figure Eight.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Illusion - Heavenly Eye.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Jess - Trying To Trap A Twister.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Idiot - Memories Of The Castle.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Illusion - Indecisive Mosaic.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Illusion - Spiral Movement.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - A Million Miles from Earth (Ripple Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - Altars Of Madness (Mad Ocean Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - Cerebral Demons (Distant Memory Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - Cerebral Demons - Phat + Eo.S. hall of ghouls Remix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - Switching Polygons.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Rovastar - The Devil Is In The Details.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & TEcHNO - Rhythmic Mantas.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash & Zylot - Inside The Planar Portal (Indecision Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - 3D Shapes Demo 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - 3D Shapes Demo.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Digital Flame.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Dynamic Borders 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Framed Geometry.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Pulse.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Season's Greetings 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Twisting Indecision.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - War Machine (Shifting Complexity Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash - Windowframe To Mega Swirl 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash and Fvese - Molten Indecision (Fvese Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Krash and Rovastar - Rainbow Orb.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/M.tga
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Mstress & Juppy - Dancer.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Mstress & Juppy - Dancers In The Dark.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Mstress - Acoustic Nerve Impulses (Under Drug Effetcs (Hypn.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Mstress - Snowing Fiber City.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix - www.eos4life.com.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/PieturP - triptrap_(getting_concrete_visions_through_a_diafragma_version).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/PieturP - triptrap_(ultimate-trip-mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Redi Jedi - acid in your brain.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Redi Jedi - multiple points of origin, one destination.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Reenen - phoenix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rocke - Cold Love (Tei Zwaa).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rocke - Personal Comet.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Aderrasi - Oceanic Bassograph (Underwater Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Che - Adela The Flower (Altars Of Madness Mix 2).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Che - Asylum Animations.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Dark Subconscious.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Deadly Flower.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Mosaic Waves.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Paranormal Static.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Stranger Minds (Astral Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Fvese - Stranger Minds.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Approach (Vectrip Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Bipolar 2 (Vectrip Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Broken Destiny Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Mysticial Awakening Mi.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Poltergiest Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoke Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoking Delusion Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Voyage Of Twisted Soul.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Ice Planet.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Octoplasm.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Octotrip (MultiTrip Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Geiss - Octotrip.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Idiot24-7 - Balk Acid.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mi.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Illusion - Shifting Sphere.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Krash - Cerebral Demons.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Krash - Flowing Synergy.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Krash - Interwoven (Contra Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Rocke - Answer.42 (Trippy S. Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Rocke - Headspin.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Rocke - Sugar Spun Sister.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Sperl - Tuxflower.prjm
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & StudioMusic - More Cherished Desires.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & StudioMusic - Twisted Spider Web.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Telek - Altars of Madness (Rolling Oceans Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Telek - Cosmic Fireworks.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Ambrosia Mystic (Dark Heart Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Centre Of Gravity.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Demonology (Vampire Soul Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Oddball World.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Voodoo Chess Magnet (Everglow Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Unchained - Xen Traffic.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Zylot - Azirphaeli's Plan (Multiplan Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Zylot - Narell's Fever.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Zylot - Passion Flower.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar & Zylot - Sea Of Zigrot.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - A Million Miles From Earth (Wormhole Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - A Million Miles from Earth (Pathfinder Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - A Million Miles from Earth.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Harlequin's Maddess.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Harlequin's Madness (Dark Disorder Mix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness (A Million Miles From Earth Mi.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness (Boxfresh Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness (Duel Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness (Surealist Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness 2 (Frozen Time Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness 4 (Spirit Of Twisted Madness M.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Altars Of Madness.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Attacking Freedom.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Bellanova (New Wave Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Biohazard Warning.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Chapel Of Ghouls.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Chemical Spirituality.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Clouded Judgement 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Cosmic Echoes 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Cosmic Echoes 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Cosmic Havoc.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Cosmic Mosaic (Active Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Denied Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Decreasing Dreams (Extended Movement Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Dreamcatcher.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Explosive Minds.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Forgotten Moon.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Fractopia (Fantic Dancing Lights Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Fractopia (Galaxy Swirl Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Fractopia (Upspoken Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Fractopia (Upspoken Mix)_Phat_Speak_When_Spoken_2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Frozen Rapture .milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Future Speakers.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Halcyon Dreams 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Hallucinogenic Pyramids (Beat Time Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Delight (Endless Tunnel Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Crazed Spiral Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Dual Spiral Mix ).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Fractal Encounter 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Fractal Encounter.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Spirit (Twisted Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Harlequin's Spirit.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Hyperspace (Frozen Rapture Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Hyperspace (Hyper Speed Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Hyperspace.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Inner Thoughts (Clouded Judgement Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Inner Thoughts (Dark Secret Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Inner Thoughts (Distant Memories Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Inner Thoughts (Frantic Thoughts Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Inner Thoughts (Strange Cargo Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Kalideostars (Altars Of Madness MIx).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Kalideostars (Round  Round Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Kalideostars.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - LabFunk.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Lost Souls of the Bermuda Triangle (Darkest Soul.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Magic Carpet.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Mosaics Of Ages.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Multiverse Starfield 1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Multiverse Starfield 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Omnipresence Resurrection (Raw Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Omnipresence Resurrection.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Oozing Resistance.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Pandora's Volcano.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Parallel Universe.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Sea Shells.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Snapshot Of Space.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Solarized Space (Space DNA Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Solarized Space.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Space (Twisted Dimension Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Space.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Starquake (Sunquake Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - The Awakening.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - The Chaos Of Colours (Drifting Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - The Chaos Of Colours.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - The Shroomery.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Timeless Voyage.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Touchdown on Mars (Detailed Pictures Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - Tripmaker.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - VooV's Movement (After Dark Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - VooV's Movement.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar - twisted bytes.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar and Krash - Hallucinogenic Pyramids (Extra Beat Ti.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar and Unchained - Braindance Visions.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rovastar and Unchained - Life After Pie (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzer & Zylot - Force Field Generator (Slowtime Tweak).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor & Aderrasi - Canon.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor & Che - Inside The House Of Nil.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor & Rovastar - Oozing Resistance (Waveform Mod).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor - Learning Curve (Invert tweak).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and Idiot - Any Other Deep Rising.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak with .milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and StudioMusic - Vertigyny (Geiss shape mod).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and Zylot - Associative Order.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Rozzor and che - Inside the House of nil.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Studio Music - Cherished Desires.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Studio Music and Unchained - Rapid Alteration.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic & Unchained - Entity.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic & Unchained - Minor Alteration.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic & Unchained - So Much Love.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic & Unchained - State Of Discretion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic & Unchained - Wrenched Fate.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic - Harmonic Bliss (elated mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic - It's Only Make Believe.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic - Numerosity.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic - Twisted Galaxy.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/StudioMusic Aderrasi & nil - LA movement (Intellectual Sens.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/TEcHNO and SandStorm - Psychodelic Highway.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - City Helix Lattice.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Directive Swagger (Spectral Inferno) (fix...) maybe.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Flicker (xis).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Flicker.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Lost Star (Flash).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Recirculate (Cool).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Sine Wave.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Slow Shift Matrix (Ethereal Drift).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Slow Shift Matrix (bb4.5).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Slow Shift Matrix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Slow Thing (Spiderman Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Spiral Tabletop (New and Improved!).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Spokes (More Dynamic).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek - Target Practice (tracking retreat slide).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Telek EMPR - Scanner - Trust me I've got a Melways.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/TobiasWolfBoi - Cataract.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/TobiasWolfBoi - The Pit.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Tschoey - Music Flower.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Tux.tga
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & CTho - Bad Vibes.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Che - Oddnezz 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Che - Oddnezz 4 (Done it again).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Illusion - Dual Wave 3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Illusion - Logic Morph.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Illusion - Spirit Morph.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - For The Seagull.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Luckless.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Rainbow Obscura.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Slow Solstice.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Triptionary.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Wormhole Pillars (Hall of Shadows mi.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Wormhole Pillars.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained & Rovastar - Xen Traffic.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - A Matter Of Taste (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - All You Can Eat.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Bad Karma Oddnezz Style.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo (Demonology Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 1.0.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 10.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 2.0.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 2.1.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 2.2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Beat Demo 2.3.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Cartoon Factory.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Cranked On Failure.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Custom Gramatix (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Deeper Logic.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Free to Feel (Valium Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - French Clothing.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Games With Light & Sound.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Ghostlight Whisper.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - God Of The Game (Remix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Goo Kung Fu.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Goofy Beat Detection.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Housed In A Childish Mind.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - In Memory Of Peg.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Invariant Under Rigorous Motions.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Jaded Emotion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Jaundice.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Making a Science of It 4.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Morat's Final Voyage.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Non-Professional Music Analyzer.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Painful Plasma (Multi-Wave Mirrored Rage) -- Ro.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Perverted Dialect.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Picture Of Exile.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Picture Of Nectar.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Picture Of Poison.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - ReAwoke.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Resistance.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Ribald Ballad.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Shaping The Grid.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Subjective Experience Of The Manifold.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Unclaimed Wreckage 2 (Shamanic).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Unclaimed Wreckage.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Unified Drag 2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - Working the Grid.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Unchained - ventilation.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Aderrasi - Oceanic Bassograph (New Jersey Shore Mix.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Idiot - ATan2 Demo (Spiraling Mad Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Krash - Extremophile.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Mstress - Celebrate.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Mstress - Toxic Storm On Acid Sea (The End Of The W.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot & Rovastar - Crystal Ball (Cerimonial Decor Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Azirphaeli's Mirror.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Block Of Sound (Abstract Architecture Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Block Of Sound (Fractal Construction Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Color Of Music.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Crystal Ball (Magical Reaction Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - De(-a)range(d)(ment) complex.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - De(-a)range(d)(ment) strain.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Digiscape Advanced Processor.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Ether Storm.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Global Earthquake.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Inside The Planar Portal.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Mixing Pot.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Puddle Of Music.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Rainbow Planet Under Attack.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Rush.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - S Pulse Virus.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - String.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Tangent Universe (Collapsed With Artifact Mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - The Deeper.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - The Inner Workings of my New Computer.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Visionarie (geiss aspect ratio fix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Waves Of Blood.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - Wisps.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot - light of the path.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/Zylot and Rovastar - Iouo Stone Morphic Fusion.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/[Ishan] - Life in the drains.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/baked - mushroom rainbows[2].milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/che - adela the flower.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/che - burning hus (oil mix).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/che - terracarbon stream.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/fiShbRaiN - blueprint.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/headphones.tga
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/idiot - Nothing Yet - 03 - The worst of the pack.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/idiot - Nucleus.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/idiot - Sinful Code (unchained style).milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/idiot - Some big word I learned.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/idiot - Spectrum.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/illusion & studio music - charged bliss.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Can't Stop the Blithering.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Can't Stop the Cramming.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Cid and Lucy.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Disco Comet.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Singularity in My Oscilloscope.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/nil - Vortex of Vortices.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/project.tga
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
+%%VISUALISATION%%%%DATADIR%%/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk

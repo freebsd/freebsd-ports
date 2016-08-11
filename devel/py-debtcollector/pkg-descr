@@ -8,4 +8,4 @@ patterns is to apply the warnings module to emit DeprecationWarning or
 PendingDeprecationWarning or similar derivative to developers using
 libraries (or potentially applications) about future deprecations.
 
-WWW: http://docs.openstack.org/developer/debtcollector/ 
+WWW: http://docs.openstack.org/developer/debtcollector/

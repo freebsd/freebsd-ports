@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.8.6
-PORTREVISION=	1
+PORTVERSION=	4.2.9.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -21,9 +20,15 @@ COMMENT=	Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libicuuc.so:devel/icu
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libdbus-1.so:devel/dbus \
+		libicuuc.so:devel/icu \
+		libXfixes.so:x11/libXfixes \
+		libXinerama.so:x11/libXinerama \
+		libXrender.so:x11/libXrender \
+		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 SUB_FILES=	pkg-message
@@ -40,9 +45,16 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS
 OPTIONS_DEFAULT=GTK2 QT4
+OPTIONS_SUB=	yes
 
 GTK2_DESC=	Enable Gtk2 IM module
+GTK2_USE=	GNOME=gtk20
+GTK2_CMAKE_ON=	-DENABLE_GTK2_IM_MODULE=ON
+
 GTK3_DESC=	Enable Gtk3 IM module
+GTK3_USE=	GNOME=gtk30
+GTK3_CMAKE_ON=	-DENABLE_GTK3_IM_MODULE=ON
+
 QT4_DESC=	Enable Qt4 IM module
 OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
@@ -60,18 +72,12 @@ CMAKE_ARGS+=	-DENABLE_XDGAUTOSTART=OFF -DFORCE_ENCHANT=ON \
 		-DQT_PLUGINS_DIR=${PREFIX}/lib/qt4/plugins
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-PLIST_SUB+=	GTK2=""
 SUB_LIST+=	GTK2_IM=fcitx
 .else
-CMAKE_ARGS+=	-DENABLE_GTK2_IM_MODULE=OFF
-PLIST_SUB+=	GTK2="@comment "
 SUB_LIST+=	GTK2_IM=xim
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-CMAKE_ARGS+=	-DENABLE_GTK3_IM_MODULE=ON
 PLIST_SUB+=	GTK3=""
 SUB_LIST+=	GTK3_IM=fcitx
 .else

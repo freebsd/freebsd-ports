@@ -1,6 +1,6 @@
 ================================================================================
 
-Please copy %%PREFIX%%/etc/istat.conf-dist to %%PREFIX%%/etc/istat.conf and 
+Please copy %%PREFIX%%/etc/istat.conf-dist to %%PREFIX%%/etc/istat.conf and
 change necessary variables before starting the daemon.
 
 ================================================================================

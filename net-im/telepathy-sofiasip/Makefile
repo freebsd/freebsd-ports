@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF/tp-sofiasip/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	yuri@tsoft.com
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	SIP (sofia-sip) Connection Manager for Telepathy Framework
 
 LIB_DEPENDS=	libsofia-sip-ua.so:net/sofia-sip \

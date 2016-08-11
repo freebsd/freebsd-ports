@@ -1,5 +1,5 @@
---- apps/splay.cc.orig	2001-03-19 09:51:27.000000000 +0100
-+++ apps/splay.cc	2013-09-23 12:15:27.000000000 +0200
+--- apps/splay.cc.orig	2001-03-19 08:51:27 UTC
++++ apps/splay.cc
 @@ -16,14 +16,15 @@
  
  #include <sys/types.h>

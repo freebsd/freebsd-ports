@@ -1,5 +1,5 @@
 Minitest provides a complete suite of testing facilities supporting TDD, BDD,
 mocking, and benchmarking. minitest/unit is a small and incredibly fast unit
-testing framework. 
+testing framework.
 
 WWW: https://github.com/seattlerb/minitest

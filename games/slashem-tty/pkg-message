@@ -1,8 +1,8 @@
 ====================================================
-A sample .slashemrc file has been copied to 
+A sample .slashemrc file has been copied to
 ${PREFIX}/share/doc/slashem as sample.slashemrc.
-Copy it to your home directory as .slashemrc and 
+Copy it to your home directory as .slashemrc and
 edit it to taste.
-The options for it are described in 
+The options for it are described in
 ${PREFIX}/share/doc/slashem/Guidebook.txt.
 ====================================================

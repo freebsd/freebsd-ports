@@ -14,7 +14,7 @@ PLIST_FILES=	sbin/bacula-fd-static \
 		sbin/bconsole-static
 
 OPTIONS_DEFINE=	NLS OPENSSL
-OPTIONS_DEFAULT=NLS OPENSSL
+OPTIONS_DEFAULT=OPENSSL
 
 CONFIGURE_ARGS+=	--enable-client-only \
 			--enable-static-fd \

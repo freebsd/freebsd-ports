@@ -16,8 +16,6 @@ ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/bld/fbx86
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-OPTIONS_DEFINE=	DOCS
-
 # someday add support for base-kl and base-ks targets
 MAKE_ENV=		KLH10_HOME="${DATADIR}"
 ALL_TARGET=		base-ks-its
@@ -77,6 +75,8 @@ KSITS_DOCS=		Intro.txt \
 			utils.txt \
 			vtape.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|logf |log_f |g ; \
@@ -86,38 +86,32 @@ post-patch:
 
 do-install:
 .for i in ${KSITS_NATIVE_PROGS}
-	cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} ${i} \
-		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@ ${MKDIR} ${STAGEDIR}${KSITS_DRIVER_DIR}
+	@${MKDIR} ${STAGEDIR}${KSITS_DRIVER_DIR}
 .for i in ${KSITS_EM_DRIVERS} ${KSITS_EM_SDRIVERS}
-	cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} ${i} \
-		${STAGEDIR}${KSITS_DRIVER_DIR}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${i} ${STAGEDIR}${KSITS_DRIVER_DIR}
 .endfor
-	@ ${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${KSITS_EM_DAT}
-	cd ${WRKSRC}/run/ksits && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/run/ksits/${i} ${STAGEDIR}${DATADIR}
 .endfor
-	@ ${MKDIR} ${STAGEDIR}${DATADIR}/flushed
-	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${FILESDIR} && ${INSTALL_DATA} PDPs \
-		${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/run/ksits && ${INSTALL_DATA} README \
-		${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/flushed
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/PDPs ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/run/ksits/README ${STAGEDIR}${DOCSDIR}
 .for i in ${KSITS_DOCS}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/adm
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/adm
 .for i in ${KSITS_PUBADM}
-	cd ${WRKSRC}/run/ksits/pubits/adm && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR}/pubits/adm
+	${INSTALL_DATA} ${WRKSRC}/run/ksits/pubits/adm/${i} ${STAGEDIR}${DOCSDIR}/pubits/adm
 .endfor
-	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/doc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/doc
 .for i in ${KSITS_PUBDOC}
-	cd ${WRKSRC}/run/ksits/pubits/doc && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR}/pubits/doc
+	${INSTALL_DATA} ${WRKSRC}/run/ksits/pubits/doc/${i} ${STAGEDIR}${DOCSDIR}/pubits/doc
 .endfor
 
 .include <bsd.port.mk>

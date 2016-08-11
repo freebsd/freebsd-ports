@@ -1,0 +1,4 @@
+For proper work you should mount linproc filesystem into /proc or
+/compat/linux/proc.
+
+See more on linprocfs(5).

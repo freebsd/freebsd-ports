@@ -22,6 +22,10 @@ usr/bin/tiffinfo
 usr/bin/tiffmedian
 usr/bin/tiffset
 usr/bin/tiffsplit
+usr/lib/libtiff.so.3
+usr/lib/libtiff.so.3.9.4
+usr/lib/libtiffxx.so.3
+usr/lib/libtiffxx.so.3.9.4
 usr/lib64/libtiff.so.3
 usr/lib64/libtiff.so.3.9.4
 usr/lib64/libtiffxx.so.3

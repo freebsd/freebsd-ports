@@ -10,7 +10,8 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		gmake
+USES=		dos2unix gmake
+DOS2UNIX_FILES=	Makefile
 
 PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste \
 		man/man1/bittwist.1.gz \

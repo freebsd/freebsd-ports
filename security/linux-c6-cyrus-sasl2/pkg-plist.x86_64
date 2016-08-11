@@ -1,3 +1,11 @@
+usr/lib/libsasl2.so.2
+usr/lib/libsasl2.so.2.0.23
+usr/lib/sasl2/libanonymous.so
+usr/lib/sasl2/libanonymous.so.2
+usr/lib/sasl2/libanonymous.so.2.0.23
+usr/lib/sasl2/libsasldb.so
+usr/lib/sasl2/libsasldb.so.2
+usr/lib/sasl2/libsasldb.so.2.0.23
 usr/lib64/libsasl2.so.2
 usr/lib64/libsasl2.so.2.0.23
 usr/lib64/sasl2/libanonymous.so

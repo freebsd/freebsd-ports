@@ -10,18 +10,13 @@ MASTER_SITES=	LOCAL/kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	All W3C published SGML DTDs for HTML
 
-RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
+RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	DTD_NAME=${PORTNAME} XMLCATMGR=${XMLCATMGR}
-PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
-
 INSTDIR=	${PREFIX}/share/sgml/html
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 do-install:
 	${MKDIR} ${STAGEDIR}${INSTDIR}

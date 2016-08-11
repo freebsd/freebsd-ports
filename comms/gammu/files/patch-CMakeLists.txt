@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-12-08 10:38:11 UTC
+--- CMakeLists.txt.orig	2016-04-13 11:37:33 UTC
 +++ CMakeLists.txt
-@@ -116,7 +116,7 @@ check_symbol_exists (getpwnam "pwd.h" HA
+@@ -117,7 +117,7 @@ check_symbol_exists (getpwnam "pwd.h" HA
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
  check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
@@ -9,7 +9,23 @@
  check_symbol_exists (setuid "unistd.h" HAVE_SETUID)
  check_symbol_exists (setgid "unistd.h" HAVE_SETGID)
  check_symbol_exists (SIGHUP "signal.h" HAVE_SIGHUP)
-@@ -590,7 +590,7 @@ mark_as_advanced (INSTALL_DATA_DIR)
+@@ -415,7 +415,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMP
+     #
+     # Warnings related flags
+     #
+-    MACRO_TUNE_COMPILER("-O2")
+     MACRO_TUNE_COMPILER("-Wall")
+     MACRO_TUNE_COMPILER("-Werror-implicit-function-declaration")
+     MACRO_TUNE_COMPILER("-Wno-deprecated-declarations")
+@@ -547,7 +546,6 @@ endif (BUILD_SHARED_LIBS)
+ set (DOCS
+     README.rst
+     ChangeLog
+-    COPYING
+     )
+ 
+ # OpenCellID API key
+@@ -591,7 +589,7 @@ mark_as_advanced (INSTALL_DATA_DIR)
  set (INSTALL_DOC_DIR "share/doc/gammu" CACHE STRING "Path for documentation installation")
  mark_as_advanced (INSTALL_DOC_DIR)
  

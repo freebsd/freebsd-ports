@@ -13,15 +13,15 @@ auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/bruteblock
   Also you should add ipfw2 table and the corresponding deny rule.
   For example,
 
-# ipfw add deny ip from table(1) to any  
+# ipfw add deny ip from table(1) to any
 
-  Next, you'll want to setup periodical cleanup of ipfw2 table.  Add following 
+  Next, you'll want to setup periodical cleanup of ipfw2 table.  Add following
   lines to /etc/rc.conf:
 
      bruteblockd_enable="YES"
      bruteblockd_table="1"
      bruteblockd_flags="-s 5"
- 
+
   and start bruteblockd: %%PREFIX%%/etc/rc.d/bruteblockd.sh start
 
 See bruteblock(8) for more details.

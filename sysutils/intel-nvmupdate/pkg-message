@@ -1,0 +1,27 @@
+===============================================================================
+
+THIS PACKAGE INSTALLS THE NEWER VERSION OF THE SOFTWARE WHICH CAN CAUSE SYSTEM
+INSTABILITY WHILE USED. USE THE UPDATED VERSION ONLY IF YOU EXPERIENCE
+PROBLEMS WITH THE PRESENT NVM IMAGE VERSION
+
+This package should only be used on Intel branded adapters. Please contact your
+OEM vendor for an appropriate package. This package only updates the NVM image.
+It does not update the preboot image. To update your preboot image, please
+download the appropriate package.
+
+DO NOT
+- Power down your system during the NVM Update.
+- Remove the NIC before the NVM Update completes.
+- Interrupt the NVM Update in any other way.
+Doing so may make your device unusable.
+
+For the package to function properly please make sure you have latest ixl driver
+installed. If necessary - install the updated version from net/intel-ixl-kmod
+
+Usage:
+# nvmupdate
+
+Getting help:
+# nvmupdate -h
+
+==============================================================================

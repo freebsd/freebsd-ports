@@ -133,7 +133,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-post-install:
 .if defined(WITH_SQLMOD)
 	@${CP} ${WRKSRC}/SQLMod/sample.conf ${STAGEDIR}${CONFIGDIR}/m_sqlmod.conf
 	@${CP} ${WRKSRC}/SQLMod/Changes ${STAGEDIR}${DOCSDIR}/Changes.sqlmod

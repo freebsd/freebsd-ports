@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php56-
 
@@ -11,9 +12,10 @@ COMMENT=	PHP5 extension for Redis
 
 LICENSE=	PHP301
 
-USE_PHP=	session
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+BROKEN_powerpc64=	Does not build
+
+USES=		php:ext
+USE_PHP=	session:build
 PHP_DEFAULT=	5.6
 IGNORE_WITH_PHP=	55 70
 
@@ -21,12 +23,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nicolasff
 GH_PROJECT=	phpredis
 
-PHP_MODNAME=	redis
-
 OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer
 
 IGBINARY_CONFIGURE_ENABLE=	redis-igbinary
-IGBINARY_USE=			php=igbinary
+IGBINARY_USE=			php=igbinary:build
 
 .include <bsd.port.mk>

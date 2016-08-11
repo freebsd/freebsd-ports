@@ -1,5 +1,5 @@
---- MPI/makefile.orig	Mon Feb 20 16:41:10 2006
-+++ MPI/makefile	Mon Feb 20 16:42:02 2006
+--- MPI/makefile.orig	1998-12-17 15:47:44 UTC
++++ MPI/makefile
 @@ -1,8 +1,8 @@
  all_drivers :
 -	cd drivers ; make drivers

@@ -93,3 +93,16 @@ bin/TrenchBroom
 %%DATADIR%%/shader/VaryingPC.fragsh
 %%DATADIR%%/shader/VaryingPC.vertsh
 %%DATADIR%%/shader/VaryingPUniformC.vertsh
+share/icons/hicolor/16x16/apps/trenchbroom.png
+share/icons/hicolor/22x22/apps/trenchbroom.png
+share/icons/hicolor/24x24/apps/trenchbroom.png
+share/icons/hicolor/32x32/apps/trenchbroom.png
+share/icons/hicolor/36x36/apps/trenchbroom.png
+share/icons/hicolor/48x48/apps/trenchbroom.png
+share/icons/hicolor/64x64/apps/trenchbroom.png
+share/icons/hicolor/72x72/apps/trenchbroom.png
+share/icons/hicolor/96x96/apps/trenchbroom.png
+share/icons/hicolor/128x128/apps/trenchbroom.png
+share/icons/hicolor/192x192/apps/trenchbroom.png
+share/icons/hicolor/256x256/apps/trenchbroom.png
+share/icons/hicolor/512x512/apps/trenchbroom.png

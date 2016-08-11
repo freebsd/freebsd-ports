@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cal-heatmap-rails
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-d3_rails>=3.4.6:www/rubygem-d3_rails
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

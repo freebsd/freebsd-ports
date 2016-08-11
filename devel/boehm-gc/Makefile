@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.4.2
-PORTREVISION=	4
+PORTVERSION=	7.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 PKGNAMEPREFIX=	boehm-
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	boehm-
 PKGNAMESUFFIX=	-${GC_VARIANT}
 .endif
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 LICENSE=	BDWGC
@@ -58,10 +57,6 @@ PORTDOCS=	*
 
 NOT_FOR_ARCHS=	ia64
 
-# no rule to get .lo from .S in subdirectory
-pre-build:
-	${LN} -sf ${WRKSRC}/src/sparc_mach_dep.S ${WRKSRC}
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -91,7 +86,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
 .else # ! GC_VARIANT
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
 	@${REINPLACE_CMD} \

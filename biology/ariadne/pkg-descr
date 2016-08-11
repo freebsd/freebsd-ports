@@ -13,6 +13,6 @@ the time.
 The package is written in ANSI C. You are free to incorporate the method
 used for assessing statistical significance into third-party code,
 provided you cite the above reference. The routines for assessing
-significance are all in gaplib.c 
+significance are all in gaplib.c
 
 WWW: http://www.well.ox.ac.uk/ariadne/

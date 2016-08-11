@@ -16,6 +16,6 @@ RUN_DEPENDS=	tracd:www/trac
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

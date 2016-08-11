@@ -222,6 +222,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Tehran.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Thimphu.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Tokyo.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Tomsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ulaanbaatar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Urumqi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ust_Nera.pm
@@ -273,6 +274,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Istanbul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Kaliningrad.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Kiev.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Kirov.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Lisbon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/London.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Luxembourg.pm

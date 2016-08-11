@@ -1,4 +1,4 @@
-The API takes advantage of the server's opaque flag support and sets its 
+The API takes advantage of the server's opaque flag support and sets its
 "complex" flag whenever the object being stored or retrieved isn't a plain
 scalar. In that case, the Storable module is used to freeze and thaw the
 value automatically going in and out of the memcached.

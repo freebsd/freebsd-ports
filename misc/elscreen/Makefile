@@ -11,15 +11,9 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
-USE_EMACS=	yes
-.include <bsd.port.pre.mk>
-.if (${EMACS_PORT_NAME} == "emacs20")
-DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
-.else
-DEPPORT_SUFFIX=
-.endif
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:editors/apel
 
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:editors/apel${DEPPORT_SUFFIX}
+USE_EMACS=	yes
 
 EMACS_NO_BUILD_DEPENDS=	YES
 NO_BUILD=	YES
@@ -32,4 +26,5 @@ do-install:
 .for i in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

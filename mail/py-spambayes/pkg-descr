@@ -2,6 +2,6 @@ SpamBayes is a tool used to segregate unwanted mail (spam) from the mail you
 want (ham). Before SpamBayes can be your spam filter of choice you need to
 train it on representative samples of email you receive. After it's been
 trained, you use SpamBayes to classify new mail according to its spamminess
-and hamminess qualities. 
+and hamminess qualities.
 
 WWW: http://spambayes.sourceforge.net/

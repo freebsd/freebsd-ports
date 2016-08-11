@@ -1,0 +1,6 @@
+A priority queue is like a standard queue, except that each inserted
+elements is given a certain priority, based on the result of the comparison
+block given at instantiation time. Retrieving an element from the queue will
+always return the one with the highest priority.
+
+WWW: http://rubyworks.github.io/pqueue/

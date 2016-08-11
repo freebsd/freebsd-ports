@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-06-19 05:34:51.000000000 +0900
-+++ Makefile.in	2008-06-26 21:27:22.000000000 +0900
-@@ -81,7 +81,7 @@
+--- Makefile.in.orig	2011-01-15 05:52:22 UTC
++++ Makefile.in
+@@ -83,7 +83,7 @@ CP		= @CP@
  MV		= @MV@
  RM		= @RM@
  RMF		= @RM@ -f
@@ -9,7 +9,7 @@
  FIND		= @FIND@
  XARGS		= @XARGS@
  LDCONFIG	= @LDCONFIG@
-@@ -94,16 +94,16 @@
+@@ -96,16 +96,16 @@ YACCFLAGS	= -d
  LEXFLAGS	=
  
  INSTALL		= @INSTALL@
@@ -32,7 +32,7 @@
  
  USER_LD_FLAGS	= @user_ldflags@
  LIBS_X		= @x_libs@
-@@ -122,7 +122,7 @@
+@@ -124,7 +124,7 @@ AFTER_BIN_DIR	= $(DESTDIR)@bindir@
  AFTER_MAN_DIR	= $(DESTDIR)@mandir@/man3
  AFTER_APP_MAN_DIR	= $(DESTDIR)@mandir@/man1
  AFTER_SHAREDIR	= $(DESTDIR)@datadir@/$(LIB_DIR_NAME)
@@ -41,7 +41,7 @@
  
  # We want to build both static and dynamic libs, as some service apps may need 
  # static library as they gets run at compile time (ASDocGen for example)
-@@ -163,11 +163,10 @@
+@@ -165,11 +165,10 @@ install.static: 	mkdir
  install.script:
  
  install.dyn:	mkdir
@@ -56,7 +56,7 @@
  		$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
  		if test `uname` = "Linux"; then \
  		   if test $(LIBDIR) = "/lib" || test $(LIBDIR) = "/usr/lib"; then \
-@@ -391,11 +390,8 @@
+@@ -393,11 +392,8 @@ $(LIB_SHARED_CYG): $(LIB_OBJS) $(LIB_INC
  $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
  	$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
  
@@ -70,7 +70,7 @@
  	 $(LIB_OBJS)
  
  install.man:
-@@ -421,7 +417,7 @@
+@@ -423,7 +419,7 @@ install.doc:
  			cd ../..; \
  		fi
  

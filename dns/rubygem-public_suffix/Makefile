@@ -3,7 +3,7 @@
 
 PORTNAME=	public_suffix
 PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +17,7 @@ PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 post-patch:
 	@${CP} ${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat ${WRKSRC}/data/definitions.txt

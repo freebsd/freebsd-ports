@@ -5,6 +5,7 @@
 
 # PROVIDE: ovsdb_server
 # REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 

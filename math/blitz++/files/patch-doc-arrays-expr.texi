@@ -1,0 +1,16 @@
+--- doc/arrays-expr.texi.orig	2003-01-21 11:01:03 UTC
++++ doc/arrays-expr.texi
+@@ -714,13 +714,8 @@ Computes the error function:  
+ @tex
+ $$ {\rm erf}(x) = {2\over\sqrt\pi}\int_{0}^{x} e^{-t^2} dt $$
+ @end tex
+-@html
+-@erf(x) = 2/sqrt(Pi) * integral(exp(-t^2), t=0..x)
+-@end html
+ @ifnottex
+-@ifnothtml
+ @math{@r{erf}(x) = 2/@r{sqrt}(Pi) * @r{integral}(@r{exp}(-t^2), t=0..x)}
+-@end ifnothtml
+ @end ifnottex
+ 
+ Note that for large values of the parameter, calculating can result in

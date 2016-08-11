@@ -10,6 +10,8 @@ COMMENT=	Library to interface with PRUs
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD

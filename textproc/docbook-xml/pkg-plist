@@ -187,9 +187,5 @@
 %%DBKDIR%%/5.0/xsd/docbook.xsd
 %%DBKDIR%%/5.0/xsd/xlink.xsd
 %%DBKDIR%%/5.0/xsd/xml.xsd
-%%DBKDIR%%/catalog.xml
-@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove nextCatalog %D/%F
-@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add nextCatalog %D/%F
-%%DBKDIR%%/catalog
-@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove CATALOG %D/%F
-@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
+@xmlcatmgr %%DBKDIR%%/catalog.xml
+@xmlcatmgr %%DBKDIR%%/catalog

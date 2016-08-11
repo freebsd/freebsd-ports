@@ -10,6 +10,6 @@ designed to be dynamically-updated, easily extensible, and to leverage a
 database back-end.
 
 The ISC started work on BIND 10 in 2009. In 2014 it became a community project
-and was renamed Bundy. 
+and was renamed Bundy.
 
 WWW: http://bundy-dns.de/

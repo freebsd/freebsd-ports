@@ -3,7 +3,7 @@
 
 PORTNAME=		ftimes
 PORTVERSION=		3.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF
 
@@ -53,13 +53,15 @@ SHEBANG_FILES= \
 			${WRKSRC}/tools/zipmap/zipmap
 
 OPTIONS_DEFINE=		DBM_TOOLS DIG_TOOLS FILE_HOOKS HASHDIG_TOOLS MAP_TOOLS SSL XMAGIC
-OPTIONS_DEFAULT=	DBM_TOOLS DIG_TOOLS FILE_HOOKS HASHDIG_TOOLS MAP_TOOLS SSL XMAGIC
+OPTIONS_DEFAULT=	DBM_TOOLS DIG_TOOLS FILE_HOOKS HASHDIG_TOOLS MAP_TOOLS XMAGIC
 DBM_TOOLS_DESC=		Install DBM tools
 DIG_TOOLS_DESC=		Install dig tools
 FILE_HOOKS_DESC=	Include file hooks support
 HASHDIG_TOOLS_DESC=	Install hashdig tools
 MAP_TOOLS_DESC=		Install map tools
 XMAGIC_DESC=		XMagic support
+
+SSL_USES=	ssl
 
 .include <bsd.port.pre.mk>
 
@@ -110,8 +112,6 @@ PLIST_SUB+=		MAP_TOOLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--without-ssl

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	6.0.20151108
+PORTVERSION=	6.1.20160425
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
 		http://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
@@ -25,10 +25,10 @@ NLS_CONFIGURE_ENABLE=	nls
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
-USES+=		charsetfix cpe gmake:lite ncurses perl5 tar:xz
+USES+=		charsetfix cpe gmake ncurses perl5 tar:xz
 
 MAKE_ARGS=	TEXMF=${LOCALBASE}/${TEXMF} PERL=${LOCALBASE}/bin/perl
-INFO=		texinfo info-stnd info
+INFO=		texinfo info-stnd
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
@@ -39,8 +39,11 @@ post-patch:
 	${CHMOD} 755 ${WRKSRC}/build-aux/install-sh
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
 	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
+	${REINPLACE_CMD} '/rm -f ..DESTDIR/s:$$: $$(DESTDIR)$$(xsdir)/XSParagraph.*:' \
+		${WRKSRC}/tp/Texinfo/Convert/XSParagraph/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf ${STAGEDIR}${DATADIR}
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.mk>

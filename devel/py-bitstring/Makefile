@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitstring
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,11 @@ COMMENT=	Simple construction, analysis, and modification of binary data
 
 LICENSE=	MIT
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	PKG-INFO README.txt release_notes.txt
+PORTDOCS=	PKG-INFO README.rst release_notes.txt
 
 OPTIONS_DEFINE=	DOCS
 

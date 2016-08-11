@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://invisible-island.net/reflex/ LOCAL/bf
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relocalizable fast lexical scanner
 
 LICENSE=	BSD3CLAUSE

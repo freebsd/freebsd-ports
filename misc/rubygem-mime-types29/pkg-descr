@@ -1,0 +1,4 @@
+MIME::Types for Ruby originally based on and synchronized with MIME::Types
+for Perl by Mark Overmeer, copyright 2001 - 2005.
+
+WWW: https://github.com/mime-types/ruby-mime-types

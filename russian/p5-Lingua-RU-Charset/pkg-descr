@@ -6,7 +6,7 @@ russian part of Unicode and UTF-8. This module can be especially
 useful for computers with broken cyrillic locales (like foreign
 web hosts).
 
-This module does not use locale or unicode and is written in pure Perl, 
+This module does not use locale or unicode and is written in pure Perl,
 so it will probably work at any computer.
 
 WWW: http://search.cpan.org/dist/Lingua-RU-Charset/

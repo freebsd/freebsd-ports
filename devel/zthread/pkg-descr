@@ -3,7 +3,7 @@ Paraphrasing the website:
   The ZThread package is an advanced object-oriented, cross-platform, C++
   threading and synchronization library.  It provides a high level
   abstraction of the native threading mechanisms to offer a great deal of
-  flexibility and control. 
+  flexibility and control.
 
   ZThread features interruptible Thread and Runnable objects for C++, control
   objects and implementations of concurrency design patterns.  This includes

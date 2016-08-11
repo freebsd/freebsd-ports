@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/asr.h
 lib/libasr.a
 lib/libasr.so

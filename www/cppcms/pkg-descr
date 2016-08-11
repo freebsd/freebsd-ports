@@ -1,10 +1,10 @@
 CppCMS is a free high performance web development framework aimed at
 rapid web application development.  It differs from most other web
-development frameworks like: Python Django, Java Servlets in the 
+development frameworks like: Python Django, Java Servlets in the
 following ways:
 
 * It is designed and tuned to handle extremely high loads.
-* It uses modern C++ as the primary development language in order to 
+* It uses modern C++ as the primary development language in order to
   achieve the first goal.
 * It is designed for developing both web sites and web services.
 

@@ -1,10 +1,7 @@
-*** programs/config.sys.orig	Mon Mar 27 21:27:23 1995
---- programs/config.sys	Mon Mar 27 22:19:26 1995
-***************
-*** 1,2 ****
-! device=emufs.sys /
-! stacks 9,512
---- 1,3 ----
-! device=\emufs.sys /usr/local/lib/pcemu/C
-! stacks 9,512
-! 
+--- programs/config.sys.orig	2016-06-20 15:48:12 UTC
++++ programs/config.sys
+@@ -1,2 +1,3 @@
+-device=emufs.sys /
++device=\emufs.sys /usr/local/lib/pcemu/C
+ stacks 9,512
++

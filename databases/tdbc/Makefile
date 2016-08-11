@@ -20,12 +20,12 @@ OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE ODBC
 OPTIONS_SUB=	yes
 
-USES=		tcl:86
+USES=		tcl:86,tea
 USE_LDCONFIG=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tcloo=${TCL_LIBDIR} \
-		--prefix=${PREFIX} --exec-prefix=${PREFIX} \
-		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} --enable-threads \
+CONFIGURE_ARGS+=--with-tcloo=${TCL_LIBDIR} \
+		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} \
+		--enable-threads \
 		--mandir=${PREFIX}/man \
 		--includedir=${PREFIX}/include/tdbc
 PLIST_SUB+=	VERSION=${DISTVERSION} \

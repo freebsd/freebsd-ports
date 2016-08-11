@@ -20,6 +20,6 @@ REV=			13353
 USES=			python zip:infozip
 USE_PYTHON=		distutils autoplist
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin/tags/${PORTVERSION}
+NO_ARCH=		yes
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

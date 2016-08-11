@@ -48,8 +48,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/devmon.cfg.dist ${STAGEDIR}/${PREFIX}/devmon/
 	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} \* ${STAGEDIR}/${PREFIX}/devmon/modules/)
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}/${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}/${DOCSDIR}/
@@ -58,6 +57,5 @@ post-install:
 	${INSTALL} -d ${STAGEDIR}/${DOCSDIR}/extras
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/docs/)
 	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/extras/)
-.endif
 
 .include <bsd.port.mk>

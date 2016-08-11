@@ -10,18 +10,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Native drag and drop capabilities for Tk
 
-USES+=		tk:85+
+USES+=		tk:85+,tea
 USE_XORG=	x11 xext
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tkinclude=${TK_INCLUDEDIR}
 
-TKPKG=		${PORTNAME}${PORTVERSION}
-PLIST_SUB=	TKPKG=${TKPKG}
-USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
+TCL_PKG=	${PORTNAME}${PORTVERSION}
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 post-install:

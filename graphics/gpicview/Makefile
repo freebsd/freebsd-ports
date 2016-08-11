@@ -2,28 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	gpicview
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GpicView%20${PORTVERSION}/
+MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/${PORTVERSION:R}.x/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and fast image viewer for X11
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext-tools gmake jpeg localbase \
+		pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

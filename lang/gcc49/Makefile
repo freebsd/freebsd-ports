@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.9.4.s20160210
+PORTVERSION=	4.9.4
 CATEGORIES=	lang java
-MASTER_SITES=	GCC/snapshots/${DISTVERSION}
+MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -27,20 +27,15 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.  A PORTVERSION of
-# 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
-# for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
+# of executables and directories once installed.
+DISTVERSION=	${PORTVERSION}
+GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64 sparc64
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
-
-PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
@@ -56,7 +51,7 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
 OPTIONS_DEFAULT_powerpc64+=	MULTILIB
-MULTILIB_DESC=		Build support for 32-bit and 64-bit target types
+MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
 CONFIGURE_ARGS+=	--disable-multilib
@@ -66,8 +61,6 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64
@@ -87,11 +80,10 @@ MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
-WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 .if empty(PORT_OPTIONS:MBOOTSTRAP)
 CONFIGURE_ARGS+=--disable-bootstrap
 .else
@@ -110,7 +102,10 @@ CONFIGURE_ARGS+=--disable-nls \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
-MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
+# On FreeBSD 11 and above AWK uses the locale's collating order which
+# runs into a bug in GCC (PR 211742).
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split" \
+		AWK="${SETENV} LC_ALL=C ${AWK:Q}"
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
@@ -122,9 +117,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+# Release tarballs (as opposed to snapshots) always carry this.
+#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		gcc${SUFFIX}/libquadmath
-.endif
+#.endif
 .if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 INFO+=		gcc${SUFFIX}/libitm
 .endif
@@ -153,14 +149,13 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
-	cd ${SRCDIR} ; contrib/gcc_update --touch
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${WRKSRC} ; contrib/gcc_update --touch
+	@${RM} -f ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${MAKE_CMD} -sk check \
-	; ${SRCDIR}/contrib/test_summary
+	cd ${TEST_WRKSRC}; ${MAKE_CMD} -sk check \
+	; ${WRKSRC}/contrib/test_summary
 .endif
 
 post-stage:

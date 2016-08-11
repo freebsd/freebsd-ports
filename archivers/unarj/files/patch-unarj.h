@@ -1,5 +1,5 @@
---- unarj.h.orig	Mon Sep 29 14:00:24 1997
-+++ unarj.h	Thu Feb 18 01:06:10 1999
+--- unarj.h.orig	2002-06-05 08:28:06 UTC
++++ unarj.h
 @@ -106,8 +106,12 @@
  #endif
  

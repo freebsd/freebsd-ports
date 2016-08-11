@@ -1,5 +1,5 @@
---- dial.c.orig	Fri Mar 31 04:44:07 2006
-+++ dial.c	Fri Mar 31 04:44:23 2006
+--- dial.c.orig	1998-03-20 16:13:44 UTC
++++ dial.c
 @@ -7,10 +7,10 @@
  #include <math.h>
  #include <stdio.h>
@@ -13,7 +13,7 @@
  
  #define DEBUG(x)
  
-@@ -130,7 +130,7 @@
+@@ -130,7 +130,7 @@ getvalue(int *arg, int *index, int argc,
  	++*index;
  }
  

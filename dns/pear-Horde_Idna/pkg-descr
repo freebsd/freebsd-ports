@@ -1,4 +1,4 @@
-Horde class for normalized access to various backends providing IDNA 
+Horde class for normalized access to various backends providing IDNA
 (Internationalized Domain Names in Applications) support.
 
 WWW: http://pear.horde.org

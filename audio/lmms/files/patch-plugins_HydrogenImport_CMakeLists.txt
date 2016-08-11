@@ -1,0 +1,8 @@
+--- plugins/HydrogenImport/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/HydrogenImport/CMakeLists.txt
+@@ -2,3 +2,5 @@ INCLUDE(BuildPlugin)
+ 
+ BUILD_PLUGIN(hydrogenimport HydrogenImport.cpp HydrogenImport.h local_file_mgr.cpp LocalFileMng.h)
+ 
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Dec 18 19:17:20 2000
-+++ Makefile	Mon Jan 29 12:26:51 2001
+--- Makefile.orig	2000-12-18 10:17:20 UTC
++++ Makefile
 @@ -111,8 +111,8 @@
  # For FreeBSD
  ARCH=	-DFreeBSD

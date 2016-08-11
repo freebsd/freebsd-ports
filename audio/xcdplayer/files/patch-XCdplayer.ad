@@ -1,6 +1,6 @@
---- XCdplayer.ad.orig	Tue Jan 12 19:59:41 1993
-+++ XCdplayer.ad	Mon Aug 25 00:38:35 2003
-@@ -19,11 +19,10 @@
+--- XCdplayer.ad.orig	1993-01-12 18:59:41 UTC
++++ XCdplayer.ad
+@@ -19,11 +19,10 @@ XCdplayer*Font:				-misc-fixed-bold-r-no
  
  XCdplayer*logoLabel.foreground:		Gold
  XCdplayer*logoLabel.background:		Black
@@ -13,7 +13,7 @@
  XCdplayer*versionLabel.fromHoriz:	logoLabel
  
  ! replayThreshold is the number of seconds that must be played before the
-@@ -33,16 +32,16 @@
+@@ -33,16 +32,16 @@ XCdplayer*replayThreshold:		4
  
  ! scanSkipInterval is the number of seconds skipped at each fast-forward or
  ! reverse.
@@ -33,7 +33,7 @@
  ! pausePauseInterval does the same thing when the disc is paused.
  XCdplayer*pausePauseInterval:		0.5
  
-@@ -56,7 +55,7 @@
+@@ -56,7 +55,7 @@ XCdplayer*pausePauseInterval:		0.5
  XCdplayer*Viewport.allowHoriz:		True
  XCdplayer*Viewport.useBottom:		True
  XCdplayer*Viewport.forceBars:		False
@@ -42,7 +42,7 @@
  XCdplayer*Viewport.height:		30
  XCdplayer*Viewport*thickness:		8
  XCdplayer*Viewport.resizable:		False
-@@ -88,11 +87,11 @@
+@@ -88,11 +87,11 @@ XCdplayer*Toggle.left:			ChainLeft
  XCdplayer*Toggle.right:			ChainLeft
  XCdplayer*Toggle.background:		Ivory
  
@@ -56,7 +56,7 @@
  XCdplayer*trackButton.fromVert:		versionLabel
  XCdplayer*trackButton.fromHoriz:	ledsLabel
  XCdplayer*trackButton.borderWidth:	2
-@@ -108,27 +107,22 @@
+@@ -108,27 +107,22 @@ XCdplayer*timerButton.fromHoriz:	trackBu
  XCdplayer*timerButton.left:		ChainRight
  XCdplayer*timerButton.right:		ChainRight
  

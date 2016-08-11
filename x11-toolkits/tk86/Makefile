@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.6.5
+PORTVERSION=	8.6.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} TCLTK/tcl8_6
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
@@ -29,14 +29,11 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
-USES+=		tcl:${SHORT_TK_VER}
+USES+=		tcl:${SHORT_TK_VER},tea
 USE_XORG=	x11 xft xscrnsaver
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
-		--enable-xss \
+CONFIGURE_ARGS=	--enable-xss \
 		--enable-xft \
 		--enable-man-suffix=.${MAN_SUFFIX} \
-		--with-tcl=${TCL_LIBDIR} \
 		--includedir=${PREFIX}/include/tk${TK_VER}
 
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}

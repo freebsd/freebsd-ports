@@ -1,0 +1,139 @@
+--- configure.ac.orig	2016-01-20 18:19:35 UTC
++++ configure.ac
+@@ -30,25 +30,25 @@ AC_SUBST(prefix)
+ 
+ # AC_PROG_CXX *before* AC_PROG_CC, otherwise configure won't error out
+ # when a c++ compiler is not found. Weird, huh?
+-AC_PROG_CXX
+-AC_PROG_CC
+-AC_PROG_CC_STDC
+-AC_PROG_CC_C99
++#AC_PROG_CXX
++#AC_PROG_CC
++#AC_PROG_CC_STDC
++#AC_PROG_CC_C99
+ AC_PROG_INSTALL
+-AC_HEADER_STDC
++#AC_HEADER_STDC
+ 
+ # for now, use AM_PROG_LIBTOOL, as we don't want to require
+ # a too new setup for autotools/libtool
+-AM_PROG_LIBTOOL
++#AM_PROG_LIBTOOL
+ #LT_INIT([disable-shared])
+ 
+ AC_PROG_AWK
+ AC_CHECK_PROG(SORT,sort,sort)
+ 
+-AC_CHECK_HEADERS([wordexp.h])
++#AC_CHECK_HEADERS([wordexp.h])
+ 
+ # use the 64-bit versions
+-AC_SYS_LARGEFILE
++#AC_SYS_LARGEFILE
+ 
+ # check for makeinfo
+ AC_CHECK_PROG(have_makeinfo,makeinfo,yes,no)
+@@ -110,36 +110,36 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
+ 
+ # glib2?
+ # we need 2.14 at least, because we use GRegex
+-PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.24 gobject-2.0 gio-2.0)
++#PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.24 gobject-2.0 gio-2.0)
+ AC_SUBST(GLIB_CFLAGS)
+ AC_SUBST(GLIB_LIBS)
+-glib_version="`$PKG_CONFIG --modversion glib-2.0`"
++#glib_version="`$PKG_CONFIG --modversion glib-2.0`"
+ 
+ # gmime
+-PKG_CHECK_MODULES(GMIME,gmime-2.6 >= 2.6.7)
++#PKG_CHECK_MODULES(GMIME,gmime-2.6 >= 2.6.7)
+ AC_SUBST(GMIME_CFLAGS)
+ AC_SUBST(GMIME_LIBS)
+-gmime_version="`$PKG_CONFIG --modversion gmime-2.6`"
++#gmime_version="`$PKG_CONFIG --modversion gmime-2.6`"
+ 
+ 
+ # xapian checking - we need 1.2.x at least
+-AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
+-AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
+-AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
+-   AC_MSG_ERROR([
+-   *** xapian could not be found; please install it
+-   *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
+-   *** If you compiled it yourself, you should ensure that xapian-config
+-   *** is in your PATH.])],
+-   [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
+-AS_CASE([$xapian_version],
+-	[1.[[2-9]].[[0-9]]*], [],
+-	[AC_MSG_ERROR([*** xapian version >= 1.2 needed,
+-	but version $xapian_version found.])])
+-
+-XAPIAN_CXXFLAGS="`$XAPIAN_CONFIG --cxxflags`"
+-XAPIAN_LIBS="`$XAPIAN_CONFIG --libs`"
+-have_xapian="yes"
++#AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
++#AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
++#AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
++#   AC_MSG_ERROR([
++#   *** xapian could not be found; please install it
++#   *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
++#   *** If you compiled it yourself, you should ensure that xapian-config
++#   *** is in your PATH.])],
++#   [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
++#AS_CASE([$xapian_version],
++#	[1.[[2-9]].[[0-9]]*], [],
++#	[AC_MSG_ERROR([*** xapian version >= 1.2 needed,
++#	but version $xapian_version found.])])
++#
++#XAPIAN_CXXFLAGS="`$XAPIAN_CONFIG --cxxflags`"
++#XAPIAN_LIBS="`$XAPIAN_CONFIG --libs`"
++#have_xapian="yes"
+ 
+ AC_SUBST(XAPIAN_CXXFLAGS)
+ AC_SUBST(XAPIAN_LIBS)
+@@ -235,37 +235,20 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/do
+ 
+ ###############################################################################
+ # check for pmccabe
+-AC_PATH_PROG([PMCCABE],[pmccabe],[no])
+-AS_IF([test "x$PMCCABE" = "xno"],[
+-   have_pmccabe="no"
+-   AC_MSG_WARN([
+-   *** Developers: you do not seem to have the pmccabe tool installed.
+-   *** Please install it if you want to run the automated code checks])
+-],[have_pmccabe="yes"])
++#AC_PATH_PROG([PMCCABE],[pmccabe],[no])
++#AS_IF([test "x$PMCCABE" = "xno"],[
++#   have_pmccabe="no"
++#   AC_MSG_WARN([
++#   *** Developers: you do not seem to have the pmccabe tool installed.
++#   *** Please install it if you want to run the automated code checks])
++#],[have_pmccabe="yes"])
+ ###############################################################################
+ 
+ AC_CONFIG_FILES([
+ Makefile
+-mu/Makefile
+-mu/tests/Makefile
+-lib/Makefile
+-lib/doxyfile
+-lib/tests/Makefile
+ mu4e/Makefile
+ mu4e/mu4e-meta.el
+ mu4e/texi.texi
+-guile/Makefile
+-guile/texi.texi
+-guile/mu/Makefile
+-guile/examples/Makefile
+-guile/tests/Makefile
+-guile/scripts/Makefile
+-toys/Makefile
+-toys/mug/Makefile
+-toys/msg2pdf/Makefile
+-man/Makefile
+-m4/Makefile
+-contrib/Makefile
+ ])
+ AC_OUTPUT
+ 

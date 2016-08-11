@@ -6,7 +6,7 @@ process to allow the package to be built without interaction.
 If you wish to run this script it is located here:
     %%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
 
-Note: It may not be required to run this script depending on 
+Note: It may not be required to run this script depending on
 your environment.
 
 *****************************************************************

@@ -24,7 +24,6 @@ USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	panel
 
 OPTIONS_DEFINE= NLS
-OPTIONS_DEFAULT=        NLS
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-plugins-oss
-PORTVERSION=	1.0.21
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,15 +12,13 @@ LICENSE=	GPLv3
 
 CONFLICTS=	linux-f10-alsa-plugins-oss-[0-9]*
 
-.if defined(PACKAGE_BUILDING)
 SRC_DISTFILES=	alsa-plugins-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
-.endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_APPS=	alsalib
 USE_LINUX_RPM=	yes
-RPMVERSION=	3.el6
+RPMVERSION=	1.el6
 
 USE_LDCONFIG=	yes
 

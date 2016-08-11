@@ -22,7 +22,7 @@ inc_dirs = [prefix + "/include"]
 lib_dirs = [prefix + "/lib"]
 libs = [os.environ['BSDDB_VERSION']]
 
-setup(name = "_bsddb",
+setup(name = "bsddb",
       description = "BSDDB Extension to Python",
 
       ext_modules = [Extension('_bsddb', ['_bsddb.c'],

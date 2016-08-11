@@ -1,0 +1,6 @@
+bin/alex4
+share/pixmaps/alex4.png
+%%DATADIR%%/a45.dat
+%%DATADIR%%/data.dat
+%%DATADIR%%/maps.dat
+%%DATADIR%%/sfx_22.dat

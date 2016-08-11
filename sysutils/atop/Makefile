@@ -3,6 +3,7 @@
 
 PORTNAME=	atop
 PORTVERSION=	2.0.2.b3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	samm@os2.kiev.ua

@@ -1,6 +1,21 @@
---- SConstruct.orig	2014-05-05 02:29:43.000000000 +0000
-+++ SConstruct	2014-05-12 09:50:56.999470711 +0000
-@@ -843,7 +843,7 @@
+--- SConstruct.orig	2016-03-21 17:09:46.000000000 +0100
++++ SConstruct	2016-05-02 12:45:18.685329078 +0200
+@@ -483,10 +483,10 @@ env = Environment( variables=env_vars,
+                    )
+ 
+ # Report any unknown variables as an error.
+-unknown_vars = env_vars.UnknownVariables()
+-if unknown_vars:
+-    print "Unknown variables specified: {0}".format(", ".join(unknown_vars.keys()))
+-    Exit(1)
++#unknown_vars = env_vars.UnknownVariables()
++#if unknown_vars:
++#    print "Unknown variables specified: {0}".format(", ".join(unknown_vars.keys()))
++#    Exit(1)
+ 
+ if has_option("cache"):
+     EnsureSConsVersion( 2, 3, 0 )
+@@ -867,7 +867,7 @@ if nix:
      env.Append( LIBS=[] )
  
      #make scons colorgcc friendly

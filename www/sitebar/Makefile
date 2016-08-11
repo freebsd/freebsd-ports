@@ -10,6 +10,8 @@ DISTNAME=	SiteBar-${PORTVERSION}
 MAINTAINER=	gunter@six-two.net
 COMMENT=	The Bookmark Server for Personal and Team Use
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:bzip2
 USE_PHP=	mysql pcre
 WANT_PHP_WEB=	yes

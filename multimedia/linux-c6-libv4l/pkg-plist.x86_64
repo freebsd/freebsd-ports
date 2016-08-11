@@ -1,4 +1,11 @@
 @comment file listing
+usr/lib/libv4l/ov511-decomp
+usr/lib/libv4l/ov518-decomp
+usr/lib/libv4l/v4l1compat.so
+usr/lib/libv4l/v4l2convert.so
+usr/lib/libv4l1.so.0
+usr/lib/libv4l2.so.0
+usr/lib/libv4lconvert.so.0
 usr/lib64/libv4l/ov511-decomp
 usr/lib64/libv4l/ov518-decomp
 usr/lib64/libv4l/v4l1compat.so

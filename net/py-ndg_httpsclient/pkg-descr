@@ -2,4 +2,4 @@ This is a HTTPS client implementation for httplib and urllib2 based on
 PyOpenSSL.
 
 WWW: https://pypi.python.org/pypi/ndg-httpsclient
-WWW: http://ndg-security.ceda.ac.uk/wiki/ndg_httpsclient
+WWW: https://github.com/cedadev/ndg_httpsclient

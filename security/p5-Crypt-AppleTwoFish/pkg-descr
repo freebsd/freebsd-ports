@@ -1,10 +1,10 @@
-This code appears to have only cursory resemblance to Bruce Schneier's 
+This code appears to have only cursory resemblance to Bruce Schneier's
 blowfish and twofish algorithms in that it too has a table-based decoder.
-Derivation from FairKeys code by Jon Lech Johanson at nanocrew.net. 
+Derivation from FairKeys code by Jon Lech Johanson at nanocrew.net.
 If you don't know what that is, don't bother looking here further. This is
-a Pure Perl implementation. I doubt there is any need for xs coding for 
-what would mainly be processing 16 bytes at a time. This code is part of an 
-ongoing effort to clone portions of the Apple iTMS in Perl for portability. 
+a Pure Perl implementation. I doubt there is any need for xs coding for
+what would mainly be processing 16 bytes at a time. This code is part of an
+ongoing effort to clone portions of the Apple iTMS in Perl for portability.
 See www.hymn-project.org for prior efforts by others.
 
 WWW: http://search.cpan.org/dist/Crypt-AppleTwoFish/

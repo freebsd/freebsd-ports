@@ -6,9 +6,9 @@ Zetaback is a thin-agent based ZFS backup tool. It is designed to:
     * scan clients for new ZFS filesystems
     * manage varying desired backup intervals (per host) for
           o full backups
-          o incremental backups 
+          o incremental backups
     * maintain varying retention policies (per host)
     * summarize existing backups
-    * restore any host:fs backup at any point in time to any target host 
+    * restore any host:fs backup at any point in time to any target host
 
 https://labs.omniti.com/trac/zetaback

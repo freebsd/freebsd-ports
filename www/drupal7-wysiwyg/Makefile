@@ -3,6 +3,7 @@
 
 PORTNAME=	wysiwyg
 DISTVERSION=	7.x-2.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,11 +13,10 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 USES=		drupal:7,module
 
-OPTIONS_DEFINE=	TINYMCE3 CKEDITOR YUI DOCS
+OPTIONS_DEFINE=	TINYMCE3 CKEDITOR DOCS
 
 TINYMCE3_DESC=	Install TinyMCE3 Editor
 CKEDITOR_DESC=	Install CKEditor
-YUI_DESC=	Install Yahoo UI Editor
 
 .include <bsd.port.options.mk>
 
@@ -28,11 +28,6 @@ PLIST_FILES+=	${DRUPAL_MODLIB}/tinymce
 .if ${PORT_OPTIONS:MCKEDITOR}
 RUN_DEPENDS+=	${LOCALBASE}/www/ckeditor:www/ckeditor
 PLIST_FILES+=	${DRUPAL_MODLIB}/ckeditor
-.endif
-
-.if ${PORT_OPTIONS:MYUI}
-RUN_DEPENDS+=	${LOCALBASE}/www/yui:www/yahoo-ui
-PLIST_FILES+=	${DRUPAL_MODLIB}/yui
 .endif
 
 MODULE_FILES=	editors/css/openwysiwyg.css \
@@ -104,9 +99,6 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MCKEDITOR}
 	${LN} -fs ${PREFIX}/www/CKEditor ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}/ckeditor
-.endif
-.if ${PORT_OPTIONS:MYUI}
-	${LN} -fs ${PREFIX}/www/yahoo ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}/yui
 .endif
 
 .include <bsd.port.mk>

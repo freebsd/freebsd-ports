@@ -1,6 +1,6 @@
---- osd.c.orig
+--- osd.c.orig	2012-05-16 20:25:00 UTC
 +++ osd.c
-@@ -788,7 +788,7 @@ eOSState cOsdPipObject::ProcessKey(eKeys
+@@ -780,7 +780,7 @@ eOSState cOsdPipObject::ProcessKey(eKeys
                  if (cControl::Control())
                  {
                      cControl::Control()->GetIndex(pos, end);

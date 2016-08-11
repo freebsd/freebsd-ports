@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet_forge
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-faraday>=0.9.0:www/rubygem-faraday \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

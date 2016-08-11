@@ -2,4 +2,4 @@ POE::Component::IRC::Plugin::POE::Knee, is a POE::Component::IRC plugin
 that runs Acme::POE::Knee style horse races on IRC channels using the
 channel member list to generate the POE::Knees.
 
-WWW:	http://search.cpan.org/dist/POE-Component-IRC-Plugin-POE-Knee/
+WWW: http://search.cpan.org/dist/POE-Component-IRC-Plugin-POE-Knee/

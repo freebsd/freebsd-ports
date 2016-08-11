@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	sapplug-xmms-${DISTVERSION}
@@ -52,7 +52,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
-	${INSTALL_DATA} ${WRKSRC}/libsap.so \
+	${INSTALL_LIB} ${WRKSRC}/libsap.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsap.so
 
 .include <bsd.port.post.mk>

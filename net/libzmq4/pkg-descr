@@ -1,4 +1,4 @@
-ZeroMQ - Distributed Computing Made Simple 
+ZeroMQ - Distributed Computing Made Simple
 
  * The socket library that acts as a concurrency framework.
  * Carries messages across inproc, IPC, TCP, and multicast.

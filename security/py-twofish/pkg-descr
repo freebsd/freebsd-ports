@@ -1,5 +1,5 @@
 A pure python implementation of the Rijndael encryption algorithm. Useful for
 quick string encryption in python programs but probably is not fast enough for
-anything too big. 
+anything too big.
 
 WWW: http://sourceforge.net/projects/twofish-py/

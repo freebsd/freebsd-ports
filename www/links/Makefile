@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	links
-DISTVERSION=	2.9
+DISTVERSION=	2.13
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf
+MASTER_SITES=	http://links.twibright.com/download/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lynx-like text WWW browser
 
 LICENSE=	GPLv2
 
-CONFLICTS=	links-0* links-hacked-[0-9]* links1-*
+CONFLICTS=	links-0* links-hacked-[0-9]* links1-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
@@ -20,8 +20,7 @@ CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_OPENSSL=	yes
-USES=		cpe tar:bzip2
+USES=		cpe ssl tar:bzip2
 
 CPE_VENDOR=	twibright
 
@@ -34,7 +33,7 @@ TRANS_DESC=	Hack for background transparency
 UTF8_DESC=	UTF-8 support
 X11_DESC=	X11 graphics support
 
-OPTIONS_DEFAULT=	IPV6 UTF8 X11
+OPTIONS_DEFAULT=	UTF8 X11
 
 PLIST_FILES=	bin/links man/man1/links.1.gz
 
@@ -92,7 +91,7 @@ post-patch:
 
 .if ${PORT_OPTIONS:MX11}
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/links.xpm
+	${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/links.xpm
 .endif
 
 .include <bsd.port.mk>

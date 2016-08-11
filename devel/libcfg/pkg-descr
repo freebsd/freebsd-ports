@@ -1,8 +1,8 @@
-libcfg+ is a C library that features multi- command line and configuration 
-file parsing. It is possible to set up various special properties such as 
-quoting characters, deliminator strings, file comment prefixes, multi-line 
-postfixes, and more. It supports many data types such as booleans, integers, 
-decimal numbers, strings with many additional data type flags (such as 
+libcfg+ is a C library that features multi- command line and configuration
+file parsing. It is possible to set up various special properties such as
+quoting characters, deliminator strings, file comment prefixes, multi-line
+postfixes, and more. It supports many data types such as booleans, integers,
+decimal numbers, strings with many additional data type flags (such as
 multiple values for a single option).
 
 WWW: http://opensource.platon.org/projects/main_page.php?project_id=3

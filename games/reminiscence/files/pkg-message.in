@@ -7,7 +7,7 @@ files to %%PREFIX%%/share/REminiscence/data/ directory:
   *.ANI *.CT *.MBK *.OBJ *.PGE *.RP *.TBN *.CMD *.POL *CINE.*
 
 If you have a version distributed by SSI, you'll have to rename some files :
-        
+
   logosssi.cmd -> logos.cmd
   logosssi.pol -> logos.pol
   menu1ssi.map -> menu1.map

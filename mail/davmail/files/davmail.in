@@ -22,7 +22,10 @@ load_rc_config $name
 
 : ${davmail_enable="NO"}
 : ${davmail_config="%%PREFIX%%/etc/davmail.properties"}
+: ${davmail_user="davmail"}
+: ${davmail_group="davmail"}
 
+start_precmd="${name}_prestart"
 start_cmd="${name}_start"
 
 davmail_procname()
@@ -31,15 +34,24 @@ davmail_procname()
 	    /usr/bin/awk -F= '{if ($1=="JAVAVM_PROG") print $2}' 2> /dev/null
 }
 
+pidfiledir="/var/run/davmail"
+pidfile="${pidfiledir}/davmail.pid"
 procname="$(davmail_procname)"
-pidfile="/var/run/davmail.pid"
 required_files=${davmail_config}
+
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} %%LOCALBASE%%/bin/java -cp '%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*' davmail.DavGateway '${davmail_config}'"
 
 davmail_daemon()
 {
-	%%LOCALBASE%%/bin/java \
-	    -cp "%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*" \
-	    davmail.DavGateway "${davmail_config}" & echo -n $! > ${pidfile}
+	su -m ${davmail_user} -c "env -i PATH=${PATH} ${command} ${command_args}"
+}
+
+davmail_prestart()
+{
+	if [ ! -d "${pidfiledir}" ]; then
+		install -d -o "${davmail_user}" -g "${davmail_group}" -m 750 "${pidfiledir}"
+	fi
 }
 
 davmail_start()

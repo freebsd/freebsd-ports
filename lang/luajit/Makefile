@@ -3,6 +3,7 @@
 
 PORTNAME=	luajit
 DISTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -19,11 +20,9 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 ONLY_FOR_ARCHS_REASON=	Requires newer gcc/clang to compile.
 
-.include <bsd.port.pre.mk>
-
 post-install:
-	${LN} -sf ${PREFIX}/bin/${PORTNAME}-${DISTVERSION} \
+	${LN} -sf ${PORTNAME}-${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,4 +21,4 @@ This port provide Kst 2, which is based on Qt4. It still lacks scripting
 support and backward compatibility with Kst 1.x series (you can't open
 kst-1 files in Kst 2).
 
-WWW:	http://kst.kde.org
+WWW: http://kst.kde.org

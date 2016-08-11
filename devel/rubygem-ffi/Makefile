@@ -14,7 +14,6 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

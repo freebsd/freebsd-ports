@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-gio2>=1.1.4:devel/rubygem-gio2 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/rabbiter
 
 .include <bsd.port.mk>

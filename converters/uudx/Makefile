@@ -12,15 +12,11 @@ COMMENT=	Extractor from uuencoded files
 
 BUILD_DEPENDS=	nkf:japanese/nkf
 
-USES=		lha
+USES=		dos2unix lha
+DOS2UNIX_FILES=	uudx.1 uudx.c
 NO_WRKSUBDIR=	yes
+MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/uudx \
 		man/ja/man1/uudx.1.gz
-
-pre-patch:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/sprintf()/d' ${WRKSRC}/uudx.c
 
 .include <bsd.port.mk>

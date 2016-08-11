@@ -1,6 +1,6 @@
---- code/qcommon/vm_interpreted.c.orig	2014-03-23 17:14:22.000000000 +0100
-+++ code/qcommon/vm_interpreted.c	2014-03-23 17:17:07.000000000 +0100
-@@ -458,11 +458,11 @@
+--- code/qcommon/vm_interpreted.c.orig	2016-03-31 19:41:05 UTC
++++ code/qcommon/vm_interpreted.c
+@@ -458,11 +458,11 @@ nextInstruction2:
  			goto nextInstruction2;
  
  		case OP_STORE4:

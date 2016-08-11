@@ -1,11 +1,11 @@
---- libupnp.pc.in.orig	2010-10-09 13:09:32.000000000 +0200
-+++ libupnp.pc.in	2010-10-09 13:12:31.000000000 +0200
-@@ -6,6 +6,6 @@
+--- libupnp.pc.in.orig	2010-10-19 17:31:19 UTC
++++ libupnp.pc.in
+@@ -6,6 +6,6 @@ includedir=@includedir@
  Name: libupnp
  Description: Linux SDK for UPnP Devices
  Version: @VERSION@
 -Libs: @PTHREAD_CFLAGS@ @PTHREAD_LIBS@ -L${libdir} -lupnp -lthreadutil -lixml 
-+Libs: -pthread -L${libdir} -lupnp -lthreadutil -lixml @LIBS@
 -Cflags: @PTHREAD_CFLAGS@ -I${includedir}/upnp
++Libs: -pthread -L${libdir} -lupnp -lthreadutil -lixml @LIBS@
 +Cflags: -I${includedir}/upnp
  

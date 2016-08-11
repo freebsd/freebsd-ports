@@ -1,6 +1,6 @@
---- conf/makefiles/uip.orig	2001-05-30 23:57:47.000000000 +0900
-+++ conf/makefiles/uip	2014-10-13 17:55:46.000000000 +0900
-@@ -995,10 +995,6 @@
+--- conf/makefiles/uip.orig	2001-05-30 14:57:47 UTC
++++ conf/makefiles/uip
+@@ -995,10 +995,6 @@ $(ETCDIR)/rcvtty:	xrcvtty
  		-chmod g-s zrcvtty
  		$(CP) xrcvtty $@
  		-@chmod $(PGMPROT) $@

@@ -1,6 +1,6 @@
---- src/tkhaskell.c.orig	2014-02-20 12:00:29.000000000 +0100
-+++ src/tkhaskell.c	2014-02-20 12:02:44.000000000 +0100
-@@ -160,17 +160,17 @@
+--- src/tkhaskell.c.orig	2001-01-28 06:02:45 UTC
++++ src/tkhaskell.c
+@@ -160,17 +160,17 @@ static Int c_primInitTcl () { 
      Tcl_SetVar(interp, "tcl_interactive", "0", TCL_GLOBAL_ONLY);
  
      if (Tcl_Init(interp) == TCL_ERROR) {
@@ -21,7 +21,7 @@
  	return FALSE;
      }
  #endif
-@@ -242,17 +242,17 @@
+@@ -242,17 +242,17 @@ static String executeTcl (cmd) 
  String cmd; {
     char errmsg[200];
     if (Tcl_Eval(interp,cmd) != TCL_OK) {

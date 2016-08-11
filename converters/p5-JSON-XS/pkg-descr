@@ -1,11 +1,11 @@
-This module converts Perl data structures to JSON and vice versa. 
-Its primary goal is to be correct and its secondary goal is to be fast. 
+This module converts Perl data structures to JSON and vice versa.
+Its primary goal is to be correct and its secondary goal is to be fast.
 To reach the latter goal it was written in C.
 
-As this is the n-th-something JSON module on CPAN, what was the reason 
-to write yet another JSON module? While it seems there are many JSON 
-modules, none of them correctly handle all corner cases, and in most 
-cases their maintainers are unresponsive, gone missing, or not listening 
+As this is the n-th-something JSON module on CPAN, what was the reason
+to write yet another JSON module? While it seems there are many JSON
+modules, none of them correctly handle all corner cases, and in most
+cases their maintainers are unresponsive, gone missing, or not listening
 to bug reports for other reasons.
 
 WWW: http://search.cpan.org/dist/JSON-XS/

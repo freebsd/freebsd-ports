@@ -9,8 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simpler web photo gallery
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+
+BROKEN_powerpc64=	does not build
 
 NO_ARCH=	yes
 NO_BUILD=	yes

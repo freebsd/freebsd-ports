@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20160404
+PORTVERSION=	20160621
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in PCI devices
 
-LICENSE=	BSD3CLAUSE GPLv2 GPLv3
+LICENSE=	BSD3CLAUSE GPLv2+
 LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		tar:xz
 
 PLIST_FILES=	%%DATADIR%%/pci.ids
 
 GH_ACCOUNT=	pciutils
-GH_TAGNAME=	9297a94
+GH_TAGNAME=	295956a
 USE_GITHUB=	yes
 
 do-install:

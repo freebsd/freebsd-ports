@@ -2,7 +2,7 @@
 
 PORTNAME=	zmq
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,9 +15,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
-USES=		tar:tgz pkgconfig
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext pkgconfig tar:tgz
 
 .include <bsd.port.mk>

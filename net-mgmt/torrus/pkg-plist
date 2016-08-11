@@ -25,6 +25,7 @@ libexec/torrus/genddx
 libexec/torrus/genlist
 libexec/torrus/genreport
 libexec/torrus/install_plugin
+libexec/torrus/launcher
 libexec/torrus/monitor
 libexec/torrus/nodeid
 libexec/torrus/rrddir2xml
@@ -60,6 +61,7 @@ man/man7/torrus_action_notify.7.gz
 man/man7/torrus_action_printemail.7.gz
 man/man7/torrus_action_snmptrap.7.gz
 man/man7/torrus_install_plugin.7.gz
+man/man7/torrus_launcher.7.gz
 %%DOCSDIR%%/devdoc/architecture.pod
 %%DOCSDIR%%/devdoc/devdiscover.pod
 %%DOCSDIR%%/devdoc/progstyle.pod
@@ -141,6 +143,7 @@ man/man7/torrus_install_plugin.7.gz
 %%DATADIR%%/xmlconfig/generic/rfc2670.docsis-if.xml
 %%DATADIR%%/xmlconfig/generic/rfc2790.host-resources.xml
 %%DATADIR%%/xmlconfig/generic/rfc2863.if-mib.xml
+%%DATADIR%%/xmlconfig/generic/rfc4293.ip-mib.xml
 %%DATADIR%%/xmlconfig/generic/rfc4319_hdsl2_shdsl_line.xml
 %%DATADIR%%/xmlconfig/old/cisco-mac-accounting-example.xml
 %%DATADIR%%/xmlconfig/old/cisco.generic.old-0.1.4.xml
@@ -152,6 +155,7 @@ man/man7/torrus_install_plugin.7.gz
 %%DATADIR%%/xmlconfig/old/rfc2863.if-mib.old-0.1.7.xml
 %%DATADIR%%/xmlconfig/old/snmp-defs.old-0.1.2.xml
 %%DATADIR%%/xmlconfig/snmp-defs.xml
+%%DATADIR%%/xmlconfig/vendor/albis-ulaf.xml
 %%DATADIR%%/xmlconfig/vendor/alteon.xml
 %%DATADIR%%/xmlconfig/vendor/alu-timetra.xml
 %%DATADIR%%/xmlconfig/vendor/apc.powernet.xml
@@ -175,6 +179,7 @@ man/man7/torrus_install_plugin.7.gz
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.ntregperf.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.xml
 %%DATADIR%%/xmlconfig/vendor/f5.bigip.xml
+%%DATADIR%%/xmlconfig/vendor/fortinet.xml
 %%DATADIR%%/xmlconfig/vendor/foundry.xml
 %%DATADIR%%/xmlconfig/vendor/ftos.xml
 %%DATADIR%%/xmlconfig/vendor/jacarta.xml
@@ -219,6 +224,7 @@ man/man7/torrus_install_plugin.7.gz
 %%SITE_PERL%%/Torrus/DevDiscover/ALU_Timetra.pm
 %%SITE_PERL%%/Torrus/DevDiscover/APC_PowerNet.pm
 %%SITE_PERL%%/Torrus/DevDiscover/ATMEL.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Albis_ULAF.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Alteon.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Apple_AE.pm
@@ -244,6 +250,7 @@ man/man7/torrus_install_plugin.7.gz
 %%SITE_PERL%%/Torrus/DevDiscover/DevDetails.pm
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
 %%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Fortinet.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Foundry.pm
 %%SITE_PERL%%/Torrus/DevDiscover/FTOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Jacarta.pm
@@ -267,6 +274,7 @@ man/man7/torrus_install_plugin.7.gz
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2737_ENTITY_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2790_HOST_RESOURCES.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2863_IF_MIB.pm
+%%SITE_PERL%%/Torrus/DevDiscover/RFC4293_IP_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC4319_HDSL2_SHDSL_LINE_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Symmetricom.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Thomson_xDSL.pm

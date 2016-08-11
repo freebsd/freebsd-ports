@@ -9,11 +9,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digramic Bayesian classifier
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PROGRAMS=	bayesol dbacl mailinspect hmine hypex
 SCRIPTS=	mailcross mailtoe mailfoot
@@ -23,6 +24,8 @@ DOCS=		AUTHORS ChangeLog README doc/dbacl.ps \
 		doc/email.html doc/tutorial.html doc/costs.ps
 PORTDOCS=	${DOCS:T}
 PORTEXAMPLES=	sample*.txt japanese.txt example*.risk toy.risk prop.pl
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-install:
 	@cd ${WRKSRC}/src && \
@@ -35,9 +38,13 @@ do-install:
 		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/man && \
 		${INSTALL_MAN} ${MAN} ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && \
 		${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

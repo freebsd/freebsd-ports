@@ -1,5 +1,5 @@
 -----------------------------------------------------------------
-If you want users to be able to create their own Web
+If you want users to be able to create their own web
 subdirectories off of the main web directory, you need to:
 
   1. Add a group for www admins (or use "%%WWWGRP%%")

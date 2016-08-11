@@ -1,2 +1,3 @@
-SHA256 (sudo-1.8.16.tar.gz) = 2d83826fc5125bf073acc203dbda1cf2abeee017090ccc9dddb0431a53d5064d
-SIZE (sudo-1.8.16.tar.gz) = 2707358
+TIMESTAMP = 1466628964
+SHA256 (sudo-1.8.17p1.tar.gz) = c690d707fb561b3ecdf6a6de5563bc0b769388eff201c851edbace408bb155cc
+SIZE (sudo-1.8.17p1.tar.gz) = 2786618

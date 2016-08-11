@@ -13,11 +13,11 @@ COMMENT=	The interface of IO objects to classes providing a few simple methods
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
+BUILD_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems \
+		${LOCALBASE}/bin/rake:devel/rubygem-rake
 RUN_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 NO_ARCH=	yes
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
@@ -47,6 +47,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		EXTRACT_SUFX=".gem"
 
 RUBYGEMBIN=	${LOCALBASE}/bin/gem${RUBY_VER:S/.//}
+RAKE_BIN=	${LOCALBASE}/bin/rake
 
 GEMFILES=	${GEM_NAME}.gem
 

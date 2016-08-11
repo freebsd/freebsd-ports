@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo_parsers
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -11,11 +11,10 @@ COMMENT=	Parser for puppet modules
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	puppet:sysutils/puppet38
+RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

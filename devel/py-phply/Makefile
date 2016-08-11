@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+PORTNAME=	phply
+PORTVERSION=	0.9.1
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	dbaio@bsd.com.br
+COMMENT=	PHP lexer and parser in Python
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
+USES=		python:-2.7
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>

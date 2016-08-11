@@ -1,6 +1,6 @@
---- Makefile.cmdline.orig	2016-01-10 01:18:06 UTC
+--- Makefile.cmdline.orig	2016-05-03 11:57:37 UTC
 +++ Makefile.cmdline
-@@ -8,16 +8,16 @@ DUKTAPE_SOURCES = src/duktape.c
+@@ -8,9 +8,9 @@ DUKTAPE_SOURCES = src/duktape.c
  DUKTAPE_CMDLINE_SOURCES = \
  	examples/cmdline/duk_cmdline.c
  
@@ -9,16 +9,7 @@
 -CCOPTS += -I./src   # duktape.h and duk_config.h must be in include path
 +CC	?= gcc
 +CCOPTS	= ${CFLAGS} -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
-+CCOPTS += -I./src ${CPPFLAGS}   # duktape.h and duk_config.h must be in include path
++CCOPTS += -I./src ${CPPFLAGS}  # duktape.h and duk_config.h must be in include path
  CCLIBS	= -lm
  
- # If you have readline, you may want to enable these.  On some platforms
- # -lreadline also requires -lncurses (e.g. RHEL), so it is added by default
- # (you may be able to remove it)
--#CCOPTS += -DDUK_CMDLINE_FANCY
--#CCLIBS += -lreadline
-+CCOPTS += -DDUK_CMDLINE_FANCY
-+CCLIBS += ${LDFLAGS} -ledit
- #CCLIBS += -lncurses
- 
- # Optional feature defines, see: http://duktape.org/guide.html#compiling
+ # If you want linenoise, you can enable these.  At the moment linenoise

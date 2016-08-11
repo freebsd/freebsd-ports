@@ -2,7 +2,7 @@ $NetBSD: patch-an,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_termsize.c.orig	2008-03-19 00:44:12.000000000 +0000
+--- src/libmojave-external/cutil/lm_termsize.c.orig	2008-03-19 00:44:12 UTC
 +++ src/libmojave-external/cutil/lm_termsize.c
 @@ -45,7 +45,7 @@ value caml_term_size(value arg)
      CAMLlocal1(buf);

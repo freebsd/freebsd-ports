@@ -12,7 +12,8 @@ COMMENT=	Download news articles from NNTP server
 
 MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 
-USES=		uidfix
+USES=		dos2unix uidfix
+DOS2UNIX_GLOB=	*.c
 CFLAGS+=	-Wno-return-type
 PLIST_FILES=	bin/newsfetch \
 		man/man1/newsfetch.1.gz

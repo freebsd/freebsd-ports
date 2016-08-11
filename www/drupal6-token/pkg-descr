@@ -1,6 +1,0 @@
-Tokens are small bits of text that can be placed into larger documents via
-simple placeholders, like %site-name or [user]. The Token module provides a
-central API for modules to use these tokens, and expose their own token
-values.
-
-WWW: http://drupal.org/project/token

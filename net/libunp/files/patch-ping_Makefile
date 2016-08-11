@@ -1,5 +1,5 @@
---- ping/Makefile.orig	Tue Sep 28 11:40:42 1999
-+++ ping/Makefile	Tue Sep 28 11:40:53 1999
+--- ping/Makefile.orig	1997-04-13 19:49:47 UTC
++++ ping/Makefile
 @@ -1,7 +1,7 @@
  include ../Make.defines
  

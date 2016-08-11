@@ -1,0 +1,29 @@
+sndio's OSS support (i.e. local playback support) is highly
+experimental.  If you run into problems please file a bug at
+https://github.com/t6/sndio or send an email to t+sndio@tobik.me.
+
+The recommended way to use this port is to have a remote sndio server
+running on a Linux or OpenBSD host.
+
+If you want clients to auto-play to your remote sndio server, enable
+sndiod with:
+
+    sysrc sndiod_enable=YES sndiod_flags="-f snd@remotehost/0"
+    service sndiod start
+
+For local playback simply enabling the sndiod server will suffice
+
+    sysrc sndiod_enable=YES
+
+Alternatively set the AUDIODEVICE environment variable so clients know
+where to stream to
+
+    export AUDIODEVICE=snd@remotehost/0
+
+There is no sndio support in the official FreeBSD ports tree yet.  The
+fork at https://github.com/t6/freebsd-port-sndio contains patches that
+enable sndio support in important ports.
+
+audio/pulseaudio-module-sndio is a PulseAudio module that allows you
+to play to your sndio server.  This is useful for ports that have
+PulseAudio support but no direct sndio support.

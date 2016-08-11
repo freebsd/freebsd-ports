@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetdb
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	4
@@ -16,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb-*
+CONFLICTS_INSTALL=	puppetdb-* puppetdb3-*
 USES=		shebangfix
 SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/anonymize \

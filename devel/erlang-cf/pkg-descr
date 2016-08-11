@@ -1,0 +1,4 @@
+A helper library for terminal color printing extending the io:format
+syntax to add colors.
+
+WWW: https://github.com/project-fifo/cf

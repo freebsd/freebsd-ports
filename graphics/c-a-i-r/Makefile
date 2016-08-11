@@ -10,7 +10,8 @@ DISTNAME=	CAIR_v${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Content Aware Image Resizer is an implementation of seam carving
 
-USES=		gmake zip
+USES=		dos2unix gmake zip
+DOS2UNIX_GLOB=	*.cpp
 
 MAKE_ARGS+=	CC="${CXX}"
 

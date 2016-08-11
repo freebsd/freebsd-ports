@@ -3,13 +3,13 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension for the mdbtools library
 
 LICENSE=	LGPL21
@@ -17,10 +17,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:databases/mdbtools
 RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:databases/mdbtools
 
-USES=		pkgconfig tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext pkgconfig tar:tgz
 IGNORE_WITH_PHP= 56 70
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}

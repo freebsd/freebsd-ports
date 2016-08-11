@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2015-02-25 13:04:40.000000000 +0100
-+++ CMakeLists.txt	2015-02-25 13:05:18.000000000 +0100
-@@ -168,7 +168,7 @@
+--- CMakeLists.txt.orig	2015-01-30 17:14:22.000000000 +0100
++++ CMakeLists.txt	2016-04-29 17:50:01.000000000 +0200
+@@ -18,7 +18,6 @@
+ ####################################
+ # pre-compiled headers support
+ ####################################
+-include(cotire)
+ 
+ # if setup using the Toolchain-llvm.cmake file, then use llvm...
+ if(ENABLE_LLVM)
+@@ -168,7 +167,7 @@
      FILES
      "${CMAKE_CURRENT_BINARY_DIR}/liblucene++.pc"
      "${CMAKE_CURRENT_BINARY_DIR}/liblucene++-contrib.pc"

@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	lzf
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.5
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
-LICENSE=	PHP202
+LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 
 CONFIGURE_ARGS=	--enable-lzf
 WRKSRC=		${WRKDIR}/${DISTNAME:tu}

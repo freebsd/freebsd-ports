@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tseries
-DISTVERSION=	0.10-34
+DISTVERSION=	0.10-35
+PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,6 +18,6 @@ BUILD_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
 RUN_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
 		R-cran-zoo>0:math/R-cran-zoo
 
-USES=	cran:auto-plist
+USES=		cran:compiles
 
 .include <bsd.port.mk>

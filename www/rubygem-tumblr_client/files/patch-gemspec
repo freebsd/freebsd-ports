@@ -1,0 +1,11 @@
+--- tumblr_client.gemspec.orig	2016-04-17 06:21:17 UTC
++++ tumblr_client.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.9.0"])
+-      s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 0.9.0"])
++      s.add_runtime_dependency(%q<faraday_middleware>.freeze, [">= 0.9.0"])
+       s.add_runtime_dependency(%q<json>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<simple_oauth>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<oauth>.freeze, [">= 0"])

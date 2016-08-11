@@ -2,18 +2,23 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: fcron
 # REQUIRE: LOGIN
 # BEFORE: securelevel
 # KEYWORD: shutdown
+#
+# fcron_enable (bool):	Set to NO by default.
+#			Set it to YES to enable fcron.
 
 . /etc/rc.subr
 
-name="fcron"
+desc="Periodic command scheduler"
+name=fcron
 rcvar=fcron_enable
+
+load_rc_config $name
+
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 
-load_rc_config $name
 run_rc_command "$1"

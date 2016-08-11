@@ -3,6 +3,7 @@
 
 PORTNAME=	tumblr_client
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,16 +14,15 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-faraday>=0.9.0:www/rubygem-faraday \
-		rubygem-faraday_middleware>=0.9.1:www/rubygem-faraday_middleware \
-		rubygem-json>0:devel/rubygem-json \
-		rubygem-mime-types>0:misc/rubygem-mime-types \
-		rubygem-oauth>0:net/rubygem-oauth \
-		rubygem-simple_oauth>0:net/rubygem-simple_oauth
+		rubygem-faraday_middleware>=0.9.0:www/rubygem-faraday_middleware \
+		rubygem-json>=0:devel/rubygem-json \
+		rubygem-mime-types>=0:misc/rubygem-mime-types \
+		rubygem-oauth>=0:net/rubygem-oauth \
+		rubygem-simple_oauth>=0:net/rubygem-simple_oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/tumblr
 

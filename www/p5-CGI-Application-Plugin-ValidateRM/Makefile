@@ -19,6 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 .include <bsd.port.mk>

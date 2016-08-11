@@ -1,6 +1,6 @@
---- readpng.c.orig	2005-10-23 21:36:29.000000000 +0200
-+++ readpng.c	2010-03-29 14:14:22.000000000 +0200
-@@ -57,7 +57,7 @@
+--- readpng.c.orig	2005-10-23 19:36:29 UTC
++++ readpng.c
+@@ -57,7 +57,7 @@ TestPNG(char *file)  /* gets called a LO
      fread(header, 1, 8, fp);
      fclose(fp);
  

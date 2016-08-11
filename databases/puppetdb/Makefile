@@ -18,7 +18,7 @@ BUILD_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb4-*
+CONFLICTS_INSTALL=	puppetdb3-* puppetdb4-*
 USES=		shebangfix
 SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-anonymize \
@@ -28,7 +28,6 @@ SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-legacy \
 		ext/files/puppetdb-ssl-setup
 USE_JAVA=	yes
-USE_RAKE=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+

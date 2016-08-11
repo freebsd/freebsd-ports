@@ -1,2 +1,3 @@
-SHA256 (perl/perl-5.22.1.tar.xz) = 9e87317d693ce828095204be0d09af8d60b8785533fadea1a82b6f0e071e5c79
-SIZE (perl/perl-5.22.1.tar.xz) = 11223940
+TIMESTAMP = 1469459913
+SHA256 (perl/perl-5.22.3-RC2.tar.xz) = 9546aa7fddf7bd52eeab02359aa9c70139798f9dbb0121975b9814d68a331832
+SIZE (perl/perl-5.22.3-RC2.tar.xz) = 11234988

@@ -3,4 +3,4 @@ interface into other software. It's a telnet interface which supports
 command-line editing, history, authentication and callbacks for a user-definable
 function tree.
 
-WWW:	http://github.com/dparrish/libcli/
+WWW: http://github.com/dparrish/libcli/

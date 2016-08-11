@@ -4,4 +4,4 @@ wrapping. It has a control file which allows selective auditing of sender or
 recipient, as well as whom the messages should be forwarded to. This control
 file allows regular expressions, what increases its flexibility of use.
 
-WWW:	http://qmail-auditor.sourceforge.net/
+WWW: http://qmail-auditor.sourceforge.net/

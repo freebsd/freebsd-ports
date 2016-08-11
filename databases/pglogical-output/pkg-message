@@ -1,0 +1,6 @@
+
+The pglogical-output extension is pointless without the pglogical
+extension, and vice versa.  Please install both pglogical and
+pglogical-output extensions (that match the local postgresql server
+version) on both the sending and receiving instances of postgresql
+server.

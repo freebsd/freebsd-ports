@@ -27,8 +27,9 @@ post-patch:
 		${WRKSRC}/obkey_classes.py
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/misc/obkey.desktop ${STAGEDIR}${DESKTOPDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 

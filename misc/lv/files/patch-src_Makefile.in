@@ -1,6 +1,6 @@
---- Makefile.in.orig	2004-01-06 16:22:17.000000000 +0900
-+++ Makefile.in	2014-06-16 21:40:34.440747700 +0900
-@@ -9,11 +9,11 @@
+--- Makefile.in.orig	2004-01-06 07:22:17 UTC
++++ Makefile.in
+@@ -9,11 +9,11 @@ VERSION= 451
  srcdir=	@srcdir@
  VPATH=	@srcdir@
  
@@ -14,7 +14,7 @@
  
  lvlibdir=	$(libdir)/lv
  distdir = lv$(VERSION)
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ UNIOBJS=	utf.o unimap.o unirev.o
  all:	lv
  
  lv:	$(OBJS) $(UNIOBJS)

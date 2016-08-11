@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: uchiwa
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable the puppet agent:
+#
+# uchiwa_enable="YES"
+
+. /etc/rc.subr
+
+name="uchiwa"
+rcvar=uchiwa_enable
+
+load_rc_config "$name"
+
+: ${uchiwa_enable="NO"}
+: ${uchiwa_user="uchiwa"}
+: ${uchiwa_group="uchiwa"}
+: ${uchiwa_config="/usr/local/etc/uchiwa/config.json"}
+: ${uchiwa_publicdir="/usr/local/share/uchiwa/public/"}
+: ${uchiwa_rundir="/var/run/uchiwa"}
+: ${uchiwa_logfile="/var/log/uchiwa/uchiwa.log"}
+
+pidfile="${uchiwa_rundir}/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-P $pidfile -c /usr/local/bin/uchiwa -c ${uchiwa_config} -p ${uchiwa_publicdir} >> ${uchiwa_logfile}"
+
+unset uchiwa_flags
+start_precmd="install -d -o ${uchiwa_user} -g ${uchiwa_group} ${pidfile%/*}"
+
+run_rc_command "$1"

@@ -12,13 +12,13 @@
 %%WWWDIR%%/htdocs/admin.php
 %%WWWDIR%%/htdocs/banners.php
 %%WWWDIR%%/htdocs/cache/index.html
+%%WWWDIR%%/htdocs/class/auth/auth.php
 %%WWWDIR%%/htdocs/class/auth/auth_ads.php
-%%WWWDIR%%/htdocs/class/auth/authfactory.php
 %%WWWDIR%%/htdocs/class/auth/auth_ldap.php
 %%WWWDIR%%/htdocs/class/auth/auth_openid.php
-%%WWWDIR%%/htdocs/class/auth/auth.php
 %%WWWDIR%%/htdocs/class/auth/auth_provisionning.php
 %%WWWDIR%%/htdocs/class/auth/auth_xoops.php
+%%WWWDIR%%/htdocs/class/auth/authfactory.php
 %%WWWDIR%%/htdocs/class/auth/index.html
 %%WWWDIR%%/htdocs/class/captcha/captcha.php
 %%WWWDIR%%/htdocs/class/captcha/config.php
@@ -31,8 +31,8 @@
 %%WWWDIR%%/htdocs/class/class.zipfile.php
 %%WWWDIR%%/htdocs/class/commentrenderer.php
 %%WWWDIR%%/htdocs/class/criteria.php
-%%WWWDIR%%/htdocs/class/database/databasefactory.php
 %%WWWDIR%%/htdocs/class/database/database.php
+%%WWWDIR%%/htdocs/class/database/databasefactory.php
 %%WWWDIR%%/htdocs/class/database/databaseupdater.php
 %%WWWDIR%%/htdocs/class/database/drivers/index.html
 %%WWWDIR%%/htdocs/class/database/drivers/mysql/database.php
@@ -50,8 +50,8 @@
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformautocompleteelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformblockoptionselement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformcheckelement.php
-%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformdateelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformdate_timeelement.php
+%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformdateelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformfileelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformfileuploadelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformhidden.php
@@ -62,18 +62,18 @@
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformparentcategoryelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformradioelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformrichfileelement.php
-%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformsectionclose.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformsection.php
-%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformselectelement.php
+%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformsectionclose.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformselect_multielement.php
+%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformselectelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformset_passwordelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformsourceeditor.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformtextelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformtimeelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformuploadelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformurllinkelement.php
-%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformuserelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformuser_sigelement.php
+%%WWWDIR%%/htdocs/class/icmsform/elements/icmsformuserelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/icmsformyesnoelement.php
 %%WWWDIR%%/htdocs/class/icmsform/elements/index.html
 %%WWWDIR%%/htdocs/class/icmsform/icmsform.php
@@ -95,15 +95,16 @@
 %%WWWDIR%%/htdocs/class/plugins.php
 %%WWWDIR%%/htdocs/class/tardownloader.php
 %%WWWDIR%%/htdocs/class/template.php
-%%WWWDIR%%/htdocs/class/theme_blocks.php
 %%WWWDIR%%/htdocs/class/theme.php
+%%WWWDIR%%/htdocs/class/theme_blocks.php
 %%WWWDIR%%/htdocs/class/tree.php
 %%WWWDIR%%/htdocs/class/uploader.php
 %%WWWDIR%%/htdocs/class/xoopsblock.php
 %%WWWDIR%%/htdocs/class/xoopseditor.inc.php
-%%WWWDIR%%/htdocs/class/xoopseditor/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor.php
+%%WWWDIR%%/htdocs/class/xoopseditor/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/xoopseditor.php
+%%WWWDIR%%/htdocs/class/xoopsform/form.php
 %%WWWDIR%%/htdocs/class/xoopsform/formbutton.php
 %%WWWDIR%%/htdocs/class/xoopsform/formcaptcha.php
 %%WWWDIR%%/htdocs/class/xoopsform/formcheckbox.php
@@ -116,31 +117,30 @@
 %%WWWDIR%%/htdocs/class/xoopsform/formfile.php
 %%WWWDIR%%/htdocs/class/xoopsform/formhidden.php
 %%WWWDIR%%/htdocs/class/xoopsform/formhiddentoken.php
-%%WWWDIR%%/htdocs/class/xoopsform/formimage_browse.php
 %%WWWDIR%%/htdocs/class/xoopsform/formimage.php
+%%WWWDIR%%/htdocs/class/xoopsform/formimage_browse.php
 %%WWWDIR%%/htdocs/class/xoopsform/formlabel.php
 %%WWWDIR%%/htdocs/class/xoopsform/formpassword.php
-%%WWWDIR%%/htdocs/class/xoopsform/form.php
 %%WWWDIR%%/htdocs/class/xoopsform/formradio.php
 %%WWWDIR%%/htdocs/class/xoopsform/formradioyn.php
+%%WWWDIR%%/htdocs/class/xoopsform/formselect.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselectcountry.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselecteditor.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselectgroup.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselectlang.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselectmatchoption.php
-%%WWWDIR%%/htdocs/class/xoopsform/formselect.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselecttheme.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselecttimezone.php
 %%WWWDIR%%/htdocs/class/xoopsform/formselectuser.php
+%%WWWDIR%%/htdocs/class/xoopsform/formtext.php
 %%WWWDIR%%/htdocs/class/xoopsform/formtextarea.php
 %%WWWDIR%%/htdocs/class/xoopsform/formtextdateselect.php
-%%WWWDIR%%/htdocs/class/xoopsform/formtext.php
 %%WWWDIR%%/htdocs/class/xoopsform/grouppermform.php
 %%WWWDIR%%/htdocs/class/xoopsform/index.html
-%%WWWDIR%%/htdocs/class/xoopsformloader.php
 %%WWWDIR%%/htdocs/class/xoopsform/simpleform.php
 %%WWWDIR%%/htdocs/class/xoopsform/tableform.php
 %%WWWDIR%%/htdocs/class/xoopsform/themeform.php
+%%WWWDIR%%/htdocs/class/xoopsformloader.php
 %%WWWDIR%%/htdocs/class/xoopslists.php
 %%WWWDIR%%/htdocs/class/xoopsmailer.php
 %%WWWDIR%%/htdocs/class/xoopsmodule.php
@@ -154,6 +154,118 @@
 %%WWWDIR%%/htdocs/class/zipdownloader.php
 %%WWWDIR%%/htdocs/content.php
 %%WWWDIR%%/htdocs/editors/FCKeditor/_documentation.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/_upgrade.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/_whatsnew.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/_whatsnew_history.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckcontextmenu.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdataprocessor.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdocumentfragment_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdocumentfragment_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrangeiterator.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckeditingarea.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckelementpath.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckenterkey.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckevents.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckhtmliterator.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckicon.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckiecleanup.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckimagepreloader.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckkeystrokehandler.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenublock.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenublockpanel.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenuitem.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckpanel.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckplugin.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckspecialcombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyle.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstylesloader.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbar.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbreak_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbutton.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbuttonui.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontscombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarpanelbutton.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarspecialcombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarstylecombo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckw3crange.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/index.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fck_othercommands.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckblockquotecommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckcorestylecommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckfitwindow.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckindentcommands.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckjustifycommands.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcklistcommands.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcknamedcommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckpastewordcommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckremoveformatcommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckshowblocks.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckstylecommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcktablecommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcktextcolorcommand.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/index.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckconstants.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckeditorapi.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckjscoreextensions.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckscriptloader.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/index.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_contextmenu.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckbrowserinfo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckcodeformatter.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckcommands.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckconfig.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdebug.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdebug_empty.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdocumentprocessor.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdomtools.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklanguagemanager.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklisthandler.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklistslib.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckplugins.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckregexlib.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckscayt.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckstyles.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktoolbaritems.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktoolbarset.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckurlparams.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml_gecko.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml_ie.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtmlentities.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css/behaviors/disablehandles.htc
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css/behaviors/hiddenfield.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css/behaviors/hiddenfield.htc
@@ -201,22 +313,22 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_checkbox.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_colorselector.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_div.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_docprops.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_docprops/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_find.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash/fck_flash.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash/fck_flash_preview.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_form.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_hiddenfield.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image/fck_image.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image/fck_image_preview.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_link.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_link/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_listprop.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_paste.html
@@ -224,8 +336,8 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_replace.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_scayt.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_scayt/scayt_dialog.css
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_select.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_select/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_smiley.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_source.html
@@ -244,8 +356,8 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_tablecell.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_table.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_tablecell.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template/images/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template/images/template1.gif
@@ -254,12 +366,12 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_textarea.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_textfield.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/00.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/data.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/diacritic.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/dialogue.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/fck_universalkey.css
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/keyboard_layout.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey/multihexa.js
@@ -282,11 +394,11 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/frmresourcetype.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/frmupload.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/ButtonArrow.gif
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/Folder32.gif
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderOpened.gif
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderUp.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/Folder.gif
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/Folder32.gif
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderOpened.gif
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/FolderUp.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/icons/32/ai.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/icons/32/avi.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/icons/32/bmp.gif
@@ -395,17 +507,17 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/js/fckeditorcode_gecko.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/js/fckeditorcode_ie.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/js/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/en.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/_getfontformat.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/_translationstatus.txt
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/en.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/autogrow/fckplugin.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/autogrow/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/fckplugin.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/_sample/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/_sample/sample.config.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/_sample/sample.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/fckplugin.js
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/dragresizetable/fckplugin.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/dragresizetable/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/index.html
@@ -419,7 +531,7 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/simplecommands/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/tablecommands/fckplugin.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/tablecommands/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor_registry.php
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/_fckviewstrips.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/fck_dialog.css
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/fck_dialog_ie6.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/fck_editor.css
@@ -436,7 +548,6 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/images/toolbar.expand.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/images/toolbar.separator.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/images/toolbar.start.gif
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/_fckviewstrips.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/office2003/fck_dialog.css
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/office2003/fck_dialog_ie6.js
@@ -476,119 +587,11 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/silver/images/toolbar.start.gif
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/silver/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckcontextmenu.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdataprocessor.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdocumentfragment_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdocumentfragment_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrangeiterator.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckdomrange.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckeditingarea.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckelementpath.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckenterkey.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckevents.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckhtmliterator.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckicon.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckiecleanup.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckimagepreloader.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckkeystrokehandler.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenublock.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenublockpanel.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckmenuitem.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckpanel.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckplugin.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckspecialcombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyledef.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstyle.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckstylesloader.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbreak_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbutton.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarbuttonui.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontscombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbar.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarpanelbutton.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarspecialcombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fcktoolbarstylecombo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckw3crange.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/fckxml.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckblockquotecommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckcorestylecommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckfitwindow.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckindentcommands.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckjustifycommands.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcklistcommands.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcknamedcommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fck_othercommands.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckpastewordcommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckremoveformatcommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckshowblocks.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fckstylecommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcktablecommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/fcktextcolorcommand.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckconstants.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckeditorapi.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckjscoreextensions.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/fckscriptloader.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckbrowserinfo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckcodeformatter.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckcommands.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckconfig.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_contextmenu.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdebug_empty.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdebug.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdialog.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdocumentprocessor.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckdomtools.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fck.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklanguagemanager.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklisthandler.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcklistslib.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckplugins.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckregexlib.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckscayt.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckselection.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckstyles.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktablehandler.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktoolbaritems.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktoolbarset.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fcktools.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckundo.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckurlparams.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtmlentities.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml_gecko.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml_ie.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/fckxhtml.js
-%%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/wsc/ciframe.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/wsc/index.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/wsc/tmpFrameset.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/editor/wsc/w.html
+%%WWWDIR%%/htdocs/editors/FCKeditor/editor_registry.php
 %%WWWDIR%%/htdocs/editors/FCKeditor/fckconfig.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/fckeditor.js
 %%WWWDIR%%/htdocs/editors/FCKeditor/fckeditor.php
@@ -606,9 +609,6 @@
 %%WWWDIR%%/htdocs/editors/FCKeditor/module/fckeditor.connector.php
 %%WWWDIR%%/htdocs/editors/FCKeditor/module/fckeditor.upload.php
 %%WWWDIR%%/htdocs/editors/FCKeditor/module/index.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/_upgrade.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/_whatsnew_history.html
-%%WWWDIR%%/htdocs/editors/FCKeditor/_whatsnew.html
 %%WWWDIR%%/htdocs/editors/FCKeditor/xoops_version.php
 %%WWWDIR%%/htdocs/editors/dhtmltextarea/dhtmltextarea.php
 %%WWWDIR%%/htdocs/editors/dhtmltextarea/editor_registry.php
@@ -702,8 +702,6 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/js/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/langs/index.html
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example_dependency/editor_plugin.js
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example_dependency/editor_plugin_src.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/dialog.htm
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/editor_plugin.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/editor_plugin_src.js
@@ -712,9 +710,11 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/js/dialog.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/js/index.html
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/langs/index.html
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example_dependency/editor_plugin.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example_dependency/editor_plugin_src.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/css/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/editor_plugin.js
@@ -736,8 +736,8 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/js/icmsmlcontent.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/js/index.html
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/mlcontent.php
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/readme.txt
@@ -844,12 +844,14 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/searchreplace.htm
+@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/classes/utils
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/css/content.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/css/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/editor_plugin_src.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/img/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/img/wline.gif
+@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/includes
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/css/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/css/props.css
@@ -931,8 +933,8 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/js/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/js/xoopsemotions.js
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/readme.txt
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/xoopsemotions.php
@@ -947,8 +949,8 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/js/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/js/xoopsimagebrowser.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/js/xoopsimagemanager.js
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/xoopsimagebrowser.php
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/xoopsimagemanager.php
@@ -964,8 +966,8 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/js/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/js/xoopscode.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/js/xoopsquote.js
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/readme.txt
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/xoopscode.htm
@@ -998,8 +1000,8 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/js/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/js/link.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/js/source_editor.js
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/langs/en.js
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/link.htm
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/shortcuts.htm
@@ -1020,13 +1022,13 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/content.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/dialog.css
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg_black.png
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg_black.png
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg_silver.png
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/index.html
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/ui_black.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/ui.css
+%%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/ui_black.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/ui_silver.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/source_editor.htm
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/index.html
@@ -1069,13 +1071,13 @@
 %%WWWDIR%%/htdocs/images/aligncenter.gif
 %%WWWDIR%%/htdocs/images/alignleft.gif
 %%WWWDIR%%/htdocs/images/alignright.gif
-%%WWWDIR%%/htdocs/images/arrow1.gif
 %%WWWDIR%%/htdocs/images/arrow.gif
+%%WWWDIR%%/htdocs/images/arrow1.gif
 %%WWWDIR%%/htdocs/images/await.gif
 %%WWWDIR%%/htdocs/images/banners/banner.swf
+%%WWWDIR%%/htdocs/images/banners/impresscms_banner.gif
 %%WWWDIR%%/htdocs/images/banners/impresscms_banner_2.gif
 %%WWWDIR%%/htdocs/images/banners/impresscms_banner_3.gif
-%%WWWDIR%%/htdocs/images/banners/impresscms_banner.gif
 %%WWWDIR%%/htdocs/images/banners/index.html
 %%WWWDIR%%/htdocs/images/bg.gif
 %%WWWDIR%%/htdocs/images/blank.gif
@@ -1117,20 +1119,21 @@
 %%WWWDIR%%/htdocs/images/hide.gif
 %%WWWDIR%%/htdocs/images/icon_big.png
 %%WWWDIR%%/htdocs/images/icon_options.png
+%%WWWDIR%%/htdocs/images/icon_small.png
 %%WWWDIR%%/htdocs/images/icons/aim.gif
-%%WWWDIR%%/htdocs/images/icons/delete_block.gif
 %%WWWDIR%%/htdocs/images/icons/delete.gif
-%%WWWDIR%%/htdocs/images/icons/edit_block.gif
+%%WWWDIR%%/htdocs/images/icons/delete_block.gif
 %%WWWDIR%%/htdocs/images/icons/edit.gif
-%%WWWDIR%%/htdocs/images/icons/email.gif
+%%WWWDIR%%/htdocs/images/icons/edit_block.gif
 %%WWWDIR%%/htdocs/images/icons/em_small.gif
+%%WWWDIR%%/htdocs/images/icons/email.gif
 %%WWWDIR%%/htdocs/images/icons/english/aim.gif
-%%WWWDIR%%/htdocs/images/icons/english/delete_block.gif
 %%WWWDIR%%/htdocs/images/icons/english/delete.gif
-%%WWWDIR%%/htdocs/images/icons/english/edit_block.gif
+%%WWWDIR%%/htdocs/images/icons/english/delete_block.gif
 %%WWWDIR%%/htdocs/images/icons/english/edit.gif
-%%WWWDIR%%/htdocs/images/icons/english/email.gif
+%%WWWDIR%%/htdocs/images/icons/english/edit_block.gif
 %%WWWDIR%%/htdocs/images/icons/english/em_small.gif
+%%WWWDIR%%/htdocs/images/icons/english/email.gif
 %%WWWDIR%%/htdocs/images/icons/english/icq_add.gif
 %%WWWDIR%%/htdocs/images/icons/english/index.html
 %%WWWDIR%%/htdocs/images/icons/english/ip.gif
@@ -1138,22 +1141,21 @@
 %%WWWDIR%%/htdocs/images/icons/english/no_posticon.gif
 %%WWWDIR%%/htdocs/images/icons/english/pm.gif
 %%WWWDIR%%/htdocs/images/icons/english/pm_small.gif
-%%WWWDIR%%/htdocs/images/icons/english/posticon2.gif
 %%WWWDIR%%/htdocs/images/icons/english/posticon.gif
+%%WWWDIR%%/htdocs/images/icons/english/posticon2.gif
 %%WWWDIR%%/htdocs/images/icons/english/profile.gif
 %%WWWDIR%%/htdocs/images/icons/english/reply.gif
-%%WWWDIR%%/htdocs/images/icons/english/www.gif
+%%WWWDIR%%/htdocs/images/icons/english/%%WWWOWN%%.gif
 %%WWWDIR%%/htdocs/images/icons/english/yim.gif
 %%WWWDIR%%/htdocs/images/icons/icq_add.gif
 %%WWWDIR%%/htdocs/images/icons/index.html
 %%WWWDIR%%/htdocs/images/icons/ip.gif
-%%WWWDIR%%/htdocs/images/icon_small.png
 %%WWWDIR%%/htdocs/images/icons/msnm.gif
 %%WWWDIR%%/htdocs/images/icons/no_posticon.gif
 %%WWWDIR%%/htdocs/images/icons/pm.gif
 %%WWWDIR%%/htdocs/images/icons/pm_small.gif
-%%WWWDIR%%/htdocs/images/icons/posticon2.gif
 %%WWWDIR%%/htdocs/images/icons/posticon.gif
+%%WWWDIR%%/htdocs/images/icons/posticon2.gif
 %%WWWDIR%%/htdocs/images/icons/profile.gif
 %%WWWDIR%%/htdocs/images/icons/reply.gif
 %%WWWDIR%%/htdocs/images/icons/social/ask.gif
@@ -1189,7 +1191,7 @@
 %%WWWDIR%%/htdocs/images/icons/social/wong.gif
 %%WWWDIR%%/htdocs/images/icons/social/yahoo.gif
 %%WWWDIR%%/htdocs/images/icons/social/yigg.gif
-%%WWWDIR%%/htdocs/images/icons/www.gif
+%%WWWDIR%%/htdocs/images/icons/%%WWWOWN%%.gif
 %%WWWDIR%%/htdocs/images/icons/yim.gif
 %%WWWDIR%%/htdocs/images/image.gif
 %%WWWDIR%%/htdocs/images/imgsrc.gif
@@ -1202,11 +1204,11 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/acp_help.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/asc.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/attach.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/back.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/back1.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/back2.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/back.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/bookmark_add.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/bookmark.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/bookmark_add.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/button_cancel.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/button_ok.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/cd.png
@@ -1218,32 +1220,32 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/decrypted.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/desc.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/down.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/edit.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/edit_picture.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/editcopy.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/editcut.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/editdelete.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/editpaste.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/edit_picture.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/edit.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/encrypted.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/exit.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/file.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/fileclose.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/filefind.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/filenew2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/filenew.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filenew2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/fileopen.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/file.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/fileprint.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/filequickprint.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/filesave2.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas2.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/filesave.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesave2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/find.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/folder_new.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/folder.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/folder_new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/forward.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/forward1.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/forward2.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/forward.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/frameprint.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/gohome.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/help.png
@@ -1253,8 +1255,8 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-split-audio.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-zoom-large.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-zoom-small.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/klipper_dock2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/klipper_dock.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/klipper_dock2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/locationbar_erase.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/lock.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/lpi-translate.png
@@ -1264,9 +1266,9 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_generic.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_get.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_reply.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_replyall.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_replylist.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_reply.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/mail_send.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/make_kdevelop.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/media-playback-pause.png
@@ -1296,9 +1298,9 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/queue.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/rebuild.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/redo.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/reload.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/reload3.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/reload_page.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/reload.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/run.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/signature.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/stop.png
@@ -1308,14 +1310,14 @@
 %%WWWDIR%%/htdocs/images/kfaenza/actions/toggle_log.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/undo.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/unlock.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/up2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/up.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/up2.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/view_bottom.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/view_choose.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/view_detailed.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/view_icon.png
-%%WWWDIR%%/htdocs/images/kfaenza/actions/viewmag.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/view_top.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/viewmag.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/window_fullscreen.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/window_new.png
 %%WWWDIR%%/htdocs/images/kfaenza/actions/wizard.png
@@ -1341,13 +1343,13 @@
 %%WWWDIR%%/htdocs/images/read.gif
 %%WWWDIR%%/htdocs/images/red.png
 %%WWWDIR%%/htdocs/images/right_both.gif
-%%WWWDIR%%/htdocs/images/search2.gif
+%%WWWDIR%%/htdocs/images/s_poweredby.gif
 %%WWWDIR%%/htdocs/images/search/blue_view.png
+%%WWWDIR%%/htdocs/images/search/body.left.gif
+%%WWWDIR%%/htdocs/images/search/body.right.gif
 %%WWWDIR%%/htdocs/images/search/bodyHeader.background.gif
 %%WWWDIR%%/htdocs/images/search/bodyHeader.left.gif
 %%WWWDIR%%/htdocs/images/search/bodyHeader.right.gif
-%%WWWDIR%%/htdocs/images/search/body.left.gif
-%%WWWDIR%%/htdocs/images/search/body.right.gif
 %%WWWDIR%%/htdocs/images/search/footer.background.gif
 %%WWWDIR%%/htdocs/images/search/footer.left.gif
 %%WWWDIR%%/htdocs/images/search/footer.right.gif
@@ -1361,7 +1363,7 @@
 %%WWWDIR%%/htdocs/images/search/separate.background.gif
 %%WWWDIR%%/htdocs/images/search/separate.left.gif
 %%WWWDIR%%/htdocs/images/search/separate.right.gif
-%%WWWDIR%%/htdocs/images/s_poweredby.gif
+%%WWWDIR%%/htdocs/images/search2.gif
 %%WWWDIR%%/htdocs/images/subject/icon1.gif
 %%WWWDIR%%/htdocs/images/subject/icon2.gif
 %%WWWDIR%%/htdocs/images/subject/icon3.gif
@@ -1384,12 +1386,12 @@
 %%WWWDIR%%/htdocs/include/comment_constants.php
 %%WWWDIR%%/htdocs/include/comment_delete.php
 %%WWWDIR%%/htdocs/include/comment_edit.php
-%%WWWDIR%%/htdocs/include/commentform.inc.php
 %%WWWDIR%%/htdocs/include/comment_form.php
 %%WWWDIR%%/htdocs/include/comment_new.php
 %%WWWDIR%%/htdocs/include/comment_post.php
 %%WWWDIR%%/htdocs/include/comment_reply.php
 %%WWWDIR%%/htdocs/include/comment_view.php
+%%WWWDIR%%/htdocs/include/commentform.inc.php
 %%WWWDIR%%/htdocs/include/common.php
 %%WWWDIR%%/htdocs/include/constants.php
 %%WWWDIR%%/htdocs/include/cp_functions.php
@@ -1415,8 +1417,8 @@
 %%WWWDIR%%/htdocs/include/searchform.php
 %%WWWDIR%%/htdocs/include/site-closed.php
 %%WWWDIR%%/htdocs/include/version.php
-%%WWWDIR%%/htdocs/include/xoopscodes.php
 %%WWWDIR%%/htdocs/include/xoops.js
+%%WWWDIR%%/htdocs/include/xoopscodes.php
 %%WWWDIR%%/htdocs/index.php
 %%WWWDIR%%/htdocs/install/class/dbmanager.php
 %%WWWDIR%%/htdocs/install/class/index.html
@@ -1432,16 +1434,16 @@
 %%WWWDIR%%/htdocs/install/img/down.png
 %%WWWDIR%%/htdocs/install/img/foot_bg.jpg
 %%WWWDIR%%/htdocs/install/img/green.png
-%%WWWDIR%%/htdocs/install/img/help2.png
 %%WWWDIR%%/htdocs/install/img/help.png
+%%WWWDIR%%/htdocs/install/img/help2.png
 %%WWWDIR%%/htdocs/install/img/instl_01.png
 %%WWWDIR%%/htdocs/install/img/instl_02.png
 %%WWWDIR%%/htdocs/install/img/instl_03.png
 %%WWWDIR%%/htdocs/install/img/left-arr.png
 %%WWWDIR%%/htdocs/install/img/logo.png
 %%WWWDIR%%/htdocs/install/img/mySQLpath.png
-%%WWWDIR%%/htdocs/install/img/no_big.png
 %%WWWDIR%%/htdocs/install/img/no.png
+%%WWWDIR%%/htdocs/install/img/no_big.png
 %%WWWDIR%%/htdocs/install/img/page_bg2.jpg
 %%WWWDIR%%/htdocs/install/img/pagebot2.jpg
 %%WWWDIR%%/htdocs/install/img/pagetop2.jpg
@@ -1453,9 +1455,9 @@
 %%WWWDIR%%/htdocs/install/img/trustpath.png
 %%WWWDIR%%/htdocs/install/img/webpath.png
 %%WWWDIR%%/htdocs/install/img/yellow.png
+%%WWWDIR%%/htdocs/install/img/yes.png
 %%WWWDIR%%/htdocs/install/img/yes2.png
 %%WWWDIR%%/htdocs/install/img/yes_big.png
-%%WWWDIR%%/htdocs/install/img/yes.png
 %%WWWDIR%%/htdocs/install/include/functions.php
 %%WWWDIR%%/htdocs/install/include/index.html
 %%WWWDIR%%/htdocs/install/index.html
@@ -1463,15 +1465,14 @@
 %%WWWDIR%%/htdocs/install/install_tpl.php
 %%WWWDIR%%/htdocs/install/jquery.scrollTo.js
 %%WWWDIR%%/htdocs/install/language/english/finish.php
-%%WWWDIR%%/htdocs/install/language/english/install2.php
 %%WWWDIR%%/htdocs/install/language/english/install.php
+%%WWWDIR%%/htdocs/install/language/english/install2.php
 %%WWWDIR%%/htdocs/install/language/english/mysql.lang.data.sql
-%%WWWDIR%%/htdocs/install/language/english/welcome_anonymous.tpl
 %%WWWDIR%%/htdocs/install/language/english/welcome.php
+%%WWWDIR%%/htdocs/install/language/english/welcome_anonymous.tpl
 %%WWWDIR%%/htdocs/install/language/english/welcome_webmaster.tpl
 %%WWWDIR%%/htdocs/install/language/index.html
 %%WWWDIR%%/htdocs/install/makedata.php
-%%WWWDIR%%/htdocs/install/modulesadmin.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/admin/admin_menu.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/admin/index.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/blocks/blocks.php
@@ -1485,6 +1486,7 @@
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/oninstall.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/onuninstall.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/onupdate.php
+@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/preload
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/search.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/xoops_version.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/.htaccess
@@ -1495,12 +1497,13 @@
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/README
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/README_PL.txt
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/TODO
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/advisory.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/index.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin_menu.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/mymenu.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/prefix_manager.php
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin_menu.php
+@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class/ProtectorFilter.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class/ProtectorMysqlDatabase.class.php
@@ -1524,24 +1527,25 @@
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/precommon_bwlimit_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/prepurge_exit_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/spamcheck_overrun_message.php
+@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_disabled
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_enabled/precommon_badip_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/iconbig_icms.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/iconsmall_icms.png
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/module_icon_icms.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/module_icon.png
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/module_icon_icms.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/module_icon_xcl.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/install_extramodcheck.inc.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/postcheck_functions.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/postcheck.inc.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/precheck_functions.php
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/postcheck_functions.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/precheck.inc.php
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/precheck_functions.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include/version.txt
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language/english/admin.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language/english/index.html
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language/english/main.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language/english/modinfo.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/main/index.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/main.php
+%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/main/index.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/module_icon.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/notification.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/oninstall.php
@@ -1557,6 +1561,7 @@
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/public_check.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/sql/mysql.sql
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/xoops_version.php
+%%WWWDIR%%/htdocs/install/modulesadmin.php
 %%WWWDIR%%/htdocs/install/page_configsave.php
 %%WWWDIR%%/htdocs/install/page_dbconnection.php
 %%WWWDIR%%/htdocs/install/page_dbsettings.php
@@ -1577,9 +1582,9 @@
 %%WWWDIR%%/htdocs/install/sql/mysql.data.sql
 %%WWWDIR%%/htdocs/install/sql/mysql.structure.sql
 %%WWWDIR%%/htdocs/install/style.css
+%%WWWDIR%%/htdocs/install/style_rtl.css
 %%WWWDIR%%/htdocs/install/stylelight.css
 %%WWWDIR%%/htdocs/install/stylelight_rtl.css
-%%WWWDIR%%/htdocs/install/style_rtl.css
 %%WWWDIR%%/htdocs/install/stylesheetToggle.js
 %%WWWDIR%%/htdocs/install/templates/index.html
 %%WWWDIR%%/htdocs/install/templates/mainfile.dist.php
@@ -1589,12 +1594,12 @@
 %%WWWDIR%%/htdocs/kernel/block.php
 %%WWWDIR%%/htdocs/kernel/blockposition.php
 %%WWWDIR%%/htdocs/kernel/comment.php
+%%WWWDIR%%/htdocs/kernel/config.php
 %%WWWDIR%%/htdocs/kernel/configcategory.php
 %%WWWDIR%%/htdocs/kernel/configitem.php
 %%WWWDIR%%/htdocs/kernel/configoption.php
-%%WWWDIR%%/htdocs/kernel/config.php
-%%WWWDIR%%/htdocs/kernel/groupperm.php
 %%WWWDIR%%/htdocs/kernel/group.php
+%%WWWDIR%%/htdocs/kernel/groupperm.php
 %%WWWDIR%%/htdocs/kernel/icmskernel.php
 %%WWWDIR%%/htdocs/kernel/icmsmetagen.php
 %%WWWDIR%%/htdocs/kernel/icmsmoduleabout.php
@@ -1603,8 +1608,8 @@
 %%WWWDIR%%/htdocs/kernel/icmspersistableexport.php
 %%WWWDIR%%/htdocs/kernel/icmspersistablehighlighter.php
 %%WWWDIR%%/htdocs/kernel/icmspersistablememberhandler.php
-%%WWWDIR%%/htdocs/kernel/icmspersistableobjecthandler.php
 %%WWWDIR%%/htdocs/kernel/icmspersistableobject.php
+%%WWWDIR%%/htdocs/kernel/icmspersistableobjecthandler.php
 %%WWWDIR%%/htdocs/kernel/icmspersistablepermission.php
 %%WWWDIR%%/htdocs/kernel/icmspersistableregistry.php
 %%WWWDIR%%/htdocs/kernel/icmspersistableseoobject.php
@@ -1614,8 +1619,8 @@
 %%WWWDIR%%/htdocs/kernel/icmspersistabletreetable.php
 %%WWWDIR%%/htdocs/kernel/icmspreloadhandler.php
 %%WWWDIR%%/htdocs/kernel/icmsstopspammer.php
-%%WWWDIR%%/htdocs/kernel/imagecategory.php
 %%WWWDIR%%/htdocs/kernel/image.php
+%%WWWDIR%%/htdocs/kernel/imagecategory.php
 %%WWWDIR%%/htdocs/kernel/imageset.php
 %%WWWDIR%%/htdocs/kernel/index.html
 %%WWWDIR%%/htdocs/kernel/member.php
@@ -1683,14 +1688,15 @@
 %%WWWDIR%%/htdocs/libraries/geshi/docs/geshi-doc.txt
 %%WWWDIR%%/htdocs/libraries/geshi/docs/index.html
 %%WWWDIR%%/htdocs/libraries/geshi/docs/phpdoc.ini
+%%WWWDIR%%/htdocs/libraries/geshi/geshi.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/4cs.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/6502acme.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/6502kickass.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/6502tasm.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/68000devpac.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/abap.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/actionscript3.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/actionscript.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/actionscript3.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/ada.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/algol68.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/apache.php
@@ -1711,36 +1717,36 @@
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/blitzbasic.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/bnf.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/boo.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/c.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/c_loadrunner.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/c_mac.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/caddcl.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cadlisp.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cfdg.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cfm.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/chaiscript.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cil.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/c_loadrunner.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/clojure.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/c_mac.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cmake.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cobol.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/coffeescript.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/c.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/cpp.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cpp-qt.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/cpp.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/csharp.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/css.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/cuesheet.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/d.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/dcs.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/delphi.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/diff.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/div.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/dos.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/dot.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/d.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/e.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/ecmascript.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/eiffel.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/email.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/epc.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/e.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/erlang.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/euphoria.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/f1.php
@@ -1772,10 +1778,10 @@
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/inno.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/intercal.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/io.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/java5.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/java.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/javascript.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/j.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/java.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/java5.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/javascript.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/jquery.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/kixtart.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/klonec.php
@@ -1818,11 +1824,10 @@
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/oz.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/pascal.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/pcre.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/perl6.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/perl.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/per.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/perl.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/perl6.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/pf.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/php-brief.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/php.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/pic16.php
@@ -1842,8 +1847,8 @@
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/purebasic.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/pycon.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/python.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/qbasic.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/q.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/qbasic.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/rails.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/rebol.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/reg.php
@@ -1869,8 +1874,8 @@
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/unicon.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/uscript.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/vala.php
-%%WWWDIR%%/htdocs/libraries/geshi/geshi/vbnet.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/vb.php
+%%WWWDIR%%/htdocs/libraries/geshi/geshi/vbnet.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/verilog.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/vhdl.php
 %%WWWDIR%%/htdocs/libraries/geshi/geshi/vim.php
@@ -1897,27 +1902,28 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
@@ -1965,12 +1971,12 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
@@ -2008,20 +2014,20 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
+@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/GoogleVideo.php
@@ -2032,16 +2038,17 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/YouTube.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/classes/en-x-test.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-test.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Lexer/PH5P.php
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.css
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer.php
+%%WWWDIR%%/htdocs/libraries/icms.php
 %%WWWDIR%%/htdocs/libraries/icms/Autoloader.php
 %%WWWDIR%%/htdocs/libraries/icms/Event.php
 %%WWWDIR%%/htdocs/libraries/icms/Utils.php
@@ -2072,8 +2079,8 @@
 %%WWWDIR%%/htdocs/libraries/icms/core/Logger.php
 %%WWWDIR%%/htdocs/libraries/icms/core/Logger_render.php
 %%WWWDIR%%/htdocs/libraries/icms/core/Message.php
-%%WWWDIR%%/htdocs/libraries/icms/core/ObjectHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/core/Object.php
+%%WWWDIR%%/htdocs/libraries/icms/core/ObjectHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/core/OnlineHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/core/Password.php
 %%WWWDIR%%/htdocs/libraries/icms/core/Security.php
@@ -2162,11 +2169,11 @@
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/Radio.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/Radioyn.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/Select.php
-%%WWWDIR%%/htdocs/libraries/icms/form/elements/Textarea.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/Text.php
+%%WWWDIR%%/htdocs/libraries/icms/form/elements/Textarea.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/Tray.php
-%%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/ImageHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/Image.php
+%%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/ImageHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/Object.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/Text.php
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/backgrounds/background00.png
@@ -2182,6 +2189,7 @@
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/backgrounds/background10.png
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/backgrounds/index.html
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/config.php
+%%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/Vera.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraBI.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraBd.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraIt.ttf
@@ -2190,7 +2198,6 @@
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraMoIt.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraMono.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/VeraSe.ttf
-%%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/Vera.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/arial.ttf
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/index.html
 %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts/verasebd.ttf
@@ -2249,8 +2256,8 @@
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Radio.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Richfile.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Section.php
-%%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Selectmulti.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Select.php
+%%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Selectmulti.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Signature.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Source.php
 %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements/Text.php
@@ -2296,7 +2303,6 @@
 %%WWWDIR%%/htdocs/libraries/icms/module/Handler.php
 %%WWWDIR%%/htdocs/libraries/icms/module/Object.php
 %%WWWDIR%%/htdocs/libraries/icms/module/index.html
-%%WWWDIR%%/htdocs/libraries/icms.php
 %%WWWDIR%%/htdocs/libraries/icms/plugins/EditorHandler.php
 %%WWWDIR%%/htdocs/libraries/icms/plugins/Handler.php
 %%WWWDIR%%/htdocs/libraries/icms/plugins/Object.php
@@ -2341,9 +2347,9 @@
 %%WWWDIR%%/htdocs/libraries/image-editor/images/arrow_up.gif
 %%WWWDIR%%/htdocs/libraries/image-editor/images/arrow_up_over.gif
 %%WWWDIR%%/htdocs/libraries/image-editor/images/bg_pane_left.gif
+%%WWWDIR%%/htdocs/libraries/image-editor/images/bg_pane_right.gif
 %%WWWDIR%%/htdocs/libraries/image-editor/images/bg_panel_top_left.gif
 %%WWWDIR%%/htdocs/libraries/image-editor/images/bg_panel_top_right.gif
-%%WWWDIR%%/htdocs/libraries/image-editor/images/bg_pane_right.gif
 %%WWWDIR%%/htdocs/libraries/image-editor/images/help.png
 %%WWWDIR%%/htdocs/libraries/image-editor/images/index.html
 %%WWWDIR%%/htdocs/libraries/image-editor/images/small_square.gif
@@ -2408,8 +2414,8 @@
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/aqua/theme.css
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/aqua/title-bg.gif
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/aqua/today-bg.gif
-%%WWWDIR%%/htdocs/libraries/jalalijscalendar/calendar.js
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/calendar-setup.js
+%%WWWDIR%%/htdocs/libraries/jalalijscalendar/calendar.js
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/index.html
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/jalali.js
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/colorbox.css
@@ -2425,8 +2431,8 @@
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/ie6/borderTopRight.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/ie6/index.html
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/index.html
-%%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/loading_background.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/loading.gif
+%%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/loading_background.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/overlay.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/index.html
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/jquery.colorbox-min.js
@@ -2476,8 +2482,8 @@
 %%WWWDIR%%/htdocs/libraries/lightbox/index.html
 %%WWWDIR%%/htdocs/libraries/lightbox/js/builder.js
 %%WWWDIR%%/htdocs/libraries/lightbox/js/effects.js
-%%WWWDIR%%/htdocs/libraries/lightbox/js/lightbox.js
 %%WWWDIR%%/htdocs/libraries/lightbox/js/lightbox-web.js
+%%WWWDIR%%/htdocs/libraries/lightbox/js/lightbox.js
 %%WWWDIR%%/htdocs/libraries/lightbox/js/prototype.js
 %%WWWDIR%%/htdocs/libraries/lightbox/js/scriptaculous.js
 %%WWWDIR%%/htdocs/libraries/paginationstyles/css/badoo.css
@@ -2526,8 +2532,9 @@
 %%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-ru.php
 %%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-se.php
 %%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-tr.php
-%%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-zh_cn.php
 %%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/htdocs/libraries/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/AX.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Association.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/BigMath.php
@@ -2553,12 +2560,11 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/SQLStore.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/SQLiteStore.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/SReg.php
-%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/ServerRequest.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Server.php
+%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/ServerRequest.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/TrustRoot.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/URINorm.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/index.html
-%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/HTTPFetcher.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/Manager.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/Misc.php
@@ -2567,8 +2573,8 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/PlainHTTPFetcher.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/XML.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/XRDS.php
-%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/XRIRes.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/XRI.php
+%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/XRIRes.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/Yadis.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/index.html
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/index.html
@@ -2601,8 +2607,8 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/notabs
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/open_tag
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/otb_test.php
-%%WWWDIR%%/htdocs/libraries/phpopenid/admin/package2.xml
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/package.xml
+%%WWWDIR%%/htdocs/libraries/phpopenid/admin/package2.xml
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/packagexml.py
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/phpaliases.py
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/prepare-release
@@ -2630,13 +2636,14 @@
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/index.html
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/npdata.ser
 %%WWWDIR%%/htdocs/libraries/simplepie/index.html
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Author.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/Base.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/DB.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/File.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/Memcache.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/MySQL.php
-%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Caption.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Category.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content/Type/Sniffer.php
@@ -2661,10 +2668,9 @@
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Source.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML/Declaration/Parser.php
 %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/gzdecode.php
-%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie.php
 %%WWWDIR%%/htdocs/libraries/smarty/Config_File.class.php
-%%WWWDIR%%/htdocs/libraries/smarty/Smarty_Compiler.class.php
 %%WWWDIR%%/htdocs/libraries/smarty/Smarty.class.php
+%%WWWDIR%%/htdocs/libraries/smarty/Smarty_Compiler.class.php
 %%WWWDIR%%/htdocs/libraries/smarty/configs/index.html
 %%WWWDIR%%/htdocs/libraries/smarty/configs/test.conf
 %%WWWDIR%%/htdocs/libraries/smarty/debug.tpl
@@ -2721,8 +2727,8 @@
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/function.html_table.php
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/function.mailto.php
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/function.math.php
-%%WWWDIR%%/htdocs/libraries/smarty/plugins/function.popup_init.php
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/function.popup.php
+%%WWWDIR%%/htdocs/libraries/smarty/plugins/function.popup_init.php
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/index.html
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/modifier.capitalize.php
 %%WWWDIR%%/htdocs/libraries/smarty/plugins/modifier.cat.php
@@ -2808,8 +2814,8 @@
 %%WWWDIR%%/htdocs/libraries/tcpdf/config/lang/urd.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/config/lang/yid.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/config/lang/zho.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/config/tcpdf_config_alt.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/config/tcpdf_config.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/config/tcpdf_config_alt.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/datamatrix.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/encodings_maps.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/aealarabiya.php
@@ -2819,10 +2825,10 @@
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/cid0ct.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/cid0jp.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/cid0kr.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courierbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courierb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courieri.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courier.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courierb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courierbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/courieri.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/AUTHORS
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/BUGS
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/LICENSE
@@ -2831,84 +2837,84 @@
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/langcover.txt
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/status.txt
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33/unicover.txt
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensed.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusans.ctg.z
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansextralight.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonobi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonob.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonoi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmono.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusans.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusans.z
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensed.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensed.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusanscondensedi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansextralight.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmono.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonob.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonobi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavusansmonoi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserif.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensed.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifcondensedi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavuserifi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/AUTHORS
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/COPYING
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/CREDITS
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/ChangeLog
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/INSTALL
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919/README
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonobi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonob.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonoi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemono.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonob.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonobi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freemonoi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesans.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freesansi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserif.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticabi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticab.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freeserifi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helvetica.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticab.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticabi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/helveticai.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/hysmyeongjostdmedium.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/index.html
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/kozgopromedium.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/kozminproregular.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/msungstdlight.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourierbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourierb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourieri.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourier.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticabi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticab.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticai.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourierb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourierbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfacourieri.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelvetica.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticab.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticabi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfahelveticai.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfasymbol.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimes.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfatimesi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/pdfazapfdingbats.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/stsongstdlight.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/symbol.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesbi.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesb.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/times.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesb.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesbi.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/fonts/timesi.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/uni2cid_ac15.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/uni2cid_ag15.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/uni2cid_aj16.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/uni2cid_ak12.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/zapfdingbats.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/htmlcolors.php
-%%WWWDIR%%/htdocs/libraries/tcpdf/images/alpha.png
 %%WWWDIR%%/htdocs/libraries/tcpdf/images/_blank.png
+%%WWWDIR%%/htdocs/libraries/tcpdf/images/alpha.png
 %%WWWDIR%%/htdocs/libraries/tcpdf/images/bug.eps
 %%WWWDIR%%/htdocs/libraries/tcpdf/images/image_demo.jpg
 %%WWWDIR%%/htdocs/libraries/tcpdf/images/image_with_alpha.png
@@ -2930,11 +2936,11 @@
 %%WWWDIR%%/htdocs/libraries/tcpdf/spotcolors.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf.crt
 %%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf.fdf
-%%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf_filters.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf.p12
-%%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf_parser.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf.pem
 %%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf_filters.php
+%%WWWDIR%%/htdocs/libraries/tcpdf/tcpdf_parser.php
 %%WWWDIR%%/htdocs/libraries/tcpdf/unicode_data.php
 %%WWWDIR%%/htdocs/libraries/wideimage/index.html
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Canvas.php
@@ -2946,14 +2952,14 @@
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Font/index.html
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Image.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/BMP.php
-%%WWWDIR%%/htdocs/libraries/wideimage/lib/MapperFactory.php
-%%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/GD2.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/GD.php
+%%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/GD2.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/GIF.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/JPEG.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/PNG.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/TGA.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper/index.html
+%%WWWDIR%%/htdocs/libraries/wideimage/lib/MapperFactory.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/AddNoise.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/ApplyConvolution.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/ApplyFilter.php
@@ -2965,17 +2971,17 @@
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/CopyChannelsTrueColor.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/CorrectGamma.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Crop.php
-%%WWWDIR%%/htdocs/libraries/wideimage/lib/OperationFactory.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Flip.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/GetMask.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Merge.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Mirror.php
-%%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/ResizeCanvas.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Resize.php
+%%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/ResizeCanvas.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Rotate.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/RoundCorners.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/Unsharp.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation/index.html
+%%WWWDIR%%/htdocs/libraries/wideimage/lib/OperationFactory.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/PaletteImage.php
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/README
 %%WWWDIR%%/htdocs/libraries/wideimage/lib/TrueColorImage.php
@@ -3016,16 +3022,16 @@
 %%WWWDIR%%/htdocs/modules/banners/admin/menu.php
 %%WWWDIR%%/htdocs/modules/banners/admin/position.php
 %%WWWDIR%%/htdocs/modules/banners/banner.php
-%%WWWDIR%%/htdocs/modules/banners/class/BannerHandler.php
 %%WWWDIR%%/htdocs/modules/banners/class/Banner.php
-%%WWWDIR%%/htdocs/modules/banners/class/ClientHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/BannerHandler.php
 %%WWWDIR%%/htdocs/modules/banners/class/Client.php
-%%WWWDIR%%/htdocs/modules/banners/class/PositionHandler.php
-%%WWWDIR%%/htdocs/modules/banners/class/PositionlinkHandler.php
-%%WWWDIR%%/htdocs/modules/banners/class/Positionlink.php
+%%WWWDIR%%/htdocs/modules/banners/class/ClientHandler.php
 %%WWWDIR%%/htdocs/modules/banners/class/Position.php
-%%WWWDIR%%/htdocs/modules/banners/class/VisibleinHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/PositionHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/Positionlink.php
+%%WWWDIR%%/htdocs/modules/banners/class/PositionlinkHandler.php
 %%WWWDIR%%/htdocs/modules/banners/class/Visiblein.php
+%%WWWDIR%%/htdocs/modules/banners/class/VisibleinHandler.php
 %%WWWDIR%%/htdocs/modules/banners/class/index.html
 %%WWWDIR%%/htdocs/modules/banners/client.php
 %%WWWDIR%%/htdocs/modules/banners/docs/changelog.txt
@@ -3075,8 +3081,8 @@
 %%WWWDIR%%/htdocs/modules/content/blocks/content_display.php
 %%WWWDIR%%/htdocs/modules/content/blocks/content_menu.php
 %%WWWDIR%%/htdocs/modules/content/blocks/index.html
-%%WWWDIR%%/htdocs/modules/content/class/ContentHandler.php
 %%WWWDIR%%/htdocs/modules/content/class/Content.php
+%%WWWDIR%%/htdocs/modules/content/class/ContentHandler.php
 %%WWWDIR%%/htdocs/modules/content/class/index.html
 %%WWWDIR%%/htdocs/modules/content/comment_delete.php
 %%WWWDIR%%/htdocs/modules/content/comment_edit.php
@@ -3168,37 +3174,37 @@
 %%WWWDIR%%/htdocs/modules/profile/blocks/index.html
 %%WWWDIR%%/htdocs/modules/profile/changemail.php
 %%WWWDIR%%/htdocs/modules/profile/changepass.php
-%%WWWDIR%%/htdocs/modules/profile/class/AudioHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Audio.php
-%%WWWDIR%%/htdocs/modules/profile/class/CategoryHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/AudioHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Category.php
-%%WWWDIR%%/htdocs/modules/profile/class/ConfigsHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/CategoryHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Configs.php
-%%WWWDIR%%/htdocs/modules/profile/class/FieldHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/ConfigsHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Field.php
-%%WWWDIR%%/htdocs/modules/profile/class/FriendshipHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/FieldHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Friendship.php
-%%WWWDIR%%/htdocs/modules/profile/class/PicturesHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/FriendshipHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Pictures.php
-%%WWWDIR%%/htdocs/modules/profile/class/ProfileHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/PicturesHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Profile.php
-%%WWWDIR%%/htdocs/modules/profile/class/RegstepHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/ProfileHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Regstep.php
+%%WWWDIR%%/htdocs/modules/profile/class/RegstepHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Smartuser.php
-%%WWWDIR%%/htdocs/modules/profile/class/TribepostHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Tribepost.php
-%%WWWDIR%%/htdocs/modules/profile/class/TribesHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribepostHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Tribes.php
-%%WWWDIR%%/htdocs/modules/profile/class/TribetopicHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribesHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Tribetopic.php
-%%WWWDIR%%/htdocs/modules/profile/class/TribeuserHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribetopicHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Tribeuser.php
-%%WWWDIR%%/htdocs/modules/profile/class/VideosHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribeuserHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Videos.php
-%%WWWDIR%%/htdocs/modules/profile/class/VisibilityHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/VideosHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Visibility.php
-%%WWWDIR%%/htdocs/modules/profile/class/VisitorsHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/VisibilityHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/Visitors.php
+%%WWWDIR%%/htdocs/modules/profile/class/VisitorsHandler.php
 %%WWWDIR%%/htdocs/modules/profile/class/index.html
 %%WWWDIR%%/htdocs/modules/profile/comment_delete.php
 %%WWWDIR%%/htdocs/modules/profile/comment_edit.php
@@ -3241,8 +3247,8 @@
 %%WWWDIR%%/htdocs/modules/profile/images/admin/visibility_small.png
 %%WWWDIR%%/htdocs/modules/profile/images/audio.gif
 %%WWWDIR%%/htdocs/modules/profile/images/avatar.gif
-%%WWWDIR%%/htdocs/modules/profile/images/blank18.png
 %%WWWDIR%%/htdocs/modules/profile/images/blank.gif
+%%WWWDIR%%/htdocs/modules/profile/images/blank18.png
 %%WWWDIR%%/htdocs/modules/profile/images/comments.gif
 %%WWWDIR%%/htdocs/modules/profile/images/configs.gif
 %%WWWDIR%%/htdocs/modules/profile/images/field/aim.gif
@@ -3340,10 +3346,11 @@
 %%WWWDIR%%/htdocs/modules/profile/tribes.php
 %%WWWDIR%%/htdocs/modules/profile/userinfo.php
 %%WWWDIR%%/htdocs/modules/profile/videos.php
+%%WWWDIR%%/htdocs/modules/system/admin.php
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/class/adsense.php
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/class/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/adsense/images/adsense_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/images/adsense.png
+%%WWWDIR%%/htdocs/modules/system/admin/adsense/images/adsense_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/images/adsense_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/index.html
@@ -3351,23 +3358,23 @@
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/class/autotasks.php
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/class/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/autotasks/images/autotasks_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/images/autotasks.png
+%%WWWDIR%%/htdocs/modules/system/admin/autotasks/images/autotasks_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/images/autotasks_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/autotasks/xoops_version.php
-%%WWWDIR%%/htdocs/modules/system/admin/avatars/images/avatars_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/images/avatars.png
+%%WWWDIR%%/htdocs/modules/system/admin/avatars/images/avatars_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/images/avatars_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/avatars/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/banners/banners.php
-%%WWWDIR%%/htdocs/modules/system/admin/banners/images/banners_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/banners/images/banners.png
+%%WWWDIR%%/htdocs/modules/system/admin/banners/images/banners_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/banners/images/banners_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/banners/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/banners/index.html
@@ -3375,8 +3382,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/banners/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/class/blocksadmin.php
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/class/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images/blocksadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images/blocksadmin.png
+%%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images/blocksadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images/blocksadmin_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/index.html
@@ -3384,8 +3391,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/class/blockspadmin.php
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/class/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images/blockspadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images/blockspadmin.png
+%%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images/blockspadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images/blockspadmin_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/index.html
@@ -3395,8 +3402,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/comments/comment_delete.php
 %%WWWDIR%%/htdocs/modules/system/admin/comments/comment_edit.php
 %%WWWDIR%%/htdocs/modules/system/admin/comments/comment_post.php
-%%WWWDIR%%/htdocs/modules/system/admin/comments/images/comments_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/comments/images/comments.png
+%%WWWDIR%%/htdocs/modules/system/admin/comments/images/comments_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/comments/images/comments_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/comments/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/comments/index.html
@@ -3404,15 +3411,15 @@
 %%WWWDIR%%/htdocs/modules/system/admin/comments/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/class/customtag.php
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/class/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/customtag/images/customtag_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/images/customtag.png
+%%WWWDIR%%/htdocs/modules/system/admin/customtag/images/customtag_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/images/customtag_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/customtag/xoops_version.php
-%%WWWDIR%%/htdocs/modules/system/admin/findusers/images/findusers_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/findusers/images/findusers.png
+%%WWWDIR%%/htdocs/modules/system/admin/findusers/images/findusers_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/findusers/images/findusers_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/findusers/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/findusers/index.html
@@ -3421,16 +3428,16 @@
 %%WWWDIR%%/htdocs/modules/system/admin/groupperm.php
 %%WWWDIR%%/htdocs/modules/system/admin/groups/groupform.php
 %%WWWDIR%%/htdocs/modules/system/admin/groups/groups.php
-%%WWWDIR%%/htdocs/modules/system/admin/groups/images/groups_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/groups/images/groups.png
+%%WWWDIR%%/htdocs/modules/system/admin/groups/images/groups_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/groups/images/groups_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/groups/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/groups/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/groups/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/groups/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/images/browser.php
-%%WWWDIR%%/htdocs/modules/system/admin/images/images/images_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/images/images/images.png
+%%WWWDIR%%/htdocs/modules/system/admin/images/images/images_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/images/images/images_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/images/images/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/images/images/transparent.gif
@@ -3442,8 +3449,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/images/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/mailusers/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/mailusers/images/mailusers_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/mailusers/images/mailusers.png
+%%WWWDIR%%/htdocs/modules/system/admin/mailusers/images/mailusers_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/mailusers/images/mailusers_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/mailusers/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/mailusers/mailform.php
@@ -3453,15 +3460,15 @@
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/class/mimetype.php
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/mimetype/images/mimetype_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/images/mimetype.png
+%%WWWDIR%%/htdocs/modules/system/admin/mimetype/images/mimetype_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/images/mimetype_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/mimetype/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images/modulesadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images/modulesadmin.png
+%%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images/modulesadmin_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images/modulesadmin_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/main.php
@@ -3470,16 +3477,15 @@
 %%WWWDIR%%/htdocs/modules/system/admin/pages/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/pages/class/pages.php
 %%WWWDIR%%/htdocs/modules/system/admin/pages/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/pages/images/pages_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/pages/images/pages.png
+%%WWWDIR%%/htdocs/modules/system/admin/pages/images/pages_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/pages/images/pages_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/pages/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/pages/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/pages/xoops_version.php
-%%WWWDIR%%/htdocs/modules/system/admin.php
 %%WWWDIR%%/htdocs/modules/system/admin/preferences/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/preferences/images/preferences_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/preferences/images/preferences.png
+%%WWWDIR%%/htdocs/modules/system/admin/preferences/images/preferences_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/preferences/images/preferences_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/preferences/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/preferences/main.php
@@ -3487,15 +3493,15 @@
 %%WWWDIR%%/htdocs/modules/system/admin/rating/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/rating/class/rating.php
 %%WWWDIR%%/htdocs/modules/system/admin/rating/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/rating/images/rating_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/rating/images/rating.png
+%%WWWDIR%%/htdocs/modules/system/admin/rating/images/rating_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/rating/images/rating_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/rating/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/rating/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/rating/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/smilies/images/smilies_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/images/smilies.png
+%%WWWDIR%%/htdocs/modules/system/admin/smilies/images/smilies_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/images/smilies_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/main.php
@@ -3503,8 +3509,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/smilies.php
 %%WWWDIR%%/htdocs/modules/system/admin/smilies/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/tplsets/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/tplsets/images/tplsets_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/tplsets/images/tplsets.png
+%%WWWDIR%%/htdocs/modules/system/admin/tplsets/images/tplsets_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/tplsets/images/tplsets_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/tplsets/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/tplsets/main.php
@@ -3513,15 +3519,15 @@
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/class/userrank.php
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/userrank/images/userrank_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/images/userrank.png
+%%WWWDIR%%/htdocs/modules/system/admin/userrank/images/userrank_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/images/userrank_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/main.php
 %%WWWDIR%%/htdocs/modules/system/admin/userrank/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/users/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/users/images/users_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/users/images/users.png
+%%WWWDIR%%/htdocs/modules/system/admin/users/images/users_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/users/images/users_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/users/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/users/main.php
@@ -3530,8 +3536,8 @@
 %%WWWDIR%%/htdocs/modules/system/admin/users/xoops_version.php
 %%WWWDIR%%/htdocs/modules/system/admin/version/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/version/images/index.html
-%%WWWDIR%%/htdocs/modules/system/admin/version/images/version_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/version/images/version.png
+%%WWWDIR%%/htdocs/modules/system/admin/version/images/version_big.png
 %%WWWDIR%%/htdocs/modules/system/admin/version/images/version_small.png
 %%WWWDIR%%/htdocs/modules/system/admin/version/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/version/main.php
@@ -3549,28 +3555,28 @@
 %%WWWDIR%%/htdocs/modules/system/images/1.png
 %%WWWDIR%%/htdocs/modules/system/images/add.png
 %%WWWDIR%%/htdocs/modules/system/images/arrow1.gif
-%%WWWDIR%%/htdocs/modules/system/images/background.png
 %%WWWDIR%%/htdocs/modules/system/images/back.png
-%%WWWDIR%%/htdocs/modules/system/images/bg.gif
+%%WWWDIR%%/htdocs/modules/system/images/background.png
 %%WWWDIR%%/htdocs/modules/system/images/bg-lr-titles.gif
+%%WWWDIR%%/htdocs/modules/system/images/bg.gif
 %%WWWDIR%%/htdocs/modules/system/images/check.gif
-%%WWWDIR%%/htdocs/modules/system/images/clone_big_off.png
-%%WWWDIR%%/htdocs/modules/system/images/clone_big.png
-%%WWWDIR%%/htdocs/modules/system/images/clone_med.png
 %%WWWDIR%%/htdocs/modules/system/images/clone.png
+%%WWWDIR%%/htdocs/modules/system/images/clone_big.png
+%%WWWDIR%%/htdocs/modules/system/images/clone_big_off.png
+%%WWWDIR%%/htdocs/modules/system/images/clone_med.png
 %%WWWDIR%%/htdocs/modules/system/images/cp.png
 %%WWWDIR%%/htdocs/modules/system/images/crop.png
 %%WWWDIR%%/htdocs/modules/system/images/db.png
-%%WWWDIR%%/htdocs/modules/system/images/delete_big_off.png
+%%WWWDIR%%/htdocs/modules/system/images/delete.png
 %%WWWDIR%%/htdocs/modules/system/images/delete_big.png
+%%WWWDIR%%/htdocs/modules/system/images/delete_big_off.png
 %%WWWDIR%%/htdocs/modules/system/images/delete_med.png
 %%WWWDIR%%/htdocs/modules/system/images/delete_off.png
-%%WWWDIR%%/htdocs/modules/system/images/delete.png
-%%WWWDIR%%/htdocs/modules/system/images/edit_big_off.png
+%%WWWDIR%%/htdocs/modules/system/images/edit.png
 %%WWWDIR%%/htdocs/modules/system/images/edit_big.png
+%%WWWDIR%%/htdocs/modules/system/images/edit_big_off.png
 %%WWWDIR%%/htdocs/modules/system/images/edit_med.png
 %%WWWDIR%%/htdocs/modules/system/images/edit_off.png
-%%WWWDIR%%/htdocs/modules/system/images/edit.png
 %%WWWDIR%%/htdocs/modules/system/images/file.png
 %%WWWDIR%%/htdocs/modules/system/images/filter.png
 %%WWWDIR%%/htdocs/modules/system/images/form-input.png
@@ -3586,10 +3592,10 @@
 %%WWWDIR%%/htdocs/modules/system/images/left_both.gif
 %%WWWDIR%%/htdocs/modules/system/images/logout.png
 %%WWWDIR%%/htdocs/modules/system/images/mini_cp.png
-%%WWWDIR%%/htdocs/modules/system/images/modulesitem.png
 %%WWWDIR%%/htdocs/modules/system/images/modules.png
-%%WWWDIR%%/htdocs/modules/system/images/navbar-bg_dark.png
+%%WWWDIR%%/htdocs/modules/system/images/modulesitem.png
 %%WWWDIR%%/htdocs/modules/system/images/navbar-bg.png
+%%WWWDIR%%/htdocs/modules/system/images/navbar-bg_dark.png
 %%WWWDIR%%/htdocs/modules/system/images/off.png
 %%WWWDIR%%/htdocs/modules/system/images/prefs.png
 %%WWWDIR%%/htdocs/modules/system/images/right_both.gif
@@ -3600,17 +3606,18 @@
 %%WWWDIR%%/htdocs/modules/system/images/table-caption-grey.png
 %%WWWDIR%%/htdocs/modules/system/images/uninstall.png
 %%WWWDIR%%/htdocs/modules/system/images/update.png
-%%WWWDIR%%/htdocs/modules/system/images/view_big_off.png
-%%WWWDIR%%/htdocs/modules/system/images/view_big.png
-%%WWWDIR%%/htdocs/modules/system/images/view_off.png
 %%WWWDIR%%/htdocs/modules/system/images/view.png
+%%WWWDIR%%/htdocs/modules/system/images/view_big.png
+%%WWWDIR%%/htdocs/modules/system/images/view_big_off.png
+%%WWWDIR%%/htdocs/modules/system/images/view_off.png
 %%WWWDIR%%/htdocs/modules/system/images/viewsubs.gif
 %%WWWDIR%%/htdocs/modules/system/include/index.html
 %%WWWDIR%%/htdocs/modules/system/include/update-112-to-122.php
-%%WWWDIR%%/htdocs/modules/system/include/update.php
 %%WWWDIR%%/htdocs/modules/system/include/update-to-112.php
+%%WWWDIR%%/htdocs/modules/system/include/update.php
 %%WWWDIR%%/htdocs/modules/system/include/upgrade.sql
 %%WWWDIR%%/htdocs/modules/system/index.html
+%%WWWDIR%%/htdocs/modules/system/language/english/admin.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/adsense.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/autotasks.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/avatars.php
@@ -3627,7 +3634,6 @@
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/mimetype.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/modulesadmin.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/pages.php
-%%WWWDIR%%/htdocs/modules/system/language/english/admin.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/preferences.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/rating.php
 %%WWWDIR%%/htdocs/modules/system/language/english/admin/smilies.php
@@ -3657,14 +3663,14 @@
 %%WWWDIR%%/htdocs/modules/system/templates/admin/customtag/index.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/customtag/system_adm_customtag.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/index.html
+%%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager_cloneimg.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager_editimg.html
-%%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager_img.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_adm_imagemanager_imglist.html
+%%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager_cloneimg.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager_editimg.html
-%%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager_img.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/images/system_popup_imagemanager_imglist.html
 %%WWWDIR%%/htdocs/modules/system/templates/admin/index.html
@@ -3763,8 +3769,8 @@
 %%WWWDIR%%/htdocs/plugins/autotasks/internal.php
 %%WWWDIR%%/htdocs/plugins/csstidy/COPYING
 %%WWWDIR%%/htdocs/plugins/csstidy/README
-%%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy_optimise.php
 %%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy.php
+%%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy_optimise.php
 %%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy_print.php
 %%WWWDIR%%/htdocs/plugins/csstidy/cssparse.css
 %%WWWDIR%%/htdocs/plugins/csstidy/data.inc.php
@@ -3803,8 +3809,8 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/css/phpcolors.css
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/index.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js/index.html
-%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js/parsephphtmlmixed.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js/parsephp.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js/parsephphtmlmixed.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js/tokenizephp.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/python/LICENSE
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/python/css/index.html
@@ -3818,8 +3824,8 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/css/jscolors.css
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/css/people.jpg
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/css/sparqlcolors.css
-%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/csstest.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/css/xmlcolors.css
+%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/csstest.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/highlight.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/htmltest.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/index.html
@@ -3836,16 +3842,16 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/parsexml.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/select.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/stringstream.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/jstest.html
-%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/tokenizejavascript.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/tokenize.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/tokenizejavascript.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/undo.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js/util.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/jstest.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/manual.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/mixedtest.html
-%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor_registry.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/sparqltest.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/story.html
+%%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor_registry.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/index.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/language/english.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/language/index.html
@@ -3865,14 +3871,14 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/docs/installation.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/docs/javascript_functions.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/docs/license.html
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_compressor.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area.css
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_compressor.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_full.gz
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_full.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_full_with_plugins.gz
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_full_with_plugins.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_functions.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/edit_area_loader.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/elements_functions.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/exemples/exemple_full.html
@@ -3921,10 +3927,10 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/langs/ru.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/langs/sk.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/langs/zh.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/license.txt
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/license_apache.txt
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/license_bsd.txt
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/license_lgpl.txt
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/license.txt
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/manage_area.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/charmap.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/css/charmap.css
@@ -3980,10 +3986,9 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/langs/ru.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/langs/sk.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/langs/zh.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/test2.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/test.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/regexp.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor_registry.php
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/test2.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/basic.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/brainfuck.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/c.js
@@ -3993,7 +3998,6 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/html.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/index.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/java.js
-%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/js.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/pas.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/perl.js
@@ -4005,10 +4009,12 @@
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/tsql.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/vb.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax/xml.js
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/regexp.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/resize_area.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/search_replace.js
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/template.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/todo.txt
+%%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor_registry.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/index.html
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/language/english.php
 %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/language/index.html
@@ -4051,6 +4057,7 @@
 %%WWWDIR%%/htdocs/plugins/textsanitizer/youtube/youtube.gif
 %%WWWDIR%%/htdocs/plugins/textsanitizer/youtube/youtube.js
 %%WWWDIR%%/htdocs/plugins/textsanitizer/youtube/youtube.php
+%%WWWDIR%%/htdocs/plugins/waiting/.htaccess
 %%WWWDIR%%/htdocs/plugins/waiting/AMS.php
 %%WWWDIR%%/htdocs/plugins/waiting/PDdownloads.php
 %%WWWDIR%%/htdocs/plugins/waiting/PDlinks.php
@@ -4059,7 +4066,6 @@
 %%WWWDIR%%/htdocs/plugins/waiting/articles.php
 %%WWWDIR%%/htdocs/plugins/waiting/catads.php
 %%WWWDIR%%/htdocs/plugins/waiting/extcal.php
-%%WWWDIR%%/htdocs/plugins/waiting/.htaccess
 %%WWWDIR%%/htdocs/plugins/waiting/index.html
 %%WWWDIR%%/htdocs/plugins/waiting/myAds.php
 %%WWWDIR%%/htdocs/plugins/waiting/myalbum.php
@@ -4101,8 +4107,8 @@
 %%WWWDIR%%/htdocs/themes/iTheme/README.txt
 %%WWWDIR%%/htdocs/themes/iTheme/blocks.css
 %%WWWDIR%%/htdocs/themes/iTheme/blockszone.html
-%%WWWDIR%%/htdocs/themes/iTheme/centerblocks_admin.html
 %%WWWDIR%%/htdocs/themes/iTheme/centerblocks.html
+%%WWWDIR%%/htdocs/themes/iTheme/centerblocks_admin.html
 %%WWWDIR%%/htdocs/themes/iTheme/content.css
 %%WWWDIR%%/htdocs/themes/iTheme/icons/favicon.ico
 %%WWWDIR%%/htdocs/themes/iTheme/icons/icon.png
@@ -4126,18 +4132,18 @@
 %%WWWDIR%%/htdocs/themes/iTheme/rtl/layout.css
 %%WWWDIR%%/htdocs/themes/iTheme/rtl/style.css
 %%WWWDIR%%/htdocs/themes/iTheme/shot.gif
-%%WWWDIR%%/htdocs/themes/iTheme/style_admin.css
 %%WWWDIR%%/htdocs/themes/iTheme/style.css
-%%WWWDIR%%/htdocs/themes/iTheme/theme_admin.html
+%%WWWDIR%%/htdocs/themes/iTheme/style_admin.css
 %%WWWDIR%%/htdocs/themes/iTheme/theme.html
+%%WWWDIR%%/htdocs/themes/iTheme/theme_admin.html
 %%WWWDIR%%/htdocs/themes/index.html
 %%WWWDIR%%/htdocs/themes/reflex/adminnav.html
 %%WWWDIR%%/htdocs/themes/reflex/content.css
 %%WWWDIR%%/htdocs/themes/reflex/img/areabg.png
 %%WWWDIR%%/htdocs/themes/reflex/img/arrows-ffffff.png
 %%WWWDIR%%/htdocs/themes/reflex/img/bodybg.jpg
-%%WWWDIR%%/htdocs/themes/reflex/img/botsbg_full.png
 %%WWWDIR%%/htdocs/themes/reflex/img/botsbg.png
+%%WWWDIR%%/htdocs/themes/reflex/img/botsbg_full.png
 %%WWWDIR%%/htdocs/themes/reflex/img/divider.jpg
 %%WWWDIR%%/htdocs/themes/reflex/img/headbg.jpg
 %%WWWDIR%%/htdocs/themes/reflex/img/home_icon.png
@@ -4148,10 +4154,10 @@
 %%WWWDIR%%/htdocs/themes/reflex/img/rightbg.png
 %%WWWDIR%%/htdocs/themes/reflex/img/shadow.png
 %%WWWDIR%%/htdocs/themes/reflex/img/shortcuts_arrow.gif
-%%WWWDIR%%/htdocs/themes/reflex/img/tbb_bg_full.png
 %%WWWDIR%%/htdocs/themes/reflex/img/tbb_bg.png
-%%WWWDIR%%/htdocs/themes/reflex/img/topcenterbg_full.png
+%%WWWDIR%%/htdocs/themes/reflex/img/tbb_bg_full.png
 %%WWWDIR%%/htdocs/themes/reflex/img/topcenterbg.png
+%%WWWDIR%%/htdocs/themes/reflex/img/topcenterbg_full.png
 %%WWWDIR%%/htdocs/themes/reflex/js/cookie.js
 %%WWWDIR%%/htdocs/themes/reflex/js/hoverIntent.min.js
 %%WWWDIR%%/htdocs/themes/reflex/js/index.html
@@ -4204,654 +4210,9 @@
 %%WWWDIR%%/htdocs/uploads/system/userrank/rank3dbf8edf15093.gif
 %%WWWDIR%%/htdocs/uploads/system/userrank/rank3dbf8ee8681cd.gif
 %%WWWDIR%%/htdocs/uploads/system/userrank/rank3e632f95e81ca.gif
-%%WWWDIR%%/htdocs/userinfo.php
 %%WWWDIR%%/htdocs/user.php
+%%WWWDIR%%/htdocs/userinfo.php
 %%WWWDIR%%/htdocs/viewpmsg.php
 %%WWWDIR%%/htdocs/xmlrpc.php
-@dir %%WWWDIR%%/htdocs/uploads/system/userrank
-@dir %%WWWDIR%%/htdocs/uploads/system
-@dir %%WWWDIR%%/htdocs/uploads/imagemanager/logos
-@dir %%WWWDIR%%/htdocs/uploads/imagemanager
-@dir %%WWWDIR%%/htdocs/uploads
-@dir %%WWWDIR%%/htdocs/themes/reflex/modules/system/blocks
-@dir %%WWWDIR%%/htdocs/themes/reflex/modules/system/admin
-@dir %%WWWDIR%%/htdocs/themes/reflex/modules/system
-@dir %%WWWDIR%%/htdocs/themes/reflex/modules
-@dir %%WWWDIR%%/htdocs/themes/reflex/js
-@dir %%WWWDIR%%/htdocs/themes/reflex/img
-@dir %%WWWDIR%%/htdocs/themes/reflex
-@dir %%WWWDIR%%/htdocs/themes/iTheme/rtl
-@dir %%WWWDIR%%/htdocs/themes/iTheme/modules/system
-@dir %%WWWDIR%%/htdocs/themes/iTheme/modules
-@dir %%WWWDIR%%/htdocs/themes/iTheme/img
-@dir %%WWWDIR%%/htdocs/themes/iTheme/icons
-@dir %%WWWDIR%%/htdocs/themes/iTheme
-@dir %%WWWDIR%%/htdocs/themes
-@dir %%WWWDIR%%/htdocs/templates_c
-@dir %%WWWDIR%%/htdocs/plugins/waiting
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/youtube
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/wmp
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/wiki
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/syntaxhighlightphp
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/syntaxhighlightjs
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/syntaxhighlighthtml
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/syntaxhighlightcss
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer/hiddencontent
-@dir %%WWWDIR%%/htdocs/plugins/textsanitizer
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/language
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/reg_syntax
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/langs
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/images
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/test
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/langs
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/jscripts
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/images
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins/charmap
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/plugins
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/langs
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/images
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/exemples
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor/docs
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea/editor
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/editarea
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/language
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/js
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/python/js
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/python/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/python
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/js
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/php
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/lua/js
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/lua/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib/lua
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor/contrib
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/editor
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror/css
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors/codemirror
-@dir %%WWWDIR%%/htdocs/plugins/sourceeditors
-@dir %%WWWDIR%%/htdocs/plugins/rating
-@dir %%WWWDIR%%/htdocs/plugins/preloads
-@dir %%WWWDIR%%/htdocs/plugins/csstidy
-@dir %%WWWDIR%%/htdocs/plugins/autotasks
-@dir %%WWWDIR%%/htdocs/plugins
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme/rtl
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme/modules/system
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme/modules
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme/img
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme/icons
-@dir %%WWWDIR%%/htdocs/modules/system/themes/admin-theme
-@dir %%WWWDIR%%/htdocs/modules/system/themes
-@dir %%WWWDIR%%/htdocs/modules/system/templates/blocks
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/userrank
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/rating
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/pages
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/modulesadmin
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/mimetype
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/images
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/customtag
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/blockspadmin
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/blocksadmin
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/autotasks
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin/adsense
-@dir %%WWWDIR%%/htdocs/modules/system/templates/admin
-@dir %%WWWDIR%%/htdocs/modules/system/templates
-@dir %%WWWDIR%%/htdocs/modules/system/language/english/admin
-@dir %%WWWDIR%%/htdocs/modules/system/language/english
-@dir %%WWWDIR%%/htdocs/modules/system/language
-@dir %%WWWDIR%%/htdocs/modules/system/include
-@dir %%WWWDIR%%/htdocs/modules/system/images
-@dir %%WWWDIR%%/htdocs/modules/system/blocks
-@dir %%WWWDIR%%/htdocs/modules/system/admin/version/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/version/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/version
-@dir %%WWWDIR%%/htdocs/modules/system/admin/users/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/users
-@dir %%WWWDIR%%/htdocs/modules/system/admin/userrank/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/userrank/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/userrank
-@dir %%WWWDIR%%/htdocs/modules/system/admin/tplsets/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/tplsets
-@dir %%WWWDIR%%/htdocs/modules/system/admin/smilies/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/smilies
-@dir %%WWWDIR%%/htdocs/modules/system/admin/rating/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/rating/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/rating
-@dir %%WWWDIR%%/htdocs/modules/system/admin/preferences/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/preferences
-@dir %%WWWDIR%%/htdocs/modules/system/admin/pages/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/pages/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/pages
-@dir %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/modulesadmin
-@dir %%WWWDIR%%/htdocs/modules/system/admin/mimetype/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/mimetype/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/mimetype
-@dir %%WWWDIR%%/htdocs/modules/system/admin/mailusers/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/mailusers
-@dir %%WWWDIR%%/htdocs/modules/system/admin/images/js
-@dir %%WWWDIR%%/htdocs/modules/system/admin/images/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/groups/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/groups
-@dir %%WWWDIR%%/htdocs/modules/system/admin/findusers/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/findusers
-@dir %%WWWDIR%%/htdocs/modules/system/admin/customtag/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/customtag/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/customtag
-@dir %%WWWDIR%%/htdocs/modules/system/admin/comments/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/comments
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blockspadmin
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/blocksadmin
-@dir %%WWWDIR%%/htdocs/modules/system/admin/banners/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/banners
-@dir %%WWWDIR%%/htdocs/modules/system/admin/avatars/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/avatars
-@dir %%WWWDIR%%/htdocs/modules/system/admin/autotasks/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/autotasks/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/autotasks
-@dir %%WWWDIR%%/htdocs/modules/system/admin/adsense/images
-@dir %%WWWDIR%%/htdocs/modules/system/admin/adsense/class
-@dir %%WWWDIR%%/htdocs/modules/system/admin/adsense
-@dir %%WWWDIR%%/htdocs/modules/system/admin
-@dir %%WWWDIR%%/htdocs/modules/system
-@dir %%WWWDIR%%/htdocs/modules/profile/templates/blocks
-@dir %%WWWDIR%%/htdocs/modules/profile/templates
-@dir %%WWWDIR%%/htdocs/modules/profile/language/english/mail_template
-@dir %%WWWDIR%%/htdocs/modules/profile/language/english
-@dir %%WWWDIR%%/htdocs/modules/profile/language
-@dir %%WWWDIR%%/htdocs/modules/profile/include/autotasks
-@dir %%WWWDIR%%/htdocs/modules/profile/include
-@dir %%WWWDIR%%/htdocs/modules/profile/images/field
-@dir %%WWWDIR%%/htdocs/modules/profile/images/admin
-@dir %%WWWDIR%%/htdocs/modules/profile/images
-@dir %%WWWDIR%%/htdocs/modules/profile/docs
-@dir %%WWWDIR%%/htdocs/modules/profile/class
-@dir %%WWWDIR%%/htdocs/modules/profile/blocks
-@dir %%WWWDIR%%/htdocs/modules/profile/assets/css
-@dir %%WWWDIR%%/htdocs/modules/profile/assets/audioplayers
-@dir %%WWWDIR%%/htdocs/modules/profile/assets
-@dir %%WWWDIR%%/htdocs/modules/profile/admin
-@dir %%WWWDIR%%/htdocs/modules/profile
-@dir %%WWWDIR%%/htdocs/modules/content/templates/blocks
-@dir %%WWWDIR%%/htdocs/modules/content/templates
-@dir %%WWWDIR%%/htdocs/modules/content/language/english/mail_template
-@dir %%WWWDIR%%/htdocs/modules/content/language/english
-@dir %%WWWDIR%%/htdocs/modules/content/language
-@dir %%WWWDIR%%/htdocs/modules/content/include
-@dir %%WWWDIR%%/htdocs/modules/content/images
-@dir %%WWWDIR%%/htdocs/modules/content/docs
-@dir %%WWWDIR%%/htdocs/modules/content/class
-@dir %%WWWDIR%%/htdocs/modules/content/blocks
-@dir %%WWWDIR%%/htdocs/modules/content/admin
-@dir %%WWWDIR%%/htdocs/modules/content
-@dir %%WWWDIR%%/htdocs/modules/banners/templates
-@dir %%WWWDIR%%/htdocs/modules/banners/plugins
-@dir %%WWWDIR%%/htdocs/modules/banners/language/english/mail_template
-@dir %%WWWDIR%%/htdocs/modules/banners/language/english
-@dir %%WWWDIR%%/htdocs/modules/banners/language
-@dir %%WWWDIR%%/htdocs/modules/banners/include
-@dir %%WWWDIR%%/htdocs/modules/banners/images
-@dir %%WWWDIR%%/htdocs/modules/banners/docs
-@dir %%WWWDIR%%/htdocs/modules/banners/class
-@dir %%WWWDIR%%/htdocs/modules/banners/admin
-@dir %%WWWDIR%%/htdocs/modules/banners
-@dir %%WWWDIR%%/htdocs/modules
-@dir %%WWWDIR%%/htdocs/libraries/xml/rss
-@dir %%WWWDIR%%/htdocs/libraries/xml/rpc
-@dir %%WWWDIR%%/htdocs/libraries/xml
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/vendor/de77
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/vendor/JPEXS
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/vendor
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/Operation
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/Mapper
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib/Font
-@dir %%WWWDIR%%/htdocs/libraries/wideimage/lib
-@dir %%WWWDIR%%/htdocs/libraries/wideimage
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/images
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/freefont-20100919
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/fonts/dejavu-fonts-ttf-2.33
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/fonts
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/config/lang
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/config
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf/cache
-@dir %%WWWDIR%%/htdocs/libraries/tcpdf
-@dir %%WWWDIR%%/htdocs/libraries/smarty/plugins
-@dir %%WWWDIR%%/htdocs/libraries/smarty/internals
-@dir %%WWWDIR%%/htdocs/libraries/smarty/icms_plugins
-@dir %%WWWDIR%%/htdocs/libraries/smarty/configs
-@dir %%WWWDIR%%/htdocs/libraries/smarty
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML/Declaration
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Parse
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Net
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/HTTP
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Decode/HTML
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Decode
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content/Type
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/library
-@dir %%WWWDIR%%/htdocs/libraries/simplepie/idn
-@dir %%WWWDIR%%/htdocs/libraries/simplepie
-@dir %%WWWDIR%%/htdocs/libraries/recaptcha
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/admin/tutorials/OpenID
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/admin/tutorials
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/admin
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid/Auth
-@dir %%WWWDIR%%/htdocs/libraries/phpopenid
-@dir %%WWWDIR%%/htdocs/libraries/phpmailer/language
-@dir %%WWWDIR%%/htdocs/libraries/phpmailer
-@dir %%WWWDIR%%/htdocs/libraries/paginationstyles/images
-@dir %%WWWDIR%%/htdocs/libraries/paginationstyles/css
-@dir %%WWWDIR%%/htdocs/libraries/paginationstyles
-@dir %%WWWDIR%%/htdocs/libraries/lightbox/js
-@dir %%WWWDIR%%/htdocs/libraries/lightbox/images
-@dir %%WWWDIR%%/htdocs/libraries/lightbox/css
-@dir %%WWWDIR%%/htdocs/libraries/lightbox
-@dir %%WWWDIR%%/htdocs/libraries/jscalendar
-@dir %%WWWDIR%%/htdocs/libraries/jquery/ui/css/ui-smoothness/images
-@dir %%WWWDIR%%/htdocs/libraries/jquery/ui/css/ui-smoothness
-@dir %%WWWDIR%%/htdocs/libraries/jquery/ui/css
-@dir %%WWWDIR%%/htdocs/libraries/jquery/ui
-@dir %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/ie6
-@dir %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images
-@dir %%WWWDIR%%/htdocs/libraries/jquery/colorbox
-@dir %%WWWDIR%%/htdocs/libraries/jquery
-@dir %%WWWDIR%%/htdocs/libraries/jalalijscalendar/aqua
-@dir %%WWWDIR%%/htdocs/libraries/jalalijscalendar
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/templates
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/resize/templates
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/resize/language/english
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/resize/language
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/resize/images
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/resize
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/filter/templates
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/filter/language/english
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/filter/language
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/filter/images
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/filter
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/crop/templates
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/crop/language/english
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/crop/language
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/crop/images
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins/crop
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/plugins
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/js
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/images
-@dir %%WWWDIR%%/htdocs/libraries/image-editor/css
-@dir %%WWWDIR%%/htdocs/libraries/image-editor
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/theme
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/template/set
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/template/file
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/template
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/block/position
-@dir %%WWWDIR%%/htdocs/libraries/icms/view/block
-@dir %%WWWDIR%%/htdocs/libraries/icms/view
-@dir %%WWWDIR%%/htdocs/libraries/icms/sys/autotasks
-@dir %%WWWDIR%%/htdocs/libraries/icms/sys
-@dir %%WWWDIR%%/htdocs/libraries/icms/preload
-@dir %%WWWDIR%%/htdocs/libraries/icms/plugins
-@dir %%WWWDIR%%/htdocs/libraries/icms/module
-@dir %%WWWDIR%%/htdocs/libraries/icms/messaging
-@dir %%WWWDIR%%/htdocs/libraries/icms/member/user
-@dir %%WWWDIR%%/htdocs/libraries/icms/member/groupperm
-@dir %%WWWDIR%%/htdocs/libraries/icms/member/group/membership
-@dir %%WWWDIR%%/htdocs/libraries/icms/member/group
-@dir %%WWWDIR%%/htdocs/libraries/icms/member
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/view
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/seo
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/registry
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/permission
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/member
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/form/elements
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/form
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/export
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf/category
-@dir %%WWWDIR%%/htdocs/libraries/icms/ipf
-@dir %%WWWDIR%%/htdocs/libraries/icms/image/set
-@dir %%WWWDIR%%/htdocs/libraries/icms/image/category
-@dir %%WWWDIR%%/htdocs/libraries/icms/image
-@dir %%WWWDIR%%/htdocs/libraries/icms/form/elements/select
-@dir %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/fonts
-@dir %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha/backgrounds
-@dir %%WWWDIR%%/htdocs/libraries/icms/form/elements/captcha
-@dir %%WWWDIR%%/htdocs/libraries/icms/form/elements
-@dir %%WWWDIR%%/htdocs/libraries/icms/form
-@dir %%WWWDIR%%/htdocs/libraries/icms/file
-@dir %%WWWDIR%%/htdocs/libraries/icms/feeds
-@dir %%WWWDIR%%/htdocs/libraries/icms/db/mysql
-@dir %%WWWDIR%%/htdocs/libraries/icms/db/legacy/updater
-@dir %%WWWDIR%%/htdocs/libraries/icms/db/legacy/mysql
-@dir %%WWWDIR%%/htdocs/libraries/icms/db/legacy
-@dir %%WWWDIR%%/htdocs/libraries/icms/db/criteria
-@dir %%WWWDIR%%/htdocs/libraries/icms/db
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/urllink
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/privmessage
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/page
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/notification
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/file
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/comment
-@dir %%WWWDIR%%/htdocs/libraries/icms/data/avatar
-@dir %%WWWDIR%%/htdocs/libraries/icms/data
-@dir %%WWWDIR%%/htdocs/libraries/icms/core
-@dir %%WWWDIR%%/htdocs/libraries/icms/config/option
-@dir %%WWWDIR%%/htdocs/libraries/icms/config/item
-@dir %%WWWDIR%%/htdocs/libraries/icms/config/category
-@dir %%WWWDIR%%/htdocs/libraries/icms/config
-@dir %%WWWDIR%%/htdocs/libraries/icms/auth
-@dir %%WWWDIR%%/htdocs/libraries/icms
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Lexer
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/classes
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone
-@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier
-@dir %%WWWDIR%%/htdocs/libraries/geshi/geshi
-@dir %%WWWDIR%%/htdocs/libraries/geshi/docs
-@dir %%WWWDIR%%/htdocs/libraries/geshi
-@dir %%WWWDIR%%/htdocs/libraries
-@dir %%WWWDIR%%/htdocs/language/english/mail_template
-@dir %%WWWDIR%%/htdocs/language/english
-@dir %%WWWDIR%%/htdocs/language
-@dir %%WWWDIR%%/htdocs/kernel
-@dir %%WWWDIR%%/htdocs/install/templates
-@dir %%WWWDIR%%/htdocs/install/sql
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/sql
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/patches/XOOPS2.3.2
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/patches/XOOPS2.0.16aJP
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/patches/XCL2.1.6
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/patches/ImpressCMS1.1
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/patches
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/main
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language/english
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/language
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/include
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_enabled
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_disabled
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/doc
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/configs
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules
-@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/preload
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/images
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/blocks
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/admin
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules
-@dir %%WWWDIR%%/htdocs/install/modules/protector/root
-@dir %%WWWDIR%%/htdocs/install/modules/protector
-@dir %%WWWDIR%%/htdocs/install/modules
-@dir %%WWWDIR%%/htdocs/install/language/english
-@dir %%WWWDIR%%/htdocs/install/language
-@dir %%WWWDIR%%/htdocs/install/include
-@dir %%WWWDIR%%/htdocs/install/img
-@dir %%WWWDIR%%/htdocs/install/class
-@dir %%WWWDIR%%/htdocs/install
-@dir %%WWWDIR%%/htdocs/include
-@dir %%WWWDIR%%/htdocs/images/subject
-@dir %%WWWDIR%%/htdocs/images/search
-@dir %%WWWDIR%%/htdocs/images/kfaenza/doc
-@dir %%WWWDIR%%/htdocs/images/kfaenza/actions
-@dir %%WWWDIR%%/htdocs/images/kfaenza
-@dir %%WWWDIR%%/htdocs/images/icons/social
-@dir %%WWWDIR%%/htdocs/images/icons/english
-@dir %%WWWDIR%%/htdocs/images/icons
-@dir %%WWWDIR%%/htdocs/images/flags
-@dir %%WWWDIR%%/htdocs/images/banners
-@dir %%WWWDIR%%/htdocs/images
-@dir %%WWWDIR%%/htdocs/editors/tinymce/uploaded/Media
-@dir %%WWWDIR%%/htdocs/editors/tinymce/uploaded/Image
-@dir %%WWWDIR%%/htdocs/editors/tinymce/uploaded/File
-@dir %%WWWDIR%%/htdocs/editors/tinymce/uploaded
-@dir %%WWWDIR%%/htdocs/editors/tinymce/language
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/utils
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/skins/o2k7/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/skins/o2k7
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/skins/default
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/skins
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/simple
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/o2k7
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/highcontrast
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/default/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins/default
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/skins
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes/advanced
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/themes
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsquotecode
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsimagemanager
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xoopsemotions
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xhtmlxtras/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xhtmlxtras/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xhtmlxtras/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/xhtmlxtras
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/wordcount
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/visualchars
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/visualblocks/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/visualblocks
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/template/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/template/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/template/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/template
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/table/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/table/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/table/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/table
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/tabfocus
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/includes
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/classes/utils
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/classes
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/save
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/safari
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/print
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/preview/jscripts
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/preview
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/paste/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/paste/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/paste/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/paste
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/pagebreak/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/pagebreak/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/pagebreak
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/noneditable
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/nonbreaking
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/media/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/media/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/media/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/media/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/media
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/lists
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/legacyoutput
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/layer
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/insertdatetime
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/inlinepopups/skins
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/inlinepopups
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/iespell
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/icmsmlcontent
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullscreen
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/fullpage
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example_dependency
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/example
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/emotions
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/directionality
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/contextmenu
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/compat2x
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/bbcode
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/autosave/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/autosave
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/autoresize
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/autolink
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advlist
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advlink/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advlink/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advlink/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advlink
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advimage/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advimage/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advimage/img
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advimage/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advimage
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advhr/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advhr/js
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advhr/css
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/advhr
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/langs
-@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts
-@dir %%WWWDIR%%/htdocs/editors/tinymce
-@dir %%WWWDIR%%/htdocs/editors/dhtmltextarea/language
-@dir %%WWWDIR%%/htdocs/editors/dhtmltextarea
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/module
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/language
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/wsc
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/silver/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/silver
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/office2003/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/office2003
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins/default
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/skins
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/tablecommands
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/simplecommands
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/placeholder/lang
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/placeholder
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/dragresizetable
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode/_sample
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/bbcode
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins/autogrow
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/plugins
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/lang
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/js
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/images/smiley/msn
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/images/smiley
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/connectors/php
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/connectors
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/js
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/icons/32
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images/icons
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser/default
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager/browser
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/filemanager
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dtd
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_universalkey
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_template
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_select
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_scayt
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_link
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_image
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_flash
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_docprops
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_about/sponsors
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/fck_about
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/common/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog/common
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/dialog
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css/images
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css/behaviors
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/css
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/internals
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/commandclasses
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source/classes
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor/_source
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor/editor
-@dir %%WWWDIR%%/htdocs/editors/FCKeditor
-@dir %%WWWDIR%%/htdocs/editors
-@dir %%WWWDIR%%/htdocs/class/xoopsform
-@dir %%WWWDIR%%/htdocs/class/xoopseditor
-@dir %%WWWDIR%%/htdocs/class/mail
-@dir %%WWWDIR%%/htdocs/class/icmsform/elements
-@dir %%WWWDIR%%/htdocs/class/icmsform
-@dir %%WWWDIR%%/htdocs/class/database/drivers/mysql
-@dir %%WWWDIR%%/htdocs/class/database/drivers
-@dir %%WWWDIR%%/htdocs/class/database
-@dir %%WWWDIR%%/htdocs/class/captcha/scripts
-@dir %%WWWDIR%%/htdocs/class/captcha
-@dir %%WWWDIR%%/htdocs/class/auth
-@dir %%WWWDIR%%/htdocs/class
-@dir %%WWWDIR%%/htdocs/cache
-@dir %%WWWDIR%%/htdocs
-@dir %%WWWDIR%%/extras/ssl
-@dir %%WWWDIR%%/extras/plugins/preload
-@dir %%WWWDIR%%/extras/plugins
-@dir %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager/connectors
-@dir %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager
-@dir %%WWWDIR%%/extras/editors/FCKeditor/editor
-@dir %%WWWDIR%%/extras/editors/FCKeditor
-@dir %%WWWDIR%%/extras/editors
-@dir %%WWWDIR%%/extras
-@dir %%WWWDIR%%
 @owner
 @group

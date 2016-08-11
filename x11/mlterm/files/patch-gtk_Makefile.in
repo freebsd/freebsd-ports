@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	2015-08-30 09:03:13.000000000 +0900
-+++ gtk/Makefile.in	2015-09-05 21:29:04.086830000 +0900
-@@ -30,7 +30,7 @@
+--- gtk/Makefile.in.orig	2016-03-13 10:57:40 UTC
++++ gtk/Makefile.in
+@@ -30,7 +30,7 @@ LIB_VERSION_2.90 = 9:0:0
  LIB_VERSION_2.91 = 0:0:0
  
  TARGET = $(TARGET_$(VTE_ABI))

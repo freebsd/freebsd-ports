@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd %%LOCALBASE%%/share/zeronet && ./zeronet.py "$@"

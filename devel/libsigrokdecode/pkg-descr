@@ -1,9 +1,9 @@
 The sigrok project aims at creating a portable, cross-platform,
 Free/Libre/Open-Source signal analysis software suite that supports
 various device types, such as logic analyzers, MSOs, oscilloscopes,
-multimeters, LCR meters, sound level meters, thermometers, 
-hygrometers, anemometers, light meters, DAQs, dataloggers, 
+multimeters, LCR meters, sound level meters, thermometers,
+hygrometers, anemometers, light meters, DAQs, dataloggers,
 function generators, spectrum analyzers, power supplies,
-GPIB interfaces, and more. 
+GPIB interfaces, and more.
 
 WWW: http://sigrok.org/

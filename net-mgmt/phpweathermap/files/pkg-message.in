@@ -8,9 +8,9 @@ For example, insert:
 
 into `%%LOCALBASE%%/etc/php.ini'.
 
-Remember to change the permission of output dir 
+Remember to change the permission of output dir
 if you wish to use the web editor interface.
 
-For more general information about the PHP Network Weathermap, 
+For more general information about the PHP Network Weathermap,
 please visit: http://www.network-weathermap.com/
 ***************************************************************

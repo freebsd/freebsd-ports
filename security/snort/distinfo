@@ -1,2 +1,3 @@
-SHA256 (snort-2.9.8.0.tar.gz) = bddd5d01d10d20c182836fa0199cd3549239b7a9d0fd5bbb10226feb8b42d231
-SIZE (snort-2.9.8.0.tar.gz) = 6323095
+TIMESTAMP = 1466646606
+SHA256 (snort-2.9.8.3.tar.gz) = 856d02ccec49fa30c920a1e416c47c0d62dd224340a614959ba5c03239100e6a
+SIZE (snort-2.9.8.3.tar.gz) = 6244304

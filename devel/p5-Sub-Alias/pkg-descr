@@ -3,7 +3,7 @@ aliases based on its name.
 
 This differs from p5-Sub-Name in that it defines a typeglob in a more correct
 way and keeps you from manipulating the symbols table directly. You can use
-the subroutine as if it was defined the ordinary way then. 
+the subroutine as if it was defined the ordinary way then.
 
 This is particularly useful in the cases when you need to have several
 identical subroutines with different names.

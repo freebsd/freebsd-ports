@@ -3,6 +3,6 @@ readv()/writev() for input/output. This means that, for instance, you
 can readv() data to the end of the string and writev() data from the
 beginning of the string without having to allocate or move memory. It
 also means that the library is completely happy with data that has
-multiple zero bytes in it. 
+multiple zero bytes in it.
 
 WWW: http://www.and.org/vstr/

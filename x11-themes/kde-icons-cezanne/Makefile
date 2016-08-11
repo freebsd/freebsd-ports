@@ -10,6 +10,8 @@ COMMENT=	KDE Cezanne iconset
 
 USES=		tar:bzip2
 
+BROKEN=		does not fetch (connect timeout)
+
 WRKSRC=		${WRKDIR}/Cezanne
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 

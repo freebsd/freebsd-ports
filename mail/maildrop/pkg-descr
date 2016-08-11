@@ -1,11 +1,11 @@
 maildrop is a replacement for your local mail delivery agent,
 similar to mail/procmail.
-- maildrop reads a mail message from standard input, 
-  then delivers the message to your mailbox. 
-- maildrop will optionally read instructions from a file, 
-  which describes how to filter incoming mail. 
-  Instructions can be provided having mail delivered to 
-  alternate mailboxes, or forwarded somewhere else. 
+- maildrop reads a mail message from standard input,
+  then delivers the message to your mailbox.
+- maildrop will optionally read instructions from a file,
+  which describes how to filter incoming mail.
+  Instructions can be provided having mail delivered to
+  alternate mailboxes, or forwarded somewhere else.
   Unlike procmail, maildrop uses a structured filtering language.
 - maildrop knows how to deliver mail to mbox-style mailboxes and maildirs.
 - maildrop is written in C++, and handles resources more efficiently.

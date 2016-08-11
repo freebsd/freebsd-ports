@@ -12,20 +12,24 @@ COMMENT=	Templating engine working in php
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		php zip
 NO_BUILD=	yes
-USE_PHP=	yes
-USES=		zip
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DATADIR}/plugins
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DATADIR}/plugins
 	${INSTALL_DATA} ${WRKSRC}/src/class.* ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/plugins/* ${STAGEDIR}${DATADIR}/plugins
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${EXAMPLESDIR}/templates
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${EXAMPLESDIR}/templates
 	${INSTALL_DATA} ${WRKSRC}/demo/test.* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo/templates/* ${STAGEDIR}${EXAMPLESDIR}/templates
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

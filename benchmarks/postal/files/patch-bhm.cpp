@@ -1,5 +1,5 @@
---- bhm.cpp.orig	Tue Feb  6 16:04:04 2007
-+++ bhm.cpp	Tue Feb  6 16:05:12 2007
+--- bhm.cpp.orig	2012-01-14 12:09:31 UTC
++++ bhm.cpp
 @@ -3,27 +3,25 @@
  #endif
  
@@ -35,7 +35,7 @@
  
  int processes = 0;
  int *thread_status;
-@@ -47,7 +45,7 @@
+@@ -47,7 +45,7 @@ void usage(CPCCHAR msg = NULL)
  
  int maxMsgSize = 10240;
  results res;
@@ -44,7 +44,7 @@
  
  int exitCount = 0;
  
-@@ -261,7 +259,7 @@
+@@ -261,7 +259,7 @@ int readCommand(base_tcp &t, char *buf, 
  
  void do_work(thread_data *td)
  {
@@ -53,7 +53,7 @@
  #ifdef USE_SSL
      , td->ssl
  #endif
-@@ -408,7 +406,7 @@
+@@ -408,7 +406,7 @@ int main(int argc, char **argv)
  #endif
      "\n");
  

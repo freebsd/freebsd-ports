@@ -5,7 +5,6 @@ etc/rc.d/yaws
 @sample %%ETCDIR%%/yaws-key.pem.sample
 @sample %%ETCDIR%%/yaws.conf.sample
 lib/erlang/lib/yaws-%%VERSION%%/ebin/haxe.beam
-lib/erlang/lib/yaws-%%VERSION%%/ebin/json.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/json2.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/jsonrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_type_c.beam
@@ -24,6 +23,7 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_config.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ctl.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_debug.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dime.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dynopts.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_exhtml.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_generated.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam

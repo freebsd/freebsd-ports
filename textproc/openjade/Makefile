@@ -34,12 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<iostream.h>|<iostream>|' ${WRKSRC}/style/MultiLineInlineNote.cxx
 
 post-install:
-	@${CAT} ${PLIST} | \
-		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | \
-		${AWK} '/^@comment INSTALL_DATA:/ \
-			{printf "if ! ${GREP} -q \"%s\" ${PLIST}; then ${ECHO_CMD} \"%s\" >> %s; fi;  %s %s/%s %s/%s\n", \
-			$$4, $$4, "${TMPPLIST}", "${INSTALL_DATA}", \
-			"${WRKSRC}", $$3, "${STAGEDIR}${PREFIX}", $$4}' | \
-		${SH}
+	@${FIND} ${WRKSRC}/dsssl -type f -depth 1 -exec ${INSTALL_DATA} {} ${STAGEDIR}/${DATADIR} \;
 
 .include <bsd.port.mk>

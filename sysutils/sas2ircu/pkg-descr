@@ -2,4 +2,4 @@ sas2ircu allows basic management of mps(4) based RAID controllers.
 This includes controllers based on the LSI SAS2 IR protocol.
 See the mps(4) man page for a more thorough list of controllers.
 
-WWW: http://www.lsi.com/
+WWW: http://www.avagotech.com/

@@ -2,7 +2,7 @@ Twiggy is a Pythonic logger.
 
 As near as I can tell, Twiggy is the first totally new design for a logger
 since log4j was developed in 1996. Let me say that again: Twiggy is the first
-new logger in 15 years. 
+new logger in 15 years.
 
 Twiggy:
 

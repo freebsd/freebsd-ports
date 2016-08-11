@@ -3,6 +3,7 @@
 
 PORTNAME=	uopz
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,9 +14,7 @@ COMMENT=	User Operations for PHP Zend engine
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

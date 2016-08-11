@@ -2,6 +2,7 @@
 
 PORTNAME=	libdcadec
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
@@ -30,6 +31,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dcadec
+	${MV} ${STAGEDIR}${PREFIX}/bin/dcadec ${STAGEDIR}${PREFIX}/bin/libdcadec
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0.1.0
 
 .include <bsd.port.mk>

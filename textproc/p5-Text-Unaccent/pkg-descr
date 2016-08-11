@@ -1,6 +1,6 @@
-Text::Unaccent is a module that remove accents from a string. unac_string 
-converts the input string from the specified charset to UTF-16 and call 
-unac_string_utf16 to return the unaccented equivalent. The conversion from 
+Text::Unaccent is a module that remove accents from a string. unac_string
+converts the input string from the specified charset to UTF-16 and call
+unac_string_utf16 to return the unaccented equivalent. The conversion from
 and to UTF-16 is done with iconv(1).
 
 WWW: http://search.cpan.org/dist/Text-Unaccent/

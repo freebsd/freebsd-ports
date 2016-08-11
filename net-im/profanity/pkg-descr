@@ -1,4 +1,4 @@
-Profanity is a console based XMPP client written in C using ncurses and 
+Profanity is a console based XMPP client written in C using ncurses and
 libstrophe, inspired by Irssi
 
 WWW: http://www.profanity.im/

@@ -1,0 +1,9 @@
+clpeak
+
+a synthetic benchmarking tool to measure peak capabilities of opencl devices
+
+A synthetic benchmarking tool to measure peak capabilities of opencl devices.
+It only measures the peak metrics that can be achieved using vector operations
+and does not represent a real-world use case
+
+WWW: https://github.com/krrishnarraj/clpeak

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.99.1
+PORTVERSION=	0.99.2
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -22,14 +23,14 @@ ARJ_DESC=		Enable arj archives support
 LHA_DESC=		Enable lha archives support
 UNZOO_DESC=		Enable zoo archives support
 UNRAR_DESC=		Enable rar archives support
-LLVM_DESC=		Enable JIT Bytecode compiler (bundled LLVM)
+LLVM_DESC=		Enable JIT Bytecode compiler (req. LLVM)
 TESTS_DESC=		Run compile-time tests (req. python)
 MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
 DMG_XAR_DESC=		Enable DMG and XAR archives support
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR \
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR DMG_XAR \
 			JSON PCRE
 
 ARC_RUN_DEPENDS=	arc:archivers/arc
@@ -47,6 +48,7 @@ TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/libcheck
 ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
+LLVM_USES=		compiler:c++11-lib
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 IPV6_CONFIGURE_ENABLE=	ipv6
 DMG_XAR_CONFIGURE_ENABLE=	xml
@@ -134,7 +136,10 @@ GROUPS=	clamav mail
 .endif
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
-CONFIGURE_ARGS+=--enable-llvm
+CONFIGURE_ARGS+=--enable-llvm --with-system-llvm=${LOCALBASE}/llvm${LLVMVER}
+BUILD_DEPENDS+=	llvm${LLVMVER}>=0:devel/llvm${LLVMVER}
+# Beware: ClamAV doesn't support LLVM 3.7 or higher yet
+LLVMVER=	36
 . if ${PORT_OPTIONS:MTESTS}
 USES+=		python:build
 . endif

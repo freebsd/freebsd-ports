@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rmilter
-PORTVERSION=	1.7.5
+PORTVERSION=	1.9.1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -10,14 +10,14 @@ COMMENT=	Milter that performs rspamd, clamav, and other checks
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libopendkim.so:mail/opendkim
+		libopendkim.so:mail/opendkim \
+		libmemcached.so:databases/libmemcached
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 
-USE_RC_SUBR=	yes
-USES=		cmake:outsource bison
-USE_OPENSSL=	yes
+USES=		cmake:outsource bison pkgconfig ssl
+USE_GNOME=	glib20
 
 USERS=		_rmilter
 GROUPS=		_rmilter
@@ -40,7 +40,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rmilter ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/rmilter ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${STAGEDIR}${PREFIX}/etc/
-	${INSTALL_MAN} ${WRKSRC}/doc/rmilter.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 post-stage:
 	${INSTALL} -d ${STAGEDIR}/var/run/rmilter

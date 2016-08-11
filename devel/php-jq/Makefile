@@ -3,6 +3,7 @@
 
 PORTNAME=	jq
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -17,11 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-jq
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
 IGNORE_WITH_PHP=	70
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 JQ_CMD=		${LOCALBASE}/bin/jq
 

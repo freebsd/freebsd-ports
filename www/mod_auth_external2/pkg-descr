@@ -1,9 +1,9 @@
 Mod_Auth_External is an Apache module used for authentication. The Apache HTTP
-Daemon can be configured to require users to supply logins and passwords  
-before accessing pages in some directories. Authentication is the process of 
-checking if the password given is correct for a user. Apache has standard 
-modules for authenticating out of several different kinds of databases.  
-Mod_Auth_External is a flexible tool for creating authentication systems based 
+Daemon can be configured to require users to supply logins and passwords
+before accessing pages in some directories. Authentication is the process of
+checking if the password given is correct for a user. Apache has standard
+modules for authenticating out of several different kinds of databases.
+Mod_Auth_External is a flexible tool for creating authentication systems based
 on other databases.
 
 WWW: http://www.unixpapa.com/mod_auth_external.html

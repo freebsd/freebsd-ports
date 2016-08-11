@@ -5,8 +5,11 @@ PORTNAME=	xps
 PORTVERSION=	0.5.2
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	serpent7776@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that searches the ports tree by various criteria
+
+DEPRECATED=     Does not support pkg(8)
+EXPIRATION_DATE=        2016-08-10
 
 LICENSE=	MIT
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.12.3
+PORTVERSION=	3.0.13
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
@@ -16,6 +16,8 @@ LICENSE=	teamspeak
 LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
+
+BROKEN_FreeBSD_11=Will not start on 11
 
 USES=		tar:bz2
 NO_BUILD=	yes
@@ -87,9 +89,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/${DOCFILE} ${STAGEDIR}${DOCSDIR}
 .	endfor
 
-post-install:
 	${INSTALL} -d ${STAGEDIR}${DBDIR}
 	${INSTALL} -d ${STAGEDIR}${LOGDIR}
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL} -d ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

@@ -37,7 +37,6 @@
     SUBDIR += gstreamer1-plugins-gtksink
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-sharp-beans
-    SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
     SUBDIR += gtk12
@@ -149,6 +148,7 @@
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-Gtk2-Unique
+    SUBDIR += p5-Gtk3
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tk

@@ -3,7 +3,7 @@
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	mail
 MASTER_SITES+=	QMAIL
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -326,7 +326,7 @@ SUB_FILES+=	pkg-message
 .endif
 
 .if !defined(SLAVE_LDAP)
-SUB_FILES+=	qmailsmtpd
+SUB_FILES+=	qmailsmtpd qmailsend
 .endif
 
 WRKDIR_doc=	${WRKDIR}/doc
@@ -838,6 +838,7 @@ do-install:
 .endfor
 .if !defined(SLAVE_LDAP)
 	${INSTALL_SCRIPT} ${WRKDIR}/qmailsmtpd ${STAGEDIR}${PREFIX}/boot
+	${INSTALL_SCRIPT} ${WRKDIR}/qmailsend ${STAGEDIR}${PREFIX}/boot
 .endif
 .for i in 1 5 7 8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/man/man$i

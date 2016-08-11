@@ -10,16 +10,15 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley DB package, revision 4.8
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-DEPRECATED=		Please migrate to db5 or db6
-# The port is not to be removed unless the bitcoin-related ports can
-# go without this.
-EXPIRATION_DATE=	2016-07-31
+DEPRECATED=		Please migrate to db5 or db6, make sure that bitcoin and siblings moved to another database or version by then
+# This port expires along with FreeBSD 10.X.
+EXPIRATION_DATE=	2018-04-30
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \

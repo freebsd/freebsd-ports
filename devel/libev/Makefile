@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libev
-PORTVERSION=	4.20
+PORTVERSION=	4.22
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \

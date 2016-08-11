@@ -1,5 +1,5 @@
 QUIMUP is a 'graphical' client for the music player daemon (MPD)
-written in C++ and Qt4.
+written in C++ and Qt5.
 
 Features include:
 

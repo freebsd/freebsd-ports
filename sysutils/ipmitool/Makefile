@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.15
+PORTVERSION=	1.8.17
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
@@ -18,7 +18,8 @@ CPE_VENDOR=	sun
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
-		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc
+		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc \
+		--disable-intf-usb
 PLIST_FILES=	bin/ipmitool man/man1/ipmitool.1.gz man/man8/ipmievd.8.gz \
 		sbin/ipmievd share/ipmitool/oem_ibm_sel_map \
 		${PERIODIC_DIR}/400.status-ipmi

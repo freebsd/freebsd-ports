@@ -43,8 +43,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${STAGEDIR}${PREFIX}/etc/periodic/security
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${STAGEDIR}${DOCSDIR}
-
-post-install:
 	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample

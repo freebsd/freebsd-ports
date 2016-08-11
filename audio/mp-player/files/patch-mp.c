@@ -1,5 +1,5 @@
---- mp.c.orig	Fri Aug 26 09:59:36 2005
-+++ mp.c	Fri Aug 26 09:59:57 2005
+--- mp.c.orig	2004-01-28 21:39:17 UTC
++++ mp.c
 @@ -27,7 +27,7 @@
  #include <sys/ioctl.h>
  #include <sys/types.h>

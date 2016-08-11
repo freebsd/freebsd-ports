@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-92
+DISTVERSION=	0.6-6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,11 +11,13 @@ COMMENT=	Spatial dependence: weighting schemes, statistics, and models
 
 LICENSE=	GPLv2+
 
+LIB_DEPENDS=	libopenblasp.so:math/openblas
 RUN_DEPENDS=	R-cran-sp>=1.0:math/R-cran-sp \
 		R-cran-LearnBayes>0:math/R-cran-LearnBayes \
 		R-cran-deldir>0:math/R-cran-deldir \
-		R-cran-coda>0:math/R-cran-coda
+		R-cran-coda>0:math/R-cran-coda \
+		R-cran-gmodels>0:devel/R-cran-gmodels
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

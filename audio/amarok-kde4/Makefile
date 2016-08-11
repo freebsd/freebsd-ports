@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:dev
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
-USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
+USE_KDE4=	kdelibs libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
 USE_MYSQL=	embedded
 USE_QT4=	corelib dbus designer gui network opengl \

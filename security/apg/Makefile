@@ -3,7 +3,7 @@
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 

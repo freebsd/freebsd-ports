@@ -2,6 +2,7 @@
 
 PORTNAME=	auto-multiple-choice
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/auto-qcm/
 DISTNAME=	auto-multiple-choice_${PORTVERSION}_precomp
@@ -59,6 +60,7 @@ post-patch:
 		${WRKSRC}/*.pl ${WRKSRC}/*.pl.in
 	@${REINPLACE_CMD} -e "s|^#! @/PERLPATH/@|#!${LOCALBASE}/bin/perl|" \
 		${WRKSRC}/auto-multiple-choice.in
+	@${RM} ${WRKSRC}/vars-subs.pl
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/${SHARED_MIMEINFO_DIR} \

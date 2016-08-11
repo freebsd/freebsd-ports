@@ -55,6 +55,7 @@
     SUBDIR += emby-server
     SUBDIR += emotion_generic_players-vlc
     SUBDIR += emovix
+    SUBDIR += ffdec
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
     SUBDIR += ffmpeg2theora
@@ -74,7 +75,6 @@
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
-    SUBDIR += ggrab
     SUBDIR += gmencoder
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
@@ -217,9 +217,7 @@
     SUBDIR += linux-c6-libv4l
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
-    SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
-    SUBDIR += linux-xmovie
     SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += lives
     SUBDIR += livestreamer
@@ -322,6 +320,7 @@
     SUBDIR += py-kaa-metadata
     SUBDIR += py-librtmp
     SUBDIR += py-mlt
+    SUBDIR += py-moviepy
     SUBDIR += py-openlp
     SUBDIR += py-periscope
     SUBDIR += py-qt4-multimedia
@@ -424,7 +423,6 @@
     SUBDIR += vdr-plugin-xineliboutput
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
-    SUBDIR += vic
     SUBDIR += vid.stab
     SUBDIR += vlc
     SUBDIR += vlc-qt4

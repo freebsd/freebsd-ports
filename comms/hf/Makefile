@@ -12,6 +12,8 @@ COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	whiptail:devel/newt
 
 USE_GNOME=	gtk12

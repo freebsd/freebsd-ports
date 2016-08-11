@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/ \
 		LOCAL/bf
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
 LIB_DEPENDS=	libmetis.so:math/metis4

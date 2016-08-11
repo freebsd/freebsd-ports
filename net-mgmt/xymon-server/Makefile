@@ -2,7 +2,7 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.27
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -69,7 +69,7 @@ LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 post-patch:
 	${REINPLACE_CMD} -e 's|web-build client|web-build|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
-	${REINPLACE_CMD} -e 's|$(INSTALLETCDIR)/protocols.cfg|$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
+	${REINPLACE_CMD} -e 's|$$(INSTALLETCDIR)/protocols.cfg|$$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
 	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 	${RM} ${WRKSRC}/docs/manpages/man1/xymonping.1.html
 	${RM} ${WRKSRC}/xymonnet/xymonping.1
@@ -79,7 +79,22 @@ do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 post-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/server/etc
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/acks
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/data
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/disabled
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/hist
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/histlogs
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/hostdata
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/logs
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/rrd
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/download
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/tmp
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/html
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/notes
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/rep
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/snap
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/wml
 	${LN} -s ${LOCALBASE}/sbin/fping ${STAGEDIR}${WWWDIR}/server/bin/xymonping
 	${INSTALL_SCRIPT} ${WRKSRC}/build/upgrade430.sh ${STAGEDIR}${WWWDIR}/server/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/build/renamevars ${STAGEDIR}${WWWDIR}/server/bin/

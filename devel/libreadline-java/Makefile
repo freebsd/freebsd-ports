@@ -28,10 +28,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' \
-		${WRKSRC}/src/native/Makefile
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar \
 		${STAGEDIR}${JAVAJARDIR}

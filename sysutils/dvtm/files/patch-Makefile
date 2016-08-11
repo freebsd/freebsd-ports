@@ -1,6 +1,6 @@
---- Makefile.orig	2015-01-08 12:22:43.000000000 +0100
-+++ Makefile	2015-01-08 12:22:51.000000000 +0100
-@@ -55,8 +55,6 @@
+--- Makefile.orig	2016-01-09 11:40:56 UTC
++++ Makefile
+@@ -55,8 +55,6 @@ install: dvtm
  	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
  	@sed "s/VERSION/${VERSION}/g" < dvtm.1 > ${DESTDIR}${MANPREFIX}/man1/dvtm.1
  	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dvtm.1

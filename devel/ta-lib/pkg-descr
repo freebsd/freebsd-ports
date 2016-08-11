@@ -1,7 +1,7 @@
 The ta-lib provides common functions for the technical analysis of
 financial market data. Widely used by trading software developers
 working with Excel, .NET, Java, Perl, Python or C/C++.
- 
+
 More than 150 technical analysis indicators such as ADX, MACD, RSI,
 Stochastic, Bollinger Bands. Includes candlestick pattern recognition.
 Optional abstract API allowing your code to adapt automatically when new

@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-PORTVERSION=	0.7.0.20160321
+PORTVERSION=	0.9.7.20160729
 CATEGORIES=	net-im net-p2p
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight Tox client
 
 LICENSE=	GPLv3
@@ -17,12 +17,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libsodium.so:security/libsodium \
 		libv4lconvert.so:multimedia/libv4l \
 		libvpx.so:multimedia/libvpx \
-		libfilteraudio.so:audio/libfilteraudio
+		libfilteraudio.so:audio/libfilteraudio\
+		libopus.so:audio/opus
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GrayHatter
-GH_TAGNAME=	9524f98
+GH_TAGNAME=	d800600
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender

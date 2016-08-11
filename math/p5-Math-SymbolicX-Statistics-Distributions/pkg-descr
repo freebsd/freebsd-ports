@@ -1,20 +1,20 @@
-This module offers easy access to formulas for a few often-used 
-distributions. For that, it uses the Math::Symbolic module which gives the 
+This module offers easy access to formulas for a few often-used
+distributions. For that, it uses the Math::Symbolic module which gives the
 user an opportunity to manufacture distributions to his liking.
 
-The module can be used in two styles: It has a procedural interface which 
-is demonstrated in the first half of the synopsis. But it also features a 
-wholly different interface: It can modify the Math::Symbolic parser so 
-that you can use the distributions right inside strings that will be 
-parsed as Math::Symbolic trees. This is demonstrated for very simple cases 
+The module can be used in two styles: It has a procedural interface which
+is demonstrated in the first half of the synopsis. But it also features a
+wholly different interface: It can modify the Math::Symbolic parser so
+that you can use the distributions right inside strings that will be
+parsed as Math::Symbolic trees. This is demonstrated for very simple cases
 in the second half of the synopsis.
 
-All arguments in both interface styles are optional. Whichever expression 
-is used instead of, for examle 'mean', is plugged into the formula for the 
-distribution as a Math::Symbolic tree. Details on argument handling are 
+All arguments in both interface styles are optional. Whichever expression
+is used instead of, for examle 'mean', is plugged into the formula for the
+distribution as a Math::Symbolic tree. Details on argument handling are
 explained below.
 
-Please see the section on Export for details on how to choose the 
+Please see the section on Export for details on how to choose the
 interface style you want to use.
 
 WWW: http://search.cpan.org/dist/Math-SymbolicX-Statistics-Distributions/

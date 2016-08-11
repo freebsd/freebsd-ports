@@ -1,5 +1,5 @@
---- source/shared_lib/sources/platform/posix/ircclient.cpp.orig	2013-11-22 15:51:23.000000000 -0600
-+++ source/shared_lib/sources/platform/posix/ircclient.cpp	2013-11-22 15:51:42.000000000 -0600
+--- source/shared_lib/sources/platform/posix/ircclient.cpp.orig	2016-04-02 12:36:57 UTC
++++ source/shared_lib/sources/platform/posix/ircclient.cpp
 @@ -19,10 +19,7 @@
  #if !defined(DISABLE_IRCCLIENT)
  

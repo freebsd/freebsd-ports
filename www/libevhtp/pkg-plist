@@ -4,6 +4,6 @@ include/evhtp/htparse.h
 libdata/pkgconfig/evhtp.pc
 %%NO_STATIC%%lib/libevhtp.so
 %%NO_STATIC%%lib/libevhtp.so.%%PORTVERSION%%
-%%REGEX%%include/evhtp/onigposix.h
+include/evhtp/onigposix.h
 %%THREADS%%include/evhtp/evthr.h
 %%STATIC%%lib/libevhtp.a

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyodbc
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.10
 CATEGORIES=	databases python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rob.kruus@gmail.com
@@ -13,8 +12,8 @@ COMMENT=	ODBC connections for python
 
 LICENSE=	MIT
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:databases/unixODBC

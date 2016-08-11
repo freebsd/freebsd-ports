@@ -32,7 +32,7 @@ lib/libexslt.so.8
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
-lib/libxslt.so.1.1.28
+lib/libxslt.so.1.1.29
 lib/libxslt.so.2
 lib/xsltConf.sh
 libdata/pkgconfig/libexslt.pc

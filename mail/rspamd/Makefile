@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -14,8 +14,9 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmime-2.4.so:mail/gmime24 \
 		libevent.so:devel/libevent2 \
 		libluajit-5.1.so:lang/luajit
+BUILD_DEPENDS=	ragel:devel/ragel
 
-CONFLICTS_INSTALL=	rspamd
+CONFLICTS_INSTALL=	rspamd-devel
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
 GPERF_DESC=		Google perf-tools profiling
@@ -39,12 +40,11 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DNO_SHARED=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
-		compiler:c11 sqlite
+		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
 
@@ -54,9 +54,9 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PORT_OPTIONS:MHYPERSCAN}
- CMAKE_ARGS+=  -DENABLE_HYPERSCAN=ON
- BUILD_DEPENDS+=       ${LOCALBASE}/lib/libhs.a:devel/hyperscan
- ONLY_FOR_ARCHS=       amd64
+ CMAKE_ARGS+=		-DENABLE_HYPERSCAN=ON
+ BUILD_DEPENDS+=	${LOCALBASE}/lib/libhs.a:devel/hyperscan
+ ONLY_FOR_ARCHS=	amd64
 .endif
 
 .if ${PORT_OPTIONS:MREDIRECTOR}
@@ -77,7 +77,7 @@ USE_OPENSSL=	yes
 	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
 	p5-SWF-File>=0:graphics/p5-SWF-File
 .else
- PLIST_SUB+=		REDIRECTOR="@comment "
+ PLIST_SUB+=	REDIRECTOR="@comment "
 .endif
 
 post-stage:

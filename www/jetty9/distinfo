@@ -1,2 +1,3 @@
-SHA256 (jetty-distribution-9.3.8.v20160314.tar.gz) = fc4136c0abf8f86d99de1b11b3d2323bffda0d538a0f654bf741f5e84ea992bf
-SIZE (jetty-distribution-9.3.8.v20160314.tar.gz) = 11750075
+TIMESTAMP = 1465988009
+SHA256 (jetty-distribution-9.3.9.v20160517.tar.gz) = 1adf7b0be04d8060d77baee34cfd83726803a9474e6b291042922759c9661f7b
+SIZE (jetty-distribution-9.3.9.v20160517.tar.gz) = 11888079

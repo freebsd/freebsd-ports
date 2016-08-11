@@ -1,6 +1,6 @@
---- xmix.c.orig	Wed Nov  1 10:29:04 2000
-+++ xmix.c	Wed Nov  1 10:29:04 2000
-@@ -77,7 +77,7 @@
+--- xmix.c.orig	2016-07-26 16:19:49 UTC
++++ xmix.c
+@@ -77,7 +77,7 @@ to Rick! I'll call this version V2.1
  #include "square_empty.bit"
  #include "square_with_x.bit"
  

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/250390926/ \
+MASTER_SITES=	https://launchpadlibrarian.net/263736736/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -17,12 +17,10 @@ BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 		libgee-0.8.so:devel/libgee
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 CFLAGS+=	-Wno-return-type
-USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3 dconf
+USE_GNOME=	glib20 gtk30 gdkpixbuf2 cairo intlhack libxml2 libwnck3 dconf
 USE_XORG=	x11 xfixes xi
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip

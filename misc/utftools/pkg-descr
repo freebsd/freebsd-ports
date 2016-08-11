@@ -1,2 +1,4 @@
 This package contains implementations of UTF-aware wc, fmt,
 expand, and unexpand.
+
+WWW: http://www.cs.yorku.ca/~oz/

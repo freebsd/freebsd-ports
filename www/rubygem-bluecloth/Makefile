@@ -12,9 +12,7 @@ COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 LICENSE=	BSD3CLAUSE
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/bluecloth
 
 PLIST_FILES=	bin/bluecloth

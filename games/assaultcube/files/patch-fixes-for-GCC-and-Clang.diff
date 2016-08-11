@@ -1,0 +1,259 @@
+# Origin: https://github.com/assaultcube/AC/commit/6e4b23734f115888ce73907a85739ec833a333fd
+# Subject: fix clang warnings
+# Origin: https://github.com/assaultcube/AC/commit/752950989b4e286459ca9aee3d61a868d7b20fa4
+# Subject: fix some errors and warnings for GCC 6
+
+--- source/src/bot/bot_waypoint.cpp.orig	2013-11-10 18:50:03 UTC
++++ source/src/bot/bot_waypoint.cpp
+@@ -848,7 +848,7 @@ void CWaypointClass::DeleteWaypoint(vec 
+ 
+      if (!pWP)
+      {
+-          conoutf("Error: Couldn´t find near waypoint");
++          conoutf("Error: Couldn't find near waypoint");
+           return;
+      }
+ 
+@@ -1221,7 +1221,7 @@ void CWaypointClass::CalcCost(node_s *pN
+                     flCost += (1.0f-flFraction)*0.5f;
+                }
+ 
+-               if ((abs(a) > 4) || (abs(b) > 4)) continue;
++               if ((iabs(a) > 4) || (iabs(b) > 4)) continue;
+ 
+                vec from = to;
+                to.z -= (JUMP_HEIGHT - 1.0f);
+@@ -1249,7 +1249,7 @@ void CWaypointClass::CalcCost(node_s *pN
+                     flCost += (1.0f-flFraction)*0.5f;
+                }
+ 
+-               if ((abs(a) > 4) || (abs(b) > 4)) continue;
++               if ((iabs(a) > 4) || (iabs(b) > 4)) continue;
+ 
+                vec from = to;
+                to.z -= (JUMP_HEIGHT - 1.0f);
+@@ -1671,12 +1671,12 @@ node_s *CWaypointClass::GetNearestTrigge
+ void CWaypointClass::GetNodeIndexes(const vec &v_origin, short *i, short *j)
+ {
+      // Function code by cheesy and PMB
+-     //*i = abs((int)((int)(v_origin.x + (2*ssize)) / SECTOR_SIZE));
+-     //*j = abs((int)((int)(v_origin.y + (2*ssize)) / SECTOR_SIZE));
++     //*i = iabs((int)((int)(v_origin.x + (2*ssize)) / SECTOR_SIZE));
++     //*j = iabs((int)((int)(v_origin.y + (2*ssize)) / SECTOR_SIZE));
+      //*i = (int)((v_origin.x) / ssize * MAX_MAP_GRIDS);
+      //*j = (int)((v_origin.y) / ssize * MAX_MAP_GRIDS);
+-     *i = abs((int)((v_origin.x) / MAX_MAP_GRIDS));
+-     *j = abs((int)((v_origin.y) / MAX_MAP_GRIDS));
++     *i = iabs((int)((v_origin.x) / MAX_MAP_GRIDS));
++     *j = iabs((int)((v_origin.y) / MAX_MAP_GRIDS));
+ 
+      if (*i > MAX_MAP_GRIDS - 1)
+           *i = MAX_MAP_GRIDS - 1;
+--- source/src/command.cpp.orig	2013-11-09 18:48:58 UTC
++++ source/src/command.cpp
+@@ -497,7 +497,7 @@ char *executeret(const char *p)         
+             if(lc<=seer_t1.length())
+             {
+                 int dt = seer_t1[seer_index] - seer_t1[lc];
+-                if(abs(dt)<2)
++                if(iabs(dt)<2)
+                 {
+                     conoutf("SCRIPT EXECUTION warning [%d:%s]", &p, p);
+                     seer_t2.add(seer_t1[seer_index]);
+--- source/src/command.h.orig	2013-10-22 18:57:19 UTC
++++ source/src/command.h
+@@ -86,6 +86,7 @@ enum { IEXC_CORE = 0, IEXC_CFG, IEXC_PRO
+ #define VARNP(name, global, min, cur, max) int global = variable(#name, min, cur, max, &global, NULL, true)
+ #define VARF(name, min, cur, max, body)  extern int name; void var_##name() { body; } int name = variable(#name, min, cur, max, &name, var_##name, false)
+ #define VARFP(name, min, cur, max, body) extern int name; void var_##name() { body; } int name = variable(#name, min, cur, max, &name, var_##name, true)
++#define VARNFP(name, global, min, cur, max, body) extern int global; void var_##name() { body; } int global = variable(#name, min, cur, max, &global, var_##name, true)
+ 
+ #define FVARP(name, min, cur, max) float name = fvariable(#name, min, cur, max, &name, NULL, true)
+ #define FVAR(name, min, cur, max)  float name = fvariable(#name, min, cur, max, &name, NULL, false)
+--- source/src/crypto.cpp.orig	2013-10-09 08:27:37 UTC
++++ source/src/crypto.cpp
+@@ -763,7 +763,7 @@ bool hashstring(const char *str, char *r
+ const char *genpwdhash(const char *name, const char *pwd, int salt)
+ {
+     static string temp;
+-    formatstring(temp)("%s %d %s %s %d", pwd, salt, name, pwd, abs(PROTOCOL_VERSION));
++    formatstring(temp)("%s %d %s %s %d", pwd, salt, name, pwd, iabs(PROTOCOL_VERSION));
+     tiger::hashval hash;
+     tiger::hash((uchar *)temp, (int)strlen(temp), hash);
+     formatstring(temp)("%llx %llx %llx", hash.chunks[0], hash.chunks[1], hash.chunks[2]);
+--- source/src/editing.cpp.orig	2013-10-22 18:57:16 UTC
++++ source/src/editing.cpp
+@@ -126,11 +126,11 @@ void checkselections()
+ void makesel(bool isnew)
+ {
+     block &cursel = sels.last(); //RR 10/12/12 - FIXEME, error checking should happen with "isnew", not here checking if it really is new.
+-    if(isnew || sels.length() == 0) addselection(min(lastx, cx), min(lasty, cy), abs(lastx-cx)+1, abs(lasty-cy)+1, max(lasth, ch));
++    if(isnew || sels.length() == 0) addselection(min(lastx, cx), min(lasty, cy), iabs(lastx-cx)+1, iabs(lasty-cy)+1, max(lasth, ch));
+     else
+     {
+         cursel.x = min(lastx, cx); cursel.y = min(lasty, cy);
+-        cursel.xs = abs(lastx-cx)+1; cursel.ys = abs(lasty-cy)+1;
++        cursel.xs = iabs(lastx-cx)+1; cursel.ys = iabs(lasty-cy)+1;
+         cursel.h = max(lasth, ch);
+         correctsel(cursel);
+     }
+@@ -645,7 +645,7 @@ void movemap(int xo, int yo, int zo) // 
+     }
+     if(xo || yo)
+     {
+-        block b = { max(-xo, 0), max(-yo, 0), ssize - abs(xo), ssize - abs(yo) }, *cp = blockcopy(b);
++        block b = { max(-xo, 0), max(-yo, 0), ssize - iabs(xo), ssize - iabs(yo) }, *cp = blockcopy(b);
+         cp->x = max(xo, 0);
+         cp->y = max(yo, 0);
+         blockpaste(*cp);
+--- source/src/entity.h.orig	2013-10-22 18:57:16 UTC
++++ source/src/entity.h
+@@ -540,7 +540,7 @@ public:
+     {
+         const int maxskin[2] = { 4, 6 };
+         t = team_base(t < 0 ? team : t);
+-        nextskin[t] = abs(s) % maxskin[t];
++        nextskin[t] = iabs(s) % maxskin[t];
+     }
+ };
+ 
+--- source/src/main.cpp.orig	2013-10-29 09:33:15 UTC
++++ source/src/main.cpp
+@@ -513,11 +513,11 @@ void setresdata(char *s, enet_uint32 c)
+ COMMANDF(screenres, "ii", (int *w, int *h) { screenres(*w, *h); });
+ 
+ static int curgamma = 100;
+-VARFP(gamma, 30, 100, 300,
++VARNFP(gamma, vgamma, 30, 100, 300,
+ {
+-    if(gamma == curgamma) return;
+-    curgamma = gamma;
+-    float f = gamma/100.0f;
++    if(vgamma == curgamma) return;
++    curgamma = vgamma;
++    float f = vgamma/100.0f;
+     if(SDL_SetGamma(f,f,f)==-1) conoutf("Could not set gamma: %s", SDL_GetError());
+ });
+ 
+--- source/src/platform.h.orig	2013-10-22 18:57:19 UTC
++++ source/src/platform.h
+@@ -2,14 +2,6 @@
+     #ifdef _FORTIFY_SOURCE
+         #undef _FORTIFY_SOURCE
+     #endif
+-
+-    #define gamma __gamma
+-#endif
+-
+-#include <math.h>
+-
+-#ifdef __GNUC__
+-    #undef gamma
+ #endif
+ 
+ #include <string.h>
+@@ -19,6 +11,7 @@
+ #include <ctype.h>
+ #include <time.h>
+ #include <limits.h>
++#include <math.h>
+ #ifdef __GNUC__
+     #include <new>
+     #include <signal.h>
+--- source/src/rendercubes.cpp.orig	2013-10-22 18:57:16 UTC
++++ source/src/rendercubes.cpp
+@@ -202,9 +202,9 @@ void render_flat(int wtex, int x, int y,
+     else        // continue strip
+     {
+         int lighterr = lighterror*2;
+-        if((abs(ol1r-l3->r)<lighterr && abs(ol2r-l4->r)<lighterr        // skip vertices if light values are close enough
+-        &&  abs(ol1g-l3->g)<lighterr && abs(ol2g-l4->g)<lighterr
+-        &&  abs(ol1b-l3->b)<lighterr && abs(ol2b-l4->b)<lighterr) || !wtex)
++        if((iabs(ol1r-l3->r)<lighterr && iabs(ol2r-l4->r)<lighterr        // skip vertices if light values are close enough
++        &&  iabs(ol1g-l3->g)<lighterr && iabs(ol2g-l4->g)<lighterr
++        &&  iabs(ol1b-l3->b)<lighterr && iabs(ol2b-l4->b)<lighterr) || !wtex)
+         {
+             verts.setsize(verts.length()-2);
+             nquads--;
+@@ -361,7 +361,7 @@ void render_square(int wtex, float floor
+     {
+         int lighterr = lighterror*2;
+         if((!hf && !ohf)
+-        && ((abs(ol1r-l2->r)<lighterr && abs(ol1g-l2->g)<lighterr && abs(ol1b-l2->b)<lighterr) || !wtex))       // skip vertices if light values are close enough
++        && ((iabs(ol1r-l2->r)<lighterr && iabs(ol1g-l2->g)<lighterr && iabs(ol1b-l2->b)<lighterr) || !wtex))       // skip vertices if light values are close enough
+         {
+             verts.setsize(verts.length()-2);
+             nquads--;
+--- source/src/rendertext.cpp.orig	2013-10-22 18:57:16 UTC
++++ source/src/rendertext.cpp
+@@ -330,7 +330,7 @@ static void text_color(char c, char *sta
+         if(c=='r') c = stack[(sp > 0) ? --sp : sp]; // restore color
+         else if(c == 'b') { if(allowblinkingtext && !ignoreblinkingbit) stack[sp] *= -1; } // blinking text - only if allowed
+         else stack[sp] = c;
+-        switch(abs(stack[sp]))
++        switch(iabs(stack[sp]))
+         {
+             case '0': color = bvec( 2,  255,  128 ); break;   // green: player talk
+             case '1': color = bvec( 96,  160, 255 ); break;   // blue: team chat
+@@ -380,7 +380,7 @@ static void text_color(char c, char *sta
+             //default: color = bvec( 255, 255, 255 ); break;
+         }
+         int b = (int) (sinf(lastmillis / 200.0f) * 115.0f);
+-        b = stack[sp] > 0 ? 100 : min(abs(b), 100);
++        b = stack[sp] > 0 ? 100 : min(iabs(b), 100);
+         glColor4ub(color.x, color.y, color.z, (a * b) / 100);
+     }
+ }
+--- source/src/tools.h.orig	2013-10-22 18:57:19 UTC
++++ source/src/tools.h
+@@ -54,8 +54,7 @@ static inline T min(T a, T b)
+ {
+     return a < b ? a : b;
+ }
+-
+-static inline float round(float x) { return floor(x + 0.5f); }
++inline int iabs(int n) { return labs(n); }
+ 
+ #define clamp(a,b,c) (max(b, min(a, c)))
+ #define rnd(x) ((int)(randomMT()&0xFFFFFF)%(x))
+--- source/src/world.cpp.orig	2013-10-22 18:57:19 UTC
++++ source/src/world.cpp
+@@ -79,9 +79,9 @@ void remip(const block &b, int level)
+                 || o[i]->ceil!=o[3]->ceil
+                 || o[i]->ftex!=o[3]->ftex
+                 || o[i]->ctex!=o[3]->ctex
+-                || abs(o[i+1]->r-o[0]->r)>lighterr          // perfect mip even if light is not exactly equal
+-                || abs(o[i+1]->g-o[0]->g)>lighterr
+-                || abs(o[i+1]->b-o[0]->b)>lighterr
++                || iabs(o[i+1]->r-o[0]->r)>lighterr          // perfect mip even if light is not exactly equal
++                || iabs(o[i+1]->g-o[0]->g)>lighterr
++                || iabs(o[i+1]->b-o[0]->b)>lighterr
+                 || o[i]->utex!=o[3]->utex
+                 || o[i]->wtex!=o[3]->wtex) goto c;
+             }
+--- source/src/worldrender.cpp.orig	2013-10-09 08:27:37 UTC
++++ source/src/worldrender.cpp
+@@ -270,10 +270,10 @@ void distlod(int &low, int &high, int an
+ void render_world(float vx, float vy, float vh, float changelod, int yaw, int pitch, float fov, float fovy, int w, int h)
+ {
+     loopi(LARGEST_FACTOR) stats[i] = 0;
+-    min_lod = minimap || (player1->isspectating() && player1->spectatemode == SM_OVERVIEW) ? MAX_LOD : MIN_LOD+abs(pitch)/12;
++    min_lod = minimap || (player1->isspectating() && player1->spectatemode == SM_OVERVIEW) ? MAX_LOD : MIN_LOD+iabs(pitch)/12;
+     yaw = 360-yaw;
+     float widef = fov/75.0f;
+-    int cdist = abs(yaw%90-45);
++    int cdist = iabs(yaw%90-45);
+     if(cdist<7)    // hack to avoid popup at high fovs at 45 yaw
+     {
+         min_lod = max(min_lod, (int)(MIN_LOD+(10-cdist)/1.0f*widef)); // less if lod worked better
+--- source/src/zip.cpp.orig	2013-10-22 18:57:19 UTC
++++ source/src/zip.cpp
+@@ -550,7 +550,7 @@ struct zipstream : stream
+ bool extractzipfile(ziparchive *a, zipfile *f, const char *name)
+ {
+     zipstream *s = new zipstream;
+-    FILE *target;
++    FILE *target = NULL;
+     defformatstring(fname)("%s", findfile(name, "wb"));
+     preparedir(fname);
+     bool error = false;

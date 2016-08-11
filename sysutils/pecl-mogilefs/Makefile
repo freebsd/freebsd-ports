@@ -3,7 +3,7 @@
 
 PORTNAME=	mogilefs
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,10 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libneon.so:www/neon
 
-USE_PHP=	yes
-USE_PHP_BUILD=	spl
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 post-extract:

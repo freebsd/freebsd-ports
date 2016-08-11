@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.19.10
+PORTVERSION=	0.19.15
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -11,12 +12,12 @@ COMMENT=	Remote-controllable music daemon
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		libicudata.so:devel/icu
+
 USES=		gmake pkgconfig compiler:c++11-lib tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libicudata.so:devel/icu
 
 USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
@@ -55,7 +56,7 @@ TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
 
-OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
+OPTIONS_DEFAULT=ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
 
 AAC_CONFIGURE_ENABLE=aac
 AAC_LIB_DEPENDS=libfaad.so:audio/faad
@@ -198,7 +199,7 @@ post-patch:
 		${WRKSRC}/doc/mpdconf.example) - 1); \
 	 finish=$$(for n in $$(${JOT} 10 $$start); do \
 		     [ "$$(${SED} -n $${n}p ${WRKSRC}/doc/mpdconf.example)" = \
-				"#}" ] && echo $$n || true; done); \
+				"#}" ] && ${ECHO_CMD} $$n || true; done); \
 	 ${REINPLACE_CMD} -e "$${start},$${finish}s,^#,," \
 		${WRKSRC}/doc/mpdconf.example
 # Fix man pages for executable names

@@ -3,9 +3,10 @@
 
 PORTNAME=	zip-ada
 PORTVERSION=	50
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
-DISTNAME=	zipada${PORTVERSION}
+DISTNAME=	zipada${PORTVERSION}_f1
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Zip compressed archive file format library written in Ada
@@ -21,6 +22,8 @@ DEMOS=		demo_csv_into_zip demo_unzip demo_zip test_chunk \
 		test_extract test_extract_tb test_lz_scramble \
 		test_stream_performance test_unz_streams \
 		test_zip_info_timing za_gnat zip_with_many_files ziptest
+
+PORTSCOUT=	ignore:50_f1	# Portscout currently showing false positive
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr)

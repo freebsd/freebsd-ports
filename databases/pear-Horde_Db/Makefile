@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Db
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Database Libraries
 
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFAULT=	MYSQLI
 OPTIONS_DEFINE=		MYSQL MYSQLI PDO
 MYSQL_DESC=		Depend on mysql PHP extension
 MYSQLI_DESC=		Depend on mysqli PHP extension

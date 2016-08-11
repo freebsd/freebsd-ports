@@ -2,4 +2,4 @@
 
 WANT_PGSQL_VER=	9.3
 
-.include "${.CURDIR}/../postgresql90-plpython/Makefile"
+.include "${.CURDIR}/../postgresql95-plpython/Makefile"

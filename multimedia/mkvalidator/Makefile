@@ -11,6 +11,8 @@ COMMENT=	Command line tool to verify Matroska and WebM files
 LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 USES=		gmake iconv tar:bzip2

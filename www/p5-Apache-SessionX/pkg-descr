@@ -1,21 +1,21 @@
-Apache::SessionX extents Apache::Session. It was initialy written to use 
-Apache::Session from inside of HTML::Embperl, but is seems to be usefull 
+Apache::SessionX extents Apache::Session. It was initialy written to use
+Apache::Session from inside of HTML::Embperl, but is seems to be usefull
 outside of Embperl as well, so here is it as standalone module.
 
-Apache::Session is a persistence framework which is particularly useful 
-for tracking session data between httpd requests. Apache::Session is 
-designed to work with Apache and mod_perl, but it should work under CGI 
-and other web servers, and it also works outside of a web server 
+Apache::Session is a persistence framework which is particularly useful
+for tracking session data between httpd requests. Apache::Session is
+designed to work with Apache and mod_perl, but it should work under CGI
+and other web servers, and it also works outside of a web server
 altogether.
 
-Apache::Session consists of five components: the interface, the object 
-store, the lock manager, the ID generator, and the serializer. The 
-interface is defined in SessionX.pm, which is meant to be easily 
-subclassed. The object store can be the filesystem, a Berkeley DB, a MySQL 
-DB, an Oracle DB, or a Postgres DB. Locking is done by lock files, 
-semaphores, or the locking capabilities of MySQL and Postgres. 
-Serialization is done via Storable, and optionally ASCII-fied via MIME or 
-pack(). ID numbers are generated via MD5. The reader is encouraged to 
+Apache::Session consists of five components: the interface, the object
+store, the lock manager, the ID generator, and the serializer. The
+interface is defined in SessionX.pm, which is meant to be easily
+subclassed. The object store can be the filesystem, a Berkeley DB, a MySQL
+DB, an Oracle DB, or a Postgres DB. Locking is done by lock files,
+semaphores, or the locking capabilities of MySQL and Postgres.
+Serialization is done via Storable, and optionally ASCII-fied via MIME or
+pack(). ID numbers are generated via MD5. The reader is encouraged to
 extend these capabilities to meet his own requirements.
 
 WWW: http://search.cpan.org/dist/Apache-SessionX/

@@ -9,10 +9,10 @@ qDecoder is a C/C++ language library including CGI supports.
     o Socket, Shared memory, Semaphore, Database wrapper
   Data structures
     o Linked-list, Hash tables, Queue, qDecoder implementation of Obstack
-  Useful APIs 
+  Useful APIs
     o Configuration parser, Automated file logger, Server side includes
   Common Utilities
     o String libraries, File libraries, Hashes & En/decoders
-  And more... 
+  And more...
 
 WWW: http://wolkykim.github.io/qdecoder/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	4.3
+PORTVERSION=	4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -22,8 +22,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	qjail-2.* qjail-3.0 qjail-3.1
+CONFLICTS_INSTALL=	qjail-2.* qjail-3.*
 
 do-install:
 .for i in qjail qjail.vnet.be qjail.vnet.ng

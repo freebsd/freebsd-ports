@@ -5,7 +5,7 @@ include/libtasn1.h
 lib/libtasn1.a
 lib/libtasn1.so
 lib/libtasn1.so.6
-lib/libtasn1.so.6.5.1
+lib/libtasn1.so.6.5.2
 libdata/pkgconfig/libtasn1.pc
 man/man1/asn1Coding.1.gz
 man/man1/asn1Decoding.1.gz

@@ -2,7 +2,7 @@ $NetBSD: patch-ao,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_uname_ext.c.orig	2006-12-08 19:21:40.000000000 +0000
+--- src/libmojave-external/cutil/lm_uname_ext.c.orig	2006-12-08 19:21:40 UTC
 +++ src/libmojave-external/cutil/lm_uname_ext.c
 @@ -147,21 +147,21 @@ value lm_uname(value x)
  

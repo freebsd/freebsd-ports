@@ -2,7 +2,7 @@ $NetBSD: patch-ax,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/util/lm_parser.ml.orig	2007-01-25 18:31:18.000000000 +0000
+--- src/libmojave-external/util/lm_parser.ml.orig	2007-01-25 18:31:18 UTC
 +++ src/libmojave-external/util/lm_parser.ml
 @@ -282,15 +282,11 @@ struct
        let debug = "ProdItem"

@@ -1,0 +1,82 @@
+--- configure.orig	2015-11-01 10:46:19 UTC
++++ configure
+@@ -32038,7 +32040,7 @@ done
+ ##
+ 
+ BUILD_HELPER="NIS"
+-for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h crypt.h
++for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h rpcsvc/crypt.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
+@@ -32053,8 +32055,10 @@ if eval test \"x\$"$as_ac_Header"\" = x"
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-else
+-  BUILD_HELPER=""
++# XXX: On FreeBSD we have to do this to make NIS work
++# until https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=188247
++# is resolved.
++  BUILD_HELPER="NIS"
+ fi
+ 
+ done
+@@ -32519,7 +32523,7 @@ done
+ 
+   # unconditionally requires crypt(3), for now
+   if test "x$ac_cv_func_crypt" != "x"; then
+-    for ac_header in unistd.h crypt.h shadow.h
++    for ac_header in unistd.h rpcsvc/crypt.h shadow.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
+@@ -34574,7 +34578,7 @@ for ac_header in \
+   arpa/nameser.h \
+   assert.h \
+   bstring.h \
+-  crypt.h \
++  rpcsvc/crypt.h \
+   ctype.h \
+   direct.h \
+   errno.h \
+@@ -34785,6 +34789,7 @@ ac_fn_cxx_check_header_compile "$LINENO"
+ #include <netinet/ip.h>
+ #endif
+ #if HAVE_NETINET_IP_COMPAT_H
++#include <net/if.h>	/* IFNAMSIZ */
+ #include <netinet/ip_compat.h>
+ #endif
+ #if HAVE_NETINET_IP_FIL_H
+@@ -38773,6 +38778,7 @@ if test "x$enable_ipf_transparent" != "x
+ #     include <sys/ioccom.h>
+ #     include <netinet/in.h>
+ 
++#     include <net/if.h>	/* IFNAMSIZ */
+ #     include <netinet/ip_compat.h>
+ #     include <netinet/ip_fil.h>
+ #     include <netinet/ip_nat.h>
+@@ -38803,6 +38809,7 @@ else
+ #       include <sys/ioccom.h>
+ #       include <netinet/in.h>
+ #undef minor_t
++#       include <net/if.h>	/* IFNAMSIZ */
+ #       include <netinet/ip_compat.h>
+ #       include <netinet/ip_fil.h>
+ #       include <netinet/ip_nat.h>
+@@ -38847,6 +38854,7 @@ _ACEOF
+ 	ip_fil_compat.h \
+ 	ip_fil.h \
+ 	ip_nat.h \
++	net/if.h \
+ 	netinet/ip_compat.h \
+ 	netinet/ip_fil_compat.h \
+ 	netinet/ip_fil.h \
+@@ -38876,6 +38884,7 @@ ac_fn_cxx_check_header_compile "$LINENO"
+ #if HAVE_IP_COMPAT_H
+ #include <ip_compat.h>
+ #elif HAVE_NETINET_IP_COMPAT_H
++#include <net/if.h>	/* IFNAMSIZ */
+ #include <netinet/ip_compat.h>
+ #endif
+ #if HAVE_IP_FIL_H

@@ -3,6 +3,7 @@
 
 PORTNAME=	simavr
 PORTVERSION=	1.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 PATCH_DIST_STRIP=	-p1
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	avr-gcc:devel/avr-gcc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buserror
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake pkgconfig
 ALL_TARGET=	build-simavr

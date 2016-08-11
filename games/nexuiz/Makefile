@@ -18,8 +18,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-MANUAL_PACKAGE_BUILD=	huge (880MiB)
-
 USES=		jpeg shebangfix zip:infozip
 SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
 WRKSRC=		${WRKDIR}/Nexuiz

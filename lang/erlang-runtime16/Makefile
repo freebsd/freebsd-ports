@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	16.b.03.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--without-dynamic-trace
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=--without-ssl

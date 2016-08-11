@@ -3,7 +3,7 @@
 
 PORTNAME=	spread
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,9 +17,7 @@ LICENSE=	PHP301
 BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:net/spread4
 RUN_DEPENDS=	${LOCALBASE}/include/sp.h:net/spread4
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 
 CONFIGURE_ARGS+=	--with-spread=${LOCALBASE}

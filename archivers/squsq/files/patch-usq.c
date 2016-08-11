@@ -1,6 +1,6 @@
---- usq.c.orig	Sun Jan 17 01:54:04 1988
-+++ usq.c	Sun Jan 17 01:54:05 1988
-@@ -215,7 +215,7 @@
+--- usq.c.orig	1988-01-17 00:54:04 UTC
++++ usq.c
+@@ -215,7 +215,7 @@ char *infile;
  		goto closein;
  	}
  
@@ -9,7 +9,7 @@
  	filecrc = getx16(inbuff);
  #else
  	filecrc = getw16(inbuff);
-@@ -239,7 +239,7 @@
+@@ -239,7 +239,7 @@ char *infile;
  	printf("%s -> %s: ", infile, outfile);
  #endif
  

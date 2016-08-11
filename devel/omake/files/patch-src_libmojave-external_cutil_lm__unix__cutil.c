@@ -2,7 +2,7 @@ $NetBSD: patch-ap,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_unix_cutil.c.orig	2007-07-18 17:42:32.000000000 +0000
+--- src/libmojave-external/cutil/lm_unix_cutil.c.orig	2007-07-18 17:42:32 UTC
 +++ src/libmojave-external/cutil/lm_unix_cutil.c
 @@ -87,9 +87,9 @@ value home_win32(value v_unit)
      TCHAR path[MAX_PATH];

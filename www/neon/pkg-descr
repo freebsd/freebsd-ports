@@ -2,16 +2,16 @@ Neon is  an HTTP and  WebDAV client library for  Unix systems, with  a C
 interface. Featuring:
 
 	. High-level interface to HTTP and WebDAV methods
-	  (PUT, GET, HEAD etc) 
+	  (PUT, GET, HEAD etc)
 	. Low-level interface to HTTP request handling, to allow
-	  implementing new methods easily. 
-	. HTTP/1.1 and HTTP/1.0 persistent connections 
+	  implementing new methods easily.
+	. HTTP/1.1 and HTTP/1.0 persistent connections
 	. RFC2617 basic and digest authentication
-	  (including auth-int, md5-sess) 
-	. Proxy support (including basic/digest authentication) 
-	. Generic WebDAV 207 XML response handling mechanism 
-	. XML parsing using the expat or libxml parsers 
-	. Easy generation of error messages from 207 error responses 
+	  (including auth-int, md5-sess)
+	. Proxy support (including basic/digest authentication)
+	. Generic WebDAV 207 XML response handling mechanism
+	. XML parsing using the expat or libxml parsers
+	. Easy generation of error messages from 207 error responses
 	. WebDAV resource manipulation: MOVE, COPY, DELETE, MKCOL
 	. WebDAV metadata support: set and remove properties, query
 	  any set of properties (PROPPATCH/PROPFIND).

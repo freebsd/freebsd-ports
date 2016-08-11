@@ -1,0 +1,11 @@
+--- src/os_dbd/mysql.schema.orig	2015-10-12 21:21:06 UTC
++++ src/os_dbd/mysql.schema
+@@ -45,7 +45,7 @@ CREATE TABLE server 
+     last_contact    INT         UNSIGNED NOT NULL,
+     version         VARCHAR(32)          NOT NULL,
+     hostname        VARCHAR(64)          NOT NULL   UNIQUE,
+-    information     VARCHAR(128)         NOT NULL,    
++    information     TEXT                 NOT NULL,    
+     PRIMARY KEY  (id) 
+     ); 
+ 

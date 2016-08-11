@@ -1,6 +1,6 @@
---- scripts/setup-seafile.sh.orig	2015-01-28 00:37:17.000000000 -0500
-+++ scripts/setup-seafile.sh	2015-01-28 00:43:26.000000000 -0500
-@@ -339,7 +339,11 @@
+--- scripts/setup-seafile.sh.orig	2015-10-12 04:12:33 UTC
++++ scripts/setup-seafile.sh
+@@ -340,7 +340,11 @@ fi
  }
  
  function copy_user_manuals() {

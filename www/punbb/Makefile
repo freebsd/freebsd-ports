@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.23
+PORTVERSION=	1.4.4
 CATEGORIES=	www
 MASTER_SITES=	http://punbb.informer.com/download/ \
 		http://punbb.informer.com/download/plugins/:plugins \
-		http://punbb.informer.com/download/lang_packs-1.2/:lang \
-		http://freebsd.csie.nctu.edu.tw/~gslin/files/punbb-${PORTVERSION}/:lang
+		http://punbb.informer.com/download/lang_packs-1.2/:lang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LANGFILES:S/$/:lang/} \
 		${PLUGINS:S/$/:plugins/}
@@ -21,13 +20,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 
-PORTEXAMPLES=	12_to_1222_update.php example_config.php \
-		turn_off_maintenance_mode.php
 SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
-USE_PHP=	yes
-USES=		tar:bzip2
+USES=		php tar:bzip2
 
 OPTIONS_DEFINE=		LANGUAGE_PACK EXTRAS
 OPTIONS_DEFAULT=	LANGUAGE_PACK EXTRAS
@@ -113,7 +109,7 @@ PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
 do-install:
-	@cd ${WRKSRC}/upload && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .for i in ${LANGFILES}
 	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${STAGEDIR}${WWWDIR}/lang -x '*/.DS_Store' -x '*/._.DS_Store'
@@ -121,12 +117,6 @@ do-install:
 
 .for i in ${PLUGINS}
 	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${STAGEDIR}${WWWDIR}/plugins
-.endfor
-
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-
-.for i in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/extras/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}

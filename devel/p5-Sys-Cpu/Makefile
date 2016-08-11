@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	terry@sucked-in.com
 COMMENT=	Sys::CPU - Perl extension for getting CPU information
 
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

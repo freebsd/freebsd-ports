@@ -1,6 +1,6 @@
---- src/fs.c.orig	2012-05-04 00:08:27.000000000 +0300
-+++ src/fs.c	2012-07-18 20:24:10.000000000 +0300
-@@ -118,9 +118,15 @@
+--- src/fs.c.orig	2012-05-03 21:08:27 UTC
++++ src/fs.c
+@@ -118,9 +118,15 @@ struct fs_stat *prepare_fs_stat(const ch
  
  static void update_fs_stat(struct fs_stat *fs)
  {

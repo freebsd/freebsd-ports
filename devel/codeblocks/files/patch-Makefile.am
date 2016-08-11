@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2016-01-23 16:43:26 UTC
++++ Makefile.am
+@@ -10,7 +10,7 @@ endif
+ 
+ am__tar = @am__tar@ $(ADDITIONAL_MAKE_DIST_OPTIONS)
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = codeblocks.pc
+ 
+ EXTRA_DIST = bootstrap \

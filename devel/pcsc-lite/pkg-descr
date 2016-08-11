@@ -1,6 +1,6 @@
 This is a port of the MUSCLE PC/SC-Lite architecture.
 Allows easy porting of Windows smartcard software to other
 operating systems.  Supports many types of serial, PCMCIA,
-and USB smartcard readers and cryptographic tokens. 
+and USB smartcard readers and cryptographic tokens.
 
 WWW: http://alioth.debian.org/projects/pcsclite/

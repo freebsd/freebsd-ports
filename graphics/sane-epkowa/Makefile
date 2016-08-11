@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} LDFLAGS="-L${PREFIX}/lib -lgetline" CPPFLAGS=
 
 .include <bsd.port.pre.mk>
 
-.if $(PORTVERSION) != "2.15.0"
+.if ${PORTVERSION} != "2.15.0"
 do-patch:	# nothing to do
 
 do-build:

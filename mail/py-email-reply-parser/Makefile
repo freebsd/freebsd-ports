@@ -3,6 +3,7 @@
 
 PORTNAME=	email-reply-parser
 PORTVERSION=	0.1.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail python
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,5 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	zapier
-GH_PROJECT=	email-reply-parser
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

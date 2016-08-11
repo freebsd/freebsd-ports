@@ -1,5 +1,5 @@
-With PEAR::Payment_DTA provides functions to create DTA files used in Germany 
-to exchange informations about money transactions with banks or online 
+With PEAR::Payment_DTA provides functions to create DTA files used in Germany
+to exchange informations about money transactions with banks or online
 banking programs.
 
 No dependencies registered.

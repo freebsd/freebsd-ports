@@ -1,6 +1,6 @@
---- ./objects.c.orig	2004-04-13 02:46:24.000000000 +0200
-+++ ./objects.c	2014-08-15 19:09:39.000000000 +0200
-@@ -99,7 +99,7 @@
+--- objects.c.orig	2016-06-20 16:04:03 UTC
++++ objects.c
+@@ -99,7 +99,7 @@ panda_newobject (panda_pdf * doc, int ty
    created->children = (panda_child *) panda_xmalloc (sizeof (panda_child));
  
    ((panda_child *) created->children)->next = NULL;

@@ -3,21 +3,20 @@
 
 PORTNAME=	drizzle
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP wrapper for the libdrizzle library
 
 LICENSE=	PHP301
 
 LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

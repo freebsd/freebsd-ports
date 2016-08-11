@@ -1,6 +1,6 @@
---- configure.orig	2015-11-25 20:46:28 UTC
+--- configure.orig	2016-01-12 18:17:49 UTC
 +++ configure
-@@ -13229,7 +13229,7 @@ $as_echo "$as_me: WARNING: Compiler does
+@@ -13251,7 +13251,7 @@ $as_echo "$as_me: WARNING: Compiler does
  
  fi
      ;; #(

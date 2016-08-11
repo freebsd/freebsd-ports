@@ -7,7 +7,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
 
-MAINTAINER=	jamie@dyslexicfish.net
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
 LICENSE=	BSD4CLAUSE
@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	IPV6 DOCS
 CONFLICTS=	mailx-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		iconv tar:bzip2
-USE_OPENSSL=	yes
+USES=		iconv ssl tar:bzip2
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \
 		SENDMAIL="/usr/sbin/sendmail" \

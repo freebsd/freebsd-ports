@@ -16,18 +16,15 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES+=		tcl:${SHORT_TK_VER}
+USES+=		tcl:${SHORT_TK_VER},tea
 USE_XORG=	x11 xft xscrnsaver
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
-GNU_CONFIGURE=	yes
 TK_VER=		${PORTVERSION:R}
 SHORT_TK_VER=	${TK_VER:S/.//}
-CONFIGURE_ARGS=	--enable-shared \
-		--enable-xss \
+CONFIGURE_ARGS=	--enable-xss \
 		--enable-xft \
 		--enable-man-suffix=.${MAN_SUFFIX} \
-		--with-tcl=${TCL_LIBDIR} \
 		--includedir=${PREFIX}/include/tk${TK_VER}
 
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1 \

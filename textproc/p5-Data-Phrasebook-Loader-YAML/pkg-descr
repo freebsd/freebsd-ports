@@ -1,4 +1,4 @@
-This class loader implements phrasebook patterns using YAML. 
+This class loader implements phrasebook patterns using YAML.
 
 Phrases can be contained within one or more dictionaries, with each phrase
 accessible via a unique key. Phrases may contain placeholders, please see

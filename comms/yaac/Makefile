@@ -7,7 +7,9 @@ MASTER_SITES=	SF/yetanotheraprsc/
 DISTNAME=	YAACSrc_20160321
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	Amateur Radio Station electronic trusted logbook
+COMMENT=	Platform-independent Java application for the APRS network
+
+LICENSE=	LGPL3
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -19,12 +21,8 @@ SUB_FILES=	yaac.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/yaac
 
-post-patch:
-	#${RM} -rf ${WRKSRC}/lib/rxtx*
-	#${RM} -rf ${WRKSRC}/lib/gnu/io/RXTXcomm
-
 do-install:
-	${UNZIP_CMD} -d ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME} ${WRKSRC}/YAAC.zip
+	${UNZIP_NATIVE_CMD} -d ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME} ${WRKSRC}/YAAC.zip
 	${RM} -rf ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME}/lib/rxtx-2.2pre2-bins
 	${INSTALL_SCRIPT} ${WRKDIR}/yaac.sh ${STAGEDIR}${PREFIX}/bin/yaac
 

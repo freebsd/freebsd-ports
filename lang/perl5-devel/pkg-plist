@@ -473,10 +473,12 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Term/ReadLine.pm
 %%PRIV_LIB%%/Test.pm
 %%PRIV_LIB%%/Test/Builder.pm
+%%PRIV_LIB%%/Test/Builder/Formatter.pm
 %%PRIV_LIB%%/Test/Builder/IO/Scalar.pm
 %%PRIV_LIB%%/Test/Builder/Module.pm
 %%PRIV_LIB%%/Test/Builder/Tester.pm
 %%PRIV_LIB%%/Test/Builder/Tester/Color.pm
+%%PRIV_LIB%%/Test/Builder/TodoDiag.pm
 %%PRIV_LIB%%/Test/Harness.pm
 %%PRIV_LIB%%/Test/More.pm
 %%PRIV_LIB%%/Test/Simple.pm
@@ -486,6 +488,38 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test/Tester/Delegate.pm
 %%PRIV_LIB%%/Test/Tutorial.pod
 %%PRIV_LIB%%/Test/use/ok.pm
+%%PRIV_LIB%%/Test2.pm
+%%PRIV_LIB%%/Test2/API.pm
+%%PRIV_LIB%%/Test2/API/Breakage.pm
+%%PRIV_LIB%%/Test2/API/Context.pm
+%%PRIV_LIB%%/Test2/API/Instance.pm
+%%PRIV_LIB%%/Test2/API/Stack.pm
+%%PRIV_LIB%%/Test2/Event.pm
+%%PRIV_LIB%%/Test2/Event/Bail.pm
+%%PRIV_LIB%%/Test2/Event/Diag.pm
+%%PRIV_LIB%%/Test2/Event/Exception.pm
+%%PRIV_LIB%%/Test2/Event/Generic.pm
+%%PRIV_LIB%%/Test2/Event/Info.pm
+%%PRIV_LIB%%/Test2/Event/Note.pm
+%%PRIV_LIB%%/Test2/Event/Ok.pm
+%%PRIV_LIB%%/Test2/Event/Plan.pm
+%%PRIV_LIB%%/Test2/Event/Skip.pm
+%%PRIV_LIB%%/Test2/Event/Subtest.pm
+%%PRIV_LIB%%/Test2/Event/Waiting.pm
+%%PRIV_LIB%%/Test2/Formatter.pm
+%%PRIV_LIB%%/Test2/Formatter/TAP.pm
+%%PRIV_LIB%%/Test2/Hub.pm
+%%PRIV_LIB%%/Test2/Hub/Interceptor.pm
+%%PRIV_LIB%%/Test2/Hub/Interceptor/Terminator.pm
+%%PRIV_LIB%%/Test2/Hub/Subtest.pm
+%%PRIV_LIB%%/Test2/IPC.pm
+%%PRIV_LIB%%/Test2/IPC/Driver.pm
+%%PRIV_LIB%%/Test2/IPC/Driver/Files.pm
+%%PRIV_LIB%%/Test2/Transition.pod
+%%PRIV_LIB%%/Test2/Util.pm
+%%PRIV_LIB%%/Test2/Util/ExternalMeta.pm
+%%PRIV_LIB%%/Test2/Util/HashBase.pm
+%%PRIV_LIB%%/Test2/Util/Trace.pm
 %%PRIV_LIB%%/Text/Abbrev.pm
 %%PRIV_LIB%%/Text/Balanced.pm
 %%PRIV_LIB%%/Text/ParseWords.pm
@@ -670,7 +704,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/l1_char_class_tab.h
 %%ARCH_LIB%%/CORE/libperl.so
 %%ARCH_LIB%%/CORE/libperl.so.%%PERL_VER%%
-%%ARCH_LIB%%/CORE/libperl.so.%%PORTVERSION%%
+%%ARCH_LIB%%/CORE/libperl.so.%%LIBPERL_VER%%
 %%ARCH_LIB%%/CORE/malloc_ctl.h
 %%ARCH_LIB%%/CORE/metaconfig.h
 %%ARCH_LIB%%/CORE/mg.h
@@ -1309,11 +1343,45 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Term::Complete.3.gz
 %%MAN3%%/Term::ReadLine.3.gz
 %%MAN3%%/Test.3.gz
+%%MAN3%%/Test2.3.gz
+%%MAN3%%/Test2::API.3.gz
+%%MAN3%%/Test2::API::Breakage.3.gz
+%%MAN3%%/Test2::API::Context.3.gz
+%%MAN3%%/Test2::API::Instance.3.gz
+%%MAN3%%/Test2::API::Stack.3.gz
+%%MAN3%%/Test2::Event.3.gz
+%%MAN3%%/Test2::Event::Bail.3.gz
+%%MAN3%%/Test2::Event::Diag.3.gz
+%%MAN3%%/Test2::Event::Exception.3.gz
+%%MAN3%%/Test2::Event::Generic.3.gz
+%%MAN3%%/Test2::Event::Info.3.gz
+%%MAN3%%/Test2::Event::Note.3.gz
+%%MAN3%%/Test2::Event::Ok.3.gz
+%%MAN3%%/Test2::Event::Plan.3.gz
+%%MAN3%%/Test2::Event::Skip.3.gz
+%%MAN3%%/Test2::Event::Subtest.3.gz
+%%MAN3%%/Test2::Event::Waiting.3.gz
+%%MAN3%%/Test2::Formatter.3.gz
+%%MAN3%%/Test2::Formatter::TAP.3.gz
+%%MAN3%%/Test2::Hub.3.gz
+%%MAN3%%/Test2::Hub::Interceptor.3.gz
+%%MAN3%%/Test2::Hub::Interceptor::Terminator.3.gz
+%%MAN3%%/Test2::Hub::Subtest.3.gz
+%%MAN3%%/Test2::IPC.3.gz
+%%MAN3%%/Test2::IPC::Driver.3.gz
+%%MAN3%%/Test2::IPC::Driver::Files.3.gz
+%%MAN3%%/Test2::Transition.3.gz
+%%MAN3%%/Test2::Util.3.gz
+%%MAN3%%/Test2::Util::ExternalMeta.3.gz
+%%MAN3%%/Test2::Util::HashBase.3.gz
+%%MAN3%%/Test2::Util::Trace.3.gz
 %%MAN3%%/Test::Builder.3.gz
+%%MAN3%%/Test::Builder::Formatter.3.gz
 %%MAN3%%/Test::Builder::IO::Scalar.3.gz
 %%MAN3%%/Test::Builder::Module.3.gz
 %%MAN3%%/Test::Builder::Tester.3.gz
 %%MAN3%%/Test::Builder::Tester::Color.3.gz
+%%MAN3%%/Test::Builder::TodoDiag.3.gz
 %%MAN3%%/Test::Harness.3.gz
 %%MAN3%%/Test::More.3.gz
 %%MAN3%%/Test::Simple.3.gz
@@ -1447,17 +1515,13 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5203delta.pod
 %%PRIV_LIB%%/pod/perl5220delta.pod
 %%PRIV_LIB%%/pod/perl5221delta.pod
-%%PRIV_LIB%%/pod/perl5230delta.pod
-%%PRIV_LIB%%/pod/perl5231delta.pod
-%%PRIV_LIB%%/pod/perl5232delta.pod
-%%PRIV_LIB%%/pod/perl5233delta.pod
-%%PRIV_LIB%%/pod/perl5234delta.pod
-%%PRIV_LIB%%/pod/perl5235delta.pod
-%%PRIV_LIB%%/pod/perl5236delta.pod
-%%PRIV_LIB%%/pod/perl5237delta.pod
-%%PRIV_LIB%%/pod/perl5238delta.pod
-%%PRIV_LIB%%/pod/perl5239delta.pod
+%%PRIV_LIB%%/pod/perl5222delta.pod
 %%PRIV_LIB%%/pod/perl5240delta.pod
+%%PRIV_LIB%%/pod/perl5250delta.pod
+%%PRIV_LIB%%/pod/perl5251delta.pod
+%%PRIV_LIB%%/pod/perl5252delta.pod
+%%PRIV_LIB%%/pod/perl5253delta.pod
+%%PRIV_LIB%%/pod/perl5254delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1679,6 +1743,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Age/V61.pl
 %%PRIV_LIB%%/unicore/lib/Age/V70.pl
 %%PRIV_LIB%%/unicore/lib/Age/V80.pl
+%%PRIV_LIB%%/unicore/lib/Age/V90.pl
 %%PRIV_LIB%%/unicore/lib/Alpha/Y.pl
 %%PRIV_LIB%%/unicore/lib/Bc/AL.pl
 %%PRIV_LIB%%/unicore/lib/Bc/AN.pl
@@ -1744,9 +1809,11 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Ea/W.pl
 %%PRIV_LIB%%/unicore/lib/Ext/Y.pl
 %%PRIV_LIB%%/unicore/lib/GCB/CN.pl
+%%PRIV_LIB%%/unicore/lib/GCB/EB.pl
 %%PRIV_LIB%%/unicore/lib/GCB/EX.pl
 %%PRIV_LIB%%/unicore/lib/GCB/LV.pl
 %%PRIV_LIB%%/unicore/lib/GCB/LVT.pl
+%%PRIV_LIB%%/unicore/lib/GCB/PP.pl
 %%PRIV_LIB%%/unicore/lib/GCB/SM.pl
 %%PRIV_LIB%%/unicore/lib/GCB/XX.pl
 %%PRIV_LIB%%/unicore/lib/Gc/C.pl
@@ -1767,6 +1834,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Gc/Nl.pl
 %%PRIV_LIB%%/unicore/lib/Gc/No.pl
 %%PRIV_LIB%%/unicore/lib/Gc/P.pl
+%%PRIV_LIB%%/unicore/lib/Gc/Pc.pl
 %%PRIV_LIB%%/unicore/lib/Gc/Pd.pl
 %%PRIV_LIB%%/unicore/lib/Gc/Pe.pl
 %%PRIV_LIB%%/unicore/lib/Gc/Pf.pl
@@ -1803,6 +1871,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/In/6_3.pl
 %%PRIV_LIB%%/unicore/lib/In/7_0.pl
 %%PRIV_LIB%%/unicore/lib/In/8_0.pl
+%%PRIV_LIB%%/unicore/lib/In/9_0.pl
 %%PRIV_LIB%%/unicore/lib/InPC/Bottom.pl
 %%PRIV_LIB%%/unicore/lib/InPC/Left.pl
 %%PRIV_LIB%%/unicore/lib/InPC/LeftAndR.pl
@@ -1865,6 +1934,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Lb/CJ.pl
 %%PRIV_LIB%%/unicore/lib/Lb/CL.pl
 %%PRIV_LIB%%/unicore/lib/Lb/CM.pl
+%%PRIV_LIB%%/unicore/lib/Lb/EB.pl
 %%PRIV_LIB%%/unicore/lib/Lb/EX.pl
 %%PRIV_LIB%%/unicore/lib/Lb/GL.pl
 %%PRIV_LIB%%/unicore/lib/Lb/ID.pl
@@ -1905,6 +1975,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Nv/17.pl
 %%PRIV_LIB%%/unicore/lib/Nv/18.pl
 %%PRIV_LIB%%/unicore/lib/Nv/19.pl
+%%PRIV_LIB%%/unicore/lib/Nv/1_16.pl
 %%PRIV_LIB%%/unicore/lib/Nv/1_2.pl
 %%PRIV_LIB%%/unicore/lib/Nv/1_3.pl
 %%PRIV_LIB%%/unicore/lib/Nv/1_4.pl
@@ -1916,6 +1987,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Nv/3.pl
 %%PRIV_LIB%%/unicore/lib/Nv/30.pl
 %%PRIV_LIB%%/unicore/lib/Nv/300.pl
+%%PRIV_LIB%%/unicore/lib/Nv/3_16.pl
 %%PRIV_LIB%%/unicore/lib/Nv/3_4.pl
 %%PRIV_LIB%%/unicore/lib/Nv/4.pl
 %%PRIV_LIB%%/unicore/lib/Nv/40.pl
@@ -1937,6 +2009,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Nv/9.pl
 %%PRIV_LIB%%/unicore/lib/Nv/90.pl
 %%PRIV_LIB%%/unicore/lib/Nv/900.pl
+%%PRIV_LIB%%/unicore/lib/PCM/Y.pl
 %%PRIV_LIB%%/unicore/lib/PatSyn/Y.pl
 %%PRIV_LIB%%/unicore/lib/Perl/Alnum.pl
 %%PRIV_LIB%%/unicore/lib/Perl/Assigned.pl
@@ -1978,6 +2051,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Sc/Arab.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Armn.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Beng.pl
+%%PRIV_LIB%%/unicore/lib/Sc/Bhks.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cham.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cprt.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cyrl.pl
@@ -1985,6 +2059,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Sc/Dupl.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Ethi.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Geor.pl
+%%PRIV_LIB%%/unicore/lib/Sc/Glag.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Gran.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Grek.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Gujr.pl
@@ -2016,6 +2091,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Sc/Zinh.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Zyyy.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Zzzz.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Adlm.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Arab.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Armn.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Beng.pl
@@ -2039,6 +2115,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Knda.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Latn.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Limb.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Lina.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Linb.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Mlym.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Mong.pl
@@ -2063,6 +2140,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/UIdeo/Y.pl
 %%PRIV_LIB%%/unicore/lib/Upper/Y.pl
 %%PRIV_LIB%%/unicore/lib/WB/EX.pl
+%%PRIV_LIB%%/unicore/lib/WB/Extend.pl
 %%PRIV_LIB%%/unicore/lib/WB/FO.pl
 %%PRIV_LIB%%/unicore/lib/WB/HL.pl
 %%PRIV_LIB%%/unicore/lib/WB/KA.pl
@@ -2125,17 +2203,13 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5203delta.1.gz
 %%MAN1%%/perl5220delta.1.gz
 %%MAN1%%/perl5221delta.1.gz
-%%MAN1%%/perl5230delta.1.gz
-%%MAN1%%/perl5231delta.1.gz
-%%MAN1%%/perl5232delta.1.gz
-%%MAN1%%/perl5233delta.1.gz
-%%MAN1%%/perl5234delta.1.gz
-%%MAN1%%/perl5235delta.1.gz
-%%MAN1%%/perl5236delta.1.gz
-%%MAN1%%/perl5237delta.1.gz
-%%MAN1%%/perl5238delta.1.gz
-%%MAN1%%/perl5239delta.1.gz
+%%MAN1%%/perl5222delta.1.gz
 %%MAN1%%/perl5240delta.1.gz
+%%MAN1%%/perl5250delta.1.gz
+%%MAN1%%/perl5251delta.1.gz
+%%MAN1%%/perl5252delta.1.gz
+%%MAN1%%/perl5253delta.1.gz
+%%MAN1%%/perl5254delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2313,7 +2387,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 @dir %%SITE_ARCH%%/auto
 @dir %%SITE_PERL%%/man/man1
 @dir %%SITE_PERL%%/man/man3
-@exec makewhatis %D/%%SITEMANPREFIX%%/man
-@exec makewhatis %D/%%PERLMANPREFIX%%/man
+@postexec makewhatis %D/%%SITEMANPREFIX%%/man
+@postexec makewhatis %D/%%PERLMANPREFIX%%/man
 @rmtry %%PERLMANPREFIX%%/man/whatis
+@rmtry %%PERLMANPREFIX%%/man/mandoc.db
 @rmtry %%SITEMANPREFIX%%/man/whatis
+@rmtry %%SITEMANPREFIX%%/man/mandoc.db

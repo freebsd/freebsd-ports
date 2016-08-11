@@ -12,10 +12,12 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${BENCHMARK_SCRIPT}:benchmark
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplementary distributions and RNG for R
 
 LICENSE=		GPLv2
+
+BROKEN=		fails to build
 
 BENCHMARK_SCRIPT=	R-benchmark-25.R
 USES=	cran:auto-plist

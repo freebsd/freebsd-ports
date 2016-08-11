@@ -429,10 +429,13 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmForm-Capture
 %%DATADIR%%/FvwmForm-Desktop
 %%DATADIR%%/FvwmForm-Form
+%%DATADIR%%/FvwmForm-GenOptionHelp
+%%DATADIR%%/FvwmForm-MultiMenuHelp
 %%DATADIR%%/FvwmForm-QuitVerify
 %%DATADIR%%/FvwmForm-Rlogin
 %%DATADIR%%/FvwmForm-RootCursor
 %%DATADIR%%/FvwmForm-Setup
+%%DATADIR%%/FvwmForm-SingleMenuHelp
 %%DATADIR%%/FvwmForm-Talk
 %%DATADIR%%/FvwmForm-TalkHelp
 %%DATADIR%%/FvwmScript-BaseConfig
@@ -451,6 +454,7 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmScript-Setup95
 %%DATADIR%%/FvwmScript-WidgetDemo
 %%DATADIR%%/FvwmTabs-DefaultSetup
+%%DATADIR%%/fvwm-menu-desktop-config.fpl
 %%DATADIR%%/fvwm-script-ComExample.pl
 %%DATADIR%%/fvwm-script-setup95.pl
 %%DATADIR%%/system.fvwm2rc-sample-95
@@ -488,7 +492,3 @@ man/man1/xpmroot.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fvwm.mo
-@dir %%DOCSDIR%%/commands
-@dir %%DOCSDIR%%/fvwm
-@dir %%DOCSDIR%%/images/svg_rendering
-@dir %%DOCSDIR%%/modules/images/FvwmTabs

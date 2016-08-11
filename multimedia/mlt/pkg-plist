@@ -1,5 +1,6 @@
 bin/melt
 include/mlt++/Mlt.h
+include/mlt++/MltAnimation.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
 include/mlt++/MltEvent.h
@@ -82,10 +83,12 @@ lib/mlt/libmltxml.so
 libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
 man/man1/melt.1.gz
+%%FFMPEG%%%%DATADIR%%/avformat/blacklist.txt
 %%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
 %%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/data_fx.properties
+%%DATADIR%%/core/filter_audiomap.yml
 %%DATADIR%%/core/filter_audiowave.yml
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml
@@ -113,6 +116,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/core/producer_melt.yml
 %%DATADIR%%/core/producer_melt_file.yml
 %%DATADIR%%/core/producer_noise.yml
+%%DATADIR%%/core/producer_timewarp.yml
 %%DATADIR%%/core/producer_tone.yml
 %%DATADIR%%/core/transition_composite.yml
 %%DATADIR%%/core/transition_luma.yml
@@ -217,10 +221,14 @@ man/man1/melt.1.gz
 %%DATADIR%%/plus/consumer_blipflash.yml
 %%DATADIR%%/plus/filter_affine.yml
 %%DATADIR%%/plus/filter_charcoal.yml
+%%DATADIR%%/plus/filter_dance.yml
 %%DATADIR%%/plus/filter_dynamictext.yml
+%%DATADIR%%/plus/filter_dynamic_loudness.yml
+%%DATADIR%%/plus/filter_fft.yml
 %%DATADIR%%/plus/filter_invert.yml
 %%DATADIR%%/plus/filter_lift_gamma_gain.yml
 %%DATADIR%%/plus/filter_loudness.yml
+%%DATADIR%%/plus/filter_loudness_meter.yml
 %%DATADIR%%/plus/filter_lumakey.yml
 %%DATADIR%%/plus/filter_rgblut.yml
 %%DATADIR%%/plus/filter_sepia.yml
@@ -233,6 +241,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/plusgpl/filter_rotoscoping.yml
 %%DATADIR%%/presets/consumer/avformat/AAC
 %%DATADIR%%/presets/consumer/avformat/Flash
+%%DATADIR%%/presets/consumer/avformat/GIF
 %%DATADIR%%/presets/consumer/avformat/MJPEG
 %%DATADIR%%/presets/consumer/avformat/MP3
 %%DATADIR%%/presets/consumer/avformat/MPEG-2
@@ -388,6 +397,9 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/uhd_2160p_60
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
+%%QT4%%%%DATADIR%%/qt/filter_audiospectrum.yml
+%%QT4%%%%DATADIR%%/qt/filter_audiowaveform.yml
+%%QT4%%%%DATADIR%%/qt/filter_lightshow.yml
 %%QT4%%%%DATADIR%%/qt/producer_kdenlivetitle.yml
 %%QT4%%%%DATADIR%%/qt/producer_qimage.yml
 %%QT4%%%%DATADIR%%/qt/producer_qtext.yml

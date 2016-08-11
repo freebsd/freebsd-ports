@@ -3,7 +3,7 @@
 
 PORTNAME=	ecs
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://code-saturne.org/releases/
 
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libmed.so:french/med	\
 		libbft.so:science/bft	\
 		libhdf5.so:science/hdf5	\
 		libcgns.so:science/cgnslib
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake
 USE_TEX=	dvipsk

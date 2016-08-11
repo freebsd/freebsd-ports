@@ -3,6 +3,7 @@
 
 PORTNAME=	yar
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,12 +14,10 @@ COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-PHP_MODNAME=	yar
-USE_PHP=	json curl
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
+BROKEN_powerpc64=	Does not build
+
+USES=		php:ext tar:tgz
+USE_PHP=	json:build curl:build
 IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include

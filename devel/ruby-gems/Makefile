@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -57,7 +57,6 @@ DOCS_VARS=		RUBY_SETUP_OPTIONS="--destdir=${STAGEDIR}"
 do-install:
 	cd ${WRKSRC}/ && ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
-post-install:
 	@${LN} -sf gem${RUBY_VER_SHORT} ${STAGEDIR}${PREFIX}/bin/gem
 
 #

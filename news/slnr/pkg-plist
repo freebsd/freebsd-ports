@@ -1,7 +1,0 @@
-bin/slnr
-man/man1/slnr.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/default.dot.slnrrc
-%%PORTDOCS%%%%DOCSDIR%%/porting.notes
-%%PORTDOCS%%%%DOCSDIR%%/slnr.doc
-%%PORTDOCS%%%%DOCSDIR%%/soup12.doc

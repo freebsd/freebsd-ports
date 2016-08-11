@@ -46,6 +46,9 @@ bin/gcov2perl
 %%SITE_ARCH%%/Devel/Cover/Util.pm
 %%SITE_ARCH%%/Devel/Cover/Web.pm
 %%SITE_ARCH%%/auto/Devel/Cover/Cover.so
+%%PERL5_MAN1%%/cover.1.gz
+%%PERL5_MAN1%%/cpancover.1.gz
+%%PERL5_MAN1%%/gcov2perl.1.gz
 %%PERL5_MAN3%%/Devel::Cover.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Annotation::Git.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Annotation::Random.3.gz
@@ -89,6 +92,3 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::Tutorial.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Util.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Web.3.gz
-%%PERL5_MAN1%%/cover.1.gz
-%%PERL5_MAN1%%/cpancover.1.gz
-%%PERL5_MAN1%%/gcov2perl.1.gz

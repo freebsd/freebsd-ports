@@ -1,8 +1,10 @@
---- ../generic/dom.h	2007-08-08 11:52:38.000000000 -0400
-+++ ../generic/dom.h	2008-02-14 14:27:46.000000000 -0500
-@@ -41,5 +41,4 @@
+--- generic/dom.h.orig	2007-08-18 12:51:46 UTC
++++ generic/dom.h
+@@ -40,7 +40,6 @@
+ #include <ctype.h>
  #include <expat.h>
  #include <utf8conv.h>
 -#include <domalloc.h>
  
  /*
+  * tDOM provides it's own memory allocator which is optimized for

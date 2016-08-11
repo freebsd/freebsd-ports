@@ -82,10 +82,6 @@ OPUS_CONFIGURE_OFF=	--disable-libopus
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
-REAL_RUN_DEPENDS=	realplay:multimedia/linux-realplayer
-REAL_BUILD_DEPENDS=	realplay:multimedia/linux-realplayer
-REAL_CONFIGURE_OFF=	--disable-real
-
 RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
 RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
 RTC_CONFIGURE_ENABLE=	rtc

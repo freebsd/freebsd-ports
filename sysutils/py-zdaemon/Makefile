@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zdaemon
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,12 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:devel/py-zconfig
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

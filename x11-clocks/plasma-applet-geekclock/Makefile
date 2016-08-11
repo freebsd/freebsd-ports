@@ -12,7 +12,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 geeky analog clock plasma applet
 
 USES=		cmake
-USE_KDE4=	automoc4 kdeprefix kdelibs workspace
+USE_KDE4=	automoc4 kdelibs workspace
 USE_QT4=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 

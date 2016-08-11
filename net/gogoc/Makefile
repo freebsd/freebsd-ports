@@ -30,8 +30,6 @@ do-install:
 	cd ${WRKSRC}/gogoc-tsp/ && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
 	    ${MAKE_CMD} platform=freebsd installdir=${STAGEDIR}${PREFIX} install
 	${RM} ${STAGEDIR}${PREFIX}/bin/gogoc.conf*
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gogoc
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/gogoc-tsp/bin/gogoc.conf.sample ${STAGEDIR}${EXAMPLESDIR}

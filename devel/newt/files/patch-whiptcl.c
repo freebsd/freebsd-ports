@@ -1,6 +1,6 @@
---- whiptcl.c.orig
+--- whiptcl.c.orig	2016-03-23 15:46:24 UTC
 +++ whiptcl.c
-@@ -137,45 +137,45 @@
+@@ -137,45 +137,45 @@ static int wtCmd(ClientData clientData, 
      
      if (arg < -1) {
  	/* this could buffer oveflow, bug we're not setuid so I don't care */
@@ -56,7 +56,7 @@
  	return TCL_ERROR;
      }
  
-@@ -196,33 +196,30 @@
+@@ -196,33 +196,30 @@ static int wtCmd(ClientData clientData, 
        case MODE_YESNO:
  	rc = messageBox(text, height, width, MSGBOX_YESNO, flags);
  	if (rc == DLG_OKAY)
@@ -95,7 +95,7 @@
  
  	    free(selections);
  	}
-@@ -247,7 +244,7 @@
+@@ -247,7 +244,7 @@ static int wtCmd(ClientData clientData, 
      newtPopWindow();
  
      if (rc == DLG_ERROR) {

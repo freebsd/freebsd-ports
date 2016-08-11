@@ -1,12 +1,12 @@
---- mymoon.c.orig	Wed Jul 16 21:13:55 2003
-+++ mymoon.c	Fri Oct 14 19:55:31 2005
+--- mymoon.c.orig	2003-07-16 11:13:55 UTC
++++ mymoon.c
 @@ -1,4 +1,4 @@
 -#include <libnova.h>
 +#include <libnova/libnova.h>
  #include <curses.h>
  #include <time.h>
  #include <stdlib.h>
-@@ -59,7 +59,7 @@
+@@ -59,7 +59,7 @@ memset(&date2, 0, sizeof(date2));
  memset(&date3, 0, sizeof(date3));
  
  while (1) {
@@ -15,7 +15,7 @@
  age=moonphase();
  
  
-@@ -67,12 +67,12 @@
+@@ -67,12 +67,12 @@ if ( (latitude != 0) || (longitude != 0 
  observer.lng=latitude;
  observer.lat=longitude;
  } else {observer.lng=45.12;observer.lat=8.42;}

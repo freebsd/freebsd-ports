@@ -12,6 +12,8 @@ COMMENT=	Web based test management and test execution system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 CPE_VENDOR=	teamst
 USE_PHP=	gd iconv mbstring session xml

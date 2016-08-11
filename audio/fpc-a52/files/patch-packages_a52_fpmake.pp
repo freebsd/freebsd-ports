@@ -1,4 +1,4 @@
---- packages/a52/fpmake.pp.orig	2015-01-05 19:27:06 UTC
+--- packages/a52/fpmake.pp.orig	2015-11-13 21:15:29 UTC
 +++ packages/a52/fpmake.pp
 @@ -20,7 +20,7 @@ begin
      P.Email := '';

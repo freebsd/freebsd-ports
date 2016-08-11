@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	downtimed
-PORTVERSION=	0.6
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
 		http://launchpadlibrarian.net/145993356/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	System downtime monitoring and reporting tool
 
 LICENSE=	BSD2CLAUSE

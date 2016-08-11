@@ -432,6 +432,7 @@ SLANG_DESC?=		S-Lang console graphics library support
 SMB_DESC?=		SMB network protocol support
 SNAPPY_DESC?=		Snappy compression library support
 SNDFILE_DESC?=		Audio conversion support via libsndfile
+SNDIO_DESC?=		Sndio audio support
 SNMP_DESC?=		SNMP network protocol support
 SOCKS_DESC?=		SOCKS proxy support
 SOUND_DESC?=		Sound (audio) support

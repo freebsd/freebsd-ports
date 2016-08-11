@@ -3,7 +3,7 @@
 
 PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/ \
 		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/:docs \
@@ -69,7 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	${LN} -sf ../icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 do-install-DOCS-on:

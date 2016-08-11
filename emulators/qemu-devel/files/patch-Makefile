@@ -1,6 +1,6 @@
---- Makefile.orig	2015-12-17 20:32:52 UTC
+--- Makefile.orig	2016-04-14 20:19:53 UTC
 +++ Makefile
-@@ -90,7 +90,11 @@
+@@ -90,7 +90,11 @@ LIBS+=-lz $(LIBS_TOOLS)
  HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
@@ -12,7 +12,7 @@
  DOCS+=qmp-commands.txt
  ifdef CONFIG_LINUX
  DOCS+=kvm_stat.1
-@@ -407,8 +411,10 @@
+@@ -410,8 +414,10 @@ endif
  
  install-doc: $(DOCS)
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -43,7 +43,7 @@ CLIENT_CMAKE_OFF=	-DBUILD_CLIENT=0
 CLIENT_LIB_DEPENDS=	libpng.so:graphics/png \
 			libIrrlicht.so:x11-toolkits/irrlicht
 CLIENT_USES=		jpeg
-CLIENT_USE=		GL=gl XORG=x11
+CLIENT_USE=		GL=gl XORG=x11,xext
 SERVER_CMAKE_ON=	-DBUILD_SERVER=1
 SERVER_CMAKE_OFF=	-DBUILD_SERVER=0
 CURL_CMAKE_ON=		-DENABLE_CURL=1
@@ -75,7 +75,8 @@ SPATIAL_CMAKE_OFF=	-DENABLE_SPATIAL=0
 
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
 USES+=		openal
-LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
@@ -90,6 +91,10 @@ BUILD_DEPENDS+=	${NONEXISTENT}:x11-toolkits/irrlicht:patch
 IRRLICHT_INCLUDE_DIR=	`${MAKE} -C ${PORTSDIR}/x11-toolkits/irrlicht -V WRKSRC`/include
 CMAKE_ARGS+=	-DIRRLICHT_INCLUDE_DIR:STRING="${IRRLICHT_INCLUDE_DIR}"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-irrlichtdepend
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_unittest_test__serialization.cpp
 .endif
 
 post-patch:

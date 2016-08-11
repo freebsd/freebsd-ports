@@ -1,6 +1,6 @@
 Mezzanine is a content management platform built using the Django framework. It
 resembles tools like Wordpress, with an intuitive interface for managing pages,
-blog posts, form data, store products, or any other type of content you can 
+blog posts, form data, store products, or any other type of content you can
 imagine.
 
 WWW: https://github.com/stephenmcd/mezzanine

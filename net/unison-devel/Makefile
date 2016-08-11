@@ -31,7 +31,7 @@ EXTRA_DOCS=	${DISTNAME}-manual.html \
 		${DISTNAME}-manual.pdf ${DISTNAME}-manual.ps
 
 OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=	DOCS X11
+OPTIONS_DEFAULT=	X11
 
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
@@ -66,7 +66,6 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unison ${STAGEDIR}${PREFIX}/bin
 
-post-install:
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
 .endif
@@ -75,7 +74,6 @@ post-install:
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 .endif

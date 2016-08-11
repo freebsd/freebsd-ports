@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
-USE_KDE4=	kdeprefix perlqt smokekde automoc4
+USE_KDE4=	perlqt smokekde automoc4
 USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource compiler:c++11-lib perl5 tar:xz

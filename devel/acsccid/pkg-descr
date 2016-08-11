@@ -1,0 +1,6 @@
+acsccid is a PC/SC driver for Linux/Mac OS X and it supports ACS CCID
+smart card readers. This library provides a PC/SC IFD handler
+implementation and communicates with the readers through the PC/SC Lite
+resource manager (pcscd).
+
+WWW: http://www.acs.com.hk/en/driver/4/acr38-smart-card-reader/

@@ -13,5 +13,5 @@ and
 On your client machine, open the browser with:
   http://localhost:8080/geoserver
 to configure the GIS server.
- 
+
 Enjoy it!

@@ -1,6 +1,6 @@
---- phar.c.orig	2011-11-25 15:38:44.000000000 +0100
-+++ phar.c	2011-11-25 15:39:01.000000000 +0100
-@@ -3716,7 +3716,7 @@
+--- phar.c.orig	2016-06-22 01:50:40 UTC
++++ phar.c
+@@ -3630,7 +3630,7 @@ static const zend_module_dep phar_deps[]
  	ZEND_MOD_OPTIONAL("openssl")
  	ZEND_MOD_OPTIONAL("zlib")
  	ZEND_MOD_OPTIONAL("standard")

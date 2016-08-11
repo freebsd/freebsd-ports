@@ -1,12 +1,11 @@
---- configure.orig	2016-02-03 18:30:40 UTC
+--- configure.orig	2016-04-15 21:02:25 UTC
 +++ configure
-@@ -17206,9 +17206,6 @@ as_arg_v1="$bison_version"
- as_arg_v2="3.0"
+@@ -16943,7 +16943,7 @@ as_arg_v2="3.0"
  awk "$as_awk_strverscmp" v1="$as_arg_v1" v2="$as_arg_v2" /dev/null
- case $? in
--1) { { $as_echo "$as_me:$LINENO: error: not found" >&5
--$as_echo "$as_me: error: not found" >&2;}
--   { (exit 1); exit 1; }; };;
- 0)  ;;
- 2)  ;;
- esac
+ case $? in #(
+   1) :
+-    as_fn_error $? "not found" "$LINENO" 5 ;; #(
++      ;; #(
+   0) :
+       ;; #(
+   2) :

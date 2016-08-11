@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gohufont
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://font.gohu.org/
 

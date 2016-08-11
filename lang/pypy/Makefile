@@ -1,20 +1,22 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	pypy
-PORTVERSION=	5.0.1	# Also update bsd.pypy.cffi.mk
+PORTNAME?=	pypy
+DISTVERSION?=	5.3.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
-DISTVERSIONSUFFIX=	-src
+DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi
-TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
-		${PREFIX}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
-		${PREFIX}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.pypy-${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
+TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
@@ -26,26 +28,38 @@ PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
 TRANS_DESC=	Translation method
 LOCALBASE?=	/usr/local
-.if exists(${LOCALBASE}/bin/pypy)
-OPTIONS_DEFAULT=	PYPY_MINMEM
+.if exists(${LOCALBASE}/bin/pypy) || ${PORTNAME} != pypy
 OPTIONS_SINGLE_TRANS+=	PYPY PYPY_MINMEM
+. if exists(${LOCALBASE}/bin/pypy)
+OPTIONS_DEFAULT=	PYPY_MINMEM
+. else
+OPTIONS_DEFAULT=	PYTHON
+. endif
 .else
 OPTIONS_SLAVE=	PYTHON
 .endif
 
-CONFLICTS_INSTALL=	pypy3-[0-9]*
-
 ALL_TARGET=	pypy-c
-BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${PORTVERSION:C/0\.0/0/}-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${PORTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
+PACKAGE_ARGS?=	--without-gdbm --without-sqlite3 --without-tk
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
-USES=		gettext-runtime gmake tar:bzip2
+USES=		gettext-runtime gmake ssl tar:bzip2
 
+.if ${PORTNAME} != pypy
+PYPY_BUILD_DEPENDS=	pypy:lang/pypy
+PYPY_MINMEM_BUILD_DEPENDS=	pypy:lang/pypy
+.endif
 PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
 PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
 PYTHON_USES=	python:2,build
 
-.include ".${CURDIR}/bsd.pypy.mk"
+DISTINFO_FILE=	${.CURDIR}/distinfo
+MASTERDIR?=	${.CURDIR}
+PATCHDIR=	${.CURDIR}/files
+PLIST=		${.CURDIR}/pkg-plist
+
+.include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "armv6"
@@ -70,9 +84,10 @@ post-build:
 do-install:
 	${SETENV} TMPDIR=${WRKDIR}/build \
 		${PYTHON_CMD} ${WRKSRC}/pypy/tool/release/package.py --builddir ${WRKDIR}/build --archive-name ${PYPY_DIR} \
-		--without-gdbm --without-sqlite3 --without-tk
+			${PACKAGE_ARGS}
 	${EXTRACT_CMD} -C ${STAGEDIR}${PREFIX} -xf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2
-	${LN} -fs ../${PYPY_DIR}/bin/pypy ${STAGEDIR}${PREFIX}/bin/pypy
+	${LN} -fs ../${PYPY_DIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${FIND} ${STAGEDIR}${PREFIX}/${PYPY_DIR}/lib_pypy/ -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 do-test:
 	# See https://bitbucket.org/pypy/buildbot/src/default/bot2/pypybuildbot/builds.py?at=default#builds.py-386
@@ -90,16 +105,16 @@ do-test:
 .endfor
 	(cd ${WRKSRC}/lib-python/2.7/test; \
 		${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build PYTHONPATH=${WRKSRC} \
-                ${WRKSRC}/pypy/goal/pypy-c regrtest.py -vvu all)
+		${WRKSRC}/pypy/goal/pypy-c regrtest.py -vvu all)
 
 pkg-plist: build
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
-		-e 's|-${PYPY_CFFI_VER}|-%%PYPY_CFFI_VER%%|g' \
+		-e 's|${PYPY_CFFI_VER}|%%PYPY_CFFI_VER%%|g' \
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen
-	${ECHO} bin/pypy > ${WRKDIR}/pkg-plist
+	${ECHO} bin/${PORTNAME} > ${WRKDIR}/pkg-plist
 	${SORT} ${WRKDIR}/.plist-files-gen >> ${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 

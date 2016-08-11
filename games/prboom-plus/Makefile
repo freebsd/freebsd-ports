@@ -5,23 +5,22 @@ PORTNAME=	prboom-plus
 PORTVERSION=	2.5.1.3
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	thiagohero501@gmail.com
 COMMENT=	Fork of the prboom Doom game engine
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
 		libpng.so:graphics/png
 
-USES=		gmake
+USES=		gmake localbase
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-waddir=${DATADIR}
+CONFIGURE_ARGS=	--with-waddir=${DATADIR}
 
 OPTIONS_DEFINE=	OPENGL
 OPTIONS_DEFAULT=OPENGL

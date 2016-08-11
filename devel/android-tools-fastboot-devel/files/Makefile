@@ -28,6 +28,7 @@ SRCS+=	diagnose_usb.cpp
 .PATH: ${.CURDIR}/../base
 SRCS+=	errors_unix.cpp
 SRCS+=	file.cpp
+SRCS+=	logging.cpp
 SRCS+=	parsenetaddress.cpp
 SRCS+=	stringprintf.cpp
 SRCS+=	strings.cpp
@@ -56,9 +57,13 @@ CPPFLAGS.sockets.cpp+=	-o ${.TARGET} # XXX pre-r279980
 
 # required by base and libutils
 .PATH:	${.CURDIR}/../liblog
+SRCS+=	config_write.c
 SRCS+=	fake_log_device.c
-SRCS+=	logd_write.c
-CPPFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
+SRCS+=	fake_writer.c
+SRCS+=	logger_lock.c
+SRCS+=	logger_name.c
+SRCS+=	logger_write.c
+CPPFLAGS.config_write.c+=	-DFAKE_LOG_DEVICE=1
 
 # required by ext4_utils
 .PATH:	${.CURDIR}/../libselinux/src
@@ -70,6 +75,7 @@ SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
 SRCS+=	label_support.c
+SRCS+=	regex.c
 CPPFLAGS.label_file.c+=	-D_WITH_GETLINE
 
 # required by fastboot and ext4_utils
@@ -119,8 +125,8 @@ CXXFLAGS+=	${CPPFLAGS}
 
 LDADD+=	$$(${PKG_CONFIG} libpcre --libs 2>/dev/null || echo -lpcre)
 LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
-LDADD+=	-lz
-DPADD+=	${LIBPCRE} ${LIBUSB} ${LIBZ}
+LDADD+=	-lz \-lpthread
+DPADD+=	${LIBPCRE} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 
 GIT?=		git
 PKG_CONFIG?=	pkg-config

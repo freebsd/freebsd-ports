@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaws
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	www devel
 MASTER_SITES=	http://yaws.hyber.org/download/
 

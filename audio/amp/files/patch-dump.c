@@ -1,6 +1,6 @@
---- dump.c	Sat May 31 17:19:38 1997
-+++ dump.c	Wed Apr 13 00:21:47 2005
-@@ -46,19 +46,21 @@
+--- dump.c.orig	1997-05-31 20:19:38 UTC
++++ dump.c
+@@ -46,19 +46,21 @@ int _data,space=0;
  void show_header(struct AUDIO_HEADER *header)
  {
  int bitrate=t_bitrate[header->ID][3-header->layer][header->bitrate_index];

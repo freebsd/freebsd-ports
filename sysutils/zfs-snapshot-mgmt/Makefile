@@ -3,7 +3,7 @@
 
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
@@ -11,8 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic ZFS snapshot management tool
 
 USE_RUBY=	yes
+USES=		shebangfix
 RUBY_NO_BUILD_DEPENDS=	yes
-RUBY_SHEBANG_FILES=	zfs-snapshot-mgmt
+SHEBANG_FILES=	zfs-snapshot-mgmt
 
 NO_BUILD=	yes
 NO_ARCH=	yes

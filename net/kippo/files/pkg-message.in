@@ -20,7 +20,7 @@ Before starting kippo you need to perform the following steps:
 
 2) Add the following line to your rc.conf:
 
-	kippo_enable="YES" 
+	kippo_enable="YES"
 
    Note that you can also set the 'kippo_logfile' and 'kippo_pidfile'
    variables to specify the path to the log file and pid file that

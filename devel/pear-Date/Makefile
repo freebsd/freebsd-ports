@@ -5,7 +5,7 @@ PORTNAME=	Date
 PORTVERSION=	1.4.7
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Date and Time Zone Classes
 
 USES=		pear

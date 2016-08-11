@@ -11,9 +11,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}_${PORTVERSION}
 MAINTAINER=	fw@moov.de
 COMMENT=	PHP script to browse, create folders, upload files etc
 
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
-USES=		zip
+USES=		php:web zip
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -1,0 +1,11 @@
+--- libsrc/csg/Makefile.in.orig	2014-10-06 11:04:37 UTC
++++ libsrc/csg/Makefile.in
+@@ -285,7 +285,7 @@ meshsurf.hpp solid.hpp triapprox.hpp csg
+ polyhedra.hpp specpoin.hpp csg.hpp explicitcurve2d.hpp identify.hpp   \
+ revolution.hpp spline3d.hpp vscsg.hpp
+ 
+-AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include  $(TCL_INCLUDES)
++AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include  $(TCL_INCLUDES) $(TK_INCLUDES)
+ METASOURCES = AUTO
+ lib_LTLIBRARIES = libcsg.la $(am__append_1)
+ libcsg_la_SOURCES = algprim.cpp brick.cpp   \

@@ -11,4 +11,4 @@ and selective handling of connections based on client identity.
 sslclient requests a connection to a TCP socket, and runs a program. The
 program environment includes the same variables as for sslserver.
 
-WWW:	http://www.superscript.com/ucspi-ssl/intro.html
+WWW: http://www.superscript.com/ucspi-ssl/intro.html

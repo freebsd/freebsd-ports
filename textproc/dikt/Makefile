@@ -9,7 +9,7 @@ MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Dictionary for KDE4
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	corelib gui network svg xml \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake tar:txz

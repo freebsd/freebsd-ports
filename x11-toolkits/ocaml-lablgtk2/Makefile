@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1479/ \
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21

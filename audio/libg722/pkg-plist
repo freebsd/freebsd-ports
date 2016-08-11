@@ -1,0 +1,6 @@
+lib/libg722.a
+lib/libg722.so
+lib/libg722.so.0
+include/g722.h
+include/g722_decoder.h
+include/g722_encoder.h

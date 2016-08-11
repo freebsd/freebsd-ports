@@ -23,7 +23,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--mandir=${PREFIX}/man
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext

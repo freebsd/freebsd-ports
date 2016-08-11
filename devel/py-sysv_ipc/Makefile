@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysv_ipc
-PORTVERSION=	0.6.8
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/ \
 		CHEESESHOP

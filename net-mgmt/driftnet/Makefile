@@ -3,7 +3,7 @@
 
 PORTNAME=	driftnet
 PORTVERSION=	0.1.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 		http://www.vanheusden.com/mirrors/
@@ -17,8 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgif.so:graphics/giflib
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
+USES=		gettext-runtime gmake jpeg
 USE_GNOME=	gtk12
-USES=		gmake jpeg
+USE_XORG=	x11 xext xi
 
 ALL_TARGET=	default
 PLIST_FILES=	bin/driftnet man/man1/driftnet.1.gz

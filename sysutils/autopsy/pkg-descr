@@ -6,8 +6,8 @@ As Autopsy is HTML-based, you can connect to the Autopsy server from any
 platform using an HTML browser.  Autopsy provides a "File Manager"-like
 interface and shows details about deleted data and file system structures.
 
-WARNING: The cross-platform version of Autopsy is no longer actively 
-         developed. This port is retained mainly to allow users with 
+WARNING: The cross-platform version of Autopsy is no longer actively
+         developed. This port is retained mainly to allow users with
          saved data to migrate to another forensic tool.
 
 WWW: http://www.sleuthkit.org/autopsy/v2/

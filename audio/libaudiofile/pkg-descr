@@ -16,11 +16,11 @@ Support file formats:
     Berkeley/IRCAM/CARL Sound File (.sf)
     Audio Visual Research (.avr)
     Amiga IFF/8SVX (.iff)
-    Sample Vision (.smp) 
+    Sample Vision (.smp)
     Creative Voice File (.voc)
     NIST SPHERE (.wav)
-    Core Audio Format (.caf) 
-    FLAC (.flac) 
+    Core Audio Format (.caf)
+    FLAC (.flac)
 
 Supported compression formats:
 
@@ -28,6 +28,6 @@ Supported compression formats:
     IMA ADPCM
     Microsoft ADPCM
     FLAC
-    ALAC (Apple Lossless Audio Codec) 
+    ALAC (Apple Lossless Audio Codec)
 
 WWW: http://www.68k.org/~michael/audiofile/

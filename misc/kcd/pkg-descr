@@ -3,18 +3,18 @@ kcd allows user to change directory by using various methods:
 	- By using cursor keys to navigate through the directory tree
 	  screen
 	- By searching in directory tree screen
-	- By typing part of the directory name directly at the 
+	- By typing part of the directory name directly at the
 	  command line.
 
 	Other features include:
-	- Can be configured to filter out to some subdirectories, 
+	- Can be configured to filter out to some subdirectories,
 	  useful for cdrom and msdos partition mounting points
 	- Can be configured to scan directory tree starting from some
 	  specified directory inwards, for example, home directory.
 	- If the number directories that matches to the name given in
 	  the command line exceeds a specified number,  kcd displays
 	  the whole list.
-	- Faster directory rescan if old data file exists.  Only 
+	- Faster directory rescan if old data file exists.  Only
 	  directories with newer modified/changed time are scanned.
 	- Sorted directory tree listing.
 

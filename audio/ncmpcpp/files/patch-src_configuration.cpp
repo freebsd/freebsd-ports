@@ -1,4 +1,4 @@
---- src/configuration.cpp.orig	2015-11-04 20:01:29 UTC
+--- src/configuration.cpp.orig	2016-04-17 05:41:01 UTC
 +++ src/configuration.cpp
 @@ -29,6 +29,7 @@
  #include "mpdpp.h"

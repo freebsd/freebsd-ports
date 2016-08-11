@@ -13,6 +13,8 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring \

@@ -1,21 +1,4 @@
-bin/_calendarserver_preamble.py
-bin/calendarserver_dbinspect
-bin/calendarserver_dkimtool
-bin/calendarserver_icalendar_validate
-bin/calendarserver_load_augmentdb
-bin/calendarserver_make_partition
-bin/calendarserver_manage_postgres
-bin/calendarserver_monitor_amp_notifications
-bin/calendarserver_monitor_notifications
-bin/calendarserver_monitor_work
-bin/calendarserver_verify_data
-bin/icalendar_split
-bin/make-ssl-ca
-bin/make-ssl-key
-bin/proxyclean
-bin/watch_memcached
 man/man8/caldavd.8.gz
-man/man8/calendarserver_bootstrap_database.8.gz
 man/man8/calendarserver_command_gateway.8.gz
 man/man8/calendarserver_config.8.gz
 man/man8/calendarserver_export.8.gz
@@ -33,6 +16,7 @@ man/man8/calendarserver_shell.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryService-XML.rst
 %%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryServices.rst
 %%PORTDOCS%%%%DOCSDIR%%/Admin/ExtendedLogItems.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/Guide.rst
 %%PORTDOCS%%%%DOCSDIR%%/Admin/LoadSimulation.rst
 %%PORTDOCS%%%%DOCSDIR%%/Admin/MultiServerDeployment.rst
 %%PORTDOCS%%%%DOCSDIR%%/Admin/iSchedule.txt
@@ -41,6 +25,7 @@ man/man8/calendarserver_shell.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/Client-Server/calendar-client.rst
 %%PORTDOCS%%%%DOCSDIR%%/Developer/Calendar Store API.graffle
 %%PORTDOCS%%%%DOCSDIR%%/Developer/Calendar Store Schema.graffle
+%%PORTDOCS%%%%DOCSDIR%%/Developer/CrossPodDesign.txt
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-ctag.txt
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-ctag.xml
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-notifications.txt
@@ -53,6 +38,8 @@ man/man8/calendarserver_shell.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-proxy.xml
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-pubsubdiscovery.txt
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-pubsubdiscovery.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-recursplit.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-recursplit.xml
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-schedulingchanges.txt
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-schedulingchanges.xml
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-sharing.txt
@@ -61,8 +48,9 @@ man/man8/calendarserver_shell.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/calendarserver-bulk-change.xml
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/icalendar-maskuids.txt
 %%PORTDOCS%%%%DOCSDIR%%/Extensions/icalendar-maskuids.xml
-%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6764-srv-CalDAV.txt
-%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6868-Parameter Value Encoding.txt
+%%PORTDOCS%%%%DOCSDIR%%/Notes/attendee-import.txt
+%%PORTDOCS%%%%DOCSDIR%%/Notes/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/Notes/x-items.txt
 %%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-caldav-extensions.txt
 %%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-calendar-availability.txt
 %%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-carddav-directory-gateway.txt
@@ -90,33 +78,56 @@ man/man8/calendarserver_shell.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6352-CardDAV.txt
 %%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6578-WebDAV Sync.txt
 %%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6638-CalDAV-Scheduling.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6764-srv-CalDAV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6868-Parameter Value Encoding.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC7095-jCard.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC7265-jcal.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC7529-RSCALE.txt
 %%PORTDOCS%%%%DOCSDIR%%/current.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts-test-pod.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts-test-s2s.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts-test.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts.dtd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-default.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-test-pod.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-test-s2s.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments.dtd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/generate_test_accounts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies-test-pod.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies-test-s2s.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/resources-test-pod.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/resources-test-s2s.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/resources-test.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-apple.plist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-partitioning-primary.plist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-partitioning-secondary.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-stdconfig.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-test.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-test-podA.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-test-podB.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-test-s2s.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test-s2s/other_keys/example.com#ischedule
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test-s2s/priv.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test-s2s/pub.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test/other_keys/example.org#ischedule2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test/priv.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim-test/pub.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/localservers-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localservers.dtd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/localservers.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mime.types
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers-test-s2s.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers.dtd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/caldavd-resources.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/locations-resources-orig.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/locations-resources.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/users-groups.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servers.dtd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertoserver.dtd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/accounts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-db.zones
 @dir etc/caldavd/auth

@@ -71,7 +71,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-postgres
 SQLITE_DESC=		Use SQLite for the data store and cache
-SQLITE_USE=		sqlite=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_CONFIGURE_OFF=	--without-sqlite
 

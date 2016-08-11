@@ -36,8 +36,6 @@ pre-build:
 do-install:
 	${INSTALL} -s ${WRKSRC}/src/archivesmtp ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/src/archivesmtp.8 ${STAGEDIR}${PREFIX}/man/man8
-
-post-install:
 	# Install sample configuration file
 	${INSTALL_DATA} ${WRKSRC}/src/archivesmtp.conf.sample ${STAGEDIR}${PREFIX}/etc
 	# Create socket directory

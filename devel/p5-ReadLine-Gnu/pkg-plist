@@ -1,7 +1,0 @@
-bin/perlsh
-%%SITE_ARCH%%/Term/ReadLine/Gnu.pm
-%%SITE_ARCH%%/Term/ReadLine/Gnu/XS.pm
-%%SITE_ARCH%%/auto/Term/ReadLine/Gnu/Gnu.so
-%%SITE_ARCH%%/auto/Term/ReadLine/Gnu/XS/autosplit.ix
-%%PERL5_MAN1%%/perlsh.1.gz
-%%PERL5_MAN3%%/Term::ReadLine::Gnu.3.gz

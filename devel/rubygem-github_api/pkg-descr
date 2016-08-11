@@ -3,4 +3,4 @@ build in a modular way, that is, you can either instantiate the whole api
 wrapper Github.new or use parts of it e.i. Github::Repos.new if working solely
 with repositories is your main concern.
 
-WWW: http://peter-murach.github.io/github/
+WWW: http://piotrmurach.github.io/github/

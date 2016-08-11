@@ -3,7 +3,7 @@
 
 PORTNAME=	dns_balance
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.netlab.cs.tsukuba.ac.jp/~yokota/archive/ \
 		http://BSDforge.com/projects/source/dns/dns_balance/
@@ -13,13 +13,16 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Dynamic load-balancing DNS server
 
 USE_RUBY=	yes
+USES=		shebangfix
 USE_RC_SUBR=	dns_balance
 
 NO_BUILD=	yes
+BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/dns_balance.rb \
-			${WRKSRC}/sample/makedb.rb \
-			${WRKSRC}/sample/make_namespace.rb
+SHEBANG_FILES=	${WRKSRC}/dns_balance.rb \
+		${WRKSRC}/sample/makedb.rb \
+		${WRKSRC}/sample/make_namespace.rb
 
 ETCS=		addrdb.rb \
 		namespace.rb

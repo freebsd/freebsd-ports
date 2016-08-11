@@ -13,6 +13,8 @@ COMMENT=	Flexible, high-performance SNMP statistics monitoring system
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql

@@ -8,4 +8,6 @@ MASTERDIR=	${.CURDIR}/../wireshark
 
 OPTIONS_EXCLUDE=	GTK2 GTK3 QT5
 
+BROKEN_powerpc64=	Does not build
+
 .include "${MASTERDIR}/Makefile"

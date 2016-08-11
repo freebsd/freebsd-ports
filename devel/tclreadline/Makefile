@@ -10,14 +10,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
-USES=		libtool tcl readline
-GNU_CONFIGURE=	yes
+USES=		libtool tcl:tea readline
+CONFIGURE_ARGS=	--with-tcl-includes=${TCL_INCLUDEDIR}
 USE_LDCONFIG=	yes
-
-PLIST_SUB+=	VERSION="${PORTVERSION}"
-
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tcl-includes=${TCL_INCLUDEDIR}
+TCL_PKG=	${PORTNAME}${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} \

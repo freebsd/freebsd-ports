@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus \
 		setxkbmap:x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
-USES=		compiler cpe gmake libtool pathfix pkgconfig python
+USES=		compiler cpe gmake libtool pathfix pkgconfig python:2
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -36,7 +36,7 @@ LIBS+=		-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE
 OPTIONS_RADIO=	CONFIG
 OPTIONS_RADIO_CONFIG=	GCONF DCONF
-OPTIONS_DEFAULT=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE
+OPTIONS_DEFAULT=	GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE
 
 GTK2_DESC=	Install GTK2 client
 GTK3_DESC=	Install GTK3 client and panel

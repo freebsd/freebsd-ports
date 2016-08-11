@@ -6,7 +6,6 @@ include/brotli/dec/huffman.h
 include/brotli/dec/port.h
 include/brotli/dec/prefix.h
 include/brotli/dec/state.h
-include/brotli/dec/streams.h
 include/brotli/dec/transform.h
 include/brotli/dec/types.h
 include/brotli/enc/backward_references.h

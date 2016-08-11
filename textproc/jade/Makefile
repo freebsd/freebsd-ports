@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
-RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
+RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 CONFLICTS=	sp-1.*
 
@@ -24,12 +24,7 @@ GNU_CONFIGURE=	yes
 USES=		desthack gmake libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
-PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 MAKE_JOBS_UNSAFE=	yes
-
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure

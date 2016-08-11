@@ -11,8 +11,8 @@ CONFIGURE_ARGS=	--enable QtMultimedia
 PYQT_DIST=	yes
 
 USES=		python pyqt:4
-USE_PYQT=	sip_build gui_run
-USE_QT4=	moc_build multimedia qmake_build
+USE_PYQT=	sip_build core_run gui_run
+USE_QT4=	corelib gui multimedia moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

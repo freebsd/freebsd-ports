@@ -11,9 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal mixer
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-DOCS=		ChangeLog DOCS index.html
 MAKE_ENV=	LINUX_LIBS=-lutil
+
+PLIST_FILES=	bin/tm
+PORTDOCS=	ChangeLog DOCS index.html
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,11 +29,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|pty.h|libutil.h|' ${WRKSRC}/app_term.c
 	@${ECHO_CMD} '#include <string.h>' >> ${WRKSRC}/main.h
 
-.include <bsd.port.options.mk>
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

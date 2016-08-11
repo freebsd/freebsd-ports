@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.2-20160327
+DISTVERSION=	3.2-20160730
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -46,7 +46,7 @@ OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE TLS
 
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
 LDAP_USE=		OPENLDAP=yes
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
@@ -56,7 +56,7 @@ PGSQL_USES=		pgsql
 SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=		sqlite
-TLS_USE=		OPENSSL=yes
+TLS_USES=		ssl
 
 CDB_DESC=	CDB maps lookups
 INST_BASE_DESC=	Install into /usr and /etc/postfix

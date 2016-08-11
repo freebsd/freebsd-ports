@@ -18,6 +18,8 @@ NO_WRKSUBDIR=	yes
 USES=		gmake lua:51 shebangfix
 SHEBANG_FILES=	DBI.lua
 
+MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS+=	-fpic -I${LOCALBASE}/include -I${LUA_INCDIR} -I. \
 		-I${LOCALBASE}/include/postgresql/server
 LDFLAGS+=	-shared -L${LOCALBASE}/lib -L${LUA_LIBDIR}
@@ -35,7 +37,7 @@ MYSQL_CFLAGS=		-I ${LOCALBASE}/include/mysql
 MYSQL_ALL_TARGET=	mysql
 MYSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdmysql.so
 
-SQLITE3_USE=		SQLITE=3
+SQLITE3_USES=		sqlite:3
 SQLITE3_ALL_TARGET=	sqlite3
 SQLITE3_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdsqlite3.so
 

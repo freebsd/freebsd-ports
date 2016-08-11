@@ -22,7 +22,6 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 USES=		tar:xz cmake gettext pkgconfig
 INSTALLS_ICONS=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 _MODEL_VER=	20130308
 
 OPTIONS_DEFINE=	QT4

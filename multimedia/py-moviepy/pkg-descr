@@ -1,0 +1,5 @@
+MoviePy is a Python module for video editing: cuts, concatenations,
+title insertions, video compositing (a.k.a. non-linear editing),
+video processing, and creation of custom effects. 
+
+WWW: https://github.com/Zulko/moviepy

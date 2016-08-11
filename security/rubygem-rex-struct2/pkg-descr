@@ -1,0 +1,4 @@
+This Gem contains all of the Ruby Exploitation(Rex) library for
+generating/manipulating C-Style structs.
+
+WWW: https://github.com/rapid7/rex-struct2

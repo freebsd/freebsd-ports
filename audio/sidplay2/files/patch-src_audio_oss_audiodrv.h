@@ -1,5 +1,5 @@
---- src/audio/oss/audiodrv.h.orig	Fri Jun  9 13:55:40 2006
-+++ src/audio/oss/audiodrv.h	Fri Jun  9 13:56:03 2006
+--- src/audio/oss/audiodrv.h.orig	2001-10-30 23:35:35 UTC
++++ src/audio/oss/audiodrv.h
 @@ -57,15 +57,7 @@
  #include <stdio.h>
  #include <unistd.h>

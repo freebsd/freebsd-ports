@@ -1,7 +1,7 @@
-Class::CodeStyler is an object oriented API to be used by code-generators 
-in producing formatted code (Perl, C, other). The produced code file can 
-also be syntax checked, displayed with line numbers, executed, and eval'd. 
-Code can be inserted anywhere in the generated program using a system of 
+Class::CodeStyler is an object oriented API to be used by code-generators
+in producing formatted code (Perl, C, other). The produced code file can
+also be syntax checked, displayed with line numbers, executed, and eval'd.
+Code can be inserted anywhere in the generated program using a system of
 bookmarks and jumps.
 
 WWW: http://search.cpan.org/dist/Class-CodeStyler/

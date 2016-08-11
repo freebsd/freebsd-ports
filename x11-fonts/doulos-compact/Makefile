@@ -12,7 +12,7 @@ MASTER_SITES=	http://scripts.sil.org/ttw/fonts2go.cgi?family=DoulosSIL&pkg=Compa
 MASTER_SITES=	LOCAL/bf
 .endif
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection, compact variant
 
 LICENSE=	OFL11

@@ -1,0 +1,5 @@
+Python library that provides NTLM support, including an authentication
+handler for urllib2. Works with pass-the-hash in additon to password 
+authentication. 
+
+WWW: https://pypi.python.org/pypi/python-ntlm

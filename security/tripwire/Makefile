@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	tripwire
-PORTVERSION=	2.4.2.2
-PORTREVISION=	3
+PORTVERSION=	2.4.3.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
 LICENSE=	GPLv2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	Tripwire
+GH_PROJECT=	tripwire-open-source
+
 NO_LICENSES_INSTALL=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
@@ -139,11 +139,10 @@ make-pkg-install:
 	@ ${ECHO_CMD} 'esac' >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} PACKAGE_INSTALLER=yes >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} POLICYSRC=/tmp/$$$$.tmp >> ${PKGPOSTINSTALL}
-	@ ${ECHO_CMD} PREFIX="$(PREFIX)" >> ${PKGPOSTINSTALL}
+	@ ${ECHO_CMD} PREFIX="${PREFIX}" >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} DO_NOT_CONFIG=yes >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} TW_CLOBBER="false" >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} TW_PROMPT="false" >> ${PKGPOSTINSTALL}
-	@ ${ECHO_CMD} sysconfdir="$(sysconfdir)" >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} prefix=${PREFIX} >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} sysconfdir=${TWCFG} >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} path_to_vi="/usr/bin/vi" >> ${PKGPOSTINSTALL}

@@ -17,7 +17,6 @@ BUILD_DEPENDS+=	bzr:devel/bzr
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:devel/py-subvertpy \
 		bzr:devel/bzr
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 

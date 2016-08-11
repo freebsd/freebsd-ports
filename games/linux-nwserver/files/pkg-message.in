@@ -1,8 +1,0 @@
-*******************************************************************************
-Neverwinter Nights Dedicated Server requires original game data to run.
-Consult %%DOCSDIR%%/readme.linuxserver.txt
-for more information about required data directories.
-From directory, where you will have installed game data you can run:
-%%PREFIX%%/bin/fixinstall - to check installation
-and %%PREFIX%%/bin/nwserver - to start server
-*******************************************************************************

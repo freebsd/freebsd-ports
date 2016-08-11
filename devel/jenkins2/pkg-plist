@@ -1,2 +1,0 @@
-%%DATADIR%%/jenkins.war
-@dir(%%JENKINS_USER%%,%%JENKINS_GROUP%%,) jenkins

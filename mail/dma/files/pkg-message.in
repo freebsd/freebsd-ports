@@ -18,8 +18,8 @@ shutdown, add the following to rc.conf as well:
 
 dma_flushq_enable="YES"
 
-you can also add a cronjob to do regular mailq flushes using the following 
-command: 
+you can also add a cronjob to do regular mailq flushes using the following
+command:
 
 %%PREFIX%%/libexec/dma -q
 

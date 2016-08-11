@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	impacket
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/CoreSecurity/impacket/releases/download/impacket_${PORTVERSION:S,.,_,g}/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.0:devel/rubygem-concurrent-ruby \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/sidekiq bin/sidekiqctl
 

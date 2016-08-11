@@ -1,5 +1,5 @@
---- CPU.xs.orig	2010-09-03 23:30:18.000000000 +0100
-+++ CPU.xs	2010-09-03 23:57:31.000000000 +0100
+--- CPU.xs.orig	2016-06-20 15:01:16 UTC
++++ CPU.xs
 @@ -40,6 +40,11 @@
   #define _have_cpu_clock
   #define _have_cpu_type
@@ -12,7 +12,7 @@
  #ifdef WINDOWS
  /* Registry Functions */
  
-@@ -317,6 +322,10 @@
+@@ -317,6 +322,10 @@ CODE:
      int value = proc_cpuinfo_clock();
      if (value) clock = value;
  #endif
@@ -23,7 +23,7 @@
  #ifdef WINDOWS
      char *clock_str = malloc(MAX_IDENT_SIZE); 
      /*!! untested !!*/
-@@ -356,6 +365,10 @@
+@@ -356,6 +365,10 @@ CODE:
  {
      char *value = malloc(MAX_IDENT_SIZE);
      int retcode = 0;

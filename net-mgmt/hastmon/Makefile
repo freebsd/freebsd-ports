@@ -25,7 +25,6 @@ do-install:
 	${SETENV} ${MKCMAKE_ENV} DESTDIR=${STAGEDIR} \
 		${MKCMAKE} -C ${WRKSRC} ${INSTALL_TARGET}
 
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${doc} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 19 17:51:43 2001
-+++ configure	Mon Apr  2 22:38:07 2001
-@@ -1967,12 +1969,12 @@
+--- configure.orig	2001-05-06 21:56:47 UTC
++++ configure
+@@ -1967,12 +1967,12 @@ rm -f conftest*
  
  fi
  echo "$ac_t""$ac_cv_type_pid_t" 1>&6

@@ -1,0 +1,40 @@
+--- Makefile.orig	2016-05-12 07:45:17 UTC
++++ Makefile
+@@ -51,7 +51,7 @@ endif
+ #######################################################################
+ #  install
+ 
+-GPRINST_OPTS=-p -f --prefix=${prefix} --install-name=gnatcoll \
++GPRINST_OPTS=-p -f --prefix=$(DESTDIR)${prefix} --install-name=gnatcoll \
+ 	--exec-subdir=${bindir} --project-subdir=lib/gnat \
+ 	--build-var=LIBRARY_TYPE --build-name=$(@F) -XLIBRARY_TYPE=$(@F)
+ 
+@@ -71,9 +71,9 @@ endif
+ 	${GPRINSTALL} --mode=usage ${GPRINST_OPTS} -Psrc/gnatcoll_tools
+ 
+ install_gps_plugin: force
+-	mkdir -p $(prefix)/share/gps/plug-ins
++	mkdir -p $(DESTDIR)$(prefix)/share/gps/plug-ins
+ 	(cd distrib/ ; tar cf - gnatcoll) | \
+-          (cd $(prefix)/share/gps/plug-ins ; tar xf -)
++          (cd $(DESTDIR)$(prefix)/share/gps/plug-ins ; tar xf -)
+ 
+ # Regenerate part of the sources. Unfortunately, this can be run only after
+ # we have build GNATCOLL, and then its tools, even though GNATCOLL itself
+@@ -108,7 +108,7 @@ ifeq ($(OS),Windows_NT)
+ 	-cd $(SQLITE_DIR); gcc -O2 -DSQLITE_OMIT_LOAD_EXTENSION -D__EXTENSIONS__ -o sqlite3_for_gps shell.c sqlite3.c
+ else
+ 	# If we fail to compile, never mind. Some tests will simply be disabled
+-	-cd $(SQLITE_DIR); gcc -O2 -DSQLITE_OMIT_LOAD_EXTENSION -D__EXTENSIONS__ -o sqlite3_for_gps shell.c sqlite3.c -lpthread -ldl
++	-cd $(SQLITE_DIR); gcc -O2 -DSQLITE_OMIT_LOAD_EXTENSION -D__EXTENSIONS__ -o sqlite3_for_gps shell.c sqlite3.c -lpthread
+ endif
+ 
+ ## Only works after installation, so we should install to a local directory
+@@ -149,6 +149,6 @@ clean: clean_library/static clean_librar
+ 	-${MAKE} -C examples $@
+ 
+ docs:
+-	${MAKE} -C docs html latexpdf
++	${MAKE} -C docs html
+ 
+ force:

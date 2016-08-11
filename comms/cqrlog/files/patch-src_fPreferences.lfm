@@ -1,0 +1,11 @@
+--- src/fPreferences.lfm.orig	2016-04-20 16:06:15 UTC
++++ src/fPreferences.lfm
+@@ -4428,7 +4428,7 @@ object frmPreferences: TfrmPreferences
+           Top = 15
+           Width = 432
+           TabOrder = 0
+-          Text = '/usr/bin/xplanet'
++          Text = '%%LOCALBASE%%/bin/xplanet'
+         end
+       end
+       object GroupBox22: TGroupBox

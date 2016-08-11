@@ -12,6 +12,8 @@ COMMENT=	Program to extract Inno Setup files
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \

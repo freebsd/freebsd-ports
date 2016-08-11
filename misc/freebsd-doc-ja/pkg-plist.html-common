@@ -2,6 +2,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/fig1.png

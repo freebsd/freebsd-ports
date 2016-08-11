@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.42
+PORTVERSION=	0.1.43
 CATEGORIES=	french textproc
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://sarrazip.com/dev/
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator

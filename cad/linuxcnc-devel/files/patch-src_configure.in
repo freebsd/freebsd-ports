@@ -1,0 +1,49 @@
+--- src/configure.in.orig	2016-06-25 02:19:12 UTC
++++ src/configure.in
+@@ -665,7 +665,7 @@ else
+     esac
+     LINUXCNC_CONFIG_PATH="~/linuxcnc/configs:/usr/local/etc/linuxcnc/configs:"$(eval echo $EMC2_HELP_DIR)"/examples/sample-configs"
+     EMC2_NCFILES_DIR=${prefix}/share/linuxcnc/ncfiles
+-    REALTIME=/etc/init.d/realtime
++    REALTIME=${prefix}/etc/rc.d/realtime
+     EMC2_IMAGE_DIR=$(fe "$datadir")/linuxcnc
+     HALLIB_DIR=${prefix}/share/linuxcnc/hallib
+ fi
+@@ -807,25 +807,25 @@ then
+     AC_MSG_ERROR([awk not found])
+ fi
+ 
+-AC_PATH_PROG(INSMOD, insmod, "none", $SPATH)
++AC_PATH_PROG(INSMOD, false, "none", $SPATH)
+ if test $INSMOD = "none"
+ then
+     AC_MSG_ERROR([insmod not found])
+ fi
+ 
+-AC_PATH_PROG(RMMOD, rmmod, "none", $SPATH)
++AC_PATH_PROG(RMMOD, false, "none", $SPATH)
+ if test $RMMOD = "none"
+ then
+     AC_MSG_ERROR([rmmod not found])
+ fi
+ 
+-AC_PATH_PROG(LSMOD, lsmod, "none", $SPATH)
++AC_PATH_PROG(LSMOD, true, "none", $SPATH)
+ if test $LSMOD = "none"
+ then
+     AC_MSG_ERROR([lsmod not found])
+ fi
+ 
+-AC_PATH_PROG(PIDOF, pidof, "none", $SPATH)
++AC_PATH_PROGS(PIDOF, pidof pgrep, "none", $SPATH)
+ if test $PIDOF = "none"
+ then
+     AC_MSG_ERROR([pidof not found])
+@@ -1180,7 +1180,6 @@ AC_MSG_RESULT($HAVE_OPTRESET)
+ AC_SUBST([HAVE_OPTRESET])
+ 
+ 
+-
+ LIBS_hold=$LIBS
+ LIBS=
+ AC_SEARCH_LIBS(dlopen, [c dl], [

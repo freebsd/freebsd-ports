@@ -16,9 +16,7 @@ RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	script/setup.sh
 
 .include <bsd.port.mk>

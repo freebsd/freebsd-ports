@@ -38,6 +38,7 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/%%ETCDIR%%-proxy.xml
 %%APP_HOME%%/%%ETCDIR%%-requestlog.xml
 %%APP_HOME%%/%%ETCDIR%%-rewrite.xml
+%%APP_HOME%%/%%ETCDIR%%-rewrite-customizer.xml
 %%APP_HOME%%/%%ETCDIR%%-setuid.xml
 %%APP_HOME%%/%%ETCDIR%%-spring.xml
 %%APP_HOME%%/%%ETCDIR%%-ssl-context.xml
@@ -52,13 +53,14 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/etc/spnego.conf
 %%APP_HOME%%/etc/spnego.properties
 %%APP_HOME%%/etc/webdefault.xml
+%%APP_HOME%%/etc/rewrite-compactpath.xml
 %%APP_HOME%%/lib/annotations/asm-5.0.1.jar
 %%APP_HOME%%/lib/annotations/asm-commons-5.0.1.jar
 %%APP_HOME%%/lib/annotations/javax.annotation-api-1.2.jar
 %%APP_HOME%%/lib/apache-jsp/org.eclipse.jdt.core.compiler.ecj-4.4.2.jar
 %%APP_HOME%%/lib/apache-jsp/org.eclipse.jetty.apache-jsp-%%PORTVERSION%%.%%JDVDATE%%.jar
-%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-el-8.0.27.jar
-%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.0.27.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-el-8.0.33.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.0.33.jar
 %%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar
 %%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar
 %%APP_HOME%%/lib/cdi-core-%%PORTVERSION%%.%%JDVDATE%%.jar
@@ -117,6 +119,9 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_72.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_73.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_74.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_77.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_91.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_92.mod
 %%APP_HOME%%/license-eplv10-aslv20.html
 %%APP_HOME%%/logs/.donotdelete
 %%APP_HOME%%/modules/.donotdelete
@@ -177,6 +182,8 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/modules/requestlog.mod
 %%APP_HOME%%/modules/resources.mod
 %%APP_HOME%%/modules/rewrite.mod
+%%APP_HOME%%/modules/rewrite-compactpath.mod
+%%APP_HOME%%/modules/rewrite-customizer.mod
 %%APP_HOME%%/modules/security.mod
 %%APP_HOME%%/modules/server.mod
 %%APP_HOME%%/modules/servlet.mod

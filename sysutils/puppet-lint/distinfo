@@ -1,2 +1,3 @@
-SHA256 (rubygem/puppet-lint-1.1.0.gem) = 739f566cd4f1e77b92c1191217fdb59ce12353f3ec2703f30933d2bba877b35b
-SIZE (rubygem/puppet-lint-1.1.0.gem) = 43520
+TIMESTAMP = 1466679118
+SHA256 (rubygem/puppet-lint-2.0.0.gem) = 90f2b3c84cd569aebd9b3f2709bd59c0b92e0357098fb882480d3e52e3a7df2a
+SIZE (rubygem/puppet-lint-2.0.0.gem) = 46080

@@ -1,0 +1,27 @@
+--- man/man5/twfiles.5.orig	2016-04-23 19:12:41.000000000 -0700
++++ man/man5/twfiles.5	2016-04-30 00:06:08.408519000 -0700
+@@ -31,13 +31,13 @@
+ .\"
+ .SH DESCRIPTION
+ .\"
+-.Ms "Configuration File" "\fPdefault:\fP \fI/etc/tripwire/tw.cfg\fP"
++.Ms "Configuration File" "\fPdefault:\fP \fI/usr/local/etc/tripwire/tw.cfg\fP"
+ The configuration file stores system-specific information, such as the
+ location of \fITripwire\fR data files. The configuration settings are
+ generated during the installation process, but can be changed by the system administrator at any time.  See the
+ \fBtwconfig\fR(4) man page for a more complete discussion.
+ .\"
+-.Ms "Policy File" "\fPdefault:\fP \fI/etc/tripwire/tw.pol\fP"
++.Ms "Policy File" "\fPdefault:\fP \fI/usr/local/etc/tripwire/tw.pol\fP"
+ The policy file consists of a series of rules specifying the system
+ objects that \fITripwire\fR should monitor, and the data for each
+ object that should be collected and stored in the database file.
+@@ -69,7 +69,7 @@
+ \fBtripwire\fR(8) and \fBtwprint\fR(8) man pages for information on
+ creating and printing report files.
+ .\"
+-.Ms "Key Files" "\fPdefaults:\fP \fI/etc/tripwire/site.key\fP \fPand\fP \fI/etc/tripwire/$(HOSTNAME)\(hylocal.key\fP"
++.Ms "Key Files" "\fPdefaults:\fP \fI/usr/local/etc/tripwire/site.key\fP \fPand\fP \fI/usr/local/etc/tripwire/$(HOSTNAME)\(hylocal.key\fP"
+ It is critical that \fITripwire\fR files be protected from unauthorized
+ .ie n access\(hy\(hyan
+ .el access\(eman

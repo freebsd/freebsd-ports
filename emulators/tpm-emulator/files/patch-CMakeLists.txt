@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
-+++ CMakeLists.txt	2010-12-15 07:33:54.234887143 +0900
-@@ -36,19 +36,19 @@
+--- CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
++++ CMakeLists.txt
+@@ -36,19 +36,20 @@ set(TPM_DEVICE_NAME "/dev/tpm")
  else()
  set(TPM_LOG_FILE "/var/log/tpmd.log")
  set(TPM_SOCKET_NAME "/var/run/tpm/tpmd_socket:0")
@@ -20,6 +20,7 @@
 -include_directories("/opt/local/include")
 -link_directories("/opt/local/lib")
 +include_directories(${TPM_INCLUDE_DIRS})
++link_directories(${TDDL_LIBRARY_DIRS})
 +link_directories(${TPM_LIBRARY_DIRS})
  
  # configure CPack

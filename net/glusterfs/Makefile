@@ -16,7 +16,7 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:sysutils/liburcu
 USE_GCC=	any
 
 USES=		bison gettext libtool pkgconfig python:build readline \
-		shebangfix
+		shebangfix sqlite
 SHEBANG_FILES=	extras/peer_add_secret_pub.in \
 		tools/glusterfind/S57glusterfind-delete-post.py \
 		extras/ganesha/scripts/ganesha-ha.sh
@@ -24,7 +24,6 @@ SHEBANG_FILES=	extras/peer_add_secret_pub.in \
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_SQLITE=	yes
 USE_RC_SUBR=	glusterd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \

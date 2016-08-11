@@ -23,13 +23,7 @@ PORTDOCS=	*
 
 SHLIB_MAJOR=	0
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 post-build:
 	@cd ${WRKSRC} && ${STRIP_CMD} dnsget_s ex-rdns_s rblcheck_s
@@ -50,12 +44,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man3/${FILE}
 .endfor
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in NEWS NOTES TODO
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 .endfor
-.endif
 
 .include <bsd.port.mk>

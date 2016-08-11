@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 		ftp://ftp.cs.umn.edu/pub/am-utils/ \
 		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
 
 LICENSE=	BSD3CLAUSE

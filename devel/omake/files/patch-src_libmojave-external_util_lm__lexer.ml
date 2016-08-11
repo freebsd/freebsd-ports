@@ -2,7 +2,7 @@ $NetBSD: patch-aw,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/util/lm_lexer.ml.orig	2007-01-25 18:31:18.000000000 +0000
+--- src/libmojave-external/util/lm_lexer.ml.orig	2007-01-25 18:31:18 UTC
 +++ src/libmojave-external/util/lm_lexer.ml
 @@ -1325,10 +1325,8 @@ struct
      * Expressions.

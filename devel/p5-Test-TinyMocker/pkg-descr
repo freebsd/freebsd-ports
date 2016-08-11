@@ -6,6 +6,6 @@ Test::TinyMocker - a very simple tool to mock external modules
         * unmock($module, $method_or_methods)
         * method
 	* methods
-	* should 
+	* should
 
 WWW: http://search.cpan.org/dist/Test-TinyMocker/

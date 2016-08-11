@@ -20,8 +20,7 @@ RUN_DEPENDS=	rubygem-afm>=0.2.1:print/rubygem-afm \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES+=	bin/pdf_callbacks bin/pdf_list_callbacks bin/pdf_object bin/pdf_text
 

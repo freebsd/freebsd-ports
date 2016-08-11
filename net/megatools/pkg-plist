@@ -12,13 +12,8 @@ include/mega/mega-aes-ctr-encryptor.h
 include/mega/mega-aes-key.h
 include/mega/mega-chunked-cbc-mac.h
 include/mega/mega-enum-types.h
-include/mega/mega-http-client.h
-include/mega/mega-http-input-stream.h
-include/mega/mega-http-io-stream.h
-include/mega/mega-http-output-stream.h
 include/mega/mega-rsa-key.h
 include/mega/mega.h
-include/mega/megatypes.h
 include/mega/utils.h
 lib/libmega.a
 lib/libmega.so

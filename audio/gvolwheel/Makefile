@@ -3,7 +3,7 @@
 
 PORTNAME=	gvolwheel
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -39,6 +39,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${LN} -sf ${PREFIX}/share/pixmaps/gvolwheel/audio-volume-high.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -sf gvolwheel/audio-volume-high.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-Mping is a system for collecting packet delay and loss 
-statistics in a TCP/IP network using ICMP echo. 
+Mping is a system for collecting packet delay and loss
+statistics in a TCP/IP network using ICMP echo.
 
 Mping is based on original ping(8) with following new features:
 

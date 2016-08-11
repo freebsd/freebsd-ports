@@ -9,7 +9,7 @@ MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://invisible-island.net/${PORTNAME}/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
@@ -32,8 +32,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--without-manpage-renames \
 		--mandir=${MANPREFIX}/man \
 		--with-hashed-db \
-		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig \
-		ac_cv_sys_long_file_names=yes
+		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	TRACE DEBUG PROFILE EXAMPLES DOCS

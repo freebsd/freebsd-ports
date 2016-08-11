@@ -1,5 +1,5 @@
---- makefile.FreeBSD.orig	Thu Sep 20 06:27:49 2001
-+++ makefile.FreeBSD	Wed Jul 24 01:12:35 2002
+--- makefile.FreeBSD.orig	2003-04-01 17:34:57 UTC
++++ makefile.FreeBSD
 @@ -36,9 +36,9 @@
  # FBCONFIG_2, which is set to the value of IMTOOLRC in the definition of
  # the CFLAGS macro below.)
@@ -13,7 +13,7 @@
  
  IMTOOLRC  = $(IMTRCDIR)imtoolrc
  FIFO_I    = $(ROOT)/dev/imt1i
-@@ -46,7 +46,7 @@
+@@ -46,7 +46,7 @@ FIFO_O    = $(ROOT)/dev/imt1o
  FIFO_LN   = $(ROOT)/dev/imt1
  
  # Compiler specification.
@@ -22,7 +22,7 @@
  # Uncomment these two lines to compile with gcc (add any optimizers you wish).
  #CC = gcc -finline-functions -fdelayed-branch -fstrength-reduce
  #  Delayed branches could win big on RISC: many inner loops have branches
-@@ -76,12 +76,12 @@
+@@ -76,12 +76,12 @@ MFLAGS = -DLSB -DSUN -DPSCRIPT -DQUIT
  # OFLAGS: compiler optimization/debug options.
  
  #OFLAGS = -g -DDEBUG
@@ -37,7 +37,7 @@
  
  # Libraries that move about or may require special specification.
  #
-@@ -89,7 +89,7 @@
+@@ -89,7 +89,7 @@ ADFLAGS = -I/usr/X11R6/include
  # usual link search path, i.e., it is not in /usr/lib, it may be necessary
  # to specify its path fully in XLIB.
  
@@ -46,7 +46,7 @@
  #XLIB = -L/usr/X11R6/lib -lX11	# ATTENTION: OpenWindows users...
  #F77LIB = -lF77 -lI77 -lU77
  F77LIB = -lf2c
-@@ -307,7 +307,7 @@
+@@ -307,7 +307,7 @@ tape:
  	$(MAKE) ARCFILE=$(TAPEDEV) tar
  
  
@@ -55,7 +55,7 @@
  STRUCT = hfiles/struct.h hfiles/buffer.h hfiles/color.h hfiles/control.h \
  	 hfiles/coord.h hfiles/cursor.h hfiles/image.h hfiles/window.h
  WORKS = $(XLIBH) $(STRUCT) hfiles/constant.h hfiles/extern.h $(WCSH)
-@@ -419,8 +419,8 @@
+@@ -419,8 +419,8 @@ maininit.o	: $(XLIBH) $(STRUCT) hfiles/c
  		defs/dispbox.def defs/magnibox.def defs/panbox.def \
  		defs/btnbox.def defs/colorbox.def defs/graphbox.def \
  		defs/desktop.def defs/cursor.def

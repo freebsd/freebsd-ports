@@ -14,12 +14,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		dos2unix gmake zip
 USE_JAVA=	yes
-DOS2UNIX_FILES=	Makefile
+DOS2UNIX_GLOB=	Makefile *.c
+DOS2UNIX_WRKSRC=	${WRKDIR}/src/native
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 ALL_TARGET=	release
 
-PLIST_FILES=	lib/libpkcs11wrapper.so %%JAVAJARDIR%%/iaikPkcs11Wrapper.jar
+PLIST_FILES=	lib/libpkcs11wrapper.so ${JAVAJARDIR}/iaikPkcs11Wrapper.jar
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

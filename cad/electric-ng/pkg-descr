@@ -1,8 +1,8 @@
 Electric is a sophisticated electrical CAD system that can handle
 many forms of circuit design, including:
- - Custom IC layout (ASICs) 
- - Schematic drawing 
- - Hardware description language specifications 
+ - Custom IC layout (ASICs)
+ - Schematic drawing
+ - Hardware description language specifications
 
 For real functionality, one should consider installing
 support simulation software such as cad/spice.

@@ -1,0 +1,9 @@
+TIMESTAMP = 1470339510
+SHA256 (rpm/i686/centos/6.8/gtk2-2.24.23-8.el6.i686.rpm) = e0781bc8fa9e1e7f10f8cd5fa2a0bd3a1dfc78297ae1ea4de2fdda77c1c64eba
+SIZE (rpm/i686/centos/6.8/gtk2-2.24.23-8.el6.i686.rpm) = 3336132
+SHA256 (rpm/i686/centos/6.8/gtk2-immodules-2.24.23-8.el6.i686.rpm) = 7396cc72b70b3f4efe989639cff506e0c6aa014287d79f29c468df4492a1b121
+SIZE (rpm/i686/centos/6.8/gtk2-immodules-2.24.23-8.el6.i686.rpm) = 71444
+SHA256 (rpm/i686/centos/6.8/gtk2-engines-2.18.4-5.el6.centos.i686.rpm) = 33ecb6ade9ff52e2c924c13db849f4b955f9bddd21225717bf2874a4a86575d8
+SIZE (rpm/i686/centos/6.8/gtk2-engines-2.18.4-5.el6.centos.i686.rpm) = 281788
+SHA256 (rpm/i686/centos/6.8/gtk2-2.24.23-8.el6.src.rpm) = 25525b49a85420db94e627b08eb134281e48c97a5847f8d1d8c6463c769295cb
+SIZE (rpm/i686/centos/6.8/gtk2-2.24.23-8.el6.src.rpm) = 13728324

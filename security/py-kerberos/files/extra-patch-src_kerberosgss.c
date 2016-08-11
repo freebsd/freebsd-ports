@@ -1,6 +1,6 @@
---- src/kerberosgss.c.orig	2015-03-29 03:40:20 UTC
+--- src/kerberosgss.c.orig	2016-01-25 17:51:33 UTC
 +++ src/kerberosgss.c
-@@ -38,7 +38,7 @@ char* server_principal_details(const cha
+@@ -43,7 +43,7 @@ char* server_principal_details(const cha
      int code;
      krb5_context kcontext;
      krb5_keytab kt = NULL;
@@ -9,9 +9,9 @@
      krb5_keytab_entry entry;
      char* pname = NULL;
      
-@@ -81,13 +81,13 @@ char* server_principal_details(const cha
-         {
-             result = malloc(strlen(pname) + 1);
+@@ -98,13 +98,13 @@ char* server_principal_details(const cha
+                 goto end;
+             }
              strcpy(result, pname);
 -            krb5_free_unparsed_name(kcontext, pname);
 -            krb5_free_keytab_entry_contents(kcontext, &entry);
@@ -26,14 +26,15 @@
 +        krb5_kt_free_entry(kcontext, &entry);
      }
      
-     if (result == NULL)
-@@ -97,8 +97,7 @@ char* server_principal_details(const cha
+     if (result == NULL) {
+@@ -115,9 +115,7 @@ char* server_principal_details(const cha
      }
      
  end:
--    if (cursor)
+-    if (cursor) {
 -        krb5_kt_end_seq_get(kcontext, kt, &cursor);
+-    }
 +    krb5_kt_end_seq_get(kcontext, kt, &cursor);
-     if (kt)
+     if (kt) {
          krb5_kt_close(kcontext, kt);
-     krb5_free_context(kcontext);
+     }

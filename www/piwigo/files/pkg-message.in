@@ -8,7 +8,7 @@ and the content of the tools directory at
 
 If this is a new installation, don't forget to verify that your
 PHP configuration is OK and that you have an MySQL database.
-The local directory contains the empty structure 
+The local directory contains the empty structure
 used to store local configuration.
 
 If you are upgrading, alwyas read the documentation

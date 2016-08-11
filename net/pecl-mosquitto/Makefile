@@ -3,6 +3,7 @@
 
 PORTNAME=	mosquitto
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,9 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	mosquitto>=0:net/mosquitto
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

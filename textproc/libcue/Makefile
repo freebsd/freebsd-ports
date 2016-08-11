@@ -2,17 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libcue
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	2.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-MASTER_SITES=	SF
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	CUE Sheet Parser Library
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lipnitsk
+
 USE_LDCONFIG=	yes
-USES=		gettext libtool pathfix tar:bzip2
-INSTALL_TARGET=	install-strip
+USES=		bison cmake:outsource
 
 .include <bsd.port.mk>

@@ -26,6 +26,8 @@ RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 
 OPTIONS_DEFINE=	DOCS
 
+SUB_FILES=	pkg-message
+
 post-extract:
 # get this port working under FreeBSD non-i386
 	@${INSTALL} ${FILESDIR}/tryclock_gettime.c ${WRKSRC}
@@ -61,9 +63,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${STAGEDIR}/${ETCDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T} \
 		${STAGEDIR}/${RC_SCRIPT_STARTUP_DIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
-
-post-install:
-	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

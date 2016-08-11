@@ -1,6 +1,6 @@
 This module is a wrapper to the ssh executable that is available in
 your system's $PATH. Use this module to execute commands on the remote SSH
-server. It authenticates with the user and password you passed in the 
+server. It authenticates with the user and password you passed in the
 constructor's attributes user and password.
 
 WWW: http://search.cpan.org/dist/Net-SSH-Expect/

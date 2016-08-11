@@ -32,7 +32,7 @@ do-build:
 	${MAKE_CMD} -C ${WRKSRC} html
 
 do-install:
-	@ $(MKDIR) ${STAGEDIR}${PGDOCSDIR}
+	@ ${MKDIR} ${STAGEDIR}${PGDOCSDIR}
 	( cd ${WRKSRC}/doc/src/sgml/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PGDOCSDIR} )
 

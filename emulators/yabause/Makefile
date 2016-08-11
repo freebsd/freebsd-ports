@@ -12,7 +12,7 @@ COMMENT=	Sega Saturn system emulator
 LICENSE=	GPLv2+
 
 USES=		cmake dos2unix openal:soft pkgconfig
-DOS2UNIX_FILES=	src/qt/YabauseThread.cpp
+DOS2UNIX_FILES=	src/qt/YabauseThread.cpp src/core.h
 USE_XORG=	xmu xrandr
 USE_GL=		gl glu glut
 

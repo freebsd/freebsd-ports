@@ -9,15 +9,19 @@ MASTER_SITES=	SF
 MAINTAINER=	frank@fenor.de
 COMMENT=	UDP extension for TCL
 
-USES=		tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
-USE_LDCONFIG=	${PREFIX}/lib/udp${PORTVERSION}
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		tcl:tea
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	lib/udp${PORTVERSION}/libudp${PORTVERSION}.so \
-		lib/udp${PORTVERSION}/pkgIndex.tcl \
+TEST_TARGET=	test
+
+PLIST_FILES=	lib/${TCL_PKG}/lib${TCL_PKG}.so \
+		lib/${TCL_PKG}/pkgIndex.tcl \
 		%%PORTDOCS%%man/mann/udp.n.gz
 
 .include <bsd.port.mk>

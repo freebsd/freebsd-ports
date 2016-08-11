@@ -1,5 +1,5 @@
---- rexxcps.rexx	Fri Jun 25 05:14:43 1993
-+++ rexxcps.rexx.new	Fri Sep  7 15:10:03 2001
+--- rexxcps.rexx.orig	1993-06-25 12:14:43 UTC
++++ rexxcps.rexx
 @@ -1,4 +1,4 @@
 -/* ReXX */
 +/*usr/bin/true;exec rexx -x "$0" "$@";exit# ReXX */

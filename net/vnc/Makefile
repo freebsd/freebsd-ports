@@ -5,13 +5,16 @@ PORTNAME=	vnc
 PORTVERSION=	4.1.3
 PORTREVISION=	10
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://home.bluelife.at/ports/distfiles/${DIST_SUBDIR}/:vnc
+MASTER_SITES=	http://www.cschubert.com/distfiles/xc/ \
+		http://people.freebsd.org/~cy/distfiles/xc/
 DISTNAME=	vnc-4_1_3-unixsrc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	xc
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
+DEPRECATED=	Distfiles no longer available.
+EXPIRATION_DATE=	2016-09-01
 
 RUN_DEPENDS=	xorg-fonts>=7.2:x11-fonts/xorg-fonts \
 		showrgb:x11/rgb \
@@ -25,7 +28,7 @@ USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist
-CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]*
+CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]* tigervnc-*
 
 OPTIONS_DEFINE=	SERVER
 OPTIONS_DEFAULT=	SERVER
@@ -42,13 +45,12 @@ BROKEN=		Does not compile on arm
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
-MASTER_SITES+=	XORG/4.3.0/:x
-DISTFILES+=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x
+DISTFILES+=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
 .if ${OSVERSION} > 1000054
-USE_GCC=	yes
+USE_GCC=	4.6
 MAKE_ENV=	IMAKECPP="${CPP}"
 MAKE_ARGS=	AR='ar rc'
 .endif

@@ -1,0 +1,33 @@
+diff --git libpkg/pkg_add.c libpkg/pkg_add.c
+index 87fb248..778336c 100644
+--- libpkg/pkg_add.c
++++ libpkg/pkg_add.c
+@@ -859,14 +859,20 @@ pkg_add_cleanup_old(struct pkgdb *db, struct pkg *old, struct pkg *new, int flag
+ 	 * Execute pre deinstall scripts
+ 	 */
+ 	if ((flags & PKG_ADD_NOSCRIPT) == 0) {
+-		if ((flags & PKG_ADD_USE_UPGRADE_SCRIPTS) == PKG_ADD_USE_UPGRADE_SCRIPTS)
+-			ret = pkg_script_run(old, PKG_SCRIPT_PRE_UPGRADE);
+-		else
+-			ret = pkg_script_run(old, PKG_SCRIPT_PRE_DEINSTALL);
+-		if (ret != EPKG_OK && pkg_object_bool(pkg_config_get("DEVELOPER_MODE")))
+-			return (ret);
+-		else
+-			ret = EPKG_OK;
++		bool buggydeinstall = false;
++		if (strcmp(old->name, "javavmwrapper") == 0 &&
++		    strcmp(old->version, "2.5") == 0)
++			buggydeinstall = true;
++		if (!buggydeinstall) {
++			if ((flags & PKG_ADD_USE_UPGRADE_SCRIPTS) == PKG_ADD_USE_UPGRADE_SCRIPTS)
++				ret = pkg_script_run(old, PKG_SCRIPT_PRE_UPGRADE);
++			else
++				ret = pkg_script_run(old, PKG_SCRIPT_PRE_DEINSTALL);
++			if (ret != EPKG_OK && pkg_object_bool(pkg_config_get("DEVELOPER_MODE")))
++				return (ret);
++			else
++				ret = EPKG_OK;
++		}
+ 	}
+ 
+ 	/* Now remove files that no longer exist in the new package */

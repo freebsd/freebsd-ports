@@ -11,5 +11,5 @@ $db_database  = 'DATABASE';
 
 Now check in your browser: http://your-server/surrealtodo/.
 
-SurrealToDo is now successfully installed. 
+SurrealToDo is now successfully installed.
 

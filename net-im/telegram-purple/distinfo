@@ -1,2 +1,7 @@
-SHA256 (telegram-purple-05222015.tar.xz) = 8d3fa2d52e8ad10e7a2bf78d2241e8205fa3771e78d9e069b658d7fd96ac96a9
-SIZE (telegram-purple-05222015.tar.xz) = 293400
+TIMESTAMP = 1470894472
+SHA256 (majn-telegram-purple-v1.3.0_GH0.tar.gz) = 27ec26a0b1d387860a385ad35fe9fb059d6c3ec10ff6c1c018127471d97419e5
+SIZE (majn-telegram-purple-v1.3.0_GH0.tar.gz) = 190298
+SHA256 (majn-tgl-624cf5a_GH0.tar.gz) = 4b15fb4140d3c4b0c2caf954636b0579e1ddde4dfe84705688f9aae996feb149
+SIZE (majn-tgl-624cf5a_GH0.tar.gz) = 242452
+SHA256 (vysheng-tl-parser-36bf190_GH0.tar.gz) = 9c4222cfc39f1f58061678c2a22dac5d2391e2594d4ec00e5ab9a7c12e606789
+SIZE (vysheng-tl-parser-36bf190_GH0.tar.gz) = 66898

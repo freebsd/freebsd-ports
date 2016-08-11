@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.portlet.collection
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>=0:www/py-plone.memoize \
 		${PYTHON_PKGNAMEPREFIX}plone.app.form>=0:www/py-plone.app.form
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

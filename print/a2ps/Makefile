@@ -36,7 +36,6 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:print/papersize-default-a4
 .endif
 
 OPTIONS_DEFINE=NLS I18N EMACS
-OPTIONS_DEFAULT=NLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 EMACS_DESC=Enable Emacs support

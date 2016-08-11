@@ -2,6 +2,7 @@
 
 PORTNAME=	rtorrent
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://rtorrent.net/downloads/
 
@@ -34,7 +35,7 @@ SUB_FILES=	pkg-message
 IPV6_CONFIGURE_ENABLE=	ipv6
 XMLRPC_CONFIGURE_OFF=	--with-xmlrpc-c=no
 XMLRPC_CONFIGURE_ON=	--with-xmlrpc-c
-XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c-devel
+XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 
 .include <bsd.port.options.mk>
 

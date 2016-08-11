@@ -1,7 +1,7 @@
 HostDB is a system for generating internal DNS zones, external DNS zones,
 and DHCP configuration data from the same hostlist.txt file.
 Keep your configurations consistent by generating them all from the same
-source. 
+source.
 
 A system for generating internal DNS zones, external DNS zones, and
 DHCP configuration data from the same simple repository.

@@ -1,6 +1,6 @@
---- par2fileformat.h.orig	2011-06-23 08:31:37.639455018 +0200
-+++ par2fileformat.h	2011-06-23 08:38:29.287362503 +0200
-@@ -84,7 +84,7 @@
+--- par2fileformat.h.orig	2003-08-01 23:43:40 UTC
++++ par2fileformat.h
+@@ -84,7 +84,7 @@ struct FILEVERIFICATIONPACKET
    PACKET_HEADER         header;
    // Body
    MD5Hash               fileid;     // MD5hash of file_hash_16k, file_length, file_name

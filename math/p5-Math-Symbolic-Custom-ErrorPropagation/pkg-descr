@@ -1,5 +1,5 @@
-This module extends the functionality of Math::Symbolic by offering 
-facilities to calculate the propagated variance of a function of variables 
+This module extends the functionality of Math::Symbolic by offering
+facilities to calculate the propagated variance of a function of variables
 with variances themselves.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-ErrorPropagation/

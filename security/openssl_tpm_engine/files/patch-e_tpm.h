@@ -1,8 +1,8 @@
 http://sourceforge.net/mailarchive/message.php?msg_name=4C0E2D48.20803%40sirrix.com
 
---- e_tpm.h.orig	2006-08-04 04:22:05.000000000 +0900
-+++ e_tpm.h	2010-10-31 23:46:45.913856850 +0900
-@@ -74,6 +74,8 @@
+--- e_tpm.h.orig	2012-09-12 15:32:53 UTC
++++ e_tpm.h
+@@ -66,6 +66,8 @@ void ERR_TSS_error(int function, int rea
  #define TPM_F_TPM_FILL_RSA_OBJECT		116
  #define TPM_F_TPM_ENGINE_GET_AUTH		117
  #define TPM_F_TPM_CREATE_SRK_POLICY		118
@@ -11,7 +11,7 @@ http://sourceforge.net/mailarchive/message.php?msg_name=4C0E2D48.20803%40sirrix.
  
  /* Reason codes. */
  #define TPM_R_ALREADY_LOADED			100
-@@ -104,6 +106,7 @@
+@@ -96,6 +98,7 @@ void ERR_TSS_error(int function, int rea
  #define TPM_R_ID_INVALID			125
  #define TPM_R_UI_METHOD_FAILED			126
  #define TPM_R_UNKNOWN_SECRET_MODE		127
@@ -19,7 +19,7 @@ http://sourceforge.net/mailarchive/message.php?msg_name=4C0E2D48.20803%40sirrix.
  
  /* structure pointed to by the RSA object's app_data pointer */
  struct rsa_app_data
-@@ -115,6 +118,25 @@
+@@ -107,6 +110,25 @@ struct rsa_app_data
  	UINT32 sigScheme;
  };
  

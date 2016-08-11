@@ -1,4 +1,4 @@
 A Sphinx extension to literally insert the output of arbitrary commands into
 documents, helping you to keep your command examples up to date.
 
-WWW: http://sphinxcontrib-programoutput.readthedocs.org/
+WWW: http://pythonhosted.org/sphinxcontrib-programoutput/

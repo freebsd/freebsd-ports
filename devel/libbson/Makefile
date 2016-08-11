@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbson
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com

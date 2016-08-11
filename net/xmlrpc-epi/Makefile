@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake iconv libtool tar:bzip2
+USES=		gmake iconv libtool localbase tar:bzip2
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LDFLAGS+=	${ICONV_LIB}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
 INSTALL_TARGET=	install-strip
@@ -28,15 +27,15 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean \
 		TestInt TestString TestDouble TestBase64 TestDateTime
 
-CONFLICTS=	xmlrpc-c-0.* xmlrpc-c-devel-[0-9]*
+CONFLICTS=	xmlrpc-c-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-regression-test:
+do-test:
 .for tm in ${METHODS}
 	cd ${WRKSRC}/sample && ./sample -method method_${tm}
 .endfor

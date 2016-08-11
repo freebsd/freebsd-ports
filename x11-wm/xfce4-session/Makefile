@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -39,5 +39,9 @@ NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
 
 PLIST_SUB=	VERSION="4.6"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/scripts/xflock4
 
 .include <bsd.port.mk>

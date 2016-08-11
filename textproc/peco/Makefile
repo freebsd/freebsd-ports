@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:devel/go
 		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:devel/go-termbox \
 		${LOCALBASE}/${GO_LIBDIR}/github.com/google/btree.a:devel/go-btree
 
+USES=		go
 USE_GITHUB=	yes
 
 WRKSRC_SUBDIR=	cmd/peco
@@ -26,6 +27,4 @@ post-extract:
 	@${MKDIR} ${GO_WRKSRC:H:H:H}
 	@${LN} -sf ${WRKSRC:H:H} ${GO_WRKSRC:H:H}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

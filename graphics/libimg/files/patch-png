@@ -18,22 +18,3 @@
 -    }
      return TCL_OK;
  }
-@@ -465,7 +463,7 @@
-     }
- 
--    if (png_get_sRGB && png_get_sRGB(png_ptr, info_ptr, &intent)) {
-+    if (png_get_sRGB(png_ptr, info_ptr, &intent)) {
-         png_set_sRGB(png_ptr, info_ptr, intent);
--    } else if (png_get_gAMA) {
-+    } else {
-         double gamma;
-         if (!png_get_gAMA(png_ptr, info_ptr, &gamma)) {
-@@ -659,7 +657,5 @@
-             PNG_FILTER_TYPE_BASE);
- 
--    if (png_set_gAMA) {
--        png_set_gAMA(png_ptr, info_ptr, 1.0);
--    }
-+    png_set_gAMA(png_ptr, info_ptr, 1.0);
- 
-     if (tagcount > 0) {

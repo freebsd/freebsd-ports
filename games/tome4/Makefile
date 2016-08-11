@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	games
 MASTER_SITES=	http://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
@@ -17,7 +17,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	premake4:devel/premake4
-LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libpng16.so:graphics/png
 
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;RolePlaying;" ""

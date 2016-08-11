@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
-OPTIONS_DEFINE=	DOCS
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		iconv motif
 MAKE_JOBS_UNSAFE=	yes
@@ -50,6 +50,8 @@ MAN_FILES=	Psequin.1 asn2ff.1 asn2idx.1 asn2xml.1 asndhuff.1 \
 
 MAN_LINKS=	bl2seq blastall blastcl3 blastpgp impala megablast \
 		seedtop rpsblast
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -94,6 +96,8 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/data && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${TAR} --exclude man -cf - .) | \
 		(cd ${STAGEDIR}${DOCSDIR} && ${TAR} --unlink -xf -)

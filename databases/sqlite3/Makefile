@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.11.1
+PORTVERSION=	3.13.0
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -25,7 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
 		EXTENSION ARMOR STMT DBSTAT FTS5 JSON1 RBU \
-		LIKENOTBLOB STSHELL FTS3_TOKEN
+		LIKENOTBLOB STSHELL FTS3_TOKEN SESSION
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
 OPTIONS_GROUP=	UNICODE RTREEG RL
@@ -41,6 +42,9 @@ SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 STSHELL_DESC=		Statically link libsqlite3 into shell
+
+# https://www.sqlite.org/sessionintro.html
+SESSION_DESC=		Enable the Session Extension
 
 # https://sqlite.org/compile.html#like_doesnt_match_blobs
 LIKENOTBLOB_DESC=	LIKE does not match blobs
@@ -106,9 +110,11 @@ READLINEP_PREVENTS=	READLINES EDITLINE
 EDITLINE_PREVENTS=	READLINES READLINEP
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
-			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL READLINES
+			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL READLINES \
+			FTS3_TOKEN
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
+# FTS3_TOKEN used by audio/clementine-player
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.so lib/libsqlite3.so.0 \
@@ -178,6 +184,8 @@ RBU_CPPFLAGS=	-DSQLITE_ENABLE_RBU=1
 LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
 
 STSHELL_CONFIGURE_ENABLE=	static-shell
+
+SESSION_CONFIGURE_ENABLE=	session
 
 .include <bsd.port.options.mk>
 

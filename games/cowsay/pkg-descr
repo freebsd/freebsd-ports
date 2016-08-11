@@ -2,4 +2,4 @@ cowsay is a configurable talking ASCII cow (and other characters),
 written in Perl.  It operates much as the figlet program does, and
 is written in the same spirit of silliness.
 
-WWW: http://www.nog.net/~tony/warez/cowsay.shtml
+WWW: https://github.com/tnalpgge/rank-amateur-cowsay

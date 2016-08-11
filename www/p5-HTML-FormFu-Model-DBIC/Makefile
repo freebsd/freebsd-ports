@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormFu-Model-DBIC
-PORTVERSION=	2.00
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,5 +25,6 @@ TEST_DEPENDS=	p5-DateTime-Format-SQLite>=0:devel/p5-DateTime-Format-SQLite \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

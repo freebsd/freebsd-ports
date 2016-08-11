@@ -1,8 +1,8 @@
 
 ********************************************************************************
 
-Some additional themes (config files) you may find in the 
-%%DATADIR%%/themes directory. 
+Some additional themes (config files) you may find in the
+%%DATADIR%%/themes directory.
 Just copy any of them instead of your ~./ipager/ipager.conf config
 file or you can define other config file via '-c'" command line option.
 

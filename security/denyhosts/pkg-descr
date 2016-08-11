@@ -1,8 +1,8 @@
-DenyHosts is a script intended to be run by *ix system administrators to 
+DenyHosts is a script intended to be run by *ix system administrators to
 help thwart ssh server attacks.
 
-If you've ever looked at your ssh log (/var/log/auth.log ) you may be alarmed 
-to see how many hackers attempted to gain access to your server. 
+If you've ever looked at your ssh log (/var/log/auth.log ) you may be alarmed
+to see how many hackers attempted to gain access to your server.
 Denyhosts helps you:
 - Parses /var/log/auth.log to find all login attempts
 - Can be run from the command line, cron or as a daemon (new in 0.9)
@@ -11,9 +11,9 @@ Denyhosts helps you:
 - Keeps track of each non-existent user (eg. sdada) when a login attempt failed.
 - Keeps track of each existing user (eg. root) when a login attempt failed.
 - Keeps track of each offending host (hosts can be purged )
-- Keeps track of suspicious logins 
+- Keeps track of suspicious logins
 - Keeps track of the file offset, so that you can reparse the same file
-- When the log file is rotated, the script will detect it 
+- When the log file is rotated, the script will detect it
 - Appends /etc/hosts.allow
 - Optionally sends an email of newly banned hosts and suspicious logins.
 - Resolves IP addresses to hostnames, if you want

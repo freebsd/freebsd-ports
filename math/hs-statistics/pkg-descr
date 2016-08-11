@@ -13,7 +13,7 @@ The library's facilities can be divided into four broad categories:
   estimation, histograms, bootstrap methods, significance testing, and
   autocorrelation analysis.
 
-* Random variate generation under several different distributions. 
+* Random variate generation under several different distributions.
 
 * Common statistical tests for significant differences between samples.
 

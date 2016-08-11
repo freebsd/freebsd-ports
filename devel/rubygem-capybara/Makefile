@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capybara
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

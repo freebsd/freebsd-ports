@@ -1,5 +1,5 @@
 Checkpassword provides a simple, uniform password-checking interface
 to all root applications. It is suitable for use by applications such as
-login, ftpd, and pop3d. 
+login, ftpd, and pop3d.
 
 WWW: http://cr.yp.to/checkpwd.html

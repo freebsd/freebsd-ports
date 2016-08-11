@@ -5,7 +5,7 @@ PORTVERSION=	3.8.0
 CATEGORIES=	math
 MASTER_SITES=	https://forge.imag.fr/frs/download.php/592/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for computer algebra
 
 LICENSE=	CeCILL-Bv1-en.txt

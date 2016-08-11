@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	2.7.1
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://ports.toco-domains.de/
+MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=v${PORTVERSION}&dummy=/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	GitLab Shell handles git commands for GitLab
 
 BUILD_DEPENDS=	gem:devel/ruby-gems
@@ -17,6 +17,9 @@ GROUPS=		git
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+post-extract:
+	@${MV} ${WRKDIR}/${DISTNAME}-* ${WRKDIR}/${DISTNAME}
 
 post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample

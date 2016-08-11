@@ -16,8 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:graphics/graphviz
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/dot2ruby bin/gem2gv bin/git2gv bin/ruby2gv bin/xml2gv
 

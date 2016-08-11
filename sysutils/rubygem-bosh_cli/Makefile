@@ -2,7 +2,7 @@
 
 PORTNAME=	bosh_cli
 PORTVERSION=	1.3215.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -29,8 +29,7 @@ RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:devel/rubygem-blobstore_cl
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/bosh
 

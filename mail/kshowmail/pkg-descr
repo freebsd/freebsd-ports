@@ -1,12 +1,12 @@
-KShowmail is a POP3 mail checker for KDE. 
+KShowmail is a POP3 mail checker for KDE.
 
-Main features: 
+Main features:
    o load mail headers from pop3 servers
    o display relevant header fields in a list view
    o display headers of selected mails
    o display complete mails
    o delete selected mails on servers
-   o launch external programs like fetchmail or sendmail 
+   o launch external programs like fetchmail or sendmail
      via configurable menu entries
    o support multiple accounts
    o sound support

@@ -12,6 +12,8 @@ COMMENT=	Library containing common/shared code regarding network interface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libosmoabis.so:devel/libosmo-abis
 

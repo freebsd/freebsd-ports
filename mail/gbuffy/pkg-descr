@@ -7,7 +7,7 @@ header for messages which have them. Pressing the middle mouse button
 on a mailbox will launch the configured command, generally a command
 to read the mailbox with your favorite mailreader. Pressing the right
 mouse button will bring up the configure menu.
-   
+
 GBuffy is currently capable of watching MBOX, MMDF, Maildir and MH
 Folders.  This version also supports IMAP4rev1 and NNTP with XOVER.
 Support for an external program for notification is planned.

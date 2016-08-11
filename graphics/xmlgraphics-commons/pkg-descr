@@ -2,6 +2,6 @@ Apache XML Graphics Commons is a library that consists of several reusable
 components used by Apache Batik and Apache FOP. Many of these components can
 easily be used separately outside the domains of SVG and XSL-FO. You will
 find components such as a PDF library, an RTF library, Graphics2D
-implementations that let you generate PDF & PostScript files, and much more. 
+implementations that let you generate PDF & PostScript files, and much more.
 
 WWW: http://xmlgraphics.apache.org/commons/

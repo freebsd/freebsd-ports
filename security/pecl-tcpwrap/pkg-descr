@@ -1,4 +1,4 @@
-This tcpwrap extension for PHP handles /etc/hosts.allow 
+This tcpwrap extension for PHP handles /etc/hosts.allow
 and /etc/hosts.deny files.
 
 WWW: http://pecl.php.net/package/tcpwrap/

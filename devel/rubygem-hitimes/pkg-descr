@@ -1,5 +1,5 @@
 Hitimes is a fast, high resolution timer library for recording
 performance metrics. It uses the appropriate low method calls for
-each system to get the highest granularity time increments possible. 
+each system to get the highest granularity time increments possible.
 
 WWW: https://github.com/copiousfreetime/hitimes

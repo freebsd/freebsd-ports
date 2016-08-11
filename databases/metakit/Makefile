@@ -3,7 +3,7 @@
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 
@@ -33,7 +33,7 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USES+=		tcl:84
+USES+=		tcl:85
 CATEGORIES+=	tcl
 CONFIGURE_ARGS+=--with-tcl=${TCL_INCLUDEDIR}
 CONFIGURE_ENV+=	TCL_LIBDIR=${TCL_LIBDIR}

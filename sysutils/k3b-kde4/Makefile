@@ -19,7 +19,7 @@ BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
 USES=		cmake gettext pkgconfig shared-mime-info tar:xz
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
-USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb
+USE_KDE4=	automoc4 kdelibs libkcddb
 USE_QT4=	gui phonon qt3support webkit \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes

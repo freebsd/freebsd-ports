@@ -1,0 +1,12 @@
+bin/mhwaveedit
+man/man1/mhwaveedit.1.gz
+share/applications/mhwaveedit.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/it/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/mhwaveedit.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo
+share/pixmaps/mhwaveedit.xpm

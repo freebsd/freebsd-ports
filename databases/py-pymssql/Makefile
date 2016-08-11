@@ -19,8 +19,11 @@ LIB_DEPENDS=	libsybdb.so:databases/freetds
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+post-extract:
+	@${RM} -f ${WRKSRC}/_mssql.c
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mssql.so \
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mssql.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pymssql.so
 
 .include <bsd.port.mk>

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -20,20 +20,22 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
+
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	openinfosecfoundation
 
 INSTALL_TARGET=		install-strip
+TEST_TARGET=		check
+
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE SC TESTS
 OPTIONS_DEFAULT=	HTP_PORT IPFW JSON NETMAP PRELUDE
+OPTIONS_SUB=		yes
 
 OPTIONS_RADIO=		SCRIPTS
 OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
-
-OPTIONS_SUB=		yes
 
 SCRIPTS_DESC=		Scripting
 
@@ -53,6 +55,7 @@ TESTS_DESC=		Unit tests in suricata binary
 GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=		--enable-geoip
 
+HTP_PORT_BUILD_DEPENDS=		libhtp>=0.5.20:devel/libhtp
 HTP_PORT_LIB_DEPENDS=		libhtp.so:devel/libhtp
 HTP_PORT_CONFIGURE_ON=		--enable-non-bundled-htp
 HTP_PORT_CONFIGURE_OFF=		--enable-bundled-htp
@@ -82,7 +85,7 @@ NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
 
 NETMAP_CONFIGURE_ENABLE=	netmap
 
-PORTS_PCAP_LIB_DEPENDS=		libpcap.so:net/libpcap
+PORTS_PCAP_LIB_DEPENDS=		libpcap.so.1:net/libpcap
 PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 				--with-libpcap-libraries=${LOCALBASE}/lib
 PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
@@ -143,7 +146,5 @@ post-install:
 	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 .endif
-
-TEST_TARGET=	check
 
 .include <bsd.port.post.mk>

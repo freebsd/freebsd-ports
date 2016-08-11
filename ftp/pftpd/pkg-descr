@@ -1,5 +1,5 @@
 Pftpd is an implementation of an anonymous FTP daemon written from scratch.
 It uses multithreading (where available) in order to be lightweight, but
-still have high performance. 
+still have high performance.
 
 WWW: http://www.lysator.liu.se/~pen/pftpd/

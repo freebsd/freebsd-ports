@@ -14,7 +14,7 @@ COMMENT=	Ruby bindings for Qt
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
 		libqscintilla2.so:devel/qscintilla2
 
-USE_KDE4=	kdeprefix smokeqt
+USE_KDE4=	smokeqt
 USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes

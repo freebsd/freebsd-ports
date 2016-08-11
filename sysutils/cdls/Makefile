@@ -1,13 +1,12 @@
-# Created by: Hans de Hartog <hans@dehartog.nl>
+# Created by: Hans de Hartog
 # $FreeBSD$
 
 PORTNAME=	cdls
 PORTVERSION=	4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://zml12.dyndns.org/ \
-		ftp://vps337.directvps.nl/
+MASTER_SITES=	ftp://freebsd4ever.xs4all.nl/ ftp://vps337.directvps.nl/
 
-MAINTAINER=	hans@dehartog.nl
+MAINTAINER=	hansdehartog@xs4all.nl
 COMMENT=	Curses based file manager for system managers
 
 PLIST_FILES=	bin/cdls

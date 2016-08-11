@@ -48,7 +48,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 \
 		${STAGEDIR}${MAN5PREFIX}/man/man5
 
-post-install:
+post-install-DOCS-on:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCLIST}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

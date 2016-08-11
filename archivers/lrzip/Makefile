@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lrzip
-PORTVERSION=	0.621
+PORTVERSION=	0.630
 CATEGORIES=	archivers
 MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 		http://files.gslin.org/Software/

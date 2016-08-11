@@ -9,7 +9,7 @@ If this is your first install:
  2- Add an alias for Serendipity directory in httpd.conf
     or you can create a symlink to Serendipity directory
     in your web root directory.
- 3- Point your browser to your webserver and follow the 
+ 3- Point your browser to your webserver and follow the
     installation wizard
 
 If you are upgrading an existing installation:

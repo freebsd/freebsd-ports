@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	2.1.3
-DISTVERSIONSUFFIX=	-5519
+PORTVERSION=	2.1.6
+DISTVERSIONSUFFIX=	-5826
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/ LOCAL/mat/yadifa
 

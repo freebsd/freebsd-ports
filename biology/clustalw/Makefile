@@ -13,8 +13,6 @@ COMMENT=	Multiple alignment program for DNA or proteins
 
 RESTRICTED=	No commercial use.
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/clustalw bin/clustalw2

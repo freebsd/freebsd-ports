@@ -1,5 +1,5 @@
---- src/glyph.h.orig	Sat Nov 30 02:01:40 2002
-+++ src/glyph.h	Sat Nov 30 02:06:16 2002
+--- src/glyph.h.orig	2000-06-27 07:19:31 UTC
++++ src/glyph.h
 @@ -20,7 +20,7 @@
  #define __GFE_GLYPH_H__
  

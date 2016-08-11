@@ -3,8 +3,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	g
-PORTREVISION=	11
+DISTVERSIONSUFFIX=	h
+PORTREVISION=	14
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -178,8 +178,8 @@ EXTRACONFIGURE+=	no-ec_nistp_64_gcc_128
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# this ports conflicts with your base system"
-	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_PORT"
-	@${ECHO_CMD} "# and use WITH_OPENSSL_BASE=yes instead."
+	@${ECHO_CMD} "# you have to uninstall your ssl port"
+	@${ECHO_CMD} "# please use DEFAULT_VERSIONS+= ssl=base instead."
 	@${ECHO_CMD} "#"
 	@${FALSE}
 
@@ -216,7 +216,7 @@ do-configure:
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
-		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=${OPENSSL_SHLIBVER} |' \
 		${WRKSRC}/Makefile
 
 post-install:

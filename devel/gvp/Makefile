@@ -3,6 +3,7 @@
 
 PORTNAME=	gvp
 PORTVERSION=	0.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com
@@ -11,8 +12,8 @@ COMMENT=	Go Versioning Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		go:${PORTSDIR}/lang/go
+RUN_DEPENDS=	bash:shells/bash \
+		go:lang/go
 
 USES=		shebangfix
 
@@ -20,7 +21,6 @@ SHEBANG_FILES=	bin/gvp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pote
-GH_TAGNAME=	8bcab74
 
 NO_BUILD=	yes
 

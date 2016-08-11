@@ -3,7 +3,7 @@
 
 PORTNAME=	memoize
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,9 +14,7 @@ COMMENT=	PHP extension which transparently caches PHP functions
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 CONFIGURE_ARGS=	--enable-memoize
 IGNORE_WITH_PHP=	70
 
@@ -27,7 +25,7 @@ MEMCACHED_DESC=	Enable memcached storage module
 MEMORY_DESC=	Enable the memoize memory storage module
 
 APC_CONFIGURE_ON=	--enable-memoize-apc
-APC_USE=		PHP=apc
+APC_USE=		PHP=apc:build
 MEMCACHED_CONFIGURE_ON=	--with-memoize-memcached
 MEMCACHED_BUILD_DEPENDS=libmemcached>=0:databases/libmemcached
 MEMCACHED_RUN_DEPENDS=	libmemcached>=0:databases/libmemcached

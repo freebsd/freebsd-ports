@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mime
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,6 +11,6 @@ COMMENT=	Map Filenames to MIME Types
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

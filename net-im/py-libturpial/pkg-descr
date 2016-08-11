@@ -1,4 +1,4 @@
-libturpial is a library that handles multiple microblogging protocols 
+libturpial is a library that handles multiple microblogging protocols
 (Identi.ca, Twitter). It implements a lot of features and aims to support
 all the features for each protocol.
 

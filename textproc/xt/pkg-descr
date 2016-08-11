@@ -1,5 +1,0 @@
-XT is an implementation in Java of XSL Transformations.
-
-This requires SAX such as XP or XML4J (ports/textproc/xml4j).
-
-WWW: http://www.jclark.com/xml/xt.html

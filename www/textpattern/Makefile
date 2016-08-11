@@ -9,6 +9,8 @@ MASTER_SITES=	http://textpattern.com/file_download/56/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -1,7 +1,0 @@
-The uclmmbase library (originally named libcommon, and renamed here
-to avoid confusion) is used by the IP multicast tools developed by
-University College, London.  It contains IP multicast management,
-real-time transport protocol, and cryptographic routines, as well as
-some convenience functions and header files.
-
-WWW: http://www-mice.cs.ucl.ac.uk/multimedia/software/common/

@@ -37,7 +37,7 @@ RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE4=	kactivities kdelibs kdeprefix libkdcraw \
+USE_KDE4=	kactivities kdelibs libkdcraw \
 		okular pimlibs attica automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui opengl phonon \
 		qtestlib_build script sql svg webkit xml \

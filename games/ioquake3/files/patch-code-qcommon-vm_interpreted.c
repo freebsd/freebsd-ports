@@ -1,6 +1,6 @@
---- code/qcommon/vm_interpreted.c	2009/11/01 19:58:07	1717
-+++ code/qcommon/vm_interpreted.c	2010/01/16 10:55:51	1772
-@@ -516,18 +516,20 @@
+--- code/qcommon/vm_interpreted.c.orig	2008-08-23 22:45:30 UTC
++++ code/qcommon/vm_interpreted.c
+@@ -526,18 +526,20 @@ nextInstruction2:
  
  //VM_LogSyscalls( (int *)&image[ programStack + 4 ] );
  				{

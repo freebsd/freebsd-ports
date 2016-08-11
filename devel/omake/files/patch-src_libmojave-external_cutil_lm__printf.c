@@ -2,7 +2,7 @@ $NetBSD: patch-al,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_printf.c.orig	2009-02-06 16:41:21.000000000 +0000
+--- src/libmojave-external/cutil/lm_printf.c.orig	2009-02-06 16:41:21 UTC
 +++ src/libmojave-external/cutil/lm_printf.c
 @@ -61,12 +61,12 @@ value ml_print_char(value v_fmt, value v
      char c = (char) Int_val(v_char);

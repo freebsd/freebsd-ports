@@ -2,6 +2,7 @@ bin/bcftools
 bin/samtools_misc/color-chrs.pl
 bin/samtools_misc/plot-vcfstats
 bin/samtools_misc/vcfutils.pl
+libexec/bcftools/GTisec.so
 libexec/bcftools/color-chrs.so
 libexec/bcftools/counts.so
 libexec/bcftools/dosage.so

@@ -1,5 +1,5 @@
---- cmp3volume.c.orig	Sun Jul  1 13:38:08 2001
-+++ cmp3volume.c	Sat Mar 20 00:23:51 2004
+--- cmp3volume.c.orig	2001-07-01 04:38:08 UTC
++++ cmp3volume.c
 @@ -3,11 +3,7 @@
  */    
  

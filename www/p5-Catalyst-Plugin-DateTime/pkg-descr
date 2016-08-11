@@ -1,4 +1,4 @@
-This module makes DateTime easily accesible within a Catalyst application 
+This module makes DateTime easily accesible within a Catalyst application
 via the Catalyst::Plugin interface.
 
 WWW: http://search.cpan.org/dist/Catalyst-Plugin-DateTime/

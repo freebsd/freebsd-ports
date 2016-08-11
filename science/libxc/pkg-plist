@@ -2,6 +2,7 @@ bin/xc-info
 include/libxc_funcs_m.mod
 include/xc.h
 include/xc_config.h
+include/xc_f03_lib_m.mod
 include/xc_f90_lib_m.mod
 include/xc_f90_types_m.mod
 include/xc_funcs.h
@@ -9,6 +10,14 @@ include/xc_unconfig.h
 include/xc_version.h
 lib/libxc.a
 lib/libxc.so
-lib/libxc.so.1
-lib/libxc.so.1.1.2
+lib/libxc.so.4
+lib/libxc.so.4.0.0
+lib/libxcf03.a
+lib/libxcf03.so
+lib/libxcf03.so.4
+lib/libxcf03.so.4.0.0
+lib/libxcf90.a
+lib/libxcf90.so
+lib/libxcf90.so.4
+lib/libxcf90.so.4.0.0
 libdata/pkgconfig/libxc.pc

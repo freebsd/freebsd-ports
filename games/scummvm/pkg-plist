@@ -9,7 +9,9 @@ share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/scalable/apps/scummvm.svg
 share/pixmaps/scummvm.xpm
+%%DATADIR%%/access.dat
 %%DATADIR%%/drascula.dat
 %%DATADIR%%/hugo.dat
 %%DATADIR%%/kyra.dat

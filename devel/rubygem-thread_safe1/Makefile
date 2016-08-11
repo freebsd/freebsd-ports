@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-atomic>=0:devel/rubygem-atomic
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=	limit:^0\.1
 

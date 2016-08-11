@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	1.1
+PORTVERSION=	2.0.3
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libasound.so:audio/alsa-lib
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	okamstudio
+GH_ACCOUNT=	godotengine
 
 USES=		scons pkgconfig compiler
 USE_XORG=	x11 xcursor xinerama
@@ -23,9 +23,10 @@ USE_GL=		glu
 USE_OPENSSL=	yes
 
 MAKE_ARGS+=	platform=x11
+CXXFLAGS+=	-DRTAUDIO_ENABLED
 
 OPTIONS_DEFINE=	EXAMPLES TOOLS
-OPTIONS_DEFAULT=	EXAMPLES TOOLS
+OPTIONS_DEFAULT=	TOOLS
 OPTIONS_SUB=	yes
 
 TOOLS_DESC=	Include development tools (IDE)

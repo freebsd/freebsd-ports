@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-logify>=0.1:sysutils/rubygem-logify
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

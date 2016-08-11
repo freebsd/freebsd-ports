@@ -1,9 +1,9 @@
-This is the Distributed Checksum Clearinghouse (DCC) package, including 
-the command line (e.g. procmail) interface, dccproc; the SpamAssassin 
-and Postfix interface, dccifd; the Sendmail milter interface, dccm; 
+This is the Distributed Checksum Clearinghouse (DCC) package, including
+the command line (e.g. procmail) interface, dccproc; the SpamAssassin
+and Postfix interface, dccifd; the Sendmail milter interface, dccm;
 the DCC server, dccd; and the DCC greylisting server, dccd-grey.
 
-Also included are utilities such as cdcc and all of the manual pages 
+Also included are utilities such as cdcc and all of the manual pages
 and documentation.
 
 WWW: http://www.rhyolite.com/dcc/

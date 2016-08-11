@@ -1,19 +1,19 @@
 -------------------------------------------------------------------------------
 IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
 
-Please remember to reinstall this port after kernel source update.  Using AoE 
-devices on boot is a little tricky because the network must be up before the 
-system can access an AoE device. The current rc boot method for automounting 
-filesystems will not work with AoE devices; vinum and mount -a are both run 
+Please remember to reinstall this port after kernel source update.  Using AoE
+devices on boot is a little tricky because the network must be up before the
+system can access an AoE device. The current rc boot method for automounting
+filesystems will not work with AoE devices; vinum and mount -a are both run
 before bringing up the network.
 
-In order to use AoE devices on boot a few rc.conf variables have been defined 
-that permit the boot script (/etc/rc.d/aoe) to initialize systems using AoE 
+In order to use AoE devices on boot a few rc.conf variables have been defined
+that permit the boot script (/etc/rc.d/aoe) to initialize systems using AoE
 devices after the network is up. They are as follows:
 
-   aoe_enable    Set to "Yes" to enable the aoe startup script. 
+   aoe_enable    Set to "Yes" to enable the aoe startup script.
    aoe_iflist    A space separated string of interfaces valid for AoE.
-   aoe_wc        Set to "1" to enable write cache on AoE device. 
+   aoe_wc        Set to "1" to enable write cache on AoE device.
    aoe_mounts    A space seperated string of AoE device nodes to be mounted.
                  (An entry for each needs to be in /etc/fstab as well with the
                   "noauto" option.)
@@ -31,8 +31,8 @@ and the following added to /etc/fstab:
   /dev/aoed0s1a           /mnt/a          ufs     rw,noauto       0       0
   /dev/aoed1s1a           /mnt/b          ufs     rw,noauto       0       0
 
-will automatically start the AoE driver and mount the /mnt/a and /mnt/b 
-"blades".  See aoe(4) and http://www.coraid.com/support/freebsd/usingaoe.html 
+will automatically start the AoE driver and mount the /mnt/a and /mnt/b
+"blades".  See aoe(4) and http://www.coraid.com/support/freebsd/usingaoe.html
 for more information.
 
 -stacey.

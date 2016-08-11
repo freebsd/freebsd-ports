@@ -4,8 +4,10 @@
 PORTNAME=	ioquake3-devel
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	Ioquake3 development snapshot dedicated server
+
+LICENSE=	GPLv2
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
 

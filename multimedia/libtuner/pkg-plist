@@ -24,12 +24,13 @@ include/libtuner/tuner_device.h
 include/libtuner/tuner_devnode_device.h
 include/libtuner/tuner_driver.h
 include/libtuner/tuner_firmware.h
+include/libtuner/tuner_iic_device.h
 include/libtuner/tuv1236d.h
 include/libtuner/xc3028.h
 include/libtuner/xc5000.h
-%%DATADIR%%/or51132_qam.fw
-%%DATADIR%%/nxt2004.fw
 %%DATADIR%%/xc3028-v27.fw
+%%DATADIR%%/nxt2004.fw
 %%DATADIR%%/license.txt
 %%DATADIR%%/xc5000-1.6.114.fw
 %%DATADIR%%/or51132_vsb.fw
+%%DATADIR%%/or51132_qam.fw

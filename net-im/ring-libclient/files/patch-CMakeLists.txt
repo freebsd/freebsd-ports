@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2016-05-19 17:41:40 UTC
++++ CMakeLists.txt
+@@ -751,7 +751,10 @@ INSTALL( FILES ${libringclient_CONFIG_PA
+ #    COMPATIBILITY SameMajorVersion
+ # )
+ 
++option(FREEBSD_NLS_ON "NLS option: install translations" OFF)
++
+ # translations
++IF( FREEBSD_NLS_ON )
+ IF( Qt5LinguistTools_FOUND )
+    # translation template file
+    SET(TS_TEMPLATE ${CMAKE_SOURCE_DIR}/translations/lrc_en.ts)
+@@ -767,6 +770,7 @@ IF( Qt5LinguistTools_FOUND )
+ 
+    INSTALL(FILES ${QM_FILES} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libringclient/translations")
+ ENDIF()
++ENDIF()
+ 
+ # uninstall target
+ CONFIGURE_FILE(

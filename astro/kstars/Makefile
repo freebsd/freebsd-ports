@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
 		xplanet:astro/xplanet
 RUN_DEPENDS=	xplanet:astro/xplanet
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USES=		cmake:outsource compiler:c++11-lib tar:xz
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
 

@@ -1,4 +1,4 @@
---- src/qjackctl.cpp.orig	2015-10-28 15:24:52 UTC
+--- src/qjackctl.cpp.orig	2016-04-05 15:57:30 UTC
 +++ src/qjackctl.cpp
 @@ -30,6 +30,10 @@
  
@@ -11,7 +11,7 @@
  #if QT_VERSION < 0x040500
  namespace Qt {
  const WindowFlags WindowCloseButtonHint = WindowFlags(0x08000000);
-@@ -216,7 +220,7 @@ public:
+@@ -218,7 +222,7 @@ public:
  			sUnique += sServerName;
  		}
  		char szHostName[255];

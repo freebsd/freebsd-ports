@@ -1,5 +1,5 @@
-UMLGraph facilitates the declarative specification and drawing 
-of UML class and sequence diagrams. One can specify a class design 
+UMLGraph facilitates the declarative specification and drawing
+of UML class and sequence diagrams. One can specify a class design
 using the Java syntax complemented by Javadoc tags.
 
 WWW: http://www.umlgraph.org/

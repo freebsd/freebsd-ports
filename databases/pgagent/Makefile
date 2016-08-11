@@ -11,10 +11,10 @@ DISTNAME=	pgAgent-${PORTVERSION}-Source
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Job scheduler for PostgreSQL
 
-USES=		cmake pgsql
+USES=		cmake dos2unix pgsql
+DOS2UNIX_GLOB=	*.txt
 CMAKE_ARGS=	-DSTATIC_BUILD:BOOL=NO -DWX_CONFIG_PATH:FILEPATH="${WX_CONFIG}"
 USE_WX=		2.8
-WX_UNICODE=	yes
 
 PLIST_FILES=	bin/pgagent \
 		share/postgresql/extension/pgagent--3.4.sql \

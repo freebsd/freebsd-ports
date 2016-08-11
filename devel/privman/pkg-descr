@@ -9,7 +9,7 @@ Applications that use the Privman library split into two halves, the
 half that performs valid privileged operations, and the half that
 contains the application's logic. The library uses configuration files
 to provide fine-grained access control for the privileged operations,
-limiting exposure in even of an attack against the application. When 
+limiting exposure in even of an attack against the application. When
 the application is compromised, the attacker gains only the privileges
 of an unprivileged user and the specific privileges granted to the
 application by the application's Privman configuration file.

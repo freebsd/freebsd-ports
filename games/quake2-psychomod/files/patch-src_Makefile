@@ -1,0 +1,71 @@
+--- src/Makefile.orig	2006-02-01 23:46:55 UTC
++++ src/Makefile
+@@ -16,20 +16,10 @@ OSTYPE := $(shell uname -s)
+ # this nice line comes from the linux kernel makefile
+ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+ 
+-ifneq ($(ARCH),i386)
+-ifneq ($(ARCH),axp)
+-ifneq ($(ARCH),ppc)
+-ifneq ($(ARCH),sparc)
+-$(error arch $(ARCH) is currently not supported)
+-endif
+-endif
+-endif
+-endif
+-
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ 
+-CC=gcc
++CC?=gcc
+ BASE_CFLAGS=-Dstricmp=strcasecmp 
+ 
+ RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
+@@ -53,7 +43,7 @@ SHLIBLDFLAGS=-shared
+ DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
+ DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+ 
+-TARGETS=$(BUILDDIR)/psychomod/game$(ARCH).$(SHLIBEXT)
++TARGETS=$(BUILDDIR)/psychomod/game.$(SHLIBEXT)
+ 	
+ all:
+ 	@echo
+@@ -64,11 +54,11 @@ all:
+ 	@echo
+ debug:
+ 	@-mkdir -p $(BUILD_DEBUG_DIR)/psychomod
+-	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 	
+ release:
+ 	@-mkdir -p $(BUILD_RELEASE_DIR)/psychomod
+-	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
+ 	
+ targets: $(TARGETS)
+ 
+@@ -124,7 +114,7 @@ GAME_OBJS = \
+ 	$(BUILDDIR)/p_weapon.o \
+ 	$(BUILDDIR)/q_shared.o
+ 
+-$(BUILDDIR)/psychomod/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BUILDDIR)/psychomod/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
+ 
+ $(BUILDDIR)/g_ai.o :        g_ai.c
+@@ -282,10 +272,10 @@ $(BUILDDIR)/q_shared.o :    q_shared.c
+ clean: clean-debug clean-release
+ 
+ clean-debug:
+-	$(MAKE) clean2 BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) clean2 BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 
+ clean-release:
+-	$(MAKE) clean2 BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) clean2 BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 
+ clean2:
+ 	-rm -f $(GAME_OBJS)

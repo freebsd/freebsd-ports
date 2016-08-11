@@ -6,7 +6,7 @@ any or all of:
   a nice human-readable __repr__,
   a complete set of comparison methods,
   immutability for attributes,
-  and a kwargs-based initializer 
+  and a kwargs-based initializer
 without writing dull boilerplate code again and again.
 
 WWW: https://github.com/hynek/characteristic

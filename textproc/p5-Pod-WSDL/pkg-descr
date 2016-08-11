@@ -2,7 +2,7 @@ How does Pod::WSDL work? If you instantiate a Pod::WSDL object with the
 name of the module (or the path of the file, or an open filehandle)
 providing the web service like this
 
-	my $pwsdl = new Pod::WSDL(source => 'My::Module', 
+	my $pwsdl = new Pod::WSDL(source => 'My::Module',
 		location => 'http://my.services.location/on/the/web');
 
 Pod::WSDL will try to find "My::Module" in @INC, open the file, parse it

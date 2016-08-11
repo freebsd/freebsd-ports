@@ -1,0 +1,10 @@
+--- contrib/native/pjproject-2.4.5/build.mak.in.orig	2015-08-12 04:46:22 UTC
++++ contrib/native/pjproject-2.4.5/build.mak.in
+@@ -265,7 +265,6 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) 
+ 	$(PJLIB_LDLIB) \
+ 	@LIBS@
+ export APP_LDXXLIBS := $(PJSUA2_LIB_LDLIB) \
+-	-lstdc++ \
+ 	$(APP_LDLIBS)
+ 
+ # Here are the variabels to use if application is using the library

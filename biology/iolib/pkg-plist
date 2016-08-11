@@ -86,7 +86,7 @@ include/io_lib/ztr.h
 lib/libstaden-read.a
 lib/libstaden-read.so
 lib/libstaden-read.so.11
-lib/libstaden-read.so.11.0.5
+lib/libstaden-read.so.11.0.6
 man/man1/scramble.1.gz
 man/man1/srf2fasta.1.gz
 man/man1/srf2fastq.1.gz

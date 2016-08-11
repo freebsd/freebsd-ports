@@ -41,6 +41,8 @@
 %%ELISPDIR%%/magit-stash.elc
 %%ELISPDIR%%/magit-submodule.el
 %%ELISPDIR%%/magit-submodule.elc
+%%ELISPDIR%%/magit-subtree.el
+%%ELISPDIR%%/magit-subtree.elc
 %%ELISPDIR%%/magit-utils.el
 %%ELISPDIR%%/magit-utils.elc
 %%ELISPDIR%%/magit-version.el

@@ -1,8 +1,8 @@
 Support 24bit audio see Comment 6 of 
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198567
 
---- src/modules/oss/oss-util.c.orig	2015-02-12 15:10:35.000000000 +0100
-+++ src/modules/oss/oss-util.c	2015-04-15 14:41:41.512557000 +0200
+--- src/modules/oss/oss-util.c.orig	2015-09-10 04:51:41 UTC
++++ src/modules/oss/oss-util.c
 @@ -39,6 +39,22 @@
  
  #include "oss-util.h"
@@ -26,7 +26,7 @@ https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198567
  int pa_oss_open(const char *device, int *mode, int* pcaps) {
      int fd = -1;
      int caps;
-@@ -164,8 +180,8 @@
+@@ -164,8 +180,8 @@ int pa_oss_auto_format(int fd, pa_sample
          [PA_SAMPLE_FLOAT32BE] = AFMT_QUERY, /* not supported */
          [PA_SAMPLE_S32LE] = AFMT_QUERY, /* not supported */
          [PA_SAMPLE_S32BE] = AFMT_QUERY, /* not supported */

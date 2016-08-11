@@ -1,0 +1,11 @@
+The aim of this project is not to provide a slightly modified clone of json-c.
+It's aim is to provide
+
+* a small library with essential json handling functions
+* sufficiently good json support (not 100% standards compliant)
+* be very fast in processing
+
+In order to reach these goals, we reduce the features of json-c. For
+similarities and differences, see the file DIFFERENCES.
+
+WWW: https://github.com/rsyslog/libfastjson

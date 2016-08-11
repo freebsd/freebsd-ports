@@ -1,6 +1,6 @@
---- Makefile.in.orig	2007-09-20 21:42:28.000000000 +0200
-+++ Makefile.in	2014-01-30 12:02:16.000000000 +0100
-@@ -6,7 +6,7 @@
+--- Makefile.in.orig	2007-09-20 19:42:28 UTC
++++ Makefile.in
+@@ -6,7 +6,7 @@ AR = ar
  CFLAGS = @DEFS@ -I. -Ilibaiff -g -O2 -ansi -pedantic -Wall -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wwrite-strings -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Wno-unreachable-code
  
  # for GCC4. comment for GCC3
@@ -9,7 +9,7 @@
  
  prefix = @prefix@
  
-@@ -15,14 +15,14 @@
+@@ -15,14 +15,14 @@ objs = iff.o aifx.o lpcm.o g711.o \
  
  all: libaiff.a
  

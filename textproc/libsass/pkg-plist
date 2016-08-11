@@ -1,7 +1,12 @@
 include/sass.h
-include/sass_interface.h
+include/sass/base.h
+include/sass/context.h
+include/sass/functions.h
+include/sass/values.h
+include/sass/version.h
+include/sass2scss.h
 lib/libsass.a
 lib/libsass.so
 lib/libsass.so.0
-lib/libsass.so.0.0.0
+lib/libsass.so.0.0.9
 libdata/pkgconfig/libsass.pc

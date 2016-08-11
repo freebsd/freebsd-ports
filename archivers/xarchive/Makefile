@@ -34,7 +34,6 @@ RAR_RUN_DEPENDS=	rar:archivers/rar \
 		unrar:archivers/unrar
 RPM_RUN_DEPENDS=	rpm2cpio:archivers/rpm2cpio \
 		rpm:archivers/rpm4
-ZIP_RUN_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+ZIP_RUN_DEPENDS=	zip:archivers/zip
 
 .include <bsd.port.mk>

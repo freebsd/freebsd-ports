@@ -27,7 +27,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/gimp/scripts/
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${STAGEDIR}${PREFIX}/share/gimp/scripts/
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/release-notes.txt ${STAGEDIR}${DOCSDIR}
 

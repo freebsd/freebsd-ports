@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuffs
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

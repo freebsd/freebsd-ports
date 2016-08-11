@@ -3,6 +3,7 @@
 
 PORTNAME=	horde_lz4
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pear.horde.org/get/
 PKGNAMEPREFIX=	php-
@@ -12,8 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=	php:ext
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-horde_lz4

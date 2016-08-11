@@ -548,7 +548,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/make-includes.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-quick-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-doc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-creating.html
@@ -653,7 +653,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
@@ -801,6 +800,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-pkg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-resourcelimits.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-sudo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sendmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serial.html
@@ -888,7 +888,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-arch-neutral.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-avoiding-linuxisms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cflags.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-deprecated.html
@@ -901,6 +900,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-use-posix-standards.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/gnome-components.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
@@ -970,8 +970,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/users-and-groups.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-7z.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ada.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-autoreconf.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-bdb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-bison.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-blaslapack.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-charsetfix.html
@@ -987,16 +989,20 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-execinfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fakeroot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fam.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-firebird.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fmake.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fortran.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fuse.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gecko.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gem.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext-runtime.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext-tools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ghostscript.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gmake.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gnome.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-go.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gperf.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gssapi.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-horde.html
@@ -1011,9 +1017,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-lua.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-makeinfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-makeself.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-mate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-metaport.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-mono.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-motif.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-mysql.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ncurses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ninja.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-objc.html
@@ -1022,8 +1030,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pear.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-perl5.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pgsql.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pkgconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pure.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pyqt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmake.html
@@ -1031,6 +1041,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-scons.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shared-mime-info.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shebangfix.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-sqlite.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ssl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tar.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tcl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-terminfo.html

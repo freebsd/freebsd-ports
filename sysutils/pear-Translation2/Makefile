@@ -6,13 +6,12 @@ DISTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for multilingual applications management
 
 USES=		pear shebangfix
 SHEBANG_FILES=	scripts/t2xmlchk.php
 NO_ARCH=	yes
-USE_PHP=	yes
 
 OPTIONS_DEFINE=	PEAR_CACHE_LITE PEAR_DB PEAR_DB_DATAOBJECT PEAR_MDB PEAR_MDB2 \
 		PEAR_FILE_GETTEXT PEAR_I18NV2 PEAR_XML_SERIALIZER

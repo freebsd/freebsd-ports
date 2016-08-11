@@ -81,6 +81,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
+%%SITE_PERL%%/Image/ExifTool/ISO.pm
 %%SITE_PERL%%/Image/ExifTool/ITC.pm
 %%SITE_PERL%%/Image/ExifTool/Import.pm
 %%SITE_PERL%%/Image/ExifTool/InDesign.pm
@@ -139,6 +140,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
 %%SITE_PERL%%/Image/ExifTool/PLIST.pm
+%%SITE_PERL%%/Image/ExifTool/PLUS.pm
 %%SITE_PERL%%/Image/ExifTool/PNG.pm
 %%SITE_PERL%%/Image/ExifTool/PPM.pm
 %%SITE_PERL%%/Image/ExifTool/PSP.pm
@@ -247,6 +249,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::ICC_Profile.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ID3.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::IPTC.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::ISO.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ITC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Import.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::InDesign.3.gz
@@ -305,6 +308,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::PGF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PICT.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PLIST.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::PLUS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PPM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PSP.3.gz

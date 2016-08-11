@@ -1,6 +1,6 @@
---- Makefile.orig	2014-11-30 17:37:32.000000000 +0100
-+++ Makefile	2014-11-30 17:37:46.000000000 +0100
-@@ -40,7 +40,7 @@ VPATH = $(SRCDIR)
+--- Makefile.orig	2015-08-17 20:06:47 UTC
++++ Makefile
+@@ -42,7 +42,7 @@ VPATH = $(SRCDIR)
  
  include $(SRCDIR)/Make.defaults
  

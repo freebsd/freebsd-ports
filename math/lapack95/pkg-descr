@@ -6,6 +6,6 @@ optional arguments, and generic interfaces. The Fortran 95 interface
 has been implemented by writing Fortran 95 ``wrappers'' to call
 existing routines from the LAPACK package. This interface can persist
 unchanged even if the underlying Fortran 77 LAPACK code is rewritten to
-take advantage of the new features of Fortran 95. 
+take advantage of the new features of Fortran 95.
 
 WWW: http://www.netlib.org/lapack95/

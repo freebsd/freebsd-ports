@@ -1,4 +1,4 @@
-FreeXL is an open source library to extract valid data from within an Excel 
+FreeXL is an open source library to extract valid data from within an Excel
 (.xls) spreadsheet.
 FreeXL design goals:
 
@@ -7,9 +7,9 @@ FreeXL design goals:
     to be easily and universally portable
     completely ignoring any GUI-related oddity
 
-Note that the final goal means that FreeXL ignores at all fonts, sizes and 
-alignments, and most formats. It ignores Pivot Table, Charts, Formulas, Visual 
-Basic macros and so on. FreeXL is structurally simple and quite light-weight 
+Note that the final goal means that FreeXL ignores at all fonts, sizes and
+alignments, and most formats. It ignores Pivot Table, Charts, Formulas, Visual
+Basic macros and so on. FreeXL is structurally simple and quite light-weight
 (typically 40-80K of object code, stripped).
 
 WWW: https://www.gaia-gis.it/fossil/freexl/index

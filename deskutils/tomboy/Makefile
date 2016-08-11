@@ -36,7 +36,7 @@ EVOLUTION_DESC=	Build evolution addin
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEVOLUTION}
 CONFIGURE_ARGS+=--enable-evolution
@@ -51,5 +51,7 @@ PLIST_SUB+=	EVOLUTION="@comment "
 post-patch:
 	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/Tomboy/tomboy*.in
+	@${REINPLACE_CMD} 's/(TARGET_NAME$$)/(TARGET_NAME)/' \
+		${WRKSRC}/Tomboy/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

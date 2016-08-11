@@ -1,5 +1,5 @@
---- frontend/Makefile.am.orig	2010-08-18 15:43:04.246728673 +0300
-+++ frontend/Makefile.am	2010-08-18 15:45:44.922966543 +0300
+--- frontend/Makefile.am.orig	2008-12-16 00:56:00 UTC
++++ frontend/Makefile.am
 @@ -7,6 +7,11 @@ if WITH_MP4V2
  INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
  LDADD = $(top_builddir)/libfaac/libfaac.la $(top_srcdir)/common/mp4v2/libmp4v2.a -lm -lstdc++

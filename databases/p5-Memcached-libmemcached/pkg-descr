@@ -13,6 +13,6 @@ thread safe, and provide full access to server side methods.
     - A half dozen or so different hash algorithms.
     - Implementations of the new cas, replace, and append operators.
     - Man pages written up on entire API.
-    - Implements both modulo and consistent hashing solutions. 
+    - Implements both modulo and consistent hashing solutions.
 
 WWW: http://search.cpan.org/dist/Memcached-libmemcached/

@@ -1,4 +1,4 @@
---- libmysql/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ libmysql/CMakeLists.txt
 @@ -260,7 +260,7 @@ IF(NOT DISABLE_SHARED)
      COMPONENT SharedLibraries)

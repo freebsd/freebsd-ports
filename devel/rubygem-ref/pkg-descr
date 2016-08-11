@@ -1,6 +1,6 @@
-Library that implements weak, soft, and strong references in Ruby that 
-work across multiple runtimes (MRI, REE, YARV, Jruby, Rubinius, and 
-IronRuby). Also includes implementation of maps/hashes that use references 
+Library that implements weak, soft, and strong references in Ruby that
+work across multiple runtimes (MRI, REE, YARV, Jruby, Rubinius, and
+IronRuby). Also includes implementation of maps/hashes that use references
 and a reference queue.
 
 WWW: https://github.com/ruby-concurrency/ref

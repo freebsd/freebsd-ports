@@ -1,26 +1,10 @@
-@unexec cmp -s %D/%%ETCDIR%%/maiad.conf.dist %D/%%ETCDIR%%/maiad.conf && rm -f %D/%%ETCDIR%%/maiad.conf || true
-@exec if [ ! -f %D/%%ETCDIR%%/maiad.conf ] ; then cp -p %D/%%ETCDIR%%/maiad.conf.dist %D/%%ETCDIR%%/maiad.conf; fi
-@unexec cmp -s %D/%%ETCDIR%%/maia.conf.dist %D/%%ETCDIR%%/maia.conf && rm -f %D/%%ETCDIR%%/maia.conf || true
-@exec if [ ! -f %D/%%ETCDIR%%/maia.conf ] ; then cp -p %D/%%ETCDIR%%/maia.conf.dist %D/%%ETCDIR%%/maia.conf; fi
-@unexec cmp -s %D/%%ETCDIR%%/templates/digest.tpl.dist %D/%%ETCDIR%%/templates/digest.tpl && rm -f %D/%%ETCDIR%%/templates/digest.tpl || true
-@exec if [ ! -f %D/%%ETCDIR%%/templates/digest.tpl ] ; then cp -p %D/%%ETCDIR%%/templates/digest.tpl.dist %D/%%ETCDIR%%/templates/digest.tpl; fi
-@unexec cmp -s %D/%%ETCDIR%%/templates/newuser.tpl.dist %D/%%ETCDIR%%/templates/newuser.tpl && rm -f %D/%%ETCDIR%%/templates/newuser.tpl || true
-@exec if [ ! -f %D/%%ETCDIR%%/templates/newuser.tpl ] ; then cp -p %D/%%ETCDIR%%/templates/newuser.tpl.dist %D/%%ETCDIR%%/templates/newuser.tpl; fi
-@unexec cmp -s %D/%%ETCDIR%%/templates/reminder.tpl.dist %D/%%ETCDIR%%/templates/reminder.tpl && rm -f %D/%%ETCDIR%%/templates/reminder.tpl || true
-@exec if [ ! -f %D/%%ETCDIR%%/templates/reminder.tpl ] ; then cp -p %D/%%ETCDIR%%/templates/reminder.tpl.dist %D/%%ETCDIR%%/templates/reminder.tpl; fi
-%%WEBHOST%%@unexec cmp -s %D/www/maia/config.php.dist %D/www/maia/config.php && rm -f %D/www/maia/config.php || true
-%%WEBHOST%%@exec if [ ! -f %D/www/maia/config.php ] ; then cp -p %D/www/maia/config.php.dist %D/www/maia/config.php; fi
-%%WEBHOST%%@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/www/maia/themes/desert_sand/compiled
-%%WEBHOST%%@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/www/maia/themes/dgm/compiled
-%%WEBHOST%%@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/www/maia/themes/ocean_surf/compiled
-%%WEBHOST%%@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/www/maia/web
 @group %%GROUPS%%
-%%ETCDIR%%/maia.conf.dist
-%%ETCDIR%%/maiad.conf.dist
+@sample %%ETCDIR%%/maia.conf.dist %%ETCDIR%%/maia.conf
+@sample %%ETCDIR%%/maiad.conf.dist %%ETCDIR%%/maiad.conf
 @group
-%%ETCDIR%%/templates/digest.tpl.dist
-%%ETCDIR%%/templates/newuser.tpl.dist
-%%ETCDIR%%/templates/reminder.tpl.dist
+@sample %%ETCDIR%%/templates/digest.tpl.dist %%ETCDIR%%/templates/digest.tpl
+@sample %%ETCDIR%%/templates/newuser.tpl.dist %%ETCDIR%%/templates/newuser.tpl
+@sample %%ETCDIR%%/templates/reminder.tpl.dist %%ETCDIR%%/templates/reminder.tpl
 sbin/maiad
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -61,7 +45,7 @@ sbin/maiad
 %%WWWDIR%%/chart_rules.php
 %%WWWDIR%%/chart_stats.php
 %%WWWDIR%%/chart_virus.php
-@(%%WWWOWN%%,%%WWWGRP%%,640) %%WWWDIR%%/config.php.dist
+@sample(%%WWWOWN%%,%%WWWGRP%%,640) %%WWWDIR%%/config.php.dist %%WWWDIR%%/config.php
 %%WWWDIR%%/confirm.php
 %%WWWDIR%%/constants.php
 %%WWWDIR%%/core.php

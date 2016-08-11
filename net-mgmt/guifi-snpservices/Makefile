@@ -3,6 +3,7 @@
 
 PORTNAME=		snpservices
 DISTVERSION=		0.2.2-8
+PORTREVISION=		1
 CATEGORIES=		net-mgmt www
 MASTER_SITES=		http://serveis.guifi.net/debian/guifi/ \
 			http://www.potion-studios.com/

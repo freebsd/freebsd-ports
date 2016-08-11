@@ -1,7 +1,7 @@
-  A version of malloc/free/realloc written by Doug Lea and released to the 
-  public domain. 
+  A version of malloc/free/realloc written by Doug Lea and released to the
+  public domain.
 
   Version 2.6.5
 
-  Based loosely on libg++-1.2X malloc. (It retains some of the overall 
+  Based loosely on libg++-1.2X malloc. (It retains some of the overall
   structure of old version,  but most details differ.)

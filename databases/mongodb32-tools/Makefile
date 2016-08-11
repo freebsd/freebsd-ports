@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32-tools
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 
@@ -63,7 +63,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${x} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
-post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in LICENSE.md README.md THIRD-PARTY-NOTICES
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}

@@ -2,7 +2,7 @@ $NetBSD: patch-ae,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/clib/omake_shell_sys.c.orig	2007-12-01 21:32:13.000000000 +0000
+--- src/clib/omake_shell_sys.c.orig	2007-12-01 21:32:13 UTC
 +++ src/clib/omake_shell_sys.c
 @@ -551,7 +551,7 @@ value omake_shell_sys_suspend(value v_pg
      fflush(stderr);

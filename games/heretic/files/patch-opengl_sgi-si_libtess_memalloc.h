@@ -1,5 +1,5 @@
---- opengl/sgi-si/libtess/memalloc.h	Wed Jan 26 05:30:44 2000
-+++ opengl/sgi-si/libtess/memalloc.h.new	Sun Feb 13 03:54:46 2000
+--- opengl/sgi-si/libtess/memalloc.h.orig	2000-01-26 10:30:44 UTC
++++ opengl/sgi-si/libtess/memalloc.h
 @@ -42,7 +42,7 @@
  #ifndef __memalloc_simple_h_
  #define __memalloc_simple_h_

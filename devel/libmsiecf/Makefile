@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20160107
+DISTVERSION=	alpha-20160421
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libmsiecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/libyal/libmsiecf/releases/download/${PORTVERSIO
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the MSIE index.dat files
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}

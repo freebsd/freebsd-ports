@@ -13,6 +13,6 @@ core libraries which are under the LGPL.
 EMBASSY packages are third party applications which have been integrated with
 the EMBOSS suite, but which are not included in the base EMBOSS distribution
 for licensing or other reasons. The EMBASSY packages live in the
-biology/embassy port. 
+biology/embassy port.
 
 WWW: http://www.emboss.org/

@@ -1,4 +1,4 @@
---- sql/json_dom.h.orig	2015-11-29 19:16:24 UTC
+--- sql/json_dom.h.orig	2016-03-28 18:06:12 UTC
 +++ sql/json_dom.h
 @@ -368,7 +368,7 @@ struct Json_key_comparator
    Json_object class.

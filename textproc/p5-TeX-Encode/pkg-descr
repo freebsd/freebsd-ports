@@ -1,16 +1,16 @@
-This module provides encoding to LaTeX escapes from utf8 using mapping 
-tables in Pod::LaTeX and HTML::Entities. This covers only a subset of the 
+This module provides encoding to LaTeX escapes from utf8 using mapping
+tables in Pod::LaTeX and HTML::Entities. This covers only a subset of the
 Unicode character table (undef warnings will occur for non-mapped chars).
 
-Mileage will vary when decoding (converting TeX to utf8), as TeX is in 
+Mileage will vary when decoding (converting TeX to utf8), as TeX is in
 essence a programming language, and this module does not implement TeX.
 
-I use this module to encode author names in BibTeX and to do a rough job 
-at presenting LaTeX abstracts in HTML. Using decode rather than seeing 
+I use this module to encode author names in BibTeX and to do a rough job
+at presenting LaTeX abstracts in HTML. Using decode rather than seeing
 $\sqrt{\Omega^2\zeta_n}$ you get something that looks like the formula.
 
-The next logical step for this module is to integrate some level of TeX 
-grammar to improve the decoding, in particular to handle fractions and 
+The next logical step for this module is to integrate some level of TeX
+grammar to improve the decoding, in particular to handle fractions and
 font changes (which should probably be dropped).
 
 WWW: http://search.cpan.org/dist/TeX-Encode/

@@ -3,6 +3,7 @@
 
 PORTNAME=	slides
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}
 DISTNAME=	docbook-${PORTNAME}-${PORTVERSION}
@@ -14,26 +15,20 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
-		docbook-xsl>0:textproc/docbook-xsl
+		docbook-xsl>0:textproc/docbook-xsl \
+		xmlcatmgr:textproc/xmlcatmgr
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 USES=		tar:bzip2
 
-SUB_FILES=	pkg-deinstall pkg-install
-SUB_LIST=	XMLCATMGR="${XMLCATMGR}" CATALOG_PORTS_XML="${CATALOG_PORTS}" \
-		INSTDIR="${INSTDIR}"
-
 OPTIONS_DEFINE=	DOCS
 
-XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/${PORTNAME}
 PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	browser graphics schema xsl
 
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS=	${XMLDIR}/catalog.ports
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PINSTDIR}

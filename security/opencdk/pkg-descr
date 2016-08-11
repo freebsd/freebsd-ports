@@ -11,5 +11,5 @@ or to sign/verify and packet routines.
 Hint: Because of the fact that sentensive data is used, the library
       doesn't contain any real cryptographic code. For all crypto
       routines we referring to the Libgcrypt library!
-	
+
 WWW: http://www.gnutls.org/

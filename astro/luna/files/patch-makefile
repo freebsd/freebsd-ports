@@ -1,5 +1,5 @@
---- makefile.orig	2013-10-25 16:28:17.000000000 +0800
-+++ makefile	2013-10-25 16:28:43.000000000 +0800
+--- makefile.orig	2016-07-26 13:07:24 UTC
++++ makefile
 @@ -2,23 +2,24 @@
  # 	Makefile for luna using BSD cc
  # 

@@ -1,4 +1,4 @@
---- decoder.c.orig
+--- decoder.c.orig	2012-02-12 12:24:00 UTC
 +++ decoder.c
 @@ -55,13 +55,13 @@ int cDecoder::Close()
  {

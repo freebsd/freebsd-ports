@@ -1,7 +1,7 @@
-This module calculates the intersection point of two straight lines (if 
-one exists). It returns 0, if no intersection point exists. If the lines 
-have an intersection point, the coordinates of the point are the 
-returnvalue. If the given lines have infinite intersection points, -1 is 
+This module calculates the intersection point of two straight lines (if
+one exists). It returns 0, if no intersection point exists. If the lines
+have an intersection point, the coordinates of the point are the
+returnvalue. If the given lines have infinite intersection points, -1 is
 returned.
 
 WWW: http://search.cpan.org/dist/Math-Intersection-StraightLine/

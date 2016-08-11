@@ -3,7 +3,7 @@
 
 PORTNAME=	scalar_objects
 PORTVERSION=	0.0.20140124
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -16,10 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nikic
 GH_TAGNAME=	baf4985
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

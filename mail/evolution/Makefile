@@ -3,12 +3,19 @@
 
 PORTNAME=	evolution
 PORTVERSION=	3.18.5.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
+
+LICENSE=	GFDL GPLv2+ LGPL21+ MPL OPENLDAP
+LICENSE_COMB=	multi
+LICENSE_NAME_OPENLDAP=	OpenLDAP Public License
+LICENSE_FILE_OPENLDAP=	${WRKSRC}/COPYING.OPENLDAP
+LICENSE_PERMS_OPENLDAP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		highlight:textproc/highlight
@@ -83,11 +90,12 @@ LDAP_USE=	OPENLDAP=yes
 WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
-SPAMASSASSIN_CONFIGURE_WITH=	spamassassin
+SPAMASSASSIN_CONFIGURE_WITH=	spamassassin=${LOCALBASE}/bin/spamassassin \
+				sa-learn=${LOCALBASE}/bin/sa-learn
 SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin:mail/spamassassin
 
-BOGOFILTER_CONFIGURE_WITH=	bogofilter
+BOGOFILTER_CONFIGURE_WITH=	bogofilter=${LOCALBASE}/bin/bogofilter
 BOGOFILTER_BUILD_DEPENDS=	bogofilter:mail/bogofilter
 BOGOFILTER_RUN_DEPENDS=	bogofilter:mail/bogofilter
 

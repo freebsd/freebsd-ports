@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------
-To customize the colorize utility, you can make changes to 
+To customize the colorize utility, you can make changes to
     %%PREFIX%%/etc/colorizerc
 or user-specific changes in ~/.colorizerc
 ---------------------------------------------------------------------------

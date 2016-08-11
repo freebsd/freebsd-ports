@@ -16,13 +16,12 @@ LIB_DEPENDS=	libplist.so:devel/libplist \
 		libtag.so:audio/taglib \
 		libsgutils2.so:sysutils/sg3_utils
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool localbase pathfix pkgconfig sqlite:3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
 USE_GNOME=	gdkpixbuf2 gtk20 intltool
-USE_SQLITE=	3
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

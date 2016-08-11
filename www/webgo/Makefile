@@ -13,8 +13,7 @@ COMMENT=	Simplest way to write web applications in the Go programming language
 
 SVNVERSION=	20120419
 
+USES=		go
 GO_PKGNAME=	github.com/hoisie/web
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

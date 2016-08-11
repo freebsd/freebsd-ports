@@ -21,12 +21,16 @@ start_cmd="ossechids_command start"
 stop_cmd="ossechids_command stop"
 restart_cmd="ossechids_command restart"
 status_cmd="ossechids_command status"
+reload_cmd="ossechids_command reload"
 
 command="%%PREFIX%%/%%PORTNAME%%/bin/ossec-control"
 required_files="%%PREFIX%%/%%PORTNAME%%/etc/ossec.conf"
+extra_commands="reload"
 
 fts_queue=%%PREFIX%%/%%PORTNAME%%/queue/fts/fts-queue
 ig_queue=%%PREFIX%%/%%PORTNAME%%/queue/fts/ig-queue
+ossec_log=%%PREFIX%%/%%PORTNAME%%/logs/ossec.log
+active_responses_log=%%PREFIX%%/%%PORTNAME%%/logs/active-responses.log
 
 ossechids_start_precmd() {
     # These files are not created by the daemons with the correct
@@ -43,6 +47,15 @@ ossechids_start_precmd() {
         chown ${ossechids_user}:${ossechids_group} ${ig_queue}
         chmod 640 ${ig_queue}
     fi
+
+    # Ensure logfiles are created with the correct ownership and mode
+    for log in ${ossec_log} ${active_responses_log}; do
+	if [ ! -e ${log} ]; then
+	    touch ${log}
+	    chown ${ossechids_user}:${ossechids_group} ${log}
+	    chmod 660 ${log}
+	fi
+    done
 }
 
 ossechids_command() {

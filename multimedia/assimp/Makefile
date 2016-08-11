@@ -2,39 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	assimp
-PORTVERSION=	3.1.1
-DISTVERSIONSUFFIX=	_no_test_models
+PORTVERSION=	3.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.1
 
-MAINTAINER=	yuri@tsoft.com
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BROKEN_powerpc64=	Does not build
 
-USES=		cmake pkgconfig zip
+USES=		cmake compiler:c++11-lib pkgconfig
+USE_GITHUB=		yes
 USE_LDCONFIG=	yes
 
 # CMAKE_ARGS instructs cmake to skip runtime path removal during install
-CMAKE_ARGS+=	"-DCMAKE_SKIP_RPATH=ON"
+CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON -DASSIMP_BUILD_TESTS:BOOL=OFF
 
-OPTIONS_DEFINE=	BOOST
-OPTIONS_DEFAULT=	BOOST
-BOOST_LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
-BOOST_CMAKE_ON=	-DASSIMP_ENABLE_BOOST_WORKAROUND:BOOL=OFF
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
-# GCC 4.2 causes compiler warnings
-USE_GCC=	yes
+.if ${COMPILER_TYPE} == gcc
+# GCC C++11 support is broken on FreeBSD (see PR 193528 for details)
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} 's|$${ASSIMP_LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/zzip-zlib-config/d' \
+		${WRKSRC}/cmake-modules/FindZLIB.cmake
+	${REINPLACE_CMD} -e '/working branch$$/,/^)/d ; /minizip/d ; \
+		s|$${ASSIMP_LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,2 +1,3 @@
-SHA256 (wget-1.16.3.tar.xz) = 67f7b7b0f5c14db633e3b18f53172786c001e153d545cfc85d82759c5c2ffb37
-SIZE (wget-1.16.3.tar.xz) = 1794148
+TIMESTAMP = 1466495244
+SHA256 (wget-1.18.tar.xz) = b5b55b75726c04c06fe253daec9329a6f1a3c0c1878e3ea76ebfebc139ea9cc1
+SIZE (wget-1.18.tar.xz) = 1922376

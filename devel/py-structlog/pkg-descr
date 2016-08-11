@@ -1,0 +1,6 @@
+Structured Logging for Python
+
+Makes structured logging with key-value logging, incremental context building,
+and arbitrary formatting easy.
+
+WWW: http://www.structlog.org/

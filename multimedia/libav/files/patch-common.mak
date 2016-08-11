@@ -1,6 +1,6 @@
---- common.mak.orig	2014-04-08 18:24:04.000000000 +0200
-+++ common.mak	2014-04-08 18:24:45.000000000 +0200
-@@ -28,8 +28,8 @@
+--- common.mak.orig	2016-05-25 00:36:32 UTC
++++ common.mak
+@@ -28,8 +28,8 @@ PATH_LIBNAME = $(foreach NAME,$(1),lib$(
  DEP_LIBS := $(foreach lib,$(FFLIBS),$(call PATH_LIBNAME,$(lib)))
  
  SRC_DIR    := $(SRC_PATH)/lib$(NAME)

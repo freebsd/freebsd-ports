@@ -1,5 +1,5 @@
 Minesweeper-type game for text-mode terminals.  Features include boards up to
 1024x1024, saving and loading of boards, shared and individual "best times"
-files, and color. 
+files, and color.
 
 WWW: https://github.com/rwestlund/freesweep/

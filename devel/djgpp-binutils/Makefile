@@ -14,13 +14,9 @@ LICENSE=	GPLv2
 
 TARGET=		i586-pc-msdosdjgpp
 
-PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-
 USES=		gmake makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
-SRCDIR=		${WRKDIR}/binutils-${PORTVERSION}
-WRKSRC=		${WRKDIR}/build
+CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS=	--target=${TARGET} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-shared --disable-werror
@@ -30,9 +26,6 @@ INFO_PATH=	${TARGET}/info
 
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip
-
-pre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
 .for F in ${BINARIES}

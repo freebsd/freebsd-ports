@@ -1,4 +1,4 @@
---- lib/fusion/shm/shm.c
+--- lib/fusion/shm/shm.c.orig	2012-05-23 13:43:12 UTC
 +++ lib/fusion/shm/shm.c
 @@ -34,7 +34,7 @@
  #include <sys/param.h>

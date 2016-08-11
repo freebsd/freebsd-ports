@@ -9,6 +9,8 @@ MASTER_SITES=	LOCAL/brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Compiler runtime library with Blocks support
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	cmake:devel/cmake
 
 CONFIGURE_WRKSRC=	${WRKDIR}/build

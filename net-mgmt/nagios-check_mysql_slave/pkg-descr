@@ -1,5 +1,5 @@
-The check_mysql_slave plugin allows you to check that a particular 
-MySQL replication slave is running and (coming soon) is within a 
+The check_mysql_slave plugin allows you to check that a particular
+MySQL replication slave is running and (coming soon) is within a
 threshold bytes or seconds behind its master.
 
 WWW: http://buhacoff.net/software/check_mysql_slave

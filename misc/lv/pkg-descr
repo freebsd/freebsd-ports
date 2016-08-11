@@ -8,4 +8,4 @@ lv can recognize multi-bytes patterns as regular expressions, and lv
 also provides multilingual grep (1) functionality by giving it another
 name, lgrep.
 
-WWW: http://www.ff.iij4u.or.jp/~nrt/lv/
+WWW: https://github.com/ttdoda/lv

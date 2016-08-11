@@ -22,8 +22,8 @@ lib/libkik.so.16
 lib/libkik.so.16.0.0
 lib/libmkf.a
 lib/libmkf.so
-lib/libmkf.so.16
-lib/libmkf.so.16.0.1
+lib/libmkf.so.17
+lib/libmkf.so.17.0.0
 lib/libmlterm_core.a
 lib/libmlterm_core.so
 lib/libvte-mlterm.a
@@ -68,8 +68,6 @@ lib/mlterm/libind_oriya.a
 lib/mlterm/libind_oriya.so
 lib/mlterm/libind_punjabi.a
 lib/mlterm/libind_punjabi.so
-lib/mlterm/libind_roman.a
-lib/mlterm/libind_roman.so
 lib/mlterm/libind_tamil.a
 lib/mlterm/libind_tamil.so
 lib/mlterm/libind_telugu.a
@@ -86,6 +84,8 @@ lib/mlterm/libmozmodern.a
 lib/mlterm/libmozmodern.so
 lib/mlterm/libnext.a
 lib/mlterm/libnext.so
+lib/mlterm/libotl.a
+lib/mlterm/libotl.so
 lib/mlterm/libpixmap_engine.a
 lib/mlterm/libpixmap_engine.so
 lib/mlterm/libsample.a

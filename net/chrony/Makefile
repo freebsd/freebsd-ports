@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER=	yonas@fizk.net
 COMMENT=	System clock synchronization client and server
 
 LICENSE=	GPLv2
 
-# XXX: should theoretically work on others, but at least on PowerPC it dies
-# with ``Could not open any NTP socket'' message on startup :(
-ONLY_FOR_ARCHS=	i386 amd64
+BUILD_DEPENDS=	rubygem-asciidoctor>=0:textproc/rubygem-asciidoctor
 
 USES=		cpe gmake makeinfo readline
 CPE_VENDOR=	tuxfamily
@@ -27,18 +25,17 @@ USE_RC_SUBR=	chronyd
 
 ALL_TARGET=	all docs
 INSTALL_TARGET=	install install-docs
-INFO=		chrony
 EXTRAPORTDOCS=	FAQ NEWS README
-PORTDOCS=	chrony.html chrony.txt ${EXTRAPORTDOCS}
+PORTDOCS=	chrony.conf.html chronyc.html chronyd.html faq.html \
+		installation.html ${EXTRAPORTDOCS}
 PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
-	chrony.conf.example3 chrony.keys.example
+		chrony.conf.example3 chrony.keys.example
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --without-nss        Don't use NSS even if it is available
 #  --without-tomcrypt   Don't use libtomcrypt even if it is available
 #  --disable-pps        Disable PPS API support
 OPTIONS_DEFINE=		IPV6
-OPTIONS_DEFAULT=	IPV6
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6
@@ -46,12 +43,11 @@ IPV6_CONFIGURE_OFF=	--disable-ipv6
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/chronyd
-	cd ${WRKSRC}/${f} && \
-		${INSTALL_DATA} ${EXTRAPORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${EXTRAPORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && \
-		${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && \
-		${INSTALL_DATA} chrony.conf.example3 ${STAGEDIR}${PREFIX}/etc/chrony.conf.sample
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} \
+		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/chrony.conf.example3 \
+		${STAGEDIR}${PREFIX}/etc/chrony.conf.sample
 
 .include <bsd.port.mk>

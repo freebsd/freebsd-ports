@@ -1,17 +1,22 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	linux-crashplan
-DISTVERSION=	4.5.0
-CATEGORIES=	sysutils linux
+PORTNAME=	crashplan
+DISTVERSION=	4.7.0
+PORTREVISION=	0
+CATEGORIES=	sysutils java linux
 MASTER_SITES=	https://download.code42.com/installs/linux/install/CrashPlan/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	CrashPlan_${DISTVERSION}_Linux
 
 MAINTAINER=	subtil@gmail.com
 COMMENT=	Backs up data to remote servers or hard drives
 
-RUN_DEPENDS=	linux-sun-jre17>=0:java/linux-sun-jre17 \
-		bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
+
+USE_JAVA=	yes
+JAVA_OS=	linux
+JAVA_VERSION=	1.7+
 
 WRKSRC=		${WRKDIR}/crashplan-install
 
@@ -27,6 +32,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
 CRASHDIR=	${PREFIX}/share/crashplan
+LOGDIR=		/var/log/crashplan
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${CRASHDIR}
@@ -37,7 +43,8 @@ do-install:
 	${ECHO_CMD} > ${STAGEDIR}${CRASHDIR}/install.vars
 	${ECHO_CMD} "TARGETDIR=${CRASHDIR}" >> ${STAGEDIR}${CRASHDIR}/install.vars
 	${ECHO_CMD} "BINSDIR=${CRASHDIR}/bin" >> ${STAGEDIR}${CRASHDIR}/install.vars
-	${ECHO_CMD} "JAVACOMMON=${LOCALBASE}/linux-sun-jre1.7.0/bin/java" >> ${STAGEDIR}${CRASHDIR}/install.vars
+	${ECHO_CMD} "JAVACOMMON=${JAVA}" >> ${STAGEDIR}${CRASHDIR}/install.vars
+	${ECHO_CMD} "LOGDIR=${LOGDIR}" >> ${STAGEDIR}${CRASHDIR}/install.vars
 	${CAT} ${WRKSRC}/install.defaults >> ${STAGEDIR}${CRASHDIR}/install.vars
 
 .include <bsd.port.mk>

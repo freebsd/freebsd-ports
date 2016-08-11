@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.9
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 

@@ -11,6 +11,8 @@ MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Script which allows to look through active squid users connections
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	pcre session
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

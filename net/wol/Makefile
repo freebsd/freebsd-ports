@@ -10,11 +10,12 @@ MASTER_SITES=	SF/ahh/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
-USES=		perl5
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		localbase perl5
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		wol
 DOCS=		AUTHORS NEWS README TODO
@@ -25,7 +26,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

@@ -8,7 +8,7 @@ CATEGORIES=	x11 kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Compilation 4 (meta port)
 
-USE_KDE4=	baseapps_run kdeprefix runtime_run workspace_run
+USE_KDE4=	baseapps_run runtime_run workspace_run
 USES=		metaport
 
 OPTIONS_DEFINE=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEBINDINGS KDEEDU \

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 OPTIONS_DEFINE=	PYTHON NLS DOCS
-OPTIONS_DEFAULT=PYTHON NLS
+OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USES=	python:2.7
@@ -26,9 +26,8 @@ NLS_USES=	gettext
 NLS_LIBS=	-lintl
 PORTDOCS=	*
 
-USES=		alias gmake libarchive libtool lua:51 pathfix pkgconfig \
+USES=		alias bdb gmake libarchive libtool lua:51 pathfix pkgconfig \
 		shebangfix tar:bzip2
-USE_BDB=	46+
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

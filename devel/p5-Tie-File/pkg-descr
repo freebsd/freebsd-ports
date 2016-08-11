@@ -1,9 +1,9 @@
 Tie::File represents a regular text file as a Perl array. Each element in
 the array corresponds to a record in the file. The first line of the file
-is element 0 of the array; the second line is element 1, and so on. 
+is element 0 of the array; the second line is element 1, and so on.
 
-The file is not loaded into memory, so this will work even for gigantic files. 
+The file is not loaded into memory, so this will work even for gigantic files.
 
-Changes to the array are reflected in the file immediately. 
+Changes to the array are reflected in the file immediately.
 
 WWW: http://search.cpan.org/dist/Tie-File/

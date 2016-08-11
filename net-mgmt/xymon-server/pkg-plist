@@ -427,54 +427,24 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/www/menu/xymonmenu-blue.css
 %%WWWDIR%%/server/www/menu/xymonmenu-grey.css
 %%WWWDIR%%/server/xymon.sh
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/acks
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/data
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/disabled
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/hist
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/histlogs
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/hostdata
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/logs
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/rrd
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/download
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/tmp
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/html
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/notes
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/rep
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/snap
-@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/wml
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www
-@dir %%WWWDIR%%/server/www/wml
-@dir %%WWWDIR%%/server/www/snap
-@dir %%WWWDIR%%/server/www/rep
-@dir %%WWWDIR%%/server/www/notes
-@dir %%WWWDIR%%/server/www/menu
-@dir %%WWWDIR%%/server/www/html
-@dir %%WWWDIR%%/server/www/help/manpages/man8
-@dir %%WWWDIR%%/server/www/help/manpages/man7
-@dir %%WWWDIR%%/server/www/help/manpages/man5
-@dir %%WWWDIR%%/server/www/help/manpages/man1
-@dir %%WWWDIR%%/server/www/help/manpages
-@dir %%WWWDIR%%/server/www/help
-@dir %%WWWDIR%%/server/www/gifs
-@dir %%WWWDIR%%/server/www
-@dir %%WWWDIR%%/server/web
-@dir %%WWWDIR%%/server/tmp
-@dir %%WWWDIR%%/server/ext
-@dir %%WWWDIR%%/server/etc/tasks.d
-@dir %%WWWDIR%%/server/etc
-@dir %%WWWDIR%%/server/download
-@dir %%WWWDIR%%/server/bin
-@dir %%WWWDIR%%/server
-@dir %%WWWDIR%%/data/rrd
-@dir %%WWWDIR%%/data/logs
-@dir %%WWWDIR%%/data/hostdata
-@dir %%WWWDIR%%/data/histlogs
-@dir %%WWWDIR%%/data/hist
-@dir %%WWWDIR%%/data/disabled
-@dir %%WWWDIR%%/data/data
+@owner %%XYMONUSER%%
 @dir %%WWWDIR%%/data/acks
-@dir %%WWWDIR%%/data
-@dir %%WWWDIR%%/cgi-secure
-@dir %%WWWDIR%%/cgi-bin
-@dir %%WWWDIR%%
+@dir %%WWWDIR%%/data/data
+@dir %%WWWDIR%%/data/disabled
+@dir %%WWWDIR%%/data/hist
+@dir %%WWWDIR%%/data/histlogs
+@dir %%WWWDIR%%/data/hostdata
+@dir %%WWWDIR%%/data/logs
+@dir %%WWWDIR%%/data/rrd
+@dir %%WWWDIR%%/server/download
+@owner
+@dir %%WWWDIR%%/server/etc/tasks.d
+@owner %%XYMONUSER%%
+@dir %%WWWDIR%%/server/tmp
+@dir %%WWWDIR%%/server/www
+@dir %%WWWDIR%%/server/www/html
+@dir %%WWWDIR%%/server/www/notes
+@dir %%WWWDIR%%/server/www/rep
+@dir %%WWWDIR%%/server/www/snap
+@dir %%WWWDIR%%/server/www/wml
+@owner

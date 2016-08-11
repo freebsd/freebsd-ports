@@ -3,6 +3,7 @@
 
 PORTNAME=	eio
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,8 +16,7 @@ COMMENT=	Provides interface to the libeio library
 LICENSE=	PHP301
 
 CONFIGURE_ARGS=	--enable-eio
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

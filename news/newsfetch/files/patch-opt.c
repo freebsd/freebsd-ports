@@ -1,6 +1,6 @@
---- opt.c.orig	Wed Nov 19 19:01:47 2003
-+++ opt.c	Wed Nov 19 19:01:47 2003
-@@ -192,8 +192,8 @@
+--- opt.c.orig	2016-06-20 15:59:53 UTC
++++ opt.c
+@@ -192,8 +192,8 @@ opt_help(char *prog_name)
  {
  
  char *options=

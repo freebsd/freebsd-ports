@@ -1,4 +1,4 @@
-Sqlbox is a special Kannel box that sits between bearerbox and 
+Sqlbox is a special Kannel box that sits between bearerbox and
 smsbox and uses a database queue to store and forward messages.
 
 Sqlbox behaves similar to other Kannel boxes and share a compatible

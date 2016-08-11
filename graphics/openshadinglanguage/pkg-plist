@@ -24,6 +24,7 @@ lib/liboslcomp.so
 lib/liboslexec.so
 lib/liboslquery.so
 lib/libtestshade.so
+lib/osl.imageio.so
 %%DATADIR%%/CHANGES
 %%DATADIR%%/INSTALL
 %%DATADIR%%/LICENSE

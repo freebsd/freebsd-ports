@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jetty
-PORTVERSION=	9.3.8
+PORTVERSION=	9.3.9
 CATEGORIES=	www java
 MASTER_SITES=	ECLIPSE/jetty/${PORTVERSION}.${JDVDATE}/dist
 PKGNAMESUFFIX=	9
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	jetty-8.*
 
-JDVDATE=	v20160314
+JDVDATE=	v20160517
 USE_JAVA=	yes
 NO_ARCH=	yes
 USES=		shebangfix
@@ -64,7 +64,6 @@ do-install:
 		${MKDIR} ${STAGEDIR}${WWWDIR}/demo-base/logs
 		${INSTALL_SCRIPT} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
 		${MKDIR} ${STAGEDIR}${ETCDIR}
 		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.sample ${STAGEDIR}${ETCDIR}/
 

@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.6
+PORTVERSION=	1.6.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -53,12 +54,13 @@ do-build:
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
 		GOROOT_BOOTSTRAP=${LOCALBASE}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
+		GO386=387 \
 		${SH} make.bash
 
 do-install:
 	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
 .for f in go gofmt
-	@${LN} -sf ${PREFIX}/go/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
+	@${LN} -sf ../go/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 regression-test: build

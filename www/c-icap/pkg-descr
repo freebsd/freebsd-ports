@@ -5,7 +5,7 @@ proxies that support the ICAP protocol to implement content adaptation and
 filtering services.
 
 Most of the commercial HTTP proxies must support the ICAP protocol. The open
-source Squid 3.x proxy server supports it. 
+source Squid 3.x proxy server supports it.
 
 Major features:
 

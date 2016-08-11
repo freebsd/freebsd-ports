@@ -1,9 +1,7 @@
-diff --git Makefile.include.in Makefile.include.in
-index 6ee228a..daeb046 100644
---- Makefile.include.in
+--- Makefile.include.in.orig	2016-02-20 15:21:19 UTC
 +++ Makefile.include.in
-@@ -43,7 +43,8 @@ INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.gui
- INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.addon
+@@ -47,7 +47,8 @@ INCLUDES+=-I@abs_top_srcdir@/addons/libr
+ INCLUDES+=-I@abs_top_srcdir@/addons/library.kodi.audioengine
  INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.pvr
  INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.codec
 -INCLUDES+=$(sort @INCLUDES@)
@@ -12,30 +10,30 @@ index 6ee228a..daeb046 100644
  INCLUDES+=-I@abs_top_srcdir@/xbmc/linux
  INCLUDES+=-I@abs_top_srcdir@/xbmc/cores/dvdplayer
  DEFINES+= \
-@@ -91,22 +92,22 @@ GEN_DEPS=\
+@@ -95,22 +96,22 @@ GEN_DEPS=\
  
  %.o: %.cpp
  	@rm -f $@
--	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CXXFLAGS) $(DEFINES) $(INCLUDES) $< -o $@ \
-+	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CXXFLAGS) $< -o $@ \
+-	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CXXFLAGS) $(DEFINES) $(INCLUDES) $(CPPFLAGS) $< -o $@ \
++	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CXXFLAGS) $(CPPFLAGS) $< -o $@ \
  	&& $(GEN_DEPS)
  
  %.o: %.cc
  	@rm -f $@
--	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CXXFLAGS) $(DEFINES) $(INCLUDES) $< -o $@ \
-+	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CXXFLAGS) $< -o $@ \
+-	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CXXFLAGS) $(DEFINES) $(INCLUDES) $(CPPFLAGS) $< -o $@ \
++	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CXXFLAGS) $(CPPFLAGS) $< -o $@ \
  	&& $(GEN_DEPS)
  
  %.o: %.c
  	@rm -f $@
--	$(SILENT_CC) $(CC) -MF $*.d -MD -c $(CFLAGS) $(DEFINES) $(INCLUDES) $< -o $@ \
-+	$(SILENT_CC) $(CC) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CFLAGS) $< -o $@ \
+-	$(SILENT_CC) $(CC) -MF $*.d -MD -c $(CFLAGS) $(DEFINES) $(INCLUDES) $(CPPFLAGS) $< -o $@ \
++	$(SILENT_CC) $(CC) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $< -o $@ \
  	&& $(GEN_DEPS)
  
  %.o: %.C
  	@rm -f $@
--	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CFLAGS) $(DEFINES) $(INCLUDES) $< -o $@ \
-+	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CFLAGS) $< -o $@ \
+-	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CFLAGS) $(DEFINES) $(INCLUDES) $(CPPFLAGS) $< -o $@ \
++	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(DEFINES) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $< -o $@ \
  	&& $(GEN_DEPS)
  
  %.o: %.S

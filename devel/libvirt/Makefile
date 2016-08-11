@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.3.3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -29,6 +29,7 @@ OPTIONS_DEFINE_amd64+=	BHYVE
 OPTIONS_DEFAULT_amd64+=	BHYVE
 .else
 PLIST_SUB+=		BHYVE="@comment "
+SUB_LIST+=		BHYVE="@comment "
 CONFIGURE_ARGS+=	--without-bhyve
 .endif
 QEMU_DESC=	QEMU driver
@@ -74,8 +75,6 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-udev \
 		--without-netcf \
 		--without-sysctl \
-		--without-lxc \
-		--without-uml \
 		--without-xen \
 		--without-login-shell \
 		--with-ssh2 \
@@ -89,17 +88,18 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix cpe gmake libtool pathfix perl5 pkgconfig
+USES=		charsetfix cpe gmake libtool pathfix perl5 pkgconfig tar:xz
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHLIB_VER=	0.1003.${PORTVERSION:E}
+SHLIB_VER=	0.2000.${PORTVERSION:E}
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
 SUB_FILES=	pkg-message
+SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 
 .include <bsd.port.options.mk>
 
@@ -116,11 +116,8 @@ CONF_FILES=	\
 		virtlockd.conf \
 		virtlogd.conf
 
-post-extract:
-	@${CP} ${FILESDIR}/libvirt_nss_bsd.syms ${WRKSRC}/tools/nss
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \
+	@${REINPLACE_CMD} -e 's|$$(LN_S) ../default.xml default.xml|true|' \
 			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
 			  ${WRKSRC}/src/Makefile.in
 

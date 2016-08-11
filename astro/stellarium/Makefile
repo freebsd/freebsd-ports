@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.14.3
+PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat}
+EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
@@ -17,20 +18,35 @@ CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
 
 USES=		cmake gettext
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
-		concurrent core gui network opengl serialport widgets
+		concurrent core gui network opengl printsupport widgets
 
-PORTDOCS=	AUTHORS ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README stellarium_user_guide-0.15.0-1.pdf
 
-OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA SCRIPTING TEXTURES
-OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TEXTURES
+OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA SCRIPTING TEXTURES \
+			TELESCOPE
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TELESCOPE
+
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support
 SCRIPTING_DESC=		Scripting support
+TELESCOPE_DESC=		Telescope control plugin
+
+DOCS_MASTER_SITES=	SF/${PORTNAME}/Stellarium-user-guide/0.15.0-1:ug
+DOCS_DISTFILES=		stellarium_user_guide-0.15.0-1.pdf:ug
+
+TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
+TEXTURES_DISTFILES=	textures-1K.zip:gfx
+
+MULTIMEDIA_USE=		QT5=multimedia
+MULTIMEDIA_CMAKE_OFF=	-DENABLE_MEDIA:BOOL=OFF
+
+TELESCOPE_USE=		QT5=serialport
+TELESCOPE_CMAKE_OFF=	-DUSE_PLUGIN_TELESCOPECONTROL:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMORE_STARS} || ${.TARGETS:Mmakesum}
+.if ${PORT_OPTIONS:MMORE_STARS}
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
@@ -42,17 +58,6 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTEXTURES} || ${.TARGETS:Mmakesum}
-MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/textures:gfx
-DISTFILES+=	textures-1K.zip:gfx
-.endif
-
-.if ${PORT_OPTIONS:MMULTIMEDIA}
-USE_QT5+=	multimedia
-.else
-CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
-.endif
-
 .if ${PORT_OPTIONS:MSCRIPTING}
 USE_QT5+=	script
 PLIST_SUB+=	SCRIPTS=""
@@ -60,6 +65,9 @@ PLIST_SUB+=	SCRIPTS=""
 CMAKE_ARGS+=	-DENABLE_SCRIPTING:BOOL=OFF
 PLIST_SUB+=	SCRIPTS="@comment "
 .endif
+
+post-extract-DOCS-on:
+	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-0.15.0-1.pdf ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt

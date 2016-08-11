@@ -1,4 +1,4 @@
---- src/import/ImportFLAC.cpp.orig	2016-01-08 22:05:48 UTC
+--- src/import/ImportFLAC.cpp.orig	2016-07-26 13:34:06 UTC
 +++ src/import/ImportFLAC.cpp
 @@ -296,7 +296,7 @@ ImportFileHandle *FLACImportPlugin::Open
     int cnt;

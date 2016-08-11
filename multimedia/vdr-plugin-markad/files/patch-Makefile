@@ -1,5 +1,5 @@
---- a/Makefile
-+++ b/Makefile
+--- Makefile.orig	2012-09-11 07:55:41 UTC
++++ Makefile
 @@ -13,10 +13,10 @@ ARCHIVE = markad-$(VERSION)
  PACKAGE = vdr-$(ARCHIVE)
  

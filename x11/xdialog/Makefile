@@ -5,10 +5,11 @@ PORTNAME=	xdialog
 PORTVERSION=	2.3.1
 PORTREVISION=	6
 CATEGORIES=	x11
-MASTER_SITES=	http://xdialog.free.fr/
+MASTER_SITES=	http://xdialog.free.fr/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
 
 LICENSE=	GPLv2

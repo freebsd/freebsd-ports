@@ -1,5 +1,5 @@
 An application that you can use to view the video stream of your webcam, alter
 various settings of your webcam, take jpeg snapshots or output raw YUV420P data
-to stdout when motion is detected. 
+to stdout when motion is detected.
 
 WWW: http://raaf.atspace.org/

@@ -16,7 +16,7 @@ ELISP=		action-lock.el bcomp.el cheat-font-lock.el \
 		howm-version.el howm-view.el howm.el riffle.el
 
 OPTIONS_DEFINE=	COMPILED_ELISP DOCS EXAMPLES
-OPTIONS_DEFAULT=COMPILED_ELISP DOCS EXAMPLES
+OPTIONS_DEFAULT=COMPILED_ELISP
 COMPILED_ELISP_DESC=	Install pre-compiled ELISP files
 OPTIONS_SUB=	yes
 

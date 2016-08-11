@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-celluloid>=0.17.3:devel/rubygem-celluloid \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

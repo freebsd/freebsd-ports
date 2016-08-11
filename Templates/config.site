@@ -731,6 +731,9 @@
 : ${ac_cv_have_decl_wmemset=yes}
 : ${ac_cv_have_decl_writev=yes}
 
+# long file name support test invasively touches localbase, always true
+: ${ac_cv_sys_long_file_names=yes}
+
 # function specific
 
 : ${gl_cv_func_btowc_eof=yes}

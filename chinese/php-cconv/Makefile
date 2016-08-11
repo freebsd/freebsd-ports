@@ -3,6 +3,7 @@
 
 PORTNAME=	cconv
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	php-
 CATEGORIES=	chinese converters
 MASTER_SITES=	GOOGLE_CODE
@@ -16,8 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 post-patch:

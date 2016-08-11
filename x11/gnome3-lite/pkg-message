@@ -3,7 +3,7 @@
 The GNOME 3 desktop Lite edition has been successfully installed.
 
 The Lite edition only includes the minimal components to get a working GNOME 3
-Desktop. The user then has to install prefered applications like editor, 
+Desktop. The user then has to install prefered applications like editor,
 web browser or e-mail client. If you wish to install the full desktop, you can
 remove this port, and install the x11/gnome3 port or package.  That can be best
 accomplished using the following commands:

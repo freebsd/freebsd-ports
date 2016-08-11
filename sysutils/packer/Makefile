@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packer
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -23,7 +23,7 @@ post-extract:
 	builder checkpoint.go command commands.go common communicator config.go \
 	contrib examples fix helper log.go main.go main_test.go packer panic.go \
 	plugin post-processor provisioner scripts signal.go stdin.go template \
-	test version.go website
+	test version website
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
 .endfor

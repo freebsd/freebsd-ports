@@ -5,6 +5,5 @@
 %%SITE_ARCH%%/DBD/mysql/INSTALL.pod
 %%SITE_ARCH%%/auto/DBD/mysql/mysql.so
 %%PERL5_MAN3%%/Bundle::DBD::mysql.3.gz
-%%PERL5_MAN3%%/DBD::README.3.gz
 %%PERL5_MAN3%%/DBD::mysql.3.gz
 %%PERL5_MAN3%%/DBD::mysql::INSTALL.3.gz

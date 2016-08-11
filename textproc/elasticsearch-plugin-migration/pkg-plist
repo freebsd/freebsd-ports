@@ -1,4 +1,3 @@
-lib/elasticsearch/plugins/migration/_site/README.asciidoc
 lib/elasticsearch/plugins/migration/_site/css/font-awesome.css
 lib/elasticsearch/plugins/migration/_site/fonts/FontAwesome.otf
 lib/elasticsearch/plugins/migration/_site/fonts/fontawesome-webfont.eot
@@ -28,8 +27,6 @@ lib/elasticsearch/plugins/migration/_site/js/logger.js
 lib/elasticsearch/plugins/migration/_site/js/main.js
 lib/elasticsearch/plugins/migration/_site/js/registry.js
 lib/elasticsearch/plugins/migration/_site/js/test.js
-lib/elasticsearch/plugins/migration/_site/setup.sh
 lib/elasticsearch/plugins/migration/_site/styles.css
 lib/elasticsearch/plugins/migration/_site/test.html
-lib/elasticsearch/plugins/migration/_site/test_data.tar.gz
 lib/elasticsearch/plugins/migration/_site/test_index_segments.html

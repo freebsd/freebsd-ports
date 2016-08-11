@@ -47,6 +47,7 @@ include/asis/a4g-get_unit.adb
 include/asis/a4g-get_unit.ads
 include/asis/a4g-gnat_int.adb
 include/asis/a4g-gnat_int.ads
+include/asis/a4g-gnsa_switch.ads
 include/asis/a4g-int_knds.ads
 include/asis/a4g-itests.adb
 include/asis/a4g-itests.ads
@@ -159,6 +160,7 @@ lib/asis/a4g-encl_el.ali
 lib/asis/a4g-expr_sem.ali
 lib/asis/a4g-get_unit.ali
 lib/asis/a4g-gnat_int.ali
+lib/asis/a4g-gnsa_switch.ali
 lib/asis/a4g-int_knds.ali
 lib/asis/a4g-itests.ali
 lib/asis/a4g-knd_conv.ali
@@ -208,4 +210,3 @@ lib/asis/asis-text.ali
 lib/asis/asis.ali
 lib/asis/libasis.a
 lib/gnat/asis.gpr
-share/gps/plug-ins/asis.xml

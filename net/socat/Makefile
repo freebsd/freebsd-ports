@@ -13,10 +13,12 @@ COMMENT=	Multipurpose relay and more
 
 LICENSE=	GPLv2
 
-USES=		compiler tar:bzip2 cpe
+USES=		compiler cpe tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	socat
 USE_OPENSSL=	yes
+
+CPE_VENDOR=	dest-unreach
 
 PORTSCOUT=	skipv:2.0.0-b2
 
@@ -27,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT)
+.if ${SSL_DEFAULT} != base
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

@@ -1,6 +1,6 @@
---- MPI/src/makeGlobalLib.orig	Sat Nov 21 23:52:01 1998
-+++ MPI/src/makeGlobalLib	Fri Oct  1 00:17:01 2004
-@@ -29,7 +29,7 @@
+--- MPI/src/makeGlobalLib.orig	1998-11-21 22:52:01 UTC
++++ MPI/src/makeGlobalLib
+@@ -29,7 +29,7 @@ SRC = aggListMPI.c \
        utilities.c
  
  OBJ_FILES = ${SRC:.c=.o}

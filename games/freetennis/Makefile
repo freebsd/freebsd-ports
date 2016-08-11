@@ -3,7 +3,7 @@
 
 PORTNAME=	freetennis
 PORTVERSION=	0.4.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -14,12 +14,18 @@ BUILD_DEPENDS=	ocamlopt:lang/ocaml \
 		ocaml-images>3.0:graphics/ocaml-images \
 		${OCAML_DEPENDS}
 RUN_DEPENDS=	${OCAML_DEPENDS}
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:x11-toolkits/ocaml-lablgtk2 \
 		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:graphics/ocaml-lablgl \
 		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:devel/ocaml-sdl
 
-USES=		tar:bzip2
+USES=		gettext tar:bzip2
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GL=		gl glu
+USE_SDL=	ttf mixer sdl
+USE_XORG=	x11 xext xmu
 
 PLIST_FILES=	bin/freetennis
 PORTDATA=	*

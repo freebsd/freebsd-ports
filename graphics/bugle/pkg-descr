@@ -1,4 +1,4 @@
-BuGLe is a tool for OpenGL debugging, implemented as a wrapper 
+BuGLe is a tool for OpenGL debugging, implemented as a wrapper
 library that sits between your program and OpenGL.
 
 WWW: http://bugle.sourceforge.net

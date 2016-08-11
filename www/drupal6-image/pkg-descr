@@ -1,6 +1,0 @@
-This module allows users with proper permissions to upload images into Drupal
-Thumbnails and additional sizes are created automatically. Images could be
-posted individually to the front page, included in stories or grouped in
-galleries.
-
-WWW: http://drupal.org/project/image

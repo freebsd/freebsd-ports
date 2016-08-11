@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2014-08-20 03:55:27 UTC
++++ Makefile.am
+@@ -44,12 +44,10 @@ uninstall-local:
+ # on upgrade?:
+ install-data-hook:
+ # Global configuration (e.g. /etc/tuxtype):
+-	$(MKDIR_P) -m 755 $(DESTDIR)$(pkgsysconfdir)
++	$(MKDIR_P) $(DESTDIR)$(pkgsysconfdir)
+ # Global sites for game state data (e.g. /var/games/tuxtype):
+-	$(MKDIR_P) -m 2755 $(DESTDIR)$(pkglocalstatedir)
+-	$(MKDIR_P) -m 2755 $(DESTDIR)$(pkglocalstatedir)/words
++	$(MKDIR_P) $(DESTDIR)$(pkglocalstatedir)/words
+ #	chown root:games $(DESTDIR)$(pkglocalstatedir)
+-	chown root:games $(DESTDIR)$(pkglocalstatedir)/words
+ 
+ 
+ uninstall-hook:

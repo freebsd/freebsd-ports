@@ -1,6 +1,6 @@
---- configure.orig	2003-02-02 05:27:15.000000000 +0100
-+++ configure	2014-09-25 17:43:37.000000000 +0200
-@@ -4027,10 +4027,9 @@
+--- configure.orig	2003-02-02 04:27:15 UTC
++++ configure
+@@ -4027,10 +4027,9 @@ else
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -12,7 +12,7 @@
  ; return 0; }
  EOF
  if { (eval echo configure:4037: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -4416,7 +4415,6 @@
+@@ -4416,7 +4415,6 @@ else
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -20,7 +20,7 @@
  extern
  #ifdef __cplusplus
  "C"
-@@ -4424,7 +4422,7 @@
+@@ -4424,7 +4422,7 @@ extern
  const char *_nl_expand_alias ();
  int main() {
  bindtextdomain ("", "");

@@ -1,5 +1,5 @@
---- src/dbsc.c--	Mon Jun  8 00:23:35 1998
-+++ src/dbsc.c	Sat Aug  1 19:29:49 1998
+--- src/dbsc.c.orig	1998-06-08 00:23:35 UTC
++++ src/dbsc.c
 @@ -51,6 +51,10 @@
  
  #define DBSC

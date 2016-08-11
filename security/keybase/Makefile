@@ -37,9 +37,7 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME})
 	${CHMOD} +x ${STAGEDIR}${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME}/bin/main.js
 	${LN} -s ${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME}/bin/main.js ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-# Quiet stage-qa
-post-install:
+	# Quiet stage-qa
 	@${RM} ${STAGEDIR}${KEYBASE_PREFIX}/lib/node_modules/keybase/node_modules/request/node_modules/node-uuid/benchmark/bench.sh
 
 .include <bsd.port.mk>

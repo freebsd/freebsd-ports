@@ -14,6 +14,8 @@ LICENSE_NAME=	Creative Commons Attribution 3.0 Unported Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 CPE_PRODUCT=	pligg_cms
 CPE_VENDOR=	pligg

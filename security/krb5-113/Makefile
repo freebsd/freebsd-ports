@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.13.4
+PORTVERSION=		1.13.6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -25,7 +25,7 @@ USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 USES=			cpe gettext gmake perl5 libtool:build \
-			gssapi:bootstrap,mit pkgconfig:both
+			gssapi:bootstrap,mit pkgconfig:both ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
@@ -50,7 +50,6 @@ PREFIX=			${KRB5_HOME}
 CPPFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
-USE_OPENSSL=		yes
 USE_RC_SUBR=		kpropd
 
 .include <bsd.port.options.mk>

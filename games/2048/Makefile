@@ -18,7 +18,6 @@ GH_PROJECT=	2048-cli
 
 USES=		ncurses gmake
 ALL_TARGET=	curses
-MAKE_ARGS=	LIBS="-lncurses"
 PLIST_FILES=	bin/2048 man/man1/2048.1.gz
 PORTDOCS=	README.md
 

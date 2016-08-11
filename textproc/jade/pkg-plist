@@ -178,9 +178,7 @@ lib/libstyle.so.1.0.3
 %%DOCSDIR%%/xml.htm
 share/sgml/jade/FOT.tex
 share/sgml/jade/Makefile.jadetex
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove jade/catalog
-share/sgml/jade/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG jade/catalog
+@xmlcatmgr share/sgml/jade/catalog
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
 share/sgml/jade/demoMaster.tex

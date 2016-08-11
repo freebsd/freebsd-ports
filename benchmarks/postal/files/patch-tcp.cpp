@@ -1,6 +1,6 @@
---- tcp.cpp.orig	2012-01-01 06:24:45.000000000 -0500
-+++ tcp.cpp	2015-03-23 17:06:52.611229000 -0400
-@@ -178,10 +178,10 @@
+--- tcp.cpp.orig	2012-01-01 11:24:45 UTC
++++ tcp.cpp
+@@ -178,10 +178,10 @@ int tcp::ConnectTLS()
  #ifdef USE_OPENSSL
    m_sslCtx = NULL;
    m_ssl = NULL;

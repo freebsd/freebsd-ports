@@ -37,7 +37,7 @@ ODBC_CONFIGURE_OFF=	--omit=Data/ODBC
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_OFF=	--omit=Data/MySQL
 
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--omit=Data/SQLite
 
 .include <bsd.port.options.mk>

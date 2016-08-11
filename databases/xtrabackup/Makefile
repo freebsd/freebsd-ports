@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
@@ -12,6 +12,8 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	Does not build
 
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:shells/bash \

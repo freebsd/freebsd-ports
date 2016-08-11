@@ -1,5 +1,5 @@
 mod_gzip is an Internet Content Acceleration module for the popular
-Apache Web Server. 
+Apache Web Server.
 
 mod_gzip uses the well established and publicly available IETF
 Content-Encoding standards in conjunction with publicy available GZIP

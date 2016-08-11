@@ -1,0 +1,10 @@
+ReadonlyX combines the best features of p5-Readonly and p5-Readonly-XS,
+and is a drop-in replacement. It creates read-only scalars, arrays, and
+hashes. It was created by maintainer of Readonly itself.
+
+The author says: "ReadonlyX is the best of recent versions of Readonly
+without the old API and without the speed penalty of tie(...). It's what
+I'd like to do with Readonly if resolving bugs in it wouldn't break 16
+years of code out there in Darkpan."
+
+WWW: https://metacpan.org/pod/ReadonlyX

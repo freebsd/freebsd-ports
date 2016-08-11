@@ -14,11 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk12
-USES=		autoreconf gmake tk:wrapper
-GNU_CONFIGURE=	yes
+USES=		autoreconf gmake tk:wrapper,tea
 CXXFLAGS:=	${CXXFLAGS:N-std=*:N:}
-CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tcllib=${TCL_LIBDIR}
 EXTRACT_AFTER_ARGS=--exclude cvsunix --exclude 'getline.[ch]' --exclude 'getopt*.[ch]'
 
 post-patch:

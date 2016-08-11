@@ -21,12 +21,18 @@ load_rc_config "${name}"
 : ${namenode_user:=%%HDFS_USER%%}
 
 command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 command_args='--config %%ETCDIR%% start namenode'
 
 stop_cmd=namenode_stop
+status_precmd=find_pid
 
 namenode_stop () {
   su -m ${namenode_user} -c "${command} --config %%ETCDIR%% stop namenode"
+}
+
+find_pid () {
+  rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
 }
 
 run_rc_command "$1"

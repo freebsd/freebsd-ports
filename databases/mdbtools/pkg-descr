@@ -1,14 +1,14 @@
-What is MDB Tools? 
+What is MDB Tools?
 
 MDB Tools is a planned set of libraries and utilities to facilitate exporting
 data from MS Access databases (mdb files) into a multiuser database such as
 Oracle, Sybase, DB2, Informix, MySQL, Postgresql, or similar. A nice little
 Gtk MDB file browser will probably be written as well.
 
-Ok, how much is done? 
+Ok, how much is done?
 
 You can list catalog entries. There is some preliminary schema exporting
-utility. And you can export data out to CSV (comma separated value) format. 
+utility. And you can export data out to CSV (comma separated value) format.
 
 WWW: http://mdbtools.sourceforge.net/
 WWW: https://github.com/brianb/mdbtools/

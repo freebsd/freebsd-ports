@@ -1,6 +1,6 @@
---- rtbuf.c	Sat Aug 23 07:16:40 1997
-+++ rtbuf.c	Wed Apr 13 00:21:47 2005
-@@ -337,15 +337,15 @@
+--- rtbuf.c.orig	1997-08-23 10:16:40 UTC
++++ rtbuf.c
+@@ -337,15 +337,15 @@ int apar;
  			(mpegheader->mode != 3) ? "stereo" : "mono");
  		return -1;
  	}

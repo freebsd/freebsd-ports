@@ -1,5 +1,5 @@
---- ./lib/voodoo/manager.c.orig	2010-11-02 00:11:20.000000000 +0100
-+++ ./lib/voodoo/manager.c	2010-12-03 16:44:12.000000000 +0100
+--- lib/voodoo/manager.c.orig	2012-05-23 13:43:12 UTC
++++ lib/voodoo/manager.c
 @@ -41,6 +41,7 @@
  #include <sys/socket.h>
  #include <sys/time.h>
@@ -8,7 +8,7 @@
  #include <netinet/in.h>
  #if !VOODOO_BUILD_NO_SETSOCKOPT
  #include <netinet/ip.h>
-@@ -193,10 +194,10 @@
+@@ -193,10 +194,10 @@ voodoo_manager_create( int             f
       D_DEBUG( "Voodoo/Manager: Creating manager at %p.\n", manager );
  
  #if !VOODOO_BUILD_NO_SETSOCKOPT

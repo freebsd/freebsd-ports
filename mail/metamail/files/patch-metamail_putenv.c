@@ -1,6 +1,6 @@
---- metamail/putenv.c.orig	Tue Oct 12 17:17:43 1993
-+++ metamail/putenv.c	Sat Jul 14 17:35:44 2007
-@@ -17,6 +17,8 @@
+--- metamail/putenv.c.orig	1993-10-12 16:17:43 UTC
++++ metamail/putenv.c
+@@ -17,6 +17,8 @@ not, write to the Free Software Foundati
  Cambridge, MA 02139, USA.  */
  
  #include <config.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <errno.h>
  #ifdef STDC_HEADERS
-@@ -48,7 +50,11 @@
+@@ -48,7 +50,11 @@ extern char **environ;
  /* Put STRING, which is of the form "NAME=VALUE", in the environment.  */
  int
  putenv (string)

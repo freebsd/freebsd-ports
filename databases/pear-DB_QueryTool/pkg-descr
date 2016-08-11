@@ -1,10 +1,10 @@
-PEAR::DB_QueryTool is an OO-abstraction to the SQL-Query language, it provides 
-methods such as setWhere, setOrder, setGroup, setJoin, etc. to easily build 
+PEAR::DB_QueryTool is an OO-abstraction to the SQL-Query language, it provides
+methods such as setWhere, setOrder, setGroup, setJoin, etc. to easily build
 queries.
 
-It also provides an easy to learn interface that interacts nicely with 
-HTML-forms using arrays that contain the column data, that shall be 
-updated/added in a DB. This package bases on an SQL-Builder which lets you 
+It also provides an easy to learn interface that interacts nicely with
+HTML-forms using arrays that contain the column data, that shall be
+updated/added in a DB. This package bases on an SQL-Builder which lets you
 easily build SQL-Statements and execute them.
 
 WWW: http://pear.php.net/package/DB_QueryTool/

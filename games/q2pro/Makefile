@@ -3,7 +3,7 @@
 
 PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/alepulver
 
@@ -23,18 +23,16 @@ MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S|${PREFIX}/||}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-OPTIONS_DEFINE=		GAME GL SOFT UI
+OPTIONS_DEFINE=		CLIENT DEDICATED GAME GL SOFT UI
 OPTIONS_DEFINE_i386=	ASM
-OPTIONS_MULTI=		FLAVOR
-OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED GL SOFT UI
-OPTIONS_DEFAULT_I386=	ASM
+OPTIONS_DEFAULT_i386=	ASM
 
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 GAME_DESC=	Build main game (default mod)
-GL_DESC=	Build OpenGL render
-SOFT_DESC=	Build software render
+GL_DESC=	Build OpenGL renderer
+SOFT_DESC=	Build software renderer
 UI_DESC=	Build user interface (for client menus)
 
 .include <bsd.port.options.mk>
@@ -90,9 +88,11 @@ MAKE_ENV+=	USE_X86_ASM=yes
 .endif
 
 post-patch:
-# Resolve name collision with jpeg-8
 	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
-		${WRKSRC}/ref_shared/r_images.c
+		-e '/png_set_gray_1_2_4_to_8/s|png_set|&_expand|' \
+			${WRKSRC}/ref_shared/r_images.c
+	@${REINPLACE_CMD} -E 's|[[:digit:]]+|${SVN_REV}|' \
+		${WRKSRC}/include/version.h
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2

@@ -1,6 +1,7 @@
 %%X11%%bin/VBoxClient
 %%X11%%bin/VBoxClient-all
 %%X11%%etc/xdg/autostart/vboxclient.desktop
+%%OPENGL%%lib/VBoxEGL.so
 %%OPENGL%%lib/VBoxOGL.so
 %%OPENGL%%lib/VBoxOGLarrayspu.so
 %%OPENGL%%lib/VBoxOGLcrutil.so
@@ -8,7 +9,7 @@
 %%OPENGL%%lib/VBoxOGLfeedbackspu.so
 %%OPENGL%%lib/VBoxOGLpackspu.so
 %%OPENGL%%lib/VBoxOGLpassthroughspu.so
-%%OPENGL%%lib/dri/vboxvideo_dri.so
+lib/pam_vbox.so
 %%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
 %%X11%%lib/xorg/modules/input/vboxmouse_drv.so
 sbin/VBoxControl
@@ -16,5 +17,3 @@ sbin/VBoxService
 %%X11%%share/autostart/vboxclient.desktop
 /%%KMODDIR%%/vboxguest.ko
 %%DEBUG%%/%%KMODDIR%%/vboxguest.ko.symbols
-%%OPENGL%%/%%KMODDIR%%/vboxvideo.ko
-%%DEBUG%%%%OPENGL%%/%%KMODDIR%%/vboxvideo.ko.symbols

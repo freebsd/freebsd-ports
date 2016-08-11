@@ -12,14 +12,16 @@ DISTNAME=	${PORTNAME}plugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin that adds default CC value for tickets
 
-RUN_DEPENDS+=	trac>=0.11:www/trac
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/trunk
 REL=		10605
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	trader
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,8 +15,7 @@ COMMENT=	Trader extension based on TA-Lib
 
 LICENSE=	BSD2CLAUSE
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

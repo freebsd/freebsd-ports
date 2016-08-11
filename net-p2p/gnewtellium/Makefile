@@ -13,7 +13,8 @@ COMMENT=	Gnutella client
 PORTSCOUT=	skipv:0.05	# older than current one
 
 USE_GNOME=	gtk12
-USES=		gmake
+USES=		dos2unix gmake
+DOS2UNIX_GLOB=	*.c
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

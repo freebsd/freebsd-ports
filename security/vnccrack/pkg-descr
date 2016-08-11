@@ -1,7 +1,7 @@
-VNCcrack is a fast offline password cracker for VNC passwords. 
-By sniffing a VNC challenge-response sequence off the network 
-(typically when VNC is used without a decent cryptographic 
-wrapper like SSH or SSL), you can recover the password fairly 
+VNCcrack is a fast offline password cracker for VNC passwords.
+By sniffing a VNC challenge-response sequence off the network
+(typically when VNC is used without a decent cryptographic
+wrapper like SSH or SSL), you can recover the password fairly
 easily and quickly by letting VNCcrack pound on it.
 
 WWW: http://www.randombit.net/projects/vnccrack/

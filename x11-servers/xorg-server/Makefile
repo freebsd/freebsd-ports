@@ -64,7 +64,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 # The reason why I use this is cause openssl from base doesn't install a .pc file
 # and configure will fail trying to find it. Setting both of those variables to
 # a *non-empty* value by-passes the pkg-config check.

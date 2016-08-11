@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.0
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -12,8 +12,7 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		cpe execinfo libtool:keepla pkgconfig tar:bzip2
-USE_OPENSSL=	yes
+USES=		cpe execinfo libtool:keepla pkgconfig tar:bzip2 ssl
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ipsec
@@ -87,7 +86,7 @@ LOADTESTER_CONFIGURE_ON=--enable-load-tester
 LDAP_CONFIGURE_ON=	--enable-ldap
 LDAP_USE=		OPENLDAP=yes
 MYSQL_CONFIGURE_ON=	--enable-mysql
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 SMP_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=	--enable-smp
 SWANCTL_CONFIGURE_ON=	--enable-swanctl
@@ -98,7 +97,8 @@ TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 PKI_CONFIGURE_OFF=	--disable-pki
 SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
-UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound
+UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound \
+			libldns.so:dns/ldns
 UNITY_CONFIGURE_ON=	--enable-unity
 VICI_CONFIGURE_ON=	--enable-vici
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic

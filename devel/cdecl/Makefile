@@ -3,6 +3,7 @@
 
 PORTNAME=	cdecl
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/devel/lang/c
 
@@ -11,10 +12,10 @@ COMMENT=	Explains complicated C/C++ declarations in plain English
 
 CONFLICTS=	cutils-[0-9]*
 
-USES=		readline
+USES=		ncurses readline
 USE_CSTD=	c89
 ALL_TARGET=	${PORTNAME}
-MAKE_ENV+=	STAGEDIR=$(STAGEDIR)
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/cdecl bin/c++decl man/man1/cdecl.1.gz man/man1/c++decl.1.gz
 PORTDOCS=	testset testset++

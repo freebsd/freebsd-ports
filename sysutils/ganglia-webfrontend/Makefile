@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganglia
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-web/${PORTVERSION}
 PKGNAMESUFFIX=	-webfrontend

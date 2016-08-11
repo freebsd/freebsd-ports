@@ -51,7 +51,6 @@ do
         # If the Makefile exists, continue and empty the tempfile, set up variables
 	echo -n > $tempfile
         revision_str=`grep "^PORTREVISION?\?=" "$1/Makefile"`
-	revision_num=`echo "$revision_str" | awk -F "\t+" '{ print $2 }'`
 
         case $? in
         0)
@@ -65,7 +64,7 @@ do
                         ;;
                     (*)
                         # If the value of PORTREVISION is an integer, increase it by 1
-                        printc "INFO: $1 PORTREVISION= $revision_num found, bumping it by 1." "green"
+                        printc "INFO: $1 $revision_str found, bumping it by 1." "green"
                         rm -f $tempfile && awk -F "\t+" '/^PORTREVISION\??=/{ gsub ($2, $2+1) }; { print }' "$1/Makefile" > $tempfile \
                         && cat $tempfile > "$1/Makefile" \
                         || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
@@ -80,8 +79,19 @@ do
             # If the exit code is 1 then PORTREVISION wasn't found, so we need to add one with value of 1
             printc "INFO: $1 PORTREVISION not found, adding PORTREVISION= 1" "green"
             rm -f $tempfile && awk '/^(PORT|DIST)VERSION\??=\t/{ print; print "PORTREVISION=\t1"; next } { print }' "$1/Makefile" > $tempfile \
-            && cat $tempfile > "$1/Makefile" \
-            || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
+            && cat $tempfile > "$1/Makefile"
+            # If there is not PORTREVISION line, maybe it is a slave port, try
+            # to add it before a CATEGORIES, PKGNAMESUFFIX or PKGNAMEPREFIX line:
+            for line in CATEGORIES PKGNAMEPREFIX PKGNAMESUFFIX; do
+                    if ! grep -q "^PORTREVISION?\?=" $1/Makefile; then
+                            rm -f $tempfile && awk '/^'${line}'\??=\t/{ print "PORTREVISION=\t1"; print; next } { print }' "$1/Makefile" > $tempfile \
+                                    && cat $tempfile > "$1/Makefile"
+                    fi
+            done
+            # If it still is not there, bail out
+            if ! grep -q "^PORTREVISION?\?=" $1/Makefile; then
+                    printc "ERROR: $1 PORTREVISION not found and failed to add it!" "red"
+            fi
             ;;
         *)
             printc "ERROR: PORTREVISION grep for $1 exited with error!" "red"

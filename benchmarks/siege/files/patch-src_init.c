@@ -1,6 +1,6 @@
---- src/init.c.orig	2015-12-22 20:12:40 UTC
+--- src/init.c.orig	2016-05-20 11:41:06 UTC
 +++ src/init.c
-@@ -35,6 +35,9 @@
+@@ -39,6 +39,9 @@
  #include <unistd.h>
  #include <errno.h>
  #include <stdlib.h>
@@ -8,5 +8,5 @@
 +#include <signal.h>
 +#endif
  
- int
- init_config( void )
+ #define LINESZ 1024
+ 

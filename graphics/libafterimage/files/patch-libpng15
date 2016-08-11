@@ -1,6 +1,6 @@
---- export.c
+--- export.c.orig	2011-01-15 05:52:22 UTC
 +++ export.c
-@@ -496,7 +496,7 @@
+@@ -496,7 +496,7 @@ ASImage2png_int ( ASImage *im, void *dat
  	png_ptr = png_create_write_struct( PNG_LIBPNG_VER_STRING, NULL, NULL, NULL );
      if ( png_ptr != NULL )
      	if( (info_ptr = png_create_info_struct(png_ptr)) != NULL )
@@ -9,9 +9,9 @@
  			{
  				png_destroy_info_struct(png_ptr, (png_infopp) &info_ptr);
  				info_ptr = NULL ;
---- import.c
+--- import.c.orig	2011-01-15 05:52:22 UTC
 +++ import.c
-@@ -1251,7 +1251,7 @@
+@@ -1251,7 +1251,7 @@ png2ASImage_int( void *data, png_rw_ptr 
  			 * the normal method of doing things with libpng).  REQUIRED unless you
  			 * set up your own error handlers in the png_create_read_struct() earlier.
  			 */
@@ -20,7 +20,7 @@
  			{
  				ASFlagType rgb_flags = ASStorage_RLEDiffCompress|ASStorage_32Bit ;
  
-@@ -1468,7 +1468,7 @@
+@@ -1468,7 +1468,7 @@ typedef struct ASImPNGReadBuffer
  
  static void asim_png_read_data(png_structp png_ptr, png_bytep data, png_size_t length)
  {

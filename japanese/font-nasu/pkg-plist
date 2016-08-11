@@ -1,0 +1,8 @@
+etc/fonts/conf.avail/20-unhint-nasu.conf
+etc/fonts/conf.avail/62-fonts-nasu.conf
+etc/fonts/conf.d/20-unhint-nasu.conf
+etc/fonts/conf.d/62-fonts-nasu.conf
+%%FONTSDIR%%/Nasu-Bold-20141215.ttf
+%%FONTSDIR%%/Nasu-Regular-20141215.ttf
+%%FONTSDIR%%/NasuM-Bold-20141215.ttf
+%%FONTSDIR%%/NasuM-Regular-20141215.ttf

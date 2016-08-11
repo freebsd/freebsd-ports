@@ -2,7 +2,7 @@
 #
 # This Makefile is tested with FreeBSD 5.x
 #
-# Contributed by: 
+# Contributed by:
 #   Jason W. Bacon
 #   Medical College of Wisconsin
 #   bacon@smithers.neuro.mcw.edu
@@ -10,14 +10,14 @@
 # Before compiling afni, install the following packages:
 #
 #   open-motif
-# 
+#
 # To compile SUMA you will also need the following packages:
 #
 #   libiconv
 #   gettext
 #   gmake
 #
-#   Note:   SUMA has display problems on FreeBSD 4.8 and below that I 
+#   Note:   SUMA has display problems on FreeBSD 4.8 and below that I
 #           have not found time to resolve.  I believe they are related
 #           to the version of the GL libraries that ship with 4.x.
 #
@@ -25,7 +25,7 @@
 #           and under FreeBSD 5.1.
 #
 #   Note:   The SUMA build process (as of Aug, 2003) requires GNU make,
-#           which is ${LOCALBASE}/bin/gmake on BSD systems.  
+#           which is ${LOCALBASE}/bin/gmake on BSD systems.
 #           Be sure the MAKE macro below is set to gmake.
 #
 #   Note:   Compilation of netcdf-3.5.0 may fail due to m4's lack of
@@ -100,9 +100,9 @@ LLIBS  = -lmri -lf2c -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB) $(LGIF
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # For suma (NO STATIC LINKING OF GL libs)
-SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
+SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src
 SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
-#use -lGLw if you have libGLw.a or libGLw.so* or 
+#use -lGLw if you have libGLw.a or libGLw.so* or
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
 SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB) -lxml2 -lexpat
 SUMA_MAKEFILE_NAME = SUMA_Makefile

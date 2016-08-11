@@ -3,6 +3,7 @@
 
 PORTNAME=	uthash
 PORTVERSION=	1.9.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
@@ -18,7 +19,6 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	troydhanson
-GH_TAGNAME=	bac80b2
 
 PORTDOCS=	ChangeLog.txt todo.txt userguide.txt utarray.txt \
 		utlist.txt utstring.txt

@@ -29,14 +29,11 @@ LDFLAGS+=	-lm -lreadline -lncurses
 USES+=		tk
 CFLAGS+=	-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -ltk${TK_SHLIB_VER} -ltcl${TCL_SHLIB_VER} -lTix8.4.3
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_prelude.h
 .endif
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		INSTBIN=${PREFIX}/bin INSTLIB=${PREFIX}/lib/ohugs
-
-post-patch:
-.if empty(PORT_OPTIONS:MX11)
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-src::prelude.h
-.endif
 
 .include <bsd.port.mk>

@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - wirbelscan plugin
 
-USES=		tar:tgz
+USES=		dos2unix tar:tgz
+DOS2UNIX_FILES=	scanner.c
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY

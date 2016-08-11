@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.11.1
+PORTVERSION=	3.13.0
 CATEGORIES=	databases tcl
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 PKGNAMEPREFIX=	tcl-
@@ -19,14 +19,13 @@ OPTIONS_DEFAULT=	THREADS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tea
 
-USES=		pkgconfig tcl
+USES=		pkgconfig tcl:tea
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
 CFLAGS+=	-Os
 CFLAGS+=	`pkg-config --cflags sqlite3`
 LDFLAGS+=	`pkg-config --libs sqlite3`
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-system-sqlite
+CONFIGURE_ARGS=	--with-system-sqlite
 
 THREADS_CONFIGURE_ENABLE=	threads
 

@@ -2,4 +2,4 @@ This module can be used to parse the content of tables in HTML text. The
 parser returns an arrayref consisting of data for each table found within the
 passed-in text.
 
-WWW:	http://search.cpan.org/dist/HTML-TableContentParser/
+WWW: http://search.cpan.org/dist/HTML-TableContentParser/

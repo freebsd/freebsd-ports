@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 		LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
 
 LIB_DEPENDS=	librngstreams.so:math/rngstreams

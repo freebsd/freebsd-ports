@@ -1,15 +1,15 @@
 The cgi-lib.pl library makes CGI scripting in Perl easy enough for
 anyone to process forms and create dynamic Web content. The library has
-the following features: 
+the following features:
 
-* Extremely simple to learn and easy to use 
-* Designed for operation under Perl5 and Perl4 
-* Very efficient 
-* Compatibility with all CGI interactions, including File Upload 
-* Convenient utility functions 
+* Extremely simple to learn and easy to use
+* Designed for operation under Perl5 and Perl4
+* Very efficient
+* Compatibility with all CGI interactions, including File Upload
+* Convenient utility functions
 * Compatible with Perl5 security features such as taint, warnings,
-  (command line options -Tw) and use strict; 
-* Debugging facilities 
-* Good starting point for migration to more sophisticated libraries 
+  (command line options -Tw) and use strict;
+* Debugging facilities
+* Good starting point for migration to more sophisticated libraries
 
 WWW: http://cgi-lib.berkeley.edu/

@@ -1,6 +1,6 @@
 --- configure.orig	2015-09-28 11:16:10 UTC
 +++ configure
-@@ -7445,12 +7445,16 @@ case "$host" in
+@@ -7445,12 +7445,17 @@ case "$host" in
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;
@@ -20,6 +20,7 @@
 +  *-*-freebsd9.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="9";;
 +  *-*-freebsd10.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="10";;
 +  *-*-freebsd11.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="11";;
++  *-*-freebsd12.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="12";;
    *-*-kfreebsd*) plat_name="kFreeBSD";  plat_def="__FreeBSD_kernel__";  os_v="6";;
    *-*-netbsd*)   plat_name="NetBSD";   plat_def="__netbsd__";   os_v="1";;
    *-*-openbsd*)  plat_name="OpenBSD";  plat_def="__openbsd__";  os_v="3";;

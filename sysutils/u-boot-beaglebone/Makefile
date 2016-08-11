@@ -32,12 +32,12 @@ MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} am335x_boneblack_defconfig)
+	(cd ${WRKSRC}; ${MAKE_CMD} am335x_boneblack_defconfig)
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/MLO ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/u-boot.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/u-boot.img
-	${CP} ${.CURDIR}/pkg-descr ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${WRKSRC}/MLO ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${WRKSRC}/u-boot.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>

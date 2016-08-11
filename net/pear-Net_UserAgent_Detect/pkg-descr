@@ -2,7 +2,7 @@ The Net_UserAgent object does a number of tests on an HTTP user
 agent string. The results of these tests are available via methods of
 the object.
 
-This module is based upon the JavaScript browser detection code available 
+This module is based upon the JavaScript browser detection code available
 at http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html.
 This module had many influences from the lib/Browser.php code in
 version 1.3 of Horde.

@@ -1,6 +1,6 @@
 clBLAS
 
-a software library containing BLAS functions written in OpenCL 
+a software library containing BLAS functions written in OpenCL
 
 The primary goal of clBLAS is to make it easier for developers to utilize the
 inherent performance and power efficiency benefits of heterogeneous computing.

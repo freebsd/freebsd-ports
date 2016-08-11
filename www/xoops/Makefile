@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/XOOPS%20Core%20%28stable%20releases%29/XOOPS_${PORT
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Web CMS
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	mysql
 
 USES=		cpe

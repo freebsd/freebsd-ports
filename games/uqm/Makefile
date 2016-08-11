@@ -97,8 +97,6 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ${SETENV} STAGEDIR="${STAGEDIR}" ./build.sh uqm install)
-
-post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/uqm/uqm
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/users/manual.txt ${STAGEDIR}${DOCSDIR}

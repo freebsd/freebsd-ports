@@ -10,12 +10,12 @@ you may have to follow this steps to make it work correctly:
 # echo "GRANT ALL ON lilurl.* TO lilurluser@localhost IDENTIFIED BY 'lilurluser'; FLUSH PRIVILEGES;" | mysql
 
 3. Import the default lilurl database:
-# mysql lilurl < %%PREFIX%%/%%LILURL_DIR%%/lilurl.sql
+# mysql lilurl < %%WWWDIR%%/lilurl.sql
 
-4. Copy %%PREFIX%%/%%LILURL_DIR%%/includes/conf.php.sample to %%PREFIX%%/%%LILURL_DIR%%/includes/conf.php
-   Edit %%PREFIX%%/%%LILURL_DIR%%/includes/conf.php
+4. Copy %%WWWDIR%%/includes/conf.php.sample to %%WWWDIR%%/includes/conf.php
+   Edit %%WWWDIR%%/includes/conf.php
 
 5. Add alias in apache config for the lilurl dir:
-Alias /lilurl "%%PREFIX%%/%%LILURL_DIR%%/"
+Alias /lilurl "%%WWWDIR%%/"
 
 =======================================================================

@@ -37,7 +37,7 @@ do-install:
 	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/aimsniff
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}

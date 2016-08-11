@@ -4,7 +4,7 @@ PORTNAME=	geany-plugin-autoclose
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"

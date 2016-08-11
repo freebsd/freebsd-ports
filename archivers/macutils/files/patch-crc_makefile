@@ -1,12 +1,12 @@
---- crc/makefile.orig	Sun Oct 19 01:17:42 2003
-+++ crc/makefile	Sun Oct 19 01:18:15 2003
+--- crc/makefile.orig	1993-10-02 20:16:00 UTC
++++ crc/makefile
 @@ -1,4 +1,4 @@
 -CFLAGS =	-O $(CF)
 +CFLAGS +=	$(CF)
  CRCC =	arc.c ccitt.c kermit.c binhex.c ccitt32.c zip.c
  CRCO =	arc.o ccitt.o kermit.o binhex.o ccitt32.o zip.o
  
-@@ -16,7 +16,7 @@
+@@ -16,7 +16,7 @@ $(CRCC):	makecrc
  	./makecrc
  
  makecrc:	makecrc.o

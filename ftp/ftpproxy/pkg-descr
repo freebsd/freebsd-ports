@@ -1,10 +1,10 @@
 ftp.proxy is an application level gateway for FTP.
 It sits between a client and a server forwarding command and data streams
-supporting a subset of the file transfer protocol as described in RFC 959. 
+supporting a subset of the file transfer protocol as described in RFC 959.
 
 Beside this basic function which makes the program useful on firewall
 or masqueraders it offers fixing the FTP server (e.g. for connections
-into a protected LAN) and proxy authentication. 
+into a protected LAN) and proxy authentication.
 
 WWW: http://www.ftpproxy.org/
 

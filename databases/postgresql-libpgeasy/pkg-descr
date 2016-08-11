@@ -4,4 +4,4 @@ library, more like an SQL 4GL interface.
 There are examples in share/examples/postgresql/libpqeasy
 and docs in share/doc/postgresql/libpqeasy
 
-WWW: http://gborg.postgresql.org/project/libpgeasy/
+WWW: https://www.postgresql.org/docs/7.2/static/pgeasy.html

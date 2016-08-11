@@ -12,10 +12,11 @@ DIST_SUBDIR=	trac
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that provides a project Blog
 
-RUN_DEPENDS+=	trac-fullblog>=0.1.1:www/trac-fullblog
+RUN_DEPENDS=	trac-fullblog>=0.1.1:www/trac-fullblog
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .if defined(BOOTSTRAP)
 do-fetch:
@@ -27,5 +28,4 @@ do-fetch:
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

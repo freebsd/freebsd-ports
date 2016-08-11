@@ -1,4 +1,4 @@
---- sql/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- sql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ sql/CMakeLists.txt
 @@ -24,6 +24,8 @@ INCLUDE_DIRECTORIES(
    ${ZLIB_INCLUDE_DIR}

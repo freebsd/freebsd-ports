@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libshout-idjc
-PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/libshout-idjc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libspeex.so:audio/speex
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig autoreconf
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

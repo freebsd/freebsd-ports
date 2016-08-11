@@ -13,6 +13,7 @@ COMMENT=	DocBook XML JRefEntry DTD
 RUN_DEPENDS=	docbook-xml>0:textproc/docbook-xml
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 XMLDIR=		${PREFIX}/share/xml/docbook/${PORTNAME}
 
@@ -26,8 +27,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/jrefentry.dtd ${STAGEDIR}${XMLDIR}
 	${ECHO_CMD} 'PUBLIC "-//Norman Walsh//DTD JRefEntry V1.1//EN" "jrefentry.dtd"' \
 		>${STAGEDIR}${XMLDIR}/catalog
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/jtest.xml ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 

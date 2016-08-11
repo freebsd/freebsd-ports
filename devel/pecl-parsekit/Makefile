@@ -3,6 +3,7 @@
 
 PORTNAME=	parsekit
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,9 +15,7 @@ COMMENT=	Extension for opcodes runtime analysis
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	56 70
 
 CONFIGURE_ARGS=	--enable-parsekit

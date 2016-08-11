@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2005-07-27 08:38:17 UTC
++++ src/Makefile.in
+@@ -49,7 +49,6 @@ all: lib xprobe2
+ 
+ xprobe2: $(OBJS) modules
+ 	$(CXX) $(CFLAGS) $(OBJS) $(MODOBJS) -o $@ $(LDFLAGS) $(LIBS)
+-	strip $@    
+ 
+ modules:
+ 	cd xpmodules; ${MAKE}    

@@ -18,7 +18,7 @@ RUN_DEPENDS=	lilypond:print/lilypond \
 
 USES=		gettext python
 INSTALLS_ICONS=	yes
-USE_KDE4=	kdeprefix kdelibs pykde4_build pykde4_run
+USE_KDE4=	kdelibs pykde4_build pykde4_run
 USE_PYTHON=	distutils autoplist
 
 post-patch:

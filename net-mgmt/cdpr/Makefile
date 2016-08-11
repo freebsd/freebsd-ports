@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
 
+USES=	dos2unix
+DOS2UNIX_GLOB=	*.c *.h
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

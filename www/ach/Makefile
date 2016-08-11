@@ -13,7 +13,7 @@ COMMENT=	Free, open source tool for complex research problems
 LICENSE=	GPLv3
 
 USE_MYSQL=	yes
-USE_PHP=	yes
+USES=		php
 USE_GITHUB=	yes
 GH_ACCOUNT=	Burton
 GH_PROJECT=	Analysis-of-Competing-Hypotheses

@@ -1,14 +1,15 @@
-%%ETCDIR%%/logback.xml
-%%ETCDIR%%/bootstrap.cfg
-%%ETCDIR%%/request-logging.xml
-%%ETCDIR%%/conf.d/global.conf
-%%ETCDIR%%/conf.d/puppetserver.conf
-%%ETCDIR%%/conf.d/web-routes.conf
-%%ETCDIR%%/conf.d/webserver.conf
-%%ETCDIR%%/conf.d/auth.conf
+@sample %%ETCDIR%%/logback.xml.sample
+@sample %%ETCDIR%%/bootstrap.cfg.sample
+@sample %%ETCDIR%%/request-logging.xml.sample
+@sample %%ETCDIR%%/conf.d/auth.conf.sample
+@sample %%ETCDIR%%/conf.d/global.conf.sample
+@sample %%ETCDIR%%/conf.d/puppetserver.conf.sample
+@sample %%ETCDIR%%/conf.d/web-routes.conf.sample
+@sample %%ETCDIR%%/conf.d/webserver.conf.sample
+@dir(,puppet,750) etc/puppet/code
 %%DATADIR%%/puppetserver.jar
-@mode 0750
-@group puppet
-@dir etc/puppet/code
-@owner puppet
-@dir /var/log/puppetserver
+%%DATADIR%%/cli/apps/foreground
+%%DATADIR%%/cli/apps/gem
+%%DATADIR%%/cli/apps/irb
+%%DATADIR%%/cli/apps/ruby
+@dir(puppet,puppet,750) /var/log/puppetserver

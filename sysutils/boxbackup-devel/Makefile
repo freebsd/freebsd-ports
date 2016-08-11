@@ -130,7 +130,6 @@ do-install:
 	${WRKSRC}/${SERVERDIR}/raidfile-config.8.gz \
 	${STAGEDIR}${PREFIX}/man/man8/
 .endif
-post-install:
 .if ${PORT_OPTIONS:MCLIENT}
 	@${MKDIR} -m 0700 ${STAGEDIR}${PREFIX}/etc/box/bbackupd
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/monthly

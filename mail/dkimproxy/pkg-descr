@@ -1,5 +1,5 @@
 This is an implementation of DomainKeys Identified Mail (DKIM) draft standard
-for the Postfix mail transfer agent.  DKIM is a scheme to sign and verify 
+for the Postfix mail transfer agent.  DKIM is a scheme to sign and verify
 e-mail messages on a per-domain basis.
 
 Details regarding the protocol and other issues related to the draft standard

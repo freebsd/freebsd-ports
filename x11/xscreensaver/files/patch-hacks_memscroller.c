@@ -1,4 +1,4 @@
---- hacks/memscroller.c.orig	2014-09-13 20:34:45 UTC
+--- hacks/memscroller.c.orig	2016-05-22 01:57:03 UTC
 +++ hacks/memscroller.c
 @@ -306,13 +306,6 @@ open_file (state *st)
     from earlier days before the advent of virtual memory management."

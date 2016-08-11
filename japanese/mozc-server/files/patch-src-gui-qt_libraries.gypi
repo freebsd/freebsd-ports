@@ -1,10 +1,11 @@
---- src/gui/qt_libraries.gypi.orig	2013-07-17 11:38:03.000000000 +0900
-+++ src/gui/qt_libraries.gypi	2013-08-18 15:57:44.000000000 +0900
-@@ -105,6 +105,7 @@
-         }, {
+--- src/gui/qt_libraries.gypi.orig	2016-05-14 21:36:24.268182000 +0900
++++ src/gui/qt_libraries.gypi	2016-05-14 21:36:59.852298000 +0900
+@@ -84,7 +84,7 @@
+         '$(SDKROOT)/System/Library/Frameworks/Carbon.framework',
+       ]
+     }],
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       'conditions': [
+         ['qt_dir', {
            'libraries': [
-             '<!@(<(pkg_config_command) --libs QtGui QtCore)',
-+	    '-liconv -L<(localbase)/lib',
-           ],
-         }],
-       ],

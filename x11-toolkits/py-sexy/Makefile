@@ -9,7 +9,7 @@ CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libsexy bindings for Python
 
 LICENSE=	LGPL21

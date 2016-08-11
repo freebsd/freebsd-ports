@@ -19,10 +19,12 @@ sbin/gkrellmd
 %%CLIENT%%%%NLS%%share/locale/ja/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/nl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/pl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/pt/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/uk/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%@dir libexec/gkrellm2/plugins
 @dir libexec/gkrellm2/plugins-gkrellmd
 %%CLIENT%%@dir %%DATADIR%%2/themes

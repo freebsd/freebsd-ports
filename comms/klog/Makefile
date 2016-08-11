@@ -12,8 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake
-USE_QT5=	buildtools core gui linguisttools network printsupport sql \
-		sql-sqlite3_run widgets printsupport
+USE_QT5=	buildtools_build core gui linguisttools_build network \
+		printsupport sql sql-sqlite3_run widgets
 DESKTOP_ENTRIES=	"KLog" "Simple Amateur Radio Logging Program" \
 		"" "klog" "Network;HamRadio;" \
 		true
@@ -36,7 +36,8 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/klog ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/klog_*.qm ${STAGEDIR}${DATADIR}/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/klog_*.qm \
+		${STAGEDIR}${DATADIR}/translations
 	${INSTALL_MAN} ${WRKSRC}/klog.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -13,21 +13,17 @@ COMMENT=	Fast tool for local sequence similarity searches
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-OPTIONS_DEFINE=	DOCS
-
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
 
-USES=		gmake zip
+USES=		gmake mysql zip
 USE_OPENSSL=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	MACHTYPE="${ARCH}" STRIP="${TRUE}"
 MAKE_ARGS=	HOME="${WRKSRC}/${BINDIR}"
 
-USE_MYSQL=		yes
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
-
 CPPFLAGS+=	$$(libpng-config --cflags)
-LDFLAGS+=	$$(libpng-config --ldflags)
+LDFLAGS+=	$$(libpng-config --ldflags) \
+		-L${LOCALBASE}/lib/mysql
 
 SUB_FILES=	pkg-message
 
@@ -38,7 +34,7 @@ PLIST_FILES=	${EXECUTABLES:S,^,bin/,} \
 EXECUTABLES=	blat faToNib faToTwoBit gfClient gfServer nibFrag \
 		pslPretty pslReps pslSort twoBitInfo twoBitToFa
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/bin/${ARCH}

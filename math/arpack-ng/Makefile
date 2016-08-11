@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.scilab.org/index.php/p/arpack-ng/downloads/get/ \
 		LOCAL/bf
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT+=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD3CLAUSE

@@ -1,0 +1,14 @@
+# $FreeBSD$
+
+LIB_CXX=	JXGrabKey
+SHLIB_NAME=	lib${LIB_CXX}.so
+NO_PROFILE=	nope
+
+SRCS=		JXGrabKey.cpp
+VPATH=		src
+CXXFLAGS+=	-I${JAVA_HOME}/include	\
+		-I${JAVA_HOME}/include/${OPSYS:tl} \
+		-I${LOCALBASE}/include
+LDADD=		-L${LOCALBASE}/lib -lX11
+
+.include <bsd.lib.mk>

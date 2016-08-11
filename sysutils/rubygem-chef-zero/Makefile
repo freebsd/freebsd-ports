@@ -20,8 +20,7 @@ RUN_DEPENDS=	rubygem-hashie2>=2.0.0:devel/rubygem-hashie2 \
 NO_ARCH=	yes
 
 USE_RUBY=		yes
-USE_RUBYGEMS=		yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=		bin/chef-zero
 
 .include <bsd.port.mk>

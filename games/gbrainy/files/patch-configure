@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -13674,8 +13674,8 @@
+ for i in $needed_assemblies; do
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $i.dll" >&5
+ $as_echo_n "checking for $i.dll... " >&6; }
+-  if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0/$i.dll \); then
+-	if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/4.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/4.0/$i.dll \); then
++  if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0-api/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0-api/$i.dll \); then
++	if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/4.0-api/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/4.0-api/$i.dll \); then
+ 		as_fn_error $? "missing required mono 2.0/4.0 DLL: $i.dll" "$LINENO" 5
+ 	else
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found" >&5

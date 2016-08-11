@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uget
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.8
 CATEGORIES=	net
 MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -29,10 +29,11 @@ CFLAGS+=	-Wno-typedef-redefinition
 
 CONFIGURE_ARGS=--enable-appindicator=no \
 	--disable-pwmd \
+	--enable-unix-socket \
 	--with-gnutls=yes
 
 OPTIONS_DEFINE=	GSTREAMER NLS
-OPTIONS_DEFAULT=	GSTREAMER NLS
+OPTIONS_DEFAULT=	GSTREAMER
 GSTREAMER_USE=	gstreamer1=yes
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 NLS_USES=	gettext-runtime

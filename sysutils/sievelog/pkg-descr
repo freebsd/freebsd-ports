@@ -4,8 +4,8 @@ following problems:
     * Having a clean syntax
     * Directing a raw syslog stream to different files based on content
     * Mailing out alerts based on content
-    * Being fast 
+    * Being fast
 
-Sievelog's syntax is as simple as "<regex>" -> /some/file. 
+Sievelog's syntax is as simple as "<regex>" -> /some/file.
 
-WWW: http://sievelog.googlecode.com/ 
+WWW: http://sievelog.googlecode.com/

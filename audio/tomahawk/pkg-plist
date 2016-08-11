@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/tomahawk
+bin/tomahawk
 include/libtomahawk/ActionCollection.h
 include/libtomahawk/Album.h
 include/libtomahawk/AlbumPlaylistInterface.h

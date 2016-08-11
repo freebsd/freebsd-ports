@@ -2,7 +2,6 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		mdds>=0.9.0:devel/mdds \
+		${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
 		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
@@ -27,8 +26,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed
-LIB_DEPENDS=	libfbembed.so:databases/firebird25-client \
-		libapr-1.so:devel/apr1 \
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
@@ -96,7 +94,7 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		bison compiler:c++11-lib cpe gmake jpeg perl5 pkgconfig \
+USES=		bison compiler:c++11-lib cpe firebird gmake jpeg perl5 pkgconfig \
 		python shared-mime-info tar:xz
 WANT_GNOME=	yes
 
@@ -255,8 +253,6 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		GPERF=${LOCALBASE}/bin/gperf \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
-		OPENSSL_CFLAGS="-I/usr/include" \
-		OPENSSL_LIBS="-lcrypto -lssl" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 

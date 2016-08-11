@@ -50,7 +50,6 @@ post-patch-FIREFOX-on:
 do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/libexec/conkeror
 		${MKDIR} ${STAGEDIR}${DATADIR}
-		${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 		cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 		${SED} -e "s/BuildID=git/BuildID=$$(${BUILD_ID})/g" \
 			-e "s/^Version=\(.*\)$$/Version=\1 (FreeBSD-${OSREL})/g" \

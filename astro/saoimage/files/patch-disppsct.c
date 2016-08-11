@@ -1,6 +1,6 @@
---- disppsct.c.orig	Sun Jan 16 23:45:17 2000
-+++ disppsct.c	Sun Jan 16 23:53:18 2000
-@@ -598,7 +598,7 @@
+--- disppsct.c.orig	2003-09-03 18:23:08 UTC
++++ disppsct.c
+@@ -599,7 +599,7 @@ static char *make_label()
    char *getenv();
  #endif
  

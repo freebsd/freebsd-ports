@@ -1,0 +1,14 @@
+--- setup/FreeBSD/make.local.orig	2015-01-24 04:25:26 UTC
++++ setup/FreeBSD/make.local
+@@ -2,10 +2,9 @@ build: 	kernel/framework/include/buildid
+ 	sh build.sh
+ 
+ copy:	build
+-	cp -R prototype/* /
+ 
+ package:	build
+ 		sh setup/FreeBSD/mkpkg.sh
+ 
+ install:	copy
+-		cd ${OSSLIBDIR}/build && sh install.sh
++		cd prototype%%PREFIX%%/lib/oss/build && sh install.sh

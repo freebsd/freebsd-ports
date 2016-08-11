@@ -2,6 +2,6 @@ Net::eBay allows super easy access to eBay for any perl developer.
 Make an instance of Net::eBay and then call submitRequest to send
 requests to eBay.
 
-Supports both Legacy API as well as NEW API. 
+Supports both Legacy API as well as NEW API.
 
 WWW: http://search.cpan.org/dist/Net-eBay/

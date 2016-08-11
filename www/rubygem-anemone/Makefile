@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.3.0:textproc/rubygem-nokogiri \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/anemone
 

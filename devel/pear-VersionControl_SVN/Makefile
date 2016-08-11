@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	pear-XML_Parser>=1.3.4:devel/pear-XML_Parser
 RUN_DEPENDS=	pear-XML_Parser>=1.3.4:devel/pear-XML_Parser
 
-USE_PHP=	yes
 USES=	pear
 
 .include <bsd.port.mk>

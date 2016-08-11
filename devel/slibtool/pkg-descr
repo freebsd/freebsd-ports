@@ -1,0 +1,16 @@
+`slibtool` is an independent reimplementation of the widely used libtool,
+written in C. `slibtool` is designed to be a clean, fast, easy-to-use
+libtool drop-in replacement, and is accordingly aimed at package authors,
+distro developers, and system integrators. `slibtool` maintains compatibility
+with libtool in nearly every aspect of the tool's functionality as well as
+semantics, leaving out (or turning into a no-op) only a small number of
+features that are no longer needed on modern systems.
+
+Being a compiled binary, and although not primarily written for the sake of
+performance, building a package with `slibtool` is often faster than with its
+script-based counterpart. The resulting performance gain would normally vary
+between packages, and is most noticeable in builds that invoke libtool a large
+number of times, and which are characterized by the short compilation duration
+of individual translation units.
+
+WWW: http://git.midipix.org/cgit.cgi/slibtool/

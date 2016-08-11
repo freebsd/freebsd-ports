@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.4.9
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
 LICENSE=		imlib2 GPLv2
@@ -20,31 +19,21 @@ LICENSE_PERMS_imlib2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig tar:bzip2
+INSTALL_TARGET=	install-strip
+USES=		libtool localbase pathfix pkgconfig tar:bzip2
+USE_XORG=	x11 xext
+
+CONFIGURE_ARGS=	--disable-static
 
 OPTIONS_DEFINE=	EET XCF
 OPTIONS_DEFAULT=	EET XCF
+OPTIONS_SUB=	yes
+
 EET_DESC=	Enable eet loader
+EET_LIB_DEPENDS=	libefl.so:devel/efl
+EET_CONFIGURE_OFF=	--disable-eet
+
 XCF_DESC=	Enable XCF loader
-
-CONFIGURE_ARGS=	--disable-static
-MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEET}
-LIB_DEPENDS+=	libefl.so:devel/efl
-PLIST_SUB+=	EET=""
-.else
-CONFIGURE_ARGS+=	--disable-eet
-PLIST_SUB+=	EET="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXCF}
-PLIST_SUB+=	XCF=""
-.else
-CONFIGURE_ARGS+=	--disable-xcf
-PLIST_SUB+=	XCF="@comment "
-.endif
+XCF_CONFIGURE_OFF=	--disable-xcf
 
 .include <bsd.port.mk>

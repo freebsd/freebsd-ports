@@ -1,6 +1,6 @@
---- configure.in.orig	2011-09-23 22:56:46.000000000 +0200
-+++ configure.in	2012-10-09 12:09:33.000000000 +0200
-@@ -11,8 +11,9 @@
+--- configure.in.orig	2011-09-23 20:56:46 UTC
++++ configure.in
+@@ -11,8 +11,9 @@ AC_PROG_LIBTOOL
  
  # Checks for libraries.
  #AC_CHECK_LIB([c],   [main])
@@ -11,7 +11,7 @@
  AC_CHECK_LIB([pthread], [main],, AC_MSG_ERROR($missing_library))
  
  OUTPUT_FILES="Makefile"
-@@ -21,4 +22,4 @@
+@@ -21,4 +22,4 @@ LIBDIR=$PREFIX
  
  AC_CONFIG_FILES([${OUTPUT_FILES}])
  AC_OUTPUT(Makefile src/Makefile)

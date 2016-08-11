@@ -2,12 +2,12 @@ ubh - the Usenet Binary Harvester - is a GPL'ed Perl console
 application which automatically discovers, downloads, and decodes
 single-part and multi-part Usenet binaries.  Automatically assembles
 multi-part binaries.  Provides searching via Perl regular expression
-syntax.  Also provides a pre-selection capability whereby the user 
+syntax.  Also provides a pre-selection capability whereby the user
 can
 interactively choose which binaries to download.  Uses a standard
 .newsrc file to control which groups and articles to process.
 Runs anywhere Perl runs.  Tested under Unix-based Perl, Active Perl
-on Win32 platforms, and Mac OS X.  Requires Net::NNTP and 
+on Win32 platforms, and Mac OS X.  Requires Net::NNTP and
 News::Newsrc
 (which itself requires Set::IntSpan), MIME::Parser, MIME::Base64,
 IO::Stringy, and MailTools (distribution).

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsmraw
-DISTVERSION=	alpha-20160108
+DISTVERSION=	alpha-20160424
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsmraw/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/libyal/libsmraw/releases/download/${PORTVERSION
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the split RAW image format
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}

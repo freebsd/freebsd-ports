@@ -20,8 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^HEDITOR=.*|HEDITOR=$$EDITOR|' \
-	    ${WRKSRC}/hmailedit
+	@${REINPLACE_CMD} -e 's|^HEDITOR=.*|HEDITOR=$$EDITOR|' \
+		${WRKSRC}/hmailedit
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/hmconv ${WRKSRC}/hmconv1.0pl3.c
@@ -29,6 +29,8 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/hmailedit ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hmconv ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

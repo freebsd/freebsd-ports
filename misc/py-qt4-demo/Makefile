@@ -3,7 +3,6 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -30,8 +29,6 @@ do-install:
 	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-
-post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
 		${STAGEDIR}${EXAMPLESDIR}

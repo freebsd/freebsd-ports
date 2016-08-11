@@ -11,13 +11,11 @@ COMMENT=	BTree implementation for Go
 
 LICENSE=	APACHE20
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	cc6329d
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

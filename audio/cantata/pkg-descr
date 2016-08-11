@@ -1,3 +1,23 @@
-Cantata is a graphical client for MPD.
+Cantata is a QT graphical client for MPD with the following features:
+- Multiple MPD collections.
+- Highly customisable layout.
+- Songs grouped by album in play queue.
+- Context view to show artist, album, and song information of current track.
+- Simple tag editor.
+- File organizer - use tags to organize files and folders.
+- Ability to calculate ReplyGain tags.
+- Dynamic playlists.
+- Online services; Jamendo, Magnatune, SoundCloud, and Podcasts.
+- Radio stream support - search for streams via TuneIn, ShoutCast, or Dirble.
+- USB-Mass-Storage and MTP device support.
+- Audio CD ripping and playback.
+- Playback of non-MPD songs - via simple in-built HTTP server if connected
+  to MPD via a standard socket, otherwise filepath is sent to MPD.
+- MPRISv2 DBUS interface.
+- Supports KDE global shortcuts, GNOME media keys, standard media keys via Qxt.
+- Ubuntu/ambiance theme integration - including dragging of window via toolbar.
+- Basic support for touch-style interface (views are made 'flickable')
+- Scrobbling.
+- Ratings support.
 
-WWW: https://code.google.com/p/cantata/
+WWW: https://github.com/CDrummond/cantata

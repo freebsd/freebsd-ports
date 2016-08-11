@@ -5,7 +5,7 @@ PORTNAME=	HTML_Template_Sigma
 PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR template API
 
 USE_PHP=	ctype

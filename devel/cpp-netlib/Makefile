@@ -14,6 +14,8 @@ COMMENT=		Cross-platform, standards compliant networking library
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs
 
 USES=			cmake:outsource

@@ -3,19 +3,18 @@
 
 PORTNAME=	tcpwrap
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension which provides tcpwrappers binding
 
 LICENSE=	PHP202
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP= 56 70
 
 post-patch:

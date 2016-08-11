@@ -1,14 +1,14 @@
-Mozilla gives a great flexibility and power to Javascript. This popular 
-client side scripting language can be used to create application level 
+Mozilla gives a great flexibility and power to Javascript. This popular
+client side scripting language can be used to create application level
 logic and services for cross platform application development.
 
-By creating libraries of common useful routines, application developers can 
-focus on creating original functionality for their own applications instead 
-of dealing w/ complex xpconnect wrapper objects and worrying about which 
+By creating libraries of common useful routines, application developers can
+focus on creating original functionality for their own applications instead
+of dealing w/ complex xpconnect wrapper objects and worrying about which
 IDL methods do what and which are implemented on what platforms.
 
-Goal: jslib has a simple goal, "Make life easier for Mozilla Application 
-Development by creating logical, easy to use API's for general purpose 
+Goal: jslib has a simple goal, "Make life easier for Mozilla Application
+Development by creating logical, easy to use API's for general purpose
 routines that lend themselves to living in library code."
 
 WWW: http://jslib.mozdev.org/

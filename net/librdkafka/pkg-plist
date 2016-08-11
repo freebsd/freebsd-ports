@@ -6,4 +6,5 @@ lib/librdkafka++.so.1
 lib/librdkafka.a
 lib/librdkafka.so
 lib/librdkafka.so.1
-libdata/pkgconfig/librdkafka.pc
+libdata/pkgconfig/rdkafka++.pc
+libdata/pkgconfig/rdkafka.pc

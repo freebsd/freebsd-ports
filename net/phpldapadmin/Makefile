@@ -14,6 +14,8 @@ COMMENT=	PHP application to administer LDAP over the web
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe tar:tgz
 CPE_VENDOR=	deon_george
 

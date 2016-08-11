@@ -1,0 +1,7 @@
+Attempts to determine the natural language of a selection of Unicode 
+(utf-8) text. Based on guesslanguage.cpp by Jacob R Rideout for KDE 
+which itself is based on Language::Guess by Maciej Ceglowski. Detects
+over 60 languages, all languages listed in the trigrams directory 
+plus Japanese, Chinese, Korean and Greek.
+
+WWW: https://pypi.python.org/pypi/guess-language

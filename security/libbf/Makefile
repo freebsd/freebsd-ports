@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libblowfish.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/blowfish.h ${STAGEDIR}${PREFIX}/include
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}

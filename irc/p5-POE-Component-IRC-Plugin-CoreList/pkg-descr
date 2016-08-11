@@ -2,4 +2,4 @@ POE::Component::IRC::Plugin::CoreList is a frontend to the
 excellent Module::CoreList module which will let you know
 what modules shipped with which versions of perl, over IRC.
 
-WWW:	http://search.cpan.org/dist/POE-Component-IRC-Plugin-CoreList/
+WWW: http://search.cpan.org/dist/POE-Component-IRC-Plugin-CoreList/

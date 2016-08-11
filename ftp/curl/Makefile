@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.48.0
-PORTREVISION=	2
+PORTVERSION=	7.50.1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -20,7 +19,7 @@ OPTIONS_SINGLE=	GSSAPI
 OPTIONS_RADIO_RESOLV=	CARES THREADED_RESOLVER
 OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL WOLFSSL
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-OPTIONS_DEFAULT=	CA_BUNDLE COOKIES IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
+OPTIONS_DEFAULT=	CA_BUNDLE COOKIES OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
 CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
 CA_BUNDLE_IMPLIES=	OPENSSL
 COOKIES_DESC=		Cookies support
@@ -32,8 +31,9 @@ RESOLV_DESC=		DNS resolving options
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
-LOCALBASE?=	/usr/local
-.if defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so))
+.include <${.CURDIR}/../../Mk/bsd.default-versions.mk>
+
+.if ${SSL_DEFAULT} != base
 OPTIONS_DEFAULT+=	GSSAPI_NONE
 .else
 OPTIONS_DEFAULT+=	GSSAPI_BASE
@@ -41,6 +41,7 @@ OPTIONS_DEFAULT+=	GSSAPI_BASE
 
 CONFIGURE_ARGS+=--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
+		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
 		--without-axtls
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
@@ -49,7 +50,7 @@ INSTALL_TARGET=	install-strip
 TEST_ENV=	${MAKE_ENV} LC_ALL=C
 TEST_TARGET=	test
 USE_PERL5=	build
-USES=		gmake libtool localbase pathfix perl5 tar:lzma
+USES=		gmake libtool localbase pathfix perl5 shebangfix tar:lzma
 
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
@@ -60,14 +61,17 @@ PORTEXAMPLES=	*
 
 CPE_VENDOR=	haxx
 
-DOCS=		BINDINGS BUGS CODE_OF_CONDUCT.md CONTRIBUTE FAQ FEATURES \
-		HISTORY HTTP-COOKIES HTTP2.md INSTALL INSTALL.devcpp INTERNALS \
-		KNOWN_BUGS LICENSE-MIXING MAIL-ETIQUETTE MANUAL \
-		RELEASE-PROCEDURE RESOURCES ROADMAP.md SECURITY SSL-PROBLEMS \
-		SSLCERTS THANKS TODO TheArtOfHttpScripting VERSIONS \
-		curl-config.html curl-config.pdf curl.html curl.pdf index.html \
+DOCS=		BINDINGS BUGS CODE_OF_CONDUCT.md CODE_STYLE.md CONTRIBUTE FAQ \
+		FEATURES HISTORY HTTP-COOKIES.md HTTP2.md INSTALL \
+		INSTALL.devcpp INTERNALS KNOWN_BUGS LICENSE-MIXING \
+		MAIL-ETIQUETTE MANUAL RELEASE-PROCEDURE RESOURCES ROADMAP.md \
+		SECURITY SSL-PROBLEMS SSLCERTS THANKS TODO \
+		TheArtOfHttpScripting VERSIONS curl-config.html \
+		curl-config.pdf curl.html curl.pdf index.html \
 		mk-ca-bundle.html mk-ca-bundle.pdf
 .endif
+
+SHEBANG_FILES=	*/*.pl
 
 SLAVEDIRS=	ftp/curl-hiphop
 
@@ -121,7 +125,7 @@ OPENSSL_CONFIGURE_OFF=	--without-ssl
 OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
 OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
 OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 POLARSSL_CONFIGURE_WITH=polarssl
 POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:security/polarssl13
 PROXY_CONFIGURE_ENABLE=	proxy
@@ -135,7 +139,7 @@ TLS_SRP_CONFIGURE_ENABLE=	tls-srp
 WOLFSSL_CONFIGURE_WITH=	cyassl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
@@ -145,11 +149,11 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with SSL
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && (defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)))
+.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT} != base
 IGNORE=		GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif
 
-.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
+.if ${SSL_DEFAULT} == libressl
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL}
 IGNORE=		GSSAPI_BASE is not compatible with LibreSSL. Use other GSSAPI options
 .endif
@@ -159,10 +163,9 @@ IGNORE=		unsupported TLS-SRP in LibreSSL
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs scripts|; /^DIST_SUBDIRS = / s| docs scripts||; /cd docs &&/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/curl_gssapi.h ${WRKSRC}/lib/urldata.h
-	@${REINPLACE_CMD} -e 's|gss_nt_service_name|GSS_C_NT_HOSTBASED_SERVICE|' ${WRKSRC}/lib/curl_sasl_gssapi.c
 
 .if !defined(BUILDING_HIPHOP)
 post-install:
@@ -186,4 +189,4 @@ pre-test-PROXY-off:
 	@${ECHO_MSG} "* This is being addressed.               *"
 	@${ECHO_MSG} "******************************************"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

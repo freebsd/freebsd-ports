@@ -1,7 +1,7 @@
-WepLab is a tool designed to teach how WEP works, what different 
-vulnerabilities it has, and how they can be used in practice to 
-break a WEP protected wireless network. So far, WepLab more than 
-a Wep Key Cracker, is a Wep Security Analyzer designed from an 
+WepLab is a tool designed to teach how WEP works, what different
+vulnerabilities it has, and how they can be used in practice to
+break a WEP protected wireless network. So far, WepLab more than
+a Wep Key Cracker, is a Wep Security Analyzer designed from an
 educational point of view.
 
 WWW: http://weplab.sourceforge.net

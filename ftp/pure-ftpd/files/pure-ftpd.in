@@ -11,6 +11,7 @@
 # Add the following lines to /etc/rc.conf to enable pure-ftpd:
 #
 # pureftpd_enable="yes"
+# pureftpd_flags="<set as needed>"
 #
 # Add the following lines to /etc/rc.conf to enable pure-authd daemon:
 #
@@ -48,7 +49,8 @@ pidfile_uploadscript=${pidfile_uploadscript:-"/var/run/pure-uploadscript.pid"}
 pureftpd_upload_enable=${pureftpd_upload_enable:-"no"}
 pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
 # command_args
-command_args="${pureftpd_config} -g${pidfile}"
+flags="${pureftpd_config} -g${pidfile}"
+command_args="${pureftpd_flags}"
 command_authd_args="-B -p ${pidfile_authd} -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
 command_upload_args="-B -p ${pidfile_uploadscript} -r ${pureftpd_uploadscript}"
 

@@ -1,0 +1,4 @@
+Default assign is a Redmine plugin that allows you to define a default
+person for new tickets to be assigned to.
+
+WWW: https://github.com/giddie/redmine_default_assign

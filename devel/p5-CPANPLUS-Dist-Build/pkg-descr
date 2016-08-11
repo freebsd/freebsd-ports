@@ -5,7 +5,7 @@ Using this package, you can create, install and uninstall perl
 modules. It inherits from CPANPLUS::Dist.
 
 Normal users won't have to worry about the interface to this module,
-as it functions transparently as a plug-in to CPANPLUS and will 
+as it functions transparently as a plug-in to CPANPLUS and will
 just Do The Right Thing when it's loaded.
 
 WWW: http://search.cpan.org/dist/CPANPLUS-Dist-Build/

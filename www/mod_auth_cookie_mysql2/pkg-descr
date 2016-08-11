@@ -1,4 +1,4 @@
-This Apache module allows authentication against a MySQL database via a 
+This Apache module allows authentication against a MySQL database via a
 cryptographically secure cookie.
 
 Features:

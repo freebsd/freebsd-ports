@@ -56,10 +56,9 @@ MANJADATE=	20050813
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
-USES=		gmake iconv ncurses shebangfix autoreconf fakeroot
+USES=		gmake iconv ncurses shebangfix autoreconf fakeroot ssl
 SHEBANG_FILES=	smime_keys.pl contrib/smime_keys_test.pl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib -ltinfow
 CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -D_XLOCALE_CTYPE_H ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ncurses"
@@ -93,7 +92,7 @@ LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 PORT_OPTIONS+=	MAILDIR_HEADER_CACHE
 .endif
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE}
-USE_BDB=	42+
+USES+=		bdb
 CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 .endif
 .if ${PORT_OPTIONS:MIDN}

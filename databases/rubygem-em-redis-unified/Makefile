@@ -13,8 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.10:devel/rubygem-eventmachine
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -14,10 +14,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-pkg-config>=1.1.5:devel/rubygem-pkg-config
 
-USES=		pkgconfig
 USE_GNOME=	cairo
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>

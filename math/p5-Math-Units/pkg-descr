@@ -1,16 +1,16 @@
-The Math::Units module converts a numeric value in one unit of measurement 
-to some other unit. The units must be compatible, i.e. length can not be 
-converted to volume. If a conversion can not be made an exception is 
+The Math::Units module converts a numeric value in one unit of measurement
+to some other unit. The units must be compatible, i.e. length can not be
+converted to volume. If a conversion can not be made an exception is
 thrown.
 
-A combination chaining and reduction algorithm is used to perform the most 
-direct unit conversion possible. Units may be written in several different 
-styles. An abbreviation table is used to convert from common long-form 
-unit names to the (more or less) standard abbreviations that the units 
-module uses internally. All multiplicative unit conversions are cached so 
+A combination chaining and reduction algorithm is used to perform the most
+direct unit conversion possible. Units may be written in several different
+styles. An abbreviation table is used to convert from common long-form
+unit names to the (more or less) standard abbreviations that the units
+module uses internally. All multiplicative unit conversions are cached so
 that future conversions can be performed very quickly.
 
-Too many units, prefixes and abbreviations are supported to list here. See 
+Too many units, prefixes and abbreviations are supported to list here. See
 the source code for a complete listing.
 
 WWW: http://search.cpan.org/dist/Math-Units/

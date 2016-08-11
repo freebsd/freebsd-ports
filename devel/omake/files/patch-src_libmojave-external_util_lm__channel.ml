@@ -2,7 +2,7 @@ $NetBSD: patch-at,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/util/lm_channel.ml.orig	2007-07-16 21:10:43.000000000 +0000
+--- src/libmojave-external/util/lm_channel.ml.orig	2007-07-16 21:10:43 UTC
 +++ src/libmojave-external/util/lm_channel.ml
 @@ -337,12 +337,10 @@ let of_string s =
     of_string string_sym 1 0 (String.copy s)

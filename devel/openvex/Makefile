@@ -11,6 +11,9 @@ COMMENT=	Open source firmware for Vex robotics controllers
 
 LICENSE=	GPLv3
 
+BROKEN=		does not build (crt0iz.c:31: error 226: no type specifier for 'stack')
+BROKEN_powerpc64=	does not build
+
 BUILD_DEPENDS=	sdcc:lang/sdcc \
 		gpasm:devel/gputils
 RUN_DEPENDS=	vexctl:devel/roboctl \

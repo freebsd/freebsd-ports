@@ -1,13 +1,13 @@
-This module is an interface to the C Clustering Library, a general 
-purpose library implementing functions for hierarchical clustering 
-(pairwise simple, complete, average, and centroid linkage), 
-along with k-means and k-medians clustering, and 2D self-organizing maps. 
-The library is distributed along with Cluster 3.0, an enhanced version 
-of the famous Cluster program originally written by Michael Eisen 
-while at Stanford University. The C clustering library was written 
+This module is an interface to the C Clustering Library, a general
+purpose library implementing functions for hierarchical clustering
+(pairwise simple, complete, average, and centroid linkage),
+along with k-means and k-medians clustering, and 2D self-organizing maps.
+The library is distributed along with Cluster 3.0, an enhanced version
+of the famous Cluster program originally written by Michael Eisen
+while at Stanford University. The C clustering library was written
 by Michiel de Hoon.
 
-This module is a Perl wrapper for the C clustering library for 
+This module is a Perl wrapper for the C clustering library for
 cDNA microarray data, Copyright (C) 2002 Michiel Jan Laurens de Hoon.
 
 WWW: http://search.cpan.org/dist/Algorithm-Cluster/

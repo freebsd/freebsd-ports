@@ -1,0 +1,11 @@
+--- libdbusmenu-gtk/Makefile.in.orig	2016-02-27 19:00:14 UTC
++++ libdbusmenu-gtk/Makefile.in
+@@ -568,7 +568,7 @@ INTROSPECTION_COMPILER_ARGS = --included
+ @HAVE_INTROSPECTION_TRUE@DbusmenuGtk3_0_4_gir_EXPORT_PACKAGES = $(DbusmenuGtk_0_4_gir_EXPORT_PACKAGES)
+ @HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0
+ @HAVE_INTROSPECTION_TRUE@gir_DATA = $(INTROSPECTION_GIRS)
+-@HAVE_INTROSPECTION_TRUE@typelibdir = $(INTROSPECTION_TYPELIBDIR)
++@HAVE_INTROSPECTION_TRUE@typelibdir = $(libdir)/girepository-1.0
+ @HAVE_INTROSPECTION_TRUE@typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+ 
+ #########################

@@ -1,4 +1,4 @@
---- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	2015-04-15 07:47:18 UTC
+--- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	2016-05-29 22:48:24 UTC
 +++ cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t
 @@ -10,7 +10,7 @@ BEGIN {
  }
@@ -9,7 +9,7 @@
  use MakeMaker::Test::Utils;
  use MakeMaker::Test::Setup::BFD;
  use ExtUtils::MakeMaker;
-@@ -62,7 +62,7 @@ like( $stdout->read, qr{
+@@ -64,7 +64,7 @@ like( $stdout->read, qr{
                          (?:Writing\ MYMETA.yml\ and\ MYMETA.json\n)?
  }x );
  

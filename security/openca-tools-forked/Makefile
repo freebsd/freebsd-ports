@@ -3,6 +3,7 @@
 
 PORTNAME=	openca-tools-forked
 PORTVERSION=	1.4.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	security
 
@@ -13,7 +14,6 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
-GH_TAGNAME=	641e43a
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5

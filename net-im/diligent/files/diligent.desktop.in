@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Diligent
+GenericName=Slack Client
+Comment=A simple Qt5 based Slack Client
+Exec=%%PREFIX%%/bin/diligent
+Icon=%%PREFIX%%/share/icons/diligent.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;

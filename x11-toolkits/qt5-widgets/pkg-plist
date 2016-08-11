@@ -486,6 +486,7 @@
 %%QT_INCDIR%%/QtWidgets/qwidgetaction.h
 %%QT_INCDIR%%/QtWidgets/qwidgetsfunctions_wince.h
 %%QT_INCDIR%%/QtWidgets/qwizard.h
+%%GTK2%%%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QGtk2ThemePlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake
@@ -498,6 +499,8 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Widgets.so.%%FULLVER%%.debug
 %%QT_BINDIR%%/uic
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets.pri
+%%GTK2%%%%QT_PLUGINDIR%%/platformthemes/libqgtk2.so
+%%GTK2%%%%DEBUG%%%%QT_PLUGINDIR%%/platformthemes/libqgtk2.so.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets_private.pri
 libdata/pkgconfig/Qt5Widgets.pc
 share/pixmaps/qt5logo.png

@@ -1,5 +1,5 @@
---- src/conky.c.orig	2012-05-04 00:22:21.000000000 +0300
-+++ src/conky.c	2012-12-04 11:09:20.000000000 +0200
+--- src/conky.c.orig	2012-05-03 21:22:21 UTC
++++ src/conky.c
 @@ -119,7 +119,7 @@
  #include "openbsd.h"
  #endif
@@ -9,7 +9,7 @@
  #include <bsd/bsd.h>
  #endif
  
-@@ -4292,7 +4292,8 @@
+@@ -4292,7 +4292,8 @@ static void set_default_configurations(v
  
  	free_templates();
  
@@ -19,7 +19,7 @@
  	{
  		char buf[256];
  
-@@ -5662,6 +5663,7 @@
+@@ -5662,6 +5663,7 @@ void initialisation(int argc, char **arg
  			current_mail_spool = strndup(buf, text_buffer_size);
  		}
  	}
@@ -27,7 +27,7 @@
  #endif
  
  	/* handle other command line arguments */
-@@ -5971,7 +5973,7 @@
+@@ -5971,7 +5973,7 @@ int main(int argc, char **argv)
  
  void alarm_handler(void) {
  	if(childpid > 0) {

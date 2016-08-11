@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-chewing
-PORTVERSION=	1.4.14
+PORTVERSION=	1.5.1
 CATEGORIES=	chinese
 
 MAINTAINER=	eric@camachat.org
@@ -23,19 +23,10 @@ GLIB_SCHEMAS=	org.freedesktop.IBus.Chewing.gschema.xml
 USES=		cmake gettext pkgconfig
 USE_GNOME=	gtk20
 USE_XORG=	xtst
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	definite
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$${CHEWING_DATADIR}|$${CHEWING_chewing_DATADIR}|' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		's|/usr|${PREFIX}|' \
-		${WRKSRC}/data/ibus-setup-chewing.desktop
 
 .include <bsd.port.mk>

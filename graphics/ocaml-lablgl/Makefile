@@ -9,7 +9,7 @@ MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \
 		https://forge.ocamlcore.org/frs/download.php/1254/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
 LICENSE=	BSD3CLAUSE

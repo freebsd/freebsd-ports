@@ -1,6 +1,5 @@
 etc/rc.d/rmilter
 @sample etc/rmilter.conf.sample
-man/man8/rmilter.8.gz
 sbin/rmilter
 @owner _rmilter
 @group mail

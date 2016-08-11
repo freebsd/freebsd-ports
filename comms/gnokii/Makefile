@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 . if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 PLIST_SUB+=	MSM=''
 . else
 CONFIGURE_ARGS+=	--disable-mysql

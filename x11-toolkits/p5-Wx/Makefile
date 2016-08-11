@@ -26,13 +26,6 @@ CONFIGURE_ENV=	CXX="${CXX}"
 
 CFLAGS+=	-pthread -Wno-write-strings
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501508
-BUILD_DEPENDS+= p5-ExtUtils-ParseXS>=3.15:devel/p5-ExtUtils-ParseXS
-RUN_DEPENDS+=   p5-ExtUtils-ParseXS>=3.15:devel/p5-ExtUtils-ParseXS
-.endif
-
 post-configure:
 	@${FIND} ${WRKSRC} -name "Makefile" -type f | ${XARGS} \
 		${REINPLACE_CMD} -e \
@@ -46,4 +39,4 @@ post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} -name "*.so" -type f \
 		| ${XARGS} ${STRIP_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

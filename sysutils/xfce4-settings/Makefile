@@ -29,7 +29,7 @@ CONFIGURE_ARGS=--enable-debug=yes \
 		--disable-xorg-libinput
 
 OPTIONS_DEFINE=		NOTIFY NLS UPOWER
-OPTIONS_DEFAULT=	NOTIFY NLS
+OPTIONS_DEFAULT=	NOTIFY
 
 UPOWER_DESC=	Power management tasks
 

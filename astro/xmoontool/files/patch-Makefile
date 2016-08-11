@@ -1,8 +1,8 @@
---- ./Makefile.orig	Fri Feb 24 23:00:24 2006
-+++ ./Makefile	Fri Mar 24 10:55:01 2006
-@@ -8,9 +8,9 @@
+--- Makefile.orig	2006-02-24 22:00:24 UTC
++++ Makefile
+@@ -8,9 +8,9 @@ INSTALL?=	install
  LOCALBASE?=	/usr/local
- X11BASE?= 	/usr/local
+ X11BASE?= 	/usr/X11R6
  
 -CC= 		gcc
 -CFLAGS= 	-O2 -Wall
@@ -11,5 +11,5 @@
 +#CFLAGS= 	-O2 -Wall
 +LDFLAGS+=	-lXm -lXt -lX11 -lm
  DEFINES?= 	-DDEFAULT_COLOR
- ALL_CFLAGS= 	$(CFLAGS) $(DEFINES) -I$(LOCALBASE)/include -L$(LOCALBASE)/lib
+ ALL_CFLAGS= 	$(CFLAGS) $(DEFINES) -I$(X11BASE)/include -L$(X11BASE)/lib
  

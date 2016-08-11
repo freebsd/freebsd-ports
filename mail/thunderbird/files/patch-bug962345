@@ -1,9 +1,0 @@
-diff --git config/system-headers config/system-headers
-index 8803150..ae38d68 100644
---- mozilla/config/system-headers
-+++ mozilla/config/system-headers
-@@ -1144,3 +1144,4 @@ unicode/utypes.h
- #endif
- libutil.h
- unwind.h
-+cairo-qt.h

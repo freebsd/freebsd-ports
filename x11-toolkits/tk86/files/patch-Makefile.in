@@ -1,0 +1,110 @@
+--- Makefile.in.orig	2016-07-26 14:07:50 UTC
++++ Makefile.in
+@@ -64,6 +64,8 @@ SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK
+ 
+ # Directory in which to install the include file tk.h:
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
++GENERIC_INCLUDE_INSTALL_DIR=	$(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR=	$(INCLUDE_INSTALL_DIR)/unix
+ 
+ # Path to the private tk header dir:
+ PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
+@@ -92,7 +94,7 @@ HTML_DIR		= @HTML_DIR@
+ HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
+ 
+ # Directory in which to install the configuration file tkConfig.sh:
+-CONFIG_INSTALL_DIR	= $(INSTALL_ROOT)$(libdir)
++CONFIG_INSTALL_DIR	= $(SCRIPT_INSTALL_DIR)
+ 
+ # Directory in which to install the demo files:
+ DEMO_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)/demos
+@@ -555,6 +557,8 @@ TTK_HDRS = $(TTK_DIR)/ttkTheme.h $(TTK_D
+ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
+ 	$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS)
+ 
++INSTALL_HDRS = tk.h tkDecls.h tkInt.h tkIntXlibDecls.h
++
+ # The private headers we want installed for install-private-headers
+ PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
+ 	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
+@@ -584,6 +588,12 @@ doc: $(TOP_DIR)/doc/man.macros
+ ${LIB_FILE}: ${STUB_LIB_FILE} @LIB_RSRC_FILE@ ${OBJS}
+ 	rm -f $@
+ 	@MAKE_LIB@
++	@ln -sf ${LIB_FILE} ./libtk${SHORT_TK_VER}.so
++
++libtk${SHORT_TK_VER}.a: ${OBJS}
++	rm -f libtk${SHORT_TK_VER}.a
++	ar rc libtk${SHORT_TK_VER}.a ${OBJS}
++	$(RANLIB) libtk${SHORT_TK_VER}.a
+ 
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	@if test "x${LIB_FILE}" = "xlibtk${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
+@@ -699,8 +709,7 @@ INSTALL_DOC_TARGETS = install-doc
+ INSTALL_DEV_TARGETS = install-headers
+ INSTALL_DEMO_TARGETS = install-demos
+ INSTALL_EXTRA_TARGETS = @EXTRA_INSTALL@
+-INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DOC_TARGETS) $(INSTALL_DEV_TARGETS) \
+-		$(INSTALL_DEMO_TARGETS) $(INSTALL_EXTRA_TARGETS)
++INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DEV_TARGETS) $(INSTALL_EXTRA_TARGETS)
+ 
+ install: $(INSTALL_TARGETS)
+ 
+@@ -709,7 +718,7 @@ install-strip:
+ 		INSTALL_PROGRAM="$(INSTALL_PROGRAM) ${INSTALL_STRIP_PROGRAM}" \
+ 		INSTALL_LIBRARY="$(INSTALL_LIBRARY) ${INSTALL_STRIP_LIBRARY}"
+ 
+-install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) ${WISH_EXE}
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) libtk${SHORT_TK_VER}.a ${WISH_EXE}
+ 	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" \
+ 	    "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)" ; \
+ 	    do \
+@@ -740,6 +749,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(
+ 	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+ 	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
++	@ln -sf $(TK_LIB_FILE) "@DLL_INSTALL_DIR@"/libtk${SHORT_TK_VER}.so
++	@echo "Installing libtk${SHORT_TK_VER}.a"
++	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a "@DLL_INSTALL_DIR@"/libtk${SHORT_TK_VER}.a
++	@chmod 555 "@DLL_INSTALL_DIR@"/libtk${SHORT_TK_VER}.a
+ 	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
+ 	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
+ 	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
+@@ -755,9 +768,9 @@ install-binaries: $(TK_STUB_LIB_FILE) $(
+ 	    @INSTALL_STUB_LIB@ ; \
+ 	fi
+ 	@EXTRA_INSTALL_BINARIES@
+-	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
+-	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
+-	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
++	@echo "Installing pkg-config file to $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/"
++	@$(INSTALL_DATA_DIR) $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig
++	@$(INSTALL_DATA) tk.pc $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/tk.pc
+ 
+ install-libraries: libraries
+ 	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
+@@ -855,7 +868,8 @@ install-doc:
+ install-headers:
+ 	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
+ 	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
+-	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}"; \
++	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
++		"$(GENERIC_INCLUDE_INSTALL_DIR)" "$(UNIX_INCLUDE_INSTALL_DIR)"; \
+ 	    do \
+ 	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -864,9 +878,12 @@ install-headers:
+ 		fi; \
+ 	    done;
+ 	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
+-	@for i in $(PUBLIC_HDRS); \
++	@${BSD_INSTALL_DATA} $(GENERIC_DIR)/*.h "$(GENERIC_INCLUDE_INSTALL_DIR)"/
++	@${BSD_INSTALL_DATA} $(UNIX_DIR)/*.h "$(UNIX_INCLUDE_INSTALL_DIR)"/
++	@for i in $(INSTALL_HDRS); \
+ 	    do \
+-	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
++	    j=`basename $$i` ; \
++	    ln -sf generic/$$j "$(INCLUDE_INSTALL_DIR)"/$$j ; \
+ 	    done;
+ 	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
+ 	    do \

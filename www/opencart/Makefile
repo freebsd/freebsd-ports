@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	opencart
-PORTVERSION=	2.2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0.2
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source PHP-based online shopping cart system
 
 LICENSE=	GPLv3
+
+BROKEN_powerpc64=	Does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart

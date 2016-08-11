@@ -11,6 +11,6 @@ features useful for text console application developers including:
   types
 * List box contents may be managed with a user-defined class
 * Flexible edit box for editing many different types of text
-* Easy interface for creating HTML screen shots 
+* Easy interface for creating HTML screen shots
 
 WWW: http://urwid.org/

@@ -12,8 +12,8 @@ COMMENT=	Perl module for Ming which allows you to create Flash 4/5 movies
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/../LICENSE_GPL2
-LICENSE_FILE_LGPL21=	${WRKSRC}/../LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL2
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
@@ -27,27 +27,26 @@ PORTSCOUT=	limit:^ming-
 CONFIGURE_ARGS=	--enable-perl
 GNU_CONFIGURE=	yes
 USES=		autoreconf bison gmake libtool localbase perl5 shebangfix
-SHEBANG_FILES=	examples/*.cgi
+SHEBANG_FILES=	perl_ext/examples/*.cgi
 
+BUILD_WRKSRC=	${WRKSRC}/perl_ext
+INSTALL_WRKSRC=	${WRKSRC}/perl_ext
 PORTEXAMPLES=	*
-
-CONFIGURE_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/perl_ext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lib${PORTNAME}
 GH_PROJECT=	lib${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/Makefile.PL ${WRKSRC}/mkdoc
-	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/Exports.c
+	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/perl_ext/Makefile.PL
+	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/perl_ext/mkdoc
+	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/perl_ext/Exports.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SWF/SWF.so
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${INSTALL_WRKSRC}/examples/ && ${INSTALL_DATA} *.cgi ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/perl_ext/examples/*.cgi ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

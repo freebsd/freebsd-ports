@@ -9,7 +9,7 @@
 ###  It may or may not be suitable for production. Use at your own risk.
 ### ------------------------------------------------------------------------
 ###
-### PLUGIN LOCATION CHANGED!  
+### PLUGIN LOCATION CHANGED!
 ### The following plugin locations have changed.  There is a symlink to the
 ### new file for the duration of the 2.3 release.  This will be removed in
 ### OpenVPN 2.4+.

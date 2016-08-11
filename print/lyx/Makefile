@@ -6,10 +6,8 @@ PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
-		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/${MAJOR_VERSION}.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/${MAJOR_VERSION}.x/ \
-		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/ \
-		ftp://ftp.chg.ru/pub/X11/lyx/stable/${MAJOR_VERSION}.x/
+		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
@@ -19,19 +17,25 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
 
-MAJOR_VERSION=	2.1
-MINOR_VERSION=	4
+MAJOR_VERSION=	2.2
+MINOR_VERSION=	1
 
-USES=		desktop-file-utils gmake iconv pkgconfig perl5 python:2 tar:xz
-USE_QT4=	corelib gui moc_build uic_build rcc_build
+USES=		desktop-file-utils execinfo gmake iconv pkgconfig perl5 \
+		python:2 tar:xz
+USE_QT4=	corelib gui svg moc_build uic_build rcc_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
+		--disable-qt5 \
 		${ICONV_CONFIGURE_ARG} \
 		--with-extra-prefix=${LOCALBASE}
 
+CPPFLAGS+=	${EXECINFO_CPPFLAGS}
+LDFLAGS+=	${EXECINFO_LDFLAGS}
+LIBS+=		-lexecinfo
+
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
-OPTIONS_DEFAULT=	HUNSPELL NLS
+OPTIONS_DEFAULT=	HUNSPELL
 OPTIONS_SUB=		yes
 ENCHANT_DESC=		Spell checking using Enchant
 
@@ -44,4 +48,10 @@ HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000)
+EXTRA_PATCHES=		${FILESDIR}/extrapatch-src_frontends_qt4_GuiWorkArea.cpp
+.endif
+
+.include <bsd.port.post.mk>

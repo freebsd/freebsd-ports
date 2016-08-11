@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.10.12
-PORTREVISION=	1
+PORTVERSION=	0.11.4
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	autogen:devel/autogen \
 		gsed:textproc/gsed \
@@ -20,13 +19,13 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libtalloc.so:devel/talloc \
 		libprotobuf-c.so:devel/protobuf-c \
 		libgnutls.so:security/gnutls \
-		libtasn1.so:security/libtasn1
+		libtasn1.so:security/libtasn1 \
+		libev.so:devel/libev \
+		libnettle.so:security/nettle
 
-USES=		autoreconf cpe gettext gmake gperf libtool ncurses \
+USES=		autoreconf cpe gettext gmake gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
 CPE_VENDOR=	infradead
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -40,6 +39,8 @@ USERS=		_ocserv
 GROUPS=		_ocserv
 
 USE_RC_SUBR=	ocserv
+
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
 

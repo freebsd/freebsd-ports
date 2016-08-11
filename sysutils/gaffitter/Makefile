@@ -5,12 +5,13 @@ PORTNAME=	gaffitter
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary packing utility that uses a genetic algorithm
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2	# parallel builds (-jX) are broken with BSD make(1)
 

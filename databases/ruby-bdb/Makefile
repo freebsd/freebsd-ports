@@ -17,13 +17,11 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
 
-USE_BDB=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDOC=		yes
+MAKE_ENV+=		RUBY_RDOC=${LOCALBASE}/bin/rdoc
 
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
@@ -35,7 +33,7 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
-USES=		shebangfix tar:bzip2
+USES=		bdb shebangfix tar:bzip2
 SHEBANG_FILES=	examples/record.rb \
 		examples/recno.rb \
 		examples/zeroc.rb \

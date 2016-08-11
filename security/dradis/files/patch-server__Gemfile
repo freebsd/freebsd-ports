@@ -1,8 +1,13 @@
---- ./server/Gemfile.orig	2010-11-30 17:45:17.000000000 +0100
-+++ ./server/Gemfile	2011-01-09 22:37:36.000000000 +0100
-@@ -11,11 +11,11 @@
- #
- gem 'RedCloth', :require => 'redcloth'
+--- server/Gemfile.orig	2011-02-11 09:59:58 UTC
++++ server/Gemfile
+@@ -1,14 +1,14 @@
+ source 'http://rubygems.org'
+ 
+-gem 'rails', '3.0.4'
++gem 'rails', '>= 3.0.4'
+ 
+-gem 'RedCloth', '4.2.5', :require => 'redcloth'
++gem 'RedCloth', '>= 4.2.5', :require => 'redcloth'
  
 -if !( (RUBY_PLATFORM =~ /mswin/i) || (RUBY_PLATFORM =~ /mingw/i) )
 -  gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'

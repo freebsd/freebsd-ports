@@ -5,6 +5,6 @@ original encryption key).
 
 To use Rexx/Wrapper you need two extra bits of software:
    1. A supported Rexx interpreter
-   2. A supported C compiler 
+   2. A supported C compiler
 
 WWW: http://rexxwrapper.sourceforge.net/

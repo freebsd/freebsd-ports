@@ -1,0 +1,11 @@
+--- docs/Makefile.orig	2016-05-12 07:43:49 UTC
++++ docs/Makefile
+@@ -1,7 +1,6 @@
+ 
+ all::
+-	${MAKE} -C gtkada_rm
+-	${MAKE} -C gtkada_ug html latexpdf
++	${MAKE} -C gtkada_ug html
+ 
+ clean::
+ 	${MAKE} -C gtkada_rm clean

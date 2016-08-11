@@ -15,9 +15,9 @@ you with a full featured diagramming canvas:
      represented as a mathematical equation, which is solved using a real
      linear constraint solver (see the reference documentation for more info).
      Handles do not need predefined connection points, but can connect to each
-     other in a more generic way. 
+     other in a more generic way.
    - Of course DiaCanvas2 has all the features a modern application needs,
      including undo/redo and copy/paste functionality (copying is not
-     implemented yet). 
+     implemented yet).
 
 WWW: http://diacanvas.sourceforge.net/

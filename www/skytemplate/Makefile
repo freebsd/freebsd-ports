@@ -11,8 +11,7 @@ DISTNAME=	SkyTemplate.v${PORTVERSION:S/.//g}
 MAINTAINER=	munggo@gmail.com
 COMMENT=	Yet another PHP compiling template engine
 
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
+USES=		php:web
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

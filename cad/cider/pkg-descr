@@ -1,6 +1,6 @@
 CIDER is a mixed-level circuit and device simulator.  CIDER attempts to
 provide greater simulation accuracy than a stand-alone circuit or device
-simulator can provide.  CIDER is based on the sequential mixed-level 
+simulator can provide.  CIDER is based on the sequential mixed-level
 circuit and device simulator, CODECS.  In common with CODECS, CIDER embeds
 the circuit simulator, SPICE3, which provides circuit simulation
 capabilities, analytical models for semiconductor devices, and an

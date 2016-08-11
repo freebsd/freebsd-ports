@@ -3,20 +3,21 @@
 
 PORTNAME=	phk
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHK is a PHP-oriented package/archive system
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	hash
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+BROKEN_powerpc64=	Does not build
+
+USES=		php:ext tar:tgz
+USE_PHP=	hash:build
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-phk

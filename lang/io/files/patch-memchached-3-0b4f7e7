@@ -1,0 +1,25 @@
+From 0b4f7e75e80bf25d382901f098b60c724e0dd6b3 Mon Sep 17 00:00:00 2001
+From: Kyle Marek-Spartz <zeckalpha@gmail.com>
+Date: Sat, 1 Feb 2014 09:23:43 -0600
+Subject: [PATCH] Changed type to get memcached >= 1.0.17 to compile. Still
+ gives warning for: io/addons/Memcached/source/IoMemcached.c:46:2: warning:
+ implicit declaration of function IoState_registerProtoWithFunc_ is invalid in
+ C99
+
+---
+ addons/Memcached/source/IoMemcached.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/addons/Memcached/source/IoMemcached.c b/addons/Memcached/source/IoMemcached.c
+index 0d0dfb4..a4f3901 100644
+--- addons/Memcached/source/IoMemcached.c
++++ addons/Memcached/source/IoMemcached.c
+@@ -476,7 +476,7 @@ IoObject *IoMemcached_stats(IoMemcached *self, IoObject *locals, IoMessage *m)
+ 	int errors = 0;
+ 	uint32_t pos = 0;
+ 	while(pos < memcached_server_count(DATA(self)->mc)) {
+-		memcached_server_instance_st server = memcached_server_instance_by_position(DATA(self)->mc, pos);
++		const memcached_instance_st *server = memcached_server_instance_by_position(DATA(self)->mc, pos);
+ 		if(server == NULL)
+ 			continue;
+ 

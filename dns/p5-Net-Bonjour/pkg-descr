@@ -1,5 +1,5 @@
 This is Net::Bonjour, a set of perl modules to utilize DNS for service
-discovery. This method of service discovery is branded as Bonjour by 
-Apple Computer. 
+discovery. This method of service discovery is branded as Bonjour by
+Apple Computer.
 
 WWW: http://search.cpan.org/dist/Net-Bonjour/

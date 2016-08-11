@@ -8,7 +8,7 @@ MASTER_SITES=	SF/p7zip/p7zip/${PORTVERSION}
 PKGNAMESUFFIX=	-7z
 DISTNAME=	p7zip_${DISTVERSION}_src_all
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
 
 USES=		tar:bzip2 gmake

@@ -2,7 +2,7 @@
 
 PORTNAME=	charlock_holmes
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	Gems for character encoding detection
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 CONFIGURE_ARGS=	--with-icu-include=${LOCALBASE}/include
 
 .include <bsd.port.mk>

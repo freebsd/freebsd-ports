@@ -6,4 +6,4 @@ This won't be effective until all distributions ship META.yml files, so we
 suggest you take your life in your hands and look at
 Module::Depends::Intrusive.
 
-WWW:	http://search.cpan.org/dist/Module-Depends/
+WWW: http://search.cpan.org/dist/Module-Depends/

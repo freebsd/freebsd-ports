@@ -16,6 +16,6 @@ the plaintext think of the following situations:
    you can recover the password and decrypt the other files.
  - You need to know only a part of the plaintext (at least 13 bytes). Many files
    have commonly known headers, like DOS .EXE-files. Knowing a reasonably long
-   header you can recover the password and decrypt the entire file. 
+   header you can recover the password and decrypt the entire file.
 
 WWW: http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html

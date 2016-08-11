@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.caching
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}z3c.zcmlhook>=0:devel/py-z3c.zcmlhook
 
 NO_ARCH=	yes
-USES=		python zope zip
+USES=		python zope
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 ==================================================================
 
 Please take %%PREFIX%%/etc/nullmailer/remotes.sample
-as an example and edit your own 
+as an example and edit your own
 %%PREFIX%%/etc/nullmailer/remotes
 
 It's possible to redefine mailq and sendmail in your /etc/mail/mailer.conf:

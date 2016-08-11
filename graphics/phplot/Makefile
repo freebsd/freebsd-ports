@@ -3,6 +3,7 @@
 
 PORTNAME=	phplot
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/Manual/20130511:source2
@@ -19,8 +20,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		zip
-USE_PHP=	yes
+USES=		php zip
 
 PHPLOT_DIR=	${STAGEDIR}${PREFIX}/include/php/phplot
 

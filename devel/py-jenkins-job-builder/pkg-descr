@@ -1,0 +1,7 @@
+Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON
+format and uses them to configure Jenkins. You can keep your job descriptions
+in human readable text format in a version control system to make changes and
+auditing easier. It also has a flexible template system, so creating many
+similarly configured jobs is easy.
+
+WWW: http://docs.openstack.org/infra/jenkins-job-builder/

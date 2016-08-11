@@ -1,6 +1,6 @@
---- lib/component.c.orig
+--- lib/component.c.orig	2005-06-28 18:49:36 UTC
 +++ lib/component.c
-@@ -40,11 +40,13 @@
+@@ -40,11 +40,13 @@ UnshieldComponent* unshield_component_ne
      case 7:
      case 8:
      case 9:
@@ -17,9 +17,9 @@
    }
  
    self->file_group_count = READ_UINT16(p); p += 2;
---- lib/file.c.orig
+--- lib/file.c.orig	2007-01-06 14:34:57 UTC
 +++ lib/file.c
-@@ -77,6 +77,11 @@
+@@ -77,6 +77,11 @@ static FileDescriptor* unshield_read_fil
      case 7:
      case 8:
      case 9:
@@ -31,7 +31,7 @@
        saved_p = p = header->data +
            header->common.cab_descriptor_offset +
            header->cab.file_table_offset +
-@@ -117,10 +122,6 @@
+@@ -117,10 +122,6 @@ static FileDescriptor* unshield_read_fil
  
        assert((p - saved_p) == 0x57);
        break;
@@ -42,7 +42,7 @@
    }
  
    if (!(fd->flags & FILE_COMPRESSED) &&
-@@ -363,6 +364,11 @@
+@@ -363,6 +364,11 @@ static bool unshield_reader_open_volume(
      case 7:
      case 8:
      case 9:
@@ -54,7 +54,7 @@
        {
          uint8_t six_header[VOLUME_HEADER_SIZE_V6];
          uint8_t* p = six_header;
-@@ -389,10 +395,6 @@
+@@ -389,10 +395,6 @@ static bool unshield_reader_open_volume(
          reader->volume_header.last_file_size_compressed_high    = READ_UINT32(p); p += 4;
        }
        break;
@@ -65,9 +65,9 @@
    }
    
  #if VERBOSE >= 2
---- lib/libunshield.c.orig
+--- lib/libunshield.c.orig	2004-08-24 06:10:27 UTC
 +++ lib/libunshield.c
-@@ -205,7 +205,7 @@
+@@ -205,7 +205,7 @@ static bool unshield_header_get_file_gro
  /**
    Read all header files
   */
@@ -76,7 +76,7 @@
  {
    int i;
    bool iterate = true;
-@@ -268,8 +268,21 @@
+@@ -268,8 +268,21 @@ static bool unshield_read_headers(Unshie
          unshield_error("Failed to read common header from header file %i", i);
          goto error;
        }
@@ -100,7 +100,7 @@
  
  #if 0
        if (header->major_version < 5)
-@@ -326,6 +339,11 @@
+@@ -326,6 +339,11 @@ error:
  
  Unshield* unshield_open(const char* filename)/*{{{*/
  {
@@ -112,7 +112,7 @@
    Unshield* unshield = NEW1(Unshield);
    if (!unshield)
    {
-@@ -339,7 +357,7 @@
+@@ -339,7 +357,7 @@ Unshield* unshield_open(const char* file
      goto error;
    }
  
@@ -121,9 +121,9 @@
    {
      unshield_error("Failed to read header files");
      goto error;
---- lib/libunshield.h.orig
+--- lib/libunshield.h.orig	2007-01-06 14:34:57 UTC
 +++ lib/libunshield.h
-@@ -33,6 +33,7 @@
+@@ -33,6 +33,7 @@ void unshield_set_log_level(int level);
   */
  
  Unshield* unshield_open(const char* filename);
@@ -131,7 +131,7 @@
  void unshield_close(Unshield* unshield);
  
  /*
---- man/unshield.1.orig
+--- man/unshield.1.orig	2008-02-15 16:36:33 UTC
 +++ man/unshield.1
 @@ -2,7 +2,7 @@
  .SH NAME
@@ -142,7 +142,7 @@
  .SH DESCRIPTION
  Unshield extracts CAB files from InstallShield installers, used to 
  install software on Microsoft Windows based machines.
-@@ -27,6 +27,11 @@
+@@ -27,6 +27,11 @@ Only list/extract this file group
  \fB\-h\fR
  Show help message
  .TP
@@ -154,9 +154,9 @@
  \fB\-j\fR
  Junk paths (do not make directories)
  .TP
---- src/unshield.c.orig
+--- src/unshield.c.orig	2009-06-18 05:11:31 UTC
 +++ src/unshield.c
-@@ -58,6 +58,7 @@
+@@ -58,6 +58,7 @@ static OVERWRITE overwrite            = 
  static int log_level                  = UNSHIELD_LOG_LEVEL_LOWEST;
  static int exit_status                = 0;
  static FORMAT format                  = FORMAT_NEW;
@@ -164,7 +164,7 @@
  
  static bool make_sure_directory_exists(const char* directory)/*{{{*/
  {
-@@ -108,7 +109,7 @@
+@@ -108,7 +109,7 @@ static void show_usage(const char* name)
    fprintf(stderr,
        "Syntax:\n"
        "\n"
@@ -173,7 +173,7 @@
        "\n"
        "Options:\n"
        "\t-c COMPONENT  Only list/extract this component\n"
-@@ -120,6 +121,7 @@
+@@ -120,6 +121,7 @@ static void show_usage(const char* name)
        "\t                3 - Errors, warnings and debug messages\n"
        "\t-g GROUP      Only list/extract this file group\n"
        "\t-h            Show this help message\n"
@@ -181,7 +181,7 @@
        "\t-j            Junk paths (do not make directories)\n"
        "\t-L            Make file and directory names lowercase\n"
        "\t-O            Use old compression\n"
-@@ -152,7 +154,7 @@
+@@ -152,7 +154,7 @@ static bool handle_parameters(
  {
  	int c;
  
@@ -190,7 +190,7 @@
  	{
  		switch (c)
      {
-@@ -172,6 +174,10 @@
+@@ -172,6 +174,10 @@ static bool handle_parameters(
          file_group_name = optarg;
          break;
  
@@ -201,7 +201,7 @@
        case 'j':
          junk_paths = true;
          break;
-@@ -532,7 +538,7 @@
+@@ -532,7 +538,7 @@ int main(int argc, char** argv)
  
    cabfile = argv[last_optind];
  

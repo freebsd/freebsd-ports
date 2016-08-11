@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statgrab
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/py${PORTNAME}/ \
 		http://ftp.i-scream.org/pub/i-scream/py${PORTNAME}/

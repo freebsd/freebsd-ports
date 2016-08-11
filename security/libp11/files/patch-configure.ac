@@ -1,0 +1,11 @@
+--- configure.ac.orig	2016-03-28 16:04:04 UTC
++++ configure.ac
+@@ -191,7 +191,7 @@ if test -n "${pkcs11_module}"; then
+ 		[Default PKCS#11 module.])
+ fi
+ 
+-pkgconfigdir="\$(libdir)/pkgconfig"
++pkgconfigdir="\$(prefix)/libdata/pkgconfig"
+ 
+ AC_SUBST([pkgconfigdir])
+ AC_SUBST([apidocdir])

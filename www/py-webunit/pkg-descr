@@ -13,4 +13,4 @@ Features in a nutshell:
 6. Ability to register error page content across multiple tests
 7. Uses python's standard unittest module as the underlying framework
 
-WWW:	http://www.python.org/pypi/webunit
+WWW: http://www.python.org/pypi/webunit

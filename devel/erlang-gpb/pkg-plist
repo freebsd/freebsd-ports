@@ -11,6 +11,17 @@ lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_scan.beam
 lib/erlang/lib/gpb-%%VERSION%%/include/gpb.hrl
 lib/erlang/lib/gpb-%%VERSION%%/include/gpb_version.hrl
 lib/erlang/lib/gpb-%%VERSION%%/include/gpb_version.hrl.in
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/any.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/api.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/descriptor.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/duration.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/empty.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/field_mask.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/source_context.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/struct.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/timestamp.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/type.proto
+lib/erlang/lib/gpb-%%VERSION%%/priv/proto3/google/protobuf/wrappers.proto
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb.app.src
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_codegen.erl

@@ -1,10 +1,12 @@
---- bones.gemspec.orig	2016-03-31 16:06:51 UTC
+--- bones.gemspec.orig	2016-04-16 15:17:44 UTC
 +++ bones.gemspec
-@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
+@@ -25,8 +25,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<rake>.freeze, ["~> 10.0"])
+-      s.add_runtime_dependency(%q<rake>.freeze, ["~> 10.0"])
 -      s.add_runtime_dependency(%q<rdoc>.freeze, ["~> 4.0"])
++      s.add_runtime_dependency(%q<rake>.freeze, [">= 10.0"])
        s.add_runtime_dependency(%q<little-plugger>.freeze, ["~> 1.1"])
        s.add_runtime_dependency(%q<loquacious>.freeze, ["~> 1.9"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 3.2"])

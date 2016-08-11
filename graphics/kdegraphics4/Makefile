@@ -8,7 +8,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for KDE 4 (meta port)
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	GPHOTO \

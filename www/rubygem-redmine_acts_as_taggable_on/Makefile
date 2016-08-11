@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	redmine_acts_as_taggable_on
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	LOCAL/feld/rubygems/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allows multiple Redmine plugins to use tags safely
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rubygem-acts-as-taggable-on>=2.3:www/rubygem-acts-as-taggable-on
+RUN_DEPENDS=	rubygem-acts-as-taggable-on3>0:www/rubygem-acts-as-taggable-on3
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

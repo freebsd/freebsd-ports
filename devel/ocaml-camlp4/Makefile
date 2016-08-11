@@ -14,7 +14,6 @@ LICENSE=	LGPL20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-GH_TAGNAME=	bdd88a1
 
 USES=		gmake
 USE_OCAML=	yes

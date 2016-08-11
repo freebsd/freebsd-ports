@@ -1,5 +1,5 @@
---- libroute/Makefile.orig	Thu Jun 12 16:16:47 1997
-+++ libroute/Makefile	Thu Sep 30 11:34:21 1999
+--- libroute/Makefile.orig	1997-06-12 20:16:47 UTC
++++ libroute/Makefile
 @@ -1,8 +1,12 @@
  include ../Make.defines
  

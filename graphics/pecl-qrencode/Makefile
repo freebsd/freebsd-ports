@@ -3,6 +3,7 @@
 
 PORTNAME=	qrencode
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics pear
 MASTER_SITES=	LOCAL/vanilla
 PKGNAMEPREFIX=	pecl-
@@ -13,9 +14,7 @@ COMMENT=	PECL extension for generate qrcode
 
 LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=	tar:bzip2
+USES=	php:ext tar:bzip2
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-qrencode=${LOCALBASE}

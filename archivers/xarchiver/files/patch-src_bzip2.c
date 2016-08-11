@@ -1,6 +1,6 @@
---- src/bzip2.c.orig	2014-02-09 15:26:24 UTC
+--- src/bzip2.c.orig	2016-07-19 21:54:07 UTC
 +++ src/bzip2.c
-@@ -171,11 +171,11 @@ void xa_open_tar_compressed_file(XArchiv
+@@ -176,11 +176,11 @@ void xa_open_tar_compressed_file(XArchiv
  	if (archive->type == XARCHIVETYPE_TAR_BZ2)
  		command = g_strconcat(tar," tfjv ",archive->escaped_path,NULL);
  	else if (archive->type == XARCHIVETYPE_TAR_LZMA)

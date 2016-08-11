@@ -2,7 +2,7 @@ $NetBSD: patch-as,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/unix/lm_notify.ml.orig	2007-07-19 21:06:05.000000000 +0000
+--- src/libmojave-external/unix/lm_notify.ml.orig	2007-07-19 21:06:05 UTC
 +++ src/libmojave-external/unix/lm_notify.ml
 @@ -153,10 +153,8 @@ let is_path_prefix (root1, path1) (root2
  let is_monitored_name requests name =

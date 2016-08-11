@@ -39,7 +39,7 @@ Upgrade notes for 2.2.0
     Accepted data limit when using Zabbix protocol was changed from 128MB to 64MB.
 
 New upgrade procedure
-There are no upgrade SQL scripts anymore - database upgrade is performed by the Zabbix server. 
+There are no upgrade SQL scripts anymore - database upgrade is performed by the Zabbix server.
 
 To upgrade an existing database, see the scripts in
 Upgrade notes for 2.2.0 https://www.zabbix.com/documentation/2.2/manual/installation/upgrade_notes_220

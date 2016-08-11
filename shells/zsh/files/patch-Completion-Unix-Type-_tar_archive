@@ -1,0 +1,25 @@
+bsdtar/libarchive knows how to handle compressed tarballs
+natively, without needing fiddly command switches.
+
+--- Completion/Unix/Type/_tar_archive.orig	2014-12-13 23:55:54 UTC
++++ Completion/Unix/Type/_tar_archive
+@@ -14,17 +14,8 @@ local expl
+ _description files expl 'archive file'
+ 
+ if [[ "$1" = *[urtx]* ]]; then
+-  if [[ "$1" = *[zZ]* ]]; then
+-    _files "$expl[@]" -g '*.((tar|TAR).(gz|GZ|Z)|tgz)(-.)'
+-  elif [[ "$1" = *[Ijy]* ]]; then
+-    _files "$expl[@]" -g '*.(tar|TAR).bz2(-.)'
+-  elif [[ "$1" = *J* ]]; then
+-    _files "$expl[@]" -g '*.(tar|TAR).(lzma|xz)(-.)'
+-  elif [[ "$_cmd_variant[$service]" == gnu ]]; then
+-    _files "$expl[@]" -g '*.((tar|TAR)(.gz|.GZ|.Z|.bz2|.lzma|.xz|)|(tbz|tgz|txz))(-.)'
+-  else
+-    _files "$expl[@]" -g '*.(tar|TAR)(-.)'
+-  fi
++   # bsdtar/libarchive handle these automagically
++   _files "$expl[@]" -g '*.((tar|TAR|iso|ISO|cpio).(|(gz|GZ|Z|bz2|lzma|xz))|tgz|tbz|jar|zip|txz)(-.)'
+ else
+   _files "$expl[@]"
+ fi

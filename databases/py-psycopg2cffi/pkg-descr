@@ -1,0 +1,5 @@
+psycopg2cffi is an implementation of the psycopg2 module using cffi, the C
+Foreign Function Interface for Python.  psycopg2 is a PostgreSQL database
+adapter for the Python programming language.
+
+WWW: https://github.com/chtd/psycopg2cffi

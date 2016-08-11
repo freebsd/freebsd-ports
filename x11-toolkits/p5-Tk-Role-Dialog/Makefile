@@ -12,6 +12,7 @@ COMMENT=	Moose role for enhanced Tk dialogs
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Moose>=0.92:devel/p5-Moose \
 		p5-MooseX-Has-Sugar>=0:devel/p5-MooseX-Has-Sugar \

@@ -30,7 +30,7 @@ USE_RC_SUBR=	${PORTNAME}
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USES+=		ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	"USE_SOCKET_SSL=yes"

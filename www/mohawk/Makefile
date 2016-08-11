@@ -12,6 +12,8 @@ COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \

@@ -1,6 +1,6 @@
 tcbasic implements a small subset of BASIC known as Tiny BASIC.
 It provides the following statements and commands: INPUT, PRINT,
-LET, GOTO, GOSUB, RETURN, IF, END, CLEAR, LIST, RUN, and STOP. 
+LET, GOTO, GOSUB, RETURN, IF, END, CLEAR, LIST, RUN, and STOP.
 Integer and floating point arithmetic is supported, and strings
 may be PRINTed. The following built-in functions are provided:
 SIN, COS, TAN, COT, ATN, EXP, LOG, ABS, SQR, RND.

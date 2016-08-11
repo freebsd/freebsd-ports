@@ -25,13 +25,11 @@ PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET}
 
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=	${WRKDIR}/build-gcc
-
 GCC_TARGET=	arm-none-eabi
 BU_PREFIX?=	${GCC_TARGET}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 # libstdcxx won't build, but we don't need it or multiple float-abi libs.
 CONFIGURE_ARGS= --target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
@@ -43,8 +41,6 @@ CONFIGURE_ARGS= --target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--disable-libstdcxx \
 		--disable-multilib
 
-CONFIGURE_SCRIPT=	../${PORTNAME}-${PORTVERSION}/configure
-
 PLIST=	${.CURDIR}/pkg-plist
 
 # U-Boot requires libgcc, crossbuild and install it along with the compiler.
@@ -54,9 +50,6 @@ INSTALL_TARGET=	install-gcc install-target-libgcc
 .include <bsd.port.pre.mk>
 
 CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
 
 post-stage:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/cpp ] ; then \

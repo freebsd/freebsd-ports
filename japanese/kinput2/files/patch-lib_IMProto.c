@@ -3,9 +3,8 @@ Index: lib/IMProto.c
 RCS file: /home/cvs/private/hrs/kinput2/lib/IMProto.c,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- lib/IMProto.c	7 Dec 2009 06:36:04 -0000	1.1.1.1
-+++ lib/IMProto.c	7 Dec 2009 06:44:58 -0000	1.2
+--- lib/IMProto.c.orig	2002-10-03 09:35:28 UTC
++++ lib/IMProto.c
 @@ -259,7 +259,7 @@ Cardinal *num_args;
  #ifdef IM_TCP_TRANSPORT
      if (ipw->imp.use_tcp_transport) {

@@ -1,0 +1,14 @@
+--- src/tddl/Makefile.am.orig	2014-04-24 18:05:44 UTC
++++ src/tddl/Makefile.am
+@@ -1,4 +1,11 @@
++libdir=@libdir@/tddl
++
+ lib_LIBRARIES=libtddl.a
+ 
+ libtddl_a_SOURCES=tddl.c
+ libtddl_a_CFLAGS=-DAPPID=\"TCSD\ TDDL\" -I${top_srcdir}/src/include -fPIE -DPIE
++
++lib_LTLIBRARIES=libtddl.la
++
++libtddl_la_SOURCES=tddl.c
++libtddl_la_CFLAGS=-DAPPID=\"TCSD\ TDDL\" -I${top_srcdir}/src/include -fPIE -DPIE

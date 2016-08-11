@@ -9,4 +9,4 @@ Interfacing a vector or matrix type means writing "traits" objects
 called "linalg_traits", which describe their properties. The library
 offers predefined dense, sparse and skyline matrix types.
 
-WWW:	http://home.gna.org/getfem/
+WWW: http://home.gna.org/getfem/

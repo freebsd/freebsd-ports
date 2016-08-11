@@ -13,6 +13,7 @@ MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Type 1 font rasterization library for Unix/X11
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/LGPL
 
 USES=		cpe gmake libtool
 GNU_CONFIGURE=	yes
@@ -30,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/ALLSUBDIRS/s|$$(DOCSUBDIRS)||g' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/t1lib_doc.pdf ${STAGEDIR}${DOCSDIR}
 

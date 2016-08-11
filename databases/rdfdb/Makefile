@@ -11,14 +11,11 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight RDF database
 
-USE_BDB=	40+
-INVALID_BDB_VER=2
-
 USERS=	rdfdb
 GROUPS=	rdfdb
 
 WRKSRC=		${WRKDIR}/rdfdb
-USES=		gmake
+USES=		bdb gmake
 MAKEFILE=	makefile
 ALL_TARGET=
 CFLAGS+=	-Wno-return-type

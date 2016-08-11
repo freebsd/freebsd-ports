@@ -1,5 +1,5 @@
---- ../clang/lib/Frontend/CompilerInvocation.cpp.orig
-+++ ../clang/lib/Frontend/CompilerInvocation.cpp
+--- clang/lib/Frontend/CompilerInvocation.cpp.orig	2014-11-10 18:04:47 UTC
++++ clang/lib/Frontend/CompilerInvocation.cpp
 @@ -993,9 +993,8 @@ std::string CompilerInvocation::GetResourcesPath(const char *Argv0,
      P.eraseComponent();  // Remove /bin   from foo/bin
  

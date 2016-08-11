@@ -14,19 +14,17 @@ COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
 ALL_TARGET=	all
 
-USES+=		tcl tar:bzip2
+USES+=		tcl:tea tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/Trf
 DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
 CFLAGS+=	-Wall -Werror
 
-MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}"
+
+TEST_TARGET=	do-test
 
 REINPLACE_ARGS=	-i ""
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER} \
-		--enable-static-zlib --enable-static-bzlib \
+CONFIGURE_ARGS+=--enable-static-zlib --enable-static-bzlib \
 		--enable-static-md5
 
 .include <bsd.port.options.mk>
@@ -58,7 +56,7 @@ do-install:
 		${INSTALL_MAN} $$m ${STAGEDIR}${MANNPREFIX}/man/mann/ ;\
 	done
 
-check regression-test test:
+do-test:
 	@if ! ${PKG_BIN} info --quiet tcl-memchan; then	\
 		${PRINTF} "*****************\n%s\n*****************\n"	\
 		    "devel/tcl-memchan must be installed for the tests to work";	\

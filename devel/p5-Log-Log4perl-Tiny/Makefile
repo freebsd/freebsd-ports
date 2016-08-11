@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Log4perl-Tiny
-PORTVERSION=	1.2.10
+PORTVERSION=	1.4.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>

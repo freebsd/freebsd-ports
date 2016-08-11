@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
 
 USERS=		ircdru
 GROUPS=		ircdru
-PLIST_SUB=     USR=$(USERS) GRP=$(GROUPS)
+PLIST_SUB=     USR=${USERS} GRP=${GROUPS}
 
 .if defined(WITH_SMALL_NET)
 CONFIGURE_ARGS+=-enable-small-net

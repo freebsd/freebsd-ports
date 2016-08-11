@@ -1,0 +1,16 @@
+--- brushlib/tests/SConscript.orig	2016-01-15 19:42:55 UTC
++++ brushlib/tests/SConscript
+@@ -15,11 +15,11 @@ tests_sources = [fn for fn in os.listdir
+ testlib_sources = [fn for fn in os.listdir("./") if not is_test(fn) and is_csource(fn)]
+ 
+ testlib_env.Append(LIBS=['mypaint'])
+-if sys.platform == 'win32':
++if sys.platform == 'win32' or sys.platform.startswith("freebsd"):
+     testlib_env.Append(LIBS=['intl'])
+ elif sys.platform == "msys" and os.environ.get("MSYSTEM") != "MSYS":
+     testlib_env.Append(LIBS=['intl'])
+-testlib_env.Append(CPPPATH=['../'], LIBPATH=['../'])
++testlib_env.Prepend(CPPPATH=['../'], LIBPATH=['../'])
+ 
+ if testlib_env['enable_gperftools']:
+     parse_pkg_config(testlib_env, "libprofiler")

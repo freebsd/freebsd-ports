@@ -8,7 +8,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Entertaining and educational programs for KDE 4 (meta port)
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	ARTIKULATE BLINKEN CANTOR KALGEBRA KALZIUM KANAGRAM KBRUCH KGEOGRAPHY \

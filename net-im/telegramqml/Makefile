@@ -20,7 +20,13 @@ GH_PROJECT=	TelegramQML
 
 USES=		qmake:outsource
 USE_QT5=	qmake_build buildtools_build core qml quick sql xml multimedia
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-QMAKE_ARGS=	BUILD_MODE+=lib
+QMAKE_ARGS=	BUILD_MODE+=lib \
+		LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/isEmpty(OPENSSL_INCLUDE_PATH)/d" \
+		${WRKSRC}/telegramqml.pri
 
 .include <bsd.port.mk>

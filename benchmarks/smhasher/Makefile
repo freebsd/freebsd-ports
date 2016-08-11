@@ -12,6 +12,8 @@ COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvnn3
 

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20111030
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIMulation LIBrary for C++ programming language
 
+BROKEN_powerpc64=	Does not build
+
 USES=		gmake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk
-USE_OPENSSL=	yes
+USES+=		ssl
 
 .if !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -41,6 +41,21 @@ SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 
 OPTIONS_DEFINE=	DOCS
 
+.if defined(WITH_POPAUTH)
+. if defined(WITH_BDB_BASE)
+IGNORE=		does not work with base bdb
+SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
+. else
+USES+=		bdb
+SITE_SUB+=	-e 's|%%BDB%%||g' \
+		-e "s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g" \
+		-e "s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g" \
+		-e "s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|g"
+. endif
+.else
+SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
+.endif
+
 .include <bsd.port.pre.mk>
 
 WITHOUT_MILTER_CFLAGS=	yes
@@ -69,22 +84,7 @@ SITE_SUB+=	-e '\|bld_USE_ARLIB|s/^dnl //g'
 SITE_SUB+=	-e '/-DPOPAUTH/s/^dnl //g'
 .endif
 
-.if defined(WITH_POPAUTH)
-. if defined(WITH_BDB_BASE)
-IGNORE=		does not work with base bdb
-SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
-. else
-USE_BDB=	41+
-INVALID_BDB_VER=	2 40
-SITE_SUB+=	-e 's|%%BDB%%||g' \
-		-e "s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g" \
-		-e "s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g" \
-		-e "s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|g"
-. endif
-.else
-SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
-.endif
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 SITE_SUB+=	-e 's|%%OPENSSL%%|dnl |g'
 .else
 SITE_SUB+=	-e 's|%%OPENSSL%%||g' \

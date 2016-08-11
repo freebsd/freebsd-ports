@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.0.2
-PORTREVISION?=	1
+PORTVERSION=	2.0.5
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -27,10 +27,9 @@ DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
-USES=		alias cpe gmake libtool perl5 pkgconfig python:build tar:bzip2
+USES=		alias cpe gmake libtool perl5 pkgconfig python:build ssl tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
@@ -54,7 +53,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA GCRYPT GNUTLS
+OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA DECRYPT
 
 OPTIONS_RADIO=		ASYNCDNS GUI
 OPTIONS_SINGLE=		KERBEROS
@@ -63,11 +62,10 @@ OPTIONS_RADIO_ASYNCDNS=	ADNS CARES
 OPTIONS_RADIO_GUI=	GTK2 GTK3 QT5
 OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
 
-OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3
+OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3 DECRYPT
 
 RTP_DESC=		Enable support for playing back RTP streams
-GCRYPT_DESC=		IPsec decryption support
-GNUTLS_DESC=		SSL decryption support
+DECRYPT_DESC=		Decryption support for SSL and IPSec
 ASYNCDNS_DESC=		Asynchronous DNS lookup support
 ADNS_DESC=		Asynchronous DNS resolution via GNU adns
 KERBEROS_DESC=		Kerberos dissection support
@@ -90,8 +88,8 @@ SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 ADNS_LIB_DEPENDS=	libadns.so:dns/adns
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+    			libgcrypt.so:security/libgcrypt
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
@@ -108,8 +106,7 @@ SNMP_CONFIGURE_WITH=	libsmi
 ADNS_CONFIGURE_WITH=	adns
 CARES_CONFIGURE_WITH=	c-ares
 GEOIP_CONFIGURE_WITH=	geoip
-GCRYPT_CONFIGURE_WITH=	gcrypt
-GNUTLS_CONFIGURE_WITH=	gnutls
+DECRYPT_CONFIGURE_WITH=	gnutls gcrypt
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 

@@ -11,8 +11,6 @@ MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual, multiuser, multi-blog engine
 
-PATCH_DEPENDS=	unzip:archivers/unzip
-
 USES=		cpe dos2unix zip
 
 B2EVO_DATE?=	stable-2011-03-23
@@ -29,6 +27,9 @@ WARNING=	${PKGDIR}/pkg-warning
 
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DEFAULT=	MYSQL
+
+SUB_FILES=	pkg-message
+SUB_LIST+=	B2EVO_DIR=${B2EVO_DIR} B2EVO_URL=${B2EVO_URL}
 
 .include <bsd.port.options.mk>
 
@@ -53,10 +54,5 @@ do-install:
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
 	@${CHMOD} 665 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
-
-post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
-		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
-		${PKGMESSAGE}
 
 .include <bsd.port.mk>

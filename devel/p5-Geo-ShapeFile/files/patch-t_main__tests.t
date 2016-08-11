@@ -1,5 +1,5 @@
---- t/main_tests.t.orig	2015-10-16 16:34:06.906634577 +0200
-+++ t/main_tests.t	2015-10-16 16:34:56.598631573 +0200
+--- t/main_tests.t.orig	2016-06-20 14:43:13 UTC
++++ t/main_tests.t
 @@ -3,7 +3,10 @@
  use Test::More;
  use strict;

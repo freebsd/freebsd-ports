@@ -1,10 +1,10 @@
-Twisted Conch is an SSHv2 implementation written in Python. SSH is a protocol 
-designed to allow remote access to shells and commands, but it is generic 
-enough to allow everything from TCP forwarding to generic filesystem access. 
+Twisted Conch is an SSHv2 implementation written in Python. SSH is a protocol
+designed to allow remote access to shells and commands, but it is generic
+enough to allow everything from TCP forwarding to generic filesystem access.
 Since conch is written in Python, it interfaces well with other Python
 projects, such as Imagination. Conch also includes a implementations of the
 telnet and vt102 protocols, as well as support for rudamentary line editing
 behaviors. A new implementation of Twisted's Manhole application is also
-included, featuring server-side input history and interactive syntax coloring. 
+included, featuring server-side input history and interactive syntax coloring.
 
 WWW: http://twistedmatrix.com/

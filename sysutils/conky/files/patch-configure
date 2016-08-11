@@ -1,6 +1,6 @@
---- configure.orig	2012-05-04 00:47:40.000000000 +0300
-+++ configure	2012-12-06 04:26:37.000000000 +0200
-@@ -895,6 +895,7 @@
+--- configure.orig	2012-05-03 21:47:40 UTC
++++ configure
+@@ -895,6 +895,7 @@ enable_xdamage
  enable_xft
  enable_nvidia
  enable_alsa
@@ -8,7 +8,7 @@
  enable_debug
  enable_testing
  enable_profiling
-@@ -1620,6 +1621,7 @@
+@@ -1620,6 +1621,7 @@ Optional Features:
    --enable-nvidia         enable if you want nvidia support [default=no]
    --disable-alsa          disable if you do not want ALSA support
                            [default=yes]
@@ -16,7 +16,7 @@
    --enable-debug          compile with debug symbols [default=no]
    --enable-testing        use strict compiler flags for testing [default=no]
    --enable-profiling      specify compiler flags for use with gprof and gcov
-@@ -11930,7 +11932,11 @@
+@@ -11930,7 +11932,11 @@ case $uname in
    Linux*)
      WANT_SYSINFO=yes
      ;;
@@ -29,7 +29,207 @@
      WANT_KVM=yes
      WANT_DEVSTAT=yes
      WANT_OPTRESET=yes
-@@ -16998,18 +17004,63 @@
+@@ -14046,12 +14052,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_CFLAGS="$LUA51_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14064,12 +14070,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_LIBS="$LUA51_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14088,14 +14094,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         else
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LUA51_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (lua5.1 >= 5.1) were not met:
++	as_fn_error $? "Package requirements (lua-5.1 >= 5.1) were not met:
+ 
+ $LUA51_PKG_ERRORS
+ 
+@@ -14139,12 +14145,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_CFLAGS="$LUA51_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14157,12 +14163,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_LIBS="$LUA51_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14181,14 +14187,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         else
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LUA51_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (lua5.1 >= 5.1) were not met:
++	as_fn_error $? "Package requirements (lua-5.1 >= 5.1) were not met:
+ 
+ $LUA51_PKG_ERRORS
+ 
+@@ -14302,12 +14308,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_CFLAGS="$LUA51_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14320,12 +14326,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_LIBS="$LUA51_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14344,14 +14350,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         else
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LUA51_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (lua5.1 >= 5.1) were not met:
++	as_fn_error $? "Package requirements (lua-5.1 >= 5.1) were not met:
+ 
+ $LUA51_PKG_ERRORS
+ 
+@@ -14395,12 +14401,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_CFLAGS="$LUA51_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_CFLAGS=`$PKG_CONFIG --cflags "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14413,12 +14419,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LUA51_LIBS="$LUA51_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.1 >= 5.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lua5.1 >= 5.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua-5.1 >= 5.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "lua-5.1 >= 5.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua5.1 >= 5.1" 2>/dev/null`
++  pkg_cv_LUA51_LIBS=`$PKG_CONFIG --libs "lua-5.1 >= 5.1" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14437,14 +14443,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         else
+-	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua5.1 >= 5.1"`
++	        LUA51_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "lua-5.1 >= 5.1"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LUA51_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (lua5.1 >= 5.1) were not met:
++	as_fn_error $? "Package requirements (lua-5.1 >= 5.1) were not met:
+ 
+ $LUA51_PKG_ERRORS
+ 
+@@ -16998,18 +17004,63 @@ fi
  
  done
  
@@ -55,8 +255,8 @@
 +else
 +  want_inotify=no
 +fi
- 
- fi
++
++fi
 +if test x$want_inotify = xyes; then
 +    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for inotify_init in -linotify" >&5
 +$as_echo_n "checking for inotify_init in -linotify... " >&6; }
@@ -67,10 +267,9 @@
 +LIBS="-linotify  $LIBS"
 +cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 +/* end confdefs.h.  */
- 
--done
-+#include <sys/inotify.h>
 +
++#include <sys/inotify.h>
+ 
 +char inotify_init ();
 +int
 +main ()
@@ -95,8 +294,9 @@
 +  conky_LIBS="$conky_LIBS -linotify"
 +else
 +  want_inotify=yes
-+fi
-+
+ fi
+ 
+-done
 +fi
  
  

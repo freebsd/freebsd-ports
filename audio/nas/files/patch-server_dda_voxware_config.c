@@ -1,5 +1,5 @@
---- server/dda/voxware/config.c.orig	2007-06-16 23:03:22.000000000 +0400
-+++ server/dda/voxware/config.c	2008-05-14 22:49:23.000000000 +0400
+--- server/dda/voxware/config.c.orig	2013-04-27 00:41:06 UTC
++++ server/dda/voxware/config.c
 @@ -5,6 +5,7 @@
   */
  
@@ -8,7 +8,7 @@
  #include "nasconf.h"
  #include "config.h"
  #include "aulog.h"
-@@ -27,7 +28,7 @@
+@@ -27,7 +28,7 @@ ddaSetConfig(int token, void *value)
  
      switch (token) {
      case CONF_SET_SECTION:
@@ -17,7 +17,7 @@
  
          if (num == INPUTSECTION) {      /* we're in the input section */
              confStat = &sndStatIn;
-@@ -37,12 +38,12 @@
+@@ -37,12 +38,12 @@ ddaSetConfig(int token, void *value)
          break;
  
      case FORCERATE:
@@ -32,7 +32,7 @@
          if (num < 0 || num > 100)
              osLogMsg("config: gain scaling must be within the range 0-100\n");
          else
-@@ -50,7 +51,7 @@
+@@ -50,7 +51,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case GAIN:
@@ -41,7 +41,7 @@
          /* the default is 50, so if it's just out of range, don't
             reset it */
          if (num < 0 || num > 100)
-@@ -61,12 +62,12 @@
+@@ -61,12 +62,12 @@ ddaSetConfig(int token, void *value)
          break;
  
      case AUTOOPEN:
@@ -56,7 +56,7 @@
          if (confStat == &sndStatIn) {
              confStat->howToOpen = (num ? O_RDWR : O_RDONLY);
          } else {
-@@ -89,7 +90,7 @@
+@@ -89,7 +90,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case WORDSIZE:
@@ -65,7 +65,7 @@
  
          if (num != 8 && num != 16) {
              osLogMsg("config: Wordsize (%d) not 8 or 16, setting to 8\n",
-@@ -100,7 +101,7 @@
+@@ -100,7 +101,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case FRAGSIZE:
@@ -74,7 +74,7 @@
  
          {
              int i, j, k;
-@@ -125,7 +126,7 @@
+@@ -125,7 +126,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case MINFRAGS:
@@ -83,7 +83,7 @@
  
          if (num < 2 || num > 32) {
              osLogMsg("config: Minfrags out of range - setting to 2\n");
-@@ -138,7 +139,7 @@
+@@ -138,7 +139,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case MAXFRAGS:
@@ -92,7 +92,7 @@
  
          if (num < 2 || num > 32) {
              osLogMsg("config: Maxfrags out of range - setting to 32\n");
-@@ -151,7 +152,7 @@
+@@ -151,7 +152,7 @@ ddaSetConfig(int token, void *value)
          break;
  
      case NUMCHANS:
@@ -101,7 +101,7 @@
  
          if (num != 1 && num != 2) {
              osLogMsg("config: Number of channels wrong, setting to 1\n");
-@@ -161,25 +162,25 @@
+@@ -161,25 +162,25 @@ ddaSetConfig(int token, void *value)
          break;
  
      case MAXRATE:

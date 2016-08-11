@@ -16,7 +16,6 @@ USES=		gettext tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/ascii2binary bin/binary2ascii \
 		man/man1/ascii2binary.1.gz \

@@ -18,7 +18,6 @@ OPTIONS_DEFAULT=	VORBIS
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
-NO_PACKAGE=	Distribution is 352MB; set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
 SUB_FILES=	pkg-message

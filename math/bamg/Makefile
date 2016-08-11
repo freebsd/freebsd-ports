@@ -13,6 +13,8 @@ COMMENT=	Bidimensional Anisotropic Mesh Generator
 
 RESTRICTED=	Contact author personally regarding commercial use
 
+BROKEN=		Master site no longer exists
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11

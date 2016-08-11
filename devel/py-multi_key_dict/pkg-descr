@@ -1,0 +1,8 @@
+Implementation of a multi-key dictionary, i.e.:
+
+(key1[,key2, ..]) => value
+
+This dictionary has a similar interface to the standard dictionary => but is
+extended to support multiple keys referring to the same element.
+
+WWW: https://github.com/formiaczek/multi_key_dict

@@ -14,7 +14,6 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/flag_travel_north.bmp
 %%DATADIR%%/Bitmap/flag_travel_south.bmp
 %%DATADIR%%/Bitmap/flag_travel_west.bmp
-%%DATADIR%%/Bitmap/flags32.png
 %%DATADIR%%/Bitmap/fullscreen_border_bottom.bmp
 %%DATADIR%%/Bitmap/fullscreen_border_bottomleft.bmp
 %%DATADIR%%/Bitmap/fullscreen_border_bottomright.bmp
@@ -37,14 +36,7 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/mkfont.lua
 %%DATADIR%%/Bitmap/mkraw.lua
 %%DATADIR%%/Bitmap/mksheet.lua
-%%DATADIR%%/Bitmap/new32.png
-%%DATADIR%%/Bitmap/open32.png
-%%DATADIR%%/Bitmap/parcels32.png
-%%DATADIR%%/Bitmap/positions32.png
 %%DATADIR%%/Bitmap/readme.txt
-%%DATADIR%%/Bitmap/redo32.png
-%%DATADIR%%/Bitmap/save32.png
-%%DATADIR%%/Bitmap/transparent_walls32.png
 %%DATADIR%%/Bitmap/tree_collapsed.bmp
 %%DATADIR%%/Bitmap/tree_ctrl.dat
 %%DATADIR%%/Bitmap/tree_ctrl.pal
@@ -53,7 +45,6 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/tree_expanded.bmp
 %%DATADIR%%/Bitmap/tree_leaf.bmp
 %%DATADIR%%/Bitmap/tree_level.bmp
-%%DATADIR%%/Bitmap/undo32.png
 %%DATADIR%%/CorsixTH.lua
 %%DATADIR%%/Levels/Example.map
 %%DATADIR%%/Levels/avatar.level
@@ -77,11 +68,6 @@ bin/CorsixTH
 %%DATADIR%%/Lua/base_config.lua
 %%DATADIR%%/Lua/calls_dispatcher.lua
 %%DATADIR%%/Lua/class.lua
-%%DATADIR%%/Lua/command.lua
-%%DATADIR%%/Lua/command_stack.lua
-%%DATADIR%%/Lua/commands/compound.lua
-%%DATADIR%%/Lua/commands/set_map_cell.lua
-%%DATADIR%%/Lua/commands/set_map_cell_flags.lua
 %%DATADIR%%/Lua/config_finder.lua
 %%DATADIR%%/Lua/debug_script.lua
 %%DATADIR%%/Lua/diagnosis/diag_blood_machine.lua
@@ -114,7 +100,6 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/information.lua
 %%DATADIR%%/Lua/dialogs/jukebox.lua
 %%DATADIR%%/Lua/dialogs/machine_dialog.lua
-%%DATADIR%%/Lua/dialogs/map_editor.lua
 %%DATADIR%%/Lua/dialogs/menu.lua
 %%DATADIR%%/Lua/dialogs/message.lua
 %%DATADIR%%/Lua/dialogs/patient.lua
@@ -130,11 +115,15 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/resizables/file_browser.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/choose_font.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/load_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/file_browsers/load_map.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/save_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/file_browsers/save_map.lua
 %%DATADIR%%/Lua/dialogs/resizables/folder_settings.lua
 %%DATADIR%%/Lua/dialogs/resizables/lua_console.lua
 %%DATADIR%%/Lua/dialogs/resizables/main_menu.lua
+%%DATADIR%%/Lua/dialogs/resizables/map_editor.lua
 %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialog.lua
+%%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs/custom_campaign.lua
 %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs/custom_game.lua
 %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs/make_debug_patient.lua
 %%DATADIR%%/Lua/dialogs/resizables/new_game.lua

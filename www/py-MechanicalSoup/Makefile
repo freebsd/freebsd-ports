@@ -3,6 +3,7 @@
 
 PORTNAME=	MechanicalSoup
 PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hickford
-GH_TAGNAME=	cb0c94d
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -3,7 +3,7 @@ Mlclock is the best clock for the mlvwm window manager.
 HOW TO USE
 
    Copy /usr/X11R6/share/mlclock/mlclockrc file to your home
-   directory as ".mlclockrc" 
+   directory as ".mlclockrc"
    (or specifyed name in Imakefile).
 
    Then, add following line into .mlvwmrc.

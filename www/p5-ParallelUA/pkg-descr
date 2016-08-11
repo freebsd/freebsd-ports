@@ -1,9 +1,9 @@
 ParallelUserAgent allows you to connect to multiple sites _in parallel_!
 You can register a number of requests, then call the 'wait' method and see
-how the requests come in as each server responds. 
+how the requests come in as each server responds.
 
 ParallelUserAgent is basically an extension of the current UserAgent and
 RobotUA modules that come with libwww5. It installs into the ::Parallel
-subtree under the standard LWP directory that ships with libwww5. 
+subtree under the standard LWP directory that ships with libwww5.
 
 WWW: http://search.cpan.org/dist/ParallelUserAgent/

@@ -1,14 +1,14 @@
-This module takes a list of CSS files and concatenates them, making sure 
+This module takes a list of CSS files and concatenates them, making sure
 to honor any valid @import statements included in the files.
 
-Following the CSS 2.1 spec, @import statements must be the first rules in 
-a CSS file. Media-specific @import statements will be honored by enclosing 
-the included file in an @media rule. This has the side effect of actually 
-improving compatibility in Internet Explorer, which ignores media-specific 
+Following the CSS 2.1 spec, @import statements must be the first rules in
+a CSS file. Media-specific @import statements will be honored by enclosing
+the included file in an @media rule. This has the side effect of actually
+improving compatibility in Internet Explorer, which ignores media-specific
 @import rules but understands @media rules.
 
-It is possible that feature versions will include methods to compact 
-whitespace and other parts of the CSS itself, but this functionality is 
+It is possible that feature versions will include methods to compact
+whitespace and other parts of the CSS itself, but this functionality is
 not supported at the current time.
 
 WWW: http://search.cpan.org/dist/CSS-Squish/

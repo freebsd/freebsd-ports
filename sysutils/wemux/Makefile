@@ -3,6 +3,7 @@
 
 PORTNAME=	wemux
 PORTVERSION=	3.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.c-s.li/ports/
 
@@ -17,7 +18,6 @@ RUN_DEPENDS=	tmux:sysutils/tmux \
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zolrath
-GH_TAGNAME=	971f8c3
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${PORTNAME}

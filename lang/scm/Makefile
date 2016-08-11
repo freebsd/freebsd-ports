@@ -15,6 +15,8 @@ COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline zip

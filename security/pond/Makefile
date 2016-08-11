@@ -9,7 +9,7 @@ DISTFILES=	pond-20150830.tar.gz \
 		go-gtk-20151214.tar.gz \
 		ed25519-20150830.tar.gz
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Forward secure, asynchronous messenger
 
 LICENSE=	BSD3CLAUSE
@@ -21,6 +21,7 @@ RUN_DEPENDS=	tor:security/tor
 LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
 		libtspi.so:security/trousers
 
+USES=		go
 PLIST_FILES=	bin/pond-server bin/pond
 USE_GNOME=	gtk30
 GO_PKGNAME=	github.com/agl/pond
@@ -61,6 +62,4 @@ post-patch:
 do-build:
 	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} install -tags nogui -v ${GO_TARGET})
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

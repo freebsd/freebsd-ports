@@ -1,0 +1,12 @@
+--- src/Makefile.xpvm.orig	1998-04-09 21:11:23 UTC
++++ src/Makefile.xpvm
+@@ -2,6 +2,9 @@
+ # $Id: Makefile.xpvm,v 4.50 1998/04/09 21:11:23 kohl Exp $
+ #
+ 
++default:
++	cd src ; ${PVM_ROOT}/lib/aimk
++
+ install:
+ 	cd src ; $(PVM_ROOT)/lib/aimk install
+ 

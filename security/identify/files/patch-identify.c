@@ -1,5 +1,5 @@
---- identify.c.orig	Tue Feb  2 01:51:57 1993
-+++ identify.c	Sun Oct 20 17:53:44 2002
+--- identify.c.orig	1993-02-02 09:51:57 UTC
++++ identify.c
 @@ -11,7 +11,7 @@
  #include <stdio.h>
  #include <signal.h>
@@ -9,7 +9,7 @@
  #include <netdb.h>
  #include <sys/types.h>
  #include <netinet/in.h>
-@@ -33,57 +33,43 @@
+@@ -33,57 +33,43 @@ char *force_log = NULL;
  int noidentify = 0;
  int bits = 0;
  int reject_flag = 0;
@@ -84,7 +84,7 @@
      
      host[len] = '\0';
    }
-@@ -91,16 +77,7 @@
+@@ -91,16 +77,7 @@ char *ident_get_identifier(fd, host, len
    if (noidentify)
      return NULL;
    else
@@ -102,7 +102,7 @@
  }
  
  
-@@ -128,10 +105,6 @@
+@@ -128,10 +105,6 @@ main(argc,argv)
  	timeout = atoi(argv[i]+2);
  	break;
  	
@@ -113,7 +113,7 @@
        case 'R':
  	if (!argv[i][2])
  	  reject_flag = 1;
-@@ -200,7 +173,7 @@
+@@ -200,7 +173,7 @@ main(argc,argv)
      {
        /* In child, let's fork again so we can forget about this child */
        if (fork())
@@ -122,7 +122,7 @@
      }
      else
      {
-@@ -241,13 +214,13 @@
+@@ -241,13 +214,13 @@ main(argc,argv)
      }
    }
  

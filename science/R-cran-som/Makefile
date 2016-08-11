@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	som
-DISTVERSION=	0.3-5
-PORTREVISION=	9
+DISTVERSION=	0.3-5.1
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,6 +11,6 @@ COMMENT=	Self-Organizing Map
 
 LICENSE=	GPLv3
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-DISTVERSION=	2.5.0
-PORTREVISION=	4
+DISTVERSION=	2.6.0
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
 USE_XORG=	pixman
-USE_GNOME+=	glib20
+USE_GNOME+=	cairo glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 
@@ -33,11 +33,11 @@ CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
-X86_TARGETS_DESC=	Don't build non-x86 system targets
+X86_TARGETS_DESC=	Build only x86 system targets
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
 OPTIONS_SUB=	yes
-X11_USE=	SDL=sdl
+X11_USE=	SDL=sdl XORG=x11,xext GNOME=gdkpixbuf2
 X11_CONFIGURE_ON=	--enable-sdl
 X11_CONFIGURE_OFF=	--disable-sdl
 GTK2_USE=	GNOME=gtk20,vte
@@ -59,7 +59,7 @@ USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch
+PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
@@ -78,6 +78,10 @@ CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
+
+LIB_DEPENDS+=	libnettle.so:security/nettle \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 .include <bsd.port.options.mk>
 

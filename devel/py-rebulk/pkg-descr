@@ -1,0 +1,7 @@
+ReBulk is a python library that performs advanced searches in strings
+that would be hard to implement using re module or String methods only.
+It includes some features like Patterns, Match, Rule that allows
+developers to build a custom and complex string matcher using a readable
+and extendable API.
+
+WWW: https://github.com/Toilal/rebulk

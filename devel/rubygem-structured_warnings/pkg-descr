@@ -1,6 +1,6 @@
-This is an implementation of Daniel Berger's proposal of structured warnings 
-for Ruby.  They provide dynamic suppression and activation, as well as, 
-an inheritance hierarchy to model their relations. This library preserves 
+This is an implementation of Daniel Berger's proposal of structured warnings
+for Ruby.  They provide dynamic suppression and activation, as well as,
+an inheritance hierarchy to model their relations. This library preserves
 the old warn signature, but additionally allows a raise-like use.
 
 WWW: https://github.com/schmidt/structured_warnings

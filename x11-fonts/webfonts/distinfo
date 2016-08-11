@@ -1,3 +1,4 @@
+TIMESTAMP = 1468745172
 SHA256 (webfonts/andale32.exe) = 0524fe42951adc3a7eb870e32f0920313c71f170c859b5f770d82b4ee111e970
 SIZE (webfonts/andale32.exe) = 198384
 SHA256 (webfonts/arial32.exe) = 85297a4d146e9c87ac6f74822734bdee5f4b2a722d7eaa584b7f2cbf76f478f6
@@ -20,5 +21,5 @@ SHA256 (webfonts/verdan32.exe) = c1cb61255e363166794e47664e2f21af8e3a26cb6346eb8
 SIZE (webfonts/verdan32.exe) = 351992
 SHA256 (webfonts/webdin32.exe) = 64595b5abc1080fba8610c5c34fab5863408e806aafe84653ca8575bed17d75a
 SIZE (webfonts/webdin32.exe) = 185072
-SHA256 (webfonts/ielpkth.cab) = c1be3fb8f0042570be76ec6daa03a99142c88367c1bc810240b85827c715961a
-SIZE (webfonts/ielpkth.cab) = 411248
+SHA256 (webfonts/IELPKTH.CAB) = c1be3fb8f0042570be76ec6daa03a99142c88367c1bc810240b85827c715961a
+SIZE (webfonts/IELPKTH.CAB) = 411248

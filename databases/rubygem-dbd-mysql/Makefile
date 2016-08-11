@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-dbi>=0:databases/rubygem-dbi \
 		rubygem-mysql>=0:databases/rubygem-mysql
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

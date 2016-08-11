@@ -1,0 +1,62 @@
+--- Resource/Init/FAPIcidfmap.orig	2015-03-30 08:21:24 UTC
++++ Resource/Init/FAPIcidfmap
+@@ -29,4 +29,59 @@
+ %
+ %  /Ryumin-Medium     << /Path (msgothic.ttc) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
+ %  /HeiseiKakuGo-W5   << /Path (F:/WIN2000/Fonts/BATANG.TTC) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
++%/Ryumin-Light		<< /Path (Ryumin-Light) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
++%/GothicBBB-Medium	<< /Path (GothicBBB-Medium) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
++
++/Ryumin-Medium		/Ryumin-Light ;
++/Ryumin-Regular		/Ryumin-Light ;
++/RyuminPro-Light	/Ryumin-Light ;
++
++/GothicBBBPro-Medium	/GothicBBB-Medium ;
++
++/KozGoPro-Bold		/GothicBBB-Medium ;
++/KozGoPro-Heavy		/GothicBBB-Medium ;
++/KozGoPro-Medium	/GothicBBB-Medium ;
++/KozGoPro-Regular	/GothicBBB-Medium ;
++
++/KozMinPro-Bold		/Ryumin-Light ;
++/KozMinPro-Light	/Ryumin-Light ;
++/KozMinPro-Medium	/Ryumin-Light ;
++/KozMinPro-Regular	/Ryumin-Light ;
++
++/HiraKakuPro-W3		/GothicBBB-Medium ;
++/HiraKakuPro-W6		/GothicBBB-Medium ;
++/HiraKakuStd-W8		/GothicBBB-Medium ;
++
++/HiraMaruPro-W4		/GothicBBB-Medium ;
+ 
++/HiraMinPro-W3		/Ryumin-Light ;
++
++/HeiseiMin-W3		/Ryumin-Light ;
++/HeiseiKakuGo-W5	/GothicBBB-Medium ;
++
++/FutoMinA101-Bold	/Ryumin-Light ;
++/FutoMinA101Pro-Bold	/Ryumin-Light ;
++/FutoGoB101-Bold	/GothicBBB-Medium ;
++/FutoGoB101Pro-Bold	/GothicBBB-Medium ;
++
++/Jun101-Light		/Ryumin-Light ;
++/Jun101Pro-Light	/Ryumin-Light ;
++
++/MidashiGo-MB31		/GothicBBB-Medium ;
++/MidashiGoPro-MB31	/GothicBBB-Medium ;
++
++/MidashiMinPro-MA31	/Ryumin-Light ;
++
++%/Munhwa-Regular	/Munhwa-Regular ;
++%/MunhwaGothic-Regular	/MunhwaGothic-Regular ;
++%/Munhwa-Bold		/Munhwa-Bold ;
++%/MunhwaGothic-Bold	/MunhwaGothic-Bold ;
++
++/HYGoThic-Medium	/MunhwaGothic-Regular ;
++/HYSMyeongJo-Medium	/Munhwa-Regular ;
++/HYRGoThic-Medium	/MunhwaGothic-Bold ;
++
++%/STHeiti-Regular << /Path (STHeiti-Regular) /CIDFontType 0 /FAPI /UFST /CSI [(CNS1) 5] >> ;
++%/STSong-Light << /Path (STSong-Light) /CIDFontType 0 /FAPI /UFST /CSI [(GB1) 5] >> ;
++%/MSung-Light << /Path (MSung-Light) /CIDFontType 0 /FAPI /UFST /CSI [(CNS1) 5] >> ;
++%/MHei-Medium << /Path (MHei-Medium) /CIDFontType 0 /FAPI /UFST /CSI [(GB1) 5] >> ;

@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	gbirthday
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.10
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Birthday reminder for GNOME2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_TUPLE=	lafrech:gbirthday:7b431aa
 
 OPTIONS_DEFINE=		MYSQL NLS NOTIFY THUNDERBIRD
 OPTIONS_SUB=		yes
@@ -22,7 +24,7 @@ NOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>0:devel/py-notify
 THUNDERBIRD_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 NO_ARCH=	yes
-USES=		python:2,run tar:xz
+USES=		python:2.7,run
 USE_GNOME=	pygtk2
 LANGUAGES=	cs da de en es fi fr gl he it pl pt ru sk
 

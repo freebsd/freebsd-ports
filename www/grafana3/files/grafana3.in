@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: grafana3
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable grafana
+# grafana_enable="YES"
+#
+# grafana3_enable (bool): 	Set to YES to enable grafana
+#				Default: NO
+# grafana3_conf (str):		grafana configration file
+#				Default: ${PREFIX}/etc/grafana.cfg
+# grafana3_user (str):		grafana daemon user
+#				Default: %%GRAFANA_USER%%
+# grafana3_group (str):		grafana daemon group
+#				Default: %%GRAFANA_GROUP%%
+
+. /etc/rc.subr
+
+name="grafana3"
+rcvar=grafana3_enable
+
+: ${grafana3_enable:="NO"}
+: ${grafana3_user:="%%GRAFANA_USER%%"}
+: ${grafana3_group:="%%GRAFANA_GROUP%%"}
+: ${grafana3_flags:=""}
+: ${grafana3_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${grafana3_options:="-config=${grafana3_conf} -homepath=%%GRAFANAHOMEDIR%%"}
+
+pidfile="%%GRAFANAPIDDIR%%${name}.pid"
+procname="%%PREFIX%%/bin/grafana-server"
+command=/usr/sbin/daemon
+command_args="-f -c -p ${pidfile} ${procname} ${grafana3_options}"
+start_precmd="grafana_precmd"
+
+grafana_precmd()
+{
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANADATADIR%%
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANALOGDIR%%
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANAHOMEDIR%%data/log/
+    install -o ${grafana3_user} /dev/null ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"

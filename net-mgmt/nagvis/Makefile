@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/NagVis%201.7
+MASTER_SITES=	http://www.nagvis.org/share/
 
 MAINTAINER=	derfi@vei.ru
 COMMENT=	Visualization addon for Nagios
@@ -19,6 +18,10 @@ OPTIONS_DEFAULT=	MKLIVESTATUS
 MKLIVESTATUS_DESC=	Depend on mk-livestatus broker (preferred)
 NDO2DB_DESC=	Depend on ndo2db broker
 GRAPHVIZ_DESC=	Graphviz is needed for automaps
+
+USES=		gettext
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite

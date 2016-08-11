@@ -1,7 +1,7 @@
 llppac can auto-convert file formats for viewing in llpp.  The
 following optional ports are required:
 
-Port			Adds support for 
+Port			Adds support for
 ------------------------------------------------------------
 textproc/unoconv	Word and Libre/OpenOffice documents
 graphics/djvulibre	DjVu
@@ -11,6 +11,4 @@ x11-toolkits/pango	Fonts
 graphics/imagemagick	Image formats besides PNG and JPEG
 textproc/hs-pandoc	Text files
 
-It might be necessary to first create a cache directory with
-
-$ mkdir -p ~/.cache/llpp
+Auto-converted documents are cached in ~/.cache/llpp.

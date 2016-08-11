@@ -1,9 +1,9 @@
-AtomicParsley is a lightweight command line program for reading, parsing and 
+AtomicParsley is a lightweight command line program for reading, parsing and
 setting metadata into MPEG-4 files supporting these styles of metadata:
 
     * iTunes-style metadata into .mp4, .m4a, .m4p, .m4v, .m4b files
     * 3gp-style assets in 3GPP, 3GPP2, MobileMP4 & derivatives
-    * ISO copyright notices at movie & track level for MPEG-4 
+    * ISO copyright notices at movie & track level for MPEG-4
     * uuid private user extension text & file embedding for MPEG-4
 
 WWW: http://atomicparsley.sourceforge.net/

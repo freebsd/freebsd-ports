@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20160318
+PORTVERSION=	20160729
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim
@@ -13,6 +13,8 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
+
+BROKEN_powerpc64=	Does not build
 
 USES=		gmake
 

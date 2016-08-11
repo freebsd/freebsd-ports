@@ -2,7 +2,7 @@ A suite of classes that extend or augment the Java Collections Framework.
 
 There are certain holes left unfilled by Sun's implementations, and the
 Jakarta-Commons Collections Component strives to fulfill them. Among the
-features of this package are: 
+features of this package are:
 
 Special-purpose implementations of Lists and Maps for fast access Adapter
 classes from Java1-style containers (arrays, enumerations) to Java 2-style

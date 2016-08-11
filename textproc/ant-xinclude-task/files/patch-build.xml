@@ -1,5 +1,5 @@
---- build.xml.orig	Thu Aug 12 12:17:41 2004
-+++ build.xml	Thu Aug 12 12:20:10 2004
+--- build.xml.orig	2003-09-17 10:03:21 UTC
++++ build.xml
 @@ -144,8 +144,6 @@
  		windowtitle="${javadoc.title}"
  		doctitle="${javadoc.title}"

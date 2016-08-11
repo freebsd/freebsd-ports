@@ -1,0 +1,15 @@
+************************************************************************
+
+	Before start the SonarQube, prepare the Database and
+	the Web Server, when installing for the first time.
+
+	More information:
+	http://docs.sonarqube.org/display/SONAR/Installing
+
+	When upgrading the SonarQube, follow instructions:
+	http://docs.sonarqube.org/display/SONAR/Upgrading
+
+	To run the SonarQube from startup, add sonarqube_enable="YES"
+	in your /etc/rc.conf
+
+************************************************************************

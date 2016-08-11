@@ -12,6 +12,8 @@ COMMENT=	Web based MySQL administration with a set of PHP scripts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	deliciousbrains
 GH_TAGNAME=	b2cdc2b

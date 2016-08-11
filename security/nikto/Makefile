@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	nikto
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 PORTEPOCH=	1
 CATEGORIES=	security www
-MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
-		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 LICENSE=	GPLv2
+
+GH_ACCOUNT=	sullo
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	SSLEAY DOCS
 OPTIONS_DEFAULT=SSLEAY
@@ -25,6 +25,7 @@ NO_ARCH=	yes
 USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run
 SHEBANG_FILES=	nikto.pl
+WRKSRC_SUBDIR=	program
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e \

@@ -19,7 +19,10 @@
 %%WWWDIR_REL%%/wwwroot/inc/functions.php
 %%WWWDIR_REL%%/wwwroot/inc/init.php
 %%WWWDIR_REL%%/wwwroot/inc/install.php
+%%WWWDIR_REL%%/wwwroot/inc/interface-cables.php
+%%WWWDIR_REL%%/wwwroot/inc/interface-config.php
 %%WWWDIR_REL%%/wwwroot/inc/interface-lib.php
+%%WWWDIR_REL%%/wwwroot/inc/interface-reports.php
 %%WWWDIR_REL%%/wwwroot/inc/interface.php
 %%WWWDIR_REL%%/wwwroot/inc/navigation.php
 %%WWWDIR_REL%%/wwwroot/inc/ophandlers.php
@@ -139,6 +142,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/tango-edit-cut-16x16.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-edit-cut-22x22-gray.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-edit-cut-22x22.png
+%%WWWDIR_REL%%/wwwroot/pix/tango-edit-cut-32x32-gray.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-edit-cut-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-emblem-favorite.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-emblem-important-32x32.png

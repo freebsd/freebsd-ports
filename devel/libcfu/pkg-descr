@@ -1,6 +1,6 @@
-Libcfu is a library of tools that may be useful, particularly when 
-developing multithreaded software. It includes a hash table, a linked list, 
-self-extending strings, a config file parser, a simple timer, a thread 
+Libcfu is a library of tools that may be useful, particularly when
+developing multithreaded software. It includes a hash table, a linked list,
+self-extending strings, a config file parser, a simple timer, a thread
 queue, and command-line parser.
 
 WWW: http://libcfu.sourceforge.net/

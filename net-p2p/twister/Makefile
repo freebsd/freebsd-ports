@@ -3,6 +3,7 @@
 
 PORTNAME=	twister-core
 PORTVERSION=	0.9.34
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
@@ -14,6 +15,8 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
 		libleveldb.so:databases/leveldb	\
 		libicui18n.so:devel/icu
@@ -23,10 +26,7 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 
-USE_BDB=	yes
-WANT_BDB_VER=	48
-USE_OPENSSL=	yes
-USES=		autoreconf:build gmake iconv libtool
+USES=		bdb:48 autoreconf:build gmake iconv libtool ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/libtorrent

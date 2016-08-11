@@ -170,10 +170,12 @@ share/apps/solid/actions/vlc-openvcd.desktop
 %%NLS%%share/locale/km/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/vlc.mo
+%%NLS%%share/locale/ks_IN/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/vlc.mo
+%%NLS%%share/locale/mai/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/mn/LC_MESSAGES/vlc.mo

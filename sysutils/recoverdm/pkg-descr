@@ -1,16 +1,16 @@
-This program will help you recover disks with bad sectors. 
+This program will help you recover disks with bad sectors.
 You can recover files as well complete devices.
 
-In case if finds sectors which simply cannot be recoverd, it writes an 
-empty sector to the outputfile and continues. If you're recovering a CD 
-or a DVD and the program cannot read the sector in "normal mode", then 
-the program will try to read the sector in "RAW mode" (without error-checking 
+In case if finds sectors which simply cannot be recoverd, it writes an
+empty sector to the outputfile and continues. If you're recovering a CD
+or a DVD and the program cannot read the sector in "normal mode", then
+the program will try to read the sector in "RAW mode" (without error-checking
 etc.).
 
-This toolkit also has a utility called 'mergebad': mergebad merges multiple 
-images into one. This can be usefull when you have, for example, multiple CD's 
-with the same data which are all damaged. In such case, you can then first use 
-recoverdm to retrieve the data from the damaged CD's into image-files and then 
+This toolkit also has a utility called 'mergebad': mergebad merges multiple
+images into one. This can be usefull when you have, for example, multiple CD's
+with the same data which are all damaged. In such case, you can then first use
+recoverdm to retrieve the data from the damaged CD's into image-files and then
 combine them into one image with mergebad.
 
 WWW: http://www.vanheusden.com/recoverdm/

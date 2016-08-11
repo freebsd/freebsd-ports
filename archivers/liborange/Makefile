@@ -11,8 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
 LIB_DEPENDS=	libgsf-1.so:devel/libgsf
-RUN_DEPENDS=	cabextract:archivers/cabextract \
-		unzip:archivers/unzip
+RUN_DEPENDS=	cabextract:archivers/cabextract
 
 OPTIONS_DEFINE=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD INNO VISE MSI
 OPTIONS_DEFAULT=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD

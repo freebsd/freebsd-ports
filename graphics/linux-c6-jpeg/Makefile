@@ -10,8 +10,6 @@ DISTNAME=	lib${PORTNAME}-turbo-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the JPEG lib (Linux CentOS ${LINUX_DIST_VER})
 
-DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/centos/${LINUX_DIST_VER}
-
 CONFLICTS=	linux-jpeg-[0-9]* linux-f10-jpeg-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

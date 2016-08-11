@@ -13,7 +13,7 @@ COMMENT=	Email autoresponder, similar to vacation from sendmail
 
 PORTSCOUT=	ignore:1
 
-USE_BDB=	yes
+USES=		bdb
 
 CFLAGS+=	-L${LOCALBASE}/lib
 

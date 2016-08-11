@@ -29,9 +29,7 @@
     SUBDIR += dtcyber
     SUBDIR += dynagen
     SUBDIR += dynagui
-    SUBDIR += dynamips
     SUBDIR += dynamips-community
-    SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += fceux
     SUBDIR += fmsx
@@ -82,7 +80,6 @@
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mess
-    SUBDIR += minivmac
     SUBDIR += mtools
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
@@ -118,6 +115,7 @@
     SUBDIR += qemu
     SUBDIR += qemu-cheri
     SUBDIR += qemu-cheri128
+    SUBDIR += qemu-cheri128m
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
     SUBDIR += qemu-sbruno
@@ -128,7 +126,6 @@
     SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += rubygem-fission
-    SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += skyeye
     SUBDIR += snes9express
@@ -154,6 +151,7 @@
     SUBDIR += virtualbox-ose
     SUBDIR += virtualbox-ose-additions
     SUBDIR += virtualbox-ose-kmod
+    SUBDIR += virtualbox-ose-lite
     SUBDIR += visualboyadvance-m
     SUBDIR += vmips
     SUBDIR += vmsbackup

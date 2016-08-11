@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.21.5
+PORTVERSION=	0.21.9
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake iconv
+USE_AUTOTOOLS=	automake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CPE_VENDOR=	unrtf_project
@@ -37,7 +38,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^attr_get_param/,/^}/s/return;/return NULL;/' \
 		${WRKSRC}/src/attr.c
 
+pre-configure:
+	@(cd ${WRKSRC} && ./bootstrap)
+
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

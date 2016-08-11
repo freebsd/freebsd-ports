@@ -1,3 +1,3 @@
-bin/dnsdist
+sbin/dnsdist
 man/man1/dnsdist.1.gz
 @sample etc/dnsdist.conf.sample

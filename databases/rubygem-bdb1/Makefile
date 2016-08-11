@@ -11,10 +11,8 @@ COMMENT=	Ruby interface to Berkeley DB revision 1.8x with full feature support
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USES=		execinfo
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		execinfo gem
 
 .include <bsd.port.pre.mk>
 

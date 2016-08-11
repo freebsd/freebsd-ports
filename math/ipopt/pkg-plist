@@ -59,7 +59,14 @@ lib/libcoinmumps.so.1
 lib/libcoinmumps.so.1.5.4
 lib/libipopt.so
 lib/libipopt.so.1
-lib/libipopt.so.1.10.4
+lib/libipopt.so.1.10.5
 libdata/pkgconfig/coinmetis.pc
 libdata/pkgconfig/coinmumps.pc
 libdata/pkgconfig/ipopt.pc
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/ipopt_addlibs_c.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/ipopt_addlibs_cpp.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/Ipopt/ipopt_addlibs_f.txt
+%%PORTDOCS%%%%DOCSDIR%%/documentation.pdf

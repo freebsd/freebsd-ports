@@ -2,10 +2,14 @@
 %%OCAML_SITELIBDIR%%/curl/curl.a
 %%OCAML_SITELIBDIR%%/curl/curl.cma
 %%OCAML_SITELIBDIR%%/curl/curl.cmi
+%%OCAML_SITELIBDIR%%/curl/curl.cmt
+%%OCAML_SITELIBDIR%%/curl/curl.cmti
 %%OCAML_SITELIBDIR%%/curl/curl.cmxa
 %%OCAML_SITELIBDIR%%/curl/curl.mli
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmi
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmo
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmt
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmti
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmx
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.mli
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.o

@@ -3,6 +3,7 @@
 
 PORTNAME=	libadacrypt
 PORTVERSION=	20151019
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	marino@FreeBSD.org

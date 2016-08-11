@@ -1,0 +1,21 @@
+Multithreaded perl script to enumerate DNS information 
+of a domain and discover non-contiguous IP blocks.
+
+OPERATIONS:
+ Get the host's address (A record).
+ Get the nameservers (threaded).
+ Get the MX record (threaded).
+ Perform axfr queries on nameservers and 
+ get BIND VERSION (threaded).
+ Get extra names and subdomains via google 
+ scraping (google query = "allinurl: -www site:domain").
+ Brute force subdomains from file, can also 
+ perform recursion on subdomain that have NS records (all threaded).
+ Calculate C class domain network ranges 
+ and perform whois queries on them (threaded).
+ Perform reverse lookups on  netranges 
+ ( C class or/and whois netranges) (threaded).
+ Write to domain_ips.txt file 
+ ip-blocks.
+
+WWW:https://github.com/fwaeytens/dnsenum

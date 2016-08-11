@@ -22,6 +22,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 regression-test:
-	@cd ${WRKSRC} && py.test
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>

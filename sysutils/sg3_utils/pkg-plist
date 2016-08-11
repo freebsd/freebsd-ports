@@ -21,6 +21,7 @@ bin/sg_persist
 bin/sg_prevent
 bin/sg_raw
 bin/sg_rdac
+bin/sg_read_attr
 bin/sg_read_block_limits
 bin/sg_read_buffer
 bin/sg_read_long
@@ -44,6 +45,7 @@ bin/sg_ses_microcode
 bin/sg_start
 bin/sg_stpg
 bin/sg_sync
+bin/sg_timestamp
 bin/sg_turs
 bin/sg_unmap
 bin/sg_verify
@@ -54,12 +56,12 @@ bin/sg_write_long
 bin/sg_write_same
 bin/sg_write_verify
 bin/sg_zone
-include/scsi/sg_cmds.h
 include/scsi/sg_cmds_basic.h
 include/scsi/sg_cmds_extra.h
 include/scsi/sg_cmds_mmc.h
-include/scsi/sg_lib.h
+include/scsi/sg_cmds.h
 include/scsi/sg_lib_data.h
+include/scsi/sg_lib.h
 include/scsi/sg_pt.h
 lib/libsgutils2.a
 lib/libsgutils2.so
@@ -72,7 +74,6 @@ man/man8/scsi_satl.8.gz
 man/man8/scsi_start.8.gz
 man/man8/scsi_stop.8.gz
 man/man8/scsi_temperature.8.gz
-man/man8/sg3_utils.8.gz
 man/man8/sg_compare_and_write.8.gz
 man/man8/sg_decode_sense.8.gz
 man/man8/sg_format.8.gz
@@ -88,6 +89,7 @@ man/man8/sg_persist.8.gz
 man/man8/sg_prevent.8.gz
 man/man8/sg_raw.8.gz
 man/man8/sg_rdac.8.gz
+man/man8/sg_read_attr.8.gz
 man/man8/sg_read_block_limits.8.gz
 man/man8/sg_read_buffer.8.gz
 man/man8/sg_read_long.8.gz
@@ -106,11 +108,12 @@ man/man8/sg_sat_phy_event.8.gz
 man/man8/sg_sat_read_gplog.8.gz
 man/man8/sg_sat_set_features.8.gz
 man/man8/sg_senddiag.8.gz
-man/man8/sg_ses.8.gz
 man/man8/sg_ses_microcode.8.gz
+man/man8/sg_ses.8.gz
 man/man8/sg_start.8.gz
 man/man8/sg_stpg.8.gz
 man/man8/sg_sync.8.gz
+man/man8/sg_timestamp.8.gz
 man/man8/sg_turs.8.gz
 man/man8/sg_unmap.8.gz
 man/man8/sg_verify.8.gz
@@ -121,4 +124,5 @@ man/man8/sg_write_long.8.gz
 man/man8/sg_write_same.8.gz
 man/man8/sg_write_verify.8.gz
 man/man8/sg_zone.8.gz
+man/man8/sg3_utils.8.gz
 @dir include/scsi

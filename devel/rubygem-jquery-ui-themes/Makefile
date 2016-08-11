@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-ui-themes
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-httparty>=0:www/rubygem-httparty
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- pcmplay.c.old	Sat Jan  2 08:57:41 1999
-+++ pcmplay.c	Thu Apr 11 08:00:07 2002
-@@ -44,7 +44,7 @@
+--- pcmplay.c.orig	1999-01-01 23:57:41 UTC
++++ pcmplay.c
+@@ -44,7 +44,7 @@ static const char cvsid[]
  #include <sys/types.h>
  #include <sys/uio.h>
  #include <unistd.h>

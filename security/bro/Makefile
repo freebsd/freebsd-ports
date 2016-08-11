@@ -11,6 +11,8 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
 		${LOCALBASE}/bin/swig:devel/swig13
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
@@ -65,6 +67,8 @@ PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
 PORTS_SSL_DESC=	Build with OpenSSL from ports (instead of base system)
 
 OPTIONS_EXCLUDE=NLS DOCS
+
+PORTS_SSL_VARS=	WITH_OPENSSL_PORT=yes
 
 .include <bsd.port.pre.mk>
 
@@ -132,11 +136,9 @@ CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
 
 .if ${PORT_OPTIONS:MPORTS_SSL}
 CMAKE_ARGS+=	-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
 .else
-.if defined(WITH_OPENSSL_PORT)
-IGNORE=		the SSL option is requred when WITH_OPENSSL_PORT is enabled
+.if ${SSL_DEFAULT} != base
+IGNORE=		the SSL option is requred when using SSL from ports
 .endif
 .endif
 

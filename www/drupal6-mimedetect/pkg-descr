@@ -1,7 +1,0 @@
-MimeDetect provides an API for consistent server side mime detection
-using the PHP FileInfo extension, the UNIX 'file' command, user supplied
-mime data, or file extension lookups. It is distributed with it's own
-magic library for use with the PHP FileInfo extension to make mime
-detection more consistent in different environments.
-
-WWW: http://drupal.org/project/mimedetect

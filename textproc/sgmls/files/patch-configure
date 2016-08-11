@@ -1,6 +1,6 @@
---- configure.orig	Fri Jun  2 19:18:37 2000
-+++ configure	Fri Jun  2 19:18:50 2000
-@@ -605,7 +605,7 @@
+--- configure.orig	1993-02-03 11:07:58 UTC
++++ configure
+@@ -605,7 +605,7 @@ fi
  edit="$edit -e 's/^typedef .*VOID;/typedef $void_ret VOID;/'"
  edit="$edit -e 's/^typedef .*UNIV;/typedef ${void_star}UNIV;/'"
  

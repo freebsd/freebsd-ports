@@ -1,0 +1,11 @@
+--- configure.orig	2016-02-21 00:00:57 UTC
++++ configure
+@@ -6815,7 +6815,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>
+ 
+     fi
+   fi
+-     USE_NLS=yes
++     #USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no

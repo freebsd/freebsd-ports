@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -23,6 +23,7 @@ PORTDOCS=	*
 USES=		dos2unix desktop-file-utils
 USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11
+USE_XORG=	x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
 WANT_GNOME=	yes
 
@@ -112,7 +113,9 @@ WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .if ${PORT_OPTIONS:MGTK2}
 LCL_PLATFORM=	gtk2
+USE_GNOME+=	cairo gdkpixbuf2
 .elif ${PORT_OPTIONS:MQT4}
+BROKEN=		Does not build
 LCL_PLATFORM=	qt
 .endif
 
@@ -290,7 +293,6 @@ pre-install:
 	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx
@@ -376,8 +378,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/pixmaps/
 .endfor
 
-	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
 	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 

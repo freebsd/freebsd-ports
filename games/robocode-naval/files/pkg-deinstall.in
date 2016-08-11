@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+    echo ""
+    echo ""
+    echo "==============================================================================="
+    echo ""
+    echo "After deinstallation, some files may stay in %%DATADIR%%,"
+    echo "you can delete them with"
+    echo ""
+    echo "    /bin/rm -fr %%DATADIR%%"
+    echo ""
+    echo "==============================================================================="
+    echo ""
+fi

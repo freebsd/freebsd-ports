@@ -3,11 +3,9 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	security
-MASTER_SITES=	http://www.outguess.org/ \
-		http://distfiles.master.finkmirrors.net/ \
-		http://www.predatorlabs.net/dl/
+MASTER_SITES=	http://www.sourcefiles.org/Graphics/Tools/Miscellaneous/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
@@ -18,7 +16,7 @@ OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
 X11_LIB_DEPENDS=	libevent.so:devel/libevent2
-X11_USE=	gnome=gtk12
+X11_USE=	GNOME=gtk12 XORG=x11,xext,xi
 X11_CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 
 # Note: stegdetect includes a modified version of jpeg-6b linked statically

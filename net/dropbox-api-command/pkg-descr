@@ -1,5 +1,15 @@
-Dropbox's API commands from the shell.
+dropbox-api is a command line interface to access Dropbox API.
 
-Including sub-commands like sync, find, etc.
+It includes the following commands:
+- ls
+- find
+- du
+- sync
+- cp
+- mv
+- rm
+- mkdir
+- get
+- put
 
-WWW: https://github.com/s-aska/dropbox-api-command
+WWW: https://metacpan.org/pod/App::dropboxapi

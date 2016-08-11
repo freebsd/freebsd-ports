@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	faup
-PORTVERSION=	1.4.20150118
+PORTVERSION=	1.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-MASTER_SITES=	LOCAL/antoine
+MASTER_SITES=	GH LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Fast URL decoder library
@@ -16,7 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stricaud
-GH_TAGNAME=	af9e5db
 
 USES=		cmake:outsource lua
 USE_LDCONFIG=	yes
@@ -27,10 +27,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" -e \
-		"s/51/${LUA_VER_STR}/g" ${WRKSRC}/cmake/FindLua51.cmake
-	@${REINPLACE_CMD} -e "s/LUA51_FOUND/LUA${LUA_VER_STR}_FOUND/g" \
-		${WRKSRC}/CMakeLists.txt ${WRKSRC}/src/lib/CMakeLists.txt \
+	@${REINPLACE_CMD} "s,LUA_VERSION,LUA_VERSION_STRING, ; \
+		s,pkg_check_modules(LUA lua>=5.1),FIND_PACKAGE(Lua REQUIRED), ; \
+		s,LUA_INCLUDE_DIRS,LUA_INCLUDE_DIR," \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/src/lib/CMakeLists.txt \
 		${WRKSRC}/src/tools/CMakeLists.txt
 
 post-install:

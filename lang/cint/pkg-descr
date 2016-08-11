@@ -9,4 +9,4 @@ and shared objects can be dynamically loaded/unloaded without stopping
 the CINT process. CINT offers a gdb like debugging environment for
 interpreted programs.
 
-WWW:	http://root.cern.ch/drupal/content/cint
+WWW: http://root.cern.ch/drupal/content/cint

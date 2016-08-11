@@ -1,9 +1,10 @@
---- mk/smtpd/Makefile.in.orig	2016-02-07 00:04:24 UTC
+--- mk/smtpd/Makefile.in.orig	2016-06-06 21:03:28 UTC
 +++ mk/smtpd/Makefile.in
-@@ -1339,12 +1339,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
+@@ -1366,13 +1366,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)5
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8
- 
+-
 -	@if [ ! -f $(DESTDIR)$(sysconfdir)/smtpd.conf ]; then			\
 -		$(INSTALL) -m 644 smtpd.conf.out $(DESTDIR)$(sysconfdir)/smtpd.conf; \
 -	else									\

@@ -1,6 +1,6 @@
---- shout.c.orig	Thu Apr 20 00:31:50 2000
-+++ shout.c	Sun Aug 31 19:59:41 2003
-@@ -1738,7 +1738,7 @@
+--- shout.c.orig	2000-04-20 07:31:50 UTC
++++ shout.c
+@@ -1738,7 +1738,7 @@ login ()
  void
  update_meta_info_on_server (char *filename, unsigned long int size)
  {
@@ -9,7 +9,7 @@
  	char title[BUFSIZE];	/* copy of filename */
  	char *song = NULL;
  	char *mount = NULL;
-@@ -1815,7 +1815,7 @@
+@@ -1815,7 +1815,7 @@ update_meta_info_on_server (char *filena
  
  	if (sockfd != -1) {
  		if (set.use_icy) {

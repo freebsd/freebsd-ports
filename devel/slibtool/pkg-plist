@@ -1,0 +1,9 @@
+bin/clibtool
+bin/clibtool-shared
+bin/clibtool-static
+bin/dlibtool
+bin/dlibtool-shared
+bin/dlibtool-static
+bin/slibtool
+bin/slibtool-shared
+bin/slibtool-static

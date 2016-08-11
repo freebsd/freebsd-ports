@@ -51,6 +51,7 @@ bin/opt38
 %%LIT%%llvm38/bin/llvm-lit
 %%LIT%%bin/FileCheck38
 %%LIT%%llvm38/bin/FileCheck
+%%COMPILER_RT%%llvm38/asan_blacklist.txt
 llvm38/bin/bugpoint
 %%CLANG%%llvm38/bin/c-index-test
 %%CLANG%%llvm38/bin/clang
@@ -1873,6 +1874,15 @@ llvm38/include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 llvm38/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm38/include/llvm/Transforms/Utils/ValueMapper.h
 llvm38/include/llvm/Transforms/Vectorize.h
+%%COMPILER_RT%%llvm38/include/sanitizer/allocator_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/asan_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/common_interface_defs.h
+%%COMPILER_RT%%llvm38/include/sanitizer/coverage_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/dfsan_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/linux_syscall_hooks.h
+%%COMPILER_RT%%llvm38/include/sanitizer/lsan_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm38/include/sanitizer/tsan_interface_atomic.h
 llvm38/lib/BugpointPasses.so
 llvm38/lib/LLVMHello.so
 %%GOLD%%llvm38/lib/LLVMgold.so

@@ -39,7 +39,7 @@ OPTIONS_SINGLE_GSTREAMER=	GST01 GST10
 OPTIONS_GROUP=	GST_PLUG
 OPTIONS_GROUP_GST_PLUG=	CDDA HTTP
 # Since 0.5.91 release, GStreamer 1.0 is enabled by default
-OPTIONS_DEFAULT=	GST10 HTTP NLS
+OPTIONS_DEFAULT=	GST10 HTTP
 CLUTTER_LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
 	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 CLUTTER_IMPLIES=	GST10

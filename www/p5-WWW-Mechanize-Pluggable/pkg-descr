@@ -1,20 +1,20 @@
-This module provides all of the same functionality of WWW::Mechanize, but 
-adds support for plugins using Module::Pluggable; this means that any 
-module named WWW::Mechanize::Plugin::whatever... will be found and loaded 
+This module provides all of the same functionality of WWW::Mechanize, but
+adds support for plugins using Module::Pluggable; this means that any
+module named WWW::Mechanize::Plugin::whatever... will be found and loaded
 when WWW::Mechanize::Pluggable is loaded.
 
-Big deal, you say. Well, it becomes a big deal in conjunction 
+Big deal, you say. Well, it becomes a big deal in conjunction
 with WWW::Mechanize::Pluggable's other feature: plugin hooks. When plugins
-are loaded, their import() methods can call WWW::Mechanize::Pluggable's 
-prehook and posthook methods. These methods add callbacks to the plugin 
-code in WWW::Mechanize::Pluggable's methods. These callbacks can act 
-before a method or after it, and have to option of short-circuiting the 
+are loaded, their import() methods can call WWW::Mechanize::Pluggable's
+prehook and posthook methods. These methods add callbacks to the plugin
+code in WWW::Mechanize::Pluggable's methods. These callbacks can act
+before a method or after it, and have to option of short-circuiting the
 call to the WWW::Mechanize::Pluggable method altogether.
 
-These methods receive whatever parameters the WWW::Mechanize::Pluggable 
+These methods receive whatever parameters the WWW::Mechanize::Pluggable
 methods received, plus a reference to the actvive Mech object.
 
-All other extensions to WWW::Mechanize::Pluggable are handled by the 
+All other extensions to WWW::Mechanize::Pluggable are handled by the
 plugins.
 
 WWW: http://search.cpan.org/dist/WWW-Mechanize-Pluggable/

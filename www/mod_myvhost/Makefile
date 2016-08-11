@@ -35,8 +35,7 @@ STRIP=		# keep debug information
 
 .if ${PORT_OPTIONS:MPHP_MODULE}
 MAKE_ENV+=	WITH_PHP=true
-USE_PHP=	yes
-WANT_PHP_MOD=	yes
+USES+=	php:mod
 .endif
 
 pre-patch:

@@ -1,6 +1,6 @@
---- ETree/src/makeGlobalLib~	Fri Sep 18 04:25:01 1998
-+++ ETree/src/makeGlobalLib	Tue Jan  9 16:20:19 2007
-@@ -8,6 +8,7 @@
+--- ETree/src/makeGlobalLib.orig	1998-09-17 19:25:01 UTC
++++ ETree/src/makeGlobalLib
+@@ -8,6 +8,7 @@ SRC = IO.c \
        basics.c \
        compress.c \
        init.c \

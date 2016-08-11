@@ -16,8 +16,8 @@ CONFIGURE_ARGS=	--enable QtDesigner
 PYQT_DIST=	yes
 
 USES=		python pyqt:4
-USE_PYQT=	sip_build designer_run
-USE_QT4=	gui xml designer moc_build qmake_build
+USE_PYQT=	sip_build
+USE_QT4=	corelib designer gui script xml moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

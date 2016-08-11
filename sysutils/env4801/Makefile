@@ -17,10 +17,11 @@ NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}
-RC_SCRIPTS_SUB=		PREFIX=${PREFIX}
 MAKE_ARGS=		-DNOMAN
 
 PLIST_FILES=		sbin/env4801 etc/rc.d/env4801.sh
+
+SUB_FILES=	env4801.sh pkg-message
 
 OPTIONS_DEFINE=	STATIC
 OPTIONS_DEFAULT=	STATIC
@@ -33,15 +34,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/-static/d' ${WRKSRC}/Makefile
 .endif
 
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/env4801.sh > ${WRKSRC}/env4801.sh
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/env4801 ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/env4801.sh ${STAGEDIR}${PREFIX}/etc/rc.d
-
-post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/env4801.sh ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

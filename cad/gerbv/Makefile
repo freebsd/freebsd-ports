@@ -41,7 +41,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.am
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	(cd ${WRKSRC}/desktop && ${INSTALL_DATA} gerbv.desktop \
 		${STAGEDIR}${DESKTOPDIR})
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps

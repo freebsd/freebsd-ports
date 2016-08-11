@@ -105,9 +105,7 @@
 %%DATADIR%%/Modules/CMakeTestJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestRCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestSwiftCompiler.cmake
-%%DATADIR%%/Modules/CMakeTestWatcomVersion.c
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
-%%DATADIR%%/Modules/CMakeVS6BackwardCompatibility.cmake
 %%DATADIR%%/Modules/CMakeVS7BackwardCompatibility.cmake
 %%DATADIR%%/Modules/CMakeVerifyManifest.cmake
 %%DATADIR%%/Modules/CPack.DS_Store.in
@@ -184,6 +182,8 @@
 %%DATADIR%%/Modules/Compiler/AppleClang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Borland-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/Bruce-C-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/Bruce-C.cmake
 %%DATADIR%%/Modules/Compiler/CCur-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C-FeatureTests.cmake
@@ -223,6 +223,7 @@
 %%DATADIR%%/Modules/Compiler/GHS-C.cmake
 %%DATADIR%%/Modules/Compiler/GHS-CXX.cmake
 %%DATADIR%%/Modules/Compiler/GHS-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/GHS.cmake
 %%DATADIR%%/Modules/Compiler/GNU-ASM.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
@@ -245,7 +246,9 @@
 %%DATADIR%%/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake
 %%DATADIR%%/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake
 %%DATADIR%%/Modules/Compiler/Intel-ASM.cmake
+%%DATADIR%%/Modules/Compiler/Intel-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Intel-C.cmake
+%%DATADIR%%/Modules/Compiler/Intel-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Intel-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Intel-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Intel-Fortran.cmake
@@ -305,7 +308,6 @@
 %%DATADIR%%/Modules/Compiler/zOS-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake
 %%DATADIR%%/Modules/CompilerId/VS-10.vcxproj.in
-%%DATADIR%%/Modules/CompilerId/VS-6.dsp.in
 %%DATADIR%%/Modules/CompilerId/VS-7.vcproj.in
 %%DATADIR%%/Modules/CompilerId/VS-Intel.vfproj.in
 %%DATADIR%%/Modules/CompilerId/VS-NsightTegra.vcxproj.in
@@ -320,6 +322,8 @@
 %%DATADIR%%/Modules/DummyCXXFile.cxx
 %%DATADIR%%/Modules/ExternalData.cmake
 %%DATADIR%%/Modules/ExternalData_config.cmake.in
+%%DATADIR%%/Modules/ExternalProject-download.cmake.in
+%%DATADIR%%/Modules/ExternalProject-verify.cmake.in
 %%DATADIR%%/Modules/ExternalProject.cmake
 %%DATADIR%%/Modules/FLTKCompatibility.cmake
 %%DATADIR%%/Modules/FeatureSummary.cmake
@@ -384,6 +388,7 @@
 %%DATADIR%%/Modules/FindKDE4.cmake
 %%DATADIR%%/Modules/FindLAPACK.cmake
 %%DATADIR%%/Modules/FindLATEX.cmake
+%%DATADIR%%/Modules/FindLTTngUST.cmake
 %%DATADIR%%/Modules/FindLibArchive.cmake
 %%DATADIR%%/Modules/FindLibLZMA.cmake
 %%DATADIR%%/Modules/FindLibXml2.cmake
@@ -558,6 +563,8 @@
 %%DATADIR%%/Modules/Platform/BlueGeneQ-static-XL-Fortran.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneQ-static.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-CXX.cmake
+%%DATADIR%%/Modules/Platform/CYGWIN-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/CYGWIN-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-Fortran.cmake
@@ -662,6 +669,10 @@
 %%DATADIR%%/Modules/Platform/SunOS-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/SunOS-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/SunOS-GNU.cmake
+%%DATADIR%%/Modules/Platform/SunOS-PathScale-C.cmake
+%%DATADIR%%/Modules/Platform/SunOS-PathScale-CXX.cmake
+%%DATADIR%%/Modules/Platform/SunOS-PathScale-Fortran.cmake
+%%DATADIR%%/Modules/Platform/SunOS-PathScale.cmake
 %%DATADIR%%/Modules/Platform/SunOS.cmake
 %%DATADIR%%/Modules/Platform/Tru64.cmake
 %%DATADIR%%/Modules/Platform/ULTRIX.cmake
@@ -757,20 +768,12 @@
 %%DATADIR%%/Templates/AppleInfo.plist
 %%DATADIR%%/Templates/CMakeVSMacros1.vsmacros
 %%DATADIR%%/Templates/CMakeVSMacros2.vsmacros
-%%DATADIR%%/Templates/CMakeVisualStudio6Configurations.cmake
 %%DATADIR%%/Templates/CPack.GenericDescription.txt
 %%DATADIR%%/Templates/CPack.GenericLicense.txt
 %%DATADIR%%/Templates/CPack.GenericWelcome.txt
 %%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/Templates/CTestScript.cmake.in
-%%DATADIR%%/Templates/DLLFooter.dsptemplate
-%%DATADIR%%/Templates/DLLHeader.dsptemplate
-%%DATADIR%%/Templates/EXEFooter.dsptemplate
-%%DATADIR%%/Templates/EXEHeader.dsptemplate
-%%DATADIR%%/Templates/EXEWinHeader.dsptemplate
 %%DATADIR%%/Templates/TestDriver.cxx.in
-%%DATADIR%%/Templates/UtilityFooter.dsptemplate
-%%DATADIR%%/Templates/UtilityHeader.dsptemplate
 %%DATADIR%%/Templates/Windows/ApplicationIcon.png
 %%DATADIR%%/Templates/Windows/Logo.png
 %%DATADIR%%/Templates/Windows/SmallLogo.png
@@ -779,5 +782,3 @@
 %%DATADIR%%/Templates/Windows/StoreLogo.png
 %%DATADIR%%/Templates/Windows/Windows_TemporaryKey.pfx
 %%DATADIR%%/Templates/cygwin-package.sh.in
-%%DATADIR%%/Templates/staticLibFooter.dsptemplate
-%%DATADIR%%/Templates/staticLibHeader.dsptemplate

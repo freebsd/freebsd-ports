@@ -3,4 +3,4 @@
 # see newsyslog.conf(5) for details
 #
 # logfilename                                          [owner:group]    mode count size when  flags [/pid_file] [sig_num]
-%%WWWDIR%%/pandora_console.log	%%WWWOWN%%:%%WWWGRP%%		644  3	   100	W6D0  JN
+%%WWWDIR%%/pandora_console.log	%%WWWOWN%%:%%WWWGRP%%		644  3	   100	$W6D0  JN

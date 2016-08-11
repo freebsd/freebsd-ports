@@ -1,5 +1,5 @@
---- util.c	Thu Apr 20 03:31:50 2000
-+++ util.c.new	Wed Jun 14 15:42:24 2000
+--- util.c.orig	2000-04-20 07:31:50 UTC
++++ util.c
 @@ -18,8 +18,6 @@
  #include <process.h>
  #include <winbase.h>

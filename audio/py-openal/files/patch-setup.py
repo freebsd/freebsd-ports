@@ -1,5 +1,5 @@
---- setup.py.orig	2006-04-30 17:23:44.000000000 +0200
-+++ setup.py	2009-12-26 17:50:57.000000000 +0100
+--- setup.py.orig	2006-04-30 15:23:44 UTC
++++ setup.py
 @@ -1,17 +1,17 @@
  import os
  from distutils.core import setup, Extension
@@ -23,7 +23,7 @@
  
  
  setup(
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ Does not include OpenAL extension.""",
    
    ext_modules  = [Extension("_openal",
                              ["py_openal.c"],

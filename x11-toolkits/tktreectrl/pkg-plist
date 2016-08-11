@@ -1,7 +1,7 @@
-lib/%%TKPKG%%/filelist-bindings.tcl
-lib/%%TKPKG%%/htmldoc/What-is-New-in-TkTreeCtrl.html
-lib/%%TKPKG%%/htmldoc/treectrl.html
-lib/%%TKPKG%%/libtreectrl.so.1
-lib/%%TKPKG%%/pkgIndex.tcl
-lib/%%TKPKG%%/treectrl.tcl
+lib/%%TCL_PKG%%/filelist-bindings.tcl
+lib/%%TCL_PKG%%/htmldoc/What-is-New-in-TkTreeCtrl.html
+lib/%%TCL_PKG%%/htmldoc/treectrl.html
+lib/%%TCL_PKG%%/libtreectrl.so.1
+lib/%%TCL_PKG%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/treectrl.tcl
 man/mann/treectrl.n.gz

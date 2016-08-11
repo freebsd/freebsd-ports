@@ -3,7 +3,7 @@ GWMetadata for GNUstep workspace manager (GWorkspace)
 Applications: GMDSClient
 Bundles:      AbiwordExtractor HtmlExtractor JpegExtractor
               OpenOfficeExtractor TextExtractor XmlExtractor
-              MDIndexing 
+              MDIndexing
 Libraries:    SQLite
 Tools:        gmds mdextractor
 

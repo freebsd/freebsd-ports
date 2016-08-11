@@ -1,5 +1,7 @@
 include/gc.h
 include/gc/cord.h
+include/gc/cord_pos.h
+include/gc/ec.h
 include/gc/gc.h
 include/gc/gc_allocator.h
 include/gc/gc_backptr.h

@@ -18,10 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.8:databases/py-sqlite3 \
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 	libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=	shebangfix python:3 pkgconfig gettext gmake tar:xz
+USES=	shebangfix python:3 pkgconfig gettext gmake sqlite tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 py3gobject3 introspection:build intltool intlhack
-USE_SQLITE=	yes
 USE_GSTREAMER1=	yes mad ogg flac opus libav faad good speex
 USE_PYTHON=	py3kplist
 INSTALLS_ICONS=	yes

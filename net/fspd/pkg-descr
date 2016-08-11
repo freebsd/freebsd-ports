@@ -1,6 +1,6 @@
 This is a server daemon, port scanner and (optionally) clients for FSP, the File
 Service Protocol.
- 
+
 FSP is lightweight and connectionless.  It is typically used for offering files
 to "anonymous" visitors over a congested link.  It uses UDP rather than TCP
 sockets.  A service contact port (well-known port) for FSP has not been assigned

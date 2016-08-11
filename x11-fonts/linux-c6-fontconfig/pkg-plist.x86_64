@@ -4,6 +4,8 @@ usr/bin/fc-list
 usr/bin/fc-match
 usr/bin/fc-query
 usr/bin/fc-scan
+usr/lib/libfontconfig.so.1
+usr/lib/libfontconfig.so.1.4.4
 usr/lib64/libfontconfig.so.1
 usr/lib64/libfontconfig.so.1.4.4
 usr/share/doc/fontconfig-2.8.0/AUTHORS

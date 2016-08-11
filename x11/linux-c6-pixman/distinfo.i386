@@ -1,0 +1,5 @@
+TIMESTAMP = 1470340880
+SHA256 (rpm/i686/centos/6.8/pixman-0.32.8-1.el6.i686.rpm) = da1b43c3836f98229b704eda5aaf3f2b9b4e93ab0e23a905ac449e62c4d604f7
+SIZE (rpm/i686/centos/6.8/pixman-0.32.8-1.el6.i686.rpm) = 239560
+SHA256 (rpm/i686/centos/6.8/pixman-0.32.8-1.el6.src.rpm) = d129fb1fd8a2bfe7d7337daf46b76a48b1c68ee97e362e1224839c871e70f66f
+SIZE (rpm/i686/centos/6.8/pixman-0.32.8-1.el6.src.rpm) = 710121

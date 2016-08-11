@@ -2,7 +2,7 @@
 # https://bugs.launchpad.net/pyliblzma/+bug/613837
 # https://bazaar.launchpad.net/~proyvind/pyliblzma/trunk/revision/494
 
---- setup.py.orig	2015-11-14 02:51:37 UTC
+--- setup.py.orig	2010-04-13 21:06:43 UTC
 +++ setup.py
 @@ -24,6 +24,7 @@
  import sys, os, subprocess

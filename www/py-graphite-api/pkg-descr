@@ -1,0 +1,7 @@
+Graphite-API
+
+This is a minimalistic API server that replicates the behavior of Graphite-web,
+pruned and simplified as much code as possible while keeping the basic
+functionality.
+
+WWW: https://github.com/brutasse/graphite-api

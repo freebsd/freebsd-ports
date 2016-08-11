@@ -1,9 +1,0 @@
-Process many files in parallel. It is meant for people comfortable
-with using a terminal but strives to be as easy to use as humanly
-possible.
-
-Ladon is named after the multiheaded serpent dragon from Greek mythology, 
-slain by Heracles and thrust into the sky as the constellation Draco. His 
-many heads allow you to efficiently work on many files at once.
-
-WWW: https://github.com/danielgtaylor/ladon

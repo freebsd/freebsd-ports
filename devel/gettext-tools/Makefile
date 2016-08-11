@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--disable-csharp --disable-java --disable-openmp \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 TEST_TARGET=	check
 USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
 USE_LDCONFIG=	yes

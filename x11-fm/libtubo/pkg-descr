@@ -1,7 +1,7 @@
-The Libtubo library is small and simple function set to enable a 
-process to run any other process in the background and communicate 
-via the stdout, stderr and stdin file descriptors. This library is 
-used by Rodent filemanager but is also available here for other 
+The Libtubo library is small and simple function set to enable a
+process to run any other process in the background and communicate
+via the stdout, stderr and stdin file descriptors. This library is
+used by Rodent filemanager but is also available here for other
 programs to use freely.
 
 WWW: http://xffm.sourceforge.net/libtubo.html

@@ -1,11 +1,83 @@
---- configure.orig	2011-04-19 11:36:37.000000000 -0400
-+++ configure	2011-10-18 13:48:27.000000000 -0400
-@@ -1762,6 +1762,8 @@
+--- configure.orig	2016-06-26 22:49:47 UTC
++++ configure
+@@ -1913,6 +1913,8 @@ else
    cat > conftest.$ac_ext <<EOF
- #line 1764 "configure"
+ #line 1913 "configure"
  #include "confdefs.h"
 +#include <sys/types.h>
 +#include <netinet/in.h>
  #include <$ac_hdr>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+@@ -6031,7 +6033,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
++LIBS="  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6035 "configure"
+ #include "confdefs.h"
+@@ -6065,7 +6067,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-ldl $LIBS"
++  LIBS=" $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -7586,7 +7588,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 7582 "configure"
+ #include "confdefs.h"
+@@ -7620,7 +7622,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -7633,7 +7635,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
++LIBS="  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 7629 "configure"
+ #include "confdefs.h"
+@@ -7667,7 +7669,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-ldl $LIBS"
++  LIBS=" $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -9837,7 +9839,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 9833 "configure"
+ #include "confdefs.h"
+@@ -9871,7 +9873,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6

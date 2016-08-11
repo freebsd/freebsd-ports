@@ -19,13 +19,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:devel/p5-CPAN-Meta-Requirements \
-		p5-CPAN-Meta-YAML>=0.008:devel/p5-CPAN-Meta-YAML
-RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:devel/p5-CPAN-Meta-Requirements \
-		p5-CPAN-Meta-YAML>=0.008:devel/p5-CPAN-Meta-YAML
-.endif
-
 .if ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-Parse-CPAN-Meta>=1.44.14:devel/p5-Parse-CPAN-Meta
 RUN_DEPENDS+=	p5-Parse-CPAN-Meta>=1.44.14:devel/p5-Parse-CPAN-Meta

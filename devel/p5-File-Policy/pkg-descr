@@ -1,13 +1,13 @@
-This defines the policy for file I/O with modules such as 
+This defines the policy for file I/O with modules such as
 File::Slurp::WithinPolicy. The purpose is to allow systems administrators to
 define locations and restrictions for applications' file I/O and give app
 developers a policy to follow. Note that the module doesn't ENFORCE the
-policy - application developers can choose to ignore it 
-(and systems administrators can choose not to install their applications 
+policy - application developers can choose to ignore it
+(and systems administrators can choose not to install their applications
  if they do!).
 
-You may control which policy gets applied by creating a File::Policy::Config 
-module with an IMPLEMENTATION constant. You may write your own policy as a 
+You may control which policy gets applied by creating a File::Policy::Config
+module with an IMPLEMENTATION constant. You may write your own policy as a
 module within the File::Policy:: namespace.
 
 By default (if no File::Policy::Config is present), the File::Policy::Default

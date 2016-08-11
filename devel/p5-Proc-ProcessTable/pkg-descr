@@ -10,14 +10,14 @@ very efficient or aesthetic way to do things.
 
 With this module, you can do things like this:
 
-        # kill memory pigs 
+        # kill memory pigs
         use Proc::ProcessTable;
 
         $t = new Proc::ProcessTable;
-        foreach $p ( @{$t->table} ){    
+        foreach $p ( @{$t->table} ){
           if( $p->pctmem > 95 ){
             $p->kill(9);
-          }             
+          }
         }
 
 WWW: http://search.cpan.org/dist/Proc-ProcessTable/

@@ -21,14 +21,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensive German HTML reference
 
-
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		dos2unix zip
 EXTRACT_AFTER_ARGS= -d ${WRKSRC}
 DOS2UNIX_REGEX=	.*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$
 
-PORTDOCS=	\
-		index.htm \
+PORTDOCS=	index.htm \
 		css \
 		dhtml \
 		diverses \

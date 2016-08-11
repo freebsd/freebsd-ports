@@ -1,0 +1,10 @@
+bin/calamaris
+bin/calamaris-cache-convert
+man/man1/calamaris.1.gz
+%%SITE_ARCH%%/calAxestype.pm
+%%SITE_ARCH%%/calAxestype3d.pm
+%%SITE_ARCH%%/calBars3d.pm
+%%PORTDOCS%%share/doc/calamaris/EXAMPLES
+%%PORTDOCS%%share/doc/calamaris/EXAMPLES.v3
+%%PORTDOCS%%share/doc/calamaris/README
+@sample etc/calamaris.conf.sample

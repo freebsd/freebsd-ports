@@ -1,12 +1,12 @@
 Gate is text-gatherer. A text-gatherer is like a text-editor, but much
-more lightweight and unobtrusive. 
+more lightweight and unobtrusive.
 
 If you have a program or shell script that asks people to enter a small
 chunk of text, a text-gatherer like Gate is a good way to do it. It
 doesn't clear the screen (annoying if there were just some instructions
 printed there). It doesn't require you to know a lot of obscure editing
 commands. It doesn't make excessive demands on the intelligence of your
-terminal emulation software. 
+terminal emulation software.
 
 It does provide a number of features that make it easier for novice users
 to produce good text. It does word-wrap, prints a prompt on each new line,
@@ -15,6 +15,6 @@ also provides features that a more experienced user can use. You can call
 up normal editor, or use some of gate's simple-minded editing
 commands. You can read in files, or save your text to a file. You can
 filter your text through something like the Unix "fmt" command. It
-provides a nice spell-checking interface too. 
+provides a nice spell-checking interface too.
 
 WWW: http://www.unixpapa.com/gate.html

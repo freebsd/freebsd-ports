@@ -2,46 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	tamago
-PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	13
+PORTVERSION=	4.0.6.0.20041122.19.14
+DISTVERSIONPREFIX=	v
 CATEGORIES=	editors elisp
-MASTER_SITES=	DEBIAN/pool/main/e/egg
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	egg_4.0.6+0.20041122cvs.orig
-
-PATCH_SITES=	DEBIAN/pool/main/e/egg LOCAL/nork
-PATCHFILES=	egg_4.0.6+0.20041122cvs-19.diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Egg V4, Multilingual Input Method for Emacsen
 
 LICENSE=	GPLv2
 
-USES=		gmake
 USE_EMACS=	yes
-WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs
+USE_GITHUB=	yes
+GH_ACCOUNT=	hrs-allbsd
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	lispdir="${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}"
+CONFIGURE_ARGS=	--with-lispdir="${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}"
+CONFIGURE_ENV=	EMACS="${EMACS_CMD}"
 PLIST_SUB=	ELISPDIR="${EMACS_VERSION_SITE_LISPDIR}"
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
-		ChangeLog.2000-2001 PROBLEMS README.ja.txt TODO \
-		README.Debian changelog.Debian
+		ChangeLog.2000-2001 ChangeLog.2002-2004 \
+		PROBLEMS README README.ja.txt TODO egg-anthy.readme
 OPTIONS_DEFINE=	DOCS
-
-post-build:
-	cd ${WRKSRC}/helper && \
-	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-	    ${_MAKE_JOBS} ${MAKE_ARGS} egg-helper
-	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${WRKSRC}/changelog.Debian
-	${INSTALL_DATA} ${WRKSRC}/debian/README.Debian ${WRKSRC}
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper \
-	    ${STAGEDIR}${PREFIX}/bin/egg-helper
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+DOCS_CONFIGURE_ENABLE=	doc
 
 .include <bsd.port.mk>

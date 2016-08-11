@@ -1,15 +1,15 @@
-This module is an extension to the Math::Symbolic module. A basic 
+This module is an extension to the Math::Symbolic module. A basic
 familiarity with that module is required.
 
-The Math::Symbolic::Custom::Pattern module implements pattern matching 
-routines on Math::Symbolic trees. The patterns itself are constructed from 
-Math::Symbolic trees with just a few variables which have a special 
+The Math::Symbolic::Custom::Pattern module implements pattern matching
+routines on Math::Symbolic trees. The patterns itself are constructed from
+Math::Symbolic trees with just a few variables which have a special
 meaning.
 
-The module provides two interfaces. You can use the new() and match() 
-methods this class provides, or you can use the to_pattern() and 
-is_of_form() methods on any Math::Symbolic tree. (Exported by the 
-Math::Symbolic::Custom::Pattern::Export module. Refer to that module for 
+The module provides two interfaces. You can use the new() and match()
+methods this class provides, or you can use the to_pattern() and
+is_of_form() methods on any Math::Symbolic tree. (Exported by the
+Math::Symbolic::Custom::Pattern::Export module. Refer to that module for
 details on is_of_form().)
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Pattern/

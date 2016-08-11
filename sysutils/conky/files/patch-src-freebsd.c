@@ -1,64 +1,71 @@
---- src/freebsd.c.orig	2012-05-04 06:08:27.000000000 +0900
-+++ src/freebsd.c	2013-08-05 09:02:37.000000000 +0900
-@@ -38,6 +38,11 @@
- #include <sys/types.h>
- #include <sys/user.h>
- 
-+#if defined(__FreeBSD__) && (!defined(__FreeBSD_kernel__) || !(__FreeBSD_kernel__ + 0))
-+# undef __FreeBSD_kernel__
-+# define __FreeBSD_kernel__ __FreeBSD__
-+#endif
-+
- #include <net/if.h>
- #include <net/if_mib.h>
- #include <net/if_media.h>
-@@ -283,7 +288,7 @@
+--- src/freebsd.c.orig	2012-05-03 21:08:27 UTC
++++ src/freebsd.c
+@@ -283,11 +283,7 @@ int update_running_processes(void)
  	pthread_mutex_lock(&kvm_proc_mutex);
  	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
  	for (i = 0; i < n_processes; i++) {
 -#if (__FreeBSD__ < 5) && (__FreeBSD_kernel__ < 5)
-+#if (defined(__FreeBSD__) && (__FreeBSD__ < 5)) || (defined(__FreeBSD_kernel__) && (__FreeBSD_kernel__ < 5))
- 		if (p[i].kp_proc.p_stat == SRUN) {
- #else
+-		if (p[i].kp_proc.p_stat == SRUN) {
+-#else
  		if (p[i].ki_stat == SRUN) {
-@@ -300,7 +305,9 @@
- void get_cpu_count(void)
+-#endif
+ 			cnt++;
+ 		}
+ 	}
+@@ -464,7 +460,7 @@ void get_battery_stuff(char *buf, unsign
+ 			break;
+ 		case BATTERY_STATUS:
+ 			if (batstate == 1) // Discharging
+-				snprintf(buf, n, "remaining %d%%", batcapacity);
++				snprintf(buf, n, "remaining (%d%%)", batcapacity);
+ 			else
+ 				snprintf(buf, n, batstate == 2 ? "charging (%d%%)" :
+ 						(batstate == 7 ? "absent/on AC" : "charged (%d%%)"),
+@@ -497,26 +493,10 @@ static int check_bat(const char *bat)
+ 
+ int get_battery_perct(const char *bat)
  {
- 	int cpu_count = 0;
--	size_t cpu_count_len = sizeof(cpu_count);
-+	/* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
-+	if ((cpu_setup == 1) && (info.cpu_usage))
-+		return;
+-	union acpi_battery_ioctl_arg battio;
+-	int batnum, acpifd;
+-	int designcap, lastfulcap, batperct;
++	int batcapacity;
  
- 	if (GETSYSCTL("hw.ncpu", cpu_count) == 0) {
- 		info.cpu_count = cpu_count;
-@@ -313,6 +320,7 @@
- 	if (info.cpu_usage == NULL) {
- 		CRIT_ERR(NULL, NULL, "malloc");
- 	}
-+	cpu_setup = 1;
- }
- 
- struct cpu_info {
-@@ -330,11 +338,7 @@
- 	unsigned int malloc_cpu_size = 0;
- 	extern void* global_cpu;
- 
--	/* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
--	if ((cpu_setup == 0) || (!info.cpu_usage)) {
--		get_cpu_count();
--		cpu_setup = 1;
+-	if ((battio.unit = batnum = check_bat(bat)) < 0)
+-		return 0;
+-	if ((acpifd = open("/dev/acpi", O_RDONLY)) < 0) {
+-		fprintf(stderr, "Can't open ACPI device\n");
+-		return 0;
 -	}
-+	get_cpu_count();
- 
- 	if (!global_cpu) {
- 		malloc_cpu_size = (info.cpu_count + 1) * sizeof(struct cpu_info);
-@@ -702,7 +706,7 @@
- 		free(dev_select);
- 	}
- 
--	free(statinfo_cur.dinfo);
-+	free(statinfo_cur.dinfo->mem_ptr);
- 	return 0;
+-	if (ioctl(acpifd, ACPIIO_BATT_GET_BIF, &battio) == -1) {
+-		fprintf(stderr, "Unable to get info for battery unit %d\n", batnum);
+-		return 0;
+-	}
+-	close(acpifd);
+-	designcap = battio.bif.dcap;
+-	lastfulcap = battio.bif.lfcap;
+-	batperct = (designcap > 0 && lastfulcap > 0) ?
+-		(int) (((float) lastfulcap / designcap) * 100) : 0;
+-	return batperct > 100 ? 100 : batperct;
++	get_battery_stats(NULL, &batcapacity, NULL, NULL);
++	return batcapacity;
  }
-
+ 
+ int get_battery_perct_bar(const char *bar)
+@@ -970,11 +950,14 @@ void get_battery_short_status(char *buff
+ 	if (0 == strncmp("charging", buffer, 8)) {
+ 		buffer[0] = 'C';
+ 		memmove(buffer + 1, buffer + 8, n - 8);
+-	} else if (0 == strncmp("discharging", buffer, 11)) {
++	} else if (0 == strncmp("remaining", buffer, 9)) {
+ 		buffer[0] = 'D';
+-		memmove(buffer + 1, buffer + 11, n - 11);
++		memmove(buffer + 1, buffer + 9, n - 9);
++	} else if (0 == strncmp("charged", buffer, 7)) {
++		buffer[0] = 'F';
++		memmove(buffer + 1, buffer + 7, n - 7);
+ 	} else if (0 == strncmp("absent/on AC", buffer, 12)) {
+-		buffer[0] = 'A';
++		buffer[0] = 'N';
+ 		memmove(buffer + 1, buffer + 12, n - 12);
+ 	}
+ }

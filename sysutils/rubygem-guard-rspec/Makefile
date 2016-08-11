@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard-rspec
-PORTVERSION=	4.6.5
+PORTVERSION=	4.7.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-guard>=2.1:sysutils/rubygem-guard \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

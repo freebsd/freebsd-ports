@@ -28,7 +28,7 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp \
 		doc/tutorial-en.html doc/tutorial-ja.html
 
 OPTIONS_DEFINE+=	DOCS SSL LIBMEMCACHED PAM
-OPTIONS_DEFAULT=	DOCS SSL PAM
+OPTIONS_DEFAULT=	SSL PAM
 
 # Buggy configure: adding eg. --without-pam to CONFIGURE_ARGS causes
 # USE_PAM to be *defined* in config.h Omit the --with-pam or

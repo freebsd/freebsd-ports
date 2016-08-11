@@ -20,11 +20,10 @@ RUN_DEPENDS=	\
 	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd

@@ -10,6 +10,8 @@ COMMENT=	Examine periodic stack traces of all running processes
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
 		${LOCALBASE}/lib/libxo.a:devel/libxo \
@@ -18,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freenas
-GH_PROJECT=	sample
 GH_TAGNAME=	45e2b86
 
 USES=		python:build kmod

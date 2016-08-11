@@ -1,6 +1,6 @@
---- basictcp.h.orig	2013-12-08 18:49:04.000000000 +0900
-+++ basictcp.h	2013-12-08 18:49:33.000000000 +0900
-@@ -89,7 +89,11 @@
+--- basictcp.h.orig	2008-05-26 09:41:40 UTC
++++ basictcp.h
+@@ -89,7 +89,11 @@ private:
  
  #ifdef USE_SSL
  #ifdef USE_OPENSSL

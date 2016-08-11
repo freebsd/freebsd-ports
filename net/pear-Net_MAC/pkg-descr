@@ -1,6 +1,6 @@
-This package validates and cleanly formats Media Access Control (MAC) 
-addresses. The Net_MAC class can also import a list of MAC address 
-vendors and store them in a database which the class can then use to 
+This package validates and cleanly formats Media Access Control (MAC)
+addresses. The Net_MAC class can also import a list of MAC address
+vendors and store them in a database which the class can then use to
 identify vendors of any MAC address.
 
 WWW: http://pear.php.net/package/Net_MAC/

@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	-I../../include/QtCore -I../../include/QtGui \
 FONTSCALE=	${LOCALBASE}/share/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/share/fonts/encodings/encodings.dir
 
-.include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
+.include "${.CURDIR:H:H}/devel/qt4/files/Makefile.options"
 
 .if ${QT4_OPTIONS:MCUPS}
 LIB_DEPENDS+=	libcups.so:print/cups

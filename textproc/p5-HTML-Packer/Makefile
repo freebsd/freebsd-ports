@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Packer
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,9 @@ COMMENT=	Another HTML code cleaner
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Regexp-RegGrp>=1.001001:devel/p5-Regexp-RegGrp
+BUILD_DEPENDS=	p5-CSS-Packer>=2.01:textproc/p5-CSS-Packer \
+		p5-JavaScript-Packer>=2.01:textproc/p5-JavaScript-Packer \
+		p5-Regexp-RegGrp>=1.001001:devel/p5-Regexp-RegGrp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod
 

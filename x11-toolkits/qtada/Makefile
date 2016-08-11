@@ -3,7 +3,7 @@
 
 PORTNAME=	qtada
 PORTVERSION=	3.2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.qtada.com/
 DISTNAME=	${PORTNAME}-gpl-3.2.0-20120708-3871
@@ -12,6 +12,13 @@ MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada2005 language bindings to Qt4 framework
 
 LICENSE=	GPLv2
+
+# Error: In library project "Examples_Designer_Custom_Widget_Plugin"
+# Unit "Analog_Clock_Plugin" is not in the interface set
+# but it is needed by the spec of "Analog_Clock_Plugin.moc"
+BROKEN=		New gprbuild detected interface issue with designer example
+DEPRECATED=	No development since 2012, usefulness unclear
+EXPIRATION_DATE=	2016-09-09
 
 BUILD_DEPENDS=	gprbuild>=20120510:devel/gprbuild \
 		asis>=2011:lang/asis

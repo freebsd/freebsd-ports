@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef-mpris2-plugin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,6 +20,8 @@ GH_ACCOUNT=	Serranya
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
+
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	lib/deadbeef/mpris.so
 

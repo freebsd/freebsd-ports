@@ -1,4 +1,5 @@
-SHA256 (rpm/i386/fedora/10/cups-libs-1.3.11-4.fc10.i386.rpm) = 979fae70de2aba6bbb641e7e237f063876adac6867e9bc21499a258cda5518d3
-SIZE (rpm/i386/fedora/10/cups-libs-1.3.11-4.fc10.i386.rpm) = 210499
-SHA256 (rpm/i386/fedora/10/cups-1.3.11-4.fc10.src.rpm) = 7a088d59d28b45ddc9bbf47f06dd3aa751eb70f4d314b0e84d90853928b65956
-SIZE (rpm/i386/fedora/10/cups-1.3.11-4.fc10.src.rpm) = 4472815
+TIMESTAMP = 1466256747
+SHA256 (rpm/i686/centos/6.8/cups-libs-1.4.2-74.el6.i686.rpm) = 6906749fd25ea31056d7bbb4766dcef157037be453ee8956f52e49a33210b1ba
+SIZE (rpm/i686/centos/6.8/cups-libs-1.4.2-74.el6.i686.rpm) = 339432
+SHA256 (rpm/i686/centos/6.8/cups-1.4.2-74.el6.src.rpm) = 00089025dd9d712ee03ec4934c221c5b5214af3c7771133337967c00620f0aaa
+SIZE (rpm/i686/centos/6.8/cups-1.4.2-74.el6.src.rpm) = 4680232

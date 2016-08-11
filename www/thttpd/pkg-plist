@@ -1,3 +1,4 @@
+etc/newsyslog.conf.d/thttpd.conf
 @sample etc/thttpd.conf.sample
 man/man1/makeweb.1.gz
 man/man1/thtpasswd.1.gz

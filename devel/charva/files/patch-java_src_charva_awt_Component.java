@@ -1,5 +1,5 @@
---- java/src/charva/awt/Component.java.orig	Mon Aug 14 18:03:14 2006
-+++ java/src/charva/awt/Component.java	Mon Jan 29 09:39:30 2007
+--- java/src/charva/awt/Component.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charva/awt/Component.java
 @@ -118,6 +118,17 @@ public abstract class Component {
      }
  

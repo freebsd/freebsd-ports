@@ -23,7 +23,6 @@
     SUBDIR += dzip
     SUBDIR += ecm
     SUBDIR += engrampa
-    SUBDIR += epkg
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-bzip2
@@ -56,6 +55,7 @@
     SUBDIR += lcab
     SUBDIR += lha
     SUBDIR += lha-ac
+    SUBDIR += lhasa
     SUBDIR += libarc
     SUBDIR += libarchive
     SUBDIR += libcabinet
@@ -73,6 +73,8 @@
     SUBDIR += linux-f10-ucl
     SUBDIR += linux-f10-upx
     SUBDIR += lrzip
+    SUBDIR += lua-lzlib
+    SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lzlib
     SUBDIR += lzma
@@ -162,6 +164,7 @@
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-attic
+    SUBDIR += py-borgbackup
     SUBDIR += py-bz2file
     SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
@@ -170,6 +173,8 @@
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
+    SUBDIR += py-rcssmin
+    SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py3-libarchive-c
     SUBDIR += qpress
@@ -186,6 +191,7 @@
     SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
+    SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
     SUBDIR += rvm
@@ -234,6 +240,7 @@
     SUBDIR += zipper
     SUBDIR += zoo
     SUBDIR += zopfli
+    SUBDIR += zstd
     SUBDIR += zutils
 
 .include <bsd.port.subdir.mk>

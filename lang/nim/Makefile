@@ -11,6 +11,8 @@ COMMENT=	Nim programming language
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
@@ -33,8 +35,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh ${STAGEDIR}${PREFIX}
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
 
 .include <bsd.port.post.mk>

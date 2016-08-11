@@ -1,6 +1,6 @@
---- server/dda/voxware/auvoxware.c.orig	2008-05-14 22:35:08.000000000 +0400
-+++ server/dda/voxware/auvoxware.c	2008-05-14 22:40:32.000000000 +0400
-@@ -133,7 +133,7 @@
+--- server/dda/voxware/auvoxware.c.orig	2013-08-13 18:50:30 UTC
++++ server/dda/voxware/auvoxware.c
+@@ -133,7 +133,7 @@ PERFORMANCE OF THIS SOFTWARE.
  
  #include <stdio.h>
  #include <stdlib.h>
@@ -9,7 +9,7 @@
  #include <getopt.h>
  #endif
  #include <sys/types.h>
-@@ -183,7 +183,9 @@
+@@ -183,7 +183,9 @@ static int debug_msg_indentation = 0;
  # else
  #  include <machine/soundcard.h>
  # endif
@@ -19,7 +19,7 @@
  #else
  # ifdef __NetBSD__
  #  include <sys/ioctl.h>
-@@ -875,7 +877,11 @@
+@@ -875,7 +877,11 @@ openDevice(AuBool wait)
          if (sndStatOut.fd == -1) {
              while ((sndStatOut.fd = open(sndStatOut.device,
                                           sndStatOut.
@@ -31,7 +31,7 @@
                                           0666)) == -1 && wait) {
                  osLogMsg("openDevice: waiting on output device\n");
                  sleep(1);
-@@ -1618,6 +1624,11 @@
+@@ -1624,6 +1630,11 @@ setWritePhysicalOutputFunction(CompiledF
  /*
   * Setup soundcard at maximum audio quality.
   */
@@ -43,7 +43,7 @@
  static void
  setupSoundcard(SndStat * sndStatPtr)
  {
-@@ -1880,7 +1891,11 @@
+@@ -1886,7 +1897,11 @@ AuInitPhysicalDevices(void)
                               sndStatOut.device, sndStatOut.howToOpen);
  
                  if ((fd = open(sndStatOut.device,

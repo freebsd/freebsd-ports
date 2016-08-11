@@ -3,6 +3,7 @@
 
 PORTNAME=	yaz
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,8 +17,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libyaz.so:net/yaz
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}

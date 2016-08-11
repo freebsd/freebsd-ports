@@ -1,6 +1,6 @@
---- ./c/src/Makefile.freebsd.txt.orig	2013-10-30 08:21:28.829906040 +0000
-+++ ./c/src/Makefile.freebsd.txt	2013-10-30 08:21:37.384905061 +0000
-@@ -6,7 +6,6 @@
+--- c/src/Makefile.freebsd.txt.orig	2016-06-20 12:40:44 UTC
++++ c/src/Makefile.freebsd.txt
+@@ -6,7 +6,6 @@ OS = freebsd
  SHARED_OBJECT_EXT = so
  TARGET = libTerminal.${SHARED_OBJECT_EXT}
  

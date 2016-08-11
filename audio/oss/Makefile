@@ -15,11 +15,12 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	gawk:lang/gawk
 
 USES=		tar:bzip2 kmod pkgconfig
+HAS_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
+CONFIGURE_ENV=	HOSTCC="${CC}"
 ALL_TARGET=	all install
 USE_GNOME=	gtk20
 USE_RC_SUBR=	oss
-WRKSRC=		${WRKDIR}/build
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -31,14 +32,12 @@ OSS_CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
 		oss_sbpci oss_sbxfi oss_trident oss_usb oss_userdev \
 		oss_ymf7xx osscore
 
-PROTO_DIR=	${WRKSRC}/prototype
+PROTO_DIR=	${INSTALL_WRKSRC}/prototype
 PROTO_ETCDIR=	${PROTO_DIR}/etc
 PROTO_BINDIR=	${PROTO_DIR}/usr/bin
 PROTO_SBINDIR=	${PROTO_DIR}/usr/sbin
 PROTO_MANDIR=	${PROTO_DIR}/usr/share/man
 PROTO_OSSLIBDIR=${PROTO_DIR}${PREFIX}/lib/oss
-
-CONFIGURE_ENV=	CC="${CC}" HOSTCC="${CC}"
 
 OPTIONS_DEFINE=	VORBIS
 OPTIONS_DEFAULT=VORBIS
@@ -58,11 +57,6 @@ post-patch:
 	${FIND} ${PATCH_WRKSRC} -name configure -or \
 	    -name make.local -or -name soundoff -or -name soundon | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g'
-
-do-configure:
-	${MKDIR} ${WRKSRC}
-	(cd ${WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PATCH_WRKSRC}/configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${PROTO_BINDIR}/* ${STAGEDIR}${PREFIX}/bin/

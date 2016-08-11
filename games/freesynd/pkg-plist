@@ -8,3 +8,4 @@ bin/freesynd
 %%DATADIR%%/data/music/intro.ogg
 %%DATADIR%%/data/ref/original_data.crc
 %%DATADIR%%/data/ref/research.dat
+%%DATADIR%%/data/ref/weapons.dat

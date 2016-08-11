@@ -3,7 +3,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -15,38 +15,33 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	netpbm>0:graphics/netpbm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
-		libxmlwrapp.so:textproc/xmlwrapp \
 		libfltk.so:x11-toolkits/fltk
 
-USES=		gmake
-USE_XORG=	x11 xt xext xmu xi
-USE_GL=		glu
-USE_GCC=	yes # clang generates incorrect binaries: cause SIGILL
+USES=		gmake localbase lua:51
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_lib_ICE_IceConnectionNumber="no" \
+		ac_cv_search_glutInit="none required"
 CONFIGURE_ARGS=	--disable-silent-rules
+MAKE_ARGS=	am_lua_liblua_a_OBJECTS='lua/luaclass.$$(OBJEXT)'
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+LDFLAGS+=	-Wl,--as-needed # fltk deps
+LIBS+=		-llua-${LUA_VER} -lboost_system # _ZN5boost6system15system_categoryEv
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui \
 		share/pixmaps/burricons.png
 
-DESKTOP_ENTRIES="BurrGui" "" "${PREFIX}/pixmaps/burricons.png" "burrGui" "" ""
+DESKTOP_ENTRIES="BurrGui" "" "burricons" "burrGui" "Game;LogicGame;" ""
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-LDFLAGS+=	-lc++
-.endif
-
 post-patch:
+	@${REINPLACE_CMD} -e '/GL_X_LIBS/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|g++ |$$(CXX) | ; \
-		 s|-O2 |$$(CXXFLAGS) |' ${WRKSRC}/src/Makefile.in
+		 s|-O2 |$$(CXXFLAGS) $$(LDFLAGS) |' ${WRKSRC}/src/Makefile.in
 
 post-build:
 	(cd ${WRKSRC} && ${CAT} burricons.ico | winicontoppm -bestqual | \

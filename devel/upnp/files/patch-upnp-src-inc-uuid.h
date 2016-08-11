@@ -1,5 +1,5 @@
---- upnp/src/inc/uuid.h.orig	2012-02-23 18:48:42.000000000 +0100
-+++ upnp/src/inc/uuid.h	2012-09-04 20:09:52.000000000 +0200
+--- upnp/src/inc/uuid.h.orig	2016-01-07 23:32:52 UTC
++++ upnp/src/inc/uuid.h
 @@ -22,6 +22,14 @@
  
  #include "sysdep.h"

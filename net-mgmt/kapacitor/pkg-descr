@@ -1,0 +1,6 @@
+Kapacitor is InfluxDB's native data processing engine. It can process both 
+stream and batch data from InfluxDB. Kapacitor lets you plug in your own custom
+logic or user defined functions to process alerts with dynamic thresholds,
+match metrics for patterns or compute statistical anomalies.
+
+WWW: https://influxdata.com/time-series-platform/kapacitor/

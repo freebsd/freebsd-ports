@@ -1,0 +1,6 @@
+xbanish hides the mouse cursor when you start typing, and shows it
+again when the mouse cursor moves or a mouse button is pressed.  This
+is similar to xterm's pointerMode setting, but xbanish works globally
+in the X11 session.
+
+WWW: https://github.com/jcs/xbanish/

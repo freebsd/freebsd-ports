@@ -3,7 +3,7 @@
 * The package consists of a client (thrulay) and a daemon (thrulayd).    *
 * The thrulay client is usable immediately.                              *
 *                                                                        *
-* To run thrulayd from startup, add thrulayd_enable="YES"                * 
+* To run thrulayd from startup, add thrulayd_enable="YES"                *
 * in your /etc/rc.conf                                                   *
 *                                                                        *
 **************************************************************************

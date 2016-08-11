@@ -1,0 +1,21 @@
+--- client_server/CMakeLists.txt.orig	2016-06-23 23:50:35 UTC
++++ client_server/CMakeLists.txt
+@@ -78,15 +78,15 @@ add_definitions("-D_WEBSOCKETPP_CPP11_ST
+ 
+ # Create the server library
+ link_directories(${UUID_LIBRARY_DIRS})
+-add_library(cadabra_server SHARED Server.cc Snoop.cc jsoncpp/jsoncpp.cpp)
++add_library(cadabra_server SHARED Server.cc Snoop.cc)
+ target_link_libraries(cadabra_server ${Boost_LIBRARIES} ${SNOOP_LIBRARIES} sqlite3 ${UUID_LIBRARIES} ${PYTHON_LIBRARIES} )
+ 
+ # Create the client library.
+-add_library(cadabra_client SHARED ComputeThread.cc DocumentThread.cc DataCell.cc Actions.cc popen2.cc Snoop.cc jsoncpp/jsoncpp.cpp)
++add_library(cadabra_client SHARED ComputeThread.cc DocumentThread.cc DataCell.cc Actions.cc popen2.cc Snoop.cc)
+ target_link_libraries(cadabra_client ${Boost_LIBRARIES} sqlite3 ${UUID_LIBRARIES} ${PYTHON_LIBRARIES})
+ 
+ # Create server binary
+-include_directories("." "./websocketpp" "./jsoncpp")
++include_directories("." "./websocketpp")
+ add_executable(cadabra-server cadabra-server.cc)
+ add_executable(cadabra2html cadabra2html.cc DataCell.cc)
+ #add_executable(test_talk_to_server test_talk_to_server.cc)

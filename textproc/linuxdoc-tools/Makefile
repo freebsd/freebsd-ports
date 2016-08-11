@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linuxdoc-tools
-PORTVERSION=	0.9.69
+PORTVERSION=	0.9.71
 CATEGORIES=	textproc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
@@ -33,11 +33,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	bash:shells/bash
+DOCS_USE=		tex=latex:build tex=pdftex:build tex=dvipsk:build
 DOCS_USES=		makeinfo
-DOCS_MAKE_ENV=		LANG=C BUILD_DOCS=true
-
-post-patch:
-	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/ s|=|?=|' \
-		${WRKSRC}/rtf-fix/Makefile
+DOCS_CONFIGURE_ENABLE=	docs
+DOCS_MAKE_ENV=		LANG=C
 
 .include <bsd.port.mk>

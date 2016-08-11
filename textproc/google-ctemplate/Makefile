@@ -3,6 +3,7 @@
 
 PORTNAME=	ctemplate
 PORTVERSION=	2.3
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	google-
 
@@ -21,7 +22,6 @@ SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlpar
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OlafvdSpek
-GH_TAGNAME=	359a9f0
 INSTALL_target=	install-strip
 
 post-patch:

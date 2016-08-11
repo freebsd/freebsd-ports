@@ -4,6 +4,7 @@
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
 DISTVERSION=	experimental-20151213
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -11,10 +12,13 @@ MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the ESEDB format
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+
+LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} \
+		--with-libfwnt=${LOCALBASE}
 USES=		gettext libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

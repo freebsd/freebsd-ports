@@ -1,14 +1,14 @@
-The Freedroid RPG is an extension/modification of the classical Freedroid 
-engine into an RPG. The main differences to the classical version are as 
-follows: 
+The Freedroid RPG is an extension/modification of the classical Freedroid
+engine into an RPG. The main differences to the classical version are as
+follows:
 
 * The Tux is the main character of the rpg.
-* The game uses isometric viewpoint and animated pre-rendered 3d character 
+* The game uses isometric viewpoint and animated pre-rendered 3d character
   models for all characters inside the game.
 * Dialogs and chatting with friendly droids and humans:
   Multiple-choice menus and voice samples (with subtitles for those
-  without sound). 
-* There is an item and inventory system that is modeled after some 
+  without sound).
+* There is an item and inventory system that is modeled after some
   popular standards of the industry :)
 * An automap feature was added. (this is currently a bit unmaintained
   since part of the code needs to be re-written for proper OpenGL
@@ -18,6 +18,6 @@ follows:
 * Controls are different:  Mouse is the input method of choice.
 * This is a graphically intense game.  Therefore the archive size is
   comparably *huge* and not suitable for modem downloads with a dialup
-  connection.  
+  connection.
 
 WWW: http://www.freedroid.org/

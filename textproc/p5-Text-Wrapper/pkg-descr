@@ -1,7 +1,7 @@
 This module provides simple word wrapping.  It breaks long lines, but
 does not alter spacing or remove existing line breaks.  If you're
 looking for more sophisticated text formatting, try the Text::Format
-module. 
+module.
 
 In short, Text::Wrapper is the object-oriented equivalent of Text::Wrap,
 but with fewer bugs (I hope).

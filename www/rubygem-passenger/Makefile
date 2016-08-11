@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.26
+PORTVERSION=	5.0.30
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-USES+=		cpe
+BUILD_DEPENDS=		${LOCALBASE}/bin/rake:devel/rubygem-rake
 
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
@@ -24,9 +24,9 @@ SYMLINK_DESC=	Create passenger symlink
 OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+RAKE_BIN=	${LOCALBASE}/bin/rake
+USES=		cpe gem
+NOPORTDOCS=	yes
 
 .include <bsd.port.options.mk>
 
@@ -71,7 +71,7 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		230s!true!false!' \
+		165s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \

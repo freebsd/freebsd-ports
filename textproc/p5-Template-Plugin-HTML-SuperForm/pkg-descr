@@ -1,7 +1,7 @@
-This is an interface into HTML::SuperForm through the Template Toolkit. When 
-created without arguments (i.e. [% USE form = HTML.SuperForm %]), the 
-Template's stash is searched for an Apache object or a CGI object to pass to 
+This is an interface into HTML::SuperForm through the Template Toolkit. When
+created without arguments (i.e. [% USE form = HTML.SuperForm %]), the
+Template's stash is searched for an Apache object or a CGI object to pass to
 HTML::SuperForm's constructor.
 
-When created with arguments (i.e. [% USE form = HTML.SuperForm(arg) %]), 
+When created with arguments (i.e. [% USE form = HTML.SuperForm(arg) %]),
 the arguments are passed to HTML::SuperForm's constructor.

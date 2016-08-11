@@ -3,6 +3,7 @@
 
 PORTNAME=	mdcached
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	php-
@@ -15,10 +16,9 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libmdcached.so:databases/mdcached
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 CONFIGURE_ARGS=	--enable-mdcached
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/client_php/${PORTNAME}
+WRKSRC_SUBDIR=		${PORTNAME}/client_php/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
---- /dev/null
+--- flickrnet.pc.in.orig	2016-06-20 14:46:51 UTC
 +++ flickrnet.pc.in
 @@ -0,0 +1,8 @@
 +prefix=@prefix@

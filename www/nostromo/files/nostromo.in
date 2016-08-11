@@ -18,10 +18,10 @@
 name=nostromo
 rcvar=nostromo_enable
 
-command=/usr/local/sbin/nhttpd
+command=%%PREFIX%%/sbin/nhttpd
 
 nostromo_enable=${nostromo_enable:-"NO"}
-nostromo_flags=${nostromo_flags:-"-c /usr/local/nostromo/conf/nhttpd.conf"}
+nostromo_flags=${nostromo_flags:-"-c %%PREFIX%%/nostromo/conf/nhttpd.conf"}
 
 load_rc_config $name
 run_rc_command "$1"

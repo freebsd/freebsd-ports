@@ -38,7 +38,7 @@ PGSQL_USES=	pgsql
 
 SQLITE_LIB_DEPENDS=	libsqlite.so:databases/sqlite2
 
-SQLITE3_USE=	SQLITE=3
+SQLITE3_USES=	sqlite:3
 
 MSSQL_LIB_DEPENDS=	libsybdb.so:databases/freetds
 

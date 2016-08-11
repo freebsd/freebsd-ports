@@ -60,7 +60,7 @@ do-install:
 	@ ${TOUCH} ${STAGEDIR}${PREFIX}/${PHPBBDIR}/config.php.sample
 	@ ${CHMOD} -R 0755 ${STAGEDIR}${PREFIX}/${PHPBBDIR}
 
-post-install:
+post-install-DOCS-on:
 	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@ cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 

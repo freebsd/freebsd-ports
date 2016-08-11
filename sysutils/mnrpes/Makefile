@@ -40,8 +40,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/checks.txt.dist ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/mnrpes-receiver.cfg.dist ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/mnrpes-scheduler.cfg.dist ${STAGEDIR}${ETCDIR}
-
-post-install:
 	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
 	${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 

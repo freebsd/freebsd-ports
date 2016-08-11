@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5.1.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -34,7 +32,7 @@ CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
-X86_TARGETS_DESC=	Don't build non-x86 system targets
+X86_TARGETS_DESC=	Build only x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
@@ -76,7 +74,7 @@ PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
-		--disable-smartcard-nss --disable-libssh2 --enable-debug \
+		--disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
@@ -155,9 +153,6 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
 post-patch:
-	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E \
 		-e "/^by Tibor .TS. S/s|Sch.*z.$$|Schuetz.|" \
 		${WRKSRC}/qemu-doc.texi

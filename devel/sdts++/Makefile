@@ -13,7 +13,7 @@ COMMENT=	C++ library for SDTS related development
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-DOS2UNIX_FILES=	sdts++/io/sio_Utils.cpp
+DOS2UNIX_GLOB=	*.cpp
 USES=		autoreconf bison dos2unix gmake libtool makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include

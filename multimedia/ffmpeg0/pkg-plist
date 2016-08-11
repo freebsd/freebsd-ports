@@ -1,9 +1,7 @@
 bin/ffmpeg%%SUFF%%
 bin/ffprobe%%SUFF%%
 %%FFSERVER%%bin/ffserver%%SUFF%%
-%%FFSERVER%%@unexec if cmp -s %D/etc/ffserver%%SUFF%%.conf %D/etc/ffserver%%SUFF%%.conf-dist; then rm -f %D/etc/ffserver%%SUFF%%.conf; fi
-%%FFSERVER%%etc/ffserver%%SUFF%%.conf-dist
-%%FFSERVER%%@exec [ -f %B/ffserver%%SUFF%%.conf ] || cp %B/%f %B/ffserver%%SUFF%%.conf
+%%FFSERVER%%@sample etc/ffserver%%SUFF%%.conf-dist etc/ffserver%%SUFF%%.conf
 include/ffmpeg%%SUFF%%/libavcodec/avcodec.h
 include/ffmpeg%%SUFF%%/libavcodec/avfft.h
 include/ffmpeg%%SUFF%%/libavcodec/dxva2.h

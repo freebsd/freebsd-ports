@@ -1,6 +1,6 @@
 bin/fpcalc
 include/chromaprint.h
 lib/libchromaprint.so
-lib/libchromaprint.so.0
-lib/libchromaprint.so.0.2.2
+lib/libchromaprint.so.1
+lib/libchromaprint.so.1.3.0
 libdata/pkgconfig/libchromaprint.pc

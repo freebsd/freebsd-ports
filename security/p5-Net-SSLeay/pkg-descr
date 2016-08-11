@@ -1,4 +1,4 @@
-This module offers 
+This module offers
 
 - some high level convenience functions for accessing web pages on SSL servers
 - a sslcat() function for writing your own clients

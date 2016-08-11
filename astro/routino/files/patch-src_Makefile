@@ -1,0 +1,43 @@
+--- src/Makefile.orig	2015-09-29 18:09:59 UTC
++++ src/Makefile
+@@ -38,9 +38,7 @@ EXE=planetsplitter$(.EXE) planetsplitter
+     router+lib$(.EXE) router+lib-slim$(.EXE)
+ 
+ ifneq ($(HOST),MINGW)
+-LIB =libroutino.so               libroutino-slim.so
+-LIB+=libroutino.so.$(SOVERSION)  libroutino-slim.so.$(SOVERSION)
+-LIB+=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
++LIB=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
+ else
+ LIB =routino.dll routino-slim.dll
+ LIB+=routino.def routino-slim.def
+@@ -284,22 +282,23 @@ install-local: all-local
+ 	@[ -d $(DESTDIR)$(bindir) ] || mkdir -p $(DESTDIR)$(bindir)
+ 	@for file in $(EXE); do \
+ 	    if [ -f $$file ]; then \
+-	       echo cp $$file $(DESTDIR)$(bindir) ;\
+-	       cp -f $$file $(DESTDIR)$(bindir) ;\
++	       echo install -s $$file $(DESTDIR)$(bindir) ;\
++	       install -s $$file $(DESTDIR)$(bindir) ;\
+ 	    fi ;\
+ 	 done
+ 	@[ -d $(DESTDIR)$(incdir) ] || mkdir -p $(DESTDIR)$(incdir)
+ 	@for file in $(INC); do \
+ 	    if [ -f $$file ]; then \
+-	       echo cp $$file $(DESTDIR)$(incdir) ;\
+-	       cp -f $$file $(DESTDIR)$(incdir) ;\
++	       echo install $$file $(DESTDIR)$(incdir) ;\
++	       install $$file $(DESTDIR)$(incdir) ;\
+ 	    fi ;\
+ 	 done
+ 	@[ -d $(DESTDIR)$(libdir) ] || mkdir -p $(DESTDIR)$(libdir)
++	echo $(LIB)
+ 	@for file in $(LIB); do \
+ 	    if [ -f $$file ]; then \
+-	       echo cp $$file $(DESTDIR)$(libdir) ;\
+-	       cp -df $$file $(DESTDIR)$(libdir) ;\
++	       echo install -s $$file $(DESTDIR)$(libdir) ;\
++	       install -s $$file $(DESTDIR)$(libdir) ;\
+ 	    fi ;\
+ 	 done
+ 

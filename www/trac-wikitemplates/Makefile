@@ -13,11 +13,15 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/p/rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Templates for the Trac wiki
 
-RUN_DEPENDS+=	tracd:www/trac
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	tracd:www/trac
 #		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-2.0-py${PYTHON_VER}.egg:www/trac-ctxtnavadd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

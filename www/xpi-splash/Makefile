@@ -9,7 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splash screen for most Mozilla and Mozilla Based products
 
-XPI_DISTNAME=	splash\!
+XPI_DISTNAME=	splash!
 XPI_ID=		splash@aldreneo.com
 XPI_NUM=	2995
 XPI_FILES=	chrome/splash.jar components/.autoreg components/splash.js \

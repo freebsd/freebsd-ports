@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scss_lint
-PORTVERSION=	0.47.1
+PORTVERSION=	0.48.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-rake>=0.9:devel/rubygem-rake \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/scss-lint
 

@@ -10,7 +10,11 @@ MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OpenStreetMap data into a Garmin format
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

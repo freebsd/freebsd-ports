@@ -1,21 +1,21 @@
-The Apache::ConfigParser module is used to load an Apache configuration 
-file to allow programs to determine Apache's configuration directives and 
-contexts. The resulting object contains a tree based structure using the 
-Apache::ConfigParser::Directive class, which is a subclass of 
-Tree::DAG_node, so all of the methods that enable tree based searches and 
-modifications from Tree::DAG_Node are also available. The tree structure 
-is used to represent the ability to nest sections, such as <VirtualHost>, 
+The Apache::ConfigParser module is used to load an Apache configuration
+file to allow programs to determine Apache's configuration directives and
+contexts. The resulting object contains a tree based structure using the
+Apache::ConfigParser::Directive class, which is a subclass of
+Tree::DAG_node, so all of the methods that enable tree based searches and
+modifications from Tree::DAG_Node are also available. The tree structure
+is used to represent the ability to nest sections, such as <VirtualHost>,
 <Directory>, etc.
 
-Apache does a great job of checking Apache configuration files for errors 
-and this modules leaves most of that to Apache. This module does minimal 
+Apache does a great job of checking Apache configuration files for errors
+and this modules leaves most of that to Apache. This module does minimal
 configuration file checking. The module currently checks for:
 
 Start and end context names match
 
-    The module checks if the start and end context names match. If the end 
-context name does not match the start context name, then it is ignored. 
-The module does not even check if the configuration contexts have valid 
+    The module checks if the start and end context names match. If the end
+context name does not match the start context name, then it is ignored.
+The module does not even check if the configuration contexts have valid
 names.
 
 WWW: http://search.cpan.org/dist/Apache-ConfigParser/

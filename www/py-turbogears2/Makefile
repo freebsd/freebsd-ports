@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:devel/py-ToscaWidgets \
 		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.4:devel/py-turbokid \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.4:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.4:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}Chameleon>=2.0:textproc/py-Chameleon \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako \

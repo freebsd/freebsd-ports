@@ -1,0 +1,4 @@
+#!/bin/sh
+# $FreeBSD$
+cd %%PREFIX%%/%%NVMUPDATE_DIR%%
+./nvmupdate64e $@

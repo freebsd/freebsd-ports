@@ -14,8 +14,7 @@ RUN_DEPENDS=	rubygem-semi_semantic>=1.1.0:devel/rubygem-semi_semantic
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/bosh-template
 

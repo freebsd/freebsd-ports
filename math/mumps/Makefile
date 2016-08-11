@@ -11,7 +11,7 @@ MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://www.enseeiht.fr/irit/apo/MUMPS/
 DISTNAME=	MUMPS_${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
 LICENSE=	PD

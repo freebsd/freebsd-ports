@@ -2,4 +2,4 @@ The libcdio package contains a library which encapsulates CD-ROM reading
 and control. Applications wishing to be oblivious of the OS- and
 device-dependant properties of a CD-ROM can use this library.
 
-WWW:	http://www.gnu.org/software/libcdio/
+WWW: http://www.gnu.org/software/libcdio/

@@ -353,6 +353,7 @@ include/mythtv/metadata/globals.h
 include/mythtv/metadata/metadatacommon.h
 include/mythtv/metadata/metadatadownload.h
 include/mythtv/metadata/metadatafactory.h
+include/mythtv/metadata/metadatagrabber.h
 include/mythtv/metadata/metadataimagedownload.h
 include/mythtv/metadata/metadataimagehelper.h
 include/mythtv/metadata/metaio.h
@@ -592,8 +593,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/fonts/Tiresias Infofont Bold.ttf
 %%DATADIR%%/fonts/Tiresias Infofont Italic.ttf
 %%DATADIR%%/fonts/Tiresias Infofont.ttf
-%%DATADIR%%/fonts/tiresias_gpl3.txt
 %%DATADIR%%/fonts/texgyrechorus-mediumitalic.otf
+%%DATADIR%%/fonts/tiresias_gpl3.txt
 %%DATADIR%%/html/3rdParty/jwplayer.qsp
 %%DATADIR%%/html/css/Status.css
 %%DATADIR%%/html/css/images/ui-bg_flat_30_cccccc_40x100.png
@@ -690,9 +691,9 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/html/misc/database-backup.html
 %%DATADIR%%/html/misc/database-repair.html
 %%DATADIR%%/html/misc/databasetabs.html
-%%DATADIR%%/html/misc/hardwareprofile.html
 %%DATADIR%%/html/misc/hardwareprofile-general.html
 %%DATADIR%%/html/misc/hardwareprofile-myprofile.html
+%%DATADIR%%/html/misc/hardwareprofile.html
 %%DATADIR%%/html/misc/js/databasetabs.js
 %%DATADIR%%/html/misc/js/hardwareprofile.js
 %%DATADIR%%/html/misc/js/messagetab.js
@@ -777,6 +778,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/i18n/mythfrontend_zh_cn.qm
 %%DATADIR%%/i18n/mythfrontend_zh_hk.qm
 %%DATADIR%%/locales/da_dk.xml
+%%DATADIR%%/locales/de_at.xml
+%%DATADIR%%/locales/de_ch.xml
 %%DATADIR%%/locales/de_de.xml
 %%DATADIR%%/locales/el_gr.xml
 %%DATADIR%%/locales/en_ca.xml
@@ -1040,6 +1043,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/browser-ui.xml
 %%DATADIR%%/themes/Terra/config-ui.xml
 %%DATADIR%%/themes/Terra/config/selected_icon_mask.png
+%%DATADIR%%/themes/Terra/controls-ui.xml
 %%DATADIR%%/themes/Terra/controls/button.png
 %%DATADIR%%/themes/Terra/controls/button_pushed.png
 %%DATADIR%%/themes/Terra/controls/checkbox_background.png
@@ -1051,7 +1055,6 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/controls/short_textedit_background_selected.png
 %%DATADIR%%/themes/Terra/controls/small_button.png
 %%DATADIR%%/themes/Terra/controls/small_button_pushed.png
-%%DATADIR%%/themes/Terra/controls-ui.xml
 %%DATADIR%%/themes/Terra/gallery-ui.xml
 %%DATADIR%%/themes/Terra/game-ui.xml
 %%DATADIR%%/themes/Terra/guide/guide_arrow_left.png
@@ -1436,6 +1439,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/keyboard/da_ui.xml
 %%DATADIR%%/themes/default/keyboard/de.xml
 %%DATADIR%%/themes/default/keyboard/de_ui.xml
+%%DATADIR%%/themes/default/keyboard/el.xml
+%%DATADIR%%/themes/default/keyboard/el_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_gb.xml
 %%DATADIR%%/themes/default/keyboard/en_gb_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_us.xml

@@ -11,8 +11,6 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Multiping host checker dockapp
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_XORG=	xpm
 
 OPTIONS_DEFINE=	DOCS

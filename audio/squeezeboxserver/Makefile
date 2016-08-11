@@ -155,7 +155,7 @@ post-patch:
 		-e 's/default-character-set/character-set-server/'\
 		-e 's/default-collation/collation-server/'  ${WRKSRC}/MySQL/my.tt
 # table_open_cache was known as table_cache in MySQL 5.1.2 and earlier
-	@if [ "$(MYSQL_VER)" != "50" ] ; then \
+	@if [ "${MYSQL_VER}" != "50" ] ; then \
 		${REINPLACE_CMD} \
 			-e 's/table_cache/table_open_cache/' ${WRKSRC}/MySQL/my.tt ;\
 	fi

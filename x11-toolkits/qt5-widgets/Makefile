@@ -2,6 +2,7 @@
 
 PORTNAME=	widgets
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -17,12 +18,14 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-MORE_WRKSRCS=	src/tools/uic
+MORE_WRKSRCS=	src/tools/uic \
+		src/plugins/platformthemes
 
 QT_DEFINES=	ACCESSIBILITY WIDGETS XSYNC
 QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
 
 OPTIONS_DEFINE=	GTK2
+OPTIONS_SUB=	yes
 
 GTK2_DESC=	GTK+-based Qt theme
 GTK2_USE=	GNOME=gtk20
@@ -38,6 +41,11 @@ QT_CONFIG+=	gtkstyle
 QT_DEFINES+=	-STYLE_GTK
 QT_CONFIG+=	-gtkstyle
 .endif
+
+# libQt5PlatformSupport.a is installed by qt5-core but needed for the gtk style plugin
+post-configure:
+	${LN} -s ${QT_LIBDIR}/libQt5PlatformSupport.a \
+		${WRKSRC}/lib/libQt5PlatformSupport.a
 
 pre-build:
 	@cd ${WRKSRC}/src/tools/uic && \

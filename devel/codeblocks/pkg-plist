@@ -1,7 +1,7 @@
 bin/cb_console_runner
 bin/cb_share_config
 bin/codeblocks
-bin/codesnippets
+include/codeblocks/Alignment.h
 include/codeblocks/Assertions.h
 include/codeblocks/Attributes.h
 include/codeblocks/CharDistribution.h
@@ -10,7 +10,7 @@ include/codeblocks/ErrorList.h
 include/codeblocks/JpCntx.h
 include/codeblocks/Likely.h
 include/codeblocks/NullPtr.h
-include/codeblocks/StandardInteger.h
+include/codeblocks/TypedEnum.h
 include/codeblocks/Types.h
 include/codeblocks/Util.h
 include/codeblocks/annoyingdialog.h
@@ -34,6 +34,7 @@ include/codeblocks/cbthreadpool.h
 include/codeblocks/cbtool.h
 include/codeblocks/cbtreectrl.h
 include/codeblocks/cbworkspace.h
+include/codeblocks/ccmanager.h
 include/codeblocks/compileoptionsbase.h
 include/codeblocks/compiler.h
 include/codeblocks/compilercommandgenerator.h
@@ -49,7 +50,6 @@ include/codeblocks/debuggermanager.h
 include/codeblocks/editarrayfiledlg.h
 include/codeblocks/editarrayorderdlg.h
 include/codeblocks/editarraystringdlg.h
-include/codeblocks/editkeywordsdlg.h
 include/codeblocks/editor_hooks.h
 include/codeblocks/editorbase.h
 include/codeblocks/editorcolourset.h
@@ -119,7 +119,6 @@ include/codeblocks/prep.h
 include/codeblocks/printing_types.h
 include/codeblocks/prmem.h
 include/codeblocks/projectbuildtarget.h
-include/codeblocks/projectdepsdlg.h
 include/codeblocks/projectfile.h
 include/codeblocks/projectfileoptionsdlg.h
 include/codeblocks/projectlayoutloader.h
@@ -162,7 +161,6 @@ include/codeblocks/tinyxml/tinywxuni.h
 include/codeblocks/tinyxml/tinyxml.h
 include/codeblocks/toolsmanager.h
 include/codeblocks/uservarmanager.h
-include/codeblocks/virtualbuildtargetsdlg.h
 include/codeblocks/workspaceloader.h
 include/codeblocks/wxContribItems/KWIC/include/wx/KWIC/AngularMeter.h
 include/codeblocks/wxContribItems/KWIC/include/wx/KWIC/AngularRegulator.h
@@ -186,6 +184,7 @@ include/codeblocks/wxContribItems/wxFlatNotebook/include/wx/wxFlatNotebook/wxFNB
 include/codeblocks/wxContribItems/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebook.h
 include/codeblocks/wxContribItems/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebookSDK.h
 include/codeblocks/wxContribItems/wxImagePanel/include/wx/wxImagePanel.h
+include/codeblocks/wxContribItems/wxMathPlot/mathplot.h
 include/codeblocks/wxContribItems/wxSpeedButton/wxSpeedButton.h
 include/codeblocks/wxContribItems/wxTreeList/include/wx/treelistctrl.h
 include/codeblocks/wxContribItems/wxchart/include/wx/axis.h
@@ -339,6 +338,7 @@ lib/codeblocks/plugins/libIncrementalSearch.so
 lib/codeblocks/plugins/libMouseSap.so
 lib/codeblocks/plugins/libNassiShneiderman.so
 lib/codeblocks/plugins/libProfiler.so
+lib/codeblocks/plugins/libProjectOptionsManipulator.so
 lib/codeblocks/plugins/libRegExTestbed.so
 lib/codeblocks/plugins/libReopenEditor.so
 lib/codeblocks/plugins/libSmartIndentCpp.so
@@ -399,6 +399,9 @@ lib/codeblocks/wxContribItems/libwxkwic.so.0.0.1
 lib/codeblocks/wxContribItems/libwxled.so
 lib/codeblocks/wxContribItems/libwxled.so.0
 lib/codeblocks/wxContribItems/libwxled.so.0.0.1
+lib/codeblocks/wxContribItems/libwxmathplot.so
+lib/codeblocks/wxContribItems/libwxmathplot.so.0
+lib/codeblocks/wxContribItems/libwxmathplot.so.0.0.1
 lib/codeblocks/wxContribItems/libwxspeedbutton.so
 lib/codeblocks/wxContribItems/libwxspeedbutton.so.0
 lib/codeblocks/wxContribItems/libwxspeedbutton.so.0.0.1
@@ -411,6 +414,7 @@ lib/libcodeblocks.so.0.0.1
 lib/libwxsmithlib.so
 lib/libwxsmithlib.so.0
 lib/libwxsmithlib.so.0.0.1
+libdata/pkgconfig/codeblocks.pc
 libdata/pkgconfig/cb_wxKWIC.pc
 libdata/pkgconfig/cb_wxchartctrl.pc
 libdata/pkgconfig/cb_wxcontrib.pc
@@ -418,9 +422,9 @@ libdata/pkgconfig/cb_wxcustombutton.pc
 libdata/pkgconfig/cb_wxflatnotebook.pc
 libdata/pkgconfig/cb_wximagepanel.pc
 libdata/pkgconfig/cb_wxled.pc
+libdata/pkgconfig/cb_wxmathplot.pc
 libdata/pkgconfig/cb_wxspeedbutton.pc
 libdata/pkgconfig/cb_wxtreelist.pc
-libdata/pkgconfig/codeblocks.pc
 libdata/pkgconfig/wxsmith-contrib.pc
 libdata/pkgconfig/wxsmith.pc
 libdata/pkgconfig/wxsmithaui.pc
@@ -429,10 +433,6 @@ man/man1/cb_share_config.1.gz
 man/man1/codeblocks.1.gz
 man/man1/codesnippets.1.gz
 share/applications/codeblocks.desktop
-share/icons/hicolor/48x48/mimetypes/application-x-codeblocks-workspace.png
-share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
-share/mime/packages/codeblocks.xml
-share/pixmaps/codeblocks.png
 %%DATADIR%%/AutoVersioning.zip
 %%DATADIR%%/BrowseTracker.zip
 %%DATADIR%%/Cccc.zip
@@ -447,6 +447,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/MouseSap.zip
 %%DATADIR%%/NassiShneiderman.zip
 %%DATADIR%%/Profiler.zip
+%%DATADIR%%/ProjectOptionsManipulator.zip
 %%DATADIR%%/RegExTestbed.zip
 %%DATADIR%%/ReopenEditor.zip
 %%DATADIR%%/SmartIndentCpp.zip
@@ -468,6 +469,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/SpellChecker/en_NZ.png
 %%DATADIR%%/SpellChecker/en_US.png
 %%DATADIR%%/SpellChecker/fr_FR.png
+%%DATADIR%%/SpellChecker/ru_RU.png
 %%DATADIR%%/SymTab.zip
 %%DATADIR%%/ThreadSearch.zip
 %%DATADIR%%/ToolsPlus.zip
@@ -484,10 +486,13 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/compiler.zip
 %%DATADIR%%/compilers/compiler_avr-gcc.xml
 %%DATADIR%%/compilers/compiler_bcc.xml
+%%DATADIR%%/compilers/compiler_bfin-elf-gcc.xml
 %%DATADIR%%/compilers/compiler_clang.xml
 %%DATADIR%%/compilers/compiler_dmc.xml
 %%DATADIR%%/compilers/compiler_dmd.xml
 %%DATADIR%%/compilers/compiler_ldc.xml
+%%DATADIR%%/compilers/compiler_lm32-gcc.xml
+%%DATADIR%%/compilers/compiler_lm8-gcc.xml
 %%DATADIR%%/compilers/compiler_msp430-gcc.xml
 %%DATADIR%%/compilers/compiler_null.xml
 %%DATADIR%%/compilers/compiler_pgifortran.xml
@@ -495,9 +500,11 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/compilers/compiler_sdcc.xml
 %%DATADIR%%/compilers/compiler_tcc.xml
 %%DATADIR%%/compilers/compiler_tricore-gcc.xml
+%%DATADIR%%/compilers/compiler_zpu-gcc.xml
 %%DATADIR%%/compilers/options_arm-elf-gcc.xml
 %%DATADIR%%/compilers/options_avr-gcc.xml
 %%DATADIR%%/compilers/options_bcc.xml
+%%DATADIR%%/compilers/options_bfin-elf-gcc.xml
 %%DATADIR%%/compilers/options_clang.xml
 %%DATADIR%%/compilers/options_common_architecture.xml
 %%DATADIR%%/compilers/options_common_cmds.xml
@@ -526,6 +533,8 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/compilers/options_keilcx51.xml
 %%DATADIR%%/compilers/options_lcc.xml
 %%DATADIR%%/compilers/options_ldc.xml
+%%DATADIR%%/compilers/options_lm32-gcc.xml
+%%DATADIR%%/compilers/options_lm8-gcc.xml
 %%DATADIR%%/compilers/options_msp430-gcc.xml
 %%DATADIR%%/compilers/options_msvc10.xml
 %%DATADIR%%/compilers/options_msvc8.xml
@@ -537,6 +546,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/compilers/options_sdcc.xml
 %%DATADIR%%/compilers/options_tcc.xml
 %%DATADIR%%/compilers/options_tricore-gcc.xml
+%%DATADIR%%/compilers/options_zpu-gcc.xml
 %%DATADIR%%/copystrings.zip
 %%DATADIR%%/debugger.zip
 %%DATADIR%%/defaultmimehandler.zip
@@ -760,18 +770,18 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/images/codecompletion/folder_green_open.png
 %%DATADIR%%/images/codecompletion/folder_open.png
 %%DATADIR%%/images/codecompletion/funcs_folder.png
-%%DATADIR%%/images/codecompletion/macro.png
-%%DATADIR%%/images/codecompletion/macro_folder.png
-%%DATADIR%%/images/codecompletion/macro_private.png
-%%DATADIR%%/images/codecompletion/macro_protected.png
-%%DATADIR%%/images/codecompletion/macro_public.png
+%%DATADIR%%/images/codecompletion/macro_def.png
+%%DATADIR%%/images/codecompletion/macro_def_folder.png
+%%DATADIR%%/images/codecompletion/macro_use.png
+%%DATADIR%%/images/codecompletion/macro_use_folder.png
+%%DATADIR%%/images/codecompletion/macro_use_private.png
+%%DATADIR%%/images/codecompletion/macro_use_protected.png
+%%DATADIR%%/images/codecompletion/macro_use_public.png
 %%DATADIR%%/images/codecompletion/method_private.png
 %%DATADIR%%/images/codecompletion/method_protected.png
 %%DATADIR%%/images/codecompletion/method_public.png
 %%DATADIR%%/images/codecompletion/namespace.png
 %%DATADIR%%/images/codecompletion/others_folder.png
-%%DATADIR%%/images/codecompletion/preproc.png
-%%DATADIR%%/images/codecompletion/preproc_folder.png
 %%DATADIR%%/images/codecompletion/symbols_folder.png
 %%DATADIR%%/images/codecompletion/typedef.png
 %%DATADIR%%/images/codecompletion/typedef_private.png
@@ -841,6 +851,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/images/rc-file-outofdate.png
 %%DATADIR%%/images/rc-file-requireslock.png
 %%DATADIR%%/images/rc-file-uptodate.png
+%%DATADIR%%/images/readonly.png
 %%DATADIR%%/images/rebuild.png
 %%DATADIR%%/images/redo.png
 %%DATADIR%%/images/run.png
@@ -1143,6 +1154,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/lexers/lexer_bash.xml
 %%DATADIR%%/lexers/lexer_batch.sample
 %%DATADIR%%/lexers/lexer_batch.xml
+%%DATADIR%%/lexers/lexer_bibtex.sample
 %%DATADIR%%/lexers/lexer_bibtex.xml
 %%DATADIR%%/lexers/lexer_caml.sample
 %%DATADIR%%/lexers/lexer_caml.xml
@@ -1150,6 +1162,8 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/lexers/lexer_cg.xml
 %%DATADIR%%/lexers/lexer_cmake.sample
 %%DATADIR%%/lexers/lexer_cmake.xml
+%%DATADIR%%/lexers/lexer_coffee.sample
+%%DATADIR%%/lexers/lexer_coffee.xml
 %%DATADIR%%/lexers/lexer_cpp.sample
 %%DATADIR%%/lexers/lexer_cpp.xml
 %%DATADIR%%/lexers/lexer_css.sample
@@ -1172,8 +1186,12 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/lexers/lexer_hitasm.xml
 %%DATADIR%%/lexers/lexer_html.sample
 %%DATADIR%%/lexers/lexer_html.xml
+%%DATADIR%%/lexers/lexer_ihex.sample
+%%DATADIR%%/lexers/lexer_ihex.xml
 %%DATADIR%%/lexers/lexer_java.sample
 %%DATADIR%%/lexers/lexer_java.xml
+%%DATADIR%%/lexers/lexer_javascript.sample
+%%DATADIR%%/lexers/lexer_javascript.xml
 %%DATADIR%%/lexers/lexer_latex.sample
 %%DATADIR%%/lexers/lexer_latex.xml
 %%DATADIR%%/lexers/lexer_lisp.sample
@@ -1200,10 +1218,13 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/lexers/lexer_prg.xml
 %%DATADIR%%/lexers/lexer_properties.sample
 %%DATADIR%%/lexers/lexer_properties.xml
+%%DATADIR%%/lexers/lexer_proto.xml
 %%DATADIR%%/lexers/lexer_python.sample
 %%DATADIR%%/lexers/lexer_python.xml
 %%DATADIR%%/lexers/lexer_rc.sample
 %%DATADIR%%/lexers/lexer_rc.xml
+%%DATADIR%%/lexers/lexer_registry.sample
+%%DATADIR%%/lexers/lexer_registry.xml
 %%DATADIR%%/lexers/lexer_ruby.sample
 %%DATADIR%%/lexers/lexer_ruby.xml
 %%DATADIR%%/lexers/lexer_smalltalk.sample
@@ -1212,6 +1233,10 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/lexers/lexer_sql.xml
 %%DATADIR%%/lexers/lexer_squirrel.sample
 %%DATADIR%%/lexers/lexer_squirrel.xml
+%%DATADIR%%/lexers/lexer_srec.sample
+%%DATADIR%%/lexers/lexer_srec.xml
+%%DATADIR%%/lexers/lexer_tehex.sample
+%%DATADIR%%/lexers/lexer_tehex.xml
 %%DATADIR%%/lexers/lexer_vbscript.sample
 %%DATADIR%%/lexers/lexer_vbscript.xml
 %%DATADIR%%/lexers/lexer_verilog.sample
@@ -1237,6 +1262,11 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/scripts/sample_plugin.script
 %%DATADIR%%/scripts/startup.script
 %%DATADIR%%/scripts/stl-views-1.0.3.gdb
+%%DATADIR%%/scripts/tests/menu_test_plugin.script
+%%DATADIR%%/scripts/tests/script_test_plugin.script
+%%DATADIR%%/scripts/tests/test_base.script
+%%DATADIR%%/scripts/tests/user_dialog_test_plugin.script
+%%DATADIR%%/scripts/tests/wx_test.script
 %%DATADIR%%/scripts/wx_help.script
 %%DATADIR%%/start_here.zip
 %%DATADIR%%/templates/console-main-c.cpp
@@ -1608,3 +1638,7 @@ share/pixmaps/codeblocks.png
 %%DATADIR%%/wxSmithAui.zip
 %%DATADIR%%/wxsmith.zip
 %%DATADIR%%/wxsmithcontribitems.zip
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks-workspace.png
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
+share/mime/packages/codeblocks.xml
+share/pixmaps/codeblocks.png

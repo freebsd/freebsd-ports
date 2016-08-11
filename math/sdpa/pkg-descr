@@ -10,9 +10,9 @@ The SDPA enjoys the following features:
    1. Callable library of the SDPA is available.
    2. Efficient method for computing the search directions when an SDP
       to be solved is large scale and sparse.
-   3. Block diagonal matrix structure and sparse matrix structure in 
+   3. Block diagonal matrix structure and sparse matrix structure in
       data matrices are available.
    4. Some information on infeasibility of a semidefinite program to be solved
-      is provided. 
+      is provided.
 
 WWW: http://sdpa.sourceforge.net/

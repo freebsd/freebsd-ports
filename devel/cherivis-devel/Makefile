@@ -2,6 +2,7 @@
 
 PORTNAME=	cherivis-devel
 PORTVERSION=	0.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -15,7 +16,6 @@ USES=		gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	CheriVis
-GH_TAGNAME=	98c6c04
 
 LIB_DEPENDS+=	libcheritrace.so:devel/cheritrace-devel
 

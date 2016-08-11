@@ -3,7 +3,7 @@
 
 PORTNAME=	impressive
 PORTVERSION=	0.10.3
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	The stylish way of giving presentations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		xpdf:graphics/xpdf \
 		pdftk:print/pdftk \

@@ -1,0 +1,5 @@
+letskencrypt is a client for Let's Encrypt users, but one designed for
+security. No Python. No Ruby. No Bash. A straightforward, open source
+implementation in C that isolates each step of the sequence.
+
+WWW: https://kristaps.bsd.lv/letskencrypt/

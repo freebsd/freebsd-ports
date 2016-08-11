@@ -4,4 +4,4 @@ any native character encoding. The use of the ICU library gives R
 users a platform-independent set of functions known to Java, Perl,
 Python, PHP, and Ruby programmers.
 
-WWW: http://www.rexamine.com/resources/stringi/
+WWW: http://www.gagolewski.com/software/stringi/

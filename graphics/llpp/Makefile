@@ -3,6 +3,7 @@
 
 PORTNAME=	llpp
 PORTVERSION=	22
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://repo.or.cz/llpp.git/snapshot/
 DISTNAME=	561dc5673cea431e930668b0d87b0c4b31a36b39
@@ -23,12 +24,13 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 		${LOCALBASE}/lib/libmupdf.a:graphics/mupdf
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 RUN_DEPENDS=	xsel:x11/xsel-conrad
 
 STRIP=	# Stripping renders the executable unusable, so don't do it for now
-USES=		desktop-file-utils gmake
+USES=		desktop-file-utils gmake jpeg
 USE_GL=		gl
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes

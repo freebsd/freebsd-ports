@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=		fastd
-PORTVERSION=		17
+PORTVERSION=		18
 PORTREVISION=		1
 CATEGORIES=		security net
-MASTER_SITES=		http://git.universe-factory.net/fastd/snapshot/
+MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 
 MAINTAINER=		crest_maintainer@rlwinm.de
 COMMENT=		Fast and Secure Tunnelling Daemon

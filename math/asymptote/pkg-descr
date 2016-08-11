@@ -6,6 +6,6 @@ PostScript output.
 A major advantage of Asymptote over other graphics packages is that
 it is a programming language, as opposed to just a graphics program:
 it can therefore exploit the best features of script (command-driven)
-and graphical user interface (GUI) methods. 
+and graphical user interface (GUI) methods.
 
 WWW: http://asymptote.sourceforge.net/

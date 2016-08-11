@@ -1,6 +1,6 @@
---- basictcp.cpp.orig	2012-01-01 06:36:27.000000000 -0500
-+++ basictcp.cpp	2015-03-23 17:06:40.355148000 -0400
-@@ -102,10 +102,10 @@
+--- basictcp.cpp.orig	2012-01-01 11:36:27 UTC
++++ basictcp.cpp
+@@ -102,10 +102,10 @@ int base_tcp::ConnectTLS()
    m_sslMeth = NULL;
    m_sslCtx = NULL;
    m_ssl = NULL;

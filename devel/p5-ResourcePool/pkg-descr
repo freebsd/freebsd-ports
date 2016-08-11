@@ -19,6 +19,6 @@ The ResourcePool itself handles always exactly equivalent connections
 and is therefore not able to do a load balancing. The
 ResourcePool::LoadBalancer is able to do a advanced load balancing across
 different servers and increases the overall availability by applying a
-failover policy if there is a server breakdown. 
+failover policy if there is a server breakdown.
 
 WWW: http://www.fatalmind.com/projects/ResourcePool/

@@ -4,4 +4,4 @@ ARC, L2ARC, zfetch (DMU) and vdev cache statistics.
 This script is a fork of Jason J. Hellenthal's <jhell@DataIX.net>
 arc_summary.pl: http://code.google.com/p/jhell/
 
-WWW:	http://www.vx.sk/zfs-stats/
+WWW: http://www.vx.sk/zfs-stats/

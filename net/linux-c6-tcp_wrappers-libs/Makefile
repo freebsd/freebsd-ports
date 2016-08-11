@@ -1,9 +1,9 @@
-# Created by: Johannes Meixner <xmj@chaot.net>
+# Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
 PORTNAME=	tcp_wrappers-libs
 PORTVERSION=	7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +13,7 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 
-RPMVERSION=	57.el6
+RPMVERSION=	58.el6
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/tcp_wrappers-${PORTVERSION}

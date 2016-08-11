@@ -1,12 +1,20 @@
---- CMakeLists.txt.orig	2015-07-06 08:07:23 UTC
+--- CMakeLists.txt.orig	2016-05-09 13:04:04 UTC
 +++ CMakeLists.txt
-@@ -277,6 +277,9 @@ file(GLOB MANPAGES
-   RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
-   man/nvim.1)
+@@ -213,7 +213,7 @@ else()
  
-+unset(CMAKE_INSTALL_MANDIR)
-+set(CMAKE_INSTALL_MANDIR ${CMAKE_INSTALL_PREFIX}/man)
-+
- install_helper(
-   FILES ${MANPAGES}
-   DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+   # On FreeBSD 64 math.h uses unguarded C11 extension, which taints clang
+   # 3.4.1 used there.
+-  if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" AND CMAKE_C_COMPILER_ID MATCHES "Clang")
+     add_definitions(-Wno-c11-extensions)
+   endif()
+ endif()
+@@ -367,7 +367,7 @@ endforeach()
+ 
+ # Find Lua interpreter
+ include(LuaHelpers)
+-set(LUA_DEPENDENCIES lpeg mpack bit)
++set(LUA_DEPENDENCIES lpeg bit)
+ if(NOT LUA_PRG)
+   foreach(CURRENT_LUA_PRG luajit lua)
+     # If LUA_PRG is set find_program() will not search

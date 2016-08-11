@@ -1,13 +1,13 @@
-MAPMAKER/EXP is a linkage analysis package designed to help construct primary 
-linkage maps of markers segregating in experimental crosses. MAPMAKER/EXP 
-performs full multipoint linkage analysis (simultaneous estimation of all 
+MAPMAKER/EXP is a linkage analysis package designed to help construct primary
+linkage maps of markers segregating in experimental crosses. MAPMAKER/EXP
+performs full multipoint linkage analysis (simultaneous estimation of all
 recombination fractions from the primary data) for dominant, recessive, and co-
-dominant (e.g.  RFLP-like) markers.  MAPMAKER/EXP is an experimental-cross-only 
+dominant (e.g.  RFLP-like) markers.  MAPMAKER/EXP is an experimental-cross-only
 successor to the original MAPMAKER program.
 
-MAPMAKER/QTL is a companion program to MAPMAKER/EXP which allows one to map 
-genes controlling polygenic quantitative traits in F2 intercrosses and BC1 
-backcrosses relative to a genetic linkage map. More information on MAPMAKER/QTL 
-can be found in the technical report (included with MAPMAKER/QTL).  
+MAPMAKER/QTL is a companion program to MAPMAKER/EXP which allows one to map
+genes controlling polygenic quantitative traits in F2 intercrosses and BC1
+backcrosses relative to a genetic linkage map. More information on MAPMAKER/QTL
+can be found in the technical report (included with MAPMAKER/QTL).
 
 WWW: http://www.broad.mit.edu/ftp/distribution/software/mapmaker3/

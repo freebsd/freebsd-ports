@@ -1,9 +1,9 @@
-Clewn implements full gdb support in the vim editor: breakpoints, 
+Clewn implements full gdb support in the vim editor: breakpoints,
 watch variables, gdb command completion, assembly windows, etc.
 
-Clewn is a program controlling vim through the netBeans socket interface, 
-it runs concurrently with vim and talks to vim. 
-Clewn can only be used with gvim, the graphical implementation of vim, 
+Clewn is a program controlling vim through the netBeans socket interface,
+it runs concurrently with vim and talks to vim.
+Clewn can only be used with gvim, the graphical implementation of vim,
 as vim on a terminal does not support netBeans.
 
 WWW: http://clewn.sourceforge.net/index.html

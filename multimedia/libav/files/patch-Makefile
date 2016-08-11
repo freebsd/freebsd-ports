@@ -1,6 +1,6 @@
---- Makefile.orig	2015-01-15 05:50:49.000000000 +0900
-+++ Makefile	2015-01-21 16:21:14.000000000 +0900
-@@ -129,7 +129,7 @@
+--- Makefile.orig	2016-05-25 00:36:32 UTC
++++ Makefile
+@@ -129,7 +129,7 @@ define DOSUBDIR
  $(foreach V,$(SUBDIR_VARS),$(eval $(call RESET,$(V))))
  SUBDIR := $(1)/
  include $(SRC_PATH)/$(1)/Makefile

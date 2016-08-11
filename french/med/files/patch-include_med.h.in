@@ -1,0 +1,15 @@
+--- include/med.h.in.orig	2014-10-09 08:12:57 UTC
++++ include/med.h.in
+@@ -27,12 +27,7 @@ extern "C" {
+ 
+ #define HDF5_VERSION (H5_VERS_MAJOR * 10000 + H5_VERS_MINOR * 100  + H5_VERS_RELEASE )
+ 
+-#if HDF5_VERSION < 10607
+-/*TODO : A enlever après MAJ complète api hdf5-1.8 */
+-#define HDF5_SELECT_BUG (const hsize_t **)
+-#else
+ #define HDF5_SELECT_BUG
+-#endif
+ 
+ /*Le symbole H5F_LIBVER_18 n'existe pas dans hdf5-1.8.4 (uniquement à partir de la version 1.8.6)
+   Pour rester dans le modèle interne hdf introduit en 1.8 quelque soit les futurs modèles internes hdf

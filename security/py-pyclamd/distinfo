@@ -1,2 +1,3 @@
-SHA256 (pyclamd.py) = 209673f947ce16d53bab43c19bfb8200f8b40cc70b26d4dbc9a0e203c561d16e
-SIZE (pyclamd.py) = 13101
+TIMESTAMP = 1468687659
+SHA256 (pyClamd-0.3.17.tar.gz) = 9921a582c45baa34dabb357c548c5ed331b9a39334881b3a784b593680b07ba0
+SIZE (pyClamd-0.3.17.tar.gz) = 10737

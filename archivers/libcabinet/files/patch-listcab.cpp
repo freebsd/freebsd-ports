@@ -1,5 +1,5 @@
---- listcab.cpp.orig	1999-10-24 08:11:38.000000000 -0400
-+++ listcab.cpp	2014-02-21 16:14:29.246853465 -0500
+--- listcab.cpp.orig	1999-10-24 12:11:38 UTC
++++ listcab.cpp
 @@ -8,8 +8,8 @@
  #include <stdio.h>
  #include <string.h>
@@ -22,7 +22,7 @@
  ////////////////////////////////////////****************************************
  
  void display_header_info(cabinet_header& cfh);
-@@ -47,13 +51,19 @@
+@@ -47,13 +51,19 @@ int main(int argc, char *argv[])
  			cerr << "New Folder Error: " << retval << endl;
  			return 1;
  		}
@@ -46,7 +46,7 @@
  				if((retval = cab.add_file(filename)) != OK)
  				{
  					perror("read");
-@@ -62,10 +72,13 @@
+@@ -62,10 +72,13 @@ int main(int argc, char *argv[])
  					return 1;
  				}
  			}

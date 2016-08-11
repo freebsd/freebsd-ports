@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)
 
 LICENSE=	GPLv2 GPLv3

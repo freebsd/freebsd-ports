@@ -23,9 +23,9 @@ include/tchdb.h
 include/tcutil.h
 include/tctdb.h
 lib/libtokyocabinet.a
-lib/libtokyocabinet.so
-lib/libtokyocabinet.so.%%SHLIB_VER_MAJ%%
-lib/libtokyocabinet.so.%%SHLIB_VER%%
+%%SHARED%%lib/libtokyocabinet.so
+%%SHARED%%lib/libtokyocabinet.so.%%SHLIB_VER_MAJ%%
+%%SHARED%%lib/libtokyocabinet.so.%%SHLIB_VER%%
 libdata/pkgconfig/tokyocabinet.pc
 libexec/tcawmgr.cgi
 man/man1/tcamgr.1.gz

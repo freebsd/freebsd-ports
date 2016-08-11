@@ -11,4 +11,4 @@ the new loads.
 * Supports the dynamic addition and removal of hosts to the compilation farm.
 * Works with distcc, which need not be altered in any way.
 
-WWW:	http://dmucs.sourceforge.net/
+WWW: http://dmucs.sourceforge.net/

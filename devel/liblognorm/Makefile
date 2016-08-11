@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblognorm
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
@@ -10,7 +10,7 @@ COMMENT=	Log normalizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
+LIB_DEPENDS=	libfastjson.so:devel/libfastjson \
 		libestr.so:devel/libestr
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 

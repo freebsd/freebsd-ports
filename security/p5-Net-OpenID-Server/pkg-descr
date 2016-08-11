@@ -4,7 +4,7 @@ or goes out of business.
 
 An OpenID identity is just a URL. You can have multiple identities in
 the same way you can have multiple URLs. All OpenID does is provide a
-way to prove that you own a URL (identity). 
+way to prove that you own a URL (identity).
 
 Anybody can run their own site using OpenID, and anybody can be an
 OpenID server, and they all work with each other without having to

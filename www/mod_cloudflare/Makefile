@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_cloudflare
-PORTVERSION=	0.0.20140409
+PORTVERSION=	0.0.2016.6.0
 CATEGORIES=	www
 
 MAINTAINER=	feld@FreeBSD.org
@@ -10,9 +10,11 @@ COMMENT=	Cloudflare fork of mod_remoteip
 
 LICENSE=	APACHE20
 
+CONFLICTS_INSTALL=	${PKGNAMEPREFIX}mod_remoteip-*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
-GH_TAGNAME=	da8436d
+GH_TAGNAME=	340fa0a
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

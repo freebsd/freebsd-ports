@@ -221,6 +221,7 @@ share/java/zi/Asia/Tbilisi
 share/java/zi/Asia/Tehran
 share/java/zi/Asia/Thimphu
 share/java/zi/Asia/Tokyo
+share/java/zi/Asia/Tomsk
 share/java/zi/Asia/Ulaanbaatar
 share/java/zi/Asia/Urumqi
 share/java/zi/Asia/Ust-Nera
@@ -300,6 +301,7 @@ share/java/zi/Europe/Helsinki
 share/java/zi/Europe/Istanbul
 share/java/zi/Europe/Kaliningrad
 share/java/zi/Europe/Kiev
+share/java/zi/Europe/Kirov
 share/java/zi/Europe/Lisbon
 share/java/zi/Europe/London
 share/java/zi/Europe/Luxembourg

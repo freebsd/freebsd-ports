@@ -3,7 +3,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libevent.so:devel/libevent2
-BUILD_DEPENDS=	rrdtool>=1.2:databases/rrdtool \
+BUILD_DEPENDS=	rrdtool12>=1.2:databases/rrdtool12 \
 		dot:graphics/graphviz \
 		geoiplookup:net/GeoIP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \

@@ -10,7 +10,7 @@ Some information about the problems with different TOS versions and STonX:
 (2) not thoroughly tested or tested by someone else
 (3) untested
 (4) set TOS_1 to 1 in options.h before compiling
-(5) A: and B: can't be used because they're implicitly considered Floppy disk 
+(5) A: and B: can't be used because they're implicitly considered Floppy disk
     drives and always accessed using the FDC
 
 TOS 1.00:  (1)(2)(4)(5)

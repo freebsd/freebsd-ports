@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Nov 14 01:33:48 2001
-+++ Imakefile	Tue Jul 27 10:25:29 2004
+--- Imakefile.orig	2001-11-13 22:33:48 UTC
++++ Imakefile
 @@ -4,9 +4,10 @@
  #endif
  
@@ -13,7 +13,7 @@
  
  EXTRA_LDOPTIONS = -L/usr/local/lib -Wl,-R/usr/local/lib
  INCLUDES = -I/usr/local/include
-@@ -15,7 +16,7 @@
+@@ -15,7 +16,7 @@ INCLUDES = -I/usr/local/include
  SRCS = radio.c remote.c analyzer.c sample.c misc.c config.c version_check.c LiteClue.c lcd_net.c
  OBJS = radio.o remote.o analyzer.o sample.o misc.o config.o version_check.o LiteClue.o lcd_net.o
  

@@ -1,0 +1,54 @@
+Found by -fsanitize=undefined as
+
+  $ burrGui
+  lua/luaclass.cpp:60:17: runtime error: execution reached the end of a value-returning function without returning a value
+
+which with Clang leads to
+
+  * thread #1: tid = 100272, 0x00000000005d0d2d burrGui`luaClass_c::doString(this=0x00007fffffffd6e0, code="windowposh = 600") + 125 at luaclass.cpp:61, stop reason = signal SIGILL: privileged instruction
+      frame #0: 0x00000000005d0d2d burrGui`luaClass_c::doString(this=0x00007fffffffd6e0, code="windowposh = 600") + 125 at luaclass.cpp:61
+     58     luaL_loadfile(L, fname) || lua_pcall(L, 0, 0, 0);
+     59   }
+     60   int luaClass_c::doString(const char *code) {
+  -> 61     luaL_loadbuffer(L, code, strlen(code), "line") || lua_pcall(L, 0, 0, 0);
+     62   }
+     63
+     64   /* functions that allow calling lua functions
+  (lldb) bt
+  * thread #1: tid = 100272, 0x00000000005d0d2d burrGui`luaClass_c::doString(this=0x00007fffffffd6e0, code="windowposh = 600") + 125 at luaclass.cpp:61, stop reason = signal SIGILL: privileged instruction
+    * frame #0: 0x00000000005d0d2d burrGui`luaClass_c::doString(this=0x00007fffffffd6e0, code="windowposh = 600") + 125 at luaclass.cpp:61
+      frame #1: 0x0000000000416735 burrGui`configuration_c::parse(this=0x00000000008e5a18) + 165 at configuration.cpp:65
+      frame #2: 0x0000000000416fbb burrGui`configuration_c::configuration_c(this=0x00000000008e5a18) + 939 at configuration.cpp:144
+      frame #3: 0x0000000000417877 burrGui`::__cxx_global_var_init() + 23 at configuration.cpp:266
+      frame #4: 0x00000000004178b9 burrGui`_GLOBAL__sub_I_configuration.cpp + 9 at configuration.cpp:0
+      frame #5: 0x00000000006221e2 burrGui`__do_global_ctors_aux + 34
+      frame #6: 0x000000000040e986 burrGui
+
+--- src/lua/luaclass.cpp.orig	2013-05-08 19:02:06 UTC
++++ src/lua/luaclass.cpp
+@@ -54,10 +54,10 @@ bool luaClass_c::getBool(const char *nam
+ }
+ 
+ /* functions to evaluate lua code */
+-int luaClass_c::doFile(const char *fname) {
++void luaClass_c::doFile(const char *fname) {
+   luaL_loadfile(L, fname) || lua_pcall(L, 0, 0, 0);
+ }
+-int luaClass_c::doString(const char *code) {
++void luaClass_c::doString(const char *code) {
+   luaL_loadbuffer(L, code, strlen(code), "line") || lua_pcall(L, 0, 0, 0);
+ }
+ 
+--- src/lua/luaclass.h.orig	2013-05-08 19:02:06 UTC
++++ src/lua/luaclass.h
+@@ -45,8 +45,8 @@ class luaClass_c {
+     bool getBool(const char *name);
+ 
+     /* functions to evaluate lua code */
+-    int doFile(const char *fname);
+-    int doString(const char *code);
++    void doFile(const char *fname);
++    void doString(const char *code);
+ 
+     /* functions that allow calling lua functions
+      *

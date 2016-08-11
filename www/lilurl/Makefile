@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PHP/MySQL script for generating lil? URLs
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	mysql pcre
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -17,7 +19,6 @@ WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LILURL_DIR?=	www/lilurl
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 
@@ -36,9 +37,5 @@ pre-install:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${LILURL_DIR}
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${LILURL_DIR}
-
-post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},; s,%%LILURL_DIR%%,${LILURL_DIR},g' \
-		${PKGMESSAGE}
 
 .include <bsd.port.mk>

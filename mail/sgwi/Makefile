@@ -13,6 +13,8 @@ COMMENT=	PHP web interface to SQLGrey
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:tgz
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message pkg-install

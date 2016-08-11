@@ -25,7 +25,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 do-configure:
-	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
+	@${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
 		-e "s:%%CXX%%:${CXX}:" \
 		-e "s:%%CXXFLAGS%%:${CXXFLAGS}:" \
 		-e "s:-pedantic::" \
@@ -34,7 +34,10 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin_opt_gcc_/ccdoc.exe \
 		${STAGEDIR}${PREFIX}/bin/ccdoc
-	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+
+do-install-DOCS-on:
 	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

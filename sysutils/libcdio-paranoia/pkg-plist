@@ -3,12 +3,12 @@ include/cdio/paranoia/cdda.h
 include/cdio/paranoia/paranoia.h
 lib/libcdio_cdda.a
 lib/libcdio_cdda.so
-lib/libcdio_cdda.so.1
-lib/libcdio_cdda.so.1.0.0
+lib/libcdio_cdda.so.2
+lib/libcdio_cdda.so.2.0.0
 lib/libcdio_paranoia.a
 lib/libcdio_paranoia.so
-lib/libcdio_paranoia.so.1
-lib/libcdio_paranoia.so.1.0.0
+lib/libcdio_paranoia.so.2
+lib/libcdio_paranoia.so.2.0.0
 libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libcdio_cdda.pc
 man/man1/cd-paranoia.1.gz

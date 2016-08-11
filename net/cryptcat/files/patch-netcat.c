@@ -1,5 +1,5 @@
---- netcat.c.orig	Tue Oct 18 19:42:05 2005
-+++ netcat.c		Sun Oct 30 07:47:37 2005
+--- netcat.c.orig	2005-10-18 17:42:05 UTC
++++ netcat.c
 @@ -48,9 +48,6 @@
  #else
  #include <malloc.h>

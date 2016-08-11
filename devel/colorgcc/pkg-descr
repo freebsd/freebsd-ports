@@ -1,4 +1,4 @@
 colorgcc is a Perl script written by Jamie Moyers to colorize the terminal
 output of GCC so error messages can be found within longer compiler outputs.
 
-WWW:	http://schlueters.de/colorgcc.html
+WWW: http://schlueters.de/colorgcc.html

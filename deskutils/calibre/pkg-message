@@ -12,7 +12,7 @@ following:
     <match user="example">
       <return result="yes" />
     </match>
-  </match> 
+  </match>
 
 Additional users will each need their own <match user="user"> block with a
 "yes" return result.

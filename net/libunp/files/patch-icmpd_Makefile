@@ -1,5 +1,5 @@
---- icmpd/Makefile.orig	Tue Sep 28 11:40:21 1999
-+++ icmpd/Makefile	Tue Sep 28 11:40:24 1999
+--- icmpd/Makefile.orig	1997-07-06 18:12:00 UTC
++++ icmpd/Makefile
 @@ -1,6 +1,6 @@
  include ../Make.defines
  

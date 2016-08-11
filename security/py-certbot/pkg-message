@@ -1,0 +1,25 @@
+===========================================================================
+
+The Let's Encrypt Client is BETA SOFTWARE. It contains plenty of bugs and
+rough edges, and should be tested thoroughly in staging environments before
+use on production systems.
+
+This port installs the "standalone" Python client only, which does not use and
+is not the letsencrypt-auto bootstrap/wrapper script.
+
+To obtain certificates, use the 'certonly' command as follows:
+
+ # sudo certbot --server <server-URL> certonly
+
+Note: The client currently requires the ability to bind on TCP port 80. If
+you have a server running on this port, it will need to be temporarily stopped
+so that the standalone server can listen on that port to complete
+authentication.
+
+The letsencrypt plugins to support apache and nginx certificate installation
+will be made available soon in the following ports:
+
+ * Apache plugin: security/py-letsencrypt-apache
+ * Nginx plugin: security/py-letsencrypt-nginx
+
+===========================================================================

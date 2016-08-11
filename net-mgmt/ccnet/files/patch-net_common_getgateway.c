@@ -1,5 +1,5 @@
---- net/common/getgateway.c.orig	2015-01-27 23:26:41.000000000 -0500
-+++ net/common/getgateway.c	2015-01-27 23:27:58.000000000 -0500
+--- net/common/getgateway.c.orig	2015-11-11 09:50:52 UTC
++++ net/common/getgateway.c
 @@ -34,7 +34,7 @@
  #undef USE_SYSCTL_NET_ROUTE
  #endif

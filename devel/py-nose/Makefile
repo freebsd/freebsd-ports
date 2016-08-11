@@ -13,7 +13,7 @@ COMMENT=	Discovery-based unittest extension
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
@@ -23,6 +23,6 @@ regression-test: build
 .if ${PYTHON_REL} >= 3000
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_tests
 .endif
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} selftest.py
 
 .include <bsd.port.post.mk>

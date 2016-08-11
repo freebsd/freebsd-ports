@@ -6,7 +6,7 @@ as a core component for ZFS and SMF.
 
 The performance is considered excellent.  As this has always been a
 private library, it is not well documented and there is no man page
-for it.  The best documentation is located in the source code and 
+for it.  The best documentation is located in the source code and
 reading OpenSolaris/Illumos ZFS and SMF sources will help as well.
 
 WWW: https://github.com/jrmarino/libuutil

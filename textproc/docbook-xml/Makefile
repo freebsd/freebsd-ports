@@ -12,24 +12,19 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook XML DTD
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent \
-		${XMLCATMGR_CMD}:textproc/xmlcatmgr
+		xmlcatmgr:textproc/xmlcatmgr
 RUN_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent \
-		${XMLCATMGR_CMD}:textproc/xmlcatmgr
+		xmlcatmgr:textproc/xmlcatmgr
 
 NO_BUILD=	yes
 
 DBFILES=4.1.2:docbkx412 4.2:docbook-xml-4.2 4.3:docbook-xml-4.3 \
 	4.4:docbook-xml-4.4 4.5:docbook-xml-4.5 5.0:docbook-5.0
 
-XMLCATMGR=	bin/xmlcatmgr
-XMLCATMGR_CMD=	${LOCALBASE}/${XMLCATMGR}
-SGMLCAT=	share/sgml/catalog.ports
-XMLCAT=		share/xml/catalog.ports
 DBKDIR=		share/xml/docbook
 DBCAT_XML=	${PREFIX}/${DBKDIR}/catalog.xml
 DBCAT_SGML=	${PREFIX}/${DBKDIR}/catalog
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} SGMLCAT=${SGMLCAT} \
-		DBKDIR=${DBKDIR} XMLCAT=${XMLCAT}
+PLIST_SUB=	DBKDIR=${DBKDIR}
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -48,8 +43,8 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DBKDIR}
 	${ECHO_CMD} "CATALOG \"${LOCALBASE}/share/xml/xmlcharent/catalog\"" \
 	    > ${STAGEDIR}${DBCAT_SGML}
-	${XMLCATMGR_CMD} -c ${STAGEDIR}${DBCAT_XML} create
-	${XMLCATMGR_CMD} -c ${STAGEDIR}${DBCAT_XML} \
+	xmlcatmgr -c ${STAGEDIR}${DBCAT_XML} create
+	xmlcatmgr -c ${STAGEDIR}${DBCAT_XML} \
 	    add nextCatalog "${LOCALBASE}/share/xml/xmlcharent/catalog.xml"
 
 .for D in ${DBFILES:C,:.*,,}
@@ -57,7 +52,7 @@ do-install-${D:S/./_/g}:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DBKDIR}/$D
 	cd ${WRKDIR}/${DBFILES:M${D}\:*:C,.*:,,} && \
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DBKDIR}/$D
-	${XMLCATMGR_CMD} -c ${STAGEDIR}${DBCAT_XML} \
+	xmlcatmgr -c ${STAGEDIR}${DBCAT_XML} \
 	    add nextCatalog "${PREFIX}/${DBKDIR}/$D/catalog.xml"
 	test "$D" = 5.0 || test "$D" = 4.1.2 || \
 	    ${ECHO_CMD} "CATALOG \"${PREFIX}/${DBKDIR}/$D/docbook.cat\"" \

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsobfu
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,7 @@ RUN_DEPENDS=	rubygem-rkelly-remix>=0.0.6:www/rubygem-rkelly-remix
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/jsobfu
 
 .include <bsd.port.mk>

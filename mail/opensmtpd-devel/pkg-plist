@@ -1,15 +1,15 @@
 @sample etc/mail/smtpd.conf.sample
 libexec/opensmtpd/encrypt
 libexec/opensmtpd/mail.local
-libexec/opensmtpd/makemap
-@(,%%SMTPQ_GROUP%%,2555) sbin/smtpctl
+%%TABLE_DB%%libexec/opensmtpd/makemap
+@(,,2555) sbin/smtpctl
 sbin/smtpd
 man/man5/aliases.5.gz
 man/man5/forward.5.gz
 man/man5/smtpd.conf.5.gz
 man/man5/table.5.gz
-man/man8/makemap.8.gz
-man/man8/newaliases.8.gz
+%%TABLE_DB%%man/man8/makemap.8.gz
+%%TABLE_DB%%man/man8/newaliases.8.gz
 man/man8/sendmail.8.gz
 man/man8/smtpctl.8.gz
 man/man8/smtpd.8.gz

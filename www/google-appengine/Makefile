@@ -63,7 +63,6 @@ do-install:
 	done)
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${STAGEDIR}${DATADIR}
 
-post-install:
 	(cd ${STAGEDIR}${DATADIR} && \
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR} -f ${GAEDATADIR:Nphp} -q)
 

@@ -1,4 +1,4 @@
-SMS::Send::TW::chtsns is a SMS::Send driver 
+SMS::Send::TW::chtsns is a SMS::Send driver
 which allows you to send messages through SNS service of CHT
 
 WWW: http://search.cpan.org/dist/SMS-Send-TW-chtsns/

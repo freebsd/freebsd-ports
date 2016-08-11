@@ -7,7 +7,7 @@ perform some necessary steps:
 1. Create configuration file(s) of what you wish to monitor, and
    and place them in %%PREFIX%%/etc/rrdbot
 2. Create the RRD files based on the above configuration file(s),
-   using %%PREFIX%%/sbin/rrdbot-create 
+   using %%PREFIX%%/sbin/rrdbot-create
 
 When creating your rrdbot configuration files which use the "archive"
 feature, be sure your archive durations are correct mathematically

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.3
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -15,6 +15,7 @@ COMMENT=	Nesting X server from X.Org
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
 USES=		tar:bzip2 pkgconfig
+INSTALL_WRKSRC= ${WRKSRC}/hw/xnest
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-dmx \
 		--disable-xephyr \
@@ -52,9 +53,5 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 
 PLIST_FILES=	bin/Xnest \
 		man/man1/Xnest.1.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hw/xnest/Xnest ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/hw/xnest/man/Xnest.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	codeville
-PORTVERSION=	0.1.16
-PORTREVISION=	2
+PORTVERSION=	0.1.17
 CATEGORIES=	devel python
 MASTER_SITES=	http://bsdforge.com/projects/source/devel/codeville/
-DISTNAME=	Codeville-${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Anarchic control version system without unnecessary re-merges
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 USES=		python tar:xz
 USE_PYTHON=	distutils autoplist
 

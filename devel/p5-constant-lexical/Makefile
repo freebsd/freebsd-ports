@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	constant-lexical
-PORTVERSION=	2.0001
-PORTREVISION=	2
+PORTVERSION=	2.0003
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/constant CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPROUT
 PKGNAMEPREFIX=	p5-
 
@@ -19,4 +18,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+PLIST_SUB+= USEXS= NOXS="@comment "
+.else
+PLIST_SUB+= USEXS="@comment " NOXS=
+.endif
+
+.include <bsd.port.post.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	libsdr
 PORTVERSION=	0.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net
@@ -17,8 +18,6 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
-GH_PROJECT=	libsdr
-GH_TAGNAME=	0982a68
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cmake pkgconfig

@@ -3,15 +3,12 @@
 
 PORTNAME=	znibbles
 PORTVERSION=	0.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://old.koalateam.com/ftp/pub/games/znibbles/ \
-		http://www.jfouffa.com/vmallet/archives/
+MASTER_SITES=	http://www.zyllius.com/vmallet/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked nibbles game
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 
@@ -20,6 +17,8 @@ OPTIONS_DEFAULT=	GTK1
 
 USES=		motif
 GNU_CONFIGURE=	yes
+
+DESKTOP_ENTRIES="Znibbles" "" "" "znibblesX" "" ""
 
 PLIST_FILES=	bin/nibbles bin/znibbles bin/znibblesX \
 		man/man6/nibbles.6.gz man/man6/znibbles.6.gz \
@@ -46,6 +45,10 @@ post-patch:
 
 post-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} nibbles.6 znibbles.6 znibblesX.6 \
-		gznibbles.6 ${STAGEDIR}${MAN6PREFIX}/man/man6)
+		${STAGEDIR}${MAN6PREFIX}/man/man6)
+
+post-install-GTK1-on:
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} gznibbles.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6)
 
 .include <bsd.port.mk>

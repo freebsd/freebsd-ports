@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Authen-ExternalAuth
-DISTVERSION=	0.25
-PORTREVISION=	1
+DISTVERSION=	0.26
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,17 +22,18 @@ NO_ARCH=	yes
 USES+=		perl5
 USE_PERL5=	configure
 
-OPTIONS_SINGLE=                 RTVERSION
-OPTIONS_SINGLE_RTVERSION=       RT40 RT42
-RT40_DESC=                      Install for rt-4.0.x (www/rt40)
-RT42_DESC=                      Install for rt-4.2.x (www/rt42)
-OPTIONS_DEFAULT=                RT42
+# This module has been made part of core rt-4.4.x 
+OPTIONS_SINGLE=			RTVERSION
+OPTIONS_SINGLE_RTVERSION=	RT40 RT42
+RT40_DESC=			Install for rt-4.0.x (www/rt40)
+RT42_DESC=			Install for rt-4.2.x (www/rt42)
+OPTIONS_DEFAULT=		RT42
 
 .include <bsd.port.options.mk>
 
-.for opt in 40 42
-.if ${PORT_OPTIONS:MRT${opt}}
-RT_VER=         ${opt}
+.for opt in ${OPTIONS_SINGLE_RTVERSION}
+.if ${PORT_OPTIONS:M${opt}}
+RT_VER=         ${opt:S/RT//}
 .endif
 .endfor
 
@@ -54,7 +54,7 @@ PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ${CONFIGURE_CMD} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//;' Makefile
 
 post-configure:

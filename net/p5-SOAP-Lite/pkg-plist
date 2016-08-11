@@ -30,6 +30,8 @@ bin/stubmaker.pl
 %%SITE_PERL%%/SOAP/Transport/POP3.pm
 %%SITE_PERL%%/SOAP/Transport/TCP.pm
 %%SITE_PERL%%/SOAP/Utils.pod
+%%PERL5_MAN1%%/SOAPsh.pl.1.gz
+%%PERL5_MAN1%%/stubmaker.pl.1.gz
 %%PERL5_MAN3%%/Apache::SOAP.3.gz
 %%PERL5_MAN3%%/SOAP::Client.3.gz
 %%PERL5_MAN3%%/SOAP::Constants.3.gz
@@ -51,5 +53,3 @@ bin/stubmaker.pl
 %%PERL5_MAN3%%/SOAP::Transport::POP3.3.gz
 %%PERL5_MAN3%%/SOAP::Transport::TCP.3.gz
 %%PERL5_MAN3%%/SOAP::Utils.3.gz
-%%PERL5_MAN1%%/SOAPsh.pl.1.gz
-%%PERL5_MAN1%%/stubmaker.pl.1.gz

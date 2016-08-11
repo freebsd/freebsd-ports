@@ -9,7 +9,7 @@ NOTE:   SNORT have to be build with OPTION SNORTSAM.
 	With samtool it is possible to send alerts to snortsam,
 	this way you can test and adjust your FW rules.
 
-        For more information read the INSTALL, FAQ, README 
+        For more information read the INSTALL, FAQ, README
         files in %%DOCSDIR%%
 
         Additional consolidate http://snortsam.net

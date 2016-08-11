@@ -1,8 +1,8 @@
 LAPACKE is a standard C language APIs for LAPACK, which introduces
 the following features[1]:
-- row-major and column-major matrix layout controlled by the first function 
+- row-major and column-major matrix layout controlled by the first function
   parameter;
-- an implementation with working arrays (middle-level interface) as well as 
+- an implementation with working arrays (middle-level interface) as well as
   without working arrays (high-level interface);
 - input scalars passed by value;
 - error code as a return value instead of the INFO parameter.

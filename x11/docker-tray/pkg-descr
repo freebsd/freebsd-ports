@@ -1,7 +1,7 @@
 Docker is a docking application (WindowMaker dock app)
 which acts as a system tray for KDE3 and GNOME2. It can
 be used to replace the panel in either environment,
-allowing you to have a system tray without running the 
+allowing you to have a system tray without running the
 KDE/GNOME panel.
 
 WWW: http://icculus.org/openbox/2/docker/

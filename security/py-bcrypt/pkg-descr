@@ -2,4 +2,4 @@ py-bcrypt is a Python wrapper of OpenBSDs Blowfish password hashing code,
 as described in A Future-Adaptable Password Scheme by Niels Provos and
 David Mazieres.
 
-WWW:	http://www.mindrot.org/projects/py-bcrypt/
+WWW: http://www.mindrot.org/projects/py-bcrypt/

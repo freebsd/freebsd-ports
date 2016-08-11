@@ -1,6 +1,6 @@
 Meek is a transport that uses HTTP for carrying bytes and TLS for obfuscation.
 Traffic is relayed through a third-party server (Google App Engine). It uses a
 trick to talk to the third party so that it looks like it is talking to an
-unblocked server. 
+unblocked server.
 
 WWW: https://trac.torproject.org/projects/tor/wiki/doc/meek

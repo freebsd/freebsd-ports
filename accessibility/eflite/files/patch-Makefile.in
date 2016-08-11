@@ -1,4 +1,4 @@
---- Makefile.in.orig	2007-01-19 00:01:09.000000000 +0000
+--- Makefile.in.orig	2007-01-19 00:01:09 UTC
 +++ Makefile.in
 @@ -34,7 +34,7 @@ eflite: fs.o es.o soccon.o sockopen.o to
  	$(CC) $(LDFLAGS) -o $@ $^ -lm $(LIBS) $(FLITE_LIBS) $(AUDIOLIBS)

@@ -2,15 +2,3 @@ GIFTool is a tool for GIF89a transparent option and interlace mode.  For
 instance 'giftool -B -i *.gif' converts all images to interlaced GIF files.
 
 GIFTool is shareware.  Use the -info option to read the licensing information.
-
-Two options are recommended:
-WITH_RETVALUE=yes
-	This option, suggested by Sergei Chechetkin
-	<csl@whale.sunbay.crimea.ua>, causes GIFTool to provide a return value
-	so may be used in pipes or with programs like make(1).
-WITH_MALLOCSIZE=yes
-	This option, suggested by Hidetoshi Shimokawa
-	<simokawa@sat.t.u-tokyo.ac.jp>, increases the size of a malloc, to avoid
-	a segmentation fault when pre-reading some images.
-
-WWW: http://www.the-labs.com/GIFTool/

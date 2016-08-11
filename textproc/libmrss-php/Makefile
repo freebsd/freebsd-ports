@@ -3,7 +3,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 PKGNAMESUFFIX=	-php
@@ -20,11 +20,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		libtool
+USES=		libtool php:ext
 USE_LDCONFIG=	yes
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
 PHP_MODNAME=	mrss
 IGNORE_WITH_PHP=	70
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/phpmrss

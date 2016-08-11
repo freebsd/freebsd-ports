@@ -1,14 +1,14 @@
 ###########################################################################
 
   This port supports custom Asterisk configurations using a *user-supplied*
-  menuselect.makeopt file. 
+  menuselect.makeopt file.
 
   This feature is of most value for users that want to disable or override
   default functionality that they dont want or need, particular in space
   and/or resource constrained, or embedded environments.
 
   If a file named ".asterisk.makeopts" is found in the ports files/
-  directory, its contents will be used to configure Asterisk at the 
+  directory, its contents will be used to configure Asterisk at the
   post-configure stage.
 
   If the file is *not* found, the port will default to a 'normal' Asterisk
@@ -20,7 +20,7 @@
   Asterisk.
 
   NOTE: The contents of this file *MUST* be syntactically and semantically
-        valid, as the port does *NOT* perform validation of this file. 
+        valid, as the port does *NOT* perform validation of this file.
 
         In particular, ensure that all Asterisk options have their
         dependencies met, using the corresponding port OPTIONS dependencies.

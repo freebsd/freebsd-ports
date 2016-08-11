@@ -19,16 +19,20 @@ SCRIPTS=	smb2nsmbrc mountsmb2
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PLIST_FILES=	bin/mountsmb2 bin/smb2nsmbrc
 PORTDOCS=	README.FreeBSD
 PORTEXAMPLES=	sudoers .login .nsmbrc .mssmbrc nsmb.conf
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 

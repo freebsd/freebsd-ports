@@ -1,4 +1,4 @@
---- include/Makefile.am.orig	1970-01-01 00:00:00 UTC
+--- include/Makefile.am.orig	2016-07-26 13:34:07 UTC
 +++ include/Makefile.am
 @@ -0,0 +1,21 @@
 +ACLOCAL_AMFLAGS=	-I m4

@@ -22,7 +22,6 @@ SNAPDATE=	20150809
 CONFLICTS=	wanderlust-*-2.14.*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_DEFAULT=DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>

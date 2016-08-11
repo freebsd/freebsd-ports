@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygments
-PORTVERSION=	2.1
+PORTVERSION=	2.1.3
 PORTREVISION=	0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
@@ -16,5 +16,6 @@ LICENSE=	BSD2CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

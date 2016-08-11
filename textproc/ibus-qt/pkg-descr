@@ -1,5 +1,5 @@
 Intelligent Input Bus for Linux / Unix OS, iBus, is the next generation
-input framework, developed by the developer of scim-python, includes all 
+input framework, developed by the developer of scim-python, includes all
 its function, and much more.
 
 This is the ibus-qt port, the input method module for Qt4 of ibus.

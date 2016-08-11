@@ -1,8 +1,8 @@
-# Created by: Johannes Meixner <xmj@chaot.net>
+# Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
 PORTNAME=	glx-utils
-PORTVERSION=	10.4.3
+PORTVERSION=	11.0.7
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,8 +12,8 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/centos/${LINUX_DIST_VER}
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
-USE_LINUX_RPM=	yes
-RPMVERSION=	1.el6
+USE_LINUX_RPM=	nolib
+RPMVERSION=	4.el6
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=	1.25
+GEANY_VER=	1.28
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
 			automark \
@@ -18,6 +18,7 @@ GEANY_PLUGINS_ALL=	addons \
 			git-changebar \
 			insertnum \
 			latex \
+			lineoperations \
 			lipsum \
 			lua \
 			macro \
@@ -60,6 +61,7 @@ geniuspaste_DESC=	pastebins support
 git-changebar_DESC=	highlight changed files tracked with Git
 insertnum_DESC=		replace selection with integer numbers
 latex_DESC=		LaTeX support
+lineoperations_DESC=	Simple line functions that can be applied to an open file
 lipsum_DESC=		Lorem Ipsum generator
 lua_DESC=		Lua scripting
 macro_DESC=		user defined macros
@@ -98,7 +100,6 @@ miniscript_DIR=		geanyminiscript
 numberedbookmarks_DIR=	geanynumberedbookmarks
 pg_DIR=			geanypg
 prj_DIR=		geanyprj
-sendmail_DIR=		geanysendmail
 vc_DIR=			geanyvc
 
 git-changebar_SWITCH=	--enable-gitchangebar

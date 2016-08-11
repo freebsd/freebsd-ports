@@ -2,9 +2,9 @@ The Calibrator is a small C program that is supposed to analyze a computer's
 memory system and extract the following parameters:
 
     * number of cache levels
-    * for each cache level: size, linesize, access/miss latency 
+    * for each cache level: size, linesize, access/miss latency
     * main memory access latency, number of TLB levels
-    * for each TLB level: capacity, pagesize, TLB miss latency 
+    * for each TLB level: capacity, pagesize, TLB miss latency
 
 The Calibrator is a by-product of our work on Main-Memory Databases within
 the Monet project.  The Calibrator is freely available for download and usage,

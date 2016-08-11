@@ -1,12 +1,12 @@
 Have you ever thought Tetris(R) was evil because it wouldn't send you
 that straight "I" brick you needed in order to clear four rows at the
-same time? 
+same time?
 
 Well Tetris(R) probably isn't evil, but Bastet certainly is. Bastet
 stands for "bastard tetris", and is a simple ncurses-based Tetris(R)
 clone for Linux. Unlike normal Tetris(R), however, Bastet does not
 choose your next brick at random. Instead, Bastet uses a special
-algorithm designed to choose the worst brick possible. 
+algorithm designed to choose the worst brick possible.
 
 As you can imagine, playing Bastet can be a very frustrating experience!
 

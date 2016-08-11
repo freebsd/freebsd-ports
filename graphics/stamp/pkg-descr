@@ -1,8 +1,8 @@
 Stamp is a command-line program which will process a greyscale jpeg image,
-such as one produced by a greyscale Quickcam. It can add a graphical (and 
-configurable) timestamp to the image. Stamp can also upload the timestamped 
-image via FTP, with the configuration of a stamprc file. It also features a 
-"quad" option which will take the latest image and composite it with up to 
-three previous images, while timestamping the latest one. 
+such as one produced by a greyscale Quickcam. It can add a graphical (and
+configurable) timestamp to the image. Stamp can also upload the timestamped
+image via FTP, with the configuration of a stamprc file. It also features a
+"quad" option which will take the latest image and composite it with up to
+three previous images, while timestamping the latest one.
 
 WWW: http://stamp.sourceforge.net/

@@ -7,15 +7,6 @@ PRE-INSTALL)
 		echo 'linuxulator is not (kld)loaded, exiting'
 		exit 1
 	fi
-	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
-		echo 'Linux mode is not enabled.'
-		echo 'Loading linux kernel module now...'
-		if ! kldload linux; then
-			echo 'The linux kernel module could not be loaded.'
-			echo 'Please enable linux mode manually and retry.'
-			exit 1
-		fi
-	fi
 	;;
 POST-INSTALL)
 	if [ -z "`grep ^linproc /etc/fstab`" ]; then

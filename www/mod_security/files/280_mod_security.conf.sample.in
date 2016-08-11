@@ -1,0 +1,25 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_security
+##
+## PROVIDE: mod_security2
+## REQUIRE: mod_unique_id
+
+##
+## To enable ModSecurity in Apache, enable the modules
+##  mod_unique_id (in httpd.conf) and
+##  mod_security2 in this config file
+##
+## Additionally, load configuration and rules with an Include line from
+##  %%ETCDIR%%/*.conf
+##
+## Most users will use the signatures from the OWASP Core Rule Set (CRS).
+## For configuration instructions, see %%DOCSDIR%%/README.
+##
+
+## apache modules for mod_security
+#LoadModule unique_id_module %%APACHEMODDIR%%/mod_unique_id.so
+#LoadModule security2_module %%APACHEMODDIR%%/mod_security2.so
+#Include %%ETCDIR%%/*.conf
+

@@ -13,25 +13,21 @@ COMMENT=	Tool for creating and analysing Petri nets
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 SUB_FILES=	pipe.sh
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
-PORTDOCS=*
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipe.sh ${STAGEDIR}${PREFIX}/bin/pipe
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
-	cd ${WRKSRC} && \
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
-	cd ${WRKSRC}/Docs && \
-		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/javadoc/{} \;
-	cd ${WRKSRC}/Docs && \
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/javadoc/{} \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
+	cd ${WRKSRC}/Docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/javadoc
 
 .include <bsd.port.mk>

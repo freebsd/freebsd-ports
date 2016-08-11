@@ -12,7 +12,6 @@ NO_ARCH=	yes
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	bdemirkir
-GH_TAGNAME=	aa19281
 
 REDMINE_PLUGIN_NAME=	sidebar_hide
 

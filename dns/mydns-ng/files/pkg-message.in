@@ -15,7 +15,7 @@ into your rc.conf.
 You can use %%DOCSDIR%%/contrib/admin.php to maintain MyDNS.
 
 If you are looking for the web interface for MyDNS, it's included in
-the MyDNS distribution as %%DOCSDIR%%/contrib/admin.php.  
+the MyDNS distribution as %%DOCSDIR%%/contrib/admin.php.
 See %%DOCSDIR%%/contrib/README for installation instructions.
 
 *********************************************************************

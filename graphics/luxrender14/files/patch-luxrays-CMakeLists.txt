@@ -1,0 +1,38 @@
+--- ../luxrays/CMakeLists.txt.orig
++++ ../luxrays/CMakeLists.txt
+@@ -91,14 +91,6 @@ if (NOT OPENGL_FOUND AND NOT LUXRAYS_DIS
+ 	SET(LUXRAYS_DISABLE_OPENCL 1)
+ endif()
+ 
+-if (NOT GLEW_FOUND)
+-	MESSAGE(FATAL_ERROR "--> Could not locate required GLEW files, disabling samples build - Please check ${GLEW_SEARCH_PATH}")
+-endif()
+-
+-if (NOT GLUT_FOUND)
+-	MESSAGE(FATAL_ERROR "--> Could not locate required GLUT files, disabling samples build - Please check ${GLUT_SEARCH_PATH}")
+-endif()
+-
+ if (LUXRAYS_DISABLE_OPENCL)
+ 	ADD_DEFINITIONS("-DLUXRAYS_DISABLE_OPENCL")
+ endif()
+@@ -120,20 +112,6 @@ add_subdirectory(src/luxcore)
+ 
+ ################################################################################
+ #
+-# Samples
+-#
+-################################################################################
+-
+-add_subdirectory(samples/benchsimple)
+-add_subdirectory(samples/luxcoredemo)
+-add_subdirectory(samples/luxcorescenedemo)
+-if(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
+-	add_subdirectory(samples/smallluxgpu4)
+-endif(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
+-
+-
+-################################################################################
+-#
+ # For non win32 we'll have to copy everything to a single dir
+ #
+ ################################################################################

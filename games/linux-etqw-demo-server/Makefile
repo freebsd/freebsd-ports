@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enemy Territory: QUAKE Wars Demo Server for Linux
 
 NO_CDROM=	Redistribution is limited
-MANUAL_PACKAGE_BUILD=	huge (428MB)
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

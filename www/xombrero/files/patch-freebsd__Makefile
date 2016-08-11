@@ -1,11 +1,26 @@
---- freebsd/Makefile.orig	2013-12-08 20:54:46.651261821 +0100
-+++ freebsd/Makefile	2013-12-08 20:55:15.418253611 +0100
-@@ -9,7 +9,7 @@
+--- freebsd/Makefile.orig	2015-02-17 16:11:49 UTC
++++ freebsd/Makefile
+@@ -9,7 +9,7 @@ LIBS+= libsoup-2.4 gnutls
  LDADD= -lutil
  GTK_CFLAGS!= pkgconf --cflags $(LIBS)
  GTK_LDFLAGS!= pkgconf --libs $(LIBS)
 -CFLAGS+= $(GTK_CFLAGS) -O2 -Wall -I. -I..
-+CFLAGS+= $(GTK_CFLAGS) -Wall -I. -I..
++CFLAGS+= $(GTK_CFLAGS) -O0 -Wall -I. -I..
  LDFLAGS+= $(GTK_LDFLAGS)
  
  PREFIX?= /usr/local
+@@ -59,10 +59,10 @@ tldlist.o: ../tldlist.o
+ 
+ ../xombrero.o: ../javascript.h ../tooltip.h
+ 
+-xombrero: xombrero.o freebsd.o marco.o about.o inspector.o whitelist.o settings.o \
+-	cookie.o history.o completion.o inputfocus.o tldlist.o externaleditor.o \
+-	unix.o
+-	$(CC) $(LDFLAGS) -o $@ *.o $+ $(LDADD)
++xombrero: ../xombrero.o freebsd.o ../marco.o ../about.o ../inspector.o ../whitelist.o \
++	../settings.o ../cookie.o ../history.o ../completion.o ../inputfocus.o ../tldlist.o \
++	../externaleditor.o ../unix.o
++	$(CC) $(LDFLAGS) -o $@ ${.ALLSRC} $(LDADD)
+ 
+ install: all
+ 	install -m 755 -d $(DESTDIR)$(BINDIR)

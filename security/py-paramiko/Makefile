@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	1.15.2
+PORTVERSION=	2.0.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Python SSH2 protocol library
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa
 
 USES=		python

@@ -1,7 +1,7 @@
   lzop is a file compressor which is very similar to gzip.  It uses the LZO
 library for compression services and its main advantages over gzip are much
 higher compression and decompression speed (at the cost of some compression
-ratio). 
+ratio).
 
   lzop is distributed under the terms of the GNU General Public License
 (GPL).

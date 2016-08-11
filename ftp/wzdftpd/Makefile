@@ -59,7 +59,7 @@ PGSQL_CONFIGURE_OFF=	--disable-pgsql
 PGSQL_USES=		pgsql
 
 SQLITE_CONFIGURE_ENABLE=	sqlite3
-SQLITE_USE=			SQLITE=3
+SQLITE_USES=			sqlite:3
 
 AVAHI_CONFIGURE_ON=	--with-zeroconf --enable-avahi
 AVAHI_LIB_DEPENDS=	libdbus-1.so:devel/dbus \

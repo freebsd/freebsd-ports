@@ -1,0 +1,6 @@
+This release includes the 40 gigabit FreeBSD Base Driver for Intel(R) Network
+Connection.
+
+ixl driver supports all X710 and XL710-based 40 gigabit network connections.
+
+WWW: https://downloadcenter.intel.com

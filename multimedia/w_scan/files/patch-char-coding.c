@@ -1,5 +1,5 @@
---- a/char-coding.c
-+++ b/char-coding.c
+--- char-coding.c.orig	2016-06-20 13:13:56 UTC
++++ char-coding.c
 @@ -250,6 +250,10 @@ void char_coding(char **inbuf, size_t * 
       // Fallback method: copy all printable chars from *inbuf to *outbuf.
       size_t i;
@@ -11,7 +11,7 @@
  
       for (i = 0; i < nsrc; i++) {  
           switch((uint8_t) *(psrc + i)) {
-@@ -257,7 +259,21 @@ void char_coding(char **inbuf, size_t * 
+@@ -257,7 +261,21 @@ void char_coding(char **inbuf, size_t * 
                 //case 0xA0 ... 0xFF:
                      // printable chars ISO-6937-2
                      // Figure A.1: Character code table 00 - Latin alphabet

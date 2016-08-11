@@ -1,11 +1,5 @@
 --- configure.orig	2015-06-18 17:24:07 UTC
 +++ configure
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- #
- 
- MKL_CONFIGURE_ARGS="$0 $*"
 @@ -38,7 +38,7 @@ mkl_require cc
  
  

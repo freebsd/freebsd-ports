@@ -14,7 +14,7 @@ include/quazip5/quazipfileinfo.h
 include/quazip5/quazipnewinfo.h
 include/quazip5/unzip.h
 include/quazip5/zip.h
-%%QT_LIBDIR%%/libquazip5.so
-%%QT_LIBDIR%%/libquazip5.so.1
-%%QT_LIBDIR%%/libquazip5.so.1.0.0
+lib/libquazip5.so
+lib/libquazip5.so.1
+lib/libquazip5.so.1.0.0
 share/cmake/Modules/FindQuaZip5.cmake

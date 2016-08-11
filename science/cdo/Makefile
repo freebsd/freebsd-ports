@@ -3,6 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/12070/ \
 		LOCAL/sunpoet
@@ -35,28 +36,21 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix
+USES=		gmake libtool localbase pathfix
 
-CGRIBEX_CONFIGURE_OFF=	--without-cgribex
-CGRIBEX_CONFIGURE_ON=	--with-cgribex=${LOCALBASE}
+CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
-HDF5_CONFIGURE_OFF=	--without-hdf5
-HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
+HDF5_CONFIGURE_WITH=	hdf5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
-JASPER_CONFIGURE_OFF=	--without-jasper
-JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
+JASPER_CONFIGURE_WITH=	jasper
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
-NETCDF_CONFIGURE_OFF=	--without-netcdf
-NETCDF_CONFIGURE_ON=	--with-netcdf=${LOCALBASE}
+NETCDF_CONFIGURE_WITH=	netcdf
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
-PROJ_CONFIGURE_OFF=	--without-proj
-PROJ_CONFIGURE_ON=	--with-proj=${LOCALBASE}
+PROJ_CONFIGURE_WITH=	proj
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
-SZIP_CONFIGURE_OFF=	--without-szlib
-SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
+SZIP_CONFIGURE_WITH=	szlib
 SZIP_LIB_DEPENDS=	libsz.so:science/szip
-UDUNITS_CONFIGURE_OFF=	--without-udunits2
-UDUNITS_CONFIGURE_ON=	--with-udunits2=${LOCALBASE}
+UDUNITS_CONFIGURE_WITH=	udunits2
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 
 .include <bsd.port.pre.mk>

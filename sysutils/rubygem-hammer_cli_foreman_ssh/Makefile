@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-hammer_cli>=0.0.6:sysutils/rubygem-hammer_cli \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	"@sample etc/hammer/cli.modules.d/foreman_ssh.yml.sample"
 

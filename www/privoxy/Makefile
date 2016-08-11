@@ -45,7 +45,7 @@ FORCE_DESC=		Support bypassing of blocks
 PRIVOXY_TOOLS_DESC=	Install Privoxy-Log-Parser, uagen, etc.
 TOGGLE_DESC=		Support for remote toggling
 
-OPTIONS_DEFAULT=	EDITOR DOCS FORCE TOGGLE PRIVOXY_TOOLS
+OPTIONS_DEFAULT=	EDITOR FORCE TOGGLE PRIVOXY_TOOLS
 
 OPTIONS_SUB=	yes
 

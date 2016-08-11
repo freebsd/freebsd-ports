@@ -3,6 +3,8 @@ usr/bin/djpeg
 usr/bin/jpegtran
 usr/bin/rdjpgcom
 usr/bin/wrjpgcom
+usr/lib/libjpeg.so.62
+usr/lib/libjpeg.so.62.0.0
 usr/lib64/libjpeg.so.62
 usr/lib64/libjpeg.so.62.0.0
 usr/share/doc/libjpeg-turbo-1.2.1/ChangeLog.txt

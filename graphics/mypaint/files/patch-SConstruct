@@ -1,24 +1,30 @@
---- SConstruct.orig	2012-12-31 19:03:38.000000000 +0200
-+++ SConstruct	2013-01-11 20:45:33.000000000 +0200
-@@ -39,7 +39,7 @@
+--- SConstruct.orig	2016-01-15 19:42:54 UTC
++++ SConstruct
+@@ -95,14 +95,14 @@ if "$CCFLAGS" in env['CXXCOM']:
  
- tools = ['default', 'textfile']
- 
--env = Environment(ENV=os.environ, options=opts, tools=tools)
-+env = Environment(ENV=os.environ, options=opts, tools=tools, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
- print('building for %r (use scons python_binary=xxx to change)' % env['python_binary'])
- print('using %r (use scons python_config=xxx to change)' % env['python_config'])
- if sys.platform == "win32":
-@@ -47,9 +47,9 @@
-     env = Environment(tools=tools + ['mingw'], ENV=os.environ, options=opts)
  opts.Update(env)
  
 -env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
 -env.Append(CCFLAGS='-Wall')
 -env.Append(CFLAGS='-std=c99')
-+env.Append(CXXFLAGS=['-Wall', '-Wno-sign-compare', '-Wno-write-strings'])
-+env.Append(CCFLAGS=['-Wall'])
-+env.Append(CFLAGS=['-std=c99'])
++#env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
++#env.Append(CCFLAGS='-Wall')
++#env.Append(CFLAGS='-std=c99')
+ 
+ env['GEGL_VERSION'] = 0.3
  
  # Define strdup() in string.h under glibc >= 2.10 (POSIX.1-2008)
- env.Append(CFLAGS='-D_POSIX_C_SOURCE=200809L')
+-env.Append(CFLAGS='-D_POSIX_C_SOURCE=200809L')
++#env.Append(CFLAGS='-D_POSIX_C_SOURCE=200809L')
+ 
+ if env.get('CPPDEFINES'):
+     # make sure assertions are enabled
+@@ -113,7 +113,7 @@ if env['debug']:
+     env.Append(CCFLAGS='-O0', LINKFLAGS='-O0')
+ else:
+     # Overridable defaults
+-    env.Prepend(CCFLAGS='-O3', LINKFLAGS='-O3')
++    env.Prepend(CCFLAGS='', LINKFLAGS='')
+ 
+ if env['enable_profiling'] or env['debug']:
+     env.Append(CCFLAGS='-g')

@@ -1,20 +1,20 @@
 Tclwebtest is a tool to write automated tests for web applications.
 It provides a simple API for issuing http requests, dealing with the
 result and assume specific response values, while taking care of the
-details such as redirects and cookies. 
+details such as redirects and cookies.
 
-It has some basic html parsing functionality, to provide access to 
-elements of the result html page that are needed for testing. 
+It has some basic html parsing functionality, to provide access to
+elements of the result html page that are needed for testing.
 
 TclWebtest should be suitable for testing larger chains of user
-interaction on a web application, for example a full ecommerce 
-ordering session. 
+interaction on a web application, for example a full ecommerce
+ordering session.
 
-Tclwebtest could visit an ecommerce site as 
+Tclwebtest could visit an ecommerce site as
 anonymous user, add some products to its shopping cart, check out
-the cart, register itself as user and enter a test address etc. 
-The test script could also include the administration part of the 
+the cart, register itself as user and enter a test address etc.
+The test script could also include the administration part of the
 interaction, by explicitely logging in as site admin, reviewing and
-processing the order, nuking the test user etc. 
+processing the order, nuking the test user etc.
 
 WWW: http://tclwebtest.sourceforge.net

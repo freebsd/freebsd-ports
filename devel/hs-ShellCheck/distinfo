@@ -1,2 +1,3 @@
-SHA256 (cabal/ShellCheck-0.4.3.tar.gz) = df71c303c43ae79846c9f9198a4d4ba2c4c2ee4c06974491d7130fcea0b8efdf
-SIZE (cabal/ShellCheck-0.4.3.tar.gz) = 102155
+TIMESTAMP = 1464691612
+SHA256 (cabal/ShellCheck-0.4.4.tar.gz) = 6cc50790d25b6f330037c3612c21460aa75839cc32c65e10ea6b35f9f4488768
+SIZE (cabal/ShellCheck-0.4.4.tar.gz) = 105979

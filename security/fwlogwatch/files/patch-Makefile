@@ -1,59 +1,53 @@
---- Makefile.orig	2006-03-08 20:36:02.000000000 +0100
-+++ Makefile	2014-07-08 21:18:54.475126894 +0200
-@@ -2,10 +2,10 @@
- # $Id: Makefile,v 1.76 2006/03/08 19:36:02 bw Exp $
+--- Makefile.orig	2016-02-19 06:35:50.592222000 -0800
++++ Makefile	2016-04-21 19:29:52.738338000 -0700
+@@ -11,10 +11,10 @@
+ # -DHAVE_GEOIP enables support for GeoIP database lookups.
  
  # Linux
 -CC = gcc
 -CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall #-pedantic -Wpointer-arith #-g #-p
--LDFLAGS = #-g #-static -p
--LIBS = -lcrypt -lz #-ladns #-lc_p
+-LDFLAGS = -s #-g #-static -p
+-LIBS = -lcrypt -lz #-ladns -lGeoIP #-lc_p
 +#CC = gcc
 +#CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall #-pedantic -Wpointer-arith #-g #-p
-+#LDFLAGS = #-g #-static -p
-+#LIBS = -lcrypt -lz #-ladns #-lc_p
++#LDFLAGS = -s #-g #-static -p
++#LIBS = -lcrypt -lz #-ladns -lGeoIP #-lc_p
  
- # Solaris
- #LIBS = -lnsl -lsocket -lcrypt -lz
-@@ -26,6 +26,12 @@
+ # Mac OS X
  #CC = gcc
- #CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall -I/usr/local/include
- #LIBS = -L/usr/local/lib -lcrypt -lz -lintl
-+CC ?= gcc
-+CFLAGS += -DHAVE_ZLIB -DHAVE_GETTEXT -I${LOCALBASE}/include \
-+	-DINSTALL_DIR=\"${PREFIX}\" \
-+	-DCONF_DIR=\"${PREFIX}/etc\" \
-+	-DLOCALE_DIR=\"${PREFIX}\"
-+LIBS = -L${LOCALBASE}/lib -lcrypt -lz -lintl
+@@ -37,21 +37,21 @@
+ #LIBS = -L/usr/local/lib -lz -lintl
  
- # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to analyze
- # log formats with short list/chain/branch/interface names like ipchains.
-@@ -39,12 +45,18 @@
- LFLAGS = -B #-f #-p -p -d
+ # FreeBSD
+-#CC = gcc
+-#CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall -I/usr/local/include
+-#LIBS = -L/usr/local/lib -lcrypt -lz -lintl
++CC = cc
++CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall -I/usr/local/include
++LIBS = -L/usr/local/lib -lcrypt -lz -lintl
  
- INSTALL = install
--INSTALL_PROGRAM = $(INSTALL) -s -m 0755
+ 
+ LEX = flex
+ LFLAGS = -B --nounput #-f #-p -p -d
+ 
+-INSTALL = install
+-INSTALL_PROGRAM = $(INSTALL) -m 0755
 -INSTALL_SCRIPT = $(INSTALL) -m 0755
 -INSTALL_DATA = $(INSTALL) -m 0644
 -INSTALL_DIR = /usr/local
 -CONF_DIR = /etc
 -LOCALE_DIR = /usr
-+#INSTALL_PROGRAM = $(INSTALL) -s -m 0755
-+#INSTALL_SCRIPT = $(INSTALL) -m 0755
-+#INSTALL_DATA = $(INSTALL) -m 0644
-+#INSTALL_DIR = /usr/local
-+#CONF_DIR = /etc
-+#LOCALE_DIR = /usr
 +INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
 +INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA = ${BSD_INSTALL_DATA}
 +INSTALL_DIR = ${DESTDIR}${PREFIX}
 +CONF_DIR = ${INSTALL_DIR}/etc
 +LOCALE_DIR = ${INSTALL_DIR}
++
  
  OBJS = cisco_ios.o cisco_pix.o compare.o ipchains.o ipfilter.o ipfw.o \
         lancom.o main.o modes.o net.o netfilter.o netscreen.o output.o \
-@@ -86,19 +98,25 @@
+@@ -89,18 +89,24 @@
  	$(INSTALL_PROGRAM) fwlogwatch $(INSTALL_DIR)/sbin/fwlogwatch
  	$(INSTALL_SCRIPT) contrib/fwlw_notify $(INSTALL_DIR)/sbin/fwlw_notify
  	$(INSTALL_SCRIPT) contrib/fwlw_respond $(INSTALL_DIR)/sbin/fwlw_respond
@@ -62,28 +56,30 @@
  
  install-config:
  	$(INSTALL_DATA) fwlogwatch.config $(CONF_DIR)/fwlogwatch.config
- 	$(INSTALL_DATA) fwlogwatch.template $(CONF_DIR)/fwlogwatch.template
  
  install-i18n:
 -	cd po; make
 +	cd po; $(MAKE)
-+	${MKDIR} $(LOCALE_DIR)/share/locale/de/LC_MESSAGES
++	$(MKDIR) $(LOCALE_DIR)/share/locale/de/LC_MESSAGES
  	$(INSTALL_DATA) po/de.mo $(LOCALE_DIR)/share/locale/de/LC_MESSAGES/fwlogwatch.mo
-+	${MKDIR} $(LOCALE_DIR)/share/locale/ja/LC_MESSAGES
++	$(MKDIR) $(LOCALE_DIR)/share/locale/ja/LC_MESSAGES
  	$(INSTALL_DATA) po/ja.mo $(LOCALE_DIR)/share/locale/ja/LC_MESSAGES/fwlogwatch.mo
-+	${MKDIR} $(LOCALE_DIR)/share/locale/pt_BR/LC_MESSAGES
- 	$(INSTALL_DATA) po/pt_BR.mo $(LOCALE_DIR)/share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
-+	${MKDIR} $(LOCALE_DIR)/share/locale/sv/LC_MESSAGES
++	$(MKDIR) $(LOCALE_DIR)/share/locale/pt/LC_MESSAGES
+ 	$(INSTALL_DATA) po/pt.mo $(LOCALE_DIR)/share/locale/pt/LC_MESSAGES/fwlogwatch.mo
++	$(MKDIR) $(LOCALE_DIR)/share/locale/sv/LC_MESSAGES
  	$(INSTALL_DATA) po/sv.mo $(LOCALE_DIR)/share/locale/sv/LC_MESSAGES/fwlogwatch.mo
-+	${MKDIR} $(LOCALE_DIR)/share/locale/zh_CN/LC_MESSAGES
++	$(MKDIR) $(LOCALE_DIR)/share/locale/zh_CN/LC_MESSAGES
  	$(INSTALL_DATA) po/zh_CN.mo $(LOCALE_DIR)/share/locale/zh_CN/LC_MESSAGES/fwlogwatch.mo
-+	${MKDIR} $(LOCALE_DIR)/share/locale/zh_TW/LC_MESSAGES
++	$(MKDIR) $(LOCALE_DIR)/share/locale/zh_TW/LC_MESSAGES
  	$(INSTALL_DATA) po/zh_TW.mo $(LOCALE_DIR)/share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
  
  install-rhinit:
-@@ -120,4 +138,4 @@
+@@ -121,7 +127,7 @@
  
  clean:
  	rm -f *.o *~ *.bak fwlogwatch
 -	cd po; make clean
 +	cd po; $(MAKE) clean
+ 
+ indent:
+ 	indent --k-and-r-style --indent-level 2 --line-length 180 *.c *.h

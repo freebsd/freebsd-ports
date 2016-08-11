@@ -1,6 +1,6 @@
---- src/libsync/configfile.cpp.orig	2015-03-16 14:28:58 UTC
+--- src/libsync/configfile.cpp.orig	2016-05-12 07:59:12 UTC
 +++ src/libsync/configfile.cpp
-@@ -383,11 +383,22 @@ bool ConfigFile::skipUpdateCheck( const 
+@@ -415,11 +415,22 @@ bool ConfigFile::skipUpdateCheck( const 
      QString con( connection );
      if( connection.isEmpty() ) con = defaultConnection();
  

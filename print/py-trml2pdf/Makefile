@@ -29,10 +29,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/trml2pdf
 	@${INSTALL_SCRIPT} ${WRKSRC}/trml2pdf/* ${STAGEDIR}${PYTHON_SITELIBDIR}/trml2pdf
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/rmls/ ${STAGEDIR}${EXAMPLESDIR}/rmls
 

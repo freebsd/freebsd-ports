@@ -12,6 +12,8 @@ COMMENT=	Messaging library for distributed systems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
+BROKEN_powerpc64=	Does not build
+
 # USES=		compiler:c++11-lib
 
 .include <bsd.port.pre.mk>

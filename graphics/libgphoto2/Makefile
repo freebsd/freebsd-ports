@@ -3,10 +3,11 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.5.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Universal digital camera control library
 
 LICENSE=	LGPL21

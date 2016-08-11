@@ -19,8 +19,7 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:databases/rubygem-activemodel \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 MYSQL_DESC=	Use native MySQL bindings

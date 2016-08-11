@@ -3,8 +3,10 @@ share/h2o/annotate-backtrace-symbols
 share/h2o/fetch-ocsp-response
 share/h2o/kill-on-close
 share/h2o/start_server
+%%DATADIR%%/ca-bundle.crt
 %%DATADIR%%/fastcgi-cgi
 %%DATADIR%%/setuidgid
+%%DATADIR%%/status/index.html
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/assets/8mbps100msec-nginx195-h2o150.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/firstpaintbench.png
@@ -19,11 +21,11 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/configure/basic_auth.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/command_options.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/compress_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/errordoc_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/expires_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/fastcgi_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/file_directives.html
-%%PORTDOCS%%%%DOCSDIR%%/configure/gzip_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/headers_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/http1_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/http2_directives.html
@@ -33,7 +35,21 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/configure/quick_start.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/redirect_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/reproxy_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/status_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/syntax_and_structure.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/doc_root.alternate/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/examples/doc_root/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.crt
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.key
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/h2o.conf
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.crt
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.key
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o_mruby/h2o.conf
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o_mruby/hello.rb
+%%PORTDOCS%%%%DOCSDIR%%/examples/libh2o/http1client.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libh2o/simple.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libh2o/socket-client.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libh2o/websocket.c
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html

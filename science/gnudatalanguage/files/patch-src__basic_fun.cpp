@@ -1,4 +1,4 @@
---- src/basic_fun.cpp.orig	2016-01-04 19:52:38 UTC
+--- src/basic_fun.cpp.orig	2016-04-29 17:03:25 UTC
 +++ src/basic_fun.cpp
 @@ -6523,7 +6523,7 @@ namespace lib {
  	  {

@@ -36,7 +36,7 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
+USE_PHP+=	curl pcre bcmath pdo mcrypt hash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif

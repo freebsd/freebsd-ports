@@ -7,4 +7,4 @@ throughout. In addition, it can be configured from a properties file so
 that scripts in a production environment do not need to be altered to
 change the amount of logging they produce.
 
-WWW:	https://sites.google.com/a/forestent.com/projects/log4sh
+WWW: https://sites.google.com/a/forestent.com/projects/log4sh

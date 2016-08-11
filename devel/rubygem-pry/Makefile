@@ -19,8 +19,7 @@ RUN_DEPENDS=	rubygem-coderay>=1.1.0:textproc/rubygem-coderay \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/pry
 

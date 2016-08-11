@@ -1,6 +1,6 @@
---- reiserfs.h.orig	Mon Oct  2 13:58:35 2006
-+++ reiserfs.h	Mon Oct  2 13:58:39 2006
-@@ -268,7 +268,7 @@
+--- reiserfs.h.orig	2016-06-20 13:19:25 UTC
++++ reiserfs.h
+@@ -268,7 +268,7 @@ class ReiserFsBlock : public PNode
          {
          }
  

@@ -1,11 +1,11 @@
-This module make use of Algorithm::Accounting and SVK to do 
-simple accounting of any SVK repository. The installed 
-svn-accounting.pl script demonstrate a simple use to this module, 
+This module make use of Algorithm::Accounting and SVK to do
+simple accounting of any SVK repository. The installed
+svn-accounting.pl script demonstrate a simple use to this module,
 you may try:
 
   svk-accounting.pl //
 
-This will display all the contributions of developers under 
+This will display all the contributions of developers under
 repository '//'. You may also specify depotpath like '//trunk/svk'.
 
 WWW: http://search.cpan.org/dist/Log-Accounting-SVK/

@@ -14,11 +14,15 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web interface to administer Trac ticket custom fields
 
-RUN_DEPENDS+=	tracd:www/trac
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2 zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

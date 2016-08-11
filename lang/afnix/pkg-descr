@@ -7,12 +7,12 @@ that are designed to be platform independent.
 The Afnix engine is written in C++ and provides runtime compatibility with
 it. Such compatibility includes the ability to instantiate C++ classes,
 use virtual methods and raise or catch exceptions. A comprehensive API has
-been designed to ease the integration of foreign libraries. 
+been designed to ease the integration of foreign libraries.
 
    - Builtin objects
    - Functional programming
    - Object oriented
    - Multi-threaded engine
-   - condition objects. 
+   - condition objects.
 
 WWW: http://www.afnix.org/

@@ -1,6 +1,6 @@
---- cd.c.orig	Mon May 19 15:44:40 2003
-+++ cd.c	Mon May 19 15:53:44 2003
-@@ -98,8 +98,16 @@
+--- cd.c.orig	1997-10-24 15:38:25 UTC
++++ cd.c
+@@ -98,8 +98,16 @@ void play_track(int track)
    cd_play.end_s=cdinfo.s_sec[cdinfo.l_track-1];
    cd_play.end_f=cdinfo.s_frame[cdinfo.l_track-1];
    
@@ -19,7 +19,7 @@
  }
  
  /* Skips one track forward */
-@@ -111,7 +119,7 @@
+@@ -111,7 +119,7 @@ void next(void)
  /* Quess */
  void prev(void)
  {
@@ -28,7 +28,7 @@
      play_track(cdinfo.c_track-1);
    else play_track(cdinfo.c_track);
  }
-@@ -141,17 +149,59 @@
+@@ -141,17 +149,59 @@ void cdpause(void)
    }
  }
  
@@ -92,7 +92,7 @@
      cd_play.start_m=cdinfo.c_seca/60;
    }
    cd_play.start_f=1;
-@@ -160,19 +210,25 @@
+@@ -160,19 +210,25 @@ void ff(void)
    cd_play.end_f=cdinfo.s_frame[cdinfo.l_track-1];
  
    if(ioctl(cd_fd,CDIOCPLAYMSF,(char *) &cd_play)<0) per();
@@ -122,7 +122,7 @@
      cd_play.start_m=cdinfo.c_seca/60;
    }
    cd_play.start_f=1;
-@@ -181,6 +237,7 @@
+@@ -181,6 +237,7 @@ void rew(void)
    cd_play.end_f=cdinfo.s_frame[cdinfo.l_track-1];
  
    if(ioctl(cd_fd,CDIOCPLAYMSF,(char *) &cd_play)<0) per();
@@ -130,7 +130,7 @@
  }
  
  /* Spit cd out */
-@@ -192,6 +249,7 @@
+@@ -192,6 +249,7 @@ void eject(void)
      per();
    close(cd_fd);
    cdinfo.eject=1;

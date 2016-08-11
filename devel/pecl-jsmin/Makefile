@@ -3,6 +3,7 @@
 
 PORTNAME=	jsmin
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,9 +14,7 @@ COMMENT=	PHP extension for minifying JavaScript
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

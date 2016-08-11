@@ -7,4 +7,4 @@ default the plugin attempts to use POE::Component::IRC's internal
 PoCo-Client-DNS resolver object, but will spawn its own copy. You can
 supply your own resolver object via the constructor.
 
-WWW:	http://search.cpan.org/dist/POE-Component-IRC-Plugin-QueryDNS/
+WWW: http://search.cpan.org/dist/POE-Component-IRC-Plugin-QueryDNS/

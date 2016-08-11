@@ -1,5 +1,5 @@
 E2ps formats each named file for printing in a postscript printer; if
 no file is given, e2ps reads from the standard input. The format used
-is nice and compact: normally two pages on each physical page, headers 
+is nice and compact: normally two pages on each physical page, headers
 with useful information (page number, printing date, file name or
 supplied header), etc.

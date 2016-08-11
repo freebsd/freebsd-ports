@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	RetroArch
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com
@@ -14,7 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
-		libdrm.so:graphics/libdrm
+		libdrm.so:graphics/libdrm \
+		libass.so:multimedia/libass
 
 OPTIONS_DEFINE=	FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
@@ -35,7 +35,7 @@ ALSA_CONFIGURE_ENABLE=	alsa
 SDL_USE=		SDL=sdl2 image2
 SDL_CONFIGURE_ON=	--disable-sdl --enable-sdl2
 SDL_CONFIGURE_OFF=	--disable-sdl --disable-sdl2
-OPENGL_USE=		GL=gl,gbm
+OPENGL_USE=		GL=gl,egl,gbm
 OPENGL_CONFIGURE_ENABLE=opengl
 OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_ENABLE=al
@@ -53,6 +53,8 @@ CFLAGS+=	-pthread
 LDFLAGS+=	-pthread
 CONFIGURE_ARGS+=--enable-threads
 
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 
@@ -60,19 +62,16 @@ SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--global-config-dir=${LOCALBASE}/etc
 USES=		compiler:c++11-lib gmake pkgconfig
-USE_XORG=	x11 xext xinerama xv xxf86vm
+USE_XORG=	x11 xcb xext xinerama xv xxf86vm
 
-MAN1PAGES=	retroarch-cg2glsl.1 retroarch-joyconfig.1 retroarch.1
+MAN1PAGES=	retroarch-cg2glsl.1 retroarch.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/camera/drivers/video4linux2.c \
-		${WRKSRC}/deps/zlib/zutil.h \
 		${WRKSRC}/gfx/drivers/*.c \
-		${WRKSRC}/libretro-common/formats/png/rpng_decode.c \
 		${WRKSRC}/libretro-common/libco/armeabi.c \
-		${WRKSRC}/logger/netlogger/psl1ght_logger.c \
-		${WRKSRC}/wii/mem2_manager.c
+		${WRKSRC}/memory/wii/mem2_manager.c
 	@${REINPLACE_CMD} -e 's|<asm/types.h>|<sys/types.h>|' \
 		${WRKSRC}/camera/drivers/video4linux2.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -81,11 +80,9 @@ post-patch:
 post-install:
 	if [ -n "${STRIP}" ]; then \
 	        ${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/retroarch; \
-	        ${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/retroarch-joyconfig; \
 	fi
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/retroarch.1
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/retroarch-cg2glsl.1
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/retroarch-joyconfig.1
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/man
 	@${REINPLACE_CMD} -e 's|# libretro_directory =|libretro_directory = "${PREFIX}/libexec/libretro"|' \
 		${STAGEDIR}${PREFIX}/etc/retroarch.cfg

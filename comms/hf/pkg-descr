@@ -3,6 +3,6 @@ the realtime ARQ modes pactor 1, amtor, gtor without a ptc, only with a
 soundcard and a PC and Linux (FreeBSD), all of which need not be the newest.
 The core of hf, the heart of the program (hfkernel) is a real master-piece
 of code, it has originally been made by Tom Sailer, many thanks Tom!
-hf can also do MT63 and has a CW elbug function. 
+hf can also do MT63 and has a CW elbug function.
 
 WWW: http://www.hf.webmasternet.org

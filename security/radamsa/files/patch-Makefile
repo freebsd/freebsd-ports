@@ -10,7 +10,7 @@
  W32GCC=i586-mingw32msvc-gcc # sudo apt-get install mingw32 @ debian squeeze
  
 -everything: bin/radamsa .seal-of-quality
-+all everything: bin/radamsa .seal-of-quality
++all everything: bin/radamsa
  
  bin/radamsa: radamsa.c
  	mkdir -p bin

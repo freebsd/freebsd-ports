@@ -48,7 +48,7 @@ OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Use autocreate INBOX patch (UoA)
 AUTOSIEVE_DESC=		Use autosievefolder patch (UoA)
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 DRAC_DESC=		Enable DRAC support
@@ -61,9 +61,8 @@ LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
-MURDER_CFLAGS=
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=yes \
 			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
 			--with-mysql-incdir=${LOCALBASE}/include/mysql
@@ -78,7 +77,7 @@ REPLICATION_CONFIGURE_ENABLE=replication
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
 OPTIONS_RADIO=			GSSAPI
@@ -110,7 +109,7 @@ AUTOSIEVE_PATCH_SITES=	LOCAL/mm:autosieve
 AUTOSIEVE_PATCHFILES=	${PORTNAME}-2.4.12-autosieve-${AUTOSIEVE_VERSION}.patch:-p1:autosieve
 AUTOSIEVE_EXTRA_PATCHES=${FILESDIR}/extra-patch-imap__lmtp_sieve.c
 
-DRAC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
+DRAC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-cmulocal_sasl2.m4
 DRAC_USE=	AUTOTOOLS=autoconf,autoheader
 
 MANDIRS=	${CYRUS_PREFIX}/man

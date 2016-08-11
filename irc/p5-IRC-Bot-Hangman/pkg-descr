@@ -1,9 +1,9 @@
-This module provides a useless IRC bot which enables you to play hangman, 
-the classic word game. It comes shipped with a list of ~2000 english words 
-by default. The architecture is plugin based, words, commands and 
+This module provides a useless IRC bot which enables you to play hangman,
+the classic word game. It comes shipped with a list of ~2000 english words
+by default. The architecture is plugin based, words, commands and
 responses can be extended at will by adding new modules.
 
-The main motivation was to provide a multi-player text based game for 
+The main motivation was to provide a multi-player text based game for
 children to help them practising writing.
 
 WWW: http://search.cpan.org/dist/IRC-Bot-Hangman/

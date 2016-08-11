@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-github-markdown>=0.5.3:textproc/rubygem-github-markdown \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

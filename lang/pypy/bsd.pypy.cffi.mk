@@ -6,11 +6,11 @@ DISTFILES=
 BUILD_DEPENDS+=	pypy:lang/pypy
 RUN_DEPENDS+=	pypy:lang/pypy
 
-PLIST_FILES=	%%PYPY_DIR%%/lib_pypy/${CFFI_MODULE}_cffi.pypy-%%PYPY_CFFI_VER%%.so
+PLIST_FILES=	%%PYPY_DIR%%/lib_pypy/${CFFI_MODULE}_cffi.%%PYPY_CFFI_VER%%.so
 
 CFFI_MODULE?=	_${PORTNAME}
 
-PYTHON_PORTVERSION=	5.0.1
+PYTHON_PORTVERSION?=	5.3.1
 PYTHON_PKGNAMEPREFIX=	pypy-
 PYTHON_CMD=	${LOCALBASE}/bin/pypy
 
@@ -23,4 +23,4 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PYPY_DIR}/lib_pypy/`dirname ${CFFI_MODULE}`/
-	${INSTALL_LIB} ${WRKDIR}/${CFFI_MODULE}_cffi.pypy-${PYPY_CFFI_VER}.so ${STAGEDIR}${PREFIX}/${PYPY_DIR}/lib_pypy/`dirname ${CFFI_MODULE}`/
+	${INSTALL_LIB} ${WRKDIR}/${CFFI_MODULE}_cffi.${PYPY_CFFI_VER}.so ${STAGEDIR}${PREFIX}/${PYPY_DIR}/lib_pypy/`dirname ${CFFI_MODULE}`/

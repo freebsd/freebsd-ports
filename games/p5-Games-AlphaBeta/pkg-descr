@@ -1,14 +1,14 @@
-Games::AlphaBeta provides a generic implementation of the AlphaBeta 
-game-tree search algorithm (also known as MiniMax search with alpha beta 
-pruning). This algorithm can be used to find the best move at a particular 
-position in any two-player, zero-sum game with perfect information. 
-Examples of such games include Chess, Othello, Connect4, Go, Tic-Tac-Toe 
+Games::AlphaBeta provides a generic implementation of the AlphaBeta
+game-tree search algorithm (also known as MiniMax search with alpha beta
+pruning). This algorithm can be used to find the best move at a particular
+position in any two-player, zero-sum game with perfect information.
+Examples of such games include Chess, Othello, Connect4, Go, Tic-Tac-Toe
 and many, many other boardgames.
 
-Users must pass an object representing the initial state of the game as the 
-first argument to new(). This object must provide the following methods: 
-copy(), apply(), endpos(), evaluate() and findmoves(). This is explained 
-more carefully in Games::AlphaBeta::Position which is a base class you can 
+Users must pass an object representing the initial state of the game as the
+first argument to new(). This object must provide the following methods:
+copy(), apply(), endpos(), evaluate() and findmoves(). This is explained
+more carefully in Games::AlphaBeta::Position which is a base class you can
 use to implement your position object.
 
 WWW: http://search.cpan.org/dist/Games-AlphaBeta/

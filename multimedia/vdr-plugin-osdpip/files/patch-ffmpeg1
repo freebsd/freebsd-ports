@@ -1,7 +1,7 @@
-Index: osdpip-0.1.1/decoder.h
+Index: decoder.h
 ===================================================================
---- osdpip-0.1.1.orig/decoder.h
-+++ osdpip-0.1.1/decoder.h
+--- decoder.h.orig
++++ decoder.h
 @@ -34,7 +34,7 @@ extern "C"
    #include <libavcodec/avcodec.h>
    #ifdef USE_SWSCALE
@@ -11,10 +11,10 @@ Index: osdpip-0.1.1/decoder.h
    #endif
  #else
    #include <ffmpeg/avcodec.h>
-Index: osdpip-0.1.1/osdpip.c
+Index: osdpip.c
 ===================================================================
---- osdpip-0.1.1.orig/osdpip.c
-+++ osdpip-0.1.1/osdpip.c
+--- osdpip.c.orig
++++ osdpip.c
 @@ -73,8 +73,6 @@ bool cPluginOsdpip::ProcessArgs(int argc
  
  bool cPluginOsdpip::Initialize(void)

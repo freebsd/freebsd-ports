@@ -16,8 +16,6 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS
-
 # current flavors: default, float
 FFTW_FLAVOR?=	default
 
@@ -26,6 +24,7 @@ CONFIGURE_ARGS=	--enable-shared
 USES=		fortran gmake libtool:keepla
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 BROKEN_sparc64=	does not build
 
@@ -43,6 +42,8 @@ FFTW_SUFIX=
 INFO=			fftw
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
@@ -55,21 +56,18 @@ post-patch:
 		${WRKSRC}/fftw/Makefile.in ${WRKSRC}/mpi/Makefile.in \
 		${WRKSRC}/rfftw/Makefile.in ${WRKSRC}/threads/Makefile.in
 
-post-build:
 .if ${FFTW_FLAVOR}=="default"
+post-build:
 	@cd ${WRKSRC}/doc && makeinfo fftw.texi
 .endif
 
-post-install:
 .if ${FFTW_FLAVOR}=="default"
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/fftw.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${STAGEDIR}${DOCSDIR}/fftw.ps
-.endif
-.endif
 
-regression-test: build
-	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${STAGEDIR}${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>

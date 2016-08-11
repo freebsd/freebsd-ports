@@ -2,7 +2,7 @@ $NetBSD: patch-aq,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/stdlib/lm_debug.ml.orig	2006-08-03 22:51:52.000000000 +0000
+--- src/libmojave-external/stdlib/lm_debug.ml.orig	2006-08-03 22:51:52 UTC
 +++ src/libmojave-external/stdlib/lm_debug.ml
 @@ -173,11 +173,10 @@ let create_debug
   *)

@@ -12,6 +12,8 @@ COMMENT=	Riak is an open source, distributed, noSQL database
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:lang/erlang-runtime15
 
 USES=		gmake readline shebangfix

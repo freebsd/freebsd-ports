@@ -12,6 +12,8 @@ COMMENT=	Popular ICQ-compatible plugin-based program
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake iconv
@@ -23,7 +25,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 
 OPTIONS_DEFINE=	NLS GPGME
-OPTIONS_DEFAULT=NLS GPGME
+OPTIONS_DEFAULT=GPGME
 OPTIONS_SUB=yes
 GPGME_DESC=	Build support for gpgme
 NLS_USES=	gettext

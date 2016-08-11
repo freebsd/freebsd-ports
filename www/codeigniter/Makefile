@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.6
 CATEGORIES=	www
 
 MAINTAINER=	junovitch@FreeBSD.org
@@ -10,6 +10,8 @@ COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
+
+BROKEN_powerpc64=	Does not build
 
 USES=		tar:tgz
 USE_GITHUB=	yes

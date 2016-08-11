@@ -3,22 +3,20 @@
 
 PORTNAME=	esmtp
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL ESMTP client extension
 
 LICENSE=	PHP30
 
 LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 
 OPTIONS_DEFINE=	RE2C

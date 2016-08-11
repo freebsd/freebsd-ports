@@ -1,4 +1,4 @@
-The clean utility searches through the filesystem for "temporary files" 
+The clean utility searches through the filesystem for "temporary files"
 left behind by editors and the like which can be deleted safely.
 
 WARNING: This program was written with the express purpose of deleting

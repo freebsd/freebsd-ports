@@ -17,7 +17,6 @@ USE_GL=		gl
 USES=		qmake pyqt:5
 USE_QT5=	core designer printsupport gui widgets xml \
 		buildtools_build qmake_build
-HAS_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5
 

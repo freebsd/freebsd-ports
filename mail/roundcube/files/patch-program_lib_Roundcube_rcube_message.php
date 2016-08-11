@@ -1,6 +1,6 @@
---- program/lib/Roundcube/rcube_message.php.orig	2010-11-26 13:41:16.000000000 +0100
-+++ program/lib/Roundcube/rcube_message.php	2010-12-13 17:20:59.000000000 +0100
-@@ -452,9 +452,7 @@
+--- program/lib/Roundcube/rcube_message.php.orig	2016-05-22 11:06:47 UTC
++++ program/lib/Roundcube/rcube_message.php
+@@ -766,9 +766,7 @@ class rcube_message
                  }
                  // part is a file/attachment
                  else if (preg_match('/^(inline|attach)/', $mail_part->disposition) ||

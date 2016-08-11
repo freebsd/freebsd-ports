@@ -1,14 +1,14 @@
-Someone asked on Perlmonks if a hash could do fuzzy matches on keys - this 
+Someone asked on Perlmonks if a hash could do fuzzy matches on keys - this
 is the result.
 
-If there's no exact match on the key that you pass to the hash, then the 
-key is treated as a regex and the first matching key is returned. You can 
-force it to leap straight into the regex checking by passing a qr'ed regex 
+If there's no exact match on the key that you pass to the hash, then the
+key is treated as a regex and the first matching key is returned. You can
+force it to leap straight into the regex checking by passing a qr'ed regex
 into the hash like this:
 
   my $val = $h{qr/key/};
 
-exists and delete also do regex matching. In the case of delete all values 
+exists and delete also do regex matching. In the case of delete all values
 matching your regex key will be deleted from the hash.
 
 WWW: http://search.cpan.org/dist/Tie-Hash-Regex/

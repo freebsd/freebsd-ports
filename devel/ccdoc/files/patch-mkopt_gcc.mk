@@ -1,5 +1,5 @@
---- mkopt_gcc.mk.orig	Tue Feb 17 10:33:54 2004
-+++ mkopt_gcc.mk	Tue Feb 17 10:36:57 2004
+--- mkopt_gcc.mk.orig	2004-10-06 16:35:47 UTC
++++ mkopt_gcc.mk
 @@ -1,17 +1,17 @@
  # ================================================
  # GCC compiler, optimized mode, any platform.

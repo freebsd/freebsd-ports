@@ -1,5 +1,5 @@
 This module is designed to take raw HTML input and highlight it (using a
 CSS stylesheet). The returned HTML code is ready for inclusion in a web
-page. 
+page.
 
 WWW: http://search.cpan.org/dist/Syntax-Highlight-HTML/

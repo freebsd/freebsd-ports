@@ -1,5 +1,5 @@
 This is a port of liblingoteach, a library for special translation
-lesson interaction. It uses the LingoTeach DTD format for general 
+lesson interaction. It uses the LingoTeach DTD format for general
 validation.
 
 WWW: http://www.lingoteach.org

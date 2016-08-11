@@ -1,6 +1,6 @@
---- setup.py.orig	Tue Jan 10 09:59:47 2006
-+++ setup.py	Sun Jan 15 11:46:49 2006
-@@ -8,11 +8,6 @@
+--- setup.py.orig	2016-06-20 15:30:48 UTC
++++ setup.py
+@@ -8,11 +8,6 @@ import sys
  from distutils.core import setup
  import glob
  
@@ -12,7 +12,7 @@
  
  setup(
  	name='everygui',
-@@ -29,4 +24,3 @@
+@@ -29,4 +24,3 @@ setup(
  			("share/everygui/egconfig", glob.glob("egconfig/*.egd"))]
  	)
  

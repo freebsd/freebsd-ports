@@ -3,7 +3,7 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.engr.mun.ca/~holden/
 

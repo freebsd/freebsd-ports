@@ -1,5 +1,5 @@
-This module provides an interface to over 150 functions of the 
-cephes math library of Stephen Moshier. No functions are exported 
+This module provides an interface to over 150 functions of the
+cephes math library of Stephen Moshier. No functions are exported
 by default, but rather must be imported explicitly, as in
 
   use Math::Cephes qw(sin cos);

@@ -2,4 +2,4 @@ Statistics::Frequency is a simple class for counting elements, in other
 words, their frequencies. The goal of Statistics::Frequency is simply to
 be provide container for sets of elements and their respective frequencies.
 
-WWW:	http://search.cpan.org/dist/Statistics-Frequency/
+WWW: http://search.cpan.org/dist/Statistics-Frequency/

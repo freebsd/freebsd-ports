@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	opencc
-PORTVERSION=	11.3
+PORTVERSION=	11.5
 CATEGORIES=	chinese converters
 PKGNAMEPREFIX=	bsdconv-
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	OpenCC conversion module for bsdconv
 
-LICENSE=	ISCL
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bsdconv-mktable:converters/bsdconv
 LIB_DEPENDS=	libbsdconv.so:converters/bsdconv \

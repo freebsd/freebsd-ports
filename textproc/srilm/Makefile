@@ -19,7 +19,6 @@ USES=		gmake
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
 ONLY_FOR_ARCHS=	i386 amd64
-NO_PACKAGE=	not yet
 
 PROGRAMS=	ngram ngram-count ngram-merge ngram-class disambig anti-ngram \
 		nbest-lattice nbest-mix  nbest-optimize  nbest-pron-score \

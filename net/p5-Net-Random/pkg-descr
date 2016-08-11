@@ -3,16 +3,16 @@ Net::Random - get random data from online sources
 This module gets truly random data from online sources.  Or at least,
 they claim to be truly random.
 
-The two sources of randomness above correspond to 
-http://www.fourmilab.ch/cgi-bin/uncgi/Hotbits?nbytes=1024&fmt=hex and 
-http://random.org/cgi-bin/randbyte?nbytes=1024&format=hex. 
-We always get chunks of 1024 bytes at a time, storing it in a pool 
-which is used up as and when needed. The pool is shared between all 
-objects using the same randomness source. When we run out of randomness 
+The two sources of randomness above correspond to
+http://www.fourmilab.ch/cgi-bin/uncgi/Hotbits?nbytes=1024&fmt=hex and
+http://random.org/cgi-bin/randbyte?nbytes=1024&format=hex.
+We always get chunks of 1024 bytes at a time, storing it in a pool
+which is used up as and when needed. The pool is shared between all
+objects using the same randomness source. When we run out of randomness
 we go back to the source for more juicy random goodness.
 
-The maintainers of both randomness sources claim that their data 
-is *truly* random. A some simple tests show that they are certainly 
+The maintainers of both randomness sources claim that their data
+is *truly* random. A some simple tests show that they are certainly
 more random than the rand() function on this 'ere machine.
 
 WWW: http://search.cpan.org/dist/Net-Random/

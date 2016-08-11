@@ -1,0 +1,5 @@
+jobd is a job management framework that allows daemons to be
+launched in a controlled fashion using a JSON configuration
+file for each job.
+
+WWW: https://github.com/mheily/jobd

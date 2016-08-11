@@ -3,7 +3,7 @@
 NOTE:
 
 Be sure to create a %%PREFIX%%/etc/nasd.conf file; use
-%%PREFIX%%/etc/nasd.conf.eg as a starting point. 
+%%PREFIX%%/etc/nasd.conf.eg as a starting point.
 It should work fine as is.
 
 **************************************************

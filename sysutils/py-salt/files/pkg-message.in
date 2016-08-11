@@ -21,7 +21,7 @@ To configure a Salt Proxy Minion, do the following:
 
   o sysrc salt_proxy_enable="YES"
   o sysrc salt_proxy_list=""
-  o Update the salt_proxy_list with the proxy minion name(s)  
+  o Update the salt_proxy_list with the proxy minion name(s)
 
 ===================================================================================================
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ujson
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_NAME_TclTk=	Tcl/Tk License
 LICENSE_TEXT_TclTk=	http://www.tcl.tk/software/tcltk/license.html
 LICENSE_PERMS_TclTk=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

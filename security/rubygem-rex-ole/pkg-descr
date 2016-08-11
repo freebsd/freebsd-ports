@@ -1,0 +1,4 @@
+This Gem contains all of the Ruby Exploitation(Rex) library for reading/writing
+Object-Linking-and-Embedding (OLE) files and streams.
+
+WWW: https://github.com/rapid7/rex-ole

@@ -19,7 +19,6 @@ SLAVEDIRS=	french/php_doc \
 		japanese/php_doc \
 		polish/php_doc
 
-USE_PHPIZE=	yes
 PHP_LANG?=	en
 PHP_LANGS?=	${PHP_HTML_CHUNKED} ${PHP_HTML_NORMAL}
 PHP_HTML_CHUNKED=	br de en fr ja pl ro tr

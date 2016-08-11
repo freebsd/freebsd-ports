@@ -1,6 +1,6 @@
---- libgai/Makefile.orig	Mon Jun  2 18:03:30 1997
-+++ libgai/Makefile	Thu Sep 30 11:34:11 1999
-@@ -6,9 +6,13 @@
+--- libgai/Makefile.orig	1997-06-02 22:03:30 UTC
++++ libgai/Makefile
+@@ -6,9 +6,13 @@ include ../Make.defines
  # appear in the book (too much clutter, given the amount of conditional
  # testing for all the code in this directory).
  

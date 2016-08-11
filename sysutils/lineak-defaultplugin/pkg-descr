@@ -1,5 +1,5 @@
-Default plugins for lineakd. Mainly contains some macros 
-(e.g. for volumedecrease etc.). mediadetect plugin is not 
+Default plugins for lineakd. Mainly contains some macros
+(e.g. for volumedecrease etc.). mediadetect plugin is not
 functional at the moment since there is some more work to
 do (we need a new port for it).
 

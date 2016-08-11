@@ -14,17 +14,20 @@ COMMENT=	Pure Python implementation of SOAP 1.1
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-install:
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in CHANGES README doc/zsi.* doc/*.png
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
 .for dir in client server
 	@${MV} ${WRKSRC}/doc/examples/${dir} ${WRKSRC}
 .endfor

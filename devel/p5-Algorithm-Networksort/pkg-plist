@@ -1,2 +1,4 @@
-%%PERL5_MAN3%%/Algorithm::Networksort.3.gz
 %%SITE_PERL%%/Algorithm/Networksort.pm
+%%SITE_PERL%%/Algorithm/Networksort/Best.pm
+%%PERL5_MAN3%%/Algorithm::Networksort.3.gz
+%%PERL5_MAN3%%/Algorithm::Networksort::Best.3.gz

@@ -1,10 +1,10 @@
---- Makefile.in.orig	2015-04-30 10:20:42 UTC
+--- Makefile.in.orig	2016-05-16 09:26:01 UTC
 +++ Makefile.in
 @@ -171,7 +171,14 @@ distclean: clean
  # install floristlib
  # make all files read-only to prevent recompilation
  install:
--	gprinstall -Pflorist $(PROJECT_FLAGS) -a -p --prefix=$(PREFIX) --sources-subdir=floristlib --lib-subdir=floristlib --link-lib-subdir=floristlib
+-	gprinstall -Pflorist $(PROJECT_FLAGS) -a -p -f --prefix=$(PREFIX) --sources-subdir=floristlib --lib-subdir=floristlib --link-lib-subdir=floristlib
 -	chmod a-w $(PREFIX)/floristlib/*
 +	mkdir -p $(DESTDIR)$(PREFIX)/lib/gnat \
 +		 $(DESTDIR)$(PREFIX)/lib/florist \

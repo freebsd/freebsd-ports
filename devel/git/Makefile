@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -41,8 +42,8 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
-		SEND_EMAIL NLS
-OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL SEND_EMAIL NLS
+		SEND_EMAIL NLS PCRE
+OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL SEND_EMAIL PCRE
 OPTIONS_SUB=	yes
 
 GITWEB_DESC=	Install gitweb
@@ -61,8 +62,11 @@ PERL_BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_MAKE_ARGS_OFF=	NO_PERL=1
 
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_WITH=	libpcre
+
 SEND_EMAIL_IMPLIES=	PERL
-SEND_EMAIL_RUN_DEPENDS= p5-Net-SMTP-SSL>=0:mail/p5-Net-SMTP-SSL \
+SEND_EMAIL_RUN_DEPENDS=	p5-Net-SMTP-SSL>=0:mail/p5-Net-SMTP-SSL \
 			p5-Authen-SASL>=0:security/p5-Authen-SASL
 
 ICONV_USES=		iconv
@@ -97,7 +101,7 @@ CVS_RUN_DEPENDS=	cvsps:devel/cvsps
 .include <bsd.port.options.mk>
 
 # This is intentionally not exposed as an option.
-.ifndef (WITH_DEBUG)
+.if defined(STRIP) && ${STRIP} != ""
 ALL_TARGET=	all strip
 .endif
 

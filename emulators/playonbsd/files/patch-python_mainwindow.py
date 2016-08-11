@@ -1,4 +1,4 @@
---- python/mainwindow.py.orig	2015-05-12 22:33:57 UTC
+--- python/mainwindow.py.orig	2016-01-03 22:16:17 UTC
 +++ python/mainwindow.py
 @@ -63,8 +63,8 @@ class POLWeb(threading.Thread):
      def LastVersion(self):

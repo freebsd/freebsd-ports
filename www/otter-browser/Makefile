@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	otter
-PORTVERSION=	0.9.09
+PORTVERSION=	0.9.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 # Avoid pkgname conflict with misc/otter

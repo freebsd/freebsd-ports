@@ -28,12 +28,12 @@
     SUBDIR += conduit
     SUBDIR += conkyemail
     SUBDIR += conkyforecast
+    SUBDIR += copyq
     SUBDIR += countdown
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
-    SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += docear
     SUBDIR += dosage
@@ -93,7 +93,6 @@
     SUBDIR += gnome-weather
     SUBDIR += gnote
     SUBDIR += gnotime
-    SUBDIR += gnustep-notebook
     SUBDIR += gnustep-wrapper
     SUBDIR += gourmet
     SUBDIR += griffith
@@ -131,7 +130,6 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
-    SUBDIR += ladon
     SUBDIR += launchy
     SUBDIR += libgcal
     SUBDIR += libopensync-plugin-vformat-devel
@@ -190,6 +188,7 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
+    SUBDIR += puush
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
     SUBDIR += py-pycarddav
@@ -201,7 +200,6 @@
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
-    SUBDIR += qlabels
     SUBDIR += qorganizer
     SUBDIR += qrfcview
     SUBDIR += qtm

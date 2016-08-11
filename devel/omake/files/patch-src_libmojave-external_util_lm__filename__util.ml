@@ -2,7 +2,7 @@ $NetBSD: patch-au,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/util/lm_filename_util.ml.orig	2007-01-29 20:14:42.000000000 +0000
+--- src/libmojave-external/util/lm_filename_util.ml.orig	2007-01-29 20:14:42 UTC
 +++ src/libmojave-external/util/lm_filename_util.ml
 @@ -48,12 +48,11 @@ let groups =
  let unix_is_executable s =

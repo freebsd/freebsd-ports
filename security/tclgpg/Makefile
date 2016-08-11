@@ -15,12 +15,9 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	dtplite:devel/tcllib
 RUN_DEPENDS=	gpg:security/gnupg1
 
-USES=		autoreconf gmake tcl
-GNU_CONFIGURE=	yes
+USES=		autoreconf gmake tcl:tea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/tclgpg-4cfd9fa949
-
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}
 
 PLIST_FILES=	lib/gpg1.0/libgpg1.0.so \
 		lib/gpg1.0/pkgIndex.tcl \

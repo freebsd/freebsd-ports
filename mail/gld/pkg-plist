@@ -1,8 +1,0 @@
-@sample etc/gld.conf.sample
-sbin/gld
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/LICENCE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/table-whitelist.sql
-%%PORTDOCS%%%%DOCSDIR%%/tables.mysql
-%%PORTDOCS%%%%DOCSDIR%%/tables.pgsql

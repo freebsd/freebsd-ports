@@ -5,4 +5,4 @@ $ xset fp+ PREFIX/lib/X11/fonts/hebrew
 $ xset fp rehash
 
 or by adding a FontPath line for it in the X-server configuration file (usually
-/etc/X11/xorg.conf) and restarting the X-server. 
+/etc/X11/xorg.conf) and restarting the X-server.

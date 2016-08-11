@@ -6,7 +6,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	www
 MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP based weblog software
 
 LICENSE=	BSD3CLAUSE

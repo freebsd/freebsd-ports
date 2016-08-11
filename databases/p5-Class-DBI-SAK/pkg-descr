@@ -1,6 +1,6 @@
 By taking the busy work out of using Class::DBI as you see fit, your code
 becomes more useful by size. Most of us end up using at least a couple
 Class::DBI extensions in our programs, and it's just a pain. Enter the Swiss
-Army Knife. 
+Army Knife.
 
 WWW: http://search.cpan.org/dist/Class-DBI-SAK/

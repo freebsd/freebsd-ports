@@ -1,6 +1,6 @@
---- ccxstream.c.orig	Mon Mar 17 11:29:15 2003
-+++ ccxstream.c	Tue May 15 15:02:31 2007
-@@ -1004,7 +1004,7 @@
+--- ccxstream.c.orig	2003-03-17 14:29:15 UTC
++++ ccxstream.c
+@@ -1004,7 +1004,7 @@ int cc_xstream_handle_packet(CcXstreamCo
  	for (fh = 0; fh < CC_XSTREAM_MAX_OPEN_FILES; fh++)
  	  if (conn->open_file_handle[fh] == handle)
  	    break;
@@ -9,7 +9,7 @@
  	  {
  	    cc_xstream_send_error(conn, id, CC_XSTREAM_XBMSP_ERROR_INVALID_HANDLE, "Invalid file handle.");
  	    return 1;
-@@ -1016,10 +1016,19 @@
+@@ -1016,10 +1016,19 @@ int cc_xstream_handle_packet(CcXstreamCo
  	  }
  	hlp = cc_xmalloc(rlen);
  	sz = fread(hlp, 1, rlen, conn->f[fh]);
@@ -29,7 +29,7 @@
  	cc_xfree(hlp);
  	return 1;
        }
-@@ -1661,6 +1670,16 @@
+@@ -1661,6 +1670,16 @@ int main(int argc, char **argv)
    setsockopt(prog->s, SOL_SOCKET, SO_REUSEPORT, (char *)&c, sizeof (c));
  #endif /* SO_REUSEPORT */
  
@@ -46,7 +46,7 @@
    memset(&sa, 0, sizeof (sa));
    sa.sin_family = AF_INET;
    sa.sin_addr = la;
-@@ -1693,6 +1712,10 @@
+@@ -1693,6 +1712,10 @@ int main(int argc, char **argv)
        c = 1;
        setsockopt(prog->bs, SOL_SOCKET, SO_BROADCAST, (char *)&c, sizeof (c));
  #endif /* SO_BROADCAST */

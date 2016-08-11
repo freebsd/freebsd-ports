@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2016-02-17 21:02:06 UTC
++++ Makefile.am
+@@ -2,8 +2,7 @@
+ 
+ dist_man8_MANS		= smcroute.8
+ 
+-doc_DATA		= README AUTHORS TODO ChangeLog COPYING \
+-			  smcroute.conf smcroute.init
++doc_DATA		= README AUTHORS TODO ChangeLog COPYING
+ EXTRA_DIST		= autogen.sh smcroute.conf smcroute.init
+ 
+ sbin_PROGRAMS		= smcroute

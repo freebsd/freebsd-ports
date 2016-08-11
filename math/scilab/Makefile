@@ -3,6 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.5.2
+PORTREVISION=	2
 CATEGORIES=	math cad java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -26,6 +27,8 @@ USES=		cpe desktop-file-utils fortran gettext gmake iconv \
 		libtool pathfix pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 
+INSTALLS_ICONS=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gfortran \
@@ -35,6 +38,8 @@ CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
 MAKE_ENV=	LANG=en_US.UTF-8 \
 		LC_ALL=en_US.UTF-8
 INSTALL_TARGET=	install-strip
+
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
@@ -117,7 +122,7 @@ CONFIGURE_ARGS+=	--without-openmp
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION:M1.8.*}
+.if ${PORT_OPTIONS:MGUI} && ${JAVA_PORT_VERSION:M1.8.*}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 

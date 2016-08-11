@@ -1,4 +1,4 @@
-@(,,4755) %%QT_BINDIR%%/lmms
+%%QT_BINDIR%%/lmms
 include/lmms/AudioAlsa.h
 include/lmms/AudioDevice.h
 include/lmms/AudioDummy.h
@@ -18,6 +18,7 @@ include/lmms/AutomationEditor.h
 include/lmms/AutomationPattern.h
 include/lmms/AutomationPatternView.h
 include/lmms/AutomationTrack.h
+include/lmms/BandLimitedWave.h
 include/lmms/Clipboard.h
 include/lmms/ComboBoxModel.h
 include/lmms/Controller.h
@@ -26,7 +27,9 @@ include/lmms/ControllerConnectionDialog.h
 include/lmms/ControllerDialog.h
 include/lmms/ControllerRackView.h
 include/lmms/ControllerView.h
+include/lmms/DataFile.h
 include/lmms/DetuningHelper.h
+include/lmms/DspEffectLibrary.h
 include/lmms/DummyEffect.h
 include/lmms/DummyInstrument.h
 include/lmms/DummyPlugin.h
@@ -39,6 +42,9 @@ include/lmms/EffectSelectDialog.h
 include/lmms/EffectView.h
 include/lmms/EnvelopeAndLfoParameters.h
 include/lmms/EnvelopeAndLfoView.h
+include/lmms/FileBrowser.h
+include/lmms/FileDialog.h
+include/lmms/FxLine.h
 include/lmms/FxMixer.h
 include/lmms/FxMixerView.h
 include/lmms/ImportFilter.h
@@ -56,41 +62,72 @@ include/lmms/JournallingObject.h
 include/lmms/LadspaBase.h
 include/lmms/LadspaControl.h
 include/lmms/LadspaControlView.h
+include/lmms/LcdSpinBox.h
+include/lmms/LcdWidget.h
 include/lmms/LfoController.h
+include/lmms/LmmsPalette.h
+include/lmms/LmmsStyle.h
 include/lmms/MainWindow.h
+include/lmms/MemoryHelper.h
 include/lmms/MeterDialog.h
 include/lmms/MeterModel.h
 include/lmms/MicroTimer.h
+include/lmms/Midi.h
 include/lmms/MidiAlsaRaw.h
 include/lmms/MidiAlsaSeq.h
 include/lmms/MidiClient.h
 include/lmms/MidiController.h
 include/lmms/MidiDummy.h
+include/lmms/MidiEvent.h
 include/lmms/MidiEventProcessor.h
 include/lmms/MidiOss.h
 include/lmms/MidiPort.h
 include/lmms/MidiPortMenu.h
+include/lmms/MidiTime.h
 include/lmms/MidiWinMM.h
+include/lmms/MixHelpers.h
+include/lmms/Mixer.h
+include/lmms/MixerProfiler.h
+include/lmms/MixerWorkerThread.h
 include/lmms/Model.h
 include/lmms/ModelView.h
+include/lmms/NotePlayHandle.h
 include/lmms/Oscillator.h
+include/lmms/Pattern.h
 include/lmms/PeakController.h
 include/lmms/Piano.h
+include/lmms/PianoRoll.h
 include/lmms/PianoView.h
+include/lmms/Pitch.h
+include/lmms/PlayHandle.h
 include/lmms/Plugin.h
 include/lmms/PluginView.h
+include/lmms/PresetPreviewPlayHandle.h
 include/lmms/ProjectJournal.h
 include/lmms/ProjectRenderer.h
 include/lmms/RemotePlugin.h
+include/lmms/RmsHelper.h
+include/lmms/SampleBuffer.h
+include/lmms/SamplePlayHandle.h
+include/lmms/SampleRecordHandle.h
+include/lmms/SampleTrack.h
+include/lmms/SendButtonIndicator.h
 include/lmms/SerializingObject.h
 include/lmms/SideBar.h
 include/lmms/SideBarWidget.h
+include/lmms/SongEditor.h
 include/lmms/SweepOscillator.h
 include/lmms/TempoSyncKnob.h
 include/lmms/TempoSyncKnobModel.h
+include/lmms/ThreadableJob.h
+include/lmms/TimeDisplayWidget.h
 include/lmms/ToolPlugin.h
 include/lmms/ToolPluginView.h
-include/lmms/VST_sync_shm.h
+include/lmms/TrackContainer.h
+include/lmms/TrackContainerView.h
+include/lmms/VersionedSaveDialog.h
+include/lmms/VstSyncController.h
+include/lmms/VstSyncData.h
 include/lmms/about_dialog.h
 include/lmms/aeffectx.h
 include/lmms/atomic_int.h
@@ -108,7 +145,6 @@ include/lmms/cpuload_widget.h
 include/lmms/custom_events.h
 include/lmms/debug.h
 include/lmms/drumsynth.h
-include/lmms/effect_lib.h
 include/lmms/embed.cpp
 include/lmms/embed.h
 include/lmms/endian_handling.h
@@ -119,7 +155,6 @@ include/lmms/fade_button.h
 include/lmms/fader.h
 include/lmms/fft_helpers.h
 include/lmms/fifo_buffer.h
-include/lmms/file_browser.h
 include/lmms/graph.h
 include/lmms/group_box.h
 include/lmms/gui_templates.h
@@ -128,44 +163,26 @@ include/lmms/knob.h
 include/lmms/ladspa.h
 include/lmms/ladspa_2_lmms.h
 include/lmms/ladspa_manager.h
-include/lmms/lcd_spinbox.h
 include/lmms/led_checkbox.h
 include/lmms/lmms_basics.h
 include/lmms/lmms_constants.h
 include/lmms/lmms_math.h
-include/lmms/lmms_style.h
 include/lmms/lmmsconfig.h
 include/lmms/lmmsversion.h
-include/lmms/midi.h
-include/lmms/midi_time.h
-include/lmms/mixer.h
-include/lmms/mmp.h
 include/lmms/note.h
-include/lmms/note_play_handle.h
 include/lmms/nstate_button.h
 include/lmms/panning.h
 include/lmms/panning_constants.h
-include/lmms/pattern.h
-include/lmms/pch.h
-include/lmms/piano_roll.h
 include/lmms/pixmap_button.h
-include/lmms/play_handle.h
 include/lmms/plugin_browser.h
-include/lmms/preset_preview_play_handle.h
 include/lmms/project_notes.h
 include/lmms/project_version.h
 include/lmms/rename_dialog.h
 include/lmms/rubberband.h
-include/lmms/sample_buffer.h
-include/lmms/sample_play_handle.h
-include/lmms/sample_record_handle.h
-include/lmms/sample_track.h
 include/lmms/setup_dialog.h
 include/lmms/shared_object.h
 include/lmms/song.h
-include/lmms/song_editor.h
 include/lmms/string_pair_drag.h
-include/lmms/surround_area.h
 include/lmms/tab_bar.h
 include/lmms/tab_button.h
 include/lmms/tab_widget.h
@@ -175,18 +192,22 @@ include/lmms/timeline.h
 include/lmms/tool_button.h
 include/lmms/tooltip.h
 include/lmms/track.h
-include/lmms/track_container.h
-include/lmms/track_container_view.h
 include/lmms/track_label_button.h
 include/lmms/transformable_auto_model.h
 include/lmms/update_event.h
+include/lmms/versioninfo.h
 include/lmms/visualization_widget.h
 include/lmms/volume.h
 lib/lmms/RemoteZynAddSubFx
+lib/lmms/libOPL2.so
 lib/lmms/libZynAddSubFxCore.so
+lib/lmms/libamplifier.so
 lib/lmms/libaudiofileprocessor.so
 lib/lmms/libbassbooster.so
 lib/lmms/libbitinvader.so
+lib/lmms/libdelay.so
+lib/lmms/libdualfilter.so
+lib/lmms/libdynamicsprocessor.so
 lib/lmms/libflpimport.so
 lib/lmms/libhydrogenimport.so
 lib/lmms/libkicker.so
@@ -194,21 +215,26 @@ lib/lmms/libladspabrowser.so
 lib/lmms/libladspaeffect.so
 lib/lmms/liblb302.so
 lib/lmms/libmidiimport.so
+lib/lmms/libmonstro.so
+lib/lmms/libnes.so
 lib/lmms/liborganic.so
 lib/lmms/libpapu.so
 lib/lmms/libpatman.so
 lib/lmms/libpeakcontrollereffect.so
 lib/lmms/libsf2player.so
+lib/lmms/libsfxr.so
 lib/lmms/libsid.so
 lib/lmms/libspectrumanalyzer.so
 lib/lmms/libstereoenhancer.so
 lib/lmms/libstereomatrix.so
 lib/lmms/libtripleoscillator.so
 lib/lmms/libvibedstrings.so
+lib/lmms/libwatsyn.so
+lib/lmms/libwaveshaper.so
 lib/lmms/libzynaddsubfx.so
-man/man1/lmms.1.gz
 share/applications/lmms.desktop
 %%DATADIR%%/backgrounds/lmms_tile.png
+%%DATADIR%%/backgrounds/newbg.png
 %%DATADIR%%/backgrounds/vinnie.png
 %%DATADIR%%/locale/ca.qm
 %%DATADIR%%/locale/cs.qm
@@ -217,14 +243,16 @@ share/applications/lmms.desktop
 %%DATADIR%%/locale/es.qm
 %%DATADIR%%/locale/fa.qm
 %%DATADIR%%/locale/fr.qm
+%%DATADIR%%/locale/gl.qm
 %%DATADIR%%/locale/it.qm
 %%DATADIR%%/locale/ja.qm
 %%DATADIR%%/locale/ko.qm
 %%DATADIR%%/locale/nl.qm
 %%DATADIR%%/locale/pl.qm
-%%DATADIR%%/locale/pt_br.qm
+%%DATADIR%%/locale/pt.qm
 %%DATADIR%%/locale/ru.qm
 %%DATADIR%%/locale/sv.qm
+%%DATADIR%%/locale/zh.qm
 %%DATADIR%%/presets/AudioFileProcessor/Bass-Mania.xpf
 %%DATADIR%%/presets/AudioFileProcessor/Erazor.xpf
 %%DATADIR%%/presets/AudioFileProcessor/Fat-Reversed-Kick.xpf
@@ -237,6 +265,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/BitInvader/cello.xpf
 %%DATADIR%%/presets/BitInvader/drama.xpf
 %%DATADIR%%/presets/BitInvader/epiano.xpf
+%%DATADIR%%/presets/BitInvader/invaders_must_die.xpf
 %%DATADIR%%/presets/BitInvader/pluck.xpf
 %%DATADIR%%/presets/BitInvader/soft_pad.xpf
 %%DATADIR%%/presets/BitInvader/spacefx.xpf
@@ -244,9 +273,48 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/BitInvader/sweep_pad.xpf
 %%DATADIR%%/presets/BitInvader/toy_piano.xpf
 %%DATADIR%%/presets/BitInvader/wah_synth.xpf
+%%DATADIR%%/presets/Kicker/Clap dry.xpf
+%%DATADIR%%/presets/Kicker/Clap.xpf
+%%DATADIR%%/presets/Kicker/HihatClosed.xpf
+%%DATADIR%%/presets/Kicker/HihatOpen.xpf
+%%DATADIR%%/presets/Kicker/KickPower.xpf
+%%DATADIR%%/presets/Kicker/Shaker.xpf
+%%DATADIR%%/presets/Kicker/SnareLong.xpf
+%%DATADIR%%/presets/Kicker/SnareMarch.xpf
+%%DATADIR%%/presets/Kicker/TR909-RimShot.xpf
+%%DATADIR%%/presets/Kicker/TrapKick.xpf
+%%DATADIR%%/presets/LB302/AcidLead.xpf
+%%DATADIR%%/presets/LB302/AngryLead.xpf
+%%DATADIR%%/presets/LB302/DroneArp.xpf
 %%DATADIR%%/presets/LB302/GoodOldTimes.xpf
 %%DATADIR%%/presets/LB302/Oh Synth.xpf
 %%DATADIR%%/presets/LB302/STrash.xpf
+%%DATADIR%%/presets/Monstro/Growl.xpf
+%%DATADIR%%/presets/Monstro/HorrorLead.xpf
+%%DATADIR%%/presets/Monstro/Phat.xpf
+%%DATADIR%%/presets/Monstro/ScaryBell.xpf
+%%DATADIR%%/presets/Nescaline/Chomp.xpf
+%%DATADIR%%/presets/Nescaline/Detune_lead.xpf
+%%DATADIR%%/presets/Nescaline/Engine_overheats.xpf
+%%DATADIR%%/presets/Nescaline/Fireball_flick.xpf
+%%DATADIR%%/presets/Nescaline/Mega_weapon.xpf
+%%DATADIR%%/presets/OpulenZ/Bagpipe.xpf
+%%DATADIR%%/presets/OpulenZ/Bells.xpf
+%%DATADIR%%/presets/OpulenZ/Brass.xpf
+%%DATADIR%%/presets/OpulenZ/Bubbly_days.xpf
+%%DATADIR%%/presets/OpulenZ/Cheesy_synth.xpf
+%%DATADIR%%/presets/OpulenZ/Clarinet.xpf
+%%DATADIR%%/presets/OpulenZ/Combo_organ.xpf
+%%DATADIR%%/presets/OpulenZ/Epiano.xpf
+%%DATADIR%%/presets/OpulenZ/Funky.xpf
+%%DATADIR%%/presets/OpulenZ/Halo_pad.xpf
+%%DATADIR%%/presets/OpulenZ/Harp.xpf
+%%DATADIR%%/presets/OpulenZ/Organ_leslie.xpf
+%%DATADIR%%/presets/OpulenZ/Pad.xpf
+%%DATADIR%%/presets/OpulenZ/Square.xpf
+%%DATADIR%%/presets/OpulenZ/Vibraphone.xpf
+%%DATADIR%%/presets/Organic/Pwnage.xpf
+%%DATADIR%%/presets/Organic/Rubberband.xpf
 %%DATADIR%%/presets/Organic/organ_blues.xpf
 %%DATADIR%%/presets/Organic/organ_risingsun.xpf
 %%DATADIR%%/presets/Organic/organ_swish.xpf
@@ -255,69 +323,78 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/Organic/pad_sweep.xpf
 %%DATADIR%%/presets/Organic/puresine.xpf
 %%DATADIR%%/presets/Organic/sequencer_64.xpf
+%%DATADIR%%/presets/SID/Bass.xpf
+%%DATADIR%%/presets/SID/CheesyGuitar.xpf
+%%DATADIR%%/presets/SID/Lead.xpf
+%%DATADIR%%/presets/SID/MadMind.xpf
+%%DATADIR%%/presets/SID/Overdrive.xpf
+%%DATADIR%%/presets/SID/Pad.xpf
 %%DATADIR%%/presets/TripleOscillator/AmazingBubbles.xpf
+%%DATADIR%%/presets/TripleOscillator/AnalogBell.xpf
 %%DATADIR%%/presets/TripleOscillator/AnalogDreamz.xpf
 %%DATADIR%%/presets/TripleOscillator/AnalogTimes.xpf
-%%DATADIR%%/presets/TripleOscillator/AnalogTimes2.xpf
 %%DATADIR%%/presets/TripleOscillator/Analogous.xpf
-%%DATADIR%%/presets/TripleOscillator/ArpKing.xpf
-%%DATADIR%%/presets/TripleOscillator/Arpeggio_1.xpf
-%%DATADIR%%/presets/TripleOscillator/Arpeggio_2.xpf
+%%DATADIR%%/presets/TripleOscillator/Arpeggio.xpf
+%%DATADIR%%/presets/TripleOscillator/ArpeggioPing.xpf
 %%DATADIR%%/presets/TripleOscillator/Bell.xpf
-%%DATADIR%%/presets/TripleOscillator/Bell_2.xpf
+%%DATADIR%%/presets/TripleOscillator/BellArp.xpf
+%%DATADIR%%/presets/TripleOscillator/BlandModBass.xpf
+%%DATADIR%%/presets/TripleOscillator/BrokenToy.xpf
 %%DATADIR%%/presets/TripleOscillator/ChurchOrgan.xpf
-%%DATADIR%%/presets/TripleOscillator/DeathBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Distorted-FM-Bass.xpf
-%%DATADIR%%/presets/TripleOscillator/Dull-Bell-Arp.xpf
+%%DATADIR%%/presets/TripleOscillator/CryingPads.xpf
+%%DATADIR%%/presets/TripleOscillator/DetunedGhost.xpf
+%%DATADIR%%/presets/TripleOscillator/DirtyReece.xpf
+%%DATADIR%%/presets/TripleOscillator/DistortedPMBass.xpf
+%%DATADIR%%/presets/TripleOscillator/Drums_HardKick.xpf
+%%DATADIR%%/presets/TripleOscillator/Drums_HihatC.xpf
+%%DATADIR%%/presets/TripleOscillator/Drums_HihatO.xpf
+%%DATADIR%%/presets/TripleOscillator/Drums_Kick.xpf
+%%DATADIR%%/presets/TripleOscillator/Drums_Snare.xpf
+%%DATADIR%%/presets/TripleOscillator/DullBell.xpf
 %%DATADIR%%/presets/TripleOscillator/E-Organ.xpf
 %%DATADIR%%/presets/TripleOscillator/E-Organ2.xpf
+%%DATADIR%%/presets/TripleOscillator/ElectricOboe.xpf
 %%DATADIR%%/presets/TripleOscillator/Erazzor.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat-FMish-Bells.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat-TB303-Arp.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat.xpf
 %%DATADIR%%/presets/TripleOscillator/FatCheese.xpf
+%%DATADIR%%/presets/TripleOscillator/FatPMArp.xpf
+%%DATADIR%%/presets/TripleOscillator/FatTB303Arp.xpf
 %%DATADIR%%/presets/TripleOscillator/Freaky-Bass.xpf
 %%DATADIR%%/presets/TripleOscillator/FutureBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Gong.xpf
+%%DATADIR%%/presets/TripleOscillator/FuzzyAnalogBass.xpf
+%%DATADIR%%/presets/TripleOscillator/Garfunkel.xpf
+%%DATADIR%%/presets/TripleOscillator/GhostBoy.xpf
 %%DATADIR%%/presets/TripleOscillator/Harmonium.xpf
 %%DATADIR%%/presets/TripleOscillator/Harp-of-a-Fairy.xpf
-%%DATADIR%%/presets/TripleOscillator/Harpsichord.xpf
 %%DATADIR%%/presets/TripleOscillator/HiPad.xpf
+%%DATADIR%%/presets/TripleOscillator/HugeGrittyBass.xpf
 %%DATADIR%%/presets/TripleOscillator/Jupiter.xpf
-%%DATADIR%%/presets/TripleOscillator/Kick.xpf
-%%DATADIR%%/presets/TripleOscillator/Kick2.xpf
 %%DATADIR%%/presets/TripleOscillator/LFO-party.xpf
 %%DATADIR%%/presets/TripleOscillator/LovelyDream.xpf
 %%DATADIR%%/presets/TripleOscillator/MoogArpeggio.xpf
 %%DATADIR%%/presets/TripleOscillator/MoveYourBody.xpf
 %%DATADIR%%/presets/TripleOscillator/OldComputerGames.xpf
+%%DATADIR%%/presets/TripleOscillator/PM-FMstring.xpf
+%%DATADIR%%/presets/TripleOscillator/PMFMFTWbass.xpf
+%%DATADIR%%/presets/TripleOscillator/PMbass.xpf
+%%DATADIR%%/presets/TripleOscillator/PercussiveBass.xpf
 %%DATADIR%%/presets/TripleOscillator/Play-some-rock.xpf
 %%DATADIR%%/presets/TripleOscillator/PluckArpeggio.xpf
-%%DATADIR%%/presets/TripleOscillator/Plucked.xpf
+%%DATADIR%%/presets/TripleOscillator/PluckBass.xpf
 %%DATADIR%%/presets/TripleOscillator/PowerStrings.xpf
 %%DATADIR%%/presets/TripleOscillator/RaveBass.xpf
 %%DATADIR%%/presets/TripleOscillator/Ravemania.xpf
 %%DATADIR%%/presets/TripleOscillator/ResoBass.xpf
 %%DATADIR%%/presets/TripleOscillator/ResonantPad.xpf
-%%DATADIR%%/presets/TripleOscillator/RockOrgan.xpf
 %%DATADIR%%/presets/TripleOscillator/Rough!.xpf
-%%DATADIR%%/presets/TripleOscillator/SBass.xpf
-%%DATADIR%%/presets/TripleOscillator/SBass2.xpf
 %%DATADIR%%/presets/TripleOscillator/SEGuitar.xpf
-%%DATADIR%%/presets/TripleOscillator/SawLead.xpf
 %%DATADIR%%/presets/TripleOscillator/SawReso.xpf
-%%DATADIR%%/presets/TripleOscillator/Short1.xpf
-%%DATADIR%%/presets/TripleOscillator/Short2.xpf
-%%DATADIR%%/presets/TripleOscillator/Short3.xpf
-%%DATADIR%%/presets/TripleOscillator/Short4.xpf
-%%DATADIR%%/presets/TripleOscillator/Snare.xpf
-%%DATADIR%%/presets/TripleOscillator/SoftBass.xpf
-%%DATADIR%%/presets/TripleOscillator/SoftStrings.xpf
 %%DATADIR%%/presets/TripleOscillator/SpaceBass.xpf
 %%DATADIR%%/presets/TripleOscillator/Square.xpf
+%%DATADIR%%/presets/TripleOscillator/SquarePing.xpf
+%%DATADIR%%/presets/TripleOscillator/SuperSawLead.xpf
 %%DATADIR%%/presets/TripleOscillator/Supernova.xpf
-%%DATADIR%%/presets/TripleOscillator/TB303-Arpeggio.xpf
 %%DATADIR%%/presets/TripleOscillator/TB303.xpf
+%%DATADIR%%/presets/TripleOscillator/TINTNpad.xpf
 %%DATADIR%%/presets/TripleOscillator/TheFirstOne.xpf
 %%DATADIR%%/presets/TripleOscillator/TheMaster.xpf
 %%DATADIR%%/presets/TripleOscillator/TranceLead.xpf
@@ -326,6 +403,9 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/TripleOscillator/Xylophon.xpf
 %%DATADIR%%/presets/Vibed/Harpsichord.xpf
 %%DATADIR%%/presets/Vibed/SadPad.xpf
+%%DATADIR%%/presets/Watsyn/Epic_lead.xpf
+%%DATADIR%%/presets/Watsyn/Phase_bass.xpf
+%%DATADIR%%/presets/Watsyn/Pulse.xpf
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0001-Arpeggio1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0002-Arpeggio2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0003-Arpeggio3.xiz
@@ -349,6 +429,8 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0065-Hyper Organ1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0066-Hyper Arpeggio.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0068-Glass Arpeggio.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0068-Glass Arpeggio1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0069-Glass Arpeggio2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Bass/0001-Bass 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Bass/0002-Bass 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Bass/0003-Bass 3 _analog_.xiz
@@ -375,6 +457,8 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0036-Analog Brass 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0065-Simple Brass.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0066-Fat Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0067-Brass Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0068-Brass Pad2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0001-AHH Choir 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0002-AHH Choir 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0003-EHH Choir 1.xiz
@@ -398,115 +482,324 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0069-Vocal Morph 5.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0070-Vocal Morph 6.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0071-Vocal Morph 7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0001-Xylophone.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0002-Vibraphone.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0003-Soft Vibes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0004-Simple Chimes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0005-Silver Bell.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0008-Ethereal.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0010-Trem Lead.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0012-Trem Synth Piano 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0015-Simple Square.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0016-Full Square.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0018-Steel Wire.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0020-Fantasia.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0021-Soft.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0028-Echo Bubbles.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0029-Full Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0030-Slow Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0032-Pizzicato Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0033-Trem Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0034-Warm Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0035-Hard Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0036-Bright Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0037-Multi Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0038-Slow Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0039-Medium Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0040-Hard Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0041-Voiced Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0042-Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0043-Sweep Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0044-Wipe Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0045-Hard Stereo Sweep Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0046-Master Synth Low.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0047-Master Synth High.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0048-Sharp Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0050-Fretless Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0051-Decay Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0052-Steel Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0053-Synth Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0057-Sub Delay.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0058-Reed Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0059-Soft Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0060-Thin Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0061-Great Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0062-Hammond Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0064-Sines.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0067-Soft Flute.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0068-Warm Flute.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0071-Ocarina.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0073-Variable Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0075-Smooth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0077-Whistle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0078-Ghost Whistle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0079-Ice Field.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0080-Hollow Ice Field.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0081-Beyond.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0083-Sweep Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0084-Breathy Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0085-Bottle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0086-ReedBank.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0087-Sweep Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0088-Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0089-Medium Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0090-Bright Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0091-Bright Rush Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0092-Bright Rush Long Tail.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0093-Voyager.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0094-Soft Voyager.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0095-Soft Voyager Reverse.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0096-Echo Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0097-Sharp.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0098-Sharp and Deep.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0099-Sharp Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0100-Far Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0102-Bassoon.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0103-Clarinet.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0106-Aooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0107-Daooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0108-Yaooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0109-Yiee.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0110-Eeoow.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0112-Overdrive.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0113-Overdrive 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0114-Overdrive 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0116-Power Guitar 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0117-Power Guitar 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0120-Wet Brass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0123-Prophesy.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0125-Pan Pipe 32.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0126-Pan Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0127-Pan Pipe 96.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0131-Lite Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0132-Trem Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0133-Smooth Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0134-Nylon Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0139-Home Piano.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0140-Moonlight Piano.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0141-Soft Piano1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0142-Soft Piano2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0143-Space Piano.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0146-Space Voice.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0147-Space Voice 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0149-Soft Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0150-Full Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0151-Soft Ahh.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0152-Breathy Ahh.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0155-Super Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0156-Hyper Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0157-Hyper Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0158-Extreme.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0160-Wind and Surf.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0001-Xylophone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0002-Vibraphone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0003-Soft Vibes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0004-Simple Chimes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0005-Silver Bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0006-Soft Hammer.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0007-Ethereal.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0008-Metal Drips.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0009-Trem Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0010-Trem Synth Piano 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0011-Trem Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0012-Simple Square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0013-Full Square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0014-Super Square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0015-Steel Wire.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0016-Echo Bubbles.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0017-Fantasia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0018-Sub Delay.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0019-Soft.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0020-Ultra Soft.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0021-Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0022-Wipe Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0023-Ghost Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0024-Full Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0025-Slow Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0026-Pizzicato Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0027-Sweep Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0028-Warm Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0029-Hard Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0030-Bright Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0031-Multi Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0032-Slow Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0033-Medium Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0034-Hard Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0035-Voiced Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0036-Sweep Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0037-Stereo Sweep Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0038-Wipe Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0039-Hard Stereo Sweep Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0040-Master Synth Low.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0041-Master Synth High.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0042-Sharp Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0043-Fretless Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0044-Decay Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0045-Steel Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0046-Synth Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0047-Distorted Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0048-Variable Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0049-Reed Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0050-Soft Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0051-Thin Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0052-Great Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0053-64ft Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0054-Hammond Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0055-Percussion Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0056-Sines.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0057-Soft Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0058-Warm Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0059-Ocarina.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0060-Beyond.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0061-Sweep Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0062-Sweep Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0063-Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0064-Slow Deep Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0065-Ice Field.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0066-Hollow Ice Field.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0067-Smooth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0068-Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0069-Medium Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0070-Bright Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0071-Bright Rush Long Tail.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0072-Extended Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0073-Bright Rush Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0074-Sweep Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0075-Breathy Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0076-ReedBank.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0077-Voyager.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0078-Soft Voyager.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0079-Soft Voyager Reverse.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0080-Echo Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0081-Sharp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0082-Sharp and Warm.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0083-Sharp and Deep.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0084-Sharp Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0085-Far Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0086-Clarinet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0087-Bassoon.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0088-Aooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0089-Daooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0090-Yaooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0091-Yiee.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0092-Eeoow.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0093-Overdrive.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0094-Overdrive 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0095-Overdrive 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0096-Power Guitar 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0097-Power Guitar 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0098-Wet Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0099-Wet Brass 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0100-Prophesy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0101-Bottle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0102-Pan Pipe 32.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0103-Pan Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0104-Pan Pipe 96.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0105-Lite Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0106-Trem Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0107-Smooth Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0108-Nylon Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0109-Tunnel Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0110-Home Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0111-Moonlight Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0112-Soft Piano1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0113-Soft Piano2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0114-Space Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0115-Space Voice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0116-Far Space Voice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0117-Space Voice 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0118-Soft Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0119-Full Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0120-Soft Ahh.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0121-Breathy Ahh.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0122-Another Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0123-Light Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0124-Super Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0125-Hyper Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0126-Hyper Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0127-Extreme.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collection/0128-Wind and Surf.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0004-Muffled Bells.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0006-Tinkle Bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0010-Metal Sweep.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0011-Slow Steel.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0013-Bright Metal.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0016-Soft Metal.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0019-Warm Square Swell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0021-Bubbles.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0024-Solo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0025-Wind Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0038-Smooth Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0041-Buzz.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0045-Bite.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0055-Thick Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0057-Ultra Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0060-Stopped Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0074-Smooth Expanded.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0092-Wind Pipes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0106-Harpsichord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0107-Cathedral Harp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0108-Angel Harp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0116-Soprano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Companion/0119-Ghost Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0002-Sparo_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0003-Laser_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0005-Elettrico.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0006-Ronzio_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0007-Ronzio_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0008-Ronzio_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0010-Interferenze.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0012-Passa_astronave.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0013-Passa_asteroide.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0015-Nave.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0017-Strano_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0018-Strano_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0020-Acqua.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0021-Asteroide.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0024-tastiera.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0026-beepA.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0027-beepB.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0028-beepC.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0033-buao.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0034-creepy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0036-Trillo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0037-Trillo1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0038-Trillo2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0039-Trillo5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0041-Scherzo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0043-Grave.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0045-Fischia_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0046-Fischia_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0047-Fischia_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0049-Resonance Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0050-Resonance Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0052-ImpossibleDream1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0053-ImpossibleDream4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0054-Delayed Echo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0057-Glass_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0059-Tremulo_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Noise/0061-Campane.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0001-Bassoon.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0002-Bassoon2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0003-Bassoon3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0004-Volo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0006-Arpeggio_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0007-Arpeggio_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0008-Arpeggio_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0009-Glass Arpeggio2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0011-abracadabra.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0012-Ghost Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0013-Spazio1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0014-Spazio2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0015-Space Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0016-SpaceAtmo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0017-friendly sines.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0019-Acquoso_1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0020-Acquoso_5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0021-Acquoso_6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0023-Fagotto_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0024-Fagotto_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0025-Fagotto_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0027-Delicato_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0028-Delicato_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0029-Delicato_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0031-Wah_dolce_1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0032-Wah_dolce_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0033-Long Space Choir 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0034-Choir Pad4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0035-Ancient_Echos.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0036-Campane.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0037-Chorus.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0038-HellVoice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0039-Chorus2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0041-DarkNight.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0042-LightDawn.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0043-Fiiuu.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0045-Spazio_profondo1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0046-Spazio_Profondo2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0047-Spazio_Profondo3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0049-DolcePiano_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0050-DolcePiano_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0051-DolcePiano_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0053-Ding_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0054-Ding_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0056-Senza_tempo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0057-Senza_tempo_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0058-Senza_tempo_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0059-Senza_tempo_4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0060-Senza_tempo_5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0062-Sospirato_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0063-Sospirato_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0064-Sospirato_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0065-Synth_piano_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0066-Synth_Piano_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0068-Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0069-Pianola.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0070-clavicembalo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0072-Zufolo_1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0073-Zufolo_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0074-Zufolo_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0075-Zufolo_4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0076-Pinkollo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0078-Tremulo_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0079-Tremulo_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0081-Organetto_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0082-Organetto_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0084-Organo_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0085-Organo_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0086-Organo_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0087-Harp 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0088-Harp4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0090-Dolcino_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0091-Dolcino_02.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0092-Dolcino_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0093-Dolcino_04.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0095-Accordian.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0096-padNice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0097-k.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0098-z.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0099-a.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0100-Steel Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0101-Sweet_Night.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0102-Sweet_Night_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0103-Gocce.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0104-Ice Rhodes2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0105-Voluttuoso.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0106-Entropia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0108-Arcano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0109-Arcano2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0110-Arcano3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0112-Glass_01.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0113-Glass_02a.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0114-Glass_02b.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0115-Glass_03.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0116-Glass_04.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0119-Arcadia_1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0120-Arcadia_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0121-Arcadia_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0122-Arcadia_4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0124-Armonica.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0125-Fanfara.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0126-Polvere.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0127-Comb Filter.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0128-Synth Pad 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0129-Bello.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0130-abbellimento.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0131-Carino.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0132-Cigno.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0133-fluido.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0136-Romantico.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0137-Romantico2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0138-romanticone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0139-Emptyness3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0140-Foglie.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0142-Solitudine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0144-Inquietudine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0145-c.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0146-Ancestrale.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0147-Attesa.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0148-vento.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0149-pioggia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0150-nebbia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0151-Memory.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0152-Memory2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0153-Memory3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0155-contorno.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0156-fantasia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0157-nostalgia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0158-patetico.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Cormi_Sound/0159-Destino.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Drums/0001-Drums Kit1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Dual/0001-Layered1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Dual/0002-Layered2.xiz
@@ -550,10 +843,76 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Guitar/0034-Trash Guitar 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Guitar/0035-Short.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Guitar/0065-Clean Guitar1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0066-Electric Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0097-Space Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0001-SquareToSine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0002-GaussToSine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0003-MorphingOrgan.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0004-ThinLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0005-BrightLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0006-GenericLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0007-MorphingSuperSaw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0008-BrassyFlute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0009-GenericLead2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0027-ShortFlute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0028-PianoBell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0029-PianoHarp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0030-ScaredPulse.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0031-Twang2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0032-Twang1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0037-FatPatch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0038-FatPatchSimpler.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0039-FatPatchSimpler2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0046-NoisyGuitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0047-NoisyGuitar2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0048-NoisyGuitar3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0049-guitar-PowerChorder.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0050-SynGuitarAcoustic1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0051-SynGuitarAcoustic2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0052-SynGuitarAcoustic3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0054-DevilsFiddle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0055-DevilsFiddle2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0085-PanFluteSawPad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0086-BlownPiano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0087-ChoirPatch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0088-InfraSoundPad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0089-InfraSound2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0090-Pad-RingModSine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0091-FatPad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0092-VibratingPad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0097-AnalogBass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0098-DoublePadBass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0099-SharpBass1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0100-SharpBass4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0101-SharpBass5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0102-PluckedWithTailBassy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0103-PluckedAnalogBass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0108-NoisyPulseLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0109-NoisyPulseLead2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0110-wierdSchwoop.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0111-PoorAccordion.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0112-PoorTrumpet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0113-BassyChirp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0114-hoarseorgan.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0115-MysticlBells.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0129-chip-SlowSawStrings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0130-chip-SIDarpSoft.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0131-chip-SIDarpSharp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0132-chip-SIDarpSharp2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0133-chip-HarshSaw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0134-chip-VibratoLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0135-chip-VibratoLead2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0136-chip-PWM-VibratoLead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0137-chip-PolyDistorted.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0138-chip-PolyDistorted2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0146-PluckedWithVibTail.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0147-PluckedWithTail2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Laba170bank/0148-PluckedWithTail.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0001-Memories.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0002-Bells 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0003-Bells 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0004-Bells 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0005-Bells 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0006-SuperSaw 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0007-SuperSaw 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0008-SuperSaw 3.xiz
@@ -562,6 +921,13 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0033-Trash Synth 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0034-Trash Synth 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Misc/0035-Trash Synth 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0036-Trash Synth 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0065-SuperSaw 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0066-SuperSaw 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0067-SuperSaw 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0068-SuperSaw 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0069-SuperSaw 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0070-SuperSaw 6.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Noises/0001-Synth Effect.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Noises/0002-Ioioioioioi.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Noises/0003-Noise1.xiz
@@ -584,12 +950,14 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0009-Organ 9.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0010-Organ 10.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0011-Organ 11.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0012-Organ 12.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0033-Cathedral Organ1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0034-Cathedral Organ2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0035-Cathedral Organ3.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0037-Church Organ 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0038-Church Organ 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0039-Church Organ 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0040-Church Organ 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0041-Church Organ Soft.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0065-Nice Organ 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0066-Nice Organ 2.xiz
@@ -616,8 +984,10 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Pads/0034-Synth Pad 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Pads/0035-Synth Pad 3.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Pads/0036-Synth Pad 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0037-Synth Pad 5.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Pads/0065-Soft Pad.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Pads/0066-Flanged Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0097-Bell Pad.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0001-Plucked 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0002-Plucked 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0003-Plucked 3.xiz
@@ -627,6 +997,8 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0033-Plucked String1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0034-Plucked String2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Plucked/0036-Plucked Wah.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0065-Plucked Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/progressive-house-pluck.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0001-Flute 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0002-Flute 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0003-Flute 3.xiz
@@ -640,9 +1012,11 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0037-Reed 5.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0038-Reed 6.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0039-Reed 7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0040-Reed 8.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0065-Fat Reed1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0066-Fat Reed2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0067-Fat Reed3 square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0068-Chorused Flute.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0001-DX Rhodes 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0002-DX Rhodes 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0003-DX Rhodes 3.xiz
@@ -667,10 +1041,16 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0044-Echo Rhodes.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0045-A long time ago.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0065-Steel Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0067-RhodesPad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0068-RhodesPad2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Splited/0001-Strings and Reed1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Splited/0002-Strings and Reed2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Splited/0003-Strings and Flute.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Splited/0033-Choir and Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splitted/0001-Strings and Reed1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splitted/0002-Strings and Reed2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splitted/0003-Strings and Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splitted/0033-Choir and Reed.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0001-Saw Strings 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0002-Saw Strings 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0003-Saw Strings 3.xiz
@@ -679,9 +1059,15 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0006-Saw Strings 6.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0007-Saw Strings 7.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0008-Saw Strings 8.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0010-Strings Pad1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0011-Strings Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0011-Strings Pad2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0012-Strings Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0012-Strings Pad3.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0013-Strings Pad3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0013-Strings Pad4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0014-Strings Pad5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0015-Strings Pad6.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0016-Sweep Pad 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0017-Sweep Pad 1 Fat.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0018-Sweep Pad 2.xiz
@@ -704,11 +1090,15 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0051-Synth Violin 2 Fat.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0065-Simple Strings.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0066-Dual Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0067-Dual Strings Oct1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0067-Dual StringsOct.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0068-Dual Strings Oct2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0073-Morph Strings1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0001-Soft Synth 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0002-Soft Synth 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0004-Pulse Pad 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0005-Pulse Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0006-Pulse Pad 3.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0007-Analog Filter 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0008-Analog Filter 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0033-Phased Pad 1.xiz
@@ -717,7 +1107,10 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0037-Resonance Synth.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0039-Multi-phase synth.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0065-Computer Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0065-Computer Lead1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0066-Computer Lead2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0067-Detuned Harmonic.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0070-Solo Synth 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Synth/0097-FM Synth.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0001-Soft Piano 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0002-Soft Piano 2.xiz
@@ -735,6 +1128,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0037-FM Synth1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0039-BinaryPiano1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0040-BinaryPiano2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0043-Saw Piano 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0065-Synth Piano 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0066-Synth Piano 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0067-Synth Piano 3.xiz
@@ -742,31 +1136,259 @@ share/applications/lmms.desktop
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0069-Synth Piano 3 det.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0070-Synth Piano 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0071-Synth Piano 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0001-Folk Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0002-Bamboo Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0003-FM Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0004-Triple Osc Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0005-Soprano Double Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0006-FM Saxophone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0007-FM Saxophone 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0008-Concertina.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0009-FM Brass 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0010-FM Brass 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0011-FM Brass 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0013-Soft Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0014-Dist Jazz Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0015-Dist Jazz Guitar 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0016-Banjoey.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0017-Bass Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0018-Bass Guitar - Slap.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0019-FM Sitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0021-EP - Twangy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0022-EP - Muted.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0023-EP - Brighter.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0024-Far Out EP.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0025-Clavinoid.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0026-Harpsichord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0027-Toy Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0028-Mallets.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0029-Steel Drums.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0030-Balinese Chimes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0031-Muffled Chimes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0032-Drum Kit.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0033-Big Crunchy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0034-Big Flangey.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0035-Numanesque.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0036-240 Grit Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0037-320 Grit Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0038-Gentle Triangle Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0039-Sliding Squares Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0040-Pheasant Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0041-Plinker Bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0042-Low pH Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0043-Hovabotalilfanfeer.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0044-Muted Fanfare.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0045-Bink Bink Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0046-Bogus PWM Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0047-Dirty Vibrato Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0048-Wichita Whoop.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0049-Bitey Triangle Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0050-70s Triangle Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0051-Agro Odds Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0052-Soft Synth Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0054-Funky Reso Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0055-ssaB oseR yknuF.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0056-Creeky Reso Base.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0057-Synth Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0058-Basic Thick Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0059-Dirt Encrusted Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0060-Punch Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0061-Formant Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0065-Osiris Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0066-Phased Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0067-Growing Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0068-Vintage Sweep Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0069-Mellow Echo Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0070-Flanged Wind Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0071-Warble Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0072-Organz from Outta Space.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0073-Shimmer Swell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0074-80s Poly 5ths.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0075-Swell 5ths.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0076-Vastness 5ths.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0077-Celestial 5ths.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0078-Supersaw Snit.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0079-Subtle Supersaw Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0080-Jarre Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0081-Phased String Machine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0082-Tronic Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0083-Tronic Voices.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0084-Welcome to the 80s.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0085-Bright 80s Horn Stab.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0086-Star Voyage Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0087-Breathy Too.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0088-Outer Galaxy Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0090-Vintage Unison.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0091-Breezy Chord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0092-Airy Chord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0093-Chimey Chord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0094-Donk Donk Chord.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0097-Passing Comet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0098-Sweepy Noisy Pulses.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0099-Robot Overlords.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0100-Scrubbed Launch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0101-Alien Lawnmower.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0102-RacecaR.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0103-Electric Swell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0104-Classic FM Twang.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0105-Ominosity.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0106-Unpleasantly Drunk.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0107-Hammering Metal.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0108-Boiling Cauldron.xiz
+%%DATADIR%%/presets/ZynAddSubFX/olivers-100/0109-Crickets.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0001-strings_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0002-analog_strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0003-smooth_strings_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0004-trance_strings_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0005-mega_string.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0007-bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0008-bass2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0009-agressive_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0010-synth_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0011-synth_bass_fat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0013-supersaw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0014-supersaw_wihout_%%CMAKE_BUILD_TYPE%%.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0015-superpulse.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0016-sine_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0018-organ1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0020-pulse_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0021-rock_organ+distorsion.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0022-rock_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0023-space_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0024-space_organ2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0026-bell_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0027-inna_bell_like.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0029-hard_pulse.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0030-power_pulsions_lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0031-wah_sine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0032-.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0034-alert_!.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0035-alarm2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0036-glitch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0037-the_rain.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0038-the_starting_machine.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank/0039-thunder.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0001-analog strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0003-fingered_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0004-synth_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0005-synth_bass_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0006-synth_bass_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0007-synth_bass_4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0009-organ1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0010-organ2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0011-organ3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0012-church_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0014-synth_bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0015-rhodes1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0016-pseudo_steeldrums.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0017-musicbox.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0019-sine_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0020-sine_pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0021-power_dnb.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0022-fantasy_choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0023-heavy_metal_guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0024-synth_flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0026-kick.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0027-hithat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0028-snare.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0030-canyon_wind.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0031-etrange_sound.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0032-mega_alert.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0033-new_glitch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0034-radio.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0035-the_drunk_world.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0036-ufo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0037-ufo2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_2/0038-8_bit_car.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0001-soft_strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0002-sines_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0003-at_saturnus.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0004-echoes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0005-echoes2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0007-compad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0008-padding.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0009-res_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0010-supersaw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0011-portal2_lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0013-fantasy_bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0014-dreaming_bells.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0015-dreaming_bells_dnb.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0016-mega_bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0017-in_the_space.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0019-a_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0020-synth_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0021-synth_bass_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0022-synth_bass_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0023-dnb_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0024-fat_dnb_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0026-cool_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0027-cool_organ2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0029-new_arpeggio_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0030-from_new_arp3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0032-ufo_blues.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0033-ufo_funk.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0034-synth_guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0035-taped_instrument.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0037-computer.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0038-falling_stars.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_3/0039-real_glitch.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0001-res_strings_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0002-another_respad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0003-strings_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0004-strings_pad_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0005-synth_strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0007-from_another_space.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0008-from_another_galaxy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0009-from_another_planet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0010-unamed_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0011-arpeggio1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0013-metal_bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0014-bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0015-belly.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0016-sine_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0017-wil_aow_space.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0019-bass_pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0020-bass_pad_fat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0021-synth_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0022-synth_bass_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0023-hard_bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0024-pseudo_doublebass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0025-synth_bass_3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0027-funky_lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0028-daft_punk_lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0029-synth_guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0031-rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0032-rhodes_2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0033-80s_rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0035-organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0036-organ_not_distorted.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0037-old_organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/the_mysterious_bank_4/0039-jazz_guitar.xiz
 %%DATADIR%%/projects/CoolSongs/Alf42red-Mauiwowi.mmpz
-%%DATADIR%%/projects/CoolSongs/CapDan-TwilightArea-OriginalByAlf42red.mmpz
-%%DATADIR%%/projects/CoolSongs/CapDan-ZeroSumGame-OriginalByZakarra.mmpz
+%%DATADIR%%/projects/CoolSongs/CapDan/CapDan-TwilightArea-OriginalByAlf42red.mmpz
+%%DATADIR%%/projects/CoolSongs/CapDan/CapDan-ZeroSumGame-OriginalByZakarra.mmpz
 %%DATADIR%%/projects/CoolSongs/Farbro-Tectonic.mmpz
+%%DATADIR%%/projects/CoolSongs/Greippi-ardudar.mmpz
 %%DATADIR%%/projects/CoolSongs/Impulslogik-Zen.mmpz
 %%DATADIR%%/projects/CoolSongs/Momo64-esp.mmpz
 %%DATADIR%%/projects/CoolSongs/Namitryus-K-Project.mmpz
 %%DATADIR%%/projects/CoolSongs/Oglsdl-Dr8v2.mmpz
+%%DATADIR%%/projects/CoolSongs/Popsip-Electric Dancer.mmpz
 %%DATADIR%%/projects/CoolSongs/Root84-Initialize.mmpz
 %%DATADIR%%/projects/CoolSongs/Saber-FinalStep.mmpz
 %%DATADIR%%/projects/CoolSongs/Settel-InnerRecreation.mmpz
-%%DATADIR%%/projects/CoolSongs/Skiessi-Onion.mmpz
-%%DATADIR%%/projects/CoolSongs/Skiessi-TurningPoint.mmpz
+%%DATADIR%%/projects/CoolSongs/Skiessi/Skiessi-Onion.mmpz
+%%DATADIR%%/projects/CoolSongs/Skiessi/Skiessi-RandomProjectNumber14253.mmpz
+%%DATADIR%%/projects/CoolSongs/Skiessi/Skiessi-TurningPoint.mmpz
 %%DATADIR%%/projects/CoolSongs/Socceroos-Progress.mmpz
 %%DATADIR%%/projects/CoolSongs/StrictProduction-DearJonDoe.mmp
 %%DATADIR%%/projects/CoolSongs/TameAnderson-MakeMe.mmpz
 %%DATADIR%%/projects/CoolSongs/Thaledric-Armageddon.mmpz
-%%DATADIR%%/projects/CoolSongs/Zakarra-59_Degrees.mmpz
-%%DATADIR%%/projects/CoolSongs/Zakarra-MainstreamMemory.mmpz
-%%DATADIR%%/projects/CoolSongs/Zakarra-OneDay.mmpz
-%%DATADIR%%/projects/Covers/CapDan-Infinity2010.mmpz
-%%DATADIR%%/projects/Covers/Edo98-FinalCountdown.mmpz
-%%DATADIR%%/projects/Covers/MichaelKuhn-Mondscheinsonate.mmpz
-%%DATADIR%%/projects/Covers/Momo64-Jeeg.mmpz
-%%DATADIR%%/projects/Covers/Thaledric-AwayFromBoobaloo.mmpz
+%%DATADIR%%/projects/CoolSongs/TobyDox-Psycho.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra/Zakarra-59_Degrees.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra/Zakarra-MainstreamMemory.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra/Zakarra-OneDay.mmpz
+%%DATADIR%%/projects/CoolSongs/unfa-Spoken.mmpz
 %%DATADIR%%/projects/Demos/AngryLlama-NewFangled.mmpz
 %%DATADIR%%/projects/Demos/Ashore.mmpz
 %%DATADIR%%/projects/Demos/CapDan-ReggaeTry.mmpz
@@ -774,18 +1396,9 @@ share/applications/lmms.desktop
 %%DATADIR%%/projects/Demos/DnB.mmpz
 %%DATADIR%%/projects/Demos/EsoXLB-CPU.mmpz
 %%DATADIR%%/projects/Demos/Oglsdl-PpTrip.mmpz
+%%DATADIR%%/projects/Demos/Shovon-ProgressiveHousePluckDemo.mmpz
 %%DATADIR%%/projects/Demos/Skiessi-C64.mmpz
 %%DATADIR%%/projects/Demos/Thomasso-AxeFromThe80s.mmpz
-%%DATADIR%%/projects/OldStuff/BlueWolf-DreamTravel.mmp
-%%DATADIR%%/projects/OldStuff/Chris-HorizonRemix.mmp
-%%DATADIR%%/projects/OldStuff/Malex-Horizon4.mmp
-%%DATADIR%%/projects/OldStuff/MysthR-Living.mmpz
-%%DATADIR%%/projects/OldStuff/Siegel-DreamWave.mmp
-%%DATADIR%%/projects/OldStuff/Siegel-SpeedTrack.mmp
-%%DATADIR%%/projects/OldStuff/Silva-ElvesCall.mmp
-%%DATADIR%%/projects/OldStuff/Skiessi-RandomProjectNumber14253.mmpz
-%%DATADIR%%/projects/OldStuff/TobyDox-Confused.mmp
-%%DATADIR%%/projects/OldStuff/TobyDox-Psycho.mmp
 %%DATADIR%%/projects/Shorties/Crunk(Demo).mmp
 %%DATADIR%%/projects/Shorties/Greshz-CoolSnip.mmpz
 %%DATADIR%%/projects/Shorties/Root84-TrancyLoop.mmpz
@@ -793,6 +1406,10 @@ share/applications/lmms.desktop
 %%DATADIR%%/projects/Shorties/Surrender-Main.mmpz
 %%DATADIR%%/projects/Shorties/sv-DnB-Startup.mmpz
 %%DATADIR%%/projects/Shorties/sv-Trance-Startup.mmpz
+%%DATADIR%%/projects/templates/AcousticDrumset.mpt
+%%DATADIR%%/projects/templates/CR8000.mpt
+%%DATADIR%%/projects/templates/ClubMix.mpt
+%%DATADIR%%/projects/templates/TR808.mpt
 %%DATADIR%%/projects/tutorials/editing_note_volumes.mmp
 %%DATADIR%%/samples/basses/bass01.ogg
 %%DATADIR%%/samples/basses/bass_acid01.ogg
@@ -1764,12 +2381,45 @@ share/applications/lmms.desktop
 %%DATADIR%%/samples/stringsnpads/space_strings02.ogg
 %%DATADIR%%/samples/stringsnpads/space_strings03.ogg
 %%DATADIR%%/samples/stringsnpads/strings01.ogg
+%%DATADIR%%/samples/waveforms/10saw.flac
+%%DATADIR%%/samples/waveforms/10sine.flac
+%%DATADIR%%/samples/waveforms/10sqr.flac
+%%DATADIR%%/samples/waveforms/10tri.flac
+%%DATADIR%%/samples/waveforms/analogsqr.flac
+%%DATADIR%%/samples/waveforms/fmsaw1.flac
+%%DATADIR%%/samples/waveforms/fmsine.flac
+%%DATADIR%%/samples/waveforms/fmsine2.flac
+%%DATADIR%%/samples/waveforms/halfsine.flac
+%%DATADIR%%/samples/waveforms/impulse.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_quarter.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_sawdecay_quarter.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_sinedecay_quarter.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_triplet_half.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_triplet_half_2.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_triplet_quarter.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_whole.flac
+%%DATADIR%%/samples/waveforms/lfo_trancegate_whole_2.flac
+%%DATADIR%%/samples/waveforms/modsqr.flac
+%%DATADIR%%/samples/waveforms/saw1.flac
+%%DATADIR%%/samples/waveforms/saw2.flac
+%%DATADIR%%/samples/waveforms/sinesaw.flac
+%%DATADIR%%/samples/waveforms/w2_addsyn.flac
+%%DATADIR%%/samples/waveforms/w2_angrysaw.flac
+%%DATADIR%%/samples/waveforms/w2_hexagon.flac
+%%DATADIR%%/samples/waveforms/w2_invsine.flac
+%%DATADIR%%/samples/waveforms/w2_invsineabs.flac
+%%DATADIR%%/samples/waveforms/w2_invsinehalf.flac
+%%DATADIR%%/samples/waveforms/w2_noisy.flac
+%%DATADIR%%/samples/waveforms/w2_rad.flac
+%%DATADIR%%/samples/waveforms/w2_sawsine.flac
+%%DATADIR%%/samples/waveforms/w2_sharp.flac
+%%DATADIR%%/samples/waveforms/w2_w-wave.flac
 %%DATADIR%%/themes/default/add.png
 %%DATADIR%%/themes/default/add_automation.png
 %%DATADIR%%/themes/default/add_bb_track.png
-%%DATADIR%%/themes/default/add_controller.png
 %%DATADIR%%/themes/default/add_sample_track.png
 %%DATADIR%%/themes/default/analysis.png
+%%DATADIR%%/themes/default/apply-selected.png
 %%DATADIR%%/themes/default/apply.png
 %%DATADIR%%/themes/default/arp_down.png
 %%DATADIR%%/themes/default/arp_free.png
@@ -1786,6 +2436,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/back_to_zero.png
 %%DATADIR%%/themes/default/background_artwork.png
 %%DATADIR%%/themes/default/bb_track.png
+%%DATADIR%%/themes/default/bb_track_btn.png
 %%DATADIR%%/themes/default/black_key.png
 %%DATADIR%%/themes/default/black_key_pressed.png
 %%DATADIR%%/themes/default/cancel.png
@@ -1846,6 +2497,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/knob02.png
 %%DATADIR%%/themes/default/knob03.png
 %%DATADIR%%/themes/default/knob04.png
+%%DATADIR%%/themes/default/knob05.png
 %%DATADIR%%/themes/default/lcd_19green.png
 %%DATADIR%%/themes/default/lcd_19red.png
 %%DATADIR%%/themes/default/lcd_21pink.png
@@ -1861,16 +2513,21 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/lfo_x100_inactive.png
 %%DATADIR%%/themes/default/lfo_x1_active.png
 %%DATADIR%%/themes/default/lfo_x1_inactive.png
-%%DATADIR%%/themes/default/loop_point.png
+%%DATADIR%%/themes/default/loop_point_b.png
+%%DATADIR%%/themes/default/loop_point_e.png
 %%DATADIR%%/themes/default/loop_points_off.png
 %%DATADIR%%/themes/default/loop_points_on.png
+%%DATADIR%%/themes/default/main_slider.png
 %%DATADIR%%/themes/default/main_toolbar_bg.png
 %%DATADIR%%/themes/default/master_pitch.png
 %%DATADIR%%/themes/default/master_volume.png
 %%DATADIR%%/themes/default/midi_file.png
+%%DATADIR%%/themes/default/mixer_send_off.png
+%%DATADIR%%/themes/default/mixer_send_on.png
 %%DATADIR%%/themes/default/moog_saw_wave_active.png
 %%DATADIR%%/themes/default/moog_saw_wave_inactive.png
 %%DATADIR%%/themes/default/muted.png
+%%DATADIR%%/themes/default/new_channel.png
 %%DATADIR%%/themes/default/note.png
 %%DATADIR%%/themes/default/note_double_whole.png
 %%DATADIR%%/themes/default/note_eighth.png
@@ -1886,6 +2543,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/note_tripletthirtysecond.png
 %%DATADIR%%/themes/default/note_whole.png
 %%DATADIR%%/themes/default/output_graph.png
+%%DATADIR%%/themes/default/pat_rec.png
 %%DATADIR%%/themes/default/pause.png
 %%DATADIR%%/themes/default/piano.png
 %%DATADIR%%/themes/default/play.png
@@ -1899,6 +2557,9 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/pr_white_key_small.png
 %%DATADIR%%/themes/default/pr_white_key_small_pressed.png
 %%DATADIR%%/themes/default/preset_file.png
+%%DATADIR%%/themes/default/progression_cubic_hermite.png
+%%DATADIR%%/themes/default/progression_discrete.png
+%%DATADIR%%/themes/default/progression_linear.png
 %%DATADIR%%/themes/default/project_export.png
 %%DATADIR%%/themes/default/project_file.png
 %%DATADIR%%/themes/default/project_import.png
@@ -1911,6 +2572,9 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/project_save.png
 %%DATADIR%%/themes/default/project_saveas.png
 %%DATADIR%%/themes/default/quantize.png
+%%DATADIR%%/themes/default/random_wave_active.png
+%%DATADIR%%/themes/default/random_wave_inactive.png
+%%DATADIR%%/themes/default/receive_bg_arrow.png
 %%DATADIR%%/themes/default/record.png
 %%DATADIR%%/themes/default/record_accompany.png
 %%DATADIR%%/themes/default/reload.png
@@ -1920,7 +2584,16 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/sample_track.png
 %%DATADIR%%/themes/default/saw_wave_active.png
 %%DATADIR%%/themes/default/saw_wave_inactive.png
+%%DATADIR%%/themes/default/sbarrow_down.png
+%%DATADIR%%/themes/default/sbarrow_down_d.png
+%%DATADIR%%/themes/default/sbarrow_left.png
+%%DATADIR%%/themes/default/sbarrow_left_d.png
+%%DATADIR%%/themes/default/sbarrow_right.png
+%%DATADIR%%/themes/default/sbarrow_right_d.png
+%%DATADIR%%/themes/default/sbarrow_up.png
+%%DATADIR%%/themes/default/sbarrow_up_d.png
 %%DATADIR%%/themes/default/scale.png
+%%DATADIR%%/themes/default/send_bg_arrow.png
 %%DATADIR%%/themes/default/setup_audio.png
 %%DATADIR%%/themes/default/setup_directories.png
 %%DATADIR%%/themes/default/setup_general.png
@@ -1929,6 +2602,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/sin_wave_active.png
 %%DATADIR%%/themes/default/sin_wave_inactive.png
 %%DATADIR%%/themes/default/songeditor.png
+%%DATADIR%%/themes/default/soundfont_file.png
 %%DATADIR%%/themes/default/splash.png
 %%DATADIR%%/themes/default/square_wave_active.png
 %%DATADIR%%/themes/default/square_wave_inactive.png
@@ -1961,6 +2635,10 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/toolbar_bg.png
 %%DATADIR%%/themes/default/track_op_grip.png
 %%DATADIR%%/themes/default/track_op_menu.png
+%%DATADIR%%/themes/default/track_op_menu_active.png
+%%DATADIR%%/themes/default/trackop.png
+%%DATADIR%%/themes/default/trackop_c.png
+%%DATADIR%%/themes/default/trackop_h.png
 %%DATADIR%%/themes/default/triangle_wave_active.png
 %%DATADIR%%/themes/default/triangle_wave_inactive.png
 %%DATADIR%%/themes/default/uhoh.png
@@ -1969,6 +2647,7 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/unknown_file.png
 %%DATADIR%%/themes/default/usr_wave_active.png
 %%DATADIR%%/themes/default/usr_wave_inactive.png
+%%DATADIR%%/themes/default/vst_plugin_file.png
 %%DATADIR%%/themes/default/whatsthis.png
 %%DATADIR%%/themes/default/white_key.png
 %%DATADIR%%/themes/default/white_key_pressed.png
@@ -1977,6 +2656,11 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/zoom.png
 %%DATADIR%%/themes/default/zoom_x.png
 %%DATADIR%%/themes/default/zoom_y.png
+%%DATADIR%%/wavetables/moog.%%QT_BINDIR%%
+%%DATADIR%%/wavetables/saw.%%QT_BINDIR%%
+%%DATADIR%%/wavetables/sqr.%%QT_BINDIR%%
+%%DATADIR%%/wavetables/tri.%%QT_BINDIR%%
+share/man/man1/lmms.1.gz
 share/menu/lmms
 share/mime/packages/lmms.xml
 share/pixmaps/lmms.png

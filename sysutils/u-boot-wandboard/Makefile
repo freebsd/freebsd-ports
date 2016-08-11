@@ -34,7 +34,7 @@ MAKE_ARGS+=	ARCH=arm \
 		HOSTCC=cc
 
 do-configure:
-	cd ${WRKSRC}; ${GMAKE} ${MAKE_ARGS} edm_cf_imx6_config
+	cd ${WRKSRC}; ${MAKE_CMD} ${MAKE_ARGS} edm_cf_imx6_config
 
 # The build results in two output files: SPL, and u-boot.img.
 # Combine them into a single u-boot.imx so that there is only one file to be
@@ -44,6 +44,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	dd bs=1k oseek=0  conv=sync of=${IMXFILE} if=${WRKSRC}/SPL
 	dd bs=1k oseek=68 conv=sync of=${IMXFILE} if=${WRKSRC}/u-boot.img
-	${CP} ${.CURDIR}/pkg-descr ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>

@@ -1,11 +1,12 @@
---- usr/sbin/pkcsslotd/pkcsslotd.h.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsslotd/pkcsslotd.h	2010-10-20 01:20:18.253984238 +0900
-@@ -353,7 +353,7 @@
- #include <nl_types.h>
+--- usr/sbin/pkcsslotd/pkcsslotd.h.orig	2016-04-29 17:26:46 UTC
++++ usr/sbin/pkcsslotd/pkcsslotd.h
+@@ -305,6 +305,9 @@
+ #ifndef _PKCSSLOTMGR_H
+ #define _PKCSSLOTMGR_H 1
  
- #include <sys/ipc.h>
--#include <linux/limits.h>
-+#include <limits.h>
- #include <sys/shm.h>
- #include <sys/stat.h>
- #include <sys/types.h>
++#include <sys/types.h>
++#include <sys/ipc.h>
++
+ /***********
+  * Defines *
+  ***********/

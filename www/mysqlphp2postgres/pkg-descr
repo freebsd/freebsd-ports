@@ -1,6 +1,6 @@
 MySQL PHP to PostgreSQL is a program that takes a php page that
 uses mysql calls and changes them into PostgreSQL calls.  This
-allows any website (if it converts properly :) that was written 
+allows any website (if it converts properly :) that was written
 in PHP for MySQL to run as a website written to run on PostgreSQL.
 
 WWW: http://mp2p.mikekohn.net/

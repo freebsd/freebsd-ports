@@ -1,6 +1,6 @@
---- rplayd/spool.c.orig	Thu Mar 11 06:14:38 1999
-+++ rplayd/spool.c	Wed Jun 21 23:20:13 2000
-@@ -1127,8 +1127,8 @@
+--- rplayd/spool.c.orig	1999-03-10 21:14:38 UTC
++++ rplayd/spool.c
+@@ -1127,8 +1127,8 @@ spool_update()
  				spool_flow_pause(sp);
  			    }
  			}

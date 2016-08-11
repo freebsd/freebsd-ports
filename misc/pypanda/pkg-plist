@@ -1,8 +1,0 @@
-bin/pypanda
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/camdown.jpg
-%%DATADIR%%/camrefresh.jpg
-%%DATADIR%%/pypanda.png
-%%DATADIR%%/pypanda.py
-%%DATADIR%%/pypanda.pyc
-%%DATADIR%%/pypanda.pyo

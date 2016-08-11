@@ -1,6 +1,6 @@
---- src/nvmath/nvmath.h.orig	2008-12-01 11:04:28.000000000 +0300
-+++ src/nvmath/nvmath.h	2009-03-06 22:38:28.000000000 +0300
-@@ -97,7 +97,7 @@
+--- src/nvmath/nvmath.h.orig	2010-05-15 09:12:05 UTC
++++ src/nvmath/nvmath.h
+@@ -115,7 +115,7 @@ inline bool isFinite(const float f)
  {
  #if NV_OS_WIN32
  	return _finite(f) != 0;
@@ -9,7 +9,7 @@
  	return isfinite(f);
  #elif NV_OS_LINUX
  	return finitef(f);
-@@ -112,7 +112,7 @@
+@@ -130,7 +130,7 @@ inline bool isNan(const float f)
  {
  #if NV_OS_WIN32
  	return _isnan(f) != 0;

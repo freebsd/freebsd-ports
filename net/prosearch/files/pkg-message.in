@@ -13,10 +13,10 @@ you may have to follow this steps to make it work correctly:
 # perl crawler.pl install
 7. Add alias in apache config for the prosearch web dir:
 Alias /search "%%PREFIX%%/%%SEARCHDIR%%/web"
-or 
+or
 # cp %%PREFIX%%/%%SEARCHDIR%%/tools/search.conf %%PREFIX%%/etc/apache22/Includes/
 # ee %%PREFIX%%/etc/apache22/Includes/search.conf
 8. scan your resources
-# perl crawler.pl 10.0.0.0/24 ftp://files.net 
+# perl crawler.pl 10.0.0.0/24 ftp://files.net
 9. enjoy: http://your.site/search/ or cd web && perl index.cgi q=test
 =======================================================================

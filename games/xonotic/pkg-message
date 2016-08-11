@@ -1,9 +1,9 @@
 --------------------
 
 Xonotic has now been installed. If you installed the server, you can
-configure it by running /usr/local/bin/xonotic-dedicated, which will 
-generate a .xonotic folder in the current user's home folder. Then, copy 
-/usr/local/share/xonotic/server/server.cfg to .xonotic/data/server.cfg. 
+configure it by running /usr/local/bin/xonotic-dedicated, which will
+generate a .xonotic folder in the current user's home folder. Then, copy
+/usr/local/share/xonotic/server/server.cfg to .xonotic/data/server.cfg.
 You may additionally be interested in copying help.cfg.
 
 ---------------------

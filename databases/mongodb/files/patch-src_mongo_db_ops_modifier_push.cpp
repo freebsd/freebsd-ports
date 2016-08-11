@@ -1,6 +1,6 @@
---- src/mongo/db/ops/modifier_push.cpp.orig	2014-05-15 15:24:21.650184430 +0000
-+++ src/mongo/db/ops/modifier_push.cpp	2014-05-15 15:25:51.014179801 +0000
-@@ -646,7 +646,7 @@
+--- src/mongo/db/ops/modifier_push.cpp.orig	2016-03-21 17:09:46.000000000 +0100
++++ src/mongo/db/ops/modifier_push.cpp	2016-05-02 12:44:35.408331153 +0200
+@@ -646,7 +646,7 @@ namespace mongo {
              }
  
              const int64_t numChildren = mutablebson::countChildren(_preparedState->elemFound);

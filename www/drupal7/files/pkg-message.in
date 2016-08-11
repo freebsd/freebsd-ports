@@ -37,6 +37,6 @@ configuration:
 - PHP "safe_mode" is set to "Off"
 - PHP "session.cache_limiter" is set to "nocache"
 
-For important information about upgrading from previous versions of Drupal, please 
+For important information about upgrading from previous versions of Drupal, please
 please see: %%DOCSDIR%%/UPGRADE.txt
 ################################################################################

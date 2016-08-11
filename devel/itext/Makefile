@@ -23,7 +23,8 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		tar:bzip2
+USES=		dos2unix tar:bzip2
+DOS2UNIX_GLOB=	*.java
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

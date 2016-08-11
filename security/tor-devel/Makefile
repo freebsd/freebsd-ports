@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.7.6
-PORTREVISION=	1
+DISTVERSION=	0.2.8.5-rc
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Anonymizing overlay network for TCP
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64=	Does not build
 
 USES=		cpe gmake
 CPE_VENDOR=	torproject

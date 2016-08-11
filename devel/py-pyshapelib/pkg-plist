@@ -1,9 +1,3 @@
-%%PYTHON_SITELIBDIR%%/dbflib.py
-%%PYTHON_SITELIBDIR%%/dbflib.pyc
-%%PYTHON_SITELIBDIR%%/dbflib.pyo
-%%PYTHON_SITELIBDIR%%/dbflibc.so
-%%PYTHON_SITELIBDIR%%/shapelib.py
-%%PYTHON_SITELIBDIR%%/shapelib.pyc
-%%PYTHON_SITELIBDIR%%/shapelib.pyo
-%%PYTHON_SITELIBDIR%%/shapelibc.so
+%%PYTHON_SITELIBDIR%%/dbflib.so
+%%PYTHON_SITELIBDIR%%/shapelib.so
 %%PYTHON_SITELIBDIR%%/shptree.so

@@ -1,5 +1,5 @@
-Algorithm::MinMax finds the minimum and maximum of a given 
-array with at most 3n/2 - 2 comparisons, where n is the 
+Algorithm::MinMax finds the minimum and maximum of a given
+array with at most 3n/2 - 2 comparisons, where n is the
 number of elements of the array.
 
 WWW: http://search.cpan.org/dist/Algorithm-MinMax/

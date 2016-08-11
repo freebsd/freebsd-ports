@@ -1,13 +1,16 @@
---- include/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- include/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ include/CMakeLists.txt
-@@ -68,11 +68,13 @@ SET(HEADERS 
+@@ -69,14 +69,13 @@ SET(HEADERS 
    ${HEADERS_GEN_CONFIGURE}
  )
  
-+IF(FALSE) 
- INSTALL(FILES ../libbinlogevents/export/binary_log_types.h DESTINATION ${INSTALL_INCLUDEDIR})
- INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
- INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development 
++IF(FALSE)
+ INSTALL(FILES
+   ../libbinlogevents/export/binary_log_types.h
+   DESTINATION ${INSTALL_INCLUDEDIR}
+-  COMPONENT Development)
+-INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
+-INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development 
   PATTERN "*.h"
   PATTERN "psi_abi*" EXCLUDE
  )

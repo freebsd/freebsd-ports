@@ -1,6 +1,6 @@
---- shuffle.c.orig	2015-07-30 06:53:22.145389293 +0800
-+++ shuffle.c	2015-07-30 06:54:51.465466007 +0800
-@@ -159,10 +159,7 @@
+--- shuffle.c.orig	2015-07-24 17:35:12 UTC
++++ shuffle.c
+@@ -159,10 +159,7 @@ struct zs_arg{
  	const unsigned int items;
  	const unsigned int group_items;
  	const unsigned int increment;
@@ -12,7 +12,7 @@
  	unsigned int count;
  	int slidemod;
  	char *query;
-@@ -260,7 +257,7 @@
+@@ -260,7 +257,7 @@ void zshuffle(unsigned int items){
  	struct candidate_data candlist;
  
  	srandom((unsigned int)time(NULL));

@@ -23,9 +23,9 @@ Patch #25 (Make devel packages coinstallable too)
 
 Index: CMakeLists.txt
 ===================================================================
---- CMakeLists.txt	(revision 250)
-+++ CMakeLists.txt	(working copy)
-@@ -10,10 +10,11 @@
+--- CMakeLists.txt.orig	2013-11-18 17:37:54 UTC
++++ CMakeLists.txt
+@@ -10,10 +10,11 @@ endif()
  
  if (Qt5Core_FOUND)
      set(QTCORE_LIBRARIES ${Qt5Core_LIBRARIES})
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
      include_directories(${Qt5Core_INCLUDE_DIRS})
  
      macro(qt_wrap_cpp)
-@@ -48,7 +49,9 @@
+@@ -48,7 +49,9 @@ SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_D
  
  set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)")
  set(LIB_DESTINATION "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE STRING "Library directory name" FORCE)
@@ -49,11 +49,9 @@ Index: CMakeLists.txt
  
 -install(FILES FindQuaZip.cmake DESTINATION ${CMAKE_ROOT}/Modules)
 +install(FILES FindQuaZip.cmake RENAME FindQuaZip${QUAZIP_LIB_VERSION_SUFFIX}.cmake DESTINATION ${CMAKE_ROOT}/Modules)
-Index: FindQuaZip.cmake
-===================================================================
---- FindQuaZip.cmake	(revision 250)
-+++ FindQuaZip.cmake	(working copy)
-@@ -9,14 +9,17 @@
+--- FindQuaZip.cmake.orig	2012-02-26 06:46:10 UTC
++++ FindQuaZip.cmake
+@@ -9,14 +9,17 @@ IF (QUAZIP_INCLUDE_DIRS AND QUAZIP_LIBRA
  	# in cache already
  	SET(QUAZIP_FOUND TRUE)
  ELSE (QUAZIP_INCLUDE_DIRS AND QUAZIP_LIBRARIES)
@@ -73,7 +71,7 @@ Index: FindQuaZip.cmake
  		FIND_PATH(QUAZIP_INCLUDE_DIR NAMES quazip.h HINTS ${QUAZIP_LIBRARY_DIR}/../ PATH_SUFFIXES include/quazip)
  		FIND_PATH(QUAZIP_ZLIB_INCLUDE_DIR NAMES zlib.h)
  	ELSE(WIN32)
-@@ -25,12 +28,12 @@
+@@ -25,12 +28,12 @@ ELSE (QUAZIP_INCLUDE_DIRS AND QUAZIP_LIB
  		pkg_check_modules(PC_QUAZIP quazip)
  		FIND_LIBRARY(QUAZIP_LIBRARIES
  			WIN32_DEBUG_POSTFIX d
@@ -88,11 +86,9 @@ Index: FindQuaZip.cmake
  		)
  		FIND_PATH(QUAZIP_ZLIB_INCLUDE_DIR zlib.h HINTS /usr/include /usr/local/include)
  	ENDIF (WIN32)
-Index: quazip/CMakeLists.txt
-===================================================================
---- quazip/CMakeLists.txt	(revision 250)
-+++ quazip/CMakeLists.txt	(working copy)
-@@ -14,10 +14,10 @@
+--- quazip/CMakeLists.txt.orig	2013-08-10 16:00:00 UTC
++++ quazip/CMakeLists.txt
+@@ -14,10 +14,10 @@ ADD_DEFINITIONS(-DQUAZIP_BUILD)
  qt_wrap_cpp(MOC_SRCS ${PUBLIC_HEADERS})
  set(SRCS ${SRCS} ${MOC_SRCS})
  

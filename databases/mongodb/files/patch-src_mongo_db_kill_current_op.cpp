@@ -1,6 +1,6 @@
---- src/mongo/db/kill_current_op.cpp.orig	2014-05-15 15:30:33.100157820 +0000
-+++ src/mongo/db/kill_current_op.cpp	2014-05-15 15:35:12.714138934 +0000
-@@ -152,7 +152,7 @@
+--- src/mongo/db/kill_current_op.cpp.orig	2016-03-21 17:09:46.000000000 +0100
++++ src/mongo/db/kill_current_op.cpp	2016-05-02 12:44:35.406331476 +0200
+@@ -152,7 +152,7 @@ namespace {
          }
  
          // Return true with (approx) probability p = "chance".  Recall: 0 <= chance <= 1.

@@ -1,6 +1,6 @@
---- src/calibre/library/server/content.py.orig	2015-02-20 03:34:13 UTC
+--- src/calibre/library/server/content.py.orig	2016-05-20 11:45:27 UTC
 +++ src/calibre/library/server/content.py
-@@ -111,6 +111,7 @@ class ContentServer(object):
+@@ -110,6 +110,7 @@ class ContentServer(object):
                       'png'  : 'image/png',
                       'gif'  : 'image/gif',
                       'html' : 'text/html',

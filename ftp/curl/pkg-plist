@@ -32,6 +32,7 @@ man/man3/CURLINFO_FTP_ENTRY_PATH.3.gz
 man/man3/CURLINFO_HEADER_SIZE.3.gz
 man/man3/CURLINFO_HTTPAUTH_AVAIL.3.gz
 man/man3/CURLINFO_HTTP_CONNECTCODE.3.gz
+man/man3/CURLINFO_HTTP_VERSION.3.gz
 man/man3/CURLINFO_LASTSOCKET.3.gz
 man/man3/CURLINFO_LOCAL_IP.3.gz
 man/man3/CURLINFO_LOCAL_PORT.3.gz
@@ -94,6 +95,7 @@ man/man3/CURLOPT_CLOSESOCKETFUNCTION.3.gz
 man/man3/CURLOPT_CONNECTTIMEOUT.3.gz
 man/man3/CURLOPT_CONNECTTIMEOUT_MS.3.gz
 man/man3/CURLOPT_CONNECT_ONLY.3.gz
+man/man3/CURLOPT_CONNECT_TO.3.gz
 man/man3/CURLOPT_CONV_FROM_NETWORK_FUNCTION.3.gz
 man/man3/CURLOPT_CONV_FROM_UTF8_FUNCTION.3.gz
 man/man3/CURLOPT_CONV_TO_NETWORK_FUNCTION.3.gz
@@ -269,6 +271,7 @@ man/man3/CURLOPT_STDERR.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS_E.3.gz
 man/man3/CURLOPT_STREAM_WEIGHT.3.gz
+man/man3/CURLOPT_TCP_FASTOPEN.3.gz
 man/man3/CURLOPT_TCP_KEEPALIVE.3.gz
 man/man3/CURLOPT_TCP_KEEPIDLE.3.gz
 man/man3/CURLOPT_TCP_KEEPINTVL.3.gz
@@ -335,6 +338,7 @@ man/man3/curl_multi_remove_handle.3.gz
 man/man3/curl_multi_setopt.3.gz
 man/man3/curl_multi_socket.3.gz
 man/man3/curl_multi_socket_action.3.gz
+man/man3/curl_multi_socket_all.3.gz
 man/man3/curl_multi_strerror.3.gz
 man/man3/curl_multi_timeout.3.gz
 man/man3/curl_multi_wait.3.gz

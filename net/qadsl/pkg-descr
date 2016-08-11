@@ -1,6 +1,6 @@
-qadsl (GNU Alive) is a small utility to login on the Telia AB ADSL service. 
-It also works fine with COMHEM Cable internet and Tiscali Internet services. 
-It features a keep-alive daemon with login/logout functions. The daemon 
-periodically connects to the ISP to ensure you are not logged out. 
+qadsl (GNU Alive) is a small utility to login on the Telia AB ADSL service.
+It also works fine with COMHEM Cable internet and Tiscali Internet services.
+It features a keep-alive daemon with login/logout functions. The daemon
+periodically connects to the ISP to ensure you are not logged out.
 
 WWW: http://www.gnu.org/software/alive/

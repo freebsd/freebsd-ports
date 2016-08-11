@@ -15,6 +15,6 @@ and for applications using SAT.
 - Designed for integration. MiniSat supports incremental SAT and has
 mechanisms for adding non-clausal constraints. By virtue of being easy to
 modify, it is a good choice for integrating as a backend to another tool, such
-as a model checker or a more generic constraint solver. 
+as a model checker or a more generic constraint solver.
 
 WWW: http://minisat.se/

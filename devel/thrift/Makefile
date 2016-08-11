@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ENV+=	${MAKE_ENV}
 
 # For C++ support, use devel/thrift-cpp

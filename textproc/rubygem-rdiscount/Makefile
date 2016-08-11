@@ -12,8 +12,7 @@ COMMENT=	Fast Markdown converter for ruby based on discount
 LICENSE=	BSD3CLAUSE
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/rdiscount
 

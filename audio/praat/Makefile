@@ -4,7 +4,7 @@
 PORTNAME=	praat
 PORTVERSION=	5.4.08
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio science
 
 MAINTAINER=	bacon4000@gmail.com
@@ -18,8 +18,6 @@ USES=		dos2unix iconv pkgconfig
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
-
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 
 .include <bsd.port.pre.mk>
 

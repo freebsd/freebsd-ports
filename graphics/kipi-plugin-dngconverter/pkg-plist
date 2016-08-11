@@ -1,5 +1,4 @@
 bin/dngconverter
-bin/dnginfo
 lib/kde4/kipiplugin_dngconverter.so
 share/applications/kde4/dngconverter.desktop
 share/apps/kipi/kipiplugin_dngconverterui.rc

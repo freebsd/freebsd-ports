@@ -1,6 +1,6 @@
---- daemon/Makefile.am.orig	2015-01-28 13:48:56.000000000 -0500
-+++ daemon/Makefile.am	2015-01-28 13:55:22.000000000 -0500
-@@ -65,6 +65,10 @@
+--- daemon/Makefile.am.orig	2016-04-15 23:08:45 UTC
++++ daemon/Makefile.am
+@@ -63,6 +63,10 @@ if LINUX
  wt_monitor_src = wt-monitor.c wt-monitor-linux.c wt-monitor-structs.c
  endif
  
@@ -11,13 +11,12 @@
  if WIN32
  wt_monitor_src = wt-monitor.c wt-monitor-win32.c wt-monitor-structs.c
  endif
-@@ -127,7 +131,8 @@
+@@ -126,6 +130,7 @@ seaf_daemon_LDADD = $(top_builddir)/lib/
  	@GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ \
  	$(top_builddir)/common/cdc/libcdc.la \
- 	$(top_builddir)/common/index/libindex.la ${LIB_WS32} \
--	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@
-+	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ \
-+	@CURL_LIBS@ @LIB_INOTIFY@
+ 	$(top_builddir)/common/index/libindex.la @LIB_WS32@ @LIB_CRYPT32@ \
+-	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@
++	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ \
++	@LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @LIB_INOTIFY@ @BPWRAPPER_LIBS@
  
  seaf_daemon_LDFLAGS = @STATIC_COMPILE@ @CONSOLE@
- 

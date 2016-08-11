@@ -1,2 +1,3 @@
-SHA256 (chicken-4.10.0.tar.gz) = 0e07f5abcd11961986950dbeaa5a40db415f8a1b65daff9c300e9b05b334899b
-SIZE (chicken-4.10.0.tar.gz) = 4020442
+TIMESTAMP = 1464444057
+SHA256 (chicken-4.11.0.tar.gz) = e3dc2b8f95b6a3cd59c85b5bb6bdb2bd9cefc45b5d536a20cad74e3c63f4ad89
+SIZE (chicken-4.11.0.tar.gz) = 4201815

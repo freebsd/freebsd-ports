@@ -1,6 +1,6 @@
---- rnmp3.c.orig	Fri Jul 18 18:00:43 2003
-+++ rnmp3.c	Fri Jul 18 18:02:36 2003
-@@ -256,25 +256,21 @@
+--- rnmp3.c.orig	2001-06-13 20:13:19 UTC
++++ rnmp3.c
+@@ -256,25 +256,21 @@ int main(int argc, char **argv)
  
  void usage()
  {

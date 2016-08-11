@@ -1,6 +1,6 @@
 Flrig is a transceiver control program designed to be used either stand alone
 or as an adjunct to fldigi.  The supported transceivers all have some degree
 of CAT.  The flrig user interface changes to accommodate the degree of CAT
-support available for the transceiver in use. 
+support available for the transceiver in use.
 
 WWW: http://www.w1hkj.com/flrig-help/index.html

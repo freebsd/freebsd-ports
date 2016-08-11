@@ -12,10 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 PLIST_FILES=	include/xxl.h lib/libxxl.a lib/libxxl.so \
 		lib/libxxl.so.1 lib/libxxl.so.1.1.0
@@ -27,12 +29,10 @@ OPTIONS_DEFAULT=THREADS
 THREADS_CONFIGURE_WITH=	threads
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxxl.so
 
-regression-test test: build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} check)
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

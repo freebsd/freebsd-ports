@@ -1,7 +1,7 @@
 File::Type uses magic numbers (typically at the start of a file) to determine
 the MIME type of that file.
 
-File::Type can use either a filename, or file contents, to determine the type 
+File::Type can use either a filename, or file contents, to determine the type
 of a file.
 
 WWW: http://search.cpan.org/dist/File-Type/

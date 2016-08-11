@@ -1,6 +1,6 @@
---- uip/prompter.c
+--- uip/prompter.c.orig	1998-04-23 21:02:00 UTC
 +++ uip/prompter.c
-@@ -6,15 +6,7 @@
+@@ -6,15 +6,7 @@ static char ident[] = "@(#)$Id: prompter
  #include "../h/mh.h"
  #include <stdio.h>
  #include <errno.h>
@@ -17,7 +17,7 @@
  #if defined(BSD42) || defined(SVR4)
  #include <setjmp.h>
  #endif	/* BSD42 || SVR4 */
-@@ -71,19 +63,10 @@
+@@ -71,19 +63,10 @@ static struct swit switches[] = {
  extern int  errno;
  
  
@@ -38,7 +38,7 @@
  
  
  static TYPESIG	intrser ();
-@@ -209,29 +192,14 @@
+@@ -209,29 +192,14 @@ char   *argv[];
      (void) chmod (tmpfil, 0600);
  
      if (killp || erasep) {
@@ -49,15 +49,14 @@
 -	char   serase,
 -	       skill;
 -#endif	/* SYS5 */
--
++	cc_t serase, skill;
+ 
 -#ifndef	SYS5
 -	(void) ioctl (0, TIOCGETP, (char *) &sg);
 -	(void) ioctl (0, TIOCGETC, (char *) &tc);
 -#else	/* SYS5 */
 -	(void) ioctl(0, TCGETA, &sg);
 -#endif	/* SYS5 */
-+	cc_t serase, skill;
-+
 +	(void) tcgetattr(0, &sg);
  	skill = KILL;
  	serase = ERASE;
@@ -72,7 +71,7 @@
  
  	chrdsp ("erase", ERASE);
  	chrdsp (", kill", KILL);
-@@ -273,11 +241,7 @@
+@@ -273,11 +241,7 @@ char   *argv[];
  		    if (i == -1) {
  abort: ;
  			if (killp || erasep)
@@ -85,7 +84,7 @@
  			(void) unlink (tmpfil);
  			done (1);
  		    }
-@@ -365,11 +329,7 @@
+@@ -365,11 +329,7 @@ no_body: ;
  /*  */
  
      if (killp || erasep)

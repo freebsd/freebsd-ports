@@ -134,6 +134,8 @@
 %%MACRODIR%%/ax_check_enable_debug.m4
 %%MACRODIR%%/ax_check_func_in.m4
 %%MACRODIR%%/ax_check_gd.m4
+%%MACRODIR%%/ax_check_gir_symbols_gjs.m4
+%%MACRODIR%%/ax_check_girs_gjs.m4
 %%MACRODIR%%/ax_check_gl.m4
 %%MACRODIR%%/ax_check_glu.m4
 %%MACRODIR%%/ax_check_glut.m4
@@ -194,8 +196,10 @@
 %%MACRODIR%%/ax_create_target_h.m4
 %%MACRODIR%%/ax_cvs.m4
 %%MACRODIR%%/ax_cxx_bool.m4
+%%MACRODIR%%/ax_cxx_compile_stdcxx.m4
 %%MACRODIR%%/ax_cxx_compile_stdcxx_0x.m4
 %%MACRODIR%%/ax_cxx_compile_stdcxx_11.m4
+%%MACRODIR%%/ax_cxx_compile_stdcxx_14.m4
 %%MACRODIR%%/ax_cxx_compiler_vendor.m4
 %%MACRODIR%%/ax_cxx_complex_math_in_namespace_std.m4
 %%MACRODIR%%/ax_cxx_const_cast.m4
@@ -286,6 +290,7 @@
 %%MACRODIR%%/ax_cxx_use_numtrait.m4
 %%MACRODIR%%/ax_cxx_var_prettyfunc.m4
 %%MACRODIR%%/ax_cxx_verbose_terminate_handler.m4
+%%MACRODIR%%/ax_czmq.m4
 %%MACRODIR%%/ax_decl_wchar_max.m4
 %%MACRODIR%%/ax_define_integer_bits.m4
 %%MACRODIR%%/ax_define_sub_path.m4
@@ -308,6 +313,7 @@
 %%MACRODIR%%/ax_f90_module.m4
 %%MACRODIR%%/ax_f90_module_extension.m4
 %%MACRODIR%%/ax_f90_module_flag.m4
+%%MACRODIR%%/ax_fc_check_define.m4
 %%MACRODIR%%/ax_file_escapes.m4
 %%MACRODIR%%/ax_find_hamcrest.m4
 %%MACRODIR%%/ax_find_junit.m4
@@ -336,6 +342,7 @@
 %%MACRODIR%%/ax_gcc_x86_avx_xgetbv.m4
 %%MACRODIR%%/ax_gcc_x86_cpuid.m4
 %%MACRODIR%%/ax_generate_changelog.m4
+%%MACRODIR%%/ax_gnu_autotest.m4
 %%MACRODIR%%/ax_have_adns.m4
 %%MACRODIR%%/ax_have_epoll.m4
 %%MACRODIR%%/ax_have_opengl.m4
@@ -364,6 +371,7 @@
 %%MACRODIR%%/ax_lib_metis.m4
 %%MACRODIR%%/ax_lib_mysql.m4
 %%MACRODIR%%/ax_lib_mysqlcppconn.m4
+%%MACRODIR%%/ax_lib_netcdf4.m4
 %%MACRODIR%%/ax_lib_nettle.m4
 %%MACRODIR%%/ax_lib_nokalva.m4
 %%MACRODIR%%/ax_lib_oracle_occi.m4
@@ -413,6 +421,7 @@
 %%MACRODIR%%/ax_printf_size_t.m4
 %%MACRODIR%%/ax_prog_apache.m4
 %%MACRODIR%%/ax_prog_bison.m4
+%%MACRODIR%%/ax_prog_bison_version.m4
 %%MACRODIR%%/ax_prog_cc_char_subscripts.m4
 %%MACRODIR%%/ax_prog_cc_for_build.m4
 %%MACRODIR%%/ax_prog_cc_mpi.m4
@@ -427,6 +436,8 @@
 %%MACRODIR%%/ax_prog_fc_mpi.m4
 %%MACRODIR%%/ax_prog_fig2dev.m4
 %%MACRODIR%%/ax_prog_flex.m4
+%%MACRODIR%%/ax_prog_flex_version.m4
+%%MACRODIR%%/ax_prog_gjs.m4
 %%MACRODIR%%/ax_prog_guile_version.m4
 %%MACRODIR%%/ax_prog_haxe_version.m4
 %%MACRODIR%%/ax_prog_hla.m4
@@ -477,13 +488,16 @@
 %%MACRODIR%%/ax_python_devel.m4
 %%MACRODIR%%/ax_python_embed.m4
 %%MACRODIR%%/ax_python_module.m4
+%%MACRODIR%%/ax_python_module_version.m4
 %%MACRODIR%%/ax_require_defined.m4
 %%MACRODIR%%/ax_require_one_func.m4
 %%MACRODIR%%/ax_restore_flags.m4
+%%MACRODIR%%/ax_restore_flags_with_prefix.m4
 %%MACRODIR%%/ax_rpm_init.m4
 %%MACRODIR%%/ax_ruby_devel.m4
 %%MACRODIR%%/ax_ruby_ext.m4
 %%MACRODIR%%/ax_save_flags.m4
+%%MACRODIR%%/ax_save_flags_with_prefix.m4
 %%MACRODIR%%/ax_set_default_paths_system.m4
 %%MACRODIR%%/ax_short_sleep.m4
 %%MACRODIR%%/ax_silent_mode.m4
@@ -524,6 +538,8 @@
 %%MACRODIR%%/ax_type_socklen_t.m4
 %%MACRODIR%%/ax_upload.m4
 %%MACRODIR%%/ax_valgrind_check.m4
+%%MACRODIR%%/ax_var_pop.m4
+%%MACRODIR%%/ax_var_push.m4
 %%MACRODIR%%/ax_var_timezone_externals.m4
 %%MACRODIR%%/ax_very_nice.m4
 %%MACRODIR%%/ax_warning_default_aclocaldir.m4
@@ -539,6 +555,7 @@
 %%MACRODIR%%/ax_xercesc.m4
 %%MACRODIR%%/ax_xsdcxx.m4
 %%MACRODIR%%/ax_xtra_classpath.m4
+%%MACRODIR%%/ax_zmq.m4
 %%MACRODIR%%/ax_zoneinfo.m4
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING

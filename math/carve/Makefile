@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS GUI
+OPTIONS_SUB=	yes
 
 USES=		cmake:outsource compiler:c++11-lib tar:tgz
 USE_GL=		glut
@@ -26,17 +27,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-std=c++11
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	libglui.so:devel/glui
-PLIST_SUB+=	GUI=""
-CMAKE_ARGS+=	-DCARVE_WITH_GUI:BOOL=true
-.else
-CONFIGURE_ARGS+=--with-gui=no
-PLIST_SUB+=	GUI="@comment "
-CMAKE_ARGS+=	-DCARVE_WITH_GUI:BOOL=false
-.endif
+GUI_LIB_DEPENDS=	libglui.so:devel/glui
+GUI_CONFIGURE_OFF=	--with-gui=no
+GUI_CMAKE_BOOL=		CARVE_WITH_GUI
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.cpp" -o -name "*.h" -o -name "*.hpp" | ${XARGS} \

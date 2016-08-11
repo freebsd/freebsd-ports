@@ -3,13 +3,14 @@
 
 PORTNAME=	http
 PORTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	1
 DISTNAME=	pecl_http-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended HTTP Support
 
 LICENSE=	BSD2CLAUSE
@@ -17,10 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	http
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 CONFLICTS=	pecl-http-*
 

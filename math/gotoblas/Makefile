@@ -19,6 +19,8 @@ COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/00License.txt
 
+BROKEN_powerpc64=	Does not build
+
 GOTOBLAS2VER=	1.13
 GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz
 LAPACKVER=	3.4.0

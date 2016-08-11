@@ -1,5 +1,5 @@
---- ../clang/lib/Runtime/Makefile.orig
-+++ ../clang/lib/Runtime/Makefile
+--- clang/lib/Runtime/Makefile.orig	2014-11-10 18:04:47 UTC
++++ clang/lib/Runtime/Makefile
 @@ -17,8 +17,8 @@ LEVEL = ../../../..
  include $(LEVEL)/Makefile.common
  

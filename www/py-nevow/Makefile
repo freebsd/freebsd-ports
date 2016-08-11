@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	nevow
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTVERSION=	0.14.0
 CATEGORIES=	www python devel
-MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/ \
-		https://pypi.python.org/packages/source/N/Nevow/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Nevow-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz?format=raw
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Web application templating system, based on the Twisted Woven
 
-USE_PYTHON=	distutils autoplist
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_PYTHON=	autoplist distutils
 USES=		gettext python twisted:web
 NO_ARCH=	yes
 

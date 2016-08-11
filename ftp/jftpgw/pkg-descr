@@ -3,9 +3,9 @@ proxies that fetch an FTP file but work as an http proxy). You can use it to
 make servers behind a firewall/NAT server (masquerading server) accessible
 or to allow users behind such solutions to transfer files to and from the
 outside of the LAN.
-Jftpgw is highly configurable and can be run as a stand-alone daemon or 
-under control of inetd. A wide range of options can be spedified per client, 
-server or user. Other features are: support for a transparent proxy mode, 
+Jftpgw is highly configurable and can be run as a stand-alone daemon or
+under control of inetd. A wide range of options can be spedified per client,
+server or user. Other features are: support for a transparent proxy mode,
 forwarding, file caching, detailed logging, port ranges and session limits.
 
 WWW: http://www.mcknight.de/jftpgw/

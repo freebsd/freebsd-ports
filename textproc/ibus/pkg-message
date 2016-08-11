@@ -19,7 +19,7 @@ setenv XMODIFIERS @im=ibus
 setenv XIM_PROGRAM ibus-daemon
 setenv XIM_ARGS "--daemonize --xim"
 
-If you are using KDE4, you may create a shell script in $HOME/.kde4/env, 
+If you are using KDE4, you may create a shell script in $HOME/.kde4/env,
 and add following lines:
 
 #!/bin/sh

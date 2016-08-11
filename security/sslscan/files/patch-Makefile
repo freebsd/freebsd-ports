@@ -1,22 +1,33 @@
---- ./Makefile.orig	2009-09-01 14:35:59.000000000 +0200
-+++ ./Makefile	2011-06-21 17:37:30.000000000 +0200
-@@ -1,13 +1,14 @@
- SRCS = sslscan.c
--BINPATH = /usr/bin/
--MANPATH = /usr/share/man/
-+BINPATH = ${PREFIX}/bin/
-+MANPATH = ${PREFIX}/man
-+CC =	${CC}
+--- Makefile.orig	2016-03-24 21:02:55 UTC
++++ Makefile
+@@ -3,7 +3,7 @@ ifndef CC
+   CC=gcc
+ endif
  
- all:
--	gcc -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
-+	${CC} -g -Wall -lssl -lcrypto -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
+-GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
++#GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
  
- install:
--	cp sslscan $(BINPATH)
--	cp sslscan.1 $(MANPATH)man1
-+	install -s -m 755 sslscan $(DESTDIR)$(BINPATH)
-+	install -m 644 sslscan.1 $(DESTDIR)$(MANPATH)/man1
+ # Ugly hack to get version if git isn't installed
+ ifeq ($(GIT_VERSION),)
+@@ -14,9 +14,9 @@ endif
+ OS := $(shell uname)
  
- uninstall:
- 	rm -f $(BINPATH)sslscan
+ SRCS      = sslscan.c
+-PREFIX    = /usr
++#PREFIX    = /usr
+ BINDIR    = $(PREFIX)/bin
+-MANDIR    = $(PREFIX)/share/man
++MANDIR    = $(PREFIX)/man
+ MAN1DIR   = $(MANDIR)/man1
+ 
+ WARNINGS  = -Wall -Wformat=2
+@@ -68,6 +68,9 @@ install:
+ ifeq ($(OS), Darwin)
+ 	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
+ 	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
++else ifeq ($(OS), FreeBSD)
++	install -s -m 755 sslscan $(DESTDIR)$(BINDIR)
++	install -m 644 sslscan.1 $(DESTDIR)$(MAN1DIR)
+ else
+ 	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
+ 	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;

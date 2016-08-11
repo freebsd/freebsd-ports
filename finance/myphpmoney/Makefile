@@ -15,9 +15,7 @@ WEBOWN?=	www
 WEBGRP?=	www
 APACHEDIR=	${PREFIX}/www/data
 INSTALLDIR=	${APACHEDIR}/myphpmoney
-USES=		tar:bzip2
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
+USES=		php:web tar:bzip2
 NO_BUILD=	yes
 
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,} WWWOWN="${WEBOWN}" WWWGRP="${WEBGRP}"

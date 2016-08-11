@@ -1,22 +1,22 @@
 These programs and documentation do not come from Tesla Motors Inc.
 
 Be careful when using these programs as they can lock and unlock your
-car as well as control various functions relating to the charging system, 
+car as well as control various functions relating to the charging system,
 sun roof, lights, horn, and other subsystems of the car.
 
 Be careful not to send your login and password to anyone other than Tesla
-or you are giving away the authentication details required to control 
+or you are giving away the authentication details required to control
 your car.
 
-Also ensure that you don't overwhelm the Tesla servers with requests. 
-Calling REST APIs at very high frequency can put substantial load on the 
+Also ensure that you don't overwhelm the Tesla servers with requests.
+Calling REST APIs at very high frequency can put substantial load on the
 Tesla servers and might get your IP blocked by Tesla.
 
-Use these programs at your own risk. The authors do not guarantee the 
+Use these programs at your own risk. The authors do not guarantee the
 proper functioning of these applications. This code attempts to use the
-same interfaces used by the official Tesla phone apps. However, it is 
-possible that use of this code may cause unexpected damage for which 
-nobody but you are responsible. Use of these functions can change the 
-settings on your car and may have negative consequences such as (but not 
-limited to) unlocking the doors, opening the sun roof, or reducing the 
+same interfaces used by the official Tesla phone apps. However, it is
+possible that use of this code may cause unexpected damage for which
+nobody but you are responsible. Use of these functions can change the
+settings on your car and may have negative consequences such as (but not
+limited to) unlocking the doors, opening the sun roof, or reducing the
 available charge in the battery.

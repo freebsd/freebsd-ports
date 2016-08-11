@@ -1,7 +1,7 @@
 =============================================================================
 For quick info, run "man afni".
 
-For AFNI configuration and usage, please visit the AFNI WEB site at 
+For AFNI configuration and usage, please visit the AFNI WEB site at
 
 http://afni.nimh.nih.gov.
 
@@ -32,7 +32,7 @@ more of the following shared memory limits using sysctl (and
 
 AFNI_PLUGIN_PATH should be set to %%PREFIX%%/lib/afni:%%DATADIR%%
 AFNI_GLOBAL_SESSION should be set to %%DATADIR%%.
-You can do this by sourcing %%PREFIX%%/etc/mri/afni.profiles for 
+You can do this by sourcing %%PREFIX%%/etc/mri/afni.profiles for
 Bourne-style shells or or %%PREFIX%%/etc/mri/afni.cshrc for C-style shells.
 
 =============================================================================

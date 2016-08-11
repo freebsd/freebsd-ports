@@ -2,7 +2,7 @@
 
 PORTNAME=	libkexiv2
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Exiv2 library interface for KDE
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui xml \
 		moc_build qmake_build rcc_build uic_build

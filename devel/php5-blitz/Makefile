@@ -3,6 +3,7 @@
 
 PORTNAME=	blitz
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alexeyrybak.com/blitz/
 PKGNAMEPREFIX=	php5-
@@ -12,9 +13,7 @@ COMMENT=	PHP templating engine
 
 CONFLICTS=	php5-blitz-devel-[0-9]*
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
---- makefile.orig	Sun Oct  3 05:16:00 1993
-+++ makefile	Sat Jun 10 13:35:16 2000
+--- makefile.orig	1993-10-02 20:16:00 UTC
++++ makefile
 @@ -1,5 +1,4 @@
  SHELL =	/bin/sh
 -BINDIR =	/ufs/dik/tmpbin
  # Use the following flags on the CF macro definition as needed.
  #
  # -DBSD if you are on a BSD system
-@@ -24,44 +23,44 @@
+@@ -24,44 +23,44 @@ BINDIR =	/ufs/dik/tmpbin
  #
  # -DAPPLEDOUBLE if you want to be able to use an AppleDouble file system
  #

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-PORTVERSION=	8.6.5
-PORTREVISION=	1
+PORTVERSION=	8.6.6
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} \
 		TCLTK/tcl8_6
@@ -18,7 +18,7 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS
+OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS DEBUG
 OPTIONS_DEFAULT=MODULES THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
@@ -30,12 +30,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries
+TEST_TARGET=	test-tcl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
-		--includedir=${PREFIX}/include/tcl${TCL_VER} \
+		--includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
 TCL_VER=	${PORTVERSION:R}
@@ -53,6 +54,9 @@ TCLMAN_INSTALL_TARGET=	install-doc
 TZDATA_INSTALL_TARGET=	install-tzdata
 MODULES_INSTALL_TARGET=	install-modules
 THREADS_CONFIGURE_ENABLE=	threads
+DEBUG_CONFIGURE_ENABLE=	symbols
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -61,6 +65,12 @@ post-patch:
 	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
 	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
 	     ${PATCH_WRKSRC}/unix/tclConfig.sh.in
+# On FreeBSD 9, pkg-config --cflags tcl can't find zlib.
+.if ${OSVERSION} < 1000000
+	${REINPLACE_CMD} -e \
+	    's|Requires.private: zlib >= 1.2.3||' \
+	    ${PATCH_WRKSRC}/unix/tcl.pc.in
+.endif
 
 post-patch-TCLMAN-off:
 	@${FIND} ${PATCH_WRKSRC}/pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
@@ -70,8 +80,5 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test-tcl
 
 .include <bsd.port.mk>

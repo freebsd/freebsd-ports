@@ -1,10 +1,10 @@
 The Net::XWhois class provides a generic client framework for doing Whois
-queries and parsing server response. 
+queries and parsing server response.
 
 One of the more important features of this module is to enable the design of
 consistent and predictable interfaces to incompatible whois response formats.
 The Whois RFC (954) does not define a template for presenting server data;
 consequently there is a large variation in layout styles as well as content
-served across servers. 
+served across servers.
 
 WWW: http://search.cpan.org/dist/Net-XWhois/

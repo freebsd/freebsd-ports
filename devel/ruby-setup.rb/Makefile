@@ -3,6 +3,7 @@
 
 PORTNAME=	setup.rb
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/${PORTNAME:R}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,8 +19,6 @@ NO_BUILD=	yes
 
 _SCRIPTS=	setup.rb
 
-RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
-
 DOCS_EN=	doc.en/* NEWS.en Usage_en.txt README.en ChangeLog TODO
 DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt README.ja
 
@@ -29,6 +28,10 @@ post-extract:
 .for f in ${_SCRIPTS}
 	${CP} -p ${WRKSRC}/${f} ${WRKSRC}/ruby-${f}
 .endfor
+
+post-patch:
+	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		${WRKSRC}/ruby-setup.rb
 
 do-install:
 .for f in ${_SCRIPTS}

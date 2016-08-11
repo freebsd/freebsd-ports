@@ -1,25 +1,25 @@
 #
 # FreeBSD/OSS
 #
-pcm.!default {
-	type plug
-	slave.pcm.type oss
+pcm.oss {
+	type oss
+	hint.description "Open Sound System"
 }
 
-ctl.!default {
+ctl.oss {
 	type oss
 }
+
+pcm.!sysdefault pcm.plug:oss
+ctl.!sysdefault ctl.oss
+pcm.!default pcm.sysdefault
+ctl.!default ctl.sysdefault
 
 #
 # Pulseaudio
 #
-# pcm.!default {
-# 	type pulse
-# }
-# 
-# ctl.!default {
-# 	type pulse
-# }
+# pcm.!default pcm.pulse
+# ctl.!default ctl.pulse
 
 #
 # Remap all possible surround stuffs.

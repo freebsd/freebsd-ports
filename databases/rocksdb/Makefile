@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	4.3.1
+PORTVERSION=	4.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
+
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	DEBUG
 
@@ -32,7 +34,8 @@ USE_GITHUB=	yes
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_sparc64=	cannot build: uses unknown compiler flags
 
-PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb sst_dump table_reader_bench
+BENCHMARKS=	cache_bench db_bench memtablerep_bench table_reader_bench
+TOOLS=		db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump write_stress
 
 DEBUG_MAKE_ENV=		DEBUG_LEVEL=2
 DEBUG_MAKE_ENV_OFF=	DEBUG_LEVEL=0
@@ -61,7 +64,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/rocksdb/ ${STAGEDIR}${DATADIR}/
-	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${BENCHMARKS} ${TOOLS} ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/include/rocksdb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/rocksdb/
 	${INSTALL_DATA} ${WRKSRC}/librocksdb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.so ${STAGEDIR}${PREFIX}/lib/librocksdb.so.0

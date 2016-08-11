@@ -1,6 +1,6 @@
---- ./database.c.orig	2004-04-13 02:46:24.000000000 +0200
-+++ ./database.c	2014-08-15 19:09:39.000000000 +0200
-@@ -160,6 +160,12 @@
+--- database.c.orig	2016-06-20 16:04:03 UTC
++++ database.c
+@@ -160,6 +160,12 @@ panda_dbwrite (panda_pdf * document, cha
      panda_windbwrite (document, key, value);
  #else
  
@@ -13,7 +13,7 @@
  #if defined DEBUG
    printf ("Storing (%s, %s) in 0x%08x\n", key, value, document->db);
  #endif
-@@ -169,13 +175,6 @@
+@@ -169,13 +175,6 @@ panda_dbwrite (panda_pdf * document, cha
    if (value == NULL)
      panda_error (panda_true, "Cannot store null value\n");
  

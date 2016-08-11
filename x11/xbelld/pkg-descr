@@ -1,13 +1,13 @@
-XBellD is a small daemon for replacing the standard X Window 
-System terminal bell with a more interesting set of sounds. 
-This is useful for systems where the terminal bell is handled 
+XBellD is a small daemon for replacing the standard X Window
+System terminal bell with a more interesting set of sounds.
+This is useful for systems where the terminal bell is handled
 by the "PC Speaker," or where different sounds are desired for
 different classes of X clients.
 
-XBellD works by intercepting terminal bell requests on the 
-server side, and then playing user-specified sounds through a 
-PCM capable soundcard. The resource class of the client making 
-a terminal bell request is used to match a corresponding sound 
+XBellD works by intercepting terminal bell requests on the
+server side, and then playing user-specified sounds through a
+PCM capable soundcard. The resource class of the client making
+a terminal bell request is used to match a corresponding sound
 file which should be played when such a request is made.
 
 WWW: http://www.meowfishies.com/xbelld.rhtml

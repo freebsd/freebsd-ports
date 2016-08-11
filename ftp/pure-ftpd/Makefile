@@ -3,7 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.42
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -13,6 +13,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, easy to set up, fast, and secure FTP server
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	ANONDELETE ANONRENAME ANONRESUME DOCS EXAMPLES LARGEFILE LDAP \
 		MYSQL PAM PERUSERLIMITS PGSQL PRIVSEP SCRYPT SENDFILE \

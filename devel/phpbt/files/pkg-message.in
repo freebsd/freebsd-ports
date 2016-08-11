@@ -4,7 +4,7 @@ FreeBSD phpBugTracker installation instructions:
 
 Optional: Install JpGraph (http://www.aditus.nu/jpgraph/) if you
 wish to use it.
-	 
+
 1. The phpBugTracker distribution has been installed in:
 
 	%%PREFIX%%/%%PHPBT%%

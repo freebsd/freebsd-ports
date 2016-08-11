@@ -6,4 +6,4 @@ the arithmetic computations in the software are done through calls to BLAS
 and LAPACK.  The software can be instructed to write checkpoint files so that
 it can be restarted is a later time.
 
-WWW:	http://crd.lbl.gov/~kewu/trlan.html
+WWW: http://crd.lbl.gov/~kewu/trlan.html

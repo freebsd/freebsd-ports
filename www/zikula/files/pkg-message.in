@@ -3,7 +3,7 @@
 POST-INSTALL CONFIGURATION FOR ZIKULA
 =====================================
 
-1) Set date.timezone in php.ini for e.g : 
+1) Set date.timezone in php.ini for e.g :
    date.timezone = "Asia/Kuala_Lumpur"
 
 2) Zikula uses a MySQL database.  Create new database for Zikula.

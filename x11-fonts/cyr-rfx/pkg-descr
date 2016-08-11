@@ -1,9 +1,9 @@
 CYR-RFX started as a collection of cyrillic fonts for X-Window
 ("CYR-RFX" stands for "CYRillic Raster Fonts for X"). Now it includes
-several cyrillic encodings and two latin ones (both with Euro sign). 
+several cyrillic encodings and two latin ones (both with Euro sign).
 
 These fonts are modified (mainly with cyrillics added) versions of
-standard X-Window fonts from misc/ and 75dpi/. 
+standard X-Window fonts from misc/ and 75dpi/.
 
 The fonts included are all *iso8859-1 from misc/, and most important
 75dpi/ ones: lu (LucidaSans), lut (LucidaSansTypewriter), tim (Times),

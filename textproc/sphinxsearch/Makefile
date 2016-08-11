@@ -6,7 +6,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.11
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
@@ -24,7 +24,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
-		RE2 SYSLOG UNIXODBC DOCS
+		RE2 SYSLOG UNIXODBC DOCS EXAMPLES
 OPTIONS_DEFAULT=ICONV MYSQL SYSLOG
 
 ICONV_CONFIGURE_WITH=	iconv
@@ -56,7 +56,7 @@ LIBSTEMMER_DISTNAME=	libstemmer_c
 LIBSTEMMER_DISTFILES=	${LIBSTEMMER_DISTNAME}.tgz:libstemmer
 
 .if make(makesum) || defined(FETCH_ALL)
-OPTIONS_SET_FORCE= LIBSTEMMER
+OPTIONS_SET_FORCE=	LIBSTEMMER
 .endif
 
 # The port will successfully compile with both PGSQL and MYSQL support
@@ -65,7 +65,7 @@ OPTIONS_SET_FORCE= LIBSTEMMER
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql
-MYSQL_USE=		mysql
+MYSQL_USES=		mysql
 
 OPTIMIZED_CFLAGS_CXXFLAGS=-O3 -fomit-frame-pointer
 
@@ -88,8 +88,6 @@ UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \
 		swish++-[0-9]* xaira-[0-9]*
-
-.include <bsd.port.options.mk>
 
 USERS?=		_sphinx
 GROUPS?=	_sphinx
@@ -114,18 +112,19 @@ SUB_LIST+=	PORTNAME=${PORTNAME}	 \
 		SPHINX_LOG=${SPHINX_LOG}
 SUB_FILES+=	pkg-deinstall
 
+BINS=		indexer indextool spelldump wordbreaker
+
 EXAMPLES=	example.sql api
 
-DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
+DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml \
+		sphinx-min.conf.dist
 DOCSRC=		${WRKSRC}/doc
 
 MAN1SRC=	indexer.1 indextool.1 spelldump.1
 MAN8SRC=	searchd.8
 
-post-extract:
-.if ${PORT_OPTIONS:MLIBSTEMMER}
+post-extract-LIBSTEMMER-on:
 	@( cd ${WRKDIR} && ${COPYTREE_SHARE} ${LIBSTEMMER_DISTNAME} ${WRKSRC} )
-.endif
 
 # Fix up the sample configuration file to correspond to FreeBSD norms
 post-patch:
@@ -141,24 +140,12 @@ post-patch:
 		${DOCSRC}/${man}
 .endfor
 
-do-install: install-bin install-docs install-man install-examples
-
-install-bin:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer   ${STAGEDIR}${PREFIX}/bin/indexer
-	${INSTALL_PROGRAM} ${WRKSRC}/src/indextool ${STAGEDIR}${PREFIX}/bin/indextool
-	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${STAGEDIR}${PREFIX}/bin/spelldump
-	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd   ${STAGEDIR}${PREFIX}/sbin/searchd
-	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
-
-install-docs:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+do-install:
+.for bin in ${BINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${bin} ${STAGEDIR}${PREFIX}/bin/${bin}
 .endfor
-.endif
-
-install-man:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd ${STAGEDIR}${PREFIX}/sbin/searchd
+	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
 .for man in ${MAN1SRC}
 	${INSTALL_MAN} ${DOCSRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man1/${man}
 .endfor
@@ -166,7 +153,13 @@ install-man:
 	${INSTALL_MAN} ${DOCSRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man8/${man}
 .endfor
 
-install-examples:
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${STAGEDIR}${EXAMPLESDIR}

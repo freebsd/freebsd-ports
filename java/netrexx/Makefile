@@ -37,7 +37,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/browse && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-post-install:
 	@${ECHO} "====================  IBM LICENSE  ===================="
 	@${CAT} ${WRKSRC}/browse/license.txt
 	@${ECHO} "-------------------------------------------------------"

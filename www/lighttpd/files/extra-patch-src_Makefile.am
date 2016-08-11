@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2016-07-16 10:06:16 UTC
++++ src/Makefile.am
+@@ -254,7 +254,7 @@ mod_compress_la_LIBADD = $(Z_LIB) $(BZ_L
+ lib_LTLIBRARIES += mod_auth.la
+ mod_auth_la_SOURCES = mod_auth.c http_auth.c
+ mod_auth_la_LDFLAGS = $(common_module_ldflags)
+-mod_auth_la_LIBADD = $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
++mod_auth_la_LIBADD = ${MYSQL_LIBS} $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
+ 
+ lib_LTLIBRARIES += mod_rewrite.la
+ mod_rewrite_la_SOURCES = mod_rewrite.c

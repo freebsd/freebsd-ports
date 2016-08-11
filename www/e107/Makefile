@@ -3,6 +3,7 @@
 
 PORTNAME=	e107
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_full
@@ -10,9 +11,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Content management system written in PHP
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 
-USE_PHP=	mysqli xml exif
+USE_PHP=	dom exif hash pdo_mysql session xml
 WRKSRC=		${WRKDIR}/e107
 
 NO_BUILD=	yes

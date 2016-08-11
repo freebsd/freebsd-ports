@@ -1,0 +1,8 @@
+PDFedit is a free open source pdf editor and a library for
+manipulating PDF documents, released under terms of GNU GPL version 2.
+It includes PDF manipulating library based on xpdf, GUI,
+set of command line tools and a pdf editor.
+
+This package does not include GUI for technical reason.
+
+WWW: http://pdfedit.cz/

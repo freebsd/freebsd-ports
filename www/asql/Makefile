@@ -12,7 +12,7 @@ COMMENT=	Query Apache logfiles via SQL
 
 RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBI>=0:databases/p5-DBI \
-		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
+		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/asql

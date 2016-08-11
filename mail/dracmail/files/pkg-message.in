@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------
 Installation has successfully completed!
 -----------------------------------------------------------------------------
-DracMail Webmail is now installed in documentoroot: %%WWWDIR%%. 
+DracMail Webmail is now installed in documentoroot: %%WWWDIR%%.
 
 For installation please see: http://dracmail.net/?page=documentation or:
 
@@ -13,14 +13,14 @@ mysql -u root -p'your_root_password'
 CREATE USER 'WEBMAIL_USERNAME'@'localhost' IDENTIFIED BY 'PASSWORD';
 CREATE DATABASE WEBMAIL_DATABASE_NAME;
 USE 'WEBMAIL_DATABASE_NAME';
-mysql -u root -p'your_root_password' < ./api/SQL/dracmail.sql; 
+mysql -u root -p'your_root_password' < ./api/SQL/dracmail.sql;
 GRANT SELECT, INSERT, UPDATE, DELETE ON WEBMAIL_DATABASE_NAME.* TO WEBMAIL_USERNAME@localhost;
 FLUSH PRIVILEGES;
 quit;
 
 2) Copy and edit configuration.php:
 
-cp api/configuration.php.sample api/configuration.php 
+cp api/configuration.php.sample api/configuration.php
 
 3) Config your IMAP and MYSQL:
 
@@ -36,7 +36,7 @@ MySQL Server configuration:
 define('MYSQL_HOST', 'localhost'); // Your MySQL server hostname, default to 'localhost'
 define('MYSQL_USER', 'WEBMAIL_USERNAME'); // Your webmail username
 define('MYSQL_PASS', 'PASSWORD'); // Your webmail user password
-define('MYSQL_DB', 'WEBMAIL_DATABASE_NAME'); // Database name, default to 'dracmail' 
+define('MYSQL_DB', 'WEBMAIL_DATABASE_NAME'); // Database name, default to 'dracmail'
 
 3) And finally connect: http://your-server/dracmail.
 

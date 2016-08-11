@@ -32,8 +32,7 @@ DESKTOP_ENTRIES="Komodo Edit" \
 		false
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/komodo
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/lib/mozilla/komodo
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/lib/mozilla/komodo-bin

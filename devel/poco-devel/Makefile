@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--omit=Data/MySQL
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=		sqlite
 .else
 CONFIGURE_ARGS+=	--omit=Data/SQLite
 .endif

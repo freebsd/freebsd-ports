@@ -1,0 +1,9 @@
+This module is a re-implementation aiming for speed instead of maximum
+compression, so it can be used at runtime (rather than during a
+preprocessing step). RCSSmin does syntactical compression only (removing
+spaces, comments and possibly semicolons). It does not provide semantic
+compression (like removing empty blocks, collapsing redundant properties
+etc). It does, however, support various CSS hacks (by keeping them
+working as intended).
+
+WWW: https://github.com/ndparker/rcssmin

@@ -1,4 +1,4 @@
---- scripts/Dpkg/Compression.pm.orig	2015-06-11 20:28:56 UTC
+--- scripts/Dpkg/Compression.pm.orig	2016-07-03 19:02:23 UTC
 +++ scripts/Dpkg/Compression.pm
 @@ -55,7 +55,7 @@ interact with the set of supported compr
  my $COMP = {

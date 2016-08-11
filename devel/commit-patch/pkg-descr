@@ -1,14 +1,14 @@
-Normally version control systems don't allow fine grained commits. 
-commit-patch allows the user to control exactly what gets committed by 
-letting the user supply a patch to be committed rather than using the 
+Normally version control systems don't allow fine grained commits.
+commit-patch allows the user to control exactly what gets committed by
+letting the user supply a patch to be committed rather than using the
 files in the current working directory.
 
 commit-patch supports Darcs, Git, Mercurial, Bazaar, Subversion,
 Monotone or CVS repositories.
 
-Also included is an Emacs interface to commit-patch. It allows you to 
-just hit C-c C-c in any patch buffer to apply and commit only the 
-changes indicated by the patch, regardless of the changes in your 
+Also included is an Emacs interface to commit-patch. It allows you to
+just hit C-c C-c in any patch buffer to apply and commit only the
+changes indicated by the patch, regardless of the changes in your
 working directory.
 
 WWW: http://www.porkrind.org/commit-patch/

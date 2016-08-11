@@ -2,4 +2,4 @@ PsiMedia is an abstraction layer for providing audio and video
 RTP services to Psi-like IM clients. The implementation is based
 on GStreamer.
 
-WWW:	http://delta.affinix.com/psimedia/
+WWW: http://delta.affinix.com/psimedia/

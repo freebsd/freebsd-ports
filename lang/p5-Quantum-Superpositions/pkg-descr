@@ -1,21 +1,21 @@
-The Quantum::Superpositions module adds two new operators to Perl: any and 
+The Quantum::Superpositions module adds two new operators to Perl: any and
 all.
 
-Each of these operators takes a list of values (states) and superimposes 
-them into a single scalar value (a superposition), which can then be 
+Each of these operators takes a list of values (states) and superimposes
+them into a single scalar value (a superposition), which can then be
 stored in a standard scalar variable.
 
-The any and all operators produce two distinct kinds of superposition. The 
-any operator produces a disjunctive superposition, which may (notionally) 
-be in any one of its states at any time, according to the needs of the 
+The any and all operators produce two distinct kinds of superposition. The
+any operator produces a disjunctive superposition, which may (notionally)
+be in any one of its states at any time, according to the needs of the
 algorithm that uses it.
 
-In contrast, the all operator creates a conjunctive superposition, which 
+In contrast, the all operator creates a conjunctive superposition, which
 is always in every one of its states simultaneously.
 
-Superpositions are scalar values and hence can participate in arithmetic 
-and logical operations just like any other type of scalar. However, when 
-an operation is applied to a superposition, it is applied (notionally) in 
+Superpositions are scalar values and hence can participate in arithmetic
+and logical operations just like any other type of scalar. However, when
+an operation is applied to a superposition, it is applied (notionally) in
 parallel to each of the states in that superposition.
 
 WWW: http://search.cpan.org/dist/Quantum-Superpositions/

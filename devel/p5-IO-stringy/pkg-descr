@@ -3,7 +3,7 @@ just about any object.  It contains next modules:
 
 IO::AtomicFile	- write a file which is updated atomically
 
-IO::InnerFile	- define a file inside another file 
+IO::InnerFile	- define a file inside another file
 
 IO::Lines	- IO:: interface for reading/writing an array of lines
 
@@ -13,6 +13,6 @@ IO::ScalarArray	- IO:: interface for reading/writing an array of scalars
 
 IO::Wrap	- wrap raw filehandles in IO::Handle interface
 
-IO::WrapTie	- wrap tieable objects in IO::Handle interface 
+IO::WrapTie	- wrap tieable objects in IO::Handle interface
 
 WWW: http://search.cpan.org/dist/IO-stringy/

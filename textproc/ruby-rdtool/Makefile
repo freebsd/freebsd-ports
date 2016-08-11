@@ -18,7 +18,6 @@ GH_ACCOUNT=	uwabami
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-USE_RAKE=	yes
 
 RUBY_MODNAME=	rd
 

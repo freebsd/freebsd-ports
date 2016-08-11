@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------
 Post installation instructions:
 ----------------------------------------------------------------------------
-MyITCRM is now installed in documentroot: %%WWWDIR%%. 
+MyITCRM is now installed in documentroot: %%WWWDIR%%.
 
 1) Create user, MySQL database and set privileges:
 

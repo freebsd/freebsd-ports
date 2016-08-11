@@ -7,9 +7,9 @@ include/wels/codec_ver.h
 %%PLUGINS%%@rmtry lib/firefox/defaults/pref/gmpopenh264.js
 %%PLUGINS%%@rmtry lib/seamonkey/defaults/pref/gmpopenh264.js
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/gmpopenh264.js
-%%PLUGINS%%@exec ln -sf %D/%F %D/lib/firefox-nightly/defaults/pref/ 2>/dev/null || true
-%%PLUGINS%%@exec ln -sf %D/%F %D/lib/firefox/defaults/pref/ 2>/dev/null || true
-%%PLUGINS%%@exec ln -sf %D/%F %D/lib/seamonkey/defaults/pref/ 2>/dev/null || true
+%%PLUGINS%%@postexec ln -sf %D/%F %D/lib/firefox-nightly/defaults/pref/ 2>/dev/null || true
+%%PLUGINS%%@postexec ln -sf %D/%F %D/lib/firefox/defaults/pref/ 2>/dev/null || true
+%%PLUGINS%%@postexec ln -sf %D/%F %D/lib/seamonkey/defaults/pref/ 2>/dev/null || true
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/libgmpopenh264.so
 lib/libopenh264.a
 lib/libopenh264.so

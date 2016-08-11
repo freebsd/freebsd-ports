@@ -1,5 +1,5 @@
 XML::LibXML::Iterator implements the iterator part of the DOM
-Traversal and Range specification. This class allows to iterate 
+Traversal and Range specification. This class allows to iterate
 through a DOM as it is done through an ordinary array.
 
 WWW: http://search.cpan.org/dist/XML-LibXML-Iterator/

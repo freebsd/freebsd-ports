@@ -11,7 +11,6 @@ COMMENT=	X.Org syscons display driver
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     rayddteam
-GH_TAGNAME=     bdeb3bf
 
 USES=		libtool pkgconfig
 GNU_CONFIGURE= 	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adwaita
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-common
 

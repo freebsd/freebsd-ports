@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/blitz/blitz/Blitz%2B%2B%20${PORTVERSION}
 DISTNAME=	blitz-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for scientific computing
 
 OPTIONS_DEFINE=	DOCS

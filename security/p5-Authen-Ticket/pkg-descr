@@ -1,5 +1,5 @@
-Authen::Ticket provides the framework for implementing a ticketing system 
-for web authentication.  Both the client website and ticket server code 
+Authen::Ticket provides the framework for implementing a ticketing system
+for web authentication.  Both the client website and ticket server code
 can be constructed from Authen::Ticket.  The framework allows for customization
 at all phases in the process.  This includes not only the login screens, but
 the cookie creation and optional digital signature algorithm as well.  Consult

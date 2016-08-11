@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	576.30.4
+PORTVERSION=	625.41.2
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 PKGNAMESUFFIX=	_nss
@@ -48,7 +48,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/mDNSPosix/nss_mdns.conf.5 \
 		${STAGEDIR}${MANPREFIX}/man/man5
 
-post-install:
 	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
 		${STAGEDIR}${PREFIX}/etc/nss_mdns.conf.sample
 

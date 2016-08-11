@@ -4,4 +4,4 @@ It contains dumpexfat to dump properties of the filesystem, exfatfsck to report
 errors found on a exFAT filesystem, exfatlabel to label a exFAT filesystem and
 mkexfatfs to create a exFAT filesystem.
 
-WWW: http://code.google.com/p/exfat/
+WWW: https://github.com/relan/exfat

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.34
+PORTVERSION=	5.35
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -11,15 +11,18 @@ COMMENT=	Save your screen while you entertain your cat
 
 RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
 		giftopnm:graphics/netpbm
-LIB_DEPENDS=	libgle.so:graphics/gle
+LIB_DEPENDS=	libgle.so:graphics/gle \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USES=		autoreconf gettext gmake jpeg perl5 pkgconfig
-USE_GL=		yes
-USE_GNOME=	gdkpixbuf2 gtk20 intltool libglade2 libxml2
+USE_GL=		gl glu
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
-USE_XORG=	xpm xext xxf86misc
+USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xpm xt \
+		xxf86misc xxf86vm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL="${PERL}"
@@ -37,6 +40,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS XAOS1 XDALI XEARTH \
 		XFT XMOUN XPLANET XSNOW
+OPTIONS_DEFAULT=XFT
 OPTIONS_SUB=	yes
 
 PAM_CONFIGURE_WITH=		pam

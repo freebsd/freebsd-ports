@@ -13,7 +13,7 @@ Major changes from fvwm are:
 
 - NeXTstep-like title bar, title buttons, borders and corners. BowMan's
   Wharf is a much worked-out version of GoodStuff.  To avoid copyright
-  complications it is not called a "dock." 
+  complications it is not called a "dock."
 - NeXTstep style menu. However, the menus are not controlled by
   applications; they are more of pop-up service lists on the root window.
 - NeXTstep style icons. These styles are hard-coded in the program, which is

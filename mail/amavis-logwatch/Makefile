@@ -20,7 +20,6 @@ USE_PERL5=	run
 NO_BUILD=	yes
 SHEBANG_FILES=	amavis-logwatch
 OPTIONS_DEFINE=	EXAMPLES DOCS
-OPTIONS_DEFAULT=EXAMPLES DOCS
 
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
@@ -34,9 +33,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${ETCDIR}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 

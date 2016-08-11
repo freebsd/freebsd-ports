@@ -1,5 +1,5 @@
 This module enables writing declarations for simple and complex binary
-structures, parsing binary to hash/array data structure, and building 
+structures, parsing binary to hash/array data structure, and building
 binary data from hash/array data structure.
 
 WWW: https://metacpan.org/pod/Data::ParseBinary

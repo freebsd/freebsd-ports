@@ -2,7 +2,7 @@ $NetBSD: patch-af,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/clib/readline.c.orig	2007-05-15 19:03:03.000000000 +0000
+--- src/clib/readline.c.orig	2007-05-15 19:03:03 UTC
 +++ src/clib/readline.c
 @@ -134,7 +134,7 @@ static char **readline_completion(char *
          CAMLreturnT(char **, 0);

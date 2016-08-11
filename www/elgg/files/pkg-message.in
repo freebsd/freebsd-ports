@@ -7,7 +7,7 @@ POST-INSTALL CONFIGURATION FOR ELGG
 ===================================
 1) Make sure your apache's mod_rewrite extension is working,
 and change the AllowOverride setting of the DocumentRoot to
-    AllowOverride all 
+    AllowOverride all
 
 2) Create a user and a empty database for Elgg to store all
    its tables in (or choose an existing database).

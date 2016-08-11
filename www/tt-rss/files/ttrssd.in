@@ -7,10 +7,13 @@
 # REQUIRE: LOGIN mysql postgresql
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `ttrssd':
+# Add the following lines to /etc/rc.conf to enable `ttrssd':
 #
-#ttrssd_enable="YES"
+# ttrssd_enable="YES"
 #
+# ttrssd_local_db (bool):   Set to "YES" by default.
+#                           Set it to "NO" if the database is on another
+#                           server.
 
 . /etc/rc.subr
 
@@ -20,6 +23,7 @@ rcvar=ttrssd_enable
 # read settings, set default values
 load_rc_config "${name}"
 : ${ttrssd_enable="NO"}
+: ${ttrssd_local_db:="YES"}
 
 required_files="%%WWWDIR%%/config.php"
 pidfile="/var/run/${name}.pid"
@@ -30,7 +34,7 @@ phpupd="update_daemon2.php"
 ttrssd_log="/var/log/${name}.log"
 ttrssd_user="%%WWWOWN%%"
 
-%%DBLOCAL%%start_precmd=${name}_prestart
+start_precmd=${name}_prestart
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 
@@ -56,7 +60,9 @@ ttrssd_stop() {
 }
 
 ttrssd_prestart() {
-local _count=0
+  if checkyesno ttrssd_local_db; then
+	# Wait for the local database to be started
+	local _count=0
 
 	while : ; do
 		$CHECK_CMD > /dev/null 2>&1 && return
@@ -67,6 +73,7 @@ local _count=0
 
 		sleep 1
 	done
+  fi
 }
 
 run_rc_command "$1"

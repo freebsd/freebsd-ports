@@ -31,8 +31,8 @@ IPFW_DESC=	Add IPFW support
 PLUGINS_DESC=	Build plugins
 
 IPFW_CFLAGS=	-DIPFW_TRANSPARENT=1
-PLUGINS_USE=	MYSQL=yes SQLITE=yes
-PLUGINS_USES=	pgsql
+PLUGINS_USE=	MYSQL=yes
+PLUGINS_USES=	pgsql sqlite
 
 .include <bsd.port.options.mk>
 

@@ -1,9 +1,9 @@
 Red5 is an Open Source Flash Server written in Java that supports:
-- Streaming Audio/Video: FLV, MP3, F4V, MP4, AAC, M4A 
+- Streaming Audio/Video: FLV, MP3, F4V, MP4, AAC, M4A
 - Recording Client Streams (FLV only)
 - Shared Objects
-- Live Stream Publishing: Sorenson, VP6, h.264, Nelly Moser, 
-  MP3, Speex, AAC, NSV 
-- Remoting 
+- Live Stream Publishing: Sorenson, VP6, h.264, Nelly Moser,
+  MP3, Speex, AAC, NSV
+- Remoting
 
 WWW: http://www.red5.org/

@@ -1,5 +1,5 @@
---- source/fbsd_joystick.c.orig	Sat Jun 28 15:55:30 2003
-+++ source/fbsd_joystick.c	Sat Jun 28 15:56:01 2003
+--- source/fbsd_joystick.c.orig	2001-12-10 00:47:38 UTC
++++ source/fbsd_joystick.c
 @@ -44,7 +44,7 @@
  #include <errno.h>
  #include <fcntl.h>

@@ -1,6 +1,0 @@
-PROG=fb
-
-BINDIR=${PREFIX}/bin
-MANDIR=${PREFIX}/man/man
-
-.include <bsd.prog.mk>

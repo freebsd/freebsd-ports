@@ -31,7 +31,7 @@ MYSQL_USE=	mysql=yes
 
 PGSQL_USE=	pgsql=yes
 
-SQLITE3_USE=	sqlite=3
+SQLITE3_USES=	sqlite:3
 
 USE_RC_SUBR=	kannel_sqlbox
 

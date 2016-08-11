@@ -1,6 +1,6 @@
-This is a version of UAE, the Ubiquitous Amiga Emulator, 
-with an emulation core based on WinUAE 0.8.27. It attempts 
-to bring many of the great features of WinUAE to non-Windows 
+This is a version of UAE, the Ubiquitous Amiga Emulator,
+with an emulation core based on WinUAE 0.8.27. It attempts
+to bring many of the great features of WinUAE to non-Windows
 platforms.
 
 You will require a valid Amiga ROM file in order for this to be useful.

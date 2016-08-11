@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notiffany
-PORTVERSION=	0.0.8
+PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-nenv>=0.1:devel/rubygem-nenv \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

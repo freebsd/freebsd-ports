@@ -67,5 +67,6 @@ bin/bubble-chains
 %%DATADIR%%/data/tools/random.png
 %%DATADIR%%/data/tools/star.png
 %%DATADIR%%/data/tools/twins.png
-share/pixmaps/bubble-chains.ico
-share/pixmaps/bubble-chains.png
+share/icons/hicolor/16x16/apps/bubble-chains.png
+share/icons/hicolor/32x32/apps/bubble-chains.png
+share/icons/hicolor/48x48/apps/bubble-chains.png

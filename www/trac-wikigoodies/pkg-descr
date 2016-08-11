@@ -5,7 +5,7 @@ This plugin extends the Trac Wiki in several ways:
 - Automatic replacement of common text idioms by their corresponding symbols
   (e.g. arrows, fractions, etc.);
 - Simplified markup for single words: *this* /is/ _important_;
-- Replace <name@domain> with "mailto:" links (obfuscated if needed) 
+- Replace <name@domain> with "mailto:" links (obfuscated if needed)
   (0.11 only - though that's now in Trac core);
 - Replace \\... UNC paths with "file:///" links (0.11 only);
 

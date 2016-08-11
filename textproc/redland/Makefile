@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	BDB THREADS
 OPTIONS_DEFAULT=	BDB
 
-BDB_USE=	BDB=yes
+BDB_USES=	bdb
 BDB_CONFIGURE_OFF=	--with-bdb=no
 
 THREADS_CONFIGURE_ENABLE=	threads
@@ -60,7 +60,7 @@ PLIST_SUB+=	PGSQL="@comment "
 #.endif
 
 #.if defined(WITH_SQLITE)
-#USE_SQLITE=	3
+#USES+=		sqlite:3
 #CONFIGURE_ARGS+=--with-sqlite=3
 #PLIST_SUB+=	SQLITE=""
 #.else

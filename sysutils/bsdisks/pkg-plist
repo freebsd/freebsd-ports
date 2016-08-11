@@ -1,0 +1,3 @@
+bin/bsdisks
+etc/dbus-1/system.d/org.freedesktop.UDisks2.conf
+share/dbus-1/system-services/org.freedesktop.UDisks2.service

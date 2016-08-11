@@ -14,6 +14,6 @@ that they're already comfortable with.
 The C++ library is what you would actually use in your application,
 whether it's a game or a VR application. The library provides methods to
 load your exported files, build characters, run animations, and access
-the data necessary to render them with 3D graphics. 
+the data necessary to render them with 3D graphics.
 
 WWW: http://gna.org/projects/cal3d/

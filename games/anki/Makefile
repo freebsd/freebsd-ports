@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	lame:audio/lame \
 		mplayer:multimedia/mplayer \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>0:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.4:net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \

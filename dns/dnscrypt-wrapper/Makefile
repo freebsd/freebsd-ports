@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-wrapper
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 
 MAINTAINER=	freebsd@toyingwithfate.com
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libevent.so:devel/libevent2
 
+BROKEN_FreeBSD_9=	does not install (too long username)
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cofyc
 
@@ -23,11 +25,10 @@ ETCDNSCRYPTWRAPPER=	${PREFIX}/etc/${PORTNAME}
 SUB_LIST+=	ETCDNSCRYPTWRAPPER="${ETCDNSCRYPTWRAPPER}" USERS="${USERS}"
 USE_RC_SUBR=	${PORTNAME}
 
-USES=		gmake
-MAKE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include" PREFIX="${STAGEDIR}${PREFIX}"
+USES=		gmake localbase
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
-	${MKDIR} ${STAGEDIR}${ETCDNSCRYPTWRAPPER}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+	@${MKDIR} ${STAGEDIR}${ETCDNSCRYPTWRAPPER}
 
 .include <bsd.port.mk>

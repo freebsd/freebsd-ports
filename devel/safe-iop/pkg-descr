@@ -1,6 +1,6 @@
 This library provides a collection of (macro-based) functions
 for performing safe integer operations across platform and architecture
-with a straightforward API. 
+with a straightforward API.
 
 It supports two modes of use: header-only and linked dynamic library.
 The linked, dynamic library supplies a format-string based interface

@@ -1,0 +1,31 @@
+commit 8cf5b276a25047ed9cef710f73c59e0f63d7f337
+Author: Ganael Laplanche <ganael.laplanche@martymac.org>
+Date:   Wed Feb 11 09:04:46 2015 +0100
+
+    Use int instead of u8 for variables handled through SYSCTL_ADD_INT
+
+--- sms1xxx-gpio.h.orig
++++ sms1xxx-gpio.h
+@@ -88,7 +88,7 @@ struct sms1xxx_gpio {
+     /* Other */
+     u32 get_res;          /* last GET result */
+     int status_led_state; /* current status led state */
+-    u8 use_lna;           /* sysctl, use LNA when tuning ? */
++    int use_lna;          /* sysctl, use LNA when tuning ? */
+ };
+ 
+ int sms1xxx_gpio_get_pin_params(u32, u32 *, u32 *, u32 *);
+--- sms1xxx-ir.h.orig
++++ sms1xxx-ir.h
+@@ -37,9 +37,9 @@
+ /* Board IR configuration */
+ struct sms1xxx_ir {
+     /* IR module state */
+-    u8  module_avail;    /* Has board an IR module ?
++    int module_avail;    /* Has board an IR module ?
+                             XXX Should be based on GPIO cfg ? */
+-    u8  module_started;  /* Is IR module started ? */
++    int module_started;  /* Is IR module started ? */
+     struct cdev *dev;    /* ir0 device */
+ 
+     /* MSG_SMS_START_IR_REQ Msg parameters */

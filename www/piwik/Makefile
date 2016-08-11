@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_PHP=	ctype dom gd filter hash iconv json session xml zlib
+USE_PHP=	ctype dom gd filter hash iconv json session xml zlib \
+		mbstring simplexml
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
@@ -25,7 +26,7 @@ PHPMYSQLI_USE=	PHP=mysqli
 
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-USES=		cpe shebangfix
+USES=		cpe shebangfix php
 SHEBANG_FILES=	misc/log-analytics/import_logs.py
 
 pre-install:

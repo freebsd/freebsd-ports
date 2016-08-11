@@ -1,9 +1,9 @@
---- makefile.orig	2014-11-27 20:47:24 UTC
+--- makefile.orig	2016-05-17 23:50:39 UTC
 +++ makefile
 @@ -7,14 +7,6 @@
  # Also works with ming32-make on Windows.
  
- .SUFFIXES: .cxx .c .o .h .a
+ .SUFFIXES: .cxx .c .o .h .a .list
 -ifdef CLANG
 -CXX = clang++ -Wno-deprecated-register
 -CC = clang
@@ -15,7 +15,7 @@
  RANLIB = touch
  
  ifdef GTK3
-@@ -36,7 +28,8 @@
+@@ -42,7 +34,8 @@ DEL = del /q
  COMPLIB=..\bin\scintilla.a
  else
  DEL = rm -f
@@ -25,22 +25,24 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -77,8 +70,7 @@
+@@ -74,7 +67,6 @@ else
  CTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  
 -CFLAGS:=$(CTFLAGS)
--CXXTFLAGS:=--std=gnu++0x $(CTFLAGS) $(REFLAGS)
-+CXXTFLAGS:=$(CTFLAGS) $(REFLAGS)
+ CXXTFLAGS:=--std=gnu++0x $(CTFLAGS) $(REFLAGS)
  
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
- MARSHALLER=scintilla-marshal.o
-@@ -77,11 +69,11 @@
+@@ -83,7 +75,7 @@ MARSHALLER=scintilla-marshal.o
  .cxx.o:
  	$(CXX) $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -c $<
  .c.o:
 -	$(CC) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
 +	$(CC) $(CONFIGFLAGS) $(CTFLAGS) $(CFLAGS) -w -c $<
+ 
+ GLIB_GENMARSHAL = glib-genmarshal
+ GLIB_GENMARSHAL_FLAGS = --prefix=scintilla_marshal
+@@ -95,7 +87,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
  
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
@@ -49,7 +51,7 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -98,9 +90,11 @@
+@@ -112,9 +104,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
  	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \

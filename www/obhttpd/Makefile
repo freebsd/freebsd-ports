@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obhttpd
-PORTVERSION=	5.8.20151023
+PORTVERSION=	5.9.20160601
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -20,7 +20,6 @@ USE_RC_SUBR=	obhttpd
 USES=		uidfix
 
 WITH_OPENSSL_PORT=yes
-OPENSSL_PORT=	security/libressl
 
 CFLAGS+=	-Wall
 
@@ -32,7 +31,8 @@ GROUPS=		www
 PLIST_FILES=	sbin/obhttpd \
 		man/man5/obhttpd.conf.5.gz \
 		man/man7/patterns.7.gz \
-		man/man8/obhttpd.8.gz
+		man/man8/obhttpd.8.gz \
+		etc/obhttpd.conf.sample
 
 post-patch:
 	${REINPLACE_CMD} -e 's|httpd$$|obhttpd|g' \
@@ -43,4 +43,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/etc/httpd.conf|${PREFIX}/etc/obhttpd.conf|g' \
 		${WRKSRC}/httpd.h
 
-.include <bsd.port.mk>
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/src/etc/examples/httpd.conf \
+		${STAGEDIR}${PREFIX}/etc/obhttpd.conf.sample
+
+.include <bsd.port.pre.mk>
+
+.if empty(SSL_DEFAULT:Mlibressl*)
+IGNORE=		Need LibreSSL to build. set DEFAULT_VERSIONS+=ssl=libressl and rebuild everything.
+.endif
+
+.include <bsd.port.post.mk>

@@ -15,12 +15,10 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt
 
-USES=		python
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem python
 
 post-patch:
 		@${REINPLACE_CMD} \

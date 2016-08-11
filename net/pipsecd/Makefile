@@ -29,7 +29,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${PREFIX}/share/doc/pipsecd
 	${INSTALL_MAN} ${WRKSRC}/README.port ${STAGEDIR}${PREFIX}/share/doc/pipsecd
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/pipsecd
-
 .include <bsd.port.mk>

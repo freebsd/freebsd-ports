@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -10,6 +10,8 @@ MAINTAINER=	mp39590@gmail.com
 COMMENT=	Thread-based email index, search, and tagging application
 
 LICENSE=	GPLv3
+
+BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		c++filt:devel/binutils

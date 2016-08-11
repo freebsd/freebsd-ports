@@ -1,6 +1,6 @@
---- ./Setup.hs.orig	2012-04-13 14:40:36.000000000 +0200
-+++ ./Setup.hs	2012-05-13 20:41:08.000000000 +0200
-@@ -66,7 +66,6 @@
+--- Setup.hs.orig	2016-06-20 16:11:53 UTC
++++ Setup.hs
+@@ -78,7 +78,6 @@ myConfHook (pkg0, pbi) flags = do
  
      let libbi' = libbi
            { extraLibDirs = extraLibDirs libbi ++ [wxcDirectory]

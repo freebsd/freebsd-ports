@@ -1,9 +1,0 @@
---- /dev/null	2015-01-31 20:00:00.000000000 +0900
-+++ helper/Makefile	2015-01-31 19:27:23.000000000 +0900
-@@ -0,0 +1,6 @@
-+PROG=	egg-helper
-+SRCS=	egg-helper.c
-+
-+MAN=
-+
-+.include <bsd.prog.mk>

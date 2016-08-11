@@ -8,7 +8,7 @@ filenames as arguments, and exits with status 0 if and only if either
 first's modification time is at least as recent as the second's.  Other-
 wise it exits with non-zero status.  (The preceding two sentences are
 essentially the whole of the manual page for it.)
- 
+
 Relatively few people have V8, but in the absence of any other precedent
 for what this facility should like look, it seems reasonable to follow
 V8's lead:

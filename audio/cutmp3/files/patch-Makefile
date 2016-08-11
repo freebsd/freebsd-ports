@@ -1,8 +1,8 @@
---- ./Makefile.orig	2011-05-07 16:02:38.000000000 +0200
-+++ ./Makefile	2014-02-13 13:02:59.627899989 +0100
+--- Makefile.orig	2015-07-13 10:22:29 UTC
++++ Makefile
 @@ -1,42 +1,37 @@
  NAME=cutmp3
- VERSION=2.0.3
+ VERSION=3.0.1
 -PREFIX=/usr
 +PREFIX?=/usr/local
  BINDIR=${PREFIX}/bin

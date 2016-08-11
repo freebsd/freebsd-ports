@@ -150,12 +150,9 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/GeoTrustGlobalCA.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRoot.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot-2048.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_case.rb

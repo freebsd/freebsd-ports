@@ -1,0 +1,11 @@
+--- configure.orig	2016-05-27 17:25:42 UTC
++++ configure
+@@ -3918,7 +3918,7 @@ else
+ fi;
+ 
+ # Add -Wall to CFLAGS and clean it up
+-CFLAGS=`echo $CFLAGS -Wall|sed 's/^\ *//g;s/\ *$//g'`
++#CFLAGS=`echo $CFLAGS -Wall|sed 's/^\ *//g;s/\ *$//g'`
+ 
+ ac_config_files="$ac_config_files Makefile src/Makefile"
+ 

@@ -10,6 +10,8 @@ MASTER_SITES=	GNU/src-highlite
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	exctags:devel/ctags
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 

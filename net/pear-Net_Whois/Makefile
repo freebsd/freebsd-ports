@@ -5,7 +5,7 @@ PORTNAME=	Net_Whois
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to query internet domain name services
 
 USES=	pear

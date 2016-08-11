@@ -5,7 +5,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.flotcharts.org/downloads/
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT

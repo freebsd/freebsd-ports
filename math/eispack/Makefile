@@ -9,7 +9,7 @@ MASTER_SITES=	NL
 DISTFILES=	${SRCS}
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eigenvalue system package
 
 DIST_SUBDIR=	${PORTNAME}

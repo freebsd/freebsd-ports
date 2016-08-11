@@ -2,6 +2,8 @@
 # MAINTAINER: portmgr@FeeeBSD.org
 # $FreeBSD$
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_ACTUAL_PACKAGE_DEPENDS}" ] && set -x
+
 if [ -z "${PKG_BIN}" ]; then
 	echo "PKG_BIN required in environment." >&2
 	exit 1

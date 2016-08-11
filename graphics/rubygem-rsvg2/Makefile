@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-cairo>=1.12.8:graphics/rubygem-cairo \
 
 USE_GNOME=	librsvg2
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

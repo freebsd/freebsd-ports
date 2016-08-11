@@ -13,7 +13,7 @@ server for further processing. Example script files for uploads is included.
 So far the following formats are supported:
     * Weather Underground
     * pywws
-    * XML 
+    * XML
 
 fowsr performs a complete read out of the weather station memory using its
 USB port, and stores the result in a cache file to speed up later read-outs.

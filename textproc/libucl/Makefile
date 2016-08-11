@@ -21,7 +21,7 @@ URLS_DESC=		Enable fetching URLs
 UTILS_DESC=		Enable tools:  ucl_chargen, ucl_ucldump, ucl_tool
 
 LUA_CONFIGURE_ENABLE=	lua
-LUA_CPPFLAGS=		-I${LUA_INCDIR}
+LUA_CONFIGURE_ENV=	LUA=${LOCALBASE}/bin/${LUA_CMD}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 LUA_USES=		lua
 

@@ -5,12 +5,10 @@ PORTNAME=	adgali
 PORTVERSION=	0.2.4
 PORTREVISION=	15
 CATEGORIES=	games devel
-MASTER_SITES=	http://adgali.apiou.org/download/
+MASTER_SITES=	http://www.sourcefiles.org/Programming/Libraries/Games/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source game library useful for 2D game development
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,6 +1,6 @@
---- ./arcdata.c.orig	Tue Aug 10 23:03:24 1999
-+++ ./arcdata.c	Tue Aug 10 23:01:56 1999
-@@ -35,7 +35,7 @@
+--- arcdata.c.orig	2010-08-07 13:06:42 UTC
++++ arcdata.c
+@@ -35,7 +35,7 @@ char            tmpchr[2] = "-";/* Tempo
  #if	GEMDOS
  int		hold = 0;	/* true to pause before exit */
  #endif

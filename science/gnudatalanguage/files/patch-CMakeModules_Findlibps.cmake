@@ -1,4 +1,4 @@
---- CMakeModules/Findlibps.cmake.orig	2015-04-22 19:37:22 UTC
+--- CMakeModules/Findlibps.cmake.orig	2016-04-29 17:03:25 UTC
 +++ CMakeModules/Findlibps.cmake
 @@ -1,4 +1,4 @@
 -find_path(LIBPSPKG libps.pc PATH_SUFFIXES lib lib/pkgconfig lib64/pkgconfig)

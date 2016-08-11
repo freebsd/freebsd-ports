@@ -1,5 +1,5 @@
---- AudioDriver.h.orig	Mon Mar  3 21:47:00 1997
-+++ AudioDriver.h	Sun May 18 11:12:48 2003
+--- AudioDriver.h.orig	1997-03-03 21:47:00 UTC
++++ AudioDriver.h
 @@ -7,14 +7,15 @@
  #include <string.h>
  #include <sys/ioctl.h>

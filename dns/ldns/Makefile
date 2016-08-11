@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL
-OPTIONS_DEFAULT=	EXAMPLES DRILL
+OPTIONS_DEFAULT=	DRILL
 
 DRILL_DESC=	With drill program
 .endif
@@ -80,7 +80,7 @@ INSTALL_TARGET+=install-manpages
 
 .if ${PORT_OPTIONS:MGOST}
 . if ${OSVERSION} < 1000015
-BUILD_DEPENDS+=	openssl>=1.0:security/openssl
+WITH_OPENSSL_PORT=	yes
 CONFLICTS+=	libressl-*
 . endif
 .else

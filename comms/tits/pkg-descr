@@ -3,6 +3,6 @@ to one or more tty ports as specified in config-file (or
 /etc/tits.conf if no configuration file is specified on the command
 line).
 
-Any number of telnet(1) clients may connect to a single tits port. 
+Any number of telnet(1) clients may connect to a single tits port.
 Each client will see exactly the same output as well as being able to
 send keystrokes simultaneously.

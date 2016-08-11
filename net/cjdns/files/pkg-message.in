@@ -1,0 +1,38 @@
+======================================================================
+You installed CJDNS: IPv6 routing engine
+
+It is recommended to run CJDNS as a service:
+# sysrc cjdns_enable="YES"
+# service cjdns start
+
+When started the first time, CJDNS will create the config file
+%%PREFIX%%/etc/cjdroute.conf that you should edit to make CJDNS connected:
+* You may want to add some nodes to connect to the section "connectTo"
+  from some of these sites:
+  * https://pad.meshwith.me/p/public
+  * http://cjdns.me/
+  * https://github.com/hyperboria/peers
+* You may want to uncomment "tunDevice" to make CJDNS always use the same
+  tun device.
+
+In order to be able to open IPv6 websites available through CJDNS network
+that you connect to, you need to add the IPv6 default route:
+# route -6 add default fc00::1
+
+In order to create an IPv4 or IPv6 VPN, on the server in the section
+ipTunnel/allowedConnections of the config file you need to add the public
+keys of the clients, and to define the VPN network. On the clients you
+only need to add the public key of the server in the section
+ipTunnel/outgoingConnections. You may also need to bridge the tunN
+interface on the server to connect the segments of the VPN network.
+
+Here are some websites on CJDNS Hyperboria network:
+* http://socialno.de/ - social network
+* https://rows.io/ - Jabber server
+* http://forum.meshbits.io/ - forums
+* http://h.fc00.org/ - network map
+
+Warning: When CJDNS daemon is connected to outside network, tunN
+interface will generally directly expose your computer to that network,
+bypassing the regular firewall that you normally use.
+======================================================================

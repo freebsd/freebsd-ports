@@ -14,9 +14,8 @@ LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-USES=		pkgconfig
+USES=		bdb pkgconfig
 
-USE_BDB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''
 CONFIGURE_ENV=	EVENTINC="`pkgconf --cflags libevent`" EVENTLIB="`pkgconf --libs libevent`"

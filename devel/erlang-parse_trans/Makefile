@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	parse_trans
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

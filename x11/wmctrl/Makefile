@@ -10,6 +10,8 @@ MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Command line tool to interact with an EWMH/NetWM compatible X managers
 
+LICENSE=	GPLv2
+
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xmu xext xt

@@ -3,25 +3,30 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTREVISION=	4
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
 CATEGORIES=	sysutils
-DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
-DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
-MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
+#DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
+#MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+DISTFILES=      syslog-ng-${DISTVERSION}_with_man.tar.gz
+MASTER_SITES=   http://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
+BUILD_DEPENDS=		xsltproc:textproc/libxslt \
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON
@@ -49,15 +54,11 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/ \
-		--with-docbook-dir=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
+		--datadir=${PREFIX}/share/syslog-ng/ 
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
-
-BUILD_DEPENDS+=		xsltproc:textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"

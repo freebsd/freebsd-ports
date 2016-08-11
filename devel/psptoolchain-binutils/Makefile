@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	psptoolchain-
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PlayStation Portable development toolchain ${PORTNAME}
 
+BROKEN_powerpc64=	Does not build
+
 USES=		gmake tar:bzip2 libtool
 
 HAS_CONFIGURE=	yes

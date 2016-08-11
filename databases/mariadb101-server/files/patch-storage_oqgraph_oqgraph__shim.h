@@ -3,15 +3,6 @@ https://jira.mariadb.org/projects/MDEV/issues/MDEV-8051
 
 --- storage/oqgraph/oqgraph_shim.h.orig	2016-01-28 12:12:55 UTC
 +++ storage/oqgraph/oqgraph_shim.h
-@@ -254,7 +254,7 @@ namespace boost
-     typedef no_property type;
-   };
- 
--#if BOOST_VERSION >= 104601
-+#if BOOST_VERSION >= 104601 && BOOST_VERSION < 104900
-   template <>
-   struct graph_bundle_type<oqgraph3::graph>
-   {
 @@ -274,6 +274,33 @@ namespace boost
    };
  #endif

@@ -1,9 +1,9 @@
-This module implement a interesting graph application that is called the 
-'Social Relation Map'. It provides object-oriented way to retrieve many 
+This module implement a interesting graph application that is called the
+'Social Relation Map'. It provides object-oriented way to retrieve many
 social information that can be found in this map.
 
-The new() constructor accepts one argument in the for of 'hashref of 
-arrayref'. The key to this hash is the name of relation, and the value of 
+The new() constructor accepts one argument in the for of 'hashref of
+arrayref'. The key to this hash is the name of relation, and the value of
 the hash is a list of identities involved in this relation.
 
 WWW: http://search.cpan.org/dist/Graph-SocialMap/

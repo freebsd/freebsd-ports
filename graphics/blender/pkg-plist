@@ -98,6 +98,7 @@ share/applications/blender.desktop
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/eo/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/es/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/es_ES/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/eu/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/fa/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/fr/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/he/LC_MESSAGES/blender.mo
@@ -201,7 +202,6 @@ share/applications/blender.desktop
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/geom/geom_triangle.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/geom/geom_triangle_intersect.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/geom/geom_volume.h
-%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_accumulate.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_bake.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_camera.h
@@ -228,7 +228,6 @@ share/applications/blender.desktop
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_queues.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_random.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_shader.h
-%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_shaderdata_vars.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_shadow.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_subsurface.h
 %%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/kernel/kernel_textures.h
@@ -416,6 +415,13 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_anim_nuke_chan/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_anim_nuke_chan/export_nuke_chan.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_anim_nuke_chan/import_nuke_chan.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/__init__.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/bl_utils/pipe_non_blocking.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/bl_utils/subprocess_helper.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/blend/blendfile.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/blend/blendfile_path_walker.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/blendfile_pack.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_blend_utils/utils/system.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/coat.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/tex.py
@@ -627,6 +633,16 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/object_print3d_utils/todo.rst
 %%DATADIR%%/%%VER%%/scripts/addons/object_print3d_utils/ui.py
 %%DATADIR%%/%%VER%%/scripts/addons/paint_palette.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/13x8_wicker_globe.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/7x6.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/9x9_color.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/braided_coil.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/flower_mesh_(2d).py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/slinky_knot.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/snowflake_(2d).py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/sun_cross_(2d).py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/tripple_dna.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/curve.torus_knot_plus/wicker_basket.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.bolt_add/default.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.bolt_add/m10.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.bolt_add/m12.py
@@ -675,7 +691,9 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/render_freestyle_svg.py
 %%DATADIR%%/%%VER%%/scripts/addons/render_povray/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/render_povray/df3.py
+%%DATADIR%%/%%VER%%/scripts/addons/render_povray/primitives.py
 %%DATADIR%%/%%VER%%/scripts/addons/render_povray/render.py
+%%DATADIR%%/%%VER%%/scripts/addons/render_povray/shading.py
 %%DATADIR%%/%%VER%%/scripts/addons/render_povray/ui.py
 %%DATADIR%%/%%VER%%/scripts/addons/render_povray/update_files.py
 %%DATADIR%%/%%VER%%/scripts/addons/rigify/CREDITS
@@ -996,6 +1014,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/__init__.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/add_mesh_torus.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/anim.py
+%%DATADIR%%/%%VER%%/scripts/startup/bl_operators/bmesh/find_adjacent.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/clip.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/console.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/file.py
@@ -1113,9 +1132,11 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/templates_py/ui_previews_custom_icon.py
 %%DATADIR%%/%%VER%%/scripts/templates_py/ui_previews_dynamic_enum.py
 %%PORTDOCS%%%%DOCSDIR%%/GPL-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/GPL3-license.txt
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/LICENSE-bfont.ttf.txt
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/LICENSE-bmonofont-i18n.ttf.txt
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/LICENSE-droidsans.ttf.txt
+%%PORTDOCS%%%%DOCSDIR%%/jemalloc-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/Python-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.html

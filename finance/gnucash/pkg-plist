@@ -425,7 +425,6 @@ lib/libgnc-qof.so.1.0.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.pyo
 libexec/gnucash/overrides/gnucash-env
 libexec/gnucash/overrides/gnucash-make-guids
-libexec/gnucash/overrides/guile
 libexec/gnucash/src/libqof/qof/test/kvp_frame.h
 libexec/gnucash/src/libqof/qof/test/qofbook.h
 libexec/gnucash/src/libqof/qof/test/qofinstance.h
@@ -608,6 +607,7 @@ share/applications/gnucash.desktop
 %%DATADIR%%/accounts/es_MX/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/fi_FI/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/fi_FI/acctchrt_ry.gnucash-xea
+%%DATADIR%%/accounts/fi_FI/acctchrt_sbr-xbrl.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_automobile.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_basecommune.gnucash-xea
@@ -819,8 +819,10 @@ share/applications/gnucash.desktop
 %%DATADIR%%/accounts/sk/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/sv_AX/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/sv_AX/acctchrt_rf.gnucash-xea
+%%DATADIR%%/accounts/sv_AX/acctchrt_sbr-xbrl.gnucash-xea
 %%DATADIR%%/accounts/sv_FI/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/sv_FI/acctchrt_rf.gnucash-xea
+%%DATADIR%%/accounts/sv_FI/acctchrt_sbr-xbrl.gnucash-xea
 %%DATADIR%%/accounts/sv_SE/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/sv_SE/bas_2012.gnucash-xea
 %%DATADIR%%/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea

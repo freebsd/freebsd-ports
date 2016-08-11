@@ -1,10 +1,10 @@
-Algorithm::Dependency is a framework for creating simple read-only 
-dependency hierarchies, where you have a set of items that rely on other 
+Algorithm::Dependency is a framework for creating simple read-only
+dependency hierarchies, where you have a set of items that rely on other
 items in the set, and require actions on them as well.
 
-Despite the most visible of these being software installation systems like 
-the CPAN installer, or debian apt-get, they are useful in other 
-situations. This module intentionally uses implementation-neutral words, 
+Despite the most visible of these being software installation systems like
+the CPAN installer, or debian apt-get, they are useful in other
+situations. This module intentionally uses implementation-neutral words,
 to avoid confusion.
 
 WWW: http://search.cpan.org/dist/Algorithm-Dependency/

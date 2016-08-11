@@ -23,8 +23,6 @@ AP_GENPLIST=	yes
 AP_INC+=	${LOCALBASE}/include
 AP_LIB+=	${LOCALBASE}/lib -lGeoIP
 
-WRKSRC=		${WRKDIR}/geoip-api-${PORTNAME}-${PORTVERSION}
-
 SUB_FILES+=	pkg-message
 PORTDOCS=	Changes INSTALL.md README.md README.php
 

@@ -3,4 +3,4 @@ systems. It includes multi-player support, user-extensible color, shape and
 sound styles, can use TCP/IP networking and features a few different AI
 opponents. It was written using the SDL Library.
 
-WWW: http://www.wkiri.com/projects/atris/
+WWW: http://www.cs.virginia.edu/~weimer/atris/

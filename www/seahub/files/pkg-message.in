@@ -1,0 +1,6 @@
+If a new config is created, run this to setup admin.
+
+%%PREFIX%%/%%SEAFILE_SERVER%%/reset-admin.sh
+If a new config is created, run this to setup admin.
+
+%%PREFIX%%/%%SEAFILE_SERVER%%/reset-admin.sh

@@ -1,6 +1,6 @@
-lib/Memchan%%PORTVERSION%%/libMemchan.so.1
-lib/Memchan%%PORTVERSION%%/libMemchanstub.a
-lib/Memchan%%PORTVERSION%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/libMemchan.so.1
+lib/%%TCL_PKG%%/libMemchanstub.a
+lib/%%TCL_PKG%%/pkgIndex.tcl
 include/memchan.h
 include/memchanDecls.h
 include/buf.h

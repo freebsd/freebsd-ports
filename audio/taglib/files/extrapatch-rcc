@@ -1,4 +1,14 @@
-diff -dPNur ./config.h.cmake ./config.h.cmake
+--- ConfigureChecks.cmake.orig	2015-11-11 21:41:59 UTC
++++ ConfigureChecks.cmake
+@@ -201,6 +201,8 @@ if(NOT ZLIB_SOURCE)
+   endif()
+ endif()
+ 
++SET(HAVE_LIBRCC 1)
++
+ if(BUILD_TESTS)
+   find_package(CppUnit)
+   if(NOT CppUnit_FOUND)
 --- config.h.cmake.orig	2015-11-11 21:41:59 UTC
 +++ config.h.cmake
 @@ -22,6 +22,9 @@
@@ -11,22 +21,9 @@ diff -dPNur ./config.h.cmake ./config.h.cmake
  /* Indicates whether debug messages are shown even in release mode */
  #cmakedefine   TRACE_IN_RELEASE 1
  
-diff -dPNur ./ConfigureChecks.cmake ./ConfigureChecks.cmake
---- ConfigureChecks.cmake.orig	2015-11-11 21:41:59 UTC
-+++ ConfigureChecks.cmake
-@@ -201,6 +201,8 @@ if(NOT ZLIB_SOURCE)
-   endif()
- endif()
- 
-+SET(HAVE_LIBRCC 1)
-+
- if(BUILD_TESTS)
-   find_package(CppUnit)
-   if(NOT CppUnit_FOUND)
-diff -dPNur ./examples/tagreader_c.c ./examples/tagreader_c.c
---- ./examples/tagreader_c.c	2013-10-08 17:50:01.000000000 +0200
-+++ ./examples/tagreader_c.c	2013-11-11 13:42:53.017126134 +0100
-@@ -38,7 +38,7 @@
+--- examples/tagreader_c.c.orig	2015-11-11 21:41:59 UTC
++++ examples/tagreader_c.c
+@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
    TagLib_Tag *tag;
    const TagLib_AudioProperties *properties;
  
@@ -35,19 +32,17 @@ diff -dPNur ./examples/tagreader_c.c ./examples/tagreader_c.c
  
    for(i = 1; i < argc; i++) {
      printf("******************** \"%s\" ********************\n", argv[i]);
-diff -dPNur ./examples/tagwriter.cpp ./examples/tagwriter.cpp
---- ./examples/tagwriter.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./examples/tagwriter.cpp	2013-11-11 13:42:53.028126368 +0100
-@@ -92,7 +92,7 @@
+--- examples/tagwriter.cpp.orig	2015-11-11 21:41:59 UTC
++++ examples/tagwriter.cpp
+@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
      if(isArgument(argv[i]) && i + 1 < argc && !isArgument(argv[i + 1])) {
  
        char field = argv[i][1];
 -      TagLib::String value = argv[i + 1];
 +      TagLib::String value(argv[i + 1], TagLib::String::Locale);
  
-       TagLib::List<TagLib::FileRef>::Iterator it;
+       TagLib::List<TagLib::FileRef>::ConstIterator it;
        for(it = fileList.begin(); it != fileList.end(); ++it) {
-diff -dPNur ./taglib/CMakeLists.txt ./taglib/CMakeLists.txt
 --- taglib/CMakeLists.txt.orig	2015-11-11 21:41:59 UTC
 +++ taglib/CMakeLists.txt
 @@ -38,6 +38,7 @@ set(tag_HDRS
@@ -75,10 +70,9 @@ diff -dPNur ./taglib/CMakeLists.txt ./taglib/CMakeLists.txt
  endif()
  
  set_target_properties(tag PROPERTIES
-diff -dPNur ./taglib/mpeg/id3v1/id3v1tag.cpp ./taglib/mpeg/id3v1/id3v1tag.cpp
---- ./taglib/mpeg/id3v1/id3v1tag.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/mpeg/id3v1/id3v1tag.cpp	2013-11-11 13:42:53.043126686 +0100
-@@ -64,17 +64,18 @@
+--- taglib/mpeg/id3v1/id3v1tag.cpp.orig	2015-11-11 21:41:59 UTC
++++ taglib/mpeg/id3v1/id3v1tag.cpp
+@@ -64,17 +64,18 @@ StringHandler::StringHandler()
  
  String ID3v1::StringHandler::parse(const ByteVector &data) const
  {
@@ -99,7 +93,7 @@ diff -dPNur ./taglib/mpeg/id3v1/id3v1tag.cpp ./taglib/mpeg/id3v1/id3v1tag.cpp
  }
  
  ////////////////////////////////////////////////////////////////////////////////
-@@ -257,7 +258,7 @@
+@@ -257,7 +258,7 @@ void ID3v1::Tag::parse(const ByteVector 
      d->track = uchar(data[offset + 29]);
    }
    else
@@ -108,10 +102,9 @@ diff -dPNur ./taglib/mpeg/id3v1/id3v1tag.cpp ./taglib/mpeg/id3v1/id3v1tag.cpp
  
    offset += 30;
  
-diff -dPNur ./taglib/mpeg/id3v2/frames/commentsframe.cpp ./taglib/mpeg/id3v2/frames/commentsframe.cpp
---- ./taglib/mpeg/id3v2/frames/commentsframe.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/mpeg/id3v2/frames/commentsframe.cpp	2013-11-11 13:42:53.043126686 +0100
-@@ -150,10 +150,10 @@
+--- taglib/mpeg/id3v2/frames/commentsframe.cpp.orig	2015-11-11 21:41:59 UTC
++++ taglib/mpeg/id3v2/frames/commentsframe.cpp
+@@ -150,10 +150,10 @@ void CommentsFrame::parseFields(const By
      return;
    }
  
@@ -124,7 +117,7 @@ diff -dPNur ./taglib/mpeg/id3v2/frames/commentsframe.cpp ./taglib/mpeg/id3v2/fra
  
    ByteVectorList l = ByteVectorList::split(data.mid(4), textDelimiter(d->textEncoding), byteAlign, 2);
  
-@@ -174,10 +174,12 @@
+@@ -174,10 +174,12 @@ ByteVector CommentsFrame::renderFields()
  
    String::Type encoding = d->textEncoding;
  
@@ -138,10 +131,9 @@ diff -dPNur ./taglib/mpeg/id3v2/frames/commentsframe.cpp ./taglib/mpeg/id3v2/fra
    v.append(d->language.size() == 3 ? d->language : "XXX");
    v.append(d->description.data(encoding));
    v.append(textDelimiter(encoding));
-diff -dPNur ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp
---- ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp	2013-11-11 13:42:53.044126708 +0100
-@@ -187,12 +187,12 @@
+--- taglib/mpeg/id3v2/frames/textidentificationframe.cpp.orig	2015-11-11 21:41:59 UTC
++++ taglib/mpeg/id3v2/frames/textidentificationframe.cpp
+@@ -187,12 +187,12 @@ void TextIdentificationFrame::parseField
  
    // read the string data type (the first byte of the field data)
  
@@ -156,7 +148,7 @@ diff -dPNur ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp ./taglib/mpeg
  
    // build a small counter to strip nulls off the end of the field
  
-@@ -223,11 +223,14 @@
+@@ -223,11 +223,14 @@ void TextIdentificationFrame::parseField
  
  ByteVector TextIdentificationFrame::renderFields() const
  {
@@ -173,10 +165,9 @@ diff -dPNur ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp ./taglib/mpeg
  
    for(StringList::ConstIterator it = d->fieldList.begin(); it != d->fieldList.end(); it++) {
  
-diff -dPNur ./taglib/mpeg/id3v2/id3v2frame.cpp ./taglib/mpeg/id3v2/id3v2frame.cpp
---- ./taglib/mpeg/id3v2/id3v2frame.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/mpeg/id3v2/id3v2frame.cpp	2013-11-11 13:42:53.045126729 +0100
-@@ -302,7 +302,7 @@
+--- taglib/mpeg/id3v2/id3v2frame.cpp.orig	2015-11-11 21:41:59 UTC
++++ taglib/mpeg/id3v2/id3v2frame.cpp
+@@ -339,7 +339,7 @@ String::Type Frame::checkEncoding(const 
    if((encoding == String::UTF8 || encoding == String::UTF16BE) && version != 4)
      return String::UTF16;
  
@@ -185,9 +176,8 @@ diff -dPNur ./taglib/mpeg/id3v2/id3v2frame.cpp ./taglib/mpeg/id3v2/id3v2frame.cp
      return encoding;
  
    for(StringList::ConstIterator it = fields.begin(); it != fields.end(); ++it) {
-diff -dPNur ./taglib/toolkit/rccpatch.cpp ./taglib/toolkit/rccpatch.cpp
---- ./taglib/toolkit/rccpatch.cpp	1970-01-01 01:00:00.000000000 +0100
-+++ ./taglib/toolkit/rccpatch.cpp	2013-11-11 13:42:53.045126729 +0100
+--- taglib/toolkit/rccpatch.cpp.orig	2016-07-26 16:05:28 UTC
++++ taglib/toolkit/rccpatch.cpp
 @@ -0,0 +1,237 @@
 +#include <stdlib.h>
 +
@@ -426,9 +416,8 @@ diff -dPNur ./taglib/toolkit/rccpatch.cpp ./taglib/toolkit/rccpatch.cpp
 +#endif /* HAVE_LIBRCC */
 +    return TagLib::String::Latin1;
 +}
-diff -dPNur ./taglib/toolkit/rccpatch.h ./taglib/toolkit/rccpatch.h
---- ./taglib/toolkit/rccpatch.h	1970-01-01 01:00:00.000000000 +0100
-+++ ./taglib/toolkit/rccpatch.h	2013-11-11 13:42:53.045126729 +0100
+--- taglib/toolkit/rccpatch.h.orig	2016-07-26 16:05:28 UTC
++++ taglib/toolkit/rccpatch.h
 @@ -0,0 +1,20 @@
 +#ifndef _RCC_PATCH_H
 +#define _RCC_PATCH_H
@@ -450,7 +439,6 @@ diff -dPNur ./taglib/toolkit/rccpatch.h ./taglib/toolkit/rccpatch.h
 +TagLib::String::Type rccTaglibPatchGetID3Type();
 +
 +#endif /* _RCC_PATCH_H */
-diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
 --- taglib/toolkit/tstring.cpp.orig	2015-11-11 21:41:59 UTC
 +++ taglib/toolkit/tstring.cpp
 @@ -29,6 +29,7 @@
@@ -622,10 +610,9 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
 +    return Latin1;
 +  return type;
 +}
-diff -dPNur ./taglib/toolkit/tstring.h ./taglib/toolkit/tstring.h
---- ./taglib/toolkit/tstring.h	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/toolkit/tstring.h	2013-11-11 13:42:53.047126771 +0100
-@@ -90,6 +90,18 @@
+--- taglib/toolkit/tstring.h.orig	2015-11-11 21:41:59 UTC
++++ taglib/toolkit/tstring.h
+@@ -96,6 +96,18 @@ namespace TagLib {
       */
      enum Type {
        /*!
@@ -644,7 +631,7 @@ diff -dPNur ./taglib/toolkit/tstring.h ./taglib/toolkit/tstring.h
         * IS08859-1, or <i>Latin1</i> encoding.  8 bit characters.
         */
        Latin1 = 0,
-@@ -112,6 +124,10 @@
+@@ -118,6 +130,10 @@ namespace TagLib {
        UTF16LE = 4
      };
  
@@ -655,12 +642,12 @@ diff -dPNur ./taglib/toolkit/tstring.h ./taglib/toolkit/tstring.h
      /*!
       * Constructs an empty String.
       */
-@@ -479,7 +495,7 @@
-      * Converts a \e Latin-1 string into \e UTF-16(without BOM/CPU byte order) 
+@@ -519,7 +535,7 @@ namespace TagLib {
+      * Converts a \e Latin-1 string into \e UTF-16(without BOM/CPU byte order)
       * and copies it to the internal buffer.
       */
 -    void copyFromLatin1(const char *s, size_t length);
 +    void copyFromLatin1(const char *s, size_t length, bool prepare = false, Type t = Latin1);
  
      /*!
-      * Converts a \e UTF-8 string into \e UTF-16(without BOM/CPU byte order) 
+      * Converts a \e UTF-8 string into \e UTF-16(without BOM/CPU byte order)

@@ -7,12 +7,8 @@ bin/phpize
 etc/php.conf
 etc/php.ini-development
 etc/php.ini-production
-%%FPM%%@unexec if cmp -s %D/etc/php-fpm.conf %D/etc/php-fpm.conf.default; then rm -f %D/etc/php-fpm.conf; fi
-%%FPM%%etc/php-fpm.conf.default
-%%FPM%%@exec cp -n %D/%F %B/php-fpm.conf
-%%FPM%%@unexec if cmp -s %D/etc/php-fpm.d/www.conf %D/etc/php-fpm.d/www.conf.default; then rm -f %D/etc/php-fpm.d/www.conf; fi
-%%FPM%%etc/php-fpm.d/www.conf.default
-%%FPM%%@exec cp -n %D/%F %B/www.conf
+%%FPM%%@sample etc/php-fpm.conf.default etc/php-fpm.conf
+%%FPM%%@sample etc/php-fpm.d/www.conf.default etc/php-fpm.d/www.conf
 include/php/TSRM/TSRM.h
 include/php/TSRM/readdir.h
 include/php/TSRM/tsrm_config.h

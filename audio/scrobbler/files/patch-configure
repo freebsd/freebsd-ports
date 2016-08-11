@@ -1,6 +1,6 @@
---- ./configure.orig	2005-02-26 21:37:06.000000000 -0500
-+++ ./configure	2012-05-19 08:49:13.000000000 -0400
-@@ -22548,145 +22548,6 @@
+--- configure.orig	2005-02-27 02:37:06 UTC
++++ configure
+@@ -22548,145 +22548,6 @@ fi
  
  
  
@@ -146,7 +146,7 @@
  if test "${my_cv_curl_vers+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -22727,24 +22588,6 @@
+@@ -22727,24 +22588,6 @@ fi
  
  LIBS="$LIBS $GTKLIBS"
  

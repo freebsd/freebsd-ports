@@ -13,7 +13,11 @@ COMMENT=	Powerful IRC bouncer
 
 LICENSE=	GPLv1+ # though COPYING is GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USE_OPENSSL=	yes
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.c *.h
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE?=	${PREFIX}/psybnc
 MAKE_ARGS=	PSYBASE=${PSYBASE}
@@ -55,8 +59,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help/*.ITA ${STAGEDIR}${PSYBASE}/help/
 	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${STAGEDIR}${PREFIX}/etc/psybnc.conf.sample
-
-post-install:
 	if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then \
 	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${STAGEDIR}${PSYBASE}/key/; \
 	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${STAGEDIR}${PSYBASE}/key/; \

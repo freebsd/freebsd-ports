@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -18,11 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS=	opendnssec-1.[0-3]*
+CONFLICTS=	opendnssec-1.[0-3]* opendnssec2-[0-9]*
 
 USERS=		opendnssec
 GROUPS=		opendnssec
@@ -47,7 +46,7 @@ SQLITE_USE=	yes
 
 .if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-database-backend=mysql
-USE_MYSQL=	compat
+USES+=		mysql
 SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
 		migrate_zone_delete.mysql migrate_id_mysql.pl \
 		migrate_to_ng_mysql.pl migrate_1_4_8.mysql

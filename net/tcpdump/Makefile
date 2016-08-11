@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpdump
-PORTVERSION=	4.7.4
+PORTVERSION=	4.8.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -11,7 +11,7 @@ COMMENT=	Ubiquitous network traffic analysis tool
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpcap.so:net/libpcap
+LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -20,7 +20,7 @@ UNPRIV_USER?=	nobody
 CHROOTDIR?=	/var/run/tcpdump
 
 OPTIONS_DEFINE=	CRYPTO IPV6 SMB SMI USER CHROOT
-OPTIONS_DEFAULT=	CRYPTO IPV6 SMB SMI
+OPTIONS_DEFAULT=	CRYPTO SMB SMI
 
 CRYPTO_DESC=	Support IPSEC and TCPMD5
 # This one is intentionally worded this way because the default

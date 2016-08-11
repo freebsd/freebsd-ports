@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,9 +23,7 @@ RUN_DEPENDS=	gsed:textproc/gsed \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		cpe
+USES=		cpe gem
 
 CPE_VENDOR=	theforeman
 

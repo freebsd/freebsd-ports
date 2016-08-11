@@ -7,17 +7,9 @@
 XDG_CONFIG_DIRS=\
 ${XDG_CONFIG_DIRS}:/etc/xdg:%%LOCALBASE%%/etc/xdg:%%LOCALBASE%%/etc/xdg/xfce4
 
-if [ %%KDE4_PREFIX%% != %%LOCALBASE%% ]; then
-    XDG_CONFIG_DIRS=%%KDE4_PREFIX%%/etc/xdg:${XDG_CONFIG_DIRS}
-fi
-
 export XDG_CONFIG_DIRS
 
 XDG_DATA_DIRS=\
 ${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:%%LOCALBASE%%/share/gnome
-
-if [ %%KDE4_PREFIX%% != %%LOCALBASE%% ]; then
-    XDG_DATA_DIRS=%%KDE4_PREFIX%%/share:${XDG_DATA_DIRS}
-fi
 
 export XDG_DATA_DIRS

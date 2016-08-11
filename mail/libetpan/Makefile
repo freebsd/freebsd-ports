@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libetpan
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7.2
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Mail framework for C language
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
@@ -18,13 +18,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
 
-USES=		autoreconf gmake iconv libtool
+USES=		autoreconf gmake iconv libtool localbase
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 OPTIONS_DEFINE=		IPV6
 OPTIONS_SINGLE=		CRYPTO
@@ -33,12 +30,13 @@ OPTIONS_DEFAULT=	OPENSSL
 
 GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libgcrypt.so:security/libgcrypt
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 pre-configure:
 	@(cd ${WRKSRC} && ${LN} -s README.md README)

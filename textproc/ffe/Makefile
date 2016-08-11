@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ffe
-PORTVERSION=	0.3.6
+DISTVERSION=	0.3.6-1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
+MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat file extractor

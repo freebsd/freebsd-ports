@@ -1,0 +1,59 @@
+--- configure.ac.orig	2016-05-10 20:45:50 UTC
++++ configure.ac
+@@ -48,6 +48,13 @@ case "${host_os}" in
+     # Needed for plugin system
+     LDFLAGS+=" -ldl"
+     ;;
++  freebsd*)
++    SYS=freebsd
++    # Necessary for linking .a to a .so
++    LDFLAGS+=" -Wl,-Bsymbolic"
++    # Needed for plugin system
++    LDFLAGS+=" -ldl"
++    ;;
+   darwin*)
+     SYS=darwin
+ 
+@@ -95,6 +102,7 @@ case "${host_os}" in
+ esac
+ AM_CONDITIONAL(HAVE_DARWIN,  test "${SYS}" = "darwin")
+ AM_CONDITIONAL(HAVE_LINUX,   test "${SYS}" = "linux")
++AM_CONDITIONAL(HAVE_FREEBSD, test "${SYS}" = "freebsd")
+ AM_CONDITIONAL(HAVE_WIN32,   test "${SYS}" = "mingw32")
+ AM_CONDITIONAL(HAVE_WIN64,   test "${HAVE_WIN64}" = "1")
+ AM_CONDITIONAL(HAVE_OSX,   test "${HAVE_OSX}" = "1")
+@@ -189,10 +197,10 @@ AC_ARG_WITH(contrib,
+ ])
+ AC_MSG_CHECKING([for 3rd party libraries path])
+ AS_IF([test -z "${with_contrib}" || test "${with_contrib}" = "yes"], [
+-  CONTRIB_DIR="${srcdir}/contrib/${host}"
++  CONTRIB_DIR="${srcdir}/contrib/`uname -m`-portbld-freebsd"
+   AS_IF([test ! -d "${CONTRIB_DIR}"], [
+     echo "${CONTRIB_DIR} not found" >&AS_MESSAGE_LOG_FD
+-    CONTRIB_DIR="${srcdir}/contrib/`$CC -dumpmachine`"
++    CONTRIB_DIR="${srcdir}/contrib/`uname -m`-portbld-freebsd"
+     AS_IF([test ! -d "${CONTRIB_DIR}"], [
+       echo "${CONTRIB_DIR} not found" >&AS_MESSAGE_LOG_FD
+       CONTRIB_DIR=""
+@@ -295,7 +303,7 @@ fi
+ AM_CONDITIONAL(BUILD_ALSA, test "x$with_alsa" = "xyes")
+ 
+ 
+-if test "${SYS}" = "linux"; then
++if test "${SYS}" = "linux" || test "${SYS}" = "freebsd"; then
+ dnl Check for pulseaudio development package - name: libpulse-dev
+ LIBPULSE_MIN_VERSION=0.9.15
+ AC_ARG_WITH([pulse],
+@@ -377,9 +385,9 @@ AS_IF([test "x$with_dbus" = "xyes"], [
+            AC_MSG_ERROR([dbusxx-xml2cpp not found])
+        fi
+ 
+-       AS_IF([test "x$CLANG" = "xyes"], [
+-             AC_MSG_ERROR([dbus does not compile when clang is used, rerun with --without-dbus])
+-       ]);
++       #AS_IF([test "x$CLANG" = "xyes"], [
++       #      AC_MSG_ERROR([dbus does not compile when clang is used, rerun with --without-dbus])
++       #]);
+        AM_CONDITIONAL(RING_DBUS, true)],
+        AM_CONDITIONAL(RING_DBUS, false));
+ 

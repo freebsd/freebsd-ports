@@ -1,17 +1,17 @@
-The App::Cache module lets an application cache data locally. There are a 
-few times an application would need to cache data: when it is retrieving 
-information from the network or when it has to complete a large 
+The App::Cache module lets an application cache data locally. There are a
+few times an application would need to cache data: when it is retrieving
+information from the network or when it has to complete a large
 calculation.
 
-For example, the Parse::BACKPAN::Packages module downloads a file off the 
-net and parses it, creating a data structure. Only then can it actually 
-provide any useful information for the programmer. 
-Parse::BACKPAN::Packages uses App::Cache to cache both the file download 
+For example, the Parse::BACKPAN::Packages module downloads a file off the
+net and parses it, creating a data structure. Only then can it actually
+provide any useful information for the programmer.
+Parse::BACKPAN::Packages uses App::Cache to cache both the file download
 and data structures, providing much faster use when the data is cached.
 
-This module stores data in the home directory of the user, in a dot 
-directory. For example, the Parse::BACKPAN::Packages cache is actually 
-stored underneath "~/.parse_backpan_packages/cache/". This is so that 
+This module stores data in the home directory of the user, in a dot
+directory. For example, the Parse::BACKPAN::Packages cache is actually
+stored underneath "~/.parse_backpan_packages/cache/". This is so that
 permissions are not a problem - it is a per-user, per-application cache.
- 
+
 WWW: http://search.cpan.org/dist/App-Cache/

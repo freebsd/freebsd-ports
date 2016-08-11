@@ -1,6 +1,6 @@
---- tracsubtickets/api.py.orig	2013-03-28 05:19:20.898573000 +0800
-+++ tracsubtickets/api.py	2013-03-28 05:19:46.107341000 +0800
-@@ -153,7 +153,7 @@
+--- tracsubtickets/api.py.orig	2012-10-27 18:40:31 UTC
++++ tracsubtickets/api.py
+@@ -153,7 +153,7 @@ class SubTicketsSystem(Component):
                             (parent, ticket.id))
              # add a comment to old parent
              xticket = Ticket(self.env, parent)
@@ -9,7 +9,7 @@
              tn = TicketNotifyEmail(self.env)
              tn.notify(xticket, newticket=False, modtime=xticket['changetime'])
  
-@@ -164,7 +164,7 @@
+@@ -164,7 +164,7 @@ class SubTicketsSystem(Component):
                             (parent, ticket.id))
              # add a comment to new parent
              xticket = Ticket(self.env, parent)

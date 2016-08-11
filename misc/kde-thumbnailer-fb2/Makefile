@@ -10,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for fb2 files
 
 USES=		cmake:outsource
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

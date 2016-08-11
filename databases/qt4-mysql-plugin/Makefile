@@ -10,4 +10,6 @@ USE_MYSQL=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include/mysql
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 
+BROKEN_powerpc64=	Does not build
+
 .include "${.CURDIR:H:H}/devel/qt4/Makefile.sqldrivers"

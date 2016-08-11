@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turba
-PORTVERSION=	4.2.14
+PORTVERSION=	4.2.15
 PKGNAMEPREFIX=	horde-
 CATEGORIES=	mail www pear
 

@@ -3,6 +3,8 @@
 
 PORTNAME=	maxminddb
 PORTVERSION=	1.1.0
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel net
 PKGNAMEPREFIX=	php-
 
@@ -19,14 +21,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-php
-GH_TAGNAME=	1383655
 
 WRKSRC_SUBDIR=	ext
 
-USE_PHP=	yes
-IGNORE_WITH_PHP=4
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

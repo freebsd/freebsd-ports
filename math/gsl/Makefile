@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 LICENSE=	GPLv3

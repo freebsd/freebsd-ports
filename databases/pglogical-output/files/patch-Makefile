@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-06-08 15:56:57 UTC
++++ Makefile
+@@ -30,7 +30,7 @@ EXTRA_INSTALL += ./examples/hooks
+ REGRESS_OPTS += --temp-config=regression.conf
+ 
+ plhooks:
+-	make -C examples/hooks USE_PGXS=1 clean install
++	${MAKE} -C examples/hooks USE_PGXS=1 clean install
+ 
+ installcheck: plhooks
+ 

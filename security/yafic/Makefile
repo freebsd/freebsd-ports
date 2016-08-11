@@ -39,8 +39,6 @@ do-install:
 	${LN} -sf yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1/yafic-check.1
 .endif
 	${INSTALL_MAN} ${WRKSRC}/yafic.conf.5 ${STAGEDIR}${PREFIX}/man/man5
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/yafic
 	@${CP} ${FILESDIR}/yafic.conf.sample ${STAGEDIR}${EXAMPLESDIR}
 

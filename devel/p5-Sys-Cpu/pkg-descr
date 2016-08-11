@@ -1,8 +1,8 @@
 Sys::CPU - Perl extension for getting CPU information.
-In responce to a post on perlmonks.org, a module for counting 
-the number of CPU's on a system. Support has now also been 
-added for type of CPU and clock speed. While much of the code 
-is from UNIX::Processors, Win32 support has been added 
+In responce to a post on perlmonks.org, a module for counting
+the number of CPU's on a system. Support has now also been
+added for type of CPU and clock speed. While much of the code
+is from UNIX::Processors, Win32 support has been added
 (but not tested).
 
 WWW: http://search.cpan.org/dist/Sys-Cpu/

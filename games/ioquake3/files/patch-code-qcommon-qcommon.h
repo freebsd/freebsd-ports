@@ -1,6 +1,6 @@
---- code/qcommon/qcommon.h.orig	2009-12-08 11:09:48.000000000 +0100
-+++ code/qcommon/qcommon.h	2009-12-08 11:10:43.000000000 +0100
-@@ -1069,6 +1069,9 @@
+--- code/qcommon/qcommon.h.orig	2009-01-17 23:09:58 UTC
++++ code/qcommon/qcommon.h
+@@ -1069,6 +1069,9 @@ char	*Sys_DefaultInstallPath(void);
  char    *Sys_DefaultAppPath(void);
  #endif
  

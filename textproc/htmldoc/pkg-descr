@@ -1,13 +1,13 @@
 This is a port of HTMLDOC, which can:
-   Convert HTML files to PDF or PostScript 
-      Generate a table-of-contents for books 
-      Generate indexed HTML files 
+   Convert HTML files to PDF or PostScript
+      Generate a table-of-contents for books
+      Generate indexed HTML files
       Generate files on-the-fly for web applications, from the
-	command-line for batch jobs, or from a GUI for interactive work. 
+	command-line for batch jobs, or from a GUI for interactive work.
 
    HTMLDOC Provides
-       A command-line interface for batch and WWW applications. 
-       A graphical interface for interactive work. 
+       A command-line interface for batch and WWW applications.
+       A graphical interface for interactive work.
 
 In my opinion, HTMLDOC is *fast*, compared to the other solutions I've seen.
 

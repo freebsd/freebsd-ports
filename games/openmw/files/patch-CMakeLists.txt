@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2016-01-12 16:11:28 UTC
+--- CMakeLists.txt.orig	2016-06-30 21:09:52 UTC
 +++ CMakeLists.txt
-@@ -224,7 +224,7 @@ if (USE_QT)
-     set (OSG_QT osgQt)
+@@ -296,7 +296,7 @@ find_package(Boost REQUIRED COMPONENTS $
+ find_package(SDL2 REQUIRED)
+ find_package(OpenAL REQUIRED)
+ find_package(Bullet REQUIRED)
+-if (NOT BULLET_FOUND OR BULLET_VERSION VERSION_LESS 283)
++if (NOT BULLET_FOUND OR BULLET_VERSION VERSION_LESS 282)
+     message(FATAL_ERROR "OpenMW requires Bullet version 2.83 or later")
  endif()
- 
--find_package(OpenSceneGraph 3.2.0 REQUIRED osgDB osgViewer osgText osgGA osgAnimation osgParticle ${OSG_QT} osgUtil osgFX)
-+find_package(OpenSceneGraph 3.2.0 REQUIRED osgDB osgViewer osgText osgGA osgAnimation osgParticle osgUtil osgFX)
- 
- include_directories(${OPENSCENEGRAPH_INCLUDE_DIRS})
  

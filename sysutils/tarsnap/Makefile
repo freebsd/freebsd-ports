@@ -3,6 +3,7 @@
 
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.37
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
@@ -11,7 +12,11 @@ MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Online encrypted backup service (client)
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
+		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}"
+
 USES=		gmake tar:tgz
+USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 

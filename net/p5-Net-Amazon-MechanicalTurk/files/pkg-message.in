@@ -5,7 +5,7 @@ You need to do some things before you can use the Amazon Mechanical Turk:
 
 2) Configure the MTurk Perl module with the following command:
 
-   perl -MNet::Amazon::MechanicalTurk::Configurer -e configure 
+   perl -MNet::Amazon::MechanicalTurk::Configurer -e configure
 
    Your configuration file will be created in the file
    %%HOME%%/.aws/auth.

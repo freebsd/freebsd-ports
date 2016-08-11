@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebService-Prowl
-PORTVERSION=	0.07
-PORTREVISION=	2
+PORTVERSION=	0.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,15 +12,15 @@ COMMENT=	Perl interface to Prowl Public API
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
-		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

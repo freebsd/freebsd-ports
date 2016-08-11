@@ -28,7 +28,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qgo ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/qgo.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/ressources/pics/qgo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps

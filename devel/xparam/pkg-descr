@@ -1,4 +1,4 @@
-XParam is a general-purpose tool for parameter handling in C++. 
+XParam is a general-purpose tool for parameter handling in C++.
 
 It allows object serialization and deserialization in a format that is
 human-readable and -writeable, and is unaffected by issues of word-size

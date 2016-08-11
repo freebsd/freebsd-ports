@@ -1,5 +1,5 @@
---- cfheader.h.orig	2014-02-21 15:42:52.379291286 -0500
-+++ cfheader.h	2014-02-21 16:02:51.918208148 -0500
+--- cfheader.h.orig	1999-10-24 06:13:29 UTC
++++ cfheader.h
 @@ -15,10 +15,12 @@
  #define __CFHEADER_H__
  

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.07b
+PORTVERSION=	2.29
+DISTVERSIONSUFFIX=	b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -18,7 +19,7 @@ OPTIONS_DEFINE=		DEBUG DOCS MINIMIZE_CORPUS LLVM TEST_INSTRUMENTATION
 MINIMIZE_CORPUS_DESC=	Install afl-cmin. Adds bash dependency
 TEST_INSTRUMENTATION_DESC=	Execute tests (expected to fail in jails)
 LLVM_DESC=	LLVM-based instrumentation (broken on 9.x)
-OPTIONS_DEFAULT=	DOCS LLVM MINIMIZE_CORPUS
+OPTIONS_DEFAULT=	LLVM MINIMIZE_CORPUS
 
 OPTIONS_SUB=	yes
 
@@ -74,7 +75,6 @@ post-build-LLVM-on:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
-
 .for afl_script in afl-cmin afl-plot afl-whatsup
 	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${PREFIX}/bin/
 .endfor

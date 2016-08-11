@@ -83,7 +83,6 @@ do-install:
 	@ cd ${WRKSRC} && ${INSTALL_DATA} ${EXCEPTFILES} ${STAGEDIR}${DATADIR}
 	@ cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/contrib
 
-post-install:
 #	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
 #	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
 	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,5 @@
---- ./Makefile.orig	2008-06-11 03:03:39.000000000 +0200
-+++ ./Makefile	2014-04-06 19:58:34.694394244 +0200
+--- Makefile.orig	2008-06-11 01:03:39 UTC
++++ Makefile
 @@ -1,15 +1,18 @@
 -PREFIX=/usr
 +PREFIX=/usr/local
@@ -22,7 +22,7 @@
  
  all:
  clean:
-@@ -17,29 +20,30 @@
+@@ -17,29 +20,30 @@ distclean: clean
  
  
  install: all

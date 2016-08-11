@@ -17,8 +17,6 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas
 CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include/libxml2"
 USE_GNOME=	libxml2
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		pkgconfig
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>

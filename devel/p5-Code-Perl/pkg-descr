@@ -1,8 +1,8 @@
-Code::Perl allows you to build chunks of Perl code as a tree and then when 
-you're finished building, the tree can output the Perl code. This is 
-useful if you have built your own mini-language and you want to generate 
-Perl from it. Rather than generating the Perl at parse time and having to 
-worry about quoting, escaping, parentheses etc, you can just build a tree 
+Code::Perl allows you to build chunks of Perl code as a tree and then when
+you're finished building, the tree can output the Perl code. This is
+useful if you have built your own mini-language and you want to generate
+Perl from it. Rather than generating the Perl at parse time and having to
+worry about quoting, escaping, parentheses etc, you can just build a tree
 using Code::Perl and then dump out the correct Perl at the end.
 
 WWW: http://search.cpan.org/dist/Code-Perl/

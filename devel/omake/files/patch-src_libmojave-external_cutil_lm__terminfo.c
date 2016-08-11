@@ -2,7 +2,7 @@ $NetBSD: patch-am,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_terminfo.c.orig	2007-05-15 19:03:32.000000000 +0000
+--- src/libmojave-external/cutil/lm_terminfo.c.orig	2007-05-15 19:03:32 UTC
 +++ src/libmojave-external/cutil/lm_terminfo.c
 @@ -75,9 +75,9 @@ value caml_tgetstr(value id) {
  

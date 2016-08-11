@@ -1,7 +1,7 @@
-Disorder and chaos are interesting phenomena. Calculating the amount 
-of entropy, information, or disorder in an information stream or data 
-collection has many interesting applications. 
-libdisorder provides a simple C library for calculating classic Shannon 
-entropy (more to come in future releases). 
+Disorder and chaos are interesting phenomena. Calculating the amount
+of entropy, information, or disorder in an information stream or data
+collection has many interesting applications.
+libdisorder provides a simple C library for calculating classic Shannon
+entropy (more to come in future releases).
 
 WWW: http://libdisorder.freshdefense.net/

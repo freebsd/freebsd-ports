@@ -1,0 +1,10 @@
+--- Resource/Init/FAPIconfig.orig	2012-08-08 08:01:36 UTC
++++ Resource/Init/FAPIconfig
+@@ -12,3 +12,7 @@
+ % and CID font resource files.
+ % "Embedded fonts" are fonts and CID fonts being embedded into a document.
+ 
++/FontPath	()	% A default directory for FAPI-handled font files path in FAPIfontmap.
++/CIDFontPath	()	% A default directory for FAPI-handled CID font files path in FAPIcidfmap.
++/HookDiskFonts	[]	% FontType values for disk PS fonts to be redirected to FAPI.
++/HookEmbeddedFonts	[]	% FontType values for embedded PS fonts to be redirected to FAPI.

@@ -1,8 +1,8 @@
 
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-al,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
---- shuffle.c.orig	Tue Jan 12 19:59:38 1993
-+++ shuffle.c	Mon Aug 25 00:38:35 2003
+--- shuffle.c.orig	1993-01-12 18:59:38 UTC
++++ shuffle.c
 @@ -18,6 +18,9 @@
  
  # include "debug.h"
@@ -22,7 +22,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-al,v 1.4 2005/12/11 20:48:46 joerg
  void
  shuffle_setup() {
  	extern char	*malloc();
-@@ -97,7 +102,7 @@
+@@ -97,7 +102,7 @@ shuffle_setup() {
  		random_tracks[i] = try;
  	}
  

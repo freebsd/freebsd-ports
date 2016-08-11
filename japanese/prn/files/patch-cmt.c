@@ -1,6 +1,6 @@
---- cmt.c.orig	Mon Apr 25 16:26:57 1994
-+++ cmt.c	Fri Feb  6 00:18:46 2004
-@@ -27,7 +27,9 @@
+--- cmt.c.orig	1994-04-25 07:26:57 UTC
++++ cmt.c
+@@ -27,7 +27,9 @@ static char *sccsid = "@(#)cmt.c 2.2 (Y.
  #endif
  
  #include <stdio.h>
@@ -10,7 +10,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include "cmt.h"
-@@ -352,16 +354,15 @@
+@@ -352,16 +354,15 @@ static char_t *readkeyword(filename)
  	error(format, arg1, arg2, ...)
  	    char *format;
   ---------------------------------------------------------------------*/

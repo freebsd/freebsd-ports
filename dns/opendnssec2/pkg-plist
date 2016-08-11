@@ -1,0 +1,65 @@
+bin/ods-hsmspeed
+bin/ods-hsmutil
+bin/ods-kasp2html
+bin/ods-kaspcheck
+bin/ods-ksmutil
+@sample %%ETCDIR%%/addns.xml.sample
+@sample %%ETCDIR%%/conf.xml.sample
+@sample %%ETCDIR%%/kasp.xml.sample
+@sample %%ETCDIR%%/zonelist.xml.sample
+man/man1/ods-hsmspeed.1.gz
+man/man1/ods-hsmutil.1.gz
+man/man1/ods-kaspcheck.1.gz
+man/man1/ods-ksmutil.1.gz
+man/man5/ods-kasp.5.gz
+man/man5/ods-timing.5.gz
+man/man7/opendnssec.7.gz
+man/man8/ods-control.8.gz
+man/man8/ods-enforcer-db-setup.8.gz
+man/man8/ods-enforcer.8.gz
+man/man8/ods-enforcerd.8.gz
+man/man8/ods-signer.8.gz
+man/man8/ods-signerd.8.gz
+sbin/ods-control
+sbin/ods-enforcer
+sbin/ods-enforcer-db-setup
+sbin/ods-enforcerd
+sbin/ods-migrate
+sbin/ods-signer
+sbin/ods-signerd
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/README.md
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/convert_mysql
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/convert_sqlite
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/find_problematic_zones.sql
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/mysql_convert.sql
+%%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/sqlite_convert.sql
+%%DATADIR%%/addns.rnc
+%%DATADIR%%/addns.rng
+%%DATADIR%%/conf.rnc
+%%DATADIR%%/conf.rng
+%%DATADIR%%/enforcerstate.rnc
+%%DATADIR%%/enforcerstate.rng
+%%DATADIR%%/kasp.rnc
+%%DATADIR%%/kasp.rng
+%%DATADIR%%/kasp2html.xsl
+@comment %%SQLITE%%%%DATADIR%%/migrate_1_4_8.sqlite3
+@comment %%SQLITE%%%%DATADIR%%/migrate_adapters_1.sqlite3
+@comment %%SQLITE%%%%DATADIR%%/migrate_keyshare_sqlite3.pl
+@comment %%SQLITE%%%%DATADIR%%/migrate_to_ng_sqlite.pl
+@comment %%MYSQL%%%%DATADIR%%/migrate_1_4_8.mysql
+@comment %%MYSQL%%%%DATADIR%%/migrate_adapters_1.mysql
+@comment %%MYSQL%%%%DATADIR%%/migrate_keyshare_mysql.pl
+@comment %%MYSQL%%%%DATADIR%%/migrate_zone_delete.mysql
+@comment %%MYSQL%%%%DATADIR%%/migrate_id_mysql.pl
+@comment %%MYSQL%%%%DATADIR%%/migrate_to_ng_mysql.pl
+%%DATADIR%%/signconf.rnc
+%%DATADIR%%/signconf.rng
+%%DATADIR%%/zonelist.rnc
+%%DATADIR%%/zonelist.rng
+@dir(opendnssec,opendnssec,) var/opendnssec
+@dir(opendnssec,opendnssec,) var/opendnssec/enforcer
+@dir(opendnssec,opendnssec,) var/opendnssec/signconf
+@dir(opendnssec,opendnssec,) var/opendnssec/signed
+@dir(opendnssec,opendnssec,) var/opendnssec/signer
+@dir(opendnssec,opendnssec,) var/opendnssec/unsigned
+@dir(opendnssec,opendnssec,) var/run/opendnssec

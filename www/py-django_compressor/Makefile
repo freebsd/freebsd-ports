@@ -3,6 +3,7 @@
 
 PORTNAME=	django_compressor
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,9 @@ COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versiontools>=1.8.2:devel/py-versiontools
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf \
+		${PYTHON_PKGNAMEPREFIX}rcssmin>=0:archivers/py-rcssmin \
+		${PYTHON_PKGNAMEPREFIX}rjsmin>=0:archivers/py-rjsmin
 
 USES=		python
 USE_PYTHON=	autoplist distutils

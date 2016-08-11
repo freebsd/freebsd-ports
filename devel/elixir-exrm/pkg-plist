@@ -29,5 +29,6 @@ lib/elixir/lib/exrm/priv/rel/files/install_upgrade.escript
 lib/elixir/lib/exrm/priv/rel/files/nodetool
 lib/elixir/lib/exrm/priv/rel/files/release_definition.txt
 lib/elixir/lib/exrm/priv/rel/files/sys.config
+lib/elixir/lib/exrm/priv/rel/files/vm.args
 lib/elixir/lib/exrm/priv/rel/relx.config
 %%PORTDOCS%%%%DOCSDIR%%/README.md

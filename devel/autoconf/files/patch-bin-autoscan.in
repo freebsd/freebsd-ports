@@ -1,0 +1,11 @@
+--- bin/autoscan.in.orig	2012-04-25 02:37:26 UTC
++++ bin/autoscan.in
+@@ -358,7 +358,7 @@ sub scan_sh_file ($)
+     {
+       # Strip out comments and variable references.
+       s/#.*//;
+-      s/\${[^\}]*}//g;
++      s/\$\{[^\}]*}//g;
+       s/@[^@]*@//g;
+ 
+       # Tokens in the code.

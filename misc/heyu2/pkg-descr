@@ -1,5 +1,5 @@
-HEYU is a text-based console program for remotely controlling lights and 
-appliances in the home or office.   It is made available under a free and open 
+HEYU is a text-based console program for remotely controlling lights and
+appliances in the home or office.   It is made available under a free and open
 source license.
 
 Heyu uses the CM11A computer interface to send and receive X10 control signals
@@ -10,6 +10,6 @@ memory for execution when the computer is turned off or disconnected.
 Heyu now supports an optional W800RF32A or MR26A RF receiver connected to a
 second port as an auxiliary input device for X10 RF signals.
 
-Heyu can also use an optional CM17A interface to transmit X10 RF signals. 
+Heyu can also use an optional CM17A interface to transmit X10 RF signals.
 
 WWW: http://www.heyu.org/

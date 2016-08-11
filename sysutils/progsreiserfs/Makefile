@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-Werror
 CFLAGS+=	-Dgetopt_long_only=getopt_long
 
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs_libmisc_Makefile.in
 
 OPTIONS_DEFINE=	NLS
 

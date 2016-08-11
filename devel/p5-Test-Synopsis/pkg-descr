@@ -1,5 +1,5 @@
-Test::Synopsis is an (author) test module to find .pm or .pod files under 
-your lib directory and then make sure the example snippet code in your 
+Test::Synopsis is an (author) test module to find .pm or .pod files under
+your lib directory and then make sure the example snippet code in your
 SYNOPSIS section passes the perl compile check.
 
 WWW: http://search.cpan.org/dist/Test-Synopsis/

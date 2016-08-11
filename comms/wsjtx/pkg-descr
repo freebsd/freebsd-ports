@@ -2,6 +2,6 @@ WSJT ("Weak Signal Communication, by K1JT") offers specific digital protocols
 optimized for meteor scatter, ionospheric scatter, and EME (moonbounce)
 at VHF/UHF, as well as HF skywave propagation.  The program can decode
 fraction-of-a-second signals reflected from ionized meteor trails and
-steady signals 10 dB below the audible threshold.  
+steady signals 10 dB below the audible threshold.
 
 WWW: http://physics.princeton.edu/pulsar/k1jt/wsjtx.html

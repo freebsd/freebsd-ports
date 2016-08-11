@@ -1,4 +1,4 @@
---- src/file.cpp.orig	2016-01-04 20:50:45 UTC
+--- src/file.cpp.orig	2016-04-29 17:03:25 UTC
 +++ src/file.cpp
 @@ -242,10 +242,11 @@ extern "C"
  #endif

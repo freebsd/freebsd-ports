@@ -11,7 +11,7 @@ COMMENT=	Advanced shutdown utility for KDE
 
 USES=		alias cmake:outsource compiler:c++0x gettext zip
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdeprefix workspace
+USE_KDE4=	automoc4 workspace
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

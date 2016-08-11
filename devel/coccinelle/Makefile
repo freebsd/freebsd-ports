@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Program matching and transformation engine
 
 LICENSE=	GPLv2

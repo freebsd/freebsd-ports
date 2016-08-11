@@ -11,7 +11,7 @@ The SNES9X emulator was installed
    %%DOCSDIR%%/README
 
    or only typing:
-  
+
    # (o)snes9x
 
 3) Also you can define a config file, see an example at:
@@ -20,7 +20,7 @@ The SNES9X emulator was installed
 
    and you can select this config file using:
 
-   # (o)snes9x -conf /path/to/conf_file 
+   # (o)snes9x -conf /path/to/conf_file
 
 4) Enjoy it ;)
 

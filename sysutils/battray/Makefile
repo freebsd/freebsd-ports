@@ -7,7 +7,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	http://code.arp242.net/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 DISTNAME=	${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Display notebook battery status in tray
 
 LICENSE=	MIT

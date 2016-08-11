@@ -17,7 +17,6 @@ PLIST_FILES=	sbin/${PORTNAME} \
 		man/man8/${PORTNAME}.8.gz
 
 LDFLAGS+=	-lm
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS=	NO_WERROR=yes
 
 do-install:

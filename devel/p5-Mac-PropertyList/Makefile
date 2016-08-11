@@ -16,13 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-XML-Entities>=0:textproc/p5-XML-Entities
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.64:devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,7 +35,7 @@ do-install:
 	${CP} -R ${WRKSRC}/openacs4tests ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tclwebtest ${STAGEDIR}${PREFIX}/bin/tclwebtest
 
-post-install:
+post-install-DOCS-on:
 	@${ECHO} "Installing docs"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
 	${TAR} -C ${WRKSRC} -c -f - ChangeLog README TODO index.html generate_docs.test | ${TAR} -C ${STAGEDIR}${DOCSDIR} -x -f -

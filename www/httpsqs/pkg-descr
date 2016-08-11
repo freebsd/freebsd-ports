@@ -2,4 +2,4 @@ HTTPSQS is a Simple Queue Service based on HTTP GET/POST protocol. It can
 handle more than 10000 requests/sec concurrent connections. Currently it's
 widely deployed throughout the xoyo.com under the Kingsoft Corporation.
 
-WWW:	https://code.google.com/p/httpsqs/
+WWW: https://code.google.com/p/httpsqs/

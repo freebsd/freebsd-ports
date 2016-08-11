@@ -1,0 +1,8 @@
+bin/repmgr
+@sample etc/repmgr.conf.sample
+sbin/repmgrd
+lib/postgresql/repmgr_funcs.so
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%DATADIR%%/repmgr.sql
+%%DATADIR%%/repmgr_funcs.sql
+%%DATADIR%%/uninstall_repmgr_funcs.sql

@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/Net::SFTP.3.gz
-%%PERL5_MAN3%%/Net::SFTP::Attributes.3.gz
-%%PERL5_MAN3%%/Net::SFTP::Buffer.3.gz
-%%PERL5_MAN3%%/Net::SFTP::Constants.3.gz
-%%PERL5_MAN3%%/Net::SFTP::Util.3.gz
 %%SITE_PERL%%/Net/SFTP.pm
 %%SITE_PERL%%/Net/SFTP/Attributes.pm
 %%SITE_PERL%%/Net/SFTP/Buffer.pm
 %%SITE_PERL%%/Net/SFTP/Constants.pm
 %%SITE_PERL%%/Net/SFTP/Util.pm
+%%PERL5_MAN3%%/Net::SFTP.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Attributes.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Buffer.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Constants.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Util.3.gz

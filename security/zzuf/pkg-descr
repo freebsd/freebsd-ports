@@ -5,4 +5,4 @@ It works by intercepting file and network operations and changing
 random bits in the program's input. zzuf's behaviour is
 deterministic, making it easier to reproduce bugs.
 
-WWW:	http://sam.zoy.org/zzuf/
+WWW: http://sam.zoy.org/zzuf/

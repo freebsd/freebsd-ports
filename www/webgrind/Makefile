@@ -18,7 +18,7 @@ GH_TAGNAME=	dc35393
 
 SNAPSHOT=	20140207
 
-USE_PHP=	yes
+USES=		php
 
 NO_BUILD=	yes
 NO_ARCH=	yes

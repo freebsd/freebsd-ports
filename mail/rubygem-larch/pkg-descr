@@ -1,4 +1,4 @@
-Larch is a tool to copy messages from one 
+Larch is a tool to copy messages from one
 IMAP server to another quickly and safely.
 It's smart enough not to copy messages that
 already exist on the destination and robust

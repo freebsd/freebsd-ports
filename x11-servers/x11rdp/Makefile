@@ -23,6 +23,8 @@ COMMENT=	X11 server for xrdp
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	xorg-fonts>=0:x11-fonts/xorg-fonts
 
 # SVN revision of x11rdp

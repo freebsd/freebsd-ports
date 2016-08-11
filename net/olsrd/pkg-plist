@@ -1,8 +1,7 @@
 sbin/olsrd
-etc/olsrd.conf.default.full
-etc/olsrd.conf.default.rfc
-etc/olsrd.conf.default.lq
-etc/olsrd.conf.default.lq-fisheye
+%%ETCDIR%%/olsrd.conf.default.full
+%%ETCDIR%%/olsrd.conf.default.rfc
+%%ETCDIR%%/olsrd.conf.default.lq
 lib/olsrd_dot_draw.so.0.3
 lib/olsrd_httpinfo.so.0.1
 lib/olsrd_jsoninfo.so.0.0

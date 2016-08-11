@@ -22,6 +22,7 @@ bin/ogrlineref
 bin/ogrtindex
 bin/testepsg
 include/cpl_atomic_ops.h
+include/cpl_aws.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
@@ -39,15 +40,16 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_progress.h
 include/cpl_quad_tree.h
+include/cpl_sha256.h
 include/cpl_spawn.h
 include/cpl_string.h
 include/cpl_time.h
 include/cpl_virtualmem.h
 include/cpl_vsi.h
+include/cpl_vsi_error.h
 include/cpl_vsi_virtual.h
 include/cpl_vsil_curl_priv.h
-include/cpl_win32ce_api.h
-include/cpl_wince.h
+include/cpl_worker_thread_pool.h
 include/cplkeywordparser.h
 include/gdal.h
 include/gdal_alg.h
@@ -60,6 +62,7 @@ include/gdal_priv.h
 include/gdal_proxy.h
 include/gdal_rat.h
 include/gdal_simplesurf.h
+include/gdal_utils.h
 include/gdal_version.h
 include/gdal_vrt.h
 include/gdalexif.h
@@ -69,10 +72,12 @@ include/gdalgrid_priv.h
 include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
 include/gdaljp2metadatagenerator.h
+include/gdalpansharpen.h
 include/gdalsse_priv.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
 include/gvgcpfit.h
+include/internal_qhull_headers.h
 include/memdataset.h
 include/ogr_api.h
 include/ogr_core.h

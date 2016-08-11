@@ -13,7 +13,7 @@ share/xsl/docbook/RELEASE-NOTES.txt
 share/xsl/docbook/RELEASE-NOTES.xml
 share/xsl/docbook/TODO
 share/xsl/docbook/VERSION
-share/xsl/docbook/catalog.xml
+@xmlcatmgr share/xsl/docbook/catalog.xml
 share/xsl/docbook/common/af.xml
 share/xsl/docbook/common/am.xml
 share/xsl/docbook/common/ar.xml

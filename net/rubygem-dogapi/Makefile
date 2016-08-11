@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dogapi
-PORTVERSION=	1.21.0
+PORTVERSION=	1.22.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

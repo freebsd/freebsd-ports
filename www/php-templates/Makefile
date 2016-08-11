@@ -3,7 +3,7 @@
 
 PORTNAME=	php-templates
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.7:ext \
 		SF/${PORTNAME}/${PORTNAME}-doc/html:doc
@@ -15,10 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates
-USES=		dos2unix
+USES=		dos2unix php:phpize
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-templates=shared
@@ -33,5 +31,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}-doc/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
+	@${ECHO_CMD} "extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/templates.so" > \
+		${STAGEDIR}${PREFIX}/etc/php/ext-20-templates.ini
 
 .include <bsd.port.mk>

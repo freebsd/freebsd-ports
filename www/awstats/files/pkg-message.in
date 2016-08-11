@@ -1,32 +1,10 @@
-*****************************************************************
-Please add the following to your apache config, and restart.
+*********************************************************************
 
-#
-# Directives to allow use of AWStats as a CGI
-#
-Alias /awstatsclasses "%%PREFIX%%/www/awstats/classes/"
-Alias /awstatscss "%%PREFIX%%/www/awstats/css/"
-Alias /awstatsicons "%%PREFIX%%/www/awstats/icons/"
-ScriptAlias /awstats/ "%%PREFIX%%/www/awstats/cgi-bin/"
+Use %%PREFIX%%/www/awstats/tools/awstats_configure.pl to set up your
+hosts.
 
-#
-# This is to permit URL access to scripts/files in AWStats directory.
-#
-<Directory "%%PREFIX%%/www/awstats/">
-    Options None
-    AllowOverride None
-    Order allow,deny
-    Allow from all
-</Directory>
+To activate awstats in your webserver, see the example files for
+apache: %%DOCSDIR%%/httpd_conf
+nginx:  %%DOCSDIR%%/nginx/
 
-*****************************************************************
-
-If you are upgrading from AWStats 6.4 or older, please note the following:
-
-If you used the geoip plugin, you must edit your AWStats config file
-to change the line
- LoadPlugin="geoip GEOIP_STANDARD"
-into
- LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat"
-
-*****************************************************************
+*********************************************************************

@@ -12,6 +12,7 @@ COMMENT=	Implementation of ANSI Forth
 
 BROKEN_i386=	does not link
 BROKEN_powerpc=	does not compile
+BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 libtool tar:bzip2

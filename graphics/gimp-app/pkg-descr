@@ -1,11 +1,11 @@
 The GIMP is designed to provide an intuitive graphical interface to a
-variety of image editing operations. Here is a list of the GIMP's 
+variety of image editing operations. Here is a list of the GIMP's
 major features:
 
  Image editing
  -------------
 
-   *  Selection tools including rectangle, ellipse, free, fuzzy, bezier 
+   *  Selection tools including rectangle, ellipse, free, fuzzy, bezier
       and intelligent.
    *  Transformation tools including rotate, scale, shear and flip.
    *  Painting tools including bucket, brush, airbrush, clone, convolve,

@@ -35,7 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	's|CC = gcc|CC = ${CC}|; \
 	 s|CFLAGS=-Wall -O2 -fomit-frame-pointer|CFLAGS+= -fomit-frame-pointer|; \
-	 s|sdl-config|$(SDL_CONFIG)|; \
+	 s|sdl-config|${SDL_CONFIG}|; \
 	 s|PREFIX = /usr|PREFIX = ${PREFIX}|' \
 		${WRKSRC}/Makefile
 

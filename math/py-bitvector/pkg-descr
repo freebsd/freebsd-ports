@@ -3,4 +3,4 @@ and for logical operations on such arrays. The core idea used in this Python
 script for bin packing is based on an internet posting by Josiah Carlson to
 the Pyrex mailing list.
 
-WWW: https://engineering.purdue.edu/kak/dist/BitVector-3.1.html
+WWW: https://engineering.purdue.edu/kak/dist/

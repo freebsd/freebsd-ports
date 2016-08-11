@@ -9,7 +9,7 @@
   with the results. The subset contains the sites that are new, bad
   and/or not probed for a specified time.
 
-  When no 'get' option is specified, the program just generates a 
+  When no 'get' option is specified, the program just generates a
   new web page from the last known state.
 
   The program checks the mirrors by running a (user specified)

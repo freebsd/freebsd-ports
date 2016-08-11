@@ -1,5 +1,5 @@
 Sippy B2BUA is a RFC3261-compliant Session Initiation Protocol (SIP)
-Back-to-back user agent (B2BUA) server software. 
+Back-to-back user agent (B2BUA) server software.
 
 The B2BUA is a SIP call controlling component. Unlike a SIP proxy, which only
 maintains transaction state, the B2BUA maintains complete call state and

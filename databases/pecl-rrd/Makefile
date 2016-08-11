@@ -2,7 +2,7 @@
 
 PORTNAME=	rrd
 DISTVERSION=	1.1.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,8 +18,7 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

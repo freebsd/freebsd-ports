@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2015-05-04 05:36:02 UTC
++++ Makefile.am
+@@ -21,7 +21,7 @@ endif
+ 
+ TESTS = $(check_PROGRAMS)
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = cpputest.pc
+ 
+ EXTRA_DIST = \

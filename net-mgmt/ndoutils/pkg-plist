@@ -91,6 +91,7 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/mysql-upgrade-1.4b8.sql
 %%DATADIR%%/mysql-upgrade-2.0.0.sql
 %%DATADIR%%/mysql-upgrade-2.0.1.sql
+%%DATADIR%%/mysql-upgrade-2.1.0.sql
 %%DATADIR%%/mysql.sql
 %%DATADIR%%/prepsql
 %%DATADIR%%/queries/comment_history.sql

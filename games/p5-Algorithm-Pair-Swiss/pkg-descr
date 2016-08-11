@@ -1,9 +1,9 @@
-This module was created as an alternative for Algorithm::Pair::Best, which 
-probably offers more control over the pairings, in particular regarding 
-ensuring the highest overal quality of pairings. Algorithm::Pair::Swiss is 
-sort of dumb in this regard, but uses a slightly more intuitive interface 
-and an algorithm that should perform noticably faster. The module was 
-primarily designed based on the Swiss rounds system used for Magic: The 
+This module was created as an alternative for Algorithm::Pair::Best, which
+probably offers more control over the pairings, in particular regarding
+ensuring the highest overal quality of pairings. Algorithm::Pair::Swiss is
+sort of dumb in this regard, but uses a slightly more intuitive interface
+and an algorithm that should perform noticably faster. The module was
+primarily designed based on the Swiss rounds system used for Magic: The
 Gathering tournaments.
 
 WWW: http://search.cpan.org/dist/Algorithm-Pair-Swiss/

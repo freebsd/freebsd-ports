@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-${USE_LINUX}
-PORTVERSION=	0.5
+PORTVERSION=	6.8
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org

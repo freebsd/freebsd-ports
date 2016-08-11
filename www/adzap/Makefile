@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://adzapper.sourceforge.net/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter out animated ad banners from web pages
 
 LICENSE=	BSD3CLAUSE

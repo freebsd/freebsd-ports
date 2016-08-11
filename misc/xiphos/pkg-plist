@@ -1,4 +1,3 @@
-@unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
 bin/xiphos
 bin/xiphos-nav
 share/applications/xiphos.desktop
@@ -222,5 +221,3 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/xiphos-button-125.png
 %%DATADIR%%/xiphos-x-16.png
 %%DATADIR%%/xiphos.xpm
-@exec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
-@unexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true

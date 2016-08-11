@@ -1,6 +1,6 @@
---- tractags/model.py.orig
+--- tractags/model.py.orig	2011-12-14 21:19:06 UTC
 +++ tractags/model.py
-@@ -62,17 +62,7 @@
+@@ -62,17 +62,7 @@ class TagModelProvider(Component):
          self._upgrade_db(db)
  
      def _need_migration(self, db):

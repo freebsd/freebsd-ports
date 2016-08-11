@@ -1,6 +1,6 @@
---- unace.c.orig
+--- unace.c.orig	1998-07-01 08:29:00 UTC
 +++ unace.c
-@@ -240,6 +240,7 @@
+@@ -240,6 +240,7 @@ INT read_arc_head(void)         // searc
  INT  open_archive(INT print_err)        // opens archive (or volume)
  {
     CHAR av_str[80];
@@ -8,7 +8,7 @@
  
     archan = open(aname, O_RDONLY | O_BINARY);   // open file
  
-@@ -263,8 +264,11 @@
+@@ -263,8 +264,11 @@ INT  open_archive(INT print_err)        
        sprintf(av_str, "\ncreated on %d.%d.%d by ",
                ts_day(adat.time_cr), ts_month(adat.time_cr), ts_year(adat.time_cr));
        printf(av_str);
@@ -22,7 +22,7 @@
        printf("%s\n\n", av_str);
     }
     comment_out("Main comment:");        // print main comment
-@@ -300,7 +304,7 @@
+@@ -300,7 +304,7 @@ void get_next_volname(void)             
  INT  proc_vol(void)                     // opens volume
  {
     INT  i;
@@ -31,7 +31,7 @@
  
     // if f_allvol_pr is 2 we have -y and should never ask
     if ((!fileexists_insense(aname) && f_allvol_pr != 2) || !f_allvol_pr)
-@@ -428,7 +432,7 @@
+@@ -428,7 +432,7 @@ void extract_files(int nopath, int test)
        if (head.HEAD_TYPE == FILE_BLK)
        {
           comment_out("File comment:");   // show file comment
@@ -40,7 +40,7 @@
           printf("\n%s", file);
           flush;
           dcpr_init_file();               // initialize decompression of file
-@@ -496,7 +500,7 @@
+@@ -496,7 +500,7 @@ void list_files(int verbose)
        if (head.HEAD_TYPE == FILE_BLK)
        {
           ULONG ti=fhead.FTIME;
@@ -49,7 +49,7 @@
  
           size  += fhead.SIZE;
           psize +=
-@@ -588,7 +592,8 @@
+@@ -588,7 +592,8 @@ int main(INT argc, CHAR * argv[])       
  
        init_unace();                              // initialize unace
  

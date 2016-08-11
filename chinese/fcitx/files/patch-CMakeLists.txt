@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2013-09-28 17:33:14.000000000 +0900
-+++ ./CMakeLists.txt	2014-03-19 13:45:08.000000000 +0900
-@@ -207,16 +207,21 @@
+--- CMakeLists.txt.orig	2015-12-12 08:02:09 UTC
++++ CMakeLists.txt
+@@ -206,16 +206,21 @@ if (NOT DEFINED SYSCONFDIR)
      set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "sys config directory [default=PREFIX/etc/]")
  endif()
  
@@ -28,7 +28,7 @@
  
  list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemPlatformLibDir)
  list(FIND CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemCxxLibDir)
-@@ -229,9 +234,13 @@
+@@ -228,9 +233,13 @@ endif("${_isSystemPlatformLibDir}" STREQ
  
  # For FcitxMacro
  set(FCITX4_ADDON_INSTALL_DIR ${addondir})

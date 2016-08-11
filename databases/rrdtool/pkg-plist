@@ -9,12 +9,8 @@ include/rrd_client.h
 include/rrd_format.h
 lib/librrd.a
 lib/librrd.so
-lib/librrd.so.4
-lib/librrd.so.4.3.5
-lib/librrd_th.a
-lib/librrd_th.so
-lib/librrd_th.so.4
-lib/librrd_th.so.4.3.5
+lib/librrd.so.8
+lib/librrd.so.8.0.0
 libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/bin_dec_hex.1.gz
 %%PORTDOCS%%man/man1/cdeftutorial.1.gz

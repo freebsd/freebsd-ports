@@ -1,6 +1,6 @@
---- src/effects.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/effects.c	Fri Jun 30 19:49:16 2000
-@@ -348,7 +348,7 @@
+--- src/effects.c.orig	1998-11-08 23:22:55 UTC
++++ src/effects.c
+@@ -348,7 +348,7 @@ void props_return(Sample_Return *sr)
  	
  	switch (sr->res) {
  	 case 8: {
@@ -9,7 +9,7 @@
  	     for (i=0;i<newlength;i++) newbuf[i]=obuf[(i<<1)+1]+128;
  #elif defined (sgi) || defined (sun)
  	     for (i=0;i<newlength;i++) newbuf[i]=obuf[(i<<1)]+128;
-@@ -356,7 +356,7 @@
+@@ -356,7 +356,7 @@ void props_return(Sample_Return *sr)
  	     break;
  	 }
  	 case 16: {

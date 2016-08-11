@@ -12,9 +12,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	heckendorfc
 
-USES=		cmake
-
-USE_SQLITE=	yes
+USES=		cmake sqlite
 
 USE_LDCONFIG=	yes
 

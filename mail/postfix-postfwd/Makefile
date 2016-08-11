@@ -40,9 +40,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.cf.sample ${STAGEDIR}${ETCDIR}
 	@${INSTALL_MAN} ${WRKSRC}/man/man8/* ${STAGEDIR}${MANPREFIX}/man/man8
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tools/request.sample ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/postfwd.plugins.sample ${STAGEDIR}${EXAMPLESDIR}

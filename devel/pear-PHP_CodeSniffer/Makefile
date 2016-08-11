@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP Script Tokenises and Sniffs PHP and JavaScript code
 
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
-USES=		pear
-USE_PHP=	ctype simplexml tokenizer
+USES=		pear php
+USE_PHP=	ctype simplexml tokenizer xmlwriter
 
 .include <bsd.port.mk>

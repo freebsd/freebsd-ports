@@ -3,13 +3,13 @@
 
 PORTNAME=	geda
 PORTVERSION=	1.8.2
+DISTVERSIONPREFIX=gaf-
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://ftp.geda-project.org/geda-gaf/stable/v${PORTVERSION:R}/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-gaf-${PORTVERSION}
+MASTER_SITES=	http://ftp.geda-project.org/${PORTNAME}-gaf/stable/v${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GPL Electronic Design Automation tools
 
 LICENSE=	GPLv2+
@@ -34,13 +34,10 @@ CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-gaf
 DATADIR=	${PREFIX}/share/gEDA
-
 INFO=		geda-scheme
 
 CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
@@ -50,13 +47,5 @@ CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-.for dir in gattrib gschem libgeda
-	@${REINPLACE_CMD} -e \
-		'/-x/s|INSTALL_DATA|INSTALL|' ${WRKSRC}/${dir}/data/Makefile.in
-.endfor
-	@${REINPLACE_CMD} -e \
-		'/OS_LINUX=/s|no|yes|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

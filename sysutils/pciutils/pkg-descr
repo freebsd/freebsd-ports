@@ -1,7 +1,7 @@
-The PCI Utilities package contains various utilities dealing 
-with the PCI bus, and also a library for portable access to 
-PCI configuration registers. It includes `lspci' for listing 
-all PCI devices (very useful for debugging of both kernel and 
+The PCI Utilities package contains various utilities dealing
+with the PCI bus, and also a library for portable access to
+PCI configuration registers. It includes `lspci' for listing
+all PCI devices (very useful for debugging of both kernel and
 device drivers) and `setpci' for manual configuration of PCI
 devices.
 

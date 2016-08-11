@@ -1,5 +1,5 @@
 It is an analog clock displaying the system-time.
-It leverages the new visual features offered by Xorg 6.9/7.0 in combination 
+It leverages the new visual features offered by Xorg 6.9/7.0 in combination
 with a compositing-manager (e.g. like xcompmgr), gtk+ 2.8.x, cairo 1.0.2 and
 librsvg 2.13.93 to produce a time-display with pretty-pixels.
 

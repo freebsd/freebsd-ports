@@ -1,6 +1,6 @@
---- src/unix/fcitx/fcitx_mozc.cc.orig	2015-02-19 10:48:37.000000000 +0900
-+++ src/unix/fcitx/fcitx_mozc.cc	2015-02-19 10:54:04.000000000 +0900
-@@ -439,6 +439,8 @@
+--- src/unix/fcitx/fcitx_mozc.cc.orig	2016-05-14 21:54:58.149355000 +0900
++++ src/unix/fcitx/fcitx_mozc.cc	2016-05-14 21:54:58.170065000 +0900
+@@ -440,6 +440,8 @@
  boolean ToolMenuAction(struct _FcitxUIMenu *menu, int index)
  {
      string args;
@@ -9,7 +9,7 @@
      switch(index) {
          case 0:
              args = "--mode=config_dialog";
-@@ -459,7 +461,8 @@
+@@ -460,7 +462,8 @@
              args = "--mode=about_dialog";
              break;
      }

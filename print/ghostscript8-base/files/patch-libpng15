@@ -2,7 +2,7 @@ $NetBSD: patch-ak,v 1.5 2011/01/15 14:08:10 wiz Exp $
 
 Fix build with png-1.5. From John Bowler.
 
---- base/gdevpng.c.orig	2008-07-17 02:34:01.000000000 +0000
+--- base/gdevpng.c.orig	2008-07-17 02:34:01 UTC
 +++ base/gdevpng.c
 @@ -36,12 +36,14 @@
  #include "gdevpccm.h"

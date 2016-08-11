@@ -1,0 +1,12 @@
+--- src/widget/form/settings/aboutsettings.ui.orig	2016-04-25 21:28:44 UTC
++++ src/widget/form/settings/aboutsettings.ui
+@@ -111,6 +111,9 @@
+             <property name="text">
+              <string>Commit hash: &lt;a href=&quot;https://github.com/tux3/qTox/commit/$GIT_VERSION&quot;&gt;$GIT_VERSION&lt;/a&gt;</string>
+             </property>
++            <property name="visible">
++              <bool>false</bool>
++            </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>

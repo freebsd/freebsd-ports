@@ -1,11 +1,11 @@
---- usr/lib/pkcs11/api/shrd_mem.c.in.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/lib/pkcs11/api/shrd_mem.c.in	2010-10-19 23:56:22.728981736 +0900
-@@ -353,7 +353,7 @@
- 
- 
-    // SAB check for the group id here and membership here as well
--   grp = getgrnam("pkcs11");
-+   grp = getgrnam(PKCS11GROUP);
-    if ( grp ) {
-         int i=0;
-         char member=0;
+--- usr/lib/pkcs11/api/shrd_mem.c.in.orig	2016-04-29 17:26:45 UTC
++++ usr/lib/pkcs11/api/shrd_mem.c.in
+@@ -357,7 +357,7 @@ attach_shared_memory() {
+    // only check group membership if not root user
+    if (uid != 0 && euid != 0) {
+ 	   int i, member=0;
+-	   grp = getgrnam("pkcs11");
++	   grp = getgrnam(PKCS11GROUP);
+ 	   if (!grp) {
+ 		   // group pkcs11 not known to the system
+ 		   return NULL;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmc
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -17,7 +17,6 @@ USES=		tar:tgz pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

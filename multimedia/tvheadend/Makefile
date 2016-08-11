@@ -3,6 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	4.0.8
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
@@ -10,6 +11,8 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	TV streaming server supporting DVB, IPTV and V4L
 
 LICENSE=	GPLv3
+
+BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
@@ -19,7 +22,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
 USE_GITHUB=	yes
-GH_TAGNAME=	0499859
 
 USES=		execinfo gmake pkgconfig python shebangfix
 GNU_CONFIGURE=	yes

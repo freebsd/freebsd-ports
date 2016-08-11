@@ -1,6 +1,6 @@
---- ./src/psybnc.c	Wed Jul 24 17:19:05 2002
-+++ ../../psybnc.mina/src/psybnc.c	Sun Nov 24 19:54:52 2002
-@@ -43,6 +43,8 @@
+--- src/psybnc.c.orig	2016-06-20 14:41:27 UTC
++++ src/psybnc.c
+@@ -44,6 +44,8 @@ int slice=0;
  
  #ifdef HAVE_SSL
  
@@ -9,7 +9,7 @@
  void initSSL()
  {
      SSL_load_error_strings();
-@@ -170,13 +172,17 @@
+@@ -171,13 +173,17 @@ main (int argc, char **argv)
    if(argc==2)
    {
        strmncpy(configfile,argv[1],sizeof(configfile));
@@ -29,7 +29,7 @@
       exit (0x0);
    }
    fclose(conffile);
-@@ -301,3 +307,15 @@
+@@ -302,3 +308,15 @@ main (int argc, char **argv)
    bncmain();
  }
  

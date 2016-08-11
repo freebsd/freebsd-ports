@@ -12,7 +12,6 @@ COMMENT=	Atomic reference implementation
 LICENSE=	APACHE20
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

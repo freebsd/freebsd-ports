@@ -3,6 +3,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,8 +16,6 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 libmovtar
 ---------
 
-has been implemented according to the quicktime4linux API 
+has been implemented according to the quicktime4linux API
 
 It supports reading and writing (read/write mode has been prepared,
 but is not implemented yet) of MJPEG video in YUV 4:2:2 JPEG with

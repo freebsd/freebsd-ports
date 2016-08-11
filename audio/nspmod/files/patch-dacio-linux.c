@@ -1,5 +1,5 @@
---- dacio-linux.c.orig	Sun Sep 17 05:51:43 1995
-+++ dacio-linux.c	Thu Aug 22 20:42:04 2002
+--- dacio-linux.c.orig	1995-09-17 12:51:43 UTC
++++ dacio-linux.c
 @@ -3,7 +3,11 @@
  #include <fcntl.h>	/*O_WRONLY*/
  #include <sys/ioctl.h>	/*(ioctl)*/
@@ -12,7 +12,7 @@
  #include <errno.h>	/*EINTR*/
  #include "defs.h"	/*u8,u16*/
  #include "dacio.h"	/*(dacioXXX)*/
-@@ -47,7 +51,7 @@
+@@ -47,7 +51,7 @@ dacioInit(void)
  static struct {
      union {
  	u8 *p8;
@@ -21,7 +21,7 @@
      } p;
      u8 *top;
      u8 *bot;
-@@ -67,11 +71,39 @@
+@@ -67,11 +71,39 @@ dacioConf(DacioConfInfo *dcp)
  	exit(1);
      }
  #endif
@@ -62,7 +62,7 @@
      /*fprintf(stderr, "fmt = 0x%x\n", tmp);*/
  
      if (ioctl(fd, SNDCTL_DSP_STEREO, &dcp->stereo) < 0) {
-@@ -90,10 +122,15 @@
+@@ -90,10 +122,15 @@ dacioConf(DacioConfInfo *dcp)
  	perror("dacioConf");
  	exit(1);
      }
@@ -79,7 +79,7 @@
      buf.p.p8 = buf.top;
      buf.bot = buf.top + buf.size;
  }
-@@ -115,7 +152,14 @@
+@@ -115,7 +152,14 @@ dacioFlush(void)
      int s;
  
      if (buf.p.p8 <= buf.top) return;
@@ -95,7 +95,7 @@
   RETRY:
      s = write(fd, buf.top, buf.size);
      if (s < buf.size) {
-@@ -179,6 +223,8 @@
+@@ -179,6 +223,8 @@ dacioGlobalVol(i15x v)
       (tmpvar & ~255)? ~tmpvar >> 16 : tmpvar ) /* 16 will be OK */
  /*                   ~(tmpvar >> 16) makes longer asm */
  #endif
@@ -104,7 +104,7 @@
  
  /* stereo */
  static void
-@@ -186,14 +232,26 @@
+@@ -186,14 +232,26 @@ dacioOutHirevS(i15x n)
  {
      const i31 *inbufp = inbuf.p;
      u8 *u8p = buf.p.p8;
@@ -136,7 +136,7 @@
  }
  
  /* mono */
-@@ -202,19 +260,31 @@
+@@ -202,19 +260,31 @@ dacioOutHirevM(i15x n)
  {
      const i31 *inbufp = inbuf.p;
      u8 *u8p = buf.p.p8;

@@ -30,14 +30,12 @@ PLIST_FILES=	bin/webinject.pl \
 		${DATADIR:S,^${PREFIX}/,,}/config.xml \
 		${DATADIR:S,^${PREFIX}/,,}/testcases.xml
 
+PORTDOCS=	LICENSE README
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} *.xml ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && ${INSTALL_SCRIPT} webinject.pl ${STAGEDIR}${PREFIX}/bin
-
-PORTDOCS=	LICENSE README
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

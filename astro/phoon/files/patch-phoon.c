@@ -1,6 +1,6 @@
---- ./phoon.c.orig	2005-05-20 21:10:24.000000000 +0200
-+++ ./phoon.c	2014-02-12 22:38:52.438019914 +0100
-@@ -354,7 +354,7 @@
+--- phoon.c.orig	2005-05-20 19:10:24 UTC
++++ phoon.c
+@@ -354,7 +354,7 @@ putmoon( time_t t, int numlines, char* a
      struct tm* tmP;
      double jd, pctphase, angphase, cphase, aom, cdist, cangdia, csund, csuang;
      double phases[2], which[2];

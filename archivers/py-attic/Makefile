@@ -24,12 +24,13 @@ USE_OPENSSL=	yes
 STRIP_FILES=	hashindex.so platform_freebsd.so chunker.so crypto.so
 PYDISTUTILS_BUILDPATH=${BUILD_WRKSRC}/build/lib.${OPSYS:tl}-${UNAMER}-${ARCH}-${PYTHON_VER}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000015
-BUILD_DEPENDS+=	openssl>=1.0:security/openssl
-RUN_DEPENDS+=	openssl>=1.0:security/openssl
+WITH_OPENSSL_PORT=	yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}

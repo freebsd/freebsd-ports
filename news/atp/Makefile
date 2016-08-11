@@ -11,8 +11,7 @@ DISTFILES=	${DISTNAME}-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QWK message packet reader and composer for FreeBSD
 
-RUN_DEPENDS=	zip:archivers/zip \
-		unzip:archivers/unzip
+RUN_DEPENDS=	zip:archivers/zip
 
 USES=		gmake perl5
 USE_PERL5=	run

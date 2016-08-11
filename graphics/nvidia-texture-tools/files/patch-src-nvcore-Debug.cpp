@@ -1,5 +1,5 @@
---- src/nvcore/Debug.cpp.orig	2008-12-01 11:04:27.000000000 +0300
-+++ src/nvcore/Debug.cpp	2009-03-06 22:45:48.000000000 +0300
+--- src/nvcore/Debug.cpp.orig	2010-05-15 09:12:05 UTC
++++ src/nvcore/Debug.cpp
 @@ -34,7 +34,7 @@
  #	endif
  #endif
@@ -9,7 +9,7 @@
  #	include <unistd.h>	// getpid
  #	include <sys/types.h>
  #	include <sys/sysctl.h>	// sysctl
-@@ -195,6 +195,14 @@
+@@ -199,6 +199,14 @@ namespace 
  				return (void *) ucp->uc_mcontext->ss.eip;
  #			endif
  #		endif

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-02-26 04:48:45.000000000 +0700
-+++ CMakeLists.txt	2015-01-28 08:06:29.000000000 +0600
-@@ -134,12 +134,12 @@
+--- CMakeLists.txt.orig	2016-06-20 15:30:20 UTC
++++ CMakeLists.txt
+@@ -134,12 +134,12 @@ IF (WIN32)
      INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent_upgrade.sql DESTINATION .)
  ELSE(WIN32)
      INSTALL(TARGETS pgagent DESTINATION bin)

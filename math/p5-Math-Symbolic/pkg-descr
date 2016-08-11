@@ -1,10 +1,10 @@
-Math::Symbolic is intended to offer symbolic calculation capabilities to 
-the Perl programmer without using external (and commercial) libraries 
+Math::Symbolic is intended to offer symbolic calculation capabilities to
+the Perl programmer without using external (and commercial) libraries
 and/or applications.
 
-Possibly the most convenient way of constructing Math::Symbolic trees is 
-using the builtin parser to generate trees from expressions such as '2 * 
-x^5'. You may use the Math::Symbolic->parse_from_string() class method for 
+Possibly the most convenient way of constructing Math::Symbolic trees is
+using the builtin parser to generate trees from expressions such as '2 *
+x^5'. You may use the Math::Symbolic->parse_from_string() class method for
 this.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic/

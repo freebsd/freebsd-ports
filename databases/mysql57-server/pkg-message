@@ -8,3 +8,13 @@ ie. when you want to use "mysql -u root -p" first you should see password
 in /root/.mysql_secret
 
 *****************************************************************************
+
+*****************************************************************************
+
+The default location for my.cnf has changed from "/var/db/mysql/my.cnf" to
+"/usr/local/etc/mysql/my.cnf". Existing my.cnf files must be merged manually
+with the new default and moved to the new location. To continue using the
+my.cnf file at the old location, set "mysql_optfile" in /etc/rc.conf to
+point to the location of the existing my.cnf file.
+
+*****************************************************************************

@@ -1,13 +1,13 @@
---- dist/clementine.desktop.orig	2011-12-31 16:23:15.690338600 +0000
-+++ dist/clementine.desktop	2011-12-31 16:23:58.392741839 +0000
-@@ -6,8 +6,8 @@
- GenericName[pt]=Reprodutor de músicas Clementine
- Comment=Plays music and last.fm streams
- Comment[pt]=Reprodução de músicas e emissões last.fm
+--- dist/clementine.desktop.orig	2016-04-19 15:08:35 UTC
++++ dist/clementine.desktop
+@@ -26,8 +26,8 @@ Comment[sr]=Репродукује му�
+ Comment[sr@ijekavian]=Репродукује музику и last.fm токове
+ Comment[sr@ijekavianlatin]=Reprodukuje muziku i last.fm tokove
+ Comment[sr@latin]=Reprodukuje muziku i last.fm tokove
 -Exec=clementine %U
 -TryExec=clementine
 +Exec=clementine-player %U
 +TryExec=clementine-player
- Icon=application-x-clementine
+ Icon=clementine
  Terminal=false
- Categories=AudioVideo;Player;Qt;
+ Categories=AudioVideo;Player;Qt;Audio;

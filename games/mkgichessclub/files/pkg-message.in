@@ -1,20 +1,20 @@
 ======================================================================
 
  Minimal setup
- 
+
 1. Make sure your mysql-server is running
 
 2. Create an account and a database on the MySQL server
 
    # mysqladmin -u root -p create mkgichessclub
-   
+
    (in mysql root's password is empty unless you have set it in advance).
 
 3. Create a mysql user/password for the mkgichessclub database:
   (change user and/or password if required)
 
    # mysql -u root -p
-   mysql> GRANT ALL ON mkgichessclub.* TO mkgichessclub@localhost 
+   mysql> GRANT ALL ON mkgichessclub.* TO mkgichessclub@localhost
  	  IDENTIFIED BY 'mkgichessclubpassword';
    mysql> FLUSH PRIVILEGES;
    mysql> QUIT;

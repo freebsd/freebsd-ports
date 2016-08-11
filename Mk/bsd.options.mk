@@ -98,6 +98,13 @@
 # ${opt}_CMAKE_OFF		When option is disabled, it will add its content to
 #				the CMAKE_ARGS.
 #
+# ${opt}_CMAKE_BOOL		Will add to CMAKE_ARGS:
+#				Option enabled  -D${content}:BOOL=true
+#				Option disabled -D${content}:BOOL=false
+# ${opt}_CMAKE_BOOL_OFF		Will add to CMAKE_ARGS:
+#				Option enabled  -D${content}:BOOL=false
+#				Option disabled -D${content}:BOOL=true
+#
 # ${opt}_QMAKE_ON		When option is enabled, it will add its content to
 #				the QMAKE_ARGS.
 # ${opt}_QMAKE_OFF		When option is disabled, it will add its content to
@@ -215,6 +222,16 @@ OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
 
 _ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} \
 		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}}
+
+.for opt in ${OPTIONS_DEFINE:O:u}
+.  if !${_ALL_EXCLUDE:M${opt}}
+.    for opt_implied in ${${opt}_IMPLIES}
+.       if ${_ALL_EXCLUDE:M${opt_implied}}
+_ALL_EXCLUDE+=	${opt}
+.       endif
+.    endfor
+.  endif
+.endfor
 
 # Remove options the port maintainer doesn't want
 .for opt in ${_ALL_EXCLUDE:O:u}
@@ -505,6 +522,12 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ENABLE:S/^/--enable-/}
 .    if defined(${opt}_CONFIGURE_WITH)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:S/^/--with-/}
 .    endif
+.    if defined(${opt}_CMAKE_BOOL)
+CMAKE_ARGS+=		${${opt}_CMAKE_BOOL:C/.*/-D&:BOOL=true/}
+.    endif
+.    if defined(${opt}_CMAKE_BOOL_OFF)
+CMAKE_ARGS+=		${${opt}_CMAKE_BOOL_OFF:C/.*/-D&:BOOL=false/}
+.    endif
 .    for configure in CONFIGURE CMAKE QMAKE
 .      if defined(${opt}_${configure}_ON)
 ${configure}_ARGS+=	${${opt}_${configure}_ON}
@@ -548,6 +571,12 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ENABLE:S/^/--disable-/:C/=.*//}
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:S/^/--without-/:C/=.*//}
+.    endif
+.    if defined(${opt}_CMAKE_BOOL)
+CMAKE_ARGS+=		${${opt}_CMAKE_BOOL:C/.*/-D&:BOOL=false/}
+.    endif
+.    if defined(${opt}_CMAKE_BOOL_OFF)
+CMAKE_ARGS+=		${${opt}_CMAKE_BOOL_OFF:C/.*/-D&:BOOL=true/}
 .    endif
 .    for configure in CONFIGURE CMAKE QMAKE
 .      if defined(${opt}_${configure}_OFF)

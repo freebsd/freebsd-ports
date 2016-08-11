@@ -1,9 +1,11 @@
 bin/mujstest
 bin/mupdf
+bin/mupdf-gl
 bin/mupdf-x11-curl
 bin/mutool
 include/mupdf/fitz.h
 include/mupdf/fitz/annotation.h
+include/mupdf/fitz/bidi.h
 include/mupdf/fitz/bitmap.h
 include/mupdf/fitz/buffer.h
 include/mupdf/fitz/colorspace.h
@@ -27,12 +29,14 @@ include/mupdf/fitz/outline.h
 include/mupdf/fitz/output-pcl.h
 include/mupdf/fitz/output-png.h
 include/mupdf/fitz/output-pnm.h
+include/mupdf/fitz/output-ps.h
 include/mupdf/fitz/output-pwg.h
 include/mupdf/fitz/output-svg.h
 include/mupdf/fitz/output-tga.h
 include/mupdf/fitz/output.h
 include/mupdf/fitz/path.h
 include/mupdf/fitz/pixmap.h
+include/mupdf/fitz/pool.h
 include/mupdf/fitz/separation.h
 include/mupdf/fitz/shade.h
 include/mupdf/fitz/store.h
@@ -47,7 +51,6 @@ include/mupdf/fitz/ucdn.h
 include/mupdf/fitz/unzip.h
 include/mupdf/fitz/util.h
 include/mupdf/fitz/version.h
-include/mupdf/fitz/write-document.h
 include/mupdf/fitz/xml.h
 include/mupdf/html.h
 include/mupdf/memento.h
@@ -62,6 +65,7 @@ include/mupdf/pdf/document.h
 include/mupdf/pdf/event.h
 include/mupdf/pdf/field.h
 include/mupdf/pdf/font.h
+include/mupdf/pdf/graft.h
 include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
 include/mupdf/pdf/name-table.h
@@ -74,6 +78,8 @@ include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/xps.h
 lib/libmupdf.a
+lib/libmupdfthird.a
+lib/libmupdfthird_pic.a
 lib/libmupdf_pic.a
 man/man1/mupdf.1.gz
 man/man1/mutool.1.gz

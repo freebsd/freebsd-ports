@@ -3,5 +3,5 @@ address under qmail. It is invoked by qmail-local through a .qmail file.
 
 qconfirm performs this delivery confirmation process either sender based or
 message based. It is similar in concept to qsecretary or TMDA.
-	
+
 WWW: http://smarden.org/qconfirm/

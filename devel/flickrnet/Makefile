@@ -11,7 +11,8 @@ DISTNAME=	FlickrNet${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}-Src-48055
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flickr .Net API Library
 
-USES=		mono zip
+USES=		dos2unix mono zip
+DOS2UNIX_GLOB=	*.cs
 WRKSRC=		${WRKDIR}/FlickrNet
 
 do-build:

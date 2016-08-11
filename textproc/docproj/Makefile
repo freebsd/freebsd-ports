@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -27,7 +27,7 @@ USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
 
 OPTIONS_DEFINE=		DBLATEX CJK FOP IGOR JING SVN TRANSLATOR
-OPTIONS_DEFAULT=	        CJK     IGOR
+OPTIONS_DEFAULT=	        CJK     IGOR          TRANSLATOR
 .if !exists(/usr/bin/svnlite)
 OPTIONS_DEFAULT+=	SVN
 .endif

@@ -12,7 +12,7 @@ DISTFILES=	syslog-ng-incubator-${PORTVERSION}.tar.xz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The syslog-ng module incubator
 
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
 

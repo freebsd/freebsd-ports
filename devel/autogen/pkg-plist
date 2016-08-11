@@ -5,10 +5,11 @@ bin/getdefs
 bin/xml2ag
 include/autoopts/options.h
 include/autoopts/usage-txt.h
+lib/autogen/tpl-config.tlib
 lib/libopts.a
 lib/libopts.so
 lib/libopts.so.25
-lib/libopts.so.25.16.0
+lib/libopts.so.25.16.1
 libdata/pkgconfig/autoopts.pc
 man/man1/autogen.1.gz
 man/man1/autoopts-config.1.gz
@@ -67,14 +68,12 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/gplv2.lic
 %%DATADIR%%/lgpl.lic
 %%DATADIR%%/lgplv2.lic
-%%DATADIR%%/libopts-41.0.16.tar.gz
+%%DATADIR%%/libopts-41.1.16.tar.gz
 %%DATADIR%%/liboptschk.m4
-%%DATADIR%%/man2man
 %%DATADIR%%/man2mdoc
 %%DATADIR%%/man2texi
 %%DATADIR%%/mbsd.lic
 %%DATADIR%%/mdoc2man
-%%DATADIR%%/mdoc2mdoc
 %%DATADIR%%/mdoc2texi
 %%DATADIR%%/optcode.tlib
 %%DATADIR%%/opthead.tlib
@@ -90,6 +89,5 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/strings.tpl
 %%DATADIR%%/texi2man
 %%DATADIR%%/texi2mdoc
-%%DATADIR%%/texi2texi
 %%DATADIR%%/tpl-config.tlib
 %%DATADIR%%/usage.tlib

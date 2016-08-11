@@ -18,3 +18,4 @@
 %%SITE_PERL%%/Net/OpenSSH/ShellQuoter/MSWin.pm
 %%SITE_PERL%%/Net/OpenSSH/ShellQuoter/POSIX.pm
 %%SITE_PERL%%/Net/OpenSSH/ShellQuoter/csh.pm
+%%SITE_PERL%%/Net/OpenSSH/ShellQuoter/fish.pm

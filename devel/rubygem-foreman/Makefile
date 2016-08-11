@@ -16,9 +16,7 @@ RUN_DEPENDS=	rubygem-thor>=0.19.1:devel/rubygem-thor
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	spec/resources/bin/env
 
 PLIST_FILES=	bin/foreman

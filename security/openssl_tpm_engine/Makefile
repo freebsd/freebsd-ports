@@ -3,11 +3,11 @@
 
 PORTNAME=	openssl_tpm_engine
 PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/trousers/OpenSSL%20TPM%20Engine/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	OpenSSL TPM engine
 
 LICENSE=	OpenSSL
@@ -22,15 +22,20 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CFLAGS+=	-I${LOCALBASE}/include
 SUB_FILES=	pkg-message
-PORTEXAMPLES=	openssl.cnf.sample
+PLIST_FILES=	bin/create_tpm_key \
+		lib/openssl/engines/libtpm.so \
+		lib/openssl/engines/libtpm.so.0 \
+		lib/openssl/engines/libtpm.so.0.0.0
 INSTALL_TARGET=	install-strip
+PORTEXAMPLES=	openssl.cnf.sample
 
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/openssl.cnf.sample
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
+	    ${WRKSRC}/openssl.cnf.sample
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/openssl.cnf.sample ${STAGEDIR}${EXAMPLESDIR}
 

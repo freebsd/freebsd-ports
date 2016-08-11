@@ -13,6 +13,8 @@ COMMENT?=	XIM server for Anthy input method
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libanthy.so:japanese/anthy
 
 USE_GNOME=	gtk12

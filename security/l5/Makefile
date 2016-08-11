@@ -10,8 +10,9 @@ DISTNAME=	L5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File Integrity Assessment Tool
 
-USES=		tar:tgz
+BROKEN_amd64=	incorrect runtime output
 
+USES=		tar:tgz
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 
@@ -20,11 +21,11 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-BROKEN_amd64=	incorrect runtime output
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

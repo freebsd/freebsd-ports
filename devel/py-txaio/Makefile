@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	txaio
-PORTVERSION=	2.2.1
+PORTVERSION=	2.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,15 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trollius>=2.0:devel/py-trollius
+.elif ${PYTHON_REL} >= 3300
+TEST_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}asyncio>=3.4.3:devel/py-asyncio
+.endif
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

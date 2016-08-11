@@ -12,7 +12,7 @@ COMMENT=	KDE Artworks Themes
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 
-USE_KDE4=	kdelibs kdeprefix libkexiv2 workspace automoc4
+USE_KDE4=	kdelibs libkexiv2 workspace automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build rcc_build uic_build

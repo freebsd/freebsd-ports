@@ -6,6 +6,8 @@
 @sample %%ETCDIR%%/security.xml.sample
 @sample %%ETCDIR%%/truststore.sample
 @mode
+@dir %%DATADIR%%
+@dir %%DATADIR%%/plugins
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
 %%DATADIR%%/lib/bcpg-jdk15on.jar

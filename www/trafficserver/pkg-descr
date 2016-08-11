@@ -1,6 +1,6 @@
-Apache Traffic Server is a high-performance web proxy 
-cache that improves network efficiency and performance 
+Apache Traffic Server is a high-performance web proxy
+cache that improves network efficiency and performance
 by caching frequently-accessed information at the edge
-of the network. 
+of the network.
 
 WWW: http://trafficserver.apache.org/

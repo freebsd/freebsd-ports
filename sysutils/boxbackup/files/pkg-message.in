@@ -4,7 +4,7 @@
 %%SERVER%%configuration options
 
 The default location of configuration files changed from
-%%PREFIX%%/etc/box to %%ETCDIR%%, if you are upgrading then run 
+%%PREFIX%%/etc/box to %%ETCDIR%%, if you are upgrading then run
   mv %%PREFIX%%/etc/box %%ETCDIR%%
 
 %%CLIENT%%To run bbackupd at startup, add bbackupd_enable="YES" to /etc/rc.conf

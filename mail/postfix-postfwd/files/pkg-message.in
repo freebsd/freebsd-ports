@@ -7,7 +7,7 @@
 
 127.0.0.1:10040_time_limit   = 3600
 
-smtpd_recipient_restrictions = 
+smtpd_recipient_restrictions =
 	...
 	permit_mynetworks
 	...

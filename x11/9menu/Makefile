@@ -3,6 +3,7 @@
 
 PORTNAME=	9menu
 PORTVERSION=	1.9
+DISTVERSIONPREFIX=	${PORTNAME}-release-
 CATEGORIES=	x11 plan9
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +11,6 @@ COMMENT=	Simple menu patterned after Plan9
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arnoldrobbins
-GH_TAGNAME=	776a521
 USE_XORG=	x11
 MAKEFILE=	Makefile.noimake
 ALL_TARGET=	9menu

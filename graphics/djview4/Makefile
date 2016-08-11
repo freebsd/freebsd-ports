@@ -3,6 +3,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.10.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION:R}
 
@@ -12,21 +13,17 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libtiff.so:graphics/tiff
 
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-USES=		autoreconf desktop-file-utils gmake libtool pkgconfig \
-		webplugin:native
+USES=		autoreconf desktop-file-utils gettext-runtime gmake libtool \
+		localbase pkgconfig webplugin:native
 USE_GL=		gl
-USE_XORG=	sm ice xt
+USE_XORG=	sm ice xext xt
+USE_GNOME=	glib20
 CONFIGURE_ENV=	LRELEASE="${LRELEASE}" LUPDATE="${LUPDATE}"
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	V=1
 
 WEBPLUGIN_DIR=		${PREFIX}/lib/djview4/plugins
 WEBPLUGIN_FILES=	nsdejavu.so
@@ -36,10 +33,14 @@ OPTIONS_SINGLE_QT=	QT4 QT5
 OPTIONS_DEFAULT=	QT5
 QT_DESC=		Qt toolkit
 
-QT4_USE=	QT4=gui,network,opengl,linguisttools_build,moc_build,qmake_build,rcc_build,uic_build
-QT5_USE=	QT5=gui,network,opengl,printsupport,widgets,buildtools_build,linguisttools_build,qmake_build
+QT4_USE=	QT4=corelib,gui,network,opengl,linguisttools_build,moc_build,qmake_build,rcc_build,uic_build
+QT4_USE+=	XORG=x11
+QT5_USE=	QT5=core,gui,network,opengl,printsupport,widgets,buildtools_build,linguisttools_build,qmake_build
 
 post-patch:
+# Use prebuilt icons, without using conversion tool
+	@${REINPLACE_CMD} -e 's/conversion_tool=[[:alpha:]]*/conversion_tool=no/' \
+		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		'/CXXFLAGS=$$/s|^|#| ; \
 		 /CFLAGS=$$/s|^|#| ; \

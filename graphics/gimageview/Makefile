@@ -7,7 +7,7 @@ PORTREVISION=	21
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gtkmmviewer/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
 LICENSE=	GPLv2+
@@ -15,17 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg libtool pkgconfig
+USES=		gmake jpeg libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_XORG=	ice xinerama
 CONFIGURE_ARGS=	--with-gtk2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SPLASH NLS LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER LIBXINE DOCS
-OPTIONS_DEFAULT=SPLASH NLS LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER
+OPTIONS_DEFAULT=SPLASH LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER
 OPTIONS_SUB=	yes
 
 SPLASH_DESC=		Show splash screen on startup
@@ -43,9 +41,8 @@ LIBWMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf
 LIBRSVG2_CONFIGURE_WITH=librsvg
 LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 
-LIBEXIF_CONFIGURE_ENABLE=exif
-LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
-LIBEXIF_EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-exit_view.c
+LIBEXIF_CONFIGURE_ENABLE=exif # bundled exif is used
+LIBEXIF_BROKEN_OFF=	does not build without libexif support
 
 MPLAYER_CONFIGURE_ENABLE=mplayer
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer

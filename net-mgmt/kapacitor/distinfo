@@ -1,0 +1,7 @@
+TIMESTAMP = 1465294291
+SHA256 (influxdata-kapacitor-v0.13.1_GH0.tar.gz) = 5ea34857f7c2aa6270acdead5953c7fe6f1f3aa065d8f7188eb712ad597631c2
+SIZE (influxdata-kapacitor-v0.13.1_GH0.tar.gz) = 1493172
+SHA256 (golang-crypto-b6789ab_GH0.tar.gz) = 8e59ebf79fa9bb4554f2e5c9b271e3a8774e9624019f96fe527c598109710227
+SIZE (golang-crypto-b6789ab_GH0.tar.gz) = 1026715
+SHA256 (stretchr-testify-6cb3b85_GH0.tar.gz) = abae34a655da56b099f25f622e0f5db982c691cb77384e8ac0bda5fe80c7d177
+SIZE (stretchr-testify-6cb3b85_GH0.tar.gz) = 81558

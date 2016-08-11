@@ -1,4 +1,4 @@
---- junklib.c.orig	2016-01-02 20:27:39 UTC
+--- junklib.c.orig	2016-04-24 21:38:13 UTC
 +++ junklib.c
 @@ -33,7 +33,6 @@
  #include <string.h>

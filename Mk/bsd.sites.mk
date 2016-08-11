@@ -105,7 +105,8 @@ MASTER_SITE_BERLIOS+= \
 # Removal of the PyPI Mirror Auto Discovery and Naming Scheme
 # Reference: https://www.python.org/dev/peps/pep-0449/
 MASTER_SITE_CHEESESHOP+= \
-	https://pypi.python.org/packages/%SUBDIR%/
+	https://pypi.python.org/packages/%SUBDIR%/ \
+	https://files.pythonhosted.org/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
@@ -178,7 +179,8 @@ MASTER_SITE_ECLIPSE+= \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops4/%SUBDIR%/ \
-	http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/
+	http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/ \
+	http://eclipse.stu.edu.tw/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EXIM)
@@ -222,7 +224,7 @@ MASTER_SITE_EXIM+= \
 	http://mirror.tje.me.uk/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/ \
 	ftp://idcnetwork.org/pub/exim/exim/%SUBDIR%/ \
-	http://ftp.exim.llorien.org/exim/%SUBDIR%
+	http://ftp.exim.llorien.org/exim/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
@@ -476,6 +478,7 @@ MASTER_SITE_GENTOO+= \
 	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
 	http://gentoo.kems.net/%SUBDIR%/ \
+	http://mirrors.163.com/gentoo/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/gentoo/%SUBDIR%/ \
 	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
@@ -520,6 +523,15 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		not "reroll" as soon as the branch is updated
 .  endif
 .  if defined(GH_TUPLE)
+.for _tuple in ${GH_TUPLE}
+_t_tmp=${_tuple}
+.if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
+check-makevars::
+	@${ECHO_MSG} "The ${_tuple} GH_TUPLE line has"
+	@${ECHO_MSG} "a tag containing something else than [a-zA-Z0-9_]"
+	@${FALSE}
+.endif
+.endfor
 GH_ACCOUNT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\1\4@}
 GH_PROJECT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\2\4@}
 GH_TAGNAME+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\3\4@}
@@ -609,9 +621,9 @@ GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
-# and extraction directory.
-GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/}
-.  endif 
+# and extraction directory.  It also replaces + with -.
+GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
+.  endif
 .  if defined(_GITHUB_MUST_SET_DISTNAME)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
 .    if ${GH_TAGNAME} != ${DISTVERSIONFULL}

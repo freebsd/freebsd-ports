@@ -1,0 +1,44 @@
+From 7a0ed7f3c2dcb1f104b6f70223d48d8826aec7f2 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 31 May 2016 16:07:26 +0200
+Subject: [PATCH 1/2] xen/logdirty: prevent preemption if finished
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+While working on PVH migration support I've realized that
+paging_log_dirty_op sometimes restarts with sc->pages == pages, which means
+there's no more work to do. Avoid this by adding a check in the preemption
+points of the function.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+ xen/arch/x86/mm/paging.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/xen/arch/x86/mm/paging.c b/xen/arch/x86/mm/paging.c
+index 8219bb6..ed94ff7 100644
+--- a/xen/arch/x86/mm/paging.c
++++ b/xen/arch/x86/mm/paging.c
+@@ -519,7 +519,8 @@ static int paging_log_dirty_op(struct domain *d,
+             if ( l2 )
+                 unmap_domain_page(l2);
+ 
+-            if ( i3 < LOGDIRTY_NODE_ENTRIES - 1 && hypercall_preempt_check() )
++            if ( i3 < LOGDIRTY_NODE_ENTRIES - 1 && hypercall_preempt_check() &&
++                 sc->pages != pages )
+             {
+                 d->arch.paging.preempt.log_dirty.i4 = i4;
+                 d->arch.paging.preempt.log_dirty.i3 = i3 + 1;
+@@ -531,7 +532,7 @@ static int paging_log_dirty_op(struct domain *d,
+             unmap_domain_page(l3);
+ 
+         if ( !rv && i4 < LOGDIRTY_NODE_ENTRIES - 1 &&
+-             hypercall_preempt_check() )
++             hypercall_preempt_check() && sc->pages != pages )
+         {
+             d->arch.paging.preempt.log_dirty.i4 = i4 + 1;
+             d->arch.paging.preempt.log_dirty.i3 = 0;
+-- 
+2.7.4 (Apple Git-66)
+

@@ -6,8 +6,8 @@ PORTVERSION=	1.19
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
-		http://www.littlecms.com/
+MASTER_SITES=	SF \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library

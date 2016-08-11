@@ -3,9 +3,10 @@
 
 PORTNAME=	xosview
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	otacilio.neto@bsd.com.br
 COMMENT=	Graphical performance meter
 
 LICENSE=	BSD4CLAUSE GPLv2
@@ -17,7 +18,7 @@ ONLY_FOR_ARCHS_REASON=	used i386-specific hardware resources
 USE_GITHUB=	yes
 GH_ACCOUNT=	hills
 
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
 USES=		gmake
 MAKE_ENV=	OPTFLAGS="" PLATFORM=bsd MANDIR=${MANPREFIX}/man
 ALL_TARGET=	xosview

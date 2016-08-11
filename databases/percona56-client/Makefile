@@ -8,6 +8,8 @@ COMMENT=	Multithreaded SQL database (client)
 
 MASTERDIR=	${.CURDIR}/../percona56-server
 
+OPTIONS_EXCLUDE=TOKUDB
+
 PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist

@@ -11,7 +11,7 @@ DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Standard Python binding to the SQLite3 library (Python ${PYTHON_VER}) 
+COMMENT=	Standard Python binding to the SQLite3 library (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKDIR}/Python-${PORTVERSION}/LICENSE

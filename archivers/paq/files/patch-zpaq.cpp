@@ -1,6 +1,6 @@
---- zpaq.cpp.orig	2013-02-07 12:39:36.000000000 -0500
-+++ zpaq.cpp	2013-02-07 12:39:51.000000000 -0500
-@@ -1089,24 +1089,7 @@
+--- zpaq.cpp.orig	2016-07-26 12:11:37 UTC
++++ zpaq.cpp
+@@ -1236,24 +1236,7 @@ int numberOfProcessors() {
    int rc=0;  // result
  #ifdef unix
  

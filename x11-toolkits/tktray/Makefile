@@ -10,16 +10,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
 
-USES+=		tk
+USES+=		tk:tea
 USE_XORG=	x11 xext
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-exec-prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR}
-TKPKG=		${PORTNAME}${PORTVERSION}
 
-PLIST_FILES=	lib/${TKPKG}/libtktray.so.1 \
-		lib/${TKPKG}/pkgIndex.tcl \
+PLIST_FILES=	lib/${TCL_PKG}/libtktray.so.1 \
+		lib/${TCL_PKG}/pkgIndex.tcl \
 		man/mann/${PORTNAME}.n.gz
 
 .include <bsd.port.mk>

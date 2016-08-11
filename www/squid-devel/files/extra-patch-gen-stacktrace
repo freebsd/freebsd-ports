@@ -1,0 +1,62 @@
+--- src/tools.cc.orig	2014-10-31 12:36:43.000000000 +0300
++++ src/tools.cc	2014-11-21 14:11:25.000000000 +0300
+@@ -71,6 +71,13 @@
+ #include <errno.h>
+ #endif
+ 
++#if PRINT_STACK_TRACE
++#ifdef __FreeBSD__
++#define UNW_LOCAL_ONLY
++#include <libunwind.h>
++#endif
++#endif
++
+ #define DEAD_MSG "\
+ The Squid Cache (version %s) died.\n\
+ \n\
+@@ -411,6 +418,45 @@
+     }
+ 
+ #endif
++#ifdef __FreeBSD__
++    do {
++	unw_context_t unw_ctx;
++	unw_cursor_t unw_cp;
++	unw_word_t sp, ip, off;
++	int rc = 0;
++	char procname[256];
++	size_t frame;
++
++	bzero((void *)&unw_ctx, sizeof(unw_ctx));
++	bzero((void *)&unw_cp, sizeof(unw_cp));
++
++	if ((rc = unw_getcontext(&unw_ctx))) {
++            fprintf(debug_log, "Failed to trace own stack: "
++		    "unw_context() said '%s'.\n", unw_strerror(rc));
++	    break;
++	}
++	if ((rc = unw_init_local(&unw_cp, &unw_ctx))) {
++            fprintf(debug_log, "Failed to trace own stack: "
++		    "unw_init_local() said '%s'.\n", unw_strerror(rc));
++	    break;
++	}
++	frame = 0;
++	fprintf(debug_log, "Backtrace follows (deepest frame first):\n");
++	while ((rc = unw_step(&unw_cp)) > 0) {
++	    frame++;
++	    ip = 0; sp = 0;
++	    unw_get_reg(&unw_cp, UNW_REG_IP, &ip);
++	    unw_get_reg(&unw_cp, UNW_REG_SP, &sp);
++	    off = 0;
++	    rc = unw_get_proc_name(&unw_cp, procname, sizeof(procname), &off);
++	    if (rc)
++		snprintf (procname, sizeof(procname), "[unknown]");
++	    fprintf(debug_log, "#%zd: %s + 0x%zx, ip = 0x%zx, sp = 0x%zx\n",
++		    frame, procname, (size_t)off, (size_t)ip, (size_t)sp);
++	}
++	fprintf(debug_log, "Use addr2line of similar to translate offsets to line information.\n");
++    } while (0);
++#endif /* __FreeBSD__ */
+ #endif /* PRINT_STACK_TRACE */
+ 
+ #if SA_RESETHAND == 0 && !_SQUID_WINDOWS_

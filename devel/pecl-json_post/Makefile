@@ -3,6 +3,7 @@
 
 PORTNAME=	json_post
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,9 +15,9 @@ COMMENT=	JSON POST handler in PHP
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
-USE_PHP=	json
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+BROKEN_powerpc64=	Does not build
+
+USES=		php:ext tar:tgz
+USE_PHP=	json:build
 
 .include <bsd.port.mk>

@@ -14,10 +14,12 @@ COMMENT=	Python toolkit for stream-based generation of output for the web
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	BABEL
 BABEL_DESC=	I18n support through the Babel plugin
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>

@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: flash-heartbeat-led
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=flash_heartbeat_led
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/flash-heartbeat-led"
+load_rc_config $name
+: ${flash_heartbeat_ledd_enable:="NO"}
+pidfile="/var/run/flash-heartbeat-led.pid"
+
+run_rc_command "$1"

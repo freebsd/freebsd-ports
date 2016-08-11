@@ -11,6 +11,8 @@ DISTNAME=	poxy-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP based web proxy
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 USES=		zip:infozip

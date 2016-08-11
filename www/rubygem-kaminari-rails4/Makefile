@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaminari
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-actionpack4>=4.0.0:www/rubygem-actionpack4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

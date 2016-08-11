@@ -13,8 +13,8 @@ PYQT_DIST=	yes
 
 USES=		python pyqt:4
 USE_PYQT=	sip_build core_run
-USE_QT4=	gui imageformats_run inputmethods_run iconengines_run \
-		qmake_build moc_build
+USE_QT4=	corelib gui imageformats_run inputmethods_run iconengines_run \
+		moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

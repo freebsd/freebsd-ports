@@ -1,6 +1,6 @@
---- ../generic/tcldom.c.orig	2007-12-26 00:19:02.000000000 +0100
-+++ ../generic/tcldom.c	2013-05-22 09:01:30.000000000 +0200
-@@ -5915,6 +5915,9 @@
+--- generic/tcldom.c.orig	2007-12-25 23:19:02 UTC
++++ generic/tcldom.c
+@@ -5915,6 +5915,9 @@ int tcldom_DomObjCmd (
  |   tcldom_EvalLocked
  |
  \---------------------------------------------------------------------------*/
@@ -10,7 +10,7 @@
  
  static
  int tcldom_EvalLocked (
-@@ -5934,7 +5937,7 @@
+@@ -5934,7 +5937,7 @@ int tcldom_EvalLocked (
      if (ret == TCL_ERROR) {
          char msg[64 + TCL_INTEGER_SPACE];
          sprintf(msg, "\n    (\"%s %s\" body line %d)", Tcl_GetString(objv[0]),

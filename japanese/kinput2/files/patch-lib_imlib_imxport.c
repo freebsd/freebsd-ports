@@ -3,9 +3,8 @@ Index: lib/imlib/imxport.c
 RCS file: /home/cvs/private/hrs/kinput2/lib/imlib/imxport.c,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- lib/imlib/imxport.c	7 Dec 2009 06:36:04 -0000	1.1.1.1
-+++ lib/imlib/imxport.c	7 Dec 2009 06:44:58 -0000	1.2
+--- lib/imlib/imxport.c.orig	2002-10-03 09:35:31 UTC
++++ lib/imlib/imxport.c
 @@ -31,10 +31,12 @@ static char *rcsid = "$Id: imxport.c,v 1
  
  #ifdef IM_UNIX_TRANSPORT

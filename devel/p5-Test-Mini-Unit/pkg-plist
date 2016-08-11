@@ -7,5 +7,4 @@
 %%SITE_PERL%%/Test/Mini/Unit/Sugar/Shared.pm
 %%SITE_PERL%%/Test/Mini/Unit/Sugar/Test.pm
 %%SITE_PERL%%/Test/Mini/Unit/Sugar/TestCase.pm
-%%PERL5_MAN3%%/Test::Mini::README.3.gz
 %%PERL5_MAN3%%/Test::Mini::Unit.3.gz

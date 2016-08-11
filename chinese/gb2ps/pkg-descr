@@ -2,14 +2,14 @@ GB2PS converts Chinese GB (simple) encoded text to PostScript.
 
 It automatically supports the HZ encoding.  It even allows you to mix
 GB and HZ code together.
- 
+
 Examples:
 	input:	gb2ps -h
 	output:	the usage of GB2PS
 
 	input:	gb2ps cm9203d.gb cm
 	output: PS programs cm
-			
+
 	input:	gb2ps -b 3 -e 5 cm9208a.hz cm
 	output:	PS program cm from page 3 to page 5.
 

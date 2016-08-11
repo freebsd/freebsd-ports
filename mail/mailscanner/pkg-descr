@@ -1,23 +1,23 @@
-MailScanner is a complete e-mail security system designed for use on 
-e-mail gateways. It protects against viruses, and detects attacks against 
-e-mail client packages (such as Outlook, Outlook Express, Eudora). It can 
-also detect almost all unsolicited commercial e-mail (spam) passing through 
-it and respond to all incidents in a wide variety of ways. 
+MailScanner is a complete e-mail security system designed for use on
+e-mail gateways. It protects against viruses, and detects attacks against
+e-mail client packages (such as Outlook, Outlook Express, Eudora). It can
+also detect almost all unsolicited commercial e-mail (spam) passing through
+it and respond to all incidents in a wide variety of ways.
 
-Not only can it scan for known viruses, but it can also protect against unknown 
-viruses hidden inside e-mail attachments by refusing entry to attachments whose 
-filenames match any given pattern. This can include generic patterns that trap 
-filenames attempting to hide the true filename extension (e.g. ".txt.vbs"). 
+Not only can it scan for known viruses, but it can also protect against unknown
+viruses hidden inside e-mail attachments by refusing entry to attachments whose
+filenames match any given pattern. This can include generic patterns that trap
+filenames attempting to hide the true filename extension (e.g. ".txt.vbs").
 
-It is superior to many commercial packages in its ability to handle attacks 
+It is superior to many commercial packages in its ability to handle attacks
 against itself, such as Denial Of Service attacks caused by messages containing
-the "Zip of Death". It is easy to install into an existing e-mail gateway, 
-requiring very little knowledge of sendmail and no change to an existing 
-sendmail configuration. 
+the "Zip of Death". It is easy to install into an existing e-mail gateway,
+requiring very little knowledge of sendmail and no change to an existing
+sendmail configuration.
 
 MailScanner itself is entirely open source, but it uses widely known commercial
-virus scanning packages at its core. The other software it uses is all high 
-quality open source software, leading to a system that can be trusted for 
-performance and reliability. 
+virus scanning packages at its core. The other software it uses is all high
+quality open source software, leading to a system that can be trusted for
+performance and reliability.
 
 WWW: http://www.mailscanner.info

@@ -2,7 +2,7 @@ $NetBSD: patch-ac,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/build/omake_rule.ml.orig	2010-10-07 19:59:08.000000000 +0000
+--- src/build/omake_rule.ml.orig	2010-10-07 19:59:08 UTC
 +++ src/build/omake_rule.ml
 @@ -768,7 +768,7 @@ let lazy_command venv pos command =
           let fv = free_vars_exp_list el in

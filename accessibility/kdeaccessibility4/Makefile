@@ -8,7 +8,7 @@ CATEGORIES=	accessibility kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE 4
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	JOVIE KACCESSIBLE KMAG KMOUSETOOL KMOUTH

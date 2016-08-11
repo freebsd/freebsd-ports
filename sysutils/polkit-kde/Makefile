@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpolkit-qt-agent-1.so:sysutils/polkit-qt
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USES=		cmake tar:bzip2
 

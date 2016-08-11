@@ -2,7 +2,7 @@
 
 Feather is designed to be run from cron like this:
 
-    */5 * * * * %%PREFIX%%/bin/feather %%PREFIX%%/etc/feather.yaml 
+    */5 * * * * %%PREFIX%%/bin/feather %%PREFIX%%/etc/feather.yaml
 
 If installed, please check the contents of %%DOCSDIR%%/README
 for the syntax of the YAML file, as well as the sample file at

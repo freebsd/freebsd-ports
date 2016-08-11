@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.47
+PORTVERSION=	5.5.50
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -19,11 +19,14 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
 USES=		cmake execinfo gmake shebangfix
+USE_OPENSSL=	yes
 SHEBANG_FILES=	scripts/*.sh
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -44,6 +47,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DWITH_UNIT_TESTS=0 \
 		-DWITH_LIBEDIT=0 \
 		-DWITH_LIBWRAP=1 \
+		-DWITH_SSL=yes \
 		-DEXECINFO_ROOT=${LOCALBASE} \
 		-DCOMPILATION_COMMENT="FreeBSD Ports"
 
@@ -57,8 +61,7 @@ BROKEN_armv6=		Does not compile on arm
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server part
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	55m
+USES+=		mysql:55m
 
 CONFLICTS_INSTALL=	mariadb5[0-46-9]-server-* \
 			mariadb1*-server-* \
@@ -70,7 +73,8 @@ USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 
-CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
+CMAKE_ARGS+=	-DREADLINE_INCLUDE_DIR=/usr/include \
+		-DWITH_EMBEDDED_SERVER="ON" \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
 .else
@@ -79,19 +83,10 @@ USES+=		readline
 .endif
 
 OPTIONS_DEFINE+=	FASTMTX
-OPTIONS_RADIO=		SSL
-OPTIONS_RADIO_SSL=	BUNDLED_SSL OPENSSL WITHOUT_SSL
-OPTIONS_DEFAULT+=	OPENSSL
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=yes
 
-BUNDLED_SSL_DESC=	SSL/TLS support via (bundled) CyaSSL
 FASTMTX_DESC=	Replace mutexes with spinlocks
-WITHOUT_SSL_DESC=	No SSL/TLS support
-OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
-OPENSSL_USE=		USE_OPENSSL=yes
-BUNDLED_SSL_CMAKE_ON=	-DWITH_SSL=bundled
-WITHOUT_SSL_CMAKE_ON=	-DWITH_SSL=no
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 
@@ -101,12 +96,12 @@ OPTIONS_DEFINE+=	MAXKEY OQGRAPH
 OPTIONS_DEFAULT+=	MAXKEY
 
 MAXKEY_DESC=	Change max key length from 1000 to 4000
+
 OQGRAPH_DESC=	Open Query Graph Computation engine
 
-OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH_STORAGE_ENGINE=1
 OQGRAPH_USE=	GCC=yes
-OQGRAPH_CMAKE_ON=	-DWITH_OQGRAPH_STORAGE_ENGINE=1
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+OQGRAPH_BROKEN=	yes
 
 MAXKEY_EXTRA_PATCHES=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif
@@ -123,6 +118,9 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
 USE_GCC=	yes
 .endif
+
+post-extract-OQGRAPH-off:
+	@${RM} -rf ${WRKSRC}/storage/oqgraph
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt

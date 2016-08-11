@@ -1,4 +1,4 @@
-bin/dcadec
+bin/libdcadec
 include/libdcadec/dca_context.h
 include/libdcadec/dca_frame.h
 include/libdcadec/dca_stream.h

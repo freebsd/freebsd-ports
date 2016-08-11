@@ -19,6 +19,13 @@ lib/libdigikamdatabase.so
 lib/libdigikamdatabase.so.%%SHLIB_VER%%
 man/man1/cleanup_digikamdb.1.gz
 man/man1/digitaglinktree.1.gz
+share/appdata/digiKam-ImagePlugin_Color.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Decorate.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Enhance.metainfo.xml
+share/appdata/digiKam-ImagePlugin_FxFilters.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Transform.metainfo.xml
+share/appdata/digikam.appdata.xml
+share/appdata/showfoto.appdata.xml
 share/applications/kde4/digikam.desktop
 share/applications/kde4/showfoto.desktop
 share/apps/digikam/about/digikam.css

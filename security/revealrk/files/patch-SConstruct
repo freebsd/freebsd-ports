@@ -1,6 +1,6 @@
---- SConstruct.orig	2013-01-03 09:06:35.000000000 +0100
-+++ SConstruct	2013-11-14 20:18:29.000000000 +0100
-@@ -13,7 +13,7 @@
+--- SConstruct.orig	2016-05-19 16:27:37 UTC
++++ SConstruct
+@@ -13,7 +13,7 @@ prog_files = Split('revealrk.c')
  pkg_files = prog_files + Split('revealrk.1 SConstruct changelog license.txt README INSTALL cron.example Makefile config.h')
  
  debug     = not ARGUMENTS.get('debug', '0').lower() in ['0', 'false', 'no']
@@ -9,16 +9,7 @@
  clean_all = not GetOption('clean_all') is None
  static    = not GetOption('static') is None
  build_tgz = not GetOption('tgz') is None
-@@ -97,7 +97,7 @@
- 
- ########## Environment ##########
- 
--env = Environment(CC = 'gcc', CCFLAGS = '-std=c99 -Wall -pedantic')
-+env = Environment(CC = 'cc', CCFLAGS = '-std=c99 -Wall -pedantic')
- if not env.GetOption('clean'):
-     if not verbose:
-         env['CCCOMSTR'] = 'Compiling $TARGET'
-@@ -147,8 +147,8 @@
+@@ -152,8 +152,8 @@ if not env.GetOption('clean'):
          conf.env.Append(LINKFLAGS = ' -static')
      env = conf.Finish()
  

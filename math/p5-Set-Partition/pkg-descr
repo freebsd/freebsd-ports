@@ -1,11 +1,11 @@
-Set::Partition takes a list or hash of elements and a list numbers that 
-represent the sizes of the partitions into which the list of elements 
+Set::Partition takes a list or hash of elements and a list numbers that
+represent the sizes of the partitions into which the list of elements
 should be arranged.
 
-The resulting object can then be used as an iterator which returns a 
-reference to an array of lists, that represents the original list arranged 
-according to the given partitioning. All possible arrangements are 
-returned, and the object returns undef when the entire combination space 
+The resulting object can then be used as an iterator which returns a
+reference to an array of lists, that represents the original list arranged
+according to the given partitioning. All possible arrangements are
+returned, and the object returns undef when the entire combination space
 has been exhausted.
 
 WWW: http://search.cpan.org/dist/Set-Partition/

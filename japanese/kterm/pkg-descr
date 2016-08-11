@@ -3,7 +3,7 @@ understands ANSI color sequences.  This version is 6.2.0, available
 from the X11R6 contrib tape.
 
 Also included is support for Xaw3d arrow-style scrollbars and neXtaw
-NeXT-style scrollbars.  You can now hold down the arrow buttons to 
+NeXT-style scrollbars.  You can now hold down the arrow buttons to
 scroll continuously.
 
 And also included kterm background-wallpaper patch.

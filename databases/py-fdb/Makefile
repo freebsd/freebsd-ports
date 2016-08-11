@@ -12,10 +12,8 @@ COMMENT=	Firebird RDBMS bindings for Python
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libfbclient.so:databases/firebird25-client
-
 NO_ARCH=	yes
-USES=		python
+USES=		firebird python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>

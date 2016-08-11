@@ -1,14 +1,14 @@
 xwave - an audio player, recorder, editor  for the XWindow System
 
 Note from the original author:
- 
+
 The user interface of xwave is based on Athena and FWF widgets.
 The application defaults are optimized for Xaw3d, so if you don't
 use Xaw3d you may want to modify the resources.
 
 Features:
 	- multiple files
-	- overview window 
+	- overview window
 	- zoom window
 	- mark, cut, copy, paste, merge
 	- echo, reverse, swap, resample, volume (absolute, dynamic

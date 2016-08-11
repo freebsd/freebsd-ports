@@ -1,5 +1,5 @@
-Module::ExtractUse is basically a Parse::RecDescent grammar to 
-parse Perl code. It tries very hard to find all modules 
+Module::ExtractUse is basically a Parse::RecDescent grammar to
+parse Perl code. It tries very hard to find all modules
 (whether pragmas, Core, or from CPAN) used by the parsed code.
 
 WWW: http://search.cpan.org/dist/Module-ExtractUse/

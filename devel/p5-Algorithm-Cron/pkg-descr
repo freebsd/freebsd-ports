@@ -1,7 +1,7 @@
 Algorithm::Cron - abstract implementation of the cron(8) scheduling algorithm
 
-Objects in this class implement a time scheduling algorithm such as used by 
+Objects in this class implement a time scheduling algorithm such as used by
 cron(8). Objects are stateless once constructed, and represent a single schedule
  as defined by a crontab(5) entry. The object implements a method next_time
-which returns an epoch timestamp value to indicate the next time included 
+which returns an epoch timestamp value to indicate the next time included
 in the crontab schedule.

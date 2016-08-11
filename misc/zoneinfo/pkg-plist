@@ -100,8 +100,8 @@
 %%DATADIR%%/America/Edmonton
 %%DATADIR%%/America/Eirunepe
 %%DATADIR%%/America/El_Salvador
-%%DATADIR%%/America/Fortaleza
 %%DATADIR%%/America/Fort_Nelson
+%%DATADIR%%/America/Fortaleza
 %%DATADIR%%/America/Glace_Bay
 %%DATADIR%%/America/Godthab
 %%DATADIR%%/America/Goose_Bay
@@ -280,6 +280,7 @@
 %%DATADIR%%/Asia/Tehran
 %%DATADIR%%/Asia/Thimphu
 %%DATADIR%%/Asia/Tokyo
+%%DATADIR%%/Asia/Tomsk
 %%DATADIR%%/Asia/Ulaanbaatar
 %%DATADIR%%/Asia/Urumqi
 %%DATADIR%%/Asia/Ust-Nera
@@ -372,6 +373,7 @@
 %%DATADIR%%/Europe/Jersey
 %%DATADIR%%/Europe/Kaliningrad
 %%DATADIR%%/Europe/Kiev
+%%DATADIR%%/Europe/Kirov
 %%DATADIR%%/Europe/Lisbon
 %%DATADIR%%/Europe/Ljubljana
 %%DATADIR%%/Europe/London

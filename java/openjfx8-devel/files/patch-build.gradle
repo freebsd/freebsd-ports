@@ -1,5 +1,14 @@
 --- build.gradle.orig	2016-02-28 12:54:50 UTC
 +++ build.gradle
+@@ -125,7 +125,7 @@ void loadProperties(String sourceFileNam
+     def propFile = new File(sourceFileName)
+     if (propFile.canRead()) {
+         config.load(new FileInputStream(propFile))
+-        for (Map.Entry property in config) {
++        for (property in config) {
+             def keySplit = property.key.split("\\.");
+             def key = keySplit[0];
+             for (int i = 1; i < keySplit.length; i++) {
 @@ -1167,7 +1167,7 @@ allprojects {
      // By default all of our projects require junit for testing so we can just
      // setup this dependency here.

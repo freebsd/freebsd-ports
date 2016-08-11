@@ -1,12 +1,12 @@
-This driver uses a database table to store the cache for CHI. 
+This driver uses a database table to store the cache for CHI.
 The newest versions of MySQL and SQLite are known to work.
 Other RDBMSes should work.
 
-Why cache things in a database? Isn't the database what people are trying to 
-avoid with caches? This is often true, but a simple primary key lookup is 
-extremely fast in many databases and this provides a shared cache that can be 
-used when less reliable storage like memcached is not appropriate. Also, the 
-speed of simple lookups on MySQL when accessed over a local socket is very hard 
+Why cache things in a database? Isn't the database what people are trying to
+avoid with caches? This is often true, but a simple primary key lookup is
+extremely fast in many databases and this provides a shared cache that can be
+used when less reliable storage like memcached is not appropriate. Also, the
+speed of simple lookups on MySQL when accessed over a local socket is very hard
 to beat. DBI is fast.
 
 WWW: http://search.cpan.org/dist/CHI-Driver-DBI/

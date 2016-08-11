@@ -1,8 +1,8 @@
 ==============================================================================
 
-From this version 1.0000 on, the p5-ResourcePool package will not contain 
-resource bindings anymore. The previously included bindings for 
-DBI and Net::LDAP are available in the databases/p5-ResourcePool-Resource-DBI 
+From this version 1.0000 on, the p5-ResourcePool package will not contain
+resource bindings anymore. The previously included bindings for
+DBI and Net::LDAP are available in the databases/p5-ResourcePool-Resource-DBI
 and net/p5-ResourcePool-Resource-Net-LDAP ports.
 
 ==============================================================================

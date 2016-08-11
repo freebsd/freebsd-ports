@@ -2,4 +2,4 @@ This package allows you to encrypt and decrypt strings or long integer arrays
 with the XXTEA encryption algorithm, which is secure, fast and suitable for web
 development.
 
-WWW:	http://pear.php.net/package/Crypt_XXTEA
+WWW: http://pear.php.net/package/Crypt_XXTEA

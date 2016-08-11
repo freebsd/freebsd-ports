@@ -3,17 +3,16 @@
 
 PORTNAME=	big_int
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	math devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 DOCS=		CREDITS INSTALL LICENSE README docs/index.html libbig_int/CREDITS \

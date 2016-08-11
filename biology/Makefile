@@ -21,6 +21,7 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
+    SUBDIR += diamond
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
@@ -73,12 +74,12 @@
     SUBDIR += phred
     SUBDIR += phylip
     SUBDIR += phyml
-    SUBDIR += platon
     SUBDIR += plink
     SUBDIR += plinkseq
     SUBDIR += primer3
     SUBDIR += protomol
     SUBDIR += psi88
+    SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += pycogent
     SUBDIR += pyfasta
@@ -88,6 +89,8 @@
     SUBDIR += samtools
     SUBDIR += seaview
     SUBDIR += seqan
+    SUBDIR += seqan-apps
+    SUBDIR += seqan1
     SUBDIR += seqio
     SUBDIR += seqtools
     SUBDIR += sim4

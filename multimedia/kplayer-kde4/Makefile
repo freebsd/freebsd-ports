@@ -14,7 +14,7 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		cmake gettext tar:bzip2
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdelibs automoc4
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -L${LOCALBASE}/kde4/lib -lsolid
 
 post-patch:

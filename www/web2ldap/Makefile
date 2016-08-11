@@ -48,7 +48,7 @@ do-install:
 		${FIND} * -type d | ${GREP} -vE "^htdocs" | ${CPIO} -p ${STAGEDIR}${DATADIR}; \
 		${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${STAGEDIR}${DATADIR})
 
-post-install:
+post-install-DOCS-on:
 	@${ECHO_MSG} "==> Installing document files..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}; \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_git
-PORTVERSION=	10.0.0
-PORTREVISION=	1
+PORTVERSION=	10.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

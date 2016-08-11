@@ -1,5 +1,5 @@
---- libhash/Makefile.orig	2003-08-21 09:11:03.000000000 +0800
-+++ libhash/Makefile	2011-10-03 16:33:58.000000000 +0800
+--- libhash/Makefile.orig	2003-08-21 01:11:03 UTC
++++ libhash/Makefile
 @@ -7,8 +7,8 @@
  
  SRC	= hash.c

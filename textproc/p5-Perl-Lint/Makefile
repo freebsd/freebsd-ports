@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Lint
-PORTVERSION=	0.23
-PORTREVISION=	3
+PORTVERSION=	0.24
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MOZNION
@@ -27,6 +26,7 @@ BUILD_DEPENDS=	p5-B-Keywords>=0:devel/p5-B-Keywords \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Text-TestBase>=0:textproc/p5-Text-TestBase
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 

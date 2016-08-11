@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
@@ -45,7 +45,7 @@ do-install:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-regression-test: build
+do-test:
 	${BUILD_WRKSRC}/${PORTNAME} b
 
 .include <bsd.port.mk>

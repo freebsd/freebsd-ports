@@ -11,7 +11,7 @@ COMMENT=	GTK2 and GTK3 Configurator for KDE
 
 USES=		cmake:outsource gettext pkgconfig tar:xz
 USE_GNOME=	gtk20 gtk30
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 post-patch:

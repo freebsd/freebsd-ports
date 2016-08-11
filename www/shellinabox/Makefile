@@ -45,8 +45,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shellinaboxd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/shellinaboxd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

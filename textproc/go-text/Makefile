@@ -11,8 +11,7 @@ COMMENT=	Go package for manipulating paragraphs of text
 
 LICENSE=	MIT
 
+USES=		go
 GO_PKGNAME=	github.com/kr/text
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

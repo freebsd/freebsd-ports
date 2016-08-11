@@ -1,6 +1,6 @@
---- doc/gc.man.orig	2012-07-25 14:54:48.000000000 +0300
-+++ doc/gc.man	2012-07-25 14:57:40.000000000 +0300
-@@ -11,7 +11,7 @@
+--- doc/gc.man.orig	2014-05-22 20:47:28 UTC
++++ doc/gc.man
+@@ -11,7 +11,7 @@ void GC_free(void *ptr);
  void * GC_realloc(void *ptr, size_t size);
  .br
  .sp
@@ -9,7 +9,7 @@
  .LP
  .SH DESCRIPTION
  .I GC_malloc
-@@ -88,6 +88,48 @@
+@@ -88,6 +88,48 @@ This may temporarily write protect pages
  .LP
  Other facilities not discussed here include limited facilities to support incremental collection on machines without appropriate VM support, provisions for providing more explicit object layout information to the garbage collector, more direct support for ``weak'' pointers, support for ``abortable'' garbage collections during idle time, etc.
  .LP

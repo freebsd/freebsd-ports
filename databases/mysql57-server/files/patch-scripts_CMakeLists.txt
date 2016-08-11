@@ -1,4 +1,4 @@
---- scripts/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- scripts/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ scripts/CMakeLists.txt
 @@ -347,6 +347,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)

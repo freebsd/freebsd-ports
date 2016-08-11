@@ -66,6 +66,9 @@ do-configure:
 .endfor
 	${PRINTF} '\n' >> ${WRKSRC}/bin/system.properties
 
+# For some reason, it is not enough for these three to simply be listed in
+# jmeter.properties file. JMeter refuses to start, unless they are found in lib/
+BOOTSTRAP_JARS=	avalon-framework xstream commons-io
 do-install:
 	cd ${WRKSRC} \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}/${DATADIR}/{} \;
@@ -77,10 +80,6 @@ do-install:
 	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	${INSTALL_SCRIPT} ${WRKDIR}/jmeter.sh ${STAGEDIR}${PREFIX}/bin/jmeter
 
-# For some reason, it is not enough for these three to simply be listed in
-# jmeter.properties file. JMeter refuses to start, unless they are found in lib/
-BOOTSTRAP_JARS=	avalon-framework xstream commons-io
-post-install:
 	@${LN} -s ${BOOTSTRAP_JARS:C|.*|${JAVAJARDIR}/&.jar|} ${STAGEDIR}${DATADIR}/lib/
 
 .include <bsd.port.post.mk>

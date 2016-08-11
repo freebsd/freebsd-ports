@@ -1,6 +1,6 @@
---- util.c.orig	Wed Nov 19 19:01:47 2003
-+++ util.c	Wed Nov 19 19:01:47 2003
-@@ -61,15 +61,15 @@
+--- util.c.orig	2016-06-20 15:59:53 UTC
++++ util.c
+@@ -61,15 +61,15 @@ generateProcmailrc(char *homedir, char *
  FILE *fp, *fp1, *fp2;
  char *tmp, buf[200], group[180], filterfile[100], procmailrcfile[100];
  int i,j;

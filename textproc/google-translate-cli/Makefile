@@ -3,6 +3,7 @@
 
 PORTNAME=	google-translate-cli
 PORTVERSION=	0.8.19
+DISTVERSIONPREFIX=	v
 #PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -25,7 +26,6 @@ FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
 GH_ACCOUNT=	soimort
 GH_PROJECT=	translate-shell
-GH_TAGNAME=	ae2696e
 
 OPTIONS_DEFINE=	DOCS FRIBIDI READLINE TEXT2SPEECH
 

@@ -1,6 +1,6 @@
---- ejabberdctl.template.orig   2016-03-09 03:31:00 UTC
+--- ejabberdctl.template.orig	2016-06-11 03:11:27 UTC
 +++ ejabberdctl.template
-@@ -15,7 +15,8 @@
+@@ -15,7 +15,8 @@ ERL={{erl}}
  IEX={{bindir}}/iex
  EPMD={{bindir}}/epmd
  INSTALLUSER={{installuser}}
@@ -10,7 +10,7 @@
  
  # check the proper system user is used if defined
  if [ "$INSTALLUSER" != "" ] ; then
-@@ -31,14 +32,14 @@
+@@ -31,14 +32,14 @@ if [ "$INSTALLUSER" != "" ] ; then
          fi
      done
      if [ `id -g` -eq `id -g $INSTALLUSER` ] ; then
@@ -27,7 +27,7 @@
  fi
  
  # parse command line parameters
-@@ -73,10 +74,10 @@
+@@ -73,10 +74,10 @@ if [ "$EJABBERD_CONFIG_PATH" = "" ] ; th
      EJABBERD_CONFIG_PATH=$ETC_DIR/ejabberd.yml
  fi
  if [ "$LOGS_DIR" = "" ] ; then
@@ -40,12 +40,3 @@
  fi
  if [ "$EJABBERD_DOC_PATH" = "" ] ; then
      EJABBERD_DOC_PATH={{docdir}}
-@@ -354,7 +355,7 @@
-     # using flock if available. Expects a linux-style
-     # flock that can lock a file descriptor.
-     MAXCONNID=100
--    CONNLOCKDIR={{localstatedir}}/lock/ejabberdctl
-+    CONNLOCKDIR={{localstatedir}}/run/ejabberdctl
-     FLOCK=/usr/bin/flock
-     if [ ! -x "$FLOCK" ] || [ ! -d "$CONNLOCKDIR" ] ; then
-         JOT=/usr/bin/jot

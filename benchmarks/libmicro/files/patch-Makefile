@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Jan  8 12:11:55 2008
-+++ Makefile	Tue Jan  8 12:12:21 2008
-@@ -68,7 +68,7 @@
+--- Makefile.orig	2011-05-11 00:58:23 UTC
++++ Makefile
+@@ -68,7 +68,7 @@ TARBALL_CONTENTS = 	\
  	wrapper.sh	\
  	README
  

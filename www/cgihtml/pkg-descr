@@ -1,6 +1,6 @@
-Cgihtml is a C library that simplifies the task of parsing World Wide Web 
-(WWW) Common Gateway Interface (CGI) input and outputting HyperText Markup 
-Language (HTML). Tasks which would normally require many lines of C can be 
+Cgihtml is a C library that simplifies the task of parsing World Wide Web
+(WWW) Common Gateway Interface (CGI) input and outputting HyperText Markup
+Language (HTML). Tasks which would normally require many lines of C can be
 reduced to just a few.
 
 WWW: http://www.eekim.com/software/cgihtml/

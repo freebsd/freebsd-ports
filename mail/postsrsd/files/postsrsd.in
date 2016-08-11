@@ -18,6 +18,10 @@
 # postsrsd_uid (str):       Set username to run postsrsd.
 # postsrsd_secret (str):    Secret file file. See postsrsd(8)
 # postsrsd_domain (str):    Local domain name: rewrite to originate from this domain
+# postsrsd_exclude_domains (str):      Domains to exclude (comma-separated list)
+# postsrsd_forward_port (int): Port to listen for forward map
+# postsrsd_reverse_port (int): Port to listen for reverse map
+# postsrsd_idle_timeout (int): Timeout for idle client connection
 # postsrsd_flags (str):     Flags passed to start command.
 
 . /etc/rc.subr
@@ -87,5 +91,8 @@ postsrsd_postcmd()
     # just if the directory is empty
     rmdir ${_piddir} > /dev/null 2>&1
 }
+
+# to let rc.subr kill them all
+unset pidfile
 
 run_rc_command "$1"

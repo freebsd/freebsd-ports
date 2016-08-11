@@ -1,2 +1,3 @@
-SHA256 (pytoport-0.4.0.tar.gz) = a045333af456fc3bc3212512bacdb0675890692d83518ef4a476637d5a20406c
-SIZE (pytoport-0.4.0.tar.gz) = 6026
+TIMESTAMP = 1463315915
+SHA256 (freebsd-pytoport-v0.4.1_GH0.tar.gz) = 025f9c3c5dbb8261ec5930f0ab1bc1229d32e6fc4b5d3c28ebe311ec34322f4d
+SIZE (freebsd-pytoport-v0.4.1_GH0.tar.gz) = 6008

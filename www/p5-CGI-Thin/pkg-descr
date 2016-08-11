@@ -1,10 +1,10 @@
 This module is a very lightweight parser of CGI forms. And it has a special
 feature that it will return an array if the same key is used twice in the
-form.  You can force an array even if only one value returned to avoid 
+form.  You can force an array even if only one value returned to avoid
 complications.
 
 The hash %cgi_data will have all the form data from either a POST or GET form
-and will also work for "multipart/form-data" forms necessary for uploading 
+and will also work for "multipart/form-data" forms necessary for uploading
 files.
 
 WWW: http://search.cpan.org/dist/CGI-Thin/

@@ -1,7 +1,5 @@
 share/sgml/linuxdoc/README
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
-share/sgml/linuxdoc/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/catalog
+@xmlcatmgr share/sgml/linuxdoc/catalog
 share/sgml/linuxdoc/freebsd-1.0.dtd
 share/sgml/linuxdoc/freebsd-1.1.dtd
 share/sgml/linuxdoc/linuxdoc.dec

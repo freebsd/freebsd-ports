@@ -3,6 +3,7 @@
 
 PORTNAME=	pthreads
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,12 +16,7 @@ LICENSE=	PHP301
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	pthreads
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 .include <bsd.port.options.mk>
 

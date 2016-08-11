@@ -1,0 +1,13 @@
+--- doc/Gamekeys.txt.orig	1999-04-06 12:58:18 UTC
++++ doc/Gamekeys.txt
+@@ -9,6 +9,10 @@ key-strafe-right:    '.'
+ 
+ key_fire:            Control-key 
+ key_use:             Space-key 
++key_health:          'a'
++key_tomeofpower:     Backspace-key
++key_egg:             'q'
++key_firebomb:        'b'
+ key_strafe:          Alt/Meta-key 
+ key_speed:           Shift-key
+ 

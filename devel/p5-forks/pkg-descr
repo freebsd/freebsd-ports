@@ -1,18 +1,18 @@
-The "forks" pragma allows a developer to use threads without having to 
-have a threaded perl, or to even run 5.8.0 or higher. There were a number 
+The "forks" pragma allows a developer to use threads without having to
+have a threaded perl, or to even run 5.8.0 or higher. There were a number
 of goals that I am trying to reach with this implementation.
 
-The standard Perl 5.8.0 threads implementation is very memory consuming, 
-which makes it basically impossible to use in a production environment, 
-particularly with mod_perl and Apache. Because of the use of the standard 
-Unix fork() capabilities, most operating systems will be able to use the 
-Copy-On-Write (COW) memory sharing capabilities (whereas with the standard 
-Perl 5.8.0 threads implementation, this is thwarted by the Perl interpreter 
-cloning process that is used to create threads). The memory savings have 
+The standard Perl 5.8.0 threads implementation is very memory consuming,
+which makes it basically impossible to use in a production environment,
+particularly with mod_perl and Apache. Because of the use of the standard
+Unix fork() capabilities, most operating systems will be able to use the
+Copy-On-Write (COW) memory sharing capabilities (whereas with the standard
+Perl 5.8.0 threads implementation, this is thwarted by the Perl interpreter
+cloning process that is used to create threads). The memory savings have
 been confirmed.
 
-You should be able to run threaded applications unchanged by simply making 
-sure that the "forks" and "forks::shared" modules are loaded, 
+You should be able to run threaded applications unchanged by simply making
+sure that the "forks" and "forks::shared" modules are loaded,
 e.g. by specifying them on the command line.
 
 WWW: http://search.cpan.org/dist/forks/

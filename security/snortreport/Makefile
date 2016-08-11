@@ -18,23 +18,16 @@ JPGRAPH_DESC=		Graphical charting
 
 BARNYARD_RUN_DEPENDS=	barnyard2:security/barnyard2
 JPGRAPH_RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:graphics/jpgraph2
-.include <bsd.port.options.mk>
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL Performance.txt create_indexes.sql
 FTYPES=		css html js php phps png sample
 
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
+USES=		php:web
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
+MYSQL_USE=	php=mysql
+PGSQL_USE=	php=pgsql
 
 pre-everything::
 	@${ECHO} ""
@@ -50,10 +43,8 @@ do-install:
 	${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 750 -d ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${FTYPES:S|^|${WRKSRC}/*|} ${STAGEDIR}${WWWDIR}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

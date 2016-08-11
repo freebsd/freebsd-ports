@@ -1,19 +1,19 @@
 The SuSE Proxy-Suite, a set of programs to enhance firewall security.
 The first (and currently only) component being released is the FTP-Proxy.
 
-* Securely relays FTP connections between clients and servers 
+* Securely relays FTP connections between clients and servers
 * Can switch connections from active to passive and vice versa
-* Utilizes port ranges for both control and data connections 
-* Provides extensive auditing (via syslog or rotating log files) 
-* Can separate user related from system triggered audit events 
-* Provides command restriction based on logged in user name 
-* Allows command argument checking with regular expressions 
-* Is able to retrieve configuration data from an LDAP directory 
-* Has been thoroughly tested against buffer overflow attacks 
-* Fully conforms to RFC 959 and 1123 (the basic FTP RFCs) 
-* Planned to support RFC 1579 ("Firewall Friendly FTP") 
-* Planned to support RFC 2428 (IPv6 Extensions for FTP) 
-* Based on GNU AutoConf, supposed to run on many UNIX systems 
+* Utilizes port ranges for both control and data connections
+* Provides extensive auditing (via syslog or rotating log files)
+* Can separate user related from system triggered audit events
+* Provides command restriction based on logged in user name
+* Allows command argument checking with regular expressions
+* Is able to retrieve configuration data from an LDAP directory
+* Has been thoroughly tested against buffer overflow attacks
+* Fully conforms to RFC 959 and 1123 (the basic FTP RFCs)
+* Planned to support RFC 1579 ("Firewall Friendly FTP")
+* Planned to support RFC 2428 (IPv6 Extensions for FTP)
+* Based on GNU AutoConf, supposed to run on many UNIX systems
 
 Ported to FreeBSD using OpenBSD port by Camiel Dobbelaar <cd@sentia.nl>,
 with updates contributed by Marius Tomaschewski <mat@mt-home.net>.

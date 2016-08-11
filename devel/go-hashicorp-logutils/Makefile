@@ -1,8 +1,9 @@
 # Created by: Thomas Bartelmess <thomas@bartelmess.io>
 # $FreeBSD$
 
-PORTNAME=	go-hachicorp-logutils
+PORTNAME=	logutils
 PORTVERSION=	0.1
+PKGNAMEPREFIX=	go-${GH_ACCOUNT}-
 CATEGORIES=	devel
 
 MAINTAINER=	thomas@bartelmess.io
@@ -10,13 +11,11 @@ COMMENT=	Utilities for slightly better logging in Go (Golang)
 
 LICENSE=	BSD2CLAUSE
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-GH_PROJECT=	logutils
 GH_TAGNAME=	8e0820f
 
-GO_PKGNAME=	github.com/hashicorp/logutils
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

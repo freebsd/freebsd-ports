@@ -1,15 +1,15 @@
-FontForge (formerly called PfaEdit) is a PostScript font editor which can 
-create and modify outline fonts in Type 1, CID-Keyed, TrueType, OpenType 
+FontForge (formerly called PfaEdit) is a PostScript font editor which can
+create and modify outline fonts in Type 1, CID-Keyed, TrueType, OpenType
 format. It can generate bitmaps and save in BDF format or embedded bitmaps
-in TrueType/OpenType fonts. 
+in TrueType/OpenType fonts.
 
 It can generate Type3 and SVG fonts if built with multilayer feature.
 If you feel the shortage of memory, rebuilding multilayer-disabled
 FontForge with FONTFORGE_NO_MULTILAYER defined will save some memory.
 
 If you have installed AutoTrace or Potrace, you can generate outlines
-from imported bitmap images. 
+from imported bitmap images.
 
-For more information, see 
+For more information, see
 
 WWW: http://fontforge.sourceforge.net/

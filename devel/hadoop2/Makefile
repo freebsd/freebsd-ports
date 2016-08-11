@@ -7,6 +7,7 @@
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
 		LOCAL/demon/:maven \
@@ -37,13 +38,12 @@ CONFLICTS_INSTALL=	hadoop-1*
 USES=		cpe shebangfix
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/conf/httpfs-env.sh hadoop-common-project/hadoop-kms/src/main/sbin/kms.sh hadoop-common-project/hadoop-kms/src/main/libexec/kms-config.sh hadoop-common-project/hadoop-kms/src/main/conf/kms-env.sh hadoop-tools/hadoop-sls/src/main/bin/rumen2sls.sh hadoop-tools/hadoop-sls/src/main/bin/slsrun.sh
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin/protoc
 
 OPTIONS_DEFINE=		EXAMPLES
-OPTIONS_DEFAULT=	EXAMPLES
 
 TOMCAT_VERSION=	6.0.44
 HADOOP_DIST=	${WRKSRC}/hadoop-dist/target/hadoop-${PORTVERSION}

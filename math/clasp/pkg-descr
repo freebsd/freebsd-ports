@@ -8,6 +8,6 @@ solver or any other existing ASP solver. Rather, clasp has been genuinely
 developed for answer set solving based on conflict-driven nogood learning.
 clasp can be applied as an ASP solver (on SMODELS format, as output by Gringo),
 as a SAT solver (on a simplified version of DIMACS/CNF format), or as a PB
-solver (on OPB format). 
+solver (on OPB format).
 
 WWW: http://potassco.sourceforge.net/

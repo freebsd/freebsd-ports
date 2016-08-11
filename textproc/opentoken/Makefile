@@ -3,6 +3,7 @@
 
 PORTNAME=	opentoken
 PORTVERSION=	6.0b
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://stephe-leake.org/ada/
 

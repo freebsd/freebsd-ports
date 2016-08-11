@@ -1,2 +1,3 @@
-SHA256 (binutils-2.26.tar.bz2) = c2ace41809542f5237afc7e3b8f32bb92bc7bc53c6232a84463c423b0714ecd9
-SIZE (binutils-2.26.tar.bz2) = 25543552
+TIMESTAMP = 1467495206
+SHA256 (binutils-2.26.1.tar.bz2) = 39c346c87aa4fb14b2f786560aec1d29411b6ec34dce3fe7309fe3dd56949fd8
+SIZE (binutils-2.26.1.tar.bz2) = 25595243

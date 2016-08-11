@@ -5,7 +5,7 @@ PORTNAME=	Net_DNS2
 PORTVERSION=	1.4.1
 CATEGORIES=	dns net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Resolver library used to communicate with a DNS server
 
 LICENSE=	BSD3CLAUSE

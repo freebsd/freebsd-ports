@@ -3,6 +3,7 @@
 
 PORTNAME=	scream
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,8 +15,7 @@ COMMENT=	Break the silence operator
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 test: build

@@ -1,7 +1,6 @@
-diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
---- bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c	2004-12-20 02:44:42.000000000 +0800
-+++ ftpd/logwtmp.c	2012-06-15 15:34:03.000000000 +0800
-@@ -48,13 +48,18 @@
+--- ftpd/logwtmp.c.orig	2004-12-19 18:44:42 UTC
++++ ftpd/logwtmp.c
+@@ -48,13 +48,18 @@ __FBSDID("$FreeBSD: src/libexec/ftpd/log
  #include <arpa/inet.h>
  #include <sys/socket.h>
  
@@ -21,7 +20,7 @@ diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
  #include <unistd.h>
  #include <stdio.h>
  #include <string.h>
-@@ -63,6 +68,7 @@
+@@ -63,6 +68,7 @@ __FBSDID("$FreeBSD: src/libexec/ftpd/log
  
  #include <port_base.h>
  
@@ -29,7 +28,7 @@ diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
  static int fd = -1;
  
  /*
-@@ -94,7 +100,7 @@
+@@ -94,7 +100,7 @@ ftpd_logwtmp(line, name, addr)
  		(void)strncpy(ut.ut_line, line, sizeof(ut.ut_line));
  		(void)strncpy(ut.ut_name, name, sizeof(ut.ut_name));
  		(void)strncpy(ut.ut_host, host, sizeof(ut.ut_host));
@@ -38,7 +37,7 @@ diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
  		ut.ut_time = _time_to_time32(time(NULL));
  #else /* Portable code from FreeBSD 4.8 */
  		(void)time(&ut.ut_time);
-@@ -104,3 +110,31 @@
+@@ -104,3 +110,31 @@ ftpd_logwtmp(line, name, addr)
  			(void)ftruncate(fd, buf.st_size);
  	}
  }

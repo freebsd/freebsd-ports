@@ -13,7 +13,7 @@ POST-INSTALL CONFIGURATION FOR MAGENTO
    <Directory %%PREFIX%%/%%MAGENTODIR%%>
       AllowOverride None
       Order Allow,Deny
-      Allow from all 
+      Allow from all
    </Directory>
 
 3) Visit your Magento site with a browser (i.e.,

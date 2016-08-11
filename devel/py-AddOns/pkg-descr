@@ -8,4 +8,4 @@ each time you ask for one, an existing instance is returned if possible. In
 this way, add-ons can keep track of ongoing state. For example, a Persistence
 add-on might keep track of whether its subject has been saved to disk.
 
-WWW:	http://www.python.org/pypi/AddOns
+WWW: http://www.python.org/pypi/AddOns

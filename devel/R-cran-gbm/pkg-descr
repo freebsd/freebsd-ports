@@ -3,4 +3,4 @@ gradient boosting machine. Includes regression methods for least
 squares, absolute loss, quantile regression, logistic, Poisson, Cox
 proportional hazards partial likelihood, and AdaBoost exponential loss.
 
-WWW:	http://cran.r-project.org/web/packages/gbm/
+WWW: http://cran.r-project.org/web/packages/gbm/

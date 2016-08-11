@@ -1,6 +1,7 @@
---- yaps.rc~	Wed Jun 11 19:39:06 1997
-+++ yaps.rc	Tue Oct 17 21:11:37 2000
-@@ -7,12 +7,11 @@
+--- yaps.rc.orig	1997-06-11 17:39:06 UTC
++++ yaps.rc
+@@ -6,14 +6,13 @@
+ #	global section			#
  #########################################
  #
 -#	This is a comma seperated list of available services. This
@@ -17,7 +18,9 @@
 +#	This is the default caller-id. If the protocol/service allows
  #	it, this is inserted in the message (and the receiver gets this
  #	as the sender's number)
-@@ -23,9 +22,9 @@
+ call-id		+1-(555)-1234
+@@ -22,17 +21,17 @@ call-id		+1-(555)-1234
+ #	this string to each message.
  signature	(It's me!)
  #
 -#	You can either switch the use of the signature here on for all
@@ -29,21 +32,25 @@
 +#	Increase this value to get more verbose output when running yaps.
  #	Currently 4 is the highest supported value.
  verbose		0
-@@ -33,5 +32,5 @@
+ #
  #	If you'd like to log every sending session define this. It should
  #	point to a writeable file. If you install the software setgid, then
 -#	change the group of this file to the same yaps uses and make it
 +#	change the group of this file to the one yaps uses and make it
  #	group writeable.
  logfile		/var/log/yaps.log
-@@ -41,5 +40,5 @@
+ #
+@@ -40,7 +39,7 @@ logfile		/var/log/yaps.log
+ #	in each service section.
  modems		standard
  #
 -#	some global defaults for the serial interface (even if the most
 +#	some global defaults for the serial interface (even if most
  #	protocols are assuming 7e1, these settings seem to work well)
  speed		38400
-@@ -49,11 +48,11 @@
+ bits-per-byte	8
+@@ -48,13 +47,13 @@ parity		none
+ stopbits	1
  
  #
 -#	To calculate the cost for each call, you can define some globales
@@ -59,14 +66,18 @@
 +#	used via the `convert' entry (see below).
  cv-default	{
  	Ä	[
-@@ -75,5 +74,5 @@
+ 	Ö	\
+@@ -74,7 +73,7 @@ cv-extend	{
+ 
  #
  #	These values are normally only found in each service section,
 -#	but are listen here with an explaination for completeness.
 +#	but are listed here with an explaination for completeness.
  #
  #	This is the phone number of the modem gateway for this service
-@@ -87,11 +86,11 @@
+ #phone		0015559876
+@@ -86,13 +85,13 @@ cv-extend	{
+ #protocol	tap
  
  #
 -#	Most services limit the length of a message to a specific length.
@@ -81,14 +92,18 @@
 +#	it off into several single messages of maximum allowed length.
  #may-split	True
  
-@@ -103,5 +102,5 @@
+ #
+@@ -102,7 +101,7 @@ cv-extend	{
+ 
  #
  #	Some services allow to send more than one message per session. If
 -#	it is limited, set it using this parameter
 +#	there is a limit, set it using this parameter.
  #max-messages	1
  
-@@ -111,6 +110,6 @@
+ #
+@@ -110,8 +109,8 @@ cv-extend	{
+ #use-call-id	True
  
  #
 -#	If the service is reachable over a phonenumber where the pager-id
@@ -97,7 +112,9 @@
 +#	is part of the phone number, define this and add a `%P' anywhere
  #	in the `phone' number.
  #insert-pager-id	True
-@@ -125,6 +124,6 @@
+ 
+@@ -124,8 +123,8 @@ rm-invalids-pid	+ (-)
+ rm-invalids-cid	+ (-)
  
  #
 -#	Check for valid call id (see below for more details) While 
@@ -106,14 +123,18 @@
 +#	valid-pid is required, this is optional.
  #valid-cid	^(001|1)
  #change-cid	001
-@@ -136,5 +135,5 @@
+ 
+@@ -135,7 +134,7 @@ rm-invalids-cid	+ (-)
+ #	which must match the prefix of the pager-id.
  #valid-pid	^(0171|0049171)
  #valid-pid	0171|0049171
 -#	Use these paramters in the global section if you want do not want
 +#	Use these paramters in the global section if you do not want
  #	to check pager-ids (and do not set change-pid):
  #valid-pid	.
-@@ -148,24 +147,24 @@
+ #valid-pid	-
+@@ -147,26 +146,26 @@ rm-invalids-cid	+ (-)
+ 
  #
  #	As the services do not use (in general) the ISO 8859/1 character set,
 -#	one can define convertion tables. you can either specify a file which
@@ -145,14 +166,17 @@
 +#	set this.
  #can-expire	True
  
-@@ -176,5 +175,5 @@
+ #
+@@ -175,17 +174,17 @@ rm-invalids-cid	+ (-)
+ 
  #
  #	To check wether a call-id/pager-id is valid use these paramters.
 -#	For the exact syntax see the documentation
 +#	For the exact syntax see the documentation.
  #check-call-id	>1111111111111111<
  #check-pager-id	>1111111111111111<
-@@ -183,8 +182,8 @@
+ #check-call-id	+minimum=0,maximum=16,type=numeric
+ 
  #
  #	These values are typically found in a modem section, but can also
 -#	appear in the global section to set some defaults
@@ -163,14 +187,17 @@
 +#	Set this to the modem device you wish to use.
  #device		/dev/modem
  #device		/dev/cua1
-@@ -201,5 +200,5 @@
+ #device		/dev/cua/a
+@@ -200,22 +199,22 @@ rm-invalids-cid	+ (-)
+ #
  #	The different format of the part which is appended to the lockfile
  #	and the contents can be specified here. See documentation for a
 -#	full list inclusive explaination
 +#	full list inclusive explaination.
  #lock-method	sysv4
  #lock-method	binary
-@@ -208,13 +207,13 @@
+ #lock-method	timeout=10
+ 
  #
  #	These are send/expect sequences to talk to the modem. For an exact
 -#	definition see (again) the documentation. Following entries are
@@ -191,7 +218,9 @@
 +#	reset:		reset the modem
  
  #########################################
-@@ -224,5 +223,26 @@
+ #	service section			#
+@@ -223,7 +222,28 @@ rm-invalids-cid	+ (-)
+ #
  #	D1 (by Deutsche Telekom)
  #
 -[D1]
@@ -219,14 +248,18 @@
 +[D1_171]
  protocol	tap
  valid-pid	0171|0049171|49171
-@@ -247,5 +267,5 @@
+ change-pid	0171
+@@ -246,7 +266,7 @@ tap-old		True
+ #
  #	D2 (by Mannesmann Mobilfunk)
  #
 -[D2]
 +[D2_172]
  modem		standard-d2
  protocol	ucp
-@@ -265,8 +285,26 @@
+ valid-pid	0172|0049172|49172
+@@ -264,10 +284,28 @@ check-call-id	>1111111111111111<
+ check-pager-id	>1111111111111111<
  ucp-extend	True
  #
 +[D2_173]
@@ -254,7 +287,9 @@
 +[E+_177]
  protocol	tap
  valid-pid	0177|0049177|49177
-@@ -279,4 +317,16 @@
+ change-pid	0177
+@@ -278,6 +316,18 @@ max-size	160
+ may-split	True
  use-call-id	False
  #
 +[E+_178]
@@ -271,7 +306,9 @@
 +#
  #	Telmi, Telmi-* (by Deutsche Funkruf)
  #	!! ONLY TESTED FOR TELMI-FUN !!
-@@ -336,7 +386,8 @@
+ #
+@@ -335,9 +385,10 @@ use-call-id	True
+ #	Locking
  #
  #	Older Unix versions
 -lock-prefix	/usr/spool/uucp/LCK..
@@ -282,3 +319,4 @@
 +#lock-prefix	/var/spool/lock/LCK..
  #lock-prefix	/var/lock/LCK..
  #	SysV4
+ #lock-prefix	/var/spool/locks/LK.

@@ -1,0 +1,13 @@
+This project makes it easy to add support for one-time passwords (OTPs) to
+Django. It can be integrated at various levels, depending on how much
+customization is required. It integrates with django.contrib.auth, although it
+is not a Django authentication backend. The primary target is developers
+wishing to incorporate OTPs into their Django projects as a form of two-factor
+authentication.
+
+This project includes several simple OTP plugins and more are available
+separately. This package also includes an implementation of OATH HOTP and TOTP
+for convenience, as these are standard OTP algorithms used by multiple
+plugins.
+
+WWW: https://bitbucket.org/psagers/django-otp

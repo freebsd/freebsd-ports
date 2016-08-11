@@ -1,5 +1,5 @@
 PicoC is a very small C interpreter for scripting. It was originally written for
 scripting a UAV's on-board flight system and it's also very suitable for other
-robotic, embedded and non-embedded applications too. 
+robotic, embedded and non-embedded applications too.
 
 WWW: http://code.google.com/p/picoc/

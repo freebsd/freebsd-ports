@@ -1,5 +1,5 @@
-makefaq is a Python program that creates a Frequently Asked Questions (FAQ) 
-list from a specially formatted text data file. For output, it can 
+makefaq is a Python program that creates a Frequently Asked Questions (FAQ)
+list from a specially formatted text data file. For output, it can
 generate either an HTML page, a text file, or a DocBook XML file.
 
 WWW: http://www.lodestar2.com/software/makefaq/

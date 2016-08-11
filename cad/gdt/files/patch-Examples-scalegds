@@ -1,6 +1,6 @@
---- Examples/scalegds.orig	2013-05-30 10:59:09.000000000 +0900
-+++ Examples/scalegds	2013-05-30 10:58:01.000000000 +0900
-@@ -72,18 +72,14 @@
+--- Examples/scalegds.orig	2016-05-16 17:46:24 UTC
++++ Examples/scalegds
+@@ -72,18 +72,14 @@ unless ($color)
  
  my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
  $mon++; $year += 1900;
@@ -21,7 +21,7 @@
  unless ($gdt2gds)
  {
      die $REVERSE_RED.ERROR."$COLOR_RESET unable to find gdt2gds in \$PATH";
-@@ -135,7 +131,7 @@
+@@ -135,7 +131,7 @@ my $fhJunk = new FileHandle; # not using
  
  if ($inputFile =~ m/\.(gz|Z)$/)
  {
@@ -30,7 +30,7 @@
      unless ($zcat)
      {
          die $REVERSE_RED.ERROR."$COLOR_RESET unable to find zcat in \$PATH";
-@@ -145,7 +141,7 @@
+@@ -145,7 +141,7 @@ if ($inputFile =~ m/\.(gz|Z)$/)
  }
  elsif ($inputFile =~ m/\.bz2$/)
  {

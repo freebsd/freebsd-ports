@@ -1,15 +1,16 @@
---- tools/Makefile.in.orig	2015-04-02 12:05:41 UTC
+--- tools/Makefile.in.orig	2016-03-16 17:11:30 UTC
 +++ tools/Makefile.in
-@@ -89,10 +89,10 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
- 	grib_cmp$(EXEEXT) grib_convert$(EXEEXT) grib_distance$(EXEEXT) \
+@@ -90,11 +90,11 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
  	grib_corruption_check$(EXEEXT) grib_compare$(EXEEXT) \
- 	grib_list_keys$(EXEEXT) parser$(EXEEXT) grib_count$(EXEEXT) \
--	grib_index_build$(EXEEXT) grib1to2$(EXEEXT) \
-+	grib_index_build$(EXEEXT) \
- 	gg_sub_area_check$(EXEEXT) grib_moments$(EXEEXT) \
- 	grib_to_netcdf$(EXEEXT) grib_to_json$(EXEEXT)
--noinst_PROGRAMS = gaussian$(EXEEXT) grib_diff$(EXEEXT) \
-+noinst_PROGRAMS = gaussian$(EXEEXT) grib_diff$(EXEEXT) grib1to2$(EXEEXT) \
- 	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT)
+ 	grib_list_keys$(EXEEXT) grib_parser$(EXEEXT) \
+ 	grib_count$(EXEEXT) grib_index_build$(EXEEXT) \
+-	grib1to2$(EXEEXT) gg_sub_area_check$(EXEEXT) \
++	gg_sub_area_check$(EXEEXT) \
+ 	grib_moments$(EXEEXT) grib_to_netcdf$(EXEEXT) \
+ 	grib_to_json$(EXEEXT)
+ noinst_PROGRAMS = gaussian$(EXEEXT) grib_diff$(EXEEXT) \
+-	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT)
++	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT) grib1to2$(EXEEXT)
  subdir = tools
  DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/config/depcomp $(noinst_HEADERS)

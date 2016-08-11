@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	delayed_job
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=3.0:devel/rubygem-activesupport4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

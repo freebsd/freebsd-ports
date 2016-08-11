@@ -1,18 +1,18 @@
-flPhoto is a basic image management and display program based on the FLTK 
+flPhoto is a basic image management and display program based on the FLTK
 toolkit and is provided under the terms of the GNU General Public License.
-It can read, write, and display digital camera EXIF information and supports 
-the following image file formats: 
-	BMP, CRW, JPEG, PhotoCD, PNG 
+It can read, write, and display digital camera EXIF information and supports
+the following image file formats:
+	BMP, CRW, JPEG, PhotoCD, PNG
 
-flPhoto organizes image files into albums which can be: 
-	Printed, Viewed as a slideshow, Exported to web pages 
+flPhoto organizes image files into albums which can be:
+	Printed, Viewed as a slideshow, Exported to web pages
 
-Images can be imported individually, by directory, or from digital cameras 
+Images can be imported individually, by directory, or from digital cameras
 using the gPhoto library.
 
-Image files can be transformed and touched-up; the following image operations 
+Image files can be transformed and touched-up; the following image operations
 are available:
 	Crop, Rotate, Scale, Auto-Correct, Adjust Brightness and Contrast,
-	Remove Red Eye, Sharpen, Blur 
+	Remove Red Eye, Sharpen, Blur
 
 WWW: http://www.easysw.com/~mike/flphoto/

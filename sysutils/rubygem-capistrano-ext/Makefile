@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-capistrano>=1.0.0:sysutils/rubygem-capistrano
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

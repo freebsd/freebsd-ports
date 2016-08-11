@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme that emulates the look of python.org
 
-RUN_DEPENDS+=	tracd:www/trac \
+RUN_DEPENDS=	tracd:www/trac \
 		trac-themeengine>=2.0:www/trac-themeengine
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

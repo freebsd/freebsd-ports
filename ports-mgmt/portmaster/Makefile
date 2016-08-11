@@ -2,13 +2,13 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.17.9
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
 
 LICENSE=	BSD2CLAUSE

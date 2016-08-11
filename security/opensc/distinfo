@@ -1,2 +1,3 @@
-SHA256 (opensc-0.15.0.tar.gz) = 399b2107a69e3f67e4e76dc2dbd951dbced8e534b1e0f919e176aea9b85970d7
-SIZE (opensc-0.15.0.tar.gz) = 2153075
+TIMESTAMP = 1466410034
+SHA256 (opensc-0.16.0.tar.gz) = 3ac8c29542bb48179e7086d35a1b8907a4e86aca3de3323c2f48bd74eaaf5729
+SIZE (opensc-0.16.0.tar.gz) = 1760418

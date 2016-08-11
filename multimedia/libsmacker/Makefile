@@ -3,7 +3,7 @@
 PORTNAME=	libsmacker
 PORTVERSION=	1.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/$(DISTNAME)/
+MASTER_SITES=	SF/${PORTNAME}/${DISTNAME}/
 
 MAINTAINER=	kennedy.greg@gmail.com
 COMMENT=	C library for decoding .smk Smacker Video files

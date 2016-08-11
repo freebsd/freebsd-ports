@@ -10,7 +10,6 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	External MIME packer/unpacker
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mpack bin/munpack \

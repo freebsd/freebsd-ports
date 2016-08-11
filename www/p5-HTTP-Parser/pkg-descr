@@ -4,4 +4,4 @@ It accepts chunks of data passed to it and returns either a completion hint
 or an HTTP::Request (or Response) object when it has the entire request. It
 was originally written to be part of a simple Event.pm-based HTTP server.
 
-WWW:	http://search.cpan.org/dist/HTTP-Parser/
+WWW: http://search.cpan.org/dist/HTTP-Parser/

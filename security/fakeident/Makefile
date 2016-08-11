@@ -24,7 +24,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/identd ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/identd
-
 .include <bsd.port.mk>

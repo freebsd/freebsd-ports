@@ -4,7 +4,7 @@ For a given port determine its dependencies using any combination of the
  - PATCH_DEPENDS
  - LIB_DEPENDS
  - BUILD_DEPENDS
- - RUN_DEPENDS 
+ - RUN_DEPENDS
 
 and show them as a pseudo graphical tree.
 Use back references for cross-connections.

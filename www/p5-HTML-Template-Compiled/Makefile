@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	1.002
+PORTVERSION=	1.003
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Templating system that compiles HTML::Template files to Perl code
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-URI>=0:net/p5-URI

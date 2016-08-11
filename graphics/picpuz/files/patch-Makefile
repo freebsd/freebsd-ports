@@ -1,6 +1,6 @@
---- Makefile.orig	2009-10-29 09:38:40.000000000 +0100
-+++ Makefile	2014-02-18 19:19:51.140331100 +0100
-@@ -6,7 +6,7 @@
+--- Makefile.orig	2009-10-29 08:38:40 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ SOURCE = $(PROGRAM)-$(VERSION).cpp
  
  # replace CFLAGS and LFLAGS -O (oh) with -g for GDB debugging
  CFLAGS = -O -Wall -c `pkg-config --cflags gtk+-2.0`
@@ -9,7 +9,7 @@
  
  # use $PREFIX if defined, else assume /usr/local
  ifeq "$(PREFIX)" ""
-@@ -19,14 +19,14 @@
+@@ -19,14 +19,14 @@ DOCDIR = $(PREFIX)/share/doc/$(PROGRAM)
  DESKTOP = $(DATADIR)/kornelix-$(PROGRAM).desktop
  
  $(PROGRAM): $(PROGRAM).o zfuncs.o
@@ -27,7 +27,7 @@
  	  -D "DATADIR=\"$(DATADIR)\"" -D "DOCDIR=\"$(DOCDIR)\"" -D "BINDIR=\"$(BINDIR)\""
  
  install: $(PROGRAM)
-@@ -39,15 +39,15 @@
+@@ -39,15 +39,15 @@ install: $(PROGRAM)
  	cp $(PROGRAM) $(DESTDIR)$(BINDIR)
  	cp -R locales/* $(DESTDIR)$(DATADIR)/locales
  	#  install .desktop file (menu entry)

@@ -1,5 +1,5 @@
---- Makefile.REXXimc	Thu Feb 11 07:05:44 1999
-+++ Makefile.REXXimc.new	Fri Sep  7 18:53:43 2001
+--- Makefile.REXXimc.orig	1999-02-11 15:05:44 UTC
++++ Makefile.REXXimc
 @@ -1,7 +1,7 @@
  #Makefile for REXX/imc
  
@@ -9,7 +9,7 @@
  
  DATE = -DDAY=$(RXDAY) -DMONTH=$(RXMONTH) -DYEAR=$(RXYEAR)
  
-@@ -35,11 +35,13 @@
+@@ -35,11 +35,13 @@ install-pgm: all
  
  install-fn: $(MATH)
  	$(VERBOSE) "install-fn:"
@@ -25,7 +25,7 @@
  	cp -p rexx.1 $(SRC)/rxque.1 $(SRC)/rxstack.1 $(MANDIR)
  
  uninstall: uninstall-pgm uninstall-fn uninstall-man
-@@ -69,8 +71,7 @@
+@@ -69,8 +71,7 @@ $(LIBDIR)/$(SONAME): $(LIBFILES)
  
  $(LIBDIR)/$(SO): $(LIBDIR)/$(SONAME)
  	$(VERBOSE) "$(LIBDIR)/$(SO):"

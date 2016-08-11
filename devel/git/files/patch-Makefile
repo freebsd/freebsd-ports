@@ -1,16 +1,5 @@
 --- Makefile.orig	2015-11-05 21:31:55 UTC
 +++ Makefile
-@@ -372,8 +372,8 @@ GIT-VERSION-FILE: FORCE
- 
- # CFLAGS and LDFLAGS are for the users to override from the command line.
- 
--CFLAGS = -g -O2 -Wall
--LDFLAGS =
-+CFLAGS ?= -g -O2 -Wall
-+LDFLAGS ?=
- ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
- ALL_LDFLAGS = $(LDFLAGS)
- STRIP ?= strip
 @@ -398,15 +398,15 @@ ARFLAGS = rcs
  prefix = $(HOME)
  bindir_relative = bin
@@ -31,45 +20,6 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -419,22 +419,22 @@ htmldir_relative = $(patsubst $(prefix)/
- 
- export prefix bindir sharedir sysconfdir gitwebdir localedir
- 
--CC = cc
--AR = ar
--RM = rm -f
--DIFF = diff
--TAR = tar
--FIND = find
--INSTALL = install
--RPMBUILD = rpmbuild
--TCL_PATH = tclsh
--TCLTK_PATH = wish
--XGETTEXT = xgettext
--MSGFMT = msgfmt
--CURL_CONFIG = curl-config
--PTHREAD_LIBS = -lpthread
--PTHREAD_CFLAGS =
--GCOV = gcov
-+CC ?= cc
-+AR ?= ar
-+RM ?= rm -f
-+DIFF ?= diff
-+TAR ?= tar
-+FIND ?= find
-+INSTALL ?= install
-+RPMBUILD ?= rpmbuild
-+TCL_PATH ?= tclsh
-+TCLTK_PATH ?= wish
-+XGETTEXT ?= xgettext
-+MSGFMT ?= msgfmt
-+CURL_CONFIG ?= curl-config
-+PTHREAD_LIBS ?= -lpthread
-+PTHREAD_CFLAGS ?=
-+GCOV ?= gcov
- 
- export TCL_PATH TCLTK_PATH
- 
 @@ -1107,9 +1107,9 @@ EXTLIBS += -lz
  
  ifndef NO_OPENSSL
@@ -88,7 +38,7 @@
  	mv $@+ $@
  else # NO_PERL
 -$(SCRIPT_PERL_GEN) git-instaweb: % : unimplemented.sh
-+$(SCRIPT_PERL_GEN) git-instaweb git-submodule git-request-pull: % : unimplemented.sh
++$(SCRIPT_PERL_GEN) git-instaweb git-request-pull: % : unimplemented.sh
  	$(QUIET_GEN)$(RM) $@ $@+ && \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \

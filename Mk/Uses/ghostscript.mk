@@ -28,6 +28,8 @@
 _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 
 # allowed versions
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 _GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
@@ -35,9 +37,6 @@ _GS_ARGS=		${ghostscript_ARGS}
 .if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .endif
-
-# Determine version number of Ghostscript to use
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
 IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}

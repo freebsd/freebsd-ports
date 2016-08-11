@@ -1,7 +1,7 @@
 TrustedPickle is a Python module that can save most any arbitrary Python object
  in a signed pickle file. There are two big differences between this module and
- the standard pickle module. First, TrustedPickle can pickle a module, but the 
-standard pickle module cannot. Second, TrustedPickle includes a signature that 
+ the standard pickle module. First, TrustedPickle can pickle a module, but the
+standard pickle module cannot. Second, TrustedPickle includes a signature that
 can verify the data's origin before the data is unpickled.
 
 WWW: http://trustedpickle.sourceforge.net/index.html

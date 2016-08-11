@@ -2,6 +2,7 @@ bin/cardos-tool
 bin/cryptoflex-tool
 bin/dnie-tool
 bin/eidenv
+bin/gids-tool
 bin/iasecc-tool
 bin/netkey-tool
 bin/openpgp-tool
@@ -18,6 +19,7 @@ etc/bash_completion.d/cardos-tool
 etc/bash_completion.d/cryptoflex-tool
 etc/bash_completion.d/dnie-tool
 etc/bash_completion.d/eidenv
+etc/bash_completion.d/gids-tool
 etc/bash_completion.d/iasecc-tool
 etc/bash_completion.d/netkey-tool
 etc/bash_completion.d/openpgp-tool
@@ -33,12 +35,12 @@ etc/bash_completion.d/westcos-tool
 etc/opensc.conf-sample
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.3
-lib/libopensc.so.3.0.0
+lib/libopensc.so.4
+lib/libopensc.so.4.0.0
 %%SM%%lib/libsmm-local.a
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.3
-%%SM%%lib/libsmm-local.so.3.0.0
+%%SM%%lib/libsmm-local.so.4
+%%SM%%lib/libsmm-local.so.4.0.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
@@ -52,6 +54,7 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/entersafe.profile
 %%DATADIR%%/epass2003.profile
 %%DATADIR%%/flex.profile
+%%DATADIR%%/gids.profile
 %%DATADIR%%/gpk.profile
 %%DATADIR%%/ias_adele_admin1.profile
 %%DATADIR%%/ias_adele_admin2.profile
@@ -79,6 +82,7 @@ lib/pkcs11/pkcs11-spy.so
 %%MANPAGES%%man/man1/cryptoflex-tool.1.gz
 %%MANPAGES%%man/man1/dnie-tool.1.gz
 %%MANPAGES%%man/man1/eidenv.1.gz
+%%MANPAGES%%man/man1/gids-tool.1.gz
 %%MANPAGES%%man/man1/iasecc-tool.1.gz
 %%MANPAGES%%man/man1/netkey-tool.1.gz
 %%MANPAGES%%man/man1/openpgp-tool.1.gz

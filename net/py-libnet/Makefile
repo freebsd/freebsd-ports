@@ -13,6 +13,8 @@ COMMENT=	Python module for the libnet packet construction library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		python

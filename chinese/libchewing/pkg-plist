@@ -6,7 +6,7 @@ include/chewing/mod_aux.h
 lib/libchewing.a
 lib/libchewing.so
 lib/libchewing.so.3
-lib/libchewing.so.3.2.0
+lib/libchewing.so.3.3.0
 libdata/pkgconfig/chewing.pc
 %%DATADIR%%/dictionary.dat
 %%DATADIR%%/index_tree.dat

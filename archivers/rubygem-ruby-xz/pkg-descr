@@ -1,0 +1,6 @@
+These are simple Ruby bindings for the liblzma library
+(http://tukaani.org/xz/), which is best known for the extreme compression
+ratio. Since FFI is used to implement the bindings, no compilation is needed
+and they should work with JRuby as well.
+
+WWW: http://quintus.github.io/ruby-xz

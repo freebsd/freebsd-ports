@@ -1,2 +1,0 @@
-This is a helper port that only used by other KDE ports
-if KDE4_PREFIX != LOCALBASE.

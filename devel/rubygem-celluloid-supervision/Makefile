@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	celluloid-supervision
-PORTVERSION=	0.20.5
+PORTVERSION=	0.20.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-timers>=4.1.1:devel/rubygem-timers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

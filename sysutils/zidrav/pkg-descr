@@ -1,5 +1,5 @@
-ZIDRAV is a file corruption detection and repair program. It's designed 
-to provide a way to fix file damage without having to redownload the 
+ZIDRAV is a file corruption detection and repair program. It's designed
+to provide a way to fix file damage without having to redownload the
 entire (potentially large) file over a (potentially slow) connection.
 
 LICENSE: GPL2 or later

@@ -1,8 +1,8 @@
---- dist/ffmpegthumbnailer.thumbnailer	2012-08-25 15:32:20.000000000 +0300
-+++ dist/ffmpegthumbnailer.thumbnailer	2013-12-03 05:21:35.000000000 +0200
+--- dist/ffmpegthumbnailer.thumbnailer.orig	2016-02-17 19:57:35 UTC
++++ dist/ffmpegthumbnailer.thumbnailer
 @@ -1,4 +1,4 @@
  [Thumbnailer Entry]
  TryExec=ffmpegthumbnailer
  Exec=ffmpegthumbnailer -i %i -o %o -s %s -f
--MimeType=video/jpeg;video/mp4;video/mpeg;video/quicktime;video/x-ms-asf;video/x-ms-wm;video/x-ms-wmv;video/x-msvideo;video/x-flv;video/x-matroska;
+-MimeType=video/jpeg;video/mp4;video/mpeg;video/quicktime;video/x-ms-asf;video/x-ms-wm;video/x-ms-wmv;video/x-msvideo;video/x-flv;video/x-matroska;video/webm;video/mp2t;
 +MimeType=application/mxf;application/ogg;application/ram;application/sdp;application/vnd.ms-wpl;application/vnd.rn-realmedia;application/x-extension-m4a;application/x-extension-mp4;application/x-flac;application/x-flash-video;application/x-matroska;application/x-netshow-channel;application/x-ogg;application/x-quicktimeplayer;application/x-shorten;audio/3gpp;audio/AMR;audio/AMR-WB;audio/ac3;audio/basic;audio/midi;audio/mp4;audio/mpeg;audio/ogg;audio/prs.sid;audio/vnd.rn-realaudio;audio/x-aiff;audio/x-ape;audio/x-flac;audio/x-gsm;audio/x-it;audio/x-m4a;audio/x-matroska;audio/x-mod;audio/x-mp3;audio/x-mpeg;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;audio/x-musepack;audio/x-pn-aiff;audio/x-pn-au;audio/x-pn-realaudio;audio/x-pn-wav;audio/x-pn-windows-acm;audio/x-real-audio;audio/x-realaudio;audio/x-sbc;audio/x-speex;audio/x-tta;audio/x-vorbis;audio/x-vorbis/ogg;audio/x-wav;audio/x-wavpack;audio/x-xm;image/vnd.rn-realpix;image/x-pict;misc/ultravox;text/x-google-video-pointer;video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-msvideo;video/x-nsv;video/x-ogm/ogg;video/x-theora/ogg;video/x-totem-stream;

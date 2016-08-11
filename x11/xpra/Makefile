@@ -3,7 +3,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.15.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -17,8 +17,8 @@ BUILD_DEPENDS=	cython:lang/cython \
 RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:archivers/py-lz4 \
 		${PYTHON_SITELIBDIR}/rencode/__init__.py:converters/py-rencode \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus \
-		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-opengl \
-		${PYTHON_SITELIBDIR}/OpenGL_accelerate/__init__.py:graphics/py-opengl-accelerate \
+		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL \
+		${PYTHON_SITELIBDIR}/OpenGL_accelerate/__init__.py:graphics/py-PyOpenGL-accelerate \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/netifaces.so:net/py-netifaces \
 		ssh-askpass:security/openssh-askpass \

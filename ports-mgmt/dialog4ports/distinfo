@@ -1,4 +1,5 @@
-SHA256 (dialog4ports-0.1.5.tar.gz) = 8394edb61361d1c3923b4af1b2bb4fb53a7f9a2c2f3278655fbc2cc46a83584d
-SIZE (dialog4ports-0.1.5.tar.gz) = 10658
+TIMESTAMP = 1467990183
+SHA256 (dialog4ports-0.1.6.tar.gz) = 0fc61ae8fd9873166264ed6c04f451d89a836d7f0e5286d61132232280038b30
+SIZE (dialog4ports-0.1.6.tar.gz) = 11010
 SHA256 (dialog-1.1-20120706.tgz) = 305aa1000680aa87bb2148a725f9107ef4cd29dcd6185b44d079cb87cf0ce2f5
 SIZE (dialog-1.1-20120706.tgz) = 444554

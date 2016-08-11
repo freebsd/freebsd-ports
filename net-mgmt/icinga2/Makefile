@@ -2,7 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.4
+DISTVERSION=	2.4.10
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -10,15 +10,16 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libyajl.so:devel/yajl \
-		libexecinfo.so:devel/libexecinfo # for better debugging
+		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
-USES=		alias bison cmake libedit
+USES=		alias bison cmake execinfo libedit
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
@@ -67,7 +68,7 @@ PLIST_SUB=	ICINGA2USER=${ICINGA2USER} \
 # Config files with references to "Linux"
 LINUX_CONFIG=	groups.conf services.conf hosts.conf
 
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 PGSQL_USES=	pgsql
 
 OPTIONS_SUB=	yes

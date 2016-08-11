@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.25
+PORTVERSION=	5.28
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
 LICENSE=	BSD2CLAUSE
@@ -25,7 +25,7 @@ check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$(datadir)/misc|$(datadir)/${PORTNAME}|g' \
+	@${REINPLACE_CMD} -e 's|$$(datadir)/misc|$$(datadir)/${PORTNAME}|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

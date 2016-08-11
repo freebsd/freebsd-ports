@@ -9,7 +9,6 @@ MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 

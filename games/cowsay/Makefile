@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	cowsay
-PORTVERSION=	3.03
-PORTREVISION=	2
+PORTVERSION=	3.04
+DISTVERSIONPREFIX=	cowsay-
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.nog.net/~tony/warez/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Configurable talking characters in ASCII art
 
-BROKEN=		unfetchable
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		perl5
 
-NO_BUILD=	# defined
+USE_GITHUB=	yes
 
-.if defined(MAINTAINER_MODE)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}.sig
-verify: fetch
-	@${ECHO_MSG} "Checking ${DISTNAME}${EXTRACT_SUFX}"
-	@gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig 2>/dev/null || echo "Bad signature!"
-	@${ECHO_MSG} "Done"
-.endif
+GH_ACCOUNT=	tnalpgge
+GH_PROJECT=	rank-amateur-cowsay
+
+NO_BUILD=	# defined
 
 post-patch:
 	@${REINPLACE_CMD} 's,usethisperl=.*,usethisperl=${PERL},' ${WRKSRC}/install.sh
@@ -29,8 +28,8 @@ post-patch:
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${STAGEDIR}${PREFIX}
 	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/bin/cowsay
-	@${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
-	@${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
-	@${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows
 
 .include <bsd.port.mk>

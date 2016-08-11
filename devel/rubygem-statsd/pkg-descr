@@ -1,6 +1,6 @@
 Statsd implementation in Ruby
 
-A network daemon for aggregating statistics (counters and timers), 
+A network daemon for aggregating statistics (counters and timers),
 rolling them up, then sending them to graphite or mongodb.
 
 WWW: https://github.com/quasor/statsd

@@ -7,19 +7,20 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fabiankeil.de/sourcecode/zfs-snapshot-destroyer/
 DISTNAME=	${PORTNAME}-2014-12-07-c2d3662
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroys ZFS snapshots
 
-LICENSE=	BSD2CLAUSE
-
-PLIST_FILES=	sbin/zsd \
-		man/man8/zsd.8.gz
+LICENSE=	MIT
 
 PORTSCOUT=	ignore:1
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	zsd
 NO_BUILD=	yes
+NO_ARCH=	yes
+
+PLIST_FILES=	sbin/zsd \
+		man/man8/zsd.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zsd ${STAGEDIR}${PREFIX}/sbin

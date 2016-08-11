@@ -26,10 +26,8 @@ RUN_DEPENDS=	rubygem-coderay>=1.0.0:textproc/rubygem-coderay \
 		rubygem-rttool>0:textproc/rubygem-rttool
 
 NO_ARCH=	yes
-USES=		gettext
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem gettext
 PLIST_FILES=	bin/rabbit bin/rabbirc bin/rabbit-command bin/rabbit-slide \
 		bin/rabbit-theme
 

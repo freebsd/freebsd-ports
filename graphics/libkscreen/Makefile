@@ -15,7 +15,7 @@ LIB_DEPENDS=	libqjson.so:devel/qjson \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-render-util.so:x11/xcb-util-renderutil
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	corelib dbus gui script \
 		moc_build qmake_build rcc_build uic_build

@@ -9,8 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Program showing where new mail has been placed
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 LDFLAGS+=	-lncurses
 CFLAGS+=	-fno-exceptions -fno-rtti
 
@@ -44,7 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gubby ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/gubby.1 ${STAGEDIR}${PREFIX}/man/man1
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DOCSDIR}/README
 

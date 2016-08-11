@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-vfbserver
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.3
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -13,6 +13,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X virtual framebuffer server from X.Org
 
 USES=		tar:bzip2 pkgconfig
+INSTALL_WRKSRC=	${WRKSRC}/hw/vfb
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dmx \
 		--disable-xephyr \
@@ -48,8 +49,5 @@ USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 
 PLIST_FILES=	bin/Xvfb \
 		man/man1/Xvfb.1.gz
-
-do-install:
-	cd ${WRKSRC}/hw/vfb; DESTDIR=${STAGEDIR} ${MAKE} install
 
 .include <bsd.port.mk>

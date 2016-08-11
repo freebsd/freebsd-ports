@@ -70,7 +70,7 @@ post-install:
 .if ${QTCURVE_SLAVE} == "kde4"
 WITH_qt4=	On # required for KDE 4
 PKGNAMEPREFIX=	kde4-style-
-USE_KDE4=	kdelibs workspace kdeprefix automoc4
+USE_KDE4=	kdelibs workspace automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 BUILD_WRKSRC=	${WRKSRC}/qt4
 .endif

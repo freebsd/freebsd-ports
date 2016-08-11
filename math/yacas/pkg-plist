@@ -5,16 +5,13 @@ include/yacas/anumber.inl
 include/yacas/arggetter.h
 include/yacas/arrayclass.h
 include/yacas/associationclass.h
-include/yacas/choices.h
 include/yacas/commandline.h
 include/yacas/core_yacasmain.h
 include/yacas/corefunctions.h
-include/yacas/debugmem.h
 include/yacas/deffile.h
 include/yacas/errors.h
 include/yacas/evalfunc.h
 include/yacas/genericobject.h
-include/yacas/genericstructs.h
 include/yacas/infixparser.h
 include/yacas/lispatom.h
 include/yacas/lispenvironment.h
@@ -25,7 +22,7 @@ include/yacas/lispglobals.h
 include/yacas/lisphash.h
 include/yacas/lispio.h
 include/yacas/lispobject.h
-include/yacas/lispobject.inl
+include/yacas/lispoperator.h
 include/yacas/lispparser.h
 include/yacas/lispstring.h
 include/yacas/lisptype.h
@@ -43,7 +40,6 @@ include/yacas/refcount.h
 include/yacas/standard.h
 include/yacas/standard.inl
 include/yacas/stdcommandline.h
-include/yacas/stdfileio.h
 include/yacas/string_utils.h
 include/yacas/stringio.h
 include/yacas/stubs.h
@@ -57,13 +53,10 @@ include/yacas/utf8/unchecked.h
 include/yacas/win32commandline.h
 include/yacas/xmltokenizer.h
 include/yacas/yacas.h
+include/yacas/yacas_config.h
 include/yacas/yacas_version.h
-include/yacas/yacasbase.h
 include/yacas/yacasprivate.h
 lib/libyacas.a
-lib/libyacas.so
-lib/libyacas.so.%%SHLIB_VERSION%%
-%%DATADIR%%/scripts/Makefile.am
 %%DATADIR%%/scripts/array.rep/code.ys
 %%DATADIR%%/scripts/array.rep/code.ys.def
 %%DATADIR%%/scripts/assoc.rep/code.ys
@@ -136,7 +129,6 @@ lib/libyacas.so.%%SHLIB_VERSION%%
 %%DATADIR%%/scripts/logic.rep/code.ys
 %%DATADIR%%/scripts/logic.rep/code.ys.def
 %%DATADIR%%/scripts/logic.rep/om.ys
-%%DATADIR%%/scripts/maketest
 %%DATADIR%%/scripts/multivar.rep/code.ys
 %%DATADIR%%/scripts/multivar.rep/code.ys.def
 %%DATADIR%%/scripts/multivar.rep/makemulti.ys
@@ -181,6 +173,8 @@ lib/libyacas.so.%%SHLIB_VERSION%%
 %%DATADIR%%/scripts/probability.rep/code.ys.def
 %%DATADIR%%/scripts/pslq.rep/code.ys
 %%DATADIR%%/scripts/pslq.rep/code.ys.def
+%%DATADIR%%/scripts/r_form.rep/code.ys
+%%DATADIR%%/scripts/r_form.rep/code.ys.def
 %%DATADIR%%/scripts/rabinmiller.rep/code.ys
 %%DATADIR%%/scripts/rabinmiller.rep/code.ys.def
 %%DATADIR%%/scripts/radsimp.rep/code.ys

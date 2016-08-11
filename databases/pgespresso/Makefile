@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgespresso
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -17,8 +16,10 @@ GH_ACCOUNT=	2ndquadrant-it
 USES=		gmake pgsql:9.2+
 WANT_PGSQL=	server
 
-PLIST_FILES=	lib/postgresql/pgespresso.so			\
-		share/postgresql/extension/pgespresso--1.0.sql	\
+PLIST_FILES=	lib/postgresql/pgespresso.so				\
+		share/postgresql/extension/pgespresso--1.0--1.1.sql	\
+		share/postgresql/extension/pgespresso--1.1--1.2.sql	\
+		share/postgresql/extension/pgespresso--1.2.sql		\
 		share/postgresql/extension/pgespresso.control
 
 PORTDOCS=	README.asciidoc

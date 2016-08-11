@@ -16,7 +16,7 @@ or reboot.
 Try `man slapd' and the online manual at
   http://www.OpenLDAP.org/doc/
 for more information.
-  
+
 slapd runs under a non-privileged user id (by default `ldap'),
 see %%PREFIX%%/etc/rc.d/slapd for more information.
 

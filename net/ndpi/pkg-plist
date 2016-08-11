@@ -1,13 +1,11 @@
 bin/ndpiReader
-include/libndpi-%%MAJOR_VER%%/libndpi/linux_compat.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_api.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_define.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_includes.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_main.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_protocol_ids.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_protocols.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_typedefs.h
-include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_unix.h
-include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_win32.h
 lib/libndpi.a
 lib/libndpi.so
 lib/libndpi.so.1

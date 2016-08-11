@@ -1,5 +1,5 @@
---- ./WikiNotification/notification.py.orig
-+++ ./WikiNotification/notification.py
+--- WikiNotification/notification.py.orig	2008-03-14 09:02:03 UTC
++++ WikiNotification/notification.py
 @@ -14,14 +14,13 @@
  # =============================================================================
  
@@ -16,7 +16,7 @@
  from trac.config import Option, BoolOption, ListOption, IntOption
  
  from genshi.template.text import TextTemplate
-@@ -33,6 +32,7 @@
+@@ -33,6 +32,7 @@ diff_header = """Index: %(name)s
  +++ %(name)s (version: %(version)s)
  """
  
@@ -24,7 +24,7 @@
  class WikiNotificationSystem(Component):
      smtp_from = Option(
          'wiki-notification', 'smtp_from', 'trac+wiki@localhost',
-@@ -131,7 +131,7 @@
+@@ -131,7 +131,7 @@ class WikiNotifyEmail(NotifyEmail):
          if page.version > 0 and action == 'modified':
              diff = diff_header % {'name': self.page.name,
                                    'version': self.page.version,
@@ -33,7 +33,7 @@
                                   }
              oldpage = WikiPage(self.env, page.name, page.version - 1)
              self.data["oldversion"]= oldpage.version
-@@ -183,8 +183,8 @@
+@@ -183,8 +183,8 @@ class WikiNotifyEmail(NotifyEmail):
          public_cc = self.config.getbool('wiki-notification', 'use_public_cc')
          headers = {}
          headers['X-Mailer'] = 'Trac %s, by Edgewall Software' % __version__
@@ -44,7 +44,7 @@
          headers['X-URL'] = self.config.get('project', 'url')
          headers['Precedence'] = 'bulk'
          headers['Auto-Submitted'] = 'auto-generated'
-@@ -284,18 +284,16 @@
+@@ -284,18 +284,16 @@ class WikiNotifyEmail(NotifyEmail):
              del msg['Content-Transfer-Encoding']
              msg.set_charset(self._charset)
  
@@ -69,7 +69,7 @@
  
      def format_subject(self, action):
          template = self.config.get('wiki-notification', 'subject_template')
-@@ -308,6 +306,6 @@
+@@ -308,6 +306,6 @@ class WikiNotifyEmail(NotifyEmail):
          data = {
              'page': self.page,
              'prefix': prefix,

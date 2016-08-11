@@ -3,7 +3,7 @@ Kdrill is a program to quiz folks on
    { Kanji   }  <->  { Kanji   }
    { Kana    }       { Kana    }
 
-It will quiz you on either the whole dictionary [around 6000 Kanji?] 
+It will quiz you on either the whole dictionary [around 6000 Kanji?]
 or specific Kanji, that you hand-pick. There are also other ways to
 narrow down which Kanji you are quizzed on.
 

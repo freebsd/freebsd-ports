@@ -1,6 +1,6 @@
 /* ================================================================= */
 /* Note:                                                             */
-	Kwiki software installed! Now you can install 
+	Kwiki software installed! Now you can install
 	your kwiki web directory by yourself:
 
 $ export PATH=%%KWIKIDIR%%/bin:$PATH

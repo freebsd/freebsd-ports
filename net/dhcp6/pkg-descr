@@ -1,5 +1,5 @@
 WIDE-DHCPv6 is an open-source implementation of Dynamic Host
-Configuration Protocol for IPv6 (DHCPv6), originally developed 
+Configuration Protocol for IPv6 (DHCPv6), originally developed
 by the KAME project.
 
 The implementation mainly conforms to the following standards:
@@ -14,7 +14,7 @@ The implementation mainly conforms to the following standards:
 - RFC4280: DHCP Options for Broadcast and Multicast Control Servers
 
 Note that the current implementation does not support temporary
-IPv6 address allocation by DHCPv6, and there is no plan to 
+IPv6 address allocation by DHCPv6, and there is no plan to
 implement that feature at the moment.
 
 WWW: http://wide-dhcpv6.sourceforge.net/

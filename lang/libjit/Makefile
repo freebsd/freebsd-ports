@@ -13,6 +13,8 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN_powerpc64=	Does not build
+
 USES=		pathfix gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open source Clipper-compatible compiler
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libslang.so:devel/libslang2\
 		libpcre.so:devel/pcre
 BUILD_DEPENDS=	bash:shells/bash
@@ -88,6 +90,7 @@ MAKE_ENV=	HB_ARCHITECTURE=${HB_ARCH} \
 
 PGSQL_USES=	pgsql
 FIREBIRD_USES=	firebird
+MYSQL_USES=	mysql
 
 .include <bsd.port.pre.mk>
 
@@ -113,7 +116,6 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
 MAKE_ENV+=	HB_WITH_MYSQL=nolocal
 .else
 MAKE_ENV+=	HB_WITH_MYSQL=no

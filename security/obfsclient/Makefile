@@ -3,6 +3,7 @@
 
 PORTNAME=	obfsclient
 PORTVERSION=	0.0.2
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	security
 
@@ -14,7 +15,6 @@ LIB_DEPENDS=	liballium-1.0.so:devel/liballium \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning
-GH_TAGNAME=	3c551c5
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c++11-lib pkgconfig tar:bzip2

@@ -1,5 +1,5 @@
---- fardata.c.orig	2010-01-18 10:06:57.000000000 -0200
-+++ fardata.c	2010-01-18 10:08:24.000000000 -0200
+--- fardata.c.orig	2004-04-17 11:39:42 UTC
++++ fardata.c
 @@ -190,7 +190,7 @@ int msg_sprintf(char *str, FMSG *fmt, ..
  
  /* Length-limited strlen() */

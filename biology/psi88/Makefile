@@ -13,6 +13,7 @@ COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
 USES=		fortran tar:Z
 MAKE_ARGS=	BIN=${STAGEDIR}${PREFIX}/bin
+
 PLIST_FILES=	bin/PSI1 bin/PSICON bin/PSI2CT bin/PSI2HP bin/PSI2PS bin/PSI2 \
 		bin/PREPLOT bin/preplot bin/rpsi1 bin/rpsi2 bin/rpsicon
 PORTDOCS=	README psi88.doc
@@ -26,16 +27,20 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/P*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/P*
 	${LN} -s PSI2PS ${STAGEDIR}${PREFIX}/bin/PSI2
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/preplot ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/rpsi1 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/rpsi2 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/rpsicon ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/psi88.doc ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

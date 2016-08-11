@@ -102,8 +102,6 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} ${INSTALL_TARGET} buildroot=${STAGEDIR}
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/pike/${PORTVERSION}/bin/pike
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

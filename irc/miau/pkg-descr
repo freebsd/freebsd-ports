@@ -1,10 +1,10 @@
 miau is a fully featured easy to use IRC-bouncer that can keep your nick
 even when you disconnect.
 
-Additionally, miau can set you away automatically when you disconnect and 
-auto-op (or auto-voice) people. While you're disconnected, miau can also log 
-everything and/or pipe private messages to an external program. And when you 
-connect miau again, miau can replay some of the old messages so that you know 
+Additionally, miau can set you away automatically when you disconnect and
+auto-op (or auto-voice) people. While you're disconnected, miau can also log
+everything and/or pipe private messages to an external program. And when you
+connect miau again, miau can replay some of the old messages so that you know
 what's going on.
 
 WWW: http://miau.sourceforge.net/

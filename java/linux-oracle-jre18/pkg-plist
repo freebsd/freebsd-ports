@@ -6,6 +6,7 @@
 %%T%%/Welcome.html
 %%T%%/bin/ControlPanel
 %%T%%/bin/java
+@javavm %%T%%/bin/java
 %%T%%/bin/javaws
 %%T%%/bin/jcontrol
 %%T%%/bin/jjs
@@ -145,6 +146,9 @@
 %%T%%/lib/i386/jvm.cfg
 %%T%%/lib/i386/libavplugin-53.so
 %%T%%/lib/i386/libavplugin-54.so
+%%T%%/lib/i386/libavplugin-55.so
+%%T%%/lib/i386/libavplugin-56.so
+%%T%%/lib/i386/libavplugin-ffmpeg-56.so
 %%T%%/lib/i386/libawt.so
 %%T%%/lib/i386/libawt_headless.so
 %%T%%/lib/i386/libawt_xawt.so
@@ -295,6 +299,4 @@
 %%T%%/plugin/desktop/sun_java.desktop
 %%T%%/plugin/desktop/sun_java.png
 %%T%%/release
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Oracle-JRE%%PORTVERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dir %%T%%/lib/applet

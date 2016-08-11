@@ -2,4 +2,4 @@ Python script to remove redundant info (whitespaces, comments, etc...) from
 XHTML, HTML and CSS.  Useful in build systems to pre-compress static content
 in production.
 
-WWW:	http://www.issuetrackerproduct.com/Documentation#slimmer
+WWW: http://www.issuetrackerproduct.com/Documentation#slimmer

@@ -1,0 +1,13 @@
+--- src/tools/Makefile.orig	2010-04-30 11:45:45 UTC
++++ src/tools/Makefile
+@@ -25,6 +25,10 @@ TARGET = displaycs pagemetrics parse_obj
+ .PHONY: all clean
+ all: $(TARGET)
+ 
++install: $(TARGET)
++	$(MKDIR) $(INSTALL_ROOT)$(bindir)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_ROOT)$(bindir)
++
+ displaycs: displaycs.o
+ 	$(LINK) $(LDFLAGS) -o displaycs displaycs.o $(TOOLS_LIBS)
+ 

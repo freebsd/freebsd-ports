@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-09-04 19:04:20 UTC
+--- CMakeLists.txt.orig	2016-01-29 18:07:49 UTC
 +++ CMakeLists.txt
-@@ -348,7 +348,7 @@ configure_file(
+@@ -324,7 +324,7 @@ configure_file(
  add_custom_command(TARGET ${PROJECT_NAME}
      COMMAND gzip -c ${CMAKE_CURRENT_BINARY_DIR}/flacon.1 > ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz
  )

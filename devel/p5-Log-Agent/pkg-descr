@@ -1,20 +1,20 @@
 The Log::Agent module provides an abstract layer for logging and tracing, which
 is independent from the actual method used to physically perform those
 activities. It acts as an agent (hence the name) that collects the requests and
-delegates processing to a sublayer: the logging driver.  
+delegates processing to a sublayer: the logging driver.
 
 The Log::Agent module is meant to be used in all reusable components, since
 they cannot know in advance how the application which ends up using them will
 perform its logging activities: either by emitting messages on stdout and
-errors on stderr, or by directing messages to log files, or by using syslog(3). 
+errors on stderr, or by directing messages to log files, or by using syslog(3).
 
 The logging interface is common for all the logging drivers, and is therefore
 the result of a compromise between many logging schemes: any information given
 at this level must be either handled by all drivers, or may be ignored
-depending on the application's final choice.  
+depending on the application's final choice.
 
 WARNING: THIS INTERFACE IS STILL SOMEWHAT ALPHA AND COULD STILL CHANGE
 DEPENDING ON THE FEEDBACK THE AUTHOR RECEIVES, WITHOUT ANY BACKWARD
-COMPATIBILITY ASSURANCE. 
+COMPATIBILITY ASSURANCE.
 
 WWW: http://search.cpan.org/dist/Log-Agent/

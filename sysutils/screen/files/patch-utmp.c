@@ -1,5 +1,5 @@
---- utmp.c.orig	2015-06-28 14:37:40.000000000 -0700
-+++ utmp.c	2015-07-02 13:22:34.463948044 -0700
+--- utmp.c.orig	2016-06-19 12:41:03.000000000 -0700
++++ utmp.c	2016-06-21 04:10:22.500131000 -0700
 @@ -26,6 +26,7 @@
   ****************************************************************
   */
@@ -88,10 +88,11 @@
    /* must use temp variable because of NetBSD/sparc64, where
     * ut_xtime is long(64) but time_t is int(32) */
    (void)time(&now);
+-  u->ut_time = now;
 +#if defined(__FreeBSD_version) && __FreeBSD_version < 900000
 +  u->ut_time =  now;
 +#else
-   u->ut_tv.tv_sec = now;
++  u->ut_tv.tv_sec = now;
 +#endif
  }
  
@@ -100,10 +101,11 @@
    strncpy(u->ut_line, line, sizeof(u->ut_line));
    strncpy(u->ut_name, user, sizeof(u->ut_name));
    (void)time(&now);
+-  u->ut_time = now;
 +#if defined(__FreeBSD_version) && __FreeBSD_version < 900000
 +  u->ut_time =  now;
 +#else
-   u->ut_tv.tv_sec = now;
++  u->ut_tv.tv_sec = now;
 +#endif
  }
  

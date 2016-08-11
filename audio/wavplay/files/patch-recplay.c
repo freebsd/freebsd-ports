@@ -1,6 +1,6 @@
---- recplay.c.orig	Sat Dec  4 09:06:42 1999
-+++ recplay.c	Sun Dec 11 12:56:34 2005
-@@ -52,12 +52,18 @@
+--- recplay.c.orig	1999-12-04 00:06:42 UTC
++++ recplay.c
+@@ -52,12 +52,18 @@ static const char rcsid[] = "@(#)recplay
  #include <stdio.h>
  #include <stdarg.h>
  #include <stdlib.h>
@@ -19,7 +19,7 @@
  #include "wavplay.h"
  #include "server.h"
  
-@@ -184,7 +190,7 @@
+@@ -184,7 +190,7 @@ wavrecd(WavPlayOpts *wavopts,char *Pathn
  		wfile = svr.wfile;		/* And the file is already opened */
  	}
  

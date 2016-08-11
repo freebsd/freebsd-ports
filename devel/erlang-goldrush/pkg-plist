@@ -2,6 +2,7 @@ lib/erlang/lib/goldrush-%%VERSION%%/ebin/glc.beam
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/glc_code.beam
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/glc_lib.beam
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/glc_ops.beam
+lib/erlang/lib/goldrush-%%VERSION%%/ebin/glc_run.beam
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/goldrush.app
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/gr_app.beam
 lib/erlang/lib/goldrush-%%VERSION%%/ebin/gr_context.beam
@@ -17,6 +18,7 @@ lib/erlang/lib/goldrush-%%VERSION%%/src/glc.erl
 lib/erlang/lib/goldrush-%%VERSION%%/src/glc_code.erl
 lib/erlang/lib/goldrush-%%VERSION%%/src/glc_lib.erl
 lib/erlang/lib/goldrush-%%VERSION%%/src/glc_ops.erl
+lib/erlang/lib/goldrush-%%VERSION%%/src/glc_run.erl
 lib/erlang/lib/goldrush-%%VERSION%%/src/goldrush.app.src
 lib/erlang/lib/goldrush-%%VERSION%%/src/gr_app.erl
 lib/erlang/lib/goldrush-%%VERSION%%/src/gr_context.erl

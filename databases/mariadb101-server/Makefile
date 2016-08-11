@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.13
+PORTVERSION=	10.1.16
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -21,11 +21,13 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb101-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo ssl shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -93,7 +95,6 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
 
-USE_OPENSSL=		yes
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 OPTIONS_SUB=		yes
 
@@ -103,8 +104,8 @@ USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	101m
+USES+=		mysql:101m
+USE_GNOME=	libxml2
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
@@ -121,6 +122,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO \
 
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
+MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
@@ -140,15 +142,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/mysqlaccess
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
-# See https://mariadb.atlassian.net/browse/MDEV-9529
-	${RM} ${STAGEDIR}/${PREFIX}/bin/maria_add_gis_sp.sql
 .endif # defined(CLIENT_ONLY)
 
-.if defined(WITH_OPENSSL_PORT)
-GSSAPI_BASE_IGNORE=	BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
-.endif
-
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} != base && ${PORT_OPTIONS:MGSSAPI_BASE}
+IGNORE=		BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
+.endif
 
 .if ${OPSYS} == DragonFly
 CMAKE_ARGS+=	-DWITHOUT_TOKUDB
@@ -170,6 +170,12 @@ post-patch:
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
+.endif
+
+.if exists(${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt)
+post-configure:
+	@${REINPLACE_CMD} "s|/usr/bin/c++ |/usr/bin/c++ -L${LOCALBASE}/lib |" \
+		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
 .endif
 
 .include <bsd.port.post.mk>

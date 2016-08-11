@@ -2,8 +2,8 @@
 
 Exifprobe examines and reports the contents and structure of JPEG and
 TIFF image files. It will recognize all standard JPEG markers  (including
-APPn  markers) and will report the contents of any properly structured TIFF 
-IFD encountered, even when entry tags  are  not  recognized. Recognized  TIFF 
+APPn  markers) and will report the contents of any properly structured TIFF
+IFD encountered, even when entry tags  are  not  recognized. Recognized  TIFF
 and TIFF/EP tags are expanded, including  EXIF2.2 sections and camera MakerNotes
 which are found to be in TIFF  IFD  format. Location, size, and format of image
 data is reported by default.

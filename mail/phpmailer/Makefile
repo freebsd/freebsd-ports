@@ -6,7 +6,7 @@ PORTVERSION=	5.2.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL21
@@ -18,8 +18,7 @@ GH_PROJECT=	PHPMailer
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	yes
-USES=		dos2unix
+USES=		dos2unix php
 
 SUB_FILES=	pkg-message
 

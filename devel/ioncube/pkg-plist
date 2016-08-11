@@ -1,2 +1,3 @@
+etc/php/ext-05-ioncube.ini
 lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader.so
 lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader_ts.so

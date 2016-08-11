@@ -14,13 +14,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		alias cpe
+USES=		alias bdb cpe ssl
 CPE_VENDOR=	oswald_buddenhagen
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sasl=${LOCALBASE} \
 		--with-ssl=${OPENSSLLIB:H}
-USE_OPENSSL=	yes
-USE_BDB=	46+
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}

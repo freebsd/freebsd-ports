@@ -1,6 +1,6 @@
 McStas perl tools to aid in running neutron ray tracing simulations.
 
-McStas is a tool for simulating neutron instrumentation and experiments using 
+McStas is a tool for simulating neutron instrumentation and experiments using
 a ray-tracing formalism. Currently the main use of McStas is in the field of
 instrumentation design.
 

@@ -19,8 +19,6 @@ SHEBANG_FILES=	modules/webpageize.py cgi-accountserver/vsconfig.py \
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-MANUAL_PACKAGE_BUILD=	huge (364M)
-
 PORTDATA=	* .vegastrike
 PLIST_DIRS=	%%DATADIR%%/movies
 

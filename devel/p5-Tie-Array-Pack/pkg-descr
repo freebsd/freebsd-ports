@@ -3,4 +3,4 @@ memory-hog. Normally it takes 20 bytes a scalar (16 bytes for scalar +
 overhead). This can be a problem when you need to handle millions of
 numbers in-memory. This module saves memory in exchange for speed.
 
-WWW:	http://search.cpan.org/dist/Tie-Array-Pack/
+WWW: http://search.cpan.org/dist/Tie-Array-Pack/

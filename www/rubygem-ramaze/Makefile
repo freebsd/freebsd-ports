@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-innate>=2012.12:www/rubygem-innate \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/ramaze
 

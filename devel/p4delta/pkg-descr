@@ -1,8 +1,8 @@
-p4delta works with a project that is in the Perforce configuration 
-management system. It lists the local files that have been added, 
-changed, or deleted. Content differences are summarized, i.e., the 
-number of lines of code that have been added, changed, and deleted. 
-It can also add, edit, and remove the appropriate files to/from 
+p4delta works with a project that is in the Perforce configuration
+management system. It lists the local files that have been added,
+changed, or deleted. Content differences are summarized, i.e., the
+number of lines of code that have been added, changed, and deleted.
+It can also add, edit, and remove the appropriate files to/from
 Perforce.
 
 Requires ruby.

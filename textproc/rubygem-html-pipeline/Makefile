@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-pipeline
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=2:devel/rubygem-activesupport4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

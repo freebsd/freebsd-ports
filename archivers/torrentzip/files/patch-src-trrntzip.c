@@ -1,6 +1,6 @@
---- src/trrntzip.c-orig	Mon May  2 08:38:40 2005
-+++ src/trrntzip.c	Sat May  7 02:51:55 2005
-@@ -716,7 +716,7 @@
+--- src/trrntzip.c.orig	2005-05-02 13:38:40 UTC
++++ src/trrntzip.c
+@@ -716,7 +716,7 @@ RecursiveMigrate (const char *pszPath, W
    
      if (dirp)
      {
@@ -9,7 +9,7 @@
        // our new zipfiles if they are returned by readdir() a second time.
        while (direntp = readdir (dirp))
        {
-@@ -732,7 +732,7 @@
+@@ -732,7 +732,7 @@ RecursiveMigrate (const char *pszPath, W
    
            if (strstr (szTmpBuf, ".zip\0"))
            {
@@ -18,7 +18,7 @@
            }
          }
          // Zip file is actually a dir
-@@ -780,9 +780,9 @@
+@@ -780,9 +780,9 @@ RecursiveMigrate (const char *pszPath, W
            sprintf (szTmpBuf, "%s", direntp->d_name);
            strlwr (szTmpBuf);
    

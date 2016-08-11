@@ -3,7 +3,7 @@
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
 USE_GL=		glut
-USES=		gmake jpeg localbase perl5 tcl:84
+USES=		gmake jpeg localbase perl5 tcl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}

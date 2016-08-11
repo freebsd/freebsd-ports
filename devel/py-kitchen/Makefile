@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fedora-infra
-GH_TAGNAME=	6fe82c9
 USES=		python
 USE_PYTHON=	distutils autoplist
 

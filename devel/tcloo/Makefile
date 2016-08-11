@@ -10,15 +10,16 @@ DISTNAME=	TclOO+Package-${FOSSIL_CHECKIN}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Implementation of TclOO for Tcl 8.5
 
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 FOSSIL_CHECKIN=	0a6e9f1ea3
 WRKSRC=		${WRKDIR}/${DISTNAME:S/+/_/}
-USES+=		tcl:85
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+USES+=		tcl:85,tea
+TCL_PKG=	TclOO${PORTVERSION}
 
 TEST_TARGET=	test
 

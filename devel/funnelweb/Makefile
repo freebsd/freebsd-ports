@@ -11,15 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful literate-programming macro pre-processor
 
 PLIST_FILES=	bin/fw
-WRKSRC=		fw_src/source
+WRKSRC=		${WRKDIR}/fw_src/source
 
 do-build:
-	cd ${WRKDIR}/${WRKSRC} && { \
-		${CC} ${CFLAGS} -c *.c && \
-		${CC} ${CFLAGS} -o fw *.o; \
-		}
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -c *.c && ${CC} ${CFLAGS} -o fw *.o)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${WRKSRC}/fw ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fw ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

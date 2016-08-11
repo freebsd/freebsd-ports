@@ -17,6 +17,8 @@ BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
 RUN_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 
+BROKEN_powerpc64=	does not build
+
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -35,7 +37,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
 IGNORE=		spdylay requires OpenSSL 1.0.1+
 .endif
 

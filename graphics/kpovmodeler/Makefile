@@ -14,7 +14,7 @@ COMMENT=	KDE editor/frontend for Povray
 RUN_DEPENDS=	povray:graphics/povray-meta
 
 USE_GL=		glu
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	corelib opengl qmake_build moc_build rcc_build uic_build
 USES=		cmake gettext tar:bzip2
 

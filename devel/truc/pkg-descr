@@ -1,7 +1,7 @@
-Truc is a web-based tool for requirement and use case tracking. 
-It has fileupload, discussions, version control, use case 
-history, build and release management. It supports assignment 
-of requirements & use cases to releases and filtering over all 
+Truc is a web-based tool for requirement and use case tracking.
+It has fileupload, discussions, version control, use case
+history, build and release management. It supports assignment
+of requirements & use cases to releases and filtering over all
 fields.
 
 WWW: http://sourceforge.net/projects/truc/

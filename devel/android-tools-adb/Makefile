@@ -26,7 +26,10 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
 .ifndef EXTRA_PATCHES
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_include_base_logging.h
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_file.cpp
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_file__test.cpp
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_logging.cpp
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-liblog_logd__write.c
 .endif
 
 USES=		compiler:c++11-lib uidfix
@@ -72,7 +75,7 @@ post-patch:
 	fi
 # XXX Hidden by poudriere/tinderbox, see lindev(4) for FreeBSD < 11.0
 	@if [ ! -e /dev/full ]; then \
-		${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
+		${REINPLACE_CMD} -e '/TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
 			${WRKSRC}/adb/adb_io_test.cpp; \
 	fi
 

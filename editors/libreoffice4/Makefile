@@ -2,7 +2,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/ \
 		http://dev-www.libreoffice.org/extern/:ext \
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		mdds>=0.9.0:devel/mdds \
+		${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
 		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		vigra-config:graphics/vigra \
@@ -113,8 +113,6 @@ CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GPERF=${LOCALBASE}/bin/gperf \
 			OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 			OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
-			OPENSSL_CFLAGS="-I/usr/include" \
-			OPENSSL_LIBS="-lcrypto -lssl" \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 

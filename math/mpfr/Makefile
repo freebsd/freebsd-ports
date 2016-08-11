@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpfr
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	${DISTNAME}
@@ -16,17 +15,17 @@ COMMENT=	Library for multiple-precision floating-point computations
 
 LICENSE=	LGPL3
 
-#PATCH_DEPENDS=	gpatch:devel/patch
+PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-#PATCHLEVEL=	10
-#PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
-#PATCH=		${LOCALBASE}/bin/gpatch
+PATCHLEVEL=	1
+PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCH=		${LOCALBASE}/bin/gpatch
 
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
-
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 INFO=		mpfr

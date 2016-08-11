@@ -12,6 +12,8 @@ COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 USES=		gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no \

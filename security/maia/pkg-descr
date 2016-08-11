@@ -1,7 +1,7 @@
-Maia Mailguard is a web-based interface and management system based on the 
-popular amavisd-new e-mail scanner and SpamAssassin. Written in Perl and PHP, 
-Maia Mailguard gives end-users control over how their mail is processed by 
-virus scanners and spam filters, while giving mail administrators the power 
+Maia Mailguard is a web-based interface and management system based on the
+popular amavisd-new e-mail scanner and SpamAssassin. Written in Perl and PHP,
+Maia Mailguard gives end-users control over how their mail is processed by
+virus scanners and spam filters, while giving mail administrators the power
 to configure site-wide defaults and limits.
 
 WWW: http://www.maiamailguard.com/

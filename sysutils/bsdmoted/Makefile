@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	sahne@0x90.at
 COMMENT=	Use Wii remote as mouse
 
+BROKEN_powerpc64=	Does not build
+
 USES=		uidfix
 PLIST_FILES=	sbin/bsdmoted
 

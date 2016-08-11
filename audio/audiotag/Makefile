@@ -17,7 +17,6 @@ GH_ACCOUNT=	Daenyth
 
 USES=		tar:bzip2 shebangfix perl5
 USE_PERL5=	run
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 NO_ARCH=	yes

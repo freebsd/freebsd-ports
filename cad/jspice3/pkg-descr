@@ -7,7 +7,7 @@ features. One added feature is a built-in graphical input front end for
 schematic capture. While displayed, simulations can be run and data
 plotted through this graphical interface.
 
-While not as powerful or as pretty as the Xic graphical interface, it 
+While not as powerful or as pretty as the Xic graphical interface, it
 holds its own in functionality.
 
 A significantly enhanced output plotting capability is provided, and

@@ -1,5 +1,5 @@
---- pyramid.h.orig	Mon May 25 01:24:12 1992
-+++ pyramid.h	Mon Feb 21 02:23:55 2000
+--- pyramid.h.orig	2016-07-26 13:07:24 UTC
++++ pyramid.h
 @@ -14,13 +14,16 @@
  # include	<dos.h>
  # include	<stdlib.h>
@@ -20,7 +20,7 @@
  #endif	/* MSDOS or not */
   
  typedef long	ABDATE;
-@@ -52,15 +55,6 @@
+@@ -52,15 +55,6 @@ typedef long	ABDATE;
  # if defined(MSDOS)
  	extern char		*Asctime(struct tm *tmp);	
  	extern char		*capitalize(char *chp);
@@ -36,7 +36,7 @@
  # endif		/* ANSI and MSDOS */	
  
  #else	/* ANSI */
-@@ -69,3 +63,16 @@
+@@ -69,3 +63,16 @@ typedef long	ABDATE;
   	extern void		tzconv();
   	extern void		tomorrow();
  #endif	/* ANSI or not */

@@ -4,7 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	IPV6 SLURM TORQUE VT
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
 VT_DESC=		Enable VampirTrace support
-OPTIONS_DEFAULT=	IPV6 SLURM
+OPTIONS_DEFAULT=	SLURM
 OPTIONS_SUB=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6

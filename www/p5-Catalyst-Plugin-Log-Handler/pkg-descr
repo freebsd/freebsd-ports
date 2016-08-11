@@ -1,10 +1,10 @@
-If your Catalyst project logs many messages, logging via standard error to 
-Apache's error log is not very clean: The log messages are mixed with 
+If your Catalyst project logs many messages, logging via standard error to
+Apache's error log is not very clean: The log messages are mixed with
 other web applications' noise; and especially if you use mod_fastcgi,
 every line will be prepended with a long prefix.
 
-An alternative is logging to a file. But then you have to make sure that 
-multiple processes won't corrupt the log file. The module Log::Handler 
+An alternative is logging to a file. But then you have to make sure that
+multiple processes won't corrupt the log file. The module Log::Handler
 by Jonny Schulz does exactly this, because it supports message-wise flocking.
 
 This module is a wrapper for said Log::Handler.

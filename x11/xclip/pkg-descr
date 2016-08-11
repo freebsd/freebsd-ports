@@ -12,7 +12,7 @@ FEATURES
 * Prints contents of selection to standard out
 * Accesses the XA_PRIMARY, XA_SECONDARY or XA_CLIPBOARD selection
 * Supports the INCR mechanism for large transfers
-* Connects to the X display in $DISPLAY, or specified with -display host:0 
+* Connects to the X display in $DISPLAY, or specified with -display host:0
 * Waits for selection requests in the background
 
 WWW: http://sourceforge.net/projects/xclip/

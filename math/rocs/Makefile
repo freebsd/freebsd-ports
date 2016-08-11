@@ -13,7 +13,7 @@ COMMENT=	KDE Graph theory IDE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgrantlee_gui.so:devel/grantlee
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	gui qtestlib script scripttools webkit xml \
 		moc_build qmake_build rcc_build uic_build

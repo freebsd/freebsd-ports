@@ -9,6 +9,8 @@ DISTNAME=	src-norm-${DISTVERSION}
 MAINTAINER=	hd@oc.dk
 COMMENT=	NACK-Oriented Reliable Multicast (NORM)
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}
 
 USES=		waf tar:tgz libtool

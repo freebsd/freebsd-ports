@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-tins>=1.0:devel/rubygem-tins
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/colortab bin/term_display bin/term_cdiff bin/term_decolor bin/term_mandel
 

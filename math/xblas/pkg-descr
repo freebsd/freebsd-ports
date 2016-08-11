@@ -17,4 +17,4 @@ also pass our tests on an Intel machine with 80-bit floating point registers.
 MIXED PRECISION permits some input/output arguments to be of different types
 (mixing real and complex) or precisions (mixing single and double).
 
-WWW:	http://www.netlib.org/xblas/
+WWW: http://www.netlib.org/xblas/

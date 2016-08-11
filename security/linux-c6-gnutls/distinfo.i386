@@ -1,4 +1,5 @@
-SHA256 (rpm/i386/fedora/10/gnutls-2.4.2-5.fc10.i386.rpm) = 6287f957a9938a8b078c7901bd73d7cd162c8ceedada43d1c3a9043ba447993e
-SIZE (rpm/i386/fedora/10/gnutls-2.4.2-5.fc10.i386.rpm) = 398396
-SHA256 (rpm/i386/fedora/10/gnutls-2.4.2-5.fc10.src.rpm) = d6ee487c4be8dfca2100ae47b5d1936b9f81b909d351bcd75113f640c2af3f8a
-SIZE (rpm/i386/fedora/10/gnutls-2.4.2-5.fc10.src.rpm) = 5027908
+TIMESTAMP = 1466256791
+SHA256 (rpm/i686/centos/6.8/gnutls-2.8.5-19.el6_7.i686.rpm) = 0eb31a49120fa25c404589fd876c9d7cfc4aeef7cd7b2a2a2d24711e967f8279
+SIZE (rpm/i686/centos/6.8/gnutls-2.8.5-19.el6_7.i686.rpm) = 349720
+SHA256 (rpm/i686/centos/6.8/gnutls-2.8.5-19.el6_7.src.rpm) = a562cd4f57e2d3a65a61a233190b1efa90750a3ec2a8f63301222d65928dfb1d
+SIZE (rpm/i686/centos/6.8/gnutls-2.8.5-19.el6_7.src.rpm) = 6330363

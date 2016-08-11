@@ -2,7 +2,7 @@ $NetBSD: patch-ag,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/env/omake_env.ml.orig	2008-01-15 19:57:00.000000000 +0000
+--- src/env/omake_env.ml.orig	2008-01-15 19:57:00 UTC
 +++ src/env/omake_env.ml
 @@ -404,8 +404,8 @@ let rec pp_print_command buf command =
     match command with

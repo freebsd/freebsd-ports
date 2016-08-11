@@ -1,4 +1,4 @@
---- src/prefs/DevicePrefs.cpp.orig	2015-07-11 10:02:22 UTC
+--- src/prefs/DevicePrefs.cpp.orig	2016-07-26 13:34:06 UTC
 +++ src/prefs/DevicePrefs.cpp
 @@ -30,7 +30,7 @@ other settings.
  #include <wx/intl.h>

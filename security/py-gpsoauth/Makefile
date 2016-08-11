@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_TAGNAME=	1f1ae3f
 
 USES=		python
 USE_PYTHON=	distutils autoplist

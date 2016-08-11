@@ -34,14 +34,8 @@
     SUBDIR += e-module-deskshow
     SUBDIR += e-module-everything-places
     SUBDIR += e-module-everything-websearch
-    SUBDIR += e-module-forecasts
     SUBDIR += e-module-mem
-    SUBDIR += e-module-mpdule
-    SUBDIR += e-module-net
-    SUBDIR += e-module-penguins
-    SUBDIR += e-module-places
     SUBDIR += e-module-rmb
-    SUBDIR += e-module-tclock
     SUBDIR += e-module-wlan
     SUBDIR += e-modules
     SUBDIR += e16
@@ -84,7 +78,6 @@
     SUBDIR += mcwm
     SUBDIR += metacity
     SUBDIR += muffin
-    SUBDIR += musca
     SUBDIR += mutter
     SUBDIR += nickleby
     SUBDIR += obapps

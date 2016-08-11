@@ -24,6 +24,13 @@ OPTIONS_DEFINE=	DEBUG DOCS FRAME_GUARD
 OPTIONS_DEFAULT=${OPTIONS_GROUP_COMPS} ${OPTIONS_GROUP_PLUGINS}
 OPTIONS_SUB=	yes
 
+# XXX After r417413 poudriere requires textproc/py-sphinx being built
+# with the same python version as USES=python here but it's currently
+# not possible due to https://github.com/freebsd/poudriere/issues/259
+.if defined(PACKAGE_BUILDING)
+OPTIONS_EXCLUDE=DOCS
+.endif
+
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
 OPTIONS_DEFAULT_amd64=	SIMD

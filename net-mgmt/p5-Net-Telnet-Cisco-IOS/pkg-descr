@@ -1,6 +1,6 @@
-Net::Telnet::Cisco::IOS (NTCI) is an extension of Joshua Kereos's 
-Net::Telnet::Cisco module and provides an easy way to manage and 
-monitor Cisco IOS devices. I'll mention this a lot, 
+Net::Telnet::Cisco::IOS (NTCI) is an extension of Joshua Kereos's
+Net::Telnet::Cisco module and provides an easy way to manage and
+monitor Cisco IOS devices. I'll mention this a lot,
 but make sure you read up on Net::Telnet::Cisco for a lot of information.
 
 WWW: http://search.cpan.org/dist/Net-Telnet-Cisco-IOS/

@@ -57,7 +57,9 @@ bin/xscreensaver-hacks/demon
 bin/xscreensaver-hacks/discrete
 bin/xscreensaver-hacks/distort
 bin/xscreensaver-hacks/drift
+bin/xscreensaver-hacks/dymaxionmap
 bin/xscreensaver-hacks/endgame
+bin/xscreensaver-hacks/energystream
 bin/xscreensaver-hacks/engine
 bin/xscreensaver-hacks/epicycle
 bin/xscreensaver-hacks/eruption
@@ -101,6 +103,7 @@ bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
+bin/xscreensaver-hacks/hydrostat
 bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/hypnowheel
 bin/xscreensaver-hacks/ifs
@@ -161,6 +164,7 @@ bin/xscreensaver-hacks/pyro
 bin/xscreensaver-hacks/qix
 bin/xscreensaver-hacks/quasicrystal
 bin/xscreensaver-hacks/queens
+bin/xscreensaver-hacks/raverhoop
 bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
 bin/xscreensaver-hacks/rocks
@@ -203,6 +207,7 @@ bin/xscreensaver-hacks/triangle
 bin/xscreensaver-hacks/tronbit
 bin/xscreensaver-hacks/truchet
 bin/xscreensaver-hacks/twang
+bin/xscreensaver-hacks/unicrud
 bin/xscreensaver-hacks/unknownpleasures
 bin/xscreensaver-hacks/vermiculate
 bin/xscreensaver-hacks/vidwhacker
@@ -283,7 +288,9 @@ man/man6/demon.6.gz
 man/man6/discrete.6.gz
 man/man6/distort.6.gz
 man/man6/drift.6.gz
+man/man6/dymaxionmap.6.gz
 man/man6/endgame.6.gz
+man/man6/energystream.6.gz
 man/man6/engine.6.gz
 man/man6/epicycle.6.gz
 man/man6/eruption.6.gz
@@ -327,6 +334,7 @@ man/man6/helix.6.gz
 man/man6/hexadrop.6.gz
 man/man6/hilbert.6.gz
 man/man6/hopalong.6.gz
+man/man6/hydrostat.6.gz
 man/man6/hypertorus.6.gz
 man/man6/hypnowheel.6.gz
 man/man6/ifs.6.gz
@@ -385,10 +393,11 @@ man/man6/pyro.6.gz
 man/man6/qix.6.gz
 man/man6/quasicrystal.6.gz
 man/man6/queens.6.gz
-man/man6/romanboy.6.gz
+man/man6/raverhoop.6.gz
 man/man6/rd-bomb.6.gz
 man/man6/ripples.6.gz
 man/man6/rocks.6.gz
+man/man6/romanboy.6.gz
 man/man6/rorschach.6.gz
 man/man6/rotzoomer.6.gz
 man/man6/rubik.6.gz
@@ -425,6 +434,7 @@ man/man6/triangle.6.gz
 man/man6/tronbit.6.gz
 man/man6/truchet.6.gz
 man/man6/twang.6.gz
+man/man6/unicrud.6.gz
 man/man6/unknownpleasures.6.gz
 man/man6/vermiculate.6.gz
 man/man6/vidwhacker.6.gz
@@ -525,7 +535,9 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/discrete.xml
 %%DATADIR%%/config/distort.xml
 %%DATADIR%%/config/drift.xml
+%%DATADIR%%/config/dymaxionmap.xml
 %%DATADIR%%/config/endgame.xml
+%%DATADIR%%/config/energystream.xml
 %%DATADIR%%/config/engine.xml
 %%DATADIR%%/config/epicycle.xml
 %%DATADIR%%/config/eruption.xml
@@ -569,6 +581,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
+%%DATADIR%%/config/hydrostat.xml
 %%DATADIR%%/config/hypertorus.xml
 %%DATADIR%%/config/hypnowheel.xml
 %%DATADIR%%/config/ifs.xml
@@ -628,6 +641,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/qix.xml
 %%DATADIR%%/config/quasicrystal.xml
 %%DATADIR%%/config/queens.xml
+%%DATADIR%%/config/raverhoop.xml
 %%DATADIR%%/config/rd-bomb.xml
 %%DATADIR%%/config/ripples.xml
 %%DATADIR%%/config/rocks.xml
@@ -668,6 +682,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/tronbit.xml
 %%DATADIR%%/config/truchet.xml
 %%DATADIR%%/config/twang.xml
+%%DATADIR%%/config/unicrud.xml
 %%DATADIR%%/config/unknownpleasures.xml
 %%DATADIR%%/config/vermiculate.xml
 %%DATADIR%%/config/vidwhacker.xml

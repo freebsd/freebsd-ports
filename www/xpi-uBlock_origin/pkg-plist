@@ -62,8 +62,7 @@
 %%XPI_XPIDIR%%/js/assets.js
 %%XPI_XPIDIR%%/js/background.js
 %%XPI_XPIDIR%%/js/cloud-ui.js
-%%XPI_XPIDIR%%/js/contentscript-end.js
-%%XPI_XPIDIR%%/js/contentscript-start.js
+%%XPI_XPIDIR%%/js/contentscript.js
 %%XPI_XPIDIR%%/js/contextmenu.js
 %%XPI_XPIDIR%%/js/cosmetic-filtering.js
 %%XPI_XPIDIR%%/js/dashboard-common.js

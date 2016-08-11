@@ -6,4 +6,4 @@ is compiling into a runtime call to the "__fixunsdfdi" function. The
 compiler-rt library provides optimized implementations of this and other
 low-level routines.
 
-WWW:	http://compiler-rt.llvm.org/
+WWW: http://compiler-rt.llvm.org/

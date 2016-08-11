@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -14,15 +14,11 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake tar:bzip2
+USES=		gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/ophcrack
-PORTDOCS=	ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	X11 GRAPH DOCS
 OPTIONS_DEFAULT=	X11 GRAPH
@@ -53,7 +49,7 @@ post-patch:
 			${WRKSRC}/src/samdump2/samdump2.c \
 			${WRKSRC}/src/misc.h
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

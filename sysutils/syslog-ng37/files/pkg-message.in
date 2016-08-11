@@ -18,7 +18,7 @@ syslog-ng is now installed!  To replace FreeBSD's standard syslogd
    adding a line to the end of your /etc/rc.conf file that reads:
 
         syslogd_enable="NO"
- 
+
 4. Shut down the standard FreeBSD syslogd:
 
      kill `cat /var/run/syslog.pid`

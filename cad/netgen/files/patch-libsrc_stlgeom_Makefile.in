@@ -1,0 +1,11 @@
+--- libsrc/stlgeom/Makefile.in.orig	2016-04-21 10:58:59 UTC
++++ libsrc/stlgeom/Makefile.in
+@@ -278,7 +278,7 @@ top_srcdir = @top_srcdir@
+ noinst_HEADERS = meshstlsurface.hpp stlgeom.hpp stlline.hpp \
+ stltool.hpp stltopology.hpp vsstl.hpp
+ 
+-AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include $(TCL_INCLUDES)
++AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include $(TCL_INCLUDES) $(TK_INCLUDES)
+ METASOURCES = AUTO
+ lib_LTLIBRARIES = libstl.la $(am__append_1)
+ libstl_la_SOURCES = meshstlsurface.cpp stlgeom.cpp stlgeomchart.cpp \

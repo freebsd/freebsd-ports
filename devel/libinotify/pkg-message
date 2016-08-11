@@ -15,12 +15,12 @@ This means the following regression tests will fail:
 Directory notifications:
    IN_MOVED_FROM
    IN_MOVED_TO
-   
+
 Open/close notifications:
    IN_OPEN
    IN_CLOSE_NOWRITE
    IN_CLOSE_WRITE
-   
+
 Symbolic Link notifications:
    IN_DONT_FOLLOW
    IN_ATTRIB
@@ -30,7 +30,7 @@ Symbolic Link notifications:
 Kernel patches to address the missing directory and symbolic link
 notifications are available from:
 
-https://github.com/dmatveev/libinotify-kqueue/tree/master/patches
+https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
 
 =============================================================================
 You might want to consider increasing the kern.maxfiles tunable if you plan

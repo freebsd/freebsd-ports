@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-PORTVERSION=		2.1.2
+PORTVERSION=		2.1.4
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -13,12 +13,14 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
-			libxmlrpc.so:net/xmlrpc-c-devel \
+			libxmlrpc.so:net/xmlrpc-c \
 			libpcre.so:devel/pcre \
 			libconfuse.so:devel/libconfuse \
 			librabbitmq.so:net/rabbitmq-c-devel \
 			libhiredis.so:databases/hiredis \
 			libexpat.so:textproc/expat2 \
+			libpython2.7.so:lang/python27 \
+			libcurl.so:ftp/curl \
 			libjson-c.so:devel/json-c
 BUILD_DEPENDS=		ginstall:sysutils/coreutils \
 			gtar:archivers/gtar \
@@ -30,6 +32,8 @@ RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 			${LOCALBASE}/bin/python2:lang/python2 \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
 
+BROKEN_powerpc64=	Does not build
+
 GINSTALL=		ginstall
 
 WRKSRC=			${WRKDIR}/opensips-${PORTVERSION}
@@ -37,13 +41,13 @@ DOCSDIR=		share/doc/opensips
 
 USE_RC_SUBR=		opensips
 
-USES=			gmake perl5 pkgconfig shebangfix
+USES=			gmake perl5 pkgconfig shebangfix ssl
 USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL PGSQL RADIUS TESTS TLS UNIXODBC
-OPTIONS_DEFAULT=	DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED PGSQL RADIUS TLS
+OPTIONS_DEFAULT=	GEOIP HTTP LDAP MEMCACHED PGSQL RADIUS TLS
 OPTIONS_SUB=		yes
 
 GEOIP_DESC=		Build with GeoIP support
@@ -56,7 +60,7 @@ MYSQL_USE=		MYSQL=client
 PGSQL_USES+=		pgsql
 
 PGSQL_BUILD_DEPENDS+=	p5-DBD-Pg>=3.4:databases/p5-DBD-Pg
-RADIUS_BUILD_DEPENDS+=	radiusclient:net/radiusclient
+RADIUS_LIB_DEPENDS+=	libradiusclient-ng.so:net/radiusclient
 HTTP_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd
 GEOIP_LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 MEMCACHED_LIB_DEPENDS+=	libmemcached.so:databases/libmemcached

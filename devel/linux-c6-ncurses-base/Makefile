@@ -1,4 +1,4 @@
-# Created by: Johannes Meixner <xmj@chaot.net>
+# Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
 PORTNAME=	${LINUX_NAME}-base
@@ -10,7 +10,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 USE_LINUX=	c6
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 LINUX_NAME=	ncurses
 
 RPMVERSION=	4.20090207.el6

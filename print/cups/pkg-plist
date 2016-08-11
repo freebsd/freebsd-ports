@@ -1,13 +1,13 @@
-%%OVERWRITE%%@exec if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
-%%OVERWRITE%%@exec if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
-%%OVERWRITE%%@exec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
-%%OVERWRITE%%@exec if test -e /usr/bin/lprm; then chmod -h 0 /usr/bin/lprm; fi
-%%OVERWRITE%%@exec if test -e /usr/sbin/lpc; then chmod -h 0 /usr/sbin/lpc; fi
-%%OVERWRITE%%@unexec if test -e /usr/bin/lp; then chmod -h 0555 /usr/bin/lp; fi
-%%OVERWRITE%%@unexec if test -e /usr/bin/lpq; then chmod -h 06555 /usr/bin/lpq; fi
-%%OVERWRITE%%@unexec if test -e /usr/bin/lpr; then chmod -h 06555 /usr/bin/lpr; fi
-%%OVERWRITE%%@unexec if test -e /usr/bin/lprm; then chmod -h 06555 /usr/bin/lprm; fi
-%%OVERWRITE%%@unexec if test -e /usr/sbin/lpc; then chmod -h 02555 /usr/sbin/lpc; fi
+%%OVERWRITE%%@postexec if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
+%%OVERWRITE%%@postexec if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
+%%OVERWRITE%%@postexec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
+%%OVERWRITE%%@postexec if test -e /usr/bin/lprm; then chmod -h 0 /usr/bin/lprm; fi
+%%OVERWRITE%%@postexec if test -e /usr/sbin/lpc; then chmod -h 0 /usr/sbin/lpc; fi
+%%OVERWRITE%%@postunexec if test -e /usr/bin/lp; then chmod -h 0555 /usr/bin/lp; fi
+%%OVERWRITE%%@postunexec if test -e /usr/bin/lpq; then chmod -h 06555 /usr/bin/lpq; fi
+%%OVERWRITE%%@postunexec if test -e /usr/bin/lpr; then chmod -h 06555 /usr/bin/lpr; fi
+%%OVERWRITE%%@postunexec if test -e /usr/bin/lprm; then chmod -h 06555 /usr/bin/lprm; fi
+%%OVERWRITE%%@postunexec if test -e /usr/sbin/lpc; then chmod -h 02555 /usr/sbin/lpc; fi
 bin/cancel
 bin/cups-config
 bin/cupstestdsc
@@ -480,6 +480,73 @@ sbin/reject
 %%DATADIR%%/templates/printer.tmpl
 %%DATADIR%%/templates/printers-header.tmpl
 %%DATADIR%%/templates/printers.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/add-class.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/add-printer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/add-rss-subscription.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/admin.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/choose-device.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/choose-make.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/choose-model.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/choose-serial.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/choose-uri.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class-added.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class-confirm.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class-deleted.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class-jobs-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class-modified.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/class.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/classes-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/classes.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/command.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/edit-config.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/error-op.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/error.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/help-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-cancel.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-hold.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-move.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-moved.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-release.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/job-restart.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/jobs-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/jobs.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/list-available-printers.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/modify-class.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/modify-printer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/norestart.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-boolean.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-conflict.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-pickmany.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-pickone.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/option-trailer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/pager.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-accept.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-added.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-configured.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-confirm.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-default.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-deleted.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-jobs-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-modified.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-reject.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-start.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-stop.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printers-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printers.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/restart.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/samba-export.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/samba-exported.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/search.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/set-printer-options-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/set-printer-options-trailer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/subscription-added.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/subscription-canceled.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/test-page.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/trailer.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/users.tmpl
 %%DATADIR%%/templates/restart.tmpl
 %%NLS%%%%DATADIR%%/templates/ru/add-class.tmpl
 %%NLS%%%%DATADIR%%/templates/ru/add-printer.tmpl
@@ -665,6 +732,7 @@ sbin/reject
 %%DOCSDIR%%/images/wait.gif
 %%DOCSDIR%%/index.html
 %%NLS%%%%DOCSDIR%%/ja/index.html
+%%NLS%%%%DOCSDIR%%/pt_BR/index.html
 %%DOCSDIR%%/robots.txt
 %%NLS%%%%DOCSDIR%%/ru/index.html
 %%X11%%share/icons/hicolor/128x128/apps/cups.png
@@ -678,6 +746,7 @@ sbin/reject
 %%NLS%%share/locale/fr/cups_fr.po
 %%NLS%%share/locale/it/cups_it.po
 %%NLS%%share/locale/ja/cups_ja.po
+%%NLS%%share/locale/pt_BR/cups_pt_BR.po
 %%NLS%%share/locale/ru/cups_ru.po
 @dir(,cups,) %%ETCDIR%%/interfaces
 @dir(,cups,) %%ETCDIR%%/ppd

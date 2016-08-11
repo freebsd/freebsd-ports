@@ -15,6 +15,8 @@ COMMENT=	Terminal emulator on a Web page
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
 USE_RC_SUBR=	anytermd

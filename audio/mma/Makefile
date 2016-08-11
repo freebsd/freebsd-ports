@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mma
-PORTVERSION=	15.01
+PORTVERSION=	15.12
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
@@ -13,12 +13,12 @@ COMMENT=	Musical MIDI Accompaniment generator
 
 LICENSE=	GPLv2
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	aplaymidi:audio/alsa-utils \
 		timidity:audio/timidity++
 
 MMABIN=	${PREFIX}/bin/mma
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -58,7 +58,6 @@ do-install:
 	${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1/ "! -name mma-libdoc.8" && \
 	${INSTALL_MAN} mma-libdoc.8 ${STAGEDIR}${MANPREFIX}/man/man8/)
 
-post-install:
 	# update mma library (mma -g) to use ${DATADIR} path
 	@(cd ${STAGEDIR}${DATADIR} && \
 	${PYTHON_CMD} ${WRKDIR}/mma_g.py)

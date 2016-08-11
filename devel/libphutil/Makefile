@@ -11,6 +11,8 @@ COMMENT=	Collection of PHP utility classes
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 PHP_DESTDIR=	lib/php/libphutil
 USE_PHP=	xml
 USE_GITHUB=	yes

@@ -1,4 +1,6 @@
 usr/bin/curl
+usr/lib/libcurl.so.4
+usr/lib/libcurl.so.4.1.1
 usr/lib64/libcurl.so.4
 usr/lib64/libcurl.so.4.1.1
 usr/share/man/man1/curl.1.gz

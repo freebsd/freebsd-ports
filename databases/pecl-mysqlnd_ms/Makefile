@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqlnd_ms
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -12,10 +13,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Replication and load balancing plugin for mysqlnd
 
-USE_PHP=	json
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
+USES=		php:ext
+USE_PHP=	json:build
 IGNORE_WITH_PHP=	56 70
 
 .include <bsd.port.mk>

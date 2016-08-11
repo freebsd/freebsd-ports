@@ -6,7 +6,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts HTML into Haml
 
 LICENSE=	MIT
@@ -18,10 +18,9 @@ RUN_DEPENDS=	rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-ruby_parser>=3.5:devel/rubygem-ruby_parser
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 NO_ARCH=	yes
 
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/html2haml
 
 .include <bsd.port.mk>

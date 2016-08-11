@@ -2,7 +2,7 @@
 - nML is a higher-order and typed programming language.
 - nML does not stand against the C programming convention.
 
-- nML compiler is a compiler of the nML language 
+- nML compiler is a compiler of the nML language
   using the Objective Caml compiler:
     nML parser + nML type-checker +
         nML-to-OCaml translator + the OCaml compiler.

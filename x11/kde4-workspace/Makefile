@@ -2,9 +2,8 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	6
 CATEGORIES=	x11 kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
+MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -42,7 +41,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 
 USE_GL=		glu
 USE_GNOME=	glib20
-USE_KDE4=	kactivities kdelibs kdeprefix nepomuk-core oxygen \
+USE_KDE4=	kactivities kdelibs nepomuk-core oxygen \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
 USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg \
 		pkgconfig shebangfix tar:xz

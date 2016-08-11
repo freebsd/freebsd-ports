@@ -1,6 +1,6 @@
---- Tree/src/makeGlobalLib.orig	Fri Sep 18 04:26:35 1998
-+++ Tree/src/makeGlobalLib	Mon May  5 08:30:58 2003
-@@ -6,7 +6,8 @@
+--- Tree/src/makeGlobalLib.orig	1998-09-17 19:26:35 UTC
++++ Tree/src/makeGlobalLib
+@@ -6,7 +6,8 @@ OBJ = Tree
  
  SRC = basics.c \
        compress.c \

@@ -1,0 +1,47 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: searx
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable searx:
+# searx_enable="YES"
+#
+# searx_enable (bool):	Set to YES to enable searx
+#				Default: NO
+# searx_conf (str):		searx configuration file
+#				Default: ${PREFIX}/etc/searx.conf
+# searx_user (str):		searx daemon user
+#				Default: searx
+# searx_group (str):		searx daemon group
+#				Default: searx
+# searx_flags (str):		Extra flags passed to searx
+
+. /etc/rc.subr
+
+name="searx"
+rcvar=searx_enable
+
+: ${searx_enable:="NO"}
+: ${searx_user:="www"}
+: ${searx_group:="www"}
+: ${searx_flags:=""}
+
+# daemon
+searx_pidfile="/var/run/${name}.pid"
+python="%%PREFIX%%/bin/python2.7"
+procname="%%PREFIX%%/lib/python2.7/site-packages/${name}/webapp.py"
+command=/usr/sbin/daemon
+command_args=" -c -f -P ${searx_pidfile} ${python} ${procname}"
+start_precmd="searx_precmd"
+
+searx_precmd()
+{
+    install -o ${searx_user} /dev/null ${searx_pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"
+

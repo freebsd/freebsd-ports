@@ -2,4 +2,4 @@ Use rbenv to pick a Ruby version for your application and guarantee
 that your development environment matches production. Put rbenv to work
 with Bundler for painless Ruby upgrades and bulletproof deployments.
 
-WWW: https://github.com/sstephenson/rbenv
+WWW: https://github.com/rbenv/rbenv

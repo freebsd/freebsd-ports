@@ -8,7 +8,7 @@ MASTER_SITES=	https://biostatistics.mdanderson.org/SoftwareDownload/ProductDownl
 		LOCAL/bf
 DISTNAME=	RANDLIB_V90
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
 USES=		uidfix
@@ -21,12 +21,12 @@ PLIST_FILES=	include/randlib.h \
 		lib/librandlib.so \
 		lib/librandlib.so.1
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
-OPTIONS_DEFINE=	DOCS
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/source/randlib.c/doc/* ${STAGEDIR}${DOCSDIR}
 

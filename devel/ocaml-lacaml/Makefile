@@ -4,8 +4,7 @@
 PORTNAME=	lacaml
 PORTVERSION=	8.0.7
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/mmottl/lacaml/releases/download/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/}
+MASTER_SITES=	https://github.com/mmottl/lacaml/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,9 +1,0 @@
-The Panels module allows a site administrator to create customized layouts
-for multiple uses. At its core it is a drag and drop content manager that
-let's you visually design a layout and place content within that layout.
-Integration with other systems allows you to create nodes that use this,
-landing pages that use this, and even override system pages such as taxonomy
-and the node page so that you can customize the layout of if your site with
-very fine grained permissions.
-
-WWW: http://drupal.org/project/panels

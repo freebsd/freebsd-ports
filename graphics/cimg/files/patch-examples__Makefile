@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2016-03-24 12:00:28 UTC
+--- examples/Makefile.orig	2016-05-26 09:25:43 UTC
 +++ examples/Makefile
 @@ -85,7 +85,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
@@ -13,8 +13,8 @@
  CFLAGS       = -I..
  LIBS         =
  else
--CFLAGS       = -I.. -Wall -W
-+CFLAGS       = -I.. -Wall -W $(CPPFLAGS)
+-CFLAGS       = -I.. -Wall -Wextra
++CFLAGS       = -I.. -Wall -Wextra $(CPPFLAGS)
  LIBS         = -lm
  endif
  
@@ -117,7 +117,7 @@
  all $(CIMG_EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -412,8 +416,10 @@ $(CIMG_ZLIB_CFLAGS) \
+@@ -436,8 +440,10 @@ $(CIMG_ZLIB_CFLAGS) \
  $(CIMG_CURL_CFLAGS) \
  $(CIMG_OPENCV_CFLAGS) \
  $(CIMG_MAGICK_CFLAGS) \
@@ -128,7 +128,7 @@
  $(CIMG_X11_LIBS) \
  $(CIMG_XSHM_LIBS) \
  $(CIMG_XRANDR_LIBS) \
-@@ -425,6 +431,7 @@ $(CIMG_ZLIB_LIBS) \
+@@ -449,6 +455,7 @@ $(CIMG_ZLIB_LIBS) \
  $(CIMG_CURL_LIBS) \
  $(CIMG_OPENCV_LIBS) \
  $(CIMG_MAGICK_LIBS) \

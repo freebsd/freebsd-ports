@@ -1,22 +1,22 @@
-The Authen::PAAS distribution provides a Perl API for authenticating and 
-authorizing users of computing services. Its design is inspired by 
-existing pluggable authentication services such as PAM and Java's JAAS, so 
-people familiar with those two services should be comfortable with the 
-concepts in Authen::PAAS. At its heart, Authen::PAAS provides a login 
-service, with pluggable modules for performing different authentication 
-schemes. The pluggable framework enables the system administrator, rather 
-than the application developer to define what method is used to 
+The Authen::PAAS distribution provides a Perl API for authenticating and
+authorizing users of computing services. Its design is inspired by
+existing pluggable authentication services such as PAM and Java's JAAS, so
+people familiar with those two services should be comfortable with the
+concepts in Authen::PAAS. At its heart, Authen::PAAS provides a login
+service, with pluggable modules for performing different authentication
+schemes. The pluggable framework enables the system administrator, rather
+than the application developer to define what method is used to
 authentication with a particular application.
 
-One might ask, why not just use PAM directly via the existing Authen::PAM 
-Perl bindings. While this works well for applications which wish to 
-authenticate against real UNIX user accounts (eg FTP, Telnet, SSH), it is 
-not particularly well suited to applications with 'virtualized' user 
-accounts. For example, a web application may maintain a set of virtual 
-user accounts in a database, or a chat server, may maintain a set of user 
-accounts in a text configuration file. Since it merely delegates through 
-to the underlying C libraries, the Authen::PAM module does not provide a 
-convenient means to write new authentication schemes in Perl. Thus the 
+One might ask, why not just use PAM directly via the existing Authen::PAM
+Perl bindings. While this works well for applications which wish to
+authenticate against real UNIX user accounts (eg FTP, Telnet, SSH), it is
+not particularly well suited to applications with 'virtualized' user
+accounts. For example, a web application may maintain a set of virtual
+user accounts in a database, or a chat server, may maintain a set of user
+accounts in a text configuration file. Since it merely delegates through
+to the underlying C libraries, the Authen::PAM module does not provide a
+convenient means to write new authentication schemes in Perl. Thus the
 Authen::PAAS distribution provides a pure Perl API for authentication.
 
 WWW: http://search.cpan.org/dist/Authen-PAAS/

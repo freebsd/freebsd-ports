@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-thor>=0:devel/rubygem-thor
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/emot
 

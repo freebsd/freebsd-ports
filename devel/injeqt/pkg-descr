@@ -1,4 +1,4 @@
 Injeqt is an attempt to build a powerful and reliable dependency injection
-framework on Qt's reflection based on MOC (meta-object compiler). 
+framework on Qt's reflection based on MOC (meta-object compiler).
 
 WWW: https://github.com/vogel/injeqt/

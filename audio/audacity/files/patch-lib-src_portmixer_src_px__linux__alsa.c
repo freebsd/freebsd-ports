@@ -1,4 +1,4 @@
---- lib-src/portmixer/src/px_linux_alsa.c.orig	2016-01-08 22:05:48 UTC
+--- lib-src/portmixer/src/px_linux_alsa.c.orig	2016-07-26 13:34:06 UTC
 +++ lib-src/portmixer/src/px_linux_alsa.c
 @@ -42,6 +42,7 @@
  

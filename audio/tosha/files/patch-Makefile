@@ -1,6 +1,6 @@
 --- Makefile.orig	1998-12-16 12:34:09 UTC
 +++ Makefile
-@@ -53,15 +53,10 @@
+@@ -53,15 +53,10 @@ pcmfade:	pcmfade.o utils.o
  	$(CC) $(CFLAGS) -o pcmfade pcmfade.o utils.o
  
  install:	$(BINS)

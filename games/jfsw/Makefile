@@ -69,8 +69,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-build
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
-post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

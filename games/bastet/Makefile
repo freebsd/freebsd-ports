@@ -12,6 +12,8 @@ COMMENT=	Ncurses Tetris clone which is harder than every other Tetris
 
 LICENSE=	GPLv3+
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USES=		gmake ncurses tar:tgz

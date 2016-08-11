@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libdbus-glib-1.so:devel/dbus-glib		\
 		libxml++-2.6.so:textproc/libxml++26	\
 		libboost_thread.so:devel/boost-libs		\
-		libexecinfo.so:devel/libexecinfo		\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
 		libgmime-2.4.so:mail/gmime24		\
@@ -33,7 +32,6 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 		xdg-open:devel/xdg-utils			\
 		${LOCALBASE}/libexec/xpdf/pdftotext:graphics/xpdf	\
 		catppt:textproc/catdoc			\
-		unzip:archivers/unzip			\
 		unrtf:textproc/unrtf			\
 		catdvi:print/catdvi				\
 		bash:shells/bash
@@ -47,9 +45,9 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		gettext libarchive libtool pkgconfig python shebangfix
+USES=		execinfo gettext libarchive libtool pkgconfig python \
+		shebangfix sqlite:3
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh

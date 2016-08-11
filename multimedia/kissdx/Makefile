@@ -3,7 +3,7 @@
 
 PORTNAME=	kissdx
 PORTVERSION=	0.13.10a
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 
@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia streaming server for KiSS/Linksys player
 
 LICENSE=	GPLv2
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libdvdread.so:multimedia/libdvdread

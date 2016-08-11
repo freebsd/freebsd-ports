@@ -17,7 +17,6 @@ RUN_DEPENDS=	cmigemo:japanese/cmigemo
 
 GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo
-GH_TAGNAME=	97e0779
 
 CONFLICTS=	ja-migemo-emacs24-[0-9]*
 

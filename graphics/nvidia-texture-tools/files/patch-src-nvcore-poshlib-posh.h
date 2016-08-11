@@ -1,6 +1,6 @@
---- src/nvcore/poshlib/posh.h.orig	2008-12-01 11:04:27.000000000 +0300
-+++ src/nvcore/poshlib/posh.h	2009-03-06 22:36:38.000000000 +0300
-@@ -293,6 +293,11 @@
+--- src/nvcore/poshlib/posh.h.orig	2010-05-15 09:12:05 UTC
++++ src/nvcore/poshlib/posh.h
+@@ -293,6 +293,11 @@ Metrowerks:
  #  define POSH_OS_STRING "Linux"
  #endif
  

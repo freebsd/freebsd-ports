@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm
-DISTVERSION=	1.7.0
-PORTREVISION=	4
+DISTVERSION=	1.8.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
+LICENSE= 	GPLv2
+
 USES=		gmake jpeg tar:bzip2
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
+INSTALLS_ICONS= 	yes
 
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
 		--with-jpeg-prefix=${LOCALBASE} \
@@ -67,7 +69,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

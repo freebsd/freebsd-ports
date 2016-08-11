@@ -21,7 +21,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lbzip2 ${STAGEDIR}${PREFIX}/bin/lbzip2
 	${INSTALL_MAN} ${WRKSRC}/lbzip2.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

@@ -1,4 +1,4 @@
---- qb/config.libs.sh.orig	2015-07-19 09:50:27 UTC
+--- qb/config.libs.sh.orig	2016-05-02 20:17:12 UTC
 +++ qb/config.libs.sh
 @@ -31,6 +31,9 @@ fi
  
@@ -10,7 +10,7 @@
  [ "$OS" = 'Darwin' ] && HAVE_X11=no # X11 breaks on recent OSXes even if present.
  
  [ -d /opt/vc/lib ] && add_library_dirs /opt/vc/lib
-@@ -125,11 +128,11 @@ fi
+@@ -130,11 +133,11 @@ fi
     add_define_make libretro "$LIBRETRO"
  }
  
@@ -26,7 +26,7 @@
  
  if [ "$OS" = 'Win32' ]; then
     HAVE_THREADS=yes
-@@ -182,7 +185,7 @@ fi
+@@ -189,7 +192,7 @@ fi
  check_pkgconf ALSA alsa
  check_header OSS sys/soundcard.h
  check_header OSS_BSD soundcard.h

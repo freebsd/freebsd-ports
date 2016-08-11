@@ -1,6 +1,6 @@
---- src/build_mozc.py.orig	2015-02-15 04:18:52.000000000 +0900
-+++ src/build_mozc.py	2015-02-19 03:40:47.000000000 +0900
-@@ -357,6 +357,11 @@
+--- src/build_mozc.py.orig	2016-03-13 11:22:55.000000000 +0900
++++ src/build_mozc.py	2016-05-11 00:18:16.131052000 +0900
+@@ -354,6 +354,11 @@
    parser.add_option('--version_file', dest='version_file',
                      help='use the specified version template file',
                      default='mozc_version_template.txt')
@@ -12,7 +12,7 @@
    AddTargetPlatformOption(parser)
  
    # Mac and Linux
-@@ -377,6 +382,14 @@
+@@ -368,6 +373,14 @@
                      default='',
                      help='A path to the directory where the server executable'
                      'is installed. This option is used only on Linux.')
@@ -27,16 +27,19 @@
  
    # Android
    parser.add_option('--android_arch', dest='android_arch',
-@@ -548,7 +561,7 @@
+@@ -522,6 +535,11 @@
+   """Parses command line options for the build command."""
    parser = optparse.OptionParser(usage='Usage: %prog build [options]')
    AddCommonOptions(parser)
-   if IsLinux():
--    default_build_concurrency = GetNumberOfProcessors() * 2
++  if IsLinux():
 +    default_build_concurrency = 1;
-     parser.add_option('--jobs', '-j', dest='jobs',
-                       default=('%d' % default_build_concurrency),
-                       metavar='N', help='run build jobs in parallel')
-@@ -707,6 +720,17 @@
++    parser.add_option('--jobs', '-j', dest='jobs',
++                      default=('%d' % default_build_concurrency),
++                      metavar='N', help='run build jobs in parallel')
+   parser.add_option('--configuration', '-c', dest='configuration',
+                     default='Debug', help='specify the build configuration.')
+ 
+@@ -672,6 +690,17 @@
    logging.info('Building GYP command line...')
    gyp_options = ['--depth=.', '--include=%s/gyp/common.gypi' % SRC_DIR]
  
@@ -54,7 +57,7 @@
  
    mozc_root = os.path.abspath(GetTopLevelSourceDirectoryName())
    gyp_options.extend(['-D', 'abs_depth=%s' % mozc_root])
-@@ -936,6 +960,14 @@
+@@ -876,6 +905,14 @@
    if options.server_dir:
      gyp_options.extend([
          '-D', 'server_dir=%s' % os.path.abspath(options.server_dir)])
@@ -67,5 +70,5 @@
 +
 +
  
-   # TODO(yukawa): Use ninja on OSX.
    if generator == 'ninja':
+     gyp_options.extend(['--generator-output=.'])

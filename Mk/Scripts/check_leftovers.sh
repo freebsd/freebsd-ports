@@ -23,6 +23,8 @@
 # The PLIST_SUB feature can be disabled by setting PLIST_SUB_SED=
 # in environment.
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CHECK_LEFTOVERS}" ] && set -x
+
 origin="$1"
 [ $# -eq 1 ] || { echo "Must supply ORIGIN as parameter" >&2; exit 1; }
 [ -n "${PORTSDIR}" ] || { echo "PORTSDIR must be set" >&2; exit 1; }

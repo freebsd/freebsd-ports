@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astrometry
-PORTVERSION=	0.50
-PORTREVISION=	1
+PORTVERSION=	0.65
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}

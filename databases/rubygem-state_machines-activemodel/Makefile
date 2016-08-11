@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	state_machines-activemodel
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activemodel4>=4.1:databases/rubygem-activemodel4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@ bin/nopaste
 %%SITE_PERL%%/App/Nopaste/Service/Snitch.pm
 %%SITE_PERL%%/App/Nopaste/Service/Ubuntu.pm
 %%SITE_PERL%%/App/Nopaste/Service/ssh.pm
+%%PERL5_MAN1%%/nopaste.1.gz
 %%PERL5_MAN3%%/App::Nopaste.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Command.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service.3.gz
@@ -25,4 +26,3 @@ bin/nopaste
 %%PERL5_MAN3%%/App::Nopaste::Service::Snitch.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Ubuntu.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::ssh.3.gz
-%%PERL5_MAN1%%/nopaste.1.gz

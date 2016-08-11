@@ -3,15 +3,17 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
 
-LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
+LICENSE=	GPLv3+ LGPL20+ LGPL3+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libbabl-0.1.so:x11/babl
 
@@ -138,7 +140,7 @@ CONFIGURE_ARGS+=--without-libopenraw
 PLIST_SUB+=	OPENRAW="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSIMD}
+.if ! ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-mmx \
 		--disable-sse
 .endif
@@ -219,10 +221,11 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 pre-configure:
-.if !exists(${LOCALBASE}/bin/vimdot)
-	@${ECHO_CMD} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."
-	@${FALSE}
-.endif
+# .if !exists() evaluates too early before graphviz has a chance to be installed
+	@if ! hash vimdot 2>/dev/null; then \
+		${ECHO_MSG} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."; \
+		${FALSE}; \
+	fi
 .endif
 
 post-build:

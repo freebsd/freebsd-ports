@@ -1,0 +1,6 @@
+Argon2 is a password-hashing function that summarizes the state of the
+art in the design of memory-hard functions and can be used to hash
+passwords for credential storage, key derivation, or other
+applications.
+
+WWW: https://github.com/P-H-C/phc-winner-argon2

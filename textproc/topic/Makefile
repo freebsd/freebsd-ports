@@ -11,6 +11,8 @@ COMMENT=	Topic markup parser
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 PLIST_FILES=	bin/topic \
 		man/man1/topic.1.gz
 do-install:

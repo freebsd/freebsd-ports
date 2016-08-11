@@ -57,6 +57,7 @@ lib/saga/libgrid_spline.so
 lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
 lib/saga/libimagery_classification.so
+lib/saga/libimagery_isocluster.so
 lib/saga/libimagery_maxent.so
 lib/saga/libimagery_opencv.so
 lib/saga/libimagery_photogrammetry.so
@@ -115,6 +116,7 @@ share/applications/saga.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
 share/icons/hicolor/192x192/apps/saga.png
+share/icons/hicolor/22x22/apps/saga.png
 share/icons/hicolor/24x24/apps/saga.png
 share/icons/hicolor/256x256/apps/saga.png
 share/icons/hicolor/32x32/apps/saga.png

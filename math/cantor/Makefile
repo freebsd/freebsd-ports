@@ -14,7 +14,7 @@ LIB_DEPENDS=	libspectre.so:print/libspectre \
 		libqalculate.so:math/libqalculate \
 		libanalitza.so:math/analitza
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USES=		cmake:outsource pkgconfig python:2 tar:xz
 USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build

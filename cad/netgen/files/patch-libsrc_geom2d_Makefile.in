@@ -1,0 +1,11 @@
+--- libsrc/geom2d/Makefile.in.orig	2014-10-06 11:04:37 UTC
++++ libsrc/geom2d/Makefile.in
+@@ -275,7 +275,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ noinst_HEADERS = geom2dmesh.hpp geometry2d.hpp vsgeom2d.hpp 
+-AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include  $(TCL_INCLUDES)
++AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include  $(TCL_INCLUDES) $(TK_INCLUDES)
+ METASOURCES = AUTO
+ lib_LTLIBRARIES = libgeom2d.la $(am__append_1)
+ libgeom2d_la_SOURCES = genmesh2d.cpp geom2dmesh.cpp geometry2d.cpp

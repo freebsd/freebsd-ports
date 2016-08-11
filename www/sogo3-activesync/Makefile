@@ -2,9 +2,9 @@
 
 PKGNAMESUFFIX=		-activesync
 
-MAINTAINER=		acm@FreeBSD.org
+MAINTAINER=		euan@potensol.com
 
-CONFLICTS=		sogo-[0-9]*
+CONFLICTS=		sogo[2-3]-[0-9]*
 
 OPTIONS_SLAVE=		ACTIVESYNC
 

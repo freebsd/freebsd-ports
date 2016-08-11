@@ -1,0 +1,18 @@
+The Bouncy Castle Crypto APIs consist of the following:
+
+. A lightweight cryptography API in Java.
+. A provider for the JCE and JCA.
+. A clean room implementation of the JCE 1.2.1.
+. A library for reading and writing encoded ASN.1 objects.
+. Generators for Version 1 and Version 3 X.509 certificates, Version 2 CRLs,
+  and PKCS12 files.
+. Generators for Version 2 X.509 attribute certificates.
+. Generators/Processors for S/MIME and CMS (PKCS7).
+. Generators/Processors for OCSP (RFC 2560).
+. Generators/Processors for TSP (RFC 3161).
+. Generators/Processors for OpenPGP (RFC 2440).
+. A signed jar version suitable for JDK 1.4/1.5 and the Sun JCE.
+
+It's distributed under a modified X license.
+
+WWW: http://www.bouncycastle.org/

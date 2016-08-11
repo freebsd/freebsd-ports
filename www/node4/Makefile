@@ -2,33 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server (4.x LTS)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
+OPTIONS_SUB=	yes
 
-USES=		compiler execinfo gmake python:2
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
+BUNDLED_SSL_USES_OFF=		ssl
+BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
+
+NLS_CONFIGURE_ON=	--with-intl=system-icu
+NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
+
+USES=		compiler execinfo gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node-[0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]* node5-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
+CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
+	 	--without-npm \
+		--shared-libuv \
+		--shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
+LIB_DEPENDS+=	libuv.so:devel/libuv
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MBUNDLED_SSL)
+
+.if ${OSVERSION} < 1100085
+# node.js requires openssl 1.0.2, use the port since base isn't new enough
+WITH_OPENSSL_PORT=yes
+.endif
+
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if empty(PORT_OPTIONS:MBUNDLED_SSL)
+.if !empty(SSL_DEFAULT:Mlibressl*)
+IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
+.endif
+.endif
 
 .if ${COMPILER_TYPE} == clang
 MAKE_ENV+=	LINK=clang++
@@ -59,6 +90,16 @@ post-patch:
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/node.gyp \
 		${WRKSRC}/tools/icu/icu-generic.gyp
+
+post-configure:
+	# Post-process Makefile and *.mk files created by node-gyp and remove
+	# all occurrences of -I${LOCALBASE}/include. C*FLAGS include this
+	# before all -I../deps/* for bundled code. This can cause build
+	# breakages if the dependency is installed in ${LOCALBASE}. The
+	# USES+=localbase above will ensure that we pick up includes for real
+	# external dependencies.
+	${FIND} ${WRKSRC}/out -type f -print0 \
+		| ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node

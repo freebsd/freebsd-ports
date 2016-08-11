@@ -3,6 +3,7 @@
 
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -63,6 +64,8 @@ do-install-EXAMPLES-on:
 	(cd ${BUILD_WRKSRC}/${TEST_SUBDIR} && \
 		${COPYTREE_BIN} . ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} \
 		"-name *Test -type f")
+	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
+		${XARGS} ${CHMOD} u+w
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
 		${XARGS} ${STRIP_CMD}
 

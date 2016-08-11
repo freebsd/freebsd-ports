@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0x04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The geekest content helper management system
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 USES=		zip
 USE_PHP=	xml iconv gd

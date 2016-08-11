@@ -3,6 +3,7 @@
 
 PORTNAME=	orthanc
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -16,6 +17,8 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 # GPLv3 license, with the OpenSSL exception.
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	gtest-config:devel/googletest
 LIB_DEPENDS=	libcurl.so:ftp/curl \

@@ -1,11 +1,11 @@
 Prima is an extensible Perl toolkit for multi-platform GUI development.
 Platforms supported include Linux, Windows NT/9x/2K, OS/2 and UNIX/X11
-workstations ( FreeBSD, IRIX, SunOS, Solaris  and others). The toolkit 
+workstations ( FreeBSD, IRIX, SunOS, Solaris  and others). The toolkit
 contains a rich set of standard  widgets and has  emphasis on 2D image
-processing tasks.  A Perl program using PRIMA looks and behaves identically 
-on X, Win32 and OS/2 PM.  The toolkit includes a visual builder ( VB ) and 
-a graphic pod viewer utility ( podview ). The examples are installed into 
-perl site in Prima/examples directory. 
+processing tasks.  A Perl program using PRIMA looks and behaves identically
+on X, Win32 and OS/2 PM.  The toolkit includes a visual builder ( VB ) and
+a graphic pod viewer utility ( podview ). The examples are installed into
+perl site in Prima/examples directory.
 A 'hello world' code is as simple as follows:
 
    use Prima qw(Application Buttons);

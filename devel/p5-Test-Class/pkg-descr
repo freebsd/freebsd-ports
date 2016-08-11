@@ -10,6 +10,6 @@ familiar with the "standard" mechanisms for testing perl code.
 Those unfamiliar with Test::Harness, Test::Simple, Test::More
 and friends should go take a look at them now.
 
-Note: This is an early release. Things may change. Be warned. 
+Note: This is an early release. Things may change. Be warned.
 
 WWW: http://search.cpan.org/dist/Test-Class/

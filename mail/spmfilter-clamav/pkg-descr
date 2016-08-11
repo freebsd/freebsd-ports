@@ -1,9 +1,9 @@
-spmfilter-clamav is a plugin for spmfilter that enables spmfilter 
-to check mails with the Clam AntiVirus open source toolkit for 
-viruses. The major goal of this plugin is to provide an easy way 
-for virus-scanning emails. If ClamAV detects malicious software 
-like viruses the affected email is discarded by the plugin. 
+spmfilter-clamav is a plugin for spmfilter that enables spmfilter
+to check mails with the Clam AntiVirus open source toolkit for
+viruses. The major goal of this plugin is to provide an easy way
+for virus-scanning emails. If ClamAV detects malicious software
+like viruses the affected email is discarded by the plugin.
 Optionally notifications can be enabled to inform the recipients
-and sender (configurable) about the discarded message. 
+and sender (configurable) about the discarded message.
 
 WWW: http://www.spmfilter.org/

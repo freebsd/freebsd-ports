@@ -1,11 +1,32 @@
+etc/prelink.conf.d/nss-softokn-prelink.conf
 etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db
-etc/prelink.conf.d/nss-softokn-prelink.conf
+lib/libfreebl3.chk
+lib/libfreebl3.so
+lib/libfreeblpriv3.chk
+lib/libfreeblpriv3.so
 lib64/libfreebl3.chk
 lib64/libfreebl3.so
 lib64/libfreeblpriv3.chk
 lib64/libfreeblpriv3.so
+usr/lib/libfreebl3.chk
+usr/lib/libfreebl3.so
+usr/lib/libfreeblpriv3.chk
+usr/lib/libfreeblpriv3.so
+usr/lib/libnss3.so
+usr/lib/nss/libnssckbi.so
+usr/lib/libnssdbm3.chk
+usr/lib/libnssdbm3.so
+usr/lib/libnsspem.so
+usr/lib/libnssutil3.so
+usr/lib/libsmime3.so
+usr/lib/libssl3.so
+usr/lib/libsoftokn3.chk
+usr/lib/libsoftokn3.so
+usr/lib/nss/unsupported-tools/shlibsign
+usr/lib/nss/unsupported-tools/bltest
+usr/lib/nss/unsupported-tools/fipstest
 usr/lib64/libfreebl3.chk
 usr/lib64/libfreebl3.so
 usr/lib64/libfreeblpriv3.chk
@@ -24,4 +45,5 @@ usr/lib64/nss/unsupported-tools/shlibsign
 usr/lib64/nss/unsupported-tools/bltest
 usr/lib64/nss/unsupported-tools/fipstest
 usr/share/dracut/modules.d/05nss-softokn/install
+@dir usr/lib/nss/saved
 @dir usr/lib64/nss/saved

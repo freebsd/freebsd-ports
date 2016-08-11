@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyfa
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games python
 
@@ -13,11 +13,11 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.6:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	DarkFenX
+GH_ACCOUNT=	pyfa-org
 
 USES=		python:2 dos2unix
 DOS2UNIX_GLOB=	*.py
@@ -31,9 +31,9 @@ USE_WX=		2.8 3.0
 WX_COMPS=	wx:run python:run
 
 OPTIONS_DEFINE=		DPSGRAPHING
-DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib. need fix)
+DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib)
 
-DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
+DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.0:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools
 

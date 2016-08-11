@@ -17,9 +17,7 @@ RUN_DEPENDS=	rubygem-drydock>=0:devel/rubygem-drydock \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/sysinfo
 
 PLIST_FILES=	bin/sysinfo

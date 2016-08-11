@@ -1,4 +1,4 @@
-# Created by: Johannes Meixner <xmj@chaot.net>
+# Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
 PORTNAME=	rubypants
@@ -12,10 +12,7 @@ COMMENT=	Translates ASCII into smart typographic punctuation HTML entities
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

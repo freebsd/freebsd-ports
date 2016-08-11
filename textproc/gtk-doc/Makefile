@@ -22,17 +22,9 @@ RUN_DEPENDS=	jade:textproc/jade \
 
 DOCBOOK_VERSION=	4.1.2
 
-CATALOG_DIR=		${PREFIX}/share/sgml/${PORTNAME}
-XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-
 USES=		gmake gettext-tools pathfix perl5 pkgconfig python tar:xz
 USE_GNOME=	gnomeprefix libxslt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
-
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
-		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
-		CATALOG_DIR=${CATALOG_DIR}
 
 .include <bsd.port.mk>

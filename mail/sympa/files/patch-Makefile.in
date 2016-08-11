@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-10-02 21:18:14 UTC
+--- Makefile.in.orig	2016-05-12 14:32:20 UTC
 +++ Makefile.in
-@@ -712,8 +712,8 @@ installdir:
+@@ -721,8 +721,8 @@ installdir:
  			echo "Creating $(DESTDIR)$$dir"; \
  			$(INSTALL) -d -m 755 $(DESTDIR)$$dir; \
  		fi; \
@@ -11,7 +11,7 @@
  	done
  
  sympa_wizard.pl.inst: $(top_srcdir)/src/sbin/sympa_wizard.pl.in Makefile
-@@ -725,27 +725,27 @@ sympa_wizard.pl.inst: $(top_srcdir)/src/
+@@ -734,27 +734,27 @@ sympa_wizard.pl.inst: $(top_srcdir)/src/
  installconfig: installdir sympa_wizard.pl.inst
  	@echo "Installing basic configuration ..."
  	export PERL5LIB=$(DESTDIR)$(modulesdir); \
@@ -52,7 +52,7 @@
  	fi
  	@for dir in create_list_templates custom_actions custom_conditions \
  		data_sources families global_task_models list_task_models \
-@@ -754,8 +754,8 @@ installconfig: installdir sympa_wizard.p
+@@ -763,8 +763,8 @@ installconfig: installdir sympa_wizard.p
  			echo "Creating $(DESTDIR)$(sysconfdir)/$$dir"; \
  			$(INSTALL) -d -m 755 $(DESTDIR)$(sysconfdir)/$$dir; \
  		fi; \

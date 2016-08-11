@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.9.6
-PORTREVISION?=	0
+PORTVERSION=	6.2.0
+PORTREVISION?=	1
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -21,6 +21,7 @@ CONFLICTS_INSTALL=	freeze-[0-9]*
 
 USE_GNOME=	libxml2
 USE_SDL=	image
+USE_XORG=	x11
 USES=		alias gmake iconv pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --target-os=FreeBSD
@@ -39,7 +40,7 @@ PORTEXAMPLES=	demo
 
 OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 \
 		SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
-OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VIDSTAB
+OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Images and text rendering via GTK+ 2
@@ -63,9 +64,12 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 JACK_CONFIGURE_ENABLE=	jackrack
+JACK_USE=		GNOME=glib20
 
 KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
 KDE4_CONFIGURE_WITH=	kde
+KDE4_USE=		kde4=kdelibs
+KDE4_IMPLIES=		QT4
 
 QT4_LIB_DEPENDS=	libexif.so:graphics/libexif
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml
@@ -81,6 +85,7 @@ SOX_CONFIGURE_ENABLE=	sox
 
 SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 SWFDEC_CONFIGURE_ENABLE=swfdec
+SWFDEC_USE=		GNOME=glib20,cairo
 
 VDPAU_CONFIGURE_ON=	--avformat-vdpau
 VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
@@ -92,14 +97,6 @@ VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64 (invokes i386 asm)
-.endif
-
-.if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MQT4}
-USE_KDE4+=	kdelibs
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU} && ${PORT_OPTIONS:MFFMPEG}
-USE_XORG+=	x11
 .endif
 
 pre-configure:

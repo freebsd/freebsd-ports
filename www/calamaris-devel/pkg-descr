@@ -1,0 +1,6 @@
+Calamaris parses the Squid Native Log and generates reports
+about Peak-usage, Request-Methods, Status-reports of incoming
+and outgoing requests, second and Top-level destinations,
+content-types and performance.
+
+WWW: http://Cord.de/tools/squid/calamaris/

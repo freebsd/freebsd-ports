@@ -11,14 +11,15 @@ MASTER_SITES=	SF/chicago/${PORTNAME}/backend
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 .for dir in xlhtml ppthtml
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${dir}
 	cd ${WRKSRC}/${dir} && \

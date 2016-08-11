@@ -4,7 +4,7 @@ categorization. Compared to other algorithms (kNN, SVM, Decision Trees),
 it's pretty fast and reasonably competitive in the quality of its results.
 
 A paper by Fabrizio Sebastiani provides a really good introduction to
-text categorization: 
+text categorization:
 http://faure.iei.pi.cnr.it/~fabrizio/Publications/ACMCS02.pdf
 
 WWW: http://search.cpan.org/dist/Algorithm-NaiveBayes/

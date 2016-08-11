@@ -40,11 +40,9 @@ do-install:
 		${LN} -s -f ${PREFIX}/share/fonts/$${F} ${FONTSDIR}/; \
 	done
 
-.include <bsd.port.options.mk>
-
 PORTDOCS=	ChangeLog README README.tweaks TODO
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/fonts && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

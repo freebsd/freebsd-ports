@@ -1,0 +1,13 @@
+Revert: Update gtk resource path setting to use makefile variable.
+
+--- gtk/Makefile.defaults.orig	2016-04-06 10:39:35 UTC
++++ gtk/Makefile.defaults
+@@ -4,7 +4,7 @@
+ 
+ # Where to search for NetSurf's resources after looking in ~/.netsurf and
+ # $NETSURFRES.  It must have a trailing /
+-NETSURF_GTK_RESOURCES := $(PREFIX)/share/netsurf/:./gtk/res/
++NETSURF_GTK_RESOURCES := $(PREFIX)/share/netsurf/
+ 
+ # Where to install the netsurf binary
+ NETSURF_GTK_BIN := $(PREFIX)/bin/

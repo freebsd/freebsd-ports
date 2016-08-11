@@ -1,15 +1,18 @@
 # Created by: Steven Kreuzer <steven@exit2shell.com>
 # $FreeBSD$
 
-PORTNAME=	DTraceToolkit
-PORTVERSION=	0.99
-PORTREVISION=	2
+PORTNAME=	dtrace-toolkit
+PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.brendangregg.com/DTraceToolkit/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	opendtrace
+GH_PROJECT=	toolkit
+GH_TAGNAME=	f36d00b
 USES=		shebangfix
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/usr/bin/sh ./sh
@@ -78,5 +81,10 @@ do-install:
 	${LN} -fs ${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
 	${LN} -fs ${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
 	${LN} -fs ${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
+
+.for MANPAGE in hotkernel procsystime opensnoop shellsnoop
+	${INSTALL_MAN} ${WRKSRC}/Man/man1m/${MANPAGE}.1m \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${MANPAGE}.1
+.endfor
 
 .include <bsd.port.mk>

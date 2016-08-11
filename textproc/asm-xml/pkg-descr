@@ -4,7 +4,7 @@ achieves high speed by using the following features:
   * Support of an XML subset only
   * Written in pure assembler
   * Optimized memory accesses
-  * Parsing and decoding at the same time 
+  * Parsing and decoding at the same time
 
 This parser is intended for applications that need intensive processing
 of XML.  This project will likely appeal you if XML parsing is a

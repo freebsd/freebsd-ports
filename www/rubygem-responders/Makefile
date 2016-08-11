@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	responders
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-railties4>=4.2.0:www/rubygem-railties4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-05-26 00:38:21.000000000 +0200
-+++ Makefile.in	2012-01-18 07:12:38.767047961 +0100
-@@ -742,15 +742,16 @@
+--- Makefile.in.orig	2011-05-25 22:38:21 UTC
++++ Makefile.in
+@@ -742,15 +742,16 @@ uninstall-am:
  install-data-local:
  	@$(NORMAL_INSTALL)
  	if test -d $(srcdir)/pixmaps; then \

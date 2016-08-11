@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coppermine
-PORTVERSION=	1.5.40
+PORTVERSION=	1.5.42
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Coppermine/1.5.x/
 DISTNAME=	cpg${PORTVERSION}
@@ -10,6 +10,8 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web picture gallery script
 
 LICENSE=	GPLv3
+
+BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK
 IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension

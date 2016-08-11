@@ -1,0 +1,13 @@
+diff --git a/config/FreeBSD.mk b/config/FreeBSD.mk
+index bb3a5d0..b072030 100644
+--- a/config/FreeBSD.mk
++++ b/config/FreeBSD.mk
+@@ -2,3 +2,8 @@ include $(XEN_ROOT)/config/StdGNU.mk
+ 
+ # No wget on FreeBSD base system
+ WGET = ftp
++
++XEN_LIB_STORED	:= ${localstatedir}/db/xenstored
++XEN_LOCK_DIR	:= ${localstatedir}/db
++XEN_PAGING_DIR	:= ${localstatedir}/db/xen/xenpaging
++XEN_DUMP_DIR	:= ${localstatedir}/crash/xen

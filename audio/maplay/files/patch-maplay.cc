@@ -1,5 +1,5 @@
---- maplay.cc.orig	1994-06-23 08:14:36.000000000 -0400
-+++ maplay.cc	2014-07-27 09:22:27.000000000 -0400
+--- maplay.cc.orig	1994-06-23 12:14:36 UTC
++++ maplay.cc
 @@ -39,8 +39,8 @@
  #include <stdlib.h>
  #include <string.h>
@@ -34,7 +34,7 @@
  static real scalefactor;
  
  // data extracted from header of first frame:
-@@ -90,15 +89,15 @@
+@@ -90,15 +89,15 @@ static void Exit (int returncode)
  }
  
  
@@ -53,7 +53,7 @@
  	 << " [-v] [-s] [-l] [-r] "
  #ifdef SPARC
  	    "[-us] [-uh] "
-@@ -146,6 +145,9 @@
+@@ -146,6 +145,9 @@ usage:
  #ifdef Solaris
  	    "SPARC Solaris 2.x"
  #else
@@ -63,7 +63,7 @@
  #ifdef LINUX
  	    "Linux"
  #else
-@@ -159,6 +161,7 @@
+@@ -159,6 +161,7 @@ usage:
  #endif
  #endif
  #endif
@@ -71,7 +71,7 @@
  	    " version)\n"
  	    "@(#) Copyright (C) 1993, 1994 Tobias Bading (bading@cs.tu-berlin.de)\n"
  	    "@(#) Berlin University of Technology\n"
-@@ -216,7 +219,7 @@
+@@ -216,7 +219,7 @@ usage:
  	case 'f':
  	  if (++i == argc)
  	  {
@@ -80,7 +80,7 @@
  	    exit (1);
  	  }
  	  use_own_scalefactor = True;
-@@ -243,7 +246,7 @@
+@@ -243,7 +246,7 @@ usage:
    header = new Header;
    if (!header->read_header (stream, &crc))
    {
@@ -89,7 +89,7 @@
      Exit (1);
    }
  
-@@ -328,7 +331,7 @@
+@@ -328,7 +331,7 @@ usage:
  //  }
  //#else
    {
@@ -98,7 +98,7 @@
  	    "Please use the stdout mode.\n";
      Exit (0);
    }
-@@ -345,22 +348,22 @@
+@@ -345,22 +348,22 @@ usage:
        ++name;
      else
        name = filename;
@@ -129,7 +129,7 @@
    }
  
    do
-@@ -371,20 +374,20 @@
+@@ -371,20 +374,20 @@ usage:
      {
        // layer switching is allowed
        if (verbose_mode)
@@ -153,7 +153,7 @@
        Exit (1);
      }
  
-@@ -423,7 +426,7 @@
+@@ -423,7 +426,7 @@ usage:
      }
      else
      {
@@ -162,7 +162,7 @@
        Exit (0);
      }
  
-@@ -463,7 +466,7 @@
+@@ -463,7 +466,7 @@ usage:
      }
      else
        // Sh*t! Wrong crc checksum in frame!
@@ -171,7 +171,7 @@
  
      for (i = 0; i < header->number_of_subbands (); ++i)
        delete subbands[i];
-@@ -481,18 +484,18 @@
+@@ -481,18 +484,18 @@ usage:
      // check whether (one of) the filter(s) produced values not in [-1.0, 1.0]:
      if (range_violations)
      {
@@ -197,7 +197,7 @@
      }
    }
    if (verbose_mode)
-@@ -502,13 +505,13 @@
+@@ -502,13 +505,13 @@ usage:
      uint32 minutes = (uint32)(playtime / 60.0);
      uint32 seconds = (uint32)playtime - minutes * 60;
      uint32 centiseconds = (uint32)((playtime - (real)(minutes * 60) - (real)seconds) * 100.0);

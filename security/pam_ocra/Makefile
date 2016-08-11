@@ -11,6 +11,7 @@ COMMENT=	RFC6287 (OCRA) PAM module
 LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
+USE_OPENSSL=	yes
 
 USE_GITHUB=	yes
 
@@ -22,7 +23,7 @@ PLIST_FILES=	lib/pam_ocra.so \
 		man/man8/pam_ocra.8.gz \
 		man/man8/ocra_tool.8.gz
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
@@ -30,10 +31,4 @@ CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
-# we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
-# works when it is defined before bsd.port{.pre}.mk is .included.
-# This makes it currently impossible to combine this macro with OSVERSION to
-# conditionally select WITH_OPENSSL_PORT for OSVERSIONS before 1000015.
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

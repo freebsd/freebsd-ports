@@ -1,6 +1,6 @@
---- longjmp.c.orig	Wed Aug 31 11:53:48 2005
-+++ longjmp.c	Wed Aug 31 11:55:10 2005
-@@ -55,7 +55,7 @@
+--- longjmp.c.orig	2011-05-11 00:58:23 UTC
++++ longjmp.c
+@@ -51,7 +51,7 @@ benchmark_init()
  int
  benchmark(void *tsd, result_t *res)
  {

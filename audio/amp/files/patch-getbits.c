@@ -1,6 +1,6 @@
---- getbits.c	Wed Aug 20 10:30:21 1997
-+++ getbits.c	Wed Apr 13 00:21:47 2005
-@@ -91,6 +91,7 @@
+--- getbits.c.orig	1997-08-20 13:30:21 UTC
++++ getbits.c
+@@ -91,6 +91,7 @@ unsigned int getbits(int n)
   */
  static inline void parse_header(struct AUDIO_HEADER *header) 
  {
@@ -8,7 +8,7 @@
          header->ID=_getbits(1);
          header->layer=_getbits(2);
          header->protection_bit=_getbits(1);
-@@ -112,11 +113,17 @@
+@@ -112,11 +113,17 @@ static inline int header_sanity_check(st
  		header->bitrate_index==15 ||
  		header->sampling_frequency==3) return -1;
  
@@ -26,7 +26,7 @@
  	return 0;
  }
  
-@@ -132,11 +139,7 @@
+@@ -132,11 +139,7 @@ struct AUDIO_HEADER tmp;
  	if ((retval=_fillbfr(4))!=0) return retval;
  
  	for(;;) {

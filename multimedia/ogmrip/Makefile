@@ -27,7 +27,7 @@ RUN_DEPENDS=	lame:audio/lame \
 		ogmmerge:multimedia/ogmtools
 
 OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA MP4BOX NLS THEORA FAAC SRT DEBUG
-OPTIONS_DEFAULT=GTK2 NLS
+OPTIONS_DEFAULT=GTK2
 ENCHANT_DESC=	Enable spell checking for text subtitles
 MATROSKA_DESC=	Enable Matroska container support
 MP4BOX_DESC=	Enable Mpeg-4 container support

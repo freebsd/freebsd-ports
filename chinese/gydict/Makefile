@@ -3,6 +3,7 @@
 
 PORTNAME=	gydict
 PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	chinese textproc python
 
 MAINTAINER=	chihhsin@cs.nctu.edu.tw
@@ -14,7 +15,6 @@ USES=		python:run,3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iamgyz
-GH_TAGNAME=	124aebf
 
 NO_BUILD=	yes
 NO_ARCH=	yes

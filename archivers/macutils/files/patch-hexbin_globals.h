@@ -1,6 +1,6 @@
---- hexbin/globals.h.orig	Fri Apr 16 00:28:16 1999
-+++ hexbin/globals.h	Fri Apr 16 00:28:25 1999
-@@ -13,7 +13,7 @@
+--- hexbin/globals.h.orig	1993-10-02 20:16:00 UTC
++++ hexbin/globals.h
+@@ -13,7 +13,7 @@ extern void transname();
  extern char info[];
  extern char trname[];
  

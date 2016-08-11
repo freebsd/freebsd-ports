@@ -1,0 +1,24 @@
+************************************************************************
+
+	By default, Gitblit stores all data (users, settings,
+	repositories, etc) in ${contextFolder}/WEB-INF/data.
+	Specifying an alternate "baseFolder" allows for simple
+	upgrades in the future.
+
+	You can specify "baseFolder":
+	- via GITBLIT_HOME, or
+	- via web.xml, or
+	- via JNDI.
+
+	For value of "baseFolder" use value "/usr/local/gitblit".
+
+	You can login with the default administrator credentials:
+	admin / admin
+
+	!!!MAKE SURE TO CHANGE THE ADMINISTRATOR USERNAME AND/OR PASSWORD!!!
+
+
+	More informations:
+	http://gitblit.com/setup_war.html
+
+************************************************************************

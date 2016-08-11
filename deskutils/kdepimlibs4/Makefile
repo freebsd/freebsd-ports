@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	kdepimlibs
-PORTVERSION=	${KDE4_VERSION}
+PORTVERSION=	${KDE4_KDELIBS_VERSION}
 PORTREVISION=	2
 CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libprison.so:graphics/prison \
 		libqjson.so:devel/qjson
 
-USE_KDE4=	kdelibs akonadi kdeprefix \
+USE_KDE4=	kdelibs akonadi \
 		automoc4 ontologies soprano
 USES=		cmake:outsource shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	mailtransport/kconf_update/migrate-transports.pl

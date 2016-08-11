@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,7 @@ LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/httpclient
 

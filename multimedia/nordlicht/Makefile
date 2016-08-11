@@ -12,6 +12,8 @@ COMMENT=	Create moodbars from video files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpopt.so:devel/popt \

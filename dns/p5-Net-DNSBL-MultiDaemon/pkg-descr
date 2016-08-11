@@ -1,21 +1,21 @@
-Net::DNSBL::MultiDaemon is the Perl module that implements the multi_dnsbl 
+Net::DNSBL::MultiDaemon is the Perl module that implements the multi_dnsbl
 daemon.
 
-multi_dnsbl is a DNS emulator daemon that increases the efficacy of DNSBL 
-look-ups in a mail system. multi_dnsbl may be used as a stand-alone DNSBL or as 
-a plug-in for a standard BIND 9 installation. multi_dnsbl shares a common 
-configuration file format with the Mail::SpamCannibal sc_BLcheck.pl script so 
-that DNSBL's can be maintained in a common configuration file for an entire 
+multi_dnsbl is a DNS emulator daemon that increases the efficacy of DNSBL
+look-ups in a mail system. multi_dnsbl may be used as a stand-alone DNSBL or as
+a plug-in for a standard BIND 9 installation. multi_dnsbl shares a common
+configuration file format with the Mail::SpamCannibal sc_BLcheck.pl script so
+that DNSBL's can be maintained in a common configuration file for an entire
 mail installation.
 
-Because DNSBL usefulness is dependent on the nature and source of spam sent to 
-a specific site and because sometimes DNSBL's may provide intermittant service, 
-multi_dnsbl interrogates them sorted in the order of greatest successful hits. 
-DNSBL's that do not respond within the configured timeout period are not 
-interrogated at all after 6 consecutive failures, and thereafter will be 
-retried not more often than once every hour until they come back online. This 
-eliminates the need to place DNSBL's in a particular order in your MTA's config 
-file or periodically monitor the DNSBL statistics and/or update the MTA config 
+Because DNSBL usefulness is dependent on the nature and source of spam sent to
+a specific site and because sometimes DNSBL's may provide intermittant service,
+multi_dnsbl interrogates them sorted in the order of greatest successful hits.
+DNSBL's that do not respond within the configured timeout period are not
+interrogated at all after 6 consecutive failures, and thereafter will be
+retried not more often than once every hour until they come back online. This
+eliminates the need to place DNSBL's in a particular order in your MTA's config
+file or periodically monitor the DNSBL statistics and/or update the MTA config
 file.
 
 WWW: http://search.cpan.org/dist/Net-DNSBL-MultiDaemon/

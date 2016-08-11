@@ -1,4 +1,4 @@
---- src/video/cameradevice.cpp.orig	2015-11-15 08:11:58 UTC
+--- src/video/cameradevice.cpp.orig	2016-04-24 12:44:18 UTC
 +++ src/video/cameradevice.cpp
 @@ -31,7 +31,7 @@ extern "C" {
  #ifdef Q_OS_WIN
@@ -8,8 +8,8 @@
 +#ifdef Q_OS_UNIX
  #include "src/platform/camera/v4l2.h"
  #endif
- 
-@@ -105,7 +105,7 @@ CameraDevice* CameraDevice::open(QString
+ #ifdef Q_OS_OSX
+@@ -122,7 +122,7 @@ CameraDevice* CameraDevice::open(QString
  
      AVDictionary* options = nullptr;
      if (!iformat);
@@ -18,7 +18,7 @@
      else if (devName.startsWith("x11grab#"))
      {
          QSize screen;
-@@ -142,7 +142,7 @@ CameraDevice* CameraDevice::open(QString
+@@ -168,7 +168,7 @@ CameraDevice* CameraDevice::open(QString
          av_dict_set(&options, "framerate", QString().setNum(mode.FPS).toStdString().c_str(), 0);
      }
  #endif
@@ -27,7 +27,7 @@
      else if (iformat->name == QString("video4linux2,v4l2") && mode)
      {
          av_dict_set(&options, "video_size", QString("%1x%2").arg(mode.width).arg(mode.height).toStdString().c_str(), 0);
-@@ -264,7 +264,7 @@ QVector<QPair<QString, QString>> CameraD
+@@ -311,7 +311,7 @@ QVector<QPair<QString, QString>> CameraD
      else if (iformat->name == QString("dshow"))
          devices += DirectShow::getDeviceList();
  #endif
@@ -36,7 +36,7 @@
      else if (iformat->name == QString("video4linux2,v4l2"))
          devices += v4l2::getDeviceList();
  #endif
-@@ -307,7 +307,7 @@ QVector<VideoMode> CameraDevice::getVide
+@@ -358,7 +358,7 @@ QVector<VideoMode> CameraDevice::getVide
      else if (iformat->name == QString("dshow"))
          return DirectShow::getDeviceModes(devName);
  #endif
@@ -45,7 +45,7 @@
      else if (iformat->name == QString("video4linux2,v4l2"))
          return v4l2::getDeviceModes(devName);
  #endif
-@@ -327,7 +327,7 @@ bool CameraDevice::getDefaultInputFormat
+@@ -400,7 +400,7 @@ bool CameraDevice::getDefaultInputFormat
      avdevice_register_all();
  
      // Desktop capture input formats
@@ -54,7 +54,7 @@
      idesktopFormat = av_find_input_format("x11grab");
  #endif
  #ifdef Q_OS_WIN
-@@ -335,7 +335,7 @@ bool CameraDevice::getDefaultInputFormat
+@@ -408,7 +408,7 @@ bool CameraDevice::getDefaultInputFormat
  #endif
  
      // Webcam input formats

@@ -1,14 +1,14 @@
 mmake is a small and effective script that will create a Makefile for Your
-Java files, ready to compile.  
+Java files, ready to compile.
 
-The Makefile generated with mmake supports: 
-   - Packages 
-   - JavaDoc 
-   - Clean up 
-   - C-preprocessor 
-   - Jar file 
-   - Install 
-   - Uninstall 
-   - Dependencies 
+The Makefile generated with mmake supports:
+   - Packages
+   - JavaDoc
+   - Clean up
+   - C-preprocessor
+   - Jar file
+   - Install
+   - Uninstall
+   - Dependencies
 
 WWW: http://www.tildeslash.com/mmake/

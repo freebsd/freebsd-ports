@@ -1,5 +1,5 @@
-Escapes XML entities from text, so that you don't fall prey to people putting 
-quotes, less-than/greater-than, and ampersands, into variables that end up in 
+Escapes XML entities from text, so that you don't fall prey to people putting
+quotes, less-than/greater-than, and ampersands, into variables that end up in
 TT templates.
 
 WWW: http://search.cpan.org/dist/Template-Plugin-XML-Escape/

@@ -1,0 +1,4 @@
+To enable this extension, add the following lines into ~/.emacs:
+
+(require 'mu4e-maildirs-extension)
+(mu4e-maildirs-extension)

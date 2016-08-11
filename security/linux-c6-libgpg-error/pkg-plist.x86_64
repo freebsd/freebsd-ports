@@ -1,3 +1,5 @@
+lib/libgpg-error.so.0
+lib/libgpg-error.so.0.5.0
 lib64/libgpg-error.so.0
 lib64/libgpg-error.so.0.5.0
 usr/bin/gpg-error

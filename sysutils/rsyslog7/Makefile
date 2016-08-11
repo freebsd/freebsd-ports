@@ -5,6 +5,7 @@ PORTVERSION=	7.6.7
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
+PKGNAMESUFFIX=	7
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
@@ -19,6 +20,9 @@ LIB_DEPENDS=	libee.so:devel/libee \
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
+
+DEPRECATED=	Upgrade to rsyslog 8
+EXPIRATION_DATE=2016-08-23
 
 PORTSCOUT=	limit:^7\.4
 PORTDOCS=	*

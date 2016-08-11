@@ -13,7 +13,7 @@ share/xsl/docbook-ns/epub3/docbook-epub.css.xml
 share/xsl/docbook-ns/tests/refentry.007.xml
 share/xsl/docbook-ns/tests/refentry.007.ns.xml
 share/xsl/docbook-ns/Makefile
-share/xsl/docbook-ns/catalog.xml
+@xmlcatmgr share/xsl/docbook-ns/catalog.xml
 share/xsl/docbook-ns/RELEASE-NOTES.xml
 share/xsl/docbook-ns/eclipse/profile-eclipse.xsl
 share/xsl/docbook-ns/eclipse/eclipse3.xsl
@@ -469,7 +469,6 @@ share/xsl/docbook-ns/html/chunk-code.xsl
 share/xsl/docbook-ns/html/titlepage.xsl
 share/xsl/docbook-ns/html/refentry.xsl
 share/xsl/docbook-ns/html/autoidx.xsl
-share/xsl/docbook-ns/svn-commit.tmp
 share/xsl/docbook-ns/profiling/profile-mode.xsl
 share/xsl/docbook-ns/profiling/strip-attributes.xsl
 share/xsl/docbook-ns/profiling/xsl2profile.xsl

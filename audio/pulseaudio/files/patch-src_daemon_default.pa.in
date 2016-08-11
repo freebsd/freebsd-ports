@@ -1,4 +1,4 @@
---- src/daemon/default.pa.in.orig	2015-02-12 14:10:35 UTC
+--- src/daemon/default.pa.in.orig	2016-01-18 10:14:20 UTC
 +++ src/daemon/default.pa.in
 @@ -26,10 +26,10 @@ ifelse(@OS_IS_WIN32@, 1, [dnl
  load-sample x11-bell %WINDIR%\Media\ding.wav

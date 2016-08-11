@@ -1,0 +1,4 @@
+Motor presents a callback- or Future-based API for non-blocking access to
+MongoDB from Tornado or asyncio.
+
+WWW: https://pypi.python.org/pypi/motor

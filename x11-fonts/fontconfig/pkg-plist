@@ -56,6 +56,7 @@ etc/fonts/fonts.dtd
 include/fontconfig/fcfreetype.h
 include/fontconfig/fcprivate.h
 include/fontconfig/fontconfig.h
+lib/libfontconfig.a
 lib/libfontconfig.so
 lib/libfontconfig.so.1
 lib/libfontconfig.so.1.8.0

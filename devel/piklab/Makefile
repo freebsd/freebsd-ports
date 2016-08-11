@@ -22,7 +22,7 @@ OPTIONS_DEFAULT=	KDE4
 OPTIONS_SUB=	yes
 
 KDE4_USES=	shared-mime-info
-KDE4_USE=	KDE4=automoc4,kdelibs,kdeprefix
+KDE4_USE=	KDE4=automoc4,kdelibs
 KDE4_CMAKE_OFF=	-DQT_ONLY:BOOL=ON \
 		-DLOCALE_INSTALL_DIR:STRING="${PREFIX}/share/locale"
 

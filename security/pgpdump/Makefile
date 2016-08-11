@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.29
+PORTVERSION=	0.31
 CATEGORIES=	security
 MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 
@@ -10,8 +10,6 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	PGP packet visualizer
 
 GNU_CONFIGURE=	yes
-
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/pgpdump man/man1/pgpdump.1.gz
 

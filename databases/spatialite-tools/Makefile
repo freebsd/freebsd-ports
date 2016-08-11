@@ -18,8 +18,7 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 		libreadosm.so:astro/readosm
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig iconv
-USE_SQLITE=	yes
+USES=		gmake pkgconfig iconv sqlite
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

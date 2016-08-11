@@ -28,6 +28,7 @@ include/libgambit/behavitr.h
 include/libgambit/behavspt.h
 include/libgambit/dvector.h
 include/libgambit/dvector.imp
+include/libgambit/function.h
 include/libgambit/game.h
 include/libgambit/gameagg.h
 include/libgambit/gamebagg.h
@@ -44,10 +45,12 @@ include/libgambit/pvector.h
 include/libgambit/pvector.imp
 include/libgambit/rational.h
 include/libgambit/recarray.h
+include/libgambit/shared_ptr.h
 include/libgambit/sqmatrix.h
 include/libgambit/sqmatrix.imp
 include/libgambit/stratitr.h
 include/libgambit/stratspt.h
+include/libgambit/tinyxml.h
 include/libgambit/trie_map.h
 include/libgambit/trie_map.imp
 include/libgambit/vector.h

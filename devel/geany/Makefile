@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.25
+PORTVERSION=	1.28
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Fast and lightweight GTK+ IDE
 
 LICENSE=	GPLv2

@@ -1,0 +1,26 @@
+--- Makefile.orig	2016-06-14 16:25:53 UTC
++++ Makefile
+@@ -0,0 +1,23 @@
++CFLAGS += `allegro-config --cflags`
++LIBS = -laldmb -ldumb `allegro-config --libs` -lm
++DEFINES = -DDATADIR=\"/usr/local/share/alex4/\"
++OBJS    =  actor.o    edit.o  map.o       player.o    shooter.o unix.o \
++           bullet.o   hisc.o  options.o   script.o    timer.o          \
++           control.o  main.o  particle.o  scroller.o  token.o
++
++all: alex4
++
++alex4: $(OBJS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++
++%.o: %.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) $(DEFINES) -o $@ -c $<
++
++install: alex4
++	mkdir -p %%STAGEDIR%%$(LOCALBASE)/bin
++	mkdir -p %%STAGEDIR%%%%DATADIR%%
++	install -p -m 755 alex4 %%STAGEDIR%%$(LOCALBASE)/bin
++	install -p -m 644 ../data/*.dat %%STAGEDIR%%%%DATADIR%%
++
++clean:
++	rm -f $(OBJS) $(TARGET) *~

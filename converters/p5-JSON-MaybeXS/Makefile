@@ -21,11 +21,4 @@ TEST_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-JSON-PP>=2.27202:converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=2.27202:converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

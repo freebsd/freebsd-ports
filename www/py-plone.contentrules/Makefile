@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.contentrules
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

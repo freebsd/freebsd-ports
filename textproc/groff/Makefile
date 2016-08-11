@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 USES=		cpe ghostscript gmake perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
@@ -48,7 +50,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -80,7 +81,7 @@ post-configure:
 	    INSTALL_LIB="${INSTALL_LIB}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
+	    ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}; then \
 		 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
 		 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
 		 ${FALSE}; \
@@ -89,4 +90,4 @@ post-configure:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}/${PREFIX}/share/groff/site-tmac
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

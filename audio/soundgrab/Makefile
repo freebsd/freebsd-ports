@@ -14,7 +14,7 @@ RUN_DEPENDS=	sox:audio/sox \
 		rawplay:audio/rawrec \
 		oggenc:audio/vorbis-tools \
 		flac:audio/flac \
-		p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu \
+		p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu \
 		p5-Time-HiRes>=0:devel/p5-Time-HiRes
 
 LICENSE=	GPLv2

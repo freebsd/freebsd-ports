@@ -12,8 +12,6 @@ COMMENT=	Class to handle units of physical quantities for Ruby
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

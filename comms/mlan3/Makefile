@@ -14,7 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 NO_WRKSUBDIR=	yes
-USES=		uidfix zip
+USES=		dos2unix uidfix zip
+DOS2UNIX_GLOB=	*.c *.h
 
 post-patch:
 	@${REINPLACE_CMD} -e '/int main/s/short argc/int argc/' \

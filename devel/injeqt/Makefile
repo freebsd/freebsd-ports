@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	injeqt
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	pawel@FreeBSD.org

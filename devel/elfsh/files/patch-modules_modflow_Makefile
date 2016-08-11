@@ -1,0 +1,11 @@
+--- modules/modflow/Makefile.orig	2003-08-21 01:11:03 UTC
++++ modules/modflow/Makefile
+@@ -17,7 +17,7 @@ OBJS = $(SRCS:.c=.o)
+ 
+ NAME = modflow.so
+ 
+-CFLAGS = -Wall -Werror -ggdb -I../../vm/include \
++CFLAGS += -Wall -Werror -ggdb -I../../vm/include \
+ 	-I../../libelfsh/include -I../../libhash/include \
+ 	-fPIC -rdynamic -DELFSH_INTERN
+ 

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-COMMENT=	GNU binutils for mips64 cross-development
+COMMENT=	GNU binutils for mips cross-development
 PKGNAMEPREFIX=	mips-
 PLIST=	${.CURDIR}/pkg-plist
 

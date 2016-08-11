@@ -74,6 +74,7 @@
     SUBDIR += clambc
     SUBDIR += clamcour
     SUBDIR += clamd-stream-client
+    SUBDIR += clamfs
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
@@ -90,7 +91,6 @@
     SUBDIR += create-cert
     SUBDIR += cryptlib
     SUBDIR += cryptopp
-    SUBDIR += cryptstring
     SUBDIR += cvm
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
@@ -107,6 +107,7 @@
     SUBDIR += dirmngr
     SUBDIR += distcache
     SUBDIR += dmitry
+    SUBDIR += doas
     SUBDIR += doorman
     SUBDIR += doscan
     SUBDIR += dradis
@@ -115,13 +116,12 @@
     SUBDIR += duo
     SUBDIR += easy-rsa
     SUBDIR += easy-rsa2
-    SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
-    SUBDIR += engine_pkcs11
     SUBDIR += erlang-jose
     SUBDIR += erlang-p1tls
+    SUBDIR += eschalot
     SUBDIR += esteidfirefoxplugin
     SUBDIR += expiretable
     SUBDIR += f-prot
@@ -189,6 +189,7 @@
     SUBDIR += hackbot
     SUBDIR += hamachi
     SUBDIR += hashcat
+    SUBDIR += hashcat-legacy
     SUBDIR += heimdal
     SUBDIR += hitch
     SUBDIR += hlfl
@@ -245,7 +246,6 @@
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += identify
-    SUBDIR += ifd-slb_rf60
     SUBDIR += ike
     SUBDIR += ike-scan
     SUBDIR += integrit
@@ -289,7 +289,9 @@
     SUBDIR += lasso
     SUBDIR += lastpass-cli
     SUBDIR += letsencrypt.sh
+    SUBDIR += letskencrypt
     SUBDIR += libadacrypt
+    SUBDIR += libargon2
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
@@ -405,7 +407,6 @@
     SUBDIR += openconnect
     SUBDIR += opencryptoki
     SUBDIR += openct
-    SUBDIR += openpgpsdk
     SUBDIR += opensaml2
     SUBDIR += opensc
     SUBDIR += openscep
@@ -431,6 +432,7 @@
     SUBDIR += ossec-hids-local
     SUBDIR += ossec-hids-server
     SUBDIR += osslsigncode
+    SUBDIR += otpw
     SUBDIR += outguess
     SUBDIR += p11-kit
     SUBDIR += p5-Apache-Htpasswd
@@ -493,6 +495,7 @@
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-Cracklib
     SUBDIR += p5-Crypt-Ctr
+    SUBDIR += p5-Crypt-Curve25519
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-DES_EDE3
     SUBDIR += p5-Crypt-DES_PP
@@ -514,6 +517,7 @@
     SUBDIR += p5-Crypt-Imail
     SUBDIR += p5-Crypt-Juniper
     SUBDIR += p5-Crypt-Khazad
+    SUBDIR += p5-Crypt-LE
     SUBDIR += p5-Crypt-License
     SUBDIR += p5-Crypt-Lite
     SUBDIR += p5-Crypt-Loki97
@@ -529,6 +533,7 @@
     SUBDIR += p5-Crypt-OpenSSL-DSA
     SUBDIR += p5-Crypt-OpenSSL-EC
     SUBDIR += p5-Crypt-OpenSSL-ECDSA
+    SUBDIR += p5-Crypt-OpenSSL-PKCS10
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
     SUBDIR += p5-Crypt-OpenSSL-X509
@@ -650,6 +655,7 @@
     SUBDIR += p5-Net-OpenID-Server
     SUBDIR += p5-Net-Radius-Server
     SUBDIR += p5-Net-SAML
+    SUBDIR += p5-Net-SSH-AuthorizedKeysFile
     SUBDIR += p5-Net-SSL-ExpireDate
     SUBDIR += p5-Net-SSLGlue
     SUBDIR += p5-Net-SSLeay
@@ -718,7 +724,6 @@
     SUBDIR += pdfcrack
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
-    SUBDIR += pear-Auth_OpenID
     SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_Blowfish
@@ -783,6 +788,7 @@
     SUBDIR += pinentry-gnome3
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
+    SUBDIR += pinentry-qt5
     SUBDIR += pinentry-tty
     SUBDIR += pixiewps
     SUBDIR += pkcrack
@@ -817,14 +823,15 @@
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
+    SUBDIR += py-YubiOTP
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
     SUBDIR += py-artifacts
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
+    SUBDIR += py-certbot
     SUBDIR += py-certifi
-    SUBDIR += py-clamav
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-crits
@@ -840,13 +847,14 @@
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-gpsoauth
+    SUBDIR += py-halberd
+    SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
     SUBDIR += py-keyrings.alt
-    SUBDIR += py-letsencrypt
     SUBDIR += py-libnacl
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
@@ -884,17 +892,19 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-gnupg
     SUBDIR += py-python-openid
-    SUBDIR += py-python-social-auth
     SUBDIR += py-python-registry
+    SUBDIR += py-python-social-auth
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
     SUBDIR += py-rekall_gui
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
+    SUBDIR += py-safe
     SUBDIR += py-scrypt
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
+    SUBDIR += py-spake2
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
     SUBDIR += py-stem
@@ -904,6 +914,7 @@
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-volatility
+    SUBDIR += py-vulndb
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yara-editor
@@ -927,8 +938,6 @@
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += radamsa
-    SUBDIR += radiusniff
-    SUBDIR += rainbowcrack
     SUBDIR += ranpwd
     SUBDIR += ratproxy
     SUBDIR += rats
@@ -962,10 +971,12 @@
     SUBDIR += ruby-hmac
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
+    SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-devise-two-factor
+    SUBDIR += rubygem-digest-crc
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
@@ -977,6 +988,7 @@
     SUBDIR += rubygem-metasploit-model
     SUBDIR += rubygem-metasploit-payloads
     SUBDIR += rubygem-metasploit_data_models
+    SUBDIR += rubygem-metasploit_payloads-mettle
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
@@ -990,11 +1002,21 @@
     SUBDIR += rubygem-omniauth-multipassword
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
+    SUBDIR += rubygem-openssl-ccm
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-recog
+    SUBDIR += rubygem-rex-arch
+    SUBDIR += rubygem-rex-java
+    SUBDIR += rubygem-rex-ole
+    SUBDIR += rubygem-rex-powershell
+    SUBDIR += rubygem-rex-random_identifier
+    SUBDIR += rubygem-rex-registry
+    SUBDIR += rubygem-rex-struct2
+    SUBDIR += rubygem-rex-text
+    SUBDIR += rubygem-rex-zip
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
     SUBDIR += rubygem-ruby-rc4
@@ -1063,7 +1085,6 @@
     SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-null
     SUBDIR += sshguard-pf
-    SUBDIR += sshit
     SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += sslscan
@@ -1120,7 +1141,6 @@
     SUBDIR += vault
     SUBDIR += vinetto
     SUBDIR += vlock
-    SUBDIR += vlog
     SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc
@@ -1147,9 +1167,12 @@
     SUBDIR += yersinia
     SUBDIR += ykclient
     SUBDIR += ykpers
+    SUBDIR += yubico-piv-tool
     SUBDIR += yubikey-personalization-gui
+    SUBDIR += yubikey-piv-manager
     SUBDIR += zebedee
     SUBDIR += zenmap
+    SUBDIR += zeronet
     SUBDIR += zxid
     SUBDIR += zzuf
 

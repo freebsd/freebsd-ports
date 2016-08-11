@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON \
 		p5-File-Path>0:devel/p5-File-Path \
 		p5-Getopt-Long>0:devel/p5-Getopt-Long \
 		p5-PathTools>0:devel/p5-PathTools \
-		p5-ReadLine-Gnu>0:devel/p5-ReadLine-Gnu \
+		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
 		p5-Term-ANSIColor>0:devel/p5-Term-ANSIColor \
 		p5-Term-ReadLine>0:devel/p5-Term-ReadLine \
 		p5-Thread-Queue>0:devel/p5-Thread-Queue \

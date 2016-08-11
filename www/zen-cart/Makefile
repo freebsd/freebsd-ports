@@ -15,12 +15,10 @@ COMMENT=	PHP-based user-friendly, open source shopping cart
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		dos2unix shebangfix zip
+USES=		dos2unix php:web shebangfix zip
 SHEBANG_FILES=	editors/htmlarea/examples/2-areas.cgi \
 		editors/htmlarea/examples/test.cgi \
 		editors/htmlarea/plugins/SpellChecker/spell-check-logic.cgi
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
 DOS2UNIX_REGEX=	.*\.php
 
 NO_BUILD=	yes

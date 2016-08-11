@@ -10,5 +10,9 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	GPL Argument Analyser
 
 GNU_CONFIGURE=	yes
+USES=		bison
+
+post-patch:
+	${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/source/gaa_parser.y
 
 .include <bsd.port.mk>

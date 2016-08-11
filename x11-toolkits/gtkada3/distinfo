@@ -1,4 +1,3 @@
-SHA256 (gtkada-for-gps-6.1.1-src.tar.gz) = 5b7b777bb2f79ca276cf0d4778e21b77462c7066ea52fdf957b482d4699d58b0
-SIZE (gtkada-for-gps-6.1.1-src.tar.gz) = 11298808
-SHA256 (gtkada-rm-3.8.3.0.tar.bz2) = 445ed11620108a80ba76787b073f1c7b8931786bebaacc5c07710a35acac0991
-SIZE (gtkada-rm-3.8.3.0.tar.bz2) = 3368348
+TIMESTAMP = 1465560208
+SHA256 (AdaCore-gtkada-3.14.2-1688bb8_GH0.tar.gz) = d7876bf5618189d4c318f7f8044a80286c3edf57f77adc2c96be645cafdb2212
+SIZE (AdaCore-gtkada-3.14.2-1688bb8_GH0.tar.gz) = 5353366

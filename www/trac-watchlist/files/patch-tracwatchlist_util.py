@@ -1,6 +1,6 @@
---- tracwatchlist/util.py.orig	2013-08-15 04:15:56.000000000 +0800
-+++ tracwatchlist/util.py	2013-08-15 04:16:05.000000000 +0800
-@@ -198,8 +198,8 @@
+--- tracwatchlist/util.py.orig	2010-09-25 16:12:54 UTC
++++ tracwatchlist/util.py
+@@ -198,8 +198,8 @@ def convert_LDML_to_MySQL( ldml_pattern 
  try:
      from  babel.dates        import  get_datetime_format, get_date_format, get_time_format
      def datetime_format(format='medium', locale=LC_TIME):

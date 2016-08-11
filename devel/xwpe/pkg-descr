@@ -12,7 +12,7 @@ managed with the project-option.  Your program may be run and debugged from
 within xwpe -- allowing the user to set breakpoints and watch variables.
 
 Note:  there are both English and German language version of the man pages,
-and help files.  The German language version will be installed if 
+and help files.  The German language version will be installed if
 "GERMAN_LANG" is set during ``make install'' of the port.
 
 WWW: http://www.identicalsoftware.com/xwpe/

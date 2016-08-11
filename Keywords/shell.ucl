@@ -5,11 +5,7 @@
 # @shell bin/shell
 #
 # Handle adding and remove a path to a shell binary into /etc/shells
-# it replaces the following code:
 #
-# bin/shell
-# @exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-# @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 
 actions: [file]
 post-install: <<EOD
@@ -17,16 +13,16 @@ post-install: <<EOD
   /*) file="%@" ;;
   *) file="%D/%@" ;;
   esac
-        cp /etc/shells /etc/shells.bak
-        (grep -v "^${file}$" /etc/shells.bak; echo ${file}) > /etc/shells
-        rm -f /etc/shells.bak
+        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
+        (grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak; echo ${file}) > ${PKG_ROOTDIR}/etc/shells
+        rm -f ${PKG_ROOTDIR}/etc/shells.bak
 EOD
 pre-deinstall: <<EOD
   case "%@" in
   /*) file="%@" ;;
   *) file="%D/%@" ;;
   esac
-        cp /etc/shells /etc/shells.bak
-        grep -v "^${file}$" /etc/shells.bak > /etc/shells
-        rm -f /etc/shells.bak
+        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
+        grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak > ${PKG_ROOTDIR}/etc/shells
+        rm -f ${PKG_ROOTDIR}/etc/shells.bak
 EOD

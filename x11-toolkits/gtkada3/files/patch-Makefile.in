@@ -1,26 +1,21 @@
---- Makefile.in.orig	2015-06-01 14:38:17 UTC
+--- Makefile.in.orig	2016-05-12 07:43:49 UTC
 +++ Makefile.in
-@@ -70,7 +70,7 @@ all: tools tests
- static: build_library_type/static
- relocatable: build_library_type/relocatable
- 
--tools:
-+tools: src/gtkada-intl.adb
- 	@echo "====== Building tools ====="
- 	${GPRBUILD_FULL} -XLIBRARY_TYPE=static -Psrc/tools/tools.gpr
- 
-@@ -142,11 +142,11 @@ ifeq (${HAVE_OPENGL},True)
+@@ -93,7 +93,7 @@ install/%: force
+ ifeq (${HAVE_OPENGL}, True)
+ 	${GPRINSTALL_FULL} -XLIBRARY_TYPE=$(@F) --build-name=$(@F) \
+ 		--sources-subdir=include/gtkada/gtkada_gl.$(@F) \
+-		--lib-subdir=${libdir}/gtkada/gtkada_gl.$(@F) \
++		--lib-subdir=lib/gtkada/gtkada_gl.$(@F) \
+ 		-Psrc/opengl/gtkada_gl.gpr
  endif
  
- 	@# install executables
--	${INSTALL_PROGRAM} src/tools/gtkada-config ${bindir}
--	${INSTALL_PROGRAM} src/obj/tools/gtkada-dialog${EXEEXT} ${bindir}
-+	${BSD_INSTALL_SCRIPT} src/tools/gtkada-config ${bindir}
-+	${BSD_INSTALL_PROGRAM} src/obj/tools/gtkada-dialog${EXEEXT} ${bindir}
+@@ -106,9 +106,6 @@ endif
+ install: install-clean
+ 	${GPRINSTALL_FULL} -XLIBRARY_TYPE=$(LIBRARY_TYPE_FOR_TOOLS) \
+ 		--mode=usage -Psrc/tools/tools.gpr
+-	cd testgtk; ${GPRINSTALL_FULL} -XLIBRARY_TYPE=$(LIBRARY_TYPE_FOR_TOOLS) \
+-		--mode=usage --exec-subdir=${exampledir} \
+-		-Ptestgtk.gpr -aP ../src
  
- 	@# install testgtk
--	-${INSTALL_PROGRAM} testgtk/testgtk${EXEEXT} ${exampledir}
-+	-${BSD_INSTALL_PROGRAM} testgtk/testgtk${EXEEXT} ${exampledir}
- 	${CP} testgtk/*.ad? testgtk/*.xpm testgtk/*.png testgtk/*.gif testgtk/*.lwo testgtk/*.xml testgtk/*.css testgtk/*.ui ${exampledir}
- 
- 	$(MAKE) -C $(projects_dir) install
+ 	@echo '-----------------------------------------------------------------------'
+ 	@echo '--  GtkAda has now been installed.                                   --'

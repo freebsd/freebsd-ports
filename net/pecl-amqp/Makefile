@@ -3,7 +3,7 @@
 
 PORTNAME=	amqp
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,9 +15,7 @@ COMMENT=	PHP extension for AMQP API
 
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
-PHP_MODNAME=	${PORTNAME}
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

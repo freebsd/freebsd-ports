@@ -1,9 +1,8 @@
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES+=	php:ext
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
-PHP_DEFAULT=	5.6
+PHP_VER=	56
 IGNORE_WITH_PHP=	55 70
 
 EXTSUBDIR=	${DISTNAME}/ext/${PHP_MODNAME}
@@ -218,6 +217,8 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
+# This is needed by Zend extensions, keep before everything.
+PHP_MOD_PRIO=	10
 CONFIGURE_ARGS+=--enable-opcache
 .endif
 
@@ -232,8 +233,7 @@ CONFIGURE_ARGS+=--enable-pdo
 .if ${PHP_MODNAME} == "pdo_dblib"
 CONFIGURE_ARGS+=--with-pdo-dblib=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 
 OPTIONS_DEFINE=	MSSQL
 
@@ -243,8 +243,7 @@ MSSQL_DESC=	Enable Microsoft SQL Server support
 .if ${PHP_MODNAME} == "pdo_firebird"
 CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 
 USES+=		firebird
 .endif
@@ -255,16 +254,14 @@ OPTIONS_DEFAULT=MYSQLND
 
 MYSQLND_DESC=	Use MySQL Native Driver
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_pgsql"
@@ -272,16 +269,14 @@ USES+=		pgsql
 
 CONFIGURE_ARGS+=--with-pdo-pgsql=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_sqlite"
 USES+=		sqlite
 CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pgsql"
@@ -294,8 +289,7 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 CONFIGURE_ARGS+=--enable-phar \
 		--with-pcre-dir=${LOCALBASE}
 
-USE_PHP=	hash
-USE_PHP_BUILD=	yes
+USE_PHP=	hash:build
 .endif
 
 .if ${PHP_MODNAME} == "posix"
@@ -306,10 +300,6 @@ CONFIGURE_ARGS+=--enable-posix
 LIB_DEPENDS+=	libaspell.so:textproc/aspell
 
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
-
-# Ugly hack to load session before psell to avoid crashes
-USE_PHP=	session
-USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "readline"
@@ -325,6 +315,7 @@ CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
 
 .if ${PHP_MODNAME} == "session"
 CONFIGURE_ARGS+=--enable-session
+PHP_MOD_PRIO=	18
 .endif
 
 .if ${PHP_MODNAME} == "shmop"
@@ -356,9 +347,6 @@ CONFIGURE_ARGS+=--enable-soap \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
-
-USE_PHP=	session
-USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "sockets"
@@ -404,8 +392,7 @@ CONFIGURE_ARGS+=--enable-wddx \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	xml session
-USE_PHP_BUILD=	yes
+USE_PHP=	xml:build session:build
 .endif
 
 .if ${PHP_MODNAME} == "xml"
@@ -421,8 +408,7 @@ CONFIGURE_ARGS+=--enable-xmlreader \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	dom
-USE_PHP_BUILD=	yes
+USE_PHP=	dom:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlrpc"
@@ -435,8 +421,7 @@ USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc
 
-USE_PHP=	xml
-USE_PHP_BUILD=	yes
+USE_PHP=	xml:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlwriter"
@@ -450,8 +435,7 @@ USE_GNOME=      libxml2
 CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 
 USE_GNOME=	libxslt
-USE_PHP=	dom xml
-USE_PHP_BUILD=	yes
+USE_PHP=	dom:build xml:build
 .endif
 
 .if ${PHP_MODNAME} == "zip"
@@ -467,7 +451,7 @@ CONFIGURE_ARGS+=--enable-zip \
 CONFIGURE_ARGS+=--with-zlib=/usr
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PHP_MODNAME} == "dba"
 .	if empty(PORT_OPTIONS:MCDB)
@@ -476,7 +460,7 @@ CONFIGURE_ARGS+=--without-cdb
 .	if ${PORT_OPTIONS:MDB4}
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 
-USE_BDB=		40+
+USES+=			bdb
 WITH_BDB_HIGHEST=	yes
 .	endif
 .	if ${PORT_OPTIONS:MGDBM}
@@ -501,6 +485,42 @@ CONFIGURE_ARGS+=--disable-inifile
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
+
+.if ${PHP_MODNAME} == "mysql"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-mysql=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USES+=	mysql
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "mysqli"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-mysqli=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
+
+USES+=	mysql
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_mysql"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
+
+USE_PHP+=	mysql
+.	else
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USES+=	mysql
+.	endif
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MT1LIB}
@@ -543,27 +563,6 @@ CONFIGURE_ARGS+=--disable-mbregex
 .	endif
 .endif
 
-.if ${PHP_MODNAME} == "mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysql=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "mysqli"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysqli=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-
-USE_MYSQL=	yes
-.	endif
-.endif
-
 .if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
@@ -574,19 +573,6 @@ post-extract:
 LIB_DEPENDS+=	libsybdb.so:databases/freetds
 .	else
 LIB_DEPENDS+=	libct.so:databases/freetds
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-
-USE_PHP+=	mysql
-.	else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
 .	endif
 .endif
 

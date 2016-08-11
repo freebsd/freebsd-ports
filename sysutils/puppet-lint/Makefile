@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet-lint
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/puppet-lint
 NO_ARCH=	yes
 

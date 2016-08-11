@@ -1,9 +1,9 @@
 include/tclreadline.h
-lib/libtclreadline-%%VERSION%%.so
+lib/libtclreadline-%%PORTVERSION%%.so
 lib/libtclreadline.a
 lib/libtclreadline.so
-lib/tclreadline%%VERSION%%/pkgIndex.tcl
-lib/tclreadline%%VERSION%%/tclreadlineCompleter.tcl
-lib/tclreadline%%VERSION%%/tclreadlineInit.tcl
-lib/tclreadline%%VERSION%%/tclreadlineSetup.tcl
+lib/%%TCL_PKG%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/tclreadlineCompleter.tcl
+lib/%%TCL_PKG%%/tclreadlineInit.tcl
+lib/%%TCL_PKG%%/tclreadlineSetup.tcl
 man/mann/tclreadline.n.gz

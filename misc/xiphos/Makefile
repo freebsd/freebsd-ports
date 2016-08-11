@@ -23,7 +23,8 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
 USES=		gettext pkgconfig waf
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtkhtml4 intlhack gtk30 gconf2 libgsf
+USE_GNOME=	gtkhtml4 intlhack gtk30 gconf2 libgsf \
+		gtk-update-icon-cache
 
 OPTIONS_DEFINE=	DOCS
 

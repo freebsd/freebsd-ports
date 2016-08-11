@@ -1,8 +1,11 @@
 sheerdns is a master DNS server whose zone records are stored on a
-One-Record-Per-File bases. Because of this, sheerdns is the simplest of any DNS
-to configure, the easiest to update, and the most efficient for networks that
-experience a lot of updates (for example master servers for dynamic IP address
-ranges). You never have to restart sheerdns; any updates are available
-immediately without having to notify the sheerdns process.
+one-record-per-file bases. Because of this, sheerdns is likely the
+simplest DNS to configure, use, update, and operate. It's especially
+efficient for networks with frequent updates -- serving DHCP, for example.
+Updates to the zones are immediate, and do not require restarting sheerdns.
 
-WWW: http://threading.2038bug.com/sheerdns/
+SheerDNS is a good candidate for creating and RBL for mail, or web sites,
+as well as for providing DNS on embeded systems. Or anything else that
+requires a fast DNS, with very low overhead.
+
+WWW: http://BSDforge.com/projects/dns/sheerdns/

@@ -38,7 +38,7 @@ do-install:
 	${LN} -sf libcl.so.3 ${STAGEDIR}${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${STAGEDIR}${PREFIX}/include
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

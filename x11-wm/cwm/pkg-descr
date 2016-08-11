@@ -1,8 +1,8 @@
-cwm is a window manager for X11 initially inspired by evilwm. cwm has several 
-novel features, including the ability to search for windows. it features a 
+cwm is a window manager for X11 initially inspired by evilwm. cwm has several
+novel features, including the ability to search for windows. it features a
 very simple and attractive aesthetic.
 
-This port is based on OpenBSD's continued work on cwm, as development on the 
+This port is based on OpenBSD's continued work on cwm, as development on the
 project seems to have halted.
 
 WWW: http://monkey.org/~marius/pages/?page=cwm

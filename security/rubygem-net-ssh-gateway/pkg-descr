@@ -1,6 +1,6 @@
-Net::SSH::Gateway is a library for programmatically tunneling connections to 
-servers via a single "gateway" host. It is useful for establishing Net::SSH 
-connections to servers behind firewalls, but can also be used to forward ports 
+Net::SSH::Gateway is a library for programmatically tunneling connections to
+servers via a single "gateway" host. It is useful for establishing Net::SSH
+connections to servers behind firewalls, but can also be used to forward ports
 and establish connections of other types, like HTTP, to servers with i
 restricted access.
 

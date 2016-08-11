@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://linalg.org/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for dense linear algebra over word-size finite fields
 
 LICENSE=	LGPL20

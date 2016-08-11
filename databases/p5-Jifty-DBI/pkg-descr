@@ -1,7 +1,7 @@
 Jifty::DBI deals with databases, so that you don't have to.
 
 This module provides an object-oriented mechanism for retrieving and
-updating data in a DBI-accesible database. 
+updating data in a DBI-accesible database.
 
 This module is the direct descendent of DBIx::SearchBuilder. If you're
 familiar with SearchBuilder, Jifty::DBI should be quite familiar to you.

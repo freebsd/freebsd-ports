@@ -2,6 +2,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt

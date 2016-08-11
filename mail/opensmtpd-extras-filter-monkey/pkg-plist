@@ -1,0 +1,4 @@
+@sample etc/mail/filter-monkey.conf.sample
+libexec/opensmtpd/filter-monkey
+man/man5/filter-monkey.conf.5.gz
+man/man8/filter-monkey.8.gz

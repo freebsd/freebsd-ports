@@ -1,0 +1,11 @@
+--- configure.orig	2013-07-31 23:52:52 UTC
++++ configure
+@@ -14753,7 +14753,7 @@ $as_echo_n "checking for HDF5 software..
+ 
+     if test "x$HDF5_DIR" != "x" -a "x$HDF5_DIR" != "xyes"
+     then
+-        HDF5_CFLAGS="-I${HDF5_DIR}/include"
++        HDF5_CFLAGS="-I${HDF5_DIR}/include -DH5_USE_18_API"
+         if test "$acl_libdirstem" != "lib" -a -d "${HDF5_DIR}/$acl_libdirstem"
+         then
+             HDF5_LIBS="-L${HDF5_DIR}/$acl_libdirstem -lhdf5"

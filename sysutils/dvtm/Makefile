@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	dvtm
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Tiling window management for the console
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ncurses
 PLIST_FILES=	bin/dvtm bin/dvtm-status \

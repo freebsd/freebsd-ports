@@ -1,6 +1,6 @@
---- configure.orig	Mon Oct 13 17:05:18 2003
-+++ configure	Mon Oct 13 17:05:36 2003
-@@ -2450,7 +2450,7 @@
+--- configure.orig	2005-07-14 22:50:59 UTC
++++ configure
+@@ -2838,7 +2838,7 @@ if test -z "$GCC"; then
          case $host in
          *)
                  DEBUG="-g"
@@ -9,7 +9,7 @@
                  PROFILE="-g -p"
                  ;;
          esac
-@@ -2458,8 +2458,8 @@
+@@ -2846,8 +2846,8 @@ else
          case $host in
          *)
                  DEBUG="-g -Wall -fsigned-char"

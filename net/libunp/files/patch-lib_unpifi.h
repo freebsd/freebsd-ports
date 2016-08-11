@@ -1,5 +1,5 @@
---- lib/unpifi.h.orig	Thu Sep 30 11:13:10 1999
-+++ lib/unpifi.h	Thu Sep 30 11:13:43 1999
+--- lib/unpifi.h.orig	1997-07-13 20:44:52 UTC
++++ lib/unpifi.h
 @@ -4,7 +4,7 @@
  #ifndef	__unp_ifi_h
  #define	__unp_ifi_h

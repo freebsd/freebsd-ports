@@ -1,13 +1,5 @@
 --- moreutils-parallel.c.orig	2015-01-19 18:03:51 UTC
 +++ moreutils-parallel.c
-@@ -31,6 +31,7 @@
- #include <sys/types.h>
- #include <sys/wait.h>
- #include <unistd.h>
-+#include <signal.h>
- 
- #ifdef __sun
- # include <sys/loadavg.h> /* getloadavg() */
 @@ -112,6 +113,7 @@ void exec_child(char **command, char **a
  	return;
  }

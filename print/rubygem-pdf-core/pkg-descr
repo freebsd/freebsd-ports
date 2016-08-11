@@ -10,7 +10,7 @@ It supports several PDF features, such as among others:
  * page geometries
 
 It is used internally by Prawn (provided in the rubygems-prawn package),
-a Ruby PDF generation library. 
+a Ruby PDF generation library.
 
 WWW: http://prawnpdf.org/
 WWW: https://github.com/prawnpdf/pdf-core

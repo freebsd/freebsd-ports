@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20160107
+DISTVERSION=	alpha-20160421
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -10,12 +10,14 @@ MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tooling to access the Windows Event Log (EVT) format
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 
-LIB_DEPENDS=	libregf.so:devel/libregf
+LIB_DEPENDS=	libfwnt.so:devel/libfwnt \
+		libregf.so:devel/libregf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libregf=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} \
+		--with-libfwnt=${LOCALBASE} --with-libregf=${LOCALBASE}
 USES=		gettext libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2016-05-10 20:45:50 UTC
++++ src/Makefile.am
+@@ -4,7 +4,7 @@ RING_VIDEO_LIBS=
+ 
+ if RING_VIDEO
+ RING_VIDEO_LIBS+=./media/video/libvideo.la
+-if HAVE_LINUX
++if HAVE_FREEBSD
+ if HAVE_ANDROID
+ RING_VIDEO_LIBS+= \
+                 ./media/video/androidvideo/libandroidvideo.la

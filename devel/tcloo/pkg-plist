@@ -1,7 +1,7 @@
-lib/TclOO%%PORTVERSION%%/libTclOO.so.1
-lib/TclOO%%PORTVERSION%%/pkgIndex.tcl
-lib/TclOO%%PORTVERSION%%/tclooConfig.sh
-lib/TclOO%%PORTVERSION%%/libTclOOstub.a
+lib/%%TCL_PKG%%/libTclOO.so.1
+lib/%%TCL_PKG%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/tclooConfig.sh
+lib/%%TCL_PKG%%/libTclOOstub.a
 include/tclOO.h
 include/tclOODecls.h
 man/mann/class.n.gz

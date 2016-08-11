@@ -12,6 +12,8 @@ COMMENT=	Grassroots DICOM library
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libexpat.so:textproc/expat2
 

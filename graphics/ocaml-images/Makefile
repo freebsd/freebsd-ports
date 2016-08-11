@@ -3,7 +3,7 @@
 
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
@@ -33,7 +33,7 @@ OMAKE=		omake 'PREFIX=${STAGEDIR}${PREFIX}'
 OMARGS=		--dotomake .omake --force-dotomake
 WRKSRC=		${WRKDIR}/camlspotter-camlimages-c803efa9d5d3
 
-MAKE_JOBS_UNSAFE= yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	PNG JPEG TIFF XPM GIF FREETYPE GHOSTSCRIPT GTK2 DOCS
 OPTIONS_DEFAULT=PNG JPEG TIFF XPM GIF FREETYPE GHOSTSCRIPT
@@ -54,9 +54,10 @@ GIF_CONFIGURE_WITH=	gif
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 FREETYPE_CONFIGURE_WITH=freetype
-FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype
+FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype \
+			libfreetype.so:print/freetype2
 
-GHOSTSCRIPT_CONFIGURE_WITH= gs
+GHOSTSCRIPT_CONFIGURE_WITH=	gs
 GHOSTSCRIPT_USES=	ghostscript
 
 GTK2_CONFIGURE_WITH=	liblgtk2

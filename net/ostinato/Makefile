@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ostinato
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	net security
 MASTER_SITES=	https://bintray.com/artifact/download/pstavirs/ostinato/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		qmake
-USE_QT4=	gui moc_build rcc_build uic_build network script \
+USE_QT4=	corelib gui moc_build rcc_build uic_build network script \
 		xml
 
 PLIST_FILES=	bin/drone \

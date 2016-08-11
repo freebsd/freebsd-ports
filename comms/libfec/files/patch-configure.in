@@ -1,0 +1,27 @@
+--- configure.in.orig	2006-10-13 01:10:53 UTC
++++ configure.in
+@@ -38,7 +38,7 @@ AC_CANONICAL_SYSTEM
+ case $target_cpu in
+ i386|i486|i586|i686)
+ 	ARCH_OPTION="-march=$target_cpu"
+-	MLIBS="viterbi27_mmx.o mmxbfly27.o viterbi27_sse.o ssebfly27.o viterbi27_sse2.o sse2bfly27.o \
++	MLIBS="cpu_features.o viterbi27_mmx.o mmxbfly27.o viterbi27_sse.o ssebfly27.o viterbi27_sse2.o sse2bfly27.o \
+ 	viterbi29_mmx.o mmxbfly29.o viterbi29_sse.o ssebfly29.o viterbi29_sse2.o sse2bfly29.o \
+ 	viterbi39_sse2.o viterbi39_sse.o viterbi39_mmx.o \
+ 	viterbi615_mmx.o viterbi615_sse.o viterbi615_sse2.o \
+@@ -50,13 +50,13 @@ i386|i486|i586|i686)
+ 	sumsq.o sumsq_port.o \
+ 	sumsq_sse2.o sumsq_sse2_assist.o \
+ 	sumsq_mmx.o sumsq_mmx_assist.o \
+-	cpu_features.o cpu_mode_x86.o"
++	cpu_features.o"
+ 	;;
+ powerpc*)
+ 	ARCH_OPTION="-fno-common -faltivec"
+ 	MLIBS="viterbi27_av.o viterbi29_av.o viterbi39_av.o viterbi615_av.o \
+ 	encode_rs_av.o \
+-	dotprod_av.o sumsq_av.o peakval_av.o cpu_mode_ppc.o"
++	dotprod_av.o sumsq_av.o peakval_av.o"
+ 	;;
+ *)
+ 	MLIBS=

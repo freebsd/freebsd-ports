@@ -1,20 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.6
-PORTREVISION=	2
+PORTVERSION=	11.7
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Realtime audio/video conversion library
 
 BUILD_DEPENDS=	yasm:devel/yasm
+LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+		libgmp.so:math/gmp \
+		libvdpau.so:multimedia/libvdpau \
+		libhogweed.so:security/nettle
 
 USES=		cpe gmake perl5 pkgconfig tar:xz
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+USE_XORG=	x11
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -36,7 +40,7 @@ OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC DC1394 DOCS FREETYPE 
 		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX WAVPACK WEBP X11GRAB \
 		X264 XVID ZLIB
 OPTIONS_DEFAULT=BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
-		THEORA VO_AACENC VORBIS VPX X264 XVID ZLIB
+		THEORA VAAPI VDPAU VO_AACENC VORBIS VPX X264 XVID ZLIB
 
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 ILBC_DESC=	iLBC en/decoding via libilbc
@@ -101,7 +105,7 @@ OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=			ssl
 
 OPUS_LIB_DEPENDS=		libopus.so:audio/opus
 OPUS_CONFIGURE_ENABLE=		libopus

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mfid
-PORTVERSION=	0.01
+PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+MASTER_SITES=	LOCAL/feld
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Monitoring daemon for mfi RAID controllers

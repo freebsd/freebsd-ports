@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-05-14 13:49:13.000000000 +0200
-+++ Makefile.in	2014-05-18 13:35:32.621813124 +0200
-@@ -238,55 +238,19 @@
+--- Makefile.in.orig	2010-05-14 11:49:13 UTC
++++ Makefile.in
+@@ -238,55 +238,19 @@ all: config.h
  .SUFFIXES: .c .cpp .o .obj
  am--refresh:
  	@:
@@ -27,30 +27,25 @@
 -	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
 -	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
 -	esac;
--
++$(srcdir)/Makefile.in:
+ 
 -$(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 -	$(SHELL) ./config.status --recheck
--
++Makefile:
+ 
 -$(top_srcdir)/configure:  $(am__configure_deps)
 -	$(am__cd) $(srcdir) && $(AUTOCONF)
 -$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 -	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 -$(am__aclocal_m4_deps):
--
++$(top_builddir)/config.status:
+ 
 -config.h: stamp-h1
 -	@if test ! -f $@; then \
 -	  rm -f stamp-h1; \
 -	  $(MAKE) $(AM_MAKEFLAGS) stamp-h1; \
 -	else :; fi
-+$(srcdir)/Makefile.in:
-+
-+Makefile:
-+
-+$(top_builddir)/config.status:
-+
 +$(top_srcdir)/configure:
-+
-+config.h:
  
 -stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
 -	@rm -f stamp-h1
@@ -59,6 +54,8 @@
 -	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 -	rm -f stamp-h1
 -	touch $@
++config.h:
++
 +stamp-h1:
  
  distclean-hdr:

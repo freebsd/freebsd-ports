@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	0.15.1
+PORTVERSION=	16.0.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:security/py-cryptography
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=		cpe python
-USE_PYTHON=	distutils autoplist pythonprefix
+USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
 CPE_VENDOR=	jean-paul_calderone
 CPE_PRODUCT=	py${PORTNAME}

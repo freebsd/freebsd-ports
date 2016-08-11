@@ -22,7 +22,7 @@ PLIST_FILES=	bin/larsclock bin/larsmenu bin/larsremote bin/larswm \
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} $(WRKSRC)/${file} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

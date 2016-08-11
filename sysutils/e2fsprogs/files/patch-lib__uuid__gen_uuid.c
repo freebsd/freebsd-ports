@@ -1,6 +1,6 @@
---- lib/uuid/gen_uuid.c.orig	2014-07-03 14:33:48 UTC
+--- lib/uuid/gen_uuid.c.orig	2016-03-21 17:21:03 UTC
 +++ lib/uuid/gen_uuid.c
-@@ -91,6 +91,7 @@
+@@ -92,6 +92,7 @@
  #ifdef HAVE_SYS_RESOURCE_H
  #include <sys/resource.h>
  #endif
@@ -8,7 +8,7 @@
  
  #include "uuidP.h"
  #include "uuidd.h"
-@@ -300,6 +301,28 @@
+@@ -301,6 +302,28 @@ static int get_node_id(unsigned char *no
  		}
  	}
  	close(sd);

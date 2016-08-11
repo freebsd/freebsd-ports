@@ -8,10 +8,10 @@ lib/cmake/clFFT/clFFTTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/clFFT/clFFTTargets.cmake
 lib/libStatTimer.so
 lib/libStatTimer.so.2
-lib/libStatTimer.so.2.10.1
+lib/libStatTimer.so.2.12.0
 lib/libclFFT.so
 lib/libclFFT.so.2
-lib/libclFFT.so.2.10.1
+lib/libclFFT.so.2.12.0
 share/clFFT/examples/fft1d
 share/clFFT/examples/fft1d.c
 share/clFFT/examples/fft2d

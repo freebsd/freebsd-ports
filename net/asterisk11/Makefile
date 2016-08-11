@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.22.0
+PORTVERSION=	11.23.0
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
-MASTER_SITE_SUBDIR=	asterisk/:main \
-			asterisk/old-releases/:main \
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
+MASTER_SITE_SUBDIR=	asterisk/ \
+			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	11
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
@@ -20,15 +20,16 @@ EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
 
-USES=		bison cpe gmake iconv localbase ncurses shebangfix sqlite
+USES=		bison cpe gmake iconv localbase ncurses shebangfix \
+		sqlite ssl
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	asterisk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-crypto=${OPENSSLBASE} \
+CONFIGURE_ARGS+=	--with-ilbc=internal \
+			--with-crypto=${OPENSSLBASE} \
 			--with-ssl=${OPENSSLBASE}
 
 CPE_VENDOR=	digium
@@ -53,7 +54,7 @@ OPTIONS_DEFINE=			BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
 				MP3PLAYER OOH323 RADIUS SNMP SPANDSP SRTP \
 				SYSINFO UUID XMPP
 OPTIONS_DEFAULT=		BACKTRACE CURL FREETDS GSM LUA MP3PLAYER \
-				NEWT ODBC PGSQL RADIUS SNMP SPANDSP SPEEX \
+				NEWT MYSQL ODBC PGSQL RADIUS SNMP SPANDSP SPEEX \
 				SQLITE2 UUID VORBIS
 
 OPTIONS_DEFINE_i386=		DAHDI
@@ -116,10 +117,9 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 DAHDI_CONFIGURE_ON=	--with-dahdi --with-openr2
 DAHDI_CONFIGURE_OFF=	--without-dahdi --without-openr2
-DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:misc/libpri \
-			${LOCALBASE}/include/dahdi/user.h:misc/dahdi
 DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
-			libopenr2.so:misc/openr2
+			libopenr2.so:misc/openr2 \
+			libtonezone.so:misc/dahdi
 
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
 EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon
@@ -142,7 +142,7 @@ LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 
 MYSQL_CONFIGURE_WITH=	mysqlclient
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 
 MP3PLAYER_RUN_DEPENDS=	mpg123:audio/mpg123
 
@@ -264,7 +264,11 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 
 	(cd ${STAGEDIR} && \
+		${ECHO} "@owner ${ASTERISK_USER}" >> ${TMPPLIST} && \
+		${ECHO} "@group ${ASTERISK_GROUP}" >> ${TMPPLIST} && \
 		${FIND} var/spool/${PORTNAME}/voicemail/default -type f | ${SED} "s,^,/," >> ${TMPPLIST} && \
-		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST});
+		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST} && \
+		${ECHO} "@owner" >> ${TMPPLIST} && \
+		${ECHO} "@group" >> ${TMPPLIST});
 
 .include <bsd.port.post.mk>

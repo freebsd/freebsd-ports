@@ -1,21 +1,21 @@
-This module provides an implementation of OpenURLs encoded as URIs 
-(Key/Encoded-Value (KEV) Format), this forms only a part of the OpenURL 
-spec. It does not check that OpenURLs constructed are sane according to 
-the OpenURL specification (to a large extent sanity will depend on the 
+This module provides an implementation of OpenURLs encoded as URIs
+(Key/Encoded-Value (KEV) Format), this forms only a part of the OpenURL
+spec. It does not check that OpenURLs constructed are sane according to
+the OpenURL specification (to a large extent sanity will depend on the
 community of use).
 
 From the implementation guidelines:
 
-The description of a referenced resource, and the descriptions of the 
-associated resources that comprise the context of the reference, bundled 
-together are called a ContextObject. It is a ContextObject that is 
-transported when a user makes a request by clicking a link. A KEV OpenURL 
+The description of a referenced resource, and the descriptions of the
+associated resources that comprise the context of the reference, bundled
+together are called a ContextObject. It is a ContextObject that is
+transported when a user makes a request by clicking a link. A KEV OpenURL
 may contain only one ContextObject.
 
-The ContextObject may contain up to six Entities. One of these, the 
-Referent, conveys information about the referenced item. It must always be 
-included in a ContextObject. The other five entities - ReferringEntity, 
-Requester, Resolver, ServiceType and Referrer - hold information about the 
+The ContextObject may contain up to six Entities. One of these, the
+Referent, conveys information about the referenced item. It must always be
+included in a ContextObject. The other five entities - ReferringEntity,
+Requester, Resolver, ServiceType and Referrer - hold information about the
 context of the reference and are optional.
 
 WWW: http://search.cpan.org/dist/URI-OpenURL/

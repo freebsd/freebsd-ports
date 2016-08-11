@@ -1,28 +1,28 @@
 
-Preparing the database 
+Preparing the database
 ---------------------------------------------
 
-Connect to your MySQL database server using your favorite client. Create a 
-database with UTF8 charset and connect user with the data you had entered 
-into the 'database' array of your 'config.inc.php': 
+Connect to your MySQL database server using your favorite client. Create a
+database with UTF8 charset and connect user with the data you had entered
+into the 'database' array of your 'config.inc.php':
 
 mysql> CREATE DATABASE tine20db DEFAULT CHARACTER SET 'UTF8';
-mysql> GRANT ALL PRIVILEGES ON tine20db.* TO 'tine20user'@'localhost'  
+mysql> GRANT ALL PRIVILEGES ON tine20db.* TO 'tine20user'@'localhost'
 IDENTIFIED BY 'tine20pw';
 
-The first command creates the database 'tine20db'. The second one adds an 
+The first command creates the database 'tine20db'. The second one adds an
 user 'tine20user' with password 'tine20pw' and all privileges on the previously
 created database. Connections of that user are allowed only from from localhost.
 
 
-Start the setup GUI 
+Start the setup GUI
 ---------------------------------------------
 
-Open your favorite web browser and go to: 
+Open your favorite web browser and go to:
 
-http://your_webserver/path_to_tine/setup.php 
+http://your_webserver/path_to_tine/setup.php
 
-Log in with the username/password you filled into 
+Log in with the username/password you filled into
 the 'setupuser' array of your config.inc.php.
 
 

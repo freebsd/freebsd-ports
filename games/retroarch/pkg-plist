@@ -1,9 +1,7 @@
 bin/retroarch
 bin/retroarch-cg2glsl
-bin/retroarch-joyconfig
 etc/retroarch.cfg
 man/man1/retroarch-cg2glsl.1.gz
-man/man1/retroarch-joyconfig.1.gz
 man/man1/retroarch.1.gz
-share/pixmaps/retroarch.png
 share/pixmaps/retroarch.svg
+share/applications/retroarch.desktop

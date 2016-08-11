@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	symon
-PORTVERSION=	2.86
-PORTREVISION=	3
+PORTVERSION=	2.87
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs

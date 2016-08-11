@@ -10,6 +10,8 @@ MASTER_SITES=	http://hyperelliptic.org/nacl/
 MAINTAINER= 	johans@FreeBSD.org
 COMMENT=	High speed cryptography library
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:bzip2
 ALL_TARGET=	do
 USE_BINUTILS=	yes

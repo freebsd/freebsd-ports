@@ -1,5 +1,5 @@
---- mod.c.orig	Sun Oct 22 04:13:23 1995
-+++ mod.c	Sat Jan 27 15:04:15 2001
+--- mod.c.orig	1995-10-21 19:13:23 UTC
++++ mod.c
 @@ -11,7 +11,7 @@
  
  
@@ -9,7 +9,7 @@
  #include "gus.h"
  #endif /* GUS */
  
-@@ -130,8 +130,10 @@
+@@ -130,8 +130,10 @@ void beattrack(register track_info_ptr t
      /* Portamento Down */
      if ((track->period += track->port_down) > track->period_high_limit)
        track->period = track->period_high_limit;

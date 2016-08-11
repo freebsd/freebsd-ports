@@ -10,6 +10,8 @@ MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libevent.so:devel/libevent2 \

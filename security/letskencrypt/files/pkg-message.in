@@ -1,0 +1,28 @@
+
+There are example scripts in
+%%PREFIX%%/etc/letsencrypt
+that you can for renewing and deploying multiple certificates
+
+In order to run the script regularly to update
+the certificates add this line to /etc/periodic.conf
+
+weekly_letskencrypt_enable="YES"
+
+Additionally the following parameters can be added to
+/etc/periodic.conf (showing default values):
+
+To specify the domain name(s) to include in the certificate
+weekly_letskencrypt_domains="$(hostname -f)"
+
+To specify the .well-known/acme-challenge directory (full path)
+weekly_letskencrypt_challengedir="/usr/local/www/letsencrypt"
+
+To set additional letskencrypt arguments (see letskencrypt(1))
+weekly_letskencrypt_args=""
+
+To run a specific script for the renewal (ignore previously set variables)
+allows generating/renewing multiple keys/certificates
+weekly_letskencrypt_renewscript=""%%PREFIX%%/etc/letsencrypt/%%PORTNAME%%.sh"
+
+To run a script after the renewal to deploy changed certs
+weekly_letskencrypt_deployscript="%%PREFIX%%/etc/letsencrypt/deploy.sh"

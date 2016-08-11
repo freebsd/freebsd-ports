@@ -11,6 +11,8 @@ COMMENT=	Web-based firewall log analyzer
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=		MYSQL MYSQLIPV6 PGSQL DOCS
 OPTIONS_DEFAULTS=	MYSQL MYSQLIPV6
 
@@ -77,7 +79,7 @@ do-install:
 	@${ECHO} "Installed mysql shared library in ${MYSQL_PLUGIN_DIR}"
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/mysql
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pgsql
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/examples

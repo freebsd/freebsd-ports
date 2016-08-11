@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Webmail system which access POP3 and IMAP mail servers
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS
 
 USE_PHP=	ctype iconv imap mbstring pcre session

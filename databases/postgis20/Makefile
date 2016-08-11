@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c \
 		libproj.so:graphics/proj
 
-CONFLICTS_INSTALL=	postgis-1.* postgis-2.1.*
+CONFLICTS_INSTALL=	postgis-2.1.* postgis22-*
 
 OPTIONS_DEFINE=	LOADERGUI NLS RASTER TOPOLOGY
 OPTIONS_DEFAULT=TOPOLOGY

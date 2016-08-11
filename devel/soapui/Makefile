@@ -4,13 +4,17 @@
 PORTNAME=	soapui
 PORTVERSION=	5.2.1
 CATEGORIES=	devel java www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Web service, SOA, and SOAP testing tool
 
-LICENSE=	GPLv2
+LICENSE=	EUPL LGPL21 LGPL3 APACHE11 APACHE20 BSD3CLAUSE MPL MIT CPL
+LICENSE_COMB=	multi
+LICENSE_NAME_EUPL=European Union Public Licence V. 1.1
+LICENSE_FILE_EUPL=${WRKSRC}/LICENSE.txt
+LICENSE_PERMS_EUPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_VENDOR=	smartbear
@@ -19,6 +23,7 @@ WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -27,23 +32,21 @@ post-patch:
 		/-Dsoapui\.jxbrowser\.disable=true/s/^#// ; \
 		s|^java |exec ${JAVA} | ; /^cd $$DIRNAME/d' ${WRKSRC}/bin/*.sh
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for dir in bin lib
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} Tutorials ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.	for i in README.md RELEASENOTES.txt
-		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
-.	endfor
+.for i in README.md RELEASENOTES.txt
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+.endfor
 	cd ${WRKSRC} && ${COPYTREE_SHARE} licenses ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

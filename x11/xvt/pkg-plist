@@ -1,6 +1,6 @@
 @mode 4711
 bin/xvt
-bin/xvt-3.0.0
+bin/xvt-3.0.1
 @mode
 include/xvtlib.h
 lib/libxvt.a

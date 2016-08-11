@@ -1,6 +1,6 @@
---- ./configure.orig	2004-02-17 17:09:31.000000000 -0500
-+++ ./configure	2012-03-06 14:46:40.000000000 -0500
-@@ -24258,6 +24258,7 @@
+--- configure.orig	2004-02-17 22:09:31 UTC
++++ configure
+@@ -24258,6 +24258,7 @@ _ACEOF
        ;;
      freebsd*)
        ZINF_OS="freebsd";
@@ -8,7 +8,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define ZINF_OS_BSD 1
-@@ -26886,231 +26887,6 @@
+@@ -26886,231 +26887,6 @@ if test x$musicbrainz_prefix != x ; then
  
  fi
  
@@ -240,7 +240,7 @@
  if test "$MUSICBRAINZ_LIBS" != ""; then
    have_mb=yes
  else
-@@ -27120,26 +26896,6 @@
+@@ -27120,26 +26896,6 @@ fi
  LIBS="$ac_orig_LIBS"
  CPPFLAGS="$ac_orig_CPPFLAGS"
  

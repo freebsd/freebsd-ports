@@ -12,12 +12,3 @@
  # Unicode Specification reader used to regenerate unidata-*.cpp.
  #
  uniread_TEMPLATE = VBoxBldProg
-@@ -1004,7 +1009,7 @@
- 	r3/posix/RTMemProtect-posix.cpp \
- 	r3/posix/RTPathUserHome-posix.cpp \
- 	r3/posix/RTSystemQueryOSInfo-posix.cpp \
--	r3/posix/RTSystemQueryTotalRam-posix.cpp \
-+	r3/freebsd/RTSystemQueryTotalRam-freebsd.cpp \
- 	r3/posix/RTTimeNow-posix.cpp \
- 	r3/posix/RTTimeSet-posix.cpp \
- 	r3/posix/dir-posix.cpp \

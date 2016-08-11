@@ -1,6 +1,6 @@
 Check MANIFEST.in in a Python source package for completeness.
 
- - Are you a Python developer? 
+ - Are you a Python developer?
  - Have you uploaded packages to the Python PackageIndex?
  - Have you accidentally uploaded broken packages with some files missing?
 

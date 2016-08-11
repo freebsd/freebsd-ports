@@ -11,19 +11,19 @@ MASTER_SITES=	http://www.shiftygames.com/concentration/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Find all matching pairs of icons as fast as possible
 
-GNU_CONFIGURE=	yes
-USES=		gmake
-USE_SDL=	sdl mixer image ttf
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CPPFLAGS+=	`${SDL_CONFIG} --cflags`
-LDFLAGS+=	`${SDL_CONFIG} --libs`
+USES=		gmake localbase
+GNU_CONFIGURE=	yes
+USE_SDL=	sdl mixer image ttf
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz
 PORTDATA=	*
 
 DESKTOP_ENTRIES="Concentration" \
-		"${COMMENT}" \
+		"" \
 		"${DATADIR}/pics/cover.png" \
 		"${PORTNAME}" \
 		"Game;LogicGame;" \

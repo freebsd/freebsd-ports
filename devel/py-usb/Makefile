@@ -17,7 +17,6 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	walac
 GH_PROJECT=	py${PORTNAME}
-GH_TAGNAME=	0546cad
 
 PORTDOCS=	*.rst
 

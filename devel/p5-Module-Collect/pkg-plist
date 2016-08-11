@@ -2,5 +2,4 @@
 %%SITE_PERL%%/Module/Collect.pm
 %%SITE_PERL%%/Module/README.pod
 %%PERL5_MAN3%%/Module::Collect.3.gz
-%%PERL5_MAN3%%/Module::README.3.gz
 %%PERL5_MAN3%%/Module::Collect::Package.3.gz

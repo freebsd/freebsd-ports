@@ -1,12 +1,12 @@
 Origami is NOT a PDF rendering library.  It aims at providing a scripting tool
 to generate and analyze malicious PDF files.  As well, it can be used to create
 on-the-fly customized PDFs, or to inject (evil) code into already existing
-documents. 
-- Create PDF documents from scratch. 
-- Parse existing documents, modify them and recompile them. 
+documents.
+- Create PDF documents from scratch.
+- Parse existing documents, modify them and recompile them.
 - Explore documents at the object level, going deep into the document
   structure, uncompressing PDF object streams and desobfuscating names and
-  strings. 
+  strings.
 - High-level operations, such as encryption/decryption, signature, file
   attachments...
 - A GTK interface to quickly browse into the document contents.

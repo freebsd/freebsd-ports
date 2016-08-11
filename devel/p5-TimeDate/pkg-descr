@@ -6,7 +6,7 @@ The parser contained here will only parse absolute dates, if you want a date
 parser that can parse relative dates then take a look at the
 Time modules by David Muir on CPAN.
 
-The file Local.pm.new which is included in this distribution is a patched 
+The file Local.pm.new which is included in this distribution is a patched
 version of Time::Local which comes with perl. It fixes two problems
 
     - It determines the zone offset based on now rather than epoch

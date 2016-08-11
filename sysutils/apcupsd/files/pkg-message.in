@@ -10,7 +10,7 @@ Sample files are installed in %%ETCDIR%%. These files
 must be copied and/or configured for a proper working apcupsd.
 You need to modify %%ETCDIR%%/apcupsd.conf as follows:
 
-  For serial cable: DEVICE /dev/cuadX (or /dev/cuaaX for [45.]x) 
+  For serial cable: DEVICE /dev/cuadX (or /dev/cuaaX for [45.]x)
   For USB cable: DEVICE (yes, leave it blank after DEVICE)
 
 NOTE that for USB cable you must comment out the line

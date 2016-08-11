@@ -1,4 +1,4 @@
 
-You can add the ADOdb path (%%DATADIR%%) 
+You can add the ADOdb path (%%DATADIR%%)
 to the "include_path=" directive in your php.ini
 

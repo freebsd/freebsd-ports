@@ -13,13 +13,11 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-sexp_processor>=4.1:devel/rubygem-sexp_processor
 
-USES=		shebangfix
-USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/ruby_parse*
 
-RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ruby_parse \
 		bin/ruby_parse_extract_error
 

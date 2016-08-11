@@ -20,6 +20,7 @@
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
+    SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-VGAM
@@ -34,16 +35,19 @@
     SUBDIR += R-cran-forecast
     SUBDIR += R-cran-fracdiff
     SUBDIR += R-cran-geepack
+    SUBDIR += R-cran-gmp
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-igraph
+    SUBDIR += R-cran-influenceR
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-lazyeval
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-maxLik
+    SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-miscTools
@@ -94,6 +98,7 @@
     SUBDIR += blitz++
     SUBDIR += blocksolve95
     SUBDIR += bsdnt
+    SUBDIR += cadabra2
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool
@@ -122,7 +127,6 @@
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += cvc3
-    SUBDIR += dcdflib
     SUBDIR += diehard
     SUBDIR += dieharder
     SUBDIR += djbfft
@@ -154,7 +158,6 @@
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
     SUBDIR += freemat
-    SUBDIR += fricas
     SUBDIR += fxt
     SUBDIR += galculator
     SUBDIR += gambit
@@ -246,7 +249,6 @@
     SUBDIR += libjbigi
     SUBDIR += liblbfgs
     SUBDIR += libmissing
-    SUBDIR += libneural
     SUBDIR += libocas
     SUBDIR += liborigin
     SUBDIR += libproj4
@@ -399,7 +401,6 @@
     SUBDIR += octave-forge-zeromq
     SUBDIR += ogdf
     SUBDIR += oleo
-    SUBDIR += open-axiom
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
@@ -595,10 +596,14 @@
     SUBDIR += py-fpconst
     SUBDIR += py-gato
     SUBDIR += py-gmpy
+    SUBDIR += py-gmpy2
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
     SUBDIR += py-gsl
     SUBDIR += py-igraph
+    SUBDIR += py-intspan
+    SUBDIR += py-keras
+    SUBDIR += py-luminol
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
     SUBDIR += py-mpmath
@@ -618,6 +623,7 @@
     SUBDIR += py-pyfst
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
+    SUBDIR += py-pysparse
     SUBDIR += py-pyvtk
     SUBDIR += py-roman
     SUBDIR += py-scientific
@@ -710,7 +716,6 @@
     SUBDIR += x12arima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
-    SUBDIR += xgobi
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas

@@ -31,11 +31,10 @@ OPTIONS_DEFINE=	LIBNOTIFY
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
-USES=		autoreconf compiler:nestedfct libtool pkgconfig
+USES=		autoreconf compiler:nestedfct libtool pkgconfig sqlite:3
 USE_GITHUB=	yes
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 
 post-patch:
 	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \

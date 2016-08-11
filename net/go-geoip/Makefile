@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-USES=		compiler
+USES=		compiler go
 USE_GITHUB=	yes
 GH_ACCOUNT=	abh
 GH_TAGNAME=	da13074
@@ -21,8 +21,9 @@ GH_TAGNAME=	da13074
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
+
 .if ${COMPILER_TYPE} == clang && ${CC} == cc
 CC=	clang
 .endif
+
 .include <bsd.port.post.mk>

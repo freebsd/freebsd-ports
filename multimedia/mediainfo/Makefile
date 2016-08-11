@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediainfo
-PORTVERSION=	0.7.82
+PORTVERSION=	0.7.85
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/${PORTNAME}/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/../../../License.html
 
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
+
+BROKEN_powerpc64=	does not build
 
 CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes

@@ -22,8 +22,7 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:net/rubygem-amqp \
 
 NO_ARCH=		yes
 USE_RUBY=		yes
-USE_RUBYGEMS=		yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES+=	bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue bin/amqp-peek bin/amqp-pop \
 		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind \

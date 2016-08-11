@@ -1,5 +1,5 @@
---- debug.c.orig	Tue Jan 12 19:59:35 1993
-+++ debug.c	Mon Aug 25 01:36:43 2003
+--- debug.c.orig	1993-01-12 18:59:35 UTC
++++ debug.c
 @@ -15,28 +15,29 @@
  
  # include <X11/Intrinsic.h>

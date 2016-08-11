@@ -1,0 +1,55 @@
+# Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
+# $FreeBSD$
+
+PORTNAME=	marisa-tire
+PORTVERSION=	0.24
+CATEGORIES=	devel
+MASTER_SITES=	GH
+
+MAINTAINER=	iblis@hs.ntnu.edu.tw
+COMMENT=	MARISA: Matching Algorithm with Recursively Implemented StorAge
+
+LICENSE=	BSD2CLAUSE LGPL21+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	s-yata
+GH_PROJECT=	marisa-trie
+GH_TAGNAME=	961ed33
+
+USES=	autoreconf libtool:build
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig
+
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	SSE2 SSE3 SSSE3 SSE4 SSE41 SSE42 SSE4A POPCNT
+
+SSE2_DESC=	Support for SSE2
+SSE2_CONFIGURE_ENABLE=	sse2
+
+SSE3_DESC=	Support for SSE3
+SSE3_CONFIGURE_ENABLE=	sse3
+
+SSSE3_DESC=	Support for SSSE3
+SSSE3_CONFIGURE_ENABLE=	sse3
+
+SSE4_DESC=	Support for SSE4
+SSE4_CONFIGURE_ENABLE=	sse4
+
+SSE41_DESC=	Support for SSE4.1
+SSE41_CONFIGURE_ENABLE=	sse4.1
+
+SSE42_DESC=	Support for SSE4.2
+SSE42_CONFIGURE_ENABLE=	sse4.2
+
+SSE4A_DESC=	Support for SSE4a
+SSE4A_CONFIGURE_ENABLE=	sse4a
+
+POPCNT_DESC=	Support for POPCNT
+POPCNT_CONFIGURE_ENABLE=	POPCNT
+
+.include <bsd.port.mk>

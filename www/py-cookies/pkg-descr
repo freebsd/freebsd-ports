@@ -1,5 +1,5 @@
 cookies.py is a Python module for working with HTTP cookies: parsing and
-rendering 'Cookie:' request headers and 'Set-Cookie:' response headers, and 
+rendering 'Cookie:' request headers and 'Set-Cookie:' response headers, and
 exposing a convenient API for creating and modifying cookies. It can be used
 as a replacement of Python's Cookie.py (aka http.cookies).
 

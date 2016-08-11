@@ -17,7 +17,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libjson-c.so:devel/json-c
 RUN_DEPENDS=	postmaster:databases/postgresql${PGSQL_VER_NODOT}-server
 
-CONFLICTS=	postgis-1.* postgis-2.0.*
+CONFLICTS=	postgis20-2.0.* postgis22-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}

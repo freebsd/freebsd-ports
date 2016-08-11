@@ -21,7 +21,6 @@ MODULENAME=	mod_antiloris
 SRC_FILE=	*.c
 SUB_FILES+=	mod_antiloris.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(SKIP_RULES)
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_antiloris.conf

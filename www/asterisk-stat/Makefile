@@ -3,13 +3,15 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.iij.ad.jp/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	ASTERISK call detail records analyzer
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 

@@ -2,7 +2,7 @@ This plugin looks for patterns in files. It is capable of detecting
 logfile rotation. If you tell it how the rotated archives look like, it
 will also examine these files. Traditional logfile plugins were not aware
 of the gap which could occur, so under some circumstances they ignored
-what had happened between their checks. In a production environment 
+what had happened between their checks. In a production environment
 this is not tolerable, that's why check_logfiles came into being.
 
 WWW: http://labs.consol.de/lang/en/nagios/check_logfiles/

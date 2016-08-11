@@ -2,7 +2,7 @@ $NetBSD: patch-ar,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/stdlib/lm_string_util.ml.orig	2008-06-28 01:21:34.000000000 +0000
+--- src/libmojave-external/stdlib/lm_string_util.ml.orig	2008-06-28 01:21:34 UTC
 +++ src/libmojave-external/stdlib/lm_string_util.ml
 @@ -613,18 +613,13 @@ let tokens_create wrap group =
   * Get the tokens list.

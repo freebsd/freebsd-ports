@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -14,9 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32 \
-		rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
-RUN_DEPENDS=	rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+RUN_DEPENDS=	rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-childprocess>=0.5.1:devel/rubygem-childprocess \
 		rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-hashicorp-checkpoint>=0.1.4:www/rubygem-hashicorp-checkpoint \
@@ -37,8 +36,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
 
 USES=		shebangfix
-SHEBANG_FILES=	scripts/bintray_upload.sh \
-		scripts/website_push_docs.sh \
+SHEBANG_FILES=	scripts/website_push_docs.sh \
 		scripts/website_push_www.sh
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem

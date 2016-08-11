@@ -6,7 +6,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/${DISTNAME}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Icon Theme
 
 LICENSE=	GPLv3

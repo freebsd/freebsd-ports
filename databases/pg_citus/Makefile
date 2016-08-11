@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	citus
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	pg_
 
@@ -15,8 +16,8 @@ LICENSE=	AGPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	citusdata
 
-USES=		gmake pgsql:9.4+ autoreconf
-WANT_PGSQL=	server
+USES=		gmake pgsql:9.4+ autoreconf readline
+WANT_PGSQL=	lib server
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip

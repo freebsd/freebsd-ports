@@ -38,7 +38,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-	$(APXS) -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
+	${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
 		-i -n 'clamav' ${WRKSRC}/.libs/mod_clamav.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
 

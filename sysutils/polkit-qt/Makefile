@@ -23,7 +23,7 @@ USE_GNOME=	glib20
 USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake:outsource tar:bzip2
+USES=		cmake:outsource pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:

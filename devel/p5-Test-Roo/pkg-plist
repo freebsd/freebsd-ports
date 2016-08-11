@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Test/Roo.pm
+%%SITE_PERL%%/Test/Roo/Class.pm
+%%SITE_PERL%%/Test/Roo/Cookbook.pm
+%%SITE_PERL%%/Test/Roo/Role.pm
+%%PERL5_MAN3%%/Test::Roo.3.gz
+%%PERL5_MAN3%%/Test::Roo::Class.3.gz
+%%PERL5_MAN3%%/Test::Roo::Cookbook.3.gz
+%%PERL5_MAN3%%/Test::Roo::Role.3.gz

@@ -5,4 +5,4 @@ dialogs. The input line has command history (up-key, down-key) and
 completion based on previous input (tab-key).
 wxMaxima provides 2d formated display of maxima output.
 
-WWW: http://wxmaxima.sourceforge.net/
+WWW: http://andrejv.github.io/wxmaxima/

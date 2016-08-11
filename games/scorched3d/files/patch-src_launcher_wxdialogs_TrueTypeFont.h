@@ -1,5 +1,5 @@
---- src/launcher/wxdialogs/TrueTypeFont.h.orig	2013-12-17 10:01:02.000000000 +0100
-+++ src/launcher/wxdialogs/TrueTypeFont.h	2013-12-17 10:01:16.000000000 +0100
+--- src/launcher/wxdialogs/TrueTypeFont.h.orig	2016-06-20 14:16:37 UTC
++++ src/launcher/wxdialogs/TrueTypeFont.h
 @@ -25,10 +25,10 @@
  #include <wx/image.h>
  #include <ft2build.h>

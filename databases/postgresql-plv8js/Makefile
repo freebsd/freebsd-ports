@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plv8js
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
@@ -15,7 +15,7 @@ LICENSE=	PostgreSQL
 LIB_DEPENDS+=	libv8.so:lang/v8
 
 WRKSRC=		${WRKDIR}/plv8-${PORTVERSION}
-USES=		gmake perl5 pgsql:9.1+
+USES=		compiler:c++11-lang gmake perl5 pgsql:9.1+
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	plv8

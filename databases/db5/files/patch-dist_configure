@@ -1,6 +1,7 @@
---- ../dist/configure.orig	Wed Dec  5 13:14:02 2001
-+++ ../dist/configure	Wed Dec  5 13:24:01 2001
-@@ -20867,8 +20867,8 @@
+--- dist/configure.orig	2013-09-09 15:35:02 UTC
++++ dist/configure
+@@ -17712,10 +17712,10 @@ LIBTOOL="./libtool"
+ INSTALLER="\$(LIBTOOL) --mode=install cp -p"
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
 -MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
@@ -10,4 +11,5 @@
 -MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
 +MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info 0:0:0"
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
+ 
  

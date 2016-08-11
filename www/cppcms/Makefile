@@ -2,7 +2,7 @@
 
 PORTNAME=	cppcms
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
@@ -10,6 +10,8 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C++ web development framework
 
 LICENSE=	LGPL3
+
+BROKEN_powerpc64=	Does not build
 
 BROKEN_FreeBSD_9=	does not build on 9.x
 

@@ -1,4 +1,4 @@
-Catalyst::Helper::Controller::Scaffold is a helper for scaffolding for 
+Catalyst::Helper::Controller::Scaffold is a helper for scaffolding for
 Catalyst, which adds easy scaffolding:
 
     # Imagine you want to generate a scaffolding controller MyApp::C::SomeTable

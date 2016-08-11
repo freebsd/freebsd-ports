@@ -1,0 +1,9 @@
+If this is a new installation, please run the follow to setup your SSL/puppetdb
+server:
+
+%%PREFIX%%/sbin/puppetdb ssl-setup
+
+Add puppetdb_enable="YES" into your rc.conf to enable.
+
+To enable communication from a FreeBSD Puppet master, install the
+puppetdb-terminus package on the master.

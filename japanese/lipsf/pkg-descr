@@ -1,4 +1,4 @@
-lipsf is a text filter which converts plain text file 
+lipsf is a text filter which converts plain text file
 to LIPS (LIPSIII is default).
 EUC and JIS KANJI codes are detected automatically.
 

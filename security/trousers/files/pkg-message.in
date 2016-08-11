@@ -1,8 +1,15 @@
-To run tcsd automatically, add the following line to /etc/rc.conf
+To run tcsd automatically, add the following line to /etc/rc.conf:
 
 tcsd_enable="YES"
 
 You might want to edit %%PREFIX%%/etc/tcsd.conf to reflect your setup.
+
+If you want to use tcsd with software TPM emulator, use the following
+configuration in /etc/rc.conf:
+
+tcsd_enable="YES"
+tcsd_mode="emulator"
+tpmd_enable="YES"
 
 To use TPM, add your_account to '%%GROUPS%%' group like following:
 

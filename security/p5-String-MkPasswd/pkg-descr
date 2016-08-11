@@ -1,5 +1,5 @@
 This Perl library defines a single function, mkpasswd(), to generate
-random passwords. The function is meant to be a simple way for 
+random passwords. The function is meant to be a simple way for
 developers and system administrators to easily generate a relatively
 secure password.
 

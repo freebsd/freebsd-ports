@@ -1,0 +1,109 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ntpa
+# REQUIRE: networking
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf to enable ntpa:
+#
+# ntpa_enable (bool):   Set to NO by default.
+#                       Set it to YES to enable ntpa.
+# ntpa_config (path):   Set to %%PREFIX%%/etc/ntpa/ntpa.conf
+#                       by default.
+# ntpa_tempdir (path):  Set to /tmp by default.
+# ntpa_user (user):     Set to ntpa by default.
+#
+# Run additional instances of ntpa with:
+# ln -s ntpa ntpa_name
+#
+
+. /etc/rc.subr
+
+# taken from security/openvpn.
+name="$file" ;
+
+case "$0" in
+/etc/rc*)
+        # during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+        # so get the name of the script from $_file
+        name="$_file"
+        ;;
+*/service)
+        # do not use this as $0
+        ;;
+*)
+        name="$0"
+        ;;
+esac
+
+# default name to "ntpa" if guessing failed
+# Trailing semicolon for service(8)'s benefit:
+name="${name:-ntpa}" ;
+name="${name##*/}"
+desc="Monitors NTP daemon"
+rcvar=${name}_enable
+
+start_cmd=ntpa_start
+stop_cmd=ntpa_stop
+reload_cmd=ntpa_reload
+
+extra_commands=reload
+
+load_rc_config ${name}
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_config:=\"%%PREFIX%%/etc/ntpa/${name}.conf\"}"
+eval ": \${${name}_tempdir:=\"/tmp/\"}"
+eval ": \${${name}_user:=\"ntpa\"}"
+
+config="$(eval echo \${${name}_config})"
+tempdir="$(eval echo \${${name}_tempdir})"
+ntpauser="$(eval echo \${${name}_user})"
+
+pid_dir=/var/run/ntpa
+pidfile="$pid_dir/${name}.pid"
+
+ntpa_start()
+{
+    if [ ! -d "$pid_dir" ]; then
+        install -m 0775 -g $ntpauser -o $ntpauser -d "$pid_dir"
+    fi
+
+    if [ -f ${pidfile} ]; then
+        rc_pid=`cat ${pidfile}`
+        echo 1>&2 "${name} already running? (pid=$rc_pid)."
+        return 1
+    else
+        echo "Starting ${name}."
+        su -m ${ntpauser} -c "sh -c '%%PREFIX%%/sbin/ntpa --config ${config} --writepid ${pidfile} --temp ${tempdir} --daemon ${name} &'"
+    fi
+}
+
+ntpa_reload()
+{
+    if [ ! -f ${pidfile} ]; then
+        _run_rc_notrunning
+        return 1
+    else
+        echo "Reloading ${name}."
+        rc_pid=`cat ${pidfile}`
+        kill -USR1 $rc_pid
+    fi
+}
+
+ntpa_stop()
+{
+    if [ ! -f ${pidfile} ]; then
+        _run_rc_notrunning
+        return 1
+    else
+        echo "Stopping ${name}."
+        rc_pid=`cat ${pidfile}`
+        kill -TERM $rc_pid
+        wait_for_pids ${rc_pid}
+    fi
+}
+
+run_rc_command "$1"

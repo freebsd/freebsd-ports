@@ -1,4 +1,4 @@
---- src/fLoTWExport.pas.orig	2015-03-04 15:17:21 UTC
+--- src/fLoTWExport.pas.orig	2016-04-20 16:06:15 UTC
 +++ src/fLoTWExport.pas
 @@ -235,7 +235,7 @@ begin
    else begin

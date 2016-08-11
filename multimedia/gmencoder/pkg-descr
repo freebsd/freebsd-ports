@@ -1,5 +1,5 @@
-Gmencoder is Gnome2 front-end to mplayer/mencoder. It supports many of the 
-output codecs as well as postprocessing, cropping, scale, subtitles ripping, 
+Gmencoder is Gnome2 front-end to mplayer/mencoder. It supports many of the
+output codecs as well as postprocessing, cropping, scale, subtitles ripping,
 1, 2 and 3 passes for encoding.
 
 WWW: http://gmencoder.sourceforge.net/

@@ -1,0 +1,11 @@
+--- resources/pivman.desktop.orig	2015-04-09 13:51:12 UTC
++++ resources/pivman.desktop
+@@ -3,7 +3,7 @@ Name=YubiKey PIV Manager
+ GenericName=YubiKey PIV Manager
+ Comment=Tool for configuring your PIV-enabled YubiKey
+ Exec=pivman
+-Icon=pivman
++Icon=yubikey-piv-manager
+ StartupNotify=false
+ Terminal=false
+ Type=Application

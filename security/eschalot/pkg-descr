@@ -1,0 +1,4 @@
+Echalot is a TOR hidden service name generator, it allows one to produce
+a (partially) customized vanity .onion address using a brute-force method.
+
+WWW: https://github.com/ReclaimYourPrivacy/eschalot

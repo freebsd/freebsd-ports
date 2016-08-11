@@ -7,6 +7,7 @@
     SUBDIR += blogbench
     SUBDIR += bonnie
     SUBDIR += bonnie++
+    SUBDIR += clpeak
     SUBDIR += cpipe
     SUBDIR += dbench
     SUBDIR += dbs
@@ -55,6 +56,8 @@
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
+    SUBDIR += py-naarad
+    SUBDIR += py-zopkio
     SUBDIR += pybench
     SUBDIR += raidtest
     SUBDIR += ramspeed

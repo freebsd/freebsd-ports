@@ -14,27 +14,25 @@ LICENSE=	GPLv2
 USES=		gmake libtool perl5
 ALL_TARGET=	clambc-only
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 USE_GCC=	any
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-CONFIGURE_SCRIPT=../llvm/configure
+CONFIGURE_SCRIPT=llvm/configure
 CONFIGURE_ARGS=	--enable-optimized --enable-targets=host-only \
 		--disable-bindings --enable-bindings=none
 
-WRKSRC=		${WRKDIR}/clamav-bytecode-compiler-${DISTNAME}/obj
+WRKSRC=		${WRKDIR}/clamav-bytecode-compiler-${DISTNAME}
 
 MAKE_JOBS_UNSAFE=	yes
 
-post-extract:
-	@${MKDIR} ${WRKSRC}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/include/
-	@${RM} ${WRKSRC}/../clang/lib/Headers/CMakeLists.txt \
-		${WRKSRC}/../clang/lib/Headers/Makefile
-	(cd ${WRKSRC}/../clang/lib/Headers/ && ${COPYTREE_SHARE} . \
+	@${RM} ${WRKSRC}/clang/lib/Headers/CMakeLists.txt \
+		${WRKSRC}/clang/lib/Headers/Makefile
+	(cd ${WRKSRC}/clang/lib/Headers/ && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DATADIR}/include/)
-	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/clambc-compiler \
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/Release/bin/clambc-compiler \
 		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

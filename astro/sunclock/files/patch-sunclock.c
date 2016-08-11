@@ -1,4 +1,4 @@
---- sunclock.c
+--- sunclock.c.orig	2008-08-07 12:40:24 UTC
 +++ sunclock.c
 @@ -113,7 +113,6 @@
  #include <stdlib.h>
@@ -16,7 +16,7 @@
  #ifdef NEW_CTIME
  extern char *   timezone();
  #endif
-@@ -2197,8 +2195,8 @@
+@@ -2197,8 +2195,8 @@ struct Sundata * Context;
  
          if (!Context->mark1.city) return;
  
@@ -27,7 +27,7 @@
  
          /* Get local time at given location */
          setTZ(Context->mark1.city);
-@@ -2335,20 +2333,11 @@
+@@ -2335,20 +2333,11 @@ struct Sundata * Context;
          char            s[128];
          char            slat[20], slon[20], slatp[20], slonp[20];
          double          dist;
@@ -50,7 +50,7 @@
  
          if (!Context->wintype) {
                  char num[80];
-@@ -2696,7 +2685,7 @@
+@@ -2696,7 +2685,7 @@ int build;
  
          Context->bits = 0;
          Context->flags.update = 4;
@@ -59,7 +59,7 @@
          Context->projtime = -1L;
          Context->roottime = -1L;
          Context->animtime = -1L;
-@@ -3918,7 +3907,7 @@
+@@ -3918,7 +3907,7 @@ struct Sundata * Context;
  
          if (button_pressed) return;
  
@@ -68,7 +68,7 @@
  
  	erase_obj = 1;
  	if (Context->flags.colorlevel == MONOCHROME ||
-@@ -3926,10 +3915,10 @@
+@@ -3926,10 +3915,10 @@ struct Sundata * Context;
              drawSunAndMoon(Context);
          erase_obj = 0;
  
@@ -81,7 +81,7 @@
                &Context->moondec, &Context->moonlon, 
                &junk,  &junk, &junk, &junk, &junk, &junk );
  	Context->moonlon = fixangle(Context->moonlon+180.0) - 180.0;
-@@ -3946,10 +3935,10 @@
+@@ -3946,10 +3935,10 @@ struct Sundata * Context;
             update the illuminated area on the screen.   */
  
          if (Context->projtime < 0 || 
@@ -94,7 +94,7 @@
                  Context->noon = noon;
                  Context->fnoon = fnoon;
                  moveNightArea(Context);
-@@ -4557,8 +4546,8 @@
+@@ -4557,8 +4546,8 @@ int dy[5] = { 0, 1, -1, 0, 0};
       hw = Context->geom.height;
       if (do_root == 2) hw += Context->hstrip;
  
@@ -105,7 +105,7 @@
       else
          if (do_root == 2 && mode==0 && rootpix) update = 0;
  
-@@ -4569,7 +4558,7 @@
+@@ -4569,7 +4558,7 @@ int dy[5] = { 0, 1, -1, 0, 0};
          XSetForeground(dpy, Context->gdata->wingc, 
                           Context->gdata->pixel[ROOTCOLOR]);
          XFillRectangle(dpy, rootpix, Context->gdata->wingc, 0, 0, wr, hr);
@@ -114,7 +114,7 @@
          if (random_rootpos) {
             rootdx = (double)(random() % 10001)/10000.0;
             rootdy = (double)(random() % 10001)/10000.0;
-@@ -5542,7 +5531,7 @@
+@@ -5542,7 +5531,7 @@ KeySym  keysym;
               Context->flags.update = 2;
               break;
             case XK_w: 
@@ -123,7 +123,7 @@
               if (do_menu) do_menu = -1;
               if (do_filesel) do_filesel = -1;
               if (do_zoom) do_zoom = -1;
-@@ -5958,9 +5947,9 @@
+@@ -5958,9 +5947,9 @@ struct Sundata * Context;
                drawImageToRootWindow(Context, 0);
  	   XFlush(dpy);
  	   if (Context->flags.animate) {

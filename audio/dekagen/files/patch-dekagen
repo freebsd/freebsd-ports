@@ -1,6 +1,6 @@
---- dekagen.orig	Sat Jul 19 13:00:19 2003
-+++ dekagen	Tue Aug 12 23:02:30 2003
-@@ -42,7 +42,8 @@
+--- dekagen.orig	2004-06-15 21:58:54 UTC
++++ dekagen
+@@ -42,7 +42,8 @@ ID3TOOL='built-in'		# ID3 tagging tool (
  BITRATE='128'			# MP3/Ogg nominal encoding bitrate (KBits)
  METHOD='manual'			# 'manual' or 'cddb'
  XMCDLIB=''			# $XMCD_LIBDIR

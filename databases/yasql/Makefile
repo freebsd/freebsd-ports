@@ -13,7 +13,7 @@ COMMENT=	Yet Another SQL*Plus Replacement
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle \
-		p5-ReadLine-Gnu>0:devel/p5-ReadLine-Gnu
+		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu
 
 NO_ARCH=	yes
 

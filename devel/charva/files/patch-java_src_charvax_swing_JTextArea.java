@@ -1,5 +1,5 @@
---- java/src/charvax/swing/JTextArea.java.orig	Fri Dec 30 16:14:22 2005
-+++ java/src/charvax/swing/JTextArea.java	Mon Jan 29 09:39:30 2007
+--- java/src/charvax/swing/JTextArea.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charvax/swing/JTextArea.java
 @@ -412,6 +412,10 @@ public class JTextArea
          Point tempCaret = null;
          Point caret = _caret;

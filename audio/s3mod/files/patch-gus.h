@@ -1,6 +1,6 @@
---- gus.h.orig	Sat Oct 21 13:06:38 1995
-+++ gus.h	Thu Aug 22 20:53:57 2002
-@@ -41,7 +41,7 @@
+--- gus.h.orig	1995-10-21 20:06:38 UTC
++++ gus.h
+@@ -41,7 +41,7 @@ void sync_time(void);
  
  extern unsigned char _seqbuf[];
  extern int _seqbuflen, _seqbufptr;

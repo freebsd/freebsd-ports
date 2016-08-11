@@ -3,6 +3,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,11 +19,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config
 
-USES=		tar:tgz
-PHP_MODNAME=	${PORTNAME:tl}
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

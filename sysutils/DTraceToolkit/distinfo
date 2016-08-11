@@ -1,2 +1,3 @@
-SHA256 (DTraceToolkit-0.99.tar.gz) = f4f5df564b79103088731813cbc5c1bab0cb4dec98d2700b8583af190c695266
-SIZE (DTraceToolkit-0.99.tar.gz) = 474697
+TIMESTAMP = 1463628205
+SHA256 (opendtrace-toolkit-1.0-f36d00b_GH0.tar.gz) = 28d2ab2c846792286e30eac8e052313d2f1b1335242be85cfa4b6f52b18165c8
+SIZE (opendtrace-toolkit-1.0-f36d00b_GH0.tar.gz) = 438889

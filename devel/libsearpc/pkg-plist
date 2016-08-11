@@ -20,4 +20,4 @@ libdata/pkgconfig/libsearpc.pc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/pysearpc/server.py
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/pysearpc/server.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/pysearpc/server.pyo
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%HAIWENDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%

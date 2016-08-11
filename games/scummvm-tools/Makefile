@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm-tools
-DISTVERSION=	1.7.0
-PORTREVISION=	3
+DISTVERSION=	1.8.0
+PORTREVISION= 	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	lame:audio/lame \
 		flac:audio/flac \
 		oggenc:audio/vorbis-tools
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
 USES=		gmake tar:bzip2
@@ -25,8 +26,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=
 
-STRIP_FILES=	construct_mohawk create_sjisfnt decine degob dekyra \
-		deriven descumm desword2 extract_mohawk gob_loadcalc \
+STRIP_FILES=	construct_mohawk create_sjisfnt decine decompile degob \
+		dekyra deriven descumm desword2 extract_mohawk gob_loadcalc \
 		scummvm-tools-cli
 
 OPTIONS_DEFINE=	WXGTK DOCS
@@ -52,7 +53,7 @@ pre-patch:
 		${WRKSRC}/configure
 
 pre-install:
-	@${STRIP_CMD} ${STRIP_FILES:S|^|${WRKSRC}/|}
+	${STRIP_CMD} ${STRIP_FILES:S|^|${WRKSRC}/|}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

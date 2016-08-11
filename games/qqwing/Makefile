@@ -13,27 +13,17 @@ COMMENT=	Sudoku generating and solving software
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephenostermiller
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig
+USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
+AUTORECONF_WRKSRC=	${WRKSRC}/build
+CONFIGURE_CMD=	${AUTORECONF_WRKSRC}/configure
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_WRKSRC=	${WRKSRC}/target/automake
-BUILD_WRKSRC=		${WRKSRC}/target/automake
-INSTALL_WRKSRC=		${WRKSRC}/target/automake
-
-pre-configure:
-	@${MKDIR} ${WRKSRC}/target/automake
-	@cd ${WRKSRC} && ${CP} build/configure.ac build/Makefile.am \
-		build/qqwing.pc.in doc/README doc/AUTHORS doc/COPYING \
-		target/automake
-	@cd ${WRKSRC} && ${CP} doc/qqwing.man target/automake/qqwing.1
-	@cd ${WRKSRC}/target/automake && ${TOUCH} config.h.in
-	@cd ${WRKSRC}/target/automake && ${AUTORECONF} --force --install
-
 pre-build:
-	@cd ${WRKSRC} && ${CP} src/cpp/*.cpp target/automake
-	@cd ${WRKSRC} && ${CP} src/cpp/*.hpp target/automake
+	@${LN} -sf ${WRKSRC}/doc/qqwing.man ${BUILD_WRKSRC}/qqwing.1
+	@${LN} -sf ${WRKSRC}/src/cpp/*.[ch]pp ${BUILD_WRKSRC}/
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/wirble.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/

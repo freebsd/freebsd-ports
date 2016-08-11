@@ -10,18 +10,16 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
-USES=		python:2
+USES=		python:2 mysql
 USE_PYTHON=	distutils autoplist
-USE_MYSQL=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	farcepest
 GH_PROJECT=	${PORTNAME}1
 
-CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]*
+CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]* py*-mysqlclient-[0-9]*
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}1-${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		DOCS MYSQLCLIENT_R
 OPTIONS_DEFAULT=	MYSQLCLIENT_R

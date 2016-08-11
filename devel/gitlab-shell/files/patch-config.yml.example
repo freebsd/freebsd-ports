@@ -1,6 +1,15 @@
---- config.yml.example.orig	2016-02-24 09:49:01 UTC
+--- config.yml.example.orig	2016-04-07 14:39:29 UTC
 +++ config.yml.example
-@@ -48,7 +48,7 @@ redis:
+@@ -28,7 +28,7 @@ http_settings:
+ # Give the canonicalized absolute pathname,
+ # REPOS_PATH MUST NOT CONTAIN ANY SYMLINK!!!
+ # Check twice that none of the components is a symlink, including "/home".
+-repos_path: "/home/git/repositories"
++repos_path: "/usr/home/git/repositories"
+ 
+ # File used as authorized_keys for gitlab user
+ auth_file: "/home/git/.ssh/authorized_keys"
+@@ -49,7 +49,7 @@ redis:
  
  # Log file.
  # Default is gitlab-shell.log in the root directory.

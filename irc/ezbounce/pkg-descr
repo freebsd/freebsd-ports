@@ -5,7 +5,7 @@ ezbounce is a highly configurable IRC Proxy that features:
     * Ident spoofing
     * Can listen on virtual hosts
     * Ability to ``Detach'' from the proxy and stay connected
-      to the IRC server. 
+      to the IRC server.
     ... and more!
 
 WWW: http://sourceforge.net/projects/ezbounce/

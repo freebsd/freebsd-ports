@@ -1,6 +1,6 @@
---- crypt.c.orig	2007-01-05 16:47:36.000000000 +0100
-+++ crypt.c	2016-01-04 14:39:27.300502995 +0100
-@@ -465,7 +465,17 @@
+--- crypt.c.orig	2007-01-05 15:47:36 UTC
++++ crypt.c
+@@ -465,7 +465,17 @@ int decrypt(__G__ passwrd)
      GLOBAL(pInfo->encrypted) = FALSE;
      defer_leftover_input(__G);
      for (n = 0; n < RAND_HEAD_LEN; n++) {

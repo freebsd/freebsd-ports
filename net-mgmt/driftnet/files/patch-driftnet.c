@@ -1,6 +1,6 @@
---- driftnet.c.orig	Tue Jul  9 21:26:41 2002
-+++ driftnet.c	Tue Aug 20 02:30:35 2002
-@@ -254,8 +254,8 @@
+--- driftnet.c.orig	2002-07-09 19:26:41 UTC
++++ driftnet.c
+@@ -254,8 +254,8 @@ void usage(FILE *fp) {
  "\n"
  "  -h               Display this help message.\n"
  "  -v               Verbose operation.\n"
@@ -11,7 +11,7 @@
  "  -p               Do not put the listening interface into promiscuous mode.\n""  -a               Adjunct mode: do not display images on screen, but save\n"
  "                   them to a temporary directory and announce their names on\n"
  "                   standard output.\n"
-@@ -313,7 +313,7 @@
+@@ -313,7 +313,7 @@ void terminate_on_signal(int s) {
  void setup_signals(void) {
      int *p;
      /* Signals to ignore. */

@@ -7,6 +7,7 @@
     SUBDIR += 9box
     SUBDIR += 9menu
     SUBDIR += alltray
+    SUBDIR += altyo
     SUBDIR += antimicro
     SUBDIR += appres
     SUBDIR += apwal
@@ -157,7 +158,6 @@
     SUBDIR += libXxf86misc
     SUBDIR += libXxf86vm
     SUBDIR += libdmx
-    SUBDIR += libdnd
     SUBDIR += libexo
     SUBDIR += libfakekey
     SUBDIR += libfm
@@ -180,6 +180,7 @@
     SUBDIR += libxkbui
     SUBDIR += libxklavier
     SUBDIR += libxshmfence
+    SUBDIR += linux-c6-pixman
     SUBDIR += linux-c6-xorg-libs
     SUBDIR += linux-f10-xorg-libs
     SUBDIR += listres
@@ -235,6 +236,7 @@
     SUBDIR += props
     SUBDIR += py-qt4-opengl
     SUBDIR += py-qt5-opengl
+    SUBDIR += py-xdot
     SUBDIR += qimageblitz
     SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
@@ -265,6 +267,7 @@
     SUBDIR += setlayout
     SUBDIR += setxkbmap
     SUBDIR += simdock
+    SUBDIR += simplestroke
     SUBDIR += sisctrl
     SUBDIR += slim
     SUBDIR += slock
@@ -319,6 +322,7 @@
     SUBDIR += xautomation
     SUBDIR += xbacklight
     SUBDIR += xballoon
+    SUBDIR += xbanish
     SUBDIR += xbanner
     SUBDIR += xbelld
     SUBDIR += xbiff
@@ -335,15 +339,14 @@
     SUBDIR += xcb-util-keysyms
     SUBDIR += xcb-util-renderutil
     SUBDIR += xcb-util-wm
+    SUBDIR += xcb-util-xrm
     SUBDIR += xcbautolock
-    SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
     SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmiscproto
     SUBDIR += xcmsdb
-    SUBDIR += xco
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xcolorsel
@@ -394,6 +397,7 @@
     SUBDIR += xineramaproto
     SUBDIR += xinit
     SUBDIR += xinput
+    SUBDIR += xkb-switch
     SUBDIR += xkbcomp
     SUBDIR += xkbctrl
     SUBDIR += xkbevd
@@ -410,7 +414,6 @@
     SUBDIR += xlogo
     SUBDIR += xlsatoms
     SUBDIR += xlsclients
-    SUBDIR += xlupe
     SUBDIR += xmag
     SUBDIR += xman
     SUBDIR += xmangekyou

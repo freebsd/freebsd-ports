@@ -3,6 +3,7 @@
 
 PORTNAME=	nanoblogger-extra
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 
@@ -18,7 +19,7 @@ DATADIR=	${PREFIX}/share/nanoblogger
 
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 .for data in default lang plugins
@@ -26,7 +27,7 @@ do-install:
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${data} "! -empty" )
 .endfor
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in COPYING ChangeLog README
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
@@ -34,6 +35,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/html
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/examples/nanoblogger.bash_completion ${STAGEDIR}${EXAMPLESDIR}
 

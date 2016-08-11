@@ -1,4 +1,4 @@
---- sidplay.cpp.orig
+--- sidplay.cpp.orig	2002-09-28 18:44:02 UTC
 +++ sidplay.cpp
 @@ -18,8 +18,8 @@
  //

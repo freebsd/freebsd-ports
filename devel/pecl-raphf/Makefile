@@ -3,7 +3,7 @@
 
 PORTNAME=	raphf
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^1.*
 
-USES=		gmake tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		gmake php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

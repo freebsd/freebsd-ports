@@ -1,16 +1,16 @@
---- configure.in.orig	2010-07-29 21:28:41.000000000 +0900
-+++ configure.in	2010-10-20 01:31:02.971984782 +0900
-@@ -8,6 +8,9 @@
+--- configure.in.orig	2016-04-29 17:26:45 UTC
++++ configure.in
+@@ -6,6 +6,9 @@ AC_CANONICAL_SYSTEM
  
  AM_INIT_AUTOMAKE([foreign 1.6])
  
 +AC_DEFINE(_BSD_SOURCE, 1, BSD functions)
 +AC_DEFINE(__BSD_VISIBLE, 1, BSD extensions)
 +
- dnl Get the canonical host type
- AC_CANONICAL_TARGET
- 
-@@ -30,6 +33,7 @@
+ dnl Checks for header files.
+ AC_DISABLE_STATIC
+ LT_INIT
+@@ -25,6 +28,7 @@ AC_FUNC_MEMCMP
  AC_FUNC_STRFTIME
  AC_FUNC_VPRINTF
  AC_CHECK_FUNCS([getcwd])
@@ -18,9 +18,28 @@
  
  dnl Used in various scripts
  AC_PATH_PROG([ID], [id], [/us/bin/id])
-@@ -193,6 +197,21 @@
+@@ -40,10 +44,16 @@ AC_PROG_YACC
+ 
+ dnl Define custom variables
+ 
+-lockdir=$localstatedir/lock/opencryptoki
++AC_ARG_WITH([lockdir],
++	[AS_HELP_STRING([--with-lockdir],[lock directory])],
++        [lockdir=$withval],
++        [lockdir=$localstatedir/lock/opencryptoki])
+ AC_SUBST(lockdir)
+ 
+-logdir=$localstatedir/log/opencryptoki
++AC_ARG_WITH([logdir],
++	[AS_HELP_STRING([--with-logdir],[log directory])],
++        [logdir=$withval],
++        [logdir=$localstatedir/log/opencryptoki])
+ AC_SUBST(logdir)
+ 
+ dnl ---
+@@ -166,6 +176,21 @@ AC_ARG_WITH([systemd],
  	[],
- 	[with_xcryptolinz=check])
+ 	[with_systemd=no])
  
 +dnl --- check for pkcs11 user
 +AC_ARG_WITH([pkcs11user],
@@ -40,20 +59,38 @@
  dnl ---
  dnl ---
  dnl --- Now that we have all the options, let's check for a valid build
-@@ -630,11 +649,15 @@
+@@ -554,13 +579,31 @@ fi
  
- CFLAGS="$CFLAGS $DEBUG_CFLAGS -DPKCS64 -D_XOPEN_SOURCE=500"
+ AM_CONDITIONAL([ENABLE_PKCSEP11_MIGRATE], [test "x$enable_pkcsep11_migrate" = "xyes"])
  
--CFLAGS+=' -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\"'
-+CFLAGS="$CFLAGS -DCONFIG_PATH='\"$localstatedir/lib/opencryptoki\"' -DSBIN_PATH='\"$sbindir\"' -DLIB_PATH='\"$libdir\"'"
-+
-+CFLAGS="$CFLAGS -DPKCS11USER='\"${pkcs11_user}\"' -DPKCS11GROUP='\"${pkcs11_group}\"'"
+-CFLAGS="$CFLAGS -DPKCS64 -D_XOPEN_SOURCE=600 -Wall -Wno-pointer-sign"
+-
+-CFLAGS+=' -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\" -DLOCKDIR_PATH=\"$(lockdir)\" -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" -DOCK_LOGDIR=\"$(logdir)\"'
++CFLAGS="$CFLAGS \
++ -Wall \
++ -Wno-pointer-sign \
++"
++CPPFX=' \
++ -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" \
++ -DSBIN_PATH=\"$(sbindir)\" \
++ -DLIB_PATH=\"$(libdir)\" \
++ -DLOCKDIR_PATH=\"$(lockdir)\" \
++ -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" \
++ -DOCK_LOGDIR=\"$(logdir)\" \
++'
++CPPFLAGS="$CPPFLAGS \
++ -DPKCS64 \
++ -D_XOPEN_SOURCE=600 \
++ $CPPFX \
++ -DPKCS11USER=\\\"${pkcs11_user}\\\" \
++ -DPKCS11GROUP=\\\"${pkcs11_group}\\\" \
++"
  
  # At this point, CFLAGS is set to something sensible
  AC_PROG_CC
  
 +AC_SUBST(FPIC, $lt_prog_compiler_pic)
 +
- AC_OUTPUT([Makefile usr/Makefile \
+ AC_CONFIG_FILES([Makefile usr/Makefile \
            usr/include/Makefile \
            usr/include/pkcs11/Makefile \

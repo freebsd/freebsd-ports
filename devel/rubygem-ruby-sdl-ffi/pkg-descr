@@ -1,6 +1,6 @@
-Ruby-SDL-FFI is a low-level binding to SDL and related libraries using 
-Ruby-FFI. It provides very basic access to SDL from Ruby without the 
-need for a compiled C wrapper. It aims to be platform and Ruby 
-implementation independent. 
+Ruby-SDL-FFI is a low-level binding to SDL and related libraries using
+Ruby-FFI. It provides very basic access to SDL from Ruby without the
+need for a compiled C wrapper. It aims to be platform and Ruby
+implementation independent.
 
 WWW: https://github.com/jacius/ruby-sdl-ffi

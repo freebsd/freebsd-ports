@@ -140,9 +140,6 @@
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/server_sample.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/server_sample.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/server_sample.pyo
-%%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/settings.py
-%%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/settings.pyc
-%%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/server/settings.pyo
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/util.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/util.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/util.pyo
@@ -155,5 +152,5 @@
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/xml_tools.py
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/xml_tools.pyc
 %%SEAFILE_SERVER%%/seahub/thirdpart/wsgidav/xml_tools.pyo
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%SEAHUBDIR%%
-@dir(%%SEAFILE_USERNAME%%,%%SEAFILE_GROUPNAME%%,755) %%HAIWENDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%SEAHUBDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%

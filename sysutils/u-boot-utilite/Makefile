@@ -35,7 +35,7 @@ MAKE_ARGS+=	ARCH=arm \
 		HOSTCC=cc
 
 do-configure:
-	cd ${WRKSRC}; ${GMAKE} ${MAKE_ARGS} cm_fx6_config
+	cd ${WRKSRC}; ${MAKE_CMD} ${MAKE_ARGS} cm_fx6_config
 
 # The build results in two output files: SPL, and u-boot.img.
 # Combine them into a single u-boot.imx so that there is only one file to be
@@ -46,6 +46,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	dd if=/dev/zero count=500 bs=1K | ${TR} '\000' '\377' > ${CM_FX6_FIRMWARE}
 	dd if=${WRKSRC}/spl.img of=${CM_FX6_FIRMWARE} bs=1K seek=1 conv=notrunc && dd if=${WRKSRC}/u-boot.img of=${CM_FX6_FIRMWARE} bs=1K seek=64 conv=notrunc
-	${CP} ${.CURDIR}/pkg-descr ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>

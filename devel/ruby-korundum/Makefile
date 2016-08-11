@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for KDE
 
-USE_KDE4=	kate kdelibs kdeprefix okular pimlibs \
+USE_KDE4=	kate kdelibs okular pimlibs \
 		qtruby smokegen smokekde smokeqt \
 		akonadi automoc4 soprano
 USE_QT4=	corelib network opengl sql svg xml \

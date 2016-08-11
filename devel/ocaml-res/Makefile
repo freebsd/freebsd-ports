@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically Resizing Contiguous Memory for OCaml
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -29,14 +30,14 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.ml \
-		${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ml ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

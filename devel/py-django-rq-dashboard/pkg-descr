@@ -1,0 +1,5 @@
+RQ is a simple task queue for queuing and processing jobs. django-rq-dashboard
+is a web frontend to monitor your RQ queues, jobs and workers in realtime from
+the Django admin.
+
+WWW: https://github.com/brutasse/django-rq-dashboard

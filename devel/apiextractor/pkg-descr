@@ -8,4 +8,4 @@ bindings is performed by specific generators using the API Extractor library.
 
 The API Extractor is based on QtScriptGenerator
 
-WWW:	http://www.pyside.org/docs/apiextractor/
+WWW: http://www.pyside.org/docs/apiextractor/

@@ -1,5 +1,5 @@
---- cgx_2.9/src/Makefile.orig	2015-07-30 21:38:17 UTC
-+++ cgx_2.9/src/Makefile
+--- cgx_2.10/src/Makefile.orig	2016-01-13 11:41:40 UTC
++++ cgx_2.10/src/Makefile
 @@ -1,14 +1,14 @@
  CFLAGS = -O3 -Wall \
    -I./ \

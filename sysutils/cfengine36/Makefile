@@ -28,9 +28,8 @@ USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake libtool shebangfix
+USES=		autoreconf cpe gmake libtool shebangfix ssl
 SHEBANG_FILES=	examples/remake_outputs.pl
 CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -54,14 +53,14 @@ LIB_DEPENDS+=	libpcre.so:devel/pcre \
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
 PGSQL_USES=		pgsql
-PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
+PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
 
-MYSQL_USE=		MYSQL=yes
-MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
-MYSQL_LIB_DEPENDS=		libmysqlclient.so:${_MYSQL_CLIENT}
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
+MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
-LIBVIRT_CONFIGURE_ON=	--with-libvirt=${LOCALBASE}
-LIBVIRT_LIB_DEPENDS+=		libvirt.so:devel/libvirt
+LIBVIRT_CONFIGURE_WITH=	--with-libvirt=${LOCALBASE}
+LIBVIRT_LIB_DEPENDS+=	libvirt.so:devel/libvirt
 
 .include <bsd.port.mk>

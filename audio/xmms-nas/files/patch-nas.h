@@ -1,5 +1,5 @@
---- nas.h.orig	Mon Oct  3 18:53:39 2005
-+++ nas.h	Mon Oct  3 18:53:51 2005
+--- nas.h.orig	1999-08-07 02:52:06 UTC
++++ nas.h
 @@ -21,7 +21,6 @@
  #ifndef NAS_H
  #define NAS_H

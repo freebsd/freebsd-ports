@@ -1,6 +1,6 @@
 Perl Audio Converter (PAC) is a tool for converting multiple audio types
 from one format to another.
- 
+
 It supports the following audio formats:
 ------------------------------------------------------------
 3G2, 3GP, 8SVX, AAC, AC3, ADTS, AIFF, AL, AMB, AMR, APE, AU, AVR, BONK,
@@ -9,12 +9,12 @@ HCOM, IMA, IRCAM, LA, MAT, MAUD, MAT4, MAT5, M4A, MP2, MP3, MP4, MPC,
 MPP, NIST, OFF, OFR, OFS, OPUS, OGA, OGG, PAF, PRC, PVF, RA, RAM, RAW,
 RF64, SD2, SF, SHN, SMP, SND, SOU, SPX, SRN, TAK, TTA, TXW, VOC, VMS,
 VQF, W64, WAV, WMA, and WV.
- 
+
 It can also extract audio from the following video extensions:
 --------------------------------------------------------------
 RM, RV, ASF, DivX, MPG, MKV, MPEG, AVI, MOV, OGM, OGV, QT, VCD, SVCD,
 M4V, NSV, NUV, PSP, SMK, VOB, FLV, WEBM and WMV.
- 
+
 Parallel processing, a CD ripping function with CDDB support, batch
 conversion, tag preservation for most supported formats, independent tag
 reading & writing, service menus for KDE Dolphin/Konqueror are also

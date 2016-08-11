@@ -1,4 +1,4 @@
---- Makefile.PL.orig	2015-04-20 11:29:37 UTC
+--- Makefile.PL.orig	2003-11-16 07:09:00 UTC
 +++ Makefile.PL
 @@ -77,7 +77,7 @@ sub MY::install {
    my $self = shift;

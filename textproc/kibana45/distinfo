@@ -1,2 +1,3 @@
-SHA256 (kibana-4.5.0-linux-x86.tar.gz) = d0cfdde3f19d30c2d9e8d3e289cb2b0624a99d93b9adccdfa5884a98c908b62d
-SIZE (kibana-4.5.0-linux-x86.tar.gz) = 32154895
+TIMESTAMP = 1470384243
+SHA256 (kibana-4.5.4-linux-x86.tar.gz) = c0f99975a9679c56aa4c0258bdad8befe0add56c1a5e313c2d55e4e3de7dc9df
+SIZE (kibana-4.5.4-linux-x86.tar.gz) = 32766907

@@ -1,6 +1,6 @@
---- ./arclzw.c.orig	Tue Aug 10 23:03:25 1999
-+++ ./arclzw.c	Tue Aug 10 23:01:57 1999
-@@ -546,7 +546,7 @@
+--- arclzw.c.orig	2010-08-07 13:06:42 UTC
++++ arclzw.c
+@@ -560,7 +560,7 @@ decomp(squash, f, t)		/* decompress a fi
  		 */
  		if (code >= free_ent) {
  			if (code > free_ent) {

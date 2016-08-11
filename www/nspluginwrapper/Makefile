@@ -13,7 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Compatibility plugin for Mozilla NPAPI plugins
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
@@ -50,10 +51,8 @@ SUB_LIST+=	NSPLUGINWRAPPER="${LIBDIR}"
 
 .if ${ARCH} == "amd64"
 HOST_ARCH=	x86_64
-PLIST_SUB+=	HOST_AMD64=""
 .else
 HOST_ARCH=	${ARCH}
-PLIST_SUB+=	HOST_AMD64="@comment "
 .endif
 
 post-patch:

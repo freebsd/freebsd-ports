@@ -1,6 +1,6 @@
---- keycvt/keycvt.c.orig	Fri Aug 13 15:06:28 1993
-+++ keycvt/keycvt.c	Tue Dec 28 20:01:38 1999
-@@ -582,11 +582,21 @@
+--- keycvt/keycvt.c.orig	1993-08-13 20:06:28 UTC
++++ keycvt/keycvt.c
+@@ -582,11 +582,21 @@ static void byteReverse( BYTE *regPtr, i
  
  static void getPassword( void )
  	{
@@ -22,7 +22,7 @@
  	}
  
  void initCrypt( void )
-@@ -1020,27 +1030,46 @@
+@@ -1020,27 +1030,46 @@ int main( const int argc, const char *ar
  
  	/* Try and find the PGP seed file */
  	if( ( pgpPath = getenv( "PGPPATH" ) ) == NULL )

@@ -1,6 +1,6 @@
---- src/libOpenImageIO/CMakeLists.txt.orig	2015-09-28 18:00:17 UTC
+--- src/libOpenImageIO/CMakeLists.txt.orig	2016-03-01 22:25:21 UTC
 +++ src/libOpenImageIO/CMakeLists.txt
-@@ -272,6 +272,10 @@ if (EMBEDPLUGINS)
+@@ -302,6 +302,10 @@ if (EMBEDPLUGINS)
      endif ()
  endif ()
  
@@ -8,6 +8,6 @@
 +    target_link_libraries (OpenImageIO atomic)
 +endif ()
 +
- link_ilmbase (OpenImageIO)
+ target_link_libraries (OpenImageIO ${ILMBASE_LIBRARIES})
  
  if (USE_EXTERNAL_PUGIXML)

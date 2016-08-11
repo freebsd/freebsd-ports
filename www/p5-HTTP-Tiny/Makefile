@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.056
+PORTVERSION=	0.058
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,12 +26,17 @@ USES=		perl5
 COOKIE_BUILD_DEPENDS=	p5-HTTP-CookieJar>=0.001:www/p5-HTTP-CookieJar
 COOKIE_RUN_DEPENDS=	p5-HTTP-CookieJar>=0.001:www/p5-HTTP-CookieJar
 HTTPS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
-			p5-Mozilla-CA>=20130114:www/p5-Mozilla-CA \
+			p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA \
 			p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
 HTTPS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
-			p5-Mozilla-CA>=20130114:www/p5-Mozilla-CA \
+			p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA \
 			p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
-IO_SOCKET_IP_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.25:net/p5-IO-Socket-IP
-IO_SOCKET_IP_RUN_DEPENDS=	p5-IO-Socket-IP>=0.25:net/p5-IO-Socket-IP
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200 && ${PORT_OPTIONS:MIO_SOCKET_IP}
+BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
+RUN_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
+.endif
+
+.include <bsd.port.post.mk>

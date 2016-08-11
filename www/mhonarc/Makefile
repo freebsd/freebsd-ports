@@ -36,7 +36,6 @@ INSTALL_ARGS+=	-nodoc
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS}
 
-post-install:
 .for file in mha-dbedit mha-dbrecover mha-decode mhonarc
 	${REINPLACE_CMD} -E -e 's,${STAGEDIR},,g' ${STAGEDIR}/${PREFIX}/bin/${file}
 	${RM} ${STAGEDIR}/${PREFIX}/bin/${file}.bak

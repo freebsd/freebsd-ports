@@ -43,8 +43,7 @@ CONFIGURE_ARGS+=	--enable-php5 \
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 PLIST_SUB+=	PHP5=""
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
+USES+=		php:build
 .else
 CONFIGURE_ARGS+=	--disable-php5
 PLIST_SUB+=	PHP5="@comment "

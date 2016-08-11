@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_ActiveSync
-PORTVERSION=	2.31.8
+PORTVERSION=	2.35.0
+PORTREVISION=	1
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde ActiveSync Server Library
 
 USES=	horde
+USE_PHP=	ctype
 USE_HORDE_RUN=	Horde_Compress \
 		Horde_Date \
 		Horde_Exception \

@@ -4,4 +4,4 @@ IP addresses to/from a remote table with a single UDP
 datagram. A simple client program is included to do this
 from the command line.
 
-WWW:	http://wolfermann.org/pftabled.html
+WWW: http://wolfermann.org/pftabled.html

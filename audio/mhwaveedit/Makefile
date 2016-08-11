@@ -7,39 +7,24 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical program for editing sound files
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig tar:bzip2
+USES=		localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsalib --without-arts
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_FILES=	bin/mhwaveedit \
-		man/man1/mhwaveedit.1.gz \
-		share/applications/mhwaveedit.desktop \
-		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/it/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/pl/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
-		share/pixmaps/mhwaveedit.xpm
 
 BROKEN_sparc64=	Does not compile on sparc64
 BROKEN_powerpc64=	Does not build on powerpc64
 
 OPTIONS_DEFINE=		DOUBLE_SAMPLES ESOUND JACK LADSPA OSS PORTAUDIO \
-			PULSEAUDIO SAMPLERATE SDL SNDFILE
+			PULSEAUDIO SAMPLERATE SDL SNDFILE NLS
 OPTIONS_DEFAULT=	OSS SAMPLERATE SNDFILE
+OPTIONS_SUB=		yes
 
 DOUBLE_SAMPLES_DESC=	Increase quality for 24/32-bit samplerates
 DOUBLE_SAMPLES_CONFIGURE_WITH=	double-samples
@@ -61,6 +46,8 @@ SDL_USE=		sdl=sdl
 SDL_CONFIGURE_WITH=	sdl
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_WITH=	libsndfile
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e \

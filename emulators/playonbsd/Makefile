@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	playonbsd
-PORTVERSION=	4.2.8
+PORTVERSION=	4.2.10
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	se@FreeBSD.org
@@ -17,18 +18,20 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		gsed:textproc/gsed \
 		sudo:security/sudo \
 		xdg-open:devel/xdg-utils \
-		xterm:x11/xterm
+		xterm:x11/xterm \
+		cabextract:archivers/cabextract \
+		wget:ftp/wget \
+		icotool:graphics/icoutils
 
 OPTIONS_DEFINE=	GECKO MONO
 OPTIONS_DEFAULT=	GECKO MONO
 GECKO_DESC=	Wine-gecko HTML rendering support
-MONO_RUN_DEPENDS=	wine-mono-devel>=4.5.6:emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	wine-mono>=4.5.6:emulators/wine-mono
 GECKO_RUN_DEPENDS=	wine-gecko>=2.21:emulators/wine-gecko
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		python:run
-USE_PERL=	yes
+USES=		python:run perl5
 USE_WX=		2.8+
 WX_COMPS=	python:run
 
@@ -39,7 +42,7 @@ GH_PROJECT=	POL-POM-4
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-RUN_DEPENDS+=	wine:emulators/i386-wine-devel
+RUN_DEPENDS+=	wine:emulators/i386-wine
 .else
 RUN_DEPENDS+=	wine:emulators/wine
 .endif
@@ -51,8 +54,15 @@ post-patch:
 		@${REINPLACE_CMD} -e 's:/usr/local/:${LOCALBASE}/:' ${WRKSRC}/lib/wine.lib
 
 do-install:
-		cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/playonbsd/ "-perm -0100 ! -name *.orig"
-		cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -perm 0100 ! -name *.orig"
+.for d in bash python
+		cd ${WRKSRC} && ${COPYTREE_BIN} ${d} ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -name *\.orig ! -name *\.bak"
+.endfor
+.for d in etc lang lib plugins resources
+		cd ${WRKSRC} && ${COPYTREE_BIN} ${d} ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -name *\.orig ! -name *\.bak"
+.endfor
+		@${REINPLACE_CMD} -e 's:linux:bsd:g;s:linux:BSD:ig' ${WRKSRC}/doc/playonlinux.1
+		${INSTALL_MAN} ${WRKSRC}/doc/playonlinux.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/playonbsd.1
 		${INSTALL_SCRIPT} ${WRKDIR}/playonbsd.sh ${STAGEDIR}${PREFIX}/bin/playonbsd
+		${INSTALL_SCRIPT} ${WRKSRC}/playonfreebsd ${STAGEDIR}${PREFIX}/lib/playonbsd/playonfreebsd
 
 .include <bsd.port.post.mk>

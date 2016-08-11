@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argus-clients
-PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTVERSION=	3.0.8.2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -15,12 +14,12 @@ LICENSE=	GPLv3
 
 CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 
-OPTIONS_DEFINE=	GEOIP MYSQL SASL DOCS
+OPTIONS_DEFINE=	GEOIP MYSQL SASL DOCS EXAMPLES
 OPTIONS_DEFAULT=MYSQL SASL
 OPTIONS_SUB=	yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=	--with-GeoIP=${LOCALBASE}
 
@@ -47,24 +46,9 @@ do-install:
 .for i in argusclientbug radark ragraph rahosts raips raplot raports
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
 .endfor
-.if ${PORT_OPTIONS:MMYSQL}
-.for i in rasql rasqlinsert rasqltimeindex
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
-.endfor
-.for i in rasql.1 rasqlinsert.1 rasqltimeindex.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
-.endfor
-.endif
 .for i in radark ragraph rahosts raports
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}/
-.for i in AUTHORS CHANGES CREDITS ChangeLog INSTALL \
-	MANIFEST README VERSION
-	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}/${DOCSDIR}
-.endfor
-.endif
 .for i in ra.1 rabins.1 racluster.1 raconvert.1 racount.1 radump.1 raevent.1 \
 	rafilteraddr.1 ragraph.1 ragrep.1 rahisto.1 ralabel.1 ranonymize.1 \
 	rapath.1 rapolicy.1 rasort.1 rasplit.1 rastream.1 rastrip.1
@@ -76,6 +60,23 @@ do-install:
 .for i in radium.8
 	${INSTALL_MAN} ${WRKSRC}/man/man8/$i ${STAGEDIR}/${PREFIX}/man/man8
 .endfor
+
+do-install-MYSQL-on:
+.for i in rasql rasqlinsert rasqltimeindex
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
+.endfor
+.for i in rasql.1 rasqlinsert.1 rasqltimeindex.1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
+.endfor
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}/
+.for i in AUTHORS CHANGES CREDITS ChangeLog INSTALL \
+	MANIFEST README VERSION
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}/${DOCSDIR}
+.endfor
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for i in Config Database Startup System
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/$i

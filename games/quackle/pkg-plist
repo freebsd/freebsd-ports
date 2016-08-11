@@ -11,6 +11,7 @@ bin/quackle
 %%DATADIR%%/alphabets/polish.quackle_alphabet
 %%DATADIR%%/alphabets/russian.quackle_alphabet
 %%DATADIR%%/alphabets/swedish.quackle_alphabet
+%%DATADIR%%/alphabets/turkish.quackle_alphabet
 %%DATADIR%%/alphabets/tuvan.quackle_alphabet
 %%DATADIR%%/alphabets/zhuyin.quackle_alphabet
 %%DATADIR%%/lexica/copyrights.txt
@@ -23,6 +24,7 @@ bin/quackle
 %%DATADIR%%/lexica/ods5.dawg
 %%DATADIR%%/lexica/osps.dawg
 %%DATADIR%%/lexica/sowpods.dawg
+%%DATADIR%%/lexica/turkish.dawg
 %%DATADIR%%/lexica/twl06.dawg
 %%DATADIR%%/lexica/twl98.dawg
 %%DATADIR%%/raw_lexica/cswapr07.raw
@@ -33,6 +35,7 @@ bin/quackle
 %%DATADIR%%/raw_lexica/ods4.raw
 %%DATADIR%%/raw_lexica/ods5.raw
 %%DATADIR%%/raw_lexica/sowpods.raw
+%%DATADIR%%/raw_lexica/turkish.raw
 %%DATADIR%%/raw_lexica/twl06.raw
 %%DATADIR%%/raw_lexica/twl98.raw
 %%DATADIR%%/strategy/csw12/superleaves

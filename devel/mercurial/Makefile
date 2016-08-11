@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.7.3
+PORTVERSION=	3.9
 CATEGORIES=	devel python
-MASTER_SITES=	http://mercurial.selenic.com/release/
+MASTER_SITES=	http://mercurial-scm.org/release/
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, lightweight source control management system
@@ -16,11 +16,12 @@ USES=	cpe python:2
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS FREEBSD
-OPTIONS_DEFAULT=DATA
+OPTIONS_DEFAULT=CA_BUNDLE DATA
 OPTIONS_SUB=	yes
 
 CA_BUNDLE_DESC=		Install CA Certificates
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+DATA_SUB_FILES=	pkg-message
 FREEBSD_DESC=		Patches used internally by the FreeBSD Project
 FREEBSD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-authormapsuffix
 NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
@@ -33,16 +34,11 @@ CONTRIB_FILES=	bash_completion \
 		debugshell.py \
 		dumprevlog \
 		hg-ssh \
-		hgfixes/__init__.py \
-		hgfixes/fix_bytes.py \
-		hgfixes/fix_bytesmod.py \
-		hgfixes/fix_leftover_imports.py \
 		hgk \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
 		mercurial.el \
 		mq.el \
-		perf.py \
 		pylintrc \
 		python-hook-examples.py \
 		simplemerge \
@@ -58,33 +54,26 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.vim
 DOCS=		CONTRIBUTORS README
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDATA}
-SUB_FILES=	pkg-message
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/*.so
-.if ${PORT_OPTIONS:MDATA}
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}/contrib
-	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgfixes
-	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgsh
-	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/vim
-	for f in ${CONTRIB_FILES}; do \
-		${CP} -p ${WRKSRC}/contrib/$${f} ${STAGEDIR}${DATADIR}/contrib/$${f}; \
-	done
+	${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/hgext/fsmonitor/pywatchman/*.so
+
+post-install-DATA-on:
+.for d in hgsh vim
+	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/${d}
+.endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/*.cgi ${STAGEDIR}${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${STAGEDIR}${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${STAGEDIR}${DATADIR}/www
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
+.for f in ${CONTRIB_FILES}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${f} \
+		${STAGEDIR}${DATADIR}/contrib/${f}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.* ${STAGEDIR}${DATADIR}/www
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

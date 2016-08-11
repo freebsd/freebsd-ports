@@ -17,6 +17,8 @@ LICENSE_NAME=	The Kannel Software License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+PORTSCOUT=	skipv:1.5.0
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USERS=		kannel
@@ -39,7 +41,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 OPTIONS_DEFAULT=	MYSQL
 
-SQLITE3_USE=	SQLITE=3
+SQLITE3_USES=	sqlite:3
 SQLITE3_CONFIGURE_WITH=	sqlite3
 
 MYSQL_USE=	MYSQL=yes

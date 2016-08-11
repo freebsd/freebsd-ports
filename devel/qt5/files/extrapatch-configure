@@ -20,12 +20,12 @@
 +++ configure	2015-05-01 09:35:38.595937000 +0200
 @@ -3853,7 +3853,7 @@
  }
- 
+
  # build qmake
 -if true; then ###[ '!' -f "$outpath/bin/qmake" ];
 +if [ '!' -e "$outpath/bin/qmake" ]; then
      echo "Creating qmake..."
- 
+
      mkdir -p "$outpath/qmake" || exit
 @@ -4777,8 +4777,8 @@
                  SQLITE_AUTODETECT_FAILED="no"
@@ -96,7 +96,7 @@
          QT_CFLAGS_FONTCONFIG=
          QT_LIBS_FONTCONFIG="-lfreetype -lfontconfig"
 @@ -5192,9 +5192,9 @@
- 
+
  if [ "$CFG_LIBUDEV" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists libudev 2>/dev/null; then
 -        QMAKE_INCDIR_LIBUDEV=`$PKG_CONFIG --cflags-only-I libudev 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
@@ -109,7 +109,7 @@
          QMakeVar set QMAKE_LIBS_LIBUDEV "$QMAKE_LIBS_LIBUDEV"
      fi
 @@ -5333,8 +5333,8 @@
- 
+
  if [ "$CFG_XCB" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xcb >= 1.5" 2>/dev/null; then
 -        QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags xcb 2>/dev/null`"
@@ -128,20 +128,20 @@
 +                QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags $XCB_PACKAGES 2>/dev/null | filterIncludeOptions`"
 +                QMAKE_LIBS_XCB="`$PKG_CONFIG --libs $XCB_PACKAGES 2>/dev/null | filterLibraryOptions`"
              fi
- 
+
              # libxcb version 1.10 was the first version that enables xcb-xkb by default,
              # therefore the minimal xcb-xkb version we support is 1.10
              CFG_XKB=no
              if $PKG_CONFIG --exists "xcb-xkb >= 1.10" 2>/dev/null; then
 -                QMAKE_CFLAGS_XKB="`$PKG_CONFIG --cflags xcb xcb-xkb 2>/dev/null`"
 -                QMAKE_LIBS_XKB="`$PKG_CONFIG --libs xcb xcb-xkb 2>/dev/null`"
-+                QMAKE_CFLAGS_XKB="`$PKG_CONFIG --cflags xcb xcb-xkb 2>/dev/null` | filterIncludeOptions"
-+                QMAKE_LIBS_XKB="`$PKG_CONFIG --libs xcb xcb-xkb 2>/dev/null` | filterLibraryOptions"
++                QMAKE_CFLAGS_XKB="`$PKG_CONFIG --cflags xcb xcb-xkb 2>/dev/null | filterIncludeOptions`"
++                QMAKE_LIBS_XKB="`$PKG_CONFIG --libs xcb xcb-xkb 2>/dev/null | filterLibraryOptions`"
                  if compileTest qpa/xcb-xkb "xcb-xkb" $QMAKE_CFLAGS_XKB $QMAKE_LIBS_XKB; then
                      CFG_XKB=yes
                  fi
 @@ -5416,8 +5416,8 @@
- 
+
  if [ "$CFG_DIRECTFB" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists directfb 2>/dev/null; then
 -        QMAKE_CFLAGS_DIRECTFB=`$PKG_CONFIG --cflags directfb 2>/dev/null`
@@ -159,12 +159,12 @@
 -            QMAKE_LIBS_XKBCOMMON="`$PKG_CONFIG --libs xkbcommon xkbcommon-x11 2>/dev/null`"
 +            QMAKE_CFLAGS_XKBCOMMON="`$PKG_CONFIG --cflags xkbcommon xkbcommon-x11 2>/dev/null | filterIncludeOptions`"
 +            QMAKE_LIBS_XKBCOMMON="`$PKG_CONFIG --libs xkbcommon xkbcommon-x11 2>/dev/null | filterLibraryOptions`"
- 
+
              QMakeVar set QMAKE_CFLAGS_XKBCOMMON "$QMAKE_CFLAGS_XKBCOMMON"
              QMakeVar set QMAKE_LIBS_XKBCOMMON "$QMAKE_LIBS_XKBCOMMON"
 @@ -5524,9 +5524,9 @@
      fi
- 
+
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists egl 2>/dev/null; then
 -        QMAKE_INCDIR_EGL=`$PKG_CONFIG --cflags-only-I egl 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
 -        QMAKE_LIBS_EGL=`$PKG_CONFIG --libs egl 2>/dev/null`

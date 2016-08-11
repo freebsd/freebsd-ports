@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Some tests are skipped without pycrypto, but its not
-# referenced as a requirement anymore. 
+# referenced as a requirement anymore.
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto

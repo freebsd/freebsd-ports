@@ -11,7 +11,8 @@ MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
 
-USES=		execinfo gmake pkgconfig
+USES=		dos2unix execinfo gmake pkgconfig
+DOS2UNIX_GLOB=	*.h
 USE_GNOME=	gtk20
 
 ALL_TARGET=	#

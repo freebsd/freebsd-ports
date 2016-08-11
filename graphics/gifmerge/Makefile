@@ -3,16 +3,17 @@
 
 PORTNAME=	gifmerge
 PORTVERSION=	1.33
+DISTVERSIONSUFFIX=	.src
 CATEGORIES=	graphics
-MASTER_SITES=	http://the-labs.com/GIFMerge/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	SUNSITE/apps/graphics/convert
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for making a GIF Animation
 
-BROKEN=		unfetchable
+USES=		tar:tgz
 
 NO_WRKSUBDIR=	yes
+
 PLIST_FILES=	bin/gifmerge
 
 do-build:

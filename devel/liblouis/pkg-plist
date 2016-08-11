@@ -9,8 +9,8 @@ include/liblouis/liblouis.h
 include/liblouis/louis.h
 lib/liblouis.a
 lib/liblouis.so
-lib/liblouis.so.9
-lib/liblouis.so.9.0.0
+lib/liblouis.so.10
+lib/liblouis.so.10.0.0
 libdata/pkgconfig/liblouis.pc
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
@@ -204,6 +204,7 @@ man/man1/lou_translate.1.gz
 %%DATADIR%%/tables/marburg_unicode_defs.cti
 %%DATADIR%%/tables/ml-in-g1.utb
 %%DATADIR%%/tables/mn-in-g1.utb
+%%DATADIR%%/tables/mn-MN.utb
 %%DATADIR%%/tables/mr-in-g1.utb
 %%DATADIR%%/tables/mt.ctb
 %%DATADIR%%/tables/mun.ctb
@@ -217,12 +218,15 @@ man/man1/lou_translate.1.gz
 %%DATADIR%%/tables/nl-BE.dis
 %%DATADIR%%/tables/nl-NL-chardefs.cti
 %%DATADIR%%/tables/nl-NL-g1.ctb
+%%DATADIR%%/tables/no-no-8dot.utb
+%%DATADIR%%/tables/no-no-chardefs6.uti
 %%DATADIR%%/tables/no-no-g0.utb
 %%DATADIR%%/tables/no-no-g1.ctb
 %%DATADIR%%/tables/no-no-g2.ctb
 %%DATADIR%%/tables/no-no-g3.ctb
 %%DATADIR%%/tables/no-no-generic.ctb
 %%DATADIR%%/tables/no-no-generic.dis
+%%DATADIR%%/tables/no-no-latinLetterDef6Dots_diacritics.uti
 %%DATADIR%%/tables/no-no.ctb
 %%DATADIR%%/tables/no-no.dis
 %%DATADIR%%/tables/np-in-g1.utb

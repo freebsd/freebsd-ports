@@ -3,7 +3,7 @@
 
 PORTNAME=	apn
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,9 +17,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libcapn.so:net/libcapn
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 CONFIGURE_ARGS=	--with-apn=${LOCALBASE}
 IGNORE_WITH_PHP=	70
 

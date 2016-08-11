@@ -12,10 +12,9 @@ COMMENT=	MySQL database connector for C
 
 LICENSE=	GPLv2
 
-USE_MYSQL=	51+
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=yes
-USES=		cmake:outsource compiler:features
+USES=		cmake:outsource compiler:features mysql
 CMAKE_ARGS+=	-DWITH_SSL=system \
 		-DOPENSSL_INCLUDE_DIR=${LOCALBASE}/include/openssl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

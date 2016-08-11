@@ -9,6 +9,9 @@ MASTER_SITES=	PACKETSTORM/UNIX/scanners
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump MSRPC endpoint information from Windows systems
 
+USES=	dos2unix
+DOS2UNIX_GLOB=	*.c
+
 ALL_TARGET=	dcetest
 MAKE_ARGS=	CC="${CC}"
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -12,19 +12,15 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	SGML DTDs from the The Electronic Publishing Special Interest Group
 
-RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
+RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 DIST_SUBDIR=	iso12083
 
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	DTD_NAME=${PORTNAME} XMLCATMGR=${XMLCATMGR}
-PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 INSTDIR=	${STAGEDIR}${PREFIX}/share/sgml/iso12083
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}

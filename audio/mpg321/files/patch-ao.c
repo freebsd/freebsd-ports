@@ -1,6 +1,6 @@
---- ao.c.orig
+--- ao.c.orig	2002-03-24 05:49:47 UTC
 +++ ao.c
-@@ -229,6 +229,7 @@
+@@ -229,6 +229,7 @@ void open_ao_playdevice(struct mad_heade
             and restore it afterwards */
          signal(SIGINT, SIG_DFL);
          

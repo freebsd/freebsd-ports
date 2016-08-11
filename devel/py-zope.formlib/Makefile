@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.formlib
-PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Form generation and validation library for Zope
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}zope.browser>=1.1:devel/py-zope.browser \
@@ -28,7 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:devel/py-zope.traversing \
 		${PYTHON_PKGNAMEPREFIX}zope.datetime>=0:devel/py-zope.datetime
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

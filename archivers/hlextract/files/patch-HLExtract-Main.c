@@ -1,6 +1,5 @@
-diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
---- ../orig/HLExtract/Main.c	2011-09-17 00:41:54.000000000 -0300
-+++ ./HLExtract/Main.c	2013-02-11 18:29:02.880217165 -0200
+--- HLExtract/Main.c.orig	2016-07-26 11:59:22 UTC
++++ HLExtract/Main.c
 @@ -52,7 +52,7 @@
  #	define WIN32_LEAN_AND_MEAN
  #	include <windows.h>
@@ -10,7 +9,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  #	define MAX_PATH PATH_MAX
  
  #	define FOREGROUND_BLUE      0x0001
-@@ -618,15 +618,15 @@
+@@ -618,15 +618,15 @@ hlVoid PrintUsage()
  	printf("\n");
  	printf("Example HLExtract usage:\n");
  #ifdef _WIN32
@@ -34,7 +33,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  #endif
  }
  
-@@ -657,6 +657,8 @@
+@@ -657,6 +657,8 @@ hlVoid List(FILE *pFile, HLDirectoryItem
  			fprintf(pFile, "%s\n", lpPath);
  		}
  		break;
@@ -43,7 +42,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  	}
  }
  
-@@ -843,6 +845,8 @@
+@@ -843,6 +845,8 @@ HLValidation Validate(HLDirectoryItem *p
  				PrintValidation(eValidation);
  				printf("\n");
  				break;
@@ -52,7 +51,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  			}
  		}
  		else
-@@ -851,6 +855,8 @@
+@@ -851,6 +855,8 @@ HLValidation Validate(HLDirectoryItem *p
  			printf("  \n");
  		}
  		break;
@@ -61,7 +60,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  	}
  
  	return eValidation;
-@@ -882,6 +888,8 @@
+@@ -882,6 +888,8 @@ hlVoid PrintAttribute(hlChar *lpPrefix, 
  	case HL_ATTRIBUTE_STRING:
  		printf("%s%s: %s%s\n", lpPrefix, pAttribute->lpName, pAttribute->Value.String.lpValue, lpPostfix);
  		break;
@@ -70,7 +69,7 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  	}
  }
  
-@@ -1151,6 +1159,8 @@
+@@ -1151,6 +1159,8 @@ hlVoid EnterConsole(hlUInt uiPackage, hl
  						printf("  Size: %u B\n", hlFileGetSize(pSubItem));
  						printf("  Size On Disk: %u B\n", hlFileGetSizeOnDisk(pSubItem));
  						break;
@@ -79,4 +78,3 @@ diff -ru ../orig/HLExtract/Main.c ./HLExtract/Main.c
  					}
  
  					uiItemCount = hlPackageGetItemAttributeCount();
-Only in ./HLExtract: Main.c.bak

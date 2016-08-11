@@ -1,4 +1,4 @@
---- src/libtomahawk/utils/TomahawkUtils.cpp.orig	2014-11-20 00:17:56 UTC
+--- src/libtomahawk/utils/TomahawkUtils.cpp.orig	2015-04-15 04:41:40 UTC
 +++ src/libtomahawk/utils/TomahawkUtils.cpp
 @@ -19,6 +19,8 @@
   *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.

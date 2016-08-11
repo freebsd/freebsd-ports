@@ -6,6 +6,6 @@ For Autonomous Systems, it looks for routes that are announced by
 the given system.
 
 It is based on the library created by RIPE called bgpdump and SiLK,
-created by CERT.  
+created by CERT.
 
 WWW: https://github.com/cmu-sei/bgpuma

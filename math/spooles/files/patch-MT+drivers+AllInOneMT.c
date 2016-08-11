@@ -1,6 +1,6 @@
---- MT/drivers/allInOneMT.c.orig	Sat Aug  9 14:06:19 2003
-+++ MT/drivers/allInOneMT.c	Sat Aug  9 14:13:07 2003
-@@ -35,7 +35,7 @@
+--- MT/drivers/allInOneMT.c.orig	1999-01-21 16:51:22 UTC
++++ MT/drivers/allInOneMT.c
+@@ -35,7 +35,7 @@ DenseMtx        *mtxY, *mtxX ;
  Chv             *rootchv ;
  ChvManager      *chvmanager ;
  double          droptol = 0.0, tau = 100. ;

@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 
 USES=		cmake:outsource pkgconfig tar:xz
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

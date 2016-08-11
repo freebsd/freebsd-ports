@@ -1,4 +1,4 @@
-TinyCA is a simple graphical userinterface written in Perl/Tk to manage a 
+TinyCA is a simple graphical userinterface written in Perl/Tk to manage a
 small CA (Certification Authority).
 Currently TinyCA supports the following features:
 
@@ -6,14 +6,14 @@ Currently TinyCA supports the following features:
     * support for creating and managing SubCAs
     * Creation and Revocation of x509 - S/MIME certificates
     * PKCS#10 Requests can be imported and signed
-    * RSA and DSA keys can be generated and used 
+    * RSA and DSA keys can be generated and used
     * Servercertificates
           o Certificates can be exported as: PEM, DER, TXT and PKCS#12
-          o Certificates may be used with e.g. Apache, Postfix, OpenLDAP, 
+          o Certificates may be used with e.g. Apache, Postfix, OpenLDAP,
 		Cyrus and FreeS/WAN
     * Clientcertificates
           o Certificates can be exported as: PEM, DER, TXT and PKCS#12
-          o Certificates may be used with e.g. Netscape, Konqueror, Opera, 
+          o Certificates may be used with e.g. Netscape, Konqueror, Opera,
 		Internet Explorer, Outlook (Express) and FreeS/WAN
     * Certificate Revocation List
           o CRLs can be exported as: PEM, DER and TXT

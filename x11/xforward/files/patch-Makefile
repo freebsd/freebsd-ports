@@ -1,6 +1,6 @@
 --- Makefile.orig	1993-06-04 19:32:01.000000000 -0700
-+++ Makefile	2012-04-27 13:01:33.079482669 -0700
-@@ -18,17 +18,17 @@
++++ Makefile	2016-04-29 22:53:07.305978000 -0700
+@@ -18,17 +18,19 @@
  # MANDIR is where the manual page will be installed.
  
  DESTDIR=
@@ -20,6 +20,40 @@
 +INCFLAGS= -I${LOCALBASE}/include
 +LDFLAGS= -L${LOCALBASE}/lib
 +LIBS= -lXm -lXt -lX11 -lXext
++LIBS_STATIC= -lXm -lXmu -lXt -lXext -lSM -lICE -lpng16 -lz -lm -ljpeg -lXp -lXft -lfontconfig -lexpat -lfreetype -lbz2 -lX11 -lXau -lxcb -lXdmcp -lXau -lXft -lXrender
++
  
  CFLAGS= ${INCFLAGS} -O
  
+@@ -39,20 +41,30 @@
+ AUXFILES= README NOTICE Makefile xforward.1
+ 
+ PROGS = xforward
++PROGS_STATIC = xforward-static
+ 
++all-static: all ${PROGS_STATIC}
++
+ all: ${PROGS}
+ 
+ xforward:	xforward.o
+ 	cc ${LDFLAGS} xforward.o -o xforward ${LIBS}
+ 
++xforward-static:	xforward.o
++	cc ${LDFLAGS} -static xforward.o -o xforward-static ${LIBS_STATIC}
++
+ xforward.o:	xforward.c
+ 	cc -c ${CFLAGS} xforward.c
+ 
+ install: ${PROGS}
+ 	install -c xforward ${DESTDIR}${BINDIR}/xforward
+ 	install -c xforward.1 ${DESTDIR}${MANDIR}/xforward.1
++
++install-static: install ${PROGS_STATIC}
++	install -c xforward-static ${DESTDIR}${BINDIR}/xforward-static
++
+ clean: 	;
+-	rm -f *~ *.o core ${PROGS}
++	rm -f *~ *.o core ${PROGS} ${PROGS_STATIC}
+ 
+ center:
+ 	#load ${LDFLAGS} ${LIBS}

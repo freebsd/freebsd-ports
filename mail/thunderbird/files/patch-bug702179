@@ -1,24 +1,13 @@
-commit 6ddaacd
-Author: Ginn Chen <ginn.chen@oracle.com>
-Date:   Wed Nov 30 07:23:46 2011 +0800
-
-    Bug 702179 dtrace probes are not installed on Solaris with static js lib r=glandium
----
- js/src/Makefile.in        | 3 ---
- toolkit/library/moz.build | 5 -----
- 2 files changed, 8 deletions(-)
-
-diff --git js/src/Makefile.in js/src/Makefile.in
-index 62bbfa0..90400cb 100644
---- mozilla/js/src/Makefile.in
-+++ mozilla/js/src/Makefile.in
-@@ -17,9 +17,6 @@ TOPLEVEL_BUILD := 1
- run_for_side_effects := $(shell echo 'MAKE: $(MAKE)')
- EXTRA_LIBS		+= $(NSPR_LIBS)
+--- mozilla/js/src/moz.build.orig	2015-12-16 12:32:04.574425000 +0100
++++ mozilla/js/src/moz.build	2015-12-16 12:32:09.032032000 +0100
+@@ -671,10 +671,6 @@ CFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ LOCAL_INCLUDES += CONFIG['MOZ_ICU_INCLUDES']
  
--DIST_INSTALL = 1
--NO_EXPAND_LIBS = 1
+-NO_EXPAND_LIBS = True
 -
- ifdef JS_HAS_CTYPES
- ifdef MOZ_NATIVE_FFI
- LOCAL_INCLUDES = $(MOZ_FFI_CFLAGS)
+-DIST_INSTALL = True
+-
+ # Prepare self-hosted JS code for embedding
+ GENERATED_FILES += ['selfhosted.out.h']
+ selfhosted = GENERATED_FILES['selfhosted.out.h']

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libchewing
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
-USES=		cmake libtool pathfix pkgconfig tar:bzip2
-USE_SQLITE=	yes
+USES=		cmake libtool pathfix pkgconfig sqlite tar:bzip2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	chewing

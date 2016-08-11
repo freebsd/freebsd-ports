@@ -34,8 +34,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097U ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-
-post-install:
 	${INSTALL_DATA} ${FILESDIR}/digitemp.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Sample config installed at ${PREFIX}/etc/digitemp.conf.sample"

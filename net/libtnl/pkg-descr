@@ -1,11 +1,11 @@
-The Torque Network Library is a robust, secure, easy to use, cross-platform 
-C++ networking API designed for high performance simulations and games. The 
-network architecture in TNL has powered some of the best internet 
-multiplayer action games to date. Whether you're writing a multiplayer game, 
-developing a complex simulation, or just need a solid foundation for network 
+The Torque Network Library is a robust, secure, easy to use, cross-platform
+C++ networking API designed for high performance simulations and games. The
+network architecture in TNL has powered some of the best internet
+multiplayer action games to date. Whether you're writing a multiplayer game,
+developing a complex simulation, or just need a solid foundation for network
 apps, TNL will meet your needs.
 
-TNL is available under the GNU General Public License (GPL), an indie 
+TNL is available under the GNU General Public License (GPL), an indie
 license, and a commercial license.
 
 WWW: http://opentnl.org

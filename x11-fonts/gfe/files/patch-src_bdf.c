@@ -1,5 +1,5 @@
---- src/bdf.c.orig	Tue Jun 27 12:36:09 2000
-+++ src/bdf.c	Sat Nov 30 02:04:14 2002
+--- src/bdf.c.orig	2000-06-27 10:36:09 UTC
++++ src/bdf.c
 @@ -18,7 +18,8 @@
  #include <gtk/gtk.h>
  

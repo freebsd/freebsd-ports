@@ -1,4 +1,4 @@
 Ztrack is a (very) simple curses-based pseudo-3D driving
-game. It  supports  colour  with ncurses. It should also 
+game. It  supports  colour  with ncurses. It should also
 compile on most reasonably modern Unix boxes. You probably
 need a pretty fast terminal - console or xterm is easily enough.

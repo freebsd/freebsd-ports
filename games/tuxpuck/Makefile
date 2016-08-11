@@ -3,17 +3,17 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Sports/Miscellaneous/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
-BROKEN=		unfetchable
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
+		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 

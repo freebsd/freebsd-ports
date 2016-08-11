@@ -4,9 +4,10 @@
 #
 # Feature:	cran
 # Usage:	USES=cran or USES=cran:ARGS
-# Valid ARGS:	auto-plist
+# Valid ARGS:	auto-plist, compiles
 #
-# auto-plist	The pkg-plist can be automatically compiled
+# auto-plist	The pkg-plist is to be automatically generated
+# compiles	The port has code that needs to be compiled
 #
 # MAINTAINER=	wen@FreeBSD.org
 
@@ -74,6 +75,10 @@ _USES_install+=	750:cran-auto-plist
 cran-auto-plist:
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
+.endif
+
+.if ${cran_ARGS:Mcompiles}
+.include "${PORTSDIR}/math/R/compiler.mk"
 .endif
 
 .endif #_INCLUDE_USES_CRAN_MK

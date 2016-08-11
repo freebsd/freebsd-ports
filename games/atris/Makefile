@@ -5,12 +5,10 @@ PORTNAME=	atris
 PORTVERSION=	1.0.7
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
+MASTER_SITES=	http://www.cs.virginia.edu/~weimer/atris/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

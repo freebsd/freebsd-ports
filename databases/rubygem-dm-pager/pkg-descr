@@ -1,7 +1,7 @@
-Not to be confused with the dm-pagination gem (a similar gem 
-lacking in functionality) dm-pager is a new, fresh, and feature 
-rich pagination implementation for DataMapper. Due to Github's gem 
-builder being destroyed, we were forced to rename our gem to 
+Not to be confused with the dm-pagination gem (a similar gem
+lacking in functionality) dm-pager is a new, fresh, and feature
+rich pagination implementation for DataMapper. Due to Github's gem
+builder being destroyed, we were forced to rename our gem to
 'dm-pager' which is now available on Gemcutter.org.
 
 WWW: https://github.com/tj/dm-pagination

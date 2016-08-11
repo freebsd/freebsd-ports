@@ -1,4 +1,5 @@
-SHA256 (rpm/i386/fedora/10/SDL_image-1.2.6-6.fc9.i386.rpm) = 8da4e1aebeefcd68b6d5684fac9cf361e56818691c8e73c39d5e1bcf090971de
-SIZE (rpm/i386/fedora/10/SDL_image-1.2.6-6.fc9.i386.rpm) = 45268
-SHA256 (rpm/i386/fedora/10/SDL_image-1.2.6-6.fc9.src.rpm) = dedfd510d6b8b314db97a8e0406e0481fa564f508dff177c65ae6fa3335a848a
-SIZE (rpm/i386/fedora/10/SDL_image-1.2.6-6.fc9.src.rpm) = 1317840
+TIMESTAMP = 1466256818
+SHA256 (rpm/i686/centos/6.8/SDL_ttf-2.0.11-6.el6.i686.rpm) = d6f344c7f3e50f6b072fb7fb39aa7882cdf621b6f1cee62ec9fa09647802b1a7
+SIZE (rpm/i686/centos/6.8/SDL_ttf-2.0.11-6.el6.i686.rpm) = 21752
+SHA256 (rpm/i686/centos/6.8/SDL_ttf-2.0.11-6.el6.src.rpm) = 6c940edece8b714623f049cb2a4dd163f5fc8ef6c1b0d1778113df0bbbce004e
+SIZE (rpm/i686/centos/6.8/SDL_ttf-2.0.11-6.el6.src.rpm) = 4058837

@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	libuecc
-PORTVERSION=	6
+PORTVERSION=	7
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://git.universe-factory.net/libuecc/snapshot/
+MASTER_SITES=	https://git.universe-factory.net/libuecc/snapshot/ \
+		http://git.universe-factory.net/libuecc/snapshot/
 
 MAINTAINER=	crest_maintainer@rlwinm.de
 COMMENT=	Very small Elliptic Curve Cryptography library

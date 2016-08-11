@@ -2,4 +2,4 @@ Urlimport enables the user to import modules/packages over the network, from a
 remote repository. Currently supported protocols are http, ftp and https
 (+client certificates).
 
-WWW:	http://urlimport.codeshift.net/
+WWW: http://urlimport.codeshift.net/

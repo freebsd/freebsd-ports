@@ -1,4 +1,4 @@
---- jctvc/TLibCommon/TComPicYuv.cpp.orig	2015-01-11 16:17:07 UTC
+--- jctvc/TLibCommon/TComPicYuv.cpp.orig	2016-05-15 09:06:19 UTC
 +++ jctvc/TLibCommon/TComPicYuv.cpp
 @@ -41,7 +41,7 @@
  

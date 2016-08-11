@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:multimedia/v4l_compat
 
-PATCH_STRIP=	-lp1
-
 GNU_CONFIGURE=	yes
-USES=		gettext iconv localbase tar:bzip2
+USES=		dos2unix gettext iconv localbase tar:bzip2
+DOS2UNIX_GLOB=	*.c *.h
 LDFLAGS+=	${ICONV_LIB}
 NO_WRKSUBDIR=	yes
 

@@ -1,4 +1,4 @@
 Template::Plugin::Markdown acts as a filter passing all content to
-Text::Markdown for conversion of plain text to HTML.   
+Text::Markdown for conversion of plain text to HTML.
 
 WWW: http://search.cpan.org/dist/Template-Plugin-Markdown/

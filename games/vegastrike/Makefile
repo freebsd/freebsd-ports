@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		dos2unix gmake openal:al pkgconfig python tar:bzip2
+USES=		dos2unix gmake localbase openal:al pkgconfig python tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		glut
@@ -28,9 +28,6 @@ USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \
 USE_GNOME=	gtk20
 DOS2UNIX_GLOB=	*.cpp *.h
 EXTRACT_AFTER_ARGS=	--exclude boost
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 # cegui and ffmpeg are not used yet
 CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \

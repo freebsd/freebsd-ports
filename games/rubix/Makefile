@@ -10,6 +10,8 @@ MASTER_SITES=	http://sed.free.fr/rubix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
+BROKEN_powerpc64=	Does not build
+
 USES=		compiler:nestedfct gmake tar:bzip2
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \

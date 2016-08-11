@@ -14,6 +14,8 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
 %%DATADIR%%/shortcuts/euskara.keys
+%%DATADIR%%/shortcuts/vlc.keys
+%%DATADIR%%/translations/smplayer_am.qm
 %%DATADIR%%/translations/smplayer_ar.qm
 %%DATADIR%%/translations/smplayer_ar_SY.qm
 %%DATADIR%%/translations/smplayer_bg.qm
@@ -27,6 +29,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_es.qm
 %%DATADIR%%/translations/smplayer_et.qm
 %%DATADIR%%/translations/smplayer_eu.qm
+%%DATADIR%%/translations/smplayer_fa.qm
 %%DATADIR%%/translations/smplayer_fi.qm
 %%DATADIR%%/translations/smplayer_fr.qm
 %%DATADIR%%/translations/smplayer_gl.qm

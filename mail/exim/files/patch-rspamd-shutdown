@@ -1,0 +1,13 @@
+--- src/spam.c.orig	2016-04-02 20:24:15.000000000 +0100
++++ src/spam.c	2016-04-21 16:42:49.297221000 +0100
+@@ -494,7 +494,9 @@
+ (void)fclose(mbox_file);
+ 
+ /* we're done sending, close socket for writing */
+-shutdown(spamd_sock,SHUT_WR);
++if (!sd->is_rspamd) {
++  shutdown(spamd_sock,SHUT_WR);
++}
+ 
+ /* read spamd response using what's left of the timeout.  */
+ memset(spamd_buffer, 0, sizeof(spamd_buffer));

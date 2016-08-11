@@ -13,7 +13,7 @@ COMMENT=	Amarok 2.x plasma applet for KDE4
 LICENSE=	GPLv2
 
 USES=		cmake tar:bzip2
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 

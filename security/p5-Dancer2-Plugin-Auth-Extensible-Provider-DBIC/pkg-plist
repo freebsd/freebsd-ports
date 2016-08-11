@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Provider/DBIC.pm
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Provider/README.pod
 %%PERL5_MAN3%%/Dancer2::Plugin::Auth::Extensible::Provider::DBIC.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::Auth::Extensible::Provider::README.3.gz

@@ -1,97 +1,80 @@
-.PHONY: all
-.PHONY: generate_sources
+.PATH:		../src
+.PATH:		../gpr/src
 
-AFLAGS=	-gnat12 -gnaty -gnatQ -O2 -gnatpn -gnatws -g1 -j${PROCESSORS}
+STATIC_FLAGS=	-gnat12 -gnaty -gnatQ -O2 -gnatpn -gnatws -g1
 
-COBJS=	obj/link.o obj/gprbuild_dummies.o
+PREFIX?=	/usr/local
+GPRLIB_INC=	-I${PREFIX}/include/xmlada -I../gpr/src
+LOOK=		-aL${PREFIX}/lib/xmlada/static -aI${PREFIX}/include/xmlada
 
-LOOK=	-aI${.CURDIR}/gnat -aI${.CURDIR}/gen_src \
-	-aL${PREFIX}/lib/xmlada/static -aI${PREFIX}/include/xmlada
-LARGS=	-largs ${.CURDIR}/obj/link.o \
-	-largs ${.CURDIR}/obj/gprbuild_dummies.o \
-	-largs ${PREFIX}/lib/xmlada/static/libxmlada_dom.a \
-	-largs ${PREFIX}/lib/xmlada/static/libxmlada_input_sources.a \
-	-largs ${PREFIX}/lib/xmlada/static/libxmlada_sax.a \
-	-largs ${PREFIX}/lib/xmlada/static/libxmlada_schema.a \
-	-largs ${PREFIX}/lib/xmlada/static/libxmlada_unicode.a
+libgpr_csrc=	gprbuild_dummies.c \
+		gpr_imports.c
 
-GENDIR=		gen_src
-GEN_SRCS=	${GENDIR}/snames.adb ${GENDIR}/snames.ads
-DOCSDIR=	${PREFIX}/share/doc/gprbuild
+LARGS=		 ${libgpr_csrc:S/^/-largs /:.c=.o} \
+		-largs ${PREFIX}/lib/xmlada/static/libxmlada_dom.a \
+		-largs ${PREFIX}/lib/xmlada/static/libxmlada_input_sources.a \
+		-largs ${PREFIX}/lib/xmlada/static/libxmlada_sax.a \
+		-largs ${PREFIX}/lib/xmlada/static/libxmlada_schema.a \
+		-largs ${PREFIX}/lib/xmlada/static/libxmlada_unicode.a
 
-all: gprbuild
+APPS=		gprclean/gprclean-main.adb \
+		gprconfig/gprconfig-main.adb \
+		gprbuild/gprbuild-main.adb \
+		gprbind/gprbind.adb \
+		gprlib/gprlib.adb \
+		gprinstall/gprinstall-main.adb \
+		gprslave/gprslave.adb \
+		gprname/gprname-main.adb \
+		gprls/gprls-main.adb
+
+all:		${APPS:H}
+
+gprclean: gprclean-main.adb ${libgpr_csrc:.c=.o}
+	gnatmake -o ${.TARGET} -j${PROCESSORS} \
+		${STATIC_FLAGS} ${GPRLIB_INC} ${LOOK} \
+		${.ALLSRC:M*adb} ${LARGS}
+
+.for app in ${APPS:Ngprclean*}
+${app:H}: gprclean ${app:T} ${libgpr_csrc:.c=.o}
+	gnatmake -o ${.TARGET} ${STATIC_FLAGS} ${GPRLIB_INC} ${LOOK} \
+		${.ALLSRC:M*adb} ${LARGS}
+.endfor
+
+clean:
+	rm -f *.o *.ali b~* ${APP:H}
+
+gen-docs:
+	${MAKE} -e -C ${.CURDIR:H}/doc html txt
 
 install:
 	mkdir -p ${DESTDIR}${PREFIX}/bin \
 		${DESTDIR}${PREFIX}/libexec/gprbuild \
 		${DESTDIR}${PREFIX}/share/gpr \
 		${DESTDIR}${PREFIX}/share/gprconfig
-	${BSD_INSTALL_PROGRAM} ${.CURDIR}/obj/gprclean \
-		${.CURDIR}/obj/gprinstall \
-		${.CURDIR}/obj/gprconfig \
-		${.CURDIR}/obj/gprslave \
-		${.CURDIR}/obj/gprbuild ${DESTDIR}${PREFIX}/bin
-	${BSD_INSTALL_PROGRAM} ${.CURDIR}/obj/gprbind \
-		${.CURDIR}/obj/gprlib ${DESTDIR}${PREFIX}/libexec/gprbuild
-	${BSD_INSTALL_DATA} ${.CURDIR}/share/_default.gpr \
-		${DESTDIR}${PREFIX}/share/gpr
-	${BSD_INSTALL_DATA} ${.CURDIR}/share/gprconfig/* \
-		${DESTDIR}${PREFIX}/share/gprconfig
+	${BSD_INSTALL_PROGRAM} \
+		${.CURDIR}/gprclean \
+		${.CURDIR}/gprinstall \
+		${.CURDIR}/gprconfig \
+		${.CURDIR}/gprslave \
+		${.CURDIR}/gprls \
+		${.CURDIR}/gprname \
+		${.CURDIR}/gprbuild \
+			${DESTDIR}${PREFIX}/bin
+	${BSD_INSTALL_PROGRAM} \
+		${.CURDIR}/gprbind \
+		${.CURDIR}/gprlib \
+			${DESTDIR}${PREFIX}/libexec/gprbuild
+	${BSD_INSTALL_DATA} \
+		${.CURDIR}/../share/_default.gpr \
+			${DESTDIR}${PREFIX}/share/gpr
+	${BSD_INSTALL_DATA} \
+		${.CURDIR}/../share/gprconfig/*.x[sm][dl] \
+			${DESTDIR}${PREFIX}/share/gprconfig
 
 install-docs:
-	mkdir -p ${DESTDIR}${DOCSDIR}/html ${DESTDIR}${DOCSDIR}/txt \
-		${DESTDIR}${DOCSDIR}/pdf
-	${BSD_INSTALL_DATA} ${.CURDIR}/doc/txt/gprbuild_ug.txt \
-		${DESTDIR}${DOCSDIR}/txt
-	${BSD_INSTALL_DATA} ${.CURDIR}/doc/pdf/gprbuild_ug.pdf \
-		${DESTDIR}${DOCSDIR}/pdf
-	cp -r ${.CURDIR}/doc/html/* ${DESTDIR}${DOCSDIR}/html
-	rm -rf ${DESTDIR}${DOCSDIR}/html/_sources
-	${BSD_INSTALL_DATA} ${.CURDIR}/doc/*.png \
-		${DESTDIR}${DOCSDIR}/html
-
-gprclean: src/gprclean-main.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprclean-main.adb ${LARGS}
-
-gprbind: gprclean src/gprslave.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprbind.adb ${LARGS}
-
-gprlib: gprbind src/gprslave.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprlib.adb ${LARGS}
-
-gprslave: gprlib src/gprslave.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprslave.adb ${LARGS}
-
-gprinstall: gprslave src/gprinstall-main.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprinstall-main.adb ${LARGS}
-
-gprconfig: gprinstall src/gprconfig-main.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprconfig-main.adb ${LARGS}
-
-gprbuild: gprconfig src/gprbuild-main.adb ${GEN_SRCS} ${COBJS}
-	gnatmake -o ${.TARGET} ${AFLAGS} ${LOOK} \
-		${.CURDIR}/src/gprbuild-main.adb ${LARGS}
-
-obj/link.o: gnat/link.c
-	gcc -c -o ${.CURDIR}/${.TARGET} ${.ALLSRC}
-
-obj/gprbuild_dummies.o: src/gprbuild_dummies.c
-	gcc -c -o ${.CURDIR}/${.TARGET} ${.ALLSRC}
-
-generate_sources:
-	mkdir -p ${.CURDIR}/${GENDIR}
-	(cd ${.CURDIR}/gnat && cp xsnamest.adb xutil.* snames.adb-tmpl \
-		snames.ads-tmpl snames.h-tmpl ../${GENDIR})
-	(cd ${.CURDIR}/${GENDIR} && \
-		gnatmake -gnatf -gnatwae -gnatyg -gnatyS xsnamest && \
-		./xsnamest && \
-		mv snames.ns snames.ads && \
-		mv snames.nb snames.adb)
-
-${GEN_SRCS}: generate_sources
+	mkdir -p ${DESTDIR}${PREFIX}/share/doc/gprbuild/txt
+	${BSD_INSTALL_DATA} ${.CURDIR}/../doc/txt/gprbuild_ug.txt \
+		${DESTDIR}${PREFIX}/share/doc/gprbuild/txt
+	rm -rf ${.CURDIR}/../doc/html/_sources
+	rm -f ${.CURDIR}/../doc/html/.buildinfo
+	cp -a ${.CURDIR}/../doc/html ${DESTDIR}${PREFIX}/share/doc/gprbuild

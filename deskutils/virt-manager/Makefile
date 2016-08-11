@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		gtk-vnc>=0.4.4:net/gtk-vnc \
 		libvirt-glib>=0.1.9:devel/libvirt-glib \
 		libosinfo>=0:devel/libosinfo \

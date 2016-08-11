@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking --disable-lua-extension
 PROJECTHOST=	ibus
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

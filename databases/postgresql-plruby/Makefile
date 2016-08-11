@@ -18,7 +18,6 @@ USES+=		uidfix tar:bzip2 pgsql
 WANT_PGSQL=	server
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDOC=		yes
 
 POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER_NODOT}-server
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}

@@ -25,6 +25,7 @@
 # if those targets modify source files (e.g. with sed).  You may also
 # want to disable EXTRA_PATCHES as well if that is being used.
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_SMART_MAKEPATCH}" ] && set -x
 
 if [ -z "${PATCHDIR}" -o -z "${PATCH_WRKSRC}" -o -z "${WRKDIR}" ]; then
 	echo "WRKDIR, PATCHDIR, and PATCH_WRKSRC required in environment." >&2

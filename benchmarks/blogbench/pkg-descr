@@ -1,8 +1,8 @@
-Blogbench is a portable filesystem benchmark that tries to reproduce the 
+Blogbench is a portable filesystem benchmark that tries to reproduce the
 load of a real-world busy file server.
 
-It stresses the filesystem with multiple threads performing random reads, 
-writes and rewrites in order to get a realistic idea of the scalability 
+It stresses the filesystem with multiple threads performing random reads,
+writes and rewrites in order to get a realistic idea of the scalability
 and the concurrency a system can handle.
 
 WWW: http://blogbench.pureftpd.org/project/blogbench

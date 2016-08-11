@@ -13,7 +13,7 @@ COMMENT=	FXP (server-to-server FTP) client
 
 RUN_DEPENDS=	p5-SOCKS>=0:net/p5-Socks \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
+		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

@@ -1,0 +1,12 @@
+--- Makefile.orig	2008-11-13 14:11:39 UTC
++++ Makefile
+@@ -44,6 +44,9 @@ install-core-dev: pdfedit-core-dev
+ 	cd $(KERNELROOT) && $(MAKE) install-dev
+ 	cd $(OSROOT) && $(MAKE) install-dev
+ 
++install-tools:
++	cd $(TOOLSROOT) && $(MAKE) install
++
+ 
+ # Common uninstall target. It depends on configuration which specific
+ # uninstallation target will be used

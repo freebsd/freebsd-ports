@@ -15,10 +15,11 @@ include/qb/qbutil.h
 lib/libqb.a
 lib/libqb.so
 lib/libqb.so.0
-lib/libqb.so.0.17.2
+lib/libqb.so.0.18.0
 libdata/pkgconfig/libqb.pc
 %%DOXYGEN%%man/man3/qbarray.h.3.gz
 %%DOXYGEN%%man/man3/qbatomic.h.3.gz
+%%DOXYGEN%%man/man3/qbdefs.h.3.gz
 %%DOXYGEN%%man/man3/qbhdb.h.3.gz
 %%DOXYGEN%%man/man3/qbipc_common.h.3.gz
 %%DOXYGEN%%man/man3/qbipcc.h.3.gz
@@ -27,6 +28,7 @@ libdata/pkgconfig/libqb.pc
 %%DOXYGEN%%man/man3/qblog.h.3.gz
 %%DOXYGEN%%man/man3/qbloop.h.3.gz
 %%DOXYGEN%%man/man3/qbmap.h.3.gz
+%%DOXYGEN%%man/man3/qbrb.h.3.gz
 %%DOXYGEN%%man/man3/qbutil.h.3.gz
 %%DOXYGEN%%man/man8/qb-blackbox.8.gz
 sbin/qb-blackbox

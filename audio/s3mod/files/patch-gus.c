@@ -1,5 +1,5 @@
---- gus.c.orig	Sat Oct 21 12:14:33 1995
-+++ gus.c	Thu Aug 22 20:55:06 2002
+--- gus.c.orig	1995-10-21 19:14:33 UTC
++++ gus.c
 @@ -26,7 +26,7 @@
  #ifdef GUS
  

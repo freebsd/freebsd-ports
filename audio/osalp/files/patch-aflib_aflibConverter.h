@@ -1,6 +1,6 @@
---- ./aflib/aflibConverter.h.orig	2014-01-30 14:55:43.000000000 +0100
-+++ ./aflib/aflibConverter.h	2014-01-30 14:55:50.000000000 +0100
-@@ -110,7 +110,7 @@
+--- aflib/aflibConverter.h.orig	2007-01-16 19:26:39 UTC
++++ aflib/aflibConverter.h
+@@ -110,7 +110,7 @@ private:
     operator=(const aflibConverter& op);
  
     int

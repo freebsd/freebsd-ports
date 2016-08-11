@@ -13,7 +13,7 @@ COMMENT=	Trac plugin to use LDAP to store permissions
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	tracd:www/trac \
+RUN_DEPENDS=	tracd:www/trac \
 		trac-accountmanager>0:www/trac-accountmanager
 
 NO_ARCH=	yes
@@ -39,5 +39,4 @@ do-fetch:
 	cd ${WRKDIR} && tar cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.orig	2003-08-28 12:22:48 UTC
+--- Makefile.orig	2011-04-27 16:33:40 UTC
 +++ Makefile
-@@ -14,7 +14,7 @@ clean: recursive-clean
+@@ -15,7 +15,7 @@ clean: recursive-clean
  recursive-all recursive-install recursive-clean:
  	@target=$@; \
  	for i in $(SUBDIRS); do \

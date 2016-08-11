@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newtonsoft-json
-PORTVERSION=	8.0.3
+PORTVERSION=	9.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -29,10 +29,6 @@ do-build:
 		/property:AssemblyOriginatorKeyFile=Dynamic.snk \
 		/property:Configuration=Release \
 		/property:DefineConstants='SIGNED NET45 TRACE')
-	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \
-		${SETENV} ${MAKE_ENV} monodis Newtonsoft.Json.dll --output=Newtonsoft.Json.il)
-	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \
-		${SETENV} ${MAKE_ENV} ilasm /dll /key:../../../Dynamic.snk Newtonsoft.Json.il)
 
 do-install:
 	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \

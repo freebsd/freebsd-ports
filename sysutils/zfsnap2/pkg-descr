@@ -1,0 +1,18 @@
+zfsnap makes rolling ZFS snapshots easy and - with cron - automatic.
+
+The main advantages of zfsnap are its portability, simplicity, and performance.
+It is written purely in /bin/sh and does not require any additional software -
+other than a few core *nix utilies.
+
+zfsnap stores all the information it needs about a snapshot directly in its
+name; no database or special ZFS properties are needed. The information is
+stored in a way that is human readable, making it much easier for a sysadmin to
+manage and audit backup schedules.
+
+Snapshot names are in the format of pool/fs@[prefix]Timestamp--TimeToLive
+(e.g. pool/fs@weekly-2014-04-07_05.30.00--6m). The prefix is optional but can
+be quite useful for filtering, Timestamp is the date and time when the snapshot
+was created, and TimeToLive (TTL) is the amount of time the snapshot will be
+kept until it can be deleted.
+
+WWW: https://github.com/zfsnap/zfsnap

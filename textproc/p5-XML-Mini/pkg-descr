@@ -5,4 +5,4 @@ XML::Mini does not require any external libraries or modules and is pure Perl.
 If available, XML::Mini will use the Text::Balanced module in order to escape
 limitations of the regex-only approach (eg "cross-nested" tag parsing).
 
-WWW:	http://search.cpan.org/dist/XML-Mini/
+WWW: http://search.cpan.org/dist/XML-Mini/

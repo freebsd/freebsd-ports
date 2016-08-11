@@ -6,4 +6,4 @@ concurrent and remote connections to Tokyo Cabinet. It is composed of
 the server process managing a database and its access library for
 client applications.
 
-WWW:	http://fallabs.com/tokyotyrant/
+WWW: http://fallabs.com/tokyotyrant/

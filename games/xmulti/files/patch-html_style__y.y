@@ -1,6 +1,6 @@
---- html/style_y.y.orig	Sun Aug 22 17:59:06 2004
-+++ html/style_y.y	Sun Aug 22 17:59:22 2004
-@@ -255,7 +255,8 @@
+--- html/style_y.y.orig	1998-04-04 14:58:33 UTC
++++ html/style_y.y
+@@ -255,7 +255,8 @@ term
  	 case SSTERM_HEXCOLOR:
  	 case SSTERM_URL:
  	 case SSTERM_RGB:

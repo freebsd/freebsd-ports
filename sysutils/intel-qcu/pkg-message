@@ -1,0 +1,9 @@
+===============================================================================
+
+For the package to function properly please make sure you have latest ixl driver
+installed. If necessary - install the updated version from net/intel-ixl-kmod
+
+Getting help:
+# qcu /?
+
+==============================================================================

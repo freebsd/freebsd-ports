@@ -1,4 +1,4 @@
 This module collects domain validation routines to make input
-validation, and untainting easier and more readable. 
+validation, and untainting easier and more readable.
 
 WWW: http://search.cpan.org/dist/Data-Validate-Domain/

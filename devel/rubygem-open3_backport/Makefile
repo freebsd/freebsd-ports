@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}open4>=1.3:devel/rubygem-open4
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

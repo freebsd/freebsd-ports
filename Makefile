@@ -164,7 +164,15 @@ print-index:	${INDEXDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}
 
 GIT?= git
-SVN?= svn
+.if !defined(SVN) || empty(SVN)
+. for _P in /usr/bin /usr/local/bin
+.  for _S in svn svnlite
+.   if exists(${_P}/${_S})
+SVN=   ${_P}/${_S}
+.   endif
+.  endfor
+. endfor
+.endif
 RSYNC?= rsync
 PORTSNAP?= portsnap
 PORTSNAP_FLAGS?= -p ${.CURDIR}
@@ -176,10 +184,17 @@ update:
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${SVN} update
 .elif exists(${.CURDIR}/.git)
+.  if exists(${.CURDIR}/.git/svn)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating ${.CURDIR} from git+svn repository"
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${GIT} svn rebase
+.  else
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating ${.CURDIR} from git repository"
+	@echo "--------------------------------------------------------------"
+	cd ${.CURDIR}; ${GIT} pull
+.  endif
 .elif defined(RSYNC_UPDATE) && defined(PORTS_RSYNC_SOURCE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating with ${RSYNC} from ${PORTS_RSYNC_SOURCE}"

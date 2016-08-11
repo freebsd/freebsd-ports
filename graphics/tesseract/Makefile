@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	tesseract-ocr-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -41,10 +41,11 @@ post-patch:
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS:Nhtml} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 

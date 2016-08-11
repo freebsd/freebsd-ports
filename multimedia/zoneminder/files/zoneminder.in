@@ -1,54 +1,38 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
 #
 # PROVIDE: zoneminder
-# REQUIRE: mysql apache
+# REQUIRE: LOGIN mysql
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# zoneminder_enable (bool):	Set to NO by default.
-#				Set it to YES to enable zoneminder.
+# zoneminder_enable (bool):     Set to NO by default.
+#                               Set it to YES to enable zoneminder.
 
 . /etc/rc.subr
 
-name="zoneminder"
+name=zoneminder
 rcvar=zoneminder_enable
 
-load_rc_config "$name"
+load_rc_config $name
+
 : ${zoneminder_enable="NO"}
 
 command=%%PREFIX%%/bin/zmpkg.pl
-command_args="$1"
 pidfile=/var/run/zm/zm.pid
+extra_commands="logrot version"
 
-start_precmd=zm_prestart
-stop_cmd="zm_stop"
-status_cmd="zm_status"
+start_cmd="zm_cmd"
+stop_cmd="zm_cmd"
+status_cmd="zm_cmd"
+logrot_cmd="zm_cmd"
+version_cmd="zm_cmd"
 
-zm_stop() {
-  ${command} ${command_args}
-}
-
-zm_status() {
-  %%PREFIX%%/bin/zmdc.pl status
-}
-
-zm_prestart() {
-local _count=0
-
-	while : ; do
-		echo "USE zm; SELECT Username from Users where Id=1;" | \
-			%%LOCALBASE%%/bin/mysqltest -u root zm > /dev/null 2>&1 && return
-		_count=$(( $_count + 1 ))
-		if [ $_count -gt 10 ]; then
-			err 1 "${name}: mysqltest command failed"
-		fi
-
-		sleep 1
-	done
+zm_cmd() {
+  ${command} ${rc_arg}
 }
 
 run_rc_command "$1"

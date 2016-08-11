@@ -1,6 +1,6 @@
---- torrentsniff.orig	Fri Nov 14 18:17:20 2003
-+++ torrentsniff	Fri Nov 14 18:27:24 2003
-@@ -115,7 +115,7 @@
+--- torrentsniff.orig	2016-06-20 14:38:26 UTC
++++ torrentsniff
+@@ -115,7 +115,7 @@ sub process_file {
  	my($file, $report_file_info, $report_tracker_info) = @_;
  	print "$file\n";
  	local *TOR;

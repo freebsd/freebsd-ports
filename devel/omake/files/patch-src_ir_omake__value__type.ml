@@ -2,7 +2,7 @@ $NetBSD: patch-ah,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/ir/omake_value_type.ml.orig	2010-10-07 19:59:08.000000000 +0000
+--- src/ir/omake_value_type.ml.orig	2010-10-07 19:59:08 UTC
 +++ src/ir/omake_value_type.ml
 @@ -162,7 +162,7 @@ type path =
   *)

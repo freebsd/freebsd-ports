@@ -1,4 +1,4 @@
---- lib/setupwindow.lib.orig	2015-05-12 22:33:57 UTC
+--- lib/setupwindow.lib.orig	2016-01-03 22:16:17 UTC
 +++ lib/setupwindow.lib
 @@ -36,7 +36,7 @@ ncs()
  }

@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	bcftools
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	biology
 
 MAINTAINER=	cartwright@asu.edu
 COMMENT=	Tools for manipulating next-generation sequencing data
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+# LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	htslib>=1.3:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
+
+CONFLICTS_BUILD=openssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools

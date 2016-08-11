@@ -1,7 +1,7 @@
-mod_vhost_ldap is an Apache 2.x module for storing and configuring 
-virtual hosts from LDAP. It supports DocumentRoot, ScriptAlias, 
-ServerName, ServerAlias, ServerAdmin, and SuexecUserGroup directives. 
-It's built on top of mod_ldap, so it uses its caching capabilities and 
-can be used with a threaded Apache httpd. 
+mod_vhost_ldap is an Apache 2.x module for storing and configuring
+virtual hosts from LDAP. It supports DocumentRoot, ScriptAlias,
+ServerName, ServerAlias, ServerAdmin, and SuexecUserGroup directives.
+It's built on top of mod_ldap, so it uses its caching capabilities and
+can be used with a threaded Apache httpd.
 
 WWW: http://modvhostldap.alioth.debian.org/

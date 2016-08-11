@@ -1,6 +1,6 @@
---- ./Makefile.orig	2012-11-01 23:42:16.000000000 +0100
-+++ ./Makefile	2014-04-01 17:55:58.516961711 +0200
-@@ -5,7 +5,6 @@
+--- Makefile.orig	2015-07-11 08:39:39 UTC
++++ Makefile
+@@ -5,7 +5,6 @@ PREFIX=/usr/local
  CONF_PREFIX=$(PREFIX)
  
  DATA_PATH=$(PREFIX)/share/smplayer
@@ -8,7 +8,7 @@
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -22,7 +21,7 @@
+@@ -22,7 +21,7 @@ LRELEASE=lrelease
  
  DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" \
       TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
@@ -17,7 +17,7 @@
       SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
  
  
-@@ -55,11 +54,6 @@
+@@ -55,11 +54,6 @@ install: src/smplayer
  	install -m 644 src/input.conf $(DESTDIR)$(DATA_PATH)
  	-install -d $(DESTDIR)$(TRANSLATION_PATH)
  	install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)

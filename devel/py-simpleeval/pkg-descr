@@ -1,0 +1,6 @@
+simpleeval is a single-file library for easily adding evaluatable expressions
+into python projects. It can allow a user to, for example, set an alarm volume,
+which could depend on the time of day, alarm level, how many previous alarms had
+gone off, and if there is music playing at the time.
+
+WWW: https://github.com/danthedeckie/simpleeval

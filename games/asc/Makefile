@@ -24,7 +24,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libexpat.so:textproc/expat2 \
 		libloki.so:devel/loki
 
-USES=		compiler:c++11-lib gmake libtool lua perl5 pkgconfig tar:bzip2 
+USES=		compiler:c++11-lib gmake libtool lua perl5 pkgconfig tar:bzip2
 USE_CXXSTD=	c++11
 USE_SDL=	image mixer sound sdl
 USE_WX=		3.0

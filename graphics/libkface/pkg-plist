@@ -4,11 +4,14 @@ include/kde4/libkface/identity.h
 include/kde4/libkface/libkface_export.h
 include/kde4/libkface/recognitiondatabase.h
 include/kde4/libkface/version.h
+lib/cmake/Kface-3.5.0/Kface-export-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Kface-3.5.0/Kface-export.cmake
+lib/cmake/Kface-3.5.0/kface-config-version.cmake
+lib/cmake/Kface-3.5.0/kface-config.cmake
 lib/libkface.so
-lib/libkface.so.2
-lib/libkface.so.2.0.0
+lib/libkface.so.3
+lib/libkface.so.3.0.0
 libdata/pkgconfig/libkface.pc
-share/apps/cmake/modules/FindKface.cmake
 share/apps/libkface/alignment-congealing/face-funnel.data
 share/apps/libkface/database/dbconfig.xml
 share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml

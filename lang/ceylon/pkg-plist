@@ -2,6 +2,7 @@ bin/ceylon
 bin/ceylon-sh-setup
 man/man1/ceylon-ant-task-doc.1.gz
 man/man1/ceylon-bash-completion.1.gz
+man/man1/ceylon-bootstrap.1.gz
 man/man1/ceylon-browse.1.gz
 man/man1/ceylon-classpath.1.gz
 man/man1/ceylon-compile-js.1.gz

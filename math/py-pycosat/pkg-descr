@@ -1,5 +1,5 @@
 PicoSAT is a popular SAT solver written by Armin Biere in pure C. This
-package provides efficient Python bindings to picosat on the C level, 
+package provides efficient Python bindings to picosat on the C level,
 i.e. when importing pycosat, the picosat solver becomes part of the
 Python process itself.
 

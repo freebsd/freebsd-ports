@@ -1,13 +1,13 @@
-Expect::Simple is a wrapper around the Expect module which should suffice 
-for simple applications. It hides most of the Expect machinery; the Expect 
+Expect::Simple is a wrapper around the Expect module which should suffice
+for simple applications. It hides most of the Expect machinery; the Expect
 object is available for tweaking if need be.
 
-Generally, one starts by creating an Expect::Simple object using new. This 
-will start up the target program, and will wait until one of the specified 
-prompts is output by the target. At that point the caller should send() 
-commands to the program; the results are available via the before, after, 
-match_str, and match_idx methods. Since Expect simulates a terminal, there 
-will be extra \r characters at the end of each line in the result (on UNIX 
+Generally, one starts by creating an Expect::Simple object using new. This
+will start up the target program, and will wait until one of the specified
+prompts is output by the target. At that point the caller should send()
+commands to the program; the results are available via the before, after,
+match_str, and match_idx methods. Since Expect simulates a terminal, there
+will be extra \r characters at the end of each line in the result (on UNIX
 at least). This is easily fixed:
 
     ($res = $obj->before) =~ tr/\r//d;
@@ -15,12 +15,12 @@ at least). This is easily fixed:
 
 This is not done automatically.
 
-Exceptions will be thrown on error (match with /Expect::Simple/). Errors 
-from Expect are available via the error_expect method. More human readable 
+Exceptions will be thrown on error (match with /Expect::Simple/). Errors
+from Expect are available via the error_expect method. More human readable
 errors are available via the error method.
 
-The connection is automatically broken (by sending the specified 
-disconnect command to the target) when the Expect::Simple object is 
+The connection is automatically broken (by sending the specified
+disconnect command to the target) when the Expect::Simple object is
 destroyed.
 
 WWW: http://search.cpan.org/dist/Expect-Simple/

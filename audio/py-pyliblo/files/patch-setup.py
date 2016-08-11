@@ -1,14 +1,14 @@
---- setup.py.orig	2014-09-17 12:36:01.069734246 +0200
-+++ setup.py	2014-09-17 12:36:49.484953374 +0200
-@@ -45,6 +45,7 @@
+--- setup.py.orig	2015-04-14 07:23:17 UTC
++++ setup.py
+@@ -45,6 +45,7 @@ ext_modules = [
              '-fno-strict-aliasing',
              '-Werror-implicit-function-declaration',
              '-Wfatal-errors',
 +            '-I%%LOCALBASE%%/include/',
          ],
-         libraries = ['lo']
+         libraries = ['lo'],
      )
-@@ -66,12 +67,7 @@
+@@ -63,12 +64,7 @@ setup(
          'scripts/send_osc.py',
          'scripts/dump_osc.py',
      ],
@@ -20,5 +20,5 @@
 -    ],
 +    data_files = [],
      cmdclass = cmdclass,
-     ext_modules = ext_modules
- )
+     ext_modules = ext_modules,
+     **args

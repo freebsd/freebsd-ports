@@ -3,6 +3,7 @@
 
 PORTNAME=	bones
 PORTVERSION=	3.8.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +18,7 @@ RUN_DEPENDS=	rubygem-little-plugger>=1.1:devel/rubygem-little-plugger \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/bones
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcloud
-PORTVERSION=	0.20.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net python
 MASTER_SITES=	APACHE/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,5 @@ CPE_VENDOR=	apache
 
 post-extract:
 	@${MV} ${WRKSRC}/libcloud/test ${WRKSRC}/test # no need to install tests
-	@${FIND} ${WRKSRC} -name "*.rej" -delete
 
 .include <bsd.port.mk>

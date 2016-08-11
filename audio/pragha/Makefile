@@ -19,10 +19,9 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 	libtotem-plparser.so:multimedia/totem-pl-parser
 
 USES=	compiler:c11 desktop-file-utils gettext-tools gmake libtool \
-	pkgconfig tar:bz2
+	pkgconfig sqlite tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
-USE_SQLITE=	yes
 USE_GSTREAMER1=	yes faad flac libav mad ogg speex
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

@@ -1,24 +1,24 @@
-Sipcalc is an ip subnet calculator. 
+Sipcalc is an ip subnet calculator.
 Features:
 
-IPv4 - 
+IPv4 -
 * Retrieving of address information from interfaces.
 * Classful and CIDR output.
 * Multiple address and netmask formats (dotted quad, hex, number of bits).
-* Output of broadcast address, network class, Cisco wildcard, hosts/range, 
+* Output of broadcast address, network class, Cisco wildcard, hosts/range,
   network range.
 * Output of a userdefined number of extra networks.
 * The ability to "split" a network based on a smaller netmask,
   now also with recursive runs on the generated subnets.
-* DNS resolution. 
+* DNS resolution.
 
-IPv6 - 
+IPv6 -
 * Compressed and expanded input addresses.
 * Compressed and expanded output.
 * Standard IPv6 network output.
 * Reverse dns address generation.
 * The ability to "split" a network based on a smaller netmask,
   now also with recursive runs on the generated subnets.
-* DNS resolution. 
+* DNS resolution.
 
 WWW: http://www.routemeister.net/projects/sipcalc/

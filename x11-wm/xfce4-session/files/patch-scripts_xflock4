@@ -1,15 +1,23 @@
---- scripts/xflock4.orig	2012-04-28 20:43:27.000000000 +0000
-+++ scripts/xflock4	2013-04-24 19:55:56.000000000 +0000
+--- scripts/xflock4.orig	2014-08-30 18:24:02 UTC
++++ scripts/xflock4
 @@ -21,7 +21,7 @@
  #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  #
  
 -PATH=/bin:/usr/bin
-+PATH=/bin:/usr/bin:/usr/local/bin
++PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
  export PATH
  
  # Lock by xscreensaver or gnome-screensaver, if a respective daemon is running
-@@ -41,6 +41,7 @@
+@@ -35,12 +35,14 @@ done
+ # else run another access locking utility, if installed
+ for lock_cmd in \
+   "xlock -mode blank" \
+-  "slock"
++  "slock" \
++  "i3lock -c 000000"
+   do
+     set -- $lock_cmd
      if command -v -- $1 >/dev/null 2>&1; then
          $lock_cmd >/dev/null 2>&1 &
  	# turn off display backlight:

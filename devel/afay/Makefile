@@ -3,7 +3,7 @@
 
 PORTNAME=	afay
 PORTVERSION=	041111
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://thiberlog.free.fr/src/
 DISTNAME=	afay_thiberlog_${PORTVERSION}

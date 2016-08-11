@@ -3,6 +3,7 @@
 
 PORTNAME=	itcl4
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	TCLTK/itcl \
 		SF/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itcl%20${PORTVERSION}/
@@ -11,14 +12,12 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
-USES+=		tcl:86
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
+USES+=		tcl:86,tea
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
 PLIST_SUB+=	PKGVER=${PORTVERSION}
+TEST_TARGET=	test
 
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/itcl${PORTVERSION}/libitcl${PORTVERSION}.so
 
 .include <bsd.port.mk>

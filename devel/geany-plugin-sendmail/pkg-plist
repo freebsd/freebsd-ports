@@ -1,6 +1,6 @@
-lib/geany/geanysendmail.so
-%%DOCSDIR%%/geanysendmail/AUTHORS
-%%DOCSDIR%%/geanysendmail/COPYING
-%%DOCSDIR%%/geanysendmail/ChangeLog
-%%DOCSDIR%%/geanysendmail/NEWS
-%%DOCSDIR%%/geanysendmail/README
+lib/geany/sendmail.so
+%%DOCSDIR%%/sendmail/AUTHORS
+%%DOCSDIR%%/sendmail/COPYING
+%%DOCSDIR%%/sendmail/ChangeLog
+%%DOCSDIR%%/sendmail/NEWS
+%%DOCSDIR%%/sendmail/README

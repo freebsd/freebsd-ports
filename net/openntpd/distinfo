@@ -1,2 +1,3 @@
-SHA256 (openntpd-5.9p1.tar.gz) = 200c04056d4d6441653cac71d515611f3903aa7b15b8f5661a40dab3fb3697b3
-SIZE (openntpd-5.9p1.tar.gz) = 432844
+TIMESTAMP = 1465311084
+SHA256 (openntpd-6.0p1.tar.gz) = b1ab80094788912adb12b33cb1f251cc58db39294c1b5c6376972f5f7ba577e8
+SIZE (openntpd-6.0p1.tar.gz) = 432696

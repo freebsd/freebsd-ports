@@ -14,7 +14,7 @@ COMMENT=	Library to interpret and import Apple Keynote presentations
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	mdds>=0.12.1_1:devel/mdds \
+BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		librevenge-0.0.so:textproc/librevenge \

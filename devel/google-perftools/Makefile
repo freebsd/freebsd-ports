@@ -13,6 +13,8 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libunwind.so:devel/libunwind
 
 WRKSRC=		${WRKDIR}/gperftools-${PORTVERSION}

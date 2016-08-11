@@ -1,11 +1,11 @@
-ASLOOKUP is the tool which searches the sequence of AS number specified 
-with the parameter from IRR and indicates the first line of Description 
-of AS Object. 
+ASLOOKUP is the tool which searches the sequence of AS number specified
+with the parameter from IRR and indicates the first line of Description
+of AS Object.
 
-Advantages: 
-You can search many AS Numbers at one time. 
-You can use result of "show ip bgp" command with CISCO router. 
-You can search to ARIN, JPNIC and APNIC whois dabase. 
-You can srarch AS Number from IP Addresses. 
+Advantages:
+You can search many AS Numbers at one time.
+You can use result of "show ip bgp" command with CISCO router.
+You can search to ARIN, JPNIC and APNIC whois dabase.
+You can srarch AS Number from IP Addresses.
 
 WWW: http://www.bugest.net/software/aslookup/index-e.html

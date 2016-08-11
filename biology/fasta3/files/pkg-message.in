@@ -2,8 +2,8 @@
 
  The FASTA3 package has been successfully installed.
 
- A sample configuration file has been installed to 
- %%PREFIX%%/etc 
+ A sample configuration file has been installed to
+ %%PREFIX%%/etc
  as "fastlibs.sample". This may be renamed to "fastlibs" and edited
  to suit the requirements of a particular site.
 

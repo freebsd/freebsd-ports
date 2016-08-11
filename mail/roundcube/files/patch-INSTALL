@@ -1,6 +1,6 @@
---- INSTALL.orig	2015-02-08 13:43:29.000000000 +0000
-+++ INSTALL	2015-02-19 12:22:34.259436291 +0000
-@@ -29,7 +29,6 @@
+--- INSTALL.orig	2016-05-22 11:06:47 UTC
++++ INSTALL
+@@ -29,7 +29,6 @@ REQUIREMENTS
     - memory_limit > 16MB (increase as suitable to support large attachments)
     - file_uploads enabled (for attachment upload features)
     - session.auto_start disabled

@@ -1,0 +1,20 @@
+--- lib/Makefile.in.orig	2012-05-17 19:09:27 UTC
++++ lib/Makefile.in
+@@ -298,7 +298,7 @@ libtpm_utils_la_SOURCES = tpm_utils.c \
+ #
+ # TSPI interface library
+ libtpm_tspi_la_SOURCES = tpm_tspi.c
+-libtpm_tspi_la_LIBADD = libtpm_utils.la -ldl
++libtpm_tspi_la_LIBADD = libtpm_utils.la
+ @P11_SUPPORT_TRUE@libtpm_pkcs11_la_SOURCES = tpm_pkcs11.c
+ @P11_SUPPORT_TRUE@libtpm_pkcs11_la_LIBADD = libtpm_utils.la
+ 
+@@ -327,7 +327,7 @@ libtpm_tspi_la_LIBADD = libtpm_utils.la 
+ # Unseal library - for addition to existing apps, counter part of seal cmd
+ libtpm_unseal_la_SOURCES = tpm_unseal.c
+ libtpm_unseal_la_LDFLAGS = -shared -version-info 1:0:0
+-libtpm_unseal_la_LIBADD = -ltspi  libtpm_tspi.la
++libtpm_unseal_la_LIBADD = -ltspi  libtpm_tspi.la -lcrypto
+ all: all-am
+ 
+ .SUFFIXES:

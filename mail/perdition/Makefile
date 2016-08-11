@@ -42,7 +42,7 @@ POSIX_REGEX_DESC=	Native regex support
 
 .if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--enable-ssl
-USE_OPENSSL=		yes
+USES+=			ssl
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
@@ -68,7 +68,7 @@ PLIST_SUB+=		DAEMONMAP="@comment "
 CPPFLAGS+=		-I${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=	--enable-bdb
 PLIST_SUB+=		BDB=""
-USE_BDB=		yes
+USES+=			bdb
 .else
 CONFIGURE_ARGS+=	--disable-bdb
 PLIST_SUB+=		BDB="@comment "
@@ -92,7 +92,7 @@ PLIST_SUB+=		GDBM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--enable-mysql
 PLIST_SUB+=		MYSQL=""
 .else

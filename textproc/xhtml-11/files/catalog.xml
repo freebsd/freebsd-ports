@@ -3,6 +3,6 @@
         "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <public publicId="-//W3C//DTD XHTML 1.1//EN" uri="xhtml11.dtd" />
+  <public publicId="-//W3C//DTD XHTML 1.1//EN" uri="xhtml11-flat.dtd" />
   <public publicId="-//W3C//ENTITIES XHTML 1.1 Document Model 1.0//EN" uri="xhtml11-model-1.mod" />
 </catalog>

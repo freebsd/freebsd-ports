@@ -1,11 +1,13 @@
---- Makefile.inc.orig	2010-08-30 23:27:33.000000000 +0100
-+++ Makefile.inc	2010-08-30 23:27:53.000000000 +0100
-@@ -26,7 +26,7 @@
+--- Makefile.inc.orig	2003-03-04 20:14:28 UTC
++++ Makefile.inc
+@@ -26,8 +26,8 @@
  DEBUG=-g $(PDEBUG)
  OPT=
  
 -REXX_INCLUDE=$(HOME)/regina
-+REXX_INCLUDE=$(PREFIX)/include
- CFLAGS=$(DEBUG) $(OPT) $(PCFLAGS) $(PCDEFS) -I $(REXX_INCLUDE)
+-CFLAGS=$(DEBUG) $(OPT) $(PCFLAGS) $(PCDEFS) -I $(REXX_INCLUDE)
++REXX_INCLUDE=/usr/local/include
++CFLAGS+=$(DEBUG) $(OPT) $(PCFLAGS) $(PCDEFS) -I $(REXX_INCLUDE)
  LDFLAGS=$(PLDFLAGS)
  LIBS=$(PLIBS)
+ LIBFILE=librexxutil

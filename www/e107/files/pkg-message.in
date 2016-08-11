@@ -7,13 +7,23 @@ POST-INSTALL CONFIGURATION FOR e107
 2) Add the following to your Apache configuration, and
    restart the server:
 
-   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   For Apache versions earlier than 2.4:
+
    Alias /e107 %%PREFIX%%/%%E107DIR%%/
    AcceptPathInfo On
    <Directory %%PREFIX%%/%%E107DIR%%>
       AllowOverride None
       Order Allow,Deny
-      Allow from all 
+      Allow from all
+   </Directory>
+
+   For Apache version 2.4.x or above:
+
+   Alias /e107 %%PREFIX%%/%%E107DIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%E107DIR%%/>
+      AllowOverride None
+      Require all granted
    </Directory>
 
 3) Visit your e107 site with a browser (i.e.,

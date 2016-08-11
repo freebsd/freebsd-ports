@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Class-Tiny>=0.010:devel/p5-Class-Tiny \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta>0:devel/p5-CPAN-Meta \
 		p5-CPAN-Meta-Requirements>2.120:devel/p5-CPAN-Meta-Requirements \
-		p5-Test-Simple>=1.001.003:devel/p5-Test-Simple
+		p5-Test-Simple>=1.001003:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,2 +1,3 @@
-SHA256 (redigo-20140714.tar.gz) = 615021ecc603e7578664ba3d17359cc53a36926885177278fa4146f4e2b42f49
-SIZE (redigo-20140714.tar.gz) = 22703
+TIMESTAMP = 1468848985
+SHA256 (garyburd-redigo-v1.0.0_GH0.tar.gz) = 5c8dcdb2b160adb4265f70faa9630ba0239caada6221d3dfefc8b79417145e1f
+SIZE (garyburd-redigo-v1.0.0_GH0.tar.gz) = 34024

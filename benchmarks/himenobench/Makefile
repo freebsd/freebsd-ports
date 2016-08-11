@@ -3,6 +3,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2015.07.09
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/wp-content/uploads/2015/07/
 DISTFILES=	himenobmtxp_xl.zip himenobmtxp_l.zip \
@@ -19,25 +20,20 @@ LICENSE=	LGPL20 # (or later)
 
 EXTRACT_DEPENDS=	lha:archivers/lha
 
-USES=		zip
+USES=		dos2unix fortran zip
+DOS2UNIX_GLOB=	*.c *.f
 NO_WRKSUBDIR=	yes
 
-
-OPTIONS_DEFINE=		ICC IFC OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		ICC OPTIMIZED_CFLAGS
 OPTIONS_SUB=		yes
 
 ICC_DESC=		Intel C compiler support
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
-IFC_DESC=		Intel Fortran compiler support
-IFC_USES=		fortran:ifort
-IFC_USES_OFF=		fortran
 OPTIMIZED_CFLAGS_CFLAGS=${OPTFLAGS}
 OPTIMIZED_CFLAGS_VARS=	FFLAGS+="${OPTFLAGS}"
 
 ICC=		${LOCALBASE}/intel_cc_80/bin/icc
 CFLAGS_ICC=	-O3 -tpp7 -axN -Vaxlib
-IFC=		${LOCALBASE}/intel_fc_80/bin/ifort
-FFLAGS_IFC=	-O3 -tpp7 -axN -Vaxlib -ipo
 OPTFLAGS=	-O2 -ffast-math -finline-functions -fomit-frame-pointer \
 		-funroll-loops -fexpensive-optimizations
 
@@ -56,16 +52,7 @@ do-build:
 	cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSMALL   -o himenobmtxps_s  himenobmtxps.c
 	cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSSMALL  -o himenobmtxps_ss himenobmtxps.c
 	cd ${WRKSRC} ; ${CC} ${CFLAGS}           -o himenobmtxpa    himenobmtxpa.c
-
-do-build-IFC-off:
 	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp    himenobmtxp.f90
-
-do-build-IFC-on:
-#	cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_xl.ifc himenobmtxp_xl.f #Too large
-	cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_l.ifc  himenobmtxp_l.f
-	cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_m.ifc  himenobmtxp_m.f
-	cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_s.ifc  himenobmtxp_s.f
-	cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp.ifc    himenobmtxp.f90
 
 do-build-ICC-on:
 #	cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DELARGE  -o himenobmtxps_xl.icc himenobmtxps.c #Too large
@@ -85,16 +72,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_m         ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_s         ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_ss        ${STAGEDIR}${PREFIX}/bin
-
-do-install-IFC-off:
 	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp            ${STAGEDIR}${PREFIX}/bin
-
-do-install-IFC-on:
-#	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl.ifc     ${STAGEDIR}${PREFIX}/bin #Too large
-	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l.ifc      ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_m.ifc      ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_s.ifc      ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp.ifc        ${STAGEDIR}${PREFIX}/bin
 
 do-install-ICC-on:
 #	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_xl.icc    ${STAGEDIR}${PREFIX}/bin #Too large

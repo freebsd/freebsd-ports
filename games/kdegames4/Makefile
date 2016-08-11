@@ -7,7 +7,7 @@ CATEGORIES=	games kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for KDE 4 (meta port)
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	ALL ${KDE4_GAMES_ALL}

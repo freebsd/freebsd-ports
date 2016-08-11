@@ -12,8 +12,7 @@ COMMENT=	Open-source COBOL compiler
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USE_BDB=	yes
-USES=		gmake libtool ncurses
+USES=		bdb gmake libtool ncurses
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -1,0 +1,5 @@
+A Django app for storing dynamic settings in pluggable backends (Redis
+and Django model backend built in) with an integration with the Django
+admin app.
+
+WWW: https://github.com/jazzband/django-constance

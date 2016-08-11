@@ -1,4 +1,4 @@
-This plugin for CGI::Application provides easy ways to setup run modes. 
+This plugin for CGI::Application provides easy ways to setup run modes.
 You can just write the method that implement a run mode, you do not have
 to explicitly register it with CGI::App anymore.
 

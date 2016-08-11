@@ -1,14 +1,15 @@
---- extra/CMakeLists.txt.orig	2013-01-22 17:54:50.000000000 +0100
-+++ extra/CMakeLists.txt	2013-02-13 11:02:40.000000000 +0100
-@@ -60,6 +60,7 @@
+--- extra/CMakeLists.txt.orig	2016-03-03 15:27:37.000000000 +0200
++++ extra/CMakeLists.txt	2016-03-10 21:04:51.367091216 +0200
+@@ -59,7 +59,7 @@
+   ADD_DEPENDENCIES(GenError copy_openssl_extra)
  ENDIF()
  
- 
+-
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys mysys_ssl)
  SET_TARGET_PROPERTIES(my_print_defaults PROPERTIES LINKER_LANGUAGE CXX)
-@@ -96,11 +97,14 @@
+@@ -98,10 +98,13 @@
    MYSQL_ADD_EXECUTABLE(innochecksum innochecksum.cc ${INNOBASE_SOURCES})
    TARGET_LINK_LIBRARIES(innochecksum mysys mysys_ssl)
  ENDIF()
@@ -16,9 +17,8 @@
  
  IF(UNIX)
 +IF(FALSE)
-   MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.c)
+   MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.cc)
    TARGET_LINK_LIBRARIES(resolve_stack_dump mysys mysys_ssl)
-   SET_TARGET_PROPERTIES(resolve_stack_dump PROPERTIES LINKER_LANGUAGE CXX)
 +ENDIF()
  
    MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c)

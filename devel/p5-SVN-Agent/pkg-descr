@@ -1,6 +1,6 @@
 This module provides regular svn operations on check out directory.
 It tries to do this in a simplest form possible. All operations are
-currently performed by running svn binary directly. Thus it is 
+currently performed by running svn binary directly. Thus it is
 probably unportable.  For a much more powerful way of working with
 svn repository see SVN::Client.
 

@@ -6,8 +6,12 @@
 *   audio/mikmod                                                        *
 *   audio/mpg123                                                        *
 *   audio/mpg321                                                        *
+*   audio/sox                                                           *
+*   audio/speex                                                         *
 *   audio/splay                                                         *
 *   audio/vorbis-tools                                                  *
+*   audio/xmp                                                           *
 *   multimedia/mplayer                                                  *
+*   multimedia/mpv                                                      *
 *                                                                       *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

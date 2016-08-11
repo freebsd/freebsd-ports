@@ -3,7 +3,7 @@
 
 PORTNAME=	libzfs
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	cython>0:lang/cython
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs
-GH_TAGNAME=	ab14b4f
+GH_TAGNAME=	faa3e92
 
 USES=		python
 USE_PYTHON=	autoplist distutils

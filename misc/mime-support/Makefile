@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mime-support
-PORTVERSION=	3.58
+PORTVERSION=	3.59
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
+
+LICENSE=	PD
 
 USES=		cpe shebangfix
 

@@ -1,0 +1,19 @@
+U-Boot loader for Banana Pi M3.
+
+To install this bootloader, follow the instructions in
+ http://linux-sunxi.org/Bootable_SD_card#Bootloader
+
+This version is patched so that:
+ * ELF and API features are enabled.
+ * The default environment is trimmed to just what's needed to boot.
+ * The saveenv command writes to the file u-boot.env on the FAT partition.
+ * The DTB file name is chosen based on the board model and passed to ubldr
+   using the fdtfile env variable.  ubldr loads the DTB from /boot/dtb/ on
+   the FreeBSD partition.
+ * By default, it loads ELF ubldr from file ubldr on the FAT partition
+   to address 0x42000000, and launches it.
+
+For information about running FreeBSD on Banana Pi M3, see
+ https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot

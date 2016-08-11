@@ -1,12 +1,12 @@
 LAPACK++ (Linear Algebra PACKage in C++) is a software library for numerical
 linear algebra that solves systems of linear equations and eigenvalue
-problems on high performance computer architectures. 
+problems on high performance computer architectures.
 
 Computational support is provided for supports various matrix classes for
 vectors, non-symmetric matrices, SPD matrices, symmetric matrices, banded,
 triangular, and tridiagonal matrices; however, it does not include all
 of the capabilities of original f77 LAPACK. Emphasis is given to routines
 for solving linear systems consisting of non-symmetric matrices,
-symmetric positive definite systems, and solving linear least-square systems. 
+symmetric positive definite systems, and solving linear least-square systems.
 
 WWW: http://sourceforge.net/projects/lapackpp

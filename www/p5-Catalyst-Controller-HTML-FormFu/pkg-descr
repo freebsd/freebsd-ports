@@ -1,4 +1,4 @@
-This creates a new HTML::FormFu object, passing as it's argument 
+This creates a new HTML::FormFu object, passing as it's argument
 the contents of the "constructor" config value.
 
 WWW: http://search.cpan.org/dist/Catalyst-Controller-HTML-FormFu/

@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/Test::MockObject.3.gz
 %%PERL5_MAN3%%/Test::MockObject::Extends.3.gz
-%%PERL5_MAN3%%/Test::README.3.gz
 %%SITE_PERL%%/Test/MockObject.pm
 %%SITE_PERL%%/Test/MockObject/Extends.pm
 %%SITE_PERL%%/Test/README.pod

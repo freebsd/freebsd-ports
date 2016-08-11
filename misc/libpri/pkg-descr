@@ -1,6 +1,6 @@
-The libpri is a C implementation of the Primary Rate ISDN specification.  
-It was based on the Bellcore specification SR-NWT-002343 for National 
-ISDN.  As of May 12, 2001, it has been tested work with NI-2, Nortel DMS-100, 
+The libpri is a C implementation of the Primary Rate ISDN specification.
+It was based on the Bellcore specification SR-NWT-002343 for National
+ISDN.  As of May 12, 2001, it has been tested work with NI-2, Nortel DMS-100,
 and Lucent 5E C ustom protocols on switches from Nortel and Lucent.
 
 WWW: http://www.asterisk.org/downloads/libpri/

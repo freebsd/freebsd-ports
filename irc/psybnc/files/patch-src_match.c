@@ -1,6 +1,5 @@
-diff -Naurp src/match.c src/match.c
---- src/match.c	2007-02-26 12:26:10.000000000 +0000
-+++ src/match.c	2007-02-26 12:26:17.000000000 +0000
+--- src/match.c.orig	2016-06-20 14:41:27 UTC
++++ src/match.c
 @@ -36,6 +36,7 @@
  /* Remove the next line to use this in IrcII */
  #define EGGDROP

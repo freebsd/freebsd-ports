@@ -2,7 +2,7 @@ Description:
 	Using /usr/bin/telnet in "8-bit environment", for example, BIG5-
 encoding Chinese characters environment in Taiwan, is somewhat in-convenient.
 	To be able to input Chinese characters, "-8 or -L" options are needed,
-however, using these options cause another problem. Specifying "-8 or -L" 
+however, using these options cause another problem. Specifying "-8 or -L"
 makes ^U or ^C or ^D or ... (any isprint(c)) malfunction when telnet to SunOS.
 
 How-To-Repeat:
@@ -16,7 +16,7 @@ Apply the following patch:
 gopher://freebsd.csie.nctu.edu.tw/00%2f3%2fA0002063
 
 This make telnet "8-bit clean", being able to input 8-bit data (Chinese
-characters) without specifying "-8 or -L" options, and telnet to SunOS 
+characters) without specifying "-8 or -L" options, and telnet to SunOS
 without trouble.
 
 See also:

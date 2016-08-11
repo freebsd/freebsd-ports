@@ -1,6 +1,6 @@
---- compiler.pri.orig	2011-02-24 16:24:49.000000000 -0500
-+++ compiler.pri	2011-02-24 16:26:09.000000000 -0500
-@@ -103,9 +103,9 @@
+--- compiler.pri.orig	2014-08-08 15:51:59 UTC
++++ compiler.pri
+@@ -109,9 +109,9 @@ unix {
  
  unix:!macx {
  	CONFIG(debug, debug|release) {

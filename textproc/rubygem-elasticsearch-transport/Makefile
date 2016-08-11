@@ -1,11 +1,8 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
-# NOTE: This port must be updated at the same time as textproc/rubygem-elasticsearch
-# and textproc/rubygem-elasticsearch-api
 
 PORTNAME=	elasticsearch-transport
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.17
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +17,6 @@ RUN_DEPENDS=	rubygem-faraday>=0:www/rubygem-faraday \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

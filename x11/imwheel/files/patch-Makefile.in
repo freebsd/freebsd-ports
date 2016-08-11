@@ -1,5 +1,5 @@
---- Makefile.in.orig	2004-08-29 18:36:33.000000000 +0800
-+++ Makefile.in	2014-01-09 21:48:23.000000000 +0800
+--- Makefile.in.orig	2004-08-29 10:36:33 UTC
++++ Makefile.in
 @@ -215,7 +215,7 @@ imwheel_LDADD = @GETOPT_LIBS@ -L$(top_bu
  imwheel_DEPENDENCIES = imwheel.o util.o cfg.o jax/libjax.a
  man_MANS = imwheel.1

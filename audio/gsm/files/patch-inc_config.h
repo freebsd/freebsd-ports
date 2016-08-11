@@ -1,5 +1,5 @@
---- inc/config.h.orig	Wed Apr 26 12:14:26 2006
-+++ inc/config.h	Fri Aug 11 13:44:23 2006
+--- inc/config.h.orig	2006-04-26 19:14:26 UTC
++++ inc/config.h
 @@ -28,8 +28,8 @@
  /*efine	HAS_STRINGS_H	1		/* /usr/include/strings.h 	*/
  

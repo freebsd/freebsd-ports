@@ -1,6 +1,6 @@
---- configure.in.orig	2009-04-08 01:37:33.000000000 +0400
-+++ configure.in	2009-04-08 01:37:43.000000000 +0400
-@@ -80,14 +80,6 @@
+--- configure.in.orig	2016-07-26 15:22:25 UTC
++++ configure.in
+@@ -74,14 +74,6 @@ AC_CHECK_HEADER(usb.h,[
  
          # This 'test' call uses non-standard syntax and will fail on most
          # systems, but it's just informational so any warning can be ignored.

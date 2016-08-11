@@ -1,4 +1,4 @@
---- ttcp.c.orig	2015-11-23 14:04:04 UTC
+--- ttcp.c.orig	2016-07-27 15:06:14 UTC
 +++ ttcp.c
 @@ -55,6 +55,9 @@ static char RCSid[] = "ttcp.c $Revision:
  #include <arpa/inet.h>

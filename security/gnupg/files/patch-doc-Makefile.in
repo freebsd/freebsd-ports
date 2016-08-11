@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	2016-01-26 12:54:48.000000000 +0000
-+++ doc/Makefile.in	2016-02-19 01:59:17.000000000 +0000
-@@ -507,7 +507,7 @@
- watchgnupg_SOURCE = gnupg.texi
- CLEANFILES = yat2m mkdefsinc defs.inc
+--- doc/Makefile.in.orig	2016-05-04 23:00:20.000000000 +0900
++++ doc/Makefile.in	2016-05-06 07:36:42.183921000 +0900
+@@ -514,7 +514,7 @@
  DISTCLEANFILES = gnupg.tmp gnupg.ops yat2m-stamp.tmp yat2m-stamp \
+                  gnupg-card-architecture.eps \
+                  gnupg-module-overview.eps \
 -		 $(myman_pages) gpg-zip.1 gnupg.7
 +		 $(myman_pages) gnupg.7
  

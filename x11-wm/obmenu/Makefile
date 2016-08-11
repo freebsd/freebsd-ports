@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
 LICENSE=	GPLv2

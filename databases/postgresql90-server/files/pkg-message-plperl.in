@@ -1,3 +1,0 @@
-PL/Perl has been installed. Check the createlang(l) manpage for more
-info. You can install PL/Perl as trusted or untrusted, by using either
-"createlang plperl" or "createlang plperlu".

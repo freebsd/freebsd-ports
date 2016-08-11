@@ -24,11 +24,11 @@ following steps:
 
 3) Add the following line to your rc.conf:
 
-	ddns_server_enable="YES" 
+	ddns_server_enable="YES"
 
    or
 
-	ddns_client_enable="YES" 
+	ddns_client_enable="YES"
 
 
 Then you can start a ddns daemon by issuing the following command:

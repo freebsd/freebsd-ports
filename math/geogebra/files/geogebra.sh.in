@@ -1,0 +1,18 @@
+#!/bin/sh
+
+JAVACMD=%%JAVADIR%%/bin/java
+GG_XMS="32m"
+GG_XMX="1024m"
+GG_SETTINGS_FILE="${HOME}/.config/geogebra/geogebra.properties"
+CLASS=org.geogebra.desktop.GeoGebra3D
+
+JAVA_OPTS="-Xms${GG_XMS} -Xmx${GG_XMX} -Dawt.useSystemAAFontSettings=on"
+
+exec ${JAVACMD} ${JAVA_OPTS} \
+  -cp %%DATADIR%%/geogebra/geogebra.jar \
+  "-Xbootclasspath/a:${JFXRT}" \
+  ${CLASS} \
+  --versionCheckAllow=false --settingsFile=${GG_SETTINGS_FILE} \
+  --logLevel=WARN \
+  $*
+

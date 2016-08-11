@@ -3,6 +3,7 @@
 
 PORTNAME=	graphite-web
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,9 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
-USES=		python:2
+USES=		cpe python:2
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
+CPE_VENDOR=	graphite_project
+CPE_PRODUCT=	graphite
 USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} WWWOWN=${WWWOWN} \
@@ -33,6 +36,7 @@ post-patch:
 	@${RM} ${WRKSRC}/bin/run-graphite-devel-server.py
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%DATADIR%%|${DATADIR}|' \
+		-e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
 		${WRKSRC}/bin/build-index.sh \
 		${WRKSRC}/conf/graphite.wsgi.example \
 		${WRKSRC}/setup.cfg \

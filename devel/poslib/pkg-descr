@@ -1,14 +1,14 @@
 Poslib is a portable C++ DNS library, a part of Posadis project.
-It consists of two parts: a client library and a server library. 
+It consists of two parts: a client library and a server library.
 
-Using the client library, you can simply develop applications that use 
-the Domain Name System (DNS). It includes many functions for resolving, 
-domain-name manipulation and Resource Record (RR) creation. 
+Using the client library, you can simply develop applications that use
+the Domain Name System (DNS). It includes many functions for resolving,
+domain-name manipulation and Resource Record (RR) creation.
 
-The server library, based on the client core, can be used to develop 
+The server library, based on the client core, can be used to develop
 DNS servers. By implementing a query entry-point function using the
-Poslib library of functions, you can easily create DNS servers, 
-without worrying about low-level details such as DNS message compilation, 
-domain-name compression and UDP/TCP transmission. 
+Poslib library of functions, you can easily create DNS servers,
+without worrying about low-level details such as DNS message compilation,
+domain-name compression and UDP/TCP transmission.
 
 WWW: http://posadis.sourceforge.net/projects/poslib.php

@@ -3,6 +3,7 @@
 
 PORTNAME=	openjfx8
 PORTVERSION=	20160228
+PORTREVISION=	1
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://bitbucket.org/tobik/openjfx-rt/get/ \
 		http://bitbucket.org/tobik/openjfx-rt/get/
@@ -55,7 +56,6 @@ do-install:
 		&& ${TAR} -C ${STAGEDIR}${JAVA_HOME} \
 			-xf ${WRKSRC}/build/bundles/javafx-sdk-overlay.zip)
 
-post-install:
 	@${FIND} ${STAGEDIR}${JAVA_HOME}/jre -name '*.so' -exec ${STRIP_CMD} \{\} \;
 
 .include <bsd.port.mk>

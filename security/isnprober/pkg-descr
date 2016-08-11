@@ -1,5 +1,5 @@
 -- ISNprober / Tom Vandepoel (Tom.Vandepoel@ubizen.com) --
 
-ISNprober is a tool that samples TCP Initial Sequence Numbers or IP ID's 
-and can use that information to determine if a set of IP addresses belong 
+ISNprober is a tool that samples TCP Initial Sequence Numbers or IP ID's
+and can use that information to determine if a set of IP addresses belong
 to the same TCP/IP stack (machine) or not.

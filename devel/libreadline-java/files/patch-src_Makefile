@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2003-01-07 10:14:35 UTC
++++ src/Makefile
+@@ -10,7 +10,7 @@ java: always $(BUILD)
+ 
+ native: always
+ 	cd native ; $(MAKE) T_LIBS="$(T_LIBS)" JAVAINCLUDE="$(JAVAINCLUDE)" \
+-                            JAVANATINC="$(JAVANATINC)" all
++                            JAVANATINC="$(JAVANATINC)" JAVAH="$(JAVAH)" all
+ 
+ $(BUILD):
+ 	mkdir $@

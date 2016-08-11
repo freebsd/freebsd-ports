@@ -1,6 +1,6 @@
---- cmake/modules/FindTaglib.cmake	2009/03/18 13:31:18	940895
-+++ cmake/modules/FindTaglib.cmake	2015/11/16 19:05:39	1444333
-@@ -29,10 +29,10 @@
+--- cmake/modules/FindTaglib.cmake.orig	2009-03-13 21:40:24 UTC
++++ cmake/modules/FindTaglib.cmake
+@@ -29,10 +29,10 @@ if(TAGLIBCONFIG_EXECUTABLE)
  
    exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --version RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_VERSION)
  
@@ -13,7 +13,7 @@
  
       exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --libs RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_LIBRARIES)
  
-@@ -42,7 +42,7 @@
+@@ -42,7 +42,7 @@ if(TAGLIBCONFIG_EXECUTABLE)
          set(TAGLIB_FOUND TRUE)
       endif(TAGLIB_LIBRARIES AND TAGLIB_CFLAGS)
       string(REGEX REPLACE " *-I" ";" TAGLIB_INCLUDES "${TAGLIB_CFLAGS}")

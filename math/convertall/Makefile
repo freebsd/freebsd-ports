@@ -40,8 +40,6 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX} && \
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${DATADIR} -f ${DATADIR_REL})
-
-post-install:
 	(cd ${STAGEDIR}${DOCSDIR} && ${RM} INSTALL LICENSE)
 
 .include <bsd.port.pre.mk>

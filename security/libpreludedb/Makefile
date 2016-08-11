@@ -37,7 +37,7 @@ PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_WITH=	python2=${PYTHON_CMD}
 PYTHON_PLIST_SUB=	VERSION=${PORTVERSION}
 SQLITE_DESC=		SQLite3 plugin
-SQLITE_USE=		sqlite=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_WITH=	sqlite3
 
 .include <bsd.port.mk>

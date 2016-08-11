@@ -1,6 +1,7 @@
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql.app
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql.beam
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql_binary.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql_errcodes.beam
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql_fdatetime.beam
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql_idatetime.beam
 lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql_sock.beam
@@ -15,6 +16,7 @@ lib/erlang/lib/epgsql-%%VERSION%%/include/epgsql_geometry.hrl
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql.app.src
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql_binary.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql_errcodes.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql_fdatetime.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql_idatetime.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql_sock.erl

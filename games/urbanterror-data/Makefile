@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	4.2.018
+PORTVERSION=	4.2.023
 CATEGORIES=	games
 MASTER_SITES=	http://cdn.urbanterror.info/urt/42/zips/ \
 		http://www.f1m.fr/uploads/urt/ \
@@ -12,7 +12,7 @@ DISTNAME=	UrbanTerror${URT_VER}_full${URT_REV}
 EXTRACT_SUFX=	.zip
 EXTRACT_ONLY=
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 NO_BUILD=	yes
@@ -27,6 +27,7 @@ URT_REV=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\2/}
 PLIST_SUB+=	VER=${URT_VER}
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 
 UTDOCS=		readme${URT_VER}.txt \
 		How_To_Install.txt \
@@ -41,11 +42,9 @@ do-install:
 		UrbanTerror${URT_VER}/q3ut4
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for utdoc in ${UTDOCS}
-	${MV} ${STAGEDIR}${DATADIR}/q3ut4/${utdoc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${MV} ${UTDOCS:C!^!${STAGEDIR}${DATADIR}/q3ut4/!} ${STAGEDIR}${DOCSDIR}/
 .else
-	${RM} ${STAGEDIR}${DATADIR}/q3ut4/readme${URT_VER}.txt
+	${RM} ${UTDOCS:C!^!${STAGEDIR}${DATADIR}/q3ut4/!}
 .endif
 
 .include <bsd.port.mk>

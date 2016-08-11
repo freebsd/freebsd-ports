@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capistrano
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,14 +12,15 @@ COMMENT=	Utility for executing commands in parallel on multiple machines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-i18n>=0:devel/rubygem-i18n \
-		rubygem-rake>=10:devel/rubygem-rake \
-		rubygem-sshkit>=1.3:security/rubygem-sshkit
+RUN_DEPENDS=	rubygem-airbrussh>=1.0.0:security/rubygem-airbrussh \
+		rubygem-capistrano-harrow>=0:sysutils/rubygem-capistrano-harrow \
+		rubygem-i18n>=0:devel/rubygem-i18n \
+		rubygem-rake>=10.0.0:devel/rubygem-rake \
+		rubygem-sshkit>=1.9.0:security/rubygem-sshkit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/cap bin/capify
 

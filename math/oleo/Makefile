@@ -10,40 +10,31 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison perl5
+USES=		bison localbase perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lintl
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
 INFO=		oleo
 
 OPTIONS_DEFINE=	MOTIF NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+MOTIF_LIB_DEPENDS=	libplot.so:graphics/plotutils \
+			libXbae.so:x11-toolkits/xbae \
+			libXmHTML.so:x11-toolkits/xmhtml
+MOTIF_USES=		motif
+MOTIF_CONFIGURE_WITH=	motif
+MOTIF_USE_OFF=		XORG=xt,ice,sm
 
-.if ${PORT_OPTIONS:MMOTIF}
-LIB_DEPENDS+=	libplot.so:graphics/plotutils \
-		libXbae.so:x11-toolkits/xbae \
-		libXmHTML.so:x11-toolkits/xmhtml
-USES+=		motif
-CONFIGURE_ARGS+=	--with-motif
-.else
-USE_XORG=	xt ice sm
-CONFIGURE_ARGS+=	--without-motif
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_LIBS=		-lintl
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES_OFF=		gettext-tools
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \

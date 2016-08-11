@@ -3,6 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -28,7 +29,8 @@ PATCHFILES=	patch-7u45-b30.xz \
 		patch-7u80-b32.xz \
 		patch-7u85-b02.xz \
 		patch-7u91-b02.xz \
-		patch-7u95-b00.xz
+		patch-7u95-b00.xz \
+		patch-7u101-b00.xz
 
 MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	Java Development Kit 7
@@ -57,7 +59,7 @@ JAVAVMS_COMMENT+=	JRE
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
 .endif
 
-PORT_MINOR_VERSION=	95
+PORT_MINOR_VERSION=	101
 PORT_BUILD_NUMBER=	00
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
@@ -195,11 +197,10 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 	    ${STAGEDIR}${INSTALLDIR}/lib/security/cacerts
 .endif
-	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
+	@${ECHO} "@javavm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -type d -empty | ${SORT} -r | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dir ,' >> ${TMPPLIST}
-	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # ${JAVAVMS_COMMENT}'" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

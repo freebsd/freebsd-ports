@@ -11,9 +11,7 @@ COMMENT=	Web application framework
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	yes
-USES=		shebangfix
-WANT_PHP_WEB=	yes
+USES=		php:web shebangfix
 
 SHEBANG_FILES=	web_app/boxes/menu/edit/xsl/test/*.sh \
 		web_app/boxes/webnotes/db/dump.sh \

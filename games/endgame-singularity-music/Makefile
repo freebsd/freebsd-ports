@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	endgame-singularity
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Music pack for endgame-singularity
 
 NO_ARCH=	yes

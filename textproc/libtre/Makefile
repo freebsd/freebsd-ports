@@ -9,7 +9,7 @@ MASTER_SITES=	http://laurikari.net/tre/ \
 		LOCAL/bf
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight fully POSIX compliant regexp matching library
 
 LICENSE=	BSD2CLAUSE

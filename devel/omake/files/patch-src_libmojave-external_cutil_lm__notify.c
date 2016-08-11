@@ -2,7 +2,7 @@ $NetBSD: patch-ak,v 1.1 2010/12/17 09:40:14 wiz Exp $
 
 From upstream SVN.
 
---- src/libmojave-external/cutil/lm_notify.c.orig	2007-07-27 17:58:13.000000000 +0000
+--- src/libmojave-external/cutil/lm_notify.c.orig	2007-07-27 17:58:13 UTC
 +++ src/libmojave-external/cutil/lm_notify.c
 @@ -74,13 +74,13 @@ typedef struct {
  

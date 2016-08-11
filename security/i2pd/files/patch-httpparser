@@ -1,0 +1,49 @@
+commit 43a90d7b98b1b317022f468bcf23027e039142fe
+Author: hagen <hagen@mail.i2p>
+Date:   Thu May 26 00:00:00 2016 +0000
+
+    * HTTP.cpp : fix parse_header_line (#501)
+
+diff --git HTTP.cpp HTTP.cpp
+index 83f1ac3..66dbc76 100644
+--- HTTP.cpp
++++ HTTP.cpp
+@@ -45,9 +45,10 @@ namespace http {
+   bool parse_header_line(const std::string & line, std::map<std::string, std::string> & headers) {
+     std::size_t pos = 0;
+     std::size_t len = 2; /* strlen(": ") */
++    std::size_t max = line.length();
+     if ((pos = line.find(": ", pos)) == std::string::npos)
+       return false;
+-    while (isspace(line.at(pos + len)))
++    while ((pos + len) < max && isspace(line.at(pos + len)))
+       len++;
+     std::string name  = line.substr(0, pos);
+     std::string value = line.substr(pos + len);
+diff --git tests/test-http-req.cpp tests/test-http-req.cpp
+index 10ea621..d536262 100644
+--- tests/test-http-req.cpp
++++ tests/test-http-req.cpp
+@@ -68,6 +68,7 @@ int main() {
+   buf =
+     "GET http://inr.i2p HTTP/1.1\r\n"
+     "Host:  stats.i2p\r\n"
++    "Accept-Encoding: \r\n"
+     "Accept: */*\r\n"
+     "\r\n";
+   len = strlen(buf);
+@@ -76,9 +77,13 @@ int main() {
+   assert(req->method == "GET");
+   assert(req->uri == "http://inr.i2p");
+   assert(req->host == "stats.i2p");
+-  assert(req->headers.size() == 2);
++  assert(req->headers.size() == 3);
+   assert(req->headers.count("Host") == 1);
+   assert(req->headers.count("Accept") == 1);
++  assert(req->headers.count("Accept-Encoding") == 1);
++  assert(req->headers["Host"] == "stats.i2p");
++  assert(req->headers["Accept"] == "*/*");
++  assert(req->headers["Accept-Encoding"] == "");
+   delete req;
+ 
+   return 0;

@@ -11,14 +11,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP load balancer written in Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-USE_PYTHON=	distutils autoplist
 USES=		python twisted:run
+USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

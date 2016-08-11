@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pjsip
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -9,7 +9,7 @@ DISTNAME=	pjproject-${DISTVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Multimedia communication library written in C language
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
@@ -18,13 +18,14 @@ CONFLICTS=	pjsip-extsrtp-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
 		--disable-silk
-USES=		gmake localbase tar:bz2
+USES=		gmake localbase pathfix ssl tar:bz2
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	FFMPEG G711 G722 G7221 GSM ILBC L16 OPENH264 RESAMPLE RESAMPLEDLL \
-		SAMPLERATE SDL SHARED SPEEX SPEEXAEC V4L IPV6 SOUND VIDEO AMR EXTSRTP
+OPTIONS_DEFINE=	DEBUG FFMPEG G711 G722 G7221 GSM ILBC IPV6 L16 OPENH264 RESAMPLE RESAMPLEDLL \
+		SAMPLERATE SDL SHARED SPEEX SPEEXAEC V4L SOUND VIDEO AMR EXTSRTP
 OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 SHARED SPEEX SPEEXAEC
 
 G711_DESC=	G.711 codec support
@@ -43,6 +44,8 @@ EXTSRTP_DESC=	Use libsrtp port (needed to get SRTP support in asterisk13 pjsip b
 
 OPTIONS_SUB=	yes
 
+DEBUG_CFLAGS=			-DNDEBUG=0
+DEBUG_CFLAGS_OFF=		-DNDEBUG=1
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 FFMPEG_LIB_DEPENDS=		libswresample.so:multimedia/ffmpeg
 G711_CONFIGURE_ENABLE=		g711-codec
@@ -52,6 +55,8 @@ GSM_CONFIGURE_ENABLE=		gsm-codec
 GSM_LIB_DEPENDS=		libgsm.so:audio/gsm
 GSM_CONFIGURE_ON=		--with-external-gsm
 ILBC_CONFIGURE_ENABLE=		ilbc-codec
+IPV6_CFLAGS=			-DPJ_HAS_IPV6=1
+IPV6_CFLAGS_OFF=		-DPJ_HAS_IPV6=1
 L16_CONFIGURE_ENABLE=		l16-codec
 OPENH264_CONFIGURE_ENABLE=	openh264
 OPENH264_LIB_DEPENDS=		libopenh264.so:multimedia/openh264
@@ -81,5 +86,10 @@ EXTSRTP_LIB_DEPENDS=		libsrtp.so:net/libsrtp
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/pkgconfig.py
+	@${REINPLACE_CMD} -e 's/$$(APP_LDFLAGS) \{0,1\}//' \
+		-e 's/$$(OS_LDFLAGS)/$$(APP_LDFLAGS) &/' \
+		${WRKSRC}/*/build/Makefile
+	@${ECHO} "#include <sys/select.h>" > ${WRKSRC}/pjlib/include/pj/config_site.h
+	@${ECHO} "#define PJ_IOQUEUE_MAX_HANDLES (FD_SETSIZE)" >> ${WRKSRC}/pjlib/include/pj/config_site.h
 
 .include <bsd.port.mk>

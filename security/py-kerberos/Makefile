@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kerberos
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +31,7 @@ GSSAPI_BASE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_kerberosbasic.h \
 GSSAPI_HEIMDAL_EXTRA_PATCHES=	${GSSAPI_BASE_EXTRA_PATCHES}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|commands.getoutput("krb5-config|commands.getoutput("${GSSAPIBASEDIR}/bin/krb5-config|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|getoutput("krb5-config|getoutput("${GSSAPIBASEDIR}/bin/krb5-config|g' ${WRKSRC}/setup.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/kerberos.so

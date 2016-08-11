@@ -2,11 +2,11 @@ Zrep is an enterprise-grade, single-program solution for handling asynchronous,
 continuous replication of a zfs filesystem, to another filesystem.
 That filesystem can be on another machine, or on the same machine.
 
-It also handles 'failover', as simply as "zrep failover datapool/yourfs". 
+It also handles 'failover', as simply as "zrep failover datapool/yourfs".
 This will conveniently handle all the details of
 
  - Making 'yourfs' be a data destination, rather than a source
  - Making 'yourfs' be read-only
- - Making the destination fs be "live", and ready to transfer data to yourfs 
+ - Making the destination fs be "live", and ready to transfer data to yourfs
 
 WWW: http://www.bolthole.com/solaris/zrep/

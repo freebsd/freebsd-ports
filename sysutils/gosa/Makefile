@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:security/p5-Crypt-SmbHash \
 		pecl-imagick>=2.2.2:graphics/pecl-imagick
 
 USES=		tar:bzip2
-USE_PHP=	gettext iconv imap ldap mbstring mhash mysql pcre posix \
+USE_PHP=	gettext iconv imap ldap mbstring hash mysql pcre posix \
 		session spl xml zlib
 
 NO_BUILD=	yes

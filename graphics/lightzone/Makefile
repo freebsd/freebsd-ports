@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightzone
-DISTVERSION=	4.1.5
-PORTREVISION=	1
+PORTVERSION=	4.1.6
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,6 +10,7 @@ MAINTAINER=	yuri@rawbw.com
 COMMENT=	Professional-level digital darkroom and photo editor
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	jhindexer:java/javahelp \
 		git:devel/git \
@@ -39,7 +39,7 @@ INSTALLS_ICONS=	yes
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB=	LIBDIR="${LIBDIR}"
-WRKSRC_SUBDIR=		linux
+WRKSRC_SUBDIR=	linux
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|g++|${CXX}|' ${WRKSRC}/../lightcrafts/mk/platform.mk

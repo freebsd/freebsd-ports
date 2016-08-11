@@ -1,0 +1,31 @@
+--- heartbeat/zabbixserver.orig	2016-04-05 14:11:59 UTC
++++ heartbeat/zabbixserver
+@@ -108,6 +108,7 @@ END
+ 
+ #######################################################################
+ 
++. /etc/rc.subr
+ 
+ zabbixserver_usage() {
+     cat <<END
+@@ -124,7 +125,7 @@ END
+ getpid() {
+     # pidfile doesn't exists
+     [ -f $1 ] || return 1
+-    sed -n '1 { /[0-9]/p }' $1
++    sed -n '1 { /[0-9]/p; }' $1
+ 
+     return 0
+ }
+@@ -175,7 +176,10 @@ process_status() {
+     pid=$1
+ 
+     # check if parent process is running
+-    ocf_run -q kill -s 0 $pid 2> /dev/null 1>&2
++    if [ -n "`_find_processes $OCF_RESKEY_binary . '-p $pid'`" ]; then
++        return $OCF_SUCCESS
++    fi
++    return $OCF_NOT_RUNNING
+ }
+ 
+ #

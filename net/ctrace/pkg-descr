@@ -1,6 +1,6 @@
 ctrace is an IPv4 traceroute tool that supports many features missing
 in standard 4.3BSD traceroute(8). It is programmed entirely in perl.
-   
+
 The primary difference between ctrace and other traceroute tools is
 its ability to trace routes in multiple protocols. ctrace also has
 some additional nifty features:

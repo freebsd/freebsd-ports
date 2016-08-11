@@ -3,6 +3,7 @@
 PORTNAME=	openh264
 PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=v
+PORTEPOCH=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -59,7 +60,7 @@ pre-build:
 	${LN} -sf ${LOCALBASE}/lib/libgtest.so ${WRKSRC}/libgtest.a
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.*
 
 post-install-PLUGINS-on:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}

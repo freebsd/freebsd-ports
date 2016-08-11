@@ -1,11 +1,17 @@
 @sample etc/siproxd.conf.sample
 @sample etc/siproxd_passwd.cfg.sample
+lib/siproxd/plugin_codecfilter.la
+lib/siproxd/plugin_codecfilter.so
 lib/siproxd/plugin_defaulttarget.la
 lib/siproxd/plugin_defaulttarget.so
 lib/siproxd/plugin_demo.la
 lib/siproxd/plugin_demo.so
+lib/siproxd/plugin_fix_DTAG.la
+lib/siproxd/plugin_fix_DTAG.so
 lib/siproxd/plugin_fix_bogus_via.la
 lib/siproxd/plugin_fix_bogus_via.so
+lib/siproxd/plugin_fix_fbox_anoncall.la
+lib/siproxd/plugin_fix_fbox_anoncall.so
 lib/siproxd/plugin_logcall.la
 lib/siproxd/plugin_logcall.so
 lib/siproxd/plugin_prefix.la
@@ -14,6 +20,10 @@ lib/siproxd/plugin_regex.la
 lib/siproxd/plugin_regex.so
 lib/siproxd/plugin_shortdial.la
 lib/siproxd/plugin_shortdial.so
+lib/siproxd/plugin_siptrunk.la
+lib/siproxd/plugin_siptrunk.so
+lib/siproxd/plugin_stripheader.la
+lib/siproxd/plugin_stripheader.so
 lib/siproxd/plugin_stun.la
 lib/siproxd/plugin_stun.so
 sbin/siproxd

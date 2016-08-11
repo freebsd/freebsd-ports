@@ -1,0 +1,6 @@
+Corefines is a collection of general purpose refinements for extending the core
+capabilities of Ruby's built-in classes. It also provides a compatibility mode
+for older Ruby versions and alternative Ruby implementations that don't support
+refinements (yet).
+
+WWW: https://github.com/jirutka/corefines

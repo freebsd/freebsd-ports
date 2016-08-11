@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	4.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -12,6 +12,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Powerful network monitoring system
 
 LICENSE=	GPLv2
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgd.so:graphics/gd

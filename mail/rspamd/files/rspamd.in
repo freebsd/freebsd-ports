@@ -9,13 +9,13 @@
 # Add the following line to /etc/rc.conf to enable rspamd:
 #
 # rspamd_enable (bool):		Set to "NO" by default.
-#							Set it to "YES" to enable rspamd.
+#				Set it to "YES" to enable rspamd.
 #
 # rspamd_user (str):		Default to "nobody".
 #
 # rspamd_group (str):		Default to "nobody".
 #
-# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.xml".
+# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.conf".
 
 . /etc/rc.subr
 
@@ -34,14 +34,12 @@ pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
 command=%%PREFIX%%/bin/rspamd
 command_adm=%%PREFIX%%/bin/rspamadm
 restart_precmd="rspamd_checkconfig"
-reload_precmd="rspamd_checkconfig"
 configtest_cmd="rspamd_checkconfig"
 reopenlog_cmd="reopenlog_cmd"
 
 required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
 command_args="-u ${rspamd_user} -g ${rspamd_group}"
-sig_reload="HUP"
-extra_commands="reload configtest reopenlog"
+extra_commands="configtest reopenlog"
 stop_postcmd="rm -f $pidfile"
 
 rspamd_checkconfig()

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Encode
-PORTVERSION=	2.83
+PORTVERSION=	2.84
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANKOGAI
@@ -32,6 +32,6 @@ post-patch:
 .endif
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/ -name '*.so' | ${XARGS} -J % ${STRIP_CMD} %
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/ -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.post.mk>

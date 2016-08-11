@@ -9,7 +9,7 @@ share/sgml/docbook/dsssl/modular/WhatsNew
 share/sgml/docbook/dsssl/modular/bin/ChangeLog
 share/sgml/docbook/dsssl/modular/bin/collateindex.pl
 share/sgml/docbook/dsssl/modular/bin/collateindex.pl.1
-share/sgml/docbook/dsssl/modular/catalog
+@xmlcatmgr share/sgml/docbook/dsssl/modular/catalog
 share/sgml/docbook/dsssl/modular/common/ChangeLog
 share/sgml/docbook/dsssl/modular/common/catalog
 share/sgml/docbook/dsssl/modular/common/cs-hack.pl
@@ -726,5 +726,3 @@ share/sgml/docbook/dsssl/modular/print/docbook.dsl
 share/sgml/docbook/dsssl/modular/print/notoc.dsl
 share/sgml/docbook/dsssl/modular/print/plain.dsl
 share/sgml/docbook/dsssl/modular/print/version.dsl
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog

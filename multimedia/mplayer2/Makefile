@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	18
+PORTREVISION=	22
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -37,9 +37,9 @@ MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 OPTIONS_DEFINE=	A52 ASS CACA CDIO DEBUG DV DVDREAD DVDNAV GIF IPV6 JACK LADSPA \
-		LIBBLURAY LIRC MAD OPENGL PORTAUDIO PULSEAUDIO REALPLAYER \
+		LIBBLURAY LIRC MAD OPENGL PORTAUDIO PULSEAUDIO \
 		RTC SDL SMB SPEEX THEORA V4L VDPAU X11 XINERAMA
-OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV X11
+OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV VDPAU X11
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE_i386+=		WIN32
@@ -56,7 +56,6 @@ OPTIONS_DEFINE_${_arch}+=	RTCPU
 ASS_DESC=	Enable ASS/SSA subtitle rendering
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
-REALPLAYER_DESC=Enable realplayer plugin
 RTC_DESC=	Enable kernel realtime clock timing
 RTCPU_DESC=	Allow runtime CPU detection
 WIN32_DESC=	Enable win32 codec set on the IA32 arch
@@ -125,10 +124,6 @@ PORTAUDIO_CONFIGURE_OFF=--disable-portaudio
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=--disable-pulse
-
-REALPLAYER_BUILD_DEPENDS=realplay:multimedia/linux-realplayer
-REALPLAYER_RUN_DEPENDS=	realplay:multimedia/linux-realplayer
-REALPLAYER_CONFIGURE_OFF=--disable-real
 
 RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
 RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
@@ -219,4 +214,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE= you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>

@@ -21,6 +21,7 @@ load_rc_config "${name}"
 : ${hbase_master_user:=%%HBASE_USER%%}
 
 command="%%PREFIX%%/hbase/bin/hbase-daemon.sh"
+command_interpreter="bash"
 command_args='--config %%ETCDIR%% start master'
 
 stop_cmd=hbase_master_stop

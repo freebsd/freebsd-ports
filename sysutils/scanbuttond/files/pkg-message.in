@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 scanbuttond has been installed, but is not quite ready to be used yet.
 
-To make scanbuttond actually do something you have to edit 
+To make scanbuttond actually do something you have to edit
 %%PREFIX%%/etc/scanbuttond/buttonpressed.sh and change it to your needs.
 
 If you are having trouble getting your scanner detected try uncommenting one
@@ -13,9 +13,9 @@ sane-find-scanner  > /dev/null 2> /dev/null
 
 If your scanner is connected via a hot-plug capable technology (e.g. USB)
 you can conveniently enable scanbuttond every time you attach you scanner by
-using devd. In order to do so you may add the following lines to your 
-/etc/devd.conf and restart devd after you are done. 
-(Make sure to replace device-name, vendor, product and back-end name to 
+using devd. In order to do so you may add the following lines to your
+/etc/devd.conf and restart devd after you are done.
+(Make sure to replace device-name, vendor, product and back-end name to
 something that matches your environment)
 
 attach 20 {
@@ -27,7 +27,7 @@ attach 20 {
 		-S %%PREFIX%%/etc/scanbuttond/initscanner.sh \
 		-b %%PREFIX%%/lib/libscanbtnd-backend_plustek.so";
 };
-  
+
 detach 20 {
 	device-name "ugen[0-9]+";
 	match "vendor" "0x04a9";

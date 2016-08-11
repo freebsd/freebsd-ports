@@ -2,7 +2,7 @@ etc/mail/smtpd.conf.sample
 libexec/opensmtpd/encrypt
 libexec/opensmtpd/mail.local
 %%TABLE_DB%%libexec/opensmtpd/makemap
-sbin/smtpctl
+@(,,2555) sbin/smtpctl
 sbin/smtpd
 %%TABLE_DB%%man/man8/makemap.8.gz
 %%TABLE_DB%%man/man8/newaliases.8.gz

@@ -1,5 +1,5 @@
 Before lauch 'lollypop', define your music path directory.
 
-Replace PUTYOURMUSICDIR by your music path directory. 
+Replace PUTYOURMUSICDIR by your music path directory.
 
 gsettings set org.gnome.Lollypop music-path "['PUTYOURMUSICDIR']"

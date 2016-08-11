@@ -3,9 +3,9 @@ object framework.
 
 The intention here is to provide a useful and easy-to-develop-against sockets
 wrapper for GNOME2 & GTK+ 2.0 programs which require TCP/IP connection
-capabilities. It can be used by programs which do not use GNOME or GTK+ 
-anyways,however. It is NOT recommended or intended for high-load server 
-situations, just user applications which need TCP/IP networking. Proxies are 
+capabilities. It can be used by programs which do not use GNOME or GTK+
+anyways,however. It is NOT recommended or intended for high-load server
+situations, just user applications which need TCP/IP networking. Proxies are
 supported completely transparently, using the same settings as gnome-vfs.
 
 -- The libgnetwork README

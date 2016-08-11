@@ -1,0 +1,7 @@
+URLObject is a utility class for manipulating URLs. The latest incarnation of
+this library builds upon the ideas of its predecessor, but aims for a clearer
+API, focusing on proper method names over operator overrides. It's also being
+developed from the ground up in a test-driven manner, and has full Sphinx
+documentation.
+
+WWW: http://github.com/zacharyvoase/urlobject

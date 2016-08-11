@@ -1,5 +1,5 @@
-wsgitools is a set of tools working with WSGI (see PEP 333). 
-It includes classes for filtering content, middlewares for 
+wsgitools is a set of tools working with WSGI (see PEP 333).
+It includes classes for filtering content, middlewares for
 caching, logging and tracebacks as well as two backends for
 SCGI. Goals in writing it were portability and simplicity.
 

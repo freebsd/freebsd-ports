@@ -1,6 +1,6 @@
---- configure.orig	2015-11-03 20:01:31 UTC
+--- configure.orig	2016-03-30 17:53:28 UTC
 +++ configure
-@@ -273,7 +273,7 @@ DSOSUF=".so"
+@@ -276,7 +276,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
@@ -9,7 +9,28 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -2102,7 +2102,7 @@ if test "$gtk" != "no"; then
+@@ -344,6 +344,9 @@ libssh2=""
+ vhdx=""
+ numa=""
+ tcmalloc="no"
++pcap="no"
++pcap_create="no"
++bpf="no"
+ jemalloc="no"
+ 
+ # parse CC options first
+@@ -905,6 +908,10 @@ for opt do
+   ;;
+   --enable-vnc-png) vnc_png="yes"
+   ;;
++  --enable-pcap) pcap="yes"
++  ;;
++  --disable-pcap) pcap="no"
++  ;;
+   --disable-slirp) slirp="no"
+   ;;
+   --disable-uuid) uuid="no"
+@@ -2241,7 +2248,7 @@ if test "$gtk" != "no"; then
              gtk_cflags="$gtk_cflags $x11_cflags"
              gtk_libs="$gtk_libs $x11_libs"
          fi
@@ -18,20 +39,69 @@
          gtk="yes"
      elif test "$gtk" = "yes"; then
          feature_not_found "gtk" "Install gtk2 or gtk3 devel"
-@@ -3643,15 +3643,18 @@ if compile_prog "" "" ; then
+@@ -2413,6 +2420,50 @@ then
  fi
  
+ ##########################################
++# pcap probe
++if test "$pcap" = "yes" -a "$pcap" != "no"; then
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
++EOF
++  if test "$mingw32" = "no" ; then
++    libpcap=-lpcap
++  else
++    libpcap=-lwpcap
++  fi
++  if compile_prog "" "$libpcap" ; then
++    :
++  else
++   echo
++    echo "Error: Could not find pcap"
++    echo "Make sure to have the pcap libs and headers installed."
++    echo
++    exit 1
++  fi
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void)
++{
++  char errbuf[PCAP_ERRBUF_SIZE];
++  return (pcap_create("foo", errbuf) == (pcap_t *)0 ? 1 : 0);
++}
++EOF
++  if compile_prog "" "$libpcap" ; then
++    pcap_create="yes"
++  fi
++  cat > $TMPC << EOF
++#define PCAP_DONT_INCLUDE_PCAP_BPF_H
++#include <pcap.h>
++#include <net/bpf.h>
++int main(void) { return (BPF_MAJOR_VERSION); }
++EOF
++  if compile_prog ; then
++    bpf="yes"
++  fi
++  libs_softmmu="$libpcap $libs_softmmu"
++fi # test "$pcap"
++
++##########################################
+ # libtasn1 - only for the TLS creds/session test suite
+ 
+ tasn1=yes
+@@ -2983,7 +3034,7 @@ for i in $glib_modules; do
+         glib_libs=`$pkg_config --libs $i`
+         CFLAGS="$glib_cflags $CFLAGS"
+         LIBS="$glib_libs $LIBS"
+-        libs_qga="$glib_libs $libs_qga"
++        libs_qga="$glib_libs -lintl $libs_qga"
+     else
+         error_exit "glib-$glib_req_ver $i is required to compile QEMU"
+     fi
+@@ -3864,14 +3915,7 @@ fi
+ 
  # Check if tools are available to build documentation.
-+#if test "$docs" != "no" ; then
-+#  if has makeinfo && has pod2man; then
-+#    docs=yes
-+#  else
-+#    if test "$docs" = "yes" ; then
-+#      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
-+#    fi
-+#    docs=no
-+#  fi
-+#fi
  if test "$docs" != "no" ; then
 -  if has makeinfo && has pod2man; then
 -    docs=yes
@@ -41,11 +111,11 @@
 -    fi
 -    docs=no
 -  fi
-+  docs=yes
++docs=yes
  fi
  
  # Search for bswap_32 function
-@@ -3793,6 +3796,17 @@ fi
+@@ -3999,6 +4043,17 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
@@ -63,7 +133,7 @@
      if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
-@@ -3805,6 +3819,7 @@ if test "$libusb" != "no" ; then
+@@ -4011,6 +4066,7 @@ if test "$libusb" != "no" ; then
          fi
          libusb="no"
      fi
@@ -71,3 +141,27 @@
  fi
  
  # check for usbredirparser for usb network redirection support
+@@ -4773,6 +4829,7 @@ echo "Audio drivers     $audio_drv_list"
+ echo "Block whitelist (rw) $block_drv_rw_whitelist"
+ echo "Block whitelist (ro) $block_drv_ro_whitelist"
+ echo "VirtFS support    $virtfs"
++echo "pcap support      $pcap"
+ echo "VNC support       $vnc"
+ if test "$vnc" = "yes" ; then
+     echo "VNC SASL support  $vnc_sasl"
+@@ -4951,6 +5008,15 @@ fi
+ if test "$profiler" = "yes" ; then
+   echo "CONFIG_PROFILER=y" >> $config_host_mak
+ fi
++if test "$pcap" = "yes" ; then
++  echo "CONFIG_PCAP=y" >> $config_host_mak
++  if test "$pcap_create" = "yes" ; then
++    echo "CONFIG_PCAP_CREATE=y" >> $config_host_mak
++  fi
++  if test "$bpf" = "yes" ; then
++    echo "CONFIG_BPF=y" >> $config_host_mak
++  fi
++fi
+ if test "$slirp" = "yes" ; then
+   echo "CONFIG_SLIRP=y" >> $config_host_mak
+   echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak

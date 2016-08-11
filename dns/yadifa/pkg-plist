@@ -33,6 +33,7 @@ include/dnscore/dnscore-config-features.h
 include/dnscore/dnscore-config.h
 include/dnscore/dnscore.h
 include/dnscore/dnsformat.h
+include/dnscore/dnskey-keyring.h
 include/dnscore/dnskey.h
 include/dnscore/dnskey_dsa.h
 include/dnscore/dnskey_rsa.h

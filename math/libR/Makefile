@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../R
 PLIST=	${.CURDIR}/pkg-plist
 PLIST_FILES=	lib/R/lib/libR.a
 
+BROKEN=		Transient breakage while restructuring the master port
+
 .include "${MASTERDIR}/Makefile"

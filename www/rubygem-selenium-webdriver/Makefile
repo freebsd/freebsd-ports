@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-childprocess>=0.5:devel/rubygem-childprocess \
 		rubygem-websocket>=1.0:www/rubygem-websocket
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

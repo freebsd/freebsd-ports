@@ -6,7 +6,7 @@ PORTVERSION=	0.0.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Azure OAuth2 Strategy for OmniAuth
 
 LICENSE=	MIT
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-jwt>=1.0:www/rubygem-jwt \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

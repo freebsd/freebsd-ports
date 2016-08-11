@@ -3,7 +3,7 @@
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/release/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
@@ -18,11 +18,7 @@ LICENSE_FILE=	${WRKSRC:H:H}/COPYING
 LIB_DEPENDS=	libpuzzle.so:graphics/libpuzzle \
 		libgd.so:graphics/gd
 
-USES=		tar:bzip2
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext tar:bzip2
 IGNORE_WITH_PHP=	70
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/php/${PORTNAME}

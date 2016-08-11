@@ -1,16 +1,5 @@
 --- CMakeLists.txt.orig	2015-12-18 03:41:50.000000000 +0000
 +++ CMakeLists.txt	2016-02-22 13:28:07.548454000 +0000
-@@ -171,8 +171,8 @@
-     endif()
- 
-     # set compiler flags - more are tested and added later
--    set(EXTRA_C_FLAGS "-std=c99 -Wall -Wextra -Wshadow -Wcast-qual -Werror")
--    set(EXTRA_CXX_FLAGS "-std=c++11 -Wall -Wextra -Werror -Wno-shadow -Wswitch -Wreturn-type -Wcast-qual -Wno-deprecated -Wnon-virtual-dtor")
-+    set(EXTRA_C_FLAGS "-std=c99 -Wall -Wextra -Wshadow -Wcast-qual ")
-+    set(EXTRA_CXX_FLAGS "-std=c++11 -Wall -Wextra  -Wno-shadow -Wswitch -Wreturn-type -Wcast-qual -Wno-deprecated -Wnon-virtual-dtor")
- 
-     if (NOT CMAKE_C_FLAGS MATCHES .*march.*)
-         message(STATUS "Building for current host CPU")
 @@ -954,6 +954,6 @@
  install(TARGETS hs_shared DESTINATION lib)
  endif()

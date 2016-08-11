@@ -1,4 +1,4 @@
-MIME::Lite::TT is the wrapper of MIME::Lite which enabled Template::Toolkit 
+MIME::Lite::TT is the wrapper of MIME::Lite which enabled Template::Toolkit
 as a template of email.
 
 WWW: http://search.cpan.org/dist/MIME-Lite-TT/

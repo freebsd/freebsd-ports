@@ -4,11 +4,9 @@ bin/pmat-cat-svpv
 bin/pmat-diff
 bin/pmat-dump-symbols
 bin/pmat-find-pv
-bin/pmat-identify-sv
 bin/pmat-largest-svs
 bin/pmat-list-dangling-ptrs
 bin/pmat-list-orphans
-bin/pmat-show-sv
 bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT.pm
 %%SITE_ARCH%%/Devel/MAT/Cmd.pod
@@ -17,10 +15,14 @@ bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT/Dumpfile.pm
 %%SITE_ARCH%%/Devel/MAT/Graph.pm
 %%SITE_ARCH%%/Devel/MAT/SV.pm
+%%SITE_ARCH%%/Devel/MAT/Tool.pm
 %%SITE_ARCH%%/Devel/MAT/Tool.pod
 %%SITE_ARCH%%/Devel/MAT/Tool/Count.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/IO.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Identify.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Inrefs.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Reachability.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Show.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Sizes.pm
 %%SITE_ARCH%%/Devel/MAT/UI.pod
 %%SITE_ARCH%%/auto/Devel/MAT/Dumper/Dumper.so
@@ -67,7 +69,10 @@ bin/pmat-sizes
 %%PERL5_MAN3%%/Devel::MAT::SV.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Count.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::IO.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Identify.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Inrefs.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Reachability.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Show.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Sizes.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz

@@ -1,5 +1,0 @@
-bin/quotes
-bin/quotesmailer
-etc/quotesrc.sample
-%%PORTDOCS%%%%DOCSDIR%%/quotes.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/QuExample.pm

@@ -1,4 +1,4 @@
---- llvm_mode/afl-clang-fast.c.orig	2015-09-08 22:37:25 UTC
+--- llvm_mode/afl-clang-fast.c.orig	2016-06-07 18:07:43 UTC
 +++ llvm_mode/afl-clang-fast.c
 @@ -106,10 +106,10 @@ static void edit_params(u32 argc, char**
  
@@ -12,4 +12,4 @@
 +    cc_params[0] = alt_cc ? alt_cc : (u8*)"clang37";
    }
  
-   cc_params[cc_par_cnt++] = "-Xclang";
+   /* There are two ways to compile afl-clang-fast. In the traditional mode, we

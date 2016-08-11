@@ -62,6 +62,10 @@ plex_precmd()
 	if [ ! -d "${%%PORTNAME%%_support_path}/Plex Media Server" ]; then
 		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex Media Server";
 	fi
+
+	if [ ! -d "${%%PORTNAME%%_support_path}/Plex" ]; then
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex";
+	fi
 	
 	if [ ${%%PORTNAME%%_tmp} ]; then 
 		export TMPDIR=${%%PORTNAME%%_tmp};

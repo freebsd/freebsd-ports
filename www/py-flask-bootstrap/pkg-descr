@@ -1,5 +1,5 @@
-Flask-Bootstrap packages Bootstrap into an extension that mostly consists of a 
-blueprint named 'bootstrap'. It can also create links to serve Bootstrap from 
+Flask-Bootstrap packages Bootstrap into an extension that mostly consists of a
+blueprint named 'bootstrap'. It can also create links to serve Bootstrap from
 a CDN and works with no boilerplate code in your application.
 
 WWW: http://pythonhosted.org/Flask-Bootstrap/

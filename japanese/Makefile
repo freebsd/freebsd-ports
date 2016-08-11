@@ -61,10 +61,13 @@
     SUBDIR += fcitx-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
+    SUBDIR += font-aozoramincho
     SUBDIR += font-ayu18
     SUBDIR += font-ayu20
     SUBDIR += font-elisa10
     SUBDIR += font-elisa8
+    SUBDIR += font-genjyuugothic
+    SUBDIR += font-genshingothic
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex
@@ -77,6 +80,7 @@
     SUBDIR += font-kochi
     SUBDIR += font-koruri
     SUBDIR += font-marumoji
+    SUBDIR += font-mgenplus
     SUBDIR += font-migmix
     SUBDIR += font-migu
     SUBDIR += font-mikachan
@@ -88,8 +92,10 @@
     SUBDIR += font-mplus-ipa
     SUBDIR += font-mplus-outline
     SUBDIR += font-naga10
+    SUBDIR += font-nasu
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
+    SUBDIR += font-rounded-mgenplus
     SUBDIR += font-sazanami
     SUBDIR += font-shinonome
     SUBDIR += font-std
@@ -106,7 +112,6 @@
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica
-    SUBDIR += guesswork-classic
     SUBDIR += hns
     SUBDIR += ibus-anthy
     SUBDIR += ibus-mozc
@@ -128,7 +133,6 @@
     SUBDIR += jpilot
     SUBDIR += jstrings
     SUBDIR += jvim3
-    SUBDIR += jyuroku
     SUBDIR += kakasi
     SUBDIR += kana-no-quiz
     SUBDIR += kanjipad
@@ -174,7 +178,6 @@
     SUBDIR += mozc-el
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
-    SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt-devel
     SUBDIR += mypaedia-fpw-package
@@ -274,7 +277,6 @@
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex
-    SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += tiarra
     SUBDIR += timidity++-slang

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	analyzemft
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	sysutils devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,16 +16,8 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
-
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	CHANGES.txt README.txt
-
-OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
