@@ -4,18 +4,17 @@
 # Date: Wed, 27 Jul 2016 11:09:19 -0700
 # Subject: [PATCH] Fix build with NORM enabled on FreeBSD.
 
---- configure.orig	2016-07-29 12:36:40 UTC
+--- configure.orig	2016-08-11 11:27:28 UTC
 +++ configure
-@@ -19823,10 +19823,10 @@ $as_echo "#define ZMQ_HAVE_NORM 1" >>con
+@@ -19801,9 +19801,9 @@ $as_echo "#define ZMQ_HAVE_NORM 1" >>con
      if test "x$wwith_norm_ext" != "xyes"; then
          norm_path="${with_norm_ext}"
          LIBZMQ_EXTRA_CXXFLAGS="-I${norm_path}/include ${LIBZMQ_EXTRA_CXXFLAGS}"
 -        LIBZMQ_EXTRA_LDFLAGS="-I${norm_path}/include ${LIBZMQ_EXTRA_LDFLAGS}"
-+        LIBZMQ_EXTRA_LDFLAGS="-I${norm_path}/lib ${LIBZMQ_EXTRA_LDFLAGS}"
++        LIBZMQ_EXTRA_LDFLAGS="-L${norm_path}/lib ${LIBZMQ_EXTRA_LDFLAGS}"
      fi
- 
 -    LIBS="-lnorm $LIBS"
 +    LIBS="-L${norm_path}/lib -lnorm $LIBS"
- fi
- 
- # Set -Wall, -Werror and -pedantic
+ else
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
