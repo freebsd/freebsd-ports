@@ -1,0 +1,14 @@
+bin/taskd
+bin/taskdctl
+man/man1/taskd.1.gz
+man/man1/taskdctl.1.gz
+man/man5/taskdrc.5.gz
+share/taskd/README
+@mode 0755
+%%DATADIR%%/generate
+%%DATADIR%%/generate.ca
+%%DATADIR%%/generate.client
+%%DATADIR%%/generate.crl
+%%DATADIR%%/generate.server
+%%DATADIR%%/vars
+@dir(%%TASKD_USER%%,%%TASKD_GROUP%%,) %%TASKD_DBDIR%%

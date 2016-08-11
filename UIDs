@@ -562,7 +562,7 @@ freeswitch:*:610:610::0:0:Freeswitch user:/nonexistent:/usr/sbin/nologin
 # free: 613
 # free: 614
 ntpa:*:615:615::0:0:NTPa user:/nonexistent:/usr/sbin/nologin
-# free: 616
+taskd:*:616:616::0:0:taskd user:/nonexistent:/usr/sbin/nologin
 # free: 617
 # free: 618
 # free: 619
