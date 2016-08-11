@@ -2,7 +2,7 @@
 
 PORTNAME=	libzmq4
 PORTVERSION=	4.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -19,11 +19,12 @@ USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		CURVE DEBUG PGM
+OPTIONS_DEFINE=		CURVE DEBUG PGM NORM
 OPTIONS_DEFAULT=	CURVE PGM
 
 CURVE_DESC=	CURVE security mechanism via libsodium
 PGM_DESC=	Reliable multicast transport using PGM via OpenPGM
+NORM_DESC=	Reliable multicast transport using NORM via NRL
 
 CURVE_CONFIGURE_WITH=	libsodium
 CURVE_LIB_DEPENDS=	libsodium.so:security/libsodium
@@ -34,9 +35,13 @@ DEBUG_VARS=		WITH_DEBUG=yes
 PGM_CONFIGURE_WITH=	pgm
 PGM_LIB_DEPENDS=	libpgm.so:net/openpgm
 
+NORM_CONFIGURE_WITH=	norm=${PREFIX}
+NORM_LIB_DEPENDS=	libnorm.so:net/norm
+
 CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 CFLAGS+=	-Wno-long-long
+CPPFLAGS+=	-Wno-error
 MAKE_ENV=	V=1
 
 INSTALL_TARGET=	install-strip
