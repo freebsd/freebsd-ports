@@ -21,8 +21,8 @@ lib/ganglia/modnet.so
 lib/ganglia/modproc.so
 lib/ganglia/modpython.so
 lib/ganglia/modsys.so
-lib/libganglia-%%PORTVERSION%%.so.0
-lib/libganglia-%%PORTVERSION%%.so.0.0.0
+lib/libganglia.so.0
+lib/libganglia.so.0.0.0
 lib/libganglia.a
 lib/libganglia.so
 %%GMETAD%%man/man1/gmetad.1.gz
