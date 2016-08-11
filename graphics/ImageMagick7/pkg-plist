@@ -45,7 +45,6 @@ include/ImageMagick-7/Magick++/STL.h
 include/ImageMagick-7/Magick++/Statistic.h
 include/ImageMagick-7/Magick++/TypeMetric.h
 include/ImageMagick-7/MagickCore/MagickCore.h
-include/ImageMagick-7/MagickCore/accelerate.h
 include/ImageMagick-7/MagickCore/animate.h
 include/ImageMagick-7/MagickCore/annotate.h
 include/ImageMagick-7/MagickCore/artifact.h
@@ -1507,6 +1506,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/search.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/security-policy.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/sitemap.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/analyze.c
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/coder.xml
@@ -1534,6 +1534,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%-7/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/stream.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/support.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/wand.png
 %%PORTDOCS%%%%DOCSDIR%%-7/www/webp.html
