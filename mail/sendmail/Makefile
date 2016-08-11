@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -21,7 +21,7 @@ CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-
 USERS=		smmsp
 GROUPS=		smmsp
 
-USES=		bdb cpe uidfix
+USES=		cpe uidfix
 MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID} \
 		SBINOWN=${UID} SBINGRP=${GID} \
 		GBINOWN=${UID} GBINGRP=${GID} \
@@ -57,6 +57,8 @@ CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
 
+BDB_USES=	bdb
+TLS_USES=	ssl
 LDAP_USE=	OPENLDAP=yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
@@ -117,9 +119,6 @@ SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
 .if ${PORT_OPTIONS:MMILTER}
 SITE+=	${FILESDIR}/site.config.m4.milter
-.endif
-.if ${PORT_OPTIONS:MTLS}
-USES+=		ssl
 .endif
 
 SED_SCRIPT=	-e "s|\`-O\'|\`${CFLAGS}\'|" \
