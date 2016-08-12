@@ -3,6 +3,7 @@
 
 PORTNAME=	letskencrypt
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/letskencrypt/snapshots/ \
