@@ -204,6 +204,7 @@
     SUBDIR += fpc-libxml2
     SUBDIR += freexl
     SUBDIR += fy-aspell
+    SUBDIR += fzf
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
