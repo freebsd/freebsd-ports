@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	adodb
-DISTVERSION=	5.20.4
+DISTVERSION=	5.20.5
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5-only/${PORTNAME}-520-for-php5
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Database library for PHP
 
 LICENSE=	BSD4CLAUSE LGPL21
