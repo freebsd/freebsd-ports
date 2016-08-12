@@ -16,7 +16,8 @@ LICENSE=	MIT
 
 CONFLICTS=	x11iraf-[0-9]*
 
-USES=		ncurses tar:tgz
+USES=		cpe ncurses tar:tgz
+CPE_VENDOR=	invisible-island
 USE_XORG=	xft xmu xt x11 xpm ice
 GNU_CONFIGURE=	yes
 
