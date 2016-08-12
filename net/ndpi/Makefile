@@ -19,7 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-ljson-c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	alias autoreconf compiler:c++11-lang libtool pathfix pkgconfig tar:tgz
+USES=	 	autoreconf compiler:c++11-lang libtool pathfix pkgconfig tar:tgz
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
