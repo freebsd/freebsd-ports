@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Dependencies
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ensure that your Makefile.PL specifies all module dependencies
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-Find-Rule-Perl>=0:devel/p5-File-Find-Rule-Perl \
 		p5-IPC-Cmd>=0:devel/p5-IPC-Cmd \
