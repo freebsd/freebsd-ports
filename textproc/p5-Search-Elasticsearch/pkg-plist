@@ -15,6 +15,7 @@
 %%PERL5_MAN3%%/Search::Elasticsearch::Client::2_0::Direct::Indices.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Client::2_0::Direct::Nodes.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Client::2_0::Direct::Snapshot.3.gz
+%%PERL5_MAN3%%/Search::Elasticsearch::Client::2_0::Direct::Tasks.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Cxn::Factory.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Cxn::HTTPTiny.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Cxn::Hijk.3.gz
@@ -70,6 +71,7 @@
 %%SITE_PERL%%/Search/Elasticsearch/Client/2_0/Direct/Indices.pm
 %%SITE_PERL%%/Search/Elasticsearch/Client/2_0/Direct/Nodes.pm
 %%SITE_PERL%%/Search/Elasticsearch/Client/2_0/Direct/Snapshot.pm
+%%SITE_PERL%%/Search/Elasticsearch/Client/2_0/Direct/Tasks.pm
 %%SITE_PERL%%/Search/Elasticsearch/Cxn/Factory.pm
 %%SITE_PERL%%/Search/Elasticsearch/Cxn/HTTPTiny.pm
 %%SITE_PERL%%/Search/Elasticsearch/Cxn/Hijk.pm
