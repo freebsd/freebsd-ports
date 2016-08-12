@@ -1,18 +1,17 @@
---- mojo/shell/runner/init.cc.orig	2016-05-21 17:23:12 UTC
-+++ mojo/shell/runner/init.cc
-@@ -68,6 +68,8 @@ void WaitForDebuggerIfNecessary() {
- 
+--- services/shell/runner/init.cc.orig	2016-08-05 14:09:25.990401000 -0400
++++ services/shell/runner/init.cc	2016-08-05 14:09:42.644514000 -0400
+@@ -77,6 +77,7 @@
  void CallLibraryEarlyInitialization(base::NativeLibrary app_library) {
    // Do whatever warming that the mojo application wants.
-+
-+#if !defined(OS_FREEBSD) 
+ 
++#if !defined(__FreeBSD__)
+ #if ICU_UTIL_DATA_IMPL == ICU_UTIL_DATA_FILE
    typedef void (*LibraryEarlyInitFunction)(const uint8_t*);
    LibraryEarlyInitFunction init_function =
-       reinterpret_cast<LibraryEarlyInitFunction>(
-@@ -79,6 +81,7 @@ void CallLibraryEarlyInitialization(base
-     const uint8_t* icu_data = base::i18n::GetRawIcuMemory();
+@@ -90,6 +91,7 @@
      init_function(icu_data);
    }
+ #endif  // ICU_UTIL_DATA_IMPL == ICU_UTIL_DATA_FILE
 +#endif
  
    // TODO(erg): All chromium binaries load base. We might want to make a

@@ -1,8 +1,8 @@
---- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2016-05-27 13:05:16.571632000 -0400
-+++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp	2016-05-27 13:32:36.441412000 -0400
-@@ -61,6 +61,103 @@
-     L"May",       L"June",     L"July",     L"August",
-     L"September", L"October",  L"November", L"December"};
+--- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2016-07-22 00:09:02.000000000 -0400
++++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp	2016-08-03 16:33:48.931305000 -0400
+@@ -62,6 +62,103 @@
+                                       L"July",    L"August",   L"September",
+                                       L"October", L"November", L"December"};
  
 +#if defined(__FreeBSD__)
 +/*
@@ -101,6 +101,6 @@
 +}
 +#endif // defined(__FreeBSD__)
 +
- bool CJS_PublicMethods::IsNumber(const FX_WCHAR* str) {
-   CFX_WideString sTrim = StrTrim(str);
-   const FX_WCHAR* pTrim = sTrim.c_str();
+ CFX_ByteString StrTrim(const CFX_ByteString& pStr) {
+   CFX_ByteString result(pStr);
+   result.TrimLeft(' ');

@@ -1,15 +1,17 @@
---- mojo/shell/public/cpp/initialize_base_and_icu.cc.orig	2016-05-21 17:21:25 UTC
-+++ mojo/shell/public/cpp/initialize_base_and_icu.cc
-@@ -33,11 +33,13 @@ InitializeBase(const uint8_t* icu_data) 
+--- services/shell/public/cpp/lib/initialize_base_and_icu.cc.orig	2016-08-05 14:07:55.178818000 -0400
++++ services/shell/public/cpp/lib/initialize_base_and_icu.cc	2016-08-05 14:08:22.862094000 -0400
+@@ -35,6 +35,7 @@
    base::SysInfo::MaxSharedMemorySize();
  #endif
  
-+#if !defined(OS_FREEBSD) 
++#if !defined(__FreeBSD__)
+ #if ICU_UTIL_DATA_IMPL == ICU_UTIL_DATA_FILE
    // Initialize core ICU. We must perform the full initialization before we
    // initialize icu::TimeZone subsystem because otherwise ICU gets in a state
-   // where the timezone data is disconnected from the locale data which can
+@@ -42,6 +43,7 @@
    // cause crashes.
    CHECK(base::i18n::InitializeICUFromRawMemory(icu_data));
+ #endif  // ICU_UTIL_DATA_IMPL == ICU_UTIL_DATA_FILE
 +#endif
  
  #if !defined(OS_ANDROID)

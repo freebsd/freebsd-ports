@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2016-05-11 19:02:21 UTC
-+++ content/gpu/gpu_main.cc
-@@ -99,7 +99,7 @@ void GetGpuInfoFromCommandLine(gpu::GPUI
+--- content/gpu/gpu_main.cc.orig	2016-07-22 00:06:54.000000000 -0400
++++ content/gpu/gpu_main.cc	2016-08-03 12:37:05.590978000 -0400
+@@ -102,7 +102,7 @@
                                 const base::CommandLine& command_line);
  bool WarmUpSandbox(const base::CommandLine& command_line);
  
@@ -9,7 +9,7 @@
  bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info);
  #endif
  
-@@ -187,13 +187,13 @@ int GpuMain(const MainFunctionParams& pa
+@@ -192,13 +192,13 @@
    // Use a UI message loop because ANGLE and the desktop GL platform can
    // create child windows to render to.
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_UI);
@@ -18,14 +18,14 @@
    // We need a UI loop so that we can grab the Expose events. See GLSurfaceGLX
    // and https://crbug.com/326995.
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_UI);
-   scoped_ptr<ui::PlatformEventSource> event_source =
+   std::unique_ptr<ui::PlatformEventSource> event_source =
        ui::PlatformEventSource::CreateDefault();
 -#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
++#elif (defined(OS_LINUX) || defined(OS_BSD))
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_DEFAULT);
  #elif defined(OS_MACOSX)
    // This is necessary for CoreAnimation layers hosted in the GPU process to be
-@@ -304,7 +304,7 @@ int GpuMain(const MainFunctionParams& pa
+@@ -309,7 +309,7 @@
        // and we already registered them through SetGpuInfo() above.
        base::TimeTicks before_collect_context_graphics_info =
            base::TimeTicks::Now();
@@ -34,7 +34,7 @@
        if (!CollectGraphicsInfo(gpu_info))
          dead_on_arrival = true;
  
-@@ -467,7 +467,7 @@ bool WarmUpSandbox(const base::CommandLi
+@@ -491,7 +491,7 @@
    return true;
  }
  
