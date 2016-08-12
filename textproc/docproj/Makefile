@@ -3,11 +3,11 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
-COMMENT=	The "meta-port" for the FreeBSD Documentation Project
+COMMENT=	Meta-port for the FreeBSD Documentation Project
 
 RUN_DEPENDS=	links:www/links1 \
 		pngtopnm:graphics/netpbm \
@@ -47,7 +47,8 @@ DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex \
 			${FONTS}
 DBLATEX_USE=		TEX=xetex
 TRANSLATOR_DESC=	Tools for translators
-TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool
+TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool \
+			msgcat:devel/gettext-tools
 
 FONTS=	${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:x11-fonts/gentium-plus \
 	${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
@@ -61,9 +62,7 @@ FONTS_CJK=${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:chinese/arphicttf \
 
 .if ${PORT_OPTIONS:MFOP} || ${PORT_OPTIONS:MDBLATEX}
 ONLY_FOR_ARCHS=	amd64 i386
-.if ${PORT_OPTIONS:MCJK}
-RUN_DEPENDS+=	${FONTS_CJK}
-.endif
+CJK_RUN_DEPENDS=	${FONTS_CJK}
 .endif
 
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
