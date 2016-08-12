@@ -911,6 +911,7 @@
     SUBDIR += py-stix
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
+    SUBDIR += py-tuf
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-volatility
