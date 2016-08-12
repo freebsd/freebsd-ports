@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dia2code
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Small utility used to generate code from a Dia diagram
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake iconv
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 
