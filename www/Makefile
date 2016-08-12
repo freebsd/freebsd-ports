@@ -1582,6 +1582,7 @@
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
+    SUBDIR += py-django_polymorphic
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv
     SUBDIR += py-djangorestframework-filters
