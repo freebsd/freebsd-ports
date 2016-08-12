@@ -16,6 +16,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rheit
 
+PORTSCOUT=	limit:^.+\.[1-9]{1,3}[1-8]?$$
+
 USES=		cmake:outsource	gettext jpeg openal pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
 USE_SDL=	sdl2
