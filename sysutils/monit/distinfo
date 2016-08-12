@@ -1,2 +1,3 @@
-SHA256 (monit-5.18.tar.gz) = 75ccb85fa2ac1f44c9c95c5a6b539a254b0a1d64e16a36ec9eeb867484a4fcaf
-SIZE (monit-5.18.tar.gz) = 1239752
+TIMESTAMP = 1470649547
+SHA256 (monit-5.19.0.tar.gz) = befcd54365502bce4ffd6d1b0c345d5b689c9f7cb3a35a462ba7dcffcf6f62b8
+SIZE (monit-5.19.0.tar.gz) = 1260248
