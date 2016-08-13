@@ -18,6 +18,7 @@ bin/mmotype
 %%DATADIR%%/fib.mms
 %%DATADIR%%/fibgo.mms
 %%DATADIR%%/fibsub.mms
+%%DATADIR%%/fsubtest.mms
 %%DATADIR%%/halves.mmix
 %%DATADIR%%/halves.mms
 %%DATADIR%%/harm.mms
