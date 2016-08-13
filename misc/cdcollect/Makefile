@@ -13,12 +13,14 @@ COMMENT=	Simple CD catalog for GNOME
 BUILD_DEPENDS=	sqlite3>=3.0:databases/sqlite3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pathfix gettext gmake mono pkgconfig
+USES=		gettext gmake localbase mono pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+NO_ARCH=	yes
 
 post-extract:
 	${REINPLACE_CMD} -e 's,SqliteClient,Sqlite,' \
