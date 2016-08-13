@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mmix
-PORTVERSION=	20131017
+PORTVERSION=	20160804
 CATEGORIES=	lang
 MASTER_SITES=	http://mmix.cs.hm.edu/src/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	RISC computer designed by Donald E. Knuth
@@ -16,6 +15,8 @@ LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	ctangle:devel/cweb
+
+USES=		tar:tgz
 
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
