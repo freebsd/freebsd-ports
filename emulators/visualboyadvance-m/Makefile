@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	visualboyadvance-m
-PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	5
+PORTVERSION=	2.0.0b2
 CATEGORIES=	emulators
-MASTER_SITES=	https://cooltrainer.org/freebsd-ports/visualboyadvance-m/
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
@@ -13,6 +11,9 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
+
+USE_GITHUB=	yes
+GH_TAGNAME=	VBA-M_Beta_2
 
 OPTIONS_DEFINE=	NLS FFMPEG LINK LIRC DEBUGGER
 OPTIONS_MULTI=	INTERFACE
@@ -38,7 +39,6 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 USES=		cmake dos2unix pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
-SVN_REV=	1231
 CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" \
 		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \
 		-DENABLE_WX:BOOL=no
@@ -135,5 +135,9 @@ maint-gen-distfile:
 		 https://svn.code.sf.net/p/vbam/code/trunk/ ${DISTNAME}
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 	${RM} -rf ${DISTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vbam
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/vbam.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

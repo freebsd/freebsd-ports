@@ -1,5 +1,5 @@
---- src/sdl/expr.cpp.orig	2014-05-02 23:55:56.000000000 +0800
-+++ src/sdl/expr.cpp	2014-05-02 23:56:07.000000000 +0800
+--- src/sdl/expr.cpp.orig	2016-08-13 15:20:47 UTC
++++ src/sdl/expr.cpp
 @@ -90,14 +90,10 @@
  /* Copy the first part of user declarations.  */
  #line 1 "expr.ypp"
