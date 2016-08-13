@@ -10,7 +10,3 @@ lib/libpuredb_write.a
 lib/libpuredb_write.so
 lib/libpuredb_write.so.0
 lib/libpuredb_write.so.0.0.0
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/FORMAT_DESCR
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
