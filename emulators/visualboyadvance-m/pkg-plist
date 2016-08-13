@@ -30,3 +30,10 @@
 %%GVBAM%%share/vbam/ui/sound.ui
 %%GVBAM%%share/vbam/ui/vbam.ui
 %%GVBAM%%share/vbam/vba-over.ini
+%%GVBAM%%share/icons/hicolor/128x128/apps/vbam.png
+%%GVBAM%%share/icons/hicolor/256x256/apps/vbam.png
+%%GVBAM%%share/icons/hicolor/48x48/apps/vbam.png
+%%GVBAM%%share/icons/hicolor/64x64/apps/vbam.png
+%%GVBAM%%share/icons/hicolor/96x96/apps/vbam.png
+@dir share/man/man1
+man/man1/vbam.1.gz
