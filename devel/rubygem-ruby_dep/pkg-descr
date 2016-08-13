@@ -1,0 +1,3 @@
+Creates a version constraint of supported Rubies,suitable for a gemspec file
+
+WWW: https://github.com/e2/ruby_dep

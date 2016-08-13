@@ -5134,6 +5134,7 @@
     SUBDIR += rubygem-ruby-progressbar
     SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby2ruby
+    SUBDIR += rubygem-ruby_dep
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-mirror
