@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	winrm
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -20,8 +19,7 @@ RUN_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32 \
 		rubygem-logging>=1.8.1:devel/rubygem-logging \
 		rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri \
 		rubygem-nori>=2.0:devel/rubygem-nori \
-		rubygem-rubyntlm>=0.4.0:net/rubygem-rubyntlm \
-		rubygem-uuidtools>=2.1.4:devel/rubygem-uuidtools
+		rubygem-rubyntlm>=0.4.0:net/rubygem-rubyntlm
 
 NO_ARCH=	yes
 USE_RUBY=	yes
