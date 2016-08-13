@@ -1,6 +1,4 @@
-#!/bin/sh
-
-set -e
+#!/bin/sh -e
 
 BASEDIR="%%PREFIX%%/etc/letsencrypt"
 SSLDIR="%%PREFIX%%/etc/ssl/letsencrypt"
@@ -12,8 +10,12 @@ CHALLENGEDIR="/usr/jails/http/usr/local/www/.well-known/acme-challenge"
 cat "${DOMAINSFILE}" | while read domain line ; do
    CERTSDIR="${SSLDIR}/${domain}"
    [ ! -d "${CERTSDIR}" ] && mkdir -pm755 "${CERTSDIR}"
+   set +e # RC=2 when time to expire > 30 days
    letskencrypt -C "${CHALLENGEDIR}" \
                 -k "${SSLDIR}/private/${domain}.pem" \
                 -c "${CERTSDIR}" \
                 ${domain} ${line}
+   RC=$?
+   set -e
+   [ $RC -ne 0 -a $RC -ne 2 ] && exit $RC
 done
