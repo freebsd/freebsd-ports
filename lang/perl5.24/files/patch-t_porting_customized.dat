@@ -1,4 +1,4 @@
---- t/porting/customized.dat.orig	2016-07-25 09:12:22 UTC
+--- t/porting/customized.dat.orig	2016-08-11 20:06:42 UTC
 +++ t/porting/customized.dat
 @@ -33,7 +33,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 8559ef191b4371d0c381472464856a8a73825b2a
@@ -9,10 +9,10 @@
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm b63c90129303b2c17d084fb828aa2c02a2ad85b8
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm cabd1c97eaa427067811d92807e34c17940c7350
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm 6a185d897a600c34615a6073f4de0ac2f54fef3e
-@@ -97,7 +97,7 @@ JSON::PP cpan/JSON-PP/lib/JSON/PP.pm 817
- Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
- Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b
+@@ -99,7 +99,7 @@ Math::BigRat cpan/Math-BigRat/lib/Math/B
  Memoize cpan/Memoize/Memoize.pm 902092ff91cdec9c7b4bd06202eb179e1ce26ca2
+ Parse::CPAN::Meta cpan/Parse-CPAN-Meta/lib/Parse/CPAN/Meta.pm 2de9f411463eda2bd5f57163c12edab9a00dc598
+ Parse::CPAN::Meta cpan/Parse-CPAN-Meta/t/02_api.t a692c9a7e52b08a14a954d6c405a22c0dab1cd43
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm ba3072a6af793b410b02594ed8fe109ac16a1d43
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm e9e98b26450ceb3bae1e54ac8a57dab88932de96
  Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm 3b501b7332480b34929bc4df5d48581df3307267
