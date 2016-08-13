@@ -1,5 +1,5 @@
---- src/gba/GBALink.cpp.orig	2014-04-29 17:12:28.260667843 -0700
-+++ src/gba/GBALink.cpp	2014-04-29 17:15:31.307655026 -0700
+--- src/gba/GBALink.cpp.orig	2016-08-13 15:20:47 UTC
++++ src/gba/GBALink.cpp
 @@ -2,9 +2,10 @@
  // with major changes by tjm
  #include <string.h>
@@ -12,3 +12,12 @@
  #include <stdlib.h>
  #else
  #include <malloc.h>
+@@ -89,7 +90,7 @@ bool speedhack = true;
+ #include "GBALink.h"
+ #include "GBASockClient.h"
+ 
+-#include <SFML/Network.hpp>
++#include <SFML1/Network.hpp>
+ 
+ #ifdef ENABLE_NLS
+ #include <libintl.h>

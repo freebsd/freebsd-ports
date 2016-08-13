@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2013-09-24 04:49:26.000000000 -0700
-+++ CMakeLists.txt	2014-04-29 15:02:57.323817303 -0700
+--- CMakeLists.txt.orig	2015-09-19 15:58:26 UTC
++++ CMakeLists.txt
 @@ -1,5 +1,5 @@
  # The project's name is VBA-M it uses C and C++ code
 -PROJECT(VBA-M C CXX)
@@ -7,13 +7,22 @@
  
  cmake_minimum_required( VERSION 2.6.0 )
  if( COMMAND cmake_policy )
-@@ -427,8 +427,7 @@
+@@ -354,7 +354,7 @@ IF( ENABLE_SDL )
+     ENDIF( WIN32 )
  
-     INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
-     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl/vbam.cfg-example
--            DESTINATION ${SYSCONFDIR}
--            RENAME vbam.cfg)
-+            DESTINATION ${SYSCONFDIR})
-     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/vba-over.ini DESTINATION ${DATA_INSTALL_DIR})
+     IF( ENABLE_LIRC )
+-        SET( LIRC_CLIENT_LIBRARY lirc_client )
++        SET( LIRC_CLIENT_LIBRARY /usr/local/lib/liblirc_client.so )
+     ENDIF( ENABLE_LIRC )
+ 
+     TARGET_LINK_LIBRARIES (
+@@ -369,8 +369,7 @@ IF( ENABLE_SDL )
+ 		INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
+ 	ENDIF( WIN32 )
+ 		INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl/vbam.cfg-example
+-				DESTINATION ${SYSCONFDIR}
+-				RENAME vbam.cfg)
++				DESTINATION ${SYSCONFDIR})
  ENDIF( ENABLE_SDL )
  
+ IF( ENABLE_GTK )
