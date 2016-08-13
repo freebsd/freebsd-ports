@@ -1,5 +1,5 @@
---- src/example_read.c.orig	Fri Nov  1 23:21:19 2002
-+++ src/example_read.c	Fri Nov  1 23:21:47 2002
+--- src/example_read.c.orig	2002-03-08 13:09:50 UTC
++++ src/example_read.c
 @@ -3,6 +3,9 @@
  
  #include <stdio.h>

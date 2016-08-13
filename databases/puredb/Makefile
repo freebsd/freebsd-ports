@@ -11,17 +11,20 @@ DISTNAME=	pure-db-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-DOCS=		AUTHORS FORMAT_DESCR NEWS README
+PORTDOCS=	AUTHORS FORMAT_DESCR NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
