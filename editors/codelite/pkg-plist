@@ -9,6 +9,16 @@ bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
 bin/codelite_xterm
+%%CLANG34%%bin/codelite-lldb
+%%CLANG34%%lib/codelite/LLDBDebugger.so
+%%CLANG35%%bin/codelite-lldb
+%%CLANG35%%lib/codelite/LLDBDebugger.so
+%%CLANG36%%bin/codelite-lldb
+%%CLANG36%%lib/codelite/LLDBDebugger.so
+%%CLANG37%%bin/codelite-lldb
+%%CLANG37%%lib/codelite/LLDBDebugger.so
+%%CLANG38%%bin/codelite-lldb
+%%CLANG38%%lib/codelite/LLDBDebugger.so
 lib/codelite/CMakePlugin.so
 lib/codelite/CallGraph.so
 lib/codelite/CodeFormatter.so
