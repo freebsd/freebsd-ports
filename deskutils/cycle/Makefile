@@ -16,6 +16,7 @@ USES=		python:run tar:bzip2
 USE_WX=		3.0+
 WX_COMPS=	python
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"msg","${PREFIX}/share/locale",' \
