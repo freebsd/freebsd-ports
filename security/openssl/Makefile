@@ -23,12 +23,9 @@ CONFLICTS=	libressl-[0-9]* \
 		libressl-devel-[0-9]* \
 		openssl-devel-[0-9]*
 
-.ifdef USE_OPENSSL
-.error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
-
-OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS MAN3
+OPTIONS_DEFINE=	SHARED THREADS SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS MAN3
 OPTIONS_DEFAULT=SHARED THREADS SSE2 SCTP SSL2 SSL3 MD2 MAN3
+OPTIONS_DEFINE_i386=	I386
 .for a in amd64 ia64
 OPTIONS_DEFINE_${a}=	EC
 OPTIONS_DEFAULT_${a}=	EC
@@ -200,19 +197,11 @@ post-patch:
 do-configure:
 	${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
-.if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		--install_prefix=${STAGEDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
-.else
-	cd ${WRKSRC} \
-	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
-		--install_prefix=${STAGEDIR} \
-		-L${PREFIX}/lib ${EXTRACONFIGURE}
-.endif
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
