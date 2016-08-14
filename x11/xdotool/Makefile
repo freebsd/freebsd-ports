@@ -9,6 +9,10 @@ CATEGORIES=	x11
 MAINTAINER=	gregf@hugops.pw
 COMMENT=	Programmatically simulate keyboard input or mouse activity
 
+LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordansissel
 
