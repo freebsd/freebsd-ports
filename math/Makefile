@@ -90,7 +90,6 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += bamg
     SUBDIR += bargraph
     SUBDIR += biggles
     SUBDIR += blacs
