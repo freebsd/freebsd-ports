@@ -1,0 +1,11 @@
+--- scripts/package/buildtar.orig	2016-07-27 15:42:34 UTC
++++ scripts/package/buildtar
+@@ -57,7 +57,7 @@ mkdir -p -- "${tmpdir}/boot"
+ # Try to install modules
+ #
+ if grep -q '^CONFIG_MODULES=y' "${objtree}/.config"; then
+-	make ARCH="${ARCH}" O="${objtree}" KBUILD_SRC= INSTALL_MOD_PATH="${tmpdir}" modules_install
++	gmake ARCH="${ARCH}" O="${objtree}" KBUILD_SRC= INSTALL_MOD_PATH="${tmpdir}" modules_install
+ fi
+ 
+ 

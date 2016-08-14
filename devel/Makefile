@@ -1425,6 +1425,7 @@
     SUBDIR += linux-f10-ncurses-base
     SUBDIR += linux-f10-nspr
     SUBDIR += linux-f10-sdl12
+    SUBDIR += linux-kernel
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
