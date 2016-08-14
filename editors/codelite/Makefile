@@ -3,6 +3,7 @@
 
 PORTNAME=	codelite
 PORTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	editors devel
 
 MAINTAINER=	mokhi64@gmail.com
@@ -11,12 +12,14 @@ COMMENT=	Open Source IDE for C/C++
 LICENSE=	GPLv2+
 
 RUN_DEPENDS=	xterm:x11/xterm
+LIB_DEPENDS+=	libhunspell-1.3.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
 
 USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo gettext \
 		pathfix shebangfix sqlite
+USE_GNOME+=	cairo gtk20
 DOS2UNIX_GLOB=	*.cpp *.txt
 SHEBANG_FILES=	Runtime/codelite_xterm
 bash_CMD=	/bin/sh
