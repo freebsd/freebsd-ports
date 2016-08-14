@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qt5ct
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -11,7 +11,8 @@ COMMENT=	Qt 5 configuration tool
 LICENSE=	BSD2CLAUSE
 
 USES=		qmake tar:bz2
-USE_QT5=	gui svg widgets buildtools_build linguisttools_build
+USE_QT5=	core gui svg widgets buildtools_build linguisttools_build
+USE_GL=	gl
 
 OPTIONS_DEFINE=	DOCS
 
