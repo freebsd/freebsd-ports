@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.2.22
+PORTVERSION=	1.3.0
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -80,27 +80,28 @@ LEOFS_DEPS=	\
 	ferd/recon=2.2.1:recon \
 	jcomellas/getopt=v0.8.2:getopt \
 	leo-project/bear=0.8.2-for-leofs:bear \
-	leo-project/cowboy=for-leofs-1.2.11:cowboy \
+	leo-project/cowboy=for-leofs-1.4:cowboy \
 	leo-project/elarm=d9e8a6f:elarm \
 	leo-project/erpcgen=0.2.4:erpcgen \
 	leo-project/fifo_utils=d19b92c:fifo_utils \
 	leo-project/folsom=0.8.2-for-leofs:folsom \
 	leo-project/leo_backend_db=1.2.2:leo_backend_db \
-	leo-project/leo_cache=0.6.14:leo_cache \
+	leo-project/leo_cache=0.8.0:leo_cache \
 	leo-project/leo_commons=1.1.6:leo_commons \
-	leo-project/leo_dcerl=0.4.4:leo_dcerl \
+	leo-project/leo_dcerl=0.4.5:leo_dcerl \
 	leo-project/leo_logger=1.2.2:leo_logger \
-	leo-project/leo_mcerl=0.6.2:leo_mcerl \
+	leo-project/leo_mcerl=0.6.3:leo_mcerl \
 	leo-project/leo_mq=1.4.5:leo_mq \
 	leo-project/leo_object_storage=1.2.22:leo_object_storage \
 	leo-project/leo_ordning_reda=1.2.0:leo_ordning_reda \
 	leo-project/leo_pod=0.6.6:leo_pod \
 	leo-project/leo_redundant_manager=1.9.26:leo_redundant_manager \
 	leo-project/leo_rpc=0.10.8:leo_rpc \
-	leo-project/leo_s3_libs=1.1.13:leo_s3_libs \
+	leo-project/leo_s3_libs=1.2.5:leo_s3_libs \
 	leo-project/leo_statistics=1.1.12:leo_statistics \
-	leo-project/leo_watchdog=0.12.2:leo_watchdog \
-	leo-project/libcutil=0.4.3:libcutil \
+	leo-project/leo_watchdog=0.12.3:leo_watchdog \
+	leo-project/leo_tran=0.2.5:leo_tran \
+	leo-project/libcutil=0.4.4:libcutil \
 	leo-project/nfs_rpc_server=0.2.4:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.15:savanna_agent \
 	leo-project/savanna_commons=0.10.1:savanna_commons \
