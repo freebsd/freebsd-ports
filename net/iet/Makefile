@@ -12,10 +12,13 @@ PATCH_SITES=	LOCAL/delphij
 PATCHFILES=	${PORTNAME}-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The iSCSI Enterprise Target
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2016-12-31
 
 SSP_UNSAFE=	kernel module does not support ssp
 BUILD_WRKSRC=	${WRKSRC}/freebsd
