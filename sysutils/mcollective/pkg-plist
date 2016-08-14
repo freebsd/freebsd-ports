@@ -27,6 +27,7 @@ bin/mco
 %%RUBY_SITELIBDIR%%/mcollective/aggregate/summary.rb
 %%RUBY_SITELIBDIR%%/mcollective/application.rb
 %%RUBY_SITELIBDIR%%/mcollective/application/completion.rb
+%%RUBY_SITELIBDIR%%/mcollective/application/describe_filter.rb
 %%RUBY_SITELIBDIR%%/mcollective/application/facts.rb
 %%RUBY_SITELIBDIR%%/mcollective/application/find.rb
 %%RUBY_SITELIBDIR%%/mcollective/application/help.rb
