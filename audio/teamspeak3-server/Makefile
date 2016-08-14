@@ -3,6 +3,7 @@
 
 PORTNAME=	teamspeak3-server
 PORTVERSION=	3.0.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
