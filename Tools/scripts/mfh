@@ -117,6 +117,7 @@ done
 "${svn}" up --quiet "${branch}"
 "${svn}" status "${branch}"
 "${svn}" diff "${branch}"
+echo "All the merge work was done in ${dir}/${branch}."
 ask "Do you want to commit? (no = start a shell)" || (
     echo "Dropping you to a shell so you can investigate. Exit the shell to resume this script."
     cd "${branch}"
