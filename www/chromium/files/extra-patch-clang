@@ -62,22 +62,6 @@
              GetSession(session_tag)->windows[window_id]);
    GetSession(session_tag)->windows[window_id] = window_ptr;
  }
---- content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-15 00:31:22.000000000 +0200
-+++ content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-18 22:10:28.000000000 +0200
-@@ -315,11 +315,11 @@
- 
- gfx::NativeViewId RenderWidgetHostViewGuest::GetNativeViewId() const {
-   if (!guest_)
--    return static_cast<gfx::NativeViewId>(NULL);
-+    return reinterpret_cast<gfx::NativeViewId>(NULL);
- 
-   RenderWidgetHostView* rwhv = guest_->GetOwnerRenderWidgetHostView();
-   if (!rwhv)
--    return static_cast<gfx::NativeViewId>(NULL);
-+    return reinterpret_cast<gfx::NativeViewId>(NULL);
-   return rwhv->GetNativeViewId();
- }
- 
 --- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
 +++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
 @@ -387,7 +387,7 @@
@@ -167,14 +151,3 @@
  
    tasks_.erase(it, tasks_.end());
  
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2015-10-14 22:17:57.580250000 +0200
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	2015-10-14 22:18:13.766229000 +0200
-@@ -358,7 +358,7 @@
- {
-     RefPtr<SharedBuffer> buffer;
- 
--    SkFontTableTag tag = WTF::bswap32(table);
-+    SkFontTableTag tag = bswap32(table);
-     const size_t tableSize = m_typeface->getTableSize(tag);
-     if (tableSize) {
-         Vector<char> tableBuffer(tableSize);

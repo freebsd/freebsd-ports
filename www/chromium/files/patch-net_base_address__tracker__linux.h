@@ -1,10 +1,10 @@
---- net/base/address_tracker_linux.h.orig	2016-05-25 15:01:03.000000000 -0400
-+++ net/base/address_tracker_linux.h	2016-05-27 11:17:51.228810000 -0400
+--- net/base/address_tracker_linux.h.orig	2016-07-22 00:06:56.000000000 -0400
++++ net/base/address_tracker_linux.h	2016-08-04 16:22:00.122898000 -0400
 @@ -6,10 +6,12 @@
  #define NET_BASE_ADDRESS_TRACKER_LINUX_H_
  
  #include <sys/socket.h>  // Needed to include netlink.
-+#if !defined(OS_FREEBSD)
++#if !defined(__FreeBSD__)
  // Mask superfluous definition of |struct net|. This is fixed in Linux 2.6.38.
  #define net net_kernel
  #include <linux/rtnetlink.h>
@@ -17,7 +17,7 @@
  class NET_EXPORT_PRIVATE AddressTrackerLinux :
      public base::MessageLoopForIO::Watcher {
   public:
-+#if !defined(OS_FREEBSD)
++#if !defined(__FreeBSD__)
    typedef std::map<IPAddress, struct ifaddrmsg> AddressMap;
 -
 +#else

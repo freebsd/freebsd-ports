@@ -1,5 +1,5 @@
---- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2016-05-20 17:18:26 UTC
-+++ content/browser/geolocation/wifi_data_provider_freebsd.cc
+--- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2016-08-04 10:46:30.800769000 -0400
++++ content/browser/geolocation/wifi_data_provider_freebsd.cc	2016-08-04 21:41:58.417450000 -0400
 @@ -0,0 +1,201 @@
 +// Copyright (c) 2010 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -187,7 +187,7 @@
 +
 +WifiDataProviderCommon::WlanApiInterface* WifiDataProviderFreeBSD::NewWlanApi() {
 +
-+	scoped_ptr<AccessPointDataFreeBSD> wlan_api(new AccessPointDataFreeBSD);
++	std::unique_ptr<AccessPointDataFreeBSD> wlan_api(new AccessPointDataFreeBSD);
 +	if (wlan_api->Init())
 +		return wlan_api.release();
 +
