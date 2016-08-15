@@ -638,6 +638,7 @@
     SUBDIR += ncdu
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
+    SUBDIR += nfcutils
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
