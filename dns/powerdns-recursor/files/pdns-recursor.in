@@ -23,6 +23,7 @@ name=pdns_recursor
 rcvar=pdns_recursor_enable
 
 command=%%PREFIX%%/sbin/pdns_recursor
+command_args="--daemon=yes"
 
 # set defaults
 
