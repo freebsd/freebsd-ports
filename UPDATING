@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20160815:
+  AFFECTS: users of mail/rspamd*
+  AUTHOR: vsevolod@FreeBSD.org
+
+  Rspamd users should update Rspamd to 1.3.3 version as soon as possible
+  and ensure that '/usr/local/etc/rspamd/module.d/fuzzy_check.conf` has
+  the line `algorithm = "mumhash";` for the "rspamd.com" rule. The more
+  detailed information could be found on
+  https://rspamd.com/announce/2016/08/15/rspamd-1.3.3.html
+
+20160815:
   AFFECTS: users of dns/powerdns*
   AUTHOR: junovitch@FreeBSD.org
 
