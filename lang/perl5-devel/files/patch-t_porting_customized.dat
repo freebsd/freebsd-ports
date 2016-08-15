@@ -1,20 +1,10 @@
---- t/porting/customized.dat.orig	2016-08-03 07:40:44 UTC
+--- t/porting/customized.dat.orig	2016-08-15 10:39:11 UTC
 +++ t/porting/customized.dat
-@@ -30,7 +30,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm ed2f726eaed3f4c9353c444cd031a1a0da106263
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm a6c9b7ff946a87638a508c80396612776419f7d6
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm 0e26d258f50e34c0638e97962a9a4c26a130d836
--ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 56aa847736bbc0ae3bc0656be1b331b40e338050
+@@ -3,6 +3,7 @@ CPAN cpan/CPAN/lib/CPAN.pm 4616a44963045
+ CPAN cpan/CPAN/scripts/cpan 22610ed0301d48a269d1739afd2f7f84359d956f
+ Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
+ ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm d0c51b23bd5a53948636317e28b7f34eb8a5805a
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm afc99adc2815e016da8b086fbb2fb67e80f2a945
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm 67b59d460239edecf9c484cb1bbe9103aa812a8e
-@@ -91,7 +91,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/cont
- Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
- Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
- Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
--Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm ba3072a6af793b410b02594ed8fe109ac16a1d43
-+Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm e9e98b26450ceb3bae1e54ac8a57dab88932de96
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm e479a29c6b66ac5cbbde4ef2296afaab6c4635a6
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util/XS.pm cbc38838d32fd213ae7b37ac38e30195355be3b9
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/Scalar/Util.pm 14a20075dfb9a4ef33b99115ed6f43e6d1a15f9b
+ File::Path cpan/File-Path/lib/File/Path.pm fd8ce4420a0c113d3f47dd3223859743655c1da8
+ File::Path cpan/File-Path/t/Path_win32.t 94b9276557ce7f80b91f6fd9bfa7a0cd9bf9683e
+ HTTP::Tiny cpan/HTTP-Tiny/lib/HTTP/Tiny.pm 5c418f455ac27283d5728ecb166707e6eb0e359c
