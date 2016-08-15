@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160815:
+  AFFECTS: users of dns/powerdns*
+  AUTHOR: junovitch@FreeBSD.org
+
+  PowerDNS Authoritive Server and Recursor 4.0.0+ introduce significant
+  changes to the configuration files, which need to be handled before
+  restarting the services. As from the Recursor changelog, "The Lua hook
+  infrastructure was redone using LuaWrapper; old scripts will no longer
+  work, but new scripts are easier to write under the new interface."
+  
 20160811:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
