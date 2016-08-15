@@ -1,7 +1,0 @@
-This module is a substitution for Text::Wrap, supporting
-multibyte characters such as UTF-8, EUC-JP, and GB2312, fullwidth
-characters such as east Asian characters, combining characters
-such as diacritical marks and Thai, and languages which don't
-use whitespaces between words such as Chinese and Japanese.
-
-WWW: http://packages.debian.org/unstable/perl/libtext-wrapi18n-perl
