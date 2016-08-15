@@ -20,8 +20,7 @@ EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -C ${WRKSRC}
 SUB_FILES=	pkg-message
 SUB_LIST=	DISTNAME=${DISTNAME}
 
-OPTIONS_DEFINE=	LDAP APC MEMCACHE
-APC_DESC=	Enable pecl-APC support
+OPTIONS_DEFINE=	LDAP MEMCACHE
 MEMCACHE_DESC=	Enable pecl-memcache support
 
 USE_MYSQL=	yes
@@ -29,7 +28,6 @@ USE_PHP=	ctype dom gd iconv json mcrypt pdo_mysql simplexml \
 		spl xml zip
 WANT_PHP_WEB=	yes
 
-APC_USE=	php=apc
 LDAP_USE=	php=ldap
 MEMCACHE_USE=	php=memcache
 
