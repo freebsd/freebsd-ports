@@ -1,5 +1,3 @@
-TIMESTAMP = 1470798383
-SHA256 (syslog-ng-3.8.0beta1.tar.gz) = 462d4386c2a596d4687d9a6913e04dcd56ac4f392c5082bc523db4d80448d865
-SIZE (syslog-ng-3.8.0beta1.tar.gz) = 8462353
-SHA256 (1141.patch) = 370ac6a00d2fca67fbe1558e728c98c68f9a21ff6e66255a8d9f1573a9575a3d
-SIZE (1141.patch) = 8050
+TIMESTAMP = 1470856945
+SHA256 (syslog-ng-3.8.0beta2.tar.gz) = 1c0c1b49c3adac1dd1d890524c9d2025a0f85344ec6707dd7d3bd8adc0a72fe7
+SIZE (syslog-ng-3.8.0beta2.tar.gz) = 8325034
