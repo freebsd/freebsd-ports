@@ -14,4 +14,6 @@ COMMENT=	Get number of occupied columns of a string on terminal
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	libtext-charwidth-perl-[0-9]*
+
 .include <bsd.port.mk>

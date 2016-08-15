@@ -16,6 +16,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		perl5 tar:bz2
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	p5-Text-CharWidth-[0-9]*
+
 post-extract:
 	@${MV} ${WRKSRC}.orig ${WRKSRC}
 
