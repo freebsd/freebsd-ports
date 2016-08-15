@@ -1,6 +1,6 @@
---- src/main.cpp.orig	2016-04-24 12:44:18 UTC
+--- src/main.cpp.orig	2016-08-09 23:12:33 UTC
 +++ src/main.cpp
-@@ -303,3 +303,10 @@ int main(int argc, char *argv[])
+@@ -306,3 +306,10 @@ int main(int argc, char *argv[])
  #endif
      return errorcode;
  }

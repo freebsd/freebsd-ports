@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -70,7 +69,8 @@ post-install:
 	@${GZIP_CMD} ${GZIP} < ${WRKSRC}/img/icons/qtox.svg > ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/qtox.svgz
 .for SZ in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps
-	@${CP} ${WRKSRC}/img/icons/${SZ}/qtox.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
+	${INSTALL_DATA} ${WRKSRC}/img/icons/${SZ}/qtox.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
 
 .include <bsd.port.mk>
