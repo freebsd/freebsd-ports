@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.7-dev3
+DISTVERSION=	1.7-dev4
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.7/src/devel/
 PKGNAMESUFFIX=	-devel
@@ -60,7 +60,7 @@ IGNORE?=	enable PCRE support to use DeviceAtlas
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 MAKE_ARGS+=	USE_OPENSSL=1
 .endif
 
