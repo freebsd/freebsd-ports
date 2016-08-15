@@ -54,6 +54,7 @@ include/syslog-ng/logmsg/gsockaddr-serialize.h
 include/syslog-ng/logmsg/logmsg.h
 include/syslog-ng/logmsg/serialization.h
 include/syslog-ng/logmsg/logmsg-serialize.h
+include/syslog-ng/logmsg/logmsg-serialize-fixup.h
 include/syslog-ng/logmsg/nvtable.h
 include/syslog-ng/logmsg/nvtable-serialize.h
 include/syslog-ng/logmsg/nvtable-serialize-endianutils.h
@@ -208,9 +209,6 @@ lib/libsyslog-ng-3.8.so.0.0.0
 lib/libsyslog-ng-3.8.so.0
 lib/libsyslog-ng.so
 lib/libsyslog-ng-native-connector.a
-lib/pkgconfig/syslog-ng.pc
-lib/pkgconfig/syslog-ng-test.pc
-lib/pkgconfig/syslog-ng-native-connector.pc
 lib/syslog-ng/libtest/libsyslog-ng-test.a
 lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libadd-contextual-data.so
@@ -235,6 +233,9 @@ lib/syslog-ng/libafstomp.so
 lib/syslog-ng/libpseudofile.so
 lib/syslog-ng/libgraphite.so
 lib/syslog-ng/libkvformat.so
+libdata/pkgconfig/syslog-ng.pc
+libdata/pkgconfig/syslog-ng-test.pc
+libdata/pkgconfig/syslog-ng-native-connector.pc
 man/man1/loggen.1.gz
 man/man1/pdbtool.1.gz
 man/man1/syslog-ng-ctl.1.gz

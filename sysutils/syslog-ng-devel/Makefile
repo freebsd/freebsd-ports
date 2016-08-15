@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.8.0b1
-PORTREVISION=	1
+# XXX Should be: PORTVERSION=	3.8.0.b2
+# XXX update at 3.8.1.
+PORTVERSION=	3.8.0b2
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
+# XXX Should be: DISTVERSION=	${PORTVERSION:S/.a/alpha/:S/.b/beta/:S/.r/rc/}
+# XXX update at 3.8.1.
 DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/balabit/syslog-ng/pull/
-PATCHFILES=	1141.patch:-p1
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 BROKEN_powerpc64=	Does not build
-BROKEN=		does not build
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
@@ -40,7 +40,7 @@ REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (and modules, like Elastic)
 PYTHON_DESC=		Build with Python 2.7 support
 
-USES=		gmake libtool pathfix pkgconfig ssl
+USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=        --disable-json
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
-BROKEN=			As per upstream, JAVA option is currently broken.
+BROKEN=			Unsupported maven downloads.
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
 BUILD_DEPENDS+=		gradle:devel/gradle
