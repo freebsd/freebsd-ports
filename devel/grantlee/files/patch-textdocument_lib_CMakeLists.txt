@@ -1,0 +1,14 @@
+Install headers prefixed, as to not cause a possible conflict with
+different versions.
+
+--- textdocument/lib/CMakeLists.txt.orig	2016-08-10 16:06:47 UTC
++++ textdocument/lib/CMakeLists.txt
+@@ -44,7 +44,7 @@ install(TARGETS grantlee_gui EXPORT gran
+          RUNTIME DESTINATION ${BIN_INSTALL_DIR} COMPONENT TextDocument
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
+          ARCHIVE DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
+-         INCLUDES DESTINATION include
++         INCLUDES DESTINATION include/grantlee4
+ )
+
+ install(FILES

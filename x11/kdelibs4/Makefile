@@ -20,8 +20,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libhal.so:sysutils/hal \
 		libqca.so:devel/qca \
 		libpolkit-qt-core-1.so:sysutils/polkit-qt \
-		libdbusmenu-qt.so:devel/libdbusmenu-qt \
-		libgrantlee_gui.so:devel/grantlee
+		libdbusmenu-qt.so:devel/libdbusmenu-qt
 
 BUILD_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
@@ -34,7 +33,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	oxygen \
 		attica automoc4 ontologies soprano strigi
-USES=		cmake:outsource fam gettext jpeg perl5 shared-mime-info \
+USES=		cmake:outsource fam gettext grantlee:4 jpeg perl5 shared-mime-info \
 		shebangfix tar:xz
 USE_OPENSSL=	yes
 USE_QT4=	corelib dbus declarative designer_build gui \
