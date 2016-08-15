@@ -8617,3 +8617,4 @@ multimedia/linux-realplayer||2016-08-09|Has expired: Not maintained upstream, co
 cad/NASTRAN|cad/NASTRAN-95|2016-08-12|Rename to match PORTNAME and upstream name
 ports-mgmt/xps||2016-08-11|Has expired: Does not support pkg(8)
 math/bamg||2016-08-14|No longer maintained upstream as is now part of freefem++
+www/pecl-APC||2016-08-15|No longer maintained upstream, and not working with PHP > 5.4

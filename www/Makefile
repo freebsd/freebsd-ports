@@ -1404,7 +1404,6 @@
     SUBDIR += pear-XML_GRDDL
     SUBDIR += pear-twig
     SUBDIR += pebble
-    SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
     SUBDIR += pecl-http1

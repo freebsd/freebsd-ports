@@ -34,12 +34,11 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC XCACHE IMAGICK SOCKETS
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED XCACHE IMAGICK SOCKETS
 OPTIONS_DEFAULT=MYSQL SOCKETS
 
 MEMCACHED_DESC=	Use memcached
-APC_DESC=	Use pecl-APC (Mediawiki recommended)
-XCACHE_DESC=	Use xCache (instead of pecl-APC)
+XCACHE_DESC=	Use xCache
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
@@ -72,9 +71,7 @@ RUN_DEPENDS=	memcached:databases/memcached
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
 .endif
 
-.if ${PORT_OPTIONS:MAPC}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:www/pecl-APC
-.elif ${PORT_OPTIONS:MXCACHE}
+.if ${PORT_OPTIONS:MXCACHE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
 .endif
 
