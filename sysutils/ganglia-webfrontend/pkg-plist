@@ -3,11 +3,6 @@
 @sample %%DATADIR%%/conf/events.json.sample
 %%DATADIR%%/conf/sql/ganglia.mysql
 @sample %%DATADIR%%/conf/view_default.json.sample
-%%WWWDIR%%/.travis.yml
-%%WWWDIR%%/AUTHORS
-%%WWWDIR%%/COPYING
-%%WWWDIR%%/README
-%%WWWDIR%%/TODO
 %%WWWDIR%%/actions.php
 %%WWWDIR%%/aggregate_graphs.php
 %%WWWDIR%%/api/.htaccess
@@ -71,12 +66,9 @@
 %%WWWDIR%%/dwoo/Dwoo.compiled.php
 %%WWWDIR%%/dwoo/Dwoo.php
 %%WWWDIR%%/dwoo/Dwoo/Adapters/Agavi/DwooRenderer.php
-%%WWWDIR%%/dwoo/Dwoo/Adapters/Agavi/README
 %%WWWDIR%%/dwoo/Dwoo/Adapters/Agavi/dwoo_plugins/t.php
 %%WWWDIR%%/dwoo/Dwoo/Adapters/Agavi/dwoo_plugins/url.php
-%%WWWDIR%%/dwoo/Dwoo/Adapters/CakePHP/README
 %%WWWDIR%%/dwoo/Dwoo/Adapters/CakePHP/dwoo.php
-%%WWWDIR%%/dwoo/Dwoo/Adapters/CodeIgniter/README
 %%WWWDIR%%/dwoo/Dwoo/Adapters/CodeIgniter/config/dwootemplate.php
 %%WWWDIR%%/dwoo/Dwoo/Adapters/CodeIgniter/controllers/dwoowelcome.php
 %%WWWDIR%%/dwoo/Dwoo/Adapters/CodeIgniter/libraries/Dwootemplate.php
@@ -84,7 +76,6 @@
 %%WWWDIR%%/dwoo/Dwoo/Adapters/CodeIgniter/views/page.tpl
 %%WWWDIR%%/dwoo/Dwoo/Adapters/ZendFramework/Dwoo.php
 %%WWWDIR%%/dwoo/Dwoo/Adapters/ZendFramework/PluginProxy.php
-%%WWWDIR%%/dwoo/Dwoo/Adapters/ZendFramework/README
 %%WWWDIR%%/dwoo/Dwoo/Adapters/ZendFramework/View.php
 %%WWWDIR%%/dwoo/Dwoo/Block/Plugin.php
 %%WWWDIR%%/dwoo/Dwoo/Compilation/Exception.php
