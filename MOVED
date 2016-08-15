@@ -8614,7 +8614,7 @@ lang/pypy3-devel|lang/pypy3|2016-08-04|Renamed to lang/pypy3
 net/qt5-enginio||2016-08-06|Has expired: Deprecated by upstream from Qt 5.6 on, do not use for development
 multimedia/linux-xmovie||2016-08-08|Has expired: Not maintained upstream, contains security issues
 multimedia/linux-realplayer||2016-08-09|Has expired: Not maintained upstream, contains security issues
-cad/NASTRAN|cad/NASTRAN-95|2016-08-12|Rename to match PORTNAME and upstream name
 ports-mgmt/xps||2016-08-11|Has expired: Does not support pkg(8)
+cad/NASTRAN|cad/NASTRAN-95|2016-08-12|Rename to match PORTNAME and upstream name
 math/bamg||2016-08-14|No longer maintained upstream as is now part of freefem++
 www/pecl-APC||2016-08-15|No longer maintained upstream, and not working with PHP > 5.4
