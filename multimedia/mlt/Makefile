@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	6.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -38,8 +38,10 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 PORTDOCS=	AUTHORS ChangeLog NEWS README docs
 PORTEXAMPLES=	demo
 
-OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 \
+OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 \
 		SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
+OPTIONS_RADIO=  	QT
+OPTIONS_RADIO_QT=	QT4 QT5
 OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
 OPTIONS_SUB=	yes
 
@@ -71,11 +73,8 @@ KDE4_CONFIGURE_WITH=	kde
 KDE4_USE=		kde4=kdelibs
 KDE4_IMPLIES=		QT4
 
-QT4_LIB_DEPENDS=	libexif.so:graphics/libexif
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml
-QT4_CONFIGURE_ENABLE=	qt
-QT4_CONFIGURE_ON=	--qt-libdir="${QT_LIBDIR}" \
-			--qt-includedir="${QT_INCDIR}"
+QT5_USE=                QT5=core,gui,opengl,svg,xml
 
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=resample
@@ -97,6 +96,17 @@ VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64 (invokes i386 asm)
+.endif
+
+.if ${PORT_OPTIONS:MQT[45]}
+LIB_DEPENDS+=		libexif.so:graphics/libexif
+CONFIGURE_ARGS+=	--enable-qt \
+			--qt-libdir="${QT_LIBDIR}" \
+			--qt-includedir="${QT_INCDIR}"
+PLIST_SUB+=             QT=""
+.else
+CONFIGURE_ARGS+=        --disable-qt
+PLIST_SUB+=             QT="@comment "
 .endif
 
 pre-configure:
