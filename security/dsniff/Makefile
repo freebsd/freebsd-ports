@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}
 DESTDIRNAME=	install_prefix
-USES=		pkgconfig
+USES=		gettext pkgconfig ssl
+USE_GNOME=	glib20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/(.*)..$/\1/}
 
 OPTIONS_DEFINE=	X11
