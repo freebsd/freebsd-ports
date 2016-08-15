@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -63,12 +63,10 @@ VLC_DESC=		VLC media player support
 VLC_RUN_DEPENDS=	vlc:multimedia/vlc
 
 post-install-GTK2-on:
-	${LN} -sf \
-	${PREFIX}/${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop \
-		${STAGEDIR}${DESKTOPDIR}
-	${LN} -sf \
-	${PREFIX}/${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps
+	(cd ${STAGEDIR}${DESKTOPDIR} && ${LN} -sf \
+	../../${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop)
+	(cd ${STAGEDIR}${PREFIX}/share/pixmaps && ${LN} -sf \
+	../../${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png)
 
 regression-test: build
 	cd ${WRKSRC} && ${PERL} ./Build test
