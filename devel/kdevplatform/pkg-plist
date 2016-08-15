@@ -405,7 +405,7 @@ lib/kde4/kdevtemplatemanager_config.so
 lib/kde4/kdevtestview.so
 lib/kde4/kdevvcschangesviewplugin.so
 lib/kde4/plasma_kdev_projectfileelement.so
-lib/kde4/plugins/grantlee/%%GRANTLEE_VER%%/kdev_filters.so
+lib/kde4/plugins/grantlee/%%GRANTLEE_VERSION_SHORT%%/kdev_filters.so
 lib/libkdevplatformdebugger.so
 lib/libkdevplatformdebugger.so.%%SHLIB_SHVER%%
 lib/libkdevplatformdebugger.so.%%SHLIB_VER%%
