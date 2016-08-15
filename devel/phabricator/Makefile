@@ -17,7 +17,7 @@ RUN_DEPENDS=	php5-libphutil>0:devel/libphutil \
 
 OPTIONS_DEFINE=	GD OPCACHE
 OPTIONS_DEFAULT=OPCACHE
-OPCACHE_DESC?=	Use OPcache/APCu (APC on PHP < 5.5) to improve performance
+OPCACHE_DESC?=	Use OPcache to improve performance
 
 USES=		shebangfix
 SHEBANG_FILES=	externals/httpful/build \
@@ -36,8 +36,6 @@ GD_USE=		PHP=gd
 .	if ${PHP_EXT_DIR:C|[^0-9]||g}  >= 20121212
 USE_PHP+=	opcache
 RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu
-.	else
-USE_PHP+=	apc
 .	endif
 .endif
 

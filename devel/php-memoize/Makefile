@@ -18,14 +18,10 @@ PHP_MODNAME=	memoize
 IGNORE_WITH_PHP=	70
 CONFIGURE_ARGS=	--enable-memoize
 
-OPTIONS_DEFINE=	APC MEMCACHED MEMORY
+OPTIONS_DEFINE=	MEMCACHED MEMORY
 OPTIONS_DEFAULT=	MEMORY
-APC_DESC=	Enable memoize APC module
 MEMCACHED_DESC=	Enable memcached storage module
 MEMORY_DESC=	Enable the memoize memory storage module
-
-APC_CONFIGURE_ENABLE=	memoize-apc
-APC_BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:www/pecl-APC
 
 MEMCACHED_CONFIGURE_WITH=	memoize-memcached
 MEMCACHED_BUILD_DEPENDS=		libmemcached>0:databases/libmemcached
