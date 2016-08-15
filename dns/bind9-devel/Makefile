@@ -16,8 +16,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2016.08.08
-HASH=		3146be6
+ISCVERSION=	9.12.0a.2016.08.15
+HASH=		131307a
 
 MAKE_JOBS_UNSAFE=	yes
 
