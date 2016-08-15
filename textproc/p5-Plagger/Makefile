@@ -258,7 +258,7 @@ BUILD_DEPENDS+=	p5-Palm-PalmDoc>=0:palm/p5-Palm-PalmDoc
 
 .if ${PORT_OPTIONS:MPUBLISHSWF}
 BUILD_DEPENDS+=	p5-SWF-Builder>=0:graphics/p5-SWF-Builder \
-		libtext-wrapi18n-perl>=0:textproc/libtext-wrapi18n-perl
+		p5-Text-WrapI18N>=0:textproc/p5-Text-WrapI18N
 .endif
 
 .if ${PORT_OPTIONS:MSUBSCRDBI}
