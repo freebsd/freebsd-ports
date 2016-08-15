@@ -16,6 +16,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 BROKEN_powerpc64=	Does not build
+BROKEN=		does not build
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
