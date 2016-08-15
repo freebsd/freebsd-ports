@@ -1,7 +1,7 @@
 bin/akonadi_skroogeakonadi_resource
 bin/skrooge
 bin/skroogeconvert
-lib/kde4/plugins/grantlee/%%GRANTLEE_VER%%/grantlee_skgfilters.so
+lib/kde4/plugins/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_skgfilters.so
 lib/kde4/skg_advice.so
 lib/kde4/skg_bookmark.so
 lib/kde4/skg_dashboard.so

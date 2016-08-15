@@ -14,7 +14,6 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
 		libsasl2.so:security/cyrus-sasl2 \
 		libboost_thread.so:devel/boost-libs \
-		libgrantlee_gui.so:devel/grantlee \
 		libkgapi2.so:devel/libkgapi
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
 		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
@@ -24,7 +23,7 @@ CONFLICTS_INSTALL=	kdepim44-4.*
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE4=	kdelibs pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
-USES=		cmake:outsource gmake iconv shebangfix tar:xz
+USES=		cmake:outsource gmake grantlee:4 iconv shebangfix tar:xz
 SHEBANG_FILES=	agents/mailfilteragent/kconf_update/migrate-kmail-filters.pl \
 		kalarm/*.pl kmail/kconf_update/*.pl \
 		libkpgp/kconf_update/kpgp-3.1-upgrade-address-data.pl
@@ -39,8 +38,6 @@ CMAKE_ARGS+=	-DKDEPIM_BUILD_MOBILE:BOOL=FALSE
 CXXFLAGS+=	-Wno-error=return-type
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
-
-PLIST_SUB=	GRANTLEE_VER=0.5
 
 post-patch:
 # Remove BOM

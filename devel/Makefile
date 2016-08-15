@@ -767,6 +767,7 @@
     SUBDIR += gputils
     SUBDIR += gradle
     SUBDIR += grantlee
+    SUBDIR += grantlee5
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf

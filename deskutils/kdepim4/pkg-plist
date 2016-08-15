@@ -158,7 +158,7 @@ lib/kde4/plugins/accessible/messagevieweraccessiblewidgetfactory.so
 lib/kde4/plugins/designer/kdepimwidgets.so
 lib/kde4/plugins/designer/mailcommonwidgets.so
 lib/kde4/plugins/designer/pimcommonwidgets.so
-lib/kde4/plugins/grantlee/%%GRANTLEE_VER%%/grantlee_messageheaderfilters.so
+lib/kde4/plugins/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_messageheaderfilters.so
 lib/libakonadi_next.so
 lib/libakonadi_next.so.4
 lib/libakonadi_next.so.%%KDE4_KDELIBS_VERSION%%
