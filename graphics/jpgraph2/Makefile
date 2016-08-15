@@ -2,27 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	jpgraph
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://hem.bredband.net/jpgraph2/
-PKGNAMESUFFIX=	2
+MASTER_SITES=	http://fossies.org/linux/www/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
-LICENSE=	jpgraph
-LICENSE_NAME=	JpGraph license
-LICENSE_FILE=	${WRKSRC}/README
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	QPL
+LICENSE_NAME=	Q PUBLIC LICENSE version 1.0
+LICENSE_TEXT=	Please refer to: http://www.opensource.org/licenses/qtpl.php for details
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 BROKEN_powerpc64=	Does not build
 
-USES=		tar:bzip2
+USES=		php tar:bzip2
+USE_PHP=	gd
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-USE_PHP=	gd
 
 NO_CDROM=	The free version cannot be used in a commercial context
 
@@ -32,14 +31,23 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+post-patch:
+	@${REINPLACE_CMD} '/TrueType/ s|// ||; \
+		s|/usr/share/fonts/TrueType|${LOCALBASE}/share/fonts/dejavu|' \
+		${WRKSRC}/src/jpg-config.inc.php
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} ${WRKSRC}/src/*.php ${STAGEDIR}${DATADIR}
-	${CP} ${WRKSRC}/src/*.dat ${STAGEDIR}${DATADIR}
-	${CP} -R ${WRKSRC}/src/lang ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} "*.php *.dat lang themes" \
+		${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} -R ${WRKSRC}/docportal/* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} ${WRKSRC}/src/Examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${RM} ${WRKSRC}/src/Examples/jpgraph
+	(cd ${WRKSRC}/src/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
