@@ -1,0 +1,3 @@
+lib/libzbxpgsql.so
+@dir share/examples/libzbxpgsql
+@sample share/examples/libzbxpgsql/template_postgresql_server.xml
