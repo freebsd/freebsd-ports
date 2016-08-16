@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpmustache
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -32,6 +32,7 @@ do-install:
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/test/fixtures/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/test/fixtures/examples && ${COPYTREE_SHARE} . \
+	       	${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
