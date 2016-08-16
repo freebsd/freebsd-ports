@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	1
 DISTNAME=	pecl_http-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Extended HTTP Support
 
 LICENSE=	BSD2CLAUSE
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	56 70
+IGNORE_WITH_PHP=	70
 CONFLICTS=	pecl-http-*
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
