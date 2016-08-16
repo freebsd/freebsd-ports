@@ -3,7 +3,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	LOCAL/kuriyama/heartbeat
@@ -143,7 +143,6 @@ post-patch:
 post-install:
 	${MKDIR} -m 0750 ${STAGEDIR}/var/run/heartbeat/pengine
 	${MKDIR} ${STAGEDIR}/var/lib/heartbeat/mgmt
-	${TOUCH} ${STAGEDIR}/var/run/heartbeat.pid
 
 .if ${PORT_OPTIONS:MDOCS}
 	# Install sample configuration
