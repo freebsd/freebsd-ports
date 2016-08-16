@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	llgal
-PORTVERSION=	0.13.17
-PORTREVISION=	2
+PORTVERSION=	0.13.18
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/llgal/
 
