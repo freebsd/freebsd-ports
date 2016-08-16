@@ -1243,6 +1243,7 @@ plexpy/lib/html5lib/utils.py
 plexpy/lib/httpagentparser/__init__.py
 plexpy/lib/httpagentparser/more.py
 plexpy/lib/ipaddr.py
+plexpy/lib/ipaddress.py
 plexpy/lib/ipwhois/__init__.py
 plexpy/lib/ipwhois/data/iso_3166-1.csv
 plexpy/lib/ipwhois/data/iso_3166-1_list_en.xml
