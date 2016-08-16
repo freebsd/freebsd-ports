@@ -1,6 +1,6 @@
---- src/fancyfileselection.cc.orig	2006-09-11 10:32:12.000000000 +0900
-+++ src/fancyfileselection.cc	2012-02-13 23:12:49.000000000 +0900
-@@ -21,6 +21,10 @@
+--- src/fancyfileselection.cc.orig	2006-09-11 01:32:12 UTC
++++ src/fancyfileselection.cc
+@@ -21,6 +21,10 @@ static struct {
  	{ "Postscript", ".ps" }
  };
  
@@ -11,7 +11,7 @@
  FancyFileSelection::FancyFileSelection (wxWindow *parent, const wxString &title,
  					long style, bool file_types,
  					const wxString &mask)
-@@ -30,7 +34,7 @@
+@@ -30,7 +34,7 @@ FancyFileSelection::FancyFileSelection (
  		style |= wxHIDE_READONLY;
  	else if (style & wxSAVE)
  		style |= wxOVERWRITE_PROMPT;
