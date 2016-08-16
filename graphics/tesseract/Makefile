@@ -2,38 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract
-PORTVERSION=	3.02.02
-PORTREVISION=	3
+PORTVERSION=	3.04.01
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
-DISTFILES=	tesseract-ocr-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Commercial quality open source OCR engine
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 
-DIST_SUBDIR=	${PORTNAME}
-PROJECTHOST=	tesseract-ocr
-WRKSRC=		${WRKDIR}/tesseract-ocr
-
-USES=		libtool
+USES=		localbase libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}-ocr
+
 CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
-LIBS+=		-L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	*
-PORTDOCS=	AUTHORS ChangeLog README ReleaseNotes html
+PORTDOCS=	AUTHORS ChangeLog README.md ReleaseNotes
 PORTEXAMPLES=	eurotext.tif phototest.tif
+INSTALL_TARGET=	install-strip
 
-DOCS_DISTFILES=	tesseract-ocr-${PORTVERSION}-doc-html${EXTRACT_SUFX}
+OPTIONS_DEFINE=	DOCS EXAMPLES TOOLS
+OPTIONS_SUB=	yes
+TOOLS_DESC=	Include training tools
+TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
+		libfontconfig.so:x11-fonts/fontconfig
+TOOLS_USES=	pkgconfig
+TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure
@@ -41,12 +41,17 @@ post-patch:
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	${WRKSRC}/Makefile.in
 
+post-build-TOOLS-on:
+	@cd ${WRKSRC} && ${MAKE} training
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS:Nhtml} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} testing/eurotext.tif \
+		testing/phototest.tif ${STAGEDIR}${EXAMPLESDIR}
+post-install-TOOLS-on:
+	@cd ${WRKSRC} && ${MAKE} DESTDIR=${STAGEDIR} training-install
 
 .include <bsd.port.mk>
