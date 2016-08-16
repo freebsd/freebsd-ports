@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sawfish
-PORTVERSION=	1.11.91
+PORTVERSION=	1.12.0
 PORTEPOCH=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
