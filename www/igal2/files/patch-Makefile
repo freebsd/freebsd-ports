@@ -1,5 +1,5 @@
---- Makefile.orig	2014-02-14 12:27:23.000000000 +0100
-+++ Makefile	2014-02-14 12:27:48.000000000 +0100
+--- Makefile.orig	2008-11-16 21:00:00 UTC
++++ Makefile
 @@ -1,11 +1,11 @@
  ############################################################################
  # if you change this, please also modify the value at the top of igal code
@@ -16,7 +16,7 @@
  
  OLDLIBDIR=$(DESTDIR)/lib/igal
  
-@@ -24,7 +24,6 @@
+@@ -24,7 +24,6 @@ old-clean::
  install:: igal2
  	install -d $(BINDIR)
  	install -m 0755 igal2 $(BINDIR)
