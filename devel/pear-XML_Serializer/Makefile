@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.20.2
+PORTVERSION=	0.21.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files
+
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
