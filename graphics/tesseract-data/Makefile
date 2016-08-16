@@ -4,10 +4,6 @@
 PORTNAME=	tesseract-data
 PORTVERSION=	3.04.00
 CATEGORIES=	graphics
-DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
-		${TESSERACT_LANGS_301:O:u:S|^|tesseract-ocr-3.01.|:S|$|.tar.gz|} \
-		${TESSERACT_LANGS_302:O:u:S|^|tesseract-ocr-3.02.|:S|$|.tar.gz|}
-EXTRACT_ONLY=	tesseract-ocr-tessdata-${PORTVERSION}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Trained language data for the Tesseract OCR engine
