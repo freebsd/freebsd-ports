@@ -1,4 +1,3 @@
-SHA256 (tesseract/tesseract-ocr-3.02.02.tar.gz) = 26cd39cb3f2a6f6f1bf4050d1cc0aae35edee49eb49a92df3cb7f9487caa013d
-SIZE (tesseract/tesseract-ocr-3.02.02.tar.gz) = 3890393
-SHA256 (tesseract/tesseract-ocr-3.02.02-doc-html.tar.gz) = e7ffd3082005345a682268740140bfdde73461528d6f2da019fef29539477a7b
-SIZE (tesseract/tesseract-ocr-3.02.02-doc-html.tar.gz) = 10635901
+TIMESTAMP = 1470939746
+SHA256 (tesseract-ocr-tesseract-3.04.01_GH0.tar.gz) = 57f63e1b14ae04c3932a2683e4be4954a2849e17edd638ffe91bc5a2156adc6a
+SIZE (tesseract-ocr-tesseract-3.04.01_GH0.tar.gz) = 2269105
