@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-# XXX Should be: PORTVERSION=	3.8.0.b2
-# XXX update at 3.8.1.
+# XXX As of 3.8.1beta1, replace PORTVERSION with DISTVERSION=3.8.1beta1
 PORTVERSION=	3.8.0b2
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
-# XXX Should be: DISTVERSION=	${PORTVERSION:S/.a/alpha/:S/.b/beta/:S/.r/rc/}
-# XXX update at 3.8.1.
+# XXX As of 3.8.1beta1, delete the following line.
 DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -19,7 +18,9 @@ COMMENT=	Powerful syslogd replacement
 BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libcurl.so:ftp/curl \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -27,7 +28,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON MONGO
 OPTIONS_DEFAULT=	JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -40,7 +41,8 @@ REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (and modules, like Elastic)
 PYTHON_DESC=		Build with Python 2.7 support
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl
+USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
+		gettext-runtime
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
@@ -112,6 +114,15 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 PLIST_FILES+=		lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
+.endif
+
+.if ${PORT_OPTIONS:MMONGO}
+BUILD_DEPENDS+=		mongo:databases/mongodb
+RUN_DEPENDS+=		mongo:databases/mongodb
+CONFIGURE_ARGS+=	--enable-mongodb
+PLIST_FILES+=		lib/syslog-ng/libafmongodb.so
+.else
+CONFIGURE_ARGS+=	--disable-mongodb
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
