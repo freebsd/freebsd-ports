@@ -1,6 +1,6 @@
---- src/lang-bison.y.orig	2012-02-21 14:12:06.000000000 +0100
-+++ src/lang-bison.y	2012-02-21 14:12:27.000000000 +0100
-@@ -15,7 +15,7 @@
+--- src/lang-bison.y.orig	2006-09-11 01:32:12 UTC
++++ src/lang-bison.y
+@@ -15,7 +15,7 @@ int lang_lineno = 1;
  
  std::stack<PhraseBlock *> pbs;
  
@@ -9,7 +9,7 @@
  int yy_lang_lex (void);
  %}
  
-@@ -121,7 +121,7 @@
+@@ -121,7 +121,7 @@ phrase:
  
  extern char *yy_lang_text;
  

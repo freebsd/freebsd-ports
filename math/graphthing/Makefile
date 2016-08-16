@@ -16,13 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GNOME=	gtk20
 USES=		bison gmake tar:bzip2
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
-PLIST_FILES=	bin/graphthing bin/gt
 LDFLAGS+=	-lpthread
+
+PLIST_FILES=	bin/graphthing bin/gt
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -1,6 +1,6 @@
---- src/gt-bison.y.orig	2012-02-21 14:11:30.000000000 +0100
-+++ src/gt-bison.y	2012-02-21 14:11:53.000000000 +0100
-@@ -18,7 +18,7 @@
+--- src/gt-bison.y.orig	2006-09-11 01:32:12 UTC
++++ src/gt-bison.y
+@@ -18,7 +18,7 @@ Edge *e;
  
  extern char *yy_gt_text;
  
@@ -9,7 +9,7 @@
  int yy_gt_lex (void);
  %}
  
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ edge_property:
  
  %%
  
