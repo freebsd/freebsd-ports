@@ -605,6 +605,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/files/html-2.html
 %%DRUPAL_BASE%%/modules/simpletest/files/image-1.png
 %%DRUPAL_BASE%%/modules/simpletest/files/image-2.jpg
+%%DRUPAL_BASE%%/modules/simpletest/files/image-test-no-transparency.gif
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test-transparent-out-of-range.gif
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.gif
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.jpg
@@ -744,6 +745,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/tablesort.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_test.info

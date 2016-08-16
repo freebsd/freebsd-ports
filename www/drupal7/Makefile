@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drupal7
-PORTVERSION=	7.44
+PORTVERSION=	7.50
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -13,11 +13,9 @@ COMMENT=	Database driven web content management system (CMS)
 
 LICENSE=	GPLv2+
 
-USES=		drupal:7 shebangfix
-SHEBANG_FILES=	scripts/password-hash.sh
-
+USES=		drupal:7 php:web shebangfix
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
-WANT_PHP_WEB=	yes
+SHEBANG_FILES=	scripts/password-hash.sh
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -38,29 +36,15 @@ MYSQL_USES=	mysql
 MYSQL_USE=	PHP=pdo_mysql
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/.htaccess ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/cron.php ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/authorize.php ${STAGEDIR}${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/includes ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/index.php ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/install.php ${STAGEDIR}${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/misc ${STAGEDIR}${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/modules ${STAGEDIR}${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/profiles ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/robots.txt ${STAGEDIR}${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/scripts ${STAGEDIR}${DRUPAL_DIR}
-	@${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all
-	@${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all/libraries
-	${CP} ${WRKSRC}/sites/example.sites.php ${STAGEDIR}${DRUPAL_DIR}/sites/
-	${CP} -R ${WRKSRC}/sites/all ${STAGEDIR}${DRUPAL_DIR}/sites/
-	@${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default
 	@${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default/files
-	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php.sample
-	${CP} -R ${WRKSRC}/themes ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/update.php ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/web.config ${STAGEDIR}${DRUPAL_DIR}
-	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ".htaccess cron.php authorize.php \
+		includes index.php install.php misc modules profiles \
+		robots.txt scripts themes update.php web.config xmlrpc.php" \
+		${STAGEDIR}${DRUPAL_DIR})
+	(cd ${WRKSRC}/sites && ${COPYTREE_SHARE} "example.sites.php all" \
+		${STAGEDIR}${DRUPAL_DIR}/sites)
+	${INSTALL_DATA} ${WRKSRC}/sites/default/default.settings.php \
+		${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
