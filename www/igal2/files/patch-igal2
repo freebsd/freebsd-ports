@@ -1,6 +1,6 @@
---- igal2.orig	2014-02-14 12:28:33.000000000 +0100
-+++ igal2	2014-02-14 12:28:40.000000000 +0100
-@@ -5,7 +5,7 @@
+--- igal2.orig	2016-06-02 05:29:25 UTC
++++ igal2
+@@ -5,7 +5,7 @@ eval 'exec perl -wS $0 ${1+"$@"}'
  ############################################################################
  # Please change this accordingly if you change the DESTDIR in the tarball 
  # distribution Makefile or the --prefix of the RPM installation
