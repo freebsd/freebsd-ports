@@ -12,6 +12,8 @@ COMMENT=	FTP client made in C sharp
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to configure
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
 		--libdir="${PREFIX}/lib" \
