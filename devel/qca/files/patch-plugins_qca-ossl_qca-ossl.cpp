@@ -19,6 +19,10 @@ version SHA-1.'
 
 REVIEW: 125387
 
+Also includes:
+qca-ossl: Remove SHA0 from all_hash_types() when it is not available.
+https://git.reviewboard.kde.org/r/128700/
+
 --- plugins/qca-ossl/qca-ossl.cpp.orig	2015-10-02 09:39:21 UTC
 +++ plugins/qca-ossl/qca-ossl.cpp
 @@ -5403,9 +5403,11 @@ public:
@@ -46,7 +50,17 @@ REVIEW: 125387
  
  		if (ssl->version == TLS1_VERSION)
  			sessInfo.version = TLS::TLS_v1;
-@@ -7133,8 +7139,10 @@ public:
+@@ -6880,7 +6886,9 @@ static QStringList all_hash_types()
+ {
+ 	QStringList list;
+ 	list += "sha1";
++#ifdef HAVE_OPENSSL_SHA0
+ 	list += "sha0";
++#endif
+ 	list += "ripemd160";
+ #ifdef HAVE_OPENSSL_MD2
+ 	list += "md2";
+@@ -7133,8 +7141,10 @@ public:
  			return new opensslInfoContext(this);
  		else if ( type == "sha1" )
  			return new opensslHashContext( EVP_sha1(), this, type);
