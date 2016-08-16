@@ -27,6 +27,6 @@ USE_LDCONFIG=	yes
 do-install:
 		${INSTALL_LIB} ${WRKSRC}/src/.libs/libzbxpgsql.so ${STAGEDIR}${PREFIX}/lib/libzbxpgsql.so
 		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-		${INSTALL_MAN} ${WRKSRC}/template_postgresql_server.xml ${STAGEDIR}${EXAMPLESDIR}/template_postgresql_server.xml
+		${INSTALL_MAN} ${WRKSRC}/template_postgresql_server.xml ${STAGEDIR}${EXAMPLESDIR}/template_postgresql_server.xml.sample
 
 .include <bsd.port.mk>
