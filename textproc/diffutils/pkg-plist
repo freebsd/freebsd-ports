@@ -25,6 +25,7 @@ man/man1/gsdiff.1.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/diffutils.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/diffutils.mo
