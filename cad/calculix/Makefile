@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -33,8 +33,8 @@ CGX_VER=	cgx_${PORTVERSION}
 
 USES=		compiler:openmp fortran gmake tar:bzip2
 USE_GCC=	yes
-USE_XORG=	xmu
-USE_GL=	glut
+USE_XORG=	ice sm x11 xext xi xmu xt
+USE_GL= 	gl glu glut
 
 BROWSER?=	firefox
 PSVIEWER?=	gv
