@@ -10,12 +10,16 @@ MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configuration utility for the newsreader slrn
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 
 USES=		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	slrnconf.in
-MAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_ARGS=	PREFIX=${PREFIX}
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -28,6 +32,8 @@ do-install:
 .for i in preferences.pm rc_grammar.pm ui.pm
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ABOUT COPYING README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
