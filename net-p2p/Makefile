@@ -44,6 +44,7 @@
     SUBDIR += liberator
     SUBDIR += libktorrent
     SUBDIR += libpdtp
+    SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar-python
