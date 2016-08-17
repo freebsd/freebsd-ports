@@ -1,0 +1,299 @@
+# Created by: Mohammad S. Babaei <info@babaei.net>
+# $FreeBSD$
+
+PORTNAME=	wt
+PORTVERSION=	3.3.6
+CATEGORIES=	www
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/archive/${PORTVERSION}/ \
+		http://github.com/${GH_ACCOUNT}/${PORTNAME}/archive/${PORTVERSION}/
+
+MAINTAINER=	info@babaei.net
+COMMENT=	Widget-centric C++ library for developing web applications
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+GH_ACCOUNT=	kdeforche
+
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	\
+	DOCS \
+	EXAMPLES \
+	TESTS \
+	RESOURCES \
+	CMAKE_MODULE \
+	CPP11 \
+	HARU \
+	PANGO \
+	EXT \
+	QT4 \
+	LIBWTTEST \
+	OPENGL
+OPTIONS_DEFAULT=	\
+	DOCS \
+	EXAMPLES \
+	TESTS \
+	RESOURCES \
+	CMAKE_MODULE \
+	CPP11 \
+	HARU \
+	PANGO \
+	OPENGL \
+	LIBWTTEST
+OPTIONS_GROUP=	CONNECTOR DBO WSTRING
+
+DOCS_DESC=		Build and/or install documentation
+EXAMPLES_DESC=		Build and install examples (binaries and source, implies SQLITE3 and WTHTTP)
+TESTS_DESC=		Build Wt tests
+RESOURCES_DESC=		Install resources directory
+CMAKE_MODULE_DESC=	Install FindWt.cmake in systemwide cmake dir (in addition to CMAKE_INSTALL_PREFIX/cmake)
+CPP11_DESC=		Compile Wt in C++11 mode (Clang or GCC 4.6+)
+HARU_DESC=		Enable Haru Free PDF Library, which is used to provide support for painting to PDF (WPdfImage)
+PANGO_DESC=		Enable Pango Library, which is used for improved font support (WPdfImage and WRasterImage)
+EXT_DESC=		Build Wt Ext library with JavaScript-only widgets (http://extjs.com/) DEPRECATED
+QT4_DESC=		Build Qt4 interworking library (libwtwithqt)
+LIBWTTEST_DESC=		Build Wt::Test for automated (integration/unit) tests
+OPENGL_DESC=		Build Wt with support for server-side opengl rendering
+
+OPTIONS_GROUP_CONNECTOR=	FCGI WTHTTP
+OPTIONS_DEFAULT +=	FCGI WTHTTP
+CONNECTOR_DESC=		Connector
+FCGI_DESC=		Build FastCGI connector
+WTHTTP_DESC=		Build Wt stand-alone httpd connector
+
+OPTIONS_GROUP_DBO=	SQLITE3 POSTGRES FIREBIRD MYSQL
+OPTIONS_DEFAULT +=	SQLITE3
+DBO_DESC=		Wt::DBO
+SQLITE3_DESC=		Build Wt with SQLite 3 support
+POSTGRES_DESC=		Build Wt with PostgreSQL support
+FIREBIRD_DESC=		Build Wt with Firebird support
+MYSQL_DESC=		Build Wt with MariaDB or MySQL support
+
+OPTIONS_GROUP_WSTRING=	NO_STD_LOCALE NO_STD_WSTRING
+WSTRING_DESC=		Wt::WString
+NO_STD_LOCALE_DESC=	Build Wt to run on a system without std::locale support
+NO_STD_WSTRING_DESC=	Build Wt to run on a system without std::wstring support
+
+EXAMPLES_IMPLIES=	SQLITE3 WTHTTP
+
+USE_LDCONFIG=	yes
+USES=		cmake:outsource pkgconfig ssl
+USE_XORG+=x11
+MAKE_JOBS_SAFE=	yes
+
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libboost_system.so:devel/boost-libs \
+		libGraphicsMagick.so:graphics/GraphicsMagick
+
+CMAKE_ARGS+=	-DCONFIGDIR:STRING=${LOCALBASE}/etc/wt \
+	-DFCGI_PREFIX:STRING=${LOCALBASE} \
+	-DFIREBIRD_PREFIX:STRING=${LOCALBASE} \
+	-DGM_PREFIX:STRING=${LOCALBASE} \
+	-DHARU_PREFIX:STRING=${LOCALBASE} \
+	-DMYSQL_PREFIX:STRING=${LOCALBASE} \
+	-DPNG_PREFIX:STRING=${LOCALBASE} \
+	-DPOSTGRES_PREFIX:STRING=${LOCALBASE} \
+	-DSQLITE3_PREFIX:STRING=${LOCALBASE} \
+	-DSSL_PREFIX:STRING=/usr \
+	-DZLIB_PREFIX:STRING=/usr \
+	-DCONNECTOR_ISAPI:BOOL=OFF \
+	-DWEBUSER:STRING=www \
+	-DWEBGROUP:STRING=www \
+	-DWT_WRASTERIMAGE_IMPLEMENTATION:STRING=GraphicsMagick \
+	-DENABLE_SSL:BOOL=ON
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	asciidoc:textproc/asciidoc \
+		doxygen:devel/doxygen
+CMAKE_ARGS+=	-DBUILD_DOCS:BOOL=ON
+.else
+CMAKE_ARGS+=	-DBUILD_DOCS:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=ON -DINSTALL_EXAMPLES:BOOL=ON
+PLIST_SUB+=	EXAMPLES=""
+.if ${PORT_OPTIONS:MSQLITE3} \
+	|| ${PORT_OPTIONS:MPOSTGRES} \
+	|| ${PORT_OPTIONS:MFIREBIRD} \
+	|| ${PORT_OPTIONS:MMYSQL}
+PLIST_SUB+=	DBO_EXAMPLES=""
+.if ${PORT_OPTIONS:MSQLITE3}
+.else
+PLIST_SUB+=	DBO_SQLITE3_EXAMPLES=""
+.endif
+PLIST_SUB+=	DBO_SQLITE3_EXAMPLES="@comment "
+.else
+PLIST_SUB+=	DBO_EXAMPLES="@comment "
+PLIST_SUB+=	DBO_SQLITE3_EXAMPLES="@comment "
+.endif
+.if ${PORT_OPTIONS:MQT4}
+PLIST_SUB+=	QT4_EXAMPLES=""
+.else
+PLIST_SUB+=	QT4_EXAMPLES="@comment "
+.endif
+.else
+CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=OFF -DINSTALL_EXAMPLES:BOOL=OFF
+PLIST_SUB+=	EXAMPLES="@comment "
+PLIST_SUB+=	DBO_EXAMPLES="@comment "
+PLIST_SUB+=	DBO_SQLITE3_EXAMPLES="@comment "
+PLIST_SUB+=	QT4_EXAMPLES="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTESTS}
+CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=ON
+.else
+CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MRESOURCES}
+CMAKE_ARGS+=	-DINSTALL_RESOURCES:BOOL=ON
+PLIST_SUB+=	RESOURCES=""
+.else
+CMAKE_ARGS+=	-DINSTALL_RESOURCES:BOOL=OFF
+PLIST_SUB+=	RESOURCES="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCMAKE_MODULE}
+CMAKE_ARGS+=	-DINSTALL_FINDWT_CMAKE_FILE:BOOL=ON
+PLIST_SUB+=	CMAKE_MODULE=""
+.else
+CMAKE_ARGS+=	-DINSTALL_FINDWT_CMAKE_FILE:BOOL=OFF
+PLIST_SUB+=	CMAKE_MODULE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCPP11}
+USES+=		compiler:c++11-lib
+CMAKE_ARGS+=	-DWT_CPP_11_MODE:STRING=-std=c++0x
+.endif
+
+.if ${PORT_OPTIONS:MHARU}
+LIB_DEPENDS+=	libhpdf.so:print/libharu
+CMAKE_ARGS+=	-DENABLE_HARU:BOOL=ON
+.else
+CMAKE_ARGS+=	-DENABLE_HARU:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MPANGO}
+USE_GNOME+=	pango
+CMAKE_ARGS+=	-DENABLE_PANGO:BOOL=ON
+.else
+CMAKE_ARGS+=	-DENABLE_PANGO:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MEXT}
+CMAKE_ARGS+=	-DENABLE_EXT:BOOL=ON
+PLIST_SUB+=	EXT=""
+.else
+CMAKE_ARGS+=	-DENABLE_EXT:BOOL=OFF
+PLIST_SUB+=	EXT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=		corelib moc_build
+CMAKE_ARGS+=	-DENABLE_QT4:BOOL=ON
+.else
+CMAKE_ARGS+=	-DENABLE_QT4:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MLIBWTTEST}
+CMAKE_ARGS+=	-DENABLE_LIBWTTEST:BOOL=ON
+PLIST_SUB+=	LIBWTTEST=""
+.else
+CMAKE_ARGS+=	-DENABLE_LIBWTTEST:BOOL=OFF
+PLIST_SUB+=	LIBWTTEST="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOPENGL}
+USE_GL=		gl glew
+CMAKE_ARGS+=	-DENABLE_OPENGL:BOOL=ON
+.else
+CMAKE_ARGS+=	-DENABLE_OPENGL:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MFCGI}
+LIB_DEPENDS+=	libfcgi.so:www/fcgi
+LIB_DEPENDS+=	libfcgi++.so:www/fcgi
+CMAKE_ARGS+=	-DCONNECTOR_FCGI:BOOL=ON
+PLIST_SUB+=	FCGI=""
+.else
+CMAKE_ARGS+=	-DCONNECTOR_FCGI:BOOL=OFF
+PLIST_SUB+=	FCGI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MWTHTTP}
+CMAKE_ARGS+=	-DCONNECTOR_HTTP:BOOL=ON
+PLIST_SUB+=	WTHTTP=""
+.else
+CMAKE_ARGS+=	-DCONNECTOR_HTTP:BOOL=OFF
+PLIST_SUB+=	WTHTTP="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE3} \
+	|| ${PORT_OPTIONS:MPOSTGRES} \
+	|| ${PORT_OPTIONS:MFIREBIRD} \
+	|| ${PORT_OPTIONS:MMYSQL}
+CMAKE_ARGS+=	-DENABLE_LIBWTDBO:BOOL=ON
+PLIST_SUB+=	DBO=""
+.else
+CMAKE_ARGS+=	-DENABLE_LIBWTDBO:BOOL=OFF
+PLIST_SUB+=	DBO="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE3}
+USES+=		sqlite:3
+CMAKE_ARGS+=	-DENABLE_SQLITE:BOOL=ON
+PLIST_SUB+=	SQLITE3=""
+.else
+CMAKE_ARGS+=	-DENABLE_SQLITE:BOOL=OFF
+PLIST_SUB+=	SQLITE3="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPOSTGRES}
+USE_PGSQL=	yes
+CMAKE_ARGS+=	-DENABLE_POSTGRES:BOOL=ON
+PLIST_SUB+=	POSTGRES=""
+.else
+CMAKE_ARGS+=	-DENABLE_POSTGRES:BOOL=OFF
+PLIST_SUB+=	POSTGRES="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFIREBIRD}
+USE_FIREBIRD=	yes
+CMAKE_ARGS+=	-DENABLE_FIREBIRD:BOOL=ON
+PLIST_SUB+=	FIREBIRD=""
+.else
+CMAKE_ARGS+=	-DENABLE_FIREBIRD:BOOL=OFF
+PLIST_SUB+=	FIREBIRD="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=	yes
+CMAKE_ARGS+=	-DENABLE_MYSQL:BOOL=ON
+PLIST_SUB+=	MYSQL=""
+.else
+CMAKE_ARGS+=	-DENABLE_MYSQL:BOOL=OFF
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNO_STD_LOCALE}
+CMAKE_ARGS+=	-DWT_NO_STD_LOCALE:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWT_NO_STD_LOCALE:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MNO_STD_WSTRING}
+CMAKE_ARGS+=	-DWT_NO_STD_WSTRING:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWT_NO_STD_WSTRING:BOOL=OFF
+.endif
+
+post-stage:
+	@${RM} -f ${STAGEDIR}${ETCDIR}/wt_config.xml
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${CP} -p ${BUILD_WRKSRC}/wt_config.xml \
+		${STAGEDIR}${ETCDIR}/wt_config.xml.sample
+
+.include <bsd.port.mk>
