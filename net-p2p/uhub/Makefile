@@ -10,30 +10,26 @@ MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance peer-to-peer hub for the ADC network
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		cmake perl5 sqlite
+USE_RC_SUBR=	uhub
+USE_PERL5=	build
 
 USERS=		uhub
 GROUPS=		uhub
 
-USES=		cmake perl5
-USE_RC_SUBR=	uhub
-USE_PERL5=	build
+CFLAGS+=	-fPIC
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-OPTIONS_DEFINE=		OPENSSL SQLITE
+OPTIONS_DEFINE=		OPENSSL
 OPTIONS_DEFAULT=	OPENSSL SQLITE
 OPTIONS_SUB=		yes
 
-OPENSSL_USE=		openssl=yes
-OPENSSL_CMAKE_OFF=	-DSSL_SUPPORT:BOOL=OFF
-SQLITE_USES=		sqlite
-SQLITE_CMAKE_OFF=	-DSQLITE_SUPPORT:BOOL=OFF
-
-.include <bsd.port.options.mk>
+OPENSSL_USES=		ssl
+OPENSSL_CMAKE_BOOL=	SSL_SUPPORT
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -45,19 +41,13 @@ post-patch:
 		's|"/etc/uhub/|"${ETCDIR}/|' ${WRKSRC}/src/uhub.h
 
 do-install:
-	(cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} uhub \
-		${STAGEDIR}${PREFIX}/bin)
-.if ${PORT_OPTIONS:MSQLITE}
-	(cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} uhub-passwd \
-		${STAGEDIR}${PREFIX}/bin)
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/uhub ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/uhub-passwd ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/uhub
-	(cd ${INSTALL_WRKSRC} && ${INSTALL_LIB} mod_*.so \
-		${STAGEDIR}${PREFIX}/lib/uhub)
+	${INSTALL_LIB} ${WRKSRC}/mod_*.so ${STAGEDIR}${PREFIX}/lib/uhub
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in uhub.conf users.conf
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${ETCDIR}/${i}.sample)
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
 .for i in motd.txt rules.txt
 	@${ECHO_CMD} -n > ${STAGEDIR}${ETCDIR}/${i}.sample
