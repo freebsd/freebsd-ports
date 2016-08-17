@@ -4,7 +4,7 @@
 PORTNAME=	syslog-ng
 # XXX As of 3.8.1beta1, replace PORTVERSION with DISTVERSION=3.8.1beta1
 PORTVERSION=	3.8.0b2
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 # XXX As of 3.8.1beta1, delete the following line.
@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=        --disable-redis
 .endif
 
 .if ${PORT_OPTIONS:MSMTP}
-CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
+CONFIGURE_ARGS+=	--with-libesmtp=${LOCALBASE}
 LIB_DEPENDS+=		libesmtp.so:mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.so
 .else
