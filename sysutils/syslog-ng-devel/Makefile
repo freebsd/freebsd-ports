@@ -4,7 +4,7 @@
 PORTNAME=	syslog-ng
 # XXX As of 3.8.1beta1, replace PORTVERSION with DISTVERSION=3.8.1beta1
 PORTVERSION=	3.8.0b2
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 # XXX As of 3.8.1beta1, delete the following line.
