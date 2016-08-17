@@ -4007,10 +4007,12 @@ DEPENDS-LIST= \
 			PORTSDIR="${PORTSDIR}" \
 			dp_MAKE="${MAKE}" \
 			dp_PKGNAME="${PKGNAME}" \
+			dp_PKG_INFO="${PKG_INFO}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
 			${SH} ${SCRIPTSDIR}/depends-list.sh
 
 ALL-DEPENDS-LIST=			${DEPENDS-LIST} -r ${_UNIFIED_DEPENDS:Q}
+MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -m ${_UNIFIED_DEPENDS:Q}
 TEST-DEPENDS-LIST=			${DEPENDS-LIST} ${TEST_DEPENDS:Q}
 CLEAN-DEPENDS-LIST=			${DEPENDS-LIST} -wr ${_UNIFIED_DEPENDS:Q} 
 CLEAN-DEPENDS-LIMITED-LIST=	${DEPENDS-LIST} -w ${_UNIFIED_DEPENDS:Q}
@@ -4290,12 +4292,8 @@ package-recursive: package
 
 # Show missing dependencies
 missing:
-	@_origins=$$(${PKG_INFO} -aoq); \
-	for dir in $$(${ALL-DEPENDS-LIST}); do \
-		_origin=$${dir##${PORTSDIR}/}; \
-		if ! $$(${ECHO_CMD} $${_origins} | ${GREP} -q $${_origin}); then \
-			${ECHO_CMD} $${_origin}; \
-		fi; \
+	@for dir in $$(${MISSING-DEPENDS-LIST}); do \
+		echo $${dir#${PORTSDIR}/}; \
 	done
 
 # Show missing dependencies by name
