@@ -71,7 +71,7 @@ check_dep() {
 			continue
 		fi
 
-		# If only looking for missign, show if missing
+		# If only looking for missing, show if missing
 		if [ ${missing} -eq 1 ]; then
 			case " ${existing} " in
 				*\ ${d#${PORTSDIR}/}\ *) continue ;; # We have it, nothing to see
