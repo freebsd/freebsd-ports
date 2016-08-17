@@ -421,6 +421,7 @@
     SUBDIR += ioquake3-devel
     SUBDIR += ioquake3-devel-server
     SUBDIR += ioquake3-server
+    SUBDIR += iortcw
     SUBDIR += iourbanterror
     SUBDIR += iourbanterror-server
     SUBDIR += irrlamb

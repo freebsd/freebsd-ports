@@ -1,0 +1,17 @@
+%%MP%%%%WOLFDIR%%/iowolfded.%%ARCH%%
+%%MP%%%%WOLFDIR%%/iowolfmp.%%ARCH%%
+%%MP%%%%WOLFDIR%%/main/cgame.mp.%%ARCH%%.so
+%%MP%%%%WOLFDIR%%/main/qagame.mp.%%ARCH%%.so
+%%MP%%%%WOLFDIR%%/main/ui.mp.%%ARCH%%.so
+%%MP%%%%WOLFDIR%%/renderer_mp_opengl1_%%ARCH%%.so
+%%MP%%%%WOLFDIR%%/renderer_mp_rend2_%%ARCH%%.so
+%%MP%%bin/iowolfded
+%%MP%%bin/iowolfmp
+%%SP%%%%WOLFDIR%%/iowolfsp.%%ARCH%%
+%%SP%%%%WOLFDIR%%/iowolfspded.%%ARCH%%
+%%SP%%%%WOLFDIR%%/main/cgame.sp.%%ARCH%%.so
+%%SP%%%%WOLFDIR%%/main/qagame.sp.%%ARCH%%.so
+%%SP%%%%WOLFDIR%%/main/ui.sp.%%ARCH%%.so
+%%SP%%%%WOLFDIR%%/renderer_sp_opengl1_%%ARCH%%.so
+%%SP%%%%WOLFDIR%%/renderer_sp_rend2_%%ARCH%%.so
+%%SP%%bin/iowolfsp
