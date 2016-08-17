@@ -30,12 +30,11 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 OPTIONS_GROUP=		Standard Bootstrap
-OPTIONS_GROUP_Standard=	FORT OBJC NLS TESTSUITE ALLSTAGES STATIC
+OPTIONS_GROUP_Standard=	FORTRAN OBJC NLS TESTSUITE ALLSTAGES STATIC
 OPTIONS_GROUP_Bootstrap=BOOTSTRAP
-OPTIONS_DEFAULT=	FORT OBJC
+OPTIONS_DEFAULT=	FORTRAN OBJC
 NO_OPTIONS_SORT=	yes
 
-FORT_DESC=		Fortran language support
 OBJC_DESC=		Objective-C language support
 TESTSUITE_DESC=		Activate test support
 ALLSTAGES_DESC=		Build compiler with itself (twice, brings in libcc1)
@@ -113,7 +112,7 @@ DISTFILES=	\
    ada-bootstrap.x86_64.freebsd.100B.tar.bz2:boot
 .endif
 
-.if ${PORT_OPTIONS:MFORT} && !${PORT_OPTIONS:MBOOTSTRAP}
+.if ${PORT_OPTIONS:MFORTRAN} && !${PORT_OPTIONS:MBOOTSTRAP}
 LANGS+=		fortran
 EXTRA_CONFIG+=	--enable-libquadmath
 .else
@@ -238,7 +237,7 @@ test-c:
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c
 
 test-fortran:
-.  if ${PORT_OPTIONS:MFORT}
+.  if ${PORT_OPTIONS:MFORTRAN}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-fortran
 .  endif
