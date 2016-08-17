@@ -271,12 +271,12 @@ do-fmtutil-$F:
 	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c || ${TRUE}
 	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR} || ${TRUE}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
-_PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
+_PLIST_DIRS+=${TEX_FORMAT_${F:tu}_DIRS}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
 . endfor
 post-install-script: do-fmtutil
 PLIST_FILES=	${_PLIST_FILES:O:u}
-PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} ${TEXMFVARDIR}/web2c
+PLIST_DIRS=	${_PLIST_DIRS:O:u} ${TEXMFVARDIR}/web2c
 .endif
 
 .if !empty(USE_TEX:Mupdmap)
