@@ -34,6 +34,9 @@ OPTIONS_DEFINE=		SVN
 
 SVN_DESC=		Use Subversion instead of CVS
 
+DEPRECATED=	Not supported upstream. Please upgrade to net-mgmt/rancid3
+EXPIRATION_DATE=	2016-10-01
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}
