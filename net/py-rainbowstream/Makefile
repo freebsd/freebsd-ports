@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainbowstream
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Smart and nice Twitter client on terminal
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow \
