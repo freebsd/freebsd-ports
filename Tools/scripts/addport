@@ -152,7 +152,7 @@ my @commands;
 my $passenv = "";
 if ($addlchk && -f $portlint) {
 	$passenv = "DISTDIR=\"$distdir\"" if -d $distdir;
-	$passenv = $passenv . " PORTSDIR=\"$tmpdir\"" if !$nomkdir;
+	$passenv = $passenv . " PORTSDIR=\"$portsdir\"" if !$nomkdir;
 	push(@commands, "$make $passenv clean check-categories");
 	push(@commands, "$portlint $plint_args");
 	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-A' checksum") if !$nofetch;
