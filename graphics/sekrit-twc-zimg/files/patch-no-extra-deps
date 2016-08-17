@@ -1,6 +1,6 @@
---- Makefile.am.orig	2016-01-22 18:12:28 UTC
+--- Makefile.am.orig	2016-08-17 04:57:11 UTC
 +++ Makefile.am
-@@ -197,35 +197,16 @@ endif # TESTAPP
+@@ -242,29 +242,12 @@ endif # TESTAPP
  if UNIT_TEST
  TESTS = test/unit_test
  
@@ -9,42 +9,46 @@
  
 -test_libmusl_m_la_CFLAGS = $(AM_CFLAGS) -Wno-sign-compare -Wno-unused-variable -Wno-unused-but-set-variable
 -
--test_libmusl_m_la_SOURCES = test/extra/musl-libm/__cos.c \
--							test/extra/musl-libm/__rem_pio2.c \
--							test/extra/musl-libm/__rem_pio2_large.c \
--							test/extra/musl-libm/__sin.c \
--							test/extra/musl-libm/cos.c \
--							test/extra/musl-libm/fpu_wrapper.c \
--							test/extra/musl-libm/libm.h \
--							test/extra/musl-libm/mymath.h \
--							test/extra/musl-libm/pow.c \
--							test/extra/musl-libm/powf.c \
--							test/extra/musl-libm/sin.c
+-test_libmusl_m_la_SOURCES = \
+-	test/extra/musl-libm/__cos.c \
+-	test/extra/musl-libm/__rem_pio2.c \
+-	test/extra/musl-libm/__rem_pio2_large.c \
+-	test/extra/musl-libm/__sin.c \
+-	test/extra/musl-libm/cos.c \
+-	test/extra/musl-libm/fpu_wrapper.c \
+-	test/extra/musl-libm/libm.h \
+-	test/extra/musl-libm/mymath.h \
+-	test/extra/musl-libm/pow.c \
+-	test/extra/musl-libm/powf.c \
+-	test/extra/musl-libm/sin.c
 -
- test_unit_test_CPPFLAGS = -I$(srcdir)/src/zimg \
- 						  -I$(srcdir)/test \
--						  -I$(srcdir)/test/extra \
--						  -I$(srcdir)/test/extra/googletest/googletest/include
-+						  -I$(srcdir)/test/extra
+ test_unit_test_CPPFLAGS = \
+ 	-I$(srcdir)/src/zimg \
+ 	-I$(srcdir)/test \
+-	-I$(srcdir)/test/extra \
+-	-I$(srcdir)/test/extra/googletest/googletest/include
++	-I$(srcdir)/test/extra
  
- test_unit_test_SOURCES = test/main.cpp \
- 						 test/colorspace/colorspace_test.cpp \
- 						 test/depth/depth_convert_test.cpp \
- 						 test/depth/dither_test.cpp \
--						 test/extra/sha1/config.h \
--						 test/extra/sha1/sha1.c \
--						 test/extra/sha1/sha1.h \
- 						 test/graph/audit_buffer.cpp \
- 						 test/graph/audit_buffer.h \
- 						 test/graph/basic_filter_test.cpp \
-@@ -247,7 +228,6 @@ test_unit_test_SOURCES += test/colorspac
- 
+ test_unit_test_SOURCES = \
+ 	test/main.cpp \
+@@ -272,9 +255,6 @@ test_unit_test_SOURCES = \
+ 	test/colorspace/colorspace_test.cpp \
+ 	test/depth/depth_convert_test.cpp \
+ 	test/depth/dither_test.cpp \
+-	test/extra/sha1/config.h \
+-	test/extra/sha1/sha1.c \
+-	test/extra/sha1/sha1.h \
+ 	test/graph/audit_buffer.cpp \
+ 	test/graph/audit_buffer.h \
+ 	test/graph/basic_filter_test.cpp \
+@@ -302,7 +282,6 @@ test_unit_test_SOURCES += \
  endif #X86SIMD
  
--test_unit_test_LDADD = test/extra/googletest/googletest/lib/libgtest.la \
--						test/libmusl_m.la \
-+test_unit_test_LDADD = -lgtest -lmd -lpthread \
- 						libzimg.la
+ test_unit_test_LDADD = \
+-	test/extra/googletest/googletest/lib/libgtest.la \
+-	test/libmusl_m.la \
++	-lgtest -lmd -lpthread \
+ 	libzimg_internal.la
  endif # UNIT_TEST
 --- configure.ac.orig	2016-05-08 20:08:38 UTC
 +++ configure.ac
@@ -59,55 +63,42 @@
  
 --- test/graph/filter_validator.cpp.orig	2016-01-22 18:12:28 UTC
 +++ test/graph/filter_validator.cpp
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,14 @@
  #include "gtest/gtest.h"
  
  extern "C" {
--  #include "sha1/sha1.h"
++#ifdef _WIN32
+   #include "sha1/sha1.h"
++#else // assume openssl or libmd
 +  #include <sha.h>
++  #define SHA1Init SHA1_Init
++  #define SHA1Update SHA1_Update
++  #define SHA1Final SHA1_Final
++#endif
  }
  
  #include "audit_buffer.h"
-@@ -35,14 +35,14 @@ void hash_buffer(const AuditBuffer<T> &b
- 	auto image_buffer = buf.as_read_buffer();
- 	SHA1_CTX sha_ctx;
- 
--	SHA1Init(&sha_ctx);
-+	SHA1_Init(&sha_ctx);
- 
- 	for (unsigned i = 0; i < height; ++i) {
- 		const unsigned char *ptr = zimg::graph::static_buffer_cast<const unsigned char>(image_buffer[p])[i];
--		SHA1Update(&sha_ctx, ptr, width * sizeof(T));
-+		SHA1_Update(&sha_ctx, ptr, width * sizeof(T));
- 	}
- 
--	SHA1Final(digest, &sha_ctx);
-+	SHA1_Final(digest, &sha_ctx);
- }
- 
- std::string hash_to_str(const unsigned char digest[20])
---- test/main.cpp.orig	2016-01-22 18:12:28 UTC
+--- test/main.cpp.orig	2016-08-17 04:57:11 UTC
 +++ test/main.cpp
-@@ -3,22 +3,11 @@
- #include "common/libm_wrapper.h"
+@@ -1,8 +1,12 @@
+ #include <cstdio>
+ #include <cstdlib>
+-#include "common/libm_wrapper.h"
  
  #include "gtest/gtest.h"
--#include "musl-libm/mymath.h"
--
--void wrap_libm()
--{
--	_zimg_sin = mysin;
--	_zimg_cos = mycos;
--	_zimg_pow = mypow;
--	_zimg_powf = mypowf;
--}
++
++#if !defined(_WIN32) && !defined(__GLIBC__)
++#define wrap_libm() // assume openlibm
++#else
++#include "common/libm_wrapper.h"
+ #include "musl-libm/mymath.h"
+ 
+ namespace {
+@@ -16,6 +20,7 @@ void wrap_libm()
+ }
+ 
+ } // namespace
++#endif
+ 
  
  int main(int argc, char **argv)
- {
- 	int ret;
- 
--	wrap_libm();
--
- 	::testing::InitGoogleTest(&argc, argv);
- 	ret = RUN_ALL_TESTS();
- 
