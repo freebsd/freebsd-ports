@@ -1,0 +1,23 @@
+Wt (pronounced as witty) is a C++ library for developing web applications.
+
+The API is widget-centric and uses well-tested patterns of desktop GUI
+development tailored to the web. To the developer, it offers abstraction of
+many web-specific implementation details, including client-server protocols
+(HTTP, Ajax, WebSockets), and frees the developer from tedious JavaScript
+manipulations of HTML and dealing with cross-browser issues. Instead, with Wt,
+you can focus on actual functionality with a rich set of feature-complete
+widgets. Unlike old-school page-based frameworks or current-day single-page
+JavaScript "frameworks", Wt allows you to create stateful applications that are
+at the same time highly interactive (using WebSockets and Ajax for everything)
+but still support plain HTML browsers or web crawlers using automatic graceful
+degradation or progressive enhancement. Things that are natural and simple
+with Wt would require an impractical amount of development effort otherwise:
+switching widgets using animations, while retaining clean URLs and browser
+navigation functions, or having a persistent chat widget open throughout the
+entire application, that even works in legacy browsers like Microsoft Internet
+Explorer 6.
+
+The library comes with an application server that acts as a stand-alone
+Http(s)/WebSocket server or integrates through FastCGI with other web servers.
+
+WWW: http://www.webtoolkit.eu/wt
