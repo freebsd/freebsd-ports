@@ -1,0 +1,39 @@
+MAKE_ARGS=	BUILD_CLIENT=1 \
+		BUILD_SERVER=1 \
+		BUILD_GAME_SO=1 \
+		BUILD_GAME_QVM=0 \
+		TOOLS_CC=${CC} \
+		BUILD_BASEGAME=1 \
+		USE_CURL=1 \
+		USE_CURL_DLOPEN=0 \
+		USE_INTERNAL_LIBS=0 \
+		USE_OPENAL=1 \
+		USE_OPENAL_DLOPEN=0 \
+		USE_INTERNAL_SPEEX=0 \
+		USE_INTERNAL_ZLIB=0 \
+		USE_INTERNAL_JPEG=0 \
+		CLIENT_LIBS+="-L${PREFIX}/lib -lSDL2 -lcurl -lopenal -lopus" \
+		USE_INTERNAL_OGG=0 \
+		USE_INTERNAL_OPUS=0 \
+		USE_CODEC_VORBIS=0 \
+		USE_CODEC_OPUS=0 \
+		USE_FREETYPE=1 \
+		USE_LOCAL_HEADERS=0 \
+		V=1 \
+		OPTIMIZEVM="" \
+		OPTIMIZE="" \
+		COPYDIR="${COPYDIR}"
+
+sp:
+	${MAKE} -C SP ${MAKE_ARGS}
+
+sp-install:
+	mkdir -p ${COPYDIR}
+	${MAKE} -C SP ${MAKE_ARGS} copyfiles
+
+mp:
+	${MAKE} -C MP ${MAKE_ARGS}
+
+mp-install:
+	mkdir -p ${COPYDIR}
+	${MAKE} -C MP ${MAKE_ARGS} copyfiles
