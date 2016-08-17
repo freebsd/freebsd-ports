@@ -10,11 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP/FTP downloader with a nice GUI
 
+LICENSE=	GPLv2+
+
 WRKSRC_SUBDIR=	src
 
 USES=		alias dos2unix
 USE_WX=		2.8
-WX_UNICODE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	MultiGet
 
@@ -35,9 +36,7 @@ post-patch:
 		 ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} MultiGet \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
-	(cd ${WRKSRC}/.. && ${INSTALL_DATA} MultiGet.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_PROGRAM} ${WRKSRC}/MultiGet ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/../MultiGet.png ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
