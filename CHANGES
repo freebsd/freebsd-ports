@@ -10,6 +10,24 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160317:
+AUTHOR: mat@FreeBSD.org
+
+  This adds the possibility to use regular expressions for the makeplist stage
+  of the PLIST_SUB life.
+
+  From time to time, the values are too generic, and they get in the way of
+  other stuff.
+
+  This adds the possibility to have a `VAR_regex=regex` that will be used
+  instead of the `VAR=string` to search for possible replacements.
+
+  For example, in lang/perl5*, there is PERL_ARCH=mach, which will get replaced
+  in paths if a file is called, say "machine", will end up being
+  "%%PERL_ARCH%%ine".  Adding PERL_ARCH_regex="\bmach\b" will ensure only full
+  words are replaced, so machine will stay machine, but "lib/mach/foo "will
+  still be replaced by "lib/%%PERL_ARCH%%/foo".
+
 20160803:
 AUTHOR: mat@FreeBSD.org
 
