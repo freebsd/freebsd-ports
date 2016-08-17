@@ -3,8 +3,9 @@
 
 PORTNAME=	libzbxpgsql
 PORTVERSION=	1.0.0
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
+MASTER_SITES=	http://s3.cavaliercoder.com/libzbxpgsql/
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Zabbix agent module for comprehensive monitoring of PostgreSQL servers
@@ -13,9 +14,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${NONEXISTENT}:net-mgmt/zabbix3-agent:patch
 RUN_DEPENDS=	${LOCALBASE}/sbin/zabbix_agentd:net-mgmt/zabbix3-agent
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	cavaliercoder
 
 USES=		autoreconf gmake libtool pgsql
 GNU_CONFIGURE=	yes
