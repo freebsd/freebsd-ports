@@ -1,13 +1,13 @@
 bin/uhub
-%%SQLITE%%bin/uhub-passwd
+bin/uhub-passwd
 @sample(,uhub,0640) %%ETCDIR%%/motd.txt.sample
 @sample(,uhub,0640) %%ETCDIR%%/rules.txt.sample
 @sample(,uhub,0640) %%ETCDIR%%/uhub.conf.sample
 @sample(,uhub,0640) %%ETCDIR%%/users.conf.sample
 lib/uhub/mod_auth_simple.so
-%%SQLITE%%lib/uhub/mod_auth_sqlite.so
+lib/uhub/mod_auth_sqlite.so
 lib/uhub/mod_chat_history.so
-%%SQLITE%%lib/uhub/mod_chat_history_sqlite.so
+lib/uhub/mod_chat_history_sqlite.so
 lib/uhub/mod_chat_only.so
 lib/uhub/mod_example.so
 lib/uhub/mod_logging.so
