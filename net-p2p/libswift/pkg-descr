@@ -1,0 +1,9 @@
+LibSwift is the reference UDP-based implementation of IETF RFC7574,
+a multi-peer transport layer protocol. Its mission is to disseminate
+content among a swarm of peers.
+
+Given a root hash, the data is received from whatever source available
+and data integrity is checked cryptographically with Merkle hash
+trees.
+
+WWW: https://tools.ietf.org/html/rfc7574
