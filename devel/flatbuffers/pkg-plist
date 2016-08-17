@@ -1,5 +1,7 @@
 bin/flatc
+include/flatbuffers/code_generators.h
 include/flatbuffers/flatbuffers.h
+include/flatbuffers/grpc.h
 include/flatbuffers/hash.h
 include/flatbuffers/idl.h
 include/flatbuffers/reflection.h
