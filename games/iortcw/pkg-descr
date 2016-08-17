@@ -1,0 +1,12 @@
+Return to Castle Wolfenstein is a military- and occult-themed
+first-person shooter game in a Second World War setting, originally
+released in 2001.  It is a sequel to Wolfenstein 3D.
+
+This port contains the iortcw game engines for the single-player
+campaign and multiplayer, based on ioquake3 and the GPL source
+releases of RtCW.
+
+Return to Castle Wolfenstein requires non-distributable game data
+files, which you have to install manually (see pkg-message).
+
+WWW: https://github.com/iortcw/iortcw/
