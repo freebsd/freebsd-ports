@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock is a light and eye-candy dock
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
@@ -27,9 +27,9 @@ USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
 USES=		cmake gettext pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
-CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
-CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=man
+CMAKE_ARGS=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig" \
+		-DROOT_PREFIX:PATH=${STAGEDIR} \
+		-DCMAKE_INSTALL_MANDIR:PATH=man \
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -41,6 +41,6 @@ post-patch:
 	     s|%%LOCALBASE%%|${LOCALBASE}|g;'
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgldi.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgldi.so
 
 .include <bsd.port.mk>
