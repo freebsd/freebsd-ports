@@ -3,6 +3,7 @@ bin/rancid-run
 lib/rancid/acos.pm
 lib/rancid/arbor.pm
 lib/rancid/ciscowlc.pm
+%%COMWARE%%lib/rancid/cmw.pm
 lib/rancid/dell.pm
 lib/rancid/eos.pm
 lib/rancid/foundry.pm
@@ -30,6 +31,7 @@ libexec/rancid/clogin
 libexec/rancid/complogin
 libexec/rancid/control_rancid
 libexec/rancid/cssrancid
+%%COMWARE%%libexec/rancid/cmwlogin
 libexec/rancid/dllogin
 libexec/rancid/elogin
 libexec/rancid/erancid
