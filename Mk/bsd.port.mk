@@ -1404,10 +1404,6 @@ USES+=	gnome
 USES+=	mate
 .endif
 
-.if defined(USE_BDB)
-USES+=bdb:${USE_BDB}
-.endif
-
 .if defined(USE_MYSQL)
 USE_MYSQL:=		${USE_MYSQL:N[yY][eE][sS]:Nclient}
 .if defined(WANT_MYSQL_VER)
@@ -4460,11 +4456,6 @@ generate-plist: ${WRKDIR}
 	@if [ -f ${PLIST} ]; then \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
-
-# Keep PLIST_DIRSTRY as compatibility
-.for dir in ${PLIST_DIRS} ${PLIST_DIRSTRY}
-	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dir ,' >> ${TMPPLIST}
-.endfor
 
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
