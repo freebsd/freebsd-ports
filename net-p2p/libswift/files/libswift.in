@@ -1,0 +1,49 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: libswift
+# REQUIRE: LOGIN NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# libswift_enable (bool):   Set to NO by default.
+# Set it to YES to enable swift.
+#
+# libswift_user   (user):   Set to www by default.
+# libswift_group  (group):  Set to www by default.
+# libswift_port   (num):    Port for daemon to listen on, 7777 by default.
+# libswift_dir    (string): Optional full path to streaming content directory.
+
+. /etc/rc.subr
+
+name=libswift
+rcvar=libswift_enable
+
+load_rc_config ${name}
+
+# defaults
+libswift_enable=${libswift_enable:-"NO"}
+libswift_user=${libswift_user:-"www"}
+libswift_port=${libswift_port:-"7777"}
+libswift_dir=${libswift_dir:-"/var/db/${name}"}
+libswift_options=${libswift_options:-" --dir ${libswift_dir} --listen ${libswift_port}"}
+
+# daemon
+
+libswift_pidfile="%%SWIFT_PIDDIR%%${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+
+command=/usr/sbin/daemon
+command_args=" -c -f -p ${libswift_pidfile} ${procname} ${libswift_flags} ${libswift_options}"
+
+start_precmd=libswift_precmd
+
+libswift_precmd()
+{
+	# create empty pidfile with correct permissions
+	install -o ${libswift_user} /dev/null ${libswift_pidfile}
+}
+
+run_rc_command "$1"
