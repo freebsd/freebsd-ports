@@ -7,8 +7,7 @@ include/libspectre/spectre-status.h
 include/libspectre/spectre-version.h
 include/libspectre/spectre.h
 lib/libspectre.a
-lib/libspectre.la
 lib/libspectre.so
 lib/libspectre.so.1
-lib/libspectre.so.1.1.7
+lib/libspectre.so.1.1.8
 libdata/pkgconfig/libspectre.pc
