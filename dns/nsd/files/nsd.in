@@ -11,6 +11,18 @@
 #
 # nsd_enable="YES"
 #
+# You could set alternative config with
+#
+# nsd_config="/path/to/config"
+#
+# Multiple profiles are supported with
+#
+# nsd_profiles="name1 name2"
+# nsd_name1_enable="YES"
+# nsd_name1_config="/path/to/config1"
+# nsd_name2_enable="YES"
+# nsd_name2_config="/path/to/config2"
+#
 
 . /etc/rc.subr
 
@@ -19,16 +31,77 @@ rcvar=nsd_enable
 
 # read settings, set default values
 load_rc_config "${name}"
-: ${nsd_enable="NO"}
+: ${nsd_enable:="NO"}
+: ${nsd_config:=%%ETCDIR%%/nsd.conf}
 
-config=${nsd_config:=%%ETCDIR%%/nsd.conf}
-required_files=${config}
-pidfile=`%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile ${config}`
+# Set PID file
+_pidprefix=/var/run/${name}
+_cfgpidfile=$(%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile ${nsd_config})
+pidfile=${_cfgpidfile:-${_pidprefix}.pid}
+
+required_files=${nsd_config}
 command="%%PREFIX%%/sbin/${name}"
-command_args="-c ${required_files}"
+command_args="-c ${nsd_config} -P ${pidfile}"
 extra_commands="reload"
 
-load_rc_config $name
+load_rc_config "${name}"
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${nsd_profiles}" != "x" ]; then
+		eval nsd_config="\${nsd_${profile}_config:-%%ETCDIR%%/nsd-${profile}.conf}"
+		if [ "x${nsd_config}" = "x" ]; then
+			echo "You must define a configuration file (nsd_${profile}_config)"
+			exit 1
+		fi
+		_cfgpidfile=$(%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile ${nsd_config})
+		_defaultpidfile=$(%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile /dev/null)
+		# Replace empty or default value with profile-based
+		if [ "x${_cfgpidfile}" = "x" -o "x${_cfgpidfile}" = "x${_defaultpidfile}" ] ; then 
+			pidfile=${_pidprefix}-${profile}.pid
+		else
+			pidfile=${_cfgpidfile}
+		fi
+		required_files="${nsd_config}"
+		eval nsd_enable="\${nsd_${profile}_enable:-${nsd_enable}}"
+		command_args="-c ${nsd_config} -P ${pidfile}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${nsd_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${nsd_profiles}; do
+			eval _enable="\${nsd_${profile}_enable}"
+			case "x${_enable:-${nsd_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=nsd_enable
+				else
+					_var=nsd_"${profile}"_enable
+				fi
+				echo "Bad value" \
+				    "'${_enable:-${nsd_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> nsd profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/nsd $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
 
 run_rc_command "$1"
-
