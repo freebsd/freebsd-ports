@@ -1,6 +1,3 @@
-%%JAVAJARDIR%%/hsqldb.jar
-%%JAVAJARDIR%%/hsqljdbc.jar
-%%JAVAJARDIR%%/sqltool.jar
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-noframe.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/constant-values.html
@@ -340,3 +337,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/src/org/hsqldb/test/TestBase.java
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/testrun/sqltool/sqljrt.sql
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/testrun/sqltool/sqlpsm.sql
+%%JAVAJARDIR%%/hsqldb.jar
+%%JAVAJARDIR%%/hsqljdbc.jar
+%%JAVAJARDIR%%/sqltool.jar
