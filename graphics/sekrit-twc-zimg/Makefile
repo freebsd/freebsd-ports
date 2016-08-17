@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zimg
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${GH_ACCOUNT}-
@@ -23,18 +23,24 @@ USES=		autoreconf compiler:c++11-lib gmake libtool pathfix
 EXTRACT_AFTER_ARGS=	--exclude test/extra
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --enable-testapp
+CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
+CPPFLAGS+=	${CPPFLAGS_${CHOSEN_COMPILER_TYPE}_${COMPILER_VERSION}}
+CPPFLAGS_clang_34=	-include x86intrin.h # revert 575bd93
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=	EXAMPLES TEST
 
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
 OPTIONS_DEFAULT_amd64=	SIMD
 OPTIONS_DEFAULT_i386=	SIMD # runtime detection
+
+EXAMPLES_CONFIGURE_ENABLE=	example
+EXAMPLES_MAKE_ARGS=	exampledir="${EXAMPLESDIR}"
 
 SIMD_CONFIGURE_ENABLE=	x86simd
 
@@ -47,7 +53,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/g' \
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's/-O2 //' \
-		-e '/zimg-test/ { s/+=/=/; s/^noinst_/bin_/; } ' \
+		-e '/dist_doc_DATA/d' \
 		${WRKSRC}/Makefile.am
 
 pre-install-TEST-on: do-test
