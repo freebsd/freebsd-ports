@@ -1604,13 +1604,16 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
 # This is used for check-stagedir.sh and check_leftover.sh to replace
 # directories/files with PLIST_SUB %%KEYS%%.
+# Remove VARS which values are PLIST_SUB_SED_MIN long or shorter
+PLIST_SUB_SED_MIN?=	2
+PLIST_SUB_SED_tmp1= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g}
 #  Remove VARS that are too generic
 #  Remove empty values
 #  Remove @comment values
+PLIST_SUB_SED_tmp2= ${PLIST_SUB_tmp1:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:NRESETPREFIX=*:N*="":N*="@comment*}
 #  Remove quotes
 #  Replace . with \. for later sed(1) usage
-PLIST_SUB_SED_MIN?=	2
-PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:NRESETPREFIX=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
+PLIST_SUB_SED?= ${PLIST_SUB_SED_tmp2:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
 # kludge to strip trailing whitespace from CFLAGS;
 # sub-configure will not # survive double space
