@@ -1,0 +1,13 @@
+--- Makefile.orig	2016-08-16 21:09:03 UTC
++++ Makefile
+@@ -121,8 +121,8 @@ endif
+ 	$(Q)$(MAKE) -f $(srctree)/tools/build/Makefile.build dir=$(patsubst %/,%,$(dir $*)) obj=$(notdir $*)
+ 
+ lib/lkl.o:
+-	$(Q)$(MAKE) -C ../.. ARCH=lkl $(KOPT) defconfig
+-	$(Q)$(MAKE) -C ../.. ARCH=lkl $(KOPT) install INSTALL_PATH=$(CURDIR)
++	$(Q)$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) defconfig
++	$(Q)$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) install INSTALL_PATH=$(CURDIR)
+ 
+ liblkl.a: lib/lkl-in.o lib/lkl.o
+ 	$(QUIET_AR)$(AR) -rc $@ $^
