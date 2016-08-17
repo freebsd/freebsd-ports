@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql++
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/ \
 		T32.TecNik93.com/ports/others_ports/${PORTNAME}/sources/
@@ -12,8 +11,7 @@ PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 MAINTAINER=	dudu@dudu.ro
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
-USES=		gmake
-USE_MYSQL=	yes
+USES=		gmake mysql
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
 USE_LDCONFIG=	yes
@@ -26,10 +24,12 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.h ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${STAGEDIR}${EXAMPLESDIR}
