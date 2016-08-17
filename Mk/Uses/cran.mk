@@ -78,7 +78,11 @@ cran-auto-plist:
 .endif
 
 .if ${cran_ARGS:Mcompiles}
+_USES_install+= 755:cran-strip
+cran-strip:
+	${FIND} ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -name '*.so' -exec ${STRIP_CMD} {} +
 .include "${PORTSDIR}/math/R/compiler.mk"
+.include "${USESDIR}/fortran.mk"
 .endif
 
 .endif #_INCLUDE_USES_CRAN_MK
