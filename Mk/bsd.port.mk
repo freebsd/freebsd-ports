@@ -4457,6 +4457,10 @@ generate-plist: ${WRKDIR}
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
 
+.for dir in ${PLIST_DIRS}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dir ,' >> ${TMPPLIST}
+.endfor
+
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
 	@${ECHO_CMD} "@postexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
