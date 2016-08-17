@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG \
 		http://downloads.puppetlabs.com/facter/
