@@ -13,6 +13,8 @@ COMMENT=	Fax software
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		receiving fax does not work (Bugs No. 200922)
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:print/afm
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libjbig.so:graphics/jbigkit
