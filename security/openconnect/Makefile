@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	7.06
-PORTREVISION=	1
+PORTVERSION=	7.07
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -21,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--without-stoken --without-openssl-version-check
-USES=		cpe gmake libtool pkgconfig python:build
+USES=		cpe gmake iconv libtool pkgconfig python:build ssl
 CPE_VENDOR=	infradead
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -36,7 +35,6 @@ PROXY_CONFIGURE_WITH=	libproxy
 GNUTLS_DESC=		Use GnuTLS instead of OpenSSL (experimental)
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
-GNUTLS_USE_OFF=		OPENSSL=yes
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
