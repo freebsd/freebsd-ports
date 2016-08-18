@@ -196,7 +196,6 @@ lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafuser.so
 lib/syslog-ng/libafamqp.so
-lib/syslog-ng/libafmongodb.so
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libconfgen.so
 lib/syslog-ng/libsystem-source.so
