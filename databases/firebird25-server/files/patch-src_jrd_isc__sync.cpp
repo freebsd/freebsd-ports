@@ -1,8 +1,8 @@
---- src/jrd/isc_sync.cpp	2011-08-30 08:48:04.000000000 -0500
-+++ src/jrd/isc_sync.cpp	2011-10-19 15:00:50.000000000 -0500
-@@ -320,7 +320,7 @@
+--- src/jrd/isc_sync.cpp.orig	2016-06-30 09:34:54 UTC
++++ src/jrd/isc_sync.cpp
+@@ -677,7 +677,7 @@ namespace {
  	public:
- 		const static int N_FILES = 8;
+ 		const static int N_FILES = 128;
  		const static int N_SETS = 256;
 -#if defined(DEV_BUILD)
 +#if defined(DEV_BUILD) || defined(FREEBSD)
