@@ -18,6 +18,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
@@ -55,8 +56,6 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
 		--datadir=${PREFIX}/share/syslog-ng/ 
-
-BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
