@@ -101,12 +101,12 @@ index 524e69b..f3062a2 100644
 --- nest/route.h
 +++ nest/route.h
 @@ -361,7 +361,8 @@ typedef struct eattr {
- #define EAP_RIP 2			/* RIP */
  #define EAP_OSPF 3			/* OSPF */
  #define EAP_KRT 4			/* Kernel route attributes */
--#define EAP_MAX 5
-+#define EAP_FIREWALL 5			/* Abstact firewall interface */
-+#define EAP_MAX 6
+ #define EAP_BABEL 5			/* Babel attributes */
+-#define EAP_MAX 6
++#define EAP_FIREWALL 6			/* Abstact firewall interface */
++#define EAP_MAX 7
  
  #define EA_CODE(proto,id) (((proto) << 8) | (id))
  #define EA_PROTO(ea) ((ea) >> 8)

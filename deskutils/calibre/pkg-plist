@@ -899,9 +899,7 @@ lib/calibre/calibre/gui2/preferences/coloring.py
 lib/calibre/calibre/gui2/preferences/columns.py
 lib/calibre/calibre/gui2/preferences/columns_ui.py
 lib/calibre/calibre/gui2/preferences/conversion.py
-lib/calibre/calibre/gui2/preferences/conversion_ui.py
 lib/calibre/calibre/gui2/preferences/create_custom_column.py
-lib/calibre/calibre/gui2/preferences/create_custom_column_ui.py
 lib/calibre/calibre/gui2/preferences/device_debug.py
 lib/calibre/calibre/gui2/preferences/device_user_defined.py
 lib/calibre/calibre/gui2/preferences/email_ui.py
@@ -936,7 +934,6 @@ lib/calibre/calibre/gui2/preferences/texture_chooser.py
 lib/calibre/calibre/gui2/preferences/toolbar.py
 lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/tweaks.py
-lib/calibre/calibre/gui2/preferences/tweaks_ui.py
 lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/progress_indicator/__init__.py
 lib/calibre/calibre/gui2/save.py

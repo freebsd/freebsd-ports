@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Interchange6
-PORTVERSION=	0.202
+PORTVERSION=	0.203
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,7 +31,9 @@ BUILD_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
 		p5-Dancer2-Plugin-Auth-Extensible>=0.600:security/p5-Dancer2-Plugin-Auth-Extensible \
 		p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC>=0.600:security/p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
+TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-DBIx-Class-Helpers>=0:databases/p5-DBIx-Class-Helpers \
+		p5-Test-WWW-Mechanize-PSGI>=0:devel/p5-Test-WWW-Mechanize-PSGI
 
 NO_ARCH=	yes
 USES=		perl5

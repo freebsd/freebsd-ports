@@ -14,5 +14,7 @@ into the logs in %%LOGDIR%%
 TeamSpeak DNS server (tsdns) is not handled by this port. If you
 need it, please download and install it manually.
 
-Version 3.0.13 adds ipv6 support, if ipv6 is not desired, it can
-be removed by added voice_ip=0.0.0.0 and filetransfer_ip=0.0.0.0
+Version 3.0.13 adds ipv6 support. To disable ipv6, add 'voice_ip=0.0.0.0'
+and 'filetransfer_ip=0.0.0.0' to
+%%ETCDIR%%/ts3server.ini
+The default value is 0.0.0.0 / 0::0, which activates IPv6.

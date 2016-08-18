@@ -1,4 +1,4 @@
-TIMESTAMP = 1470600877
+TIMESTAMP = 1471018172
 SHA256 (nginx-1.11.3.tar.gz) = 4a667f40f9f3917069db1dea1f2d5baa612f1fa19378aadf71502e846a424610
 SIZE (nginx-1.11.3.tar.gz) = 938045
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
@@ -123,8 +123,8 @@ SHA256 (gabor-nginx-x-rid-header-0daa3cc_GH0.tar.gz) = de784142d867a35ecc5443fa3
 SIZE (gabor-nginx-x-rid-header-0daa3cc_GH0.tar.gz) = 2711
 SHA256 (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 958bd8de773601d8d3138501cc4be0420f1c818a3987a70cc9c0023371e432cf
 SIZE (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 11477
-SHA256 (nginx-njs-f71f005_GH0.tar.gz) = d1051a0ef8e6f99b51ed02cf93d8255fad03b6de11fc5eb147c4dcb3e7094b9a
-SIZE (nginx-njs-f71f005_GH0.tar.gz) = 164982
+SHA256 (nginx-njs-0f11ace_GH0.tar.gz) = 364bd2728c3ee3f5115a0a0115e81639b1c8eca501ac9a9a12156d0cd216cc26
+SIZE (nginx-njs-0f11ace_GH0.tar.gz) = 173651
 SHA256 (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = c949d4be6f3442c8e2937046448dc8d8def25c0e0fa6f4e805144cea45eabe80
 SIZE (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = 11280
 SHA256 (google-ngx_brotli-ada972b_GH0.tar.gz) = d3d0e22a2629cd017280e05bd3bf05aa7b5c820ebe8c79932ce161243911e776

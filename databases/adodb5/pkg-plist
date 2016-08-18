@@ -158,7 +158,6 @@
 %%DATADIR%%/xsl/convert-0.2-0.3.xsl
 %%DATADIR%%/xsl/remove-0.2.xsl
 %%DATADIR%%/xsl/remove-0.3.xsl
-%%DATADIR%%/x.php
 %%TESTS%%%%DATADIR%%/tests/benchmark.php
 %%TESTS%%%%DATADIR%%/tests/client.php
 %%TESTS%%%%DATADIR%%/tests/pdo.php

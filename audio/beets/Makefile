@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beets
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.19
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -26,7 +26,7 @@ USE_PYTHON=	autoplist distutils
 
 PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
 
-OPTIONS_DEFINE=	ACOUSTICBRAINZ BADFILES BPD CHROMA DISCOGS ECHONEST EMBYUPDATE \
+OPTIONS_DEFINE=	ACOUSTICBRAINZ BADFILES BEATPORT BPD CHROMA DISCOGS EMBYUPDATE \
 		FETCHART FFMPEG IMAGEMAGICK IPFS LASTFM LASTIMPORT LYRICS \
 		LYRICS_GOOGLE MPDSTATS METASYNC_DBUS PLEXUPDATE REPLAYGAIN \
 		SPOTIFY THUMBNAILS WEB WEB_CORS
@@ -34,10 +34,10 @@ OPTIONS_DEFAULT=
 
 ACOUSTICBRAINZ_DESC=	AcousticBrainz Plugin
 BADFILES_DESC=	Bad Files Plugin
+BEATPORT_DESC=	Beatport Catalog Autotagging Support
 BPD_DESC=	MPD Compatible Music Player Plugin
 CHROMA_DESC=	Audio Fingerprinting Plugin
 DISCOGS_DESC=	Discogs Search Plugin
-ECHONEST_DESC=	Echo Nest Plugin
 EMBYUPDATE_DESC=	Emby Update Plugin
 FETCHART_DESC=	Cover Art Fetch Plugin
 IPFS_DESC=	IPFS Plugin
@@ -58,10 +58,11 @@ WEB_CORS_DESC=		Cross-origin resource sharing for the Web plugin
 ACOUSTICBRAINZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests
 BADFILES_RUN_DEPENDS=	flac:audio/flac \
 			mp3val:audio/mp3val
-BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:multimedia/py-gstreamer
+BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+			${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.6.1:www/py-requests-oauthlib
+BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>=0:multimedia/py-gstreamer1
 CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:audio/py-pyacoustid
 DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.1.0:audio/py-discogs-client
-ECHONEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyechonest>=8.0.1:devel/py-pyechonest
 EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:multimedia/ffmpeg

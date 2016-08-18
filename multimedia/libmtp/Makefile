@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.12
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 

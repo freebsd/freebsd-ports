@@ -204,6 +204,7 @@
     SUBDIR += fpc-libxml2
     SUBDIR += freexl
     SUBDIR += fy-aspell
+    SUBDIR += fzf
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
@@ -410,8 +411,6 @@
     SUBDIR += libsoldout
     SUBDIR += libsphinxclient
     SUBDIR += libstree
-    SUBDIR += libtext-charwidth-perl
-    SUBDIR += libtext-wrapi18n-perl
     SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre

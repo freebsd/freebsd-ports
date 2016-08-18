@@ -1,6 +1,6 @@
---- src/network/openssl.c.orig
+--- src/network/openssl.c.orig	2014-08-06 18:56:07 UTC
 +++ src/network/openssl.c
-@@ -106,10 +106,12 @@
+@@ -106,10 +106,12 @@ static const SSL_METHOD* get_ssl_method(
  
  	if (!strcmp(tls_version, "1.0"))
  	  return TLSv1_method();

@@ -1404,7 +1404,6 @@
     SUBDIR += pear-XML_GRDDL
     SUBDIR += pear-twig
     SUBDIR += pebble
-    SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
     SUBDIR += pecl-http1
@@ -1582,6 +1581,7 @@
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
+    SUBDIR += py-django_polymorphic
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv
     SUBDIR += py-djangorestframework-filters
@@ -2300,6 +2300,7 @@
     SUBDIR += wordpress
     SUBDIR += wsdlpull
     SUBDIR += wsmake
+    SUBDIR += wt
     SUBDIR += www6to4
     SUBDIR += wwwoffle
     SUBDIR += xapian-omega

@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-    COMMENT = peer-to-peer network applications
+    COMMENT = Peer-to-peer network applications
 
     SUBDIR += amule
     SUBDIR += amule-devel
@@ -44,6 +44,7 @@
     SUBDIR += liberator
     SUBDIR += libktorrent
     SUBDIR += libpdtp
+    SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar-python
@@ -80,6 +81,7 @@
     SUBDIR += shx
     SUBDIR += sonarr
     SUBDIR += squall
+    SUBDIR += torrentcheck
     SUBDIR += torrentsniff
     SUBDIR += transmission
     SUBDIR += transmission-cli

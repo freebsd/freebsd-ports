@@ -1,6 +1,6 @@
---- src/DBsql.cs.orig
+--- src/DBsql.cs.orig	2006-11-24 17:12:13 UTC
 +++ src/DBsql.cs
-@@ -958,10 +958,10 @@
+@@ -958,10 +958,10 @@ public class CDDatabaseSql
  	private int sql_command_id (string comm)
  	{	
  		IDbCommand command = sqlite_connection.CreateCommand ();

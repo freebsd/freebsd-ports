@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	mono>=3.0:lang/mono
 RUN_DEPENDS=	mono>=3.0:lang/mono
 
+NO_PACKAGE=	The build process downloads external dependencies we cannot provide through ports
+
 USE_GITHUB=	yes
 
 USES=		autoreconf gmake mono pkgconfig

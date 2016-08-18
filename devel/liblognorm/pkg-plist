@@ -5,7 +5,7 @@ include/liblognorm.h
 include/lognorm.h
 include/lognorm-features.h
 include/parser.h
-include/ptree.h
+include/pdag.h
 include/samp.h
 lib/liblognorm.a
 lib/liblognorm.so

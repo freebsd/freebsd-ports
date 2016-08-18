@@ -5,6 +5,71 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160815:
+  AFFECTS: users of mail/rspamd*
+  AUTHOR: vsevolod@FreeBSD.org
+
+  Rspamd users should update Rspamd to 1.3.3 version as soon as possible
+  and ensure that '/usr/local/etc/rspamd/module.d/fuzzy_check.conf` has
+  the line `algorithm = "mumhash";` for the "rspamd.com" rule. The more
+  detailed information could be found on
+  https://rspamd.com/announce/2016/08/15/rspamd-1.3.3.html
+
+20160815:
+  AFFECTS: users of dns/powerdns*
+  AUTHOR: junovitch@FreeBSD.org
+
+  PowerDNS Authoritive Server and Recursor 4.0.0+ introduce significant
+  changes to the configuration files, which need to be handled before
+  restarting the services. As from the Recursor changelog, "The Lua hook
+  infrastructure was redone using LuaWrapper; old scripts will no longer
+  work, but new scripts are easier to write under the new interface."
+  
+20160811:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest stable version 2.4 of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+  With this update, the patch for the OPENSSL_VERSION_NUMBER has been
+  removed. This causes issues with a number of ports. Patches for all
+  ports for which this issues is known can be found on
+  https://wiki.freebsd.org/LibreSSL/Ports#OPENSSL_VERSION_NUMBER
+
+  After upgrading, manually update all packages that depend on any of the
+  libraries provided by LibreSSL (libssl, libcrypto and libtls) since the
+  versions of these libraries have changed. Normally, you can obtain the
+  list of dependent software by running the following command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies. Poudriere and pkg handle this correctly,
+  portmaster and portupgrade users can use the following to rebuild all
+  dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl
+  Portupgrade users:
+      portupgrade -fr security/libressl
+
+20160811:
+  AFFECTS: users of databases/postgresqlNN-server with ICU patch
+  AUTHOR: girgen@FreeBSD.org
+
+  The ICU patch is added to the PostgreSQL-9.5 server. Please note that you
+  must never change between using the ICU patch and using system locale for the
+  same database cluster without REINDEXing all TEXT/VARCHAR columns or
+  dump+restore your database. Failing to do so will result in corrupted indexes
+  due to the differences between the locale definitions. ICU will always be the
+  better choice for speed and correctness. :) 
+
+  Also, the ICU patch used to support other unicode encodings than UTF-8, but
+  that has been removed due to lack of demand and the complicated testing
+  required. If you use another unicode encoding and rely on ICU for collation,
+  please refrain from upgrading the postgresql server and instead contact the
+  author named above.
+
 20160722:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: jkim@FreeBSD.org

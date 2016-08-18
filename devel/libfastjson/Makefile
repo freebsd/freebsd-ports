@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfastjson
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,11 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rsyslog
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
-		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

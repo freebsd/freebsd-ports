@@ -607,4 +607,3 @@ sbin/stonith
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/ccm
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/crm
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat
-/var/run/heartbeat.pid

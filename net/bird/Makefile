@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	bird
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
@@ -17,9 +17,8 @@ USES=		bison gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 
-OPTIONS_DEFINE?=	FIREWALL AGG
+OPTIONS_DEFINE?=	FIREWALL
 FIREWALL_DESC=	Enable firewall protocol
-AGG_DESC=	Enable aggregation protocol (EXPERIMENTAL)
 NO_OPTIONS_SORT=	yes
 
 MAKE_JOBS_UNSAFE=	yes
@@ -31,17 +30,10 @@ SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB?=	VER=""
 
 FIREWALL_EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
-AGG_EXTRA_PATCHES+=	${FILESDIR}/agg_support.patch
 
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${PORT_OPTIONS:MAGG}
-	@${REINPLACE_CMD} -e 's/^\(all_protocols=".*\)"/\1 agg"/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/proto_build(&proto_device);/{G;s/$$/  proto_build(\&proto_agg);/;}' ${WRKSRC}/nest/proto.c
-	@${REINPLACE_CMD} -e '/CONFIG_BFD/{G;s/$$/#undef CONFIG_AGG/;}' ${WRKSRC}/sysdep/autoconf.h.in
-	@${REINPLACE_CMD} -e 's/\(proto_bfd\)/\1, proto_agg/' ${WRKSRC}/nest/protocol.h
-.endif
 .if ${PORT_OPTIONS:MFIREWALL}
 	@${REINPLACE_CMD} -e 's/^\(all_protocols=".*\)"/\1 firewall"/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/proto_build(&proto_device);/{G;s/$$/  proto_build(\&proto_firewall);/;}' ${WRKSRC}/nest/proto.c

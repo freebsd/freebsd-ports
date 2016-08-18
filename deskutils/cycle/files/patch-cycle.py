@@ -1,4 +1,4 @@
---- cycle.py.orig
+--- cycle.py.orig	2005-09-15 03:23:46 UTC
 +++ cycle.py
 @@ -9,6 +9,9 @@
  import os, sys, gettext

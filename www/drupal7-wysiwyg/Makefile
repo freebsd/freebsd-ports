@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wysiwyg
-DISTVERSION=	7.x-2.0
-PORTREVISION=	1
+DISTVERSION=	7.x-2.2
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,23 +11,6 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 #LICENSE from bsd.drupal.mk
 
 USES=		drupal:7,module
-
-OPTIONS_DEFINE=	TINYMCE3 CKEDITOR DOCS
-
-TINYMCE3_DESC=	Install TinyMCE3 Editor
-CKEDITOR_DESC=	Install CKEditor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTINYMCE3}
-RUN_DEPENDS+=	${LOCALBASE}/www/tinymce:www/tinymce3
-PLIST_FILES+=	${DRUPAL_MODLIB}/tinymce
-.endif
-
-.if ${PORT_OPTIONS:MCKEDITOR}
-RUN_DEPENDS+=	${LOCALBASE}/www/ckeditor:www/ckeditor
-PLIST_FILES+=	${DRUPAL_MODLIB}/ckeditor
-.endif
 
 MODULE_FILES=	editors/css/openwysiwyg.css \
 		editors/css/tinymce-2.css \
@@ -77,28 +59,29 @@ MODULE_FILES=	editors/css/openwysiwyg.css \
 		plugins/break/langs/de.js \
 		plugins/break/langs/en.js \
 		plugins/break/langs/es.js \
-		plugins/break.inc \
-		translations/wysiwyg.pot \
-		translations/da.po \
-		translations/de.po \
-		translations/el.po \
-		translations/fi.po \
-		translations/fr.po \
-		translations/hu.po \
-		translations/tr.po \
-		translations/uk.po
+		plugins/break.inc
 
 MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
-		plugins/break/langs plugins/break plugins translations
+		plugins/break/langs plugins/break plugins
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-post-install:
-.if ${PORT_OPTIONS:MTINYMCE3}
+OPTIONS_DEFINE=	TINYMCE3 CKEDITOR DOCS
+
+CKEDITOR_DESC=	Install CKEditor
+CKEDITOR_RUN_DEPENDS=	CKEditor>0:www/ckeditor
+CKEDITOR_PLIST_FILES=	${DRUPAL_MODLIB}/ckeditor
+
+TINYMCE3_DESC=	Install TinyMCE3 Editor
+TINYMCE3_RUN_DEPENDS=	tinymce3>0:www/tinymce3
+TINYMCE3_PLIST_FILES=	${DRUPAL_MODLIB}/tinymce
+
+post-install-TINYMCE3-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 	${LN} -fs ${PREFIX}/www/tinymce ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
-.endif
-.if ${PORT_OPTIONS:MCKEDITOR}
+
+post-install-CKEDITOR-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 	${LN} -fs ${PREFIX}/www/CKEditor ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}/ckeditor
-.endif
 
 .include <bsd.port.mk>

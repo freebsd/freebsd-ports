@@ -1,13 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	xdotool
-DISTVERSION=	2.20110530.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.20150503.1
 PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	gregf@hugops.pw
 COMMENT=	Programmatically simulate keyboard input or mouse activity
+
+LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jordansissel
 
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig perl5

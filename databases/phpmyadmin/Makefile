@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.6.3
+DISTVERSION=	4.6.4
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -10,14 +11,14 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage MySQL over the web
 
-NO_ARCH=	yes
 LICENSE=	GPLv2
 
 BROKEN_powerpc64=	Does not build
 
-USES=		cpe shebangfix tar:xz
+USES=		cpe php:web tar:xz
 CPE_PRODUCT=	${PORTNAME:tl}
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 IGNORE_WITH_PHP=5 54
@@ -42,8 +43,6 @@ ZLIB_DESC=	PHP ZLIB support
 
 .include <bsd.port.options.mk>
 
-WANT_PHP_WEB=	yes
-
 GROUPS?=	${WWWGRP}
 CFG_FILE=	config.inc.php
 
@@ -53,9 +52,6 @@ PLIST_SUB+=	PMA_GRP=${GROUPS}
 SUB_LIST+=	PKGNAME=${PKGNAME}	        \
 		CFG_FILE=${WWWDIR}/${CFG_FILE}
 SUB_FILES+=	pkg-message
-
-SHEBANG_FILES=	libraries/plugins/transformations/generator_main_class.sh \
-		libraries/plugins/transformations/generator_plugin.sh
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 

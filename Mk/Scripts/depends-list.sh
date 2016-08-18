@@ -7,9 +7,14 @@ set -e
 . ${dp_SCRIPTSDIR}/functions.sh
 
 recursive=0
+missing=0
 requires_wrkdir=0
-while getopts "rw" FLAG; do
+while getopts "mrw" FLAG; do
 	case "${FLAG}" in
+		m)
+			missing=1
+			recursive=1
+			;;
 		r)
 			recursive=1
 			;;
@@ -38,6 +43,10 @@ fi
 
 set -u
 
+if [ ${missing} -eq 1 ]; then
+	existing=$(${dp_PKG_INFO} -aoq|paste -d ' ' -s -)
+fi
+
 check_dep() {
 	local _dep wrkdir show_dep
 
@@ -60,6 +69,13 @@ check_dep() {
 		if [ ! -d ${d} ]; then
 			echo "${dp_PKGNAME}: \"${d}\" non-existent -- dependency list incomplete" >&2
 			continue
+		fi
+
+		# If only looking for missing, show if missing
+		if [ ${missing} -eq 1 ]; then
+			case " ${existing} " in
+				*\ ${d#${PORTSDIR}/}\ *) continue ;; # We have it, nothing to see
+			esac
 		fi
 
 		# Grab any needed vars from the port.

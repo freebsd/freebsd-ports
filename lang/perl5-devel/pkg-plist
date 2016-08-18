@@ -257,6 +257,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/IPC/Cmd.pm
 %%PRIV_LIB%%/IPC/Open2.pm
 %%PRIV_LIB%%/IPC/Open3.pm
+%%PRIV_LIB%%/Internals.pod
 %%PRIV_LIB%%/JSON/PP.pm
 %%PRIV_LIB%%/JSON/PP/Boolean.pm
 %%PRIV_LIB%%/Locale/Codes.pm
@@ -1154,6 +1155,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/IPC::Semaphore.3.gz
 %%MAN3%%/IPC::SharedMem.3.gz
 %%MAN3%%/IPC::SysV.3.gz
+%%MAN3%%/Internals.3.gz
 %%MAN3%%/JSON::PP.3.gz
 %%MAN3%%/JSON::PP::Boolean.3.gz
 %%MAN3%%/List::Util.3.gz

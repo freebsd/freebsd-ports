@@ -509,6 +509,7 @@
     SUBDIR += libcdio
     SUBDIR += libcdio-paranoia
     SUBDIR += libchk
+    SUBDIR += libcpuid
     SUBDIR += libfvde
     SUBDIR += libgksu
     SUBDIR += libieee1284
@@ -638,6 +639,7 @@
     SUBDIR += ncdu
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
+    SUBDIR += nfcutils
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login

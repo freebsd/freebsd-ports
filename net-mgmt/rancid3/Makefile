@@ -3,7 +3,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -34,14 +34,21 @@ NEWERCONFIG_FILES1=	etc/rancid.conf
 NEWERCONFIG_FILES2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
-OPTIONS_DEFINE=		SVN
+OPTIONS_DEFINE=		COMWARE SVN
 OPTIONS_DEFAULT=
 
+COMWARE_DESC=		Add experimental support for Comware devices
 SVN_DESC=		Use Subversion instead of CVS
 
 CONFLICTS=	rancid-[0-9]*
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCOMWARE}
+PLIST_SUB+=	COMWARE=""
+.else
+PLIST_SUB+=	COMWARE="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MSVN}
 CONFIGURE_ARGS+=	--with-svn
@@ -57,12 +64,21 @@ pre-everything::
 	@ ${ECHO} "Make sure your rancid repository is quiet before upgrading; disable rancid cron jobs"
 
 post-patch:
+.if ${PORT_OPTIONS:MCOMWARE}
+	${CAT} ${FILESDIR}/comware_types.conf >> ${WRKSRC}/etc/rancid.types.base
+.endif
 	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
+	${REINPLACE_CMD} "s|3des|3des-cbc|g" ${WRKSRC}/bin/*.in ${WRKSRC}/cloginrc.sample \
+	    ${WRKSRC}/man/cloginrc.5 ${WRKSRC}/man/clogin.1
 
 post-install:
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-cvs ${STAGEDIR}${PREFIX}/bin
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-run ${STAGEDIR}${PREFIX}/bin
+.if ${PORT_OPTIONS:MCOMWARE}
+	${INSTALL_DATA} ${FILESDIR}/cmw.pm ${STAGEDIR}/${PREFIX}/lib/rancid
+	${INSTALL_SCRIPT} ${FILESDIR}/cmwlogin ${STAGEDIR}/${PREFIX}/libexec/rancid
+.endif
 .for file in ${NEWCONFIG_FILES}
 	@ if [ -f ${PREFIX}/etc/${PORTNAME}/${file} ] ; then \
 	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.sample"; \

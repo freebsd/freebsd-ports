@@ -2,66 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract-data
-PORTVERSION=	3.02
-PORTREVISION=	2
+PORTVERSION=	3.04.00
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
-DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
-		${TESSERACT_LANGS_301:O:u:S|^|tesseract-ocr-3.01.|:S|$|.tar.gz|} \
-		${TESSERACT_LANGS_302:O:u:S|^|tesseract-ocr-3.02.|:S|$|.tar.gz|}
-EXTRACT_ONLY=	#empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Trained language data for the Tesseract OCR engine
 
 LICENSE=	APACHE20
 
-DIST_SUBDIR=	tesseract
-PROJECTHOST=	tesseract-ocr
+USE_GITHUB=	yes
+GH_ACCOUNT=	tesseract-ocr
+GH_PROJECT=	tessdata
 
 NO_BUILD=	yes
-
-LANGS_300=	dan-frak deu-frak swe-frak
-LANGS_301=	osd slk-frak
-LANGS_302=	afr ara aze bel ben bul cat ces chi_sim chi_tra chr dan deu \
-		ell eng enm epo epo_alt equ est eus fin fra frk frm glg grc heb hin \
-		hrv hun ind isl ita ita_old jpn kan kor lav lit mal mkd mlt \
-		msa nld nor pol por ron rus slk slv spa spa_old sqi srp swa \
-		swe tam tel tgl tha tur ukr vie
-
-.if make(makesum)
-TESSERACT_LANGS=	${LANGS_300} ${LANGS_301} ${LANGS_302}
-.else
-TESSERACT_LANGS ?=	${LANGS_300} ${LANGS_301} ${LANGS_302}
-.endif
-
-.for l in ${TESSERACT_LANGS}
-.for n in 0 1 2
-.if ${LANGS_30${n}:M${l}}
-TESSERACT_LANGS_30${n}+= ${LANGS_30${n}:M${l}}
-.endif
-.endfor
-.endfor
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/tessdata
-PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
+TESSERACT_LANGS?=afr amh ara asm aze aze_cyrl bel ben bod bos bul cat ceb ces \
+		chi_sim chi_tra chr cym dan dan_frak deu deu_frak dzo ell eng \
+		enm epo equ est eus fas fin fra frk frm gle glg grc guj hat heb \
+		hin hrv hun iku ind isl ita ita_old jav jpn kan kat kat_old kaz \
+		khm kir kor kur lao lat lav lit mal mar mkd mlt msa mya nep nld \
+		nor ori osd pan pol por pus ron rus san sin slk slk_frak slv spa \
+		spa_old sqi srp srp_latn swa swe syr tam tel tgk tgl tha tir tur \
+		uig ukr urd uzb uzb_cyrl vie yid
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The choice of language data to be installed may"
-	@${ECHO_MSG} "be overridden by defining TESSERACT_LANGS. "
-	@${ECHO_MSG} ""
+PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for l in ${TESSERACT_LANGS_300:O:u:S|$|.traineddata|}
-	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${STAGEDIR}${DATADIR}/${l}
-.endfor
-.for n in 1 2
-.for l in ${TESSERACT_LANGS_30${n}:O:u}
-	@${TAR} --strip-components 2 -C ${STAGEDIR}${DATADIR} \
-	-xf ${_DISTDIR}/tesseract-ocr-3.0${n}.${l}.tar.gz *.traineddata
-.endfor
+.for l in ${PORTDATA}
+	@${CP} ${WRKSRC}/${l} ${STAGEDIR}${DATADIR}/
 .endfor
 	@cd ${STAGEDIR}${DATADIR} ; ${CHMOD} ${BINMODE} ${PORTDATA}
 

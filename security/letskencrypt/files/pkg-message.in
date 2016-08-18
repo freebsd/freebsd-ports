@@ -1,4 +1,3 @@
-
 There are example scripts in
 %%PREFIX%%/etc/letsencrypt
 that you can for renewing and deploying multiple certificates

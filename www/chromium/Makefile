@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	51.0.2704.106
-PORTREVISION=	2
+PORTVERSION=	52.0.2743.116
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -13,6 +12,8 @@ COMMENT=	Google web browser based on WebKit
 
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
+
+BROKEN_FreeBSD_9=does not patch
 
 CFLAGS+=	-isystem${LOCALBASE}/include -I${PREFIX}/include/atk-1.0
 
@@ -101,7 +102,7 @@ GYP_DEFINES+=	\
 		enable_webrtc=1 \
 		werror= \
 		no_gc_sections=1 \
-                OS=freebsd \
+		OS=freebsd \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER} \
@@ -255,8 +256,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
 		${WRKSRC}/crypto/crypto.gyp \
-		${WRKSRC}/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/v8/build/toolchain.gypi
+		${WRKSRC}/v8/src/v8.gyp \
+		${WRKSRC}/v8/gypfiles/toolchain.gypi
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
 		${WRKSRC}/chrome/common/chrome_paths.cc \
 		${WRKSRC}/base/base.gyp
@@ -279,7 +280,6 @@ pre-configure:
 		'chrome/third_party/mock4js' \
 		'chrome/third_party/mozilla_security_manager' \
 		'courgette/third_party' \
-		'crypto/third_party/nss' \
 		'net/third_party/mozilla_security_manager' \
 		'net/third_party/nss' \
 		'third_party/WebKit' \
@@ -291,7 +291,7 @@ pre-configure:
 		'third_party/boringssl' \
 		'third_party/cacheinvalidation' \
 		'third_party/catapult' \
-		'third_party/catapult/third_party/beautifulsoup' \
+		'third_party/catapult/third_party/beautifulsoup4' \
 		'third_party/catapult/third_party/py_vulcanize' \
 		'third_party/catapult/third_party/py_vulcanize/py_vulcanize' \
 		'third_party/catapult/third_party/py_vulcanize/third_party/rcssmin' \
@@ -341,6 +341,8 @@ pre-configure:
 		'third_party/ply' \
 		'third_party/polymer' \
 		'third_party/protobuf' \
+		'third_party/protobuf/third_party' \
+		'third_party/protobuf/third_party/six' \
 		'third_party/pywebsocket' \
 		'third_party/qcms' \
 		'third_party/qunit' \

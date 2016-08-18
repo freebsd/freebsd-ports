@@ -37,6 +37,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/filters.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/hashing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
@@ -64,6 +65,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/lua-api/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/lua.txt
 %%PORTDOCS%%%%DOCSDIR%%/management.txt
+%%PORTDOCS%%%%DOCSDIR%%/netscaler-client-ip-insertion-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/network-namespaces.txt
 %%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig

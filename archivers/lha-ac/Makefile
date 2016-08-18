@@ -8,7 +8,7 @@ MASTER_SITES=	SFJP/lha/22231
 PKGNAMESUFFIX=	-ac${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20050924p1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
 RESTRICTED=	No redistribution allowed

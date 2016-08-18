@@ -1,2 +1,3 @@
-SHA256 (puppetlabs-mcollective-puppet-agent-1.11.0_GH0.tar.gz) = 6a8d9c0a823a7d10739665769d1017c0ed3638c9af7fca872150644a9837197b
-SIZE (puppetlabs-mcollective-puppet-agent-1.11.0_GH0.tar.gz) = 45277
+TIMESTAMP = 1471161756
+SHA256 (puppetlabs-mcollective-puppet-agent-1.11.1_GH0.tar.gz) = 8a2821319dd6dea3d8a733b7389621bd7f634057c62de4a0b31e2a3074163caf
+SIZE (puppetlabs-mcollective-puppet-agent-1.11.1_GH0.tar.gz) = 45509

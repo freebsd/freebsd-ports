@@ -1,0 +1,85 @@
+--- CMakeLists.txt.orig	2016-01-01 10:26:34 UTC
++++ CMakeLists.txt
+@@ -6,6 +6,8 @@ IF(COMMAND CMAKE_POLICY)
+   CMAKE_POLICY(SET CMP0002 OLD)
+   CMAKE_POLICY(SET CMP0003 OLD)
+   CMAKE_POLICY(SET CMP0005 OLD)
++  CMAKE_POLICY(SET CMP0037 OLD)
++  CMAKE_POLICY(SET CMP0046 OLD)
+ ENDIF(COMMAND CMAKE_POLICY)
+ 
+ PROJECT(WT)
+@@ -340,7 +342,11 @@ INCLUDE(cmake/WtFindPng.txt)
+ INCLUDE(cmake/WtFindSsl.txt)
+ INCLUDE(cmake/WtFindMysql.txt)
+ INCLUDE(cmake/WtFindPostgresql.txt)
+-INCLUDE(cmake/WtFindAsciidoc.txt)
++
++IF (BUILD_DOCS)
++    INCLUDE(cmake/WtFindAsciidoc.txt)
++ENDIF (BUILD_DOCS)
++
+ INCLUDE(cmake/WtFindHaru.txt)
+ INCLUDE(cmake/WtFindGm.txt)
+ INCLUDE(cmake/WtFindGL.txt)
+@@ -462,7 +468,9 @@ ELSE (${WT_WRASTERIMAGE_IMPLEMENTATION} 
+     MESSAGE("** Disabled WRasterimage support. Set WT_WRASTERIMAGE_IMPLEMENTATION to GraphicsMagick or skia.")
+ ENDIF (${WT_WRASTERIMAGE_IMPLEMENTATION} STREQUAL "GraphicsMagick")
+ 
+-FIND_PACKAGE(Doxygen)
++IF (BUILD_DOCS)
++    FIND_PACKAGE(Doxygen)
++ENDIF (BUILD_DOCS)
+ 
+ # Boost is used nearly everywhere, so we can put these here
+ INCLUDE_DIRECTORIES(${BOOST_INCLUDE_DIRS})
+@@ -498,27 +506,29 @@ ENDIF(DEBUG)
+ 
+ ADD_CUSTOM_TARGET(doc)
+ 
+-IF (ASCIIDOC_FOUND)
+-  MACRO (ASCIIDOC_FILE target infile outfile)
+-    ADD_CUSTOM_TARGET(${target}
+-       ${ASCIIDOC_EXECUTABLE} -a toc -a numbered -a icons -a  theme=emweb -a pygments -a linkcss -o ${outfile} ${infile}
+-       COMMENT "Asciidoc ${infile}")
+-    ADD_DEPENDENCIES(doc ${target})
+-  ENDMACRO (ASCIIDOC_FILE)
+-ENDIF (ASCIIDOC_FOUND)
++IF (BUILD_DOCS)
++    IF (ASCIIDOC_FOUND)
++      MACRO (ASCIIDOC_FILE target infile outfile)
++        ADD_CUSTOM_TARGET(${target}
++           ${ASCIIDOC_EXECUTABLE} -a toc -a numbered -a icons -a  theme=emweb -a pygments -a linkcss -o ${outfile} ${infile}
++           COMMENT "Asciidoc ${infile}")
++        ADD_DEPENDENCIES(doc ${target})
++      ENDMACRO (ASCIIDOC_FILE)
++    ENDIF (ASCIIDOC_FOUND)
+ 
+-IF (DOXYGEN_FOUND)
+-  ADD_CUSTOM_TARGET(doxygen
+-    ${DOXYGEN_EXECUTABLE}
+-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-    COMMENT "Doxygen ...")
+-  ADD_DEPENDENCIES(doc doxygen)
+-  ADD_CUSTOM_TARGET(doxygen-examples
+-    ${DOXYGEN_EXECUTABLE}
+-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/examples
+-    COMMENT "Doxygen for examples ...")
+-  ADD_DEPENDENCIES(doc doxygen-examples)
+-ENDIF (DOXYGEN_FOUND)
++    IF (DOXYGEN_FOUND)
++      ADD_CUSTOM_TARGET(doxygen
++        ${DOXYGEN_EXECUTABLE}
++        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
++        COMMENT "Doxygen ...")
++      ADD_DEPENDENCIES(doc doxygen)
++      ADD_CUSTOM_TARGET(doxygen-examples
++        ${DOXYGEN_EXECUTABLE}
++        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/examples
++        COMMENT "Doxygen for examples ...")
++      ADD_DEPENDENCIES(doc doxygen-examples)
++    ENDIF (DOXYGEN_FOUND)
++ENDIF (BUILD_DOCS)
+ 
+ # we enable rpath support for APPLE, this probably goes against policy
+ # linux distributions?

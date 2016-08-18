@@ -2,31 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ddate
-PORTVERSION=	2.22.2
-PORTEPOCH=	1
+PORTVERSION=	0.2.2.2016062701
+DISTVERSIONPREFIX=	v
+PORTEPOCH=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION:C/^([0-9]*\.[0-9]*).*/\1/}/ \
-		LOCAL/ehaupt
-DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command to print the date in Discordian date format
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/ddate man/man1/ddate.1.gz
-
-GNU_CONFIGURE=	yes
-USES=		tar:xz
-
-CONFIGURE_ARGS=	--disable-libuuid --disable-libblkid --disable-libmount \
-		--disable-mount --disable-losetup --disable-fsck \
-		--disable-partx --disable-uuidd --disable-mountpoint \
-		--disable-fallocate --disable-unshare --disable-eject \
-		--disable-agetty --disable-cramfs --disable-switch_root \
-		--disable-pivot_root --disable-kill --disable-utmpdump \
-		--disable-rename --disable-login --disable-sulogin \
-		--disable-su --disable-schedutils --disable-wall
+USE_GITHUB=	yes
+GH_ACCOUNT=	bo0ts
+GH_TAGNAME=	899ca66
 
 OPTIONS_DEFINE=	USFORMAT PRAISEBOB KILLBOB
 
@@ -36,28 +24,17 @@ KILLBOB_DESC=	Countdown to X-Day
 
 OPTIONS_DEFAULT=KILLBOB
 
-.include <bsd.port.options.mk>
+USFORMAT_CFLAGS=	-DUS_FORMAT=\"1\"
+PRAISEBOB_CFLAGS=	-DPRAISE_BOB=\"13013\"
+KILLBOB_CFLAGS=		-DKILL_BOB=\"13013\"
 
-.if ${PORT_OPTIONS:MUSFORMAT}
-CFLAGS+=	-DUS_FORMAT=\"1\"
-.endif
-
-.if ${PORT_OPTIONS:MPRAISEBOB}
-CFLAGS+=	-DPRAISE_BOB=\"13013\"
-.endif
-
-.if ${PORT_OPTIONS:MKILLBOB}
-CFLAGS+=	-DKILL_BOB=\"13013\"
-.endif
+PLIST_FILES=	bin/ddate man/man1/ddate.1.gz
 
 do-build:
-	${CC} ${WRKSRC}/misc-utils/ddate.c ${CFLAGS} \
-		-o ${WRKSRC}/misc-utils/${PORTNAME}
+	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/misc-utils/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/misc-utils/ddate.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

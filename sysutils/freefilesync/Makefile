@@ -1,3 +1,4 @@
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	freefilesync
@@ -7,13 +8,11 @@ MASTER_SITES=	http://www.freefilesync.org/download/ \
 		http://www.freefilesync.org/archive/
 DISTNAME=	FreeFileSync_${PORTVERSION}_Source
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup software to synchronize files and folders
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -29,6 +28,12 @@ USES=		compiler:c++14-lang dos2unix gmake pkgconfig zip
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
+BROKEN=		does not build on FreeBSD < 10.3 (lack of futimens(2))
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/$${WX_CONFIG:T}/' \
 		-e 's,g++,$${CXX},' ${WRKSRC}/Makefile
@@ -38,4 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CLOCK_MONOTONIC_RAW|CLOCK_MONOTONIC|' \
 		${WRKDIR}/zen/tick_count.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

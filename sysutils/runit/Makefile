@@ -3,7 +3,7 @@
 
 PORTNAME=	runit
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -18,21 +18,27 @@ USE_RC_SUBR=	runsvdir
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
 SERVICE_DIR?=	/var/service
+SUB_FILES=	pkg-message
 SUB_LIST=	SERVICE_DIR="${SERVICE_DIR}"
 PORTDOCS=	*
 
 DOCS=		package/CHANGES package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
-		etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
+		etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish \
+		etc/freebsd/getty-ttyv4/whichtty
 
 post-patch:
 	${REINPLACE_CMD} -i '' 's!/service/!${SERVICE_DIR}!' \
-		${WRKSRC}/man/* ${WRKSRC}/src/sv.c
+		${PATCH_WRKSRC}/man/* ${PATCH_WRKSRC}/src/sv.c
+	${REINPLACE_CMD} -i '' '\|^PATH=|s|$$|:${PREFIX}/bin:${PREFIX}/sbin|' \
+		${PATCH_WRKSRC}/etc/freebsd/3
+	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-ld
+	${ECHO_CMD} '#define PREFIX "${PREFIX}"' >> ${WRKSRC}/src/runit.h
 
 do-build:
 	cd ${WRKSRC} && package/compile && package/check

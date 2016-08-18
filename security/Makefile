@@ -755,6 +755,7 @@
     SUBDIR += pecl-crack
     SUBDIR += pecl-crypto
     SUBDIR += pecl-gnupg
+    SUBDIR += pecl-libsodium
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
@@ -911,6 +912,7 @@
     SUBDIR += py-stix
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
+    SUBDIR += py-tuf
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-volatility

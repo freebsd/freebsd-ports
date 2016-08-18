@@ -1,4 +1,4 @@
---- common.h.orig	2015-10-04 16:03:02 UTC
+--- common.h.orig	2016-08-15 13:26:19 UTC
 +++ common.h
 @@ -24,6 +24,8 @@
  #ifndef _COMMON_H

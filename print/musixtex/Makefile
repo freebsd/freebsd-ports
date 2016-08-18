@@ -12,6 +12,8 @@ DISTFILES=	musixtex-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of TeX macros to typeset music
 
+BROKEN=		does not build
+
 USE_TEX=	basic
 
 EXAMPLE_VERSION=	T112

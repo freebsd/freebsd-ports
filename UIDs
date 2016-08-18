@@ -72,8 +72,10 @@ zabbix:*:122:122::0:0:Zabbix NMS:/nonexistent:/bin/sh
 _ntp:*:123:123::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 fetchmail:*:124:124::0:0:Fetchmail mail-retrieval daemon:/nonexistent:/usr/sbin/nologin
 postfix:*:125:125::0:0:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin
+# free: 126
 navcron:*:127:127::0:0:Network Administration Visualized:/usr/local/nav:/usr/sbin/nologin
 sd-agent:*:128:128::0:0:ServerDensity Agent:/nonexistent:/usr/sbin/nologin
+# free: 129
 _bgpd:*:130:130::0:0:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131::0:0:OSPF Daemon:/var/empty:/usr/sbin/nologin
 _spamd:*:132:132::0:0:Spam Daemon:/var/empty:/usr/sbin/nologin
@@ -99,11 +101,21 @@ pop3vscan:*:151:6::0:0:POP3VScan Daemon:/var/spool/pop3vscan:/usr/sbin/nologin
 iog:*:152:80::0:0:iog Monitoring Owner:/usr/local/iog:/usr/sbin/nologin
 rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 trircd:*:154:154::0:0:& user:/usr/local/etc/tr-ircd:/usr/sbin/nologin
+# free: 155
 monetdb:*:156:156::0:0:MonetDB user:/usr/local/monetdb5:/bin/sh
 barman:*:157:157::0:0:Barman user:/var/barman:/bin/sh
 pootle:*:158:158::0:0:Pootle User:/var/db/pootle:/usr/sbin/nologin
 nocat:*:159:159::0:0:NoCat Daemon:/libexec/nocat:/sbin/nologin
 _ypldap:*:160:160::0:0:YP Ldap unprivileged user:/var/empty:/usr/sbin/nologin
+# free: 161
+# free: 162
+# free: 163
+# free: 164
+# free: 165
+# free: 166
+# free: 167
+# free: 168
+# free: 169
 tile38:*:170:170::0:0:Tile38 User:/var/db/tile38:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
 agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
@@ -111,8 +123,10 @@ polipo:*:173:173::0:0:polipo web cache:/nonexistent:/usr/sbin/nologin
 flowtools:*:174:174::0:0:Flow-tools collector pseudo-user:/nonexistent:/usr/sbin/nologin
 twms:*:175:175::0:0:tWMS pseudo-user:/nonexistent:/usr/sbin/nologin
 mlvpn:*:176:176::0:0:mlVPN pseudo-user:/var/run/mlvpn:/usr/sbin/nologin
+# free: 177
 otpw:*:178:178::0:0:OTPW pseudo-user:/var/lib/otpw:/usr/sbin/nologin
 gdnsd:*:179:179::0:0:gDNSd pseudo-user:/nonexistent:/usr/sbin/nologin
+# free: 180
 nagios:*:181:181::0:0:Nagios pseudo-user:/var/spool/nagios:/usr/sbin/nologin
 noc:*:182:182::0:0:NOC pseudo-user:/usr/local/noc:/bin/sh
 icinga:*:183:183::0:0:Icinga pseudo-user:/var/spool/icinga:/usr/sbin/nologin
@@ -122,14 +136,20 @@ dnslog:*:186:186::0:0:dnslog pseudo-user:/nonexistent:/usr/sbin/nologin
 swift:*:187:187::0:0:Swift daemon pseudo-user:/nonexistent:/usr/sbin/nologin
 netxms:*:188:188::0:0:netxms pseudo-user:/nonexistent:/usr/sbin/nologin
 leofs:*:189:189::0:0:LeoFS daemons pseudo-user:/var/db/leofs:/usr/sbin/nologin
+# free: 190
+# free: 191
 moinmoin:*:192:192::0:0:MoinMoin User:/nonexistent:/usr/sbin/nologin
 cups:*:193:193::0:0:Cups Owner:/nonexistent:/usr/sbin/nologin
 saned:*:194:194::0:0:SANE Scanner Daemon:/nonexistent:/bin/sh
 radns:*:195:195::0:0:radns user:/nonexistent:/usr/sbin/nologin
+# free: 196
+# free: 197
+# free: 198
 mcserver:*:199:199::0:0:Minecraft Server:/nonexistent:/bin/sh
 sympa:*:200:200::0:0:Sympa Owner:/nonexistent:/usr/sbin/nologin
 privoxy:*:201:201::0:0:Privoxy proxy user:/nonexistent:/usr/sbin/nologin
 dspam:*:202:202::0:0:Dspam:/nonexistent:/usr/sbin/nologin
+# free: 203
 yate:*:204:204::0:0:Yate:/nonexistent:/usr/sbin/nologin
 gnugk:*:205:205::0:0:GNU GateKeeper pseudo-user:/nonexistent:/usr/sbin/nologin
 gini:*:206:206::0:0:& streaming server:/var/log/gini:/usr/sbin/nologin
@@ -140,28 +160,71 @@ shoutcast:*:210:210::0:0:Shoutcast sandbox:/nonexistent:/bin/sh
 git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
 hg:*:212:212::0:0:mercurial-server user:/usr/local/hg:/bin/sh
 drizzle:*:213:213::0:0:Drizzle daemon:/var/db/drizzle:/usr/sbin/nologin
+# free: 214
 opendnssec:*:215:215::0:0:Opendnssec Pseudo User:/nonexistent:/usr/sbin/nologin
 nsd:*:216:216::0:0:NSD DNS Server:/nonexistent:/usr/sbin/nologin
+# free: 217
+# free: 218
+# free: 219
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
+# free: 221
 rtpproxy:*:222:222::0:0:& user:/nonexistent:/sbin/nologin
+# free: 223
+# free: 224
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 sqlgrey:*:226:226::0:0:SQLgrey Owner:/nonexistent:/usr/sbin/nologin
 _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
+# free: 228
+# free: 229
+# free: 230
+# free: 231
+# free: 232
+# free: 233
+# free: 234
+# free: 235
+# free: 236
+# free: 237
+# free: 238
+# free: 239
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
+# free: 243
+# free: 244
+# free: 245
+# free: 246
 fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
+# free: 248
+# free: 249
+# free: 250
+# free: 251
+# free: 252
 _adsuck:*:253:253::0:0:Adsuck ad blocking user:/nonexistent:/usr/sbin/nologin
+# free: 254
+# free: 255
 _tor:*:256:256::0:0:Tor anonymizing router:/var/db/tor:/usr/sbin/nologin
 _smtpd:*:257:257::0:0:OpenSMTPD:/var/empty:/usr/sbin/nologin
-_smtpq:*:258:257::0:0:OpenSMTPD queue user:/var/empty:/usr/sbin/nologin
+_smtpq:*:258:258::0:0:OpenSMTPD queue user:/var/empty:/usr/sbin/nologin
+# free: 259
 meta1s:*:260:260::0:0:MeTA1 SMTPS:/nonexistent:/usr/sbin/nologin
 meta1q:*:261:261::0:0:MeTA1 QMGR:/nonexistent:/usr/sbin/nologin
 meta1c:*:262:262::0:0:MeTA1 SMTPC:/nonexistent:/usr/sbin/nologin
 meta1m:*:263:263::0:0:MeTA1 misc:/nonexistent:/usr/sbin/nologin
 meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
+# free: 265
+# free: 266
+# free: 267
+# free: 268
+# free: 269
+# free: 270
+# free: 271
+# free: 272
+# free: 273
+# free: 274
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
+# free: 277
+# free: 278
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
 xymon:*:280:280::0:0:Xymon Monitor:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281::0:0:Prelude user:/nonexistent:/usr/sbin/nologin
@@ -170,31 +233,184 @@ devmon:*:283:283::0:0:devmon monitor:/nonexistent:/usr/sbin/nologin
 vnstat:*:284:284::0:0:vnStat Network Monitor:/nonexistent:/usr/sbin/nologin
 exaddos:*:285:285::0:0:exaddos daemon user:/nonexistent:/usr/sbin/nologin
 rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
+# free: 287
 ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
+# free: 289
+# free: 290
+# free: 291
+# free: 292
+# free: 293
+# free: 294
+# free: 295
+# free: 296
+# free: 297
+# free: 298
+# free: 299
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
+# free: 301
+# free: 302
+# free: 303
+# free: 304
+# free: 305
+# free: 306
+# free: 307
+# free: 308
+# free: 309
+# free: 310
+# free: 311
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
+# free: 313
+# free: 314
+# free: 315
+# free: 316
+# free: 317
+# free: 318
+# free: 319
+# free: 320
+# free: 321
+# free: 322
+# free: 323
+# free: 324
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
+# free: 327
+# free: 328
+# free: 329
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
+# free: 331
+# free: 332
+# free: 333
+# free: 334
+# free: 335
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin
 murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin
+# free: 339
 wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
 stunnel:*:341:341::0:0:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
 openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
+# free: 343
+# free: 344
+# free: 345
+# free: 346
+# free: 347
+# free: 348
+# free: 349
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin
 sonarr:*:351:65534::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
+# free: 352
 _iodined:*:353:353::0:0:Iodine Daemon:/nonexistent:/usr/sbin/nologin
+# free: 354
+# free: 355
+# free: 356
+# free: 357
+# free: 358
+# free: 359
+# free: 360
 httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin
+# free: 362
+# free: 363
+# free: 364
+# free: 365
+# free: 366
+# free: 367
+# free: 368
+# free: 369
+# free: 370
+# free: 371
+# free: 372
+# free: 373
+# free: 374
+# free: 375
+# free: 376
+# free: 377
+# free: 378
+# free: 379
+# free: 380
+# free: 381
+# free: 382
+# free: 383
+# free: 384
+# free: 385
+# free: 386
+# free: 387
+# free: 388
 ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
+# free: 390
+# free: 391
+# free: 392
+# free: 393
+# free: 394
+# free: 395
+# free: 396
+# free: 397
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
+# free: 399
+# free: 400
+# free: 401
+# free: 402
+# free: 403
+# free: 404
+# free: 405
+# free: 406
+# free: 407
+# free: 408
+# free: 409
+# free: 410
 uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
+# free: 412
+# free: 413
+# free: 414
+# free: 415
+# free: 416
+# free: 417
+# free: 418
+# free: 419
+# free: 420
+# free: 421
+# free: 422
+# free: 423
+# free: 424
+# free: 425
 drweb:*:426:426::0:0:Dr.Web Mail Scanner:/nonexistent:/usr/sbin/nologin
+# free: 427
+# free: 428
 varnish:*:429:429::0:0:Varnish Cache User:/nonexistent:/usr/sbin/nologin
 varnishlog:*:430:429::0:0:Varnish Log User:/nonexistent:/usr/sbin/nologin
+# free: 431
+# free: 432
+# free: 433
+# free: 434
+# free: 435
+# free: 436
+# free: 437
+# free: 438
+# free: 439
+# free: 440
+# free: 441
 quasselcore:*:442:442::0:0:Quassel IRC User:/nonexistent:/usr/sbin/nologin
+# free: 443
 callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nologin
+# free: 445
+# free: 446
+# free: 447
+# free: 448
+# free: 449
 ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
+# free: 451
+# free: 452
+# free: 453
+# free: 454
+# free: 455
+# free: 456
+# free: 457
+# free: 458
+# free: 459
+# free: 460
+# free: 461
+# free: 462
+# free: 463
+# free: 464
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
@@ -203,53 +419,350 @@ consul:*:469:469::0:0:Consul Daemon:/var/tmp/consul:/usr/sbin/nologin
 serf:*:470:470::0:0:Serf Daemon:/nonexistent:/usr/sbin/nologin
 vault:*:471:471::0:0:Vault Daemon:/nonexistent:/usr/sbin/nologin
 nomad:*:472:472::0:0:Nomad Daemon:/var/tmp/nomad:/usr/sbin/nologin
+# free: 473
+# free: 474
+# free: 475
+# free: 476
+# free: 477
+# free: 478
+# free: 479
+# free: 480
+# free: 481
+# free: 482
+# free: 483
+# free: 484
+# free: 485
+# free: 486
+# free: 487
+# free: 488
+# free: 489
+# free: 490
+# free: 491
+# free: 492
+# free: 493
+# free: 494
+# free: 495
+# free: 496
+# free: 497
+# free: 498
+# free: 499
+# free: 500
+# free: 501
+# free: 502
+# free: 503
+# free: 504
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
+# free: 508
+# free: 509
+# free: 510
+# free: 511
 pwhois:*:512:512::0:0:pwhoisd User:/nonexistent:/usr/sbin/nologin
+# free: 513
+# free: 514
+# free: 515
+# free: 516
+# free: 517
+# free: 518
+# free: 519
+# free: 520
 davmail:*:521:521::0:0:Davmail Exchange Gateway:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 freevo:*:523:523::0:0:Freevo User:/var/db/freevo:/bin/sh
+# free: 524
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
+# free: 526
+# free: 527
+# free: 528
+# free: 529
+# free: 530
+# free: 531
+# free: 532
+# free: 533
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin
 redis:*:535:535::0:0:Redis Daemon:/nonexistent:/usr/sbin/nologin
+# free: 536
+# free: 537
+# free: 538
+# free: 539
+# free: 540
+# free: 541
 _flowd:*:542:542::0:0:flowd privilege separation user:/var/empty:/usr/sbin/nologin
 ejabberd:*:543:543::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
+# free: 544
+# free: 545
+# free: 546
+# free: 547
+# free: 548
+# free: 549
+# free: 550
+# free: 551
+# free: 552
 knot:*:553:553::0:0:Knot DNS Server:/nonexistent:/usr/sbin/nologin
 qtss:*:554:554::0:0:Darwin Streaming Server:/nonexistent:/usr/sbin/nologin
 ircdru:*:555:555::0:0:Russian hybrid IRC server:/nonexistent:/bin/sh
 messagebus:*:556:556::0:0:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+# free: 557
 avahi:*:558:558::0:0:Avahi Daemon User:/nonexistent:/usr/sbin/nologin
 tacacs:*:559:559::0:0:TACACS+ Daemon User:/nonexistent:/usr/sbin/nologin
 haldaemon:*:560:560::0:0:HAL Daemon User:/nonexistent:/usr/sbin/nologin
 distcc:*:561:561::0:0:Distcc user:/nonexistent:/usr/sbin/nologin
 polkit:*:562:562::0:0:PolicyKit User:/nonexistent:/usr/sbin/nologin
 pulse:*:563:563::0:0:PulseAudio System User:/nonexistent:/usr/sbin/nologin
+# free: 564
 polkitd:*:565:565::0:0:Polkit Daemon User:/var/empty:/usr/sbin/nologin
+# free: 566
+# free: 567
+# free: 568
+# free: 569
+# free: 570
+# free: 571
+# free: 572
+# free: 573
+# free: 574
+# free: 575
+# free: 576
+# free: 577
+# free: 578
+# free: 579
+# free: 580
+# free: 581
+# free: 582
+# free: 583
+# free: 584
+# free: 585
+# free: 586
 assp:*:587:587::0:0:ASSP Anti-Spam Proxy:/var/db/assp:/usr/sbin/nologin
 avahi-autoipd:*:588:588::0:0:Avahi Autoipd Daemon user:/nonexistent:/usr/sbin/nologin
+# free: 589
+# free: 590
+# free: 591
+# free: 592
+# free: 593
+# free: 594
+# free: 595
+# free: 596
+# free: 597
+# free: 598
+# free: 599
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
 _tss:*:601:601:daemon:0:0:TrouSerS user:/var/empty:/usr/sbin/nologin
 _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
+# free: 603
+# free: 604
+# free: 605
+# free: 606
+# free: 607
+# free: 608
+# free: 609
 freeswitch:*:610:610::0:0:Freeswitch user:/nonexistent:/usr/sbin/nologin
+# free: 611
+# free: 612
+# free: 613
+# free: 614
 ntpa:*:615:615::0:0:NTPa user:/nonexistent:/usr/sbin/nologin
+taskd:*:616:616::0:0:taskd user:/nonexistent:/usr/sbin/nologin
+# free: 617
+# free: 618
+# free: 619
+# free: 620
+# free: 621
+# free: 622
+# free: 623
+# free: 624
+# free: 625
+# free: 626
+# free: 627
+# free: 628
+# free: 629
+# free: 630
+# free: 631
+# free: 632
+# free: 633
+# free: 634
+# free: 635
 _pla:*:636:80::0:0:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
+# free: 637
+# free: 638
 caldavd:*:639:639::0:0:Caldavd user:/var/db/caldavd:/usr/sbin/nologin
+# free: 640
 monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/bash
+# free: 642
+# free: 643
+# free: 644
+# free: 645
+# free: 646
+# free: 647
+# free: 648
+# free: 649
+# free: 650
+# free: 651
+# free: 652
+# free: 653
+# free: 654
+# free: 655
+# free: 656
+# free: 657
+# free: 658
+# free: 659
+# free: 660
+# free: 661
+# free: 662
+# free: 663
+# free: 664
+# free: 665
 aox:*:666:666::0:0:Archiveopteryx user:/nonexistent:/usr/sbin/nologin
 riak:*:667:667::0:0:Riak user:/usr/local/lib/riak:/bin/sh
 riakcs:*:668:667::0:0:Riak CS user:/usr/local/lib/riak-cs:/bin/sh
 stanchion:*:669:667::0:0:Stanchion user:/usr/local/lib/stanchion:/bin/sh
+# free: 670
+# free: 671
+# free: 672
+# free: 673
+# free: 674
+# free: 675
+# free: 676
+# free: 677
+# free: 678
+# free: 679
+# free: 680
+# free: 681
+# free: 682
+# free: 683
+# free: 684
+# free: 685
+# free: 686
+# free: 687
+# free: 688
+# free: 689
+# free: 690
+# free: 691
+# free: 692
+# free: 693
+# free: 694
+# free: 695
+# free: 696
+# free: 697
+# free: 698
+# free: 699
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 fastnetmon:*:701:701::0:0:FastNetMon user:/nonexistent:/usr/sbin/nologin
 _sndio:*:702:702::0:0:sndio privsep:/var/empty:/usr/sbin/nologin
+# free: 703
+# free: 704
+# free: 705
+# free: 706
+# free: 707
+# free: 708
+# free: 709
+# free: 710
+# free: 711
+# free: 712
+# free: 713
+# free: 714
+# free: 715
+# free: 716
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/nologin
+# free: 719
+# free: 720
+# free: 721
+# free: 722
+# free: 723
+# free: 724
+# free: 725
+# free: 726
+# free: 727
+# free: 728
+# free: 729
+# free: 730
+# free: 731
+# free: 732
+# free: 733
+# free: 734
+# free: 735
+# free: 736
+# free: 737
+# free: 738
+# free: 739
+# free: 740
+# free: 741
+# free: 742
+# free: 743
+# free: 744
+# free: 745
+# free: 746
+# free: 747
+# free: 748
+# free: 749
+# free: 750
+# free: 751
+# free: 752
+# free: 753
+# free: 754
+# free: 755
+# free: 756
+# free: 757
+# free: 758
+# free: 759
+# free: 760
+# free: 761
+# free: 762
+# free: 763
+# free: 764
+# free: 765
+# free: 766
+# free: 767
+# free: 768
+# free: 769
+# free: 770
+# free: 771
+# free: 772
+# free: 773
+# free: 774
+# free: 775
+# free: 776
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
+# free: 778
+# free: 779
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
+# free: 781
+# free: 782
+# free: 783
+# free: 784
+# free: 785
+# free: 786
+# free: 787
+# free: 788
+# free: 789
+# free: 790
+# free: 791
+# free: 792
+# free: 793
+# free: 794
+# free: 795
+# free: 796
+# free: 797
+# free: 798
+# free: 799
+# free: 800
+# free: 801
+# free: 802
+# free: 803
+# free: 804
+# free: 805
+# free: 806
+# free: 807
+# free: 808
+# free: 809
+# free: 810
+# free: 811
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
+# free: 813
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
 uchiwa:*:815:815::0:0:Uchiwa Dashboard:/nonexistent:/usr/sbin/nologin
+# free: 816
 btsync:*:817:817::0:0:BitTorrent Sync Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 rundeck:*:819:819::0:0:Rundeck:/usr/local/rundeck:/bin/sh
@@ -257,15 +770,81 @@ openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
 titus:*:822:65533::0:0:Titus Daemon User:/nonexistent:/usr/sbin/nologin
 titus-keys:*:823:65533::0:0:Titus Keyserver User:/nonexistent:/usr/sbin/nologin
+# free: 824
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
+# free: 827
+# free: 828
+# free: 829
+# free: 830
+# free: 831
+# free: 832
+# free: 833
+# free: 834
+# free: 835
+# free: 836
+# free: 837
+# free: 838
+# free: 839
 netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
 tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
+# free: 843
 subsonic:*:844:844::0:0:Subsonic standalone-server:/nonexistent:/usr/sbin/nologin
+# free: 845
 sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
+# free: 849
+# free: 850
+# free: 851
+# free: 852
+# free: 853
+# free: 854
+# free: 855
+# free: 856
+# free: 857
+# free: 858
+# free: 859
+# free: 860
+# free: 861
+# free: 862
+# free: 863
+# free: 864
+# free: 865
+# free: 866
+# free: 867
+# free: 868
+# free: 869
+# free: 870
+# free: 871
+# free: 872
+# free: 873
+# free: 874
+# free: 875
+# free: 876
+# free: 877
+# free: 878
+# free: 879
+# free: 880
+# free: 881
+# free: 882
+# free: 883
+# free: 884
+# free: 885
+# free: 886
+# free: 887
+# free: 888
+# free: 889
+# free: 890
+# free: 891
+# free: 892
+# free: 893
+# free: 894
+# free: 895
+# free: 896
+# free: 897
+# free: 898
 guacamole:*:899:899::0:0:Guacamole user:/nonexistent:/usr/sbin/nologin
 seafile:*:900:900::0:0:Seafile user:/nonexistent:/usr/bin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
@@ -283,6 +862,7 @@ _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
 _relayd:*:913:913::0:0:Relay Daemon:/var/empty:/usr/sbin/nologin
 bitlbee:*:914:914::0:0:Bitlbee pseudo-user:/var/db/bitlbee:/usr/sbin/nologin
 logcheck:*:915:915::0:0:Logcheck system account:/var/lib/logcheck:/usr/local/bin/bash
+# free: 916
 _prayer:*:917:917::0:0:Prayer Account:/nonexistent:/usr/sbin/nologin
 nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/usr/sbin/nologin
 couchdb:*:919:919::0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
@@ -316,6 +896,7 @@ mediatomb:*:946:946::0:0:Mediatomb UPnP AV MediaServer:/nonexistent:/usr/sbin/no
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
 _lldpd:*:949:949::0:0:lldpd user:/nonexistent:/usr/sbin/nologin
+# free: 950
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/usr/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/sbin/nologin
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin
@@ -365,4 +946,5 @@ tarantool:*:996:996::0:0:Tarantool Daemon:/nonexistent:/usr/sbin/nologin
 bareos:*:997:997::0:0:Bareos Daemon:/var/db/bareos:/usr/sbin/nologin
 _rmilter:*:998:998::0:0:Rmilter daemon:/nonexistent:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
+# DO NOT USE: 1000-65533
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

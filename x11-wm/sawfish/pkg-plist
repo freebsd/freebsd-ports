@@ -346,6 +346,7 @@ share/xsessions/sawfish-kde5.desktop
 %%DATADIR%%/lisp/sawfish/wm/ext/tooltips.jl
 %%DATADIR%%/lisp/sawfish/wm/ext/tooltips.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/wallpaper.jl
+%%DATADIR%%/lisp/sawfish/wm/ext/wallpaper.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/window-history.jl
 %%DATADIR%%/lisp/sawfish/wm/ext/window-history.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/workspace-grid.jl
@@ -537,6 +538,7 @@ share/xsessions/sawfish-kde5.desktop
 %%DATADIR%%/lisp/viewport-linear.jl
 %%DATADIR%%/lisp/viewport-linear.jlc
 %%DATADIR%%/lisp/wallpaper.jl
+%%DATADIR%%/lisp/wallpaper.jlc
 %%DATADIR%%/lisp/window-anim.jl
 %%DATADIR%%/lisp/window-anim.jlc
 %%DATADIR%%/lisp/window-history.jl

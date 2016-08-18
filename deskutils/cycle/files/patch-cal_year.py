@@ -1,6 +1,6 @@
---- cal_year.py.orig
+--- cal_year.py.orig	2005-09-15 03:11:33 UTC
 +++ cal_year.py
-@@ -45,15 +45,20 @@
+@@ -45,15 +45,20 @@ class Month_Cal(wx.calendar.CalendarCtrl
  	wx.calendar.CalendarCtrl.__init__(self, parent, id, dt, pos, size, style)
  	self.SetBackgroundColour(wx.WHITE)
  	self.SetHeaderColours(wx.BLACK,wx.WHITE)
@@ -26,7 +26,7 @@
  	self.d_click=wx.DateTime()#FromDMY(1, 0,2002)
  	
      def OnLeftDown(self, event):
-@@ -80,10 +85,14 @@
+@@ -80,10 +85,14 @@ class Month_Cal(wx.calendar.CalendarCtrl
  	    menu.AppendCheckItem(4, _('Note'))
  	    menu.Check(4,is_set_mark(d, MARK_NOTE, d.GetYear()))
  	    
@@ -45,7 +45,7 @@
  	    self.PopupMenu(menu, event.GetPosition())
  	    menu.Destroy()
  
-@@ -139,8 +148,8 @@
+@@ -139,8 +148,8 @@ class Month_Cal(wx.calendar.CalendarCtrl
  
      def OnKey(self, event):
  	k=event.GetKeyCode()
@@ -56,7 +56,7 @@
  	    pass
  	else:
  	    event.Skip()
-@@ -337,7 +346,8 @@
+@@ -338,7 +347,8 @@ def min_max(i):
  
      last_6=[]
      for k in range(i,0,-1):
@@ -66,7 +66,7 @@
  	# wx.TimeSpan.Hours(1) - компенсация потери часа на летнем времени
  	if 20 < span <36: # остальное в расчет не берем
  	    last_6.append(span)
-@@ -367,27 +377,34 @@
+@@ -368,27 +378,34 @@ def calc_fert(year):
      for d in cycle.begin:
  	i=cycle.begin.index(d)
  	if i<len(cycle.begin)-1:
@@ -108,7 +108,7 @@
  
  	if (stop<year_b or start>year_e) and (d not in cycle.last):
  	    continue
-@@ -400,7 +417,8 @@
+@@ -401,7 +418,8 @@ def calc_fert(year):
  	    f=f+wx.DateSpan_Day()
  	
  	if d in cycle.last: # calc birthday
@@ -118,7 +118,7 @@
  	    if i<len(cycle.begin)-1: # not last item
  		if birth < cycle.begin[i+1]:
  		    add_mark(birth, MARK_BIRTH, year)
-@@ -410,7 +428,8 @@
+@@ -411,7 +429,8 @@ def calc_fert(year):
  		
      # prognosis to future cycles
      cycle.prog_begin=[]
@@ -128,7 +128,7 @@
      while d.GetYear()<=year:
  	if cycle.tablet<>[] and cycle.tablet[-1]<=d and \
  	    cycle.begin[-1]<=cycle.tablet[-1]: return
-@@ -418,15 +437,21 @@
+@@ -419,15 +438,21 @@ def calc_fert(year):
  	    #	    cycle.prog_begin.append(d)
  	    add_mark(d, MARK_PROG, year)
  
@@ -156,7 +156,7 @@
  	
          if stop<year_b or start>year_e : continue
  	
-@@ -448,15 +473,19 @@
+@@ -449,15 +474,19 @@ def calc_tablet(year):
      for d in cycle.tablet:
  	i=cycle.tablet.index(d)
  	if i<len(cycle.tablet)-1:
@@ -180,7 +180,7 @@
  		
  
  	    
-@@ -502,8 +531,10 @@
+@@ -503,8 +532,10 @@ def info(day):
      s=day.Format('%d %B')
      if cycle.tablet<>[]:
  	for d in cycle.tablet:
@@ -193,7 +193,7 @@
  		s+=" - "
  		if t<=28:
  		    s+=_('tablet N ')+str(t)
-@@ -532,7 +563,8 @@
+@@ -533,7 +564,8 @@ def info(day):
  	    while d<=day:
  		if cycle.tablet<>[] and cycle.tablet[-1]<=d and \
  		    cycle.begin[-1]<=cycle.tablet[-1]: return s
@@ -203,7 +203,7 @@
  	    find=2
  
  
-@@ -543,10 +575,12 @@
+@@ -544,10 +576,12 @@ def info(day):
  	if d2 in cycle.last:
  	    gestation=1
      elif find==2:
@@ -218,7 +218,7 @@
  	w=(k-1)/7
  	s+=" - "+str(k)+_(' day of gestation, ')+str(w)
  	if w == 1: s+=_(' week')
-@@ -555,10 +589,13 @@
+@@ -556,10 +590,13 @@ def info(day):
  	if (k-w*7) == 1: s+=_(' day')
  	else: s+=_(' days')
      else:

@@ -8,6 +8,5 @@ time:
           Since this is a per-request cache, neither TTLs specified in the
           `memoize()` call or `memoize.default_ttl` are used.
 - memcached: Uses libmemcached or the memcached PHP extension
-- apc: Uses the APC PHP extension
 
 WWW: http://pecl.php.net/package/memoize

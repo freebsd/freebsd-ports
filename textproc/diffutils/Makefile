@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffutils
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--program-prefix=g
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
+NLS_USES=	gettext iconv
 NLS_CONFIGURE_ENABLE=nls
 
 INFO=		diffutils

@@ -1,0 +1,15 @@
+This program is a command-line utility to catalog and verify torrent files.
+Run with only the -t option, it displays the metadata, name, and size of
+each file in the torrent.  Run with the -t and -p options, it computes the
+hashes of all files in the torrent, compares them against the hashes stored
+in the metadata, and warns of any errors.
+
+Torrentcheck also verifies the length of each file, and flags an error if
+the length is wrong even if the hash codes match.  It is designed to handle
+files over 4GB on a 32-bit machine.
+
+If torrentcheck returns "torrent is good" at the end of its output, every
+byte of every file in the torrent is present and correct, to a high degree
+of certainty (as explained in the README file).
+
+WWW: https://sourceforge.net/projects/torrentcheck/

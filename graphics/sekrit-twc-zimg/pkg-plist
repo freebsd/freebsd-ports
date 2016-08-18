@@ -1,4 +1,3 @@
-bin/zimg-test
 include/zimg++.hpp
 include/zimg.h
 lib/libzimg.a
