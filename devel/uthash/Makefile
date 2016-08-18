@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uthash
-PORTVERSION=	1.9.9
+PORTVERSION=	2.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	troydhanson
 
-PORTDOCS=	ChangeLog.txt todo.txt userguide.txt utarray.txt \
+PORTDOCS=	ChangeLog.txt userguide.txt utarray.txt \
 		utlist.txt utstring.txt
 PLIST_FILES=	include/utarray.h include/uthash.h include/utlist.h \
 		include/utstring.h
