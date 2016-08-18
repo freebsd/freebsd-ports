@@ -1,5 +1,5 @@
---- Makefile.orig	2005-11-21 13:20:33.000000000 -0800
-+++ Makefile	2010-04-09 02:58:00.000000000 -0700
+--- Makefile.orig	2005-11-21 21:20:33 UTC
++++ Makefile
 @@ -1,3 +1,3 @@
  # add -noassert for speedup
  all: freetennis.ml 
