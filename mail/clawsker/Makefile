@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clawsker
-PORTVERSION=	0.7.13
+PORTVERSION=	0.7.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext
 
-USES=		shebangfix perl5
+USES=		perl5 shebangfix tar:xz
 SHEBANG_FILES=	${PORTNAME}
 NO_ARCH=	yes
 
@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 post-patch:
-	@${REINPLACE_CMD} '/^DATADIR/s|/share||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/^MANDIR/ s|DATADIR|PREFIX|' ${WRKSRC}/Makefile
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} '/-C po/d' ${WRKSRC}/Makefile
