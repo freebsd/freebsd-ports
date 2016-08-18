@@ -1,11 +1,11 @@
 bin/stonesoup
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
-%%DATADIR%%/dat/clua/autofight.lua
-%%DATADIR%%/dat/clua/automagic.lua
-%%DATADIR%%/dat/clua/kills.lua
-%%DATADIR%%/dat/clua/runrest.lua
-%%DATADIR%%/dat/clua/stash.lua
+%%LUA%%%%DATADIR%%/dat/clua/autofight.lua
+%%LUA%%%%DATADIR%%/dat/clua/automagic.lua
+%%LUA%%%%DATADIR%%/dat/clua/kills.lua
+%%LUA%%%%DATADIR%%/dat/clua/runrest.lua
+%%LUA%%%%DATADIR%%/dat/clua/stash.lua
 %%DATADIR%%/dat/database/FAQ.txt
 %%DATADIR%%/dat/database/el/monflee.txt
 %%DATADIR%%/dat/database/el/rand_all.txt
