@@ -3,6 +3,7 @@
 
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/ports/slim-themes/:new_themes \
 		http://dist.codelabs.ru/fbsd/ports/slim-themes/:old_themes \
@@ -12,17 +13,17 @@ DISTFILES=
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Theme pack for SLiM login app
 
-# But that's not all, see below.
-OPTIONS_DEFINE=	ALL_THEMES
-OPTIONS_DEFAULT=	ALL_THEMES
-ALL_THEMES_DESC=	Include all themes
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SHAREMODE=	644
 THEMEDIR_REL=	share/slim/themes
 THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
 PLIST_SUB+=	THEMEDIR=${THEMEDIR_REL}
+
+OPTIONS_DEFINE=	# empty
+OPTIONS_MULTI=	THEME	# enforces at least one choice
+OPTIONS_SUB=	yes
+THEME_DESC=	Available SLiM Themes
 
 # Format is 'variable name%description%archive name%unpacked dir%dest
 # dir%master site tag'
@@ -67,34 +68,23 @@ ${n}_DIST:=	${d}:${mtag}
 .endif
 ${n}_SDIR:=	${sdir}
 ${n}_DDIR:=	${ddir}
-OPTIONS_DEFINE:=	${OPTIONS_DEFINE} ${n}
+OPTIONS_MULTI_THEME:=	${OPTIONS_MULTI_THEME} ${n}
 A+=		${n}
 ${n}_DESC:=	${desc}
 NEWTHEMES:=	${ALLTHEMES}	${n}
 ALLTHEMES:=	${NEWTHEMES}
 .endfor # t in ${THEMELIST}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_THEME}
+
+.include <bsd.port.options.mk>
 
 .for n in ${ALLTHEMES}
-.if ${PORT_OPTIONS:MALL_THEMES} || ${PORT_OPTIONS:M${n}}
-.if ! ${PORT_OPTIONS:M${n}}
-PORT_OPTIONS+=	${n}
-.endif
+.  if ${PORT_OPTIONS:M${n}}
 NEWDISTFILES:=	${DISTFILES}	${${n}_DIST}
 DISTFILES:=	${NEWDISTFILES}
-SEEN_THEMES=	yes
-NEWPLIST_SUB:=	${PLIST_SUB}	${n}=""
-PLIST_SUB:=	${NEWPLIST_SUB}
-.else
-NEWPLIST_SUB:=	${PLIST_SUB}	${n}="@comment "
-PLIST_SUB:=	${NEWPLIST_SUB}
-.endif # ${PORT_OPTIONS:MALL_THEMES} || ${PORT_OPTIONS:M${n}}
-.endfor # n in ${THEMELIST}
-
-.if !defined(SEEN_THEMES)
-IGNORE=		at least one theme must be selected
-.endif
+.  endif
+.endfor
 
 .if ${PORT_OPTIONS:MPARALLEL_DIMS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-parallel-dimensions-slim.theme
@@ -114,4 +104,4 @@ do-install:
 .endif # ${PORT_OPTIONS:M${n}}
 .endfor # t in ${THEMELIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
