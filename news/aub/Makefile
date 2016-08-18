@@ -12,25 +12,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assemble usenet binaries
 
 USES=		shebangfix
-NO_BUILD=	yes
-
-MANPAGE=	aub.1.sgml aubconf.1.sgml
-PORTDOCS=	COPYING README aubconf.example
-PLIST_FILES=	bin/aub man/man1/aub.1.sgml.gz man/man1/aubconf.1.sgml.gz
 SHEBANG_FILES=	aub
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PORTDOCS=	COPYING README aubconf.example
+PLIST_FILES=	bin/aub man/man1/aub.1.sgml.gz man/man1/aubconf.1.sgml.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${STAGEDIR}${PREFIX}/bin
-.for manpage in ${MANPAGE}
-	${INSTALL_MAN} ${WRKSRC}/${manpage} ${STAGEDIR}${MANPREFIX}/man/man1
-.endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/aub*.1.sgml ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
