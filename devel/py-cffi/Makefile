@@ -18,12 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 # Actually 2.6-2.7,3.2-3.5
-USES=		python
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 CFLAGS+=	-Wno-shift-negative-value
 .endif
 
