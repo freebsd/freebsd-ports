@@ -8620,3 +8620,4 @@ math/bamg||2016-08-14|No longer maintained upstream as is now part of freefem++
 www/pecl-APC||2016-08-15|No longer maintained upstream, and not working with PHP > 5.4
 textproc/libtext-wrapi18n-perl|textproc/p5-Text-WrapI18N|2016-08-15|Duplicate
 textproc/libtext-charwidth-perl|textproc/p5-Text-CharWidth|2016-08-15|Duplicate
+net-mgmt/netams||2016-08-18|Has expired: unmaintained, broken on most FreeBSD platforms
