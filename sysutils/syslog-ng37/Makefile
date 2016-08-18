@@ -43,13 +43,12 @@ REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (and modules, like Elastic)
 PYTHON_DESC=		Build with Python 2.7 support
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
-USE_OPENSSL=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
