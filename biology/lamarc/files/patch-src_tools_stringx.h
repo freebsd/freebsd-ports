@@ -1,6 +1,6 @@
---- src/tools/stringx.h.orig	2012-12-03 12:01:34.000000000 +0100
-+++ src/tools/stringx.h	2012-12-03 12:02:30.000000000 +0100
-@@ -107,6 +107,26 @@
+--- src/tools/stringx.h.orig	2011-04-23 02:02:49 UTC
++++ src/tools/stringx.h
+@@ -107,6 +107,26 @@ struct CIStringCompare : public std::bin
  
  bool ciStringEqual(const std::string& s1, const std::string& s2);
  
@@ -27,7 +27,7 @@
  //------------------------------------------------------------------------------------
  
  template <class T>
-@@ -188,26 +208,6 @@
+@@ -188,26 +208,6 @@ bool FromString(const std::string & in, 
  
  DoubleVec1d StringToDoubleVecOrBarf(const std::string& in);
  
