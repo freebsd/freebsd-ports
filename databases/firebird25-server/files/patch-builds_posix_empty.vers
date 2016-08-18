@@ -1,0 +1,11 @@
+--- builds/posix/empty.vers.orig	2016-06-30 09:34:53 UTC
++++ builds/posix/empty.vers
+@@ -27,6 +27,8 @@
+ {
+ global:
+ 	main;
++	__progname;
++	environ;
+ 
+ local:
+ 	*;

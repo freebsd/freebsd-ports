@@ -1,6 +1,6 @@
---- src/common/classes/FpeControl.h.orig	2015-03-27 14:47:01.000000000 +0100
-+++ src/common/classes/FpeControl.h	2016-04-02 19:45:10.096583000 +0200
-@@ -223,13 +223,13 @@
+--- src/common/classes/FpeControl.h.orig	2016-06-30 09:34:54 UTC
++++ src/common/classes/FpeControl.h
+@@ -223,13 +223,13 @@ inline bool isinf(double x)
  	return (!_finite (x) && !isnan(x));
  }
  #else
