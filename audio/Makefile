@@ -610,6 +610,7 @@
     SUBDIR += pragha
     SUBDIR += puddletag
     SUBDIR += pulseaudio
+    SUBDIR += pulseaudio-module-sndio
     SUBDIR += py-al
     SUBDIR += py-ao
     SUBDIR += py-apetag
