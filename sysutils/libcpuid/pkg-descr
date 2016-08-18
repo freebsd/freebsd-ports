@@ -1,0 +1,15 @@
+libcpuid is a small C library for x86 CPU detection and feature extraction.
+Using it, you can:
+
+  - Get the processor vendor, model, brand string, code name, etc.
+  - Get information about CPU features such as: number of cores or logical
+    CPUs, cache sizes, CPU clock, etc.
+  - Check if the processor implements a specific instruction set such as
+    SSE2 or 3DNow!
+  - Execute the CPUID and RDTSC instructions in a portable way
+  - And have this all in your commercial application, without getting into
+    trouble, due to permissive license
+
+Reference utility (rather advanced and useful on its own) is also provided.
+
+WWW: http://libcpuid.sourceforge.net/
