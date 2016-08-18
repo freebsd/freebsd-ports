@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	warmcat
 
+PORTSCOUT=	limit:^v\d+\.
+
 USES=		cmake pkgconfig ssl
 USE_LDCONFIG=	yes
 
