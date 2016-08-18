@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	4
+PORTREVISION=	5
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
@@ -30,7 +30,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON MONGO
 OPTIONS_DEFAULT=	JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -86,6 +86,11 @@ MSQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
 MSQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
 MSQL_LDFLAGS=			-L${LOCALBASE}/lib
 MSQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
+
+MONGO_CONFIGURE_ENABLE=		mongodb
+MONGO_BUILD_DEPENDS=		mongo:databases/mongodb
+MONGO_RUN_DEPENDS=		mongo:databases/mongodb
+MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
