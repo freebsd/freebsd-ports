@@ -11,11 +11,14 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/ocaml-omake/omake-0.9.8.6-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible build system
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C|-.*||}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 USES=		ncurses readline
-MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
+MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
@@ -46,7 +49,7 @@ post-patch:
 .endfor
 .endif
 
-check regression-test test: build
+do-test:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake check
 	@${FIND} -ds ${WRKSRC}/test -type f -name 'result.log' -print0 | \
 		${XARGS} -0tI @ ${CAT} @
