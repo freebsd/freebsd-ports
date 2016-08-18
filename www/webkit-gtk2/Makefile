@@ -49,6 +49,8 @@ CONFIGURE_ARGS=	--with-gtk=2.0 \
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
+BROKEN_sparc64=	attempts to use x86 assembler
+
 CONFIGURE_ARGS+=--disable-egl \
 		--disable-gles2
 SHEBANG_FILES=	\
