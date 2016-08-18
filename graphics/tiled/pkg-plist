@@ -8,6 +8,7 @@ lib/libtiled.so.1
 lib/libtiled.so.1.0
 lib/libtiled.so.1.0.0
 lib/tiled/plugins/libcsv.so
+lib/tiled/plugins/libdefold.so
 lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
 lib/tiled/plugins/libjson.so
@@ -35,10 +36,8 @@ share/mime/packages/tiled.xml
 %%DATADIR%%/translations/tiled_en.qm
 %%DATADIR%%/translations/tiled_es.qm
 %%DATADIR%%/translations/tiled_fr.qm
-%%DATADIR%%/translations/tiled_he.qm
 %%DATADIR%%/translations/tiled_it.qm
 %%DATADIR%%/translations/tiled_ja.qm
-%%DATADIR%%/translations/tiled_lv.qm
 %%DATADIR%%/translations/tiled_nb.qm
 %%DATADIR%%/translations/tiled_nl.qm
 %%DATADIR%%/translations/tiled_pl.qm
