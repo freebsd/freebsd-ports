@@ -16,7 +16,7 @@ COMMENT?=	Input method library
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool
-USES=		gettext gmake iconv libedit libtool pkgconfig perl5 tar:bzip2
+USES+=		gettext gmake iconv libedit libtool pkgconfig perl5 tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
