@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
@@ -21,7 +21,8 @@ BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libuuid.so:misc/e2fsprogs-libuuid
 BUILD_DEPENDS=		xsltproc:textproc/libxslt \
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
@@ -43,7 +44,7 @@ REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (and modules, like Elastic)
 PYTHON_DESC=		Build with Python 2.7 support
 
-USES=		gmake libtool pathfix pkgconfig ssl
+USES=		gmake libtool pathfix pkgconfig ssl gettext-runtime
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
