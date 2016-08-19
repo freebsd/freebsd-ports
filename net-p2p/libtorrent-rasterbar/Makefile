@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES?=	net-p2p ipv6
-MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
+MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:R:S/./_/g}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matthew@reztek.cz
 COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS?=	libboost_date_time.so:devel/boost-libs \
-		libGeoIP.so:net/GeoIP
+LIB_DEPENDS+=	libboost_chrono.so:devel/boost-libs \
+		libboost_random.so:devel/boost-libs \
+		libboost_system.so:devel/boost-libs
 
-USES+=		compiler:c++11-lang iconv:wchar_t libtool pathfix pkgconfig
-USE_OPENSSL=	yes
+USES+=		compiler:c++11-lang iconv:wchar_t libtool pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--disable-static \
 		--enable-dht \
@@ -26,36 +27,23 @@ CONFIGURE_ARGS=	--disable-static \
 		--enable-deprecated-functions \
 		--with-boost=${LOCALBASE} \
 		--with-boost-system=boost_system \
-		--enable-geoip \
-		--with-libgeoip \
 		--with-libiconv \
 		--with-openssl=${OPENSSLBASE}
 
-SHLIB_VER=	8
+SHLIB_VER=	9
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog
-
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*.*
-
-DOCSRCDIR3=	${WRKSRC}/docs/img
-DOCSDIR3=	${DOCSDIR}/docs/img
-DOC_FILES3=	*
-
+DOCFILES=	AUTHORS ChangeLog
+PORTDOCS=	${DOCFILES} docs/*
 PORTEXAMPLES=	*.cpp
 
-OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES
+OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES TEST
+TEST_DESC=	Build and run tests (increases library size)
 
 DEBUG_CONFIGURE_ENABLE=	debug
+TEST_CONFIGURE_ENABLE=	tests
 
 .include <bsd.port.options.mk>
-
-# Restrict to stable (even) versions, indicated by the second component.
-# With Versions 1.x not build yet net-p2p/qbittorrent
-PORTSCOUT=	limit:^0.16\..*
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
@@ -68,27 +56,26 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
 		${WRKSRC}/Jamfile
 
+post-configure:
+	${FIND} ${WRKSRC} -name Makefile -o -name link_flags | \
+		${XARGS} ${REINPLACE_CMD} 's| *-R${LOCALBASE}/lib||'
+
 post-install:
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "yes" && defined(USE_PYTHON)
-	${STRIP_CMD} \
-	${STAGEDIR}${PYTHON_SITELIBDIR}/libtorrent.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/libtorrent.so
 .else
 	${STRIP_CMD} \
 	${STAGEDIR}${PREFIX}/lib/libtorrent-rasterbar.so.${SHLIB_VER}
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR3}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
-.endif
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${DOCFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
+	${INSTALL_DATA} ${WRKSRC}/examples/${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
