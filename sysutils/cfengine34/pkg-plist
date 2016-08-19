@@ -296,6 +296,8 @@ share/cfengine/CoreBase/update.cf
 %%DOCSDIR%%/examples/win_emergency.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
+@postexec chown root:wheel "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
+@postexec chmod 700 "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
 @postunexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
 @postunexec rmdir "/var/cfengine/masterfiles" >/dev/null 2>&1 || :
 @postunexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
