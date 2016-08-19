@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-12-19 18:02:26.000000000 +0100
-+++ Makefile.in	2014-09-04 12:15:49.912860562 +0200
-@@ -74,7 +74,7 @@
+--- Makefile.in.orig	2012-12-19 17:02:26 UTC
++++ Makefile.in
+@@ -74,7 +74,7 @@ CONFIG_CLEAN_FILES = modules.lsm .spec e
  	ext/common/.profile
  CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
@@ -9,7 +9,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am_modulecmd_OBJECTS = modulecmd-ModuleCmd_Avail.$(OBJEXT) \
  	modulecmd-ModuleCmd_Clear.$(OBJEXT) \
-@@ -150,7 +150,7 @@
+@@ -150,7 +150,7 @@ am__uninstall_files_from_dir = { \
           $(am__cd) "$$dir" && rm -f $$files; }; \
    }
  man1dir = $(mandir)/man1
@@ -18,7 +18,7 @@
  NROFF = nroff
  MANS = $(man_MANS)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
-@@ -320,7 +320,7 @@
+@@ -320,7 +320,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I config
@@ -27,7 +27,7 @@
  SUBDIRS = . init modulefiles @EXTDIR@ doc
  DIST_SUBDIRS = . init modulefiles etc ext doc
  SOURCES_H = modules_def.h getopt.h config.h
-@@ -1087,10 +1087,10 @@
+@@ -1087,10 +1087,10 @@ uninstall-man1:
  	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
  	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
  	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
@@ -41,7 +41,7 @@
  	{ for i in $$list; do echo "$$i"; done; \
  	l2='$(man_MANS)'; for i in $$l2; do echo "$$i"; done | \
  	  sed -n '/\.4[a-z]*$$/p'; \
-@@ -1103,26 +1103,26 @@
+@@ -1103,26 +1103,26 @@ install-man4: $(man_MANS)
  	sed 'N;N;s,\n, ,g' | { \
  	list=; while read file base inst; do \
  	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
@@ -75,7 +75,7 @@
  
  # This directory's subdirectories are mostly independent; you can cd
  # into them and run `make' without going through this Makefile.
-@@ -1498,7 +1498,7 @@
+@@ -1498,7 +1498,7 @@ check: check-recursive
  all-am: Makefile $(PROGRAMS) $(MANS) config.h
  installdirs: installdirs-recursive
  installdirs-am:
@@ -84,7 +84,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-recursive
-@@ -1570,7 +1570,7 @@
+@@ -1570,7 +1570,7 @@ install-info: install-info-recursive
  
  install-info-am:
  
@@ -93,7 +93,7 @@
  
  install-pdf: install-pdf-recursive
  
-@@ -1603,7 +1603,7 @@
+@@ -1603,7 +1603,7 @@ ps-am:
  
  uninstall-am: uninstall-binPROGRAMS uninstall-man
  
@@ -102,7 +102,7 @@
  
  .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) all check-am \
  	ctags-recursive install-am install-strip tags-recursive
-@@ -1619,14 +1619,14 @@
+@@ -1619,14 +1619,14 @@ uninstall-man: uninstall-man1 uninstall-
  	info-am install install-am install-binPROGRAMS install-data \
  	install-data-am install-dvi install-dvi-am install-exec \
  	install-exec-am install-html install-html-am install-info \
