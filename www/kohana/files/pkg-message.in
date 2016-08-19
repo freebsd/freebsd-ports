@@ -1,0 +1,9 @@
+To use Kohana framework you should do the following:
+1. Copy %%WWWDIR%%/index.php and %%WWWDIR%%/install.php
+   to your public directory.
+2. Copy %%WWWDIR%%/application directory to desired
+   application directory.
+   You can create the directory structure too.
+3. Modify index.php if it's necessary.
+4. Open index.php in your browser and check the requirements.
+5. If the requirements are right you can delete install.php.
