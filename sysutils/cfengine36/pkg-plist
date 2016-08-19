@@ -341,7 +341,6 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/win_schedule.cf
 %%DOCSDIR%%/examples/zenoss.cf
 @dir /var/cfengine/inputs
-@dir /var/cfengine/masterfiles
 @dir /var/cfengine/modules
 @dir /var/cfengine/outputs
 @dir(root,wheel,700) /var/cfengine/ppkeys
