@@ -28,14 +28,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	AESNI UPNP DOCS
 
-AESNI_DESC=	Use AES-NI instructions set
-AESNI_CMAKE_ON=	-DWITH_AESNI=ON
-AESNI_CMAKE_OFF=-DWITH_AESNI=OFF
-
-UPNP_DESC=	Include support for UPnP client
-UPNP_CMAKE_ON=	-DWITH_UPNP=ON
-UPNP_CMAKE_OFF=	-DWITH_UPNP=OFF
-UPNP_LIB_DEPENDS=libminiupnpc.so:net/miniupnpc
+AESNI_DESC=		Use AES-NI instructions set
+AESNI_CMAKE_BOOL=	WITH_AESNI
+UPNP_DESC=		Include support for UPnP client
+UPNP_CMAKE_BOOL=	WITH_UPNP
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
