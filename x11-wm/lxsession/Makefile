@@ -10,33 +10,31 @@ MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Session Manager
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libhal.so:sysutils/hal \
 		libgee-0.8.so:devel/libgee \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv localbase pkgconfig
 USE_GNOME=	gtk20 intlhack libxslt
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 # Wrong versioning upstream
 PORTSCOUT=	skipv:0.4.9.2
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|po man|man|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
