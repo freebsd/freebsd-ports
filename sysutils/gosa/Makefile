@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based LDAP Administration Program
 
 BROKEN=		requires magic quotes option (PHP < 5.4, no longer available)
+DEPRECATED=	this version of gosa cannot be fixed (requires PHP < 5.4)
+EXPIRATION_DATE=	2016-11-19
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
