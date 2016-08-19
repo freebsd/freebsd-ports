@@ -2,6 +2,7 @@
 
 PORTNAME=	calendarserver
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.lechner-rau.de/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,10 +46,16 @@ SVN_REPOSITORY_URL=	http://svn.calendarserver.org/repository/calendarserver
 SVN_TAG1=	CalendarServer/tags/release/${DISTNAME}
 SVN_CMD1=	svn export
 
-LOGDIR=		/var/log/caldavd
-SHAREDIR=	${PREFIX}/share/caldavd
-
 ETCDIR=		${PREFIX}/etc/caldavd
+SHAREDIR=	${PREFIX}/share/caldavd
+DBDIR=		/var/db/caldavd
+LOGDIR=		/var/log/caldavd
+RUNDIR=		/var/run/caldavd
+PLIST_SUB=	USER=${USERS} GROUP=${GROUPS} \
+		ETCDIR=${ETCDIR} \
+		DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR}
 
 CALDAVD_USER=	caldavd
 USERS=		${CALDAVD_USER}
@@ -69,9 +76,13 @@ maint-gen-distfile:
 post-patch:
 	@${REINPLACE_CMD} -e 's|"{}.a1+unknown".format(base_version)|"8.0"|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|"/etc/caldavd/caldavd.plist"|"${ETCDIR}/caldavd.plist"|g' ${WRKSRC}/twistedcaldav/stdconfig.py
+	@${REINPLACE_CMD} -e 's|/etc/caldavd|${ETCDIR}|g' ${WRKSRC}/conf/caldavd.plist
+	@${REINPLACE_CMD} -e 's|/var/run|/var/run/caldavd|g' ${WRKSRC}/conf/caldavd.plist
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}/auth
+	${MKDIR} ${STAGEDIR}${DBDIR}/Data/Documents
+	${MKDIR} ${STAGEDIR}${DBDIR}/Documents
+	${MKDIR} ${STAGEDIR}${ETCDIR}/auth
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC}/doc && \
@@ -83,5 +94,7 @@ post-install:
 	${CP} -p ${WRKSRC}/txdav/common/datastore/sql_schema/current.sql \
 		${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${LOGDIR}
+	${MKDIR} ${STAGEDIR}${RUNDIR}
 
 .include <bsd.port.mk>
