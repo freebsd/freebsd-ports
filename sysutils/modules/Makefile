@@ -13,7 +13,7 @@ COMMENT=	Dynamic modification of a user environment
 LICENSE=	GPLv2
 
 USES=		tcl
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--without-x \
 		--with-version-path=${LOCALBASE}/Modules/versions \
