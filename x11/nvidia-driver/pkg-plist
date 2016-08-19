@@ -7,8 +7,6 @@ lib/libGLESv1_CM.so
 lib/libGLESv1_CM.so.1
 lib/.nvidia/libGLESv2.so
 lib/.nvidia/libGLESv2.so.2
-lib/libGLcore.so
-lib/libGLcore.so.1
 lib/libXvMCNVIDIA.a
 lib/libXvMCNVIDIA.so
 lib/libXvMCNVIDIA.so.1
@@ -17,6 +15,8 @@ lib/libnvidia-cfg.so
 lib/libnvidia-cfg.so.1
 lib/libnvidia-eglcore.so
 lib/libnvidia-eglcore.so.1
+lib/libnvidia-glcore.so
+lib/libnvidia-glcore.so.1
 lib/libnvidia-glsi.so
 lib/libnvidia-glsi.so.1
 lib/libnvidia-tls.so
@@ -26,7 +26,6 @@ lib/vdpau/libvdpau_nvidia.so.1
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so.1
-%%MODULESDIR%%/libnvidia-wfb.so.1
 /%%KMODDIR%%/nvidia.ko
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.1
@@ -36,14 +35,12 @@ lib/vdpau/libvdpau_nvidia.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.2
-%%LINUX%%%%LINUXBASE%%/usr/lib/libGLcore.so.%%SHLIB_VERSION%%
-%%LINUX%%%%LINUXBASE%%/usr/lib/libGLcore.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-glcore.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-glsi.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
-%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau_nvidia.so
