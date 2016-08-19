@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML_RPC2
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net devel pear
 
 MAINTAINER=	ports@FreeBSD.org
