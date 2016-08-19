@@ -127,27 +127,7 @@ post-patch: .SILENT
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 	${REINPLACE_CMD} -e 's/8 bus_type\[4\]/8 bus_type[8]/' \
 		${WRKSRC}/src/nvidia_sysctl.c
-# Process OPTIONS
-.if ${PORT_OPTIONS:MFREEBSD_AGP}
-	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-.if ${PORT_OPTIONS:MACPI_PM}
-	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_ACPI_PM)/define \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-.if ! ${PORT_OPTIONS:MLINUX}
-	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-.if ${PORT_OPTIONS:MPAE}
-	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_PAE)/define \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-.if ${PORT_OPTIONS:MWBINVD}
-	${REINPLACE_CMD} -E 's/undef (NV_USE_WBINVD)/define \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
+# Respect WITHOUT_LINUX setting
 	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
@@ -161,10 +141,6 @@ post-patch: .SILENT
 # Also do not install libnvidia-gtk* libraries which are for nvidia-settings
 .if ${NVVERSION} >= 346.016
 	${REINPLACE_CMD} -e '/libnvidia-gtk/d' ${WRKSRC}/lib/Makefile
-.endif
-# Conditionally install documentation (but you generally want it)
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 # Adjust installation paths of some conflicting files (shared also between
 # libGL, libEGL, libGLESv2, and xorg-server) to ease package manager work
@@ -188,6 +164,31 @@ post-patch: .SILENT
 .if ${NVVERSION} >= 334.016
 	${REINPLACE_CMD} -e 's,/usr/share/nvidia,${STAGEDIR}${DOCSDIR},' \
 		${WRKSRC}/lib/libGL/Makefile ${WRKSRC}/doc/Makefile
+.endif
+# Finally, process OPTIONS
+.if ${PORT_OPTIONS:MFREEBSD_AGP}
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+.if ${PORT_OPTIONS:MACPI_PM}
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_ACPI_PM)/define \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+.if ! ${PORT_OPTIONS:MLINUX}
+	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+.if ${PORT_OPTIONS:MPAE}
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_PAE)/define \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+.if ${PORT_OPTIONS:MWBINVD}
+	${REINPLACE_CMD} -E 's/undef (NV_USE_WBINVD)/define \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+# Conditionally install documentation (but you generally want it)
+.if ! ${PORT_OPTIONS:MDOCS}
+	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 
 pre-install:
