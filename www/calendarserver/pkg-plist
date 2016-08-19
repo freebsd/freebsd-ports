@@ -130,4 +130,10 @@ man/man8/calendarserver_shell.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/users-groups.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/accounts.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-db.zones
-@dir etc/caldavd/auth
+@dir %%ETCDIR%%/auth
+@dir(%%USER%%,%%GROUP%%,755) %%RUNDIR%%
+@dir %%LOGDIR%%
+@dir(%%USER%%,%%GROUP%%,755) %%DBDIR%%
+@dir(%%USER%%,%%GROUP%%,755) %%DBDIR%%/Documents
+@dir(%%USER%%,%%GROUP%%,755) %%DBDIR%%/Data
+@dir(%%USER%%,%%GROUP%%,755) %%DBDIR%%/Data/Documents

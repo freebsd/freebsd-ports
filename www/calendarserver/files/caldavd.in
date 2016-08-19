@@ -14,7 +14,7 @@
 # caldavd_flags (string):          Flags to pass to caldavd.
 #                                Default is empty.
 # caldavd_pidfile (string):        Set path to the pid file.
-#                                Default is /var/db/caldavd/caldavd.pid
+#                                Default is /var/run/caldavd/caldavd.pid
 #
 
 . /etc/rc.subr
@@ -25,9 +25,9 @@ rcvar=caldavd_enable
 load_rc_config $name
 : ${caldavd_enable:=no}
 : ${caldavd_conf="%%PREFIX%%/etc/caldavd/caldavd.plist"}
-: ${caldavd_pidfile="/var/run/${name}.pid"}
+: ${caldavd_pidfile="/var/run/caldavd/${name}.pid"}
 
-pidfile="/var/db/${name}/${name}.pid"
+pidfile="${caldavd_pidfile}"
 required_files="${caldavd_conf}"
 
 procname="%%PYTHON_CMD%%"
@@ -35,7 +35,5 @@ PATH=${PATH}:%%PREFIX%%/bin
 
 command="%%PREFIX%%/bin/caldavd"
 command_args=" -f ${caldavd_conf} -R kqueue"
-
-start_precmd="install -d -o caldavd /var/db/caldavd/Data/Documents /var/db/caldavd/Documents && install -d /var/log/caldavd"
 
 run_rc_command "$1"
