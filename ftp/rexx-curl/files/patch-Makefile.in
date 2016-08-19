@@ -1,0 +1,106 @@
+--- Makefile.in.orig	2012-04-29 00:23:57 UTC
++++ Makefile.in
+@@ -118,7 +118,6 @@ $(PACKAGE_DIR)/makefile.* $(PACKAGE_DIR)
+ $(PACKAGE_DIR)/config.guess $(PACKAGE_DIR)/config.sub $(PACKAGE_DIR)/install-sh $(PACKAGE_DIR)/preinst.rexx \
+ $(PACKAGE_DIR)/aclocal.m4 $(PACKAGE_DIR)/configure.in $(PACKAGE_DIR)/def2exp.rexx \
+ $(PACKAGE_DIR)/demo/*.rexx $(PACKAGE_DIR)/demo/README.txt $(PACKAGE_DIR)/makew32.rex \
+-$(PACKAGE_DIR)/doc/*.html $(PACKAGE_DIR)/doc/images/*.png \
+ $(PACKAGE_DIR)/rxcurl64.xpm $(PACKAGE_DIR)/RexxCURL.spec.in \
+ $(PACKAGE_DIR)/debian/*.regina $(PACKAGE_DIR)/debian/*.oorexx $(PACKAGE_DIR)/debian/copyright $(PACKAGE_DIR)/debian/compat
+ 
+@@ -229,8 +228,6 @@ $(RXDEFEXP1): $(srcdir)/$(PACKAGE_NAME)w
+ 
+ doco:
+ 	mkdir images
+-	cp $(srcdocdir)/index.html .
+-	cp $(srcdocdir)/images/*.png images
+ 
+ zip:
+ 	zip rexxcurl$(VER) README INSTALL TODO CPLv1.0.txt HISTORY $(ZIPCSRCFILES) $(ZIPHEADERS) $(ZIPCOMMONFILES)
+@@ -239,7 +236,6 @@ zip:
+ 	zip rexxcurl$(VER) config.guess config.sub install-sh preinst.rexx
+ 	zip rexxcurl$(VER) aclocal.m4 configure.in def2exp.rexx
+ 	zip rexxcurl$(VER) demo/*.rexx demo/README.txt makew32.rex
+-	zip rexxcurl$(VER) doc/*.html doc/images/*.png
+ 	zip rexxcurl$(VER) debian/*.regina debian/*.oorexx debian/copyright debian/compat
+ 	zip rexxcurl$(VER) RexxCURL.spec.in rxcurl64.xpm
+ 
+@@ -265,8 +261,6 @@ installbase: all
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d $(DESTDIR)$(libdir)
+ 	$(INSTALL) -d $(DESTDIR)$(sharedir)
+-	$(INSTALL) -d $(DESTDIR)$(docdir)
+-	$(INSTALL) -d $(DESTDIR)$(docdir)/images
+ 	$(INSTALL) -c -m 755 ./$(PACKAGE_NAME)$(binarybitprefix)$(EXE) $(DESTDIR)$(bindir)/$(PACKAGE_NAME)$(binarybitprefix)$(EXE)
+ 	$(INSTALL) -c -m 755 ./rexxcurl-config $(DESTDIR)$(bindir)/rexxcurl-config
+ 	-$(INSTALL) -c -m 755 ./$(SHLPRE)$(PACKAGE_NAME)$(SHLPST) $(DESTDIR)$(libdir)/$(SHLPRE)$(PACKAGE_NAME)$(SHLPST)
+@@ -286,9 +280,6 @@ installbase: all
+ 	$(DESTDIR)$(bindir)/$(PACKAGE_NAME)$(binarybitprefix)$(EXE) $(srcdir)/preinst.rexx $(bindir)/$(PACKAGE_NAME)$(binarybitprefix)$(EXE) $(srcdir)/demo/getright.rexx $(DESTDIR)$(sharedir)/getright.rexx
+ 	-chmod 755 $(DESTDIR)$(sharedir)/getright.rexx
+ 	$(INSTALL) -c -m 644 $(srcdir)/demo/README.txt $(DESTDIR)$(sharedir)/README.txt
+-	$(INSTALL) -c -m 644 $(srcdocdir)/index.html $(DESTDIR)$(docdir)/index.html
+-	$(INSTALL) -c -m 644 $(srcdocdir)/images/rxcurl64.png $(DESTDIR)$(docdir)/images/rxcurl64.png
+-	$(INSTALL) -c -m 644 $(srcdir)/CPLv1.0.txt $(DESTDIR)$(docdir)/CPLv1.0.txt
+ 
+ cygwininstall: installbase
+ 	mv $(DESTDIR)$(libdir)/$(SHLPRE)$(PACKAGE_NAME)$(SHLPST) $(DESTDIR)$(bindir)/$(SHLPRE)$(PACKAGE_NAME)$(SHLPST)
+@@ -318,8 +309,6 @@ beosinstall: all
+ 	$(INSTALL) -c -m 644 $(srcdir)/demo/README.txt /boot/home/config/bin/rexx/README-rexxcurl.txt
+ #
+ # where to put doc for BeOS ?
+-#	$(INSTALL) -c -m 644 $(docdir)/index.html $(DESTDIR)$(sharedir)/index.html
+-#	$(INSTALL) -c -m 644 $(docdir)/images/rxcurl64.png $(DESTDIR)$(sharedir)/images/rxcurl64.png
+ #
+ 
+ binary: $(BASE_BINARY)
+@@ -330,7 +319,6 @@ binarybase: all
+ 	-mkdir -p ./tmpdir/lib
+ 	-mkdir -p ./tmpdir/rexx
+ 	-mkdir -p ./tmpdir/doc/rexxcurl
+-	-mkdir -p ./tmpdir/doc/rexxcurl/images
+ 	cp $(PACKAGE_NAME)$(binarybitprefix)$(EXE) ./tmpdir/bin
+ 	cp $(PACKAGE_NAME)-config ./tmpdir/bin
+ 	cp $(SHLPRE)$(PACKAGE_NAME)$(SHLPST) ./tmpdir/lib
+@@ -340,8 +328,6 @@ binarybase: all
+ 	cp $(srcdir)/INSTALL ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/README ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/TODO ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/index.html ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/images/*.png ./tmpdir/doc/rexxcurl/images
+ 	cp $(srcdir)/demo/testcurl.rexx ./tmpdir/rexx/testcurl.rexx
+ 	cp $(srcdir)/demo/httppost.rexx ./tmpdir/rexx/httppost.rexx
+ 	cp $(srcdir)/demo/getmail-pop3.rexx ./tmpdir/rexx/getmail-pop3.rexx
+@@ -359,7 +345,6 @@ cygwinbinary: all
+ 	-mkdir -p ./tmpdir/lib
+ 	-mkdir -p ./tmpdir/rexx
+ 	-mkdir -p ./tmpdir/doc/rexxcurl
+-	-mkdir -p ./tmpdir/doc/rexxcurl/images
+ 	cp $(PACKAGE_NAME)$(binarybitprefix)$(EXE) ./tmpdir/bin
+ 	cp $(SHLPRE)$(PACKAGE_NAME)$(SHLPST) ./tmpdir/bin
+ 	cp $(LIBPRE)$(PACKAGE_NAME)$(LIBPST) ./tmpdir/lib
+@@ -368,8 +353,6 @@ cygwinbinary: all
+ 	cp $(srcdir)/INSTALL ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/README ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/TODO ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/index.html ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/images/*.png ./tmpdir/doc/rexxcurl/images
+ 	cp $(srcdir)/demo/testcurl.rexx ./tmpdir/rexx/testcurl.rexx
+ 	cp $(srcdir)/demo/httppost.rexx ./tmpdir/rexx/httppost.rexx
+ 	cp $(srcdir)/demo/getmail-pop3.rexx ./tmpdir/rexx/getmail-pop3.rexx
+@@ -387,7 +370,6 @@ beosbinary: all
+ 	-mkdir -p ./tmpdir/lib
+ 	-mkdir -p ./tmpdir/add-ons/rexx
+ 	-mkdir -p ./tmpdir/doc/rexxcurl
+-	-mkdir -p ./tmpdir/doc/rexxcurl/images
+ 	cp $(PACKAGE_NAME)$(binarybitprefix)$(EXE) ./tmpdir/bin
+ 	cp $(SHLPRE)$(PACKAGE_NAME)$(SHLPST) ./tmpdir/add-ons/rexx
+ 	cp $(LIBPRE)$(PACKAGE_NAME)$(LIBPST) ./tmpdir/lib
+@@ -396,8 +378,6 @@ beosbinary: all
+ 	cp $(srcdir)/INSTALL ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/README ./tmpdir/doc/rexxcurl
+ 	cp $(srcdir)/TODO ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/index.html ./tmpdir/doc/rexxcurl
+-	cp $(srcdir)/doc/images/*.png ./tmpdir/doc/rexxcurl/images
+ 	cp $(srcdir)/demo/testcurl.rexx ./tmpdir/rexx/testcurl.rexx
+ 	cp $(srcdir)/demo/httppost.rexx ./tmpdir/rexx/httppost.rexx
+ 	cp $(srcdir)/demo/getmail-pop3.rexx ./tmpdir/rexx/getmail-pop3.rexx
