@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epic5
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
@@ -13,14 +13,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CFLAGS:=	${CFLAGS:C/-O2/-O/g}
 
 OPTIONS_DEFINE=	DOCS PERL RUBY TCL
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES=		iconv libarchive ncurses tar:xz
+USES=		iconv libarchive ncurses ssl tar:xz
 
 PERL_USES=	perl5
 PERL_CONFIGURE_WITH=	perl
