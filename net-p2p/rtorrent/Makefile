@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://rtorrent.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pipfstarrd@openmailbox.org
 COMMENT=	BitTorrent Client written in C++
 
 LICENSE=	GPLv2 GPLv3
@@ -18,19 +18,19 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 BROKEN_arm=	does not configure on arm
 
-OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 XMLRPC
-OPTIONS_DEFAULT=XMLRPC
-XMLRPC_DESC=	Compile with xmlrpc-c support
-
-CONFIGURE_ARGS=	--disable-debug
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-pthread
 USES=		compiler:c++11-lang ncurses pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-debug
+LDFLAGS+=	-pthread
 
 PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README
 PORTEXAMPLES=	rtorrent.rc
 SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 XMLRPC
+OPTIONS_DEFAULT=XMLRPC
+XMLRPC_DESC=	Compile with xmlrpc-c support
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 XMLRPC_CONFIGURE_OFF=	--with-xmlrpc-c=no
@@ -56,11 +56,11 @@ post-patch:
 .endif
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
