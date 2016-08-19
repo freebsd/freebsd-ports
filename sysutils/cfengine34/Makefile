@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.4.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
