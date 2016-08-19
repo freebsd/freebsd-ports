@@ -95,29 +95,8 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/nv-freebsd.h
-# Adjust legacy drivers for updated d_mmap() since FreeBSD src SVN r201223
-.if ${NVVERSION} < 195.022
-	${REINPLACE_CMD} -e 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
-		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
-		s/int nprot/&, vm_memattr_t *memattr/' \
-			${WRKSRC}/src/nvidia_dev.c
-.endif
-# In the legacy drivers: remove page queue locking and add page locking
-# around vm_page_(un)wire() after FreeBSD src SVN r207410, r207617, and
-# r207644; also remove page queue locking around vm_page_wakeup() after
-# FreeBSD src SVN r163622
-.if ${NVVERSION} < 304.064
-	${REINPLACE_CMD} -E '/vm_page_(un)?lock_queues\(\);/d ; \
-		s/(vm_page_(un)?wire\()([^,]+)(, 0)?(\);)/vm_page_lock(\3); & vm_page_unlock(\3);/' \
-			${WRKSRC}/src/nvidia_subr.c
-.endif
-# Catch up legacy drivers with FreeBSD src SVN r225617
-.if ${NVVERSION} < 195.022
-	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
-		${WRKSRC}/src/nvidia_linux.c
-.endif
 # Adjust Linux headers #include's after FreeBSD src SVN r246085
-.if ${OSVERSION} > 1000027 && ${NVVERSION} >= 96.04323
+.if ${OSVERSION} > 1000027
 	${REINPLACE_CMD} -E '/#include "machine\/\.\.\/linux(32)?\/linux.h"/ \
 		{ x ; s/.*/#include "machine\/..\/..\/compat\/linux\/linux_ioctl.h"/ ; H ; x ; }' \
 			${WRKSRC}/src/nvidia_linux.c
@@ -135,11 +114,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
-# Argument count of vm_map_find() changed in FreeBSD src SVN r255426
-.if ${OSVERSION} > 1000054 && ${NVVERSION} < 304.123 # < 331.067
-	${REINPLACE_CMD} -e 's/virtual_address, size,/& 0,/' \
-		${WRKSRC}/src/nvidia_subr.c
-.endif
 # Fix CTLFLAG_* values for SYSCTL_ADD_PROC() after FreeBSD src SVN r273377
 .if ${OSVERSION} > 1100039 || ${OSVERSION} > 1001501 && ${OSVERSION} < 1100000
 	${REINPLACE_CMD} -e '/SYSCTL_ADD_PROC/,/;/ \
@@ -153,11 +127,6 @@ post-patch: .SILENT
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 	${REINPLACE_CMD} -e 's/8 bus_type\[4\]/8 bus_type[8]/' \
 		${WRKSRC}/src/nvidia_sysctl.c
-# Unbreak the build of 173.14.xx legacy series on recent -CURRENT
-.if ${NVVERSION} < 195.022 && ${NVVERSION} >= 169.004
-	${REINPLACE_CMD} -E 's/os_(alloc|free)_contig_pages/NV_API_CALL &/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
@@ -183,17 +152,11 @@ post-patch: .SILENT
 		${WRKSRC}/lib/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
 # port for a while now
-.if ${NVVERSION} >= 180.029
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
-.endif
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
 # provided by corresponding ports) and manual pages
-.if ${NVVERSION} < 97.046 || ${NVVERSION} >= 195.022
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
-.else
-	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
-.endif
 	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 # Also do not install libnvidia-gtk* libraries which are for nvidia-settings
 .if ${NVVERSION} >= 346.016
