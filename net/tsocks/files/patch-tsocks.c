@@ -1,4 +1,4 @@
---- tsocks.c.orig	2014-12-19 02:01:24 UTC
+--- tsocks.c.orig	2002-07-15 22:50:52 UTC
 +++ tsocks.c
 @@ -852,7 +852,7 @@ static int connect_server(struct connreq
                      sizeof(conn->serveraddr));

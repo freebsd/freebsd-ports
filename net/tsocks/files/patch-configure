@@ -1,6 +1,6 @@
---- configure.orig	Mon Jul 15 15:51:08 2002
-+++ configure	Wed Oct  8 01:42:17 2003
-@@ -1836,14 +1836,14 @@
+--- configure.orig	2002-07-15 22:51:08 UTC
++++ configure
+@@ -1836,14 +1836,14 @@ fi
  SIMPLELIBS=${LIBS}
  LIBS=
  
@@ -18,7 +18,7 @@
  cat > conftest.$ac_ext <<EOF
  #line 1849 "configure"
  #include "confdefs.h"
-@@ -1877,7 +1877,7 @@
+@@ -1877,7 +1877,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
@@ -27,7 +27,7 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -2151,6 +2151,7 @@
+@@ -2151,6 +2151,7 @@ do
  #line 2152 "configure"
  #include "confdefs.h"
  
@@ -35,7 +35,7 @@
        #include <sys/socket.h>
        int connect($testproto);
      
-@@ -2227,14 +2228,16 @@
+@@ -2227,14 +2228,16 @@ EOF
  
  echo $ac_n "checking for correct poll prototype""... $ac_c" 1>&6
  echo "configure:2230: checking for correct poll prototype" >&5

@@ -1,5 +1,5 @@
---- INSTALL	Sat May 18 04:12:30 2002
-+++ README	Sat Sep  6 18:36:27 2003
+--- INSTALL.orig	2002-05-18 02:12:30 UTC
++++ INSTALL
 @@ -1,12 +1,7 @@
 -Quick Installation Instructions
 +Quick Instructions
@@ -15,7 +15,7 @@
     specific to tsocks include):
  	--enable-socksdns	This option causes tsocks to intercept
  				DNS lookups and attempt to force them
-@@ -39,55 +34,31 @@
+@@ -39,55 +34,31 @@ achieved that)
  Other standard autoconf options are provided by typing './configure
  --help'
  
@@ -28,10 +28,10 @@
 -you really wish to install the library into some other path use --libdir.
 -
 -3. Compile the code by typing:
+-
+-	make
 +2. Created files:
  
--	make
--
 -This should result in the creation of the following:
  	- libtsocks.so - the libtsocks library
  	- validateconf - a utility to verify the tsocks configuration file
@@ -49,15 +49,15 @@
 -to be able to use it however, su to root then type
 -
 -   make install
-+3. Configuration
- 
+-
 -This will install the library, the tsocks script and its man pages
 -(tsocks(8), tsocks(1) and tsocks.conf(5)) to the paths specified to
 -configure.
 -
 -Note that by default the library is installed to /lib and that the
 -configure --prefix is IGNORED. See above for more detail. 
--
++3. Configuration
+ 
 -6. At this point you'll need to create the tsocks configuration file.
 -There are two samples provided in the build directory called
 +You'll need to create the tsocks configuration file.
@@ -79,7 +79,7 @@
  who choose to use it. If you want users to use it themselves, they can
  simply use the tsocks(1) shell script to run programs (see 'man tsocks')
  or do the following in their shell before running applications that need
-@@ -97,25 +68,15 @@
+@@ -97,25 +68,15 @@ to be transparently proxied:
  
  	(in CSH) setenv LD_PRELOAD <path to library>
  
