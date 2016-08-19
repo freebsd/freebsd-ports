@@ -1,6 +1,6 @@
---- init/Makefile.in.orig	2012-12-19 18:02:26.000000000 +0100
-+++ init/Makefile.in	2014-09-04 14:32:46.863296746 +0200
-@@ -437,9 +437,10 @@
+--- init/Makefile.in.orig	2012-12-19 17:02:26 UTC
++++ init/Makefile.in
+@@ -437,9 +437,10 @@ uninstall-inits :
  # We need to filter the *.in files to produce the init scripts
  # since we don't know the value of '@prefix@' until Make time.
  # (We can not rely on configure to give us correct values.)

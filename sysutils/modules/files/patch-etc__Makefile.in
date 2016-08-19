@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2014-09-04 14:00:45.808429028 +0200
-+++ etc/Makefile.in	2014-09-04 14:02:10.225903882 +0200
-@@ -403,8 +403,8 @@
+--- etc/Makefile.in.orig	2012-12-19 17:02:26 UTC
++++ etc/Makefile.in
+@@ -403,8 +403,8 @@ install-data-local : $(EXTRA_scripts)
  	@list='$(EXTRA_scripts)'; for p in $$list; do \
  	  if test -f $$p \
  	  ; then \
