@@ -377,6 +377,9 @@ bin/hashcat
 %%DATADIR%%/OpenCL/m13800_a0.cl
 %%DATADIR%%/OpenCL/m13800_a1.cl
 %%DATADIR%%/OpenCL/m13800_a3.cl
+%%DATADIR%%/OpenCL/m13900_a0.cl
+%%DATADIR%%/OpenCL/m13900_a1.cl
+%%DATADIR%%/OpenCL/m13900_a3.cl
 %%DATADIR%%/OpenCL/markov_be.cl
 %%DATADIR%%/OpenCL/markov_le.cl
 %%DATADIR%%/charsets/combined/Bulgarian.hcchr
