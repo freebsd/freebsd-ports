@@ -22,9 +22,9 @@ PYDISTUTILS_PKGNAME=	python_libtorrent
 PLIST=		${NONEXISTENT}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/libtorrent.so
 
-OPTIONS_EXCLUDE=	DOCS EXAMPLES STRIP
+OPTIONS_EXCLUDE=	DOCS EXAMPLES
 
-# insure python paths are correctly identified
+# ensure python paths are correctly identified
 CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_VERSION="${PYTHON_VERSION}"
 
