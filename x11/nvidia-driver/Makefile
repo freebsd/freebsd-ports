@@ -198,23 +198,8 @@ post-install: .SILENT
 	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh \
 		${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
-.if ${NVVERSION} < 81.074
-	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 97.046 || ${NVVERSION} >= 195.022
-	${REINPLACE_CMD} -e '/wfb/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 180.029
-	${REINPLACE_CMD} -e '/vdpau/d' ${TMPPLIST}
-.elif ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019
+.if ${NVVERSION} < 310.019
 	${REINPLACE_CMD} -E '/libvdpau(_trace)?\.so/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} < 185.01829
-	${REINPLACE_CMD} -e '/libcuda/d' ${TMPPLIST}
-.endif
-.if ${NVVERSION} >= 256.053
-	${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
-		/usr.*(glcore|tls).*so\.1$$/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} >= 310.019
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
