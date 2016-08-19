@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 
-# PROVIDE: mpdas 
+# PROVIDE: mpdas
 # REQUIRE: musicpd
 # KEYWORD: shutdown
 
