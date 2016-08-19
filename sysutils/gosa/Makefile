@@ -12,6 +12,8 @@ MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based LDAP Administration Program
 
+BROKEN=		requires magic quotes option (PHP < 5.4, no longer available)
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
