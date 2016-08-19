@@ -65,6 +65,7 @@
     SUBDIR += gtk-aluminumalloy-toxic-theme
     SUBDIR += gtk-aluminumalloy-volcanic-theme
     SUBDIR += gtk-aquaextremesunken-theme
+    SUBDIR += gtk-arc-themes
     SUBDIR += gtk-aurora-engine
     SUBDIR += gtk-blueprint-engine
     SUBDIR += gtk-cleanice-engine
