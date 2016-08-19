@@ -7,16 +7,14 @@
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
-# slave ports instead (`x11/nvidia-driver-173', `x11/nvidia-driver-304',
-# or `x11/nvidia-driver-340').
+# slave ports instead (`x11/nvidia-driver-340' or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	346.96
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
-MASTER_SITES=	NVIDIA
-# MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
+MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -26,6 +24,8 @@ LICENSE=	NVIDIA
 LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 ARCH_SUFX=	x86${ARCH:S/i386//:S/amd/_/}
 USES=		kmod uidfix
@@ -57,59 +57,24 @@ NVVERSION=	${DISTVERSION}
 .  endif
 .endif
 
-.if ${NVVERSION} >= 195.022
-MASTER_SITE_SUBDIR=	XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64
-.else
-MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
-ONLY_FOR_ARCHS=	i386
-.endif
-
-.if ${NVVERSION} <= 190.042
-EXTRA_PATCHES=	${FILESDIR}/legacy-patch-mk-nvidia.lib.mk
-.else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk-nvidia.lib.mk
-.endif
-
-.if ${NVVERSION} >= 304.088
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-Makefile \
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk-nvidia.lib.mk \
+		${FILESDIR}/extra-patch-src-Makefile \
 		${FILESDIR}/extra-patch-src-nv-freebsd.h \
-		${FILESDIR}/extra-patch-src-nv-misc.h
-.endif
+		${FILESDIR}/extra-patch-src-nv-misc.h \
+		${FILESDIR}/extra-patch-x11-driver-Makefile
 
-.if ${NVVERSION} >= 304.125 # 331.020
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11-driver-Makefile
-.else
-EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11-driver-Makefile
-.endif
-
-# Fix recent arbitrary memory access vulnerability in legacy drivers
-.if ${NVVERSION} <= 190.053
-.  if ${NVVERSION} != 173.01435
-EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
-.  endif
-EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
-.endif
-
-OPTIONS_DEFINE=	ACPI_PM LINUX DOCS
+OPTIONS_DEFINE=	ACPI_PM LINUX WBINVD DOCS
+OPTIONS_DEFINE_i386=	PAE
 OPTIONS_DEFAULT=	LINUX
 
 ACPI_PM_DESC=		ACPI Power Management support
 LINUX_DESC=		Linux compatibility support
+PAE_DESC=		Physical Address Extensions support
+WBINVD_DESC=		Flush CPU caches directly with WBINVD
 
 .if ${NVVERSION} < 310.014
 OPTIONS_DEFINE+=	FREEBSD_AGP
 FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
-.endif
-
-.if ${NVVERSION} >= 195.022
-OPTIONS_DEFINE+=	WBINVD
-WBINVD_DESC=		Flush CPU caches directly with WBINVD
-.endif
-
-.if ${NVVERSION} >= 304.088
-OPTIONS_DEFINE_i386=	PAE
-PAE_DESC=		Physical Address Extensions support
 .endif
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
@@ -125,11 +90,6 @@ PLIST_SUB+=	LINUX=""
 PLIST_SUB+=	LINUX="@comment "
 # Propagate WITHOUT_LINUX variable down to inner Makefiles
 MAKE_ENV+=	WITHOUT_LINUX=yes
-.endif
-
-.if ${NVVERSION} < 195.022
-# ABI version is hardcoded inside the binary, so specify it explicitly here
-LIB_DEPENDS=	libm.so.3:misc/compat5x
 .endif
 
 post-patch: .SILENT
@@ -244,15 +204,14 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 # Adjust installation paths of some conflicting files (shared also between
-# libGL, libEGL, libglesv2 and xorg-server) to ease package manager work.
+# libGL, libEGL, libGLESv2, and xorg-server) to ease package manager work
 	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
 		${WRKSRC}/x11/extension/Makefile
 	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
 		${WRKSRC}/lib/libGL/Makefile
 .if ${NVVERSION} >= 331.013
 	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
-		${WRKSRC}/lib/libEGL/Makefile
-	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
+		${WRKSRC}/lib/libEGL/Makefile \
 		${WRKSRC}/lib/libGLESv2/Makefile
 .endif
 # Do not execute afterinstall target (prevent automatic module registration
@@ -303,9 +262,6 @@ post-install: .SILENT
 .if ${NVVERSION} < 331.013 || ${ARCH} == amd64 && ${NVVERSION} < 334.016
 	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
 		${TMPPLIST}
-.endif
-.if ${NVVERSION} >= 195.022
-	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
 .endif
 
 # Target below can be used instead of standard `makesum' to correctly
