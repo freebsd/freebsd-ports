@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Gspoof-3/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 USE_GNOME=	gtk20
@@ -29,6 +32,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gspoof ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/pixmap/icon.png ${STAGEDIR}${DATADIR}/pixmap
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
