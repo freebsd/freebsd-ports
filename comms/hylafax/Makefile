@@ -3,17 +3,15 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fax software
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-
-BROKEN=		receiving fax does not work (Bugs No. 200922)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:print/afm
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
