@@ -3,7 +3,7 @@
 
 PORTNAME=	proxychains
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}
 
@@ -12,6 +12,8 @@ COMMENT=	Redirect connection through proxy servers
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

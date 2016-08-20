@@ -1,6 +1,6 @@
---- proxychains/libproxychains.c.orig	Wed Mar 15 18:16:59 2006
-+++ proxychains/libproxychains.c	Sun Dec 10 01:16:37 2006
-@@ -160,7 +160,7 @@
+--- proxychains/libproxychains.c.orig	2006-03-15 16:16:59 UTC
++++ proxychains/libproxychains.c
+@@ -160,7 +160,7 @@ static inline void get_chain_data(
  
  	if(!(file=fopen("./proxychains.conf","r")))
  	if(!(file=fopen(buff,"r")))
@@ -9,7 +9,7 @@
  	{
  		perror("Can't locate proxychains.conf");
  		exit(1);
-@@ -290,8 +290,8 @@
+@@ -290,8 +290,8 @@ void freeaddrinfo(struct addrinfo *res)
  
  int getnameinfo (const struct sockaddr * sa,
  			socklen_t salen, char * host,
