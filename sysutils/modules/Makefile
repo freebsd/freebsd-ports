@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 
 USES=		tcl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
-		--without-x \
-		--with-version-path=${LOCALBASE}/Modules/versions \
+CONFIGURE_ARGS=	--without-x \
+		--with-version-path=${PREFIX}/Modules/versions \
 		--mandir=${MANPREFIX}/man \
 		--with-tcl-ver=${TCL_VER:S/.//} \
 		--with-tcl-inc=${TCL_INCLUDEDIR} \
