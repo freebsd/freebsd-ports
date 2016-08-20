@@ -7,7 +7,6 @@ include/node/libplatform/libplatform.h
 include/node/nameser.h
 include/node/node.h
 include/node/node_buffer.h
-include/node/node_internals.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/aes.h
@@ -26,6 +25,8 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-ppc64/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-x32/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-x86_64/opensslconf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux32-s390x/opensslconf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-s390x/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/asn1.h
