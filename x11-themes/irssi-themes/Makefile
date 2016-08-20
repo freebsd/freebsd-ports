@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-themes
-PORTVERSION=	20101013
+PORTVERSION=	2016082001
 CATEGORIES=	x11-themes irc
-MASTER_SITES=	http://www.irssi.org/themefiles/ \
-		LOCAL/ehaupt/${PORTNAME}
+MASTER_SITES=	https://irssi-import.github.io/themes/ \
+		LOCAL/ehaupt/${PORTNAME}-${PORTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
