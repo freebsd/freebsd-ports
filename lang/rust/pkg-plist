@@ -15,6 +15,7 @@ lib/librustc_const_eval-%%RUST_VSN_HASH%%.so
 lib/librustc_const_math-%%RUST_VSN_HASH%%.so
 lib/librustc_data_structures-%%RUST_VSN_HASH%%.so
 lib/librustc_driver-%%RUST_VSN_HASH%%.so
+lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/librustc_llvm-%%RUST_VSN_HASH%%.so
@@ -33,6 +34,7 @@ lib/libserialize-%%RUST_VSN_HASH%%.so
 lib/libstd-%%RUST_VSN_HASH%%.so
 lib/libsyntax-%%RUST_VSN_HASH%%.so
 lib/libsyntax_ext-%%RUST_VSN_HASH%%.so
+lib/libsyntax_pos-%%RUST_VSN_HASH%%.so
 lib/libterm-%%RUST_VSN_HASH%%.so
 lib/libtest-%%RUST_VSN_HASH%%.so
 lib/rustlib/components
@@ -70,6 +72,7 @@ lib/rustlib/%%RUST_TARGET%%/lib/librustc_const_eval-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_const_math-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_data_structures-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_driver-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_llvm-%%RUST_VSN_HASH%%.so
@@ -90,6 +93,7 @@ lib/rustlib/%%RUST_TARGET%%/lib/libstd-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libstd-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libsyntax-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libsyntax_ext-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/libsyntax_pos-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libterm-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libterm-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libtest-%%RUST_VSN_HASH%%.rlib
