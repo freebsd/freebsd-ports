@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dlipower
-PORTVERSION=	0.7.117
+PORTVERSION=	0.7.165
 PORTEPOCH=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six
 
 USES=		python shebangfix
-SHEBANG_FILES=	dlipower/fence_dli
+SHEBANG_FILES=	scripts/fence_dli
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
