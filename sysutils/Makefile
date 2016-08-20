@@ -888,6 +888,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
+    SUBDIR += read-edid
     SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
