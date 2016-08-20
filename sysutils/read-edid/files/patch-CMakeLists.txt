@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2014-02-05 16:27:26 UTC
++++ CMakeLists.txt
+@@ -12,6 +12,6 @@ if (I2CBUILD OR CLASSICBUILD)
+ endif ()
+ add_subdirectory (parse-edid)
+ 
+-INSTALL(FILES get-edid.1 DESTINATION share/man/man1)
+-INSTALL(FILES AUTHORS ChangeLog COPYING README DESTINATION
++INSTALL(FILES get-edid.1 DESTINATION man/man1)
++INSTALL(FILES AUTHORS ChangeLog LICENSE README DESTINATION
+ 	share/doc/read-edid)
