@@ -3,6 +3,7 @@
 
 PORTNAME=	sndio
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
@@ -20,7 +21,7 @@ USE_RC_SUBR=	sndiod
 .include <bsd.port.pre.mk>
 
 # FreeBSD 9.x does not have SOCK_CLOEXEC
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 CFLAGS+=	-DSOCK_CLOEXEC=0
 .endif
 
