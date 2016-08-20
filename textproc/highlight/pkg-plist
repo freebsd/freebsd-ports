@@ -37,6 +37,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/ceylon.lang
 %%DATADIR%%/langDefs/charmm.lang
 %%DATADIR%%/langDefs/chill.lang
+%%DATADIR%%/langDefs/chpl.lang
 %%DATADIR%%/langDefs/clean.lang
 %%DATADIR%%/langDefs/clearbasic.lang
 %%DATADIR%%/langDefs/clipper.lang
@@ -199,6 +200,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/xml.lang
 %%DATADIR%%/langDefs/xpp.lang
 %%DATADIR%%/langDefs/yaiff.lang
+%%DATADIR%%/langDefs/yaml.lang
 %%DATADIR%%/langDefs/yang.lang
 %%DATADIR%%/langDefs/znn.lang
 %%DATADIR%%/plugins/asciidoc_html_add_links.lua
