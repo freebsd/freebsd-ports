@@ -35,7 +35,7 @@
  #LDFLAGS= -Wl,--as-needed
  
 -CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} ${LUA_CFLAGS}
-+CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} -I/usr/local/include ${LUA_CFLAGS}
++CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} -I%%LOCALBASE%%/include ${LUA_CFLAGS}
  
  # Data directories (data dir, configuration file dir)
  CXX_DIR=-DHL_DATA_DIR=\"${HL_DATA_DIR}\" -DHL_CONFIG_DIR=\"${HL_CONFIG_DIR}\"
