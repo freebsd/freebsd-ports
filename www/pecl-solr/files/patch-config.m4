@@ -1,6 +1,6 @@
---- config.m4.orig	2014-06-22 18:58:51.253187297 +0800
-+++ config.m4	2014-06-22 19:01:04.313188083 +0800
-@@ -82,7 +82,7 @@
+--- config.m4.orig	2016-03-30 13:42:31 UTC
++++ config.m4
+@@ -81,7 +81,7 @@ if test "$PHP_SOLR" != "no"; then
      
      PHP_ADD_INCLUDE($CURL_DIR/include)
      PHP_EVAL_LIBLINE($CURL_LIBS, SOLR_SHARED_LIBADD)
