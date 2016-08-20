@@ -1,0 +1,13 @@
+FreeBSD has mapping at zero address feature turned off since 8.0-RC2:
+
+  http://security.freebsd.org/advisories/FreeBSD-EN-09:05.null.asc
+
+This is required to read EDID data via classical VBE interface (to avoid
+"mmap /dev/mem: Invalid argument" message from libx86).  To temporarily
+disable this protection, issue the following command:
+
+  # sysctl security.bsd.map_at_zero=1
+
+To return to secure state:
+
+  # sysctl security.bsd.map_at_zero=0
