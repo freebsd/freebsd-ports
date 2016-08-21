@@ -10,7 +10,7 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20160317:
+20160817:
 AUTHOR: mat@FreeBSD.org
 
   This adds the possibility to use regular expressions for the makeplist stage
