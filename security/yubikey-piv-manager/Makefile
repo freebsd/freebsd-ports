@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yubikey-piv-manager
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubikey-piv-manager/Releases/
@@ -12,11 +12,10 @@ COMMENT=	YubiKey PIV Manager
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
 		yubico-piv-tool:security/yubico-piv-tool
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 PLIST_FILES+=	man/man1/pivman.1.gz \
