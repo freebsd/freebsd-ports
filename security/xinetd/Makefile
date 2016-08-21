@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	GENTOO
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
 
 GNU_CONFIGURE=	yes

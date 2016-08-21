@@ -9,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	LOCAL/sem
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic (an ancient version)
 
 CONFLICTS=	trafshow-[45].*

@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/bgpq/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bgpq - lightweight access-list generator for Cisco routers
 
 PLIST_FILES=	bin/bgpq man/man8/bgpq.8.gz

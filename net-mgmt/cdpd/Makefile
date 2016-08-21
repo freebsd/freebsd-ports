@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/cdpd/
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to send CDP/LLDP announces over ethernet
 
 GNU_CONFIGURE=	yes
