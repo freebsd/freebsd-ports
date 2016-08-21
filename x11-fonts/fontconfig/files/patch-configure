@@ -1,6 +1,6 @@
---- configure.orig	2013-12-27 19:47:10.000000000 +0100
-+++ configure	2013-12-27 19:47:24.000000000 +0100
-@@ -654,6 +654,7 @@
+--- configure.orig	2016-08-05 05:49:14 UTC
++++ configure
+@@ -654,6 +654,7 @@ ax_pthread_config
  XMLDIR
  CONFIGDIR
  BASECONFIGDIR
