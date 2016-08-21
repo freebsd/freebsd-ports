@@ -1,2 +1,3 @@
-SHA256 (boto-2.39.0.tar.gz) = 950c5bf36691df916b94ebc5679fed07f642030d39132454ec178800d5b6c58a
-SIZE (boto-2.39.0.tar.gz) = 1434775
+TIMESTAMP = 1471794711
+SHA256 (boto-2.42.0.tar.gz) = dcf140d4ce535bb8f5266d1750c16def4d50f6c46eff27fab38b55d0d74d5ac7
+SIZE (boto-2.42.0.tar.gz) = 1442326
