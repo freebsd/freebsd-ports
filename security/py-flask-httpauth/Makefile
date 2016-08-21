@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-HTTPAuth
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
