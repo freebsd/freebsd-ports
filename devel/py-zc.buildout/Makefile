@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zc.buildout
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
