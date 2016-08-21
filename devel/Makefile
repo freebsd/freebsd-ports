@@ -4439,6 +4439,7 @@
     SUBDIR += py-scripttest
     SUBDIR += py-sdl2
     SUBDIR += py-selection
+    SUBDIR += py-selectors34
     SUBDIR += py-semantic_version
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
