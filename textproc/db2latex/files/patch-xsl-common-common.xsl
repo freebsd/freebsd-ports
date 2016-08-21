@@ -1,6 +1,6 @@
---- xsl/common/common.xsl~	2005-03-10 23:09:55.639189152 +0100
-+++ xsl/common/common.xsl	2005-03-10 23:10:50.762690340 +0100
-@@ -356,89 +356,6 @@
+--- xsl/common/common.xsl.orig	2004-01-04 09:25:06 UTC
++++ xsl/common/common.xsl
+@@ -356,89 +356,6 @@ Defaults to the context node.</para>
    <xsl:value-of select="count($anc.divs) + number($section.level)"/>
  </xsl:template>
  
