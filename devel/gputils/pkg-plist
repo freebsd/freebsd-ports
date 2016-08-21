@@ -185,6 +185,8 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p16f1519.inc
 %%DATADIR%%/header/p16f1526.inc
 %%DATADIR%%/header/p16f1527.inc
+%%DATADIR%%/header/p16f15354.inc
+%%DATADIR%%/header/p16f15355.inc
 %%DATADIR%%/header/p16f1574.inc
 %%DATADIR%%/header/p16f1575.inc
 %%DATADIR%%/header/p16f1578.inc
@@ -245,6 +247,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p16f18875.inc
 %%DATADIR%%/header/p16f18876.inc
 %%DATADIR%%/header/p16f18877.inc
+%%DATADIR%%/header/p16f19197.inc
 %%DATADIR%%/header/p16f1933.inc
 %%DATADIR%%/header/p16f1934.inc
 %%DATADIR%%/header/p16f1936.inc
@@ -353,6 +356,8 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p16lf1519.inc
 %%DATADIR%%/header/p16lf1526.inc
 %%DATADIR%%/header/p16lf1527.inc
+%%DATADIR%%/header/p16lf15354.inc
+%%DATADIR%%/header/p16lf15355.inc
 %%DATADIR%%/header/p16lf1554.inc
 %%DATADIR%%/header/p16lf1559.inc
 %%DATADIR%%/header/p16lf1566.inc
@@ -405,8 +410,10 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p16lf18323.inc
 %%DATADIR%%/header/p16lf18324.inc
 %%DATADIR%%/header/p16lf18325.inc
+%%DATADIR%%/header/p16lf18326.inc
 %%DATADIR%%/header/p16lf18344.inc
 %%DATADIR%%/header/p16lf18345.inc
+%%DATADIR%%/header/p16lf18346.inc
 %%DATADIR%%/header/p16lf1847.inc
 %%DATADIR%%/header/p16lf18854.inc
 %%DATADIR%%/header/p16lf18855.inc
@@ -556,6 +563,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18f26k80.inc
 %%DATADIR%%/header/p18f27j13.inc
 %%DATADIR%%/header/p18f27j53.inc
+%%DATADIR%%/header/p18f27k40.inc
 %%DATADIR%%/header/p18f4220.inc
 %%DATADIR%%/header/p18f4221.inc
 %%DATADIR%%/header/p18f4320.inc
@@ -636,6 +644,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18f65j90.inc
 %%DATADIR%%/header/p18f65j94.inc
 %%DATADIR%%/header/p18f65k22.inc
+%%DATADIR%%/header/p18f65k40.inc
 %%DATADIR%%/header/p18f65k80.inc
 %%DATADIR%%/header/p18f65k90.inc
 %%DATADIR%%/header/p18f6620.inc
@@ -657,6 +666,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18f66j94.inc
 %%DATADIR%%/header/p18f66j99.inc
 %%DATADIR%%/header/p18f66k22.inc
+%%DATADIR%%/header/p18f66k40.inc
 %%DATADIR%%/header/p18f66k80.inc
 %%DATADIR%%/header/p18f66k90.inc
 %%DATADIR%%/header/p18f6720.inc
@@ -670,6 +680,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18f67j93.inc
 %%DATADIR%%/header/p18f67j94.inc
 %%DATADIR%%/header/p18f67k22.inc
+%%DATADIR%%/header/p18f67k40.inc
 %%DATADIR%%/header/p18f67k90.inc
 %%DATADIR%%/header/p18f8310.inc
 %%DATADIR%%/header/p18f8390.inc
@@ -798,6 +809,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18lf26k80.inc
 %%DATADIR%%/header/p18lf27j13.inc
 %%DATADIR%%/header/p18lf27j53.inc
+%%DATADIR%%/header/p18lf27k40.inc
 %%DATADIR%%/header/p18lf4220.inc
 %%DATADIR%%/header/p18lf4221.inc
 %%DATADIR%%/header/p18lf4320.inc
@@ -863,6 +875,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18lf6525.inc
 %%DATADIR%%/header/p18lf6527.inc
 %%DATADIR%%/header/p18lf6585.inc
+%%DATADIR%%/header/p18lf65k40.inc
 %%DATADIR%%/header/p18lf65k80.inc
 %%DATADIR%%/header/p18lf6620.inc
 %%DATADIR%%/header/p18lf6621.inc
@@ -870,10 +883,12 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/header/p18lf6627.inc
 %%DATADIR%%/header/p18lf6628.inc
 %%DATADIR%%/header/p18lf6680.inc
+%%DATADIR%%/header/p18lf66k40.inc
 %%DATADIR%%/header/p18lf66k80.inc
 %%DATADIR%%/header/p18lf6720.inc
 %%DATADIR%%/header/p18lf6722.inc
 %%DATADIR%%/header/p18lf6723.inc
+%%DATADIR%%/header/p18lf67k40.inc
 %%DATADIR%%/header/p18lf8310.inc
 %%DATADIR%%/header/p18lf8390.inc
 %%DATADIR%%/header/p18lf8393.inc
@@ -1067,6 +1082,8 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/16f1519_g.lkr
 %%DATADIR%%/lkr/16f1526_g.lkr
 %%DATADIR%%/lkr/16f1527_g.lkr
+%%DATADIR%%/lkr/16f15354_g.lkr
+%%DATADIR%%/lkr/16f15355_g.lkr
 %%DATADIR%%/lkr/16f1574_g.lkr
 %%DATADIR%%/lkr/16f1575_g.lkr
 %%DATADIR%%/lkr/16f1578_g.lkr
@@ -1127,6 +1144,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/16f18875_g.lkr
 %%DATADIR%%/lkr/16f18876_g.lkr
 %%DATADIR%%/lkr/16f18877_g.lkr
+%%DATADIR%%/lkr/16f19197_g.lkr
 %%DATADIR%%/lkr/16f1933_g.lkr
 %%DATADIR%%/lkr/16f1934_g.lkr
 %%DATADIR%%/lkr/16f1936_g.lkr
@@ -1233,6 +1251,8 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/16lf1519_g.lkr
 %%DATADIR%%/lkr/16lf1526_g.lkr
 %%DATADIR%%/lkr/16lf1527_g.lkr
+%%DATADIR%%/lkr/16lf15354_g.lkr
+%%DATADIR%%/lkr/16lf15355_g.lkr
 %%DATADIR%%/lkr/16lf1554_g.lkr
 %%DATADIR%%/lkr/16lf1559_g.lkr
 %%DATADIR%%/lkr/16lf1566_g.lkr
@@ -1285,8 +1305,10 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/16lf18323_g.lkr
 %%DATADIR%%/lkr/16lf18324_g.lkr
 %%DATADIR%%/lkr/16lf18325_g.lkr
+%%DATADIR%%/lkr/16lf18326_g.lkr
 %%DATADIR%%/lkr/16lf18344_g.lkr
 %%DATADIR%%/lkr/16lf18345_g.lkr
+%%DATADIR%%/lkr/16lf18346_g.lkr
 %%DATADIR%%/lkr/16lf1847_g.lkr
 %%DATADIR%%/lkr/16lf18854_g.lkr
 %%DATADIR%%/lkr/16lf18855_g.lkr
@@ -1435,6 +1457,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18f26k80_g.lkr
 %%DATADIR%%/lkr/18f27j13_g.lkr
 %%DATADIR%%/lkr/18f27j53_g.lkr
+%%DATADIR%%/lkr/18f27k40_g.lkr
 %%DATADIR%%/lkr/18f4220_g.lkr
 %%DATADIR%%/lkr/18f4221_g.lkr
 %%DATADIR%%/lkr/18f4320_g.lkr
@@ -1515,6 +1538,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18f65j90_g.lkr
 %%DATADIR%%/lkr/18f65j94_g.lkr
 %%DATADIR%%/lkr/18f65k22_g.lkr
+%%DATADIR%%/lkr/18f65k40_g.lkr
 %%DATADIR%%/lkr/18f65k80_g.lkr
 %%DATADIR%%/lkr/18f65k90_g.lkr
 %%DATADIR%%/lkr/18f6620_g.lkr
@@ -1536,6 +1560,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18f66j94_g.lkr
 %%DATADIR%%/lkr/18f66j99_g.lkr
 %%DATADIR%%/lkr/18f66k22_g.lkr
+%%DATADIR%%/lkr/18f66k40_g.lkr
 %%DATADIR%%/lkr/18f66k80_g.lkr
 %%DATADIR%%/lkr/18f66k90_g.lkr
 %%DATADIR%%/lkr/18f6720_g.lkr
@@ -1549,6 +1574,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18f67j93_g.lkr
 %%DATADIR%%/lkr/18f67j94_g.lkr
 %%DATADIR%%/lkr/18f67k22_g.lkr
+%%DATADIR%%/lkr/18f67k40_g.lkr
 %%DATADIR%%/lkr/18f67k90_g.lkr
 %%DATADIR%%/lkr/18f8310_g.lkr
 %%DATADIR%%/lkr/18f8390_g.lkr
@@ -1677,6 +1703,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18lf26k80_g.lkr
 %%DATADIR%%/lkr/18lf27j13_g.lkr
 %%DATADIR%%/lkr/18lf27j53_g.lkr
+%%DATADIR%%/lkr/18lf27k40_g.lkr
 %%DATADIR%%/lkr/18lf4220_g.lkr
 %%DATADIR%%/lkr/18lf4221_g.lkr
 %%DATADIR%%/lkr/18lf4320_g.lkr
@@ -1742,6 +1769,7 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18lf6525_g.lkr
 %%DATADIR%%/lkr/18lf6527_g.lkr
 %%DATADIR%%/lkr/18lf6585_g.lkr
+%%DATADIR%%/lkr/18lf65k40_g.lkr
 %%DATADIR%%/lkr/18lf65k80_g.lkr
 %%DATADIR%%/lkr/18lf6620_g.lkr
 %%DATADIR%%/lkr/18lf6621_g.lkr
@@ -1749,10 +1777,12 @@ man/man1/gpvo.1.gz
 %%DATADIR%%/lkr/18lf6627_g.lkr
 %%DATADIR%%/lkr/18lf6628_g.lkr
 %%DATADIR%%/lkr/18lf6680_g.lkr
+%%DATADIR%%/lkr/18lf66k40_g.lkr
 %%DATADIR%%/lkr/18lf66k80_g.lkr
 %%DATADIR%%/lkr/18lf6720_g.lkr
 %%DATADIR%%/lkr/18lf6722_g.lkr
 %%DATADIR%%/lkr/18lf6723_g.lkr
+%%DATADIR%%/lkr/18lf67k40_g.lkr
 %%DATADIR%%/lkr/18lf8310_g.lkr
 %%DATADIR%%/lkr/18lf8390_g.lkr
 %%DATADIR%%/lkr/18lf8393_g.lkr
