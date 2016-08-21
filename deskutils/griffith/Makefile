@@ -3,7 +3,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:databases/py-sqlalchemy06 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>=0.5:databases/py-sqlalchemy08 \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow
 
 USE_GNOME=	pygtk2
