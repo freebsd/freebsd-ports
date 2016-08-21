@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160821:
+AUTHOR: kde@FreeBSD.org
+
+  A new USES file has been introduced: USES=grantlee:[4,5], which introduces a
+  LIB_DEPENDS on either devel/grantlee (Qt4) or devel/grantlee5 (Qt5).
+
+  Uses/grantlee.mk also exports the GRANTLEE_VERSION variable to users, and the
+  GRANTLEE_VERSION_FULL and GRANTLEE_VERSION_SHORT pkg-plist substitutions.
+
 20160817:
 AUTHOR: mat@FreeBSD.org
 
