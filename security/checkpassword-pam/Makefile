@@ -6,7 +6,7 @@ PORTVERSION=	0.99
 CATEGORIES=	security
 MASTER_SITES=	SF/checkpasswd-pam/checkpasswd-pam/${PORTVERSION}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of checkpassword authentication program
 
 GNU_CONFIGURE=	yes
