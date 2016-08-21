@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wstools
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,10 @@ COMMENT=	WSDL parsing services for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
-NO_ARCH=	yes
-USES=		python:2
-USE_PYTHON=	autoplist distutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|'docutils'||g" ${WRKSRC}/setup.py
+NO_ARCH=	yes
+USES=		python:2.7+
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
