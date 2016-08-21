@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	user_agent
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
