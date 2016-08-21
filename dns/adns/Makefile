@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adns
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
