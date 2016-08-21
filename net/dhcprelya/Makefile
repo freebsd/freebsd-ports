@@ -5,7 +5,7 @@ PORTNAME=	dhcprelya
 PORTVERSION=	4.9
 CATEGORIES=	net
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight DHCP relay agent. Yandex edition
 
 LICENSE=	BSD3CLAUSE

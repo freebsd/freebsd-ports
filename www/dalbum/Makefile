@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.dalbum.org/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, highly customizable PHP photo album
 
 RUN_DEPENDS=	convert:graphics/ImageMagick
