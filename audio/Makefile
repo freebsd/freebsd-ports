@@ -123,6 +123,7 @@
     SUBDIR += etcd
     SUBDIR += etktab
     SUBDIR += exaile
+    SUBDIR += exaile-devel
     SUBDIR += extace
     SUBDIR += ezstream
     SUBDIR += faac
