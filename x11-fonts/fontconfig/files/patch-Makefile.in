@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-11-01 10:55:40.000000000 +0000
-+++ Makefile.in	2012-11-01 10:56:37.000000000 +0000
-@@ -932,28 +932,6 @@
+--- Makefile.in.orig	2016-08-05 05:49:13 UTC
++++ Makefile.in
+@@ -1027,28 +1027,6 @@ fonts.conf: fonts.conf.in Makefile
  	mv $@.tmp $@
  
  install-data-local: fonts.conf

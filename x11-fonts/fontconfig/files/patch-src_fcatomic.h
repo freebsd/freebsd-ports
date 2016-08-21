@@ -1,6 +1,6 @@
---- ./src/fcatomic.h.orig	2013-10-11 03:10:18.000000000 +0000
-+++ ./src/fcatomic.h	2014-12-06 21:48:12.136252912 +0000
-@@ -96,7 +96,17 @@
+--- src/fcatomic.h.orig	2016-07-11 02:41:06 UTC
++++ src/fcatomic.h
+@@ -96,7 +96,17 @@ typedef int fc_atomic_int_t;
  #define fc_atomic_int_add(AI, V)	__sync_fetch_and_add (&(AI), (V))
  
  #define fc_atomic_ptr_get(P)		(void *) (__sync_synchronize (), *(P))
