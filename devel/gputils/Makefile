@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gputils
-DISTVERSION=	1.4.2-1
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/gputils/gputils/${PORTVERSION:R}
+MASTER_SITES=	SF/gputils/gputils/${PORTVERSION}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Utilities for Microchip PIC microcontrollers
@@ -16,7 +16,6 @@ CONFLICTS=	gplink-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		bison gmake
 CONFIGURE_ARGS= --disable-dependency-tracking --disable-html-doc
-WRKSRC=		${WRKDIR}/gputils-${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
 
