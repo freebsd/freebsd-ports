@@ -20,6 +20,8 @@ GH_PROJECT=	bedtools2
 USES=		gmake python
 #NO_ARCH=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
 		${WRKSRC}/Makefile
