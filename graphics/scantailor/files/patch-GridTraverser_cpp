@@ -1,0 +1,11 @@
+--- foundation/GridLineTraverser.cpp
++++ foundation/GridLineTraverser.cpp
+@@ -19,6 +19,7 @@
+ #include "GridLineTraverser.h"
+ #include "LineIntersectionScalar.h"
+ #include <algorithm>
++#include <cstdlib>
+ 
+ GridLineTraverser::GridLineTraverser(QLineF const& line)
+ {
+
