@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	subsonic-standalone
-PORTVERSION=	5.2
+PORTVERSION=	6.0
 CATEGORIES=	www java
 MASTER_SITES=	SF/subsonic/subsonic/${PORTVERSION}
 DISTNAME=	subsonic-${PORTVERSION}-standalone
