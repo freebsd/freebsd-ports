@@ -3,6 +3,7 @@
 
 PORTNAME=	qca
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}/src
 
@@ -38,7 +39,7 @@ GNUPG_CMAKE_ON=		-DWITH_gnupg_PLUGIN=yes
 GNUPG_RUN_DEPENDS=	gpg2:security/gnupg
 
 OPENSSL_CMAKE_ON=	-DWITH_ossl_PLUGIN=yes
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 SASL_CMAKE_ON=		-DWITH_cyrus-sasl_PLUGIN=yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
