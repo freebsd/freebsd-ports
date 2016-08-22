@@ -16,6 +16,8 @@ RESTRICTED=	free for academic, non profit usage; do not re-distribute source and
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
+BROKEN=		does not fetch
+
 USES=		fortran gmake
 USE_XORG=	x11
 USE_GL=		glu
