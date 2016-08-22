@@ -4,44 +4,43 @@
 #
 
 # PROVIDE: subsonic
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 #
 # Configuration settings for subsonic in /etc/rc.conf:
 #
 # subsonic_enable (bool):
 #   Set to "NO" by default.
-#   Set it to "YES" to enable subsonic
+#   Set it to "YES" to enable subsonic.
 #
 # subsonic_home (str):
 #   Set to "%%SUBSONIC_HOME%%" by default.
-#
-# subsonic_music_folder (str):
-#   Set to "%%SUBSONIC_HOME%%"/music by default.
-#
-# subsonic_playlist_folder (str):
-#   Set to "%%SUBSONIC_HOME%%"/playlist by default.
-#
-# subsonic_pidfile (str):
-#   Set to "${subsonic_home}/subsonic.pid" by default.
 #
 # subsonic_host (str):
 #   Set to "0.0.0.0" by default.
 #   Specify which IP address to listen to.
 #
-# subsonic_http_port (int):
+# subsonic_port (int):
 #   Set to "4040" by default.
-#   Specify which port to listen on for HTTP.
+#   Specify which port to listen on for HTTP(S).
 #
-# subsonic_https_port (int):
-#   Set to "0" by default.
-#   Specify which port to listen on for HTTPS.
+# subsonic_ssl (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable SSL.
+#
+# subsonic_ssl_keystore (str):
+#   Optionally set path to custom SSL keystore.
+#
+# subsonic_ssl_password (str):
+#   Optionally set password for custom SSL keystore.
 #
 # subsonic_context_path (str):
 #   Set to "/" by default.
 #   Specify the last part of the Subsonic URL, typically "/" or "/subsonic".
 #
 # subsonic_max_memory (int):
-#   Set to "100" by defaut.
+#   Set to "100" by default.
 #   Specify the memory limit (Java heap size) in megabytes.
 #
 
@@ -53,31 +52,37 @@ procname="%%JAVA%%"
 
 load_rc_config "${name}"
 
-eval "${rcvar}=\${${rcvar}:-'NO'}"
-eval "${name}_user=\${${name}_user:-'subsonic'}"
-eval "${name}_group=\${${name}_group:-'subsonic'}"
-eval "_subsonic_max_memory=\${${name}_max_memory:-'100'}"
-eval "_subsonic_home=\${${name}_home:-'%%SUBSONIC_HOME%%'}"
-eval "_subsonic_music_folder=\${${name}_music_folder:-'%%SUBSONIC_HOME%%/music'}"
-eval "_subsonic_playlist_folder=\${${name}folder:-'%%SUBSONIC_HOME%%/playlist'}"
-eval "_subsonic_host=\${${name}_host:-'0.0.0.0'}"
-eval "_subsonic_http_port=\${${name}_http_port:-'4040'}"
-eval "_subsonic_https_port=\${${name}_https_port:-'0'}"
-eval "_subsonic_context_path=\${${name}_context_path:-'/'}"
-eval "_subsonic_pidfile=\${${name}_pidfile:-'%%SUBSONIC_HOME%%/subsonic.pid'}"
-pidfile="${_subsonic_pidfile}"
+: ${subsonic_enable:="NO"}
+: ${subsonic_user:="%%USER%%"}
+: ${subsonic_group:="%%GROUP%%"}
+: ${subsonic_home:="%%SUBSONIC_HOME%%"}
+: ${subsonic_host:="0.0.0.0"}
+: ${subsonic_port:="4040"}
+: ${subsonic_ssl:="NO"}
+: ${subsonic_context_path:="/"}
+: ${subsonic_max_memory:="100"}
 
+if checkyesno subsonic_ssl; then
+	SUBSONIC_SSL_FLAGS="-Dsubsonic.httpsPort=${subsonic_port}" && subsonic_port="0"
+	if [ ! -z ${subsonic_ssl_keystore} ]; then
+		SUBSONIC_SSL_FLAGS=${SUBSONIC_SSL_FLAGS}" -Dsubsonic.ssl.keystore=${subsonic_ssl_keystore} -Dsubsonic.ssl.password=${subsonic_ssl_password}"
+	fi
+fi
 
-
-command="%%SUBSONIC_DIR%%/subsonic.sh"
-command_args="--home=${_subsonic_home} \
-	--host=${_subsonic_host} \
-	--port=${_subsonic_http_port} \
-	--https-port=${_subsonic_https_port} \
-	--context-path=${_subsonic_context_path} \
-	--max-memory=${_subsonic_max_memory} \
-	--pidfile=${_subsonic_pidfile} \
-	--default-music-folder=${_subsonic_music_folder} \
-	--default-playlist-folder=${_subsonic_playlist_folder}"
+start_precmd="export LC_CTYPE='UTF-8'"
+subsonic_chdir="%%DATADIR%%"
+command="/usr/sbin/daemon"
+command_args="-f ${procname} \
+	-Dsubsonic.home=${subsonic_home} \
+	-Dsubsonic.host=${subsonic_host} \
+	-Dsubsonic.port=${subsonic_port} \
+	${SUBSONIC_SSL_FLAGS} \
+	-Dsubsonic.contextPath=${subsonic_context_path} \
+	-Dsubsonic.defaultMusicFolder=${subsonic_home}/music \
+	-Dsubsonic.defaultPodcastFolder=${subsonic_home}/Podcast \
+	-Dsubsonic.defaultPlaylistFolder=${subsonic_home}/playlists \
+	-Xmx${subsonic_max_memory}m \
+	-Djava.awt.headless=true \
+	-jar ${subsonic_chdir}/subsonic-booter-jar-with-dependencies.jar"
 
 run_rc_command "$1"
