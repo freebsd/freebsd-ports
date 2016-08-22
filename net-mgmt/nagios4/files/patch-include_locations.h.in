@@ -1,4 +1,4 @@
---- include/locations.h.in.orig	2014-08-12 15:00:01 UTC
+--- include/locations.h.in.orig	2016-08-01 15:46:23 UTC
 +++ include/locations.h.in
 @@ -19,7 +19,7 @@
  
