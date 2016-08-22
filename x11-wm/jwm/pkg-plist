@@ -16,3 +16,4 @@ man/man1/jwm.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/jwm.mo
