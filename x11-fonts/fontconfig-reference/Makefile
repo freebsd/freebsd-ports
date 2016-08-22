@@ -4,6 +4,8 @@
 PORTREVISION=	0
 PORTEPOCH=	0
 
+NO_ARCH=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/fontconfig-devel
 
 do-install:
