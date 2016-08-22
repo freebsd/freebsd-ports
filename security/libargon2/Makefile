@@ -18,6 +18,8 @@ GH_TAGNAME=	4625cc5
 USES=		gmake
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/argon2.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_LIB} ${WRKSRC}/libargon2.a ${STAGEDIR}${PREFIX}/lib
