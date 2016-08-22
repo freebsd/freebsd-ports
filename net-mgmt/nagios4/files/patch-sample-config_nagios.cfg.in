@@ -1,4 +1,4 @@
---- sample-config/nagios.cfg.in.orig	2014-08-12 15:00:01 UTC
+--- sample-config/nagios.cfg.in.orig	2016-08-01 15:46:23 UTC
 +++ sample-config/nagios.cfg.in
 @@ -31,7 +31,7 @@ cfg_file=@sysconfdir@/objects/contacts.c
  cfg_file=@sysconfdir@/objects/timeperiods.cfg
