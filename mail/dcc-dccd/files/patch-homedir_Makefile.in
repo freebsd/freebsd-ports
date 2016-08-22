@@ -1,0 +1,11 @@
+--- homedir/Makefile.in.orig	2014-08-06 14:43:42 UTC
++++ homedir/Makefile.in
+@@ -61,7 +61,7 @@ all:
+ 	@:
+ 
+ install:$(HD) $(HD)/log
+-	for NM in $(SSCRIPTS); do $(BININSTALL) $$NM $(DCC_BINDIR)/$$NM;done
++	for NM in $(SSCRIPTS); do $(BSD_INSTALL_SCRIPT) $$NM $(DCC_BINDIR)/$$NM;done
+ 	sh make-dcc_conf -F '@configsuffix@' -h $(HD)
+ 	for NM in $(SIMPLE); do\
+ 	    if test -n '@configsuffix@' -o ! -f $(HD)/$$NM; then\
