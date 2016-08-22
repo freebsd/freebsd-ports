@@ -3,6 +3,7 @@
 
 PORTNAME=	notmuch
 PORTVERSION=	0.22.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -26,7 +27,7 @@ OPTIONS_SUB=	yes
 BASH_BUILD_DEPENDS=	bash-completion>=1.90:shells/bash-completion
 BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
 BASH_CONFIGURE_WITH=	bash-completion
-DOXYGEN_CONFIGURE_WITH=	docs
+DOXYGEN_CONFIGURE_WITH=	api-docs
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 EMACS_CONFIGURE_WITH=	emacs
 EMACS_CONFIGURE_ON=	--emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
