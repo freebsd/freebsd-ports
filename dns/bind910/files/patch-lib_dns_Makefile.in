@@ -1,0 +1,20 @@
+--- lib/dns/Makefile.in.orig	2016-07-13 23:58:03 UTC
++++ lib/dns/Makefile.in
+@@ -35,7 +35,7 @@ USE_ISC_SPNEGO = @USE_ISC_SPNEGO@
+ CINCLUDES =	-I. -I${top_srcdir}/lib/dns -Iinclude ${DNS_INCLUDES} \
+ 		${ISC_INCLUDES} @DST_OPENSSL_INC@ @DST_GSSAPI_INC@
+ 
+-CDEFINES =	-DUSE_MD5 @CRYPTO@ @USE_GSSAPI@ ${USE_ISC_SPNEGO}
++CDEFINES =	-DUSE_MD5 @CRYPTO_PK11@ @USE_GSSAPI@ ${USE_ISC_SPNEGO}
+ 
+ CWARNINGS =
+ 
+@@ -146,7 +146,7 @@ libdns.la: ${OBJS}
+ 	${LIBTOOL_MODE_LINK} \
+ 		${CC} ${ALL_CFLAGS} ${LDFLAGS} -o libdns.la -rpath ${libdir} \
+ 		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
+-		${OBJS} ${ISCLIBS} @DNS_CRYPTO_LIBS@ ${LIBS}
++		${OBJS} ${ISCLIBS} @DNS_CRYPTO_PK11_LIBS@ ${LIBS}
+ 
+ timestamp: libdns.@A@
+ 	touch timestamp

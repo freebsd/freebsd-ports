@@ -1,0 +1,45 @@
+--- bin/named/Makefile.in.orig	2016-07-13 23:58:03 UTC
++++ bin/named/Makefile.in
+@@ -51,7 +51,7 @@ CINCLUDES =	-I${srcdir}/include -I${srcd
+ 		${ISCCFG_INCLUDES} ${ISCCC_INCLUDES} ${ISC_INCLUDES} \
+ 		${DLZDRIVER_INCLUDES} ${DBDRIVER_INCLUDES} @DST_OPENSSL_INC@
+ 
+-CDEFINES =      @CONTRIB_DLZ@ @USE_PKCS11@ @PKCS11_ENGINE@ @CRYPTO@
++CDEFINES =      @USE_PKCS11@ @PKCS11_ENGINE@ @CRYPTO_PK11@
+ 
+ CWARNINGS =
+ 
+@@ -75,11 +75,11 @@ DEPLIBS =	${LWRESDEPLIBS} ${DNSDEPLIBS} 
+ 
+ LIBS =		${LWRESLIBS} ${DNSLIBS} ${BIND9LIBS} \
+ 		${ISCCFGLIBS} ${ISCCCLIBS} ${ISCLIBS} \
+-		${DLZDRIVER_LIBS} ${DBDRIVER_LIBS} @LIBS@
++		@LIBS@
+ 
+ NOSYMLIBS =	${LWRESLIBS} ${DNSLIBS} ${BIND9LIBS} \
+ 		${ISCCFGLIBS} ${ISCCCLIBS} ${ISCNOSYMLIBS} \
+-		${DLZDRIVER_LIBS} ${DBDRIVER_LIBS} @LIBS@
++		@LIBS@
+ 
+ SUBDIRS =	unix
+ 
+@@ -94,8 +94,7 @@ OBJS =		builtin.@O@ client.@O@ config.@O
+ 		tkeyconf.@O@ tsigconf.@O@ update.@O@ xfrout.@O@ \
+ 		zoneconf.@O@ \
+ 		lwaddr.@O@ lwresd.@O@ lwdclient.@O@ lwderror.@O@ lwdgabn.@O@ \
+-		lwdgnba.@O@ lwdgrbn.@O@ lwdnoop.@O@ lwsearch.@O@ \
+-		${DLZDRIVER_OBJS} ${DBDRIVER_OBJS}
++		lwdgnba.@O@ lwdgrbn.@O@ lwdnoop.@O@ lwsearch.@O@
+ 
+ UOBJS =		unix/os.@O@ unix/dlz_dlopen_driver.@O@
+ 
+@@ -110,8 +109,7 @@ SRCS =		builtin.c client.c config.c cont
+ 		tkeyconf.c tsigconf.c update.c xfrout.c \
+ 		zoneconf.c \
+ 		lwaddr.c lwresd.c lwdclient.c lwderror.c lwdgabn.c \
+-		lwdgnba.c lwdgrbn.c lwdnoop.c lwsearch.c \
+-		${DLZDRIVER_SRCS} ${DBDRIVER_SRCS}
++		lwdgnba.c lwdgrbn.c lwdnoop.c lwsearch.c
+ 
+ MANPAGES =	named.8 lwresd.8 named.conf.5
+ 

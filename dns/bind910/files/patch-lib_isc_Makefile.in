@@ -1,0 +1,11 @@
+--- lib/isc/Makefile.in.orig	2016-07-13 23:58:03 UTC
++++ lib/isc/Makefile.in
+@@ -30,7 +30,7 @@ CINCLUDES =	-I${srcdir}/unix/include \
+ 		-I${srcdir}/@ISC_ARCH_DIR@/include \
+ 		-I./include \
+ 		-I${srcdir}/include @ISC_OPENSSL_INC@ ${DNS_INCLUDES}
+-CDEFINES =	@CRYPTO@ -DPK11_LIB_LOCATION=\"${PROVIDER}\"
++CDEFINES =	@CRYPTO_PK11@ -DPK11_LIB_LOCATION=\"${PROVIDER}\"
+ CWARNINGS =
+ 
+ # Alphabetically

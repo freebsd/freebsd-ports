@@ -1,6 +1,22 @@
---- configure.orig	2016-04-20 20:11:20 UTC
+--- configure.orig	2016-07-13 23:58:03 UTC
 +++ configure
-@@ -14142,27 +14142,9 @@ done
+@@ -813,6 +813,7 @@ XMLSTATS
+ PKCS11_TEST
+ PKCS11_GOST
+ PKCS11_ECDSA
++CRYPTO_PK11
+ CRYPTO
+ PKCS11LINKSRCS
+ PKCS11LINKOBJS
+@@ -848,6 +849,7 @@ THREADOPTOBJS
+ ISC_PLATFORM_USETHREADS
+ ALWAYS_DEFINES
+ CHECK_DSA
++DNS_CRYPTO_PK11_LIBS
+ DNS_CRYPTO_LIBS
+ DNS_GSSAPI_LIBS
+ DST_GSSAPI_INC
+@@ -14142,27 +14144,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -30,7 +46,7 @@
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -14205,47 +14187,7 @@ $as_echo "no" >&6; } ;;
+@@ -14205,47 +14189,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -79,7 +95,107 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -21602,7 +21544,7 @@ $as_echo "" >&6; }
+@@ -14263,6 +14207,7 @@ esac
+ 
+ 
+ DNS_CRYPTO_LIBS="$DNS_GSSAPI_LIBS $DNS_CRYPTO_LIBS"
++DNS_CRYPTO_PK11_LIBS="$DNS_GSSAPI_LIBS $DNS_CRYPTO_PK11_LIBS"
+ 
+ #
+ # Applications linking with libdns also need to link with these libraries.
+@@ -14270,6 +14215,7 @@ DNS_CRYPTO_LIBS="$DNS_GSSAPI_LIBS $DNS_C
+ 
+ 
+ 
++
+ #
+ # was --with-randomdev specified?
+ #
+@@ -15599,10 +15545,10 @@ OPENSSL_WARNING=
+ openssldirs="/usr /usr/local /usr/local/ssl /usr/pkg /usr/sfw"
+ if test "$use_openssl" = "auto"
+ then
+-	if test "$want_native_pkcs11" = "yes"
+-	then
+-		use_openssl="native_pkcs11"
+-	else
++#	if test "$want_native_pkcs11" = "yes"
++#	then
++#		use_openssl="native_pkcs11"
++#	else
+ 		for d in $openssldirs
+ 		do
+ 			if test -f $d/include/openssl/opensslv.h
+@@ -15611,8 +15557,9 @@ then
+ 				break
+ 			fi
+ 		done
+-	fi
++#	fi
+ fi
++CRYPTO_PK11=""
+ OPENSSL_ECDSA=""
+ OPENSSL_GOST=""
+ gosttype="raw"
+@@ -15634,17 +15581,17 @@ $as_echo "#define PREFER_GOSTASN1 1" >>c
+ 		;;
+ esac
+ 
+-case "$use_openssl" in
+-	native_pkcs11)
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: disabled because of native PKCS11" >&5
+-$as_echo "disabled because of native PKCS11" >&6; }
++if test "$want_native_pkcs11" = "yes"
++then
+ 		DST_OPENSSL_INC=""
+-		CRYPTO="-DPKCS11CRYPTO"
++		CRYPTO_PK11="-DPKCS11CRYPTO"
+ 		OPENSSLGOSTLINKOBJS=""
+ 		OPENSSLGOSTLINKSRS=""
+ 		OPENSSLLINKOBJS=""
+ 		OPENSSLLINKSRCS=""
+-		;;
++fi
++
++case "$use_openssl" in
+ 	no)
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -15666,12 +15613,11 @@ $as_echo "no" >&6; }
+ If you don't want OpenSSL, use --without-openssl" "$LINENO" 5
+ 		;;
+ 	*)
+-		if test "$want_native_pkcs11" = "yes"
+-		then
+-                        { $as_echo "$as_me:${as_lineno-$LINENO}: result: " >&5
+-$as_echo "" >&6; }
+-			as_fn_error $? "OpenSSL and native PKCS11 cannot be used together." "$LINENO" 5
+-		fi
++#		if test "$want_native_pkcs11" = "yes"
++#		then
++#			AC_MSG_RESULT()
++#			AC_MSG_ERROR([OpenSSL and native PKCS11 cannot be used together.])
++#		fi
+ 		if test "$use_openssl" = "yes"
+ 		then
+ 			# User did not specify a path - guess it
+@@ -16143,6 +16089,7 @@ esac
+ 
+ 
+ DNS_CRYPTO_LIBS="$DNS_CRYPTO_LIBS $DST_OPENSSL_LIBS"
++DNS_CRYPTO_PK11_LIBS="$DNS_CRYPTO_LIBS"
+ 
+ ISC_PLATFORM_WANTAES="#undef ISC_PLATFORM_WANTAES"
+ if test "$with_aes" = "yes"
+@@ -16504,6 +16451,7 @@ esac
+ 
+ 
+ 
++
+ # for PKCS11 benchmarks
+ 
+ have_clock_gt=no
+@@ -21602,7 +21550,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  

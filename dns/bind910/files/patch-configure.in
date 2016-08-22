@@ -1,0 +1,99 @@
+--- configure.in.orig	2016-07-13 23:58:03 UTC
++++ configure.in
+@@ -1009,12 +1009,14 @@ AC_SUBST(USE_GSSAPI)
+ AC_SUBST(DST_GSSAPI_INC)
+ AC_SUBST(DNS_GSSAPI_LIBS)
+ DNS_CRYPTO_LIBS="$DNS_GSSAPI_LIBS $DNS_CRYPTO_LIBS"
++DNS_CRYPTO_PK11_LIBS="$DNS_GSSAPI_LIBS $DNS_CRYPTO_PK11_LIBS"
+ 
+ #
+ # Applications linking with libdns also need to link with these libraries.
+ #
+ 
+ AC_SUBST(DNS_CRYPTO_LIBS)
++AC_SUBST(DNS_CRYPTO_PK11_LIBS)
+ 
+ #
+ # was --with-randomdev specified?
+@@ -1410,10 +1412,10 @@ OPENSSL_WARNING=
+ openssldirs="/usr /usr/local /usr/local/ssl /usr/pkg /usr/sfw"
+ if test "$use_openssl" = "auto"
+ then
+-	if test "$want_native_pkcs11" = "yes"
+-	then
+-		use_openssl="native_pkcs11"
+-	else
++#	if test "$want_native_pkcs11" = "yes"
++#	then
++#		use_openssl="native_pkcs11"
++#	else
+ 		for d in $openssldirs
+ 		do
+ 			if test -f $d/include/openssl/opensslv.h
+@@ -1422,8 +1424,9 @@ then
+ 				break
+ 			fi
+ 		done
+-	fi
++#	fi
+ fi
++CRYPTO_PK11=""
+ OPENSSL_ECDSA=""
+ OPENSSL_GOST=""
+ gosttype="raw"
+@@ -1444,16 +1447,17 @@ case "$with_gost" in
+ 		;;
+ esac
+ 
+-case "$use_openssl" in
+-	native_pkcs11)
+-		AC_MSG_RESULT(disabled because of native PKCS11)
++if test "$want_native_pkcs11" = "yes"
++then
+ 		DST_OPENSSL_INC=""
+-		CRYPTO="-DPKCS11CRYPTO"
++		CRYPTO_PK11="-DPKCS11CRYPTO"
+ 		OPENSSLGOSTLINKOBJS=""
+ 		OPENSSLGOSTLINKSRS=""
+ 		OPENSSLLINKOBJS=""
+ 		OPENSSLLINKSRCS=""
+-		;;
++fi
++
++case "$use_openssl" in
+ 	no)
+ 		AC_MSG_RESULT(no)
+ 		DST_OPENSSL_INC=""
+@@ -1475,11 +1479,11 @@ case "$use_openssl" in
+ If you don't want OpenSSL, use --without-openssl])
+ 		;;
+ 	*)
+-		if test "$want_native_pkcs11" = "yes"
+-		then
+-                        AC_MSG_RESULT()
+-			AC_MSG_ERROR([OpenSSL and native PKCS11 cannot be used together.])
+-		fi
++#		if test "$want_native_pkcs11" = "yes"
++#		then
++#			AC_MSG_RESULT()
++#			AC_MSG_ERROR([OpenSSL and native PKCS11 cannot be used together.])
++#		fi
+ 		if test "$use_openssl" = "yes"
+ 		then
+ 			# User did not specify a path - guess it
+@@ -1813,6 +1817,7 @@ AC_SUBST(OPENSSL_ECDSA)
+ AC_SUBST(OPENSSL_GOST)
+ 
+ DNS_CRYPTO_LIBS="$DNS_CRYPTO_LIBS $DST_OPENSSL_LIBS"
++DNS_CRYPTO_PK11_LIBS="$DNS_CRYPTO_LIBS"
+ 
+ ISC_PLATFORM_WANTAES="#undef ISC_PLATFORM_WANTAES"
+ if test "$with_aes" = "yes"
+@@ -2100,6 +2105,7 @@ esac
+ AC_SUBST(PKCS11LINKOBJS)
+ AC_SUBST(PKCS11LINKSRCS)
+ AC_SUBST(CRYPTO)
++AC_SUBST(CRYPTO_PK11)
+ AC_SUBST(PKCS11_ECDSA)
+ AC_SUBST(PKCS11_GOST)
+ AC_SUBST(PKCS11_TEST)
