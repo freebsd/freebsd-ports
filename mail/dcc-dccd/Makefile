@@ -3,7 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.158
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
@@ -22,7 +22,7 @@ LICENSE_PERMS=	no-pkg-sell no-dist-mirror no-pkg-mirror no-dist-sell
 
 HAS_CONFIGURE=	yes
 
-USES=	gmake tar:Z
+USES=		gmake tar:Z
 
 OPTIONS_DEFINE=	DCCIFD DCCD DCCGREY IPV6 ALT_HOME
 OPTIONS_DEFAULT=	DCCIFD DCCM DCCD DCCGREY
@@ -58,6 +58,8 @@ CONFIGURE_ARGS=	--with-uid=${DCCUSER} \
 		--with-installroot=\$${${DESTDIRNAME}} \
 		--with-configsuffix=.sample \
 		--with-make-cmd=${MAKE_CMD}
+
+CONFIGURE_ENV=	ac_cv_header_histedit_h=no	# disable libedit detection
 
 ALT_HOME_CONFIGURE_ON=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
 DCCM_CONFIGURE_ENABLE=	dccm

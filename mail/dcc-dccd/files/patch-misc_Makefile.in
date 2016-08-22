@@ -1,0 +1,11 @@
+--- misc/Makefile.in.orig	2014-08-06 14:43:42 UTC
++++ misc/Makefile.in
+@@ -51,7 +51,7 @@ DCC_BINDIR=@installroot@@libexecdir@
+ @MAKE_INC2@
+ 
+ install:
+-	for NM in $(SSCRIPTS); do $(BININSTALL) $$NM $(DCC_BINDIR)/$$NM;done
++	for NM in $(SSCRIPTS); do $(BSD_INSTALL_SCRIPT) $$NM $(DCC_BINDIR)/$$NM;done
+ 
+ deinstall:
+ 	-if test -d $(DCC_BINDIR); then cd $(DCC_BINDIR); rm -f $(SSCRIPTS); fi
