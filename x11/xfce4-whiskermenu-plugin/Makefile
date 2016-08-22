@@ -13,6 +13,8 @@ COMMENT=	Alternate menu for the Xfce Desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limit:^1\.6\.
+
 USES=	cmake:outsource gettext localbase pkgconfig tar:bzip2 xfce
 USE_GNOME=	gtk20 cairo
 USE_XFCE=	panel
