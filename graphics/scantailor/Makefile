@@ -14,13 +14,15 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libjbig.so:graphics/jbigkit \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
+#MAKE_JOBS_UNSAFE=	yes
 USES=		cmake gettext jpeg
-USE_GCC=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	corelib gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
+USE_XORG+=	xrender
 
 DESKTOP_ENTRIES="Scan Tailor" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Scanning;" false
