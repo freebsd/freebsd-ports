@@ -1169,6 +1169,7 @@
     SUBDIR += php-mecab
     SUBDIR += php55-ctype
     SUBDIR += php55-dom
+    SUBDIR += php55-enchant
     SUBDIR += php55-pspell
     SUBDIR += php55-simplexml
     SUBDIR += php55-wddx
@@ -1178,6 +1179,7 @@
     SUBDIR += php55-xsl
     SUBDIR += php56-ctype
     SUBDIR += php56-dom
+    SUBDIR += php56-enchant
     SUBDIR += php56-pspell
     SUBDIR += php56-simplexml
     SUBDIR += php56-wddx
@@ -1187,6 +1189,7 @@
     SUBDIR += php56-xsl
     SUBDIR += php70-ctype
     SUBDIR += php70-dom
+    SUBDIR += php70-enchant
     SUBDIR += php70-pspell
     SUBDIR += php70-simplexml
     SUBDIR += php70-wddx
