@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	apt_0.6.46.4-0.1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Advanced front-end for dpkg
 
 BUILD_DEPENDS=	bash:shells/bash \
