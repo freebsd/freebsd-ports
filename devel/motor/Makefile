@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USES=		tar:bzip2 gmake iconv
+USES=		alias tar:bzip2 gmake iconv ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
