@@ -1,6 +1,6 @@
---- Xresources/Makefile.in.orig	2001-03-10 15:32:46.000000000 +0100
-+++ Xresources/Makefile.in	2014-02-14 10:40:45.000000000 +0100
-@@ -41,7 +41,7 @@
+--- Xresources/Makefile.in.orig	2001-03-10 14:32:46 UTC
++++ Xresources/Makefile.in
+@@ -41,7 +41,7 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include
  
@@ -9,7 +9,7 @@
  
  pkgdatadir = $(datadir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
-@@ -235,10 +235,10 @@
+@@ -235,10 +235,10 @@ mostlyclean distclean maintainer-clean
  
  
  install-data-hook:

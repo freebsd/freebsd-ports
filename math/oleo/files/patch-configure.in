@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Nov 23 05:31:55 2000
-+++ configure.in	Sat Dec  2 10:41:01 2000
-@@ -208,13 +208,15 @@
+--- configure.in.orig	2001-03-10 14:32:29 UTC
++++ configure.in
+@@ -213,13 +213,15 @@ dnl	This needs to be done after the X an
  dnl	the libplot from GNU plotutils sometimes requires linking the
  dnl	X and Motif libraries
  dnl

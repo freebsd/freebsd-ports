@@ -1,5 +1,5 @@
---- src/io-x11.c.orig	Wed Jul 14 23:14:24 2004
-+++ src/io-x11.c	Wed Jul 14 23:14:28 2004
+--- src/io-x11.c.orig	2001-03-09 11:33:29 UTC
++++ src/io-x11.c
 @@ -34,7 +34,6 @@
  #include <stdio.h>
  #include <ctype.h>

@@ -3,17 +3,17 @@
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GNU spreadsheet for X11 and terminals
+COMMENT=	GNU spreadsheet for X11 and terminals
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison localbase perl5
+USES=		bison localbase ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
