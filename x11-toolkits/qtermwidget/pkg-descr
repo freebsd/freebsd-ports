@@ -1,0 +1,6 @@
+QTermWidget is an opensource project originally based on KDE4 Konsole
+application. The main goal of this project is to provide unicode-enabled,
+embeddable Qt widget for using as a built-in console (or terminal emulation
+widget).
+
+WWW: https://github.com/lxde/qtermwidget
