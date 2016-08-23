@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	GTK2 DOCS
 GTK2_DESC=	Enable to have the gmp3info
 
 ALL_TARGET=	mp3info
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 
 PLIST_FILES=	bin/mp3info man/man1/mp3info.1.gz
 PORTDOCS=	ChangeLog README mp3info.txt
