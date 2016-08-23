@@ -4,6 +4,7 @@
 PORTNAME=	nms
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 
@@ -12,7 +13,7 @@ COMMENT=	Recreate decrypting text effect from the Sneakers movie
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		gmake ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	bartobri
 GH_PROJECT=	no-more-secrets
