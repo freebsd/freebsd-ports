@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2015-03-26 09:50:40.000000000 +0100
-+++ CMakeLists.txt	2015-03-26 20:40:12.055624000 +0100
+--- CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ CMakeLists.txt
 @@ -28,8 +28,8 @@ if(NOT CMAKE_BUILD_TYPE)
        FORCE)
  endif()
