@@ -222,9 +222,6 @@
 %%WWWDIR%%/images/logos/nagios.gd2
 %%WWWDIR%%/images/logos/nagios.gif
 %%WWWDIR%%/images/logos/nagiosvrml.png
-%%WWWDIR%%/images/logos/netbsd.gif
-%%WWWDIR%%/images/logos/netbsd.jpg
-%%WWWDIR%%/images/logos/netbsd.png
 %%WWWDIR%%/images/logos/next.gd2
 %%WWWDIR%%/images/logos/next.gif
 %%WWWDIR%%/images/logos/next.jpg
@@ -283,9 +280,6 @@
 %%WWWDIR%%/images/logos/sunlogo.gif
 %%WWWDIR%%/images/logos/sunlogo.jpg
 %%WWWDIR%%/images/logos/sunlogo.png
-%%WWWDIR%%/images/logos/suse.gif
-%%WWWDIR%%/images/logos/suse.jpg
-%%WWWDIR%%/images/logos/suse.png
 %%WWWDIR%%/images/logos/switch.gd2
 %%WWWDIR%%/images/logos/switch.gif
 %%WWWDIR%%/images/logos/switch40.gd2
@@ -393,7 +387,7 @@
 %%WWWDIR%%/map-form.html
 %%WWWDIR%%/map-links.html
 %%WWWDIR%%/map-popup.html
-%%WWWDIR%%/map.php
+%%WWWDIR%%/map.html
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/rss-corebanner.php
 %%WWWDIR%%/rss-corefeed.html
@@ -435,5 +429,5 @@
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,2775) %%NAGIOSDIR%%/checkresults
 @dir(%%NAGIOSUSER%%,%%WWWGRP%%,775) %%NAGIOSDIR%%/rw
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%
-@postunexec if [ -d %%NAGIOSDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%NAGIOSDIR%%`` to remove any files left behind."; fi
-@postunexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
+@unexec if [ -d %%NAGIOSDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%NAGIOSDIR%%`` to remove any files left behind."; fi
+@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
