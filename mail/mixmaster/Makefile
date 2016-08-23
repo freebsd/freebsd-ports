@@ -30,6 +30,7 @@ CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
 OPTIONS_DEFINE=	DOCS
 
 BROKEN_FreeBSD_9=	does not compile
+BROKEN=		upstream disappeared (unfetchable)
 
 post-patch:
 	@${RM} ${WRKSRC}/Mix/conf/mix.cfg.orig
