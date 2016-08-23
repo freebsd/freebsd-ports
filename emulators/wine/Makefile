@@ -32,8 +32,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-osmesa \
 		--with-oss \
 		--without-sane \
-		--without-tiff \
-		--without-xinerama
+		--without-tiff
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
