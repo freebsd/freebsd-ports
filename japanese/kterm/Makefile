@@ -30,6 +30,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Xterm variant with Japanese support
 
+BROKEN=		wpi patch site no longer resolves (unfetchable)
+
 BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		imake
