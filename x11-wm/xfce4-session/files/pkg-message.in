@@ -3,8 +3,8 @@ files in %%LOCALBASE%%/etc/polkit-1/rules.d directory. Which looks
 like this (replace PUTYOURGROUPHERE by your group):
 
 polkit.addRule(function (action, subject) {
-  if (action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop"
+  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop")
       && subject.isInGroup("PUTYOURGROUPHERE")) {
     return polkit.Result.YES;
   }
