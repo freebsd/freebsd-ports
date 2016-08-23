@@ -27,6 +27,7 @@ share/gir-1.0/GnomeMaps-1.0.gir
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
+%%DATADIR%%/maps-service.json
 %%DATADIR%%/org.gnome.Maps
 %%DATADIR%%/org.gnome.Maps.data.gresource
 %%DATADIR%%/org.gnome.Maps.src.gresource
