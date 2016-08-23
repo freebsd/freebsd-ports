@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
-USES+=		execinfo libarchive
+USES+=		execinfo libarchive ncurses
 HAS_CONFIGURE=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
