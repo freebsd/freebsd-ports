@@ -242,6 +242,7 @@
     SUBDIR += qt4-inputmethods
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
+    SUBDIR += qterminal
     SUBDIR += qxkb
     SUBDIR += randrproto
     SUBDIR += recordproto
