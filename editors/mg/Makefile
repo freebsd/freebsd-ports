@@ -3,12 +3,14 @@
 
 PORTNAME=	mg
 PORTVERSION=	20160421
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://homepage.boetes.org/software/mg/
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Small, fast Emacs-like editor
 
+USES=		ncurses
 PLIST_FILES=	bin/mg man/man1/mg.1.gz
 PORTDOCS=	README tutorial
 
