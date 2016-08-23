@@ -1,4 +1,4 @@
---- lib/runcmd.c.orig	2016-08-01 15:46:23 UTC
+--- lib/runcmd.c.orig	2014-08-12 15:00:01 UTC
 +++ lib/runcmd.c
 @@ -36,7 +36,7 @@
  #endif
