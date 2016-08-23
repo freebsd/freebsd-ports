@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		gmake localbase shebangfix tar:bzip2
+USES=		gmake localbase ncurses shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
 SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
