@@ -1,6 +1,6 @@
---- lib/livestatus/CMakeLists.txt.orig	2015-03-26 22:21:52.808117000 +0100
-+++ lib/livestatus/CMakeLists.txt	2015-03-26 22:22:17.663409000 +0100
-@@ -49,7 +49,7 @@ set_target_properties (
+--- lib/livestatus/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ lib/livestatus/CMakeLists.txt
+@@ -47,7 +47,7 @@ set_target_properties (
  )
  
  install_if_not_exists(
