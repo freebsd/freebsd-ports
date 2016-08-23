@@ -11,7 +11,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent2 \
 		libmsgpackc.so:devel/msgpack \
 		libssh_threads.so:security/libssh
 
-USES=		autoreconf pkgconfig
+USES=		autoreconf ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tmate-io
 GH_TAGNAME=	b3c85fa
