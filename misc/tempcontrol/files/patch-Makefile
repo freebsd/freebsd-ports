@@ -14,7 +14,7 @@
  
  tempcontrol:	${OBJS}
 -	${CC} -o $@ ${CFLAGS} ${OBJS} -lreadline -lcurses -lutil
-+	${CC} -o $@ ${CFLAGS} ${OBJS} ${LDFLAGS} -lreadline -lcurses -lutil
++	${CC} -o $@ ${CFLAGS} ${OBJS} ${LDFLAGS} -lreadline -lncurses -lutil
  
  clean:
  	rm -f *~ myparser* parser.h parserc.h parsercommands.c.sample parserkeys.h *.o ${PROG}
