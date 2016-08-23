@@ -45,6 +45,7 @@
     SUBDIR += enscript-letterdj
     SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += epsonepl
+    SUBDIR += fig2dev
     SUBDIR += flpsed
     SUBDIR += font-amsfonts
     SUBDIR += font2svg
