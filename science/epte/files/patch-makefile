@@ -1,5 +1,5 @@
---- makefile.orig	2010-09-01 10:41:27.655060824 +0200
-+++ makefile	2010-09-01 10:46:21.341029572 +0200
+--- makefile.orig	2012-08-04 20:53:21 UTC
++++ makefile
 @@ -320,13 +320,13 @@ IS_INTERACTIVE= yes
  #ifdef VMS
  CC = cc 
@@ -17,7 +17,12 @@
  #endif
  
  
-@@ -344,7 +344,7 @@ LIBS = -lcursesX -o epte
+@@ -340,11 +340,11 @@ DISTNAME = [system]
+ LIBS = -lcursesX -o epte
+ #endif
+ # Use ncurses library for linux & FreeBSD
+-#if defined(linux) || defined(__FreeBSD__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__DragonFly__)
  LIBS = -lncurses -o epte
  #endif
  
