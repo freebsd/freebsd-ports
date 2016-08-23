@@ -3,7 +3,7 @@
 
 PORTNAME=	zinf
 PORTVERSION=	2.2.5
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libgdbm.so:databases/gdbm
 
-USES=		pathfix libtool pkgconfig gettext gmake perl5
+USES=		gettext gmake libtool ncurses pathfix perl5 pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 \
