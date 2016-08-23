@@ -11,6 +11,8 @@ MASTER_SITES=	SF/thewml
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
+BROKEN=		SF project removed (unfetchable)
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
