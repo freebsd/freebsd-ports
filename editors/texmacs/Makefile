@@ -14,15 +14,15 @@ COMMENT=	WYSIWYG scientific text editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libguile.so:lang/guile
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libguile.so:lang/guile \
+		libgmp.so:math/gmp
 RUN_DEPENDS=	fig2dev:print/transfig
 
-USES=		cpe desktop-file-utils gmake iconv pkgconfig python \
+USES=		cpe desktop-file-utils gmake iconv localbase pkgconfig python \
 		shared-mime-info shebangfix
 USE_TEX=	tex:run dvipsk:run
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}"
 MAKE_ARGS=	CP="${CP} -R -f"
 ALL_TARGET=	${PORTNAME:tu}
@@ -51,7 +51,7 @@ IMLIB2_CONFIGURE_WITH=	imlib2
 PDF_CONFIGURE_ENABLE=	pdf-renderer
 PDF_LDFLAGS=		-lz
 PDF_IMPLIES=		FREETYPE GHOSTSCRIPT
-QT4_USE=		qt4=accessible,gui,imageformats \
+QT4_USE=		qt4=accessible,corelib,gui,imageformats \
 			qt4=moc_build,qmake_build,rcc_build,uic_build
 QT4_USE_OFF=		xorg=xext
 QT4_CONFIGURE_ON=	--with-qt=${QT_PREFIX} --enable-qtpipes
