@@ -3,7 +3,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/
@@ -14,7 +14,8 @@ COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 LICENSE=	MIT
 
-USES=		tar:Z
+USES=		ncurses tar:Z
+MAKE_ARGS=	LDLIBS="${LDFLAGS}"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -32,6 +33,7 @@ post-patch-X11-off:
 	@${REINPLACE_CMD} -e '/fonts/d' ${WRKSRC}/Makefile
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/etc/mailcap ${STAGEDIR}${PREFIX}/etc/mailcap.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/mailcap \
+		${STAGEDIR}${PREFIX}/etc/mailcap.sample
 
 .include <bsd.port.mk>
