@@ -2,43 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	6.5.0
+PORTVERSION=	8.1.3
 CATEGORIES=	www
+MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION}/
+DISTNAME=	drush
+EXTRACT_SUFX=	.phar
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	pear-Console_Table>0:devel/pear-Console_Table
-
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-GH_ACCOUNT=	${PORTNAME}-ops
-USE_GITHUB=	yes
-
+USES=		php:cli
 # set php requirements same as drupal itself
 USE_PHP=	gd pcre session mbstring ctype json hash simplexml dom pdo filter
-WANT_PHP_CLI=	yes
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+PLIST_FILES=	bin/drush bin/drush.phar
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-do-configure:
-	@${REINPLACE_CMD} -e 's|XXXDATADIRXXX|${STAGEDIR}${DATADIR}|g' ${WRKSRC}/drush
+do-extract:
+		${MKDIR} ${WRKSRC}/
+		${CP} ${_DISTDIR}/drush.phar ${WRKSRC}/
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	( cd ${WRKSRC} && \
-	${COPYTREE_SHARE} "classes commands includes lib misc tests drush_logo-black.png drush.php drush.info" ${STAGEDIR}${DATADIR} && \
-	${INSTALL_DATA} drush_logo-black.png drush.php ${STAGEDIR}${DATADIR} && \
-	${INSTALL_SCRIPT} drush drush.complete.sh ${STAGEDIR}${DATADIR} )
-	${LN} -s ${DATADIR}/drush ${STAGEDIR}${PREFIX}/bin/drush
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	( cd ${WRKSRC} && ${INSTALL_MAN} *.md docs/* ${STAGEDIR}${DOCSDIR} )
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	( cd ${WRKSRC} && ${INSTALL_MAN} examples/* ${STAGEDIR}${EXAMPLESDIR} )
+	${INSTALL_SCRIPT} ${WRKSRC}/drush.phar ${STAGEDIR}${PREFIX}/bin/
+	${LN} -s drush.phar ${STAGEDIR}${PREFIX}/bin/drush
 
 .include <bsd.port.mk>
