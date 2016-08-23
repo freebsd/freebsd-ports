@@ -34,9 +34,9 @@ GTK2_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:devel/py-game \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify \
 		xdg-utils>=1.0.2:devel/xdg-utils
-GTK2_USE=	GNOME=intltool librsvg2 pygnome2 pygtk2
+GTK2_USE=	gnome=intltool,librsvg2,pygnome2,pygtk2
 GTK2_USES=	desktop-file-utils
-GTK2_VARS=	INSTALLS_ICONS=	yes
+GTK2_VARS=	installs_icons=yes
 
 PORTDOCS=	ChangeLog README
 
