@@ -3,6 +3,7 @@
 
 PORTNAME=	dfuife-curses
 PORTVERSION=	1.5.1.20050829
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.xmms2.org/~alex/
 
@@ -12,7 +13,7 @@ COMMENT=	DFUI curses frontend
 LIB_DEPENDS=	libaura3.so:devel/libaura \
 		libdfui4.so:devel/libdfui
 
-USES=	tar:bzip2
+USES=		ncurses tar:bzip2
 
 PLIST_FILES=	bin/dfuife_curses
 
