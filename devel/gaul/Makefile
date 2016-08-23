@@ -3,7 +3,7 @@
 
 PORTNAME=	gaul
 PORTVERSION=	0.1849.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/0.1849
 DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
@@ -13,10 +13,10 @@ COMMENT=	Genetic Algorithm Utility Library
 
 LIB_DEPENDS=	libslang.so:devel/libslang2
 
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
+LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
