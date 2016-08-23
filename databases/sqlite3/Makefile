@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.13.0
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -17,8 +16,11 @@ USES=		libtool ncurses pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+# Platform Configuration
 CFLAGS+=	-Os
-CPPFLAGS+=	-DHAVE_ISNAN=1 -DHAVE_MALLOC_USABLE_SIZE=1
+CPPFLAGS+=	-DHAVE_ISNAN=1 -DHAVE_MALLOC_USABLE_SIZE=1 -DHAVE_GMTIME_R=1 -DHAVE_LOCALTIME_R=1 -DHAVE_USLEEP=1
+CPPFLAGS+=	${OSVERSION<1000000:?:-DHAVE_STRCHRNUL=1}
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -26,7 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
 		EXTENSION ARMOR STMT DBSTAT FTS5 JSON1 RBU \
-		LIKENOTBLOB STSHELL FTS3_TOKEN SESSION
+		LIKENOTBLOB STSHELL FTS3_TOKEN SESSION UNKNOWN_SQL
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
 OPTIONS_GROUP=	UNICODE RTREEG RL
@@ -51,6 +53,9 @@ LIKENOTBLOB_DESC=	LIKE does not match blobs
 
 # https://www.sqlite.org/compile.html#enable_api_armor
 ARMOR_DESC=		Detect misuse of the API
+
+# http://sqlite.org/compile.html#enable_unknown_sql_function
+UNKNOWN_SQL_DESC=	suppress unknown function errors
 
 # https://www.sqlite.org/fts3.html
 # https://www.sqlite.org/compile.html#enable_fts3_parenthesis
@@ -186,6 +191,8 @@ LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
 STSHELL_CONFIGURE_ENABLE=	static-shell
 
 SESSION_CONFIGURE_ENABLE=	session
+
+UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
 
 .include <bsd.port.options.mk>
 
