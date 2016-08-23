@@ -1,0 +1,14 @@
+--- configure.orig	2005-04-20 16:09:35 UTC
++++ configure
+@@ -25786,10 +25786,7 @@ _EOF_
+ 
+     cat >> $tmpfile << _EOF_
+ 
+-#ifndef errno
+-/* Some sytems #define this! */
+-extern int errno;
+-#endif
++#include <errno.h>
+ 
+ _EOF_
+ 
