@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	13.1.20160702
+PORTVERSION=	13.2.20160813
 CATEGORIES=	devel java
 MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce${PORTVERSION:R}/${PORTVERSION:E}/
 DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 
-EXTRACT_NAME=	Visual_Paradigm_CE_13.1
+EXTRACT_NAME=	Visual_Paradigm_CE_${PORTVERSION:R}/
 
 FETCH_ARGS=	-Fpr
 
