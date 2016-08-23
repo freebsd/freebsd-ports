@@ -1,6 +1,6 @@
---- lib/db_ido_pgsql/CMakeLists.txt.orig	2015-03-26 22:16:57.945333000 +0100
-+++ lib/db_ido_pgsql/CMakeLists.txt	2015-03-26 22:17:17.498830000 +0100
-@@ -44,7 +44,7 @@ if(PostgreSQL_FOUND)
+--- lib/db_ido_pgsql/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ lib/db_ido_pgsql/CMakeLists.txt
+@@ -43,7 +43,7 @@ if(PostgreSQL_FOUND)
    )
  
    install_if_not_exists(
