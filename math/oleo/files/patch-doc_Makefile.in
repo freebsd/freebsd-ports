@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Sat Mar 10 15:32:46 2001
-+++ doc/Makefile.in	Mon Jun  7 21:52:58 2004
-@@ -87,7 +87,7 @@
+--- doc/Makefile.in.orig	2001-03-10 14:32:46 UTC
++++ doc/Makefile.in
+@@ -87,7 +87,7 @@ INTLOBJS = @INTLOBJS@
  LIBOBJS = @LIBOBJS@
  LN_S = @LN_S@
  MAINT = @MAINT@
@@ -9,7 +9,7 @@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  MOTIF_CFLAGS = @MOTIF_CFLAGS@
  MOTIF_LIBS = @MOTIF_LIBS@
-@@ -125,7 +125,7 @@
+@@ -125,7 +125,7 @@ TEXIS = basics.texi bugs.texi cell-refs.
  EXTRA_DIST = $(TEXIS) oleo_web.html texi2html oleo1.png
  noinst_DATA = oleo_web.html $(TEXIS)
  
