@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	B-Hooks-Parser
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to perls parser variables
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0:devel/p5-B-Hooks-OP-Check \
 		p5-ExtUtils-Depends>=0.302:devel/p5-ExtUtils-Depends
