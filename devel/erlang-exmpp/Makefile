@@ -18,6 +18,8 @@ RUN_DEPENDS=	erl:lang/erlang
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2
 
+BROKEN=		build fails with Erlang 19
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
 
