@@ -1,6 +1,27 @@
---- ./configure.orig	2013-10-22 01:49:15.000000000 -0700
-+++ ./configure	2013-11-04 07:40:28.945418565 -0800
-@@ -4194,11 +4194,11 @@
+The first two hunks make sure only qmake is build, as the rest of Qt is built
+in other ports.
+
+The last hunk is backported from upstream:
+
+commit a9474d1260a8c8cc9eae14f2984098919d9684e5
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Aug 23 20:25:14 2016 +0200
+
+    configure: Correctly detect clang's version on FreeBSD
+
+    "clang -v" on FreeBSD reports something like "FreeBSD clang version
+    x.y.z [...]" instead of just "clang version x.y.z [...]", which fails to
+    match the sed pattern in the configure script, resulting in qconfig.pri
+    having no clang version defined.
+
+    Augment the pattern so that both version strings match.
+
+    Change-Id: I5f38f8480f4b1156ca7147e32c1157a009557035
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+
+--- configure.orig	2015-10-13 04:35:07 UTC
++++ configure
+@@ -4038,11 +4038,11 @@ if true; then ###[ '!' -f "$outpath/bin/
          fi
          echo "QMAKESPEC = $adjqmakespec" >> "$mkfile"
          echo "QT_VERSION = $QT_VERSION" >> "$mkfile"
@@ -15,11 +36,20 @@
          echo "EXEEXT = $EXEEXT" >> "$mkfile"
          echo "RM_F = rm -f" >> "$mkfile"
          echo "RM_RF = rm -rf" >> "$mkfile"
-@@ -4214,6 +4214,7 @@
- 	    rm "$mkfile.tmp"
+@@ -4061,6 +4061,7 @@ if true; then ###[ '!' -f "$outpath/bin/
+             fi
          fi
      done
 +    exit 0
  
-     (cd "$outpath/qmake"; "$MAKE") || exit 2
- fi # Build qmake
+     if [ "$OPT_VERBOSE" = yes ]; then
+         # Show the output of make
+@@ -6474,7 +6472,7 @@ case "$QMAKE_CONF_COMPILER" in
+     # Clang
+     COMPILER_VERSION=`${QMAKE_CONF_COMPILER} -v 2>&1 | sed -n -E '
+ /^Apple (clang|LLVM) version /{s///; s/^([0-9]*)\.([0-9]*).*$/QT_APPLE_CLANG_MAJOR_VERSION=\1; QT_APPLE_CLANG_MINOR_VERSION=\2/;p;q;}
+-/^clang version /{s///; s/^([0-9]*)\.([0-9]*).*$/QT_CLANG_MAJOR_VERSION=\1; QT_CLANG_MINOR_VERSION=\2/;p;q;}'`
++/^(FreeBSD )?clang version /{s///; s/^([0-9]*)\.([0-9]*).*$/QT_CLANG_MAJOR_VERSION=\1; QT_CLANG_MINOR_VERSION=\2/;p;q;}'`
+     eval "$COMPILER_VERSION"
+     ;;
+ *icpc)
