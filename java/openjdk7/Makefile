@@ -68,7 +68,7 @@ JDK_BUILD_DATE=		26_aug_2013
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.9.4
+ANT_VERSION=		1.9.7
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib \
