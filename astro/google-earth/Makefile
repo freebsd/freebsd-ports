@@ -60,9 +60,9 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
 	${RM} ${WRKSRC}/libcurl.so.4
 	${PERL} -i -pe 's|/lib/ld-lsb.so.3\0\0\0|/lib/ld-linux.so.2\0|' ${WRKSRC}/googleearth-bin
-post-patch-NVIDIA-on:
+post-patch-LINUX_DRI-off:
 	@${REINPLACE_CMD} 's|%%LIBGL_ALWAYS_SOFTWARE%%||' ${WRKSRC}/bin/googleearth
-post-patch-NVIDIA-off:
+post-patch-LINUX_DRI-on:
 	@${REINPLACE_CMD} 's|%%LIBGL_ALWAYS_SOFTWARE%%|LIBGL_ALWAYS_SOFTWARE=yes|' ${WRKSRC}/bin/googleearth
 
 do-build:
