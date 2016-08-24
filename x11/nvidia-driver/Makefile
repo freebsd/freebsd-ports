@@ -124,9 +124,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
 		${WRKSRC}/src/nvidia_ctl.c ${WRKSRC}/src/nvidia_dev.c \
 		${WRKSRC}/src/nvidia_linux.c
-# Fix stack buffer overflow in nvidia_sysctl_bus_type()
-	${REINPLACE_CMD} -e 's/8 bus_type\[4\]/8 bus_type[8]/' \
-		${WRKSRC}/src/nvidia_sysctl.c
 # Respect WITHOUT_LINUX setting
 	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
