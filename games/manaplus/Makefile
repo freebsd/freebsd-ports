@@ -6,7 +6,7 @@ PORTVERSION=	1.6.7.2
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Free open source 2D MMORPG client for athena and evol servers
 
 LICENSE=	GPLv2+
