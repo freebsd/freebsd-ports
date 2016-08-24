@@ -3,6 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -12,9 +13,8 @@ COMMENT=	Validating, recursive, and caching DNS resolver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		autoreconf cpe libtool
+USES+=		autoreconf cpe libtool ssl
 CPE_VENDOR=	nlnetlabs
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
 USE_LDCONFIG=	yes
@@ -77,8 +77,6 @@ LIB_DEPENDS+=	libfstrm.so:devel/fstrm
 
 .if ${PORT_OPTIONS:MMUNIN_PLUGIN}
 SUB_FILES+=	pkg-message
-MUNIN_PLUGIN_ALL=	hits queue memory by_type by_class by_opcode by_rcode \
-		by_flags histogram
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
@@ -112,13 +110,8 @@ post-install-PYTHON-on:
 
 post-install-MUNIN_PLUGIN-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/munin/plugins
 	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins/
-	@for i in ${MUNIN_PLUGIN_ALL}; do \
-		${LN} -fs ${PREFIX}/share/munin/plugins/unbound_munin_ \
-			${STAGEDIR}${PREFIX}/etc/munin/plugins/unbound_munin_$$i; \
-	done
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================="
 	@${CAT} ${WRKDIR}/pkg-message

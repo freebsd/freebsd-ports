@@ -1,12 +1,3 @@
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_class
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_flags
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_opcode
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_rcode
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_type
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_histogram
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_hits
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_memory
-%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_queue
 @sample %%ETCDIR%%/unbound.conf.sample
 include/unbound.h
 lib/libunbound.a
