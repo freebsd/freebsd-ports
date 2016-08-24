@@ -753,6 +753,7 @@
     SUBDIR += gobject-introspection
     SUBDIR += godep
     SUBDIR += godot
+    SUBDIR += godot-tools
     SUBDIR += goffice
     SUBDIR += goffice010
     SUBDIR += google-gdata
