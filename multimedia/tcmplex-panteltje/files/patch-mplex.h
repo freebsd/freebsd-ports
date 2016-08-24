@@ -1,5 +1,5 @@
---- mplex.h.orig	Tue Aug  3 21:00:02 2004
-+++ mplex.h	Thu Oct 21 18:48:16 2004
+--- mplex.h.orig	2005-06-09 17:53:15 UTC
++++ mplex.h
 @@ -46,6 +46,8 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.		 *
  *************************************************************************/
