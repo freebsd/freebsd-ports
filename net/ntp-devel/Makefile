@@ -13,7 +13,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2 \
+		LIB_DEPENDS+=libmd5.so:www/libwww
 
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
