@@ -1,0 +1,8 @@
+ufdbGuard is a URL filter for the Squid web proxy. Besides blocking
+access from PCs and smartphones to undesired websites, ufdbGuard
+has safety features to make browsing safer and to block remote
+access. ufdbGuard supports configuration of groups with different
+web access policies, SafeSearch enforcement, SSH tunnel detection,
+safer HTTPS traffic, time-based access rules and much more.
+
+WWW: https://www.urlfilterdb.com/

@@ -2245,6 +2245,7 @@
     SUBDIR += typo3-lts
     SUBDIR += uchiwa
     SUBDIR += udmsearch
+    SUBDIR += ufdbguard
     SUBDIR += uglifyjs
     SUBDIR += usermanager
     SUBDIR += uwsgi

@@ -1,0 +1,106 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ufdbguardd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+# You can activate this daemon and set its options in any of the following files:
+# /etc/rc.conf
+# /etc/rc.conf.local
+# /etc/rc.conf.d/ufdbguardd
+# /etc/rc.conf.d/ufdbguardd/${anyfile}
+# ${local_startup}/rc.conf.d/ufdbguardd
+# ${local_startup}/rc.conf.d/ufdbguardd/${anyfile}
+#
+# Note: ${local_startup} is usually /usr/local/etc
+#
+# Variables you can define in one of these files:
+# ufdbguardd_enable (str):	Activates the daemon.
+#				Default: NO
+# ufdbguardd_flags (str):	Additional flags passed to the daemon as cmd args.
+#				Default: none
+# ufdbguardd_conf (str):	The configuration file that ufdbguardd should use.
+#				Default: %%ETCDIR%%/ufdbGuard.conf
+# ufdbguardd_user (str):	The user that should be used to run the ufdbguardd.
+#				Default: %%USERS%%
+# ufdbguardd_dbdir (str):	The dir where ufdbguardd gets URL filter databases.
+#				Default: %%DBDIR%%
+
+. /etc/rc.subr
+
+name=ufdbguardd
+rcvar=ufdbguardd_enable
+
+command="%%PREFIX%%/bin/${name}"
+
+extra_commands="configtest monitor reload rotatelog"
+configtest_cmd=ufdbguardd_configtest
+rotatelog_cmd=ufdbguardd_rotatelog
+monitor_cmd=ufdbguardd_monitor
+reload_precmd=ufdbguardd_configtest
+restart_precmd=ufdbguardd_configtest
+start_precmd=ufdbguardd_prestart
+
+ufdbguardd_load_rc_config()
+{
+	: ${ufdbguardd_dbdir:=%%DBDIR%%}
+	: ${ufdbguardd_conf:=%%ETCDIR%%/ufdbGuard.conf}
+	: ${ufdbguardd_enable:=NO}
+	: ${ufdbguardd_user:=%%USERS%%}
+
+	ufdbguardd_unixsocket="/tmp/ufdbguardd-[0-9]*"
+
+	required_dirs="$ufdbguardd_dbdir %%RUNDIR%%"
+	required_files="$ufdbguardd_conf"
+	pidfile="%%RUNDIR%%/${name}.pid"
+	command_args="-c $ufdbguardd_conf -U $ufdbguardd_user"
+}
+
+ufdbguardd_configtest()
+{
+	echo "Performing sanity check on $name configuration."
+	if $command $command_args -C verify; then
+	echo "Configuration for $name passes."
+		return 0
+	else
+		return $?
+	fi
+}
+
+ufdbguardd_checksocket()
+{
+	echo "Checking if $name unix socket exists."
+	if test -e $ufdbguardd_unixsocket; then
+		echo "Unix socket $ufdbguardd_unixsocket exists. Probably stale file after abnormal shutdown. Removing it."
+		rm -f $ufdbguardd_unixsocket
+	fi
+}
+
+ufdbguardd_prestart()
+{
+	ufdbguardd_configtest && \
+	ufdbguardd_checksocket
+}
+
+ufdbguardd_rotatelog()
+{
+	echo "Rotating $name logfiles."
+	sig_reload=USR1
+	unset reload_precmd
+	run_rc_command "reload"
+}
+
+ufdbguardd_monitor()
+{
+	echo "Invoking monitor command for $name."
+	sig_reload=USR2
+	unset reload_precmd
+	run_rc_command "reload"
+}
+
+load_rc_config $name
+ufdbguardd_load_rc_config
+run_rc_command "$1"
