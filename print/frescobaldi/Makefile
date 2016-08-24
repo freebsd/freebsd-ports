@@ -16,9 +16,9 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	lilypond:print/lilypond \
 		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4
 
-USES=		gettext python
+USES=		gettext kde:4 python
 INSTALLS_ICONS=	yes
-USE_KDE4=	kdelibs pykde4_build pykde4_run
+USE_KDE=	kdelibs pykde4_build pykde4_run
 USE_PYTHON=	distutils autoplist
 
 post-patch:

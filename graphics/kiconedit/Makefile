@@ -10,9 +10,9 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE icon editor
 
-USE_KDE4=	kdelibs automoc4
+USES=		cmake gettext kde:4 tar:bzip2
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext tar:bzip2
 
 EXTRA_VER=	4.4.0
 

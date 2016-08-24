@@ -1,4 +1,4 @@
-%%PLASMAMULE%%@cwd %%KDE4_PREFIX%%
+%%PLASMAMULE%%@cwd %%KDE_PREFIX%%
 %%PLASMAMULE%%bin/plasmamule-engine-feeder
 %%PLASMAMULE%%lib/kde4/plasma-applet-plasmamule.so
 %%PLASMAMULE%%lib/kde4/plasma-engine-plasmamule.so

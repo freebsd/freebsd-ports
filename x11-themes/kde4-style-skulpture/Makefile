@@ -13,8 +13,8 @@ COMMENT=	KDE style featuring 3D artwork and enhanced the visual experience
 
 LICENSE=	GPLv3
 
-USE_KDE4=	kdelibs automoc4 workspace
+USES=		cmake kde:4
+USE_KDE=	kdelibs automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
 
 .include <bsd.port.mk>

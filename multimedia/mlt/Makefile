@@ -68,9 +68,10 @@ JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 JACK_CONFIGURE_ENABLE=	jackrack
 JACK_USE=		GNOME=glib20
 
-KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
+KDE4_CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH"
 KDE4_CONFIGURE_WITH=	kde
-KDE4_USE=		kde4=kdelibs
+KDE4_USES=		kde:4
+KDE4_USE=		KDE=kdelibs
 KDE4_IMPLIES=		QT4
 
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml

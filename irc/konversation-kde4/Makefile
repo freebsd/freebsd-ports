@@ -12,8 +12,8 @@ COMMENT=	User friendly IRC client for KDE
 
 LIB_DEPENDS=	libqca.so:devel/qca
 
-USES=		cmake:outsource gettext shebangfix tar:xz
-USE_KDE4=	pimlibs automoc4
+USES=		cmake:outsource gettext kde:4 shebangfix tar:xz
+USE_KDE=	pimlibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 SHEBANG_FILES=	data/scripts/mail \

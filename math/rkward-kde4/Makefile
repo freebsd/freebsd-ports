@@ -15,13 +15,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R
 LIB_DEPENDS=	libsoprano.so:textproc/soprano
 RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R \
-		${KDE4_PREFIX}/lib/kde4/katepart.so:editors/kate
+		${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate
 
+USES=		cmake gettext fortran kde:4 php:cli shared-mime-info
 USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
 		script svg uic_build webkit xml
 USE_XORG=	x11
-USE_KDE4=	automoc4 kdelibs
-USES=		cmake gettext fortran php:cli shared-mime-info
+USE_KDE=	automoc4 kdelibs
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

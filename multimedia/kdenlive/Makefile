@@ -14,11 +14,11 @@ LIB_DEPENDS=	libmlt.so:multimedia/mlt \
 		libqjson.so:devel/qjson
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX}
 
-USE_KDE4=	automoc4 kdelibs nepomuk-core
+USES=		cmake kde:4 pkgconfig shared-mime-info tar:bzip2
+USE_KDE=	automoc4 kdelibs nepomuk-core
 USE_QT4=	corelib dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake pkgconfig shared-mime-info tar:bzip2
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
 # Keep in sync with multimedia/mlt, possibly.

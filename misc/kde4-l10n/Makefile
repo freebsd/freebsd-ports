@@ -8,8 +8,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE SC 4
 
-USE_KDE4=	# blank, needed to get KDE4_VERSION
-USES=		metaport
+USES=		kde:4 metaport
 
 KDE4_LANG_ALL=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fa \
 		fi fr ga gl he hi hr hu ia id is it ja kk km ko lt lv mr nb \
@@ -43,7 +42,7 @@ OPTIONS_DEFAULT=	ALL
 ALL_DESC=	All localizations
 
 .for lang in ${KDE4_LANG_ALL}
-${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/entry.desktop
+${lang}_DETECT?=	${KDE_PREFIX}/share/locale/${lang}/entry.desktop
 ${lang}_PORT?=		misc/kde4-l10n-${lang}
 ${lang}_NAME?=		${lang}
 

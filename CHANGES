@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160824:
+AUTHOR: kde@FreeBSD.org
+  A new USES file has been introduced: USES=kde:4, which replaces the old 
+  bsd.kde4.mk file in preparation for upcoming KDE Frameworks and Plasma5 
+  ports. 
+ 
+  Ports depending on KDE4 have to switch from 
+     USE_KDE4=foo bar
+  to 
+     USES=kde:4
+     USE_KDE=foo bar
+  and make sure to switch from using KDE4_PREFIX to the new name KDE_PREFIX  
+  in the Makefiles as well as plists.
+
 20160821:
 AUTHOR: kde@FreeBSD.org
 

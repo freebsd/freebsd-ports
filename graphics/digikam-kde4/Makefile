@@ -24,7 +24,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libboost_graph.so:devel/boost-libs
 
 USES+=		pkgconfig shebangfix
-USE_KDE4+=	libkdcraw libkexiv2 libkipi runtime_run
+USE_KDE+=	libkdcraw libkexiv2 libkipi runtime_run
 USE_QT4+=	sql-sqlite3_run
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DWITH_Sqlite2:BOOL=OFF
@@ -47,7 +47,7 @@ GPHOTO2_CMAKE_ON=	-DWITH_Gphoto2:BOOL=ON
 GPHOTO2_CMAKE_OFF=	-DWITH_Gphoto2:BOOL=OFF
 
 PIMLIBS_DESC=		Address book support
-PIMLIBS_USE=		KDE4=pimlibs baloo
+PIMLIBS_USE=		KDE=pimlibs baloo
 PIMLIBS_CMAKE_ON=	-DENABLE_KDEPIMLIBSSUPPORT:BOOL=ON
 PIMLIBS_CMAKE_OFF=	-DENABLE_KDEPIMLIBSSUPPORT:BOOL=OFF
 

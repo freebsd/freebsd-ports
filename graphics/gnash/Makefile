@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2
+USES=		cpe gmake jpeg kde:4 libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GCC=	any
 WANT_GSTREAMER=	yes
@@ -106,8 +106,8 @@ CONFIGURE_ARGS+=	--disable-npapi
 .endif
 
 .if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MPLUGIN}
-PLIST_SUB+=	KPARTS4="${KDE4_PREFIX}"
-CONFIGURE_ARGS+=	--with-kde4_prefix=${KDE4_PREFIX}
+PLIST_SUB+=	KPARTS4="${KDE_PREFIX}"
+CONFIGURE_ARGS+=	--with-kde4_prefix=${KDE_PREFIX}
 .else
 PLIST_SUB+=	KPARTS4="@comment "
 CONFIGURE_ARGS+=	--disable-kparts4
@@ -127,8 +127,8 @@ GNASH_GUIS+=	gtk
 GNASH_GUIS+=	kde4
 USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
-USE_KDE4=	kdelibs
-CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+USE_KDE=	kdelibs
+CONFIGURE_ENV+=	KDE4_CONFIG="${KDE_PREFIX}/bin/kde4-config"
 .endif
 
 .if ${GNASH_GUIS} == ""

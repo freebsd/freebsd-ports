@@ -12,9 +12,9 @@ COMMENT=	Dictionary plasma applet for KDE
 
 RUN_DEPENDS=	${QSTARDICT_PLUGIN_PATH}/libstardict.so:textproc/qstardict
 
-USES=		cmake tar:bzip2
+USES=		cmake kde:4 tar:bzip2
 USE_QT4=	qmake_build uic_build moc_build rcc_build
-USE_KDE4=	automoc4 kdelibs
+USE_KDE=	automoc4 kdelibs
 CMAKE_SOURCE_PATH=	${WRKSRC}/kdeplasma
 
 QSTARDICT_PLUGIN_PATH=	${LOCALBASE}/lib/qstardict/plugins

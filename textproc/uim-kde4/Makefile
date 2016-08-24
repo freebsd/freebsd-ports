@@ -10,14 +10,15 @@ LIB_DEPENDS=	libuim.so:textproc/uim
 RUN_DEPENDS=	uim-pref-qt4:textproc/uim-qt4
 
 USE_GCC=	any
-USE_KDE4=	kdelibs automoc4
+USE_KDE=	kdelibs automoc4
 USE_QT4=	qmake_build moc_build qt3support uic rcc
+USES+=		kde:4
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-qt4 --enable-pref --enable-default-toolkit=qt4 \
 		--enable-kde4-applet
-CONFIGURE_ENV=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+CONFIGURE_ENV=	KDE4_CONFIG="${KDE_PREFIX}/bin/kde4-config"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

@@ -13,8 +13,8 @@ COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource gettext tar:bzip2
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource gettext kde:4 tar:bzip2
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>
