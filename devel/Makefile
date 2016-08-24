@@ -464,6 +464,7 @@
     SUBDIR += elixir-quantum
     SUBDIR += elixir-red_black_tree
     SUBDIR += elixir-sorted_set
+    SUBDIR += elixir-swarm
     SUBDIR += elixir-timex
     SUBDIR += elixir-tirexs
     SUBDIR += elixir-tzdata
