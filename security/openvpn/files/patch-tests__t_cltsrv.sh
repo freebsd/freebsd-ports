@@ -1,4 +1,4 @@
---- tests/t_cltsrv.sh.orig	2014-11-29 14:59:46 UTC
+--- tests/t_cltsrv.sh.orig	2016-08-23 13:10:22 UTC
 +++ tests/t_cltsrv.sh
 @@ -1,7 +1,7 @@
  #! /bin/sh

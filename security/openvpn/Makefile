@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.3.11
+DISTVERSION=		2.3.12
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
@@ -19,6 +19,8 @@ USES=			cpe libtool pkgconfig shebangfix tar:xz
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/ucn.pl
+# avoid picking up CMAKE, we don't have cmocka anyways.
+CONFIGURE_ARGS+=	CMAKE=""
 
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
@@ -53,7 +55,7 @@ X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 X509ALTUSERNAME_PREVENTS=	POLARSSL
 X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. Disable X509ALTUSERNAME, or use OpenSSL instead
 
-OPENSSL_USE=		openssl=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 
 # Pin the libmbedtls version because the 2.3.x port can't work with .so.10 or
