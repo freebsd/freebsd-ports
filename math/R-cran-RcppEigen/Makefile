@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RcppEigen
-PORTVERSION=	0.3.2.8.1
+PORTVERSION=	0.3.2.9.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,8 +12,10 @@ COMMENT=	Rcpp integration for the Eigen templated linear algebra library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp
+CRAN_DEPENDS=	R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
