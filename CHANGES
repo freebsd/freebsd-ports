@@ -11,7 +11,34 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20160824:
+AUTHOR: mat@FreeBSD.org
+
+  To complete the USE_GITHUB framework, a GH_SUBDIR variable has been added.
+  It automatically moves a secondary distfile to the right place inside WRKSRC.
+  It also extends the GH_TUPLE variable to make it as easy to use as possible.
+
+  Before:
+
+    GH_TUPLE=   Regaddi:Chart.js:f13f99b:chart_js \
+                FVANCOP:ChartNew.js:77e7f87:chartnew_js
+    post-extract:
+            @${RMDIR} ${WRKSRC}/database ${WRKSRC}/3rd/Chart.js
+            @${MV} ${WRKSRC_database} ${WRKSRC}/database
+            @${MV} ${WRKSRC_chart_js} ${WRKSRC}/3rd/Chart.js
+
+  After:
+
+    GH_TUPLE=   Regaddi:Chart.js:f13f99b:chart_js/3rd/Chart.js \
+                FVANCOP:ChartNew.js:77e7f87:chartnew_js/3rd/ChartNew.js
+
+  It also works if not using GH_TUPLE but the regular
+  GH_ACCOUNT/PROJECT/TAGNAME variables:
+
+    GH_SUBDIR=  3rd/Chart.js:chart_js 3rd/ChartNew.js:chartnew_js
+
+20160824:
 AUTHOR: kde@FreeBSD.org
+
   A new USES file has been introduced: USES=kde:4, which replaces the old 
   bsd.kde4.mk file in preparation for upcoming KDE Frameworks and Plasma5 
   ports. 
@@ -42,8 +69,8 @@ AUTHOR: mat@FreeBSD.org
   From time to time, the values are too generic, and they get in the way of
   other stuff.
 
-  This adds the possibility to have a `VAR_regex=regex` that will be used
-  instead of the `VAR=string` to search for possible replacements.
+  This adds the possibility to have a VAR_regex=regex that will be used
+  instead of the VAR=string to search for possible replacements.
 
   For example, in lang/perl5*, there is PERL_ARCH=mach, which will get replaced
   in paths if a file is called, say "machine", will end up being
