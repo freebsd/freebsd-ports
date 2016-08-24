@@ -18,9 +18,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent2 \
 
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
-USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl
-
-USES+=		gettext-runtime
+USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl \
+		gettext-runtime
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
