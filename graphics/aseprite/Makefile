@@ -28,13 +28,12 @@ OPTIONS_DEFAULT=	WEBP
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USE_GITHUB=		yes
-GH_TUPLE=		aseprite:aseprite:${DISTVERSIONFULL}
-GH_TUPLE+=		aseprite:clip:96ed960:clip
-GH_TUPLE+=		aseprite:flic:65a6072:flic
-GH_TUPLE+=		aseprite:gtest:d63c625:gtest
-GH_TUPLE+=		aseprite:simpleini:0687587:simpleini
-GH_TUPLE+=		aseprite:duktape:0de771c:duk
-GH_TUPLE+=		dacap:observable:89c9740:observable
+GH_TUPLE=		aseprite:clip:96ed960:clip/src/clip
+GH_TUPLE+=		aseprite:flic:65a6072:flic/src/flic
+GH_TUPLE+=		aseprite:gtest:d63c625:gtest/third_party/gtest
+GH_TUPLE+=		aseprite:simpleini:0687587:simpleini/third_party/simpleini
+GH_TUPLE+=		aseprite:duktape:0de771c:duk/third_party/duktape
+GH_TUPLE+=		dacap:observable:89c9740:observable/src/observable
 
 USES=			cmake:outsource compiler:c++11-lib jpeg pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
@@ -56,14 +55,6 @@ CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
 
 post-extract:
-	@${RMDIR} ${WRKSRC}/third_party/gtest ${WRKSRC}/third_party/simpleini ${WRKSRC}/third_party/duktape \
-		  ${WRKSRC}/src/clip ${WRKSRC}/src/flic ${WRKSRC}/src/observable
-	@${MV} ${WRKDIR}/gtest-* ${WRKSRC}/third_party/gtest
-	@${MV} ${WRKDIR}/simpleini-* ${WRKSRC}/third_party/simpleini
-	@${MV} ${WRKDIR}/duktape-* ${WRKSRC}/third_party/duktape
-	@${MV} ${WRKDIR}/clip-* ${WRKSRC}/src/clip
-	@${MV} ${WRKDIR}/flic-* ${WRKSRC}/src/flic
-	@${MV} ${WRKDIR}/observable-* ${WRKSRC}/src/observable
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
 	@${CP} `${MAKE} -C ${PORTSDIR}/x11/pixman -V WRKSRC`/pixman/pixman-combine32.h \
 		${WRKSRC}/third_party/pixman/pixman/
