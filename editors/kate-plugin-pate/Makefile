@@ -10,8 +10,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for Python plugins in Kate
 
-USES=		cmake:outsource python tar:xz
-USE_KDE4=	kdelibs automoc4 kate \
+USES=		cmake:outsource kde:4 python tar:xz
+USE_KDE=	kdelibs automoc4 kate \
 		pykde4_build pykde4_run
 USE_QT4=	gui webkit \
 		moc_build qmake_build rcc_build uic_build

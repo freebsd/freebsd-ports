@@ -10,9 +10,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE development utilities
 
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib designer gui qt3support xml
-USES=		cmake:outsource tar:xz
 
 .include <bsd.port.mk>

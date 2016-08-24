@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-USE_KDE4=	libksane
+USE_KDE=	libksane
 
 KIPI_PLUGIN=	acquireimages
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

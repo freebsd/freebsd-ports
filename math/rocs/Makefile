@@ -12,8 +12,8 @@ COMMENT=	KDE Graph theory IDE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource grantlee:4 tar:xz
+USES=		cmake:outsource grantlee:4 kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	gui qtestlib script scripttools webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

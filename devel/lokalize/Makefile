@@ -11,8 +11,8 @@ COMMENT=	Computer-aided translation system
 
 LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		sql
 

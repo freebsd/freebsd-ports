@@ -11,8 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE System Guard Daemon
 
 DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde4-workspace/distinfo
-USE_KDE4=	# blank, needed to get KDE4_VERSION
-USES=		cmake tar:xz
+USES=		cmake kde:4 tar:xz
 CMAKE_ARGS+=	-DBIN_INSTALL_DIR:STRING="${PREFIX}/bin" \
 		-DSYSCONF_INSTALL_DIR:STRING="${PREFIX}/etc"
 

@@ -17,8 +17,8 @@ LIB_DEPENDS=	libxine.so:multimedia/libxine \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libavcodec0.so:multimedia/ffmpeg0
 
-USES=		cmake gettext
-USE_KDE4=	kdelibs automoc4
+USES=		cmake gettext kde:4
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 OPTIONS_DEFINE=	MENCODER MPLAYER DVDAUTHOR

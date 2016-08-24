@@ -9,8 +9,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE template generator
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource gmake tar:xz
+USES=		cmake:outsource gmake kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib dbus declarative
 

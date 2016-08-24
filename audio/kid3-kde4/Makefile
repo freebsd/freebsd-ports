@@ -12,7 +12,7 @@ COMMENT?=	MP3/Ogg/FLAC tag editor for KDE
 LICENSE=	GPLv2
 
 USE_PERL5=	build
-USES=		cmake:outsource perl5
+USES=		cmake:outsource kde:4 perl5
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook \
 		-DWITH_MANDIR=man \
 		-DFFMPEG_ROOT=${LOCALBASE} \
@@ -61,7 +61,7 @@ PLIST_SUB+=	QT="" KDE="@comment "
 .else
 CONFLICTS_INSTALL+=	kid3-qt4-3.* kid3-qt5-3.*
 
-USE_KDE4=	kdelibs automoc4
+USE_KDE=	kdelibs automoc4
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif

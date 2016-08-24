@@ -10,8 +10,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Profiler frontend for KDE
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource tar:xz shebangfix
+USES=		cmake:outsource kde:4 tar:xz shebangfix
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib dbus gui
 SHEBANG_FILES=	converters/op2calltree converters/dprof2calltree \

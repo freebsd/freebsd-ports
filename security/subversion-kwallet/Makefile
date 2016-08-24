@@ -17,11 +17,12 @@ PKGDIR=		${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-USE_KDE4=		kdelibs runtime
+USE_KDE=		kdelibs runtime
+USES+=			kde:4
 
 .include "${MASTERDIR}/Makefile.common"
 
-CONFIGURE_ARGS+=	--with-kwallet=${KDE4_PREFIX}
+CONFIGURE_ARGS+=	--with-kwallet=${KDE_PREFIX}
 
 ALL_TARGET=	kwallet-lib
 INSTALL_TARGET=	install-kwallet-lib

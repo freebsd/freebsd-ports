@@ -15,9 +15,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libmpfr.so:math/mpfr
 
-USE_KDE4=	automoc4 kdelibs
+USES=		bison cmake kde:4 tar:bzip2
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USES=		bison cmake tar:bzip2
 CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_FLAGS:STRING="${LDFLAGS}" \
 		-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex

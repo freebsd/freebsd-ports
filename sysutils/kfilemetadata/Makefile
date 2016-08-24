@@ -17,8 +17,8 @@ LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
 		libepub.so:textproc/ebook-tools \
 		libqmobipocket.so:graphics/kdegraphics4-mobipocket
 
-USE_KDE4=	automoc4 kdelibs
-USES=		cmake:outsource pkgconfig tar:xz
+USES=		cmake:outsource kde:4 pkgconfig tar:xz
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
