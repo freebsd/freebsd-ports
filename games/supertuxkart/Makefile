@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	supertuxkart
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libcurl.so:ftp/curl \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		alias cmake compiler:c++11-lib dos2unix gettext \
 		gmake jpeg openal:al pkgconfig tar:xz
@@ -39,13 +40,11 @@ OPTIONS_DEFINE=	FRIBIDI XRANDR
 OPTIONS_DEFAULT=FRIBIDI XRANDR
 
 FRIBIDI_DESC=		Support for right-to-left languages
-FRIBIDI_CMAKE_ON=	-DUSE_FRIBIDI=YES
-FRIBIDI_CMAKE_OFF=	-DUSE_FRIBIDI=NO
+FRIBIDI_CMAKE_BOOL=	USE_FRIBIDI
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 XRANDR_DESC=		Use xrandr instead of vidmode
-XRANDR_CMAKE_ON=	-DUSE_XRANDR=YES
-XRANDR_CMAKE_OFF=	-DUSE_XRANDR=NO
+XRANDR_CMAKE_BOOL=	USE_XRANDR
 XRANDR_USE=		XORG=xrandr
 XRANDR_USE_OFF=		XORG=xxf86vm
 
