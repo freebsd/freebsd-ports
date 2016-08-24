@@ -19,11 +19,11 @@ CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF \
 		-DBUILD_TEST:BOOL=OFF \
 		-DUSE_QT4:BOOL=ON
 
+USES=		cmake:outsource kde:4 pkgconfig tar:bzip2
 USE_GNOME=	glib20
-USE_KDE4=	automoc4
+USE_KDE=	automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake:outsource pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:

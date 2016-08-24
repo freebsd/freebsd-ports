@@ -13,8 +13,8 @@ COMMENT=	Simple launcher plasma applet for KDE4
 
 LICENSE=	GPLv3
 
-USES=		cmake gettext
-USE_KDE4=	automoc4 kdelibs workspace
+USES=		cmake gettext kde:4
+USE_KDE=	automoc4 kdelibs workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

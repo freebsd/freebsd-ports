@@ -20,10 +20,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	rapper:textproc/raptor2 \
 		${PYTHON_SITELIBDIR}/rdflib/__init__.py:textproc/py-rdflib
 
-USE_KDE4=	automoc4
+USES=		cmake kde:4 python:build tar:bzip2
+USE_KDE=	automoc4
 USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake python:build tar:bzip2
 USE_LDCONFIG=	yes
 
 # To be kept in sync with sysutils/zeitgeist.

@@ -88,10 +88,11 @@ MMAP_CONFIGURE_ON=	--enable-mmap
 MONOLITHIC_CONFIGURE_OFF=	--disable-monolithic
 
 PLASMAMULE_CONFIGURE_ON=	--enable-plasmamule
-PLASMAMULE_USE=	KDE4=kdelibs QT4=dbus,gui,moc_build
+PLASMAMULE_USES=	kde:4
+PLASMAMULE_USE=	KDE=kdelibs QT4=dbus,gui,moc_build
 PLASMAMULE_CONFIGURE_ENV= \
-			ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config \
-			KBUILDSYCOCA=${KDE4_PREFIX}/bin/kbuildsycoca4 \
+			ac_cv_path_KDE4_CONFIG=${KDE_PREFIX}/bin/kde4-config \
+			KBUILDSYCOCA=${KDE_PREFIX}/bin/kbuildsycoca4 \
 			UPDATE_MIME_DATABASE=/usr/bin/true
 
 UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
@@ -123,8 +124,8 @@ post-patch:	.SILENT
 		${WRKSRC}/docs/Makefile.in
 .endif
 .if ${PORT_OPTIONS:MPLASMAMULE}
-	${REINPLACE_CMD} -e 's|@prefix@|${KDE4_PREFIX}|' \
-		-e 's|LDFLAGS =|& -L${KDE4_PREFIX}/lib |' \
+	${REINPLACE_CMD} -e 's|@prefix@|${KDE_PREFIX}|' \
+		-e 's|LDFLAGS =|& -L${KDE_PREFIX}/lib |' \
 		${WRKSRC}/src/utils/plasmamule/Makefile.in
 .endif
 

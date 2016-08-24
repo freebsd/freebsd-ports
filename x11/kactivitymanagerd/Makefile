@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kactivitymanagerd
-PORTVERSION=	${KDE4_ACTIVITES_VERSION}
+PORTVERSION=	${KDE4_ACTIVITIES_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/Attic/${PORTVERSION}/src
 DISTNAME=	kactivities-${PORTVERSION}
@@ -10,9 +10,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Activity Manager daemon
 
-USE_KDE4=	automoc4 kdelibs soprano nepomuk-core \
+USES=		cmake:outsource compiler:c++11-lib kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs soprano nepomuk-core \
 		kactivities
-USES=		cmake:outsource compiler:c++11-lib tar:xz
 USE_QT4=	declarative opengl script sql \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

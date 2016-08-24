@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 
-USES=		cmake gettext python
+USES=		cmake gettext kde:4 python
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
@@ -48,7 +48,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MKDE4}
-USE_KDE4=	automoc4 kdelibs
+USE_KDE=	automoc4 kdelibs
 .else
 CMAKE_ARGS+=	-DWITH_KDE=off
 .endif

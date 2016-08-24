@@ -14,10 +14,10 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libqzeitgeist.so:sysutils/qzeitgeist
 
-USE_KDE4=	automoc4
+USES=		cmake kde:4 tar:xz
+USE_KDE=	automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake tar:xz
 CMAKE_ARGS=	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:BOOL=TRUE \
 		-DPHONON_NO_PLATFORMPLUGIN:BOOL=TRUE \
 		-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF

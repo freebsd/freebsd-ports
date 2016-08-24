@@ -10,8 +10,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USE_KDE4=	kdelibs libkdegames automoc4
-USES=		cmake:outsource shebangfix tar:xz
+USES=		cmake:outsource kde:4 shebangfix tar:xz
+USE_KDE=	kdelibs libkdegames automoc4
 SHEBANG_FILES=	klickety-2.0-inherit-ksame-highscore.pl
 USE_QT4=	corelib gui xml \
 		moc_build qmake_build rcc_build uic_build

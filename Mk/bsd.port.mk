@@ -389,10 +389,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_WX		- If set, this port uses the WxWidgets library and related
 #				  components. See bsd.wx.mk for more details.
 ##
-# USE_KDE4		- A list of the KDE 4 dependencies the port has (e.g.,
-#				  kdelibs, kdebase).  Implies that the port needs KDE.
-#				  Implies inclusion of bsd.kde4.mk.  See bsd.kde4.mk
-#				  for more details.
 #
 # USE_QT4		- A list of the Qt 4 dependencies the port has (e.g,
 #				  corelib, webkit).  Implies that the port needs Qt.
@@ -1428,10 +1424,6 @@ USES+=mysql:${USE_MYSQL}
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
-.if defined(USE_KDE4) || defined(KDE4_BUILDENV)
-.include "${PORTSDIR}/Mk/bsd.kde4.mk"
-.endif
-
 .if !defined(UID)
 UID!=	${ID} -u
 .endif
@@ -1947,10 +1939,6 @@ _USES_POST+=	php
 
 .if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
-.endif
-
-.if defined(USE_KDE4)
-.include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
 
 .if exists(${PORTSDIR}/Makefile.inc)

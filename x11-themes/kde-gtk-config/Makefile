@@ -9,9 +9,9 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GTK2 and GTK3 Configurator for KDE
 
-USES=		cmake:outsource gettext pkgconfig tar:xz
+USES=		cmake:outsource gettext kde:4 pkgconfig tar:xz
 USE_GNOME=	gtk20 gtk30
-USE_KDE4=	automoc4 kdelibs
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 post-patch:

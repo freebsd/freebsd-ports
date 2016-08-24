@@ -11,8 +11,8 @@ COMMENT=	Virtual globe and world atlas for KDE
 
 LIB_DEPENDS=	libquazip.so:archivers/quazip
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource gmake shared-mime-info tar:xz
+USES=		cmake:outsource gmake kde:4 shared-mime-info tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib dbus declarative designer_build gui network phonon \
 		qtestlib script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build

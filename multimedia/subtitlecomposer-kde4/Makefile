@@ -11,8 +11,8 @@ COMMENT=	Subtitle editor for KDE
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		cmake:outsource gettext shared-mime-info
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource gettext kde:4 shared-mime-info
+USE_KDE=	kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 
 USE_GITHUB=	yes

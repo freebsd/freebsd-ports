@@ -14,8 +14,8 @@ COMMENT=	Weather plasma applet for KDE4
 
 RUN_DEPENDS=	wget:ftp/wget
 
-USES=		cmake
-USE_KDE4=	automoc4 kdelibs
+USES=		cmake kde:4
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
