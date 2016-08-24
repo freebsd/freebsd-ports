@@ -17,9 +17,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
-USES=		cpe pathfix shebangfix libedit libtool pkgconfig
+USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl
 
-USE_OPENSSL=	yes
 USES+=		gettext-runtime
 
 GNU_CONFIGURE=	yes
@@ -51,7 +50,6 @@ NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
 
 PERL_UTILS_USES=	perl5
 
-SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_ON=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 SSL_CONFIGURE_OFF=	--without-crypto
