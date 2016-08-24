@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-PORTVERSION=	1.0.0.rc1
+DISTVERSION=	1.0.0-rc1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -18,7 +18,6 @@ USE_RC_SUBR=	telegraf
 
 USE_GITHUB=	yes
 
-GH_TAGNAME=	1.0.0-rc1
 GH_ACCOUNT=	influxdata:DEFAULT
 GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		Sirupsen:logrus:219c8cb:logrus \
