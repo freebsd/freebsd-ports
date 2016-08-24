@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.9.0rc1
+DISTVERSION=	3.9.0rc2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -123,10 +123,12 @@ STRIP_LIBS=	BugpointPasses.so \
 
 EXTRAS_COMMANDS+= \
 		clang-apply-replacements \
+		clang-include-fixer \
 		clang-modernize \
 		clang-query \
 		clang-rename \
 		clang-tidy \
+		find-all-symbols \
 		modularize
 EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangIncludeFixer \
