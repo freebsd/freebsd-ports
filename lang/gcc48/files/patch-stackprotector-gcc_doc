@@ -1,3 +1,4 @@
+--- UTC
 --- gcc/doc/cpp.texi.orig
 +++ gcc/doc/cpp.texi
 @@ -2349,6 +2349,10 @@ use.
