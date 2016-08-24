@@ -39,10 +39,12 @@ bin/opt39
 %%LLDB%%bin/lldb-mi39
 %%LLDB%%bin/lldb-server39
 %%EXTRAS%%bin/clang-apply-replacements39
+%%EXTRAS%%bin/clang-include-fixer39
 %%EXTRAS%%bin/clang-modernize39
 %%EXTRAS%%bin/clang-query39
 %%EXTRAS%%bin/clang-rename39
 %%EXTRAS%%bin/clang-tidy39
+%%EXTRAS%%bin/find-all-symbols39
 %%EXTRAS%%bin/modularize39
 %%LLD%%bin/lld39
 %%LLD%%bin/lld-link39
@@ -63,10 +65,12 @@ llvm39/bin/bugpoint
 %%CLANG%%llvm39/bin/clang-cl
 %%CLANG%%llvm39/bin/clang-cpp
 %%CLANG%%llvm39/bin/clang-format
+%%EXTRAS%%llvm39/bin/clang-include-fixer
 %%EXTRAS%%llvm39/bin/clang-query
 %%EXTRAS%%llvm39/bin/clang-rename
 %%CLANG%%llvm39/bin/clang-tblgen
 %%EXTRAS%%llvm39/bin/clang-tidy
+%%EXTRAS%%llvm39/bin/find-all-symbols
 %%CLANG%%llvm39/bin/git-clang-format
 %%LLD%%llvm39/bin/ld.lld
 llvm39/bin/llc
@@ -2455,8 +2459,10 @@ llvm39/lib/libLTO.so
 %%CLANG%%llvm39/share/clang/clang-format-sublime.py
 %%CLANG%%llvm39/share/clang/clang-format.el
 %%CLANG%%llvm39/share/clang/clang-format.py
+%%EXTRAS%%llvm39/share/clang/clang-include-fixer.py
 %%EXTRAS%%llvm39/share/clang/clang-tidy-diff.py
 %%EXTRAS%%llvm39/share/clang/run-clang-tidy.py
+%%EXTRAS%%llvm39/share/clang/run-find-all-symbols.py
 %%CLANG%%llvm39/share/scan-build/scanview.css
 %%CLANG%%llvm39/share/scan-build/sorttable.js
 %%CLANG%%llvm39/share/scan-view/FileRadar.scpt
