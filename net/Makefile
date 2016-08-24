@@ -981,6 +981,7 @@
     SUBDIR += py-netifaces
     SUBDIR += py-netlib
     SUBDIR += py-netstring
+    SUBDIR += py-nnpy
     SUBDIR += py-novaclient
     SUBDIR += py-ntplib
     SUBDIR += py-oauth
