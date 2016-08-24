@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deegree Web Map Service(WMS)
 
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 NO_BUILD=	yes
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
