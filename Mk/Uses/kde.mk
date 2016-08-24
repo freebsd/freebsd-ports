@@ -3,7 +3,7 @@
 # Provides support for KDE-based ports.
 #
 # Feature:	kde
-# Usage:	USES=kde or USES=kde:ARGS
+# Usage:	USES=kde:ARGS
 # Valid ARGS:	4
 #
 # 4: 		Depend on KDE4 components and variables.
