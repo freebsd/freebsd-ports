@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android jbeich:extras,libselinux
 GH_PROJECT=	platform_system_core platform_system_extras:extras \
 		platform_external_libselinux:libselinux
+GH_SUBDIR=	libselinux:libselinux
 
 # Emulate GH_COMMIT without causing desync
 .ifdef DISTVERSIONSUFFIX
@@ -65,7 +66,6 @@ post-extract:
 		${BUILD_WRKSRC}/${DISTFILES:M*\:manpage:C/\?.*//}
 # Adjust paths relative to core
 	@(cd ${WRKSRC_extras} && ${COPYTREE_SHARE} . ${WRKSRC})
-	@${MV} ${WRKSRC_libselinux} ${WRKSRC}/libselinux
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES:H}

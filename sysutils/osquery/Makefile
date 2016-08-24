@@ -38,6 +38,7 @@ USE_RC_SUBR=	${PORTNAME}d
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook ${PORTNAME}:tp
 GH_PROJECT=	third-party:tp
+GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
@@ -45,10 +46,6 @@ MAKE_JOBS_UNSAFE=	yes
 .if ${OSVERSION} <= 1000000
 CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
-
-post-extract:
-	${RMDIR} ${WRKSRC}/third-party
-	${LN} -sf ${WRKSRC_tp} ${WRKSRC}/third-party
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
