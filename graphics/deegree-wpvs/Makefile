@@ -15,7 +15,7 @@ COMMENT=	Deegree Web Terrain Service(WTS)/Web Perspective View Service(WPVS)
 LICENSE=	LGPL21+
 
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes
