@@ -2,7 +2,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
@@ -20,7 +20,12 @@ RESTRICTED=	Not really sure about the redistribution terms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
-OPTIONS_DEFINE=	NVIDIA
+OPTIONS_DEFAULT=	LINUX_DRI
+OPTIONS_SINGLE=		LIBGL
+OPTIONS_SINGLE_LIBGL=	LINUX_DRI NVIDIA_GL NVIDIA_GL_340 NVIDIA_GL_304
+LINUX_DRI_DESC=		libGL support via Linux DRI libraries 
+NVIDIA_GL_340_DESC=	libGL support via nvidia-driver-340
+NVIDIA_GL_304_DESC=	libGL support via nvidia-driver-304
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs curl nss
@@ -31,8 +36,10 @@ USE_PERL5=	patch build
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 
-NVIDIA_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_USE_OFF=	LINUX_APPS=dri,libpciaccess
+NVIDIA_GL_RUN_DEPENDS=		${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
+NVIDIA_GL_340_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-340
+NVIDIA_GL_304_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-304
+LINUX_DRI_USE=			LINUX_APPS=dri,libpciaccess
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
 #BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
