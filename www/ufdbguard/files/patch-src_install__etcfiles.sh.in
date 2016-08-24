@@ -1,0 +1,44 @@
+--- src/install_etcfiles.sh.in.orig	2015-06-09 01:25:36 UTC
++++ src/install_etcfiles.sh.in
+@@ -25,15 +25,6 @@ then
+    DESTDIR=${RPM_BUILD_ROOT:-}
+ fi
+ 
+-if [ "$ID" != root  -a  $PKGNAME != ufdbGuard ]
+-then
+-   echo
+-   echo "***  You must be root but you appear to be $ID. ***"
+-   echo "The ufdb startup script cannot be installed..."
+-   echo
+-   exit 1
+-fi
+-
+ CFGDIR="$1"
+ if [ ! -d "$CFGDIR" ]
+ then
+@@ -335,10 +326,8 @@ fix_piddir_permissions () {
+ 
+ 
+ case $OS in
+-   freebsd)        install_freebsd ;;
+    solaris_smf)    install_solaris_smf ;;
+    linux_systemd)  install_linux_systemd ;;
+-   *) 		   install_unix ;;
+ esac
+ 
+ 
+@@ -355,14 +344,3 @@ fi
+ # TODO: copy parameters from ufdbUpdate to $SYSCFGFILE ************************************************************ 
+ 
+ fix_piddir_permissions
+-
+-SERVICE=`grep -E -e ufdbguardd /etc/services`
+-if [ "$SERVICE" = "" ]
+-then
+-   (
+-      echo ""
+-      echo "# for URLfilterDB daemon : "
+-      echo "ufdbguardd      3977/tcp"
+-   ) >> /etc/services
+-fi
+-
