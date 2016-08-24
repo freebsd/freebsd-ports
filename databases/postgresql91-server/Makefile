@@ -15,6 +15,9 @@ CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
 		${PORTNAME}${COMPONENT}-9.[^${PORTVERSION:R:E}].*
 
+DEPRECATED=	End-of-life is near
+EXPIRATION_DATE=2016-10-01
+
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
@@ -117,7 +120,7 @@ LIBEDIT_USES=		libedit
 LIBEDIT_USES_OFF=		readline
 .endif # CLIENT_ONLY
 
-SSL_USE=	OPENSSL=yes
+SSL_USES=	ssl
 SSL_CONFIGURE_WITH=openssl
 
 PAM_CONFIGURE_WITH=	pam
