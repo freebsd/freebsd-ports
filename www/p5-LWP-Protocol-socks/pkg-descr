@@ -1,0 +1,3 @@
+Adds support for the socks protocol and proxy facility in LWP.
+
+WWW: http://search.cpan.org/dist/LWP-Protocol-socks/
