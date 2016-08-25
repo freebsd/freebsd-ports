@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-DISTVERSION=	R32
+DISTVERSION=	R33.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -60,6 +60,7 @@ SIMD_CONFIGURE_ENABLE=		x86-asm
 # COMPS group
 
 CORE_DESC=			Core library
+CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.2:graphics/sekrit-twc-zimg
 CORE_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
 CORE_USES=			compiler:c++11-lib
 CORE_CONFIGURE_ENABLE=		core
@@ -81,8 +82,9 @@ VSSCRIPT_CONFIGURE_ENABLE=	vsscript
 # PLUGINS group
 
 ASS_DESC=			Subtitles rendering via libass
-ASS_LIB_DEPENDS=		libass.so:multimedia/libass
-ASS_CONFIGURE_ENABLE=		assvapour
+ASS_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg \
+				libass.so:multimedia/libass
+ASS_CONFIGURE_ENABLE=		subtext
 
 EEDI3_DESC=			Very slow edge directed interpolation
 EEDI3_CONFIGURE_ENABLE=		eedi3
