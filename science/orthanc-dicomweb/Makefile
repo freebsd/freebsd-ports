@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-dicomweb
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	science net
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/
 DISTNAME=	OrthancDicomWeb-${PORTVERSION}
@@ -15,8 +14,7 @@ COMMENT=	WADO and DICOMweb support for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
-		gtest-config:devel/googletest
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
@@ -26,12 +24,10 @@ LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libboost_locale.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libpugixml.so:textproc/pugixml
+		libpugixml.so:textproc/pugixml \
+		libgtest.so:devel/googletest
 
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USES=		cmake:outsource python:build
+USES=		cmake:outsource localbase python:build
 WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
 
 PLIST_FILES=	share/orthanc/plugins/libOrthancDicomWeb.so \
