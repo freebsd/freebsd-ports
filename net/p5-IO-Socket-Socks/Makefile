@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Provides a way to create socks client or server both 4 and 5 version
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
