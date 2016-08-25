@@ -18,6 +18,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	icont:lang/icon
 RUN_DEPENDS=	iconx:lang/icon
 
+PORTSCOUT=	skipv:2.11
+
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 INSTALL_TARGET=	install-code install-man install-elisp

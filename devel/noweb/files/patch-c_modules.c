@@ -1,6 +1,6 @@
---- c/modules.c.orig	Wed Mar 28 14:49:00 2001
-+++ c/modules.c	Thu Nov 13 20:15:53 2003
-@@ -17,7 +17,7 @@
+--- c/modules.c.orig	2006-06-12 21:16:23 UTC
++++ c/modules.c
+@@ -17,7 +17,7 @@ newmodpart(int type, char *s, Location *
  
  static
  void append(Module mp, struct modpart *p);
@@ -9,7 +9,7 @@
  static int seekcycle(Module mp, Parent parent);
  #line 132 "modules.nw"
  static char *lastfilename = 0;
-@@ -81,12 +81,12 @@
+@@ -81,12 +81,12 @@ int expand (Module mp, int indent, int p
      struct parent thismodule; /* the value only matters when we're expanding a module */
  
      
@@ -24,7 +24,7 @@
  if (seekcycle(mp, parent)) {
      errormsg(Error, "<<%s>>", mp->name);
      return Error;
-@@ -111,11 +111,12 @@
+@@ -111,11 +111,12 @@ if (*(p->contents) != '\0') {
  #line 157 "modules.nw"
                                              ;  break;
              case MODULE:  
@@ -39,7 +39,7 @@
  } else {
      int retcode;
      if (*locformat == 0 && partial_distance == 0) {
-@@ -142,7 +143,7 @@
+@@ -142,7 +143,7 @@ lastlineno++;
      }
      return error;
  }
@@ -48,7 +48,7 @@
  static int seekcycle(Module mp, Parent parent) {
      if (parent == NULL) {
          return 0;
-@@ -155,14 +156,14 @@
+@@ -155,14 +156,14 @@ static int seekcycle(Module mp, Parent p
          return 0;
      }
  }
@@ -65,7 +65,7 @@
  for (p = fmt; *p; p++) {
      if (*p == '%') {
          switch (*++p) {
-@@ -177,35 +178,35 @@
+@@ -177,35 +178,35 @@ for (p = fmt; *p; p++) {
                            p += 2;
                          } else
                            
