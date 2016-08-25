@@ -1,15 +1,15 @@
---- src/makefile.orig	2016-08-20 21:01:57.961708000 +0200
-+++ src/makefile	2016-08-20 21:03:49.861494000 +0200
+--- src/makefile.orig	2015-07-02 16:51:26.582456000 +0200
++++ src/makefile	2015-07-02 16:51:53.706070000 +0200
 @@ -12,7 +12,7 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
--CXX=g++
-+CXX?=g++
+-CXX=c++
++CXX?=c++
  
- # was: qmake-qt5
- QMAKE=qmake
-@@ -38,10 +38,10 @@
+ # Added -qt4 because of Arch Linux Qt5 migration
+ QMAKE=qmake-qt4
+@@ -37,10 +37,10 @@
  # If Lua 5.2 is not default on your system yet you have to
  # use lua5.1 in the pkg-config calls
  
@@ -22,15 +22,7 @@
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -65,19 +65,19 @@
- 	CFLAGS+=-fPIC
- endif
- 
--LDFLAGS = -ldl
-+LDFLAGS = #-ldl
- # Do not strip by default (Mac OS X lazy pointer issues)
- # Add -static to avoid linking with shared libs (can cause trouble when highlight
- # is run as service)
+@@ -67,7 +67,7 @@
  #LDFLAGS = ${LDFLAGS} -s
  #LDFLAGS= -Wl,--as-needed
  
@@ -39,9 +31,3 @@
  
  # Data directories (data dir, configuration file dir)
  CXX_DIR=-DHL_DATA_DIR=\"${HL_DATA_DIR}\" -DHL_CONFIG_DIR=\"${HL_CONFIG_DIR}\"
- 
--AR=ar
-+AR?=ar
- ARFLAGS=-crs
- 
- # objects files to build the library

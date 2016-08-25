@@ -1,9 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
+# 3.29+ needs to_string() which gcc48 (for 9.3-R) doesn't provide
 PORTNAME=	highlight
-PORTVERSION=	3.31
-PORTEPOCH=	2
+PORTVERSION=	3.29
+PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
