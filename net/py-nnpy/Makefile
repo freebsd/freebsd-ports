@@ -2,6 +2,7 @@
 
 PORTNAME=	nnpy
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,8 @@ COMMENT=	cffi-based Python bindings for nanomsg
 LICENSE=	MIT
 
 LIB_DEPENDS=	libnanomsg.so:net/nanomsg
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/_cffi_backend.so:devel/py-cffi
+BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/_cffi_backend.so:devel/py-cffi
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
