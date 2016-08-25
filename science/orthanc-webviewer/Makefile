@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-webviewer
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-webviewer/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/WebViewer/:thirdparty
@@ -29,12 +28,10 @@ LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libboost_filesystem.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libsqlite3.so:databases/sqlite3 \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libgtest.so:devel/googletest
 
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USES=		cmake:outsource python:build
+USES=		cmake:outsource localbase python:build
 WRKSRC=		${WRKDIR}/OrthancWebViewer-${PORTVERSION}
 
 PLIST_FILES=	share/orthanc/plugins/libOrthancWebViewer.so \
