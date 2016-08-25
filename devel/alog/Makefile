@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alog
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}
@@ -29,19 +28,11 @@ NO_OPTIONS_SORT=yes
 DOCS_USES=		gmake
 DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			source-highlight:textproc/source-highlight
+DOCS_ALL_TARGET=	doc
 TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
+TEST_ALL_TARGET=	tests
 
 MAKE_JOBS_UNSAFE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTEST}
-ALL_TARGET+=	tests
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	doc
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^NUM_CPUS/d' ${WRKSRC}/Makefile
@@ -57,8 +48,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*/*.ali ${STAGEDIR}${PREFIX}/lib/alog
 	${INSTALL_DATA} ${WRKSRC}/gnat/alog.gpr ${STAGEDIR}${PREFIX}/lib/gnat
 	${INSTALL_DATA} ${WRKSRC}/lib/*/libalog.a ${STAGEDIR}${PREFIX}/lib/alog
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
