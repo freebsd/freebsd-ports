@@ -1,5 +1,6 @@
-SHA256 (orthanc/OrthancWebViewer-2.1.tar.gz) = b7ca105aa378499d1f28b037f6342b1ab2e0afb7a67f7203ce4c796522d251f8
-SIZE (orthanc/OrthancWebViewer-2.1.tar.gz) = 142536
+TIMESTAMP = 1469016703
+SHA256 (orthanc/OrthancWebViewer-2.2.tar.gz) = 826a444b16aedce6a068c1c4b5d59c01067df05f85a85e99ceaae3533fd945b8
+SIZE (orthanc/OrthancWebViewer-2.2.tar.gz) = 158861
 SHA256 (orthanc/jsPanel-2.3.3-fixed.zip) = 958a15c7009efbb865da62b5850a3a39661c62696e38b151c7f988f4ac445595
 SIZE (orthanc/jsPanel-2.3.3-fixed.zip) = 826542
 SHA256 (orthanc/cornerstone-0.8.4.zip) = 87302c389d389054f30d89adb003388a13d5712e3945be133d45ae65d43372f4
