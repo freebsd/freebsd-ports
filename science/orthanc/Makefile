@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -18,9 +17,6 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
-BUILD_DEPENDS=	gtest-config:devel/googletest
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -34,7 +30,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libcharls.so:devel/dcmtk \
 		libdcmjpls.so:devel/dcmtk \
 		libsqlite3.so:databases/sqlite3 \
+		libpng16.so:graphics/png \
+		libgtest.so:devel/googletest \
 		libpugixml.so:textproc/pugixml
+
+BROKEN_powerpc64=	Does not build
 
 CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DDCMTK_DIR="${LOCALBASE}" \
@@ -42,10 +42,10 @@ CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DUSE_SYSTEM_MONGOOSE=OFF \
 		-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF
 
-USES=		cmake:outsource dos2unix lua:51 python:build
+USES=		cmake:outsource dos2unix jpeg lua:51 python:build ssl
+CFLAGS+=	-I${LOCALBASE}/include
 DOS2UNIX_FILES=	CMakeLists.txt
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	orthanc
 WRKSRC=		${WRKDIR}/Orthanc-${PORTVERSION}
 USERS=		orthanc

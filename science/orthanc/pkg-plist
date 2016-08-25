@@ -15,4 +15,5 @@ include/orthanc/OrthancCppDatabasePlugin.h
 %%DATADIR%%/plugins/libServeFolders.so.%%PORTVERSION%%
 %%DATADIR%%/plugins/libModalityWorklists.so
 %%DATADIR%%/plugins/libModalityWorklists.so.%%PORTVERSION%%
+bin/OrthancRecoverCompressedFile
 sbin/Orthanc
