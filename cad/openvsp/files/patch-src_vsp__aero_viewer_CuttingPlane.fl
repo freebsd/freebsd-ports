@@ -1,0 +1,11 @@
+--- src/vsp_aero/viewer/CuttingPlane.fl.orig	2016-08-21 15:22:39 UTC
++++ src/vsp_aero/viewer/CuttingPlane.fl
+@@ -9,7 +9,7 @@ class CuttingPlaneUserInterface {open
+     Fl_Window MainWindow {
+       label {Cutting Plane} open
+       xywh {525 164 297 106} type Double align 129
+-      code0 {\#include "ContourLevel.H"}
++      code0 {\#include "ContourLevel.h"}
+       code1 {\#include "glviewer.H"} visible
+     } {
+       Fl_Value_Input CuttingPlaneValue {

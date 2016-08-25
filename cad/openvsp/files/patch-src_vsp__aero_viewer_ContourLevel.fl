@@ -1,0 +1,11 @@
+--- src/vsp_aero/viewer/ContourLevel.fl.orig	2016-08-21 15:22:39 UTC
++++ src/vsp_aero/viewer/ContourLevel.fl
+@@ -12,7 +12,7 @@ class ContourLevelUserInterface {open
+     Fl_Window MainWindow {
+       label {Set Contour Levels} open
+       xywh {603 165 297 144} align 129
+-      code0 {\#include "ContourLevel.H"}
++      code0 {\#include "ContourLevel.h"}
+       code1 {\#include "glviewer.H"} visible
+     } {
+       Fl_Button Reset {

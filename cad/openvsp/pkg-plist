@@ -38,7 +38,9 @@ scripts/Stack.vspscript
 scripts/SubSurface.vspscript
 scripts/TestAll.vspscript
 scripts/TestAnalysis.vspscript
+scripts/TestAnalysisVSPAERO.vspscript
 scripts/TestAreaProj.vspscript
+scripts/TestDXF.vspscript
 scripts/Wing.vspscript
 %%DATADIR%%/23015.af
 %%DATADIR%%/Box.vsppart
@@ -64,7 +66,9 @@ scripts/Wing.vspscript
 %%DATADIR%%/SubSurface.vspscript
 %%DATADIR%%/TestAll.vspscript
 %%DATADIR%%/TestAnalysis.vspscript
+%%DATADIR%%/TestAnalysisVSPAERO.vspscript
 %%DATADIR%%/TestAreaProj.vspscript
+%%DATADIR%%/TestDXF.vspscript
 %%DATADIR%%/TransportFuse.vsppart
 %%DATADIR%%/Wing.vspscript
 %%DATADIR%%/b737a.af
