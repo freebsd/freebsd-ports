@@ -1,4 +1,4 @@
---- Libraries/cmake/External_CMinpack.cmake.orig	2016-02-14 00:01:30 UTC
+--- Libraries/cmake/External_CMinpack.cmake.orig	2016-08-21 15:22:39 UTC
 +++ Libraries/cmake/External_CMinpack.cmake
 @@ -1,3 +1,6 @@
 +SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lm -fPIC")
