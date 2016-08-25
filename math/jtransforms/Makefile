@@ -13,7 +13,7 @@ LICENSE=	GPLv2 LGPL20 MPL
 LICENSE_COMB=	multi
 
 USES=		tar:bzip2
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/JTransforms
