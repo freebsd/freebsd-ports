@@ -13,9 +13,6 @@ COMMENT=	Collection of Python functions
 
 LICENSE=	BSD2CLAUSE
 
-DEPRECATED=	Purpose of the library is unknown
-EXPIRATION_DATE=	2016-09-25
-
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
