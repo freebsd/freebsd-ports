@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	15.08.12
+PORTVERSION=	16.05.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig python:build tar:bz2
+USES=		gmake libtool pkgconfig python:build ssl tar:bz2
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	CURL DOCS GTK2 HDF5 HWLOC IPMI MYSQL RRD
@@ -41,12 +41,16 @@ HWLOC_DESC=	Portable hardware locality
 IPMI_DESC=	IPMI engergy consumption accounting
 RRD_DESC=	RRD external sensor data collection
 
-GTK2_USE=		GNOME=glib20,gtk20
-
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
+
+GTK2_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20
+GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+GTK2_USES=		gettext
+GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
 
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
@@ -58,10 +62,11 @@ HWLOC_CONFIGURE_WITH=	hwloc
 IPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 IPMI_CONFIGURE_WITH=	freeipmi
 
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_with=	mysql
+
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
-
-MYSQL_USE=		MYSQL=yes
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
