@@ -3,6 +3,7 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -11,8 +12,7 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libyajl.so:devel/yajl \
-		libconfig.so:devel/libconfig
+		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 BROKEN_powerpc64=	Does not build
@@ -20,7 +20,7 @@ BROKEN_powerpc64=	Does not build
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
-USES=		alias bison cmake execinfo libedit
+USES=		alias bison cmake execinfo libedit ssl
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
@@ -56,6 +56,10 @@ CMAKE_ARGS+=	-DICINGA2_USER=${ICINGA2USER} \
 		-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=${LOCALSTATEDIR} \
 		-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
+		-DCMAKE_EXE_LINKER_FLAGS=${PREFIX}/lib/icinga2 \
+		-DCMAKE_MODULE_LINKER_FLAGS=${PREFIX}/lib/icinga2 \
+		-DCMAKE_SHARED_LINKER_FLAGS=${PREFIX}/lib/icinga2 \
+		-DCMAKE_STATIC_LINKER_FLAGS=${PREFIX}/lib/icinga2
 
 SUB_LIST=	ICINGA2LOGDIR=${ICINGA2LOGDIR} \
 		ICINGA2USER=${ICINGA2USER} \
