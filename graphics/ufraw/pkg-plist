@@ -25,4 +25,4 @@ share/locale/sv/LC_MESSAGES/ufraw.mo
 share/locale/zh_CN/LC_MESSAGES/ufraw.mo
 share/locale/zh_TW/LC_MESSAGES/ufraw.mo
 share/pixmaps/ufraw.png
-%%MGTK2%%bin/ufraw
+%%GTK2%%bin/ufraw
