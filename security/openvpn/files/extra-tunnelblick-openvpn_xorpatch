@@ -12,12 +12,12 @@ https://tunnelblick.net/cOpenvpn_xorpatch.html
 
 
 diff -u -r src/openvpn/forward.c src/openvpn/forward.c
---- src/openvpn/forward.c	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/forward.c	2015-04-07 22:38:20.000000000 -0400
+--- src/openvpn/forward.c.orig	2016-08-23 16:16:28.000000000 +0200
++++ src/openvpn/forward.c	2016-08-25 14:52:22.543333000 +0200
 @@ -674,7 +674,10 @@
+ 
    status = link_socket_read (c->c2.link_socket,
  			     &c->c2.buf,
- 			     MAX_RW_SIZE_LINK (&c->c2.frame),
 -			     &c->c2.from);
 +			     &c->c2.from,
 +			     c->options.ce.xormethod,
@@ -26,7 +26,7 @@ diff -u -r src/openvpn/forward.c src/openvpn/forward.c
  
    if (socket_connection_reset (c->c2.link_socket, status))
      {
-@@ -1150,7 +1153,10 @@
+@@ -1151,7 +1154,10 @@
  	    /* Send packet */
  	    size = link_socket_write (c->c2.link_socket,
  				      &c->c2.to_link,
@@ -189,9 +189,9 @@ diff -u -r src/openvpn/socket.c src/openvpn/socket.c
   * Convert sockflags/getaddr_flags into getaddr_flags
   */
 diff -u -r src/openvpn/socket.h src/openvpn/socket.h
---- src/openvpn/socket.h	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/socket.h	2015-04-08 20:12:02.000000000 -0400
-@@ -250,6 +250,10 @@
+--- src/openvpn/socket.h.orig	2016-08-23 16:16:22.000000000 +0200
++++ src/openvpn/socket.h	2016-08-25 14:53:35.121689000 +0200
+@@ -245,6 +245,10 @@
  #endif
  };
  
@@ -202,10 +202,10 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  /*
   * Some Posix/Win32 differences.
   */
-@@ -875,30 +879,56 @@
+@@ -873,30 +877,56 @@
+ static inline int
  link_socket_read (struct link_socket *sock,
  		  struct buffer *buf,
- 		  int maxsize,
 -		  struct link_socket_actual *from)
 +		  struct link_socket_actual *from,
 +		  int xormethod,
@@ -220,7 +220,7 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  #ifdef WIN32
        res = link_socket_read_udp_win32 (sock, buf, from);
  #else
-       res = link_socket_read_udp_posix (sock, buf, maxsize, from);
+       res = link_socket_read_udp_posix (sock, buf, from);
  #endif
 -      return res;
      }
@@ -263,7 +263,7 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  }
  
  /*
-@@ -982,8 +1012,34 @@
+@@ -980,8 +1010,34 @@
  static inline int
  link_socket_write (struct link_socket *sock,
  		   struct buffer *buf,
