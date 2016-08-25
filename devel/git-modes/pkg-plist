@@ -1,3 +1,6 @@
+%%ELISPDIR%%/git-modes-autoloads.el
+%%ELISPDIR%%/git-modes.el
+%%ELISPDIR%%/git-modes.elc
 %%ELISPDIR%%/gitattributes-mode.el
 %%ELISPDIR%%/gitattributes-mode.elc
 %%ELISPDIR%%/gitconfig-mode.el
