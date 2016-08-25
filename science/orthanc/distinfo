@@ -1,4 +1,5 @@
-SHA256 (orthanc/Orthanc-1.0.0.tar.gz) = 3fc37a0fc91e597cc4004934b14726595b5e97b7e328e03dedb4454096bd1bbb
-SIZE (orthanc/Orthanc-1.0.0.tar.gz) = 1164342
+TIMESTAMP = 1469014978
+SHA256 (orthanc/Orthanc-1.1.0.tar.gz) = e8e7ce79dc327b8d0cd4917a520d867260eb58a34a2eea5e24a56db3540edbd4
+SIZE (orthanc/Orthanc-1.1.0.tar.gz) = 1152366
 SHA256 (orthanc/mongoose-3.8.tgz) = 6afc2c377614a01a24b78560a62d1316b29372afe08eae3715b56c877be71c6e
 SIZE (orthanc/mongoose-3.8.tgz) = 1577314
