@@ -1,6 +1,6 @@
---- c/modules.nw.orig	Wed Mar 28 14:44:00 2001
-+++ c/modules.nw	Mon Nov 10 09:25:05 2003
-@@ -197,11 +197,17 @@
+--- c/modules.nw.orig	2006-06-12 21:03:54 UTC
++++ c/modules.nw
+@@ -197,11 +197,17 @@ would be done above for a string of leng
  out as a special case.
  This change probably blows the case where the module being expanded is
  empty.
