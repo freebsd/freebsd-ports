@@ -3,6 +3,7 @@
 PORTNAME=	ruby-build
 PORTVERSION=	20160602
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -11,17 +12,14 @@ COMMENT=	Compile and install different ruby versions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# ruby-build builds Ruby so these are needed at run-time.
+# warnings by portlint are not correct. keep this.
 RUN_DEPENDS=	autoconf>0:devel/autoconf \
 		curl:ftp/curl \
 		gmake:devel/gmake
 
-OPTIONS_DEFINE=	RBENV
-RBENV_DESC=	Install rbenv for installation support
-OPTIONS_DEFAULT=	RBENV
-RBENV_RUN_DEPENDS=	rbenv:devel/rbenv
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	sstephenson
+GH_ACCOUNT=	rbenv
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -30,6 +28,11 @@ PLIST_FILES=	bin/ruby-build \
 		libexec/rbenv-install \
 		libexec/rbenv-uninstall
 PORTDATA=	*
+
+OPTIONS_DEFINE=	RBENV
+RBENV_DESC=	Install rbenv for installation support
+OPTIONS_DEFAULT=	RBENV
+RBENV_RUN_DEPENDS=	rbenv:devel/rbenv
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-build ${STAGEDIR}${PREFIX}/bin
