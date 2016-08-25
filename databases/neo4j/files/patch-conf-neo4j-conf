@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- conf/neo4j.conf.orig	2016-08-25 02:30:25.057742736 +0100
++++ conf/neo4j.conf	2016-08-25 02:32:53.932724521 +0100
+@@ -6,9 +6,9 @@
+ #dbms.active_database=graph.db
+ 
+ # Paths of directories in the installation.
+-#dbms.directories.data=data
+-#dbms.directories.plugins=plugins
+-#dbms.directories.certificates=certificates
++dbms.directories.data=%%DATADIR%%
++dbms.directories.plugins=%%PREFIX%%/lib/neo4j/plugins
++dbms.directories.certificates=%%PREFIX%%/etc/neo4j-certificates
+ 
+ # This setting constrains all `LOAD CSV` import files to be under the `import` directory. Remove or uncomment it to
+ # allow files to be loaded from anywhere in filesystem; this introduces possible security problems. See the `LOAD CSV`
