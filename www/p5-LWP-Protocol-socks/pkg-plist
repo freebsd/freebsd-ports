@@ -1,0 +1,7 @@
+%%SITE_PERL%%/LWP/Protocol/socks.pm
+%%SITE_PERL%%/LWP/Protocol/socks4.pm
+%%SITE_PERL%%/URI/socks.pm
+%%SITE_PERL%%/URI/socks4.pm
+%%PERL5_MAN3%%/LWP::Protocol::socks.3.gz
+%%PERL5_MAN3%%/LWP::Protocol::socks4.3.gz
+%%PERL5_MAN3%%/URI::socks.3.gz
