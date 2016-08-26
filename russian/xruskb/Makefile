@@ -11,12 +11,15 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard layout switcher and indicator
 
-USE_XORG=	x11 ice xt xmu
-USES=	tar:bzip2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
+USE_XORG=	x11 ice xt xmu xext sm
 
-DOCS=		FAQ NEWS README* TODO xrus.doc-*
+PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	MOTIF DOCS
@@ -27,7 +30,9 @@ MOTIF_CONFIGURE_OFF=	--with-toolkit=none
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Xrus
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} FAQ NEWS README* TODO xrus.doc-* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

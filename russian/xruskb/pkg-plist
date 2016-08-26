@@ -2,10 +2,3 @@ bin/xrus
 bin/xrusmodmap
 lib/X11/app-defaults/Xrus
 man/man1/xrus.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.WindowMaker
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/xrus.doc-english
-%%PORTDOCS%%%%DOCSDIR%%/xrus.doc-koi8
