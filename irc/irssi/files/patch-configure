@@ -1,5 +1,5 @@
---- configure.orig	2016-03-23 07:25:26.000000000 +0800
-+++ configure	2016-05-18 14:02:01.998133000 +0800
+--- configure.orig	2016-03-22 23:25:26 UTC
++++ configure
 @@ -652,6 +652,7 @@ BUILD_TEXTUI_FALSE
  BUILD_TEXTUI_TRUE
  PERL_STATIC_LIBS
