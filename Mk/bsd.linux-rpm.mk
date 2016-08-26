@@ -47,7 +47,7 @@ NO_BUILD=			yes
 .	if ${USE_LINUX} == "c6" || ${USE_LINUX} == "c6_64" || ${USE_LINUX} == "yes" # default to CentOS
 # Do not build CentOS 6 ports if overridden by f10
 .		if defined(OVERRIDE_LINUX_NONBASE_PORTS) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
-IGNORE=	This port requires CentOS ${LINUX_DIST_VER}. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
+IGNORE=	requires CentOS ${LINUX_DIST_VER}.  Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf
 .		endif
 .	endif
 

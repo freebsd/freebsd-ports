@@ -45,7 +45,7 @@ _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SE
 
 .if defined(WANT_OPENLDAP_VER)
 .if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER} != ${WANT_OPENLDAP_VER}
-IGNORE=		cannot install: the port wants openldap${WANT_OPENLDAP_VER}-client and you try to install openldap${WITH_OPENLDAP_VER}-client.
+IGNORE=		cannot install: the port wants openldap${WANT_OPENLDAP_VER}-client and you try to install openldap${WITH_OPENLDAP_VER}-client
 .endif
 OPENLDAP_VER=	${WANT_OPENLDAP_VER}
 .elif defined(WITH_OPENLDAP_VER)
