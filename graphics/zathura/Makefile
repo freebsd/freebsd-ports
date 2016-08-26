@@ -3,6 +3,7 @@
 
 PORTNAME=	zathura
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
