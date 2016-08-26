@@ -8619,3 +8619,5 @@ www/pecl-APC||2016-08-15|No longer maintained upstream, and not working with PHP
 textproc/libtext-wrapi18n-perl|textproc/p5-Text-WrapI18N|2016-08-15|Duplicate
 textproc/libtext-charwidth-perl|textproc/p5-Text-CharWidth|2016-08-15|Duplicate
 net-mgmt/netams||2016-08-18|Has expired: unmaintained, broken on most FreeBSD platforms
+emulators/kqemu-kmod||2016-08-26|Not supported in any qemu version anymore
+emulators/kqemu-kmod-devel||2016-08-26|Not supported in any qemu version anymore
