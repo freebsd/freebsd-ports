@@ -1,6 +1,6 @@
---- greeter/greet.c.orig	Sat Feb  3 01:25:25 2007
-+++ greeter/greet.c	Wed Apr  4 14:03:31 2007
-@@ -612,6 +617,7 @@ greet_user_rtn GreetUser(
+--- greeter/greet.c.orig	2011-09-25 07:35:47 UTC
++++ greeter/greet.c
+@@ -639,6 +639,7 @@ greet_user_rtn GreetUser(
      }
      DeleteXloginResources (d, *dpy);
      CloseGreet (d);
@@ -8,9 +8,9 @@
      Debug ("Greet loop finished\n");
      /*
       * Run system-wide initialization file
-@@ -697,6 +704,8 @@ static int pamconv(int num_msg,
-     m = *msg;
-     r = *response;
+@@ -729,6 +730,8 @@ static int pamconv(int num_msg,
+ 	goto pam_error;
+     }
  
 +    if (login == NULL) goto pam_error;
 +
