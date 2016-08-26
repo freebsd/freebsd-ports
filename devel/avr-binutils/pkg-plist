@@ -6,6 +6,7 @@ avr/bin/nm
 avr/bin/objcopy
 avr/bin/objdump
 avr/bin/ranlib
+avr/bin/readelf
 avr/bin/size
 avr/bin/strip
 avr/lib/ldscripts/avr1.x
