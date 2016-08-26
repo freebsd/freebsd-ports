@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.3.1
+PORTVERSION=	9.4.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -46,7 +46,7 @@ NLS_CONFIGURE_WITH=	gettext
 
 QT5_DESC=	Build and install GUI application (Qt 5)
 QT5_USES=	desktop-file-utils shared-mime-info
-QT5_USE=	QT5=buildtools_build,core,quick,widgets
+QT5_USE=	QT5=buildtools_build,core,gui,network,quick,widgets
 QT5_CONFIGURE_ON=	--enable-qt
 QT5_CONFIGURE_OFF=	--disable-qt
 
