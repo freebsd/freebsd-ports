@@ -24,6 +24,7 @@
 
 name=consul
 rcvar=consul_enable
+extra_commands="reload"
 
 load_rc_config $name
 
