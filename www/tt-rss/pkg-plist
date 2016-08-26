@@ -5,13 +5,11 @@
 %%WWWDIR%%/api/index.php
 %%WWWDIR%%/atom-to-html.xsl
 %%WWWDIR%%/backend.php
-%%WWWDIR%%/cache/.htaccess
 %%WWWDIR%%/cache/export/.empty
 %%WWWDIR%%/cache/images/.empty
 %%WWWDIR%%/cache/js/.empty
 %%WWWDIR%%/cache/simplepie/.empty
 %%WWWDIR%%/cache/upload/.empty
-%%WWWDIR%%/classes/.htaccess
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
@@ -1996,7 +1994,7 @@
 %%WWWDIR%%/lib/scriptaculous/scriptaculous.js
 %%WWWDIR%%/lib/timezones.txt
 %%WWWDIR%%/lib/xsl_mop-up.js
-%%WWWDIR%%/locale/.htaccess
+@comment gettext not needed - see %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/bg_BG/LC_MESSAGES/messages.mo
@@ -2050,7 +2048,6 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/lock/.empty
-%%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/opml.php
 %%WWWDIR%%/plugins.local/index.html
@@ -2138,7 +2135,6 @@
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
-%%WWWDIR%%/schema/.htaccess
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
 %%WWWDIR%%/schema/versions/mysql/10.sql
@@ -2397,7 +2393,6 @@
 %%WWWDIR%%/schema/versions/pgsql/97.sql
 %%WWWDIR%%/schema/versions/pgsql/98.sql
 %%WWWDIR%%/schema/versions/pgsql/99.sql
-%%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -2412,7 +2407,6 @@
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 @mode
-%%WWWDIR%%/utils/.htaccess
 %%WWWDIR%%/utils/localized_schema.txt
 @mode u=rx
 %%WWWDIR%%/utils/extract-i18n-js.pl
