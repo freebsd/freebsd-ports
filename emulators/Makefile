@@ -64,8 +64,6 @@
     SUBDIR += jzintv
     SUBDIR += kcemu
     SUBDIR += klh10
-    SUBDIR += kqemu-kmod
-    SUBDIR += kqemu-kmod-devel
     SUBDIR += lib765
     SUBDIR += libdsk
     SUBDIR += libspectrum
