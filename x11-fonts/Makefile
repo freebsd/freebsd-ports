@@ -38,6 +38,7 @@
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
     SUBDIR += encodings
+    SUBDIR += exo
     SUBDIR += fantasque-sans-mono
     SUBDIR += farsifonts
     SUBDIR += fifteen
