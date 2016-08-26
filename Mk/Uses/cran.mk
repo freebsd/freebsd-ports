@@ -9,7 +9,7 @@
 # auto-plist	The pkg-plist is to be automatically generated
 # compiles	The port has code that needs to be compiled
 #
-# MAINTAINER=	wen@FreeBSD.org
+# MAINTAINER=	dbn@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CRAN_MK)
 _INCLUDE_USES_CRAN_MK=	yes
@@ -50,6 +50,7 @@ R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-build-vignettes
 .endif
 
 do-test:
+	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
 	${R_POSTCMD_CHECK_OPTIONS} ${PORTNAME}
