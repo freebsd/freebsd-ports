@@ -126,69 +126,69 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 
 # ====================== kde4 components =======================================
 baloo_PORT=		sysutils/baloo
-baloo_PATH=		${KDE_PREFIX}/lib/libbaloocore.so
+baloo_LIB=		libbaloocore.so
 
 baloo-widgets_PORT=	sysutils/baloo-widgets
-baloo-widgets_PATH=	${KDE_PREFIX}/lib/libbaloowidgets.so
+baloo-widgets_LIB=	libbaloowidgets.so
 
 baseapps_PORT=		x11/kde4-baseapps
 baseapps_PATH=		${KDE_PREFIX}/bin/kfmclient
 baseapps_TYPE=		run
 
 kactivities_PORT=	x11/kactivities
-kactivities_PATH=	${KDE_PREFIX}/lib/libkactivities.so
+kactivities_LIB=	libkactivities.so
 
 kate_PORT=		editors/kate
-kate_PATH=		${KDE_PREFIX}/lib/libkateinterfaces.so
+kate_LIB=		libkateinterfaces.so
 
 kdelibs_PORT=		x11/kdelibs4
-kdelibs_PATH=		${KDE_PREFIX}/lib/libkdecore.so
+kdelibs_LIB=		libkdecore.so
 
 kfilemetadata_PORT=	sysutils/kfilemetadata
-kfilemetadata_PATH=	${KDE_PREFIX}/lib/libkfilemetadata.so
+kfilemetadata_LIB=	libkfilemetadata.so
 
 korundum_PORT=		devel/ruby-korundum
 korundum_PATH=		${KDE_PREFIX}/lib/kde4/krubypluginfactory.so
 korundum_TYPE=		run
 
 libkcddb_PORT=		audio/libkcddb
-libkcddb_PATH=		${KDE_PREFIX}/lib/libkcddb.so
+libkcddb_LIB=		libkcddb.so
 
 libkcompactdisc_PORT=	audio/libkcompactdisc
-libkcompactdisc_PATH=	${KDE_PREFIX}/lib/libkcompactdisc.so
+libkcompactdisc_LIB=	libkcompactdisc.so
 
 libkdcraw_PORT=		graphics/libkdcraw-kde4
-libkdcraw_PATH=		${KDE_PREFIX}/lib/libkdcraw.so
+libkdcraw_LIB=		libkdcraw.so
 
 libkdeedu_PORT=		misc/libkdeedu
-libkdeedu_PATH=		${KDE_PREFIX}/lib/libkeduvocdocument.so
+libkdeedu_LIB=		libkeduvocdocument.so
 
 libkdegames_PORT=	games/libkdegames
-libkdegames_PATH=	${KDE_PREFIX}/lib/libkdegames.so
+libkdegames_LIB=	libkdegames.so
 
 libkexiv2_PORT=		graphics/libkexiv2-kde4
-libkexiv2_PATH=		${KDE_PREFIX}/lib/libkexiv2.so
+libkexiv2_LIB=		libkexiv2.so
 
 libkipi_PORT=		graphics/libkipi-kde4
-libkipi_PATH=		${KDE_PREFIX}/lib/libkipi.so
+libkipi_LIB=		libkipi.so
 
 libkonq_PORT=		x11/libkonq
-libkonq_PATH=		${KDE_PREFIX}/lib/libkonq.so
+libkonq_LIB=		libkonq.so
 
 libksane_PORT=		graphics/libksane
-libksane_PATH=		${KDE_PREFIX}/lib/libksane.so
+libksane_LIB=		libksane.so
 
 marble_PORT=		astro/marble
-marble_PATH=		${KDE_PREFIX}/lib/libmarblewidget.so
+marble_LIB=		libmarblewidget.so
 
 nepomuk-core_PORT=	sysutils/nepomuk-core
-nepomuk-core_PATH=	${KDE_PREFIX}/lib/libnepomukcore.so
+nepomuk-core_LIB=	libnepomukcore.so
 
 nepomuk-widgets_PORT=	sysutils/nepomuk-widgets
-nepomuk-widgets_PATH=	${KDE_PREFIX}/lib/libnepomukwidgets.so
+nepomuk-widgets_LIB=	libnepomukwidgets.so
 
 okular_PORT=		graphics/okular
-okular_PATH=		${KDE_PREFIX}/lib/libokularcore.so
+okular_LIB=		libokularcore.so
 
 oxygen-icons4_PORT=	x11-themes/kde4-icons-oxygen
 oxygen-icons4_PATH=	${KDE_PREFIX}/share/icons/oxygen/index.theme
@@ -202,7 +202,7 @@ perlqt_PORT=		devel/p5-perlqt
 perlqt_PATH=		${KDE_PREFIX}/bin/puic4
 
 pimlibs_PORT=		deskutils/kdepimlibs4
-pimlibs_PATH=		${KDE_PREFIX}/lib/libkpimutils.so
+pimlibs_LIB=		libkpimutils.so
 
 pykde4_PORT=		devel/py-pykde4
 pykde4_PATH=		${KDE_PREFIX}/lib/kde4/kpythonpluginfactory.so
@@ -213,30 +213,30 @@ pykdeuic4_PATH=		${LOCALBASE}/bin/pykdeuic4
 pykdeuic4_TYPE=		run
 
 qtruby_PORT=		devel/ruby-qtruby
-qtruby_PATH=		${KDE_PREFIX}/lib/libqtruby4shared.so
+qtruby_LIB=		libqtruby4shared.so
 
 runtime_PORT=		x11/kde4-runtime
 runtime_PATH=		${KDE_PREFIX}/bin/knotify4
 runtime_TYPE=		run
 
 smokegen_PORT=		devel/smokegen
-smokegen_PATH=		${KDE_PREFIX}/lib/libsmokebase.so
+smokegen_LIB=		libsmokebase.so
 
 smokekde_PORT=		devel/smokekde
-smokekde_PATH=		${KDE_PREFIX}/lib/libsmokekdecore.so
+smokekde_LIB=		libsmokekdecore.so
 
 smokeqt_PORT=		devel/smokeqt
-smokeqt_PATH=		${KDE_PREFIX}/lib/libsmokeqtcore.so
+smokeqt_LIB=		libsmokeqtcore.so
 
 workspace_PORT=		x11/kde4-workspace
-workspace_PATH=		${KDE_PREFIX}/lib/libkworkspace.so
+workspace_LIB=		libkworkspace.so
 
 # Non-Software Compilation components
 akonadi_PORT=		databases/akonadi
-akonadi_PATH=		${KDE_PREFIX}/lib/libakonadiprotocolinternals.so
+akonadi_LIB=		libakonadiprotocolinternals.so
 
 attica_PORT=		x11-toolkits/attica
-attica_PATH=		${LOCALBASE}/lib/libattica.so
+attica_LIB=		libattica.so
 
 automoc4_PORT=		devel/automoc4
 automoc4_PATH=		${LOCALBASE}/bin/automoc4
@@ -246,13 +246,13 @@ ontologies_PORT=	x11-toolkits/shared-desktop-ontologies
 ontologies_PATH=	${LOCALBASE}/share/ontology/core/rdf.ontology
 
 qimageblitz_PORT=	x11/qimageblitz
-qimageblitz_PATH=	${LOCALBASE}/lib/libqimageblitz.so
+qimageblitz_LIB=	libqimageblitz.so
 
 soprano_PORT=		textproc/soprano
-soprano_PATH=		${LOCALBASE}/lib/libsoprano.so
+soprano_LIB=		libsoprano.so
 
 strigi_PORT=		deskutils/libstreamanalyzer
-strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
+strigi_LIB=		libstreamanalyzer.so.0
 # ====================== end of kde4 components ================================
 
 # end of component list ########################################################
@@ -264,8 +264,7 @@ _USE_KDE_ALL=	${_USE_${_KDE_RELNAME}_ALL}
   # Check that the component is valid.
 .    if ${_USE_KDE_ALL:M${component}} != ""
    # Skip meta-components (currently none).
-.      if defined(${component}_PORT) && defined(${component}_PATH)
-${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
+.      if defined(${component}_PORT) && (defined(${component}_PATH) || defined(${component}_LIB))
     # Check if a dependency type is explicitly requested.
 .        if ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
 ${component}_TYPE=	# empty
@@ -281,12 +280,18 @@ ${component}_TYPE+=	run
 ${component}_TYPE=	build run
 .        endif
     # Set real dependencies.
-.        if ${${component}_TYPE:Mbuild} != ""
+.        if defined(${component}_LIB) && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
+LIB_DEPENDS+=		${${component}_LIB}:${${component}_PORT}
+.        else
+${component}_PATH?=	${KDE_PREFIX}/lib/${${component}_LIB}
+${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
+.          if ${${component}_TYPE:Mbuild} != ""
 BUILD_DEPENDS+=		${${component}_DEPENDS}
-.        endif
-.        if ${${component}_TYPE:Mrun} != ""
+.          endif
+.          if ${${component}_TYPE:Mrun} != ""
 RUN_DEPENDS+=		${${component}_DEPENDS}
-.        endif
+.          endif
+.        endif # ${${component}_LIB} && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
 .      endif # defined(${component}_PORT) && defined(${component}_PATH)
 .    else # ! ${_USE_KDE_ALL:M${component}} != ""
 IGNORE=				cannot be installed: unknown USE_KDE component '${component}'
