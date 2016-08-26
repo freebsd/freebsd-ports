@@ -6,11 +6,15 @@ aarch64-none-elf/bin/nm
 aarch64-none-elf/bin/objcopy
 aarch64-none-elf/bin/objdump
 aarch64-none-elf/bin/ranlib
+aarch64-none-elf/bin/readelf
 aarch64-none-elf/bin/size
 aarch64-none-elf/bin/strip
 aarch64-none-elf/lib/ldscripts/aarch64elf.x
 aarch64-none-elf/lib/ldscripts/aarch64elf.xbn
 aarch64-none-elf/lib/ldscripts/aarch64elf.xc
+aarch64-none-elf/lib/ldscripts/aarch64elf.xd
+aarch64-none-elf/lib/ldscripts/aarch64elf.xdc
+aarch64-none-elf/lib/ldscripts/aarch64elf.xdw
 aarch64-none-elf/lib/ldscripts/aarch64elf.xn
 aarch64-none-elf/lib/ldscripts/aarch64elf.xr
 aarch64-none-elf/lib/ldscripts/aarch64elf.xs
@@ -21,6 +25,9 @@ aarch64-none-elf/lib/ldscripts/aarch64elf.xw
 aarch64-none-elf/lib/ldscripts/aarch64elf32.x
 aarch64-none-elf/lib/ldscripts/aarch64elf32.xbn
 aarch64-none-elf/lib/ldscripts/aarch64elf32.xc
+aarch64-none-elf/lib/ldscripts/aarch64elf32.xd
+aarch64-none-elf/lib/ldscripts/aarch64elf32.xdc
+aarch64-none-elf/lib/ldscripts/aarch64elf32.xdw
 aarch64-none-elf/lib/ldscripts/aarch64elf32.xn
 aarch64-none-elf/lib/ldscripts/aarch64elf32.xr
 aarch64-none-elf/lib/ldscripts/aarch64elf32.xs
@@ -31,6 +38,9 @@ aarch64-none-elf/lib/ldscripts/aarch64elf32.xw
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.x
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.xbn
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.xc
+aarch64-none-elf/lib/ldscripts/aarch64elf32b.xd
+aarch64-none-elf/lib/ldscripts/aarch64elf32b.xdc
+aarch64-none-elf/lib/ldscripts/aarch64elf32b.xdw
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.xn
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.xr
 aarch64-none-elf/lib/ldscripts/aarch64elf32b.xs
@@ -41,6 +51,9 @@ aarch64-none-elf/lib/ldscripts/aarch64elf32b.xw
 aarch64-none-elf/lib/ldscripts/aarch64elfb.x
 aarch64-none-elf/lib/ldscripts/aarch64elfb.xbn
 aarch64-none-elf/lib/ldscripts/aarch64elfb.xc
+aarch64-none-elf/lib/ldscripts/aarch64elfb.xd
+aarch64-none-elf/lib/ldscripts/aarch64elfb.xdc
+aarch64-none-elf/lib/ldscripts/aarch64elfb.xdw
 aarch64-none-elf/lib/ldscripts/aarch64elfb.xn
 aarch64-none-elf/lib/ldscripts/aarch64elfb.xr
 aarch64-none-elf/lib/ldscripts/aarch64elfb.xs

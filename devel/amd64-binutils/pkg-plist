@@ -41,6 +41,7 @@ x86_64-freebsd/bin/nm
 x86_64-freebsd/bin/objcopy
 x86_64-freebsd/bin/objdump
 x86_64-freebsd/bin/ranlib
+x86_64-freebsd/bin/readelf
 x86_64-freebsd/bin/size
 x86_64-freebsd/bin/strip
 x86_64-freebsd/lib/ldscripts/elf_i386.x
@@ -69,6 +70,19 @@ x86_64-freebsd/lib/ldscripts/elf_i386_fbsd.xsc
 x86_64-freebsd/lib/ldscripts/elf_i386_fbsd.xsw
 x86_64-freebsd/lib/ldscripts/elf_i386_fbsd.xu
 x86_64-freebsd/lib/ldscripts/elf_i386_fbsd.xw
+x86_64-freebsd/lib/ldscripts/elf_iamcu.x
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xbn
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xc
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xd
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xdc
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xdw
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xn
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xr
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xs
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xsc
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xsw
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xu
+x86_64-freebsd/lib/ldscripts/elf_iamcu.xw
 x86_64-freebsd/lib/ldscripts/elf_k1om.x
 x86_64-freebsd/lib/ldscripts/elf_k1om.xbn
 x86_64-freebsd/lib/ldscripts/elf_k1om.xc
