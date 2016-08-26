@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	2012-09-27 10:37:59.000000000 +0200
-+++ config/Makefile.in	2012-09-27 10:38:41.000000000 +0200
-@@ -296,7 +296,7 @@
+--- config/Makefile.in.orig	2011-09-25 07:42:16 UTC
++++ config/Makefile.in
+@@ -296,7 +296,7 @@ WCHAR32_FLAGS = -DWCHAR32=@WCHAR32@
  # output lines with trailing backslashes.
  # Allow XHASH to always be substituted, even in cases where XCOMM isn't.
  CPP_SED_MAGIC = $(SED) -e '/^\#  *[0-9][0-9]*  *.*$$/d' \
