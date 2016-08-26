@@ -48,8 +48,9 @@ rcvar=${name}_enable
 start_cmd=ntpa_start
 stop_cmd=ntpa_stop
 reload_cmd=ntpa_reload
+configtest_cmd=ntpa_configtest
 
-extra_commands=reload
+extra_commands="reload configtest"
 
 load_rc_config ${name}
 
@@ -79,6 +80,11 @@ ntpa_start()
         echo "Starting ${name}."
         su -m ${ntpauser} -c "sh -c '%%PREFIX%%/sbin/ntpa --config ${config} --writepid ${pidfile} --temp ${tempdir} --daemon ${name} &'"
     fi
+}
+
+ntpa_configtest()
+{
+    su -m ${ntpauser} -c "sh -c '%%PREFIX%%/sbin/ntpav -v ${config}'"
 }
 
 ntpa_reload()
