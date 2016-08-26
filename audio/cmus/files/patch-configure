@@ -1,0 +1,12 @@
+Upstreamed in https://github.com/cmus/cmus/commit/37f4daaea4d2724cd2b4d66984cf72b012ef5d48 
+--- configure.orig	2016-08-03 15:18:16 UTC
++++ configure
+@@ -21,7 +21,7 @@ check_cflags()
+ check_sndio()
+ {
+ 	case `uname -s` in
+-	OpenBSD)
++	OpenBSD|FreeBSD)
+ 		check_library SNDIO "" "-lsndio"
+ 		return $?
+ 	esac
