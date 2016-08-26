@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.7.0
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
@@ -16,7 +16,8 @@ CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.* sshguard-nul
 
 USES=		autoreconf
 
-PLIST_FILES=	sbin/sshguard man/man8/sshguard.8.gz
+PLIST_FILES=	libexec/sshg-fw libexec/sshg-logtail libexec/sshg-parser \
+		sbin/sshguard man/man8/sshguard.8.gz
 
 USE_RC_SUBR=	sshguard
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
