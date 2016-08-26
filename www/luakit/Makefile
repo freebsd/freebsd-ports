@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libsqlite3.so:databases/sqlite3 \
+		libsoup-2.4.so:devel/libsoup \
+		libfreetype.so:print/freetype2 \
 		libwebkitgtk-1.0.so:www/webkit-gtk2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libunique-1.0.so:x11-toolkits/unique
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem-51
 
@@ -23,25 +25,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mason-larobina
 GH_TAGNAME=	${PORTVERSION:C/r/-r/}
 
-USES=		desktop-file-utils gmake lua:51 pkgconfig
-USE_GNOME=	glib20 gtk20
+USES=		desktop-file-utils gettext-runtime gmake lua:51 pkgconfig sqlite
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 MAKE_ARGS+=	USE_UNIQUE=1 NO_JAVASCRIPTCORE=1
+
+BROKEN_sparc64=	Does not install on sparc64
 
 OPTIONS_DEFINE=	LUAJIT
 LUAJIT_DESC=	Use the Just-In-Time compiler for lua
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
-.endif
-
-.if ${PORT_OPTIONS:MLUAJIT}
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-MAKE_ARGS+=	USE_LUAJIT=1
-.else
-MAKE_ARGS+=	USE_LUAJIT=0
-.endif
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_MAKE_ARGS=	USE_LUAJIT=1
+LUAJIT_MAKE_ARGS_OFF=	USE_LUAJIT=0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(DESTDIR)/usr|(INSTALLDIR)|' \
