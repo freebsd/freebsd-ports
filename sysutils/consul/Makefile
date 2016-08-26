@@ -2,6 +2,7 @@
 
 PORTNAME=	consul
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
