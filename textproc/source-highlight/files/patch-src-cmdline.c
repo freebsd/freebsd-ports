@@ -1,6 +1,6 @@
---- src/cmdline.c.orig	2008-08-19 15:33:35.000000000 +0800
-+++ src/cmdline.c	2008-08-19 15:35:06.000000000 +0800
-@@ -194,7 +194,7 @@
+--- src/cmdline.c.orig	2011-12-24 10:22:43 UTC
++++ src/cmdline.c
+@@ -288,7 +288,7 @@ void clear_args (struct gengetopt_args_i
    args_info->gen_references_orig = NULL;
    args_info->ctags_file_arg = gengetopt_strdup ("tags");
    args_info->ctags_file_orig = NULL;

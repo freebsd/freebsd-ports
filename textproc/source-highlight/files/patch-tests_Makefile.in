@@ -1,6 +1,6 @@
---- tests/Makefile.in.orig	2010-01-20 01:24:37.000000000 -0500
-+++ tests/Makefile.in	2010-01-20 01:26:27.000000000 -0500
-@@ -1884,7 +1884,7 @@
+--- tests/Makefile.in.orig	2016-08-25 16:54:10 UTC
++++ tests/Makefile.in
+@@ -2108,7 +2108,7 @@ check_defaults:
  @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.h/\.h/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
  @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.cpp/\.cpp/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
  @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFS) -i $(srcdir)/test.h -o test_ref.out.tex $(CTAGS_COMMAND_TMP)
