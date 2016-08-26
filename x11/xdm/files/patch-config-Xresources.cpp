@@ -1,6 +1,6 @@
---- config/Xresources.cpp.orig	2012-09-27 10:41:28.000000000 +0200
-+++ config/Xresources.cpp	2012-09-27 10:41:56.000000000 +0200
-@@ -60,9 +60,9 @@
+--- config/Xresources.cpp.orig	2011-09-25 07:35:47 UTC
++++ config/Xresources.cpp
+@@ -60,9 +60,9 @@ xlogin*hiColor: black
  XHASHendif
  #ifdef XPM
  XHASHif PLANES >= 8
