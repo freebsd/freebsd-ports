@@ -1,5 +1,5 @@
---- data/ui/addchannelsgroups.glade.orig	2014-01-18 15:47:31.000000000 +0100
-+++ data/ui/addchannelsgroups.glade	2015-01-26 21:44:08.000000000 +0100
+--- data/ui/addchannelsgroups.glade.orig	2014-01-18 14:47:31 UTC
++++ data/ui/addchannelsgroups.glade
 @@ -1,7 +1,22 @@
  <?xml version="1.0" encoding="UTF-8"?>
 +<!-- Generated with glade 3.18.3 -->
