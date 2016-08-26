@@ -10,6 +10,7 @@
 
 PORTNAME=	stack
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/${PORTVERSION}/:deps
@@ -30,7 +31,11 @@ LIB_DEPENDS=	libiconv.so:converters/libiconv \
 RUN_DEPENDS+=	gcc:lang/gcc
 LIB_DEPENDS+=	libutil.so.8:misc/compat8x
 
-USES=		gmake
+# Needed for 'stack setup'
+RUN_DEPENDS+=	ca_root_nss>0:security/ca_root_nss \
+		gmake:devel/gmake
+USES=		gmake perl5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	applicative-tech
 GH_PROJECT=	stack-dependencies
