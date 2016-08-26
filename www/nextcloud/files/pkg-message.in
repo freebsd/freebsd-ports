@@ -32,4 +32,12 @@ like this:
 
 And restart Apache.
 
+***********************************************************************
+*                       NEXTCLOUD VERSION UPGRADE                     *
+***********************************************************************
 
+After a version migration you should upgrade your nextcloud instance
+using command line:
+
+* cd /usr/local/www/nextcloud
+* su -m www -c "php ./occ upgrade"
