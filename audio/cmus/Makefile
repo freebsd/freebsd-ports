@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cmus
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	audio
 
-MAINTAINER=	h.skuhra@gmail.com
+MAINTAINER=	t@tobik.me
 COMMENT=	Console-based music player with really cool features
 
 LICENSE=	GPLv2
@@ -15,200 +14,139 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 
-USES=		gmake pkgconfig iconv ncurses
+USES=		gmake iconv ncurses pkgconfig
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	HOSTCC=${CC}
-CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
-		exampledir=${EXAMPLESDIR} \
-		CONFIG_ALSA=n CONFIG_ARTS=n CONFIG_ROAR=n
+CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${MANPREFIX}/man \
+		exampledir=${EXAMPLESDIR}
 
-OPTIONS_DEFINE=	AAC AO CDDB CDIO CUE DISCID FFMPEG FLAC JACK MAD MIKMOD \
-		MODPLUG MP4 MUSEPACK OPUS PULSEAUDIO SAMPLERATE TREMOR \
-		VORBIS WAVPACK
-OPTIONS_DEFAULT=AAC FFMPEG FLAC MAD MP4 VORBIS
+# So the build does not use gcc for compiling ttman
+CONFIGURE_ARGS+=	HOSTCC=${CC}
 
-DISCID_DESC=	DISCID support
+# Verbose build makes it easier to spot problems
+MAKE_ARGS=	V=2
 
-.include <bsd.port.options.mk>
+# Disable all configure options first.  These will be overwritten by
+# enabled port options later.  The args to cmus' configure script
+# follow shell value semantics i.e. later assignments overwrite
+# previous assignments.  The options here appear in the same order as
+# ${WRKSRC}/configure --help.  Please keep it that way.
+_CMUS_CONFIGURE_OPTS=	CDDB CDIO DISCID FLAC MAD MODPLUG MIKMOD MPC	\
+			VORBIS TREMOR OPUS WAV WAVPACK MP4 AAC FFMPEG	\
+			VTX CUE ROAR PULSE ALSA JACK SAMPLERATE AO	\
+			ARTS OSS SNDIO SUN WAVEOUT
+.for opt in ${_CMUS_CONFIGURE_OPTS}
+CONFIGURE_ARGS+=	CONFIG_${opt}=n
+.endfor
 
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:audio/flac
-CONFIGURE_ARGS+=CONFIG_FLAC=y
-PLIST_SUB+=	FLAC=""
-.else
-CONFIGURE_ARGS+=CONFIG_FLAC=n
-PLIST_SUB+=	FLAC="@comment "
-.endif
+OPTIONS_DEFAULT=	AAC FFMPEG FLAC MAD MP4 OSS SNDIO VORBIS WAV
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:audio/libmad
-CONFIGURE_ARGS+=CONFIG_MAD=y
-PLIST_SUB+=	MAD=""
-.else
-CONFIGURE_ARGS+=CONFIG_MAD=n
-PLIST_SUB+=	MAD="@comment "
-.endif
+OPTIONS_GROUP=	OUT IN
+OPTIONS_GROUP_OUT=	AO JACK OSS PULSEAUDIO SNDIO
+OPTIONS_GROUP_IN=	AAC CDDB CDIO CUE DISCID FFMPEG FLAC MAD MIKMOD	\
+			MODPLUG MP4 MUSEPACK OPUS SAMPLERATE TREMOR	\
+			VORBIS WAV WAVPACK
 
-.if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	libmodplug.so:audio/libmodplug
-CONFIGURE_ARGS+=CONFIG_MODPLUG=y
-PLIST_SUB+=	MODPLUG=""
-.else
-CONFIGURE_ARGS+=CONFIG_MODPLUG=n
-PLIST_SUB+=	MODPLUG="@comment "
-.endif
+DISCID_DESC=	libdiscid CDDA identification support
+IN_DESC=	Input plugins
+OUT_DESC=	Output plugins
 
-.if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	libmikmod.so:audio/libmikmod
-CONFIGURE_ARGS+=CONFIG_MIKMOD=y
-PLIST_SUB+=	MIKMOD=""
-.else
-PLIST_SUB+=	MIKMOD="@comment "
-.endif
+AAC_CONFIGURE_ON=	CONFIG_AAC=y
+AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 
-.if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	libmpcdec.so:audio/musepack
-CONFIGURE_ARGS+=CONFIG_MPC=y
-PLIST_SUB+=	MPC=""
-.else
-CONFIGURE_ARGS+=CONFIG_MPC=n
-PLIST_SUB+=	MPC="@comment "
-.endif
+AO_CONFIGURE_ON=	CONFIG_AO=y
+AO_LIB_DEPENDS=	libao.so:audio/libao
 
-.if ${PORT_OPTIONS:MOPUS}
-LIB_DEPENDS+=	libopusfile.so:audio/opusfile
-CONFIGURE_ARGS+=CONFIG_OPUS=y
-PLIST_SUB+=	OPUS=""
-.else
-CONFIGURE_ARGS+=CONFIG_OPUS=n
-PLIST_SUB+=	OPUS="@comment "
-.endif
+CDDB_CONFIGURE_ON=	CONFIG_CDDB=y
+CDDB_LIB_DEPENDS=	libcddb.so:audio/libcddb
 
-.if ${PORT_OPTIONS:MVORBIS} || ${PORT_OPTIONS:MTREMOR}
-LIB_DEPENDS+=	libvorbisfile.so:audio/libvorbis
-CONFIGURE_ARGS+=CONFIG_VORBIS=y
-PLIST_SUB+=	VORBIS=""
-.else
-CONFIGURE_ARGS+=CONFIG_VORBIS=n
-PLIST_SUB+=	VORBIS="@comment "
-.endif
+CDIO_CONFIGURE_ON=	CONFIG_CDIO=y
+CDIO_LIB_DEPENDS=	libcdio_cdda.so:sysutils/libcdio-paranoia \
+			libcdio.so:sysutils/libcdio
 
-.if ${PORT_OPTIONS:MTREMOR}
-LIB_DEPENDS+=	libvorbisidec.so:audio/libtremor
-CONFIGURE_ARGS+=CONFIG_TREMOR=y
-.endif
+CUE_CONFIGURE_ON=	CONFIG_CUE=y
+CUE_LIB_DEPENDS=	libcue.so:textproc/libcue
 
-.if ${PORT_OPTIONS:MMP4}
-LIB_DEPENDS+=	libfaad.so:audio/faad
-LIB_DEPENDS+=	libmp4v2.so:multimedia/mp4v2
-CONFIGURE_ARGS+=CONFIG_MP4=y
-PLIST_SUB+=	MP4=""
-.else
-CONFIGURE_ARGS+=CONFIG_MP4=n
-PLIST_SUB+=	MP4="@comment "
-.endif
+DISCID_CONFIGURE_ON=	CONFIG_DISCID=y
+DISCID_LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
-.if ${PORT_OPTIONS:MAAC}
-LIB_DEPENDS+=	libfaad.so:audio/faad
-CONFIGURE_ARGS+=CONFIG_AAC=y
-PLIST_SUB+=	AAC=""
-.else
-CONFIGURE_ARGS+=CONFIG_AAC=n
-PLIST_SUB+=	AAC="@comment "
-.endif
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CONFIGURE_ON=	CONFIG_FFMPEG=y
 
-.if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	libwavpack.so:audio/wavpack
-CONFIGURE_ARGS+=CONFIG_WAVPACK=y
-PLIST_SUB+=	WAVPACK=""
-.else
-CONFIGURE_ARGS+=CONFIG_WAVPACK=n
-PLIST_SUB+=	WAVPACK="@comment "
-.endif
+FLAC_CONFIGURE_ON=	CONFIG_FLAC=y
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
-.if ${PORT_OPTIONS:MFFMPEG}
-BUILD_DEPENDS+=	ffmpeg>=2:multimedia/ffmpeg
-RUN_DEPENDS+=	ffmpeg>=2:multimedia/ffmpeg
-CONFIGURE_ARGS+=CONFIG_FFMPEG=y
-PLIST_SUB+=	FFMPEG=""
-.else
-CONFIGURE_ARGS+=CONFIG_FFMPEG=n
-PLIST_SUB+=	FFMPEG="@comment "
-.endif
+JACK_CONFIGURE_ON=	CONFIG_JACK=y
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
-.if ${PORT_OPTIONS:MAO}
-LIB_DEPENDS+=	libao.so:audio/libao
-CONFIGURE_ARGS+=CONFIG_AO=y
-PLIST_SUB+=	AO=""
-.else
-CONFIGURE_ARGS+=CONFIG_AO=n
-PLIST_SUB+=	AO="@comment "
-.endif
+MAD_CONFIGURE_ON=	CONFIG_MAD=y
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
-CONFIGURE_ARGS+=CONFIG_PULSE=y
-PLIST_SUB+=	PULSEAUDIO=""
-.else
-CONFIGURE_ARGS+=CONFIG_PULSE=n
-PLIST_SUB+=	PULSEAUDIO="@comment "
-.endif
+MIKMOD_CONFIGURE_ON=	CONFIG_MIKMOD=y
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
-.if ${PORT_OPTIONS:MCDDB} && ${PORT_OPTIONS:MCDIO}
-LIB_DEPENDS+=	libcddb.so:audio/libcddb
-CONFIGURE_ARGS+=CONFIG_CDDB=y
-.else
-CONFIGURE_ARGS+=CONFIG_CDDB=n
-.endif
+MODPLUG_CONFIGURE_ON=	CONFIG_MODPLUG=y
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 
-.if ${PORT_OPTIONS:MCDIO}
-LIB_DEPENDS+=	libcdio_cdda.so:sysutils/libcdio-paranoia
-CONFIGURE_ARGS+=CONFIG_CDIO=y
-PLIST_SUB+=	CDIO=""
-.else
-CONFIGURE_ARGS+=CONFIG_CDIO=n
-PLIST_SUB+=	CDIO="@comment "
-.endif
+MP4_CONFIGURE_ON=	CONFIG_MP4=y
+MP4_LIB_DEPENDS=	libfaad.so:audio/faad \
+			libmp4v2.so:multimedia/mp4v2
 
-.if ${PORT_OPTIONS:MCUE}
-LIB_DEPENDS+=	libcue.so:textproc/libcue
-CONFIGURE_ARGS+=CONFIG_CUE=y
-PLIST_SUB+=	CUE=""
-.else
-CONFIGURE_ARGS+=CONFIG_CUE=n
-PLIST_SUB+=	CUE="@comment "
-.endif
+MUSEPACK_CONFIGURE_ON=	CONFIG_MPC=y
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 
-.if ${PORT_OPTIONS:MDISCID}
-LIB_DEPENDS+=	libdiscid.so:audio/libdiscid
-CONFIGURE_ARGS+=CONFIG_DISCID=y
-.else
-CONFIGURE_ARGS+=CONFIG_DISCID=n
-.endif
+OPUS_CONFIGURE_ON=	CONFIG_OPUS=y
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:audio/jack
-CONFIGURE_ARGS+=CONFIG_JACK=y
-PLIST_SUB+=	JACK=""
-.else
-CONFIGURE_ARGS+=CONFIG_JACK=n
-PLIST_SUB+=	JACK="@comment "
-.endif
+OSS_CONFIGURE_ON=	CONFIG_OSS=y
 
-.if ${PORT_OPTIONS:MSAMPLERATE} && ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libsamplerate.so:audio/libsamplerate
-CONFIGURE_ARGS+=CONFIG_SAMPLERATE=y
-.else
-CONFIGURE_ARGS+=CONFIG_SAMPLERATE=n
-.endif
+PULSEAUDIO_CONFIGURE_ON=	CONFIG_PULSE=y
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
+# Requires a port of RoarAudio
+#ROAR_CONFIGURE_ON=	CONFIG_ROAR=y
+#ROAR_LIB_DEPENDS=	????:????
+
+SAMPLERATE_IMPLIES=	JACK
+SAMPLERATE_CONFIGURE_ON=	CONFIG_SAMPLERATE=y
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+
+SNDIO_CONFIGURE_ON=	CONFIG_SNDIO=y
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
+TREMOR_IMPLIES=	VORBIS
+TREMOR_CONFIGURE_ON=	CONFIG_TREMOR=y
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
+
+VORBIS_CONFIGURE_ON=	CONFIG_VORBIS=y
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
+
+# VTX requires libayemu which isn't ported yet
+#VTX_CONFIGURE_ON=	CONFIG_VTX=y
+#VTX_LIB_DEPENDS=	libayemu.so:?????
+
+WAV_CONFIGURE_ON=	CONFIG_WAV=y
+
+WAVPACK_CONFIGURE_ON=	CONFIG_WAVPACK=y
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
+
+# Doc/cmus.txt is used to generate the man pages.  Fix paths to point
+# to the correct directories.
 post-patch:
-	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \
+	@${REINPLACE_CMD} \
+		-e 's,/usr/share/doc/cmus/examples,${EXAMPLESDIR},g' \
+		-e 's,/usr/share/cmus,${DATADIR},g' \
 		${WRKSRC}/Doc/cmus.txt
-	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' ${WRKSRC}/Doc/cmus.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cmus*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cmus/[io]p/*.so
+# Install bash and zsh completion files
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/contrib/cmus.bash-completion \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/_cmus.bash
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/contrib/_cmus \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_cmus
 
 .include <bsd.port.mk>
