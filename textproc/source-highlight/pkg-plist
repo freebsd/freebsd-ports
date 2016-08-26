@@ -4,7 +4,7 @@ bin/java2html
 bin/source-highlight
 bin/source-highlight-settings
 bin/src-hilite-lesspipe.sh
-%%BASH%%etc/bash_completion.d/source-highlight
+etc/bash_completion.d/source-highlight
 include/srchilite/bufferedoutput.h
 include/srchilite/chartranslator.h
 include/srchilite/colormap.h

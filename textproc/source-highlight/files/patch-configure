@@ -1,6 +1,6 @@
---- configure.orig	2011-12-23 17:28:29.000000000 +0800
-+++ configure	2012-01-03 13:49:13.000000000 +0800
-@@ -3701,7 +3701,7 @@
+--- configure.orig	2011-12-23 09:28:29 UTC
++++ configure
+@@ -3701,7 +3701,7 @@ _ACEOF
  source_highlightdatadir=$datadir/source-highlight
  source_highlightdocdir=$docdir
  source_highlightlibdocdir=$docdir/api
@@ -9,7 +9,7 @@
  bash_completiondir=$sysconfdir/bash_completion.d
  
  LIBRARY_NAMESPACE=srchilite
-@@ -20546,7 +20546,7 @@
+@@ -20546,7 +20546,7 @@ else
  fi
  
  
