@@ -14,13 +14,17 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpd.so:audio/libmpd \
-		libsqlite3.so:databases/sqlite3
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
 RUN_DEPENDS=	gmpc:audio/gmpc
 
+USES=		gettext gmake libtool pkgconfig sqlite
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
-USE_GNOME=	intltool glib20 gtk20 libglade2
-USES=		gettext gmake libtool pkgconfig
 INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	lib/gmpc/plugins/magnatuneplugin.so \
+		share/gmpc/plugins/magnatune/magnatune.png
 
 .include <bsd.port.mk>
