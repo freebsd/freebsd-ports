@@ -1,34 +1,24 @@
 sbin/ntpa
 sbin/ntpac
+sbin/ntpag
 sbin/ntpav
-libexec/ntpa/NPlot.dll
+libexec/ntpa/MySql.Data.dll
+libexec/ntpa/Npgsql.dll
+libexec/ntpa/Ntp.Analyzer.dll
 libexec/ntpa/Ntp.Analyzer.Cli.exe
 libexec/ntpa/Ntp.Analyzer.Data.dll
-libexec/ntpa/Ntp.Analyzer.dll
 libexec/ntpa/Ntp.Analyzer.Import.dll
-libexec/ntpa/Ntp.Analyzer.Localize.dll
-libexec/ntpa/Ntp.Analyzer.Log.dll
+libexec/ntpa/Ntp.Analyzer.Monitor.Client.dll
+libexec/ntpa/Ntp.Analyzer.Monitor.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Monitor.Server.dll
 libexec/ntpa/Ntp.Analyzer.Objects.dll
 libexec/ntpa/Ntp.Analyzer.Process.dll
 libexec/ntpa/Ntp.Analyzer.Validate.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Validate.Gui.exe
 libexec/ntpa/Ntp.Common.dll
-libexec/ntpa/Ntp.Config.dll
 libexec/ntpa/Ntp.Data.dll
 libexec/ntpa/Ntp.Data.Provider.dll
-libexec/ntpa/Ntp.Interop.dll
-libexec/ntpa/Ntp.Monitor.Client.dll
-libexec/ntpa/Ntp.Monitor.Cli.exe
-libexec/ntpa/Ntp.Monitor.Server.dll
-libexec/ntpa/Ntp.Process.dll
-%%MYSQL%%libexec/ntpa/MySql.Data.dll
-%%PGSQL%%libexec/ntpa/Npgsql.dll
-%%PGSQL%%libexec/ntpa/de/Npgsql.resources.dll
-%%PGSQL%%libexec/ntpa/es/Npgsql.resources.dll
-%%PGSQL%%libexec/ntpa/fi/Npgsql.resources.dll
-%%PGSQL%%libexec/ntpa/fr/Npgsql.resources.dll
-%%PGSQL%%libexec/ntpa/ja/Npgsql.resources.dll
-%%PGSQL%%libexec/ntpa/zh-CN/Npgsql.resources.dll
-man/man8/ntpa.8.gz
+man/man1/ntpa.1.gz
 @sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
 @owner www
 @group www
@@ -53,22 +43,13 @@ man/man8/ntpa.8.gz
 %%WEBFILES%%%%WWWDIR%%/js/bootstrap.min.js
 %%WEBFILES%%%%WWWDIR%%/js/jquery.js
 %%WEBFILES%%%%WWWDIR%%/js/jquery.min.js
-%%WEBFILES%%%%WWWDIR%%/js/jquery.min.map
 %%WEBFILES%%%%WWWDIR%%/js/npm.js
 @owner
 @group
-%%EXAMPLESDIR%%/ntpa.conf
-%%EXAMPLESDIR%%/ntpa.graph.conf
-%%EXAMPLESDIR%%/ntpa.inc.conf
-%%EXAMPLESDIR%%/ntpa.inc.graphs1
-%%EXAMPLESDIR%%/ntpa.inc.graphs2
-%%EXAMPLESDIR%%/ntpa.inc.menu
-%%EXAMPLESDIR%%/ntpa.inc.pages1
-%%EXAMPLESDIR%%/ntpa.inc.pages2
-%%EXAMPLESDIR%%/ntpa.stat2.conf
-%%EXAMPLESDIR%%/ntpa.stat.conf
-%%EXAMPLESDIR%%/ntpa.web.conf
-%%EXAMPLESDIR%%/ntpa.web.small.conf
+%%EXAMPLESDIR%%/graph.conf
+%%EXAMPLESDIR%%/ntpd.conf
+%%EXAMPLESDIR%%/openntp.conf
+%%EXAMPLESDIR%%/small.conf
 %%WEBFILES%%@dir(www,ntpa,775) %%WWWDIR%%
 %%WEBFILES%%@dir(www,www,) %%WWWDIR%%/css
 %%WEBFILES%%@dir(www,www,) %%WWWDIR%%/fonts
