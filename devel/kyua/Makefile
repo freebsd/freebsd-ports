@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kyua
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13
 PORTEPOCH=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
@@ -20,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS=	kyua-atf-compat-[0-9]* kyua-cli-[0-9]* kyua-testers-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		lua pkgconfig
 
 TESTS_USER=	tests
 USERS=		${TESTS_USER}
