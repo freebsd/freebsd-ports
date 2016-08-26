@@ -1,3 +1,10 @@
+From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
+Work around incorrect constant folding of subnormals in javac when the FPU
+does not handle subnormal arithmetic, like on ARM in flush-to-zero mode.
+These workarounds avoid underflow conditions during the bootstrap so the JDK
+can correctly build itself.  Compiling or running programs other than OpenJDK
+itself on such hardware may still cause unexpected behaviour.
+
 --- jdk/src/share/classes/java/lang/Double.java.orig	2014-03-04 02:57:59 UTC
 +++ jdk/src/share/classes/java/lang/Double.java
 @@ -86,7 +86,7 @@ public final class Double extends Number
