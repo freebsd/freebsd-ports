@@ -6,11 +6,15 @@ aarch64-freebsd/bin/nm
 aarch64-freebsd/bin/objcopy
 aarch64-freebsd/bin/objdump
 aarch64-freebsd/bin/ranlib
+aarch64-freebsd/bin/readelf
 aarch64-freebsd/bin/size
 aarch64-freebsd/bin/strip
 aarch64-freebsd/lib/ldscripts/aarch64elf.x
 aarch64-freebsd/lib/ldscripts/aarch64elf.xbn
 aarch64-freebsd/lib/ldscripts/aarch64elf.xc
+aarch64-freebsd/lib/ldscripts/aarch64elf.xd
+aarch64-freebsd/lib/ldscripts/aarch64elf.xdc
+aarch64-freebsd/lib/ldscripts/aarch64elf.xdw
 aarch64-freebsd/lib/ldscripts/aarch64elf.xn
 aarch64-freebsd/lib/ldscripts/aarch64elf.xr
 aarch64-freebsd/lib/ldscripts/aarch64elf.xs

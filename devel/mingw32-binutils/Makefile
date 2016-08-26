@@ -12,7 +12,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 BUTARGET=	${PKGNAMEPREFIX:S/-$//}
 
-INFO=		as bfd binutils gprof ld
-INFO_PATH=	${BUTARGET}/info
-
 .include "${MASTERDIR}/Makefile"

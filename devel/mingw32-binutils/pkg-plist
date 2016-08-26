@@ -26,6 +26,7 @@ mingw32/bin/nm
 mingw32/bin/objcopy
 mingw32/bin/objdump
 mingw32/bin/ranlib
+mingw32/bin/readelf
 mingw32/bin/strip
 mingw32/bin/size
 mingw32/lib/ldscripts/i386pe.x

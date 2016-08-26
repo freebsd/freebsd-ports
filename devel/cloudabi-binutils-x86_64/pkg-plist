@@ -18,4 +18,5 @@ man/man1/x86_64-unknown-cloudabi-strings.1.gz
 man/man1/x86_64-unknown-cloudabi-strip.1.gz
 x86_64-unknown-cloudabi/bin/as
 x86_64-unknown-cloudabi/bin/objcopy
+x86_64-unknown-cloudabi/bin/readelf
 x86_64-unknown-cloudabi/bin/strip
