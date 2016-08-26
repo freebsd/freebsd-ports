@@ -1,5 +1,5 @@
---- configure.ac.orig	2016-05-18 13:02:28.110076000 +0800
-+++ configure.ac	2016-05-18 13:58:07.680765000 +0800
+--- configure.ac.orig	2016-03-22 23:24:11 UTC
++++ configure.ac
 @@ -79,7 +79,6 @@ AC_ARG_WITH(modules,
  if test "x$prefix" != "xNONE"; then
  	prefix=`eval echo $prefix`

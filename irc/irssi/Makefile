@@ -36,13 +36,10 @@ IPV6_CATEGORIES=	ipv6
 TRUECOLOR_DESC=	Truecolor (24bit) support
 TRUECOLOR_CONFIGURE_ENABLE=	true-color
 
-# USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
-# for WITH_SSL option
-
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else
-USE_OPENSSL=	yes
+USES+=		ssl
 .endif
 
 post-patch:
