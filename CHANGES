@@ -936,6 +936,12 @@ AUTHOR: kde@FreeBSD.org
   the only difference is the list of available components
   (see Mk/bsd.qt.mk for details). USES=qmake supports Qt 5 as well.
 
+20140224:
+AUTHOR: bapt@FreeBSD.org
+
+  Deprecate support for KNOBS, the new option framework allows to express a
+  more consistent, user friendly and visible way the same feature.
+
 20140127:
 AUTHOR: mat@FreeBSD.org
 
