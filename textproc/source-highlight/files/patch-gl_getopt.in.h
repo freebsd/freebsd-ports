@@ -1,5 +1,5 @@
---- gl/getopt.in.h.orig	2012-01-03 16:35:41.000000000 +0800
-+++ gl/getopt.in.h	2012-01-03 16:36:24.000000000 +0800
+--- gl/getopt.in.h.orig	2011-12-16 17:10:10 UTC
++++ gl/getopt.in.h
 @@ -23,15 +23,6 @@
  #endif
  @PRAGMA_COLUMNS@
