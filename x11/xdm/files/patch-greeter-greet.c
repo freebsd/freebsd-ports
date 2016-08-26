@@ -8,12 +8,3 @@
      Debug ("Greet loop finished\n");
      /*
       * Run system-wide initialization file
-@@ -729,6 +730,8 @@ static int pamconv(int num_msg,
- 	goto pam_error;
-     }
- 
-+    if (login == NULL) goto pam_error;
-+
-     for (i = 0; i < num_msg; i++ , m++ , r++) {
- 	char *username;
- 	int promptId = 0;
