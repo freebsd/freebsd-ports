@@ -1,4 +1,4 @@
---- Makefile.orig	2016-06-24 02:35:35 UTC
+--- Makefile.orig	2016-08-07 07:03:02 UTC
 +++ Makefile
 @@ -21,6 +21,8 @@ BIN_PATH    = $(PREFIX)/bin
  HELPER_PATH = $(PREFIX)/lib/afl
@@ -7,9 +7,9 @@
 +INSTALL_PROGRAM?=	install -s -m755
 +INSTALL_SCRIPT?=	install -m755
  
- # PROGS intentionally omit afl-as, which gets installed to its own dir.
+ # PROGS intentionally omit afl-as, which gets installed elsewhere.
  
-@@ -118,14 +120,15 @@ clean:
+@@ -120,14 +122,15 @@ clean:
  install: all
  	mkdir -p -m 755 $${DESTDIR}$(BIN_PATH) $${DESTDIR}$(HELPER_PATH) $${DESTDIR}$(DOC_PATH) $${DESTDIR}$(MISC_PATH)
  	rm -f $${DESTDIR}$(BIN_PATH)/afl-plot.sh
