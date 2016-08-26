@@ -23,9 +23,11 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
-		LUA=lua-${LUA_VER}
+		--disable-silent-rules LUA=lua-${LUA_VER}
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+
+MAKE_ARGS=	OBJC="${CC}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
