@@ -109,7 +109,6 @@ post-install:
 .endfor
 .if defined(BUREMOVE) && ${BUREMOVE:Mld}
 	@${RM} -rf ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts
-	@${FIND} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib -empty -delete
 .endif
 
 .include <bsd.port.post.mk>
