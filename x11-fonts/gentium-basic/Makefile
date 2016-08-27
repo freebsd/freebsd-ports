@@ -14,8 +14,6 @@ LICENSE=	OFL11
 
 USES=		fonts zip
 NO_ARCH=	yes
-
-MEDIA_ID=	${PORTNAME}_${PORTVERSION}_tar
 NO_BUILD=	yes
 
 PLIST_FILES=	${FONTSDIR}/GenBasB.ttf \
