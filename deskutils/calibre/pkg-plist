@@ -899,6 +899,7 @@ lib/calibre/calibre/gui2/preferences/coloring.py
 lib/calibre/calibre/gui2/preferences/columns.py
 lib/calibre/calibre/gui2/preferences/columns_ui.py
 lib/calibre/calibre/gui2/preferences/conversion.py
+lib/calibre/calibre/gui2/preferences/conversion_ui.py
 lib/calibre/calibre/gui2/preferences/create_custom_column.py
 lib/calibre/calibre/gui2/preferences/device_debug.py
 lib/calibre/calibre/gui2/preferences/device_user_defined.py
@@ -934,6 +935,7 @@ lib/calibre/calibre/gui2/preferences/texture_chooser.py
 lib/calibre/calibre/gui2/preferences/toolbar.py
 lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/tweaks.py
+lib/calibre/calibre/gui2/preferences/tweaks_ui.py
 lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/progress_indicator/__init__.py
 lib/calibre/calibre/gui2/save.py
@@ -1716,13 +1718,13 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/debug.png
 %%DATADIR%%/images/default_cover.png
 %%DATADIR%%/images/devices/bambook.png
-%%DATADIR%%/images/devices/boox.jpg
+%%DATADIR%%/images/devices/boox.png
 %%DATADIR%%/images/devices/folder.png
 %%DATADIR%%/images/devices/ipad.png
 %%DATADIR%%/images/devices/italica.png
 %%DATADIR%%/images/devices/itunes.png
-%%DATADIR%%/images/devices/kindle.jpg
-%%DATADIR%%/images/devices/nook.jpg
+%%DATADIR%%/images/devices/kindle.png
+%%DATADIR%%/images/devices/nook.png
 %%DATADIR%%/images/devices/tablet.png
 %%DATADIR%%/images/dialog_error.png
 %%DATADIR%%/images/dialog_information.png
@@ -1836,7 +1838,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/network-server.png
 %%DATADIR%%/images/news.png
 %%DATADIR%%/images/next.png
-%%DATADIR%%/images/notify.png
 %%DATADIR%%/images/ok.png
 %%DATADIR%%/images/page.png
 %%DATADIR%%/images/plugboard.png
