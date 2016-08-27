@@ -7,17 +7,11 @@ share/man/man1/as.1.gz
 share/man/man1/ld.1.gz
 share/man/man1/objcopy.1.gz
 share/man/man1/objdump.1.gz
-sparc64-freebsd/bin/ar
 sparc64-freebsd/bin/as
 sparc64-freebsd/bin/ld
 sparc64-freebsd/bin/ld.bfd
-sparc64-freebsd/bin/nm
 sparc64-freebsd/bin/objcopy
 sparc64-freebsd/bin/objdump
-sparc64-freebsd/bin/ranlib
-sparc64-freebsd/bin/readelf
-sparc64-freebsd/bin/size
-sparc64-freebsd/bin/strip
 sparc64-freebsd/lib/ldscripts/elf32_sparc.x
 sparc64-freebsd/lib/ldscripts/elf32_sparc.xbn
 sparc64-freebsd/lib/ldscripts/elf32_sparc.xc
