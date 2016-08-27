@@ -82,36 +82,17 @@ SPANDSP_CONFIGURE_WITH=	spandsp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 
 SQLITE_CONFIGURE_WITH=	sqlite
-SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE_USES=		pkgconfig sqlite
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
-	@cd ${STAGEDIR}${PREFIX}/lib; \
-		for FILE in libyate*.so.5.5.0; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib/yate; \
-		for FILE in *.yate; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib/yate/client; \
-		for FILE in *.yate; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib/yate/server; \
-		for FILE in *.yate; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib/yate/jabber; \
-		for FILE in *.yate; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib/yate/sip; \
-		for FILE in *.yate; do \
-			${STRIP_CMD} $${FILE}; \
-		done
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.5.5.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/*.yate
+.for dir in client server jabber sip
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/${dir}/*.yate
+.endfor
 
 .include <bsd.port.mk>
