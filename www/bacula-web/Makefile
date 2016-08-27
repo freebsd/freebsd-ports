@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula-web
-DISTVERSION=	7.0.3
+DISTVERSION=	7.2.0
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 
