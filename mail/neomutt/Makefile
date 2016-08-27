@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20160808
+PORTVERSION=	20160827
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 USE_GITHUB=	yes
 
-USES=		autoreconf localbase ncurses shebangfix ssl
+USES=		autoreconf gmake localbase ncurses shebangfix ssl
 GNU_CONFIGURE=	yes
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet \
