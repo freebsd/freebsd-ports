@@ -73,10 +73,10 @@ post-install:
 
 .else
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	EXTRAFLAGS="${PICFLAG} -DDISTORM_DYNAMIC" ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} clib clean)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+	${MAKE_ARGS} clib)
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	EXTRAFLAGS="-DDISTORM_STATIC" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} staticlib)
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${BUILD_WRKSRC}/disasm \
 	${WRKSRC}/examples/linux/main.c ${BUILD_WRKSRC}/libdistorm3.a
