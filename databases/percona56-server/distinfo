@@ -1,3 +1,3 @@
-TIMESTAMP = 1469549653
-SHA256 (percona-server-5.6.31-77.0.tar.gz) = 955fefc5a0a69b2cd44db64378678a773fb98e1260f68a067836473862c89fe7
-SIZE (percona-server-5.6.31-77.0.tar.gz) = 55086290
+TIMESTAMP = 1472237462
+SHA256 (percona-server-5.6.32-78.0.tar.gz) = b3f9191dd8660ba4f825c5fa8fa470e66417335ad8455e31bbc2d5f2cac1a923
+SIZE (percona-server-5.6.32-78.0.tar.gz) = 55120585
