@@ -3,7 +3,7 @@
 
 PORTNAME=	zathura
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libgirara-gtk3.so:x11-toolkits/girara \
-		libmagic.so:sysutils/file \
 		libsynctex.so:devel/tex-synctex
 
 BUILD_DEPENDS+=	rst2html:textproc/py-docutils
