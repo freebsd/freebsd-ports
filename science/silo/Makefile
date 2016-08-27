@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	silo
-PORTVERSION=	4.10
+PORTVERSION=	4.10.2
 DISTVERSIONSUFFIX=	-bsd
-PORTREVISION=	3
 CATEGORIES=	science
-MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
+MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Mesh and field I/O library and scientific database
 
 LICENSE=	BSD3CLAUSE
@@ -35,18 +34,14 @@ HDF5_PLIST_SUB_OFF=		SUFX_HDF5=""
 PYTHON_CONFIGURE_ENABLE=	pythonmodule
 PYTHON_USES=			python:2
 
-QT4_USE=			XORG=xext,xi,xmu,xt \
-				QT4=gui,linguisttools_build,moc_build,uic_build
+QT4_USE=			XORG=ice,sm,x11,xext,xi,xmu,xt \
+				QT4=corelib,gui,linguisttools_build,moc_build,uic_build
 QT4_CONFIGURE_ON=		--with-Qt-dir=${QT_PREFIX} \
 				--with-Qt-lib="QtGui -lQtCore"
 QT4_CONFIGURE_ENABLE=		silex
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-QT_NONSTANDARD=	yes
-DESKTOP_ENTRIES="Silex" "Silex browser for Silo files" "" "silex" "" true
-.endif
+QT4_VARS=			QT_NONSTANDARD=yes
+QT4_DESKTOP_ENTRIES=		"Silex" "Silex browser for Silo files" \
+				"" "silex" "" true
 
 post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
