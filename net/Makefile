@@ -1209,6 +1209,7 @@
     SUBDIR += samba44
     SUBDIR += samplicator
     SUBDIR += sbd
+    SUBDIR += sbm
     SUBDIR += scamper
     SUBDIR += scapy
     SUBDIR += scnc
