@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -61,7 +62,7 @@ PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
-NCURSES_USES=		ncurses
+NCURSES_USES=		ncurses:base
 SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:net/samba36
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
@@ -72,7 +73,7 @@ PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
-		--disable-libssh2 --enable-debug --enable-curses \
+		--disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
