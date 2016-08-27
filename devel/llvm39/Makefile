@@ -344,7 +344,7 @@ post-install-COMPILER_RT-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
-	mv ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/* \
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/* \
 	    ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd
 
