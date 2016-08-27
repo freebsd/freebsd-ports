@@ -15,4 +15,4 @@ make CROSS_TOOLCHAIN=sparc64-gcc TARGET=sparc64 TARGET_ARCH=sparc64 installworld
 
 4/ build the required port
 $ cd base/binutils
-make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroot/sparc64 package
+make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroots/sparc64 package
