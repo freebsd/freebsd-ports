@@ -3,7 +3,7 @@
 
 PORTNAME=	libspark2012
 PORTVERSION=	2012
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -12,6 +12,6 @@ COMMENT=	SPARK 2012 Spark.Ada library
 
 LICENSE=	GPLv3
 
-USES=		ada:5 tar:bzip2
+USES=		ada tar:bzip2
 
 .include <bsd.port.mk>
