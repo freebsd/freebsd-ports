@@ -3,8 +3,8 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.27
-PORTEPOCH=	1
-CATEGORIES=	devel
+PORTEPOCH?=	1
+CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
 MAINTAINER?=	bapt@FreeBSD.org
@@ -13,10 +13,12 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+.if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 
 CONFLICTS=	libbfd-[0-9]*
+.endif
 
 OPTIONS_DEFINE=	NLS RELRO
 
