@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2016-05-26 09:25:43 UTC
+--- examples/Makefile.orig	2016-08-11 10:21:42 UTC
 +++ examples/Makefile
 @@ -85,7 +85,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
@@ -13,7 +13,7 @@
  CFLAGS       = -I..
  LIBS         =
  else
--CFLAGS       = -I.. -Wall -Wextra
+-CFLAGS       = -I.. -Wall -Wextra -Wfatal-errors
 +CFLAGS       = -I.. -Wall -Wextra $(CPPFLAGS)
  LIBS         = -lm
  endif
@@ -57,11 +57,11 @@
 @@ -212,14 +212,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
- CIMG_EXR_DEFINE = -Dcimg_use_openexr
--CIMG_EXR_INCDIR = -I/usr/include/OpenEXR
-+CIMG_EXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
- CIMG_EXR_CFLAGS = $(CIMG_EXR_DEFINE) $(CIMG_EXR_INCDIR)
- CIMG_EXR_LIBS = -lIlmImf -lHalf
+ CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
+-CIMG_OPENEXR_INCDIR = -I/usr/include/OpenEXR
++CIMG_OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
+ CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
+ CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
