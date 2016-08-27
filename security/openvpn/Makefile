@@ -79,7 +79,8 @@ LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
-TEST_TARGET=		check
+TEST_ALL_TARGET=	check
+TEST_TEST_TARGET_OFF=	check
 
 # XXX Please remove this compatibility wrapper after 2017Q2 is branched.
 .ifdef(WITHOUT_CHECK)
@@ -103,8 +104,6 @@ post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
 	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
 	    ${WRKSRC}/src/plugins/down-root/Makefile
-
-post-build-TEST-on: test
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
