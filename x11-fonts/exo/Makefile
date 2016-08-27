@@ -16,7 +16,7 @@ USES=		fonts zip
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
