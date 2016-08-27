@@ -20,9 +20,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 USES=		autoreconf libarchive tar:bzip2
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
 PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
 
@@ -33,10 +30,8 @@ post-patch:
 		's|-Werror -g -ggdb|| ; \
 		 s|-O0||' ${WRKSRC}/Makefile.am
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
