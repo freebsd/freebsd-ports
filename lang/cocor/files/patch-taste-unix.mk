@@ -1,6 +1,6 @@
---- taste/unix.mk.orig	2009-03-25 13:30:16.000000000 +0100
-+++ taste/unix.mk	2009-03-25 13:30:36.000000000 +0100
-@@ -27,7 +27,7 @@
+--- taste/unix.mk.orig	1999-11-21 06:34:03 UTC
++++ taste/unix.mk
+@@ -27,7 +27,7 @@ taste:          tastep.o taste.o tc.o tl
  		$(CC) $(CFLAGS) -otaste taste.o tl.o tc.o\
                                          tastes.o tastep.o
  
@@ -9,7 +9,7 @@
  		$(COCOR) taste.atg
  		$(CC) $(CFLAGS) -c taste.c tastep.c tastes.c
  
-@@ -35,7 +35,7 @@
+@@ -35,7 +35,7 @@ pretty:         prettyp.o pretty.o prett
  		$(CC) $(CFLAGS) -opretty pretty.o prettypr.o \
                                           prettys.o prettyp.o
  
@@ -18,7 +18,7 @@
  		$(COCOR) pretty.atg
  		$(CC) $(CFLAGS) -c pretty.c prettyp.c prettys.c
  
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,7 @@ xref:           xrefp.o xref.o crossref.
  		$(CC) $(CFLAGS) -oxref xref.o crossref.o \
                                         xrefs.o xrefp.o
  
