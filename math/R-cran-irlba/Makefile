@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	irlba
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Fast partial SVD by implicitly-restarted Lanczos bidiagonalization
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv3
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
