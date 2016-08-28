@@ -1,5 +1,5 @@
---- ./storage/authreg_sqlite.c.orig	2013-10-30 12:38:17.000000000 +0000
-+++ ./storage/authreg_sqlite.c	2013-12-15 10:29:42.322779475 +0000
+--- storage/authreg_sqlite.c.orig	2016-05-03 20:05:25 UTC
++++ storage/authreg_sqlite.c
 @@ -29,6 +29,8 @@
   * to the Jabberd project.
   */
