@@ -2191,6 +2191,7 @@
     SUBDIR += p5-Devel-GlobalDestruction
     SUBDIR += p5-Devel-GlobalDestruction-XS
     SUBDIR += p5-Devel-Hide
+    SUBDIR += p5-Devel-InheritNamespace
     SUBDIR += p5-Devel-KYTProf
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Cb
