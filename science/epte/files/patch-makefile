@@ -31,3 +31,12 @@
  
  MAIN = ask_user.o bell.o bold.o blink.o draw_blocks.o draw_table.o endprog.o listcommand.o epte.o make_coordinates.o reverse.o setaudio.o setinput.o table_key.o ttflush.o ttinp.o
  
+@@ -354,7 +354,7 @@ DOES = do_bondeng.o do_attributes.o do_c
+ 
+ 
+ epte : $(MAIN) $(FILLS) $(DOES) 
+-	$(CC) $(MAIN) $(FILLS) $(DOES) $(LIBS)
++	$(CC) $(MAIN) $(FILLS) $(DOES) $(LDFLAGS) $(LIBS)
+ 
+ clean: 
+ 	rm -f *.o
