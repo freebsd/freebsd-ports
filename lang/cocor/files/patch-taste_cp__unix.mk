@@ -1,5 +1,5 @@
---- taste_cp/unix.mk.orig	1999-11-21 15:34:48.000000000 +0900
-+++ taste_cp/unix.mk	2010-01-26 03:48:40.000000000 +0900
+--- taste_cp/unix.mk.orig	1999-11-21 06:34:48 UTC
++++ taste_cp/unix.mk
 @@ -8,17 +8,17 @@
  
  #CC sets the name of the compiler to use (cc, gcc, etc)
@@ -22,7 +22,7 @@
  		$(CC) -c $(CFLAGS) $< -o $@
  
  all:            taste pretty xref
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ taste:          tastep.o  taste.o tc.o t
  		$(CC) $(CFLAGS) -otaste taste.o tl.o tc.o\
                                          tastes.o tastep.o $(LIB)
  
@@ -31,7 +31,7 @@
  		$(COCOR) taste.atg
  		$(CC) $(CFLAGS) -c taste.c?? tastep.c?? tastes.c??
  
-@@ -46,7 +46,7 @@
+@@ -46,7 +46,7 @@ pretty:         prettyp.o pretty.o prett
  		$(CC) $(CFLAGS) -opretty pretty.o prettypr.o \
                                           prettys.o prettyp.o $(LIB)
  
@@ -40,7 +40,7 @@
  		$(COCOR) pretty.atg
  		$(CC) $(CFLAGS) -c pretty.c?? prettyp.c?? prettys.c??
  
-@@ -54,7 +54,7 @@
+@@ -54,7 +54,7 @@ xref:           xrefp.o xref.o crossref.
  		$(CC) $(CFLAGS) -oxref xref.o crossref.o \
                                         xrefs.o xrefp.o $(LIB)
  
