@@ -964,7 +964,7 @@
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/install/install.php
 %%WWWDIR%%/install/mysql/.htaccess
-%%WWWDIR%%/install/mysql/glpi-0.90-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.1-empty.sql
 %%WWWDIR%%/install/update.php
 %%WWWDIR%%/install/update_031_04.php
 %%WWWDIR%%/install/update_042_05.php
@@ -1000,7 +1000,7 @@
 %%WWWDIR%%/install/update_0853_0855.php
 %%WWWDIR%%/install/update_0855_090.php
 %%WWWDIR%%/install/update_085_0853.php
-%%WWWDIR%%/install/update_0901_0902.php
+%%WWWDIR%%/install/update_0901_0905.php
 %%WWWDIR%%/install/update_090_0901.php
 %%WWWDIR%%/install/update_content.php
 %%WWWDIR%%/install/update_to_031.php

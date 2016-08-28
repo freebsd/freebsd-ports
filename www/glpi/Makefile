@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.90.3
+PORTVERSION=	0.90.5
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://github.com/glpi-project/glpi/releases/download/0.90.3/
+MASTER_SITES=	http://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
@@ -24,17 +24,11 @@ SUB_FILES=	pkg-message
 SUB_LIST=	GLPIDIR=${GLPIDIR} PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	LDAP IMAP
+OPTIONS_DEFAULT=	LDAP IMAP
+
 IMAP_DESC=	IMAP support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap
-.endif
+LDAP_USE=	PHP=ldap
+IMAP_USE=	PHP=imap
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*~' -delete
