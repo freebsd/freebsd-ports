@@ -1,5 +1,5 @@
---- ./storage/authreg_pgsql.c.orig	2013-11-12 10:09:39.000000000 +0000
-+++ ./storage/authreg_pgsql.c	2013-12-15 10:29:42.320778996 +0000
+--- storage/authreg_pgsql.c.orig	2016-05-08 14:30:08 UTC
++++ storage/authreg_pgsql.c
 @@ -20,6 +20,8 @@
  
  /* this module talks to a PostgreSQL server via libpq */

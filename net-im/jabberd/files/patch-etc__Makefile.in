@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2015-04-13 09:58:51.000000000 +0200
-+++ etc/Makefile.in	2015-10-04 10:13:29.313945122 +0200
-@@ -335,13 +335,13 @@
+--- etc/Makefile.in.orig	2016-05-22 19:40:00 UTC
++++ etc/Makefile.in
+@@ -347,13 +347,13 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -16,7 +16,7 @@
  SUBDIRS = templates
  jabberd_bin = router sm s2s c2s
  edit = sed \
-@@ -623,7 +623,7 @@
+@@ -634,7 +634,7 @@ install-data: install-data-recursive
  uninstall: uninstall-recursive
  
  install-am: all-am
@@ -25,8 +25,8 @@
  
  installcheck: installcheck-recursive
  install-strip:
-@@ -735,7 +735,7 @@
- 	uninstall-sysconfDATA uninstall-systemdDATA
+@@ -748,7 +748,7 @@ uninstall-am: uninstall-initDATA uninsta
+ .PRECIOUS: Makefile
  
  
 -$(configs): $(sysconf_DATA:%.dist=@srcdir@/%.dist.in) $(init_DATA:%.conf=@srcdir@/%.conf.in) $(systemd_DATA:%.service=%.service.in)
@@ -34,7 +34,7 @@
  	@echo "generating $@ from $@.in"; \
      edit='$(edit)'; \
      list='$(jabberd_bin)'; for p in $$list; do \
-@@ -748,7 +748,7 @@
+@@ -761,7 +761,7 @@ $(configs): $(sysconf_DATA:%.dist=@srcdi
  
  install-data-hook:
  	@list='$(sysconf_DATA)'; for p in $$list; do \

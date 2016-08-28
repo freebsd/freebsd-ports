@@ -1,6 +1,6 @@
---- ./sm/mod_iq_time.c.orig	2013-10-07 16:27:54.000000000 +0100
-+++ ./sm/mod_iq_time.c	2013-12-15 10:29:42.308777764 +0000
-@@ -77,7 +77,7 @@
+--- sm/mod_iq_time.c.orig	2016-02-09 09:47:02 UTC
++++ sm/mod_iq_time.c
+@@ -77,7 +77,7 @@ static mod_ret_t _iq_time_pkt_sm(mod_ins
  
      datetime_out(t, dt_DATETIME, buf, 64);
      nad_insert_elem(pkt->nad, 2, NAD_ENS(pkt->nad, 1), "utc", buf);

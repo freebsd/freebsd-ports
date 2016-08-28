@@ -1,6 +1,6 @@
---- etc/templates/Makefile.in.orig	2014-02-24 10:13:54.000000000 +0100
-+++ etc/templates/Makefile.in	2014-11-22 12:01:11.535347369 +0100
-@@ -275,8 +275,8 @@
+--- etc/templates/Makefile.in.orig	2016-05-22 19:40:00 UTC
++++ etc/templates/Makefile.in
+@@ -287,8 +287,8 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  templatesdir = $(sysconfdir)/templates
@@ -11,7 +11,7 @@
  edit = sed \
  	-e 's,@sysconfdir\@,$(sysconfdir),g' \
  	-e 's,@localstatedir\@,$(localstatedir),g' \
-@@ -506,14 +506,9 @@
+@@ -519,14 +519,9 @@ $(templates_DATA):
  	mv $@.tmp $@
  
  install-data-hook:
