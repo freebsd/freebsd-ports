@@ -805,6 +805,7 @@
     SUBDIR += p5-CatalystX-REPL
     SUBDIR += p5-CatalystX-RoleApplicator
     SUBDIR += p5-CatalystX-SimpleLogin
+    SUBDIR += p5-CatalystX-VirtualComponents
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CatalystX/VirtualComponents.pm
+%%PERL5_MAN3%%/CatalystX::VirtualComponents.3.gz
+@dir %%SITE_PERL%%/CatalystX
