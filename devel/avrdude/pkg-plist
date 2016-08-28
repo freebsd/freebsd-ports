@@ -1,3 +1,8 @@
 bin/avrdude
 etc/avrdude.conf
+include/libavrdude.h
+lib/libavrdude.a
+lib/libavrdude.so
+lib/libavrdude.so.1
+lib/libavrdude.so.1.0.0
 man/man1/avrdude.1.gz
