@@ -3,7 +3,7 @@
 
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 
@@ -31,8 +31,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\$$\^|$${.ALLSRC}| ; \
 		 s|lib/soothsayer|soothsayer|g' ${WRKSRC}/resources/Makefile.in
 	@${REINPLACE_CMD} -e 's|lib/soothsayer|soothsayer|' \
-		-e 's@lcurses@lncurses@g' \
 		${WRKSRC}/resources/profiles/Makefile.in
+	@${REINPLACE_CMD} -e 's@lcurses@lncurses@g' \
+		${WRKSRC}/src/tools/Makefile.in
 	@${REINPLACE_CMD} -E -e "s|(LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
 		-e "s|(.*SQLITE_LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
 		-e 's@lcurses@lncurses@g' \
