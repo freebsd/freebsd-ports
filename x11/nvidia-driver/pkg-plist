@@ -1,4 +1,6 @@
 bin/nvidia-bug-report.sh
+bin/nvidia-debugdump
+bin/nvidia-smi
 lib/.nvidia/libGL.so
 lib/.nvidia/libGL.so.1
 lib/.nvidia/libEGL.so
@@ -19,22 +21,39 @@ lib/libnvidia-glcore.so
 lib/libnvidia-glcore.so.1
 lib/libnvidia-glsi.so
 lib/libnvidia-glsi.so.1
+lib/libnvidia-ml.so
+lib/libnvidia-ml.so.1
 lib/libnvidia-tls.so
 lib/libnvidia-tls.so.1
 lib/libvdpau_nvidia.so
 lib/vdpau/libvdpau_nvidia.so.1
+man/man1/nvidia-smi.1.gz
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so.1
 /%%KMODDIR%%/nvidia.ko
+/%%KMODDIR%%/nvidia-modeset.ko
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.0
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM_nvidia.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM_nvidia.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.2
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2_nvidia.so.2
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLdispatch.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLdispatch.so.0
+%%LINUX%%%%LINUXBASE%%/usr/lib/libOpenGL.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libOpenGL.so.0
 %%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
@@ -51,3 +70,8 @@ lib/vdpau/libvdpau_nvidia.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_trace.so.1
 %%LINUX%%@exec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
 %%LINUX%%@unexec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
+%%LINUX%%@dir %%LINUXBASE%%/usr/lib/vdpau
+%%LINUX%%@dir %%LINUXBASE%%/usr/lib
+%%LINUX%%@dir %%LINUXBASE%%/usr
+%%LINUX%%@dir %%LINUXBASE%%
+%%LINUX%%@dir /compat

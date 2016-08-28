@@ -1,6 +1,6 @@
---- mk/nvidia.lib.mk.orig	2013-08-16 10:53:30.000000000 +0200
-+++ mk/nvidia.lib.mk	2014-01-27 16:55:39.000000000 +0100
-@@ -46,8 +46,8 @@
+--- mk/nvidia.lib.mk.orig	2015-08-24 03:56:22 UTC
++++ mk/nvidia.lib.mk
+@@ -46,8 +46,8 @@ install: ${EXTRADEPS}
  .endif		
  .endif
  .if defined(AUXLINK_TGT)
