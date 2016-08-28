@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avrdude
-PORTVERSION=	6.1
-PORTREVISION=	1
+PORTVERSION=	6.2
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH/avrdude
 
@@ -22,6 +21,9 @@ OPTIONS_DEFINE=	FTDI
 OPTIONS_DEFAULT=	FTDI
 FTDI_DESC=	libftdi support
 FTDI_LIB_DEPENDS=	libftdi1.so:devel/libftdi1
+USES=		libtool
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>
 
