@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CatalystX/AppBuilder.pm
+%%PERL5_MAN3%%/CatalystX::AppBuilder.3.gz
+@dir %%SITE_PERL%%/CatalystX
