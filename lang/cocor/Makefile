@@ -35,16 +35,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}; ${COPYTREE_SHARE} "cplus2 taste taste_cp" \
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "cplus2 taste taste_cp" \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/frames; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/coco.use ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/cocol ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/frames && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .for f in xref pretty taste
 	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/cocor/taste/${f}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cocor/taste/${f}
@@ -53,5 +47,15 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cocor/taste_cp/${f}
 	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/cocor/taste_cp/${f}
 .endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/coco.use ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/cocol ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
