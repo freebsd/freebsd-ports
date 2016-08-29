@@ -24,6 +24,11 @@ you update your ports collection, before attempting any port upgrades.
   on security/sshguard which only provided hosts/TCP Wrappers blocking,
   but there is no replacement at this time.
 
+  I would also like to document that sshguard no longer accepts the -e
+  argument which allowed external scripts to run when sshguard finds a
+  match. As a result the null backend can no longer be used to create
+  custom blocking functionality; it only serves as a detection backend.
+
   If the removed backends return due to user demand they will be added
   as slave ports for consistency. I apologize for any inconvenience and
   lack of notice on the deprecation of these features.
