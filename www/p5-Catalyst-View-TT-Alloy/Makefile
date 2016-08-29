@@ -3,6 +3,7 @@
 
 PORTNAME=	Catalyst-View-TT-Alloy
 PORTVERSION=	0.00007
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7:www/p5-Catalyst-Runtime \
 		p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Path-Class>=0:devel/p5-Path-Class \
-		p5-Template-Alloy>=0:www/p5-Template-Alloy \
-		p5-parent>=0:devel/p5-parent
+		p5-Template-Alloy>=0:www/p5-Template-Alloy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
