@@ -1,4 +1,4 @@
-This qjail version only supports RELEASE-11.0 and newer.
+This qjail version only supports the RELEASE-10.x series of releases.
 
 Qjail [ q = quick ] is a 4th generation wrapper for the basic chroot jail
 system that includes security and performance enhancements. Plus a new level
