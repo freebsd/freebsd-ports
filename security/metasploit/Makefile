@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.16
+PORTVERSION=	4.12.22
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -41,6 +41,7 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
+		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-java>=0:security/rubygem-rex-java \
@@ -55,7 +56,8 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
-		rubygem-filesize>=0:devel/rubygem-filesize
+		rubygem-filesize>=0:devel/rubygem-filesize \
+		rubygem-openvas-omp>=0:security/rubygem-openvas-omp
 
 SCRIPTS=	msfbinscan msfconsole msfd msfelfscan \
 		msfmachscan msfpescan msfrop msfrpc msfrpcd msfvenom
