@@ -318,6 +318,7 @@ lib/pd-externals/cyclone/reson~.pd_linux
 lib/pd-externals/cyclone/sah~-help.pd
 lib/pd-externals/cyclone/sah~.pd_linux
 lib/pd-externals/cyclone/sampstoms~-help.pd
+lib/pd-externals/cyclone/sampstoms~-test.pd
 lib/pd-externals/cyclone/sampstoms~.pd_linux
 lib/pd-externals/cyclone/scope-gop.pd
 lib/pd-externals/cyclone/scope-test.pd
@@ -382,7 +383,7 @@ lib/pd-externals/cyclone/tanh~.pd_linux
 lib/pd-externals/cyclone/tanx~-help.pd
 lib/pd-externals/cyclone/tanx~.pd_linux
 lib/pd-externals/cyclone/teeth~-help.pd
-lib/pd-externals/cyclone/teeth~.pd
+lib/pd-externals/cyclone/teeth~.pd_linux
 lib/pd-externals/cyclone/testmess-help.pd
 lib/pd-externals/cyclone/testmess-reentrant.pd
 lib/pd-externals/cyclone/testmess-test.pd
