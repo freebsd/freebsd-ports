@@ -5287,6 +5287,7 @@
     SUBDIR += rubygem-wdm
     SUBDIR += rubygem-web-console
     SUBDIR += rubygem-webby
+    SUBDIR += rubygem-windows_error
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
