@@ -1,6 +1,6 @@
---- ./configure.orig	2013-08-30 16:26:19.388840000 +0000
-+++ ./configure	2014-08-02 15:44:13.000000000 +0000
-@@ -14518,7 +14518,7 @@
+--- configure.orig	2016-08-25 15:18:48 UTC
++++ configure
+@@ -15233,7 +15233,7 @@ rm -f core conftest.err conftest.$ac_obj
    rm -f conf.gtktest
  
  
