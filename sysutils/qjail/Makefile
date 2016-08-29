@@ -30,7 +30,7 @@ IGNORE_FreeBSD_9=	Only for FreeBSD 11+
 IGNORE_FreeBSD_10=	Only for FreeBSD 11+
 
 do-install:
-.for i in qjail qjail.vnet.be 
+.for i in qjail qjail.vnet.be
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/qjail.bootime              \
