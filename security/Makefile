@@ -1083,7 +1083,6 @@
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
     SUBDIR += sshguard
-    SUBDIR += sshguard-ipfilter
     SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-null
     SUBDIR += sshguard-pf
