@@ -1,0 +1,5 @@
+This Ruby gem is used for communication with OpenVAS manager over OMP. You can
+start, stop, pause and resume scan. Watch progress and status of scan, download
+report, etc.
+
+WWW: https://github.com/kost/openvas-omp-ruby
