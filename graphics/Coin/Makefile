@@ -3,7 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USE_GCC=	any
 USES=		openal:al libtool
 USE_GL=		yes
-USE_XORG=	xt x11
+USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\
@@ -26,7 +25,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 INSTALL_TARGET=	install-strip
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' \
 		${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC} \( -name \*.cpp -o -name \*.h -a \! \
