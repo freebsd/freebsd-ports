@@ -14,7 +14,11 @@ COMMENT=	Utility to quickly deploy and manage jails
 USES=		tar:bzip2
 NO_BUILD=	yes
 
-CONFLICTS_INSTALL=	qjail-1.* qjail-3.*
+CONFLICTS_INSTALL=	qjail-*
+
+IGNORE_FreeBSD_10=	Only for FreeBSD 8 and 9
+IGNORE_FreeBSD_11=	Only for FreeBSD 8 and 9
+IGNORE_FreeBSD_12=	Only for FreeBSD 8 and 9
 
 do-install:
 
