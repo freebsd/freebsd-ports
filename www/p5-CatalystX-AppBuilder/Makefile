@@ -3,6 +3,7 @@
 
 PORTNAME=	CatalystX-AppBuilder
 PORTVERSION=	0.00011
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +16,9 @@ LICENSE=	ART10
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8:www/p5-Catalyst-Runtime \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-BUILD_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple \
-		p5-Module-Build-Tiny>=0.035:devel/p5-Module-Build-Tiny
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>
