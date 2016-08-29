@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-10-19 04:03:24 UTC
++++ Makefile.in
+@@ -944,7 +944,7 @@ regtrig.$(OBJ): $(regutildir)/regtrig.c
+ 	$(CC) -c $(COPT) $(CC2O) $(DYN_COMP) $(regutildir)/regtrig.c
+ 
+ $(SHLPRE)regutil$(MODPST): $(REGUTILOBJ) $(SHLPRE)$(SHLFILE)$(SHLPST) $(REGUTILEXP)
+-	$(LD_RXLIB_UTILA) $(REGUTILEXPORTS) $(REGUTILOBJ) $(LD_RXLIB_UTILB) $(BOTHLIBS) #$(REGUTIL_TERM_LIB) $(REGUTIL_MATH_LIB)
++	$(LD_RXLIB_UTILA) $(REGUTILEXPORTS) $(REGUTILOBJ) $(LD_RXLIB_UTILB) $(BOTHLIBS) $(REGUTIL_TERM_LIB) $(REGUTIL_MATH_LIB)
+ 	$(RANLIB_DYNAMIC)
+ 
+ 

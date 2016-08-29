@@ -1,2 +1,7 @@
-SHA256 (Regina-REXX-3.8.2.tar.bz2) = 7a83b5caccdd14aa0cef71971af41fc3eaeb14b842c35ff8dda4c673d354a78b
-SIZE (Regina-REXX-3.8.2.tar.bz2) = 1006856
+TIMESTAMP = 1472469079
+SHA256 (regina/Regina-REXX-3.9.1.tar.gz) = 5d13df26987e27f25e7779a2efa87a5775213beeda449a9efac59b57a5d5f3ee
+SIZE (regina/Regina-REXX-3.9.1.tar.gz) = 1358458
+SHA256 (regina/regina.pdf) = b64693e9629b09eb5ea1e74cb246b11645cbc1f32197dcfbb97f5a5f35786ca4
+SIZE (regina/regina.pdf) = 3646139
+SHA256 (regina/regutil.pdf) = 7f75ff9cdca0b659695bb33df18aa0d6b4bc20b2817cc5ab401bbdfabf78fa9f
+SIZE (regina/regutil.pdf) = 283470
