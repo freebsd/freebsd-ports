@@ -5,7 +5,7 @@ Sshguard employs a clever parser that can recognize several logging formats at
 once transparently (syslog, syslog-ng, metalog, multilog, raw messages), and
 detects attacks for many services out of the box, including SSH, FreeBSD's
 ftpd and dovecot.  It can operate all the major firewalling systems, including
-PF, netfilter/iptables, IPFIREWALL/ipfw, IPFILTER.
+PF, netfilter/iptables, and IPFIREWALL/ipfw.
 
 Sshguard has several relevant features like support for IPv6, whitelisting,
 suspension, log message authentication. It is reliable, easy to set up and
