@@ -2,7 +2,7 @@
 
 PORTNAME=	windows_error
 PORTVERSION=	0.0.2
-CATEGORIES=	security rubygems
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
