@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -18,12 +18,11 @@ USE_GITHUB=	nodefault
 GH_ACCOUNT=	datastax
 GH_PROJECT=	cpp-driver
 
-USES=		cmake:outsource pkgconfig pathfix
+USES=		cmake:outsource pkgconfig pathfix ssl
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR:STRING=lib \
 		-DCASS_BUILD_STATIC:BOOL=ON
 
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 PLIST_FILES=	include/cassandra.h \
 		lib/libcassandra.so \
