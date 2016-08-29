@@ -1,59 +1,44 @@
 # $FreeBSD$
 
 PORTNAME=	google-earth
-PORTVERSION=	6.0.3.2197
-PORTREVISION=	5
+PORTVERSION=	7.1.5.1557
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
 		http://dl.google.com/earth/client/current/:current
 DISTFILES=	GoogleEarthLinux.bin:current
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Explore, Search, and Discover
-
-EXTRACT_DEPENDS=	unmakeself:archivers/unmakeself
+COMMENT=	Virtual globe, map and geographical information program
 
 RESTRICTED=	Not really sure about the redistribution terms
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 OPTIONS_DEFAULT=	LINUX_DRI
 OPTIONS_SINGLE=		LIBGL
 OPTIONS_SINGLE_LIBGL=	LINUX_DRI NVIDIA_GL NVIDIA_GL_340 NVIDIA_GL_304
-LINUX_DRI_DESC=		libGL support via Linux DRI libraries 
+LINUX_DRI_DESC=		libGL support via Linux DRI libraries
 NVIDIA_GL_340_DESC=	libGL support via nvidia-driver-340
 NVIDIA_GL_304_DESC=	libGL support via nvidia-driver-304
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs curl nss
-USES=		perl5 shared-mime-info desktop-file-utils
+USES=		desktop-file-utils makeself perl5 shared-mime-info
 USE_PERL5=	patch build
-
-#SUB_FILES=	bin/googleearth
-
-UNMAKESELF=	${LOCALBASE}/bin/unmakeself
+NO_WRKSUBDIR=	yes
 
 NVIDIA_GL_RUN_DEPENDS=		${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_340_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-340
 NVIDIA_GL_304_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-304
 LINUX_DRI_USE=			LINUX_APPS=dri,libpciaccess
 
-# Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
-#BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILES} ${WRKSRC}
-	@cd ${WRKSRC} && ${UNMAKESELF} ${_DISTFILES} && ${RM} -f ${_DISTFILES}
-	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
-	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
+post-extract:
+	@cd ${WRKSRC} && ${TAR} -xf googleearth-data.tar && ${RM} googleearth-data.tar
+	@cd ${WRKSRC} && ${TAR} -xf googleearth-linux-x86.tar && ${RM} googleearth-linux-x86.tar
 
 post-patch:
-	@${REINPLACE_CMD} -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
-	@${REINPLACE_CMD} -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -i "" -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
+	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f ${LINUXBASE}\$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
@@ -67,19 +52,23 @@ post-patch-LINUX_DRI-on:
 
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
-	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh \
+	@cd ${WRKSRC} && ${RM} -r setup.* preuninstall.sh postinstall.sh \
 		bin/googleearth.orig
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml \
 		${STAGEDIR}${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/googleearth.desktop
-	${CP} -rp ${WRKSRC}/* ${STAGEDIR}${DATADIR}
-	${RM} -f ${STAGEDIR}${DATADIR}/googleearth-mimetypes.xml \
-		${STAGEDIR}${DATADIR}/googleearth.desktop
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/googleearth ${STAGEDIR}${DATADIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/googleearth-bin ${STAGEDIR}${DATADIR}/
+	${RM} ${WRKSRC}/googleearth-mimetypes.xml \
+		${WRKSRC}/googleearth.desktop \
+		${WRKSRC}/googleearth-bin \
+		${WRKSRC}/bin/googleearth
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_SCRIPT} ${FILESDIR}/browserwrapper \
 		${STAGEDIR}${DATADIR}/bin/
 	${LN} -sf ../${DATADIR_REL}/bin/googleearth \
