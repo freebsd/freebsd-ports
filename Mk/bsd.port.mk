@@ -167,6 +167,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  because it cannot be manually fetched, etc).  Error
 #				  logs will not appear on pointyhat, so this should be
 #				  used sparingly.
+# IGNORE_${ARCH} - Port should be ignored on ${ARCH}.
+# IGNORE_${OPSYS} - Port should be ignored on ${OPSYS}.
+# IGNORE_${OPSYS}_${OSREL:R} -  Port should be ignored on a single
+#				  release of ${OPSYS}, e.g IGNORE_FreeBSD_8
+#				  would affect all point releases of FreeBSD 8.
+# IGNORE_${OPSYS}_${OSREL:R}_${ARCH} -  Port should be ignored on a
+#				  single release of ${OPSYS} and specific architecture,
+#				  e.g IGNORE_FreeBSD_8_i386 would affect all point
+#				  releases of FreeBSD 8 in i386.
 # BROKEN		- Port is believed to be broken.  Package builds can
 # 				  still be attempted using TRYBROKEN to test this
 #				  assumption.
@@ -2742,6 +2751,14 @@ IGNORE=		may not be placed on a CDROM: ${NO_CDROM}
 IGNORE=		is restricted: ${RESTRICTED}
 .elif (defined(NO_PACKAGE) && defined(PACKAGE_BUILDING))
 IGNORE=		may not be packaged: ${NO_PACKAGE}
+.elif defined(IGNORE_${ARCH})
+IGNORE=		${IGNORE_${ARCH}}
+.elif defined(IGNORE_${OPSYS}_${OSREL:R}_${ARCH})
+IGNORE=		${IGNORE_${OPSYS}_${OSREL:R}_${ARCH}}
+.elif defined(IGNORE_${OPSYS}_${OSREL:R})
+IGNORE=		${IGNORE_${OPSYS}_${OSREL:R}}
+.elif defined(IGNORE_${OPSYS})
+IGNORE=		${IGNORE_${OPSYS}}
 .elif defined(BROKEN)
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken: ${BROKEN}
@@ -2750,13 +2767,13 @@ IGNORE=		is marked as broken: ${BROKEN}
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .endif
-.elif defined(BROKEN_${OPSYS}_${OSREL:R})
-.if !defined(TRYBROKEN)
-IGNORE=		is marked as broken on ${OPSYS} ${OSREL}: ${BROKEN_${OPSYS}_${OSREL:R}}
-.endif
 .elif defined(BROKEN_${OPSYS}_${OSREL:R}_${ARCH})
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${OPSYS} ${OSREL} ${ARCH}: ${BROKEN_${OPSYS}_${OSREL:R}_${ARCH}}
+.endif
+.elif defined(BROKEN_${OPSYS}_${OSREL:R})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${OPSYS} ${OSREL}: ${BROKEN_${OPSYS}_${OSREL:R}}
 .endif
 .elif defined(BROKEN_${OPSYS})
 .if !defined(TRYBROKEN)
@@ -2805,7 +2822,7 @@ ${target}:
 
 .endif
 
-.endif
+.endif # !defined(NO_IGNORE)
 
 .if defined(IGNORE) || defined(NO_PACKAGE)
 ignorelist: package-name
