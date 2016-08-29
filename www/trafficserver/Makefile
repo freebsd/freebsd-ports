@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trafficserver
-PORTVERSION=	6.1.1
+PORTVERSION=	6.2.0
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -18,12 +18,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe execinfo gmake libtool perl5 pkgconfig sqlite tar:bzip2 tcl
+USES=		cpe execinfo gmake libtool perl5 pkgconfig sqlite ssl tar:bzip2 tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 ONLY_FOR_ARCHS=	amd64
@@ -44,36 +43,16 @@ CONFIGURE_ARGS=	--with-libxml2=${LOCALBASE} \
 		--with-user=${USERS} \
 		--with-group=${GROUPS}
 
-OPTIONS_DEFINE=	DOCS INTERIM WCCP SPDY
-OPTIONS_RADIO=	MEMMAN
-OPTIONS_RADIO_MEMMAN=	ALLOCATORS FREELISTS RECLAIM
-OPTIONS_DEFAULT=	FREELISTS
+OPTIONS_DEFINE=	DOCS WCCP SPDY
 
 WCCP_DESC=	Enable WCCPv2 protocol
-INTERIM_DESC=	Enable interim cache (SSD)
-ALLOCATORS_DESC=	Manage memory with allocators
-FREELISTS_DESC=	Manage memory with freelists
-RECLAIM_DESC=	Reclaim unused memory in freelists
 SPDY_DESC=	Enable SPDY
 
 WCCP_CONFIGURE_ENABLE=	wccp
-INTERIM_CONFIGURE_ENABLE=	interim-cache
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
 BROKEN_FreeBSD_9=	Trafficserver is only supported on FreeBSD 10.1 or newer
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRECLAIM}
-CONFIGURE_ARGS+=	--enable-reclaimable-freelist --enable-freelist
-.elif ${PORT_OPTIONS:MFREELISTS}
-CONFIGURE_ARGS+=	--enable-freelist
-.elif ${PORT_OPTIONS:MALLOCATORS}
-CONFIGURE_ARGS+=	--disable-freelist
-.else
-IGNORE=	no allocation strategy selected
-.endif
 
 .if ! exists(/var/cache)
 # FreeBSD 8.x
