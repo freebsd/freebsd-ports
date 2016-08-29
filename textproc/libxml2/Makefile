@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxml2
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.4
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !defined(REFERENCE_PORT)
 
