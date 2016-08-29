@@ -1118,6 +1118,7 @@
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
     SUBDIR += u-boot-pandaboard
+    SUBDIR += u-boot-pcduino3
     SUBDIR += u-boot-pine64
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-rpi2
