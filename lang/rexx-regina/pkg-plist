@@ -21,6 +21,8 @@ man/man1/rxstack.1.gz
 %%DATADIR%%/pt.mtb
 %%DATADIR%%/sv.mtb
 %%DATADIR%%/tr.mtb
+%%PORTDOCS%%%%DOCSDIR%%/regina.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regutil.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animal.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/block.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dateconv.rexx

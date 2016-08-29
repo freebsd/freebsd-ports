@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: rxstack
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -16,14 +16,15 @@
 
 . /etc/rc.subr
 
-name="rxstack"
+name=rxstack
 rcvar=rxstack_enable
-
-command=%%PREFIX%%/bin/${name}
+desc="Regina REXX queue daemon"
 
 load_rc_config $name
 
-: ${rxstack_enable="NO"}
-: ${rxstack_flags="-d"}
+: ${rxstack_enable:=NO}
+
+command=%%PREFIX%%/bin/${name}
+command_args=-d
 
 run_rc_command "$1"
