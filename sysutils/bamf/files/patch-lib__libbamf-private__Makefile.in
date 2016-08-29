@@ -1,6 +1,6 @@
---- ./lib/libbamf-private/Makefile.in.orig	2013-08-30 16:26:20.552840000 +0000
-+++ ./lib/libbamf-private/Makefile.in	2014-08-02 15:33:08.000000000 +0000
-@@ -705,7 +705,7 @@
+--- lib/libbamf-private/Makefile.in.orig	2016-08-25 15:18:48 UTC
++++ lib/libbamf-private/Makefile.in
+@@ -723,7 +723,7 @@ bamf-gdbus-generated.c: org.ayatana.bamf
  	--interface-prefix org.ayatana.bamf \
  	$<; \
  	# Adding '_' prefix to generated private functions \
@@ -9,7 +9,7 @@
  	$@ $(shell basename $@ .c).h
  
  .NOTPARALLEL:
-@@ -717,7 +717,7 @@
+@@ -735,7 +735,7 @@ bamf-gdbus-view-generated.c: org.ayatana
  	--interface-prefix org.ayatana.bamf \
  	$<; \
  	# Adding '_' prefix to generated private functions \
