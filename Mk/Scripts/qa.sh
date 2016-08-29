@@ -627,11 +627,21 @@ proxydeps() {
 			# No results presents a blank line from heredoc.
 			[ -z "${dep_file}" ] && continue
 			dep_file=$(subst_dep_file ${dep_file})
+			# Skip files we already checked.
 			if listcontains ${dep_file} "${already}"; then
 				continue
 			fi
 			if $(pkg which -q ${dep_file} > /dev/null 2>&1); then
 				dep_file_pkg=$(pkg which -qo ${dep_file})
+
+				# Check that the .so we need has a SONAME
+				if [ "${dep_file_pkg}" != "${PKGORIGIN}" ]; then
+					if ! readelf -d "${dep_file}" | grep -q SONAME; then
+						err "${file} is linked to ${dep_file} which does not have a SONAME.  ${dep_file_pkg} needs to be fixed."
+					fi
+				fi
+
+				# If we don't already depend on it, and we don't provide it
 				if ! listcontains ${dep_file_pkg} "${LIB_RUN_DEPENDS} ${PKGORIGIN}"; then
 					err "${file} is linked to ${dep_file} from ${dep_file_pkg} but it is not declared as a dependency"
 					proxydeps_suggest_uses ${dep_file_pkg} ${dep_file}
@@ -662,9 +672,35 @@ proxydeps() {
 	return ${rc}
 }
 
+sonames() {
+	[ -n "${BUNDLE_LIBS}" ] && return 0
+	while read f; do
+		# No results presents a blank line from heredoc.
+		[ -z "${f}" ] && continue
+		# Ignore symlinks
+		[ -f "${f}" -a ! -L "${f}" ] || continue
+		if ! readelf -d ${f} | grep -q SONAME; then
+			warn "${f} doesn't have a SONAME."
+			warn "pkg(8) will not register it as being provided by the port."
+			warn "If another port depend on it, pkg will not be able to know where it comes from."
+			case "${f}" in
+				${STAGEDIR}${PREFIX}/lib/*/*)
+					warn "It is in a subdirectory, it may not be used in another port."
+					;;
+				*)
+					warn "It is directly in ${PREFIX}/lib, it is probably used by other ports."
+					;;
+			esac
+		fi
+	# Use heredoc to avoid losing rc from find|while subshell
+	done <<-EOT
+	$(find ${STAGEDIR}${PREFIX}/lib -name '*.so.*')
+	EOT
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
-checks="$checks proxydeps"
+checks="$checks proxydeps sonames"
 
 ret=0
 cd ${STAGEDIR}
