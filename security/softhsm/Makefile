@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-botan=${LOCALBASE} --with-sqlite3=${LOCALBASE} \
 		--localstatedir=/var
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool ssl
 USE_LDCONFIG=	yes
 
 CONFLICTS=	softhsm2-2.0.*
