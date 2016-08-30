@@ -5,7 +5,7 @@
      tls_check_version();
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESS_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
      SSL_load_error_strings();
      SSL_library_init();
  #endif
