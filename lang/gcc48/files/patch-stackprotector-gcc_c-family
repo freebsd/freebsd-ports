@@ -1,3 +1,4 @@
+--- UTC
 --- gcc/c-family/c-cppbuiltin.c.orig
 +++ gcc/c-family/c-cppbuiltin.c
 @@ -888,6 +888,8 @@ c_cpp_builtins (cpp_reader *pfile)

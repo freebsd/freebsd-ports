@@ -3,9 +3,10 @@ bin/mpv
 include/mpv/client.h
 include/mpv/opengl_cb.h
 include/mpv/qthelper.hpp
+include/mpv/stream_cb.h
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.21.0
+lib/libmpv.so.1.22.0
 libdata/pkgconfig/mpv.pc
 man/man1/mpv.1.gz
 share/applications/mpv.desktop
@@ -14,6 +15,7 @@ share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
 share/icons/hicolor/scalable/apps/mpv.svg
 share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
+%%PORTDOCS%%%%DOCSDIR%%/html/mpv.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpv.conf

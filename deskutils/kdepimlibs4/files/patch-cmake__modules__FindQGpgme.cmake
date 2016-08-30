@@ -5,12 +5,12 @@
     else ( WIN32 )
        find_library(_QGPGME_EXTRA_LIBRARY gpgme++-pthread
 -                   HINTS ${GPGME_LIBRARY_DIR})
-+                   HINTS ${GPGME_LIBRARY_DIR} %%KDE4_PREFIX%%/lib)
++                   HINTS ${GPGME_LIBRARY_DIR} %%KDE_PREFIX%%/lib)
     endif()
- 
+
     find_library(QGPGME_LIBRARY qgpgme
 -                HINTS ${GPGME_LIBRARY_DIR})
-+                HINTS ${GPGME_LIBRARY_DIR} %%KDE4_PREFIX%%/lib)
- 
++                HINTS ${GPGME_LIBRARY_DIR} %%KDE_PREFIX%%/lib)
+
     if (QGPGME_LIBRARY)
        # get the libdirectory and then go one up

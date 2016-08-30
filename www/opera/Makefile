@@ -46,7 +46,8 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 VIDEO_USE=	gstreamer=vorbis,ogg,theora,vp8,good
 GTK2_USE=	gnome=gtk20,libxml2
-KDE4_USE=	kde4=kdelibs
+KDE4_USES=	kde:4
+KDE4_USE=	KDE=kdelibs
 
 .include <bsd.port.options.mk>
 

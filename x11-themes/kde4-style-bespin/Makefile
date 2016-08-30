@@ -15,8 +15,9 @@ COMMENT=	Configurable KDE4 style
 LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/cloudcity
-USE_KDE4=	kdelibs automoc4 workspace
+
+USES=		cmake kde:4
+USE_KDE=	kdelibs automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
 
 .include <bsd.port.mk>

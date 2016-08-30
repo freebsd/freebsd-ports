@@ -12,6 +12,7 @@ COMMENT=	Nibbles clone for GNU/Linux and *BSD
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 CFLAGS+=	-Wall
 

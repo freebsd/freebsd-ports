@@ -14,10 +14,11 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
 		libqjson.so:devel/qjson
 
-USE_KDE4=	kate_run kdelibs automoc4
+USES=		cmake:outsource compiler:c++11-lib grantlee:4 kde:4 shebangfix \
+		tar:bz2
+USE_KDE=	kate_run kdelibs automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib designer_build gui webkit
-USES=		cmake:outsource compiler:c++11-lib grantlee:4 shebangfix tar:bz2
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	util/kdev_format_source util/kdevplatform_shell_environment.sh

@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 		SF/sqstat/sqstat/sqstat-${PORTVERSION}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script which allows to look through active squid users connections
 
 BROKEN_powerpc64=	Does not build

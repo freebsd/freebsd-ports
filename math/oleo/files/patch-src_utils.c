@@ -1,5 +1,5 @@
---- src/utils.c.orig	Sun Jun  9 13:13:57 2002
-+++ src/utils.c	Sun Jun  9 13:14:22 2002
+--- src/utils.c.orig	2001-02-13 23:38:06 UTC
++++ src/utils.c
 @@ -66,7 +66,7 @@
  #define _IOSTRG 0
  #endif

@@ -17,8 +17,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsphinxad.so:audio/sphinxbase \
 		libqwt6.so:x11-toolkits/qwt6
 
-USE_KDE4=	kdelibs automoc4 pimlibs
-USES=		cmake:outsource gettext tar:bz2
+USES=		cmake:outsource gettext kde:4 tar:bz2
+USE_KDE=	kdelibs automoc4 pimlibs
 USE_QT4=	accessible corelib dbus gui script testlib xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

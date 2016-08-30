@@ -12,8 +12,8 @@ COMMENT=	Sound mixer for KDE
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdelibs
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	gui phonon xml \
 		moc_build qmake_build rcc_build uic_build
 

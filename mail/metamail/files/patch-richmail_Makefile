@@ -1,0 +1,11 @@
+--- richmail/Makefile.orig	1993-03-15 19:32:42 UTC
++++ richmail/Makefile
+@@ -34,7 +34,7 @@ RICHOBJS=richlex.o richset.o usascii.o i
+ all:  richtext richtoatk
+ 
+ richtext: richtext.o $(RICHOBJS)
+-	$(CC) ${LOCALCFLAGS} -o richtext richtext.o $(RICHOBJS) -ltermcap $(LDLIBS)
++	$(CC) ${LOCALCFLAGS} -o richtext richtext.o $(RICHOBJS) -lncurses $(LDLIBS)
+ 
+ richtoatk: richtoatk.o $(RICHOBJS)
+ 	$(CC) ${LOCALCFLAGS} -o richtoatk richtoatk.o $(RICHOBJS) $(LDLIBS)

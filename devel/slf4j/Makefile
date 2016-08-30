@@ -11,7 +11,7 @@ COMMENT=	Simple facade or abstraction for various logging frameworks
 
 LICENSE=	MIT
 
-USE_JAVA=	1.4+
+USE_JAVA=	YES
 NO_BUILD=	YES
 
 JARFILES=	slf4j-migrator.jar \

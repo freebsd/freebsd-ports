@@ -1,0 +1,8 @@
+--- data/org.ayatana.bamf.service.in.orig	2016-08-24 12:43:23 UTC
++++ data/org.ayatana.bamf.service.in
+@@ -1,4 +1,3 @@
+ [D-BUS Service]
+ Name=org.ayatana.bamf
+-Exec=@PKGLIBEXECDIR@/bamfdaemon-dbus-runner
+-SystemdService=bamfdaemon.service
++Exec=@PKGLIBEXECDIR@/bamfdaemon

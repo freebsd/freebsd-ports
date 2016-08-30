@@ -3,6 +3,7 @@
 
 PORTNAME=	zathura
 PORTVERSION=	0.3.6
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -13,15 +14,20 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libgirara-gtk3.so:x11-toolkits/girara
+		libgirara-gtk3.so:x11-toolkits/girara \
+		libsynctex.so:devel/tex-synctex
+
 BUILD_DEPENDS+=	rst2html:textproc/py-docutils
 
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk30 gdkpixbuf2
 USES=		compiler:c11 gmake pkgconfig
 MAKE_ENV=	SFLAGS="${STRIP}" \
 		RSTTOMAN=${LOCALBASE}/bin/rst2man \
 		ZLIB_INC= \
-		ZLIB_LIB=-lz
+		ZLIB_LIB=-lz \
+		WITH_SYNCTEX=1
+
+CPPFLAGS+=	-DWITH_SYNCTEX
 
 OPTIONS_DEFINE=	NLS SQLITE
 OPTIONS_SUB=	yes

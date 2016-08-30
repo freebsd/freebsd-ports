@@ -1,0 +1,6 @@
+The WindowsError gem provides an easily accessible reference for standard
+Windows API Error Codes. It allows you to do comparisons as well as direct
+lookups of error codes to translate the numerical value returned by the API,
+into a meaningful and human readable message.
+
+WWW: https://github.com/rapid7/windows_error

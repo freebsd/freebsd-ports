@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.26
+PORTVERSION=	10.0.27
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -27,7 +27,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo gmake shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo gmake shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -92,7 +92,6 @@ OPTIONS_SUB=	yes
 .endif
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
-USE_OPENSSL=		yes
 # See PR209419, MariaDB 10.0 fails to build with base SSL libs
 WITH_OPENSSL_PORT=	yes
 

@@ -1,0 +1,11 @@
+--- lib/db_ido_mysql/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ lib/db_ido_mysql/CMakeLists.txt
+@@ -41,7 +41,7 @@ if(MYSQL_FOUND)
+   )
+ 
+   install_if_not_exists(
+-    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-mysql.conf
++    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-mysql.conf.sample
+     ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   )
+ 

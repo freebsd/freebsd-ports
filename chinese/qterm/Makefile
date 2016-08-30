@@ -44,7 +44,8 @@ QTSCRIPT_RUN_DEPENDS=	${QT_PLUGINDIR}/script/libqtscript_core.so:devel/qtscriptg
 QTSCRIPT_CMAKE_ON=	-DQTERM_ENABLE_SCRIPT:BOOL=TRUE
 QTSCRIPT_CMAKE_OFF=	-DQTERM_ENABLE_SCRIPT:BOOL=FALSE
 
-KDE_USE=	KDE4=kdelibs,automoc4
+KDE_USES=	kde:4
+KDE_USE=	KDE=kdelibs,automoc4
 
 post-patch-KDE-off:
 	${REINPLACE_CMD} -e "/^find_package(KDE4)/d" ${WRKSRC}/CMakeLists.txt

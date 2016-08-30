@@ -19,8 +19,8 @@ CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
 		-DPHP_BINDINGS:BOOL=OFF \
 		-DPYTHON_BINDINGS:BOOL=OFF \
 		-DUSE_LIBCALENDARING:BOOL=OFF
-USES=		cmake:outsource
-USE_KDE4=	automoc4 kdelibs pimlibs
+USES=		cmake:outsource kde:4
+USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml \
 		moc_build qmake_build rcc_build uic_build

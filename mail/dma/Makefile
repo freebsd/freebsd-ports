@@ -3,6 +3,7 @@
 
 PORTNAME=	dma
 PORTVERSION=	0.11
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -31,6 +32,7 @@ MAKE_ENV=	__MAKE_CONF=/dev/null SRCCONF=/dev/null NO_WERROR=defined \
 
 USE_RC_SUBR=	dma_flushq
 SUB_FILES=	pkg-message
+EXTRA_PATCHES=	${FILESDIR}/fix-security-hole.patch:-p1
 
 # Allow subports to extend.
 CONFFILES+=	dma.conf auth.conf

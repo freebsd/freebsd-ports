@@ -41,6 +41,7 @@ sparc64-freebsd/bin/nm
 sparc64-freebsd/bin/objcopy
 sparc64-freebsd/bin/objdump
 sparc64-freebsd/bin/ranlib
+sparc64-freebsd/bin/readelf
 sparc64-freebsd/bin/strip
 sparc64-freebsd/bin/size
 sparc64-freebsd/lib/ldscripts/elf32_sparc.x

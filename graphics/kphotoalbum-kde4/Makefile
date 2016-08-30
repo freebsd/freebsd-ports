@@ -13,9 +13,10 @@ COMMENT=	Image viewer and organizer for KDE
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		cmake:outsource jpeg pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	script/open-raw.pl script/kpa-backup.sh
-USE_KDE4=	kdelibs libkdcraw libkipi automoc4
+
+USES=		cmake:outsource jpeg kde:4 pkgconfig shebangfix tar:bzip2
+USE_KDE=	kdelibs libkdcraw libkipi automoc4
 USE_QT4=	phonon sql \
 		qmake_build moc_build rcc_build uic_build
 
@@ -24,7 +25,7 @@ OPTIONS_DEFAULT=	MARBLE
 OPTIONS_SUB=	yes # NLS
 
 MARBLE_DESC=	Geolocation support
-MARBLE_USE=	KDE4=marble
+MARBLE_USE=	KDE=marble
 MARBLE_CMAKE_OFF=	-DWITH_Marble:BOOL=Off
 
 NLS_USES=	gettext

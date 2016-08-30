@@ -81,6 +81,7 @@
     SUBDIR += py-pyftpdlib
     SUBDIR += py-tftpy
     SUBDIR += quftp
+    SUBDIR += rexx-curl
     SUBDIR += rubygem-curb
     SUBDIR += scythia
     SUBDIR += smbftpd

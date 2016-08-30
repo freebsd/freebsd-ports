@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-PORTVERSION=	2.3.6
+PORTVERSION=	2.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}

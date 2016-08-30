@@ -2,6 +2,7 @@
 
 PORTNAME=	consul
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
@@ -187,7 +188,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
-		-ldflags "-X main.GitDescribe v${PORTVERSION}" -o bin/consul
+		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/consul
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul

@@ -1,6 +1,6 @@
---- configure.orig	2014-06-29 02:01:39 UTC
+--- configure.orig	2015-01-18 20:33:40 UTC
 +++ configure
-@@ -3486,6 +3486,13 @@ case "$target" in
+@@ -3490,6 +3490,13 @@ case "$target" in
           osis64bit=yes
        fi
        ;;
@@ -11,21 +11,21 @@
 +         osis64bit=yes
 +      fi
 +      ;;
-    *-freebsd*)
+    *-freebsd* | *-openbsd*)
        mach="`uname -m`"
        if test "$mach" = "amd64"; then
-@@ -6235,6 +6242,10 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -6256,6 +6263,10 @@ rm -f core conftest.err conftest.$ac_obj
                 ;;
              *linux*)
                 ;;
 +            *dragonfly*)
 +               THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
-+               THREADING_LINK="-lpthread"
++               THREADING_LINK="-pthread"
 +               ;;
              *freebsd*)
                 THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
                 THREADING_LINK="-pthread"
-@@ -8658,7 +8669,13 @@ case "$target" in
+@@ -8679,7 +8690,14 @@ case "$target" in
                  SHLPRE="lib"
                  SHL_LD="ld -assert pure-text -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  ;;
@@ -34,13 +34,14 @@
 +                LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
-+                SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
++                SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} -Wl,-soname=${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
++		REGINA_PACKAGE_NAME="rexx-regina"
 +                ;;
 +        *openbsd*)
                  if test "$ac_cv_prog_CC" = "gcc" -o "$ac_cv_prog_CC" = "g++" -o "$ac_cv_prog_CC" = "clang"; then
                     LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
-@@ -9407,7 +9424,7 @@ $as_echo_n "checking OS distribution nam
+@@ -9429,7 +9447,7 @@ $as_echo_n "checking OS distribution nam
  $as_echo "$MYDISTRO" >&6; }
  else
     case "$target" in

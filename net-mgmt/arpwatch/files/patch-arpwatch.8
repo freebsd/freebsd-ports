@@ -5,7 +5,7 @@
  .B arpwatch
  [
 -.B -dN
-+.B -dNz
++.B -dNvz
  ] [
  .B -f
  .I datafile
@@ -32,10 +32,15 @@
  .B -n
  flag specifies additional local networks. This can be useful to
  avoid "bogon" warnings when there is more than one network running
-@@ -83,6 +92,10 @@ The
+@@ -83,6 +92,15 @@ The
  flag disables reporting any bogons.
  .LP
  The
++.B -v
++flag disables reporting on VRRP/CARP ethernet prefixes as described
++in RFC5798 (00:00:5e:00:01:xx).
++.LP
++The
 +.B -z
 +flag disables reporting 0.0.0.0 changes, helpful in busy DHCP networks.
 +.LP
@@ -43,7 +48,7 @@
  .B -r
  flag is used to specify a savefile
  (perhaps created by
-@@ -152,7 +165,7 @@ addresses was a DECnet address.
+@@ -152,7 +170,7 @@ addresses was a DECnet address.
  .na
  .nh
  .nf

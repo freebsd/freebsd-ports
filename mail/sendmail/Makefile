@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -216,6 +216,9 @@ post-install:
 	${TAR} -C ${WRKSRC} -cf - cf | \
 		${TAR} -C ${STAGEDIR}${PREFIX}/share/sendmail -xf -
 	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
+# final perm of sendmail is 2555 (see plist), needed for strip cmd
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/sbin/sendmail
+
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*

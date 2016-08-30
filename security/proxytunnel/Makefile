@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	proxytunnel
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source%20tarballs/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
-USES=		pkgconfig gmake tar:tgz
-USE_OPENSSL=	yes
+LICENSE=	GPLv2
 
-ALL_TARGET=	${PORTNAME}
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		xmlto:textproc/xmlto
+
+USES=		pkgconfig gmake tar:tgz ssl
+USE_GITHUB=	yes
 
 PLIST_FILES=	bin/proxytunnel man/man1/proxytunnel.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

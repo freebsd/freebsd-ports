@@ -3,6 +3,7 @@
 
 PORTNAME=	mayavi
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +31,7 @@ RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui
 
-USES=		python:-2.7 tar:bzip2
+USES=		execinfo python:-2.7 tar:bzip2
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8+
 WX_COMPS=	python:run
@@ -47,6 +48,6 @@ pre-configure:
 	fi
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/tvtk/array_ext.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tvtk/array_ext.so
 
 .include <bsd.port.mk>

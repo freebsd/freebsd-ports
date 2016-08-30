@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	subsonic-standalone
-PORTVERSION=	5.2
+PORTVERSION=	6.0
 CATEGORIES=	www java
 MASTER_SITES=	SF/subsonic/subsonic/${PORTVERSION}
 DISTNAME=	subsonic-${PORTVERSION}-standalone
@@ -41,52 +41,46 @@ APE_RUN_DEPENDS=	mac:audio/mac
 
 .include <bsd.port.options.mk>
 
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_RC_SUBR=	subsonic
 JAVA_VERSION=	1.6+
+JAVA_RUN=	yes
 USERS=		subsonic
 GROUPS=		subsonic
 SUBSONIC_HOME=	/var/subsonic
-SUBSONIC_DIR=	${PREFIX}/${PORTDIRNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 		USER="${USERS}" \
 		GROUP="${GROUPS}"
-SUB_FILES= 	pkg-message \
-		message-transcoding \
-		subsonic
+SUB_FILES=	pkg-message \
+		message-transcoding
 SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
-		SUBSONIC_DIR="${SUBSONIC_DIR}" \
 		USER="${USERS}" \
 		GROUP="${GROUPS}" \
 		JAVA="${JAVA}"
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${TAR} -xf ${DISTDIR}/${DISTNAME}.tar.gz -C ${WRKSRC} --no-same-owner --no-same-permission
+CONFLICTS_INSTALL=	subsonic-jetty subsonic-resin3 subsonic-tomcat[678]
 
 do-install:
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 	@${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_DIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/LICENSE.TXT ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/README.TXT ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/subsonic.war ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/subsonic-booter-jar-with-dependencies.jar ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTDIRNAME}/subsonic.sh ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_HOME}
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_HOME}/transcode
-.if ${PORT_OPTIONS:MFFMEG}
-	${LN} -sf ${PREFIX}/bin/ffmeg ${STAGEDIR}${SUBSONIC_HOME}/transcode/ffmpeg
-.endif
-.if ${PORT_OPTIONS:MFLAC}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/README.TXT ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/subsonic.war ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/subsonic-booter-jar-with-dependencies.jar ${STAGEDIR}${DATADIR}/
+
+post-install:
+	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}/transcode
+
+post-install-FFMPEG-on:
+	${LN} -sf ${PREFIX}/bin/ffmpeg ${STAGEDIR}${SUBSONIC_HOME}/transcode/ffmpeg
+
+post-install-FLAC-on:
 	${LN} -sf ${PREFIX}/bin/flac ${STAGEDIR}${SUBSONIC_HOME}/transcode/flac
-.endif
-.if ${PORT_OPTIONS:MLAME}
+
+post-install-LAME-on:
 	${LN} -sf ${PREFIX}/bin/lame ${STAGEDIR}${SUBSONIC_HOME}/transcode/lame
-.endif
 
 .include <bsd.port.mk>

@@ -126,6 +126,7 @@
     SUBDIR += psi
     SUBDIR += psimedia
     SUBDIR += pwytter
+    SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-libturpial

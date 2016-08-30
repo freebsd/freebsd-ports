@@ -42,7 +42,7 @@ KDE4_GAMES_ALL=	bomber \
 		palapeli \
 		picmi
 
-ksnakeduel_DETECT=	${KDE4_PREFIX}/bin/ktron
+ksnakeduel_DETECT=	${KDE_PREFIX}/bin/ktron
 
 bomber_DESC=	Arcade Bombing game
 bovo_DESC=	Five-in-a-row Board game

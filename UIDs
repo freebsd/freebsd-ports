@@ -844,7 +844,7 @@ graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
 # free: 895
 # free: 896
 # free: 897
-# free: 898
+ufdb:*:898:898::0:0:ufdb user:/nonexistent:/usr/sbin/nologin
 guacamole:*:899:899::0:0:Guacamole user:/nonexistent:/usr/sbin/nologin
 seafile:*:900:900::0:0:Seafile user:/nonexistent:/usr/bin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash

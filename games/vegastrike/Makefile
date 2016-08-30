@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 3D space simulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
@@ -46,6 +47,12 @@ MESHER_PLIST_FILES=	bin/mesher
 MESHER_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
+BROKEN=		does not build on 10.1
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \
 		${WRKSRC}/configure
@@ -56,4 +63,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

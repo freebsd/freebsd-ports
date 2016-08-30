@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32
-PORTVERSION=	3.2.7
+PORTVERSION=	3.2.9
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \

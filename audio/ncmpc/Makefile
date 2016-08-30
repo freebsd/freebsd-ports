@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
@@ -16,14 +16,12 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS LYRICS
 OPTIONS_DEFAULT=	LYRICS
 LYRICS_DESC=	Compile with lyrics screen
 
-USES=		iconv pkgconfig
+USES=		iconv localbase pkgconfig
 PLIST_FILES=	bin/ncmpc \
 		man/man1/ncmpc.1.gz \
 		%%EXAMPLESDIR%%/config \
@@ -49,12 +47,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${STAGEDIR}${EXAMPLESDIR}/keys
 	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
 do-install-NLS-on:
 .for language in ${LANGUAGES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${language}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo \
 		${STAGEDIR}${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
+
 do-install-LYRICS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics
 	(cd ${WRKSRC}/lyrics && ${INSTALL_SCRIPT} \

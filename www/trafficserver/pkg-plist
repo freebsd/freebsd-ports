@@ -22,7 +22,6 @@ bin/tsxs
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/README
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#denied
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#proxy_auth_required
-@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#redirect_url
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#ssl_forbidden
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#not_in_cache
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#read_error
@@ -54,6 +53,7 @@ bin/tsxs
 @sample %%ETCDIR%%/ip_allow.config.sample
 @sample %%ETCDIR%%/log_hosts.config.sample
 @sample %%ETCDIR%%/logs_xml.config.sample
+@sample %%ETCDIR%%/metrics.config.sample
 @sample %%ETCDIR%%/parent.config.sample
 @sample %%ETCDIR%%/plugin.config.sample
 @sample %%ETCDIR%%/records.config.sample
@@ -116,6 +116,7 @@ libexec/trafficserver/AsyncHttpFetchStreaming.so
 libexec/trafficserver/AsyncTimer.so
 libexec/trafficserver/ClientRedirect.so
 libexec/trafficserver/ClientRequest.so
+libexec/trafficserver/CustomErrorRemapPlugin.so
 libexec/trafficserver/CustomResponse.so
 libexec/trafficserver/GlobalHookPlugin.so
 libexec/trafficserver/GzipTransformationPlugin.so

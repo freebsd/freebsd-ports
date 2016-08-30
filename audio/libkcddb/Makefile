@@ -13,8 +13,8 @@ COMMENT=	KDE CDDB library
 
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5
 
-USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdelibs
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	qtestlib moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

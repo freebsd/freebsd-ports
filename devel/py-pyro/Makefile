@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyro
-PORTVERSION=	4.42
+PORTVERSION=	4.47
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,16 @@ USE_PYTHON=	autoplist concurrent distutils
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}selectors34>0:devel/py-selectors34
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/source && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

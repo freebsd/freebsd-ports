@@ -15,8 +15,9 @@ COMMENT=	KDE style with animations
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/kde4-kstyle-nitrogen-${PORTVERSION}-Source
-USE_KDE4=	kdelibs automoc4
+
+USES=		cmake kde:4
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
 
 .include <bsd.port.mk>

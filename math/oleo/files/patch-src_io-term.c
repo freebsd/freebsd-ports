@@ -1,5 +1,5 @@
---- src/io-term.c.orig	2014-02-14 10:32:37.000000000 +0100
-+++ src/io-term.c	2014-02-14 10:32:58.000000000 +0100
+--- src/io-term.c.orig	2001-02-13 23:38:06 UTC
++++ src/io-term.c
 @@ -1,7 +1,7 @@
  /*
   * $Id: io-term.c,v 1.51 2001/02/13 23:38:06 danny Exp $
@@ -9,7 +9,7 @@
   * 
   * This file is part of Oleo, the GNU Spreadsheet.
   * 
-@@ -220,6 +220,7 @@
+@@ -220,6 +220,7 @@ do_set_option (char *ptr)
  {
    int	set_opt = 1;
    int	i, l;
@@ -17,7 +17,7 @@
    char	*p;
  
    while (*ptr == ' ')
-@@ -234,9 +235,11 @@
+@@ -234,9 +235,11 @@ do_set_option (char *ptr)
  
  		if (Preferences[i].copynext) {
  			ptr += strlen(Preferences[i].name) + 1;
@@ -32,7 +32,7 @@
  
  		if (Preferences[i].cont == 0)
  			return 1;
-@@ -1023,7 +1026,7 @@
+@@ -1023,7 +1026,7 @@ main (int argc, char **argv)
  	  case 'v':
  	  case 'V':
  	    printf(_("%s %s\n"), GNU_PACKAGE, VERSION);

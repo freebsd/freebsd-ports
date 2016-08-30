@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	1.6.4
+PORTVERSION=	1.7.0
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
@@ -10,13 +10,38 @@ MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
-LICENSE=	BSD2CLAUSE
+SSHGUARDFW?=	none
 
-CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.* sshguard-null-1.*
+# If SSHGUARDFW is not set by a slave port, then we only use the
+# following which makes this a metaport to choose a backend
+.if ${SSHGUARDFW} == none
+NO_BUILD=YES
+NO_INSTALL=YES
+NO_ARCH=YES
+
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	IPFW NULL PF
+OPTIONS_DEFAULT=	IPFW
+
+IPFW_DESC=	IPFW firewall backend
+NULL_DESC=	null firewall backend (detection only)
+PF_DESC=	pf firewall backend
+
+IPFW_RUN_DEPENDS=	sshguard-ipfw>0:security/sshguard-ipfw
+NULL_RUN_DEPENDS=	sshguard-null>0:security/sshguard-null
+PF_RUN_DEPENDS=		sshguard-pf>0:security/sshguard-pf
+
+.include <bsd.port.options.mk>
+
+# The remaining settings are used by the slave ports
+.else
+
+LICENSE=	BSD2CLAUSE
 
 USES=		autoreconf
 
-PLIST_FILES=	sbin/sshguard man/man8/sshguard.8.gz
+PLIST_FILES=	libexec/sshg-fw libexec/sshg-logtail libexec/sshg-parser \
+		sbin/sshguard man/man8/sshguard.8.gz
 
 USE_RC_SUBR=	sshguard
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
@@ -25,20 +50,14 @@ CONFIGURE_ARGS+=--with-firewall=${SSHGUARDFW}
 
 SUB_LIST+=	PKGMSG_FWBLOCK=${PKGMSG_FWBLOCK}
 SUB_FILES=	pkg-message
-
-# backend type in { hosts, ipfw, null, pf }
-SSHGUARDFW?=	hosts
+.endif
 
 .if ${SSHGUARDFW} == pf
 PKGMSG_FWBLOCK="  To activate or configure PF see http://www.sshguard.net/docs/setup/firewall/pf/"
 .elif ${SSHGUARDFW} == ipfw
 PKGMSG_FWBLOCK="  IPFW support has been rewritten. Sshguard will now add entries to table 22."
-.elif ${SSHGUARDFW} == hosts
-PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow. Please remember to touch /etc/hosts.allow\!"
-.elif ${SSHGUARDFW} == ipfilter
-PKGMSG_FWBLOCK="  Sshguard will use /etc/ipf.rules as ruleset."
 .elif ${SSHGUARDFW} == null
-PKGMSG_FWBLOCK="  Sshguard null backend requires you provide your own script with the \"-e\" argument."
+PKGMSG_FWBLOCK="  Sshguard null backend does detection only. It does not take action."
 .endif
 
 .include <bsd.port.mk>

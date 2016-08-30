@@ -6,28 +6,34 @@ PORTVERSION=	1.6.7.2
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Free open source 2D MMORPG client for athena and evol servers
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libphysfs.so:devel/physfs
 
-USES=		gettext pkgconfig:build tar:xz
+USES=		pkgconfig:build tar:xz
 USE_XORG=	x11
 USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-sdl2 \
+CONFIGURE_ARGS=	--with-sdl2 \
 		--without-internalsdlgfx
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-OPTIONS_DEFINE=		OPENGL
+OPTIONS_DEFINE=		OPENGL NLS
 OPTIONS_DEFAULT=	OPENGL
+OPTIONS_SUB=		yes
 
 OPENGL_CONFIGURE_WITH=	opengl
 OPENGL_USE=		GL=gl
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

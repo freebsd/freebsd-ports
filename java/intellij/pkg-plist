@@ -285,7 +285,6 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/android/lib/asm-tree-5.0.3.jar
 %%IDEA_HOME%%/plugins/android/lib/bcpkix-jdk15on-1.48.jar
 %%IDEA_HOME%%/plugins/android/lib/bcprov-jdk15on-1.48.jar
-%%IDEA_HOME%%/plugins/android/lib/builder-model-1.5.0-beta2.jar
 %%IDEA_HOME%%/plugins/android/lib/builder-model-2.0.0-alpha7.jar
 %%IDEA_HOME%%/plugins/android/lib/common.jar
 %%IDEA_HOME%%/plugins/android/lib/commons-compress-1.0.jar
@@ -1522,7 +1521,6 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/javaFX/lib/javaFX.jar
 %%IDEA_HOME%%/plugins/javaFX/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/junit/lib/idea-junit.jar
-%%IDEA_HOME%%/plugins/junit/lib/junit-jupiter-api-5.0.0-M1.jar
 %%IDEA_HOME%%/plugins/junit/lib/junit-jupiter-engine-5.0.0-M1.jar
 %%IDEA_HOME%%/plugins/junit/lib/junit-platform-commons-1.0.0-M1.jar
 %%IDEA_HOME%%/plugins/junit/lib/junit-platform-engine-1.0.0-M1.jar

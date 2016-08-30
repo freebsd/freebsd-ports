@@ -19,15 +19,19 @@ RUN_DEPENDS=	xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:textproc/docbook-xsl
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*
+PORTDATA=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -R ${WRKSRC}/xsl ${STAGEDIR}${DATADIR}
-	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	cd ${WRKSRC}/xsl && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

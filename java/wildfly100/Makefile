@@ -3,7 +3,7 @@
 
 PORTNAME=	wildfly100
 PORTVERSION=	10.0.0
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}

@@ -11,16 +11,16 @@ COMMENT=	KDE mind mapping tool
 
 LICENSE=	GPLv3
 
-USE_KDE4=	kdelibs
+USES=		kde:4 pkgconfig python:2 shebangfix tar:bzip2 waf \
+		shared-mime-info
+USE_KDE=	kdelibs
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_QT4=	corelib gui linguist_build svg webkit xml \
 		moc_build qmake_build uic_build
-USES=		pkgconfig python:2 shebangfix tar:bzip2 waf \
-		shared-mime-info
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
-		PATH="${KDE4_PREFIX}/bin:$$PATH" \
+		PATH="${KDE_PREFIX}/bin:$$PATH" \
 		WAF_HOME="${WRKSRC}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include

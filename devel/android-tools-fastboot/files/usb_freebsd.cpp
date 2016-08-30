@@ -30,6 +30,8 @@
 #include <string.h>
 #include <libusb.h>
 
+#include <memory>
+
 #include "usb.h"
 
 struct usb_handle {
@@ -40,8 +42,24 @@ struct usb_handle {
 	unsigned char iface;
 };
 
+class LibusbUsbTransport : public Transport {
+public:
+	explicit LibusbUsbTransport(std::unique_ptr<usb_handle> handle):
+		h(std::move(handle)) {}
+	~LibusbUsbTransport() override = default;
+
+	ssize_t Read(void *_data, size_t len) override;
+	ssize_t Write(const void *_data, size_t len) override;
+	int Close() override;
+
+private:
+	std::unique_ptr<usb_handle> h;
+
+	DISALLOW_COPY_AND_ASSIGN(LibusbUsbTransport);
+};
+
 static int 
-probe(usb_handle *h, ifc_match_func callback)
+probe(std::unique_ptr<usb_handle> &h, ifc_match_func callback)
 {
 	usb_ifc_info info;
 	libusb_device_descriptor ddesc;
@@ -120,18 +138,14 @@ probe(usb_handle *h, ifc_match_func callback)
 	return (-1);
 }
 
-static usb_handle *
+static std::unique_ptr<usb_handle>
 enumerate(ifc_match_func callback)
 {
 	static libusb_context *ctx = NULL;
-	usb_handle *h;
+	std::unique_ptr<usb_handle> h;
 	libusb_device **ppdev;
 	ssize_t ndev;
 	ssize_t x;
-
-	h = reinterpret_cast<usb_handle*>(malloc(sizeof(*h)));
-	if (h == NULL)
-		return (h);
 
 	if (ctx == NULL)
 		libusb_init(&ctx);
@@ -139,7 +153,7 @@ enumerate(ifc_match_func callback)
 	ndev = libusb_get_device_list(ctx, &ppdev);
 	for (x = 0; x < ndev; x++) {
 
-		memset(h, 0, sizeof(*h));
+		h.reset(new usb_handle);
 
 		h->dev = ppdev[x];
 
@@ -149,13 +163,13 @@ enumerate(ifc_match_func callback)
 			return (h);
 		}
 	}
-	free(h);
+	h.reset();
 	libusb_free_device_list(ppdev, 1);
-	return (NULL);
+	return (nullptr);
 }
 
-int 
-usb_write(usb_handle * h, const void *_data, int len)
+ssize_t
+LibusbUsbTransport::Write(const void *_data, size_t len)
 {
 	int actlen;
 
@@ -165,8 +179,8 @@ usb_write(usb_handle * h, const void *_data, int len)
 	return (actlen);
 }
 
-int 
-usb_read(usb_handle * h, void *_data, int len)
+ssize_t
+LibusbUsbTransport::Read(void *_data, size_t len)
 {
 	int actlen;
 
@@ -176,25 +190,19 @@ usb_read(usb_handle * h, void *_data, int len)
 	return (actlen);
 }
 
-int 
-usb_close(usb_handle * h)
+int
+LibusbUsbTransport::Close()
 {
 	libusb_close(h->handle);
 	h->handle = NULL;
 	libusb_unref_device(h->dev);
-	free(h);
+	h.reset();
 	return (0);
 }
 
-usb_handle *
+Transport *
 usb_open(ifc_match_func callback)
 {
-	return (enumerate(callback));
-}
-
-int
-usb_wait_for_disconnect(usb_handle * h)
-{
-	/* TODO: Punt for now */
-	return 0;
+	std::unique_ptr<usb_handle> h = enumerate(callback);
+	return (h ? new LibusbUsbTransport(std::move(h)) : nullptr);
 }

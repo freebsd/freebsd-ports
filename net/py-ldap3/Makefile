@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap3
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

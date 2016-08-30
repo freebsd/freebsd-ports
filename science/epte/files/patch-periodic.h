@@ -5,7 +5,7 @@
  #include <curses.h>
  #endif
 -#if defined(linux) || defined(__FreeBSD)
-+#if defined(linux) || defined(__FreeBSD__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__DragonFly__)
  #include <ncurses.h>
  #endif
  

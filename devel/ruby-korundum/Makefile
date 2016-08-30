@@ -10,13 +10,13 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for KDE
 
-USE_KDE4=	kate kdelibs okular pimlibs \
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	kate kdelibs okular pimlibs \
 		qtruby smokegen smokekde smokeqt \
 		akonadi automoc4 soprano
 USE_QT4=	corelib network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
-USES=		cmake:outsource tar:xz
 
 CMAKE_ARGS+=	-DRUBY_LIBRARY=${LOCALBASE}/lib/lib${RUBY_NAME}.so \
 		-DRUBY_INCLUDE_PATH=${LOCALBASE}/lib/ruby/${RUBY_VER}/${RUBY_ARCH} \

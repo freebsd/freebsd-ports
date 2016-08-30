@@ -16,7 +16,8 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 ALL_TARGET=	config_kde
-USE_KDE4=	runtime
+USE_KDE=	runtime
+USES+=		kde:4
 
 LIBPROXY_SLAVE=	kde
 

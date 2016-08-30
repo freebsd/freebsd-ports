@@ -1,4 +1,4 @@
---- builds/posix/make.rules.orig	2015-03-27 13:46:38 UTC
+--- builds/posix/make.rules.orig	2016-06-30 09:34:53 UTC
 +++ builds/posix/make.rules
 @@ -37,6 +37,8 @@ WFLAGS:=$(CPPFLAGS) -I$(SRC_ROOT)/includ
  

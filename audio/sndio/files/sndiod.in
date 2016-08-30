@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: sndiod
-# REQUIRE: NETWORKING sysctl
+# REQUIRE: NETWORKING
 # BEFORE:  DAEMON
 # KEYWORD: shutdown
 
@@ -23,9 +23,8 @@ rcvar=sndiod_enable
 
 load_rc_config $name
 
-_sndiod_devnum=$($SYSCTL -n hw.snd.default_unit)
 : ${sndiod_enable="NO"}
-: ${sndiod_flags="-f rsnd/$_sndiod_devnum"}
+: ${sndiod_flags="-s default -m mon -s monitor"}
 
 command="%%PREFIX%%/bin/sndiod"
 

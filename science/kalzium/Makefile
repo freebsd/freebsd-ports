@@ -18,8 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:math/eigen2 \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource pkgconfig tar:xz
+USES=		cmake:outsource kde:4 pkgconfig tar:xz
+USE_KDE=	kdelibs automoc4
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_QT4=	corelib declarative designer opengl script xml \

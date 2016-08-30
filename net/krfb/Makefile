@@ -11,8 +11,8 @@ COMMENT=	VNC server for KDE
 
 LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
 
-USES=		alias cmake:outsource jpeg tar:xz
-USE_KDE4=	kdelibs automoc4
+USES=		alias cmake:outsource jpeg kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib gui network \
 		moc_build qmake_build rcc_build uic_build
 

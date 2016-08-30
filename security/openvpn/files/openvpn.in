@@ -101,10 +101,18 @@ softrestart()
     exit $?
 }
 
+openvpn_stats()
+{
+	sig_reload=USR2
+	run_rc_command ${rc_prefix}reload $rc_extra_args
+}
+
 # reload: support SIGHUP to reparse configuration file
 # softrestart: support SIGUSR1 to reconnect without superuser privileges
-extra_commands="reload softrestart"
+# stats: support SIGUSR2 to write statistics to the syslog
+extra_commands="reload softrestart stats"
 softrestart_cmd="softrestart"
+stats_cmd="openvpn_stats"
 
 # pidfile
 pidfile="/var/run/${name}.pid"

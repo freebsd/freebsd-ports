@@ -3,11 +3,11 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fax software
 
 LICENSE=	MIT

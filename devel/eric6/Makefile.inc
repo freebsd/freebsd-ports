@@ -6,13 +6,13 @@
 # french/eric6, german/eric6, russian/eric6
 
 PORTNAME=	eric6
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.8
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME?=	${PORTNAME}-i18n-${I18N_LANG}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER?=	bsam@FreeBSD.org
-COMMENT=	Full featured Python and Ruby editor and IDE based on Qt4
+MAINTAINER?=	dbn@FreeBSD.org
+COMMENT=	Full featured Python and Ruby editor and IDE based on Qt
 
 LICENSE=	GPLv3
 

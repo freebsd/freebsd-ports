@@ -1,4 +1,4 @@
 A program that connects stdin and stdout to an origin server somewhere in the
 Internet through an industry standard HTTPS proxy.
 
-WWW: http://proxytunnel.sourceforge.net/
+WWW: https://github.com/proxytunnel/proxytunnel/

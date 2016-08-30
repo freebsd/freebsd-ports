@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libalkimia.so:finance/libalkimia
 
-USES=		cmake pkgconfig shared-mime-info shebangfix tar:xz
+USES=		cmake kde:4 pkgconfig shared-mime-info shebangfix tar:xz
 USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs pimlibs
+USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	kmymoney/misc/financequote.pl

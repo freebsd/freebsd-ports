@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.5-5
+DISTVERSION=	6.9.5-7
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -50,7 +50,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 libxml2
+USE_GNOME=	libxml2
 
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
@@ -172,7 +172,8 @@ PLIST_SUB+=		MODULES='@comment '
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenEXR requires threads. ${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-LIB_DEPENDS+=		libIlmImf.so:graphics/OpenEXR
+LIB_DEPENDS+=		libIlmImf.so:graphics/OpenEXR \
+			libImath-2_2.so:graphics/ilmbase
 PLIST_SUB+=		OPENEXR=""
 . endif
 .else
@@ -229,6 +230,7 @@ CONFIGURE_ARGS+=	--without-gslib
 .if ${PORT_OPTIONS:MLQR}
 CONFIGURE_ARGS+=	--with-lqr
 LIB_DEPENDS+=		liblqr-1.so:graphics/liblqr-1
+USE_GNOME+=		glib20
 .else
 CONFIGURE_ARGS+=	--without-lqr
 .endif

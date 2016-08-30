@@ -1,0 +1,34 @@
+From f249aa412dd4a09881cb450390d1003815bd0013 Mon Sep 17 00:00:00 2001
+From: Zach Crownover <zachary.crownover@gmail.com>
+Date: Fri, 5 Aug 2016 15:24:27 -0700
+Subject: [PATCH] dma - Fix security hole (#46)
+
+Affecting DragonFly 4.6 and earlier, Matt Dillon fixed this in base after
+finding out from BSDNow Episode 152. Comments following were from his commit
+which explains better than I. Just taking his change and putting it here as well.
+
+* dma makes an age-old mistake of not properly checking whether a file
+  owned by a user is a symlink or not, a bug which the original mail.local
+  also had.
+
+* Add O_NOFOLLOW to disallow symlinks.
+
+Thanks-to: BSDNow Episode 152, made me dive dma to check when they talked
+           about the mail.local bug.
+---
+ dma-mbox-create.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dma-mbox-create.c b/dma-mbox-create.c
+index 532a7af..45a4792 100644
+--- a/dma-mbox-create.c
++++ b/dma-mbox-create.c
+@@ -142,7 +142,7 @@ main(int argc, char **argv)
+ 		logfail(EX_CANTCREAT, "cannot build mbox path for `%s/%s'", _PATH_MAILDIR, user);
+ 	}
+ 
+-	f = open(fn, O_RDONLY|O_CREAT, 0600);
++	f = open(fn, O_RDONLY|O_CREAT|O_NOFOLLOW, 0600);
+ 	if (f < 0)
+ 		logfail(EX_NOINPUT, "cannt open mbox `%s'", fn);
+ 

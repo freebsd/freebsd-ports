@@ -12,8 +12,10 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deegree Web Feature Service(WFS)
 
+LICENSE=	GPL21+
+
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 NO_BUILD=	yes
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
@@ -34,14 +36,14 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 TOMCATVER=	apache-tomcat-6.0
-TCPORT=	8180
+TCPORT=		8180
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 TOMCATVER=	apache-tomcat-7.0
-TCPORT=	8080
+TCPORT=		8080
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 .endif
@@ -52,7 +54,9 @@ post-extract:
 
 do-install:
 	cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WEBAPPDIR}/${PORTDIRNAME}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

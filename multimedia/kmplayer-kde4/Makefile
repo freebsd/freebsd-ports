@@ -16,10 +16,10 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource kde:4 pkgconfig
 USE_GNOME=	cairo gtk20
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs
+USE_KDE=	automoc4 kdelibs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE

@@ -11,7 +11,7 @@ LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_GITHUB=	yes
-GH_TUPLE=	zulip:${PORTNAME}:${PORTVERSION}
+GH_ACCOUNT=	zulip
 USES=		gmake pgsql
 
 PLIST_FILES=	lib/postgresql/tsearch_extras.so \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RetroArch
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -52,6 +52,7 @@ FBO_CONFIGURE_ENABLE=	fbo
 CFLAGS+=	-pthread
 LDFLAGS+=	-pthread
 CONFIGURE_ARGS+=--enable-threads
+CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 
@@ -64,8 +65,6 @@ CONFIGURE_ARGS+=--global-config-dir=${LOCALBASE}/etc
 USES=		compiler:c++11-lib gmake pkgconfig
 USE_XORG=	x11 xcb xext xinerama xv xxf86vm
 
-MAN1PAGES=	retroarch-cg2glsl.1 retroarch.1
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/camera/drivers/video4linux2.c \
@@ -74,16 +73,14 @@ post-patch:
 		${WRKSRC}/memory/wii/mem2_manager.c
 	@${REINPLACE_CMD} -e 's|<asm/types.h>|<sys/types.h>|' \
 		${WRKSRC}/camera/drivers/video4linux2.c
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e '/^add_define_make DYLIB_LIB/s|$$|;\
+		add_include_dirs ${LOCALBASE}/include;\
+		add_library_dirs ${LOCALBASE}/lib| ; \
+		/^check_lib OSS_LIB/d' \
 		${WRKSRC}/qb/config.libs.sh
 
 post-install:
-	if [ -n "${STRIP}" ]; then \
-	        ${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/retroarch; \
-	fi
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/retroarch.1
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/retroarch-cg2glsl.1
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/man
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/retroarch
 	@${REINPLACE_CMD} -e 's|# libretro_directory =|libretro_directory = "${PREFIX}/libexec/libretro"|' \
 		${STAGEDIR}${PREFIX}/etc/retroarch.cfg
 

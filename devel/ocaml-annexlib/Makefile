@@ -29,6 +29,8 @@ ALL_TARGET=	all opt
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}

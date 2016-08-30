@@ -60,6 +60,11 @@ CONFIGURE_ARGS+=--enable-dom \
 USE_GNOME=	libxml2
 .endif
 
+.if ${PHP_MODNAME} == "enchant"
+LIB_DEPENDS+=   libenchant.so:textproc/enchant
+CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
+.endif
+
 .if ${PHP_MODNAME} == "exif"
 CONFIGURE_ARGS+=--enable-exif
 .endif

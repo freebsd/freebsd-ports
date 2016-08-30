@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	New features in unittest backported to Python 2.4+
 
+DEPRECATED=	Was only required for Pythons lesser than 2.7
+EXPIRATION_DATE=	2016-09-21
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 

@@ -14,11 +14,11 @@ COMMENT=	Ruby bindings for Qt
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
 		libqscintilla2.so:devel/qscintilla2
 
-USE_KDE4=	smokeqt
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	smokeqt
 USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
-USES=		cmake:outsource tar:xz
 USE_LDCONFIG=	yes
 
 SUB_FILES=	ruby-kdebindings-env.sh pkg-message

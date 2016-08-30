@@ -15,15 +15,15 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libsasl2.so:security/cyrus-sasl2 \
 		libboost_thread.so:devel/boost-libs \
 		libkgapi2.so:devel/libkgapi
-RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
+RUN_DEPENDS=	${KDE_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
 		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 
 CONFLICTS_INSTALL=	kdepim44-4.*
 
 USE_GNOME=	libxml2 libxslt:build
-USE_KDE4=	kdelibs pimlibs kactivities \
+USE_KDE=	kdelibs pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
-USES=		cmake:outsource gmake grantlee:4 iconv shebangfix tar:xz
+USES=		cmake:outsource gmake grantlee:4 iconv kde:4 shebangfix tar:xz
 SHEBANG_FILES=	agents/mailfilteragent/kconf_update/migrate-kmail-filters.pl \
 		kalarm/*.pl kmail/kconf_update/*.pl \
 		libkpgp/kconf_update/kpgp-3.1-upgrade-address-data.pl

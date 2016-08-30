@@ -13,7 +13,7 @@ COMMENT?=	Cross-platform Makefile generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-USE_KDE4=	# env
+USES=		kde:4 # Just pull in env for KDE_PREFIX
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
-USES+=		execinfo libarchive
+USES+=		execinfo libarchive ncurses
 HAS_CONFIGURE=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -53,7 +53,7 @@ post-patch:
 		${WRKSRC}/Source/cmLocalGenerator.cxx \
 		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
 		${WRKSRC}/bootstrap
-	@${REINPLACE_CMD} -e 's,/opt/kde4,${KDE4_PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/opt/kde4,${KDE_PREFIX},g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
 		${WRKSRC}/Modules/FindDCMTK.cmake

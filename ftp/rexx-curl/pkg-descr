@@ -1,0 +1,6 @@
+Rexx/CURL is an external function package providing an interface to the cURL
+package. cURL is a general purpose package that allows access to any
+URL-addressable resource. With Rexx/CURL you can access resources such as web
+pages, ftp sites, and telnet sessions under control of your Rexx program.
+
+WWW: http://rexxcurl.sourceforge.net/

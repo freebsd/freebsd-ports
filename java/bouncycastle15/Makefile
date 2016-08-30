@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	java security
 MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
 		http://polydistortion.net/bc/download/ \

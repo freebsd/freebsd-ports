@@ -8,7 +8,7 @@
  rmidi=no				# do we want support for raw char dev ?
  precision=16				# aucat/sndiod arithmetic precision
  user=_sndio				# non-privileged user for sndio daemon
-@@ -71,6 +72,14 @@ case `uname` in
+@@ -71,6 +72,15 @@ case `uname` in
  		defs='-DHAVE_ARC4RANDOM -DHAVE_ISSETUGID \\\
  		-DHAVE_STRLCAT -DHAVE_STRLCPY -DHAVE_STRTONUM'
  		;;
@@ -16,14 +16,15 @@
 +		user=_sndio
 +		so="$so libsndio.so"
 +		defs='-DHAVE_ARC4RANDOM -DHAVE_ISSETUGID \\\
-+		-DHAVE_STRLCAT -DHAVE_STRLCPY -DHAVE_STRTONUM'
++		-DHAVE_STRLCAT -DHAVE_STRLCPY -DHAVE_STRTONUM \\\
++		-DDEFAULT_DEV=\\"fallback\\"'
 +		oss=yes
 +		mandir=${prefix}/man
 +		;;
  esac
  
  # shell word separator (none)
-@@ -106,6 +115,12 @@ for i; do
+@@ -106,6 +116,12 @@ for i; do
  	--disable-alsa)
  		alsa=no
  		shift;;
@@ -36,7 +37,7 @@
  	--enable-sun)
  		sun=yes
  		shift;;
-@@ -162,6 +177,13 @@ if [ $alsa = yes ]; then
+@@ -162,6 +178,13 @@ if [ $alsa = yes ]; then
  fi
  
  #
@@ -50,7 +51,7 @@
  # if using Sun API, add corresponding parameters
  #
  if [ $sun = yes ]; then
-@@ -215,6 +237,7 @@ user..................... $user
+@@ -215,6 +238,7 @@ user..................... $user
  libbsd................... $libbsd
  precision................ $precision
  alsa..................... $alsa

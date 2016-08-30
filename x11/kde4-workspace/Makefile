@@ -24,7 +24,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 BUILD_DEPENDS=	xrdb:x11/xrdb
-RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
+RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
 		xprop:x11/xprop \
 		xsetroot:x11/xsetroot \
@@ -33,18 +33,18 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 		mkfontdir:x11-fonts/mkfontdir \
 		xset:x11/xset \
 		setxkbmap:x11/setxkbmap \
-		${KDE4_PREFIX}/bin/ksysguardd:sysutils/ksysguardd \
-		${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:sysutils/polkit-kde \
-		${KDE4_PREFIX}/lib/kde4/libexec/polkitkde1helper:sysutils/kcm-polkit-kde \
+		${KDE_PREFIX}/bin/ksysguardd:sysutils/ksysguardd \
+		${KDE_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:sysutils/polkit-kde \
+		${KDE_PREFIX}/lib/kde4/libexec/polkitkde1helper:sysutils/kcm-polkit-kde \
 		${LOCALBASE}/etc/pam.d/kde:security/pam_kde \
-		${KDE4_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:x11-themes/kde4-base-artwork
+		${KDE_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:x11-themes/kde4-base-artwork
 
+USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg kde:4 \
+		pkgconfig shebangfix tar:xz
 USE_GL=		glu
 USE_GNOME=	glib20
-USE_KDE4=	kactivities kdelibs nepomuk-core oxygen \
+USE_KDE=	kactivities kdelibs nepomuk-core oxygen-icons4 \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
-USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg \
-		pkgconfig shebangfix tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui network \
 		opengl phonon qtestlib script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build
@@ -85,23 +85,23 @@ GSTREAMER_DESC=	Multimedia via Phonon-GStreamer
 GSTREAMER_USE=	QT4=phonon-gst_run
 
 KACTIVITY_DESC=		Activity Manager daemon
-KACTIVITY_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kactivitymanagerd:x11/kactivitymanagerd
+KACTIVITY_RUN_DEPENDS=	${KDE_PREFIX}/bin/kactivitymanagerd:x11/kactivitymanagerd
 
 PYTHON_DESC=		Python plasmoids support
-PYTHON_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:x11/plasma-scriptengine-python
+PYTHON_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:x11/plasma-scriptengine-python
 
 RUBY_DESC=		Ruby plasmoids support
-RUBY_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:x11/plasma-scriptengine-ruby
+RUBY_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:x11/plasma-scriptengine-ruby
 
 UPOWER_DESC=		Power management via UPower
 UPOWER_RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
 VLC_DESC=		Multimedia via Phonon-VLC
-VLC_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:multimedia/phonon-vlc
+VLC_RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:multimedia/phonon-vlc
 
 WALLPAPERS_DESC=	Install official KDE wallpapers
-WALLPAPERS_RUN_DEPENDS=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:x11-themes/kde4-wallpapers \
-			${KDE4_PREFIX}/share/wallpapers/stripes-freebsd-blue/metadata.desktop:x11-themes/kde4-wallpapers-freebsd
+WALLPAPERS_RUN_DEPENDS=	${KDE_PREFIX}/share/wallpapers/Horos/metadata.desktop:x11-themes/kde4-wallpapers \
+			${KDE_PREFIX}/share/wallpapers/stripes-freebsd-blue/metadata.desktop:x11-themes/kde4-wallpapers-freebsd
 
 .if !exists(/usr/lib/libutempter.so)
 LIB_DEPENDS+=	libutempter.so:sysutils/libutempter

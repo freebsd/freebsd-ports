@@ -23,6 +23,7 @@ GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 GH_TAGNAME=	${GH_MYTAG}-249-g5f1de52:bionic \
 		${GH_MYTAG}-554-g371e7ea170d7:core \
 		${GH_MYTAG}-6-ge43f249:lzma
+GH_SUBDIR=	bionic:bionic lzma:lzma
 
 USES=		compiler:c++11-lib uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
@@ -45,8 +46,6 @@ TEST_ALL_TARGET=	simpleperf_test
 post-extract:
 # Adjust paths relative to extras
 	@(cd ${WRKSRC_core} && ${COPYTREE_SHARE} . ${WRKSRC})
-	@${MV} ${WRKSRC_bionic} ${WRKSRC}/bionic
-	@${MV} ${WRKSRC_lzma} ${WRKSRC}/lzma
 
 post-patch:
 # XXX C++ exception with description "regex_error" thrown in the test body.

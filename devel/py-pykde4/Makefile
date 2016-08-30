@@ -13,7 +13,8 @@ COMMENT=	Python bindings for KDE
 
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
 
-USE_KDE4=	kdelibs nepomuk-core okular pimlibs \
+USES=		cmake:outsource kde:4 python:2 pyqt:4 tar:xz
+USE_KDE=	kdelibs nepomuk-core okular pimlibs \
 		akonadi automoc4 soprano
 USE_PYQT=	declarative designer gui network opengl phonon script sip \
 		sql svg webkit xml \
@@ -21,7 +22,6 @@ USE_PYQT=	declarative designer gui network opengl phonon script sip \
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build
 
-USES=		cmake:outsource python:2 pyqt:4 tar:xz
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE \
 		-DENABLE_PYTHON=ON \
 		-DPYTHON_INCLUDE_DIR:PATH=${WRKDIR}/include/${PYTHON_VERSION}

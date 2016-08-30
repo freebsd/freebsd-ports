@@ -50,8 +50,8 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
 
 .if exists(/usr/lib32/libc.so)
-OPTIONS_DEFINE_powerpc64=	MULTILIB
-OPTIONS_DEFAULT_powerpc64=	MULTILIB
+OPTIONS_DEFINE_powerpc64+=	MULTILIB
+OPTIONS_DEFAULT_powerpc64+=	MULTILIB
 MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
@@ -62,8 +62,6 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64

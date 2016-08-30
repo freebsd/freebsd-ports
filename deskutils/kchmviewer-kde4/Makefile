@@ -14,14 +14,14 @@ COMMENT=	KDE viewer for CHM files
 LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libzip.so:archivers/libzip
 
-USES=		cmake:outsource gettext-tools
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource gettext-tools kde:4
+USE_KDE=	kdelibs automoc4
 USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} 's,/usr/bin/kate,${KDE4_PREFIX}/bin/kate,' \
+	${REINPLACE_CMD} 's,/usr/bin/kate,${KDE_PREFIX}/bin/kate,' \
 		${WRKSRC}/src/config.cpp
 
 post-install:

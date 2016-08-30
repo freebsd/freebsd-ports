@@ -8,3 +8,11 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #ifndef WIN32
+@@ -39,6 +40,7 @@ ________________________________________
+ #include <fcntl.h>    
+ #include <errno.h>    
+ #include <ctype.h>    
++#include <cstring>
+ 
+ #ifdef WIN32
+ #include <io.h>

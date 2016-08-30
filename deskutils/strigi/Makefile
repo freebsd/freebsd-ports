@@ -9,8 +9,8 @@ CATEGORIES=	deskutils
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi desktop search (meta port)
 
-USE_KDE4=	strigi_run
-USES=		metaport
+USES=		kde:4 metaport
+USE_KDE=	strigi_run
 
 OPTIONS_DEFINE=	CLIENT DAEMON UTILITIES
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

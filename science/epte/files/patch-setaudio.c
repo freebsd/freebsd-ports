@@ -5,7 +5,7 @@
  char *file_name;
  
 -#ifdef VMS
-+#if defined(VMS) || defined(__FreeBSD__)
++#if defined(VMS) || defined(__FreeBSD__) || defined(__DragonFly__)
  #else
  
    /* The audio device sometimes does not work if it is left open for a long

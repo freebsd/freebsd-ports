@@ -1,7 +1,7 @@
---- doc/oleo.texi.orig	Thu Dec 24 09:24:23 1998
-+++ doc/oleo.texi	Sat Sep 18 03:24:39 1999
-@@ -2,6 +2,9 @@
- @c %**start of header
+--- doc/oleo.texi.orig	2000-08-10 21:01:55 UTC
++++ doc/oleo.texi
+@@ -7,6 +7,9 @@
+ 
  @setfilename oleo.info
  @settitle Oleo @value{version}
 +@direntry

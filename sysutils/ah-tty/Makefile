@@ -3,12 +3,14 @@
 
 PORTNAME=	ah-tty
 PORTVERSION=	0.3.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Ah-tty is an automatic helper for command prompts and shells
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 

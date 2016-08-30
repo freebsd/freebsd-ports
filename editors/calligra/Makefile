@@ -37,13 +37,13 @@ RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE4=	kactivities kdelibs libkdcraw \
+USE_KDE=	kactivities kdelibs libkdcraw \
 		okular pimlibs attica automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui opengl phonon \
 		qtestlib_build script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake:outsource cpe compiler:c++11-lang iconv:translit jpeg \
-		perl5 pkgconfig shared-mime-info sqlite tar:xz
+		kde:4 perl5 pkgconfig shared-mime-info sqlite tar:xz
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DPRODUCTSET:STRING="DESKTOP"
 USE_LDCONFIG=	yes
@@ -63,7 +63,7 @@ GMIC_CMAKE_ON=	-DWITH_GMIC:BOOL=ON
 GMIC_CMAKE_OFF=	-DWITH_GMIC:BOOL=OFF
 
 MARBLE_DESC=	World globe widget support via Marble
-MARBLE_USE=	KDE4=marble
+MARBLE_USE=	KDE=marble
 MARBLE_CMAKE_OFF=-DWITH_Marble:BOOL=FALSE
 
 MYSQL_DESC=	MySQL database support in Kexi

@@ -5,6 +5,7 @@
        * config/ia64/unwind-ia64.h: Do not mark _Unwind_FindTableEntry
        hidden on FreeBSD.
 
+--- UTC
 Index: libgcc/config/ia64/unwind-ia64.h
 ===================================================================
 --- libgcc/config/ia64/unwind-ia64.h

@@ -869,6 +869,7 @@
     SUBDIR += qchroot
     SUBDIR += qjail
     SUBDIR += qjail2
+    SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += qsynergy
@@ -888,6 +889,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
+    SUBDIR += read-edid
     SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
@@ -975,6 +977,7 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
@@ -1103,6 +1106,7 @@
     SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
+    SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-bananapi
     SUBDIR += u-boot-bananapim2
     SUBDIR += u-boot-beaglebone
@@ -1111,8 +1115,10 @@
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-olimex-a20-som-evb
+    SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
     SUBDIR += u-boot-pandaboard
+    SUBDIR += u-boot-pcduino3
     SUBDIR += u-boot-pine64
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-rpi2

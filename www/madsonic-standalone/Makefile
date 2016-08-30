@@ -5,10 +5,12 @@
 #
 
 PORTNAME=	madsonic-standalone
-PORTVERSION=	5.1
+PORTVERSION=	6.0
+DISTVERSIONSUFFIX=	.7860
+DISTDATE=	20160109
 CATEGORIES=	www java
 MASTER_SITES=	http://madsonic.org/download/${PORTVERSION}/
-DISTNAME=	20140927_madsonic-5.1.5150-standalone
+DISTNAME=	${DISTDATE}_madsonic-${PORTVERSION}${DISTVERSIONSUFFIX}-standalone
 
 MAINTAINER=	jlh@FreeBSD.org
 COMMENT=	Subsonic streaming media server, standalone version
@@ -43,54 +45,47 @@ APE_RUN_DEPENDS=	mac:audio/mac
 
 .include <bsd.port.options.mk>
 
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_RC_SUBR=	madsonic
 JAVA_VERSION=	1.6+
+JAVA_RUN=	yes
 # Don't waste UID/GID and reuse Subsonic's user.
 USERS=		subsonic
 GROUPS=		subsonic
 # Keep the same variable names as in the Subsonic port to minimize diffs.
 SUBSONIC_HOME=	/var/madsonic
-SUBSONIC_DIR=	${PREFIX}/${PORTDIRNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 		USER="${USERS}" \
 		GROUP="${GROUPS}"
-SUB_FILES= 	pkg-message \
-		message-transcoding \
-		madsonic
+SUB_FILES=	pkg-message \
+		message-transcoding
 SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
-		SUBSONIC_DIR="${SUBSONIC_DIR}" \
 		USER="${USERS}" \
 		GROUP="${GROUPS}" \
 		JAVA="${JAVA}"
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${TAR} -xf ${DISTDIR}/${DISTNAME}.tar.gz -C ${WRKSRC} --no-same-owner --no-same-permission
+CONFLICTS_INSTALL=	madsonic-jetty madsonic-resin3 madsonic-tomcat[678]
 
 do-install:
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 	@${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_DIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/LICENSE.TXT ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/README.TXT ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/madsonic.war ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${PORTDIRNAME}/madsonic-booter.jar ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTDIRNAME}/madsonic.sh ${STAGEDIR}${SUBSONIC_DIR}/
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_HOME}
-	${INSTALL} -d ${STAGEDIR}${SUBSONIC_HOME}/transcode
-.if ${PORT_OPTIONS:MFFMEG}
-	${LN} -sf ${PREFIX}/bin/ffmeg ${STAGEDIR}${SUBSONIC_HOME}/transcode/ffmpeg
-.endif
-.if ${PORT_OPTIONS:MFLAC}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/madsonic.war ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/madsonic-booter.jar ${STAGEDIR}${DATADIR}/
+
+post-install:
+	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}/transcode
+
+post-install-FFMPEG-on:
+	${LN} -sf ${PREFIX}/bin/ffmpeg ${STAGEDIR}${SUBSONIC_HOME}/transcode/ffmpeg
+
+post-install-FLAC-on:
 	${LN} -sf ${PREFIX}/bin/flac ${STAGEDIR}${SUBSONIC_HOME}/transcode/flac
-.endif
-.if ${PORT_OPTIONS:MLAME}
+
+post-install-LAME-on:
 	${LN} -sf ${PREFIX}/bin/lame ${STAGEDIR}${SUBSONIC_HOME}/transcode/lame
-.endif
 
 .include <bsd.port.mk>

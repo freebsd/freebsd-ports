@@ -12,21 +12,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 STRIP=		# stripping can break go binaries
 
+# Make it so that post-extract runs before the GH_SUBDIR targets.
+TARGET_ORDER_OVERRIDE=	680:post-extract
+
 post-extract:
-	@${MV} ${WRKSRC}/vendor ${WRKSRC}/src
-	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-.for src in .github .gitignore .travis.yml CHANGELOG.md CONTRIBUTING.md Godeps \
-	LICENSE Makefile README.md Vagrantfile appveyor.yml azure-merge.sh \
-	builder checkpoint.go command commands.go common communicator config.go \
-	contrib examples fix helper log.go main.go main_test.go packer panic.go \
-	plugin post-processor provisioner scripts signal.go stdin.go template \
-	test version website
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-.endfor
+	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}; ${SETENV} GOPATH=${WRKSRC} go build -o bin/${PORTNAME}

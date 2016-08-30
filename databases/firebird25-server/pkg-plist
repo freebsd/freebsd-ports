@@ -27,7 +27,7 @@ libexec/firebird/intl/fbintl.conf
 @group firebird
 @sample /%%LOCALSTATEDIR%%/security2.fdb.sample
 /%%LOCALSTATEDIR%%/help/help.fdb
-@unexec [ -s /%%LOCALSTATEDIR%%/firebird.log ] || rm -f /%%LOCALSTATEDIR%%/firebird.log
+@preunexec [ -s /%%LOCALSTATEDIR%%/firebird.log ] || rm -f /%%LOCALSTATEDIR%%/firebird.log
 @rmtry /%%LOCALSTATEDIR%%/isc_event1.`hostname`
 @rmtry /%%LOCALSTATEDIR%%/isc_init1.`hostname`
 @rmtry /%%LOCALSTATEDIR%%/isc_lock1.`hostname`

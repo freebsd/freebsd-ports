@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -32,8 +33,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-osmesa \
 		--with-oss \
 		--without-sane \
-		--without-tiff \
-		--without-xinerama
+		--without-tiff
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -50,7 +50,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDATA=	l_intl.nls wine.inf
 
 OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFAULT=GNUTLS X11
 OPTIONS_SUB=	yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
@@ -93,9 +93,9 @@ V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinput2 xrandr xrender
+X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinerama xinput2 xrandr xrender
 X11_USES=		jpeg
-X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xinerama,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			liblcms2.so:graphics/lcms2 \

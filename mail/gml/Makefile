@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mbox & Maildir to Gmail loader
 
+DEPRECATED=	Deprecated upstream. Use native gmail tools to import
+EXPIRATION_DATE=	2016-09-23
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USES=		dos2unix python:2,run

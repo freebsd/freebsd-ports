@@ -20,9 +20,9 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libprison.so:graphics/prison \
 		libqjson.so:devel/qjson
 
-USE_KDE4=	kdelibs akonadi \
+USES=		cmake:outsource kde:4 shared-mime-info shebangfix tar:xz
+USE_KDE=	kdelibs akonadi \
 		automoc4 ontologies soprano
-USES=		cmake:outsource shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	mailtransport/kconf_update/migrate-transports.pl
 USE_OPENLDAP=	yes
 USE_QT4=	corelib dbus declarative designer_build gui network sql xml \
@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake
-	${REINPLACE_CMD} -e 's|%%KDE4_PREFIX%%|${KDE4_PREFIX}|g' \
+	${REINPLACE_CMD} -e 's|%%KDE_PREFIX%%|${KDE_PREFIX}|g' \
 		${PATCH_WRKSRC}/cmake/modules/FindQGpgme.cmake
 # Prevent updating MIME during build.
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \

@@ -1,0 +1,9 @@
+read-edid is a pair of tools (originally by John Fremlin) for reading the
+EDID from a monitor.  It should work with most monitors made since 1996,
+assuming the video card supports the standard read commands (most do).
+
+Two tools are provided: get-edid, which gets the raw EDID information from
+the monitor, and parse-edid, which turns the raw binary information into a
+xorg.conf-compatible monitor section (or xrandr-compatible modelines).
+
+WWW: http://www.polypux.org/projects/read-edid/

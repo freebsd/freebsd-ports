@@ -14,10 +14,10 @@ COMMENT=	VLC backend for Phonon
 
 LIB_DEPENDS=	libvlc.so:multimedia/vlc-qt4
 
-USE_KDE4=	automoc4
+USES=		cmake kde:4 pkgconfig tar:xz
+USE_KDE=	automoc4
 USE_QT4=	corelib gui phonon \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake pkgconfig tar:xz
 
 post-install:
 	${MKDIR} ${STAGEDIR}${QT_PLUGINDIR}/phonon_backend

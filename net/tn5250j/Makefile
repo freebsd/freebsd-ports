@@ -24,9 +24,10 @@ RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:java/javamail \
 
 USES=		dos2unix zip
 USE_ANT=	yes
-USE_JAVA=	1.3+
+USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOS2UNIX_FILES=	build.xml
+JAVA_VERSION=	1.6 1.7
 
 ALL_TARGET=	package
 MAKE_ENV+=	CLASSPATH=${JYTHON_PREFIX}
@@ -44,10 +45,6 @@ SUB_LIST=	JYTHON_JAR=${JYTHON_JAR}
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:M1.8.*}
-BROKEN=		Does not build with JDK 1.8
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/tn5250j ${STAGEDIR}${PREFIX}/bin

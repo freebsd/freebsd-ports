@@ -49,7 +49,7 @@ _USE_MATE_ALL=	autogen intlhack intltool
 _USE_MATE_ALL+=	caja common controlcenter desktop dialogs docutils icontheme \
 		libmatekbd libmateweather \
 		marco menus notificationdaemon panel polkit pluma \
-		settingsdaemon
+		session settingsdaemon
 
 SCROLLKEEPER_DIR=	/var/db/rarian
 
@@ -133,6 +133,10 @@ polkit_RUN_DEPENDS=	${polkit_DETECT}:sysutils/mate-polkit
 pluma_DETECT=		${LOCALBASE}/libdata/pkgconfig/pluma.pc
 pluma_BUILD_DEPENDS=	${pluma_DETECT}:editors/pluma
 pluma_RUN_DEPENDS=	${pluma_DETECT}:editors/pluma
+
+session_DETECT=		${LOCALBASE}/bin/mate-session
+session_BUILD_DEPENDS=	${session_DETECT}:x11/mate-session-manager
+session_RUN_DEPENDS=	${session_DETECT}:x11/mate-session-manager
 
 settingsdaemon_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-settings-daemon.pc
 settingsdaemon_BUILD_DEPENDS=	${settingsdaemon_DETECT}:sysutils/mate-settings-daemon

@@ -335,6 +335,7 @@
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
     SUBDIR += kdewebdev4
+    SUBDIR += kohana
     SUBDIR += kpartsplugin
     SUBDIR += kplaylist
     SUBDIR += kwebkitpart
@@ -789,12 +790,14 @@
     SUBDIR += p5-Catalyst-View-REST-XML
     SUBDIR += p5-Catalyst-View-RRDGraph
     SUBDIR += p5-Catalyst-View-TT
+    SUBDIR += p5-Catalyst-View-TT-Alloy
     SUBDIR += p5-Catalyst-View-TT-ControllerLocal
     SUBDIR += p5-Catalyst-View-Template-Declare
     SUBDIR += p5-Catalyst-View-Templated
     SUBDIR += p5-Catalyst-View-XML-Feed
     SUBDIR += p5-Catalyst-View-XML-Simple
     SUBDIR += p5-Catalyst-View-XSLT
+    SUBDIR += p5-CatalystX-AppBuilder
     SUBDIR += p5-CatalystX-Component-Traits
     SUBDIR += p5-CatalystX-InjectComponent
     SUBDIR += p5-CatalystX-LeakChecker
@@ -802,6 +805,7 @@
     SUBDIR += p5-CatalystX-REPL
     SUBDIR += p5-CatalystX-RoleApplicator
     SUBDIR += p5-CatalystX-SimpleLogin
+    SUBDIR += p5-CatalystX-VirtualComponents
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
@@ -988,6 +992,7 @@
     SUBDIR += p5-HTTP-Parser
     SUBDIR += p5-HTTP-Parser-XS
     SUBDIR += p5-HTTP-Proxy
+    SUBDIR += p5-HTTP-ProxyPAC
     SUBDIR += p5-HTTP-Recorder
     SUBDIR += p5-HTTP-Request-AsCGI
     SUBDIR += p5-HTTP-Request-Params
@@ -1030,6 +1035,7 @@
     SUBDIR += p5-LWP-Protocol-connect
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
+    SUBDIR += p5-LWP-Protocol-socks
     SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-POE
     SUBDIR += p5-LWP-UserAgent-WithCache
@@ -1772,6 +1778,7 @@
     SUBDIR += py-splinter
     SUBDIR += py-spyne
     SUBDIR += py-surl
+    SUBDIR += py-Tenjin
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
     SUBDIR += py-tmdb3
@@ -1920,6 +1927,7 @@
     SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails
     SUBDIR += rubygem-haml-rails-rails4
+    SUBDIR += rubygem-hamlit
     SUBDIR += rubygem-hashicorp-checkpoint
     SUBDIR += rubygem-heroku
     SUBDIR += rubygem-heroku-api
@@ -2244,6 +2252,7 @@
     SUBDIR += typo3-lts
     SUBDIR += uchiwa
     SUBDIR += udmsearch
+    SUBDIR += ufdbguard
     SUBDIR += uglifyjs
     SUBDIR += usermanager
     SUBDIR += uwsgi

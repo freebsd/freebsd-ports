@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffoscope
-PORTVERSION=	54
+PORTVERSION=	59
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,14 +21,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest \
 		rpm2cpio:archivers/rpm2cpio
 
 USES=		python:3.4+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-extract:
-	@${RM} -rf \
-		${WRKSRC}/tests/__pycache__ \
-		${WRKSRC}/tests/comparators/__pycache__
+# mount -t fdescfs fdesc /dev/fd before running tests
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test --pytest-args="-rsx -l -vv"

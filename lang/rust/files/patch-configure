@@ -1,10 +1,10 @@
---- configure.orig	2015-08-04 19:28:47 UTC
+--- configure.orig	2016-08-16 01:54:35 UTC
 +++ configure
-@@ -696,7 +696,6 @@ putvar CFG_BOOTSTRAP_KEY
+@@ -726,7 +726,6 @@ if [ -n "$CFG_ENABLE_ORBIT" ]; then putv
  
  step_msg "looking for build programs"
  
--probe_need CFG_CURLORWGET  curl wget
+-probe_need CFG_CURL curl
  if [ -z "$CFG_PYTHON_PROVIDED" ]; then
-     probe_need CFG_PYTHON      python2.7 python2.6 python2 python
+     probe_need CFG_PYTHON      python2.7 python2 python
  fi

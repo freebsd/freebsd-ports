@@ -23,8 +23,6 @@ loaded via /boot/loader.conf, or later in the boot process if you add
 
 to your /etc/rc.conf.
 
-Note that this driver does not support PAE-enabled kernels.
-
 If X.org cannot start and reports
 
 	(EE) NVIDIA(0): Failed to obtain a shared memory identifier.

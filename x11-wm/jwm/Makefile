@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		iconv localbase pkgconfig tar:xz
@@ -41,6 +41,7 @@ XEXT_CONFIGURE_ENABLE=	shape
 XFT_USE=		XORG=xft
 XFT_CONFIGURE_ENABLE=	xft
 XFT_IMPLIES=		XRENDER
+XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
 XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_ENABLE=xinerama
 XINERAMA_IMPLIES=	XEXT

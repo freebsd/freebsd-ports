@@ -1,2 +1,3 @@
-SHA256 (percona-xtrabackup-2.3.4.tar.gz) = 126c3862f2c00ea5c05fdd15324119e8d36da3a409e55810235618d40e34b370
-SIZE (percona-xtrabackup-2.3.4.tar.gz) = 34862876
+TIMESTAMP = 1471519603
+SHA256 (percona-xtrabackup-2.3.5.tar.gz) = 8213abd8513c04f0aab85a89ade77d75d23a45cd7edbafb15d37b4a9bb110653
+SIZE (percona-xtrabackup-2.3.5.tar.gz) = 34867537

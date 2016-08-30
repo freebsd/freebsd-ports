@@ -3,17 +3,15 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Foomatic wrapper scripts
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 CONFLICTS=	cups-filters-[0-9]*
 
@@ -34,47 +32,33 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	A2PS CUPS_IMAGE MPAGE
-OPTIONS_RADIO=	ENSCRIPT
-OPTIONS_RADIO_ENSCRIPT=	ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
-OPTIONS_DEFAULT=	CUPS_IMAGE A2PS ENSCRIPT_A4 MPAGE
-CUPS_IMAGE_DESC=	Install cups image utilities
-A2PS_DESC=		Install a2ps convertor
-ENSCRIPT_A4_DESC=	Install enscript convertor (A4)
-ENSCRIPT_LETTER_DESC=	Install enscript convertor (letter)
-ENSCRIPT_LETTERDJ_DESC=	Install enscript convertor (letterdj)
-MPAGE_DESC=		Print multiple pages per sheet of paper
+OPTIONS_DEFINE=			A2PS DBUS CUPS_IMAGE MPAGE
+OPTIONS_RADIO=			ENSCRIPT
+OPTIONS_RADIO_ENSCRIPT=		ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
+OPTIONS_DEFAULT=		A2PS CUPS_IMAGE DBUS ENSCRIPT_A4 MPAGE
+CUPS_IMAGE_DESC=		Install cups image utilities
+A2PS_DESC=			Install a2ps convertor
+ENSCRIPT_A4_DESC=		Install enscript convertor (A4)
+ENSCRIPT_LETTER_DESC=		Install enscript convertor (letter)
+ENSCRIPT_LETTERDJ_DESC=		Install enscript convertor (letterdj)
+MPAGE_DESC=			Print multiple pages per sheet of paper
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS_IMAGE}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:print/cups
-.endif
-
-.if ${PORT_OPTIONS:MA2PS}
-RUN_DEPENDS+=	a2ps:print/a2ps
-.endif
-
-.if ${PORT_OPTIONS:MENSCRIPT_A4}
-RUN_DEPENDS+=	enscript:print/enscript-a4
-.endif
-
-.if ${PORT_OPTIONS:MENSCRIPT_LETTER}
-RUN_DEPENDS+=	enscript:print/enscript-letter
-.endif
-
-.if ${PORT_OPTIONS:MENSCRIPT_LETTERDJ}
-RUN_DEPENDS+=	enscript:print/enscript-letterdj
-.endif
-
-.if ${PORT_OPTIONS:MMPAGE}
-RUN_DEPENDS+=	mpage:print/mpage
-.endif
+A2PS_RUN_DEPENDS=		a2ps:print/a2ps
+CUPS_IMAGE_LIB_DEPENDS=		libcupsimage.so:print/cups
+DBUS_CONFIGURE_ENABLE=		dbus
+DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
+ENSCRIPT_A4_RUN_DEPENDS=	enscript:print/enscript-a4
+ENSCRIPT_LETTERDJ_RUN_DEPENDS=	enscript:print/enscript-letterdj
+ENSCRIPT_LETTER_RUN_DEPENDS=	enscript:print/enscript-letter
+MPAGE_RUN_DEPENDS=		mpage:print/mpage
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/foomaticrip.c
-	@${REINPLACE_CMD} -e '/filter.conf/ s|if|#if|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		   	  ${WRKSRC}/foomaticrip.c
+	@${REINPLACE_CMD} -e 's|ln -sf $$(BINDIR)|ln -sf ../../../bin|g' \
+			  -e '/filter.conf/ s|if.*||' \
+			  ${WRKSRC}/Makefile.am
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip

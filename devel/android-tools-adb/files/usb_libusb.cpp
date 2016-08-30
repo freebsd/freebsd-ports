@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-#define TRACE_TAG TRACE_USB
+#define TRACE_TAG USB
 
 #include "sysdeps.h"
 
@@ -58,7 +58,7 @@ static usb_handle handle_list = {
     .next = &handle_list,
 };
 
-void
+static void
 usb_cleanup()
 {
     libusb_exit(ctx);
@@ -600,9 +600,10 @@ scan_usb_devices()
     libusb_free_device_list(devs, 1);
 }
 
-static void *
-device_poll_thread(void* unused)
+static void
+device_poll_thread(void*)
 {
+    adb_thread_setname("USB scan");
     D("device_poll_thread(): Created USB scan thread");
 
     for (;;) {
@@ -610,9 +611,6 @@ device_poll_thread(void* unused)
         kick_disconnected();
         scan_usb_devices();
     }
-
-    /* never reaching this point */
-    return (NULL);
 }
 
 static void
@@ -625,7 +623,6 @@ void
 usb_init()
 {
     D("usb_init(): started");
-    adb_thread_t        tid;
     struct sigaction actions;
 
     atexit(usb_cleanup);
@@ -648,7 +645,7 @@ usb_init()
     scan_usb_devices();
 
     /* starting USB event polling thread */
-    if (adb_thread_create(&tid, device_poll_thread, nullptr)) {
+    if (!adb_thread_create(device_poll_thread, nullptr)) {
         fatal_errno("cannot create USB scan thread");
     }
 

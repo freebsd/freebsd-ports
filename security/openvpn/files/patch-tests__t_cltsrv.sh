@@ -1,4 +1,4 @@
---- tests/t_cltsrv.sh.orig	2014-11-29 14:59:46 UTC
+--- tests/t_cltsrv.sh.orig	2016-08-23 13:10:22 UTC
 +++ tests/t_cltsrv.sh
 @@ -1,7 +1,7 @@
  #! /bin/sh
@@ -37,10 +37,10 @@
 +    exit 77
 +fi
 +if [ "inet6" = "$1" ] ; then
-+    add='proto udp6'
++    add='proto udp6 '
 +fi
 +for i in server client ; do
-+    sed -e "s/localhost/$2/" -e "/^remote/a\\
++    sed -e "s/localhost/$2/" -e "/^remote /a\\
 +$add" ${root}/sample-config-files/loopback-$i \
 +    >${root}/sample-config-files/loopback-$i.test
 +done

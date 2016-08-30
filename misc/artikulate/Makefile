@@ -15,8 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/kde4/imports/org/kde/charts/qmldir:graphics/kqtqui
 
 IGNORE=		not usable, links to both GStreamer 0.10.x and 1.x
 
-USE_KDE4=	automoc4 kdelibs libkdeedu runtime_run
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs libkdeedu runtime_run
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

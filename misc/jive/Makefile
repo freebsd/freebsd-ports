@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/obrien ftp://nuxi.ucdavis.edu/pub/misc/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Filter that converts English text to Jive
 
+DEPRECATED=	Offensive
+EXPIRATION_DATE=	2016-10-20
+
 CONFLICTS=	filters-2* talkfilters-2*
 
 WRKSRC=		${WRKDIR}/jive

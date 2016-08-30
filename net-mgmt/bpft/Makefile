@@ -3,6 +3,7 @@
 
 PORTNAME=	bpft
 PORTVERSION=	4.20040506
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}4/${PORTNAME}4/${PORTNAME}4-snapshot
 DISTNAME=	${PORTNAME}4-2004-05-06
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GNU
 
 CONFLICTS=	trafd-3.0.*
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	INSTALL_FILE="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
@@ -29,6 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^PATH_TOSAVE/s|=.*|= ${PREFIX}/var/bpft| ; \
 		 /^INSTALL_DIRECTORY/s|=.*|= ${MKDIR}| ; \
+		 s|-lcurses -ltermcap|-L${LOCALBASE}/lib -lncurses|g ; \
 		 s|please!|&"| ; \
 		 s| $${PATH_| $${DESTDIR}$${PATH_|g ; \
 		 s| $${PREFIX_| $${DESTDIR}$${PREFIX_|g' ${WRKSRC}/Makefile

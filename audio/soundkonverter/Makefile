@@ -17,10 +17,10 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libphonon.so:multimedia/phonon
 
 GH_ACCOUNT=	HessiJames
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang kde:4
 USE_GITHUB=	yes
 USE_QT4=	corelib dbus gui network moc_build qmake_build rcc_build svg uic_build xml
-USE_KDE4=	automoc4 kdelibs libkcddb
+USE_KDE=	automoc4 kdelibs libkcddb
 WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFAULT=	VORBIS FLAC NORMALIZE VORBISGAIN CDPARANOIA

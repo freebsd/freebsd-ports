@@ -869,7 +869,6 @@ www/tcldom|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 www/tcldom-libxml2|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 lang/erlang-doc||2009-11-27|Documentation now part of lang/erlang package
 devel/gtkmozedit||2009-11-27|No longer under development, does not build with libxul
-audio/exaile-devel|audio/exaile|2009-11-28|Main port updated to the latest stable version
 finance/p5-HTML-Query|www/p5-HTML-Query|2009-11-28|Moved to www category
 graphics/clutter-cairo|graphics/clutter|2009-11-28|This port is obsolete, all functionality is now in graphics/clutter
 www/galeon||2009-11-28|This port is obsolete; similar functionality can be found in www/epiphany
@@ -7379,7 +7378,6 @@ audio/qmidinet||2015-01-28|Has expired: Broken for more than 6 months
 audio/wmauda||2015-01-28|Has expired: Broken for more than 6 months
 audio/x11amp||2015-01-28|Has expired: Broken for more than 6 months
 devel/p5-Log-Any-Adapter|devel/p5-Log-Any|2015-01-28|Has expired: devel/p5-Log-Any-Adapter merged into devel/p5-Log-Any by upstream
-ftp/rexx-curl||2015-01-28|Has expired: Broken for more than 6 months
 net-im/pidgin-audacious-remote||2015-01-28|Has expired: Broken for more than 6 months
 www/lifetype||2015-01-28|Has expired: Broken for more than 6 months
 www/ump||2015-01-28|Has expired: Broken for more than 6 months
@@ -8620,3 +8618,6 @@ math/bamg||2016-08-14|No longer maintained upstream as is now part of freefem++
 www/pecl-APC||2016-08-15|No longer maintained upstream, and not working with PHP > 5.4
 textproc/libtext-wrapi18n-perl|textproc/p5-Text-WrapI18N|2016-08-15|Duplicate
 textproc/libtext-charwidth-perl|textproc/p5-Text-CharWidth|2016-08-15|Duplicate
+net-mgmt/netams||2016-08-18|Has expired: unmaintained, broken on most FreeBSD platforms
+emulators/kqemu-kmod||2016-08-26|Not supported in any qemu version anymore
+emulators/kqemu-kmod-devel||2016-08-26|Not supported in any qemu version anymore

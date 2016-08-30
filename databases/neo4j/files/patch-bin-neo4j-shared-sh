@@ -1,0 +1,29 @@
+$FreeBSD$
+
+--- bin/neo4j-shared.sh.orig	2016-08-25 00:54:03.496139435 +0100
++++ bin/neo4j-shared.sh	2016-08-25 01:02:34.689503862 +0100
+@@ -124,7 +124,7 @@
+   if [[ -z "${NEO4J_HOME:-}" ]]; then
+     NEO4J_HOME="$(cd "$(dirname "$0")"/.. && pwd)"
+   fi
+-  : "${NEO4J_CONF:="${NEO4J_HOME}/conf"}"
++  export NEO4J_CONF=%%PREFIX%%/etc
+   readonly NEO4J_HOME NEO4J_CONF
+ }
+ 
+@@ -159,10 +159,10 @@
+ }
+ 
+ _setup_configurable_paths() {
+-  NEO4J_DATA=$(resolve_path "${dbms_directories_data:-data}")
+-  NEO4J_LIB=$(resolve_path "${dbms_directories_lib:-lib}")
+-  NEO4J_LOGS=$(resolve_path "${dbms_directories_logs:-logs}")
+-  NEO4J_PLUGINS=$(resolve_path "${dbms_directories_plugins:-plugins}")
+-  NEO4J_RUN=$(resolve_path "${dbms_directories_run:-run}")
++  export NEO4J_DATA=%%DATADIR%%
++  export NEO4J_LIB=%%PREFIX%%/lib/neo4j
++  export NEO4J_LOGS=/var/log/neo4j
++  export NEO4J_PLUGINS=${NEO4J_LIB}/plugins
++  export NEO4J_RUN=/var/run
+   readonly NEO4J_DATA NEO4J_LIB NEO4J_LOGS NEO4J_PLUGINS NEO4J_RUN
+ }

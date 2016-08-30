@@ -11,8 +11,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for interfacing with audio CDs
 
-USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdelibs
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

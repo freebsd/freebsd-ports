@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+How to cross build initial toolchain
+
+Example with sparc64
+
+1/ install a cross toolchain
+pkg install sparc64-xtoolchain-gcc
+
+2/ cross build world
+make CROSS_TOOLCHAIN=sparc64-gcc TARGET=sparc64 TARGET_ARCH=sparc64 buildworld
+
+3/ install the world in a sysroot
+make CROSS_TOOLCHAIN=sparc64-gcc TARGET=sparc64 TARGET_ARCH=sparc64 installworld DESTDIR=/sysroots/sparc64
+
+4/ build the required port
+$ cd base/binutils
+make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroots/sparc64 package

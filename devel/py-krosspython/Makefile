@@ -11,9 +11,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kross Python scripting library
 
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource kde:4 python:2 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource python:2 tar:xz
 CMAKE_ARGS+=	-DBUILD_falcon:BOOL=FALSE \
 		-DBUILD_ruby:BOOL=FALSE \
 		-DBUILD_java:BOOL=FALSE

@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	qrencode
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics pear
-MASTER_SITES=	LOCAL/vanilla
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PECL extension for generate qrcode
 
-LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
+LICENSE=	BSD2CLAUSE
 
-USES=	php:ext tar:bzip2
-IGNORE_WITH_PHP=	70
+LIB_DEPENDS=	libqrencode.so:graphics/libqrencode \
+		libpng16.so:graphics/png
 
-CONFIGURE_ARGS=	--with-qrencode=${LOCALBASE}
-LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		php:ext
+USE_GITHUB=	yes
+GH_ACCOUNT=	vanillahsu
+GH_PROJECT=	pecl-qrencode
 
 .include <bsd.port.mk>

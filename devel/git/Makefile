@@ -3,7 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -25,11 +25,10 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:xz
+USES=		gmake shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
-USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
@@ -43,7 +42,7 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
 		SEND_EMAIL NLS PCRE
-OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL SEND_EMAIL PCRE
+OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL GITWEB ICONV CURL SEND_EMAIL PCRE
 OPTIONS_SUB=	yes
 
 GITWEB_DESC=	Install gitweb

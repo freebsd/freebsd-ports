@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-USES=		cmake shared-mime-info tar:bzip2
+USES=		cmake kde:4 shared-mime-info tar:bzip2
 USE_XORG=	xft xpm
 USE_GCC=	yes
-USE_KDE4=	automoc4 kdelibs
+USE_KDE=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 post-patch:

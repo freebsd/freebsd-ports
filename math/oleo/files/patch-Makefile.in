@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jul 22 18:51:35 2000
-+++ Makefile.in	Fri Jul 28 04:28:46 2000
-@@ -124,14 +124,14 @@
+--- Makefile.in.orig	2001-03-10 14:32:45 UTC
++++ Makefile.in
+@@ -124,14 +124,14 @@ ACLOCAL_AMFLAGS = -I m4
  
  D = `date +%G%m%d.%H%M%S`
  
@@ -15,5 +15,5 @@
 -docdir = $(prefix)/Oleo
 +docdir = $(datadir)/doc/oleo
  doc_DATA = AUTHORS FAQ
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ # remove all the symlinks that come from automake

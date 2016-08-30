@@ -1,0 +1,14 @@
+bin/rexxcurl
+bin/rexxcurl-config
+lib/librexxcurl.a
+lib/librexxcurl.so
+%%PORTDOCS%%%%DOCSDIR%%/images/rxcurl64.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%DATADIR%%/README.txt
+%%DATADIR%%/getmail-pop3.rexx
+%%DATADIR%%/getright.rexx
+%%DATADIR%%/httppost.rexx
+%%DATADIR%%/scp.rexx
+%%DATADIR%%/sendmail-smtp.rexx
+%%DATADIR%%/testcurl.rexx
+%%DATADIR%%/upload.rexx

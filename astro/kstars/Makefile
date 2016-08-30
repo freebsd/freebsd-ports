@@ -16,13 +16,13 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
 		xplanet:astro/xplanet
 RUN_DEPENDS=	xplanet:astro/xplanet
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource compiler:c++11-lib tar:xz
+USES=		cmake:outsource compiler:c++11-lib kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
 
 OPTIONS_DEFINE=	PYKDE
 
 PYKDE_DESC=	Support for updating supernovae data
-PYKDE_USE=	KDE4=pykde4_run
+PYKDE_USE=	KDE=pykde4_run
 
 .include <bsd.port.mk>

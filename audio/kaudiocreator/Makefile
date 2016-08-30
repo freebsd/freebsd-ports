@@ -21,9 +21,9 @@ RUN_DEPENDS=	flac:audio/flac \
 RUN_DEPENDS+=	lame:audio/lame
 .endif
 
-USES=		cmake tar:bzip2
+USES=		cmake kde:4 tar:bzip2
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 libkcddb libkcompactdisc
+USE_KDE=	automoc4 libkcddb libkcompactdisc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

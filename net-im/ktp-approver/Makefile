@@ -10,10 +10,10 @@ COMMENT=	KDE instant messaging notifier
 
 LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
 		libktpcommoninternalsprivate.so:net-im/ktp-common-internals
-RUN_DEPENDS=	${KDE4_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list
+RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list
 
-USE_KDE4=	kdelibs automoc4
+USES=		cmake gettext kde:4 tar:bzip2
+USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-USES=		cmake gettext tar:bzip2
 
 .include <bsd.port.mk>

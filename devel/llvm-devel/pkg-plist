@@ -41,10 +41,12 @@ bin/sancov-devel
 %%LLDB%%bin/lldb-mi-devel
 %%LLDB%%bin/lldb-server-devel
 %%EXTRAS%%bin/clang-apply-replacements-devel
+%%EXTRAS%%bin/clang-include-fixer-devel
 %%EXTRAS%%bin/clang-modernize-devel
 %%EXTRAS%%bin/clang-query-devel
 %%EXTRAS%%bin/clang-rename-devel
 %%EXTRAS%%bin/clang-tidy-devel
+%%EXTRAS%%bin/find-all-symbols-devel
 %%EXTRAS%%bin/modularize-devel
 %%LLD%%bin/lld-devel
 %%LLD%%bin/lld-link-devel
@@ -65,9 +67,11 @@ llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/clang-cl
 %%CLANG%%llvm-devel/bin/clang-cpp
 %%CLANG%%llvm-devel/bin/clang-format
+%%EXTRAS%%llvm-devel/bin/clang-include-fixer
 %%EXTRAS%%llvm-devel/bin/clang-query
 %%EXTRAS%%llvm-devel/bin/clang-rename
 %%EXTRAS%%llvm-devel/bin/clang-tidy
+%%EXTRAS%%llvm-devel/bin/find-all-symbols
 %%CLANG%%llvm-devel/bin/git-clang-format
 %%LLD%%llvm-devel/bin/ld.lld
 llvm-devel/bin/llc
@@ -653,6 +657,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/API/SBSourceManager.h
 %%LLDB%%llvm-devel/include/lldb/API/SBStream.h
 %%LLDB%%llvm-devel/include/lldb/API/SBStringList.h
+%%LLDB%%llvm-devel/include/lldb/API/SBStructuredData.h
 %%LLDB%%llvm-devel/include/lldb/API/SBSymbol.h
 %%LLDB%%llvm-devel/include/lldb/API/SBSymbolContext.h
 %%LLDB%%llvm-devel/include/lldb/API/SBSymbolContextList.h
@@ -1041,6 +1046,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Target/StackFrameList.h
 %%LLDB%%llvm-devel/include/lldb/Target/StackID.h
 %%LLDB%%llvm-devel/include/lldb/Target/StopInfo.h
+%%LLDB%%llvm-devel/include/lldb/Target/StructuredDataPlugin.h
 %%LLDB%%llvm-devel/include/lldb/Target/SystemRuntime.h
 %%LLDB%%llvm-devel/include/lldb/Target/Target.h
 %%LLDB%%llvm-devel/include/lldb/Target/TargetList.h
@@ -1051,6 +1057,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanBase.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallFunction.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallFunctionUsingABI.h
+%%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallOnFunctionExit.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallUserExpression.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanPython.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanRunToAddress.h
@@ -1683,6 +1690,7 @@ llvm-devel/include/llvm/IR/ValueSymbolTable.h
 llvm-devel/include/llvm/IR/Verifier.h
 llvm-devel/include/llvm/IRReader/IRReader.h
 llvm-devel/include/llvm/InitializePasses.h
+llvm-devel/include/llvm/LTO/Caching.h
 llvm-devel/include/llvm/LTO/Config.h
 llvm-devel/include/llvm/LTO/LTO.h
 llvm-devel/include/llvm/LTO/LTOBackend.h
@@ -1979,6 +1987,7 @@ llvm-devel/include/llvm/Target/TargetSubtargetInfo.h
 llvm-devel/include/llvm/Transforms/Coroutines.h
 llvm-devel/include/llvm/Transforms/GCOVProfiler.h
 llvm-devel/include/llvm/Transforms/IPO.h
+llvm-devel/include/llvm/Transforms/IPO/AlwaysInliner.h
 llvm-devel/include/llvm/Transforms/IPO/ConstantMerge.h
 llvm-devel/include/llvm/Transforms/IPO/CrossDSOCFI.h
 llvm-devel/include/llvm/Transforms/IPO/DeadArgumentElimination.h
@@ -2252,6 +2261,12 @@ llvm-devel/lib/libLLVMInstCombine.a
 llvm-devel/lib/libLLVMInstrumentation.a
 llvm-devel/lib/libLLVMInterpreter.a
 llvm-devel/lib/libLLVMLTO.a
+llvm-devel/lib/libLLVMLanaiAsmParser.a
+llvm-devel/lib/libLLVMLanaiCodeGen.a
+llvm-devel/lib/libLLVMLanaiDesc.a
+llvm-devel/lib/libLLVMLanaiDisassembler.a
+llvm-devel/lib/libLLVMLanaiInfo.a
+llvm-devel/lib/libLLVMLanaiInstPrinter.a
 llvm-devel/lib/libLLVMLibDriver.a
 llvm-devel/lib/libLLVMLineEditor.a
 llvm-devel/lib/libLLVMLinker.a
@@ -2452,6 +2467,7 @@ llvm-devel/lib/libLTO.so
 %%LLDB%%llvm-devel/lib/liblldbPluginRenderScriptRuntime.a
 %%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterNone.a
 %%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterPython.a
+%%LLDB%%llvm-devel/lib/liblldbPluginStructuredDataDarwinLog.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileDWARF.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFilePDB.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileSymtab.a
@@ -2486,10 +2502,13 @@ llvm-devel/lib/libLTO.so
 %%CLANG%%llvm-devel/share/clang/clang-format-sublime.py
 %%CLANG%%llvm-devel/share/clang/clang-format.el
 %%CLANG%%llvm-devel/share/clang/clang-format.py
+%%EXTRAS%%llvm-devel/share/clang/clang-include-fixer.el
+%%EXTRAS%%llvm-devel/share/clang/clang-include-fixer.py
 %%EXTRAS%%llvm-devel/share/clang/clang-rename.el
 %%EXTRAS%%llvm-devel/share/clang/clang-rename.py
 %%EXTRAS%%llvm-devel/share/clang/clang-tidy-diff.py
 %%EXTRAS%%llvm-devel/share/clang/run-clang-tidy.py
+%%EXTRAS%%llvm-devel/share/clang/run-find-all-symbols.py
 %%CLANG%%llvm-devel/share/scan-build/scanview.css
 %%CLANG%%llvm-devel/share/scan-build/sorttable.js
 %%CLANG%%llvm-devel/share/scan-view/FileRadar.scpt

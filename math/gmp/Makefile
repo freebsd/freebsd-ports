@@ -29,7 +29,7 @@ INFO=		gmp
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MCPU_OPTS}
-CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${CONFIGURE_TARGET}
 .elif ${ARCH:S/64//} != ${ARCH}
 .if ${ARCH} == powerpc64
 CONFIGURE_ENV+=	ABI="mode64"

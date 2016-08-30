@@ -1146,6 +1146,7 @@ lib32/wine/amstream.dll.so
 lib32/wine/api-ms-win-core-com-l1-1-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-core-com-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-console-l1-1-0.dll.so
+lib32/wine/api-ms-win-core-console-l2-1-0.dll.so
 lib32/wine/api-ms-win-core-datetime-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-datetime-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-debug-l1-1-0.dll.so
@@ -1296,6 +1297,7 @@ lib32/wine/commdlg.dll16.so
 lib32/wine/compobj.dll16.so
 lib32/wine/compstui.dll.so
 lib32/wine/comsvcs.dll.so
+lib32/wine/concrt140.dll.so
 lib32/wine/conhost.exe.so
 lib32/wine/connect.dll.so
 lib32/wine/control.exe.so
@@ -1439,6 +1441,7 @@ lib32/wine/fakedlls/amstream.dll
 lib32/wine/fakedlls/api-ms-win-core-com-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-core-com-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-console-l1-1-0.dll
+lib32/wine/fakedlls/api-ms-win-core-console-l2-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-datetime-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-datetime-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-debug-l1-1-0.dll
@@ -1589,6 +1592,7 @@ lib32/wine/fakedlls/commdlg.dll16
 lib32/wine/fakedlls/compobj.dll16
 lib32/wine/fakedlls/compstui.dll
 lib32/wine/fakedlls/comsvcs.dll
+lib32/wine/fakedlls/concrt140.dll
 lib32/wine/fakedlls/conhost.exe
 lib32/wine/fakedlls/connect.dll
 lib32/wine/fakedlls/control.exe
@@ -2046,6 +2050,7 @@ lib32/wine/fakedlls/vcomp.dll
 lib32/wine/fakedlls/vcomp100.dll
 lib32/wine/fakedlls/vcomp110.dll
 lib32/wine/fakedlls/vcomp120.dll
+lib32/wine/fakedlls/vcomp140.dll
 lib32/wine/fakedlls/vcomp90.dll
 %%STAGING%%lib32/wine/fakedlls/vcruntime140.dll
 lib32/wine/fakedlls/vdhcp.vxd
@@ -2653,6 +2658,7 @@ lib32/wine/vcomp.dll.so
 lib32/wine/vcomp100.dll.so
 lib32/wine/vcomp110.dll.so
 lib32/wine/vcomp120.dll.so
+lib32/wine/vcomp140.dll.so
 lib32/wine/vcomp90.dll.so
 %%STAGING%%lib32/wine/vcruntime140.dll.so
 lib32/wine/vdhcp.vxd.so

@@ -1,6 +1,6 @@
---- src/eval.c.orig	Wed Jul 14 23:06:00 2004
-+++ src/eval.c	Wed Jul 14 23:11:06 2004
-@@ -78,7 +78,11 @@
+--- src/eval.c.orig	2001-02-13 23:38:05 UTC
++++ src/eval.c
+@@ -78,7 +78,11 @@ static void add_flt ();
  RETSIGTYPE math_sig ();
  #endif
  
@@ -13,7 +13,7 @@
  #ifdef SMALLEVAL
  int __to_flt (struct value *);
  int __to_int (struct value *);
-@@ -565,7 +569,7 @@
+@@ -565,7 +569,7 @@ eval_expression (expr)
  	case CONST_NINF:
  	case CONST_NAN:
  	  p->type = TYP_FLT;
@@ -22,7 +22,7 @@
  	  break;
  
  	case VAR:
-@@ -1540,7 +1544,7 @@
+@@ -1540,7 +1544,7 @@ update_cell(CELL *cell)
  }
  
  int

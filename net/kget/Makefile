@@ -16,10 +16,10 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libqca.so:devel/qca \
 		libboost_thread.so:devel/boost-libs
 
-USE_KDE4=	kdelibs workspace libkonq \
+USES=		cmake:outsource kde:4 shebangfix sqlite tar:xz
+USE_KDE=	kdelibs workspace libkonq \
 		nepomuk-core nepomuk-widgets automoc4 ontologies \
 		soprano
-USES=		cmake:outsource shebangfix sqlite tar:xz
 SHEBANG_FILES=	conf/*.pl
 USE_QT4=	gui sql moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.25.1
-PORTEPOCH=	1
-PORTREVISION?=	3
-CATEGORIES=	devel
+PORTVERSION=	2.27
+PORTREVISION=	1
+PORTEPOCH?=	1
+CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
 MAINTAINER?=	bapt@FreeBSD.org
@@ -14,12 +14,16 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+.if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 
 CONFLICTS=	libbfd-[0-9]*
+.endif
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS RELRO
+
+RELRO_DESC=	enable -z relro in ELF linker by default
 
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
@@ -34,11 +38,20 @@ INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 CONFIGURE_ARGS+=	--disable-shared \
 			--target=${BUTARGET}
 .else
+BUREMOVE=	coffdump \
+		dlltool \
+		dllwrap \
+		nlmconv \
+		srconv \
+		sysdump \
+		windmc \
+		windres
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-system-zlib \
 			--with-gmp=${LOCALBASE} \
-			--with-mpfr=${LOCALBASE}
+			--with-mpfr=${LOCALBASE} \
+			--enable-targets=all
 INFO=		as \
 		binutils \
 		gprof \
@@ -48,7 +61,10 @@ INFO=		as \
 
 CONFIGURE_ARGS+=	--disable-werror \
 			--enable-deterministic-archives \
-			--with-sysroot=/
+			--with-sysroot=/ \
+			--enable-x86-relax-relocations=no
+RELRO_CONFIGURE_ON=	--enable-relro
+RELRO_CONFIGURE_OFF=	--enable-relro=no
 
 MAKE_ENV+=	ac_cv_func_sbrk=0
 
@@ -59,7 +75,7 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.pre.mk>
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != ia64 && ${ARCH} != mips && ${ARCH} != mips64 && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
+.if ${ARCH} != ia64 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != mips64 && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
@@ -83,6 +99,7 @@ post-install:
 .if ${PKGNAMEPREFIX:S/-$//} != ${BUTARGET}
 	${RM} -rf ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
 .endif
+	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then rm -rf ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
 .for tool in ${BUREMOVE}

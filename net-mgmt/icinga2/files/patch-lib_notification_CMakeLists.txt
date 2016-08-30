@@ -1,6 +1,6 @@
---- lib/notification/CMakeLists.txt.orig	2015-03-26 22:23:26.170689000 +0100
-+++ lib/notification/CMakeLists.txt	2015-03-26 22:23:41.985022000 +0100
-@@ -38,7 +38,7 @@ set_target_properties (
+--- lib/notification/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ lib/notification/CMakeLists.txt
+@@ -37,7 +37,7 @@ set_target_properties (
  )
  
  install_if_not_exists(

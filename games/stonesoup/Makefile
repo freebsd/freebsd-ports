@@ -3,6 +3,7 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 MASTER_SITES=	http://crawl.develz.org/release/
@@ -39,13 +40,11 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		NO_TRY_GOLD=YesPlease \
 		POSIX=YesPlease \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
-		SQLITE_LIB=-lsqlite3
-
-.if defined(VERBOSE)
-MAKE_ARGS+=	V=yes
-.endif
+		SQLITE_LIB=-lsqlite3 \
+		V=yes
 
 OPTIONS_DEFINE=	SDL SOUND NOWIZARD LUA DOCS EXAMPLES
+OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes
 
 SOUND_DESC=	Sound support
@@ -89,13 +88,13 @@ post-patch-SOUND-off:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/AppHdr.h
 
 pre-install:
-	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' | \
-		${XARGS} ${RM}
+	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/settings/init.txt ${STAGEDIR}${EXAMPLESDIR}/sample.crawlrc
 

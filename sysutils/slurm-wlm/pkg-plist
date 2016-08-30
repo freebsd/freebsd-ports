@@ -31,12 +31,12 @@ lib/libpmi.so.0
 lib/libpmi.so.0.0.0
 lib/libslurm.a
 lib/libslurm.so
-lib/libslurm.so.29
-lib/libslurm.so.29.0.0
+lib/libslurm.so.30
+lib/libslurm.so.30.0.0
 lib/libslurmdb.a
 lib/libslurmdb.so
-lib/libslurmdb.so.29
-lib/libslurmdb.so.29.0.0
+lib/libslurmdb.so.30
+lib/libslurmdb.so.30.0.0
 lib/slurm/accounting_storage_filetxt.a
 lib/slurm/accounting_storage_filetxt.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
@@ -103,8 +103,6 @@ lib/slurm/job_container_none.a
 lib/slurm/job_container_none.so
 lib/slurm/job_submit_all_partitions.a
 lib/slurm/job_submit_all_partitions.so
-lib/slurm/job_submit_cnode.a
-lib/slurm/job_submit_cnode.so
 lib/slurm/job_submit_cray.a
 lib/slurm/job_submit_cray.so
 lib/slurm/job_submit_defaults.a
@@ -145,6 +143,12 @@ lib/slurm/layouts_power_default.a
 lib/slurm/layouts_power_default.so
 lib/slurm/layouts_unit_default.a
 lib/slurm/layouts_unit_default.so
+lib/slurm/mcs_group.a
+lib/slurm/mcs_group.so
+lib/slurm/mcs_none.a
+lib/slurm/mcs_none.so
+lib/slurm/mcs_user.a
+lib/slurm/mcs_user.so
 lib/slurm/mpi_lam.a
 lib/slurm/mpi_lam.so
 lib/slurm/mpi_mpich1_p4.a
@@ -163,6 +167,8 @@ lib/slurm/mpi_openmpi.a
 lib/slurm/mpi_openmpi.so
 lib/slurm/mpi_pmi2.a
 lib/slurm/mpi_pmi2.so
+lib/slurm/node_features_knl_cray.a
+lib/slurm/node_features_knl_cray.so
 lib/slurm/power_none.a
 lib/slurm/power_none.so
 lib/slurm/preempt_job_prio.a
@@ -404,6 +410,7 @@ man/man5/cgroup.conf.5.gz
 man/man5/cray.conf.5.gz
 man/man5/ext_sensors.conf.5.gz
 man/man5/gres.conf.5.gz
+man/man5/knl.conf.5.gz
 man/man5/nonstop.conf.5.gz
 man/man5/slurm.conf.5.gz
 man/man5/slurmdbd.conf.5.gz
@@ -478,6 +485,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm_pe_fig1.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm_pe_fig2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/intel_knl.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/job_array.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/job_container_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/job_exit_code.html
@@ -486,6 +494,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/jobacct_gatherplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/jobcompplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/k_function.gif
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/knl.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/launch_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/licenses.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/linuxstyles.css
@@ -494,12 +503,15 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/maui.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mc_support.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mc_support.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mcs.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mcs_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/meetings.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/moab.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mpi_guide.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mpiplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/multi_cluster.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/news.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/node_features_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/nonstop.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/overview.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/plane_ex1.gif
@@ -571,7 +583,6 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sshare.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sstat.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/strigger.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sun_const.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sview.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/switchplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/taskplugins.html

@@ -1,5 +1,5 @@
---- Makefile.orig	2006-06-12 20:14:20.000000000 +0000
-+++ Makefile	2014-08-21 23:22:20.000000000 +0000
+--- Makefile.orig	2006-06-12 20:14:20 UTC
++++ Makefile
 @@ -2,13 +2,14 @@
  # See file COPYRIGHT for more information.
  #
@@ -19,7 +19,7 @@
  ICONT=icont
  
  # BIN is where the commands (notangle, noweave, nountangle, noroots) land
-@@ -18,13 +19,13 @@
+@@ -18,13 +19,13 @@ ICONT=icont
  # MAN7EXT is the extension for the nowebstyle man page (usually 7)
  # TEXINPUTS is the directory for TeX macro files
  # ELISP is the directory for emacs lisp files, or /dev/null not to install
@@ -38,7 +38,7 @@
  
  # change WEAVE if you want a different version of noweave to be installed
  WEAVE=noweave		
-@@ -37,7 +38,7 @@
+@@ -37,7 +38,7 @@ MANDIR=$(MAN)/man$(MANEXT)
  MAN7DIR=$(MAN)/man$(MAN7EXT)
  CATDIR=$(MAN)/cat$(MANEXT)
  CAT7DIR=$(MAN)/cat$(MAN7EXT)
@@ -47,7 +47,7 @@
  TEXNAME=$(TEXINPUTS)
  
  all: 
-@@ -179,7 +180,7 @@
+@@ -179,7 +180,7 @@ install-preformat-man:
  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)
  install-tex:
@@ -56,7 +56,7 @@
  	cp tex/nwmac.tex tex/noweb.sty $(TEXINPUTS)
  	-texhash || echo "Program texhash not found or failed"
  
-@@ -187,7 +188,7 @@
+@@ -187,7 +188,7 @@ uninstall-tex:
  	rm -f $(TEXINPUTS)/nwmac.tex $(TEXINPUTS)/noweb.sty
  
  install-elisp:

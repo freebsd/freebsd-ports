@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -23,7 +23,13 @@ GH_ACCOUNT=	jrmarino
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static
 
+.include <bsd.port.pre.mk>
+
 post-extract:
+.if (${OPSYS} == FreeBSD   && ${OSVERSION} < 1000000) || \
+    (${OPSYS} == DragonFly && ${OSVERSION} < 400600)
+	${REINPLACE_CMD} -e 's|"re"|"r"|' ${WRKSRC}/src/unix.adb
+.endif
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
 		${WRKSRC}/src/definitions.ads
 
@@ -50,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/shell-completers/_synth \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

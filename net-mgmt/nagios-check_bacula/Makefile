@@ -26,4 +26,6 @@ CONFIGURE_ARGS=	--enable-client-only	\
 OPTIONS_DEFINE=	#
 OPTIONS_DEFAULT=#
 
+NO_CCACHE=	yes
+
 .include "${MASTERDIR}/Makefile"

@@ -1,0 +1,11 @@
+--- Makefile.inc2.in.orig	2015-04-03 01:32:45 UTC
++++ Makefile.inc2.in
+@@ -44,7 +44,7 @@
+ INSTALL	=@DCCINSTALL@
+ @MAKE_DOT@endif
+ 
+-BININSTALL=$(INSTALL) -c $(SET_BINOWN) -m $(BINMODE)
++BININSTALL=$(BSD_INSTALL_PROGRAM)
+ 
+ # create the DCC home directory before trying to install files
+ beforeinstall:$(BINDIR) $(MANDIR)8 depend all

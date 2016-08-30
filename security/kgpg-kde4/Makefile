@@ -12,8 +12,8 @@ COMMENT=	Encryption tool for KDE
 
 RUN_DEPENDS=	gpg2:security/gnupg
 
-USE_KDE4=	automoc4 kdelibs pimlibs
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs pimlibs
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

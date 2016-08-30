@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Oct  7 18:13:47 2003
-+++ Makefile.in	Tue Oct  7 18:14:24 2003
-@@ -67,8 +67,7 @@
+--- Makefile.in.orig	2002-03-16 10:12:40 UTC
++++ Makefile.in
+@@ -67,8 +67,7 @@ installscript:
  
  installlib:
  	${MKINSTALLDIRS} "${DESTDIR}${libdir}"

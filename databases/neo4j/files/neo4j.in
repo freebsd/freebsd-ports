@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: neo4j
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable neo4j:
+#
+# neo4j_enable=YES
+
+. /etc/rc.subr
+
+name=neo4j
+rcvar=neo4j_enable
+desc="Graphing database"
+
+load_rc_config $name
+
+: ${neo4j_enable:=NO}
+
+command=%%PREFIX%%/libexec/neo4j
+start_cmd="$command start"
+start_precmd=neo4j_prestart
+stop_cmd="$command stop"
+status_cmd="$command status"
+
+neo4j_prestart()
+{
+	NEO4J_DATA=%%DATADIR%%
+	NEO4J_LIB=%%PREFIX%%/lib/neo4j
+	NEO4J_LOGS=/var/log/neo4j
+	NEO4J_PLUGINS=${NEO4J_LIB}/plugins
+	NEO4J_RUN=/var/run/neo4j
+	mkdir -p ${NEO4J_LOGS} ${NEO4J_RUN}
+}
+
+run_rc_command $1

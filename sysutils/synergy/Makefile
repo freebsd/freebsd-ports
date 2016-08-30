@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.7.6
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	kevlo@FreeBSD.org
@@ -35,6 +35,10 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 OPTIONS_DEFINE=	EXAMPLES
 
 BROKEN_sparc64=	cannot build: C++ code errors
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/ext/gtest-1.6.0
+	@${TAR} xf ${WRKSRC}/ext/gtest-1.6.0.zip -C ${WRKSRC}/ext/gtest-1.6.0
 
 do-install:
 .for f in synergyc synergyd synergys

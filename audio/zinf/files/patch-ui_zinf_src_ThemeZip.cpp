@@ -14,3 +14,11 @@
  
  #ifdef WIN32
  #include <windows.h>
+@@ -44,6 +45,7 @@ ________________________________________
+ #include <strings.h>
+ #endif
+ #include <string>
++#include <cstring>
+ 
+ using namespace std;
+ #include "zlib.h"

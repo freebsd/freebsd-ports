@@ -15,20 +15,24 @@ visualparadigm/.install4j/e01511f4.lprop
 visualparadigm/.install4j/e4d34e6a.lprop
 visualparadigm/.install4j/firstrun
 visualparadigm/.install4j/i4j_extf_0_aprh35.utf8
-visualparadigm/.install4j/i4j_extf_10_aprh35_1prcdfd.png
-visualparadigm/.install4j/i4j_extf_11_aprh35_17k9c85.png
-visualparadigm/.install4j/i4j_extf_12_aprh35_1fq9ute.png
-visualparadigm/.install4j/i4j_extf_13_aprh35_3obg30.png
-visualparadigm/.install4j/i4j_extf_14_aprh35_1bd1sv0.png
+visualparadigm/.install4j/i4j_extf_10_aprh35_35crt.ico
+visualparadigm/.install4j/i4j_extf_11_aprh35_14f5pgp.png
+visualparadigm/.install4j/i4j_extf_12_aprh35_1prcdfd.png
+visualparadigm/.install4j/i4j_extf_13_aprh35_dc487b.png
+visualparadigm/.install4j/i4j_extf_14_aprh35_w6oy2a.png
+visualparadigm/.install4j/i4j_extf_15_aprh35_zxvnsi.png
+visualparadigm/.install4j/i4j_extf_16_aprh35_hq8uam.png
+visualparadigm/.install4j/i4j_extf_17_aprh35_3obg30.png
+visualparadigm/.install4j/i4j_extf_18_aprh35_1bd1sv0.png
 visualparadigm/.install4j/i4j_extf_1_aprh35_9bcs32.png
-visualparadigm/.install4j/i4j_extf_2_aprh35_1ymxr2x.png
-visualparadigm/.install4j/i4j_extf_3_aprh35_1xtiegs.png
-visualparadigm/.install4j/i4j_extf_4_aprh35_wqeoht.png
-visualparadigm/.install4j/i4j_extf_5_aprh35.txt
-visualparadigm/.install4j/i4j_extf_6_aprh35_r0yofz.ico
-visualparadigm/.install4j/i4j_extf_7_aprh35_1rhdlfp.icns
-visualparadigm/.install4j/i4j_extf_8_aprh35_35crt.ico
-visualparadigm/.install4j/i4j_extf_9_aprh35_14f5pgp.png
+visualparadigm/.install4j/i4j_extf_2_aprh35_rv5a5s.png
+visualparadigm/.install4j/i4j_extf_3_aprh35_hw505s.png
+visualparadigm/.install4j/i4j_extf_4_aprh35_1vfzoeu.png
+visualparadigm/.install4j/i4j_extf_5_aprh35_1luvph4.png
+visualparadigm/.install4j/i4j_extf_6_aprh35_wqeoht.png
+visualparadigm/.install4j/i4j_extf_7_aprh35.txt
+visualparadigm/.install4j/i4j_extf_8_aprh35_r0yofz.ico
+visualparadigm/.install4j/i4j_extf_9_aprh35_1rhdlfp.icns
 visualparadigm/.install4j/i4jparams.conf
 visualparadigm/.install4j/i4jruntime.jar
 visualparadigm/.install4j/user.jar
@@ -132,42 +136,99 @@ visualparadigm/Application/integration/vpumlecmyeclipse75/vpupdate.xml
 visualparadigm/Application/launcher/run_vp_integration_ec
 visualparadigm/Application/launcher/run_vp_integration_ij
 visualparadigm/Application/launcher/run_vp_integration_nb
-visualparadigm/Application/lib/ant.jar
-visualparadigm/Application/lib/derby.jar
-visualparadigm/Application/lib/jniwrap.jar
-visualparadigm/Application/lib/lib01.jar
-visualparadigm/Application/lib/lib02.jar
-visualparadigm/Application/lib/lib03.jar
-visualparadigm/Application/lib/lib04.jar
-visualparadigm/Application/lib/lib05.jar
-visualparadigm/Application/lib/lib06.jar
-visualparadigm/Application/lib/lib07.jar
-visualparadigm/Application/lib/openapi.jar
-visualparadigm/Application/lib/platforminstaller.jar
-visualparadigm/Application/lib/startsde.jar
-visualparadigm/Application/lib/vpplatform.jar
-visualparadigm/Application/lib/winpack.jar
-visualparadigm/Application/lib/xalan.jar
-visualparadigm/Application/ormlib/antlr-2.7.7.jar
-visualparadigm/Application/ormlib/c3p0.jar
-visualparadigm/Application/ormlib/javassist-3.15.0-GA.jar
-visualparadigm/Application/ormlib/log4j.jar
-visualparadigm/Application/ormlib/optionaljar/ehcache-2.4.3.jar
-visualparadigm/Application/ormlib/optionaljar/hibernate-search.jar
-visualparadigm/Application/ormlib/optionaljar/hibernate-validator.jar
-visualparadigm/Application/ormlib/optionaljar/jboss-jacc-api_1.4_spec-1.0.2.Final.jar
-visualparadigm/Application/ormlib/optionaljar/lucene-core-3.6.2.jar
-visualparadigm/Application/ormlib/optionaljar/proxool-0.8.3.jar
-visualparadigm/Application/ormlib/optionaljar/slf4j-api-1.6.1.jar
-visualparadigm/Application/ormlib/orm.jar
-visualparadigm/Application/ormlib/php/doctrine.zip
-visualparadigm/Application/ormlib/php/phporm.zip
+visualparadigm/Application/%%LIB32DIR%%/ant.jar
+visualparadigm/Application/%%LIB32DIR%%/derby.jar
+visualparadigm/Application/%%LIB32DIR%%/jniwrap.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%01.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%02.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%03.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%04.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%05.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%06.jar
+visualparadigm/Application/%%LIB32DIR%%/%%LIB32DIR%%07.jar
+visualparadigm/Application/%%LIB32DIR%%/openapi.jar
+visualparadigm/Application/%%LIB32DIR%%/platforminstaller.jar
+visualparadigm/Application/%%LIB32DIR%%/startsde.jar
+visualparadigm/Application/%%LIB32DIR%%/vpplatform.jar
+visualparadigm/Application/%%LIB32DIR%%/winpack.jar
+visualparadigm/Application/%%LIB32DIR%%/xalan.jar
+visualparadigm/Application/orm%%LIB32DIR%%/antlr-2.7.7.jar
+visualparadigm/Application/orm%%LIB32DIR%%/c3p0.jar
+visualparadigm/Application/orm%%LIB32DIR%%/javassist-3.15.0-GA.jar
+visualparadigm/Application/orm%%LIB32DIR%%/log4j.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/ehcache-2.4.3.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/hibernate-search.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/hibernate-validator.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/jboss-jacc-api_1.4_spec-1.0.2.Final.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/lucene-core-3.6.2.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/proxool-0.8.3.jar
+visualparadigm/Application/orm%%LIB32DIR%%/optionaljar/slf4j-api-1.6.1.jar
+visualparadigm/Application/orm%%LIB32DIR%%/orm.jar
+visualparadigm/Application/orm%%LIB32DIR%%/php/doctrine.zip
+visualparadigm/Application/orm%%LIB32DIR%%/php/phporm.zip
 visualparadigm/Application/resources/DocComposerTemplateSchema.xsd
 visualparadigm/Application/resources/ProductSelector.png
 visualparadigm/Application/resources/Visual_Paradigm_Patch_Update
 visualparadigm/Application/resources/am.png
 visualparadigm/Application/resources/appConfig_sample.properties
 visualparadigm/Application/resources/community.txt
+visualparadigm/Application/resources/diagram_palette_tooltip/ActivityDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ActivityDiagram__SysML.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Application Layer).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Business Layer).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Implementation and Migration).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Motivation).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Relationships).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Technology Layer).xml
+visualparadigm/Application/resources/diagram_palette_tooltip/BasicPalette.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/BlockDefinitionDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/Brainstorm.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/BusinessMotivationModelDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/BusinessProcessDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/CMMNDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ClassDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/CommunicationDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ComponentDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/CompositeStructureDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ConversationDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/DataFlowDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/DeploymentDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/EJBDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/EPCDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ERDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/FactDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/InformationFlows.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/InteractionDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/InteractionOverviewDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/InternalBlockDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/MindMapDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ORMDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ObjectDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/OrganizationChart.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/OverviewDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/PackageDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/PackageDiagram__SysML.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ParametricDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ProcessMapDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/ProfileDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/RequirementDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SoaMLServiceCategorizationDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SoaMLServiceContractDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SoaMLServiceInterfaceDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SoaMLServiceParticipantDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SoaMLServicesArchitectureDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/StateDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/SysMLBasicPalette.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/TimingDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/UseCaseDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/UserInterfaceDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/UserInterfaceDiagram__Web.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFAndroidPhoneDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFAndroidTabletDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFDesktopDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFIPadDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFIPhoneDiagram.xml
+visualparadigm/Application/resources/diagram_palette_tooltip/WFWebDiagram.xml
 visualparadigm/Application/resources/dict/Makefile
 visualparadigm/Application/resources/dict/Makefile.am
 visualparadigm/Application/resources/dict/Makefile.in
@@ -619,6 +680,7 @@ visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/s
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/businessWorkflowDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/chartDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/classDiagram.png
+visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/cmmnDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/collaborationDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/componentDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/compositeStructureDiagram.png
@@ -651,6 +713,7 @@ visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/s
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/businessWorkflowDiagram.gif
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/chartDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/classDiagram.gif
+visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/cmmnDiagram.png
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/collaborationDiagram.gif
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/componentDiagram.gif
 visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/compositeStructureDiagram.gif
@@ -849,7 +912,7 @@ visualparadigm/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/sdeec_h
 visualparadigm/Application/sde/sdeec/vpupdate.xml
 visualparadigm/Application/sde/sdeecmyeclipse75/vpupdate.xml
 visualparadigm/Application/sde/sdeecwsap/vpupdate.xml
-visualparadigm/Application/sde/sdeij/plugins/sdeIJ/lib/vpsdeij.jar
+visualparadigm/Application/sde/sdeij/plugins/sdeIJ/%%LIB32DIR%%/vpsdeij.jar
 visualparadigm/Application/sde/sdeij/vpupdate.xml
 visualparadigm/Application/sde/sdenb36/modules/vpsdenb.jar
 visualparadigm/Application/sde/sdenb36/vpupdate.xml
@@ -905,6 +968,6 @@ visualparadigm/Application/updatesynchronizer/UpdateSynchronizerConfiguration
 visualparadigm/Visual_Paradigm
 @dir visualparadigm/Application/bin/vp_windows/lame
 @dir visualparadigm/Application/bin/vp_windows/x64
-@dir visualparadigm/Application/ormlib/dotnet/4.0
-@dir visualparadigm/Application/sde/sdenb36/lib/ext
-@dir visualparadigm/Application/sde/sdenb36/lib/vpsdenb
+@dir visualparadigm/Application/orm%%LIB32DIR%%/dotnet/4.0
+@dir visualparadigm/Application/sde/sdenb36/%%LIB32DIR%%/ext
+@dir visualparadigm/Application/sde/sdenb36/%%LIB32DIR%%/vpsdenb

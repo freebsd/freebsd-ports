@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	molden
-PORTVERSION=	5.4
-PORTREVISION=	1
+PORTVERSION=	5.7
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/

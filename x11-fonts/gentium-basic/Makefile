@@ -2,23 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	GentiumBasic
-PORTVERSION=	110
-PORTREVISION=	3
+PORTVERSION=	1102
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=${MEDIA_ID}&filename=/
-DISTNAME=	ttf-sil-gentium-basic_1.1.orig
+MASTER_SITES=	http://software.sil.org/downloads/gentium/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
 
 LICENSE=	OFL11
 
-USES=		fonts
+USES=		fonts zip
 NO_ARCH=	yes
-
-MEDIA_ID=	${PORTNAME}_${PORTVERSION}_tar
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S,.orig,,:S,_,-,}
 
 PLIST_FILES=	${FONTSDIR}/GenBasB.ttf \
 		${FONTSDIR}/GenBasBI.ttf \

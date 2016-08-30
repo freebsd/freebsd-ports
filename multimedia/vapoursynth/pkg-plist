@@ -10,7 +10,7 @@
 %%CORE%%lib/libvapoursynth.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vapoursynth.so
 %%DOCS%%%%VSPIPE%%man/man1/vspipe.1.gz
-%%ASS%%%%DATADIR%%/libassvapour.so
+%%ASS%%%%DATADIR%%/libsubtext.so
 %%EEDI3%%%%DATADIR%%/libeedi3.so
 %%IMAGEMAGICK%%%%DATADIR%%/libimwri.so
 %%MORPHO%%%%DATADIR%%/libmorpho.so

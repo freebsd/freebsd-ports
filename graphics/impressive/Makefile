@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	impressive
-PORTVERSION=	0.10.3
-PORTREVISION=	10
+PORTVERSION=	0.11.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -19,10 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \
 		xpdf:graphics/xpdf \
 		pdftk:print/pdftk \
 		xdg-open:devel/xdg-utils \
-		mplayer:multimedia/mplayer \
-		${PYGAME}
+		mplayer:multimedia/mplayer
 
 USES=		ghostscript:run python
+USE_SDL=	sdl
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_FILES=	bin/${PORTNAME} \

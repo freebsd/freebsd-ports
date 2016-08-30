@@ -3,6 +3,7 @@
 
 PORTNAME=	the
 PORTVERSION=	3.3.r4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.sourceforge.net/hessling-editor/
 DISTNAME=	THE-${PORTVERSION:S/.r/RC/}
@@ -12,6 +13,9 @@ COMMENT=	THE, The Hessling Editor, is like the vm/cms xedit editor
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc=	fails to configure
+
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses \
 		--with-rexxincdir=${LOCALBASE}/include \
@@ -24,10 +28,6 @@ XCURSES_DESC=	Build XCurses (X11) version
 REXX_REGINA_DESC=	Enable Rexx interpreter
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not configure on powerpc
-.endif
 
 .if ${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=--with-xaw3d

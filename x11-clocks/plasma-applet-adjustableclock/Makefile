@@ -13,8 +13,8 @@ COMMENT=	KDE4 highly configurable clock plasma applet
 
 LICENSE=	GPLv2
 
-USES=		cmake gettext tar:bzip2
-USE_KDE4=	automoc4 workspace
+USES=		cmake gettext kde:4 tar:bzip2
+USE_KDE=	automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

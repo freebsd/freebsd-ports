@@ -14,10 +14,10 @@ COMMENT=	Transparent KDE window decoration
 
 LICENSE=	GPLv2
 
-USE_KDE4=	kdelibs automoc4 workspace
+USES=		cmake:outsource kde:4 tar:bzip2
+USE_KDE=	kdelibs automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib gui qt3support
-USES=		cmake:outsource tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

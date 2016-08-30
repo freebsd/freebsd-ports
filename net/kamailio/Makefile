@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -13,14 +13,14 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		gmake readline shebangfix
+BROKEN_powerpc64=	Does not build
+
+USES=		gmake ncurses readline shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
 		utils/kamctl/kamctl utils/kamctl/kamdbctl
@@ -48,18 +48,18 @@ PGSQL_USES=	pgsql
 JITSI_RUN_DEPENDS=	jitsi:net-im/jitsi
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
-TLS_USE=		OPENSSL=yes
+TLS_USES=	ssl
 
 .include <bsd.port.options.mk>
 
 # avoid slow locks, use fast atomic ops
-.if ${ARCH} == "amd64"
-EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-amd64
-.endif
-
-.if ${ARCH} == "i386"
-EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-i386
-.endif
+#.if ${ARCH} == "amd64"
+#EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-amd64
+#.endif
+#
+#.if ${ARCH} == "i386"
+#EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-i386
+#.endif
 
 DEFAULT_GROUP_INCLUDE=	standard standard-dep
 

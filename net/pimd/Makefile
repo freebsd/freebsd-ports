@@ -14,16 +14,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
 GH_PROJECT=	libite:libite
 GH_TAGNAME=	v1.4.4:libite
+GH_SUBDIR=	libite:libite
 
 USES=		tar:bzip2
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	prefix="${PREFIX}" sysconfdir="${PREFIX}/etc/"
-
-post-extract:
-	cd ${WRKSRC} && ${RMDIR} libite && \
-	${MV} ${WRKSRC_libite} ${WRKSRC}/libite
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pimd ${STAGEDIR}${PREFIX}/sbin/

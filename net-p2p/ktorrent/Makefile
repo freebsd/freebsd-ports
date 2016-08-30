@@ -15,10 +15,10 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libgmp.so:math/gmp \
 		libktorrent.so:net-p2p/libktorrent
 
-USE_KDE4=	kdelibs automoc4 pimlibs workspace
+USES=		cmake:outsource gettext kde:4 tar:bzip2
+USE_KDE=	kdelibs automoc4 pimlibs workspace
 USE_QT4=	corelib gui network qt3support qtestlib webkit \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake:outsource gettext tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFLICTS_BUILD=	ktorrent-2*

@@ -15,7 +15,7 @@ COMMENT=	Browser based client handling WMS, WFS, and proxy service
 LICENSE=	LGPL21+
 
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 NO_BUILD=	yes
 TOMCATDIR=	${PREFIX}/${TOMCATVER}

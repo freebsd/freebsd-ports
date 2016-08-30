@@ -1,14 +1,20 @@
---- main/Makefile.orig	2016-06-23 13:47:35 UTC
+--- main/Makefile.orig	2016-07-21 14:54:02 UTC
 +++ main/Makefile
-@@ -82,6 +82,7 @@ ifeq ($(OSARCH),FreeBSD)
-   BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
+@@ -79,9 +79,12 @@ endif
+ 
+ ifeq ($(OSARCH),FreeBSD)
+   # -V is understood by BSD Make, not by GNU make.
+-  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
++  BSDVERSION=$(OSVERSION)
++  BSDVERSION?=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
    AST_LIBS+=$(shell if test $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
++  CRYPT_LIB=$(shell if test $(BSDVERSION) -ge 1200001 ; then echo "-lcrypt"; fi)
    AST_LIBS+=-lcrypto
 +  AST_LIBS+=%%LIBSYSINFO%%
  endif
  
  ifneq ($(findstring $(OSARCH), mingw32 cygwin ),)
-@@ -351,9 +352,6 @@ else # Darwin
+@@ -351,9 +354,6 @@ else # Darwin
  	$(INSTALL) -m 755 $(ASTPJ_LIB) "$(DESTDIR)$(ASTLIBDIR)/"
  endif
  endif

@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	solr
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	The Apache Solr PHP extension
+COMMENT=	PHP extension for Apache Solr
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	PHP301
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 
-USES=		php:ext
+BROKEN_powerpc64=	Does not build
+
+USES=		php:ext tar:tgz
 USE_PHP=	json:build
-IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

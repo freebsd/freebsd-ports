@@ -9,8 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:C,\..*,.0,}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
 
-USES=		cmake:outsource gettext tar:xz
-USE_KDE4=	kdelibs automoc4
+USES=		cmake:outsource gettext kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	script webkit \
 		moc_build qmake_build rcc_build uic_build
 
@@ -24,7 +24,7 @@ OPERA_CMAKE_OFF=	-DWITH_QCA2=off \
 			-DWITH_QtOAuth=off
 
 NEPOMUK_DESC=	Bookmarks tagging via Nepomuk
-NEPOMUK_USE=	KDE4=nepomuk-core
+NEPOMUK_USE=	KDE=nepomuk-core
 NEPOMUK_CMAKE_OFF=	-DWITH_NepomukCore=off
 
 post-patch:

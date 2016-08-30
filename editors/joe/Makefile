@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	juergen.gotteswinter@googlemail.com
 COMMENT=	Joe's Own Editor
 
 LICENSE=	GPLv2

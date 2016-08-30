@@ -2,44 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-PORTVERSION=	3.1.5
-PORTREVISION=	2
+PORTVERSION=	3.4.0
 CATEGORIES=	math
-MASTER_SITES=	http://forge.scilab.org/index.php/p/arpack-ng/downloads/get/ \
-		LOCAL/bf
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT+=	Revised Argand library for solving large-scale eigenvalue problems
+COMMENT?=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fortran libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	opencollab
+
+USES=		autoreconf:build fortran libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-blas="${BLAS}" \
+		--with-lapack="${LAPACK}" \
+		${MPICH_ARG}
+MPICH_ARG?=	--disable-mpi
+LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
+PORTEXAMPLES=	*
+
 CONFLICTS=	arpack-[0-9]*
+CONFLICTS_INSTALL?=	arpack-ng-mpich-3.*
 SLAVEDIRS=	math/arpack-ng-mpich
-
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--with-blas="${BLAS}" \
-		--with-lapack="${LAPACK}"
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS MPI
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
-MPI_CONFIGURE_ENABLE=	mpi
-MPI_LIB_DEPENDS=	libmpich.so.8:net/mpich2
-MPI_CONFLICTS_INSTALL+=		arpack-ng-3.*
-MPI_CONFLICTS_INSTALL_OFF+=	arpack-ng-mpich-3.*
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMPI}
-PKGNAMESUFFIX=	-mpich
-.endif
 
 WITH_BLAS?=	blas
 
@@ -62,7 +56,10 @@ IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|\(libdir\)(/pkgconfig)|(prefix)/libdata\1|' \
-	${WRKSRC}/Makefile.in
+	${WRKSRC}/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC}; ./bootstrap
 	@${REINPLACE_CMD} -e '/BLAS_LIBS.*LAPACK_LIBS/ \
 	{s/LAPACK_LIBS/BLAS_LIBS/;s/BLAS_LIBS/LAPACK_LIBS/;}' \
 	${WRKSRC}/Makefile.in \
@@ -70,15 +67,14 @@ post-patch:
 	${WRKSRC}/TESTS/Makefile.in
 
 post-build:
-	@cd ${WRKSRC}/.libs; ${STRIP_CMD} libarpack.a libarpack.so.*.*
+	@cd ${WRKSRC}/SRC/.libs; ${STRIP_CMD} libarpack.so.*.*
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
-check regression-test test: build
-	@cd ${WRKSRC}; ${DO_MAKE_BUILD} check
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/EXAMPLES && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

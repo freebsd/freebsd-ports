@@ -19,14 +19,12 @@ USE_GITHUB=	nodefault
 GH_ACCOUNT=	google:brotli
 GH_PROJECT=	brotli:brotli
 GH_TAGNAME=	${BROTLI_VERSION}:brotli
+GH_SUBDIR=	brotli:brotli
 
 USES=		pkgconfig autoreconf libtool compiler:c++0x
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
-
-post-extract:
-	${RMDIR} ${WRKSRC}/brotli && ${MV} ${WRKSRC_brotli} ${WRKSRC}/brotli
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

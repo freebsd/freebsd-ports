@@ -1,16 +1,16 @@
 @(,%%NAGIOSGROUP%%,755) bin/nagios
 @(,%%NAGIOSGROUP%%,755) bin/nagiostats
 %%ETCDIR%%/cgi.cfg-sample
-%%ETCDIR%%/nagios.cfg-sample
-%%ETCDIR%%/objects/commands.cfg-sample
-%%ETCDIR%%/objects/contacts.cfg-sample
-%%ETCDIR%%/objects/localhost.cfg-sample
-%%ETCDIR%%/objects/printer.cfg-sample
-%%ETCDIR%%/objects/switch.cfg-sample
-%%ETCDIR%%/objects/templates.cfg-sample
-%%ETCDIR%%/objects/timeperiods.cfg-sample
-%%ETCDIR%%/objects/windows.cfg-sample
-%%ETCDIR%%/resource.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/nagios.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/commands.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/contacts.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/localhost.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/printer.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/switch.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/templates.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/timeperiods.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/windows.cfg-sample
+@(,%%NAGIOSGROUP%%,) %%ETCDIR%%/resource.cfg-sample
 %%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js
 %%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js.map
 %%WWWDIR%%/angularjs/ui-bootstrap-tpls-0.12.0.min.js

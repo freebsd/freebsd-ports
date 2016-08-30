@@ -384,6 +384,7 @@
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig.pl
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig_noshare
+%%SUB_HTDIG%%%%MMDIR%%/cron/rundig
 %%MMDIR%%/cron/senddigests
 %%MMDIR%%/data/sitelist.cfg
 %%MMDIR%%/icons/PythonPowered.png
@@ -442,7 +443,6 @@
 %%NLS%%%%MMDIR%%/messages/it/README.it
 %%NLS%%%%MMDIR%%/messages/ja/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/ja/LC_MESSAGES/mailman.po
-%%NLS%%%%MMDIR%%/messages/ja/README.ja
 %%NLS%%%%MMDIR%%/messages/ko/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/ko/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/ko/README.ko

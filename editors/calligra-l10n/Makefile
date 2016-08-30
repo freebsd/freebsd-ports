@@ -7,8 +7,7 @@ CATEGORIES=	editors kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for Calligra
 
-USE_KDE4=	# blank, needed to get KDE4_VERSION
-USES=		metaport
+USES=		kde:4 metaport
 
 CALLIGRA_LANG_ALL=	bs ca ca@valencia cs da de el en_GB es et fi fr \
 			gl hu it ja kk nb nl pl pt pt_BR ru sk \
@@ -36,7 +35,7 @@ ALL_DESC=	All localizations
 ALL_RUN_DEPENDS=# empty
 
 .for lang in ${CALLIGRA_LANG_ALL}
-${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/LC_MESSAGES/calligra.mo
+${lang}_DETECT?=	${KDE_PREFIX}/share/locale/${lang}/LC_MESSAGES/calligra.mo
 ${lang}_PORT?=		editors/calligra-l10n-${lang:S/@/_/}
 ${lang}_NAME?=		${lang}
 

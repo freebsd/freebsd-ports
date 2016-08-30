@@ -1,6 +1,6 @@
---- configure.orig	2012-12-19 18:02:25.000000000 +0100
-+++ configure	2014-09-04 12:13:33.328870000 +0200
-@@ -1480,7 +1480,7 @@
+--- configure.orig	2012-12-19 17:02:25 UTC
++++ configure
+@@ -1480,7 +1480,7 @@ Optional Packages:
                            specify a pattern for trace [[no]]
    --with-tcl=<dir>        directory containing tcl configuration
                            (tclConfig.sh) [[searches]]
@@ -9,7 +9,7 @@
    --with-tcl-lib=<dir>    directory containing tcl libraries (libtclX.Y)
                            [[none]]
    --with-tcl-inc=<dir>    directory containing tcl include files
-@@ -1518,7 +1518,7 @@
+@@ -1518,7 +1518,7 @@ PREFIX/Modules/($MODULES_VERSION/ if mod
  	init/
  	man/
  		man1/
@@ -18,7 +18,7 @@
  	modulefiles/
  PREFIX/Modules/
  	modulefiles/
-@@ -7099,9 +7099,9 @@
+@@ -7099,9 +7099,9 @@ else
  		em_cv_tclver=${with_tclver}
  	    fi #}}
  
@@ -30,7 +30,7 @@
  	    fi #}
  	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${em_cv_tclver}" >&5
  $as_echo "${em_cv_tclver}" >&6; }
-@@ -7375,9 +7375,9 @@
+@@ -7375,9 +7375,9 @@ else
  		em_cv_tclxver=${with_tclxver}
  	    fi #}}
  
@@ -42,7 +42,7 @@
  	    fi #}
  	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: using ${em_cv_tclxver}" >&5
  $as_echo "using ${em_cv_tclxver}" >&6; }
-@@ -7657,7 +7657,7 @@
+@@ -7657,7 +7657,7 @@ else
  	EXTDIR="etc"
  
  fi
@@ -51,7 +51,7 @@
  ac_config_commands="$ac_config_commands default"
  cat >confcache <<\_ACEOF
  # This file is a shell script that caches the results of configure
-@@ -8398,7 +8398,7 @@
+@@ -8398,7 +8398,7 @@ do
      "init/Makefile") CONFIG_FILES="$CONFIG_FILES init/Makefile" ;;
      "init/.modulespath") CONFIG_FILES="$CONFIG_FILES init/.modulespath" ;;
      "doc/module.1") CONFIG_FILES="$CONFIG_FILES doc/module.1" ;;

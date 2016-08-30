@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-sse2
 .endif
 
 OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND NAS OSS \
-			PULSEAUDIO PTHREADS SDL_ATOMIC SDL_AUDIO \
+			PULSEAUDIO SNDIO PTHREADS SDL_ATOMIC SDL_AUDIO \
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC \
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER \
 			SDL_THREADS SDL_TIMERS SDL_VIDEO VIDEO_OPENGL VIDEO_X11
@@ -144,6 +144,16 @@ IGNORE=	option PULSEAUDIO requires SDL_AUDIO
 CONFIGURE_ARGS+=	--enable-pulseaudio --enable-pulseaudio-shared
 .else
 CONFIGURE_ARGS+=	--disable-pulseaudio --disable-pulseaudio-shared
+.endif
+
+.if ${PORT_OPTIONS:MSNDIO}
+.if !${PORT_OPTIONS:MSDL_AUDIO}
+IGNORE=	option SNDIO requires SDL_AUDIO
+.endif
+CONFIGURE_ARGS+=	--enable-sndio --enable-sndio-shared
+LIB_DEPENDS+=		libsndio.so:audio/sndio
+.else
+CONFIGURE_ARGS+=	--disable-sndio --disable-sndio-shared
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO_OPENGL}

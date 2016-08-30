@@ -6,6 +6,7 @@ arm-none-eabi/bin/nm
 arm-none-eabi/bin/objcopy
 arm-none-eabi/bin/objdump
 arm-none-eabi/bin/ranlib
+arm-none-eabi/bin/readelf
 arm-none-eabi/bin/strip
 arm-none-eabi/bin/size
 arm-none-eabi/lib/ldscripts/armelf.x

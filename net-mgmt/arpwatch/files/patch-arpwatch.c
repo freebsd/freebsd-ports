@@ -18,12 +18,15 @@
  		switch (op) {
  
  		case 'd':
-@@ -202,6 +204,13 @@ main(int argc, char **argv)
+@@ -202,6 +204,16 @@ main(int argc, char **argv)
  			rfilename = optarg;
  			break;
  
 +		case 'm':
 +			Watcher = optarg;
++			break;
++		case 'v':
++			vrrpflag = 1;
 +			break;
 +		case 'z':
 +			zeroflag = 1;
@@ -32,7 +35,7 @@
  		default:
  			usage();
  		}
-@@ -321,7 +330,6 @@ main(int argc, char **argv)
+@@ -321,7 +333,6 @@ main(int argc, char **argv)
  
  	(void)setsignal(SIGINT, die);
  	(void)setsignal(SIGTERM, die);
@@ -40,7 +43,20 @@
  	if (rfilename == NULL) {
  		(void)setsignal(SIGQUIT, checkpoint);
  		(void)setsignal(SIGALRM, checkpoint);
-@@ -751,6 +759,6 @@ usage(void)
+@@ -391,6 +402,12 @@ process_ether(register u_char *u, regist
+ 		return;
+ 	}
+ 
++	/* Check for CARP-generated ARP replies and ignore them */
++	if (vrrpflag == 1 && MEMCMP(sha, vrrp_prefix, 5) == 0) {
++		/* do nothing */
++		return;
++	}
++
+ 	/* Double check ethernet addresses */
+ 	if (MEMCMP(sea, sha, 6) != 0) {
+ 		dosyslog(LOG_INFO, "ethernet mismatch", sia, sea, sha);
+@@ -751,6 +768,6 @@ usage(void)
  
  	(void)fprintf(stderr, "Version %s\n", version);
  	(void)fprintf(stderr, "usage: %s [-dN] [-f datafile] [-i interface]"

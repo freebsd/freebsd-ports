@@ -34,7 +34,8 @@ GH_ACCOUNT=	tomahawk-player
 
 TELEPATHY_LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
 TELEPATHY_DESC=	Configure Telepathy Settings
-TELEPATHY_USE_KDE4=	kdelibs automoc4
+TELEPATHY_USES=	kde:4
+TELEPATHY_USE=	KDE=kdelibs,automoc4
 
 INSTALLS_ICONS=	yes
 

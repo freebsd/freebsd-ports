@@ -14,8 +14,6 @@ COMMENT=	Package of programs for computing population parameters
 
 LICENSE=	APACHE20
 
-OPTIONS_DEFINE=	WXGTK DOCS
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
 GNU_CONFIGURE=	yes
@@ -23,16 +21,13 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	WXGTK DOCS
 
-.if ${PORT_OPTIONS:MWXGTK}
-USE_WX=		2.8
-WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
-PLIST_FILES+=	bin/lam_conv
-.else
-CONFIGURE_ARGS+=	--disable-converter
-.endif
+WXGTK_USE=		WX=2.8
+WXGTK_VARS=		WX_CONF_ARGS=absolute
+WXGTK_PLIST_FILES=	bin/lam_conv
+WXGTK_CONFIGURE_OFF=	--disable-converter
+WXGTK_BROKEN=		does not build
 
 post-patch:
 	@${REINPLACE_CMD} -e \

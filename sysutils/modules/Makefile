@@ -3,6 +3,7 @@
 
 PORTNAME=	modules
 PORTVERSION=	3.2.10
+PORTREVISION=	1
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	SF/${PORTNAME}/Modules/${PORTNAME}-${PORTVERSION}
 
@@ -11,20 +12,15 @@ COMMENT=	Dynamic modification of a user environment
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtcl84.so:lang/tcl84
-
-TCL_DVER?=	8.4
-TCL_VER=	${TCL_DVER:S/.//}
-HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
-		--without-x \
-		--with-version-path=${LOCALBASE}/Modules/versions \
+USES=		tcl
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-x \
+		--with-version-path=${PREFIX}/Modules/versions \
 		--mandir=${MANPREFIX}/man \
-		--with-tcl-ver=${TCL_VER} \
-		--with-tcl-inc=${LOCALBASE}/include/tcl${TCL_DVER} \
+		--with-tcl-ver=${TCL_VER:S/.//} \
+		--with-tcl-inc=${TCL_INCLUDEDIR} \
 		--with-tcl-lib=${LOCALBASE}/lib \
-		--with-tclx-ver=${TCL_VER}
+		--with-tclx-ver=${TCL_VER:S/.//}
 
 PLIST_SUB=	MODULES_VERSION=${PORTVERSION}
 

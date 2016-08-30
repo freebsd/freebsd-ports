@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
+USES=		alias ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/umix \

@@ -1,34 +1,11 @@
---- etc/telegraf.conf.orig	2016-08-05 15:00:27.853909704 +0200
-+++ etc/telegraf.conf	2016-08-05 15:03:19.238897451 +0200
+--- etc/telegraf.conf.orig	2016-08-23 23:23:46.036144000 +0200
++++ etc/telegraf.conf	2016-08-23 23:23:59.872490000 +0200
 @@ -55,7 +55,7 @@
    ## By default, precision will be set to the same timestamp order as the
    ## collection interval, with the maximum being 1s.
    ## Precision will NOT be used for service inputs, such as logparser and statsd.
--  ## Valid values are "Nns", "Nus" (or "Nµs"), "Nms", "Ns".
-+  ## Valid values are "Nns", "Nus", "Nms", "Ns".
+-  ## Valid values are "ns", "us" (or "µs"), "ms", "s".
++  ## Valid values are "ns", "us", "ms", "s".
    precision = ""
    ## Run telegraf in debug mode
    debug = false
-@@ -906,19 +906,19 @@
- #   ## List of metrics collected on above servers
- #   ## Each metric consists in a name, a jmx path and either
- #   ## a pass or drop slice attribute.
--#   ## This collect all heap memory usage metrics.
-+#   ## This collect all heap memory usage metrics.
- #   [[inputs.jolokia.metrics]]
- #     name = "heap_memory_usage"
- #     mbean  = "java.lang:type=Memory"
- #     attribute = "HeapMemoryUsage"
- #
--#   ## This collect thread counts metrics.
-+#   ## This collect thread counts metrics.
- #   [[inputs.jolokia.metrics]]
- #     name = "thread_count"
- #     mbean  = "java.lang:type=Threading"
- #     attribute = "TotalStartedThreadCount,ThreadCount,DaemonThreadCount,PeakThreadCount"
- #
--#   ## This collect number of class loaded/unloaded counts metrics.
-+#   ## This collect number of class loaded/unloaded counts metrics.
- #   [[inputs.jolokia.metrics]]
- #     name = "class_count"
- #     mbean  = "java.lang:type=ClassLoading"

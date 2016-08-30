@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	25.1-rc1
+DISTVERSION=	25.1-rc2
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU_ALPHA/emacs/pretest

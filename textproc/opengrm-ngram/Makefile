@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengrm-ngram
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://openfst.cs.nyu.edu/twiki/pub/GRM/NGramDownload/
 

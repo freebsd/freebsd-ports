@@ -1,6 +1,7 @@
 bin/ngramapply
 bin/ngramcontext
 bin/ngramcount
+bin/ngramhisttest
 bin/ngraminfo
 bin/ngrammake
 bin/ngrammarginalize
@@ -15,6 +16,11 @@ bin/ngramsort
 bin/ngramsplit
 bin/ngramsymbols
 bin/ngramtransfer
+include/ngram/hist-arc.h
+include/ngram/hist-mapper.h
+include/ngram/ngram-bayes-model-merge.h
+include/ngram/ngram-hist-merge.h
+include/ngram/util.h
 include/ngram/lexicographic-map.h
 include/ngram/ngram-absolute.h
 include/ngram/ngram-complete.h
@@ -44,6 +50,12 @@ include/ngram/ngram-transfer.h
 include/ngram/ngram-unsmoothed.h
 include/ngram/ngram-witten-bell.h
 include/ngram/ngram.h
+lib/hist-arc.so
+lib/hist-arc.so.0
+lib/hist-arc.so.0.0.0
 lib/libngram.so
-lib/libngram.so.1
-lib/libngram.so.1.0.0
+lib/libngram.so.2
+lib/libngram.so.2.0.0
+lib/libngramhist.so
+lib/libngramhist.so.2
+lib/libngramhist.so.2.0.0

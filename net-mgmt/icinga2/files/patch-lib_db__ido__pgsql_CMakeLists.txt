@@ -1,0 +1,11 @@
+--- lib/db_ido_pgsql/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
++++ lib/db_ido_pgsql/CMakeLists.txt
+@@ -43,7 +43,7 @@ if(PostgreSQL_FOUND)
+   )
+ 
+   install_if_not_exists(
+-    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-pgsql.conf
++    ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-pgsql.conf.sample
+     ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   )
+ 

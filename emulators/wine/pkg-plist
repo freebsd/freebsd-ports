@@ -828,6 +828,7 @@ include/wine/windows/ddk/hidsdi.h
 include/wine/windows/ddk/hidtypes.h
 include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/mountmgr.h
+include/wine/windows/ddk/ndis.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h

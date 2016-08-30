@@ -11,7 +11,7 @@ MAINTAINER=	david@catwhisker.org
 COMMENT=	Set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
-USES=		iconv tar:bzip2
+USES=		iconv ncurses tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
 

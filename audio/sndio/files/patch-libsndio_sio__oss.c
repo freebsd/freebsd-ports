@@ -1,9 +1,10 @@
---- libsndio/sio_oss.c.orig	2016-07-29 14:09:21 UTC
+--- libsndio/sio_oss.c.orig	2016-08-20 02:30:22 UTC
 +++ libsndio/sio_oss.c
-@@ -0,0 +1,890 @@
+@@ -0,0 +1,838 @@
 +/*	$OpenBSD$	*/
 +/*
 + * Copyright (c) 2008 Alexandre Ratchov <alex@caoua.org>
++ * Copyright (c) 2016 Tobias Kortkamp <t@tobik.me>
 + *
 + * Permission to use, copy, modify, and distribute this software for any
 + * purpose with or without fee is hereby granted, provided that the above
@@ -21,6 +22,7 @@
 +#ifdef USE_OSS
 +#include <sys/types.h>
 +#include <sys/ioctl.h>
++#include <sys/param.h>
 +#include <sys/soundcard.h>
 +#include <sys/stat.h>
 +
@@ -41,13 +43,6 @@
 +#define DEVPATH_MAX 	(1 +		\
 +	sizeof(DEVPATH_PREFIX) - 1 +	\
 +	sizeof(int) * 3)
-+
-+struct audio_pos {
-+	unsigned int play_pos;  /* total bytes played */
-+	unsigned int play_xrun; /* bytes of silence inserted */
-+	unsigned int rec_pos;   /* total bytes recorded */
-+	unsigned int rec_xrun;  /* bytes dropped */
-+};
 +
 +#define AUDIO_INITPAR(p)						\
 +	(void)memset((void *)(p), 0xff, sizeof(struct audio_swpar))
@@ -72,13 +67,16 @@
 +struct sio_oss_hdl {
 +	struct sio_hdl sio;
 +	int fd;
-+	int filling;
 +	unsigned int ibpf, obpf;	/* bytes per frame */
-+	unsigned int ibytes, obytes;	/* bytes the hw transferred */
-+	unsigned int ierr, oerr;	/* frames the hw dropped */
++	unsigned int isamples;
++	unsigned int osamples;
 +	int idelta, odelta;		/* position reported to client */
 +
-+	unsigned int play_pos;
++	char *devstr;
++
++	/* OSS doesn't have an API to ask for device parameters
++	 * without setting them, so we keep track of them ourselves.
++	 */
 +	struct audio_swpar swpar;
 +};
 +
@@ -95,11 +93,9 @@
 +static int sio_oss_revents(struct sio_hdl *, struct pollfd *);
 +
 +static void sio_oss_fmt_to_swpar(int, struct audio_swpar *);
-+static int sio_oss_audio_getpos(struct sio_oss_hdl *, struct audio_pos *);
 +static int sio_oss_audio_getpar(struct sio_oss_hdl *, struct audio_swpar *);
 +static int sio_oss_audio_setpar(struct sio_oss_hdl *, struct audio_swpar *);
-+static int sio_oss_audio_start(struct sio_oss_hdl *);
-+static int sio_oss_audio_stop(struct sio_oss_hdl *, int);
++static int sio_oss_reopen(struct sio_oss_hdl *);
 +
 +static struct sio_ops sio_oss_ops = {
 +	sio_oss_close,
@@ -315,25 +311,33 @@
 +	unsigned int devnum;
 +	int fd, flags;
 +
-+	p = _sndio_parsetype(str, "rsnd");
-+	if (p == NULL) {
-+		DPRINTF("sio_oss_getfd: %s: \"rsnd\" expected\n", str);
-+		return -1;
++	if (strcmp(str, "fallback") == 0) {
++		/* On FreeBSD /dev/dsp points to the default unit
++		 * selectable with the hw.snd.default_unit sysctl.
++		 * Use it as fallback device.
++		 */
++		snprintf(path, sizeof(path), DEVPATH_PREFIX);
++	} else {
++		p = _sndio_parsetype(str, "rsnd");
++		if (p == NULL) {
++			DPRINTF("sio_oss_getfd: %s: \"rsnd\" expected\n", str);
++			return -1;
++		}
++		switch (*p) {
++		case '/':
++			p++;
++			break;
++		default:
++			DPRINTF("sio_oss_getfd: %s: '/' expected\n", str);
++			return -1;
++		}
++		p = _sndio_parsenum(p, &devnum, 255);
++		if (p == NULL || *p != '\0') {
++			DPRINTF("sio_oss_getfd: %s: number expected after '/'\n", str);
++			return -1;
++		}
++		snprintf(path, sizeof(path), DEVPATH_PREFIX "%u", devnum);
 +	}
-+	switch (*p) {
-+	case '/':
-+		p++;
-+		break;
-+	default:
-+		DPRINTF("sio_oss_getfd: %s: '/' expected\n", str);
-+		return -1;
-+	}
-+	p = _sndio_parsenum(p, &devnum, 255);
-+	if (p == NULL || *p != '\0') {
-+		DPRINTF("sio_oss_getfd: %s: number expected after '/'\n", str);
-+		return -1;
-+	}
-+	snprintf(path, sizeof(path), DEVPATH_PREFIX "%u", devnum);
 +	if (mode == (SIO_PLAY | SIO_REC))
 +		flags = O_RDWR;
 +	else
@@ -347,7 +351,7 @@
 +	return fd;
 +}
 +
-+static struct sio_hdl *
++static struct sio_oss_hdl *
 +sio_oss_fdopen(int fd, unsigned int mode, int nbio)
 +{
 +	struct sio_oss_hdl *hdl;
@@ -360,29 +364,30 @@
 +	/* Set default device parameters */
 +	sio_oss_fmt_to_swpar(AFMT_S16_LE, &hdl->swpar);
 +	hdl->swpar.msb = 1;
-+	hdl->swpar.rate = 44100;
++	hdl->swpar.rate = 48000;
 +	hdl->swpar.bps = SIO_BPS(hdl->swpar.bits);
 +	hdl->swpar.pchan = hdl->swpar.rchan = 2;
-+	hdl->swpar.round = 960; // TODO:
-+	hdl->swpar.nblks = 8; // TODO:
 +
 +	hdl->fd = fd;
-+	hdl->filling = 0;
-+	return (struct sio_hdl *)hdl;
++
++	return hdl;
 +}
 +
 +struct sio_hdl *
 +_sio_oss_open(const char *str, unsigned int mode, int nbio)
 +{
-+	struct sio_hdl *hdl;
++	struct sio_oss_hdl *hdl;
 +	int fd;
 +
 +	fd = sio_oss_getfd(str, mode, nbio);
 +	if (fd < 0)
 +		return NULL;
++
 +	hdl = sio_oss_fdopen(fd, mode, nbio);
-+	if (hdl != NULL)
-+		return hdl;
++	if (hdl != NULL) {
++		hdl->devstr = strdup(str);
++		return (struct sio_hdl*)hdl;
++        }
 +	while (close(fd) < 0 && errno == EINTR)
 +		; /* retry */
 +
@@ -396,6 +401,7 @@
 +
 +	while (close(hdl->fd) < 0 && errno == EINTR)
 +		; /* retry */
++	free(hdl->devstr);
 +	free(hdl);
 +}
 +
@@ -403,51 +409,32 @@
 +sio_oss_start(struct sio_hdl *sh)
 +{
 +	struct sio_oss_hdl *hdl = (struct sio_oss_hdl *)sh;
++	int low;
 +
 +	hdl->obpf = hdl->sio.par.pchan * hdl->sio.par.bps;
 +	hdl->ibpf = hdl->sio.par.rchan * hdl->sio.par.bps;
-+	hdl->ibytes = 0;
-+	hdl->obytes = 0;
-+	hdl->ierr = 0;
-+	hdl->oerr = 0;
++	hdl->isamples = 0;
++	hdl->osamples = 0;
 +	hdl->idelta = 0;
 +	hdl->odelta = 0;
-+	hdl->play_pos = 0;
 +
-+	if (hdl->sio.mode & SIO_PLAY) {
-+		/*
-+		 * keep the device paused and let sio_oss_pollfd() trigger the
-+		 * start later, to avoid buffer underruns
-+		 */
-+		hdl->filling = 1;
-+	} else {
-+		/*
-+		 * no play buffers to fill, start now!
-+		 */
-+		if (sio_oss_audio_start(hdl) < 0) {
-+			DPERROR("AUDIO_START");
-+			hdl->sio.eof = 1;
-+			return 0;
-+		}
-+		_sio_onmove_cb(&hdl->sio, 0);
-+	}
++	/* Nothing else to do here, device was just (re-)opened in
++	 * sio_setpar and OSS starts playing/recording on first
++	 * write/read.
++	 */
++	_sio_onmove_cb(&hdl->sio, 0);
++
 +	return 1;
 +}
 +
 +static int
 +sio_oss_stop(struct sio_hdl *sh)
 +{
-+	struct sio_oss_hdl *hdl = (struct sio_oss_hdl *)sh;
-+
-+	if (hdl->filling) {
-+		hdl->filling = 0;
-+		return 1;
-+	}
-+	if (sio_oss_audio_stop(hdl, hdl->fd) < 0) {
-+		DPERROR("AUDIO_STOP");
-+		hdl->sio.eof = 1;
++	struct sio_oss_hdl *hdl = (struct sio_oss_hdl*)sh;
++	/* Close and reopen device.  This resets CURRENT_IPTR which
++	 * allows us to get a semi-accurate recording position */
++        if (sio_oss_audio_setpar(hdl, &hdl->swpar) < 0)
 +		return 0;
-+	}
 +	return 1;
 +}
 +
@@ -506,7 +493,7 @@
 +	par->pchan = ap.pchan;
 +	par->rchan = ap.rchan;
 +	par->round = ap.round;
-+	par->appbufsz = par->bufsz = ap.nblks * ap.round;
++	par->appbufsz = par->bufsz = ap.round * ap.nblks;
 +	par->xrun = SIO_IGNORE;
 +	return 1;
 +}
@@ -531,6 +518,7 @@
 +		hdl->sio.eof = 1;
 +		return 0;
 +	}
++
 +	return n;
 +}
 +
@@ -552,8 +540,6 @@
 +		return 0;
 +	}
 +
-+	hdl->play_pos += n;
-+
 +	return n;
 +}
 +
@@ -570,16 +556,7 @@
 +
 +	pfd->fd = hdl->fd;
 +	pfd->events = events;
-+	if (hdl->filling && hdl->sio.wused == hdl->sio.par.bufsz *
-+		hdl->sio.par.pchan * hdl->sio.par.bps) {
-+		hdl->filling = 0;
-+		if (sio_oss_audio_start(hdl) < 0) {
-+			DPERROR("AUDIO_START");
-+			hdl->sio.eof = 1;
-+			return 0;
-+		}
-+		_sio_onmove_cb(&hdl->sio, 0);
-+	}
++
 +	return 1;
 +}
 +
@@ -587,61 +564,42 @@
 +sio_oss_revents(struct sio_hdl *sh, struct pollfd *pfd)
 +{
 +	struct sio_oss_hdl *hdl = (struct sio_oss_hdl *)sh;
-+	struct audio_pos ap;
-+	int dierr = 0, doerr = 0, offset, delta;
++	int delta;
 +	int revents = pfd->revents;
++	long long play_pos, rec_pos;
++	oss_count_t optr, iptr;
 +
 +	if ((pfd->revents & POLLHUP) ||
 +	    (pfd->revents & (POLLIN | POLLOUT)) == 0)
 +		return pfd->revents;
-+	if (sio_oss_audio_getpos(hdl, &ap) < 0) {
-+		DPERROR("sio_oss_revents: GETPOS");
-+		hdl->sio.eof = 1;
-+		return POLLHUP;
-+	}
++
 +	if (hdl->sio.mode & SIO_PLAY) {
-+		delta = (ap.play_pos - hdl->obytes) / hdl->obpf;
-+		doerr = (ap.play_xrun - hdl->oerr) / hdl->obpf;
-+		hdl->obytes = ap.play_pos;
-+		hdl->oerr = ap.play_xrun;
++		if (ioctl(hdl->fd, SNDCTL_DSP_CURRENT_OPTR, &optr) < 0) {
++			DPERROR("sio_oss_revents: ");
++			hdl->sio.eof = 1;
++			return POLLHUP;
++		}
++		play_pos = optr.samples - optr.fifo_samples;
++		delta = play_pos - hdl->osamples;
++		hdl->osamples = play_pos;
 +		hdl->odelta += delta;
 +		if (!(hdl->sio.mode & SIO_REC)) {
 +			hdl->idelta += delta;
-+			dierr = doerr;
 +		}
-+		if (doerr > 0)
-+			DPRINTFN(2, "play xrun %d\n", doerr);
 +	}
 +	if (hdl->sio.mode & SIO_REC) {
-+		delta = (ap.rec_pos - hdl->ibytes) / hdl->ibpf;
-+		dierr = (ap.rec_xrun - hdl->ierr) / hdl->ibpf;
-+		hdl->ibytes = ap.rec_pos;
-+		hdl->ierr = ap.rec_xrun;
++		if (ioctl(hdl->fd, SNDCTL_DSP_CURRENT_IPTR, &iptr) < 0) {
++			DPERROR("sio_oss_revents: ");
++			hdl->sio.eof = 1;
++			return POLLHUP;
++		}
++		rec_pos = iptr.samples - iptr.fifo_samples;
++		delta = rec_pos - hdl->isamples;
++		hdl->isamples = rec_pos;
 +		hdl->idelta += delta;
 +		if (!(hdl->sio.mode & SIO_PLAY)) {
 +			hdl->odelta += delta;
-+			doerr = dierr;
 +		}
-+		if (dierr > 0)
-+			DPRINTFN(2, "rec xrun %d\n", dierr);
-+	}
-+
-+	/*
-+	 * GETPOS reports positions including xruns,
-+	 * so we have to substract to get the real position
-+	 */
-+	hdl->idelta -= dierr;
-+	hdl->odelta -= doerr;
-+
-+	offset = doerr - dierr;
-+	if (offset > 0) {
-+		hdl->sio.rdrop += offset * hdl->ibpf;
-+		hdl->idelta -= offset;
-+		DPRINTFN(2, "will drop %d and pause %d\n", offset, doerr);
-+	} else if (offset < 0) {
-+		hdl->sio.wsil += -offset * hdl->obpf;
-+		hdl->odelta -= -offset;
-+		DPRINTFN(2, "will insert %d and pause %d\n", -offset, dierr);
 +	}
 +
 +	delta = (hdl->idelta > hdl->odelta) ? hdl->idelta : hdl->odelta;
@@ -651,26 +609,6 @@
 +		hdl->odelta -= delta;
 +	}
 +	return revents;
-+}
-+
-+static int
-+sio_oss_audio_getpos(struct sio_oss_hdl *hdl, struct audio_pos *ap)
-+{
-+	count_info cio, cii;
-+	oss_count_t optr;
-+
-+	ap->play_pos = hdl->play_pos / hdl->sio.par.bps;
-+	ap->play_xrun = 0;
-+
-+	if (ioctl(hdl->fd, SNDCTL_DSP_GETIPTR, &cii) < 0) {
-+		DPERROR("sio_oss_getpos: GETIPTR");
-+		return -1;
-+	}
-+
-+	ap->rec_pos = cii.bytes;
-+	ap->rec_xrun = 0;
-+
-+	return 0;
 +}
 +
 +static void
@@ -826,67 +764,77 @@
 +
 +static int sio_oss_audio_setpar(struct sio_oss_hdl *hdl, struct audio_swpar *ap)
 +{
-+	int fmt = sio_oss_swpar_to_fmt(ap);
++	audio_buf_info bi;
++	int bufsz;
++	int chan;
++	int fmt;
++	int rate;
++
++	if (sio_oss_reopen(hdl) < 0) {
++		DPERROR("sio_oss_audio_setpar: reopen");
++		return -1;
++	}
++
++	ap->msb = ap->msb == -1 ? 0 : ap->msb;
++	ap->sig = ap->sig == -1 ? 1 : ap->sig;
++	ap->bits = ap->bits == -1 ? ap->bps == -1 ? 16 : ap->bps*8 : ap->bits;
++	ap->le = ap->le == -1 ? SIO_LE_NATIVE : ap->le;
++	ap->bps = ap->bps == -1 ? SIO_BPS(ap->bits) : ap->bps;
++	ap->msb = 0;
++	ap->rate = ap->rate == -1 ? 48000 : ap->rate;
++
++	if (ap->bits < 8)
++		ap->bits = 8;
++	if (ap->bits > 32)
++		ap->bits = 32;
++	if (ap->bps < 1)
++		ap->bps = 1;
++	if (ap->bps > 4)
++		ap->bps = 4;
++	if (ap->rate < 4000)
++		ap->rate = 4000;
++	if (ap->rate > 192000)
++		ap->rate = 192000;
++
++	fmt = sio_oss_swpar_to_fmt(ap);
 +	if (fmt < 0)
 +		return -1;
-+
-+	if (ioctl(hdl->fd, SNDCTL_DSP_SETFMT, &fmt) < 0)
++	if (ioctl(hdl->fd, SNDCTL_DSP_SETFMT, &fmt) < 0) {
++		DPERROR("sio_oss_audio_setpar: SETFMT");
 +		return -1;
-+
++	}
 +	sio_oss_fmt_to_swpar(fmt, ap);
 +
-+	if (ioctl(hdl->fd, SNDCTL_DSP_SPEED, &ap->rate) < 0)
++	if (ioctl(hdl->fd, SNDCTL_DSP_SPEED, &ap->rate) < 0) {
++		DPERROR("sio_oss_audio_setpar: SPEED");
 +		return -1;
++	}
 +
-+	ap->bps = SIO_BPS(ap->bits);
-+	ap->msb = 0;
-+
-+	int chan = (hdl->sio.mode & SIO_PLAY) ? ap->pchan : ap->rchan;
-+	if (ioctl(hdl->fd, SNDCTL_DSP_CHANNELS, &chan) < 0)
++	chan = ap->pchan == ~0U ? ap->pchan : ap->rchan;
++	chan = chan == -1 ? 2 : chan;
++	if (ioctl(hdl->fd, SNDCTL_DSP_CHANNELS, &chan) < 0) {
++		DPERROR("sio_oss_audio_setpar: CHANNELS");
 +		return -1;
-+
++	}
 +	ap->pchan = ap->rchan = chan;
++
++	ap->nblks = ap->nblks <= 0 ? 8 : ap->nblks;
++	ap->round = ap->round <= 0 ? 960 : ap->round;
 +
 +	hdl->swpar = *ap;
 +
 +	return 0;
 +}
 +
-+static int sio_oss_audio_start(struct sio_oss_hdl *hdl) {
-+	// Empty playback buffer
-+	if (ioctl(hdl->fd, SNDCTL_DSP_SKIP, NULL) < 0) {
-+		DPERROR("SNDCTL_DSP_SKIP");
++static int sio_oss_reopen(struct sio_oss_hdl *hdl) {
++	/* Reopen device */
++	while (close(hdl->fd) < 0 && errno == EINTR)
++		; /* retry */
++	hdl->fd = sio_oss_getfd(hdl->devstr, hdl->sio.mode, 1);
++	if (hdl->fd < 0) {
++		DPERROR("sio_oss_audio_setpar: reopen");
 +		return -1;
 +	}
-+
-+	int trigger;
-+
-+	if (hdl->sio.mode & SIO_PLAY) {
-+		trigger = PCM_ENABLE_OUTPUT;
-+	}
-+	if (hdl->sio.mode & SIO_REC) {
-+		trigger = PCM_ENABLE_INPUT;
-+	} // TODO:
-+
-+	if (ioctl(hdl->fd, SNDCTL_DSP_SETTRIGGER, &trigger)) {
-+		DPERROR("sio_oss_start: SETTRIGGER");
-+		return -1;
-+	}
-+
-+	return 0;
-+}
-+
-+static int sio_oss_audio_stop(struct sio_oss_hdl *hdl, int fd) {
-+	/* Block until buffer is played */
-+	if (ioctl(hdl->fd, SNDCTL_DSP_SYNC, NULL) < 0) {
-+		return -1;
-+	}
-+
-+	// TODO: Check mode and use HALT_{IN,OUT}PUT
-+	if (ioctl(hdl->fd, SNDCTL_DSP_HALT, NULL) < 0) {
-+		return -1;
-+	}
-+
 +	return 0;
 +}
 +

@@ -1,4 +1,4 @@
---- doc/texi2html.in.orig	2015-04-20 17:22:33 UTC
+--- doc/texi2html.in.orig	2000-04-08 12:20:05 UTC
 +++ doc/texi2html.in
 @@ -3790,9 +3790,9 @@ sub update_sec_num {
      my $ret;

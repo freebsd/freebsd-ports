@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch-py
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.8.2:net/py-urllib3
 
+NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch
 USES=		python

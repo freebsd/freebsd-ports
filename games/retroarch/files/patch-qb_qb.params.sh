@@ -1,12 +1,14 @@
---- qb/qb.params.sh.orig	2016-05-02 20:17:12 UTC
+--- qb/qb.params.sh.orig	2016-07-15 20:24:15 UTC
 +++ qb/qb.params.sh
-@@ -63,6 +63,9 @@ parse_input() # Parse stuff :V
- 	while [ "$1" ]; do
- 		case "$1" in
- 			--prefix=*) PREFIX=${1##--prefix=};;
-+			--build=*) ;;
-+			--x-includes=*) ;;
-+			--x-libraries=*) ;;
- 			--global-config-dir=*) GLOBAL_CONFIG_DIR=${1##--global-config-dir=};;
- 			--host=*) CROSS_COMPILE=${1##--host=}-;;
- 			--enable-*)
+@@ -79,7 +79,10 @@ parse_input() # Parse stuff :V
+ 				opt_exists "${arg%%=*}" "$1"
+ 				eval "$opt=\"$val\""
+ 			;;
+-			-h|--help) print_help; exit 0;;
++			--x-*)
++			;;
++			--build*)
++			;;
+ 			*) echo "Unknown option $1"; exit 1;;
+ 		esac
+ 		shift

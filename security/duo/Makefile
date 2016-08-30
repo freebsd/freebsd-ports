@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duo
-PORTVERSION=	1.9.18
+PORTVERSION=	1.9.19
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
@@ -17,9 +17,8 @@ CONFIGURE_ARGS=	--with-pam=${PREFIX}/lib/security --sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR} --includedir=${PREFIX}/include/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix
+USES=		libtool pathfix ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 SUB_FILES=	pkg-message
 

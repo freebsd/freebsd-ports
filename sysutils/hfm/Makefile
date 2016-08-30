@@ -19,9 +19,9 @@ BUILD_DEPENDS=	go>=1.5:lang/go \
 USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	derekmarcotte		mitchellh:gu	op:gl
-GH_PROJECT=	${PORTNAME}		go-libucl:gu	go-logging:gl
-GH_TAGNAME=	${DISTVERSIONFULL}	f9d0e55:gu	dfaf3df:gl
+GH_ACCOUNT=	derekmarcotte
+GH_TUPLE=	mitchellh:go-libucl:f9d0e55:gu/vendor/src/github.com/mitchellh/go-libucl \
+		op:go-logging:dfaf3df:gl/vendor/src/github.com/op/go-logging
 
 USERS=		_hfm
 GROUPS=		_hfm
@@ -32,12 +32,6 @@ MAKE_ARGS+=	ETCDIR=${ETCDIR} TAG=${DISTVERSIONPREFIX}${PORTVERSION}
 
 NO_INSTALL=	yes
 ALL_TARGET=	test build
-
-post-extract:
-	${MKDIR} ${WRKSRC}/vendor/src/github.com/mitchellh/go-libucl
-	${MV} ${WRKDIR}/go-libucl-f9d0e55/* ${WRKSRC}/vendor/src/github.com/mitchellh/go-libucl/
-	${MKDIR} ${WRKSRC}/vendor/src/github.com/op/go-logging
-	${MV} ${WRKDIR}/go-logging-dfaf3df/* ${WRKSRC}/vendor/src/github.com/op/go-logging/
 
 do-patch:
 	(cd ${WRKSRC}; ${PATCH} vendor/src/github.com/mitchellh/go-libucl/libucl.go < vendor/patches/github.com/mitchellh/go-libucl/libucl.go.patch )

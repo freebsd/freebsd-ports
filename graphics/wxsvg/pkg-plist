@@ -1,5 +1,6 @@
 bin/svgview
 include/wxSVG/Animated.h
+include/wxSVG/CSSRule.h
 include/wxSVG/CSSStyleDeclaration.h
 include/wxSVG/CSSValue.h
 include/wxSVG/CSSValues.h
@@ -180,6 +181,7 @@ include/wxSVG/SVGViewSpec.h
 include/wxSVG/SVGZoomAndPan.h
 include/wxSVG/SVGZoomEvent.h
 include/wxSVG/String_wxsvg.h
+include/wxSVG/UIEvent.h
 include/wxSVG/ViewCSS.h
 include/wxSVG/imagsvg.h
 include/wxSVG/mediadec_ffmpeg.h
@@ -190,5 +192,5 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.so
 lib/libwxsvg.so.3
-lib/libwxsvg.so.3.10.1
+lib/libwxsvg.so.3.10.2
 libdata/pkgconfig/libwxsvg.pc

@@ -34,6 +34,7 @@
     SUBDIR += asunder
     SUBDIR += atunes
     SUBDIR += aubio
+    SUBDIR += aucatctl
     SUBDIR += audacity
     SUBDIR += audex
     SUBDIR += audiere
@@ -122,6 +123,7 @@
     SUBDIR += etcd
     SUBDIR += etktab
     SUBDIR += exaile
+    SUBDIR += exaile-devel
     SUBDIR += extace
     SUBDIR += ezstream
     SUBDIR += faac
@@ -609,6 +611,7 @@
     SUBDIR += pragha
     SUBDIR += puddletag
     SUBDIR += pulseaudio
+    SUBDIR += pulseaudio-module-sndio
     SUBDIR += py-al
     SUBDIR += py-ao
     SUBDIR += py-apetag

@@ -160,6 +160,7 @@ include/armadillo_bits/fn_norm.hpp
 include/armadillo_bits/fn_normalise.hpp
 include/armadillo_bits/fn_numel.hpp
 include/armadillo_bits/fn_ones.hpp
+include/armadillo_bits/fn_orth_null.hpp
 include/armadillo_bits/fn_pinv.hpp
 include/armadillo_bits/fn_princomp.hpp
 include/armadillo_bits/fn_prod.hpp
@@ -349,6 +350,8 @@ include/armadillo_bits/op_norm_bones.hpp
 include/armadillo_bits/op_norm_meat.hpp
 include/armadillo_bits/op_normalise_bones.hpp
 include/armadillo_bits/op_normalise_meat.hpp
+include/armadillo_bits/op_orth_null_bones.hpp
+include/armadillo_bits/op_orth_null_meat.hpp
 include/armadillo_bits/op_pinv_bones.hpp
 include/armadillo_bits/op_pinv_meat.hpp
 include/armadillo_bits/op_princomp_bones.hpp
@@ -480,7 +483,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.7
-lib/libarmadillo.so.7.300.0
+lib/libarmadillo.so.7.400.2
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake

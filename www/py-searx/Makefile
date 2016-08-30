@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	searx
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,7 @@ GH_ACCOUNT=	asciimoo
 GH_PROJECT=	searx
 
 USES=		python
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils concurrent
 
 .include <bsd.port.mk>

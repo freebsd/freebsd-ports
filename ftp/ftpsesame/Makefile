@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.sentia.org/downloads/ \
 		LOCAL/sem
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for pf firewall to pass FTP protocol
 
 PLIST_FILES=	bin/ftpsesame man/man8/ftpsesame.8.gz

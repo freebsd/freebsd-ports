@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Cross-platform crypto API for Qt 4
+COMMENT?=	Cross-platform crypto API for Qt 4
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss

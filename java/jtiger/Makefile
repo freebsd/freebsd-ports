@@ -9,7 +9,7 @@ MASTER_SITES=	http://kaiwitte.org/jtiger/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Test Framework and Tools for the Java2 Platform
 
-USE_JAVA=	1.6
+USE_JAVA=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes

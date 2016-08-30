@@ -1,11 +1,11 @@
---- src/bin/Makefile.in.orig	2014-10-20 15:50:21.000000000 +0400
-+++ src/bin/Makefile.in	2014-10-20 15:50:35.000000000 +0400
-@@ -255,7 +255,7 @@
+--- src/bin/Makefile.in.orig	2016-08-20 15:15:24.687217000 +0300
++++ src/bin/Makefile.in	2016-08-20 15:15:27.844638000 +0300
+@@ -351,7 +351,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = -I$(srcdir)/../include
 -AM_LDFLAGS = -L/usr/local/lib/fst -lfstfar -lfst -lm -ldl
 +AM_LDFLAGS = -L/usr/local/lib/fst -lfstfar -lfst -lm
- dist_noinst_SCRIPTS = ngram.sh
- ngramapply_SOURCES = ngramapply.cc
+ dist_noinst_SCRIPTS = ngram.sh ngramfrac.sh
+ ngramapply_SOURCES = ngramapply_main.cc
  ngramapply_LDADD = ../lib/libngram.la

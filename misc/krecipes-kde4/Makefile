@@ -11,9 +11,9 @@ COMMENT=	KDE4 recipe database
 
 LICENSE=	GPLv2
 
-USES=		cmake gettext shared-mime-info
+USES=		cmake gettext kde:4 shared-mime-info
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs qimageblitz
+USE_KDE=	automoc4 kdelibs qimageblitz
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL

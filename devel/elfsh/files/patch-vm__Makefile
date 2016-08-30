@@ -7,7 +7,7 @@
 -#READLNOPT		= -DUSE_READLN
 -#LDREADLNOPT		= -lreadline -ltermcap
 +READLNOPT		= -DUSE_READLN
-+LDREADLNOPT		= -lreadline -ltermcap
++LDREADLNOPT		= -lreadline -lncurses
  
  
  # End of configurable Makefile

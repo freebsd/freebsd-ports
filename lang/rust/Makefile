@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.10.0
+PORTVERSION?=	1.11.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/dist/:bootstrap \
@@ -22,6 +22,8 @@ LICENSE_COMB=	dual
 # APACHE20 license is standard, see Templates/Licenses/APACHE20
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BUILD_DEPENDS=		cmake:devel/cmake
+
 ONLY_FOR_ARCHS?=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
@@ -36,7 +38,7 @@ CONFLICTS_BUILD?=	rust-nightly
 CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-RUST_BOOT_VERSION?=	1.9.0
+RUST_BOOT_VERSION?=	1.10.0
 RUST_BOOT=		rustc-${RUST_BOOT_VERSION}-${RUST_TARGET}.tar.gz
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.

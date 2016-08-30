@@ -41,6 +41,7 @@ powerpc64-freebsd/bin/nm
 powerpc64-freebsd/bin/objcopy
 powerpc64-freebsd/bin/objdump
 powerpc64-freebsd/bin/ranlib
+powerpc64-freebsd/bin/readelf
 powerpc64-freebsd/bin/strip
 powerpc64-freebsd/bin/size
 powerpc64-freebsd/lib/ldscripts/elf32ppc.x

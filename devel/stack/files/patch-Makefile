@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-07-23 16:05:37 UTC
++++ Makefile
+@@ -34,7 +34,7 @@ _stack.zsh: _stack.bash
+ # zsh completion reuses bash completion file via zsh's bashcompinit function
+ 	${ECHO} "#compdef stack" > ${@}
+ 	${ECHO} "autoload -U +X bashcompinit && bashcompinit" >> ${@}
+-	${CAT} ${>} >> ${@}
++	${CAT} _stack.bash >> ${@}
+ 
+ install: all
+ 	${INSTALL_PROGRAM} stack ${STAGEDIR}${PREFIX}/bin

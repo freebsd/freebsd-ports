@@ -86,6 +86,9 @@ gssapi_ARGS=	base
 .for _A in ${gssapi_ARGS}
 _local:=	${_A}
 .if ${_local} == "base"
+.  if ${SSL_DEFAULT} != base
+IGNORE=	You are using OpenSSL from ports and have selected GSSAPI from base, please select another GSSAPI value
+.  endif
 HEIMDAL_HOME=	/usr
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib

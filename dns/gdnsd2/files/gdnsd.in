@@ -28,7 +28,9 @@ load_rc_config $name
 command="%%PREFIX%%/sbin/gdnsd"
 command_args="start"
 procname=${command}
+restart_precmd="gdnsd_checkconf"
 reload_cmd="gdnsd_reload"
+reload_precmd="gdnsd_checkconf"
 configtest_cmd="gdnsd_checkconf"
 extra_commands="reload configtest"
 gdnsd_reload()

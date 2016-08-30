@@ -11,8 +11,8 @@ COMMENT=	Tools to translate Docbook XML using gettext
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libantlr.a:devel/antlr
 
-USE_KDE4=	kdelibs automoc4
-USES=		cmake:outsource gettext-tools:build,run tar:xz
+USES=		cmake:outsource gettext-tools:build,run kde:4 tar:xz
+USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib xml
 

@@ -1,7 +1,5 @@
-bin/pdf2graph
 bin/pdf2pdfa
 bin/pdf2ruby
-bin/pdfcocoon
 bin/pdfcop
 bin/pdfdecompress
 bin/pdfdecrypt

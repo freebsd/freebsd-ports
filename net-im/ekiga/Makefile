@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_signals.so:devel/boost-libs \
 RUN_DEPENDS=	gnome-icon-theme>=3.0.0:misc/gnome-icon-theme
 
 GNU_CONFIGURE=	yes
-USES=		cpe gettext gmake libtool pathfix perl5 pkgconfig \
+USES=		cpe gettext gmake kde:4 libtool pathfix perl5 pkgconfig \
 		tar:xz
 USE_XORG=	xv
 USE_GNOME=	gtk20 intlhack libxml2
@@ -51,20 +51,20 @@ LOUDMOUTH_DESC=	XMPP (jabber) support
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MKDE} || ${PORT_OPTIONS:MKAB}
-USE_KDE4=	kdelibs
+USE_KDE=	kdelibs
 USE_QT4=	corelib
 CONFIGURE_ARGS+=--enable-kde
-#CONFIGURE_ENV+=KDE_CFLAGS="-I${KDE4_PREFIX}/include -I${QT_INCDIR} \
-#	-I${LOCALBASE}/include" KDE_LIBS="-L${KDE4_PREFIX}/lib"
-CPPFLAGS+=	-I${KDE4_PREFIX}/include
-LDFLAGS+=	-L${KDE4_PREFIX}/lib
+#CONFIGURE_ENV+=KDE_CFLAGS="-I${KDE_PREFIX}/include -I${QT_INCDIR} \
+#	-I${LOCALBASE}/include" KDE_LIBS="-L${KDE_PREFIX}/lib"
+CPPFLAGS+=	-I${KDE_PREFIX}/include
+LDFLAGS+=	-L${KDE_PREFIX}/lib
 .else
 CONFIGURE_ARGS+=--disable-kde
 .endif
 
 .if ${PORT_OPTIONS:MKAB}
 CONFIGURE_ARGS+=--enable-kab
-USE_KDE4+=	pimlibs
+USE_KDE+=	pimlibs
 .else
 CONFIGURE_ARGS+=--disable-kab
 .endif

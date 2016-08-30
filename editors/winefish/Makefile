@@ -11,6 +11,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX editor based on BlueFish
 
+BROKEN_amd64=	segfaults at startup
+BROKEN_armv6=	segfaults at startup
+DEPRECATED=	upstream disappeared (project dead?), segfaults on multiple arches
+EXPIRATION_DATE=	2016-10-18
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \

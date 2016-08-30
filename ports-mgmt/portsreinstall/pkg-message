@@ -1,0 +1,6 @@
+=====================================================================
+This software invokes some installed files of portupgrade(1)
+if it is installed for parsing pkgtools.conf(5) although dependency
+to it is intendedly refrained. If you fail to parse pkgtools.conf(5),
+try to upgrade this port first.
+=====================================================================

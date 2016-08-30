@@ -1,5 +1,5 @@
---- tsocks.8.orig	Sat Mar 16 11:20:51 2002
-+++ tsocks.8	Sat Sep  6 18:15:08 2003
+--- tsocks.8.orig	2002-03-16 10:20:51 UTC
++++ tsocks.8
 @@ -1,25 +1,24 @@
 -.TH TSOCKS 8 "" "Shaun Clowes" \" -*-
 - \" nroff -*
@@ -35,7 +35,7 @@
  
  This process can be automated (for Bash, Bourne and Korn shell 
  users) for a single command or for all commands in a shell session
-@@ -30,13 +29,12 @@
+@@ -30,13 +29,12 @@ automatically use it, a very useful conf
  information on this configuration see the CAVEATS section of this
  manual page.
  
@@ -51,7 +51,7 @@
  it is not, the library redirects the connection to a SOCKS server
  specified in the configuration file. It then negotiates that connection
  with the SOCKS server and passes the connection back to the calling
-@@ -52,42 +50,42 @@
+@@ -52,42 +50,42 @@ the SOCKSified TCP/IP stacks seen on oth
  Most arguments to
  .BR tsocks
  are provided in the configuration file (the location of which is defined
@@ -104,7 +104,7 @@
  .I TSOCKS_USERNAME
  This environment variable can be used to specify the username to be used when
  version 5 SOCKS servers request username/password authentication. This 
-@@ -95,7 +93,7 @@
+@@ -95,7 +93,7 @@ overrides the default username that can 
  file using 'default_user', see tsocks.conf(8) for more information. This 
  variable is ignored for version 4 SOCKS servers.
  
@@ -113,7 +113,7 @@
  .I TSOCKS_PASSWORD
  This environment variable can be used to specify the password to be used when 
  version 5 SOCKS servers request username/password authentication. This 
-@@ -115,11 +113,12 @@
+@@ -115,11 +113,12 @@ consult the INSTALL file for more inform
  .BR tsocks
  will generate error messages and print them to stderr when there are
  problems with the configuration file or the SOCKS negotiation with the
@@ -128,7 +128,7 @@
  .BR tsocks
  will not in the above configuration be able to provide SOCKS proxying to
  setuid applications or applications that are not run from a shell. You can
-@@ -132,8 +131,7 @@
+@@ -132,8 +131,7 @@ the INSTALL file for more info).  THIS I
  careful. Also be sure the library is in the root filesystem as all hell
  will break loose if the directory it is in is not available at boot time.
  
@@ -138,7 +138,7 @@
  .BR tsocks
  can only proxy outgoing TCP connections
  
-@@ -157,21 +155,21 @@
+@@ -157,21 +155,21 @@ not. This introduces overhead and should
  .BR tsocks 
  uses ELF dynamic loader features to intercept dynamic function calls from
  programs in which it is embedded.  As a result, it cannot trace the 

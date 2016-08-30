@@ -1,6 +1,6 @@
---- src/basic.h.orig	2008-02-08 16:40:42.000000000 +0100
-+++ src/basic.h	2008-02-08 16:40:48.000000000 +0100
-@@ -36,9 +36,6 @@
+--- src/basic.h.orig	2000-08-10 21:02:49 UTC
++++ src/basic.h
+@@ -36,9 +36,6 @@ enum motion_magic
  
  extern const int colmagic[9];
  extern  const int rowmagic[9];

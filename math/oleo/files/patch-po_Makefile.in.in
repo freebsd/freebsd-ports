@@ -1,6 +1,6 @@
---- po/Makefile.in.in.orig	1998-08-27 23:15:29.000000000 +0200
-+++ po/Makefile.in.in	2014-02-14 10:38:35.000000000 +0100
-@@ -16,6 +16,8 @@
+--- po/Makefile.in.in.orig	1998-08-27 21:15:29 UTC
++++ po/Makefile.in.in
+@@ -16,6 +16,8 @@ srcdir = @srcdir@
  top_srcdir = @top_srcdir@
  VPATH = @srcdir@
  
@@ -9,7 +9,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  datadir = $(prefix)/@DATADIRNAME@
-@@ -111,16 +113,16 @@
+@@ -111,16 +113,16 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all
  	if test -r "$(MKINSTALLDIRS)"; then \
@@ -30,7 +30,7 @@
  	  esac; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
  	  dir=$$destdir/$$lang/LC_MESSAGES; \
-@@ -153,12 +155,12 @@
+@@ -153,12 +155,12 @@ install-data-yes: all
  	done
  	if test "$(PACKAGE)" = "gettext"; then \
  	  if test -r "$(MKINSTALLDIRS)"; then \

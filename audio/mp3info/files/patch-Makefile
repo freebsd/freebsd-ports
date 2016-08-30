@@ -1,11 +1,13 @@
 --- Makefile.orig	2006-11-10 00:14:11 UTC
 +++ Makefile
-@@ -44,8 +44,8 @@ INSTALL = /usr/bin/install -c
+@@ -43,9 +43,9 @@ RM = /bin/rm
+ INSTALL = /usr/bin/install -c
  STRIP = strip
  
- LIBS = -lncurses
+-LIBS = -lncurses
 -CC = gcc
 -CFLAGS = -g -O2 -Wall
++LIBS = $(LDFLAGS) -lncurses
 +CC ?= cc
 +CFLAGS ?= -O -pipe
  

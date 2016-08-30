@@ -1,8 +1,8 @@
-TIMESTAMP = 1463840428
+TIMESTAMP = 1472019396
 SHA256 (openjdk-7u40-fcs-src-b43-26_aug_2013.zip) = 00f8ea561876cbcad174ba3ca7a9ae10b50df46a782ac64c2ac57ac357b50596
 SIZE (openjdk-7u40-fcs-src-b43-26_aug_2013.zip) = 104575196
-SHA256 (apache-ant-1.9.4-bin.zip) = 973d97d656e65561e2753823de6cf6db35570aaf93eeec6e7cb3d68e1ec4d0e8
-SIZE (apache-ant-1.9.4-bin.zip) = 8309406
+SHA256 (apache-ant-1.9.7-bin.zip) = b28c5ea0b5ea90bb4ad6bab229b6a56ac4461760a251a12567803a69259cd9de
+SIZE (apache-ant-1.9.7-bin.zip) = 8317465
 SHA256 (patch-7u45-b30.xz) = f0ab28db8819a72b82236d98c6780a0fa063cf4d2f45f26105545559e630a1b3
 SIZE (patch-7u45-b30.xz) = 156968
 SHA256 (patch-7u51-b30.xz) = af1143952a0f67535c2bdf586b7089af1d525f544974e989fe7b273a925b8359
@@ -27,3 +27,5 @@ SHA256 (patch-7u95-b00.xz) = bb522469cedcd31ff15fde745ab5717bd012c52ce2e25d1180b
 SIZE (patch-7u95-b00.xz) = 91612
 SHA256 (patch-7u101-b00.xz) = 8406d9f453b91c4e31e5a6a0a1769c3da87e3e3bf7a4c567024f7f929f555702
 SIZE (patch-7u101-b00.xz) = 121752
+SHA256 (patch-7u111-b01.xz) = d46ffd30a6fa6d8ce40231e6dadcabf491a347e2afea87302f38bab5e2bee523
+SIZE (patch-7u111-b01.xz) = 273552

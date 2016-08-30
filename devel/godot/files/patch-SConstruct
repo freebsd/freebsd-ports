@@ -1,6 +1,6 @@
---- SConstruct.orig	2016-02-29 11:52:09 UTC
+--- SConstruct.orig	2016-08-09 07:52:15 UTC
 +++ SConstruct
-@@ -223,15 +223,17 @@ if selected_platform in platform_list:
+@@ -231,15 +231,17 @@ if selected_platform in platform_list:
  	if env["extra_suffix"] != '' :
  		env.extra_suffix += '.'+env["extra_suffix"]
  

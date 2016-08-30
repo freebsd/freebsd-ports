@@ -136,6 +136,7 @@ include/isc/counter.h
 include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
+include/isc/errno.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -257,6 +258,7 @@ include/pk11/constants.h
 include/pk11/internal.h
 include/pk11/pk11.h
 include/pk11/result.h
+include/pk11/site.h
 include/pkcs11/cryptoki.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h

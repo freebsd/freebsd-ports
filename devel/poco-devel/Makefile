@@ -13,6 +13,9 @@ COMMENT=	C++ Portable Components library
 
 LICENSE=	BSL
 
+DEPRECATED=	older than stable devel/poco
+EXPIRATION_DATE=	2016-09-18
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2

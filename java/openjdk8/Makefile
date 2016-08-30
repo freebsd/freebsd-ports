@@ -234,10 +234,14 @@ CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
 OPTIONS_DEFINE=		POLICY TZUPDATE
+OPTIONS_DEFINE_armv6=	FPUHACK
 OPTIONS_DEFAULT=	POLICY TZUPDATE
+OPTIONS_DEFAULT_armv6=	FPUHACK
+FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
+FPUHACK_EXTRA_PATCHES=	${PATCHDIR}/fpuhack.patch
 POLICY_CONFIGURE_ENABLE=	unlimited-crypto
 TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
 
@@ -291,16 +295,6 @@ CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
 # XXX We must limit max heap size for 32-bit targets.
 CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
 MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
-.endif
-
-.if ${ARCH} == "armv6"
-# From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
-# Workaround incorrect constant folding of subnormals in javac when the FPU
-# does not handle subnormal arithmetic, like on ARM in Flush-to-zero mode.
-# These workarounds avoid underflow conditions during the bootstrap so the
-# JDK can correctly build itself. Compiling or running programs other than
-# openjdk itself on such hardware may still cause unexpected behaviour.
-EXTRA_PATCHES=	${PATCHDIR}/armv6.patch
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"

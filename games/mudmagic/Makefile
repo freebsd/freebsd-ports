@@ -17,15 +17,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libexpat.so:textproc/expat2 \
-		libsqlite3.so:databases/sqlite3
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake libtool pathfix pkgconfig python
-USE_GNOME=	gtk20 libglade2 libxml2
+USES=		gettext-runtime gmake libtool localbase pathfix \
+		pkgconfig python sqlite
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2 libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		`${PYTHON_CMD:T}-config --libs` `pkg-config --libs gtk+-x11-2.0` `pkg-config --libs libcurl`
 
 post-patch:

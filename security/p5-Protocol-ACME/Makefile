@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Protocol-ACME
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SLUDIN
@@ -17,9 +17,11 @@ RUN_DEPENDS=	p5-Crypt-Format>=0.06:security/p5-Crypt-Format \
 		p5-Crypt-OpenSSL-RSA>=0.28:security/p5-Crypt-OpenSSL-RSA \
 		p5-Crypt-RSA-Parse>=0.041:security/p5-Crypt-RSA-Parse \
 		p5-Digest-SHA>=5.95:security/p5-Digest-SHA \
+		p5-HTTP-Tiny>=0.050:www/p5-HTTP-Tiny \
 		p5-Log-Any>=1.032:devel/p5-Log-Any \
 		p5-JSON>=2.90:converters/p5-JSON \
-		p5-libwww>=6.13:www/p5-libwww
+		p5-libwww>=6.13:www/p5-libwww \
+		p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
 
 USES=		perl5
 USE_PERL5=	configure

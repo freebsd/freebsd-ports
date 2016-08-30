@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	firebird
-PORTVERSION=	2.5.4
-PORTREVISION=	7
+PORTVERSION=	2.5.6
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.26856-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27020-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +23,7 @@ LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		cpe gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -90,7 +89,7 @@ UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
-LIB_DEPENDS+=	libedit.so.0:devel/libedit
+USES+=	libedit
 LDFLAGS+=	-L${LOCALBASE}/lib # to link in lncurses pulled in by libedit
 
 CONFIGURE_ARGS+=	--with-system-editline

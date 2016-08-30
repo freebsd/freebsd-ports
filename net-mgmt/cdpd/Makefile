@@ -3,14 +3,18 @@
 
 PORTNAME=	cdpd
 PORTVERSION=	1.0.4.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/cdpd/
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to send CDP/LLDP announces over ethernet
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
-EXTRACT_SUFX=	.tgz
 
 USE_RC_SUBR=	cdpd
 PLIST_FILES=	sbin/cdpd man/man8/cdpd.8.gz

@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tennis simulation
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	ocamlopt:lang/ocaml \
 		ocaml-images>3.0:graphics/ocaml-images \
 		${OCAML_DEPENDS}

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/ufmcontrol-i18n/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	USB radio control utility
 
+BROKEN=		unfetchable (SF project removed?)
+
 RUN_DEPENDS=	snack>=2.2.10_4:audio/snack
 
 USES=		libedit tk:wrapper,run

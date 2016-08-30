@@ -6,6 +6,7 @@ arm-gnueabi-freebsd/bin/nm
 arm-gnueabi-freebsd/bin/objcopy
 arm-gnueabi-freebsd/bin/objdump
 arm-gnueabi-freebsd/bin/ranlib
+arm-gnueabi-freebsd/bin/readelf
 arm-gnueabi-freebsd/bin/strip
 arm-gnueabi-freebsd/bin/size
 arm-gnueabi-freebsd/lib/ldscripts/armelf.x

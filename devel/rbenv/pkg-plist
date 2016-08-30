@@ -13,6 +13,7 @@ libexec/rbenv-hooks
 libexec/rbenv-init
 libexec/rbenv-local
 libexec/rbenv-prefix
+libexec/rbenv-realpath.dylib
 libexec/rbenv-rehash
 libexec/rbenv-root
 libexec/rbenv-sh-rehash

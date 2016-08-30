@@ -17,6 +17,10 @@ DISTFILES=	${DOCKING_DISTNAME}${EXTRACT_SUFX}:docking \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UML modeling environment written in Python
 
+BROKEN=		runtime failure, missing etk.docking
+DEPRECATED=	runtime failure uncorrected for 1 year after first report
+EXPIRATION_DATE=	2016-10-18
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:devel/py-nose

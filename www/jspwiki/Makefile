@@ -14,7 +14,7 @@ COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 LICENSE=	APACHE20
 
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 NO_BUILD=	yes
 
 TOMCATDIR=	${PREFIX}/${TOMCATVER}

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
 		SF
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent FTP proxy with caching support
 
 LICENSE=	GPLv2

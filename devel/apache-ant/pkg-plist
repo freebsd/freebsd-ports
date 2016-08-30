@@ -4,6 +4,7 @@ man/man5/build.xml.5.gz
 %%DATADIR%%/bin/antRun
 %%DATADIR%%/etc/ant-bootstrap.jar
 %%DATADIR%%/etc/changelog.xsl
+%%DATADIR%%/etc/checkstyle/checkstyle-frames-sortby-check.xsl
 %%DATADIR%%/etc/checkstyle/checkstyle-frames.xsl
 %%DATADIR%%/etc/checkstyle/checkstyle-text.xsl
 %%DATADIR%%/etc/checkstyle/checkstyle-xdoc.xsl

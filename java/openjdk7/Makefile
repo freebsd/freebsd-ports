@@ -3,7 +3,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -30,7 +29,8 @@ PATCHFILES=	patch-7u45-b30.xz \
 		patch-7u85-b02.xz \
 		patch-7u91-b02.xz \
 		patch-7u95-b00.xz \
-		patch-7u101-b00.xz
+		patch-7u101-b00.xz \
+		patch-7u111-b01.xz
 
 MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	Java Development Kit 7
@@ -59,8 +59,8 @@ JAVAVMS_COMMENT+=	JRE
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
 .endif
 
-PORT_MINOR_VERSION=	101
-PORT_BUILD_NUMBER=	00
+PORT_MINOR_VERSION=	111
+PORT_BUILD_NUMBER=	01
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
 JDK_BUILD_NUMBER=	43
@@ -68,7 +68,7 @@ JDK_BUILD_DATE=		26_aug_2013
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.9.4
+ANT_VERSION=		1.9.7
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib \

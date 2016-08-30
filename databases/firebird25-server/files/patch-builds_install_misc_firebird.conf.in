@@ -1,0 +1,20 @@
+--- builds/install/misc/firebird.conf.in.orig	2016-06-30 09:34:53 UTC
++++ builds/install/misc/firebird.conf.in
+@@ -60,7 +60,7 @@
+ #
+ # Type: string
+ #
+-#RootDirectory =
++#RootDirectory = /var/db/firebird
+ 
+ 
+ # ----------------------------
+@@ -137,7 +137,7 @@
+ #
+ # Type: string (special format)
+ #
+-#UdfAccess = Restrict UDF
++UdfAccess = Restrict %%PREFIX%%/libexec/firebird/udf
+ 
+ 
+ # ----------------------------

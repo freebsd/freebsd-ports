@@ -3,8 +3,8 @@
 
 PORTNAME=	libpsl
 PORTVERSION=	0.13.0
-PORTREVISION=	2
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -50,6 +50,7 @@ IDN2_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 IDN2_USES=		iconv
 NLS_CPPFLAGS=		-DENABLE_NLS=1
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/psl2c ${STAGEDIR}${PREFIX}/bin/

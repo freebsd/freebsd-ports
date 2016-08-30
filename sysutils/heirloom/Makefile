@@ -3,7 +3,7 @@
 
 PORTNAME=	heirloom
 PORTVERSION=	070715
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -13,8 +13,9 @@ COMMENT=	Collection of standard Unix utilities
 BUILD_DEPENDS=	ksh:shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake tar:bzip2
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" ROOT="${STAGEDIR}"
+USES=		gmake ncurses tar:bzip2
+MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" ROOT="${STAGEDIR}" \
+		LCURS="-L${LOCALBASE}/lib -lncurses"
 MAKEFILE=	makefile
 ALL_TARGET=	#
 DATADIR=	${PREFIX}/${PORTNAME}

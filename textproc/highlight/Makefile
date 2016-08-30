@@ -1,9 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
+# 3.29+ needs to_string() which gcc48 (for 9.3-R) doesn't provide
 PORTNAME=	highlight
-PORTVERSION=	3.28
-PORTEPOCH=	2
+PORTVERSION=	3.29
+PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
@@ -32,5 +33,6 @@ post-patch:
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/etc/highlight && ${MV} filetypes.conf \
 		filetypes.conf.sample
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/highlight
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	NASTRAN-95
 PORTVERSION=	20151227
+PORTREVISION=	1
 CATEGORIES=	cad science
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -29,6 +30,10 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+g;' \
 		${WRKSRC}/sb/Makefile \
 		${WRKSRC}/um/Makefile
+# Version string limited to 7 characters so ${OPSYS:tu} would result in
+# "DRAGONF VERSON" for DF.  It's best to leave it hardcoded to FreeBSD
+	@${REINPLACE_CMD} -e 's+LINUX  +FREEBSD+g;' \
+		${WRKSRC}/sb/btstrp.f
 
 do-build:
 	@(cd ${WRKSRC}/sb; ${MAKE_CMD} ${ALL_TARGET})

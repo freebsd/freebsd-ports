@@ -1,2 +1,3 @@
-SHA256 (silo-4.10-bsd.tar.gz) = e801f2c86de8e42059c09b2a274285ad8d30da1fff4134e359fadf70fd07aca0
-SIZE (silo-4.10-bsd.tar.gz) = 13067090
+TIMESTAMP = 1472243085
+SHA256 (silo-4.10.2-bsd.tar.gz) = 4b901dfc1eb4656e83419a6fde15a2f6c6a31df84edfad7f1dc296e01b20140e
+SIZE (silo-4.10.2-bsd.tar.gz) = 13067837

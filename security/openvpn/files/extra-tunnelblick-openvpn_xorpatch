@@ -11,13 +11,12 @@ detail on the following wiki page:
 https://tunnelblick.net/cOpenvpn_xorpatch.html
 
 
-diff -u -r src/openvpn/forward.c src/openvpn/forward.c
---- src/openvpn/forward.c	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/forward.c	2015-04-07 22:38:20.000000000 -0400
-@@ -674,7 +674,10 @@
+--- src/openvpn/forward.c.orig	2016-08-23 14:16:28 UTC
++++ src/openvpn/forward.c
+@@ -674,7 +674,10 @@ read_incoming_link (struct context *c)
+ 
    status = link_socket_read (c->c2.link_socket,
  			     &c->c2.buf,
- 			     MAX_RW_SIZE_LINK (&c->c2.frame),
 -			     &c->c2.from);
 +			     &c->c2.from,
 +			     c->options.ce.xormethod,
@@ -26,7 +25,7 @@ diff -u -r src/openvpn/forward.c src/openvpn/forward.c
  
    if (socket_connection_reset (c->c2.link_socket, status))
      {
-@@ -1150,7 +1153,10 @@
+@@ -1151,7 +1154,10 @@ process_outgoing_link (struct context *c
  	    /* Send packet */
  	    size = link_socket_write (c->c2.link_socket,
  				      &c->c2.to_link,
@@ -38,10 +37,9 @@ diff -u -r src/openvpn/forward.c src/openvpn/forward.c
  
  #ifdef ENABLE_SOCKS
  	    /* Undo effect of prepend */
-diff -u -r src/openvpn/options.c src/openvpn/options.c
---- src/openvpn/options.c	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/options.c	2015-04-09 12:56:32.000000000 -0400
-@@ -785,6 +785,9 @@
+--- src/openvpn/options.c.orig	2016-08-23 14:16:22 UTC
++++ src/openvpn/options.c
+@@ -792,6 +792,9 @@ init_options (struct options *o, const b
    o->max_routes = MAX_ROUTES_DEFAULT;
    o->resolve_retry_seconds = RESOLV_RETRY_INFINITE;
    o->proto_force = -1;
@@ -51,7 +49,7 @@ diff -u -r src/openvpn/options.c src/openvpn/options.c
  #ifdef ENABLE_OCC
    o->occ = true;
  #endif
-@@ -903,6 +906,9 @@
+@@ -907,6 +910,9 @@ setenv_connection_entry (struct env_set 
    setenv_int_i (es, "local_port", e->local_port, i);
    setenv_str_i (es, "remote", e->remote, i);
    setenv_int_i (es, "remote_port", e->remote_port, i);
@@ -61,7 +59,7 @@ diff -u -r src/openvpn/options.c src/openvpn/options.c
  
  #ifdef ENABLE_HTTP_PROXY
    if (e->http_proxy_options)
-@@ -1348,6 +1354,9 @@
+@@ -1366,6 +1372,9 @@ show_connection_entry (const struct conn
    SHOW_INT (connect_retry_seconds);
    SHOW_INT (connect_timeout);
    SHOW_INT (connect_retry_max);
@@ -71,7 +69,7 @@ diff -u -r src/openvpn/options.c src/openvpn/options.c
  
  #ifdef ENABLE_HTTP_PROXY
    if (o->http_proxy_options)
-@@ -5049,6 +5058,46 @@
+@@ -5131,6 +5140,46 @@ add_option (struct options *options,
        options->proto_force = proto_force;
        options->force_connection_list = true;
      }
@@ -118,10 +116,9 @@ diff -u -r src/openvpn/options.c src/openvpn/options.c
  #ifdef ENABLE_HTTP_PROXY
    else if (streq (p[0], "http-proxy") && p[1])
      {
-diff -u -r src/openvpn/options.h src/openvpn/options.h
---- src/openvpn/options.h	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/options.h	2015-04-07 22:38:20.000000000 -0400
-@@ -100,6 +100,9 @@
+--- src/openvpn/options.h.orig	2016-08-23 14:16:22 UTC
++++ src/openvpn/options.h
+@@ -100,6 +100,9 @@ struct connection_entry
    int connect_retry_max;
    int connect_timeout;
    bool connect_timeout_defined;
@@ -131,10 +128,9 @@ diff -u -r src/openvpn/options.h src/openvpn/options.h
  #ifdef ENABLE_HTTP_PROXY
    struct http_proxy_options *http_proxy_options;
  #endif  
-diff -u -r src/openvpn/socket.c src/openvpn/socket.c
---- src/openvpn/socket.c	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/socket.c	2015-04-09 08:48:01.000000000 -0400
-@@ -52,6 +52,53 @@
+--- src/openvpn/socket.c.orig	2016-08-23 14:16:22 UTC
++++ src/openvpn/socket.c
+@@ -52,6 +52,53 @@ const int proto_overhead[] = { /* indexe
    IPv6_TCP_HEADER_SIZE,
  };
  
@@ -188,10 +184,9 @@ diff -u -r src/openvpn/socket.c src/openvpn/socket.c
  /*
   * Convert sockflags/getaddr_flags into getaddr_flags
   */
-diff -u -r src/openvpn/socket.h src/openvpn/socket.h
---- src/openvpn/socket.h	2014-11-29 10:00:35.000000000 -0500
-+++ src/openvpn/socket.h	2015-04-08 20:12:02.000000000 -0400
-@@ -250,6 +250,10 @@
+--- src/openvpn/socket.h.orig	2016-08-23 14:16:22 UTC
++++ src/openvpn/socket.h
+@@ -245,6 +245,10 @@ struct link_socket
  #endif
  };
  
@@ -202,10 +197,10 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  /*
   * Some Posix/Win32 differences.
   */
-@@ -875,30 +879,56 @@
+@@ -873,30 +877,56 @@ int link_socket_read_udp_posix (struct l
+ static inline int
  link_socket_read (struct link_socket *sock,
  		  struct buffer *buf,
- 		  int maxsize,
 -		  struct link_socket_actual *from)
 +		  struct link_socket_actual *from,
 +		  int xormethod,
@@ -220,7 +215,7 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  #ifdef WIN32
        res = link_socket_read_udp_win32 (sock, buf, from);
  #else
-       res = link_socket_read_udp_posix (sock, buf, maxsize, from);
+       res = link_socket_read_udp_posix (sock, buf, from);
  #endif
 -      return res;
      }
@@ -263,7 +258,7 @@ diff -u -r src/openvpn/socket.h src/openvpn/socket.h
  }
  
  /*
-@@ -982,8 +1012,34 @@
+@@ -980,8 +1010,34 @@ link_socket_write_udp (struct link_socke
  static inline int
  link_socket_write (struct link_socket *sock,
  		   struct buffer *buf,

@@ -1,4 +1,4 @@
---- builds/posix/make.defaults.orig	2015-03-27 13:46:38 UTC
+--- builds/posix/make.defaults.orig	2016-06-30 09:34:53 UTC
 +++ builds/posix/make.defaults
 @@ -126,7 +126,7 @@ RM_R=		rm -rf
  CHMOD=			chmod

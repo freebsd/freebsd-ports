@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-USE_KDE4=	pimlibs
+USE_KDE=	pimlibs
 
 KIPI_PLUGIN=	calendar
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

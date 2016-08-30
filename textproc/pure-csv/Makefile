@@ -11,16 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSV reading and writing module for the Pure language
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig pure
-PORTDOCS=	README
-OPTIONS_DEFINE=	DOCS
 
+PORTDOCS=	README
 PLIST_FILES=	lib/pure/csv.pure \
 		lib/pure/csv.so
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/csv.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.5.3
+PORTVERSION=	4.6
 DISTVERSIONSUFFIX=	-de_DE
 CATEGORIES=	german www
 MASTER_SITES=	http://de.wordpress.org/
@@ -20,9 +20,8 @@ CONFLICTS_INSTALL=	wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		cpe
+USES=		php:web cpe
 USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
-WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CPE_LANG=	de

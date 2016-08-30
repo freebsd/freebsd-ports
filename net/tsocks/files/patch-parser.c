@@ -1,5 +1,5 @@
---- parser.c.orig	Wed Oct  8 01:43:48 2003
-+++ parser.c	Wed Oct  8 01:43:58 2003
+--- parser.c.orig	2002-03-13 12:34:22 UTC
++++ parser.c
 @@ -4,6 +4,7 @@
  
  */

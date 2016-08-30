@@ -2,7 +2,7 @@
 +++ Makefile
 @@ -1,4 +1,4 @@
 -PREFIX=/usr
-+PREFIX=/usr/local
++PREFIX?=/usr/local
  
  all:
  	@echo "You can run Anki with ./runanki"

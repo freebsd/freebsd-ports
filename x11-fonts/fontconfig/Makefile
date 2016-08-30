@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.11.1
-PORTREVISION?=	3
+PORTVERSION=	2.12.1
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
 
@@ -18,7 +21,8 @@ USES=		tar:bzip2
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES+=		gmake libtool pathfix pkgconfig
+USES+=		cpe gmake libtool pathfix pkgconfig
+CPE_VENDOR=	fontconfig_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
@@ -26,6 +30,7 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 		--with-xmldir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
+		--with-default-hinting=${PREFERRED_HINTING} \
 		--with-default-fonts=${PREFIX}/share/fonts \
 		--with-add-fonts=${LOCALBASE}/lib/X11/fonts \
 		--with-cache-dir=/var/db/fontconfig \
@@ -34,25 +39,32 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 
 # D6155: static linked library linking added to support statically linked
 # 	 applications, e.g. x11/xforward static option
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+=	--enable-static
+# Python is not required, because fc-blanks.h is available in distfile
+CONFIGURE_ENV=	PYTHON=":"
 
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 INSTALL_TARGET=install-strip
 
-MAN1PAGES=	fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
-MAN5PAGES=	fonts-conf.5
+PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	HINTING
+HINTING_DESC=	Preferred pixel hinting configuration
+.for opt in NONE SLIGHT MEDIUM FULL
+OPTIONS_SINGLE_HINTING+=	HINTING_${opt}
+HINTING_${opt}_DESC=	${opt:tl}
+HINTING_${opt}_VARS=	PREFERRED_HINTING=${opt:tl}
+.endfor
+OPTIONS_DEFAULT=	HINTING_SLIGHT
 
 post-install:
-	${INSTALL_MAN} ${MAN5PAGES:S|^|${WRKSRC}/doc/|} \
-		${STAGEDIR}${PREFIX}/man/man5
-.for manpage in ${MAN1PAGES}
-	${INSTALL_MAN} ${FILESDIR}/${manpage} \
+	${INSTALL_MAN} ${WRKSRC}/fc-*/*.1 \
 		${STAGEDIR}${PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/*.5 \
+		${STAGEDIR}${PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/fonts.conf \
 		${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf.sample
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \

@@ -2,6 +2,7 @@
 @sample(,,0600) etc/pam_duo.conf.sample
 include/duo/duo.h
 include/duo/util.h
+include/duo/shell.h
 lib/libduo.so.3.0.0
 lib/libduo.so.3
 lib/libduo.so

@@ -3,6 +3,7 @@
 
 PORTNAME=	tempcontrol
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lemis.com/grog/brewing/src/brewing/tempcontrol/
 
@@ -12,7 +13,7 @@ COMMENT=	Temperature control for fermenting beer and other applications
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		readline
+USES=		ncurses readline
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/tempcontrol share/tempcontrol/temperaturecontrolrc.sample \

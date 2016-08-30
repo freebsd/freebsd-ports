@@ -55,7 +55,6 @@ PORTDOCS+=	bwt_.cpp bwtpre.cpp bwtrle.cpp divsufsort.c divsufsort.h \
 		exe_jo.cpp jpeg_jo.cpp lzpre.cpp lzppre.cpp readme_bwt.txt \
 		readme_bwt_j3.txt readme_exe_j1.txt readme_lazy210.txt zpsfx.cpp
 READMES+=	bwt_j3 exe_j1 lazy210
-EXTRA_PATCHES+=	${FILESDIR}/patch_zpsfx.cpp
 .endif
 WDATA=	bmp_j4.cfg bwt_j3.cfg bwt_slowmode1_1GB_block.cfg \
 	bwt_slowmode1_256MB_block.cfg bwt_slowmode1_4MB_block.cfg \

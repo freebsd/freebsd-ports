@@ -1,4 +1,5 @@
 etc/bash_completion.d/icinga2
+%%EXAMPLESDIR%%/newsyslog/icinga2
 @sample %%ETCDIR%%/conf.d/app.conf.sample
 @sample %%ETCDIR%%/conf.d/commands.conf.sample
 @sample %%ETCDIR%%/conf.d/downtimes.conf.sample
@@ -18,9 +19,9 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/features-available/debuglog.conf.sample
 @sample %%ETCDIR%%/features-available/gelf.conf.sample
 @sample %%ETCDIR%%/features-available/graphite.conf.sample
-@sample %%ETCDIR%%/features-available/icingastatus.conf.sample
 %%MYSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
 %%PGSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
+@sample %%ETCDIR%%/features-available/influxdb.conf.sample
 @sample %%ETCDIR%%/features-available/livestatus.conf.sample
 @sample %%ETCDIR%%/features-available/mainlog.conf.sample
 @sample %%ETCDIR%%/features-available/notification.conf.sample
@@ -65,40 +66,42 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/1-about.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/10-monitoring-remote-systems.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/11-%%ICINGA2USER%%2-client.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/12-agent-based-checks.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/13-distributed-monitoring-ha.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/14-addons-plugins.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/15-features.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/16-troubleshooting.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/17-upgrading-%%ICINGA2USER%%-2.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/18-language-reference.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/19-library-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/10-icinga-template-library.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/11-cli-commands.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/12-icinga2-api.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/13-addons.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/14-features.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/15-troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/16-upgrading-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/17-language-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/18-library-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/19-script-debugger.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/2-getting-started.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/20-script-debugger.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/21-development.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/22-migrating-from-%%ICINGA2USER%%-1x.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/20-development.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/21-selinux.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/22-migrating-from-icinga-1x.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/23-appendix.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/4-configuring-%%ICINGA2USER%%-2.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/5-advanced-topics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/6-object-types.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/7-%%ICINGA2USER%%-template-library.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/8-cli-commands.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/9-icinga2-api.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/4-configuring-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/5-service-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/6-distributed-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/7-agent-based-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/8-advanced-topics.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/9-object-types.md
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/mysql.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.2.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.3.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.5.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/pgsql.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.5.0.sql
 %%DATADIR%%/include/command-icinga.conf
 %%DATADIR%%/include/command-nscp-local.conf
 %%DATADIR%%/include/command-plugins-manubulon.conf
@@ -115,12 +118,13 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/hardware.conf
 %%DATADIR%%/include/plugins-contrib.d/icingacli.conf
 %%DATADIR%%/include/plugins-contrib.d/ipmi.conf
+%%DATADIR%%/include/plugins-contrib.d/metrics.conf
 %%DATADIR%%/include/plugins-contrib.d/network-components.conf
+%%DATADIR%%/include/plugins-contrib.d/network-services.conf
 %%DATADIR%%/include/plugins-contrib.d/operating-system.conf
 %%DATADIR%%/include/plugins-contrib.d/virtualization.conf
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
 %%DATADIR%%/include/plugins-contrib.d/web.conf
-%%DATADIR%%/include/timeperiod.conf
 %%DATADIR%%/include/windows-plugins
 @dir %%ETCDIR%%/pki
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2

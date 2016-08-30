@@ -27,7 +27,8 @@ PYFS_DESC=		Install pyfilesystem to support the pyfs backend
 
 ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto
 GNOME_KEYRING_USE=		GNOME=pygobject3
-KDE_KWALLET_USE=		KDE4=pykde4
+KDE_KWALLET_USES=		kde:4
+KDE_KWALLET_USE=		KDE=pykde4
 KEYCZAR_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}keyczar>=0.71c:security/py-keyczar
 PYFS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fs>=0.5:devel/py-fs
 

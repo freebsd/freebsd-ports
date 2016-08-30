@@ -9,3 +9,5 @@ keyboard indicator.
 key combination  is pressed,  it swaps 1,2  and 3,4  columns of
 keyboard map. When a timeout  without keyboard and mouse events
 passes, it starts a locker.
+
+WWW: http://lav.yar.ru/

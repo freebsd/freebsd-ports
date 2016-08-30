@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Program showing where new mail has been placed
 
+USES=		ncurses
+
 LDFLAGS+=	-lncurses
 CFLAGS+=	-fno-exceptions -fno-rtti
 

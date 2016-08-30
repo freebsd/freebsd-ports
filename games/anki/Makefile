@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.32
+PORTVERSION=	2.0.36
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 DIST_SUBDIR=	python
@@ -10,7 +10,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	trebbu@googlemail.com
 COMMENT=	Flashcard trainer with spaced repetition
 
-LICENSE=	AGPLv3
+LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lame:audio/lame \

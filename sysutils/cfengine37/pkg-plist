@@ -350,8 +350,8 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
 %%DOCSDIR%%/examples/zenoss.cf
-@unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :
+@dir /var/cfengine/inputs
+@dir /var/cfengine/modules
+@dir /var/cfengine/outputs
+@dir(root,wheel,700) /var/cfengine/ppkeys
+@dir /var/cfengine

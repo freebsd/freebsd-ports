@@ -1,0 +1,11 @@
+--- builds/posix/firebird.vers.orig	2016-06-30 09:34:53 UTC
++++ builds/posix/firebird.vers
+@@ -25,6 +25,8 @@
+ 
+ {
+ global:
++	__progname;
++	environ;
+ # private entrypoint for REMOTE server
+ 	server_main;
+ #-------------------

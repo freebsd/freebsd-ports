@@ -514,7 +514,11 @@ MASTER_SITE_GENTOO+= \
 #                 Using the name of a branch here is incorrect. It is
 #                 possible to do GH_TAGNAME= GIT_HASH to do a snapshot.
 #                 default: ${DISTVERSION}
-# GH_TUPLE      - above shortened to account:project:tagname[:group]
+#
+# GH_SUBDIR     - directory relative to WRKSRC where to move this distfile's
+#                 content after extracting.
+#
+# GH_TUPLE      - above shortened to account:project:tagname[:group][/subdir]
 #
 .if defined(USE_GITHUB)
 .  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
@@ -523,18 +527,19 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		not "reroll" as soon as the branch is updated
 .  endif
 .  if defined(GH_TUPLE)
-.for _tuple in ${GH_TUPLE}
+.    for _tuple in ${GH_TUPLE}
 _t_tmp=${_tuple}
-.if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
+.      if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
 check-makevars::
 	@${ECHO_MSG} "The ${_tuple} GH_TUPLE line has"
 	@${ECHO_MSG} "a tag containing something else than [a-zA-Z0-9_]"
 	@${FALSE}
-.endif
-.endfor
-GH_ACCOUNT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\1\4@}
-GH_PROJECT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\2\4@}
-GH_TAGNAME+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\3\4@}
+.      endif
+.    endfor
+GH_ACCOUNT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\1\4@}
+GH_PROJECT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\2\4@}
+GH_TAGNAME+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\3\4@}
+GH_SUBDIR+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\6\4@:M/*:S/^\///}
 .  endif
 # We are cheating and using backend URLS for Github here. See ports/194898
 # comment #15 for explanation as to why and how to deal with it if it breaks.
@@ -613,11 +618,32 @@ GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
 GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
 .    endif
 .  endfor
+.  for _S in ${GH_SUBDIR}
+_S_SEMP=	${_S:S/^${_S:C@:[^/:]+$@@}//:S/^://}
+.    if !empty(_S_SEMP)
+.      for _group in ${_S_SEMP:S/,/ /g}
+_G_SEMP=	${_group}
+.        if ${_G_SEMP} == all || ${_G_SEMP} == ALL || ${_G_SEMP} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your GH_SUBDIR"
+		@${FALSE}
+.        endif
+.        if !${_GITHUB_GROUPS:M${_group}}
+_GITHUB_GROUPS+=	${_group}
+.         endif
+GH_SUBDIR_${_group}=	${_S:C@^(.*):[^/:]+$@\1@}
+.      endfor
+.    else
+GH_SUBDIR_DEFAULT=	${_S:C@^(.*):[^/:]+$@\1@}
+.    endif
+.  endfor
 # Put the default values back into the variables so that the *default* behavior
 # is not changed.
 GH_ACCOUNT:=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT:=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
+GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
@@ -644,6 +670,13 @@ _GITHUB_EXTRACT_SUFX=	.tar.gz
 .  if !${USE_GITHUB:Mnodefault} && defined(_GITHUB_MUST_SET_DISTNAME)
 DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 .  endif
+.  if !empty(GH_SUBDIR)
+_SITES_extract:=	690:post-extract-gh-DEFAULT
+post-extract-gh-DEFAULT:
+	@${RMDIR} ${WRKSRC}/${GH_SUBDIR} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${GH_SUBDIR:H} 2>/dev/null || :
+	@${LN} -s ${GH_SUBDIR:C/[^\/]//g:C/\//..\//g} ${WRKSRC}/${GH_SUBDIR}
+.  endif
 # If there are non default groups
 .  if !empty(_GITHUB_GROUPS:NDEFAULT)
 # Then for each of the remaining groups, add DISTFILES and MASTER_SITES
@@ -660,6 +693,14 @@ DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUF
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
 WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
+.      if !empty(GH_SUBDIR_${_group})
+_SITES_extract:=	${_SITES_extract} 690:post-extract-gh-${_group}
+post-extract-gh-${_group}:
+	@${RMDIR} ${WRKSRC}/${GH_SUBDIR_${_group}} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_${_group}:H} 2>/dev/null || :
+	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${GH_SUBDIR_${_group}}
+	@ln -s ${WRKSRC:T}/${GH_SUBDIR_${_group}} ${WRKSRC_${_group}}
+.      endif
 .    endfor
 .  endif
 .endif # defined(USE_GITHUB)

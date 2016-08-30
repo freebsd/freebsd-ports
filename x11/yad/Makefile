@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.36.3
+PORTVERSION=	0.37.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF/${PORTNAME}-dialog/
 
@@ -11,7 +11,11 @@ COMMENT=	Display GNOME dialogs from the command line
 
 LICENSE=	GPLv3
 
-USES=		gmake pkgconfig tar:xz
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		gettext gmake pkgconfig tar:xz
+USE_GNOME=	cairo intltool
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -28,11 +32,10 @@ OPTIONS_SINGLE_GTK=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
 
 NLS_CONFIGURE_OFF=	--disable-nls
-NLS_USES=	gettext
 GTK2_CONFIGURE_ON=	--with-gtk=gtk2
-GTK2_USE=		GNOME=gtk20,intltool
+GTK2_USE=		GNOME=gtk20
 GTK3_CONFIGURE_ON=	--with-gtk=gtk3
-GTK3_USE=		GNOME=gtk30,intltool
+GTK3_USE=		GNOME=gtk30
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
 .include <bsd.port.options.mk>
