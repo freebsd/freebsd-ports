@@ -325,14 +325,16 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/metadataeditor/
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/multidownload.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/multiselect/multiselect.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/multiselect/multiselect.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/badge.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/notificationicon.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/notifications.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/page.js/page.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/pagejs/page.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playlisteditor/playlisteditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playmenu.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/array.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/bind.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/objectassign.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/raf.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/nativeprompt.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/prompt.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/style.css
@@ -351,6 +353,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/scroller/smooth
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/scrollhelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/scrollstyles.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/servernotifications.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/notifications.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/sync.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/sharingmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/sharingmenu.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/social-share-kit-1.0.4/LICENSE
