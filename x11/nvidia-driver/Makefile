@@ -12,7 +12,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	367.35
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -241,9 +241,6 @@ post-install: .SILENT
 .endif
 .if ${NVVERSION} < 358.009
 	${REINPLACE_CMD} '/nvidia-modeset.ko/d' ${TMPPLIST}
-.else
-	${REINPLACE_CMD} 's/nvidia$$/nvidia-modeset/ ; s/nvidia_/nvidia-modeset_/' \
-		${PKGMESSAGE}
 .endif
 .if ${NVVERSION} >= 361.028
 	${REINPLACE_CMD} -E '/(EGL_nvidia\.so|GLESv[12](_CM)?(\.so\.[0-9]+\.[0-9]+))$$/d' \

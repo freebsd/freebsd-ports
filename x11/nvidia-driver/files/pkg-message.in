@@ -1,11 +1,11 @@
 To use these drivers, make sure that you have loaded the NVidia kernel
 module, by doing
 
-	# kldload nvidia
+	# kldload nvidia	(or nvidia-modeset, see below)
 
 or adding
 
-	nvidia_load="YES"
+	nvidia_load="YES"	(or nvidia-modeset_load="YES", see below)
 
 to your /boot/loader.conf.
 
@@ -29,5 +29,15 @@ If X.org cannot start and reports
 
 in /var/log/Xorg.0.log while actually you have ``options SYSVSHM''
 enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
+
+Starting with version 358.09, some important functionality of the driver
+has been broken out into a separate kernel module, nvidia-modeset.ko.
+Users that experience a hang when starting X11 server, or observe
+
+	(II) NVIDIA(0): Validated MetaModes:
+	(II) NVIDIA(0):     "NULL"
+
+in /var/log/Xorg.0.log should replace `nvidia.ko' with `nvidia-modeset.ko'
+in their /boot/loader.conf or /etc/rc.conf configuration files.
 
 See %%DOCSDIR%%/README for more information.
