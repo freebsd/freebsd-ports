@@ -1,0 +1,12 @@
+The Nvidia driver has been updated to 367.35.  In this version of the driver,
+some important functionality has been broken out into a separate
+nvidia-modeset.ko.
+
+Users that experience a hang starting X or observe
+
+  [    43.243] (II) NVIDIA(0): Validated MetaModes:
+  [    43.243] (II) NVIDIA(0):     "NULL"
+
+in their Xorg.logs should replace 'nvidia.ko' with 'nvidia-modeset.ko' in their
+loader.conf or rc.conf configurations.  (nvidia-modeset.ko has a MODULE_DEPENDS
+relationship to nvidia.ko and will bring it in automatically.)
