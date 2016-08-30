@@ -249,6 +249,26 @@ share/teamspeak/server/sql/update_23.sql
 share/teamspeak/server/sql/update_24.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
+share/teamspeak/server/sql/channel_delete_bulk.sql
+share/teamspeak/server/sql/channel_insert_bulk.sql
+share/teamspeak/server/sql/channel_insert_bulk_fixup.sql
+share/teamspeak/server/sql/channel_insert_bulk_mapping.sql
+share/teamspeak/server/sql/channel_properties_bulk_insert.sql
+share/teamspeak/server/sql/channel_server_list_properties_bulk.sql
+share/teamspeak/server/sql/client_get_by_serverid_bulk.sql
+share/teamspeak/server/sql/client_insert_bulk.sql
+share/teamspeak/server/sql/client_insert_bulk_mapping.sql
+share/teamspeak/server/sql/client_properties_bulk_insert.sql
+share/teamspeak/server/sql/group_insert_bulk_snapshot.sql
+share/teamspeak/server/sql/group_insert_bulk_snapshot_get_mapping.sql
+share/teamspeak/server/sql/group_member_insert_bulk.sql
+share/teamspeak/server/sql/perm_copy_default_permissions.sql
+share/teamspeak/server/sql/perm_insert_bulk.sql
+share/teamspeak/server/sql/permission_load_channel_group_total.sql
+share/teamspeak/server/sql/permission_load_other.sql
+share/teamspeak/server/sql/permission_load_server_and_channel_group_total.sql
+share/teamspeak/server/sql/permission_load_server_group_total.sql
+share/teamspeak/server/sql/update_25.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
 share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
 @dir(teamspeak,teamspeak,) %%DBDIR%%
