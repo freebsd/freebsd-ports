@@ -1,0 +1,15 @@
+The Xfce Goodies Project includes additional software and artwork that are
+related to the Xfce desktop, but not part of the official release.
+
+The Xfce Project itself provides a lightweight desktop environment, which
+includes only the core compoments required for a desktop environment, like a
+window manager, a file manager, a session manager, a panel and a few utilities.
+Additional software packages and plugins to existing software, like the panel
+or the file manager, are provided by the Xfce Goodies Project.
+
+This meta-port does not install any software itself - it simply depends on other
+ports which are part of the Xfce Goodies Project, and a few additional ports
+which are not officially part of Goodies, but highly recommended for an Xfce
+desktop environment.
+
+WWW: http://goodies.xfce.org/
