@@ -1,0 +1,11 @@
+--- configure.ac.orig	2016-08-28 20:24:37.631481000 -0400
++++ configure.ac	2016-08-28 20:24:54.291039000 -0400
+@@ -18,7 +18,7 @@
+ dnl Global CFLAGS, for tcpkali and its third-party dependencies.
+ 
+ CC="${PTHREAD_CC}"
+-LIBS="${PTHREAD_LIBS} ${LIBS}"
++LIBS="-lpthread ${LIBS}"
+ CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+ 
+ AC_CHECK_PROGS([YACC], ['bison -y' byacc])
