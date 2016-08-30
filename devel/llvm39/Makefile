@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.9.0rc3
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -202,7 +203,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib
+_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
