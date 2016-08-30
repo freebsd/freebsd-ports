@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: snort2pfcd
+# REQUIRE: DAEMON pf snort
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="snort2pfcd"
+rcvar=${name}_enable
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+required_modules="pf"
+
+snort2pfcd_start()
+{
+	echo "Starting ${name}..."
+	if [ $(sysctl -n kern.securelevel) != "3" ]; then
+		${command} ${snort2pfcd_flags}
+	else
+		echo "${name} cannot operate on pf at securelevel 3"
+	fi
+
+	if [ -f ${pidfile} ]; then
+		echo "${name} successfully started"
+	else
+		echo "${name} statup failed"
+	fi
+}
+
+snort2pfcd_stop()
+{
+	if [ -f ${pidfile} ]; then
+		echo "Stopping ${name}..."
+		kill $(cat ${pidfile})
+		rm ${pidfile}
+	else
+		echo "${name} is not running?"
+	fi
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

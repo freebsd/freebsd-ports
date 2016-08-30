@@ -1066,6 +1066,7 @@
     SUBDIR += snoopy
     SUBDIR += snort
     SUBDIR += snort-rep
+    SUBDIR += snort2pfcd
     SUBDIR += snortreport
     SUBDIR += snortsam
     SUBDIR += snortsnarf
