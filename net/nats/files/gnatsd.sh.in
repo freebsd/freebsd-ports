@@ -16,6 +16,7 @@
 name="gnatsd"
 rcvar=`set_rcvar`
 
+load_rc_config ${name}
 : ${gnatsd_enable="NO"}
 : ${gnatsd_username="nobody"}
 : ${gnatsd_options="-m 8222 -s"}
@@ -23,7 +24,5 @@ rcvar=`set_rcvar`
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/gnatsd
 command_args="-u ${gnatsd_username} ${procname} ${gnatsd_options}"
-
-load_rc_config ${name}
 
 run_rc_command "$1"
