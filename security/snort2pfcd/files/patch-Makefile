@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-08-30 14:07:38 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ PROG= snort2pfcd
+ SRCS= main.c parser.c kevent.c spfc.c ioctl_helpers.c
+ MAN= ${PROG}.8
+-CFLAGS+=-Wall -Werror -pedantic
++CFLAGS+=-Wall -pedantic -I${LOCALBASE}/include
+ LDFLAGS+=-lutil -L${LOCALBASE}/lib -lcidr
+ 
+ .include <bsd.prog.mk>
