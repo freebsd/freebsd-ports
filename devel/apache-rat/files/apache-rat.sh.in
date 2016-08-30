@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# FreeBSD-specific script for Apache Rat.
+#
+# $FreeBSD$
+#
+# See: http://creadur.apache.org/rat/apache-rat/
+
+JAVACMD="${JAVACMD:-"%%LOCALBASE%%/bin/java"}"
+if [ ! -x "${JAVACMD}" ]; then
+	echo "Error: ${JAVACMD} is not present on your system" >&2
+	echo "       Please specify the path to an existing java executable with the" >&2
+	echo "       JAVACMD environment variable when running rat." >&2
+	exit 1
+fi
+
+exec "${JAVACMD}" -jar %%JAVAJARDIR%%/apache-rat.jar "$@"
