@@ -84,6 +84,7 @@
     SUBDIR += antlr3
     SUBDIR += antlr4
     SUBDIR += apache-ant
+    SUBDIR += apache-rat
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
     SUBDIR += appstream-glib
