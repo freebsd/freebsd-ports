@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/rexx${PORTNAME}/rexx${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	rexx-
@@ -30,6 +30,12 @@ DOCSDIR=	${PREFIX}/share/doc/rexx${PORTNAME}
 DATADIR=	${PREFIX}/share/rexx${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+
+do-extract:
+	# avoid extracting circular hard links in distfile!
+	@${MKDIR} ${WRKDIR}
+	@tar -x -C ${WRKDIR} --exclude='*common/filterexports*' --exclude='*common/fixrc*' \
+		-f ${DISTDIR}/${DISTNAME}.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s| -lc | |g" \
