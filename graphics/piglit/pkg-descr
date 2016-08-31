@@ -1,0 +1,12 @@
+Piglit is a collection of automated tests for OpenGL and OpenCL
+implementations.
+
+The goal of Piglit is to help improve the quality of open source
+OpenGL and OpenCL drivers by providing developers with a simple means to
+perform regression tests.
+
+The original tests have been taken from
+- Glean ( http://glean.sf.net/ ) and
+- Mesa ( http://www.mesa3d.org/ )
+
+WWW: http://piglit.freedesktop.org/
