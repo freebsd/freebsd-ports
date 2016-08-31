@@ -161,3 +161,4 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/toolchain/Android.html
+%%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch
