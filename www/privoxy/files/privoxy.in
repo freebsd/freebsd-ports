@@ -36,26 +36,26 @@ load_rc_config ${name}
 : ${privoxy_pidfile="${privoxy_piddir}/privoxy.pid"}
 
 privoxy_prestart () {
-    if [ ! -e ${privoxy_config} ]; then
-        echo config file not found. Copying the example file to ${privoxy_config}.
-        cp %%PREFIX%%/share/examples/privoxy/config ${privoxy_config}
-        chown ${privoxy_user}:${privoxy_user} ${privoxy_config};
+    if [ ! -e "${privoxy_config}" ]; then
+        echo "config file not found. Copying the example file to ${privoxy_config}."
+        cp %%PREFIX%%/share/examples/privoxy/config "${privoxy_config}"
+        chown "${privoxy_user}:${privoxy_user}" "${privoxy_config}";
     fi
     actionfile="%%PREFIX%%/etc/privoxy/match-all.action"
-    if [ ! -e ${actionfile} ]; then
-        echo ${actionfile} not found. Copying the example file.
-        cp %%PREFIX%%/share/examples/privoxy/match-all.action ${actionfile}
-        chown ${privoxy_user}:${privoxy_user} ${actionfile}
+    if [ ! -e "${actionfile}" ]; then
+        echo "${actionfile} not found. Copying the example file."
+        cp %%PREFIX%%/share/examples/privoxy/match-all.action "${actionfile}"
+        chown "${privoxy_user}:${privoxy_user}" "${actionfile}"
     fi
-    if [ ! -e ${privoxy_logdir} ]; then
-        echo ${privoxy_logdir} not found. Creating ...
-        mkdir ${privoxy_logdir}
-        chown ${privoxy_user}:${privoxy_user} ${privoxy_logdir}
-        chmod 0750 ${privoxy_logdir}
+    if [ ! -e "${privoxy_logdir}" ]; then
+        echo "${privoxy_logdir} not found. Creating ..."
+        mkdir "${privoxy_logdir}"
+        chown "${privoxy_user}:${privoxy_user}" "${privoxy_logdir}"
+        chmod 0750 "${privoxy_logdir}"
     fi
-    if [ ! -d ${privoxy_piddir} ]; then
-        mkdir -p ${privoxy_piddir}
-        chown ${privoxy_user}:${privoxy_user} ${privoxy_piddir}
+    if [ ! -d "${privoxy_piddir}" ]; then
+        mkdir -p "${privoxy_piddir}"
+        chown "${privoxy_user}:${privoxy_user}" "${privoxy_piddir}"
     fi
 }
 
