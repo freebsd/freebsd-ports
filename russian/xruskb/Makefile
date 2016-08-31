@@ -3,7 +3,7 @@
 
 PORTNAME=	xruskb
 PORTVERSION=	1.15.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/ \
 		http://lav.yar.ru/download/xruskb/
