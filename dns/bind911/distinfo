@@ -1,3 +1,3 @@
-TIMESTAMP = 1470224272
-SHA256 (bind-9.11.0b3.tar.gz) = 7c1d0d3465755c0cfb990c9bfff33f33c7cef9a16e320e7e3a5eb7c506d9e993
-SIZE (bind-9.11.0b3.tar.gz) = 9735747
+TIMESTAMP = 1472643318
+SHA256 (bind-9.11.0rc1.tar.gz) = 047ed20de3bed0ca40d68b2ca7fedff9d46f82097d5ac474ef1456b27da3002d
+SIZE (bind-9.11.0rc1.tar.gz) = 9788210
