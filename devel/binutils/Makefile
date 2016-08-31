@@ -3,7 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.27
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -80,6 +80,10 @@ CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
 PLIST_SUB+=	GOLD="@comment "
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CONFIGURE_ARGS+=	--disable-initfini-array
 .endif
 
 .if ${ARCH} == "amd64"
