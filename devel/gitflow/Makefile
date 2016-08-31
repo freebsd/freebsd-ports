@@ -18,9 +18,10 @@ GH_ACCOUNT=	nbari
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		tar:bzip2 gmake
+USES=		gmake
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}
 
 post-install:
