@@ -13,9 +13,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 .if !defined(REFERENCE_PORT)
 
 GNU_CONFIGURE=	yes
