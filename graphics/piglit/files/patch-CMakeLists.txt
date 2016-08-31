@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2016-08-09 20:28:45 UTC
++++ CMakeLists.txt
+@@ -201,8 +201,6 @@ IF(PIGLIT_BUILD_GLX_TESTS)
+ 	pkg_check_modules(GLPROTO REQUIRED glproto)
+ ENDIF()
+ 
+-set(Python_ADDITIONAL_VERSIONS
+-    3.5 3.4 3.3 2.7)
+ find_package(PythonInterp REQUIRED)
+ find_package(PythonSix 1.5.2 REQUIRED)
+ find_package(PythonNumpy 1.7.0 REQUIRED)
+@@ -361,7 +359,7 @@ endif()
+ 
+ check_c_source_compiles(
+ 	"
+-	#define _POSIX_C_SOURCE 199309L
++	#define _POSIX_C_SOURCE 200112L
+ 	#include <time.h>
+ 	int main() { return clock_gettime(CLOCK_MONOTONIC, NULL); }
+ 	"
