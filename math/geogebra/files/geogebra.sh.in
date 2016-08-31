@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JAVACMD=%%JAVADIR%%/bin/java
+JAVACMD=%%JAVA%%
 GG_XMS="32m"
 GG_XMX="1024m"
 GG_SETTINGS_FILE="${HOME}/.config/geogebra/geogebra.properties"
