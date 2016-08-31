@@ -1,2 +1,3 @@
-SHA256 (privoxy-3.0.24-stable-src.tar.gz) = a381f6dc78f08de0d4a2342d47a5949a6608073ada34b933137184f3ca9fb012
-SIZE (privoxy-3.0.24-stable-src.tar.gz) = 1728265
+TIMESTAMP = 1472287144
+SHA256 (privoxy-3.0.26-stable-src.tar.gz) = 57e415b43ee5dfdca74685cc034053eaae962952fdabd086171551a86abf9cd8
+SIZE (privoxy-3.0.26-stable-src.tar.gz) = 1741772
