@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	grisbi
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:C|0$|x|}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:C|1$|x|}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal accounting application
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libofx.so:finance/libofx
+LIB_DEPENDS=	libofx.so:finance/libofx	\
+		libfreetype.so:print/freetype2	\
+		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		tar:bzip2 desktop-file-utils gmake iconv pkgconfig shared-mime-info
+USES=		tar:bzip2 desktop-file-utils gmake iconv pkgconfig shared-mime-info ssl
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 glib20 intltool libxml2
-USE_OPENSSL=	yes
+USE_GNOME=	cairo gtk20 glib20 intltool libxml2
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
@@ -34,11 +34,6 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-pre-configure:
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
