@@ -222,6 +222,11 @@ COMMANDS+=	argdumper \
 _USES_PYTHON=	python
 .endif
 
+.if ! ${OPTIONS_DEFINE:MGOLD}
+# Hack to disable GOLD in plist of unsupported architectures
+PLIST_SUB+=	GOLD="@comment "
+.endif
+
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
 PLIST_SUB+=    OPENMP="@comment "
