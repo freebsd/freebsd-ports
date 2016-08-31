@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
 
-USES=		autoreconf gmake libtool tar:bzip2
+USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -27,7 +27,7 @@ post-patch:
 		's|/usr/lib/sendmail|/usr/sbin/sendmail| ; \
 		 s|/var/run/uptimed|/var/run/uptimed.pid|' \
 		${WRKSRC}/etc/uptimed.conf-dist
-	 @${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|/etc/uprecords-cgi/|${PREFIX}/www/cgi-bin/|' \
 		${WRKSRC}/src/uprecords.c
 
