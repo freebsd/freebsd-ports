@@ -2,6 +2,7 @@ bin/arpaname
 bin/bind9-config
 bin/delv
 bin/dig
+%%DNSTAP%%bin/dnstap-read
 bin/host
 bin/isc-config.sh
 bin/mdig
@@ -34,6 +35,7 @@ include/dns/dlz_dlopen.h
 include/dns/dns64.h
 include/dns/dnssec.h
 include/dns/dnstap.h
+%%DNSTAP%%include/dns/dnstap.pb-c.h
 include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
@@ -274,6 +276,7 @@ man/man1/arpaname.1.gz
 man/man1/bind9-config.1.gz
 man/man1/delv.1.gz
 man/man1/dig.1.gz
+%%DNSTAP%%man/man1/dnstap-read.1.gz
 man/man1/host.1.gz
 man/man1/isc-config.sh.1.gz
 man/man1/mdig.1.gz

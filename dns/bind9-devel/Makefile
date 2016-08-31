@@ -2,16 +2,30 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/}
+PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+.if defined(BIND_TOOLS_SLAVE)
+# dns/bind-tools here
 PORTREVISION=	0
+.else
+# dns/bind9xx here
+PORTREVISION=	1
+.endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
 #MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;/
+.if defined(BIND_TOOLS_SLAVE)
+PKGNAMESUFFIX=	-tools
+.else
 PKGNAMESUFFIX=	9-devel
+.endif
 DISTNAME=	${PORTNAME}9-${HASH}
 
 MAINTAINER=	mat@FreeBSD.org
+.if defined(BIND_TOOLS_SLAVE)
+COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
+.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+.endif
 
 LICENSE=	MPL
 
@@ -39,11 +53,16 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--with-readline=-ledit \
 		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
+.if defined(BIND_TOOLS_SLAVE)
+CONFIGURE_ARGS+=	--disable-shared
+.endif
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS+=	bind9*-9.[456789].* bind910-* bind911-*  bind9*-sdb-9.[456789].*
 
+.if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
+.endif
 
 OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON START_LATE \
@@ -52,12 +71,14 @@ OPTIONS_RADIO=	CRYPTO GOSTDEF
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
 OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
-OPTIONS_DEFAULT+=	RRL DLZ_FILESYSTEM LMDB
-OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
-			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE LMDB
+.if !defined(BIND_TOOLS_SLAVE)
+OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
+			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
+.endif	# BIND_TOOLS_SLAVE
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
@@ -78,15 +99,13 @@ PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
 PORTREVISION_DESC=	Show PORTREVISION in the version string
-FETCHLIMIT_DESC=	Enable the query quotas for resolvers
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 LMDB_DESC=		Use LMDB for zone management
+DNSTAP_DESC=		Provides fast passive logging of DNS messages
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
-NEWSTATS_DESC=		Enable alternate xml statistics channel format
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
-RRL_DESC=		Response Rate Limiting
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
@@ -98,9 +117,12 @@ GSSAPI_BASE_DESC=	Using Heimdal in base
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
-MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
-FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
-QUERYTRACE_CONFIGURE_ENABLE=	querytrace
+
+.if defined(BIND_TOOLS_SLAVE)
+CONFLICTS+=		bind910-9.10.*
+.else
+CONFLICTS+=		bind-tools-9.*
+.endif	# BIND_TOOLS_SLAVE
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USES=		ssl
@@ -108,8 +130,6 @@ SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
 LMDB_CONFIGURE_WITH=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
-
-NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
@@ -146,8 +166,6 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RRL_CONFIGURE_ENABLE=	rrl
-
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
 DLZ_MYSQL_USES=		mysql
 
@@ -177,6 +195,14 @@ GSSAPI_MIT_CONFIGURE_ON= \
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
+
+QUERYTRACE_CONFIGURE_ENABLE=	querytrace
+
+DNSTAP_CONFIGURE_ENABLE=	dnstap
+DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
+			libprotobuf-c.so:devel/protobuf-c
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
@@ -197,8 +223,10 @@ CONFIGURE_ARGS+=	--disable-threads
 PKGINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
+.if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.endif # !defined(BIND_TOOLS_SLAVE)
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
@@ -226,6 +254,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
 		s|readline/history.h|histedit.h|' \
 		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
+.if defined(BIND_TOOLS_SLAVE)
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
+		-e 's#isc-config.sh installdirs#installdirs#' \
+		-e 's#.*INSTALL.*isc-config.*##' \
+		-e 's#.*INSTALL.*bind.keys.*##' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
+		-e 's#^	.*check confgen ##' \
+		${WRKSRC}/bin/Makefile.in
+.else
 .  for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
@@ -233,7 +271,9 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .  endfor
+.endif
 
+.if !defined(BIND_TOOLS_SLAVE)
 .if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
@@ -269,5 +309,6 @@ post-install:
 # Can't use USE_PYTHON=autoplist
 post-install-PYTHON-on:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
+.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
