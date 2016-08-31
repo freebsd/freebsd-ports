@@ -15,6 +15,7 @@ etc/privoxy/templates/cgi-error-file-read-only
 etc/privoxy/templates/cgi-error-modified
 etc/privoxy/templates/cgi-error-parse
 etc/privoxy/templates/cgi-style.css
+etc/privoxy/templates/client-tags
 etc/privoxy/templates/connect-failed
 etc/privoxy/templates/connection-timeout
 etc/privoxy/templates/default
