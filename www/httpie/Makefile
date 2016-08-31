@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpie
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.6
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
