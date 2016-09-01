@@ -2,6 +2,9 @@
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
+%%DATADIR%%/Plex Relay
+%%DATADIR%%/Plex Script Host
+%%DATADIR%%/Plex Transcoder
 @mode
 %%DATADIR%%/Plex_Media_Server
 %%DATADIR%%/Resources/English.lproj/Localizable.strings
@@ -65,11 +68,6 @@
 %%DATADIR%%/Resources/Graphics/sugar.cmake
 %%DATADIR%%/Resources/Graphics/video.png
 %%DATADIR%%/Resources/LICENSE
-@mode 555
-%%DATADIR%%/Resources/Plex Relay
-%%DATADIR%%/Resources/Plex Script Host
-%%DATADIR%%/Resources/Plex Transcoder
-@mode
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/Info.plist
@@ -1051,6 +1049,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/scott_free.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/screen_australia.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/screen_gems.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/seeso.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/selznick_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/semafor.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/seven network.png
@@ -1059,6 +1058,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/shangri-la_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/shout_factory.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/showcase.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/showcase_au.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/showtime.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sidney_kimmel.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/silver_pictures.png
@@ -1370,8 +1370,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.1416505b9b181dbca92b5dc71c381efa.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.1ce2fe78e445f7bafa4900cda393659e.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.31f5b47ea02b97b1f239a6a46a051911.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.f64d392c5405738ec7f07e47db02d18d.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
@@ -1460,10 +1460,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/songkick.28598beac20bee7c8dc681851d053bdf.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.5818bb4ba210657e8552.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.e7cade6d451404a59a68.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.e03b68e82ebe9b435e8b.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.7dabc96c73af481249dc.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.9159fb5badd935edaf66.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.13cb25e17df5af71af56.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.fcb1622406b67bb648d3.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
@@ -1966,7 +1966,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_hotshot.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_io.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_json.so
-%%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_locale.so
+%%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_locale_failed.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_lsprof.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_multibytecodec.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_multiprocessing.so
@@ -2387,7 +2387,6 @@
 %%DATADIR%%/Resources/lastfm-combiner-albums.xml
 %%DATADIR%%/Resources/lastfm-combiner-artists.xml
 %%DATADIR%%/Resources/locale/ar/LC_MESSAGES/plex.mo
-%%DATADIR%%/Resources/locale/ca_AD/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/cs_CZ/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/da/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/de/LC_MESSAGES/plex.mo
