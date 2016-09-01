@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.9
-PORTREVISION=	1
+PORTVERSION=	3.52.12
 CATEGORIES=	databases
 MASTER_SITES=	SF/iodbc/iodbc/${PORTVERSION}
 
@@ -26,7 +25,11 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-GTK2_USE=	GNOME=gtk20
+GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20
+GTK2_USES=	gettext-runtime
+GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+
 GTK2_CONFIGURE_ENABLE=	gui
 
 post-patch:
