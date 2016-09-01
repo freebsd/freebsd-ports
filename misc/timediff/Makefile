@@ -21,13 +21,11 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-patch:
-.for file in timediff
-	${SED} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${file} \
-	  > ${WRKDIR}/${file:T}
-.endfor
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/timediff
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/timediff \
+	${INSTALL_SCRIPT} ${WRKSRC}/timediff \
 	    ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
