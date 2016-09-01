@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.9/
+MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%20${PORTVERSION:R}/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
-USES=		cmake tar:bzip2
-USE_QT4=	corelib network gui linguisttools_build moc_build qmake_build \
-		rcc_build uic_build
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		cmake tar:bzip2 compiler:c++11-lang
+USE_QT5=	core network gui linguisttools_build qmake_build \
+		buildtools_build widgets
 post-patch:
 	@${REINPLACE_CMD} -e '/^ appdata.path =/s|/usr/share|$$$${SHARE_DIR}|' \
 		${WRKSRC}/converseen.pro
