@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	1.7.22
+PORTVERSION=	1.7.26
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -30,6 +30,9 @@ SHEBANG_FILES=	rake spec spec_translator Rakefile '*.rb'
 PLIST_SUB+=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} JRUBY_HOME=${JRUBY_HOME:S,${PREFIX}/,,}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
@@ -70,8 +73,9 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing symlinks in ${STAGEDIR}${PREFIX}/bin..."
-	@${LN} -sf ${JRUBY_HOME}/bin/jruby ${STAGEDIR}${PREFIX}/bin/jruby
-	@${LN} -sf ${JRUBY_HOME}/bin/jirb ${STAGEDIR}${PREFIX}/bin/jirb
+.for f in jruby jirb jgem
+	@${LN} -sf ${JRUBY_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Stripping shared libraries for jnr-ffi"

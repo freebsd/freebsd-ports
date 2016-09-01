@@ -1,2 +1,3 @@
-SHA256 (jruby-bin-1.7.22.tar.gz) = 554da042087bd4a787c73626c81fa354c9ce1168735032f7d954cffec85f5a4a
-SIZE (jruby-bin-1.7.22.tar.gz) = 29650765
+TIMESTAMP = 1472733322
+SHA256 (jruby-bin-1.7.26.tar.gz) = 8d6ea85ce1bce219ee0004b345cc7557edb6a559cbc8d6d4e9a988080bf3bc2c
+SIZE (jruby-bin-1.7.26.tar.gz) = 22115130
