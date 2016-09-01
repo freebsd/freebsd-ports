@@ -47,6 +47,8 @@ bin/rspamc
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lua/antivirus.lua
+%%DATADIR%%/lua/asn.lua
 %%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/emails.lua
