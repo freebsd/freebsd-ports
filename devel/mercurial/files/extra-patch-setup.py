@@ -1,6 +1,6 @@
---- ./setup.py.orig	2012-10-02 04:11:23.000000000 +0000
-+++ ./setup.py	2012-10-02 18:59:20.000000000 +0000
-@@ -227,30 +227,7 @@
+--- setup.py.orig	2016-09-01 19:01:36 UTC
++++ setup.py
+@@ -235,30 +235,7 @@ class hgbuildmo(build):
      description = "build translations (.mo files)"
  
      def run(self):
