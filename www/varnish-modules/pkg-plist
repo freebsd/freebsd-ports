@@ -1,0 +1,9 @@
+lib/varnish/vmods/libvmod_cookie.so
+lib/varnish/vmods/libvmod_header.so
+lib/varnish/vmods/libvmod_saintmode.so
+lib/varnish/vmods/libvmod_softpurge.so
+lib/varnish/vmods/libvmod_var.so
+lib/varnish/vmods/libvmod_vsthrottle.so
+lib/varnish/vmods/libvmod_xkey.so
+%%PORTDOCS%%share/doc/varnish-modules/LICENSE
+%%PORTDOCS%%share/doc/varnish-modules/README.rst

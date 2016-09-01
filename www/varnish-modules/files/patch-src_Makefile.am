@@ -1,0 +1,22 @@
+--- src/Makefile.am.orig	2016-08-01 13:40:08 UTC
++++ src/Makefile.am
+@@ -5,7 +5,6 @@ vmod_LTLIBRARIES = libvmod_cookie.la \
+ 	libvmod_header.la \
+ 	libvmod_saintmode.la \
+ 	libvmod_softpurge.la \
+-	libvmod_tcp.la \
+ 	libvmod_var.la \
+ 	libvmod_vsthrottle.la \
+ 	libvmod_xkey.la
+@@ -40,11 +39,6 @@ libvmod_softpurge_la_SOURCES = \
+ vcc_softpurge_if.c vcc_softpurge_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_softpurge.vcc
+ 	@VMODTOOL@ -w ../docs/ -o vcc_softpurge_if $(top_srcdir)/src/vmod_softpurge.vcc
+ 
+-libvmod_tcp_la_LDFLAGS = $(AM_LDFLAGS) -module -export-dynamic -avoid-version -shared
+-libvmod_tcp_la_SOURCES = vcc_tcp_if.c vcc_tcp_if.h vmod_tcp.c
+-vcc_tcp_if.c vcc_tcp_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_tcp.vcc
+-	@VMODTOOL@ -w ../docs/ -o vcc_tcp_if $(top_srcdir)/src/vmod_tcp.vcc
+-
+ libvmod_var_la_LDFLAGS = $(AM_LDFLAGS) -module -export-dynamic -avoid-version -shared
+ libvmod_var_la_SOURCES = vcc_var_if.c vcc_var_if.h vmod_var.c
+ vcc_var_if.c vcc_var_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_var.vcc
