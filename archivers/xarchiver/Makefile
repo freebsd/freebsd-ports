@@ -9,7 +9,8 @@ CATEGORIES=	archivers
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
@@ -21,7 +22,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
 
-USES=		desktop-file-utils gmake pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	cairo glib20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -48,12 +49,12 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 GTK2_USE=		GNOME=gtk20
 GTK3_USE=		GNOME=gtk30
 
-NLS_USES=	gettext
-NLS_CPPFLAGS+=	-I${LOCALBASE}/include
-NLS_LDFLAGS+=	-L${LOCALBASE}/lib
+NLS_USES=	gettext localbase
+NLS_USES_OFF=	gettext-tools
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
+
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's| po | |g' ${WRKSRC}/Makefile.in
 
