@@ -7,7 +7,8 @@ or adding
 
 	nvidia_load="YES"	(or nvidia-modeset_load="YES", see below)
 
-to your /boot/loader.conf.
+to /boot/loader.conf, or putting ``nvidia'' (or ``nvidia-modeset'', see
+below again) on ``kld_list'' variable in /etc/rc.conf.
 
 If you build this port with FreeBSD AGP GART driver, make sure you have
 agp.ko kernel module installed and loaded, since nvidia.ko will depend
@@ -32,12 +33,13 @@ enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
 
 Starting with version 358.09, some important functionality of the driver
 has been broken out into a separate kernel module, nvidia-modeset.ko.
-Users that experience a hang when starting X11 server, or observe
+Users that experience hangs when starting X11 server, or observe
 
 	(II) NVIDIA(0): Validated MetaModes:
 	(II) NVIDIA(0):     "NULL"
 
-in /var/log/Xorg.0.log should replace `nvidia.ko' with `nvidia-modeset.ko'
-in their /boot/loader.conf or /etc/rc.conf configuration files.
+in /var/log/Xorg.0.log should replace ``nvidia'' with ``nvidia-modeset''
+in their /boot/loader.conf or /etc/rc.conf configuration files, depending
+on how they prefer to load NVidia driver kernel module.
 
 See %%DOCSDIR%%/README for more information.
