@@ -2261,6 +2261,7 @@
     SUBDIR += validator
     SUBDIR += varnish-libvmod-maxminddb
     SUBDIR += varnish-libvmod-saintmode
+    SUBDIR += varnish-modules
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
     SUBDIR += vdr-plugin-live
