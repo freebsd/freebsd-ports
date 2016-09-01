@@ -3,4 +3,4 @@ solver, featuring over 100 configurable parameters to tune to specific
 need, collection of statistical data to MySQL database + javascript-based
 visualization of it and clean C++ and python interfaces.
 
-WWW: http://www.msoos.org/cryptominisat4/
+WWW: https://github.com/msoos/cryptominisat/
