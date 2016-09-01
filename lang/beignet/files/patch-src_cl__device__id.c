@@ -1,8 +1,6 @@
-diff --git a/src/cl_device_id.c b/src/cl_device_id.c
-index e9e2c16..5f35248 100644
---- src/cl_device_id.c
-+++ src/cl_device_id.c
-@@ -34,7 +34,12 @@
+--- src/cl_device_id.c.orig	2016-08-23 12:16:02.000000000 +0200
++++ src/cl_device_id.c	2016-08-31 17:50:49.806646000 +0200
+@@ -35,7 +35,12 @@
  #include <stdio.h>
  #include <string.h>
  #include <stdlib.h>
@@ -15,7 +13,7 @@ index e9e2c16..5f35248 100644
  
  #ifndef CL_VERSION_1_2
  #define CL_DEVICE_BUILT_IN_KERNELS 0x103F
-@@ -202,6 +207,7 @@ LOCAL cl_device_id
+@@ -269,6 +274,7 @@ LOCAL cl_device_id
  cl_get_gt_device(void)
  {
    cl_device_id ret = NULL;
@@ -23,7 +21,7 @@ index e9e2c16..5f35248 100644
    const int device_id = cl_driver_get_device_id();
    cl_device_id device = NULL;
  
-@@ -526,7 +532,7 @@ skl_gt4_break:
+@@ -737,7 +743,7 @@ kbl_gt4_break:
      case PCI_CHIP_SANDYBRIDGE_M_GT2_PLUS:
      case PCI_CHIP_SANDYBRIDGE_BRIDGE_S:
      case PCI_CHIP_SANDYBRIDGE_S_GT:
@@ -32,17 +30,17 @@ index e9e2c16..5f35248 100644
        ret = NULL;
        break;
      default:
-@@ -546,6 +552,7 @@ skl_gt4_break:
+@@ -757,6 +763,7 @@ kbl_gt4_break:
    /* Apply any driver-dependent updates to the device info */
    cl_driver_update_device_info(ret);
  
 +#if defined(__linux__)
-   struct sysinfo info;
-   if (sysinfo(&info) == 0) {
-     uint64_t two_gb = 2 * 1024 * 1024 * 1024ul; 
-@@ -554,6 +561,24 @@ skl_gt4_break:
-                             two_gb : info.totalram;
-     ret->max_mem_alloc_size = ret->global_mem_size / 2;
+   #define toMB(size) (size)&(0xfffffffffffffff<<20)
+   /* Get the global_mem_size and max_mem_alloc size from
+    * driver, system ram and hardware*/
+@@ -776,6 +783,24 @@ kbl_gt4_break:
+     ret->max_mem_alloc_size = toMB((ret->global_mem_size * 3 / 4 > maxallocmem) ?
+                               maxallocmem: ret->global_mem_size * 3 / 4);
    }
 +#elif defined(__FreeBSD__) || defined(__DragonFly__)
 +  int mib[2];
