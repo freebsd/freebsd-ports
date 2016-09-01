@@ -22,10 +22,8 @@ CONFIGURE_ARGS=	--with-snappy-includedir=${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PROJECTHOST}
 IGNORE_WITH_PHP=	70
 
-OPTIONS_DEFINE=	TEST
-
-post-build-TEST-on:
-	(cd ${WRKSRC} && ${MAKE} ${MAKE_ENV} NO_INTERACTION=yes ${.TARGET})
+do-test:
+	(cd ${WRKSRC} && ${DO_MAKE_BUILD} NO_INTERACTION=yes test < /dev/null)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/snappy.so
