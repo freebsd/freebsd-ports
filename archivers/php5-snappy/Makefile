@@ -14,19 +14,20 @@ COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS+=	libsnappy.so:archivers/snappy
-CONFIGURE_ARGS+=	--with-snappy-includedir=${LOCALBASE}/include
+LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 USES=		php:ext
 PHP_MODNAME=	snappy
+CONFIGURE_ARGS=	--with-snappy-includedir=${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PROJECTHOST}
-OPTIONS_DEFINE=	TEST
 IGNORE_WITH_PHP=	70
 
-post-build-TEST-on:
-	@(cd ${WRKSRC} && ${MAKE} ${MAKE_ENV} NO_INTERACTION=yes ${.TARGET})
+OPTIONS_DEFINE=	TEST
 
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/snappy.so
+post-build-TEST-on:
+	(cd ${WRKSRC} && ${MAKE} ${MAKE_ENV} NO_INTERACTION=yes ${.TARGET})
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/snappy.so
 
 .include <bsd.port.mk>
