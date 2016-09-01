@@ -14,7 +14,7 @@
 #	net/libmediawiki (part of digiKam 4.12)
 
 DIGIKAM_VER=	4.14.0
-MASTER_SITES=	KDE/stable/digikam
+MASTER_SITES=	KDE/Attic/digikam
 
 KIPI_PLUGINS_ALL=	acquireimages \
 			advancedslideshow \
