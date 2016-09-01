@@ -3,6 +3,7 @@
 
 PORTNAME=	timediff
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -17,15 +18,10 @@ GH_PROJECT=	timediff
 PLIST_FILES=	sbin/timediff
 
 NO_ARCH=	yes
-
-do-build:
-.for file in timediff
-	${SED} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${file} \
-	  > ${WRKDIR}/${file:T}
-.endfor
+NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/timediff \
+	${INSTALL_SCRIPT} ${WRKSRC}/timediff \
 	    ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
