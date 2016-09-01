@@ -1,8 +1,0 @@
-Saintmode lets you deal with a backend that is failing in random ways
-for specific requests. It maintains a blacklist per backend, marking the
-backend as sick for specific objects. When the number of objects marked
-as sick for a backend reaches a set threshold, the backend is considered
-sick for all requests. Each blacklisted object carries a TTL, which
-denotes the time it will stay blacklisted.
-
-WWW: https://github.com/varnish/libvmod-saintmode
