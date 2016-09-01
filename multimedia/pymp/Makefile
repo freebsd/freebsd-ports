@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jdolan
 GH_TAGNAME=	bea99d9
 
-USES=		shebangfix python tar:bzip2
+USES=		shebangfix python
 SHEBANG_FILES=	*.py
 USE_GNOME=	pygtk2
 NO_ARCH=	yes
@@ -42,12 +42,10 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in *.py *.pyc *.pyo
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
