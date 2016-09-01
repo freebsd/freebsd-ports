@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-# XXX As of 3.8.1beta1, replace PORTVERSION with DISTVERSION=3.8.1beta1
-PORTVERSION=	3.8.0b2
-PORTREVISION=	4
+DISTVERSION=	3.8.1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
-# XXX As of 3.8.1beta1, delete the following line.
-DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
@@ -20,7 +16,6 @@ BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
-		libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
@@ -29,7 +24,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON MONGO
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD
 OPTIONS_DEFAULT=	JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -39,8 +34,10 @@ SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
 REDIS_DESC=		Build with Redis support
-JAVA_DESC=		Build with Java support (and modules, like Elastic)
+JAVA_DESC=		Build with Java support (no modules)
+JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
 PYTHON_DESC=		Build with Python 2.7 support
+CURL_DESC=		Build with Curl HTTP support
 
 USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
 		gettext-runtime
@@ -87,8 +84,8 @@ MSQL_LDFLAGS=			-L${LOCALBASE}/lib
 MSQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
-MONGO_BUILD_DEPENDS=		mongo:databases/mongodb
-MONGO_RUN_DEPENDS=		mongo:databases/mongodb
+MONGO_BROKEN=			Does not build
+MONGO_LIB_DEPENDS=		libmongoc-1.0.so:devel/mongo-c-driver
 MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
@@ -96,25 +93,48 @@ JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
 
 JAVA_CONFIGURE_ENABLE=		java
-JAVA_BROKEN=			Unsupported maven downloads.
 JAVA_USE_JAVA=			yes
-JAVA_BUILD_DEPENDS=		gradle:devel/gradle
-JAVA_BUILD_DEPENDS=		bash:shells/bash
 JAVA_PLIST_FILES= 		lib/syslog-ng/libmod-java.so \
-				lib/syslog-ng/java-modules/syslog-ng-core.jar \
-				lib/syslog-ng/java-modules/log4j-1.2.16.jar \
-				lib/syslog-ng/java-modules/elastic.jar \
-				lib/syslog-ng/java-modules/http.jar \
-				lib/syslog-ng/java-modules/kafka.jar \
-				lib/syslog-ng/java-modules/java-modules.jar \
+				lib/syslog-ng/java-modules/syslog-ng-core.jar
+
+JAVA_MOD_CONFIGURE_ENABLE=	java-modules
+JAVA_MOD_BROKEN=		Unsupported maven downloads.
+JAVA_MOD_USE_JAVA=		yes
+JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle
+JAVA_MOD_BUILD_DEPENDS=		bash:shells/bash
+JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client \
+				lib/syslog-ng/java-modules/elastic-jest-client/jest-2.0.2.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/jest-common-2.0.2.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/httpcore-nio-4.4.4.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/httpclient-4.5.2.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/httpasyncclient-4.1.1.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/slf4j-api-1.7.13.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/guava-19.0.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/gson-2.6.2.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/commons-lang3-3.4.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/httpcore-4.4.4.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/commons-logging-1.2.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/commons-codec-1.9.jar \
+				lib/syslog-ng/java-modules/elastic-jest-client/slf4j-simple-1.7.13.jar \
 				lib/syslog-ng/java-modules/hdfs.jar \
-				lib/syslog-ng/java-modules/syslog-ng-common.jar \
-				lib/syslog-ng/java-modules/dummy.jar
+				lib/syslog-ng/java-modules/elastic.jar \
+				lib/syslog-ng/java-modules/elastic-v2.jar \
+				lib/syslog-ng/java-modules/kafka.jar \
+				lib/syslog-ng/java-modules/dummy.jar \
+				lib/syslog-ng/java-modules/http.jar \
+				lib/syslog-ng/java-modules/syslog-ng-common.jar
+
 
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_CONFIGURE_WITH=		python=2.7
 PYTHON_USES=			python:2.7
 PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
+
+CURL_CONFIGURE_ENABLE=		curl
+CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
+CURL_PLIST_FILES= 		lib/syslog-ng/libcurl.so
+
 
 .include <bsd.port.pre.mk>
 
