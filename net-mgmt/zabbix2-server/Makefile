@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -14,9 +14,13 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	${PKGBASE}-1.[0-8]*
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
-IGNORE_WITH_MYSQL=	41
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+
+CONFLICTS=	${PKGBASE}-1.[0-8]*
 
 .if ${PKGNAMESUFFIX} != "-agent"
 CONFLICTS+=	${PORTNAME}-1.[0-8]*
@@ -58,7 +62,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--datadir=${ETCDIR}
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 USES+=		execinfo
 
 CPPFLAGS+=	${EXECINFO_CPPFLAGS}
