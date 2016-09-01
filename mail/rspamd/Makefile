@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -11,9 +11,10 @@ COMMENT=	Fast spam filtering system
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libgmime-2.4.so:mail/gmime24 \
+		libgmime-2.6.so:mail/gmime26 \
 		libevent.so:devel/libevent2 \
-		libluajit-5.1.so:lang/luajit
+		libluajit-5.1.so:lang/luajit \
+		libfann.so:math/fann
 BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd-devel
@@ -37,6 +38,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DBUILD_PORT=yes \
 		-DFORCE_GMIME24=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
+		-DENABLE_FANN=ON \
 		-DNO_SHARED=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
