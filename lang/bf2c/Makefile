@@ -10,8 +10,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD2CLAUSE
-
-USES=		tar:xz
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PATCH_STRIP=	-p1
 USE_GITHUB=	yes
@@ -25,8 +24,8 @@ PORTDOCS=	README.md
 
 PLIST_FILES=	bin/bf2c bin/gen_bf
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
