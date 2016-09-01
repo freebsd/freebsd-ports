@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.3.4.a1.15082016
+PORTVERSION=	1.4.0.a1.01092016
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -11,18 +11,19 @@ COMMENT=	Fast spam filtering system dev version
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libgmime-2.4.so:mail/gmime24 \
+		libgmime-2.6.so:mail/gmime26 \
 		libevent.so:devel/libevent2 \
-		libluajit-5.1.so:lang/luajit
+		libluajit-5.1.so:lang/luajit \
+		libfann.so:math/fann
 BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
 
-RSPAMD_VERSION=	1.3.4
+RSPAMD_VERSION=	1.4.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3049988
+GH_TAGNAME=	99c2eb2
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
 GPERF_DESC=		Google perf-tools profiling
@@ -45,7 +46,8 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DNO_SHARED=ON \
 		-DDEBUG=ON \
-		-DGIT_ID=${GH_TAGNAME}
+		-DGIT_ID=${GH_TAGNAME} \
+		-DENABLE_FANN=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
 		compiler:c11 sqlite ssl
