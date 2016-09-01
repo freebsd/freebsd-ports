@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.19.0
+PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/mpv-player/mpv/commit/
-PATCHFILES=	12e251c29e1b.patch:-p1
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -23,11 +20,11 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player waf-project:waf
 GH_PROJECT=	waf:waf
-GH_TAGNAME=	waf-1.9.2:waf
+GH_TAGNAME=	waf-1.9.3:waf
 
 WAF_CMD=	${WRKSRC_waf}/waf-light
 
-USES=		compiler:c11 desktop-file-utils iconv localbase pkgconfig python:build waf
+USES=		compiler:c11 desktop-file-utils iconv jpeg localbase pkgconfig python:build waf
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
@@ -108,7 +105,7 @@ LUAJIT_USES_OFF=		lua
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
 
-OPENGL_USE=			GL=gl
+OPENGL_USE=			GL=egl,gbm,gl
 OPENGL_CONFIGURE_OFF=		--disable-gl
 OPENGL_IMPLIES=			X11
 
@@ -139,7 +136,7 @@ VAAPI_CONFIGURE_OFF=		--disable-vaapi
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
-X11_USE=			XORG=x11,xv,xxf86vm
+X11_USE=			XORG=x11,xext,xrandr,xscrnsaver,xv,xxf86vm
 X11_VARS=			INSTALLS_ICONS=yes
 X11_CONFIGURE_OFF=		--disable-x11
 
