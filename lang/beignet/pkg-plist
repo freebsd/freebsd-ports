@@ -22,6 +22,7 @@ lib/beignet/include/ocl_simd.h
 lib/beignet/include/ocl_sync.h
 lib/beignet/include/ocl_types.h
 lib/beignet/include/ocl_vload.h
+lib/beignet/include/ocl_work_group.h
 lib/beignet/include/ocl_workitem.h
 lib/beignet/libcl.so
 lib/beignet/libgbe.so
