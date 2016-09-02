@@ -229,7 +229,7 @@ lib/kde4/kwin_oxygen_config.so
 lib/kde4/libexec/fontinst
 lib/kde4/libexec/fontinst_helper
 lib/kde4/libexec/fontinst_x11
-lib/kde4/libexec/kcheckpass
+@(root,wheel,6755) lib/kde4/libexec/kcheckpass
 lib/kde4/libexec/kcmdatetimehelper
 lib/kde4/libexec/kcmkdmhelper
 lib/kde4/libexec/kdm_config
