@@ -943,6 +943,7 @@ lib/calibre/calibre/gui2/search_box.py
 lib/calibre/calibre/gui2/search_restriction_mixin.py
 lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/shortcuts_ui.py
+lib/calibre/calibre/gui2/splash_screen.py
 lib/calibre/calibre/gui2/store/__init__.py
 lib/calibre/calibre/gui2/store/basic_config.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
@@ -1902,7 +1903,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/view-refresh.png
 %%DATADIR%%/images/view.png
 %%DATADIR%%/images/viewer.png
-%%DATADIR%%/images/welcome_wizard.png
 %%DATADIR%%/images/window-close.png
 %%DATADIR%%/images/wizard.png
 %%DATADIR%%/jacket/stylesheet.css
