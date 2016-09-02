@@ -3,7 +3,7 @@
 
 PORTNAME=	ntraceroute
 PORTVERSION=	6.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	NETBSD/traceroute-nanog \
 		http://mirrors.rit.edu/zi/
