@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jansson
-PORTVERSION=	2.7
-PORTREVISION=	3
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.digip.org/jansson/releases/
 
