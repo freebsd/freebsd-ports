@@ -9,4 +9,4 @@ top with a compression ratio of 2.877, a compression rate of 325 Mb/s,
 and a decompression rate of 325.  Zlib followed at 2.730, 95 Mb/s (C)
 and 360 Mb/s (D).  See WWW page for the full benchmark results.
 
-WWW: http://cyan4973.github.io/zstd/
+WWW: http://facebook.github.io/zstd/
