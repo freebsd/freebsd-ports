@@ -1,0 +1,14 @@
+include/cjose/base64.h
+include/cjose/cjose.h
+include/cjose/error.h
+include/cjose/header.h
+include/cjose/jwe.h
+include/cjose/jwk.h
+include/cjose/jws.h
+include/cjose/util.h
+include/cjose/version.h
+lib/libcjose.a
+lib/libcjose.so
+lib/libcjose.so.0
+lib/libcjose.so.0.0.0
+libdata/pkgconfig/cjose.pc
