@@ -8,6 +8,7 @@
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-openssl
+    SUBDIR += acme-client
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afl
@@ -289,7 +290,6 @@
     SUBDIR += lasso
     SUBDIR += lastpass-cli
     SUBDIR += letsencrypt.sh
-    SUBDIR += letskencrypt
     SUBDIR += libadacrypt
     SUBDIR += libargon2
     SUBDIR += libassuan
