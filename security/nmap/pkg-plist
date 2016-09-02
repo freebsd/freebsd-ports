@@ -38,9 +38,10 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/asn1.lua
 %%DATADIR%%/nselib/base32.lua
 %%DATADIR%%/nselib/base64.lua
-%%DATADIR%%/nselib/bin.luadoc
-%%DATADIR%%/nselib/bit.luadoc
+%%DATADIR%%/nselib/bin.lua
+%%DATADIR%%/nselib/bit.lua
 %%DATADIR%%/nselib/bitcoin.lua
+%%DATADIR%%/nselib/bits.lua
 %%DATADIR%%/nselib/bittorrent.lua
 %%DATADIR%%/nselib/bjnp.lua
 %%DATADIR%%/nselib/brute.lua
@@ -94,6 +95,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/data/wp-plugins.lst
 %%DATADIR%%/nselib/data/wp-themes.lst
 %%DATADIR%%/nselib/datafiles.lua
+%%DATADIR%%/nselib/datetime.lua
 %%DATADIR%%/nselib/dhcp.lua
 %%DATADIR%%/nselib/dhcp6.lua
 %%DATADIR%%/nselib/dns.lua
@@ -259,6 +261,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/citrix-enum-servers-xml.nse
 %%DATADIR%%/scripts/citrix-enum-servers.nse
 %%DATADIR%%/scripts/clamav-exec.nse
+%%DATADIR%%/scripts/clock-skew.nse
 %%DATADIR%%/scripts/couchdb-databases.nse
 %%DATADIR%%/scripts/couchdb-stats.nse
 %%DATADIR%%/scripts/creds-summary.nse
@@ -466,7 +469,6 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/informix-query.nse
 %%DATADIR%%/scripts/informix-tables.nse
 %%DATADIR%%/scripts/ip-forwarding.nse
-%%DATADIR%%/scripts/ip-geolocation-geobytes.nse
 %%DATADIR%%/scripts/ip-geolocation-geoplugin.nse
 %%DATADIR%%/scripts/ip-geolocation-ipinfodb.nse
 %%DATADIR%%/scripts/ip-geolocation-maxmind.nse
@@ -570,6 +572,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/oracle-brute.nse
 %%DATADIR%%/scripts/oracle-enum-users.nse
 %%DATADIR%%/scripts/oracle-sid-brute.nse
+%%DATADIR%%/scripts/oracle-tns-version.nse
 %%DATADIR%%/scripts/ovs-agent-version.nse
 %%DATADIR%%/scripts/p2p-conficker.nse
 %%DATADIR%%/scripts/path-mtu.nse
