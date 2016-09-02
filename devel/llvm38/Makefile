@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -45,6 +45,7 @@ PLIST_FILES=
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
+	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
 	${PATCHDIR}/clang-patch-tools_clang_tools_scan-build_libexec_ccc-analyzer
@@ -311,6 +312,10 @@ post-build-COMPILER_RT-on:
 	    -DLLVM_CONFIG_PATH=${CONFIGURE_WRKSRC}/bin/llvm-config \
 	    ${WRKSRC_compiler_rt} && \
 	${MAKE_ENV} ${MAKE_CMD}
+
+post-patch-CLANG-on:
+	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
+	     ${PATCH_WRKSRC}/tools/clang/lib/Driver/Tools.cpp
 
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
