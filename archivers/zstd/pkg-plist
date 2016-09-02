@@ -6,7 +6,7 @@ include/zdict.h
 include/zstd.h
 lib/libzstd.a
 lib/libzstd.so
-lib/libzstd.so.0
+lib/libzstd.so.1
 lib/libzstd.so.%%LIBVER%%
 libdata/pkgconfig/libzstd.pc
 man/man1/unzstd.1.gz
