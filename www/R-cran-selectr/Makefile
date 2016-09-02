@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selectr
-DISTVERSION=	0.2-3
+DISTVERSION=	0.3-0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,8 +11,9 @@ COMMENT=	Translate CSS Selectors to XPath Expressions
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	R-cran-XML>0:textproc/R-cran-XML \
-		R-cran-stringr>0:textproc/R-cran-stringr
+CRAN_DEPENDS=	R-cran-stringr>0:textproc/R-cran-stringr
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 
