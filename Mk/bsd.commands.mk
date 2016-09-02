@@ -72,6 +72,7 @@ PAX?=			/bin/pax
 PRINTF?=		/usr/bin/printf
 PS_CMD?=		/bin/ps
 PW?=			/usr/sbin/pw
+READELF?=		/usr/bin/readelf
 REALPATH?=		/bin/realpath
 RM?=			/bin/rm -f
 RMDIR?=			/bin/rmdir
