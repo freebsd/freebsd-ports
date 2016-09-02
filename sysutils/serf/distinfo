@@ -1,3 +1,4 @@
+TIMESTAMP = 1472766963
 SHA256 (hashicorp-serf-v0.7.0_GH0.tar.gz) = 2699dbbc616e4b76fb158d8ea3291b0ae43bb0499ab263907ef38de61f75d652
 SIZE (hashicorp-serf-v0.7.0_GH0.tar.gz) = 597426
 SHA256 (hashicorp-go-msgpack-fa3f638_GH0.tar.gz) = 6353c623d5d58c7ca03e2bdac63f9da7da8848fb1f5f7f239b33e3ce6fe6c6bd
