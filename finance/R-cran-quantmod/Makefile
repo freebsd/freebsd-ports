@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quantmod
-DISTVERSION=	0.4-5
+DISTVERSION=	0.4-6
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,9 +11,11 @@ COMMENT=	Quantitative Financial Modelling and Trading Framework for R
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-xts>=0.9.0:math/R-cran-xts \
+CRAN_DEPENDS=	R-cran-xts>=0.9.0:math/R-cran-xts \
 		R-cran-zoo>0:math/R-cran-zoo \
 		R-cran-TTR>=0.2:finance/R-cran-TTR
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 
