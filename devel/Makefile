@@ -244,6 +244,7 @@
     SUBDIR += chruby
     SUBDIR += cil
     SUBDIR += cityhash
+    SUBDIR += cjose
     SUBDIR += cl-alexandria
     SUBDIR += cl-alexandria-sbcl
     SUBDIR += cl-asdf
