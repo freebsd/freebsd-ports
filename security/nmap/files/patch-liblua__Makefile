@@ -1,13 +1,13 @@
---- liblua/Makefile.orig	2014-01-02 15:33:55 UTC
+--- liblua/Makefile.orig	2016-07-02 17:02:27 UTC
 +++ liblua/Makefile
 @@ -6,8 +6,8 @@
  # Your platform. See PLATS for possible values.
  PLAT= none
  
--CC= gcc
--CFLAGS= -O2 -Wall -DLUA_COMPAT_ALL $(SYSCFLAGS) $(MYCFLAGS)
-+CC?= gcc
-+CFLAGS= -Wall -DLUA_COMPAT_ALL $(SYSCFLAGS) $(MYCFLAGS)
+-CC= gcc -std=gnu99
+-CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
++CC?= gcc -std=gnu99
++CFLAGS= -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
  LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
  LIBS= -lm $(SYSLIBS) $(MYLIBS)
  
