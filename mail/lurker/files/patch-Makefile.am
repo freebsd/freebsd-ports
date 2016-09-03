@@ -1,6 +1,6 @@
---- Makefile.am.orig	2009-10-19 06:56:31.000000000 -0700
-+++ Makefile.am	2011-02-02 00:55:58.000000000 -0800
-@@ -3,15 +3,6 @@
+--- Makefile.am.orig	2009-10-19 13:56:31 UTC
++++ Makefile.am
+@@ -3,15 +3,6 @@ EXTRA_DIST = FAQ
  
  install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(default_config_dir)

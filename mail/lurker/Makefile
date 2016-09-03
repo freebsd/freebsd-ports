@@ -13,12 +13,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailing list archiver
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MIMELIB_VERSION=	3.1.1
-USES=		iconv
+
+USES=		iconv localbase
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mimelib-local \
 		--with-default-www-dir=${PREFIX}/www/lurker \
 		--with-cgi-bin-dir=${PREFIX}/www/lurker
@@ -31,11 +31,13 @@ post-extract:
 		${DISTDIR}/mimelib-${MIMELIB_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/lurker.conf ${STAGEDIR}${PREFIX}/etc/lurker/lurker.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/apache.conf ${STAGEDIR}${PREFIX}/etc/lurker/apache.conf.sample
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
