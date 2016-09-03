@@ -1,0 +1,5 @@
+This is the C client library for Couchbase. It communicates with the cluster
+and speaks the relevant protocols necessary to connect to the cluster and
+execute data operations.
+
+https://github.com/couchbase/libcouchbase/
