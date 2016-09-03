@@ -3,8 +3,7 @@
 
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20151213
-PORTREVISION=	1
+DISTVERSION=	experimental-20160622
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -13,6 +12,7 @@ MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the ESEDB format
 
 LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
