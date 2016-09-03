@@ -1,6 +1,6 @@
---- configure.orig	2009-10-30 11:51:40.000000000 -0700
-+++ configure	2013-09-12 09:08:52.000000000 -0700
-@@ -5109,6 +5109,7 @@
+--- configure.orig	2009-10-30 18:51:40 UTC
++++ configure
+@@ -5109,6 +5109,7 @@ fi
  
  { echo "$as_me:$LINENO: checking for zlib.h" >&5
  echo $ECHO_N "checking for zlib.h... $ECHO_C" >&6; }
