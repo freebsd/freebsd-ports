@@ -2,6 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.20
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases \
 		http://releases.wildfiregames.com/
