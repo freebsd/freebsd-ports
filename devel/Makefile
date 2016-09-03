@@ -4229,6 +4229,7 @@
     SUBDIR += py-libzfs
     SUBDIR += py-ll-core
     SUBDIR += py-llfuse
+    SUBDIR += py-llvmlite
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
     SUBDIR += py-log4py
