@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2015-08-27 15:51:35 UTC
++++ CMakeLists.txt
+@@ -371,6 +371,7 @@ INSTALL(DIRECTORY include/libcouchbase $
+     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+     FILES_MATCHING PATTERN *.h PATTERN *.c)
+ 
++set(CMAKE_INSTALL_MANDIR "man")
+ INSTALL(DIRECTORY doc/man/ DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 FILES_MATCHING PATTERN *.1)
+ INSTALL(DIRECTORY doc/man/ DESTINATION ${CMAKE_INSTALL_MANDIR}/man4  FILES_MATCHING PATTERN *.4)
+ 
+@@ -382,7 +383,7 @@ SET(_lcb_manifest "${LCB_GENINFODIR}/MAN
+ # pkg-config stuff goes with installation
+ IF(NOT WIN32)
+     CONFIGURE_FILE(packaging/libcouchbase.pc.in packaging/libcouchbase.pc @ONLY)
+-    INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/libcouchbase.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++    INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/libcouchbase.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}data/pkgconfig)
+ ENDIF()
+ 
+ 
