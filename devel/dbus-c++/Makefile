@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libdbus-1.so:devel/dbus
 
-BROKEN_FreeBSD_9=	Fails due to compiler issues
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-volz
 GH_PROJECT=	dbus-cplusplus
