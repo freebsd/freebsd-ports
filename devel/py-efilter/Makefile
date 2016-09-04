@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	efilter
-PORTVERSION=	1.3
-DISTVERSIONPREFIX=	${PORTEPOCH}!
+PORTVERSION=	1.5
+DISTVERSIONPREFIX=	${PORTEPOCH}-
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2:devel/py-dateutil \
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
-WRKSRC=		${WRKDIR}/${DISTNAME:C,!,-,}
 
 post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
