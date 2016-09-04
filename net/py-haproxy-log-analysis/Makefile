@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy-log-analysis
-PORTVERSION=	2.0.b0
+DISTVERSION=	2.0b0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION:S/.b/b/}
+DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Haproxy log analyzer that tries to gives an insight of what's going on
