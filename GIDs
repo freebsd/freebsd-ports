@@ -493,7 +493,7 @@ ejabberd:*:543:
 # free: 549
 # free: 550
 # free: 551
-# free: 552
+kresd:*:552:
 knot:*:553:
 qtss:*:554:
 ircdru:*:555:
