@@ -4,6 +4,7 @@
 PORTNAME=	dropbox-uploader
 PORTVERSION=	0.2
 #PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	nivit@FreeBSD.org
