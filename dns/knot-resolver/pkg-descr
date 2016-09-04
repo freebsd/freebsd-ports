@@ -1,0 +1,4 @@
+The Knot DNS Resolver is a caching full resolver implementation,
+including both a resolver library and a daemon.
+
+WWW: https://www.knot-resolver.cz/
