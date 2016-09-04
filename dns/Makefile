@@ -78,6 +78,7 @@
     SUBDIR += inadyn-mt
     SUBDIR += ipcheck
     SUBDIR += ironsides
+    SUBDIR += knot-resolver
     SUBDIR += knot1
     SUBDIR += knot2
     SUBDIR += ldapdns
