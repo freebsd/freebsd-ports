@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.8.3
+PORTVERSION=	4.9.0
 CATEGORIES=	multimedia
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	qt5-
 PKGNAMESUFFIX=	4
 DIST_SUBDIR=	KDE
@@ -12,6 +12,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Phonon 4 transitional library for Qt 5
 
 LICENSE=	LGPL21
+
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
 
 USES=		cmake pathfix tar:xz
 USE_QT5=	core dbus declarative gui opengl widgets \
