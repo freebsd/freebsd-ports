@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	seahub
-PORTVERSION=	5.1.10
+PORTVERSION=	5.1.11
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima1252@gmail.com
@@ -112,7 +111,7 @@ do-install:
 	! -name default-non-register.jpg ! -name default.png ! -name groups")
 	(cd ${WRKSRC}/media && ${COPYTREE_SHARE} ./avatars \
 		 ${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR})
-	${LN} -fs ${PREFIX}/${SEAHUB_DATA_DIR}/avatars \
+	${LN} -fs ../../seafile-server/seahub/media/avatars \
 		${STAGEDIR}${PREFIX}/${SEAHUBDIR}/media/avatars
 
 .include <bsd.port.mk>
