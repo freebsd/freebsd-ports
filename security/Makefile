@@ -1014,6 +1014,7 @@
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-java
+    SUBDIR += rubygem-rex-mime
     SUBDIR += rubygem-rex-ole
     SUBDIR += rubygem-rex-powershell
     SUBDIR += rubygem-rex-random_identifier
