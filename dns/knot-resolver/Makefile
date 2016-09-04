@@ -30,7 +30,7 @@ MAKE_ARGS+=	lmdb_CFLAGS=-I${LOCALBASE}/include lmdb_LIBS=-llmdb
 
 USES=		gmake libtool pkgconfig tar:xz
 USE_CSTD=	c99
-USE_LDCONFIG=	${PREFIX}/lib
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=			DOXYGEN MEMCACHED REDIS
 OPTIONS_DEFAULT=
@@ -50,9 +50,6 @@ REDIS_PLIST_FILES=		lib/kdns_modules/redis.so
 
 USERS=		kresd
 GROUPS=		kresd
-SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
-
-SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING CodingStyle README.md
 

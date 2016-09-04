@@ -72,7 +72,3 @@ lib/libkres.so.1
 libdata/pkgconfig/libkres.pc
 man/man8/kresd.8.gz
 sbin/kresd
-@dir lib/kdns_modules/daf
-@dir lib/kdns_modules/http
-@dir lib/kdns_modules
-@dir libdata/pkgconfig
