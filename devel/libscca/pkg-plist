@@ -1,0 +1,17 @@
+bin/sccainfo
+include/libscca.h
+include/libscca/codepage.h
+include/libscca/definitions.h
+include/libscca/error.h
+include/libscca/extern.h
+include/libscca/features.h
+include/libscca/types.h
+lib/libscca.a
+lib/libscca.so
+lib/libscca.so.1
+lib/libscca.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyscca.a
+%%PYTHON_SITELIBDIR%%/pyscca.so
+libdata/pkgconfig/libscca.pc
+man/man1/sccainfo.1.gz
+man/man3/libscca.3.gz
