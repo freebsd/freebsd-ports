@@ -434,14 +434,10 @@ share/RetroShare06/stylesheets/Bubble_Compact/private/outgoing.htm
 share/RetroShare06/stylesheets/Bubble_Compact/private/system.htm
 share/RetroShare06/stylesheets/Bubble_Compact/private/variants/color.css
 share/RetroShare06/stylesheets/Bubble_Compact/private/variants/standard.css
-share/RetroShare06/webui/JSXTransformer.js
-share/RetroShare06/webui/RsApi.js
-share/RetroShare06/webui/RsXHRConnection.js
-share/RetroShare06/webui/green-black.css
-share/RetroShare06/webui/gui.jsx
+share/RetroShare06/webui/app.css
+share/RetroShare06/webui/app.js
 share/RetroShare06/webui/img/logo_splash.png
 share/RetroShare06/webui/index.html
-share/RetroShare06/webui/react.js
 share/applications/retroshare06.desktop
 share/icons/hicolor/128x128/apps/retroshare06.png
 share/icons/hicolor/24x24/apps/retroshare06.png
