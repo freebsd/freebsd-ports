@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 
-USES=		compiler:c++11-lang python:-2.7
+USES=		compiler:c++11-lib python:-2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 
