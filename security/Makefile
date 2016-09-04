@@ -991,6 +991,7 @@
     SUBDIR += rubygem-metasploit-payloads
     SUBDIR += rubygem-metasploit_data_models
     SUBDIR += rubygem-metasploit_payloads-mettle
+    SUBDIR += rubygem-nessus_rest
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
