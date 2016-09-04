@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-Database
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Dancer>=1.3050:www/p5-Dancer \
-		p5-Dancer-Plugin-Database-Core>=0.12:databases/p5-Dancer-Plugin-Database-Core
+		p5-Dancer-Plugin-Database-Core>=0.16:databases/p5-Dancer-Plugin-Database-Core
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
