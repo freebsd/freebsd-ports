@@ -1,0 +1,5 @@
+Ruby library for Nessus JSON/REST interface. This library is used for
+communication with Nessus over REST interface. You can start, stop, pause and
+resume scan. Watch progress and status of scan, download report, etc.
+
+WWW: https://github.com/kost/nessus_rest-ruby
