@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	plasma-applet-
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Amarok 2.x plasma applet for KDE4
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake kde:4 tar:bzip2
 USE_KDE=	automoc4 kdelibs
@@ -32,7 +33,7 @@ ADD_NEWLINE_TO=	flowlayout.cpp \
 
 post-patch:
 .for i in ${ADD_NEWLINE_TO}
-	${ECHO_CMD} >> ${WRKSRC}/${i}
+	@${ECHO_CMD} >> ${WRKSRC}/${i}
 .endfor
 
 .include <bsd.port.mk>
