@@ -9,9 +9,12 @@ MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Compiler for the PHP language
 
-USES=	gmake
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license/LICENSE
+
+USES=		gmake
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fgnu89-inline
+MAKE_ARGS=	CFLAGS="${CFLAGS} -fgnu89-inline"
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/g++/$$CXX/' \
