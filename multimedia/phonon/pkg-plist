@@ -159,6 +159,10 @@ include/phonon/volumefaderinterface.h
 include/phonon/volumeslider.h
 lib/cmake/phonon/PhononConfig.cmake
 lib/cmake/phonon/PhononConfigVersion.cmake
+lib/cmake/phonon/PhononExperimentalConfig.cmake
+lib/cmake/phonon/PhononExperimentalConfigVersion.cmake
+lib/cmake/phonon/PhononExperimentalTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/phonon/PhononExperimentalTargets.cmake
 lib/cmake/phonon/PhononTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/phonon/PhononTargets.cmake
 lib/libphonon.so
@@ -170,7 +174,6 @@ lib/libphononexperimental.so.%%SHLIB_VER%%
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/COPYING-CMAKE-SCRIPTS
-%%DATADIR%%/buildsystem/FindAutomoc4.cmake
 %%DATADIR%%/buildsystem/FindPackageHandleStandardArgs.cmake
 %%DATADIR%%/buildsystem/FindPhononInternal.cmake
 %%DATADIR%%/buildsystem/MacroEnsureVersion.cmake
@@ -178,6 +181,8 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/MacroOptionalFindPackage.cmake
 %%DATADIR%%/buildsystem/MacroPushRequiredVars.cmake
 %%DATADIR%%/buildsystem/PhononMacros.cmake
+%%DATADIR%%/buildsystem/PhononQt4.cmake
+%%DATADIR%%/buildsystem/PhononQt5.cmake
 %%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
 %%QT_PREFIX%%/%%QT_INCDIR%%/Phonon
 %%QT_PREFIX%%/%%QT_INCDIR%%/phonon
