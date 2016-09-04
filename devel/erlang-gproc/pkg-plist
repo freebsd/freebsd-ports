@@ -30,6 +30,7 @@ lib/erlang/lib/gproc-%%VERSION%%/src/gproc_pool.erl
 lib/erlang/lib/gproc-%%VERSION%%/src/gproc_ps.erl
 lib/erlang/lib/gproc-%%VERSION%%/src/gproc_pt.erl
 lib/erlang/lib/gproc-%%VERSION%%/src/gproc_sup.erl
+lib/erlang/lib/gproc-%%VERSION%%/src/gproc_trace.hrl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/edoc-info
 %%PORTDOCS%%%%DOCSDIR%%/erlang.png
