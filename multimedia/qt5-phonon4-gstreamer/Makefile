@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.8.2
+PORTVERSION=	4.9.0
 CATEGORIES=	multimedia
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-gstreamer/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-gstreamer/${PORTVERSION}
 PKGNAMEPREFIX=	qt5-
 PKGNAMESUFFIX=	4-gstreamer
 DISTNAME=	${PORTNAME}-backend-gstreamer-${PORTVERSION}
@@ -15,11 +15,16 @@ COMMENT=	GStreamer backend for Phonon 4 Qt 5
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-backend//}
+
 USES=		cmake pkgconfig tar:xz
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER1=	yes
-USE_QT5=	buildtools_build qmake_build core gui opengl widgets phonon4
+USE_QT5=	buildtools_build qmake_build core gui opengl phonon widgets \
+		x11extras
 CMAKE_ARGS=	-DPHONON_BUILD_PHONON4QT5=ON
 
 OPTIONS_DEFINE=	GST_PLUGINS
