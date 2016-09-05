@@ -4,7 +4,7 @@ PORTNAME=	jna
 PORTVERSION=	4.1.0
 CATEGORIES=	devel java
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
 USES=		gmake

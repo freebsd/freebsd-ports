@@ -25,8 +25,6 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	qjail-* qjail2-*
-
 IGNORE_FreeBSD_9=	Only for FreeBSD 10.x
 IGNORE_FreeBSD_11=	Only for FreeBSD 10.x
 IGNORE_FreeBSD_12=	Only for FreeBSD 10.x

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible
-PORTVERSION=	0.600
+PORTVERSION=	0.610
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,10 +26,5 @@ OPTIONS_DEFINE=	DPAEPU
 DPAEPU_DESC=	Extra dependencies for Provider::Unix
 
 DPAEPU_BUILD_DEPENDS=	p5-Authen-Simple-PAM>=0:security/p5-Authen-Simple-PAM
-
-# bin/generate-crypted-password belongs to D1 version
-post-patch:
-	${REINPLACE_CMD} -e '/generate-crypted-password/d' ${WRKSRC}/MANIFEST
-	${REINPLACE_CMD} -e '/generate-crypted-password/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

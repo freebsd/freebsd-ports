@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ply
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

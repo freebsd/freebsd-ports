@@ -450,6 +450,7 @@
     SUBDIR += terraform
     SUBDIR += teseq
     SUBDIR += teslams
+    SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp

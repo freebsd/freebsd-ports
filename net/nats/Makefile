@@ -3,9 +3,10 @@
 PORTNAME=	nats
 PORTVERSION=	0.9.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Messaging system written in Go
 
 LICENSE=	MIT

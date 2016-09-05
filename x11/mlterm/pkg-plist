@@ -48,6 +48,8 @@ lib/mlterm/libctl_iscii.so
 %%IBUS%%lib/mlterm/libim-ibus.so
 lib/mlterm/libim-kbd.a
 lib/mlterm/libim-kbd.so
+lib/mlterm/libim-skk.a
+lib/mlterm/libim-skk.so
 lib/mlterm/libind_assamese.a
 lib/mlterm/libind_assamese.so
 lib/mlterm/libind_bengali.a

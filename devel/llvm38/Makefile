@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -32,8 +32,8 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS GOLD LIT LLD LLDB
-OPTIONS_DEFINE_amd64=	COMPILER_RT OPENMP
+OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
+OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
@@ -45,6 +45,7 @@ PLIST_FILES=
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
+	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
 	${PATCHDIR}/clang-patch-tools_clang_tools_scan-build_libexec_ccc-analyzer
@@ -173,6 +174,18 @@ COMMANDS+=	argdumper \
 _USES_PYTHON=	python
 .endif
 
+.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
+# Hack to disable COMPILER_RT in plist of unsupported architectures
+PLIST_SUB+=    COMPILER_RT="@comment "
+.else
+.endif
+
+.if ! ${OPTIONS_DEFINE:MGOLD}
+# Hack to disable GOLD in plist of unsupported architectures
+PLIST_SUB+=    GOLD="@comment "
+.else
+.endif
+
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
 PLIST_SUB+=    OPENMP="@comment "
@@ -193,7 +206,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib
+_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
@@ -299,6 +312,10 @@ post-build-COMPILER_RT-on:
 	    -DLLVM_CONFIG_PATH=${CONFIGURE_WRKSRC}/bin/llvm-config \
 	    ${WRKSRC_compiler_rt} && \
 	${MAKE_ENV} ${MAKE_CMD}
+
+post-patch-CLANG-on:
+	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
+	     ${PATCH_WRKSRC}/tools/clang/lib/Driver/Tools.cpp
 
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis

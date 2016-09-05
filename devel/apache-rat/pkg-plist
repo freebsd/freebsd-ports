@@ -1,0 +1,2 @@
+bin/apache-rat
+%%JAVAJARDIR%%/apache-rat.jar

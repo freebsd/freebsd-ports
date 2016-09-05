@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpkali
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -9,6 +9,7 @@ MAINTAINER=	neel@neelc.org
 COMMENT=	High performance load generator for TCP and WebSocket servers
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	uses i386 assembler

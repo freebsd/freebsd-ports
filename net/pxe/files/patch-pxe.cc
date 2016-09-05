@@ -1,6 +1,6 @@
---- pxe.cc.orig	Sun Feb  2 13:39:26 2003
-+++ pxe.cc	Sun Jun  3 21:34:25 2007
-@@ -208,6 +208,31 @@
+--- pxe.cc.orig	2003-02-02 12:39:26 UTC
++++ pxe.cc
+@@ -208,6 +208,31 @@ int StartPxeService(const char *configfi
  	return(retval);
  }
  
@@ -32,7 +32,7 @@
  
  /******************************************************************************
   * main - kick things off and do cool things                                  *
-@@ -247,6 +272,15 @@
+@@ -247,6 +272,15 @@ int main(int argc, char **argv)
  	}
  	debug.close();
  
@@ -48,7 +48,7 @@
  	// redirect the file descriptors
  	if (0 == _debug) {
  		debug.open("/dev/null", std::ios::out);
-@@ -258,34 +292,6 @@
+@@ -258,34 +292,6 @@ int main(int argc, char **argv)
  		debug.close();
  	}
  
@@ -83,7 +83,7 @@
  	// if not in debug mode, fork and go
  	if (0 == _debug) {
  		signal(SIGCHLD, SIG_IGN);
-@@ -320,6 +326,7 @@
+@@ -320,6 +326,7 @@ int main(int argc, char **argv)
  				}
  				close(chk);
  
@@ -91,7 +91,7 @@
  				StartPxeService(configfile);
  
  				exit(0);
-@@ -328,6 +335,7 @@
+@@ -328,6 +335,7 @@ int main(int argc, char **argv)
  		}
  
  	} else { // debug

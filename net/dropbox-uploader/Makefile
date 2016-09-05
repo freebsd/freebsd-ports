@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dropbox-uploader
-PORTVERSION=	0.15
+PORTVERSION=	0.2
 #PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	BASH script for the Dropbox backup service

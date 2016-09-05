@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ytree
-PORTVERSION=	1.98
+DISTVERSION=	1.99pl1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.han.de/~werner/
 

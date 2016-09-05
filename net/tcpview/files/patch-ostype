@@ -7,7 +7,7 @@ Workaround if /etc/motd is missing
  if ( -f /etc/motd ) then
  	set os=`awk -f ostype.awk /etc/motd`
 +else
-+	set os=$(uname -a | awk -f ostype.awk /tmp/motd)
++	set os=`uname -a | awk -f ostype.awk`
  endif
  if ($os == "") exit 1
  if ($os == "UNKNOWN") then

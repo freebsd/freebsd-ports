@@ -222,7 +222,6 @@ lib/syslog-ng/libafuser.so
 lib/syslog-ng/libafamqp.so
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libconfgen.so
-lib/syslog-ng/libcurl.so
 lib/syslog-ng/libsystem-source.so
 lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libbasicfuncs.so

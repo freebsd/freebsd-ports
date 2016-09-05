@@ -83,9 +83,7 @@ RIAK_CONFIGURE_ENABLE=	riak
 RIAK_RUN_DEPENDS=	riak:databases/riak
 
 OPTIONS_DEFAULT=	FUSE
-.if defined(DFLYVERSION)
-OPTIONS_DEFAULT=
-.endif
+OPTIONS_EXCLUDE_DragonFly=	FUSE
 
 .include <bsd.port.options.mk>
 

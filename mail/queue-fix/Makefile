@@ -14,16 +14,16 @@ USES=		qmail:run
 
 PREFIX?=	${QMAIL_PREFIX}
 
-OPTIONS_DEFINE=	DOCS BIG_TODO
-
-BIG_TODO_DESC=	Use big_todo patch
-
-CONFIGURE_SCRIPT=
-ALL_TARGET=
+CONFIGURE_SCRIPT=	# empty
+ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/queue-fix
 
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS BIG_TODO
+
+BIG_TODO_DESC=	Use big_todo patch
 
 .include <bsd.port.pre.mk>
 
@@ -46,9 +46,9 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/queue-fix ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

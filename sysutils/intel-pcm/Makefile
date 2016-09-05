@@ -12,7 +12,7 @@ COMMENT=	Intel PCM toolkit
 
 LICENSE=	BSD3CLAUSE
 
-USES=		compiler:c++11-lang gmake tar:xz
+USES=		compiler:c++11-lib gmake tar:xz
 
 ONLY_FOR_ARCHS=	i386 amd64
 

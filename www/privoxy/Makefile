@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.24
+PORTVERSION=	3.0.26
 CATEGORIES=	www ipv6
-MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
+MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%20(stable)/ \
+		SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
 MAINTAINER=	fk@fabiankeil.de
@@ -33,14 +34,15 @@ GROUPS=		privoxy
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ACCEPT_FILTER BROKEN_STRPTIME COMPRESSION DEBUG \
-		DOCS EDITOR FORCE PRIVOXY_TOOLS TOGGLE
+OPTIONS_DEFINE=	ACCEPT_FILTER BROKEN_STRPTIME BUMP_FD_SETSIZE COMPRESSION \
+		DEBUG DOCS EDITOR FORCE PRIVOXY_TOOLS TOGGLE
 
 ACCEPT_FILTER_DESC=	Support for accf_http(9)
 BROKEN_STRPTIME_DESC=	Enable workaround for standards/173421
 COMPRESSION_DESC=	Support compression of buffered content
 DOCS_DESC=		Let Privoxy serve the user manual
 EDITOR_DESC=		Support use of the web-based action editor
+BUMP_FD_SETSIZE_DESC=	Support more client connections at the same time
 FORCE_DESC=		Support bypassing of blocks
 PRIVOXY_TOOLS_DESC=	Install Privoxy-Log-Parser, uagen, etc.
 TOGGLE_DESC=		Support for remote toggling
@@ -52,6 +54,8 @@ OPTIONS_SUB=	yes
 ACCEPT_FILTER_CONFIGURE_ON=	--enable-accept-filter
 
 BROKEN_STRPTIME_CONFIGURE_ON=	--enable-strptime-sanity-checks
+
+BUMP_FD_SETSIZE_CONFIGURE_ON=	--with-fdsetsize=8192
 
 COMPRESSION_CONFIGURE_ON=	--enable-compression
 

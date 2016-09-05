@@ -136,6 +136,7 @@
     SUBDIR += leofs
     SUBDIR += leveldb
     SUBDIR += levigo
+    SUBDIR += libcouchbase
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle

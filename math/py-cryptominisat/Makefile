@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptominisat
-PORTVERSION=	4.5.3
+PORTVERSION=	5.0.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,9 +11,9 @@ COMMENT=	Bindings to CryptoMiniSat (a SAT solver)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcryptominisat4.so:math/cryptominisat
+LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 
-USES=		compiler:c++11-lang python:-2.7
+USES=		compiler:c++11-lib python:-2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 
@@ -24,6 +24,7 @@ WRKSRC_SUBDIR=	python
 PYDISTUTILS_BUILDTARGET=	build_ext --include-dirs=${LOCALBASE}/include
 
 post-patch:
+	${REINPLACE_CMD} -e 's|@PROJECT_VERSION@|${PORTVERSION}|' ${WRKSRC}/setup.py.in
 	${CP} ${WRKSRC}/setup.py.in ${WRKSRC}/setup.py
 
 post-install:

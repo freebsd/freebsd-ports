@@ -10,15 +10,15 @@ MASTER_SITES=	http://root.cern.ch/drupal/sites/default/files/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	C/C++ interpreter
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build
+BROKEN_FreeBSD_9=	does not build (sigsegv during build)
 
 BUILD_DEPENDS=	bash:shells/bash
 
-EXTRACT_SUFX=	.tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}"
 USE_GCC=	yes
-USES=		gmake readline
+USES=		gmake readline tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 

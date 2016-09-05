@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.4.3
+PORTVERSION=	2.7.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
@@ -30,6 +30,9 @@ NLS_CONFIGURE_ENABLE=	nls
 INFO=		nano
 
 PORTSCOUT=	limitw:1,even
+
+post-configure:
+	${REINPLACE_CMD} -e 's/update_revision//g' ${WRKSRC}/src/Makefile
 
 post-build:
 	cd ${WRKSRC}/doc/man; ${REINPLACE_CMD} \

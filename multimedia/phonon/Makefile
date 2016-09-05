@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.8.3
+PORTVERSION=	4.9.0
 CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libqzeitgeist.so:sysutils/qzeitgeist
 
-USES=		cmake kde:4 tar:xz
+USES=		cmake kde:4 pathfix tar:xz
 USE_KDE=	automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.20.1
+PORTVERSION=	3.21.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -41,6 +41,7 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-runtime
 NLS_CONFIGURE_OFF=	--disable-locales
 
 .if !defined(MAINTAINER_MODE)

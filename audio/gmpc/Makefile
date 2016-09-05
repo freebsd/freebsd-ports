@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	11.8.16
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \

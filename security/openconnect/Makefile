@@ -26,7 +26,11 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	PROXY GNUTLS
+OPTIONS_DEFINE=	PROXY GNUTLS LZ4
+
+LZ4_DESC=		LZ4-based compression
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_CONFIGURE_WITH=	lz4
 
 PROXY_DESC=		Automatic proxy configuration via libproxy
 PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy

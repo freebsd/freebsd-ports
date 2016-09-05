@@ -1,0 +1,4 @@
+This is a collection of modules ("vmods") extending Varnish VCL used for
+describing HTTP request/response policies with additional capabilities.
+
+WWW: https://github.com/varnish/varnish-modules

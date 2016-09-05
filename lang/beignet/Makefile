@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 DISTVERSIONSUFFIX=	-source
@@ -19,7 +19,7 @@ RUN_DEPENDS=	opencl>=0:devel/opencl \
 
 WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
 
-USES=		cmake gmake pkgconfig shebangfix
+USES=		cmake gmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
 USE_GL=		gl
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh

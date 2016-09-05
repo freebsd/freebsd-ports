@@ -8,15 +8,15 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable ASS/SSA subtitle renderer
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 
-USES=		autoreconf iconv libtool pathfix pkgconfig tar:xz
+USES=		autoreconf iconv libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=Makefile.am
@@ -24,6 +24,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	HARFBUZZ
 OPTIONS_DEFAULT=HARFBUZZ
+OPTIONS_EXCLUDE_armv6=HARFBUZZ
 OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM

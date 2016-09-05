@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.10.0
+PORTVERSION=	13.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -57,7 +58,7 @@ CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
-				MP3PLAYER OOH323 PJSIP PORTAUDIO RADIUS SNMP \
+				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO XMPP
 OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC MYSQL PGSQL PJSIP \
 				PORTAUDIO RADIUS SNMP SPANDSP SPEEX SQLITE2 VORBIS
@@ -66,8 +67,8 @@ OPTIONS_DEFINE_i386=		DAHDI
 OPTIONS_DEFINE_amd64=		DAHDI
 OPTIONS_DEFINE_sparc64=		DAHDI
 
-OPTIONS_DEFAULT_i386=		DAHDI GCC XMPP
-OPTIONS_DEFAULT_amd64=		DAHDI GCC XMPP
+OPTIONS_DEFAULT_i386=		DAHDI BASE XMPP
+OPTIONS_DEFAULT_amd64=		DAHDI BASE XMPP
 OPTIONS_DEFAULT_sparc64=	DAHDI GCC XMPP
 OPTIONS_DEFAULT_powerpc=	GCC XMPP
 OPTIONS_DEFAULT_armv6=		BASE
@@ -237,19 +238,19 @@ PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER} \
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.d' -delete
 
-.if ${PORT_OPTIONS:MG729}
+post-extract-G729-on:
 	${CP} ${DISTDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
 	${CP} ${DISTDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
-.if ${PORT_OPTIONS:MSYSINFO}
+
+post-patch-SYSINFO-on:
 	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
-.else
+
+post-patch-SYSINFO-off:
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.endif
 
 .if exists(${FILESDIR}/.asterisk.makeopts)
 USER_MAKEOPTS_FILE=${FILESDIR}/.asterisk.makeopts
@@ -262,23 +263,23 @@ post-configure:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
-.if ${PORT_OPTIONS:MMYSQL}
+
+post-configure-MYSQL-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable cdr_mysql menuselect.makeopts
-.endif
-.if ${PORT_OPTIONS:MOOH323}
+
+post-configure-OOH323-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_ooh323 menuselect.makeopts
-.endif
-.if ${PORT_OPTIONS:MNEWG711}
+
+post-configure-NEWG711-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable G711_NEW_ALGORITHM menuselect.makeopts
-.endif
+
+post-configure-OPTIMIZED_CFLAGS-off:
+	@cd ${WRKSRC} && ./menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
 
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
-.if ! ${PORT_OPTIONS:MASTVERSION}
-	@${RM} ${STAGEDIR}${PREFIX}/sbin/astversion
-.endif
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules -type f -name '*.so' | ${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
@@ -290,5 +291,8 @@ post-install:
 		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST} && \
 		${ECHO} "@owner" >> ${TMPPLIST} && \
 		${ECHO} "@group" >> ${TMPPLIST});
+
+post-install-ASTVERSION-off:
+	@${RM} ${STAGEDIR}${PREFIX}/sbin/astversion
 
 .include <bsd.port.post.mk>

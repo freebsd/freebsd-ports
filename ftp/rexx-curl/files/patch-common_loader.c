@@ -1,4 +1,4 @@
---- common/loader.c.orig	2012-04-20 00:41:50 UTC
+--- common/loader.c.orig	2012-08-14 01:16:58 UTC
 +++ common/loader.c
 @@ -225,6 +225,7 @@ int main
     /*

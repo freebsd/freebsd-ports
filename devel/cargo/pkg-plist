@@ -8,6 +8,7 @@ man/man1/cargo-doc.1.gz
 man/man1/cargo-init.1.gz
 man/man1/cargo-install.1.gz
 man/man1/cargo-new.1.gz
+man/man1/cargo-owner.1.gz
 man/man1/cargo-package.1.gz
 man/man1/cargo-publish.1.gz
 man/man1/cargo-run.1.gz

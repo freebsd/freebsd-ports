@@ -133,22 +133,16 @@
 # ${opt}_VARS_OFF=    FOO+=bar	When option is disabled, it will append
 #				FOO+= bar
 #
-# For each of:
-# ALL_TARGET BROKEN CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS CONFLICTS_BUILD
-# CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DESKTOP_ENTRIES DISTFILES EXTRA_PATCHES
-# EXTRACT_ONLY GH_ACCOUNT GH_PROJECT GH_TAGNAME IGNORE INFO INSTALL_TARGET
-# LDFLAGS LIBS MAKE_ARGS MAKE_ENV PATCHFILES PATCH_SITES PLIST_DIRS
-# PLIST_FILES PLIST_SUB PORTDOCS PORTEXAMPLES SUB_FILES SUB_LIST
-# TEST_TARGET USES,
-# defining ${opt}_${variable} will add its content to the actual variable when
-# the option is enabled.  Defining ${opt}_${variable}_OFF will add its content
-# to the actual variable when the option is disabled.
-#
 # For each of the depends target PKG FETCH EXTRACT PATCH BUILD LIB RUN,
 # defining ${opt}_${deptype}_DEPENDS will add its content to the actual
 # dependency when the option is enabled.  Defining
 # ${opt}_${deptype}_DEPENDS_OFF will add its content to the actual dependency
 # when the option is disabled.
+#
+# For each of the variables in _OPTIONS_FLAGS below, defining
+# ${opt}_${variable} will add its content to the actual variable when the
+# option is enabled.  Defining ${opt}_${variable}_OFF will add its content to
+# the actual variable when the option is disabled.
 
 ##
 # Set all the options available for the ports, beginning with the
@@ -163,9 +157,9 @@ OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 _OPTIONS_FLAGS=	ALL_TARGET BROKEN CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 		CONFLICTS_BUILD CONFLICTS_INSTALL CPPFLAGS CXXFLAGS \
 		DESKTOP_ENTRIES DISTFILES EXTRA_PATCHES EXTRACT_ONLY \
-		GH_ACCOUNT GH_PROJECT GH_TAGNAME GH_TUPLE IGNORE INFO \
-		INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS MAKE_ENV MASTER_SITES \
-		PATCHFILES PATCH_SITES PLIST_DIRS PLIST_FILES \
+		GH_ACCOUNT GH_PROJECT GH_SUBDIR GH_TAGNAME GH_TUPLE IGNORE \
+		INFO INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS MAKE_ENV \
+		MASTER_SITES PATCHFILES PATCH_SITES PLIST_DIRS PLIST_FILES \
 		PLIST_SUB PORTDOCS PORTEXAMPLES SUB_FILES SUB_LIST \
 		TEST_TARGET USES
 _OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN

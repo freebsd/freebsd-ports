@@ -1,8 +1,9 @@
-SHA256 (cargo-registry-0.11.0.tar.xz) = 6ae20d4c450b8ad9122e58d6f415f4b964811ffc9a0281261a09b6f0111b6c07
-SIZE (cargo-registry-0.11.0.tar.xz) = 19365312
-SHA256 (cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 5ea0869878b85b5cf290ae0edb7bcbfe64f4cdad9fb5c492575fe5e5da5e1fd6
-SIZE (cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 5461785
-SHA256 (rust-lang-cargo-0.11.0_GH0.tar.gz) = 4f390d7ea3352a1ecafb53d1a2b98c2e195b81a5c652342a8b91672d9f1dde0a
-SIZE (rust-lang-cargo-0.11.0_GH0.tar.gz) = 566557
+TIMESTAMP = 1472251622
+SHA256 (cargo-registry-0.12.0.tar.xz) = 364bcf3a7b9bac4a7cf383561292532933ddc2890bda532f6ea1a2ea41d80a4c
+SIZE (cargo-registry-0.12.0.tar.xz) = 19277468
+SHA256 (cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 76d1cb9d7ab0a019ae688baa344fc982aee580a5969f4cfba45d38b6cbc23bd9
+SIZE (cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 4691251
+SHA256 (rust-lang-cargo-0.12.0_GH0.tar.gz) = 4080d76b56b8202f7df271b4bb7d7d22abea5ff8c261aef42e6e5d248ca5972b
+SIZE (rust-lang-cargo-0.12.0_GH0.tar.gz) = 574902
 SHA256 (rust-lang-rust-installer-4915c75_GH0.tar.gz) = 022116173684c97d61e014940aada20f3830d2d3e1670887bf1861997133c234
 SIZE (rust-lang-rust-installer-4915c75_GH0.tar.gz) = 19234

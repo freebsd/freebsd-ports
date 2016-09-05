@@ -2,12 +2,12 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/}
+PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
 .else
-# dns/bind910 here
+# dns/bind9xx here
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
@@ -29,7 +29,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0b3
+ISCVERSION=	9.11.0rc1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -63,16 +63,17 @@ SUB_FILES=	pkg-message
 .endif
 
 OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE
-OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON START_LATE \
+OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO GOSTDEF
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
 OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
-OPTIONS_DEFAULT+=	RRL DLZ_FILESYSTEM
-OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
-			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE LMDB
+OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
+			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
+			START_LATE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -97,15 +98,13 @@ PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
 PORTREVISION_DESC=	Show PORTREVISION in the version string
-FETCHLIMIT_DESC=	Enable the query quotas for resolvers
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 LMDB_DESC=		Use LMDB for zone management
+DNSTAP_DESC=		Provides fast passive logging of DNS messages
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
-NEWSTATS_DESC=		Enable alternate xml statistics channel format
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
-RRL_DESC=		Response Rate Limiting
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
@@ -117,9 +116,6 @@ GSSAPI_BASE_DESC=	Using Heimdal in base
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
-MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
-FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
-QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 .if defined(BIND_TOOLS_SLAVE)
 CONFLICTS+=		bind910-9.10.*
@@ -133,8 +129,6 @@ SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
 LMDB_CONFIGURE_WITH=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
-
-NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
@@ -171,8 +165,6 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RRL_CONFIGURE_ENABLE=	rrl
-
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
 DLZ_MYSQL_USES=		mysql
 
@@ -201,6 +193,14 @@ GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON= \
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
+
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
+
+QUERYTRACE_CONFIGURE_ENABLE=	querytrace
+
+DNSTAP_CONFIGURE_ENABLE=	dnstap
+DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
+			libprotobuf-c.so:devel/protobuf-c
 
 .include <bsd.port.options.mk>
 

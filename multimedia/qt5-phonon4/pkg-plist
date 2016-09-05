@@ -158,6 +158,10 @@ include/phonon4qt5/phonon/volumefaderinterface.h
 include/phonon4qt5/phonon/volumeslider.h
 lib/cmake/phonon4qt5/Phonon4Qt5Config.cmake
 lib/cmake/phonon4qt5/Phonon4Qt5ConfigVersion.cmake
+lib/cmake/phonon4qt5/Phonon4Qt5ExperimentalConfig.cmake
+lib/cmake/phonon4qt5/Phonon4Qt5ExperimentalConfigVersion.cmake
+lib/cmake/phonon4qt5/PhononExperimentalTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/phonon4qt5/PhononExperimentalTargets.cmake
 lib/cmake/phonon4qt5/PhononTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/phonon4qt5/PhononTargets.cmake
 lib/libphonon4qt5.so
@@ -170,7 +174,6 @@ lib/libphonon4qt5experimental.so.%%SHLIB_VER%%
 libdata/pkgconfig/phonon4qt5.pc
 share/dbus-1/interfaces/org.kde.Phonon4Qt5.AudioOutput.xml
 share/phonon4qt5/buildsystem/COPYING-CMAKE-SCRIPTS
-share/phonon4qt5/buildsystem/FindAutomoc4.cmake
 share/phonon4qt5/buildsystem/FindPackageHandleStandardArgs.cmake
 share/phonon4qt5/buildsystem/FindPhononInternal.cmake
 share/phonon4qt5/buildsystem/MacroEnsureVersion.cmake
@@ -178,4 +181,6 @@ share/phonon4qt5/buildsystem/MacroLogFeature.cmake
 share/phonon4qt5/buildsystem/MacroOptionalFindPackage.cmake
 share/phonon4qt5/buildsystem/MacroPushRequiredVars.cmake
 share/phonon4qt5/buildsystem/PhononMacros.cmake
+share/phonon4qt5/buildsystem/PhononQt4.cmake
+share/phonon4qt5/buildsystem/PhononQt5.cmake
 share/phonon4qt5/buildsystem/cmake_uninstall.cmake.in

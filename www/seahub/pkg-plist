@@ -1332,7 +1332,6 @@
 %%SEAHUBDIR%%/tests/api/test_repo_tokens.py
 %%SEAHUBDIR%%/tests/api/test_repo_user_folder_perm.py
 %%SEAHUBDIR%%/tests/api/test_repos.py
-%%SEAHUBDIR%%/tests/api/test_search_user.py
 %%SEAHUBDIR%%/tests/api/test_shared_repo.py
 %%SEAHUBDIR%%/tests/api/test_shares.py
 %%SEAHUBDIR%%/tests/api/test_starredfiles.py
@@ -1420,6 +1419,8 @@
 %%SEAHUBDIR%%/tests/ui/driver.py
 %%SEAHUBDIR%%/tests/ui/fixtures.py
 %%SEAHUBDIR%%/tests/ui/test_sudo_mode.py
+%%SEAHUBDIR%%/tests/api/endpoints/test_search_user.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_user_search.py
 %%SITEPACKAGEDIR%%/captcha/__init__.py
 %%SITEPACKAGEDIR%%/captcha/conf/__init__.py
 %%SITEPACKAGEDIR%%/captcha/conf/settings.py
