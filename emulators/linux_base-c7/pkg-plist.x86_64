@@ -1,0 +1,3588 @@
+@preexec [ -n "`/sbin/sysctl -q %%SYSCTLMIB%%`" ] || ( echo "Cannot install package: kernel missing 64-bit Linux support"; exit 1 )
+bin
+dev/shm
+etc/DIR_COLORS
+etc/DIR_COLORS.256color
+etc/DIR_COLORS.lightbgcolor
+etc/GREP_COLORS
+etc/aliases
+etc/bashrc
+etc/centos-release
+etc/centos-release-upstream
+etc/csh.cshrc
+etc/csh.login
+etc/default/nss
+etc/e2fsck.conf
+etc/environment
+etc/filesystems
+etc/host.conf
+etc/hosts
+etc/hosts.allow
+etc/hosts.deny
+etc/inputrc
+etc/issue
+etc/issue.net
+@sample etc/krb5.conf.sample
+@rmtry etc/ld.so.cache
+etc/ld.so.conf
+etc/lsb-release.d/core-4.1-amd64
+etc/lsb-release.d/core-4.1-ia32
+etc/lsb-release.d/core-4.1-noarch
+etc/mke2fs.conf
+etc/mtab
+@sample etc/nsswitch.conf.sample
+etc/os-release
+etc/pam.d/chfn
+etc/pam.d/chsh
+etc/pam.d/login
+etc/pam.d/remote
+etc/pam.d/runuser
+etc/pam.d/runuser-l
+etc/pam.d/su
+etc/pam.d/su-l
+etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
+etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
+etc/profile
+etc/profile.d/colorgrep.csh
+etc/profile.d/colorgrep.sh
+etc/profile.d/colorls.csh
+etc/profile.d/colorls.sh
+etc/profile.d/less.csh
+etc/profile.d/less.sh
+etc/profile.d/which2.csh
+etc/profile.d/which2.sh
+etc/redhat-lsb/lsb_killproc
+etc/redhat-lsb/lsb_log_message
+etc/redhat-lsb/lsb_pidofproc
+etc/redhat-lsb/lsb_start_daemon
+etc/redhat-release
+etc/request-key.conf
+etc/rpc
+etc/rpm/macros.dist
+etc/securetty
+etc/shells
+etc/skel/.bash_logout
+etc/skel/.bash_profile
+etc/skel/.bashrc
+etc/system-release
+etc/system-release-cpe
+etc/yum.repos.d/CentOS-Base.repo
+etc/yum.repos.d/CentOS-CR.repo
+etc/yum.repos.d/CentOS-Debuginfo.repo
+etc/yum.repos.d/CentOS-Media.repo
+etc/yum.repos.d/CentOS-Sources.repo
+etc/yum.repos.d/CentOS-Vault.repo
+etc/yum.repos.d/CentOS-fasttrack.repo
+etc/yum/vars/infra
+lib
+lib64
+run
+sbin
+usr/bin/[
+usr/bin/alias
+usr/bin/arch
+usr/bin/base64
+usr/bin/basename
+usr/bin/bash
+usr/bin/bashbug
+usr/bin/bashbug-64
+usr/bin/berkeley_db47_svc
+usr/bin/bg
+usr/bin/bunzip2
+usr/bin/bzcat
+usr/bin/bzcmp
+usr/bin/bzdiff
+usr/bin/bzgrep
+usr/bin/bzip2
+usr/bin/bzip2recover
+usr/bin/bzless
+usr/bin/bzmore
+usr/bin/cal
+usr/bin/captoinfo
+usr/bin/cat
+usr/bin/catchsegv
+usr/bin/cd
+usr/bin/chattr
+usr/bin/chcon
+usr/bin/chfn
+usr/bin/chgrp
+usr/bin/chmod
+usr/bin/chown
+usr/bin/chrt
+usr/bin/chsh
+usr/bin/cksum
+usr/bin/clear
+usr/bin/col
+usr/bin/colcrt
+usr/bin/colrm
+usr/bin/column
+usr/bin/comm
+usr/bin/command
+usr/bin/cp
+usr/bin/csplit
+usr/bin/cut
+usr/bin/cytune
+usr/bin/date
+usr/bin/db47_archive
+usr/bin/db47_checkpoint
+usr/bin/db47_codegen
+usr/bin/db47_deadlock
+usr/bin/db47_dump
+usr/bin/db47_hotbackup
+usr/bin/db47_load
+usr/bin/db47_printlog
+usr/bin/db47_recover
+usr/bin/db47_stat
+usr/bin/db47_upgrade
+usr/bin/db47_verify
+usr/bin/dd
+usr/bin/dir
+usr/bin/dircolors
+usr/bin/dirname
+usr/bin/dmesg
+usr/bin/du
+usr/bin/echo
+usr/bin/egrep
+usr/bin/eject
+usr/bin/env
+usr/bin/eu-addr2line
+usr/bin/eu-ar
+usr/bin/eu-elfcmp
+usr/bin/eu-elflint
+usr/bin/eu-findtextrel
+usr/bin/eu-make-debug-archive
+usr/bin/eu-nm
+usr/bin/eu-objdump
+usr/bin/eu-ranlib
+usr/bin/eu-readelf
+usr/bin/eu-size
+usr/bin/eu-stack
+usr/bin/eu-strings
+usr/bin/eu-strip
+usr/bin/eu-unstrip
+usr/bin/expand
+usr/bin/expr
+usr/bin/factor
+usr/bin/fallocate
+usr/bin/false
+usr/bin/fc
+usr/bin/fg
+usr/bin/fgrep
+usr/bin/find
+usr/bin/findmnt
+usr/bin/flock
+usr/bin/fmt
+usr/bin/fold
+usr/bin/gapplication
+usr/bin/gdbus
+usr/bin/gencat
+usr/bin/getconf
+usr/bin/getent
+usr/bin/getopt
+usr/bin/getopts
+usr/bin/gio-querymodules-32
+usr/bin/gio-querymodules-64
+usr/bin/glib-compile-schemas
+usr/bin/grep
+usr/bin/groups
+usr/bin/gsettings
+usr/bin/head
+usr/bin/hexdump
+usr/bin/hostid
+usr/bin/i386
+usr/bin/iconv
+usr/bin/id
+usr/bin/idn
+usr/bin/info
+usr/bin/infocmp
+usr/bin/infokey
+usr/bin/infotocap
+usr/bin/install
+usr/bin/ionice
+usr/bin/ipcmk
+usr/bin/ipcrm
+usr/bin/ipcs
+usr/bin/isosize
+usr/bin/jobs
+usr/bin/join
+usr/bin/keyctl
+usr/bin/kill
+usr/bin/ldd
+usr/bin/less
+usr/bin/lessecho
+usr/bin/lesskey
+usr/bin/lesspipe.sh
+usr/bin/link
+usr/bin/linux32
+usr/bin/linux64
+usr/bin/ln
+usr/bin/locale
+usr/bin/localedef
+usr/bin/logger
+usr/bin/login
+usr/bin/logname
+usr/bin/look
+usr/bin/ls
+usr/bin/lsattr
+usr/bin/lsb_release
+usr/bin/lsblk
+usr/bin/lscpu
+usr/bin/lslocks
+usr/bin/lslogins
+usr/bin/makedb
+usr/bin/mcookie
+usr/bin/md5sum
+usr/bin/mkdir
+usr/bin/mkfifo
+usr/bin/mknod
+usr/bin/mktemp
+usr/bin/more
+usr/bin/mount
+usr/bin/mountpoint
+usr/bin/mv
+usr/bin/namei
+usr/bin/nice
+usr/bin/nl
+usr/bin/nohup
+usr/bin/nproc
+usr/bin/nsenter
+usr/bin/numfmt
+usr/bin/od
+usr/bin/oldfind
+usr/bin/paste
+usr/bin/pathchk
+usr/bin/pinky
+usr/bin/pldd
+usr/bin/pr
+usr/bin/printenv
+usr/bin/printf
+usr/bin/prlimit
+usr/bin/ptx
+usr/bin/pwd
+usr/bin/raw
+usr/bin/read
+usr/bin/readlink
+usr/bin/realpath
+usr/bin/redhat_lsb_init
+usr/bin/rename
+usr/bin/renice
+usr/bin/reset
+usr/bin/rev
+usr/bin/rm
+usr/bin/rmdir
+usr/bin/rpcgen
+usr/bin/runcon
+usr/bin/script
+usr/bin/scriptreplay
+usr/bin/sed
+usr/bin/seq
+usr/bin/setarch
+usr/bin/setpriv
+usr/bin/setserial
+usr/bin/setsid
+usr/bin/setterm
+usr/bin/sh
+usr/bin/sha1sum
+usr/bin/sha224sum
+usr/bin/sha256sum
+usr/bin/sha384sum
+usr/bin/sha512sum
+usr/bin/shred
+usr/bin/shuf
+usr/bin/sleep
+usr/bin/sort
+usr/bin/sotruss
+usr/bin/split
+usr/bin/sprof
+usr/bin/stat
+usr/bin/stdbuf
+usr/bin/stty
+usr/bin/sum
+usr/bin/sync
+usr/bin/tabs
+usr/bin/tac
+usr/bin/tail
+usr/bin/tailf
+usr/bin/taskset
+usr/bin/tee
+usr/bin/test
+usr/bin/testgdbm
+usr/bin/tic
+usr/bin/timeout
+usr/bin/toe
+usr/bin/touch
+usr/bin/tput
+usr/bin/tr
+usr/bin/true
+usr/bin/truncate
+usr/bin/tset
+usr/bin/tsort
+usr/bin/tty
+usr/bin/tzselect
+usr/bin/ul
+usr/bin/umask
+usr/bin/umount
+usr/bin/unalias
+usr/bin/uname
+usr/bin/unexpand
+usr/bin/uniq
+usr/bin/unlink
+usr/bin/unshare
+usr/bin/users
+usr/bin/utmpdump
+usr/bin/uuidgen
+usr/bin/vdir
+usr/bin/wait
+usr/bin/wc
+usr/bin/wdctl
+usr/bin/whereis
+usr/bin/which
+usr/bin/who
+usr/bin/whoami
+usr/bin/write
+usr/bin/x86_64
+usr/bin/xargs
+usr/bin/yes
+usr/lib/audit/sotruss-lib.so
+usr/lib/db4.7.25/libdb.so
+usr/lib/db4.7.25/libdb_cxx.so
+usr/lib/fipscheck/libgmp.so.10.2.0.hmac
+usr/lib/fipscheck/libgmp.so.10.hmac
+usr/lib/gconv/ANSI_X3.110.so
+usr/lib/gconv/ARMSCII-8.so
+usr/lib/gconv/ASMO_449.so
+usr/lib/gconv/BIG5.so
+usr/lib/gconv/BIG5HKSCS.so
+usr/lib/gconv/BRF.so
+usr/lib/gconv/CP10007.so
+usr/lib/gconv/CP1125.so
+usr/lib/gconv/CP1250.so
+usr/lib/gconv/CP1251.so
+usr/lib/gconv/CP1252.so
+usr/lib/gconv/CP1253.so
+usr/lib/gconv/CP1254.so
+usr/lib/gconv/CP1255.so
+usr/lib/gconv/CP1256.so
+usr/lib/gconv/CP1257.so
+usr/lib/gconv/CP1258.so
+usr/lib/gconv/CP737.so
+usr/lib/gconv/CP770.so
+usr/lib/gconv/CP771.so
+usr/lib/gconv/CP772.so
+usr/lib/gconv/CP773.so
+usr/lib/gconv/CP774.so
+usr/lib/gconv/CP775.so
+usr/lib/gconv/CP932.so
+usr/lib/gconv/CSN_369103.so
+usr/lib/gconv/CWI.so
+usr/lib/gconv/DEC-MCS.so
+usr/lib/gconv/EBCDIC-AT-DE-A.so
+usr/lib/gconv/EBCDIC-AT-DE.so
+usr/lib/gconv/EBCDIC-CA-FR.so
+usr/lib/gconv/EBCDIC-DK-NO-A.so
+usr/lib/gconv/EBCDIC-DK-NO.so
+usr/lib/gconv/EBCDIC-ES-A.so
+usr/lib/gconv/EBCDIC-ES-S.so
+usr/lib/gconv/EBCDIC-ES.so
+usr/lib/gconv/EBCDIC-FI-SE-A.so
+usr/lib/gconv/EBCDIC-FI-SE.so
+usr/lib/gconv/EBCDIC-FR.so
+usr/lib/gconv/EBCDIC-IS-FRISS.so
+usr/lib/gconv/EBCDIC-IT.so
+usr/lib/gconv/EBCDIC-PT.so
+usr/lib/gconv/EBCDIC-UK.so
+usr/lib/gconv/EBCDIC-US.so
+usr/lib/gconv/ECMA-CYRILLIC.so
+usr/lib/gconv/EUC-CN.so
+usr/lib/gconv/EUC-JISX0213.so
+usr/lib/gconv/EUC-JP-MS.so
+usr/lib/gconv/EUC-JP.so
+usr/lib/gconv/EUC-KR.so
+usr/lib/gconv/EUC-TW.so
+usr/lib/gconv/GB18030.so
+usr/lib/gconv/GBBIG5.so
+usr/lib/gconv/GBGBK.so
+usr/lib/gconv/GBK.so
+usr/lib/gconv/GEORGIAN-ACADEMY.so
+usr/lib/gconv/GEORGIAN-PS.so
+usr/lib/gconv/GOST_19768-74.so
+usr/lib/gconv/GREEK-CCITT.so
+usr/lib/gconv/GREEK7-OLD.so
+usr/lib/gconv/GREEK7.so
+usr/lib/gconv/HP-GREEK8.so
+usr/lib/gconv/HP-ROMAN8.so
+usr/lib/gconv/HP-ROMAN9.so
+usr/lib/gconv/HP-THAI8.so
+usr/lib/gconv/HP-TURKISH8.so
+usr/lib/gconv/IBM037.so
+usr/lib/gconv/IBM038.so
+usr/lib/gconv/IBM1004.so
+usr/lib/gconv/IBM1008.so
+usr/lib/gconv/IBM1008_420.so
+usr/lib/gconv/IBM1025.so
+usr/lib/gconv/IBM1026.so
+usr/lib/gconv/IBM1046.so
+usr/lib/gconv/IBM1047.so
+usr/lib/gconv/IBM1097.so
+usr/lib/gconv/IBM1112.so
+usr/lib/gconv/IBM1122.so
+usr/lib/gconv/IBM1123.so
+usr/lib/gconv/IBM1124.so
+usr/lib/gconv/IBM1129.so
+usr/lib/gconv/IBM1130.so
+usr/lib/gconv/IBM1132.so
+usr/lib/gconv/IBM1133.so
+usr/lib/gconv/IBM1137.so
+usr/lib/gconv/IBM1140.so
+usr/lib/gconv/IBM1141.so
+usr/lib/gconv/IBM1142.so
+usr/lib/gconv/IBM1143.so
+usr/lib/gconv/IBM1144.so
+usr/lib/gconv/IBM1145.so
+usr/lib/gconv/IBM1146.so
+usr/lib/gconv/IBM1147.so
+usr/lib/gconv/IBM1148.so
+usr/lib/gconv/IBM1149.so
+usr/lib/gconv/IBM1153.so
+usr/lib/gconv/IBM1154.so
+usr/lib/gconv/IBM1155.so
+usr/lib/gconv/IBM1156.so
+usr/lib/gconv/IBM1157.so
+usr/lib/gconv/IBM1158.so
+usr/lib/gconv/IBM1160.so
+usr/lib/gconv/IBM1161.so
+usr/lib/gconv/IBM1162.so
+usr/lib/gconv/IBM1163.so
+usr/lib/gconv/IBM1164.so
+usr/lib/gconv/IBM1166.so
+usr/lib/gconv/IBM1167.so
+usr/lib/gconv/IBM12712.so
+usr/lib/gconv/IBM1364.so
+usr/lib/gconv/IBM1371.so
+usr/lib/gconv/IBM1388.so
+usr/lib/gconv/IBM1390.so
+usr/lib/gconv/IBM1399.so
+usr/lib/gconv/IBM16804.so
+usr/lib/gconv/IBM256.so
+usr/lib/gconv/IBM273.so
+usr/lib/gconv/IBM274.so
+usr/lib/gconv/IBM275.so
+usr/lib/gconv/IBM277.so
+usr/lib/gconv/IBM278.so
+usr/lib/gconv/IBM280.so
+usr/lib/gconv/IBM281.so
+usr/lib/gconv/IBM284.so
+usr/lib/gconv/IBM285.so
+usr/lib/gconv/IBM290.so
+usr/lib/gconv/IBM297.so
+usr/lib/gconv/IBM420.so
+usr/lib/gconv/IBM423.so
+usr/lib/gconv/IBM424.so
+usr/lib/gconv/IBM437.so
+usr/lib/gconv/IBM4517.so
+usr/lib/gconv/IBM4899.so
+usr/lib/gconv/IBM4909.so
+usr/lib/gconv/IBM4971.so
+usr/lib/gconv/IBM500.so
+usr/lib/gconv/IBM5347.so
+usr/lib/gconv/IBM803.so
+usr/lib/gconv/IBM850.so
+usr/lib/gconv/IBM851.so
+usr/lib/gconv/IBM852.so
+usr/lib/gconv/IBM855.so
+usr/lib/gconv/IBM856.so
+usr/lib/gconv/IBM857.so
+usr/lib/gconv/IBM860.so
+usr/lib/gconv/IBM861.so
+usr/lib/gconv/IBM862.so
+usr/lib/gconv/IBM863.so
+usr/lib/gconv/IBM864.so
+usr/lib/gconv/IBM865.so
+usr/lib/gconv/IBM866.so
+usr/lib/gconv/IBM866NAV.so
+usr/lib/gconv/IBM868.so
+usr/lib/gconv/IBM869.so
+usr/lib/gconv/IBM870.so
+usr/lib/gconv/IBM871.so
+usr/lib/gconv/IBM874.so
+usr/lib/gconv/IBM875.so
+usr/lib/gconv/IBM880.so
+usr/lib/gconv/IBM891.so
+usr/lib/gconv/IBM901.so
+usr/lib/gconv/IBM902.so
+usr/lib/gconv/IBM903.so
+usr/lib/gconv/IBM9030.so
+usr/lib/gconv/IBM904.so
+usr/lib/gconv/IBM905.so
+usr/lib/gconv/IBM9066.so
+usr/lib/gconv/IBM918.so
+usr/lib/gconv/IBM921.so
+usr/lib/gconv/IBM922.so
+usr/lib/gconv/IBM930.so
+usr/lib/gconv/IBM932.so
+usr/lib/gconv/IBM933.so
+usr/lib/gconv/IBM935.so
+usr/lib/gconv/IBM937.so
+usr/lib/gconv/IBM939.so
+usr/lib/gconv/IBM943.so
+usr/lib/gconv/IBM9448.so
+usr/lib/gconv/IEC_P27-1.so
+usr/lib/gconv/INIS-8.so
+usr/lib/gconv/INIS-CYRILLIC.so
+usr/lib/gconv/INIS.so
+usr/lib/gconv/ISIRI-3342.so
+usr/lib/gconv/ISO-2022-CN-EXT.so
+usr/lib/gconv/ISO-2022-CN.so
+usr/lib/gconv/ISO-2022-JP-3.so
+usr/lib/gconv/ISO-2022-JP.so
+usr/lib/gconv/ISO-2022-KR.so
+usr/lib/gconv/ISO-IR-197.so
+usr/lib/gconv/ISO-IR-209.so
+usr/lib/gconv/ISO646.so
+usr/lib/gconv/ISO8859-1.so
+usr/lib/gconv/ISO8859-10.so
+usr/lib/gconv/ISO8859-11.so
+usr/lib/gconv/ISO8859-13.so
+usr/lib/gconv/ISO8859-14.so
+usr/lib/gconv/ISO8859-15.so
+usr/lib/gconv/ISO8859-16.so
+usr/lib/gconv/ISO8859-2.so
+usr/lib/gconv/ISO8859-3.so
+usr/lib/gconv/ISO8859-4.so
+usr/lib/gconv/ISO8859-5.so
+usr/lib/gconv/ISO8859-6.so
+usr/lib/gconv/ISO8859-7.so
+usr/lib/gconv/ISO8859-8.so
+usr/lib/gconv/ISO8859-9.so
+usr/lib/gconv/ISO8859-9E.so
+usr/lib/gconv/ISO_10367-BOX.so
+usr/lib/gconv/ISO_11548-1.so
+usr/lib/gconv/ISO_2033.so
+usr/lib/gconv/ISO_5427-EXT.so
+usr/lib/gconv/ISO_5427.so
+usr/lib/gconv/ISO_5428.so
+usr/lib/gconv/ISO_6937-2.so
+usr/lib/gconv/ISO_6937.so
+usr/lib/gconv/JOHAB.so
+usr/lib/gconv/KOI-8.so
+usr/lib/gconv/KOI8-R.so
+usr/lib/gconv/KOI8-RU.so
+usr/lib/gconv/KOI8-T.so
+usr/lib/gconv/KOI8-U.so
+usr/lib/gconv/LATIN-GREEK-1.so
+usr/lib/gconv/LATIN-GREEK.so
+usr/lib/gconv/MAC-CENTRALEUROPE.so
+usr/lib/gconv/MAC-IS.so
+usr/lib/gconv/MAC-SAMI.so
+usr/lib/gconv/MAC-UK.so
+usr/lib/gconv/MACINTOSH.so
+usr/lib/gconv/MIK.so
+usr/lib/gconv/NATS-DANO.so
+usr/lib/gconv/NATS-SEFI.so
+usr/lib/gconv/PT154.so
+usr/lib/gconv/RK1048.so
+usr/lib/gconv/SAMI-WS2.so
+usr/lib/gconv/SHIFT_JISX0213.so
+usr/lib/gconv/SJIS.so
+usr/lib/gconv/T.61.so
+usr/lib/gconv/TCVN5712-1.so
+usr/lib/gconv/TIS-620.so
+usr/lib/gconv/TSCII.so
+usr/lib/gconv/UHC.so
+usr/lib/gconv/UNICODE.so
+usr/lib/gconv/UTF-16.so
+usr/lib/gconv/UTF-32.so
+usr/lib/gconv/UTF-7.so
+usr/lib/gconv/VISCII.so
+usr/lib/gconv/gconv-modules
+usr/lib/gconv/gconv-modules.cache
+usr/lib/gconv/libCNS.so
+usr/lib/gconv/libGB.so
+usr/lib/gconv/libISOIR165.so
+usr/lib/gconv/libJIS.so
+usr/lib/gconv/libJISX0213.so
+usr/lib/gconv/libKSC.so
+usr/lib/i686/nosegneg/libc-2.17.so
+usr/lib/i686/nosegneg/libc.so.6
+usr/lib/i686/nosegneg/libm-2.17.so
+usr/lib/i686/nosegneg/libm.so.6
+usr/lib/i686/nosegneg/libpthread-2.17.so
+usr/lib/i686/nosegneg/libpthread.so.0
+usr/lib/i686/nosegneg/librt-2.17.so
+usr/lib/i686/nosegneg/librt.so.1
+usr/lib/i686/nosegneg/libthread_db-1.0.so
+usr/lib/i686/nosegneg/libthread_db.so.1
+usr/lib/krb5/plugins/kdb/db2.so
+usr/lib/krb5/plugins/tls/k5tls.so
+usr/lib/ld-2.17.so
+usr/lib/ld-linux.so.2
+usr/lib/ld-lsb.so.3
+usr/lib/libBrokenLocale-2.17.so
+usr/lib/libBrokenLocale.so.1
+usr/lib/libSegFault.so
+usr/lib/libacl.so.1
+usr/lib/libacl.so.1.1.0
+usr/lib/libanl-2.17.so
+usr/lib/libanl.so.1
+usr/lib/libattr.so.1
+usr/lib/libattr.so.1.1.0
+usr/lib/libblkid.so.1
+usr/lib/libblkid.so.1.1.0
+usr/lib/libbz2.so.1
+usr/lib/libbz2.so.1.0.6
+usr/lib/libc-2.17.so
+usr/lib/libc.so.6
+usr/lib/libcap.so.2
+usr/lib/libcap.so.2.22
+usr/lib/libcidn-2.17.so
+usr/lib/libcidn.so.1
+usr/lib/libcom_err.so.2
+usr/lib/libcom_err.so.2.1
+usr/lib/libcrypt-2.17.so
+usr/lib/libcrypt.so.1
+usr/lib/libdb-4.7.so
+usr/lib/libdb-5.3.so
+usr/lib/libdb-5.so
+usr/lib/libdb_cxx-4.7.so
+usr/lib/libdl-2.17.so
+usr/lib/libdl.so.2
+usr/lib/libe2p.so.2
+usr/lib/libe2p.so.2.3
+usr/lib/libext2fs.so.2
+usr/lib/libext2fs.so.2.4
+usr/lib/libfam.so.0
+usr/lib/libfam.so.0.0.0
+usr/lib/libform.so.5
+usr/lib/libform.so.5.9
+usr/lib/libformw.so.5
+usr/lib/libformw.so.5.9
+usr/lib/libfreetype.so.6
+usr/lib/libfreetype.so.6.10.0
+usr/lib/libgamin-1.so.0
+usr/lib/libgamin-1.so.0.1.10
+usr/lib/libgcc_s-4.8.5-20150702.so.1
+usr/lib/libgcc_s.so.1
+usr/lib/libgdbm.so.4
+usr/lib/libgdbm.so.4.0.0
+usr/lib/libgdbm_compat.so.4
+usr/lib/libgdbm_compat.so.4.0.0
+usr/lib/libgio-2.0.so.0
+usr/lib/libgio-2.0.so.0.4200.2
+usr/lib/libglib-2.0.so.0
+usr/lib/libglib-2.0.so.0.4200.2
+usr/lib/libgmodule-2.0.so.0
+usr/lib/libgmodule-2.0.so.0.4200.2
+usr/lib/libgmp.so.10
+usr/lib/libgmp.so.10.2.0
+usr/lib/libgmpxx.so.4
+usr/lib/libgmpxx.so.4.4.0
+usr/lib/libgobject-2.0.so.0
+usr/lib/libgobject-2.0.so.0.4200.2
+usr/lib/libgssapi_krb5.so.2
+usr/lib/libgssapi_krb5.so.2.2
+usr/lib/libgssrpc.so.4
+usr/lib/libgssrpc.so.4.2
+usr/lib/libgthread-2.0.so.0
+usr/lib/libgthread-2.0.so.0.4200.2
+usr/lib/libhistory.so.6
+usr/lib/libhistory.so.6.2
+usr/lib/libidn.so.11
+usr/lib/libidn.so.11.6.11
+usr/lib/libk5crypto.so.3
+usr/lib/libk5crypto.so.3.1
+usr/lib/libkadm5clnt_mit.so.8
+usr/lib/libkadm5clnt_mit.so.8.0
+usr/lib/libkadm5srv_mit.so.9
+usr/lib/libkadm5srv_mit.so.9.0
+usr/lib/libkdb5.so.8
+usr/lib/libkdb5.so.8.0
+usr/lib/libkeyutils.so.1
+usr/lib/libkeyutils.so.1.5
+usr/lib/libkrad.so.0
+usr/lib/libkrad.so.0.0
+usr/lib/libkrb5.so.3
+usr/lib/libkrb5.so.3.3
+usr/lib/libkrb5support.so.0
+usr/lib/libkrb5support.so.0.1
+usr/lib/liblzma.so.5
+usr/lib/liblzma.so.5.0.99
+usr/lib/libm-2.17.so
+usr/lib/libm.so.6
+usr/lib/libmemusage.so
+usr/lib/libmenu.so.5
+usr/lib/libmenu.so.5.9
+usr/lib/libmenuw.so.5
+usr/lib/libmenuw.so.5.9
+usr/lib/libncurses++.so.5
+usr/lib/libncurses++.so.5.9
+usr/lib/libncurses++w.so.5
+usr/lib/libncurses++w.so.5.9
+usr/lib/libncurses.so.5
+usr/lib/libncurses.so.5.9
+usr/lib/libncursesw.so.5
+usr/lib/libncursesw.so.5.9
+usr/lib/libnsl-2.17.so
+usr/lib/libnsl.so.1
+usr/lib/libnss_compat-2.17.so
+usr/lib/libnss_compat.so.2
+usr/lib/libnss_db-2.17.so
+usr/lib/libnss_db.so.2
+usr/lib/libnss_dns-2.17.so
+usr/lib/libnss_dns.so.2
+usr/lib/libnss_files-2.17.so
+usr/lib/libnss_files.so.2
+usr/lib/libnss_hesiod-2.17.so
+usr/lib/libnss_hesiod.so.2
+usr/lib/libnss_nis-2.17.so
+usr/lib/libnss_nis.so.2
+usr/lib/libnss_nisplus-2.17.so
+usr/lib/libnss_nisplus.so.2
+usr/lib/libpanel.so.5
+usr/lib/libpanel.so.5.9
+usr/lib/libpanelw.so.5
+usr/lib/libpanelw.so.5.9
+usr/lib/libpcprofile.so
+usr/lib/libpcre.so.1
+usr/lib/libpcre.so.1.2.0
+usr/lib/libpcre16.so.0
+usr/lib/libpcre16.so.0.2.0
+usr/lib/libpcre32.so.0
+usr/lib/libpcre32.so.0.0.0
+usr/lib/libpcrecpp.so.0
+usr/lib/libpcrecpp.so.0.0.0
+usr/lib/libpcreposix.so.0
+usr/lib/libpcreposix.so.0.0.1
+usr/lib/libpopt.so.0
+usr/lib/libpopt.so.0.0.0
+usr/lib/libpthread-2.17.so
+usr/lib/libpthread.so.0
+usr/lib/libreadline.so.6
+usr/lib/libreadline.so.6.2
+usr/lib/libresolv-2.17.so
+usr/lib/libresolv.so.2
+usr/lib/librt-2.17.so
+usr/lib/librt.so.1
+usr/lib/libselinux.so.1
+usr/lib/libsepol.so.1
+usr/lib/libslang.so.2
+usr/lib/libslang.so.2.2.4
+usr/lib/libstdc++.so.5
+usr/lib/libstdc++.so.5.0.7
+usr/lib/libstdc++.so.6
+usr/lib/libstdc++.so.6.0.19
+usr/lib/libthread_db-1.0.so
+usr/lib/libthread_db.so.1
+usr/lib/libtic.so.5
+usr/lib/libtic.so.5.9
+usr/lib/libtinfo.so.5
+usr/lib/libtinfo.so.5.9
+usr/lib/libutil-2.17.so
+usr/lib/libutil.so.1
+usr/lib/libuuid.so.1
+usr/lib/libuuid.so.1.3.0
+usr/lib/libz.so.1
+usr/lib/libz.so.1.2.7
+usr/lib/locale/locale-archive
+usr/lib/lsb/init-functions
+usr/lib/lsb/install_initd
+usr/lib/lsb/remove_initd
+usr/lib/rtkaio/i686/nosegneg/librt.so.1
+usr/lib/rtkaio/i686/nosegneg/librtkaio-2.17.so
+usr/lib/rtkaio/librt.so.1
+usr/lib/rtkaio/librtkaio-2.17.so
+usr/lib/security/pam_cap.so
+usr/lib/sse2/fipscheck/libgmp.so.10.2.0.hmac
+usr/lib/sse2/fipscheck/libgmp.so.10.hmac
+usr/lib/sse2/libgmp.so.10
+usr/lib/sse2/libgmp.so.10.2.0
+usr/lib/sse2/libgmpxx.so.4
+usr/lib/sse2/libgmpxx.so.4.4.0
+usr/lib/systemd/system-preset/85-display-manager.preset
+usr/lib/systemd/system-preset/90-default.preset
+usr/lib/systemd/system/fstrim.service
+usr/lib/systemd/system/fstrim.timer
+usr/lib/tmpfiles.d/libselinux.conf
+usr/lib/udev/rules.d/60-raw.rules
+usr/lib64/audit/sotruss-lib.so
+usr/lib64/db4.7.25/libdb.so
+usr/lib64/db4.7.25/libdb_cxx.so
+usr/lib64/fipscheck/libgmp.so.10.2.0.hmac
+usr/lib64/fipscheck/libgmp.so.10.hmac
+usr/lib64/gconv/ANSI_X3.110.so
+usr/lib64/gconv/ARMSCII-8.so
+usr/lib64/gconv/ASMO_449.so
+usr/lib64/gconv/BIG5.so
+usr/lib64/gconv/BIG5HKSCS.so
+usr/lib64/gconv/BRF.so
+usr/lib64/gconv/CP10007.so
+usr/lib64/gconv/CP1125.so
+usr/lib64/gconv/CP1250.so
+usr/lib64/gconv/CP1251.so
+usr/lib64/gconv/CP1252.so
+usr/lib64/gconv/CP1253.so
+usr/lib64/gconv/CP1254.so
+usr/lib64/gconv/CP1255.so
+usr/lib64/gconv/CP1256.so
+usr/lib64/gconv/CP1257.so
+usr/lib64/gconv/CP1258.so
+usr/lib64/gconv/CP737.so
+usr/lib64/gconv/CP770.so
+usr/lib64/gconv/CP771.so
+usr/lib64/gconv/CP772.so
+usr/lib64/gconv/CP773.so
+usr/lib64/gconv/CP774.so
+usr/lib64/gconv/CP775.so
+usr/lib64/gconv/CP932.so
+usr/lib64/gconv/CSN_369103.so
+usr/lib64/gconv/CWI.so
+usr/lib64/gconv/DEC-MCS.so
+usr/lib64/gconv/EBCDIC-AT-DE-A.so
+usr/lib64/gconv/EBCDIC-AT-DE.so
+usr/lib64/gconv/EBCDIC-CA-FR.so
+usr/lib64/gconv/EBCDIC-DK-NO-A.so
+usr/lib64/gconv/EBCDIC-DK-NO.so
+usr/lib64/gconv/EBCDIC-ES-A.so
+usr/lib64/gconv/EBCDIC-ES-S.so
+usr/lib64/gconv/EBCDIC-ES.so
+usr/lib64/gconv/EBCDIC-FI-SE-A.so
+usr/lib64/gconv/EBCDIC-FI-SE.so
+usr/lib64/gconv/EBCDIC-FR.so
+usr/lib64/gconv/EBCDIC-IS-FRISS.so
+usr/lib64/gconv/EBCDIC-IT.so
+usr/lib64/gconv/EBCDIC-PT.so
+usr/lib64/gconv/EBCDIC-UK.so
+usr/lib64/gconv/EBCDIC-US.so
+usr/lib64/gconv/ECMA-CYRILLIC.so
+usr/lib64/gconv/EUC-CN.so
+usr/lib64/gconv/EUC-JISX0213.so
+usr/lib64/gconv/EUC-JP-MS.so
+usr/lib64/gconv/EUC-JP.so
+usr/lib64/gconv/EUC-KR.so
+usr/lib64/gconv/EUC-TW.so
+usr/lib64/gconv/GB18030.so
+usr/lib64/gconv/GBBIG5.so
+usr/lib64/gconv/GBGBK.so
+usr/lib64/gconv/GBK.so
+usr/lib64/gconv/GEORGIAN-ACADEMY.so
+usr/lib64/gconv/GEORGIAN-PS.so
+usr/lib64/gconv/GOST_19768-74.so
+usr/lib64/gconv/GREEK-CCITT.so
+usr/lib64/gconv/GREEK7-OLD.so
+usr/lib64/gconv/GREEK7.so
+usr/lib64/gconv/HP-GREEK8.so
+usr/lib64/gconv/HP-ROMAN8.so
+usr/lib64/gconv/HP-ROMAN9.so
+usr/lib64/gconv/HP-THAI8.so
+usr/lib64/gconv/HP-TURKISH8.so
+usr/lib64/gconv/IBM037.so
+usr/lib64/gconv/IBM038.so
+usr/lib64/gconv/IBM1004.so
+usr/lib64/gconv/IBM1008.so
+usr/lib64/gconv/IBM1008_420.so
+usr/lib64/gconv/IBM1025.so
+usr/lib64/gconv/IBM1026.so
+usr/lib64/gconv/IBM1046.so
+usr/lib64/gconv/IBM1047.so
+usr/lib64/gconv/IBM1097.so
+usr/lib64/gconv/IBM1112.so
+usr/lib64/gconv/IBM1122.so
+usr/lib64/gconv/IBM1123.so
+usr/lib64/gconv/IBM1124.so
+usr/lib64/gconv/IBM1129.so
+usr/lib64/gconv/IBM1130.so
+usr/lib64/gconv/IBM1132.so
+usr/lib64/gconv/IBM1133.so
+usr/lib64/gconv/IBM1137.so
+usr/lib64/gconv/IBM1140.so
+usr/lib64/gconv/IBM1141.so
+usr/lib64/gconv/IBM1142.so
+usr/lib64/gconv/IBM1143.so
+usr/lib64/gconv/IBM1144.so
+usr/lib64/gconv/IBM1145.so
+usr/lib64/gconv/IBM1146.so
+usr/lib64/gconv/IBM1147.so
+usr/lib64/gconv/IBM1148.so
+usr/lib64/gconv/IBM1149.so
+usr/lib64/gconv/IBM1153.so
+usr/lib64/gconv/IBM1154.so
+usr/lib64/gconv/IBM1155.so
+usr/lib64/gconv/IBM1156.so
+usr/lib64/gconv/IBM1157.so
+usr/lib64/gconv/IBM1158.so
+usr/lib64/gconv/IBM1160.so
+usr/lib64/gconv/IBM1161.so
+usr/lib64/gconv/IBM1162.so
+usr/lib64/gconv/IBM1163.so
+usr/lib64/gconv/IBM1164.so
+usr/lib64/gconv/IBM1166.so
+usr/lib64/gconv/IBM1167.so
+usr/lib64/gconv/IBM12712.so
+usr/lib64/gconv/IBM1364.so
+usr/lib64/gconv/IBM1371.so
+usr/lib64/gconv/IBM1388.so
+usr/lib64/gconv/IBM1390.so
+usr/lib64/gconv/IBM1399.so
+usr/lib64/gconv/IBM16804.so
+usr/lib64/gconv/IBM256.so
+usr/lib64/gconv/IBM273.so
+usr/lib64/gconv/IBM274.so
+usr/lib64/gconv/IBM275.so
+usr/lib64/gconv/IBM277.so
+usr/lib64/gconv/IBM278.so
+usr/lib64/gconv/IBM280.so
+usr/lib64/gconv/IBM281.so
+usr/lib64/gconv/IBM284.so
+usr/lib64/gconv/IBM285.so
+usr/lib64/gconv/IBM290.so
+usr/lib64/gconv/IBM297.so
+usr/lib64/gconv/IBM420.so
+usr/lib64/gconv/IBM423.so
+usr/lib64/gconv/IBM424.so
+usr/lib64/gconv/IBM437.so
+usr/lib64/gconv/IBM4517.so
+usr/lib64/gconv/IBM4899.so
+usr/lib64/gconv/IBM4909.so
+usr/lib64/gconv/IBM4971.so
+usr/lib64/gconv/IBM500.so
+usr/lib64/gconv/IBM5347.so
+usr/lib64/gconv/IBM803.so
+usr/lib64/gconv/IBM850.so
+usr/lib64/gconv/IBM851.so
+usr/lib64/gconv/IBM852.so
+usr/lib64/gconv/IBM855.so
+usr/lib64/gconv/IBM856.so
+usr/lib64/gconv/IBM857.so
+usr/lib64/gconv/IBM860.so
+usr/lib64/gconv/IBM861.so
+usr/lib64/gconv/IBM862.so
+usr/lib64/gconv/IBM863.so
+usr/lib64/gconv/IBM864.so
+usr/lib64/gconv/IBM865.so
+usr/lib64/gconv/IBM866.so
+usr/lib64/gconv/IBM866NAV.so
+usr/lib64/gconv/IBM868.so
+usr/lib64/gconv/IBM869.so
+usr/lib64/gconv/IBM870.so
+usr/lib64/gconv/IBM871.so
+usr/lib64/gconv/IBM874.so
+usr/lib64/gconv/IBM875.so
+usr/lib64/gconv/IBM880.so
+usr/lib64/gconv/IBM891.so
+usr/lib64/gconv/IBM901.so
+usr/lib64/gconv/IBM902.so
+usr/lib64/gconv/IBM903.so
+usr/lib64/gconv/IBM9030.so
+usr/lib64/gconv/IBM904.so
+usr/lib64/gconv/IBM905.so
+usr/lib64/gconv/IBM9066.so
+usr/lib64/gconv/IBM918.so
+usr/lib64/gconv/IBM921.so
+usr/lib64/gconv/IBM922.so
+usr/lib64/gconv/IBM930.so
+usr/lib64/gconv/IBM932.so
+usr/lib64/gconv/IBM933.so
+usr/lib64/gconv/IBM935.so
+usr/lib64/gconv/IBM937.so
+usr/lib64/gconv/IBM939.so
+usr/lib64/gconv/IBM943.so
+usr/lib64/gconv/IBM9448.so
+usr/lib64/gconv/IEC_P27-1.so
+usr/lib64/gconv/INIS-8.so
+usr/lib64/gconv/INIS-CYRILLIC.so
+usr/lib64/gconv/INIS.so
+usr/lib64/gconv/ISIRI-3342.so
+usr/lib64/gconv/ISO-2022-CN-EXT.so
+usr/lib64/gconv/ISO-2022-CN.so
+usr/lib64/gconv/ISO-2022-JP-3.so
+usr/lib64/gconv/ISO-2022-JP.so
+usr/lib64/gconv/ISO-2022-KR.so
+usr/lib64/gconv/ISO-IR-197.so
+usr/lib64/gconv/ISO-IR-209.so
+usr/lib64/gconv/ISO646.so
+usr/lib64/gconv/ISO8859-1.so
+usr/lib64/gconv/ISO8859-10.so
+usr/lib64/gconv/ISO8859-11.so
+usr/lib64/gconv/ISO8859-13.so
+usr/lib64/gconv/ISO8859-14.so
+usr/lib64/gconv/ISO8859-15.so
+usr/lib64/gconv/ISO8859-16.so
+usr/lib64/gconv/ISO8859-2.so
+usr/lib64/gconv/ISO8859-3.so
+usr/lib64/gconv/ISO8859-4.so
+usr/lib64/gconv/ISO8859-5.so
+usr/lib64/gconv/ISO8859-6.so
+usr/lib64/gconv/ISO8859-7.so
+usr/lib64/gconv/ISO8859-8.so
+usr/lib64/gconv/ISO8859-9.so
+usr/lib64/gconv/ISO8859-9E.so
+usr/lib64/gconv/ISO_10367-BOX.so
+usr/lib64/gconv/ISO_11548-1.so
+usr/lib64/gconv/ISO_2033.so
+usr/lib64/gconv/ISO_5427-EXT.so
+usr/lib64/gconv/ISO_5427.so
+usr/lib64/gconv/ISO_5428.so
+usr/lib64/gconv/ISO_6937-2.so
+usr/lib64/gconv/ISO_6937.so
+usr/lib64/gconv/JOHAB.so
+usr/lib64/gconv/KOI-8.so
+usr/lib64/gconv/KOI8-R.so
+usr/lib64/gconv/KOI8-RU.so
+usr/lib64/gconv/KOI8-T.so
+usr/lib64/gconv/KOI8-U.so
+usr/lib64/gconv/LATIN-GREEK-1.so
+usr/lib64/gconv/LATIN-GREEK.so
+usr/lib64/gconv/MAC-CENTRALEUROPE.so
+usr/lib64/gconv/MAC-IS.so
+usr/lib64/gconv/MAC-SAMI.so
+usr/lib64/gconv/MAC-UK.so
+usr/lib64/gconv/MACINTOSH.so
+usr/lib64/gconv/MIK.so
+usr/lib64/gconv/NATS-DANO.so
+usr/lib64/gconv/NATS-SEFI.so
+usr/lib64/gconv/PT154.so
+usr/lib64/gconv/RK1048.so
+usr/lib64/gconv/SAMI-WS2.so
+usr/lib64/gconv/SHIFT_JISX0213.so
+usr/lib64/gconv/SJIS.so
+usr/lib64/gconv/T.61.so
+usr/lib64/gconv/TCVN5712-1.so
+usr/lib64/gconv/TIS-620.so
+usr/lib64/gconv/TSCII.so
+usr/lib64/gconv/UHC.so
+usr/lib64/gconv/UNICODE.so
+usr/lib64/gconv/UTF-16.so
+usr/lib64/gconv/UTF-32.so
+usr/lib64/gconv/UTF-7.so
+usr/lib64/gconv/VISCII.so
+usr/lib64/gconv/gconv-modules
+usr/lib64/gconv/gconv-modules.cache
+usr/lib64/gconv/libCNS.so
+usr/lib64/gconv/libGB.so
+usr/lib64/gconv/libISOIR165.so
+usr/lib64/gconv/libJIS.so
+usr/lib64/gconv/libJISX0213.so
+usr/lib64/gconv/libKSC.so
+usr/lib64/krb5/plugins/kdb/db2.so
+usr/lib64/krb5/plugins/tls/k5tls.so
+usr/lib64/ld-2.17.so
+usr/lib64/ld-linux-x86-64.so.2
+usr/lib64/ld-lsb-x86-64.so.3
+usr/lib64/libBrokenLocale-2.17.so
+usr/lib64/libBrokenLocale.so.1
+usr/lib64/libSegFault.so
+usr/lib64/libacl.so.1
+usr/lib64/libacl.so.1.1.0
+usr/lib64/libanl-2.17.so
+usr/lib64/libanl.so.1
+usr/lib64/libattr.so.1
+usr/lib64/libattr.so.1.1.0
+usr/lib64/libblkid.so.1
+usr/lib64/libblkid.so.1.1.0
+usr/lib64/libbz2.so.1
+usr/lib64/libbz2.so.1.0.6
+usr/lib64/libc-2.17.so
+usr/lib64/libc.so.6
+usr/lib64/libcap.so.2
+usr/lib64/libcap.so.2.22
+usr/lib64/libcidn-2.17.so
+usr/lib64/libcidn.so.1
+usr/lib64/libcom_err.so.2
+usr/lib64/libcom_err.so.2.1
+usr/lib64/libcrypt-2.17.so
+usr/lib64/libcrypt.so.1
+usr/lib64/libdb-4.7.so
+usr/lib64/libdb-5.3.so
+usr/lib64/libdb-5.so
+usr/lib64/libdb_cxx-4.7.so
+usr/lib64/libdl-2.17.so
+usr/lib64/libdl.so.2
+usr/lib64/libe2p.so.2
+usr/lib64/libe2p.so.2.3
+usr/lib64/libext2fs.so.2
+usr/lib64/libext2fs.so.2.4
+usr/lib64/libfam.so.0
+usr/lib64/libfam.so.0.0.0
+usr/lib64/libform.so.5
+usr/lib64/libform.so.5.9
+usr/lib64/libformw.so.5
+usr/lib64/libformw.so.5.9
+usr/lib64/libfreetype.so.6
+usr/lib64/libfreetype.so.6.10.0
+usr/lib64/libgamin-1.so.0
+usr/lib64/libgamin-1.so.0.1.10
+usr/lib64/libgcc_s-4.8.5-20150702.so.1
+usr/lib64/libgcc_s.so.1
+usr/lib64/libgdbm.so.4
+usr/lib64/libgdbm.so.4.0.0
+usr/lib64/libgdbm_compat.so.4
+usr/lib64/libgdbm_compat.so.4.0.0
+usr/lib64/libgio-2.0.so.0
+usr/lib64/libgio-2.0.so.0.4200.2
+usr/lib64/libglib-2.0.so.0
+usr/lib64/libglib-2.0.so.0.4200.2
+usr/lib64/libgmodule-2.0.so.0
+usr/lib64/libgmodule-2.0.so.0.4200.2
+usr/lib64/libgmp.so.10
+usr/lib64/libgmp.so.10.2.0
+usr/lib64/libgmpxx.so.4
+usr/lib64/libgmpxx.so.4.4.0
+usr/lib64/libgobject-2.0.so.0
+usr/lib64/libgobject-2.0.so.0.4200.2
+usr/lib64/libgssapi_krb5.so.2
+usr/lib64/libgssapi_krb5.so.2.2
+usr/lib64/libgssrpc.so.4
+usr/lib64/libgssrpc.so.4.2
+usr/lib64/libgthread-2.0.so.0
+usr/lib64/libgthread-2.0.so.0.4200.2
+usr/lib64/libhistory.so.6
+usr/lib64/libhistory.so.6.2
+usr/lib64/libidn.so.11
+usr/lib64/libidn.so.11.6.11
+usr/lib64/libk5crypto.so.3
+usr/lib64/libk5crypto.so.3.1
+usr/lib64/libkadm5clnt_mit.so.8
+usr/lib64/libkadm5clnt_mit.so.8.0
+usr/lib64/libkadm5srv_mit.so.9
+usr/lib64/libkadm5srv_mit.so.9.0
+usr/lib64/libkdb5.so.8
+usr/lib64/libkdb5.so.8.0
+usr/lib64/libkeyutils.so.1
+usr/lib64/libkeyutils.so.1.5
+usr/lib64/libkrad.so.0
+usr/lib64/libkrad.so.0.0
+usr/lib64/libkrb5.so.3
+usr/lib64/libkrb5.so.3.3
+usr/lib64/libkrb5support.so.0
+usr/lib64/libkrb5support.so.0.1
+usr/lib64/liblzma.so.5
+usr/lib64/liblzma.so.5.0.99
+usr/lib64/libm-2.17.so
+usr/lib64/libm.so.6
+usr/lib64/libmemusage.so
+usr/lib64/libmenu.so.5
+usr/lib64/libmenu.so.5.9
+usr/lib64/libmenuw.so.5
+usr/lib64/libmenuw.so.5.9
+usr/lib64/libncurses++.so.5
+usr/lib64/libncurses++.so.5.9
+usr/lib64/libncurses++w.so.5
+usr/lib64/libncurses++w.so.5.9
+usr/lib64/libncurses.so.5
+usr/lib64/libncurses.so.5.9
+usr/lib64/libncursesw.so.5
+usr/lib64/libncursesw.so.5.9
+usr/lib64/libnsl-2.17.so
+usr/lib64/libnsl.so.1
+usr/lib64/libnss_compat-2.17.so
+usr/lib64/libnss_compat.so.2
+usr/lib64/libnss_db-2.17.so
+usr/lib64/libnss_db.so.2
+usr/lib64/libnss_dns-2.17.so
+usr/lib64/libnss_dns.so.2
+usr/lib64/libnss_files-2.17.so
+usr/lib64/libnss_files.so.2
+usr/lib64/libnss_hesiod-2.17.so
+usr/lib64/libnss_hesiod.so.2
+usr/lib64/libnss_nis-2.17.so
+usr/lib64/libnss_nis.so.2
+usr/lib64/libnss_nisplus-2.17.so
+usr/lib64/libnss_nisplus.so.2
+usr/lib64/libpanel.so.5
+usr/lib64/libpanel.so.5.9
+usr/lib64/libpanelw.so.5
+usr/lib64/libpanelw.so.5.9
+usr/lib64/libpcprofile.so
+usr/lib64/libpcre.so.1
+usr/lib64/libpcre.so.1.2.0
+usr/lib64/libpcre16.so.0
+usr/lib64/libpcre16.so.0.2.0
+usr/lib64/libpcre32.so.0
+usr/lib64/libpcre32.so.0.0.0
+usr/lib64/libpcrecpp.so.0
+usr/lib64/libpcrecpp.so.0.0.0
+usr/lib64/libpcreposix.so.0
+usr/lib64/libpcreposix.so.0.0.1
+usr/lib64/libpopt.so.0
+usr/lib64/libpopt.so.0.0.0
+usr/lib64/libpthread-2.17.so
+usr/lib64/libpthread.so.0
+usr/lib64/libreadline.so.6
+usr/lib64/libreadline.so.6.2
+usr/lib64/libresolv-2.17.so
+usr/lib64/libresolv.so.2
+usr/lib64/librt-2.17.so
+usr/lib64/librt.so.1
+usr/lib64/libselinux.so.1
+usr/lib64/libsepol.so.1
+usr/lib64/libslang.so.2
+usr/lib64/libslang.so.2.2.4
+usr/lib64/libstdc++.so.5
+usr/lib64/libstdc++.so.5.0.7
+usr/lib64/libstdc++.so.6
+usr/lib64/libstdc++.so.6.0.19
+usr/lib64/libthread_db-1.0.so
+usr/lib64/libthread_db.so.1
+usr/lib64/libtic.so.5
+usr/lib64/libtic.so.5.9
+usr/lib64/libtinfo.so.5
+usr/lib64/libtinfo.so.5.9
+usr/lib64/libutil-2.17.so
+usr/lib64/libutil.so.1
+usr/lib64/libuuid.so.1
+usr/lib64/libuuid.so.1.3.0
+usr/lib64/libz.so.1
+usr/lib64/libz.so.1.2.7
+usr/lib64/rtkaio/librt.so.1
+usr/lib64/rtkaio/librtkaio-2.17.so
+usr/lib64/security/pam_cap.so
+usr/libexec/coreutils/libstdbuf.so
+usr/libexec/gam_server
+usr/libexec/getconf/POSIX_V6_ILP32_OFF32
+usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
+usr/libexec/getconf/POSIX_V6_LP64_OFF64
+usr/libexec/getconf/POSIX_V7_ILP32_OFF32
+usr/libexec/getconf/POSIX_V7_ILP32_OFFBIG
+usr/libexec/getconf/POSIX_V7_LP64_OFF64
+usr/libexec/getconf/XBS5_ILP32_OFF32
+usr/libexec/getconf/XBS5_ILP32_OFFBIG
+usr/libexec/getconf/XBS5_LP64_OFF64
+usr/libexec/grepconf.sh
+usr/sbin/addpart
+usr/sbin/agetty
+usr/sbin/badblocks
+usr/sbin/blkdiscard
+usr/sbin/blkid
+usr/sbin/blockdev
+usr/sbin/build-locale-archive
+usr/sbin/capsh
+usr/sbin/cfdisk
+usr/sbin/chcpu
+usr/sbin/chroot
+usr/sbin/clock
+usr/sbin/ctrlaltdel
+usr/sbin/debugfs
+usr/sbin/delpart
+usr/sbin/dumpe2fs
+usr/sbin/e2freefrag
+usr/sbin/e2fsck
+usr/sbin/e2image
+usr/sbin/e2label
+usr/sbin/e2undo
+usr/sbin/e4defrag
+usr/sbin/fdformat
+usr/sbin/fdisk
+usr/sbin/filefrag
+usr/sbin/findfs
+usr/sbin/fsck
+usr/sbin/fsck.cramfs
+usr/sbin/fsck.ext2
+usr/sbin/fsck.ext3
+usr/sbin/fsck.ext4
+usr/sbin/fsck.minix
+usr/sbin/fsfreeze
+usr/sbin/fstrim
+usr/sbin/getcap
+usr/sbin/getpcaps
+usr/sbin/glibc_post_upgrade.i686
+usr/sbin/glibc_post_upgrade.x86_64
+usr/sbin/hwclock
+usr/sbin/iconvconfig
+usr/sbin/iconvconfig.i686
+usr/sbin/iconvconfig.x86_64
+usr/sbin/install-info
+usr/sbin/key.dns_resolver
+usr/sbin/ldattach
+usr/sbin/ldconfig
+usr/sbin/logsave
+usr/sbin/losetup
+usr/sbin/mke2fs
+usr/sbin/mkfs
+usr/sbin/mkfs.cramfs
+usr/sbin/mkfs.ext2
+usr/sbin/mkfs.ext3
+usr/sbin/mkfs.ext4
+usr/sbin/mkfs.minix
+usr/sbin/mklost+found
+usr/sbin/mkswap
+usr/sbin/nologin
+usr/sbin/partx
+usr/sbin/pivot_root
+usr/sbin/readprofile
+usr/sbin/redhat_lsb_trigger.i686
+usr/sbin/redhat_lsb_trigger.x86_64
+usr/sbin/request-key
+usr/sbin/resize2fs
+usr/sbin/resizepart
+usr/sbin/rtcwake
+usr/sbin/runuser
+usr/sbin/sefcontext_compile
+usr/sbin/setcap
+usr/sbin/sfdisk
+usr/sbin/sln
+usr/sbin/sulogin
+usr/sbin/swaplabel
+usr/sbin/swapoff
+usr/sbin/swapon
+usr/sbin/switch_root
+usr/sbin/tune2fs
+usr/sbin/wipefs
+usr/sbin/zdump
+usr/sbin/zic
+usr/share/bash-completion/completions/addpart
+usr/share/bash-completion/completions/blkdiscard
+usr/share/bash-completion/completions/blkid
+usr/share/bash-completion/completions/blockdev
+usr/share/bash-completion/completions/cal
+usr/share/bash-completion/completions/cfdisk
+usr/share/bash-completion/completions/chcpu
+usr/share/bash-completion/completions/chfn
+usr/share/bash-completion/completions/chrt
+usr/share/bash-completion/completions/chsh
+usr/share/bash-completion/completions/col
+usr/share/bash-completion/completions/colcrt
+usr/share/bash-completion/completions/colrm
+usr/share/bash-completion/completions/column
+usr/share/bash-completion/completions/ctrlaltdel
+usr/share/bash-completion/completions/cytune
+usr/share/bash-completion/completions/delpart
+usr/share/bash-completion/completions/dmesg
+usr/share/bash-completion/completions/eject
+usr/share/bash-completion/completions/fallocate
+usr/share/bash-completion/completions/fdformat
+usr/share/bash-completion/completions/fdisk
+usr/share/bash-completion/completions/findmnt
+usr/share/bash-completion/completions/flock
+usr/share/bash-completion/completions/fsck
+usr/share/bash-completion/completions/fsck.cramfs
+usr/share/bash-completion/completions/fsck.minix
+usr/share/bash-completion/completions/fsfreeze
+usr/share/bash-completion/completions/fstrim
+usr/share/bash-completion/completions/gapplication
+usr/share/bash-completion/completions/gdbus
+usr/share/bash-completion/completions/getopt
+usr/share/bash-completion/completions/gsettings
+usr/share/bash-completion/completions/hexdump
+usr/share/bash-completion/completions/hwclock
+usr/share/bash-completion/completions/ionice
+usr/share/bash-completion/completions/ipcrm
+usr/share/bash-completion/completions/ipcs
+usr/share/bash-completion/completions/isosize
+usr/share/bash-completion/completions/ldattach
+usr/share/bash-completion/completions/logger
+usr/share/bash-completion/completions/look
+usr/share/bash-completion/completions/losetup
+usr/share/bash-completion/completions/lsblk
+usr/share/bash-completion/completions/lscpu
+usr/share/bash-completion/completions/lslocks
+usr/share/bash-completion/completions/mcookie
+usr/share/bash-completion/completions/mkfs
+usr/share/bash-completion/completions/mkfs.cramfs
+usr/share/bash-completion/completions/mkfs.minix
+usr/share/bash-completion/completions/mkswap
+usr/share/bash-completion/completions/more
+usr/share/bash-completion/completions/mountpoint
+usr/share/bash-completion/completions/namei
+usr/share/bash-completion/completions/nsenter
+usr/share/bash-completion/completions/partx
+usr/share/bash-completion/completions/pivot_root
+usr/share/bash-completion/completions/prlimit
+usr/share/bash-completion/completions/raw
+usr/share/bash-completion/completions/readprofile
+usr/share/bash-completion/completions/rename
+usr/share/bash-completion/completions/renice
+usr/share/bash-completion/completions/resizepart
+usr/share/bash-completion/completions/rev
+usr/share/bash-completion/completions/rtcwake
+usr/share/bash-completion/completions/runuser
+usr/share/bash-completion/completions/script
+usr/share/bash-completion/completions/scriptreplay
+usr/share/bash-completion/completions/setarch
+usr/share/bash-completion/completions/setpriv
+usr/share/bash-completion/completions/setsid
+usr/share/bash-completion/completions/setterm
+usr/share/bash-completion/completions/sfdisk
+usr/share/bash-completion/completions/su
+usr/share/bash-completion/completions/swaplabel
+usr/share/bash-completion/completions/swapon
+usr/share/bash-completion/completions/tailf
+usr/share/bash-completion/completions/taskset
+usr/share/bash-completion/completions/ul
+usr/share/bash-completion/completions/unshare
+usr/share/bash-completion/completions/utmpdump
+usr/share/bash-completion/completions/uuidgen
+usr/share/bash-completion/completions/wdctl
+usr/share/bash-completion/completions/whereis
+usr/share/bash-completion/completions/wipefs
+usr/share/bash-completion/completions/write
+usr/share/centos-release/EULA
+usr/share/doc/bash-4.2.46/COPYING
+usr/share/doc/bzip2-1.0.6/CHANGES
+usr/share/doc/bzip2-1.0.6/LICENSE
+usr/share/doc/bzip2-1.0.6/README
+usr/share/doc/bzip2-libs-1.0.6/LICENSE
+usr/share/doc/centos-release/Contributors
+usr/share/doc/centos-release/GPL
+usr/share/doc/compat-db47-4.7.25/db-4.7.25/LICENSE
+usr/share/doc/compat-db47-4.7.25/db-4.7.25/README
+usr/share/doc/coreutils-8.22/ABOUT-NLS
+usr/share/doc/coreutils-8.22/COPYING
+usr/share/doc/coreutils-8.22/ChangeLog.bz2
+usr/share/doc/coreutils-8.22/NEWS
+usr/share/doc/coreutils-8.22/README
+usr/share/doc/coreutils-8.22/THANKS
+usr/share/doc/coreutils-8.22/TODO
+usr/share/doc/coreutils-8.22/fileutils/ChangeLog-1997.bz2
+usr/share/doc/coreutils-8.22/fileutils/ChangeLog.bz2
+usr/share/doc/coreutils-8.22/fileutils/NEWS
+usr/share/doc/coreutils-8.22/sh-utils/ChangeLog.0.bz2
+usr/share/doc/coreutils-8.22/sh-utils/ChangeLog.bz2
+usr/share/doc/coreutils-8.22/sh-utils/NEWS
+usr/share/doc/coreutils-8.22/textutils/ChangeLog.bz2
+usr/share/doc/coreutils-8.22/textutils/NEWS
+usr/share/doc/e2fsprogs-1.42.9/COPYING
+usr/share/doc/e2fsprogs-1.42.9/README
+usr/share/doc/e2fsprogs-1.42.9/RELEASE-NOTES
+usr/share/doc/e2fsprogs-libs-1.42.9/COPYING
+usr/share/doc/elfutils-0.163/CONTRIBUTING
+usr/share/doc/elfutils-0.163/README
+usr/share/doc/elfutils-0.163/TODO
+usr/share/doc/findutils-4.5.11/AUTHORS
+usr/share/doc/findutils-4.5.11/COPYING
+usr/share/doc/findutils-4.5.11/ChangeLog
+usr/share/doc/findutils-4.5.11/NEWS
+usr/share/doc/findutils-4.5.11/README
+usr/share/doc/findutils-4.5.11/THANKS
+usr/share/doc/findutils-4.5.11/TODO
+usr/share/doc/freetype-2.4.11/CHANGES
+usr/share/doc/freetype-2.4.11/FTL.TXT
+usr/share/doc/freetype-2.4.11/GPLv2.TXT
+usr/share/doc/freetype-2.4.11/LICENSE.TXT
+usr/share/doc/freetype-2.4.11/README
+usr/share/doc/freetype-2.4.11/VERSION.DLL
+usr/share/doc/freetype-2.4.11/formats.txt
+usr/share/doc/freetype-2.4.11/ft2faq.html
+usr/share/doc/gamin-0.1.10/AUTHORS
+usr/share/doc/gamin-0.1.10/COPYING
+usr/share/doc/gamin-0.1.10/ChangeLog
+usr/share/doc/gamin-0.1.10/Copyright
+usr/share/doc/gamin-0.1.10/FAQ.html
+usr/share/doc/gamin-0.1.10/NEWS
+usr/share/doc/gamin-0.1.10/README
+usr/share/doc/gamin-0.1.10/TODO
+usr/share/doc/gamin-0.1.10/callbacks.gif
+usr/share/doc/gamin-0.1.10/client_server.gif
+usr/share/doc/gamin-0.1.10/config.html
+usr/share/doc/gamin-0.1.10/contacts.html
+usr/share/doc/gamin-0.1.10/debug.html
+usr/share/doc/gamin-0.1.10/debugging.txt
+usr/share/doc/gamin-0.1.10/devel.html
+usr/share/doc/gamin-0.1.10/differences.html
+usr/share/doc/gamin-0.1.10/downloads.html
+usr/share/doc/gamin-0.1.10/gamin.html
+usr/share/doc/gamin-0.1.10/index.html
+usr/share/doc/gamin-0.1.10/internals.html
+usr/share/doc/gamin-0.1.10/news.html
+usr/share/doc/gamin-0.1.10/overview.html
+usr/share/doc/gamin-0.1.10/python.html
+usr/share/doc/gamin-0.1.10/security.html
+usr/share/doc/gamin-0.1.10/server_structs.gif
+usr/share/doc/gamin-0.1.10/socket.txt
+usr/share/doc/gamin-0.1.10/using.html
+usr/share/doc/gdbm-1.10/AUTHORS
+usr/share/doc/gdbm-1.10/COPYING
+usr/share/doc/gdbm-1.10/NEWS
+usr/share/doc/gdbm-1.10/NOTE-WARNING
+usr/share/doc/gdbm-1.10/README
+usr/share/doc/gdbm-1.10/THANKS
+usr/share/doc/glib2-2.42.2/AUTHORS
+usr/share/doc/glib2-2.42.2/COPYING
+usr/share/doc/glib2-2.42.2/NEWS
+usr/share/doc/glib2-2.42.2/README
+usr/share/doc/glibc-2.17/BUGS
+usr/share/doc/glibc-2.17/CONFORMANCE
+usr/share/doc/glibc-2.17/COPYING
+usr/share/doc/glibc-2.17/COPYING.LIB
+usr/share/doc/glibc-2.17/INSTALL
+usr/share/doc/glibc-2.17/LICENSES
+usr/share/doc/glibc-2.17/NEWS
+usr/share/doc/glibc-2.17/PROJECTS
+usr/share/doc/glibc-2.17/README
+usr/share/doc/glibc-2.17/README.hesiod
+usr/share/doc/glibc-2.17/rtld-debugger-interface.txt
+usr/share/doc/glibc-common-2.17/ChangeLog.15.bz2
+usr/share/doc/glibc-common-2.17/ChangeLog.16.bz2
+usr/share/doc/glibc-common-2.17/ChangeLog.bz2
+usr/share/doc/glibc-common-2.17/README.timezone
+usr/share/doc/glibc-common-2.17/README.ufc-crypt
+usr/share/doc/glibc-common-2.17/gai.conf
+usr/share/doc/gmp-6.0.0/NEWS
+usr/share/doc/gmp-6.0.0/README
+usr/share/doc/grep-2.20/ABOUT-NLS
+usr/share/doc/grep-2.20/AUTHORS
+usr/share/doc/grep-2.20/COPYING
+usr/share/doc/grep-2.20/ChangeLog
+usr/share/doc/grep-2.20/NEWS
+usr/share/doc/grep-2.20/README
+usr/share/doc/grep-2.20/THANKS
+usr/share/doc/grep-2.20/TODO
+usr/share/doc/info-5.1/COPYING
+usr/share/doc/keyutils-1.5.8/LICENCE.GPL
+usr/share/doc/keyutils-1.5.8/README
+usr/share/doc/keyutils-libs-1.5.8/LICENCE.LGPL
+usr/share/doc/krb5-libs-1.13.2/NOTICE
+usr/share/doc/krb5-libs-1.13.2/README
+usr/share/doc/krb5-libs-1.13.2/examples/kdc.conf
+usr/share/doc/krb5-libs-1.13.2/examples/krb5.conf
+usr/share/doc/krb5-libs-1.13.2/examples/services.append
+usr/share/doc/less-458/LICENSE
+usr/share/doc/libblkid-2.23.2/COPYING
+usr/share/doc/libcap-2.22/License
+usr/share/doc/libcap-2.22/capability.notes
+usr/share/doc/libcom_err-1.42.9/COPYING
+usr/share/doc/libdb-5.3.21/LICENSE
+usr/share/doc/libdb-5.3.21/README
+usr/share/doc/libgcc-4.8.5/COPYING
+usr/share/doc/libgcc-4.8.5/COPYING.LIB
+usr/share/doc/libgcc-4.8.5/COPYING.RUNTIME
+usr/share/doc/libgcc-4.8.5/COPYING3
+usr/share/doc/libgcc-4.8.5/COPYING3.LIB
+usr/share/doc/libidn-1.28/AUTHORS
+usr/share/doc/libidn-1.28/COPYING
+usr/share/doc/libidn-1.28/COPYING.LESSERv2
+usr/share/doc/libidn-1.28/COPYING.LESSERv3
+usr/share/doc/libidn-1.28/COPYINGv2
+usr/share/doc/libidn-1.28/COPYINGv3
+usr/share/doc/libidn-1.28/FAQ
+usr/share/doc/libidn-1.28/NEWS
+usr/share/doc/libidn-1.28/README
+usr/share/doc/libidn-1.28/THANKS
+usr/share/doc/libuuid-2.23.2/COPYING
+usr/share/doc/ncurses-5.9/ANNOUNCE
+usr/share/doc/ncurses-5.9/AUTHORS
+usr/share/doc/ncurses-5.9/NEWS.bz2
+usr/share/doc/ncurses-5.9/README
+usr/share/doc/ncurses-5.9/TO-DO
+usr/share/doc/pcre-8.32/AUTHORS
+usr/share/doc/pcre-8.32/COPYING
+usr/share/doc/pcre-8.32/ChangeLog
+usr/share/doc/pcre-8.32/LICENCE
+usr/share/doc/pcre-8.32/NEWS
+usr/share/doc/pcre-8.32/README
+usr/share/doc/popt-1.13/CHANGES
+usr/share/doc/popt-1.13/COPYING
+usr/share/doc/readline-6.2/CHANGES
+usr/share/doc/readline-6.2/COPYING
+usr/share/doc/readline-6.2/NEWS
+usr/share/doc/readline-6.2/README
+usr/share/doc/readline-6.2/USAGE
+usr/share/doc/redhat-lsb-core-4.1/COPYING
+usr/share/doc/redhat-lsb-core-4.1/README
+usr/share/doc/redhat-lsb-core-4.1/README.lsb_release
+usr/share/doc/redhat-release
+usr/share/doc/sed-4.2.2/AUTHORS
+usr/share/doc/sed-4.2.2/BUGS
+usr/share/doc/sed-4.2.2/COPYING
+usr/share/doc/sed-4.2.2/COPYING.DOC
+usr/share/doc/sed-4.2.2/NEWS
+usr/share/doc/sed-4.2.2/README
+usr/share/doc/sed-4.2.2/THANKS
+usr/share/doc/sed-4.2.2/sedfaq.txt.gz
+usr/share/doc/setserial-2.17/README
+usr/share/doc/setserial-2.17/rc.serial
+usr/share/doc/setup-2.8.71/COPYING
+usr/share/doc/setup-2.8.71/uidgid
+usr/share/doc/slang-2.2.4/COPYING
+usr/share/doc/slang-2.2.4/NEWS
+usr/share/doc/slang-2.2.4/README
+usr/share/doc/slang-2.2.4/changes.txt
+usr/share/doc/slang-2.2.4/grammar.txt
+usr/share/doc/slang-2.2.4/slang.txt
+usr/share/doc/slang-2.2.4/slangfun.txt
+usr/share/doc/util-linux-2.23.2/AUTHORS
+usr/share/doc/util-linux-2.23.2/COPYING.BSD-3
+usr/share/doc/util-linux-2.23.2/COPYING.GPLv2
+usr/share/doc/util-linux-2.23.2/COPYING.LGPLv2.1
+usr/share/doc/util-linux-2.23.2/COPYING.UCB
+usr/share/doc/util-linux-2.23.2/NEWS
+usr/share/doc/util-linux-2.23.2/README
+usr/share/doc/util-linux-2.23.2/deprecated.txt
+usr/share/doc/util-linux-2.23.2/getopt-parse.bash
+usr/share/doc/util-linux-2.23.2/getopt-parse.tcsh
+usr/share/doc/util-linux-2.23.2/sfdisk.txt
+usr/share/doc/which-2.20/AUTHORS
+usr/share/doc/which-2.20/COPYING
+usr/share/doc/which-2.20/EXAMPLES
+usr/share/doc/which-2.20/NEWS
+usr/share/doc/which-2.20/README
+usr/share/doc/xz-libs-5.1.2/COPYING
+usr/share/doc/xz-libs-5.1.2/COPYING.GPLv2
+usr/share/doc/xz-libs-5.1.2/COPYING.GPLv3
+usr/share/doc/xz-libs-5.1.2/COPYING.LGPLv2.1
+usr/share/doc/zlib-1.2.7/ChangeLog
+usr/share/doc/zlib-1.2.7/FAQ
+usr/share/doc/zlib-1.2.7/README
+usr/share/gcc-4.8.2/python/libstdcxx/__init__.py
+usr/share/gcc-4.8.2/python/libstdcxx/__init__.pyc
+usr/share/gcc-4.8.2/python/libstdcxx/__init__.pyo
+usr/share/gcc-4.8.2/python/libstdcxx/v6/__init__.py
+usr/share/gcc-4.8.2/python/libstdcxx/v6/__init__.pyc
+usr/share/gcc-4.8.2/python/libstdcxx/v6/__init__.pyo
+usr/share/gcc-4.8.2/python/libstdcxx/v6/printers.py
+usr/share/gcc-4.8.2/python/libstdcxx/v6/printers.pyc
+usr/share/gcc-4.8.2/python/libstdcxx/v6/printers.pyo
+usr/share/gcc-4.8.5
+usr/share/gdb/auto-load/usr/lib/libstdc++.so.6.0.19-gdb.py
+usr/share/gdb/auto-load/usr/lib/libstdc++.so.6.0.19-gdb.pyc
+usr/share/gdb/auto-load/usr/lib/libstdc++.so.6.0.19-gdb.pyo
+usr/share/gdb/auto-load/usr/lib64/libstdc++.so.6.0.19-gdb.py
+usr/share/gdb/auto-load/usr/lib64/libstdc++.so.6.0.19-gdb.pyc
+usr/share/gdb/auto-load/usr/lib64/libstdc++.so.6.0.19-gdb.pyo
+usr/share/i18n/charmaps/ANSI_X3.110-1983.gz
+usr/share/i18n/charmaps/ANSI_X3.4-1968.gz
+usr/share/i18n/charmaps/ARMSCII-8.gz
+usr/share/i18n/charmaps/ASMO_449.gz
+usr/share/i18n/charmaps/BIG5-HKSCS.gz
+usr/share/i18n/charmaps/BIG5.gz
+usr/share/i18n/charmaps/BRF.gz
+usr/share/i18n/charmaps/BS_4730.gz
+usr/share/i18n/charmaps/BS_VIEWDATA.gz
+usr/share/i18n/charmaps/CP10007.gz
+usr/share/i18n/charmaps/CP1125.gz
+usr/share/i18n/charmaps/CP1250.gz
+usr/share/i18n/charmaps/CP1251.gz
+usr/share/i18n/charmaps/CP1252.gz
+usr/share/i18n/charmaps/CP1253.gz
+usr/share/i18n/charmaps/CP1254.gz
+usr/share/i18n/charmaps/CP1255.gz
+usr/share/i18n/charmaps/CP1256.gz
+usr/share/i18n/charmaps/CP1257.gz
+usr/share/i18n/charmaps/CP1258.gz
+usr/share/i18n/charmaps/CP737.gz
+usr/share/i18n/charmaps/CP770.gz
+usr/share/i18n/charmaps/CP771.gz
+usr/share/i18n/charmaps/CP772.gz
+usr/share/i18n/charmaps/CP773.gz
+usr/share/i18n/charmaps/CP774.gz
+usr/share/i18n/charmaps/CP775.gz
+usr/share/i18n/charmaps/CP949.gz
+usr/share/i18n/charmaps/CSA_Z243.4-1985-1.gz
+usr/share/i18n/charmaps/CSA_Z243.4-1985-2.gz
+usr/share/i18n/charmaps/CSA_Z243.4-1985-GR.gz
+usr/share/i18n/charmaps/CSN_369103.gz
+usr/share/i18n/charmaps/CWI.gz
+usr/share/i18n/charmaps/DEC-MCS.gz
+usr/share/i18n/charmaps/DIN_66003.gz
+usr/share/i18n/charmaps/DS_2089.gz
+usr/share/i18n/charmaps/EBCDIC-AT-DE-A.gz
+usr/share/i18n/charmaps/EBCDIC-AT-DE.gz
+usr/share/i18n/charmaps/EBCDIC-CA-FR.gz
+usr/share/i18n/charmaps/EBCDIC-DK-NO-A.gz
+usr/share/i18n/charmaps/EBCDIC-DK-NO.gz
+usr/share/i18n/charmaps/EBCDIC-ES-A.gz
+usr/share/i18n/charmaps/EBCDIC-ES-S.gz
+usr/share/i18n/charmaps/EBCDIC-ES.gz
+usr/share/i18n/charmaps/EBCDIC-FI-SE-A.gz
+usr/share/i18n/charmaps/EBCDIC-FI-SE.gz
+usr/share/i18n/charmaps/EBCDIC-FR.gz
+usr/share/i18n/charmaps/EBCDIC-IS-FRISS.gz
+usr/share/i18n/charmaps/EBCDIC-IT.gz
+usr/share/i18n/charmaps/EBCDIC-PT.gz
+usr/share/i18n/charmaps/EBCDIC-UK.gz
+usr/share/i18n/charmaps/EBCDIC-US.gz
+usr/share/i18n/charmaps/ECMA-CYRILLIC.gz
+usr/share/i18n/charmaps/ES.gz
+usr/share/i18n/charmaps/ES2.gz
+usr/share/i18n/charmaps/EUC-JISX0213.gz
+usr/share/i18n/charmaps/EUC-JP-MS.gz
+usr/share/i18n/charmaps/EUC-JP.gz
+usr/share/i18n/charmaps/EUC-KR.gz
+usr/share/i18n/charmaps/EUC-TW.gz
+usr/share/i18n/charmaps/GB18030.gz
+usr/share/i18n/charmaps/GB2312.gz
+usr/share/i18n/charmaps/GBK.gz
+usr/share/i18n/charmaps/GB_1988-80.gz
+usr/share/i18n/charmaps/GEORGIAN-ACADEMY.gz
+usr/share/i18n/charmaps/GEORGIAN-PS.gz
+usr/share/i18n/charmaps/GOST_19768-74.gz
+usr/share/i18n/charmaps/GREEK-CCITT.gz
+usr/share/i18n/charmaps/GREEK7-OLD.gz
+usr/share/i18n/charmaps/GREEK7.gz
+usr/share/i18n/charmaps/HP-GREEK8.gz
+usr/share/i18n/charmaps/HP-ROMAN8.gz
+usr/share/i18n/charmaps/HP-ROMAN9.gz
+usr/share/i18n/charmaps/HP-THAI8.gz
+usr/share/i18n/charmaps/HP-TURKISH8.gz
+usr/share/i18n/charmaps/IBM037.gz
+usr/share/i18n/charmaps/IBM038.gz
+usr/share/i18n/charmaps/IBM1004.gz
+usr/share/i18n/charmaps/IBM1026.gz
+usr/share/i18n/charmaps/IBM1047.gz
+usr/share/i18n/charmaps/IBM1124.gz
+usr/share/i18n/charmaps/IBM1129.gz
+usr/share/i18n/charmaps/IBM1132.gz
+usr/share/i18n/charmaps/IBM1133.gz
+usr/share/i18n/charmaps/IBM1160.gz
+usr/share/i18n/charmaps/IBM1161.gz
+usr/share/i18n/charmaps/IBM1162.gz
+usr/share/i18n/charmaps/IBM1163.gz
+usr/share/i18n/charmaps/IBM1164.gz
+usr/share/i18n/charmaps/IBM256.gz
+usr/share/i18n/charmaps/IBM273.gz
+usr/share/i18n/charmaps/IBM274.gz
+usr/share/i18n/charmaps/IBM275.gz
+usr/share/i18n/charmaps/IBM277.gz
+usr/share/i18n/charmaps/IBM278.gz
+usr/share/i18n/charmaps/IBM280.gz
+usr/share/i18n/charmaps/IBM281.gz
+usr/share/i18n/charmaps/IBM284.gz
+usr/share/i18n/charmaps/IBM285.gz
+usr/share/i18n/charmaps/IBM290.gz
+usr/share/i18n/charmaps/IBM297.gz
+usr/share/i18n/charmaps/IBM420.gz
+usr/share/i18n/charmaps/IBM423.gz
+usr/share/i18n/charmaps/IBM424.gz
+usr/share/i18n/charmaps/IBM437.gz
+usr/share/i18n/charmaps/IBM500.gz
+usr/share/i18n/charmaps/IBM850.gz
+usr/share/i18n/charmaps/IBM851.gz
+usr/share/i18n/charmaps/IBM852.gz
+usr/share/i18n/charmaps/IBM855.gz
+usr/share/i18n/charmaps/IBM856.gz
+usr/share/i18n/charmaps/IBM857.gz
+usr/share/i18n/charmaps/IBM860.gz
+usr/share/i18n/charmaps/IBM861.gz
+usr/share/i18n/charmaps/IBM862.gz
+usr/share/i18n/charmaps/IBM863.gz
+usr/share/i18n/charmaps/IBM864.gz
+usr/share/i18n/charmaps/IBM865.gz
+usr/share/i18n/charmaps/IBM866.gz
+usr/share/i18n/charmaps/IBM866NAV.gz
+usr/share/i18n/charmaps/IBM868.gz
+usr/share/i18n/charmaps/IBM869.gz
+usr/share/i18n/charmaps/IBM870.gz
+usr/share/i18n/charmaps/IBM871.gz
+usr/share/i18n/charmaps/IBM874.gz
+usr/share/i18n/charmaps/IBM875.gz
+usr/share/i18n/charmaps/IBM880.gz
+usr/share/i18n/charmaps/IBM891.gz
+usr/share/i18n/charmaps/IBM903.gz
+usr/share/i18n/charmaps/IBM904.gz
+usr/share/i18n/charmaps/IBM905.gz
+usr/share/i18n/charmaps/IBM918.gz
+usr/share/i18n/charmaps/IBM922.gz
+usr/share/i18n/charmaps/IEC_P27-1.gz
+usr/share/i18n/charmaps/INIS-8.gz
+usr/share/i18n/charmaps/INIS-CYRILLIC.gz
+usr/share/i18n/charmaps/INIS.gz
+usr/share/i18n/charmaps/INVARIANT.gz
+usr/share/i18n/charmaps/ISIRI-3342.gz
+usr/share/i18n/charmaps/ISO-8859-1.gz
+usr/share/i18n/charmaps/ISO-8859-10.gz
+usr/share/i18n/charmaps/ISO-8859-11.gz
+usr/share/i18n/charmaps/ISO-8859-13.gz
+usr/share/i18n/charmaps/ISO-8859-14.gz
+usr/share/i18n/charmaps/ISO-8859-15.gz
+usr/share/i18n/charmaps/ISO-8859-16.gz
+usr/share/i18n/charmaps/ISO-8859-2.gz
+usr/share/i18n/charmaps/ISO-8859-3.gz
+usr/share/i18n/charmaps/ISO-8859-4.gz
+usr/share/i18n/charmaps/ISO-8859-5.gz
+usr/share/i18n/charmaps/ISO-8859-6.gz
+usr/share/i18n/charmaps/ISO-8859-7.gz
+usr/share/i18n/charmaps/ISO-8859-8.gz
+usr/share/i18n/charmaps/ISO-8859-9.gz
+usr/share/i18n/charmaps/ISO-8859-9E.gz
+usr/share/i18n/charmaps/ISO-IR-197.gz
+usr/share/i18n/charmaps/ISO-IR-209.gz
+usr/share/i18n/charmaps/ISO-IR-90.gz
+usr/share/i18n/charmaps/ISO_10367-BOX.gz
+usr/share/i18n/charmaps/ISO_10646.gz
+usr/share/i18n/charmaps/ISO_11548-1.gz
+usr/share/i18n/charmaps/ISO_2033-1983.gz
+usr/share/i18n/charmaps/ISO_5427-EXT.gz
+usr/share/i18n/charmaps/ISO_5427.gz
+usr/share/i18n/charmaps/ISO_5428.gz
+usr/share/i18n/charmaps/ISO_646.BASIC.gz
+usr/share/i18n/charmaps/ISO_646.IRV.gz
+usr/share/i18n/charmaps/ISO_6937-2-25.gz
+usr/share/i18n/charmaps/ISO_6937-2-ADD.gz
+usr/share/i18n/charmaps/ISO_6937.gz
+usr/share/i18n/charmaps/ISO_8859-1,GL.gz
+usr/share/i18n/charmaps/ISO_8859-SUPP.gz
+usr/share/i18n/charmaps/IT.gz
+usr/share/i18n/charmaps/JIS_C6220-1969-JP.gz
+usr/share/i18n/charmaps/JIS_C6220-1969-RO.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-A.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-B-ADD.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-B.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-HAND-ADD.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-HAND.gz
+usr/share/i18n/charmaps/JIS_C6229-1984-KANA.gz
+usr/share/i18n/charmaps/JIS_X0201.gz
+usr/share/i18n/charmaps/JOHAB.gz
+usr/share/i18n/charmaps/JUS_I.B1.002.gz
+usr/share/i18n/charmaps/JUS_I.B1.003-MAC.gz
+usr/share/i18n/charmaps/JUS_I.B1.003-SERB.gz
+usr/share/i18n/charmaps/KOI-8.gz
+usr/share/i18n/charmaps/KOI8-R.gz
+usr/share/i18n/charmaps/KOI8-RU.gz
+usr/share/i18n/charmaps/KOI8-T.gz
+usr/share/i18n/charmaps/KOI8-U.gz
+usr/share/i18n/charmaps/KSC5636.gz
+usr/share/i18n/charmaps/LATIN-GREEK-1.gz
+usr/share/i18n/charmaps/LATIN-GREEK.gz
+usr/share/i18n/charmaps/MAC-CENTRALEUROPE.gz
+usr/share/i18n/charmaps/MAC-CYRILLIC.gz
+usr/share/i18n/charmaps/MAC-IS.gz
+usr/share/i18n/charmaps/MAC-SAMI.gz
+usr/share/i18n/charmaps/MAC-UK.gz
+usr/share/i18n/charmaps/MACINTOSH.gz
+usr/share/i18n/charmaps/MIK.gz
+usr/share/i18n/charmaps/MSZ_7795.3.gz
+usr/share/i18n/charmaps/NATS-DANO-ADD.gz
+usr/share/i18n/charmaps/NATS-DANO.gz
+usr/share/i18n/charmaps/NATS-SEFI-ADD.gz
+usr/share/i18n/charmaps/NATS-SEFI.gz
+usr/share/i18n/charmaps/NC_NC00-10.gz
+usr/share/i18n/charmaps/NEXTSTEP.gz
+usr/share/i18n/charmaps/NF_Z_62-010.gz
+usr/share/i18n/charmaps/NF_Z_62-010_1973.gz
+usr/share/i18n/charmaps/NS_4551-1.gz
+usr/share/i18n/charmaps/NS_4551-2.gz
+usr/share/i18n/charmaps/PT.gz
+usr/share/i18n/charmaps/PT154.gz
+usr/share/i18n/charmaps/PT2.gz
+usr/share/i18n/charmaps/RK1048.gz
+usr/share/i18n/charmaps/SAMI-WS2.gz
+usr/share/i18n/charmaps/SAMI.gz
+usr/share/i18n/charmaps/SEN_850200_B.gz
+usr/share/i18n/charmaps/SEN_850200_C.gz
+usr/share/i18n/charmaps/SHIFT_JIS.gz
+usr/share/i18n/charmaps/SHIFT_JISX0213.gz
+usr/share/i18n/charmaps/T.101-G2.gz
+usr/share/i18n/charmaps/T.61-7BIT.gz
+usr/share/i18n/charmaps/T.61-8BIT.gz
+usr/share/i18n/charmaps/TCVN5712-1.gz
+usr/share/i18n/charmaps/TIS-620.gz
+usr/share/i18n/charmaps/TSCII.gz
+usr/share/i18n/charmaps/UTF-8.gz
+usr/share/i18n/charmaps/VIDEOTEX-SUPPL.gz
+usr/share/i18n/charmaps/VISCII.gz
+usr/share/i18n/charmaps/WINDOWS-31J.gz
+usr/share/i18n/locales/POSIX
+usr/share/i18n/locales/aa_DJ
+usr/share/i18n/locales/aa_ER
+usr/share/i18n/locales/aa_ER@saaho
+usr/share/i18n/locales/aa_ET
+usr/share/i18n/locales/af_ZA
+usr/share/i18n/locales/am_ET
+usr/share/i18n/locales/an_ES
+usr/share/i18n/locales/ar_AE
+usr/share/i18n/locales/ar_BH
+usr/share/i18n/locales/ar_DZ
+usr/share/i18n/locales/ar_EG
+usr/share/i18n/locales/ar_IN
+usr/share/i18n/locales/ar_IQ
+usr/share/i18n/locales/ar_JO
+usr/share/i18n/locales/ar_KW
+usr/share/i18n/locales/ar_LB
+usr/share/i18n/locales/ar_LY
+usr/share/i18n/locales/ar_MA
+usr/share/i18n/locales/ar_OM
+usr/share/i18n/locales/ar_QA
+usr/share/i18n/locales/ar_SA
+usr/share/i18n/locales/ar_SD
+usr/share/i18n/locales/ar_SY
+usr/share/i18n/locales/ar_TN
+usr/share/i18n/locales/ar_YE
+usr/share/i18n/locales/as_IN
+usr/share/i18n/locales/ast_ES
+usr/share/i18n/locales/ayc_PE
+usr/share/i18n/locales/az_AZ
+usr/share/i18n/locales/be_BY
+usr/share/i18n/locales/be_BY@latin
+usr/share/i18n/locales/bem_ZM
+usr/share/i18n/locales/ber_DZ
+usr/share/i18n/locales/ber_MA
+usr/share/i18n/locales/bg_BG
+usr/share/i18n/locales/bho_IN
+usr/share/i18n/locales/bn_BD
+usr/share/i18n/locales/bn_IN
+usr/share/i18n/locales/bo_CN
+usr/share/i18n/locales/bo_IN
+usr/share/i18n/locales/br_FR
+usr/share/i18n/locales/br_FR@euro
+usr/share/i18n/locales/brx_IN
+usr/share/i18n/locales/bs_BA
+usr/share/i18n/locales/byn_ER
+usr/share/i18n/locales/ca_AD
+usr/share/i18n/locales/ca_ES
+usr/share/i18n/locales/ca_ES@euro
+usr/share/i18n/locales/ca_FR
+usr/share/i18n/locales/ca_IT
+usr/share/i18n/locales/crh_UA
+usr/share/i18n/locales/cs_CZ
+usr/share/i18n/locales/csb_PL
+usr/share/i18n/locales/cv_RU
+usr/share/i18n/locales/cy_GB
+usr/share/i18n/locales/da_DK
+usr/share/i18n/locales/de_AT
+usr/share/i18n/locales/de_AT@euro
+usr/share/i18n/locales/de_BE
+usr/share/i18n/locales/de_BE@euro
+usr/share/i18n/locales/de_CH
+usr/share/i18n/locales/de_DE
+usr/share/i18n/locales/de_DE@euro
+usr/share/i18n/locales/de_LU
+usr/share/i18n/locales/de_LU@euro
+usr/share/i18n/locales/doi_IN
+usr/share/i18n/locales/dv_MV
+usr/share/i18n/locales/dz_BT
+usr/share/i18n/locales/el_CY
+usr/share/i18n/locales/el_GR
+usr/share/i18n/locales/el_GR@euro
+usr/share/i18n/locales/en_AG
+usr/share/i18n/locales/en_AU
+usr/share/i18n/locales/en_BW
+usr/share/i18n/locales/en_CA
+usr/share/i18n/locales/en_DK
+usr/share/i18n/locales/en_GB
+usr/share/i18n/locales/en_HK
+usr/share/i18n/locales/en_IE
+usr/share/i18n/locales/en_IE@euro
+usr/share/i18n/locales/en_IN
+usr/share/i18n/locales/en_NG
+usr/share/i18n/locales/en_NZ
+usr/share/i18n/locales/en_PH
+usr/share/i18n/locales/en_SG
+usr/share/i18n/locales/en_US
+usr/share/i18n/locales/en_ZA
+usr/share/i18n/locales/en_ZM
+usr/share/i18n/locales/en_ZW
+usr/share/i18n/locales/es_AR
+usr/share/i18n/locales/es_BO
+usr/share/i18n/locales/es_CL
+usr/share/i18n/locales/es_CO
+usr/share/i18n/locales/es_CR
+usr/share/i18n/locales/es_CU
+usr/share/i18n/locales/es_DO
+usr/share/i18n/locales/es_EC
+usr/share/i18n/locales/es_ES
+usr/share/i18n/locales/es_ES@euro
+usr/share/i18n/locales/es_GT
+usr/share/i18n/locales/es_HN
+usr/share/i18n/locales/es_MX
+usr/share/i18n/locales/es_NI
+usr/share/i18n/locales/es_PA
+usr/share/i18n/locales/es_PE
+usr/share/i18n/locales/es_PR
+usr/share/i18n/locales/es_PY
+usr/share/i18n/locales/es_SV
+usr/share/i18n/locales/es_US
+usr/share/i18n/locales/es_UY
+usr/share/i18n/locales/es_VE
+usr/share/i18n/locales/et_EE
+usr/share/i18n/locales/eu_ES
+usr/share/i18n/locales/eu_ES@euro
+usr/share/i18n/locales/fa_IR
+usr/share/i18n/locales/ff_SN
+usr/share/i18n/locales/fi_FI
+usr/share/i18n/locales/fi_FI@euro
+usr/share/i18n/locales/fil_PH
+usr/share/i18n/locales/fo_FO
+usr/share/i18n/locales/fr_BE
+usr/share/i18n/locales/fr_BE@euro
+usr/share/i18n/locales/fr_CA
+usr/share/i18n/locales/fr_CH
+usr/share/i18n/locales/fr_FR
+usr/share/i18n/locales/fr_FR@euro
+usr/share/i18n/locales/fr_LU
+usr/share/i18n/locales/fr_LU@euro
+usr/share/i18n/locales/fur_IT
+usr/share/i18n/locales/fy_DE
+usr/share/i18n/locales/fy_NL
+usr/share/i18n/locales/ga_IE
+usr/share/i18n/locales/ga_IE@euro
+usr/share/i18n/locales/gd_GB
+usr/share/i18n/locales/gez_ER
+usr/share/i18n/locales/gez_ER@abegede
+usr/share/i18n/locales/gez_ET
+usr/share/i18n/locales/gez_ET@abegede
+usr/share/i18n/locales/gl_ES
+usr/share/i18n/locales/gl_ES@euro
+usr/share/i18n/locales/gu_IN
+usr/share/i18n/locales/gv_GB
+usr/share/i18n/locales/ha_NG
+usr/share/i18n/locales/he_IL
+usr/share/i18n/locales/hi_IN
+usr/share/i18n/locales/hne_IN
+usr/share/i18n/locales/hr_HR
+usr/share/i18n/locales/hsb_DE
+usr/share/i18n/locales/ht_HT
+usr/share/i18n/locales/hu_HU
+usr/share/i18n/locales/hy_AM
+usr/share/i18n/locales/i18n
+usr/share/i18n/locales/ia_FR
+usr/share/i18n/locales/id_ID
+usr/share/i18n/locales/ig_NG
+usr/share/i18n/locales/ik_CA
+usr/share/i18n/locales/is_IS
+usr/share/i18n/locales/iso14651_t1
+usr/share/i18n/locales/iso14651_t1_common
+usr/share/i18n/locales/iso14651_t1_pinyin
+usr/share/i18n/locales/it_CH
+usr/share/i18n/locales/it_IT
+usr/share/i18n/locales/it_IT@euro
+usr/share/i18n/locales/iu_CA
+usr/share/i18n/locales/iw_IL
+usr/share/i18n/locales/ja_JP
+usr/share/i18n/locales/ka_GE
+usr/share/i18n/locales/kk_KZ
+usr/share/i18n/locales/kl_GL
+usr/share/i18n/locales/km_KH
+usr/share/i18n/locales/kn_IN
+usr/share/i18n/locales/ko_KR
+usr/share/i18n/locales/kok_IN
+usr/share/i18n/locales/ks_IN
+usr/share/i18n/locales/ks_IN@devanagari
+usr/share/i18n/locales/ku_TR
+usr/share/i18n/locales/kw_GB
+usr/share/i18n/locales/ky_KG
+usr/share/i18n/locales/lb_LU
+usr/share/i18n/locales/lg_UG
+usr/share/i18n/locales/li_BE
+usr/share/i18n/locales/li_NL
+usr/share/i18n/locales/lij_IT
+usr/share/i18n/locales/lo_LA
+usr/share/i18n/locales/lt_LT
+usr/share/i18n/locales/lv_LV
+usr/share/i18n/locales/mag_IN
+usr/share/i18n/locales/mai_IN
+usr/share/i18n/locales/mg_MG
+usr/share/i18n/locales/mhr_RU
+usr/share/i18n/locales/mi_NZ
+usr/share/i18n/locales/mk_MK
+usr/share/i18n/locales/ml_IN
+usr/share/i18n/locales/mn_MN
+usr/share/i18n/locales/mni_IN
+usr/share/i18n/locales/mr_IN
+usr/share/i18n/locales/ms_MY
+usr/share/i18n/locales/mt_MT
+usr/share/i18n/locales/my_MM
+usr/share/i18n/locales/nan_TW@latin
+usr/share/i18n/locales/nb_NO
+usr/share/i18n/locales/nds_DE
+usr/share/i18n/locales/nds_NL
+usr/share/i18n/locales/ne_NP
+usr/share/i18n/locales/nhn_MX
+usr/share/i18n/locales/niu_NU
+usr/share/i18n/locales/niu_NZ
+usr/share/i18n/locales/nl_AW
+usr/share/i18n/locales/nl_BE
+usr/share/i18n/locales/nl_BE@euro
+usr/share/i18n/locales/nl_NL
+usr/share/i18n/locales/nl_NL@euro
+usr/share/i18n/locales/nn_NO
+usr/share/i18n/locales/nr_ZA
+usr/share/i18n/locales/nso_ZA
+usr/share/i18n/locales/oc_FR
+usr/share/i18n/locales/om_ET
+usr/share/i18n/locales/om_KE
+usr/share/i18n/locales/or_IN
+usr/share/i18n/locales/os_RU
+usr/share/i18n/locales/pa_IN
+usr/share/i18n/locales/pa_PK
+usr/share/i18n/locales/pap_AN
+usr/share/i18n/locales/pl_PL
+usr/share/i18n/locales/ps_AF
+usr/share/i18n/locales/pt_BR
+usr/share/i18n/locales/pt_PT
+usr/share/i18n/locales/pt_PT@euro
+usr/share/i18n/locales/ro_RO
+usr/share/i18n/locales/ru_RU
+usr/share/i18n/locales/ru_UA
+usr/share/i18n/locales/rw_RW
+usr/share/i18n/locales/sa_IN
+usr/share/i18n/locales/sat_IN
+usr/share/i18n/locales/sc_IT
+usr/share/i18n/locales/sd_IN
+usr/share/i18n/locales/sd_IN@devanagari
+usr/share/i18n/locales/se_NO
+usr/share/i18n/locales/shs_CA
+usr/share/i18n/locales/si_LK
+usr/share/i18n/locales/sid_ET
+usr/share/i18n/locales/sk_SK
+usr/share/i18n/locales/sl_SI
+usr/share/i18n/locales/so_DJ
+usr/share/i18n/locales/so_ET
+usr/share/i18n/locales/so_KE
+usr/share/i18n/locales/so_SO
+usr/share/i18n/locales/sq_AL
+usr/share/i18n/locales/sq_MK
+usr/share/i18n/locales/sr_ME
+usr/share/i18n/locales/sr_RS
+usr/share/i18n/locales/sr_RS@latin
+usr/share/i18n/locales/ss_ZA
+usr/share/i18n/locales/st_ZA
+usr/share/i18n/locales/sv_FI
+usr/share/i18n/locales/sv_FI@euro
+usr/share/i18n/locales/sv_SE
+usr/share/i18n/locales/sw_KE
+usr/share/i18n/locales/sw_TZ
+usr/share/i18n/locales/szl_PL
+usr/share/i18n/locales/ta_IN
+usr/share/i18n/locales/ta_LK
+usr/share/i18n/locales/te_IN
+usr/share/i18n/locales/tg_TJ
+usr/share/i18n/locales/th_TH
+usr/share/i18n/locales/ti_ER
+usr/share/i18n/locales/ti_ET
+usr/share/i18n/locales/tig_ER
+usr/share/i18n/locales/tk_TM
+usr/share/i18n/locales/tl_PH
+usr/share/i18n/locales/tn_ZA
+usr/share/i18n/locales/tr_CY
+usr/share/i18n/locales/tr_TR
+usr/share/i18n/locales/translit_circle
+usr/share/i18n/locales/translit_cjk_compat
+usr/share/i18n/locales/translit_cjk_variants
+usr/share/i18n/locales/translit_combining
+usr/share/i18n/locales/translit_compat
+usr/share/i18n/locales/translit_font
+usr/share/i18n/locales/translit_fraction
+usr/share/i18n/locales/translit_hangul
+usr/share/i18n/locales/translit_narrow
+usr/share/i18n/locales/translit_neutral
+usr/share/i18n/locales/translit_small
+usr/share/i18n/locales/translit_wide
+usr/share/i18n/locales/ts_ZA
+usr/share/i18n/locales/tt_RU
+usr/share/i18n/locales/tt_RU@iqtelif
+usr/share/i18n/locales/ug_CN
+usr/share/i18n/locales/uk_UA
+usr/share/i18n/locales/unm_US
+usr/share/i18n/locales/ur_IN
+usr/share/i18n/locales/ur_PK
+usr/share/i18n/locales/uz_UZ
+usr/share/i18n/locales/uz_UZ@cyrillic
+usr/share/i18n/locales/ve_ZA
+usr/share/i18n/locales/vi_VN
+usr/share/i18n/locales/wa_BE
+usr/share/i18n/locales/wa_BE@euro
+usr/share/i18n/locales/wae_CH
+usr/share/i18n/locales/wal_ET
+usr/share/i18n/locales/wo_SN
+usr/share/i18n/locales/xh_ZA
+usr/share/i18n/locales/yi_US
+usr/share/i18n/locales/yo_NG
+usr/share/i18n/locales/yue_HK
+usr/share/i18n/locales/zh_CN
+usr/share/i18n/locales/zh_HK
+usr/share/i18n/locales/zh_SG
+usr/share/i18n/locales/zh_TW
+usr/share/i18n/locales/zu_ZA
+usr/share/info/bash.info.gz
+usr/share/info/coreutils.info.gz
+usr/share/info/dir
+usr/share/info/find-maint.info.gz
+usr/share/info/find.info.gz
+usr/share/info/grep.info.gz
+usr/share/info/history.info.gz
+usr/share/info/info-stnd.info.gz
+usr/share/info/info.info.gz
+usr/share/info/libidn.info.gz
+usr/share/info/rluserman.info.gz
+usr/share/info/sed.info.gz
+usr/share/info/which.info.gz
+usr/share/keyutils/request-key-debug.sh
+usr/share/licenses/elfutils-0.163/COPYING
+usr/share/licenses/elfutils-0.163/COPYING-GPLV2
+usr/share/licenses/elfutils-0.163/COPYING-LGPLV3
+usr/share/licenses/gmp-6.0.0/COPYING
+usr/share/licenses/gmp-6.0.0/COPYING.LESSERv3
+usr/share/licenses/gmp-6.0.0/COPYINGv2
+usr/share/licenses/gmp-6.0.0/COPYINGv3
+usr/share/licenses/krb5-libs-1.13.2/LICENSE
+usr/share/locale/af/LC_MESSAGES/bash.mo
+usr/share/locale/af/LC_MESSAGES/coreutils.mo
+usr/share/locale/af/LC_MESSAGES/glib20.mo
+usr/share/locale/af/LC_MESSAGES/grep.mo
+usr/share/locale/af/LC_MESSAGES/sed.mo
+usr/share/locale/af/LC_TIME/coreutils.mo
+usr/share/locale/am/LC_MESSAGES/glib20.mo
+usr/share/locale/an/LC_MESSAGES/glib20.mo
+usr/share/locale/ar/LC_MESSAGES/glib20.mo
+usr/share/locale/as/LC_MESSAGES/glib20.mo
+usr/share/locale/ast/LC_MESSAGES/glib20.mo
+usr/share/locale/ast/LC_MESSAGES/sed.mo
+usr/share/locale/az/LC_MESSAGES/glib20.mo
+usr/share/locale/be/LC_MESSAGES/coreutils.mo
+usr/share/locale/be/LC_MESSAGES/findutils.mo
+usr/share/locale/be/LC_MESSAGES/glib20.mo
+usr/share/locale/be/LC_MESSAGES/grep.mo
+usr/share/locale/be/LC_MESSAGES/libc.mo
+usr/share/locale/be/LC_TIME/coreutils.mo
+usr/share/locale/be@latin/LC_MESSAGES/glib20.mo
+usr/share/locale/bg/LC_MESSAGES/bash.mo
+usr/share/locale/bg/LC_MESSAGES/coreutils.mo
+usr/share/locale/bg/LC_MESSAGES/findutils.mo
+usr/share/locale/bg/LC_MESSAGES/glib20.mo
+usr/share/locale/bg/LC_MESSAGES/grep.mo
+usr/share/locale/bg/LC_MESSAGES/libc.mo
+usr/share/locale/bg/LC_TIME/coreutils.mo
+usr/share/locale/bn/LC_MESSAGES/glib20.mo
+usr/share/locale/bn_IN/LC_MESSAGES/glib20.mo
+usr/share/locale/bs/LC_MESSAGES/glib20.mo
+usr/share/locale/ca/LC_MESSAGES/bash.mo
+usr/share/locale/ca/LC_MESSAGES/coreutils.mo
+usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/ca/LC_MESSAGES/findutils.mo
+usr/share/locale/ca/LC_MESSAGES/glib20.mo
+usr/share/locale/ca/LC_MESSAGES/grep.mo
+usr/share/locale/ca/LC_MESSAGES/libc.mo
+usr/share/locale/ca/LC_MESSAGES/sed.mo
+usr/share/locale/ca/LC_MESSAGES/util-linux.mo
+usr/share/locale/ca/LC_TIME/coreutils.mo
+usr/share/locale/ca@valencia/LC_MESSAGES/glib20.mo
+usr/share/locale/cs/LC_MESSAGES/bash.mo
+usr/share/locale/cs/LC_MESSAGES/coreutils.mo
+usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/cs/LC_MESSAGES/findutils.mo
+usr/share/locale/cs/LC_MESSAGES/glib20.mo
+usr/share/locale/cs/LC_MESSAGES/grep.mo
+usr/share/locale/cs/LC_MESSAGES/libc.mo
+usr/share/locale/cs/LC_MESSAGES/libidn.mo
+usr/share/locale/cs/LC_MESSAGES/popt.mo
+usr/share/locale/cs/LC_MESSAGES/sed.mo
+usr/share/locale/cs/LC_MESSAGES/util-linux.mo
+usr/share/locale/cs/LC_TIME/coreutils.mo
+usr/share/locale/cy/LC_MESSAGES/glib20.mo
+usr/share/locale/da/LC_MESSAGES/coreutils.mo
+usr/share/locale/da/LC_MESSAGES/findutils.mo
+usr/share/locale/da/LC_MESSAGES/glib20.mo
+usr/share/locale/da/LC_MESSAGES/grep.mo
+usr/share/locale/da/LC_MESSAGES/libc.mo
+usr/share/locale/da/LC_MESSAGES/libidn.mo
+usr/share/locale/da/LC_MESSAGES/popt.mo
+usr/share/locale/da/LC_MESSAGES/sed.mo
+usr/share/locale/da/LC_MESSAGES/util-linux.mo
+usr/share/locale/da/LC_TIME/coreutils.mo
+usr/share/locale/de/LC_MESSAGES/bash.mo
+usr/share/locale/de/LC_MESSAGES/coreutils.mo
+usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/de/LC_MESSAGES/findutils.mo
+usr/share/locale/de/LC_MESSAGES/gdbm.mo
+usr/share/locale/de/LC_MESSAGES/glib20.mo
+usr/share/locale/de/LC_MESSAGES/grep.mo
+usr/share/locale/de/LC_MESSAGES/libc.mo
+usr/share/locale/de/LC_MESSAGES/libidn.mo
+usr/share/locale/de/LC_MESSAGES/popt.mo
+usr/share/locale/de/LC_MESSAGES/sed.mo
+usr/share/locale/de/LC_MESSAGES/util-linux.mo
+usr/share/locale/de/LC_TIME/coreutils.mo
+usr/share/locale/dz/LC_MESSAGES/glib20.mo
+usr/share/locale/el/LC_MESSAGES/coreutils.mo
+usr/share/locale/el/LC_MESSAGES/findutils.mo
+usr/share/locale/el/LC_MESSAGES/glib20.mo
+usr/share/locale/el/LC_MESSAGES/grep.mo
+usr/share/locale/el/LC_MESSAGES/libc.mo
+usr/share/locale/el/LC_MESSAGES/sed.mo
+usr/share/locale/el/LC_TIME/coreutils.mo
+usr/share/locale/en@boldquot/LC_MESSAGES/bash.mo
+usr/share/locale/en@boldquot/LC_MESSAGES/libidn.mo
+usr/share/locale/en@quot/LC_MESSAGES/bash.mo
+usr/share/locale/en@quot/LC_MESSAGES/libidn.mo
+usr/share/locale/en@shaw/LC_MESSAGES/glib20.mo
+usr/share/locale/en_CA/LC_MESSAGES/glib20.mo
+usr/share/locale/en_GB/LC_MESSAGES/glib20.mo
+usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+usr/share/locale/en_US/LC_MESSAGES/mit-krb5.mo
+usr/share/locale/eo/LC_MESSAGES/bash.mo
+usr/share/locale/eo/LC_MESSAGES/coreutils.mo
+usr/share/locale/eo/LC_MESSAGES/findutils.mo
+usr/share/locale/eo/LC_MESSAGES/glib20.mo
+usr/share/locale/eo/LC_MESSAGES/grep.mo
+usr/share/locale/eo/LC_MESSAGES/libc.mo
+usr/share/locale/eo/LC_MESSAGES/libidn.mo
+usr/share/locale/eo/LC_MESSAGES/sed.mo
+usr/share/locale/eo/LC_TIME/coreutils.mo
+usr/share/locale/es/LC_MESSAGES/bash.mo
+usr/share/locale/es/LC_MESSAGES/coreutils.mo
+usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/es/LC_MESSAGES/findutils.mo
+usr/share/locale/es/LC_MESSAGES/glib20.mo
+usr/share/locale/es/LC_MESSAGES/grep.mo
+usr/share/locale/es/LC_MESSAGES/libc.mo
+usr/share/locale/es/LC_MESSAGES/popt.mo
+usr/share/locale/es/LC_MESSAGES/sed.mo
+usr/share/locale/es/LC_MESSAGES/util-linux.mo
+usr/share/locale/es/LC_TIME/coreutils.mo
+usr/share/locale/et/LC_MESSAGES/bash.mo
+usr/share/locale/et/LC_MESSAGES/coreutils.mo
+usr/share/locale/et/LC_MESSAGES/findutils.mo
+usr/share/locale/et/LC_MESSAGES/glib20.mo
+usr/share/locale/et/LC_MESSAGES/grep.mo
+usr/share/locale/et/LC_MESSAGES/sed.mo
+usr/share/locale/et/LC_MESSAGES/util-linux.mo
+usr/share/locale/et/LC_TIME/coreutils.mo
+usr/share/locale/eu/LC_MESSAGES/coreutils.mo
+usr/share/locale/eu/LC_MESSAGES/glib20.mo
+usr/share/locale/eu/LC_MESSAGES/grep.mo
+usr/share/locale/eu/LC_MESSAGES/sed.mo
+usr/share/locale/eu/LC_MESSAGES/util-linux.mo
+usr/share/locale/eu/LC_TIME/coreutils.mo
+usr/share/locale/fa/LC_MESSAGES/glib20.mo
+usr/share/locale/fi/LC_MESSAGES/bash.mo
+usr/share/locale/fi/LC_MESSAGES/coreutils.mo
+usr/share/locale/fi/LC_MESSAGES/findutils.mo
+usr/share/locale/fi/LC_MESSAGES/gdbm.mo
+usr/share/locale/fi/LC_MESSAGES/glib20.mo
+usr/share/locale/fi/LC_MESSAGES/grep.mo
+usr/share/locale/fi/LC_MESSAGES/libc.mo
+usr/share/locale/fi/LC_MESSAGES/libidn.mo
+usr/share/locale/fi/LC_MESSAGES/sed.mo
+usr/share/locale/fi/LC_MESSAGES/util-linux.mo
+usr/share/locale/fi/LC_TIME/coreutils.mo
+usr/share/locale/fr/LC_MESSAGES/bash.mo
+usr/share/locale/fr/LC_MESSAGES/coreutils.mo
+usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/fr/LC_MESSAGES/findutils.mo
+usr/share/locale/fr/LC_MESSAGES/glib20.mo
+usr/share/locale/fr/LC_MESSAGES/grep.mo
+usr/share/locale/fr/LC_MESSAGES/libc.mo
+usr/share/locale/fr/LC_MESSAGES/libidn.mo
+usr/share/locale/fr/LC_MESSAGES/popt.mo
+usr/share/locale/fr/LC_MESSAGES/sed.mo
+usr/share/locale/fr/LC_MESSAGES/util-linux.mo
+usr/share/locale/fr/LC_TIME/coreutils.mo
+usr/share/locale/ga/LC_MESSAGES/bash.mo
+usr/share/locale/ga/LC_MESSAGES/coreutils.mo
+usr/share/locale/ga/LC_MESSAGES/findutils.mo
+usr/share/locale/ga/LC_MESSAGES/glib20.mo
+usr/share/locale/ga/LC_MESSAGES/grep.mo
+usr/share/locale/ga/LC_MESSAGES/popt.mo
+usr/share/locale/ga/LC_MESSAGES/sed.mo
+usr/share/locale/ga/LC_TIME/coreutils.mo
+usr/share/locale/gl/LC_MESSAGES/coreutils.mo
+usr/share/locale/gl/LC_MESSAGES/findutils.mo
+usr/share/locale/gl/LC_MESSAGES/glib20.mo
+usr/share/locale/gl/LC_MESSAGES/grep.mo
+usr/share/locale/gl/LC_MESSAGES/libc.mo
+usr/share/locale/gl/LC_MESSAGES/popt.mo
+usr/share/locale/gl/LC_MESSAGES/sed.mo
+usr/share/locale/gl/LC_MESSAGES/util-linux.mo
+usr/share/locale/gl/LC_TIME/coreutils.mo
+usr/share/locale/gu/LC_MESSAGES/glib20.mo
+usr/share/locale/he/LC_MESSAGES/glib20.mo
+usr/share/locale/he/LC_MESSAGES/grep.mo
+usr/share/locale/he/LC_MESSAGES/sed.mo
+usr/share/locale/hi/LC_MESSAGES/glib20.mo
+usr/share/locale/hr/LC_MESSAGES/coreutils.mo
+usr/share/locale/hr/LC_MESSAGES/findutils.mo
+usr/share/locale/hr/LC_MESSAGES/glib20.mo
+usr/share/locale/hr/LC_MESSAGES/grep.mo
+usr/share/locale/hr/LC_MESSAGES/libc.mo
+usr/share/locale/hr/LC_MESSAGES/libidn.mo
+usr/share/locale/hr/LC_MESSAGES/sed.mo
+usr/share/locale/hr/LC_MESSAGES/util-linux.mo
+usr/share/locale/hr/LC_TIME/coreutils.mo
+usr/share/locale/hu/LC_MESSAGES/bash.mo
+usr/share/locale/hu/LC_MESSAGES/coreutils.mo
+usr/share/locale/hu/LC_MESSAGES/findutils.mo
+usr/share/locale/hu/LC_MESSAGES/glib20.mo
+usr/share/locale/hu/LC_MESSAGES/grep.mo
+usr/share/locale/hu/LC_MESSAGES/libc.mo
+usr/share/locale/hu/LC_MESSAGES/popt.mo
+usr/share/locale/hu/LC_MESSAGES/sed.mo
+usr/share/locale/hu/LC_MESSAGES/util-linux.mo
+usr/share/locale/hu/LC_TIME/coreutils.mo
+usr/share/locale/hy/LC_MESSAGES/glib20.mo
+usr/share/locale/ia/LC_MESSAGES/coreutils.mo
+usr/share/locale/ia/LC_TIME/coreutils.mo
+usr/share/locale/id/LC_MESSAGES/bash.mo
+usr/share/locale/id/LC_MESSAGES/coreutils.mo
+usr/share/locale/id/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/id/LC_MESSAGES/findutils.mo
+usr/share/locale/id/LC_MESSAGES/glib20.mo
+usr/share/locale/id/LC_MESSAGES/grep.mo
+usr/share/locale/id/LC_MESSAGES/libc.mo
+usr/share/locale/id/LC_MESSAGES/libidn.mo
+usr/share/locale/id/LC_MESSAGES/sed.mo
+usr/share/locale/id/LC_MESSAGES/util-linux.mo
+usr/share/locale/id/LC_TIME/coreutils.mo
+usr/share/locale/is/LC_MESSAGES/glib20.mo
+usr/share/locale/is/LC_MESSAGES/popt.mo
+usr/share/locale/it/LC_MESSAGES/coreutils.mo
+usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/it/LC_MESSAGES/findutils.mo
+usr/share/locale/it/LC_MESSAGES/glib20.mo
+usr/share/locale/it/LC_MESSAGES/grep.mo
+usr/share/locale/it/LC_MESSAGES/libc.mo
+usr/share/locale/it/LC_MESSAGES/libidn.mo
+usr/share/locale/it/LC_MESSAGES/popt.mo
+usr/share/locale/it/LC_MESSAGES/sed.mo
+usr/share/locale/it/LC_MESSAGES/util-linux.mo
+usr/share/locale/it/LC_TIME/coreutils.mo
+usr/share/locale/ja/LC_MESSAGES/bash.mo
+usr/share/locale/ja/LC_MESSAGES/coreutils.mo
+usr/share/locale/ja/LC_MESSAGES/findutils.mo
+usr/share/locale/ja/LC_MESSAGES/gdbm.mo
+usr/share/locale/ja/LC_MESSAGES/glib20.mo
+usr/share/locale/ja/LC_MESSAGES/grep.mo
+usr/share/locale/ja/LC_MESSAGES/libc.mo
+usr/share/locale/ja/LC_MESSAGES/libidn.mo
+usr/share/locale/ja/LC_MESSAGES/popt.mo
+usr/share/locale/ja/LC_MESSAGES/sed.mo
+usr/share/locale/ja/LC_MESSAGES/util-linux.mo
+usr/share/locale/ja/LC_TIME/coreutils.mo
+usr/share/locale/ka/LC_MESSAGES/glib20.mo
+usr/share/locale/kk/LC_MESSAGES/coreutils.mo
+usr/share/locale/kk/LC_MESSAGES/glib20.mo
+usr/share/locale/kk/LC_TIME/coreutils.mo
+usr/share/locale/kn/LC_MESSAGES/glib20.mo
+usr/share/locale/ko/LC_MESSAGES/coreutils.mo
+usr/share/locale/ko/LC_MESSAGES/findutils.mo
+usr/share/locale/ko/LC_MESSAGES/glib20.mo
+usr/share/locale/ko/LC_MESSAGES/grep.mo
+usr/share/locale/ko/LC_MESSAGES/libc.mo
+usr/share/locale/ko/LC_MESSAGES/popt.mo
+usr/share/locale/ko/LC_MESSAGES/sed.mo
+usr/share/locale/ko/LC_TIME/coreutils.mo
+usr/share/locale/ku/LC_MESSAGES/glib20.mo
+usr/share/locale/ky/LC_MESSAGES/grep.mo
+usr/share/locale/lg/LC_MESSAGES/coreutils.mo
+usr/share/locale/lg/LC_MESSAGES/findutils.mo
+usr/share/locale/lg/LC_TIME/coreutils.mo
+usr/share/locale/locale.alias
+usr/share/locale/lt/LC_MESSAGES/bash.mo
+usr/share/locale/lt/LC_MESSAGES/coreutils.mo
+usr/share/locale/lt/LC_MESSAGES/findutils.mo
+usr/share/locale/lt/LC_MESSAGES/glib20.mo
+usr/share/locale/lt/LC_MESSAGES/grep.mo
+usr/share/locale/lt/LC_MESSAGES/libc.mo
+usr/share/locale/lt/LC_TIME/coreutils.mo
+usr/share/locale/lv/LC_MESSAGES/glib20.mo
+usr/share/locale/mai/LC_MESSAGES/glib20.mo
+usr/share/locale/mg/LC_MESSAGES/glib20.mo
+usr/share/locale/mk/LC_MESSAGES/glib20.mo
+usr/share/locale/ml/LC_MESSAGES/glib20.mo
+usr/share/locale/mn/LC_MESSAGES/glib20.mo
+usr/share/locale/mr/LC_MESSAGES/glib20.mo
+usr/share/locale/ms/LC_MESSAGES/coreutils.mo
+usr/share/locale/ms/LC_MESSAGES/findutils.mo
+usr/share/locale/ms/LC_MESSAGES/glib20.mo
+usr/share/locale/ms/LC_TIME/coreutils.mo
+usr/share/locale/nb/LC_MESSAGES/coreutils.mo
+usr/share/locale/nb/LC_MESSAGES/glib20.mo
+usr/share/locale/nb/LC_MESSAGES/grep.mo
+usr/share/locale/nb/LC_MESSAGES/libc.mo
+usr/share/locale/nb/LC_MESSAGES/popt.mo
+usr/share/locale/nb/LC_MESSAGES/sed.mo
+usr/share/locale/nb/LC_TIME/coreutils.mo
+usr/share/locale/nds/LC_MESSAGES/glib20.mo
+usr/share/locale/ne/LC_MESSAGES/glib20.mo
+usr/share/locale/nl/LC_MESSAGES/bash.mo
+usr/share/locale/nl/LC_MESSAGES/coreutils.mo
+usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/nl/LC_MESSAGES/findutils.mo
+usr/share/locale/nl/LC_MESSAGES/glib20.mo
+usr/share/locale/nl/LC_MESSAGES/grep.mo
+usr/share/locale/nl/LC_MESSAGES/libc.mo
+usr/share/locale/nl/LC_MESSAGES/libidn.mo
+usr/share/locale/nl/LC_MESSAGES/popt.mo
+usr/share/locale/nl/LC_MESSAGES/sed.mo
+usr/share/locale/nl/LC_MESSAGES/util-linux.mo
+usr/share/locale/nl/LC_TIME/coreutils.mo
+usr/share/locale/nn/LC_MESSAGES/glib20.mo
+usr/share/locale/oc/LC_MESSAGES/glib20.mo
+usr/share/locale/or/LC_MESSAGES/glib20.mo
+usr/share/locale/pa/LC_MESSAGES/glib20.mo
+usr/share/locale/pa/LC_MESSAGES/grep.mo
+usr/share/locale/pl/LC_MESSAGES/bash.mo
+usr/share/locale/pl/LC_MESSAGES/coreutils.mo
+usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/pl/LC_MESSAGES/findutils.mo
+usr/share/locale/pl/LC_MESSAGES/gdbm.mo
+usr/share/locale/pl/LC_MESSAGES/glib20.mo
+usr/share/locale/pl/LC_MESSAGES/grep.mo
+usr/share/locale/pl/LC_MESSAGES/libc.mo
+usr/share/locale/pl/LC_MESSAGES/libidn.mo
+usr/share/locale/pl/LC_MESSAGES/popt.mo
+usr/share/locale/pl/LC_MESSAGES/sed.mo
+usr/share/locale/pl/LC_MESSAGES/util-linux.mo
+usr/share/locale/pl/LC_TIME/coreutils.mo
+usr/share/locale/ps/LC_MESSAGES/glib20.mo
+usr/share/locale/pt/LC_MESSAGES/coreutils.mo
+usr/share/locale/pt/LC_MESSAGES/findutils.mo
+usr/share/locale/pt/LC_MESSAGES/glib20.mo
+usr/share/locale/pt/LC_MESSAGES/grep.mo
+usr/share/locale/pt/LC_MESSAGES/popt.mo
+usr/share/locale/pt/LC_MESSAGES/sed.mo
+usr/share/locale/pt/LC_TIME/coreutils.mo
+usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
+usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
+usr/share/locale/pt_BR/LC_MESSAGES/findutils.mo
+usr/share/locale/pt_BR/LC_MESSAGES/glib20.mo
+usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
+usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
+usr/share/locale/pt_BR/LC_MESSAGES/sed.mo
+usr/share/locale/pt_BR/LC_MESSAGES/util-linux.mo
+usr/share/locale/pt_BR/LC_TIME/coreutils.mo
+usr/share/locale/ro/LC_MESSAGES/bash.mo
+usr/share/locale/ro/LC_MESSAGES/coreutils.mo
+usr/share/locale/ro/LC_MESSAGES/findutils.mo
+usr/share/locale/ro/LC_MESSAGES/glib20.mo
+usr/share/locale/ro/LC_MESSAGES/grep.mo
+usr/share/locale/ro/LC_MESSAGES/libidn.mo
+usr/share/locale/ro/LC_MESSAGES/popt.mo
+usr/share/locale/ro/LC_MESSAGES/sed.mo
+usr/share/locale/ro/LC_TIME/coreutils.mo
+usr/share/locale/ru/LC_MESSAGES/bash.mo
+usr/share/locale/ru/LC_MESSAGES/coreutils.mo
+usr/share/locale/ru/LC_MESSAGES/findutils.mo
+usr/share/locale/ru/LC_MESSAGES/glib20.mo
+usr/share/locale/ru/LC_MESSAGES/grep.mo
+usr/share/locale/ru/LC_MESSAGES/libc.mo
+usr/share/locale/ru/LC_MESSAGES/popt.mo
+usr/share/locale/ru/LC_MESSAGES/sed.mo
+usr/share/locale/ru/LC_MESSAGES/util-linux.mo
+usr/share/locale/ru/LC_TIME/coreutils.mo
+usr/share/locale/rw/LC_MESSAGES/findutils.mo
+usr/share/locale/rw/LC_MESSAGES/glib20.mo
+usr/share/locale/rw/LC_MESSAGES/libc.mo
+usr/share/locale/si/LC_MESSAGES/glib20.mo
+usr/share/locale/sk/LC_MESSAGES/bash.mo
+usr/share/locale/sk/LC_MESSAGES/coreutils.mo
+usr/share/locale/sk/LC_MESSAGES/findutils.mo
+usr/share/locale/sk/LC_MESSAGES/glib20.mo
+usr/share/locale/sk/LC_MESSAGES/grep.mo
+usr/share/locale/sk/LC_MESSAGES/libc.mo
+usr/share/locale/sk/LC_MESSAGES/popt.mo
+usr/share/locale/sk/LC_MESSAGES/sed.mo
+usr/share/locale/sk/LC_TIME/coreutils.mo
+usr/share/locale/sl/LC_MESSAGES/coreutils.mo
+usr/share/locale/sl/LC_MESSAGES/findutils.mo
+usr/share/locale/sl/LC_MESSAGES/glib20.mo
+usr/share/locale/sl/LC_MESSAGES/grep.mo
+usr/share/locale/sl/LC_MESSAGES/popt.mo
+usr/share/locale/sl/LC_MESSAGES/sed.mo
+usr/share/locale/sl/LC_MESSAGES/util-linux.mo
+usr/share/locale/sl/LC_TIME/coreutils.mo
+usr/share/locale/sq/LC_MESSAGES/glib20.mo
+usr/share/locale/sr/LC_MESSAGES/findutils.mo
+usr/share/locale/sr/LC_MESSAGES/glib20.mo
+usr/share/locale/sr/LC_MESSAGES/grep.mo
+usr/share/locale/sr/LC_MESSAGES/libidn.mo
+usr/share/locale/sr/LC_MESSAGES/sed.mo
+usr/share/locale/sr@ije/LC_MESSAGES/glib20.mo
+usr/share/locale/sr@latin/LC_MESSAGES/glib20.mo
+usr/share/locale/sv/LC_MESSAGES/bash.mo
+usr/share/locale/sv/LC_MESSAGES/coreutils.mo
+usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/sv/LC_MESSAGES/findutils.mo
+usr/share/locale/sv/LC_MESSAGES/glib20.mo
+usr/share/locale/sv/LC_MESSAGES/grep.mo
+usr/share/locale/sv/LC_MESSAGES/libc.mo
+usr/share/locale/sv/LC_MESSAGES/popt.mo
+usr/share/locale/sv/LC_MESSAGES/sed.mo
+usr/share/locale/sv/LC_MESSAGES/util-linux.mo
+usr/share/locale/sv/LC_TIME/coreutils.mo
+usr/share/locale/ta/LC_MESSAGES/glib20.mo
+usr/share/locale/te/LC_MESSAGES/glib20.mo
+usr/share/locale/tg/LC_MESSAGES/glib20.mo
+usr/share/locale/th/LC_MESSAGES/glib20.mo
+usr/share/locale/th/LC_MESSAGES/grep.mo
+usr/share/locale/tl/LC_MESSAGES/glib20.mo
+usr/share/locale/tr/LC_MESSAGES/bash.mo
+usr/share/locale/tr/LC_MESSAGES/coreutils.mo
+usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/tr/LC_MESSAGES/findutils.mo
+usr/share/locale/tr/LC_MESSAGES/glib20.mo
+usr/share/locale/tr/LC_MESSAGES/grep.mo
+usr/share/locale/tr/LC_MESSAGES/libc.mo
+usr/share/locale/tr/LC_MESSAGES/popt.mo
+usr/share/locale/tr/LC_MESSAGES/sed.mo
+usr/share/locale/tr/LC_MESSAGES/util-linux.mo
+usr/share/locale/tr/LC_TIME/coreutils.mo
+usr/share/locale/tt/LC_MESSAGES/glib20.mo
+usr/share/locale/ug/LC_MESSAGES/glib20.mo
+usr/share/locale/uk/LC_MESSAGES/bash.mo
+usr/share/locale/uk/LC_MESSAGES/coreutils.mo
+usr/share/locale/uk/LC_MESSAGES/findutils.mo
+usr/share/locale/uk/LC_MESSAGES/gdbm.mo
+usr/share/locale/uk/LC_MESSAGES/glib20.mo
+usr/share/locale/uk/LC_MESSAGES/grep.mo
+usr/share/locale/uk/LC_MESSAGES/libidn.mo
+usr/share/locale/uk/LC_MESSAGES/popt.mo
+usr/share/locale/uk/LC_MESSAGES/sed.mo
+usr/share/locale/uk/LC_MESSAGES/util-linux.mo
+usr/share/locale/uk/LC_TIME/coreutils.mo
+usr/share/locale/vi/LC_MESSAGES/bash.mo
+usr/share/locale/vi/LC_MESSAGES/coreutils.mo
+usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/vi/LC_MESSAGES/findutils.mo
+usr/share/locale/vi/LC_MESSAGES/glib20.mo
+usr/share/locale/vi/LC_MESSAGES/grep.mo
+usr/share/locale/vi/LC_MESSAGES/libc.mo
+usr/share/locale/vi/LC_MESSAGES/libidn.mo
+usr/share/locale/vi/LC_MESSAGES/popt.mo
+usr/share/locale/vi/LC_MESSAGES/sed.mo
+usr/share/locale/vi/LC_MESSAGES/util-linux.mo
+usr/share/locale/vi/LC_TIME/coreutils.mo
+usr/share/locale/wa/LC_MESSAGES/glib20.mo
+usr/share/locale/wa/LC_MESSAGES/popt.mo
+usr/share/locale/xh/LC_MESSAGES/glib20.mo
+usr/share/locale/yi/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
+usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
+usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/zh_CN/LC_MESSAGES/findutils.mo
+usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_CN/LC_MESSAGES/grep.mo
+usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
+usr/share/locale/zh_CN/LC_MESSAGES/libidn.mo
+usr/share/locale/zh_CN/LC_MESSAGES/popt.mo
+usr/share/locale/zh_CN/LC_MESSAGES/sed.mo
+usr/share/locale/zh_CN/LC_MESSAGES/util-linux.mo
+usr/share/locale/zh_CN/LC_TIME/coreutils.mo
+usr/share/locale/zh_HK/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
+usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
+usr/share/locale/zh_TW/LC_MESSAGES/findutils.mo
+usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_TW/LC_MESSAGES/grep.mo
+usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
+usr/share/locale/zh_TW/LC_MESSAGES/sed.mo
+usr/share/locale/zh_TW/LC_MESSAGES/util-linux.mo
+usr/share/locale/zh_TW/LC_TIME/coreutils.mo
+usr/share/lsb/4.1/modules/core/core-4.1-amd64
+usr/share/lsb/4.1/modules/core/core-4.1-ia32
+usr/share/lsb/4.1/modules/core/core-4.1-noarch
+usr/share/lsb/4.1/modules/core/security-4.1-amd64
+usr/share/lsb/4.1/modules/core/security-4.1-ia32
+usr/share/lsb/4.1/modules/core/security-4.1-noarch
+usr/share/lsb/4.1/submodules/core-4.1-amd64
+usr/share/lsb/4.1/submodules/core-4.1-ia32
+usr/share/lsb/4.1/submodules/core-4.1-noarch
+usr/share/man/man1/..1.gz
+usr/share/man/man1/:.1.gz
+usr/share/man/man1/[.1.gz
+usr/share/man/man1/alias.1.gz
+usr/share/man/man1/arch.1.gz
+usr/share/man/man1/base64.1.gz
+usr/share/man/man1/basename.1.gz
+usr/share/man/man1/bash.1.gz
+usr/share/man/man1/bashbug-64.1.gz
+usr/share/man/man1/bashbug.1.gz
+usr/share/man/man1/bg.1.gz
+usr/share/man/man1/bind.1.gz
+usr/share/man/man1/break.1.gz
+usr/share/man/man1/builtin.1.gz
+usr/share/man/man1/builtins.1.gz
+usr/share/man/man1/bunzip2.1.gz
+usr/share/man/man1/bzcat.1.gz
+usr/share/man/man1/bzcmp.1.gz
+usr/share/man/man1/bzdiff.1.gz
+usr/share/man/man1/bzgrep.1.gz
+usr/share/man/man1/bzip2.1.gz
+usr/share/man/man1/bzip2recover.1.gz
+usr/share/man/man1/bzless.1.gz
+usr/share/man/man1/bzmore.1.gz
+usr/share/man/man1/cal.1.gz
+usr/share/man/man1/caller.1.gz
+usr/share/man/man1/capsh.1.gz
+usr/share/man/man1/captoinfo.1m.gz
+usr/share/man/man1/cat.1.gz
+usr/share/man/man1/cd.1.gz
+usr/share/man/man1/chattr.1.gz
+usr/share/man/man1/chcon.1.gz
+usr/share/man/man1/chfn.1.gz
+usr/share/man/man1/chgrp.1.gz
+usr/share/man/man1/chmod.1.gz
+usr/share/man/man1/chown.1.gz
+usr/share/man/man1/chroot.1.gz
+usr/share/man/man1/chrt.1.gz
+usr/share/man/man1/chsh.1.gz
+usr/share/man/man1/cksum.1.gz
+usr/share/man/man1/clear.1.gz
+usr/share/man/man1/col.1.gz
+usr/share/man/man1/colcrt.1.gz
+usr/share/man/man1/colrm.1.gz
+usr/share/man/man1/column.1.gz
+usr/share/man/man1/comm.1.gz
+usr/share/man/man1/command.1.gz
+usr/share/man/man1/compgen.1.gz
+usr/share/man/man1/complete.1.gz
+usr/share/man/man1/compopt.1.gz
+usr/share/man/man1/continue.1.gz
+usr/share/man/man1/cp.1.gz
+usr/share/man/man1/csplit.1.gz
+usr/share/man/man1/cut.1.gz
+usr/share/man/man1/date.1.gz
+usr/share/man/man1/dd.1.gz
+usr/share/man/man1/declare.1.gz
+usr/share/man/man1/df.1.gz
+usr/share/man/man1/dir.1.gz
+usr/share/man/man1/dircolors.1.gz
+usr/share/man/man1/dirname.1.gz
+usr/share/man/man1/dirs.1.gz
+usr/share/man/man1/disown.1.gz
+usr/share/man/man1/dmesg.1.gz
+usr/share/man/man1/du.1.gz
+usr/share/man/man1/echo.1.gz
+usr/share/man/man1/egrep.1.gz
+usr/share/man/man1/eject.1.gz
+usr/share/man/man1/enable.1.gz
+usr/share/man/man1/env.1.gz
+usr/share/man/man1/eval.1.gz
+usr/share/man/man1/exec.1.gz
+usr/share/man/man1/exit.1.gz
+usr/share/man/man1/expand.1.gz
+usr/share/man/man1/export.1.gz
+usr/share/man/man1/expr.1.gz
+usr/share/man/man1/factor.1.gz
+usr/share/man/man1/fallocate.1.gz
+usr/share/man/man1/false.1.gz
+usr/share/man/man1/fc.1.gz
+usr/share/man/man1/fg.1.gz
+usr/share/man/man1/fgrep.1.gz
+usr/share/man/man1/find.1.gz
+usr/share/man/man1/flock.1.gz
+usr/share/man/man1/fmt.1.gz
+usr/share/man/man1/fold.1.gz
+usr/share/man/man1/gapplication.1.gz
+usr/share/man/man1/gdbus.1.gz
+usr/share/man/man1/getopt.1.gz
+usr/share/man/man1/getopts.1.gz
+usr/share/man/man1/gio-querymodules.1.gz
+usr/share/man/man1/glib-compile-schemas.1.gz
+usr/share/man/man1/grep.1.gz
+usr/share/man/man1/groups.1.gz
+usr/share/man/man1/gsettings.1.gz
+usr/share/man/man1/hash.1.gz
+usr/share/man/man1/head.1.gz
+usr/share/man/man1/help.1.gz
+usr/share/man/man1/hexdump.1.gz
+usr/share/man/man1/history.1.gz
+usr/share/man/man1/hostid.1.gz
+usr/share/man/man1/id.1.gz
+usr/share/man/man1/idn.1.gz
+usr/share/man/man1/info.1.gz
+usr/share/man/man1/infocmp.1m.gz
+usr/share/man/man1/infokey.1.gz
+usr/share/man/man1/infotocap.1m.gz
+usr/share/man/man1/install-info.1.gz
+usr/share/man/man1/install.1.gz
+usr/share/man/man1/ionice.1.gz
+usr/share/man/man1/ipcmk.1.gz
+usr/share/man/man1/ipcrm.1.gz
+usr/share/man/man1/ipcs.1.gz
+usr/share/man/man1/jobs.1.gz
+usr/share/man/man1/join.1.gz
+usr/share/man/man1/keyctl.1.gz
+usr/share/man/man1/kill.1.gz
+usr/share/man/man1/less.1.gz
+usr/share/man/man1/lessecho.1.gz
+usr/share/man/man1/lesskey.1.gz
+usr/share/man/man1/let.1.gz
+usr/share/man/man1/link.1.gz
+usr/share/man/man1/ln.1.gz
+usr/share/man/man1/local.1.gz
+usr/share/man/man1/logger.1.gz
+usr/share/man/man1/login.1.gz
+usr/share/man/man1/logname.1.gz
+usr/share/man/man1/logout.1.gz
+usr/share/man/man1/look.1.gz
+usr/share/man/man1/ls.1.gz
+usr/share/man/man1/lsattr.1.gz
+usr/share/man/man1/lsb_release.1.gz
+usr/share/man/man1/lscpu.1.gz
+usr/share/man/man1/lslogins.1.gz
+usr/share/man/man1/mapfile.1.gz
+usr/share/man/man1/mcookie.1.gz
+usr/share/man/man1/md5sum.1.gz
+usr/share/man/man1/mkdir.1.gz
+usr/share/man/man1/mkfifo.1.gz
+usr/share/man/man1/mknod.1.gz
+usr/share/man/man1/mktemp.1.gz
+usr/share/man/man1/more.1.gz
+usr/share/man/man1/mountpoint.1.gz
+usr/share/man/man1/mv.1.gz
+usr/share/man/man1/namei.1.gz
+usr/share/man/man1/nice.1.gz
+usr/share/man/man1/nl.1.gz
+usr/share/man/man1/nohup.1.gz
+usr/share/man/man1/nproc.1.gz
+usr/share/man/man1/nsenter.1.gz
+usr/share/man/man1/numfmt.1.gz
+usr/share/man/man1/od.1.gz
+usr/share/man/man1/oldfind.1.gz
+usr/share/man/man1/paste.1.gz
+usr/share/man/man1/pathchk.1.gz
+usr/share/man/man1/pinky.1.gz
+usr/share/man/man1/popd.1.gz
+usr/share/man/man1/pr.1.gz
+usr/share/man/man1/printenv.1.gz
+usr/share/man/man1/printf.1.gz
+usr/share/man/man1/prlimit.1.gz
+usr/share/man/man1/ptx.1.gz
+usr/share/man/man1/pushd.1.gz
+usr/share/man/man1/pwd.1.gz
+usr/share/man/man1/read.1.gz
+usr/share/man/man1/readlink.1.gz
+usr/share/man/man1/readonly.1.gz
+usr/share/man/man1/realpath.1.gz
+usr/share/man/man1/rename.1.gz
+usr/share/man/man1/renice.1.gz
+usr/share/man/man1/reset.1.gz
+usr/share/man/man1/return.1.gz
+usr/share/man/man1/rev.1.gz
+usr/share/man/man1/rm.1.gz
+usr/share/man/man1/rmdir.1.gz
+usr/share/man/man1/runcon.1.gz
+usr/share/man/man1/runuser.1.gz
+usr/share/man/man1/script.1.gz
+usr/share/man/man1/scriptreplay.1.gz
+usr/share/man/man1/sed.1.gz
+usr/share/man/man1/seq.1.gz
+usr/share/man/man1/set.1.gz
+usr/share/man/man1/setpriv.1.gz
+usr/share/man/man1/setsid.1.gz
+usr/share/man/man1/setterm.1.gz
+usr/share/man/man1/sh.1.gz
+usr/share/man/man1/sha1sum.1.gz
+usr/share/man/man1/sha224sum.1.gz
+usr/share/man/man1/sha256sum.1.gz
+usr/share/man/man1/sha384sum.1.gz
+usr/share/man/man1/sha512sum.1.gz
+usr/share/man/man1/shift.1.gz
+usr/share/man/man1/shopt.1.gz
+usr/share/man/man1/shred.1.gz
+usr/share/man/man1/shuf.1.gz
+usr/share/man/man1/sleep.1.gz
+usr/share/man/man1/sort.1.gz
+usr/share/man/man1/source.1.gz
+usr/share/man/man1/split.1.gz
+usr/share/man/man1/stat.1.gz
+usr/share/man/man1/stdbuf.1.gz
+usr/share/man/man1/stty.1.gz
+usr/share/man/man1/su.1.gz
+usr/share/man/man1/sum.1.gz
+usr/share/man/man1/suspend.1.gz
+usr/share/man/man1/sync.1.gz
+usr/share/man/man1/tabs.1.gz
+usr/share/man/man1/tac.1.gz
+usr/share/man/man1/tail.1.gz
+usr/share/man/man1/tailf.1.gz
+usr/share/man/man1/taskset.1.gz
+usr/share/man/man1/tee.1.gz
+usr/share/man/man1/test.1.gz
+usr/share/man/man1/tic.1m.gz
+usr/share/man/man1/timeout.1.gz
+usr/share/man/man1/times.1.gz
+usr/share/man/man1/toe.1m.gz
+usr/share/man/man1/touch.1.gz
+usr/share/man/man1/tput.1.gz
+usr/share/man/man1/tr.1.gz
+usr/share/man/man1/trap.1.gz
+usr/share/man/man1/true.1.gz
+usr/share/man/man1/truncate.1.gz
+usr/share/man/man1/tset.1.gz
+usr/share/man/man1/tsort.1.gz
+usr/share/man/man1/tty.1.gz
+usr/share/man/man1/type.1.gz
+usr/share/man/man1/typeset.1.gz
+usr/share/man/man1/ul.1.gz
+usr/share/man/man1/ulimit.1.gz
+usr/share/man/man1/umask.1.gz
+usr/share/man/man1/unalias.1.gz
+usr/share/man/man1/uname.1.gz
+usr/share/man/man1/unexpand.1.gz
+usr/share/man/man1/uniq.1.gz
+usr/share/man/man1/unlink.1.gz
+usr/share/man/man1/unset.1.gz
+usr/share/man/man1/unshare.1.gz
+usr/share/man/man1/users.1.gz
+usr/share/man/man1/utmpdump.1.gz
+usr/share/man/man1/uuidgen.1.gz
+usr/share/man/man1/vdir.1.gz
+usr/share/man/man1/wait.1.gz
+usr/share/man/man1/wc.1.gz
+usr/share/man/man1/whereis.1.gz
+usr/share/man/man1/which.1.gz
+usr/share/man/man1/who.1.gz
+usr/share/man/man1/whoami.1.gz
+usr/share/man/man1/write.1.gz
+usr/share/man/man1/xargs.1.gz
+usr/share/man/man1/yes.1.gz
+usr/share/man/man5/.k5identity.5.gz
+usr/share/man/man5/.k5login.5.gz
+usr/share/man/man5/e2fsck.conf.5.gz
+usr/share/man/man5/ext2.5.gz
+usr/share/man/man5/ext3.5.gz
+usr/share/man/man5/ext4.5.gz
+usr/share/man/man5/fstab.5.gz
+usr/share/man/man5/info.5.gz
+usr/share/man/man5/k5identity.5.gz
+usr/share/man/man5/k5login.5.gz
+usr/share/man/man5/krb5.conf.5.gz
+usr/share/man/man5/mke2fs.conf.5.gz
+usr/share/man/man5/request-key.conf.5.gz
+usr/share/man/man5/term.5.gz
+usr/share/man/man5/terminfo.5.gz
+usr/share/man/man7/term.7.gz
+usr/share/man/man8/addpart.8.gz
+usr/share/man/man8/agetty.8.gz
+usr/share/man/man8/badblocks.8.gz
+usr/share/man/man8/blkdiscard.8.gz
+usr/share/man/man8/blkid.8.gz
+usr/share/man/man8/blockdev.8.gz
+usr/share/man/man8/cfdisk.8.gz
+usr/share/man/man8/chcpu.8.gz
+usr/share/man/man8/clock.8.gz
+usr/share/man/man8/ctrlaltdel.8.gz
+usr/share/man/man8/cytune.8.gz
+usr/share/man/man8/debugfs.8.gz
+usr/share/man/man8/delpart.8.gz
+usr/share/man/man8/dumpe2fs.8.gz
+usr/share/man/man8/e2freefrag.8.gz
+usr/share/man/man8/e2fsck.8.gz
+usr/share/man/man8/e2image.8.gz
+usr/share/man/man8/e2label.8.gz
+usr/share/man/man8/e2undo.8.gz
+usr/share/man/man8/e4defrag.8.gz
+usr/share/man/man8/fdformat.8.gz
+usr/share/man/man8/fdisk.8.gz
+usr/share/man/man8/filefrag.8.gz
+usr/share/man/man8/findfs.8.gz
+usr/share/man/man8/findmnt.8.gz
+usr/share/man/man8/fsck.8.gz
+usr/share/man/man8/fsck.cramfs.8.gz
+usr/share/man/man8/fsck.ext2.8.gz
+usr/share/man/man8/fsck.ext3.8.gz
+usr/share/man/man8/fsck.ext4.8.gz
+usr/share/man/man8/fsck.minix.8.gz
+usr/share/man/man8/fsfreeze.8.gz
+usr/share/man/man8/fstrim.8.gz
+usr/share/man/man8/getcap.8.gz
+usr/share/man/man8/getpcaps.8.gz
+usr/share/man/man8/hwclock.8.gz
+usr/share/man/man8/i386.8.gz
+usr/share/man/man8/isosize.8.gz
+usr/share/man/man8/key.dns_resolver.8.gz
+usr/share/man/man8/ldattach.8.gz
+usr/share/man/man8/linux32.8.gz
+usr/share/man/man8/linux64.8.gz
+usr/share/man/man8/logsave.8.gz
+usr/share/man/man8/losetup.8.gz
+usr/share/man/man8/lsblk.8.gz
+usr/share/man/man8/lslocks.8.gz
+usr/share/man/man8/mke2fs.8.gz
+usr/share/man/man8/mkfs.8.gz
+usr/share/man/man8/mkfs.cramfs.8.gz
+usr/share/man/man8/mkfs.ext2.8.gz
+usr/share/man/man8/mkfs.ext3.8.gz
+usr/share/man/man8/mkfs.ext4.8.gz
+usr/share/man/man8/mkfs.minix.8.gz
+usr/share/man/man8/mklost+found.8.gz
+usr/share/man/man8/mkswap.8.gz
+usr/share/man/man8/mount.8.gz
+usr/share/man/man8/nologin.8.gz
+usr/share/man/man8/partx.8.gz
+usr/share/man/man8/pivot_root.8.gz
+usr/share/man/man8/raw.8.gz
+usr/share/man/man8/rawdevices.8.gz
+usr/share/man/man8/readprofile.8.gz
+usr/share/man/man8/request-key.8.gz
+usr/share/man/man8/resize2fs.8.gz
+usr/share/man/man8/resizepart.8.gz
+usr/share/man/man8/rtcwake.8.gz
+usr/share/man/man8/setarch.8.gz
+usr/share/man/man8/setcap.8.gz
+usr/share/man/man8/setserial.8.gz
+usr/share/man/man8/sfdisk.8.gz
+usr/share/man/man8/sulogin.8.gz
+usr/share/man/man8/swaplabel.8.gz
+usr/share/man/man8/swapoff.8.gz
+usr/share/man/man8/swapon.8.gz
+usr/share/man/man8/switch_root.8.gz
+usr/share/man/man8/tune2fs.8.gz
+usr/share/man/man8/umount.8.gz
+usr/share/man/man8/wdctl.8.gz
+usr/share/man/man8/wipefs.8.gz
+usr/share/man/man8/x86_64.8.gz
+usr/share/redhat-release
+usr/tmp
+var/db/Makefile
+@rmtry var/cache/ldconfig/aux-cache
+var/mail
+@dir etc/X11/applnk
+@dir etc/X11/fontpath.d
+@dir etc/bash_completion.d
+@dir etc/gss/mech.d
+@dir etc/ld.so.conf.d
+@dir etc/opt
+@dir etc/pm/config.d
+@dir etc/pm/power.d
+@dir etc/pm/sleep.d
+@dir etc/popt.d
+@dir etc/request-key.d
+@dir etc/sysconfig
+@dir etc/xdg/autostart
+@dir etc/xinetd.d
+@dir mnt
+@dir opt
+@dir proc
+@dir srv
+@dir sys
+@dir usr/etc
+@dir usr/games
+@dir usr/include
+@dir usr/lib/debug
+@dir usr/lib/games
+@dir usr/lib/gio/modules
+@dir usr/lib/krb5/plugins/authdata
+@dir usr/lib/krb5/plugins/libkrb5
+@dir usr/lib/krb5/plugins/preauth
+@dir usr/lib64/X11
+@dir usr/lib64/games
+@dir usr/lib64/gio/modules
+@dir usr/lib64/krb5/plugins/authdata
+@dir usr/lib64/krb5/plugins/libkrb5
+@dir usr/lib64/krb5/plugins/preauth
+@dir usr/lib64/sse2
+@dir usr/lib64/tls
+@dir usr/share/X11
+@dir usr/share/aclocal
+@dir usr/share/applications
+@dir usr/share/augeas/lenses
+@dir usr/share/backgrounds
+@dir usr/share/desktop-directories
+@dir usr/share/dict
+@dir usr/share/empty
+@dir usr/share/games
+@dir usr/share/ghostscript/conf.d
+@dir usr/share/glib-2.0/schemas
+@dir usr/share/gnome
+@dir usr/share/icons
+@dir usr/share/idl
+@dir usr/share/locale/aa/LC_MESSAGES
+@dir usr/share/locale/ab/LC_MESSAGES
+@dir usr/share/locale/ace/LC_MESSAGES
+@dir usr/share/locale/ach/LC_MESSAGES
+@dir usr/share/locale/ada/LC_MESSAGES
+@dir usr/share/locale/ady/LC_MESSAGES
+@dir usr/share/locale/ae/LC_MESSAGES
+@dir usr/share/locale/af_ZA/LC_MESSAGES
+@dir usr/share/locale/afa/LC_MESSAGES
+@dir usr/share/locale/afh/LC_MESSAGES
+@dir usr/share/locale/ain/LC_MESSAGES
+@dir usr/share/locale/ak/LC_MESSAGES
+@dir usr/share/locale/akk/LC_MESSAGES
+@dir usr/share/locale/ale/LC_MESSAGES
+@dir usr/share/locale/alg/LC_MESSAGES
+@dir usr/share/locale/alt/LC_MESSAGES
+@dir usr/share/locale/am_ET/LC_MESSAGES
+@dir usr/share/locale/ang/LC_MESSAGES
+@dir usr/share/locale/anp/LC_MESSAGES
+@dir usr/share/locale/apa/LC_MESSAGES
+@dir usr/share/locale/arc/LC_MESSAGES
+@dir usr/share/locale/arn/LC_MESSAGES
+@dir usr/share/locale/arp/LC_MESSAGES
+@dir usr/share/locale/art/LC_MESSAGES
+@dir usr/share/locale/arw/LC_MESSAGES
+@dir usr/share/locale/ast_ES/LC_MESSAGES
+@dir usr/share/locale/ath/LC_MESSAGES
+@dir usr/share/locale/aus/LC_MESSAGES
+@dir usr/share/locale/av/LC_MESSAGES
+@dir usr/share/locale/awa/LC_MESSAGES
+@dir usr/share/locale/ay/LC_MESSAGES
+@dir usr/share/locale/az_IR/LC_MESSAGES
+@dir usr/share/locale/ba/LC_MESSAGES
+@dir usr/share/locale/bad/LC_MESSAGES
+@dir usr/share/locale/bai/LC_MESSAGES
+@dir usr/share/locale/bal/LC_MESSAGES
+@dir usr/share/locale/ban/LC_MESSAGES
+@dir usr/share/locale/bas/LC_MESSAGES
+@dir usr/share/locale/bat/LC_MESSAGES
+@dir usr/share/locale/bej/LC_MESSAGES
+@dir usr/share/locale/bem/LC_MESSAGES
+@dir usr/share/locale/ber/LC_MESSAGES
+@dir usr/share/locale/bg_BG/LC_MESSAGES
+@dir usr/share/locale/bh/LC_MESSAGES
+@dir usr/share/locale/bho/LC_MESSAGES
+@dir usr/share/locale/bi/LC_MESSAGES
+@dir usr/share/locale/bik/LC_MESSAGES
+@dir usr/share/locale/bin/LC_MESSAGES
+@dir usr/share/locale/bla/LC_MESSAGES
+@dir usr/share/locale/bm/LC_MESSAGES
+@dir usr/share/locale/bnt/LC_MESSAGES
+@dir usr/share/locale/bo/LC_MESSAGES
+@dir usr/share/locale/br/LC_MESSAGES
+@dir usr/share/locale/bra/LC_MESSAGES
+@dir usr/share/locale/brx/LC_MESSAGES
+@dir usr/share/locale/btk/LC_MESSAGES
+@dir usr/share/locale/bua/LC_MESSAGES
+@dir usr/share/locale/bug/LC_MESSAGES
+@dir usr/share/locale/byn/LC_MESSAGES
+@dir usr/share/locale/ca_ES/LC_MESSAGES
+@dir usr/share/locale/ca_ES@valencian/LC_MESSAGES
+@dir usr/share/locale/cad/LC_MESSAGES
+@dir usr/share/locale/cai/LC_MESSAGES
+@dir usr/share/locale/car/LC_MESSAGES
+@dir usr/share/locale/cau/LC_MESSAGES
+@dir usr/share/locale/ce/LC_MESSAGES
+@dir usr/share/locale/ceb/LC_MESSAGES
+@dir usr/share/locale/cel/LC_MESSAGES
+@dir usr/share/locale/ch/LC_MESSAGES
+@dir usr/share/locale/chb/LC_MESSAGES
+@dir usr/share/locale/chg/LC_MESSAGES
+@dir usr/share/locale/chk/LC_MESSAGES
+@dir usr/share/locale/chm/LC_MESSAGES
+@dir usr/share/locale/chn/LC_MESSAGES
+@dir usr/share/locale/cho/LC_MESSAGES
+@dir usr/share/locale/chp/LC_MESSAGES
+@dir usr/share/locale/chr/LC_MESSAGES
+@dir usr/share/locale/chy/LC_MESSAGES
+@dir usr/share/locale/cmc/LC_MESSAGES
+@dir usr/share/locale/co/LC_MESSAGES
+@dir usr/share/locale/cop/LC_MESSAGES
+@dir usr/share/locale/cpe/LC_MESSAGES
+@dir usr/share/locale/cpf/LC_MESSAGES
+@dir usr/share/locale/cpp/LC_MESSAGES
+@dir usr/share/locale/cr/LC_MESSAGES
+@dir usr/share/locale/crh/LC_MESSAGES
+@dir usr/share/locale/crp/LC_MESSAGES
+@dir usr/share/locale/cs_CZ/LC_MESSAGES
+@dir usr/share/locale/csb/LC_MESSAGES
+@dir usr/share/locale/cu/LC_MESSAGES
+@dir usr/share/locale/cus/LC_MESSAGES
+@dir usr/share/locale/cv/LC_MESSAGES
+@dir usr/share/locale/dak/LC_MESSAGES
+@dir usr/share/locale/dar/LC_MESSAGES
+@dir usr/share/locale/day/LC_MESSAGES
+@dir usr/share/locale/de_AT/LC_MESSAGES
+@dir usr/share/locale/de_CH/LC_MESSAGES
+@dir usr/share/locale/de_DE/LC_MESSAGES
+@dir usr/share/locale/default/LC_MESSAGES
+@dir usr/share/locale/del/LC_MESSAGES
+@dir usr/share/locale/den/LC_MESSAGES
+@dir usr/share/locale/dgr/LC_MESSAGES
+@dir usr/share/locale/din/LC_MESSAGES
+@dir usr/share/locale/doi/LC_MESSAGES
+@dir usr/share/locale/dra/LC_MESSAGES
+@dir usr/share/locale/dsb/LC_MESSAGES
+@dir usr/share/locale/dua/LC_MESSAGES
+@dir usr/share/locale/dum/LC_MESSAGES
+@dir usr/share/locale/dv/LC_MESSAGES
+@dir usr/share/locale/dyu/LC_MESSAGES
+@dir usr/share/locale/ee/LC_MESSAGES
+@dir usr/share/locale/efi/LC_MESSAGES
+@dir usr/share/locale/egy/LC_MESSAGES
+@dir usr/share/locale/eka/LC_MESSAGES
+@dir usr/share/locale/el_GR/LC_MESSAGES
+@dir usr/share/locale/elx/LC_MESSAGES
+@dir usr/share/locale/en/LC_MESSAGES
+@dir usr/share/locale/en_AU/LC_MESSAGES
+@dir usr/share/locale/en_NZ/LC_MESSAGES
+@dir usr/share/locale/enm/LC_MESSAGES
+@dir usr/share/locale/es_AR/LC_MESSAGES
+@dir usr/share/locale/es_CL/LC_MESSAGES
+@dir usr/share/locale/es_CO/LC_MESSAGES
+@dir usr/share/locale/es_CR/LC_MESSAGES
+@dir usr/share/locale/es_DO/LC_MESSAGES
+@dir usr/share/locale/es_EC/LC_MESSAGES
+@dir usr/share/locale/es_ES/LC_MESSAGES
+@dir usr/share/locale/es_GT/LC_MESSAGES
+@dir usr/share/locale/es_HN/LC_MESSAGES
+@dir usr/share/locale/es_MX/LC_MESSAGES
+@dir usr/share/locale/es_NI/LC_MESSAGES
+@dir usr/share/locale/es_PA/LC_MESSAGES
+@dir usr/share/locale/es_PE/LC_MESSAGES
+@dir usr/share/locale/es_PR/LC_MESSAGES
+@dir usr/share/locale/es_SV/LC_MESSAGES
+@dir usr/share/locale/es_UY/LC_MESSAGES
+@dir usr/share/locale/es_VE/LC_MESSAGES
+@dir usr/share/locale/et_EE/LC_MESSAGES
+@dir usr/share/locale/eu_ES/LC_MESSAGES
+@dir usr/share/locale/ewo/LC_MESSAGES
+@dir usr/share/locale/fa_IR/LC_MESSAGES
+@dir usr/share/locale/fan/LC_MESSAGES
+@dir usr/share/locale/fat/LC_MESSAGES
+@dir usr/share/locale/ff/LC_MESSAGES
+@dir usr/share/locale/fi_FI/LC_MESSAGES
+@dir usr/share/locale/fil/LC_MESSAGES
+@dir usr/share/locale/fiu/LC_MESSAGES
+@dir usr/share/locale/fj/LC_MESSAGES
+@dir usr/share/locale/fo/LC_MESSAGES
+@dir usr/share/locale/fon/LC_MESSAGES
+@dir usr/share/locale/fr_BE/LC_MESSAGES
+@dir usr/share/locale/fr_CA/LC_MESSAGES
+@dir usr/share/locale/fr_CH/LC_MESSAGES
+@dir usr/share/locale/fr_FR/LC_MESSAGES
+@dir usr/share/locale/frm/LC_MESSAGES
+@dir usr/share/locale/fro/LC_MESSAGES
+@dir usr/share/locale/frr/LC_MESSAGES
+@dir usr/share/locale/frs/LC_MESSAGES
+@dir usr/share/locale/fur/LC_MESSAGES
+@dir usr/share/locale/fy/LC_MESSAGES
+@dir usr/share/locale/gaa/LC_MESSAGES
+@dir usr/share/locale/gay/LC_MESSAGES
+@dir usr/share/locale/gba/LC_MESSAGES
+@dir usr/share/locale/gd/LC_MESSAGES
+@dir usr/share/locale/gem/LC_MESSAGES
+@dir usr/share/locale/gez/LC_MESSAGES
+@dir usr/share/locale/gil/LC_MESSAGES
+@dir usr/share/locale/gl_ES/LC_MESSAGES
+@dir usr/share/locale/gmh/LC_MESSAGES
+@dir usr/share/locale/gn/LC_MESSAGES
+@dir usr/share/locale/goh/LC_MESSAGES
+@dir usr/share/locale/gon/LC_MESSAGES
+@dir usr/share/locale/gor/LC_MESSAGES
+@dir usr/share/locale/got/LC_MESSAGES
+@dir usr/share/locale/grb/LC_MESSAGES
+@dir usr/share/locale/grc/LC_MESSAGES
+@dir usr/share/locale/gsw/LC_MESSAGES
+@dir usr/share/locale/gv/LC_MESSAGES
+@dir usr/share/locale/gwi/LC_MESSAGES
+@dir usr/share/locale/ha/LC_MESSAGES
+@dir usr/share/locale/hai/LC_MESSAGES
+@dir usr/share/locale/haw/LC_MESSAGES
+@dir usr/share/locale/he_IL/LC_MESSAGES
+@dir usr/share/locale/hil/LC_MESSAGES
+@dir usr/share/locale/him/LC_MESSAGES
+@dir usr/share/locale/hit/LC_MESSAGES
+@dir usr/share/locale/hmn/LC_MESSAGES
+@dir usr/share/locale/ho/LC_MESSAGES
+@dir usr/share/locale/hr_HR/LC_MESSAGES
+@dir usr/share/locale/hsb/LC_MESSAGES
+@dir usr/share/locale/ht/LC_MESSAGES
+@dir usr/share/locale/hu_HU/LC_MESSAGES
+@dir usr/share/locale/hup/LC_MESSAGES
+@dir usr/share/locale/hz/LC_MESSAGES
+@dir usr/share/locale/iba/LC_MESSAGES
+@dir usr/share/locale/ie/LC_MESSAGES
+@dir usr/share/locale/ig/LC_MESSAGES
+@dir usr/share/locale/ii/LC_MESSAGES
+@dir usr/share/locale/ijo/LC_MESSAGES
+@dir usr/share/locale/ik/LC_MESSAGES
+@dir usr/share/locale/ilo/LC_MESSAGES
+@dir usr/share/locale/inc/LC_MESSAGES
+@dir usr/share/locale/ine/LC_MESSAGES
+@dir usr/share/locale/inh/LC_MESSAGES
+@dir usr/share/locale/io/LC_MESSAGES
+@dir usr/share/locale/ira/LC_MESSAGES
+@dir usr/share/locale/iro/LC_MESSAGES
+@dir usr/share/locale/it_CH/LC_MESSAGES
+@dir usr/share/locale/it_IT/LC_MESSAGES
+@dir usr/share/locale/iu/LC_MESSAGES
+@dir usr/share/locale/ja_JP/LC_MESSAGES
+@dir usr/share/locale/jbo/LC_MESSAGES
+@dir usr/share/locale/jpr/LC_MESSAGES
+@dir usr/share/locale/jrb/LC_MESSAGES
+@dir usr/share/locale/jv/LC_MESSAGES
+@dir usr/share/locale/kaa/LC_MESSAGES
+@dir usr/share/locale/kab/LC_MESSAGES
+@dir usr/share/locale/kac/LC_MESSAGES
+@dir usr/share/locale/kam/LC_MESSAGES
+@dir usr/share/locale/kar/LC_MESSAGES
+@dir usr/share/locale/kaw/LC_MESSAGES
+@dir usr/share/locale/kbd/LC_MESSAGES
+@dir usr/share/locale/kg/LC_MESSAGES
+@dir usr/share/locale/kha/LC_MESSAGES
+@dir usr/share/locale/khi/LC_MESSAGES
+@dir usr/share/locale/kho/LC_MESSAGES
+@dir usr/share/locale/ki/LC_MESSAGES
+@dir usr/share/locale/kj/LC_MESSAGES
+@dir usr/share/locale/kl/LC_MESSAGES
+@dir usr/share/locale/km/LC_MESSAGES
+@dir usr/share/locale/kmb/LC_MESSAGES
+@dir usr/share/locale/ko_KR/LC_MESSAGES
+@dir usr/share/locale/kok/LC_MESSAGES
+@dir usr/share/locale/kos/LC_MESSAGES
+@dir usr/share/locale/kpe/LC_MESSAGES
+@dir usr/share/locale/kr/LC_MESSAGES
+@dir usr/share/locale/krc/LC_MESSAGES
+@dir usr/share/locale/krl/LC_MESSAGES
+@dir usr/share/locale/kro/LC_MESSAGES
+@dir usr/share/locale/kru/LC_MESSAGES
+@dir usr/share/locale/ks/LC_MESSAGES
+@dir usr/share/locale/ks@devanagari/LC_MESSAGES
+@dir usr/share/locale/kum/LC_MESSAGES
+@dir usr/share/locale/kut/LC_MESSAGES
+@dir usr/share/locale/kv/LC_MESSAGES
+@dir usr/share/locale/kw/LC_MESSAGES
+@dir usr/share/locale/la/LC_MESSAGES
+@dir usr/share/locale/lad/LC_MESSAGES
+@dir usr/share/locale/lah/LC_MESSAGES
+@dir usr/share/locale/lam/LC_MESSAGES
+@dir usr/share/locale/lb/LC_MESSAGES
+@dir usr/share/locale/lez/LC_MESSAGES
+@dir usr/share/locale/li/LC_MESSAGES
+@dir usr/share/locale/ln/LC_MESSAGES
+@dir usr/share/locale/lo/LC_MESSAGES
+@dir usr/share/locale/lol/LC_MESSAGES
+@dir usr/share/locale/loz/LC_MESSAGES
+@dir usr/share/locale/lu/LC_MESSAGES
+@dir usr/share/locale/lua/LC_MESSAGES
+@dir usr/share/locale/lui/LC_MESSAGES
+@dir usr/share/locale/lun/LC_MESSAGES
+@dir usr/share/locale/luo/LC_MESSAGES
+@dir usr/share/locale/lus/LC_MESSAGES
+@dir usr/share/locale/lv_LV/LC_MESSAGES
+@dir usr/share/locale/mad/LC_MESSAGES
+@dir usr/share/locale/mag/LC_MESSAGES
+@dir usr/share/locale/mak/LC_MESSAGES
+@dir usr/share/locale/man/LC_MESSAGES
+@dir usr/share/locale/map/LC_MESSAGES
+@dir usr/share/locale/mas/LC_MESSAGES
+@dir usr/share/locale/mdf/LC_MESSAGES
+@dir usr/share/locale/mdr/LC_MESSAGES
+@dir usr/share/locale/men/LC_MESSAGES
+@dir usr/share/locale/mga/LC_MESSAGES
+@dir usr/share/locale/mh/LC_MESSAGES
+@dir usr/share/locale/mi/LC_MESSAGES
+@dir usr/share/locale/mic/LC_MESSAGES
+@dir usr/share/locale/min/LC_MESSAGES
+@dir usr/share/locale/mis/LC_MESSAGES
+@dir usr/share/locale/mkh/LC_MESSAGES
+@dir usr/share/locale/mnc/LC_MESSAGES
+@dir usr/share/locale/mni/LC_MESSAGES
+@dir usr/share/locale/mno/LC_MESSAGES
+@dir usr/share/locale/mo/LC_MESSAGES
+@dir usr/share/locale/moh/LC_MESSAGES
+@dir usr/share/locale/mos/LC_MESSAGES
+@dir usr/share/locale/ms_MY/LC_MESSAGES
+@dir usr/share/locale/mt/LC_MESSAGES
+@dir usr/share/locale/mul/LC_MESSAGES
+@dir usr/share/locale/mun/LC_MESSAGES
+@dir usr/share/locale/mus/LC_MESSAGES
+@dir usr/share/locale/mwl/LC_MESSAGES
+@dir usr/share/locale/mwr/LC_MESSAGES
+@dir usr/share/locale/my/LC_MESSAGES
+@dir usr/share/locale/my_MM/LC_MESSAGES
+@dir usr/share/locale/myn/LC_MESSAGES
+@dir usr/share/locale/myv/LC_MESSAGES
+@dir usr/share/locale/na/LC_MESSAGES
+@dir usr/share/locale/nah/LC_MESSAGES
+@dir usr/share/locale/nai/LC_MESSAGES
+@dir usr/share/locale/nap/LC_MESSAGES
+@dir usr/share/locale/nb_NO/LC_MESSAGES
+@dir usr/share/locale/nd/LC_MESSAGES
+@dir usr/share/locale/nds@NFE/LC_MESSAGES
+@dir usr/share/locale/nds_DE/LC_MESSAGES
+@dir usr/share/locale/new/LC_MESSAGES
+@dir usr/share/locale/ng/LC_MESSAGES
+@dir usr/share/locale/nia/LC_MESSAGES
+@dir usr/share/locale/nic/LC_MESSAGES
+@dir usr/share/locale/niu/LC_MESSAGES
+@dir usr/share/locale/nl_BE/LC_MESSAGES
+@dir usr/share/locale/nl_NL/LC_MESSAGES
+@dir usr/share/locale/no/LC_MESSAGES
+@dir usr/share/locale/nog/LC_MESSAGES
+@dir usr/share/locale/non/LC_MESSAGES
+@dir usr/share/locale/nqo/LC_MESSAGES
+@dir usr/share/locale/nr/LC_MESSAGES
+@dir usr/share/locale/nso/LC_MESSAGES
+@dir usr/share/locale/nub/LC_MESSAGES
+@dir usr/share/locale/nv/LC_MESSAGES
+@dir usr/share/locale/nwc/LC_MESSAGES
+@dir usr/share/locale/ny/LC_MESSAGES
+@dir usr/share/locale/nym/LC_MESSAGES
+@dir usr/share/locale/nyn/LC_MESSAGES
+@dir usr/share/locale/nyo/LC_MESSAGES
+@dir usr/share/locale/nzi/LC_MESSAGES
+@dir usr/share/locale/oj/LC_MESSAGES
+@dir usr/share/locale/om/LC_MESSAGES
+@dir usr/share/locale/os/LC_MESSAGES
+@dir usr/share/locale/osa/LC_MESSAGES
+@dir usr/share/locale/ota/LC_MESSAGES
+@dir usr/share/locale/oto/LC_MESSAGES
+@dir usr/share/locale/paa/LC_MESSAGES
+@dir usr/share/locale/pag/LC_MESSAGES
+@dir usr/share/locale/pal/LC_MESSAGES
+@dir usr/share/locale/pam/LC_MESSAGES
+@dir usr/share/locale/pap/LC_MESSAGES
+@dir usr/share/locale/pau/LC_MESSAGES
+@dir usr/share/locale/peo/LC_MESSAGES
+@dir usr/share/locale/phi/LC_MESSAGES
+@dir usr/share/locale/phn/LC_MESSAGES
+@dir usr/share/locale/pi/LC_MESSAGES
+@dir usr/share/locale/pl_PL/LC_MESSAGES
+@dir usr/share/locale/pon/LC_MESSAGES
+@dir usr/share/locale/pra/LC_MESSAGES
+@dir usr/share/locale/pro/LC_MESSAGES
+@dir usr/share/locale/pt_PT/LC_MESSAGES
+@dir usr/share/locale/qaa-qtz/LC_MESSAGES
+@dir usr/share/locale/qu/LC_MESSAGES
+@dir usr/share/locale/raj/LC_MESSAGES
+@dir usr/share/locale/rap/LC_MESSAGES
+@dir usr/share/locale/rar/LC_MESSAGES
+@dir usr/share/locale/rm/LC_MESSAGES
+@dir usr/share/locale/rn/LC_MESSAGES
+@dir usr/share/locale/roa/LC_MESSAGES
+@dir usr/share/locale/rom/LC_MESSAGES
+@dir usr/share/locale/ru_RU/LC_MESSAGES
+@dir usr/share/locale/rup/LC_MESSAGES
+@dir usr/share/locale/sa/LC_MESSAGES
+@dir usr/share/locale/sad/LC_MESSAGES
+@dir usr/share/locale/sah/LC_MESSAGES
+@dir usr/share/locale/sai/LC_MESSAGES
+@dir usr/share/locale/sal/LC_MESSAGES
+@dir usr/share/locale/sam/LC_MESSAGES
+@dir usr/share/locale/sas/LC_MESSAGES
+@dir usr/share/locale/sat/LC_MESSAGES
+@dir usr/share/locale/sc/LC_MESSAGES
+@dir usr/share/locale/scn/LC_MESSAGES
+@dir usr/share/locale/sco/LC_MESSAGES
+@dir usr/share/locale/sd/LC_MESSAGES
+@dir usr/share/locale/se/LC_MESSAGES
+@dir usr/share/locale/sel/LC_MESSAGES
+@dir usr/share/locale/sem/LC_MESSAGES
+@dir usr/share/locale/sg/LC_MESSAGES
+@dir usr/share/locale/sga/LC_MESSAGES
+@dir usr/share/locale/sgn/LC_MESSAGES
+@dir usr/share/locale/shn/LC_MESSAGES
+@dir usr/share/locale/sid/LC_MESSAGES
+@dir usr/share/locale/sio/LC_MESSAGES
+@dir usr/share/locale/sit/LC_MESSAGES
+@dir usr/share/locale/sl_SI/LC_MESSAGES
+@dir usr/share/locale/sla/LC_MESSAGES
+@dir usr/share/locale/sm/LC_MESSAGES
+@dir usr/share/locale/sma/LC_MESSAGES
+@dir usr/share/locale/smi/LC_MESSAGES
+@dir usr/share/locale/smj/LC_MESSAGES
+@dir usr/share/locale/smn/LC_MESSAGES
+@dir usr/share/locale/sms/LC_MESSAGES
+@dir usr/share/locale/sn/LC_MESSAGES
+@dir usr/share/locale/snk/LC_MESSAGES
+@dir usr/share/locale/so/LC_MESSAGES
+@dir usr/share/locale/sog/LC_MESSAGES
+@dir usr/share/locale/son/LC_MESSAGES
+@dir usr/share/locale/sq_AL/LC_MESSAGES
+@dir usr/share/locale/sr@Latn/LC_MESSAGES
+@dir usr/share/locale/sr@ijekavian/LC_MESSAGES
+@dir usr/share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dir usr/share/locale/sr_RS/LC_MESSAGES
+@dir usr/share/locale/srn/LC_MESSAGES
+@dir usr/share/locale/srr/LC_MESSAGES
+@dir usr/share/locale/ss/LC_MESSAGES
+@dir usr/share/locale/ssa/LC_MESSAGES
+@dir usr/share/locale/st/LC_MESSAGES
+@dir usr/share/locale/su/LC_MESSAGES
+@dir usr/share/locale/suk/LC_MESSAGES
+@dir usr/share/locale/sus/LC_MESSAGES
+@dir usr/share/locale/sux/LC_MESSAGES
+@dir usr/share/locale/sv_SE/LC_MESSAGES
+@dir usr/share/locale/sw/LC_MESSAGES
+@dir usr/share/locale/syc/LC_MESSAGES
+@dir usr/share/locale/syr/LC_MESSAGES
+@dir usr/share/locale/tai/LC_MESSAGES
+@dir usr/share/locale/tem/LC_MESSAGES
+@dir usr/share/locale/ter/LC_MESSAGES
+@dir usr/share/locale/tet/LC_MESSAGES
+@dir usr/share/locale/ti/LC_MESSAGES
+@dir usr/share/locale/tig/LC_MESSAGES
+@dir usr/share/locale/tiv/LC_MESSAGES
+@dir usr/share/locale/tk/LC_MESSAGES
+@dir usr/share/locale/tkl/LC_MESSAGES
+@dir usr/share/locale/tlh/LC_MESSAGES
+@dir usr/share/locale/tli/LC_MESSAGES
+@dir usr/share/locale/tmh/LC_MESSAGES
+@dir usr/share/locale/tn/LC_MESSAGES
+@dir usr/share/locale/to/LC_MESSAGES
+@dir usr/share/locale/tog/LC_MESSAGES
+@dir usr/share/locale/tpi/LC_MESSAGES
+@dir usr/share/locale/ts/LC_MESSAGES
+@dir usr/share/locale/tsi/LC_MESSAGES
+@dir usr/share/locale/tum/LC_MESSAGES
+@dir usr/share/locale/tup/LC_MESSAGES
+@dir usr/share/locale/tut/LC_MESSAGES
+@dir usr/share/locale/tvl/LC_MESSAGES
+@dir usr/share/locale/tw/LC_MESSAGES
+@dir usr/share/locale/ty/LC_MESSAGES
+@dir usr/share/locale/tyv/LC_MESSAGES
+@dir usr/share/locale/udm/LC_MESSAGES
+@dir usr/share/locale/uga/LC_MESSAGES
+@dir usr/share/locale/uk_UA/LC_MESSAGES
+@dir usr/share/locale/umb/LC_MESSAGES
+@dir usr/share/locale/und/LC_MESSAGES
+@dir usr/share/locale/ur/LC_MESSAGES
+@dir usr/share/locale/ur_PK/LC_MESSAGES
+@dir usr/share/locale/uz/LC_MESSAGES
+@dir usr/share/locale/uz@Latn/LC_MESSAGES
+@dir usr/share/locale/uz@cyrillic/LC_MESSAGES
+@dir usr/share/locale/vai/LC_MESSAGES
+@dir usr/share/locale/ve/LC_MESSAGES
+@dir usr/share/locale/vo/LC_MESSAGES
+@dir usr/share/locale/vot/LC_MESSAGES
+@dir usr/share/locale/wak/LC_MESSAGES
+@dir usr/share/locale/wal/LC_MESSAGES
+@dir usr/share/locale/war/LC_MESSAGES
+@dir usr/share/locale/was/LC_MESSAGES
+@dir usr/share/locale/wen/LC_MESSAGES
+@dir usr/share/locale/wo/LC_MESSAGES
+@dir usr/share/locale/xal/LC_MESSAGES
+@dir usr/share/locale/yao/LC_MESSAGES
+@dir usr/share/locale/yap/LC_MESSAGES
+@dir usr/share/locale/yo/LC_MESSAGES
+@dir usr/share/locale/ypk/LC_MESSAGES
+@dir usr/share/locale/za/LC_MESSAGES
+@dir usr/share/locale/zap/LC_MESSAGES
+@dir usr/share/locale/zbl/LC_MESSAGES
+@dir usr/share/locale/zen/LC_MESSAGES
+@dir usr/share/locale/zgh/LC_MESSAGES
+@dir usr/share/locale/zh/LC_MESSAGES
+@dir usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@dir usr/share/locale/zh_TW.Big5/LC_MESSAGES
+@dir usr/share/locale/znd/LC_MESSAGES
+@dir usr/share/locale/zu/LC_MESSAGES
+@dir usr/share/locale/zun/LC_MESSAGES
+@dir usr/share/locale/zxx/LC_MESSAGES
+@dir usr/share/locale/zza/LC_MESSAGES
+@dir usr/share/man/man0p
+@dir usr/share/man/man1p
+@dir usr/share/man/man1x
+@dir usr/share/man/man2
+@dir usr/share/man/man2x
+@dir usr/share/man/man3
+@dir usr/share/man/man3p
+@dir usr/share/man/man3x
+@dir usr/share/man/man4
+@dir usr/share/man/man4x
+@dir usr/share/man/man5x
+@dir usr/share/man/man6
+@dir usr/share/man/man6x
+@dir usr/share/man/man7x
+@dir usr/share/man/man8x
+@dir usr/share/man/man9
+@dir usr/share/man/man9x
+@dir usr/share/man/mann
+@dir usr/share/mime-info
+@dir usr/share/misc
+@dir usr/share/omf
+@dir usr/share/pixmaps
+@dir usr/share/sounds
+@dir usr/share/themes
+@dir usr/share/xsessions
+@dir usr/src/debug
+@dir usr/src/kernels
+@dir var/adm
+@dir var/cache/ldconfig
+@dir var/empty
+@dir var/games
+@dir var/gopher
+@dir var/kerberos/krb5/user
+@dir var/lib/games
+@dir var/lib/misc
+@dir var/lib/rpm-state
+@dir var/local
+@dir var/nis
+@dir var/opt
+@dir var/preserve
+@dir var/spool/lpd
+@dir var/spool/mail
+@dir var/yp
+@dir %%LINUXBASE%%
+@postexec %D/usr/sbin/ldconfig
