@@ -3,19 +3,18 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-aspell-[0-9]* linux-f10-aspell-[0-9]*
-
-USES=		linux:c6
-USE_LINUX_RPM=	yes
+LICENSE=	LGPL21+
 
 RPMVERSION=	12.el6
+USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
