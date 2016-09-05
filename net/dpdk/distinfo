@@ -1,2 +1,3 @@
-SHA256 (dpdk-2.2.0.tar.gz) = 77206ad93618ec93ef6e59566e240aa80b6f660d12693febf0fa96ee23bd610d
-SIZE (dpdk-2.2.0.tar.gz) = 16159110
+TIMESTAMP = 1472650936
+SHA256 (dpdk-16.07.tar.gz) = cc982455a74357e465112bede5c29451b6eeb35f8c1c0dcea280dd3e7829f0e9
+SIZE (dpdk-16.07.tar.gz) = 16961844

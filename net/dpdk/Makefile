@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-PORTVERSION=	2.2.0
+PORTVERSION=	16.07
 CATEGORIES=	net
 MASTER_SITES=	http://www.dpdk.org/browse/dpdk/snapshot/
 
