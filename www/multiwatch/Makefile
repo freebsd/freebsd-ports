@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/multiwatch/releases-1.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@chrullrich.net
 COMMENT=	Spawn-fcgi helper for forking multiple workers
 
 LICENSE=	MIT
