@@ -775,5 +775,3 @@ lib/libpgcommon.a
 %%DATADIR%%/tsearch_data/synonym_sample.syn
 %%DATADIR%%/tsearch_data/thesaurus_sample.ths
 %%DATADIR%%/tsearch_data/turkish.stop
-@dir(%%PG_USER%%,%%PG_GROUP%%,) %%PG_USER%%
-
