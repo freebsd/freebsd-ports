@@ -6,10 +6,10 @@ PORTVERSION=	20151227
 PORTREVISION=	1
 CATEGORIES=	cad science
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NASA Structural Analysis System
 
-LICENSE=	NASA
+LICENSE=	NOSA
 LICENSE_NAME=   NASA OPEN SOURCE AGREEMENT VERSION 1.3
 LICENSE_FILE=	${FILESDIR}/NASTRAN95-license.txt
 LICENSE_PERMS= dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
