@@ -1,5 +1,5 @@
---- ./include/config.h.orig	2013-11-24 20:24:26.000000000 +0100
-+++ ./include/config.h	2014-05-23 00:34:32.000000000 +0200
+--- include/config.h.orig	2016-09-03 19:34:06 UTC
++++ include/config.h
 @@ -242,16 +242,16 @@
   * line argument. These used as the default values for options absent from the user's
   * unrealircd.conf.
@@ -14,16 +14,16 @@
 -#define VPATH		"ircd.svsmotd"	/* Services MOTD append. */
 -#define BPATH		"bot.motd"	/* Bot MOTD */
 -#define IRCDTUNE 	"ircd.tune"	/* tuning .. */
-+#define	CPATH		"%%PREFIX%%/etc/Unreal/unrealircd.conf"	/* server configuration file */
-+#define	MPATH		"%%PREFIX%%/etc/Unreal/ircd.motd"	/* server MOTD file */
-+#define SMPATH		"%%PREFIX%%/etc/Unreal/ircd.smotd"	/* short MOTD file */
-+#define RPATH		"%%PREFIX%%/etc/Unreal/ircd.rules"	/* server rules file */
-+#define OPATH		"%%PREFIX%%/etc/Unreal/oper.motd"	/* Operators MOTD file */
-+#define	LPATH		"%%LOGDIR%%/debug.log"	/* Where the debug file lives, if DEBUGMODE */
-+#define	PPATH		"%%RUNDIR%%/ircd.pid"	/* file for server pid */
-+#define VPATH		"%%PREFIX%%/etc/Unreal/ircd.svsmotd"	/* Services MOTD append. */
-+#define BPATH		"%%PREFIX%%/etc/Unreal/bot.motd"	/* Bot MOTD */
-+#define IRCDTUNE 	"%%RUNDIR%%/ircd.tune"	/* tuning .. */
++#define	CPATH		"/usr/local/etc/Unreal/unrealircd.conf"	/* server configuration file */
++#define	MPATH		"/usr/local/etc/Unreal/ircd.motd"	/* server MOTD file */
++#define SMPATH		"/usr/local/etc/Unreal/ircd.smotd"	/* short MOTD file */
++#define RPATH		"/usr/local/etc/Unreal/ircd.rules"	/* server rules file */
++#define OPATH		"/usr/local/etc/Unreal/oper.motd"	/* Operators MOTD file */
++#define	LPATH		"/var/log/ircd/debug.log"	/* Where the debug file lives, if DEBUGMODE */
++#define	PPATH		"/var/run/ircd/ircd.pid"	/* file for server pid */
++#define VPATH		"/usr/local/etc/Unreal/ircd.svsmotd"	/* Services MOTD append. */
++#define BPATH		"/usr/local/etc/Unreal/bot.motd"	/* Bot MOTD */
++#define IRCDTUNE 	"/var/run/ircd/ircd.tune"	/* tuning .. */
  
  /* CHROOTDIR
   *
@@ -33,8 +33,8 @@
   */
 -/* #define IRC_USER  "<user name>" */
 -/* #define IRC_GROUP "<group name>" */
-+#define IRC_USER  "%%USERS%%"
-+#define IRC_GROUP "%%GROUPS%%"
++#define IRC_USER  "ircd"
++#define IRC_GROUP "ircd"
  
  
  /* SHOW_INVISIBLE_LUSERS

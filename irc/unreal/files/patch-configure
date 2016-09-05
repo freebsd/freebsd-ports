@@ -1,6 +1,6 @@
---- configure.orig	2014-07-26 15:42:10 UTC
+--- configure.orig	2016-09-03 19:34:06 UTC
 +++ configure
-@@ -3876,6 +3876,47 @@ fi
+@@ -3918,6 +3918,47 @@ fi
  
  
  
@@ -48,7 +48,7 @@
  
  
  
-@@ -6495,7 +6536,7 @@ fi
+@@ -6537,7 +6578,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_ip6" >&5
  $as_echo "$ac_cv_ip6" >&6; }
  	if test "$ac_cv_ip6" = "no"; then
