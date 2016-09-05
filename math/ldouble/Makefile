@@ -45,16 +45,18 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
 	${INSTALL_DATA} ${WRKSRC}/libml.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libml.so.0 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libml.so.0 ${STAGEDIR}${PREFIX}/lib/libml.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libml.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libml.so
 .if ${ARCH}=="i386"
 	${INSTALL_DATA} ${WRKSRC}/protos.h ${STAGEDIR}${PREFIX}/include/mathl.h
 .endif
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.post.mk>
