@@ -3,6 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	16.8.2016.08.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://tt-rss.org/gitlab/fox/tt-rss/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/
 
@@ -65,6 +66,7 @@ PHP2FIX=	config.php-dist update.php update_daemon2.php
 SCRIPTS=	update.php update_daemon2.php
 
 pre-configure:
+	${REINPLACE_CMD} -E "1,/define.*VERSION_STATIC/s/([0-9]+\.[0-9]+)/\1 (${GL_TAGNAME})/" ${WRKSRC}/include/version.php
 .for script in ${PHP2FIX}
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		-e 's|/usr/bin/env php| ${LOCALBASE}/bin/php|'		\
