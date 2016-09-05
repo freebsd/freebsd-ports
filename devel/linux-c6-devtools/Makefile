@@ -3,10 +3,11 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 BIN_DISTFILES=	binutils-2.20.51.0.2-5.44.el6${EXTRACT_SUFX} \
 		glibc-headers-2.12-1.192.el6${EXTRACT_SUFX} \
-		kernel-headers-2.6.32-642.1.1.el6${EXTRACT_SUFX} \
+		kernel-headers-2.6.32-642.4.2.el6${EXTRACT_SUFX} \
 		mpfr-2.4.1-6.el6${EXTRACT_SUFX} \
 		cpp-4.4.7-17.el6${EXTRACT_SUFX} \
 		gcc-4.4.7-17.el6${EXTRACT_SUFX} \
@@ -30,7 +31,7 @@ USE_LDCONFIG=	yes
 
 SRC_DISTFILES=	binutils-2.20.51.0.2-5.44.el6.src.rpm:SOURCE \
 		glibc-2.12-1.192.el6.src.rpm:SOURCE \
-		kernel-2.6.32-642.1.1.el6.src.rpm:SOURCE \
+		kernel-2.6.32-642.4.2.el6.src.rpm:SOURCE \
 		mpfr-2.4.1-6.el6.src.rpm:SOURCE \
 		gcc-4.4.7-17.el6.src.rpm:SOURCE
 
