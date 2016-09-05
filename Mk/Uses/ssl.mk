@@ -6,7 +6,7 @@
 # Usage:	USES=ssl
 # Valid ARGS:	none
 #
-# The use can choose which ssl library he wants with:
+# The user can choose which ssl library he wants with:
 #
 # DEFAULT_VERSIONS+=	ssl=<openssl variant>
 #
