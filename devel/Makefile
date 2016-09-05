@@ -4273,6 +4273,7 @@
     SUBDIR += py-noseofyeti
     SUBDIR += py-notifier
     SUBDIR += py-notify
+    SUBDIR += py-numba
     SUBDIR += py-ocempgui
     SUBDIR += py-ode
     SUBDIR += py-odfpy
