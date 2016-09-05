@@ -18,9 +18,8 @@ CONFLICTS_INSTALL=	phd2fasta-[0-9]*
 
 SUB_FILES=	pkg-message
 
-USES=		perl5 shebangfix
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux perl5 shebangfix
+USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 MYSHEBANG=	bin/ace2Fasta.perl \
 		bin/tagRepeats.perl \

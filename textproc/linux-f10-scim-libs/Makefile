@@ -5,21 +5,19 @@ PORTNAME=	scim-libs
 PORTVERSION=	1.4.7
 PORTREVISION=	3
 CATEGORIES=	textproc linux
-MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Smart Common Input Method libraries (Linux Fedora 10)
 
 CONFLICTS=	linux-scim-libs-[0-9]* linux-f8-scim-libs-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	gtk2
+USE_LINUX=	gtk2
 
 RPMVERSION=	35.fc10
 USE_LDCONFIG=	yes
-SRC_DISTFILES=	scim-${PORTVERSION}-${RPMVERSION}.src.rpm
+SRC_DISTFILES=	scim-${PORTVERSION}-${RPMVERSION}.src.rpm:SOURCE
 
 DESCR=		${.CURDIR}/../scim/pkg-descr
 

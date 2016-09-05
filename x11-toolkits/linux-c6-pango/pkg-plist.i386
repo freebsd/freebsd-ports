@@ -1,5 +1,5 @@
 @postexec %D/usr/bin/pango-querymodules-32 > %D/etc/pango/i386-redhat-linux-gnu/pango.modules
-@preunexec rm -f %D/etc/pango/i386-redhat-linux-gnu/pango.modules
+@rmtry etc/pango/i386-redhat-linux-gnu/pango.modules
 etc/pango/pangox.aliases
 usr/bin/pango-querymodules-32
 usr/bin/pango-view

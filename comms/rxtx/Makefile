@@ -13,8 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 MAINTAINER=	james@elstone.net
 COMMENT=	Native interface to serial ports in Java
 
-USES=		gmake libtool zip
-USE_LINUX=	c6
+USES=		gmake libtool linux:c6 zip
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

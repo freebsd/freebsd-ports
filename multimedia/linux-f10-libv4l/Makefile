@@ -8,7 +8,7 @@ CATEGORIES=	multimedia linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Collection of video4linux support libraries (Fedora 10)
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.fc10

@@ -10,10 +10,10 @@ MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/release
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Terminfo database required by Linux ncurses programs
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	20.20080927.fc10
-SRC_DISTFILES=	ncurses-${PORTVERSION}-${RPMVERSION}.src.rpm
+SRC_DISTFILES=	ncurses-${PORTVERSION}-${RPMVERSION}.src.rpm:SOURCE
 
 .include <bsd.port.mk>

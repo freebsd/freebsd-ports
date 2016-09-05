@@ -14,8 +14,7 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
-USES=		zip:infozip
-USE_LINUX=	yes
+USES=		linux zip:infozip
 NO_WRKSUBDIR=	yes
 
 RESTRICTED=	Restrictive license by Loki Software

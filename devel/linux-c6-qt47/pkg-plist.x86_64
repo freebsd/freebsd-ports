@@ -81,10 +81,10 @@ usr/lib64/qt47/phrasebooks/russian.qph
 usr/lib64/qt47/phrasebooks/spanish.qph
 usr/lib64/qt47/phrasebooks/swedish.qph
 usr/lib64/qt47/plugins/sqldrivers/libqsqlite.so
-usr/share/doc/qt47-4.7.2/LGPL_EXCEPTION.txt
-usr/share/doc/qt47-4.7.2/LICENSE.GPL3
-usr/share/doc/qt47-4.7.2/LICENSE.LGPL
-usr/share/doc/qt47-4.7.2/README
+%%DOCSDIR%%/LGPL_EXCEPTION.txt
+%%DOCSDIR%%/LICENSE.GPL3
+%%DOCSDIR%%/LICENSE.LGPL
+%%DOCSDIR%%/README
 usr/share/qt47/translations/qt_ar.qm
 usr/share/qt47/translations/qt_cs.qm
 usr/share/qt47/translations/qt_da.qm
@@ -106,4 +106,4 @@ usr/share/qt47/translations/qt_zh_CN.qm
 usr/share/qt47/translations/qt_zh_TW.qm
 @dir usr/lib64/qt47/plugins/crypto
 @dir usr/lib/qt47/plugins/crypto
-%%PORTDOCS%%@dir usr/%%DOCSDIR%%/qch
+@dir usr/share/doc/qt47/qch

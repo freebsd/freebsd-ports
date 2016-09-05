@@ -17,10 +17,9 @@ VERSTR=		${PORTVERSION:C/([0-9])\.([0-9])\.([0-9]+)/\1\2\3/}
 PKGNAMESUFFIX=	-${VERSTR}
 PLIST_SUB=	VERSTR="${VERSTR}"
 
-USES=		shebangfix
+USES=		linux shebangfix
 SHEBANG_FILES=	linux/convert_shrub
 perl_OLD_CMD=	"/bin/env perl"
-USE_LINUX=	yes
 
 PORTSCOUT=	limit:^2\.1\.7
 

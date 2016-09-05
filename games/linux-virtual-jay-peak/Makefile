@@ -16,8 +16,8 @@ OPTIONS_DEFINE=	DOCS NVIDIA
 
 WRKSRC=		${WRKDIR}/soulride
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 NO_BUILD=	yes
 SUB_FILES=	virtual-jay-peak
 
@@ -26,7 +26,7 @@ SUB_FILES=	virtual-jay-peak
 .if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 .else
-USE_LINUX_APPS+=	dri
+USE_LINUX+=	dri
 .endif
 
 do-install:

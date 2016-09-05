@@ -14,8 +14,9 @@ COMMENT=	Deluxe Snake - snake clone with frogs and mushrooms
 RESTRICTED=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	allegro xorglibs
+STRIP=
+USES=		linux:f10
+USE_LINUX=	allegro xorglibs
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
 CONFIG_FILES=	config.dat hiscores.dat stats.dat

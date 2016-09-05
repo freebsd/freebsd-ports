@@ -13,8 +13,7 @@ COMMENT=	Free lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		tar:bzip2
-USE_LINUX=	yes
+USES=		linux tar:bzip2
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/laudio

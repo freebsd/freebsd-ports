@@ -12,8 +12,8 @@ MAINTAINER=	kaiw27@gmail.com
 COMMENT=	Tencent QQ for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 xorglibs
+USES=		linux
+USE_LINUX=	gtk2 xorglibs
 NO_BUILD=	yes
 
 QQDIR=		libexec/qq

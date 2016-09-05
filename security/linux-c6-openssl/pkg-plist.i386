@@ -1,4 +1,3 @@
-@comment file listing
 etc/pki/tls/certs/Makefile
 etc/pki/tls/certs/make-dummy-cert
 etc/pki/tls/certs/renew-dummy-cert
@@ -28,18 +27,18 @@ usr/lib/openssl/engines/libnuron.so
 usr/lib/openssl/engines/libpadlock.so
 usr/lib/openssl/engines/libsureware.so
 usr/lib/openssl/engines/libubsec.so
-usr/share/doc/openssl-%%PORTVERSION%%/CHANGES
-usr/share/doc/openssl-%%PORTVERSION%%/FAQ
-usr/share/doc/openssl-%%PORTVERSION%%/INSTALL
-usr/share/doc/openssl-%%PORTVERSION%%/LICENSE
-usr/share/doc/openssl-%%PORTVERSION%%/NEWS
-usr/share/doc/openssl-%%PORTVERSION%%/README
-usr/share/doc/openssl-%%PORTVERSION%%/README.FIPS
-usr/share/doc/openssl-%%PORTVERSION%%/c-indentation.el
-usr/share/doc/openssl-%%PORTVERSION%%/openssl.txt
-usr/share/doc/openssl-%%PORTVERSION%%/openssl_button.gif
-usr/share/doc/openssl-%%PORTVERSION%%/openssl_button.html
-usr/share/doc/openssl-%%PORTVERSION%%/ssleay.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FIPS
+%%PORTDOCS%%%%DOCSDIR%%/c-indentation.el
+%%PORTDOCS%%%%DOCSDIR%%/openssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/openssl_button.gif
+%%PORTDOCS%%%%DOCSDIR%%/openssl_button.html
+%%PORTDOCS%%%%DOCSDIR%%/ssleay.txt
 usr/share/man/man1/asn1parse.1ssl.gz
 usr/share/man/man1/ca.1ssl.gz
 usr/share/man/man1/ciphers.1ssl.gz

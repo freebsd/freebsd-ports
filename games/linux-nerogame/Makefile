@@ -11,8 +11,8 @@ DISTNAME=	nero2_linux_i386
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	libvorbis sdl12 libtheora
+USES=		linux
+USE_LINUX=	libvorbis sdl12 libtheora
 NO_BUILD=	yes
 RESTRICTED=	Nero is freeware, but i am not sure of its license
 
@@ -30,7 +30,7 @@ NVIDIA_DESC=	Nvidia support
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 .	endif
 .else
-USE_LINUX_APPS+=dri
+USE_LINUX+=	dri
 .endif
 
 do-install:

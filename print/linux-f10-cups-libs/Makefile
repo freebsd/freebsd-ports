@@ -9,10 +9,10 @@ CATEGORIES=	print linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common UNIX Printing System libraries
 
-USE_LINUX=	f10
+USES=		linux:f10
+USE_LINUX=	gnutls
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	gnutls
-SRC_DISTFILES=	cups-${PORTVERSION}-${RPMVERSION}.src.rpm
+SRC_DISTFILES=	cups-${PORTVERSION}-${RPMVERSION}.src.rpm:SOURCE
 RPMVERSION=	4.fc10
 USE_LDCONFIG=	yes
 

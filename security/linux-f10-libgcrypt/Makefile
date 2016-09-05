@@ -9,7 +9,7 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.fc10

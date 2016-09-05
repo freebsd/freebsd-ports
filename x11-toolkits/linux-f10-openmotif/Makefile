@@ -12,11 +12,10 @@ COMMENT=	Motif toolkit Linux libraries
 
 CONFLICTS=	linux-openmotif-[0-9]* linux-f8-openmotif-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
+USES=		linux:f10
 RPMVERSION=	1.fc10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX=	xorglibs
 USE_LDCONFIG=	yes
 SRC_DISTFILES=
 DISTINFO_FILE=	${MASTERDIR}/distinfo.i386

@@ -26,12 +26,11 @@ BINFILE=	${PORTNAME}-i386-${PORTVERSION}-${BINBUILD}${EXTRACT_SUFX}
 ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
+USES=		gmake gnome linux pkgconfig
 USE_GNOME=	glib20 gtk20
 USE_LDCONFIG=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2
+USE_LINUX=	gtk2
 USE_XORG=	x11 xext xt
-USES=		gmake pkgconfig
 
 CFLAGS+=	-std=c99
 
