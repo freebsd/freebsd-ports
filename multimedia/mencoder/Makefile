@@ -28,6 +28,7 @@ OPTIONS_DEFAULT_amd64=	RTCPU
 OPTIONS_DEFAULT_powerpc=RTCPU
 
 BLURAY_DESC?=	BluRay support
+DVDNAV_DESC?=	DVD navigation features support
 LZO_DESC?=	Enable external liblzo library
 OCFLAGS_DESC?=	Use optimized compiler flags
 RTCPU_DESC?=	Use runtime CPU detection
