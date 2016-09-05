@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adodb
-DISTVERSION=	5.20.5
+PORTVERSION=	5.20.6
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5-only/${PORTNAME}-520-for-php5
 PKGNAMESUFFIX=	5
@@ -31,26 +31,26 @@ OPTIONS_SUB=	yes
 TESTS_DESC=	Install tests
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type d \
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${FIND} ${ADODB_SUBDIRS} -type d \
 		-exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
-	cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
+	cd ${WRKSRC} && ${FIND} . ! -path './*/*' -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
-	cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type f \
+	cd ${WRKSRC} && ${FIND} ${ADODB_SUBDIRS} -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 
 do-install-TESTS-on:
-	${MKDIR} ${STAGEDIR}${DATADIR}/tests
-	cd ${WRKSRC}; ${FIND} tests -type f \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tests
+	cd ${WRKSRC} && ${FIND} tests -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
-	cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f -name '*.txt' \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
+	cd ${WRKSRC} && ${FIND} . ! -path './*/*' -type f -name '*.txt' \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
-	cd ${WRKSRC}/docs; ${FIND} . -type f \
+	cd ${WRKSRC}/docs && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/docs/{} ${STAGEDIR}${DOCSDIR}/{} \;
-	cd ${WRKSRC}; ${FIND} cute_icons_for_site -type f \
+	cd ${WRKSRC} && ${FIND} cute_icons_for_site -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
 
 .include <bsd.port.mk>
