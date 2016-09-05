@@ -1,4 +1,6 @@
 bin/yadifa
+%%EXAMPLES%%etc/bash_completion.d/yadifa.sh
+%%EXAMPLES%%etc/bash_completion.d/yadifad.sh
 @sample etc/yadifad.conf.sample
 include/dnscore/alarm.h
 include/dnscore/allocator.h
@@ -36,6 +38,7 @@ include/dnscore/dnsformat.h
 include/dnscore/dnskey-keyring.h
 include/dnscore/dnskey.h
 include/dnscore/dnskey_dsa.h
+include/dnscore/dnskey_ecdsa.h
 include/dnscore/dnskey_rsa.h
 include/dnscore/dnsname.h
 include/dnscore/dnsname_set.h
@@ -53,6 +56,7 @@ include/dnscore/input_stream.h
 include/dnscore/io_stream.h
 include/dnscore/limited_input_stream.h
 include/dnscore/list-dl.h
+include/dnscore/list-sl-debug.h
 include/dnscore/list-sl.h
 include/dnscore/logger-output-stream.h
 include/dnscore/logger.h
@@ -60,11 +64,14 @@ include/dnscore/logger_channel_file.h
 include/dnscore/logger_channel_stream.h
 include/dnscore/logger_channel_syslog.h
 include/dnscore/logger_handle.h
+include/dnscore/message-buffer.h
+include/dnscore/message-viewer.h
 include/dnscore/message.h
 include/dnscore/message_dnsupdate.h
 include/dnscore/message_verify_rrsig.h
 include/dnscore/mt_output_stream.h
 include/dnscore/mutex.h
+include/dnscore/name.h
 include/dnscore/network.h
 %%NSID%%include/dnscore/nsid.h
 include/dnscore/output_stream.h
@@ -78,9 +85,12 @@ include/dnscore/pipe_stream.h
 include/dnscore/pool.h
 include/dnscore/print_stream.h
 include/dnscore/ptr_set.h
+include/dnscore/ptr_set_debug.h
 include/dnscore/ptr_vector.h
+include/dnscore/queue-sl.h
 include/dnscore/random.h
 include/dnscore/rc.h
+include/dnscore/rewind-input-stream.h
 include/dnscore/rfc.h
 include/dnscore/serial.h
 include/dnscore/server-setup.h
@@ -91,6 +101,7 @@ include/dnscore/sys_get_cpu_count.h
 include/dnscore/sys_types.h
 include/dnscore/tcp_io_stream.h
 include/dnscore/thread_pool.h
+include/dnscore/threaded-qsl-cw.h
 include/dnscore/threaded_dll_cw.h
 include/dnscore/threaded_nb_mm.h
 include/dnscore/threaded_nbrb.h
@@ -104,6 +115,7 @@ include/dnscore/tsig.h
 include/dnscore/typebitmap.h
 include/dnscore/u32_set.h
 include/dnscore/u64_set.h
+include/dnscore/u64_set_debug.h
 include/dnscore/xfr_input_stream.h
 include/dnscore/zalloc.h
 include/dnscore/zonefile_reader.h
@@ -113,9 +125,9 @@ include/dnsdb/dictionary-node.h
 include/dnsdb/dictionary.h
 include/dnsdb/dnsdb-config.h
 include/dnsdb/dnsrdata.h
+include/dnsdb/dnssec-keystore.h
 include/dnsdb/dnssec.h
 include/dnsdb/dnssec_config.h
-include/dnsdb/dnssec_keystore.h
 include/dnsdb/dnssec_task.h
 include/dnsdb/dynupdate.h
 include/dnsdb/hash.h
@@ -131,6 +143,9 @@ include/dnsdb/journal-cjf.h
 include/dnsdb/journal.h
 include/dnsdb/journal_ix.h
 include/dnsdb/nsec.h
+include/dnsdb/nsec3-chain-create.h
+include/dnsdb/nsec3-chain-destroy.h
+include/dnsdb/nsec3-forall-label.h
 include/dnsdb/nsec3.h
 include/dnsdb/nsec3_collection.h
 include/dnsdb/nsec3_hash.h
@@ -155,6 +170,7 @@ include/dnsdb/zdb-lock.h
 include/dnsdb/zdb-zone-answer-axfr.h
 include/dnsdb/zdb-zone-answer-ixfr.h
 include/dnsdb/zdb-zone-arc.h
+include/dnsdb/zdb-zone-dnssec.h
 include/dnsdb/zdb-zone-find.h
 include/dnsdb/zdb-zone-garbage.h
 include/dnsdb/zdb-zone-journal.h
@@ -185,6 +201,7 @@ include/dnslg/config-resolver.h
 include/dnslg/dns.h
 include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
+include/dnslg/resolv.h
 include/dnszone/dnszone-config-features.h
 include/dnszone/dnszone-config.h
 include/dnszone/dnszone.h
@@ -200,11 +217,15 @@ man/man5/yadifad.conf.5.gz
 man/man8/yadifa.8.gz
 man/man8/yadifad.8.gz
 sbin/yadifad
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.bash_completion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-master.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-slave.conf.example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.conf.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.bash_completion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.debian
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.rhel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.logrotate
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service
