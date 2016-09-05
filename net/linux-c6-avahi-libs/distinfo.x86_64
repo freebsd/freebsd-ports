@@ -1,7 +1,7 @@
-TIMESTAMP = 1466257430
-SHA256 (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6.x86_64.rpm) = a8ef064f4c382bf39ee2c17f646ef01afc17067eb7a0d3a591130da90e6eefb6
-SIZE (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6.x86_64.rpm) = 55948
-SHA256 (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6.i686.rpm) = 9a51cb6d9fd7f109e220906f923365e42c5b6ec0c850638194e9ac5a9f15619e
-SIZE (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6.i686.rpm) = 55916
-SHA256 (rpm/x86_64/centos/6.8/avahi-0.6.25-15.el6.src.rpm) = d274512f9456da9742d38ee3fbfbc483719cfc9f9918987d385c8ee89179263b
-SIZE (rpm/x86_64/centos/6.8/avahi-0.6.25-15.el6.src.rpm) = 1138822
+TIMESTAMP = 1472387716
+SHA256 (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.x86_64.rpm) = 589cf55426eefdf913e642ef143d02f35feca5833e05a4a22fb668479f511a7c
+SIZE (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.x86_64.rpm) = 56076
+SHA256 (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.i686.rpm) = 926c94db33c0b9cd9bdb0a40a6afd24b88a78c69f03ddbe1cac4bca4ee4227d3
+SIZE (rpm/x86_64/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.i686.rpm) = 56048
+SHA256 (rpm/x86_64/centos/6.8/avahi-0.6.25-15.el6_8.1.src.rpm) = 41c2b606ed52dc56b3c8ed17026c225987518cd29da0dfb5e2e49a2a5cf7f8f5
+SIZE (rpm/x86_64/centos/6.8/avahi-0.6.25-15.el6_8.1.src.rpm) = 1139504
