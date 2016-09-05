@@ -716,7 +716,7 @@ _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/no
 # free: 767
 # free: 768
 # free: 769
-# free: 770
+postgres:*:770:770::0:0:PostgreSQL Daemon:/var/db/postgres:/bin/sh
 # free: 771
 # free: 772
 # free: 773

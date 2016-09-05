@@ -1,0 +1,5 @@
+TIMESTAMP = 1472754782
+SHA256 (postgresql/postgresql-9.6rc1.tar.bz2) = 9e260252f04b7f6abe3877eb1cb8affa4ecc2abbadadf9bd874ad257e9a01a1d
+SIZE (postgresql/postgresql-9.6rc1.tar.bz2) = 19161063
+SHA256 (postgresql/pg-96b4-icu-2016-08-10.diff.gz) = ca9d57715d425dfcbc530f01c65c746000a1ee64838452b69a97730b39900317
+SIZE (postgresql/pg-96b4-icu-2016-08-10.diff.gz) = 5971

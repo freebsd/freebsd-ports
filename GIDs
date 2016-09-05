@@ -711,7 +711,7 @@ bopm:*:717:
 # free: 767
 # free: 768
 # free: 769
-# free: 770
+postgres:*:770:
 # free: 771
 # free: 772
 # free: 773
