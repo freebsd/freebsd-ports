@@ -13,8 +13,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom III for Linux
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -60,7 +60,7 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/doom3.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .for f in doom3 doom3-ded
-	${INSTALL_PROGRAM} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${f}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${f}
 .endfor
 
 .include <bsd.port.mk>

@@ -12,11 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		webplugin:linux
+USES=		linux webplugin:linux
+USE_LINUX=	alsalib gtk2 openmotif
 WEBPLUGIN_DIR=	${PREFIX}/ICAClient
 WEBPLUGIN_FILES=	npica.so
-USE_LINUX=	yes
-USE_LINUX_APPS=	alsalib gtk2 openmotif
 RESTRICTED=	License prohibits redistribution
 
 NO_WRKSUBDIR=	yes

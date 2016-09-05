@@ -12,7 +12,5 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 USES=		tar:bzip2
 
-WANT_GTK218=	yes
-
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>

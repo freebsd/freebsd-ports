@@ -9,9 +9,9 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	libtasn1 libgcrypt libgpg-error
+USE_LINUX=	libtasn1 libgcrypt libgpg-error
 
 RPMVERSION=	5.fc10
 USE_LDCONFIG=	yes

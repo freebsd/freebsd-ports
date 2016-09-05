@@ -21,16 +21,18 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution.
 
+USES=		linux
+USE_LINUX=	base
+
 PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME} ${PATCHLEVEL}${EXTRACT_SUFX}
-PATCH_DEPENDS=	${LINUX_BASE_PORT}
+USE_LINUX+=	base:patch
 .endif
 
 ONLY_FOR_ARCHS=	i386
 
 USE_LDCONFIG=	yes
-USE_LINUX=	yes
 
 COMPILERDIR=	intel_cc_80
 PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
@@ -162,7 +164,6 @@ do-build:
 	${CC} ${CFLAGS} -o \
 		${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld \
 		${FILESDIR}/ld.c
-# We can't use STRIP_CMD, since we need the FreeBSD one, not the Linux one.
 	${STRIP_CMD} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 	${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 # Make ICC happy with regards to crtbegin.o, crtend.o and libgcc.a which it

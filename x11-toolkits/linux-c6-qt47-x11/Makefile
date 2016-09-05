@@ -13,21 +13,19 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/atrpms/6
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux CentOS 6)
 
-ONLY_FOR_ARCHS=	i386 amd64
-SRC_DISTFILES:=		# unretrievable.
+SRC_DISTFILES=	# unretrievable.
 
-USE_LINUX=	c6
+RPMVERSION=	1_18.el6
+USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX=	fontconfig png xorglibs png alsalib jpeg tiff qt47 openssl
+USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
 
 NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver \
 			linux-c6-libGLU>0:graphics/linux-c6-libGLU
-NVIDIA_GL_USE_OFF=	linux_apps=dri
-
-USE_LINUX_APPS=	fontconfig png xorglibs png alsalib jpeg tiff qt47 openssl
-USE_LINUX_RPM=	yes
-RPMVERSION=	1_18.el6
+NVIDIA_GL_USE_OFF=	LINUX=dri
 
 DESCR=	${.CURDIR}/../../devel/qt4/pkg-descr
 

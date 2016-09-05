@@ -14,8 +14,7 @@ COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
-USES=		zip
-USE_LINUX=	yes
+USES=		linux zip
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}

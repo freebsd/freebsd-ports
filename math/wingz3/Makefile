@@ -19,8 +19,8 @@ COMMENT=	Commercial Spreadsheet
 NO_PACKAGE=	Commercial software with nothing to build - install from port
 
 IA32_BINARY_PORT=yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 SUB_FILES=	Wingz3
 PLIST_SUB+=	LINUXBASE=${LINUXBASE}
 OLDLIBS=	libm.so.5 libg++.so.27 libstdc++.so.27 libc.so.5 \

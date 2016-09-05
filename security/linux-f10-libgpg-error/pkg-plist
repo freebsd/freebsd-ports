@@ -7,9 +7,9 @@ usr/share/locale/vi/LC_MESSAGES/libgpg-error.mo
 usr/share/locale/sv/LC_MESSAGES/libgpg-error.mo
 usr/share/locale/fr/LC_MESSAGES/libgpg-error.mo
 usr/share/locale/pl/LC_MESSAGES/libgpg-error.mo
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/AUTHORS
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/COPYING.LIB
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/NEWS
-%%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

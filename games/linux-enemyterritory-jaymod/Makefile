@@ -14,10 +14,9 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
-USES=		shebangfix
+USES=		linux shebangfix
 SHEBANG_FILES=	linux/convert_shrub
 perl_OLD_CMD=	"/bin/env perl"
-USE_LINUX=	yes
 
 OPTIONS_DEFINE=	DOCS OMNIBOT
 OMNIBOT_DESC=	Install Omni-Bot for bot support

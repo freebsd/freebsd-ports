@@ -14,7 +14,7 @@ COMMENT=	Fast, secure, simple VPN software with NAT-traversal
 PATCH_DEPENDS=	upx:archivers/upx
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USES=		linux
 
 USE_RC_SUBR=	hamachi
 PLIST_FILES=	bin/hamachi bin/hamachi-init sbin/hamachi-tuncfg

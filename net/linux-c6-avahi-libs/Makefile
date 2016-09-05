@@ -9,7 +9,7 @@ CATEGORIES=	net linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for Avahi (Linux CentOS ${LINUX_DIST_VER})
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	15.el6

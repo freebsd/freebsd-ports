@@ -1,2 +1,2 @@
-#!/compat/linux/bin/sh
-%%DATADIR%%/sublime_text $*
+#!/bin/sh
+exec %%DATADIR%%/sublime_text "$@"

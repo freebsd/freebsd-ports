@@ -23,8 +23,7 @@ RESTRICTED=		Packaging prohibited by Oracle license
 # base
 RUN_DEPENDS+=		linux-oracle-instantclient-basic>0:databases/linux-oracle-instantclient-basic
 
-USES=			zip
-USE_LINUX=		c6
+USES=			linux:c6 zip
 USE_LINUX_PREFIX=	yes
 
 ORACLEVERSION=		10.2.0.3

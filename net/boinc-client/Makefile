@@ -64,7 +64,7 @@ CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_ns
 CLIENT_USE=		RC_SUBR=boinc-client
 
 LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
-LINUX_USE=		LINUX=yes
+LINUX_USES=		linux
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi

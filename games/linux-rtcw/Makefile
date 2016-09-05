@@ -13,9 +13,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein (Linux version)
 
-USES=		makeself
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux makeself
+USE_LINUX=	xorglibs
 NO_WRKSUBDIR=	yes
 
 WRAPPERS=	wolf wolfded wolfsp
@@ -33,7 +32,7 @@ OPTIONS_DEFINE=	DOCS NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_EXTVER=	'__GL_ExtensionStringVersion=18999 '
 .else
-USE_LINUX_APPS+=	dri
+USE_LINUX+=	dri
 .endif
 
 # XXX: should probably be converted to use the LICENSE framework

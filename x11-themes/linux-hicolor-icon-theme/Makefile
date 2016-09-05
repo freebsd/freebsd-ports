@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 CONFLICTS=	linux-f8-hicolor-icon-theme-[0-9]* linux-f10-hicolor-icon-theme-[0-9]*
 
 NO_BUILD=	yes
-USE_LINUX=	yes
+USES=		linux
 USE_LINUX_PREFIX=	yes
 PLIST_FILES=	usr/share/icons/hicolor
 

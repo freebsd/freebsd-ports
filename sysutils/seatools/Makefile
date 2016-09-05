@@ -16,7 +16,7 @@ DOWNLOAD_URL=		http://www.seagate.com/files/www-content/support-content/download
 NO_WRKSUBDIR=		yes
 RESTRICTED=		Redistribution is not permitted
 ONLY_FOR_ARCHS=		i386 amd64
-USE_LINUX=		yes
+USES=			linux
 
 PLIST_FILES=		sbin/st
 PORTDOCS=		sthelp.txt

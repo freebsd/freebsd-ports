@@ -14,7 +14,6 @@ COMMENT=	Kernel module which provides /dev/rtc device support
 WRKSRC=		${WRKDIR}/files
 
 NO_FETCH=	yes
-USE_LINUX=	yes	# because of ${DEVDIR}
 
 KMODDIR=	${PREFIX}/modules
 
@@ -26,7 +25,7 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
 PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" \
 		RTC_H_DIR="${RTC_H_DIR}"
 
-USES=		kmod uidfix
+USES=		kmod linux uidfix
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

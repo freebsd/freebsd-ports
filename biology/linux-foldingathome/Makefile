@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.exe
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Distributed client for Protein Folding
 
-USE_LINUX=	yes
+USES=		linux
 ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=
 PLIST_FILES=	share/${PORTNAME}/${DISTNAME}${EXTRACT_SUFX} \

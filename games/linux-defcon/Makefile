@@ -12,8 +12,8 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Defcon for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 libogg libvorbis xorglibs
+USES=		linux
+USE_LINUX=	sdl12 libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 
@@ -27,20 +27,17 @@ NVIDIA_DESC=	support for nvidia
 
 .if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX_APPS+=libglu
+USE_LINUX+=	libglu
 .else
-USE_LINUX_APPS+=dri
+USE_LINUX+=	dri
 .endif
-
-do-build:
-	${BRANDELF} -t Linux ${WRKSRC}/lib/defcon.bin.x86
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/lib && \
 		${INSTALL_PROGRAM} defcon.bin.x86 ${STAGEDIR}${DATADIR} && \
 		${INSTALL_DATA} *.dat open-www.sh ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/defcon \
+	${INSTALL_SCRIPT} ${WRKDIR}/defcon \
 		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}defcon
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}/license.txt

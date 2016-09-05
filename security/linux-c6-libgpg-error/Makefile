@@ -9,11 +9,10 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
-USE_LINUX=	c6
-USE_LINUX_RPM=	yes
 RPMVERSION=	4.el6
+USES=		linux:c6
 USE_LDCONFIG=	yes
-BRANDELF_FILES=	usr/bin/gpg-error
+USE_LINUX_RPM=	yes
 
 DESCR=		${.CURDIR}/../libgpg-error/pkg-descr
 

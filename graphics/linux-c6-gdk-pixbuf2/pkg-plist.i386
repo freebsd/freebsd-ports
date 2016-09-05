@@ -21,9 +21,9 @@ usr/lib/libgdk_pixbuf-2.0.so.0
 usr/lib/libgdk_pixbuf-2.0.so.0.2400.1
 usr/lib/libgdk_pixbuf_xlib-2.0.so.0
 usr/lib/libgdk_pixbuf_xlib-2.0.so.0.2400.1
-%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.1/AUTHORS
-%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.1/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.1/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 usr/share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/locale/ang/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/locale/ar/LC_MESSAGES/gdk-pixbuf.mo

@@ -14,9 +14,8 @@ COMMENT=	Remake of the classic spectrum game Head over Heels
 
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
-USES=	tar:bzip2
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux tar:bzip2
+USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 

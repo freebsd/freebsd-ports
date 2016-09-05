@@ -9,15 +9,13 @@ CATEGORIES=	audio linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Utils for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
-USE_LINUX=	c6
-USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	xorglibs pulseaudio-libs
-
 RPMVERSION=	24.el6
+USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX=	xorglibs pulseaudio-libs
+USE_LINUX_RPM=	yes
 
-DOCSDIR=	${PREFIX}/usr/share/doc/pulseaudio-${PORTVERSION}
-DESCR=		${PORTSDIR}/audio/pulseaudio/pkg-descr
+DESCR=		${.CURDIR}/../pulseaudio/pkg-descr
 
 SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 

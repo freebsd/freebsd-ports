@@ -12,7 +12,5 @@ COMMENT=	The open source, standards compliant web browser
 
 USES=		tar:bzip2
 
-WANT_GTK218=	yes
-
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.mk>

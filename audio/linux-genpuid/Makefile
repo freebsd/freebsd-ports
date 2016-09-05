@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}_linux_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for generating MusicIP puids
 
-USES=		tar:tgz
+USES=		linux tar:tgz
 
-USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes
 

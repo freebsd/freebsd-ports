@@ -12,10 +12,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable high-performance GUI Internet Mail User Agent
 
-USES=		tar:tgz
+USES=		linux tar:tgz
 NO_WRKSUBDIR=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	DOCS

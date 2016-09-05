@@ -22,15 +22,15 @@ LICENSE_TEXT=	Binary only, License text not available. Free-to-use + no-redistri
 LICENSE_PERMS=	no-dist-sell no-pkg-sell no-dist-mirror no-pkg-mirror
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs openal-soft
+USES=		linux
+USE_LINUX=	xorglibs openal-soft
 USE_LDCONFIG=	yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_VARS_OFF=	USE_LINUX_APPS+=dri
+NVIDIA_GL_VARS_OFF=	USE_LINUX+=	dri
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

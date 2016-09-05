@@ -1,4 +1,4 @@
-@comment file listing
+@preexec [ -n "`/sbin/sysctl -q compat.linux.osrelease`" ] || ( echo "Cannot install package: kernel missing Linux support"; exit 1 )
 bin/[
 bin/arch
 bin/basename
@@ -41,6 +41,7 @@ bin/true
 bin/uname
 bin/unlink
 bin/uuidgen
+dev/shm
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
 etc/DIR_COLORS.xterm
@@ -58,14 +59,12 @@ etc/hosts.deny
 etc/inputrc
 etc/issue
 etc/issue.net
-@unexec if cmp -s %D/etc/krb5.conf.dist %D/etc/krb5.conf; then rm -f %D/etc/krb5.conf; fi
-etc/krb5.conf.dist
-etc/ld.so.cache
+@sample etc/krb5.conf.sample
+@rmtry etc/ld.so.cache
 etc/ld.so.conf
 etc/mke2fs.conf
 etc/mtab
-@unexec if cmp -s %D/etc/nsswitch.conf.dist %D/etc/nsswitch.conf; then rm -f %D/etc/nsswitch.conf; fi
-etc/nsswitch.conf.dist
+@sample etc/nsswitch.conf.sample
 etc/pam.d/runuser
 etc/pam.d/runuser-l
 etc/pam.d/su
@@ -101,8 +100,6 @@ etc/skel/.bash_profile
 etc/skel/.bashrc
 etc/system-release
 etc/system-release-cpe
-@unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf; then rm -f %D/etc/yp.conf; fi
-etc/yp.conf.sample
 etc/yum.repos.d/fedora-rawhide.repo
 etc/yum.repos.d/fedora-updates-testing.repo
 etc/yum.repos.d/fedora-updates.repo
@@ -296,7 +293,6 @@ usr/bin/lddlibc4
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logname
-usr/bin/lp
 usr/bin/lsattr
 usr/bin/md5sum
 usr/bin/mkfifo
@@ -2011,9 +2007,7 @@ usr/share/man/man8/setserial.8.gz
 usr/share/man/man8/tune2fs.8.gz
 usr/tmp
 var/mail
-@dir %%LINUXBASE%%
 @rmtry var/cache/ldconfig/aux-cache
-@comment empty directory listing
 @dir var/yp
 @dir var/spool/mail
 @dir var/spool/lpd
@@ -2077,7 +2071,6 @@ var/mail
 @dir usr/share/locale/vo/LC_MESSAGES
 @dir usr/share/locale/ve/LC_MESSAGES
 @dir usr/share/locale/vai/LC_MESSAGES
-@dir usr/share/locale/uz@cyrillic/LC_MESSAGES
 @dir usr/share/locale/uz@Latn/LC_MESSAGES
 @dir usr/share/locale/uz/LC_MESSAGES
 @dir usr/share/locale/ur/LC_MESSAGES
@@ -2126,7 +2119,6 @@ var/mail
 @dir usr/share/locale/ss/LC_MESSAGES
 @dir usr/share/locale/srr/LC_MESSAGES
 @dir usr/share/locale/srn/LC_MESSAGES
-@dir usr/share/locale/sr@Latn/LC_MESSAGES
 @dir usr/share/locale/sq_AL/LC_MESSAGES
 @dir usr/share/locale/son/LC_MESSAGES
 @dir usr/share/locale/sog/LC_MESSAGES
@@ -2458,7 +2450,6 @@ var/mail
 @dir usr/share/locale/cad/LC_MESSAGES
 @dir usr/share/locale/ca_ES@valencian/LC_MESSAGES
 @dir usr/share/locale/ca_ES/LC_MESSAGES
-@dir usr/share/locale/ca@valencia/LC_MESSAGES
 @dir usr/share/locale/byn/LC_MESSAGES
 @dir usr/share/locale/bug/LC_MESSAGES
 @dir usr/share/locale/bua/LC_MESSAGES
@@ -2537,11 +2528,6 @@ var/mail
 @dir usr/include
 @dir usr/games
 @dir usr/etc
-@dir usr/X11R6/share
-@dir usr/X11R6/man
-@dir usr/X11R6/lib/tls
-@dir usr/X11R6/include
-@dir usr/X11R6/bin
 @dir sys
 @dir srv
 @dir selinux
@@ -2559,3 +2545,5 @@ var/mail
 @dir etc/blkid
 @dir etc/X11/fontpath.d
 @dir etc/X11/applnk
+@dir %%LINUXBASE%%
+@postexec %D/sbin/ldconfig

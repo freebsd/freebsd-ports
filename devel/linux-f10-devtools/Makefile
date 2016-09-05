@@ -5,37 +5,30 @@ PORTNAME=	devtools
 PORTVERSION=	10
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/${PORTVERSION}/${LINUX_RPM_ARCH}/:bin \
-		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/${LINUX_RPM_ARCH}/os/Packages/:bin
-DISTFILES=	binutils-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
-		binutils-devel-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
-		glibc-devel-2.9-3.${LINUX_RPM_ARCH}.rpm:bin \
-		glibc-headers-2.9-3.${LINUX_RPM_ARCH}.rpm:bin \
-		kernel-headers-2.6.27.41-170.2.117.fc10.${LINUX_RPM_ARCH}.rpm:bin \
-		mpfr-2.3.2-1.fc10.${LINUX_RPM_ARCH}.rpm:bin \
-		cpp-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
-		gcc-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
-		gcc-c++-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
-		gcc-gfortran-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin
+BIN_DISTFILES=	binutils-2.18.50.0.9-8.fc10${EXTRACT_SUFX} \
+		binutils-devel-2.18.50.0.9-8.fc10${EXTRACT_SUFX} \
+		glibc-devel-2.9-3${EXTRACT_SUFX} \
+		glibc-headers-2.9-3${EXTRACT_SUFX} \
+		kernel-headers-2.6.27.41-170.2.117.fc10${EXTRACT_SUFX} \
+		mpfr-2.3.2-1.fc10${EXTRACT_SUFX} \
+		cpp-4.3.2-7${EXTRACT_SUFX} \
+		gcc-4.3.2-7${EXTRACT_SUFX} \
+		gcc-c++-4.3.2-7${EXTRACT_SUFX} \
+		gcc-gfortran-4.3.2-7${EXTRACT_SUFX}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Linux compilers and base libraries
 
-.if defined(PACKAGE_BUILDING)
-MASTER_SITES+=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/${PORTVERSION}/SRPMS/:src \
-		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/source/SRPMS/:src
-SRC_DISTFILES=	binutils-2.18.50.0.9-8.fc10.src.rpm:src \
-		glibc-2.9-3.src.rpm:src \
-		kernel-2.6.27.5-117.fc10.src.rpm:src \
-		mpfr-2.3.2-1.fc10.src.rpm:src \
-		gcc-4.3.2-7.src.rpm:src
-.endif
+SRC_DISTFILES=	binutils-2.18.50.0.9-8.fc10.src.rpm:SOURCE \
+		glibc-2.9-3.src.rpm:SOURCE \
+		kernel-2.6.27.5-117.fc10.src.rpm:SOURCE \
+		mpfr-2.3.2-1.fc10.src.rpm:SOURCE \
+		gcc-4.3.2-7.src.rpm:SOURCE
 
 # LICENSE=	Various GNU
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
-USE_LINUX_RPM=	yes
+USES=		linux:f10
+USE_LINUX_RPM=	nolib
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	NLS=""
