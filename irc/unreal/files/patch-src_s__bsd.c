@@ -1,4 +1,4 @@
---- src/s_bsd.c.orig	2015-08-16 06:44:25 UTC
+--- src/s_bsd.c.orig	2016-09-03 19:34:06 UTC
 +++ src/s_bsd.c
 @@ -455,7 +455,7 @@ int  inetport(aClient *cptr, char *name,
  	 */
