@@ -12,6 +12,8 @@ COMMENT=	Catalyst SOAP Controller
 
 LICENSE=	ARTPERL10
 
+BROKEN=		wrong DEPENDS
+
 BUILD_DEPENDS=	\
 		p5-Catalyst-Runtime>=5.90017:www/p5-Catalyst-Runtime \
 		p5-Moose>=0.9:devel/p5-MRO-Compat \
