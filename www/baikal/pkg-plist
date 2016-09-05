@@ -993,6 +993,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/MissingOverriddenTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/NoInstancesTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/OverrideFirstEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/SameDateForRecurringEventsTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RDateIteratorTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RRuleIteratorTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/RecurrenceIterator/UntilRespectsTimezoneTest.ics
