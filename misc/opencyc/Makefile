@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General knowledge base and commonsense reasoning engine
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

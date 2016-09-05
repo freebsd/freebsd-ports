@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
-USE_LINUX=	yes
+USES=		linux
 PLIST_FILES=	bin/lpac
 
 do-install:

@@ -11,13 +11,12 @@ COMMENT=	RPM of libglade2 (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-libglade2-[0-9]* linux-f10-libglade2-[0-9]*
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	3.1.el6
 USE_LDCONFIG=	yes
 
-DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

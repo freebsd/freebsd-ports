@@ -11,7 +11,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Instant Messaging client based on XULRunner and libpurple
 
 USES=		tar:bzip2
-USE_LINUX_APPS=	libxml2 #avahiglib avahilibs
+USE_LINUX=	libxml2 #avahiglib avahilibs
 
 ALL_LOCALES=	cs de en-US es-ES et fr nl pl pt-BR ru sk sv-SE uk
 LOCALE=		${${PORT_OPTIONS:MLANG_*}}

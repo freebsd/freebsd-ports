@@ -32,9 +32,8 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 SUB_FILES=	pkg-message
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
-USES=		desktop-file-utils python:2 tar:tgz
+USES=		desktop-file-utils linux python:2 tar:tgz
+USE_LINUX=	xorglibs
 
 .include <bsd.port.options.mk>
 

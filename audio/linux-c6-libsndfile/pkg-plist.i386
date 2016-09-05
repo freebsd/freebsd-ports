@@ -7,11 +7,11 @@ usr/bin/sndfile-play
 usr/bin/sndfile-regtest
 usr/lib/libsndfile.so.1
 usr/lib/libsndfile.so.1.0.20
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/AUTHORS
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/ChangeLog
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/NEWS
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 usr/share/man/man1/sndfile-convert.1.gz
 usr/share/man/man1/sndfile-info.1.gz
 usr/share/man/man1/sndfile-play.1.gz

@@ -15,9 +15,8 @@ MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
-USES=		zip:infozip
+USES=		linux zip:infozip
+USE_LINUX=	xorglibs
 NO_CDROM=	Redistribution limited
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 PATCH_260B_DIR=	Enemy Territory 2.60b
@@ -25,7 +24,7 @@ PATCH_260B_DIR=	Enemy Territory 2.60b
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
 
 NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_USE_OFF=	linux_apps=dri
+NVIDIA_GL_USE_OFF=	LINUX=dri
 
 .include <bsd.port.options.mk>
 

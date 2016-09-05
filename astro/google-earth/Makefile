@@ -21,16 +21,15 @@ LINUX_DRI_DESC=		libGL support via Linux DRI libraries
 NVIDIA_GL_340_DESC=	libGL support via nvidia-driver-340
 NVIDIA_GL_304_DESC=	libGL support via nvidia-driver-304
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs curl nss
-USES=		desktop-file-utils makeself perl5 shared-mime-info
+USES=		desktop-file-utils linux makeself perl5 shared-mime-info
+USE_LINUX=	xorglibs curl nss
 USE_PERL5=	patch build
 NO_WRKSUBDIR=	yes
 
 NVIDIA_GL_RUN_DEPENDS=		${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_340_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-340
 NVIDIA_GL_304_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver-304
-LINUX_DRI_USE=			LINUX_APPS=dri,libpciaccess
+LINUX_DRI_USE=			LINUX=dri,libpciaccess
 
 post-extract:
 	@cd ${WRKSRC} && ${TAR} -xf googleearth-data.tar && ${RM} googleearth-data.tar
@@ -62,7 +61,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/googleearth.desktop
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/googleearth ${STAGEDIR}${DATADIR}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/googleearth ${STAGEDIR}${DATADIR}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/googleearth-bin ${STAGEDIR}${DATADIR}/
 	${RM} ${WRKSRC}/googleearth-mimetypes.xml \
 		${WRKSRC}/googleearth.desktop \

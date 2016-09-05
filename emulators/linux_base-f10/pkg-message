@@ -1,29 +1,6 @@
-This software is based in part on the work of the FreeType Team.
-See <URL:http://www.freetype.org/>.
+Some programs need linprocfs mounted on /compat/linux/proc.  Add the following
+line to /etc/fstab:
 
-Installation of the Linux base system is finished. The Linux kernel
-mode, which must be enabled for Linux binaries to run, is now
-enabled. Linux mode can be enabled permanently with the linux_enable
-variable of rc.conf(5).
+linprocfs   /compat/linux/proc	linprocfs	rw	0	0
 
-If you want to use shared memory in Linux applications, you need to set up
-a link from /dev/shm to a suitable place, e.g. by adding the following line
-to /etc/devfs.conf (takes effect on each boot):
-	link /tmp shm
-
-To make use of NIS you have to adjust yp.conf and nsswitch.conf in
-/compat/linux/etc/ accordingly. For example:
-
-Set your yp-server and yp-domainname in yp.conf:
-	domainname	my.yp.domainname
-	ypserver	my.yp.server
-
-Let your lists for hosts, passwd and group be resolved via nsswitch.conf:
-	passwd:	files nis
-	shadow:	files nis
-	group:	files nis
-	hosts:	files dns nis
-
-WARNING: doing work which needs to chroot into the linux base may not work.
-In such cases (e.g. cross-development) you are better suited with a linux_dist
-port.
+Then run "mount linprocfs".

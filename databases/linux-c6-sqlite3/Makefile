@@ -11,14 +11,11 @@ COMMENT=	Library that implements an embeddable SQL database engine (Linux CentOS
 
 CONFLICTS=	linux-f8-sqlite3-[0-9]* linux-f10-sqlite3-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
 RPMVERSION=	1.el6_7.2
-USE_LINUX_RPM=	yes
-BRANDELF_FILES=	usr/bin/sqlite3
+USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
 
-DOCSDIR=	${PREFIX}/usr/share/doc/sqlite-${PORTVERSION}
 PORTDOCS=	README
 DESCR=		${.CURDIR}/../${PORTNAME}3/pkg-descr
 

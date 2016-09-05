@@ -5,7 +5,6 @@ PORTNAME=	tk
 PORTVERSION=	8.5.3
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
-MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 PKGNAMESUFFIX=	85
 
@@ -14,13 +13,12 @@ COMMENT=	Graphical toolkit for TCL (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-tk84-[0-9]*
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
 USE_LINUX_RPM_BAD_PERMS=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX=	xorglibs
 
 RPMVERSION=	5.fc10
-BRANELF_FILES=	usr/bin/wish8.5
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr

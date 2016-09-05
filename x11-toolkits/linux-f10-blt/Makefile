@@ -9,9 +9,9 @@ CATEGORIES=	x11-toolkits linux
 MAINTAINER=	devel@stasyan.com
 COMMENT=	BLT widget extension to Tcl/Tk scripting language development (Linux Fedora 10)
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	tcl85 tk85 xorglibs
+USE_LINUX=	tcl85 tk85 xorglibs
 
 RPMVERSION=	28.z.fc10
 USE_LDCONFIG=	yes

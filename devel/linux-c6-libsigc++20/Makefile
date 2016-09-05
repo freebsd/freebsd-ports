@@ -11,13 +11,12 @@ COMMENT=	Callback Framework for C++(Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-f10-libsigc++20-[0-9]*
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.el6
 USE_LDCONFIG=	yes
 
-DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

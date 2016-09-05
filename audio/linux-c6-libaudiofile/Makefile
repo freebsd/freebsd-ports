@@ -12,11 +12,10 @@ COMMENT=	Implementation of the Audio File Library from SGI (Linux CentOS ${LINUX
 
 CONTFLICTS=	linux-libaudiofile-[0-9]* linux-f10-libaudiofile-[0-9]*
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	11.1.el6
-BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

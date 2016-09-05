@@ -1,5 +1,3 @@
-@comment file listing
-etc/ld.so.conf.d/xorg-x11-i386.conf
 usr/lib/libFS.so.6
 usr/lib/libFS.so.6.0.0
 usr/lib/libGLw.so.1
@@ -419,5 +417,4 @@ usr/share/doc/libxkbfile-1.0.4/COPYING
 usr/share/doc/libxkbfile-1.0.4/ChangeLog
 usr/share/doc/mesa-libGLw-6.5.1/README
 usr/share/icons/default/index.theme
-@comment deal with empty directories installed by the port
 @dir usr/share/X11/app-defaults

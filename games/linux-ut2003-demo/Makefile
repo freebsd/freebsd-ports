@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.sh.bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 xorglibs
+USES=		linux
+USE_LINUX=	sdl12 xorglibs
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -41,7 +41,7 @@ NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MNVIDIA_GL}
-USE_LINUX_APPS+=dri
+USE_LINUX+=	dri
 .endif
 
 do-extract:

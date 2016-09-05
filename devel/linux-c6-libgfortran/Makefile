@@ -8,11 +8,11 @@ CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of runtime libs for gfortran (Linux Centos ${LINUX_DIST_VER})
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	17.el6
 USE_LDCONFIG=	yes
-SRC_DISTFILES=	gcc-${DISTVERSION}${SRC_SUFX}:SOURCE
+SRC_DISTFILES=	gcc-${DISTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

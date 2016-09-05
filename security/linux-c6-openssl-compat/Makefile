@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/usr/share/doc/openssl098e-${PORTVERSION}/LICENSE
 
 CONFLICTS=	linux-f10-openssl-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
 RPMVERSION=	20.el6.centos.1
 USE_LDCONFIG=	yes

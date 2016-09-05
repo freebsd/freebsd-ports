@@ -15,7 +15,7 @@ RESTRICTED=	Only unmodified original package can be distributed
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_LINUX=	yes
+USES=		linux
 NO_WRKSUBDIR=	yes
 STUFFIT_FILES=	bin/unstuff bin/stuff
 STUFFIT_MAN=	man/man1/stuff.1 man/man1/unstuff.1

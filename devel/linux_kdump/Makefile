@@ -10,11 +10,10 @@ MASTER_SITES=	LOCAL/marcel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor
 
-BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
+BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX only sets RUN_DEPENDS
 
-USES=		uidfix
-USE_LINUX=	yes
-USE_LINUX_APPS=	devtools
+USES=		linux uidfix
+USE_LINUX=	devtools
 
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/linux_kdump man/man1/linux_kdump.1.gz

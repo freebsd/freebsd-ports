@@ -18,7 +18,7 @@ LICENSE_NAME=	JSoftware End User License Agreement
 LICENSE_FILE=	${FILESDIR}/license.txt
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-USE_LINUX=	yes
+USES=		linux
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

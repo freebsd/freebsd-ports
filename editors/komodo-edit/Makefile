@@ -18,8 +18,8 @@ NO_PACKAGE=	Distribution not permitted
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	alsalib gtk2 jpeg dbusglib
+USES=		linux
+USE_LINUX=	alsalib gtk2 jpeg dbusglib
 
 PLIST_FILES=	bin/komodo
 PORTDATA=	*

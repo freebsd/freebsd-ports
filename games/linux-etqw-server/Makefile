@@ -20,8 +20,7 @@ NO_CDROM=	Redistribution is limited
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USES=		zip:infozip
+USES=		linux zip:infozip
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
@@ -40,7 +39,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETQWDIR}
 
-	${INSTALL_PROGRAM} ${WRKSRC}/etqwded ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/etqwded ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/data/etqwded.x86 ${STAGEDIR}${ETQWDIR}
 	@cd ${WRKSRC}/data && \
 		${FIND} -E . -type f -iregex ".*\.so\.[0-9]+" \

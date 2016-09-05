@@ -11,11 +11,10 @@ COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-openmotif-[0-9]* linux-f8-openmotif-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USES=		linux:c6
 RPMVERSION=	8.el6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX=	xorglibs
 USE_LDCONFIG=	yes
 DESCR=	${.CURDIR}/../open-motif/pkg-descr
 

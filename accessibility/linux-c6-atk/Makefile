@@ -12,8 +12,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	linux-atk-[0-9]* linux-f10-atk-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USES=		linux:c6
 RPMVERSION=	1.el6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes

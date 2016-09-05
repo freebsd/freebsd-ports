@@ -23,15 +23,15 @@ RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 
 NO_BUILD=	yes
 RESTRICTED=	Distribution not allowed
-USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 xorglibs
+USES=		linux
+USE_LINUX=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX_APPS+=libglu
+USE_LINUX+=	libglu
 .else
-USE_LINUX_APPS+=dri
+USE_LINUX+=	dri
 .endif
 
 OPTIONS_DEFINE=	NWMOVIES
@@ -50,7 +50,7 @@ NWMOVIESFILE=	nwmovies-v4-public.20090223.080954.tar.gz
 BINKPLAYERFILE=	BinkLinuxPlayer.zip
 CLIENT_NWMOVIES=${NWMOVIESFILE}:NWMOVIES \
 		${BINKPLAYERFILE}:BINK
-USE_LINUX_APPS+=mikmod sdlmixer
+USE_LINUX+=	mikmod sdlmixer
 PLIST_SUB+=	NWMOVIES=""
 .else
 PLIST_SUB+=	NWMOVIES="@comment "

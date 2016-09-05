@@ -34,8 +34,8 @@ EAGLEBASEVERSION=	5.12
 EAGLEBUGFIX=	0
 EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs jpeg png
+USES=		linux
+USE_LINUX=	xorglibs jpeg png
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-deinstall pkg-message

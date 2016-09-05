@@ -16,8 +16,7 @@ COMMENT=	Modern tactical Enemy Territory modification
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		zip
-USE_LINUX=	yes
+USES=		linux zip
 RESTRICTED=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/enemyterritory
 PORTDOCS=	*

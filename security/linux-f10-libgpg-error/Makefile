@@ -9,14 +9,11 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
-USE_LINUX=	f10
+RPMVERSION=	2
+USES=		linux:f10
+USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
-RPMVERSION=	2
-USE_LDCONFIG=	yes
-BRANDELF_FILES=	usr/bin/gpg-error
-
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../libgpg-error/pkg-descr
 
 .include <bsd.port.mk>

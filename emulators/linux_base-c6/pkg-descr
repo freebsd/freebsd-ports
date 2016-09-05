@@ -5,10 +5,3 @@ provide a nice user experience by using the FreeBSD configuration for
 corresponding Linux stuff where possible. Because of this any work which
 needs to chroot into the Linux base may not work as expected (no fallthrough
 to the FreeBSD config possible).
-
-This port is only available for the i386/amd64 architecture (i386/32 bit mode).
-
-If you want to run X11 applications, install the x11/linux-xorg-libs port.
-
-For cross-development this port is not suitable, you should use a linux_dist
-port instead in this case.

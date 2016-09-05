@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss_ldap
-PORTVERSION=	${NSS_LDAP_VERSION}
+PORTVERSION=	264
 PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/updates/testing/10/i386/ \
@@ -15,21 +15,12 @@ COMMENT=	RFC 2307 NSS Module (Linux Fedora 10)
 #LICENSE=	GPLv2
 #NO_LICENSES_INSTALL=yes	# license framework does not rm the "share" directory
 
-OPTIONS_DEFINE=	DOCS PAM
-
-NSS_LDAP_VERSION=264
-
-USE_LINUX=	f10
-USE_LINUX_RPM=	yes
-USE_LINUX_PREFIX=yes
-
 RPMVERSION=	6.fc10
+USES=		linux:f10
 USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
 
-DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}
-
-MANPREFIX=	${PREFIX}/usr/share
-
+OPTIONS_DEFINE=	DOCS PAM
 OPTIONS_SUB=	yes
 
 PORTDOCS=	ANNOUNCE.nss_ldap AUTHORS.nss_ldap COPYING.nss_ldap \
@@ -51,12 +42,7 @@ PORTDOCS+=	AUTHORS.pam_ldap COPYING.LIB.pam_ldap COPYING.pam_ldap \
 		pam.d/xscreensaver pam.d/xserver
 .endif
 
-pre-fetch:
-.if !${PORT_OPTIONS:MPAM}
-	@${ECHO_MSG} "Select PAM if you require more advanced ldap support in the linuxulator"
-.endif
-
-post-extract:
+post-patch:
 	@if [ -f ${WRKSRC}/etc/ldap.conf ]; then \
 		${MV} ${WRKSRC}/etc/ldap.conf ${WRKSRC}/etc/ldap.conf.dist; \
 	fi
@@ -64,17 +50,17 @@ post-extract:
 	@if [ -f ${WRKSRC}/lib/security/pam_ldap.so ]; then \
 		${RM} -rf ${WRKSRC}/lib/; \
 	fi
-	@if [ -f ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/COPYING.pam_ldap ]; then \
-		${RM} ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/*.pam*; \
-		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d; \
+	@if [ -f ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/COPYING.pam_ldap ]; then \
+		${RM} ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/*.pam*; \
+		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d; \
 	fi
 	@if [ -f ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz ]; then \
 		${RM} ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz; \
 	fi
 .else
 .if !${PORT_OPTIONS:MDOCS}
-	@if [ -d ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d ]; then \
-		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d/; \
+	@if [ -d ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d ]; then \
+		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d/; \
 	fi
 .endif
 .endif

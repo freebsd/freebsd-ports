@@ -120,10 +120,6 @@ lib/%%APP_NAME%%/isp/movemail.rdf
 lib/%%APP_NAME%%/isp/rss.rdf
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
-%%GTK218%%lib/%%APP_NAME%%/libgdk-x11-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libgio-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libglib-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libgtk-x11-2.0.so.0
 lib/%%APP_NAME%%/libldap60.so
 lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/liblgpllibs.so

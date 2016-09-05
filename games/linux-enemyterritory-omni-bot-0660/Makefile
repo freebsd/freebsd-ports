@@ -18,8 +18,7 @@ VERSTR=	${PORTVERSION:C/([0-9])\.([0-9]+)/\1\2/}
 PKGNAMESUFFIX=	-${VERSTR}
 PLIST_SUB=	VERSTR="${VERSTR}"
 
-USES=		zip
-USE_LINUX=	yes
+USES=		linux zip
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
