@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160905:
+  AFFECTS: users of databases/postgresql96-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The default unix user used by the PostgreSQL daemon has changed to
+  `postgres' to reflect the long time upstream's convention. Any scripts
+  you have using the old `pgsql' unix user should be modified when upgrading to
+  PostgreSQL version 9.6. Older versions of PostgreSQL will continue using
+  `pgsql' until their end-of-life.
+
+  For users with UTF-8 locales in the database: The ICU patch is *activated by
+  default* for the PostgreSQL-9.6 server. For previous versions it was optional
+  and default off, but this has changed. Please read the entry here below from
+  20160811 and understand the consequences of changing between ICU and system
+  locale for database collation (short version: don't). pg_upgrade requires the
+  collation method to be the same (or a reindex), while pg_dump/restore does not.
+
+  Also, the default home directory for the postgres user is now
+  /var/db/postgres, and the default data directory for PostgreSQL 9.6 is
+  /var/db/postgres/data96.
+
 20160829:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: cem@FreeBSD.org
