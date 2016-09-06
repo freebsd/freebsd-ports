@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160906:
+  AFFECTS: uses of www/nginx
+  AUTHOR: marino@FreeBSD.org
+
+  Nginx now creates logs under /var/log/nginx/ and changes default log
+  names from "nginx-access.log" and "nginx-error.log" to "access.log" and
+  "error.log" respectively.  This is important for the error log because
+  the location is encoded and touched by nginx during startup regardless
+  of the configured location for the error log.
+
+  See http://trac.nginx.org/nginx/ticket/147 for additional information
+  on why this happens.
+
 20160905:
   AFFECTS: users of databases/postgresql96-server
   AUTHOR: girgen@FreeBSD.org
