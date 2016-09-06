@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -16,30 +15,36 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
+USERS=		_dnscrypt-proxy
+
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SINGLE=	RCWHICH
-OPTIONS_SINGLE_RCWHICH=	RCSINGLE RCMULTI
-RCWHICH_DESC=	rc script to use:
-RCSINGLE_DESC=	use default rc script for single daemon
-RCMULTI_DESC=	use experimental rc script for multiple instances
-OPTIONS_DEFAULT=RCSINGLE
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRCMULTI}
-USE_RC_SUBR=	${PORTNAME}_multi
-SUB_FILES=	pkg-message_multi
-.else
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
-.endif
-
-USERS=		_dnscrypt-proxy
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README* THANKS
+
+OPTIONS_DEFINE=	DOCS PLUGINS PLUGINS_RELAXED PLUGINS_ROOT
+OPTIONS_SINGLE=	RCWHICH
+OPTIONS_SINGLE_RCWHICH=	RCSINGLE RCMULTI
+OPTIONS_DEFAULT=	PLUGINS RCSINGLE
+OPTIONS_SUB=	yes
+
+PLUGINS_CONFIGURE_ENABLE=	plugins
+PLUGINS_LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libldns.so:dns/ldns
+PLUGINS_USES=	libtool
+PLUGINS_RELAXED_DESC=	Allow loading plugins owned by other users
+PLUGINS_RELAXED_CONFIGURE_ENABLE=	relaxed-plugins-permissions
+PLUGINS_ROOT_DESC=	Only load plugins sitting in the default plugins directory
+PLUGINS_ROOT_CONFIGURE_ENABLE=	plugins-root
+RCWHICH_DESC=	Rc script to use:
+RCSINGLE_DESC=	Use default rc script for single daemon
+RCSINGLE_VARS=	USE_RC_SUBR=${PORTNAME}
+RCSINGLE_SUB_FILES=	pkg-message
+RCMULTI_DESC=	Use experimental rc script for multiple instances
+RCMULTI_VARS=	USE_RC_SUBR=${PORTNAME}_multi
+RCMULTI_SUB_FILES=	pkg-message_multi
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
