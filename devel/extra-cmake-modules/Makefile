@@ -4,6 +4,7 @@
 PORTNAME=	extra-cmake-modules
 PORTVERSION=	5.25.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com
