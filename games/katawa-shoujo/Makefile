@@ -24,6 +24,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 RUN_DEPENDS=	renpy:devel/renpy
 
+BROKEN=		game/ui_settings.rpy:2: ValueError('list.remove(x): x not in list',)
+
 USES=		tar:bz2
 NO_ARCH=	yes
 NO_BUILD=	yes
