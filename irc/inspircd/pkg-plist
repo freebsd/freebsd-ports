@@ -223,6 +223,4 @@ lib/inspircd/modules/m_userip.so
 lib/inspircd/modules/m_vhost.so
 lib/inspircd/modules/m_watch.so
 lib/inspircd/modules/m_xline_db.so
-@dir lib/inspircd/data
-@dir lib/inspircd/logs
 @postunexec echo "If permanently removing software, you may wish to remove the configuration directory by running \"rm -rf %%PREFIX%%/%%ETCDIR%%\""
