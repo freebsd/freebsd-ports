@@ -1,5 +1,6 @@
-galculator is a GTK2-based scientific calculator with ordinary
-notation/reverse polish notation, different number bases (DEC, HEX,
-OCT, BIN) and different units of angular measure (DEG, RAD, GRAD).
+galculator is a GTK2/GTK3 based calculator with ordinary notation/reverse polish
+notation (RPN), a formula entry mode, different number bases (DEC, HEX, OCT,
+BIN) and different units of angular measure (DEG, RAD, GRAD). It supports
+quad-precision floating point and 112-bit binary arithmetic.
 
-WWW: http://galculator.sourceforge.net/
+WWW: http://galculator.mnim.org/
