@@ -2,26 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	searx
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Searx / a privacy-respecting, hackable metasearch engine
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}Flask-Babel>0:devel/py-flask-babel \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>0:net/py-ndg_httpsclient \
-		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}Flask-Babel>=0.11.1:devel/py-flask-babel \
+		${PYTHON_PKGNAMEPREFIX}lxml>=3.6.0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>=0.4.1:net/py-ndg_httpsclient \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.15.1:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}Flask>=0.11.1:www/py-flask \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.10:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2016.2.28:security/py-certifi
 
 USE_RC_SUBR=	searx
 
