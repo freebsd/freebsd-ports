@@ -15,6 +15,8 @@ include/pragmarcs/pragmarc-combined_random.adb
 include/pragmarcs/pragmarc-combined_random.ads
 include/pragmarcs/pragmarc-complex.adb
 include/pragmarcs/pragmarc-complex.ads
+include/pragmarcs/pragmarc-concurrent_pipeline.adb
+include/pragmarcs/pragmarc-concurrent_pipeline.ads
 include/pragmarcs/pragmarc-date_handler.adb
 include/pragmarcs/pragmarc-date_handler.ads
 include/pragmarcs/pragmarc-deck_handler.adb
@@ -27,6 +29,8 @@ include/pragmarcs/pragmarc-get_line.adb
 include/pragmarcs/pragmarc-get_line.ads
 include/pragmarcs/pragmarc-hash_fast_variable_length.adb
 include/pragmarcs/pragmarc-hash_fast_variable_length.ads
+include/pragmarcs/pragmarc-holders.adb
+include/pragmarcs/pragmarc-holders.ads
 include/pragmarcs/pragmarc-images-image.ads
 include/pragmarcs/pragmarc-images.adb
 include/pragmarcs/pragmarc-images.ads
@@ -146,12 +150,14 @@ lib/pragmarcs/pragmarc-binary_semaphore_handler.ali
 lib/pragmarcs/pragmarc-character_regular_expression_matcher.ali
 lib/pragmarcs/pragmarc-combined_random.ali
 lib/pragmarcs/pragmarc-complex.ali
+lib/pragmarcs/pragmarc-concurrent_pipeline.ali
 lib/pragmarcs/pragmarc-date_handler.ali
 lib/pragmarcs/pragmarc-deck_handler.ali
 lib/pragmarcs/pragmarc-forwarder.ali
 lib/pragmarcs/pragmarc-genetic_algorithm.ali
 lib/pragmarcs/pragmarc-get_line.ali
 lib/pragmarcs/pragmarc-hash_fast_variable_length.ali
+lib/pragmarcs/pragmarc-holders.ali
 lib/pragmarcs/pragmarc-images-image.ali
 lib/pragmarcs/pragmarc-images.ali
 lib/pragmarcs/pragmarc-job_pools.ali
