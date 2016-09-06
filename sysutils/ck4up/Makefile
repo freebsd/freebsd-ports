@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ck4up
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
@@ -12,6 +12,7 @@ COMMENT=	Checks http and ftp sites for updates
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:databases/ruby-gdbm
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
@@ -22,10 +23,10 @@ PLIST_FILES=	bin/ck4up \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
-	    ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
