@@ -3,6 +3,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	1.23.6
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -14,16 +15,23 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		tar:bzip2 gmake libtool pathfix
+USES=		tar:bzip2 gmake libtool localbase pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimization=0 \
-		--with-audio=oss \
-		--with-default-audio=oss \
 		--with-module-suffix=.so
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	SNDIO
+OPTIONS_SUB=	yes
+
+SNDIO_CONFIGURE_ON=	--with-audio=sndio,oss \
+			--with-default-audio=sndio
+SNDIO_CONFIGURE_OFF=	--with-audio=oss \
+			--with-default-audio=oss
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 .include <bsd.port.pre.mk>
 

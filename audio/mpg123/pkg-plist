@@ -13,6 +13,7 @@ lib/libout123.so.0
 lib/libout123.so.0.1.4
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.so
+%%SNDIO%%lib/mpg123/output_sndio.so
 libdata/pkgconfig/libmpg123.pc
 libdata/pkgconfig/libout123.pc
 man/man1/out123.1.gz
