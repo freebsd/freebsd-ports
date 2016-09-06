@@ -45,12 +45,12 @@ usr/share/man/man1/raw2tiff.1.gz
 usr/share/man/man1/rgb2ycbcr.1.gz
 usr/share/man/man1/thumbnail.1.gz
 usr/share/man/man1/tiff2bw.1.gz
-usr/share/man/man1/tiffcrop.1.gz
 usr/share/man/man1/tiff2pdf.1.gz
 usr/share/man/man1/tiff2ps.1.gz
 usr/share/man/man1/tiff2rgba.1.gz
 usr/share/man/man1/tiffcmp.1.gz
 usr/share/man/man1/tiffcp.1.gz
+usr/share/man/man1/tiffcrop.1.gz
 usr/share/man/man1/tiffdither.1.gz
 usr/share/man/man1/tiffdump.1.gz
 usr/share/man/man1/tiffinfo.1.gz
