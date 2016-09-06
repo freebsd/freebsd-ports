@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160907:
+  AFFECTS: users of math/galculator
+  AUTHOR: woodsb02@FreeBSD.org
+
+  galculator now uses GTK3 by default. An option exists in the port to revert
+  to GTK2 if desired.
+
 20160906:
   AFFECTS: uses of www/nginx
   AUTHOR: marino@FreeBSD.org
