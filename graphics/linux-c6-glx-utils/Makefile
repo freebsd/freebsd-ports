@@ -14,8 +14,8 @@ RPMVERSION=	4.el6
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver \
-			linux-c6-libGLU>0:graphics/linux-c6-libGLU
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
+NVIDIA_GL_USE=		LINUX=libglu
 NVIDIA_GL_USE_OFF=	LINUX=dri
 
 .if defined(PACKAGE_BUILDING)
