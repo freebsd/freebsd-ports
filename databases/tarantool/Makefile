@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.6.8.741
+PORTVERSION=	1.6.8.767
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tarantool.org/tarantool/1.6/src/
 
