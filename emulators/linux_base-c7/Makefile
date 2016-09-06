@@ -4,7 +4,7 @@ PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
-EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}:Nfilesystem-*}
+EXTRACT_ONLY=	${DISTFILES:N*.src.rpm*:Nfilesystem-*}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 7)
