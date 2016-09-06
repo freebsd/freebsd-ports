@@ -3,10 +3,10 @@
 # $FreeBSD$
 #
 
-# Copyright (C) 2015 by Yuri Victorovich. All rights reserved.
+# Copyright (C) 2016 by Yuri Victorovich. All rights reserved.
 
 # PROVIDE: zeronet
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS tor
 # KEYWORD: shutdown
 
 # zeronet is disabled by default, if you have configuration file
@@ -22,6 +22,7 @@ name="zeronet"
 rcvar=zeronet_enable
 start_cmd="zeronet_start"
 stop_cmd="zeronet_stop"
+status_cmd="zeronet_status"
 
 load_rc_config ${name}
 
@@ -69,6 +70,15 @@ zeronet_stop() {
   if is_process_running $pidfile; then
     echo "stopping zeronet (pid=$(cat $pidfile))"
     stop_daemon $pidfile
+  else
+    echo "zeronet isn't running"
+  fi
+}
+
+zeronet_status() {
+  local pidfile=/var/run/zeronet.pid
+  if is_process_running $pidfile; then
+    echo "zeronet is running, pid=$(cat $pidfile)"
   else
     echo "zeronet isn't running"
   fi
