@@ -1134,6 +1134,7 @@
     SUBDIR += kdevplatform
     SUBDIR += kickassembler
     SUBDIR += kimwitu
+    SUBDIR += kore
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += lasi
