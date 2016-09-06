@@ -1,0 +1,11 @@
+--- Makefile.common.orig	2016-01-14 21:43:08 UTC
++++ Makefile.common
+@@ -38,8 +38,6 @@ endif
+ 
+ %.8:	% $(MAN8DEPS)
+ 	chmod a+x $(abs_builddir)/$<
+-	$(PCMK_V)  PATH=$(abs_builddir):$$PATH $(abs_builddir)/$< --help
+-	$(PCMK_V)  PATH=$(abs_builddir):$$PATH $(abs_builddir)/$< --version
+ 	$(AM_V_MAN)PATH=$(abs_builddir):$$PATH $(HELP2MAN) --output $@ --no-info --section 8 --name "Part of the Pacemaker cluster resource manager" $(abs_builddir)/$<
+ 
+ %.xml:  %
