@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	pypy
-DISTVERSION?=	5.3.1	# Also update bsd.pypy.cffi.mk
+DISTVERSION?=	5.4.0	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
