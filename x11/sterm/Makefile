@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sterm
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${PORTVERSION}
@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig ncurses:port
+USES=		pkgconfig
 USE_XORG=	x11 xext xft
 
 PLIST_FILES=	bin/st man/man1/st.1.gz
@@ -26,8 +26,6 @@ PLIST_FILES=	bin/st man/man1/st.1.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
@@ -48,6 +46,8 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/st
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
