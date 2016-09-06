@@ -3,7 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.99.10
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 
@@ -34,6 +34,7 @@ USE_SDL=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
+TARGET_ORDER_OVERRIDE=610:fix-shebang
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}"
@@ -84,7 +85,7 @@ add-empty-dirs:
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \
 		-exec ${STRIP_CMD} {} +
-	${LN} -fs ${DATADIR}/renpy.py \
+	${LN} -fs ../${DATADIR_REL}/renpy.py \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR} \
