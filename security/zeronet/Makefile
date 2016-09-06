@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.3.7
-#DISTVERSIONPREFIX=	v
+PORTVERSION=	0.4.0
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@rawbw.com
