@@ -5,7 +5,7 @@
        | --x-includes=* | --x-libraries=* | --with-3psw=* \
        | --target=* | --with-runpath=* | --with-relative-runpath=* \
 -      | --help | --no-create | --no-recursion)
-+      | --help | --no-create | --no-recursion | --localstatedir=* )
++      | --help | --no-create | --no-recursion | --localstatedir=* | --disable-silent-rules )
        ;;
  
        * )
