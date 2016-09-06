@@ -18,7 +18,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
 PORTEXAMPLES=	bitlbee.conf motd.txt
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig python:build
 USE_RC_SUBR=	bitlbee
 USE_GNOME=	glib20
@@ -46,7 +46,9 @@ LIBEVENT_DESC=		Use libevent as event handler
 OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER YAHOO
 
 CONFIGURE_ARGS=		--config=/var/db/bitlbee \
-			--pcdir=${PREFIX}/libdata/pkgconfig
+			--pcdir=${PREFIX}/libdata/pkgconfig \
+			--prefix=${PREFIX} \
+			--mandir=${MANPREFIX}/man
 
 DEBUG_CONFIGURE_ON=	--debug=1
 GNUTLS_CONFIGURE_ON=	--ssl=gnutls
