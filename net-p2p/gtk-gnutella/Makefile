@@ -1,42 +1,8 @@
 # Created by: rbt@zort.on.ca
 # $FreeBSD$
 
-#
-# A quick note on configurable make symbols:
-#
-# INTERACTIVE_CONFIGURE: Launches Configure in its default mode, which is
-#	*very* interactive. Disabled here by default to conform to FreeBSD
-#	guidelines, this mode is useful if you have problems with the
-#	default Configure.
-#
-# GUI: Disable this to build a headless version of Gtk-Gnutella. Therefore,
-#	monitoring of operations for Gtk-Gnutella will have to be
-#	done without relying on any GUI, and the configuration is done via
-#	files only.
-#
-# TLS: Enable support for scrambling GNet connections. Currently supported
-#	only by Gtk-Gnutella.
-#
-# NLS: Enable National Language Support for translation of User Interface.
-#
-# IPV6: Enable to support IPv6 connections. The real configuration takes
-#	place at run-time so keeping it enabled will not force IPv6 usage.
-#
-# DBUS: Enable D-Bus IPC support. Gtk-Gnutella will send out messages onto
-#	the D-Bus message bus. That way external applications can easily
-#	act on certain events that happen, such as a completed download.
-#
-# DEBUG: Compile with debugging symbols. Useful if you intend to make a
-#	bug report.
-#
-# PORTABILITY: Configure code to use the PATH variable at run-time at a
-#	cost in performance. Useful if you intend to move the executable
-#	to multiple machines.
-#
-
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.10
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -73,9 +39,11 @@ OPTIONS_SUB=		yes
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	-Ud_dbus
 DEBUG_CONFIGURE_ON=	-Ud_official
-GUI_USE=		gnome=gtk20
+GUI_USE=		gnome=gtk20,cairo
 GUI_VARS=		INSTALLS_ICONS=yes
 GUI_CONFIGURE_OFF=	-Dd_headless
+GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
 IPV6_CONFIGURE_OFF=	-Ud_ipv6
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	-Ud_nls
