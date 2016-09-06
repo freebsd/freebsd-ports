@@ -36,8 +36,8 @@ OPTIONS_RADIO=	ODBC
 OPTIONS_RADIO_ODBC=	UODBC IODBC
 ODBC_DESC=	ODBC Driver
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--config=FreeBSD --unbundled --no-tests --no-samples
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--config=FreeBSD --unbundled --no-tests --no-samples --prefix="${PREFIX}"
 USES=		gmake
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
