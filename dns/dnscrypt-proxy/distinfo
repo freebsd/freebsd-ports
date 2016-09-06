@@ -1,2 +1,3 @@
-SHA256 (dnscrypt-proxy-1.6.1.tar.gz) = c519012a66f3ee30be02113d1e0139be08ccd2ec45ca4102eac35be731a65340
-SIZE (dnscrypt-proxy-1.6.1.tar.gz) = 1721006
+TIMESTAMP = 1469962250
+SHA256 (dnscrypt-proxy-1.7.0.tar.gz) = be9827f66401f38fd4bdb372046eff9b5802ab5f3d188878a0dcd7bd20074c09
+SIZE (dnscrypt-proxy-1.7.0.tar.gz) = 1714401

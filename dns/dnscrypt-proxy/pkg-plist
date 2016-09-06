@@ -1,6 +1,15 @@
+bin/hostip
+%%PLUGINS%%include/dnscrypt/plugin.h
+%%PLUGINS%%include/dnscrypt/private.h
+%%PLUGINS%%include/dnscrypt/version.h
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example.so
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example_ldns_aaaa_blocking.so
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example_ldns_blocking.so
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example_ldns_opendns_deviceid.so
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example_ldns_opendns_set_client_ip.so
+%%PLUGINS%%lib/dnscrypt-proxy/libdcplugin_example_logging.so
 man/man8/dnscrypt-proxy.8.gz
 man/man8/hostip.8.gz
 sbin/dnscrypt-proxy
-bin/hostip
 %%DATADIR%%/dnscrypt-resolvers.csv
 %%DATADIR%%/minisign.pub
