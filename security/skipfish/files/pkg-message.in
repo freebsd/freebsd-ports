@@ -1,10 +1,9 @@
 
 ******************************************************************
 The FreeBSD port is configured to use the "default" dictionary but
-it's highly recommended to read the dictionaries document first in
+it's highly recommended to review the other dictionaries and make
+a selection appropriate for your environment.
 order to pick the right dictionary
-
-%%DATADIR%%/dictionaries/README-FIRST
 
 The skipfish dictionaries have been installed in the following
 directory:
