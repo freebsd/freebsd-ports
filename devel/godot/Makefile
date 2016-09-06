@@ -79,7 +79,7 @@ post-patch:
 # We just want a simple name matching the portname
 # This gives us bin/godot for runtime and bin/godot-tools for the IDE
 do-install:
-	@cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} godot.x11* \
+	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} godot.x11* \
 		${STAGEDIR}/${PREFIX}/bin/${GODOTFILE}
 
 do-install-EXAMPLES-on:
