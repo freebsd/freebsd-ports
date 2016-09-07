@@ -1,6 +1,6 @@
---- src/VBox/Main/src-server/freebsd/USBProxyServiceFreeBSD.cpp.orig	2016-07-18 11:56:36 UTC
-+++ src/VBox/Main/src-server/freebsd/USBProxyServiceFreeBSD.cpp
-@@ -322,21 +322,21 @@ PUSBDEVICE USBProxyServiceFreeBSD::getDe
+--- src/VBox/Main/src-server/freebsd/USBProxyBackendFreeBSD.cpp.orig	2016-08-16 20:00:20 UTC
++++ src/VBox/Main/src-server/freebsd/USBProxyBackendFreeBSD.cpp
+@@ -299,21 +299,21 @@ PUSBDEVICE USBProxyBackendFreeBSD::getDe
  
              if (UsbDevInfo.udi_vendor[0] != '\0')
              {
