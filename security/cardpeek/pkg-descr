@@ -1,0 +1,8 @@
+Cardpeek is a graphical tool to read the contents of ISO 7816 smart cards.
+It features a GTK+ v3.0 GUI to represent card data is a tree view, and is
+extensible with a scripting language (Lua).
+
+The goal of the project is to allow smart card owners to be better informed
+about what type of personal information is stored in these devices.
+
+WWW: http://pannetrat.com/Cardpeek/
