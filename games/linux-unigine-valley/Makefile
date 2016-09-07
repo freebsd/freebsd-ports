@@ -3,6 +3,7 @@
 
 PORTNAME=	unigine-valley
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games benchmarks linux
 MASTER_SITES=	http://de1-dl.techpowerup.com/Benchmarking/ \
 		http://nl1-dl.techpowerup.com/Benchmarking/ \

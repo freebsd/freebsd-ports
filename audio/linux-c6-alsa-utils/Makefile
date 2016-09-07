@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org

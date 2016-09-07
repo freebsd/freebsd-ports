@@ -2,6 +2,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	7.1.5.1557
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \

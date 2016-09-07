@@ -3,7 +3,7 @@
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.hup.hu/~trey/DOOM3/ \
 		http://darkstar.ist.utl.pt/pub/games/ \

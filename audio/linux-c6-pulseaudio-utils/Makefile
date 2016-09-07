@@ -3,7 +3,7 @@
 
 PORTNAME=	pulseaudio-utils
 PORTVERSION=	0.9.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org

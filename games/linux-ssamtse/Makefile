@@ -3,6 +3,7 @@
 
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
 		http://bsd-geek.de/FreeBSD/distfiles/

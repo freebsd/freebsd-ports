@@ -3,7 +3,7 @@
 
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}

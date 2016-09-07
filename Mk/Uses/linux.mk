@@ -138,16 +138,15 @@ linux_xorglibs_DEP=		linux-${linux_ARGS}-xorg-libs>0:x11/linux-${linux_ARGS}-xor
 
 USE_LINUX?=		base
 .for i in ${USE_LINUX}
-_i:=			${i:C/\:.*//}
-_i_args:=		${i:C/^[^\:]*(\:|\$)//:S/,/ /g}
+_i_args:=		${i:C/^[^:]*:?//:S/,/ /g}
 .if ${_i_args:Mpatch}
-PATCH_DEPENDS+=		${linux_${_i}_DEP}
+PATCH_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 .endif
 .if ${_i_args:Mbuild}
-BUILD_DEPENDS+=		${linux_${_i}_DEP}
+BUILD_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 .endif
 .if ${_i_args:Mrun} || empty(_i_args)
-RUN_DEPENDS+=		${linux_${_i}_DEP}
+RUN_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 .endif
 .endfor
 

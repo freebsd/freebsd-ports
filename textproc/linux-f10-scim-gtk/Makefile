@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-gtk
 PORTVERSION=	1.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org

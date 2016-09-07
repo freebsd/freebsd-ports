@@ -3,7 +3,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.28.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org

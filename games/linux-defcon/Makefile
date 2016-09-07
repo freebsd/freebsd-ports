@@ -3,6 +3,7 @@
 
 PORTNAME=	defcon
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://download.introversion.co.uk/defcon/linux/
 PKGNAMEPREFIX=	linux-

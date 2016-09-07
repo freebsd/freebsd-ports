@@ -3,7 +3,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
