@@ -117,6 +117,7 @@
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
+    SUBDIR += bunnysay
     SUBDIR += burgerspace
     SUBDIR += burrtools
     SUBDIR += bygfoot
