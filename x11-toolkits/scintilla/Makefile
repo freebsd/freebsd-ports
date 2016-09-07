@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-PORTVERSION=	3.6.6
+PORTVERSION=	3.6.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -21,8 +21,14 @@ USES=		compiler:c++11-lib gmake iconv pkgconfig tar:tgz
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-DPIC ${PICFLAG}
+
+MAJOR=		2
+AGE=		0
+REVISION=	0
+MAKE_ARGS=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}"
+PLIST_SUB=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}"
 
 .include <bsd.port.pre.mk>
 
@@ -36,11 +42,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -Os||g' ${WRKSRC}/makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/scintilla
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/scintilla
 	${INSTALL_DATA} ${WRKSRC}/../include/*.h ${STAGEDIR}${PREFIX}/include/scintilla
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla.so.2 ${STAGEDIR}${PREFIX}/lib
-	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libscintilla.so.2 libscintilla.so)
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla_lexers.so.2 ${STAGEDIR}${PREFIX}/lib
-	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libscintilla_lexers.so.2 libscintilla_lexers.so)
+.for f in libscintilla.so libscintilla_lexers.so
+	${INSTALL_LIB} ${WRKSRC}/${f}.${MAJOR}.${AGE}.${REVISION} \
+		${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib && \
+		${LN} -sf ${f}.${MAJOR}.${AGE}.${REVISION} ${f}.${MAJOR} && \
+		${LN} -sf ${f}.${MAJOR} ${f})
+.endfor
 
 .include <bsd.port.post.mk>

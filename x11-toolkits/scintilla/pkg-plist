@@ -5,6 +5,8 @@ include/scintilla/SciLexer.h
 include/scintilla/Scintilla.h
 include/scintilla/ScintillaWidget.h
 lib/libscintilla.so
-lib/libscintilla.so.2
+lib/libscintilla.so.%%MAJOR%%
+lib/libscintilla.so.%%MAJOR%%.%%AGE%%.%%REVISION%%
 lib/libscintilla_lexers.so
-lib/libscintilla_lexers.so.2
+lib/libscintilla_lexers.so.%%MAJOR%%
+lib/libscintilla_lexers.so.%%MAJOR%%.%%AGE%%.%%REVISION%%
