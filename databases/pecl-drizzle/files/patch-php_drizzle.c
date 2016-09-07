@@ -1,6 +1,6 @@
---- php_drizzle.c.orig	1970-01-01 17:13:08.000000000 +0800
-+++ php_drizzle.c	2015-11-30 22:02:21.309689000 +0800
-@@ -1314,9 +1314,13 @@
+--- php_drizzle.c.orig	1970-01-01 09:13:08 UTC
++++ php_drizzle.c
+@@ -1314,9 +1314,13 @@ drizzle_obj_new_ex(zend_class_entry *cla
  	}
  
  	zend_object_std_init(&(obj->std), class_type TSRMLS_CC);
@@ -14,7 +14,7 @@
  
  	value.handle= zend_objects_store_put(obj,
  	                   (zend_objects_store_dtor_t)zend_objects_destroy_object,
-@@ -1582,9 +1586,13 @@
+@@ -1582,9 +1586,13 @@ drizzle_con_obj_new_ex(zend_class_entry 
  	}
  
  	zend_object_std_init(&(obj->std), class_type TSRMLS_CC);
@@ -28,7 +28,7 @@
  
  	obj->value.handle= zend_objects_store_put(obj,
  	                  (zend_objects_store_dtor_t)zend_objects_destroy_object,
-@@ -2505,9 +2513,13 @@
+@@ -2505,9 +2513,13 @@ drizzle_query_obj_new_ex(zend_class_entr
  	}
  
  	zend_object_std_init(&(obj->std), class_type TSRMLS_CC);
@@ -42,7 +42,7 @@
  
  	obj->value.handle= zend_objects_store_put(obj,
  	               (zend_objects_store_dtor_t)zend_objects_destroy_object,
-@@ -3017,9 +3029,13 @@
+@@ -3017,9 +3029,13 @@ drizzle_result_obj_new_ex(zend_class_ent
  	}
  
  	zend_object_std_init(&(result->std), class_type TSRMLS_CC);
@@ -56,7 +56,7 @@
  
  	value.handle= zend_objects_store_put(result,
  	              (zend_objects_store_dtor_t)zend_objects_destroy_object,
-@@ -3382,9 +3398,13 @@
+@@ -3382,9 +3398,13 @@ drizzle_column_obj_new_ex(zend_class_ent
  	}
  
  	zend_object_std_init(&(obj->std), class_type TSRMLS_CC);
