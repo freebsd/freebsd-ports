@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	www
-MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/
+MASTER_SITES=	http://www.stroeder.com/pylib/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Yet another web programming framework for Python
