@@ -51,6 +51,7 @@
     SUBDIR += bugs
     SUBDIR += ca_root_nss
     SUBDIR += calife
+    SUBDIR += cardpeek
     SUBDIR += ccrypt
     SUBDIR += ccsrch
     SUBDIR += certificate-transparency
