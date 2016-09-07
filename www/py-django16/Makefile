@@ -23,7 +23,7 @@ EXPIRATION_DATE=	2015-10-01
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	py??-django-devel-* py??-django-1.[012345789].*
+CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[89]-* py??-django110-*
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
