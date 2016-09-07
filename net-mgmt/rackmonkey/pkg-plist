@@ -1,7 +1,8 @@
 @owner www
 @group www
+@sample %%WWWDIR%%/rackmonkey.conf.sample
+%%INIT_DB%%@sample %%WWWDIR%%/rackmonkey.db.sample
 %%WWWDIR%%/rackmonkey.pl
-%%INIT_DB%%%%WWWDIR%%/rackmonkey.db
 %%WWWDIR%%/rack2xls.pl
 %%WWWDIR%%/rackdns.pl
 %%WWWDIR%%/graphics/favicon.ico
@@ -128,22 +129,5 @@
 %%WWWDIR%%/doc/licence.txt
 %%WWWDIR%%/doc/troubleshooting.txt
 %%WWWDIR%%/doc/upgrade.txt
-@unexec if cmp -s %D/%%WWWDIR%%/rackmonkey.conf-default %D/%%WWWDIR%%/rackmonkey.conf; then rm -f %D/%%WWWDIR%%/rackmonkey.conf; fi
-@exec if [ ! -f %D/%%WWWDIR%%/rackmonkey.conf ] ; then cp -p %D/%F %B/%%WWWDIR%%/rackmonkey.conf; fi
-@dir %%WWWDIR%%/graphics/help
-@dir %%WWWDIR%%/graphics/icons
-@dir %%WWWDIR%%/graphics
-@dir %%WWWDIR%%/javascript
-@dir %%WWWDIR%%/styles
-@dir %%WWWDIR%%/tmpl
-@dir %%WWWDIR%%/RackMonkey
-@dir %%WWWDIR%%/sql/data
-@dir %%WWWDIR%%/sql/migration/3
-@dir %%WWWDIR%%/sql/migration/4
-@dir %%WWWDIR%%/sql/migration
-@dir %%WWWDIR%%/sql/schema
-@dir %%WWWDIR%%/sql
-@dir %%WWWDIR%%/doc
-@dir %%WWWDIR%%/
 @owner
 @group
