@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	3.8.3
+PORTVERSION=	3.9
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
@@ -35,29 +35,30 @@ NLS_USES=	gettext
 INSTALLS_ICONS=	yes
 
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_path/ s|/usr|${PREFIX}|' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/contrib/tortoisehg.desktop
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/thg
-.if ${PORT_OPTIONS:MNLS}
+
+post-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's/^%%NLS%%//' ${WRKSRC}/${PYSETUP}
-.else
+
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's/^%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
-.endif
-.if ${PORT_OPTIONS:MNAUTILUS}
+
+post-patch-NAUTILUS-on:
 	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%//' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/${PYSETUP}
-.else
+
+post-patch-NAUTILUS-off:
 	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%/# /' ${WRKSRC}/${PYSETUP}
-.endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/tortoisehg
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tortoisehg
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${STAGEDIR}${PREFIX}/share/tortoisehg/
 	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
