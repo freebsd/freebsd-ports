@@ -2,8 +2,8 @@
 
 Please edit your Apache configuration file, and add these lines:
 
-   LoadModule passenger_module %%PREFIX%%/%%GEM_LIB_DIR%%/buildout/apache2/mod_passenger.so
-   PassengerRoot %%PREFIX%%/%%GEM_LIB_DIR%%
+   LoadModule passenger_module %%PASSENGER_INSTALL_DIR%%/buildout/apache2/mod_passenger.so
+   PassengerRoot %%PASSENGER_INSTALL_DIR%%
    PassengerRuby %%RUBY%%
 
 After you restart Apache, you are ready to deploy any number of Ruby on Rails
