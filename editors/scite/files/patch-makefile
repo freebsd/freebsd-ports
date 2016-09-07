@@ -1,7 +1,7 @@
---- makefile.orig	2015-09-22 01:37:15 UTC
+--- makefile.orig	2016-08-30 04:39:12 UTC
 +++ makefile
-@@ -5,14 +5,6 @@
- # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
+@@ -7,16 +7,6 @@
+ srcdir ?= .
  
  .SUFFIXES: .cxx .o .h .a .c
 -ifdef CLANG
@@ -11,11 +11,13 @@
 -#SANITIZE = undefined
 -CXX = clang++ -fsanitize=$(SANITIZE) -Wno-deprecated-register
 -CC = clang -fsanitize=$(SANITIZE) -Wno-empty-body
+-else
+-MISLEADING=-Wno-misleading-indentation
 -endif
  
  ifdef GTK3
  GTKVERSION=gtk+-3.0
-@@ -24,7 +16,7 @@ endif
+@@ -28,7 +18,7 @@ endif
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
@@ -24,14 +26,14 @@
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -114,8 +106,9 @@ FilePath.o SciTEBase.o FileWorker.o Cook
+@@ -119,8 +109,9 @@ FilePath.o SciTEBase.o FileWorker.o Cook
  ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
  MatchMarker.o StringHelpers.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
-+	$(CXX) -rdynamic -Wl,--version-script lua.vers -DGTK $(CXXFLAGS) $^ -o $@ \
++	$(CXX) -rdynamic -Wl,--version-script $(srcdir)/lua.vers -DGTK $(CXXFLAGS) $^ -o $@ \
 +	$(LDFLAGS) -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"
