@@ -3,6 +3,7 @@
 
 PORTNAME=	gish-demo
 PORTVERSION=	1.60
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://s159260531.onlinehome.us/demos/
 DISTNAME=	gishdemo

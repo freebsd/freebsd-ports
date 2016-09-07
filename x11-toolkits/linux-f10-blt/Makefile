@@ -3,7 +3,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	devel@stasyan.com

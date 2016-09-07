@@ -3,7 +3,7 @@
 
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.soulride.com/products/images/
 PKGNAMEPREFIX=	linux-

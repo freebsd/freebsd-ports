@@ -3,7 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.632
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/:plugin \
 		LOCAL/nox:suplib

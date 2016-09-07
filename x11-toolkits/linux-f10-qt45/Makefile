@@ -2,6 +2,7 @@
 
 PORTNAME=	qt45
 PORTVERSION=	4.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/10/i386/ \
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/10/SRPMS/

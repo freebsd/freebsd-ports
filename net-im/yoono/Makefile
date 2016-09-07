@@ -3,6 +3,7 @@
 
 PORTNAME=	yoono
 PORTVERSION=	1.8.43
+PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES=	http://cdn.yoono.com/desktop/

@@ -2,6 +2,7 @@
 
 PORTNAME=	darwinia-demo
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://download.introversion.co.uk/mirror/introversion/darwinia/downloads/
 PKGNAMEPREFIX=	linux-

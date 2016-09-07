@@ -3,7 +3,7 @@
 
 PORTNAME=	worldofgoo
 PORTVERSION=	1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	linux-

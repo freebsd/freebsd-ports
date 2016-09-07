@@ -3,7 +3,7 @@
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math science java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 

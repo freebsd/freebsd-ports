@@ -3,6 +3,7 @@
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.introversion.co.uk/uplink/downloads/
 PKGNAMEPREFIX=	linux-

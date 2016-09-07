@@ -3,7 +3,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.holarse-linuxgaming.de/files/final/:p436 \

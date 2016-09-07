@@ -3,7 +3,7 @@
 
 PORTNAME=	crashplan
 DISTVERSION=	4.7.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils java linux
 MASTER_SITES=	https://download.code42.com/installs/linux/install/CrashPlan/
 PKGNAMEPREFIX=	linux-

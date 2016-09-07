@@ -3,6 +3,7 @@
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	audio linux
 MASTER_SITES=	LOCAL/netchild/rpms/fedora10
 
