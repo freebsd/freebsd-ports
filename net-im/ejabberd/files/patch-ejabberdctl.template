@@ -2,7 +2,7 @@
 +++ ejabberdctl.template
 @@ -15,7 +15,8 @@ ERL={{erl}}
  IEX={{bindir}}/iex
- EPMD={{bindir}}/epmd
+ EPMD={{epmd}}
  INSTALLUSER={{installuser}}
 -ERL_LIBS={{libdir}}
 +ERL_LIBS={{libdir}}/ejabberd
