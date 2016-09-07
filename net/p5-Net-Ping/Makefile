@@ -12,5 +12,6 @@ COMMENT=	Perl module to check a remote host for reachability
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
