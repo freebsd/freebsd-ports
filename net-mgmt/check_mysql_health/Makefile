@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_mysql_health
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
