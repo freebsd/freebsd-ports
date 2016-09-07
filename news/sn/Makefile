@@ -3,7 +3,7 @@
 
 PORTNAME=	sn
 PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/ \
 		http://home.arcor.de/teambushido/fbsd_ports/ \
@@ -36,10 +36,8 @@ post-patch:
 		s|/bin/bash|${LOCALBASE}/bin/bash|' \
 			${WRKSRC}/Makefile
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}/var/spool/news
-
 post-install:
+	@${MKDIR} ${STAGEDIR}/var/spool/news
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
