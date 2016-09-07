@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.0.26
+PORTVERSION=	5.1.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-additions
@@ -130,9 +130,12 @@ pre-everything::
 
 post-patch:
 	@${ECHO} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_X11}' >> \
+	    ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_X11}' >> \
+	    ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
@@ -140,32 +143,37 @@ post-patch:
 .if ${COMPILER_FEATURES:Mlibc++}
 	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/Config.kmk \
-		${WRKSRC}/configure \
-		${WRKSRC}/kBuild/units/qt4.kmk \
-		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-		${WRKSRC}/src/VBox/Additions/common/crOpenGL/load.c \
-		${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
-		${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
-	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' ${WRKSRC}/configure
+	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
+	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
+	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+	    ${WRKSRC}/src/VBox/Additions/common/crOpenGL/load.c \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
+	@${REINPLACE_CMD} \
+	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
+	    ${WRKSRC}/configure
 .if empty(ICONV_LIB)
-	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
-		${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
+	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk \
+	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
+	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
 	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 
 pre-build:
-	cd ${WRKSRC} && \
-	    ${SH} -c '. env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
+	cd ${WRKSRC} && ${SH} -c \
+	    '. env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 
 do-install:
 	${MKDIR} ${STAGEDIR}${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko \
+	    ${STAGEDIR}${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols \
+	    ${STAGEDIR}${KMODDIR}
 .endif
 
 	${INSTALL_LIB} ${VBOX_BIN}/pam_vbox.so ${STAGEDIR}${PREFIX}/lib
@@ -174,17 +182,20 @@ do-install:
 
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
+	${INSTALL_SCRIPT} \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 	    ${STAGEDIR}${PREFIX}/bin/VBoxClient-all
 
 	# X11 autostart
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
+	${INSTALL_DATA} \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
 
 	# KDE autostart
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/autostart/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
+	${INSTALL_DATA} \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/share/autostart/
 
 	${MKDIR} ${STAGEDIR}${VIDEODIR}

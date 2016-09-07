@@ -1,6 +1,6 @@
---- Config.kmk.orig	2016-07-18 11:50:32 UTC
+--- Config.kmk.orig	2016-08-16 19:55:20 UTC
 +++ Config.kmk
-@@ -341,7 +341,7 @@ VBOX_WITH_DOCS = 1
+@@ -348,7 +348,7 @@ VBOX_WITH_DOCS = 1
  # Include documentation in the package
  VBOX_WITH_DOCS_PACKING = 1
  # Include CHM when building docs (unset in LocalConfig.kmk to suppress CHM)
@@ -9,20 +9,21 @@
   VBOX_WITH_DOCS_CHM = 1
  endif
  # By default only include translations in documentation-only builds
-@@ -422,22 +422,22 @@ ifn1of ($(KBUILD_TARGET), win darwin)
+@@ -431,11 +431,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
   # Enable OSS audio support.
-  VBOX_WITH_OSS = 1
+  VBOX_WITH_AUDIO_OSS = 1
  endif
 -if1of ($(KBUILD_TARGET), linux)
 +if1of ($(KBUILD_TARGET), freebsd linux)
   # Enable ALSA audio support.
-  VBOX_WITH_ALSA = 1
+  VBOX_WITH_AUDIO_ALSA = 1
  endif
 -if1of ($(KBUILD_TARGET), linux)
 +if1of ($(KBUILD_TARGET), freebsd linux)
   # Enable PulseAudio audio support.
-  VBOX_WITH_PULSE = 1
+  VBOX_WITH_AUDIO_PULSE = 1
  endif
+@@ -446,11 +446,11 @@ endif
  # Enable PCI passthrough support.
  VBOX_WITH_PCI_PASSTHROUGH = 1
  # Enable statically linked dbus support.
@@ -35,8 +36,17 @@
 +if1of ($(KBUILD_TARGET), freebsd linux solaris)
   VBOX_WITH_PAM = 1
  endif
- # Disable WINMM support for Windows (not implemented).
-@@ -627,7 +627,7 @@ VBOX_WITH_VDITOOL =
+ # Enable internal networking.
+@@ -591,7 +591,7 @@ VBOX_WITH_WEBSERVICES = 1
+ VBOX_WITH_WEBSERVICES_SSL = 1
+ # The Qt GUI.
+ VBOX_WITH_QTGUI = 1
+-if1of ($(KBUILD_TARGET), linux win solaris)
++if1of ($(KBUILD_TARGET), freebsd linux win solaris)
+  VBOX_WITH_QTGUI_V5 = 1 # r=bird: s/VBOX_WITH_QTGUI_V5/VBOX_WITH_QT5/g - our we released version 5.0 of the VirtualBox GUI last year, remember?
+ else if "$(KBUILD_TARGET)" == "darwin" && $(KBUILD_HOST_VERSION_MAJOR) >= 13 # (OS X 10.9 Mavericks)
+  VBOX_WITH_QTGUI_V5 = 1
+@@ -651,7 +651,7 @@ VBOX_WITH_VDITOOL =
  # Enable this to build vbox-img even if VBOX_WITH_TESTCASES is disabled
  VBOX_WITH_VBOX_IMG =
  # Enables the VPX module for VM video capturing
@@ -45,7 +55,7 @@
   VBOX_WITH_VPX = 1
  endif
  # Enable shared folders
-@@ -935,10 +935,6 @@ ifeq ($(KBUILD_TARGET),darwin)
+@@ -961,10 +961,6 @@ ifeq ($(KBUILD_TARGET),darwin)
   VBOX_WITH_VBOXSDL=
  endif
  
@@ -56,7 +66,7 @@
  ifeq ($(KBUILD_TARGET),haiku)
   # Don't bother with SDL ttf for now.
   VBOX_WITH_SECURELABEL=
-@@ -1096,7 +1092,7 @@ ifdef VBOX_OSE
+@@ -1123,7 +1119,7 @@ ifdef VBOX_OSE
   VBOX_WITH_KCHMVIEWER=
   VBOX_WITH_PLUGIN_CRYPT=
   VBOX_WITH_DRAG_AND_DROP_PROMISES=
@@ -65,7 +75,16 @@
    VBOX_WITH_DOCS=
    VBOX_WITH_DOCS_PACKING=
   endif
-@@ -3912,7 +3908,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =
+@@ -2562,7 +2558,7 @@ $(PATH_OUT)/DynamicConfig.kmk: \
+ 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-delete-non-virtual-dtor    ?= $(call VBOX_GCC_CHECK_CXX,-Wno-delete-non-virtual-dtor,)'
+ 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-int-to-pointer-cast        ?= $(call VBOX_GCC_CHECK_CC,-Wno-int-to-pointer-cast,)'
+ 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-invalid-offsetof           ?= $(call VBOX_GCC_CHECK_CXX,-Wno-invalid-offsetof,)'
+-if $(KBUILD_TARGET) != "darwin" || !defined(VBOX_WITH_NEW_XCODE) ## @todo somthing goes entirely sideways with the detection. clang doesn't know the option, but only complains when we use it in webservices/Makefile.kmk!
++if ($(KBUILD_TARGET) != "darwin" || !defined(VBOX_WITH_NEW_XCODE)) && $(KBUILD_TARGET) != "freebsd" ## @todo somthing goes entirely sideways with the detection. clang doesn't know the option, but only complains when we use it in webservices/Makefile.kmk!
+ 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-literal-suffix             ?= $(call VBOX_GCC_CHECK_CXX,-Wno-literal-suffix,)'
+ else
+ 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-literal-suffix             ?='
+@@ -4247,7 +4243,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc -std=c99
@@ -74,7 +93,7 @@
  TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
  	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
  	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
-@@ -4158,12 +4154,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            +=
+@@ -4574,12 +4570,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            +=
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3
  TEMPLATE_VBOXR3EXE_LIBS                = pthread
  TEMPLATE_VBOXR3EXE_INCS               += \
@@ -85,18 +104,18 @@
 -	/usr/lib \
 -	/usr/X11R6/lib \
  	/usr/local/lib
-  else ifeq ($(KBUILD_TARGET),solaris)
- TEMPLATE_VBOXR3EXE_TOOL                = GXX3PLAIN
-@@ -4420,7 +4412,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+  else ifeq ($(KBUILD_TARGET),netbsd)
+ TEMPLATE_VBOXR3EXE_TOOL                = GXX3
+@@ -4869,7 +4861,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
--else ifn1of ($(KBUILD_TARGET), os2)
-+else ifn1of ($(KBUILD_TARGET), os2 freebsd)
+-else ifn1of ($(KBUILD_TARGET), os2 solaris)
++else ifn1of ($(KBUILD_TARGET), freebsd os2 solaris)
+  # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
- endif
-@@ -4898,12 +4890,8 @@ TEMPLATE_VBOXMAINEXE_LIBS               
+@@ -5362,12 +5354,8 @@ TEMPLATE_VBOXMAINEXE_LIBS               
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
  TEMPLATE_VBOXMAINEXE_INCS               += \
@@ -107,22 +126,31 @@
 -	/usr/lib \
 -	/usr/X11R6/lib \
  	/usr/local/lib
- else ifeq ($(KBUILD_TARGET),solaris)
- TEMPLATE_VBOXMAINEXE_TOOL                = GXX3PLAIN
-@@ -5371,12 +5359,8 @@ ifdef VBOX_WITH_QTGUI
+  else ifeq ($(KBUILD_TARGET),netbsd)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+@@ -5716,7 +5704,7 @@ ifdef VBOX_WITH_QTGUI
+    else
+     VBOX_PATH_QT ?= $(lastword $(filter %-$(tolower $(VBOX_VCC_TOOL_STEM)),$(sort $(wildcard $(KBUILD_DEVTOOLS_TRG)/qt/v5*))))
+    endif
+-  else if1of ($(KBUILD_TARGET), linux solaris)
++  else if1of ($(KBUILD_TARGET), freebsd linux solaris)
+    ifndef VBOX_WITH_QTGUI_V5
+     VBOX_PATH_QT ?= $(lastword $(sort $(wildcard $(KBUILD_DEVTOOLS_TRG)/qt/v4*)))
+    else
+@@ -5914,12 +5902,8 @@ ifdef VBOX_WITH_QTGUI
  	$(VBOX_LIBPATH_X11)
     ifeq ($(KBUILD_TARGET),freebsd)
-     TEMPLATE_VBOXQT4GUIEXE_INCS += \
+     TEMPLATE_VBOXQTGUIEXE_INCS += \
 -	/usr/include \
 -	/usr/X11R6/include \
  	/usr/local/include
-     TEMPLATE_VBOXQT4GUIEXE_LIBPATH += \
+     TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
 -	/usr/lib \
 -	/usr/X11R6/lib \
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -5587,12 +5571,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            
+@@ -6144,12 +6128,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
  TEMPLATE_VBoxBldProg_LIBS                = pthread
  TEMPLATE_VBoxBldProg_INCS               += \
@@ -133,13 +161,13 @@
 -	/usr/lib \
 -	/usr/X11R6/lib \
  	/usr/local/lib
-  else ifeq ($(KBUILD_HOST),solaris)
- TEMPLATE_VBoxBldProg_TOOL                = GXX3PLAIN
-@@ -5954,6 +5934,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darw
+  else ifeq ($(KBUILD_HOST),netbsd)
+ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+@@ -6543,6 +6523,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darw
  	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
  	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
  TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
 +TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.freebsd  = -Wl,--no-as-needed
  TEMPLATE_VBOXCROGLR3HOSTDLL_BLDDIRS          = $(VBOX_PATH_CROGL_GENFILES)/
- 
- #
+ ifeq ($(KBUILD_TARGET),darwin)
+  TEMPLATE_VBOXCROGLR3HOSTDLL_CFLAGS          = $(TEMPLATE_VBOXR3NP_CFLAGS) -Wno-deprecated-declarations

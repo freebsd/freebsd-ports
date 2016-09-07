@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2014-09-09 23:46:56.000000000 +0400
-+++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest	2014-09-18 22:06:32.817093478 +0400
-@@ -102,6 +102,7 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2016-08-16 19:55:31 UTC
++++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest
+@@ -102,6 +102,7 @@ FILES_VBOXGUEST_NOBIN=" \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.h=>common/misc/handletable.h \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletablectx.cpp=>common/misc/handletablectx.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/once.cpp=>common/misc/once.c \
@@ -8,7 +8,23 @@
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/thread.cpp=>common/misc/thread.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg1Weak.cpp=>common/misc/RTAssertMsg1Weak.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg2.cpp=>common/misc/RTAssertMsg2.c \
-@@ -185,6 +186,7 @@
+@@ -139,6 +140,7 @@ FILES_VBOXGUEST_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/iprt.h=>include/internal/iprt.h \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/lockvalidator.h=>include/internal/lockvalidator.h \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/magics.h=>include/internal/magics.h \
++    ${PATH_ROOT}/src/VBox/Runtime/include/internal/mem.h=>include/internal/mem.h \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/memobj.h=>include/internal/memobj.h \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/string.h=>include/internal/string.h \
+     ${PATH_ROOT}/src/VBox/Runtime/include/internal/thread.h=>include/internal/thread.h \
+@@ -161,6 +163,7 @@ FILES_VBOXGUEST_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/errvars-generic.cpp=>generic/errvars-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/timer-generic.cpp=>generic/timer-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/mppresent-generic.cpp=>generic/mppresent-generic.c \
++    ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-ef-r0drv.cpp=>r0drv/alloc-ef-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-r0drv.cpp=>r0drv/alloc-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-r0drv.h=>r0drv/alloc-r0drv.h \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/initterm-r0drv.cpp=>r0drv/initterm-r0drv.c \
+@@ -186,6 +189,7 @@ FILES_VBOXGUEST_NOBIN=" \
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h=>r0drv/freebsd/sleepqueue-r0drv-freebsd.h \
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/semspinmutex-r0drv-generic.c=>r0drv/generic/semspinmutex-r0drv-generic.c \
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/mpnotification-r0drv-generic.cpp=>r0drv/generic/mpnotification-r0drv-generic.c \
