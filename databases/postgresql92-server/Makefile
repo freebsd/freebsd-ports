@@ -243,7 +243,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${STAGEDIR}${PREFIX}/etc/periodic/daily
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PG_USER}
+.	if ${PORTVERSION:M9.[2345].*}
+		${MKDIR} ${STAGEDIR}${PREFIX}/${PG_USER}
+.	endif	
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
