@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus-glib
 PORTVERSION=	0.86
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

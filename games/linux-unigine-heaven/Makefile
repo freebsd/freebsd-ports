@@ -3,6 +3,7 @@
 
 PORTNAME=	unigine-heaven
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	games benchmarks linux
 MASTER_SITES=	http://de1-dl.techpowerup.com/Benchmarking/ \
 		http://nl1-dl.techpowerup.com/Benchmarking/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	4.3.0.37
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/

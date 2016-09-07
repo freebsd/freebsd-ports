@@ -3,7 +3,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.28.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	LOCAL/netchild/rpms/fedora10
 
