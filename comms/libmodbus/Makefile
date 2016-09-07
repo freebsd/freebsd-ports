@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmodbus
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	comms
 MASTER_SITES=	http://libmodbus.org/site_media/build/
 
@@ -10,6 +9,9 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Modbus library
 
 LICENSE=	LGPL21
+
+BUILD_DEPENDS=	a2x:textproc/asciidoc \
+		xmlto:textproc/xmlto
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

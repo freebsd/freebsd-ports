@@ -1,4 +1,3 @@
-include/libmodbus/modbus.h
 include/modbus/modbus-rtu.h
 include/modbus/modbus-tcp.h
 include/modbus/modbus-version.h
@@ -30,7 +29,6 @@ man/man3/modbus_read_input_registers.3.gz
 man/man3/modbus_read_registers.3.gz
 man/man3/modbus_receive.3.gz
 man/man3/modbus_receive_confirmation.3.gz
-man/man3/modbus_receive_from.3.gz
 man/man3/modbus_reply.3.gz
 man/man3/modbus_reply_exception.3.gz
 man/man3/modbus_report_slave_id.3.gz
