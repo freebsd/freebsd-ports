@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.8.6
+PORTVERSION=	0.2.8.7
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
-USES=		cpe gmake
+USES=		cpe gmake ssl
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
@@ -22,19 +22,14 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	BUFFEREVENTS INSTR_DOWNLOADS \
-		STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
+OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
 
-BUFFEREVENTS_DESC=	Use libevent's buffered IO
-INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
-OPTIONS_DEFAULT=	THREADS TRANSPARENT
-
-USE_OPENSSL=	yes
+OPTIONS_DEFAULT=	TRANSPARENT
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -57,33 +52,15 @@ CONFIGURE_ARGS+=	--enable-gcc-hardening
 CONFIGURE_ARGS+=	--disable-gcc-hardening
 .endif
 
-.if ${PORT_OPTIONS:MBUFFEREVENTS}
-CONFIGURE_ARGS+=	--enable-bufferevents
-.else
-CONFIGURE_ARGS+=	--disable-bufferevents
-.endif
-
-.if ${PORT_OPTIONS:MINSTR_DOWNLOADS}
-CONFIGURE_ARGS+=	--enable-instrument-downloads
-.else
-CONFIGURE_ARGS+=	--disable-instrument-downloads
-.endif
-
 .if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent2
 CONFIGURE_ARGS+=	--enable-static-tor \
 			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
-.if ${PORT_OPTIONS:MBUFFEREVENTS}
-TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/libevent_openssl.a ${TOR_LIBEVENT_LIBS}
-.endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
 LIB_DEPENDS+=		libevent.so:devel/libevent2
 TOR_LIBEVENT_LIBS=	-levent
-.if ${PORT_OPTIONS:MBUFFEREVENTS}
-TOR_LIBEVENT_LIBS:=	-levent_openssl ${TOR_LIBEVENT_LIBS}
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MTCMALLOC}
@@ -131,7 +108,7 @@ post-install:
 .if ! ${PORT_OPTIONS:MTOR2WEB}
 check regression-test test: build
 	@cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-	${MAKE_ARGS} check
-
+		${MAKE_ARGS} check
 .endif
+
 .include <bsd.port.mk>
