@@ -1,17 +1,19 @@
 bin/VBoxAutostart
 bin/VBoxBalloonCtrl
+bin/VBoxBugReport
 bin/VBoxHeadless
 bin/VBoxManage
 %%X11%%bin/VBoxSDL
 bin/VBoxVRDP
-%%QT4%%bin/VirtualBox
+%%QT%%bin/VirtualBox
 bin/vboxautostart
 bin/vboxballoonctrl
+bin/vboxbugreport
 bin/vboxheadless
 bin/vboxmanage
 %%X11%%bin/vboxsdl
 %%WEBSERVICE%%bin/vboxwebsrv
-%%QT4%%bin/virtualbox
+%%QT%%bin/virtualbox
 include/virtualbox/VirtualBox_XPCOM.h
 include/virtualbox/ipcIClientObserver.h
 include/virtualbox/ipcIDConnectService.h
@@ -366,12 +368,13 @@ include/virtualbox/xpcom/xptinfo.h
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/module.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/policy.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/policy.pyc
-%%QT4%%lib/virtualbox/DbgPlugInDiggers.so
+%%QT%%lib/virtualbox/DbgPlugInDiggers.so
 lib/virtualbox/VBox.sh
 lib/virtualbox/VBoxAuth.so
 lib/virtualbox/VBoxAuthSimple.so
 lib/virtualbox/VBoxAutostart
 lib/virtualbox/VBoxBalloonCtrl
+lib/virtualbox/VBoxBugReport
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDD2R0.r0
@@ -379,8 +382,8 @@ lib/virtualbox/VBoxDD2RC.rc
 lib/virtualbox/VBoxDDR0.r0
 lib/virtualbox/VBoxDDRC.rc
 lib/virtualbox/VBoxDDU.so
-%%QT4%%lib/virtualbox/VBoxDbg.so
-%%QT4%%lib/virtualbox/VBoxDragAndDropSvc.so
+%%QT%%lib/virtualbox/VBoxDbg.so
+%%QT%%lib/virtualbox/VBoxDragAndDropSvc.so
 lib/virtualbox/VBoxEFI32.fd
 lib/virtualbox/VBoxEFI64.fd
 lib/virtualbox/VBoxExtPackHelperApp
@@ -393,8 +396,8 @@ lib/virtualbox/VBoxHostChannel.so
 lib/virtualbox/VBoxManage
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetAdpCtl
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetDHCP
-@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetDHCP.so
+@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
 %%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
 %%X11%%lib/virtualbox/VBoxOGLhosterrorspu.so
@@ -411,7 +414,7 @@ lib/virtualbox/VBoxSVC
 %%X11%%lib/virtualbox/VBoxSharedClipboard.so
 %%X11%%lib/virtualbox/VBoxSharedCrOpenGL.so
 lib/virtualbox/VBoxSharedFolders.so
-%%QT4%%lib/virtualbox/VBoxTestOGL
+%%QT%%lib/virtualbox/VBoxTestOGL
 lib/virtualbox/VBoxVMM.so
 lib/virtualbox/VBoxVMMPreload.so
 lib/virtualbox/VBoxXPCOM.so
@@ -419,8 +422,8 @@ lib/virtualbox/VBoxXPCOMC.so
 lib/virtualbox/VBoxXPCOMIPCD
 lib/virtualbox/VMMR0.r0
 lib/virtualbox/VMMRC.rc
-%%QT4%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBox
-%%QT4%%lib/virtualbox/VirtualBox.so
+%%QT%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBox
+%%QT%%lib/virtualbox/VirtualBox.so
 lib/virtualbox/sdk
 %%WEBSERVICE%%lib/virtualbox/vboxwebsrv
 %%WEBSERVICE%%lib/virtualbox/webtest
@@ -437,9 +440,9 @@ lib/virtualbox/components/VBoxSVCM.so
 lib/virtualbox/components/VBoxXPCOMBase.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
-%%QT4%%share/applications/virtualbox.desktop
+%%QT%%share/applications/virtualbox.desktop
 %%MANUAL%%%%DOCSDIR%%/UserManual.pdf
-%%QT4%%share/pixmaps/VBox.png
+%%QT%%share/pixmaps/VBox.png
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/idl/ipcIClientObserver.idl
 %%DATADIR%%/idl/ipcIDConnectService.idl

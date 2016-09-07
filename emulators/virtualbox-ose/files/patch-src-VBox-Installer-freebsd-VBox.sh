@@ -1,6 +1,6 @@
---- src/VBox/Installer/freebsd/VBox.sh.orig	2015-04-10 22:01:18.704382000 -0700
-+++ src/VBox/Installer/freebsd/VBox.sh	2015-04-10 22:13:19.896371000 -0700
-@@ -0,0 +1,61 @@
+--- src/VBox/Installer/freebsd/VBox.sh.orig	2016-08-27 05:10:34 UTC
++++ src/VBox/Installer/freebsd/VBox.sh
+@@ -0,0 +1,64 @@
 +#!/bin/sh
 +#
 +# Oracle VM VirtualBox startup script, FreeBSD hosts.
@@ -52,6 +52,9 @@
 +        ;;
 +    VBoxBalloonCtrl|vboxballoonctrl)
 +        exec "$INSTALL_DIR/VBoxBalloonCtrl" "$@"
++        ;;
++    VBoxBugReport|vboxbugreport)
++        exec "$INSTALL_DIR/VBoxBugReport" "$@"
 +        ;;
 +    vboxwebsrv)
 +        exec "$INSTALL_DIR/vboxwebsrv" "$@"
