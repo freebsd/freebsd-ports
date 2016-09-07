@@ -24,24 +24,15 @@ REDIS_DESC=	Depend on php56-redis for faster redis backend
 NO_BUILD=	yes
 MAGENTODIR?=	www/magento
 
-.include <bsd.port.options.mk>
-.if !empty(${PORT_OPTIONS:MOAUTH})
-RUN_DEPENDS+=	pecl-oauth>=1.2.3:net/pecl-oauth
-.endif
-.if !empty(${PORT_OPTIONS:MREDIS})
-RUN_DEPENDS+=	php56-redis>=2.2.0:databases/php56-redis
-.endif
-# First need to submit the port
-#.if ${PORT_OPTIONS:MSNAPPY}
-#RUN_DEPENDS+=	php5-snappy>=0.0.2:archivers/php5-snappy
-#.endif
+OAUTH_RUN_DEPENDS=	pecl-oauth>=1.2.3:net/pecl-oauth
+REDIS_USE=	php=redis
 
-.include <bsd.port.pre.mk>
+# First need to submit the port
+#SNAPPY_RUN_DEPENDS=	php5-snappy>=0.0.2:archivers/php5-snappy
 
 SUB_FILES=	pkg-message cron.sh pkg-install crontab
 SUB_LIST+=	MAGENTODIR=${MAGENTODIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	${SUB_LIST}
-
 
 post-patch:
 	@${RM} -f ${WRKSRC}/cron.sh ${WRKSRC}/.htaccess
@@ -53,14 +44,12 @@ do-install:
 		-exec ${CHMOD} a+w {} +
 	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc \
 		${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules
-.if !empty(${PORT_OPTIONS:MSESSIONS})
+do-install-SESSIONS-on:
 	@${REINPLACE_CMD} -e 's,<active>false,<active>true,' \
 		${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml
 	@${RM} -f ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml.bak
-.endif
-.if !empty(${PORT_OPIONS:MEXAMPLES})
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
