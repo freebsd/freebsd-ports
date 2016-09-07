@@ -1,7 +1,7 @@
---- makefile.orig	2016-05-17 23:50:39 UTC
+--- makefile.orig	2016-08-30 04:39:06 UTC
 +++ makefile
-@@ -7,14 +7,6 @@
- # Also works with ming32-make on Windows.
+@@ -9,14 +9,6 @@
+ srcdir ?= .
  
  .SUFFIXES: .cxx .c .o .h .a .list
 -ifdef CLANG
@@ -12,57 +12,44 @@
 -SANITIZE = address
 -#SANITIZE = undefined
 -endif
+ ARFLAGS = rc
  RANLIB = touch
  
- ifdef GTK3
-@@ -42,7 +34,8 @@ DEL = del /q
- COMPLIB=..\bin\scintilla.a
+@@ -45,7 +37,12 @@ DEL = del /q
+ COMPLIB=$(srcdir)\..\bin\scintilla.a
  else
  DEL = rm -f
--COMPLIB=../bin/scintilla.a
-+COMPLIB=../bin/libscintilla.so.2
-+LEXRLIB=../bin/libscintilla_lexers.so.2
+-COMPLIB=$(srcdir)/../bin/scintilla.a
++COMPLIB_NAME=libscintilla.so
++COMPLIB_SONAME=$(COMPLIB_NAME).$(MAJOR)
++COMPLIB=$(COMPLIB_SONAME).$(AGE).$(REVISION)
++LEXRLIB_NAME=libscintilla_lexers.so
++LEXRLIB_SONAME=$(LEXRLIB_NAME).$(MAJOR)
++LEXRLIB=$(LEXRLIB_SONAME).$(AGE).$(REVISION)
  endif
  
- vpath %.h ../src ../include ../lexlib
-@@ -74,7 +67,6 @@ else
- CTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
- endif
+ vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
+@@ -98,7 +95,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
  
--CFLAGS:=$(CTFLAGS)
- CXXTFLAGS:=--std=gnu++0x $(CTFLAGS) $(REFLAGS)
- 
- CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
-@@ -83,7 +75,7 @@ MARSHALLER=scintilla-marshal.o
- .cxx.o:
- 	$(CXX) $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -c $<
- .c.o:
--	$(CC) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
-+	$(CC) $(CONFIGFLAGS) $(CTFLAGS) $(CFLAGS) -w -c $<
- 
- GLIB_GENMARSHAL = glib-genmarshal
- GLIB_GENMARSHAL_FLAGS = --prefix=scintilla_marshal
-@@ -95,7 +87,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
- 
- LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
+ LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx))))
  
 -all: $(COMPLIB)
 +all: $(COMPLIB) $(LEXRLIB)
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -112,9 +104,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
+@@ -116,9 +113,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
  	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
 -	$(MARSHALLER) $(LEXOBJS)
--	$(AR) rc $@ $^
+-	$(AR) $(ARFLAGS) $@ $^
 -	$(RANLIB) $@
 +	$(MARSHALLER)
-+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -Wl,-soname,$(COMPLIB_SONAME) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
 +
 +$(LEXRLIB): $(LEXOBJS)
-+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -Wl,-soname,$(LEXRLIB_SONAME) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
