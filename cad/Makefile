@@ -25,6 +25,7 @@
     SUBDIR += elmerfem
     SUBDIR += feappv
     SUBDIR += fidocadj
+    SUBDIR += freecad
     SUBDIR += freehdl
     SUBDIR += fritzing
     SUBDIR += gdsreader
