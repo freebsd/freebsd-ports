@@ -1,12 +1,6 @@
---- configure.orig	2015-09-16 18:26:48 UTC
-+++ configure
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- #
- # Note: When adding make options to this script, ensure that the source still
-@@ -41,7 +41,7 @@ else
+--- configure.orig	2016-09-08 20:29:55.239121000 -0500
++++ configure	2016-09-08 20:30:26.951403000 -0500
+@@ -45,7 +45,7 @@
  fi
  
  # TODO: add pg_config, mysql_config etc!
@@ -15,11 +9,3 @@
  
  # ******************** usage ********************
  
-@@ -396,6 +396,7 @@ genConfigMake() {
-     cfgwrite "debug:=no"
-   fi
-   cfgwrite ""
-+  cfgwrite "NEEDS_GUI=no"
-   
-   if test $ARG_WITH_STRIP = 1; then
-     cfgwrite "# configured to produce stripped code";
