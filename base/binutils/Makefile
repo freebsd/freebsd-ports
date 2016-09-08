@@ -20,21 +20,7 @@ PLIST=		${.CURDIR}/pkg-plist.${TARGET_ARCH}
 
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 BUTARGET=	${TARGET_ARCH}-${OPSYS:tl}
-CONFIGURE_ARGS+=	--host=${BUTARGET} \
-			--disable-host-shared
+CONFIGURE_ARGS+=	--disable-host-shared
 PREFIX=	/usr
 
 .include "${MASTERDIR}/Makefile"
-.include "${LOCALBASE}/share/toolchains/${CROSS_TOOLCHAIN}.mk"
-
-PKG_ENV+=	ABI_FILE=${CROSS_SYSROOT}/bin/sh
-CFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include
-CXXFLAGS+=	--sysroot=${CROSS_SYSROOT}
-CC=	${XCC}
-CXX=	${XCXX}
-.for tool in AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
-${tool}=	${CROSS_BINUTILS_PREFIX}${tool:tl}
-.endfor
-STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
-STRIPBIN=	${STRIP_CMD}
-.export.env	STRIPBIN
