@@ -3,10 +3,16 @@
 
 PORTNAME=	zdoom
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	bsdports@kyle-evans.net
 COMMENT=	Source port for Doom-engine games
+
+LICENSE=	DOOM
+LICENSE_NAME=	Limited Use Software License Agreement
+LICENSE_FILE=	${WRKSRC}/docs/doomlic.txt
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -18,11 +24,13 @@ GH_ACCOUNT=	rheit
 
 PORTSCOUT=	limit:^.+\.[1-9]{1,3}[1-8]?$$
 
+DATADIR=	${DMDIR}/${PORTNAME}
+
 USES=		cmake:outsource	gettext jpeg openal pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DNO_FMOD:BOOL=ON
-CMAKE_BUILD_TYPE?=	Release
+CXXFLAGS+=	-DSHARE_DIR=\\\"${DATADIR}\\\"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/${PORTNAME}.pk3
