@@ -2,7 +2,7 @@ bin/gpg
 bin/gpg-zip
 bin/gpgsplit
 bin/gpgv
-%%WITH_LDAP%%libexec/gnupg/gpgkeys_ldap
+%%LDAP%%libexec/gnupg/gpgkeys_ldap
 libexec/gnupg/gpgkeys_curl
 libexec/gnupg/gpgkeys_finger
 libexec/gnupg/gpgkeys_hkp
