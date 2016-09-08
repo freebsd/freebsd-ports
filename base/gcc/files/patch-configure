@@ -1,0 +1,13 @@
+--- configure.orig	2015-05-03 17:29:57 UTC
++++ configure
+@@ -3675,10 +3675,6 @@ case "${target}" in
+   *-*-dragonfly*)
+     ;;
+   *-*-freebsd*)
+-    if test "x$with_gmp" = x && test "x$with_gmp_dir" = x \
+-	&& test -f /usr/local/include/gmp.h; then
+-      with_gmp=/usr/local
+-    fi
+     ;;
+   *-*-kaos*)
+     # Remove unsupported stuff on all kaOS configurations.
