@@ -3,6 +3,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.9.2-alpha
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
-USES=		cpe gmake ssl
+USES=		cpe gmake
 CPE_VENDOR=	torproject
 #CPE_VERSION=	${DISTVERSION:C/-.*//}
 #CPE_UPDATE=	${DISTVERSION:C/.*-//}
@@ -41,6 +42,9 @@ GROUPS=		_tor
 USERS=		_tor
 
 CONFLICTS=	tor-[0-9]*
+
+STATIC_TOR_USES=	ssl:build
+STATIC_TOR_USES_OFF=	ssl
 
 .include <bsd.port.options.mk>
 
