@@ -116,6 +116,8 @@ DEV_ERROR+=	"USE_DOS2UNIX is no longer supported, please use USES=dos2unix"
 .if ${LICENSE:MBSD}
 DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
 .endif
+.else
+DEV_WARNING+=	"Please set LICENSE for this port"
 .endif
 
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
