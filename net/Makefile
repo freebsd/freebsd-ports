@@ -187,6 +187,7 @@
     SUBDIR += grilo
     SUBDIR += grilo-plugins
     SUBDIR += grive
+    SUBDIR += grive2
     SUBDIR += grsync
     SUBDIR += gsk
     SUBDIR += gspoof
