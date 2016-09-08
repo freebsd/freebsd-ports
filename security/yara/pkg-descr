@@ -4,4 +4,4 @@ based on textual or binary patterns contained on samples of those families.
 Each description consists of a set of strings and a Boolean expression which
 determines its logic."
 
-WWW: http://plusvic.github.io/yara/
+WWW: http://virustotal.github.io/yara/
