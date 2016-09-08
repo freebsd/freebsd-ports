@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.19.11
-PORTREVISION=	5
+PORTVERSION=	2.19.47
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.ne@gmx.net
 COMMENT=	GNU music typesetter
 
 LICENSE=	GPLv3
@@ -23,8 +22,7 @@ BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		pngtopnm:graphics/netpbm \
 		rsync:net/rsync \
 		texi2html:textproc/texi2html \
-		zip:archivers/zip \
-		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:print/gsfonts
+		zip:archivers/zip
 RUN_DEPENDS=	mftrace:print/mftrace \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 LIB_DEPENDS=	libguile.so:lang/guile \
@@ -32,9 +30,6 @@ LIB_DEPENDS=	libguile.so:lang/guile \
 		libfreetype.so:print/freetype2
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
-BROKEN=		pkgconf detection is broken
-DEPRECATED=	unstable branch requires maintainer, many releases behind already (stick with stable)
-EXPIRATION_DATE=	2016-08-31
 
 INFO=		internals \
 		lilypond-changes \
@@ -50,9 +45,9 @@ INFO=		internals \
 		music-glossary
 
 USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
-		compiler:c++11-lib python:-3
+		compiler:gcc-c++11-lib python:-3
 USE_CXXSTD=	c++11
-USE_TEX=	latex
+USE_TEX=	latex texmf
 USE_PERL5=	build
 USE_GNOME=	pango
 
@@ -61,7 +56,7 @@ GNU_MAKEFILE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
+CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
 		--with-python-include=${PYTHON_INCLUDEDIR}
 CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		FLEX=${FLEX} YACC=${YACC} HOME=${WRKDIR}
