@@ -3,6 +3,7 @@
 
 PORTNAME=	massadmin
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +14,6 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	p5-Expect>=1.21:lang/p5-Expect \
 		p5-Net-Telnet>=3.03:net/p5-Net-Telnet \
-		p5-Net-Ping>=2.36:net/p5-Net-Ping \
 		p5-Proc-Queue>=1.23:devel/p5-Proc-Queue \
 		p5-IO-Tty>=1.08:devel/p5-IO-Tty
 
