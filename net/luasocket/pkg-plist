@@ -1,5 +1,7 @@
 %%LUA_MODLIBDIR%%/mime/core.so
 %%LUA_MODLIBDIR%%/socket/core.so
+%%LUA_MODLIBDIR%%/socket/serial.so
+%%LUA_MODLIBDIR%%/socket/unix.so
 %%LUA_MODSHAREDIR%%/ltn12.lua
 %%LUA_MODSHAREDIR%%/mime.lua
 %%LUA_MODSHAREDIR%%/socket.lua
