@@ -20,6 +20,7 @@
     SUBDIR += flops
     SUBDIR += flowgrind
     SUBDIR += forkbomb
+    SUBDIR += glmark2
     SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl
