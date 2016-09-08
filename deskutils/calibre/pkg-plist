@@ -1879,6 +1879,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/series.png
 %%DATADIR%%/images/smarten-punctuation.png
 %%DATADIR%%/images/snippets.png
+%%DATADIR%%/images/sort.png
 %%DATADIR%%/images/spell-check.png
 %%DATADIR%%/images/store.png
 %%DATADIR%%/images/subset-fonts.png
