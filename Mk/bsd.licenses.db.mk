@@ -63,6 +63,9 @@ _LICENSE_LIST+= ART10 ARTPERL10 ART20
 # PHP family
 _LICENSE_LIST+= PHP202 PHP30 PHP301
 
+# Extras
+_LICENSE_LIST+= NONE
+
 # List of groups (only names must be present)
 
 _LICENSE_NAME_FSF=	Free Software Foundation Approved
@@ -267,6 +270,10 @@ _LICENSE_GROUPS_PSFL=	FSF GPL OSI
 
 _LICENSE_NAME_RUBY=	Ruby License
 _LICENSE_GROUPS_RUBY=	FSF
+
+_LICENSE_NAME_NONE=	No license specified
+_LICENSE_GROUPS_NONE=	# empty
+_LICENSE_PERMS_NONE=	auto-accept
 
 _LICENSE_NAME_ZLIB=		zlib License
 _LICENSE_GROUPS_ZLIB=	GPL FSF OSI
