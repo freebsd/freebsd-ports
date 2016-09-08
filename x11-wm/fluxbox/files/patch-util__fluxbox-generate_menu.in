@@ -203,7 +203,7 @@
      append_submenu "${BROWSERMENU}"
          normal_find chrome chromium firefox google-chrome mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
-+        find_it linux-opera append "[exec]   (linux-opera) {env QT_XFT=true opera}"
++        find_it linux-opera append "[exec]   (linux-opera) {env QT_XFT=true linux-opera}"
          find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
