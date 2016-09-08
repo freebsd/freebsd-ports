@@ -1,3 +1,15 @@
+diff --git build/moz.configure/old.configure build/moz.configure/old.configure
+index b95dd2b..4cbefd5 100644
+--- build/moz.configure/old.configure
++++ build/moz.configure/old.configure
+@@ -305,6 +305,7 @@ def old_configure_options(*options):
+     '--with-nspr-prefix',
+     '--with-nss-exec-prefix',
+     '--with-nss-prefix',
++    '--with-oss',
+     '--with-pthreads',
+     '--with-qemu-exe',
+     '--with-servo',
 diff --git old-configure.in configure.in
 index 48e60c0..ec08417 100644
 --- old-configure.in
@@ -1091,13 +1103,13 @@ index 991f03f..3d99eb5 100644
 +if CONFIG['MOZ_OSS']:
 +    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
  
- if CONFIG['MOZ_NATIVE_JPEG']:
+ if CONFIG['MOZ_SYSTEM_JPEG']:
      OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index e191f13..4fb268a 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -234,8 +234,8 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -234,8 +234,8 @@ if CONFIG['MOZ_SYSTEM_LIBVPX']:
  if not CONFIG['MOZ_TREE_PIXMAN']:
      OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
