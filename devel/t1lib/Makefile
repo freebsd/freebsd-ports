@@ -27,6 +27,10 @@ OPTIONS_SUB=	yes
 X11_USE=	XORG=xaw
 X11_CONFIGURE_WITH=	x
 
+# Build fails with:
+#  gmake[2]: Entering directory '/wrkdirs/usr/ports/devel/t1lib/work/t1lib-5.1.2/lib'
+#  gmake[2]: *** pselect jobs pipe: Bad file descriptor.  Stop.
+#  gmake[2]: *** Waiting for unfinished jobs....
 MAKE_JOBS_UNSAFE=	YES
 
 post-patch:
