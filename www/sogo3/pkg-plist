@@ -1539,12 +1539,15 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgCheckmark.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgColorPicker.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgCompile.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgDatepickerReadonlyInput.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgDraggable.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgDroppable.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgEnter.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgEscape.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFocus.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFocus.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFolderStylesheet.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgPlaceholder.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgRippleClick.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSearch.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSelectOnly.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSubscribe.directive.js
@@ -1629,7 +1632,6 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.min.
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.min.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material.min.js
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material.min.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-messages.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-messages.min.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-messages.min.js.map
