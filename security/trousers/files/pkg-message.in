@@ -13,4 +13,4 @@ tpmd_enable="YES"
 
 To use TPM, add your_account to '%%GROUPS%%' group like following:
 
-# pw groupadd %%GROUPS%% -m your_account
+# pw groupmod %%GROUPS%% -m your_account
