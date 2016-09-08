@@ -14,10 +14,8 @@ COMMENT=	Sphinx theme
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1:textproc/py-sphinx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN=		does not build
 
 USES=		python
 USE_PYTHON=	distutils autoplist
