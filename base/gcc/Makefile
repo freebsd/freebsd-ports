@@ -31,7 +31,6 @@ PREFIX=		/usr
 CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 GCC_TARGET=	${TARGET_ARCH}-portbld-${OPSYS:tl}${OSREL}
-GCC_HOST=	${TARGET_ARCH}-${OPSYS:tl}
 
 USES=	gmake libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
@@ -49,7 +48,6 @@ CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls \
 		--enable-languages=c,c++ \
 		--without-headers \
-		--host=${GCC_HOST} \
 		--with-build-sysroot=${CROSS_SYSROOT} \
 		-with-pkgversion="GNU Collection for FreeBSD"
 
@@ -77,17 +75,3 @@ post-install:
 	${RM} -rf ${STAGEDIR}/usr/share/info
 
 .include <bsd.port.mk>
-.include "${LOCALBASE}/share/toolchains/${CROSS_TOOLCHAIN}.mk"
-
-PKG_ENV+=	ABI_FILE=${CROSS_SYSROOT}/bin/sh
-CFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include
-CXXFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include/c++/v1 -std=c++11 -nostdinc++
-LDFLAGS+=	--sysroot=${CROSS_SYSROOT}
-CC=	${XCC}
-CXX=	${XCXX}
-.for tool in AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
-${tool}=	${CROSS_BINUTILS_PREFIX}${tool:tl}
-.endfor
-STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
-STRIPBIN=	${STRIP_CMD}
-.export.env	STRIPBIN
