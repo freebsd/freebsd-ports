@@ -1,0 +1,8 @@
+--- grive/CMakeLists.txt.orig	2016-01-14 20:51:31 UTC
++++ grive/CMakeLists.txt
+@@ -26,4 +26,4 @@ set_target_properties( grive_executable
+ )
+ 
+ install(TARGETS grive_executable RUNTIME DESTINATION bin)
+-install(FILES doc/grive.1 DESTINATION share/man/man1 )
++install(FILES doc/grive.1 DESTINATION man/man1 )
