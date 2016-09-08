@@ -1,18 +1,35 @@
 # Allow more config/external/ libs built against system-wide version.
 
+diff --git build/moz.configure/old.configure build/moz.configure/old.configure
+index 42ab554..c91df3d 100644
+--- build/moz.configure/old.configure
++++ build/moz.configure/old.configure
+@@ -320,7 +320,12 @@ def old_configure_options(*options):
+     '--with-system-libvpx',
+     '--with-system-nspr',
+     '--with-system-nss',
++    '--with-system-ogg',
+     '--with-system-png',
++    '--with-system-soundtouch',
++    '--with-system-theora',
++    '--with-system-tremor',
++    '--with-system-vorbis',
+     '--with-system-zlib',
+     '--with-thumb',
+     '--with-thumb-interwork',
 diff --git config/Makefile.in config/Makefile.in
 index 5383399..0410004 100644
 --- config/Makefile.in
 +++ config/Makefile.in
 @@ -77,6 +77,11 @@ export:: $(export-preqs)
- 		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
- 		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
- 		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
-+		-DMOZ_NATIVE_OGG=$(MOZ_NATIVE_OGG) \
-+		-DMOZ_NATIVE_THEORA=$(MOZ_NATIVE_THEORA) \
-+		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
-+		-DMOZ_NATIVE_TREMOR=$(MOZ_NATIVE_TREMOR) \
-+		-DMOZ_NATIVE_SOUNDTOUCH=$(MOZ_NATIVE_SOUNDTOUCH) \
+ 		-DMOZ_SYSTEM_ICU=$(MOZ_SYSTEM_ICU) \
+ 		-DMOZ_SYSTEM_GRAPHITE2=$(MOZ_SYSTEM_GRAPHITE2) \
+ 		-DMOZ_SYSTEM_HARFBUZZ=$(MOZ_SYSTEM_HARFBUZZ) \
++		-DMOZ_SYSTEM_OGG=$(MOZ_SYSTEM_OGG) \
++		-DMOZ_SYSTEM_THEORA=$(MOZ_SYSTEM_THEORA) \
++		-DMOZ_SYSTEM_VORBIS=$(MOZ_SYSTEM_VORBIS) \
++		-DMOZ_SYSTEM_TREMOR=$(MOZ_SYSTEM_TREMOR) \
++		-DMOZ_SYSTEM_SOUNDTOUCH=$(MOZ_SYSTEM_SOUNDTOUCH) \
  		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
  	$(INSTALL) system_wrappers $(DIST)
  
@@ -25,20 +42,20 @@ index f67c5c7..eb909ce 100644
  external_dirs += ['modules/brotli']
  
 -if CONFIG['MOZ_VORBIS']:
-+if not CONFIG['MOZ_NATIVE_OGG']:
++if not CONFIG['MOZ_SYSTEM_OGG']:
 +    external_dirs += ['media/libogg']
 +
-+if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_NATIVE_VORBIS']:
++if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_SYSTEM_VORBIS']:
      external_dirs += ['media/libvorbis']
  
 -if CONFIG['MOZ_TREMOR']:
-+if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
++if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_SYSTEM_TREMOR']:
      external_dirs += ['media/libtremor']
  
-+if not CONFIG['MOZ_NATIVE_THEORA']:
++if not CONFIG['MOZ_SYSTEM_THEORA']:
 +    external_dirs += ['media/libtheora']
 +
-+if not CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++if not CONFIG['MOZ_SYSTEM_SOUNDTOUCH']:
 +    external_dirs += ['media/libsoundtouch']
 +
  if CONFIG['MOZ_WEBM_ENCODER']:
@@ -65,18 +82,18 @@ index bef567c..9807c29 100644
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
-+#if MOZ_NATIVE_OGG==1
++#if MOZ_SYSTEM_OGG==1
 +ogg/ogg.h
 +ogg/os_types.h
 +#endif
-+#if MOZ_NATIVE_THEORA==1
++#if MOZ_SYSTEM_THEORA==1
 +theora/theoradec.h
 +#endif
-+#if MOZ_NATIVE_VORBIS==1
++#if MOZ_SYSTEM_VORBIS==1
 +vorbis/codec.h
 +vorbis/vorbisenc.h
 +#endif
-+#if MOZ_NATIVE_TREMOR==1
++#if MOZ_SYSTEM_TREMOR==1
 +tremor/ivorbiscodec.h
 +#endif
 diff --git old-configure.in configure.in
@@ -93,10 +110,10 @@ index 87db361..7947626 100644
 +
 +MOZ_ARG_WITH_BOOL(system-ogg,
 +[  --with-system-ogg       Use system libogg (located with pkgconfig)],
-+MOZ_NATIVE_OGG=1,
-+MOZ_NATIVE_OGG=)
++MOZ_SYSTEM_OGG=1,
++MOZ_SYSTEM_OGG=)
 +
-+if test -n "$MOZ_NATIVE_OGG"; then
++if test -n "$MOZ_SYSTEM_OGG"; then
 +    PKG_CHECK_MODULES(MOZ_OGG, ogg >= 1.2.1)
 +
 +    _SAVE_LIBS=$LIBS
@@ -106,7 +123,7 @@ index 87db361..7947626 100644
 +    LIBS=$_SAVE_LIBS
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_OGG)
++AC_SUBST(MOZ_SYSTEM_OGG)
 +
 +dnl ========================================================
 +dnl Check for libvorbis
@@ -114,14 +131,14 @@ index 87db361..7947626 100644
 +
 +MOZ_ARG_WITH_BOOL(system-vorbis,
 +[  --with-system-vorbis    Use system libvorbis (located with pkgconfig)],
-+MOZ_NATIVE_VORBIS=1,
-+MOZ_NATIVE_VORBIS=)
++MOZ_SYSTEM_VORBIS=1,
++MOZ_SYSTEM_VORBIS=)
 +
-+if test -n "$MOZ_NATIVE_VORBIS"; then
++if test -n "$MOZ_SYSTEM_VORBIS"; then
 +    PKG_CHECK_MODULES(MOZ_VORBIS, vorbis vorbisenc >= 1.3.5)
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_VORBIS)
++AC_SUBST(MOZ_SYSTEM_VORBIS)
 +
 +dnl ========================================================
 +dnl Check for integer-only libvorbis aka tremor
@@ -129,14 +146,14 @@ index 87db361..7947626 100644
 +
 +MOZ_ARG_WITH_BOOL(system-tremor,
 +[  --with-system-tremor    Use system libtremor (located with pkgconfig)],
-+MOZ_NATIVE_TREMOR=1,
-+MOZ_NATIVE_TREMOR=)
++MOZ_SYSTEM_TREMOR=1,
++MOZ_SYSTEM_TREMOR=)
 +
-+if test -n "$MOZ_NATIVE_TREMOR"; then
++if test -n "$MOZ_SYSTEM_TREMOR"; then
 +    PKG_CHECK_MODULES(MOZ_TREMOR, vorbisidec >= 1.2.1)
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_TREMOR)
++AC_SUBST(MOZ_SYSTEM_TREMOR)
 +
 +dnl ========================================================
 +dnl Check for libtheora
@@ -144,14 +161,14 @@ index 87db361..7947626 100644
 +
 +MOZ_ARG_WITH_BOOL(system-theora,
 +[  --with-system-theora    Use system libtheora (located with pkgconfig)],
-+MOZ_NATIVE_THEORA=1,
-+MOZ_NATIVE_THEORA=)
++MOZ_SYSTEM_THEORA=1,
++MOZ_SYSTEM_THEORA=)
 +
-+if test -n "$MOZ_NATIVE_THEORA"; then
++if test -n "$MOZ_SYSTEM_THEORA"; then
 +    PKG_CHECK_MODULES(MOZ_THEORA, theora >= 1.2)
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_THEORA)
++AC_SUBST(MOZ_SYSTEM_THEORA)
 +
 +dnl ========================================================
 +dnl Check for libSoundTouch
@@ -159,10 +176,10 @@ index 87db361..7947626 100644
 +
 +MOZ_ARG_WITH_BOOL(system-soundtouch,
 +[  --with-system-soundtouch Use system libSoundTouch (located with pkgconfig)],
-+MOZ_NATIVE_SOUNDTOUCH=1,
-+MOZ_NATIVE_SOUNDTOUCH=)
++MOZ_SYSTEM_SOUNDTOUCH=1,
++MOZ_SYSTEM_SOUNDTOUCH=)
 +
-+if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
++if test -n "$MOZ_SYSTEM_SOUNDTOUCH"; then
 +    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.9.0)
 +
 +    AC_LANG_SAVE
@@ -187,10 +204,10 @@ index 87db361..7947626 100644
 +    fi
 +fi
 +
-+if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
-+    AC_DEFINE(MOZ_NATIVE_SOUNDTOUCH)
++if test -n "$MOZ_SYSTEM_SOUNDTOUCH"; then
++    AC_DEFINE(MOZ_SYSTEM_SOUNDTOUCH)
 +fi
-+AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)
++AC_SUBST(MOZ_SYSTEM_SOUNDTOUCH)
 +
  dnl system libvpx Support
  dnl ========================================================
@@ -199,21 +216,21 @@ diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
 index 2127256..1ec09fe 100644
 --- dom/media/AudioStream.cpp
 +++ dom/media/AudioStream.cpp
-@@ -129,7 +129,9 @@ AudioStream::AudioStream()
+@@ -125,7 +125,9 @@ AudioStream::AudioStream(DataSource& aSo
+   , mOutRate(0)
+   , mChannels(0)
    , mOutChannels(0)
-   , mWritten(0)
-   , mAudioClock(this)
-+#ifndef MOZ_NATIVE_SOUNDTOUCH
++#ifndef MOZ_SYSTEM_SOUNDTOUCH
    , mTimeStretcher(nullptr)
 +#endif
    , mDumpFile(nullptr)
-   , mBytesPerFrame(0)
    , mState(INITIALIZED)
+   , mDataSource(aSource)
 @@ -152,9 +154,11 @@ AudioStream::~AudioStream()
    if (mDumpFile) {
      fclose(mDumpFile);
    }
-+#ifndef MOZ_NATIVE_SOUNDTOUCH
++#ifndef MOZ_SYSTEM_SOUNDTOUCH
    if (mTimeStretcher) {
      soundtouch::destroySoundTouchObj(mTimeStretcher);
    }
@@ -225,7 +242,7 @@ index 2127256..1ec09fe 100644
  {
    mMonitor.AssertCurrentThreadOwns();
    if (!mTimeStretcher) {
-+#ifdef MOZ_NATIVE_SOUNDTOUCH
++#ifdef MOZ_SYSTEM_SOUNDTOUCH
 +    mTimeStretcher = new soundtouch::SoundTouch();
 +#else
      mTimeStretcher = soundtouch::createSoundTouchObj();
@@ -241,7 +258,7 @@ index a552e3e..02b80b1 100644
  #include "mozilla/RefPtr.h"
  #include "mozilla/UniquePtr.h"
  #include "CubebUtils.h"
-+#ifdef MOZ_NATIVE_SOUNDTOUCH
++#ifdef MOZ_SYSTEM_SOUNDTOUCH
 +#include "soundtouch/SoundTouch.h"
 +#else
  #include "soundtouch/SoundTouchFactory.h"
@@ -253,7 +270,7 @@ index a552e3e..02b80b1 100644
    // Number of frames written to the buffers.
    int64_t mWritten;
    AudioClock mAudioClock;
-+#ifdef MOZ_NATIVE_SOUNDTOUCH
++#ifdef MOZ_SYSTEM_SOUNDTOUCH
 +  nsAutoPtr<soundtouch::SoundTouch> mTimeStretcher;
 +#else
    soundtouch::SoundTouch* mTimeStretcher;
@@ -269,19 +286,19 @@ index 7526cff..e0a0ca0 100644
  
  DEFINES['MOZILLA_INTERNAL_API'] = True
  
-+if CONFIG['MOZ_NATIVE_OGG']:
++if CONFIG['MOZ_SYSTEM_OGG']:
 +    CXXFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 +
-+if CONFIG['MOZ_NATIVE_THEORA']:
++if CONFIG['MOZ_SYSTEM_THEORA']:
 +    CXXFLAGS += CONFIG['MOZ_THEORA_CFLAGS']
 +
-+if CONFIG['MOZ_NATIVE_VORBIS']:
++if CONFIG['MOZ_SYSTEM_VORBIS']:
 +    CXXFLAGS += CONFIG['MOZ_VORBIS_CFLAGS']
 +
-+if CONFIG['MOZ_NATIVE_TREMOR']:
++if CONFIG['MOZ_SYSTEM_TREMOR']:
 +    CXXFLAGS += CONFIG['MOZ_TREMOR_CFLAGS']
 +
-+if CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++if CONFIG['MOZ_SYSTEM_SOUNDTOUCH']:
 +    CXXFLAGS += CONFIG['MOZ_SOUNDTOUCH_CFLAGS']
 +
  if CONFIG['OS_TARGET'] == 'WINNT':
@@ -316,7 +333,7 @@ index 0af2fe6..d80c145 100644
  
  #pragma GCC visibility push(default)
  #include "SoundTouch.h"
-+#ifndef MOZ_NATIVE_SOUNDTOUCH
++#ifndef MOZ_SYSTEM_SOUNDTOUCH
  #include "SoundTouchFactory.h"
 +#endif
  #pragma GCC visibility pop
@@ -341,7 +358,7 @@ index 14265b1..3069e99 100644
  # The encoder is currently not included.
  DEFINES['THEORA_DISABLE_ENCODE'] = True
  
-+if CONFIG['MOZ_NATIVE_OGG']:
++if CONFIG['MOZ_SYSTEM_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 +
  # Suppress warnings in third-party code.
@@ -366,7 +383,7 @@ index 31831ba..a03d576 100644
  
  DIRS += ['include/tremor', 'lib']
  
-+if CONFIG['MOZ_NATIVE_OGG']:
++if CONFIG['MOZ_SYSTEM_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 diff --git media/libvorbis/README_MOZILLA media/libvorbis/README_MOZILLA
 index 7c7454c..55baedd 100644
@@ -388,32 +405,32 @@ index 919b99e..cc776f7 100644
  if CONFIG['GNU_CC']:
      CFLAGS += ['-Wno-uninitialized']
 +
-+if CONFIG['MOZ_NATIVE_OGG']:
++if CONFIG['MOZ_SYSTEM_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index d42137a..695e75a8 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -178,6 +178,21 @@ if CONFIG['MOZ_NATIVE_PNG']:
- if CONFIG['MOZ_NATIVE_HUNSPELL']:
+@@ -178,6 +178,21 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+ if CONFIG['MOZ_SYSTEM_HUNSPELL']:
      OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
-+if CONFIG['MOZ_NATIVE_OGG']:
++if CONFIG['MOZ_SYSTEM_OGG']:
 +    OS_LIBS += CONFIG['MOZ_OGG_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_THEORA']:
++if CONFIG['MOZ_SYSTEM_THEORA']:
 +    OS_LIBS += CONFIG['MOZ_THEORA_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_VORBIS']:
++if CONFIG['MOZ_SYSTEM_VORBIS']:
 +    OS_LIBS += CONFIG['MOZ_VORBIS_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_TREMOR']:
++if CONFIG['MOZ_SYSTEM_TREMOR']:
 +    OS_LIBS += CONFIG['MOZ_TREMOR_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++if CONFIG['MOZ_SYSTEM_SOUNDTOUCH']:
 +    OS_LIBS += CONFIG['MOZ_SOUNDTOUCH_LIBS']
 +
- if CONFIG['MOZ_NATIVE_LIBEVENT']:
+ if CONFIG['MOZ_SYSTEM_LIBEVENT']:
      OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
  
 diff --git xpcom/build/XPCOMInit.cpp xpcom/build/XPCOMInit.cpp
