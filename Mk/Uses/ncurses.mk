@@ -48,8 +48,6 @@ check-depends-ncurses:
 	@${FALSE}
 .  endif
 
-NCURSESRPATH=	/usr/lib:${LOCALBASE}/lib
-
 .elif ${ncurses_ARGS} == port
 NCURSESBASE=	${LOCALBASE}
 NCURSESINC=	${LOCALBASE}/include/ncurses
@@ -77,15 +75,15 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libncurses.so.${NCURSES_SHLIBVER}:${NCURSES_PO
 RUN_DEPENDS+=		${LOCALBASE}/lib/libncurses.so.${NCURSES_SHLIBVER}:${NCURSES_PORT}
 NCURSESRPATH=		${NCURSESBASE}/lib
 
+.if defined(NCURSES_RPATH)
+CFLAGS+=	-Wl,-rpath,${NCURSESRPATH}
+.endif
+LDFLAGS+=	-Wl,-rpath=${NCURSESRPATH}
+
 .else
 .error		USES=ncurses only accept 'port' and 'base' as arguments, got ${ncurses_ARGS}
 .endif
 
 NCURSESLIB=	${NCURSESBASE}/lib
-
-.if defined(NCURSES_RPATH)
-CFLAGS+=	-Wl,-rpath,${NCURSESRPATH}
-.endif
-LDFLAGS+=	-Wl,-rpath=${NCURSESRPATH}
 
 .endif
