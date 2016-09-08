@@ -20,6 +20,10 @@ err() {
 	echo "Error: $@" >&2
 }
 
+list_stagedir_elfs() {
+	cd ${STAGEDIR} && find -s . -type f \( -perm +111 -o -name '*.so*' \) "$@"
+}
+
 shebangonefile() {
 	local f interp rc
 
@@ -115,9 +119,7 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-		${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/libexec \
-		-type f -exec readelf -d {} + 2>/dev/null)
+	$(list_stagedir_elfs -exec readelf -d {} + 2>/dev/null)
 	EOF
 	if [ -z "${USESSSL}" -a -n "${found_openssl}" ]; then
 		warn "you need USES=ssl"
@@ -660,7 +662,7 @@ proxydeps() {
 			!/^\// && section<=1 && ($3 ~ "^'${PREFIX}'" || $3 ~ "^'${LOCALBASE}'") {print $3}')
 		EOT
 	done <<-EOT
-	$(cd ${STAGEDIR} && find -s . -type f \( -perm +111 -o -name '*.so*' \) | \
+	$(list_stagedir_elfs | \
 		file -F $'\1' -f - | \
 		grep -a 'ELF.*FreeBSD.*dynamically linked' | \
 		cut -f 1 -d $'\1'| \
