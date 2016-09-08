@@ -1,8 +1,8 @@
---- config.make.in.orig	Sun Apr 11 10:26:32 2004
-+++ config.make.in	Sun Apr 11 10:26:46 2004
-@@ -41,7 +41,7 @@
+--- config.make.in.orig	2016-08-30 10:23:53 UTC
++++ config.make.in
+@@ -67,7 +67,7 @@ sharedstatedir = @sharedstatedir@
+ stepmake = @stepmake@
  
- # move out of config.make.in?
  package_datadir = $(datadir)/$(package)
 -package_infodir = $(infodir)/$(package)
 +package_infodir = $(infodir)
