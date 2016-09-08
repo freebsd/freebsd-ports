@@ -3,6 +3,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.2.8.7
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
-USES=		cpe gmake ssl
+USES=		cpe gmake
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
@@ -38,6 +39,9 @@ GROUPS=		_tor
 USERS=		_tor
 
 CONFLICTS=	tor-devel-[0-9]*
+
+STATIC_TOR_USES=	ssl:build
+STATIC_TOR_USES_OFF=	ssl
 
 .include <bsd.port.options.mk>
 
