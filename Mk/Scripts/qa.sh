@@ -26,9 +26,9 @@ shebangonefile() {
 	f="$@"
 	rc=0
 
-	# blacklist of files which are not intended to be runnable
-	case "${f##*/}" in
-	*.pm|*.pod|*.txt)
+	# whitelist some files
+	case "${f}" in
+	*.pm|*.pod|*.txt|${STAGEDIR}${LINUXBASE}/*)
 		return 0
 		;;
 	esac
@@ -306,7 +306,7 @@ libperl() {
 }
 
 prefixvar() {
-	if test -d ${STAGEDIR}${PREFIX}/var; then
+	if [ ${PREFIX} != ${LINUXBASE} -a -d ${STAGEDIR}${PREFIX}/var ]; then
 		warn "port uses ${PREFIX}/var instead of /var"
 	fi
 }
@@ -662,7 +662,7 @@ proxydeps() {
 	done <<-EOT
 	$(cd ${STAGEDIR} && find -s . -type f \( -perm +111 -o -name '*.so*' \) | \
 		file -F $'\1' -f - | \
-		grep -a 'ELF.*dynamically linked' | \
+		grep -a 'ELF.*FreeBSD.*dynamically linked' | \
 		cut -f 1 -d $'\1'| \
 		sed -e 's/^\.//')
 	EOT
