@@ -1,0 +1,11 @@
+--- src/Gui/CMakeLists.txt.orig	2016-09-07 14:39:54 UTC
++++ src/Gui/CMakeLists.txt
+@@ -57,7 +57,7 @@ else(MSVC)
+         ${COIN3D_LIBRARIES}
+         ${QT_LIBRARIES}
+         ${Boost_LIBRARIES}
+-        ${OPENGL_gl_LIBRARY}
++        ${OPENGL_gl_LIBRARY} -L%%LOCALBASE%%/lib
+         ${3DCONNEXION_LINKFLAGS}
+     )
+ endif(MSVC)
