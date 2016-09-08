@@ -10,13 +10,22 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	ExecJS lets you run JavaScript code from Ruby
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	node:www/node
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
 USES=		gem
+
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	NODE NODE4
+OPTIONS_DEFAULT=	NODE
+
+NODE_DESC=	Use www/node as backend
+NODE4_DESC=	Use www/node4 as backend
+
+NODE_RUN_DEPENDS=	node>=0:www/node
+NODE4_RUN_DEPENDS=	node4>=0:www/node4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' \
