@@ -341,12 +341,6 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${PORT_OPTIONS:MGIO}
-MOZ_OPTIONS+=	--enable-gio
-.else
-MOZ_OPTIONS+=	--disable-gio
-.endif
-
 .if ${PORT_OPTIONS:MGNOMEUI}
 BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
 USE_GNOME+=		libgnomeui:build
