@@ -3,7 +3,7 @@
 
 PORTNAME=	luasocket
 PORTVERSION=	3.0r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -19,6 +19,7 @@ GH_TAGNAME=	v3.0-rc1
 
 MAKE_ARGS=	LUA_VER=${LUA_VER}
 USES=		gmake lua:51 pkgconfig
+INSTALL_TARGET=	install-unix
 
 CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}`
 LDFLAGS+=	-shared  `pkgconf --libs lua-${LUA_VER}`
@@ -34,7 +35,9 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/prefix/PREFIX/g' ${WRKSRC}/src/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LUA_MODLIBDIR:S|^${LOCALBASE}|${PREFIX}|}/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${LUA_MODLIBDIR:S|^${LOCALBASE}|${PREFIX}|}/*/*.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}/${DOCSDIR}
 
