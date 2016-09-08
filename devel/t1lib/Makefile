@@ -27,6 +27,8 @@ OPTIONS_SUB=	yes
 X11_USE=	XORG=xaw
 X11_CONFIGURE_WITH=	x
 
+MAKE_JOBS_UNSAFE=	YES
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/ALLSUBDIRS/s|$$(DOCSUBDIRS)||g' ${WRKSRC}/Makefile.in
