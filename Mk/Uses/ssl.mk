@@ -4,7 +4,7 @@
 #
 # Feature:	SSL_DEFAULT
 # Usage:	USES=ssl
-# Valid ARGS:	none
+# Valid ARGS:	none (build and run), build, run
 #
 # The user can choose which ssl library he wants with:
 #
@@ -28,8 +28,17 @@
 .if !defined(_INCLUDE_USES_SSL_MK)
 _INCLUDE_USES_SSL_MK=	yes
 
-.if !empty(ssl_ARGS)
-IGNORE=	"USES=ssl does not take any argument."
+.if !empty(ssl_ARGS:Nbuild:Nrun)
+IGNORE=	"USES=ssl invalid arguments ${ssl_ARGS}."
+.endif
+
+.if empty(ssl_ARGS) || (!empty(ssl_ARGS:Mbuild) && !empty(ssl_ARGS:Mrun))
+_SSL_BUILD_DEP=	1
+_SSL_RUN_DEP=	1
+.elif !empty(ssl_ARGS:Mbuild)
+_SSL_BUILD_DEP=	1
+.elif !empty(ssl_ARGS:Mrun)
+_SSL_RUN_DEP=	1
 .endif
 
 .if ${SSL_DEFAULT} == base
@@ -87,8 +96,12 @@ OPENSSL_PORT=		security/${SSL_DEFAULT}
 .  endif
 
 OPENSSLDIR?=		${OPENSSLBASE}/openssl
+.if defined(_SSL_BUILD_DEP)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
+.endif
+.if defined(_SSL_RUN_DEP)
 RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
+.endif
 OPENSSLRPATH=		${LOCALBASE}/lib
 
 .endif
