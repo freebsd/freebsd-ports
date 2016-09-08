@@ -10,6 +10,9 @@ MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool made for Blackbox that displays the date in a decorated window
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xfixes xi xrandr ice sm
 
