@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.66.0
-PORTREVISION=	1
+PORTVERSION=	2.67.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -17,7 +16,8 @@ LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
 		libchm.so:misc/chmlib \
 		libicudata.so:devel/icu \
 		libpodofo.so:graphics/podofo \
-		libmtp.so:multimedia/libmtp
+		libmtp.so:multimedia/libmtp \
+		libfreetype.so:print/freetype2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:devel/py-qt5-core \
@@ -58,14 +58,16 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
-USES=		desktop-file-utils pkgconfig python:2 shared-mime-info \
-		shebangfix ssl tar:xz
+USES=		desktop-file-utils gettext-runtime gnome pkgconfig python:2 \
+		shared-mime-info shebangfix ssl tar:xz
 SHEBANG_FILES=	resources/calibre-portable.sh \
 		src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
 USE_QT5=	buildtools_build core dbus gui qmake_build widgets
-USE_GL=		gl
+USE_GL=		egl gl
+USE_GNOME=	glib20
+USE_XORG=	xrender xext x11
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
