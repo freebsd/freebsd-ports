@@ -3,5 +3,5 @@ bin/bipmkpw
 man/man1/bip.1.gz
 man/man1/bipmkpw.1.gz
 man/man5/bip.conf.5.gz
-%%EXAMPLESDIR%%/bip.conf
-%%EXAMPLESDIR%%/bip.vim
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.vim
