@@ -1,2 +1,3 @@
-SHA256 (plusvic-yara-v3.4.0_GH0.tar.gz) = 528571ff721364229f34f6d1ff0eedc3cd5a2a75bb94727dc6578c6efe3d618b
-SIZE (plusvic-yara-v3.4.0_GH0.tar.gz) = 7642695
+TIMESTAMP = 1472498516
+SHA256 (yara-python-3.5.0.tar.gz) = c743ef051127eacc903fd4bd63d552ecf00031b59a9a8e7d0d017063de24b69c
+SIZE (yara-python-3.5.0.tar.gz) = 551735

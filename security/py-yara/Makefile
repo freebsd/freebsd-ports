@@ -1,26 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	3.4.0
-DISTVERSIONPREFIX=	v
-CATEGORIES=	security
+PORTVERSION=	3.5.0
+CATEGORIES=	security python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Python bindings for yara
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	plusvic
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libyara.so:security/yara
 
 USES=		python
 USE_PYTHON=	distutils autoplist
-
-BUILD_WRKSRC=	${WRKSRC}/yara-python
-INSTALL_WRKSRC=	${WRKSRC}/yara-python
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${BUILD_WRKSRC}/setup.py
+PYDISTUTILS_BUILDARGS=	--dynamic-linking
 
 .include <bsd.port.mk>
