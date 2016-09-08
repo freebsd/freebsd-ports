@@ -1,4 +1,4 @@
---- Makefile.orig	2016-06-03 16:29:10 UTC
+--- Makefile.orig	2016-09-05 18:22:42 UTC
 +++ Makefile
 @@ -3,7 +3,9 @@
  #	make
@@ -20,15 +20,6 @@
  debug=0
  export enable_nls
  export debug
-@@ -131,7 +133,7 @@ all gkrellm: gkrellm.pc
- 	(cd server && ${MAKE} gkrellmd)
- 
- gkrellm.pc: Makefile
--	echo 'prefix=$(INSTALLROOT)\n'\
-+	printf 'prefix=$(INSTALLROOT)\n'\
- 	'Name: GKrellM\n'\
- 	'Description: Extensible GTK system monitoring application\n'\
- 	'Version: $(VERSION)\n'\
 @@ -151,8 +153,8 @@ uninstall:
  	rm -f $(PKGCONFIGDIR)/gkrellm.pc
  
