@@ -1,0 +1,78 @@
+--- configure.orig	2016-08-30 10:23:53 UTC
++++ configure
+@@ -11412,74 +11412,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+ 
+     if test $? -eq 0 -a -n "0.9.0"; then
+ 
+-    r="`eval echo '$'"PKG_CONFIG"`"
+-    { $as_echo "$as_me:$LINENO: checking $r version" >&5
+-$as_echo_n "checking $r version... " >&6; }
+-    exe=`
+-    ## which doesn't work in ash, if /usr/bin/which isn't installed
+-    ## type -p doesn't work in ash
+-    ## command -v doesn't work in zsh
+-    ## command -v "$r" 2>&1
+-    ## this test should work in ash, bash, pdksh (ksh), zsh
+-    type -p $r 2>/dev/null | tail -n 1 | awk '{print $NF}'
+-`
+-    if test -n ""; then
+-        ver=""
+-    else
+-        ver=`
+-    ## "$exe" --version 2>&1 | grep -v '^$' | head -n 1 | awk '{print $NF}'
+-    ##
+-    ## ARG.
+-    ## Workaround for broken Debian gcc version string:
+-    ##     gcc (GCC) 3.1.1 20020606 (Debian prerelease)
+-    ##
+-    ## -V: Workaround for python
+-
+-    #dnl
+-
+-    ## Assume and hunt for dotted version multiplet.
+-    ## use eval trickery, because we cannot use multi-level $() instead of ``
+-    ## for compatibility reasons.
+-
+-    ## grab the first version number in  --version output.
+-    eval _ver=\"\`("$exe" --version || "$exe" -V) 2>&1 |
+-		grep -E '(^| )[0-9][0-9]*\.[0-9]' |
+-		head -n 1 |
+-		tr ' ' '\n' |
+-		sed 's/\([0-9][0-9]*\.[0-9][0-9.]*\).*/\1/g' |
+-		grep -E '(^| )[0-9][0-9]*\.[0-9]' |
+-		head -n 1\`\"
+-
+-    if test -z "$_ver"; then
+-        ## If empty, try date [fontforge]
+-        eval _ver=\"\`("$exe" --version || "$exe" -V) 2>&1 \
+-	    | grep '\(^\|[^0-9a-f]\)[0-9]\{6,8\}\([^0-9a-f]\|$\)' \
+-	    | head -n 1 \
+-	    | sed -e 's/^[^.0-9]*//' -e 's/[^.0-9]*$//'\`\"
+-    fi
+-    echo "$_ver"
+-    #dnl
+-`
+-    fi
+-    num=`
+-    echo "$ver" | awk -F. '
+-    {
+-      if ($3) {three = $3}
+-      else {three = 0}
+-    }
+-    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
+-`
+-    req=`
+-    echo "0.9.0" | awk -F. '
+-    {
+-      if ($3) {three = $3}
+-      else {three = 0}
+-    }
+-    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
+-`
+-    { $as_echo "$as_me:$LINENO: result: $ver" >&5
+-$as_echo "$ver" >&6; }
+-    if test "$num" -lt "$req"; then
++    if $exe --atleast-pkgconfig-version 0.9.0; then
+ 
+     eval "REQUIRED"=\"`eval echo \"'$'REQUIRED\" \""$r >= 0.9.0 (installed: $ver)"\"`\"
+ 
