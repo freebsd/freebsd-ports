@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	5.3.0
+PORTVERSION=	5.4.0
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
@@ -22,7 +22,10 @@ WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1.gz
 PORTDOCS=	license.txt whatsnew.txt order.htm readme.txt
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS SFX
+OPTIONS_DEFAULT=SFX
+
+SFX_DESC=	SFX archive support (implies compat9x on FreeBSD 10 and up)
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +40,7 @@ IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054 && ${PORT_OPTIONS:MSFX}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 
