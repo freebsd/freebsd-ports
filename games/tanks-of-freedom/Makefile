@@ -3,6 +3,7 @@
 
 PORTNAME=	tanks-of-freedom
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-beta
 CATEGORIES=	games
 
@@ -22,7 +23,7 @@ NO_ARCH=	yes
 
 DESKTOP_ENTRIES="Tanks of Freedom" \
 		"" \
-		"${DATADIR}/icon.png" \
+		"${DATADIR}/assets/icons/icon32.png" \
 		"${PORTNAME}" \
 		"Game;StrategyGame;" \
 		""
