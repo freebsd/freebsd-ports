@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	5.18+ configure
+CFLAGS+=	-I${OPENSSLINC}
 
 .include <bsd.port.mk>
