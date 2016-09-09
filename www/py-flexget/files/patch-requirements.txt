@@ -1,5 +1,14 @@
 --- requirements.txt.orig	2016-07-15 06:12:13 UTC
 +++ requirements.txt
+@@ -3,7 +3,7 @@ FeedParser>=5.2.1
+ SQLAlchemy >=0.7.5, !=0.9.0, <1.999
+ PyYAML
+ # There is a bug in beautifulsoup 4.2.0 that breaks imdb parsing, see http://flexget.com/ticket/2091
+-beautifulsoup4>=4.1, !=4.2.0, <4.5
++beautifulsoup4>=4.1, !=4.2.0
+ # Beautifulsoup4 does not work with later versions of html5lib as of bs4 4.4.1 and html5lib>=0.99999999
+ # (note the number of 9s, html5lib versions are stupid) https://bugs.launchpad.net/bugs/1603299
+ html5lib>=0.11, <=0.9999999
 @@ -15,11 +15,11 @@ jinja2
  # There is a bug in requests 2.4.0 where it leaks urllib3 exceptions
  requests>=2.8.0, <3.0
