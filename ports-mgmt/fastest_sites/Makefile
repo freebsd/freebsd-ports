@@ -2,6 +2,7 @@
 
 PORTNAME=	fastest_sites
 PORTVERSION=	20110317
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.semicomplete.com/files/fastest_sites/
 EXTRACT_SUFX=	.py
@@ -14,6 +15,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/fastest_sites
 SHEBANG_FILES=	fastest_sites-${PORTVERSION}.py
+python_OLD_CMD=	/usr/local/bin/python
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
