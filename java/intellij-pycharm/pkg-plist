@@ -11,11 +11,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf
 %%DATADIR%%/help/pycharmhelp.jar
-%%DATADIR%%/helpers/.idea/encodings.xml
-%%DATADIR%%/helpers/.idea/helpers.iml
-%%DATADIR%%/helpers/.idea/misc.xml
-%%DATADIR%%/helpers/.idea/modules.xml
-%%DATADIR%%/helpers/.idea/vcs.xml
 %%DATADIR%%/helpers/check_all_test_suite.py
 %%DATADIR%%/helpers/conda_packaging_tool.py
 %%DATADIR%%/helpers/coverage_runner/__init__.py
