@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--with-libxml2=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE} \
 		--with-xml=libxml2 \
 		--with-tcl=${TCL_LIBDIR} \
-		--disable-silent-rules \
 		--enable-cppapi \
 		--localstatedir=/var \
 		--with-user=${USERS} \

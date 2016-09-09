@@ -20,8 +20,7 @@ LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 USES=		tar:bzip2 pathfix pkgconfig gettext iconv libtool
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-doc
+CONFIGURE_ARGS=	--disable-doc
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

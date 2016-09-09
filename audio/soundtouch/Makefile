@@ -14,7 +14,6 @@ LICENSE=	LGPL21
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 
 USES=			autoreconf libtool pathfix

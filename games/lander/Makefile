@@ -22,8 +22,7 @@ USE_SDL=	sdl image mixer
 USE_GL=		gl glu
 
 CONFIGURE_ARGS=	--with-boost="${LOCALBASE}" \
-		--with-boost-filesystem=boost_filesystem \
-		--disable-silent-rules
+		--with-boost-filesystem=boost_filesystem
 LDFLAGS=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*

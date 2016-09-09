@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		libtool pathfix pkgconfig python shebangfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlparser/fsm_config.py
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

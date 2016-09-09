@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--enable-static \
 		--enable-sse \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
-		--disable-silent-rules \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
 INSTALL_TARGET=	install-strip

@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-deplibs-link --disable-documentation \
-		--disable-silent-rules --disable-speex --disable-strict \
+		--disable-speex --disable-strict \
 		--disable-tutorials \
 		--enable-external-mediastreamer --enable-external-ortp \
 		--enable-lime --with-polarssl=${LOCALBASE} \

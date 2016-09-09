@@ -27,7 +27,6 @@ USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>

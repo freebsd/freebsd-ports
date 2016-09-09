@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libva.so:multimedia/libva
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-wayland \
-		--disable-silent-rules
+CONFIGURE_ARGS=	--disable-wayland
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes

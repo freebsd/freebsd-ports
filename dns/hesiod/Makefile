@@ -18,7 +18,6 @@ OPTIONS_DEFAULT=IDN
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

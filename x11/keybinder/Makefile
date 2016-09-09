@@ -21,7 +21,7 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc
+CONFIGURE_ARGS=	--disable-gtk-doc
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

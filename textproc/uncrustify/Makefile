@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-CONFIGURE_ARGS=	--disable-silent-rules
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

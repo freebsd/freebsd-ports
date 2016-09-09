@@ -20,10 +20,6 @@ CONFIGURE_ENV=	ac_cv_prog_HAVE_ARC=false ac_cv_header_sys_inotify_h=no
 CONFIGURE_ARGS=	--without-python --without-ruby # in separate ports
 TEST_TARGET=	check
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--disable-silent-rules
-.endif
-
 PLIST_FILES=	bin/${PORTNAME} \
 		"@dir(,,2777) /var/run/${PORTNAME}"
 PORTDOCS=	README.markdown

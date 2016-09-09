@@ -25,8 +25,6 @@ WRKSRC=		${WRKDIR}/dwarves-b52386d
 USES=		cmake:outsource localbase tar:bzip2
 USE_LDCONFIG=	yes
 
-CMAKE_VERBOSE=	1
-
 post-patch:
 	@${CP} -a \
 	    ${LOCALBASE}/share/gnulib/lib/gettext.h \

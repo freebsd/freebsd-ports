@@ -18,7 +18,7 @@ LIB_DEPENDS=	libplist.so:devel/libplist \
 
 USES=		gettext gmake libtool localbase pathfix pkgconfig sqlite:3 tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-udev --without-hal \
+CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
 USE_GNOME=	gdkpixbuf2 gtk20 intltool

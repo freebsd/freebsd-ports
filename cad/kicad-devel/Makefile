@@ -42,7 +42,6 @@ USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake \
 		gettext python
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
-		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \
 		-DKICAD_BUILD_VERSION=${DISTVERSION} \

@@ -18,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	pdfoutline:textproc/pdfoutline
 
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--with-unicode-blocks=${WRKSRC}/Blocks.txt
+CONFIGURE_ARGS=	--with-unicode-blocks=${WRKSRC}/Blocks.txt
 GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USE_PERL5=	run

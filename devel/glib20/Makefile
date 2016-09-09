@@ -97,8 +97,7 @@ PLIST_SUB+=	GDB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug=yes \
-			--disable-silent-rules
+CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
 
 post-patch:

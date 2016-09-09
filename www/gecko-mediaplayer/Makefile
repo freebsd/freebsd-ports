@@ -21,8 +21,7 @@ USES=		compiler:c++11-lang gecko gettext pkgconfig webplugin:native
 USE_GNOME=	glib20
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-schemas-install \
+CONFIGURE_ARGS=	--disable-schemas-install \
 		--with-plugin_dir="${WEBPLUGIN_DIR}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include

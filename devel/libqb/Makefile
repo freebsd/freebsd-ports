@@ -20,7 +20,7 @@ PLIST_SUB+=	QB_SOCKET_DIR=${QB_SOCKET_DIR}
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --with-socket-dir=${QB_SOCKET_DIR}
+CONFIGURE_ARGS=	--with-socket-dir=${QB_SOCKET_DIR}
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOXYGEN

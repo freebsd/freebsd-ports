@@ -12,7 +12,6 @@ COMMENT=	XKB keyboard layout indicator and switcher
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 LIBS+=		-L${LOCALBASE}/lib -lX11
 USES=		pkgconfig
 USE_GNOME=	gtk20

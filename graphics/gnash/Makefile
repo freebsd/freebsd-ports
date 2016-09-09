@@ -36,8 +36,7 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-plugins-install=prefix \
 		--sysconfdir="${SYSCONFIGDIR}" \
 		--disable-kparts3 \
-		--disable-jemalloc \
-		--disable-silent-rules
+		--disable-jemalloc
 
 GNASHVER=	${PORTVERSION}
 CONFIG_FILES=	gnashpluginrc gnashrc

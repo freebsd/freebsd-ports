@@ -27,8 +27,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-maintainer-mode \
+CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-compile-warnings=no
 USE_GNOME=	glib20 gtk30 gtksourceview3 intlhack introspection
 INSTALL_TARGET=	install-strip
