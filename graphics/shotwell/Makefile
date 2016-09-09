@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.23.4
+PORTVERSION=	0.23.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -37,7 +37,7 @@ USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
