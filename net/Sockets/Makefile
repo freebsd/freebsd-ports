@@ -18,10 +18,11 @@ COMMENT=	C++ wrapper for BSD-style sockets
 #CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES+=		gmake
+USES+=		gmake ssl
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 ALL_TARGET=	all shared
 INSTALL_TARGET=	install_shared
