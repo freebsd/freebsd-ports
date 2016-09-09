@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
 GH_TAGNAME=	6d78407
 
-GNU_CONFIGURE=	yes
 USES=		gmake python:2,build ninja
 USE_LDCONFIG=	yes
 MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${STAGEDIR}
@@ -35,6 +34,7 @@ post-patch:
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS} -g ninja \
 		--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVMVER} \
-		--pkgconfigdir=${PREFIX}/libdata/pkgconfig
+		--pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--prefix=${PREFIX}
 
 .include <bsd.port.mk>
