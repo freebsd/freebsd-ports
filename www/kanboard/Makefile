@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kanboard
-PORTVERSION=	1.0.32
+PORTVERSION=	1.0.33
 CATEGORIES=	www
 MASTER_SITES=	http://kanboard.net/ \
 		https://bitbucket.org/if0/kanboard-archives/downloads/ \
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USES=		zip
+USES=		php zip
 USE_PHP=	ctype curl dom gd hash filter iconv json mcrypt mbstring \
 		openssl pdo session simplexml \
 		zlib xml
