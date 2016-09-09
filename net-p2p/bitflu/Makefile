@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitflu
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/
 
