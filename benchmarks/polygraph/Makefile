@@ -35,7 +35,7 @@ LDNS_LIB_DEPENDS=	libldns.so:dns/ldns
 LDNS_CONFIGURE_ON=	--with-ldns=${LOCALBASE}/bin/ldns-config
 LDNS_CONFIGURE_OFF=	--without-ldns
 SSL_DESC=		SSL/HTTPS support
-SSL_USE=		openssl=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--without-ssl
 PERL_DESC=		Install Perl for PolyGraph tools
