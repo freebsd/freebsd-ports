@@ -3,6 +3,7 @@
 
 PORTNAME=	jpgraph
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://fossies.org/linux/www/
 
@@ -38,7 +39,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} "*.php *.dat lang themes" \
+	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} "*.php *.dat fonts lang themes" \
 		${STAGEDIR}${DATADIR})
 
 do-install-DOCS-on:
