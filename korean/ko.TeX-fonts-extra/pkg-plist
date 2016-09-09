@@ -7011,8 +7011,9 @@ share/texmf-local/fonts/afm/kotex/extra/bom/outbmm00.afm
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/testhl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/testhl-k.tex
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/README
-@exec %%MKTEXLSR%%
-@exec %%UPDMAP_SYS%% --enable Map=kotex-extra-hlfont.map
-@exec %%UPDMAP_SYS%% --enable Map=kotex-extra.map
-@unexec %%MKTEXLSR%%
-@unexec %%UPDMAP_SYS%% --syncwithtrees
+@postexec %%MKTEXLSR%% --quiet
+@postexec env -u POSIXLY_CORRECT %%UPDMAP_SYS%% --quiet --enable Map=kotex-extra-hlfont.map
+@postexec env -u POSIXLY_CORRECT %%UPDMAP_SYS%% --quiet --enable Map=kotex-extra.map
+@postunexec %%MKTEXLSR%% --quiet
+@postunexec %%UPDMAP_SYS%% --quiet --disable kotex-extra-hlfont.map
+@postunexec %%UPDMAP_SYS%% --quiet --disable kotex-extra.map

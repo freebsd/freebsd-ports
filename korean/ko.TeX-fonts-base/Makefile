@@ -3,7 +3,7 @@
 
 PORTNAME=	ko.TeX-fonts-base
 PORTVERSION=	0.1.0.20070927
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/current/
 DISTNAME=	ko.tex-unfonts-base-20070927
@@ -11,7 +11,7 @@ DISTNAME=	ko.tex-unfonts-base-20070927
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX base fonts
 
-USE_TEX=	latex
+USE_TEX=	dvipsk latex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes

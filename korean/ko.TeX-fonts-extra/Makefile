@@ -3,7 +3,7 @@
 
 PORTNAME=	ko.TeX-fonts-extra
 PORTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/extrafonts/
 DISTFILES=	ko.tex-extra-hlfont.tar.gz ko.tex-unfonts-extra.tar.gz
@@ -11,7 +11,7 @@ DISTFILES=	ko.tex-extra-hlfont.tar.gz ko.tex-unfonts-extra.tar.gz
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX extra fonts
 
-USE_TEX=	latex
+USE_TEX=	dvipsk latex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes
