@@ -162,8 +162,7 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--with-fontconfigincludedir=${LOCALBASE}/include \
 		--with-fontconfiglibdir=${LOCALBASE}/lib \
 		--disable-io --disable-ocaml --disable-java \
-		--disable-sharp \
-		--disable-silent-rules
+		--disable-sharp
 
 .if ${PORT_OPTIONS:MMING}
 BROKEN=	Ming incomplete, uses removed libgraph

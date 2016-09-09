@@ -21,7 +21,6 @@ LIB_DEPENDS=	libhal.so:sysutils/hal \
 USES=		gmake iconv localbase pkgconfig
 USE_GNOME=	gtk20 intlhack libxslt
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS

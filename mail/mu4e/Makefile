@@ -18,8 +18,7 @@ GH_PROJECT=	mu
 GH_ACCOUNT=	djcb
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-gtk \
+CONFIGURE_ARGS=	--disable-gtk \
 		--disable-webkit \
 		--disable-guile \
 		--docdir="${DOCSDIR}" \

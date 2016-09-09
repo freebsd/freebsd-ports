@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	martin_lambers
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --with-tls=no
+CONFIGURE_ARGS=	--with-tls=no
 
 INFO=		mpop
 

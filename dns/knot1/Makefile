@@ -27,10 +27,6 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=	yes
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--disable-silent-rules
-.endif
-
 INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	${PORTNAME}

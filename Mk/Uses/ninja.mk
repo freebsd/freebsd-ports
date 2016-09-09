@@ -5,9 +5,6 @@
 # Feature:		ninja
 # Usage:		USES=ninja
 #
-# User defined variables:
-# NINJA_VERBOSE		- Enable verbose output.
-#
 # MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NINJA_MK)
@@ -17,9 +14,7 @@ _INCLUDE_USES_NINJA_MK=	yes
 IGNORE=	Incorrect 'USES+= ninja:${ninja_ARGS}' ninja takes no arguments
 .endif
 
-.if defined(NINJA_VERBOSE)
 MAKE_ARGS+=	-v
-.endif
 
 BUILD_DEPENDS+=	ninja:devel/ninja
 

@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	USE_LIBS="-lusb" \
 		ac_cv_lib_usbpath_usb_path2devnum=no
-CONFIGURE_ARGS=	--disable-silent-rules
 
 PLIST_FILES=	bin/dfu-prefix bin/dfu-suffix bin/dfu-util man/man1/${PORTNAME}.1.gz
 

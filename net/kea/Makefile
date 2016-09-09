@@ -19,8 +19,7 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--with-openssl=${OPENSSLBASE} \
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--with-log4cplus=${LOCALBASE} \
 		--with-boost-include=${LOCALBASE}/include \
 		--with-boost-lib-dir=${LOCALBASE}/lib \

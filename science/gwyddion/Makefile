@@ -24,7 +24,7 @@ USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
 USE_XORG=	xmu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc \
+CONFIGURE_ARGS=	--disable-gtk-doc \
 		--without-kde4-thumbnailer
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes

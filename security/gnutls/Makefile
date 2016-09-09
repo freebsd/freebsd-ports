@@ -22,7 +22,6 @@ USES=		cpe gmake iconv libtool makeinfo pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
-		--disable-silent-rules \
 		--enable-local-libopts \
 		ac_cv_type_max_align_t=yes
 CPPFLAGS+=	-I${LOCALBASE}/include

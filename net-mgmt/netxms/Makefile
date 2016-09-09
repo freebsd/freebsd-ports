@@ -46,7 +46,6 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 USE_OPENSSL=	yes
 USES=		gmake iconv libtool perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=	GSSAPI_BASE
 
 CONFIGURE_ENV+=	ac_cv_path_KRB5_CONFIG=${KRB5CONFIG}	\
 		ac_cv_path_XMLTO=${TRUE}
-CONFIGURE_ARGS+=--disable-silent-rules --sysconfdir=/etc
+CONFIGURE_ARGS=	--sysconfdir=/etc
 
 # Kerberos may or may not be there, but LDAP always is:
 CFLAGS+=	-I${LOCALBASE}/include -DLDAP_DEPRECATED=0

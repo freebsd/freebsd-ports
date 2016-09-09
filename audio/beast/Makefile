@@ -25,8 +25,7 @@ SHEBANG_FILES=	autotools/intltool-merge
 USE_GCC=	4.8
 USE_GNOME=	intltool libgnomecanvas
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--enable-osspcm=/dev/dsp \
+CONFIGURE_ARGS=	--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

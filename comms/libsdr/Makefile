@@ -22,7 +22,6 @@ GH_ACCOUNT=	hmatuschek
 MAKE_JOBS_UNSAFE=	yes
 USES=		cmake pkgconfig
 CMAKE_ARGS+=-DCMAKE_BUILD_TYPE=RELEASE
-CMAKE_VERBOSE=	1
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

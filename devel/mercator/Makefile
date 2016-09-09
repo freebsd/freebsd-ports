@@ -12,7 +12,6 @@ COMMENT=	Procedural terrain library
 
 LIB_DEPENDS=	libwfmath-1.0.so:math/wfmath
 
-CONFIGURE_ARGS=	--disable-silent-rules
 USES=		libtool pathfix pkgconfig compiler:c++11-lib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

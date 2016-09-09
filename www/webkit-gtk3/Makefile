@@ -50,7 +50,6 @@ MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 BROKEN_sparc64=	fails to detect working compiler
 
-#CONFIGURE_ARGS+=--disable-silent-rules
 CONFIGURE_ARGS+=--disable-egl \
 		--disable-gles2
 #		--with-acceleration-backend=opengl # clutter broken?

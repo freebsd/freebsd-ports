@@ -16,7 +16,6 @@ LIB_DEPENDS=	libAtlas-0.6.so:devel/atlas-devel \
 		libsigc-2.0.so:devel/libsigc++20 \
 		libmercator-0.3.so:devel/mercator
 
-CONFIGURE_ARGS= --disable-silent-rules
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig compiler:c++11-lib

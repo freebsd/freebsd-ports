@@ -17,8 +17,7 @@ USE_XORG=	x11
 USE_GNOME=	glib20 intltool
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-gconf
+CONFIGURE_ARGS=	--disable-gconf
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

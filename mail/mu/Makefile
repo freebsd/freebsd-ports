@@ -21,7 +21,7 @@ GH_ACCOUNT=	djcb
 USES=		autoreconf gmake libtool makeinfo pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk --disable-mu4e
+CONFIGURE_ARGS=	--disable-gtk --disable-mu4e
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DOCS GUILE

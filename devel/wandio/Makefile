@@ -12,7 +12,6 @@ COMMENT=	C library for compressed file I/O
 LICENSE=	GPLv2
 
 USES=		libtool
-CONFIGURE_ARGS=	--disable-silent-rules
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

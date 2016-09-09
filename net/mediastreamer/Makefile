@@ -21,7 +21,7 @@ CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-documentation --disable-matroska \
-		--disable-pulseaudio --disable-silent-rules --disable-strict \
+		--disable-pulseaudio --disable-strict \
 		--with-gsm=${LOCALBASE} --with-srtp=${LOCALBASE} \
 		--with-polarssl=${LOCALBASE} xxd_found=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_ARC4RANDOM

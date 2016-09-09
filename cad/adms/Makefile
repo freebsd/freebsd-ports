@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		bison libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ax_cv_c_compiler_vendor=gnu
-CONFIGURE_ARGS=	--disable-silent-rules
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

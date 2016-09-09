@@ -30,7 +30,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --with-shell=/bin/sh \
+CONFIGURE_ARGS=	--with-shell=/bin/sh \
 		ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
 INSTALL_TARGET=	install-strip
 

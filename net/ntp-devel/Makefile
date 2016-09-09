@@ -22,7 +22,6 @@ USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl \
 		gettext-runtime
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 
 TEST_TARGET=	check
 

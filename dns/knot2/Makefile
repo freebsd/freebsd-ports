@@ -30,10 +30,6 @@ CONFIGURE_ARGS=	--with-rundir=/var/run/knot \
 		--with-storage=/var/db/knot \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--disable-silent-rules
-.endif
-
 INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	${PORTNAME}

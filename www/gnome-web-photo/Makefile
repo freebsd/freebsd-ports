@@ -19,8 +19,7 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 USE_GNOME=	gconf2 gnomeprefix intltool
 USES=		gettext gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--with-gtk=2.0
+CONFIGURE_ARGS=	--with-gtk=2.0
 
 GCONF_SCHEMAS=	thumbnailer.schemas
 
