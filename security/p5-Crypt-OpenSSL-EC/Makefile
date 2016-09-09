@@ -14,7 +14,8 @@ COMMENT=	Perl extension for OpenSSL EC (Elliptic Curves) library
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.04:security/p5-Crypt-OpenSSL-Bignum
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	configure
+CFLAGS+=	-I${OPENSSLINC}
 
 .include <bsd.port.mk>
