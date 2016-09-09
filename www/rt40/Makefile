@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	40
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
+DEPRECATED=	Upstream support EoL, please migrate to rt44
+EXPIRATION_DATE=	2017-02-15
+
 CONFLICTS_INSTALL=	rt42-4.2* rt44-4.4* brlcad-[0-9]*
 
 NO_ARCH=	yes
@@ -137,7 +140,6 @@ DB_TYPE=	Oracle
 .if ${PORT_OPTIONS:MSQLITE}
 DB_TYPE=	SQLite
 .endif
-
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_DBA_USER?=	pgsql
