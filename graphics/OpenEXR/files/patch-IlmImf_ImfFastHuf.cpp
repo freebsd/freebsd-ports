@@ -1,6 +1,6 @@
---- IlmImf/ImfFastHuf.cpp.orig	2014-08-10 08:23:56.000000000 +0400
-+++ IlmImf/ImfFastHuf.cpp	2015-04-08 00:10:07.536640000 +0300
-@@ -107,7 +107,7 @@
+--- IlmImf/ImfFastHuf.cpp.orig	2014-08-10 04:23:56 UTC
++++ IlmImf/ImfFastHuf.cpp
+@@ -107,7 +107,7 @@ FastHufDecoder::FastHufDecoder
      for (int i = 0; i <= MAX_CODE_LEN; ++i)
      {
          codeCount[i] = 0;
@@ -9,7 +9,7 @@
          offset[i]    = 0;
      }
  
-@@ -352,7 +352,7 @@
+@@ -352,7 +352,7 @@ FastHufDecoder::buildTables (Int64 *base
  
      for (int i = 0; i <= MAX_CODE_LEN; ++i)
      {
@@ -18,7 +18,7 @@
          {
              _ljBase[i] = base[i] << (64 - i);
          }
-@@ -362,7 +362,7 @@
+@@ -362,7 +362,7 @@ FastHufDecoder::buildTables (Int64 *base
              // Unused code length - insert dummy values
              //
  
@@ -27,7 +27,7 @@
          }
      }
  
-@@ -417,7 +417,7 @@
+@@ -417,7 +417,7 @@ FastHufDecoder::buildTables (Int64 *base
  
      int minIdx = TABLE_LOOKUP_BITS;
  
@@ -36,7 +36,7 @@
          minIdx--;
  
      if (minIdx < 0)
-@@ -427,7 +427,7 @@
+@@ -427,7 +427,7 @@ FastHufDecoder::buildTables (Int64 *base
          // Set the min value such that the table is never tested.
          //
  
