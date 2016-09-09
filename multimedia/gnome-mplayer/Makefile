@@ -19,8 +19,7 @@ USES=		desktop-file-utils gettext gmake pkgconfig
 USE_XORG=	x11 xscrnsaver
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-nautilus \
+CONFIGURE_ARGS=	--disable-nautilus \
 		--disable-nemo \
 		--disable-schemas-install \
 		--without-libgda

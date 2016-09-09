@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libenet.so:net/enet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-nls # no translations ATM
+CONFIGURE_ARGS=	--disable-nls # no translations ATM
 USES=		gmake openal:al tar:xz
 USE_SDL=	sdl2
 

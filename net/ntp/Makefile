@@ -21,7 +21,6 @@ CONFLICTS=	ntp-rc-* ntp-devel-*
 USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 
 TEST_TARGET=	check
 

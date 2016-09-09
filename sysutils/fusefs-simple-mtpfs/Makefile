@@ -18,7 +18,6 @@ GH_ACCOUNT=	phatina
 
 USES=		autoreconf compiler:c++11-lib fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \

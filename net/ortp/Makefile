@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-strict
+CONFIGURE_ARGS=	--disable-strict
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

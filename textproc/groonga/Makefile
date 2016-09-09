@@ -16,7 +16,6 @@ USES=		execinfo gmake libedit libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \
-		--disable-silent-rules \
 		--localstatedir=/var \
 		--without-cutter \
 		--without-inkscape \

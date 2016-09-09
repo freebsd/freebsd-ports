@@ -14,7 +14,6 @@ LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_libintl_h=no
-CONFIGURE_ARGS=	--disable-silent-rules
 
 PLIST_FILES=	bin/xtermcontrol man/man1/xtermcontrol.1.gz
 

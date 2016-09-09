@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmbedtls.so.9:security/polarssl13
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-strict \
+CONFIGURE_ARGS=	--disable-strict \
 		--with-polarssl=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig

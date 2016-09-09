@@ -17,7 +17,6 @@ CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
-		--disable-silent-rules \
 		--with-rmt=/etc/rmt
 TEST_TARGET=	check
 

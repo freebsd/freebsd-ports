@@ -24,8 +24,7 @@ USE_GNOME=	gtk30 intltool librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_jpeg_jpeg_destroy_decompress=yes \
 		ac_cv_lib_tiff_TIFFWriteScanline=yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-libchamplain \
+CONFIGURE_ARGS=	--disable-libchamplain \
 		--enable-compile-warnings=minimum \
 		--enable-librsvg
 INSTALL_TARGET=	install-strip

@@ -29,7 +29,6 @@ USES=		desktop-file-utils gettext ghostscript gmake pkgconfig \
 		python tar:xz
 USE_GNOME=	gnomedocutils gtk30 intltool librsvg2 pygobject3
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

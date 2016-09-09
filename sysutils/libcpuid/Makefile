@@ -15,7 +15,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

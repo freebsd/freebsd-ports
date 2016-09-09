@@ -18,8 +18,7 @@ INFO=		tar
 USES=		charsetfix cpe iconv:${STATIC_ARGS} localbase makeinfo tar:xz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g \
-		--disable-silent-rules
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
 # supply result to skip a test that will abort configure if run as root

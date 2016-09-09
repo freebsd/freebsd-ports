@@ -26,7 +26,7 @@ USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--with-plugins=netstatus,volume,volumealsa,deskno,batt,kbled,xkb,thermal,cpu,cpufreq,monitors,wnckpager \
-		--with-x --disable-silent-rules \
+		--with-x \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}
