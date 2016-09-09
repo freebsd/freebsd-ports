@@ -3,6 +3,7 @@
 
 PORTNAME=	seamonkey-i18n
 PORTVERSION=	2.39
+PORTREVISION=	1
 CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/langpack \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build1/langpack
@@ -13,9 +14,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey
 
-EXTRACT_DEPENDS=	zip:archivers/zip
-
-USES=		zip:infozip gecko:seamonkey,build
+USES=		zip gecko:seamonkey
 USE_XPI=	seamonkey linux-seamonkey
 
 NO_ARCH=	yes
@@ -59,22 +58,18 @@ do-extract:
 		${FIND} -H -s * ! -type d | \
 		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF}; \
 	done
-	${ECHO} "@dir %%XPI_LIBDIR%%/symlinks/firefox" >> ${PLISTF}
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_LINKFARMS:S,^,${STAGEDIR},}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
 	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
-	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \
-		for _dir in ${XPI_LINKFARMS} ; do \
-		${LN} -sf $${_e##*/} ${STAGEDIR}$$_dir/ ${_Q} ; \
-		done \
+	@for sldir in ${XPI_LINKFARMS}; do \
+		${ECHO_CMD} "@dir $${sldir}" ${_A}; \
 	done
-	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
