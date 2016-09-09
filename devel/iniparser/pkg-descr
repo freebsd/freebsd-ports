@@ -3,4 +3,4 @@ The library is pretty small (less than 1500 lines of C) and robust, and
 does not depend on any other external library to compile. It is written
 in ANSI C and should compile on most platforms without difficulty.
 
-WWW: http://ndevilla.free.fr/iniparser/
+WWW: https://github.com/ndevilla/iniparser
