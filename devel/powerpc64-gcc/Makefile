@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -11,6 +12,8 @@ COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
 
 USES=	gmake iconv libtool tar:bzip2 makeinfo compiler
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
@@ -53,6 +56,10 @@ INSTALL_TARGET?=	install-gcc
 BROKEN_FreeBSD9=	plist is different on 9.x that on other arches
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
+		${WRKSRC}//gcc/cp/g++spec.c
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
