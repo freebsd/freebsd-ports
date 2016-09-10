@@ -12,13 +12,12 @@ COMMENT=	Cross-language way to cryptographically hash JSON objects
 LICENSE=	APACHE20
 
 BROKEN_powerpc64=	Does not build
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libjson-c.so:devel/json-c
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
-
-USES=		pkgconfig
+USES=		pkgconfig ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	benlaurie
@@ -30,7 +29,7 @@ ALL_TARGET=	libobjecthash.so
 PLIST_FILES=	include/objecthash.h lib/libobjecthash.so
 
 do-install:
-		${INSTALL_LIB} ${WRKSRC}/libobjecthash.so ${STAGEDIR}${PREFIX}/lib
-		${INSTALL_DATA} ${WRKSRC}/objecthash.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libobjecthash.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/objecthash.h ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
