@@ -11,8 +11,10 @@ COMMENT=	Create BitTorrent files from the command line
 
 LICENSE=	GPLv2
 
+USES=		ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	bin/createtorrent
 
