@@ -2,7 +2,7 @@
 
 PORTNAME=	asterisk-g72x
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 
@@ -13,17 +13,15 @@ LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bcg729
-USES=		autoreconf compiler libtool tar:bzip2
+USES=		autoreconf compiler libtool localbase tar:bzip2
 NO_OPTIONS_SORT=	yes
-
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/asterisk/modules/codec_g729.so
 
 OPTIONS_SINGLE=	ASTVER
 OPTIONS_SINGLE_ASTVER=	ASTERISK18 ASTERISK11 ASTERISK13
 
-OPTIONS_DEFAULT=	ASTERISK11
+OPTIONS_DEFAULT=	ASTERISK13
 
 ASTERISK18_DESC=	Depend on Asterisk 1.8
 ASTERISK11_DESC=	Depend on Asterisk 11
