@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	SETUID X11
 SETUID_DESC=	Install setuid pwsafe binary
 
-USES=		gmake readline
+USES=		gmake readline ssl
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pwsafe man/man1/pwsafe.1.gz
