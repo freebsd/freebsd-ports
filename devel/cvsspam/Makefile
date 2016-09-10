@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 USE_RUBY=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 

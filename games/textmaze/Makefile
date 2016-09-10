@@ -14,6 +14,7 @@ COMMENT=	Generates mazes on a text terminal and lets you traverse them
 RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 
 USES=		shebangfix perl5
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	textmaze
