@@ -13,5 +13,6 @@ COMMENT=	This module lets you quickly and easily construct new packages
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
