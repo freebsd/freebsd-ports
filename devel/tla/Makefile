@@ -9,16 +9,14 @@ MASTER_SITES=	GNU/gnu-arch \
 		http://www.atai.org/gnuarch/releases/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The original arch source control management CLI written in C
-
-OPTIONS_DEFINE=	DOCS
+COMMENT=	Original arch source control management CLI written in C
 
 BUILD_DEPENDS=	gpatch:devel/patch \
 		gdiff:textproc/diffutils \
 		gtar:archivers/gtar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake
+USES=		gmake pkgconfig ssl
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -32,6 +30,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
+
+OPTIONS_DEFINE=	DOCS
 
 pre-patch:
 	${MKDIR} ${WRKSRC}
