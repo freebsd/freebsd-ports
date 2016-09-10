@@ -247,6 +247,9 @@ share/teamspeak/server/sql/update_21.sql
 share/teamspeak/server/sql/update_22.sql
 share/teamspeak/server/sql/update_23.sql
 share/teamspeak/server/sql/update_24.sql
+share/teamspeak/server/sql/update_25.sql
+share/teamspeak/server/sql/update_26.sql
+share/teamspeak/server/sql/update_mariadb_26.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 share/teamspeak/server/sql/channel_delete_bulk.sql
@@ -268,7 +271,6 @@ share/teamspeak/server/sql/permission_load_channel_group_total.sql
 share/teamspeak/server/sql/permission_load_other.sql
 share/teamspeak/server/sql/permission_load_server_and_channel_group_total.sql
 share/teamspeak/server/sql/permission_load_server_group_total.sql
-share/teamspeak/server/sql/update_25.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
 share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
 @dir(teamspeak,teamspeak,) %%DBDIR%%
