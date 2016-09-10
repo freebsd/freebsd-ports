@@ -18,14 +18,15 @@ SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
 USE_XORG=	xft xpm xt
-USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix
+USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix ssl
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
 CONFIGURE_TARGET=	${ARCH}-${OPSYS:tl}
 CONFIGURE_ARGS=	--with-world --without-jpl --enable-shared
 MAKE_ARGS=	DISABLE_PKGS=jpl \
-		ac_cv_lib_ossp_uuid_uuid_create=no ac_cv_lib_uuid_uuid_create=no
+		ac_cv_lib_ossp_uuid_uuid_create=no \
+		ac_cv_lib_uuid_uuid_create=no
 
 SHEBANG_LANG=	swipl
 swipl_OLD_CMD=	/usr/bin/swipl
@@ -70,6 +71,6 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xpce-client \
-		${STAGEDIR}${PREFIX}/lib/${SWIPLDIR}/lib/${ARCH}-freebsd/pl2xpce.so
+		${STAGEDIR}${PREFIX}/lib/${SWIPLDIR}/lib/${ARCH}-${OPSYS:tl}/pl2xpce.so
 
 .include <bsd.port.post.mk>
