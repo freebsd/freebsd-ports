@@ -13,7 +13,8 @@ COMMENT=	Multicast capable FTP client and server
 LICENSE=	GPLv3
 
 MAKEFILE=	makefile
-USES=		gmake
+USES=		gmake ssl
+MAKE_ARGS=	OPENSSL=${OPENSSLBASE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uftp ${STAGEDIR}${PREFIX}/bin/
