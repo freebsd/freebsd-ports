@@ -15,6 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		shebangfix perl5
 NO_BUILD=	yes
+NO_ARCH=	yes
 SHEBANG_FILES=	locfg.pl
 
 PORTDOCS=	iLO_perl_xml.pdf linux-LOsamplescripts.txt

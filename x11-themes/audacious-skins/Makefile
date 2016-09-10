@@ -13,6 +13,7 @@ BUILD_DEPENDS=	audacious:multimedia/audacious
 
 USES=		tar:xz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/audacious
 
