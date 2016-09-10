@@ -22,7 +22,7 @@ GH_ACCOUNT=	grke
 
 USE_RC_SUBR=	burp
 GNU_CONFIGURE=	yes
-USES=		gmake localbase ncurses
+USES=		gmake localbase ncurses ssl
 
 PORTSCOUT=	limit:^1\.4\.
 
