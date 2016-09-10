@@ -61,12 +61,14 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -1062,6 +1089,8 @@ static errcode_t PRS(int argc, char *arg
+@@ -1062,6 +1089,10 @@ static errcode_t PRS(int argc, char *arg
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
 +	sa.sa_handler = signal_progress_now;
-+	sigaction(SIGINFO, &sa, 0);
++	if (!getenv("e2fsprogs_inhibit_SIGINFO")) {
++		sigaction(SIGINFO, &sa, 0);
++	}
  #endif
  
  	/* Update our PATH to include /sbin if we need to run badblocks  */
