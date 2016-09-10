@@ -10,9 +10,10 @@ MASTER_SITES=	http://www.vanheusden.com/nagircbot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC bot for Nagios
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake ssl tar:tgz
 USE_RC_SUBR=	nagircbot
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	bin/nagircbot
 
