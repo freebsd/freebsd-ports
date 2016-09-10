@@ -17,18 +17,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	libcrypto_CFLAGS=-lcrypto libcrypto_LIBS=-lcrypto LOCALBASE=${LOCALBASE} ac_cv_header_bfd_h=yes
-USES=		gmake pkgconfig
+CONFIGURE_ENV=	libcrypto_CFLAGS=-lcrypto \
+		libcrypto_LIBS=-lcrypto \
+		LOCALBASE=${LOCALBASE} \
+		ac_cv_header_bfd_h=yes
+USES=		gmake localbase pkgconfig ssl
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		This port works only on FreeBSD 10 and newer
-.endif
+BROKEN_FreeBSD_9=	requires FreeBSD 10 or later
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|' ${WRKSRC}/configure ${WRKSRC}/lib/ccan/ccan/hash/hash.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
