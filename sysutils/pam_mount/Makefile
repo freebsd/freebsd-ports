@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libHX.so:lang/libhx
 
-USES=		pkgconfig libtool perl5 tar:xz
+USES=		pkgconfig libtool perl5 ssl tar:xz
 USE_GNOME=	libxml2
 
 INSTALL_TARGET=	install-strip
