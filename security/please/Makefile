@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	security
 
 MAINTAINER=	gblach@FreeBSD.org
