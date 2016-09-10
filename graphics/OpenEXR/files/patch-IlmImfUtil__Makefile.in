@@ -1,6 +1,6 @@
---- ./IlmImfUtil/Makefile.in.orig	2014-08-15 19:35:57.000000000 +0200
-+++ ./IlmImfUtil/Makefile.in	2014-08-15 19:45:15.000000000 +0200
-@@ -265,10 +265,11 @@
+--- IlmImfUtil/Makefile.in.orig	2014-08-10 04:48:23 UTC
++++ IlmImfUtil/Makefile.in
+@@ -265,10 +265,11 @@ libIlmImfUtil_la_LDFLAGS = @ILMBASE_LDFL
  libIlmImfUtil_la_LIBADD = -L$(top_builddir)/IlmImf @ILMBASE_LIBS@ -lIlmImf
  libIlmImfUtilincludedir = $(includedir)/OpenEXR
  EXTRA_DIST = CMakeLists.txt

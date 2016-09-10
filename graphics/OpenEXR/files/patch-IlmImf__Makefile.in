@@ -1,6 +1,6 @@
---- ./IlmImf/Makefile.in.orig	2014-08-15 19:35:57.000000000 +0200
-+++ ./IlmImf/Makefile.in	2014-08-15 19:45:43.000000000 +0200
-@@ -458,9 +458,10 @@
+--- IlmImf/Makefile.in.orig	2014-08-10 04:48:23 UTC
++++ IlmImf/Makefile.in
+@@ -458,9 +458,10 @@ noinst_HEADERS = ImfCompressor.h    \
  		 ImfOptimizedPixelReading.h
  
  EXTRA_DIST = $(noinst_HEADERS) b44ExpLogTable.cpp b44ExpLogTable.h dwaLookups.cpp dwaLookups.h CMakeLists.txt

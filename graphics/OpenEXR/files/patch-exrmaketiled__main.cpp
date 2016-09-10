@@ -1,5 +1,5 @@
---- ./exrmaketiled/main.cpp.orig	2013-11-25 20:49:56.000000000 +0100
-+++ ./exrmaketiled/main.cpp	2014-03-24 18:28:37.916466529 +0100
+--- exrmaketiled/main.cpp.orig	2014-08-10 04:24:00 UTC
++++ exrmaketiled/main.cpp
 @@ -43,6 +43,7 @@
  #include "makeTiled.h"
  
