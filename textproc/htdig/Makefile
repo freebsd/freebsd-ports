@@ -24,10 +24,11 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-image-dir=${PREFIX}/www/icons/htdig \
 		--with-image-url-prefix=/icons/htdig \
 		--with-ssl
-USES=		libtool
+USES=		alias libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
 
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
