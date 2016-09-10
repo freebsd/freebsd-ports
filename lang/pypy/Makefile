@@ -4,7 +4,7 @@
 PORTNAME?=	pypy
 DISTVERSION?=	5.4.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
-MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
+MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
