@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160910:
+  AFFECTS: users of security/letsencrypt.sh
+  AUTHOR: riggs@FreeBSD.org
+
+  The config filename has been changed upstream from "config.sh"
+  to "config". Users must rename the current config file manually.
+  In addition, the default WELLKNOWN location has been changed to
+  %%PREFIX%%/www/letsencrypt. In order to use the previous default
+  location, the config file must be updated manually as well.
+
 20160907:
   AFFECTS: users of math/galculator
   AUTHOR: woodsb02@FreeBSD.org
