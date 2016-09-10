@@ -10,12 +10,13 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
 
-USE_OPENSSL=	yes
+USES=		ssl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \
 		--enable-tls \
+		--with-openssl-root=${OPENSSLBASE} \
 		--with-mailspool-directory=/var/mail
 
 OPTIONS_DEFINE=	LDAP PERLAUTH PASSWDAUTH FLATAUTH GDBMAUTH MAILDIR MBOXINDICES DRAC FIX_PERLAUTH DOCS
