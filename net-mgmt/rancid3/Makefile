@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rancid
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	3.5.1
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -69,8 +69,6 @@ post-patch:
 .endif
 	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
-	${REINPLACE_CMD} "s|3des|3des-cbc|g" ${WRKSRC}/bin/*.in ${WRKSRC}/cloginrc.sample \
-	    ${WRKSRC}/man/cloginrc.5 ${WRKSRC}/man/clogin.1
 
 post-install:
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-cvs ${STAGEDIR}${PREFIX}/bin
