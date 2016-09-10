@@ -14,6 +14,7 @@ COMMENT=	Perl extension for managing a uniq list of values
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

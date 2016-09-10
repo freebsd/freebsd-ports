@@ -12,6 +12,7 @@ COMMENT=	Perl implementation of Mac OS X plutil
 
 USES=		shebangfix perl5 tar:xz
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	${PORTNAME}.pl

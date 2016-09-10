@@ -18,5 +18,6 @@ RUN_DEPENDS=	p5-Geo-Gpx>=0.25:graphics/p5-Geo-Gpx \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

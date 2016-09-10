@@ -12,5 +12,6 @@ COMMENT=	Provides a way to create socks client or server both 4 and 5 version
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
