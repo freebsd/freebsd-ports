@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS+=	libjansson.so:devel/jansson
 
-USES=		libtool pathfix ssl
+USES=		libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -20,6 +20,6 @@ GH_ACCOUNT=	cisco
 GH_PROJECT=	cjose
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${PREFIX}
+CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
 
 .include <bsd.port.mk>
