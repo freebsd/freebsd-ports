@@ -1,6 +1,65 @@
---- texmaker.pro.orig	2014-12-14 22:51:47 UTC
+--- texmaker.pro.orig	2015-10-24 09:05:27 UTC
 +++ texmaker.pro
-@@ -393,13 +393,6 @@ utilities.files = doc/doc1.png \
+@@ -19,11 +19,11 @@ DEFINES += HAVE_SPLASH
+ unix:!macx {
+ contains( QT_VERSION, "^5.*" ) {
+ CONFIG		+= link_pkgconfig
+-PKGCONFIG 	= poppler-qt5
++PKGCONFIG 	= hunspell poppler-qt5
+ DEFINES += POPPLER24
+ } else {
+ CONFIG		+= link_pkgconfig
+-PKGCONFIG 	= poppler-qt4
++PKGCONFIG 	= hunspell poppler-qt4
+ DETECTEDPOPPLER=$$system(pkg-config --modversion poppler)
+ contains( DETECTEDPOPPLER, "^0.18.*" ){
+ DEFINES += OLDPOPPLER
+@@ -98,25 +98,6 @@ HEADERS	+= texmaker.h \
+ 	unicodeview.h \
+ 	quickbeamerdialog.h \
+ 	svnhelper.h \
+-	hunspell/affentry.hxx \
+-	hunspell/affixmgr.hxx \
+-	hunspell/atypes.hxx \
+-	hunspell/baseaffix.hxx \
+-	hunspell/csutil.hxx \
+-	hunspell/dictmgr.hxx \
+-	hunspell/hashmgr.hxx \
+-	hunspell/htypes.hxx \
+-	hunspell/hunspell.hxx \
+-	hunspell/hunspell.h \
+-	hunspell/langnum.hxx \
+-	hunspell/license.hunspell \
+-	hunspell/phonet.hxx \
+-	hunspell/suggestmgr.hxx \
+-	hunspell/license.myspell \
+-	hunspell/filemgr.hxx \
+-	hunspell/hunzip.hxx \
+-	hunspell/replist.hxx \
+-	hunspell/w_char.hxx \
+ 	singleapp/qtlocalpeer.h \
+ 	singleapp/qtlockedfile.h \
+ 	singleapp/qtsingleapplication.h \
+@@ -210,18 +191,6 @@ SOURCES	+= main.cpp \
+ 	unicodeview.cpp \
+ 	quickbeamerdialog.cpp \
+ 	svnhelper.cpp \
+-	hunspell/affentry.cxx \
+-	hunspell/affixmgr.cxx \
+-	hunspell/csutil.cxx \
+-	hunspell/dictmgr.cxx \
+-	hunspell/hashmgr.cxx \
+-	hunspell/hunspell.cxx \
+-	hunspell/phonet.cxx \
+-	hunspell/suggestmgr.cxx \
+-	hunspell/utf_info.cxx \
+-	hunspell/filemgr.cxx \
+-	hunspell/replist.cxx \
+-	hunspell/hunzip.cxx \
+ 	singleapp/qtlocalpeer.cpp \
+ 	singleapp/qtlockedfile.cpp \
+ 	singleapp/qtsingleapplication.cpp \
+@@ -395,13 +364,6 @@ utilities.files = doc/doc1.png \
  	utilities/AUTHORS \
  	utilities/COPYING \
  	utilities/CHANGELOG.txt \
@@ -14,7 +73,7 @@
  	scripts/titlecase_selection.tms \
  	scripts/hardwordwrap_selection_80col.tms \
  	locale/qt_cs.qm \
-@@ -475,4 +468,20 @@ INSTALLS += desktop
+@@ -477,4 +439,20 @@ INSTALLS += desktop
  
  icon.files = utilities/texmaker.png
  INSTALLS += icon
