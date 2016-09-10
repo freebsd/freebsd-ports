@@ -16,9 +16,9 @@ case "$weekly_letsencrypt_enable" in
 
 	if [ -z "$weekly_letsencrypt_user" ]
 	then
-		%%PREFIX%%/bin/letsencrypt.sh -c
+		%%PREFIX%%/bin/letsencrypt.sh -c $weekly_letsencrypt_flags
 	else
-		su -m "$weekly_letsencrypt_user" -c '%%PREFIX%%/bin/letsencrypt.sh -c'
+		su -m "$weekly_letsencrypt_user" -c "%%PREFIX%%/bin/letsencrypt.sh -c $daily_status_disks_df_flags"
 	fi
 
 	echo "Deploying Let's Encrypt certificates:"
