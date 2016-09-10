@@ -11,9 +11,10 @@ COMMENT=	Create device firmware images
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
+USES=		ssl tar:bzip2
 
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" PREFIX=${PREFIX}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.mk>
