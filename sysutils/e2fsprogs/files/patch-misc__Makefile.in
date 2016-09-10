@@ -1,4 +1,4 @@
---- misc/Makefile.in.orig	2016-03-18 19:14:18 UTC
+--- misc/Makefile.in.orig	2016-09-02 04:52:46 UTC
 +++ misc/Makefile.in
 @@ -34,16 +34,16 @@ INSTALL = @INSTALL@
  
@@ -16,13 +16,13 @@
  FMANPAGES=	mke2fs.conf.5 ext4.5
  
 -UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
--UMANPAGES=	chattr.1 fuse2fs.1 lsattr.1 @UUID_CMT@ uuidgen.1
+-UMANPAGES=	chattr.1 lsattr.1 @UUID_CMT@ uuidgen.1
 +UPROGS=		chattr lsattr
-+UMANPAGES=	chattr.1 fuse2fs.1 lsattr.1
++UMANPAGES=	chattr.1 lsattr.1
+ UMANPAGES+=	@FUSE_CMT@ fuse2fs.1
  
  LPROGS=		@E2INITRD_PROG@
- 
-@@ -143,14 +143,14 @@ profiled:
+@@ -144,14 +144,14 @@ profiled:
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -40,7 +40,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -575,34 +575,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
+@@ -577,34 +577,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done
