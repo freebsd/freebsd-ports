@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	letsencrypt.sh
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -33,9 +33,10 @@ ZSH_RUN_DEPENDS=	zsh:shells/zsh
 PERIODIC_DIRS=	etc/periodic/weekly
 PERIODIC_FILES=	000.letsencrypt.sh
 
-PLIST_DIRS=	%%ETCDIR%%/.acme-challenges
+PLIST_DIRS=	%%ETCDIR%%/.acme-challenges \
+		www/letsencrypt
 PLIST_FILES=	bin/letsencrypt.sh \
-		%%ETCDIR%%/config.sh.example \
+		%%ETCDIR%%/config.example \
 		%%ETCDIR%%/hook.sh.example \
 		%%ETCDIR%%/domains.txt.example \
 		${PERIODIC_DIRS}/000.letsencrypt.sh
@@ -44,28 +45,38 @@ PORTDOCS_PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/README.md
 SUB_FILES=	000.letsencrypt.sh pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 PORTDOCS=	README.md dns-verification.md domains_txt.md ecc.md hook_chain.md \
-		import-from-official-client.md staging.md troubleshooting.md wellknown.md
+		import-from-official-client.md per-certificate-config.md staging.md \
+		troubleshooting.md wellknown.md
 
-SHEBANG_FILES=	docs/examples/config.sh.example docs/examples/hook.sh.example letsencrypt.sh
+SHEBANG_FILES=	docs/examples/hook.sh letsencrypt.sh
+
+post-patch:
+.	for f in docs/examples/config letsencrypt.sh
+		${REINPLACE_CMD} 's|/var/www/letsencrypt|${PREFIX}/www/letsencrypt|' \
+		    ${WRKSRC}/${f}
+.	endfor
 
 post-patch-ZSH-on:
-.	for p in docs/examples/config.sh.example docs/examples/hook.sh.example letsencrypt.sh
+.	for p in docs/examples/config docs/examples/hook.sh letsencrypt.sh
 		${REINPLACE_CMD} '1 s/bash/zsh/' ${WRKSRC}/${p}
 .	endfor
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/.acme-challenges ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}
-	${INSTALL_DATA} ${WRKSRC}/docs/examples/config.sh.example ${STAGEDIR}${ETCDIR}/config.sh.example
-	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh.example ${STAGEDIR}${ETCDIR}/hook.sh.example
-	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt.example ${STAGEDIR}${ETCDIR}/domains.txt.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/config ${STAGEDIR}${ETCDIR}/config.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh ${STAGEDIR}${ETCDIR}/hook.sh.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt ${STAGEDIR}${ETCDIR}/domains.txt.example
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .	for d in dns-verification domains_txt ecc hook_chain import-from-official-client \
-		staging troubleshooting wellknown
+		per-certificate-config staging troubleshooting wellknown
 		${INSTALL_MAN} ${WRKSRC}/docs/${d}.md ${STAGEDIR}${DOCSDIR}
 .	endfor
+
+post-stage:
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/letsencrypt
 
 .include <bsd.port.mk>
