@@ -13,17 +13,21 @@ COMMENT=	Brute-force dictionary attack against WPA-PSK
 
 LICENSE=	GPLv2
 
+USES=		ssl
 PORTDOCS=	FAQ README
 SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS
 
-USE_OPENSSL=	yes
-
 PLIST_FILES=	bin/cowpatty bin/genpmk
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s|\(-DOPENSSL\)|\1 -I${OPENSSLINC} -L${OPENSSLLIB} |g" \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
