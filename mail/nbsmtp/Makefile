@@ -12,11 +12,18 @@ COMMENT=	Simple program for outgoing SMTP delivery
 
 LICENSE=	GPLv2
 
+USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ssl --enable-ipv6
-USE_OPENSSL=	yes
+CPPFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	bin/nbsmtp man/man5/nbsmtprc.5.gz man/man8/nbsmtp.8.gz
+
+post-patch:
+	${REINPLACE_CMD} -e 's@\(-o nbsmtp\)@$$(LDFLAGS) \1@g'	\
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
