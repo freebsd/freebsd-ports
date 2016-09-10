@@ -13,15 +13,15 @@ COMMENT=	IM transparent proxy with monitoring, blocking, and content-filtering
 LICENSE=	GPLv2
 
 CFLAGS+=	-fPIC -I ${LOCALBASE}/include -DHAVE_SSL
-USES=		iconv gmake
-USE_OPENSSL=	YES
+USES=		gmake iconv ssl
 USE_LDCONFIG=	${LOCALBASE}/lib/imspector
 
 CONFIG_FILES=	imspector.conf badwords.txt acl.txt
 
 USE_RC_SUBR=	${PORTNAME}
 
-MAKE_ENV+=	ETCDIR=${ETCDIR}
+MAKE_ENV+=	ETCDIR=${ETCDIR} \
+		SSL_DIR=${OPENSSLBASE}
 
 OPTIONS_DEFINE=	IPFW PLUGINS
 OPTIONS_DEFAULT=IPFW
@@ -46,6 +46,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,= SSLv23_method(),= (SSL_METHOD *) SSLv23_method(),g' \
 		${WRKSRC}/sslstate.cpp
 	@${REINPLACE_CMD} -e 's,%%ICONV_LIB%%,${ICONV_LIB},' \
+		 -e 's,\(LIBS = -lcrypto\),#\1,g' \
 		${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MPLUGINS}
 	@${REINPLACE_CMD} -e 's,#ADD_PLUGINS,ADD_PLUGINS,' \
