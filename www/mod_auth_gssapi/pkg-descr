@@ -1,0 +1,4 @@
+This module adds support for single-sign-on authentication via GSSAPI
+to the Apache httpd. It is intended as a successor to mod_auth_kerb.
+
+WWW: https://github.com/modauthgssapi/mod_auth_gssapi
