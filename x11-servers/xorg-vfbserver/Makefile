@@ -12,7 +12,7 @@ DIST_SUBDIR=	xorg/xserver
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X virtual framebuffer server from X.Org
 
-USES=		tar:bzip2 pkgconfig
+USES=		tar:bzip2 pkgconfig ssl
 INSTALL_WRKSRC=	${WRKSRC}/hw/vfb
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dmx \
