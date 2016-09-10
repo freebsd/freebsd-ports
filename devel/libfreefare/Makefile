@@ -15,8 +15,10 @@ LIB_DEPENDS=	libnfc.so:devel/libnfc
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix gmake pkgconfig tar:bzip2 libtool
+USES=		pathfix gmake pkgconfig tar:bzip2 libtool ssl
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
