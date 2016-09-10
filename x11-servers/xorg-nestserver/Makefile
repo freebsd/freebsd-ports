@@ -14,7 +14,7 @@ COMMENT=	Nesting X server from X.Org
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		tar:bzip2 pkgconfig
+USES=		tar:bzip2 pkgconfig ssl
 INSTALL_WRKSRC= ${WRKSRC}/hw/xnest
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-dmx \
