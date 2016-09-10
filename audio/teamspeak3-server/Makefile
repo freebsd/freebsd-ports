@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.13.2
+PORTVERSION=	3.0.13.4
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
@@ -17,7 +17,7 @@ LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-BROKEN_FreeBSD_11=Will not start on 11
+BROKEN_FreeBSD_11=Will not start on 11, Bug 212493
 
 USES=		tar:bz2
 NO_BUILD=	yes
