@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.6
+PORTEPOCH=	1
 CATEGORIES=	japanese net
-MASTER_SITES=	http://ftp.voip-info.jp/asterisk/sounds/${VENDORVERSION:S|.|_|}/ \
-		ftp://ftp.voip-info.jp/asterisk/sounds/${VENDORVERSION:S|.|_|}/
+MASTER_SITES=	http://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/ \
+		ftp://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/
 PKGNAMESUFFIX=	-sounds
-DISTNAME=	asterisk-sound-jp_${VENDORVERSION:S|.||}_pre
+DISTNAME=	asterisk-sound-jp_${PORTVERSION:S|.||}_pre
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese sound files for Asterisk
 
-RUN_DEPENDS=	asterisk:net/asterisk
-
-VENDORVERSION=	1.6
+RUN_DEPENDS=	asterisk:net/asterisk11
 
 NO_BUILD=	yes
 ASTERISKDIR=	${PREFIX}/share/asterisk/sounds
