@@ -12,6 +12,7 @@ COMMENT=	Client library for Peer Distributed Transfer Protocol (PDTP)
 
 LICENSE=	BSD3CLAUSE
 
+USES=		ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
