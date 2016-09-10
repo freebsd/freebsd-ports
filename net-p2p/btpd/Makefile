@@ -15,9 +15,9 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 
-USES=		autoreconf
-USE_OPENSSL=	yes
+USES=		autoreconf ssl
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 
 OPTIONS_DEFINE=	DOCS
 
