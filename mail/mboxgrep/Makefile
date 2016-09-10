@@ -10,10 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 
+USES=		ssl
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LIBS+=		-L${OPENSSLLIB} -L${LOCALBASE}/lib
 
 INFO=		mboxgrep
 
