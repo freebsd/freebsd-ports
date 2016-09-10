@@ -15,16 +15,21 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool
+USES=		cpe gmake libtool ssl
 CPE_VENDOR=	nlnetlabs
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL
 OPTIONS_DEFAULT=	DRILL
 
 DRILL_DESC=	With drill program
+
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	doc
+DOXYGEN_INSTALL_TARGET=	install-manpages
 .endif
 
 OPTIONS_DEFINE+=	GOST \
@@ -39,6 +44,13 @@ RRTYPETA_DESC=		Enable draft RR type ta.
 
 OPTIONS_SUB=	yes
 
+GOST_CONFIGURE_ENABLE=		gost
+RRTYPENINFO_CONFIGURE_ENABLE=	rrtype-ninfo
+RRTYPERKEY_CONFIGURE_ENABLE=	rrtype-rkey
+RRTYPECDS_CONFIGURE_ENABLE=	rrtype-cds
+RRTYPEURI_CONFIGURE_ENABLE=	rrtype-uri
+RRTYPETA_CONFIGURE_ENABLE=	rrtype-ta
+
 .include <bsd.port.options.mk>
 
 .if defined(BUILD_PYLDNS)
@@ -52,7 +64,9 @@ LIB_DEPENDS+=	libldns.so:dns/ldns
 BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:devel/swig13
 
 post-patch:
-	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' \
+		${WRKSRC}/Makefile.in
 .elif defined(BUILD_P5PERL)
 USES+=		perl5
 USE_PERL5=	build run
@@ -70,45 +84,21 @@ post-patch:
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:devel/doxygen
-ALL_TARGET+=	doc
-INSTALL_TARGET+=install-manpages
-.endif
-
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
 .if ${PORT_OPTIONS:MGOST}
-. if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CONFLICTS+=	libressl-*
+.  if !defined(SSL_DEFAULT) || ${SSL_DEFAULT} == "base"
+IGNORE_FreeBSD_9=	Requires openssl version >= 1.0.0
 . endif
 .else
 NO_GOST=	--disable-gost
-CONFIGURE_ARGS+=${NO_GOST}
-.endif
-
-.if ${PORT_OPTIONS:MRRTYPENINFO}
-CONFIGURE_ARGS+=	--enable-rrtype-ninfo
-.endif
-
-.if ${PORT_OPTIONS:MRRTYPERKEY}
-CONFIGURE_ARGS+=	--enable-rrtype-rkey
-.endif
-
-.if ${PORT_OPTIONS:MRRTYPECDS}
-CONFIGURE_ARGS+=	--enable-rrtype-cds
-.endif
-
-.if ${PORT_OPTIONS:MRRTYPEURI}
-CONFIGURE_ARGS+=	--enable-rrtype-uri
-.endif
-
-.if ${PORT_OPTIONS:MRRTYPETA}
-CONFIGURE_ARGS+=	--enable-rrtype-ta
 .endif
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
+
+post-patch:
+# fix list CPPFLAGS in examples/configure for ssl in LOCALBASE case
+	@${REINPLACE_CMD} -e '/tmp_CPPFLAGS/d' ${WRKSRC}/examples/configure
 
 post-configure:
 # ac_cv_prog_libtool=../libtool => Always use bundled libtool
