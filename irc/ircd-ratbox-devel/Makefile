@@ -54,42 +54,16 @@ ASSERT_DESC=		Enable debugging code
 SMALL_NET_DESC=		Tune server for small networks
 SERVICES_DESC=		ratbox-services compatibility code
 
-#----------------------------------------------------------------------
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--enable-openssl
-.else
-CONFIGURE_ARGS+=	--disable-openssl
-.endif
-
-.if ! ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ! ${PORT_OPTIONS:MZIPLINKS}
-CONFIGURE_ARGS+=	--disable-zlib
-.endif
-
-.if ! ${PORT_OPTIONS:MSHARED_MODULES}
-CONFIGURE_ARGS+=	--disable-shared-modules
-.endif
-
-.if ${PORT_OPTIONS:MASSERT}
-CONFIGURE_ARGS+=	--enable-assert
-.else
-CONFIGURE_ARGS+=	--disable-assert
-.endif
-
-.if ${PORT_OPTIONS:MSMALL_NET}
-CONFIGURE_ARGS+=	--enable-small-net
-.endif
-
-.if ${PORT_OPTIONS:MSERVICES}
-CONFIGURE_ARGS+=	--enable-services
-.endif
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
+OPENSSL_CFLAGS=			-I${OPENSSLINC}
+IPV6_CONFIGURE_ENABLE=		ipv6
+ZIPLINKS_CONFIGURE_ENABLE=	zlib
+SHARED_MODULES_CONFIGURE_ENABLE=shared-modules
+ASSERT_CONFIGURE_ENABLE=	assert
+SMALL_NET_CONFIGURE_ENABLE=	small-net
+SERVICES_CONFIGURE_ENABLE=	services
 
 #-- User Configuration -------------------------------------------------
 
