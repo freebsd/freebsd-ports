@@ -283,9 +283,12 @@ EXTRA_MAN8=	qmail-badloadertypes.8 qmail-badmimetypes.8 qmail-mfrules.8 \
 		qmail-recipients.8 qmail-smtpam.8
 ALL_TARGET+=	${EXTRA_MAN8}
 MMAN8+=		${EXTRA_MAN8}
-USES+=		perl5
+USES+=		perl5 ssl
 USE_PERL5=	patch build
 CFLAGS+=	-include /usr/include/errno.h
+CFLAGS+=	-I${OPENSSLINC} -L${OPENSSLLIB}
+# Required for the insane pre-patch compiling done by this slave port
+PATCH_DEPENDS+=	${BUILD_DEPENDS:M*ssl*}
 .endif
 
 .if defined(SLAVE_LDAP)
@@ -660,6 +663,8 @@ post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
 	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${UCSPI_SSL_DIST}
+	${REINPLACE_CMD} -e "s@-lssl@-L${OPENSSLLIB} -lssl@g" \
+		${UCSPISRC}/src/ssl.lib
 .endif
 
 # XXX - Move all the major patch applications to post-extract
