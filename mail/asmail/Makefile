@@ -11,15 +11,16 @@ MASTER_SITES=	AFTERSTEP/apps/asmail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
 
+USES=		ssl
 USE_XORG=	xpm
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shaping \
 		--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-LDFLAGS+=	-pthread -lssl -lcrypto
+LDFLAGS+=	-pthread -L${OPENSSLLIB} -lssl -lcrypto
+CPPFLAGS+=	-I${OPENSSLINC}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
