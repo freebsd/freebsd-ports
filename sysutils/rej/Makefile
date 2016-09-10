@@ -11,6 +11,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
 USES=		shebangfix perl5
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	mp qp rej

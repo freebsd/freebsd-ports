@@ -11,6 +11,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	IPod shuffle database builder
 
 USES=		python
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/rebuild_db

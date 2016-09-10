@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 USES=		shebangfix perl5
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_FILES=	delatt
 PLIST_FILES=	bin/delatt

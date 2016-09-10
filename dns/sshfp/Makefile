@@ -17,6 +17,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython \
 		${PYTHON_SITELIBDIR}/ldns.py:dns/py-ldns
 
 USES=		python shebangfix
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	xelerance

@@ -12,6 +12,7 @@ COMMENT=	Perl script that checks links on web sites
 
 USES=		shebangfix perl5
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	${DISTNAME}
