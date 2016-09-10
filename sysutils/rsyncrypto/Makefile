@@ -19,7 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib/
 CPPFLAGS+=	-I${LOCALBASE}/include/
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ssl
 
 PLIST_FILES=	bin/rsyncrypto \
 		bin/rsyncrypto_recover \
