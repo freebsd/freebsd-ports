@@ -12,10 +12,10 @@ COMMENT=	Open source implementation of SMPTE and the MXF Interop format
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
+CONFIGURE_ARGS+=--with-expat=${LOCALBASE} \
+		--with-openssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 .include <bsd.port.mk>
