@@ -44,6 +44,8 @@ IPV6_DESC=		Enable IPv6 support
 DEBUG_DESC=		Build with debug enabled
 DEBUG_HEXDUMP_DESC=	Enable hexdump of sent and received traffic
 
+SSL_USES=		ssl
+
 .include <bsd.port.options.mk>
 
 CFLAGS_EXTRA=
@@ -69,8 +71,7 @@ CFLAGS_EXTRA+=-DNS_ENABLE_HEXDUMP
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	YES
-CFLAGS_EXTRA+=	-lssl
+CFLAGS_EXTRA+=	-I${OPENSSLINC} -L${OPENSSLLIB} -lssl
 .endif
 
 .if !empty(PORT_OPTIONS:MDAV) && empty(PORT_OPTIONS:MDIRECTORY_LISTING)
