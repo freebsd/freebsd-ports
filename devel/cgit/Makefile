@@ -38,7 +38,10 @@ post-extract:
 	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/git/Makefile
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' \
+		-e "s|\(ALL_CFLAGS =\)|\1 -I${OPENSSLINC}|g" \
+		-e "s|\(ALL_LDFLAGS =\)|\1 -L${OPENSSLLIB}|g" \
+		${WRKSRC}/git/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
