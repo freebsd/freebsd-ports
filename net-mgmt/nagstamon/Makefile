@@ -19,6 +19,7 @@ USES=		cpe python:2
 CPE_VENDOR=	henri_wahl
 USE_PYTHON=	distutils
 USE_GNOME=	pygtk2 librsvg2
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/Nagstamon
 
