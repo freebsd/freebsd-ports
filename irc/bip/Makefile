@@ -13,8 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-Wno-sign-compare -Wno-error
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
+CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
 USES=		cpe gmake ssl
 CPE_VENDOR=	duckcorp
 INSTALL_TARGET=	SUBDIR=src install-exec
