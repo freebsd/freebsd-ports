@@ -1,4 +1,4 @@
---- e2fsck/unix.c.orig	2016-05-09 02:18:14 UTC
+--- e2fsck/unix.c.orig	2016-09-02 04:17:32 UTC
 +++ e2fsck/unix.c
 @@ -9,8 +9,6 @@
   * %End-Header%

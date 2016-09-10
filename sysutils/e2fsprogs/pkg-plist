@@ -2,7 +2,6 @@ bin/chattr
 bin/lsattr
 etc/mke2fs.conf.dist
 man/man1/chattr.1.gz
-man/man1/fuse2fs.1.gz
 man/man1/lsattr.1.gz
 man/man5/e2fsck.conf.5.gz
 man/man5/mke2fs.conf.5.gz
@@ -64,10 +63,12 @@ sbin/tune2fs
 %%NLS%%share/locale/eo/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/e2fsprogs.mo
