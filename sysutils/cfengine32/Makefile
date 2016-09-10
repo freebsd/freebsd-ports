@@ -25,6 +25,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		bdb cpe libtool ssl
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine3
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
