@@ -14,14 +14,12 @@ LICENSE=	APACHE20
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
+SSL_USES=	ssl
+SSL_ALL_TARGET=	ssl
+SSL_CFLAGS=	-I${OPENSSLINC}
+SSL_LDFLAGS=	-L${OPENSSLLIB}
+
 PLIST_FILES=	bin/htdump
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-ALL_TARGET=	ssl
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
