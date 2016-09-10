@@ -17,9 +17,10 @@ LICENSE?=	ISCL
 
 LIB_DEPENDS+=	libevent.so:devel/libevent2
 
-USES+=		autoreconf libtool
-USE_OPENSSL=	yes
+USES+=		autoreconf ssl libtool
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
 
 CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc/mail"
 
