@@ -1,24 +1,24 @@
---- SConstruct.orig	2015-10-06 21:52:04 UTC
+--- SConstruct.orig	2016-06-24 12:15:47 UTC
 +++ SConstruct
-@@ -14,7 +14,7 @@ if 'SCHROOT_CHROOT_NAME' in os.environ a
+@@ -1,7 +1,7 @@
+ import os
  
- # Required build flags. If you want to use SSE optimization, you can turn on
- # -msse3 or (if just building for your own computer) -march=native.
--env.Append(CCFLAGS = ["-std=c++0x", "-O3", "-Wall"])
-+env.Append(CCFLAGS = ["-std=c++0x", "-Wall"])
- env.Append(LIBS = [
- 	"SDL2",
- 	"png",
-@@ -28,7 +28,7 @@ env.Append(LIBS = [
- # Work with clang's static analyzer:
- env["CC"] = os.getenv("CC") or env["CC"]
- env["CXX"] = os.getenv("CXX") or env["CXX"]
--env["ENV"].update(x for x in os.environ.items() if x[0].startswith("CCC_"))
-+env["ENV"].update(x for x in os.environ.items())
+ # Load any environment variables that alter the build.
+-env = Environment()
++env = Environment(ENV = os.environ)
+ if 'CCFLAGS' in os.environ:
+ 	env.Append(CCFLAGS = os.environ['CCFLAGS'])
+ if 'CXXFLAGS' in os.environ:
+@@ -24,7 +24,7 @@ Help(opts.GenerateHelpText(env))
  
- opts = Variables()
- opts.Add(PathVariable("PREFIX", "Directory to install under", "/usr/local", PathVariable.PathIsDirCreate))
-@@ -43,7 +43,7 @@ sky = env.Program("endless-sky", Glob("b
+ flags = ["-std=c++11", "-Wall"]
+ if env["mode"] != "debug":
+-	flags += ["-O3"]
++	pass
+ if env["mode"] == "debug":
+ 	flags += ["-g"]
+ if env["mode"] == "profile":
+@@ -55,7 +55,7 @@ sky = env.Program("endless-sky", Glob("b
  
  
  # Install the binary:
@@ -27,7 +27,7 @@
  
  # Install the desktop file:
  env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
-@@ -68,7 +68,7 @@ if env.get("PREFIX").startswith("/usr/")
+@@ -80,7 +80,7 @@ if env.get("PREFIX").startswith("/usr/")
  
  # Install the man page.
  env.Command(
@@ -36,7 +36,7 @@
  	"endless-sky.6",
  	"gzip -c $SOURCE > $TARGET")
  
-@@ -81,11 +81,11 @@ def RecursiveInstall(env, target, source
+@@ -93,11 +93,11 @@ def RecursiveInstall(env, target, source
  			RecursiveInstall(env, os.path.join(target, name), node.abspath)
  		else:
  			env.Install(target, node)
