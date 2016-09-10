@@ -18,12 +18,12 @@ DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libevent.so:devel/libevent2
 
-USES=			autoreconf pkgconfig gmake compiler:c++11-lang libtool
+USES=			autoreconf pkgconfig gmake compiler:c++11-lang \
+			libtool ssl
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=		PORTVERSION="${THRIFT_PORTVERSION}"
-USE_OPENSSL=		yes
 
 OPTIONS_DEFINE=		QT4
 QT4_CONFIGURE_WITH=	qt4
@@ -45,13 +45,15 @@ CONFIGURE_ARGS+=	\
 		--without-ruby \
 		--without-go
 
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
+
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base && \
-	${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
+.if ${SSL_DEFAULT} == base
 # src/thrift/transport/TSSLSocket.cpp:147: error: 'TLSv1_1_method' was not declared in this scope
 # src/thrift/transport/TSSLSocket.cpp:149: error: 'TLSv1_2_method' was not declared in this scope
-BROKEN=		does not build with 9.x base OpenSSL
+BROKEN_FreeBSD_9=	does not build with 9.x base OpenSSL
 .endif
 
 .if ${COMPILER_TYPE} == clang
