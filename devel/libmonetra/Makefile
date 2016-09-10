@@ -12,8 +12,9 @@ MAINTAINER=	brad@monetra.com
 COMMENT=	Library for credit card processing through Monetra (formerly MCVE)
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
+
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .include <bsd.port.mk>
