@@ -768,6 +768,7 @@
     SUBDIR += googletest
     SUBDIR += goprotobuf
     SUBDIR += gorm
+    SUBDIR += govendor
     SUBDIR += gperf
     SUBDIR += gpm
     SUBDIR += gprbuild
