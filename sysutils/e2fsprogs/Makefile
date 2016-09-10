@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.1
+PORTVERSION=	1.43.3
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -195,7 +195,7 @@ post-build:
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 # do not add -j options unconditionally to ${MAKE_CMD} below, this might break
 # due to excessive disk space use.
-	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
+	cd ${WRKSRC}/tests && ulimit -t 60 && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 .else
 	@${ECHO_CMD} '===>  SKIPPING e2fsprogs self-test suite (DISCOURAGED!)'
