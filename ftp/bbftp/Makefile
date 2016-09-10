@@ -10,7 +10,7 @@ MASTER_SITES=	http://doc.in2p3.fr/bbftp/dist/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple stream file transfer protocol optimized for large files
 
-USES=		gmake
+USES=		gmake ssl:build
 GNU_CONFIGURE=	yes
 
 EXTRA_PATCHES=	${FILESDIR}/bbftp.patch
@@ -20,12 +20,14 @@ USE_RC_SUBR=	bbftpd
 do-configure:
 	${CP} -f ${TEMPLATES}/config.guess ${WRKSRC}
 	${CP} -f ${TEMPLATES}/config.sub ${WRKSRC}
-	cd ${WRKSRC}/bbftpc && ./configure --prefix=${PREFIX} ${CONFIGURE_ARGS}
-	cd ${WRKSRC}/bbftpd && ./configure --prefix=${PREFIX} ${CONFIGURE_ARGS}
+	(cd ${WRKSRC}/bbftpc && ./configure --prefix=${PREFIX} \
+		${CONFIGURE_ARGS} --with-ssl=${OPENSSLBASE})
+	(cd ${WRKSRC}/bbftpd && ./configure --prefix=${PREFIX} \
+		${CONFIGURE_ARGS} --with-ssl=${OPENSSLBASE})
 
 do-build:
-	cd ${WRKSRC}/bbftpc && ${MAKE_CMD}
-	cd ${WRKSRC}/bbftpd && ${MAKE_CMD}
+	(cd ${WRKSRC}/bbftpc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
+	(cd ${WRKSRC}/bbftpd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbftpc/bbftp ${STAGEDIR}${PREFIX}/bin
