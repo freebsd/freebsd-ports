@@ -54,6 +54,8 @@ share/icons/hicolor/48x48/apps/xfce4-notifyd.png
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-notifyd.mo
+share/themes/Bright/xfce-notify-4.0/gtk.css
 share/themes/Default/xfce-notify-4.0/gtk.css
+share/themes/Retro/xfce-notify-4.0/gtk.css
 share/themes/Smoke/xfce-notify-4.0/gtk.css
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtk.css
