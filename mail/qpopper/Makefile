@@ -59,6 +59,8 @@ U_OPTION_DESC=	include support for user .qpopper-options
 OPTIONS_DEFAULT=	APOP SSL U_OPTION
 OPTION_SUB=	yes
 
+SSL_USES=	ssl
+
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MAPOP)
@@ -124,7 +126,6 @@ USE_RC_SUBR=	 ${PORTNAME}
 
 # The default is to build without SSL/TLS support.
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
