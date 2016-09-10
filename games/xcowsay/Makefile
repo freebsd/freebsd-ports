@@ -2,16 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Graphical configurable talking cow
 
-USE_GNOME=	gtk20
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
@@ -28,7 +32,8 @@ PLIST_FILES=	bin/xcowdream \
 
 OPTIONS_DEFINE=	DBUS
 
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+			libdbus-1.so:devel/dbus
 DBUS_CFLAGS=		-DWITH_DBUS
 DBUS_CONFIGURE_ENABLE=	dbus
 
