@@ -12,8 +12,9 @@ COMMENT=	SSL proxy for securing insecure connections
 
 LICENSE=	GPLv2+
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake ssl tar:tgz
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 SUB_FILES=	pkg-message
 
