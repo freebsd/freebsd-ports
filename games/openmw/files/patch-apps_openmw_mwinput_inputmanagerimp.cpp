@@ -1,4 +1,4 @@
---- apps/openmw/mwinput/inputmanagerimp.cpp.orig	2016-01-12 16:11:28 UTC
+--- apps/openmw/mwinput/inputmanagerimp.cpp.orig	2016-08-15 09:27:54 UTC
 +++ apps/openmw/mwinput/inputmanagerimp.cpp
 @@ -119,11 +119,12 @@ namespace MWInput
                  SDL_ControllerDeviceEvent evt;
