@@ -13,7 +13,7 @@ COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
 
-USES=		autoreconf:build jpeg libtool pkgconfig
+USES=		autoreconf:build jpeg libtool pkgconfig ssl
 USE_XORG=	x11 xfixes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
@@ -24,8 +24,8 @@ GH_TAGNAME=	64e2291
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-jpeg
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+LIBS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 CONFLICTS=	xrdp-[0-9]*
 # xrdp v0.7 is not compatible with current net/freerdp (1.0.2)
 #BUILD_DEPENDS+=	freerdp>=1.0.2:net/freerdp
