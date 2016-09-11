@@ -21,27 +21,19 @@ PORTDOCS=	README
 PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so \
 		lib/${PORTNAME}_option82_plugin.so
 
+OPTIONS_DEFINE=	DOCS
 # The modules use a new system libradius that is not committed yet
 #OPTIONS_DEFINE=	RADIUS_PLUGIN
-RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRADIUS_PLUGIN}
-PLIST_FILES+=	lib/${PORTNAME}_radius_plugin.so
-MAKE_ARGS=	-DWITH_RADIUS_PLUGIN
-.endif
+RADIUS_PLUGIN_DESC=		Build radius plugin
+RADIUS_PLUGIN_PLIST_FILES=	lib/${PORTNAME}_radius_plugin.so
+RADIUS_PLUGIN_MAKE_ON=		-DWITH_RADIUS_PLUGIN
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${STAGEDIR}/${PREFIX}#' \
+	@${REINPLACE_CMD} -e 's#/usr/local#${STAGEDIR}${PREFIX}#' \
 		${WRKSRC}/Makefile
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
