@@ -166,6 +166,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-apiclient/events.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/fileupload.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/localassetmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery-chrome.js
+lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery-winjs.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/contentuploader.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/mediasync.js
@@ -200,6 +201,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/nativec
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/datetime.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialoghelper/dialoghelper.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialoghelper/dialoghelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dom.js
@@ -290,10 +292,16 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/roboto/oO
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/roboto/style.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/roboto/ty9dfvLAziwdqQ2dHoyjphTbgVql8nDJpwnrE27mub0.woff2
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/formdialog.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fullscreen/fullscreen-doubleclick.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fullscreen/fullscreenmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/globalize.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide-settings.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide-settings.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/tvguide.template.html
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageeditor/imageeditor.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageeditor/imageeditor.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/basicimagefetcher.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/imagehelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/persistentimagefetcher.js
@@ -337,7 +345,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/objec
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/polyfills/raf.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/nativeprompt.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/prompt.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/style.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/prompt.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/qualityoptions.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreator/recordingcreator.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreator/recordingcreator.js
@@ -962,8 +970,6 @@ lib/emby-server/dashboard-ui/components/guestinviter/guestinviter.template.html
 lib/emby-server/dashboard-ui/components/humanedate.js
 lib/emby-server/dashboard-ui/components/imagedownloader/imagedownloader.js
 lib/emby-server/dashboard-ui/components/imagedownloader/imagedownloader.template.html
-lib/emby-server/dashboard-ui/components/imageeditor/imageeditor.js
-lib/emby-server/dashboard-ui/components/imageeditor/imageeditor.template.html
 lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.js
 lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.template.html
 lib/emby-server/dashboard-ui/components/libraryoptionseditor/libraryoptionseditor.js
@@ -1123,7 +1129,6 @@ lib/emby-server/dashboard-ui/librarysettings.html
 lib/emby-server/dashboard-ui/livetv.html
 lib/emby-server/dashboard-ui/livetvguideprovider.html
 lib/emby-server/dashboard-ui/livetvitems.html
-lib/emby-server/dashboard-ui/livetvrecordinglist.html
 lib/emby-server/dashboard-ui/livetvseriestimer.html
 lib/emby-server/dashboard-ui/livetvsettings.html
 lib/emby-server/dashboard-ui/livetvstatus.html
@@ -1205,8 +1210,8 @@ lib/emby-server/dashboard-ui/scripts/livetvcomponents.js
 lib/emby-server/dashboard-ui/scripts/livetvguide.js
 lib/emby-server/dashboard-ui/scripts/livetvguideprovider.js
 lib/emby-server/dashboard-ui/scripts/livetvitems.js
-lib/emby-server/dashboard-ui/scripts/livetvrecordinglist.js
 lib/emby-server/dashboard-ui/scripts/livetvrecordings.js
+lib/emby-server/dashboard-ui/scripts/livetvschedule.js
 lib/emby-server/dashboard-ui/scripts/livetvseriestimer.js
 lib/emby-server/dashboard-ui/scripts/livetvseriestimers.js
 lib/emby-server/dashboard-ui/scripts/livetvsettings.js
