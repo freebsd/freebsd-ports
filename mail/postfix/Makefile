@@ -4,6 +4,7 @@
 PORTNAME=	postfix
 PORTVERSION=	3.1.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://de.postfix.org/ftpmirror/ \
