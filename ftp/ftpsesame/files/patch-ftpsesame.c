@@ -1,6 +1,6 @@
---- ftpsesame.c.orig	Mon May  1 01:30:43 2006
-+++ ftpsesame.c	Mon May  1 01:30:51 2006
-@@ -663,7 +663,7 @@
+--- ftpsesame.c.orig	2004-10-05 12:07:24 UTC
++++ ftpsesame.c
+@@ -663,7 +663,7 @@ sig_close(int sig)
  	gotsig_close = 1;
  }
  
