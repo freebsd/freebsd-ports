@@ -1,5 +1,5 @@
 --- ./helper_functions.c.orig	2012-09-11 08:15:54.000000000 +0200
-+++ ./helper_functions.c	2012-12-11 14:41:28.000000000 +0100
++++ ./helper_functions.c	2015-04-05 20:52:59.850869370 +0200
 @@ -30,6 +30,11 @@
  #include <inttypes.h>
  #include <sys/types.h>
@@ -27,7 +27,38 @@
  int Get_Bits_Value(unsigned long val,int highbit, int lowbit){ 
  	unsigned long data = val;
  	int bits = highbit - lowbit + 1;
-@@ -234,7 +247,7 @@
+@@ -92,14 +105,22 @@
+ static inline void cpuid (unsigned int info, unsigned int *eax, unsigned int *ebx,
+                           unsigned int *ecx, unsigned int *edx)
+ {
+-    unsigned int _eax = info, _ebx, _ecx, _edx;
+-    asm volatile ("mov %%ebx, %%edi;" // save ebx (for PIC)
+-                  "cpuid;"
+-                  "mov %%ebx, %%esi;" // pass to caller
+-                  "mov %%edi, %%ebx;" // restore ebx
+-                  :"+a" (_eax), "=S" (_ebx), "=c" (_ecx), "=d" (_edx)
+-                  :      /* inputs: eax is handled above */
+-                  :"edi" /* clobbers: we hit edi directly */);
++    unsigned int _eax, _ebx, _ecx, _edx;
++    asm volatile (
++#ifdef __i386__
++        "pushl %%ebx\n"    // save ebx (for PIC)
++#else // __x86_64__
++        "pushq %%rbx\n"    // save rbx (for PIC)
++#endif
++        "cpuid\n"
++        "mov %%ebx, %1\n"  // pass to caller
++#ifdef __i386__
++        "popl %%ebx\n"     // restore ebx
++#else // __x86_64__
++        "popq %%rbx\n"     // restore rbx
++#endif
++        :"=a" (_eax), "=r" (_ebx), "=c" (_ecx), "=d" (_edx)
++        :"0" (info));
+     if (eax) *eax = _eax;
+     if (ebx) *ebx = _ebx;
+     if (ecx) *ecx = _ecx;
+@@ -234,7 +255,7 @@
      int bits;
      *error_indx =0;
  
@@ -36,7 +67,7 @@
      fd = open (msr_file_name, O_RDONLY);
      if (fd < 0)
      {
-@@ -255,11 +268,21 @@
+@@ -255,11 +276,21 @@
          }
      }
  
@@ -58,7 +89,7 @@
  
      close (fd);
  
-@@ -287,7 +310,7 @@
+@@ -287,7 +318,7 @@
      int fd;
      char msr_file_name[64];
  
@@ -67,7 +98,7 @@
      fd = open (msr_file_name, O_WRONLY);
      if (fd < 0)
      {
-@@ -304,11 +327,21 @@
+@@ -304,11 +335,21 @@
          }
      }
  
@@ -89,7 +120,7 @@
      close(fd);
      return(1);
  }
-@@ -487,10 +520,10 @@
+@@ -487,10 +528,10 @@
  void Test_Or_Make_MSR_DEVICE_FILES() 
  {
      //test if the msr file exists
@@ -103,7 +134,7 @@
          {
              //a system mght have been set with msr allowable to be written
              //by a normal user so...
-@@ -505,6 +538,7 @@
+@@ -505,6 +546,7 @@
          printf ("i7z DEBUG: msr device files DONOT exist, trying out a makedev script\n");
          if (geteuid () == 0)
          {
@@ -111,7 +142,7 @@
              //Try the Makedev script
              //sourced from MAKEDEV-cpuid-msr script in msr-tools
              system ("msr_major=202; \
-@@ -519,6 +553,9 @@
+@@ -519,6 +561,9 @@
  							");
              printf ("i7z DEBUG: modprobbing for msr\n");
              system ("modprobe msr");
@@ -121,7 +152,7 @@
          } else {
              printf ("i7z DEBUG: You DONOT have root privileges, mknod to create device entries won't work out\n");
              printf ("i7z DEBUG: A solution is to run this program as root\n");
-@@ -526,6 +563,7 @@
+@@ -526,6 +571,7 @@
          }
      }
  }
@@ -129,7 +160,7 @@
  double cpufreq_info()
  {
      //CPUINFO is wrong for i7 but correct for the number of physical and logical cores present
-@@ -543,6 +581,21 @@
+@@ -543,6 +589,21 @@
      fclose (tmp_file);
      return atof(tmp_str);
  }
@@ -151,7 +182,7 @@
  
  int check_and_return_processor(char*strinfo)
  {
-@@ -669,6 +722,7 @@
+@@ -669,6 +730,7 @@
      printf("Socket-%d [num of cpus %d physical %d logical %d] %s\n",socket->socket_num,socket->max_cpu,socket->num_physical_cores,socket->num_logical_cores,socket_list);
  }
  
@@ -159,7 +190,7 @@
  void construct_CPU_Heirarchy_info(struct cpu_heirarchy_info* chi)
  {
      FILE *fp = fopen("/proc/cpuinfo","r");
-@@ -715,7 +769,51 @@
+@@ -715,7 +777,51 @@
      chi->max_online_cpu = it_processor_num+1;
      fclose(fp);
  }

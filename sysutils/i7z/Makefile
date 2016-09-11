@@ -2,7 +2,7 @@
 
 PORTNAME=	i7z
 PORTVERSION=	0.27.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,10 +19,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-# Disable scheduling flags as they cause segfaults since they are enabled at
-# default FreeBSD optimization levels (-O2, -O3, -Os)
-CFLAGS+=	-fno-schedule-insns2 -fno-schedule-insns -fno-caller-saves
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
