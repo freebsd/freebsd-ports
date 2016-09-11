@@ -11,8 +11,7 @@ COMMENT=	TLS / SSL native driver for Erlang
 
 LICENSE=	GPLv2
 
-USE_OPENSSL=	yes
-USES=		erlang:rebar
+USES=		erlang:rebar ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
 GH_PROJECT=	tls
@@ -20,6 +19,10 @@ GH_TAGNAME=	e56321a
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv/lib/*.so
