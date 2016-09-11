@@ -5,4 +5,4 @@ card/sink/track to act on.
 This is a fork of the original xfce4-volumed to drop GStreamer support
 and use PulseAudio instead.
 
-WWW: https://launchpad.net/xfce4-volumed-pulse
+WWW: https://git.xfce.org/apps/xfce4-volumed-pulse/

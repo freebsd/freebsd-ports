@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-volumed-pulse
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	https://launchpadlibrarian.net/133628016/ \
-	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -19,7 +17,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 	libnotify.so:devel/libnotify \
 	libkeybinder.so:x11/keybinder
 
-USES=	pkgconfig gmake xfce tar:bz2
+USES=	gmake libtool pkgconfig tar:bz2 xfce
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
 USE_XFCE=	xfconf
