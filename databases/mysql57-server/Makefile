@@ -17,9 +17,9 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SLAVEDIRS=	databases/mysql57-client
-USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib cpe libedit localbase perl5 shebangfix
+USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib \
+		cpe libedit localbase perl5 shebangfix ssl
 
-USE_OPENSSL=	yes
 USE_PERL5=	run
 
 MY_DBDIR=	/var/db/mysql
