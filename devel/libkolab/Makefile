@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libkolab
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 
@@ -12,7 +12,10 @@ COMMENT=	Advanced Kolab Object Handling Library
 # itself to be LGPL3-licensed (and so are all the installed headers).
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libkolabxml.so:textproc/libkolabxml
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
+		libkolabxml.so:textproc/libkolabxml \
+		libxerces-c-3.1.so:textproc/xerces-c3
 
 # TODO: Conditionally enable the bindings based on OPTIONs.
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
@@ -22,7 +25,7 @@ CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
 USES=		cmake:outsource kde:4
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui xml \
+USE_QT4=	corelib dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
