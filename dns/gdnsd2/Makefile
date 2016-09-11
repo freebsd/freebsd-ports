@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://mirrors.rit.edu/zi/ \
