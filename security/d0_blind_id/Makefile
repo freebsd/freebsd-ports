@@ -15,11 +15,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	divVerent
 GH_TAGNAME=	ff1ce7e
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
