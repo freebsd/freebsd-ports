@@ -21,8 +21,10 @@ X11_CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ssl
 CONFIGURE_ARGS+=--program-prefix=''
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
