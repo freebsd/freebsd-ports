@@ -102,7 +102,7 @@ barman:*:157:
 pootle:*:158:
 nocat:*:159:
 _ypldap:*:160:
-# free: 161
+solr:*:161:
 # free: 162
 # free: 163
 # free: 164
