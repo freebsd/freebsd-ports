@@ -9,3 +9,5 @@ share/icons/hicolor/48x48/apps/flash-player-properties.png
 %%NO_ALSA%%%%LINUXBASE%%/usr/lib/libflashsupport.so
 %%NO_ALSA%%@dir %%LINUXBASE%%/usr/lib
 %%NO_ALSA%%@dir %%LINUXBASE%%/usr
+%%NO_ALSA%%@dir %%LINUXBASE%%
+%%NO_ALSA%%@dir /compat
