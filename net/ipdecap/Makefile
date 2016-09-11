@@ -22,7 +22,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lpefferkorn
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake
+USES=		autoreconf gmake ssl
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 regression-test: extract
 	cd ${WRKSRC}/unit_tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
