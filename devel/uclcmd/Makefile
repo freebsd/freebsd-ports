@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libucl.so:textproc/libucl
 
+BROKEN_FreeBSD_9=	does not build: requires mkostemp(3) which is only available on FreeBSD 10+
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	allanjude
 GH_TAGNAME=	0d336e9
