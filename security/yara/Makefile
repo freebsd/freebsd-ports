@@ -19,5 +19,7 @@ INSTALL_TARGET=	install-strip
 USES=		alias autoreconf libtool pathfix ssl
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
+CPPFLAGS+=	-I${OPENSSLINC}
+LIBS+=		-L${OPENSSLLIB}
 
 .include <bsd.port.mk>
