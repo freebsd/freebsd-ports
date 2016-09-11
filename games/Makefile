@@ -512,6 +512,7 @@
     SUBDIR += libggz
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
+    SUBDIR += liblcf
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
     SUBDIR += libretro-cores
