@@ -10,22 +10,22 @@ COMMENT=	TLS/SSL proxy server
 
 LICENSE=	MIT
 
-USES=	compiler:c++11-lang
+USES=		compiler:c++11-lang ssl
 USE_RC_SUBR=	titus
-
-USE_OPENSSL=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AGWA
 
-USERS=	titus titus-keys
-GROUPS=	nogroup
+USERS=		titus titus-keys
+GROUPS=		nogroup
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1002000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
 BROKEN=	Requires FreeBSD 10.2 or higher
 .endif
 
