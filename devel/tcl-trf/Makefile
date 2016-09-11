@@ -44,7 +44,9 @@ post-patch:
 	#
 	#	-DTRF_USE_MD
 	#
-USE_OPENSSL=	yes
+USES+=			ssl
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+CFLAGS+=		-I${OPENSSLINC}
 .endif
 
 do-install:
