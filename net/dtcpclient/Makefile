@@ -2,6 +2,7 @@
 
 PORTNAME=	dtcpclient
 PORTVERSION=	20151002
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
@@ -10,10 +11,8 @@ COMMENT=	Dynamic Tunnel Configuration Protocol client
 
 LICENSE=	BSD2CLAUSE
 
-USES=		ssl uidfix
+USES=		uidfix
 USE_RC_SUBR=	dtcpclient
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	man/man8/dtcpclient.8.gz \
 		sbin/dtcpclient \

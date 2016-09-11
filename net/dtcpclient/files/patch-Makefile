@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-10-02 08:23:57 UTC
++++ Makefile
+@@ -45,7 +45,7 @@ MANDIR=		$(PREFIX)/man/man
+ 
+ CFLAGS+=	-Wall -DPREFIX=\"$(PREFIX)\"
+ 
+-.if ($(OPSYS) == "FreeBSD")
++.if ($(OPSYS) == "FreeBSD") || ($(OPSYS) == "DragonFly")
+ CFLAGS+=	-DHAVE_MD5
+ LDADD=		-lmd
+ .elif ($(OPSYS) == "NetBSD") || ($(OPSYS) == "OpenBSD")
