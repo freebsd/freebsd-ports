@@ -14,7 +14,7 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
 USES=		libtool pathfix perl5 ssl tar:bzip2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
