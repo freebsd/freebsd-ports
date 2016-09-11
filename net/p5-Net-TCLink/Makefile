@@ -14,8 +14,9 @@ COMMENT=	Module to for connecting to the TrustCommerce payment gateway
 
 LICENSE=	LGPL21
 
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_PERL5=	configure
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.mk>
