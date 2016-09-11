@@ -16,7 +16,9 @@ GH_ACCOUNT=	scslab
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf libtool
+USES=		autoreconf libtool ssl
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 INSTALL_TARGET=	install-strip
 
 USERS=		tcpcryptd
