@@ -11,8 +11,10 @@ DISTNAME=	${PORTNAME}-1.04
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	FTP proxy that wraps data and control with TLS/SSL
 
+USES=		ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
+CFLAGS+=	-I${OPENSSLINC}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,8 +25,8 @@ post-patch:
 		${WRKSRC}/misc.[ch] ${WRKSRC}/network.c ${WRKSRC}/tlswrap.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tlswrap ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tlswrap ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
