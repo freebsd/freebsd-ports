@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	facile
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 MASTER_SITES=	http://opti.recherche.enac.fr/facile/distrib/
 
