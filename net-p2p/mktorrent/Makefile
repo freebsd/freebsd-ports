@@ -24,6 +24,10 @@ THREADS_DESC=	Enable support for pthreads
 OPENSSL_DESC=	Use OpenSSL for hashing
 HASHCHECK_DESC=	Verify file hashes
 
+OPENSSL_USES=		ssl
+OPENSSL_CFLAGS=		-I${OPENSSLINC}
+OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -32,7 +36,6 @@ MAKE_FLAGS+=	USE_PTHREADS=1
 
 .if ${PORT_OPTIONS:MOPENSSL}
 MAKE_FLAGS+=	USE_OPENSSL=1
-USE_OPENSSL=	yes
 .endif
 
 .if ! ${PORT_OPTIONS:MHASHCHECK}
