@@ -48,8 +48,8 @@ include/saml/signature/SignatureProfileValidator.h
 include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
 lib/libsaml.so
-lib/libsaml.so.8
-lib/libsaml.so.8.0.5
+lib/libsaml.so.9
+lib/libsaml.so.9.0.0
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
