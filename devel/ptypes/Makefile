@@ -9,43 +9,44 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Portable Types Library
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 SHLIB_VER=	21
 
-USE_LDCONFIG=	yes
-PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PTYPES_CFLAGS=	${CFLAGS}
+MAKE_ARGS=	DEBUG_FLAGS="${DEBUG_FLAGS}" PTYPES_CFLAGS="${PTYPES_CFLAGS}"
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS DOCS
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS DOCS EXAMPLES
 
-.if ${PORT_OPTIONS:MDEBUG}
-DEBUG_FLAGS=	"-DDEBUG -g"
-.endif
-.if ${PORT_OPTIONS:MOPTIMIZED}
-PTYPES_CFLAGS+=-O2
-.endif
+DEBUG_VARS=		DEBUG_FLAGS="-DDEBUG -g"
+OPTIMIZED_CFLAGS_VARS=	PTYPES_CFLAGS+="-O2"
 
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}" PTYPES_CFLAGS="${PTYPES_CFLAGS}"
+pre-install:
+	@${RM} -f ${WRKSRC}/include/*.orig
+	@${RM} -f ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/ptypes
-	${RM} -f ${WRKSRC}/include/*.orig
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ptypes
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include/ptypes
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/so/libptypes.so.${SHLIB_VER} \
-		${STAGEDIR}${PREFIX}/lib
-	cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf libptypes.so.${SHLIB_VER} libptypes.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/so/libptypes.so.${SHLIB_VER} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libptypes.so.${SHLIB_VER} ${STAGEDIR}${PREFIX}/lib/libptypes.so
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/wshare
-	-${RM} -f ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/wshare
 	${INSTALL_DATA} ${WRKSRC}/wshare/*.* ${STAGEDIR}${EXAMPLESDIR}/wshare
 	${INSTALL_PROGRAM} ${WRKSRC}/wshare/wshare ${STAGEDIR}${EXAMPLESDIR}/wshare
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc; ${TAR} cf - *| ${TAR} xf - -C ${STAGEDIR}${DOCSDIR}/doc
-.endif
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "index.html doc" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
