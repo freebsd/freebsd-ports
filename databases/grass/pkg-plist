@@ -2413,6 +2413,8 @@ bin/grass64
 %%GRASS_INST_DIR%%/etc/wxpython/gui_core/toolbars.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_core/widgets.py
 %%GRASS_INST_DIR%%/etc/wxpython/gui_core/widgets.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_core/wxlibplot.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_core/wxlibplot.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/icons/__init__.py
 %%GRASS_INST_DIR%%/etc/wxpython/icons/__init__.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/icons/grass2_icons.py
