@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
-USES=		libtool pathfix perl5 tar:bzip2
+USES=		libtool pathfix perl5 ssl tar:bzip2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
 INSTALL_TARGET=	install-strip
