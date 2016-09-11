@@ -2,38 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	bullet
-PORTVERSION=	2.82
-PORTREVISION=	3
+PORTVERSION=	2.83.7
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D collision detection and rigid body dynamics library
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics
 GH_PROJECT=	bullet3
 
+USES=		cmake tar:tgz
 USE_GL=		gl glu glut
+USE_LDCONFIG=	yes
 USE_XORG=	x11
 
-USES=		cmake tar:tgz
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
-
-CPPFLAGS+=	-I${LOCALBASE}/include
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DBUILD_BULLET2_DEMOS:BOOL=OFF
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|{OPENGL_glu_LIBRARY}|{OPENGL_glu_LIBRARY} -lcompat|g" ${WRKSRC}/Demos/AllBulletDemos/CMakeLists.txt
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pdf ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/BulletLicense.txt ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}/${DOCSDIR}/CHANGELOG
+	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>
