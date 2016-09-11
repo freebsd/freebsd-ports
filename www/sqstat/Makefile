@@ -11,36 +11,37 @@ MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script which allows to look through active squid users connections
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
+USES=		php
 USE_PHP=	pcre session
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+NO_ARCH=	yes
 
 SQSTATDIR?=	share/${PORTNAME}
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_LIST=	SQSTATDIR=${SQSTATDIR}
 
 PLIST_FILES=	${SQSTATDIR}/arrow.gif ${SQSTATDIR}/sqstat.class.php \
 		${SQSTATDIR}/sqstat.css ${SQSTATDIR}/sqstat.php \
 		${SQSTATDIR}/zhabascript.js \
 		${SQSTATDIR}/config.inc.php.defaults
-PORTDOCS=	CHANGES FAQ LICENSE README TODO
+PORTDOCS=	CHANGES FAQ README TODO
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SQSTATDIR}; \
-	for f in ${PLIST_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f##*/} ${STAGEDIR}${PREFIX}/${SQSTATDIR}; \
-	done
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
-	for f in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/docs/$$f ${STAGEDIR}${DOCSDIR}; \
-	done
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SQSTATDIR}
+.for f in ${PLIST_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${f:T} ${STAGEDIR}${PREFIX}/${SQSTATDIR}
+.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
