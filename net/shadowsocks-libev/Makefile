@@ -16,7 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	madeye
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla
+USES=		gmake libtool:keepla ssl
+CPPFLAGS+=	-I${OPENSSLINC}
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+
 # Help solve building error since the integrated libsodium enables this option.
 CFLAGS+=	-fstack-protector
 
