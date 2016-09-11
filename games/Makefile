@@ -217,6 +217,7 @@
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += dustrac
+    SUBDIR += easyrpg-player
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss
