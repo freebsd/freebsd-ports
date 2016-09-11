@@ -10,12 +10,12 @@ COMMENT=	RFC6287 (OCRA) PAM module
 
 LICENSE=	BSD2CLAUSE
 
-USES=		uidfix
-USE_OPENSSL=	yes
-
+USES=		ssl uidfix
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	sg2342
+
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	lib/pam_ocra.so \
 		lib/pam_ocra.so.0 \
@@ -23,12 +23,10 @@ PLIST_FILES=	lib/pam_ocra.so \
 		man/man8/pam_ocra.8.gz \
 		man/man8/ocra_tool.8.gz
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_9=	does not build with 9.x base OpenSSL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
