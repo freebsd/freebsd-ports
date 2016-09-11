@@ -16,8 +16,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
-USE_OPENSSL=	yes
+USES=		gmake perl5 ssl
+
+CONFIGURE_ARGS+=	--with-openssl-prefix=${OPENSSLBASE}
 
 # security/openssl already has a verify.1 manpage.
 post-stage:
