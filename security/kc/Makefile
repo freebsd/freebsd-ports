@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpcre.so:devel/pcre
 
-USES=		libedit pkgconfig uidfix
+USES=		libedit pkgconfig ssl uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	levaidaniel
 
