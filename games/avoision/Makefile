@@ -10,12 +10,12 @@ MASTER_SITES=	SF/avsn/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple collect-dots-avoid-blocks game
 
-LICENSE=	GPLv2 CCbyNCSA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
+LICENSE=	GPLv2+ CCbySA3
+LICENSE_COMB=	multi
+LICENSE_NAME_CCbySA3=Attribution-ShareAlike 3.0 Unported
 LICENSE_FILE=	${WRKSRC}/License.txt
-LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
+LICENSE_FILE_CCbySA3=	${WRKSRC}/License.txt
+LICENSE_PERMS_CCbySA3=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:graphics/radius-engine
 LIB_DEPENDS=	liblua-5.1.so:lang/lua51 \
