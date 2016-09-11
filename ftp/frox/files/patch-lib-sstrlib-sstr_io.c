@@ -1,5 +1,5 @@
---- lib/sstrlib/sstr_io.c.orig	2005-02-04 13:24:55.000000000 +0300
-+++ lib/sstrlib/sstr_io.c	2007-12-14 18:07:15.000000000 +0300
+--- lib/sstrlib/sstr_io.c.orig	2005-02-04 10:24:55 UTC
++++ lib/sstrlib/sstr_io.c
 @@ -26,6 +26,7 @@
  #include <sys/ioctl.h>
  #include <unistd.h>
@@ -8,7 +8,7 @@
  
  #include "sstr.h"
  #include "sstr_private.h"
-@@ -61,8 +62,14 @@
+@@ -61,8 +62,14 @@ int sstr_apprintf(sstr * p, const char *
  int sstr_append_read(int fd, sstr * p, int cnt)
  {
  	int i;
