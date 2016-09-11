@@ -10,13 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for writing servers
 
-USES=		pathfix pkgconfig libtool
+USES=		libtool pathfix pkgconfig ssl
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 OPTIONS_DEFINE=	DOCS
 
