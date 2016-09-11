@@ -3,7 +3,7 @@
 
 PORTNAME=	blast+
 PORTVERSION=	2.2.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
@@ -16,8 +16,7 @@ COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libbz2.so:archivers/bzip2
+LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
