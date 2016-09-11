@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Removes jetty war cache
-#
-if [ "$2" = "DEINSTALL" ]; then
-   rm -rf $PKG_PREFIX/share/examples/apache-solr/solr-webapp/*
-fi

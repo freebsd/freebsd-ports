@@ -39,12 +39,30 @@ load_rc_config $name
 : ${solr_enable:=NO}
 : ${solr_instance:=/var/db/solr}
 
-required_files=${solr_instance}/solr.xml
-pidfile=/var/run/solr.pid
-command=/usr/sbin/daemon
-procname=`env JAVAVM_DRYRUN=true JAVA_VERSION=1.7+ %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -f 2 -d =`
-start_precmd="cd %%EXAMPLESDIR%%"
+solr_start ()
+{
+	su -m solr -c "${command} start"
+}
 
-command_args="-f -p ${pidfile} ${procname} ${solr_flags} -Dsolr.solr.home=${solr_instance} -Dsolr.log=/var/log -jar %%EXAMPLESDIR%%/start.jar"
+solr_stop ()
+{
+	su -m solr -c "${command} stop"
+}
+
+solr_status ()
+{
+	su -m solr -c "${command} status"
+}
+
+# add %%PREFIX%%/bin to path
+export PATH=$PATH:%%PREFIX%%/bin
+# let the start script read some custom settings
+export SOLR_INCLUDE=/usr/local/etc/solr.in.sh
+
+required_files="${solr_instance}/solr.xml /usr/local/etc/solr.in.sh ${solr_instance}/log4j.properties"
+command=%%PREFIX%%/solr/bin/solr
+start_cmd=solr_start
+stop_cmd=solr_stop
+status_cmd=solr_status
 
 run_rc_command "$1"
