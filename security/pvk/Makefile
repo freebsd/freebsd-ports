@@ -11,7 +11,14 @@ EXTRACT_SUFX=	.tgz.bin
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Tool to convert a RSA key in PEM format into a PVK file and vice versa
 
+USES=		ssl
 WRKSRC=		${WRKDIR}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|\(-lcrypto\)|$$(LDFLAGS) \1|g' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pvk ${STAGEDIR}${PREFIX}/bin
