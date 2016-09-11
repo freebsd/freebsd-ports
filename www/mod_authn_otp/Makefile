@@ -14,14 +14,17 @@ COMMENT=	Apache module for one-time password authentication
 
 LICENSE=	APACHE20
 
+USES=		ssl
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+
+
+CPPFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PORTEXAMPLES=	users.sample
 
 OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-configure:
 	@${REINPLACE_CMD} 's|CFLAGS =|CFLAGS ?=|' \
