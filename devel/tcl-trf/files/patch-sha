@@ -1,20 +1,27 @@
---- generic/sha.c	2009-07-12 21:34:41.000000000 -0400
-+++ generic/sha.c	2009-07-12 23:11:26.000000000 -0400
-@@ -29,12 +29,5 @@
+--- generic/sha.c.orig	2009-06-18 04:54:44 UTC
++++ generic/sha.c
+@@ -27,15 +27,11 @@
+  * CVS: $Id: sha.c,v 1.4 2007/10/05 23:12:21 andreas_kupries Exp $
+  */
  
- #include "transformInt.h"
+-#include "transformInt.h"
 -#include "sha/sha.h"
--
++#include <openssl/opensslconf.h>
++#ifndef OPENSSL_NO_SHA0
+ 
 -#ifdef WORDS_BIGENDIAN
 -#undef  LITTLE_ENDIAN
 -#else
 -#undef  LITTLE_ENDIAN
 -#define LITTLE_ENDIAN
 -#endif
++#include "transformInt.h"
 +#include <openssl/sha.h>
  
  /*
-@@ -46,30 +39,8 @@
+  * Generator description
+@@ -45,32 +41,10 @@
+  * message digest.
   */
  
 -#define DIGEST_SIZE               (SHA_DIGESTSIZE)
@@ -47,7 +54,9 @@
 -
  /*
   * Generator definition.
-@@ -80,8 +51,8 @@
+  */
+@@ -79,10 +53,10 @@ static Trf_MessageDigestDescription mdDe
+   "sha",
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDsha_Start,
@@ -60,7 +69,9 @@
 +  (Trf_MDFinal *)SHA_Final,
    NULL
  };
-@@ -111,181 +82,2 @@
+ 
+@@ -110,182 +84,5 @@ Tcl_Interp* interp;
+ {
    return Trf_RegisterMessageDigest (interp, &mdDescription);
  }
 -
@@ -118,7 +129,7 @@
 -unsigned int   character;
 -{
 -  sha_trf_info* s = (sha_trf_info*) context;
--
+ 
 -  s->buf [s->count] = character;
 -  s->count ++;
 -
@@ -228,7 +239,7 @@
 -
 -#ifndef WORDS_BIGENDIAN
 -  Trf_FlipRegisterLong (s->s.digest, SHA_DIGESTSIZE);
--#endif
+ #endif
 -
 -  memcpy (digest, s->s.digest, SHA_DIGESTSIZE);
 -}
