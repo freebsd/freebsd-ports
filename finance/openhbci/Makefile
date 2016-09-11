@@ -11,10 +11,12 @@ DISTNAME=	openhbci-0.9.17-2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HBCI is a bank-independent homebanking standard
 
-USES=		libtool
+USES=		libtool ssl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS+=--with-openssl-includes=${OPENSSLINC} \
+		--with-openssl-libs=${OPENSSLLIB}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.17
 
