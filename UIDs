@@ -107,7 +107,7 @@ barman:*:157:157::0:0:Barman user:/var/barman:/bin/sh
 pootle:*:158:158::0:0:Pootle User:/var/db/pootle:/usr/sbin/nologin
 nocat:*:159:159::0:0:NoCat Daemon:/libexec/nocat:/sbin/nologin
 _ypldap:*:160:160::0:0:YP Ldap unprivileged user:/var/empty:/usr/sbin/nologin
-# free: 161
+solr:*:161:161::0:0:Apache Solr System:/var/db/solr:/usr/sbin/nologin
 # free: 162
 # free: 163
 # free: 164

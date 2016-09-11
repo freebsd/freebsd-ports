@@ -1,0 +1,31 @@
+=======================================================================
+
+Make sure to edit the following files to adapt to your setup:
+
+%%LOCALBASE%%/etc/solr.in.sh
+/var/db/solr/solr.xml
+/var/db/solr/log4j.properties
+
+All files are configured to have your solr instances running in
+/var/db/solr/<instancename>
+
+For more information how to configure solr check the manual:
+http://lucene.apache.org/solr/resources.html#documentation
+
+The port is configured to listen only on localhost, port 8983.
+
+To have a working initial config, use:
+
+cp -R %%LOCALBASE%%/solr/example/example-DIH/solr/solr /var/db/solr/
+chown -R www /var/db/solr/solr
+
+To rotate solr log files include /var/log/solr/ to your log rotation
+configuration.
+
+To enable the port execute:
+sysrc solr_enable="YES"
+
+And start it with:
+service solr start
+
+=======================================================================

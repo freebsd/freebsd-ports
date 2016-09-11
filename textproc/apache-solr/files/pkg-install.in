@@ -1,0 +1,22 @@
+#! /bin/sh
+#
+PATH=/bin:/usr/bin:/usr/sbin
+
+set -e
+case "$2" in
+
+POST-INSTALL)
+	echo "---> Starting post-install script"
+	LC_ALL=C
+	export LC_ALL
+
+	echo "Fix permissions"
+	/usr/sbin/chown -R solr /var/db/solr
+	/usr/bin/chgrp -R solr /var/db/solr
+	/usr/sbin/chown -R solr /var/log/solr
+	/usr/bin/chgrp -R solr /var/log/solr
+	echo "done."
+	echo ""
+
+	;;
+esac
