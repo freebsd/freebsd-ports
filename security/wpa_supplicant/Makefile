@@ -9,12 +9,12 @@ MASTER_SITES=	http://w1.fi/releases/
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
-USES=		cpe gmake readline
-USE_OPENSSL=	yes
+USES=		cpe gmake readline ssl
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
-LDFLAGS+=	-lutil
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB} -lutil
 
 SUB_FILES=	pkg-message
 PORTDOCS=	README ChangeLog
