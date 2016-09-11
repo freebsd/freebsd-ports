@@ -6,7 +6,7 @@ PORTVERSION=	0.6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Escape of the cat - hardcode oldschool platformer
+COMMENT=	Escape of the cat - hardcore oldschool platformer
 
 LICENSE=	CCbySA30 CCbySA40
 LICENSE_COMB=		multi
@@ -40,6 +40,6 @@ DESKTOP_ENTRIES="Escape of the cat" \
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pic/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
