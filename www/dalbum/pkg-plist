@@ -91,6 +91,6 @@
 @dir %%DALBUM_DIR%%/images
 @dir %%DALBUM_DIR%%/config
 @dir %%DALBUM_DIR%%/.private
-@dir %%DALBUM_DIR%%
+@dir(,,775) %%DALBUM_DIR%%
 @owner
 @group
