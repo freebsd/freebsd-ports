@@ -13,7 +13,8 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	High-speed network authentication cracking tool
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.mk>
