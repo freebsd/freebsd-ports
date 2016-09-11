@@ -14,8 +14,10 @@ LICENSE=	BSD2CLAUSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2
 
-USES=		python
+USES=		python ssl
 USE_PYTHON=	autoplist distutils
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scrypt.so
