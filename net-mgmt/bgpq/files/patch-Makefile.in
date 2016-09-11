@@ -6,8 +6,8 @@
  install: bgpq
 -	$(INSTALL) -s -m 755 bgpq @prefix@@bindir@
 -	$(INSTALL) -m 644 bgpq.8 @prefix@@mandir@/man8
-+	$(INSTALL) -s -m 755 bgpq $(DESTDIR)@prefix@@bindir@
-+	$(INSTALL) -m 644 bgpq.8 $(DESTDIR)@mandir@/man8
++	$(BSD_INSTALL_PROGRAM) bgpq $(DESTDIR)@prefix@@bindir@
++	$(BSD_INSTALL_MAN) bgpq.8 $(DESTDIR)@mandir@/man8
  
  test: bgpq
  	@rm -f test.out ]
