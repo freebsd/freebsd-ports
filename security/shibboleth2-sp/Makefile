@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.5.6
+PORTVERSION=	2.6.0
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -10,9 +10,13 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
-LIB_DEPENDS=	libsaml.so.8:security/opensaml2 libodbc.so:databases/unixODBC
+LIB_DEPENDS=	libsaml.so:security/opensaml2 libodbc.so:databases/unixODBC \
+		libxmltooling-lite.so:devel/xmltooling \
+		liblog4shib.so:devel/log4shib \
+		libxerces-c-3.1.so:textproc/xerces-c3 \
+		libxml-security-c.so:security/apache-xml-security-c
 
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes

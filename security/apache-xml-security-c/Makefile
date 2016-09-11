@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security-c
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.7.3
 CATEGORIES=	security
 MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-
@@ -19,7 +18,7 @@ LIB_DEPENDS+=	libxerces-c.so.3:textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-USES=		gmake libtool
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 
