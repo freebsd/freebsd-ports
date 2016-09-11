@@ -1,0 +1,31 @@
+# $FreeBSD$
+# Sample config file for nghttpx in proxy forwarding mode.
+
+# See https://nghttp2.org/documentation/nghttpx.1.html for
+# an online reference.
+
+# Where to relay to, where to listen
+backend=127.0.0.1,80
+frontend=*,443
+
+# Provide the default SSL certificate file and private key
+# You should use a full chain certificate - your certificate
+# with any intermediates appended.
+private-key-file=/etc/ssl/mycert/privkey.pem
+certificate-file=/etc/ssl/mycert/fullchain.pem
+
+# Use subcert= to add extra certificates for SNI processing
+
+# Logs
+accesslog-file=/var/log/nghttpx-access.log
+errorlog-file=/var/log/nghttpx-error.log
+
+# Record where the requests came from
+strip-incoming-x-forwarded-for=yes
+add-x-forwarded-for=yes
+strip-incoming-forwarded=yes
+add-forwarded=by,for,host,proto
+
+# Don't hash forwarded-for stuff, use the actual information
+forwarded-by=ip
+forwarded-for=ip

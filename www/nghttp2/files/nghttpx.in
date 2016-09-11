@@ -1,0 +1,47 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: nghttpx
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nghttpx:
+# nghttpx_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable nghttpx
+# nghttpx_flags (str):		Set to "" by default.
+#				Extra flags passed to start command.
+#				Use --user=foo here if you wish. Make sure
+#				fetch-ocsp-response can read the certificate files and
+#				log-file directives can write their files.
+
+. /etc/rc.subr
+
+name="nghttpx"
+rcvar=nghttpx_enable
+
+command="%%PREFIX%%/bin/nghttpx"
+reopenlogs_cmd="nghttpx_reopenlogs"
+extra_commands="reload reopenlogs"
+pidfile="/var/run/${name}.pid"
+sig_reload="USR2"		# exec-self reload; Note: future versions have SIGHUP to reload
+sig_stop="QUIT"			# graceful stop
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${nghttpx_enable="NO"}
+: ${nghttpx_configfile:=%%PREFIX%%/etc/nghttpx/${name}.conf}
+: ${nghttpx_env:="PATH=/bin:/usr/bin:%%PREFIX%%/bin"}	# Must include %%PREFIX%%/bin for python and fetch-ocsp-response
+
+required_files="$nghttpx_configfile"
+
+command_args="--conf ${nghttpx_configfile} --pid-file=${pidfile} --daemon"
+
+nghttpx_reopenlogs()
+{
+	echo "Reopening log files:"
+	sig_reload="USR1"
+	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
+}
+
+run_rc_command "$1"
