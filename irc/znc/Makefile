@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
 USES=		compiler:c++11-lib cpe gmake iconv pkgconfig
+MAKE_ENV=	V=1
 
 OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 OPENSSL PERL PYTHON TCL
 OPTIONS_DEFAULT=	OPENSSL PERL
@@ -38,7 +39,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-OPENSSL_USE=	openssl=yes
+OPENSSL_USES=	ssl
 PERL_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PERL_CONFIGURE_ENABLE=	perl
 PERL_CONFIGURE_ON=	--enable-swig
@@ -71,7 +72,7 @@ post-patch:
 		's#/usr/local#${LOCALBASE}#' ${WRKSRC}/configure
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
