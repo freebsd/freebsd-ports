@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		tar:tgz uidfix
-USE_OPENSSL=	yes
+USES=		ssl tar:tgz uidfix
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 # Install into ${STAGEDIR}${PREFIX}; but the build respects ${DESTDIR} so
 # all we need to give is the ${PREFIX}/bin part.
