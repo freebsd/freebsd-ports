@@ -9,6 +9,9 @@ MASTER_SITES=	SF/checkpasswd-pam/checkpasswd-pam/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of checkpassword authentication program
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/checkpassword-pam \
