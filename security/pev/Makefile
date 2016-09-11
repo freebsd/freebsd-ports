@@ -16,11 +16,11 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 MAKE_ARGS=	MAKE=${MAKE_CMD}
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.mk>
