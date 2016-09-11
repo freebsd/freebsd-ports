@@ -62,6 +62,7 @@ include/xmltooling/soap/SOAP.h
 include/xmltooling/soap/SOAPClient.h
 include/xmltooling/soap/SOAPTransport.h
 include/xmltooling/unicode.h
+include/xmltooling/util/CloneInputStream.h
 include/xmltooling/util/CurlURLInputStream.h
 include/xmltooling/util/DateTime.h
 include/xmltooling/util/NDC.h
@@ -81,11 +82,11 @@ include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
-lib/libxmltooling-lite.so.6
-lib/libxmltooling-lite.so.6.0.5
+lib/libxmltooling-lite.so.7
+lib/libxmltooling-lite.so.7.0.0
 lib/libxmltooling.so
-lib/libxmltooling.so.6
-lib/libxmltooling.so.6.0.5
+lib/libxmltooling.so.7
+lib/libxmltooling.so.7.0.0
 libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd
