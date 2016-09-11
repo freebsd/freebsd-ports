@@ -1,9 +1,10 @@
 %%HPACK%%bin/deflatehd
-bin/h2load
+%%APP%%bin/h2load
 %%HPACK%%bin/inflatehd
-bin/nghttp
-bin/nghttpd
-bin/nghttpx
+%%APP%%bin/nghttp
+%%APP%%bin/nghttpd
+%%APP%%bin/nghttpx
+@sample etc/nghttpx/nghttpx.conf.sample etc/nghttpx/nghttpx.conf
 %%ASIO%%include/nghttp2/asio_http2.h
 %%ASIO%%include/nghttp2/asio_http2_client.h
 %%ASIO%%include/nghttp2/asio_http2_server.h
@@ -12,14 +13,14 @@ include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
 lib/libnghttp2.so.14
-lib/libnghttp2.so.14.8.0
+lib/libnghttp2.so.14.10.0
 %%ASIO%%lib/libnghttp2_asio.a
 %%ASIO%%lib/libnghttp2_asio.so
 %%ASIO%%lib/libnghttp2_asio.so.1
 %%ASIO%%lib/libnghttp2_asio.so.1.0.0
 libdata/pkgconfig/libnghttp2.pc
 %%ASIO%%libdata/pkgconfig/libnghttp2_asio.pc
-man/man1/h2load.1.gz
-man/man1/nghttp.1.gz
-man/man1/nghttpd.1.gz
-man/man1/nghttpx.1.gz
+%%APP%%man/man1/h2load.1.gz
+%%APP%%man/man1/nghttp.1.gz
+%%APP%%man/man1/nghttpd.1.gz
+%%APP%%man/man1/nghttpx.1.gz
