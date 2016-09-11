@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
-DISTVERSION=	1.7.2
-PORTREVISION=	1
+DISTVERSION=	1.7.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com
@@ -15,16 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-source-parsers
 
-USES=		dos2unix scons
+USES=		compiler:features dos2unix scons
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	platform=linux-gcc
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-# NOTE Certain newest compiler features unlock some parts of jsoncpp API (ex. see JSON_HAS_RVALUE_REFERENCES).
-# Use c++11 above to be most inclusive.
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 33 || \
+    ${COMPILER_TYPE} == gcc   && ${COMPILER_VERSION} >= 48
+# Certain new compiler features unlock parts of jsoncpp API (ex. see JSON_HAS_RVALUE_REFERENCES).
+# Use c++11 above to be the most inclusive.
 USES+=		compiler:c++11-lang
 CXXFLAGS+=	--std=c++11
 .endif
