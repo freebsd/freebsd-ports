@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of `WHO iS ONline' protocol
 
+LICENSE=	PD OpenSSL
+LICENSE_COMB=	multi
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config=${PREFIX}/etc/whoson.conf
@@ -21,13 +24,11 @@ PORTDOCS=	README ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libwhoson.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libwhoson.so.0
 
 .include <bsd.port.mk>
