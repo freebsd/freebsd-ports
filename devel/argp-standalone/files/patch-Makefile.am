@@ -1,5 +1,5 @@
---- Makefile.am.orig	2009-05-28 15:19:50.000000000 +0200
-+++ Makefile.am	2009-05-28 15:30:57.000000000 +0200
+--- Makefile.am.orig	2004-02-23 17:57:28 UTC
++++ Makefile.am
 @@ -21,20 +21,20 @@
  AUTOMAKE_OPTIONS = foreign
  SUBDIRS = . testsuite
