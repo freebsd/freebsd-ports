@@ -11,6 +11,8 @@ COMMENT=	Pure console visual file manager
 
 LICENSE=	LGPL3
 
+BROKEN=		unfetchable (project moved to github)
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid
 
