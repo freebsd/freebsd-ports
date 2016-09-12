@@ -13,8 +13,7 @@ COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 
-USES=		dos2unix gmake
-USE_OPENSSL=	yes
+USES=		dos2unix gmake ssl
 MAKE_ENV=	LFLAGS="${LDFLAGS}"
 MAKE_JOBS_UNSAFE= yes
 
@@ -33,7 +32,6 @@ post-patch:
 		${REINPLACE_CMD} -e '/CC/s| =| ?=|; \
 		 s|-O3 -g||; s|-D_ISOC99_SOURCE||; \
 		 s|-D_XOPEN_SOURCE=500||; \
-		 s|/usr/local/ssl|${OPENSSLBASE}|; \
 		 s|-I/usr/local/include/boost-1_33_1||; \
 		 s|-L/usr/local/lib||; s|-lpthread|-lcompat|'
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -42,6 +40,11 @@ post-patch:
 		 s|open64|open|; s|stat64|stat|'
 	@${REINPLACE_CMD} -e \
 		'/<curl\/types.h>/d' ${WRKSRC}/flutelib/http_file_repair.h
+	@${REINPLACE_CMD} -e "s|/usr/local/ssl|${OPENSSLBASE}|" \
+		${WRKSRC}/flute/Makefile \
+		${WRKSRC}/multis_flute/Makefile \
+		${WRKSRC}/repair_sender/Makefile \
+		${WRKSRC}/UnitTest/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/flute \
