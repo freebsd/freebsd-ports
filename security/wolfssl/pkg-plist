@@ -93,7 +93,6 @@ include/wolfssl/callbacks.h
 include/wolfssl/certs_test.h
 include/wolfssl/crl.h
 include/wolfssl/error-ssl.h
-include/wolfssl/mem_track.h
 include/wolfssl/ocsp.h
 include/wolfssl/openssl/asn1.h
 include/wolfssl/openssl/bio.h
@@ -146,6 +145,7 @@ include/wolfssl/wolfcrypt/blake2.h
 include/wolfssl/wolfcrypt/camellia.h
 include/wolfssl/wolfcrypt/chacha.h
 include/wolfssl/wolfcrypt/chacha20_poly1305.h
+include/wolfssl/wolfcrypt/cmac.h
 include/wolfssl/wolfcrypt/coding.h
 include/wolfssl/wolfcrypt/compress.h
 include/wolfssl/wolfcrypt/curve25519.h
@@ -167,6 +167,7 @@ include/wolfssl/wolfcrypt/logging.h
 include/wolfssl/wolfcrypt/md2.h
 include/wolfssl/wolfcrypt/md4.h
 include/wolfssl/wolfcrypt/md5.h
+include/wolfssl/wolfcrypt/mem_track.h
 include/wolfssl/wolfcrypt/memory.h
 include/wolfssl/wolfcrypt/misc.h
 include/wolfssl/wolfcrypt/mpi_class.h
@@ -192,5 +193,5 @@ include/wolfssl/wolfcrypt/wc_port.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.3
-lib/libwolfssl.so.3.2.0
+lib/libwolfssl.so.3.4.0
 libdata/pkgconfig/wolfssl.pc
