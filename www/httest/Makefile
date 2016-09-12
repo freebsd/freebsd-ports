@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-lua-module \
 		--with-ssl="${OPENSSLLIB}"
 CPPFLAGS+=	-I${LUA_INCDIR}
 GNU_CONFIGURE=	yes
-USES=		iconv lua libtool bdb
+USES=		iconv lua libtool bdb ssl
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
