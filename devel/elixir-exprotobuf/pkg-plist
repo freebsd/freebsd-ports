@@ -4,6 +4,7 @@ lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.ConfigError.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Decoder.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.DefineEnum.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.DefineMessage.beam
+lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Delimited.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Encoder.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Field.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.OneOfField.beam
@@ -20,6 +21,7 @@ lib/elixir/lib/exprotobuf/lib/exprotobuf/config.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/decoder.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/define_enum.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/define_message.ex
+lib/elixir/lib/exprotobuf/lib/exprotobuf/delimited.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/encoder.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/field.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/one_of_field.ex
