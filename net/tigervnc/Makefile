@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tigervnc
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -109,6 +108,7 @@ CONFIGURE_ARGS+=	\
 		--with-xkb-bin-directory=${LOCALBASE}/bin \
 		--with-serverconfig-path=${LOCALBASE}/lib/X11 \
 		--disable-selective-werror \
+		--disable-xwayland \
 		--with-fontrootdir=${LOCALBASE}/share/fonts
 
 .include <bsd.port.pre.mk>
