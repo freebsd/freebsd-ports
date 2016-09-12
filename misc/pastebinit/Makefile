@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pastebinit
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	misc python
 MASTER_SITES=	https://launchpad.net/pastebinit/trunk/${PORTVERSION}/+download/
 
@@ -22,18 +21,23 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/pastebinit
 PORTDATA=	*
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	PASTEBINS
+OPTIONS_DEFINE=	PASTEBINS DOCS
 OPTIONS_DEFAULT=PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/share/pastebin.d|${DATADIR}/pastebin.d|' \
+	@${REINPLACE_CMD} -e 's|/usr/share/pastebin.d|${DATADIR}/pastebin.d|' \
 		${WRKSRC}/pastebinit
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 do-install-PASTEBINS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

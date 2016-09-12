@@ -1,11 +1,11 @@
---- pastebinit.orig	2014-01-18 04:52:04 UTC
+--- pastebinit.orig	2016-09-11 23:10:22 UTC
 +++ pastebinit
-@@ -33,7 +33,7 @@ else:
+@@ -34,7 +34,7 @@ else:
      from urllib.request import FancyURLopener
  
  # Set the default pastebin
--defaultPB = "http://pastebin.com"
-+defaultPB = "http://paste2.org"
+-defaultPB = "pastebin.com"
++defaultPB = "paste2.org"
  
  # Now try to override it with a distributor pastebin
  try:
