@@ -1,5 +1,4 @@
 %%SITE_ARCH%%/Bundle/DBD/mysql.pm
-%%SITE_ARCH%%/DBD/README.pod
 %%SITE_ARCH%%/DBD/mysql.pm
 %%SITE_ARCH%%/DBD/mysql/GetInfo.pm
 %%SITE_ARCH%%/DBD/mysql/INSTALL.pod
