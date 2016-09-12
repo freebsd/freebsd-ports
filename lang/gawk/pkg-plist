@@ -59,6 +59,7 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/es/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gawk.mo
@@ -66,3 +67,4 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gawk.mo
