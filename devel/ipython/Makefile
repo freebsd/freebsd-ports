@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Interactive Python shell
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3
