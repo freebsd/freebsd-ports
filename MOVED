@@ -8622,3 +8622,4 @@ emulators/kqemu-kmod||2016-08-26|Not supported in any qemu version anymore
 emulators/kqemu-kmod-devel||2016-08-26|Not supported in any qemu version anymore
 www/varnish-libvmod-saintmode|www/varnish-modules|2016-09-01|Upstream moved this module into the varnish-modules collection
 security/letskencrypt|security/acme-client|2016-09-02|Upstream renamed the project
+net/asterisk||2016-09-12|Has expired: Asterisk 1.8 reached EOL on 2015-10-21
