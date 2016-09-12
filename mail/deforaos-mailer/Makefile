@@ -18,10 +18,9 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop
 
 USE_GNOME=	gtk20
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils pkgconfig ssl
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
