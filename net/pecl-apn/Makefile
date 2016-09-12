@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -17,8 +16,9 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libcapn.so:net/libcapn
 
-USES=		php:ext
+USES=		php:ext ssl:build,run tar:tgz
 CONFIGURE_ARGS=	--with-apn=${LOCALBASE}
+CFLAGS+=	-I${OPENSSLINC}
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>
