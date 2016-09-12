@@ -13,13 +13,14 @@ COMMENT=	Apache module for authenticating users with Kerberos v5
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		libtool pkgconfig
+USES=		libtool pkgconfig ssl
 USE_APACHE=	22+
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-lib=${LOCALBASE}/lib \
-		--with-ldap-include=${LOCALBASE}/include
+		--with-ldap-include=${LOCALBASE}/include \
+		--with-openssl=${OPENSSLBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
