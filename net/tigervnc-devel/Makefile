@@ -46,6 +46,8 @@ LIB_DEPENDS=	libunwind.so:devel/libunwind \
 
 CFLAGS+=	-fPIC
 
+IGNORE=		No development version available right now. Please use net/tigervnc instead.
+
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
 OPTIONS_DEFAULT=	GNUTLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
