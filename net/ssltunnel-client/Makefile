@@ -16,10 +16,11 @@ LICENSE=	BSD3CLAUSE
 OPTIONS_DEFINE=	GUI DOCS
 GUI_DESC=	GTK 1.2 graphical interface
 
-CONFIGURE_ARGS=	--disable-server --with-iconv=${ICONV_PREFIX}
+CONFIGURE_ARGS=	--disable-server \
+		--with-iconv=${ICONV_PREFIX} \
+		--with-openssl=${OPENSSLBASE}
 GNU_CONFIGURE=	yes
-USES=		iconv
-USE_OPENSSL=	yes
+USES=		iconv ssl
 
 .include <bsd.port.options.mk>
 
