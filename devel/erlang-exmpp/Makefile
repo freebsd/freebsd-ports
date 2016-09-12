@@ -18,8 +18,6 @@ RUN_DEPENDS=	erl:lang/erlang
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2
 
-BROKEN=		build fails with Erlang 19
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
 
@@ -35,15 +33,16 @@ CONFIGURE_ARGS+=--enable-static=yes \
 		--enable-escaping-using-cdata
 GNU_CONFIGURE_PREFIX=	"${PREFIX}/lib/erlang/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
-USES=		autoreconf cpe libtool pkgconfig
+USES=		autoreconf cpe libtool pkgconfig ssl
 CPE_VENDOR=	process-one
-USE_OPENSSL=	yes
 
 DOCS_CONFIGURE_ENABLE=	documentation
 
 MAKE_JOBS_UNSAFE=	yes
 
 post-configure:
+	${REINPLACE_CMD}  's|\(-spec.*\)\/[0-9] ::\(.*\)|\1\2|g' ${WRKSRC}/src/network/*.erl
+	${REINPLACE_CMD}  's|\(-spec.*\)\/[0-9] ::\(.*\)|\1\2|g' ${WRKSRC}/src/core/*.erl
 	${MAKE_CMD} clean -C ${WRKSRC}
 
 post-install:
