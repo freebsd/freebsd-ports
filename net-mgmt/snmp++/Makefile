@@ -13,9 +13,9 @@ COMMENT=	SNMP C++ library with V3 support
 MAKEFILE=	Makefile.FreeBSD
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USES=		gmake
+USES=		gmake ssl:build
 USE_LDCONFIG=	yes
-MAKE_ARGS=	CC="${CXX}"
+MAKE_ARGS=	CC="${CXX}" PORTOPTS="-I${OPENSSLINC} -L${OPENSSLLIB}"
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
