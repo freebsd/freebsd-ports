@@ -16,8 +16,8 @@ CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-ssl-headers=${OPENSSLBASE}/include/openssl \
-		--with-ssl-lib=${OPENSSLBASE}/lib \
+		--with-ssl-headers=${OPENSSLINC} \
+		--with-ssl-lib=${OPENSSLLIB} \
 		--with-lzo-headers=${LOCALBASE}/include/lzo \
 		--with-lzo-lib=${LOCALBASE}/lib
 CONFIGURE_ENV=	YACC=${YACC}
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${CC} == "clang" || ${CXX} == "clang++" || ${OSVERSION} >= 1000026
+.if ${CC} == "clang" || ${CXX} == "clang++" || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000026)
 EXTRA_PATCHES+= ${FILESDIR}/extra-cfg_file.y
 .endif
 
@@ -40,6 +40,12 @@ EXTRA_PATCHES+= ${FILESDIR}/extra-cfg_file.y
 # Obtained from http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
 EXTRA_PATCHES+=	${FILESDIR}/extra-tun_dev.c
 .endif
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|$$\(SSL_HDR_DIR\)|$$\1 $$\1/openssl|g' \
+		-e 's|$$\(BLOWFISH_HDR_DIR\)|$$\1 $$SSL_HDR_DIR/openssl|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vtund
