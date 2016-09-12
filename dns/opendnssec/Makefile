@@ -70,6 +70,10 @@ SCRIPTDATA+=	convert_database.pl
 
 PKGMESSAGE=	${WRKSRC}/MIGRATION
 
+post-patch:
+	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
+		${WRKSRC}/configure
+
 pre-install:
 .if ${PORT_OPTIONS:MMYSQL}
 	@${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/opendnssec
