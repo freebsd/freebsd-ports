@@ -1,0 +1,24 @@
+Intel Cilk Plus is an extension to the C and C++ languages to support data 
+and task parallelism.
+
+Primary Features
+
+High Performance:
+    * An efficient work-stealing scheduler provides nearly optimal 
+	scheduling of parallel tasks
+    * Vector support unlocks the performance that's been hiding in your 
+	processors
+    * Powerful hyperobjects allow for lock-free programming
+Easy to Learn:
+    * Only 3 new keywords to implement task parallelism
+    * Serial semantics make understanding and debugging the parallel 
+	program easier
+    *Array Notations provide a natural way to express data parallelism
+Easy to Use:
+    * Automatic load balancing provides good behavior in multi-programmed 
+	environments
+    * Existing algorithms easily adapted for parallelism with minimal 
+	modification
+    * Supports both C and C++ programmers
+
+WWW: https://www.cilkplus.org/
