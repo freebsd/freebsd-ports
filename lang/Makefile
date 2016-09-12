@@ -30,6 +30,7 @@
     SUBDIR += cfortran
     SUBDIR += chibi-scheme
     SUBDIR += chicken
+    SUBDIR += cilkplus
     SUBDIR += cint
     SUBDIR += cjs
     SUBDIR += clang-devel
