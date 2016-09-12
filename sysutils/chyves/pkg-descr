@@ -1,0 +1,18 @@
+chyves is a bhyve front-end manager. chyves manages type-2 virtualized guests by
+utilizing hardware virtualization on a base FreeBSD 10.3+ installation. On a
+base install, only FreeBSD guests can run. However, with the installation of
+sysutils/grub2-bhyve and sysutils/bhyve-firmware from ports or pkg, most other
+OSes can run as a guest, including Windows. See DEPENDENCIES section in the man
+page for more information.
+
+chyves is targeted for beginners as well as power users. Beginners should find
+chyves relatively easy to use with lots of documentation and demonstrations.
+While power users should find utility with features such as true ZFS clones,
+PCI passthrough, rapid execution against many guests, disk images, and snapshot
+reverted states on boot/reboot to name a few of the advanced features.
+
+The name 'chyves' is the pluralized, big endian alphabetic increment of bhyve.
+'chyves' is pronounced like 'chives', part of the Allium genus. The onion is
+also in the Allium genus.
+
+WWW: http://chyves.org

@@ -143,6 +143,7 @@
     SUBDIR += cfengine38
     SUBDIR += cfengine39
     SUBDIR += chgrep
+    SUBDIR += chyves
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
