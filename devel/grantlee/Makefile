@@ -13,6 +13,8 @@ COMMENT=	String template engine for Qt 4
 
 LICENSE=	LGPL21
 
+PORTSCOUT=	limit:^0\.
+
 USE_QT4=	corelib gui qtestlib_build script \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake:outsource grantlee:4,selfbuild
