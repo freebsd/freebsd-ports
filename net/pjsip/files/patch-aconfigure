@@ -1,6 +1,6 @@
---- aconfigure.orig	2016-04-12 07:46:12 UTC
+--- aconfigure.orig	2016-07-20 07:03:49 UTC
 +++ aconfigure
-@@ -6179,14 +6179,7 @@ $as_echo "Checking sound device backend.
+@@ -6234,14 +6234,7 @@ $as_echo "Checking sound device backend.
  	;;
    *)
  		ac_pjmedia_snd=alsa
@@ -15,7 +15,7 @@
  
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... unix" >&5
-@@ -6773,7 +6766,7 @@ else
+@@ -6865,7 +6858,7 @@ else
  			FFMPEG_PREFIX=$with_ffmpeg
  			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Using ffmpeg prefix... $FFMPEG_PREFIX" >&5
  $as_echo "Using ffmpeg prefix... $FFMPEG_PREFIX" >&6; }

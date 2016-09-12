@@ -1,0 +1,20 @@
+--- build.mak.in.orig	2016-06-28 14:32:08 UTC
++++ build.mak.in
+@@ -106,7 +106,7 @@ APP_THIRD_PARTY_LIB_FILES += $(PJ_DIR)/t
+ endif
+ endif
+ 
+-ifneq ($(findstring pa,@ac_pjmedia_snd@),)
++#ifneq ($(findstring pa,@ac_pjmedia_snd@),)
+ ifeq (@ac_external_pa@,1)
+ # External PA
+ APP_THIRD_PARTY_EXT += -lportaudio
+@@ -119,7 +119,7 @@ APP_THIRD_PARTY_LIBS += -lportaudio
+ APP_THIRD_PARTY_LIB_FILES += $(PJ_DIR)/third_party/lib/libportaudio.$(SHLIB_SUFFIX).$(PJ_VERSION_MAJOR) $(PJ_DIR)/third_party/lib/libportaudio.$(SHLIB_SUFFIX)
+ endif
+ endif
+-endif
++#endif
+ 
+ ifneq (@ac_no_yuv@,1)
+ ifeq (@ac_external_yuv@,1)
