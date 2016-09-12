@@ -8,6 +8,8 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 personal finance manager
 
+PORTSCOUT=	limit:^1\.
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 LIB_DEPENDS=	libofx.so:finance/libofx \
 		libqca.so:devel/qca \
