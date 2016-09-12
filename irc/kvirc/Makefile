@@ -18,11 +18,10 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	IRC client for KDE 4
 
-USE_OPENSSL=	yes
 USE_PERL5=	build
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
-USES=		cmake cpe gettext perl5 tar:bzip2
+USES=		cmake cpe gettext perl5 ssl tar:bzip2
 CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
 USE_LDCONFIG=	yes
@@ -78,5 +77,9 @@ pre-fetch-PERL-on:
 	@${ECHO_CMD} "    Perl scripting requires perl with multiplicity"
 	@${ECHO_CMD} "    support (enabled in ports by default)."
 	@${ECHO_CMD} "====================================================="
+
+post-patch:
+	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
