@@ -20,9 +20,8 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
 		wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 
 USES=		gettext gssapi:bootstrap,heimdal libtool pathfix pkgconfig \
-		readline makeinfo
+		readline makeinfo ssl
 USE_LDCONFIG=	${GSSAPILIBDIR}
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
