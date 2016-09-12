@@ -14,12 +14,11 @@ COMMENT=	Distributed OpenSSL session caching tools
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		libtool tar:bzip2
+USES=		libtool ssl tar:bzip2
 USE_RC_SUBR=	dc_server
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
 
 SUB_LIST=	NAME=dc_server

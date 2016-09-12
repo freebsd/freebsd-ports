@@ -1,6 +1,6 @@
---- ssl/swamp/swamp.h.orig	2004-02-17 15:29:34.000000000 -0500
-+++ ssl/swamp/swamp.h	2015-03-23 19:47:20.490894000 -0400
-@@ -161,7 +161,9 @@
+--- ssl/swamp/swamp.h.orig	2004-02-17 20:29:34 UTC
++++ ssl/swamp/swamp.h
+@@ -161,7 +161,9 @@ char *util_parse_escaped_string(const ch
  
  typedef enum st_swamp_sslmeth {
  	SWAMP_SSLMETH_NORMAL,	/* SSLv23_client_method() */
