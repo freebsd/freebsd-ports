@@ -27,46 +27,24 @@ HAL_DESC=		Compile MegaHAL (enables hal command)
 XMMS_DESC=		Enable trackname command
 NOIPV4_DESC=		IPv6 support (disables IPv4 support)
 
-USES=		readline tar:tgz
+USES=		readline ssl tar:tgz
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
-.include <bsd.port.options.mk>
+CIPHER_IMPLIES=			HOPE
+COMPRESS_IMPLIES=		HOPE
 
-.if ${PORT_OPTIONS:MWARNINGS}
-CONFIGURE_ARGS+=	--enable-warnings
-.endif
-
-.if ${PORT_OPTIONS:MHTXF_PTHREAD}
-CONFIGURE_ARGS+=	--enable-htxf-pthread
-.endif
-
-.if ! ${PORT_OPTIONS:MHFS}
-CONFIGURE_ARGS+=	--disable-hfs
-.endif
-
-.if ${PORT_OPTIONS:MHOPE}
-CONFIGURE_ARGS+=	--enable-hope
-.if ${PORT_OPTIONS:MCIPHER}
-CONFIGURE_ARGS+=	--enable-cipher
-.endif
-.if ${PORT_OPTIONS:MCOMPRESS}
-CONFIGURE_ARGS+=	--enable-compress
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-CONFIGURE_ARGS+=	--enable-hal
-.endif
-
-.if ${PORT_OPTIONS:MXMMS}
-CONFIGURE_ARGS+=	--enable-xmms
-.endif
-
-.if ${PORT_OPTIONS:MNOIPV4}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+CIPHER_CONFIGURE_ENABLE=	cipher
+COMPRESS_CONFIGURE_ENABLE=	compress
+HAL_CONFIGURE_ENABLE=		hal
+HFS_CONFIGURE_ENABLE=		hfs
+HOPE_CONFIGURE_ENABLE=		hope
+HTXF_PTHREAD_CONFIGURE_ENABLE=	htxf-pthread
+NOIPV4_CONFIGURE_ENABLE=	ipv6
+XMMS_CONFIGURE_ENABLE=		xmms
+WARNINGS_CONFIGURE_ENABLE=	warnings
 
 PLIST_FILES=	bin/hx				\
 		share/examples/shx/hxrc		\
