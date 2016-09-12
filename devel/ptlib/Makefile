@@ -15,12 +15,11 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 CONFLICTS=	pwlib-1.*
 
-USES=		autoreconf:build bison gmake pkgconfig tar:xz
+USES=		autoreconf:build bison gmake pkgconfig ssl tar:xz
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${OPENSSLLIB} -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--enable-audio \
 		--enable-ipv6 \
