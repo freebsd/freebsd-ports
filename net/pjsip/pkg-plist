@@ -352,3 +352,5 @@ lib/libpjsua2-%%CONFIGURE_TARGET%%.a
 %%NO_EXTSRTP%%%%SHARED%%lib/libsrtp.so
 %%NO_EXTSRTP%%%%SHARED%%lib/libsrtp.so.2
 libdata/pkgconfig/libpjproject.pc
+%%PJSUA%%bin/pjsua
+%%PJSUA%%bin/pjsystest
