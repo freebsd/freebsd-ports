@@ -85,6 +85,10 @@ CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcr
 
 CONFIGURE_ENV+= OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 
+CPPFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
 PLIST_FILES?=	bin/litecoin-qt share/applications/litecoin-qt.desktop \
 		share/pixmaps/litecoin128.png
 
