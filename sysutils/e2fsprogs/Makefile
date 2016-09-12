@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -38,9 +38,9 @@ OPTIONS_SINGLE=			SELFTEST
 OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
 OPTIONS_DEFAULT=		SMALLTESTS
 SELFTEST_DESC=	Choose which set of self-tests to run
-NOTESTS_DESC=	Do not run any self-tests (DISCOURAGED)
-SMALLTESTS_DESC=Run sets that fit into 500 MB disk space (DEFAULT)
-ALLTESTS_DESC=	Run all self-tests
+NOTESTS_DESC=	Do not run any self-tests (only Tier-1 & DISCOURAGED)
+SMALLTESTS_DESC=Run tests that fit into 500 MB disk space (DEFAULT)
+ALLTESTS_DESC=	Run most self-tests (requires more RAM & disk space)
 PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
 
 post-extract:
@@ -136,19 +136,13 @@ post-patch::
 .endfor
 .endif
 .endif
-# XXX remove these on the next revision
-.if ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${PORTVERSION} == 1.43.3 && ${PORTREVISION} == 2
-.for i in u_mke2fs_opt_oddsize u_mke2fs_opt_offset
-	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-.endfor
-.endif
 
 # Master port stuff that is not to be seen by the slave ports.
 .if ${MASTERDIR} == ${.CURDIR}
 # NOTE: The previous .if block goes all the way to the end of the file.
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
-BROKEN=Not ready for production on FreeBSD 11+, some e2undo cases are still failing.
+.if !empty(PORT_OPTIONS:MNOTESTS) && (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1100000 || ((${ARCH} != i386) && (${ARCH} != amd64)))
+BROKEN=e2fsprogs has not been tested on your system by the maintainer. You must run self-tests.
 .endif
 
 pre-build:
