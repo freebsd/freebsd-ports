@@ -18,6 +18,7 @@ share/ECM/kde-modules/KDECompilerSettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
+share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddTests.cmake
 share/ECM/modules/ECMCoverageOption.cmake
