@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-additions
@@ -76,9 +76,6 @@ MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
-PKGPOSTINSTALL=		${WRKDIR}/pkg-post-install
-PKGPREDEINSTALL=	${WRKDIR}/pkg-pre-deinstall
-SUB_FILES=	pkg-post-install pkg-pre-deinstall
 USE_XORG=	xcomposite xdamage xfixes
 USE_GL=		gl
 VBOX_LIBS=	VBoxEGL.so \
@@ -208,6 +205,8 @@ do-install:
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
+	${INSTALL_DATA} ${FILESDIR}/vboxvideo.conf \
+	    ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${VBOX_LIBS:S|^|${VBOX_BIN}/|} \
 	    ${STAGEDIR}${PREFIX}/lib/
 .endif

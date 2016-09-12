@@ -1,6 +1,0 @@
-/bin/rm -f %%PREFIX%%/lib/libEGL.so*
-/bin/ln -f %%PREFIX%%/lib/VBoxEGL.so %%PREFIX%%/lib/libEGL.so
-/bin/ln -f %%PREFIX%%/lib/VBoxEGL.so %%PREFIX%%/lib/libEGL.so.1
-/bin/rm -f %%PREFIX%%/lib/libGL.so*
-/bin/ln -f %%PREFIX%%/lib/VBoxOGL.so %%PREFIX%%/lib/libGL.so
-/bin/ln -f %%PREFIX%%/lib/VBoxOGL.so %%PREFIX%%/lib/libGL.so.1

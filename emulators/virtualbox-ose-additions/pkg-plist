@@ -1,5 +1,6 @@
 %%X11%%bin/VBoxClient
 %%X11%%bin/VBoxClient-all
+%%OPENGL%%etc/libmap.d/vboxvideo.conf
 %%X11%%etc/xdg/autostart/vboxclient.desktop
 %%OPENGL%%lib/VBoxEGL.so
 %%OPENGL%%lib/VBoxOGL.so

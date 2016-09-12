@@ -1,4 +1,4 @@
---- configure.orig	2016-08-16 19:55:20 UTC
+--- configure.orig	2016-09-12 16:11:24 UTC
 +++ configure
 @@ -140,10 +140,14 @@ CXX_FLAGS=""
  if [ "$OS" = "freebsd" ]; then
@@ -54,7 +54,7 @@
        ;;
      --with-ow-dir=*)
        WATCOM=`echo $option | cut -d'=' -f2`
-@@ -2942,8 +2949,15 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+@@ -2944,13 +2951,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_PYTHON -eq 1 ] && check_python
    [ $WITH_JAVA   -eq 1 ] && check_java
  
@@ -63,22 +63,27 @@
 +    if [ $WITH_ALSA -eq 1 ]; then
 +      check_alsa
 +    else
-+      cnf_append "VBOX_WITH_ALSA" ""
-+    fi
-+    if [ $WITH_DBUS -eq 0 ]; then
-+      cnf_append "VBOX_WITH_DBUS" ""
++      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
 +    fi
      if [ $WITH_PULSE -eq 1 ]; then
        check_pulse
      elif [ $WITH_PULSE -eq 0 ]; then
-@@ -2965,14 +2979,6 @@ if [ "$OS" = "linux" ]; then
+       cnf_append "VBOX_WITH_AUDIO_PULSE" ""
+     fi
++    if [ $WITH_DBUS -eq 0 ]; then
++      cnf_append "VBOX_WITH_DBUS" ""
++    fi
+  fi
+ fi
+ 
+@@ -2967,14 +2981,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITH_ADDITION_DRIVERS" ""
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
 -    if [ $WITH_ALSA -eq 1 ]; then
 -      check_alsa
 -    else
--      cnf_append "VBOX_WITH_ALSA" ""
+-      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
 -    fi
 -    if [ $WITH_DBUS -eq 0 ]; then
 -      cnf_append "VBOX_WITH_DBUS" ""
