@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RigsOfRods
 GH_TAGNAME=	6a05e12
 
-USES=		cmake
+USES=		cmake ssl:build
+CFLAGS+=	-I${OPENSSLINC}
 
 .include <bsd.port.mk>
