@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntpa
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.4
 CATEGORIES=	net
 MASTER_SITES=	http://dist.innolan.net/
 
@@ -49,6 +49,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/small.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/MySql.Data.dll ${STAGEDIR}${PREFIX}/libexec/ntpa
 	${INSTALL_DATA} ${WRKSRC}/bin/Npgsql.dll ${STAGEDIR}${PREFIX}/libexec/ntpa
+	${INSTALL_DATA} ${WRKSRC}/bin/NPlot.dll ${STAGEDIR}${PREFIX}/libexec/ntpa
 	${INSTALL_MAN} ${WRKSRC}/docs/ntpa.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}/var/log/ntpa
 	${MKDIR} ${STAGEDIR}/var/run/ntpa
