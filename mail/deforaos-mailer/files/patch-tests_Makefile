@@ -1,0 +1,11 @@
+--- tests/Makefile.orig	2016-09-12 04:36:41 UTC
++++ tests/Makefile
+@@ -27,7 +27,7 @@ $(OBJDIR)date$(EXEEXT): $(date_OBJS)
+ 	$(CC) -o $(OBJDIR)date$(EXEEXT) $(date_OBJS) $(date_LDFLAGS)
+ 
+ email_OBJS = $(OBJDIR)email.o
+-email_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS)
++email_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS) `pkg-config --cflags openssl`
+ email_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) -L$(OBJDIR)../src -Wl,-rpath,$(OBJDIR)../src -lMailer
+ 
+ $(OBJDIR)email$(EXEEXT): $(email_OBJS)
