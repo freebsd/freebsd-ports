@@ -26,7 +26,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bobcat-${PORTVERSION}
 
-USES=		readline shebangfix
+USES=		readline shebangfix ssl
 
 SHEBANG_LANG=	icmake
 icmake_OLD_CMD=	/usr/bin/icmake
@@ -49,12 +49,12 @@ post-patch:
 		s|"-d"|"-Pp"| ; \
 		s|#define MANHTML|| ; \
 		s|g++|${CXX}| ; \
-		s|Wall|Wall -D_GLIBCXX_USE_C99| ; \
+		s|Wall|Wall -D_GLIBCXX_USE_C99 -I${OPENSSLINC}| ; \
 		s|gcc|${CC}|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|"cp -r |"cp -R |' \
 		${WRKSRC}/icmake/install
-	@${REINPLACE_CMD} -e 's|-lssl|-lssl -L${LOCALBASE}/lib| ; \
+	@${REINPLACE_CMD} -e 's|-lssl|-L${OPENSSLIB} -lssl| ; \
 		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
 		s|-lmilter|-lmilter -lpthread|' \
 		${WRKSRC}/icmake/special
