@@ -26,7 +26,6 @@
     SUBDIR += arprelease
     SUBDIR += asio
     SUBDIR += aslookup
-    SUBDIR += asterisk
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk11
