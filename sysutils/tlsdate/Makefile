@@ -16,8 +16,9 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 TEST_TARGET=	test
-USE_OPENSSL=	yes
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf libtool pkgconfig ssl
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 PORTDOCS=	*
