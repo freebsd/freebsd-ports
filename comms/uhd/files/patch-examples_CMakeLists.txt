@@ -1,0 +1,8 @@
+--- host/examples/CMakeLists.txt.orig	2015-11-14 16:31:04.640272000 +0000
++++ host/examples/CMakeLists.txt	2015-11-14 17:26:27.512820000 +0000
+@@ -50,4 +50,5 @@
+     UHD_INSTALL(TARGETS ${example_name} RUNTIME DESTINATION ${PKG_LIB_DIR}/examples COMPONENT examples)
+ ENDFOREACH(example_source)
++TARGET_LINK_LIBRARIES(network_relay -pthread)
+ 
+ ########################################################################
