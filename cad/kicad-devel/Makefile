@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-DISTVERSION=	r${BZR_SRC_REV}
+DISTVERSION=	r${GIT_SRC_DATE}
 #PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/mr
@@ -12,11 +12,12 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
-BUILD_DEPENDS=	bzr:devel/bzr \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:devel/bzrtools \
-		${LOCALBASE}/include/glm/glm.hpp:math/glm
+LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+BUILD_DEPENDS= ${LOCALBASE}/include/glm/glm.hpp:math/glm
+
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libcurl.so:ftp/curl
 
 CONFLICTS=	kicad-2014*
 
@@ -24,11 +25,12 @@ DOCVERSION=	1.1
 LIBVERSION=	1.0
 
 #CXXFLAGS+=	-std=c++11
-USE_GL=		glew glu
+CXXFLAGS+=	-msse
+USE_GL=		glew glu gl
 USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
-USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
+USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
 
 OPTIONS_DEFINE=	DOCS
 
@@ -39,7 +41,7 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake \
-		gettext python
+		gettext python ssl
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
@@ -58,46 +60,66 @@ RUN_DEPENDS+=	xpdf:graphics/xpdf
 .if defined(BOOTSTRAP)
 BOOST_RELEASE=	1.54.0
 BOOST_VERS=	${BOOST_RELEASE:S|.|_|g}
-BZR_SRC_REV!=	bzr revno lp:kicad
-#BZR_DOC_REV!=	bzr revno lp:~kicad-developers/kicad/doc
+
+GIT_SRC_HASH=`cd ${WRKDIR}/kicad; git log -n 1 --pretty=format:"%H"`
+GIT_SRC_DATE=`cd "${WRKDIR}/kicad"; git log -n 1 --date=iso-local -n 1 --pretty=format:"%cd" | \
+	cut -c '1-19' | sed -e 's,-,,g' -e 's,:,,g' -e 's, ,,g'`
+
 .else
-.include "Makefile.bzr_rev"
+.include "Makefile.git_rev"
 .endif
-
-.if defined(BOOTSTRAP)
-
-# Updating to new rev:
-# make do-fetch BOOTSTRAP=YES && make makesum && make clean
-# make && make makeplist && make generate-plist && make check-plist
-# < Check PLIST_FILE_LIST below >
-
-FETCH_DEPENDS+=	svn:devel/subversion
-FETCH_DEPENDS+=	bzr:devel/bzr
 
 showversions:
 	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"
 	@${ECHO} "BOOST_VERS: ${BOOST_VERS}"
-	@${ECHO} "BZR_SRC_REV: ${BZR_SRC_REV}"
-	@${ECHO} "BZR_LIB_REV: ${BZR_LIB_REV}"
-	@${ECHO} "BZR_DOC_REV: ${BZR_DOC_REV}"
+	@${ECHO} "GIT_SRC_HASH: ${GIT_SRC_HASH}"
+	@${ECHO} "GIT_SRC_DATE: ${GIT_SRC_DATE}"
+	@${ECHO} "DISTDIR: ${DISTDIR}"
+	@${ECHO} "DIST_SUBDIR: ${DIST_SUBDIR}"
+	@${ECHO} "DISTNAME: ${DISTNAME}"
+	@${ECHO} "DISTVERSION: ${DISTVERSION}"
+
+.if defined(BOOTSTRAP)
+
+# Updating to new rev:
+# make do-fetch BOOTSTRAP=YES && make do-revisions BOOTSTRAP=YES && make do-distfile BOOTSTRAP=YES
+# make makesum && make clean
+# make && make makeplist && make generate-plist && make check-plist
+# < Check PLIST_FILE_LIST below >
+
+FETCH_DEPENDS+=	svn:devel/subversion
+BUILD_DEPENDS+=	git:devel/git
+FETCH_DEPENDS+=	git:devel/git
+
+do-distfile:
+	@if [ \! -d "${WRKDIR}/kicad-r${GIT_SRC_DATE}" ]; then \
+	  cd ${WRKDIR}; \
+	  mkdir "${WRKDIR}/kicad-r${GIT_SRC_DATE}"; \
+	  cd kicad; \
+	  find . -type d -name .git -prune -o -print | cpio -pdamuv "../kicad-r${GIT_SRC_DATE}"; \
+	fi;
+	@cd ${WRKDIR}; \
+	  tar xvf master.zip; \
+	  tar cvfy ${DISTDIR}/${DIST_SUBDIR}/kicad-r${GIT_SRC_DATE}.tar.bz2 \
+	    kicad-r${GIT_SRC_DATE} kicad-library-master
+
+do-revisions:
+	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.git_rev
+	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.git_rev
+	echo "GIT_SRC_HASH=  ${GIT_SRC_HASH}"   >> ${MASTERDIR}/Makefile.git_rev
+	echo "GIT_SRC_DATE=  ${GIT_SRC_DATE}"   >> ${MASTERDIR}/Makefile.git_rev
 
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	${ECHO} ${WRKSRC}
-	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
-	${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip
-#	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
-#	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
-#		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
-	cd ${WRKDIR}; \
-	tar xvf master.zip; \
-	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library-master
-	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
-	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
-	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
-	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
-#	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
+	@${ECHO} ${WRKSRC}
+	@if [ \! -d "${WRKDIR}/kicad" ]; then \
+	  cd ${WRKDIR}; \
+	  echo git clone https://git.launchpad.net/kicad; \
+	fi;
+	@if [ \! -f "${WRKDIR}/master.zip" ]; then \
+	  ${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip; \
+	fi;
+
 .endif
 
 tmp:
