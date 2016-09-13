@@ -225,7 +225,6 @@
     SUBDIR += qt5-quickcontrols
     SUBDIR += qt5-uiplugin
     SUBDIR += qt5-widgets
-    SUBDIR += qtada
     SUBDIR += qtermwidget
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
