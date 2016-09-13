@@ -9,7 +9,8 @@ MASTER_SITES=	http://get.bitlbee.org/src/ \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IRC to other chat networks gateway
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlto:textproc/xmlto \
 		xsltproc:textproc/libxslt
@@ -75,8 +76,6 @@ YAHOO_CONFIGURE_OFF=	--yahoo=0
 USERS=		bitlbee
 GROUPS=		bitlbee
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^install:/ s/$$/ install-dev/' \
 		${WRKSRC}/Makefile
@@ -89,20 +88,20 @@ post-patch:
 		${WRKSRC}/doc/bitlbee.8
 
 post-install:
-.if ${PORT_OPTIONS:MSKYPE}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+
+post-install-SKYPE-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf.sample
-.endif
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
