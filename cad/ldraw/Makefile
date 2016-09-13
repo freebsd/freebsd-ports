@@ -12,11 +12,9 @@ DIST_SUBDIR=	ldraw/${PORTVERSION}
 MAINTAINER=	koalative@gmail.com
 COMMENT=	LDraw parts library
 
-LICENSE=	CDDL CCbyNCSA2
+LICENSE=	CDDL CC-BY-NC-SA-2.0
 LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA2=Attribution-NonCommercial-ShareAlike 2.0 Unported
-LICENSE_FILE_CCbyNCSA2=${WRKSRC}/CAlicense.txt
-LICENSE_PERMS_CCbyNCSA2=dist-mirror pkg-mirror auto-accept
+LICENSE_FILE_CC-BY-NC-SA-2.0=	${WRKSRC}/CAlicense.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -52,6 +50,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
 	@(cd ${STAGEDIR}${DATADIR} && ./mklist -d)
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
