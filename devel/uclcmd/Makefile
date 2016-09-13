@@ -2,9 +2,10 @@
 
 PORTNAME=	uclcmd
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Command line tool for working with UCL config files
 
 LICENSE=	BSD2CLAUSE
@@ -16,7 +17,7 @@ BROKEN_FreeBSD_9=	does not build: requires mkostemp(3) which is only available o
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	allanjude
-GH_TAGNAME=	0d336e9
+GH_TAGNAME=	9450b2d
 
 USES=		pkgconfig
 PLIST_FILES=	bin/uclcmd
