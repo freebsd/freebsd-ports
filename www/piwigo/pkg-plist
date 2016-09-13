@@ -56,6 +56,7 @@
 %%WWWDIR%%/admin/include/pclzip.lib.php
 %%WWWDIR%%/admin/include/photos_add_direct_prepare.inc.php
 %%WWWDIR%%/admin/include/plugins.class.php
+%%WWWDIR%%/include/srand.php
 %%WWWDIR%%/admin/include/tabsheet.class.php
 %%WWWDIR%%/admin/include/themes.class.php
 %%WWWDIR%%/admin/include/updates.class.php
@@ -1249,6 +1250,7 @@
 %%WWWDIR%%/language/id_ID/common.lang.php
 %%WWWDIR%%/language/id_ID/id_ID.jpg
 %%WWWDIR%%/language/id_ID/index.php
+%%WWWDIR%%/language/id_ID/install.lang.php
 %%WWWDIR%%/language/id_ID/iso.txt
 %%WWWDIR%%/language/index.php
 %%WWWDIR%%/language/is_IS/about.html
@@ -3333,6 +3335,7 @@
 %%WWWDIR%%/themes/smartpocket/template/menubar_tags.tpl
 %%WWWDIR%%/themes/smartpocket/template/navigation_bar.tpl
 %%WWWDIR%%/themes/smartpocket/template/notification.tpl
+%%WWWDIR%%/themes/smartpocket/template/password.tpl
 %%WWWDIR%%/themes/smartpocket/template/picture.tpl
 %%WWWDIR%%/themes/smartpocket/template/picture_content.tpl
 %%WWWDIR%%/themes/smartpocket/template/picture_nav_buttons.tpl
