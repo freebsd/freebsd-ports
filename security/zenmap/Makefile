@@ -12,7 +12,7 @@ DISTFILES=	nmap-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	nmap-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
 
 LICENSE=	GPLv2
