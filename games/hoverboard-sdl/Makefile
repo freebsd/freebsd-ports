@@ -8,12 +8,9 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Standalone version of xkcd 1608 "Hoverboard" game
 
-LICENSE=	GPLv3+ CCbyNC25
+LICENSE=	GPLv3+ CC-BY-NC-2.5
 LICENSE_COMB=	multi
-LICENSE_NAME_CCbyNC25=	Creative Commons Attribution-NonCommercial 2.5 License
-LICENSE_TEXT_CCbyNC25=	http://creativecommons.org/licenses/by-nc/2.5/
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_PERMS_CCbyNC25=	no-dist-sell dist-mirror no-pkg-sell pkg-mirror auto-accept
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSDL2pp.so:devel/sdl2pp
 
