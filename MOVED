@@ -8629,3 +8629,4 @@ www/moodle28||2016-09-13|Has expired: EOL upstream
 devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack.
 textproc/asciinema|textproc/py3-asciinema|2016-09-13|Has expired: use textproc/py3-asciinema instead
 x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulness unclear
+security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project

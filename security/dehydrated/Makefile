@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	letsencrypt.sh
-PORTVERSION=	0.3.0
+PORTNAME=	dehydrated
+PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -31,33 +31,33 @@ BASH_RUN_DEPENDS=	bash:shells/bash
 ZSH_RUN_DEPENDS=	zsh:shells/zsh
 
 PERIODIC_DIRS=	etc/periodic/weekly
-PERIODIC_FILES=	000.letsencrypt.sh
+PERIODIC_FILES=	000.dehydrated
 
 PLIST_DIRS=	%%ETCDIR%%/.acme-challenges \
-		www/letsencrypt
-PLIST_FILES=	bin/letsencrypt.sh \
+		www/dehydrated
+PLIST_FILES=	bin/dehydrated \
 		%%ETCDIR%%/config.example \
 		%%ETCDIR%%/hook.sh.example \
 		%%ETCDIR%%/domains.txt.example \
-		${PERIODIC_DIRS}/000.letsencrypt.sh
+		${PERIODIC_DIRS}/000.dehydrated
 PORTDOCS_PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/README.md
 
-SUB_FILES=	000.letsencrypt.sh pkg-message
+SUB_FILES=	000.dehydrated pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 PORTDOCS=	README.md dns-verification.md domains_txt.md ecc.md hook_chain.md \
 		import-from-official-client.md per-certificate-config.md staging.md \
 		troubleshooting.md wellknown.md
 
-SHEBANG_FILES=	docs/examples/hook.sh letsencrypt.sh
+SHEBANG_FILES=	docs/examples/hook.sh dehydrated
 
 post-patch:
-.	for f in docs/examples/config letsencrypt.sh
-		${REINPLACE_CMD} 's|/var/www/letsencrypt|${PREFIX}/www/letsencrypt|' \
+.	for f in docs/examples/config dehydrated
+		${REINPLACE_CMD} 's|/var/www/dehydrated|${PREFIX}/www/dehydrated|' \
 		    ${WRKSRC}/${f}
 .	endfor
 
 post-patch-ZSH-on:
-.	for p in docs/examples/config docs/examples/hook.sh letsencrypt.sh
+.	for p in docs/examples/config docs/examples/hook.sh dehydrated
 		${REINPLACE_CMD} '1 s/bash/zsh/' ${WRKSRC}/${p}
 .	endfor
 
@@ -77,6 +77,6 @@ do-install:
 .	endfor
 
 post-stage:
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/letsencrypt
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
 
 .include <bsd.port.mk>
