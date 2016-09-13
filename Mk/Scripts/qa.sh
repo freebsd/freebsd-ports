@@ -558,6 +558,9 @@ proxydeps_suggest_uses() {
 	# motif
 	elif [ ${pkg} = "x11-toolkits/lesstif" -o ${pkg} = "x11-toolkits/open-motif" ]; then
 		warn "you need USES+=motif"
+	# ncurses
+	elif [ ${pkg} = "devel/ncurses" ]; then
+		warn "you need USES+=ncurses"
 	# objc
 	elif [ ${pkg} = "lang/libobjc2" ]; then
 		warn "you need USES+=objc"
