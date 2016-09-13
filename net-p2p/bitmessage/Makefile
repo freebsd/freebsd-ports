@@ -21,9 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Bitmessage
 GH_PROJECT=	PyBitmessage
 
-USES=		python pyqt:4
+USES=		python pyqt:4 ssl
 NATIVE_POW_USES=gmake
-USE_OPENSSL=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NATIVE_POW
@@ -34,7 +33,11 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s|\((CCFLAGS)\)|\1 -I${OPENSSLINC} |g" \
+		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
+		${WRKSRC}/src/bitmsghash/Makefile
 
 do-build:
 	@(cd ${WRKSRC} && \
