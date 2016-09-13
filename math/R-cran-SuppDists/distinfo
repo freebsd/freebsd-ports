@@ -1,4 +1,5 @@
-SHA256 (SuppDists_1.1-9.1.tar.gz) = faa0cfabefd1a5125bad87ca75173921abc4f9bc083eb29a3e8c2ef969d81acb
-SIZE (SuppDists_1.1-9.1.tar.gz) = 139923
-SHA256 (R-benchmark-25.R) = d6981df89743d4ac6c032bcb354f33d6f03e17ab35b95e684c07e510eb218923
-SIZE (R-benchmark-25.R) = 13630
+TIMESTAMP = 1473650359
+SHA256 (SuppDists_1.1-9.2.tar.gz) = f0cc599ca9457c22e6e8fdb3fd3ee8b94d3221a5e00904fba5f142929c0c765e
+SIZE (SuppDists_1.1-9.2.tar.gz) = 139985
+SHA256 (R-benchmark-25.R) = c7f694280efb6a223ed6da235ff4355d1b8bf0b62a781ef70867e1576bcdb0f8
+SIZE (R-benchmark-25.R) = 13666
