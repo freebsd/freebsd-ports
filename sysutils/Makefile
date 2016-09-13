@@ -912,7 +912,6 @@
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
-    SUBDIR += rsyslog7
     SUBDIR += rsyslog8
     SUBDIR += rtty
     SUBDIR += ruby-quota
