@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
 		mbstring mcrypt mysql mysqli openssl pcre pdf pdo posix \
 		session simplexml sockets spl tokenizer xml xmlreader \
