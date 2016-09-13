@@ -14,12 +14,14 @@ COMMENT=	User-friendly X interface to pppd/chat
 
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
+USES=		alias ssl
 USE_XORG=	xpm
 
+CFLAGS+=	-DUSE_OPENSSL -I${OPENSSLINC}
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/Makefile
+		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
