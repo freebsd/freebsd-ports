@@ -4096,7 +4096,6 @@
     SUBDIR += py-docker-py
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
-    SUBDIR += py-dogpile.core
     SUBDIR += py-doit
     SUBDIR += py-durus
     SUBDIR += py-dynrules
