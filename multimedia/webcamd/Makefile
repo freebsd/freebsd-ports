@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	4.2.0.9
+PORTVERSION=	4.8.0.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -21,7 +21,7 @@ USE_RC_SUBR=	webcamd
 SUB_FILES=	webcamd.conf
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	CUSE DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT RADIO WEBCAM
+OPTIONS_DEFINE=	CUSE DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
 OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
 
 .if exists(/usr/lib/libcuse.so)
@@ -58,6 +58,12 @@ DVB_MAKE_ARGS=		HAVE_DVB_DRV="YES"
 
 INPUT_DESC=	Build with USB input support (tablet, joystick, HID, IR, ...)
 INPUT_MAKE_ARGS=	HAVE_INPUT_DRV="YES"
+
+KEYBOARD_DESC=	Build with USB keyboard support
+KEYBOARD_MAKE_ARGS=	HAVE_KEYBOARD_DRV="YES"
+
+MOUSE_DESC=	Build with USB mouse support
+MOUSE_MAKE_ARGS=	HAVE_MOUSE_DRV="YES"
 
 RADIO_DESC=	Build with USB radio support
 RADIO_MAKE_ARGS=	HAVE_RADIO_DRV="YES"
