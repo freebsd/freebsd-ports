@@ -17,24 +17,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	stunnel:security/stunnel \
 		xterm:x11/xterm
 
-OPTIONS_DEFINE=	DOCS ULTRAFTP
-ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
-
-USES=		gmake imake:env jpeg perl5 tk:wrapper
-USE_OPENSSL=	yes
+USES=		gmake imake:env jpeg perl5 ssl tk:wrapper
 USE_PERL5=	run
 USE_XORG=	xi xmu xt xaw ice xpm xext sm
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+OPTIONS_DEFINE=	DOCS ULTRAFTP
+OPTIONS_SUB=	yes
+
+ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
+ULTRAFTP_USE=	JAVA=yes
 
 MAKE_ENV+=	ROOT=${STAGEDIR}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MULTRAFTP}
-USE_JAVA=	yes
-PLIST_SUB+=	ULTRAFTP=""
-.else
+.if ! ${PORT_OPTIONS:MULTRAFTP}
 MAKE_ARGS+=	JSRC=""
-PLIST_SUB+=	ULTRAFTP="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -42,13 +42,14 @@ MAKE_ARGS+=	DOCS=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|grep Linux|grep ${OPSYS}|' ${WRKSRC}/scripts/util/ss_vncviewer
-	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' ${WRKSRC}/man/man1/ssvnc.1
-	@${REINPLACE_CMD} -e 's|/usr/local/bin|${LOCALBASE}/bin|' \
-		-e 's|^CC =|CC ?=|' ${WRKSRC}/vncstorepw/Makefile
+	@${REINPLACE_CMD} -e 's|grep Linux|grep ${OPSYS}|' \
+		${WRKSRC}/scripts/util/ss_vncviewer
+	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' \
+		${WRKSRC}/man/man1/ssvnc.1
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} config)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ssvnc/*.so
