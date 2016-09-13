@@ -13,10 +13,11 @@ COMMENT=	ZRTP extension for GNU ccRTP
 LIB_DEPENDS=	libccrtp.so:devel/ccrtp \
 		libgcrypt.so:security/libgcrypt
 
-USES=		cmake pkgconfig
-USE_OPENSSL=	yes
+USES=		cmake pkgconfig ssl
 
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DOPENSSL_INCLUDE_DIRS="${OPENSSLINC}" \
+		-DOPENSSL_LIBDIR="${OPENSSLLIB}"
 CXXFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 USE_LDCONFIG=	yes
