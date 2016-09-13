@@ -25,7 +25,11 @@ MAKE_JOBS_UNSAFE=	yes
 # blocked since 2010.  Remove to see if it works on all systems again
 #NO_PACKAGE=	Man page creation hangs on some systems for unknown reasons
 
-USES=		perl5
+USES=		compiler:c++11-lib perl5
 USE_PERL5=	configure
+CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}" LD=${CC}
+MAKE_ARGS=	OTHERLDFLAGS="${LDFLAGS}"
+
+BROKEN_FreeBSD_9=	Perl messes up the linking
 
 .include <bsd.port.mk>
