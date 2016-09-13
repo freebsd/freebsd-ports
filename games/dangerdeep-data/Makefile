@@ -10,10 +10,8 @@ DIST_SUBDIR=	dangerdeep
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Danger from the Deep data files
 
-LICENSE=	CCbyNCND
-LICENSE_NAME=	Creative Commons Attribution-NonCommercial-NonDerivs
+LICENSE=	CC-BY-NC-ND-2.5
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		zip
 NO_BUILD=	yes
@@ -24,6 +22,6 @@ DATADIR=	${PREFIX}/share/dangerdeep
 PORTDATA=	*
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
