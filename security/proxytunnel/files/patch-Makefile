@@ -1,0 +1,16 @@
+--- Makefile.orig	2012-01-23 18:13:41 UTC
++++ Makefile
+@@ -46,9 +46,11 @@ OPTFLAGS += -DSO_REUSEPORT
+ 
+ # END system dependant block
+ 
+-SSL_LIBS := $(shell pkg-config --libs libssl 2>/dev/null)
+-ifeq ($(SSL_LIBS),)
+ SSL_LIBS := $(shell pkg-config --libs openssl 2>/dev/null)
++CFLAGS += $(shell pkg-config --cflags openssl 2>/dev/null)
++ifeq ($(SSL_LIBS),)
++SSL_LIBS := $(shell pkg-config --libs libssl 2>/dev/null)
++CFLAGS += $(shell pkg-config --cflags libssl 2>/dev/null)
+ endif
+ ifeq ($(SSL_LIBS),)
+ SSL_LIBS := -lssl -lcrypto
