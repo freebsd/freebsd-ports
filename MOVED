@@ -8630,3 +8630,4 @@ devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older v
 textproc/asciinema|textproc/py3-asciinema|2016-09-13|Has expired: use textproc/py3-asciinema instead
 x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulness unclear
 security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project
+devel/py-dogpile.core|devel/py-dogpile.cache|2016-09-13|EOL upstream. Merged into devel/py-dogpile.cache since 0.6.0
