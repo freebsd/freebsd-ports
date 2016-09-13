@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
 		${LOCALBASE}/bin/swig:devel/swig13
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-USES=		cmake:outsource compiler:c++11-lang perl5 python
+USES=		cmake:outsource compiler:c++11-lang perl5 python ssl
 
 CMAKE_ARGS+=	-D PYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
@@ -41,7 +42,8 @@ CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-D ENABLE_PERFTOOLS_DEBUG:BOOL=false \
 		-D BinPAC_SKIP_INSTALL:BOOL=true \
 		-D INSTALL_AUX_TOOLS:BOOL=true \
-		-D BUILD_SHARED_LIBS:BOOL=true
+		-D BUILD_SHARED_LIBS:BOOL=true \
+		-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
 
 BROUSER?=	bro
 BROGROUP?=	bro
@@ -51,100 +53,48 @@ PLIST_SUB+=	BROUSER=${BROUSER} \
 USERS=		${BROUSER}
 GROUPS=		${BROGROUP}
 
-USE_OPENSSL=	yes
-
-OPTIONS_DEFINE= BROCCOLI BROCTL BROKER DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS PORTS_SSL
-OPTIONS_DEFAULT=BROCCOLI BROCTL IPSUMDUMP LBL_CF LBL_HF PORTS_SSL
+OPTIONS_DEFINE= BROCCOLI BROCTL BROKER DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS
+OPTIONS_DEFAULT=BROCCOLI BROCTL IPSUMDUMP LBL_CF LBL_HF
+OPTIONS_SUB=	yes
 
 BROCCOLI_DESC=	Build support for libbroccoli communications
-BROCTL_DESC=	Build BroControl support (requires BROCCOLI)
+BROCTL_DESC=	BroControl support (implies BROCCOLI and IPSUMDUMP)
 BROKER_DESC=	Enable the Broker communication library
 DEBUG_DESC=	Compile in debugging mode
 IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
 PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
-PORTS_SSL_DESC=	Build with OpenSSL from ports (instead of base system)
 
-OPTIONS_EXCLUDE=NLS DOCS
+BROCTL_IMPLIES=		BROCCOLI IPSUMDUMP
 
-PORTS_SSL_VARS=	WITH_OPENSSL_PORT=yes
+BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
+BROCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+BROCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+BROCTL_CMAKE_BOOL=	INSTALL_BROCTL
+BROCTL_USE=		LDCONFIG=yes
+IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
+IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
+BROKER_CMAKE_BOOL=	ENABLE_BROKER
+BROKER_BUILD_DEPENDS=	caf>=0.14.1:devel/caf
+DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
+LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
+LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
+PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
+PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/pprof:devel/google-perftools
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MBROCCOLI}
-LIB_DEPENDS+=	libbroccoli.so:security/broccoli
-.endif
-
-.if ${PORT_OPTIONS:MBROCTL}
-.if empty(PORT_OPTIONS:MBROCCOLI)
-IGNORE=		the BROCTL option requires BROCCOLI
-.endif
-.if empty(PORT_OPTIONS:MIPSUMDUMP)
-IGNORE=		the BROCTL option requires IPSUMDUMP
-.endif
-BUILD_DEPENDS+=	${LOCALBASE}/bin/bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
-RUN_DEPENDS+=	${LOCALBASE}/bin/bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
-PLIST_SUB+=	BROCTL=""
-USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-D INSTALL_BROCTL:BOOL=true
-.else
-CMAKE_ARGS+=	-D INSTALL_BROCTL:BOOL=false
-PLIST_SUB+=	BROCTL="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBROKER}
-CMAKE_ARGS+=	-D ENABLE_BROKER:BOOL=true
-BUILD_DEPENDS+=	caf>=0.14.1:devel/caf
-PLIST_SUB+=	BROKER=""
-
-.if ${OSVERSION} < 1001000
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
 # Bro 2.4 with BROKER requires caf, clang and libc++
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang++34:lang/clang34 \
 		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-
 CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
 CXX=		${LOCALBASE}/bin/clang++34
-.endif
-.else
-CMAKE_ARGS+=	-D ENABLE_BROKER:BOOL=false
-PLIST_SUB+=	BROKER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=	-D ENABLE_DEBUG:BOOL=true
-.else
-CMAKE_ARGS+=	-D ENABLE_DEBUG:BOOL=false
-.endif
-
-.if ${PORT_OPTIONS:MLBL_HF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
-.endif
-
-.if ${PORT_OPTIONS:MLBL_CF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
-.endif
-
-.if ${PORT_OPTIONS:MPERFTOOLS}
-CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=true
-RUN_DEPENDS+=	${LOCALBASE}/bin/pprof:devel/google-perftools
-.else
-CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
-.endif
-
-.if ${PORT_OPTIONS:MPORTS_SSL}
-CMAKE_ARGS+=	-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
-.else
-.if ${SSL_DEFAULT} != base
-IGNORE=		the SSL option is requred when using SSL from ports
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MIPSUMDUMP}
-BUILD_DEPENDS+=	ipsumdump:net/ipsumdump
-RUN_DEPENDS+=	ipsumdump:net/ipsumdump
+.  endif
 .endif
 
 post-install-BROCTL-on:
@@ -156,4 +106,4 @@ post-install-BROCTL-on:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
