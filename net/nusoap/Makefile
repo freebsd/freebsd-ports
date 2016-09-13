@@ -9,19 +9,25 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP Toolkit for PHP
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	LGPL21+
 
-USES=		zip
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+USES=		php zip
 USE_PHP=	curl zlib xml
+NO_BUILD=	yes
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
-.include <bsd.port.pre.mk>
+PORTDATA=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
