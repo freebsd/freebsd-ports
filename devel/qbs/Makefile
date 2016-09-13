@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbs
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	dual
 
 USES=		compiler:c++11-lib qmake:outsource
-USE_GL=		yes
+USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core concurrent gui network script testlib \
 		widgets xml
@@ -30,5 +30,16 @@ INSTALL_TARGET=		install
 
 DOCS_ALL_TARGET=	docs
 DOCS_INSTALL_TARGET=	install_docs
+
+pre-configure:
+# We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
+# the linker before -L/usr/local/lib. By default, the opposite happens, which
+# is a problem when a Qt port is being upgraded, since an existing library
+# would end up being picked up instead of those built in ${WRKSRC}/lib. Since
+# qmake appends the value of QMAKE_LIBDIR to QMAKE_LIBDIR_FLAGS, we can use the
+# latter to get the linker path order right. qmake is smart enough to strip
+# occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
+# See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
+	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
 
 .include <bsd.port.mk>
