@@ -12,11 +12,8 @@ COMMENT=	MySQL database connector for C
 
 LICENSE=	GPLv2
 
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
-USES=		cmake:outsource compiler:features mysql
-CMAKE_ARGS+=	-DWITH_SSL=system \
-		-DOPENSSL_INCLUDE_DIR=${LOCALBASE}/include/openssl
+USES=		cmake:outsource compiler:features mysql ssl:build
+CMAKE_ARGS+=	-DOPENSSL_INCLUDE_DIR="${OPENSSLINC}"
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -25,6 +22,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${ARCH} == "i386" && ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 CFLAGS+=	-march=i586
+.endif
+
+.if ${SSL_DEFAULT} == base
+CMAKE_ARGS+=	-DWITH_SSL="system"
+.else
+CMAKE_ARGS+=	-DWITH_SSL="${OPENSSLBASE}"
 .endif
 
 .include <bsd.port.post.mk>
