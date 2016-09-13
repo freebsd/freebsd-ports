@@ -35,6 +35,10 @@ PORTDOCS=	NEWS COPYING README PROTOCOL TODO
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set SSL_DEFAULT=openssl)
+.endif
+
 .if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=	Requires PSK which is unsupported by the selected LibreSSL
 .endif
