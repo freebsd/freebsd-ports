@@ -10,15 +10,10 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old school top down arcade shooter
 
-LICENSE=	GPLv2 CCbyNCSA3 EULA
+LICENSE=	GPLv2 CC-BY-NC-SA-3.0 EULA
 LICENSE_COMB=	multi
-
 LICENSE_FILE_GPLv2=	${WRKSRC}/gpl-2.txt
-
-LICENSE_NAME_CCbyNCSA3=	Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
-LICENSE_FILE_CCbyNCSA3=	${WRKSRC}/cc-by-nc-sa-3.txt
-
+LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/cc-by-nc-sa-3.txt
 LICENSE_NAME_EULA=	Steel storm episode 1 limited user software license agreement
 LICENSE_PERMS_EULA=	# none
 LICENSE_FILE_EULA=	${WRKSRC}/license.txt
