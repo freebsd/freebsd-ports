@@ -3817,7 +3817,6 @@
     SUBDIR += php5-dav
     SUBDIR += php5-geshi
     SUBDIR += php5-ice
-    SUBDIR += php5-msgpack
     SUBDIR += php5-pinba
     SUBDIR += php5-thrift
     SUBDIR += php55-gettext

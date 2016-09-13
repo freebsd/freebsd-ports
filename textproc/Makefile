@@ -39,7 +39,6 @@
     SUBDIR += archmage
     SUBDIR += artha
     SUBDIR += asciidoc
-    SUBDIR += asciinema
     SUBDIR += asm-xml
     SUBDIR += asm2html
     SUBDIR += aspell
