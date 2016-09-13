@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ncrack
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://nmap.org/ncrack/dist/ \
 				http://redundancy.redundancy.org/mirror/
-DISTNAME=	${PORTNAME}-${PORTVERSION}ALPHA
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	High-speed network authentication cracking tool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake ssl
