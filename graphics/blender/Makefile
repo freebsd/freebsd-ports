@@ -11,7 +11,8 @@ MASTER_SITES=	http://download.blender.org/source/ \
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/doc/license/GPL-license.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
