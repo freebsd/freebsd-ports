@@ -1,5 +1,5 @@
---- qorganizer.cpp.orig	2009-04-06 07:56:17 +0000
-+++ qorganizer.cpp	2009-04-06 07:56:23 +0000
+--- qorganizer.cpp.orig	2007-10-07 06:41:32 UTC
++++ qorganizer.cpp
 @@ -1511,7 +1511,7 @@ void CQTextEdit::insertFromMimeData( con
           QImage *image = new QImage(origin); 
           if(!image->isNull())
@@ -9,8 +9,8 @@
             cursor.insertImage(origin);
            }
           delete image;
---- qorganizer.h.orig	2009-04-06 07:56:12 +0000
-+++ qorganizer.h	2009-04-06 07:56:39 +0000
+--- qorganizer.h.orig	2007-09-07 21:51:40 UTC
++++ qorganizer.h
 @@ -104,6 +104,8 @@ class CQTextEdit:public QTextEdit
   
  };
