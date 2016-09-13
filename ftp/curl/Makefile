@@ -153,7 +153,7 @@ IGNORE=		only supports LDAPS with SSL
 IGNORE=		GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif
 
-.if ${SSL_DEFAULT} == libressl
+.if ${SSL_DEFAULT:Mlibressl*}
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL}
 IGNORE=		GSSAPI_BASE is not compatible with LibreSSL. Use other GSSAPI options
 .endif
