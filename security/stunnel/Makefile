@@ -76,11 +76,11 @@ LDFLAGS+=	-lpthread
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MFIPS} && ${SSL_DEFAULT} == libressl
+.if ${PORT_OPTIONS:MFIPS} && ${SSL_DEFAULT:Mlibressl*}
 IGNORE=		LibreSSL does not support FIPS standard
 .endif
 
-.if ${SSL_DEFAULT} == libressl
+.if ${SSL_DEFAULT:Mlibressl*}
 NO_PACKAGE=	The stunnel license restricts distribution when linked to non-OpenSSL non-base SSL-libraries
 .endif
 
