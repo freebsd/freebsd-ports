@@ -55,6 +55,10 @@ DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE=Release
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == armv6
+CMAKE_ARGS+=	-DENABLE_JIT:BOOL=OFF
+.endif
+
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc
 .endif
