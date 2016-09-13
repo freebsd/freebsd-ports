@@ -3,6 +3,7 @@
 
 PORTNAME=	Bencode
 PORTVERSION=	1.402
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ARISTOTLE
@@ -14,6 +15,7 @@ COMMENT=	BitTorrent bencode serialisation format
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Exporter-Tidy>0:devel/p5-Exporter-Tidy
 RUN_DEPENDS=	p5-Exporter-Tidy>0:devel/p5-Exporter-Tidy
 
 NO_ARCH=	yes
