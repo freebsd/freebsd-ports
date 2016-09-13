@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ns3
-PORTVERSION=	3.24.1
+PORTVERSION=	3.25
 CATEGORIES=	net
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}
@@ -11,10 +11,8 @@ COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libsqlite3.so:databases/sqlite3
-
-USES=		pkgconfig python tar:bzip2 waf
+USES=		gettext pkgconfig python sqlite tar:bzip2 waf
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	ns-${DISTVERSION}
 CONFIGURE_ARGS=	--int64x64=cairo
@@ -29,21 +27,21 @@ DEBUG_PLIST_SUB=	DEBUG_SUFX="-debug"
 DEBUG_CONFIGURE_OFF=	--build-profile=release
 DEBUG_PLIST_SUB_OFF=	DEBUG_SUFX=""
 
-EXAMPLES_CONFIGURE_ON=	--enable-examples
-EXAMPLES_CONFIGURE_OFF=	--disable-examples
+EXAMPLES_CONFIGURE_ENABLE=	examples
 
 GSL_DESC=		GNU Scientific Library support
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
-GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
+GTK2_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
 GTK2_CONFIGURE_OFF=	--disable-gtk
 
 SUDO_DESC=		Use sudo to set suid bits on executables
 SUDO_BUILD_DEPENDS=	sudo:security/sudo
 SUDO_CONFIGURE_ON=	--enable-sudo
 
-TEST_CONFIGURE_ON=	--enable-tests
-TEST_CONFIGURE_OFF=	--disable-tests
+TEST_CONFIGURE_ENABLE=	tests
 
 post-install:
 	@${FIND} ${STAGEDIR} \( -path '*/bin/*' -or -name '*.so' \) \
