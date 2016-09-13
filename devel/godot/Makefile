@@ -9,12 +9,10 @@ CATEGORIES=	devel games
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Game runtime engine
 
-LICENSE=		MIT CCBYv3
+LICENSE=		MIT CC-BY-3.0
 LICENSE_COMB=		multi
-LICENSE_NAME_CCBYv3=	Creative Commons Attribution 3.0 Unported license
-LICENSE_FILE_CCBYv3=	${WRKSRC}/LOGO_LICENSE.md
+LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.md
-LICENSE_PERMS_CCBYv3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
