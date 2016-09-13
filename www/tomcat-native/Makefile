@@ -16,9 +16,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/native
 
-USES=		libtool
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
+USES=		libtool ssl
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.6+
@@ -35,4 +33,15 @@ PLIST_FILES=	lib/libtcnative-1.a \
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcnative-1.so.0.2.7
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires OpenSSL 1.0.2 (set SSL_DEFAULT=openssl)
+IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set_SSL_DEFAULT=openssl)
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Detected LibreSSL (missing numerous symbols during linking)
+.endif
+
+.include <bsd.port.post.mk>
