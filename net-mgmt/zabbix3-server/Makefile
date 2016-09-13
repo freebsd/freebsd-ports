@@ -152,8 +152,12 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
-IGNORE=   OpenSSL from the base system is too old, add DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything that needs SSL.
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set SSL_DEFAULT=openssl)
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Requires PSK which is unsupported by the selected LibreSSL
 .endif
 
 post-patch:
