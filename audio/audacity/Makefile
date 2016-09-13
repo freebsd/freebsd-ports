@@ -11,7 +11,7 @@ DISTNAME=	Audacity-${PORTVERSION}
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	autogen:devel/autogen \
@@ -143,8 +143,10 @@ CXXFLAGS+=	-std=c++11
 .endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
