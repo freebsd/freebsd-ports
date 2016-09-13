@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160911:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for complete set of Creative Commons licenses
+
+  CC-(BY|BY-ND|BY-NC|BY-NC-ND|BY-NC-SA|BY-SA)-(1.0|2.0|2.5|3.0|4.0)
+
 20160909:
 AUTHOR: amdmi3@FreeBSD.org
 
