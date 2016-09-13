@@ -25,6 +25,7 @@ bin/resolve_stack_dump
 bin/resolveip
 %%TOKUDB%%bin/tokuft_logprint
 %%TOKUDB%%bin/tokuftdump
+%%TOKUDB%%include/backup.h
 %%TOKUDB%%lib/mysql/libHotBackup.so
 lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
@@ -49,6 +50,7 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/scalability_metrics.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
+lib/mysql/plugin/test_udf_services.so
 %%TOKUDB%%lib/mysql/plugin/tokudb_backup.so
 lib/mysql/plugin/validate_password.so
 libexec/mysqld
@@ -79,6 +81,10 @@ man/man1/replace.1.gz
 man/man1/resolve_stack_dump.1.gz
 man/man1/resolveip.1.gz
 man/man8/mysqld.8.gz
+%%TOKUDB%%share/doc/mysql/COPYING.AGPLv3
+%%TOKUDB%%share/doc/mysql/COPYING.GPLv2
+%%TOKUDB%%share/doc/mysql/PATENTS
+%%TOKUDB%%share/doc/mysql/README.md
 %%TOKUDB%%share/doc/mysql/README_tokudb_backup
 %%DATADIR%%/binary-configure
 %%DATADIR%%/bulgarian/errmsg.sys
