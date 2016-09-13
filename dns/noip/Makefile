@@ -3,7 +3,7 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		LOCAL/ehaupt
@@ -11,17 +11,17 @@ MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 MAINTAINER=	sthalik@tehran.lain.pl
 COMMENT=	No-IP.com's dynamic DNS update client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ALL_TARGET=	noip2
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RC_SUBR=	noip
 
 USERS=		noip
 GROUPS=		noip
 
-PLIST_SUB+=	USER="${USERS}"
+PLIST_SUB=	USER="${USERS}"
 
 OPTIONS_DEFINE=	DOCS
 
