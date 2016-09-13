@@ -154,9 +154,6 @@ IGNORE=		GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI
 .endif
 
 .if ${SSL_DEFAULT:Mlibressl*}
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL}
-IGNORE=		GSSAPI_BASE is not compatible with LibreSSL. Use other GSSAPI options
-.endif
 .if ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		unsupported TLS-SRP in LibreSSL
 .endif
