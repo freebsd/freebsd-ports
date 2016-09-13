@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	postfixadmin
-PORTVERSION=	2.93
+PORTVERSION=	3.0
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
 
 RUN_DEPENDS+=	p5-DBI>=1.634:databases/p5-DBI \
@@ -19,7 +19,7 @@ RUN_DEPENDS+=	p5-DBI>=1.634:databases/p5-DBI \
 		p5-Mail-Sender>=0.7.04:mail/p5-Mail-Sender \
 		p5-MIME-EncWords>=0.040:mail/p5-MIME-EncWords
 
-USES=		cpe perl5 shebangfix
+USES=		cpe perl5 shebangfix php
 CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
 
@@ -30,21 +30,17 @@ SUB_FILES+=	pkg-message
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MYSQL MYSQLI PGSQL
-MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
-
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
 
 USE_PERL5=	run
 
-USE_PHP=	pcre session mbstring spl xmlrpc
+USE_PHP=	mbstring pcre session spl xmlrpc
 
-MYSQL_USE=	php=mysql
-MYSQLI_USE=	php=mysqli
+MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
-
-WANT_PHP_WEB=	yes
+SQLITE_USE=	php=sqlite3
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
