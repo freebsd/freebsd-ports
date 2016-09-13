@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libspectrum
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
