@@ -1,0 +1,29 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! WARNING: letsencrypt.sh has been renamed to dehydrated !!
+!! rename all weekly_letsencrypt_* periodic variables     !!
+!! to         weekly_dehydrated_* in your periodic.conf   !!
+|| and mv /usr/local/etc/{letsencrypt,dehydrated}         ||
+|| default challenge path has been renamed as well        ||
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+To use this script you should copy the examples in
+%%PREFIX%%/etc/%%PORTNAME%%/ and at least add a
+domain and a contact mail address.
+
+In order to run the script regularly to update
+the certificates add this line to /etc/periodic.conf
+
+weekly_dehydrated_enable="YES"
+
+Additionally the following parameters can be added to
+/etc/periodic.conf
+
+To run the certification renenewal as a different user
+weekly_dehydrated_user="_letsencrypt"
+
+To run a script after the renewal (as root)
+weekly_dehydrated_deployscript="%%PREFIX%%/etc/%%PORTNAME%%/deploy.sh"
+
+Additional flags for the periodic run go into
+weekly_dehydrated_flags="-g"
+
