@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	libowfat>=0.29:devel/libowfat
 
-USES=		gmake tar:bzip2
-USE_OPENSSL=	yes
+USES=		gmake ssl tar:bzip2
 USE_RC_SUBR=	gatling
 
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${OPENSSLINC} -I${LOCALBASE}/include
@@ -81,6 +80,10 @@ STRIP=
 .endif
 
 PLIST_FILES+=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,} sbin/gatling_wrapper
+
+post-patch:
+	${REINPLACE_CMD} -e 's/\(trymd5.c\) \(-lcrypto\)/\1 $$(LDFLAGS) \2/'	\
+		${WRKSRC}/GNUmakefile
 
 pre-install:
 	@cd ${WRKSRC} && ${CP} gatling.1 gatling.8
