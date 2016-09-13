@@ -102,6 +102,7 @@
     SUBDIR += d0_blind_id
     SUBDIR += dcetest
     SUBDIR += ddos_scan
+    SUBDIR += dehydrated
     SUBDIR += denyhosts
     SUBDIR += destroy
     SUBDIR += digest
@@ -290,7 +291,6 @@
     SUBDIR += l5
     SUBDIR += lasso
     SUBDIR += lastpass-cli
-    SUBDIR += letsencrypt.sh
     SUBDIR += libadacrypt
     SUBDIR += libargon2
     SUBDIR += libassuan
