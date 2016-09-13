@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.22.1
-PORTREVISION=	1
+PORTVERSION=	0.22.2
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -46,7 +45,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.3.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.3.0
 
 .include <bsd.port.mk>
