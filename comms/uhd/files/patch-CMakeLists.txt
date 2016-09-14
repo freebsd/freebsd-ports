@@ -1,9 +1,0 @@
---- host/CMakeLists.txt.orig	2015-11-14 16:31:04.552639000 +0000
-+++ host/CMakeLists.txt	2015-11-14 17:26:43.452033000 +0000
-@@ -350,5 +350,5 @@
- UHD_INSTALL(
-     FILES ${CMAKE_CURRENT_BINARY_DIR}/uhd.pc
--    DESTINATION ${LIBRARY_DIR}/pkgconfig
-+    DESTINATION libdata/pkgconfig
-     COMPONENT "devel"
- )

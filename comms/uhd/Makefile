@@ -7,16 +7,13 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.ettus.com/binaries/images/
 DISTFILES=	${IMAGE_FILE}
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILES}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Ettus Research UHD driver framework
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     ${UHD_COMMIT}
-
-UHD_COMMIT=	32951af2f3e7b1ddb56486c9f15b2e1033605bd6
+GH_TAGNAME=     32951af2f3e7b1ddb56486c9f15b2e1033605bd6
 
 CONFLICTS=	usrp-[0-9]*
 
@@ -27,26 +24,20 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boos
 		orcc:${PORTSDIR}/devel/orc \
 		${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
 
-USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7
-COMPILER_FEATURES=	libc++
+USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7 pathfix
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
-MAKE_JOBS_UNSAFE=	yes
+#MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
 #CMAKE_ARGS+=	--debug-output --trace
-DOCSDIR=	share/doc/uhd
 
 IMAGE_FILE=	uhd-images_003.009.005-release.zip
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-IGNORE=	needs libusb 1.0
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 HAVEDOCS=	YES
