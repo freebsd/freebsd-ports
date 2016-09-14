@@ -50,7 +50,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@for lang in ${SEAMONKEY_I18N_}; do \
-		if ! (${UNZIP_CMD} -qo ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \
