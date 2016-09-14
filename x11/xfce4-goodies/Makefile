@@ -25,7 +25,8 @@ OPTIONS_GROUP=	APPLICATIONS PANELPLUGINS THUNARPLUGINS UNOFFICIAL
 
 OPTIONS_GROUP_APPLICATIONS=	DASHBOARD DICTIONARY GIGOLO MIDORI PAROLE \
 				POWERMANAGER RISTRETTO SCREENSHOOTER \
-				TASKMANAGER TERMINAL XFBURN XFMPC
+				TASKMANAGER TERMINAL VOLUMEDPULSE XFBURN \
+				XFMPC
 DASHBOARD_DESC=			GNOME shell like dashboard for the Xfce desktop
 DICTIONARY_DESC=		Xfce4 plugin to query different dictionaries
 GIGOLO_DESC=			Frontend to easily manage filesystem connections
@@ -36,6 +37,7 @@ RISTRETTO_DESC=			Image viewer with Xfce integration
 SCREENSHOOTER_DESC=		Application and panel plugin to take screenshots
 TASKMANAGER_DESC=		Task manager for the Xfce desktop
 TERMINAL_DESC=			Terminal emulator for the X windowing system
+VOLUMEDPULSE_DESC=		Volume management daemon for Xfce using PulseAudio
 XFBURN_DESC=			CD/DVD burning tool for Xfce
 XFMPC_DESC=			Graphical MPD client focusing on low footprint
 
@@ -49,6 +51,7 @@ RISTRETTO_RUN_DEPENDS=		ristretto>=0:graphics/ristretto
 SCREENSHOOTER_RUN_DEPENDS=	xfce4-screenshooter-plugin>=0:x11/xfce4-screenshooter-plugin
 TASKMANAGER_RUN_DEPENDS=	xfce4-taskmanager>=0:x11/xfce4-taskmanager
 TERMINAL_RUN_DEPENDS=		xfce4-terminal>=0:x11/xfce4-terminal
+VOLUMEDPULSE_RUN_DEPENDS=	xfce4-volumed-pulse>=0:deskutils/xfce4-volumed-pulse
 XFBURN_RUN_DEPENDS=		xfburn>=0:sysutils/xfburn
 XFMPC_RUN_DEPENDS=		xfmpc>=0:audio/xfmpc
 
@@ -124,7 +127,7 @@ MEDIATAGS_RUN_DEPENDS=		thunar-media-tags-plugin>=0:audio/thunar-media-tags-plug
 VCS_RUN_DEPENDS=		thunar-vcs-plugin>=0:devel/thunar-vcs-plugin
 
 OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MIXER PRINT THEMES \
-				VALA VFS VOLUMED VOLUMEDPULSE
+				VALA VFS VOLUMED
 BSDCPUFREQ_DESC=		Display the CPU clock frequency in Xfce panel
 EQUAKE_DESC=			Earthquake monitor plugin for the Xfce panel
 MIXER_DESC=			Volume control for the Xfce desktop
@@ -143,6 +146,5 @@ THEMES_RUN_DEPENDS=		xfce4-wm-themes>=0:misc/xfce4-wm-themes
 VALA_RUN_DEPENDS=		xfce4-vala>=0:devel/xfce4-vala
 VFS_RUN_DEPENDS=		thunar-vfs>=0:x11-fm/thunar-vfs
 VOLUMED_RUN_DEPENDS=		xfce4-volumed>=0:deskutils/xfce4-volumed
-VOLUMEDPULSE_RUN_DEPENDS=	xfce4-volumed-pulse>=0:deskutils/xfce4-volumed-pulse
 
 .include <bsd.port.mk>
