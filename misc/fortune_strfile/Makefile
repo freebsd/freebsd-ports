@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duplicate of strfile(8)
 
 PROGRAM=	fortune_strfile
