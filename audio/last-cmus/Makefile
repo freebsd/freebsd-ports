@@ -13,6 +13,8 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cmus plugin for submitting songs into last.fm
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

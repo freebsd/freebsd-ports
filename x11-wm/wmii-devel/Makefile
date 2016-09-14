@@ -5,7 +5,7 @@ PORTNAME=	wmii
 PORTVERSION=	3.9.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://dl.suckless.org/wmii/ GOOGLE_CODE
+MASTER_SITES=	http://dl.suckless.org/wmii/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}+ixp-${PORTVERSION}
 

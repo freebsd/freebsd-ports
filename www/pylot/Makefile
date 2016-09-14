@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tool for testing performance and scalability of web services
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	GUI REPORTGRAPHS
 OPTIONS_DEFAULT=	REPORTGRAPHS
 GUI_DESC=		Enable GUI mode

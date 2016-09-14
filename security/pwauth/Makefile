@@ -4,8 +4,7 @@
 PORTNAME=	pwauth
 PORTVERSION=	2.3.11
 CATEGORIES=	security www
-MASTER_SITES=	GOOGLE_CODE \
-		http://www.unixpapa.com/software/
+MASTER_SITES=	http://www.unixpapa.com/software/
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Unix Web Authenticator

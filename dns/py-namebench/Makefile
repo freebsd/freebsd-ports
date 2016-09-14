@@ -15,6 +15,8 @@ COMMENT=	Open Source DNS benchmark utility
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy \
 	${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython \

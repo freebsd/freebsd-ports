@@ -11,6 +11,8 @@ COMMENT=	Cluster monitoring daemon
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	mk-configure>=0.20:devel/mk-configure
 
 USES=		ssl

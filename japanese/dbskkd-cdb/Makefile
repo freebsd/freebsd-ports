@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another dictionary server for SKK
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:databases/tinycdb
 RUN_DEPENDS=	${SKKJISYOCDB}:japanese/skk-jisyo-cdb
 

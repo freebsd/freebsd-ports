@@ -9,6 +9,8 @@ MASTER_SITES=	https://ouspg.googlecode.com/files/
 MAINTAINER=	jau@iki.fi
 COMMENT=	General purpose fuzzer
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PLIST_FILES=	bin/radamsa \
 		man/man1/radamsa.1.gz
 

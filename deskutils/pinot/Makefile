@@ -14,6 +14,8 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils \
 		update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libxapian.so:databases/xapian-core		\

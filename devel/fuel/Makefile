@@ -11,6 +11,8 @@ COMMENT=	GUI front-end to fossil SCM tool
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/bin/fossil:devel/fossil
 
 USES=		qmake

@@ -14,6 +14,8 @@ COMMENT=	Fast R6RS Scheme interpreter
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libonig.so:devel/oniguruma5
 

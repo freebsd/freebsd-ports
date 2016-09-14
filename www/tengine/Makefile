@@ -467,6 +467,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_videothumbextractor} \
 .if ${PORT_OPTIONS:MHTTP_ZIP}
 NGINX_ZIP_VERSION=	1.1.6
 MASTER_SITES+=	http://mod-zip.googlecode.com/files/:zip
+BROKEN=		Unfetchable (google code has gone away)
 DISTFILES+=	mod_zip-${NGINX_ZIP_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
@@ -593,6 +594,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .if ${PORT_OPTIONS:MSFLOW}
 NGINX_SFLOW_VERSION=	0.9.7
 MASTER_SITES+=	http://nginx-sflow-module.googlecode.com/files/:sflow
+BROKEN=		Unfetchable (google code has gone away)
 DISTFILES+=	nginx-sflow-module-${NGINX_SFLOW_VERSION}.tar.gz:sflow
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \

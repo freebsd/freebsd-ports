@@ -4,8 +4,7 @@
 PORTNAME=	simplegroupware
 PORTVERSION=	0.745
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/simplgroup/${PORTNAME}/${PORTVERSION}/ \
-		GOOGLE_CODE
+MASTER_SITES=	SF/simplgroup/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	SimpleGroupware_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

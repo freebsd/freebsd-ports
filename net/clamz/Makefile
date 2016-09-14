@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	glathe.helko@googlemail.com
 COMMENT=	Command-line program to download MP3 files from Amazon's music store
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libgcrypt.so:security/libgcrypt

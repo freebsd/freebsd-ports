@@ -7,7 +7,6 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
-		GOOGLE_CODE:kadu \
 		http://download.kadu.im/stable/:kadu \
 		http://download.kadu.im/additions/:additions
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kadu

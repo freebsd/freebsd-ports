@@ -13,6 +13,8 @@ COMMENT=	Python module for easily building good multi-command scripts
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2 zip
 USE_PYTHON=	distutils
 

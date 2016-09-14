@@ -12,6 +12,8 @@ COMMENT=	Graphical frontend to the objdump disassembler
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk
 LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2

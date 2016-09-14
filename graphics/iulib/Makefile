@@ -12,6 +12,8 @@ COMMENT=	Library of image understanding-related algorithms
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 

@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ binding to the GuiLoader library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 LIB_DEPENDS=	libguiloader.so:devel/guiloader \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24

@@ -12,6 +12,8 @@ DISTNAME=	pyflowtools-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python extension module for reading flow-tools' data
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:net-mgmt/flow-tools
 
 LICENSE=	GPLv2

@@ -11,6 +11,8 @@ COMMENT=	Fast, simple, and transactional Java persistence engine
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		zip

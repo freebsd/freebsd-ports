@@ -5,8 +5,7 @@ PORTNAME=	lfm
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		https://inigo.katxi.org/devel/lfm/
+MASTER_SITES=	https://inigo.katxi.org/devel/lfm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager

@@ -14,6 +14,8 @@ COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes

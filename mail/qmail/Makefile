@@ -423,6 +423,7 @@ LDAPFLAGS+=	-D${param}
 . if ${PORT_OPTIONS:MSRS}
 BUILD_DEPENDS+=	srs:mail/libsrs2
 MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
+BROKEN=		Unfetchable (google code has gone away)
 SRS_LDAP_PATCH=		qmail-ldap-1.03-20060201-SRS.patch
 DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 . endif

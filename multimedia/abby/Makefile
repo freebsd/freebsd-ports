@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end for c/clive
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	CCLIVE
 OPTIONS_DEFAULT=	CCLIVE
 CCLIVE_DESC=	Use cclive backend (instead of clive)

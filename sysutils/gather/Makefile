@@ -11,6 +11,8 @@ COMMENT=	Utility to store and display system statistics
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	gatherit
 
 USES=		perl5

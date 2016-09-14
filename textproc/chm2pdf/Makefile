@@ -12,6 +12,8 @@ COMMENT=	Python script that converts CHM files into PDF files
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	htmldoc:textproc/htmldoc \
 		${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm
 

@@ -12,6 +12,8 @@ DISTNAME=	packer2.perl
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	JavaScript compressor/obfuscator (Perl version)
 
+BROKEN=		Unfetchable (google code has gone away)
+
 JSPACKER=	jsPacker.pl
 
 NO_BUILD=	yes

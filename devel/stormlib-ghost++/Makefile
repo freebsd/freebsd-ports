@@ -11,6 +11,8 @@ DISTNAME=	${PROJECTHOST}_${PROJECTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to read and write MPQ archives
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	ghostplusplus
 PROJECTVERSION=	17.1
 

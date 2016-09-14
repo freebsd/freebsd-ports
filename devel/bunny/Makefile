@@ -14,6 +14,8 @@ COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		ssl tar:tgz
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}

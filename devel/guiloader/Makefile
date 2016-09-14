@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance and compact GuiXml loader library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	nothing-personal
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20

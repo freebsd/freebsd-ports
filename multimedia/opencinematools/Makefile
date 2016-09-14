@@ -10,6 +10,8 @@ DISTVERSIONSUFFIX=	-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tools for creating multi-reel DCPs from MXF source material
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libexpat.so:textproc/expat2 \
 		libasdcp.so:multimedia/asdcplib

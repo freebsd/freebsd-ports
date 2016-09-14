@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_GNOME=	gtk20
 USE_QT4=	corelib gui moc_build rcc_build uic_build qmake_build
 USES=		cmake gettext kde:4 pkgconfig tar:bzip2

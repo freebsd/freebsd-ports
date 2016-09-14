@@ -6,7 +6,6 @@ PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://barryp.org/static/media/software/download/py-${PORTNAME}/${PORTVERSION}/ \
-		GOOGLE_CODE \
 		CHEESESHOP
 PROJECTHOST=	py-smbpasswd
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

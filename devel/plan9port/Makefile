@@ -15,6 +15,8 @@ LICENSE_NAME=	Lucent Public License Version 1.02
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BROKEN_ia64=	does not install: cleanname not found
 BROKEN_sparc64=	does not install: cleanname not found
 

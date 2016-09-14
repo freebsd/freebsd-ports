@@ -12,6 +12,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with graphs in Python, core module
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	python-graph
 USES=		python
 USE_PYTHON=	distutils autoplist

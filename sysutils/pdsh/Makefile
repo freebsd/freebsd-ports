@@ -11,6 +11,8 @@ COMMENT=	Parallel Distributed Shell
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 # :keepla because port uses lt_dlopen
 USES=		libtool:keepla perl5 shebangfix tar:bzip2

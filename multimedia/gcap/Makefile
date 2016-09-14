@@ -13,6 +13,8 @@ COMMENT=	Command line tool for downloading Youtube closed captions
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-HTML-Parser>=3.68:www/p5-HTML-Parser \
 		p5-Umph-Prompt>=0:multimedia/p5-Umph-Prompt \

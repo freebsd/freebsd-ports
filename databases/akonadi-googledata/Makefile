@@ -10,6 +10,8 @@ MASTER_SITES=	http://libgcal.googlecode.com/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Akonadi Resources for Google Contacts and Calendar
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libgcal.so:deskutils/libgcal
 
 USES=		cmake gettext kde:4 tar:bzip2

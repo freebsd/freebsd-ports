@@ -16,6 +16,8 @@ COMMENT=	Python ICQ-Transport for Jabber
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 

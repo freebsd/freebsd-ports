@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Pyrex wrapper to provide python interfaces to PROJ.4
 
+BROKEN=		Unfetchable (google code has gone away)
+
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 USES=		python
 USE_PYTHON=	distutils autoplist

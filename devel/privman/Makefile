@@ -13,6 +13,8 @@ COMMENT=	Library that makes it easy for programs to use privilege separation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

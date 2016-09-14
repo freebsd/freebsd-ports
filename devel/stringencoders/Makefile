@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of high performance C-string transformations
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		libtool perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

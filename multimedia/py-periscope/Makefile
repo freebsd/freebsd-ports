@@ -17,6 +17,8 @@ COMMENT=	Subtitles searching module
 
 LICENSE=	LGPL3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

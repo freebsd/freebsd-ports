@@ -11,6 +11,8 @@ COMMENT=	Hangul X Input Method for Everywhere
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libhangul.so:korean/libhangul
 
 USE_GNOME=	gtk20

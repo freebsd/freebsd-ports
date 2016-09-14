@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Tool to assist with Google style guide compliance
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

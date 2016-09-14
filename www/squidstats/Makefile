@@ -11,6 +11,8 @@ DISTNAME=	squidstats-r${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of simple statistical analysis bits for Squid
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	p5-Config-IniFiles>=2.39:devel/p5-Config-IniFiles \
 		p5-RRD-Simple>=1.44:databases/p5-RRD-Simple \
 		p5-SNMP_Session>=1.11:net-mgmt/p5-SNMP_Session

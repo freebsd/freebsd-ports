@@ -14,6 +14,8 @@ COMMENT=	The Chinese PinYin and Bopomofo conversion library
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		compiler:c++11-lib gmake libtool pkgconfig python:build shebangfix

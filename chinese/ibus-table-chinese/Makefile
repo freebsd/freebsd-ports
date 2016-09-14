@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	dennylin93@hs.ntnu.edu.tw
 COMMENT=	Chinese input tables for IBus
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:devel/cmake-fedora \
 		ibus-daemon:textproc/ibus \
 		${LOCALBASE}/libexec/ibus-engine-table:textproc/ibus-table

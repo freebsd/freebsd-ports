@@ -12,6 +12,8 @@ COMMENT=	Acoustic spectrum analyser
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		tar:xz gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils

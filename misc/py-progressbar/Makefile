@@ -12,6 +12,8 @@ COMMENT=	Text progressbar library for python
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_PYTHON=	autoplist distutils
 USES=		python:2
 

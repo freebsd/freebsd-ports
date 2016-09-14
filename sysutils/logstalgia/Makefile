@@ -12,6 +12,8 @@ COMMENT=	Website access log visualization tool
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libftgl.so:graphics/ftgl \
 		libpng.so:graphics/png \
 		libpcre.so:devel/pcre

@@ -12,6 +12,8 @@ COMMENT=	Apache module for dynamically configured mass virtual hosting with php
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 MANUAL_PACKAGE_BUILD=	needs apr and apache with DBD options enabled
 
 USE_APACHE=	22+

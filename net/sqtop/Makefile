@@ -11,6 +11,8 @@ COMMENT=	Console-based display of Squid proxy connections
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=	tar:bzip2
 
 PLIST_FILES=	bin/sqtop \

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw mathematical figures in SVG using Python
 
+BROKEN=		Unfetchable (google code has gone away)
+
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 
 USES=		python tar:tgz

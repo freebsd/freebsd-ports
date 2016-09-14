@@ -10,6 +10,8 @@ COMMENT=	Library for gnome-mplayer and gecko-mediaplayer
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser
 
 USES=		gettext gmake libtool pathfix perl5 pkgconfig

@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE/${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		compiler:features gmake
 USE_SDL=	image sdl
 USE_GL=		yes

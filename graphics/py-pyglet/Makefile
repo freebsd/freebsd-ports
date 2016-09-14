@@ -13,6 +13,8 @@ COMMENT=	Cross-platform windowing and multimedia library for Python
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/libavbin.so:multimedia/avbin

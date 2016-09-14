@@ -14,6 +14,8 @@ COMMENT=	PHP wrapper for chinese/cconv
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}

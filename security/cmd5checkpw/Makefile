@@ -8,6 +8,8 @@ MASTER_SITES=	http://beautytech.googlecode.com/svn-history/r6/trunk/src/qmail/ta
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
+ 
+BROKEN=		Unfetchable (google code has gone away)
 
 OPTIONS_DEFINE=	DOCS
 

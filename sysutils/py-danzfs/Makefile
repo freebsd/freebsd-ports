@@ -12,6 +12,8 @@ COMMENT=	Provides a Python API for interacting with ZFS without using libzfs
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_PYTHON=	distutils
 USES=		python tar:xz
 

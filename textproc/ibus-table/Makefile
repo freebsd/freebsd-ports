@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Table based input method framework for IBus
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3

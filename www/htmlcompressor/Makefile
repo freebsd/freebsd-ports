@@ -14,6 +14,8 @@ COMMENT=	HTML/XML Compressor
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
