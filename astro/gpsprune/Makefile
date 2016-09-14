@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsprune
-PORTVERSION=	17.2
+PORTVERSION=	18.5
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -33,7 +33,7 @@ JAVA3D_DESC=	Support for 3D view of track
 JAVA3D_RUN_DEPENDS=	java3d>=1.5.2:java/java3d
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/gpsprune.sh ${STAGEDIR}${PREFIX}/bin/gpsprune
 
