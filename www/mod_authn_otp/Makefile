@@ -14,6 +14,8 @@ COMMENT=	Apache module for one-time password authentication
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		ssl
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+

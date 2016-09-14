@@ -13,6 +13,8 @@ COMMENT=	Library to parse the BBcode written in Python
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 

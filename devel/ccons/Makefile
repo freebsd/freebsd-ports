@@ -13,6 +13,8 @@ COMMENT=	Interactive Console for the C Programming Language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	llvm-config33:devel/llvm33 \
 		clang++33:lang/clang33
 RUN_DEPENDS=	clang++33:lang/clang33

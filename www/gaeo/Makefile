@@ -14,6 +14,8 @@ COMMENT=	Open-source web framework running on Google App Engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	google-appengine>=1.1.0:www/google-appengine \
 		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:devel/py-simplejson
 

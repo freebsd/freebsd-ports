@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks headers in C/C++ programs
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake zip
 MAKE_ARGS=	CXX="${CXX}"
 

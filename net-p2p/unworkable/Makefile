@@ -12,6 +12,8 @@ COMMENT=	Free BitTorrent Implementation
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		scons

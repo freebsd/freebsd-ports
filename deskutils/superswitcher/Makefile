@@ -12,6 +12,8 @@ COMMENT=	Alt-Tab replacement
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake pkgconfig

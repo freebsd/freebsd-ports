@@ -12,6 +12,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Simulates the life of a true AI
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	py*-game>=1.8:devel/py-game \
 		${PYNUMPY}
 

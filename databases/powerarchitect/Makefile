@@ -12,6 +12,8 @@ COMMENT=	Data modeling and profiling tool
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	ORACLE_JDBC MYSQL_JDBC PGSQL_JDBC
 
 ORACLE_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/ojdbc-10.2.0.5.jar:databases/jdbc-oracle10g

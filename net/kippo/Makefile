@@ -11,6 +11,8 @@ COMMENT=	Medium interaction ssh honeypot
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface
 RUN_DEPENDS:=	${BUILD_DEPENDS}

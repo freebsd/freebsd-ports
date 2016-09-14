@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 SUB_FILES=	pkg-message
 USES=		python:build scons shebangfix
 USE_LDCONFIG=	yes

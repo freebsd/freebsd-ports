@@ -12,6 +12,8 @@ COMMENT=	Python fast, simple packet creation / parsing module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils autoplist pythonprefix
 

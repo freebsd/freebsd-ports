@@ -14,6 +14,8 @@ COMMENT=	Phylogenetic tree viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_WX=		2.8
 WX_COMPS=	wx contrib
 USES=		gmake

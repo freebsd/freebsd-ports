@@ -11,6 +11,8 @@ COMMENT=	FUSE filesystem to mount ZIP archives with write support
 
 LICENSE=	LGPL3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libzip.so:archivers/libzip
 BUILD_DEPENDS=	libzip>=0.11.1:archivers/libzip
 

@@ -12,6 +12,8 @@ COMMENT=	Multi-format schema converter based on RELAX NG
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

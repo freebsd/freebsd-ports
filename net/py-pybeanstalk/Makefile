@@ -10,6 +10,8 @@ COMMENT=	Pure python client library for beanstalkd queue
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

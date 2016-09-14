@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	FFmpeg wrapper
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
 
 LIBNAME=	libavbin.so.${PORTVERSION}

@@ -12,6 +12,8 @@ COMMENT=	Fine Offset Weather Station Reader
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 FILEVER=	1.0
 FILEDATE=	20100718
 WRKSRC=		${WRKDIR}/${PORTNAME}-${FILEVER}

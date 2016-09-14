@@ -12,6 +12,8 @@ COMMENT=	Simple Qt 4 based browser
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		desktop-file-utils qmake
 USE_QT4=	network webkit moc_build uic_build rcc_build \
 		sql-sqlite3_run imageformats_run gui script sql

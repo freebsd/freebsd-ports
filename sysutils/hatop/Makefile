@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
 USES=		python

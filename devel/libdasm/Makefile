@@ -12,6 +12,8 @@ COMMENT=	Simple x86 disassembly library
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${STAGEDIR}${PREFIX}"
 USE_LDCONFIG=	yes
 

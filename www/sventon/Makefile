@@ -12,6 +12,8 @@ COMMENT=	Web client for browsing Subversion repositories
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		zip
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

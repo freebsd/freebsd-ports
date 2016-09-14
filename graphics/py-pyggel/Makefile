@@ -17,6 +17,8 @@ COMMENT=	Python Graphical Game Engine and Libraries
 LICENSE=	LGPL3 PD
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \

@@ -10,6 +10,8 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libxdo.so:x11/xdotool \
 		libcairo.so:graphics/cairo
 

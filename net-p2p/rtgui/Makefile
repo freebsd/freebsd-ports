@@ -8,6 +8,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web based front end for rTorrent
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS+=	xmlrpc-c-config:net/xmlrpc-c
 
 USES=		tar:tgz

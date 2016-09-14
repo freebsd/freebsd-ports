@@ -11,6 +11,8 @@ COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USES=		ncurses tar:bzip2
 

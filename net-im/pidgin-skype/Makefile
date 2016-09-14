@@ -22,6 +22,7 @@ USES=		gmake pkgconfig tar:xz
 USE_GNOME=	glib20
 
 # this is a local target to build a tarball
+# Note that googlecode.com is gone.
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
 	${RM} -rf ${WRKSRC}

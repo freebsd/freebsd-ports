@@ -16,6 +16,8 @@ COMMENT=	Python bindings for the WebKit GTK+ port
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 GNU_CONFIGURE=	yes

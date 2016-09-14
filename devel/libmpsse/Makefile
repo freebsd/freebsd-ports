@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	swig2.0:devel/swig20
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake pkgconfig python:2
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes

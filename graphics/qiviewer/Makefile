@@ -13,6 +13,8 @@ COMMENT=	Fast and lightweight image viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		desktop-file-utils qmake tar:bzip2
 USE_QT4=	corelib gui imageformats_run linguisttools_build \
 		moc_build rcc_build uic_build

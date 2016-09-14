@@ -14,6 +14,8 @@ COMMENT=	Commandline flags module for Python
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2 shebangfix
 USE_PYTHON=	autoplist distutils
 

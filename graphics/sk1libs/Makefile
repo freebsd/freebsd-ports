@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Set of python libraries for sK1 Project
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2
 

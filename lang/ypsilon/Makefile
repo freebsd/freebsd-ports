@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-0.9.6.update3
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme implementation for real-time applications
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake
 
 MAKE_ARGS=	DATADIR="${DATADIR}"

@@ -13,6 +13,8 @@ COMMENT=	File system automounting implemented in user-space using FUSE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		fuse pkgconfig
 GNU_CONFIGURE=	yes
 

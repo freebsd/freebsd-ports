@@ -13,6 +13,8 @@ COMMENT=	Suite of tools and library to work with netflow data
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 PGSQL_CONFIGURE_OFF=	--without-postgresql
 PGSQL_CONFIGURE_ON=	--with-postgresql

@@ -10,6 +10,8 @@ DISTNAME=	sitemap_gen_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to analyze web server and generate Google Sitemap files
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	sitemap-generators
 
 NO_WRKSUBDIR=

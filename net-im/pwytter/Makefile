@@ -13,6 +13,8 @@ COMMENT=	Free multi-platform Twitter client written in Python
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7.1:devel/py-simplejson

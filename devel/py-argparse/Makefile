@@ -13,6 +13,8 @@ COMMENT=	Optparse-inspired command-line parsing library
 
 LICENSE=	PSFL
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

@@ -13,6 +13,8 @@ COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libcurl.so:ftp/curl

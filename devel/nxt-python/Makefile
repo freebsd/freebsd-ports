@@ -12,6 +12,8 @@ COMMENT=	Python interface for the Lego Mindstorms NXT robot
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>=0:devel/py-usb
 
 USES=		python

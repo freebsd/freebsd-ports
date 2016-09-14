@@ -12,6 +12,8 @@ COMMENT=	UNIX group access control module for Apache 2.2
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PORTSCOUT=	limit:^1\.0\.
 
 USE_APACHE=	22

@@ -13,6 +13,8 @@ COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2 shebangfix tar:tgz
 SHEBANG_FILES=	extras/html-update.sh txt2tags
 NO_BUILD=	yes

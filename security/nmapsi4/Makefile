@@ -12,6 +12,8 @@ COMMENT=	GUI frontend for the nmap scanning utility
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:security/nmap
 
 USES=		cmake tar:xz

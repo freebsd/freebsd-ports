@@ -11,6 +11,8 @@ COMMENT=	Convert propiatary .drg file format into SBaGen format
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/drg2sbg bin/drgbuilder man/man1/drg2sbg.1.gz \

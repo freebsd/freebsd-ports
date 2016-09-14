@@ -13,6 +13,8 @@ COMMENT=	Python wrapper for chinese/cconv
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 USE_PYTHON=	autoplist concurrent distutils

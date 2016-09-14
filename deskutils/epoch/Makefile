@@ -14,6 +14,8 @@ COMMENT=	Small and handy timeline application
 LINCENSE=	GPLv3
 PROJECTHOST=	gepoch
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		qmake zip
 USE_QT4=	gui moc_build rcc_build
 

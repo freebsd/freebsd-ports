@@ -12,6 +12,8 @@ COMMENT=	Powerful field extraction tool
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 MAKE_ENV+=	INSTALLMAN=${PREFIX}/man
 
 PLIST_FILES=	bin/fex man/man1/fex.1.gz

@@ -13,6 +13,8 @@ COMMENT=	JavaScript linter
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gflags>=0:devel/py-gflags
 
 USES=		python:2

@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libiulib.so:graphics/iulib \

@@ -19,6 +19,8 @@ COMMENT=	PYGGEL demo game
 
 LICENSE=	PD
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyggel>=0:graphics/py-pyggel
 
 WRKSRC=		${WRKDIR}/PYGGEL-V${DISTVERSION}${DISTVERSIONSUFFIX}/Robocalypto

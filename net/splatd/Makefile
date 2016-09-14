@@ -13,6 +13,8 @@ COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \
 		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
 RUN_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \

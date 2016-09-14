@@ -14,6 +14,8 @@ COMMENT=	Direct Connect client shared library
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 .if !defined (MASTERDIR)
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 

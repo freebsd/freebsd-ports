@@ -11,6 +11,8 @@ MASTER_SITES=	http://ftp.instantbird.com/instantbird/releases/${DISTVERSION}/ \
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Instant Messaging client based on XULRunner and libpurple
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		tar:bzip2
 USE_LINUX=	libxml2 #avahiglib avahilibs
 

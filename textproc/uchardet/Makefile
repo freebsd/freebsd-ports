@@ -11,6 +11,8 @@ COMMENT=	Universal charset detection library by Mozilla
 
 LICENSE=	MPL
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		cmake
 USE_LDCONFIG=	yes
 

@@ -12,6 +12,8 @@ COMMENT=	GData Python Client Library
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	gdata-python-client
 USES=	python:2
 USE_PYTHON=	distutils

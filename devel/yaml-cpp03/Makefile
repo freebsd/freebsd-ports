@@ -12,6 +12,8 @@ COMMENT=	YAML parser and emitter in C++ matching the YAML 1.2 spec
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		cmake
 USE_LDCONFIG=	yes

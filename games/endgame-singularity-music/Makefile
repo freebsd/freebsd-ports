@@ -10,6 +10,8 @@ PROJECTHOST=	endgame-singularity
 MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Music pack for endgame-singularity
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

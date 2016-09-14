@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple guitar tuning assistant
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	wavplay:audio/wavplay
 
 USES=		compiler:c++11-lib

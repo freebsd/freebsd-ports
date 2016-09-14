@@ -13,6 +13,8 @@ COMMENT=	Receives UDP datagrams and redistributes them to a set of receivers
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 

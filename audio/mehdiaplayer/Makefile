@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Simple media player using Qt/Phonon
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		tar:bzip2 qmake
 USE_QT4=	gui xml uic_build moc_build \
 		rcc_build phonon

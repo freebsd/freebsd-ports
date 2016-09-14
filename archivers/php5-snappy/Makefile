@@ -14,6 +14,8 @@ COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 USES=		php:ext

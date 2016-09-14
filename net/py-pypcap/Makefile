@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	pyrexc:devel/pyrex
 
 USES=		python

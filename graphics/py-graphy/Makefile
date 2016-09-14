@@ -14,6 +14,8 @@ COMMENT=	Simple chart library for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:run tar:bzip2
 
 PORTDOCS=	README
