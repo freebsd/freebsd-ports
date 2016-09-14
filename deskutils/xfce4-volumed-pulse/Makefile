@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-volumed-pulse
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
