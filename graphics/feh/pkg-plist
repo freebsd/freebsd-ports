@@ -2,6 +2,8 @@ bin/feh
 %%CAM%%bin/feh-cam
 %%CAM%%bin/gen-cam-menu
 share/applications/feh.desktop
+share/icons/hicolor/48x48/apps/feh.png
+share/icons/hicolor/scalable/apps/feh.svg
 %%CAM%%man/man1/feh-cam.1.gz
 man/man1/feh.1.gz
 %%CAM%%man/man1/gen-cam-menu.1.gz
