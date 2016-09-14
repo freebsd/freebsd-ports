@@ -16,6 +16,7 @@ LICENSE=	PHP301
 CONFLICTS=	pecl-APC-[0-9]*
 
 IGNORE_WITH_PHP=	55 56
+PHP_DEFAULT=	7.0
 USES=		localbase php:ext tar:tgz
 PHP_MODNAME=	${PORTNAME:tl}
 
