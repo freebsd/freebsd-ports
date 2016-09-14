@@ -14,13 +14,11 @@ PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lot of funny Polish fortune files
 
-.if exists(/usr/games/strfile)
-STRCMD=		/usr/games/strfile
-.elif exists(/usr/bin/strfile)
-STRCMD=		/usr/bin/strfile
-.else
-IGNORE=		needs strfile command. Please install games distribution of base system
-.endif
+BROKEN=		unfetchable
+
+BUILD_DEPENDS=	fortune_strfile:misc/fortune_strfile
+STRCMD=		${LOCALBASE}/bin/fortune_strfile
+
 WRKSRC=		${WRKDIR}/fortunes-pl-${PORTVERSION}.orig
 
 FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
@@ -35,12 +33,14 @@ FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
 		znaki_zodiaku
 
 do-patch:
-	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.freebsd.pl ${WRKSRC}/freebsd.pl
-	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.filozofia ${WRKSRC}/filozofia
+	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.freebsd.pl \
+		${WRKSRC}/freebsd.pl
+	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.filozofia \
+		${WRKSRC}/filozofia
 
 do-build:
 .for FILE in ${FORTUNES}
-	@${STRCMD} ${WRKSRC}/${FILE}
+	${STRCMD} ${WRKSRC}/${FILE}
 .endfor
 
 do-install:
