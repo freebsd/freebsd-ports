@@ -1,0 +1,43 @@
+#!/bin/sh
+
+#
+# PROVIDE: fabio
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fabio_enable (bool):  Set to NO by default.
+#                               Set it to YES to enable fabio.
+# fabio_user (user):        Set user to run fabio.
+#                               Default is "nobody".
+# fabio_group (group):      Set group to run fabio.
+#                               Default is "nobody".
+
+. /etc/rc.subr
+
+name=fabio
+rcvar=fabio_enable
+
+load_rc_config $name
+
+: ${fabio_enable:="NO"}
+: ${fabio_user:="nobody"}
+: ${fabio_group:="nobody"}
+
+pidfile=/var/run/fabio.pid
+procname="%%PREFIX%%/sbin/fabio"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -cfg %%PREFIX%%/etc/fabio.properties"
+
+start_precmd=fabio_startprecmd
+
+fabio_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${fabio_user} -g ${fabio_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"
