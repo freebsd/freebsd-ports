@@ -12,25 +12,13 @@ LICENSE=	MIT
 
 USES=		go
 USE_GITHUB=	yes
-GH_ACCOUNT=	eBay:DEFAULT
+GH_ACCOUNT=	eBay
 GH_PROJECT=	fabio
+GH_SUBDIR=	src/github.com/eBay/fabio
 
 USE_RC_SUBR=	fabio
 
-USERS=		nobody
-GROUPS=		nobody
-
 do-build:
-	@${MKDIR} ${WRKSRC}/src/github.com/eBay/fabio
-
-.for src in .gitignore .travis.yml CHANGELOG.md Dockerfile LICENSE Makefile \
-	README.md Vagrantfile admin build cert config demo exit fabio.png \
-	fabio.properties listen.go listen_test.go main.go metrics proxy \
-	registry route routes.txt vendor
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/eBay/fabio
-.endfor
-
 	@cd ${WRKSRC}/src/github.com/eBay/fabio; \
 	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
 		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/fabio
