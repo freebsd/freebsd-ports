@@ -5,7 +5,7 @@ focus on biological data.
 This port contains applications built on SeqAn and developed
 within the SeqAn project. Among them are famous read mappers
 like RazerS and Yara, as well as many other tools. Some
-applications are packaged seperately and the library
+applications are packaged separately and the library
 can be found at biology/seqan.
 
 WWW: http://www.seqan.de/

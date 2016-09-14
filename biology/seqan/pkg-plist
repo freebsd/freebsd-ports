@@ -2,12 +2,14 @@ include/seqan/align.h
 include/seqan/align/align_base.h
 include/seqan/align/align_cols.h
 include/seqan/align/align_config.h
+include/seqan/align/align_interface_wrapper.h
 include/seqan/align/align_iterator_base.h
 include/seqan/align/align_metafunctions.h
 include/seqan/align/align_traceback.h
 include/seqan/align/alignment_algorithm_tags.h
 include/seqan/align/alignment_operations.h
 include/seqan/align/dp_algorithm_impl.h
+include/seqan/align/dp_align_simd_helper.h
 include/seqan/align/dp_band.h
 include/seqan/align/dp_cell.h
 include/seqan/align/dp_cell_affine.h
@@ -27,6 +29,7 @@ include/seqan/align/dp_matrix_sparse.h
 include/seqan/align/dp_meta_info.h
 include/seqan/align/dp_profile.h
 include/seqan/align/dp_scout.h
+include/seqan/align/dp_scout_simd.h
 include/seqan/align/dp_setup.h
 include/seqan/align/dp_trace_segment.h
 include/seqan/align/dp_traceback_adaptor.h
@@ -336,6 +339,10 @@ include/seqan/index/find_pigeonhole.h
 include/seqan/index/find_quasar.h
 include/seqan/index/find_swift.h
 include/seqan/index/index_base.h
+include/seqan/index/index_bidirectional.h
+include/seqan/index/index_bidirectional_stree.h
+include/seqan/index/index_bifm.h
+include/seqan/index/index_bifm_stree.h
 include/seqan/index/index_bwt.h
 include/seqan/index/index_childtab.h
 include/seqan/index/index_device.h
@@ -348,7 +355,6 @@ include/seqan/index/index_esa_stree.h
 include/seqan/index/index_fm.h
 include/seqan/index/index_fm_compressed_sa.h
 include/seqan/index/index_fm_compressed_sa_iterator.h
-include/seqan/index/index_fm_device.h
 include/seqan/index/index_fm_dox.h
 include/seqan/index/index_fm_lf_table.h
 include/seqan/index/index_fm_rank_dictionary_base.h
@@ -444,7 +450,6 @@ include/seqan/misc/accumulators.h
 include/seqan/misc/base.h
 include/seqan/misc/bit_twiddling.h
 include/seqan/misc/bit_twiddling_functors.h
-include/seqan/misc/cuda.h
 include/seqan/misc/dequeue.h
 include/seqan/misc/edit_environment.h
 include/seqan/misc/interval_tree.h
@@ -464,6 +469,7 @@ include/seqan/modifier/modifier_alphabet_expansion.h
 include/seqan/modifier/modifier_cyclic_shape.h
 include/seqan/modifier/modifier_functors.h
 include/seqan/modifier/modifier_iterator.h
+include/seqan/modifier/modifier_padding.h
 include/seqan/modifier/modifier_position.h
 include/seqan/modifier/modifier_reverse.h
 include/seqan/modifier/modifier_shortcuts.h
@@ -505,10 +511,6 @@ include/seqan/pipe/pool_base.h
 include/seqan/pipe/pool_mapper.h
 include/seqan/pipe/pool_sorter.h
 include/seqan/platform.h
-include/seqan/platform/platform_gcc.h
-include/seqan/platform/platform_icc.h
-include/seqan/platform/platform_nvcc.h
-include/seqan/platform/platform_windows.h
 include/seqan/random.h
 include/seqan/random/random_base.h
 include/seqan/random/random_beta.h
@@ -536,7 +538,9 @@ include/seqan/score/score_base.h
 include/seqan/score/score_edit.h
 include/seqan/score/score_matrix.h
 include/seqan/score/score_matrix_data.h
+include/seqan/score/score_matrix_dyn.h
 include/seqan/score/score_matrix_io.h
+include/seqan/score/score_simd_wrapper.h
 include/seqan/score/score_simple.h
 include/seqan/seeds.h
 include/seqan/seeds/banded_chain_alignment.h
@@ -569,7 +573,6 @@ include/seqan/seq_io/sequence_file.h
 include/seqan/sequence.h
 include/seqan/sequence/adapt_array_pointer.h
 include/seqan/sequence/adapt_stl_container.h
-include/seqan/sequence/adapt_thrust_vector.h
 include/seqan/sequence/container_view.h
 include/seqan/sequence/container_view_zip.h
 include/seqan/sequence/iter_concat_virtual.h
@@ -594,7 +597,6 @@ include/seqan/sequence/string_set_base.h
 include/seqan/sequence/string_set_concat_direct.h
 include/seqan/sequence/string_set_dependent_generous.h
 include/seqan/sequence/string_set_dependent_tight.h
-include/seqan/sequence/string_set_device.h
 include/seqan/sequence/string_set_owner.h
 include/seqan/sequence/string_set_segment.h
 include/seqan/sequence/string_set_view.h
@@ -649,12 +651,8 @@ include/seqan/system/file_directory.h
 include/seqan/system/file_forwards.h
 include/seqan/system/file_sync.h
 include/seqan/system/system_base.h
-include/seqan/system/system_condition.h
-include/seqan/system/system_critical_section.h
-include/seqan/system/system_event.h
+include/seqan/system/system_event_win.h
 include/seqan/system/system_forwards.h
-include/seqan/system/system_mutex.h
-include/seqan/system/system_thread.h
 include/seqan/tabix_io.h
 include/seqan/tabix_io/tabix_index_tbi.h
 include/seqan/translation.h
@@ -705,6 +703,7 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BedRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BedRgb.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BetaDistribution.html
+%%PORTDOCS%%%%DOCSDIR%%/html/class_BidirectionalIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BlastIOContext.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BlastMatch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_BlastMatchField.html
@@ -805,6 +804,7 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/class_RankSupportBitString.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_ReadStoreElement.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_Repeat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/class_RevTextFibre.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_RightArrayBinaryTree.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_RuntimeError.html
 %%PORTDOCS%%%%DOCSDIR%%/html/class_Score.html
@@ -1042,6 +1042,7 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/demos/dox/stream/lexical_cast.cpp.stdout
 %%PORTDOCS%%%%DOCSDIR%%/html/demos/tutorial/sam_and_bam_io/example.sam
 %%PORTDOCS%%%%DOCSDIR%%/html/demos/tutorial/sam_and_bam_io/solution1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/html/enum_AminoAcidScoreMatrixID.html
 %%PORTDOCS%%%%DOCSDIR%%/html/enum_ArgParseArgument_58_58ArgumentType.html
 %%PORTDOCS%%%%DOCSDIR%%/html/enum_ArgumentParser_58_58ParseResult.html
 %%PORTDOCS%%%%DOCSDIR%%/html/enum_BamFlags.html
@@ -1291,6 +1292,7 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_RnaStringComplement.html
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_RnaStringReverse.html
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_RnaStringReverseComplement.html
+%%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_SelectableAminoAcidMatrix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_SimpleScoreTypedef.html
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_TraceBack.html
 %%PORTDOCS%%%%DOCSDIR%%/html/global_typedef_UnicodeString.html
@@ -1390,8 +1392,10 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/js/lang_entities.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/less.min.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/link.data.js
+%%PORTDOCS%%%%DOCSDIR%%/html/js/module_tree.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/rubydoc_custom.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/search.data.js
+%%PORTDOCS%%%%DOCSDIR%%/html/js/search.data.module.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/search.engine.js
 %%PORTDOCS%%%%DOCSDIR%%/html/js/version.js
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/3L/3L.less
@@ -1424,6 +1428,8 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap-multiselect/knockout-examples.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap-multiselect/less/bootstrap-multiselect.less
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap-multiselect/tests.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap-treeview/css/bootstrap-treeview.css
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap-treeview/js/bootstrap-treeview.js
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap/css/bootstrap.css
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap/css/bootstrap.min.css
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/bootstrap/fonts/glyphicons-halflings-regular.eot
@@ -1652,20 +1658,23 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/jquery-bbq/unit/unit.js
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/styles.less
 %%PORTDOCS%%%%DOCSDIR%%/html/list.html
-%%PORTDOCS%%%%DOCSDIR%%/html/macro_PLATFORM_95CUDA.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_COMPILER_95CLANG.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_COMPILER_95GCC.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_COMPILER_95LINTEL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_COMPILER_95MSVC.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_COMPILER_95WINTEL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_PLATFORM_95GCC.html
-%%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95DEVICE.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95ENABLE_95PARALLELISM.html
-%%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95GLOBAL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95HAS_95BZIP2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95HAS_95ZLIB.html
-%%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95HOST.html
-%%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95HOST_95DEVICE.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95IS_9532_95BIT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95IS_9564_95BIT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95OMP_95PRAGMA.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95PATH_95TO_95ROOT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macro_SEQAN_95TEMP_95FILENAME.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_STDLIB_95GNU.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_STDLIB_95LLVM.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macro_STDLIB_95VS.html
 %%PORTDOCS%%%%DOCSDIR%%/html/page_DemoConstraintIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/page_DemoIndexCountChildren.html
 %%PORTDOCS%%%%DOCSDIR%%/html/page_DemoMaximalRepeats.html
@@ -1784,6 +1793,8 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_MaxRepeatsIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModCyclicShapeModifiedIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModCyclicShapeModifiedString.html
+%%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModPaddingIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModPaddingString.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModReverseIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModReverseString.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_ModViewModifiedIterator.html
@@ -1829,6 +1840,7 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_RoiFileIn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_RoiFileOut.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_Sampler.html
+%%PORTDOCS%%%%DOCSDIR%%/html/specialization_ScoreSimdWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_SeqFileIn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_SeqFileOut.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialization_SetHorspoolPattern.html
@@ -1899,5 +1911,3 @@ share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/tag_Nothing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/variable_BAM_95FLAG_95SUPPLEMENTARY_32_61_320x0800.html
 %%PORTDOCS%%%%DOCSDIR%%/html/variable_LibraryStoreElementstd.html
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/docs/seqan
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/lists
