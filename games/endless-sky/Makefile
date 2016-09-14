@@ -11,7 +11,7 @@ COMMENT=	Space exploration and combat game similar to Escape Velocity
 
 LICENSE=	GPLv3+ CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 PD
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/license.txt
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
