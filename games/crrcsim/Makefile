@@ -2,31 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	crrcsim
-PORTVERSION=	0.9.11
-PORTREVISION=	5
+PORTVERSION=	0.9.13
 CATEGORIES=	games
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 GNU_CONFIGURE=	yes
-USES=		gmake jpeg
+USES=		gettext gmake jpeg localbase
 USE_SDL=	sdl
 USE_GL=		gl glu
+USE_XORG=	x11
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lintl
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 PORTDATA=	*
 
 DESKTOP_ENTRIES="CRRCsim" \
-		"Model-airplane flight simulation program" \
+		"" \
 		"${DATADIR}/icons/crrcsim.png" \
 		"crrcsim" \
 		"Game;Simulation;" \
