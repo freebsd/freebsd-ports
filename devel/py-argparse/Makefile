@@ -5,15 +5,13 @@ PORTNAME=	argparse
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Optparse-inspired command-line parsing library
 
 LICENSE=	PSFL
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		python
 USE_PYTHON=	distutils autoplist
