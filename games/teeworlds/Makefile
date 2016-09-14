@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.6.3
 CATEGORIES=	games
-MASTER_SITES=	https://www.teeworlds.com/files/ \
+MASTER_SITES=	https://downloads.teeworlds.com/ \
 		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -74,11 +73,11 @@ do-build:
 		${BAM_WRKSRC}/bam -n -a -v ${_MAKE_JOBS:C/-j/-j /} ${BAM_TARGET}
 
 do-install:
-.if ! ${PORT_OPTIONS:MSERVER_ONLY}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}_srv ${STAGEDIR}${PREFIX}/bin/
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${STAGEDIR}${DATADIR}/
+
+do-install-SERVER_ONLY-off:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
