@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqan
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	biology
 MASTER_SITES=	http://packages.seqan.de/seqan-library/
 DISTNAME=	${PORTNAME}-library-${PORTVERSION}
