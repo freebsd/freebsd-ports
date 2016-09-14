@@ -108,7 +108,6 @@ lib/cmake/uhd/UHDConfigVersion.cmake
 lib/libuhd.so
 lib/libuhd.so.003
 lib/libuhd.so.003.009
-libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/Ettus_Logo.png
