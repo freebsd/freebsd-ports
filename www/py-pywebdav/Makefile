@@ -5,13 +5,11 @@ PORTNAME=	PyWebDAV
 PORTVERSION=	0.9.8
 PORTREVISION=	1
 CATEGORIES=	www net python
-MASTER_SITES=	GOOGLE_CODE CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	WebDAV Library and Server for Python
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		python
 USE_PYTHON=	distutils autoplist
