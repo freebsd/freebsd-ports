@@ -1,0 +1,7 @@
+This is a collection of double-resolution sprites for Endless Sky.
+These sprites will only be used if:
+
+- you have set the "zoom factor" to higher than 100% in the preferences, or
+- you have a high-DPI monitor.
+
+WWW: https://github.com/endless-sky/endless-sky-high-dpi

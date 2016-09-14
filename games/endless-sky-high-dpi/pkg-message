@@ -1,0 +1,4 @@
+Note that high-dpi sprites will only be used if:
+
+- you have set the "zoom factor" to higher than 100% in the preferences, or
+- you have a high-DPI monitor.
