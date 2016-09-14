@@ -1,0 +1,6 @@
+bin/crrcsim
+man/man1/crrcsim.1.gz
+share/locale/cs/LC_MESSAGES/crrcsim.mo
+share/locale/de/LC_MESSAGES/crrcsim.mo
+share/locale/fr/LC_MESSAGES/crrcsim.mo
+share/locale/it/LC_MESSAGES/crrcsim.mo
