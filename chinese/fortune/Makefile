@@ -14,13 +14,19 @@ COMMENT=	Classic fortune file in Chinese
 BROKEN=		Unfetchable (google code has gone away)
 
 RUN_DEPENDS=	autob5:chinese/autoconvert
-BUILD_DEPENDS=	fortune_strfile:misc/fortune_strfile
-STRFILE=	${LOCALBASE}/bin/fortune_strfile
 
 PROJECTHOST=	chinese-fortune
 NO_BUILD=	yes
 USES=		tar:bzip2 gmake
 SUB_FILES=	pkg-message
+
+.if exists(/usr/games/strfile)
+STRFILE=	/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRFILE=	/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|" \
