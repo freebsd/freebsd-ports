@@ -233,6 +233,7 @@
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
     SUBDIR += endless-sky
+    SUBDIR += endless-sky-high-dpi
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += entombed
