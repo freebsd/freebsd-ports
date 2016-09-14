@@ -13,6 +13,8 @@ COMMENT=	Family of hash functions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		cpe libtool
 CPE_VENDOR=	google
 GNU_CONFIGURE=	yes

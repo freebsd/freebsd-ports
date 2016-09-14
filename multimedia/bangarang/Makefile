@@ -12,6 +12,8 @@ COMMENT=	Media player for KDE 4
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libtag.so:audio/taglib
 
 PROJECTHOST=	bangarangissuetracking

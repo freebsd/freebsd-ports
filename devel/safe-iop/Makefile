@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safe integer operation library for C
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		tar:tgz
 USE_LDCONFIG=	yes
 ALL_TARGET=	so

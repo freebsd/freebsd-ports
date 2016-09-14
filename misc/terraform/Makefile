@@ -15,6 +15,8 @@ COMMENT=	Interactive height field generation and manipulation program
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

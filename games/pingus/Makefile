@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_signals.so:devel/boost-libs
 

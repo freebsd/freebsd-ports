@@ -13,6 +13,8 @@ COMMENT=	LuaDBI driver
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake lua:51 shebangfix

@@ -13,6 +13,8 @@ COMMENT=	Add/Modify LDAP entries using template forms
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 MAKEFILE=	BSDmakefile
 USES=		tar:bzip2 uidfix
 USE_OPENLDAP=	24

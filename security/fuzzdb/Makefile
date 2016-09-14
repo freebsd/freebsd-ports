@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/_copyright.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes

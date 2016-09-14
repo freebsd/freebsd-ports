@@ -11,6 +11,8 @@ DISTNAME=	plasma-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Plasma applet to monitor the status of APC UPS
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	plasma-apcups
 
 USES=		cmake gettext kde:4

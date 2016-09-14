@@ -5,7 +5,6 @@ PORTNAME=	memcached
 PORTVERSION=	1.4.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
-		GOOGLE_CODE \
 		GENTOO
 
 MAINTAINER=	swills@FreeBSD.org

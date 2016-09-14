@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 PROJECTHOST=	modmemcache
 USE_APACHE=	22+

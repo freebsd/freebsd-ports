@@ -12,6 +12,8 @@ COMMENT=	Watch and restart daemons
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	p5-libwww>=6.04:www/p5-libwww \
 		p5-URI>=0:net/p5-URI
 

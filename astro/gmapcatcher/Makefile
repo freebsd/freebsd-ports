@@ -10,6 +10,8 @@ DISTNAME=	mapcatcher_${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Offline map viewer
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 

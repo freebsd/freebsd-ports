@@ -13,6 +13,8 @@ COMMENT=	Editor for yara rules
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara

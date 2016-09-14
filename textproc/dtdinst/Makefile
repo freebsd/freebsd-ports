@@ -14,6 +14,8 @@ COMMENT=	Converts DTDs to XML instance, in a specific or RELAX NG format
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

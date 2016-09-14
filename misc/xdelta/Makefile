@@ -13,6 +13,8 @@ COMMENT=	Diff/patch utility for binary files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

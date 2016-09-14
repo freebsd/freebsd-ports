@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	MFC/R2 call setup library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/include/dahdi/user.h:misc/dahdi
 
 GNU_CONFIGURE=	yes

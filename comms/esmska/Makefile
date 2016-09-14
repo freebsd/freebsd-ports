@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Program for sending SMS over the Internet
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

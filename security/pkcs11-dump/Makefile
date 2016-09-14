@@ -11,6 +11,8 @@ COMMENT=	Allow dumping PKCS\#11 token content
 
 PROJECTHOST=	pkcs11-tools
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=	tar:bzip2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

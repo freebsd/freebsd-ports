@@ -14,6 +14,8 @@ LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE=	LICENSE.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:build
 USE_PYTHON=	distutils noegginfo
 

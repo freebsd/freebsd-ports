@@ -28,6 +28,7 @@ DESKTOP_ENTRIES=	"Quadra" "${COMMENT}" \
 			"${PORTNAME}" "BlocksGame;Game;" false
 
 # maintainer relevant make target:
+# Note that googlecode.com is gone.
 SVN_REV=	757
 SVN_SRC=	http://quadra.googlecode.com/svn/trunk/quadra/
 

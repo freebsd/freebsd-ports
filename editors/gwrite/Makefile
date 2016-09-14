@@ -13,6 +13,8 @@ COMMENT=	Simple HTML format editor
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:devel/py-python-distutils-extra \
 		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk

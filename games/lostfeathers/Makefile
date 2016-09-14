@@ -16,6 +16,8 @@ COMMENT=	Help a bird to recover his magical feathers
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	avbin>=0:multimedia/avbin
 
 USES=		python shebangfix zip

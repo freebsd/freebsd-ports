@@ -10,6 +10,8 @@ PROJECTHOST=	dactyl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox for Vim and Links addicts
 
+BROKEN=		Unfetchable (google code has gone away)
+
 XPI_NUM=	235854
 XPI_ID=		pentadactyl@dactyl.googlecode.com
 

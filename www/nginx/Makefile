@@ -731,6 +731,7 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 .if ${PORT_OPTIONS:MHTTP_ZIP}
 NGINX_ZIP_VERSION=	1.1.6
 MASTER_SITES+=	http://mod-zip.googlecode.com/files/:zip
+BROKEN=		Unfetchable (google code has gone away)
 DISTFILES+=	mod_zip-${NGINX_ZIP_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif

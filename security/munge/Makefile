@@ -13,6 +13,8 @@ COMMENT=	Authentication service for creating and validating credentials
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
 USES=		libtool pathfix perl5 ssl tar:bzip2

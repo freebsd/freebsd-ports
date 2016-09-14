@@ -13,6 +13,8 @@ COMMENT=	Unique image postprocessing application
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		compiler:c++11-lib gmake
 MAKE_ARGS=	CXX="${CXX}" WXCONFIG="${WX_CONFIG}"
 USE_WX=		3.0

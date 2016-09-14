@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Construct Makefile dependency list
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		uidfix
 MAKE_ENV=	PKGDIR="${PKGDIR}" NO_OBJ=YES
 

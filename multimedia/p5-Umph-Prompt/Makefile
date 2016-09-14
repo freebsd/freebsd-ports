@@ -15,6 +15,8 @@ COMMENT=	Interactive prompt module for umph and similar programs
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5

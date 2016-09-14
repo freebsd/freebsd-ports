@@ -12,6 +12,8 @@ COMMENT=	Library for Hangul processing
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS

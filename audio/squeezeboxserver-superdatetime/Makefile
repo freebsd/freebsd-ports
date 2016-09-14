@@ -12,6 +12,8 @@ DIST_SUBDIR=	squeezeboxserver
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Squeezebox Server plugin to display weather conditions and forecasts
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	softsqueeze:audio/squeezeboxserver
 
 PROJECTHOST=	grebrown-projects

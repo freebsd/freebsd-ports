@@ -13,6 +13,8 @@ COMMENT=	WebTV player based on GTK3+ and LibVLC
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libvlc.so:multimedia/vlc \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \

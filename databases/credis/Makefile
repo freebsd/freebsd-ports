@@ -11,6 +11,8 @@ COMMENT=	Library for communicating with Redis servers
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=	gmake
 USE_LDCONFIG=	yes
 

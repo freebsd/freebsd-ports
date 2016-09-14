@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Expert system for real-time log analysis
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	gperf>=3.0.3:devel/gperf

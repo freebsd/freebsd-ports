@@ -12,6 +12,8 @@ COMMENT=	Writes patterns on files to make retrieving the data more difficult
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USES=		tar:bzip2
 

@@ -14,6 +14,8 @@ COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libunrar.so:archivers/libunrar4
 
 GNU_CONFIGURE=	yes

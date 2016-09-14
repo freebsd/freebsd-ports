@@ -11,6 +11,8 @@ COMMENT=	C preprocessor and lexer
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
 USES=		gmake
 

@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	IRC proxy to Twitter
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	p5-JSON-Any>=0:converters/p5-JSON-Any \
 		p5-libwww>=0:www/p5-libwww \
 		p5-URI>=0:net/p5-URI \

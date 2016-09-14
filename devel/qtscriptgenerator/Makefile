@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	syncer@gmail.com
 COMMENT=	Tool that generates Qt bindings for Qt Script
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	PHONON
 PHONON_DESC=	Build Phonon support
 OPTIONS_DEFAULT=	PHONON

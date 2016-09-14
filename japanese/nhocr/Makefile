@@ -11,6 +11,8 @@ COMMENT=	OCR engine for Japanese language
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:graphics/O2-tools
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 

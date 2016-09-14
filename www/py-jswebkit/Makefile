@@ -13,6 +13,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebKit/JavaScriptCore Python bindings
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	cython:lang/cython
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2

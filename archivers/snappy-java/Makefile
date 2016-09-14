@@ -23,6 +23,8 @@ COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
 
 USE_GITHUB=	yes

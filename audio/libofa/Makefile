@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LICENSE=		APL1 GPLv2
 LICENSE_COMB=		dual
 LICENSE_GROUPS_APL1=	OSI

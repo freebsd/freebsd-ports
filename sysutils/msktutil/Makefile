@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake tar:bzip2
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes

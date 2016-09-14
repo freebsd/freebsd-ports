@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Archive FreeBSD kernel crash files
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PLIST_FILES=	sbin/bsdcrashtar \
 		man/man8/bsdcrashtar.8.gz
 

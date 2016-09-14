@@ -12,6 +12,8 @@ COMMENT=	Simple Queue Service based on HTTP GET/POST protocol
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS+=	libtokyocabinet.so:databases/tokyocabinet \
 		libevent.so:devel/libevent2
 

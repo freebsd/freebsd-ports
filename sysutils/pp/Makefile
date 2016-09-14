@@ -5,9 +5,7 @@ PORTNAME=	pp
 PORTVERSION=	1.03
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		http://de.nologin.ru/distfiles/sysutils/pp/
-PROJECTHOST=	pipe-progress
+MASTER_SITES=	http://de.nologin.ru/distfiles/sysutils/pp/
 
 MAINTAINER=	a.arepo@gmail.com
 COMMENT=	Small and fast progress bar for pipe

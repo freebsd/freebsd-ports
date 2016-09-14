@@ -13,6 +13,8 @@ COMMENT=	Creates MySQL backups on a periodic basis
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_MYSQL=	yes
 NO_BUILD=	yes
 

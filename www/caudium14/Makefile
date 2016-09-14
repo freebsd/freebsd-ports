@@ -12,6 +12,8 @@ DISTNAME=	Caudium-${DISTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free webserver based on the Roxen Challenger 1.3 code base
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	pike78:lang/pike78
 LIB_DEPENDS=	libsablot.so:textproc/sablotron
 RUN_DEPENDS=	lsof:sysutils/lsof

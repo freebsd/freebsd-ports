@@ -12,6 +12,8 @@ COMMENT=	Minimum, easy-to-use, C implementation for xml file parsing
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	libroxml
 
 USES=		gmake

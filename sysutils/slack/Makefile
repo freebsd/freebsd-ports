@@ -5,8 +5,7 @@ PORTNAME=	slack
 PORTVERSION=	0.15.2
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		http://www.sundell.net/~alan/projects/slack/
+MASTER_SITES=	http://www.sundell.net/~alan/projects/slack/
 
 MAINTAINER=	satwell@disjoint.net
 COMMENT=	Configuration management system designed to appeal to lazy admins

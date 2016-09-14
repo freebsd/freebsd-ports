@@ -12,6 +12,8 @@ COMMENT=	Libgooglepinyin support for Fcitx
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libgooglepinyin.so:chinese/libgooglepinyin
 

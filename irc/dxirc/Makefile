@@ -12,6 +12,8 @@ COMMENT=	Simple IRC client written using the FOX toolkit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
 USE_XORG=	xft

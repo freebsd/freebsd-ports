@@ -13,6 +13,8 @@ COMMENT=	Font management application for the GNOME desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3

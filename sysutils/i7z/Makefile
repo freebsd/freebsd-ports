@@ -12,6 +12,8 @@ COMMENT=	Thermal and C-state reporting utility for Intel-Core-i CPUs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake
 USE_GCC=	yes
 

@@ -12,6 +12,8 @@ DISTNAME=	compact-language-detector-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Chromium compact language detector library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

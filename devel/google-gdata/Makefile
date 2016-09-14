@@ -12,6 +12,8 @@ COMMENT=	DOT NET library for the Google Data API
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsoft-json
 
 USES=		dos2unix gmake mono

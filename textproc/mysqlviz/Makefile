@@ -11,6 +11,8 @@ COMMENT=	MySQL and SQLite Database Visualisation Tool
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 NO_BUILD=	yes
 USES=	php:cli tar:bzip2
 

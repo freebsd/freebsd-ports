@@ -8,6 +8,8 @@ MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	earl@eeg3.net
 COMMENT=	Manipulation tool for Adobe Flash Video files (FLV)
+ 
+BROKEN=		Unfetchable (google code has gone away)
 
 GNU_CONFIGURE=	yes
 

@@ -12,6 +12,8 @@ COMMENT=	GTK+ Hangul input module
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libhangul.so:korean/libhangul
 
 GNU_CONFIGURE=	yes

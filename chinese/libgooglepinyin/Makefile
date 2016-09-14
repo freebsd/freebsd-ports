@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fork of Google Pinyin IME on Android
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LICENSE=	APACHE20
 
 USE_LDCONFIG=	yes

@@ -13,6 +13,8 @@ COMMENT=	Read, modify, and write DICOM files with Python code
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python shebangfix
 SHEBANG_FILES=	dicom/test/shell_all
 USE_PYTHON=	distutils autoplist

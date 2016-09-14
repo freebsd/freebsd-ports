@@ -5,8 +5,7 @@ PORTNAME=	tucan
 PORTVERSION=	0.3.10
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/ \
-		http://build-tucan-doc.googlecode.com/files/
+MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Tucan Manager aids file-sharing with 1-click hosters

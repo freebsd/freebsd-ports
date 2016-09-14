@@ -14,6 +14,8 @@ COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}

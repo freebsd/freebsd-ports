@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Tetris-like puzzle game based on a hexagonal grid
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_QT4=	gui moc_build rcc_build
 USES=		qmake
 

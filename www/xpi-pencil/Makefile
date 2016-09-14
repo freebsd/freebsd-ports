@@ -14,6 +14,8 @@ COMMENT=	Firefox addon to do GUI prototyping and simple sketching
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 XPI_DISTNAME=	Pencil
 XPI_ID=		pencil@evolus.vn
 

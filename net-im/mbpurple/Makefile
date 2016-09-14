@@ -10,6 +10,8 @@ PROJECTHOST=	microblog-purple
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 

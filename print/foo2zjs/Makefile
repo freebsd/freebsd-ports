@@ -15,6 +15,8 @@ COMMENT=	Driver for printers that use the ZjStream wire protocol
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libcups.so:print/cups
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:print/foomatic-db \
 		foomatic-rip:print/cups-filters \

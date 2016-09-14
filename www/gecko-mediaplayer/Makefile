@@ -11,6 +11,8 @@ COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libnspr4.so:devel/nspr \
 		libcurl.so:ftp/curl \

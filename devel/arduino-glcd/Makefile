@@ -13,6 +13,8 @@ COMMENT=	GLCD Graphical LCD Library
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	arduino:devel/arduino
 
 WRKSRC=		${WRKDIR}/glcd

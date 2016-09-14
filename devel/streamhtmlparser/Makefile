@@ -12,6 +12,8 @@ COMMENT=	C/C++/Python streaming HTML parser library from Google
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

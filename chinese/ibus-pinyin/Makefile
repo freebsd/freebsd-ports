@@ -12,6 +12,8 @@ COMMENT=	PinYin engine for IBus
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg \
 		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
 LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \

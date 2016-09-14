@@ -13,6 +13,8 @@ COMMENT=	Fully automated, active web application security reconnaissance tool
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre
 

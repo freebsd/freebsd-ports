@@ -12,6 +12,8 @@ COMMENT=	Parallel versions of the openssh tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		python

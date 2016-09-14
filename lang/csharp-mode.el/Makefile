@@ -14,6 +14,8 @@ COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	csharpmode
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -12,6 +12,8 @@ COMMENT=	Binary plist parser
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz
 
 USES=		python

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libX11.so:x11/libX11 \
 		libpng.so:graphics/png
 

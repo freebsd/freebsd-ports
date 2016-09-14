@@ -17,6 +17,8 @@ COMMENT=	Unconventional falling block game
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/

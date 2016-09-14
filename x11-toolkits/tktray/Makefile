@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES+=		tk:tea
 USE_XORG=	x11 xext
 

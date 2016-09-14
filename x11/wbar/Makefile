@@ -12,6 +12,8 @@ COMMENT=	Simple and highly customizable quick launch bar
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	intltool-update:textproc/intltool
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 

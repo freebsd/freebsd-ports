@@ -12,6 +12,8 @@ COMMENT=	Small, efficient C++ GUI library designed for games
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pathfix libtool

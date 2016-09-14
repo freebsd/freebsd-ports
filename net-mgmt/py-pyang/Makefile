@@ -12,6 +12,8 @@ COMMENT=	Validator and code generator for YANG (RFC 4741)
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils
 

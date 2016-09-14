@@ -13,6 +13,8 @@ COMMENT=	Python Google Chart Wrapper
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 PROJECTHOST=	google-chartwrapper

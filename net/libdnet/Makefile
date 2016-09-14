@@ -13,6 +13,8 @@ COMMENT=	Simple interface to low level networking routines
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_dnet_bsd_bpf=yes
 USES+=		libtool tar:tgz

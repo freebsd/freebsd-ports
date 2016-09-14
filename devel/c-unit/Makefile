@@ -12,6 +12,8 @@ COMMENT=	Unit testing framework for C
 
 LICENSE=	LGPL20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 CONFLICTS=	cunit-[0-9]*
 
 GNU_CONFIGURE=	yes
