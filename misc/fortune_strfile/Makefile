@@ -13,6 +13,9 @@ COMMENT=	Duplicate of strfile(8)
 PROGRAM=	fortune_strfile
 PLIST_FILES=	bin/${PROGRAM}
 
+DEPRECATED=	unmaintained and duplicated from base
+EXPIRATION_DATE=	2016-10-14
+
 do-build:
 	${MKDIR} ${WRKSRC}
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PROGRAM} ${FILESDIR}/strfile.c
