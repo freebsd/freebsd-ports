@@ -1,4 +1,5 @@
-SHA256 (imhangul-2.1.1.tar.bz2) = b4860b718b2775ce1e298e80004d5d7b5ac89faa75b30654e51d325643a02e19
-SIZE (imhangul-2.1.1.tar.bz2) = 288452
-SHA256 (imhangul-3.1.1.tar.bz2) = 24f103e55c38f2cd4b708398106ac19760e2ef1834513f46f32b0baf439461e0
-SIZE (imhangul-3.1.1.tar.bz2) = 288236
+TIMESTAMP = 1473877928
+SHA256 (choehwanjin-imhangul-2.1.1-d2f555d_GH0.tar.gz) = e489cb293da229cb1e07d7f301e8fe4b65396cd762aca30aa54cd1555f354288
+SIZE (choehwanjin-imhangul-2.1.1-d2f555d_GH0.tar.gz) = 256752
+SHA256 (choehwanjin-imhangul-3.1.1-85f6d10_GH0.tar.gz) = a2bd9baf56c5b624c035ce6890553fb513feb6404453549a2f523691df86f2cc
+SIZE (choehwanjin-imhangul-3.1.1-85f6d10_GH0.tar.gz) = 256731
