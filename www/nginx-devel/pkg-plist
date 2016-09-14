@@ -15,4 +15,5 @@
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 sbin/nginx
 @dir %%NGINX_TMPDIR%%
+@dir %%NGINX_LOGDIR%%
 man/man8/nginx.8.gz

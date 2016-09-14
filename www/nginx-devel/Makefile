@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.11.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -244,13 +245,13 @@ RAKE_BIN=	${LOCALBASE}/bin/rake
 .endif
 
 NGINX_VARDIR?=	/var
-NGINX_LOGDIR?=	${NGINX_VARDIR}/log
+NGINX_LOGDIR?=	${NGINX_VARDIR}/log/nginx
 NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
-NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
-NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
+NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/access.log
+NGINX_ERRORLOG?=	${NGINX_LOGDIR}/error.log
 
 CONFLICTS?=	nginx-1.*
 USE_RC_SUBR=	nginx
@@ -505,7 +506,7 @@ CONFIGURE_ARGS+=--with-http_flv_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_JSON_STATUS}
-NGINX_JSON_STATUS_VERSION= 1d2f303
+NGINX_JSON_STATUS_VERSION=	1d2f303
 GH_ACCOUNT+=	nginx-modules:json_status
 GH_PROJECT+=	ngx_http_json_status_module:json_status
 GH_TAGNAME+=	${NGINX_JSON_STATUS_VERSION}:json_status
@@ -658,7 +659,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
-GIT_UPLOAD_VERSION= aba1e3f34c
+GIT_UPLOAD_VERSION=	aba1e3f34c
 GH_ACCOUNT+=	vkholodkov:upload
 GH_PROJECT+=	nginx-upload-module:upload
 GH_TAGNAME+=	${GIT_UPLOAD_VERSION}:upload
@@ -1111,7 +1112,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_iconv}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 .endif
 
-PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} NGINX_LOGDIR=${NGINX_LOGDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
@@ -1141,7 +1142,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
-		s!%%PREFIX%%!${PREFIX}!' \
+		s!%%PREFIX%%!${PREFIX}!; \
+		s!%%NGINX_ERRORLOG%%!${NGINX_ERRORLOG}!' \
 		${WRKSRC}/conf/nginx.conf
 .if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
 	@${REINPLACE_CMD} \
@@ -1247,6 +1249,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${MODULESDIR}
 .endif
 	${MKDIR} ${STAGEDIR}${NGINX_TMPDIR}
+	${MKDIR} ${STAGEDIR}${NGINX_LOGDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${STAGEDIR}${PREFIX}/sbin
 .for i in koi-utf koi-win win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}
