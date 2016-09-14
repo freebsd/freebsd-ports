@@ -1,0 +1,6 @@
+Tools for the reading and tokenization of R code. The 'sourcetools'
+package provides both an R and C++ interface for the tokenization
+of R code, and helpers for interacting with the tokenized representation
+of R code.
+
+WWW: https://cran.r-project.org/web/packages/sourcetools/
