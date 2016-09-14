@@ -10,8 +10,13 @@ DISTNAME=	fortune-it-${PORTVERSION}
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Funny fortune file in Italian
 
-BUILD_DEPENDS=	fortune_strfile:misc/fortune_strfile
-STRCMD=		${LOCALBASE}/bin/fortune_strfile
+.if exists(/usr/games/strfile)
+STRCMD=		/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRCMD=		/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
+.endif
 
 FORTUNEFILES=	adams banner computer definizioni formiche italia itatrek \
 		jackfr leggi luke luttazzi norm paolotedeschi zuse \
