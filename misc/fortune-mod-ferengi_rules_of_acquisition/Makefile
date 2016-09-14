@@ -10,5 +10,7 @@ MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Star Trek: The Ferengi Rules of Acquisition
 
+BROKEN=		Unfetchable (tecnik93.com is down)
+
 .include "${.CURDIR}/../../misc/fortune-mod-culmea-culmilor/Makefile.fortune"
 .include <bsd.port.mk>
