@@ -13,7 +13,7 @@ COMMENT=	Advanced Kolab Object Handling Library
 # itself to be LGPL3-licensed (and so are all the installed headers).
 LICENSE=	LGPL3
 
-PORTSCOUT=	limit=^0\.
+PORTSCOUT=	limit:^0\.
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
