@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.12
-PORTREVISION=	0
+PORTVERSION=	2.2.14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -14,14 +13,8 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	${PKGBASE}-1.[0-8]*
-
-IGNORE_WITH_PHP=	52
-IGNORE_WITH_MYSQL=	41
-
-.if ${PKGNAMESUFFIX} != "-agent"
-CONFLICTS+=	${PORTNAME}-1.[0-8]*
-.endif
+CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
@@ -60,7 +53,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 USES+=		execinfo
 
 CPPFLAGS+=	${EXECINFO_CPPFLAGS}
@@ -71,7 +63,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW LIBXML2
-OPTIONS_DEFAULT=	MYSQL FPING JABBER CURL UNIXODBC
+OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL UNIXODBC
 OPTIONS_SUB=	yes
 
 CURL_DESC=	Support for web monitoring
@@ -90,13 +82,13 @@ OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USE=	MYSQL=yes
+USES+=	mysql
 
 PGSQL_CONFIGURE_WITH=	postgresql
-PGSQL_USES=	pgsql
+USES+=	pgsql
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_USES=	sqlite:3
+USES+=	sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
@@ -156,9 +148,19 @@ post-patch:
 		${WRKSRC}/src/zabbix_${ZABBIX_BUILD}/Makefile.in
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
 
-post-install:
-.if ${PORT_OPTIONS:MJAVAGW}
-	@${MV} ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh.sample
+.if ${ZABBIX_BUILD} == "server"
+	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_server.pid#PidFile=/var/run/zabbix/zabbix_server.pid#g' \
+		${WRKSRC}/conf/zabbix_server*.conf
+.endif
+
+.if ${ZABBIX_BUILD} == "proxy"
+	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_proxy.pid#PidFile=/var/run/zabbix/zabbix_proxy.pid#g' \
+		${WRKSRC}/conf/zabbix_proxy*.conf
+.endif
+
+.if ${ZABBIX_BUILD} == "agent"
+	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_agentd.pid#PidFile=/var/run/zabbix/zabbix_agentd.pid#g' \
+		${WRKSRC}/conf/zabbix_agentd.conf
 .endif
 
 .if ${ZABBIX_BUILD} != "agent"
@@ -166,6 +168,11 @@ post-install:
 	cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/upgrades/
 	cd ${WRKSRC}/database/ && ${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database/
 .endif
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MJAVAGW}
+	@${MV} ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh.sample
 .endif
 
 .include <bsd.port.mk>
