@@ -18,7 +18,6 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PROGRAM} ${FILESDIR}/strfile.c
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
