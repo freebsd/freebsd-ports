@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	libfvde
-PORTVERSION=	20130305
-PORTREVISION=	2
+PORTVERSION=	20160801
+DISTVERSIONPREFIX=	experimental-
 CATEGORIES=	sysutils
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSLUVJYl9XRWhKSjg/
-DISTFILES=	${PORTNAME}-experimental-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/libyal/libfvde/releases/download/${PORTVERSION}/ \
+		LOCAL/antoine
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix pkgconfig
-USE_GNOME=	libxml2
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-python
+USES=		fuse gettext libtool pathfix pkgconfig python ssl
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+LIBS+=		-L${OPENSSLLIB}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
