@@ -1,6 +1,2 @@
 %%RUBY_SITELIBDIR%%/bsearch.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/bsearch.en.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bsearch.en.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.rd
