@@ -44,7 +44,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  build.
 # RUBY_SETUP		- Set to the alternative name of setup.rb
 #			  (default: setup.rb).
-# USE_RUBY_RDTOOL	- Says that the port uses rdtool to generate documents.
 # USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
 #			  the port.  The constant "Ruby" is set to the integer
@@ -52,10 +51,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  expression will be set to RUBY_PROVIDED, which is
 #			  left undefined if the result is nil, false or a
 #			  zero-length string.  Implies USE_RUBY.
-# RUBY_RD_FILES		- Specify the RD files which you want to generate HTML
-#			  documents from. If this is defined and not empty,
-#			  USE_RUBY_RDTOOL is implied and RUBY_RD_HTML_FILES is
-#			  defined.
 # USE_RUBYGEMS		- Do not use this -- instead USES=gem
 #
 # [variables that each port should not (re)define]
@@ -95,18 +90,15 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #
 # RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
 #
-# RUBY_RD2		- Full path of rd2 executable.
 # RUBY_RDOC		- Full path of rdoc executable.
 #
 # RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without
 #			  suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
-# RUBY_RDTOOL_PORT	- Port path of rdtool without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
-# DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent
@@ -276,18 +268,15 @@ RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 RUBY_MODNAME?=		${PORTNAME}
 
 # Commands
-RUBY_RD2?=		${LOCALBASE}/bin/rd2
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//}
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
-RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
 
 # Depends
 DEPEND_LIBRUBY?=	lib${RUBY_NAME}.so.${RUBY_SHLIBVER}:${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${RUBY_PORT}
-DEPEND_RUBY_RDTOOL?=	${RUBY_RD2}:${RUBY_RDTOOL_PORT}
 
 # Directories
 RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
@@ -423,46 +412,6 @@ BUILD_DEPENDS+=		${DEPEND_RUBY}
 .if !defined(RUBY_NO_RUN_DEPENDS)
 RUN_DEPENDS+=		${DEPEND_RUBY}
 .endif
-.endif
-
-# documents
-
-RUBY_NO_RD_HTML=	yes
-
-.if defined(RUBY_RD_HTML)
-.undef RUBY_NO_RD_HTML
-.endif
-
-.if defined(NOPORTDOCS)
-RUBY_NO_RD_HTML=	yes
-.endif
-
-.if defined(RUBY_RD_FILES) && !defined(RUBY_NO_RD_HTML)
-USE_RUBY_RDTOOL=	yes
-
-RUBY_RD_HTML_FILES=	${RUBY_RD_FILES:S/.rb$//:S/.rd././:S/.rd$//:S/$/.html/}
-
-PLIST_SUB+=		RUBY_RD_HTML_FILES=""
-
-.if !empty(RUBY_RD_FILES)
-_USES_install+=	290:ruby-rd-build
-ruby-rd-build:
-	@${ECHO_MSG} "===>  Generating HTML documents from RD documents"
-	@cd ${WRKSRC}; for rd in ${RUBY_RD_FILES}; do \
-		html=$$(echo $$rd | ${SED} 's/\.rb$$//;s/\.rd\././;s/\.rd$$//').html; \
-		${ECHO_MSG} "${RUBY_RD2} $$rd > $$html"; \
-		${RUBY_RD2} $$rd > $$html; \
-	done
-.endif
-
-.else
-RUBY_RD_HTML_FILES=	# empty
-
-PLIST_SUB+=		RUBY_RD_HTML_FILES="@comment "
-.endif
-
-.if !defined(NOPORTDOCS) && defined(USE_RUBY_RDTOOL)
-BUILD_DEPENDS+=		${DEPEND_RUBY_RDTOOL}
 .endif
 
 .endif # _INVALID_RUBY_VER
