@@ -3,7 +3,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://sary.sourceforge.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -28,21 +28,14 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USES=		pkgconfig
 
-RUBY_RD_FILES=	*.en.rd *.ja.rd
-
-DOCS_EN=	ChangeLog \
-		${RUBY_RD_FILES:M*.en.rd} \
-		${RUBY_RD_HTML_FILES:M*.en.html}
-DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
-		${RUBY_RD_HTML_FILES:M*.ja.html}
+DOCS=	ChangeLog  *.en.rd *.ja.rd
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR:C/^${LOCALBASE}/${PREFIX}/}/sary.so
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${STAGEDIR}${PREFIX}/bin/
 
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${STAGEDIR}${RUBY_MODDOCDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>
