@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: nats_streaming
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run the NATS streaming server:
+#
+# nats_streaming_enable (bool):	Set it to "YES" to enable nats_streaming server.
+#				Default is "NO".
+# nats_streaming_username:	User name to run as. default "nobody"
+# nats_streaming_options:	Options to pass nats_streaming server
+#
+
+. /etc/rc.subr
+
+name="nats_streaming"
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+: ${nats_streaming_enable="NO"}
+: ${nats_streaming_username="nobody"}
+: ${nats_streaming_options="-c %%PREFIX%%/etc/nats_streaming.conf"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/nats-streaming-server
+command_args="-u ${nats_streaming_username} ${procname} ${nats_streaming_options}"
+
+run_rc_command "$1"
