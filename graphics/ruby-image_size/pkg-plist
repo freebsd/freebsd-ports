@@ -1,5 +1,3 @@
 %%RUBY_SITELIBDIR%%/image_size.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/readme.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/readme.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/readme.ja.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/readme.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/readme.ja.rd
