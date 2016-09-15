@@ -20,15 +20,11 @@ man/man5/info.5.gz
 man/man5/texinfo.5.gz
 %%NLS%%share/locale/ca.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/de/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de_AT/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/el/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/el/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/es/LC_MESSAGES/texinfo.mo
@@ -37,7 +33,6 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/he/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/id/LC_MESSAGES/texinfo.mo
@@ -51,10 +46,8 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/texinfo.mo
@@ -443,7 +436,6 @@ man/man5/texinfo.5.gz
 %%TEXMF%%/tex/texinfo/txi-hu.tex
 %%TEXMF%%/tex/texinfo/txi-is.tex
 %%TEXMF%%/tex/texinfo/txi-it.tex
-%%TEXMF%%/tex/texinfo/txi-ja.tex
 %%TEXMF%%/tex/texinfo/txi-nb.tex
 %%TEXMF%%/tex/texinfo/txi-nl.tex
 %%TEXMF%%/tex/texinfo/txi-nn.tex
