@@ -2,12 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	File_MARC
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Parse, modify, and create MARC records
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+OPTIONS_DEFINE=	ISPN
+
+ISPN_DESC=	Validation class for ISPN (International Standard Product Numbers)
+ISPN_RUN_DEPENDS=	${PEARDIR}/Validate/ISPN.php:textproc/pear-Validate_ISPN
+
 USES=	pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
