@@ -2,8 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.3
-PORTREVISION=	2
+DISTVERSION=	2.5.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -110,5 +109,8 @@ pre-install:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/newsyslog/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-newsyslog ${STAGEDIR}${EXAMPLESDIR}/newsyslog/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles
+	(cd ${WRKSRC}/tools/syntax/vim && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/vim/vimfiles)
 
 .include <bsd.port.mk>
