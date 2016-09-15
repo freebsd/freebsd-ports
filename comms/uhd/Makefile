@@ -35,6 +35,12 @@ CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 
 IMAGE_FILE=	uhd-images_003.009.005-release.zip
 
+OPTIONS_DEFINE= DOXYGEN
+#OPTIONS_DEFAULT= DOXYGEN
+
+OPTIONS_SUB=yes
+DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}
