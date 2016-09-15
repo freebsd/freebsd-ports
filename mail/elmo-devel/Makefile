@@ -13,6 +13,9 @@ COMMENT=	Receive, filter, read, compose, and send mail at the text console
 
 CONFLICTS=	elmo-[0-9]*
 
+DEPRECATED=	Same version as mail/elmo, use it instead
+EXPIRATION_DATE=2016-10-15
+
 GNU_CONFIGURE=	yes
 USES=		iconv ncurses perl5 shebangfix
 SHEBANG_FILES=	src/elmoconf.pl
