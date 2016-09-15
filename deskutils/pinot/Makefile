@@ -2,55 +2,53 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	1.06
-PORTREVISION=	12
+PORTVERSION=	1.09
 CATEGORIES=	deskutils
-MASTER_SITES=	GOOGLE_CODE
-#MASTER_SITES=	http://colinf.chez.com/pinot/
-#		http://amra.dyndns.org/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable (google code has gone away)
-
-BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils \
+BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils	\
 		update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
-		libgtkmm-2.4.so:x11-toolkits/gtkmm24	\
+		libfontconfig.so:x11-fonts/fontconfig		\
+		libfreetype.so:print/freetype2			\
 		libexttextcat-2.0.so:textproc/libexttextcat	\
 		libdbus-glib-1.so:devel/dbus-glib		\
-		libxml++-2.6.so:textproc/libxml++26	\
+		libdbus-1.so:devel/dbus				\
+		libxml++-2.6.so:textproc/libxml++26		\
 		libboost_thread.so:devel/boost-libs		\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
-		libgmime-2.4.so:mail/gmime24		\
-		libtag.so:audio/taglib			\
+		libgmime-2.4.so:mail/gmime24			\
+		libtag.so:audio/taglib				\
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 		antiword:textproc/antiword			\
 		xdg-open:devel/xdg-utils			\
-		${LOCALBASE}/libexec/xpdf/pdftotext:graphics/xpdf	\
-		catppt:textproc/catdoc			\
-		unrtf:textproc/unrtf			\
+		catppt:textproc/catdoc				\
+		unrtf:textproc/unrtf				\
 		catdvi:print/catdvi				\
-		bash:shells/bash
+		bash:shells/bash				\
+		${LOCALBASE}/libexec/xpdf/pdftotext:graphics/xpdf
 
-PROJECTHOST=	${PORTNAME}-search
+USE_GITHUB=	yes
+GH_ACCOUNT=	FabriceColin
+GH_TAGNAME=	c14d6d5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no
-CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
+CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		execinfo gettext libarchive libtool pkgconfig python \
-		shebangfix sqlite:3
-USE_OPENSSL=	yes
+USES=		autoreconf execinfo gettext libarchive libtool pkgconfig python \
+		shebangfix sqlite:3 ssl
 USE_XORG=	pixman
+USE_GNOME=	atkmm cairo cairomm glibmm gtk20 gtkmm24 libsigc++20 libxml2 pangomm
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh
 
