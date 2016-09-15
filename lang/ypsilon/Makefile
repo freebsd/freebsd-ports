@@ -3,17 +3,20 @@
 
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-0.9.6.update3
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme implementation for real-time applications
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+USE_GITHUB=	yes
+GH_TUPLE=	fujita-y:ypsilon:0.9.6-update3
 
 USES=		gmake
+USE_GCC=	yes
 
 MAKE_ARGS=	DATADIR="${DATADIR}"
 
