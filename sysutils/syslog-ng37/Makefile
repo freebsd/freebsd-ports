@@ -17,7 +17,6 @@ MASTER_SITES=   http://peter.czanik.hu/freebsd/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \

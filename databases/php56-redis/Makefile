@@ -12,8 +12,6 @@ COMMENT=	PHP5 extension for Redis
 
 LICENSE=	PHP301
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext
 USE_PHP=	session:build
 PHP_DEFAULT=	5.6

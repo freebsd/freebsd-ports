@@ -11,8 +11,6 @@ COMMENT=	Open Computer and Software Inventory Next Generation
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-Compress-Raw-Zlib>=0:archivers/p5-Compress-Raw-Zlib \
 		p5-DBI>=0:databases/p5-DBI \

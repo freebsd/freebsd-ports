@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Content management system written in PHP
 
-BROKEN_powerpc64=	Does not build
-
 USES=		cpe
 
 USE_PHP=	dom exif hash pdo_mysql session xml

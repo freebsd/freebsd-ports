@@ -14,8 +14,6 @@ COMMENT=	Provides API for communicating with MessagePack serialization
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 

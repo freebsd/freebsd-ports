@@ -14,8 +14,6 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_powerpc64=	Does not build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:web

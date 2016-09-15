@@ -14,8 +14,6 @@ COMMENT=	PHK is a PHP-oriented package/archive system
 
 LICENSE=	PHP301
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	hash:build
 IGNORE_WITH_PHP=	70

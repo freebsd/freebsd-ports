@@ -11,8 +11,6 @@ COMMENT=	Server side personal RSS (and Atom) aggregator
 
 BROKEN=		Unfetchable (google code has gone away)
 
-BROKEN_powerpc64=	Does not build
-
 USES=		tar:tgz
 PROJECTHOST=	feed-on-feeds
 USE_PHP=	mysql xml zlib curl mbstring iconv

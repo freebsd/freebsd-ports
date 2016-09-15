@@ -13,8 +13,6 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
-BROKEN_powerpc64=	Does not build
-
 USES+=		tar:xz cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes

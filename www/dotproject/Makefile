@@ -11,8 +11,6 @@ COMMENT=	Open Source Project Management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 USES=		cpe shebangfix
 SHEBANG_FILES=	misc/cvs2cl/cvs2cl.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -13,8 +13,6 @@ COMMENT=	Software to help you maintain dynamic sites such as weblogs
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 PORTDOCS=	LICENSE.txt README.txt
 PORTEXAMPLES=	example.htaccess example.web.config
 

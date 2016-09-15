@@ -11,8 +11,6 @@ DISTNAME=	mantisbt-${PORTVERSION}
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bug tracking system written in PHP
 
-BROKEN_powerpc64=	Does not build
-
 NO_BUILD=	yes
 USE_PHP=	hash pcre session xml
 

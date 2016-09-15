@@ -13,8 +13,6 @@ COMMENT=	PHP wrapper to Colin Percival's scrypt implementation
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	hash:build
 
