@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://w1.fi/releases/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 USES=		cpe gmake readline ssl

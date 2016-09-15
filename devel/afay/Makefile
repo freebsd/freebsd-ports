@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://thiberlog.free.fr/src/
 DISTNAME=	afay_thiberlog_${PORTVERSION}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
 
 LICENSE=	aflex

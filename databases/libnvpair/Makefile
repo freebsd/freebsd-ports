@@ -5,7 +5,7 @@ PORTNAME=	libnvpair
 PORTVERSION=	2.0
 CATEGORIES=	databases devel
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Illumos name-value pair library
 
 LICENSE=	CDDL
