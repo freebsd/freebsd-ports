@@ -1,0 +1,8 @@
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Elements/Gravatar
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Callbacks/Gravatar/Admin/Users/Modify.html/LeftColumnBottom
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Callbacks/Gravatar/User/Elements/Portlets/ExtraInfo/BeforeExtraInfo
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Callbacks/Gravatar/User/Prefs.html/FormLeftColumn
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Callbacks/Gravatar/Ticket/Elements/ShowRequestor/AboutThisUser
+%%RTHOME%%/plugins/RT-Extension-Gravatar/html/Callbacks/Gravatar/Prefs/AboutMe.html/FormLeftColumn
+%%RTHOME%%/plugins/RT-Extension-Gravatar/lib/RT/Extension/Gravatar.pm
+man/man3/RT::Extension::Gravatar.3.gz
