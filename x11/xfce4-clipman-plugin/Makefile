@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -13,20 +12,19 @@ COMMENT=	Clipboard manager for the Xfce panel
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	QRCODE UNIQUE
-OPTIONS_DEFAULT=	UNIQUE
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+	libdbus-glib-1.so:devel/dbus-glib
+
+OPTIONS_DEFINE=	QRCODE
 QRCODE_DESC=	QR Code support
-UNIQUE_DESC=	Unique (single instance) support
 QRCODE_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 QRCODE_CONFIGURE_ENABLE=	libqrencode
-UNIQUE_LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique
-UNIQUE_CONFIGURE_ENABLE=	unique
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 intltool intlhack glib20
+USE_GNOME=	gtk30 intltool intlhack glib20 cairo
 USE_XFCE=	panel
-USE_XORG=	xtst xproto
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
+USE_XORG=	ice sm x11 xtst xproto
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
