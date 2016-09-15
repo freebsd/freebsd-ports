@@ -126,6 +126,8 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
 %%DATADIR%%/include/plugins-contrib.d/web.conf
 %%DATADIR%%/include/windows-plugins
+share/vim/vimfiles/ftdetect/icinga2.vim
+share/vim/vimfiles/syntax/icinga2.vim
 @dir %%ETCDIR%%/pki
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/log
