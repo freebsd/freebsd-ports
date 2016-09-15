@@ -4,4 +4,10 @@ Sereal::Encoder module, the Perl decoder correspondingly as
 Sereal::Decoder.  They are distributed separately to allow for safe
 upgrading without downtime.
 
-WWW: http://search.cpan.org/dist/Sereal/
+The encoder and decoder modules are available as these two ports:
+  - converters/p5-Sereal-Encoder
+  - converters/p5-Sereal-Decoder
+
+This port will install both of them.
+
+WWW: https://metacpan.org/pod/Sereal
