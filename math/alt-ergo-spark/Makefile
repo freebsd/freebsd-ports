@@ -7,8 +7,11 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-spark
 DISTNAME=	alt-ergo-for-spark-gpl-${PORTVERSION}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic solver for SPARK 2015
+
+DEPRECATED=	Only useful for deprecate lang/spark
+EXPIRATION_DATE=	2016-09-30
 
 LICENSE=	CeCILL-C
 LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] C license, version 1
