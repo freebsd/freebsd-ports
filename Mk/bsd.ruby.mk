@@ -18,8 +18,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_DEFAULT_VER	- Set to (e.g.) "2.1" if you want to refer to "ruby21"
 #			  just as "ruby".
 # RUBY_ARCH		- (See below)
-# RUBY_RD_HTML		- Define if you want HTML files generated from RD files.
-#
 #
 # [variables that each port can define]
 #
