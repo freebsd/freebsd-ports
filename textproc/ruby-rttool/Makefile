@@ -18,10 +18,11 @@ LICENSE=	RUBY
 USE_RUBY=	yes
 USES=		shebangfix
 USE_RUBY_SETUP=	yes
-USE_RUBY_RDTOOL=	yes
 
 SHEBANG_FILES=	bin/rt/* lib/rt/*
 RUBY_MODNAME=	rt
+
+BUILD_DEPENDS=	rd2:textproc/ruby-rdtool
 
 DOCS_EN=	rttool.en.html rttool.en.rd
 DOCS_JA=	rttool.ja.html rttool.ja.rd
