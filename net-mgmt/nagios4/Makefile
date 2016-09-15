@@ -14,8 +14,6 @@ COMMENT=	Powerful network monitoring system
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng16.so:graphics/png \
 		libgd.so:graphics/gd

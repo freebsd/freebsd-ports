@@ -13,8 +13,6 @@ COMMENT=	Modular web application framework for office
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.AGPL
 
-BROKEN_powerpc64=	Does not build
-
 RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes

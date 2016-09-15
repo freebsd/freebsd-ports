@@ -11,8 +11,6 @@ COMMENT=	Rogue-like game with color, X11 support
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 OPTIONS_DEFINE=	SDL X11 DOCS
 OPTIONS_DEFAULT=X11
 

@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
-BROKEN_powerpc64=	does not build
-
 OPTIONS_DEFINE=	IGBINARY SASL
 IGBINARY_DESC=	Binary serializer support
 

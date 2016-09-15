@@ -9,6 +9,4 @@ USES=		sqlite:3
 
 LDFLAGS+=	-lsqlite3
 
-BROKEN_powerpc64=	Does not build
-
 .include "${.CURDIR:H:H}/devel/qt4/Makefile.sqldrivers"

@@ -11,8 +11,6 @@ COMMENT=	Apache Kafka C/C++ library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes

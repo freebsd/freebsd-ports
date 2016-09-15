@@ -8,6 +8,4 @@ MASTERDIR=	${.CURDIR}/../../lang/php55
 
 PKGNAMESUFFIX=	-phar
 
-BROKEN_powerpc64=	Does not build
-
 .include "${MASTERDIR}/Makefile"

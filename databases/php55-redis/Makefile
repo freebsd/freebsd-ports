@@ -12,8 +12,6 @@ COMMENT=	PHP5-Extension for Redis
 
 LICENSE=	PHP301
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolasff
 GH_PROJECT=	phpredis

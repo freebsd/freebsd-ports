@@ -11,8 +11,6 @@ COMMENT=	Sixel image dumper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libsixel.so:graphics/libsixel
 

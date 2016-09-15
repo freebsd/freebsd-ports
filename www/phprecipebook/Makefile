@@ -12,8 +12,6 @@ COMMENT=	Small php webapp to manage your recipes
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
-BROKEN_powerpc64=	Does not build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes

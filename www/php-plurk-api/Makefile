@@ -14,8 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
 
-BROKEN_powerpc64=	Does not build
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	json curl

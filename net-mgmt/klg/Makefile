@@ -11,8 +11,6 @@ COMMENT=	PHP-based looking glass for Cisco, Juniper and Quagga/Zebra routers
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
-
 USES=		tar:txz
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre sockets xml

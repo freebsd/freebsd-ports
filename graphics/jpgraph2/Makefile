@@ -17,8 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php tar:bzip2
 USE_PHP=	gd
 NO_ARCH=	yes

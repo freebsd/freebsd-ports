@@ -12,8 +12,6 @@ COMMENT=	Web-based RSS/RDF/ATOM news aggregator
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 USE_PHP=	gettext iconv mbstring session xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

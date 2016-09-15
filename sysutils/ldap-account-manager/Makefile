@@ -11,8 +11,6 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 
