@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
 
@@ -9,6 +9,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Multi-dimensional data index algorithm
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:bzip2
 NO_ARCH=	yes
