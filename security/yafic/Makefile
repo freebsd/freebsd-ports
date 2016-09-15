@@ -3,7 +3,7 @@
 
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -14,14 +14,19 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 LDFLAGS+=	-static
 
-.if defined(WITHOUT_OPENSSL)
-CONFIGURE_ARGS=	--disable-crypto
-PLIST_SUB+=	CRYPTO="@comment "
-.else
-PLIST_SUB+=	CRYPTO=""
-.endif
+OPTIONS_DEFINE=	CRYPTO
+OPTIONS_DEFAULT=	CRYPTO
+OPTIONS_SUB=	yes
+
+CRYPTO_DESC=			Cryptographic support
+CRYPTO_USES=			ssl:build
+CRYPTO_CONFIGURE_ENABLE=	crypto
+CRYPTO_LDFLAGS=			-L${OPENSSLLIB}
+CRYPTO_CFLAGS=			-I${OPENSSLINC}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${SED} -e "s;@@PREFIX@@;${PREFIX};g" \
@@ -29,12 +34,12 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yafic ${STAGEDIR}${PREFIX}/bin
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MCRYPTO}
 	${INSTALL_PROGRAM} ${WRKSRC}/yafic-sign ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf yafic-sign ${STAGEDIR}${PREFIX}/bin/yafic-check
 .endif
 	${INSTALL_MAN} ${WRKSRC}/yafic.1 ${STAGEDIR}${PREFIX}/man/man1
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MCRYPTO}
 	${INSTALL_MAN} ${WRKSRC}/yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1
 	${LN} -sf yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1/yafic-check.1
 .endif

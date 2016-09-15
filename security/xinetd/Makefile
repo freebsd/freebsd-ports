@@ -3,24 +3,29 @@
 
 PORTNAME=	xinetd
 PORTVERSION=	2.3.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	GENTOO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
+
+LICENSE=	XINETD
+LICENSE_NAME=	xinetd license
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xinetd
 ALL_TARGET=	build
-CONFIGURE_ARGS+=	--with-loadavg
-OPTIONS_SUB=	yes
+CONFIGURE_ARGS=	--with-loadavg
 
 USES=		cpe shebangfix
 SHEBANG_FILES=	${WRKSRC}/xinetd/xconv.pl
 
 OPTIONS_DEFINE=	IPV6 LIBWRAP XCONV
 OPTIONS_DEFAULT=	LIBWRAP XCONV
+OPTIONS_SUB=	yes
 
 XCONV_DESC=	Install xconv utility (requires perl)
 

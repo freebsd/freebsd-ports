@@ -10,6 +10,8 @@ DISTNAME=	mpm_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music Player Minion
 
+BROKEN=		Unfetchable (google code has gone away)
+
 XPI_ID=		Music_Player_Minion@code.google.com
 XPI_FILES=	chrome/minion.jar chrome.manifest install.js install.rdf
 XPI_DIRS=	chrome

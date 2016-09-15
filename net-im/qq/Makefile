@@ -3,7 +3,7 @@
 
 PORTNAME=	qq
 DISTVERSION=	v1.0.2-beta1_i386
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://dl_dir.qq.com/linuxqq/
 DISTNAME=	linuxqq_${DISTVERSION}
@@ -12,8 +12,8 @@ MAINTAINER=	kaiw27@gmail.com
 COMMENT=	Tencent QQ for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 xorglibs
+USES=		linux
+USE_LINUX=	gtk2 xorglibs
 NO_BUILD=	yes
 
 QQDIR=		libexec/qq

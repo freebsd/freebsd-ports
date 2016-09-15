@@ -11,8 +11,7 @@ DISTNAME=	NeroAACCodec-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
-USES=		dos2unix zip
-USE_LINUX=	yes
+USES=		dos2unix linux zip
 DOS2UNIX_REGEX=	.*\.txt
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes

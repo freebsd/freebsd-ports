@@ -13,6 +13,8 @@ COMMENT=	RELAX NG validator in Java
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/copying.html
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

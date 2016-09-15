@@ -3,7 +3,7 @@
 
 PORTNAME=	crashplan
 DISTVERSION=	4.7.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils java linux
 MASTER_SITES=	https://download.code42.com/installs/linux/install/CrashPlan/
 PKGNAMEPREFIX=	linux-
@@ -20,10 +20,9 @@ JAVA_VERSION=	1.7+
 
 WRKSRC=		${WRKDIR}/crashplan-install
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	expat fontconfig xorglibs
+USES=		linux shebangfix tar:tgz
+USE_LINUX=	expat fontconfig xorglibs
 USE_RC_SUBR=	crashplan
-USES=		shebangfix tar:tgz
 
 SHEBANG_FILES=	scripts/CrashPlanEngine scripts/CrashPlanDesktop
 

@@ -198,4 +198,10 @@ VISUALISATION_CMAKE_OFF=-DENABLE_VISUALISATIONS=OFF
 WIIMOTEDEV_CMAKE_ON=	-DENABLE_WIIMOTEDEV=ON
 WIIMOTEDEV_CMAKE_OFF=	-DENABLE_WIIMOTEDEV=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 39
+CXXFLAGS+=	-Wno-undefined-var-template
+.endif
+
+.include <bsd.port.post.mk>

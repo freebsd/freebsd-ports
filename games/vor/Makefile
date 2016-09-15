@@ -2,39 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	vor
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	games
-MASTER_SITES=	http://qualdan.com/vor/ \
+MASTER_SITES=	https://jasonwoof.com/downloads/vor/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:tgz
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop
 PORTDOCS=	*
 PORTDATA=	*
-
-DESKTOP_ENTRIES="Variations on Rockdodger" \
-		"Dodge the rocks until you die" \
-		"${DATADIR}/icon.png" \
-		"vor" \
-		"Game;ArcadeGame;" \
-		false
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

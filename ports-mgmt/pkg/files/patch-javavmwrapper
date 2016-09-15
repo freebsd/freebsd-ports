@@ -2,7 +2,7 @@ diff --git libpkg/pkg_add.c libpkg/pkg_add.c
 index 87fb248..778336c 100644
 --- libpkg/pkg_add.c
 +++ libpkg/pkg_add.c
-@@ -859,14 +859,20 @@ pkg_add_cleanup_old(struct pkgdb *db, struct pkg *old, struct pkg *new, int flag
+@@ -859,14 +859,21 @@ pkg_add_cleanup_old(struct pkgdb *db, struct pkg *old, struct pkg *new, int flag
  	 * Execute pre deinstall scripts
  	 */
  	if ((flags & PKG_ADD_NOSCRIPT) == 0) {
@@ -16,7 +16,8 @@ index 87fb248..778336c 100644
 -			ret = EPKG_OK;
 +		bool buggydeinstall = false;
 +		if (strcmp(old->name, "javavmwrapper") == 0 &&
-+		    strcmp(old->version, "2.5") == 0)
++		    (strcmp(old->version, "2.5") == 0 ||
++		    strcmp(old->version, "2.5_1") == 0))
 +			buggydeinstall = true;
 +		if (!buggydeinstall) {
 +			if ((flags & PKG_ADD_USE_UPGRADE_SCRIPTS) == PKG_ADD_USE_UPGRADE_SCRIPTS)

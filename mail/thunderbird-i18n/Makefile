@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	45.2.0
+PORTVERSION=	45.3.0
+PORTREVISION=	1
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build1/linux-i686/xpi
@@ -13,7 +14,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-USES=		gecko:thunderbird,build zip
+USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes
@@ -58,18 +59,15 @@ do-extract:
 
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_SLDIRS_ALL:S,^,${STAGEDIR},}
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_LINKFARMS:S,^,${STAGEDIR},}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
 	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
-	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \
-		for _dir in ${XPI_LINKFARMS} ; do \
-		${LN} -sf $${_e##*/} ${STAGEDIR}$$_dir/ ${_Q} ; \
-		done \
+	@for sldir in ${XPI_LINKFARMS}; do \
+		${ECHO_CMD} "@dir $${sldir}" ${_A}; \
 	done
-	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \

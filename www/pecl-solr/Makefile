@@ -15,8 +15,6 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	json:build
 

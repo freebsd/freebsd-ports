@@ -11,6 +11,8 @@ COMMENT=	Minimalist, tiling window manager for X11
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	XINERAMA
 XINERAMA_DESC=	X11 Xinerama extention support
 OPTIONS_DEFAULT=XINERAMA

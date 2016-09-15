@@ -1,6 +1,6 @@
---- Documentation/GNUmakefile.orig	2012-08-28 14:06:34.000000000 +0200
-+++ Documentation/GNUmakefile	2012-08-28 14:06:18.000000000 +0200
-@@ -77,9 +77,9 @@
+--- Documentation/GNUmakefile.orig	2016-08-30 10:23:53 UTC
++++ Documentation/GNUmakefile
+@@ -73,9 +73,9 @@ source-links = $(outdir)/source\
  MAIN_INFO_DOC = lilypond-web
  INFO_DOCS = lilypond-usage lilypond-changes lilypond-contributor lilypond-internals \
   lilypond-essay lilypond-learning lilypond-notation music-glossary \

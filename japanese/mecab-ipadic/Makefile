@@ -11,6 +11,8 @@ PROJECTHOST=	mecab
 MAINTAINER=	yasu@utahime.org
 COMMENT?=	MeCab IPA dictionary meta-port
 
+BROKEN=		Unfetchable (google code has gone away)
+
 .if empty(PKGNAMESUFFIX)
 USES=	metaport
 OPTIONS_RADIO=	CHARSET

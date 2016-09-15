@@ -13,12 +13,11 @@ COMMENT=	UPnP IGD implementation which uses pf/ipf
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe
+USES=		cpe ssl
 CPE_VENDOR=	miniupnp_project
 PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd \
 		man/man8/miniupnpd.8.gz
 MAKE_JOBS_UNSAFE=yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	miniupnpd
 
 CFLAGS+=	-I${OPENSSLINC}
@@ -39,4 +38,8 @@ UPNP_IGDV2_EXTRA_PATCHES=	${PATCHDIR}/enable_igdv2.patch
 UPNP_STRICT_EXTRA_PATCHES=	${PATCHDIR}/enable_upnp_strict.patch
 LEASEFILE_EXTRA_PATCHES=	${PATCHDIR}/enable_leasefile.patch
 
+post-patch:
+	${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
+	${WRKSRC}/Makefile
+	
 .include <bsd.port.mk>

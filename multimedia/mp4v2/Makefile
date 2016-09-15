@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library and tools to read, create, and modify mp4 files
 
+BROKEN=		Unfetchable (google code has gone away)
+
 CONFLICTS=	mpeg4ip-libmp4v2-[0-9.]*
 USES=		compiler gmake libtool tar:bzip2
 MAKEFILE=	GNUmakefile

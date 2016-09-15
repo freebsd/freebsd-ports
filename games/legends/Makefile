@@ -18,9 +18,8 @@ COMMENT=	Fast-paced first-person-perspective online multiplayer game
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		makeself
-USE_LINUX=	yes
-USE_LINUX_APPS+=dri
+USES=		linux makeself
+USE_LINUX=	dri
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}

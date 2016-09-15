@@ -11,6 +11,8 @@ COMMENT=	Statistical analysis tool for git repositories
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		zip python

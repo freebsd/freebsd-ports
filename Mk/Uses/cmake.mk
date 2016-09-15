@@ -12,8 +12,6 @@
 # Additional variables that affect cmake behaviour:
 #
 # User defined variables:
-# CMAKE_VERBOSE		- Enable verbose build output
-#			Default: not set, unless BATCH or PACKAGE_BUILDING is defined
 # CMAKE_NOCOLOR		- Disable colour build output
 #			Default: not set, unless BATCH or PACKAGE_BUILDING is defined
 # CMAKE_NINJA		- Use ninja instead of make(1)
@@ -80,18 +78,15 @@ CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DCMAKE_INSTALL_PREFIX:PATH="${CMAKE_INSTALL_PREFIX}" \
 			-DCMAKE_BUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}" \
 			-DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES \
-			-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=YES
+			-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=YES \
+			-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-CMAKE_VERBOSE=		yes
 CMAKE_NOCOLOR=		yes
 .endif
 
-.if defined(CMAKE_VERBOSE)
-CMAKE_ARGS+=		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
-.endif
 .if defined(CMAKE_NOCOLOR)
 CMAKE_ARGS+=		-DCMAKE_COLOR_MAKEFILE:BOOL=OFF
 .endif

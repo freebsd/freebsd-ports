@@ -11,10 +11,9 @@ COMMENT=	Audio compression codec library (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-libvorbis-[0-9]* linux-f10-libvorbis-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	libogg
+USE_LINUX=	libogg
 
 RPMVERSION=	4.el6_2.1
 USE_LDCONFIG=	yes

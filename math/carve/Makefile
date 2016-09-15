@@ -12,6 +12,8 @@ COMMENT=	Fast, robust constructive solid geometry library
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS GUI

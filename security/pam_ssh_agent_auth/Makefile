@@ -10,10 +10,11 @@ MASTER_SITES=	SF/pamsshagentauth/${PORTNAME}/v${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
 
-USES=		perl5 tar:bzip2
+USES=		perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_strnvis=no
-CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib \
+		--with-ssl-dir=${OPENSSLBASE}
 
 PLIST_FILES=	lib/pam_ssh_agent_auth.so \
 		man/man8/pam_ssh_agent_auth.8.gz

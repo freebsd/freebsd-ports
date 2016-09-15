@@ -27,7 +27,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 OPTIONS_DEFINE=	LINUX DOCS
 
 LINUX_DESC=		Install Linux binary too (linux-w_scan)
-LINUX_USE=		LINUX=yes
+LINUX_USES=		linux
 LINUX_RUN_DEPENDS=	linux_dvbwrapper-kmod>=1.0:multimedia/linux_dvbwrapper-kmod
 LINUX_PLIST_FILES=	bin/linux-${PORTNAME}
 

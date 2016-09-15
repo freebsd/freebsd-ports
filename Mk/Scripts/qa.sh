@@ -20,15 +20,19 @@ err() {
 	echo "Error: $@" >&2
 }
 
+list_stagedir_elfs() {
+	cd ${STAGEDIR} && find -s . -type f \( -perm +111 -o -name '*.so*' \) "$@"
+}
+
 shebangonefile() {
 	local f interp rc
 
 	f="$@"
 	rc=0
 
-	# blacklist of files which are not intended to be runnable
-	case "${f##*/}" in
-	*.pm|*.pod|*.txt)
+	# whitelist some files
+	case "${f}" in
+	*.pm|*.pod|*.txt|${STAGEDIR}${LINUXBASE}/*)
 		return 0
 		;;
 	esac
@@ -115,9 +119,7 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-		${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/libexec \
-		-type f -exec readelf -d {} + 2>/dev/null)
+	$(list_stagedir_elfs -exec readelf -d {} + 2>/dev/null)
 	EOF
 	if [ -z "${USESSSL}" -a -n "${found_openssl}" ]; then
 		warn "you need USES=ssl"
@@ -306,7 +308,7 @@ libperl() {
 }
 
 prefixvar() {
-	if test -d ${STAGEDIR}${PREFIX}/var; then
+	if [ ${PREFIX} != ${LINUXBASE} -a -d ${STAGEDIR}${PREFIX}/var ]; then
 		warn "port uses ${PREFIX}/var instead of /var"
 	fi
 }
@@ -556,6 +558,9 @@ proxydeps_suggest_uses() {
 	# motif
 	elif [ ${pkg} = "x11-toolkits/lesstif" -o ${pkg} = "x11-toolkits/open-motif" ]; then
 		warn "you need USES+=motif"
+	# ncurses
+	elif [ ${pkg} = "devel/ncurses" ]; then
+		warn "you need USES+=ncurses"
 	# objc
 	elif [ ${pkg} = "lang/libobjc2" ]; then
 		warn "you need USES+=objc"
@@ -660,9 +665,9 @@ proxydeps() {
 			!/^\// && section<=1 && ($3 ~ "^'${PREFIX}'" || $3 ~ "^'${LOCALBASE}'") {print $3}')
 		EOT
 	done <<-EOT
-	$(cd ${STAGEDIR} && find -s . -type f \( -perm +111 -o -name '*.so*' \) | \
+	$(list_stagedir_elfs | \
 		file -F $'\1' -f - | \
-		grep -a 'ELF.*dynamically linked' | \
+		grep -a 'ELF.*FreeBSD.*dynamically linked' | \
 		cut -f 1 -d $'\1'| \
 		sed -e 's/^\.//')
 	EOT

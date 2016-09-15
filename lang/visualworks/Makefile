@@ -16,8 +16,8 @@ COMMENT=		High performance Smalltalk environment
 DIST_SUBDIR=		${SUBDIR}
 SUBDIR=			vwnc${PORTVERSION}
 
-USE_LINUX=		yes
-USE_LINUX_APPS=		xorglibs
+USES=			linux
+USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=		i386 amd64
 NO_BUILD=		yes
 MY_STARTUP_SCRIPT=	visual.sh

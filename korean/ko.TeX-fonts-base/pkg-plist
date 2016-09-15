@@ -6353,7 +6353,7 @@ share/texmf-local/tex/latex/kotex/utf/unfonts/LUCutgr.fd
 share/texmf-local/tex/latex/kotex/utf/unfonts/LUCutgt.fd
 share/texmf-local/tex/latex/kotex/utf/unfonts/LUCuttz.fd
 share/texmf-local/tex/latex/kotex/utf/unfonts/hfontspec.ut
-@exec %%MKTEXLSR%%
-@exec %%UPDMAP_SYS%% --enable Map=kotex-base.map
-@unexec %%MKTEXLSR%%
-@unexec %%UPDMAP_SYS%% --syncwithtrees
+@postexec %%MKTEXLSR%% --quiet
+@postexec env -u POSIXLY_CORRECT %%UPDMAP_SYS%% --quiet --enable Map=kotex-base.map
+@postunexec %%MKTEXLSR%% --quiet
+@postunexec %%UPDMAP_SYS%% --quiet --disable kotex-base.map

@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 4 for Linux Demo
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12
+USES=		linux
+USE_LINUX=	sdl12
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Redistribution is limited, see license
 

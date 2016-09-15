@@ -276,14 +276,14 @@ foreach my $thisdir (@dirs) {
 			$pkgcomment = `cat pkg-descr`;
 			$pkgcomment .= "\n" if ($autofill != -1);
 		}
+		chomp($maintaineraddr = `$make $passenv -V MAINTAINER`);
+		chomp($portversion = `$make $passenv -V PORTVERSION`);
 		# Read Makefile to find necessary variables.
 		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
 		while(<MAKEFILE>) {
 			chomp;
 			die ("Old style Makefile headers detected") if (/^# (?:[Nn]ew )?[Pp]orts collection [Mm]akefile/);
 			($maintainer) = (m/^# Created by:\s+(\w.*)$/) if (/^# Created by/);
-			($maintaineraddr) = (m/^MAINTAINER=\s+(\w.*)$/) if (/^MAINTAINER=/);
-			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
 		$maintainer = $maintaineraddr unless ($maintainer);

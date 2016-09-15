@@ -98,6 +98,7 @@
     SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-psalms
+    SUBDIR += fortune_strfile
     SUBDIR += fortuneit
     SUBDIR += fpc-chm
     SUBDIR += freebsd-doc-all

@@ -6,8 +6,8 @@ PORTVERSION=	2.4.4
 PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/
-DIST_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION:R}-src
+DIST_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://http-analyze.org/
 PATCHFILES=	patch04.gz
@@ -30,8 +30,6 @@ LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-install:
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} http-analyze \
 		${STAGEDIR}${PREFIX}/bin/http-analyze)
@@ -39,17 +37,13 @@ do-install:
 		${STAGEDIR}${MANPREFIX}/man/man1/http-analyze.1)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC}/files && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in http-analyze.pdf http-analyze.ps.gz
-	(cd ${WRKSRC}/man && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
-.endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	cd ${WRKSRC}/man && ${INSTALL_DATA} http-analyze.pdf http-analyze.ps.gz ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in contrib tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${EXAMPLESDIR})
-.endfor
-.endif
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "contrib tools" ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

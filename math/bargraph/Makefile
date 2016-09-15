@@ -13,6 +13,8 @@ COMMENT=	Scriptable bar graph generator
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/bin/fig2dev:print/transfig \
 		${LOCALBASE}/bin/gnuplot:math/gnuplot
 

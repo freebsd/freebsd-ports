@@ -14,6 +14,8 @@ COMMENT=	MeCab library module for Ruby
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USE_RUBY=	yes

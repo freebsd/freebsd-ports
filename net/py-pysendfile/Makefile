@@ -13,6 +13,8 @@ COMMENT=	Python interface to sendfile(2)
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
 
 USES=		python

@@ -11,6 +11,8 @@ COMMENT=	Generate DNS and DHCP config files from single source
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		shebangfix tar:tgz
 
 NO_BUILD=	yes

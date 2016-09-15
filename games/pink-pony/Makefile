@@ -13,6 +13,8 @@ COMMENT=	Tron-like multiplayer racing game
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libprotobuf.so:devel/protobuf \
 		libglfw.so:graphics/glfw2 \

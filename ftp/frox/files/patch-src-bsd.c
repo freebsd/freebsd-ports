@@ -1,5 +1,5 @@
---- src/bsd.c.orig	Fri Feb  4 20:54:55 2005
-+++ src/bsd.c	Wed Jul 25 01:25:16 2007
+--- src/bsd.c.orig	2005-02-04 10:24:55 UTC
++++ src/bsd.c
 @@ -30,6 +30,16 @@
  #error --enable-transparent-data not supported under BSD
  #endif
@@ -17,7 +17,7 @@
  #ifdef IPFILTER
  #include <fcntl.h>
  #include <sys/ioctl.h>
-@@ -51,6 +61,11 @@
+@@ -51,6 +61,11 @@ int os_init(void)
  	if(natfd < 0)
  		write_log(ERROR, "Unable to initialise IPFilter");
  #endif
@@ -29,7 +29,7 @@
  	return 0;
  }
  
-@@ -61,6 +76,11 @@
+@@ -61,6 +76,11 @@ int os_init(void)
  int get_orig_dest(int fd, struct sockaddr_in *addr)
  {
  	socklen_t len;
@@ -41,11 +41,10 @@
  #ifdef IPFILTER
  	struct natlookup nat;
  	struct sockaddr_in from;
-@@ -99,6 +119,31 @@
- 		addr->sin_family = AF_INET;
+@@ -100,6 +120,31 @@ int get_orig_dest(int fd, struct sockadd
  		return r2;
  	}
-+#endif
+ #endif
 +#ifdef PF
 +       getpeername(fd, (struct sockaddr *) &from, &len);
 +       memset(&nl, 0, sizeof(struct pfioc_natlook));
@@ -70,6 +69,7 @@
 +               return r2;
 +		   }
 +	   }
- #endif
++#endif
  	memcpy(addr, &to, len);
  	return r1;
+ }

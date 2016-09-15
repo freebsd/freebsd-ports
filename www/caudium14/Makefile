@@ -6,7 +6,8 @@ PORTVERSION=	${DISTVERSION}.${PIKEVERSION}
 DISTVERSION=	1.4.18
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://caudium.googlecode.com/files/
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/caudium/ \
+		ftp://ftp.stack.nl/pub/users/johans/caudium/
 DISTNAME=	Caudium-${DISTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -47,7 +48,7 @@ post-patch:
 		-e 's,/etc/caudium,${PREFIX}&,' ${WRKSRC}/Makefile.in
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/caudium ${STAGEDIR}${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/caudium ${STAGEDIR}${PREFIX}/etc/rc.d/
 
 .include <bsd.port.pre.mk>
 

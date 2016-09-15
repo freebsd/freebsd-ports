@@ -3,7 +3,7 @@
 PORTNAME=	katawa-shoujo
 PORTVERSION=	1.3.1
 DISTVERSIONSUFFIX=-[linux-x86][18161880]
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
 		http://dl.katawa-shoujo.com/patches/:patch \
@@ -22,7 +22,7 @@ LICENSE_NAME=	Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported
 LICENSE_TEXT=	See https://creativecommons.org/licenses/by-nc-nd/3.0/
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS=	renpy:devel/renpy
+RUN_DEPENDS=	renpy6<6.99.11:devel/renpy6
 
 USES=		tar:bz2
 NO_ARCH=	yes

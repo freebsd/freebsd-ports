@@ -3,7 +3,7 @@
 
 PORTNAME=	racoon2
 PORTVERSION=	20100526a
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 
@@ -76,9 +76,7 @@ HEIMDAL_BASE_MAKE_ENV=	WITH_KINK=yes
 HEIMDAL_BASE_PLIST_SUB=	KINK=""
 HEIMDAL_BASE_VARS=	KINK=yes
 
-.include <bsd.port.pre.mk>
-
-PLIST_SUB+=	PFX=${PREFIX}
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS+=	INSTALL USAGE config-usage.ja.txt config-usage.txt
@@ -116,4 +114,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

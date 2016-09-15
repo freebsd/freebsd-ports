@@ -13,6 +13,8 @@ DISTNAME=	sparsehash-${PORTVERSION}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Extremely memory-efficient hash_map implementation
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang
 

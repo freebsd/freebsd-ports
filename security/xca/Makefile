@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		desktop-file-utils gmake localbase pkgconfig shared-mime-info
-USE_OPENSSL=	yes
+USES=		desktop-file-utils gmake localbase pkgconfig \
+		shared-mime-info ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
 		--with-qt=${QT_PREFIX}

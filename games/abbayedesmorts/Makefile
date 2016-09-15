@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	abbayedesmorts
-PORTVERSION=	git20150512
+PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,8 +13,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nevat
-GH_PROJECT=	abbayedesmorts-gpl
-GH_TAGNAME=	558116d5d6
+GH_PROJECT=	${PORTNAME}-gpl
 
 PORTSCOUT=	skipv:v1.2,v1.13,v1.11 # git repo contains required portability fixes
 
@@ -22,6 +22,6 @@ USE_SDL=	sdl2 mixer2 image2
 DATADIR=	${PREFIX}/share/abbayev2
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/abbayev2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/abbayev2
 
 .include <bsd.port.mk>

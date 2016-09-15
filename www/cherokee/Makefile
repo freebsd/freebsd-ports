@@ -27,8 +27,7 @@ SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 USE_RC_SUBR=	cherokee
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--localstatedir=${CHEROKEE_VARDIR} \
 		--without-php \
 		--with-python=${PYTHON_CMD} \

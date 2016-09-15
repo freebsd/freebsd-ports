@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serf
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/serf
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libapr-1.so:devel/apr1
 
-USES=		scons tar:bzip2 cpe
-USE_OPENSSL=	yes
+USES=		scons ssl tar:bzip2 cpe
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -46,12 +45,6 @@ SCONS_ARGS+=	GSSAPI="/usr"
 SCONS_ARGS+=    GSSAPI="${LOCALBASE}"
 .endif
 
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_CMD} ${SCONS_ARGS})
-
-do-install:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_CMD} ${SCONS_ARGS} ${INSTALL_TARGET})
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e '/^Requires.private/s/(libssl|libcrypto)//g' \
@@ -66,4 +59,8 @@ post-install-DOCS-on:
 regression-test check: build
 	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+MAKE_ARGS=	${SCONS_ARGS}
+
+.include <bsd.port.post.mk>

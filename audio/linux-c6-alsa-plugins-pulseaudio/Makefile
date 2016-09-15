@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-plugins-pulseaudio
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,9 +17,8 @@ CONFLICTS=	linux-f10-alsa-plugins-pulseaudio-[0-9]*
 SRC_DISTFILES=	alsa-plugins-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 .endif
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
-USE_LINUX_APPS=	alsalib pulseaudio-libs
+USES=		linux:c6
+USE_LINUX=	alsalib pulseaudio-libs
 USE_LINUX_RPM=	yes
 RPMVERSION=	1.el6
 

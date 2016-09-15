@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.5.3
+PORTVERSION=	4.6.1
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
@@ -13,13 +13,12 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ja-wordpress-3.*
+CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ja-wordpress-[0-9].*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		cpe
+USES=		php:web cpe
 USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
-WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CPE_LANG=	ru
@@ -42,7 +41,6 @@ pre-install:
 	${ECHO_CMD} '@owner www' > ${PLIST}
 	${ECHO_CMD} '@group www' >> ${PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
-	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dir %%WWWDIR%%|' >> ${PLIST}
 	${ECHO_CMD} '@owner' >> ${PLIST}
 	${ECHO_CMD} '@group' >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \

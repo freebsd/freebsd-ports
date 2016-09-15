@@ -15,6 +15,8 @@ COMMENT=	Comprehensive editor for OpenStreetMap.org database
 
 LICENSE=	GPLv2+
 
+PORTSCOUT=	ignore:1
+
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes

@@ -368,7 +368,7 @@
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionImageTCL-%%VER2%%.a
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionStyleTCL-%%VER2%%.a
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionWidgetsTCL-%%VER2%%.a
-%%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.a
+%%EXAMPLES%%%%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.a
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelCoreTCL-%%VER2%%.a
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationTCL-%%VER2%%.a
 %%NO_SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingContextIIDTCL-%%VER2%%.a
@@ -1415,8 +1415,8 @@
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionStyleTCL-%%VER2%%.so.1
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionWidgetsTCL-%%VER2%%.so
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkInteractionWidgetsTCL-%%VER2%%.so.1
-%%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.so
-%%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.so.1
+%%EXAMPLES%%%%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.so
+%%EXAMPLES%%%%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkLocalExampleTCL-%%VER2%%.so.1
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelCoreTCL-%%VER2%%.so
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelCoreTCL-%%VER2%%.so.1
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationTCL-%%VER2%%.so

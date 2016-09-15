@@ -20,7 +20,7 @@ CONFLICTS=	mbrola-*
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 NO_WRKSUBDIR=	yes
-USE_LINUX=	yes
+USES=		linux
 RESTRICTED=	for non-commercial, non-military applications only
 
 PLIST_FILES=	bin/mbrola

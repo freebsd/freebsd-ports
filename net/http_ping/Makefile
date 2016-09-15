@@ -11,8 +11,10 @@ DISTNAME=	${PORTNAME}_29jun2005
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Measure HTTP Latency
 
-USE_OPENSSL=	yes
+USES=		ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 PLIST_FILES=	bin/http_ping man/man1/http_ping.1.gz
 
 .include <bsd.port.mk>

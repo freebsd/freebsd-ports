@@ -10,14 +10,14 @@ DISTNAME=	spark-gpl-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:main ${IDENTIFICATION}.tar.bz2
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technology for engineering high-reliability s/w applications
 
 LICENSE=	GPLv3
 
 BROKEN=		brutally fails test suite - with ICE
 DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-10-29
+EXPIRATION_DATE=	2016-09-30
 
 BUILD_DEPENDS=	gnatcoll>=2014:devel/gnatcoll
 RUN_DEPENDS=	gnatwhy3:math/why3-spark \

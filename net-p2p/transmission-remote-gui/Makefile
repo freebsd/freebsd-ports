@@ -11,6 +11,8 @@ DISTNAME=	transgui-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon

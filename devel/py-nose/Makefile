@@ -18,7 +18,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
-regression-test: build
+do-test:
 # Extra tests for python 3, added in by setup3lib.py
 .if ${PYTHON_REL} >= 3000
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_tests

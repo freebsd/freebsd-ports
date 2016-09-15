@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	screen:sysutils/screen
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/screenie man/man1/screenie.1.gz

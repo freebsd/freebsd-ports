@@ -9,7 +9,8 @@ MASTER_SITES=	http://get.bitlbee.org/src/ \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IRC to other chat networks gateway
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlto:textproc/xmlto \
 		xsltproc:textproc/libxslt
@@ -18,7 +19,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
 PORTEXAMPLES=	bitlbee.conf motd.txt
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig python:build
 USE_RC_SUBR=	bitlbee
 USE_GNOME=	glib20
@@ -46,7 +47,9 @@ LIBEVENT_DESC=		Use libevent as event handler
 OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER YAHOO
 
 CONFIGURE_ARGS=		--config=/var/db/bitlbee \
-			--pcdir=${PREFIX}/libdata/pkgconfig
+			--pcdir=${PREFIX}/libdata/pkgconfig \
+			--prefix=${PREFIX} \
+			--mandir=${MANPREFIX}/man
 
 DEBUG_CONFIGURE_ON=	--debug=1
 GNUTLS_CONFIGURE_ON=	--ssl=gnutls
@@ -73,8 +76,6 @@ YAHOO_CONFIGURE_OFF=	--yahoo=0
 USERS=		bitlbee
 GROUPS=		bitlbee
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^install:/ s/$$/ install-dev/' \
 		${WRKSRC}/Makefile
@@ -87,20 +88,20 @@ post-patch:
 		${WRKSRC}/doc/bitlbee.8
 
 post-install:
-.if ${PORT_OPTIONS:MSKYPE}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+
+post-install-SKYPE-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf.sample
-.endif
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

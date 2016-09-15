@@ -17,9 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libtspi.so:security/trousers
 
-USES=		alias autoreconf gmake libtool tar:tgz
+USES=		alias autoreconf gmake libtool ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
-USE_OPENSSL=	yes
 .if exists(/usr/include/openssl/md2.h)
 WITH_OPENSSL_PORT=yes
 .endif

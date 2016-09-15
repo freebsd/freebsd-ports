@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	CUE player
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 USES=		pkgconfig qmake

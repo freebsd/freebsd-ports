@@ -19,8 +19,5 @@ POST-DEINSTALL)
 		echo ""
 	fi
 	;;
-*)
-	exit 64
-	;;
 esac
 exit 0

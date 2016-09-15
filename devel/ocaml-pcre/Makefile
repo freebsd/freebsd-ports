@@ -25,6 +25,13 @@ DOCSDIR=	${PREFIX}/share/doc/pcre-ocaml
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+# unknown warning flag for old gcc
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch--Wno-keyword-macro
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix"/"share|${STAGEDIR}${PREFIX}/share|' \
 	-e '/datarootdir/s|$$pkg_name|&-ocaml|' \

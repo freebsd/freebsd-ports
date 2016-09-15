@@ -21,7 +21,6 @@ TRANSPARENT_DESC=	Transparent proxy support
 XHEADER_DESC=		X-Tinyproxy header
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
-		--disable-silent-rules \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}

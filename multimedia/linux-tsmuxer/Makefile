@@ -11,10 +11,11 @@ DISTNAME=	tsMuxeR_${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utility to create TS and M2TS files for IP broadcasting
 
-USE_LINUX=	yes
+USES=		linux
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/tsMuxeR bin/tsMuxerGUI
+STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tsMuxeR ${WRKSRC}/tsMuxerGUI \

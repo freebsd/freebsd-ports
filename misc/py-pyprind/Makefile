@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyprind
-PORTVERSION=	2.9.8
+PORTVERSION=	2.9.9
 CATEGORIES=	misc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	PSUTIL
 PSUTIL_DESC=		Support monitoring CPU and memory usage
 PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil
 
-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

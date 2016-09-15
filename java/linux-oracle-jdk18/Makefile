@@ -22,9 +22,8 @@ WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
-USES=		shebangfix
+USES=		linux shebangfix
+USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VENDOR=		oracle

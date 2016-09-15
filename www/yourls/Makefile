@@ -11,8 +11,6 @@ COMMENT=	Your Own URL Shortener
 LICENSE=	ISCL MIT
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME:tu}

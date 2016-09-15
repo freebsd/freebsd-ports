@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module providing rudimentary access to SNMPv1 and v2 agents
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		perl5
 USE_PERL5=	configure
 

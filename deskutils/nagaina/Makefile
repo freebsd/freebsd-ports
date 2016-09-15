@@ -13,6 +13,8 @@ COMMENT=	Notes-taking application based on Qt 4
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
 		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \

@@ -2,7 +2,7 @@
 
 PORTNAME=	gr-osmosdr
 PORTVERSION=	20150716
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -29,10 +29,13 @@ CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \
 		-DENABLE_FILE:BOOL=ON \
 		-DENABLE_PYTHON=ON
 
-OPTIONS_DEFINE=	RTLSDR
+OPTIONS_DEFINE=	RTLSDR HACKRF
 RTLSDR_DESC=	Enable rtl-sdr (RTL2832) support
 OPTIONS_DEFAULT=	RTLSDR
 RTLSDR_LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr
 RTLSDR_CMAKE_ON=	-DENABLE_RTL:BOOL=ON -DENABLE_RTL_TCP:BOOL=ON
+HACKRF_DESC=	Enable hackrf one hardware support
+HACKRF_LIB_DEPENDS=	libhackrf.so:comms/hackrf
+HACKRF_CMAKE_ON=	-DENABLE_HACKRF:BOOL=ON
 
 .include <bsd.port.mk>

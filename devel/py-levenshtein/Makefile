@@ -14,6 +14,8 @@ COMMENT=	Python extension computing string distances and similarities
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/Levenshtein.so
 USES=		python tar:bzip2
 USE_PYTHON=	distutils pythonprefix

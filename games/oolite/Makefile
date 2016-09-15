@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		oolite
-PORTVERSION=		1.82
+PORTVERSION=		1.84
 CATEGORIES=		games gnustep
-MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.82/
+MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.84/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
@@ -26,8 +26,9 @@ LIB_DEPENDS=		libespeak.so:audio/espeak \
 			libminizip.so:archivers/minizip
 
 USES=			gnustep openal:al perl5 python:build tar:bzip2
-USE_GL=			yes
+USE_GL=			gl glu
 USE_SDL=		sdl
+USE_XORG=		x11
 USE_GNUSTEP=		base build
 # Redefine DO_MAKE_BUILD, because current gnustep in USES overrides MAKEFILE
 # without possibility to change it, as it was done in the previous implementation
@@ -83,9 +84,6 @@ post-patch: .SILENT
 		/ioapi.c/d ; /unzip.c/d ; \
 		s|/usr/X11R6|$${LOCALBASE}|' \
 		${WRKSRC}/GNUmakefile
-# Conversion needed for unsigned int type for using isfinite function
-	${REINPLACE_CMD} -e 's|isfinite(uValue)|isfinite((long double)uValue)|' \
-		${WRKSRC}/src/Core/Scripting/OOJSPlayerShip.m
 # Change value of the SAVEDIR define
 	${REINPLACE_CMD} -e 's|oolite-saves|\.oolite-saves|' \
 		${WRKSRC}/src/Core/NSFileManagerOOExtensions.h

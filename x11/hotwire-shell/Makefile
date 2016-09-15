@@ -12,6 +12,8 @@ DISTNAME=	hotwire-${DISTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Object-oriented hypershell
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo \
 		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:devel/py-gobject \

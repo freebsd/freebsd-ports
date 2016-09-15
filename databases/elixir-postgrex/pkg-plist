@@ -15,6 +15,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.ErrorCode.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extension.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Array.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Bool.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Calendar.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Date.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Float4.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Float8.beam
@@ -25,6 +26,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Int8.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Interval.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.JSON.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.MACADDR.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Name.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Network.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Numeric.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.OID.beam
@@ -71,6 +73,7 @@ lib/elixir/lib/postgrex/lib/postgrex/error_code.ex
 lib/elixir/lib/postgrex/lib/postgrex/extension.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/array.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/bool.ex
+lib/elixir/lib/postgrex/lib/postgrex/extensions/calendar.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/date.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/float4.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/float8.ex
@@ -81,6 +84,7 @@ lib/elixir/lib/postgrex/lib/postgrex/extensions/int8.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/interval.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/json.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/macaddr.ex
+lib/elixir/lib/postgrex/lib/postgrex/extensions/name.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/network.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/numeric.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/oid.ex

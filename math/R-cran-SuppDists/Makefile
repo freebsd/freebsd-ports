@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SuppDists
-DISTVERSION=	1.1-9.1
-PORTREVISION=	2
+DISTVERSION=	1.1-9.2
 CATEGORIES=	math
 MASTER_SITES=	CRAN \
 		http://r.research.att.com/benchmarks/:benchmark \

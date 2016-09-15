@@ -2,7 +2,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-${PORTVERSION:R}/${PORTVERSION}/+download/
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
@@ -51,7 +51,6 @@ SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 PRINTER_RUN_DEPENDS=	p5-Net-CUPS>=0:print/p5-Net-CUPS
 SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 			p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
-			p5-Net-Ping>=0:net/p5-Net-Ping \
 			p5-Nmap-Parser>=0:security/p5-Nmap-Parser \
 			nmap:security/nmap
 

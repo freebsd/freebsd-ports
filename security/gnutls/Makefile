@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.4.14
+PORTVERSION=	3.4.15
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -22,7 +22,6 @@ USES=		cpe gmake iconv libtool makeinfo pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
-		--disable-silent-rules \
 		--enable-local-libopts \
 		ac_cv_type_max_align_t=yes
 CPPFLAGS+=	-I${LOCALBASE}/include

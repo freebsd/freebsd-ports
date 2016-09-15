@@ -2,13 +2,15 @@
 
 PORTNAME=	texstudio
 PORTVERSION=	2.11.0
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TeXstudio%20${PORTVERSION}
 
 MAINTAINER=	abiliojr@gmail.com
 COMMENT=	Integrated writing environment for LaTeX documents
 
-LIB_DEPENDS=	libpoppler.so:graphics/poppler
+LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \
+		libpoppler.so:graphics/poppler
 
 USES=		desktop-file-utils dos2unix execinfo ghostscript:run \
 		pkgconfig qmake
@@ -29,11 +31,19 @@ OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_DEFAULT=	QT5
 
+QMAKE_ARGS=	USE_SYSTEM_HUNSPELL=true USE_SYSTEM_QUAZIP=true
+
 TOOLKIT_DESC=	Qt toolkit
 QT4_USE=	${_USE_QT4:S/^/QT4=/}
-QT4_LIB_DEPENDS=libpoppler-qt4.so:graphics/poppler-qt4
+QT4_LIB_DEPENDS=libpoppler-qt4.so:graphics/poppler-qt4 \
+		libquazip.so:archivers/quazip
+QT4_QMAKE_ON=	QUAZIP_INCLUDE="${LOCALBASE}/include/quazip" \
+		QUAZIP_LIB="-lquazip"
 QT5_USE=	${_USE_QT5:S/^/QT5=/}
-QT5_LIB_DEPENDS=libpoppler-qt5.so:graphics/poppler-qt5
+QT5_LIB_DEPENDS=libpoppler-qt5.so:graphics/poppler-qt5 \
+		libquazip5.so:archivers/quazip-qt5
+QT5_QMAKE_ON=	QUAZIP_INCLUDE="${LOCALBASE}/include/quazip5" \
+		QUAZIP_LIB="-lquazip5"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \

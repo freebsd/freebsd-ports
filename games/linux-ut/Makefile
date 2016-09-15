@@ -3,7 +3,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.holarse-linuxgaming.de/files/final/:p436 \
@@ -16,8 +16,8 @@ MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs sdl12
+USES=		linux
+USE_LINUX=	xorglibs sdl12
 NO_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	Requires CD
 RESTRICTED=	Redistribution is limited, see license

@@ -14,20 +14,17 @@ COMMENT=	2D top-viewed motorcycle racing game
 LIB_DEPENDS=	libsfml1-system.so:devel/sfml1 \
 		libpng.so:graphics/png
 
-LICENSE=	GPLv2 CCbySA
+LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
-LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
-LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_CCbySA=	${WRKSRC}/doc/cc-by-sa.txt
+LICENSE_FILE_GPLv20=	${WRKSRC}/doc/gpl.txt
+LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/doc/cc-by-sa.txt
 
-USES=		zip
+USES=		localbase zip
 USE_GL=		gl
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	motogt
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} libexec/MotoGT.bin
 PORTDATA=	*

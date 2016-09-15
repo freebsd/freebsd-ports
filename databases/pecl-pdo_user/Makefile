@@ -14,8 +14,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PECL classes provides a Userspace interface for PDO drivers
 
-BROKEN_powerpc64=	Does not build
-
 WRKSRC=		${WRKDIR}/PDO_USER-${PORTVERSION}
 
 USES=		php:ext

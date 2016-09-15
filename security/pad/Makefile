@@ -7,16 +7,22 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Command-line utility to encrypt files
 
+USES=		tar:tgz ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/pad man/man1/pad.1.gz
 PORTDOCS=	COPYING README ChangeLog
+
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+post-patch:
+	${REINPLACE_CMD} -e "s|\(-lcrypto\)|${LDFLAGS} \1|g" \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pad ${STAGEDIR}${PREFIX}/bin

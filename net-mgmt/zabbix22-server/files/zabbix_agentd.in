@@ -9,10 +9,10 @@
 #
 # zabbix_agentd_enable (bool): Set to NO by default.  Set it to YES to
 #         enable zabbix_agentd.
-# zabbix_agentd_paths (string): Set to standard path by default.  Set a search
-#         if you have custom userparams that need binaries elsewhere.
 # zabbix_agentd_config (string): Set to the standard config file path by
 #         default.
+# zabbix_agentd_pidfile (string):    Location of the zabbix_agentd pid file
+#                               Default is /var/run/zabbix/zabbix_agentd.pid
 #
 
 . /etc/rc.subr
@@ -22,22 +22,27 @@ rcvar=zabbix_agentd_enable
 
 load_rc_config $name
 
-: ${zabbix_agentd_enable="NO"}
-: ${zabbix_agentd_paths=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin}
-: ${zabbix_agentd_config="%%ETCDIR%%/${name}.conf"}
+: ${zabbix_agentd_enable:=NO}
+: ${zabbix_agentd_config:=%%ETCDIR%%/${name}.conf}
+: ${zabbix_agentd_pidfile:=/var/run/zabbix/zabbix_agentd.pid}
 
 command="%%PREFIX%%/sbin/${name}"
 required_files="${zabbix_agentd_config}"
-start_precmd="find_pidfile"
-status_precmd="find_pidfile"
-stop_precmd="find_pidfile"
 
-find_pidfile()
+start_precmd=zabbix_agentd_precmd 
+status_precmd=zabbix_agentd_precmd
+stop_precmd=zabbix_agentd_precmd
+
+zabbix_agentd_precmd()
 {
 	if get_pidfile_from_conf PidFile ${zabbix_agentd_config}; then
 		pidfile="$_pidfile_from_conf"
 	else
-		pidfile="/tmp/${name}.pid"
+		pidfile=${zabbix_agentd_pidfile}
+		local rundir=${zabbix_agentd_pidfile%/*}
+		if [ ! -d $rundir ] ; then
+			install -d -m 0755 -o zabbix -g zabbix $rundir
+		fi
 	fi
 
 	# This shouldn't be necessary with pidfile, but empirically it was the
@@ -46,7 +51,5 @@ find_pidfile()
 	# and/or race condition on restart.
 	rc_pid=$(check_pidfile ${pidfile} ${command})
 }
-
-export PATH="${zabbix_agentd_paths}"
 
 run_rc_command "$1"

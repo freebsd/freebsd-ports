@@ -11,6 +11,8 @@ COMMENT=	Client library for the Tivo vstream server
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

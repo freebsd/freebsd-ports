@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs
 
 USES=		python

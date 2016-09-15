@@ -18,7 +18,6 @@ GROUPS=		_ntp
 USE_RC_SUBR=	openntpd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 
 OPTIONS_DEFINE=		RESSL
 RESSL_DESC=		SSL/TLS support via LibreSSL

@@ -1,4 +1,4 @@
---- lib/uuid/gen_uuid.c.orig	2016-03-21 17:21:03 UTC
+--- lib/uuid/gen_uuid.c.orig	2016-09-02 04:17:32 UTC
 +++ lib/uuid/gen_uuid.c
 @@ -92,6 +92,7 @@
  #ifdef HAVE_SYS_RESOURCE_H

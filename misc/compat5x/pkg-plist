@@ -7,14 +7,14 @@ lib/compat/libbluetooth.so.1
 lib/compat/libbsdxml.so.1
 lib/compat/libbsnmp.so.2
 lib/compat/libbz2.so.1
-@unexec chflags noschg %D/lib/compat/libc.so.5
+@preunexec chflags noschg %D/lib/compat/libc.so.5
 lib/compat/libc.so.5
-@unexec chflags noschg %D/lib/compat/libc_r.so.5
+@preunexec chflags noschg %D/lib/compat/libc_r.so.5
 lib/compat/libc_r.so.5
 lib/compat/libcalendar.so.2
 lib/compat/libcam.so.2
 lib/compat/libcom_err.so.2
-@unexec chflags noschg %D/lib/compat/libcrypt.so.2
+@preunexec chflags noschg %D/lib/compat/libcrypt.so.2
 lib/compat/libcrypt.so.2
 lib/compat/libcrypto.so.3
 lib/compat/libdevinfo.so.2
@@ -38,7 +38,7 @@ lib/compat/libkadm5srv.so.7
 lib/compat/libkafs5.so.7
 lib/compat/libkiconv.so.1
 lib/compat/libkrb5.so.7
-%%SPARC64%%@unexec chflags noschg %D/lib/compat/libkse.so.1
+%%SPARC64%%@preunexec chflags noschg %D/lib/compat/libkse.so.1
 %%SPARC64%%lib/compat/libkse.so.1
 lib/compat/libkvm.so.2
 lib/compat/libm.so.3
@@ -57,11 +57,11 @@ lib/compat/libopie.so.3
 lib/compat/libpam.so.2
 lib/compat/libpanel.so.2
 lib/compat/libpcap.so.3
-%%AMD64%%@unexec chflags noschg %D/lib/compat/libpthread.so.1
+%%AMD64%%@preunexec chflags noschg %D/lib/compat/libpthread.so.1
 %%AMD64%%lib/compat/libpthread.so.1
-%%I386%%@unexec chflags noschg %D/lib/compat/libpthread.so.1
+%%I386%%@preunexec chflags noschg %D/lib/compat/libpthread.so.1
 %%I386%%lib/compat/libpthread.so.1
-%%SPARC64%%@unexec chflags noschg %D/lib/compat/libpthread.so.1
+%%SPARC64%%@preunexec chflags noschg %D/lib/compat/libpthread.so.1
 %%SPARC64%%lib/compat/libpthread.so.1
 lib/compat/libradius.so.1
 lib/compat/libreadline.so.5
@@ -75,7 +75,7 @@ lib/compat/libssh.so.2
 lib/compat/libssl.so.3
 lib/compat/libstdc++.so.4
 lib/compat/libtacplus.so.1
-@unexec chflags noschg %D/lib/compat/libthr.so.1
+@preunexec chflags noschg %D/lib/compat/libthr.so.1
 lib/compat/libthr.so.1
 lib/compat/libthread_db.so.1
 lib/compat/libufs.so.2

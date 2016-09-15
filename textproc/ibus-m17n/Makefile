@@ -13,6 +13,8 @@ COMMENT=	The m17n IMEngine for IBus framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 		libm17n.so:devel/m17n-lib
 RUN_DEPENDS=	ibus-daemon:textproc/ibus

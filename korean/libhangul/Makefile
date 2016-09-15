@@ -3,34 +3,34 @@
 
 PORTNAME=	libhangul
 PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Library for Hangul processing
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/libcheck
+
+GH_ACCOUNT=	choehwanjin
+GH_TAGNAME=	9fe2d4e
+USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	NLS
+PATHFIX_MAKEFILEIN=	Makefile.am
+TEST_TARGET=	test
+TEST_WRKSRC=	${WRKSRC}/test
 USE_LDCONFIG=	yes
-USES=		iconv libtool pkgconfig
+USES=		autoreconf iconv libtool pathfix pkgconfig
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS=	--enable-nls
-.else
-CONFIGURE_ARGS=	--disable-nls
-.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/check.pc)
-test:	build
-	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
-	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test && ./test )
-.endif
+post-test:
+	@${TEST_WRKSRC}/test
 
 .include <bsd.port.mk>

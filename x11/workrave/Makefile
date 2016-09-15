@@ -12,12 +12,11 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=	autoreconf:build gettext gmake libtool pathfix pkgconfig
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
 USE_XORG=	ice recordproto sm x11 xext xmu xscrnsaver xtst
 USE_GNOME=	intltool intlhack introspection gtkmm30
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-gsettings \
+CONFIGURE_ARGS=	--disable-gsettings \
 		--disable-pulse \
 		--disable-gconf \
 		--disable-mate \

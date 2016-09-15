@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	extra-cmake-modules
-PORTVERSION=	5.25.0
+PORTVERSION=	5.26.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 

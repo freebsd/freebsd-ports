@@ -11,6 +11,8 @@ PROJECTHOST=	google-dnswall
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Daemon that filters out private IP addresses in DNS responses
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf dos2unix
 WRKSRC=		${WRKDIR}/${PORTNAME}

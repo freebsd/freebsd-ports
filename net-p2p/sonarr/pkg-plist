@@ -70,7 +70,6 @@
 %%DATADIR%%/NzbDrone.exe.mdb
 %%DATADIR%%/OAuth.dll
 %%DATADIR%%/OAuth.dll.mdb
-%%DATADIR%%/Omu.ValueInjecter.dll
 %%DATADIR%%/Org.Mentalis.dll
 %%DATADIR%%/Owin.dll
 %%DATADIR%%/Prowlin.dll

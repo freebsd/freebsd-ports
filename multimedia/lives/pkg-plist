@@ -211,7 +211,6 @@ libdata/pkgconfig/libweed-plugin.pc
 libdata/pkgconfig/libweed-utils.pc
 libdata/pkgconfig/libweed.pc
 libdata/pkgconfig/libweed_slice.pc
-share/app-install/icons/lives.png
 share/applications/LiVES.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -227,6 +226,7 @@ share/applications/LiVES.desktop
 %%PORTDOCS%%%%DOCSDIR%%/rfxbuilder.odt
 %%PORTDOCS%%%%DOCSDIR%%/weedevents.txt
 %%PORTDOCS%%%%DOCSDIR%%/weedspec.txt
+share/icons/hicolor/48x48/apps/lives.png
 %%DATADIR%%/default.keymap
 %%DATADIR%%/icons/audio.png
 %%DATADIR%%/icons/fullscreen.png

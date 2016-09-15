@@ -16,14 +16,19 @@ NOT_FOR_ARCHS_REASON=	cannot detect endianness
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USES=		7z gmake
+USES=		7z gmake ssl
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog.txt README.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CC = g++,CXX ?= g++, ; \
-		s,CFLAGS =,CXXFLAGS +=, ; s,CC,CXX, ; s,CFLAGS,CXXFLAGS,' \
+	@${REINPLACE_CMD} \
+		-e 's,CC = g++,CXX ?= g++,' \
+		-e 's,CFLAGS =,CXXFLAGS +=,' \
+		-e 's,CC,CXX,' \
+		-e 's,CFLAGS,CXXFLAGS,' \
+		-e "s|\(INCLUDES = .*\)|\1 -I${OPENSSLINC}|g" \
+		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/Makefile
 
 do-install:

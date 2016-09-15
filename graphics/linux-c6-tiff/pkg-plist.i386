@@ -1,4 +1,3 @@
-@comment file listing
 usr/bin/bmp2tiff
 usr/bin/fax2ps
 usr/bin/fax2tiff
@@ -26,10 +25,10 @@ usr/lib/libtiff.so.3
 usr/lib/libtiff.so.3.9.4
 usr/lib/libtiffxx.so.3
 usr/lib/libtiffxx.so.3.9.4
-usr/share/doc/libtiff-3.9.4/COPYRIGHT
-usr/share/doc/libtiff-3.9.4/README
-usr/share/doc/libtiff-3.9.4/RELEASE-DATE
-usr/share/doc/libtiff-3.9.4/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE-DATE
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
 usr/share/man/man1/bmp2tiff.1.gz
 usr/share/man/man1/fax2ps.1.gz
 usr/share/man/man1/fax2tiff.1.gz
@@ -41,16 +40,15 @@ usr/share/man/man1/raw2tiff.1.gz
 usr/share/man/man1/rgb2ycbcr.1.gz
 usr/share/man/man1/thumbnail.1.gz
 usr/share/man/man1/tiff2bw.1.gz
-usr/share/man/man1/tiffcrop.1.gz
 usr/share/man/man1/tiff2pdf.1.gz
 usr/share/man/man1/tiff2ps.1.gz
 usr/share/man/man1/tiff2rgba.1.gz
 usr/share/man/man1/tiffcmp.1.gz
 usr/share/man/man1/tiffcp.1.gz
+usr/share/man/man1/tiffcrop.1.gz
 usr/share/man/man1/tiffdither.1.gz
 usr/share/man/man1/tiffdump.1.gz
 usr/share/man/man1/tiffinfo.1.gz
 usr/share/man/man1/tiffmedian.1.gz
 usr/share/man/man1/tiffset.1.gz
 usr/share/man/man1/tiffsplit.1.gz
-@comment non-empty directory listing in revers order

@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 USES=		cpe charsetfix gmake tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g --disable-silent-rules
+CONFIGURE_ARGS=	--program-prefix=g
 CPE_VENDOR=	gnu
 
 PLIST_FILES=	bin/gpatch man/man1/gpatch.1.gz

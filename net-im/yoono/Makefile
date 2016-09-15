@@ -3,6 +3,7 @@
 
 PORTNAME=	yoono
 PORTVERSION=	1.8.43
+PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES=	http://cdn.yoono.com/desktop/
@@ -30,10 +31,9 @@ ONLY_FOR_ARCHS_REASON=	binary distribution
 SUB_FILES=	${PORTNAME} pkg-message
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
+USES=		linux tar:bzip2
 USE_LDCONFIG=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs
-USES=	tar:bzip2
+USE_LINUX=	alsalib dbuslibs gtk2 xorglibs
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-desktop
 

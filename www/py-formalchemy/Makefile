@@ -14,6 +14,8 @@ COMMENT=	Toolkit for creating HTML form elements
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.5:databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>=0.4:textproc/py-Tempita \
 		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:www/py-webhelpers

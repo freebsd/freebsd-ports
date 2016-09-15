@@ -27,6 +27,8 @@ lib/dico/gcide.so
 %%GUILE%%lib/dico/guile.so
 %%LDAP%%lib/dico/ldap.a
 %%LDAP%%lib/dico/ldap.so
+lib/dico/metaphone2.a
+lib/dico/metaphone2.so
 lib/dico/nprefix.a
 lib/dico/nprefix.so
 lib/dico/outline.a
@@ -48,9 +50,14 @@ lib/libdico.so
 lib/libdico.so.1
 lib/libdico.so.1.0.0
 libexec/idxgcide
+man/man1/dico.1.gz
+man/man5/dicod.conf.5.gz
+man/man8/dicod.8.gz
 sbin/dicod
 %%DATADIR%%/%%PORTVERSION%%/include/pp-setup
+%%NLS%%share/locale/da/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/de/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/dico.mo
-%%GUILE%%@dir share/guile/site/dico

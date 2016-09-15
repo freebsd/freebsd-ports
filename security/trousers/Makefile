@@ -3,6 +3,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -17,9 +18,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	tpm-emulator>=0.7.4_1:emulators/tpm-emulator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		dos2unix alias autoreconf gmake iconv libtool pkgconfig
+USES=		dos2unix alias autoreconf gmake iconv libtool pkgconfig ssl
 DOS2UNIX_GLOB=	*.h *.c
-USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	tcsd
 INSTALL_TARGET=	install-strip
@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		RANLIB=:
 MAKE_ENV=	ICONV_LIB=${ICONV_LIB} \
 		ICONV_PREFIX=${ICONV_PREFIX}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
@@ -44,6 +46,6 @@ DEBUG_CONFIGURE_ENABLE=	debug
 post-install:
 	${INSTALL_DATA} \
 	    ${WRKSRC}/dist/tcsd.conf ${STAGEDIR}${PREFIX}/etc/tcsd.conf.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/var/lib/tpm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/var/lib/tpm
 
 .include <bsd.port.mk>

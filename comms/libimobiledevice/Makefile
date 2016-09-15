@@ -13,8 +13,7 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES+=		cpe libtool pathfix pkgconfig tar:bzip2
-USE_OPENSSL=	yes
+USES+=		cpe libtool pathfix pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=openssl_CFLAGS="-I${OPENSSLINC}" \
 		openssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"

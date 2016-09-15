@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.6
+PORTVERSION=	4.6.1
 DISTVERSIONSUFFIX=	-zh_TW
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/
@@ -13,8 +13,6 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
-
-BROKEN_powerpc64=	Does not build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

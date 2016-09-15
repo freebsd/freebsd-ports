@@ -3,7 +3,7 @@
 
 PORTNAME=	foxitreader
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://cdn04.foxitsoftware.com/pub/foxit/reader/desktop/linux/1.x/${PORTVERSION:R}/enu/:reader
 
@@ -23,9 +23,8 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-USES=	gettext tar:bzip2
-USE_LINUX=	yes
-USE_LINUX_APPS=	avahi-libs cups-libs dbuslibs gtk2 nss
+USES=		gettext linux tar:bzip2
+USE_LINUX=	avahi-libs cups-libs dbuslibs gtk2 nss
 
 WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	bigbluebutton
 PORTVERSION=	0.71
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www java
 MASTER_SITES=	http://bigbluebutton.org/downloads/${PORTVERSION}/ \
 		http://bigbluebutton.org/downloads/0.70/:2 \
@@ -48,9 +48,8 @@ FS_USER?=	freeswitch
 FS_GROUP?=	${FS_USER}
 WWWROOT?=	${WWWDIR:S|/${PORTNAME}$||}
 
-OPTIONS_DEFINE=	MEETME KONFERENCE OPENOFFICE
+OPTIONS_DEFINE=	KONFERENCE OPENOFFICE
 OPTIONS_DEFAULT=	KONFERENCE
-MEETME_DESC=	meetme Asterisk module
 KONFERENCE_DESC=	konference Asterisk module
 OPENOFFICE_DESC=	Include OpenOffice support
 
@@ -81,18 +80,9 @@ SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMEETME} || ${PORT_OPTIONS:MKONFERENCE}
-BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:net/asterisk
-.if  ${PORT_OPTIONS:MMEETME}
-.if !exists(${LOCALBASE}/lib/asterisk/modules/app_meetme.so)
-IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with DAHDI option selected
-.endif
-.endif
 .if  ${PORT_OPTIONS:MKONFERENCE}
 BUILD_DEPENDS+=${LOCALBASE}/lib/asterisk/modules/app_konference.so:net/appkonference
 .endif
-.endif
-
 .if ${PORT_OPTIONS:MOPENOFFICE}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice-4.0.1:editors/openoffice-4
 .endif

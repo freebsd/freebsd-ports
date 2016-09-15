@@ -20,6 +20,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libjson-c.so:devel/json-c \
 		libyajl.so:devel/yajl
 
+CONFLICTS_INSTALL=	grive2-[0-9]*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Grive
 GH_TAGNAME=	27817e8

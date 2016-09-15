@@ -10,8 +10,6 @@ MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP address management and tracking
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	nmap:security/nmap
 
 USES=		perl5 shebangfix

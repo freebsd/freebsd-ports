@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules # --docdir=${WRKDIR}/tmproot
 USE_RC_SUBR=	ngircd
 
 CPE_VENDOR=	barton

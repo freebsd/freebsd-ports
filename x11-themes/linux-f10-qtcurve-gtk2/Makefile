@@ -9,11 +9,9 @@ PKGNAMEPREFIX=	linux-f10-
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve GTK2 Theme Engine (Linux Fedora 10)
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	gtk2
-LINUX_DIST_VER=	10
+USE_LINUX=	gtk2
 RPMVERSION=	1.fc10
 
 .include <bsd.port.mk>

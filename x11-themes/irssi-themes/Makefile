@@ -13,6 +13,7 @@ COMMENT=	Collection of additional irssi themes
 
 RUN_DEPENDS=	irssi:irc/irssi
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 THEMESDIR_REL=	share/irssi/themes

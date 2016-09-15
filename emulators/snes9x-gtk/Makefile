@@ -17,6 +17,8 @@ LICENSE_NAME=	Snes9x License
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/docs/snes9x-license.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_XORG=	x11 sm ice xext

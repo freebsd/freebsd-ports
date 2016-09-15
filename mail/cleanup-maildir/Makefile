@@ -13,6 +13,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph
 
 USES=		python shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_FILES=	cleanup-maildir.py
 PLIST_FILES=	bin/cleanup-maildir

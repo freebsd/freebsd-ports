@@ -14,8 +14,6 @@ COMMENT=	Web-based user authentication/password protection system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BROKEN_powerpc64=	Does not build
-
 WRKSRC=		${WRKDIR}/Deadlock-1.01
 DLURL?=		${PORTNAME}
 DLDIR=		www/${DLURL}

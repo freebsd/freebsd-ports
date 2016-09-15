@@ -12,7 +12,7 @@ COMMENT=	Plurk API Implementation with PHP
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN=		Unfetchable (google code has gone away)
 
 NO_BUILD=	yes
 NO_ARCH=	yes

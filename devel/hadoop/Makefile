@@ -21,13 +21,15 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS_INSTALL=	hadoop2-2*
 
-USES=		cpe libtool
+USES=		cpe libtool ssl:build
 CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -76,7 +78,11 @@ MAKE_ARGS=	-Dbuild.classes=${WRKSRC}/hadoop-core-${PORTVERSION}.jar -Dversion=${
 		-Dcompile.c++=true -Dmake.cmd=gmake -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
 ALL_TARGET=	compile-core-native compile-c++ compile-c++-libhdfs compile-c++-pipes compile-c++-utils
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+# The ssl.mk helper can augment MAKE_ARGS and break the build.  Filter out
+# the OPENSSL_CFLAGS if it exists to prevent that from happening.
+MAKE_ARGS:=	${MAKE_ARGS:NOPENSSL_CFLAGS=*}
 
 .if ${ARCH} == "amd64"
 _HADOOP_ARCH=	FreeBSD-amd64-64
@@ -140,4 +146,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

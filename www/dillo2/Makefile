@@ -33,6 +33,10 @@ SSL_DESC=		Experimental HTTPS support
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
+
 .if ${PORT_OPTIONS:MCOOKIES}
 CONFIGURE_ARGS+=	--enable-cookies
 .else

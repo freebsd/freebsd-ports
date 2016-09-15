@@ -5,6 +5,80 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160914:
+  AFFECTS: uses of www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
+  Nginx now creates logs under /var/log/nginx/ and changes default log
+  names from "nginx-access.log" and "nginx-error.log" to "access.log" and
+  "error.log" respectively.  This is important for the error log because
+  the location is encoded and touched by nginx during startup regardless
+  of the configured location for the error log.
+
+  See http://trac.nginx.org/nginx/ticket/147 for additional information
+  on why this happens.
+
+20160914:
+  AFFECTS: users of deskutils/xfce4-volumed-pulse
+  AUTHOR: olivierd@FreeBSD.org
+
+  The port has been updated to the latest stable version 0.2.2.
+  Support of xfce4-mixer has been removed, so you can delete
+  its properties with the following command:
+
+  xfconf-query -c xfce4-mixer -p / -rR
+
+20160910:
+  AFFECTS: users of security/letsencrypt.sh
+  AUTHOR: riggs@FreeBSD.org
+
+  The config filename has been changed upstream from "config.sh"
+  to "config". Users must rename the current config file manually.
+  In addition, the default WELLKNOWN location has been changed to
+  %%PREFIX%%/www/letsencrypt. In order to use the previous default
+  location, the config file must be updated manually as well.
+
+20160907:
+  AFFECTS: users of math/galculator
+  AUTHOR: woodsb02@FreeBSD.org
+
+  galculator now uses GTK3 by default. An option exists in the port to revert
+  to GTK2 if desired.
+
+20160906:
+  AFFECTS: uses of www/nginx
+  AUTHOR: marino@FreeBSD.org
+
+  Nginx now creates logs under /var/log/nginx/ and changes default log
+  names from "nginx-access.log" and "nginx-error.log" to "access.log" and
+  "error.log" respectively.  This is important for the error log because
+  the location is encoded and touched by nginx during startup regardless
+  of the configured location for the error log.
+
+  See http://trac.nginx.org/nginx/ticket/147 for additional information
+  on why this happens.
+
+20160905:
+  AFFECTS: users of databases/postgresql96-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The default unix user used by the PostgreSQL daemon has changed to
+  `postgres' to reflect the long time upstream's convention. Any scripts
+  you have using the old `pgsql' unix user should be modified when upgrading to
+  PostgreSQL version 9.6. Older versions of PostgreSQL will continue using
+  `pgsql' until their end-of-life.
+
+  For users with UTF-8 locales in the database: The ICU patch is *activated by
+  default* for the PostgreSQL-9.6 server. For previous versions it was optional
+  and default off, but this has changed. Please read the entry here below from
+  20160811 and understand the consequences of changing between ICU and system
+  locale for database collation (short version: don't). pg_upgrade requires the
+  collation method to be the same (or a reindex), while pg_dump/restore does not.
+
+  Also, the default home directory for the postgres user is now
+  /var/db/postgres, and the default data directory for PostgreSQL 9.6 is
+  /var/db/postgres/data96.
+
 20160829:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: cem@FreeBSD.org

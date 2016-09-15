@@ -11,11 +11,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf
 %%DATADIR%%/help/pycharmhelp.jar
-%%DATADIR%%/helpers/.idea/encodings.xml
-%%DATADIR%%/helpers/.idea/helpers.iml
-%%DATADIR%%/helpers/.idea/misc.xml
-%%DATADIR%%/helpers/.idea/modules.xml
-%%DATADIR%%/helpers/.idea/vcs.xml
 %%DATADIR%%/helpers/check_all_test_suite.py
 %%DATADIR%%/helpers/conda_packaging_tool.py
 %%DATADIR%%/helpers/coverage_runner/__init__.py
@@ -57,6 +52,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/coveragepy/coverage/tracer.c
 %%DATADIR%%/helpers/coveragepy/coverage/version.py
 %%DATADIR%%/helpers/coveragepy/coverage/xmlreport.py
+%%DATADIR%%/helpers/docstring_formatter.py
 %%DATADIR%%/helpers/epydoc/__init__.py
 %%DATADIR%%/helpers/epydoc/apidoc.py
 %%DATADIR%%/helpers/epydoc/checker.py
@@ -85,12 +81,9 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/epydoc/markup/pyval_repr.py
 %%DATADIR%%/helpers/epydoc/markup/restructuredtext.py
 %%DATADIR%%/helpers/epydoc/util.py
-%%DATADIR%%/helpers/epydoc_formatter.py
 %%DATADIR%%/helpers/extra_syspath.py
 %%DATADIR%%/helpers/generator3.py
-%%DATADIR%%/helpers/google_formatter.py
 %%DATADIR%%/helpers/icon-robots.txt
-%%DATADIR%%/helpers/numpy_formatter.py
 %%DATADIR%%/helpers/packaging_tool.py
 %%DATADIR%%/helpers/pip-1.1.tar.gz
 %%DATADIR%%/helpers/pip-7.1.0.tar.gz
@@ -699,7 +692,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/pydev/test_pydevd_reload/test_pydevd_reload.py
 %%DATADIR%%/helpers/pydev/tests_pydevd/__init__.py
 %%DATADIR%%/helpers/pydev/tests_pydevd/test_check_pydevconsole.py
-%%DATADIR%%/helpers/pydev/tests_pydevd/test_egg_zip_exist.py
 %%DATADIR%%/helpers/pydev/tests_pydevd/test_get_referrers.py
 %%DATADIR%%/helpers/pydev/tests_pydevd/test_jyserver.py
 %%DATADIR%%/helpers/pydev/tests_pydevd/test_jysimpleTipper.py
@@ -915,7 +907,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/python-skeletons/subprocess.py
 %%DATADIR%%/helpers/python-skeletons/sys.py
 %%DATADIR%%/helpers/required_gen_version
-%%DATADIR%%/helpers/rest_formatter.py
 %%DATADIR%%/helpers/rest_runners/rst2smth.py
 %%DATADIR%%/helpers/rest_runners/sphinx_runner.py
 %%DATADIR%%/helpers/setuptools-1.4.2.tar.gz

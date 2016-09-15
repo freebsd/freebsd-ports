@@ -13,6 +13,8 @@ COMMENT=	Tiny WMS server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:graphics/py-pyproj \
 		${PYTHON_SITELIBDIR}/web/__init__.py:www/webpy \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow

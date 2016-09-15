@@ -3,7 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.632
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/:plugin \
 		LOCAL/nox:suplib
@@ -15,24 +15,24 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_LINUX?=	c6
-USE_LINUX_APPS=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss
+USES?=		linux:c6
+USE_LINUX=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-USES=		webplugin:linux desktop-file-utils cpe
+STRIP=
+USES+=		webplugin:linux desktop-file-utils cpe
 WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	ALSA
 OPTIONS_SUB=	yes
 
 ALSA_DESC=	ALSA audio output (broken, needs lemul)
-ALSA_USE=	LINUX_APPS=alsalib,alsa-plugins-oss
-ALSA_USE_OFF?=	LINUX_APPS=openssl-compat
+ALSA_USE=	LINUX=alsalib,alsa-plugins-oss
+ALSA_USE_OFF?=	LINUX=openssl-compat
 ALSA_DISTFILES_OFF=	linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 ALSA_PLIST_SUB_OFF=	LINUXBASE="${LINUXBASE}"
 

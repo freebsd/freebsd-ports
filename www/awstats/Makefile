@@ -3,6 +3,7 @@
 
 PORTNAME=	awstats
 PORTVERSION=	7.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -55,6 +56,8 @@ post-patch:
 		${WRKSRC}/tools/nginx/* \
 		${WRKSRC}/wwwroot/cgi-bin/*.pl \
 		${WRKSRC}/wwwroot/cgi-bin/*.conf
+	@${REINPLACE_CMD} -e 's|/etc/awstats|${ETCDIR}|' \
+		${WRKSRC}/tools/awstats_updateall.pl
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%WWWDIR%%|${WWWDIR}|' \
 			-e 's|AWSTATS_PATH/wwwroot|AWSTATS_PATH|' \

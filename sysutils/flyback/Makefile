@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup frontend like Apple's Time Machine
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	rsync:net/rsync
 
 NO_BUILD=	yes

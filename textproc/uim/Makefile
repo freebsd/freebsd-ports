@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool

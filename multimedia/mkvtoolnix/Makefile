@@ -19,6 +19,8 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libboost_regex.so:devel/boost-libs \
 		libmatroska.so:multimedia/libmatroska
 
+BROKEN_FreeBSD_9=	does not build: g++48 internal compiler error
+
 USES=		compiler:c++11-lib iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes

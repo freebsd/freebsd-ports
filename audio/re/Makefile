@@ -11,9 +11,9 @@ COMMENT=	Library for real-time comms with async IO support
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		gmake
+USES=		gmake ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
+MAKE_ARGS+=	SYSROOT_ALT=${OPENSSLBASE}
 
 PORTDATA=	re.mk
 

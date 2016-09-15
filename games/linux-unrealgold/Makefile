@@ -17,8 +17,8 @@ COMMENT=	Unreal Gold for Linux
 BUILD_DEPENDS=	ut:games/linux-ut
 RUN_DEPENDS=	ut:games/linux-ut
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
 

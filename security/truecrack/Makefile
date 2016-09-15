@@ -13,6 +13,8 @@ COMMENT=	Password cracker for TrueCrypt volumes
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake
 CFLAGS+=	-DTC_BSD
 PLIST_FILES=	bin/truecrack

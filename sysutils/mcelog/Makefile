@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mcelog
+PORTVERSION=	141
 DISTVERSIONPREFIX=	v
-DISTVERSION=	140
 CATEGORIES=	sysutils
 
 MAINTAINER=	ultima1252@gmail.com
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/mcelog man/man8/mcelog.8.gz
 
 post-patch:
 	@${CP} ${FILESDIR}/memstream.c ${WRKSRC}/memstream.c
-	${REINPLACE_CMD} 's/\"unknown\"/\"${PORTVERSION}\"/' \
+	@${REINPLACE_CMD} 's/\"unknown\"/\"${PORTVERSION}\"/' \
 		${WRKSRC}/Makefile
 
 do-install:

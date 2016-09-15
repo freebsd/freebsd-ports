@@ -14,8 +14,9 @@ COMMENT=	Objective wrapper for OpenSSL Crypto Library
 
 LICENSE=	PHP301
 
-USES=		php:ext tar:tgz
+USES=		php:ext ssl tar:tgz
 CONFIGURE_ARGS=	--with-crypto
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.mk>

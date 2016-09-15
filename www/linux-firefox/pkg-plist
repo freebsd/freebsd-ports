@@ -29,10 +29,6 @@ lib/%%APP_NAME%%/gmp-clearkey/0.1/libclearkey.so
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
-%%GTK218%%lib/%%APP_NAME%%/libgdk-x11-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libgio-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libglib-2.0.so.0
-%%GTK218%%lib/%%APP_NAME%%/libgtk-x11-2.0.so.0
 lib/%%APP_NAME%%/liblgpllibs.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so

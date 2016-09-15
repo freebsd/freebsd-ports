@@ -30,12 +30,6 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-# XXX: it would be nice if one day this option would be passed automatically
-# to configure scripts that support it :)
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS=	--disable-silent-rules
-.endif
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -14,6 +14,8 @@ COMMENT=	Python interface to libdasm
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 WRKSRC_SUBDIR=	${PORTNAME}

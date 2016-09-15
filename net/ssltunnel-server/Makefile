@@ -19,11 +19,13 @@ TCPWRAPPERS_DESC=	libwrap support
 
 TCPWRAPPERS_CONFIGURE_ON=	--with-libwrap
 
+USES=		ssl
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^#include <utmp.h>^/*utmp.h not for FreeBSD*/^' \

@@ -13,6 +13,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_APACHE=	22+
 
 PROJECTHOST=	mod-log-firstbyte

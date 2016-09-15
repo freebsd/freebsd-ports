@@ -6,10 +6,11 @@
 # Support of GTK+ is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://errements.eu/distfiles/
+#MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	http://errements.eu/distfiles/ \
+		LOCAL/ehaupt
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ehaupt@FreeBSD.org

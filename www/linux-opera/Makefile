@@ -2,6 +2,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -20,10 +21,9 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 naslibs png sqlite3 xorglibs
+USES=		desktop-file-utils linux shared-mime-info tar:xz
+USE_LINUX=	gtk2 naslibs png sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		desktop-file-utils shared-mime-info tar:xz
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 

@@ -15,8 +15,6 @@ COMMENT=	JSON POST handler in PHP
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	json:build
 

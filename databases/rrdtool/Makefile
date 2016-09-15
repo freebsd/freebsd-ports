@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	rrdtool12-*
 
-CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
+CONFIGURE_ARGS=	--disable-tcl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes

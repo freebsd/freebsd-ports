@@ -3,7 +3,7 @@
 
 PORTNAME=	arkanoidsb
 PORTVERSION=	1.3.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.tinyorange.com/downloads/
 
@@ -12,10 +12,9 @@ COMMENT=	Arkanoid and space game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		tar:bzip2
+USES=		linux tar:bzip2
 NO_BUILD=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	libogg sdlmixer sdlimage
+USE_LINUX=	libogg sdlmixer sdlimage
 
 SUB_FILES=	${PORTNAME}.sh
 

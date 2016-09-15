@@ -15,7 +15,6 @@ LIB_DEPENDS=	libxmms.so:multimedia/xmms \
 
 USES=		iconv libtool tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

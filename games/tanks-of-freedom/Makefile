@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tanks-of-freedom
-PORTVERSION=	0.4.0.3
+PORTVERSION=	0.5.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-beta
 CATEGORIES=	games
 
@@ -18,9 +19,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	w84death
 GH_PROJECT=	Tanks-of-Freedom
 
+NO_ARCH=	yes
+
 DESKTOP_ENTRIES="Tanks of Freedom" \
 		"" \
-		"${DATADIR}/icon.png" \
+		"${DATADIR}/assets/icons/icon32.png" \
 		"${PORTNAME}" \
 		"Game;StrategyGame;" \
 		""
@@ -32,12 +35,14 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/${PORTNAME}
-	@${ECHO_CMD} "exec ${PREFIX}/bin/godot -path ${DATADIR}" >> ${WRKSRC}/${PORTNAME}
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/${PORTNAME}
+	@${ECHO_CMD} "exec \"${LOCALBASE}/bin/godot\" -path \"${DATADIR}\"" >> ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 

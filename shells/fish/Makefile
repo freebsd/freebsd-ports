@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	shells
 MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
 
@@ -11,15 +11,13 @@ COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2
 
-USES=		autoreconf cpe gmake iconv ncurses pkgconfig pathfix
+USES=		autoreconf cpe gmake libtool ncurses pkgconfig pathfix python:3 localbase
+
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	fishshell
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread ${ICONV_LIB}
-
-PORTDOCS=	*
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 MANDIRS=	${DATADIR}/man/man1
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -45,7 +43,7 @@ post-patch:
 		 s|ncurses.h||' ${WRKSRC}/configure.ac
 
 post-install:
-.for i in fish fish_indent mimedb
+.for i in fish fish_indent fish_key_reader
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 

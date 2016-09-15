@@ -13,8 +13,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	euedge
 GH_TAGNAME=	7a35148
 
-USES=		autoreconf
+USES=		autoreconf ssl
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${OPENSSLLIB}
+CFLAGS+=	-I${OPENSSLINC}
+
 PLIST_FILES=	bin/kua bin/ua \
 		man/man1/kua.1.gz man/man1/ua.1.gz
 PORTDOCS=	README

@@ -15,6 +15,8 @@ COMMENT=	Data interchange format library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/protobuf25
 USE_LDCONFIG=	yes

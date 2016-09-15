@@ -663,7 +663,6 @@ audio/gnomad2||2009-06-13|Removed
 audio/p5-Audio-TagLib||2009-06-13|Removed
 audio/sineshaper||2009-06-13|Removed
 comms/xcept||2009-06-13|Removed; obsolete protocol no longer in use by telcos
-cad/freecad||2009-06-13|Removed
 comms/gfax||2009-06-13|Removed
 deskutils/kio_locate||2009-06-13|Removed
 deskutils/mical||2009-06-13|Removed
@@ -8623,3 +8622,12 @@ emulators/kqemu-kmod||2016-08-26|Not supported in any qemu version anymore
 emulators/kqemu-kmod-devel||2016-08-26|Not supported in any qemu version anymore
 www/varnish-libvmod-saintmode|www/varnish-modules|2016-09-01|Upstream moved this module into the varnish-modules collection
 security/letskencrypt|security/acme-client|2016-09-02|Upstream renamed the project
+net/asterisk||2016-09-12|Has expired: Asterisk 1.8 reached EOL on 2015-10-21
+www/mediawiki124||2016-09-13|Has expired: EOL upstream
+sysutils/rsyslog7|sysutils/rsyslog8|2016-09-13|Has expired: Upgrade to rsyslog 8
+www/moodle28||2016-09-13|Has expired: EOL upstream
+devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack.
+textproc/asciinema|textproc/py3-asciinema|2016-09-13|Has expired: use textproc/py3-asciinema instead
+x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulness unclear
+security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project
+devel/py-dogpile.core|devel/py-dogpile.cache|2016-09-13|EOL upstream. Merged into devel/py-dogpile.cache since 0.6.0

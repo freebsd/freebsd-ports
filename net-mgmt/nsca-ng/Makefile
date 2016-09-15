@@ -20,23 +20,27 @@ LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
 
 CONFLICTS?=	nsca-2.* nsca27-2.*
 
+USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
-USE_OPENSSL=	yes
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .if !defined(PKGNAMESUFFIX)
 USE_RC_SUBR=	nsca-ng
 CONFIGURE_ARGS+=	--enable-server
 .endif
 
-PORTDOCS=		NEWS COPYING README PROTOCOL TODO
+PORTDOCS=	NEWS COPYING README PROTOCOL TODO
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set SSL_DEFAULT=openssl)
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Requires PSK which is unsupported by the selected LibreSSL
 .endif
 
 post-install:
@@ -61,4 +65,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

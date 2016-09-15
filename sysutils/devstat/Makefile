@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to display device statistics
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PLIST_FILES=	bin/devstat \
 		man/man8/devstat.8.gz
 

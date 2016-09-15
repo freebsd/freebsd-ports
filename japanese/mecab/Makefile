@@ -13,6 +13,8 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
 INSTALL_TARGET=	install-strip

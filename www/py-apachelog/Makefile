@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python access log parser
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 

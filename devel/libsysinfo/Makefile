@@ -12,6 +12,8 @@ COMMENT=	GNU libc's sysinfo port for FreeBSD
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		uidfix
 USE_LDCONFIG=	yes
 PROJECTHOST=	sysinfo-bsd

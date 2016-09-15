@@ -22,8 +22,8 @@ PLIST_SUB=	BINMODE=${BINMODE}
 
 SUB_FILES=	${PORTNAME}.sh
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	sdlimage
+USES=		linux
+USE_LINUX=	sdlimage
 
 WRKSRC=		${WRKDIR}/slimeforest
 

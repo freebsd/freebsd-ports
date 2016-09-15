@@ -1,13 +1,13 @@
 Fluxbox is a window manager based on BlackBox with some new features:
 
- o Transparent menus
- o Pixmap themes
- o Window snapping
- o Integrated bbkeys
- o Iconbar
- o Configurable titlebar (slit)
- o Windows tabs
- o Wheel scroll changes workspace
- o KDE and partial Gnome support
+ - Transparent menus
+ - Pixmap themes
+ - Window snapping
+ - Integrated bbkeys
+ - Iconbar
+ - Configurable titlebar (slit)
+ - Windows tabs
+ - Wheel scroll changes workspace
+ - KDE and partial Gnome support
 
 WWW: http://fluxbox.org/

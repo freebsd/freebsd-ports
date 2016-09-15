@@ -4,7 +4,6 @@
 PORTNAME=	esound
 PORTVERSION=	0.2.41
 CATEGORIES=	audio linux
-MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-libs-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,14 +11,14 @@ COMMENT=	RPM of esound (Linux Fedora 10)
 
 CONFLICTS=	linux-esound-[0-9]* linux-f8-esound-[0-9]*
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	libaudiofile
+USE_LINUX=	libaudiofile
 LINUX_NAME=	${PORTNAME}-libs
 
 RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
-SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 PLIST_FILES=	etc/esd.conf usr/lib/libesd.so.0 usr/lib/libesd.so.0.2.39 \
 		usr/lib/libesddsp.so.0 usr/lib/libesddsp.so.0.2.39

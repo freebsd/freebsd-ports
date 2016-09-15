@@ -11,6 +11,8 @@ COMMENT=	Command line tools for the Google Data APIs
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata
 
 USES=		python:2

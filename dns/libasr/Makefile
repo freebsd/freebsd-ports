@@ -18,7 +18,9 @@ CONFLICTS=	libasr-devel-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		libtool
+USES=		libtool ssl:build
 USE_LDCONFIG=	yes
+
+CFLAGS+=	-I${OPENSSLINC}
 
 .include <bsd.port.mk>

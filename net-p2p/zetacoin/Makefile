@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zetacoin
-PORTVERSION=	0.9.2.7
+PORTVERSION=	0.11.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
@@ -31,23 +31,23 @@ OPTIONS_GROUP=		X11
 OPTIONS_GROUP_X11=	QRCODES
 
 UPNP_CONFIGURE_WITH=	miniupnpc
-UPNP_LIB_DEPENDS=		libminiupnpc.so:net/miniupnpc
-UPNP_CPPFLAGS=          -I${LOCALBASE}/include
-UPNP_LIBS=              -L${LOCALBASE}/lib
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
+UPNP_CPPFLAGS=		-I${LOCALBASE}/include
+UPNP_LIBS=		-L${LOCALBASE}/lib
 
 X11_CONFIGURE_WITH=	gui
 X11_CONFIGURE_ON=	--without-daemon
 X11_CONFIGURE_OFF=	--with-daemon
 X11_BUILD_DEPENDS=	protoc:devel/protobuf
 X11_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
-X11_USE=	qt4=corelib,network,gui,qmake_build,linguisttools_build \
+X11_USE=		qt4=corelib,network,gui,qmake_build,linguisttools_build \
 			qt4=uic_build,moc_build,rcc_build,qtestlib_build
-X11_USES=	desktop-file-utils
+X11_USES=		desktop-file-utils
 
-WALLET_CONFIGURE_ENABLE=	wallet
+WALLET_CONFIGURE_ENABLE=wallet
 WALLET_CXXFLAGS=	-I${BDB_INCLUDE_DIR}
 WALLET_LIBS=		-L${BDB_LIB_DIR}
-WALLET_USES=	bdb:48
+WALLET_USES=		bdb:48
 
 QRCODES_IMPLIES=	X11
 QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
@@ -60,16 +60,17 @@ TEST_ALL_TARGET=	check
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
-				SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl"
+		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl" \
+		OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 
-QT_BINARY=		${PORTNAME}-qt
-CLI_BINARY=		${PORTNAME}-cli
+QT_BINARY=	${PORTNAME}-qt
+CLI_BINARY=	${PORTNAME}-cli
 DAEMON=		${PORTNAME}d
 
 PLIST_SUB+=	EXECUTABLE_QT=bin/${QT_BINARY} \
-			EXECUTABLE_CLI=bin/${CLI_BINARY} \
-			EXECUTABLE_DAEMON=bin/${DAEMON} \
-			PORTNAME=${PORTNAME}
+		EXECUTABLE_CLI=bin/${CLI_BINARY} \
+		EXECUTABLE_DAEMON=bin/${DAEMON} \
+		PORTNAME=${PORTNAME}
 
 .include <bsd.port.options.mk>
 
@@ -94,11 +95,12 @@ post-patch:
 	${MKDIR} ${WRKSRC}/src/build-aux
 
 do-install:
-.if ${PORT_OPTIONS:MCLI}
-	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${CLI_BINARY} ${STAGEDIR}${PREFIX}/bin/${CLI_BINARY}
-.endif
+	@${DO_NADA}
 
-.if ${PORT_OPTIONS:MX11}
+do-install-CLI-on:
+	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${CLI_BINARY} ${STAGEDIR}${PREFIX}/bin/${CLI_BINARY}
+
+do-install-X11-on:
 	${INSTALL_PROGRAM} -s ${WRKSRC}/src/qt/${QT_BINARY} ${STAGEDIR}${PREFIX}/bin/${QT_BINARY}
 	${REINPLACE_CMD} -e 's,=/usr,=${PREFIX},' \
 		-e 's,bitcoin,zetacoin,g' \
@@ -106,9 +108,9 @@ do-install:
 		-e 's,128,,g' ${WRKSRC}/contrib/debian/bitcoin-qt.desktop
 	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}-qt.desktop
 	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-.else
+
+do-install-X11-off:
 	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${DAEMON} ${STAGEDIR}${PREFIX}/bin/${DAEMON}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-.endif
 
 .include <bsd.port.mk>

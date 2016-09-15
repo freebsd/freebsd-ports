@@ -143,6 +143,7 @@
     SUBDIR += cfengine38
     SUBDIR += cfengine39
     SUBDIR += chgrep
+    SUBDIR += chyves
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
@@ -911,7 +912,6 @@
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
-    SUBDIR += rsyslog7
     SUBDIR += rsyslog8
     SUBDIR += rtty
     SUBDIR += ruby-quota

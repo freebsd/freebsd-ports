@@ -16,7 +16,6 @@ GH_ACCOUNT=	vasi
 
 USES=		autoreconf fuse libtool pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 
 PLIST_FILES=	bin/squashfuse bin/squashfuse_ll man/man1/squashfuse.1.gz
 

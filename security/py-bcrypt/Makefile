@@ -5,8 +5,7 @@ PORTNAME=	bcrypt
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	security python
-MASTER_SITES=	GOOGLE_CODE \
-		http://www.mindrot.org/files/py-bcrypt/
+MASTER_SITES=	http://www.mindrot.org/files/py-bcrypt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 

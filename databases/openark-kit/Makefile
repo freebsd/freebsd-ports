@@ -10,6 +10,8 @@ COMMENT=	Common utilities for MySQL
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
 
 PROJECTHOST=	openarkkit

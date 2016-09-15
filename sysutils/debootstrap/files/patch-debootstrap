@@ -1,6 +1,6 @@
---- debootstrap.orig	2014-02-07 15:25:58 UTC
+--- debootstrap.orig	2016-09-09 12:32:15 UTC
 +++ debootstrap
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@ if [ -z "$DEBOOTSTRAP_DIR" ]; then
  	if [ -x /debootstrap/debootstrap ]; then
  		DEBOOTSTRAP_DIR=/debootstrap
  	else
@@ -9,7 +9,7 @@
  	fi
  fi
  
-@@ -397,13 +397,7 @@
+@@ -409,13 +409,7 @@ fi
  
  ###########################################################################
  
@@ -24,7 +24,7 @@
  	HOST_ARCH=`cat $DEBOOTSTRAP_DIR/arch`
  fi
  HOST_OS="$HOST_ARCH"
-@@ -425,6 +419,11 @@
+@@ -437,6 +431,11 @@ if [ -z "$HOST_OS" ]; then
  	esac
  fi
  
@@ -36,11 +36,3 @@
  if [ -z "$ARCH" ]; then
  	ARCH=$HOST_ARCH
  fi
-@@ -621,7 +620,6 @@
- 	if ! am_doing_phase second_stage; then
- 		cp "$0"				 "$TARGET/debootstrap/debootstrap"
- 		cp $DEBOOTSTRAP_DIR/functions	 "$TARGET/debootstrap/functions"
--		cp $DEBOOTSTRAP_DIR/devices.tar.gz	 "$TARGET/debootstrap/devices.tar.gz"
- 		cp $SCRIPT			 "$TARGET/debootstrap/suite-script"
- 		echo "$ARCH"			>"$TARGET/debootstrap/arch"
- 		echo "$SUITE"			>"$TARGET/debootstrap/suite"

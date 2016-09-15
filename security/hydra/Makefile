@@ -23,6 +23,8 @@ PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
 		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
 GNU_CONFIGURE=	yes
 USES=		gmake localbase ssl
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLINC} \
+		--with-ssl-lib=${OPENSSLLIB}
 
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_DEFAULT=SSH
@@ -35,6 +37,12 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 X11_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 X11_PLIST_FILES=	bin/xhydra man/man1/xhydra.1.gz
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Detected LibreSSL (missing RSA_get0_key and others)
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
@@ -52,4 +60,4 @@ post-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/hydra-gtk/src/xhydra ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

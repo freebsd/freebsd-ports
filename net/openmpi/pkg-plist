@@ -224,7 +224,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.12
-%%MPIDIR%%/lib/libmpi.so.12.0.3
+%%MPIDIR%%/lib/libmpi.so.12.0.4
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.1
@@ -284,6 +284,8 @@
 %%MPIDIR%%/lib/openmpi/mca_coll_self.so
 %%MPIDIR%%/lib/openmpi/mca_coll_sm.la
 %%MPIDIR%%/lib/openmpi/mca_coll_sm.so
+%%MPIDIR%%/lib/openmpi/mca_coll_sync.la
+%%MPIDIR%%/lib/openmpi/mca_coll_sync.so
 %%MPIDIR%%/lib/openmpi/mca_coll_tuned.la
 %%MPIDIR%%/lib/openmpi/mca_coll_tuned.so
 %%MPIDIR%%/lib/openmpi/mca_compress_bzip.la
@@ -894,6 +896,7 @@
 %%MPIDIR%%/man/man7/orte_sstore.7.gz
 %%MPIDIR%%/%%DATADIR%%/amca-param-sets/example.conf
 %%MPIDIR%%/%%DATADIR%%/help-btl-vader.txt
+%%MPIDIR%%/%%DATADIR%%/help-coll-sync.txt
 %%MPIDIR%%/%%DATADIR%%/help-dash-host.txt
 %%MPIDIR%%/%%DATADIR%%/help-db-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-errmgr-base.txt

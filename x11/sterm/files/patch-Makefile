@@ -1,6 +1,6 @@
---- Makefile.orig	2013-04-20 15:29:39.000000000 +0200
-+++ Makefile	2014-02-24 10:49:11.418450591 +0100
-@@ -49,7 +49,6 @@
+--- Makefile.orig	2016-08-11 14:25:58 UTC
++++ Makefile
+@@ -49,7 +49,6 @@ install: all
  	@sed "s/VERSION/${VERSION}/g" < st.1 > ${DESTDIR}${MANPREFIX}/man1/st.1
  	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/st.1
  	@echo Please see the README file regarding the terminfo entry of st.

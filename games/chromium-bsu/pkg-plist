@@ -7,6 +7,7 @@ share/icons/hicolor/64x64/apps/chromium-bsu.png
 %%NLS%%share/locale/es/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/it/LC_MESSAGES/chromium-bsu.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/chromium-bsu.mo

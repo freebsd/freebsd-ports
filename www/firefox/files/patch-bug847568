@@ -1,15 +1,28 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
+diff --git build/moz.configure/old.configure build/moz.configure/old.configure
+index 4cbefd5..42ab554 100644
+--- build/moz.configure/old.configure
++++ build/moz.configure/old.configure
+@@ -312,6 +312,8 @@ def old_configure_options(*options):
+     '--with-sixgill',
+     '--with-soft-float',
+     '--with-system-bz2',
++    '--with-system-graphite2',
++    '--with-system-harfbuzz',
+     '--with-system-icu',
+     '--with-system-jpeg',
+     '--with-system-libevent',
 diff --git config/Makefile.in config/Makefile.in
 index 14bfc0d..5383399 100644
 --- config/Makefile.in
 +++ config/Makefile.in
 @@ -49,6 +49,8 @@ export:: $(export-preqs)
- 		-DMOZ_NATIVE_LIBEVENT=$(MOZ_NATIVE_LIBEVENT) \
- 		-DMOZ_NATIVE_LIBVPX=$(MOZ_NATIVE_LIBVPX) \
- 		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
-+		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
-+		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
+ 		-DMOZ_SYSTEM_LIBEVENT=$(MOZ_SYSTEM_LIBEVENT) \
+ 		-DMOZ_SYSTEM_LIBVPX=$(MOZ_SYSTEM_LIBVPX) \
+ 		-DMOZ_SYSTEM_ICU=$(MOZ_SYSTEM_ICU) \
++		-DMOZ_SYSTEM_GRAPHITE2=$(MOZ_SYSTEM_GRAPHITE2) \
++		-DMOZ_SYSTEM_HARFBUZZ=$(MOZ_SYSTEM_HARFBUZZ) \
  		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
  	$(INSTALL) system_wrappers $(DIST)
  
@@ -21,11 +34,11 @@ index 18e8703..bdc5f82 100644
  #endif
  libutil.h
  unwind.h
-+#if MOZ_NATIVE_GRAPHITE2==1
++#if MOZ_SYSTEM_GRAPHITE2==1
 +graphite2/Font.h
 +graphite2/Segment.h
 +#endif
-+#if MOZ_NATIVE_HARFBUZZ==1
++#if MOZ_SYSTEM_HARFBUZZ==1
 +harfbuzz/hb-ot.h
 +harfbuzz/hb.h
 +#endif
@@ -42,14 +55,14 @@ index ac38f40..87536b7 100644
 +
 +MOZ_ARG_WITH_BOOL(system-harfbuzz,
 +[  --with-system-harfbuzz  Use system harfbuzz (located with pkgconfig)],
-+MOZ_NATIVE_HARFBUZZ=1,
-+MOZ_NATIVE_HARFBUZZ=)
++MOZ_SYSTEM_HARFBUZZ=1,
++MOZ_SYSTEM_HARFBUZZ=)
 +
-+if test -n "$MOZ_NATIVE_HARFBUZZ"; then
-+    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 1.2.2)
++if test -n "$MOZ_SYSTEM_HARFBUZZ"; then
++    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 1.2.6)
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_HARFBUZZ)
++AC_SUBST(MOZ_SYSTEM_HARFBUZZ)
 +
 +dnl ========================================================
 +dnl Check for graphite2
@@ -57,10 +70,10 @@ index ac38f40..87536b7 100644
 +
 +MOZ_ARG_WITH_BOOL(system-graphite2,
 +[  --with-system-graphite2 Use system graphite2 (located with pkgconfig)],
-+MOZ_NATIVE_GRAPHITE2=1,
-+MOZ_NATIVE_GRAPHITE2=)
++MOZ_SYSTEM_GRAPHITE2=1,
++MOZ_SYSTEM_GRAPHITE2=)
 +
-+if test -n "$MOZ_NATIVE_GRAPHITE2"; then
++if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
 +    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2)
 +
 +    dnl graphite2.pc has bogus version, check manually
@@ -77,7 +90,7 @@ index ac38f40..87536b7 100644
 +                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
 +fi
 +
-+AC_SUBST(MOZ_NATIVE_GRAPHITE2)
++AC_SUBST(MOZ_SYSTEM_GRAPHITE2)
 +
 +dnl ========================================================
  dnl Check for pixman and cairo
@@ -91,7 +104,7 @@ index a660ba4..6b2f602 100644
      SOURCES += ['nsTextFragmentSSE2.cpp']
      SOURCES['nsTextFragmentSSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    SOURCES['nsContentUtils.cpp'].flags += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  EXTRA_COMPONENTS += [
@@ -148,10 +161,10 @@ index 519aa46..6929751 100644
  if CONFIG['MOZ_TREE_CAIRO']:
      DIRS += ['cairo']
  
-+if not CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if not CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    DIRS += ['graphite2/src' ]
 +
-+if not CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if not CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    DIRS += ['harfbuzz/src']
 +
  DIRS += [
@@ -174,7 +187,7 @@ index 28fa6b5..240dced 100755
          '-Wno-unused-private-field',
      ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
@@ -188,7 +201,7 @@ index 1d0c2f9..adb8941 100644
          '-Wno-unused-private-field',
      ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
@@ -203,10 +216,10 @@ index d5852fa..aeeab25 100644
  LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
  
 -DEFINES['GRAPHITE2_STATIC'] = True
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
-+if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
 +else:
 +    DEFINES['GRAPHITE2_STATIC'] = True
@@ -220,7 +233,7 @@ index d736943..41a931f 100644
      LOCAL_INCLUDES += CONFIG['MOZ_ICU_INCLUDES']
      USE_LIBS += ['icu']
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  DIST_INSTALL = True
@@ -232,7 +245,7 @@ index 0b0717a..2e665c9 100644
      '/netwerk/base',
  ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk' and CONFIG['ANDROID_VERSION'] > '19':
@@ -242,14 +255,14 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 67f0db9..d42137a 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -231,6 +231,12 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -231,6 +231,12 @@ if CONFIG['MOZ_SYSTEM_LIBVPX']:
  if not CONFIG['MOZ_TREE_PIXMAN']:
      OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
-+if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
 +
  if CONFIG['MOZ_OSS']:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quantreg
-PORTVERSION=	5.26
+PORTVERSION=	5.29
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,9 +11,11 @@ COMMENT=	Quantile Regression
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-SparseM>0:math/R-cran-SparseM \
+CRAN_DEPENDS=	R-cran-SparseM>0:math/R-cran-SparseM \
 		R-cran-MatrixModels>0:math/R-cran-MatrixModels
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password storage library for C programmers
 
-USES=		tar:bzip2
+USES=		ssl tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

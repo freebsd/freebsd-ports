@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME}.tgz \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gravity cave-exploration game
 
+BROKEN=		Unfetchable (google code has gone away)
+
 DATAVER=	4
 
 USES=		gmake

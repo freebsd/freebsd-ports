@@ -27,7 +27,6 @@ XSLT_CONFIGURE_ENABLE=	xslt
 USES=		pathfix pkgconfig libtool
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

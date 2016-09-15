@@ -27,13 +27,11 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		compiler gmake iconv pkgconfig sqlite tar:tgz
+USES=		compiler gmake iconv localbase pkgconfig sqlite tar:tgz
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	do_install
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	TARGET_ARCH=desktop TARGET_STATUS=${STATUS} \
 		ROOTDIR=${WRKSRC} INSTALLDIR=${PREFIX} LIBDIR=${PREFIX}/lib \
 		LD="${CXX}"

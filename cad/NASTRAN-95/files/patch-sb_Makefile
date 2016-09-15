@@ -4,8 +4,8 @@
  # Declaration of variables
 -FC = gfortran
 -FFLAGS =  -w -fno-range-check -fno-automatic -fcray-pointer -std=legacy 
-+FC = gfortran48
-+FFLAGS =  -O -fno-range-check -Wl,-rpath=/usr/local/lib/gcc48 -w -fno-range-check -fno-automatic -fcray-pointer -std=legacy 
++FC = %%FC%%
++FFLAGS =  %%FFLAGS%% -w -fno-range-check -fno-automatic -fcray-pointer -std=legacy 
  
  # file names
  EXEC=nastran.exe

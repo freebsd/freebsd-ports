@@ -18,7 +18,8 @@ RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp \
 
 CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
-USES=		perl5
+USES=		perl5 ssl
+CFLAGS+=	-I${OPENSSLINC}
 
 PORTDOCS=	CHANGES TODO UCSPI-SSL
 
@@ -27,6 +28,8 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
 post-patch:
+	${REINPLACE_CMD} -e "s|\(-lssl -lcrypto\)|-L${OPENSSLLIB} \1|g"	\
+		${WRKSRC}/src/ssl.lib
 .for x in ${SCRIPTS_TO_INSTALL}
 	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \
 		${WRKSRC}/src/${x}.sh

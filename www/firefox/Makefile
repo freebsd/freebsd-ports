@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	47.0.1
-PORTREVISION=	2
+DISTVERSION=	49.0
 DISTVERSIONSUFFIX=.source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
-		nss>=3.23:security/nss \
+		nss>=3.25:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
 		soundtouch>=1.9.0:audio/soundtouch \
-		harfbuzz>=1.2.2:print/harfbuzz \
+		harfbuzz>=1.2.6:print/harfbuzz \
 		graphite2>=1.3.8:graphics/graphite2 \
 		png>=1.6.21:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.11.0:databases/sqlite3 \
+		sqlite3>=3.13:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
@@ -42,8 +42,7 @@ USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
-MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
-		--enable-application=browser \
+MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
 OPTIONS_EXCLUDE=	GSTREAMER LOGGING
@@ -61,6 +60,9 @@ OPTIONS_DEFAULT_FreeBSD_12_i386=	RUST
 
 OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
+
+TEST_BROKEN=		No rule to make target '../../../dist/bin/libnspr4.so', needed by \
+			'../../../_tests/xpcshell/modules/libmar/tests/unit/libnspr4.so'
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 

@@ -14,6 +14,8 @@ COMMENT=	Utility library for Battle.net clients in C++
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 PROJECTHOST=	ghostplusplus

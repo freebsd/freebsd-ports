@@ -14,9 +14,8 @@ CONFLICTS=	linux-f10-alsa-plugins-oss-[0-9]*
 
 SRC_DISTFILES=	alsa-plugins-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
-USE_LINUX_APPS=	alsalib
+USES=		linux:c6
+USE_LINUX=	alsalib
 USE_LINUX_RPM=	yes
 RPMVERSION=	1.el6
 

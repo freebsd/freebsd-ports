@@ -21,9 +21,9 @@ USES=		gmake desktop-file-utils libtool pkgconfig tar:xz ssl
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
+CONFIGURE_ARGS=	--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
-		--disable-silent-rules LUA=lua-${LUA_VER}
+		LUA=lua-${LUA_VER}
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

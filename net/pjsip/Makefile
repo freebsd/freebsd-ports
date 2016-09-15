@@ -2,6 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -24,8 +25,9 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DEBUG FFMPEG G711 G722 G7221 GSM ILBC IPV6 L16 OPENH264 RESAMPLE RESAMPLEDLL \
-		SAMPLERATE SDL SHARED SPEEX SPEEXAEC V4L SOUND VIDEO AMR EXTSRTP
+OPTIONS_DEFINE=	DEBUG FFMPEG G711 G722 G7221 GSM ILBC IPV6 L16 \
+		OPENH264 PJSUA RESAMPLE RESAMPLEDLL SAMPLERATE SDL \
+		SHARED SPEEX SPEEXAEC V4L SOUND VIDEO AMR EXTSRTP
 OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 SHARED SPEEX SPEEXAEC
 
 G711_DESC=	G.711 codec support
@@ -34,6 +36,7 @@ G7221_DESC=	G.722.1 codec support
 ILBC_DESC=	iLBC codec support
 L16_DESC=	Linear/L16 codec support
 OPENH264_DESC=	OpenH264 support
+PJSUA_DESC=	Command line SIP agent
 RESAMPLE_DESC=	Enable resampling implementations
 RESAMPLEDLL_DESC=	Build libresample as shared library
 SHARED_DESC=	Build shared libraries (other ports may depend on this)
@@ -60,6 +63,7 @@ IPV6_CFLAGS_OFF=		-DPJ_HAS_IPV6=1
 L16_CONFIGURE_ENABLE=		l16-codec
 OPENH264_CONFIGURE_ENABLE=	openh264
 OPENH264_LIB_DEPENDS=		libopenh264.so:multimedia/openh264
+PJSUA_LIB_DEPENDS=		libspeexdsp.so:audio/speexdsp
 RESAMPLE_CONFIGURE_ENABLE=	resample
 RESAMPLEDLL_CONFIGURE_ENABLE=	resample-dll
 SAMPLERATE_CONFIGURE_ENABLE=	libsamplerate
@@ -91,5 +95,16 @@ post-patch:
 		${WRKSRC}/*/build/Makefile
 	@${ECHO} "#include <sys/select.h>" > ${WRKSRC}/pjlib/include/pj/config_site.h
 	@${ECHO} "#define PJ_IOQUEUE_MAX_HANDLES (FD_SETSIZE)" >> ${WRKSRC}/pjlib/include/pj/config_site.h
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
+post-install-PJSUA-on:
+	${INSTALL_PROGRAM} \
+	${WRKSRC}/pjsip-apps/bin/pjsua-${ARCH}-portbld-${OPSYS:tl}${OSREL} \
+	${STAGEDIR}${PREFIX}/bin/pjsua
+	${INSTALL_PROGRAM} \
+	${WRKSRC}/pjsip-apps/bin/pjsystest-${ARCH}-portbld-${OPSYS:tl}${OSREL} \
+	${STAGEDIR}${PREFIX}/bin/pjsystest
 
 .include <bsd.port.mk>

@@ -21,7 +21,6 @@ USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GUILE_CFLAGS="$$(guile-config compile)" \
 		GUILE_LIBS="$$(guile-config link)"
-CONFIGURE_ARGS=	--disable-silent-rules
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes

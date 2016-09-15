@@ -13,6 +13,8 @@ COMMENT=	Rsync frontend written in Perl
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	rsync:net/rsync
 
 CONFIGSRC=	${WRKSRC}/config

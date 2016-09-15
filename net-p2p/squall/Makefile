@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-20040808
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Server for the Peer Distributed Transfer Protocol (PDTP)
 
+USES=		ssl
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 STRIP=		# Keep empty for debugging.

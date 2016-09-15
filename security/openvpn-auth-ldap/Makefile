@@ -5,7 +5,6 @@ PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4.0.s1379
 PORTREVISION=	1
 CATEGORIES=	security
-#MASTER_SITES=	GOOGLE_CODE
 MASTER_SITES=	LOCAL/mandree
 DISTNAME=	auth-ldap-${PORTVERSION}
 
@@ -61,6 +60,7 @@ CC+=		${DEBUG_FLAGS}
 
 # this is a local target to build a tarball from SVN
 # and another target to upload it
+# Note that googlecode.com is gone.
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
 	${RM} -rf ${WRKSRC}

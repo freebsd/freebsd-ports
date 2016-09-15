@@ -9,16 +9,13 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-USES+=	cpe
+USES=		cpe linux:c6
 CPE_VENDOR=	gnu
-
-USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	6.el6_5
 USE_LDCONFIG=	yes
 
-DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING COPYING.LIB ChangeLog NEWS README THANKS TODO libtasn1.pdf
 DESCR=		${.CURDIR}/../libtasn1/pkg-descr
 

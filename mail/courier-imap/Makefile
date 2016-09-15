@@ -16,7 +16,7 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
 
-USES=		gmake perl5 tar:bzip2
+USES=		gmake perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl
@@ -47,7 +47,6 @@ FAM_USES=	fam
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
 USERDB?=	${PREFIX}/etc/userdb
 LIBEXECDIR?=	${PREFIX}/libexec/${PORTNAME}
-USE_OPENSSL=	yes
 PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 

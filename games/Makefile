@@ -117,6 +117,7 @@
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
+    SUBDIR += bunnysay
     SUBDIR += burgerspace
     SUBDIR += burrtools
     SUBDIR += bygfoot
@@ -216,6 +217,7 @@
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += dustrac
+    SUBDIR += easyrpg-player
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss
@@ -231,6 +233,7 @@
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
     SUBDIR += endless-sky
+    SUBDIR += endless-sky-high-dpi
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += entombed
@@ -511,6 +514,7 @@
     SUBDIR += libggz
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
+    SUBDIR += liblcf
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
     SUBDIR += libretro-cores

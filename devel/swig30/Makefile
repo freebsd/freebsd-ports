@@ -3,6 +3,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	3.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	30
@@ -10,7 +11,8 @@ PKGNAMESUFFIX=	30
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
@@ -42,18 +44,17 @@ post-patch:
 		-e 's|MZSCHEME --mute-banner|MZSCHEME|' \
 		-e '/^MZDYNOBJ/s|`$$|\| tail -n 1`|' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/Lib/lua/luarun.swg
 
 post-configure:
-	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ccache-swig${PORTVERSION:R} ${STAGEDIR}${PREFIX}/bin/swig${PORTVERSION:R}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ccache-swig${PORTVERSION:R} ${STAGEDIR}${PREFIX}/bin/swig${PORTVERSION:R}
 
 post-install-DOCS-on:
-	cd ${WRKSRC}/Doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
+	@cd ${WRKSRC}/Doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 
 post-install-EXAMPLES-on:
-	cd ${WRKSRC}/Examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
+	@cd ${WRKSRC}/Examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
 
 .include <bsd.port.mk>

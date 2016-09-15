@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	fernando@netfilter.com.br
 COMMENT=	Open source deep packet inspection engine
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c6-devtools
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
 
-USE_LINUX=	yes
+USES=		linux
 USE_LINUX_PREFIX=	yes
 # do not define USE_LDCONFIG, it's not for global use
 

@@ -180,7 +180,6 @@ export_ports_env() {
 		ARCH \
 		CONFIGURE_MAX_CMD_LEN \
 		HAVE_COMPAT_IA32_KERN \
-		LINUX_OSRELEASE \
 		OPSYS \
 		OSREL \
 		OSVERSION \

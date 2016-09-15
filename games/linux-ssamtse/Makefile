@@ -3,6 +3,7 @@
 
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -15,8 +16,8 @@ COMMENT=	Serious Sam: The Second Encounter for Linux
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USES=		linux
+USE_LINUX=	xorglibs
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
@@ -29,7 +30,7 @@ IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
-USE_LINUX_APPS+=libvorbis
+USE_LINUX+=	libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 PLIST_SUB+=	VORBIS="@comment "

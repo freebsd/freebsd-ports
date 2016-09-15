@@ -149,14 +149,7 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with SSL
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT} != base
-IGNORE=		GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
-.endif
-
-.if ${SSL_DEFAULT} == libressl
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL}
-IGNORE=		GSSAPI_BASE is not compatible with LibreSSL. Use other GSSAPI options
-.endif
+.if ${SSL_DEFAULT:Mlibressl*}
 .if ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		unsupported TLS-SRP in LibreSSL
 .endif

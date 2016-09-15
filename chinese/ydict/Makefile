@@ -11,6 +11,8 @@ COMMENT=	Command line tool of Yahoo! Dict
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python:2,run shebangfix
 
 NO_BUILD=	yes

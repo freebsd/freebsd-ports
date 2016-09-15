@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xmltooling
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.5/
+MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.6.0/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 

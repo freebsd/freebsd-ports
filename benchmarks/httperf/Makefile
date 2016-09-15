@@ -4,7 +4,6 @@
 PORTNAME=	httperf
 PORTVERSION=	0.9.0.1
 CATEGORIES=	benchmarks www
-#MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Tool for measuring webserver performance

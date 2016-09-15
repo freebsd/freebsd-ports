@@ -9,11 +9,10 @@ MASTER_SITES=	PACKETSTORM/UNIX/utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
 
-USES=		perl5 python
-USE_OPENSSL=	yes
+USES=		perl5 python ssl
 
-LDFLAGS+=	-lssl -lcrypto
-CFLAGS+=	-DWITH_SSL
+LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto
+CFLAGS+=	-I${OPENSSLINC} -DWITH_SSL
 
 PLIST_FILES=	bin/gwee man/man1/gwee.1.gz
 

@@ -8,11 +8,14 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-spark
 DISTNAME=	why3-for-spark-gpl-${PORTVERSION}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Component of SPARK ${PORTVERSION}
 
 LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
+
+DEPRECATED=	Only useful for deprecated lang/spark
+EXPIRATION_DATE=	2016-09-30
 
 BUILD_DEPENDS=	menhir:devel/menhir \
 		ocaml-zip>1:archivers/ocaml-zip \

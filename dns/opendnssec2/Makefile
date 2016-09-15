@@ -16,7 +16,8 @@ BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
 LIB_DEPENDS=	libldns.so:dns/ldns
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
+		--with-ssl=${OPENSSLBASE}
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
 USES=		ssl
@@ -58,6 +59,10 @@ SQLITE_BUILD_DEPENDS=	sqlite3>=3.3.9:databases/sqlite3
 
 SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
 SOFTHSM_RUN_DEPENDS=	softhsm>=1.2.0:security/softhsm
+
+post-patch:
+	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
+		${WRKSRC}/configure
 
 pre-install-MYSQL-on:
 	${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/opendnssec

@@ -19,6 +19,8 @@ CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/osdep/byteorder.h
 MAKE_ARGS=	experimental=true libnl=false prefix=${PREFIX}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 # Don't call 'strip' target with WITH_DEBUG set
 INSTALL_TARGET=	${STRIP:S/-s/strip/} install
 

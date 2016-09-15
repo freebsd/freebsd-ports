@@ -4,8 +4,7 @@
 PORTNAME=	cclive
 PORTVERSION=	0.7.16
 CATEGORIES=	multimedia net
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R} \
-		GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lightweight command line video extraction tool

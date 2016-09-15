@@ -11,8 +11,6 @@ COMMENT=	Simple frontend for database data entry
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license
 
-BROKEN_powerpc64=	Does not build
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST=		${WRKDIR}/pkg-plist

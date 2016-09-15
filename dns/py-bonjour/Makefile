@@ -11,6 +11,8 @@ COMMENT=	Python interface to bonjour
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

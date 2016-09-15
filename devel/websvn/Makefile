@@ -13,8 +13,6 @@ COMMENT=	Subversion repository web frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_powerpc64=	Does not build
-
 USES=		cpe
 USE_PHP=	iconv pcre xml
 NO_BUILD=	yes

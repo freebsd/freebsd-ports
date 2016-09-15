@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-BROKEN_powerpc64=	does not build
-
 USES=		php:ext tar:tgz
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl-dir=${OPENSSLBASE}

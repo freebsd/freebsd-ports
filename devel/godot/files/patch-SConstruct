@@ -1,5 +1,14 @@
 --- SConstruct.orig	2016-08-09 07:52:15 UTC
 +++ SConstruct
+@@ -63,7 +63,7 @@ elif (os.name=="nt"):
+ 	if (os.getenv("VSINSTALLDIR")==None or platform_arg=="android"):
+ 		custom_tools=['mingw']
+ 
+-env_base=Environment(tools=custom_tools);
++env_base=Environment(tools=custom_tools, ENV = os.environ);
+ env_base.AppendENVPath('PATH', os.getenv('PATH'))
+ env_base.AppendENVPath('PKG_CONFIG_PATH', os.getenv('PKG_CONFIG_PATH'))
+ env_base.global_defaults=global_defaults
 @@ -231,15 +231,17 @@ if selected_platform in platform_list:
  	if env["extra_suffix"] != '' :
  		env.extra_suffix += '.'+env["extra_suffix"]

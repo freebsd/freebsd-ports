@@ -40,7 +40,7 @@ CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == libressl
+.if ${SSL_DEFAULT:Mlibressl*}
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 

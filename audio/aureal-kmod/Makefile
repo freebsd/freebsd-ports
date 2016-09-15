@@ -13,6 +13,8 @@ DISTNAME=	au88x0-${PORTVERSION}_4
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Driver for Aureal Vortex based soundcards
 
+BROKEN=		Unfetchable (google code has gone away)
+
 ONLY_FOR_ARCHS=	i386
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
 

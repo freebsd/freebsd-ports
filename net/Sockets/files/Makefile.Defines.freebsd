@@ -9,6 +9,7 @@ CFLAGS +=	-fPIC
 
 OBJS +=		Semaphore.o
 
-LDFLAGSSO =	-shared \
+LDFLAGSSO =	$(LDFLAGS) \
+		-shared \
 		-Wl,-lssl \
 		-Wl,-h$(SONAME)

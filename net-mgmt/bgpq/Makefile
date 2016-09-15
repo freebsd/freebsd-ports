@@ -5,13 +5,17 @@ PORTNAME=	bgpq
 PORTVERSION=	1.0.9.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/bgpq/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bgpq - lightweight access-list generator for Cisco routers
 
-PLIST_FILES=	bin/bgpq man/man8/bgpq.8.gz
+LICENSE=	BSD2CLAUSE BSD4CLAUSE # latter for utils.c
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/COPYRIGHT
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/bgpq man/man8/bgpq.8.gz
 
 .include <bsd.port.mk>

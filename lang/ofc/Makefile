@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The Objective-C Foundation Classes library
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2

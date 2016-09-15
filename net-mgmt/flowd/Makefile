@@ -5,8 +5,7 @@ PORTNAME=	flowd
 PORTVERSION=	0.9.1
 PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	GOOGLE_CODE \
-		http://www2.mindrot.org/files/flowd/
+MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast, and secure NetFlow collector

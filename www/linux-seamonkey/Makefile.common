@@ -1,35 +1,19 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-.if !defined(OVERRIDE_LINUX_NONBASE_PORTS) || \
-    ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
-.undef WANT_GTK218
-.endif
 
 CATEGORIES+=	linux
 MASTER_SITES?=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 PKGNAMEPREFIX?=		linux-
 
-.if defined(WANT_GTK218)
-MASTER_SITES+=	https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/12/Everything/i386/os/Packages/:f12
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		glib2-2.22.2-2.fc12.i686.rpm:f12 \
-		gtk2-2.18.3-19.fc12.i686.rpm:f12
-GTK218_FILES=	lib/libgio-2.0.so.0 \
-		lib/libglib-2.0.so.0 \
-		usr/lib/libgdk-x11-2.0.so.0 \
-		usr/lib/libgtk-x11-2.0.so.0
-.endif
-
-USES+=		cpe
+USES+=		cpe linux
 CPE_VENDOR?=	mozilla
 CPE_TARGET_SW?=	linux
+USE_LINUX+=	alsalib alsa-plugins-oss atk dbusglib dbuslibs \
+		fontconfig gtk2 hicontheme pango
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
 BIN_NAME?=	${PORTNAME}
-USE_LINUX=	yes
-USE_LINUX_APPS+=alsalib alsa-plugins-oss atk dbusglib dbuslibs \
-		fontconfig gtk2 hicontheme pango
 
 WRKSRC?=	${WRKDIR}/${BIN_NAME}
 FDIR=		${STAGEDIR}${PREFIX}/lib/${APP_NAME}
@@ -46,12 +30,6 @@ DESKTOP_SUFFIX?=	(Linux, devel)
 .endif
 DESKTOP_SUFFIX?=	(Linux)
 
-.if defined(WANT_GTK218)
-PLIST_SUB+=	GTK218=""
-.else
-PLIST_SUB+=	GTK218="@comment "
-.endif
-
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
 
@@ -60,14 +38,6 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/updates
 	@${LN} -sf ${LOCALBASE}/lib/browser_plugins/symlinks/${APP_NAME} \
 		${WRKSRC}/${APP_SUBDIR}plugins
-. if defined(WANT_GTK218)
-.  for f in ${GTK218_FILES}
-	@${CP} -p ${WRKDIR}/${f} ${WRKSRC}
-	@${ECHO_CMD} ${f:T} >>${WRKSRC}/dependentlibs.list
-.  endfor
-	@${REINPLACE_CMD} -i '' '/libxul/ { h; d; }; $$G' \
-		${WRKSRC}/dependentlibs.list
-. endif
 .endif
 
 
@@ -121,11 +91,6 @@ create-plist: build
 		%D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ ${_Q}' >> ${PLIST}
 	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ \
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
-.if defined(WANT_GTK218)
-. for f in ${GTK218_FILES}
-	${REINPLACE_CMD} -i '' '/${f:T}/s/^/%%GTK218%%/' ${PLIST}
-. endfor
-.endif
 
 snatch-desktop:
 	${SED} -E -e 's/${PORTNAME}/${APP_NAME}/' \

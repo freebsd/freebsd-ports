@@ -26,7 +26,6 @@
     SUBDIR += arprelease
     SUBDIR += asio
     SUBDIR += aslookup
-    SUBDIR += asterisk
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk11
@@ -187,6 +186,7 @@
     SUBDIR += grilo
     SUBDIR += grilo-plugins
     SUBDIR += grive
+    SUBDIR += grive2
     SUBDIR += grsync
     SUBDIR += gsk
     SUBDIR += gspoof

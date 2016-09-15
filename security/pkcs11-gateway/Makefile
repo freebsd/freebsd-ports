@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 
 MAKEFILE=	Makefile.FreeBSD
 USE_LDCONFIG=	yes
-USE_LINUX=	yes
+USES=		linux
 
 PLIST_FILES=	bin/pkcs11-gateway lib/libpkcs11-gateway.so \
 		lib/libpkcs11-gateway.so.1

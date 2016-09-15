@@ -10,20 +10,21 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another SQL*Plus Replacement
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle \
 		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu
-
-NO_ARCH=	yes
 
 USES=		perl5
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 
+NO_ARCH=	yes
+
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		CSV HIRES READKEY
+OPTIONS_DEFINE=		CSV HIRES READKEY DOCS
 
 CSV_DESC=		Support for in/out CSV files
 CSV_BUILD_DEPENDS=	p5-Text-CSV_XS>0:textproc/p5-Text-CSV_XS
@@ -40,14 +41,13 @@ post-build:
 	@${LN} -sf yasql.conf ${WRKSRC}/yasql.conf.sample
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} yasql \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} yasql.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
-	(cd ${WRKSRC} && ${INSTALL_MAN} yasql.conf.sample \
-		${STAGEDIR}${PREFIX}/etc)
+	${INSTALL_SCRIPT} ${WRKSRC}/yasql ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/yasql.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/yasql.conf.sample ${STAGEDIR}${PREFIX}/etc
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README yasql.html \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/yasql.html \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

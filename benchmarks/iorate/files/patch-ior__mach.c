@@ -1,5 +1,13 @@
 --- ior_mach.c.orig	2011-11-03 15:27:58 UTC
 +++ ior_mach.c
+@@ -41,6 +41,7 @@ static char rcsid[] = "$Header: /home/we
+ #include <time.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <sys/time.h>
+ 
+ /*
+  * Solaris needs ior_mach.h to be after the above or
 @@ -411,6 +411,10 @@ int	ior_dev_lock( ior_config *cfg, long 
      };	
  

@@ -1,8 +1,8 @@
---- Makefile.orig	2015-05-19 09:35:39 UTC
+--- Makefile.orig	2016-09-09 12:30:20 UTC
 +++ Makefile
-@@ -14,17 +14,15 @@ clean:
- 	rm -f devices.tar.gz
- 	rm -rf dev
+@@ -6,14 +6,12 @@ all:
+ 
+ clean:
  
 -DSDIR=$(DESTDIR)/usr/share/debootstrap
 +DSDIR=$(DESTDIR)%%DATADIR%%
@@ -19,6 +19,3 @@
 -	chown root:root $(DESTDIR)/usr/sbin/debootstrap
 -	chmod 0755 $(DESTDIR)/usr/sbin/debootstrap
 +	sed 's/@VERSION@/$(VERSION)/g' debootstrap >$(DESTDIR)%%PREFIX%%/sbin/debootstrap
- 
- ifeq ($(shell uname),Linux)
- 	install -o root -g root -m 0644 devices.tar.gz $(DSDIR)/

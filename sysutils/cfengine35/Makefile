@@ -28,11 +28,12 @@ CONFLICTS=	cfengine-[2346-9]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
-USES=		cpe gmake libtool
+USES=		cpe gmake libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \

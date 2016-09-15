@@ -3,7 +3,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.9.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.org/releases/
 

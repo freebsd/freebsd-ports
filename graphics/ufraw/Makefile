@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		liblcms2.so:graphics/lcms2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
+CONFIGURE_ARGS=	--enable-extras
 USES=		desktop-file-utils gettext gmake jpeg pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include

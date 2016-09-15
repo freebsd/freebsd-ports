@@ -12,6 +12,8 @@ COMMENT=	Privacy plugin for the pidgin instant messenger
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpurple.so:net-im/libpurple

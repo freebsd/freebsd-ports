@@ -14,6 +14,8 @@ COMMENT=	FreeBSD Automated Release Bot
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable (google code has gone away)
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USES=		python

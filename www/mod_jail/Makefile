@@ -11,6 +11,8 @@ COMMENT=	Apache module to enable an easy alternative to mod_chroot
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

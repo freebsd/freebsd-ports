@@ -13,6 +13,8 @@ COMMENT=	Allows users authentication based on external mechanisms on apache 2.4
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USE_APACHE=	24
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

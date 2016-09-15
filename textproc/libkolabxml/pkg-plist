@@ -17,4 +17,4 @@ lib/cmake/Libkolabxml/LibkolabxmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Libkolabxml/LibkolabxmlTargets.cmake
 lib/libkolabxml.so
 lib/libkolabxml.so.1
-lib/libkolabxml.so.1.1.1
+lib/libkolabxml.so.%%SHLIB_VER%%

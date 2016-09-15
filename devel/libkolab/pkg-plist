@@ -7,6 +7,7 @@ include/kolab/kcalconversion.h
 include/kolab/kolab_export.h
 include/kolab/kolabdefinitions.h
 include/kolab/kolabobject.h
+include/kolab/libkolab_config.h
 include/kolab/mimeobject.h
 include/kolab/xmlobject.h
 lib/cmake/Libkolab/LibkolabConfig.cmake

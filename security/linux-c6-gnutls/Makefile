@@ -3,15 +3,15 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.8.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-USE_LINUX=	c6
+USES=		linux:c6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	libtasn1 libgcrypt libgpg-error
+USE_LINUX=	libtasn1 libgcrypt libgpg-error
 
 RPMVERSION=	19.el6_7
 USE_LDCONFIG=	yes

@@ -13,8 +13,6 @@ COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:web
 USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt pcre \
 		posix session xml zip zlib

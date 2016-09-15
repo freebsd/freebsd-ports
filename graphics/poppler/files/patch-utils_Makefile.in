@@ -1,6 +1,6 @@
---- utils/Makefile.in.orig	2014-11-04 18:46:22 UTC
+--- utils/Makefile.in.orig	2016-03-16 22:22:14 UTC
 +++ utils/Makefile.in
-@@ -125,40 +125,34 @@ PROGRAMS = $(bin_PROGRAMS)
+@@ -136,45 +136,38 @@ PROGRAMS = $(bin_PROGRAMS)
  am_pdfdetach_OBJECTS = pdfdetach.$(OBJEXT)
  pdfdetach_OBJECTS = $(am_pdfdetach_OBJECTS)
  pdfdetach_LDADD = $(LDADD)
@@ -33,6 +33,12 @@
 -pdfseparate_DEPENDENCIES = libparseargs.la \
 -	$(top_builddir)/poppler/libpoppler.la
 +pdfseparate_DEPENDENCIES = libparseargs.la
+ am_pdfsig_OBJECTS = pdfsig.$(OBJEXT)
+ pdfsig_OBJECTS = $(am_pdfsig_OBJECTS)
+ pdfsig_LDADD = $(LDADD)
+-pdfsig_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfsig_DEPENDENCIES = libparseargs.la
  am_pdftocairo_OBJECTS = pdftocairo-pdftocairo.$(OBJEXT) \
  	pdftocairo-pdftocairo-win32.$(OBJEXT)
  pdftocairo_OBJECTS = $(am_pdftocairo_OBJECTS)
@@ -48,7 +54,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_4) \
  	$(am__DEPENDENCIES_2)
  am_pdftohtml_OBJECTS = pdftohtml-pdftohtml.$(OBJEXT) \
-@@ -166,31 +160,26 @@ am_pdftohtml_OBJECTS = pdftohtml-pdftoht
+@@ -182,31 +175,26 @@ am_pdftohtml_OBJECTS = pdftohtml-pdftoht
  	pdftohtml-HtmlOutputDev.$(OBJEXT)
  pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
  pdftohtml_LDADD = $(LDADD)
@@ -85,7 +91,7 @@
  AM_V_P = $(am__v_P_@AM_V@)
  am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
  am__v_P_0 = false
-@@ -527,7 +516,7 @@ AM_CPPFLAGS = \
+@@ -549,7 +537,7 @@ AM_CPPFLAGS = \
  
  LDADD = \
  	libparseargs.la				\
@@ -94,7 +100,7 @@
  	$(UTILS_LIBS)
  
  @BUILD_UTILS_TRUE@dist_man1_MANS = pdfdetach.1 pdffonts.1 pdfimages.1 \
-@@ -590,7 +579,7 @@ pdftocairo_SOURCES = \
+@@ -615,7 +603,7 @@ pdftocairo_SOURCES = \
  	pdftocairo-win32.h
  
  pdftocairo_LDADD = \

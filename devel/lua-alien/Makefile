@@ -22,8 +22,7 @@ GH_ACCOUNT=	mascarenhas
 USES=		libtool lua shebangfix zip
 SHEBANG_FILES=	src/constants
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--libdir=${LUA_MODLIBDIR} \
+CONFIGURE_ARGS=	--libdir=${LUA_MODLIBDIR} \
 		--datadir=${LUA_MODSHAREDIR} \
 		--with-lua-suffix="${LUA_VER_STR}"
 INSTALL_TARGET=	install-strip

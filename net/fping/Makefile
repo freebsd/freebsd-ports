@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fping
-PORTVERSION=	3.10
+PORTVERSION=	3.13
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://fping.org/dist/ \
-		http://bitrote.org/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network
@@ -16,11 +14,15 @@ LICENSE_NAME=	Previous BSD License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	schweikert
+
 OPTIONS_MULTI=		NET
 OPTIONS_MULTI_NET=	IPV4 IPV6
 OPTIONS_DEFAULT=	IPV4
 OPTIONS_SUB=	yes
 
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"
 INSTALL_TARGET=	install-strip

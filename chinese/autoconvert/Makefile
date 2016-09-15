@@ -12,6 +12,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent Chinese encoding converter
 
+BROKEN=		Unfetchable (google code has gone away)
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 

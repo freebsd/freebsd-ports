@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.0.5
+PORTVERSION=	19.0.7
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -21,7 +21,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
 PATCHFILES=	patch-otp-19.0.1 patch-otp-19.0.2 patch-otp-19.0.3 \
-		patch-otp-19.0.4 patch-otp-19.0.5
+		patch-otp-19.0.4 patch-otp-19.0.5 patch-otp-19.0.6 \
+		patch-otp-19.0.7
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -38,7 +39,7 @@ PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DIRTY DOCS DTRACE GCC GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP SMP THREADS WX
+OPTIONS_DEFINE=	DIRTY DOCS DTRACE GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP SMP THREADS WX
 
 DIRTY_DESC=	Enable Dirty schedulers (experimental)
 DTRACE_DESC=	Enable DTrace support
@@ -85,17 +86,13 @@ DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 # respectively)" you probably misconfigured DTrace in some way.
 
 .if ${OSVERSION} < 1000000
-.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC}
-IGNORE=		support for DTrace on amd64 requires GCC option
+.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE}
+IGNORE=		support for DTrace on amd64 requires at least FreeBSD 10
 .endif
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
 CFLAGS+=	-DMAP_NORESERVE=0
-.endif
-
-.if ${PORT_OPTIONS:MGCC}
-USE_GCC?=	yes
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
@@ -243,7 +240,7 @@ post-install:
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.0/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.0.3
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.0.5
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.0
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/compiler-7.0/* \

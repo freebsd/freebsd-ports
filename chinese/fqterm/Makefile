@@ -11,6 +11,8 @@ MASTER_SITES=	GOOGLE_CODE/${PORTNAME}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		cmake:outsource dos2unix zip
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_QT4=	gui network script qt3support imageformats \

@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	wtp@bsdserwis.com
 COMMENT=	Server side personal RSS (and Atom) aggregator
 
-BROKEN_powerpc64=	Does not build
+BROKEN=		Unfetchable (google code has gone away)
 
 USES=		tar:tgz
 PROJECTHOST=	feed-on-feeds

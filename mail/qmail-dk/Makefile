@@ -17,7 +17,7 @@ LIB_DEPENDS+=	libdomainkeys.so:mail/libdomainkeys
 PATCH_SITES=	QMAIL
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
-USES=		qmail
+USES=		qmail ssl
 
 PREFIX?=	${QMAIL_PREFIX}
 
@@ -46,12 +46,11 @@ do-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's,"../domainkeys.h",<domainkeys.h>,' \
 		${WRKSRC}/qmail-dk.c
-	@${REINPLACE_CMD} -e 's,../libdomainkeys.a,${LOCALBASE}/lib/libdomainkeys.a,g' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E 's|( *c\(auto.*")qmail-smtpd(".*)$$|\1qmail-smtpd\2\1qmail-dk\2|' \
 		${WRKSRC}/hier.c
-	@${REINPLACE_CMD} 's!/var/qmail!${PREFIX}!; \
-			   s!/usr/local/!${LOCALBASE}/!' \
+	@${REINPLACE_CMD} \
+		-e 's|../libdomainkeys.a|${LOCALBASE}/lib/libdomainkeys.a|' \
+		-e 's|\(-lcrypto\)|-L${OPENSSLLIB} \1|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's!nofiles!qnofiles!g' \
 		${WRKSRC}/conf-groups

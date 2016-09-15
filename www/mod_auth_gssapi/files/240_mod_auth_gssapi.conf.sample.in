@@ -1,0 +1,9 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_auth_gssapi
+##
+## PROVIDE: mod_auth_gssapi
+## REQUIRE:
+
+#LoadModule auth_gssapi_module        %%APACHEMODDIR%%/mod_auth_gssapi.so

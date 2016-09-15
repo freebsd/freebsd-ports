@@ -3,19 +3,19 @@
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITES=	LOCAL/netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/netchild/rpms/fedora10
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux Fedora 10)
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	libasyncns xorglibs
+USE_LINUX=	libasyncns xorglibs
 
 RPMVERSION=	4.fc10
-SRC_DISTFILES=	${PORTNAME:S/-libs//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+SRC_DISTFILES=	${PORTNAME:S/-libs//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 USE_LDCONFIG=	yes
 
 post-extract:

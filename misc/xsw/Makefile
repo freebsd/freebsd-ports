@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating presentations
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS=	convert:graphics/ImageMagick

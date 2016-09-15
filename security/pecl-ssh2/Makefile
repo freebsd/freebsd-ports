@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ssh2
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	PECL extension to the libssh2 library
 
 LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 

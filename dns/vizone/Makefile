@@ -11,6 +11,7 @@ COMMENT=	Updates the serial number in one or more zonefiles
 
 USES=		shebangfix perl5
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	updserial

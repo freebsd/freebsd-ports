@@ -3,6 +3,7 @@
 
 PORTNAME=	komodo-edit
 PORTVERSION=	6.1.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/archive/6.x/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-${PORTVERSION}-8844-linux-libcpp6-x86
@@ -18,8 +19,8 @@ NO_PACKAGE=	Distribution not permitted
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-USE_LINUX=	yes
-USE_LINUX_APPS=	alsalib gtk2 jpeg dbusglib
+USES=		linux
+USE_LINUX=	alsalib gtk2 jpeg dbusglib
 
 PLIST_FILES=	bin/komodo
 PORTDATA=	*

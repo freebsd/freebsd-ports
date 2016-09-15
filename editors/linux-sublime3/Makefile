@@ -3,7 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	3.0.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 PKGNAMEPREFIX=	linux-
@@ -13,9 +13,8 @@ DISTNAME=	sublime_text_3_build_3083_x32
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sophisticated text editor for code, markup and prose
 
-USES=		desktop-file-utils tar:bzip2
-USE_LINUX=	c6
-USE_LINUX_APPS=	xorglibs gtk2
+USES=		desktop-file-utils linux:c6 tar:bzip2
+USE_LINUX=	xorglibs gtk2
 
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/sublime_text_3

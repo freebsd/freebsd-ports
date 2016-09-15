@@ -3,7 +3,7 @@
 
 PORTNAME=	dropbox-uploader
 PORTVERSION=	0.2
-#PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreafabrizi
 GH_PROJECT=	Dropbox-Uploader
-GH_TAGNAME=	d012423
+GH_TAGNAME=	856c10a
 
 NO_BUILD=	yes
 
@@ -29,6 +29,6 @@ post-patch:
 	${REINPLACE_CMD} -E -e 's,("darwin"),\1 -o "$${OSTYPE:0:7}" == "freebsd" ,1' -i.bak ${WRKSRC}/dropShell.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/drop*.sh ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

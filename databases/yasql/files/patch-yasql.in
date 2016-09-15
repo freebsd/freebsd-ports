@@ -1,6 +1,6 @@
---- yasql.in.orig	2005-05-09 18:01:47.000000000 +0200
-+++ yasql.in	2010-11-18 15:10:32.000000000 +0100
-@@ -174,7 +174,7 @@
+--- yasql.in.orig	2005-05-09 16:01:47 UTC
++++ yasql.in
+@@ -174,7 +174,7 @@ sub sighandle {
        wrn("Connection lost (timeout: $conf{connection_timeout})");
        quit(1);
      } else {
@@ -9,7 +9,7 @@
           ."$conf{connection_timeout})");
      }
    }
-@@ -769,7 +769,7 @@
+@@ -769,7 +769,7 @@ sub db_connect {
      }
    }
    unless($found) {
@@ -18,7 +18,7 @@
         .join(", ", @drivers) . ".\n");
    }
    #print "drivers: [" . join("|", @drivers) . "]\n";
-@@ -921,7 +921,7 @@
+@@ -921,7 +921,7 @@ sub db_connect {
      $connect_string = '' if $connect_string eq 'external';
      $dbhandle = db_connect($die_on_error,$ora_session_mode,undef,undef,$connect_string);
    } elsif($die_on_error) {
@@ -27,7 +27,7 @@
    } else {
      wrn("Could not connect to database: $dberrstr [$dberr]");
      return(0);
-@@ -1010,7 +1010,7 @@
+@@ -1010,7 +1010,7 @@ sub get_up {
  sub check_oracle_home {
    # This checks for the ORACLE_HOME environment variable and dies if it's
    # not set
@@ -36,7 +36,7 @@
      unless $ENV{ORACLE_HOME};
    return(1);
  }
-@@ -1416,7 +1416,7 @@
+@@ -1416,7 +1416,7 @@ sub get_csv_file {
  }
  
  sub close_csv {
@@ -45,7 +45,7 @@
    $csv_filehandle_open = 0;
    $csv_max_lines = 0;
  }
-@@ -2404,10 +2404,10 @@
+@@ -2404,10 +2404,10 @@ sub describe {
  	if($op && $op eq '>' || $op eq '>>') {
      	    ($op_text) = glob($op_text);
      	    debugmsg(3, "Opening file '$op_text' for output redirection using [$op]");
@@ -58,7 +58,7 @@
  	} else {
  	    open(FOUT, ">&STDOUT");
  	}
-@@ -2873,7 +2873,7 @@
+@@ -2873,7 +2873,7 @@ sub wildcard_expand {
    my $newsql = $sql;
    my $fromstuff;
    my $wheregrouporder = $sql;
@@ -67,7 +67,7 @@
    if ($wheregrouporder eq $sql) {
      $wheregrouporder = "";
    }
-@@ -2887,7 +2887,7 @@
+@@ -2887,7 +2887,7 @@ sub wildcard_expand {
      my %column_prefix;
      foreach my $table (@tlist) {
        $table =~ s/^ *//;
@@ -76,7 +76,7 @@
        $column_prefix{$table} = $2 ? $2 : $table;
        $tablelist .= ($tablelist ? "," : "") . $table;
      }
-@@ -3644,7 +3644,7 @@
+@@ -3644,7 +3644,7 @@ Return limit:
    Examples:
      The following will run the query, then run it again with different settings:
        user\@ORCL> select * from table;10
@@ -85,7 +85,7 @@
    
  Redirection:
    You can add a shell like redirection operator after a query to pipe the output
-@@ -3657,7 +3657,7 @@
+@@ -3657,7 +3657,7 @@ Redirection:
  
      Examples:
        user\@ORCL> select * from table; > table.dump
@@ -94,7 +94,7 @@
  
    Input:
      You can use '<' to grab data from a CSV file.  The file must be formatted
-@@ -4179,7 +4179,7 @@
+@@ -4179,7 +4179,7 @@ Foundation, Inc., 59 Temple Place - Suit
  
  =item NULL stops printing after table goes into overflow or something
  

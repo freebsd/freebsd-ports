@@ -1,5 +1,5 @@
 bin/thg
-%%NAUTILUS%%lib/nautilus/extensions-2.0/python/nautilus-thg.py
+%%NAUTILUS%%share/nautilus-python/extensions/nautilus-thg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.pyo
@@ -84,6 +84,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graphopt.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graphopt.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graphopt.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/grep.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/grep.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/grep.pyo

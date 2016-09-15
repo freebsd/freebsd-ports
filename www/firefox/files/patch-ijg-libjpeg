@@ -4,7 +4,7 @@ diff --git old-configure.in configure.in
 index f0aeb5d..1c01010 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -4027,11 +4027,7 @@ if test "$MOZ_NATIVE_JPEG" = 1; then
+@@ -4027,11 +4027,7 @@ if test "$MOZ_SYSTEM_JPEG" = 1; then
                       #include <jpeglib.h> ],
                     [ #if JPEG_LIB_VERSION < $MOZJPEG
                       #error "Insufficient JPEG library version ($MOZJPEG required)."
@@ -14,7 +14,7 @@ index f0aeb5d..1c01010 100644
 -                     #endif
 -                     ],
 +                     #endif ],
-                    MOZ_NATIVE_JPEG=1,
+                    MOZ_SYSTEM_JPEG=1,
                     AC_MSG_ERROR([Insufficient JPEG library version for --with-system-jpeg]))
  fi
 diff --git image/decoders/nsJPEGDecoder.cpp image/decoders/nsJPEGDecoder.cpp

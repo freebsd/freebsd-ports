@@ -3,6 +3,7 @@
 
 PORTNAME=	jpgraph
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://fossies.org/linux/www/
 
@@ -15,8 +16,6 @@ LICENSE_TEXT=	Please refer to: http://www.opensource.org/licenses/qtpl.php for d
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-
-BROKEN_powerpc64=	Does not build
 
 USES=		php tar:bzip2
 USE_PHP=	gd
@@ -38,7 +37,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} "*.php *.dat lang themes" \
+	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} "*.php *.dat fonts lang themes" \
 		${STAGEDIR}${DATADIR})
 
 do-install-DOCS-on:

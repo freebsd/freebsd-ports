@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2016-09-09 21:30:26 UTC
++++ Makefile.in
+@@ -650,10 +650,14 @@ dist_smoketheme_DATA = themes/$(theme_di
+ zomgponiesthemedir = $(datadir)/themes/ZOMG-PONIES!/xfce-notify-4.0
+ dist_zomgponiestheme_DATA = themes/$(theme_dir)/ZOMG-PONIES!/gtk.css
+ dist_themes = \
++	themes/gtk-3.0/Bright/gtk.css \
+ 	themes/gtk-3.0/Default/gtk.css \
++	themes/gtk-3.0/Retro/gtk.css \
+ 	themes/gtk-3.0/Smoke/gtk.css \
+ 	themes/gtk-3.0/ZOMG-PONIES!/gtk.css \
++	themes/gtk-3.20/Bright/gtk.css \
+ 	themes/gtk-3.20/Default/gtk.css \
++	themes/gtk-3.20/Retro/gtk.css \
+ 	themes/gtk-3.20/Smoke/gtk.css \
+ 	themes/gtk-3.20/ZOMG-PONIES!/gtk.css
+ 

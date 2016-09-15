@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2013-11-24 20:24:26.000000000 +0100
-+++ ./Makefile.in	2014-05-23 00:34:32.000000000 +0200
-@@ -38,7 +38,7 @@
+--- Makefile.in.orig	2016-09-03 19:34:06 UTC
++++ Makefile.in
+@@ -38,7 +38,7 @@ IRCDLIBS=@IRCDLIBS@ @TRE_LIBS@ @CARES_LI
  CRYPTOLIB=@CRYPTOLIB@
  OPENSSLINCLUDES=
  

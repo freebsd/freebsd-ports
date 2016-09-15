@@ -13,6 +13,8 @@ COMMENT=	Library Provide Complete Braille Transcription Services
 LICENSE=	LGPL3+ GPLv3+
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 LIB_DEPENDS=	liblouis.so:devel/liblouis
 

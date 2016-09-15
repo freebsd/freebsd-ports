@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python package for interacting with a MediaWiki wiki
 
+BROKEN=		Unfetchable (google code has gone away)
+
 PROJECTHOST=	python-${PORTNAME}
 
 USES=		python

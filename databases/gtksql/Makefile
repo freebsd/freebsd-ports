@@ -3,7 +3,7 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}
 
@@ -11,14 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
-
-OPTIONS_DEFINE=	AVAHI DOCS
-OPTIONS_MULTI=	DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	SQLITE
 
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 cairo glib20 pango
@@ -30,30 +26,24 @@ CPPFLAGS+=	-I${LOCALBASE}/include/scintilla -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lscintilla -lscintilla_lexers
 LDFLAGS+=	-lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo
 
-PGSQL_USES=	pgsql
+OPTIONS_DEFINE=	AVAHI DOCS
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
+
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgresql
 
-.include <bsd.port.options.mk>
+AVAHI_LIB_DEPENDS=	libavahi-common.so:net/avahi-app
+AVAHI_CONFIGURE_OFF=	--without-avahi
 
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-common.so:net/avahi-app
-.else
-CONFIGURE_ARGS+=	--without-avahi
-.endif
+MYSQL_USES=		mysql
+MYSQL_CPPFLAGS=		-I${LOCALBASE}/include/mysql
+MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
+MYSQL_CONFIGURE_OFF=	--without-mysql
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include/mysql
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USES+=		sqlite
-.else
-CONFIGURE_ARGS+=	--without-sqlite
-.endif
+SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_OFF=	--without-sqlite
 
 post-patch:
 	@${REINPLACE_CMD} -e \

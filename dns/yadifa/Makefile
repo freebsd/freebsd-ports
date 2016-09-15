@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	2.1.6
-DISTVERSIONSUFFIX=	-5826
+PORTVERSION=	2.2.1
+DISTVERSIONSUFFIX=	-6281
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/ LOCAL/mat/yadifa
+MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Authoritative nameserver with DNSSEC capabilities
@@ -44,10 +44,17 @@ post-configure:
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf.example \
+	${MV} ${STAGEDIR}${PREFIX}/etc/yadifad.conf \
 		${STAGEDIR}${PREFIX}/etc/yadifad.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	@${MV} ${STAGEDIR}/var/zones ${STAGEDIR}/var/${PORTNAME}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+.for f in yadifa yadifad
+	@${LN} -s ../../${EXAMPLESDIR_REL}/$f.bash_completion \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/$f.sh
+.endfor
 
 .include <bsd.port.mk>

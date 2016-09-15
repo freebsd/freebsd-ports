@@ -14,6 +14,8 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	zip:archivers/zip \
 		tif22pnm:graphics/tif22pnm
 

@@ -12,6 +12,8 @@ COMMENT=	Toolkit for constructing finite-state automata and transducers
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		bison gmake readline
 USE_LDCONFIG=	yes
 

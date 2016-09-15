@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	prestashop
-PORTVERSION=	1.6.1.6
+PORTVERSION=	1.6.1.7
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source e-Commerce Software for Web 2.0
-
-BROKEN_powerpc64=	Does not build
 
 USES=		cpe shebangfix zip
 NO_BUILD=	yes

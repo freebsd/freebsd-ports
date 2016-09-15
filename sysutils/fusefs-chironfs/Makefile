@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	FUSE based filesystem with replication at the filesystem level
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -12,6 +12,8 @@ COMMENT=	Open source DXT compression library
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		uidfix
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}
 PLIST_FILES=	include/squish.h \

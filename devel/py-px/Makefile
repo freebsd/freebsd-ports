@@ -15,6 +15,8 @@ COMMENT=	Perforce p4 wrapper and Python Perforce interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

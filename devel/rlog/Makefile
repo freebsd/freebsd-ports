@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible message logging facility for C++
 
+BROKEN=		Unfetchable (google code has gone away)
+
 OPTIONS_DEFINE=	DOCS
 
 LICENSE=	LGPL21 LGPL3

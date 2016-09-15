@@ -12,6 +12,8 @@ COMMENT=	Library for handling 3DS (3D Studio) files
 
 LICENSE=	LGPL21+
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool zip

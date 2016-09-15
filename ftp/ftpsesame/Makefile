@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sentia.org/downloads/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for pf firewall to pass FTP protocol
 
+LICENSE=	ISCL
+
 PLIST_FILES=	bin/ftpsesame man/man8/ftpsesame.8.gz
 USE_RC_SUBR=	ftpsesame
 

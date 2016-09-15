@@ -10,6 +10,29 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160911:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for complete set of Creative Commons licenses
+
+  CC-(BY|BY-ND|BY-NC|BY-NC-ND|BY-NC-SA|BY-SA)-(1.0|2.0|2.5|3.0|4.0)
+
+20160909:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Verbose build logs are now preferred and enabled by default for cmake,
+  ninja and GNU configure.  Ports which still produce quiet build logs
+  (hiding actual commands) are strongly advised to switch to verbose logs.
+
+20160908:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for NONE license, use it when the port doesn't
+  have cleanly defined licensing terms.  Note that without clean license
+  allowing you to use and distribute the code it would be be illegal to do
+  so in many jurisdictions, so for ports with NONE license no distfiles or
+  packages are distributed.
+
 20160824:
 AUTHOR: mat@FreeBSD.org
 
@@ -39,16 +62,16 @@ AUTHOR: mat@FreeBSD.org
 20160824:
 AUTHOR: kde@FreeBSD.org
 
-  A new USES file has been introduced: USES=kde:4, which replaces the old 
-  bsd.kde4.mk file in preparation for upcoming KDE Frameworks and Plasma5 
-  ports. 
- 
-  Ports depending on KDE4 have to switch from 
+  A new USES file has been introduced: USES=kde:4, which replaces the old
+  bsd.kde4.mk file in preparation for upcoming KDE Frameworks and Plasma5
+  ports.
+
+  Ports depending on KDE4 have to switch from
      USE_KDE4=foo bar
-  to 
+  to
      USES=kde:4
      USE_KDE=foo bar
-  and make sure to switch from using KDE4_PREFIX to the new name KDE_PREFIX  
+  and make sure to switch from using KDE4_PREFIX to the new name KDE_PREFIX
   in the Makefiles as well as plists.
 
 20160821:

@@ -6,13 +6,14 @@ PORTVERSION=	1.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/vnccrack/
 DISTNAME=	VNCcrack-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	Fast offline password cracker for VNC passwords
 
+USES=		ssl tar:tgz
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 SUB_FILES+=	pkg-message
 

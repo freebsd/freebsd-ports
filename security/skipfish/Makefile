@@ -3,7 +3,7 @@
 
 PORTNAME=	skipfish
 PORTVERSION=	2.10b
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	security www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,6 +12,8 @@ COMMENT=	Fully automated, active web application security reconnaissance tool
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre

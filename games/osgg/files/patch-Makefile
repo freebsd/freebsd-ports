@@ -1,0 +1,37 @@
+--- Makefile.orig	2016-08-13 02:07:57 UTC
++++ Makefile
+@@ -1,26 +1,26 @@
+ DATADIR?=./
+ 
+-CC=g++ -DDATADIR="\"$(DATADIR)\""
++CXX?=g++
+ 
+-CFLAGS+=-Wall `sdl-config --cflags`
++CXXFLAGS+=-Wall `sdl-config --cflags` -DDATADIR="\"$(DATADIR)\""
+ 
+-LIBS+=-lGL `sdl-config --libs` -lSDL_ttf -lSDL_image -lSDL_mixer
++LIBS+=`sdl-config --libs` -lSDL_ttf -lSDL_image -lSDL_mixer -lGL -lm
+ 
+ SOURCES=main.cpp text.cpp sound.cpp
+-OBJECTS=$(SOURCES:.c=.o)
++OBJECTS=$(SOURCES:.cpp=.o)
+ 
+ EXECUTABLE=osgg
+ 
+ all: $(SOURCES) $(EXECUTABLE)
+ 
+ server: server.cpp
+-	 $(CC) $(LDFLAGS) server.cpp $(LIBS) -o $@
+-	
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) server.cpp $(LIBS) -o $@
++
+ $(EXECUTABLE): $(OBJECTS)
+-	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $< -o $@
++	$(CXX) $(CXXFLAGS) -c $< -o $@
+ 
+ clean:
+ 	rm -f *.o $(EXECUTABLE)

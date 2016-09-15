@@ -10,6 +10,8 @@ COMMENT=	Very small C interpreter for scripting
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable (google code has gone away)
+
 USES=		gmake readline tar:bzip2
 
 PLIST_FILES=	bin/picoc

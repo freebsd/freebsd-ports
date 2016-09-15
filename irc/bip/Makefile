@@ -9,16 +9,15 @@ MASTER_SITES=	https://projects.duckcorp.org/attachments/download/61/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-Wno-sign-compare -Wno-error
-USES=	cpe gmake
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
+CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
+USES=		cpe gmake ssl
 CPE_VENDOR=	duckcorp
 INSTALL_TARGET=	SUBDIR=src install-exec
-
-USE_OPENSSL=	yes
 
 PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message
@@ -28,25 +27,22 @@ EXAMPLEFILES=	bip.conf bip.vim
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-install:
-	@cd ${WRKSRC} && ${INSTALL} bip.1 ${STAGEDIR}${PREFIX}/man/man1
-	@cd ${WRKSRC} && ${INSTALL} bipmkpw.1 ${STAGEDIR}${PREFIX}/man/man1
-	@cd ${WRKSRC} && ${INSTALL} bip.conf.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/bip.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bipmkpw.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bip.conf.5 ${STAGEDIR}${PREFIX}/man/man5
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR}  ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EXAMPLEFILES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

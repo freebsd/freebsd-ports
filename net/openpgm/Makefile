@@ -14,6 +14,8 @@ COMMENT=	Implementation of the PGM reliable multicast protocol
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable (google code has gone away)
+
 GNU_CONFIGURE=	yes
 USES=		pathfix perl5 tar:bzip2 libtool python:build
 USE_LDCONFIG=	yes

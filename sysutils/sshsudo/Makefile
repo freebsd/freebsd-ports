@@ -14,6 +14,8 @@ COMMENT=	Bash script to run sudo command on multiple remote computers
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		sshpass>=0:security/sshpass
 

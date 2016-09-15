@@ -12,6 +12,8 @@ COMMENT=	Full-featured Linux BTRFS, Ext4, XFS as a FUSE module
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable (google code has gone away)
+
 BUILD_DEPENDS=	gnubc>0:math/gnubc
 
 USES=		fuse gmake python:build shebangfix

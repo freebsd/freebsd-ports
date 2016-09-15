@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	0.40.0
+PORTVERSION=	0.46.0
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cpe gmake jpeg libtool pathfix pkgconfig tar:xz
+USES=		cpe gmake jpeg libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
@@ -30,8 +30,6 @@ CONFIGURE_ARGS=	--enable-zlib \
 		--disable-gtk-test \
 		--without-html-dir \
 		--disable-static
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
 

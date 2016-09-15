@@ -11,6 +11,8 @@ DISTNAME=	fortune-mod-zh-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic fortune file in Chinese
 
+BROKEN=		Unfetchable (google code has gone away)
+
 RUN_DEPENDS=	autob5:chinese/autoconvert
 
 PROJECTHOST=	chinese-fortune

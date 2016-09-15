@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2012-12-31 14:14:19 UTC
++++ Makefile.am
+@@ -18,7 +18,6 @@ im_hangul_la_CFLAGS = \
+ 	-DG_DISABLE_DEPRECATED                          \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED                 \
+ 	-DGDK_DISABLE_DEPRECATED                        \
+-	-DGTK_DISABLE_DEPRECATED                        \
+ 	$(GTK_CFLAGS)					\
+ 	$(LIBHANGUL_CFLAGS)
+ 

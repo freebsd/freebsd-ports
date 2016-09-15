@@ -35,5 +35,5 @@ sbin/snscan
 sbin/snsend
 sbin/snsplit
 sbin/snstore
-@exec /bin/mkdir /var/spool/news
-@unexec rmdir /var/spool/news 2>/dev/null ||( echo "===>  If you don't plan to use them later, you can safely remove /var/spool/news. Deinstall process kept these files intact:" | fmt && for i in $(find /var/spool/news -type f); do echo "    - $i"; done)
+@dir /var/spool/news
+@postunexec [ ! -d /var/spool/news ] || ( echo "===>  If you don't plan to use them later, you can safely remove /var/spool/news. Deinstall process kept these files intact:" | fmt && for i in $(find /var/spool/news -type f); do echo "    - $i"; done)

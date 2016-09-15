@@ -5,14 +5,13 @@ PORTNAME=	nspr
 PORTVERSION=	4.7.6
 PORTREVISION=	1
 CATEGORIES=	devel linux
-MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Netscape Portable Runtime (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-nspr-[0-9]*
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.fc10.1

@@ -20,8 +20,7 @@ DISTINFO_FILE=		${MASTERDIR}/distinfo.i386
 
 RESTRICTED=		Packaging prohibited by Oracle license
 
-USES=			zip
-USE_LINUX=		yes
+USES=			linux zip
 USE_LINUX_PREFIX=	yes
 
 ORACLEVERSION=		10.2.0.3

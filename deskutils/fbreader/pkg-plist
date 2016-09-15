@@ -124,7 +124,8 @@ share/zlibrary/encodings/KOI8-R
 share/zlibrary/encodings/windows-1251
 share/zlibrary/encodings/windows-1252
 share/zlibrary/hyphenationPatterns.zip
-share/zlibrary/keynames-qt4.xml
+%%GTK2%%share/zlibrary/keynames-gtk.xml
+%%QT4%%share/zlibrary/keynames-qt4.xml
 share/zlibrary/languagePatterns.zip
 share/zlibrary/resources/ar.xml
 share/zlibrary/resources/bg.xml

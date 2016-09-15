@@ -3,101 +3,89 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 linux
-MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+BIN_DISTFILES=	libICE-1.0.4-4.fc10${EXTRACT_SUFX} \
+		libFS-1.0.1-2.fc10${EXTRACT_SUFX} \
+		libSM-1.1.0-2.fc10${EXTRACT_SUFX} \
+		libX11-1.1.5-4.fc10${EXTRACT_SUFX} \
+		libXScrnSaver-1.1.3-1.fc10${EXTRACT_SUFX} \
+		libXTrap-1.0.0-6.fc10${EXTRACT_SUFX} \
+		libXau-1.0.4-1.fc10${EXTRACT_SUFX} \
+		libXaw-1.0.4-3.fc10${EXTRACT_SUFX} \
+		libXcomposite-0.4.0-5.fc10${EXTRACT_SUFX} \
+		libXcursor-1.1.9-3.fc10${EXTRACT_SUFX} \
+		libXdamage-1.1.1-4.fc9${EXTRACT_SUFX} \
+		libXdmcp-1.0.2-6.fc10${EXTRACT_SUFX} \
+		libXevie-1.0.2-4.fc10${EXTRACT_SUFX} \
+		libXext-1.0.4-1.fc9${EXTRACT_SUFX} \
+		libXfixes-4.0.3-4.fc10${EXTRACT_SUFX} \
+		libXfont-1.3.3-1.fc10${EXTRACT_SUFX} \
+		libXft-2.1.13-1.fc10${EXTRACT_SUFX} \
+		libXi-1.1.3-4.fc9${EXTRACT_SUFX} \
+		libXinerama-1.0.3-2.fc10${EXTRACT_SUFX} \
+		libXmu-1.0.4-1.fc9${EXTRACT_SUFX} \
+		libXp-1.0.0-11.fc9${EXTRACT_SUFX} \
+		libXpm-3.5.7-4.fc9${EXTRACT_SUFX} \
+		libXrandr-1.2.3-1.fc10${EXTRACT_SUFX} \
+		libXrender-0.9.4-3.fc9${EXTRACT_SUFX} \
+		libXres-1.0.3-5.fc10${EXTRACT_SUFX} \
+		libXt-1.0.5-1.fc10${EXTRACT_SUFX} \
+		libXtst-1.0.3-3.fc9${EXTRACT_SUFX} \
+		libXv-1.0.4-1.fc10${EXTRACT_SUFX} \
+		libXvMC-1.0.4-5.fc10${EXTRACT_SUFX} \
+		libXxf86dga-1.0.2-3.fc10${EXTRACT_SUFX} \
+		libXxf86misc-1.0.1-6.fc10${EXTRACT_SUFX} \
+		libXxf86vm-1.0.2-1.fc10${EXTRACT_SUFX} \
+		libfontenc-1.0.4-6.fc10${EXTRACT_SUFX} \
+		libxcb-1.1.91-5.fc10${EXTRACT_SUFX} \
+		libxkbfile-1.0.4-5.fc9${EXTRACT_SUFX} \
+		mesa-libGLw-6.5.1-5.fc9${EXTRACT_SUFX}
+SRC_DISTFILES=	libICE-1.0.4-4.fc10.src.rpm:SOURCE \
+		libFS-1.0.1-2.fc10.src.rpm:SOURCE \
+		libSM-1.1.0-2.fc10.src.rpm:SOURCE \
+		libX11-1.1.5-4.fc10.src.rpm:SOURCE \
+		libXScrnSaver-1.1.3-1.fc10.src.rpm:SOURCE \
+		libXTrap-1.0.0-6.fc10.src.rpm:SOURCE \
+		libXau-1.0.4-1.fc10.src.rpm:SOURCE \
+		libXaw-1.0.4-3.fc10.src.rpm:SOURCE \
+		libXcomposite-0.4.0-5.fc10.src.rpm:SOURCE \
+		libXcursor-1.1.9-3.fc10.src.rpm:SOURCE \
+		libXdamage-1.1.1-4.fc9.src.rpm:SOURCE \
+		libXdmcp-1.0.2-6.fc10.src.rpm:SOURCE \
+		libXevie-1.0.2-4.fc10.src.rpm:SOURCE \
+		libXext-1.0.4-1.fc9.src.rpm:SOURCE \
+		libXfixes-4.0.3-4.fc10.src.rpm:SOURCE \
+		libXfont-1.3.3-1.fc10.src.rpm:SOURCE \
+		libXft-2.1.13-1.fc10.src.rpm:SOURCE \
+		libXi-1.1.3-4.fc9.src.rpm:SOURCE \
+		libXinerama-1.0.3-2.fc10.src.rpm:SOURCE \
+		libXmu-1.0.4-1.fc9.src.rpm:SOURCE \
+		libXp-1.0.0-11.fc9.src.rpm:SOURCE \
+		libXpm-3.5.7-4.fc9.src.rpm:SOURCE \
+		libXrandr-1.2.3-1.fc10.src.rpm:SOURCE \
+		libXrender-0.9.4-3.fc9.src.rpm:SOURCE \
+		libXres-1.0.3-5.fc10.src.rpm:SOURCE \
+		libXt-1.0.5-1.fc10.src.rpm:SOURCE \
+		libXtst-1.0.3-3.fc9.src.rpm:SOURCE \
+		libXv-1.0.4-1.fc10.src.rpm:SOURCE \
+		libXvMC-1.0.4-5.fc10.src.rpm:SOURCE \
+		libXxf86dga-1.0.2-3.fc10.src.rpm:SOURCE \
+		libXxf86misc-1.0.1-6.fc10.src.rpm:SOURCE \
+		libXxf86vm-1.0.2-1.fc10.src.rpm:SOURCE \
+		libfontenc-1.0.4-6.fc10.src.rpm:SOURCE \
+		libxcb-1.1.91-5.fc10.src.rpm:SOURCE \
+		libxkbfile-1.0.4-5.fc9.src.rpm:SOURCE \
+		mesa-libGLw-6.5.1-5.fc9.src.rpm:SOURCE
 
-DISTFILES=	libICE-1.0.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		libFS-1.0.1-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libSM-1.1.0-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libX11-1.1.5-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXScrnSaver-1.1.3-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXTrap-1.0.0-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXau-1.0.4-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXaw-1.0.4-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXcomposite-0.4.0-5.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXcursor-1.1.9-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXdamage-1.1.1-4.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXdmcp-1.0.2-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXevie-1.0.2-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXext-1.0.4-1.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXfixes-4.0.3-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXfont-1.3.3-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXft-2.1.13-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXi-1.1.3-4.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXinerama-1.0.3-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXmu-1.0.4-1.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXp-1.0.0-11.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXpm-3.5.7-4.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXrandr-1.2.3-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXrender-0.9.4-3.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXres-1.0.3-5.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXt-1.0.5-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXtst-1.0.3-3.fc9.${LINUX_RPM_ARCH}.rpm \
-		libXv-1.0.4-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXvMC-1.0.4-5.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXxf86dga-1.0.2-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXxf86misc-1.0.1-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		libXxf86vm-1.0.2-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libfontenc-1.0.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		libxcb-1.1.91-5.fc10.${LINUX_RPM_ARCH}.rpm \
-		libxkbfile-1.0.4-5.fc9.${LINUX_RPM_ARCH}.rpm \
-		mesa-libGLw-6.5.1-5.fc9.${LINUX_RPM_ARCH}.rpm
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Xorg libraries (Linux Fedora 10)
 
-.if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	libICE-1.0.4-4.fc10.src.rpm \
-		libFS-1.0.1-2.fc10.src.rpm \
-		libSM-1.1.0-2.fc10.src.rpm \
-		libX11-1.1.5-4.fc10.src.rpm \
-		libXScrnSaver-1.1.3-1.fc10.src.rpm \
-		libXTrap-1.0.0-6.fc10.src.rpm \
-		libXau-1.0.4-1.fc10.src.rpm \
-		libXaw-1.0.4-3.fc10.src.rpm \
-		libXcomposite-0.4.0-5.fc10.src.rpm \
-		libXcursor-1.1.9-3.fc10.src.rpm \
-		libXdamage-1.1.1-4.fc9.src.rpm \
-		libXdmcp-1.0.2-6.fc10.src.rpm \
-		libXevie-1.0.2-4.fc10.src.rpm \
-		libXext-1.0.4-1.fc9.src.rpm \
-		libXfixes-4.0.3-4.fc10.src.rpm \
-		libXfont-1.3.3-1.fc10.src.rpm \
-		libXft-2.1.13-1.fc10.src.rpm \
-		libXi-1.1.3-4.fc9.src.rpm \
-		libXinerama-1.0.3-2.fc10.src.rpm \
-		libXmu-1.0.4-1.fc9.src.rpm \
-		libXp-1.0.0-11.fc9.src.rpm \
-		libXpm-3.5.7-4.fc9.src.rpm \
-		libXrandr-1.2.3-1.fc10.src.rpm \
-		libXrender-0.9.4-3.fc9.src.rpm \
-		libXres-1.0.3-5.fc10.src.rpm \
-		libXt-1.0.5-1.fc10.src.rpm \
-		libXtst-1.0.3-3.fc9.src.rpm \
-		libXv-1.0.4-1.fc10.src.rpm \
-		libXvMC-1.0.4-5.fc10.src.rpm \
-		libXxf86dga-1.0.2-3.fc10.src.rpm \
-		libXxf86misc-1.0.1-6.fc10.src.rpm \
-		libXxf86vm-1.0.2-1.fc10.src.rpm \
-		libfontenc-1.0.4-6.fc10.src.rpm \
-		libxcb-1.1.91-5.fc10.src.rpm \
-		libxkbfile-1.0.4-5.fc9.src.rpm \
-		mesa-libGLw-6.5.1-5.fc9.src.rpm
+CONFLICTS=	linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
 
-ALWAYS_KEEP_DISTFILES=	YES
-.endif
-
-CONFLICTS=		linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
-
-MAINTAINER=		emulation@FreeBSD.org
-COMMENT=		Xorg libraries (Linux Fedora 10)
-
-USE_LINUX=	f10
-USE_LINUX_RPM=		yes
-USE_LINUX_APPS=		fontconfig
-
-USE_LDCONFIG=		yes
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d
-	@${INSTALL_DATA} ${FILESDIR}/xorg-x11-i386.conf ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d
+USES=		linux:f10
+USE_LDCONFIG=	yes
+USE_LINUX=	fontconfig
+USE_LINUX_RPM=	nolib
 
 .include <bsd.port.mk>

@@ -11,12 +11,10 @@ COMMENT=	Linux psproc binaries (Linux Fedora 10)
 
 CONFLICTS=	linux-procps-[0-9]*
 
-USE_LINUX=	f10
+USES=		linux:f10
 USE_LINUX_RPM=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 RPMVERSION=	21.fc10
 USE_LDCONFIG=	yes
-BRANDELF_DIRS=	bin sbin usr/bin
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 PROCFS=	/compat/linux/proc
