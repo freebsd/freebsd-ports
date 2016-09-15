@@ -1,0 +1,4 @@
+lib/gtk-2.0/immodules/im-hangul.so
+%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul.mo
+@postexec %D/bin/gtk-query-immodules-2.0 --update-cache
+@postunexec %D/bin/gtk-query-immodules-2.0 --update-cache
