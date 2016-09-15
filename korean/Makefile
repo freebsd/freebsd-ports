@@ -19,7 +19,8 @@
     SUBDIR += hpscat
     SUBDIR += hunspell
     SUBDIR += ibus-hangul
-    SUBDIR += imhangul
+    SUBDIR += imhangul-gtk2
+    SUBDIR += imhangul-gtk3
     SUBDIR += kaistfonts
     SUBDIR += kde4-l10n
     SUBDIR += ko.TeX

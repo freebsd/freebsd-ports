@@ -2,37 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	imhangul
-PORTVERSION=	${GTKVER:R}.1.1
-PORTREVISION=	3
+PORTVERSION=	2.1.1
 CATEGORIES=	korean
+PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	GTK+ Hangul input module
+COMMENT=	Hangul input module for GTK+ 2.0
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhangul.so:korean/libhangul
+LIB_DEPENDS=	libhangul.so:korean/libhangul \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+
+CONFLICTS_INSTALL=	ko-imhangul-[0-2].*
 
 GH_ACCOUNT=	choehwanjin
+GH_TAGNAME=	d2f555d
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	GTKVER=${GTKVER}
-USE_GNOME=	cairo gdkpixbuf2 gtk${GTKVER:S|.||}
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USES=		autoreconf gmake libtool pkgconfig
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	GTK3
-OPTIONS_SINGLE=	GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
 OPTIONS_SUB=	yes
-GTK_DESC=	Select GTK+ version
-GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2
-GTK2_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
-GTK2_VARS=	GH_TAGNAME=d2f555d GTKVER=2.0
-GTK3_VARS=	GH_TAGNAME=85f6d10 GTKVER=3.0
 NLS_USES=	gettext localbase
 
 post-patch-NLS-off:

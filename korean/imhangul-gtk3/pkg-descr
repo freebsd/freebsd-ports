@@ -1,0 +1,7 @@
+Hangul Input Module for GTK+ 3.0
+
+Input method of GTK+ 3.0 widget. To select this modules, click
+right button in gtk30 text widget and select "Input Methods" -
+"Hangul" (not KSC5601).
+
+WWW: http://code.google.com/p/imhangul/
