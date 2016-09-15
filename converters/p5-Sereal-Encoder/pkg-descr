@@ -1,6 +1,7 @@
 This library implements an efficient, compact-output, and feature-rich
 serializer using a binary protocol called Sereal.  Its sister module
-Sereal::Decoder implements a decoder for this format.  The two are
-released separately to allow for independent and safer upgrading.
+Sereal::Decoder (converts/p5-Sereal-Decoder) implements a decoder for
+this format.  The two are released separately to allow for independent
+and safer upgrading.
 
-WWW: http://search.cpan.org/dist/Sereal-Encoder/
+WWW: https://metacpan.org/pod/Sereal::Encoder
