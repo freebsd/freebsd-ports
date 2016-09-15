@@ -1,6 +1,6 @@
---- configure.orig	2016-08-01 16:28:00 UTC
+--- configure.orig	2016-09-12 15:45:43 UTC
 +++ configure
-@@ -21947,7 +21947,7 @@ then
+@@ -21949,7 +21949,7 @@ then
  $as_echo "$ac_cv_ps_command" >&6; }
  
  elif ps -axwwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
