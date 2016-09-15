@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
-BROKEN_powerpc64=	Does not build
-
 USES=		libtool
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

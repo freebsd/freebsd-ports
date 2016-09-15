@@ -14,8 +14,6 @@ COMMENT=	GAP is a system for computational discrete algebra
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-BROKEN_powerpc64=	Does not build
-
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	configure \
 		pkg/GAPDoc-*/*/clean \

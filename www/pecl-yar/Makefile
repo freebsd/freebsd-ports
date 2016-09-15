@@ -14,8 +14,6 @@ COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
 
 LICENSE=	PHP301
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	json:build curl:build
 IGNORE_WITH_PHP=	70

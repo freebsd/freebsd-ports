@@ -16,8 +16,6 @@ COMMENT=	Replacement for the standard PHP serializer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	does not build
-
 IGNORE_WITH_PHP=70
 USES=		php:ext tar:tgz
 

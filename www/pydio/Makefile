@@ -11,8 +11,6 @@ COMMENT=	Ajax web file management system
 
 LICENSE=	AGPLv3
 
-BROKEN_powerpc64=	Does not build
-
 PORTSCOUT=	limitw:1,even
 
 NO_BUILD=	yes

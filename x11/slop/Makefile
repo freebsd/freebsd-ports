@@ -10,8 +10,6 @@ COMMENT=	Make a screen selection and print the selection coordinates to stdout
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
 

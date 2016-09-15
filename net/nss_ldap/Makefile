@@ -14,8 +14,6 @@ COMMENT=	RFC 2307 NSS module
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 NSS_LDAP_VERSION=265
 
 USES=		autoreconf gmake perl5

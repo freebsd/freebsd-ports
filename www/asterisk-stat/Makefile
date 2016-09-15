@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	ASTERISK call detail records analyzer
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_BUILD=	yes

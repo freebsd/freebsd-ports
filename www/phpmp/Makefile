@@ -12,8 +12,6 @@ COMMENT=	Web interface for music player daemon
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 NO_BUILD=	yes
 USE_PHP=	pcre sockets
 

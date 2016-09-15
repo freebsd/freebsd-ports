@@ -10,8 +10,6 @@ MASTER_SITES=	SF/phpcollab/final/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHPcollab is project management and collaboration over the internet
 
-BROKEN_powerpc64=	Does not build
-
 USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

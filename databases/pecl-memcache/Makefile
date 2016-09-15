@@ -15,8 +15,6 @@ COMMENT=	Memcached extension
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	does not build
-
 OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr

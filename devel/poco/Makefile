@@ -12,8 +12,6 @@ COMMENT=	C++ libraries with a network/internet focus
 
 LICENSE=	BSL
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 

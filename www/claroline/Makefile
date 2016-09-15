@@ -12,8 +12,6 @@ COMMENT=	Open Source eLearning and eWorking platform
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 USES=		cpe
 
 NO_BUILD=	yes

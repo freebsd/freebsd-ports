@@ -11,8 +11,6 @@ COMMENT=	Web picture gallery script
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
-
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK
 IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 

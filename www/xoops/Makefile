@@ -12,8 +12,6 @@ COMMENT=	Dynamic Web CMS
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 USE_PHP=	mysqli filter mbstring iconv xml zlib gd exif
 
 USES=		cpe

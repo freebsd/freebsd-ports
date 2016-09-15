@@ -12,8 +12,6 @@ COMMENT=	Simple Open Source CMS
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 USE_PHP=	mysql tokenizer gd
 
 NO_BUILD=	yes
