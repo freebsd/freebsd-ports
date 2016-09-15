@@ -7,8 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
-DISTFILES=	${PORTNAME:S/c/C/}${PORTVERSION}${EXTRACT_SUFX} \
-		${CSOUND_DOCS:S/$/:manual/}
+DISTFILES=	${PORTNAME:S/c/C/}${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	csound
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,19 +22,6 @@ BUILD_DEPENDS=	swig13>0:devel/swig13 \
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 PORTSCOUT=	limit:^5\.
-
-OPTIONS_DEFINE=	ALSA PNG DSSI FLTK FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO DOCS
-OPTIONS_DEFAULT=FLTK
-OPTIONS_SUB=	yes
-ALSA_DESC=	Build ALSA I/O module
-PNG_DESC=	Build image opcodes
-DSSI_DESC=	Build DSSI/LADSPA host opcodes
-FLUIDSYNTH_DESC=Building FluidSynth opcodes
-JACK_DESC=	Build Jack I/O module and opcodes
-OSC_DESC=	Build OSC opcodes
-PORTAUDIO_DESC=	Build the PortAudio I/O module
-PULSEAUDIO_DESC=Build the PulseAudio I/O module
-FLTK_DESC=	Build FLTK plugin and GUI
 
 CONFLICTS_INSTALL=	outguess-* csound6
 
@@ -58,78 +44,62 @@ LINKFLAGS=	# empty
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	ALSA PNG DSSI FLTK FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO DOCS
+OPTIONS_DEFAULT=FLTK
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
-MAKE_ARGS+=	useALSA=1
-ALSA_H=		alsa/asoundlib.h
-.else
-MAKE_ARGS+=	useALSA=0
-ALSA_H=		##alsa/asoundlib.h##
-.endif
+ALSA_DESC=		ALSA I/O module
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_MAKE_ARGS=		useALSA=1
+ALSA_MAKE_ARGS_OFF=	useALSA=0
+ALSA_VARS=		ALSA_H=alsa/asoundlib.h
+ALSA_VARS_OFF=		ALSA_H=##alsa/asoundlib.h##
 
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:graphics/png
-MAKE_ARGS+=	buildImageOpcodes=1
-.else
-MAKE_ARGS+=	buildImageOpcodes=0
-.endif
+PNG_DESC=		Image opcodes
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_MAKE_ARGS=		buildImageOpcodes=1
+PNG_MAKE_ARGS_OFF=	buildImageOpcodes=0
 
-.if ${PORT_OPTIONS:MDSSI}
-BUILD_DEPENDS+=	dssi>=0:audio/dssi
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
-RUN_DEPENDS+=	dssi>=0:audio/dssi
-MAKE_ARGS+=	buildDSSI=1
-.else
-MAKE_ARGS+=	buildDSSI=0
-.endif
+DSSI_DESC=		DSSI/LADSPA host opcodes
+DSSI_BUILD_DEPENDS=	dssi>=0:audio/dssi
+DSSI_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+DSSI_RUN_DEPENDS=	dssi>=0:audio/dssi
+DSSI_MAKE_ARGS=		buildDSSI=1
+DSSI_MAKE_ARGS_OFF=	buildDSSI=0
 
-.if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_H=	fluidsynth.h
-.else
-FLUIDSYNTH_H=	##fluidsynth.h##
-.endif
+FLUIDSYNTH_DESC=	FluidSynth opcodes
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_VARS=	FLUIDSYNTH_H=fluidsynth.h
+FLUIDSYNTH_VARS_OFF=	FLUIDSYNTH_H=##fluidsynth.h##
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:audio/jack
-MAKE_ARGS+=	useJack=1
-.else
-MAKE_ARGS+=	useJack=0
-.endif
+JACK_DESC=		Jack I/O module and opcodes
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_MAKE_ARGS=		useJack=1
+JACK_MAKE_ARGS_OFF=	useJack=0
 
-.if ${PORT_OPTIONS:MOSC}
-LIB_DEPENDS+=	liblo.so:audio/liblo
-MAKE_ARGS+=	useOSC=1
-.else
-MAKE_ARGS+=	useOSC=0
-.endif
+OSC_DESC=		OSC opcodes
+OSC_LIB_DEPENDS=	liblo.so:audio/liblo
+OSC_MAKE_ARGS=		useOSC=1
+OSC_MAKE_ARGS_OFF=	useOSC=0
 
-.if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:audio/portaudio
-MAKE_ARGS+=	usePortAudio=1
-.else
-MAKE_ARGS+=	usePortAudio=0
-.endif
+PORTAUDIO_DESC=		PortAudio I/O module
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+PORTAUDIO_MAKE_ARGS=	usePortAudio=1
+PORTAUDIO_MAKE_ARGS_OFF=usePortAudio=0
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse-simple.so:audio/pulseaudio
-PULSEAUDIO_H=	pulse/simple.h
-.else
-PULSEAUDIO_H=	##pulse/simple.h##
-.endif
+PULSEAUDIO_DESC=	PulseAudio I/O module
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
+PULSEAUDIO_VARS=	PULSEAUDIO_H=pulse/simple.h
+PULSEAUDIO_VARS_OFF=	PULSEAUDIO_H=##pulse/simple.h##
 
-.if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	libfltk.so:x11-toolkits/fltk
-MAKE_ARGS+=	buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
-.else
-MAKE_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
-.endif
+FLTK_DESC=		FLTK plugin and GUI
+FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+FLTK_MAKE_ARGS=		buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
+FLTK_MAKE_ARGS_OFF=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
 
-.if ${PORT_OPTIONS:MDOCS}
-CSOUND_DOCS=	Csound${PORTVERSION:R}_manual_html.zip
-.endif
+DOCS_DISTFILES=		Csound${PORTVERSION:R}_manual_html.zip:manual
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
 MAKE_ARGS+=	Word64=1
@@ -193,4 +163,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
