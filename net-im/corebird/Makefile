@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -26,23 +26,23 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=		GSTREAMER
-OPTIONS_DEFAULT=	GSTREAMER
-GSTREAMER_USE=	gstreamer1=yes,bad,good,gtksink,libav,x,ximagesrc
+OPTIONS_DEFINE=			GSTREAMER
+OPTIONS_DEFAULT=		GSTREAMER
+GSTREAMER_USE=			gstreamer1=yes,bad,good,gtksink,hls,libav,x,ximagesrc
 GSTREAMER_CONFIGURE_OFF=	--disable-video
 
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml
 
 post-extract:
-	cd ${WRKSRC}/data && ${MV} org.baedert.corebird.desktop.in \
-		corebird.desktop.in
+	@(cd ${WRKSRC}/data && ${MV} org.baedert.corebird.desktop.in \
+		corebird.desktop.in)
 
 pre-configure:
-	${MKDIR} ${WRKSRC}/m4
+	@${MKDIR} ${WRKSRC}/m4
 
 # Replace locales files in right place
 post-configure:
-	${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
+	@${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
 		${WRKSRC}/po/Makefile
 
 .include <bsd.port.mk>
