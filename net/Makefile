@@ -422,6 +422,7 @@
     SUBDIR += nanomsg
     SUBDIR += nast
     SUBDIR += nats
+    SUBDIR += nats-streaming-server
     SUBDIR += nats-top
     SUBDIR += nbd-server
     SUBDIR += nc
