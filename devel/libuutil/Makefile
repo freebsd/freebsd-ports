@@ -5,7 +5,7 @@ PORTNAME=	libuutil
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Illumos userland utilities library
 
 LICENSE=	CDDL

@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1199/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml arithmetic library for arbitrary precision integers
 
 LICENSE=	GPLv2
