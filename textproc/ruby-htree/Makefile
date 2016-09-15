@@ -19,7 +19,6 @@ USE_RUBY_RDOC=		yes
 LIB_FILES=	htree.rb htree
 
 DOCS=		README \
-		${RUBY_RD_HTML_FILES} \
 		doc
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	*
@@ -34,6 +33,8 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	cd ${INSTALL_WRKSRC}; ${CP} -R ${LIB_FILES} ${STAGEDIR}${RUBY_SITELIBDIR}/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
