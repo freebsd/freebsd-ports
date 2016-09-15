@@ -1,0 +1,12 @@
+This class provides methods to validate:
+	- ISBN (International Standard Book Number)
+	- ISSN (International Standard Serial Number)
+	- ISMN (International Standard Music Number)
+	- ISRC (International Standard Recording Code)
+	- EAN/UCC-8 number
+	- EAN/UCC-13 number
+	- EAN/UCC-14 number
+	- UCC-12 (U.P.C.) ID number
+	- SSCC (Serial Shipping Container Code)
+
+WWW: http://pear.php.net/package/Validate_ISPN
