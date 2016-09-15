@@ -1147,6 +1147,7 @@
     SUBDIR += pear-Symfony_Component_Yaml
     SUBDIR += pear-Text_Highlighter
     SUBDIR += pear-Text_Template
+    SUBDIR += pear-Validate_ISPN
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_DTD
     SUBDIR += pear-XML_Feed_Parser
