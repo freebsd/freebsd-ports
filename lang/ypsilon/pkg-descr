@@ -3,4 +3,5 @@ applications, which conforms to the latest standard R^6RS.
 Ypsilon features mostly concurrent garbage collector optimized for systems
 with multiple CPUs, and an easy to use FFI.
 
-WWW: http://code.google.com/p/ypsilon/
+WWW: http://www.littlewingpinball.net/mediawiki/index.php/Ypsilon
+WWW: https://github.com/fujita-y/ypsilon
