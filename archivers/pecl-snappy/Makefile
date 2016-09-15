@@ -18,7 +18,6 @@ GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-snappy
 PHP_MODNAME=	snappy
 CONFIGURE_ARGS=	--with-snappy-includedir=${LOCALBASE}/include
-WRKSRC=		${WRKDIR}/php-ext-snappy-${PORTVERSION}
 
 do-test:
 	(cd ${WRKSRC} && ${DO_MAKE_BUILD} NO_INTERACTION=yes test < /dev/null)
