@@ -204,4 +204,4 @@ WIIMOTEDEV_CMAKE_OFF=	-DENABLE_WIIMOTEDEV=OFF
 CXXFLAGS+=	-Wno-undefined-var-template
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
