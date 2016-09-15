@@ -8,4 +8,4 @@ over 30,000 source files and whose other build systems (including one built
 from custom non-recursive Makefiles) can take ten seconds to start building
 after changing one file. Ninja is under a second.
 
-WWW: https://github.com/martine/ninja
+WWW: https://ninja-build.org/
