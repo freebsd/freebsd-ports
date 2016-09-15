@@ -3,6 +3,7 @@
 
 PORTNAME=	mp3tag
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	LOCAL/sunpoet/ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,11 +22,6 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 
-RUBY_RD_FILES=	mp3tag.rb
-
-DOCS=		README \
-		${RUBY_RD_HTML_FILES}
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(require[[:space:]]+')\./mp3tag(.*),\1mp3tag\2," \
@@ -37,7 +33,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} README ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
