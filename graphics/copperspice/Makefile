@@ -2,22 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	copperspice
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern cross-platform C++ GUI library (derived from Qt 4.8)
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	fc-cache:x11-fonts/fontconfig
 LIB_DEPENDS=	libaudio.so:audio/nas \
-		libfreetype.so:print/freetype2
+		libdrm.so:graphics/libdrm \
+		libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi \
+		libfreetype.so:print/freetype2 \
+		libglapi.so:graphics/libglapi \
+		libgstbase-0.10.so:multimedia/gstreamer \
+		libgstreamer-0.10.so:multimedia/gstreamer \
+		libpcre.so:devel/pcre \
+		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		compiler:c++11-lib gmake iconv libtool pkgconfig tar:bz2
-USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr
-USE_GNOME=	glib20
+USES=		compiler:c++11-lib gettext-runtime gmake iconv libtool \
+		pkgconfig tar:bz2
+USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xi \
+		xinerama xrandr xrender xt xxf86vm
+USE_GNOME=	glib20 libxml2
 USE_GL=		gl
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
@@ -34,14 +43,16 @@ OVERRIDE_INS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL="${INSTALL}"
 CONFIGURE_ARGS=	${OVERRIDE_INS}
 MAKE_ARGS=	${OVERRIDE_INS}
-PLIST_SUB=	SHORT_VER=0 LONG_VER=0.0.0
-
-WITH_OPENSSL_PORT=	yes
+PLIST_SUB=	LONG_VER=1.3
 
 BROKEN_FreeBSD_9=	PR 193528 (c++11 support is broken)
 BROKEN_i386=		qx11embed_x11.cpp:470:20: non-constant-expression\
 			cannot be narrowed from type 'unsigned int' to 'long'\
 			in initializer list [-Wc++11-narrowing]
+
+post-patch:
+	# fix something wrong with v1.3.2 generatior
+	${REINPLACE_CMD} -e '/config.status:/ s/:.*/:/' ${WRKSRC}/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e '/^hardcode_libdir_flag/ \
