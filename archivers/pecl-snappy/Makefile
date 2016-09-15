@@ -2,27 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	php5-snappy
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTVERSION=	0.1.5
 CATEGORIES=	archivers
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	php-snappy
-DISTNAME=	${PROJECTHOST}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
-
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 USES=		php:ext
+USE_GITHUB=	yes
+GH_ACCOUNT=	kjdev
+GH_PROJECT=	php-ext-snappy
 PHP_MODNAME=	snappy
 CONFIGURE_ARGS=	--with-snappy-includedir=${LOCALBASE}/include
-WRKSRC=		${WRKDIR}/${PROJECTHOST}
-IGNORE_WITH_PHP=	70
+WRKSRC=		${WRKDIR}/php-ext-snappy-${PORTVERSION}
 
 do-test:
 	(cd ${WRKSRC} && ${DO_MAKE_BUILD} NO_INTERACTION=yes test < /dev/null)
