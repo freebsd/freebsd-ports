@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.12.0
-PORTREVISION=	1
+PORTVERSION=	4.12.1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	XFCE
+MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -14,16 +13,17 @@ COMMENT=	Xfce 4 settings application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+	libdbus-glib-1.so:devel/dbus-glib \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libxklavier.so:x11/libxklavier
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 cairo intltool intlhack
 USE_XFCE=	garcon libexo
 USE_XORG=	inputproto x11 xcursor xi xrandr
-USES=		libtool pkgconfig gmake gettext-tools xfce tar:bzip2
+USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce
 
 CONFIGURE_ARGS=--enable-debug=yes \
 		--disable-xorg-libinput
