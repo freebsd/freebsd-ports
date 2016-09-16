@@ -60,10 +60,6 @@ EMULATOR=	${MSUBTARGET}
 .endif
 PLIST_SUB=	EMULATOR=${EMULATOR}
 
-.if ${OPSYS} == FreeBSD && ${OSREL:R} == 8
-BROKEN=		will not build on FreeBSD 8.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^\(CC \)|#\1| ; \
