@@ -5,7 +5,6 @@ PORTNAME=	openvsp
 PORTVERSION=	3.9.1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
-MASTER_SITES=	GH
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
