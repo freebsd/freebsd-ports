@@ -5,15 +5,13 @@ PORTNAME=	libkate
 PORTVERSION=	0.4.1
 PORTREVISION=	6
 CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://downloads.xiph.org/releases/kate/
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png
