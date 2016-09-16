@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpexpr
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	math tcl
 MASTER_SITES=	SF
 
@@ -23,8 +23,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CONFIGURE_ENV+=	TCL_INC_DIR=${TCL_INCLUDEDIR} \
 		TCL_LIB_DIR=${TCL_LIBDIR}
 
-PLIST_FILES=	lib/Mpexpr10/libMpexpr10.so \
-		lib/Mpexpr10/pkgIndex.tcl \
+PLIST_FILES=	lib/Mpexpr12/libMpexpr12.so \
+		lib/Mpexpr12/pkgIndex.tcl \
 		man/mann/mpexpr.n.gz
 
 post-patch:
@@ -32,12 +32,12 @@ post-patch:
 	${REINPLACE_CMD} -e '/set VERBOSE/s|0|1|' ${WRKSRC}/../tests/defs
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/Mpexpr10
-	${INSTALL_PROGRAM} ${WRKSRC}/libMpexpr10.so ${STAGEDIR}${PREFIX}/lib/Mpexpr10
-	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Mpexpr10
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/Mpexpr12
+	${INSTALL_PROGRAM} ${WRKSRC}/libMpexpr12.so ${STAGEDIR}${PREFIX}/lib/Mpexpr12
+	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Mpexpr12
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${STAGEDIR}${PREFIX}/man/mann/mpexpr.n
 
-regression-test: build
+do-test: build
 	cd ${WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.mk>
