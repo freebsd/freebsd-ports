@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc geography
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 
