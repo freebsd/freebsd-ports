@@ -6,7 +6,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
 
 LICENSE=	LGPL21
