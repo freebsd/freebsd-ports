@@ -11,6 +11,8 @@ COMMENT=	Fast Expat based Erlang XML parsing library
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		erlang:rebar
