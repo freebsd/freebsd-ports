@@ -3,19 +3,20 @@
 
 PORTNAME=	kissdx
 PORTVERSION=	0.13.10a
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia streaming server for KiSS/Linksys player
 
-LICENSE=	GPLv2
-
-BROKEN_powerpc64=	Does not build
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libdvdread.so:multimedia/libdvdread
+
+BROKEN_powerpc64=	Does not build
 
 USES=		compiler:nestedfct dos2unix iconv jpeg
 MAKE_ENV=	FreeBSD=defined
@@ -45,16 +46,13 @@ pre-build:
 	@${RM} -f ${WRKSRC}/kissdx.o
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} kissdx \
-		${STAGEDIR}${PREFIX}/sbin)
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} kissd-pretrigger kissd-posttrigger \
-		${STAGEDIR}${PREFIX}/sbin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} kissdx.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
-	(cd ${WRKSRC} && ${INSTALL_DATA} kissdx.conf \
-		${STAGEDIR}${PREFIX}/etc)
+	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/kissd-pretrigger ${WRKSRC}/kissd-posttrigger ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/kissdx.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/kissdx.conf ${STAGEDIR}${PREFIX}/etc
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
