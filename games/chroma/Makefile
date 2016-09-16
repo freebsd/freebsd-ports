@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chroma
-PORTVERSION=	1.08
-PORTREVISION=	7
+PORTVERSION=	1.15
 CATEGORIES=	games
 MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,10 +10,11 @@ MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract puzzle game
 
-USES=		tar:bzip2 gettext
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext localbase tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lintl
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -37,8 +37,10 @@ SDL_USE=		SDL=sdl,image
 SDL_PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
 
 .include <bsd.port.mk>
