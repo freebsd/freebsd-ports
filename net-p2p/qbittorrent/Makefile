@@ -11,6 +11,8 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 # ABI versions specified on purpose for libtorrent-rasterbar
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
