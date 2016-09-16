@@ -16,6 +16,8 @@ LICENSE_NAME=	Postcard License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		wrong run depends
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		tar:bzip2
