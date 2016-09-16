@@ -397,6 +397,8 @@
 %%WWWDIR%%/include/classes/screens/CScreenTriggersInfo.php
 %%WWWDIR%%/include/classes/screens/CScreenTriggersOverview.php
 %%WWWDIR%%/include/classes/screens/CScreenUrl.php
+%%WWWDIR%%/include/classes/screens/CScreenDiscovery.php
+%%WWWDIR%%/include/classes/screens/CScreenHttpTest.php
 %%WWWDIR%%/include/classes/server/CZabbixServer.php
 %%WWWDIR%%/include/classes/services/CServicesSlaCalculator.php
 %%WWWDIR%%/include/classes/setup/CFrontendSetup.php
