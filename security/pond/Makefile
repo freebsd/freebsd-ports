@@ -14,6 +14,8 @@ COMMENT=	Forward secure, asynchronous messenger
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		wrong build depends
+
 BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:security/go.crypto \
 		${LOCALBASE}/${GO_LIBDIR}/github.com/golang/protobuf/proto.a:devel/goprotobuf \
 		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:net/go.net
