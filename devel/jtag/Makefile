@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:devel/openwince-include
 
+DEPRECATED=	development ceased 2003, superceded by devel/urjtag
+EXPIRATION_DATE=	2016-12-31
 ONLY_FOR_ARCHS=	i386
 
 USES=		readline tar:bzip2
