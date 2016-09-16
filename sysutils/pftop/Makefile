@@ -3,14 +3,12 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
-
-BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.pre.mk>
 
