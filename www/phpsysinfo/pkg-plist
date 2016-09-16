@@ -73,6 +73,7 @@
 %%WWWDIR%%/gfx/images/Mer.png
 %%WWWDIR%%/gfx/images/Minix.png
 %%WWWDIR%%/gfx/images/Mint.png
+%%WWWDIR%%/gfx/images/NeoKylin.png
 %%WWWDIR%%/gfx/images/NetBSD.png
 %%WWWDIR%%/gfx/images/Netrunner.png
 %%WWWDIR%%/gfx/images/NixOS.png
@@ -124,6 +125,7 @@
 %%WWWDIR%%/gfx/images/Ubuntu.png
 %%WWWDIR%%/gfx/images/UltimateEdition.png
 %%WWWDIR%%/gfx/images/Vector.png
+%%WWWDIR%%/gfx/images/Void.png
 %%WWWDIR%%/gfx/images/VortexBox.png
 %%WWWDIR%%/gfx/images/Win2000.png
 %%WWWDIR%%/gfx/images/Win8.png
@@ -240,7 +242,7 @@
 %%WWWDIR%%/js/phpSysInfo/phpsysinfo.js
 %%WWWDIR%%/js/phpSysInfo/phpsysinfo_bootstrap.js
 %%WWWDIR%%/js/vendor/README
-%%WWWDIR%%/js/vendor/bootstrap.min.js
+%%WWWDIR%%/js/vendor/bootstrap-modal.js
 %%WWWDIR%%/js/vendor/console-shim.js
 %%WWWDIR%%/js/vendor/html5shiv-printshiv.js
 %%WWWDIR%%/js/vendor/respond.js
@@ -322,12 +324,18 @@
 %%WWWDIR%%/plugins/ipmiinfo/lang/pl.xml
 %%WWWDIR%%/plugins/ipmiinfo/lang/ro.xml
 %%WWWDIR%%/plugins/ipmiinfo/lang/ru.xml
+%%WWWDIR%%/plugins/iptables/class.iptables.inc.php
+%%WWWDIR%%/plugins/iptables/iptables_bootstrap.html
+%%WWWDIR%%/plugins/iptables/js/iptables.js
+%%WWWDIR%%/plugins/iptables/js/iptables_bootstrap.js
+%%WWWDIR%%/plugins/iptables/lang/en.xml
 %%WWWDIR%%/plugins/mdstatus/class.mdstatus.inc.php
 %%WWWDIR%%/plugins/mdstatus/css/mdstatus.css
 %%WWWDIR%%/plugins/mdstatus/gfx/error.png
 %%WWWDIR%%/plugins/mdstatus/gfx/harddrivefail.png
 %%WWWDIR%%/plugins/mdstatus/gfx/harddriveok.png
 %%WWWDIR%%/plugins/mdstatus/gfx/harddrivespare.png
+%%WWWDIR%%/plugins/mdstatus/gfx/harddrivewarn.png
 %%WWWDIR%%/plugins/mdstatus/js/mdstatus.js
 %%WWWDIR%%/plugins/mdstatus/js/mdstatus_bootstrap.js
 %%WWWDIR%%/plugins/mdstatus/lang/cz.xml
@@ -477,6 +485,7 @@
 %%WWWDIR%%/sample/distrotest/Mint/13.txt
 %%WWWDIR%%/sample/distrotest/Mint/14.txt
 %%WWWDIR%%/sample/distrotest/Mint/15.txt
+%%WWWDIR%%/sample/distrotest/NeoKylin/6.0.txt
 %%WWWDIR%%/sample/distrotest/Netrunner/13.06-SE.txt
 %%WWWDIR%%/sample/distrotest/Netrunner/13.06.txt
 %%WWWDIR%%/sample/distrotest/Netrunner/2014.04.txt
@@ -546,6 +555,7 @@
 %%WWWDIR%%/sample/distrotest/Ubuntu/13.10.txt
 %%WWWDIR%%/sample/distrotest/UltimateEdition/3.9.txt
 %%WWWDIR%%/sample/distrotest/Vector/647.0.txt
+%%WWWDIR%%/sample/distrotest/Void/1.0-20160420.txt
 %%WWWDIR%%/sample/distrotest/VortexBox/2.2.txt
 %%WWWDIR%%/sample/distrotest/VortexBox/2.3-beta.txt
 %%WWWDIR%%/sample/distrotest/Zenwalk/7.4.txt
@@ -625,6 +635,8 @@
 %%WWWDIR%%/sample/plugin_dmraid/dmraid3.txt
 %%WWWDIR%%/sample/plugin_dmraid/dmraid4.txt
 %%WWWDIR%%/sample/plugin_dmraid/dmraid5.txt
+%%WWWDIR%%/sample/plugin_dmraid/graid1.txt
+%%WWWDIR%%/sample/plugin_dmraid/graid2.txt
 %%WWWDIR%%/sample/plugin_mdstat/README
 %%WWWDIR%%/sample/plugin_mdstat/raid1.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid10.txt
@@ -654,6 +666,7 @@
 %%WWWDIR%%/sample/ups/1-upscPW5110.txt
 %%WWWDIR%%/sample/ups/1-upscl.txt
 %%WWWDIR%%/sample/ups/apcaccess1.txt
+%%WWWDIR%%/sample/ups/pmset.txt
 %%WWWDIR%%/sample/ups/powersoftplus1.txt
 %%WWWDIR%%/templates/aqua.css
 %%WWWDIR%%/templates/aqua/aq_background.gif
@@ -678,6 +691,9 @@
 %%WWWDIR%%/templates/idash/htmlwarn.gif
 %%WWWDIR%%/templates/jstyle_blue.css
 %%WWWDIR%%/templates/jstyle_green.css
+%%WWWDIR%%/templates/lingruby.css
+%%WWWDIR%%/templates/lingruby/background.png
+%%WWWDIR%%/templates/misc/emptyfile.css
 %%WWWDIR%%/templates/nextgen.css
 %%WWWDIR%%/templates/nextgen/nextgen_bg.png
 %%WWWDIR%%/templates/phpsysinfo.css
@@ -687,6 +703,7 @@
 %%WWWDIR%%/templates/plugin/jquery.jgrowl.css
 %%WWWDIR%%/templates/plugin/jquery.treeTable.css
 %%WWWDIR%%/templates/plugin/nyroModal.full.css
+%%WWWDIR%%/templates/schabau.css
 %%WWWDIR%%/templates/two.css
 %%WWWDIR%%/templates/two/gradient.png
 %%WWWDIR%%/templates/vendor/bootstrap.min.css
