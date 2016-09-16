@@ -3,7 +3,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION} \
 		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data
@@ -12,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Wonderful puzzle game
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl mixer image ttf
 USES=		gmake lua:51 pkgconfig
@@ -25,7 +28,7 @@ PLIST_FILES=	bin/fillets man/man6/fillets.6.gz
 PORTDOCS=	*
 PORTDATA=	*
 
-DATAVERSION=	1.0.0
+DATAVERSION=	1.0.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
