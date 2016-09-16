@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libvorbisfile.so:audio/libvorbis \
 		libphysfs.so:devel/physfs \
 		libfreetype.so:print/freetype2 \
-		libtheora.so:multimedia/libtheora
+		libtheora.so:multimedia/libtheora \
+		libogg.so:audio/libogg
 
 USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
 		localbase openal pkgconfig shared-mime-info
