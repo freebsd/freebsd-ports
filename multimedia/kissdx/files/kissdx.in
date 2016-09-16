@@ -6,6 +6,8 @@
 #
 # kissdx_enable="YES" (kissdx="YES" for NetBSD)
 #
+# PROVIDE: kissdx
+#
 
 . /etc/rc.subr
 
