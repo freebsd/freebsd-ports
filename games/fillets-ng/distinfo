@@ -1,4 +1,5 @@
+TIMESTAMP = 1473882451
 SHA256 (fillets-ng-1.0.1.tar.gz) = 329a4d9515d60bebdb657d070824933b993b85864b9d3e302e6361accab992da
 SIZE (fillets-ng-1.0.1.tar.gz) = 380290
-SHA256 (fillets-ng-data-1.0.0.tar.gz) = ad475a60cc96e8f5f55a7b264c390264898f1891b6ff096cc617e24d75dffd45
-SIZE (fillets-ng-data-1.0.0.tar.gz) = 146418413
+SHA256 (fillets-ng-data-1.0.1.tar.gz) = f0c979fb35ec550a43246fc209add8f45ca550a382c94d6383bb3f01b1073799
+SIZE (fillets-ng-data-1.0.1.tar.gz) = 146419397
