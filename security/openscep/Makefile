@@ -12,15 +12,14 @@ COMMENT=	Open source scep server
 
 CONFLICTS_INSTALL=	nss-3.*
 
-USES=		gmake libtool
-USE_OPENSSL=	yes
+USES=		gmake libtool ssl
 USE_OPENLDAP=	yes
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include
+LIBS+=		-L${OPENSSLLIB} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 		--with-cgi-install-dir="${PREFIX}/www/cgi-bin/openscep" \
 		--with-openscep-dir="${PREFIX}/etc/openscep" \
@@ -31,6 +30,12 @@ LOCAL_CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
 
 SUB_FILES=	pkg-message
 SUB_LIST=	CONF_DIR="${CONF_DIR}" CONF_FILES="${LOCAL_CONF_FILES}"
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Detected LibreSSL (unknown ASN1 functions)
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^subdirs=/ s|libltdl||' ${WRKSRC}/configure
@@ -59,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ldap/${f} ${STAGEDIR}${CONF_DIR}/${f}.sample
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
