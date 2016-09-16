@@ -7,6 +7,7 @@ share/applications/manaplustest.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/de/LC_MESSAGES/manaplus.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/es/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/manaplus.mo
@@ -58,6 +59,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/flags/cz.png
 %%DATADIR%%/data/graphics/flags/de.png
 %%DATADIR%%/data/graphics/flags/en.png
+%%DATADIR%%/data/graphics/flags/eo.png
 %%DATADIR%%/data/graphics/flags/es.png
 %%DATADIR%%/data/graphics/flags/fi.png
 %%DATADIR%%/data/graphics/flags/fr.png
@@ -242,6 +244,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/icons/manaplus.png
 %%DATADIR%%/data/icons/manaplus.svg
 %%DATADIR%%/data/icons/manaplus.xpm
+%%DATADIR%%/data/music/keprohm.ogg
 %%DATADIR%%/data/perserver/default/charcreation.xml
 %%DATADIR%%/data/perserver/default/chatcommands.txt
 %%DATADIR%%/data/perserver/default/deadmessages.xml
