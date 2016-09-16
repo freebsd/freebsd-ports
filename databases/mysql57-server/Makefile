@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.7.13
-PORTREVISION?=	1
+PORTVERSION=	5.7.15
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
@@ -55,7 +55,8 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_EDITLINE=system \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
-		-DWITH_ZLIB=system
+		-DWITH_ZLIB=system \
+		-DINSTALL_MYSQLTESTDIR=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -128,14 +129,18 @@ PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ### Just for the sake of FreeBSD 9.X ###
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 .  if !defined(CLIENT_ONLY)
 EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
 .  endif
+### Just like deperecated `WITH_OPENSSL_PORT=yes` a workaround for building on 9.X ###
+DEFAULT_VERSIONS+=ssl=openssl
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_9=	FreeBSD 9.x requires SSL from ports
