@@ -1,8 +1,8 @@
---- Makefile.orig	Sun Feb 27 14:54:47 2005
-+++ Makefile	Wed Mar  2 00:22:17 2005
+--- Makefile.orig	2009-01-11 18:15:02 UTC
++++ Makefile
 @@ -1,9 +1,9 @@
  PKGNAME = gkrellweather
- VERSION = 2.0.7
+ VERSION = 2.0.8
 -CFLAGS = -O2 -std=gnu99 -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
 +CFLAGS += -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
  LIBS = `pkg-config gtk+-2.0 --libs`
@@ -12,7 +12,7 @@
  
  LOCALEDIR := $(PREFIX)/share/locale
  
-@@ -14,13 +14,13 @@
+@@ -14,13 +14,13 @@ endif
  CFLAGS += -DPACKAGE="\"$(PKGNAME)\""
  export PKGNAME LOCALEDIR
  
