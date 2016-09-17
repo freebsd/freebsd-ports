@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RUBY_RDOC=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E \
