@@ -2,12 +2,12 @@
 
 PORTNAME=	phantomjs
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ariya/phantomjs/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 
 LICENSE=	BSD3CLAUSE
@@ -29,16 +29,19 @@ PLIST_FILES=	bin/phantomjs
 #PATCH_DEBUG=	yes
 NO_CCACHE=	yes
 
+USE_XORG=	x11
+
+# Hack for FreeBSD 9. Without it mysteriously switches from 
+# clang++ to c++ which ends in build failure.
+CC=clang
+CXX=clang++
+
 # NOTE:
 #   build.sh --qtwebkit=system requires Qt 5.3.x.  We cannot use it.
 
 # qmake.conf detection is in src/qt/qtbase/configure script.
 SPEC=	${WRKSRC}/src/qt/qtbase/mkspecs
 post-extract:
-	cd ${SPEC} && ${CP} -r freebsd-g++46 freebsd-g++48
-	cd ${SPEC} && ${CP} -r freebsd-g++46 freebsd-g++49
-	cd ${SPEC} && ${REINPLACE_CMD} -e 's|46|48|' freebsd-g++48/qmake.conf
-	cd ${SPEC} && ${REINPLACE_CMD} -e 's|46|49|' freebsd-g++49/qmake.conf
 	${MKDIR} ${SPEC}/freebsd-clang
 	cd ${SPEC} && ${SED} -e 's|\.\./\.\./|../|g' unsupported/freebsd-clang/qmake.conf > freebsd-clang/qmake.conf
 	cd ${SPEC} && ${SED} -e 's|\.\./\.\./|../|g' unsupported/freebsd-clang/qplatformdefs.h > freebsd-clang/qplatformdefs.h
