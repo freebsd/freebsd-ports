@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	quazip
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt5
@@ -12,7 +12,7 @@ COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
 USE_QT5=	core buildtools_build qmake_build
 
