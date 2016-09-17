@@ -1,4 +1,3 @@
-%%QT_BINDIR%%/qdoc
 %%QT_DOCDIR%%/global/compat.qdocconf
 %%QT_DOCDIR%%/global/config.qdocconf
 %%QT_DOCDIR%%/global/externalsites.qdocconf
@@ -17,6 +16,7 @@
 %%QT_DOCDIR%%/global/macros.qdocconf
 %%QT_DOCDIR%%/global/manifest-meta.qdocconf
 %%QT_DOCDIR%%/global/qt-cpp-defines.qdocconf
+%%QT_DOCDIR%%/global/qt-html-templates-offline-simple.qdocconf
 %%QT_DOCDIR%%/global/qt-html-templates-offline.qdocconf
 %%QT_DOCDIR%%/global/qt-html-templates-online.qdocconf
 %%QT_DOCDIR%%/global/qt-module-defaults-offline.qdocconf
@@ -69,6 +69,8 @@
 %%QT_DOCDIR%%/global/template/style/icomoon.ttf
 %%QT_DOCDIR%%/global/template/style/icomoon.woff
 %%QT_DOCDIR%%/global/template/style/list_arrow.png
+%%QT_DOCDIR%%/global/template/style/list_expand.png
+%%QT_DOCDIR%%/global/template/style/offline-simple.css
 %%QT_DOCDIR%%/global/template/style/offline.css
 %%QT_DOCDIR%%/global/template/style/online.css
 %%QT_DOCDIR%%/global/template/style/theqtcompany.png

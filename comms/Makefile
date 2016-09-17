@@ -145,6 +145,7 @@
     SUBDIR += qsstv
     SUBDIR += qt5-connectivity
     SUBDIR += qt5-sensors
+    SUBDIR += qt5-serialbus
     SUBDIR += qt5-serialport
     SUBDIR += qtel
     SUBDIR += quisk

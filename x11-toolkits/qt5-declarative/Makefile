@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	declarative
-DISTVERSION=	${QT5_VERSION}
+DISTVERSION=	5.5.1  # QtQuick1 was last released with Qt 5.5.
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4-compatible declarative UI framework
+
+DISTINFO_FILE=	${MASTERDIR}/distinfo
+QT5_VERSION=	${DISTVERSION}
 
 USE_QT5=	core designer gui network opengl script sql webkit \
 		widgets xmlpatterns buildtools_build

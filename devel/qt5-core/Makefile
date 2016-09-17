@@ -2,7 +2,6 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -39,7 +38,8 @@ QT_CONFIG=	glib icu
 
 post-install:
 # Allow qconfig.h to be customized by single ports.
-	${REINPLACE_CMD} -i "" '1 s|.*|#include <QtCore/qconfig-modules.h>|' \
-		${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig.h
+	${AWK} 'BEGIN{print "#include <QtCore/qconfig-modules.h>"}{print}' \
+		${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig.h > ${WRKDIR}/qconfig.h
+	${MV} ${WRKDIR}/qconfig.h ${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig.h
 
 .include <bsd.port.post.mk>

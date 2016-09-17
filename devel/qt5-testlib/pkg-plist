@@ -62,6 +62,7 @@
 %%QT_INCDIR%%/QtTest/qtesttouch.h
 %%QT_INCDIR%%/QtTest/qttestversion.h
 %%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfig.cmake
+%%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Test.prl
 %%QT_LIBDIR%%/libQt5Test.so

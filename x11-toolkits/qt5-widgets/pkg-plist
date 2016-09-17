@@ -15,7 +15,7 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbasickeyeventtransition_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbasicmouseeventtransition_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbsptree_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qcolordialog_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbuttongroup_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qcolumnview_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qcolumnviewgrip_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qcombobox_p.h

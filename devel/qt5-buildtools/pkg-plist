@@ -4,4 +4,3 @@
 %%QT_BINDIR%%/rcc
 %%QT_BINDIR%%/syncqt.pl
 %%QT_MKSPECDIR%%/modules/qt_lib_bootstrap_private.pri
-libdata/pkgconfig/Qt5Bootstrap.pc

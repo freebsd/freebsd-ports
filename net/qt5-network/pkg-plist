@@ -38,7 +38,6 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkcookiejar_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkdiskcache_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkinterface_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkinterface_win_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkproxy_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreply_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplydataimpl_p.h
