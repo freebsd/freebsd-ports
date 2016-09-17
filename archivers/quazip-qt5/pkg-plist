@@ -14,6 +14,7 @@ include/quazip5/quazipfileinfo.h
 include/quazip5/quazipnewinfo.h
 include/quazip5/unzip.h
 include/quazip5/zip.h
+lib/libquazip5.a
 lib/libquazip5.so
 lib/libquazip5.so.1
 lib/libquazip5.so.1.0.0
