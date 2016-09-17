@@ -2,60 +2,54 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.21
-#PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CPE_VENDOR=	gnupg
+
 USES=		charsetfix cpe gmake tar:bzip2
 GNU_CONFIGURE=	YES
-CPE_VENDOR=	gnupg
-.if ${MACHINE_CPU:Mi586}
-MACHINE_ARCH=	i586
-.endif
-CFLAGS:=	${CFLAGS:S/-pipe//g}
+
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
 PORTDOCS=	*
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	LDAP LIBICONV LIBUSB SUID_GPG NLS CURL DOCS
-OPTIONS_DEFAULT=	CURL
+OPTIONS_DEFINE=	CURL DOCS LDAP LIBICONV LIBUSB NLS SUID_GPG
+OPTIONS_DEFAULT=CURL
 OPTIONS_SUB=	yes
+
+CURL_DESC=	use libcurl for the keyserver interface
 LDAP_DESC=	LDAP keyserver interface
 LIBICONV_DESC=	use libiconv
 LIBUSB_DESC=	use libusb
 SUID_GPG_DESC=	install GPG with suid
-CURL_DESC=	use libcurl for the keyserver interface
+
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
+# Work around a GnuPG configure buglet
+CURL_CONFIGURE_ENV=	_libcurl_config=${LOCALBASE}/bin/curl-config
 
 LIBICONV_USES=		iconv
-LIBICONV_CONFIGURE_OFF=	--disable-gnupg-iconv
+LIBICONV_CONFIGURE_ENABLE=	gnupg-iconv
 
-LIBUSB_CONFIGURE_ON=	--with-libusb=${LOCALBASE}
-LIBUSB_CONFIGURE_OFF=	--without-libusb
+LIBUSB_CONFIGURE_WITH=	libusb=${LOCALBASE}
 
 LDAP_USE=		OPENLDAP=yes
-LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
-#LDAP_CONFIGURE_ENV+=	LDFLAGS="-L/usr/lib"
-LDAP_CONFIGURE_OFF=	--disable-ldap
+LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
-# Work around a GnuPG configure buglet
-CURL_CONFIGURE_ENV=	_libcurl_config=${LOCALBASE}/bin/curl-config
-CURL_CONFIGURE_OFF=	--without-libcurl
 
 .include <bsd.port.options.mk>
 
@@ -66,7 +60,7 @@ CFLAGS:=	${CFLAGS:S/$/ -fheinous-gnu-extensions/}
 .endif
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in DETAILS FAQ HACKING OpenPGP
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
@@ -75,8 +69,8 @@ post-install:
 	README THANKS TODO VERSION
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.if ${PORT_OPTIONS:MSUID_GPG}
+
+post-install-SUID_GPG-on:
 	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/gpg
-.endif
 
 .include <bsd.port.mk>
