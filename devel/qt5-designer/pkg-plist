@@ -199,5 +199,4 @@
 %%QT_PLUGINDIR%%/designer/libqwebview.so
 %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
 libdata/pkgconfig/Qt5Designer.pc
-libdata/pkgconfig/Qt5DesignerComponents.pc
 share/pixmaps/designer-qt5.png

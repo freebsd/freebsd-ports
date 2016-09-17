@@ -3,13 +3,11 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qanimationjobutil_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qbitfield_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qcontinuinganimationgroupjob_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qdebugmessageservice_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qdeletewatcher_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qfieldlist_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qfinitestack_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qflagpointer_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qhashedstring_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qhashfield_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qintrusivelist_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qjsengine_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qjsvalue_p.h
@@ -20,7 +18,6 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qpodvector_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qpointervaluepair_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlabstractbinding_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlabstractexpression_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlabstractprofileradapter_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlaccessors_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmladaptormodel_p.h
@@ -35,24 +32,21 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcompiler_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcomponent_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcomponentattached_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlconfigurabledebugservice_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlconfigurabledebugservice_p_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlconnections_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcontext_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcontextwrapper_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlcustomparser_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldata_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugserver_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugserverconnection_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugconnector_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugpluginmanager_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugservice_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugservice_p_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugservicefactory_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugserviceinterfaces_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldebugstatesdelegate_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldelegatemodel_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldelegatemodel_p_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmldirparser_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlengine_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlenginecontrolservice_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlenginedebugservice_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlexpression_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlextensionplugin_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlfileselector_p.h
@@ -60,8 +54,6 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlguard_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlimport_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlincubator_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlinspectorinterface_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlinspectorservice_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlinstantiator_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlinstantiator_p_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlirbuilder_p.h
@@ -94,10 +86,8 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlobjectmodel_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlopenmetaobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlplatform_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlpool_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlprofiler_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlprofilerdefinitions_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlprofilerservice_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlproperty_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlpropertycache_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlpropertyvalueinterceptor_p.h
@@ -117,7 +107,6 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlvaluetypewrapper_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlvme_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlvmemetaobject_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlwatcher_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qqmlxmlhttprequest_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qquickpackage_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qquickworkerscript_p.h
@@ -140,7 +129,6 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4dataview_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4dateobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4debugging_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4debugservice_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4domerrors_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4engine_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4errorobject_p.h
@@ -149,6 +137,7 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4functionobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4global_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4globalobject_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4heap_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4identifier_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4identifiertable_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4include_p.h
@@ -171,10 +160,8 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4objectiterator_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4objectproto_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4persistent_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4profileradapter_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4profiling_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4property_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4qmlextensions_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4qobjectwrapper_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4regalloc_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4regexp_p.h
@@ -194,7 +181,6 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4typedarray_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4unop_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4util_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4value_inl_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4value_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4variantobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4vme_moth_p.h
@@ -268,7 +254,6 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qfinitestack_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qflagpointer_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qhashedstring_p.h
-%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qhashfield_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qintrusivelist_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qlazilyallocated_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qpodvector_p.h
@@ -285,7 +270,6 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmljsmemorypool_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmljsparser_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmlnullablevalue_p.h
-%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmlpool_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmlrefcount_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmlthread_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qqmltypecompiler_p.h
@@ -312,6 +296,7 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4functionobject_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4global_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4globalobject_p.h
+%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4heap_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4identifier_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4identifiertable_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4include_p.h
@@ -335,7 +320,6 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4persistent_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4profiling_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4property_p.h
-%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4qmlextensions_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4qobjectwrapper_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4regexp_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4regexpobject_p.h
@@ -350,7 +334,6 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4stringobject_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4typedarray_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4util_p.h
-%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4value_inl_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4value_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4variantobject_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4vme_moth_p.h
@@ -359,6 +342,7 @@
 %%QT_INCDIR%%/QtQmlDevTools/QtQmlDevToolsVersion
 %%QT_INCDIR%%/QtQmlDevTools/qtqmldevtoolsversion.h
 %%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfig.cmake
+%%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Qml.prl
 %%QT_LIBDIR%%/libQt5Qml.so
@@ -372,4 +356,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_qml_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_qmldevtools_private.pri
 libdata/pkgconfig/Qt5Qml.pc
-libdata/pkgconfig/Qt5QmlDevTools.pc

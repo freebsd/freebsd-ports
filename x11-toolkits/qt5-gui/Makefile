@@ -2,7 +2,6 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		jpeg
+USES=		compiler:features jpeg
 USE_GL=		gl egl
 USE_GNOME=	glib20
 USE_QT5=	core dbus network qmake_build buildtools_build
@@ -70,6 +69,19 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodin
 
 CFLAGS_powerpc64=	-mminimal-toc
 
+.include <bsd.port.pre.mk>
+
+# Base GCC fails to build qdrawhelper.cpp:
+# painting/qdrawhelper.cpp: In function 'void qConvertARGB64PMToA2RGB30PM_sse2(uint*, const QRgba64*, int)':
+# painting/qdrawhelper.cpp:1276: note: use -flax-vector-conversions to permit conversions between vectors with differing element types or numbers of subparts
+# painting/qdrawhelper.cpp:1276: error: cannot convert 'int __vector__' to 'long long int __vector__' for argument '1' to 'long long int __vector__ __builtin_ia32_psrlqi128(long long int __vector__, int)'
+# painting/qdrawhelper.cpp:1277: error: cannot convert 'int __vector__' to 'long long int __vector__' for argument '1' to 'long long int __vector__ __builtin_ia32_psrlqi128(long long int __vector__, int)'
+# painting/qdrawhelper.cpp:1278: error: cannot convert 'int __vector__' to 'long long int __vector__' for argument '1' to 'long long int __vector__ __builtin_ia32_psrlqi128(long long int __vector__, int)'
+# painting/qdrawhelper.cpp:1282: error: cannot convert 'int __vector__' to 'long long int __vector__' for argument '1' to 'long long int __vector__ __builtin_ia32_psrlqi128(long long int __vector__, int)'
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+CXXFLAGS+=	-flax-vector-conversions
+.endif
+
 post-build:
 .for d in ${MORE_WRKSRCS}
 	@cd ${WRKSRC}/${d} && \
@@ -84,4 +96,4 @@ post-install:
 		${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
