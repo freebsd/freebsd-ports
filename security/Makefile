@@ -1014,6 +1014,7 @@
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
+    SUBDIR += rubygem-rex-bin_tools
     SUBDIR += rubygem-rex-core
     SUBDIR += rubygem-rex-java
     SUBDIR += rubygem-rex-mime
