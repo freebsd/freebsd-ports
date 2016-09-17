@@ -5,7 +5,7 @@ PORTNAME=	cnagios
 PORTVERSION=	0.32
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	alexander.4mail@gmail.com
+MAINTAINER=	danny@dannywarren.com
 COMMENT=	Curses-based interface for nagios
 
 LICENSE=	ISCL
