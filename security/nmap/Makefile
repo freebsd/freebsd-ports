@@ -7,8 +7,8 @@ CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
 
-MAINTAINER=	ohauer@FreeBSD.org
-COMMENT=	Port scanning utility for large networks
+MAINTAINER?=	ohauer@FreeBSD.org
+COMMENT?=	Port scanning utility for large networks
 
 # nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)
 # http://nmap.org/book/man-legal.html
@@ -16,6 +16,8 @@ COMMENT=	Port scanning utility for large networks
 # http://insecure.org/news/download-com-fiasco.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+.if !defined(MASTERDIR)
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
@@ -32,8 +34,6 @@ SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--without-openssl
 SSL_CFLAGS=		-I${OPENSSLINC}
 SSL_VARS=		STRIP_FILES=ncat
-
-.include <bsd.port.options.mk>
 
 DOCS=	CHANGELOG HACKING
 STRIP_FILES+=	nmap nping
@@ -61,5 +61,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.endif
 
 .include <bsd.port.mk>
