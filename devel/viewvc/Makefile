@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.24
-PORTREVISION=	1
+PORTVERSION=	1.1.25
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/ohauer
@@ -24,9 +23,9 @@ OPTIONS_SINGLE_APMOD=	MODPYTHON33 MODPYTHON35 MODWSGI
 WEBSRV_DESC=		Enable web server support
 APMOD_DESC=		depend on optional Apache module
 
-MODWSGI_DESC=		Enable mod_wsgi support
-MODPYTHON33_DESC=	Enable mod_python33 support
-MODPYTHON35_DESC=	Enable mod_python35 support
+MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
+MODPYTHON33_DESC=	Add mod_python33 to the list of package dependencies
+MODPYTHON35_DESC=	Add mod_python35 to the list of package dependencies
 MYSQL_DESC=		Bonsai-like repository query facilities
 
 APACHE_USE=		APACHE_RUN=22+
