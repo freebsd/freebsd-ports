@@ -1,7 +1,7 @@
---- base/logging.cpp.orig	2015-08-12 23:28:08 UTC
+--- base/logging.cpp.orig	2016-08-08 21:10:17 UTC
 +++ base/logging.cpp
-@@ -23,12 +23,14 @@
- #include <libgen.h>
+@@ -25,7 +25,7 @@
+ #include <time.h>
  
  // For getprogname(3) or program_invocation_short_name.
 -#if defined(__ANDROID__) || defined(__APPLE__)
@@ -9,14 +9,16 @@
  #include <stdlib.h>
  #elif defined(__GLIBC__)
  #include <errno.h>
+@@ -35,6 +35,8 @@
+ #include <sys/uio.h>
  #endif
  
-+#include <cstring> // strlen
++#include <cstring> // strrchr
 +#include <cstdio>  // fprintf
  #include <iostream>
  #include <limits>
  #include <sstream>
-@@ -66,6 +68,14 @@
+@@ -71,6 +72,14 @@
  #include <unistd.h>
  #elif defined(_WIN32)
  #include <windows.h>
@@ -30,8 +32,8 @@
 +#include <stdint.h>
  #endif
  
- static pid_t GetThreadId() {
-@@ -77,6 +89,14 @@ static pid_t GetThreadId() {
+ #if defined(_WIN32)
+@@ -88,6 +97,14 @@ static thread_id GetThreadId() {
    return syscall(__NR_gettid);
  #elif defined(_WIN32)
    return GetCurrentThreadId();
