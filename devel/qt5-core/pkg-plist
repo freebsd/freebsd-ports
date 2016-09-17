@@ -8,7 +8,9 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstracttransition_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbig5codec_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcollator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_mac_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_unix_p.h
@@ -26,6 +28,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeucjpcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeuckrcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_blackberry_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_cf_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_glib_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_win_p.h
@@ -47,9 +50,11 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_polling_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_win_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfinalstate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfreelist_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfunctions_fake_env_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfunctions_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutureinterface_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfuturewatcher_p.h
@@ -146,7 +151,6 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qutfcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariant_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariantanimation_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qversionnumber_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipereader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipewriter_p.h
@@ -241,6 +245,7 @@
 %%QT_INCDIR%%/QtCore/QHash
 %%QT_INCDIR%%/QtCore/QHashData
 %%QT_INCDIR%%/QtCore/QHashDummyValue
+%%QT_INCDIR%%/QtCore/QHashFunctions
 %%QT_INCDIR%%/QtCore/QHashIterator
 %%QT_INCDIR%%/QtCore/QHashNode
 %%QT_INCDIR%%/QtCore/QHistoryState
@@ -295,9 +300,6 @@
 %%QT_INCDIR%%/QtCore/QMetaObject
 %%QT_INCDIR%%/QtCore/QMetaProperty
 %%QT_INCDIR%%/QtCore/QMetaType
-%%QT_INCDIR%%/QtCore/QMetaTypeId
-%%QT_INCDIR%%/QtCore/QMetaTypeId2
-%%QT_INCDIR%%/QtCore/QMetaTypeIdQObject
 %%QT_INCDIR%%/QtCore/QMimeData
 %%QT_INCDIR%%/QtCore/QMimeDatabase
 %%QT_INCDIR%%/QtCore/QMimeType
@@ -413,6 +415,7 @@
 %%QT_INCDIR%%/QtCore/QTranslator
 %%QT_INCDIR%%/QtCore/QTypeInfo
 %%QT_INCDIR%%/QtCore/QTypeInfoMerger
+%%QT_INCDIR%%/QtCore/QTypeInfoQuery
 %%QT_INCDIR%%/QtCore/QUnhandledException
 %%QT_INCDIR%%/QtCore/QUrl
 %%QT_INCDIR%%/QtCore/QUrlQuery
@@ -427,6 +430,7 @@
 %%QT_INCDIR%%/QtCore/QVariantMap
 %%QT_INCDIR%%/QtCore/QVector
 %%QT_INCDIR%%/QtCore/QVectorIterator
+%%QT_INCDIR%%/QtCore/QVersionNumber
 %%QT_INCDIR%%/QtCore/QWaitCondition
 %%QT_INCDIR%%/QtCore/QWeakPointer
 %%QT_INCDIR%%/QtCore/QWinEventNotifier
@@ -482,7 +486,6 @@
 %%QT_INCDIR%%/QtCore/qatomic_cxx11.h
 %%QT_INCDIR%%/QtCore/qatomic_gcc.h
 %%QT_INCDIR%%/QtCore/qatomic_ia64.h
-%%QT_INCDIR%%/QtCore/qatomic_mips.h
 %%QT_INCDIR%%/QtCore/qatomic_msvc.h
 %%QT_INCDIR%%/QtCore/qatomic_unix.h
 %%QT_INCDIR%%/QtCore/qatomic_x86.h
@@ -543,6 +546,7 @@
 %%QT_INCDIR%%/QtCore/qglobal.h
 %%QT_INCDIR%%/QtCore/qglobalstatic.h
 %%QT_INCDIR%%/QtCore/qhash.h
+%%QT_INCDIR%%/QtCore/qhashfunctions.h
 %%QT_INCDIR%%/QtCore/qhistorystate.h
 %%QT_INCDIR%%/QtCore/qidentityproxymodel.h
 %%QT_INCDIR%%/QtCore/qiodevice.h
@@ -651,6 +655,8 @@
 %%QT_INCDIR%%/QtCore/qvariantanimation.h
 %%QT_INCDIR%%/QtCore/qvarlengtharray.h
 %%QT_INCDIR%%/QtCore/qvector.h
+%%QT_INCDIR%%/QtCore/qversionnumber.h
+%%QT_INCDIR%%/QtCore/qversiontagging.h
 %%QT_INCDIR%%/QtCore/qwaitcondition.h
 %%QT_INCDIR%%/QtCore/qwineventnotifier.h
 %%QT_INCDIR%%/QtCore/qxmlstream.h

@@ -173,6 +173,7 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/DefaultMessageDialog.qml
 %%QT_QMLDIR%%/QtQuick/Dialogs/Private/libdialogsprivateplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/Private/libdialogsprivateplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Dialogs/Private/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Dialogs/Private/qmldir
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/WidgetColorDialog.qml
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/WidgetFileDialog.qml

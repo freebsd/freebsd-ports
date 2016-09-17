@@ -35,6 +35,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qguiapplication_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qharfbuzzng_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qhexstring_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qhighdpiscaling_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qicon_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qiconloader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimage_p.h
@@ -96,6 +97,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrasterizer_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrawfont_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrbtree_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrgba64_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qscreen_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qsessionmanager_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshapedpixmapdndwindow_p.h
@@ -267,6 +269,8 @@
 %%QT_INCDIR%%/QtGui/QOpenGLContextGroup
 %%QT_INCDIR%%/QtGui/QOpenGLDebugLogger
 %%QT_INCDIR%%/QtGui/QOpenGLDebugMessage
+%%QT_INCDIR%%/QtGui/QOpenGLExtraFunctions
+%%QT_INCDIR%%/QtGui/QOpenGLExtraFunctionsPrivate
 %%QT_INCDIR%%/QtGui/QOpenGLFramebufferObject
 %%QT_INCDIR%%/QtGui/QOpenGLFramebufferObjectFormat
 %%QT_INCDIR%%/QtGui/QOpenGLFunctions
@@ -341,6 +345,7 @@
 %%QT_INCDIR%%/QtGui/QRegularExpressionValidator
 %%QT_INCDIR%%/QtGui/QResizeEvent
 %%QT_INCDIR%%/QtGui/QRgb
+%%QT_INCDIR%%/QtGui/QRgba64
 %%QT_INCDIR%%/QtGui/QScreen
 %%QT_INCDIR%%/QtGui/QScreenOrientationChangeEvent
 %%QT_INCDIR%%/QtGui/QScrollEvent
@@ -448,6 +453,7 @@
 %%QT_INCDIR%%/QtGui/qopengldebug.h
 %%QT_INCDIR%%/QtGui/qopengles2ext.h
 %%QT_INCDIR%%/QtGui/qopenglext.h
+%%QT_INCDIR%%/QtGui/qopenglextrafunctions.h
 %%QT_INCDIR%%/QtGui/qopenglframebufferobject.h
 %%QT_INCDIR%%/QtGui/qopenglfunctions.h
 %%QT_INCDIR%%/QtGui/qopenglfunctions_1_0.h
@@ -507,6 +513,7 @@
 %%QT_INCDIR%%/QtGui/qrawfont.h
 %%QT_INCDIR%%/QtGui/qregion.h
 %%QT_INCDIR%%/QtGui/qrgb.h
+%%QT_INCDIR%%/QtGui/qrgba64.h
 %%QT_INCDIR%%/QtGui/qscreen.h
 %%QT_INCDIR%%/QtGui/qsessionmanager.h
 %%QT_INCDIR%%/QtGui/qstandarditemmodel.h
@@ -542,22 +549,30 @@
 %%QT_INCDIR%%/QtOpenGLExtensions/qopenglextensions.h
 %%QT_INCDIR%%/QtOpenGLExtensions/qtopenglextensionsversion.h
 %%QT_INCDIR%%/QtPlatformHeaders/QCocoaNativeContext
+%%QT_INCDIR%%/QtPlatformHeaders/QCocoaWindowFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QEGLNativeContext
 %%QT_INCDIR%%/QtPlatformHeaders/QEglFSFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QGLXNativeContext
+%%QT_INCDIR%%/QtPlatformHeaders/QPlatformHeaderHelper
 %%QT_INCDIR%%/QtPlatformHeaders/QWGLNativeContext
 %%QT_INCDIR%%/QtPlatformHeaders/QWindowsWindowFunctions
+%%QT_INCDIR%%/QtPlatformHeaders/QXcbIntegrationFunctions
+%%QT_INCDIR%%/QtPlatformHeaders/QXcbScreenFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QXcbWindowFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QtPlatformHeaders
 %%QT_INCDIR%%/QtPlatformHeaders/QtPlatformHeadersDepends
 %%QT_INCDIR%%/QtPlatformHeaders/QtPlatformHeadersVersion
 %%QT_INCDIR%%/QtPlatformHeaders/qcocoanativecontext.h
+%%QT_INCDIR%%/QtPlatformHeaders/qcocoawindowfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qeglfsfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qeglnativecontext.h
 %%QT_INCDIR%%/QtPlatformHeaders/qglxnativecontext.h
+%%QT_INCDIR%%/QtPlatformHeaders/qplatformheaderhelper.h
 %%QT_INCDIR%%/QtPlatformHeaders/qtplatformheadersversion.h
 %%QT_INCDIR%%/QtPlatformHeaders/qwglnativecontext.h
 %%QT_INCDIR%%/QtPlatformHeaders/qwindowswindowfunctions.h
+%%QT_INCDIR%%/QtPlatformHeaders/qxcbintegrationfunctions.h
+%%QT_INCDIR%%/QtPlatformHeaders/qxcbscreenfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qxcbwindowfunctions.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/application_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/atspiadaptor_p.h
@@ -568,7 +583,6 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/dbusconnection_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qaccessiblebridgeutils_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qbasicfontdatabase_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qcoretextfontdatabase_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qdbusmenuadaptor_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qdbusmenuconnection_p.h
@@ -583,10 +597,7 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglconvenience_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglpbuffer_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformcontext_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformcursor_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformintegration_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformscreen_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformwindow_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglstreamconvenience_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboard_defaultmap_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboardhandler_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboardmanager_p.h
@@ -595,7 +606,6 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevtablet_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevtouchhandler_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevtouchmanager_p.h
-%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeventdispatcher_cf_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeventdispatcher_glib_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbbackingstore_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbcursor_p.h
@@ -620,6 +630,7 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qstatusnotifieritemadaptor_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qtslib_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qunixeventdispatcher_qpa_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qwindowsguieventdispatcher_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qxdgnotificationproxy_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qxlibeglintegration_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/struct_marshallers_p.h
@@ -689,5 +700,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/xcbglintegrations/libqxcb-glx-integration.so.debug
 libdata/pkgconfig/Qt5Gui.pc
 libdata/pkgconfig/Qt5OpenGLExtensions.pc
-libdata/pkgconfig/Qt5PlatformSupport.pc
-libdata/pkgconfig/Qt5XcbQpa.pc

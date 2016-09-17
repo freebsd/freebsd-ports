@@ -126,6 +126,7 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/shell.html
 %%PORTDOCS%%%%DOCSDIR%%/html/staticlibrary-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline.css
+%%PORTDOCS%%%%DOCSDIR%%/html/style/offline-simple.css
 %%PORTDOCS%%%%DOCSDIR%%/html/subproject-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/system-requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/typescript-module.html
@@ -290,5 +291,3 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/modules/wix/WiXModule.qbs
 %%DATADIR%%/modules/xcode/xcode.js
 %%DATADIR%%/modules/xcode/xcode.qbs
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/images/used-in-examples
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/scripts

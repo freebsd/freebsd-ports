@@ -19,12 +19,12 @@ Date:   Tue Aug 23 20:25:14 2016 +0200
     Change-Id: I5f38f8480f4b1156ca7147e32c1157a009557035
     Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
 
---- configure.orig	2015-10-13 04:35:07 UTC
+--- configure.orig	2016-08-24 08:18:37 UTC
 +++ configure
-@@ -4038,11 +4038,11 @@ if true; then ###[ '!' -f "$outpath/bin/
-         fi
-         echo "QMAKESPEC = $adjqmakespec" >> "$mkfile"
-         echo "QT_VERSION = $QT_VERSION" >> "$mkfile"
+@@ -4115,11 +4115,11 @@ if [ '!' -e "$outpath/bin/qmake" ]; then
+         echo "QT_MAJOR_VERSION = $QT_MAJOR_VERSION" >> "$mkfile"
+         echo "QT_MINOR_VERSION = $QT_MINOR_VERSION" >> "$mkfile"
+         echo "QT_PATCH_VERSION = $QT_PATCH_VERSION" >> "$mkfile"
 -        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS" >> "$mkfile"
 -        echo "EXTRA_CXXFLAGS = $EXTRA_CXXFLAGS" >> "$mkfile"
 +        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS $CFLAGS" >> "$mkfile"
@@ -36,7 +36,7 @@ Date:   Tue Aug 23 20:25:14 2016 +0200
          echo "EXEEXT = $EXEEXT" >> "$mkfile"
          echo "RM_F = rm -f" >> "$mkfile"
          echo "RM_RF = rm -rf" >> "$mkfile"
-@@ -4061,6 +4061,7 @@ if true; then ###[ '!' -f "$outpath/bin/
+@@ -4138,6 +4138,7 @@ if [ '!' -e "$outpath/bin/qmake" ]; then
              fi
          fi
      done
@@ -44,7 +44,7 @@ Date:   Tue Aug 23 20:25:14 2016 +0200
  
      if [ "$OPT_VERBOSE" = yes ]; then
          # Show the output of make
-@@ -6474,7 +6472,7 @@ case "$QMAKE_CONF_COMPILER" in
+@@ -6691,7 +6689,7 @@ case "$QMAKE_CONF_COMPILER" in
      # Clang
      COMPILER_VERSION=`${QMAKE_CONF_COMPILER} -v 2>&1 | sed -n -E '
  /^Apple (clang|LLVM) version /{s///; s/^([0-9]*)\.([0-9]*).*$/QT_APPLE_CLANG_MAJOR_VERSION=\1; QT_APPLE_CLANG_MINOR_VERSION=\2/;p;q;}
