@@ -1018,6 +1018,7 @@
     SUBDIR += rubygem-rex-core
     SUBDIR += rubygem-rex-java
     SUBDIR += rubygem-rex-mime
+    SUBDIR += rubygem-rex-nop
     SUBDIR += rubygem-rex-ole
     SUBDIR += rubygem-rex-powershell
     SUBDIR += rubygem-rex-random_identifier
