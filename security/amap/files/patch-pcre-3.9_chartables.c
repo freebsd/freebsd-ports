@@ -1,6 +1,6 @@
---- pcre-3.9/chartables.c.orig	Wed Jun 29 17:30:09 2005
-+++ pcre-3.9/chartables.c	Wed Jun 29 17:30:16 2005
-@@ -10,7 +10,7 @@
+--- pcre-3.9/chartables.c.orig	2011-04-20 15:10:17 UTC
++++ pcre-3.9/chartables.c
+@@ -10,7 +10,7 @@ This file is #included in the compilatio
  character tables which are used when no tables are passed to the compile
  function. */
  
