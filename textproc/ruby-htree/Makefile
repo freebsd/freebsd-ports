@@ -14,7 +14,6 @@ COMMENT=	Ruby library to manipulate HTML/XML tree data structure
 OPTIONS_DEFINE=	DOCS
 
 USE_RUBY=	yes
-USE_RUBY_RDOC=		yes
 
 LIB_FILES=	htree.rb htree
 
@@ -27,7 +26,7 @@ PORTDOCS=	*
 
 do-build:
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${BUILD_WRKSRC}; ${RUBY_RDOC} ${LIB_FILES}
+	cd ${BUILD_WRKSRC}; ${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//} ${LIB_FILES}
 .endif
 
 do-install:
