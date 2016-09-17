@@ -3,6 +3,7 @@
 PORTNAME=	dehydrated
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org

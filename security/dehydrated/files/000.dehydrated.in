@@ -15,7 +15,7 @@ case "$weekly_letsencrypt_enable" in
         echo '!! WARNING: letsencrypt.sh has been renamed to dehydrated !!'
         echo '!! rename all weekly_letsencrypt_* periodic variables     !!'
         echo '!! to         weekly_dehydrated_* in your periodic.conf   !!'
-        echo '|| and mv /usr/local/etc/{letsencrypt,dehydrated}         ||'
+        echo '|| and mv /usr/local/etc/{letsencrypt.sh,dehydrated}      ||'
         echo '|| default challenge path has been renamed as well        ||'
         echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
         : ${weekly_dehydrated_enable:=$weekly_letsencrypt_enable}
@@ -36,7 +36,7 @@ case "$weekly_dehydrated_enable" in
 	then
 		%%PREFIX%%/bin/dehydrated -c $weekly_dehydrated_flags
 	else
-		su -m "$weekly_dehydrated_user" -c "%%PREFIX%%/bin/dehydrated" -c $weekly_dehydrated_flags
+		su -m "$weekly_dehydrated_user" -c "%%PREFIX%%/bin/dehydrated -c $weekly_dehydrated_flags"
 	fi
 
 	echo "Deploying Let's Encrypt certificates:"
