@@ -2,28 +2,21 @@
 
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
-DISTVERSION=	n-preview-1-116
-DISTVERSIONSUFFIX=	-gea4a5a4
+DISTVERSION=	7.0.0_r1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android simpleperf tool
 
-LICENSE=	APACHE20 PD
-LICENSE_COMB=	multi
-LICENSE_FILE_PD=	${WRKSRC}/lzma/NOTICE
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	android:bionic,core jbeich:DEFAULT,lzma
+GH_ACCOUNT=	android:bionic,core jbeich
 GH_PROJECT=	platform_bionic:bionic platform_system_core:core \
-		platform_system_extras platform_external_lzma:lzma
-GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
-GH_TAGNAME=	${GH_MYTAG}-249-g5f1de52:bionic \
-		${GH_MYTAG}-554-g371e7ea170d7:core \
-		${GH_MYTAG}-6-ge43f249:lzma
-GH_SUBDIR=	bionic:bionic lzma:lzma
+		platform_system_extras
+GH_SUBDIR=	bionic:bionic
 
 USES=		compiler:c++11-lib uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf

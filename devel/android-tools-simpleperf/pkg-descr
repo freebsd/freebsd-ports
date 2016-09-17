@@ -1,2 +1,7 @@
-simpleperf is a minimal Linux perf implementation for extracting
-sampling information out of perf.data.
+Simpleperf is a native profiling tool for Android. Its command-line
+interface supports broadly the same options as the linux-tools perf,
+but also supports various Android-specific improvements.
+
+This package only provides subcommands to read perf.data.
+
+WWW: https://android.googlesource.com/platform/prebuilts/simpleperf/
