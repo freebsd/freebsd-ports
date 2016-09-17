@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unrar
-PORTVERSION=	5.31
+PORTVERSION=	5.40
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
 		LOCAL/sunpoet
-DISTNAME=	unrarsrc-5.3.11
+DISTNAME=	unrarsrc-5.4.5
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
@@ -31,7 +31,7 @@ SLAVEDIRS=	archivers/unrar-iconv chinese/unrar
 
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
 OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
-OPENSSL_AES_USE=	OPENSSL=yes
+OPENSSL_AES_USES=	ssl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
