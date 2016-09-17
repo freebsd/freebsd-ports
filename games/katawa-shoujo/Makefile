@@ -17,10 +17,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bishoujo-style visual novel about disabled adolescents
 
-LICENSE=	CCbyNCND3
-LICENSE_NAME=	Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported
-LICENSE_TEXT=	See https://creativecommons.org/licenses/by-nc-nd/3.0/
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	CC-BY-NC-ND-3.0
 
 RUN_DEPENDS=	renpy6<6.99.11:devel/renpy6
 
