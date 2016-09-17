@@ -1,0 +1,5 @@
+The Ruby Exploitation(Rex) Socket Abstraction Library includes all of the code
+needed to turn sockets into Rex::Sockets with the functionality for things like
+L3 pivoting used by Metasploit.
+
+WWW: https://github.com/rapid7/rex-socket
