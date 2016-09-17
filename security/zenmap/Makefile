@@ -1,27 +1,20 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
 
-PORTNAME=	zenmap
-PORTVERSION=	6.47
-PORTREVISION=	1
-CATEGORIES=	security ipv6
-MASTER_SITES=	http://nmap.org/dist/ \
-		SF/nemysisfreebsdp/security/:icons
-DISTNAME=	nmap-${PORTVERSION}
-DISTFILES=	nmap-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	nmap-${PORTVERSION}${EXTRACT_SUFX}
+PKGNAMEPREFIX=	ze
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nmap:security/nmap \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
-WRKSRC_SUBDIR=	${PORTNAME}
+MASTERDIR=	${.CURDIR}/../nmap
+PATCHDIR=	${.CURDIR}/files
+FILESDIR=	${.CURDIR}/files
+DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
+PKGDIR=		${.CURDIR}
+WRKSRC_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 USES=		dos2unix python tar:bzip2
 DOS2UNIX_GLOB=	*.xml
@@ -37,11 +30,9 @@ NLS_USES=	gettext
 
 SUB_FILES=	zenmap-root
 
-post-extract:
-	@${RM} -f ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
-	@${CP} -a ${FILESDIR}/pc-su ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
-
 post-patch:
+	@${RM} ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
+	@${CP} -a ${FILESDIR}/pc-su ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
 	@${FIND} ${WRKSRC} -name '*.py' -or -name '*.pyw' | ${XARGS} \
 		${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|'
 	@${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|' \
@@ -60,8 +51,8 @@ post-patch:
 		s|self.saved_prefix, pixmaps_dir, ||' \
 		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
-		-e 's|share/man/man1|man/man1|; \
-		s|"install": checked_install||' \
+		-e 's|share/man/man1|man/man1|' \
+		-e '/"install": checked_install/d' \
 		${WRKSRC}/../ndiff/setup.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 	@${FIND} ${WRKSRC}/../ndiff -name "*.bak" -delete
@@ -71,7 +62,7 @@ post-patch-NLS-off:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/zenmap-root ${STAGEDIR}${PREFIX}/bin/
-	 @(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 754 su-to-zenmap.sh)
+	@${CHMOD} 754 ${STAGEDIR}${DATADIR}/su-to-zenmap.sh
 	${INSTALL_MAN} ${WRKSRC}/../docs/zenmap.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 	@(cd ${WRKSRC}/../ndiff \
@@ -79,8 +70,6 @@ post-install:
 	@(cd ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR} && ${RM} ndiff.pyc)
 	@(cd ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -m compileall .)
 	@(cd ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -O -m compileall .)
+	@(cd ${STAGEDIR}${PREFIX}/share/pixmaps && ${LN} -sf ../zenmap/pixmaps/zenmap.png zenmap.png)
 
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
