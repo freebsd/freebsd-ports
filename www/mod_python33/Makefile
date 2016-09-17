@@ -18,7 +18,7 @@ LICENSE=	APACHE20
 CONFLICTS_INSTALL=	ap2[24]-mod_python3[^3]*
 
 USE_APACHE=	22
-USES=		cpe python tar:tgz
+USES=		cpe python:2.7 tar:tgz
 CPE_VENDOR=	apache
 
 GNU_CONFIGURE=		yes

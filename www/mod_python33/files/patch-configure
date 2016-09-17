@@ -1,6 +1,6 @@
---- ./configure.orig	2006-03-11 03:46:52.000000000 +0000
-+++ ./configure	2014-08-02 22:49:33.000000000 +0000
-@@ -3013,7 +3013,7 @@
+--- configure.orig	2006-03-11 03:46:52 UTC
++++ configure
+@@ -3013,7 +3013,7 @@ echo "$as_me:$LINENO: checking linker fl
  echo $ECHO_N "checking linker flags used to link Python... $ECHO_C" >&6
  
  PyLFS=`grep "^LINKFORSHARED=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
@@ -9,4 +9,3 @@
  LDFLAGS="${LDFLAGS} ${PyLFS} ${PyLDFLAGS}"
  LDFLAGS="${LDFLAGS} ${PY_LDFLAGS}"
  echo "$as_me:$LINENO: result: $PY_LDFLAGS" >&5
-
