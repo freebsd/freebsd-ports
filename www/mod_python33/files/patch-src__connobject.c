@@ -1,6 +1,6 @@
---- src/connobject.c.orig	2008-08-28 12:30:24.000000000 +0000
-+++ src/connobject.c	2008-08-28 12:30:35.000000000 +0000
-@@ -139,7 +139,7 @@
+--- src/connobject.c.orig	2006-12-03 04:36:37 UTC
++++ src/connobject.c
+@@ -139,7 +139,7 @@ static PyObject * _conn_read(conn_rec *c
      bytes_read = 0;
  
      while ((bytes_read < len || len == 0) &&
