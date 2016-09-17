@@ -9,7 +9,7 @@ libc++ fails with higher default.
   Expected: (output.length()) > (strlen("foobar")), actual: 0 vs 6
   [  FAILED  ] logging.PLOG (0 ms)
 
---- simpleperf/gtest_main.cpp	2016-06-28 07:04:19.000000000 +0000
+--- simpleperf/gtest_main.cpp	2016-06-28 07:04:19 UTC
 +++ simpleperf/gtest_main.cpp
 @@ -137,7 +137,7 @@ class SavedPerfHardenProperty {
  int main(int argc, char** argv) {
