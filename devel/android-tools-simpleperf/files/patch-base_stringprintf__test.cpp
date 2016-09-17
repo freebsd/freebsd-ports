@@ -1,4 +1,4 @@
---- base/stringprintf_test.cpp.orig	2015-08-12 23:28:08 UTC
+--- base/stringprintf_test.cpp.orig	2015-09-17 22:58:36 UTC
 +++ base/stringprintf_test.cpp
 @@ -18,6 +18,7 @@
  

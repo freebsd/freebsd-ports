@@ -1,8 +1,7 @@
-SHA256 (jbeich-platform_system_extras-android-n-preview-1-116-gea4a5a4_GH0.tar.gz) = 6bfedb3758797d21c901daff05f3b0a29785e5cee241ceeb9a14524e7166676d
-SIZE (jbeich-platform_system_extras-android-n-preview-1-116-gea4a5a4_GH0.tar.gz) = 76583329
-SHA256 (android-platform_bionic-android-n-preview-1-249-g5f1de52_GH0.tar.gz) = f82cc222e0de014fa8752b622073af6be748136a5aefd498a171b34948cc5785
-SIZE (android-platform_bionic-android-n-preview-1-249-g5f1de52_GH0.tar.gz) = 3492411
-SHA256 (android-platform_system_core-android-n-preview-1-554-g371e7ea170d7_GH0.tar.gz) = 6672ae5e1088335f2f721b357f178163c19259abe38a8b307ebb0c8b37b291cb
-SIZE (android-platform_system_core-android-n-preview-1-554-g371e7ea170d7_GH0.tar.gz) = 1536079
-SHA256 (jbeich-platform_external_lzma-android-n-preview-1-6-ge43f249_GH0.tar.gz) = 176f7ad8c41794e144da17d3263e4a95b13528b9a425e80882e9ee4cbe2e5f9a
-SIZE (jbeich-platform_external_lzma-android-n-preview-1-6-ge43f249_GH0.tar.gz) = 704323
+TIMESTAMP = 1472009581
+SHA256 (jbeich-platform_system_extras-android-7.0.0_r1_GH0.tar.gz) = ff2ea6db032da70374edcd6867bd11d765a475a32d732b983d0dad6ae16e209b
+SIZE (jbeich-platform_system_extras-android-7.0.0_r1_GH0.tar.gz) = 79621110
+SHA256 (android-platform_bionic-android-7.0.0_r1_GH0.tar.gz) = 60c75732796cffeff2006f63d556abb7af462939cdc710ff79edf56d26535d74
+SIZE (android-platform_bionic-android-7.0.0_r1_GH0.tar.gz) = 3514221
+SHA256 (android-platform_system_core-android-7.0.0_r1_GH0.tar.gz) = faa44f626dfab9e604f509cc541a8e491e7e46a9de42df3a9c1e24c36fd9f8c4
+SIZE (android-platform_system_core-android-7.0.0_r1_GH0.tar.gz) = 1570346

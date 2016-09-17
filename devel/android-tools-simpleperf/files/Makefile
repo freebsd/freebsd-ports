@@ -47,13 +47,13 @@ TEST_SRCS+= test_utils.cpp
 
 # required by base
 .PATH:	${.CURDIR}/../liblog
+SRCS+=	config_write.c
 SRCS+=	fake_log_device.c
-SRCS+=	logd_write.c
-CPPFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
-
-# required by base
-.PATH: ${.CURDIR}/../libcutils
-SRCS+= threads.c
+SRCS+=	fake_writer.c
+SRCS+=	logger_lock.c
+SRCS+=	logger_name.c
+SRCS+=	logger_write.c
+CPPFLAGS.config_write.c+=	-DFAKE_LOG_DEVICE=1
 
 # required by libziparchive
 .PATH: ${.CURDIR}/../libutils
@@ -63,24 +63,6 @@ SRCS+=	FileMap.cpp
 .PATH:	${.CURDIR}/../libziparchive
 SRCS+=	zip_archive.cc
 
-# required by simpleperf
-.PATH: ${.CURDIR}/../lzma/C
-SRCS+=	7zCrc.c
-SRCS+=	7zCrcOpt.c
-SRCS+=	Bra86.c
-SRCS+=	Bra.c
-SRCS+=	BraIA64.c
-SRCS+=	CpuArch.c
-SRCS+=	Delta.c
-SRCS+=	Lzma2Dec.c
-SRCS+=	LzmaDec.c
-SRCS+=	Sha256.c
-SRCS+=	Xz.c
-SRCS+=	XzCrc64.c
-SRCS+=	XzCrc64Opt.c
-SRCS+=	XzDec.c
-
-CPPFLAGS+=	-D_7ZIP_ST
 CPPFLAGS+=	-D_WITH_GETLINE
 CPPFLAGS+=	-DUSE_BIONIC_UAPI_HEADERS
 CPPFLAGS+=	-Doff64_t=off_t
@@ -93,7 +75,6 @@ CPPFLAGS+=	-I${.CURDIR}/nonlinux_support/include
 CPPFLAGS+=	-I${.CURDIR}/../include
 CPPFLAGS+=	-I${.CURDIR}/../base/include
 CPPFLAGS+=	-I${.CURDIR}/../bionic/libc/kernel
-CPPFLAGS+=	-I${.CURDIR}/../lzma/C
 CPPFLAGS+=	$$(${LLVM_CONFIG} --cppflags)
 CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
 CXXFLAGS+=	-std=gnu++11
