@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	openpgm
-PORTVERSION=	5.2.122
+DISTVERSION=	5-2-122
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	2
 CATEGORIES=	net devel
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	libpgm-${PORTVERSION}
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
@@ -14,12 +13,14 @@ COMMENT=	Implementation of the PGM reliable multicast protocol
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	steve-o
 
 GNU_CONFIGURE=	yes
-USES=		pathfix perl5 tar:bzip2 libtool python:build
+USES=		autoreconf pathfix perl5 libtool python:build
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/openpgm/pgm
+WRKSRC_SUBDIR=	openpgm/pgm
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
