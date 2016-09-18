@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amule
-PORTVERSION=	2.3.1
-PORTREVISION=	15
+PORTVERSION=	2.3.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 CONFLICTS=	amule-devel-[0-9]*
 
 USES=		bison desktop-file-utils gmake perl5 pkgconfig shebangfix \
-		tar:bzip2
+		tar:xz
 USE_PERL5=	build
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
