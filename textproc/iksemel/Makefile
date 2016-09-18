@@ -5,7 +5,6 @@ PORTNAME=	iksemel
 PORTVERSION=	1.4
 PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML parser library mainly designed for Jabber applications
@@ -13,9 +12,11 @@ COMMENT=	XML parser library mainly designed for Jabber applications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
-
 LIB_DEPENDS=	libgnutls.so:security/gnutls
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	meduketto
+GH_TAGNAME=	6cddfef
 
 USES=		autoreconf libtool makeinfo pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.am
