@@ -1,4 +1,4 @@
---- deps/v8/src/base/atomicops_internals_arm_gcc.h.orig	2016-06-02 21:53:45 UTC
+--- deps/v8/src/base/atomicops_internals_arm_gcc.h.orig	2016-09-14 17:37:01 UTC
 +++ deps/v8/src/base/atomicops_internals_arm_gcc.h
 @@ -13,6 +13,11 @@
  #include <sys/cpuinline.h>
@@ -21,7 +21,7 @@
  #elif defined(__QNXNTO__)
    __cpu_membarrier();
  #else
-@@ -63,8 +70,9 @@ inline void MemoryBarrier() {
+@@ -64,8 +71,9 @@ inline void MemoryBarrier() {
      defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) ||  \
      defined(__ARM_ARCH_7R__) || defined(__ARM_ARCH_7M__) || \
      defined(__ARM_ARCH_6__) || defined(__ARM_ARCH_6J__) ||  \

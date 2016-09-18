@@ -1,6 +1,6 @@
---- deps/v8/src/profiler/sampler.cc.orig	2016-06-02 21:53:46 UTC
+--- deps/v8/src/profiler/sampler.cc.orig	2016-09-14 17:37:03 UTC
 +++ deps/v8/src/profiler/sampler.cc
-@@ -515,9 +515,9 @@ void SignalHandler::HandleProfilerSignal
+@@ -534,9 +534,9 @@ void SignalHandler::HandleProfilerSignal
    state.sp = reinterpret_cast<Address>(mcontext.mc_rsp);
    state.fp = reinterpret_cast<Address>(mcontext.mc_rbp);
  #elif V8_HOST_ARCH_ARM
