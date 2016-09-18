@@ -10,6 +10,8 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Answer set solver for (extended) normal logic programs
 
+BROKEN_sparc64=	Fails to build: internal compiler error
+
 USES=	cmake:outsource
 
 PLIST_FILES=	bin/${PORTNAME}
