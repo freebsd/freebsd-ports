@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
 
+BROKEN_sparc64:	Does not build: fails to compile all_files.cpp
+
 USE_LDCONFIG=		yes
 USES=			cmake shebangfix tar:xz
 USE_QT5=		buildtools_build core qmake_build widgets
