@@ -38,3 +38,14 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  #endif
  
  #include "png_load.h"
+--- Core/TextureReplacer.cpp.orig	2016-05-03 00:47:54 UTC
++++ Core/TextureReplacer.cpp
+@@ -16,7 +16,7 @@
+ // https://github.com/hrydgard/ppsspp and http://www.ppsspp.org/.
+ 
+ #ifndef USING_QT_UI
+-#include <libpng17/png.h>
++#include "png.h"
+ #endif
+ 
+ #include <algorithm>

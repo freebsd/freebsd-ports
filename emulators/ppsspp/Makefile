@@ -2,7 +2,7 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.2.2
+DISTVERSION?=	1.3
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -23,7 +23,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
 GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
-GH_TAGNAME?=	16a50e3:lang 9b225d9:ext_armips
+GH_TAGNAME?=	cdf4a8d:lang 1ffab37:ext_armips
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
