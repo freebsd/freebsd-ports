@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
@@ -33,6 +33,9 @@ OPTIONS_DEFAULT=SRC
 SRC_DESC=	Install source code
 
 .include <bsd.port.options.mk>
+
+post-extract:
+	@${FIND} ${WRKDIR}/doc -name .build -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
