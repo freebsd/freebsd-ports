@@ -3868,7 +3868,6 @@
     SUBDIR += pmccabe
     SUBDIR += pmd
     SUBDIR += poco
-    SUBDIR += poco-devel
     SUBDIR += poco-ssl
     SUBDIR += ponscripter-sekai
     SUBDIR += popt
