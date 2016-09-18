@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.5.0
+PORTVERSION=	6.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -77,6 +77,8 @@ CFLAGS+=	-Wno-unused-const-variable
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	yes
+# GCC does not expose std::snprintf() without this define
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch:
