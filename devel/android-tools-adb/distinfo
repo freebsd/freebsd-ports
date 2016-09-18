@@ -3,3 +3,5 @@ SHA256 (android-platform_system_core-android-7.0.0_r1_GH0.tar.gz) = faa44f626dfa
 SIZE (android-platform_system_core-android-7.0.0_r1_GH0.tar.gz) = 1570346
 SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
 SIZE (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = 5967
+SHA256 (b4cff495a1f9.patch) = cfb45f82866c7b46bdb9aa62aa0f856c243c13083f37e93b07c4491ad2b7db50
+SIZE (b4cff495a1f9.patch) = 2066
