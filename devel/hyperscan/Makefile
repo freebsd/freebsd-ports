@@ -4,8 +4,8 @@ PORTNAME=	hyperscan
 PORTVERSION=	4.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
-MASTER_SITES=	GH:hs SF/boost/boost/1.59.0:boost
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:hs boost_1_59_0.tar.gz:boost
+MASTER_SITES=	SF/boost/boost/1.59.0:boost
+DISTFILES=	boost_1_59_0.tar.gz:boost
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	High-performance multiple regex matching library
