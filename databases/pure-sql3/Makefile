@@ -14,17 +14,22 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig pure sqlite
+
 PORTDOCS=	README
 PORTEXAMPLES=	*
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PLIST_FILES=	lib/pure/sql3.pure \
 		lib/pure/sql3util.so
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/sql3util.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/sql3util.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
