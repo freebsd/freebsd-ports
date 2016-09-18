@@ -8632,3 +8632,4 @@ x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulnes
 security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project
 devel/py-dogpile.core|devel/py-dogpile.cache|2016-09-13|EOL upstream. Merged into devel/py-dogpile.cache since 0.6.0
 korean/imhangul||2016-09-15|Split into korean/imhangul-gtk2 and korean/imhangul-gtk3
+devel/poco-devel|devel/poco|2016-09-18|Has expired: older than stable devel/poco
