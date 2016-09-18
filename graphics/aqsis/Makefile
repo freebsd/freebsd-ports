@@ -20,6 +20,8 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	bash:shells/bash
 
+BROKEN_sparc64=	Fails to build: cannot link with boost
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
