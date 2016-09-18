@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
-MAINTAINER=	jase@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
