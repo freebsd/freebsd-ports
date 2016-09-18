@@ -19,6 +19,9 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 PATCH_DEPENDS=	gnulib>=0:devel/gnulib
 
+BROKEN_armv6=	Fails to build: fails to compile i386_disasm.c
+BROKEN_sparc64=	Fails to build: fails to compile dwarf_begin_elf.c
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
