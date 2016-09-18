@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Test2/Event/Diag.pm
 %%SITE_PERL%%/Test2/Event/Exception.pm
 %%SITE_PERL%%/Test2/Event/Generic.pm
+%%SITE_PERL%%/Test2/Event/Info.pm
 %%SITE_PERL%%/Test2/Event/Note.pm
 %%SITE_PERL%%/Test2/Event/Ok.pm
 %%SITE_PERL%%/Test2/Event/Plan.pm
@@ -55,6 +56,7 @@
 %%PERL5_MAN3%%/Test2::Event::Diag.3.gz
 %%PERL5_MAN3%%/Test2::Event::Exception.3.gz
 %%PERL5_MAN3%%/Test2::Event::Generic.3.gz
+%%PERL5_MAN3%%/Test2::Event::Info.3.gz
 %%PERL5_MAN3%%/Test2::Event::Note.3.gz
 %%PERL5_MAN3%%/Test2::Event::Ok.3.gz
 %%PERL5_MAN3%%/Test2::Event::Plan.3.gz
