@@ -5,15 +5,12 @@ PORTNAME=	osdlyrics
 PORTVERSION=	0.4.3
 PORTREVISION=	4
 CATEGORIES=	audio deskutils
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	osd-lyrics
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/osd-lyrics/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -22,9 +19,6 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 USES=		desktop-file-utils gettext gmake iconv localbase pkgconfig sqlite
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
-# Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',
-# see this bug for details: http://llvm.org/bugs/show_bug.cgi?id=3814
-#CONFIGURE_ARGS=	--with-werror
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
