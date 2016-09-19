@@ -11,6 +11,8 @@ DISTNAME=	fortune.ru-${PORTVERSION}
 MAINTAINER=	obezpalko@gmail.com
 COMMENT=	Fortunes in Russian
 
+BROKEN=		unfetchable
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if exists(/usr/games/strfile)
