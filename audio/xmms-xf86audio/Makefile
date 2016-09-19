@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.devin.com/xmms-xf86audio/download/
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XF86Audio multimedia-key support for XMMS
 
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
