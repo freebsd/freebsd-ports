@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play WavPack files
 
 LIB_DEPENDS=	libwavpack.so:audio/wavpack \
