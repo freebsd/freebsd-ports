@@ -687,6 +687,7 @@
     SUBDIR += openssn
     SUBDIR += opensurge
     SUBDIR += openttd
+    SUBDIR += opentyrian
     SUBDIR += openxcom
     SUBDIR += openyahtzee
     SUBDIR += optimax

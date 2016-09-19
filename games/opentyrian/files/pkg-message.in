@@ -1,0 +1,6 @@
+In order to play opentyrian, you need to either install games/tyrian-data
+port (not available as package) or install Tyrian data files manually
+into %%DATADIR%%.
+
+See project documentation or website for instructions on how to get
+the data.
