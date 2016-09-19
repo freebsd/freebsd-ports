@@ -115,7 +115,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  documents.
 # RUBY_MODDOCDIR	- Installation path for the module's documents.
 # RUBY_MODEXAMPLESDIR	- Installation path for the module's examples.
-# RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
 .if defined(RUBY_DEFAULT_VER)
@@ -289,7 +288,6 @@ RUBY_RIDIR?=		${PREFIX}/share/ri/${RUBY_VER}/system
 RUBY_SITERIDIR?=	${PREFIX}/share/ri/${RUBY_VER}/site
 RUBY_MODDOCDIR?=	${RUBY_DOCDIR}/${RUBY_MODNAME}
 RUBY_MODEXAMPLESDIR?=	${RUBY_EXAMPLESDIR}/${RUBY_MODNAME}
-RUBY_ELISPDIR?=		${PREFIX}/lib/ruby/elisp
 
 # PLIST
 PLIST_RUBY_DIRS=	RUBY_LIBDIR="${RUBY_LIBDIR}" \
@@ -303,8 +301,7 @@ PLIST_RUBY_DIRS=	RUBY_LIBDIR="${RUBY_LIBDIR}" \
 			RUBY_DOCDIR="${RUBY_DOCDIR}" \
 			RUBY_EXAMPLESDIR="${RUBY_EXAMPLESDIR}" \
 			RUBY_RIDIR="${RUBY_RIDIR}" \
-			RUBY_SITERIDIR="${RUBY_SITERIDIR}" \
-			RUBY_ELISPDIR="${RUBY_ELISPDIR}"
+			RUBY_SITERIDIR="${RUBY_SITERIDIR}"
 
 PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_VERSION="${RUBY_VERSION}" \
