@@ -11,6 +11,8 @@ COMMENT=	OldSkool Gravity Game
 
 LICENSE=	GPLv3+
 
+BROKEN=		unfetchable (checksum mismatch)
+
 USES=		tar:bzip2
 USE_SDL=	sdl image ttf mixer
 USE_GL=		gl
