@@ -91,6 +91,13 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+# The configure script will output this message, so save the user the trouble
+IGNORE=	Detected LibreSSL: This is NOT supported, and may break consensus compatibility!
+.endif
+
 post-patch:
 	${MKDIR} ${WRKSRC}/src/build-aux
 
@@ -113,4 +120,4 @@ do-install-X11-off:
 	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${DAEMON} ${STAGEDIR}${PREFIX}/bin/${DAEMON}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
