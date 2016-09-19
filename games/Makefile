@@ -309,6 +309,7 @@
     SUBDIR += funnyboat
     SUBDIR += galaxis
     SUBDIR += galaxyhack
+    SUBDIR += garden-of-coloured-lights
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gbrainy
