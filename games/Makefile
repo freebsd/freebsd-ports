@@ -991,6 +991,7 @@
     SUBDIR += twitch
     SUBDIR += tycho
     SUBDIR += typespeed
+    SUBDIR += tyrian-data
     SUBDIR += ufoai
     SUBDIR += ufoai-data
     SUBDIR += uhexen
