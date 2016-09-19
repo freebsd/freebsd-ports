@@ -2,7 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.13
+PORTVERSION=	2.6.14
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -14,7 +14,11 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring \
 		libwebkitgtk-1.0.so:www/webkit-gtk2 \
-		libgoffice-0.8.so:devel/goffice
+		libgoffice-0.8.so:devel/goffice \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:finance/p5-Finance-Quote
@@ -58,14 +62,12 @@ GUILE2_BUILD_DEPENDS=	slib-guile2>0:lang/slib-guile2
 GUILE2_RUN_DEPENDS=	slib-guile2>0:lang/slib-guile2
 
 USE_XORG=	x11
-USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool perl5 \
-		pkgconfig shebangfix tar:bzip2
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool localbase \
+		perl5 pkgconfig shebangfix tar:bzip2
 INSTALLS_ICONS=	yes
-USE_GNOME+=	gtk20 intltool libgnomecanvas libxml2 libxslt:build
+USE_GNOME+=	cairo gtk20 intltool libgnomecanvas libxml2 libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 SHEBANG_FILES=	src/gnc-test-env.pl src/quotes/gnc-fq-dump
