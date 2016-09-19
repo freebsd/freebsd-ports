@@ -10,7 +10,7 @@ COMMENT=	Multithreaded SQL database (client)
 LICENSE+=	LGPL21
 
 BROKEN_powerpc64=	Does not build
-BROKEN_powerpc64=	Does not build: reports unsupported compiler
+BROKEN_sparc64=	Does not build: reports unsupported compiler
 
 MASTERDIR=	${.CURDIR}/../mysql57-server
 
