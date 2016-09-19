@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 DISTNAME=	flac-${PORTVERSION}
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
 
 LIB_DEPENDS=	libxmms.so:multimedia/xmms \

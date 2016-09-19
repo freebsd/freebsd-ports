@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 
 BUILD_DEPENDS=	xmms-config:multimedia/xmms
