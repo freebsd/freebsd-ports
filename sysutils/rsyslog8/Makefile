@@ -2,10 +2,11 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.19.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
 
 BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt \
