@@ -21,3 +21,5 @@ Rain data is then calculated per hour, day, week and month if data for these
 periods exist. No further data processing is performed. This makes fowsr
 very small and well suited for running in embedded devices at remote
 locations.
+
+WWW: https://github.com/apachler/fowsr
