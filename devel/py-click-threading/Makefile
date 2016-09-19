@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	click-threading
-PORTVERSION=	0.1.2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +14,12 @@ LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3200
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=0:devel/py-futures
+.endif
+
+.include <bsd.port.post.mk>
