@@ -51,7 +51,7 @@ index 48e60c0..ec08417 100644
 +
 +    if test "$ac_cv_header_sys_soundcard_h" != "yes" -a \
 +            "$ac_cv_header_soundcard_h" != "yes"; then
-+        AC_MSG_ERROR([Need OSS for Ogg, Wave or WebM decoding on $OS_TARGET.  Disable with --disable-ogg --disable-wave --disable-webm.])
++        AC_MSG_ERROR([Need OSS for Ogg, Wave or WebM decoding on $OS_TARGET.  Disable with --without-oss.])
 +    fi
 +
 +    dnl Assume NetBSD implementation over SunAudio
@@ -562,7 +562,7 @@ index a962553..1f780f4 100644
    /* get a pcm, disabling resampling, so we get a rate the
     * hardware/dmix/pulse/etc. supports. */
 -  r = snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
-+  r = WRAP(snd_pcm_open)(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
++  r = WRAP(snd_pcm_open)(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
    if (r < 0) {
      return CUBEB_ERROR;
    }
@@ -643,7 +643,7 @@ new file mode 100644
 index 0000000..5e38e27
 --- /dev/null
 +++ mozilla/media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,402 @@
+@@ -0,0 +1,432 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -769,8 +769,8 @@ index 0000000..5e38e27
 +  return got;
 +}
 +
-+static void apply_volume(int16_t* buffer, unsigned int n,
-+                         float volume, float panning)
++static void apply_volume_int(int16_t* buffer, unsigned int n,
++                             float volume, float panning)
 +{
 +  float left = volume;
 +  float right = volume;
@@ -787,6 +787,26 @@ index 0000000..5e38e27
 +    buffer[i] = ((int)buffer[i])*pan[i%2]/128;
 +  }
 +}
++
++static void apply_volume_float(float* buffer, unsigned int n,
++                               float volume, float panning)
++{
++  float left = volume;
++  float right = volume;
++  unsigned int i;
++  float pan[2];
++  if (panning<0) {
++    right *= (1+panning);
++  } else {
++    left *= (1-panning);
++  }
++  pan[0] = left;
++  pan[1] = right;
++  for(i=0; i<n; i++){
++    buffer[i] = buffer[i]*pan[i%2];
++  }
++}
++
 +
 +static void *writer(void *stm)
 +{
@@ -812,15 +832,25 @@ index 0000000..5e38e27
 +    if (stream->floating) {
 +      got = run_data_callback(stream, f_buffer,
 +                              OSS_BUFFER_SIZE/stream->params.channels);
++      apply_volume_float(f_buffer, got*stream->params.channels,
++                                   stream->volume, stream->panning);
 +      for (i=0; i<((unsigned long)got)*stream->params.channels; i++) {
-+          buffer[i] = f_buffer[i]*32767.0;
++        /* Clipping is prefered to overflow */
++	if(f_buffer[i]>=1.0){
++	  f_buffer[i]=1.0;
++	}
++        if(f_buffer[i]<=-1.0){
++	  f_buffer[i]=-1.0;
++	}
++        /* One might think that multipling by 32767.0 is logical but results in clipping */
++        buffer[i] = f_buffer[i]*32767.0;
 +      }
 +    } else {
 +      got = run_data_callback(stream, buffer,
 +                              OSS_BUFFER_SIZE/stream->params.channels);
++      apply_volume_int(buffer, got*stream->params.channels,
++                               stream->volume, stream->panning);
 +    }
-+    apply_volume(buffer, got*stream->params.channels,
-+                         stream->volume, stream->panning);
 +    if (got<0) {
 +      run_state_callback(stream, CUBEB_STATE_ERROR);
 +      break;
@@ -891,9 +921,9 @@ index 0000000..5e38e27
 +  oss_try_set_latency(stream, latency); 
 +
 +  stream->floating = 0;
-+  SET(SNDCTL_DSP_CHANNELS, stream_params.channels);
-+  SET(SNDCTL_DSP_SPEED, stream_params.rate);
-+  switch (stream_params.format) {
++  SET(SNDCTL_DSP_CHANNELS, stream->params.channels);
++  SET(SNDCTL_DSP_SPEED, stream->params.rate);
++  switch (stream->params.format) {
 +    case CUBEB_SAMPLE_S16LE:
 +      SET(SNDCTL_DSP_SETFMT, AFMT_S16_LE);
 +    break;
@@ -1070,6 +1100,31 @@ index 8b7a0dd..31212ce 100644
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
+ 
+diff --git media/libcubeb/tests/moz.build media/libcubeb/tests/moz.build
+index 1b17c7b..48b56c2 100644
+--- mozilla/media/libcubeb/tests/moz.build
++++ mozilla/media/libcubeb/tests/moz.build
+@@ -73,7 +73,6 @@ elif CONFIG['OS_TARGET'] == 'OpenBSD':
+         'sndio',
+     ]
+ else:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
+     OS_LIBS += CONFIG['MOZ_PULSEAUDIO_LIBS']
+ 
+ if CONFIG['GNU_CXX']:
+diff --git media/libcubeb/update.sh media/libcubeb/update.sh
+index a96badd..2f9585e 100755
+--- mozilla/media/libcubeb/update.sh
++++ mozilla/media/libcubeb/update.sh
+@@ -10,6 +10,7 @@ cp $1/src/cubeb_audiounit.c src
+ cp $1/src/cubeb_pulse.c src
+ cp $1/src/cubeb_sndio.c src
+ cp $1/src/cubeb_opensl.c src
++cp $1/src/cubeb_oss.c src
+ cp $1/src/cubeb_audiotrack.c src
+ cp $1/src/cubeb_wasapi.cpp src
+ cp $1/src/cubeb_resampler.h src
 diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index 991f03f..3d99eb5 100644
 --- mozilla/media/webrtc/signaling/test/common.build
