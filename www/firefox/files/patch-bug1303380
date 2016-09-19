@@ -1,0 +1,26 @@
+commit c0fd0d3
+Author: Jared Wein <jwein@mozilla.com>
+Date:   Mon Sep 19 15:40:28 2016 -0400
+
+    Bug 1303380 - Wrap the telemetry code in _firstWindowLoaded with a try/catch to allow startup and migration code to run to completion if there is an exception writing to Telemetry. r=gijs
+    
+    MozReview-Commit-ID: DPfq6lZ4fM3
+---
+ browser/components/nsBrowserGlue.js | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git browser/components/nsBrowserGlue.js browser/components/nsBrowserGlue.js
+index eebbef2..20706fd 100644
+--- browser/components/nsBrowserGlue.js
++++ browser/components/nsBrowserGlue.js
+@@ -931,7 +931,9 @@ BrowserGlue.prototype = {
+     }
+     if (SCALING_PROBE_NAME) {
+       let scaling = aWindow.devicePixelRatio * 100;
+-      Services.telemetry.getHistogramById(SCALING_PROBE_NAME).add(scaling);
++      try {
++        Services.telemetry.getHistogramById(SCALING_PROBE_NAME).add(scaling);
++      } catch (ex) {}
+     }
+   },
+ 
