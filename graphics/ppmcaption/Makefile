@@ -17,7 +17,7 @@ MAKE_ARGS=	install_prefix=${STAGEDIR}
 PLIST_FILES=	bin/ppmcaption man/man1/ppmcaption.1.gz
 
 ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	does not compile on ia64 or amd64
+ONLY_FOR_ARCHS_REASON=	does not compile on ia64 or amd64; untested everywhere else
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-lang-c89,," ${WRKSRC}/configure
