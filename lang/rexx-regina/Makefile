@@ -17,7 +17,11 @@ COMMENT=	Rexx interpreter
 
 LICENSE=	LGPL21+
 
+BROKEN_armv6=		Does not build: error: expected expression
+BROKEN_mips=		Does not build: error: expected expression
+BROKEN_mips64=		Does not build: error: expected expression
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build: error: expected expression
 
 USES=		gmake iconv ncurses
 USE_RC_SUBR=	rxstack
