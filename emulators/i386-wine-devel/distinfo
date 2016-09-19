@@ -1,8 +1,8 @@
-TIMESTAMP = 1474127522
+TIMESTAMP = 1474171434
 SHA256 (freebsd:9:x86:64/i386-wine-devel-1.9.18,1.txz) = a8aaf9d2f8df1dfb591d21bf0a0cc2480382266000bfefcd9f2fb0f6493dd2dc
 SIZE (freebsd:9:x86:64/i386-wine-devel-1.9.18,1.txz) = 40954192
-SHA256 (freebsd:9:x86:64/i386-wine-staging-1.9.18,1.txz) = 558407a3593abf369c3d10d462cc80df04da14d1ef1c469276c6a20fc72f0fef
-SIZE (freebsd:9:x86:64/i386-wine-staging-1.9.18,1.txz) = 28409856
+SHA256 (freebsd:9:x86:64/i386-wine-staging-1.9.18,1.txz) = bf153a8c1aa45063993981c54cca34dceaa0be8b59fc3e64b2ad6935b6cbfb10
+SIZE (freebsd:9:x86:64/i386-wine-staging-1.9.18,1.txz) = 43711040
 SHA256 (freebsd:10:x86:64/i386-wine-devel-1.9.18,1.txz) = f0d3a7ccf19ba77079002226e1010f8d5aad9b1d0f1c12ca4789a9fab9c72ff0
 SIZE (freebsd:10:x86:64/i386-wine-devel-1.9.18,1.txz) = 40884192
 SHA256 (freebsd:10:x86:64/i386-wine-staging-1.9.18,1.txz) = 54f2ab62282c674556f8ccebde3b1c322efdf49b4ed7f09a340982c6e3417c79
