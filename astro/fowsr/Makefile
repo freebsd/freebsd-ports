@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fowsr
-PORTVERSION=	${FILEVER}.${FILEDATE}
+PORTVERSION=	${FILEVER}
 CATEGORIES=	astro
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	fowsr-${FILEVER}-${FILEDATE}
-
+DISTNAME=	fowsr-${FILEVER}
+USE_GITHUB=	yes
+GH_ACCOUNT=	apachler
+GH_PROJECT=	fowsr
+GH_TAGNAME= 571db38
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fine Offset Weather Station Reader
 
 LICENSE=	GPLv3
 
-BROKEN=		Unfetchable (google code has gone away)
-
-FILEVER=	1.0
-FILEDATE=	20100718
-WRKSRC=		${WRKDIR}/${PORTNAME}-${FILEVER}
+FILEVER=	2.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}/${PORTNAME}.src
 
 USES=		gmake dos2unix
 
