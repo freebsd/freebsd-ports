@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2016.2.1
+PORTVERSION=	2016.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -15,7 +15,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
 		libfltk.so:x11-toolkits/fltk \
 		libosg.so:graphics/osg \
-		libspeex.so:audio/speex
+		libspeex.so:audio/speex \
+		libspeexdsp.so:audio/speexdsp \
+		libcurl.so:ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
@@ -24,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glu glut
-USE_QT5=	core buildtools qmake widgets
+USE_QT5=	core buildtools gui qmake widgets
 
 USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
 		tar:bzip2
