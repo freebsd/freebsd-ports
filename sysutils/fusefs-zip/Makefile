@@ -1,17 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	fuse-zip
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://bitbucket.org/agalanin/fuse-zip/downloads/
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	FUSE filesystem to mount ZIP archives with write support
 
 LICENSE=	LGPL3
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libzip.so:archivers/libzip
 BUILD_DEPENDS=	libzip>=0.11.1:archivers/libzip
@@ -19,7 +16,7 @@ BUILD_DEPENDS=	libzip>=0.11.1:archivers/libzip
 USES=		gmake fuse pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-PORTDOCS=	README TODO changelog
+PORTDOCS=	README changelog
 
 OPTIONS_DEFINE=	DOCS
 
