@@ -5,6 +5,11 @@ PORTNAME=	zabbix3
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
+MAINTAINER=	pg@pakhom.spb.ru
+COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
+
+LICENSE=	GPLv2
+
 MASTERDIR=	${.CURDIR}/../zabbix3-server
 
 NO_BUILD=	yes
@@ -14,10 +19,11 @@ PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
 		xmlreader xmlwriter simplexml gettext ldap
-WANT_PHP_WEB=	yes
+
+USES=	php:web gettext
 
 OPTIONS_DEFINE=		MYSQL MYSQLI PGSQL SQLITE ORACLE
-OPTIONS_DEFAULT=	MYSQL MYSQLI
+OPTIONS_DEFAULT=	MYSQLI
 MYSQLI_DESC=		MySQLI backend
 
 .include <bsd.port.options.mk>
@@ -40,7 +46,7 @@ USE_PHP+=	sqlite3
 
 .if ${PORT_OPTIONS:MORACLE}
 ZABBIX_REQUIRE=
-CONFIGURE_ARGS+=        --with-oracle
+CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 do-install:
