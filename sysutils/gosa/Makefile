@@ -31,29 +31,29 @@ NO_ARCH=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
 SUB_FILES=	pkg-message
-SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's!"/etc/gosa"!"${ETCDIR}"!g' \
 		-e 's!"../contrib"!"${EXAMPLESDIR}/contrib"!g' \
 		-e 's!"/var/cache/gosa/tmp"!"/tmp"!g' \
 		${WRKSRC}/include/functions.inc
 
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's!/usr/bin/php!${PREFIX}/bin/php!g' \
 		-e 's!("GOSA_HOME", dirname(__FILE__));!("GOSA_HOME", "${WWWDIR}");!g' \
 		${WRKSRC}/update-gosa
 
 .for i in doc/core/guide.xml html/helpviewer.php include/functions_helpviewer.inc
-	${REINPLACE_CMD} -e 's!"../doc/!"${DOCSDIR}/!g' ${WRKSRC}/$i
+	@${REINPLACE_CMD} -e 's!"../doc/!"${DOCSDIR}/!g' ${WRKSRC}/$i
 .endfor
 
-	${MV} -f ${WRKSRC}/contrib/gosa.conf.5 ${WRKSRC}
-	${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} +
+	@${MV} -f ${WRKSRC}/contrib/gosa.conf.5 ${WRKSRC}
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} +
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -64,10 +64,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/gosa.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${EXAMPLESDIR})
-	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/var/spool/gosa
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS COPYING Changelog FAQ \
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS Changelog FAQ \
 		INSTALL README README.safemode ${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}/var/spool/gosa
 
 .include <bsd.port.mk>

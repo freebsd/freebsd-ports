@@ -1,5 +1,5 @@
---- plugins/admin/opsi/class_opsiware.inc.orig	2008-09-05 12:38:26.000000000 +0400
-+++ plugins/admin/opsi/class_opsiware.inc	2010-05-15 21:53:22.000000000 +0400
+--- plugins/admin/opsi/class_opsiware.inc.orig	2008-09-05 08:38:26 UTC
++++ plugins/admin/opsi/class_opsiware.inc
 @@ -1,16 +1,5 @@
  <?php
  
@@ -17,7 +17,7 @@
  class opsiWare extends plugin
  {
    private $opsi;
-@@ -57,5 +46,17 @@
+@@ -57,5 +46,17 @@ class opsiWare extends plugin
      return($smarty->fetch(get_template_path("opsiware.tpl",TRUE,dirname(__FILE__))));
    }
  }
