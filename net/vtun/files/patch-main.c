@@ -1,5 +1,5 @@
 --- main.c.orig	2013-07-07 13:31:22.000000000 -0700
-+++ main.c	2016-09-19 20:05:37.120740000 -0700
++++ main.c	2016-09-19 20:32:29.072400000 -0700
 @@ -39,9 +39,9 @@
  #include "lib.h"
  #include "compat.h"
@@ -46,3 +46,19 @@
          vtun_syslog(LOG_ERR,"Can't write PID file");
          return;
       }
+@@ -273,12 +284,12 @@
+      printf("Usage: \n");
+      printf("  Server:\n");
+ #ifdef HAVE_WORKING_FORK
+-     printf("\tvtund <-s|-i> [-f file] [-P port] [-L local address]\n");
++     printf("\tvtund <-s|-i> [-f file] [-P port] [-L local address] [-e] [-z pid_file ]\n");
+ #else
+-     printf("\tvtund <-i> [-f file] [-P port] [-L local address]\n");
++     printf("\tvtund <-i> [-f file] [-P port] [-L local address] [-e]\n");
+ #endif
+      printf("  Client:\n");
+      /* I don't think these work. I'm disabling the suggestion - bish 20050601*/
+      printf("\tvtund [-f file] " /* [-P port] [-L local address] */
+-	    "[-q] [-p] [-m] [-t timeout] <host profile> <server address>\n");
++	    "[-q] [-p] [-m] [-t timeout] [-e] <host profile> <server address>\n");
+ }
