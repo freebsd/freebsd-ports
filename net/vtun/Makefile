@@ -3,7 +3,7 @@
 
 PORTNAME=	vtun
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -30,11 +30,11 @@ ALL_TARGET=	vtund
 DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
 		README.Shaper TODO
 
-OPTIONS_DEFINE=	DOCS EXTENDED_MODE
-EXTENDED_MODE_DESC=	Use vtun-v6 EXTENDED_MODE patch
+OPTIONS_DEFINE=	DOCS
 
-# Obtained from http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
-EXTENDED_MODE_EXTRA_PATCHES=	${FILESDIR}/extra-tun_dev.c
+# Extended mode patches, obtained from
+# http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
+# are now dynamically enabled using the -e option.
 
 .include <bsd.port.options.mk>
 
