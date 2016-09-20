@@ -10,7 +10,7 @@ COMMENT=	Library For Reading And Writing LAS-Format Data
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS=	liblas-1.7*
+CONFLICTS=	liblas-1.8*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libLAS
