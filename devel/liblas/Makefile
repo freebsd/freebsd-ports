@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	liblas
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
-
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libgeotiff.so:graphics/libgeotiff
 
 CONFLICTS=	liblas12-1.2*
 
 USES=		cmake libtool
+LDFLAGS+=	-lpthread
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
