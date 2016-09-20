@@ -31,6 +31,7 @@
     SUBDIR += ascd
     SUBDIR += asmix
     SUBDIR += asmixer
+    SUBDIR += asterisk-flite
     SUBDIR += asunder
     SUBDIR += atunes
     SUBDIR += aubio
