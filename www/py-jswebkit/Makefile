@@ -19,6 +19,7 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 USES=		pkgconfig python:2
 USE_PYTHON=	distutils autoplist
+WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jswebkit.so
