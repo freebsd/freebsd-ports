@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 GH_PROJECT=	Player
 
-USES=		autoreconf gmake libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	pixman
 USE_SDL=	sdl2 mixer2
@@ -32,10 +32,16 @@ PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CONFIGURE_ENV+=	ZLIB_CFLAGS=" " ZLIB_LIBS=-lz
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
