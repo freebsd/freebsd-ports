@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	vtun
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.4
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
+LICENSE=        GPLv2
+
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
-USE_OPENSSL=	yes
+USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLINC} \
@@ -31,10 +32,6 @@ DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${CC} == "clang" || ${CXX} == "clang++" || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000026)
-EXTRA_PATCHES+= ${FILESDIR}/extra-cfg_file.y
-.endif
 
 .if defined(VTUN_EXTENDED_MODE)
 # Obtained from http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
@@ -54,6 +51,7 @@ post-install:
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${LN} -s ${PREFIX}/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/man/man1/vtun.1
+	@cd ${STAGEDIR}${PREFIX}/man/man1/ && \
+	${LN} -s vtund.8 ../man1/vtun.1
 
 .include <bsd.port.post.mk>
