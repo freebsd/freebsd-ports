@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	uchiwa
-PORTVERSION=	0.16.0
-CATEGORIES=	www
+PORTNAME=		uchiwa
+PORTVERSION=	0.18.2
+CATEGORIES=		www
 MASTER_SITES=	http://uchiwa.io/
 
 MAINTAINER=	alexander@treg.io
@@ -12,12 +12,11 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.6.0:lang/go
 
-UCHIWA_LOGDIR=	/var/log/uchiwa
-UCHIWA_CONFDIR=	${PREFIX}/etc/uchiwa
+UCHIWA_LOGDIR=		/var/log/uchiwa
+UCHIWA_CONFDIR=		${PREFIX}/etc/uchiwa
 UCHIWA_SHAREDIR=	${PREFIX}/share/uchiwa/public
-UCHIWA_RCDIR=	${PREFIX}/etc/rc.d
 
-USE_RC_SUBR=	uchiwa
+USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	sensu:DEFAULT
 GH_TUPLE=	dgrijalva:jwt-go:61124b62ad244d655f87d944aefaa2ae5a0d2f16:jwtgo
@@ -26,7 +25,7 @@ GH_TUPLE+=	mitchellh:mapstructure:f7d28d5aeab42b9b95d2e6d6b956f73a290077fc:mapst
 GH_TUPLE+=	palourde:mergo:d931ffd2c07cb4caf7194e0f6af9ac6771c26d54:mergo
 GH_TUPLE+=	stretchr:objx:cbeaeb16a013161a98496fad62933b1d21786672:objx
 GH_TUPLE+=	stretchr:testify:e4ec8152c15fc46bd5056ce65997a07c7d415325:testify
-GH_TUPLE+=	sensu:uchiwa-web:0.16.0:uchiwaweb
+GH_TUPLE+=	sensu:uchiwa-web:${PORTVERSION}:uchiwaweb
 GH_TUPLE+=	angular:bower-angular-cookies:b89821e37d3011ad0bca9a4847a8fcc59f90fabb:bowerangularcookies
 GH_TUPLE+=	urish:angular-moment:0.9.2:urishangularmoment
 GH_TUPLE+=	angular:bower-angular:v1.4.11:angularbowerangular
@@ -42,6 +41,7 @@ GH_TUPLE+=	angular-ui:bootstrap-bower:0.13.4:angularuibootstrapbower
 GH_TUPLE+=	moment:moment:2.8.4:momentmoment
 GH_TUPLE+=	jquery:jquery-dist:3.0.0:jqueryjquery
 GH_TUPLE+=	jashkenas:underscore:1f4bf626f23a99f7a676f5076dc1b1475554c8f7:jashkenasunderscore
+GH_TUPLE+=	kless:osutil:3ac994847c4376a4b905fc0a19f450c5a4bec647:klessosutil
 USERS=	uchiwa
 GROUPS=	uchiwa
 
@@ -55,6 +55,7 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/palourde
 	@${MKDIR} ${WRKSRC}/src/github.com/stretchr
 	@${MKDIR} ${WRKSRC}/src/github.com/stretchr/testify
+	@${MKDIR} ${WRKSRC}/src/github.com/kless
 	@${MKDIR} ${WRKSRC}/src/github.com/tools
 
 .for src in .travis.yml Gruntfile.js bower.json package.json uchiwa \
@@ -70,6 +71,7 @@ post-patch:
 	@${MV} ${WRKSRC_objx} ${WRKSRC}/src/github.com/stretchr/objx
 	@${MV} ${WRKSRC_testify}/assert ${WRKSRC}/src/github.com/stretchr/testify/assert
 	@${MV} ${WRKSRC_testify}/mock ${WRKSRC}/src/github.com/stretchr/testify/mock
+	@${MV} ${WRKSRC_klessosutil} ${WRKSRC}/src/github.com/kless/osutil
 	@${MKDIR} ${WRKSRC}/src/github.com/sensu/uchiwa/public/bower_components
 	@${MV} ${WRKSRC_bowerangularcookies} ${WRKSRC}/src/github.com/sensu/uchiwa/public/bower_components/angular-cookies
 	@${MV} ${WRKSRC_urishangularmoment} ${WRKSRC}/src/github.com/sensu/uchiwa/public/bower_components/angular-moment
@@ -94,9 +96,9 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${UCHIWA_LOGDIR} \
 	${STAGEDIR}${UCHIWA_CONFDIR} \
-	${STAGEDIR}${UCHIWA_SHAREDIR} \
-	${STAGEDIR}${UCHIWA_RCDIR}
+	${STAGEDIR}${UCHIWA_SHAREDIR}
 
+post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/uchiwa ${STAGEDIR}${PREFIX}/bin/uchiwa
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/config.json.example ${STAGEDIR}${PREFIX}/etc/uchiwa/config.json.sample
 	(cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/public && ${COPYTREE_SHARE} . ${STAGEDIR}${UCHIWA_SHAREDIR})
