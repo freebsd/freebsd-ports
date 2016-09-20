@@ -10,8 +10,6 @@ COMMENT=	Library (using libusb) to talk to FTDI chips
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
 OPTIONS_DEFINE=		PYTHON BOOST DOCS EXAMPLES
@@ -20,6 +18,9 @@ OPTIONS_SUB=		yes
 
 BOOST_DESC=	Build with boost
 PYTHON_DESC=	Build Python bindings
+
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build: fails to link
 
 USES=		cmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
