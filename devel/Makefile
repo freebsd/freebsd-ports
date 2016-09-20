@@ -1407,6 +1407,7 @@
     SUBDIR += libvmdk
     SUBDIR += libvolume_id
     SUBDIR += libvshadow
+    SUBDIR += libvslvm
     SUBDIR += libvterm
     SUBDIR += libwfut
     SUBDIR += libx86
