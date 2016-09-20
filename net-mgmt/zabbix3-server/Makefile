@@ -60,8 +60,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 .if ${ZABBIX_BUILD} != "agent"
 USES+=		execinfo
 
-CPPFLAGS+=	${EXECINFO_CPPFLAGS}
-LDFLAGS+=	${EXECINFO_LDFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
