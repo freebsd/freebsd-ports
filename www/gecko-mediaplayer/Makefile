@@ -4,14 +4,12 @@
 PORTNAME=	gecko-mediaplayer
 PORTVERSION=	1.0.9
 CATEGORIES=	www multimedia gnome
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S,/files/,/svn/packages/,}
+MASTER_SITES=	https://pkgs.rpmfusion.org/repo/pkgs/free/gecko-mediaplayer/gecko-mediaplayer-1.0.9.tar.gz/69b50ecbbbf34ca6d980a477345dbd40/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libnspr4.so:devel/nspr \
