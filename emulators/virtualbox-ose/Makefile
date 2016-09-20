@@ -120,8 +120,7 @@ ENV=
 .endif
 
 PLIST_SUB+=	GUEST_VER=${PORTVERSION} \
-		PYTHON_VER=${PYTHON_VER} \
-		PYTHON_VERU=${PYTHON_VER:S/./_/} \
+		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
 		VBOXGROUP=${VBOXGROUP}
 SUB_LIST+=	VBOXDIR=${VBOX_DIR} \
 		VBOXGROUP=${VBOXGROUP} \
@@ -163,7 +162,7 @@ USE_TEX=	dvipsk:build formats:build
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
+USES+=		python
 USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
@@ -234,6 +233,14 @@ PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk \
 		${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk
+.endif
+
+.if ${PYTHON_MAJOR_VER} >= 3
+PLIST_SUB+=	PYTHON_PYCDIR=/__pycache__/ \
+		PYTHON_PYCEXT=.cpython-${PYTHON_SUFFIX}.pyc
+.else
+PLIST_SUB+=	PYTHON_PYCDIR=/ \
+		PYTHON_PYCEXT=.pyc
 .endif
 
 .if ${SSL_DEFAULT} != base
@@ -320,6 +327,7 @@ post-patch:
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
+	    -e 's|SUPPYTHONLIBS=.*|SUPPYTHONLIBS="${PYTHON_VERSION}${PYTHON_ABIVER}"|' \
 	    ${WRKSRC}/configure
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk \
@@ -329,6 +337,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
 	    -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
+	@${REINPLACE_CMD} \
+	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
+	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 
 do-build:
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \

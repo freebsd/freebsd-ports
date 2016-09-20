@@ -78,6 +78,7 @@ MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 . endif
 .endif
 
+BROKEN_sparc64=	Does not build: bootstrap comparison failure
 LANGUAGES:=	c,c++,objc,fortran
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}

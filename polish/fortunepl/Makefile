@@ -14,6 +14,8 @@ PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lot of funny Polish fortune files
 
+BROKEN=		unfetchable
+
 .if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
 .elif exists(/usr/bin/strfile)

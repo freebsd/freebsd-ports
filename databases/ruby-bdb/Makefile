@@ -3,7 +3,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -30,6 +30,7 @@ INSTALL_TARGET=	site-install
 DOCS=		Changes README.en bdb.rd docs/*.rd
 DOCSDIR=	${RUBY_MODDOCDIR}
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+SHAREMODE=	0644
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -68,6 +69,9 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-common.c-22 \
 			${FILESDIR}/extra-patch-src-recnum.c-22 \
 			${FILESDIR}/extra-patch-src-cursor.c-22
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/docs/*.orig
 
 post-build:
 	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \

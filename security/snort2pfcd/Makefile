@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	snort2pfcd
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.tworoutes.com/oss/
 
 MAINTAINER=	onestsam@gmail.com
 COMMENT=	Snort alert to pf blocker
+
+LICENSE=	NONE
 
 LIB_DEPENDS=	libcidr.so:devel/libcidr
 RUN_DEPENDS=	snort:security/snort

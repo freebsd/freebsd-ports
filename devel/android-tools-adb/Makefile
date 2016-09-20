@@ -5,6 +5,10 @@ DISTVERSIONPREFIX=	android-
 DISTVERSION?=	7.0.0_r1
 PORTREVISION?=	0
 CATEGORIES=	devel
+.ifndef EXTRA_PATCHES
+PATCH_SITES=	https://github.com/android/platform_system_core/commit/
+PATCHFILES=	b4cff495a1f9.patch:-p1
+.endif
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android debug bridge command line tool

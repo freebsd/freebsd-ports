@@ -1881,7 +1881,6 @@ sbin/update-gosa
 %%EXAMPLESDIR%%/contrib/plugins/uw-imap/procmail-vacation.txt
 %%EXAMPLESDIR%%/contrib/shells
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

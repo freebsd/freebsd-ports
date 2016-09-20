@@ -12,10 +12,13 @@ COMMENT=	Library containing common/shared code regarding network interface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libosmoabis.so:devel/libosmo-abis
+
+BROKEN_mips=	Does not build: undefined reference to __bswap_16
+BROKEN_mips64=	Does not build: undefined reference to __bswap_16
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=	Does not build: undefined reference to __bswap_16
 
 USES=		autoreconf libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am

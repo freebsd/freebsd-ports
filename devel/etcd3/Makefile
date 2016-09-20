@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
@@ -26,6 +26,9 @@ PLIST_FILES=	bin/etcd \
 		bin/etcdctl
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+DOCS_DESC=	Install etcd README file
+
 post-extract:
 	@${MV} ${WRKSRC}/cmd/vendor ${WRKDIR}/src
 	@${RM} ${GO_WRKDIR_SRC}/github.com/${GH_ACCOUNT}/${PORTNAME}
@@ -35,6 +38,8 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/etcd ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/etcdctl ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 

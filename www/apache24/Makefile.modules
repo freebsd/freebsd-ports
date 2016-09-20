@@ -86,4 +86,8 @@ CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}/include/libxml2
 CONFIGURE_ARGS+=	--without-libxml2
 .endif
 
+.if ${PORT_OPTIONS:MPROXY_HTTP2} && !${PORT_OPTIONS:MPROXY_BALANCER}
+IGNORE=	PROXY_HTTP2 needs PROXY_BALANCER
+.endif
+
 .endif	# _PREMKINCLUDED

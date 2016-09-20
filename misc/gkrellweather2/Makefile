@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc geography
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather plugin for GKrellM
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2

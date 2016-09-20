@@ -6,7 +6,7 @@ PORTVERSION=	0.7.09
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
 
-MAINTAINER=	jase@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 
 LIB_DEPENDS=	librsync.so:net/librsync1

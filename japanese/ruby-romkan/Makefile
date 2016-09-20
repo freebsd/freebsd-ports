@@ -3,6 +3,7 @@
 
 PORTNAME=	romkan
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	japanese converters ruby
 MASTER_SITES=	http://0xcc.net/ruby-romkan/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -15,17 +16,11 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-EXAMPLES_JA=	test.rb test.sh
+EXAMPLES=	test.rb test.sh
 
-RUBY_RD_FILES=	romkan.en.rd romkan.ja.rd
+DOCS=		ChangeLog romkan.en.rd romkan.ja.rd
 
-DOCS_EN=	ChangeLog \
-		${RUBY_RD_FILES:M*.en.rd} \
-		${RUBY_RD_HTML_FILES:M*.en.html}
-DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
-		${RUBY_RD_HTML_FILES:M*.ja.html}
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
@@ -35,16 +30,16 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${RUBY_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/romkan.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
-	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja
-.for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .endfor
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+.for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
 
 .include <bsd.port.post.mk>

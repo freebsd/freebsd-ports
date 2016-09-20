@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hyperscan
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
-MASTER_SITES=	GH:hs SF/boost/boost/1.59.0:boost
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:hs boost_1_59_0.tar.gz:boost
+MASTER_SITES=	SF/boost/boost/1.59.0:boost
+DISTFILES=	boost_1_59_0.tar.gz:boost
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	High-performance multiple regex matching library
@@ -23,9 +23,10 @@ ONLY_FOR_ARCHS_REASON=	SSSE3 is required for work
 OPTIONS_DEFINE=	SHARED NATIVE
 SHARED_DESC=		Build shared library
 NATIVE_DESC=		Build with native CPU tunes
+OPTIONS_DEFAULT=	SHARED
 
 .ifndef DEBUG_FLAGS
-CMAKE_BUILD_TYPE=	MinSizeRel
+CMAKE_BUILD_TYPE=	Release
 .else
 CMAKE_BUILD_TYPE=	Debug
 .endif
@@ -46,7 +47,7 @@ CFLAGS+=	-march=core2
 CMAKE_ARGS+=	-DBUILD_STATIC_AND_SHARED=ON
 PLIST_SUB+=	SHARED="" \
 		SOVERSION=${PORTVERSION} \
-		SOSHORTVERSION=${PORTVERSION:C/\.[0-9]$//}
+		SOSHORTVERSION=${PORTVERSION:C/\.[0-9].[0-9]$//}
 .else
 PLIST_SUB+=	SHARED="@comment "
 .endif

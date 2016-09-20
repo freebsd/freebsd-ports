@@ -1213,14 +1213,14 @@ MASTER_SITE_XCONTRIB+= \
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
 MASTER_SITE_XFCE+= \
-	http://mirror.perldude.de/archive.xfce.org/%SUBDIR%/ \
 	http://mirror.netcologne.de/xfce/%SUBDIR%/ \
 	http://ftp.udc.es/xfce/%SUBDIR%/ \
 	http://xfce.mirror.uber.com.au/%SUBDIR%/ \
 	http://archive.be.xfce.org/%SUBDIR%/ \
 	http://archive.be2.xfce.org/%SUBDIR%/ \
 	http://archive.al-us.xfce.org/%SUBDIR%/ \
-	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/
+	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/ \
+	http://mirror.perldude.de/archive.xfce.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)

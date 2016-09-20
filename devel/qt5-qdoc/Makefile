@@ -2,26 +2,19 @@
 
 PORTNAME=	qdoc
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel textproc
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation generator
 
-USE_QT5=	core xml buildtools_build qmake_build
-QT_DIST=	base
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-no-dbus -no-gui -no-xcb
+USE_QT5=	core qml buildtools_build qdoc-data_run
+QT_DIST=	tools
+USES=		qmake
 
-BUILD_WRKSRC=	${WRKSRC}/src/tools/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-QT_DOCDIR=      ${PREFIX}/share/doc/qt5
-
-post-install:
-	${MKDIR} ${STAGEDIR}${QT_DOCDIR} && \
-	cd ${WRKSRC}/doc/global && \
-		${COPYTREE_SHARE} \* ${STAGEDIR}${QT_DOCDIR}/global
+PLIST_FILES=	${QT_BINDIR}/qdoc
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for MP4/M4A/AAC files
 
 LIB_DEPENDS=	libxmms.so:multimedia/xmms \

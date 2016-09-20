@@ -1,4 +1,4 @@
---- runtime/nsd_ptcp.c.orig	2015-04-30 08:50:16 UTC
+--- runtime/nsd_ptcp.c.orig	2016-05-02 13:37:05 UTC
 +++ runtime/nsd_ptcp.c
 @@ -656,7 +656,11 @@ EnableKeepAlive(nsd_t *pNsd)
  	if(pThis->iKeepAliveProbes > 0) {

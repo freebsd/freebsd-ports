@@ -23,6 +23,7 @@
 %%QT_QMLDIR%%/QtGraphicalEffects/RecursiveBlur.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/ThresholdMask.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/ZoomBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/DropShadowBase.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/FastGlow.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/FastInnerShadow.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/FastMaskedBlur.qml
@@ -30,5 +31,7 @@
 %%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianGlow.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianInnerShadow.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianMaskedBlur.qml
-%%QT_QMLDIR%%/QtGraphicalEffects/private/SourceProxy.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/libqtgraphicaleffectsprivate.so
+%%DEBUG%%%%QT_QMLDIR%%/QtGraphicalEffects/private/libqtgraphicaleffectsprivate.so.debug
+%%QT_QMLDIR%%/QtGraphicalEffects/private/qmldir
 %%QT_QMLDIR%%/QtGraphicalEffects/qmldir

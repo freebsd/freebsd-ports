@@ -3,8 +3,8 @@
 
 PORTNAME=	yaml-cpp
 PORTVERSION=	0.3.0
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	03
 
 MAINTAINER=	tim@niemueller.de
@@ -12,12 +12,12 @@ COMMENT=	YAML parser and emitter in C++ matching the YAML 1.2 spec
 
 LICENSE=	MIT
 
-BROKEN=		Unfetchable (google code has gone away)
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON -DYAML_CPP_BUILD_TOOLS=0
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jbeder
 
 post-patch: .SILENT
 	${FIND} ${WRKSRC} -name '*.[hc]*' -o -name CMakeLists.txt | \

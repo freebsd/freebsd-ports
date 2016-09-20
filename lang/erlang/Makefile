@@ -29,6 +29,8 @@ COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
 
+BROKEN_sparc64=		Fails to build: error: fp_except undeclared
+
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
 ERLANG_LIB=	${PORTNAME}

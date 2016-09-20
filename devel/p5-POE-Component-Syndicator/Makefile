@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jase@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component base class which implements the Observer pattern
 
 LICENSE=	ART10 GPLv1

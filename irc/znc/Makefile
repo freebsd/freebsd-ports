@@ -8,7 +8,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
 
-MAINTAINER=	jase@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced IRC bouncer
 
 LICENSE=	APACHE20

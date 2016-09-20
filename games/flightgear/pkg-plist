@@ -1,7 +1,6 @@
 bin/GPSsmooth
 bin/MIDGsmooth
 bin/UGsmooth
-bin/fgadmin
 bin/fgcom
 bin/fgelev
 bin/fgfs
@@ -11,7 +10,6 @@ bin/fgviewer
 bin/js_demo
 bin/js_server
 bin/metar
-bin/terrasync
 bin/yasim
 bin/yasim-proptest
 man/man1/fgfs.1.gz

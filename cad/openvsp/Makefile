@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
-MASTER_SITES=	GH
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
@@ -60,8 +59,8 @@ BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenV
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${BUILD_PREFIX}/vsp* ${STAGEDIR}${PREFIX}/bin
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/vsp*
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/vsp*
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for d in CustomScripts airfoil matlab scripts textures
 	(cd ${BUILD_WRKSRC}/${BUILD_PREFIX}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .endfor

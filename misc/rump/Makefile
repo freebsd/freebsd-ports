@@ -14,6 +14,9 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	Does not build
 
+NOT_FOR_ARCHS=	armv6 mips mips64 sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
+
 USE_LDCONFIG=	yes
 USE_GCC=	any
 

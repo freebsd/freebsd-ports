@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lnav
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,13 +11,14 @@ COMMENT=	Terminal based log file navigator
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:devel/pcre
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:devel/pcre \
+		${LOCALBASE}/lib/libsqlite3.a:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf execinfo ncurses python readline sqlite
+USES=		autoreconf execinfo gmake ncurses python readline
 
 PLIST_FILES=	bin/lnav man/man1/lnav.1.gz
 

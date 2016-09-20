@@ -309,6 +309,7 @@
     SUBDIR += funnyboat
     SUBDIR += galaxis
     SUBDIR += galaxyhack
+    SUBDIR += garden-of-coloured-lights
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gbrainy
@@ -686,6 +687,7 @@
     SUBDIR += openssn
     SUBDIR += opensurge
     SUBDIR += openttd
+    SUBDIR += opentyrian
     SUBDIR += openxcom
     SUBDIR += openyahtzee
     SUBDIR += optimax
@@ -989,6 +991,7 @@
     SUBDIR += twitch
     SUBDIR += tycho
     SUBDIR += typespeed
+    SUBDIR += tyrian-data
     SUBDIR += ufoai
     SUBDIR += ufoai-data
     SUBDIR += uhexen

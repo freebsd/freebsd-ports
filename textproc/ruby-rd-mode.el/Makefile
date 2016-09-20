@@ -23,6 +23,10 @@ ELISP_FILES=	rd-mode.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+RUBY_ELISPDIR=	${PREFIX}/lib/ruby/elisp
+
+PLIST_SUB+=	RUBY_ELISPDIR=${RUBY_ELISPDIR}
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool; ${MAKE} -V WRKSRC`/utils ${WRKSRC}

@@ -1,0 +1,3 @@
+man/man3/RT::Extension::QuickAssign.3.gz
+%%RTHOME%%/plugins/RT-Extension-QuickAssign/html/Callbacks/QuickAssign/Elements/Tabs/Privileged
+%%RTHOME%%/plugins/RT-Extension-QuickAssign/lib/RT/Extension/QuickAssign.pm

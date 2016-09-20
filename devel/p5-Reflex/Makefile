@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jase@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class library for flexible, reactive programs
 
 LICENSE=	ART10 GPLv1

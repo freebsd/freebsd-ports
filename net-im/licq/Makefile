@@ -12,9 +12,10 @@ COMMENT=	Popular ICQ-compatible plugin-based program
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build: fails to link
 
 USES=		cmake iconv
 USE_OPENSSL=	yes

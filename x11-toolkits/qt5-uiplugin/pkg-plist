@@ -9,4 +9,4 @@
 %%QT_INCDIR%%/QtUiPlugin/qtuipluginversion.h
 %%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
-%%QT_MKSPECDIR%%/modules/qt_%%QT_LIBDIR%%_uiplugin.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_uiplugin.pri

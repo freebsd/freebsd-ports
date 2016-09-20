@@ -2,7 +2,6 @@
 
 PORTNAME=	qmake
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -11,7 +10,9 @@ COMMENT=	Qt Makefile generator
 
 USE_QT5=	# empty
 USES=		pkgconfig shebangfix
-SHEBANG_FILES=	mkspecs/macx-ios-clang/rename_main.sh
+SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
+		util/unicode/x11/makeencodings \
+		src/3rdparty/freetype/src/tools/afblue.pl
 QT_DIST=	base
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
@@ -28,29 +29,30 @@ TBR_CONFIG=	concurrent|inotify|xlib
 QMAKESPEC=	${WRKSRC}/mkspecs/freebsd-${QMAKE_COMPILER}
 INSTALL_TARGET=	install_qmake install_mkspecs
 
+BROKEN_sparc64=		Fails to build: internal compiler error
+
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 post-patch:
 # Prevent qconfig.pri from being module dependent.
 	@${REINPLACE_CMD} -E -e '/"\$$QT_CONFIG +(${TBR_CONFIG})"/ d' \
 		${WRKSRC}/configure
-
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+# Write the file location paths into mkspecs/common/freebsd.conf
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/mkspecs/common/freebsd.conf
 	@${REINPLACE_CMD} -e 's|unix.conf|freebsd.conf|' \
 		${WRKSRC}/mkspecs/freebsd-icc/qmake.conf
-
-# Add mkspec for Clang. For now, this means adjusting the existing
-# unsupported/freebsd-clang mkspec while we get it into shape upstream.
-	@${MV} ${WRKSRC}/mkspecs/unsupported/freebsd-clang \
-		${WRKSRC}/mkspecs/freebsd-clang
+# Add mkspec for g++. The clang is now the officially supported compiler for
+# Qt>=5.6.0 on FreeBSD.
+	@${MV} ${WRKSRC}/mkspecs/unsupported/freebsd-g++ \
+		${WRKSRC}/mkspecs/freebsd-g++
 	@${REINPLACE_CMD} -e 's|(../|(|g' \
-		${WRKSRC}/mkspecs/freebsd-clang/qmake.conf
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's|"../|"|g' \
-		${WRKSRC}/mkspecs/freebsd-clang/qplatformdefs.h
-
+		${WRKSRC}/mkspecs/freebsd-g++/qplatformdefs.h
+# Clean up files created by patching
 	@${RM} ${WRKSRC}/mkspecs/*/*.orig
-	@${RM} -Rf ${WRKSRC}/mkspecs/freebsd-g++46
+	@${RM} -Rf ${WRKSRC}/mkspecs/unsupported/freebsd-g++46
 
 post-build:
 # Complete configure stage to generate *.pri files.

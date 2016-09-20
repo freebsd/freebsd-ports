@@ -2,6 +2,7 @@
 
 PORTNAME=	password-store
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=		GIT XCLIP CONTRIB DOCS EXAMPLES
+OPTIONS_DEFINE=		GIT XCLIP CONTRIB EXAMPLES
 OPTIONS_DEFAULT=	CONTRIB
 OPTIONS_SUB=		yes
 
@@ -41,6 +42,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/password-store.sh ${STAGEDIR}${PREFIX}/libexec/pass
 	${LN} -s ${PREFIX}/libexec/pass ${STAGEDIR}${PREFIX}/bin/pass
+	${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
 
 do-install-CONTRIB-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -56,6 +58,5 @@ do-install-CONTRIB-on:
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/man/example-filter.sh ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,6 @@
+man/man3/RT::Extension::CommandByMail.3.gz
+man/man3/RT::Interface::Email::Action::CommandByMail.3.gz
+man/man3/RT::Interface::Email::Filter::TakeAction.3.gz
+%%RTHOME%%/plugins/RT-Extension-CommandByMail/lib/RT/Extension/CommandByMail.pm
+%%RTHOME%%/plugins/RT-Extension-CommandByMail/lib/RT/Interface/Email/Action/CommandByMail.pm
+%%RTHOME%%/plugins/RT-Extension-CommandByMail/lib/RT/Interface/Email/Filter/TakeAction.pm

@@ -2,7 +2,7 @@
 !! WARNING: letsencrypt.sh has been renamed to dehydrated !!
 !! rename all weekly_letsencrypt_* periodic variables     !!
 !! to         weekly_dehydrated_* in your periodic.conf   !!
-|| and mv /usr/local/etc/{letsencrypt,dehydrated}         ||
+|| and mv /usr/local/etc/{letsencrypt.sh,dehydrated}      ||
 || default challenge path has been renamed as well        ||
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

@@ -18,6 +18,10 @@ COMMENT=	Toolkit and library for raster image processing
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
+BROKEN=		unfetchable
+DEPRECATED=	mastersite disappeared, last release 1996
+EXPIRATION_DATE=	2016-12-31
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_WRKSUBDIR=	yes

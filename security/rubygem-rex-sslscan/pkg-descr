@@ -1,0 +1,4 @@
+This library is a pure ruby implementation of the SSLScan tool originally
+written by Ian Ventura-Whiting.
+
+WWW: https://github.com/rapid7/rex-sslscan

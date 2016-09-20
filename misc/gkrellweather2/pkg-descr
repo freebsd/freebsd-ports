@@ -3,7 +3,7 @@ Service
 
 Features
 - Choose the location nearest to you by 4-letter METAR station
-  identifier code. (http://www.nws.noaa.gov/oso/siteloc.shtml)
+  identifier code.(http://www.nws.noaa.gov/tg/siteloc.php)
 - Monitor temperature, dew point, pressure, relative humidity, sky
   condition, wind direction and speed
 - Display using imperial units (degrees Fareheight, inches of

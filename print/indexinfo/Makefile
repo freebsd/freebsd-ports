@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	indexinfo
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	print ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -14,5 +14,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/indexinfo
+
+.if exists(/usr/include/sys/capsicum.h)
+CFLAGS+=	-DHAVE_CAPSICUM
+.endif
 
 .include <bsd.port.mk>

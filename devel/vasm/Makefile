@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	vasm
-PORTVERSION=	1.7a
+PORTVERSION=	1.7e
 CATEGORIES=	devel
-MASTER_SITES=	http://sun.hasenbraten.de/vasm/release/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://server.owl.de/%SUBDIR%/
+MASTER_SITE_SUBDIR=	~frank/tags/
+DISTNAME=	vasm1_7e
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	cs@innolan.dk
 COMMENT=	Portable 6502 6800 arm c16x jagrisc m68k ppc vidcore x86 z80 assembler
 
 LEGAL_TEXT=	This archive may be redistributed without modifications and used for non-commercial purposes.
 
 USES=		gmake pathfix
+WRKSRC=		${WRKDIR}/vasm
 
 CPU_LIST=	6502 6800 arm c16x jagrisc m68k ppc test vidcore x86 z80
-SYNTAX_LIST=	std mot oldstyle test
+SYNTAX_LIST=	std mot oldstyle
 OUTPUT_LIST=	aout bin elf hunk test tos vobj
 
 do-build:

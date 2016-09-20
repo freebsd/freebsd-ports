@@ -14,12 +14,10 @@ COMMENT=	Ruby library to manipulate HTML/XML tree data structure
 OPTIONS_DEFINE=	DOCS
 
 USE_RUBY=	yes
-USE_RUBY_RDOC=		yes
 
 LIB_FILES=	htree.rb htree
 
 DOCS=		README \
-		${RUBY_RD_HTML_FILES} \
 		doc
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	*
@@ -28,12 +26,14 @@ PORTDOCS=	*
 
 do-build:
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${BUILD_WRKSRC}; ${RUBY_RDOC} ${LIB_FILES}
+	cd ${BUILD_WRKSRC}; ${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//} ${LIB_FILES}
 .endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	cd ${INSTALL_WRKSRC}; ${CP} -R ${LIB_FILES} ${STAGEDIR}${RUBY_SITELIBDIR}/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/

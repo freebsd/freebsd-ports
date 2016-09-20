@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.23
+PORTVERSION=	4.12.26
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -11,8 +11,7 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nasm:devel/nasm \
-		nmap:security/nmap \
+RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-activerecord4>=4.2.6:databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
@@ -29,6 +28,7 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-metasploit_payloads-mettle>=0:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
+		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-packetfu>=0:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
@@ -44,12 +44,18 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
+		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
+		rubygem-rex-core>=0:security/rubygem-rex-core \
 		rubygem-rex-java>=0:security/rubygem-rex-java \
 		rubygem-rex-mime>=0:security/rubygem-rex-mime \
+		rubygem-rex-nop>=0:security/rubygem-rex-nop \
 		rubygem-rex-ole>=0:security/rubygem-rex-ole \
 		rubygem-rex-powershell>=0:security/rubygem-rex-powershell \
 		rubygem-rex-random_identifier>=0:security/rubygem-rex-random_identifier \
 		rubygem-rex-registry>=0:security/rubygem-rex-registry \
+		rubygem-rex-rop_builder>=0:security/rubygem-rex-rop_builder \
+		rubygem-rex-socket>=0:security/rubygem-rex-socket \
+		rubygem-rex-sslscan>=0:security/rubygem-rex-sslscan \
 		rubygem-rex-struct2>=0:security/rubygem-rex-struct2 \
 		rubygem-rex-text>=0:security/rubygem-rex-text \
 		rubygem-rex-zip>=0:security/rubygem-rex-zip \
@@ -61,8 +67,7 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest
 
-SCRIPTS=	msfbinscan msfconsole msfd msfelfscan \
-		msfmachscan msfpescan msfrop msfrpc msfrpcd msfvenom
+SCRIPTS=	msfconsole msfd msfrpc msfrpcd msfvenom
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7

@@ -3,6 +3,7 @@
 
 PORTNAME=	image_size
 PORTVERSION=	0.0.20040618
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.rubycgi.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,26 +20,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
-RUBY_RD_FILES=	readme.ja.rd readme.rd
-
-DOCS_EN=	${RUBY_RD_FILES:N*.ja.rd} \
-		${RUBY_RD_HTML_FILES:N*.ja.html}
-DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
-		${RUBY_RD_HTML_FILES:M*.ja.html}
-
 OPTIONS_DEFINE=	DOCS
+
+DOCS=		readme.ja.rd readme.rd
 
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
-post-install-DOCS-on::
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
 
 .include <bsd.port.mk>

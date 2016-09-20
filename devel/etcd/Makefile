@@ -2,8 +2,8 @@
 
 PORTNAME=	etcd
 PORTVERSION=	2.3.7
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
@@ -13,10 +13,14 @@ COMMENT=	Highly-available key value store and service discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
 CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd3-*
 
+PORTSCOUT=	limit:^2.*
+
+USES=		go
+GO_PKGNAME=	github.com/coreos/etcd
+GO_TARGET=	github.com/coreos/etcd \
+		github.com/coreos/etcd/etcdctl
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 
@@ -27,12 +31,9 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Install etcd README file
 
-do-build:
-	cd ${WRKSRC}; ${SH} build
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/etcd ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/etcdctl ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/etcd ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/etcdctl ${STAGEDIR}${PREFIX}/bin/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

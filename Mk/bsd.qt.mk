@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
-QT5_VERSION?=	5.5.1
+QT5_VERSION?=	5.6.1
 
 QT_PREFIX?=		${LOCALBASE}
 
@@ -60,7 +60,7 @@ MASTER_SITES=	${MASTER_SITE_QT}
 # Useless, as it must be defined before including bsd.port.pre.mk (at least
 # because of bsd.options.mk).
 #PKGNAMEPREFIX?=	${_QT_RELNAME}-
-DISTINFO_FILE=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/distinfo
+DISTINFO_FILE?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/distinfo
 
 # Can go after a while.
 CONFLICTS_BUILD=qt-3.* qt-copy-3.*
@@ -75,19 +75,15 @@ DESCR?=			${.CURDIR:H:H}/devel/${_QT_RELNAME}/pkg-descr
 DESTDIRNAME=	INSTALL_ROOT
 
 . if ${_QT_VERSION:M4*}
-MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/
+MASTER_SITE_SUBDIR?=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/
 DISTNAME=		qt-everywhere-opensource-src-${_QT_VERSION}
 DIST_SUBDIR=		KDE
 . else
-.  if ${_QT_VERSION:M*-*}
-# Pre-releases.
-MASTER_SITE_SUBDIR=	development_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules/
-.  else
-MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules/
-.  endif
-DISTNAME=		${QT_DIST:S,^,qt,:S,$,-opensource-src-${_QT_VERSION},}
+MASTER_SITE_SUBDIR?=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules/
+DISTNAME=		${QT_DIST:S,^,qt,:S,$,-opensource-src-${DISTVERSION},}
 DISTFILES=		${DISTNAME:S,$,${EXTRACT_SUFX},}
 DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
+
 USES+=			tar:xz
 
 # Qt (at least when used with qmake) has a tendency to overlink: some libraries
@@ -103,9 +99,11 @@ LDFLAGS+=		-Wl,--as-needed
 	defined(DISABLE_SIZE) && defined(NO_CHECKSUM)
 # Ensure that the "makesum" target (with its inner "fetch" one) uses
 # devel/qt*/distinfo for every port.
-QT_DIST=		3d base canvas3d connectivity declarative doc graphicaleffects imageformats \
-				location multimedia quick1 quickcontrols script sensors serialport svg tools \
-				translations webchannel webkit webkit-examples websockets x11extras xmlpatterns
+.		if ${DISTINFO_FILE:H} == ${.CURDIR:H:H}/devel/${_QT_RELNAME}
+QT_DIST=		3d base canvas3d connectivity declarative graphicaleffects imageformats \
+				location multimedia quickcontrols quickcontrols2 script sensors serialbus serialport svg tools \
+				translations webchannel websockets x11extras xmlpatterns
+.		endif
 .  endif
 
 .  if ${QT_DIST} == "base" && ${PORTNAME} != "qmake"
@@ -183,7 +181,8 @@ CONFIGURE_ARGS+=-verbose
 .  if ${_QT_VERSION:M4*}
 _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
 .  else
-_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h
+_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h \
+			${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests_unix_libdl_libdl.pro
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
@@ -215,8 +214,8 @@ QMAKE_ARGS+=	QT_CONFIG+="${QT_CONFIG:N-*:O:u}"
 QMAKE_ARGS+=	QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 . endif
 
-PLIST_SUB+=		SHORTVER=${_QT_VERSION:R} \
-				FULLVER=${_QT_VERSION:C/-.*//}
+PLIST_SUB+=		SHORTVER=${DISTVERSION:R} \
+				FULLVER=${DISTVERSION:C/-.*//}
 .endif # defined(QT_DIST)
 
 .if ${_QT_VERSION:M4*}
@@ -313,9 +312,9 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 
 _USE_QT5_ONLY=	3d buildtools canvas3d concurrent connectivity core \
 				examples graphicaleffects location paths phonon4 \
-				printsupport qdbus qdoc qev qml quick quickcontrols \
-				sensors serialport sql-tds uiplugin uitools webchannel \
-				websockets widgets x11extras
+				printsupport qdbus qdoc qdoc-data qev qml quick quickcontrols \
+				quickcontrols2 sensors serialbus serialport sql-tds \
+				uiplugin uitools webchannel websockets widgets x11extras
 
 3d_PORT=		graphics/${_QT_RELNAME}-3d
 3d_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}3DCore.so
@@ -464,6 +463,9 @@ qdbusviewer_PATH=	${QT_BINDIR}/qdbusviewer
 qdoc_PORT=			devel/${_QT_RELNAME}-qdoc
 qdoc_PATH=			${QT_BINDIR}/qdoc
 
+qdoc-data_PORT=		devel/${_QT_RELNAME}-qdoc-data
+qdoc-data_PATH=		${QT_DOCDIR}/global/config.qdocconf
+
 qdoc3_PORT=			devel/${_QT_RELNAME}-qdoc3
 qdoc3_PATH=			${QT_BINDIR}/qdoc3
 
@@ -494,6 +496,9 @@ quick_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Quick.so
 quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
 quickcontrols_PATH=	${QT_QMLDIR}/QtQuick/Controls/qmldir
 
+quickcontrols2_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols2
+quickcontrols2_PATH=	${QT_QMLDIR}/Qt/labs/controls/qmldir
+
 qvfb_PORT=			devel/${_QT_RELNAME}-qvfb
 qvfb_PATH=			${QT_BINDIR}/qvfb${_QT_BINSUFX}
 
@@ -508,6 +513,9 @@ script_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Script.so
 
 scripttools_PORT=	devel/${_QT_RELNAME}-scripttools
 scripttools_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}ScriptTools.so
+
+serialbus_PORT=		comms/${_QT_RELNAME}-serialbus
+serialbus_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}SerialBus.so
 
 serialport_PORT=	comms/${_QT_RELNAME}-serialport
 serialport_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}SerialPort.so
