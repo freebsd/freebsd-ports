@@ -27,6 +27,7 @@
     SUBDIR += rox-filer
     SUBDIR += rox-mime-editor
     SUBDIR += rox-session
+    SUBDIR += sunflower
     SUBDIR += sushi
     SUBDIR += tdfsb
     SUBDIR += thunar
