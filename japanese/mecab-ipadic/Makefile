@@ -5,13 +5,15 @@ PORTNAME=	mecab-ipadic
 DISTVERSION=	2.7.0-20070801
 PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	mecab
+MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM&dummy=/
 
 MAINTAINER=	yasu@utahime.org
 COMMENT?=	MeCab IPA dictionary meta-port
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	NAIST
+LICENSE_NAME=	NAIST License
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if empty(PKGNAMESUFFIX)
 USES=	metaport
