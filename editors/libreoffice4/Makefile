@@ -4,7 +4,7 @@ PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
 PORTREVISION=	6
 CATEGORIES=	editors
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/ \
+MASTER_SITES=	https://downloadarchive.documentfoundation.org/libreoffice/old/${LOVERSION}/src/ \
 		http://dev-www.libreoffice.org/extern/:ext \
 		http://dev-www.libreoffice.org/src/:src
 PKGNAMESUFFIX=	4
