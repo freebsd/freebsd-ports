@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblcf
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
