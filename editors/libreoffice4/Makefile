@@ -4,7 +4,7 @@ PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
 PORTREVISION=	6
 CATEGORIES=	editors
-MASTER_SITES=	https://downloadarchive.documentfoundation.org/libreoffice/old/${LOVERSION}/src/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/extern/:ext \
 		http://dev-www.libreoffice.org/src/:src
 PKGNAMESUFFIX=	4
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
 		gpatch:devel/patch \
+		ucpp:devel/ucpp \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
@@ -96,8 +97,7 @@ LOVERSION=	${PORTVERSION}.${RCVER}
 RCVER=		2
 
 DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src \
-		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:src
+		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
 
 EXTRA_PATCHES=	${FILESDIR}/enable-opencollada:-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
@@ -193,6 +193,7 @@ CONFIGURE_ARGS+=	--disable-coinmp \
 			--with-system-postgresql \
 			--with-system-redland \
 			--with-system-serf \
+			--with-system-ucpp \
 			--with-system-vigra \
 			--with-system-zlib \
 			--without-fonts \
