@@ -33,7 +33,7 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 		GROUPS=${GROUPS}
 
 # Configure script is written in perl
-USES=		cpe perl5
+USES=		cpe perl5 pkgconfig
 USE_PERL5=	build
 
 CPE_VENDOR=	inspire_ircd
