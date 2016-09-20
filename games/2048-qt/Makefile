@@ -8,11 +8,14 @@ CATEGORIES=	games
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	2048 game implemented in QT
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiaoyong
 GH_PROJECT=	2048-Qt
 
-USES=		gmake pkgconfig qmake tar:bzip2
+USES=		gmake pkgconfig qmake
 USE_QT5=	core gui network widgets qml quick buildtools_build quickcontrols
 
 PLIST_FILES=	bin/2048-qt ${DESKTOPDIR}/${PORTNAME}.desktop \
