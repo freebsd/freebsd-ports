@@ -1,0 +1,4 @@
+dfDateTime, or Digital Forensics date and time, provides date and time
+objects to preserve accuracy and precision.
+
+WWW: https://github.com/log2timeline/dfdatetime
