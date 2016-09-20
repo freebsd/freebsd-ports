@@ -1,5 +1,7 @@
 lib/erlang/lib/jsxd-%%VERSION%%/ebin/jsxd.app
 lib/erlang/lib/jsxd-%%VERSION%%/ebin/jsxd.beam
+lib/erlang/lib/jsxd-%%VERSION%%/ebin/jsxd_filter.beam
 lib/erlang/lib/jsxd-%%VERSION%%/src/jsxd.app.src
 lib/erlang/lib/jsxd-%%VERSION%%/src/jsxd.erl
+lib/erlang/lib/jsxd-%%VERSION%%/src/jsxd_filter.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
