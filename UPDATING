@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160919:
+  AFFECTS: users of net/vtun
+  AUTHOR: cy@FreeBSD.org
+
+  The VTUN_EXTENDED_MODE option has been replaced by -e command line
+  option.
+
 20160914:
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
