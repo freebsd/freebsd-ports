@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	construct
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
