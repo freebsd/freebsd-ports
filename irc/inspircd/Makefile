@@ -33,7 +33,7 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 		GROUPS=${GROUPS}
 
 # Configure script is written in perl
-USES=		cpe perl5 pkgconfig
+USES=		cpe perl5
 USE_PERL5=	build
 
 CPE_VENDOR=	inspire_ircd
@@ -114,7 +114,7 @@ PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USES+=	ssl
+USES+=	ssl pkgconfig
 CONFIGURE_ARGS+=	--enable-openssl
 EXTRAS:=${EXTRAS},m_ssl_openssl.cpp
 PLIST_SUB+=	OPENSSL=""
