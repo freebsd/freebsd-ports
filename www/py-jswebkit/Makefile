@@ -5,15 +5,13 @@ PORTNAME=	jswebkit
 PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	www python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/universe/p/python-jswebkit/
 PROJECTHOST=	gwrite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebKit/JavaScriptCore Python bindings
-
-BROKEN=		Unfetchable (google code has gone away)
 
 BUILD_DEPENDS=	cython:lang/cython
 RUN_DEPENDS:=	${BUILD_DEPENDS}
