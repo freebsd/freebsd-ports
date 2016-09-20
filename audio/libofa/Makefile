@@ -5,12 +5,10 @@ PORTNAME=	libofa
 PORTVERSION=	0.9.3
 PORTREVISION=	10
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libofa/libofa-0.9.3.tar.gz/51507d2c4b432bd2755f48d58471696e/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LICENSE=		APL1 GPLv2
 LICENSE_COMB=		dual
