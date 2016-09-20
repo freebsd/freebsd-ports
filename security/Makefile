@@ -840,6 +840,7 @@
     SUBDIR += py-cryptkit
     SUBDIR += py-cryptography
     SUBDIR += py-cybox
+    SUBDIR += py-dfdatetime
     SUBDIR += py-dfvfs
     SUBDIR += py-ecdsa
     SUBDIR += py-ed25519ll
