@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	ucpp
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	# GITHUB
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	C preprocessor and lexer
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	scarabeusiv
+USES=		autoreconf libtool pathfix
+PATHFIX_MAKEFILEIN=	Makefile.am
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
-USES=		gmake
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+post-patch:
+	${REINPLACE_CMD} '/^CFLAGS/s/-ansi//' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
