@@ -1,0 +1,24 @@
+Fixes clang build
+
+--- Makefile.orig	2015-03-21 06:43:07 UTC
++++ Makefile
+@@ -56,8 +56,8 @@
+ #FLAGS = -O -m -DMEM_CHECK
+ 
+ # for gcc
+-CC = gcc
+-FLAGS = -O3 -W -Wall -ansi
++CC ?= cc
++FLAGS = -ansi -DAUDIT -DMEM_DEBUG
+ #FLAGS = -g -W -Wall -ansi -DAUDIT -DMEM_DEBUG
+ #FLAGS = -O3 -mcpu=pentiumpro -fomit-frame-pointer -W -Wall -ansi -DMEM_CHECK
+ #FLAGS = -O -pg -W -Wall -ansi -DMEM_CHECK
+@@ -88,7 +88,7 @@ endif
+ # ----- nothing should be changed below this line -----
+ 
+ COBJ = mem.o nhash.o cpp.o lexer.o assert.o macro.o eval.o
+-CFLAGS = $(FLAGS)
++CFLAGS += $(FLAGS)
+ 
+ all: ucpp
+ 	@ar cq libucpp.a *.o
