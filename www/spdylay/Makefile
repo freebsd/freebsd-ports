@@ -18,6 +18,7 @@ LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
 RUN_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 
 BROKEN_powerpc64=	does not build
+BROKEN_sparc64=		does not build: fails to link
 
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
