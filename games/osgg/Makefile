@@ -4,22 +4,23 @@
 PORTNAME=	osgg
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OldSkool Gravity Game
 
 LICENSE=	GPLv3+
 
-BROKEN=		unfetchable (checksum mismatch)
+USE_GITHUB=	yes
+GH_ACCOUNT=	DusteDdk
+GH_PROJECT=	Osgg
+GH_TAGNAME=	32d9e02 # 1.0 + extra FreeBSD-related fixes
 
-USES=		tar:bzip2
 USE_SDL=	sdl image ttf mixer
 USE_GL=		gl
 MAKE_ENV=	DATADIR="${DATADIR}/"
 
 PLIST_FILES=	bin/${PORTNAME}
-PORTDATA=	*
+PORTDATA=	*.txt *.ogg Bandal.ttf icon.png levels
 
 DESKTOP_ENTRIES="Osgg" \
 		"" \
@@ -28,11 +29,8 @@ DESKTOP_ENTRIES="Osgg" \
 		"Game;ArcadeGame;" \
 		""
 
-post-extract:
-	@${RM} -f ${WRKSRC}/osgg ${WRKSRC}/launcher/launcher
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "*.txt *.ogg Bandal.ttf icon.png levels" ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
