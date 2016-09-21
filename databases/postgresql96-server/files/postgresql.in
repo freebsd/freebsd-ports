@@ -108,7 +108,7 @@ postgresql_command()
 
 postgresql_initdb()
 {
-    su -l -c ${postgresql_class} ${postgresql_user} -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data}"
+    su -l -c ${postgresql_class} ${postgresql_user} -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data} -U ${postgresql_user}"
 }
 
 run_rc_command "$1"
