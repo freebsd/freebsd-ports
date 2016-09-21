@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.19
-PORTREVISION?=	1
+PORTVERSION=	0.8.20
+PORTREVISION?=	0
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		gmake libtool ncurses pkgconfig tar:xz
+USES=		gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip
