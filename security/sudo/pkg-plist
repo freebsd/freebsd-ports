@@ -71,6 +71,7 @@ sbin/visudo
 %%NLS%%share/locale/nb/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/sudo.mo
