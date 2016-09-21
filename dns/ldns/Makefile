@@ -87,6 +87,8 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
+.include <bsd.port.pre.mk>
+
 .if ${PORT_OPTIONS:MGOST}
 .  if !defined(SSL_DEFAULT) || ${SSL_DEFAULT} == "base"
 IGNORE_FreeBSD_9=	Requires openssl version >= 1.0.0
@@ -135,4 +137,4 @@ post-install:
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
