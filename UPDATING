@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160921:
+  AFFECTS: users of mail/sieve-connect
+  AUTHOR: alexey@renatasystems.org
+
+  Version 0.88 contains two breaking changes:
+  1.  If the Sieve server does not offer STARTTLS, then connections should now
+      fail.
+  2.  When deriving a remote script name from the local filename, use the
+      basename and strip off directories.
+
+  For additional information see:
+  http://mail.globnix.net/pipermail/sieve-connect-announce/2016/000012.html
+
 20160919:
   AFFECTS: users of net/vtun
   AUTHOR: cy@FreeBSD.org
