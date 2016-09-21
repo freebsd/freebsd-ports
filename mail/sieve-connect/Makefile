@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sieve-connect
-PORTVERSION=	0.87
-PORTREVISION=	1
+PORTVERSION=	0.88
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -11,7 +10,7 @@ MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Command-line client for the MANAGESIEVE protocol
 
-LICENSE=	PD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
