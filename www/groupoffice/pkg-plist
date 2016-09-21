@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%WWWDIR%%/CHANGELOG.TXT
 %%WWWDIR%%/FAQ.TXT
 %%WWWDIR%%/GO.php
@@ -202,6 +200,8 @@
 %%WWWDIR%%/go/base/util/charset/Xmac.php
 %%WWWDIR%%/go/base/util/date/DateTime.php
 %%WWWDIR%%/go/base/util/date/RecurrencePattern.php
+%%WWWDIR%%/go/base/util/icalendar/DateTimeParser.php
+%%WWWDIR%%/go/base/util/icalendar/RRuleIterator.php
 %%WWWDIR%%/go/base/util/icalendar/Rrule.php
 %%WWWDIR%%/go/base/util/minify/CSSMin.php
 %%WWWDIR%%/go/base/util/minify/JSMin.php
@@ -9058,5 +9058,3 @@
 @dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/buttons
 @dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/treeview
 @dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/treeview
-@owner
-@group
