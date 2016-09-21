@@ -214,12 +214,14 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/rmreconns
 %%DATADIR%%/help/rmrejoins
 %%DATADIR%%/help/save
+%%DATADIR%%/help/servlist
 %%DATADIR%%/help/sconnect
 %%DATADIR%%/help/script
 %%DATADIR%%/help/scrollback
 %%DATADIR%%/help/server
 %%DATADIR%%/help/set
 %%DATADIR%%/help/silence
+%%DATADIR%%/help/squery
 %%DATADIR%%/help/squit
 %%DATADIR%%/help/stats
 %%DATADIR%%/help/statusbar
