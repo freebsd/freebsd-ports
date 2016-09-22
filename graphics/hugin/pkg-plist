@@ -14,7 +14,7 @@
 %%DATADIR%%/xrc/cp_editor_panel.xrc
 %%DATADIR%%/xrc/cp_list_frame.xrc
 %%DATADIR%%/xrc/cpdetector_dialog.xrc
-%%DATADIR%%/xrc/data/COPYING
+%%DATADIR%%/xrc/data/COPYING.txt
 %%DATADIR%%/xrc/data/about.htm
 %%DATADIR%%/xrc/data/add_project.png
 %%DATADIR%%/xrc/data/add_projects.png
