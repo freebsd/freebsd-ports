@@ -3,28 +3,33 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.8
+DISTVERSIONSUFFIX=	-gtk3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
+PKGNAMESUFFIX=	${DISTVERSIONSUFFIX}
 
 MAINTAINER=	olivierd@FreeBSD.org
-COMMENT=	Plugins needed for audacious
+COMMENT=	Plugins needed for audacious-gtk3
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	audacious:multimedia/audacious
+BUILD_DEPENDS=	audacious:multimedia/audacious-gtk3
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 	libdbus-1.so:devel/dbus \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2
-RUN_DEPENDS=	audacious:multimedia/audacious
+RUN_DEPENDS=	audacious:multimedia/audacious-gtk3
 
-CONFLICTS_INSTALL=	audacious-plugins-gtk3-3.*
+CONFLICTS_INSTALL=	audacious-plugins-3.*
+
+MASTERDIR=	${.CURDIR}/../audacious-plugins
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
 	localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
+USE_GNOME=	gtk30 glib20 libxml2 cairo gdkpixbuf2
 USE_XORG=	x11
 
 CONFIGURE_ARGS+=--disable-console --disable-sndio --disable-soxr \
