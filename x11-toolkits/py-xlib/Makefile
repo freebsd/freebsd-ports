@@ -4,6 +4,7 @@
 PORTNAME=	xlib
 PORTVERSION=	0.17
 CATEGORIES=	x11-toolkits python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	X11 library for Python
