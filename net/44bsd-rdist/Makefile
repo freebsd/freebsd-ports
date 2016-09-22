@@ -3,6 +3,7 @@
 
 PORTNAME=	44bsd-rdist
 PORTVERSION=	20001111
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/cy
 
@@ -19,7 +20,7 @@ PLIST_FILES=	bin/44bsd-rdist \
 .include <bsd.port.pre.mk>
 
 .if  ${OSVERSION} >= 1000055
-BUILD_DEPENDS=    rcs:devel/rcs57
+EXTRACT_DEPENDS=    rcs:devel/rcs57
 .endif
 
 post-extract:
