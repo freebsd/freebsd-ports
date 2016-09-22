@@ -243,6 +243,7 @@
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/info
 lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxAuiSimpleTabArt.html
 lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxMouseCaptureLostEvent.html
+lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/specs.xml
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/gl.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/glu.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wx.app
