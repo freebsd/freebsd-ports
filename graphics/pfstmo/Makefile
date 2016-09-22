@@ -10,6 +10,8 @@ MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tone mapping operators
 
+USE_GCC=	any
+
 LIB_DEPENDS=	libpfs-1.2.so:graphics/pfstools \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
