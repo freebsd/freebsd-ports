@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 CATEGORIES=	news
 MASTER_SITES=	SF
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -16,9 +16,10 @@ RUN_DEPENDS=	cheetah:devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
-USES=		gettext python:2.6-2.7
+USES=		python:2.7
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST=	PORTNAME=${PORTNAME} PYTHON_CMD=${PYTHON_CMD}
@@ -49,8 +50,6 @@ OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
 UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g" \
 		 ${WRKSRC}/SABnzbd.py
@@ -61,18 +60,18 @@ post-patch:
 # post-build
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${STAGEDIR}${PREFIX}/bin
-	${INSTALL} -d ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
 	cd ${WRKSRC}/sabnzbd && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
-	${INSTALL} -d ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in cherrypy gntp interfaces locale po tools util
-	${MKDIR} ${STAGEDIR}${DATADIR}/${i}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
 	cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${i}
 .endfor
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
