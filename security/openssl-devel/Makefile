@@ -3,6 +3,7 @@
 
 PORTNAME=	openssl
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	a
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
