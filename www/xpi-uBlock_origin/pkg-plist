@@ -77,6 +77,7 @@
 %%XPI_XPIDIR%%/js/logger.js
 %%XPI_XPIDIR%%/js/messaging.js
 %%XPI_XPIDIR%%/js/pagestore.js
+%%XPI_XPIDIR%%/js/polyfill.js
 %%XPI_XPIDIR%%/js/popup.js
 %%XPI_XPIDIR%%/js/profiler.js
 %%XPI_XPIDIR%%/js/redirect-engine.js
