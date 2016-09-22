@@ -3,13 +3,12 @@
 
 PORTNAME=	44bsd-rdist
 PORTVERSION=	20001111
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD rdist
-
 
 USES=		tar:bzip2
 
@@ -19,9 +18,7 @@ PLIST_FILES=	bin/44bsd-rdist \
 
 .include <bsd.port.pre.mk>
 
-.if  ${OSVERSION} >= 1000055
 EXTRACT_DEPENDS=    rcs:devel/rcs57
-.endif
 
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v
