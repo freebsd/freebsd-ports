@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	levenshtein
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-Levenshtein-${PORTVERSION}
 
@@ -14,12 +13,7 @@ COMMENT=	Python extension computing string distances and similarities
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable (google code has gone away)
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/Levenshtein.so
-USES=		python tar:bzip2
-USE_PYTHON=	distutils pythonprefix
-PYDISTUTILS_PKGNAME=	python-Levenshtein
-PROJECTHOST=	py${PORTNAME}
+USES=		python
+USE_PYTHON=	distutils pythonprefix autoplist
 
 .include <bsd.port.mk>
