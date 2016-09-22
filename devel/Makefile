@@ -1255,6 +1255,7 @@
     SUBDIR += libglademm24
     SUBDIR += libgpc
     SUBDIR += libgpkg
+    SUBDIR += libgrading
     SUBDIR += libgsf
     SUBDIR += libgta
     SUBDIR += libgtop
