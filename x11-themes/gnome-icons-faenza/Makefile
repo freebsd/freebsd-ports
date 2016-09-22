@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	faenza
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	${PORTNAME}-icon-theme
+MASTER_SITES=	https://launchpad.net/~tiheum/+archive/ubuntu/equinox/+files/
 PKGNAMEPREFIX=	gnome-icons-
-DISTNAME=	${PROJECTHOST}_${PORTVERSION}
+DISTNAME=	${PORTNAME}-icon-theme_${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Faenza GNOME 2 icon themes
 
 LICENSE=	GPLv3
 
-BROKEN=		Unfetchable (google code has gone away)
-
-USES=		zip
+WRKSRC=		${WRKDIR}/${PORTNAME}-icon-theme-${PORTVERSION:R}
 NO_BUILD=	yes
+NO_ARCH=	yes
 INSTALLS_ICONS=	yes
 
 THEMES=		Faenza Faenza-Dark Faenza-Darkest Faenza-Darker \
@@ -29,7 +27,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/share/icons
 do-install:
 	@${MKDIR} ${INSTALLDIR}
 .for theme in ${THEMES}
-	@cd ${INSTALLDIR} && ${TAR} -xf ${WRKDIR}/${theme}.tar.gz
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${theme} ${INSTALLDIR})	
 
 .if ${FAENZA_LIGHT} == ${theme} || ${FAENZA_DARK} == ${theme}
 	@cd ${INSTALLDIR}/${theme}/places/scalable && \
