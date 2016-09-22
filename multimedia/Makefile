@@ -12,6 +12,7 @@
     SUBDIR += assimp
     SUBDIR += atomicparsley
     SUBDIR += audacious
+    SUBDIR += audacious-gtk3
     SUBDIR += audacious-plugins
     SUBDIR += audiopreview
     SUBDIR += avbin
