@@ -1,4 +1,7 @@
-SHA256 (nbari-epazote-1.5.2_GH0.tar.gz) = a01ff0f07b9a9fb792fcc7ac413c0baf85432fe8e951edbcf1751991b66b25ad
-SIZE (nbari-epazote-1.5.2_GH0.tar.gz) = 145361
-SHA256 (go-yaml-yaml-v2_GH0.tar.gz) = 15bdfb44493124a6ff10dcc3ce9e623a3ff435fe20ab8c6dea0190cbc939bd5a
-SIZE (go-yaml-yaml-v2_GH0.tar.gz) = 63044
+TIMESTAMP = 1474536456
+SHA256 (epazote-epazote-2.0.0_GH0.tar.gz) = bc441cfb49e678f6d10c62e4f3f41cd4ce215d81a8094e5cc14ee367a864a3b5
+SIZE (epazote-epazote-2.0.0_GH0.tar.gz) = 146616
+SHA256 (epazote-scheduler-0.1.0_GH0.tar.gz) = ce3f678d50ca5ce493e8ef214ecd991034a6b55e7bf7764bd3dc22f5492ee516
+SIZE (epazote-scheduler-0.1.0_GH0.tar.gz) = 2513
+SHA256 (go-yaml-yaml-v2_GH0.tar.gz) = aeed95ae6a4c14354813e583b3a4c80db3ab0fa6e61bf7ed4eaa9aeb6ce56c22
+SIZE (go-yaml-yaml-v2_GH0.tar.gz) = 60465
