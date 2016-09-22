@@ -120,6 +120,7 @@ post-patch:
 	-e 's+%%XARGS%%+${XARGS}+' \
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
 	-e 's+$${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
+	-e '/Clang.*OpenMP/g' \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
