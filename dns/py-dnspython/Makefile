@@ -11,7 +11,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	DNS toolkit for Python
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES?=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PYCRYPTO
