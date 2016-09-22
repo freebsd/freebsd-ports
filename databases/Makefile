@@ -573,7 +573,6 @@
     SUBDIR += pglesslog
     SUBDIR += pgloader
     SUBDIR += pglogical
-    SUBDIR += pglogical-output
     SUBDIR += pgmodeler
     SUBDIR += pgpool
     SUBDIR += pgpool-II
