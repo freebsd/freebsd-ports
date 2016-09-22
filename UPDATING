@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160922:
+  AFFECTS: users of databases/pglogical, databases/pglogical-output
+  AUTHOR:  matthew@FreeBSD.org
+
+  As of version 1.2.0, databases/pglogical-output has been merged into
+  databases/pglogical.  portmaster or portupgrade users should delete
+  pglogical-output manually before upgrading.
+
 20160921:
   AFFECTS: users of mail/sieve-connect
   AUTHOR: alexey@renatasystems.org
