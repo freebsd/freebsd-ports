@@ -24,7 +24,7 @@ USES=		php zip
 
 PHPLOT_DIR=	${STAGEDIR}${PREFIX}/include/php/phplot
 
-LIBRARIES=	phplot.php rgb.inc.php
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS FONTS
 OPTIONS_DEFAULT=	FONTS
@@ -33,7 +33,7 @@ FONTS_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 do-install:
 	@${MKDIR} ${PHPLOT_DIR}
-	${INSTALL_DATA} ${LIBRARIES:S,^,${WRKSRC}/,} ${PHPLOT_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.php ${PHPLOT_DIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
