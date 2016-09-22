@@ -5,13 +5,10 @@ PORTNAME=	msktutil
 PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		gmake tar:bzip2
 USE_OPENLDAP=	yes
