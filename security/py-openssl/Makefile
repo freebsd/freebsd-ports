@@ -12,6 +12,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python interface to the OpenSSL library
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six
@@ -31,7 +32,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-regression-test: build
+do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test)
 
 .include <bsd.port.mk>
