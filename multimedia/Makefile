@@ -14,6 +14,7 @@
     SUBDIR += audacious
     SUBDIR += audacious-gtk3
     SUBDIR += audacious-plugins
+    SUBDIR += audacious-plugins-gtk3
     SUBDIR += audiopreview
     SUBDIR += avbin
     SUBDIR += avidemux
