@@ -10,11 +10,6 @@ MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSD
 MAINTAINER=	yasu@utahime.org
 COMMENT?=	MeCab IPA dictionary meta-port
 
-LICENSE=	NAIST
-LICENSE_NAME=	NAIST License
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 .if empty(PKGNAMESUFFIX)
 USES=	metaport
 OPTIONS_RADIO=	CHARSET
@@ -36,8 +31,8 @@ LICENSE_NAME_NAIST=	NAIST
 LICENSE_NAME_ICOT=	ICOT
 LICENSE_FILE_NAIST=	${WRKSRC}/COPYING
 LICENSE_FILE_ICOT=	${WRKSRC}/COPYING
-LICENSE_PERMS_NAIST=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_NAIST=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_ICOT=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	ja-mecab>=0.94:japanese/mecab
 
