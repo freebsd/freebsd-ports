@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -14,6 +14,7 @@ COMMENT=	Advanced DNS recursor
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libboost_context.so:devel/boost-libs
 
 BROKEN_sparc64=	Does not compile on sparc64
 BROKEN_FreeBSD_9=	linker error
