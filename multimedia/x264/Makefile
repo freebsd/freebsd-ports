@@ -103,8 +103,7 @@ SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 CONFIGURE_ARGS?=	--system-libx264
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
-			--extra-ldflags="${LDFLAGS}" \
-			--disable-opencl \
+			--extra-ldflags="${LDFLAGS}"
 
 CFLAGS_armv6+=		-mcpu=arm1136jf-s
 
