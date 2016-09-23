@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:EWILHELM
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Date-Piece-v0.0.3
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
 
 BUILD_DEPENDS=	p5-Date-Simple>=3.03:devel/p5-Date-Simple

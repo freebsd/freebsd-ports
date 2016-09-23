@@ -10,7 +10,7 @@ MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gopher client for access to a distributed document service
 
 GNU_CONFIGURE=	yes
