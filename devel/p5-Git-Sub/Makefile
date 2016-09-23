@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Git-Sub
-PORTVERSION=	0.130270
-PORTREVISION=	1
+PORTVERSION=	0.161810
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Git commands imported into the git:: namespace
 
 LICENSE=	ART10 GPLv1
