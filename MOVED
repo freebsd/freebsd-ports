@@ -8634,3 +8634,4 @@ devel/py-dogpile.core|devel/py-dogpile.cache|2016-09-13|EOL upstream. Merged int
 korean/imhangul||2016-09-15|Split into korean/imhangul-gtk2 and korean/imhangul-gtk3
 devel/poco-devel|devel/poco|2016-09-18|Has expired: older than stable devel/poco
 databases/pglogical-output|databases/pglogical|2016-09-22|databases/pglogical-output merged into databases/pglogical
+mail/gml||2016-09-23|Has expired: Deprecated upstream. Use native gmail tools to import
