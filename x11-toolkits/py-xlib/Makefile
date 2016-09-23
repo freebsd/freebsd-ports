@@ -3,6 +3,7 @@
 
 PORTNAME=	xlib
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,6 +14,7 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	python-xlib
