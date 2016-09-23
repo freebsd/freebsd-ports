@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgts.so:graphics/gts
 
-USE_PYTHON=	distutils
-USES=		pkgconfig python
+USE_PYTHON=	autoplist distutils
+USES=		pkgconfig python:2.7
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gts/_gts.so
