@@ -6,7 +6,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	www mail
 MASTER_SITES=	SF
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to generate a cross-referenced HTML mail archive
 
 LICENSE=	GPLv2
