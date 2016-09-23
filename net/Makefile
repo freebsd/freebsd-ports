@@ -1067,6 +1067,7 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
+    SUBDIR += rclone
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
