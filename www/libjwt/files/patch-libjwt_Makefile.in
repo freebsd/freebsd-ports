@@ -1,0 +1,11 @@
+--- libjwt/Makefile.in.orig	2016-09-23 05:42:55 UTC
++++ libjwt/Makefile.in
+@@ -361,7 +361,7 @@ libjwt_la_LDFLAGS = -version-info 2:0:2 
+ libjwt_la_CPPFLAGS = -I$(top_srcdir)/include $(OPENSSL_INCLUDES) -Wall
+ libjwt_la_CFLAGS = $(JANSSON_CFLAGS) $(COVERAGE_CFLAGS)
+ libjwt_la_LIBADD = $(OPENSSL_LIBS) $(JANSSON_LIBS) $(COVERAGE_LDFLAGS)
+-pkgconfiglibdir = $(libdir)/pkgconfig
++pkgconfiglibdir = $(prefix)/libdata/pkgconfig
+ pkgconfiglib_DATA = libjwt.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
