@@ -3,7 +3,6 @@
 #
 # Updating notes: see multimedia/x264/Makefile.
 
-PORTREVISION=	3
 PKGNAMEPREFIX=	lib
 COMMENT=	H.264/MPEG-4 AVC Video Encoding (Library)
 MASTERDIR=	${.CURDIR}/../x264

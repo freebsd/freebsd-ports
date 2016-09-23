@@ -1,46 +1,37 @@
 --- configure.orig	2015-06-29 20:45:09 UTC
 +++ configure
-@@ -604,12 +604,6 @@ case $host_cpu in
+@@ -677,12 +677,6 @@ case $host_cpu in
          AS_EXT=".asm"
-         ASFLAGS="$ASFLAGS -O2 -DARCH_X86_64=0 -I\$(SRCPATH)/common/x86/"
+         ASFLAGS="$ASFLAGS -DARCH_X86_64=0 -I\$(SRCPATH)/common/x86/"
          if [ $compiler = GNU ]; then
 -            if [[ "$asm" == auto && "$CFLAGS" != *-march* ]]; then
 -                CFLAGS="$CFLAGS -march=i686"
 -            fi
 -            if [[ "$asm" == auto && "$CFLAGS" != *-mfpmath* ]]; then
--                CFLAGS="$CFLAGS -mfpmath=sse -msse"
+-                CFLAGS="$CFLAGS -mfpmath=sse -msse -msse2"
 -            fi
              CFLAGS="-m32 $CFLAGS"
              LDFLAGS="-m32 $LDFLAGS"
-         elif [ $compiler = ICC ]; then
-@@ -639,7 +639,7 @@ case $host_cpu in
-             ASFLAGS="$ASFLAGS -f elf"
+         fi
+@@ -697,7 +691,7 @@ case $host_cpu in
+             ASFLAGS="$ASFLAGS -f elf32"
          fi
          ;;
 -    x86_64)
 +    x86_64|amd64)
          ARCH="X86_64"
-         AS="yasm"
+         AS="${AS-yasm}"
          AS_EXT=".asm"
-@@ -678,7 +678,7 @@ case $host_cpu in
-     sparc)
-         ARCH="SPARC"
-         ;;
--    mips|mipsel|mips64|mips64el)
-+    mips|mipsel|mips64|mips64el|mipsn32)
-         ARCH="MIPS"
-         ;;
-     arm*)
-@@ -695,7 +695,7 @@ case $host_cpu in
+@@ -761,7 +755,7 @@ case $host_cpu in
              AS="${AS-${CC}}"
          fi
          ;;
 -    aarch64)
 +    aarch64|arm64)
          ARCH="AARCH64"
+         stack_alignment=16
          if [ "$SYS" = MACOSX ] ; then
-             AS="${AS-${SRCPATH}/tools/gas-preprocessor.pl -arch aarch64 -- ${CC}}"
-@@ -1089,10 +1089,6 @@ if cc_check '' -Wshadow ; then
+@@ -1225,10 +1219,6 @@ if cc_check '' -Wshadow ; then
      CFLAGS="-Wshadow $CFLAGS"
  fi
  
