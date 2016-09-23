@@ -19,7 +19,6 @@ OPTIONS_EXCLUDE=	FFMS GPAC LAVF LSMASH SWSCALE
 HI10P_DESC=		Enable High 10 Profile 10-bit encoding
 HI10P_CONFIGURE_ON=	--bit-depth=10
 
-OPENCL_DESC=		Heterogeneous computing via OpenCL
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 OPENCL_CONFIGURE_OFF=	--disable-opencl
 
