@@ -151,7 +151,6 @@
     SUBDIR += gmime24-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
-    SUBDIR += gml
     SUBDIR += gnarwl
     SUBDIR += gnome-gmail-notifier
     SUBDIR += gnubiff
