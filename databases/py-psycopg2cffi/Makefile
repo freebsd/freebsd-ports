@@ -1,4 +1,3 @@
-# Created by: Joseph Mingrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	psycopg2cffi
@@ -7,7 +6,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Implementation of the psycopg2 module using cffi
 
 LICENSE=	LGPL3+

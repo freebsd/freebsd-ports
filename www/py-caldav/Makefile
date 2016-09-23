@@ -1,4 +1,3 @@
-# Created by: Joseph Mignrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	caldav
@@ -7,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	CalDAV (RFC4791) client library
 
 LICENSE=	APACHE20 GPLv3

@@ -4,7 +4,7 @@ PORTNAME=	zap
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Maintain ZFS snapshots with cron
 
 LICENSE=	BSD2CLAUSE

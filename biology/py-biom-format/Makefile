@@ -1,4 +1,3 @@
-# Created by: Joseph Mingrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	biom-format
@@ -7,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Biological Observation Matrix (BIOM) Format Project
 
 LICENSE=	BSD3CLAUSE

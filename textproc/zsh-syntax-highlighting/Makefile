@@ -4,7 +4,7 @@ PORTNAME=	zsh-syntax-highlighting
 PORTVERSION=	20160816
 CATEGORIES=	textproc
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Fish shell syntax highlighting for Zsh
 
 LICENSE=	BSD3CLAUSE
