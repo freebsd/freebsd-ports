@@ -1,2 +1,3 @@
-SHA256 (hostapd-2.4.tar.gz) = 6fe0eb6bd1c9cbd24952ece8586b6f7bd14ab358edfda99794e79b9b9dbd657f
-SIZE (hostapd-2.4.tar.gz) = 1658872
+TIMESTAMP = 1467776602
+SHA256 (hostapd-2.5.tar.gz) = 8e272d954dc0d7026c264b79b15389ec2b2c555b32970de39f506b9f463ec74a
+SIZE (hostapd-2.5.tar.gz) = 1720783
