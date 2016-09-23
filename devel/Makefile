@@ -176,6 +176,7 @@
     SUBDIR += boost-libs
     SUBDIR += boost-python-libs
     SUBDIR += boost_build
+    SUBDIR += bossa
     SUBDIR += bouml-doc
     SUBDIR += bpython
     SUBDIR += bsdbuild
