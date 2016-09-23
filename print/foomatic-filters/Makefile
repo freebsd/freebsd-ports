@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
 LICENSE=	GPLv2+

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils net parallel www
 PKGNAMESUFFIX=	-webfrontend
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 LICENSE=	BSD3CLAUSE

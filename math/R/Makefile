@@ -21,7 +21,7 @@ MASTER_SITES=		http://cran.r-project.org/%SUBDIR%/ \
 			http://probability.ca/cran/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 
-MAINTAINER=		jrm@ftfl.ca
+MAINTAINER=		jrm@FreeBSD.org
 COMMENT=		Language for statistical computing and graphics
 
 LICENSE=		GPLv2
