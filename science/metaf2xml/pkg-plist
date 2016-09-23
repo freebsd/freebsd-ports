@@ -15,14 +15,11 @@ man/man3/metaf2xml::src2raw.3pm.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/metaf-fullhtml.xsl
 %%DATADIR%%/metaf-html.xsl
 %%DATADIR%%/metaf-lang-de.xml
 %%DATADIR%%/metaf-lang-en.xml
 %%DATADIR%%/metaf-lang-es.xml
-%%DATADIR%%/metaf-lang-pl.xml
-%%DATADIR%%/metaf-lang-pt-br.xml
 %%DATADIR%%/metaf-lang-ru.xml
 %%DATADIR%%/metaf-lang.xml
 %%DATADIR%%/metaf-sum-html.xsl
@@ -40,8 +37,6 @@ man/man3/metaf2xml::src2raw.3pm.gz
 %%WWWDIR%%/htdocs/metaf-lang-de.xml
 %%WWWDIR%%/htdocs/metaf-lang-en.xml
 %%WWWDIR%%/htdocs/metaf-lang-es.xml
-%%WWWDIR%%/htdocs/metaf-lang-pl.xml
-%%WWWDIR%%/htdocs/metaf-lang-pt-br.xml
 %%WWWDIR%%/htdocs/metaf-lang-ru.xml
 %%WWWDIR%%/htdocs/metaf-lang.xml
 %%WWWDIR%%/htdocs/metaf-sum-html.xsl
