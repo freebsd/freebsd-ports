@@ -4,7 +4,8 @@
 PORTNAME=	megacli
 DISTVERSION=	8-07-14
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
+MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/ \
+		http://ftp.wsisiz.edu.pl/pub/pc/drivers/lsi/
 DISTNAME=	${DISTVERSION}_MegaCLI
 
 MAINTAINER=	samflanker@gmail.com
