@@ -63,28 +63,28 @@ LSMASH_DESC=		L-SMASH library support
 MP4_DESC=		MPEG-4 output
 SWSCALE_DESC=		Resize video filter
 
-ASM_CONFIGURE_OFF=	--disable-asm
+ASM_CONFIGURE_ENABLE=	asm
 
-DEBUG_CONFIGURE_ON=	--enable-debug
+DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
 
 FFMS_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
-FFMS_CONFIGURE_OFF=	--disable-ffms
+FFMS_CONFIGURE_ENABLE=	ffms
 FFMS_IMPLIES=		SWSCALE
 
 GCC_VARS=		USE_GCC=yes
 
-GPAC_CONFIGURE_OFF=	--disable-gpac
 GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
+GPAC_CONFIGURE_ENABLE=	gpac
 
-LAVF_CONFIGURE_OFF=	--disable-lavf
 LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
 			libavutil.so:multimedia/ffmpeg
+LAVF_CONFIGURE_ENABLE=	lavf
 LAVF_IMPLIES=		SWSCALE
 
 LSMASH_LIB_DEPENDS=	liblsmash.so:multimedia/l-smash
-LSMASH_CONFIGURE_OFF=	--disable-lsmash
+LSMASH_CONFIGURE_ENABLE=lsmash
 
 PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
 PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
@@ -96,9 +96,9 @@ PGO_VARS=		USE_GCC=any \
 			RESTRICTED="${Y4M_VIDEO_DISTFILE} file may not be mirrored" \
 			RESTRICTED_FILES="${Y4M_VIDEO_DISTFILE}"
 
-SWSCALE_CONFIGURE_OFF=	--disable-swscale
 SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 			libswscale.so:multimedia/ffmpeg
+SWSCALE_CONFIGURE_ENABLE=	swscale
 
 CONFIGURE_ARGS?=	--system-libx264
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
