@@ -19,7 +19,7 @@ OPTIONS_SUB=		yes
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
 ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 
-USES=		perl5
+USES=		perl5 ssl:build
 USE_PERL5=	build
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
@@ -50,7 +50,8 @@ do-extract:
 	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
 
 do-build:	apply-slist
-	@${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
+	@${SETENV} PATH=${LOCALBASE}/bin:$${PATH} \
+		${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
 	    < ${WRKDIR}/certdata.txt > \
 	    ${WRKDIR}/ca-root-nss.crt
 
