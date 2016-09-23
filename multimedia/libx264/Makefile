@@ -8,6 +8,7 @@ COMMENT=	H.264/MPEG-4 AVC Video Encoding (Library)
 MASTERDIR=	${.CURDIR}/../x264
 PLIST=		${.CURDIR}/pkg-plist
 
+# Clear dependency on libx264 (itself), see x264/Makefile
 LIB_DEPENDS=	#
 
 USES=		pathfix
