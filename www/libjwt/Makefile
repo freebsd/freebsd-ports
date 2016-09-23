@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcheck.so:devel/libcheck \
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
 
-USES=		libtool pkgconfig ssl
+USES=		libtool pkgconfig pathfix ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
