@@ -1,5 +1,18 @@
 --- configure.orig	2015-06-29 20:45:09 UTC
 +++ configure
+@@ -604,12 +604,6 @@ case $host_cpu in
+         AS_EXT=".asm"
+         ASFLAGS="$ASFLAGS -O2 -DARCH_X86_64=0 -I\$(SRCPATH)/common/x86/"
+         if [ $compiler = GNU ]; then
+-            if [[ "$asm" == auto && "$CFLAGS" != *-march* ]]; then
+-                CFLAGS="$CFLAGS -march=i686"
+-            fi
+-            if [[ "$asm" == auto && "$CFLAGS" != *-mfpmath* ]]; then
+-                CFLAGS="$CFLAGS -mfpmath=sse -msse"
+-            fi
+             CFLAGS="-m32 $CFLAGS"
+             LDFLAGS="-m32 $LDFLAGS"
+         elif [ $compiler = ICC ]; then
 @@ -639,7 +639,7 @@ case $host_cpu in
              ASFLAGS="$ASFLAGS -f elf"
          fi
