@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	h
-PORTREVISION=	15
+PORTVERSION=	1.0.2i
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
@@ -166,7 +164,6 @@ pre-everything::
 	@${ECHO_CMD} "# please use DEFAULT_VERSIONS+= ssl=base instead."
 	@${ECHO_CMD} "#"
 	@${FALSE}
-
 .endif
 
 post-patch:
