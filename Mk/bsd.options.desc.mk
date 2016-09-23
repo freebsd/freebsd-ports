@@ -363,6 +363,7 @@ ODF_DESC?=		Open Document Format (ODF) file support
 OGG_DESC?=		Ogg media format support
 OPENAL_DESC?=		Audio support via OpenAL
 OPENBLAS_DESC?=		OpenBLAS blas implementation
+OPENCL_DESC?=		Heterogeneous computing via OpenCL
 OPENCV_DESC?=		Computer Vision support via OpenCV
 OPENEXR_DESC?=		HDR image format support via OpenEXR
 OPENGL_DESC?=		2D/3D rendering support via OpenGL
