@@ -51,3 +51,13 @@
  if [ $compiler = ICC -o $compiler = ICL ] ; then
      if cc_check 'extras/intel_dispatcher.h' '' 'x264_intel_dispatcher_override();' ; then
          define HAVE_INTEL_DISPATCHER
+@@ -1128,6 +1118,9 @@ if [ "$opencl" = "yes" ]; then
+         opencl="yes"
+         define HAVE_OPENCL
+         libdl="-ldl"
++    else
++        opencl="yes"
++        define HAVE_OPENCL
+     fi
+     LDFLAGS="$LDFLAGS $libdl"
+ fi
