@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	1.1.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	a
+PORTVERSION=	1.1.0a
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
