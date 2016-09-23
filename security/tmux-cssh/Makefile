@@ -5,7 +5,7 @@ PORTVERSION=	20151014
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	ClusterSSH features using tmux, but not X11
 
 LICENSE=	APACHE20

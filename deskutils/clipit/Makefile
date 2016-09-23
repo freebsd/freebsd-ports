@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/gtkclipit/Version%201
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Lightweight GTK+ clipboard manager forked from parcellite
 
 LICENSE=	GPLv3

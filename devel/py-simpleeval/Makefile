@@ -1,4 +1,3 @@
-# Created by: Joseph Mignrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	simpleeval
@@ -7,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Simple, safe single expression evaluator python library
 
 LICENSE=	MIT
