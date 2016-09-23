@@ -4537,6 +4537,7 @@
     SUBDIR += py-tw.forms
     SUBDIR += py-twext
     SUBDIR += py-twiggy
+    SUBDIR += py-twilio
     SUBDIR += py-twine
     SUBDIR += py-twisted
     SUBDIR += py-twisted152
