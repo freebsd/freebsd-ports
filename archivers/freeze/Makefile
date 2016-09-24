@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/compression/ \
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Compression program - often used in QNX
 
+CONFLICTS_INSTALL=	mlt-[0-9]*
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
 
