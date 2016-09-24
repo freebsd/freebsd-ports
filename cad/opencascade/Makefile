@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -21,8 +21,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/Overview.md
 # and ${WRKSRC}/dox/dev_guides/building
-USES=		alias:10 bison cmake compiler dos2unix gmake shebangfix tk \
-		tar:tgz
+USES=		alias:10 bison cmake compiler:c++11-lib dos2unix gmake \
+		shebangfix tk tar:tgz
 USE_XORG=	xmu
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/env.sh.in adm/templates/draw.sh		\

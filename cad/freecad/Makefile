@@ -2,6 +2,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.17.g20160907
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -31,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2		\
 USE_GITHUB=	yes
 GH_TAGNAME=	1ed3562
 
-USES=		compiler:c++11-lang cmake:outsource jpeg python localbase
+USES=		compiler:c++11-lib cmake:outsource jpeg python localbase
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT4=	qmake_build corelib gui moc_build network opengl rcc_build \

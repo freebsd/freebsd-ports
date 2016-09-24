@@ -3,7 +3,7 @@
 
 PORTNAME?=		R
 PORTVERSION=		3.3.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		math lang
 MASTER_SITES=		http://cran.r-project.org/%SUBDIR%/ \
 			ftp://cran.r-project.org/pub/R/%SUBDIR%/ \

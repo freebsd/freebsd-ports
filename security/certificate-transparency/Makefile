@@ -3,6 +3,7 @@
 
 PORTNAME=	certificate-transparency
 PORTVERSION=	20160102
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
