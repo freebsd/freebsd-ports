@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libestr.adiscon.com/files/download/
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Library for some string essentials
 
 USES=		libtool
