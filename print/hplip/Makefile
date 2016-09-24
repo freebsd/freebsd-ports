@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.16.2
-PORTREVISION=	2
+PORTVERSION=	3.16.8
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
+
+LICENSE=	GPLv2 MIT BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILES=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcupsimage.so:print/cups \
 		libdbus-1.so:devel/dbus
@@ -71,7 +74,7 @@ FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
 FAX_CONFIGURE_ENABLE=	fax-build
 
 SNMP_DESC=	Network/JetDirect support
-SNMP_USE=	OPENSSL=yes
+SNMP_USES=	ssl
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	network-build
 
@@ -124,5 +127,11 @@ post-patch:
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf \
 		${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}/ui4/plugins
+	${MKDIR} ${STAGEDIR}/var/lib/hp
+	${MKDIR} ${STAGEDIR}/var/lib
+post-install-SCAN-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d
+	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- installer/dcheck.py.orig	2013-02-21 18:40:18.368768559 -0800
-+++ installer/dcheck.py	2013-02-21 18:43:03.116783408 -0800
-@@ -46,7 +46,11 @@
+--- installer/dcheck.py.orig	2016-08-26 10:05:26 UTC
++++ installer/dcheck.py
+@@ -48,7 +48,11 @@ mod_output = ''
  def update_ld_output():
      # For library checks
      global ld_output
@@ -13,7 +13,7 @@
  
      if status != 0:
          log.debug("ldconfig failed.")
-@@ -360,6 +364,8 @@
+@@ -378,6 +382,8 @@ def get_libpthread_version():
      except ImportError:
          return '-'
      else:
