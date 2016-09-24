@@ -1,6 +1,6 @@
---- deps/node_package/priv/base/env.sh.orig	2013-09-13 10:22:32.000000000 +0200
-+++ deps/node_package/priv/base/env.sh	2013-09-13 10:27:16.000000000 +0200
-@@ -100,7 +100,7 @@
+--- deps/node_package/priv/base/env.sh.orig	2013-11-08 18:56:54 UTC
++++ deps/node_package/priv/base/env.sh
+@@ -100,7 +100,7 @@ ping_node() {
  # read/write/delete .pid files during startup/shutdown
  create_pid_dir() {
      # Validate RUNNER_USER is set and they have permissions to write to /var/run
@@ -9,7 +9,7 @@
      if ([ "$RUNNER_USER" ] && [ "x$WHOAMI" != "x$RUNNER_USER" ]); then
          if [ -w $RUN_DIR ]; then
              mkdir -p $PID_DIR
-@@ -161,12 +161,12 @@
+@@ -161,12 +161,13 @@ check_user() {
      # Validate that the user running the script is the owner of the
      # RUN_DIR.
      if ([ "$RUNNER_USER" ] && [ "x$WHOAMI" != "x$RUNNER_USER" ]); then
@@ -21,7 +21,8 @@
              exit 1
          fi
 -        exec sudo -H -u $RUNNER_USER -i $RUNNER_SCRIPT_DIR/$RUNNER_SCRIPT $@
-+	exec su - $RUNNER_USER -c "$RUNNER_SCRIPT_DIR/$RUNNER_SCRIPT $@"
++        ESCAPED_ARGS=`echo "$@" | sed -e 's/\([{}"]\)/\\\\\1/g'`
++        exec su - $RUNNER_USER -c "$RUNNER_SCRIPT_DIR/$RUNNER_SCRIPT $ESCAPED_ARGS"
      fi
  }
-
+ 
