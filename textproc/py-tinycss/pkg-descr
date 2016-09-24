@@ -2,6 +2,7 @@ tinycss is a complete yet simple CSS parser for Python.  It supports the
 full syntax and error handling for CSS 2.1 as well as some CSS 3 modules:
 
 -- CSS Color 3
+-- CSS Fonts 3
 -- CSS Paged Media 3
 
 It is designed to be easy to extend for new CSS modules and syntax, and
