@@ -136,6 +136,8 @@
 %%WL_LISPDIR%%/wl-mime.el
 %%WL_LISPDIR%%/wl-mime.elc
 %%WL_LISPDIR%%/wl-news.el
+%%WL_LISPDIR%%/wl-qs.el
+%%WL_LISPDIR%%/wl-qs.elc
 %%WL_LISPDIR%%/wl-refile.el
 %%WL_LISPDIR%%/wl-refile.elc
 %%WL_LISPDIR%%/wl-score.el
