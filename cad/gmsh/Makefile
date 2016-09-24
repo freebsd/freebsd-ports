@@ -3,6 +3,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.12.0
+PORTREVISION?=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -11,8 +12,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	gmsh
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jrm@ftfl.ca
-COMMENT=	Automatic 3D finite element mesh generator
+MAINTAINER?=	jrm@ftfl.ca
+COMMENT?=	Automatic 3D finite element mesh generator
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libpng.so:graphics/png \
@@ -25,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 SLAVEDIRS=	cad/gmsh-occ
 
-USES=		cmake fortran gmake jpeg tar:tgz
+USES=		cmake compiler:c++11-lib fortran gmake jpeg tar:tgz
 USE_GL=		yes
 ALL_TARGET=	all
 

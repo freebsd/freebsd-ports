@@ -1,8 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
-PORTNAME=	gmsh
-CATEGORIES=	cad
+PORTREVISION=	1
 PKGNAMESUFFIX=	-occ
 
 MAINTAINER=	thierry@FreeBSD.org
