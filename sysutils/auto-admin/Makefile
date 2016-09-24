@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Tools for automating system management
+COMMENT=	Portable tools for system management automation
 
 LICENSE=	BSD2CLAUSE
 
