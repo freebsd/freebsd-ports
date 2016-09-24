@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -11,7 +11,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.7:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.8:sysutils/auto-admin
 
 USES=		tar:xz
 
@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -r ${WRKSRC}/Data/* ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/Data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
 
