@@ -8635,3 +8635,4 @@ korean/imhangul||2016-09-15|Split into korean/imhangul-gtk2 and korean/imhangul-
 devel/poco-devel|devel/poco|2016-09-18|Has expired: older than stable devel/poco
 databases/pglogical-output|databases/pglogical|2016-09-22|databases/pglogical-output merged into databases/pglogical
 mail/gml||2016-09-23|Has expired: Deprecated upstream. Use native gmail tools to import
+net/nats|net/gnatsd|2016-09-24|Switched to upstream naming

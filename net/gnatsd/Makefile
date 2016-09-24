@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	nats
+PORTNAME=	gnatsd
 PORTVERSION=	0.9.4
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
@@ -13,10 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_PKGNAME=	github.com/nats-io/gnatsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_PROJECT=	gnatsd
 
 USE_RC_SUBR=	gnatsd.sh
 
