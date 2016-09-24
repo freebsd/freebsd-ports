@@ -1,5 +1,5 @@
---- ./prnt/hpcups/ErnieFilter.cpp.orig	2010-02-25 02:04:09.000000000 +0300
-+++ ./prnt/hpcups/ErnieFilter.cpp	2010-04-18 10:49:13.471529924 +0400
+--- prnt/hpcups/ErnieFilter.cpp.orig	2016-08-26 10:03:22 UTC
++++ prnt/hpcups/ErnieFilter.cpp
 @@ -50,7 +50,8 @@
  #include "ErnieFilter.h"
  

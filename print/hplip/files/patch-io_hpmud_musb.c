@@ -1,4 +1,4 @@
---- io/hpmud/musb.c.orig	2016-02-08 09:42:51 UTC
+--- io/hpmud/musb.c.orig	2016-08-26 10:05:31 UTC
 +++ io/hpmud/musb.c
 @@ -139,10 +139,16 @@ static int get_string_descriptor(libusb_
                  0x409,

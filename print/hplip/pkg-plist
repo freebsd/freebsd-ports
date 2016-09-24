@@ -35,7 +35,7 @@ bin/hp-unload
 bin/hp-upgrade
 bin/hp-wificonfig
 @sample etc/hp/hplip.conf.sample
-@comment etc/sane.d/dll.conf
+%%SCAN%%etc/sane.d/dll.d/hpaio
 %%X11%%etc/xdg/autostart/hplip-systray.desktop
 %%SNMP%%lib/libhpdiscovery.so
 %%SNMP%%lib/libhpdiscovery.so.0
@@ -713,6 +713,7 @@ share/ppd/HP/hp-color_laserjet_mfp_m577-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_mfp_m680-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_pro_m252-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_pro_mfp_m277-ps.ppd.gz
+share/ppd/HP/hp-color_laserjet_pro_mfp_m377-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_pro_mfp_m476-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_pro_mfp_m477-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_pro_mfp_m477d-ps.ppd.gz
@@ -873,6 +874,8 @@ share/ppd/HP/hp-laserjet_p4010_series-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m201_m202-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m402_m403-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m402_m403d-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_m501dn-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_m501n-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m701-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m706-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_mfp_m225_m226-ps.ppd.gz
@@ -889,8 +892,18 @@ share/ppd/HP/hp-officejet_pro_451_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_476_576_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_551_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_8000_enterprise_a811a-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_8210-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_8730-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_8740-ps.ppd.gz
+share/ppd/HP/hp-pagewide_color_556-ps.ppd.gz
+share/ppd/HP/hp-pagewide_color_flow_mfp_586-ps.ppd.gz
+share/ppd/HP/hp-pagewide_color_mfp_586-ps.ppd.gz
+share/ppd/HP/hp-pagewide_mfp_p57750-ps.ppd.gz
+share/ppd/HP/hp-pagewide_p55250-ps.ppd.gz
+share/ppd/HP/hp-pagewide_pro_452_printer-ps.ppd.gz
+share/ppd/HP/hp-pagewide_pro_477_mfp-ps.ppd.gz
+share/ppd/HP/hp-pagewide_pro_552_printer-ps.ppd.gz
+share/ppd/HP/hp-pagewide_pro_577_mfp-ps.ppd.gz
 %%X11%%@dir %%DATADIR%%/ui4/plugins
 @dir /var/lib/hp
 @dir /var/lib
-%%SCAN%%@exec if ! grep ^hpaio %%LOCALBASE%%/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then echo hpaio >> %%LOCALBASE%%/etc/sane.d/dll.conf; fi
-%%SCAN%%@unexec sed -i "" -e '/^hpaio$/d' %%LOCALBASE%%/etc/sane.d/dll.conf
