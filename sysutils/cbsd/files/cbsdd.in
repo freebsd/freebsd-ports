@@ -57,10 +57,15 @@ command_args="&"
 
 cbsdd_prestart() {
 	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
+
+	. ${distdir}/initenv.subr
+	. ${inventory}
+
 	%%PREFIX%%/bin/cbsd sysinv mode=update
 	%%PREFIX%%/bin/cbsd netinv
-
-	. ${inventory}
+	update_hwinfo
+	update_netinfo
+	env sqlcolnames="1" ${miscdir}/sqlcli ${dbdir}/local.sqlite "SELECT * FROM local" > ${inventory}
 
 	[ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
 	/usr/sbin/daemon -f ${rcddir}/jails-astart start
@@ -74,12 +79,12 @@ cbsdd_prestop()
 
 cbsdd_stop()
 {
-	[ -f "${pidfile}" ] && kill -9 $( cat ${pidfile} )
+	[ -f "${pidfile}" ] && kill -9 $( /bin/cat ${pidfile} )
 }
 
 cbsdd_reload()
 {
-	[ -f "${pidfile}" ] && kill -9 $( cat ${pidfile} ) > /dev/null 2>&1
+	[ -f "${pidfile}" ] && kill -9 $( /bin/cat ${pidfile} ) > /dev/null 2>&1
 	run_rc_command "start"
 	exit 0
 }
