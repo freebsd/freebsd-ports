@@ -44,6 +44,7 @@ man/man1/auto-restore-pw.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
 man/man1/auto-set-sysctl.1.gz
+man/man1/auto-set-umask.1.gz
 man/man1/auto-ssh-authorize.1.gz
 man/man1/auto-ssh-reverse-authorize.1.gz
 man/man1/auto-update-port-framework.1.gz
@@ -99,6 +100,7 @@ sbin/auto-restore-pw
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
 sbin/auto-set-sysctl
+sbin/auto-set-umask
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-update-port-framework
