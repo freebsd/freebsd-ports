@@ -859,6 +859,7 @@
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
+    SUBDIR += py-scandir
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
