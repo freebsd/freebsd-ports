@@ -3,6 +3,7 @@
 
 PORTNAME=	harfbuzz
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++0x gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	cairo glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes

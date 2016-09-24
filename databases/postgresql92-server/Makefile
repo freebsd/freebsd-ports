@@ -3,7 +3,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	9.2.18
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
@@ -230,6 +230,7 @@ post-patch:
 .  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU}
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
+		-e '/icu/s/_57//' \
 		${WRKSRC}/configure.in
 .  endif
 

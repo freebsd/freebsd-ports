@@ -2,7 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_GNOME=	libxml2
-USES=		gmake gperf libtool pathfix perl5 pkgconfig tar:xz
+USES=		compiler:c++0x gmake gperf libtool pathfix perl5 pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 post-patch:
