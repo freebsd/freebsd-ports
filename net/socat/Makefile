@@ -13,10 +13,9 @@ COMMENT=	Multipurpose relay and more
 
 LICENSE=	GPLv2
 
-USES=		compiler cpe tar:bzip2
+USES=		compiler cpe ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	socat
-USE_OPENSSL=	yes
 
 CPE_VENDOR=	dest-unreach
 
