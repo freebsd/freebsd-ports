@@ -1,0 +1,39 @@
+--- src/etc/Makefile.in.orig	2016-09-24 16:18:55 UTC
++++ src/etc/Makefile.in
+@@ -520,36 +520,11 @@ distclean-local::
+ 	-rm -f *~ \#* .\#* cscope*.out core core.* tags TAGS
+ 
+ install-data-local:
+-	test -d "/etc/rc.d/init.d" \
+-	    && INITDIR="$(sysconfdir)/rc.d/init.d" \
+-	    || INITDIR="$(sysconfdir)/init.d"; \
+-	  $(INSTALL) -m 0755 -d "$(DESTDIR)$${INITDIR}"; \
+-	  $(INSTALL) -m 0755 \
+-	    "$(builddir)/munge.init" "$(DESTDIR)$${INITDIR}/munge"
+-	:
+-	test -d "/etc/sysconfig" \
+-	    && CONFDIR="$(sysconfdir)/sysconfig" \
+-	    || CONFDIR="$(sysconfdir)/default"; \
+-	  $(INSTALL) -m 0755 -d "$(DESTDIR)$${CONFDIR}"; \
+-	  $(INSTALL) -m 0644 \
+-	    "$(srcdir)/munge.sysconfig" "$(DESTDIR)$${CONFDIR}/munge"
+-	:
+ 	PKGCONFIGDIR="$(prefix)/libdata/pkgconfig"; \
+ 	$(INSTALL) -m 0755 -d "$(DESTDIR)$${PKGCONFIGDIR}"; \
+ 	$(INSTALL) -m 0644 \
+ 	  "$(builddir)/munge.pc" "$(DESTDIR)$${PKGCONFIGDIR}/munge.pc"
+ 	:
+-	UNITDIR="$(prefix)/lib/systemd/system"; \
+-	$(INSTALL) -m 0755 -d "$(DESTDIR)$${UNITDIR}"; \
+-	$(INSTALL) -m 0644 \
+-	  "$(srcdir)/munge.service" "$(DESTDIR)$${UNITDIR}/munge.service"
+-	:
+-	TMPFILESDIR="$(prefix)/lib/tmpfiles.d"; \
+-	$(INSTALL) -m 0755 -d "$(DESTDIR)$${TMPFILESDIR}"; \
+-	$(INSTALL) -m 0644 \
+-	  "$(srcdir)/munge-tmpfiles.conf" \
+-	  "$(DESTDIR)$${TMPFILESDIR}/munge.conf"
+-	:
+ 	$(INSTALL) -m 0755 -d "$(DESTDIR)$(sysconfdir)"
+ 	$(INSTALL) -m 0700 -d "$(DESTDIR)$(sysconfdir)/munge"
+ 	$(INSTALL) -m 0755 -d "$(DESTDIR)$(localstatedir)"
