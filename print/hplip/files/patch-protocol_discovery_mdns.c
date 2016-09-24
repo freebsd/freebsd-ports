@@ -1,4 +1,4 @@
---- protocol/discovery/mdns.c.orig	2016-02-08 09:43:19 UTC
+--- protocol/discovery/mdns.c.orig	2016-08-26 10:04:47 UTC
 +++ protocol/discovery/mdns.c
 @@ -24,7 +24,11 @@
   Author: Sanjay Kumar
