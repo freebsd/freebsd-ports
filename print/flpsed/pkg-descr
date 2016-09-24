@@ -9,4 +9,4 @@ Using pdftops, which is part of xpdf, one can convert PDF documents to
 PostScript and then add text to them using flpsed.  flpsed is thus useful for
 filling in forms, adding notes, etc.
 
-WWW: http://www.ecademix.com/JohannesHofmann/flpsed.html
+WWW: http://flpsed.org/flpsed.html

@@ -3,19 +3,21 @@
 
 PORTNAME=	flpsed
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
+MASTER_SITES=	http://flpsed.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG Postscript annotator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS+=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils ghostscript:x11 gmake
+USE_XORG=	x11 xfixes xext xft
 PLIST_FILES=	bin/flpsed \
 		man/man1/flpsed.1.gz \
 		share/applications/flpsed.desktop \
@@ -24,8 +26,6 @@ PLIST_FILES=	bin/flpsed \
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${STAGEDIR}${PREFIX}/bin
