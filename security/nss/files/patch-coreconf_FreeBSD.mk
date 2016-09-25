@@ -13,10 +13,13 @@
  RANLIB			= ranlib
  
  CPU_ARCH		= $(OS_TEST)
-@@ -52,6 +52,13 @@ endif
+@@ -52,6 +52,16 @@ endif
  ifeq ($(CPU_ARCH),amd64)
  CPU_ARCH		= x86_64
  endif
++ifneq (,$(filter arm%, $(CPU_ARCH)))
++CPU_ARCH		= arm
++endif
 +ifneq (,$(filter powerpc%, $(CPU_ARCH)))
 +CPU_ARCH		= ppc
 +endif
