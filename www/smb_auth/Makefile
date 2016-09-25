@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dinoex
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy authentication module against an SMB server
 
 .if !defined(WITHOUT_REGISTER_SAMBA)
