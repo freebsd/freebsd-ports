@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		ftp://ftp.imagemagick.org/pub/ImageMagick/delegates/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
 LICENSE=	MIT
