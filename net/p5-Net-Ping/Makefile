@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to check a remote host for reachability
 
 LICENSE=	ART10 GPLv1
-LICENSE_COMP=	dual
+LICENSE_COMB=	dual
 
 DEPRECATED=	This or newer version included in all supported versions of perl
 EXPIRATION_DATE=	2016-11-08
