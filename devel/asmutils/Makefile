@@ -75,6 +75,8 @@ do-install:
 		${LN} -sf fromdos todos && \
 		${LN} -sf mount umount && \
 		${LN} -sf sleep usleep)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${STAGEDIR}${DOCSDIR}
 	${LN} -sf Asmutils-HOWTO.html ${STAGEDIR}/${DOCSDIR}/index.html
