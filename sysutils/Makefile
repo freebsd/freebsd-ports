@@ -832,6 +832,7 @@
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
     SUBDIR += py-diffoscope
+    SUBDIR += py-dirsync
     SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
