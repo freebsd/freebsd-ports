@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
 
 LICENSE=	BSD2CLAUSE

@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
 PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fvwm window manager
 
 USES=		imake
