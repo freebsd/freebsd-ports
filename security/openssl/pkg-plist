@@ -1378,8 +1378,8 @@ man/man3/SSL_set1_curves.3.gz
 man/man3/SSL_set1_curves_list.3.gz
 man/man3/SSL_set1_param.3.gz
 man/man3/SSL_set1_verify_cert_store.3.gz
-man/man3/SSL_set_bio.3.gz
 man/man3/SSL_set_alpn_protos.3.gz
+man/man3/SSL_set_bio.3.gz
 man/man3/SSL_set_cert_cb.3.gz
 man/man3/SSL_set_cipher_list.3.gz
 man/man3/SSL_set_client_CA_list.3.gz
@@ -1580,6 +1580,7 @@ man/man3/bn_wexpand.3.gz
 man/man3/buffer.3.gz
 man/man3/crypto.3.gz
 man/man3/d2i_ASN1_OBJECT.3.gz
+man/man3/d2i_AutoPrivateKey.3.gz
 man/man3/d2i_CMS_ContentInfo.3.gz
 man/man3/d2i_DHparams.3.gz
 man/man3/d2i_DSAPrivateKey.3.gz
@@ -1597,6 +1598,8 @@ man/man3/d2i_Netscape_RSA.3.gz
 man/man3/d2i_PKCS8PrivateKey.3.gz
 man/man3/d2i_PKCS8PrivateKey_bio.3.gz
 man/man3/d2i_PKCS8PrivateKey_fp.3.gz
+man/man3/d2i_PrivateKey.3.gz
+man/man3/d2i_Private_key.3.gz
 man/man3/d2i_RSAPrivateKey.3.gz
 man/man3/d2i_RSAPublicKey.3.gz
 man/man3/d2i_RSA_PUBKEY.3.gz
@@ -1646,6 +1649,7 @@ man/man3/i2d_PKCS8PrivateKey_bio.3.gz
 man/man3/i2d_PKCS8PrivateKey_fp.3.gz
 man/man3/i2d_PKCS8PrivateKey_nid_bio.3.gz
 man/man3/i2d_PKCS8PrivateKey_nid_fp.3.gz
+man/man3/i2d_PrivateKey.3.gz
 man/man3/i2d_RSAPrivateKey.3.gz
 man/man3/i2d_RSAPublicKey.3.gz
 man/man3/i2d_RSA_PUBKEY.3.gz
@@ -1702,5 +1706,5 @@ man/man7/des_modes.7.gz
 %%OPENSSLDIR%%/misc/tsget
 %%OPENSSLDIR%%/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
-@dir %%OPENSSLDIR%%/private
 @dir %%OPENSSLDIR%%/certs
+@dir %%OPENSSLDIR%%/private
