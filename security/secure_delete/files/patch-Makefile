@@ -1,4 +1,4 @@
---- Makefile.orig
+--- Makefile.orig	2003-10-29 21:07:06 UTC
 +++ Makefile
 @@ -1,13 +1,12 @@
 -CC=gcc
@@ -19,7 +19,7 @@
  	@echo
  	@echo "A Puritan is someone who is deathly afraid that someone, somewhere, is"
  	@echo "having fun."
-@@ -47,7 +46,7 @@
+@@ -47,7 +46,7 @@ install: all
  	chmod 644 ${MAN_DIR}/man1/srm.1 ${MAN_DIR}/man1/sfill.1 ${MAN_DIR}/man1/sswap.1 ${MAN_DIR}/man1/smem.1
  	mkdir -p -m 755 ${DOC_DIR} 2> /dev/null
  	cp -f CHANGES FILES README secure_delete.doc usenix6-gutmann.doc ${DOC_DIR}

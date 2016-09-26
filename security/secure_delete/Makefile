@@ -11,6 +11,8 @@ MASTER_SITES=	PACKETSTORM/groups/thc \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure data deletion toolkit
 
+LICENSE=	GPLv2 # mentioned in manpages
+
 CONFLICTS=	srm-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
@@ -21,9 +23,6 @@ PORTDOCS=	CHANGES FILES README secure_delete.doc usenix6-gutmann.doc
 PLIST_FILES=	bin/sdel bin/sfill bin/smem bin/srm bin/sswap \
 		bin/the_cleaner.sh man/man1/sfill.1.gz man/man1/smem.1.gz \
 		man/man1/srm.1.gz man/man1/sswap.1.gz
-
-BIN_PROGRAMS=	srm sfill sswap smem
-BIN_SCRIPTS=	the_cleaner.sh
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,14 +36,14 @@ post-patch:
 		 /strip/s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
-.for i in ${BIN_PROGRAMS}
+.for i in srm sfill sswap smem
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
-.for i in ${BIN_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/the_cleaner.sh ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf srm ${STAGEDIR}${PREFIX}/bin/sdel
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
