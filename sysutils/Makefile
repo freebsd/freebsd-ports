@@ -31,6 +31,7 @@
     SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
+    SUBDIR += android-file-transfer
     SUBDIR += ansible
     SUBDIR += ansible1
     SUBDIR += apachetop
