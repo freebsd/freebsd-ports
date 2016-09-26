@@ -1,6 +1,6 @@
---- src/config.h.in.orig	2016-01-22 09:56:33 UTC
+--- src/config.h.in.orig	2016-09-11 08:10:42 UTC
 +++ src/config.h.in
-@@ -562,8 +562,8 @@
+@@ -587,8 +587,8 @@
  /* Define to 1 if you have the <modbus.h> header file. */
  #undef HAVE_MODBUS_H
  
@@ -9,9 +9,9 @@
 +/* Define to 1 if you have the <mongoc.h> header file. */
 +#undef HAVE_MONGOC_H
  
- /* Define to 1 if you have the <mysql.h> header file. */
- #undef HAVE_MYSQL_H
-@@ -1541,13 +1541,15 @@
+ /* Define to 1 if you have the <mosquitto.h> header file. */
+ #undef HAVE_MOSQUITTO_H
+@@ -1617,13 +1617,15 @@
     module search path. */
  #undef LT_MODULE_PATH_VAR
  
@@ -29,7 +29,7 @@
  /* Define if NAN is defined by default and can initialize static variables. */
  #undef NAN_STATIC_DEFAULT
  
-@@ -1644,7 +1646,7 @@
+@@ -1715,7 +1717,7 @@
  /* Define to empty if `const' does not conform to ANSI C. */
  #undef const
  
