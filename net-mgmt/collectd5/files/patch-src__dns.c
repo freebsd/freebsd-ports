@@ -1,6 +1,6 @@
---- src/dns.c.orig	2016-01-22 09:51:17 UTC
+--- src/dns.c.orig	2016-09-11 08:10:25 UTC
 +++ src/dns.c
-@@ -223,6 +223,15 @@ static int dns_run_pcap_loop (void)
+@@ -225,6 +225,15 @@ static int dns_run_pcap_loop (void)
  		pthread_sigmask (SIG_SETMASK, &sigmask, NULL);
  	}
  
