@@ -3,10 +3,9 @@ bin/freecell-solver-config
 bin/freecell-solver-fc-pro-range-solve
 bin/freecell-solver-multi-thread-solve
 bin/freecell-solver-range-parallel-solve
-bin/make-aisleriot-freecell-board
-bin/make-gnome-freecell-board
 bin/make_pysol_freecell_board.py
 bin/pi-make-microsoft-freecell-board
+bin/transpose-freecell-board.py
 include/freecell-solver/fcs_back_compat.h
 include/freecell-solver/fcs_cl.h
 include/freecell-solver/fcs_dllexport.h
@@ -20,13 +19,13 @@ lib/libfreecell-solver.so
 lib/libfreecell-solver.so.0
 lib/libfreecell-solver.so.0.5.0
 libdata/pkgconfig/libfreecell-solver.pc
+man/man1/freecell-solver-config.1.gz
 man/man6/fc-solve-board_gen.6.gz
 man/man6/fc-solve.6.gz
 man/man6/freecell-solver-range-parallel-solve.6.gz
-man/man6/make-aisleriot-freecell-board.6.gz
-man/man6/make-gnome-freecell-board.6.gz
 man/man6/make_pysol_freecell_board.py.6.gz
 man/man6/pi-make-microsoft-freecell-board.6.gz
+man/man6/transpose-freecell-board.py.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
@@ -53,6 +52,7 @@ man/man6/pi-make-microsoft-freecell-board.6.gz
 %%DATADIR%%/presets/maliciously-obscure.sh
 %%DATADIR%%/presets/micro-finance-improved.sh
 %%DATADIR%%/presets/micro-finance.sh
+%%DATADIR%%/presets/one-big-family.sh
 %%DATADIR%%/presets/qualified-seed.sh
 %%DATADIR%%/presets/rin-tin-tin.sh
 %%DATADIR%%/presets/sand-stone.sh
