@@ -4685,6 +4685,7 @@
     SUBDIR += py3-pylru-cache
     SUBDIR += py3-python-magic
     SUBDIR += py3-pytz
+    SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
