@@ -34,7 +34,6 @@ include/openssl/evp.h
 include/openssl/hmac.h
 include/openssl/kdf.h
 %%IDEA%%include/openssl/idea.h
-%%JPAKE%%include/openssl/jpake.h
 include/openssl/lhash.h
 %%MD2%%include/openssl/md2.h
 %%MD4%%include/openssl/md4.h

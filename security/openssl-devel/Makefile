@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	1.1.0-pre5
+PORTVERSION=	1.1.0b
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -89,6 +89,8 @@ SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE_LDCONFIG=	yes
 SSL3_CONFIGURE_OFF=	no-ssl3-method
+SSL3_CONFIGURE_ON+=	enable-ssl3-method
+ZLIB_CONFIGURE_ON=	zlib-dynamic
 
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr
