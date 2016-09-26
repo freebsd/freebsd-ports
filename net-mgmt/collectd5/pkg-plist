@@ -18,6 +18,7 @@ lib/collectd/aggregation.so
 lib/collectd/apcups.so
 %%CURL_XML%%lib/collectd/ascent.so
 %%CURL_XML%%lib/collectd/bind.so
+%%CHRONY%%lib/collectd/chrony.so
 lib/collectd/contextswitch.so
 lib/collectd/cpu.so
 lib/collectd/csv.so
@@ -26,7 +27,7 @@ lib/collectd/csv.so
 %%CURL_XML%%lib/collectd/curl_xml.so
 %%DBI%%lib/collectd/dbi.so
 lib/collectd/df.so
-lib/collectd/disk.so
+%%DISK%%lib/collectd/disk.so
 lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so
@@ -46,6 +47,7 @@ lib/collectd/mbmon.so
 lib/collectd/memcached.so
 lib/collectd/memory.so
 %%MODBUS%%lib/collectd/modbus.so
+%%MQTT%%lib/collectd/mqtt.so
 %%MYSQL%%lib/collectd/mysql.so
 lib/collectd/network.so
 %%CURL%%lib/collectd/nginx.so
@@ -119,6 +121,7 @@ man/man1/collectdmon.1.gz
 man/man5/collectd-email.5.gz
 man/man5/collectd-exec.5.gz
 man/man5/collectd-java.5.gz
+man/man5/collectd-lua.5.gz
 man/man5/collectd-perl.5.gz
 man/man5/collectd-python.5.gz
 man/man5/collectd-snmp.5.gz

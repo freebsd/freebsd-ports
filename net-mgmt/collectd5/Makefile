@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.5.2
+PORTVERSION=	5.6.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -25,13 +25,14 @@ OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL \
 			TSDB
-OPTIONS_GROUP_INPUT=	CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
-			MODBUS MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
+OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON \
+			MEMCACHEC MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
 			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS \
 			SIGROK SNMP STATSD TOKYOTYRANT VARNISH XML \
 			XMMS ZOOKEEPER
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
+CHRONY_DESC=		Enable chronyd plugin
 CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
 CURL_JSON_DESC=		Enable curl_json plugin (implies curl and json)
 CURL_XML_DESC=		Enable ascent, bind, curl_xml plugins (implies curl and xml)
@@ -45,6 +46,7 @@ LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
 MONGODB_DESC=		Enable write_mongodb plugin (BROKEN)
+MQTT_DESC=		Enable MQTT broker metrics
 MYSQL_DESC=		Enable mysql-based plugins
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
 NOTIFYEMAIL_DESC=	Enable notifications via email
@@ -115,6 +117,8 @@ CGI_RUN_DEPENDS=		p5-URI>=0:net/p5-URI \
 				p5-HTML-Parser>=0:www/p5-HTML-Parser
 CGI_IMPLIES=			RRDTOOL
 
+CHRONY_CONFIGURE_ENABLE=	chrony
+
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=		apache curl nginx write_http
 CURL_CONFIGURE_WITH=		libcurl=${LOCALBASE}
@@ -161,6 +165,10 @@ MONGODB_LIB_DEPENDS+=		libbson-1.0.so:devel/libbson
 MONGODB_CONFIGURE_ENABLE=	write_mongodb
 MONGODB_CONFIGURE_WITH=		libmongoc=${LOCALBASE}
 MONGODB_BROKEN=			fails to configure with write_mongodb option
+
+MQTT_LIB_DEPENDS=		libmosquitto.so:net/mosquitto
+MQTT_CONFIGURE_ENABLE=		mqtt
+MQTT_CONFIGURE_WITH=		libmosquitto=${LOCALBASE}
 
 MYSQL_USE=			mysql=yes
 MYSQL_CONFIGURE_ENABLE=		mysql
@@ -272,7 +280,6 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-cpu \
 		--enable-csv \
 		--enable-df \
-		--enable-disk \
 		--enable-dns \
 		--enable-email \
 		--enable-exec \
@@ -316,6 +323,15 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-write_graphite \
 		--enable-write_log \
 		--enable-zfs_arc \
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+PLIST_SUB+=	DISK="@comment "
+.else
+CONFIGURE_ARGS+=--enable-disk
+PLIST_SUB+=	DISK="@comment "
+.endif
 
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	contrib/collection.cgi

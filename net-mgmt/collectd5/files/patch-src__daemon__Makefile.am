@@ -1,6 +1,6 @@
---- src/daemon/Makefile.am.orig	2016-01-22 09:51:17 UTC
+--- src/daemon/Makefile.am.orig	2016-09-11 08:10:25 UTC
 +++ src/daemon/Makefile.am
-@@ -6,7 +6,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src
+@@ -2,7 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src
  AM_CPPFLAGS += -DPREFIX='"${prefix}"'
  AM_CPPFLAGS += -DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"'
  AM_CPPFLAGS += -DLOCALSTATEDIR='"${localstatedir}"'
