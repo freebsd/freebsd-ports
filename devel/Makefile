@@ -4675,6 +4675,7 @@
     SUBDIR += py-zope.viewlet
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
+    SUBDIR += py3-click
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
     SUBDIR += py3-jsonschema
