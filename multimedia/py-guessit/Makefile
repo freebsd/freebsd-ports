@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guessit
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,13 @@ COMMENT=	Extract as much information as possible from a video file
 LICENSE=	LGPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.5.5:devel/py-babelfish \
-		${PYTHON_PKGNAMEPREFIX}dateutil<2.5.2:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}rebulk>=0.7.1:devel/py-rebulk
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}rebulk>=0.7.3:devel/py-rebulk
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 post-patch:
 		@${REINPLACE_CMD} -e '/setup_requires/d' ${WRKSRC}/${PYSETUP}
