@@ -4690,6 +4690,7 @@
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
+    SUBDIR += py3-yaml
     SUBDIR += py_static_check
     SUBDIR += pybugz
     SUBDIR += pychecker
