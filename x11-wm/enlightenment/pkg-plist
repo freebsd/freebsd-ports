@@ -8,6 +8,7 @@ bin/enlightenment_start
 etc/enlightenment/sysactions.conf
 etc/xdg/menus/e-applications.menu
 include/enlightenment/e.h
+include/enlightenment/e_Efx.h
 include/enlightenment/e_about.h
 include/enlightenment/e_acpi.h
 include/enlightenment/e_actions.h
@@ -17,6 +18,7 @@ include/enlightenment/e_auth.h
 include/enlightenment/e_backlight.h
 include/enlightenment/e_bg.h
 include/enlightenment/e_bindings.h
+include/enlightenment/e_bryce.h
 include/enlightenment/e_client.h
 include/enlightenment/e_client.x
 include/enlightenment/e_color.h
@@ -63,6 +65,7 @@ include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h
 include/enlightenment/e_gadcon_popup.h
+include/enlightenment/e_gadget.h
 include/enlightenment/e_grab_dialog.h
 include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
@@ -130,6 +133,7 @@ include/enlightenment/e_toolbar.h
 include/enlightenment/e_update.h
 include/enlightenment/e_user.h
 include/enlightenment/e_utils.h
+include/enlightenment/e_video.h
 include/enlightenment/e_widget.h
 include/enlightenment/e_widget_aspect.h
 include/enlightenment/e_widget_bgpreview.h
@@ -298,9 +302,15 @@ lib/enlightenment/modules/temperature/module.desktop
 lib/enlightenment/modules/tiling/e-module-tiling.edj
 lib/enlightenment/modules/tiling/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/tiling/module.desktop
+lib/enlightenment/modules/time/e-module-time.edj
+lib/enlightenment/modules/time/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/time/module.desktop
 lib/enlightenment/modules/winlist/e-module-winlist.edj
 lib/enlightenment/modules/winlist/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/winlist/module.desktop
+lib/enlightenment/modules/wireless/e-module-wireless.edj
+lib/enlightenment/modules/wireless/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/wireless/module.desktop
 lib/enlightenment/modules/wizard/def-ibar.txt
 lib/enlightenment/modules/wizard/desktop/home.desktop
 lib/enlightenment/modules/wizard/desktop/root.desktop
@@ -314,6 +324,7 @@ lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_030.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_040.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_050.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_060.so
+lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_065.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_070.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_080.so
 lib/enlightenment/modules/wizard/%%ENLIGHTENMENT_ARCH%%/page_090.so
@@ -332,6 +343,7 @@ lib/enlightenment/modules/xkbswitch/module.desktop
 lib/enlightenment/utils/enlightenment_alert
 lib/enlightenment/utils/enlightenment_backlight
 lib/enlightenment/utils/enlightenment_ckpasswd
+lib/enlightenment/utils/enlightenment_elm_cfgtool
 lib/enlightenment/utils/enlightenment_fm
 lib/enlightenment/utils/enlightenment_fm_op
 lib/enlightenment/utils/enlightenment_static_grabber
@@ -582,6 +594,7 @@ share/applications/enlightenment_filemanager.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/enlightenment.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/pixmaps/emixer.png

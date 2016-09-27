@@ -55,7 +55,6 @@
     SUBDIR += dvdstyler
     SUBDIR += dvts
     SUBDIR += emby-server
-    SUBDIR += emotion_generic_players-vlc
     SUBDIR += emovix
     SUBDIR += ffdec
     SUBDIR += ffmpeg

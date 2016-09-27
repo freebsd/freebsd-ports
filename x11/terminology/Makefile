@@ -3,6 +3,7 @@
 
 PORTNAME=	terminology
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -11,8 +12,7 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:devel/efl \
-		libelementary.so:x11-toolkits/elementary
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
