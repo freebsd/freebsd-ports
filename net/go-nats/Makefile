@@ -3,6 +3,7 @@
 PORTNAME=	nats
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	go-
 
@@ -12,7 +13,6 @@ COMMENT=	Go client for NATS
 LICENSE=	MIT
 
 BUILD_DEPENDS=	go-nuid>=0:devel/go-nuid
-RUN_DEPENDS=	go-nuid>=0:devel/go-nuid
 
 USES=		go
 USE_GITHUB=	yes
