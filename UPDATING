@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160927:
+  AFFECTS: sysutils/android-file-transfer
+  AUTHOR:  jbeich@FreeBSD.org
+
+  Qt* GUI was split into separate ports:
+
+      sysutils/android-file-transfer-qt4
+      sysutils/android-file-transfer-qt5
+
 20160922:
   AFFECTS: users of databases/pglogical, databases/pglogical-output
   AUTHOR:  matthew@FreeBSD.org
