@@ -1,5 +1,5 @@
-TIMESTAMP = 1468930264
-SHA256 (bind-9.9.9-P2.tar.gz) = 7746cc29071cb7e10f10be013cea836a3027b820a367ce3986cd366c01863bf2
-SIZE (bind-9.9.9-P2.tar.gz) = 8762371
-SHA256 (9.9.9-P2-rpz2+rl.14038.05.patch.xz) = d7ddc47641b95f4135baf6c7fd1e39ce06a599e1a97ba589e11c02d3be28ceed
-SIZE (9.9.9-P2-rpz2+rl.14038.05.patch.xz) = 39288
+TIMESTAMP = 1474632756
+SHA256 (bind-9.9.9-P3.tar.gz) = d63befc221e305bc5cadf9018535e533ebb5a99dd8df69acf42191ecb58991e2
+SIZE (bind-9.9.9-P3.tar.gz) = 8764358
+SHA256 (9.9.9-P3-rpz2+rl.14038.05.patch.xz) = fffc64517aeabd0a9d51243e98b2fad725f98641cfa19e469c0a7b46e6bbc3c0
+SIZE (9.9.9-P3-rpz2+rl.14038.05.patch.xz) = 39308
