@@ -172,6 +172,7 @@
     SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
+    SUBDIR += go-nats
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
