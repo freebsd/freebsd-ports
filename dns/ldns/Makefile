@@ -51,8 +51,6 @@ RRTYPECDS_CONFIGURE_ENABLE=	rrtype-cds
 RRTYPEURI_CONFIGURE_ENABLE=	rrtype-uri
 RRTYPETA_CONFIGURE_ENABLE=	rrtype-ta
 
-.include <bsd.port.options.mk>
-
 .if defined(BUILD_PYLDNS)
 USES+=		python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

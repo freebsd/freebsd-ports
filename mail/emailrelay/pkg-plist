@@ -57,11 +57,8 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/admin__enabled_8cpp.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/admin__enabled_8cpp_source.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/annotated.html
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/bc_s.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/bdwn.png
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/classApp-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGAuth_1_1PamImp-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGAuth_1_1PamImp.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGAuth_1_1PamImp.png
@@ -217,9 +214,6 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1Auth.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1AuthImp-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1AuthImp.html
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1DirectoryReader-members.html
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1FileDeleter-members.html
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1FileReader-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1Secrets-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1Secrets.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classGPop_1_1Secrets.png
@@ -557,7 +551,6 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Configuration.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Legal-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Legal.html
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1News-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Output-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Output.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/classMain_1_1Output.png
@@ -1130,6 +1123,8 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/md5_8cpp_source.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/md5_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/md5_8h_source.html
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/menu.js
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/menudata.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/namespaceG.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/namespaceGAuth.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/namespaceGNet.html
@@ -1159,16 +1154,20 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/run_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/run_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/splitbar.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/structApp-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structApp.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structApp.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGNet_1_1ConnectionLookup_1_1Connection-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGNet_1_1ConnectionLookup_1_1Connection.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGNet_1_1Server_1_1PeerInfo-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGNet_1_1Server_1_1PeerInfo.html
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1DirectoryReader-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1DirectoryReader.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1DirectoryReader.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1FileDeleter-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1FileDeleter.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1FileDeleter.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1FileReader-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1FileReader.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1ServerProtocol_1_1Config-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structGPop_1_1ServerProtocol_1_1Config.html
@@ -1193,6 +1192,7 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structG_1_1Md5_1_1Masked.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structG_1_1Pam_1_1Item-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structG_1_1Pam_1_1Item.html
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/structMain_1_1News-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structMain_1_1News.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structmd5_1_1digest_1_1state__type-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/structmd5_1_1digest_1_1state__type.html

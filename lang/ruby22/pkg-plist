@@ -884,8 +884,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/README.md
 %%CAPIDOCS%%%%DOCS%%%%RUBY_DOCDIR%%/capi/.timestamp
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/annotated.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/arrowdown.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/arrowright.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/bc_s.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/bdwn.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/boottime-classes.png
@@ -4614,6 +4612,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/graph_legend.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/index.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/jquery.js
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/menu.js
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/menudata.js
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/modules.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/nav_f.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/nav_g.png

@@ -854,8 +854,6 @@ share/aclocal/cppunit.m4
 %%DOXYGEN%%%%DOCSDIR%%/html/_xml_outputter_hook_8h__incl.png
 %%DOXYGEN%%%%DOCSDIR%%/html/_xml_outputter_hook_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
-%%DOXYGEN%%%%DOCSDIR%%/html/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%/html/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%/html/bc_s.png
 %%DOXYGEN%%%%DOCSDIR%%/html/bdwn.png
 %%DOXYGEN%%%%DOCSDIR%%/html/class_additional_message-members.html
@@ -1570,6 +1568,8 @@ share/aclocal/cppunit.m4
 %%DOXYGEN%%%%DOCSDIR%%/html/inherit_graph_9.png
 %%DOXYGEN%%%%DOCSDIR%%/html/inherits.html
 %%DOXYGEN%%%%DOCSDIR%%/html/jquery.js
+%%DOXYGEN%%%%DOCSDIR%%/html/menu.js
+%%DOXYGEN%%%%DOCSDIR%%/html/menudata.js
 %%DOXYGEN%%%%DOCSDIR%%/html/modules.html
 %%DOXYGEN%%%%DOCSDIR%%/html/money_example.html
 %%DOXYGEN%%%%DOCSDIR%%/html/msvc6_2testrunner_2_test_runner_8h.html

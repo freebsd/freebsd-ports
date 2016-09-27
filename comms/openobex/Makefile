@@ -2,7 +2,7 @@
 
 PORTNAME=	openobex
 PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms net
 MASTER_SITES=	SF \
 		http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
