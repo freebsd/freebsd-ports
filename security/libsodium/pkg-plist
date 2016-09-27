@@ -58,7 +58,7 @@ include/sodium/version.h
 lib/libsodium.a
 lib/libsodium.so
 lib/libsodium.so.18
-lib/libsodium.so.18.1.0
+lib/libsodium.so.18.1.1
 libdata/pkgconfig/libsodium.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
