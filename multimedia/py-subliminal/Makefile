@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subliminal
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.4.1:multimedia/py-enzyme \
-		${PYTHON_PKGNAMEPREFIX}guessit>=2.0.1:multimedia/py-guessit \
+		${PYTHON_PKGNAMEPREFIX}guessit>=2.1.0:multimedia/py-guessit \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}click>=4.0:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.0.0:devel/py-stevedore \
@@ -29,6 +29,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup \
 
 USES=		python:2.7+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
