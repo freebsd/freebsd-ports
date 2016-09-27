@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libp11
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security devel
 
@@ -38,7 +38,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (numerous OPENSSL_VERSION_NUMBER preprocessor conditions)
+IGNORE=	detected LibreSSL (numerous OPENSSL_VERSION_NUMBER preprocessor conditions)
 .endif
 
 post-install-EXAMPLES-on:
