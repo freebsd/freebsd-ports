@@ -744,6 +744,7 @@
     SUBDIR += go-json-rest
     SUBDIR += go-logrus
     SUBDIR += go-metrics
+    SUBDIR += go-nuid
     SUBDIR += go-pflag
     SUBDIR += go-pretty
     SUBDIR += go-protobuf
