@@ -46,6 +46,7 @@
     SUBDIR += ampasACES-container
     SUBDIR += ampasCTL
     SUBDIR += animorph
+    SUBDIR += ansilove
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis

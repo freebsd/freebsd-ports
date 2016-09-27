@@ -1,0 +1,10 @@
+ANSi / ASCII art to PNG converter
+
+- Supports 7 textmode formats:
+  ANS/PCB/BiN/ADF/iDF/TND/XBiN
+- Supports 14 MS-DOS charsets
+- 80x25, 80x50 and Amiga fonts
+- Supports SAUCE and iCE colors
+- Small output size (4-bit PNG)
+
+WWW: https://github.com/ansilove/ansilove
