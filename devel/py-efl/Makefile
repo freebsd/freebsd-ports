@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-PORTVERSION=	1.15.0
+PORTVERSION=	1.18.0
 CATEGORIES=	devel python enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/bindings/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,7 @@ COMMENT=	Python bindings for EFL and Elementary
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libefl.so:devel/efl \
-		libelementary.so:x11-toolkits/elementary
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 USES=		pkgconfig python tar:xz
