@@ -3,6 +3,7 @@
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 

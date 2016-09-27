@@ -41,8 +41,6 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/arrowdown.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/audio__format_8h.html
@@ -87,6 +85,8 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/jquery.js
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/list_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/list_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/menu.js
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/message_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/message_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/mixer_8h.html

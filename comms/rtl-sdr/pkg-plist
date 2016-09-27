@@ -14,8 +14,6 @@ lib/librtlsdr.so.0.0.5
 libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated_dup.js
-%%PORTDOCS%%%%DOCSDIR%%/html/arrowdown.png
-%%PORTDOCS%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
@@ -40,6 +38,8 @@ libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/getopt_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png

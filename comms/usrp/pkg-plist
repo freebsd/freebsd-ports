@@ -76,8 +76,6 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/algorithm_8hpp.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/algorithm_8hpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/arrowdown.png
-%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/assert__has_8hpp.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/assert__has_8hpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/bc_s.png
@@ -311,6 +309,8 @@ libdata/pkgconfig/uhd.pc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/mac__addr_8hpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/mboard__eeprom_8hpp.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/mboard__eeprom_8hpp_source.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/doxygen/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/metadata_8hpp.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/metadata_8hpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/html/msg_8hpp.html
