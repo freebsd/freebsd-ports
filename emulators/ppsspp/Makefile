@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -25,7 +25,7 @@ GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
 GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
 GH_TAGNAME?=	cdf4a8d:lang 1ffab37:ext_armips
 
-CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
+CONFLICTS_INSTALL=	${PORTNAME}-*
 
 USES=		compiler:c++11-lib localbase pkgconfig
 EXCLUDE=	glew snappy libzip zlib
@@ -47,6 +47,7 @@ DESKTOP_ENTRIES="PPSSPP" \
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT4 QT5 SDL
+OPTIONS_SLAVE?=	SDL
 
 QT4_USES=	qmake:outsource
 QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,opengl
