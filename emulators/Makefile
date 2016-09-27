@@ -109,6 +109,8 @@
     SUBDIR += pipelight
     SUBDIR += playonbsd
     SUBDIR += ppsspp
+    SUBDIR += ppsspp-qt4
+    SUBDIR += ppsspp-qt5
     SUBDIR += py-gns3-converter
     SUBDIR += q4wine
     SUBDIR += qemu
