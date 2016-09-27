@@ -93,6 +93,12 @@ IGNORE=		METIS must be set if TAUCS is set
 IGNORE=		the license for Metis requires that its documentation is included
 .endif
 
+.if ${PORT_OPTIONS:MOCC}
+. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+BROKEN_i386=	Bad machine code: Using an undefined physical register
+. endif
+.endif
+
 # TODO
 # Dependencies against PythonLibs, swig and petsc are found and registered if installed
 # => add knobs to handle them.
