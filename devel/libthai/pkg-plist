@@ -21,8 +21,6 @@ lib/libthai.so.0
 lib/libthai.so.0.2.4
 libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
-%%DOXYGEN%%%%DOCSDIR%%/html/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%/html/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%/html/bc_s.png
 %%DOXYGEN%%%%DOCSDIR%%/html/bdwn.png
 %%DOXYGEN%%%%DOCSDIR%%/html/classes.html
@@ -58,6 +56,8 @@ libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_type.html
 %%DOXYGEN%%%%DOCSDIR%%/html/index.html
 %%DOXYGEN%%%%DOCSDIR%%/html/jquery.js
+%%DOXYGEN%%%%DOCSDIR%%/html/menu.js
+%%DOXYGEN%%%%DOCSDIR%%/html/menudata.js
 %%DOXYGEN%%%%DOCSDIR%%/html/nav_f.png
 %%DOXYGEN%%%%DOCSDIR%%/html/nav_g.png
 %%DOXYGEN%%%%DOCSDIR%%/html/nav_h.png

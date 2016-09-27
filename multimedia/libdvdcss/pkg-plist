@@ -4,8 +4,3 @@ lib/libdvdcss.so
 lib/libdvdcss.so.2
 lib/libdvdcss.so.2.2.0
 libdata/pkgconfig/libdvdcss.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README

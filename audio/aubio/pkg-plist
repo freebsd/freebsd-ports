@@ -65,8 +65,6 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/a__weighting_8h.html
 %%DOXYGEN%%share/doc/aubio/html/a__weighting_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/annotated.html
-%%DOXYGEN%%share/doc/aubio/html/arrowdown.png
-%%DOXYGEN%%share/doc/aubio/html/arrowright.png
 %%DOXYGEN%%share/doc/aubio/html/aubio_8h.html
 %%DOXYGEN%%share/doc/aubio/html/aubio_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/bc_s.png
@@ -137,6 +135,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/jquery.js
 %%DOXYGEN%%share/doc/aubio/html/lvec_8h.html
 %%DOXYGEN%%share/doc/aubio/html/lvec_8h_source.html
+%%DOXYGEN%%share/doc/aubio/html/menu.js
+%%DOXYGEN%%share/doc/aubio/html/menudata.js
 %%DOXYGEN%%share/doc/aubio/html/mfcc_8h.html
 %%DOXYGEN%%share/doc/aubio/html/mfcc_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/musicutils_8h.html

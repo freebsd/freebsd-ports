@@ -37,8 +37,6 @@ share/doc/accounts-qt/html/annotated.js
 share/doc/accounts-qt/html/annotated_dup.js
 share/doc/accounts-qt/html/application_8cpp_source.html
 share/doc/accounts-qt/html/application_8h_source.html
-share/doc/accounts-qt/html/arrowdown.png
-share/doc/accounts-qt/html/arrowright.png
 share/doc/accounts-qt/html/auth-data_8cpp_source.html
 share/doc/accounts-qt/html/auth-data_8h_source.html
 share/doc/accounts-qt/html/bc_s.png
@@ -120,6 +118,8 @@ share/doc/accounts-qt/html/jquery.js
 share/doc/accounts-qt/html/manager_8cpp_source.html
 share/doc/accounts-qt/html/manager_8h_source.html
 share/doc/accounts-qt/html/manager__p_8h_source.html
+share/doc/accounts-qt/html/menu.js
+share/doc/accounts-qt/html/menudata.js
 share/doc/accounts-qt/html/nav_f.png
 share/doc/accounts-qt/html/nav_g.png
 share/doc/accounts-qt/html/nav_h.png

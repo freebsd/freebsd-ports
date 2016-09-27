@@ -29,8 +29,6 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTDOCS%%%%DOCSDIR%%/Doxyfile.api
 %%PORTDOCS%%%%DOCSDIR%%/Doxyfile.dev
 %%PORTDOCS%%%%DOCSDIR%%/api/html/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/api/html/arrowdown.png
-%%PORTDOCS%%%%DOCSDIR%%/api/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/classes.html
@@ -132,6 +130,8 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/html/handshake__server_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/api/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/api/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/api/html/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/nav_g.png
@@ -176,8 +176,6 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/html/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/api_header.html
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/dev/html/arrowdown.png
-%%PORTDOCS%%%%DOCSDIR%%/dev/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/classes.html
@@ -311,6 +309,8 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/handshake__server_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/dev/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/dev/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/dev/html/nav_g.png
