@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.20.6
+PORTVERSION=	0.21.2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -14,13 +14,12 @@ COMMENT=	Artistic X window manager
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libefl.so:devel/efl \
-		libelementary.so:x11-toolkits/elementary \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
-RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:graphics/evas_generic_loaders-svg
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \
-		libtool pathfix iconv gmake pkgconfig tar:xz
+		gmake iconv libtool pathfix pkgconfig tar:xz
+USE_XORG=	xcb
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
