@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.89.1
-PORTREVISION=	2
+PORTVERSION=	0.91.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -72,25 +71,25 @@ post-patch-PDF-off:
 	@${RM} -f ${WRKSRC}/makers/emPdf.maker.pm
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${PERL} make.pl build ${BUILD_ARGS})
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${PERL} make.pl install dir=${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eaglemode.sh ${STAGEDIR}${PREFIX}/bin/eaglemode
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/bin/* \
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/bin/* \
 		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emClock/emTimeZonesProc \
 		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emTmpConv/emTmpConvProc
 
 do-install-XINE-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emAv/emAvServerProc_xine
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emAv/emAvServerProc_xine
 
 do-install-RSVG-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emSvg/emSvgServerProc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emSvg/emSvgServerProc
 
 do-install-PDF-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emPdf/emPdfServerProc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emPdf/emPdfServerProc
 
 .include <bsd.port.post.mk>
