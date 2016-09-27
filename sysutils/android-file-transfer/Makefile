@@ -4,6 +4,7 @@ PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0-10
 DISTVERSIONSUFFIX=	-g40640fb
+PORTREVISION?=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,16 +16,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	whoozle
 GH_PROJECT=	${PORTNAME}-linux
 
-USES=		cmake compiler:c++11-lib localbase pkgconfig readline
+USES=		cmake compiler:c++11-lib localbase pkgconfig
 CMAKE_ARGS=	-DUSB_BACKEND_LIBUSB=on -DBUILD_QT_UI=off
-PLIST_FILES=	bin/aft-mtp-cli
 
-OPTIONS_DEFINE=	FUSE
-OPTIONS_DEFAULT=FUSE QT5
+OPTIONS_DEFAULT=CLI FUSE
+OPTIONS_MULTI=	COMP
+OPTIONS_MULTI_COMP=	CLI FUSE
 OPTIONS_RADIO=	GUI
 OPTIONS_RADIO_GUI=	QT4 QT5
+OPTIONS_EXCLUDE?=${OPTIONS_RADIO_GUI}
 # XXX http://lists.dragonflybsd.org/pipermail/users/2016-September/313064.html
 OPTIONS_EXCLUDE_DragonFly=	FUSE
+
+COMP_DESC=	Components
+
+CLI_DESC=	CLI (Command-Line Interface) support
+CLI_USES=	readline
+CLI_PLIST_FILES=bin/aft-mtp-cli
 
 FUSE_USES=	fuse
 FUSE_CMAKE_BOOL=BUILD_FUSE
@@ -43,5 +51,8 @@ QT5_PLIST_FILES=bin/android-file-transfer \
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${FILESDIR}"
 .endif
+
+post-patch-CLI-off:
+	@${REINPLACE_CMD} '/subdirectory(cli)/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

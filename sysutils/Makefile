@@ -32,6 +32,8 @@
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += android-file-transfer
+    SUBDIR += android-file-transfer-qt4
+    SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible1
     SUBDIR += apachetop
