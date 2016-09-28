@@ -1,4 +1,5 @@
 lib/elixir/lib/swarm/ebin/Elixir.Inspect.Swarm.Ring.beam
+lib/elixir/lib/swarm/ebin/Elixir.Swarm.App.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Cluster.Epmd.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Cluster.Gossip.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Cluster.Kubernetes.beam
@@ -7,13 +8,13 @@ lib/elixir/lib/swarm/ebin/Elixir.Swarm.IntervalTreeClock.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Logger.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Registry.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Ring.beam
-lib/elixir/lib/swarm/ebin/Elixir.Swarm.Supervisor.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Tracker.TrackerState.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.Tracker.beam
 lib/elixir/lib/swarm/ebin/Elixir.Swarm.beam
 lib/elixir/lib/swarm/ebin/swarm.app
 lib/elixir/lib/swarm/ebin/swarm.beam
 lib/elixir/lib/swarm/lib/swarm.ex
+lib/elixir/lib/swarm/lib/swarm/app.ex
 lib/elixir/lib/swarm/lib/swarm/cluster/epmd.ex
 lib/elixir/lib/swarm/lib/swarm/cluster/gossip.ex
 lib/elixir/lib/swarm/lib/swarm/cluster/kubernetes.ex
@@ -22,7 +23,6 @@ lib/elixir/lib/swarm/lib/swarm/entry.ex
 lib/elixir/lib/swarm/lib/swarm/logger.ex
 lib/elixir/lib/swarm/lib/swarm/registry.ex
 lib/elixir/lib/swarm/lib/swarm/ring.ex
-lib/elixir/lib/swarm/lib/swarm/supervisor.ex
 lib/elixir/lib/swarm/lib/swarm/tracker.ex
 lib/elixir/lib/swarm/priv/endpoint-viewer.yaml
 %%PORTDOCS%%%%DOCSDIR%%/README.md
