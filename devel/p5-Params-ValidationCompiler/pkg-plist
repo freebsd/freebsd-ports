@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Params/ValidationCompiler.pm
+%%SITE_PERL%%/Params/ValidationCompiler/Compiler.pm
+%%SITE_PERL%%/Params/ValidationCompiler/Exceptions.pm
+%%PERL5_MAN3%%/Params::ValidationCompiler.3.gz
+%%PERL5_MAN3%%/Params::ValidationCompiler::Compiler.3.gz
+%%PERL5_MAN3%%/Params::ValidationCompiler::Exceptions.3.gz
