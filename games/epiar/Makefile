@@ -9,11 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space trading/exploring sim with RPG elements
 
-LICENSE=	GPLv2 CCbyNCSA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_FILE_CCbyNCSA3=${WRKSRC}/LICENSE.music
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
+LICENSE=	GPLv2 CC-BY-NC-SA-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/LICENSE.music
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libftgl.so:graphics/ftgl \

@@ -10,12 +10,9 @@ MASTER_SITES=	SF/radius-engine/egp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maze on the Isle of Crete
 
-LICENSE=	GPLv2 CCbyNCSA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_FILE=	${WRKSRC}/License.txt
-LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
+LICENSE=	GPLv2+ CC-BY-SA-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:graphics/radius-engine
 LIB_DEPENDS=	liblua-5.1.so:lang/lua51 \
