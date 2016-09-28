@@ -10,11 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	LaTeX to XML/HTML/MathML converter in Perl
 
-LICENSE=	PD CC0
+LICENSE=	PD CC0-1.0
 LICENSE_COMB=	dual
-LICENSE_NAME_CC0=	Creative Commons Zero License
-LICENSE_FILE_CC0=	${WRKSRC}/LICENSE
-LICENSE_PERMS_CC0=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		p5-File-Which>=0:sysutils/p5-File-Which \
