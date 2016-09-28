@@ -248,6 +248,7 @@
     SUBDIR += motion
     SUBDIR += mp3cd
     SUBDIR += mp4v2
+    SUBDIR += mpc-qt
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
     SUBDIR += mpeg4ip
