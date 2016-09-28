@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	star
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	archivers
-MASTER_SITES=	http://BSDforge.com/projects/source/srchivers/star/
+MASTER_SITES=	SF/s-tar
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Unique standard tape archiver with many enhancements
@@ -16,7 +16,6 @@ LICENSE_FILES=	${WRKSRC}/CDDL.Schily.txt
 BUILD_DEPENDS=	smake:devel/smake
 
 USES=		gettext iconv tar:bzip2
-USE_GCC=	any
 
 .if defined(NO_INSTALL_MANPAGES)
 XMKFLAGS=	XMK_FILE=""

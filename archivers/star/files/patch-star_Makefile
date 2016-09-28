@@ -1,4 +1,4 @@
---- star/Makefile.orig	2010-05-13 19:47:27 UTC
+--- star/Makefile.orig	2013-11-05 22:36:07 UTC
 +++ star/Makefile
 @@ -15,7 +15,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
  INSDIR=		bin
@@ -9,7 +9,7 @@
  CPPOPTS +=	-D__STAR__
  CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP -DUSE_REMOTE -DUSE_RCMD_RSH
  #CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP
-@@ -52,8 +52,8 @@ LIBS=		-ldeflt -lrmt -lfind -lschily $(L
+@@ -55,8 +55,8 @@ LIBS=		-ldeflt -lrmt -lfind -lschily $(L
  #
  #	Wenn -lfind, dann auch  $(LIB_INTL)
  #
