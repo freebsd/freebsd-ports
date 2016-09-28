@@ -10,22 +10,24 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=			python shebangfix
-USE_GNOME=		pygtk2
-USE_PYTHON=		distutils
+USES=		python shebangfix
+USE_GNOME=	pygtk2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	obMenu
-SHEBANG_FILES=		obmenu obxml.py pipes/obm-xdg
-NO_ARCH=		yes
-
-PORTDOCS=	README
-OPTIONS_DEFINE=	DOCS
+SHEBANG_FILES=	obmenu obxml.py pipes/obm-xdg
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
+PORTDOCS=	README
+
 DESKTOP_ENTRIES="Obmenu" "Menu manager for Openbox" ${PORTNAME} \
 		"${PORTNAME}" "Settings;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/itm.nodeName.lower()/s|execute|command|; \
@@ -38,10 +40,11 @@ post-patch:
 		${WRKSRC}/obmenu
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
 	${LN} -sf ${DATADIR}/mnu48.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
