@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	1.05
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Dist-CheckConflicts>=0.02:devel/p5-Dist-CheckConflicts \
-		p5-Params-Validate>=0:devel/p5-Params-Validate
+		p5-Params-ValidationCompiler>=0.13:devel/p5-Params-ValidationCompiler \
+		p5-Specio>=0:devel/p5-Specio \
+		p5-namespace-autoclean>=0.19:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
