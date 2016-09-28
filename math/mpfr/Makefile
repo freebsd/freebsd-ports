@@ -15,7 +15,7 @@ COMMENT=	Library for multiple-precision floating-point computations
 
 LICENSE=	LGPL3
 
-PATCH_DEPENDS=	gpatch:devel/patch
+#PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 #PATCHLEVEL=	1
