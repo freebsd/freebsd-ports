@@ -5,7 +5,7 @@ PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for reddit
 
 LICENSE=	MIT
