@@ -1,0 +1,21 @@
+The purpose of this academic open-source project is to develop a video
+encoder for the emerging High Efficiency Video Coding (HEVC) standard.
+This Kvazaar HEVC encoder is being developed towards the following goals:
+
+1. Coding efficiency close to HEVC reference encoder (HM)
+2. Modular encoder structure to simplify its data flow modeling
+3. Efficient support for different parallelization approaches
+4. Easy portability to different platforms
+5. Optimized encoding speed without sacrificing its coding efficiency,
+   modularity, or portability
+6. Reduced computation and memory resources without sacrificing its
+   coding efficiency, modularity, or portability
+7. Excellent software readability and implementation documentation
+
+Achieving these objectives requires encoder with design decisions that
+make this open-source encoder unique:
+
+1. The encoder is developed from the scratch (HM used as a reference)
+2. The implementation language is platform-independent C
+
+WWW: http://ultravideo.cs.tut.fi/#encoder
