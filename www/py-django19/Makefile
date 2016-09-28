@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.10
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
-		https://www.djangoproject.com/m/releases/${PORTVERSION}/
+		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	19
 DISTNAME=	Django-${PORTVERSION}
