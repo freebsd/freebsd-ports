@@ -3,7 +3,7 @@
 
 PORTNAME=	libretro-cores
 PORTVERSION=	0.20151110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com
@@ -25,7 +25,7 @@ ALL_CORES+=	libretro:dosbox-libretro:dosbox:bc5d578:x
 ALL_CORES+=	libretro:emux:emux:be9022b:chip8,gb,nes,sms
 ALL_CORES+=	libretro:fba_cores_cps1:fb_alpha_cps1:5614a9a:x
 ALL_CORES+=	libretro:fba_cores_cps2:fb_alpha_cps2:f806c77:x
-ALL_CORES+=	libretro:libretro-fba:fba:ddc9955:x
+ALL_CORES+=	libretro:fbalpha:fbalpha:2a3256e:x
 ALL_CORES+=	libretro:libretro-fceumm:fceumm:70ee9e6:x
 ALL_CORES+=	libretro:fmsx-libretro:fmsx:4651948:x
 ALL_CORES+=	libretro:fuse-libretro:fuse:c871953:x
@@ -64,7 +64,8 @@ ALL_CORES+=	libretro:QuickNES_Core:quicknes:518638b:x
 #ALL_CORES+=	libretro:libretro-remotejoy:remotejoy:2e99718:x BROKEN: needs linux USB, is this linux-only?
 ALL_CORES+=	libretro:scummvm:scummvm:c3e719a:x
 ALL_CORES+=	libretro:snes9x:snes9x:ccf1ee2:x
-ALL_CORES+=	libretro:snes9x-next:snes9x_next:dfb7eef:x
+# broken for now
+ALL_CORES+=	libretro:snes9x2010:snes9x2010:dfb7eef:x
 ALL_CORES+=	libretro:stella-libretro:stella:96619e4:x
 ALL_CORES+=	libretro:tgbdual-libretro:tgbdual:b1bf294:x
 ALL_CORES+=	libretro:tyrquake:tyrquake:8261e19:x

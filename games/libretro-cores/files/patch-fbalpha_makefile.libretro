@@ -1,6 +1,6 @@
---- libretro-fba/makefile.libretro.orig	2015-11-07 10:29:16 UTC
-+++ libretro-fba/makefile.libretro
-@@ -68,6 +68,7 @@ TARGET_NAME := fba
+--- fbalpha/makefile.libretro.orig	2016-09-05 06:54:43.000000000 -0700
++++ fbalpha/makefile.libretro	2016-09-07 19:59:52.496326000 -0700
+@@ -53,6 +53,7 @@
  
  ifeq ($(platform), unix)
  	TARGET := $(TARGET_NAME)_libretro.so
