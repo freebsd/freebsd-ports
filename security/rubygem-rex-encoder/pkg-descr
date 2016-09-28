@@ -1,0 +1,5 @@
+This library provides the basis for all of the polymorphic encoders that
+Metasploit uses for payload encoding. Encoders are used to try and create a
+version of a payload that is free of bad characters as defined by the exploit.
+
+WWW: https://github.com/rapid7/rex-encoder
