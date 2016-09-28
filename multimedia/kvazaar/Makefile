@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	H.265/HEVC encoder implementation written in C
+COMMENT=	H.265/HEVC encoder implemented in C
 
 LICENSE=	LGPL21+
 
