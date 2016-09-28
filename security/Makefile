@@ -1019,6 +1019,7 @@
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools
     SUBDIR += rubygem-rex-core
+    SUBDIR += rubygem-rex-encoder
     SUBDIR += rubygem-rex-java
     SUBDIR += rubygem-rex-mime
     SUBDIR += rubygem-rex-nop
