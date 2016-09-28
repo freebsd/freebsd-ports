@@ -283,6 +283,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/test/quests.xml
 %%DATADIR%%/data/test/serverlistplus.xml
 %%DATADIR%%/data/test/simplefile.txt
+%%DATADIR%%/data/test/testintmap.xml
 %%DATADIR%%/data/test/units.xml
 %%DATADIR%%/data/themes/blacknblack/bubble.png
 %%DATADIR%%/data/themes/blacknblack/colors.xml
