@@ -3,8 +3,8 @@ bin/basemlg
 bin/chi2
 bin/codeml
 bin/evolver
+bin/evolverNSbranches
+bin/evolverNSbranchsites
+bin/evolverNSsites
 bin/pamp
 bin/yn00
-%%PORTDOCS%%%%DOCSDIR%%/pamlDOC.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pamlFAQs.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pamlHistory.txt
