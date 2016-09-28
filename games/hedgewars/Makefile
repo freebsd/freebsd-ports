@@ -38,7 +38,7 @@ PORTDATA=	*
 
 # VIDEOREC - broken with recent ffmpeg
 OPTIONS_DEFINE=	SERVER # VIDEOREC
-OPTIONS_DEFAULT=SERVER
+#OPTIONS_DEFAULT=SERVER # until it's unbroken
 
 SERVER_DESC=	Build server (requires haskell)
 #VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
