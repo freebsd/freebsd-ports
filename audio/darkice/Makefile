@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darkice
-PORTVERSION=	1.2
-PORTREVISION?=	3
+PORTVERSION=	1.3
 CATEGORIES=	audio net
 MASTER_SITES=	SF
 
@@ -13,7 +12,7 @@ COMMENT=	IceCast, IceCast2, and ShoutCast live audio streamer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_acx_pthread_config=no
 CONFIGURE_ARGS=	--without-alsa
@@ -29,33 +28,27 @@ OPTIONS_DEFAULT=	VORBIS
 AACPLUS_DESC=		AAC HEv2 and libsamplerate support
 AACPLUS_LIB_DEPENDS=	libaacplus.so:audio/libaacplus \
 			libsamplerate.so:audio/libsamplerate
-AACPLUS_CONFIGURE_ON=	--with-aacplus-prefix=${LOCALBASE} \
-			--with-samplerate-prefix=${LOCALBASE}
+AACPLUS_CONFIGURE_ON=	--with-aacplus --with-samplerate
 AACPLUS_CONFIGURE_OFF=	--without-aacplus --without-samplerate
 FAAC_LIB_DEPENDS=	libfaac.so:audio/faac
 FAAC_CONFIGURE_ON=	--with-faac-prefix=${LOCALBASE}
 FAAC_CONFIGURE_OFF=	--without-faac
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_ON=	--with-jack-prefix=${LOCALBASE}
-JACK_CONFIGURE_OFF=	--without-jack
+JACK_CONFIGURE_WITH=	jack
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ON=	--with-lame-prefix=${LOCALBASE}
 LAME_CONFIGURE_OFF=	--without-lame
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_CONFIGURE_ON=	--with-opus-prefix=${LOCALBASE}
-OPUS_CONFIGURE_OFF=	--without-opus
+OPUS_CONFIGURE_WITH=	opus
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ON=	--with-pulseaudio-prefix=${LOCALBASE}
-PULSEAUDIO_CONFIGURE_OFF=	--without-pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
-TWOLAME_CONFIGURE_ON=	--with-twolame-prefix=${LOCALBASE}
-TWOLAME_CONFIGURE_OFF=	--without-twolame
+TWOLAME_CONFIGURE_WITH=	twolame
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
-VORBIS_CONFIGURE_ON=	--with-vorbis-prefix=${LOCALBASE}
-VORBIS_CONFIGURE_OFF=	--without-vorbis
+VORBIS_CONFIGURE_WITH=	vorbis
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.am
+	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
