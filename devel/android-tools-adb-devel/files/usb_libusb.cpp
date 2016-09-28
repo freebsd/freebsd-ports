@@ -484,51 +484,13 @@ check_device(libusb_device *dev)
             goto fail;
         }
 
-        if (desc.iSerialNumber) {
-            // reading serial
-            uint16_t    buffer[128] = {0};
-            uint16_t    languages[128] = {0};
-            int languageCount = 0;
-
-            memset(languages, 0, sizeof(languages));
-            r = libusb_control_transfer(uh.devh,
-                                        LIBUSB_ENDPOINT_IN |  LIBUSB_REQUEST_TYPE_STANDARD | LIBUSB_RECIPIENT_DEVICE,
-                                        LIBUSB_REQUEST_GET_DESCRIPTOR, LIBUSB_DT_STRING << 8,
-                                        0, (uint8_t *)languages, sizeof(languages), 0);
-
-            if (r <= 0) {
-                D("check_device(): Failed to get languages count");
-                goto fail;
-            }
-
-            languageCount = (r - 2) / 2;
-
-            for (i = 1; i <= languageCount; ++i) {
-                memset(buffer, 0, sizeof(buffer));
-
-                r = libusb_control_transfer(uh.devh,
-                                            LIBUSB_ENDPOINT_IN |  LIBUSB_REQUEST_TYPE_STANDARD | LIBUSB_RECIPIENT_DEVICE,
-                                            LIBUSB_REQUEST_GET_DESCRIPTOR, (LIBUSB_DT_STRING << 8) | desc.iSerialNumber,
-                                            languages[i], (uint8_t *)buffer, sizeof(buffer), 0);
-
-                if (r > 0) { /* converting serial */
-                    int j = 0;
-                    r /= 2;
-
-                    for (j = 1; j < r; ++j)
-                        serial[j - 1] = buffer[j];
-
-                    serial[j - 1] = '\0';
-                    break; /* languagesCount cycle */
-                }
-            }
-
-            if (register_device(&uh, serial) == 0) {
-                D("check_device(): Failed to register device");
-                goto fail_interface;
-            }
-
-            libusb_ref_device(dev);
+        if (desc.iSerialNumber != 0) {
+            libusb_get_string_descriptor_ascii(uh.devh, desc.iSerialNumber,
+                                               (unsigned char *)uh.serial, sizeof(uh.serial));
+        }
+        if (register_device(&uh, uh.serial) == 0) {
+            D("check_device(): Failed to register device\n");
+            goto fail_interface;
         }
     }
 
