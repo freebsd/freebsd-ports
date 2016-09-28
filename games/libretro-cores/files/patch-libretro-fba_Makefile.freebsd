@@ -1,5 +1,0 @@
---- libretro-fba/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
-+++ libretro-fba/Makefile.freebsd
-@@ -0,0 +1,2 @@
-+all:
-+	$(foreach p,performance,${MAKE} -f makefile.libretro profile=$(p);)
