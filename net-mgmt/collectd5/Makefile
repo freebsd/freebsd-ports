@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.6.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -330,7 +331,7 @@ CONFIGURE_ARGS+=--enable-aggregation \
 PLIST_SUB+=	DISK="@comment "
 .else
 CONFIGURE_ARGS+=--enable-disk
-PLIST_SUB+=	DISK="@comment "
+PLIST_SUB+=	DISK=""
 .endif
 
 INSTALL_TARGET=	install-strip
