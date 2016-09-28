@@ -1,10 +1,10 @@
---- src/freebsd.c.orig	2012-05-03 21:08:27 UTC
-+++ src/freebsd.c
-@@ -283,11 +283,7 @@ int update_running_processes(void)
- 	pthread_mutex_lock(&kvm_proc_mutex);
+--- src/freebsd.cc.orig	2016-07-20 16:53:48 UTC
++++ src/freebsd.cc
+@@ -295,11 +295,7 @@ int update_running_processes(void)
+ 	std::lock_guard<std::mutex> guard(kvm_proc_mutex);
  	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
  	for (i = 0; i < n_processes; i++) {
--#if (__FreeBSD__ < 5) && (__FreeBSD_kernel__ < 5)
+-#if (__FreeBSD__ < 5) && !defined(__FreeBSD_kernel__)
 -		if (p[i].kp_proc.p_stat == SRUN) {
 -#else
  		if (p[i].ki_stat == SRUN) {
@@ -12,7 +12,7 @@
  			cnt++;
  		}
  	}
-@@ -464,7 +460,7 @@ void get_battery_stuff(char *buf, unsign
+@@ -475,7 +471,7 @@ void get_battery_stuff(char *buf, unsign
  			break;
  		case BATTERY_STATUS:
  			if (batstate == 1) // Discharging
@@ -21,7 +21,7 @@
  			else
  				snprintf(buf, n, batstate == 2 ? "charging (%d%%)" :
  						(batstate == 7 ? "absent/on AC" : "charged (%d%%)"),
-@@ -497,26 +493,10 @@ static int check_bat(const char *bat)
+@@ -508,26 +504,10 @@ static int check_bat(const char *bat)
  
  int get_battery_perct(const char *bat)
  {
@@ -50,8 +50,8 @@
 +	return batcapacity;
  }
  
- int get_battery_perct_bar(const char *bar)
-@@ -970,11 +950,14 @@ void get_battery_short_status(char *buff
+ double get_battery_perct_bar(struct text_object *obj)
+@@ -745,11 +725,14 @@ void get_battery_short_status(char *buff
  	if (0 == strncmp("charging", buffer, 8)) {
  		buffer[0] = 'C';
  		memmove(buffer + 1, buffer + 8, n - 8);
