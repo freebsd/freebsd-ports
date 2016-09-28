@@ -1,0 +1,10 @@
+bin/kvazaar
+include/kvazaar.h
+lib/libkvazaar.a
+lib/libkvazaar.so
+lib/libkvazaar.so.3
+lib/libkvazaar.so.3.2.0
+libdata/pkgconfig/kvazaar.pc
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
