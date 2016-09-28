@@ -14,11 +14,8 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	UFO alien invasion data files
 
 # See http://ufoai.org/wiki/License
-LICENSE=	GPLv2 CCbySA3
+LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
-LICENSE_NAME_CCbySA3=	Creative Commons Attribution-ShareAlike 3.0 Unported
-LICENSE_TEXT_CCbySA3=	See http://creativecommons.org/licenses/by-sa/3.0/
-LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 

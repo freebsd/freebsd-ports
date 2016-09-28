@@ -8,11 +8,8 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	H264 streaming module for lighttpd
 
-LICENSE=	CCPL.BY-NC-SA.30
-LICENSE_NAME=	Creative Commons Attribution-NonCommercial-ShareAlike 3.0 \
-		Unported License
+LICENSE=	CC-BY-NC-SA-3.0
 LICENSE_FILE=	${FILESDIR}/COPYING.mod_h264_streaming
-LICENSE_PERMS=	dist-mirror pkg-mirror
 LICENSE_DISTFILES=	${PATCHFILES}
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd

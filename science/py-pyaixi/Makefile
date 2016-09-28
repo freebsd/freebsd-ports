@@ -10,11 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	johannes@perceivon.net
 COMMENT=	Implementation of the MC-AIXI-CTW AI algorithm
 
-LICENSE=	CCbySA
-LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 \
-		Unported License
+LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		dos2unix python:2
 USE_PYTHON=	distutils autoplist

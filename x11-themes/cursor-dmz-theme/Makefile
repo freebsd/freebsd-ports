@@ -9,10 +9,7 @@ DISTNAME=	dmz-cursor-theme_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DMZ style neutral scalable cursor theme
 
-LICENSE=	CCbySA3
-LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 Unported
-LICENSE_TEXT=	See http://creativecommons.org/licenses/by-sa/3.0/
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	CC-BY-SA-3.0
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 

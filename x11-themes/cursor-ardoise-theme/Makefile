@@ -15,11 +15,7 @@ DIST_SUBDIR=	${PKGBASE}/${PORTVERSION}
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Ardoise X cursor theme
 
-LICENSE=	CCBYNCSAv3
-LICENSE_NAME=	Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license
-LICENSE_TEXT=	The license: ${LICENSE} (${LICENSE_NAME}) is standard, please read from the web:\
-	http://creativecommons.org/licenses/by-nc-sa/3.0/
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE=	CC-BY-NC-SA-3.0
 
 NO_ARCH=	yes
 NO_BUILD=	yes
