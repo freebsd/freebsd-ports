@@ -10,11 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Plee%20the%20Bear/${PORTVERSION:R}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D platform jump and run game
 
-LICENSE=	GPLv2 CCbySA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbySA3=	Attribution-ShareAlike 3.0 Unported
-LICENSE_FILE_CCbySA3=	${WRKSRC}/CCPL
-LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	GPLv2 CC-BY-SA-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/CCPL
 
 BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \

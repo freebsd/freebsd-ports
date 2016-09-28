@@ -7,10 +7,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	tony.li@tony.li
 COMMENT=	Threaded Intel AMT/vPro mass management tool
 
-LICENSE=	CC3.0
-LICENSE_NAME=	Creative Commons Attribution 3.0 Unported
-LICENSE_TEXT=	http://creativecommons.org/licenses/by/3.0/
-LICENSE_PERMS=	auto-accept pkg-sell pkg-mirror dist-sell dist-mirror
+LICENSE=	CC-BY-3.0
 
 BUILD_DEPENDS=	xxd:editors/vim-lite
 LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt \

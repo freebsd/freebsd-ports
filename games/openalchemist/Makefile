@@ -11,11 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tetris-like game
 
-LICENSE=	GPLv2 CCbySA
+LICENSE=	GPLv2 CC-BY-SA-2.0
 LICENSE_COMB=	multi
-LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
-LICENSE_FILE_CCbySA=	${WRKSRC}/GRAPHICS-LICENSE
-LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
