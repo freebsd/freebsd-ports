@@ -3,6 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	17.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	-demos
 
@@ -31,6 +32,8 @@ CONF_ARGS+=	prefix=${PREFIX}
 OPTIONS_DEFINE=		SSL LDAP
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
+
+SSL_USES=		ssl
 
 DEMO_DIRS+=	auth
 DEMO_DIRS+=	autobahn
@@ -69,8 +72,6 @@ DEMO_DIRS+=	zdemo
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USES+=	ssl
-WITH_OPENSSL_PORT=	yes
 CONF_ARGS+=	SOCKET=openssl
 DEMO_DIRS+=	agent
 DEMO_DIRS+=	runme
