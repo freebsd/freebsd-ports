@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -80,7 +80,7 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		golang:crypto:5dc8cb4:crypto \
 		golang:net:6acef71:net \
 		golang:text:a71fd10:text \
-		golang:tools:3f4088e:tools \
+		golang:tools:fc2b74b:tools \
 		dancannon:gorethink:7d1af5b:gorethink_v1 \
 		fatih:pool:cba550e:pool_v2 \
 		go-mgo:mgo:d90005c:mgo \
