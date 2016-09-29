@@ -3,12 +3,10 @@
 PORTNAME=	wy60
 PORTVERSION=	2.0.9
 CATEGORIES=	comms
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Curses-based emulator for the Wyse 60 terminal
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
