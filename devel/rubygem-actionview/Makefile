@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionview
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4
 		rubygem-builder32>=3.2:devel/rubygem-builder32 \
 		rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-rails-dom-testing>=1.0.5:textproc/rubygem-rails-dom-testing \
-		rubygem-rails-html-sanitizer>=1.0.1:textproc/rubygem-rails-html-sanitizer
+		rubygem-rails-html-sanitizer>=1.0.2:textproc/rubygem-rails-html-sanitizer
 
 NO_ARCH=	yes
 USE_RUBY=	yes

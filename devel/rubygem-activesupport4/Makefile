@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -13,10 +13,10 @@ COMMENT=	Utility classes and extension that are required by Rails MVC Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-i18n>=0.6.9:devel/rubygem-i18n \
+RUN_DEPENDS=	rubygem-i18n>=0.7:devel/rubygem-i18n \
 		rubygem-json>=1.7.7:devel/rubygem-json \
 		rubygem-minitest>=5.1:devel/rubygem-minitest \
-		rubygem-thread_safe>=0.3:devel/rubygem-thread_safe \
+		rubygem-thread_safe>=0.3.4:devel/rubygem-thread_safe \
 		rubygem-tzinfo>=1.1:devel/rubygem-tzinfo
 
 NO_ARCH=	yes
