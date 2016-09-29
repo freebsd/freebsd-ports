@@ -16,9 +16,7 @@ share/gir-1.0/GWeather-3.0.gir
 share/gtk-doc/html/libgweather-3.0/GWeatherInfo.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocation.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocationEntry.html
-share/gtk-doc/html/libgweather-3.0/GWeatherTimezone.html
 share/gtk-doc/html/libgweather-3.0/GWeatherTimezoneMenu.html
-share/gtk-doc/html/libgweather-3.0/annotation-glossary.html
 share/gtk-doc/html/libgweather-3.0/api-index-deprecated.html
 share/gtk-doc/html/libgweather-3.0/api-index-full.html
 share/gtk-doc/html/libgweather-3.0/ch01.html
@@ -28,6 +26,7 @@ share/gtk-doc/html/libgweather-3.0/ix03.html
 share/gtk-doc/html/libgweather-3.0/left-insensitive.png
 share/gtk-doc/html/libgweather-3.0/left.png
 share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
+share/gtk-doc/html/libgweather-3.0/libgweather-gweathertimezone.html
 share/gtk-doc/html/libgweather-3.0/libgweather-Versioning-information.html
 share/gtk-doc/html/libgweather-3.0/object-tree.html
 share/gtk-doc/html/libgweather-3.0/right-insensitive.png
