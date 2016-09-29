@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 # Hint: git describe --abbrev=12 --match android-n-preview-5
-DISTVERSION=	n-preview-5-126
-DISTVERSIONSUFFIX=	-g2f21b7cecda2
-PORTREVISION=	1
+DISTVERSION=	n-preview-5-3582
+DISTVERSIONSUFFIX=	-gdfd30c4a169e
+PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
@@ -15,8 +15,11 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 
+CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
+
 OPTIONS_DEFINE=	TEST_PYTHON
 
+TEST_BUILD_DEPENDS=	googlemock>=1.6.0:devel/googlemock
 TEST_BROKEN=	logging.* tests always fail after 4e5fd111d84d
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
