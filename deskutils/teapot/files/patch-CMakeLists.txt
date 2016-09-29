@@ -1,6 +1,6 @@
---- CMakeLists.txt	2012-02-06 06:30:53.000000000 -0500
-+++ CMakeLists.txt	2012-02-25 18:06:26.000000000 -0500
-@@ -5,7 +5,7 @@
+--- CMakeLists.txt.orig	2012-02-06 11:30:53 UTC
++++ CMakeLists.txt
+@@ -5,7 +5,7 @@ set(Teapot_VERSION_MAJOR 2)
  set(Teapot_VERSION_MINOR 3)
  set(Teapot_VERSION_PATCH 0)
  
@@ -9,7 +9,7 @@
  option(ENABLE_UTF8 "Enable UTF-8 support" ON)
  option(ENABLE_STATIC "Link FLTK statically" OFF)
  
-@@ -40,30 +40,6 @@
+@@ -40,30 +40,6 @@ if (CURSES_FOUND)
  	install(TARGETS teapot DESTINATION bin)
  endif ()
  
