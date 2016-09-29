@@ -7,7 +7,7 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Wrappers for the Crypto++ Library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}darcsver>0:devel/py-darcsver \
