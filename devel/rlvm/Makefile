@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rlvm
-PORTVERSION=	0.14.0.20150425
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	0.14-67
+DISTVERSIONSUFFIX=	-g9350209
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
-GH_TAGNAME=	373a3db # release-${PORTVERSION}
 
 USES=		compiler:c++11-lib pkgconfig scons
 USE_GL=		glew glu
@@ -27,12 +28,15 @@ USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 		luabind utf8cpp # leaving only pygame, xclannad, *.cpp
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
+CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
+LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
 INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS.TXT NEWS.TXT README.md STATUS.TXT notes
 
-CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
-LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
+# XXX 9.x EOL to phase out USES=compiler, unblocking lang/gcc update
+EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${CHOSEN_COMPILER_TYPE}}
+EXTRA_PATCHES_FreeBSD_gcc=	${PATCHDIR}/extra-patch-gcc48
 
 OPTIONS_DEFINE=	DEBUG DOCS NLS TEST
 OPTIONS_GROUP=	JAPANESE_FONT
