@@ -4,8 +4,8 @@ PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.0.s20160921
 CATEGORIES=	multimedia audio
-MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/mpc-qt.desktop?h=mpc-qt-git&id=b1a6b91&dummy=/:desktop
-DISTFILES=	mpc-qt.desktop:desktop
+MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
+DISTFILES=	${PORTNAME}.desktop:desktop
 EXTRACT_ONLY=	${DISTFILES:N*\:desktop:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
