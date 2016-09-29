@@ -1,7 +1,7 @@
 To workaround the following error
 
   unknown file: Failure
-  C++ exception with description "ExpressionPiece::GetStringValue() invalid on this object" thrown in the test body.
+  C++ exception with description "ExpressionPiece::GetIntegerValue() invalid on object of type 2" thrown in the test body.
   [  FAILED  ] MediumObjectPoromotion/PromotionTest.BgLayerPromotion/49, where GetParam() = ("recMulti", 1, (3, "\"file\"$\xFF\0\0\0\0$\xFF\xFF\0\0\0"), true) (1 ms)
 
 --- test/medium_object_promotion.cc~
