@@ -1,6 +1,6 @@
---- ext/nokogiri/extconf.rb.orig	2016-04-02 21:13:17 UTC
+--- ext/nokogiri/extconf.rb.orig	2016-09-12 13:46:37 UTC
 +++ ext/nokogiri/extconf.rb
-@@ -587,6 +587,43 @@ if ENV['CPUPROFILE']
+@@ -671,6 +671,43 @@ if ENV['CPUPROFILE']
    end
  end
  
