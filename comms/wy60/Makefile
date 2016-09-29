@@ -3,10 +3,15 @@
 PORTNAME=	wy60
 PORTVERSION=	2.0.9
 CATEGORIES=	comms
-MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Curses-based emulator for the Wyse 60 terminal
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_TUPLE=	mieko:wy60:8e082bf
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
