@@ -559,6 +559,7 @@
     SUBDIR += pg_citus
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
+    SUBDIR += pg_qualstats
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_statsinfo
     SUBDIR += pgaccess
@@ -708,6 +709,8 @@
     SUBDIR += postgresql96-plpython
     SUBDIR += postgresql96-pltcl
     SUBDIR += postgresql96-server
+    SUBDIR += powa-archivist
+    SUBDIR += powa-web
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql
     SUBDIR += proftpd-mod_sql_odbc

@@ -1,0 +1,26 @@
+# Created by: Palle Girgensohn <girgen@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	powa-archivist
+PORTVERSION=	3.1.0
+CATEGORIES=	databases
+
+MAINTAINER=	girgen@FreeBSD.org
+COMMENT=	PostgreSQL workload analyzer background worker
+
+LICENSE=	PostgreSQL
+
+RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/pg_stat_kcache.so:databases/pg_stat_kcache \
+		${LOCALBASE}/lib/postgresql/pg_qualstats.so:databases/pg_qualstats
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dalibo
+GH_TAGNAME=	REL_${PORTVERSION:S/./_/g}
+
+USES=		gmake pgsql
+WANT_PGSQL=	server contrib
+
+pre-patch:
+	@for f in ${BUILD_WRKSRC}/*.md; do ${MV} $$f $${f%/*}/powa-$${f##*/}; done
+
+.include <bsd.port.mk>
