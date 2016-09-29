@@ -208,7 +208,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Pyongyang.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qatar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qyzylorda.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Rangoon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Riyadh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Sakhalin.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Samarkand.pm
@@ -300,6 +299,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vilnius.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Volgograd.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Warsaw.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Yangon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zaporozhye.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
 %%SITE_PERL%%/DateTime/TimeZone/Floating.pm
