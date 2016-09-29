@@ -26,7 +26,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Group>=0:devel/p5-Test-Group \
 		p5-Test-Taint>=0:devel/p5-Test-Taint
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	modbuild
+CONFIGURE_ARGS=	--openssl-cflags=-L${OPENSSLINC} --openssl-ldflags="-I${OPENSSLLIB} ${OPENSSL_LDFLAGS}"
 
 .include <bsd.port.mk>
