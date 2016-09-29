@@ -3,6 +3,7 @@
 
 PORTNAME=	paml
 PORTVERSION=	4.9c
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
