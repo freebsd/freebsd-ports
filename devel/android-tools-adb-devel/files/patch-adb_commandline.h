@@ -4,7 +4,7 @@
  #ifndef COMMANDLINE_H
  #define COMMANDLINE_H
  
-+#include <stdio.h>
++#include <stdio.h> // fwrite
 +
  #include "adb.h"
  
