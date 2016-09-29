@@ -51,7 +51,15 @@
  }
  
  double get_battery_perct_bar(struct text_object *obj)
-@@ -745,11 +725,14 @@ void get_battery_short_status(char *buff
+@@ -729,6 +709,7 @@ void get_top_info(void)
+ 
+ 			proc->time_stamp = g_time;
+ 			proc->name = strndup(p[i].ki_comm, text_buffer_size.get(*state));
++			proc->basename = strndup(p[i].ki_comm, text_buffer_size.get(*state));
+ 			proc->amount = 100.0 * p[i].ki_pctcpu / FSCALE;
+ 			proc->vsize = p[i].ki_size;
+ 			proc->rss = (p[i].ki_rssize * getpagesize());
+@@ -745,11 +726,14 @@ void get_battery_short_status(char *buff
  	if (0 == strncmp("charging", buffer, 8)) {
  		buffer[0] = 'C';
  		memmove(buffer + 1, buffer + 8, n - 8);
