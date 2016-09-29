@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sprockets-rails
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
