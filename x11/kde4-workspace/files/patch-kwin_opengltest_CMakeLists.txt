@@ -1,0 +1,15 @@
+--- kwin/opengltest/CMakeLists.txt.orig	2014-11-06 22:36:58 UTC
++++ kwin/opengltest/CMakeLists.txt
+@@ -2,9 +2,11 @@
+ 
+ set(kwin_opengl_test_SRCS opengltest.cpp )
+ 
++find_package(Threads)
++
+ kde4_add_executable(kwin_opengl_test ${kwin_opengl_test_SRCS})
+ 
+-target_link_libraries(kwin_opengl_test ${X11_LIBRARIES} ${OPENGL_gl_LIBRARY})
++target_link_libraries(kwin_opengl_test ${X11_LIBRARIES} ${OPENGL_gl_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
+ 
+ install(TARGETS kwin_opengl_test DESTINATION ${LIBEXEC_INSTALL_DIR} )
+ 
