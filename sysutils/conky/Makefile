@@ -4,12 +4,14 @@
 PORTNAME=	conky
 PORTVERSION=	1.10.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT?=	Advanced, highly configurable system monitor for X11
 
-LIB_DEPENDS=	libtolua++-5.1.so:lang/tolua++
+LIB_DEPENDS=	libtolua++-5.1.so:lang/tolua++ \
+		libinotify.so:devel/libinotify
 BUILD_DEPENDS=	db2x_xsltproc:textproc/docbook2X \
 		docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
@@ -128,7 +130,7 @@ post-patch:
 		-e 's/-D_POSIX_C_SOURCE=200809L/& -D__BSD_VISIBLE=1 -D_XOPEN_SOURCE=700/' \
 		${WRKSRC}/cmake/Conky.cmake
 	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
-		-e 's/ -lbsd/ -lintl/' \
+		-e 's/ -lbsd/ -lintl -linotify/' \
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
 	@${REINPLACE_CMD} -e 's,LOCALBASE,${LOCALBASE},' \
 		${WRKSRC}/doc/docgen.sh \
