@@ -1,6 +1,6 @@
---- mbdyn/base/solver.cc.orig	2011-06-20 14:55:12.000000000 -0400
-+++ mbdyn/base/solver.cc	2011-08-26 05:08:45.000000000 -0400
-@@ -111,10 +111,17 @@
+--- mbdyn/base/solver.cc.orig	2016-04-24 19:10:43 UTC
++++ mbdyn/base/solver.cc
+@@ -109,10 +109,17 @@ enum {
  };
  
  volatile sig_atomic_t mbdyn_keep_going = MBDYN_KEEP_GOING;
@@ -18,7 +18,7 @@
  
  extern "C" void
  mbdyn_really_exit_handler(int signum)
-@@ -202,7 +209,11 @@
+@@ -200,7 +207,11 @@ extern "C" void
  mbdyn_signal_init(int pre)
  {
  #ifdef HAVE_SIGNAL
@@ -30,13 +30,13 @@
  	if (pre) {
  		hdl = mbdyn_really_exit_handler;
  
-@@ -464,8 +475,8 @@
- 		}
+@@ -406,8 +417,8 @@ Solver::Prepare(void)
+ 		pRTSolver->Setup();
  	}
  
 -#ifdef USE_SCHUR
  	int mpi_finalize = 0;
 +#ifdef USE_SCHUR
  
- 	int MyRank = 0;
  	if (bParallel) {
+ 		DEBUGLCOUT(MYDEBUG_MEM, "creating parallel SchurDataManager"

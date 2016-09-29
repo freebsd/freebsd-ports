@@ -1,5 +1,5 @@
---- ./include/ac/mpi.h.orig	2009-01-04 19:04:54.000000000 +0100
-+++ ./include/ac/mpi.h	2010-10-31 22:31:57.000000000 +0100
+--- include/ac/mpi.h.orig	2015-10-30 05:05:33 UTC
++++ include/ac/mpi.h
 @@ -35,7 +35,7 @@
  #ifdef HAVE_MPI___H
  #include <mpi++.h>
