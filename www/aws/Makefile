@@ -3,6 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	17.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	marino@FreeBSD.org
@@ -50,6 +51,10 @@ OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS
 SHARED_DESC=		Build shared libraries in addition to static ones
 IP6_DESC=		Support IPv6 instead of IPv4
 
+SSL_USES=		ssl
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+LDAP_USE=		OPENLDAP=yes
+
 CONF_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 CONF_ARGS+=	GCC=ada
 CONF_ARGS+=	PYTHON=python${PYTHON_VER}
@@ -69,15 +74,12 @@ CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=static
 ###################
 
 .if ${PORT_OPTIONS:MSSL}
-WITH_OPENSSL_PORT= yes
-USE_OPENSSL=	yes
 CONF_ARGS+=	SOCKET=openssl
-CONF_ARGS+=	LPATH=${PREFIX}/lib
+CONF_ARGS+=	LPATH=${OPENSSLLIB}
 LINK_SSL=
 .endif
 .if ${PORT_OPTIONS:MGNUTLS}
 CONF_ARGS+=	SOCKET=gnutls
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
 LINK_TLS=
 .endif
 
@@ -86,7 +88,6 @@ LINK_TLS=
 ####################
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
 CONF_ARGS+=	LDAP=true
 LINK_LDP=
 .endif
