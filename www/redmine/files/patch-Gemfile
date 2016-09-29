@@ -1,6 +1,6 @@
---- Gemfile.orig	2016-05-05 18:39:09.000000000 +0000
-+++ Gemfile	2016-06-06 19:49:50.462089000 +0000
-@@ -4,11 +4,11 @@
+--- Gemfile.orig	2016-06-05 07:30:30 UTC
++++ Gemfile
+@@ -4,11 +4,11 @@ if Gem::Version.new(Bundler::VERSION) < 
    abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
  end
  
@@ -15,7 +15,7 @@
  gem "mime-types", (RUBY_VERSION >= "2.0" ? "~> 3.0" : "~> 2.99")
  gem "protected_attributes"
  gem "actionpack-action_caching"
-@@ -17,7 +17,7 @@
+@@ -17,7 +17,7 @@ gem "roadie-rails"
  gem "mimemagic"
  
  # Request at least nokogiri 1.6.7.2 because of security advisories
@@ -24,14 +24,15 @@
  
  # Request at least rails-html-sanitizer 1.0.3 because of security advisories 
  gem "rails-html-sanitizer", ">= 1.0.3"
-@@ -28,27 +28,15 @@
+@@ -26,29 +26,12 @@ gem "rails-html-sanitizer", ">= 1.0.3"
+ gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin, :jruby]
+ gem "rbpdf", "~> 1.19.0"
  
- # Optional gem for LDAP authentication
- group :ldap do
+-# Optional gem for LDAP authentication
+-group :ldap do
 -  gem "net-ldap", "~> 0.12.0"
-+  gem "net-ldap"
- end
- 
+-end
+-
  # Optional gem for OpenID authentication
  group :openid do
 -  gem "ruby-openid", "~> 2.3.0", :require => "openid"
@@ -54,7 +55,7 @@
  platforms :jruby do
    # jruby-openssl is bundled with JRuby 1.7.0
    gem "jruby-openssl" if Object.const_defined?(:JRUBY_VERSION) && JRUBY_VERSION < '1.7.0'
-@@ -92,21 +80,6 @@
+@@ -92,21 +75,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -76,7 +77,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -116,3 +89,7 @@
+@@ -116,3 +84,7 @@ end
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
  end
