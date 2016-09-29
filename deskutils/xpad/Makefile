@@ -1,8 +1,8 @@
-# Created by: Jaosn Helfman <jgh@FreeBSD.org>
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xpad
-PORTVERSION=	4.7.0
+PORTVERSION=	4.8.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 
 CONFLICTS_INSTALL=	xpad3-[0-9]*
-USE_XORG=	x11 sm
-USE_GNOME=	gtk30 intltool gtksourceview3
+USE_XORG=	x11 sm ice
+USE_GNOME=	gtk30 intltool gtksourceview3 cairo
 USES=	pkgconfig gmake tar:bzip2 autoreconf
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
