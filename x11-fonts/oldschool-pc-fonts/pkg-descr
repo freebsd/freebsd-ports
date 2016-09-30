@@ -1,0 +1,20 @@
+The Ultimate Oldschool PC Font Pack started out with the idea of paying tribute
+to ancient PCs and their bitmapped, pre-GUI typography (if you can call it
+that). It was inspired by similar efforts that cover other vintage machines:
+classic system fonts from the Amiga, C64, Apple II, Mac, ZX Spectrum,
+Atari 8-bit/ST etc. are all celebrated. On the other hand, the IBM PC and its
+clones seem to get little love... except for that one VGA text mode font
+(which has been remade numerous times, to varying degrees of success).
+
+This collection is here to remedy that, and to bring you pixel-perfect remakes
+of various type styles from text-mode era PCs - in modern, multi-platform,
+Unicode-compatible TrueType form (plus straight bitmap versions).
+
+Although the goal is to make it a complete resource, the main focus is on
+hardware character sets: the kind that's located in a ROM chip on the system
+board or graphics card, which is what you'd see by default when working in
+text (or graphics) mode. Software-loadable fonts are also within the scope of
+this collection (if associated with a particular machine or display system),
+so some of these have also made it in.
+
+WWW: http://int10h.org/oldschool-pc-fonts/
