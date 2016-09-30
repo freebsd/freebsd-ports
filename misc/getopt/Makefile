@@ -24,7 +24,7 @@ PORTDOCS=	Changelog README
 NLS_MAKE_ARGS=		WITHOUT_GETTEXT=0
 NLS_MAKE_ARGS_OFF=	WITHOUT_GETTEXT=1
 NLS_LDFLAGS=		-lintl
-NLS_USES=		gettext localbase
+NLS_USES=		gettext localbase:ldflags
 
 post-patch:
 	@${RM} ${WRKSRC}/gnu/*.o

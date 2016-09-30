@@ -19,7 +19,7 @@ BROKEN_FreeBSD_9=	does not build # revisit when ports gcc is switched to 4.9
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib jpeg localbase openal scons
+USES=		compiler:c++11-lib jpeg localbase:ldflags openal scons
 USE_SDL=	sdl2
 USE_GL=		gl glew
 INSTALLS_ICONS=	yes

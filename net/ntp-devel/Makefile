@@ -18,8 +18,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent2 \
 
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
-USES=		cpe pathfix shebangfix libedit libtool pkgconfig ssl \
-		gettext-runtime
+USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
+		pkgconfig ssl gettext-runtime
 
 GNU_CONFIGURE=	yes
 

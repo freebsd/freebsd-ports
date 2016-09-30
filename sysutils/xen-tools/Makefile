@@ -28,8 +28,8 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
-USES=		cpe gmake libtool perl5 pkgconfig python shebangfix localbase \
-		gettext
+USES=		cpe gettext gmake libtool localbase:ldflags perl5 pkgconfig \
+		python shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

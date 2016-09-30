@@ -81,6 +81,7 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/\`date/\`gdate/" ${WRKSRC}/Makefile.am ${WRKSRC}/doc/Makefile.am
+	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
 
 post-install:
 	${RM} -f ${STAGEDIR}${PREFIX}/etc/mime*

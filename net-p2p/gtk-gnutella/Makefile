@@ -11,7 +11,7 @@ COMMENT=	GTK based Gnutella client
 
 LICENSE=	GPLv2+
 
-USES=		iconv localbase pkgconfig tar:bzip2
+USES=		iconv localbase:ldflags pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure

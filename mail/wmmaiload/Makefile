@@ -12,16 +12,14 @@ COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake localbase pkgconfig tar:bzip2
+USES=		gmake localbase:ldflags pkgconfig ssl tar:bzip2
 USE_XORG=	xpm
 USE_GNOME=	gtk20
-USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-MAKE_ENV=	DEBUG_CFLAGS="-I${OPENSSLINC}" \
-		DEBUG_LDFLAGS="-L${OPENSSLLIB}"
-
-CFLAGS+=	-D_GNU_SOURCE
+CPPFLAGS+=	-I${OPENSSLINC} -D_GNU_SOURCE
+LDFLAGS+=	-L${OPENSSLLIB}
+MAKE_ENV=	DEBUG_CFLAGS="" DEBUG_LDFLAGS=""
 
 PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config \
 		man/man1/wmmaiload.1.gz man/man1/wmmaiload-config.1.gz

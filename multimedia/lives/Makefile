@@ -58,8 +58,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-ldvgrab
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-fPIC
-
 DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		OMC/lives-OMC.txt RFX/LiVES-Perl.odt RFX/rfxbuilder.odt \
 		RFX/RFX.spec docs/clip_format.txt \
@@ -79,6 +77,8 @@ NLS_USES=		gettext-tools
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+		's/^LIBS = $$/&@LIBS@/'
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \
