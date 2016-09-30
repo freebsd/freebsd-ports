@@ -3,6 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	16.01
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,12 +16,15 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libhunspell-1.3.so:textproc/hunspell
 
-USES=		autoreconf compiler desktop-file-utils fam:gamin libtool pathfix \
-		pkgconfig shared-mime-info
+USES=		autoreconf compiler desktop-file-utils fam:gamin \
+		gettext-runtime libtool pathfix pkgconfig shared-mime-info
 USE_WX=		2.8
-WANT_UNICODE=	yes
+USE_GNOME=	gtk20 cairo
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
 		--disable-pch
