@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	tomatoes
-PORTVERSION=	1.5
-PORTREVISION=	16
+PORTVERSION=	1.55
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}5${EXTRACT_SUFX} \
-		${PORTNAME}-linux-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-linux-${DATAVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tomato-smashing, Q-Bert style
 
-WRKSRC=		${WRKDIR}/tomatoes-${PORTVERSION}5
-TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
+LICENSE=	ZLIB
+
+DATAVERSION=	1.5
+DATA_WRKSRC=	${WRKDIR}/tomatoes-${DATAVERSION}
 
 USES=		tar:bzip2 gmake
 USE_SDL=	mixer image
-USE_GL=		gl
+USE_GL=		gl glu
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" \
 		MPKDIR="${DATADIR}/" \
@@ -27,26 +28,34 @@ MAKE_ARGS=	CC="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${SDL_CFLAGS}" \
 		LDFLAGS="${SDL_LDFLAGS}"
 
-PLIST_FILES=	bin/${PORTNAME}
-PORTDATA=	*
-
 SDL_CFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 SDL_LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer \
 		-L${LOCALBASE}/lib -lGL -lGLU
 
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
+PORTDATA=	*
+PORTDOCS=	*
+
 DESKTOP_ENTRIES="Tomatoes" \
-		"${COMMENT}" \
-		"${DATADIR}/icon.png" \
+		"" \
+		"${PORTNAME}" \
 		"${PORTNAME}" \
 		"Game;ArcadeGame;" \
 		false
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}/music
-	${INSTALL_DATA} ${TDATA}/config.cfg ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${STAGEDIR}${DATADIR}/music
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	@${MKDIR} ${STAGEDIR}${DATADIR}/music
+	${INSTALL_DATA} ${DATA_WRKSRC}/config.cfg ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DATA_WRKSRC}/tomatoes.mpk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DATA_WRKSRC}/music/IHaveNoTomatoes.it ${STAGEDIR}${DATADIR}/music
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DATA_WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
