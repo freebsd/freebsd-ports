@@ -256,7 +256,6 @@
     SUBDIR += farblazer
     SUBDIR += fargoal
     SUBDIR += fbg2
-    SUBDIR += fgrun
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
