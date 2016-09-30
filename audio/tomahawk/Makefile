@@ -11,7 +11,7 @@ COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash \
+BUILD_DEPENDS=	sparsehash>=2.0.2:devel/sparsehash \
 		websocketpp>=0.4.0:devel/websocketpp
 RUN_DEPENDS=	phonon-vlc>=0.6.1:multimedia/phonon-vlc
 LIB_DEPENDS=	libattica.so:x11-toolkits/attica \
