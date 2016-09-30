@@ -39,8 +39,8 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-#DOCS_LIB_DEPENDS=	libgvc.so:graphics/graphviz
-#DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
-#DOCS_CONFIGURE_OFF=	--disable-doxygen-doc
+#DOXYGEN_LIB_DEPENDS=	libgvc.so:graphics/graphviz
+#DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
+#DOXYGEN_CONFIGURE_OFF=	--disable-doxygen-doc
 
 .include <bsd.port.mk>
