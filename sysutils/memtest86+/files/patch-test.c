@@ -1,20 +1,14 @@
---- test.c	2008-11-16 02:18:14.000000000 +0200
-+++ test.c	2009-02-18 00:27:11.000000000 +0200
-@@ -6,12 +6,11 @@
-  * ----------------------------------------------------
-  * MemTest86+ V2.01 Specific code (GPL V2.0)
-  * By Samuel DEMEULEMEESTER, sdemeule@memtest.org
-  * http://www.canardpc.com - http://www.memtest.org
-  */
- 
--#include "test.h"
- #include "config.h"
+--- test.c.orig	2013-08-10 02:29:44 UTC
++++ test.c
+@@ -14,7 +14,6 @@
+ #include "stdint.h"
+ #include "cpuid.h"
+ #include "smp.h"
 -#include <sys/io.h>
-+#include "test.h"
- #include "dmi.h"
  
- extern int segs, bail;
-@@ -1400,6 +1399,20 @@ void sleep(int n, int sms)
+ extern struct cpu_ident cpu_id;
+ extern volatile int    mstr_cpu;
+@@ -1543,6 +1542,19 @@ void sleep(long n, int flag, int me, int
  	}
  }
  
@@ -31,11 +25,10 @@
 +        asm __volatile__("outb %0,%1" : : "a" (data), "id" ((unsigned short)(port)));
 +}
 +
-+
  /* Beep function */
  
  void beep(unsigned int frequency)
-@@ -1407,18 +1420,18 @@ void beep(unsigned int frequency)
+@@ -1551,18 +1563,18 @@ void beep(unsigned int frequency)
  	unsigned int count = 1193180 / frequency;
  
  	// Switch on the speaker
@@ -52,7 +45,7 @@
  	outb((count >> 8) & 0xff, 0x42);
  
  	// Block for 100 microseconds
- 	sleep(100, 1);
+ 	sleep(100, 0, 0, 1);
  
  	// Switch off the speaker
 -	outb(inb_p(0x61)&0xFC, 0x61);
