@@ -8646,3 +8646,4 @@ graphics/evas_generic_loaders-svg|devel/efl|2016-09-27|Merged into devel/efl
 graphics/evas_generic_loaders-xcf|devel/efl|2016-09-27|Merged into devel/efl
 multimedia/emotion_generic_players-vlc|devel/efl|2016-09-27|Merged into devel/efl
 x11-toolkits/elementary|devel/efl|2016-09-27|Merged into devel/efl
+devel/google-sparsehash|devel/sparsehash|2016-09-30|Moved to GitHub under a different name
