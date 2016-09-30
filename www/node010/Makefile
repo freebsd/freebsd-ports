@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.10.46
+PORTVERSION=	0.10.47
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -10,8 +10,6 @@ PKGNAMESUFFIX=	010
 
 MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server
-DEPRECATED=	Upstream has placed 0.10.x in maintenance mode, see https://github.com/nodejs/LTS#lts_schedule
-EXPIRATION_DATE=	2016-10-01
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+DEPRECATED=	Upstream has placed 0.10.x in maintenance mode, see https://github.com/nodejs/LTS#lts_schedule
+EXPIRATION_DATE=	2016-10-01
 
 CONFLICTS_INSTALL=	iojs-[0-9]* node-[0-9]* node-devel-[0-9]* node012-[0-9]* node4-[0-9]* node5-[0-9]*
 
