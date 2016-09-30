@@ -1,5 +1,5 @@
---- doc/bashref.texi.orig	2014-03-02 13:40:51.000000000 -0500
-+++ doc/bashref.texi	2014-03-02 13:42:04.000000000 -0500
+--- doc/bashref.texi.orig	2016-09-29 22:30:30 UTC
++++ doc/bashref.texi
 @@ -1,6 +1,6 @@
  \input texinfo.tex @c -*- texinfo -*-
  @c %**start of header
@@ -17,8 +17,8 @@
  
  This is Edition @value{EDITION}, last updated @value{UPDATED},
  of @cite{The GNU Bash Reference Manual},
-@@ -5299,7 +5299,7 @@
- 
+@@ -5443,7 +5443,7 @@ A null directory name may appear as two 
+ or trailing colon.
  
  @item PS1
 -The primary prompt string.  The default value is @samp{\s-\v\$ }.
