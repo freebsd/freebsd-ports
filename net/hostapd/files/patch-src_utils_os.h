@@ -4,7 +4,7 @@
   */
  int os_file_exists(const char *fname);
  
-+#ifndef __FreeBSD__
++#if !defined __FreeBSD__ && !defined __DragonFly__
  /**
   * os_fdatasync - Sync a file's (for a given stream) state with storage device
   * @stream: the stream to be flushed
