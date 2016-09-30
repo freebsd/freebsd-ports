@@ -190,6 +190,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} <= 1000000
+MAKE_JOBS_UNSAFE=	yes
+.endif
+
 .if ( ${PORT_OPTIONS:MGOST} ) && ${SSL_DEFAULT} == base
 BROKEN=	OpenSSL from the base system does not support GOST, add \
 	DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything \
