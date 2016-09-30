@@ -12,8 +12,6 @@ COMMENT=	IceCast, IceCast2, and ShoutCast live audio streamer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to patch after previous commit
-
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_acx_pthread_config=no
