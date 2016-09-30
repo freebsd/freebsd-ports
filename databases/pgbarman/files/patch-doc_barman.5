@@ -1,36 +1,36 @@
---- doc/barman.5.orig	2015-09-25 15:06:25 UTC
+--- doc/barman.5.orig	2016-09-26 15:32:17 UTC
 +++ doc/barman.5
-@@ -8,7 +8,7 @@ The system\-level Barman configuration f
+@@ -17,7 +17,7 @@ The system\-level Barman configuration f
  .IP
  .nf
  \f[C]
 -/etc/barman.conf
-+/usr/local/etc/barman.conf
++%%PREFIX%%/etc/barman.conf
  \f[]
  .fi
  .PP
-@@ -16,7 +16,7 @@ or
+@@ -25,7 +25,7 @@ or
  .IP
  .nf
  \f[C]
 -/etc/barman/barman.conf
-+/usr/local/etc/barman/barman.conf
++%%PREFIX%%/etc/barman/barman.conf
  \f[]
  .fi
  .PP
-@@ -42,9 +42,9 @@ configurations.
+@@ -51,9 +51,9 @@ configurations.
  If the value of \f[C]configuration_files_directory\f[] is a directory,
  Barman reads all files with \f[C]\&.conf\f[] extension that exist in
  that folder.
 -For example, if you set it to \f[C]/etc/barman.d\f[], you can specify
-+For example, if you set it to \f[C]/usr/local/etc/barman.d\f[], you can specify
++For example, if you set it to \f[C]%%PREFIX%%/etc/barman.d\f[], you can specify
  your PostgreSQL servers placing each section in a separate
 -\f[C]\&.conf\f[] file inside the \f[C]/etc/barman.d\f[] folder.
-+\f[C]\&.conf\f[] file inside the \f[C]/usr/local/etc/barman.d\f[] folder.
++\f[C]\&.conf\f[] file inside the \f[C]%%PREFIX%%/etc/barman.d\f[] folder.
  .SH OPTIONS
  .TP
  .B active
-@@ -445,7 +445,7 @@ Here is an example of configuration file
+@@ -608,7 +608,7 @@ Here is an example of configuration file
  \f[C]
  [barman]
  ;\ Main\ directory
@@ -39,16 +39,20 @@
  
  ;\ System\ user
  barman_user\ =\ barman
-@@ -465,10 +465,10 @@ reuse_backup\ =\ link
+@@ -628,13 +628,13 @@ reuse_backup\ =\ link
  description\ =\ \ "Main\ PostgreSQL\ Database"
  
  ;\ SSH\ options
 -ssh_command\ =\ ssh\ postgres\@pg
-+ssh_command\ =\ ssh\ pgsql\@pg
++ssh_command\ =\ ssh\ %%PGUSER%%\@pg
  
  ;\ PostgreSQL\ connection\ string
 -conninfo\ =\ host=pg\ user=postgres
-+conninfo\ =\ host=pg\ user=pgsql\ db=postgres
++conninfo\ =\ host=pg\ user=%%PGUSER%%\ db=postgres
+ 
+ ;\ PostgreSQL\ streaming\ connection\ string
+-streaming_conninfo\ =\ host=pg\ user=postgres
++streaming_conninfo\ =\ host=pg\ user=%%PGUSER%%
  
  ;\ Minimum\ number\ of\ required\ backups\ (redundancy)
  minimum_redundancy\ =\ 1
