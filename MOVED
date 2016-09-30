@@ -8648,3 +8648,10 @@ multimedia/emotion_generic_players-vlc|devel/efl|2016-09-27|Merged into devel/ef
 x11-toolkits/elementary|devel/efl|2016-09-27|Merged into devel/efl
 devel/google-sparsehash|devel/sparsehash|2016-09-30|Moved to GitHub under a different name
 games/fgrun||2016-09-30|Incompatible with latest flightgear
+math/why3-spark||2016-09-30|Has expired: Only useful for deprecated lang/spark
+lang/spark||2016-09-30|Has expired: Broken for more than 6 months
+math/alt-ergo-spark||2016-09-30|Has expired: Only useful for deprecate lang/spark
+security/nessus-libnasl||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus-libraries||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus-plugins||2016-09-30|Has expired: Abandoned, consider using OpenVAS

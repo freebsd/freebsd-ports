@@ -318,7 +318,6 @@
     SUBDIR += smalltalk
     SUBDIR += smlnj
     SUBDIR += snobol4
-    SUBDIR += spark
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey170
     SUBDIR += spidermonkey185
