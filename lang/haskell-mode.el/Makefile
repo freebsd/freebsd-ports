@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haskell-mode
-PORTVERSION=	13.20.1
+PORTVERSION=	16.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	lang elisp
 
@@ -25,13 +25,15 @@ NO_ARCH=	yes
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
 ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \
 		haskell-c2hs.el \
-		haskell-cabal.el haskell-checkers.el \
+		haskell-cabal.el \
 		haskell-collapse.el haskell-commands.el \
-		haskell-compile.el haskell-compat.el \
+		haskell-compat.el haskell-compile.el \
 		haskell-complete-module.el haskell-completions.el \
 		haskell-customize.el \
 		haskell-debug.el haskell-decl-scan.el \
-		haskell-doc.el haskell-font-lock.el haskell-hoogle.el \
+		haskell-doc.el haskell-font-lock.el \
+		haskell-ghc-support.el \
+		haskell-hoogle.el \
 		haskell-indent.el haskell-indentation.el \
 		haskell-interactive-mode.el haskell-lexeme.el haskell-load.el \
 		haskell-menu.el haskell-mode-pkg.el haskell-mode.el \
