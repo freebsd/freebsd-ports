@@ -1,10 +1,9 @@
---- configure.orig
+--- configure.orig	2016-07-21 01:15:41 UTC
 +++ configure
-@@ -153,6 +153,11 @@ all_platforms="${all_platforms} x86_64-w
+@@ -158,6 +158,10 @@ all_platforms="${all_platforms} x86_64-w
  all_platforms="${all_platforms} x86_64-win64-vs11"
  all_platforms="${all_platforms} x86_64-win64-vs12"
  all_platforms="${all_platforms} x86_64-win64-vs14"
-+all_platforms="${all_platforms} arm64-linux-gcc"
 +all_platforms="${all_platforms} ia64-linux-gcc"
 +all_platforms="${all_platforms} ppc32-linux-gcc"
 +all_platforms="${all_platforms} ppc64-linux-gcc"
@@ -12,7 +11,7 @@
  all_platforms="${all_platforms} generic-gnu"
  
  # all_targets is a list of all targets that can be configured
-@@ -611,15 +612,14 @@
+@@ -585,15 +589,14 @@ process_toolchain() {
          check_add_cflags -Wimplicit-function-declaration
          check_add_cflags -Wuninitialized
          check_add_cflags -Wunused-variable
@@ -33,6 +32,6 @@
 +        else
 +          check_add_cflags -Wunused-but-set-variable
 +        fi
-         enabled extra_warnings || check_add_cflags -Wno-unused-function
-     fi
- 
+         if enabled mips || [ -z "${INLINE}" ]; then
+           enabled extra_warnings || check_add_cflags -Wno-unused-function
+         else
