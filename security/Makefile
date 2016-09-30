@@ -380,10 +380,6 @@
     SUBDIR += nacl
     SUBDIR += ncrack
     SUBDIR += ncrypt
-    SUBDIR += nessus
-    SUBDIR += nessus-libnasl
-    SUBDIR += nessus-libraries
-    SUBDIR += nessus-plugins
     SUBDIR += netpgp
     SUBDIR += nettle
     SUBDIR += nikto
