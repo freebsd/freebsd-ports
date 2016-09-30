@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
 OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_SUB=	ues
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.am
