@@ -781,12 +781,12 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/tools/web_config/sample_prompts/terlar.fish
 %%DATADIR%%/tools/web_config/sample_prompts/user_host_path.fish
 %%DATADIR%%/tools/web_config/webconfig.py
-share/locale/de/LC_MESSAGES/fish.mo
-share/locale/en/LC_MESSAGES/fish.mo
-share/locale/fr/LC_MESSAGES/fish.mo
-share/locale/pt_BR/LC_MESSAGES/fish.mo
-share/locale/sv/LC_MESSAGES/fish.mo
-share/locale/zh_CN/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/de/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/en/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/fish.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/fish.mo
 @dir %%ETCDIR%%/conf.d
 @dir %%DATADIR%%/vendor_completions.d
 @dir %%DATADIR%%/vendor_conf.d
