@@ -6,4 +6,4 @@ does not call out to Git directly but instead uses pure Python. All
 functionality is available in pure Python. Optional C extensions can be
 built for improved performance.
 
-WWW: https://www.samba.org/~jelmer/dulwich/
+WWW: https://www.dulwich.io/

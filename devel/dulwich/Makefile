@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dulwich
-PORTVERSION=	0.10.1a
+PORTVERSION=	0.14.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +10,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Python implementation of the Git file formats and protocols
 
-LICENSE=	GPLv2 GPLv3
+LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
+LICENSE_FILE=	COPYING relicensing-apachev2.txt
 
-PORTDOCS=	AUTHORS HACKING NEWS README.md file-format.txt \
-		introduction.txt object-store.txt protocol.txt remote.txt \
-		repo.txt tag.txt
+PORTDOCS=	AUTHORS CONTRIBUTING NEWS README.md TODO conclusion.txt \
+		file-format.txt index.txt introduction.txt object-store.txt \
+		performance.txt porcelain.txt protocol.txt remote.txt repo.txt tag.txt
 PORTEXAMPLES=	clone.py config.py diff.py latest_change.py
 
 USES=		cpe python:2
