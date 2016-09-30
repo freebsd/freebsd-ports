@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		pkgconfig ncurses
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	imomaliev:tmux-bash-completion:e0f7021:bash
+GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
