@@ -1,6 +1,6 @@
---- deps/v8/src/base/platform/platform-posix.cc.orig	2015-03-31 22:13:01 UTC
+--- deps/v8/src/base/platform/platform-posix.cc.orig	2016-09-27 17:30:02 UTC
 +++ deps/v8/src/base/platform/platform-posix.cc
-@@ -328,7 +328,7 @@ int OS::GetCurrentThreadId() {
+@@ -327,7 +327,7 @@ int OS::GetCurrentThreadId() {
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());
  #else
