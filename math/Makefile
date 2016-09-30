@@ -78,7 +78,6 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
-    SUBDIR += alt-ergo-spark
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
@@ -711,7 +710,6 @@
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += why3
-    SUBDIR += why3-spark
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima
