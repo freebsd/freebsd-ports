@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
 USES=		libarchive
-LDFLAGS+=	-larchive
+LIBS+=		-larchive
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
@@ -26,7 +26,7 @@ do-configure:
 
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} -I${WRKSRC} -o ${WRKSRC}/unmakeself \
-		${FILESDIR}/unmakeself.c ${LDFLAGS}
+		${FILESDIR}/unmakeself.c ${LDFLAGS} ${LIBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${STAGEDIR}/${PREFIX}/bin

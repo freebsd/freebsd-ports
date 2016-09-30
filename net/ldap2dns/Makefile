@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bklang
 
-USES=		gmake localbase perl5 shebangfix
+USES=		gmake localbase:ldflags perl5 shebangfix
 SHEBANG_FILES=	scripts/*.pl
 USE_PERL5=	run
 USE_OPENLDAP=	yes

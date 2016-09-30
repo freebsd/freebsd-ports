@@ -13,7 +13,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool localbase pathfix pkgconfig
+USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-video-opengles \

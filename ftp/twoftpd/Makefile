@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:devel/bglibs
 LIB_DEPENDS=	libcvm-v2client.so:security/cvm
 
-USES=		localbase
+USES=		localbase:ldflags
 
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs

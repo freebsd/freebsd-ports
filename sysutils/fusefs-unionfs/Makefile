@@ -23,7 +23,7 @@ PLIST_FILES=	bin/unionfs \
 		bin/unionfsctl \
 		man/man8/unionfs.8.gz
 
-USES=		fuse cmake localbase
+USES=		fuse cmake localbase:ldflags
 
 post-patch:
 	@${REINPLACE_CMD} "s,share/man,man,g" ${WRKSRC}/man/CMakeLists.txt

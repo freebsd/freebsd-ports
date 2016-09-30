@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	whoozle
 GH_PROJECT=	${PORTNAME}-linux
 
-USES=		cmake compiler:c++11-lib localbase pkgconfig
+USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 CMAKE_ARGS=	-DUSB_BACKEND_LIBUSB=on -DBUILD_QT_UI=off
 
 OPTIONS_DEFAULT=CLI FUSE

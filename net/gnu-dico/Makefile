@@ -16,7 +16,6 @@ USE_LDCONFIG=	yes
 USES=		tar:xz gmake libtool localbase pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var
 
 INFO=		dico
 
@@ -54,7 +53,10 @@ post-patch:
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
 	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
 	@${REINPLACE_CMD} '/INSTALL.*charset/d' ${WRKSRC}/gnu/Makefile.in
-	@${REINPLACE_CMD} 's/python-config/$${PYTHON_CONFIG}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e 's/mu_check_lib_save_LIBS/LIBS/' \
+		-e 's/python-config/$${PYTHON_CONFIG}/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's/conf.5in dico/conf.5 dico/' ${WRKSRC}/doc/Makefile.in
 
 post-install:

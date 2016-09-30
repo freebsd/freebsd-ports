@@ -20,7 +20,8 @@ LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		dos2unix gmake localbase openal:al pkgconfig python tar:bzip2
+USES=		dos2unix gmake localbase:ldflags openal:al pkgconfig python \
+		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		glut

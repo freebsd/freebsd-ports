@@ -15,7 +15,7 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libftgl.so:graphics/ftgl \
 		libfreetype.so:print/freetype2
 
-USES=		cmake localbase
+USES=		cmake localbase:ldflags
 CMAKE_ARGS=	-DUSE_OPENMP=OFF # openmp breaks build on 11.x
 USE_GL=		glew
 USE_LDCONFIG=	yes

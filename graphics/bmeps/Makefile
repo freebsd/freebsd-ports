@@ -24,7 +24,7 @@ CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no \
 		ac_cv_header_db_h=no
 
 ALL_TARGET=	bmpp
-USES=		gmake jpeg localbase
+USES=		gmake jpeg localbase:ldflags
 
 PLIST_FILES=	bin/bmpp
 
