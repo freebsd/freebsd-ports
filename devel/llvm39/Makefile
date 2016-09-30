@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -51,6 +52,7 @@ PLIST_FILES=
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
+	${PATCHDIR}/clang-patch-svn-r280672 \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
@@ -320,7 +322,7 @@ post-build-COMPILER_RT-on:
 	${MAKE_ENV} ${MAKE_CMD}
 
 post-install:
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
+	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
@@ -350,7 +352,7 @@ post-install-DOCS-off:
 
 post-install-LLDB-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/windows/getopt
+	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/windows/getopt
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
