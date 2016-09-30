@@ -12,9 +12,9 @@ COMMENT=	A toolkit for building randomized language models
 
 BROKEN_powerpc64=	Does not build
 
-BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/google-sparsehash
+BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/google-sparsehash
+RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
