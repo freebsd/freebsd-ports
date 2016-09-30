@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	specinfra
-PORTVERSION=	2.60.2
+PORTVERSION=	2.63.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
