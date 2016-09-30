@@ -27,7 +27,7 @@ GH_TAGNAME?=	cdf4a8d:lang 1ffab37:ext_armips
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
-USES=		compiler:c++11-lib localbase pkgconfig
+USES=		compiler:c++11-lib localbase:ldflags pkgconfig
 EXCLUDE=	glew snappy libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		glew glu

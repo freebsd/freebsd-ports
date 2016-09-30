@@ -15,7 +15,7 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libzopfli.so:archivers/zopfli
 
-USES=		cpe gmake localbase
+USES=		cpe gmake localbase:ldflags
 CPE_VENDOR=	zlib
 ALL_TARGET=	dev
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

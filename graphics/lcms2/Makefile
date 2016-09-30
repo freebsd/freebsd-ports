@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix
+USES=		libtool localbase:ldflags pathfix
 
 PORTDOCS=	*
 

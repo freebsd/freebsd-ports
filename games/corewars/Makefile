@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
-USES=		gmake localbase
+USES=		gmake localbase:ldflags
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

@@ -22,7 +22,9 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/pngrewrite
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -lm -lpng -lz -o ${WRKSRC}/pngrewrite ${WRKSRC}/libpngrewrite.c ${WRKSRC}/pngrewrite.c
+	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${LIBS} -lm -lpng -lz \
+		${WRKSRC}/libpngrewrite.c ${WRKSRC}/pngrewrite.c \
+		-o ${WRKSRC}/pngrewrite
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngrewrite ${STAGEDIR}${PREFIX}/bin/

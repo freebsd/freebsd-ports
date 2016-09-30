@@ -1,4 +1,4 @@
---- configure.ac.orig	2015-09-04 19:27:22 UTC
+--- configure.ac.orig	2016-08-04 06:12:29 UTC
 +++ configure.ac
 @@ -19,7 +19,7 @@ if [ test "$GCC" = "yes" ];then
  fi
@@ -7,9 +7,9 @@
 -AC_CHECK_PROG([AUTOGEN], [autogen], [autogen], [:])
 +AC_CHECK_PROG([AUTOGEN], [autogen], [autogen], [autogen])
  
- if test x"$AUTOGEN" = "x:"; then
- 	AC_MSG_WARN([[
-@@ -125,7 +125,7 @@ if test "$test_for_libnl" = yes;then
+ AX_CODE_COVERAGE
+ 
+@@ -133,7 +133,7 @@ if test "$test_for_libnl" = yes;then
  fi
  
  have_readline=no
@@ -18,7 +18,15 @@
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
-@@ -442,7 +442,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
+@@ -183,6 +183,7 @@ AC_ARG_WITH(pam,
+ 
+ pam_enabled=no
+ 
++oldlibs=$LIBS
+ if test "$test_for_pam" = yes;then
+ LIBS="$oldlibs -lpam"
+ AC_MSG_CHECKING([for pam library])
+@@ -496,7 +497,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
  			cp -f $i $nam
  		fi
  	done

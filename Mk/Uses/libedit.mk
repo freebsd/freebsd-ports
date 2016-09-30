@@ -10,7 +10,7 @@
 
 .if !defined(_INCLUDE_USES_LIBEDIT_MK)
 _INCLUDE_USES_LIBEDIT_MK=	yes
-.include "${USESDIR}/localbase.mk"
+_USES_POST+=	localbase
 
 LIB_DEPENDS+=	libedit.so.0:devel/libedit
 .endif

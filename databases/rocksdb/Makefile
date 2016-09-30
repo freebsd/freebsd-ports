@@ -24,7 +24,7 @@ CPPFLAGS+=	-DOS_FREEBSD
 MAKE_ENV=	CXX=${CXX}
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib gmake localbase
+USES=		compiler:c++11-lib gmake localbase:ldflags
 
 PORTDATA=	make_config.mk
 

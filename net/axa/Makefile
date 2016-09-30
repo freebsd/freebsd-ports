@@ -46,9 +46,9 @@ LDFLAGS+=	-lm
 IGNORE=	base OpenSSL in FreeBSD 9 is too old, specify a ports version of SSL by adding DEFAULT_VERSIONS+=ssl=... to /etc/make.conf and rebuild everything that needs SSL
 . else
 CONFIGURE_ENV+=	libcrypto_CFLAGS="-I${OPENSSLINC}"		\
-		libcrypto_LIBS="-L${OPENSSLLIB} -lcrypto"	\
+		libcrypto_LIBS="${OPENSSLLIB}/libcrypto.so"	\
 		libssl_CFLAGS="-I${OPENSSLINC}"			\
-		libssl_LIBS="-L${OPENSSLLIB} -lssl"
+		libssl_LIBS="${OPENSSLLIB}/libssl.so"
 . endif
 .endif
 

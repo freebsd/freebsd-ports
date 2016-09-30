@@ -22,6 +22,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake localbase tar:xz
+USES=		cmake localbase:ldflags tar:xz
 
 .include <bsd.port.mk>

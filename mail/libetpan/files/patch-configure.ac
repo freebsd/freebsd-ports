@@ -1,0 +1,18 @@
+--- configure.ac.orig	2016-05-26 05:27:47 UTC
++++ configure.ac
+@@ -313,13 +313,13 @@ if test x$enable_iconv = xyes; then
+      saved_LIBS="$LIBS"
+      for lib in iconv ; do
+        if test "x$ICONV_LINKED" = "x0" ; then
+-	 LIBS=-l$lib
++	 LIBS="-l$lib $saved_LIBS"
+          AC_TRY_LINK([#include <stdlib.h>
+ #include <iconv.h>],
+          [iconv_t cd = iconv_open("","");
+           iconv(cd,NULL,NULL,NULL,NULL);
+           iconv_close(cd);],
+-         [LIBICONV="$LIBS" ; ICONV_LINKED=1],
++         [LIBICONV="-l$lib" ; ICONV_LINKED=1],
+          [])
+        fi
+      done

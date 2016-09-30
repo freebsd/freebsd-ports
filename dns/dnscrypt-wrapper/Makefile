@@ -25,7 +25,7 @@ ETCDNSCRYPTWRAPPER=	${PREFIX}/etc/${PORTNAME}
 SUB_LIST+=	ETCDNSCRYPTWRAPPER="${ETCDNSCRYPTWRAPPER}" USERS="${USERS}"
 USE_RC_SUBR=	${PORTNAME}
 
-USES=		gmake localbase
+USES=		gmake localbase:ldflags
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
