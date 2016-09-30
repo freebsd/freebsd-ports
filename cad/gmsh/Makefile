@@ -31,6 +31,8 @@ USES=		blaslapack cmake fortran gmake jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xext xfixes xft
 
+MAKE_JOBS_UNSAFE=yes
+
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
 OPTIONS_DEFINE=	CGNS MED OCC SHARED STATIC
