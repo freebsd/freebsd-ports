@@ -3,6 +3,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.26
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -31,6 +32,7 @@ CPU_CLIP_VARS=	MANUAL_PACKAGE_BUILD="WITH_CPU_CLIP may customize the package for
 CPU_CLIP_CONFIGURE_OFF=	--disable-cpu-clip
 
 EXTERNAL_LIB_DEPENDS=	libFLAC.so:audio/flac \
+			libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis
 EXTERNAL_CONFIGURE_OFF=	--disable-external-libs
 

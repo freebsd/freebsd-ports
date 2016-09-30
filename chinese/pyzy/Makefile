@@ -3,7 +3,7 @@
 
 PORTNAME=	pyzy
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +18,7 @@ BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		compiler:c++11-lib gmake libtool pkgconfig python:build shebangfix
+USES=		compiler:c++11-lib gettext-runtime gmake libtool pkgconfig python:build shebangfix
 SHEBANG_FILES=	data/db/android/create_db.py
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
