@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	memtest86+
-PORTVERSION=	4.20
-PORTREVISION=	2
+PORTVERSION=	5.01
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Stand-alone memory test for x86 architecture computers
 
+LICENSE=	GPLv2
+
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=	gmake dos2unix
+USES=	gmake
 ALL_TARGET=	all
 PORTDOCS=	*
 
-USE_GCC=	yes
+USE_GCC=	4.8
 
 # Please provide absolute path below (cannot be root)
 BOOT_DIR?=	/boot/opt
@@ -31,28 +32,12 @@ SERIAL_DESC=	Enable serial console at COM1/9600
 HISPEED_DESC=	Set COM1 serial console speed to 115200
 
 ISO_PLIST_FILES=	${DATADIR}/mt${PORTVERSION:C/\.//}.iso
+ISO_BUILD_DEPENDS=	genisoimage:sysutils/genisoimage
+ISO_ALL_TARGET=	iso
 BOOT_PLIST_FILES=	${BOOT_DIR}/memtest86+
 BOOT_PLIST_DIRS=	${BOOT_DIR}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBOOT}
-SUB_FILES=	pkg-message
-SUB_LIST+=	BOOT_DIR=${BOOT_DIR}
-.endif
-
-.if ${PORT_OPTIONS:MISO}
-BUILD_DEPENDS+=	mkisofs:sysutils/cdrtools
-ALL_TARGET+=	iso
-.endif
-
-.if ${PORT_OPTIONS:MSERIAL}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h
-
-.if ${PORT_OPTIONS:MHISPEED}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h-115200
-.endif
-.endif	# WITH_SERIAL
+BOOT_SUB_FILES=	pkg-message
+BOOT_SUB_LIST+=	BOOT_DIR=${BOOT_DIR}
 
 pre-fetch:
 .if !defined(PACKAGE_BUILDING)
@@ -63,8 +48,16 @@ pre-fetch:
 	@${ECHO} "build ISO image with custom tweaks in memtest86+ code."
 .endif
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+.if ${PORT_OPTIONS:MSERIAL}
+	${REINPLACE_CMD} -e 's|SERIAL_CONSOLE_DEFAULT 0|SERIAL_CONSOLE_DEFAULT 1|' ${WRKSRC}/config.h
+. if ${PORT_OPTIONS:MHISPEED}
+	${REINPLACE_CMD} -e 's|9600|115200|' ${WRKSRC}/config.h
+. endif
+.endif
 
 do-install:
 .if ${PORT_OPTIONS:MISO}
@@ -82,5 +75,3 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
-
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
