@@ -3,8 +3,7 @@
 
 PORTNAME=	libvpx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -18,13 +17,13 @@ BUILD_DEPENDS=	yasm:devel/yasm
 USE_GITHUB=	yes
 GH_ACCOUNT=	webmproject
 
-USES=		compiler cpe gmake perl5 shebangfix tar:bzip2
+USES=		compiler:c11 cpe gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
+OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT TEST THREADS
 OPTIONS_DEFAULT=MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
 OPTIONS_EXCLUDE_aarch64=RUNTIME
 OPTIONS_EXCLUDE_armv6=	RUNTIME
@@ -54,15 +53,12 @@ RUNTIME_CONFIGURE_ON=	--enable-runtime-cpu-detect
 SHARED_CONFIGURE_ON=	--enable-shared
 SIZE_LIMIT_CONFIGURE_ON=--size-limit=${SIZE_LIMIT}
 SIZE_LIMIT?=		16384x16384 # Chromium; Firefox has 4000x3000
+TEST_CONFIGURE_OFF=	--disable-unit-tests
 THREADS_CONFIGURE_OFF=	--disable-multithread
 
 SHEBANG_FILES=	build/make/ads2gas.pl
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1000000
-CONFIGURE_ARGS+=	--disable-unit-tests
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--target=x86_64-linux-gcc
@@ -76,7 +72,6 @@ CONFIGURE_ARGS+=	--target=ppc32-linux-gcc
 CONFIGURE_ARGS+=	--target=ppc64-linux-gcc
 .elif ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--target=sparc64-linux-gcc
-USES:=			${USES:Ncompiler*} compiler:c++11-lib
 .elif ${ARCH} == "aarch64"
 CONFIGURE_ARGS+=	--target=arm64-linux-gcc
 .elif ${ARCH} == "armv6"
@@ -84,16 +79,6 @@ CONFIGURE_ARGS+=	--target=armv6-linux-gcc --cpu=armv6
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-build_make_Makefile
 .else
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
-.endif
-
-.include <bsd.port.pre.mk>
-
-# Workaround for GCC in 9.x post r260075
-# OSVERSION taken from r260135, the closest OSVERSION
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 902505
-. if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} == 42
-CFLAGS+=	-flax-vector-conversions
-. endif
 .endif
 
 post-patch:
@@ -104,4 +89,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vpx*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvpx.so.*.*.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
