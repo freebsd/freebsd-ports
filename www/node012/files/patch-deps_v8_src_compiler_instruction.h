@@ -1,4 +1,4 @@
---- deps/v8/src/compiler/instruction.h.orig	2016-03-31 23:26:45 UTC
+--- deps/v8/src/compiler/instruction.h.orig	2016-09-27 17:30:02 UTC
 +++ deps/v8/src/compiler/instruction.h
 @@ -722,7 +722,7 @@ OStream& operator<<(OStream& os, const C
  
