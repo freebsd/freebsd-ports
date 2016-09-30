@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foolscap
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	devel python
 MASTER_SITES=   http://foolscap.lothar.com/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
