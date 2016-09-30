@@ -8626,7 +8626,7 @@ net/asterisk||2016-09-12|Has expired: Asterisk 1.8 reached EOL on 2015-10-21
 www/mediawiki124||2016-09-13|Has expired: EOL upstream
 sysutils/rsyslog7|sysutils/rsyslog8|2016-09-13|Has expired: Upgrade to rsyslog 8
 www/moodle28||2016-09-13|Has expired: EOL upstream
-devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack.
+devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack
 textproc/asciinema|textproc/py3-asciinema|2016-09-13|Has expired: use textproc/py3-asciinema instead
 x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulness unclear
 security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project
@@ -8647,3 +8647,4 @@ graphics/evas_generic_loaders-xcf|devel/efl|2016-09-27|Merged into devel/efl
 multimedia/emotion_generic_players-vlc|devel/efl|2016-09-27|Merged into devel/efl
 x11-toolkits/elementary|devel/efl|2016-09-27|Merged into devel/efl
 devel/google-sparsehash|devel/sparsehash|2016-09-30|Moved to GitHub under a different name
+games/fgrun||2016-09-30|Incompatible with latest flightgear
