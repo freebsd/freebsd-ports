@@ -4,7 +4,7 @@
  }
  
  
-+#ifndef __FreeBSD__
++#if !defined __FreeBSD__ && !defined __DragonFly__
  int os_fdatasync(FILE *stream)
  {
  	if (!fflush(stream)) {

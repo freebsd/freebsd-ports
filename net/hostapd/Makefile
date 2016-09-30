@@ -14,7 +14,8 @@ LICENSE=	BSD3CLAUSE
 USES=		cpe gmake ssl
 CPE_VENDOR=	w1.f1
 BUILD_WRKSRC=	${WRKSRC}/hostapd
-CONFIGURE_ARGS=	--with-ssl-dir=${OPENSSLBASE}
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	sbin/hostapd sbin/hostapd_cli man/man1/hostapd_cli.1.gz \
 		man/man8/hostapd.8.gz
