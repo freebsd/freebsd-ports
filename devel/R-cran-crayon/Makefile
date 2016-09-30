@@ -1,0 +1,16 @@
+# Created by: Pedro Giffuni
+# $FreeBSD$
+
+PORTNAME=	crayon
+DISTVERSION=	1.3.2
+CATEGORIES=	devel
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+
+MAINTAINER=	pfg@FreeBSD.org
+COMMENT=	Colored Terminal Output
+
+LICENSE=	MIT
+
+USES=		cran:auto-plist
+
+.include <bsd.port.mk>
