@@ -41,6 +41,7 @@ libexec/cups/filter/gstoraster
 %%BRAILLE%%libexec/cups/filter/imagetoubrl
 %%BRAILLE%%libexec/cups/filter/imageubrltoindexv3
 %%BRAILLE%%libexec/cups/filter/imageubrltoindexv4
+libexec/cups/filter/mupdftoraster
 %%IJS%%libexec/cups/filter/pdftoijs
 libexec/cups/filter/pdftoopvp
 libexec/cups/filter/pdftopdf
@@ -96,6 +97,8 @@ share/cups/drv/cupsfilters.drv
 %%BRAILLE%%share/cups/mime/braille.convs
 %%BRAILLE%%share/cups/mime/braille.types
 share/cups/mime/cupsfilters-ghostscript.convs
+share/cups/mime/cupsfilters-mupdf.convs
+share/cups/mime/cupsfilters-poppler.convs
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
 %%BRAILLE%%share/cups/ppdc/braille.defs
