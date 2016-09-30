@@ -11,10 +11,14 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Chart Construction Kit
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		zip
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/JCCKit
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
@@ -23,9 +27,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in LICENSE.txt README.html docs
-	${CP} -R ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+
+do-install-DOCS-on:
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "README.html docs" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
