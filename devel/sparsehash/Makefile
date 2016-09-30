@@ -1,28 +1,26 @@
 # Created by: Vasil Dimov <vd@datamax.bg>
 # $FreeBSD$
 
-PORTNAME=	google-sparsehash
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTNAME=	sparsehash
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/vd/${PORTNAME}
-PROJECTHOST=	sparsehash
-DISTNAME=	sparsehash-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Extremely memory-efficient hash_map implementation
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD3CLAUSE
+
+USE_GITHUB=	yes
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's|^pkgconfigdir = .*|pkgconfigdir = ${LOCALBASE}/libdata/pkgconfig|' \
+		's|^pkgconfigdir = .*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
 post-patch-DOCS-on:

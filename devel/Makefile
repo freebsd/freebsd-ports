@@ -767,7 +767,6 @@
     SUBDIR += goffice010
     SUBDIR += google-gdata
     SUBDIR += google-perftools
-    SUBDIR += google-sparsehash
     SUBDIR += google-styleguide
     SUBDIR += googlemock
     SUBDIR += googletest
@@ -5376,6 +5375,7 @@
     SUBDIR += sparc64-gcc
     SUBDIR += sparc64-xtoolchain-gcc
     SUBDIR += spark
+    SUBDIR += sparsehash
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spice-protocol
