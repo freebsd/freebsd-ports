@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	barman
-DISTVERSION=	1.6.1
+DISTVERSION=	2.0
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
@@ -31,11 +31,21 @@ USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	tutorial.pdf
 
+.include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER:M9\.[12345]}
+PGUSER=		pgsql
+.else
+PGUSER=		postgres
+.endif
+
 post-extract:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/
 
 post-patch:
 	${SED} -i -e "s@%%PREFIX%%@${PREFIX}@" ${WRKSRC}/barman/config.py
+	${SED} -i -e "s@%%PREFIX%%@${PREFIX}@" ${WRKSRC}/doc/barman.conf
+	${SED} -i -e "s@%%PGUSER%%@${PGUSER}@" ${WRKSRC}/doc/barman.5
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -43,4 +53,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/barman.conf ${STAGEDIR}${ETCDIR}/barman.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
