@@ -3,6 +3,7 @@
 
 PORTNAME=	toxic
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
