@@ -19,6 +19,8 @@ BUILD_DEPENDS=	flex>=2.5.31:textproc/flex
 BROKEN_RUBY21=	yes
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
+DEPRECATED=	Broken will all supported versions of Ruby
+EXPIRATION_DATE=	2016-10-01
 
 USES=		perl5
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
