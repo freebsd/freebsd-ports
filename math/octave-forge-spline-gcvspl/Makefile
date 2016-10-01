@@ -10,6 +10,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 BROKEN=		does not build with octave-4.0.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOME=${WRKSRC}

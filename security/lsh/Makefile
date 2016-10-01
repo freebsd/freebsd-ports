@@ -18,6 +18,8 @@ LIB_DEPENDS=	liboop.so:devel/liboop \
 		libnettle.so:security/nettle
 
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 BROKEN_FreeBSD_9=	does not build
 BROKEN_sparc64=	fails to compile: unexpected identifier
 

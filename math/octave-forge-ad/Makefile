@@ -19,5 +19,7 @@ USES=		dos2unix
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 BROKEN=		doesn't build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 .include <bsd.port.mk>
