@@ -90,6 +90,8 @@ NONFREE_CMAKE_BOOL=	BUILD_opencv_nonfree
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 OPENEXR_CMAKE_BOOL=	WITH_OPENEXR
 
+OPENGL_LIB_DEPENDS=	${PORT_OPTIONS:MGTK2:C,.+,libgtkglext-x11-1.0.so:x11-toolkits/gtkglext,}
+OPENGL_USE=		${PORT_OPTIONS:MQT4:S,$,=opengl,}
 OPENGL_CMAKE_BOOL=	WITH_OPENGL
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
@@ -120,14 +122,6 @@ PERFORMANCE_DESC=	Performance enhancing libraries
 TBB_DESC=		TBB support
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MOPENGL}
-LIB_DEPENDS+=		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
-.endif
-
-.if ${PORT_OPTIONS:MQT4} && ${PORT_OPTIONS:MOPENGL}
-USE_QT4+=		opengl
-.endif
 
 .if ${PORT_OPTIONS:MSIMD}
 . if ${MACHINE_CPU:Msse}
