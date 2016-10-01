@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doas
-# When >5.9 comes out, change this to DISTVERSION
-PORTVERSION=	5.9p5
+PORTVERSION=	5.9p6
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -13,7 +12,7 @@ LICENSE=	ISCL
 USE_GITHUB=	yes
 GH_ACCOUNT=	slicer69
 GH_PROJECT=	doas
-GH_TAGNAME=	8bec4dc
+GH_TAGNAME=	045f56f
 
 USES=	gmake
 
