@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osc
-PORTVERSION=	0.155.0
+PORTVERSION=	0.155.1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -22,7 +22,8 @@ CPE_VENDOR=	suse
 CPE_PRODUCT=	opensuse_osc
 
 USES=		cpe python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
+PLIST_FILES=	bin/osc
 NO_ARCH=	yes
 
 PORTDOCS=	*
