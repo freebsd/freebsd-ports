@@ -291,6 +291,7 @@
     SUBDIR += remarp
     SUBDIR += resource-agents
     SUBDIR += riemann
+    SUBDIR += riemann-c-client
     SUBDIR += rotorouter
     SUBDIR += routers2
     SUBDIR += routers2-extensions
