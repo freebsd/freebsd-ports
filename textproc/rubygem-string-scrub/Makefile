@@ -10,6 +10,9 @@ COMMENT=	String\#scrub for Ruby 2.0.0 and 1.9.3
 
 LICENSE=	MIT
 
+DEPRECATED=	needed only for EOL versions of Ruby
+EXPIRATION_DATE=	2016-11-01
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes
