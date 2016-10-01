@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.23.6
+PORTVERSION=	0.24.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
