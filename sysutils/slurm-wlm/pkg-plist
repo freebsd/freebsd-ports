@@ -577,6 +577,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sponsors.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sprio.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/squeue.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/squeue_color.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sreport.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/srun.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/srun_cr.html
