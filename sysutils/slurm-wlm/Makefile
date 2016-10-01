@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	16.05.4
+PORTVERSION=	16.05.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig python:build ssl tar:bz2
+USES=		gmake libtool pkgconfig python:build readline ssl tar:bz2
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	CURL DOCS GTK2 HDF5 HWLOC IPMI MYSQL RRD
