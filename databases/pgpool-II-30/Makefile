@@ -3,7 +3,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3076/
 PKGNAMESUFFIX=	30
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake pgsql:9.2- libtool
+USES=		gmake pgsql:9.2 libtool
 USE_LDCONFIG=	yes
 
 CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-22-* pgpool-II-23-*
