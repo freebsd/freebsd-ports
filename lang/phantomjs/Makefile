@@ -19,6 +19,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libicui18n.so:devel/icu \
 		libpng.so:graphics/png
 
+BROKEN_sparc64=		does not link on sparc64
+BROKEN_FreeBSD_9_i386=	does not build
+
 PROJECTHOST=	phantomjs
 USES=		bison:build compiler:c++11-lang gmake gperf jpeg perl5 pkgconfig python:build zip
 USE_PERL5=	build
@@ -54,10 +57,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
