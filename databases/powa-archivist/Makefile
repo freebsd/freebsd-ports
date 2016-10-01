@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
 GH_TAGNAME=	REL_${PORTVERSION:S/./_/g}
 
-USES=		gmake pgsql
+USES=		gmake pgsql:9.4+
 WANT_PGSQL=	server contrib
 
 pre-patch:
