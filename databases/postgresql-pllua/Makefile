@@ -13,6 +13,9 @@ COMMENT=	PL/Lua procedural language for PostgreSQL database
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired PostgreSQL 9.1
+EXPIRATION_DATE=	2016-10-08
+
 USES=		gmake lua pgsql:9.1-
 INSTALL_TARGET=	install-strip
 
