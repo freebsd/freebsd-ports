@@ -8657,6 +8657,5 @@ security/nessus-libraries||2016-09-30|Has expired: Abandoned, consider using Ope
 security/nessus-plugins||2016-09-30|Has expired: Abandoned, consider using OpenVAS
 www/node010||2016-10-01|Has expired: Upstream has placed 0.10.x in maintenance mode, see https://github.com/nodejs/LTS
 databases/postgresql91-contrib||2016-10-01|Has expired: End-of-life is near
-databases/postgresql91-client||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-plpython||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-plperl||2016-10-01|Has expired: End-of-life is near
