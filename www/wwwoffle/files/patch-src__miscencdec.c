@@ -1,6 +1,6 @@
---- src/miscencdec.c.orig	Sun Nov 18 11:39:53 2001
-+++ src/miscencdec.c	Tue Feb 26 21:03:13 2002
-@@ -35,7 +35,7 @@
+--- src/miscencdec.c.orig	2016-02-26 15:58:08 UTC
++++ src/miscencdec.c
+@@ -31,7 +31,7 @@
  #endif
  
  #include "misc.h"
