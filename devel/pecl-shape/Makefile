@@ -12,6 +12,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension that wraps libshape
 
+DEPRECATED=	Works only with EOL php 5.5
+EXPIRATION_DATE=	2016-10-20
+
 LICENSE=	PHP30
 
 LIB_DEPENDS=	libshp.so:devel/shapelib
