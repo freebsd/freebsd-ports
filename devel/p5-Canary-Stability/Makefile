@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	Canary-Stability
-PORTVERSION=	2011
+PORTVERSION=	2012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Checks what version of perl you're running
+COMMENT=	Checks what version of perl you're running and then complains about it
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
