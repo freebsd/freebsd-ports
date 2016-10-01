@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sfml
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sfml-dev.org/download/sfml/${PORTVERSION}/
 DISTNAME=	SFML-${PORTVERSION}-sources
@@ -11,13 +10,22 @@ DISTNAME=	SFML-${PORTVERSION}-sources
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 
-LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
-		libfreetype.so:print/freetype2
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libfreetype.so:print/freetype2 \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libxcb-image.so:x11/xcb-util-image
+
+BROKEN_FreeBSD_9=	does not build
 
 USES=		cmake dos2unix jpeg openal:al zip:infozip
+CMAKE_ARGS=	-DSFML_INSTALL_PKGCONFIG_FILES=ON
 DOS2UNIX_FILES=	CMakeLists.txt
-USE_XORG=	x11 xrandr
-USE_GL=		gl glew
+USE_XORG=	x11 xcb
+USE_GL=		gl
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SFML-${PORTVERSION}
