@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyscss
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,9 @@ COMMENT=	Compiler for SCSS flavor of the Sass language
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34 \
+		${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
