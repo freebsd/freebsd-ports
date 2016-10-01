@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	7.18
+PORTVERSION=	7.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,6 @@ RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.70:devel/p5-ExtUtils-Manifest
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d; /my::bundles/d' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e '/^bundled\//d' ${WRKSRC}/MANIFEST
-	@${RM} -fr ${WRKSRC}/bundled/
+	@${RM} -r ${WRKSRC}/bundled/
 
 .include <bsd.port.post.mk>
