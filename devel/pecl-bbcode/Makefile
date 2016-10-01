@@ -12,6 +12,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension which allows quick and efficient BBCode Parsing
 
+DEPRECATED=	Works only with EOL php 5.5
+EXPIRATION_DATE=	2016-10-20
+
 LICENSE=	PHP301 BSD3CLAUSE
 LICENSE_COMB=	multi
 

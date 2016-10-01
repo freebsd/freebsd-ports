@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADOdb Extension
 
+DEPRECATED=	Works only with EOL php 5.5
+EXPIRATION_DATE=	2016-10-20
+
 WRKSRC=		${WRKDIR}/adodb-${PORTVERSION:S/.//}
 
 USES=		dos2unix php:ext zip

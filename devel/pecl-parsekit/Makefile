@@ -13,6 +13,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Extension for opcodes runtime analysis
 
+DEPRECATED=	Works only with EOL php 5.5
+EXPIRATION_DATE=	2016-10-20
+
 LICENSE=	PHP301
 
 USES=		php:ext
