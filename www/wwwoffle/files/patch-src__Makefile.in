@@ -1,6 +1,6 @@
---- src/Makefile.in~	Wed Feb  1 04:02:32 2006
-+++ src/Makefile.in	Mon Apr  3 10:21:07 2006
-@@ -140,7 +140,7 @@
+--- src/Makefile.in.orig	2010-12-28 10:04:45 UTC
++++ src/Makefile.in
+@@ -140,7 +140,7 @@ WWWOFFLE_OBJ=wwwoffle.o \
  	     document.o html.o css.o xml.o vrml.o javaclass.o \
  	     configrdwr.o configmisc.o configdata.o configfunc.o \
  	     io.o iopriv.o iozlib.o iognutls.o iochunk.o \
@@ -9,7 +9,7 @@
  
  wwwoffle : $(WWWOFFLE_OBJ)
  	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
-@@ -156,7 +156,7 @@
+@@ -156,7 +156,7 @@ WWWOFFLED_OBJ=wwwoffled.o wwwoffles.o \
  	      parse.o purge.o refresh.o spool.o \
  	      configrdwr.o configmisc.o configdata.o configfunc.o configedit.o \
  	      io.o iopriv.o iozlib.o iognutls.o iochunk.o \
@@ -18,7 +18,7 @@
  
  wwwoffled : $(WWWOFFLED_OBJ)
  	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
-@@ -170,7 +170,7 @@
+@@ -170,7 +170,7 @@ WWWOFFLE_TOOLS_OBJ=wwwoffle-tools.o \
  	           parse.o \
  	           configrdwr.o configmisc.o configdata.o configfunc.o \
  	           io.o iopriv.o iozlib.o iognutls.o iochunk.o \
@@ -27,7 +27,7 @@
  
  wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
  	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
-@@ -249,7 +249,6 @@
+@@ -249,7 +249,6 @@ certificates.o     : certificates.c     
  sockets.o          : sockets.c          autoconfig.h                        errors.h          sockets.h                                                                        \
                       sockets4.c sockets6.c
  

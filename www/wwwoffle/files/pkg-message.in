@@ -1,7 +1,3 @@
-NOTES:
-
-Please copy %%WWWOFFLE_SPOOL%%/wwwoffle.conf.install to
-%%WWWOFFLE_SPOOL%%/wwwoffle.conf, and edit the copy as needed.
 
 If you are upgrading from an old version of wwwoffle, you may need to
 convert the cache directory structure to work with the new version.  You
