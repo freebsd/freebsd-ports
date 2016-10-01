@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 BROKEN=		does not build with octave-4.0.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

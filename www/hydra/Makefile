@@ -14,6 +14,8 @@ COMMENT=	High performance multi-threaded web server
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 BROKEN=		Needs to be ported to GnuTLS 3.4; abandoned upstream
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 USES=		perl5 pkgconfig shebangfix
 SHEBANG_FILES=	src/webindex.pl

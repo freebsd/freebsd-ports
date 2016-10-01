@@ -14,6 +14,9 @@ COMMENT=	DeforaOS desktop screensaver
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on broken and expiring x11/deforaos-panel
+EXPIRATION_DATE=	2016-11-01
+
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop \
 		libXss.so:x11/libXScrnSaver

@@ -12,6 +12,9 @@ COMMENT=	Configuration-based Console UI Framework
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on broken and expiring devel/py-snack
+EXPIRATION_DATE=	2016-11-01
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snack>0:devel/py-snack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
