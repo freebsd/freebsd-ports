@@ -13,6 +13,8 @@ COMMENT=	Not Eriks Windowing Toolkit Python bindings
 LICENSE=	GPLv2
 
 BROKEN=		conflicts with devel/newt
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 LIB_DEPENDS=	libslang.so:devel/libslang2 \
 		libpopt.so:devel/popt \

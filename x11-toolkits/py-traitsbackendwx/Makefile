@@ -13,6 +13,8 @@ MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Wx backend for TraitsGUI
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.2.0:devel/py-traits
 RUN_DEPENDS:=	${BUILD_DEPENDS}
