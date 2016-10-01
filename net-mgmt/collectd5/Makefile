@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -62,7 +62,7 @@ PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
 RABBITMQ_DESC=		Enable rabbitmq-based plugins
 REDIS_DESC=		Enable redis-based plugins
-RIEMANN_DESC=		Enable write_riemann plugin (via protobuf-c)
+RIEMANN_DESC=		Enable write_riemann plugin (via riemann-c-client)
 ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
@@ -224,7 +224,7 @@ REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENABLE=		redis write_redis
 REDIS_CONFIGURE_WITH=		libhiredis=${LOCALBASE}
 
-RIEMANN_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c
+RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client
 RIEMANN_CONFIGURE_ENABLE=	write_riemann
 
 ROUTEROS_LIB_DEPENDS=		librouteros.so:net/librouteros
