@@ -12,6 +12,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Php Interface to the Spread Toolkit API
 
+DEPRECATED=	Works only with EOL php 5.5
+EXPIRATION_DATE=	2016-10-20
+
 LICENSE=	PHP301
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:net/spread4
