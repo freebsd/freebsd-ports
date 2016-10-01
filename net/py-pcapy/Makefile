@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pcapy
-PORTVERSION=	0.10.9
+PORTVERSION=	0.10.10
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Python pcap extension
 
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USES=		python:2.7+ tar:tgz
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
