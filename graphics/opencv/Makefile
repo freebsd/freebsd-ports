@@ -5,7 +5,6 @@ PORTNAME?=	opencv
 PORTVERSION=	2.4.9
 PORTREVISION?=	8
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
@@ -13,7 +12,10 @@ COMMENT=	Open Source Computer Vision library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake pkgconfig zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	Itseez
+
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes
 
