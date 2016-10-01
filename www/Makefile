@@ -534,7 +534,6 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node010
     SUBDIR += node012
     SUBDIR += node4
     SUBDIR += nostromo
