@@ -201,13 +201,8 @@ post-install:
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/||})
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.   if defined(PYTHON_REL) && ${PYTHON_REL} >= 3000
-	cd ${WRKSRC}/samples/python && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/python
-.   else
 	cd ${WRKSRC}/samples/python2 && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/python2
-.   endif
 .endif
 .if defined(OCV_JAVA)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
