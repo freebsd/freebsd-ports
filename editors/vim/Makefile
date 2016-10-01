@@ -4,6 +4,7 @@
 PORTNAME=	vim
 PORTVERSION=	8.0.0019
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES?=	editors
 
 MAINTAINER?=	adamw@FreeBSD.org
@@ -38,6 +39,7 @@ MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
 REINPLACE_ARGS=	-i ''
 USES=		cpe iconv ncurses pkgconfig shebangfix
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
@@ -179,7 +181,7 @@ post-install:
 
 post-install-DEFAULT_VIMRC-on:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/gvimrc.sample
+	${SED} -e '/set nocompatible/d' ${FILESDIR}/vimrc > ${STAGEDIR}${ETCDIR}/gvimrc.sample
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
 
 post-install-NLS-off:
