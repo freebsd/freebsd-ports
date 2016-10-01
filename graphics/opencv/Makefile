@@ -58,7 +58,62 @@ OPTIONS_EXCLUDE=	DC1394 EXAMPLES GTK2 QT4 JASPER JPEG NONFREE OPENEXR \
 .endif
 
 DC1394_DESC=		IEEE 1394 camera support
+DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
+DC1394_CMAKE_BOOL=	WITH_1394
+
 EIGEN3_DESC=		Eigen 3 support
+EIGEN3_BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
+EIGEN3_CMAKE_BOOL=	WITH_EIGEN
+
+. if !defined(OCV_SLAVE)
+EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES INSTALL_C_EXAMPLES
+. endif
+EXAMPLES_PORTEXAMPLES=	*
+
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
+
+GSTREAMER_USE=		GSTREAMER=yes
+GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER
+
+GTK2_USE=		GNOME=gtk20
+GTK2_CMAKE_BOOL=	WITH_GTK
+
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
+JASPER_CMAKE_BOOL=	WITH_JASPER
+
+JPEG_USES=		jpeg
+JPEG_CMAKE_BOOL=	WITH_JPEG
+
+NONFREE_CMAKE_BOOL=	BUILD_opencv_nonfree
+
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_CMAKE_BOOL=	WITH_OPENEXR
+
+OPENGL_CMAKE_BOOL=	WITH_OPENGL
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CMAKE_BOOL=		WITH_PNG
+
+QT4_USE=		QT4=gui,moc_build,qmake_build,rcc_build,uic_build,qtestlib
+QT4_CMAKE_ON=		-DWITH_QT:STRING="4"
+QT4_CMAKE_OFF=		-DWITH_QT:BOOL=false
+
+TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_CMAKE_BOOL=		WITH_TBB
+TBB_CMAKE_ON=		-DTBB_INCLUDE_DIR:STRING="${LOCALBASE}/include"
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CMAKE_BOOL=	WITH_TIFF
+
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_CMAKE_BOOL=		WITH_V4L
+V4L_CMAKE_ON=		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
+XINE_CMAKE_BOOL=	WITH_XINE
+
 IMAGE_DESC=		Image format support
 NONFREE_DESC=		Build functionality that has possible limitations of use
 PERFORMANCE_DESC=	Performance enhancing libraries
@@ -66,100 +121,12 @@ TBB_DESC=		TBB support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDC1394}
-LIB_DEPENDS+=	libdc1394.so:multimedia/libdc1394
-CMAKE_ARGS+=	-DWITH_1394:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_1394:BOOL=Off
+.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MOPENGL}
+LIB_DEPENDS+=		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 .endif
 
-.if ${PORT_OPTIONS:MEIGEN3}
-BUILD_DEPENDS+=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
-CMAKE_ARGS+=	-DWITH_EIGEN:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_EIGEN:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PORTEXAMPLES=	*
-. if !defined(OCV_SLAVE)
-CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On \
-		-DINSTALL_C_EXAMPLES:BOOL=On
-. endif
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
-CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
-CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CMAKE_ARGS+=	-DWITH_GTK:BOOL=On
-. if ${PORT_OPTIONS:MOPENGL}
-LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
-. endif
-.else
-CMAKE_ARGS+=	-DWITH_GTK:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	libjasper.so:graphics/jasper
-CMAKE_ARGS+=	-DWITH_JASPER:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-USES+=		jpeg
-CMAKE_ARGS+=	-DWITH_JPEG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_JPEG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MNONFREE}
-CMAKE_ARGS+=	-DBUILD_opencv_nonfree:BOOL=On
-.else
-CMAKE_ARGS+=	-DBUILD_opencv_nonfree:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
-CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL}
-CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:graphics/png
-CMAKE_ARGS+=	-DWITH_PNG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4+=	gui moc_build qmake_build rcc_build uic_build qtestlib
-CMAKE_ARGS+=	-DWITH_QT:STRING="4"
-. if ${PORT_OPTIONS:MOPENGL}
-USE_QT4+=	opengl
-. endif
-.else
-CMAKE_ARGS+=	-DWITH_QT:BOOL=Off
+.if ${PORT_OPTIONS:MQT4} && ${PORT_OPTIONS:MOPENGL}
+USE_QT4+=		opengl
 .endif
 
 .if ${PORT_OPTIONS:MSIMD}
@@ -189,37 +156,6 @@ CMAKE_ARGS+=	-DENABLE_SSE:BOOL=Off \
 		-DENABLE_SSSE3:BOOL=Off \
 		-DENABLE_SSE41:BOOL=Off \
 		-DENABLE_SSE42:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MTBB}
-LIB_DEPENDS+=	libtbb.so:devel/tbb
-CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
-		-DTBB_INCLUDE_DIR:STRING="${LOCALBASE}/include"
-.else
-CMAKE_ARGS+=	-DWITH_TBB:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	libtiff.so:graphics/tiff
-CMAKE_ARGS+=	-DWITH_TIFF:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_TIFF:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MV4L}
-LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
-		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
-.else
-CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	libxine.so:multimedia/libxine
-CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
 .endif
 
 .if defined(OCV_CORE)
