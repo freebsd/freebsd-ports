@@ -2,9 +2,9 @@ bin/iec16022
 include/iec16022/iec16022ecc200.h
 include/iec16022/image.h
 include/iec16022/reedsol.h
-lib/libiec16022.so.0.0.0
-lib/libiec16022.so.0
-lib/libiec16022.so
 lib/libiec16022.a
+lib/libiec16022.so
+lib/libiec16022.so.0
+lib/libiec16022.so.0.1.0
 libdata/pkgconfig/libiec16022.pc
 man/man1/iec16022.1.gz
