@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_sparc64=	Emacs does not currently build on sparc64
 BROKEN_ia64=	Emacs does not currently build on ia64
 
-CONFLICTS=	emacs-[0-9]* emacs-nox11-[0-9]*
+CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
