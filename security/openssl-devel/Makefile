@@ -14,7 +14,6 @@ COMMENT=	SSL and crypto library (1.1.x)
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 CONFLICTS=	libressl-[0-9]* \
 		libressl-devel-[0-9]* \
 		openssl-[0-9]*
@@ -103,10 +102,6 @@ IGNORE=	the OpenSSL port can not be installed over the base version
 OPENSSLDIR?=	${PREFIX}/openssl
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
-OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
-OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
-OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-
 .include "version.mk"
 
 .if ${PORT_OPTIONS:MASM}
@@ -119,6 +114,10 @@ post-patch:
 		-e 's| install_html_docs$$||' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
+
+post-patch-MAN3-off:
+	${GREP} -L openssl_manual_section ${WRKSRC}/doc/crypto/*.pod | ${XARGS} ${RM}
+	${GREP} -L openssl_manual_section ${WRKSRC}/doc/ssl/*.pod | ${XARGS} ${RM}
 
 post-configure:
 	${REINPLACE_CMD} \
@@ -137,10 +136,6 @@ post-install-SHARED-on:
 .for i in capi padlock
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-1.1/${i}.so
 .endfor
-
-post-install-MAN3-off:
-	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
-	${REINPLACE_CMD} -e 's|^man/man3/.*||' ${TMPPLIST}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
