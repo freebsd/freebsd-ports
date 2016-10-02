@@ -164,5 +164,6 @@
 %%XPI_XPIDIR%%/logger-ui.html
 %%XPI_XPIDIR%%/options.xul
 %%XPI_XPIDIR%%/popup.html
+%%XPI_XPIDIR%%/processScript.js
 %%XPI_XPIDIR%%/settings.html
 %%XPI_XPIDIR%%/whitelist.html
