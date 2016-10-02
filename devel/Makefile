@@ -460,6 +460,7 @@
     SUBDIR += elixir-hex
     SUBDIR += elixir-inflex
     SUBDIR += elixir-lager_logger
+    SUBDIR += elixir-libring
     SUBDIR += elixir-math
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-nadia
