@@ -154,13 +154,15 @@ IGNORE=		BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI
 CMAKE_ARGS+=	-DWITHOUT_TOKUDB
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000012
+.if ${OPSYS} == FreeBSD
+. if ${OSVERSION} >= 1000012
 CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
-.else
+. else
 CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
-.if ${PORT_OPTIONS:MGSSAPI_BASE}
+.  if ${PORT_OPTIONS:MGSSAPI_BASE}
 IGNORE=	requires a Kerberos implementation from ports on FreeBSD < 10. Select GSSAPI_HEIMDAL or GSSAPI_MIT option
-.endif
+.  endif
+. endif
 .endif
 
 post-patch:
