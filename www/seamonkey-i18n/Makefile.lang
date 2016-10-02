@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 SEAMONKEY_I18N_ALL_=	be ca cs de en-GB en-US es-AR es-ES fi fr gl hu it  \
-			ja-JP-mac ja lt nb-NO nl pl pt-PT ru sk sv-SE tr uk \
+			ja lt nb-NO nl pl pt-PT ru sk sv-SE tr uk \
 			zh-CN zh-TW
 
 .if defined(SEAMONKEY_I18N_ALL) || (defined(PACKAGE_BUILDING) && !exists(${OPTIONS_FILE})) || make(makesum)
@@ -46,9 +46,6 @@ SEAMONKEY_I18N+=  hu
 .endif
 .if ${PORT_OPTIONS:MLANG_IT}
 SEAMONKEY_I18N+=  it
-.endif
-.if ${PORT_OPTIONS:MLANG_JP}
-SEAMONKEY_I18N+=  ja-JP-mac
 .endif
 .if ${PORT_OPTIONS:MLANG_JA}
 SEAMONKEY_I18N+=  ja

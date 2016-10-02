@@ -149,11 +149,18 @@ diff --git config/make-stl-wrappers.py config/make-stl-wrappers.py
 diff --git config/msvc-stl-wrapper.template.h config/msvc-stl-wrapper.template.h
 --- mozilla/config/msvc-stl-wrapper.template.h
 +++ mozilla/config/msvc-stl-wrapper.template.h
-@@ -7,16 +7,23 @@
+@@ -3,45 +3,33 @@
+  */
+ /* This Source Code Form is subject to the terms of the Mozilla Public
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
  
  #ifndef mozilla_${HEADER}_h
  #define mozilla_${HEADER}_h
  
+-#ifndef MOZ_HAVE_INCLUDED_ALLOC
+-#define MOZ_HAVE_INCLUDED_ALLOC
+-
  #if _HAS_EXCEPTIONS
  #  error "STL code can only be used with -fno-exceptions"
  #endif
@@ -171,9 +178,31 @@ diff --git config/msvc-stl-wrapper.template.h config/msvc-stl-wrapper.template.h
  #  include "mozilla/throw_msvc.h"
  #endif
  
- // Code might include <new> before other wrapped headers, but <new>
- // includes <exception> and so we want to wrap it.  But mozalloc.h
-@@ -66,9 +73,20 @@
+-// Code might include <new> before other wrapped headers, but <new>
+-// includes <exception> and so we want to wrap it.  But mozalloc.h
+-// wants <new> also, so we break the cycle by always explicitly
+-// including <new> here.
+-#include <${NEW_HEADER_PATH}>
+-
+-// See if we're in code that can use mozalloc.  NB: this duplicates
+-// code in nscore.h because nscore.h pulls in prtypes.h, and chromium
+-// can't build with that being included before base/basictypes.h.
+-#if !defined(XPCOM_GLUE) && !defined(NS_NO_XPCOM) && !defined(MOZ_NO_MOZALLOC)
+-#  include "mozilla/mozalloc.h"
+-#else
+-#  error "STL code can only be used with infallible ::operator new()"
+-#endif
+-#endif /* MOZ_HAVE_INCLUDED_ALLOC */
+-
+ #ifdef _DEBUG
+ // From
+ //   http://msdn.microsoft.com/en-us/library/aa985982%28VS.80%29.aspx
+ // and
+ //   http://msdn.microsoft.com/en-us/library/aa985965%28VS.80%29.aspx
+ // there appear to be two types of STL container checking.  The
+ // former is enabled by -D_DEBUG (which is implied by -MDd or -MTd), and
+ // looks to be full generation/mutation checked iterators as done by
+@@ -70,9 +58,20 @@
  //        but that's OK because we're not throwing them.
  #pragma warning( push )
  #pragma warning( disable : 4275 4530 )

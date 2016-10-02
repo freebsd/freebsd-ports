@@ -23,10 +23,10 @@ diff --git config/stl-headers config/stl-headers
  vector
  cassert
  climits
+ cmath
  cstdarg
  cstdio
  cstdlib
- cstring
 diff --git config/system-headers config/system-headers
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
