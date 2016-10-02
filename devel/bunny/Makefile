@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE LOCAL/ehaupt
 PROJECTHOST=	bunny-the-fuzzer
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
 
 LICENSE=	APACHE20
