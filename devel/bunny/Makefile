@@ -15,6 +15,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Superseded by a different project
+EXPIRATION_DATE=2017-01-22
 
 USES=		ssl tar:tgz
 LDFLAGS+=	-L${OPENSSLLIB}
