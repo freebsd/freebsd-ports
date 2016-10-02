@@ -1,5 +1,5 @@
---- src/include/cdflib.h.orig	2010-01-18 15:22:03.000000000 -0600
-+++ src/include/cdflib.h	2010-01-18 15:22:32.000000000 -0600
+--- src/include/cdflib.h.orig	2009-05-12 12:37:37 UTC
++++ src/include/cdflib.h
 @@ -375,8 +375,7 @@
  #elif defined(unix) && !defined(AIX) && !defined(Mach) && !defined(hpux) || \
      defined(__MINGW32__)

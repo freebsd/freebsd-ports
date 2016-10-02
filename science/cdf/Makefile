@@ -13,6 +13,11 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
+LICENSE=	NASA-G
+LICENSE_NAME=	NASA/Goddard Space Flight Center
+LICENSE_FILE=	${WRKSRC}/CDF_copyright.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		fortran ncurses
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
