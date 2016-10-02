@@ -87,7 +87,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 DATADIR=	${PREFIX}/share/mysql
 
 .ifdef USE_MYSQL
-.error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. This leads to a circular dependency. Please undefine and try again.
+.error You have 'USE_MYSQL' variable defined either in environment or in make(1) arguments. This leads to a circular dependency. Please undefine and try again.
 .endif
 
 CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
@@ -102,6 +102,9 @@ OPTIONS_SUB=		yes
 # MySQL-Client part
 USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/wsrep*
 .else
 # MySQL-Server part
 USES+=		mysql:101m
@@ -140,18 +143,14 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/mysql_config \
 		${STAGEDIR}${PREFIX}/bin/mysql_find_rows \
 		${STAGEDIR}${PREFIX}/bin/mysqlaccess
-	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
-		${STAGEDIR}/${PREFIX}/share/pkgconfig
+	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy \
+		${STAGEDIR}${PREFIX}/share/pkgconfig
 .endif # defined(CLIENT_ONLY)
 
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} != base && ${PORT_OPTIONS:MGSSAPI_BASE}
 IGNORE=		BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
-.endif
-
-.if ${OPSYS} == DragonFly
-CMAKE_ARGS+=	-DWITHOUT_TOKUDB
 .endif
 
 .if ${OPSYS} == FreeBSD
