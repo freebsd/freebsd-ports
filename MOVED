@@ -8659,3 +8659,6 @@ www/node010||2016-10-01|Has expired: Upstream has placed 0.10.x in maintenance m
 databases/postgresql91-contrib||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-plpython||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-plperl||2016-10-01|Has expired: End-of-life is near
+databases/postgresql91-pltcl||2016-10-02|Has expired: End-of-life is near
+databases/postgresql91-docs||2016-10-02|Has expired: End-of-life is near
+www/mediawiki125||2016-10-02|Has expired: EOL upstream
