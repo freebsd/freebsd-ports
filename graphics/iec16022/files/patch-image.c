@@ -1,0 +1,11 @@
+--- image.c.orig	2016-10-02 16:05:20 UTC
++++ image.c
+@@ -40,6 +40,8 @@ static inline unsigned htonl(unsigned i)
+ #include <zlib.h>
+ #endif
+ 
++#include <unistd.h>
++
+ static unsigned char const bbc[] = {
+ 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,	//
+ 	0x18, 0x18, 0x18, 0x18, 0x18, 0x00, 0x18, 0x00,	// !
