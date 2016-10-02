@@ -11,6 +11,11 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
+LICENSE=	IBM-OVDX-v1
+LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf			\
@@ -18,7 +23,7 @@ LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 
 USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 USES=		bison motif gmake libtool
-USE_GL=		gl
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
@@ -46,7 +51,7 @@ CONFIGURE_ARGS+=	--without-netcdf
 .endif
 
 .if defined(WITH_JAVA)
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
