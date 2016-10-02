@@ -1,5 +1,7 @@
-TIMESTAMP = 1474460414
+TIMESTAMP = 1475183915
 SHA256 (erlang/otp_src_19.1.tar.gz) = fed4cbbc1ee5cc8efc2b8f14c3db97bfde1de967703f5f9a95f8ab6852737e23
 SIZE (erlang/otp_src_19.1.tar.gz) = 68103074
 SHA256 (erlang/otp_doc_html_19.1.tar.gz) = 76c89aee1ac69b5107114b0065189101e3f42d53e929d8ef8f08b5c586f15930
 SIZE (erlang/otp_doc_html_19.1.tar.gz) = 34624316
+SHA256 (erlang/patch-otp-19.1.1) = 9944d1b09852585933cdffecec4a90c3ad3b20f99256f98419b160e81bf1b941
+SIZE (erlang/patch-otp-19.1.1) = 10342
