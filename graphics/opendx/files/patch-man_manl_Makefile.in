@@ -1,6 +1,6 @@
---- man/manl/Makefile.in-orig	2013-08-19 00:32:40.000000000 +0000
-+++ man/manl/Makefile.in	2013-08-19 00:33:00.000000000 +0000
-@@ -186,7 +186,7 @@
+--- man/manl/Makefile.in.orig	2016-09-28 02:20:42 UTC
++++ man/manl/Makefile.in
+@@ -186,7 +186,7 @@ install_sh = @install_sh@
  libdir = @libdir@
  libexecdir = @libexecdir@
  localstatedir = @localstatedir@
