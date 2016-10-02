@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	25.1-rc2
+DISTVERSION=	${EMACS_VER}.${EMACS_REV}
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	GNU_ALPHA/emacs/pretest
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -17,18 +16,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_sparc64=	Emacs does not currently build on sparc64
 BROKEN_ia64=	Emacs does not currently build on ia64
 
-CONFLICTS=	emacs24-[0-9]* emacs-nox11-[0-9]*
+CONFLICTS=	emacs-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	${PORTVERSION:R}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${EMACS_VER}
+USE_GITHUB=	yes
+GH_ACCOUNT=	emacs-mirror
+GH_TAGNAME=	25dca60d
 
+EMACS_VER=	25.2.50
+EMACS_REV=	20161001
 GNU_CONFIGURE=	yes
-USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
+USES=		autoreconf cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 CPE_VENDOR=	gnu
 
-SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/\
-		${CONFIGURE_TARGET}
+SUB_FILES+=	sources.el
+SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
+SUB_LIST+=	EMACS_VER=${EMACS_VER}
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gameuser=games:games
@@ -238,25 +242,22 @@ LDFLAGS+=-ltinfo
 
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
-	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e \
-		"s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
+
 ## stage-qa will give a warning, but don't pull in desktop-file-utils
 ## portlint -AC will give a warning about INSTALL_ICONS, but don't pull in those
 ## dependencies
-.if ! ${PORT_OPTIONS:MX11}
+post-patch-X11-off:
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' \
 		${WRKSRC}/etc/emacs.desktop
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MSOURCES}
+pre-configure:
+	@cd ${WRKSRC} && ./autogen.sh
+
+post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] \
 		${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKSRC}/sources.el \
+	${INSTALL_DATA} ${WRKDIR}/sources.el \
 		${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
-.endif
-	@${FIND} ${STAGEDIR}${PREFIX}/${INFO_PATH} -type f -name \
-		'*.gz' -exec ${GUNZIP_CMD} '{}' \;
 
 .include <bsd.port.post.mk>
