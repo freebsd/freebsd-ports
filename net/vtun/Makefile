@@ -3,7 +3,7 @@
 
 PORTNAME=	vtun
 PORTVERSION=	3.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -14,9 +14,8 @@ LICENSE=        GPLv2
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include \
-		-DHAVE_WORKING_VFORK -DHAVE_WORKING_FORK
-USES=		ssl
+CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
+USES=		ssl autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLINC} \
