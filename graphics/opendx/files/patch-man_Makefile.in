@@ -1,6 +1,6 @@
---- man/Makefile.in-orig	2013-08-19 00:29:56.000000000 +0000
-+++ man/Makefile.in	2013-08-19 00:30:29.000000000 +0000
-@@ -202,7 +202,7 @@
+--- man/Makefile.in.orig	2016-09-28 02:20:42 UTC
++++ man/Makefile.in
+@@ -202,7 +202,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  yakker = @yakker@

@@ -13,12 +13,12 @@ COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libtiff.so:graphics/tiff		\
-		libcdf.so:science/cdf
+		libcdf.so:science/cdf			\
+		libXp.so:x11/libXp
 
-USE_XORG=	xinerama xext xpm xmu sm ice
+USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 USES=		bison motif gmake libtool
-USE_GCC=	any
-USE_GL=		yes
+USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=	--without-netcdf
 .endif
 
 .if defined(WITH_JAVA)
+ONLY_FOR_ARCHS= i386
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
@@ -63,10 +64,6 @@ PLIST_SUB+=	JAVA="@comment "
 PLIST_SUB+=	UNAMEP=${ARCH}
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_JAVA) && ${ARCH} != "i386"
-BROKEN=		does not build
-.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
