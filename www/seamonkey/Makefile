@@ -14,14 +14,15 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
-		nss>=3.19.4:security/nss \
+		nss>=3.20.1:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
-		soundtouch>=1.8.0:audio/soundtouch \
-		harfbuzz>=0.9.42:print/harfbuzz \
-		graphite2>=1.2.4:graphics/graphite2 \
+		soundtouch>=1.9.0:audio/soundtouch \
+		harfbuzz>=1.0.3:print/harfbuzz \
+		graphite2>=1.3.4:graphics/graphite2 \
+		png>=1.6.17:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
-		libvpx>=1.3.0:multimedia/libvpx \
-		sqlite3>=3.8.9:databases/sqlite3 \
+		libvpx>=1.5.0:multimedia/libvpx \
+		sqlite3>=3.8.11.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
