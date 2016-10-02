@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
+DISTVERSIONPREFIX=	community-
 PKGNAMESUFFIX=	-community
 
 COMMENT=	Modern and interactive webmail - community edition
