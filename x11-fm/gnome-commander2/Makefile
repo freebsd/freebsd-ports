@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.4.8
-PORTREVISION=	2
+PORTVERSION=	1.4.9
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/gnome-commander/1.4
@@ -15,15 +14,21 @@ COMMENT=	File manager for Gnome2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique
+LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libpopt.so:devel/popt \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	meld:textproc/meld \
 		yelp:x11/yelp
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	gnomedocutils gnomeprefix gnomevfs2 intltool libgnomeui
+USE_GNOME=	cairo gdkpixbuf2 gnomedocutils gnomeprefix gnomevfs2 intltool libgnomeui
+USE_XORG=	ice sm
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 INSTALLS_OMF=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
