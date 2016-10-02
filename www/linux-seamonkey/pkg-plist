@@ -51,7 +51,6 @@ lib/%%APP_NAME%%/chrome/icons/default/places16.png
 lib/%%APP_NAME%%/chrome/icons/default/places48.png
 lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/components/components.manifest
-lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libsuite.so
 lib/%%APP_NAME%%/crashreporter
