@@ -2,6 +2,7 @@
 
 PORTNAME=	qdoc
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 PKGNAMEPREFIX=	qt5-
 
@@ -17,4 +18,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 PLIST_FILES=	${QT_BINDIR}/qdoc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-src_qdoc_qdocindexfiles.cpp
+.endif
+
+.include <bsd.port.post.mk>
