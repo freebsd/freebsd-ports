@@ -1,5 +1,5 @@
---- ./realpath.c.orig	2012-11-28 11:58:06.000000000 +0100
-+++ ./realpath.c	2012-11-28 11:58:22.000000000 +0100
+--- realpath.c.orig	2012-08-05 13:18:08 UTC
++++ realpath.c
 @@ -6,7 +6,7 @@
  #include <fcntl.h>
  #include <string.h>
