@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc
 
-UBOOT_VERSION?=	2016.07
+UBOOT_VERSION?=	2016.09
 BOARD_CONFIG?=	A20-Olimex-SOM-EVB_defconfig
 MODEL?=		olimex-a20-som-evb
 
