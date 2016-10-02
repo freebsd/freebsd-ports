@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	nyancat
-PORTVERSION=	1.2.1
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	net games
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Animated telnet server that renders a loop of the nyan cat animation
+
+LICENSE=	NCSA
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	klange
