@@ -27,7 +27,6 @@ BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
 		zip:archivers/zip
-#		opus>=1.1:audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
@@ -44,12 +43,11 @@ MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
 		--enable-application=suite
 
-USE_MOZILLA=	-opus
+USE_MOZILLA=	# empty
 MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
 
-OPTIONS_EXCLUDE=GSTREAMER LOGGING
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
