@@ -1,6 +1,6 @@
---- src/tests/Makefile.orig	Thu May 12 19:12:49 2005
-+++ src/tests/Makefile	Fri Jan 27 22:20:32 2006
-@@ -31,16 +31,16 @@
+--- src/tests/Makefile.orig	2009-05-12 18:09:12 UTC
++++ src/tests/Makefile
+@@ -33,16 +33,16 @@
  SHELL=/bin/sh
  NULL=true
  
