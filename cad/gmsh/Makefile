@@ -13,6 +13,7 @@ COMMENT?=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
