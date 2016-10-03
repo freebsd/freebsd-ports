@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_LDCONFIG=	yes
-WANT_GSTREAMER=	yes
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
