@@ -15,11 +15,12 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jehops
 
-PLIST_FILES=	bin/zap %%PORTDOCS%%%%DOCSDIR%%/README.org
+PLIST_FILES=	bin/zap
+PORTDOCS=	README.org
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.org ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
