@@ -2,7 +2,7 @@
 
 PORTNAME=	auto-multiple-choice
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/auto-qcm/
 DISTNAME=	auto-multiple-choice_${PORTVERSION}_precomp
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libnetpbm.so:graphics/netpbm \
-		libopencv_highgui.so:graphics/opencv \
+		libopencv_highgui.so:graphics/opencv2 \
 		libpangocairo-1.0.so:x11-toolkits/pango \
 		libpoppler-glib.so:graphics/poppler-glib
 RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

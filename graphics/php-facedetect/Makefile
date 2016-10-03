@@ -3,7 +3,7 @@
 
 PORTNAME=	facedetect
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	php-
 
@@ -12,7 +12,7 @@ COMMENT=	Face detection extension for PHP using OpenCV library
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libopencv_objdetect.so:graphics/opencv
+LIB_DEPENDS=	libopencv_objdetect.so:graphics/opencv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	infusion

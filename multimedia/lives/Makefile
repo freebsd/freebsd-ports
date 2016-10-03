@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liboil-0.3.so:devel/liboil \
 		libprojectM.so:graphics/libprojectm \
 		libvisual-0.4.so:graphics/libvisual04 \
-		libopencv_calib3d.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_calib3d.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libpng16.so:graphics/png \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \

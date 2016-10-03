@@ -2,7 +2,7 @@
 
 PORTNAME=	nomacs
 PORTVERSION=	2.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/nomacs/nomacs-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libsysinfo.so:devel/libsysinfo \
-		libopencv_core.so:graphics/opencv-core
+		libopencv_core.so:graphics/opencv2-core
 USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
 USE_QT4=	gui network linguist_build moc_build \
 		qmake_build rcc_build uic_build

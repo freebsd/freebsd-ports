@@ -2,6 +2,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gmic.eu/files/source/
 PKGNAMEPREFIX=	gimp-
@@ -13,7 +14,7 @@ COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libIlmImf.so:graphics/OpenEXR \
-		libopencv_legacy.so:graphics/opencv \
+		libopencv_legacy.so:graphics/opencv2 \
 		libMagick++-6.so:graphics/ImageMagick \
 		libavcodec.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3 \
