@@ -1,6 +1,8 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
+PORTREVISION=	1
+
 PKGNAMESUFFIX=	-occ
 
 MAINTAINER=	jrm@FreeBSD.org
