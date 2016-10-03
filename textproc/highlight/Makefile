@@ -13,7 +13,8 @@ COMMENT=	Customizable syntax highlighter
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		dos2unix gmake lua:52 pkgconfig tar:bzip2
+USES=		compiler:c++11-lib dos2unix gmake lua:52 pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
