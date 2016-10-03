@@ -1004,6 +1004,7 @@
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
     SUBDIR += scanmem
+    SUBDIR += scct
     SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen
