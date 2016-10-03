@@ -4190,6 +4190,7 @@
     SUBDIR += py-ioflo
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
+    SUBDIR += py-ipython_genutils
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
     SUBDIR += py-iterpipes
