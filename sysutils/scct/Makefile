@@ -17,7 +17,8 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jehops
 
-PLIST_FILES=	bin/scct %%PORTDOCS%%%%DOCSDIR%%/README.org
+PLIST_FILES=	bin/scct
+PORTDOCS=	README.org
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scct ${STAGEDIR}${PREFIX}/bin
