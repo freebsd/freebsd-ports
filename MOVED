@@ -8666,3 +8666,7 @@ graphics/opencv|graphics/opencv2|2016-10-03|Renamed
 graphics/opencv-core|graphics/opencv2-core|2016-10-03|Renamed
 graphics/opencv-java|graphics/opencv2-java|2016-10-03|Renamed
 graphics/py-opencv|graphics/py-opencv2|2016-10-03|Renamed
+databases/postgresql91-client||2016-10-03|Has expired: End-of-life is near
+databases/postgresql91-pgtcl||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
+databases/postgresql91-server||2016-10-03|Has expired: End-of-life is near
+databases/postgresql-pllua||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
