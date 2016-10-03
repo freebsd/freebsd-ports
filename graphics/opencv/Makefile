@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Itseez
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_LDCONFIG=	yes
