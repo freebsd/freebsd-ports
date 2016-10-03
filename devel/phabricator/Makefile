@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20151220
+PORTVERSION=	20161003
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	GD OPCACHE
 OPTIONS_DEFAULT=OPCACHE
 OPCACHE_DESC?=	Use OPcache to improve performance
 
-USES=		shebangfix
+USES=		php shebangfix
 SHEBANG_FILES=	externals/httpful/build \
 		externals/restful/build-phar \
 		scripts/install/install_rhel-derivs.sh \
@@ -44,7 +44,7 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	006321c
+GH_TAGNAME=	55a56c0
 
 PHP_DESTDIR=	lib/php/phabricator
 
