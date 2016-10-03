@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer opencv real time computer vision plugin

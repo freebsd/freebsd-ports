@@ -8662,3 +8662,7 @@ databases/postgresql91-plperl||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-pltcl||2016-10-02|Has expired: End-of-life is near
 databases/postgresql91-docs||2016-10-02|Has expired: End-of-life is near
 www/mediawiki125||2016-10-02|Has expired: EOL upstream
+graphics/opencv|graphics/opencv2|2016-10-03|Renamed
+graphics/opencv-core|graphics/opencv2-core|2016-10-03|Renamed
+graphics/opencv-java|graphics/opencv2-java|2016-10-03|Renamed
+graphics/py-opencv|graphics/py-opencv2|2016-10-03|Renamed
