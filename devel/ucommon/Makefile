@@ -12,7 +12,7 @@ COMMENT=	Very lightweight C++ design pattern library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES=		cmake:outsource pathfix pkgconfig
+USES=		compiler:c++11-lib cmake:outsource pathfix pkgconfig
 CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=ON \
 		-DCMAKE_INSTALL_BINDIR:STRING=bin/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:STRING=man
