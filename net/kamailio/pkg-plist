@@ -179,6 +179,7 @@ lib/kamailio/modules/xprint.so
 %%PRESENCE%%lib/kamailio/modules/pua_reginfo.so
 %%PRESENCE%%lib/kamailio/modules/pua_usrloc.so
 %%PRESENCE%%lib/kamailio/modules/rls.so
+%%DIALPLAN%%lib/kamailio/modules/dialplan.so
 %%PERL%%lib/kamailio/perl/Kamailio.pm
 %%PERL%%lib/kamailio/perl/Kamailio/Constants.pm
 %%PERL%%lib/kamailio/perl/Kamailio/LDAPUtils/LDAPConf.pm
