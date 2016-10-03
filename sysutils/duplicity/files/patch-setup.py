@@ -1,5 +1,5 @@
---- setup.py.orig	2016-03-05 09:59:07.250354000 +0100
-+++ setup.py	2016-03-05 10:02:48.940832000 +0100
+--- setup.py.orig	2016-08-20 19:13:49 UTC
++++ setup.py
 @@ -23,7 +23,6 @@
  import sys
  import os
@@ -8,7 +8,7 @@
  from setuptools.command.install import install
  from setuptools.command.sdist import sdist
  from distutils.command.build_scripts import build_scripts
-@@ -35,6 +34,9 @@
+@@ -35,6 +34,9 @@ if sys.version_info[:2] < (2, 6) or sys.
      sys.exit(1)
  
  incdir_list = libdir_list = None
@@ -18,7 +18,7 @@
  
  if os.name == 'posix':
      LIBRSYNC_DIR = os.environ.get('LIBRSYNC_DIR', '')
-@@ -47,15 +49,9 @@
+@@ -47,15 +49,9 @@ if os.name == 'posix':
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  
@@ -35,7 +35,7 @@
                ]
  
  top_dir = os.path.dirname(os.path.abspath(__file__))
-@@ -69,48 +65,9 @@
+@@ -69,48 +65,9 @@ for root, dirs, files in os.walk(os.path
                  ('share/locale/%s/LC_MESSAGES' % lang,
                   ["po/%s/duplicity.mo" % lang]))
  
@@ -84,7 +84,7 @@
          install.run(self)
  
  
-@@ -178,11 +135,7 @@
+@@ -177,11 +134,7 @@ setup(name="duplicity",
        url="http://duplicity.nongnu.org/index.html",
        packages=['duplicity',
                  'duplicity.backends',
@@ -97,7 +97,7 @@
        package_dir={"duplicity": "duplicity",
                     "duplicity.backends": "duplicity/backends", },
        ext_modules=[Extension("duplicity._librsync",
-@@ -193,10 +146,7 @@
+@@ -192,10 +145,7 @@ setup(name="duplicity",
        scripts=['bin/rdiffdir', 'bin/duplicity'],
        data_files=data_files,
        install_requires=['lockfile'],
