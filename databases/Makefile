@@ -654,16 +654,12 @@
     SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-libpqxx3
     SUBDIR += postgresql-odbc
-    SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-repmgr2
-    SUBDIR += postgresql91-client
-    SUBDIR += postgresql91-pgtcl
-    SUBDIR += postgresql91-server
     SUBDIR += postgresql92-client
     SUBDIR += postgresql92-contrib
     SUBDIR += postgresql92-docs

@@ -1,3 +1,0 @@
-lib/postgresql/pllua.so
-share/postgresql/extension/pllua--1.0.sql
-share/postgresql/extension/pllua.control
