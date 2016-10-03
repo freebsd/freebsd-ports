@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spice-gtk
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 USE_XORG=	pixman
 USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
-USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix python
+USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix python ssl localbase
 CPE_VENDOR=	redhat
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
@@ -31,15 +30,13 @@ CONFIGURE_ARGS+=	--with-python
 PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
 .endif
 
-CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} \
-		SSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
+SPICE_SSL_LIBS=	-L${OPENSSLLIB} -lcrypto -lssl
+CONFIGURE_ENV+=	SSL_CFLAGS="${SPICE_SSL_CFLAGS}" SSL_LIBS="${SPICE_SSL_LIBS}" \
+		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}"
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
 
