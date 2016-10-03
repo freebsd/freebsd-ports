@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0019
+PORTVERSION=	8.0.0021
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
-CATEGORIES?=	editors
+CATEGORIES=	editors
 
-MAINTAINER?=	adamw@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT?=	Improved version of the vi editor
 
 LICENSE=	VIM
