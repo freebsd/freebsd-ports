@@ -10,6 +10,7 @@ COMMENT=	Wrapper to mozc.el that offers modeless ("boil"ed) input style
 
 LICENSE=	BSD2CLAUSE
 
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz:japanese/mozc-el
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz:japanese/mozc-el
 
 GH_ACCOUNT=	tadanagao
