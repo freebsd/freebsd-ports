@@ -3,6 +3,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	5.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -21,7 +22,7 @@ NO_PACKAGE=	Needs to be compiled for specific CPU
 
 STRIP=		# empty
 USE_LDCONFIG=	yes
-BUILD_DEPENDS+=	mpicc:net/mpich2
+LIB_DEPENDS+=	libopa.so:net/mpich2
 USES=		fortran gmake pkgconfig
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
