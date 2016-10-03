@@ -10,6 +10,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
 
 LICENSE=	LGPL21
+CONFLICTS=	libcodec2-*
 
 LIB_DEPENDS=	libspeex.so:audio/speex
 
