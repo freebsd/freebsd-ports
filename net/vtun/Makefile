@@ -15,7 +15,7 @@ LICENSE=        GPLv2
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
-USES=		ssl autoreconf
+USES=		autoreconf ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLINC} \
