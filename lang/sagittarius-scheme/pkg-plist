@@ -351,6 +351,12 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/types.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uuid.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/connection.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/engine.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/engine/http.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/messages.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/x.509.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/json.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/message.scm
@@ -475,6 +481,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a132/sorting.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a133.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a133/vectors.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a134.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a134/ideque.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
@@ -572,6 +580,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/131.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/132.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/133.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/134.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
