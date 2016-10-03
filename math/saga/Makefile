@@ -3,6 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libjasper.so:graphics/jasper \
 		liblas.so:devel/liblas12 \
 		libodbc.so:databases/unixODBC \
-		libopencv_ml.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_ml.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libproj.so:graphics/proj \
 		libtbb.so:devel/tbb \
 		libtiff.so:graphics/tiff

@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -229,7 +229,7 @@ OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 OPENCL_CONFIGURE_ENABLE=	opencl
 
 # opencv
-OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv-core
+OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv2-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 # opengl
