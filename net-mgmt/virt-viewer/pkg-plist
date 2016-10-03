@@ -2,6 +2,7 @@ bin/remote-viewer
 bin/virt-viewer
 man/man1/remote-viewer.1.gz
 man/man1/virt-viewer.1.gz
+share/appdata/remote-viewer.appdata.xml
 share/applications/remote-viewer.desktop
 share/icons/hicolor/16x16/apps/virt-viewer.png
 share/icons/hicolor/22x22/apps/virt-viewer.png
@@ -108,10 +109,3 @@ share/mime/packages/virt-viewer-mime.xml
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/virt-viewer.mo
 share/mime/application/x-virt-viewer.xml
-%%DATADIR%%/ui/remote-viewer-connect.xml
-%%DATADIR%%/ui/virt-viewer-about.xml
-%%DATADIR%%/ui/virt-viewer-auth.xml
-%%DATADIR%%/ui/virt-viewer-guest-details.xml
-%%DATADIR%%/ui/virt-viewer-preferences.xml
-%%DATADIR%%/ui/virt-viewer-vm-connection.xml
-%%DATADIR%%/ui/virt-viewer.xml
