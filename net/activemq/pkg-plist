@@ -18,7 +18,7 @@
 %%DATADIR%%/lib/camel/camel-core-%%CAMELVERSION%%.jar
 %%DATADIR%%/lib/camel/camel-jms-%%CAMELVERSION%%.jar
 %%DATADIR%%/lib/camel/camel-spring-%%CAMELVERSION%%.jar
-%%DATADIR%%/lib/extra/mqtt-client-1.12.jar
+%%DATADIR%%/lib/extra/mqtt-client-1.13.jar
 %%DATADIR%%/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
 %%DATADIR%%/lib/geronimo-jms_1.1_spec-1.1.1.jar
 %%DATADIR%%/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
@@ -37,12 +37,12 @@
 %%DATADIR%%/lib/optional/activemq-pool-%%PORTVERSION%%.jar
 %%DATADIR%%/lib/optional/activemq-runtime-config-%%PORTVERSION%%.jar
 %%DATADIR%%/lib/optional/activemq-stomp-%%PORTVERSION%%.jar
-%%DATADIR%%/lib/optional/commons-beanutils-1.8.3.jar
+%%DATADIR%%/lib/optional/commons-beanutils-1.9.2.jar
 %%DATADIR%%/lib/optional/commons-codec-1.9.jar
 %%DATADIR%%/lib/optional/commons-collections-3.2.2.jar
 %%DATADIR%%/lib/optional/commons-dbcp2-2.1.1.jar
 %%DATADIR%%/lib/optional/commons-lang-2.6.jar
-%%DATADIR%%/lib/optional/commons-net-3.3.jar
+%%DATADIR%%/lib/optional/commons-net-3.5.jar
 %%DATADIR%%/lib/optional/commons-pool2-2.4.2.jar
 %%DATADIR%%/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
 %%DATADIR%%/lib/optional/guava-12.0.jar
@@ -70,7 +70,7 @@
 %%DATADIR%%/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 %%DATADIR%%/lib/optional/org.linkedin.util-core-1.4.0.jar
 %%DATADIR%%/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-%%DATADIR%%/lib/optional/proton-j-0.12.0.jar
+%%DATADIR%%/lib/optional/proton-j-0.14.0.jar
 %%DATADIR%%/lib/optional/scala-library-2.11.0.jar
 %%DATADIR%%/lib/optional/shiro-core-1.2.4.jar
 %%DATADIR%%/lib/optional/shiro-spring-1.2.4.jar
@@ -200,6 +200,7 @@
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteSubscriber.class
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/MoveMessage.class
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/PurgeDestination.class
+%%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/RetryMessage.class
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/SendMessage.class
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$1.class
 %%DATADIR%%/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$2.class
@@ -302,14 +303,6 @@
 %%DATADIR%%/webapps/api/WEB-INF/classes/jolokia-access.xml
 %%DATADIR%%/webapps/api/WEB-INF/web.xml
 %%DATADIR%%/webapps/favicon.ico
-%%DATADIR%%/webapps/fileserver/META-INF/LICENSE
-%%DATADIR%%/webapps/fileserver/META-INF/NOTICE
-%%DATADIR%%/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter$GuardedHttpServletRequest.class
-%%DATADIR%%/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter.class
-%%DATADIR%%/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/IOHelper.class
-%%DATADIR%%/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/RestFilter.class
-%%DATADIR%%/webapps/fileserver/WEB-INF/web.xml
-%%DATADIR%%/webapps/fileserver/index.html
 %%DATADIR%%/webapps/images/activemq-logo.png
 %%DATADIR%%/webapps/images/asf-logo.png
 %%DATADIR%%/webapps/images/big-bullet.png
@@ -508,7 +501,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/TopicPublisher.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/jndi.properties
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/log4j-jms.properties
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/other/perfharness/perfharness-activemq.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/Listener.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/Publisher.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/readme.md
