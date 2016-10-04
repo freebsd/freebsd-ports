@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gajim
-PORTVERSION=	0.16.5
+PORTVERSION=	0.16.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://gajim.org/downloads/0.16/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}nbxmpp>0:net-im/py-nbxmpp
 
 NO_ARCH=	yes
-USES=		cpe dos2unix gmake pathfix python:2 tar:bzip2
+USES=		cpe dos2unix gmake localbase pathfix python:2.7 tar:bzip2
 USE_GNOME=	intltool pygtk2
 USE_XORG=	x11 xext xscrnsaver
 
@@ -26,8 +26,6 @@ DOS2UNIX_FILES=	src/plugins/plugins_i18n.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	AVAHI CRYPTO DBUS DOCS GUPNP NLS SPELL
 OPTIONS_DEFAULT=DBUS SPELL
