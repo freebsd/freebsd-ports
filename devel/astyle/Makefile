@@ -13,22 +13,18 @@ COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
 LICENSE=	LGPL3
 
 ALL_TARGET=	astyle
-CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
-MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 USES=		compiler gmake iconv
 
-WRKSRC=		${WRKDIR}/astyle/build/gcc
+WRKSRC=		${WRKDIR}/astyle/build/${COMPILER_TYPE}
 
 OPTIONS_DEFINE=	DOCS
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},; \
-		s,\(CFLAGSr.*=.*\),\1 -I${LOCALBASE}/include,' \
+	@${REINPLACE_CMD} -e 's,\(CFLAGSr.*=.*\),\1 -I${LOCALBASE}/include,' \
 		${WRKSRC}/Makefile
 
 do-install:
-	${STRIP_CMD} ${WRKSRC}/bin/astyle
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/astyle/doc/* ${STAGEDIR}${DOCSDIR}
