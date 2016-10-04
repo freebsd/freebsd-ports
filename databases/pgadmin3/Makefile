@@ -3,7 +3,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.22.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/pgadmin3/release/v${PORTVERSION}/src
 DIST_SUBDIR=	postgresql
@@ -23,6 +23,7 @@ USE_GNOME=	libxml2 libxslt
 USE_WX=		3.0
 USE_CXXSTD=	c++11
 WX_COMPS=	wx
+INSTALLS_ICONS=	yes
 ICON_SIZES=	16 32
 
 PLIST_FILES=	bin/pgadmin3 share/applications/pgadmin3.desktop
