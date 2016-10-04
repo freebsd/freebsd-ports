@@ -5,7 +5,6 @@ PORTVERSION=	2.0.0
 PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ariya/phantomjs/downloads/
-PROJECTHOST=	phantomjs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	feld@FreeBSD.org
