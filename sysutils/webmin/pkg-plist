@@ -1013,6 +1013,7 @@ lib/webmin/authentic-theme/extensions/file-manager/rename.cgi
 lib/webmin/authentic-theme/extensions/file-manager/search.cgi
 lib/webmin/authentic-theme/extensions/sql.js
 lib/webmin/authentic-theme/extensions/sql.min.js
+lib/webmin/authentic-theme/help/file-manager.ca.html
 lib/webmin/authentic-theme/help/file-manager.html
 lib/webmin/authentic-theme/images/__logo.png
 lib/webmin/authentic-theme/images/after.gif
@@ -20970,8 +20971,8 @@ lib/webmin/shorewall6/up.cgi
 lib/webmin/smart-status/CHANGELOG
 lib/webmin/smart-status/action.cgi
 lib/webmin/smart-status/config
-lib/webmin/smart-status/config-CentOS-Linux-5.0-*
-lib/webmin/smart-status/config-Redhat-Enterprise-Linux-5.0-*
+lib/webmin/smart-status/config-CentOS-Linux-5.0-6.9
+lib/webmin/smart-status/config-Redhat-Enterprise-Linux-5.0-6.9
 lib/webmin/smart-status/config.info
 lib/webmin/smart-status/config.info.ca
 lib/webmin/smart-status/config.info.ca.UTF-8
