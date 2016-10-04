@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
