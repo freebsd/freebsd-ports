@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161004:
+  AFFECTS: mail/roundcube-carddav
+  AUTHOR:  gahr@FreeBSD.org
+
+  There is no upgrade path from the 1.0 version. You'll need to:
+
+  1. Log off from Roundcube.
+  2. Manually drop all carddav_* tables from your db backend.
+  3. Upgrade the mail/roundcube-carddav port.
+
+  The new tables will be created upon login. The CardDAV plugin will need to be
+  reconfigured.
+
+  If you are running php < 7.0.0, you'll need to set the plugin option:
+  $prefs['_GLOBAL']['suppress_version_warning'] = true;
+
+  See https://github.com/blind-coder/rcmcarddav/issues/165 for details.
+
 20160927:
   AFFECTS: emulators/ppsspp
   AUTHOR:  jbeich@FreeBSD.org
