@@ -4,14 +4,12 @@
 PORTNAME=	uchardet
 PORTVERSION=	0.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Universal charset detection library by Mozilla
 
 LICENSE=	MPL
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		cmake
 USE_LDCONFIG=	yes
