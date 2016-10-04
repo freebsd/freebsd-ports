@@ -49,14 +49,15 @@ DEBUG_CONFIGURE_ENABLE=	debuggable-stubs
 
 # XXX Convert into USES=android once more things depend on it
 NDK_DESC=		Build target stubs using Android NDK
-NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk,p7zip
+NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:7z \
+			https://dl.google.com/android/repository/:zip
 .if defined(ANDROID_NDK)
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
 .else
 NDK_DISTFILES=		${NDK_DISTFILES_${LINUX_ARCH}}
-NDK_DISTFILES_i386=	android-ndk-r10e-linux-x86.bin:ndk,p7zip
-NDK_DISTFILES_x86_64=	android-ndk-r11c-linux-x86_64.zip:ndk
+NDK_DISTFILES_i386=	android-ndk-r10e-linux-x86.bin:7z
+NDK_DISTFILES_x86_64=	android-ndk-r11c-linux-x86_64.zip:zip
 WRKSRC_ndk=		${WRKDIR}/${NDK_DISTFILES:R:C/(-[^-]+){2}$//}
 .endif
 NDK_USES=		7z:partial linux
