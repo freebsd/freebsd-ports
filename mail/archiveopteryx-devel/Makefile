@@ -3,7 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.99.20160129
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +21,7 @@ GH_ACCOUNT=	aox
 GH_PROJECT=	aox
 GH_TAGNAME=	e10c73a
 
-USES=		perl5 pgsql:9.1+ ssl tar:bzip2
+USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build
 WITH_PGSQL=	client
 
