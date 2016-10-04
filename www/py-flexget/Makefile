@@ -3,6 +3,7 @@
 
 PORTNAME=	flexget
 PORTVERSION=	2.2.22
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -32,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.2.1:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.3.2:www/py-flask-login \
 		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.7.0:www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}dateutil<=2.5.2:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.2:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing \
 		${PYTHON_PKGNAMEPREFIX}safe>=0.4:security/py-safe \
