@@ -5,6 +5,7 @@ PORTVERSION=	2.0.0
 PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ariya/phantomjs/downloads/
+PROJECTHOST=	phantomjs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	feld@FreeBSD.org
@@ -22,7 +23,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 BROKEN_sparc64=		does not link on sparc64
 BROKEN_FreeBSD_9_i386=	does not build
 
-PROJECTHOST=	phantomjs
 USES=		bison:build compiler:c++11-lang gmake gperf jpeg perl5 pkgconfig python:build zip
 USE_PERL5=	build
 USE_RUBY=	yes
@@ -32,7 +32,10 @@ PLIST_FILES=	bin/phantomjs
 #PATCH_DEBUG=	yes
 NO_CCACHE=	yes
 
-USE_XORG=	x11
+OPTIONS_DEFINE=	X11
+X11_USE=	XORG=x11
+
+.include <bsd.port.options.mk>
 
 # NOTE:
 #   build.sh --qtwebkit=system requires Qt 5.3.x.  We cannot use it.
