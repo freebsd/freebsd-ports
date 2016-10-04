@@ -14,7 +14,6 @@ COMMENT=	Direct Connect client shared library
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	eiskaltdcpp
 
 .if !defined (MASTERDIR)
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
