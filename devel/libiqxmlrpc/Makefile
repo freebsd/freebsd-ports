@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libiqxmlrpc
-PORTVERSION=	0.12.12
+PORTVERSION=	0.13.5
 PORTREVISION=	0
 CATEGORIES=	devel net
 MASTER_SITES=	SF
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CMAKE_ARGS_OFF=	-Dbuild_docs=off
+DOCS_CMAKE_OFF=	-Dbuild_docs=off
 
 USE_GNOME=	libxml2
 USES=		cmake tar:bzip2
