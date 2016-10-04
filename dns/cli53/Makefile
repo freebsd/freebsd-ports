@@ -2,19 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	cli53
-PORTVERSION=	0.4.4
+PORTVERSION=	0.8.5
 CATEGORIES=	dns
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython
+LICENSE=	MIT
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=  go>=1.5:lang/go
+
+USES=	go
 USE_GITHUB=	yes
 GH_ACCOUNT=	barnybug
+
+WRKSRC_SUBDIR=	cmd/cli53
+GO_PKGNAME=     github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/cli53
+PLIST_FILES=	bin/cli53
+
+post-extract:
+	@${MKDIR} ${GO_WRKSRC:H:H:H}
+	@${LN} -sf ${WRKSRC:H:H} ${GO_WRKSRC:H:H}
 
 .include <bsd.port.mk>
