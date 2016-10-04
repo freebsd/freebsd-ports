@@ -2,6 +2,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -46,7 +47,7 @@ NSC_IMPLIES=	PSPELL
 NSC_VARS=	use_php+=simplexml rcubecomp+=spellchecker.php
 PGSQL_VARS=	use_php+=pdo_pgsql
 PSPELL_VARS=	use_php+=pspell
-SQLITE_VARS=	use_php+=pdo_pgsql
+SQLITE_VARS=	use_php+=pdo_sqlite
 
 post-extract-NSC:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
