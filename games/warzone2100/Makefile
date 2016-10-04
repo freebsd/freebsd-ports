@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	warzone2100
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 
@@ -15,23 +15,23 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
 		libtheora.so:multimedia/libtheora \
 		libfribidi.so:converters/fribidi \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
-USES=		bison compiler:c++11-lang gmake localbase openal:al pkgconfig tar:xz # actually, old gcc fails on unknown -W flag
+USES=		bison compiler:c++11-lib gmake localbase openal:al pkgconfig ssl tar:xz
 GNU_CONFIGURE=	yes
-USE_GL=		glew glu
-USE_SDL=	sdl
-USE_QT4=	corelib network script gui moc_build
+USE_GL=		gl glu glew
+USE_SDL=	sdl2
+USE_XORG=	x11 xrandr
+USE_QT5=	core gui widgets script buildtools_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
-CONFIGURE_ENV=	PATH="${LOCALBASE}/bin:$$PATH" \
-		CCOMPILER="${CC}" \
-		CXXCOMPILER="${CXX}"
-REINPLACE_ARGS=	-i ''
+CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" \
+		LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -48,5 +48,9 @@ MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g; s|-R$$found_dir||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|./build_tools/autorevision|& -f|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/INSTALL_DATA.*warzone2100.appdata.xml/d' ${WRKSRC}/icons/Makefile.*
+
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/appdata
 
 .include <bsd.port.mk>
