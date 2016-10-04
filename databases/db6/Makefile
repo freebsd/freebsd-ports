@@ -63,9 +63,9 @@ DOCS_INSTALL_TARGET=	install_docs
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "aarch64" || ${ARCH:Marmv6*}
-# db6 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
-# and also bug #205001
+.if ${ARCH:Marm*} && empty(ARCH:Marmv6*)
+# db6 uses LDREX/STREX instructions for mutexes on ARM,
+# which are unavailable before ARMv6.
 CONFIGURE_ARGS+=	--enable-posixmutexes
 .endif
 
