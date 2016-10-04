@@ -11,7 +11,8 @@ MASTER_SITES=	http://www.libsdl.org/projects/smpeg/release/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
 
-LICENSE=	GPLv2
+LICENSE=	MIT LGPL20+
+LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -26,16 +27,11 @@ OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--enable-mmx
 
-.include <bsd.port.options.mk>
+PLAYMPEG_CONFLICTS_INSTALL=	smpeg
+PLAYMPEG_VARS=	LICENSE+=GPLv2+
 
-.if ${PORT_OPTIONS:MPLAYMPEG}
-CONFLICTS+=	smpeg
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MPLAYMPEG}
+post-patch-PLAYMPEG-off:
 	@${REINPLACE_CMD} -e '/^bin_PROGRAMS =/s/plaympeg$$(EXEEXT)// ; \
 		/^man_MANS =/s/plaympeg\.1//' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
