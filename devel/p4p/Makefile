@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p4p
-PORTVERSION=	2016.1.1404799
+PORTVERSION=	2016.1.1443785
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
