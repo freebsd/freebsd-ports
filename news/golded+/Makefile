@@ -5,20 +5,21 @@ PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
 PORTREVISION=	1
 CATEGORIES=	news mail
-MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots
-DISTNAME=	gps115-${SNAPDATE}
-SNAPDATE=	20110223
+MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/2016.03.22
+DISTNAME=	gpsrc-115-${SNAPDATE}
+EXTRACT_SUFX=	.tgz
+SNAPDATE=	20160322
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)
 
-USES=		gmake ncurses tar:bzip2
+USES=		gmake ncurses
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/golded-plus/${PORTNAME}
 
 MAN1=		golded.1 goldnode.1 rddt.1
 DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt\
-		tips.txt notework.rus tokencfg.txt tokentpl.txt goldnode.txt
+		tips.txt notework.rus
 PORTDOCS=	${DOCS} gold_ref.txt gold_usr.txt
 SUB_FILES=	pkg-message
 
@@ -31,7 +32,7 @@ post-patch:
 	@${SED}\
 		-e 's,^\(#define __GVER_VENDOR_NAME__\).*,\1 "",'\
 		-e 's,\(#define __GVER_VENDOR_FIDO__\).*,\1 "",'\
-		-e 's,\(#define __GVER_VENDOR_EMAIL__\).*,\1 "",'\
+		-e 's,\(#define __GVER_VENDOR_EMAIL__\).*,\1 "${MAINTAINER}",'\
 		-e 's,\(#define __GVER_RELEASENAME__\).*,\1 "Golded+ FreeBSD port",'\
 		-e 's,\(#define __GVER_POSTVERSION__\).*,\1 "-b${SNAPDATE}",'\
 		<${WRKSRC}/golded3/mygolded.__h >${WRKSRC}/golded3/mygolded.h
