@@ -15,6 +15,7 @@ BUILD_DEPENDS=	xml2-config:textproc/libxml2 \
 		intltoolize:textproc/intltool \
 		spice-protocol>=0.12.7:devel/spice-protocol
 LIB_DEPENDS=	libvirt.so:devel/libvirt \
+		libvirt-glib-1.0.so:devel/libvirt-glib \
 		libgtk-vnc-2.0.so:net/gtk-vnc \
 		libspice-client-glib-2.0.so:deskutils/spice-gtk
 
