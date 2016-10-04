@@ -4,7 +4,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com

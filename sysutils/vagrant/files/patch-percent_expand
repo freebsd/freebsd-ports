@@ -15,3 +15,14 @@ index faa965c..243ce9d 100644
            end
          end
  
+--- plugins/provisioners/ansible/provisioner/host.rb.orig
++++ plugins/provisioners/ansible/provisioner/host.rb
+@@ -229,7 +229,7 @@
+           # Multiple Private Keys
+           unless !config.inventory_path && @ssh_info[:private_key_path].size == 1
+             @ssh_info[:private_key_path].each do |key|
+-              ssh_options << "-i '#{key}'"
++              ssh_options << "-o IdentityFile=%s" % [ key.gsub('%', '%%') ]
+             end
+           end
+ 
