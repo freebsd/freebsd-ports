@@ -3,14 +3,16 @@
 
 PORTNAME=	pg_stat_kcache
 DISTVERSIONPREFIX=	REL
-DISTVERSION=	2_0_2
+DISTVERSION=	2_0_3
 CATEGORIES=	databases
+
+MAINTAINER=	girgen@FreeBSD.org
+COMMENT=	Gather statistics about PostgreSQL I/O and CPU usage
+
+LICENSE=	PostgreSQL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
-
-MAINTAINER=	girgen@FreeBSD.org
-COMMENT=	Gather statistics about PostgreSQL I/O and CPU usage 
 
 USES=		gmake pgsql:9.4+
 WANT_PGSQL=	server contrib
