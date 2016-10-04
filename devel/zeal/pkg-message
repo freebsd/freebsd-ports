@@ -1,7 +1,7 @@
 After installing Zeal, you need to download docsets.
 
-Go to File->Options->Docsets, select the ones you want, and click the
-Download button.
+Go to Tools->Docsets, select the ones you want, and click the Download
+button.
 
 You can also create your own docsets by following these instructions:
 https://kapeli.com/docsets
