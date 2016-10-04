@@ -1,4 +1,4 @@
---- src/luamm.cc.orig	2016-07-20 16:53:48 UTC
+--- src/luamm.cc.orig	2016-10-04 07:49:19 UTC
 +++ src/luamm.cc
 @@ -57,7 +57,8 @@ namespace lua {
  				lua_pushstring(l, e.what());
