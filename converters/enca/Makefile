@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enca
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://dl.cihar.com/enca/
 
@@ -16,12 +16,11 @@ BUILD_DEPENDS=	umap:converters/p5-Unicode-Map8
 LIB_DEPENDS=	librecode.so:converters/recode
 RUN_DEPENDS=	umap:converters/p5-Unicode-Map8
 
-USES=		gmake iconv libtool pathfix pkgconfig tar:xz
+USES=		gmake iconv libtool localbase pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
