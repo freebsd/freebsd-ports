@@ -65,6 +65,8 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
 
+MAKE_JOBS_UNSAFE=	yes
+
 ASM_CONFIGURE_OFF=	no-asm
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 EC_CONFIGURE_OFF=	no-ec_nistp_64_gcc_128
