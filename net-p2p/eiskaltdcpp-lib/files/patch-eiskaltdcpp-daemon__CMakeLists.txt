@@ -14,7 +14,7 @@
 +	endif (DCPP_LIB)
 +endif (BUILD_LIB)
 +
-+target_link_libraries (${PROJECT_NAME} ${DCPP_LIB} ${LIBS} ${Boost_LIBRARIES} ${GETTEXT_LIBRARIES} extra)
++target_link_libraries (${PROJECT_NAME} ${DCPP_LIB} ${LIBS} ${GETTEXT_LIBRARIES} extra)
  
  if (CMAKE_BUILD_TYPE STREQUAL Debug)
      add_definitions(-D_DEBUG)
