@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
