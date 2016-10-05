@@ -1,0 +1,8 @@
+bin/recoverjpeg
+bin/recovermov
+bin/remove-duplicates
+bin/sort-pictures
+man/man1/recoverjpeg.1.gz
+man/man1/recovermov.1.gz
+man/man1/remove-duplicates.1.gz
+man/man1/sort-pictures.1.gz
