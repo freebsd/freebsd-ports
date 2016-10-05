@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	vbox@FreeBSD.org
+MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
 
 LICENSE=	GPLv2
@@ -43,17 +43,6 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-[4,5]* \
 			virtualbox-ose-devel-4* \
 			virtualbox-ose-legacy-4*
 
-.if defined(LITE)
-CONFIGURE_ARGS+=	--build-headless --disable-alsa --disable-dbus \
-			--disable-docs --disable-libvpx --disable-pulse
-CONFLICTS_INSTALL+=	${PORTNAME}-[4,5]*
-PKGNAMESUFFIX=		-lite
-PLIST_SUB=		GUESTADDITIONS="@comment " MANUAL="@comment " \
-			NLS="@comment " QT="@comment " X11="@comment "
-.else
-CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]*
-.endif
-
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
 VBOXGROUP?=	vboxusers
@@ -67,15 +56,11 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
-OPTIONS_DEFINE=		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE
-OPTIONS_DEFAULT=	UDPTUNNEL VNC
-.if !defined(LITE)
-OPTIONS_DEFINE+=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO
-OPTIONS_DEFINE+=	VPX X11
-OPTIONS_DEFAULT+=	DBUS PYTHON QT5 WEBSERVICE X11
+OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
+		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_RADIO=		GUI
 OPTIONS_RADIO_GUI=	QT4 QT5
-.endif
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
@@ -90,27 +75,24 @@ VNC_DESC=	Build with VNC support
 VPX_DESC=	Use vpx for video capturing
 WEBSERVICE_DESC=	Build Webservice
 
+ALSA_CONFIGURE_OFF=	--disable-alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+DBUS_CONFIGURE_OFF=	--disable-dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DEBUG_CONFIGURE_ON=	--build-debug
 MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
+MANUAL_CONFIGURE_OFF=	--disable-docs
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PYTHON_CONFIGURE_OFF=	--disable-python
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VNC_CONFIGURE_ON=	--enable-vnc
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
-
-.if !defined(LITE)
-ALSA_CONFIGURE_OFF=	--disable-alsa
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-DBUS_CONFIGURE_OFF=	--disable-dbus
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DEBUG_CONFIGURE_ON=	--build-debug
-MANUAL_CONFIGURE_OFF=	--disable-docs
-PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 X11_CONFIGURE_OFF=	--build-headless
-.endif
 
 # bmake doesn't know about unsetenv=true
 .if defined(.PARSEDIR)
@@ -120,18 +102,25 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
-PLIST_SUB+=	GUEST_VER=${PORTVERSION} \
+PLIST_SUB=	GUEST_VER=${PORTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
 		VBOXGROUP=${VBOXGROUP}
-SUB_LIST+=	VBOXDIR=${VBOX_DIR} \
+SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOXGROUP=${VBOXGROUP} \
 		VBOXUSER=${VBOXUSER} \
 		VBOXWSUSER=${VBOXWSUSER}
-USE_RC_SUBR+=	vboxheadless vboxwatchdog
+USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45]) && !defined(LITE)
+.if ${SLAVE_PORT} == no
+OPTIONS_DEFAULT+=	PYTHON
+CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]*
+.else
+CONFLICTS_INSTALL+=	${PORTNAME}-[4,5]*
+.endif
+
+.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
@@ -390,7 +379,7 @@ do-install:
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if ${PORT_OPTIONS:MNLS} && !defined(LITE)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${KMK_BUILDDIR}/obj/VirtualBox/qtnls && \
 	    ${COPYTREE_SHARE} "*.qm" ${STAGEDIR}${DATADIR}/nls
 .endif
