@@ -56,7 +56,7 @@ OPENGL_CONFIGURE_OFF=	--disable-opengl
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-*
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-[0-9]*
 .else
 CONFLICTS_INSTALL+=	virtualbox-ose-additions-[0-9]*
 .endif
