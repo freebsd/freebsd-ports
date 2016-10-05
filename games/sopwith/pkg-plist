@@ -1,6 +1,6 @@
 bin/sopwith
 man/man6/sopwith.6.gz
-share/doc/sopwith/keys.txt
-share/doc/sopwith/dlcvsamj.txt
-share/doc/sopwith/origdoc.txt
-share/doc/sopwith/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/keys.txt
+%%PORTDOCS%%%%DOCSDIR%%/dlcvsamj.txt
+%%PORTDOCS%%%%DOCSDIR%%/origdoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
