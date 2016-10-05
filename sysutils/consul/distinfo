@@ -1,5 +1,5 @@
-TIMESTAMP = 1472754662
-SHA256 (consul_0.6.4_web_ui.zip) = 5f8841b51e0e3e2eb1f1dc66a47310ae42b0448e77df14c83bb49e0e0d5fa4b7
-SIZE (consul_0.6.4_web_ui.zip) = 253852
-SHA256 (hashicorp-consul-v0.6.4_GH0.tar.gz) = 327c72211af1d6613477856c15bf7bcfc3c80d23542fcffe535d30d09347e08b
-SIZE (hashicorp-consul-v0.6.4_GH0.tar.gz) = 3912207
+TIMESTAMP = 1475593864
+SHA256 (consul_0.7.0_web_ui.zip) = 42212089c228a73a0881a5835079c8df58a4f31b5060a3b4ffd4c2497abe3aa8
+SIZE (consul_0.7.0_web_ui.zip) = 255229
+SHA256 (hashicorp-consul-v0.7.0_GH0.tar.gz) = d3616f204370aa199df516d792fe0835019aed7b6596aa7f6bdc71c2b1067494
+SIZE (hashicorp-consul-v0.7.0_GH0.tar.gz) = 3625239
