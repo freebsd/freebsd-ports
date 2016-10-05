@@ -5,9 +5,10 @@ PKGNAMESUFFIX=	-utils
 
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
 
-BROKEN_powerpc64=	Does not build
-
 SLAVE_PORT=	yes
+
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build
 
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
 OPTIONS_DEFAULT=	HARDENING TESTS
