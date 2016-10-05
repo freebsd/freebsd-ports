@@ -1,5 +1,5 @@
---- unit1.pas.orig	2013-08-16 03:55:46 UTC
-+++ unit1.pas
+--- winff/unit1.pas.orig	2013-08-16 03:55:46 UTC
++++ winff/unit1.pas
 @@ -1228,13 +1228,13 @@ end;
  
  // launch browser
