@@ -8672,3 +8672,9 @@ databases/postgresql91-server||2016-10-03|Has expired: End-of-life is near
 databases/postgresql-pllua||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
 multimedia/kvazaar-devel|multimedia/kvazaar|2016-10-05|Out of date: use multimedia/kvazaar for now
 emulators/virtualbox-ose-lite|emulators/virtualbox-ose-nox11|2016-10-05|Renamed
+audio/squeezeboxserver|audio/logitechmediaserver|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-dynamicplaylist|audio/logitechmediaserver-dynamicplaylist|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-lazysearch|audio/logitechmediaserver-lazysearch|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-sqlplaylist|audio/logitechmediaserver-sqlplaylist|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-superdatetime|audio/logitechmediaserver-superdatetime|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-trackstat|audio/logitechmediaserver-trackstat|2016-10-05|Squeezebox Server renamed to Logitech Media Server

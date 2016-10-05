@@ -1,0 +1,7 @@
+The Dynamic Playlist plugin is a Logitech Media Server plugin that makes
+it easier for other plugins to implement different types of playlists.
+It shows all supported playlists below the same menu and has the
+advantage that the user doesn't have to know which plugin implements a
+specific interface.
+
+WWW: http://wiki.slimdevices.com/index.php/Dynamic_Playlist_plugin
