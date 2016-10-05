@@ -6,7 +6,7 @@ PORTVERSION=	5.1.6
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
-PKGNAMESUFFIX=	-additions
+PKGNAMESUFFIX?=	-additions
 DISTNAME=	VirtualBox-${PORTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
