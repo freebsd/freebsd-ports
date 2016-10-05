@@ -16,6 +16,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils \
 			--localstatedir=/var/run --enable-mysql \
 			--with-mysql=${LOCALBASE}
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS NANOSLEEP
 OPTIONS_SINGLE=		NAGIOS_BACKEND
 OPTIONS_SINGLE_NAGIOS_BACKEND=	NAGIOS3X NAGIOS4X
