@@ -4,6 +4,7 @@
 PORTNAME=	tigervnc
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -141,5 +142,6 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/Xvnc ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libvnc.so
 
 .include <bsd.port.post.mk>
