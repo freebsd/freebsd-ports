@@ -169,7 +169,6 @@
     SUBDIR += kodi
     SUBDIR += kplayer-kde4
     SUBDIR += kvazaar
-    SUBDIR += kvazaar-devel
     SUBDIR += l-smash
     SUBDIR += libaacs
     SUBDIR += libass
