@@ -114,8 +114,8 @@ USE_RC_SUBR=	vboxheadless vboxwatchdog
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
+CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]* ${PORTNAME}-nox11-5*
 OPTIONS_DEFAULT+=	PYTHON
-CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]*
 .else
 CONFLICTS_INSTALL+=	${PORTNAME}-[4,5]*
 .endif
