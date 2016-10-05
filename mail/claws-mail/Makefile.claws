@@ -12,6 +12,7 @@ USES+=		gmake iconv libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
+CONFIGURE_ENV=	ac_cv_search_encrypt=yes
 
 CLAWS_PLUGINS=	acpi_notifier \
 		address_keeper \
