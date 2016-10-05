@@ -3,7 +3,7 @@
 
 PORTNAME=	db6
 PORTVERSION=	6.2.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -63,12 +63,6 @@ TCL_VARS=		DBLIBS+=libdb_tcl
 DOCS_INSTALL_TARGET=	install_docs
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH:Marm*} && empty(ARCH:Marmv6*)
-# db6 uses LDREX/STREX instructions for mutexes on ARM,
-# which are unavailable before ARMv6.
-CONFIGURE_ARGS+=	--enable-posixmutexes
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^DOCLIST/{s/csharp//;}' ${WRKSRC}/../dist/Makefile.in
