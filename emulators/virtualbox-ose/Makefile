@@ -38,10 +38,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --passive-mesa
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-[4,5]* \
-			virtualbox-ose-additions-devel-4* \
-			virtualbox-ose-devel-4* \
-			virtualbox-ose-legacy-4*
+CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
+			virtualbox-ose-devel-* \
+			virtualbox-ose-legacy-* \
+			virtualbox-ose-lite-*
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -114,10 +114,10 @@ USE_RC_SUBR=	vboxheadless vboxwatchdog
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]* ${PORTNAME}-nox11-5*
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-*
 OPTIONS_DEFAULT+=	PYTHON
 .else
-CONFLICTS_INSTALL+=	${PORTNAME}-[4,5]*
+CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
 .if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
