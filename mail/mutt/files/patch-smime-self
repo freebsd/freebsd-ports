@@ -9,7 +9,7 @@ Base: http://descolada.dartmouth.edu/mutt/patch-1.5.4+-ow.smime-encrypt-self.2
 -                                                        keylist)))
 +	   char *new_keylist = keylist;
 +
-+		 if (SmimeDefaultKey && query_quadoption(OPT_SMIMEENCRYPTSELF, _("Encrypt message to S/MIME Default Key also?")) == M_YES)
++		 if (SmimeDefaultKey && query_quadoption(OPT_SMIMEENCRYPTSELF, _("Encrypt message to S/MIME Default Key also?")) == MUTT_YES)
 +		 {
 +			int size = mutt_strlen(keylist) + mutt_strlen (SmimeDefaultKey) + 2; /* +1 for NULL, +1 for \n */
 +			new_keylist = safe_malloc(size);

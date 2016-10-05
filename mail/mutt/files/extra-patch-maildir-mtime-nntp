@@ -18,7 +18,7 @@
 +  char buffer[_POSIX_PATH_MAX + SHORT_STRING];
 +  struct stat s;
 +
-+  if(!buf || buf->magic != M_MAILDIR)
++  if(!buf || buf->magic != MUTT_MAILDIR)
 +    return;
 +
 +  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);

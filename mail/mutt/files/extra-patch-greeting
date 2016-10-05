@@ -12,9 +12,9 @@ diff -urN mutt-1.5.19/globals.h mutt-1.5.19-vc/globals.h
 diff -urN mutt-1.5.19/hdrline.c mutt-1.5.19-vc/hdrline.c
 --- mutt-1.5.19/hdrline.c	2009-01-05 21:20:53.000000000 +0200
 +++ mutt-1.5.19-vc/hdrline.c	2009-02-09 19:30:31.000000000 +0200
-@@ -741,3 +741,62 @@
+@@ -741,3 +741,63 @@
  {
-   mutt_FormatString (dst, dstlen, 0, s, hdr_format_str, (unsigned long) hfi, flags);
+   mutt_FormatString (dst, dstlen, 0, cols, s, hdr_format_str, (unsigned long) hfi, flags);
  }
 +
 +/* %n = recipient name
@@ -24,6 +24,7 @@ diff -urN mutt-1.5.19/hdrline.c mutt-1.5.19-vc/hdrline.c
 +greeting_string (char *dest,
 +		size_t destlen,
 +		size_t col,
++		int cols,
 +		char op,
 +		const char *src,
 +		const char *prefix,
@@ -70,8 +71,8 @@ diff -urN mutt-1.5.19/hdrline.c mutt-1.5.19-vc/hdrline.c
 +      snprintf (dest, destlen, "%%%s%c", prefix, op);
 +      break;
 +  }
-+  if (flags & M_FORMAT_OPTIONAL)
-+    mutt_FormatString (dest, destlen, col, elsestring, greeting_string, data, flags);
++  if (flags & MUTT_FORMAT_OPTIONAL)
++    mutt_FormatString (dest, destlen, col, cols, elsestring, greeting_string, data, flags);
 +
 +  return(src);
 +}
@@ -113,7 +114,7 @@ diff -urN mutt-1.5.19/protos.h mutt-1.5.19-vc/protos.h
  void ci_bounce_message (HEADER *, int *);
  int ci_send_message (int, HEADER *, char *, CONTEXT *, HEADER *);
  
-+const char *greeting_string (char *, size_t, size_t, char, const char *, const char *,
++const char *greeting_string (char *, size_t, size_t, int, char, const char *, const char *,
 +		const char *, const char *, unsigned long, format_flag);
 +
  /* prototypes for compatibility functions */
@@ -131,7 +132,7 @@ diff -urN mutt-1.5.19/send.c mutt-1.5.19-vc/send.c
 +  char buffer[STRING];
 +  if (Greeting)
 +  {
-+    mutt_FormatString(buffer, sizeof(buffer), 0, Greeting, greeting_string,
++    mutt_FormatString(buffer, sizeof(buffer), 0, MuttIndexWindow->cols, Greeting, greeting_string,
 +		      (unsigned long) hdr, flags);
 +    fputs(buffer, out);
 +    fputc ('\n', out);
