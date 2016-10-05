@@ -15,6 +15,6 @@ LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils pkgconfig tar:xz
 
 .include <bsd.port.mk>
