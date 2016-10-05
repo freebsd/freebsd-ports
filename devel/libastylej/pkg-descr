@@ -1,0 +1,7 @@
+JNI of the Artistic Style source code indenter, formatter, and beautifier.
+
+Artistic Style is a source code indenter, formatter, and beautifier for the C,
+C++, C# and Java programming languages. It automatically re-indents and
+re-formats source files and can be used from a command line.
+
+WWW: http://astyle.sourceforge.net/
