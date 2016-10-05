@@ -1,0 +1,4 @@
+Hut is a header-only library for Erlang libraries and small
+applications to stay agnostic to the logging framework in use.
+
+WWW: https://github.com/tolbrino/hut
