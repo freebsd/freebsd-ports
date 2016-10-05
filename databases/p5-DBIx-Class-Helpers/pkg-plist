@@ -62,6 +62,7 @@
 %%PERL5_MAN3%%/DBIx::Class::Helper::Schema::QuoteNames.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::Schema::Verifier.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::Schema::Verifier::C3.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::Schema::Verifier::ColumnInfo.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::Schema::Verifier::Parent.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::Schema::Verifier::RelationshipColumnName.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::SubClass.3.gz
@@ -132,6 +133,7 @@
 %%SITE_PERL%%/DBIx/Class/Helper/Schema/QuoteNames.pm
 %%SITE_PERL%%/DBIx/Class/Helper/Schema/Verifier.pm
 %%SITE_PERL%%/DBIx/Class/Helper/Schema/Verifier/C3.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Schema/Verifier/ColumnInfo.pm
 %%SITE_PERL%%/DBIx/Class/Helper/Schema/Verifier/Parent.pm
 %%SITE_PERL%%/DBIx/Class/Helper/Schema/Verifier/RelationshipColumnName.pm
 %%SITE_PERL%%/DBIx/Class/Helper/SubClass.pm
