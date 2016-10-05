@@ -503,6 +503,7 @@
     SUBDIR += erlang-goldrush
     SUBDIR += erlang-gpb
     SUBDIR += erlang-gproc
+    SUBDIR += erlang-hut
     SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
     SUBDIR += erlang-jsxd
