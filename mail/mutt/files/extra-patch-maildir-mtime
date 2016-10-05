@@ -21,7 +21,7 @@
 +  char buffer[_POSIX_PATH_MAX + SHORT_STRING];
 +  struct stat s;
 +
-+  if(!buf || buf->magic != M_MAILDIR)
++  if(!buf || buf->magic != MUTT_MAILDIR)
 +    return;
 +
 +  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
@@ -39,14 +39,14 @@
      while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
 +    check_maildir_times (tmp, &s);
-     add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
-   }
-   closedir (dp);  
+     if (tmp && Context &&
+         !mutt_strcmp (tmp->realpath, Context->realpath))
+     {
 @@ -454,6 +471,7 @@
      strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
-     mutt_pretty_mailbox (buffer);
+     mutt_pretty_mailbox (buffer, sizeof (buffer));
  
 +    check_maildir_times (tmp, &s);
-     add_folder (menu, state, buffer, &s, tmp->new);
+     add_folder (menu, state, buffer, &s, tmp);
    }
    while ((tmp = tmp->next));
