@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pandoc:textproc/hs-pandoc
 RUN_DEPENDS=	exif:graphics/exif \
 		identify:graphics/ImageMagick
 
-USES=		autoreconf shebangfix
+USES=		autoreconf python shebangfix
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	remove-duplicates
