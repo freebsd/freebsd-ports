@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161005:
+  AFFECTS: Users of audio/squeezeboxserver (now audio/logitechmediaserver)
+  AUTHOR: woodsb02@FreeBSD.org
+
+  With the rename of the audio/squeezeboxserver port to
+  audio/logitechmediaserver, the server and database are now installed in
+  different locations by default (/usr/local/share/logitechmediaserver and
+  /var/db/logitechmediaserver respectively).
+
+  If you were an existing user of audio/squeezeboxserver, you should
+  consider backing up you server configuration files and database before
+  upgrading to audio/logitechmediaserver. If you wish to override the
+  default locations for storing the server and database, you can set the
+  SLIMDIR and SLIMDBDIR variables in your /etc/make.conf when building
+  the audio/logitechmediaserver port.
+
 20161004:
   AFFECTS: mail/roundcube-carddav
   AUTHOR:  gahr@FreeBSD.org

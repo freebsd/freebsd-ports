@@ -455,6 +455,12 @@
     SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += lmms
+    SUBDIR += logitechmediaserver
+    SUBDIR += logitechmediaserver-dynamicplaylist
+    SUBDIR += logitechmediaserver-lazysearch
+    SUBDIR += logitechmediaserver-sqlplaylist
+    SUBDIR += logitechmediaserver-superdatetime
+    SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
@@ -728,12 +734,6 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += squash
-    SUBDIR += squeezeboxserver
-    SUBDIR += squeezeboxserver-dynamicplaylist
-    SUBDIR += squeezeboxserver-lazysearch
-    SUBDIR += squeezeboxserver-sqlplaylist
-    SUBDIR += squeezeboxserver-superdatetime
-    SUBDIR += squeezeboxserver-trackstat
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += stymulator
