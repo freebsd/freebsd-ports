@@ -46,7 +46,7 @@ Index: muttlib.c
 @@ -944,7 +944,16 @@
        if (*src == '?')
        {
- 	flags |= M_FORMAT_OPTIONAL;
+ 	flags |= MUTT_FORMAT_OPTIONAL;
 -	src++;
 +	ch = *(++src); /* save the character to switch on */
 +	cp = prefix;
