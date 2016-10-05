@@ -151,6 +151,7 @@
     SUBDIR += virtio-kmod
     SUBDIR += virtualbox-ose
     SUBDIR += virtualbox-ose-additions
+    SUBDIR += virtualbox-ose-additions-nox11
     SUBDIR += virtualbox-ose-kmod
     SUBDIR += virtualbox-ose-lite
     SUBDIR += visualboyadvance-m
