@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/konference
 
 PLIST_FILES=	lib/asterisk/modules/app_konference.so
 
-ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
+ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
