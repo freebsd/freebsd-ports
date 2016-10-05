@@ -3,8 +3,9 @@ include/kvazaar.h
 lib/libkvazaar.a
 lib/libkvazaar.so
 lib/libkvazaar.so.3
-lib/libkvazaar.so.3.2.0
+lib/libkvazaar.so.3.13.0
 libdata/pkgconfig/kvazaar.pc
+man/man1/kvazaar.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
