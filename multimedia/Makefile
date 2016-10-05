@@ -26,6 +26,7 @@
     SUBDIR += bangarang
     SUBDIR += banshee
     SUBDIR += bino
+    SUBDIR += bitstream
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
