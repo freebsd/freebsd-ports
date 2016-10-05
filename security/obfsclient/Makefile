@@ -21,9 +21,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib localbase pkgconfig
+USES=		autoreconf compiler:c++11-lib localbase pkgconfig ssl
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/${PORTNAME}
+
+PORTDOCS=	COPYING
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
