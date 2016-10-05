@@ -69,7 +69,11 @@ DEMO_DIRS+=	ws
 DEMO_DIRS+=	ws_candy
 DEMO_DIRS+=	zdemo
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
+.endif
 
 .if ${PORT_OPTIONS:MSSL}
 CONF_ARGS+=	SOCKET=openssl
@@ -120,4 +124,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/templates.tads \
 		${STAGEDIR}${EXAMPLESDIR}/templates
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
