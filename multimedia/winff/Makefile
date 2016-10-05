@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	WinFF
-PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTVERSION=	1.5.5
 CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	${_PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITES=	http://winff.org/docs/source/
+DISTNAME=	${_PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert your videos quickly, easily, and all at once
 
 LICENSE=	GPLv3
 
-BROKEN=		Unfetchable (google code has gone away)
-
 BUILD_DEPENDS=	lazbuild:editors/lazarus
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 NO_WRKSUBDIR=	yes
-USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg x11
-USE_GNOME=	#
+USE_XORG=	x11
+USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg regexpr x11
+USE_GNOME=	cairo
 _PORTNAME=	${PORTNAME:tl}
 DATADIR=	${PREFIX}/share/${_PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${_PORTNAME}
@@ -38,6 +35,8 @@ LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
 LAZARUS_VER=	1.6.0
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
+
+BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/${_PORTNAME}
 
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK2 QT4
@@ -63,23 +62,23 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/unit1.pas
-.for fp in unit1.pas unit4.pas
-	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|g' ${WRKSRC}/${fp}
+	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${BUILD_WRKSRC}/unit1.pas
+.for fp in unit1.pas unit4.pas scripts/check_presets.sh
+	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|g' ${BUILD_WRKSRC}/${fp}
 .endfor
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} -B winff.lpr
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/languages
-	${INSTALL_DATA} ${WRKSRC}/presets.xml ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/languages/* ${STAGEDIR}${DATADIR}/languages/
-	${INSTALL_MAN} ${WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/winff-icons/48x48/${_PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/presets.xml ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${STAGEDIR}${DATADIR}/languages/
+	${INSTALL_MAN} ${BUILD_WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${BUILD_WRKSRC}/winff-icons/48x48/${_PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
