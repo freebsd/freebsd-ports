@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	telepathy-qt
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	5
 
 MASTERDIR=	${.CURDIR:H}/telepathy-qt4
