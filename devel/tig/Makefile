@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tig
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	git:devel/git
 
+USES=		autoreconf iconv gmake ncurses readline:port
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
-USES=		iconv gmake ncurses readline:port
+MAKE_ARGS=	V=1
 
 ALL_TARGET=	all strip
 INSTALL_TARGET=	install
