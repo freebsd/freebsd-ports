@@ -3,7 +3,7 @@
 
 PORTNAME=	seexpr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	2.9
+PORTVERSION=	2.11
 CATEGORIES=	graphics math
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -19,7 +19,7 @@ USES=		bison cmake compiler:c++0x pyqt:4 python
 USE_PYQT=	gui_build sip_build
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui opengl
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes	# https://github.com/wdas/seexpr/issues/40
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 
