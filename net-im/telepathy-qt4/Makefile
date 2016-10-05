@@ -3,6 +3,7 @@
 
 PORTNAME=	telepathy-qt
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMESUFFIX?=	4
@@ -55,7 +56,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 # Manually set DOCSDIR, to handle the version suffix
-DOCSDIR=	${PREFIX}/usr/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
