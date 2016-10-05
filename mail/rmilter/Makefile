@@ -13,6 +13,10 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libopendkim.so:mail/opendkim \
 		libmemcached.so:databases/libmemcached
 
+BROKEN_armv6=		Fails to configure in cmake
+BROKEN_mips=		Fails to compile: error: Unsupported word size
+BROKEN_sparc64=		Fails to compile: error: Unsupported word size
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 
