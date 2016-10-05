@@ -67,7 +67,11 @@ CONF_ARGS+=	ZLIB=true
 CONF_ARGS+=	ASIS=true
 CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=static
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
+.endif
 
 ###################
 ##  SSL Support  ##
@@ -181,4 +185,4 @@ post-install:
 	cd ${WRKSRC}/gps && ${INSTALL_DATA} *.xml aws.py \
 		${STAGEDIR}${PREFIX}/share/gps/plug-ins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
