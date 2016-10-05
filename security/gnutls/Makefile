@@ -13,7 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libnettle.so:security/nettle \
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libnettle.so:security/nettle \
 		libtasn1.so:security/libtasn1
 BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
