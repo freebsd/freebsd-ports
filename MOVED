@@ -8670,3 +8670,4 @@ databases/postgresql91-client||2016-10-03|Has expired: End-of-life is near
 databases/postgresql91-pgtcl||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
 databases/postgresql91-server||2016-10-03|Has expired: End-of-life is near
 databases/postgresql-pllua||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
+multimedia/kvazaar-devel|multimedia/kvazaar|2016-10-05|Out of date: use multimedia/kvazaar for now
