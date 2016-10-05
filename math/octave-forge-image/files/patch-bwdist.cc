@@ -1,6 +1,6 @@
---- bwdist.cc-orig	2014-03-03 03:07:22.000000000 +0000
-+++ bwdist.cc	2014-03-03 03:07:36.000000000 +0000
-@@ -530,7 +530,7 @@
+--- bwdist.cc.orig	2015-08-07 12:34:57 UTC
++++ bwdist.cc
+@@ -538,7 +538,7 @@ Currently, only 2D images are supported.
    // Compute optional 'index to closest object pixel', only if requested
    if (nargout > 1)
      {
