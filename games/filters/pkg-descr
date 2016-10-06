@@ -3,3 +3,5 @@ No personal, racial, societal slurs are intended. For amusement only.
 
 All the filters read input from stdin, change it, and write the filtered
 text to stdout.
+
+WWW: http://joeyh.name/code/filters/
