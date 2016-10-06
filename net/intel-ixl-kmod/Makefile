@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR?=	25160/eng
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	freebsd@intel.com
+MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
 LICENSE=	BSD2CLAUSE
