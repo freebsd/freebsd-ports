@@ -11,7 +11,7 @@ MASTER_SITES=	http://mircryption.sourceforge.net/Downloads/
 PKGNAMEPREFIX=	xchat-
 DISTNAME=	mircryption_xchatsrc
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:irc/xchat
