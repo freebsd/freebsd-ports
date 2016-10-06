@@ -12,8 +12,6 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
-BROKEN_sparc64=	does not compile on ${ARCH}
-
 USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -43,7 +41,7 @@ CONFIGURE_ARGS+=	\
 		--without-php_extension \
 		--without-python \
 		--without-ruby \
-                --without-go
+		--without-go
 
 PLIST_FILES=	bin/thrift
 
