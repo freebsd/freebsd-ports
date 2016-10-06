@@ -234,6 +234,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/api/libvirt-qemu-api.xml
 %%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
+%%DATADIR%%/schemas/cputypes.rng
 %%DATADIR%%/schemas/domain.rng
 %%DATADIR%%/schemas/domaincaps.rng
 %%DATADIR%%/schemas/domaincommon.rng
