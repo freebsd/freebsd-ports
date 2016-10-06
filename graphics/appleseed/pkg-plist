@@ -96,6 +96,7 @@ settings/appleseed.studio.xml
 %%OSL%%shaders/src/include/appleseed/color.h
 %%OSL%%shaders/src/include/appleseed/microfacet.h
 %%OSL%%shaders/src/include/appleseed/transform.h
+%%OSL%%shaders/src/include/appleseed/udim.h
 %%OSL%%shaders/src/input/as_globals.osl
 %%OSL%%shaders/src/input/as_input.osl
 %%OSL%%shaders/src/input/as_object_input.osl
