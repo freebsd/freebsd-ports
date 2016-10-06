@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appleseed
-DISTVERSION=	1.4.0-beta
+DISTVERSION=	1.5.2-beta
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -57,8 +57,6 @@ DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 			libSeExprEditor.so:graphics/seexpr
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CMAKE_SYSTEM_NAME.*,USE_RPATH_ORIGIN),' \
-		${WRKSRC}/src/appleseed.studio/CMakeLists.txt
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 
 .include <bsd.port.mk>
