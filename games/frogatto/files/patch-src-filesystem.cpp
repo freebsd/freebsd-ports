@@ -1,8 +1,8 @@
---- src/filesystem.cpp.orig
+--- src/filesystem.cpp.orig	2012-12-08 22:36:13 UTC
 +++ src/filesystem.cpp
-@@ -299,8 +299,14 @@
- 					  FILE_NAME_MODE mode)
- {
+@@ -405,8 +405,14 @@ void get_files_in_dir(const std::string&
+ 	}
+ #else
  	struct stat st;
 +	std::string dirname;
  
@@ -16,7 +16,7 @@
  
  	if(dir == NULL) {
  		return;
-@@ -331,14 +337,14 @@
+@@ -437,14 +443,14 @@ void get_files_in_dir(const std::string&
  #endif /* !APPLE */
  
  		std::string fullname;
