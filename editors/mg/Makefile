@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mg
-PORTVERSION=	20160421
-PORTREVISION=	1
+PORTVERSION=	20160912
 CATEGORIES=	editors
 MASTER_SITES=	http://homepage.boetes.org/software/mg/
 
-MAINTAINER=	darcsis@gmail.com
+MAINTAINER=	t@tobik.me
 COMMENT=	Small, fast Emacs-like editor
+
+LICENSE=	PD
 
 USES=		ncurses
 PLIST_FILES=	bin/mg man/man1/mg.1.gz
@@ -20,6 +21,14 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${OSVERSION} < 1002506
 BROKEN=	does not build, requires futimens system call
+.endif
+
+.if ${OSVERSION} >= 1002506 && ${OSVERSION} < 1100072
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-def.h
+
+post-patch:
+	${CP} ${FILESDIR}/reallocarray.c ${WRKSRC}
+	@${REINPLACE_CMD} -e 's| theo.c| theo.c reallocarray.c|' ${WRKSRC}/Makefile
 .endif
 
 pre-configure:
