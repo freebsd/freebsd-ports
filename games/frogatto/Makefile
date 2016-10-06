@@ -3,11 +3,18 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Old-school 2D classic adventure platformer game
+
+LICENSE=	FROGATTO GPLv3
+LICENSE_COMB=	multi
+LICENSE_NAME_FROGATTO=	Frogatto license
+LICENSE_FILE_FROGATTO=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv3=	${WRKSRC}/src/LICENSE
+LICENSE_PERMS_FROGATTO=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png
