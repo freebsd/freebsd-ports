@@ -1238,6 +1238,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/string.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/strings.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_default_fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_intsup.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_locale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_sigset.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timespec.h
@@ -2421,6 +2422,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/incl
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/lto-streamer.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/machmode.def
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/machmode.h
+gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/memmodel.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/md5.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/mode-classes.def
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/objc/objc-tree.def
