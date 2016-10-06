@@ -48,8 +48,13 @@ lib/elasticsearch/modules/lang-expression/asm-5.0.4.jar
 lib/elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
 lib/elasticsearch/modules/lang-expression/lang-expression-%%PORTVERSION%%.jar
 lib/elasticsearch/modules/lang-expression/lucene-expressions-%%LUCENEVER%%.jar
+lib/elasticsearch/modules/lang-expression/plugin-descriptor.properties
+lib/elasticsearch/modules/lang-expression/plugin-security.policy
 lib/elasticsearch/modules/lang-groovy/groovy-2.4.6-indy.jar
 lib/elasticsearch/modules/lang-groovy/lang-groovy-%%PORTVERSION%%.jar
+lib/elasticsearch/modules/lang-groovy/plugin-descriptor.properties
+lib/elasticsearch/modules/lang-groovy/plugin-security.policy
+lib/elasticsearch/modules/reindex/plugin-descriptor.properties
 lib/elasticsearch/modules/reindex/reindex-%%PORTVERSION%%.jar
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
