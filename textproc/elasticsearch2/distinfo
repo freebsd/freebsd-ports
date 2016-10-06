@@ -1,2 +1,3 @@
-SHA256 (elasticsearch-2.3.0.tar.gz) = d68482c7633f2986263bc5f11f93b8a58c54c6cf5e337b615446d0a7c6fdcd8b
-SIZE (elasticsearch-2.3.0.tar.gz) = 27556947
+TIMESTAMP = 1475512897
+SHA256 (elasticsearch-2.4.1.tar.gz) = 23a369ef42955c19aaaf9e34891eea3a055ed217d7fbe76da0998a7a54bbe167
+SIZE (elasticsearch-2.4.1.tar.gz) = 27364109
