@@ -1,4 +1,4 @@
---- src/bitmsghash/Makefile.orig	2016-05-02 19:51:46 UTC
+--- src/bitmsghash/Makefile.orig	2016-08-21 09:56:25 UTC
 +++ src/bitmsghash/Makefile
 @@ -10,10 +10,10 @@ powtest:
  	./testpow.py

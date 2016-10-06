@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitmessage
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -29,32 +29,40 @@ OPTIONS_DEFINE=	NATIVE_POW
 OPTIONS_DEFAULT=NATIVE_POW
 NATIVE_POW_DESC=Native POW procedure
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
+REINPLACE_ARGS=	-i ''
 
 post-patch:
-	${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' \
+	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s|\((CCFLAGS)\)|\1 -I${OPENSSLINC} |g" \
+	@${REINPLACE_CMD} -e "s|\((CCFLAGS)\)|\1 -I${OPENSSLINC} |g" \
 		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/src/bitmsghash/Makefile
+	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' ${WRKSRC}/Makefile ${WRKSRC}/src/depends.py
+	@${REINPLACE_CMD} -e 's|^#!.*$$|#!${PYTHON_CMD}|' \
+		${WRKSRC}/compiletest.py ${WRKSRC}/src/bitmessagecli.py ${WRKSRC}/src/bitmessagemain.py \
+		${WRKSRC}/src/depends.py \
+		${WRKSRC}/src/bitmessageqt/migrationwizard.py ${WRKSRC}/src/bitmessageqt/newaddresswizard.py \
+		${WRKSRC}/src/bitmessageqt/settingsmixin.py ${WRKSRC}/src/helper_msgcoding.py ${WRKSRC}/src/openclpow.py
 
 do-build:
 	@(cd ${WRKSRC} && \
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		-d ${WRKSRC} -f ${WRKSRC} && \
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		-d ${WRKSRC} -f ${WRKSRC})
-.if ${PORT_OPTIONS:MNATIVE_POW}
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+			-d ${WRKSRC} -f ${WRKSRC} && \
+		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+			-d ${WRKSRC} -f ${WRKSRC})
+
+do-build-NATIVE_POW-on:
 	@(cd ${WRKSRC} && \
 		${ECHO_MSG} "===>  Compiling the proof-of-work (POW) routine" && \
 		(cd src/bitmsghash && ${MAKE_CMD}))
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MNATIVE_POW}
+	@${RM}	${STAGEDIR}${PREFIX}/share/pybitmessage/bitmsghash/Makefile \
+		${STAGEDIR}${PREFIX}/share/pybitmessage/bitmsghash/bitmsghash.cpp \
+		${STAGEDIR}${PREFIX}/share/pybitmessage/bitmsghash/bitmsghash.cl
+
+post-install-NATIVE_POW-on:
 	@${RM} ${STAGEDIR}${PREFIX}/share/pybitmessage/bitmsghash/bitmsghash.o
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/pybitmessage/bitmsghash/bitmsghash.so
-.endif
 
 .include <bsd.port.mk>
