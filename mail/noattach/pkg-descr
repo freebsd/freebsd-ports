@@ -7,4 +7,4 @@ Filenames are rfc2047 or rfc2231 decoded if needed.
 This program needs sendmail version 8.12.2 or newer to be compiled with
 libmilter.
 
-WWW: http://freshmeat.net/projects/noattach/
+WWW: http://freecode.com/projects/noattach/
