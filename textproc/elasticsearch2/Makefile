@@ -3,6 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -72,7 +73,7 @@ do-install:
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/ "-name *\.jar")
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/modules
-	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/modules/ "-name *\.jar")
+	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/modules/)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/elasticsearch
 	@${MKDIR} ${STAGEDIR}${ELASTIC_DBDIR} ${STAGEDIR}${ELASTIC_LOGDIR}
