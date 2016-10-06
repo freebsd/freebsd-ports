@@ -1,0 +1,6 @@
+bin/ecce
+man/man1/ecce.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ecce2.txt
+%%PORTDOCS%%%%DOCSDIR%%/hmdecce.html
+%%PORTDOCS%%%%DOCSDIR%%/ldsecce.html
+%%PORTDOCS%%%%DOCSDIR%%/review.txt
