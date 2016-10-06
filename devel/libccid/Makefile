@@ -6,7 +6,7 @@ PORTVERSION=	1.4.24
 CATEGORIES=	devel
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4171/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 
 LICENSE=	LGPL21
