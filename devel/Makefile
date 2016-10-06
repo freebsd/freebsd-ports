@@ -4163,6 +4163,7 @@
     SUBDIR += py-gflags
     SUBDIR += py-git-up
     SUBDIR += py-gitdb
+    SUBDIR += py-gitless
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
     SUBDIR += py-glob2
