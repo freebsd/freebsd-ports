@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	0.16.1
+PORTVERSION=	0.18.1
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		CHEESESHOP:source \
@@ -34,6 +34,9 @@ PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
 post-extract:
 	@${CP} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${WRKDIR}
+
+# This line help fix the plist error because autoplist list it as a file but it is a directory
+	@cd ${WRKSRC}/scipy/stats/tests/data && ${TOUCH} tmp
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/scipy/ -name '*.so' | ${XARGS} ${STRIP_CMD}
