@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	filters
-PORTVERSION=	2.54
+PORTVERSION=	2.55
+DISTVERSIONSUFFIX=	.orig
 CATEGORIES=	games perl5
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
-		LOCAL/ehaupt
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
+
+LICENSE=	GPLv2
 
 CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]*
 
