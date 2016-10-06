@@ -1,0 +1,7 @@
+This release includes the gigabit FreeBSD base Drivers for Intel(R)
+Ethernet.
+
+NOTE: The Intel(R) 82562v 10/100 Network Connection only provides 10/100
+support.
+
+WWW: https://downloadcenter.intel.com
