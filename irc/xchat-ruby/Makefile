@@ -8,7 +8,7 @@ MASTER_SITES=	SF/xchat-${PORTNAME}/xchat-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	xchat-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby-scripting plugin for XChat
 
 RUN_DEPENDS=	xchat:irc/xchat
