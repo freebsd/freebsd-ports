@@ -5,6 +5,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numpy/_globals.py
+%%PYTHON_SITELIBDIR%%/numpy/_globals.pyc
+%%PYTHON_SITELIBDIR%%/numpy/_globals.pyo
 %%PYTHON_SITELIBDIR%%/numpy/_import_tools.py
 %%PYTHON_SITELIBDIR%%/numpy/_import_tools.pyc
 %%PYTHON_SITELIBDIR%%/numpy/_import_tools.pyo
@@ -741,6 +744,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_ctypeslib.py
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_matlib.py
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_numpy_version.py
+%%PYTHON_SITELIBDIR%%/numpy/tests/test_reloading.py
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_scripts.py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
