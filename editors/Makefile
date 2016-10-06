@@ -46,6 +46,7 @@
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += e3
+    SUBDIR += ecce
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
     SUBDIR += emacs
