@@ -1,0 +1,310 @@
+--- ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/META-INF/MANIFEST.MF.orig	2014-04-15 21:04:15.000000000 -0500
++++ ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/META-INF/MANIFEST.MF	2014-04-16 07:20:17.000000000 -0500
+@@ -1,9 +1,9 @@
+ Manifest-Version: 1.0
+ Bundle-ManifestVersion: 2
+ Bundle-Name: %fragmentName
+-Bundle-SymbolicName: org.eclipse.core.filesystem.linux.x86; singleton:=true
++Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.x86; singleton:=true
+ Bundle-Version: 1.4.200.qualifier
+ Bundle-Vendor: %providerName
+ Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.3.0,2.0.0)"
+ Bundle-Localization: fragment
+-Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86))
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86))
+--- ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/pom.xml.orig	2014-04-15 21:04:15.000000000 -0500
++++ ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/pom.xml	2014-04-16 07:19:54.000000000 -0500
+@@ -15,10 +15,10 @@
+     <artifactId>eclipse.platform.resources</artifactId>
+     <groupId>eclipse.platform.resources</groupId>
+     <version>4.6.0-SNAPSHOT</version>
+-    <relativePath>../../</relativePath>
++    <relativePath>../../../../</relativePath>
+   </parent>
+   <groupId>org.eclipse.core</groupId>
+-  <artifactId>org.eclipse.core.filesystem.linux.x86</artifactId>
++  <artifactId>org.eclipse.core.filesystem.freebsd.x86</artifactId>
+   <version>1.4.200-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+@@ -33,7 +33,7 @@
+           <resolver>p2</resolver>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+               <arch>x86</arch>
+             </environment>
+@@ -50,7 +50,7 @@
+         <property>
+           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
+           <name>native</name>
+-          <value>gtk.linux.x86</value>
++          <value>gtk.freebsd.x86</value>
+         </property>
+       </activation>
+       <build>
+@@ -63,12 +63,13 @@
+                 <phase>process-resources</phase>
+                 <configuration>
+                   <target>
+-                    <exec executable="make" newenvironment="false" dir="../org.eclipse.core.filesystem/natives/unix/linux/"/>
+-           <copy todir="os/linux/x86">
+-           <fileset dir="../org.eclipse.core.filesystem/natives/unix/linux/">
+-               <include name="libunixfile_*.so"/>
+-           </fileset>
+-           </copy>
++                    <exec executable="gmake" newenvironment="false" dir="../../natives/unix/freebsd/"/>
++                    <mkdir dir="os/freebsd/x86"/>
++                    <copy todir="os/freebsd/x86">
++                      <fileset dir="../../natives/unix/freebsd/">
++                        <include name="libunixfile_*.so"/>
++                      </fileset>
++                    </copy>
+                   </target>
+                 </configuration>
+                 <goals>
+--- ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/fragment.properties.orig	2014-04-15 21:04:15.000000000 -0500
++++ ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/fragment.properties	2014-04-16 07:20:05.000000000 -0500
+@@ -8,5 +8,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Core File System for Linux
++fragmentName = Core File System for FreeBSD
+ providerName = Eclipse.org
+--- ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/.project.orig	2014-04-15 21:04:15.000000000 -0500
++++ ./eclipse.platform.resources/bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.x86/.project	2014-04-16 07:19:20.000000000 -0500
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.core.filesystem.linux.x86</name>
++	<name>org.eclipse.core.filesystem.freebsd.x86</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+--- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/META-INF/MANIFEST.MF.orig	2014-04-15 21:26:16.000000000 -0500
++++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/META-INF/MANIFEST.MF	2014-04-16 07:36:19.000000000 -0500
+@@ -2,7 +2,7 @@
+ Fragment-Host: org.eclipse.swt; bundle-version="[3.0.0,4.0.0)"
+ Bundle-Name: %fragmentName
+ Bundle-Vendor: %providerName
+-Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86; singleton:=true
++Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
+ Bundle-Version: 3.105.0.qualifier
+ Bundle-ManifestVersion: 2
+ Bundle-Localization: fragment
+@@ -30,7 +30,7 @@
+  org.eclipse.swt.internal.gtk; x-internal:=true,
+  org.eclipse.swt.internal.mozilla; x-internal:=true,
+  org.eclipse.swt.internal.opengl.glx; x-internal:=true
+-Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))
++Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86))
+ SWT-WS: gtk
+-SWT-OS: linux
++SWT-OS: freebsd
+ SWT-Arch: x86
+--- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/build.xml.orig	2014-04-15 21:26:16.000000000 -0500
++++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/build.xml	2014-04-16 07:35:58.000000000 -0500
+@@ -1,10 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<project name="org.eclipse.swt.gtk.linux.x86" default="build.jars" basedir=".">
++<project name="org.eclipse.swt.gtk.freebsd.x86" default="build.jars" basedir=".">
+ 
+ 	<property name="swt.ws" value="gtk" />
+-	<property name="swt.os" value="linux" />
++	<property name="swt.os" value="freebsd" />
+ 	<property name="swt.arch" value="x86" />
+-	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
++	<property name="targets" value="install"/>
+ 	
+ 	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
+ 	<property name="version.suffix" value="3.104.0" />
+--- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/pom.xml.orig	2014-04-15 21:26:16.000000000 -0500
++++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/pom.xml	2014-04-16 07:36:13.000000000 -0500
+@@ -20,12 +20,12 @@
+     <relativePath>../binaries-parent/</relativePath>
+   </parent>
+   <groupId>org.eclipse.swt</groupId>
+-  <artifactId>org.eclipse.swt.gtk.linux.x86</artifactId>
++  <artifactId>org.eclipse.swt.gtk.freebsd.x86</artifactId>
+   <version>3.105.0-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+   <properties>
+-    <os>linux</os>
++    <os>freebsd</os>
+     <ws>gtk</ws>
+     <arch>x86</arch>
+     <buildid>${buildId}</buildid>
+@@ -61,7 +61,7 @@
+         <property>
+           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
+           <name>native</name>
+-          <value>gtk.linux.x86</value>
++          <value>gtk.freebsd.x86</value>
+         </property>
+       </activation>
+       <build>
+@@ -74,7 +74,7 @@
+                 <phase>process-resources</phase>
+                 <configuration>
+                   <target>
+-                    <property name="machine_gtk3" value="1"/>
++                    <!-- property name="machine_gtk3" value="1"/ -->
+                     <property name="targets" value="install" />
+                     <ant antfile="build.xml" target="build_libraries"/>
+                   </target>
+--- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/.project.orig	2014-04-15 21:26:16.000000000 -0500
++++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/.project	2014-04-16 07:36:05.000000000 -0500
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.swt.gtk.linux.x86</name>
++	<name>org.eclipse.swt.gtk.freebsd.x86</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+--- ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/META-INF/MANIFEST.MF.orig	2014-04-15 21:27:02.000000000 -0500
++++ ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/META-INF/MANIFEST.MF	2014-04-16 07:28:07.000000000 -0500
+@@ -3,8 +3,8 @@
+ Bundle-Name: %fragmentName
+ Bundle-Vendor: %providerName
+ Bundle-Localization: fragment
+-Bundle-SymbolicName: org.eclipse.core.net.linux.x86;singleton:=true
++Bundle-SymbolicName: org.eclipse.core.net.freebsd.x86;singleton:=true
+ Bundle-Version: 1.2.0.qualifier
+ Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
+-Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86))
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86))
+ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+--- ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/pom.xml.orig	2014-04-15 21:27:02.000000000 -0500
++++ ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/pom.xml	2014-04-16 07:28:28.000000000 -0500
+@@ -18,7 +18,7 @@
+     <relativePath>../../../../</relativePath>
+   </parent>
+   <groupId>org.eclipse.core</groupId>
+-  <artifactId>org.eclipse.core.net.linux.x86</artifactId>
++  <artifactId>org.eclipse.core.net.freebsd.x86</artifactId>
+   <version>1.2.0-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+@@ -31,7 +31,7 @@
+         <configuration>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+               <arch>x86</arch>
+             </environment>
+@@ -48,7 +48,7 @@
+         <property>
+           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
+           <name>native</name>
+-          <value>gtk.linux.x86</value>
++          <value>gtk.freebsd.x86</value>
+         </property>
+       </activation>
+       <build>
+@@ -62,12 +62,12 @@
+                 <phase>process-resources</phase>
+                 <configuration>
+                   <target>
+-                    <exec executable="make" newenvironment="false" dir="../../natives/unix/linux/"/>
+-           <copy todir=".">
+-           <fileset dir="../../natives/unix/linux/">
+-               <include name="libgnomeproxy-*.so"/>
+-           </fileset>
+-           </copy>
++                    <exec executable="gmake" newenvironment="false" dir="../../natives/unix/freebsd/"/>
++                    <copy todir=".">
++                      <fileset dir="../../natives/unix/freebsd/">
++                        <include name="libgnomeproxy-*.so"/>
++                      </fileset>
++                    </copy>
+                   </target>
+                 </configuration>
+                 <goals>
+--- ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/fragment.properties.orig	2014-04-15 21:27:02.000000000 -0500
++++ ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/fragment.properties	2014-04-16 07:28:39.000000000 -0500
+@@ -8,5 +8,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Proxy for Linux
++fragmentName = Proxy for FreeBSD
+ providerName = Eclipse.org
+--- ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/.project.orig	2014-04-15 21:27:02.000000000 -0500
++++ ./eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.freebsd.x86/.project	2014-04-16 07:28:03.000000000 -0500
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.core.net.linux.x86</name>
++	<name>org.eclipse.core.net.freebsd.x86</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+--- ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/META-INF/MANIFEST.MF.orig	2014-04-15 21:32:54.000000000 -0500
++++ ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/META-INF/MANIFEST.MF	2014-04-16 07:51:22.000000000 -0500
+@@ -2,9 +2,9 @@
+ Bundle-ManifestVersion: 2
+ Bundle-Name: %pluginName
+ Bundle-Vendor: %providerName
+-Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86;singleton:=true
++Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86;singleton:=true
+ Bundle-Version: 1.1.400.qualifier
+ Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.4.0)"
+-Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))
+-Bundle-Localization: launcher.gtk.linux.x86
++Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86))
++Bundle-Localization: launcher.gtk.freebsd.x86
+ Eclipse-BundleShape: dir
+--- ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/pom.xml.orig	2014-04-23 07:51:42.000000000 -0500
++++ ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/pom.xml	2014-04-23 10:08:46.000000000 -0500
+@@ -18,12 +18,12 @@
+     <relativePath>../../launcher-binary-parent</relativePath>
+   </parent>
+   <groupId>org.eclipse.equinox</groupId>
+-  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86</artifactId>
++  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.x86</artifactId>
+   <version>1.1.400-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+   <properties>
+-    <os>linux</os>
++    <os>freebsd</os>
+     <ws>gtk</ws>
+     <arch>x86</arch>
+   </properties>
+--- ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.freebsd.x86.properties.orig	2014-07-25 19:31:29.000000000 -0500
++++ ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.freebsd.x86.properties	2014-07-25 20:04:21.000000000 -0500
+@@ -8,5 +8,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-pluginName = Equinox Launcher Linux X86 Fragment
++pluginName = Equinox Launcher FreeBSD X86 Fragment
+ providerName = Eclipse.org - Equinox
+--- ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/.project.orig	2014-04-15 21:32:54.000000000 -0500
++++ ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/.project	2014-04-16 07:51:09.000000000 -0500
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.equinox.launcher.gtk.linux.x86</name>
++	<name>org.eclipse.equinox.launcher.gtk.freebsd.x86</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+--- ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/build.properties.orig	2014-07-25 19:35:37.000000000 -0500
++++ ./rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.x86/build.properties	2014-07-25 20:07:49.000000000 -0500
+@@ -10,7 +10,7 @@
+ ###############################################################################
+ bin.includes = META-INF/,\
+-               launcher.gtk.linux.x86.properties,\
++               launcher.gtk.freebsd.x86.properties,\
+                about.html
+                
+ customBuildCallbacks=customBuildCallbacks.xml
+ generateSourceBundle=false
