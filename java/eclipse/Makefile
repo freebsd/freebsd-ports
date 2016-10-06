@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6
 CATEGORIES=	java devel
-MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
+MASTER_SITES=	https://s3.amazonaws.com/freebsd-eclipse-dist/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
 		${PORTNAME}-maven-repo-${PORTVERSION}.xz
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ljboiler@gmail.com
-COMMENT=	Eclipse Mars.2
+COMMENT=	Eclipse Neon
 
 LICENSE=	EPL
 
@@ -68,10 +68,18 @@ MVN_OPTS?=	MAVEN_OPTS='-Xmx1024m'
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
 E_SHORTARCH=	${ARCH:C/^i.86//:C/^amd//}
-ECLIPSE_BUILDID=M20160212-1500
+ECLIPSE_BUILDID=I20160606-1100
 SCRIPTS_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		E_SHORTARCH=${E_SHORTARCH}
 PORTDESTDIR=	${PREFIX}/lib/eclipse
+
+.if ${ARCH}=="i386"
+EXTRA_PATCHES=  ${FILESDIR}/i386-patch-freebsd_natives
+.endif
+
+.if ${ARCH}=="amd64"
+EXTRA_PATCHES=  ${FILESDIR}/amd64-patch-freebsd_natives
+.endif
 
 #  Someday it would be nice to see about moving the product selection into the patch phase (and only build the
 #  product the user wants), but that may prove to be difficult if not impossible with the way the eclipse tycho

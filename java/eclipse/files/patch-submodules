@@ -499,7 +499,7 @@ index 9387921..5e461cc 100644
  						parseLinux((Element) child);
  					} else if (name.equals("macosx")) { //$NON-NLS-1$
  						parseMac((Element) child);
-@@ -122,12 +124,17 @@ public class LauncherInfo extends ProductObject implements ILauncherInfo {
+@@ -122,13 +124,18 @@ public class LauncherInfo extends ProductObject implements ILauncherInfo {
  		fIcons.put(LINUX_ICON, element.getAttribute("icon")); //$NON-NLS-1$
  	}
  
@@ -507,6 +507,7 @@ index 9387921..5e461cc 100644
 +		fIcons.put(FREEBSD_ICON, element.getAttribute("icon")); //$NON-NLS-1$
 +	}
 +
+	@Override
  	public void write(String indent, PrintWriter writer) {
  		writer.print(indent + "<launcher"); //$NON-NLS-1$
  		if (fLauncherName != null && fLauncherName.length() > 0)
@@ -725,7 +726,7 @@ index bcedc5e..a313d19 100644
 @@ -106,7 +106,7 @@ public class PropertiesSection extends TableSection {
 		private IConfigurationProperty fEdit;
 		private Set<String> fExistingNames;
-		
+
 -		private String[] COMBO_OSLABELS = new String[] {PDEUIMessages.PropertiesSection_All, Platform.OS_LINUX, Platform.OS_MACOSX, Platform.OS_SOLARIS, Platform.OS_WIN32};
 +		private String[] COMBO_OSLABELS = new String[] {PDEUIMessages.PropertiesSection_All, Platform.OS_LINUX, Platform.OS_MACOSX, Platform.OS_SOLARIS, Platform.OS_WIN32, Platform.OS_FREEBSD};
 		private String[] COMBO_ARCHLABELS = new String[] {PDEUIMessages.PropertiesSection_All, Platform.ARCH_X86, Platform.ARCH_X86_64, Platform.ARCH_PPC, Platform.ARCH_IA64, Platform.ARCH_IA64_32, Platform.ARCH_PA_RISC, Platform.ARCH_SPARC};
@@ -806,27 +807,6 @@ index 7c8ad8c..b15bbf6 100644
  			assertTrue(haveSymlinks());
  		} else {
  			assertFalse(haveSymlinks());
-diff --git a/eclipse.platform.runtime/bundles/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java b/eclipse.platform.runtime/bundles/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java
-index 652119f..30482b0 100644
---- a/eclipse.platform.runtime/bundles/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java
-+++ b/eclipse.platform.runtime/bundles/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java
-@@ -94,6 +94,16 @@ public final class BootLoader {
- 	public static final String OS_HPUX = "hpux";//$NON-NLS-1$
- 
- 	/**
-+	 * Constant string (value "freebsd") indicating the platform is running on an
-+	 * FreeBSD-based operating system.
-+	 * Note: This constant is not officially supported by the eclipse project
-+	 * and is only available on eclipse versions built from the FreeBSD ports
-+	 * tree.
-+	 * @deprecated Replaced by {@link Platform#OS_FREEBSD.
-+	 */
-+	public static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
-+
-+	/**
- 	 * Constant string (value "qnx") indicating the platform is running on a
- 	 * QNX-based operating system.
- 	 * @deprecated Replaced by {@link Platform#OS_QNX}.
 diff --git a/eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java b/eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java
 index 8ace8e8..21ba40f 100644
 --- a/eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java
@@ -1274,31 +1254,30 @@ index 39c103e..d1b97c0 100644
 +requires.18.range = 0.0.0
 +requires.18.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=%%ECLIPSE_ARCH%%))
 diff --git a/eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf b/eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
-index 681fc0b..957a23f 100644
+index 98517c0..6f17162 100644
 --- a/eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
 +++ b/eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
-@@ -85,3 +85,8 @@ requires.17.namespace = org.eclipse.equinox.p2.iu
- requires.17.name = org.eclipse.swt.gtk.hpux.ia64
- requires.17.range = [$version$,$version$]
- requires.17.filter = (&(osgi.os=hpux)(osgi.ws=gtk)(osgi.arch=ia64)(!(org.eclipse.swt.buildtime=true)))
+@@ -95,3 +95,8 @@ requires.19.namespace = org.eclipse.equinox.p2.iu
+ requires.19.name = org.eclipse.swt.gtk.linux.aarch64
+ requires.19.range = [$version$,$version$]
+ requires.19.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=aarch64)(!(org.eclipse.swt.buildtime=true)))
 +
-+requires.18.namespace = org.eclipse.equinox.p2.iu
-+requires.18.name = org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%
-+requires.18.range = [$version$,$version$]
-+requires.18.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=%%ECLIPSE_ARCH%%)(!(org.eclipse.swt.buildtime=true)))
++requires.20.namespace = org.eclipse.equinox.p2.iu
++requires.20.name = org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%
++requires.20.range = [$version$,$version$]
++requires.20.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=%%ECLIPSE_ARCH%%)(!(org.eclipse.swt.buildtime=true)))
 diff --git a/eclipse.platform.swt.binaries/pom.xml b/eclipse.platform.swt.binaries/pom.xml
 index cc8d6f7..46c8f5a 100644
 --- a/eclipse.platform.swt.binaries/pom.xml
 +++ b/eclipse.platform.swt.binaries/pom.xml
-@@ -55,7 +56,8 @@
+@@ -91,6 +91,7 @@
      <module>bundles/org.eclipse.swt.gtk.linux.s390x</module>
      <module>bundles/org.eclipse.swt.gtk.linux.x86</module>
      <module>bundles/org.eclipse.swt.gtk.linux.x86_64</module>
 +    <module>bundles/org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%</module>
-     <module>bundles/org.eclipse.swt.gtk.solaris.sparc</module>
-     <module>bundles/org.eclipse.swt.gtk.solaris.x86</module>
+     <module>bundles/org.eclipse.swt.gtk.solaris.sparcv9</module>
+     <module>bundles/org.eclipse.swt.gtk.solaris.x86_64</module>
      <module>bundles/org.eclipse.swt.win32.win32.x86</module>
-     <module>bundles/org.eclipse.swt.win32.win32.x86_64</module>
 diff --git a/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c b/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c
 index 2417b4e..c665afe 100644
 --- a/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c
@@ -1745,9 +1724,9 @@ index 156de22..7353724 100644
                          <include name="gtk/linux/x86/**/*"/>
                          <include name="gtk/linux/x86_64/**/*"/>
 +                        <include name="gtk/freebsd/%%ECLIPSE_ARCH%%/**/*"/>
-                         <include name="gtk/solaris/sparc/**/*"/>
-                         <include name="gtk/solaris/x86/**/*"/>
+                         <include name="gtk/solaris/x86_64/**/*"/>
                          <include name="win32/win32/x86/**/*"/>
+                         <include name="win32/win32/x86_64/**/*"/>
 diff --git a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties b/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties
 index 0f30a87..36382de 100644
 --- a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties
@@ -1800,13 +1779,6 @@ index cdded03..a2a0af3 100644
  		<antcall target="rootFileslinux_gtk_x86"/>
  		<antcall target="rootFileslinux_gtk_ppc"/>
  		<antcall target="rootFileslinux_gtk_ppc64"/>
-@@ -279,4 +297,4 @@
- 	<target name="gather.logs" depends="init">
- 	</target>
- 
--</project>
-\ No newline at end of file
-+</project>
 diff --git a/rt.equinox.framework/pom.xml b/rt.equinox.framework/pom.xml
 index b46cdc6..d46c81d 100644
 --- a/rt.equinox.framework/pom.xml
@@ -1816,9 +1788,9 @@ index b46cdc6..d46c81d 100644
      <module>bundles/org.eclipse.equinox.launcher.gtk.linux.x86</module>
      <module>bundles/org.eclipse.equinox.launcher.gtk.linux.x86_64</module>
 +    <module>bundles/org.eclipse.equinox.launcher.gtk.freebsd.%%ECLIPSE_ARCH%%</module>
-     <module>bundles/org.eclipse.equinox.launcher.gtk.solaris.sparc</module>
-     <module>bundles/org.eclipse.equinox.launcher.gtk.solaris.x86</module>
-     <module>bundles/org.eclipse.equinox.launcher.motif.aix.ppc</module>
+     <module>bundles/org.eclipse.equinox.launcher.gtk.solaris.x86_64</module>
+     <module>bundles/org.eclipse.equinox.launcher.win32.win32.x86</module>
+     <module>bundles/org.eclipse.equinox.launcher.win32.win32.x86_64</module>
 diff --git a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java
 index 3cf2fe1..53f82b3 100644
 --- a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java
@@ -2145,11 +2117,11 @@ index 92973d3..b492f25 100644
        <plugin id="org.eclipse.swt"/>
 +      <plugin id="org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%" fragment="true"/>
 +<!--
-       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
-       <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
-       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
-       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
+       <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
+       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
 +-->
        <plugin id="org.eclipse.ui"/>
        <plugin id="org.eclipse.ui.workbench"/>
@@ -2204,3 +2176,35 @@ index 35144a0..5492b95 100644
           id="org.eclipse.core.filesystem.linux.x86"
           os="linux"
           arch="x86"
+diff --git a/eclipse.platform.swt/bundles/org.eclipse.swt/pom.xml b/eclipse.platform.swt/bundles/org.eclipse.swt/pom.xml
+index 01db883..22c1314 100644
+--- a/eclipse.platform.swt/bundles/org.eclipse.swt/pom.xml
++++ b/eclipse.platform.swt/bundles/org.eclipse.swt/pom.xml
+@@ -20,9 +20,9 @@
+   <artifactId>org.eclipse.swt</artifactId>
+   <version>3.105.0-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+-  <properties>
++  <!-- properties>
+     <forceContextQualifier>v20160603-0902</forceContextQualifier>
+-  </properties>
++  </properties -->
+   <build>
+     <plugins>
+       <plugin>
+diff --git a/eclipse.platform.swt.binaries/bundles/binaries-parent/pom.xml b/eclipse.platform.swt.binaries/bundles/binaries-parent/pom.xml
+index 73c4197..4493f7c 100644
+--- a/eclipse.platform.swt.binaries/bundles/binaries-parent/pom.xml
++++ b/eclipse.platform.swt.binaries/bundles/binaries-parent/pom.xml
+@@ -21,9 +21,9 @@
+   <artifactId>binaries-parent</artifactId>
+   <version>4.6.0-SNAPSHOT</version>
+   <packaging>pom</packaging>
+-  <properties>
++  <!-- properties>
+     <forceContextQualifier>v20160603-0902</forceContextQualifier>
+-  </properties>
++  </properties -->
+   <build>
+     <plugins>
+       <plugin>

@@ -2,6 +2,15 @@ diff --git a/eclipse-platform-parent/pom.xml b/eclipse-platform-parent/pom.xml
 index 71a6610..cc260cd 100644
 --- a/eclipse-platform-parent/pom.xml
 +++ b/eclipse-platform-parent/pom.xml
+@@ -80,7 +80,7 @@
+       The tycho-eclipserun-plugin will create its instance of Eclipse from this
+       'eclipiserun-repo' repository, such as for computing .api-descriptions.
+     -->
+-    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6RC2-201605191730/</eclipserun-repo>
++    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.6/R-4.6-201606061100/</eclipserun-repo>
+ 
+     <comparator.repo>http://download.eclipse.org/eclipse/updates/4.6-I-builds</comparator.repo>
+ 
 @@ -253,6 +253,11 @@
            </target>
            <environments>
@@ -17,13 +26,13 @@ index 71a6610..cc260cd 100644
 @@ -480,13 +485,13 @@
            <configuration>
              <strictBinIncludes>false</strictBinIncludes>
-             <format>'v'yyyyMMdd-HHmm</format>
+             <format>${qualifier.format}</format>
 -            <timestampProvider>jgit</timestampProvider>
 +            <!-- timestampProvider>jgit</timestampProvider -->
              <jgit.ignore>
                pom.xml
              </jgit.ignore>
-             <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree}</jgit.dirtyWorkingTree>
+             <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree-platformDefault}</jgit.dirtyWorkingTree>
              <sourceReferences>
 -              <generate>true</generate>
 +              <generate>false</generate>
@@ -247,10 +256,10 @@ index a8a32d0..2ab8a62 100644
    </build>
  </project>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
-index 29dfebb..2783e4e 100644
+index f34ae99..6293698 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
-@@ -9,55 +9,8 @@
+@@ -9,56 +9,8 @@
  #     IBM Corporation - initial API and implementation
  ###############################################################################
  
@@ -284,10 +293,10 @@ index 29dfebb..2783e4e 100644
 -root.hpux.gtk.ia64=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/hpux/ia64
 -root.hpux.gtk.ia64.permissions.755=eclipse
 -
--root.solaris.gtk.sparc=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/sparc
--root.solaris.gtk.sparc.permissions.755=eclipse
--root.solaris.gtk.x86=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/x86
--root.solaris.gtk.x86.permissions.755=eclipse
+-root.solaris.gtk.sparcv9=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/sparcv9
+-root.solaris.gtk.sparcv9.permissions.755=eclipse
+-root.solaris.gtk.x86_64=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/x86_64
+-root.solaris.gtk.x86_64.permissions.755=eclipse
 -
 -root.linux.gtk.x86=rootfiles/linux.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86
 -root.linux.gtk.x86.permissions.755=eclipse
@@ -304,10 +313,11 @@ index 29dfebb..2783e4e 100644
 -root.linux.gtk.s390.permissions.755=eclipse
 -
 +root.freebsd.gtk.%%ECLIPSE_ARCH%%=rootfiles/freebsd.gtk.%%ECLIPSE_ARCH%%,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/%%ECLIPSE_ARCH%%
-+root.freebsd.gtk.%%ECLIPSE_ARCH%%.permissions.755=libcairo-swt.so,eclipse
++root.freebsd.gtk.%%ECLIPSE_ARCH%%.permissions.755=eclipse
  
  bin.includes = feature.properties
  
+-
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
 index 29be78c..207a934 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
@@ -341,42 +351,15 @@ index 29be78c..207a934 100644
      </plugins>
    </build>
  
-diff --git a/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf b/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf
-index 6b59ed2..64975ba 100644
---- a/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf
-+++ b/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf
-@@ -89,6 +89,23 @@ units.5.touchpoint.version=1.0.0
- units.5.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
- units.5.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);
- 
-+requires.6.namespace=org.eclipse.equinox.p2.iu
-+requires.6.name=toolingorg.eclipse.sdk.configuration.gtk.freebsd.%%ECLIPSE_ARCH%%
-+requires.6.filter=(&(osgi.os=freebsd) (osgi.arch=%%ECLIPSE_ARCH%%) (osgi.ws=gtk))
-+requires.6.range=[1.0.0,1.0.0]
-+requires.6.greedy=true
-+
-+units.6.id=toolingorg.eclipse.sdk.configuration.gtk.freebsd.%%ECLIPSE_ARCH%%
-+units.6.version=1.0.0
-+units.6.provides.1.namespace=org.eclipse.equinox.p2.iu
-+units.6.provides.1.name=toolingorg.eclipse.sdk.configuration.gtk.freebsd.%%ECLIPSE_ARCH%%
-+units.6.provides.1.version=1.0.0
-+units.6.filter=(&(osgi.os=freebsd) (osgi.arch=%%ECLIPSE_ARCH%%) (osgi.ws=gtk))
-+units.6.touchpoint.id=org.eclipse.equinox.p2.osgi
-+units.6.touchpoint.version=1.0.0
-+units.6.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
-+units.6.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);
-+
- # Restrict range so we are not an automatic update for 3.x.
- update.id= org.eclipse.sdk.ide
- update.range = [4.0,$version$)
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 --- a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 @@ -35,6 +35,6 @@
-       <module>platform.sdk</module>
-       <module>sdk</module>
-       <module>eclipse-junit-tests</module>
--      <module>eclipse.platform.repository</module>
-+      <!-- module>eclipse.platform.repository</module -->
+     <module>platform.sdk</module>
+     <module>sdk</module>
+-    <module>eclipse-junit-tests</module>
++    <!-- module>eclipse-junit-tests</module -->
+-    <module>eclipse.platform.repository</module>
++    <!-- module>eclipse.platform.repository</module -->
    </modules>
  </project>
