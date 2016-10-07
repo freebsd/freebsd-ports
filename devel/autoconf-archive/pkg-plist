@@ -45,6 +45,7 @@
 %%MACRODIR%%/ax_boost_unit_test_framework.m4
 %%MACRODIR%%/ax_boost_wave.m4
 %%MACRODIR%%/ax_boost_wserialization.m4
+%%MACRODIR%%/ax_build_date_epoch.m4
 %%MACRODIR%%/ax_c99_inline.m4
 %%MACRODIR%%/ax_c___attribute__.m4
 %%MACRODIR%%/ax_c_arithmetic_rshift.m4
@@ -171,6 +172,7 @@
 %%MACRODIR%%/ax_check_uname_syscall.m4
 %%MACRODIR%%/ax_check_user.m4
 %%MACRODIR%%/ax_check_vscript.m4
+%%MACRODIR%%/ax_check_x86_features.m4
 %%MACRODIR%%/ax_check_zlib.m4
 %%MACRODIR%%/ax_code_coverage.m4
 %%MACRODIR%%/ax_compare_version.m4
@@ -340,6 +342,7 @@
 %%MACRODIR%%/ax_gcc_version.m4
 %%MACRODIR%%/ax_gcc_warn_unused_result.m4
 %%MACRODIR%%/ax_gcc_x86_avx_xgetbv.m4
+%%MACRODIR%%/ax_gcc_x86_cpu_supports.m4
 %%MACRODIR%%/ax_gcc_x86_cpuid.m4
 %%MACRODIR%%/ax_generate_changelog.m4
 %%MACRODIR%%/ax_gnu_autotest.m4
@@ -394,6 +397,7 @@
 %%MACRODIR%%/ax_libtoolize_cflags.m4
 %%MACRODIR%%/ax_llvm.m4
 %%MACRODIR%%/ax_lua.m4
+%%MACRODIR%%/ax_luarocks_rock.m4
 %%MACRODIR%%/ax_maintainer_mode_auto_silent.m4
 %%MACRODIR%%/ax_missing_prog.m4
 %%MACRODIR%%/ax_mpi.m4
@@ -402,6 +406,9 @@
 %%MACRODIR%%/ax_normalize_path.m4
 %%MACRODIR%%/ax_not_enable_frame_pointer.m4
 %%MACRODIR%%/ax_numeric_namedlevel.m4
+%%MACRODIR%%/ax_open62541_check_h.m4
+%%MACRODIR%%/ax_open62541_check_lib.m4
+%%MACRODIR%%/ax_open62541_path.m4
 %%MACRODIR%%/ax_openmp.m4
 %%MACRODIR%%/ax_patch_libtool_changing_cmds_ifs.m4
 %%MACRODIR%%/ax_path_bdb.m4
