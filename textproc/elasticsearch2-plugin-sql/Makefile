@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql
-PORTVERSION=	2.3.0.0
+PORTVERSION=	2.4.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://github.com/NLPchina/elasticsearch-sql/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	elasticsearch2-plugin-
@@ -12,7 +12,7 @@ COMMENT=	ElasticSearch SQL plugin
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch2>=2.1.0:textproc/elasticsearch2
+RUN_DEPENDS=	elasticsearch2>=2.4.0:textproc/elasticsearch2
 
 CONFLICTS=      elasticsearch-plugin-sql-1.*
 
