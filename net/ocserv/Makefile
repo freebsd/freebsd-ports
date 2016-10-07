@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.4
-PORTREVISION=	1
+PORTVERSION=	0.11.5
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
