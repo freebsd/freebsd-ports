@@ -144,6 +144,9 @@ lib/X11/locale/nokhchi-1/XLC_LOCALE
 lib/X11/locale/pt_BR.UTF-8/Compose
 lib/X11/locale/pt_BR.UTF-8/XI18N_OBJS
 lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
+lib/X11/locale/pt_PT.UTF-8/Compose
+lib/X11/locale/pt_PT.UTF-8/XI18N_OBJS
+lib/X11/locale/pt_PT.UTF-8/XLC_LOCALE
 lib/X11/locale/ru_RU.UTF-8/Compose
 lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
 lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
