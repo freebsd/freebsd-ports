@@ -18,6 +18,7 @@ COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 LICENSE_NAME=	Sleepycat
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_GROUPS=	FSF GPL OSI
 
 BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
