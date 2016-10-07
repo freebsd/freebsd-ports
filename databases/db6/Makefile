@@ -93,12 +93,12 @@ post-install-SQL-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/../lang/sql/upgrade61.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-upgrade61.sh
 
-post-install-TCL-off:
+post-install-TCL-on:
 	echo "package ifneeded Db_tcl ${BDBVER} \
 	      [list load [file join $$dir libdb_tcl-${BDBVER}.so]] \
 	     " > ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/pkgIndex.tcl
 
-post-install-TCL-on:
+post-install-TCL-off:
 .for i in api_reference/TCL
 	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
