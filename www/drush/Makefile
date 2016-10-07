@@ -3,6 +3,7 @@
 
 PORTNAME=	drush
 PORTVERSION=	8.1.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION}/
 DISTNAME=	drush
@@ -18,7 +19,7 @@ NO_WRKSUBDIR=	yes
 
 USES=		php:cli
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session mbstring ctype json hash simplexml dom pdo filter
+USE_PHP=	gd pcre session mbstring ctype json hash simplexml dom pdo filter phar
 
 PLIST_FILES=	bin/drush bin/drush.phar
 
