@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.5
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -14,14 +14,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32 \
-		rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
-RUN_DEPENDS=	rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+RUN_DEPENDS=	rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-childprocess>=0.5.1:devel/rubygem-childprocess \
 		rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-hashicorp-checkpoint>=0.1.4:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=0.6.9:devel/rubygem-i18n \
-		rubygem-listen>=3.0.2:devel/rubygem-listen \
+		rubygem-listen>=3.1.5:devel/rubygem-listen \
 		rubygem-log4r>=1.1.10:sysutils/rubygem-log4r \
 		rubygem-net-scp>=1.1.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1:security/rubygem-net-sftp \
@@ -30,15 +30,15 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
 		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0:www/rubygem-rest-client \
 		rubygem-wdm>=0.1.0:devel/rubygem-wdm \
-		rubygem-winrm>=1.3.0:sysutils/rubygem-winrm \
-		rubygem-winrm-fs>=0.2.0:sysutils/rubygem-winrm-fs
+		rubygem-winrm>=1.6.0:sysutils/rubygem-winrm \
+		rubygem-winrm-fs>=0.3.0:sysutils/rubygem-winrm-fs \
+		rubygem-ruby_dep>=0:devel/rubygem-ruby_dep
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
 
 USES=		shebangfix
-SHEBANG_FILES=	scripts/bintray_upload.sh \
-		scripts/website_push_docs.sh \
+SHEBANG_FILES=	scripts/website_push_docs.sh \
 		scripts/website_push_www.sh
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
