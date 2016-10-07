@@ -1,34 +1,39 @@
 # $FreeBSD$
 
 PORTNAME=	packetdrill
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.20130820
 CATEGORIES=	net ipv6
-DISTNAME=	${PORTNAME}-467b39b
+MASTER_SITES=	LOCAL/hrs
+DISTNAME=	${PORTNAME}-ea8f2fec724d
 
-MAINTAINER=	gnn@freebsd.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Network stack testing tool
 
 LICENSE=	GPLv2
 
-USES=		bison
+USES=		bison uidfix
 PORTDATA=	packetdrill.el packetdrill.vim
 PORTDOCS=	README
 PORTEXAMPLES=	tests
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	freebsd-net
-GH_PROJECT=	packetdrill
-GH_TAGNAME=	467b39b
+do-configure:
+	${PRINTF} "%s\n" "#include <stdio.h>" "int main(void) {" \
+	    "char *p = fmemopen; char *q = open_memstream; return 0; }" \
+	    > ${WRKDIR}/configure.c
+	${TOUCH} ${WRKSRC}/ports_config.h
+	cd ${WRKDIR} && \
+	    if ${CC} -o /dev/null configure.c > /dev/null 2>&1; then \
+		${PRINTF} "%s\n" "#define HAVE_FMEMOPEN 1" \
+		"#define HAVE_OPEN_MEMSTREAM 1" > ${WRKSRC}/ports_config.h; \
+	    fi
 
-GNU_CONFIGURE=	yes
-
-WRKSRC_SUBDIR=	gtests/net/packetdrill
-
-do-install:
-.for f in packetdrill checksum_test packet_parser_test packet_to_string_test
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+pre-build:
+	${INSTALL_DATA} ${FILESDIR}/Makefile ${FILESDIR}/Makefile.inc ${WRKSRC}
+.for F in libpd packetdrill checksum_test packet_parser_test packet_to_string_test
+	${MKDIR} ${WRKSRC}/${F}
+	${INSTALL_DATA} ${FILESDIR}/Makefile.${F} ${WRKSRC}/${F}/Makefile
 .endfor
 
 post-install:
