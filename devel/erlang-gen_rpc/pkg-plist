@@ -4,6 +4,7 @@ lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_acceptor.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_acceptor_sup.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_app.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_client.beam
+lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_client_config.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_client_sup.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_dispatcher.beam
 lib/erlang/lib/gen_rpc-%%VERSION%%/ebin/gen_rpc_driver.beam
@@ -33,6 +34,7 @@ lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_acceptor.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_app.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_client.erl
+lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_client_config.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_dispatcher.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_driver.erl
 lib/erlang/lib/gen_rpc-%%VERSION%%/src/gen_rpc_helper.erl

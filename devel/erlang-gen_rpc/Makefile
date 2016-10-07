@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gen_rpc
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
