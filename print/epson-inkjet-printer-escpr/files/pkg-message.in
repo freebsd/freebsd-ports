@@ -3,14 +3,10 @@ Examples to add printer for EP-803AW
 
 # The printer connected with USB cable (using ulpt0)
 
-chown :cups /dev/ulpt0
-chmod g+rw /dev/ulpt0
 lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'usb:/dev/ulpt0' -D 'EPSON EP-803AW (ulpt0)' -E
 
 # The printer connected with USB cable (using unlpt0)
 
-chown :cups /dev/unlpt0
-chmod g+rw /dev/unlpt0
 lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'usb:/dev/unlpt0' -D 'EPSON EP-803AW (unlpt0)' -E
 
 # The printer joined network (using LPD port)
