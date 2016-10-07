@@ -2,7 +2,7 @@
 
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.0.s20160921
+DISTVERSION=	0.0.0.s20161007
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
 DISTFILES=	${PORTNAME}.desktop:desktop
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
-GH_TAGNAME=	e4c46f6
+GH_TAGNAME=	5d410a5
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build core gui network widgets x11extras
@@ -27,9 +27,6 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
-
-post-patch:
-	@${REINPLACE_CMD} '/-Werror/d' ${WRKSRC}/${PORTNAME}.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
