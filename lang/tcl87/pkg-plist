@@ -1399,6 +1399,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ust-Nera
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Vientiane
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Vladivostok
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Yangon
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Yakutsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Yekaterinburg
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Yerevan
