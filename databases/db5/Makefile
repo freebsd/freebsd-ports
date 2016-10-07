@@ -15,7 +15,8 @@ DIST_SUBDIR=	bdb
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
-LICENSE=	BSD3CLAUSE
+LICENSE_NAME=	Sleepycat
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BDBVER=		${PORTVERSION:R}
