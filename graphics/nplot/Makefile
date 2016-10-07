@@ -18,9 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mhowlett
 GH_TAGNAME=	9a92e78
 
-USE_OPENSSL=	yes
 SUB_FILES=	NPlot.pc
-USES=		mono
+USES=		mono ssl
 
 PLIST_FILES=	lib/mono/NPlot/NPlot.dll \
 		lib/mono/gac/NPlot/0.9.11.0__1d82a50c5d01c44e/NPlot.dll \
