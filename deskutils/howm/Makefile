@@ -8,6 +8,8 @@ MASTER_SITES=	http://howm.sourceforge.jp/a/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Write fragmentarily and read collectively
 
+BROKEN=		fails to build
+
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 ELISP=		action-lock.el bcomp.el cheat-font-lock.el \
