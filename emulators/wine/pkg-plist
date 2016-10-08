@@ -776,6 +776,7 @@ include/wine/windows/wintrust.h
 include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
+include/wine/windows/wlanapi.h
 include/wine/windows/wmistr.h
 include/wine/windows/wmiutils.h
 include/wine/windows/wmiutils.idl
@@ -2288,7 +2289,6 @@ lib/wine/vcomp90.dll.so
 lib/wine/vcruntime140.dll.so
 %%WINE32%%lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
-lib/wine/wimgapi.dll.so
 %%WINE32%%lib/wine/ver.dll16.so
 lib/wine/version.dll.so
 lib/wine/view.exe.so
@@ -2307,6 +2307,7 @@ lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
 lib/wine/wevtutil.exe.so
 lib/wine/wiaservc.dll.so
+lib/wine/wimgapi.dll.so
 %%WINE32%%lib/wine/win32s16.dll16.so
 %%WINE32%%lib/wine/win87em.dll16.so
 %%WINE32%%lib/wine/winaspi.dll16.so
@@ -2324,9 +2325,9 @@ lib/wine/winefile.exe.so
 lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
+%%MPG123%%lib/wine/winemp3.acm.so
 lib/wine/winemsibuilder.exe.so
 lib/wine/wineoss.drv.so
-%%MPG123%%lib/wine/winemp3.acm.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 %%WINE32%%lib/wine/wineps16.drv16.so
