@@ -10,8 +10,8 @@ share/applications/connectagram.desktop
 %%DATADIR%%/translations/connectagram_de.qm
 %%DATADIR%%/translations/connectagram_el.qm
 %%DATADIR%%/translations/connectagram_en.qm
+%%DATADIR%%/translations/connectagram_es_PE.qm
 %%DATADIR%%/translations/connectagram_fr.qm
-%%DATADIR%%/translations/connectagram_he.qm
 %%DATADIR%%/translations/connectagram_hr.qm
 %%DATADIR%%/translations/connectagram_hu.qm
 %%DATADIR%%/translations/connectagram_lt.qm
