@@ -22,6 +22,8 @@ COMMENT=	Puzzle game with arcade game elements
 RESTRICTED=	kye-data_nuke_levels is charityware
 RESTRICTED_FILES=	 kye-data_nuke_levels.20121101.tar.gz
 
+BROKEN=		unfetchable
+
 USE_GNOME=	pygtk2 librsvg2
 USES=		python
 USE_PYTHON=	distutils
