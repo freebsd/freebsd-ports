@@ -13,7 +13,14 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
-USES=		gmake ssl tar:tgz
+USES=		gmake tar:tgz
+
+OPTIONS_DEFINE=	STATIC_ACMECLIENT
+STATIC_ACMECLIENT_DESC=	Link statically with security/libressl
+
+STATIC_ACMECLIENT_USES_OFF=	ssl
+STATIC_ACMECLIENT_BUILD_DEPENDS=	${LOCALBASE}/lib/libtls.a:security/libressl
+STATIC_ACMECLIENT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-GNUmakefile
 
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PREFIX=${STAGEDIR}/${PREFIX}
@@ -46,9 +53,11 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if empty(SSL_DEFAULT:M*libressl*)
+.if ${PORT_OPTIONS:MSTATIC_ACMECLIENT} == "" && empty(SSL_DEFAULT:M*libressl*)
 IGNORE=	needs LibreSSL to build. set DEFAULT_VERSIONS+=ssl=libressl \
 	and rebuild all ports that depend on openssl
+.else
+WARNING=	"Remember to deinstall libressl after building acme-client"
 .endif
 
 .include <bsd.port.post.mk>
