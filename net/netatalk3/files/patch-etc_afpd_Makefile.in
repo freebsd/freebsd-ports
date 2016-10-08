@@ -1,6 +1,6 @@
---- etc/afpd/Makefile.in.orig	2016-06-22 09:01:44 UTC
+--- etc/afpd/Makefile.in.orig	2016-09-12 09:54:35 UTC
 +++ etc/afpd/Makefile.in
-@@ -186,7 +186,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+@@ -191,7 +191,7 @@ AM_V_at = $(am__v_at_@AM_V@)
  am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
  am__v_at_0 = @
  am__v_at_1 = 
@@ -9,7 +9,7 @@
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  am__mv = mv -f
-@@ -468,7 +468,7 @@ afpd_SOURCES = afp_config.c afp_dsi.c af
+@@ -473,7 +473,7 @@ afpd_SOURCES = afp_config.c afp_dsi.c af
  	$(am__append_7)
  afpd_LDADD = $(top_builddir)/libatalk/libatalk.la @LIBGCRYPT_LIBS@ \
  	@QUOTA_LIBS@ @WRAP_LIBS@ @LIBADD_DL@ @ACL_LIBS@ @PTHREAD_LIBS@ \

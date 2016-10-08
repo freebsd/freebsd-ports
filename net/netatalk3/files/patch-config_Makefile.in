@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	2016-06-22 09:01:44 UTC
+--- config/Makefile.in.orig	2016-09-12 09:54:34 UTC
 +++ config/Makefile.in
-@@ -820,8 +820,8 @@ install-data-local: install-config-files
+@@ -825,8 +825,8 @@ install-data-local: install-config-files
  
  uninstall-local:
  	@for f in $(CONFFILES) $(GENFILES); do \
@@ -11,7 +11,7 @@
  	done
  	rm -f $(DESTDIR)$(pkgconfdir)/dbus-session.conf
  	rm -f $(DESTDIR)$(localstatedir)/netatalk/README
-@@ -831,21 +831,16 @@ uninstall-local:
+@@ -836,21 +836,16 @@ uninstall-local:
  install-config-files: $(CONFFILES) $(GENFILES)
  	$(mkinstalldirs) $(DESTDIR)$(pkgconfdir)
  	@for f in $(CONFFILES) ; do \
