@@ -4,8 +4,8 @@
      const char *attrname = ((s=strchr(name, '.')) == NULL) ? name : s + 1;
  
      if((retval=extattr_get_fd(filedes, attrnamespace, attrname, NULL, 0)) >= 0) {
-+	if (size == 0)
-+	    return retval;
++        if (size == 0)
++            return retval;
          if(retval > size) {
              errno = ERANGE;
              return -1;
