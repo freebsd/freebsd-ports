@@ -1,9 +1,3 @@
-%%PERL5_MAN3%%/Math::Polygon.3.gz
-%%PERL5_MAN3%%/Math::Polygon::Calc.3.gz
-%%PERL5_MAN3%%/Math::Polygon::Clip.3.gz
-%%PERL5_MAN3%%/Math::Polygon::Convex.3.gz
-%%PERL5_MAN3%%/Math::Polygon::Surface.3.gz
-%%PERL5_MAN3%%/Math::Polygon::Transform.3.gz
 %%SITE_PERL%%/Math/Polygon.pm
 %%SITE_PERL%%/Math/Polygon.pod
 %%SITE_PERL%%/Math/Polygon/Calc.pm
@@ -16,3 +10,9 @@
 %%SITE_PERL%%/Math/Polygon/Surface.pod
 %%SITE_PERL%%/Math/Polygon/Transform.pm
 %%SITE_PERL%%/Math/Polygon/Transform.pod
+%%PERL5_MAN3%%/Math::Polygon.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Calc.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Clip.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Convex.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Surface.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Transform.3.gz
