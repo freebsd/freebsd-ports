@@ -13,36 +13,30 @@ COMMENT=	Tiny Vector and Matrix template library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CPPUNIT DEBUG DOCS EXAMPLES
-
 USES=		gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cxx=${CXX}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	CPPUNIT DEBUG DOCS EXAMPLES
 
-.if ${PORT_OPTIONS:MCPPUNIT}
-LIB_DEPENDS+=	libcppunit.so:devel/cppunit
-CONFIGURE_ARGS+=	--with-cppunit-prefix=${LOCALBASE}
-.else
-CONFIGURE_ENV+=	ac_cv_path_CPPUNIT_CONFIG=no
-.endif
+CPPUNIT_LIB_DEPENDS=		libcppunit.so:devel/cppunit
+CPPUNIT_CONFIGURE_ON=		--with-cppunit-prefix=${LOCALBASE}
+CPPUNIT_CONFIGURE_ENV_OFF=	ac_cv_path_CPPUNIT_CONFIG=no
 
-.if ${PORT_OPTIONS:MDEBUG}
-CXXFLAGS+=	-DTVMET_DEBUG
-.else
-CXXFLAGS+=	-DTVMET_OPTIMIZE
-.endif
+DEBUG_CXXFLAGS=		-DTVMET_DEBUG
+DEBUG_CXXFLAGS_OFF=	-DTVMET_OPTIMIZE
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O |= |g' ${WRKSRC}/doc/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in dox cc css h png
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.${ext} \
 		${STAGEDIR}${DOCSDIR})
 .endfor
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ext in cc
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.${ext} \
