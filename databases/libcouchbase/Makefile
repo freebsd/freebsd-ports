@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcouchbase
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.couchbase.com/clients/c/
 
@@ -13,8 +13,6 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libevent.so:devel/libevent2 \
 		libev.so:devel/libev \
 		libuv.so:devel/libuv
-
-BUILDDIR=	${WRKDIR}/${DISTNAME}/build
 
 CMAKE_ARGS+=	-DLCB_NO_TESTS=1
 
