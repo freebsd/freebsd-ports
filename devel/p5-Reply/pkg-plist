@@ -25,6 +25,7 @@ bin/reply
 %%SITE_PERL%%/Reply/Plugin/LoadClass.pm
 %%SITE_PERL%%/Reply/Plugin/Nopaste.pm
 %%SITE_PERL%%/Reply/Plugin/Packages.pm
+%%SITE_PERL%%/Reply/Plugin/Pager.pm
 %%SITE_PERL%%/Reply/Plugin/ReadLine.pm
 %%SITE_PERL%%/Reply/Plugin/ResultCache.pm
 %%SITE_PERL%%/Reply/Plugin/Timer.pm
@@ -54,6 +55,7 @@ bin/reply
 %%PERL5_MAN3%%/Reply::Plugin::LoadClass.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::Nopaste.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::Packages.3.gz
+%%PERL5_MAN3%%/Reply::Plugin::Pager.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::ReadLine.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::ResultCache.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::Timer.3.gz
