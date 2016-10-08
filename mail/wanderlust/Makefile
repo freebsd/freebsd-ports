@@ -13,6 +13,8 @@ DISTNAME=	wl-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Yet another message interface on Emacsen
 
+BROKEN=		fails to configure
+
 USE_EMACS=	yes
 NO_ARCH=	yes
 
