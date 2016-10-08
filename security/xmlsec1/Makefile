@@ -25,8 +25,7 @@ NSS_LIB_DEPENDS=	libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
-USE_OPENSSL=	yes
+USES=		libtool pathfix pkgconfig ssl
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
