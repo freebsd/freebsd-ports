@@ -15,6 +15,8 @@ COMMENT=	Scheme interpreter and native code compiler
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmp.so:math/gmp
 
