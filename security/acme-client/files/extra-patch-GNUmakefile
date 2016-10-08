@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	2016-09-01 05:48:04 UTC
++++ GNUmakefile
+@@ -71,7 +71,7 @@ endif
+ all: acme-client
+ 
+ acme-client: $(OBJS)
+-	$(CC) -o $@ $(OBJS) $(LDFLAGS) -ltls -lssl -lcrypto $(LIBBSD)
++	$(CC) -o $@ $(OBJS) $(LDFLAGS) ${PREFIX}/lib/libtls.a ${PREFIX}/lib/libssl.a ${PREFIX}/lib/libcrypto.a $(LIBBSD)
+ 
+ # This is for synchronising from -portable to the master.
+ rmerge:
