@@ -17,6 +17,7 @@ lib/erlang/lib/gen_rpc-%%VERSION%%/include/app.hrl
 lib/erlang/lib/gen_rpc-%%VERSION%%/include/guards.hrl
 lib/erlang/lib/gen_rpc-%%VERSION%%/include/ssl.hrl
 lib/erlang/lib/gen_rpc-%%VERSION%%/include/tcp.hrl
+lib/erlang/lib/gen_rpc-%%VERSION%%/include/types.hrl
 lib/erlang/lib/gen_rpc-%%VERSION%%/priv/ssl/ca.cert.pem
 lib/erlang/lib/gen_rpc-%%VERSION%%/priv/ssl/ca.key.pem
 lib/erlang/lib/gen_rpc-%%VERSION%%/priv/ssl/ca.srl
