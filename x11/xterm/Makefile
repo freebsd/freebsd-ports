@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	326
+PORTVERSION=	327
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		LOCAL/ehaupt:src1 LOCAL/ehaupt:src2
