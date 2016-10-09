@@ -30,25 +30,16 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -70,15 +85,15 @@
+@@ -46,7 +56,11 @@ else
+ DLL_SUFFIX		= so.1.0
+ endif
  
- ARCH			= freebsd
- 
--MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
-+ifndef MOZILLA_CLIENT
-+DLL_SUFFIX		= so.1
-+endif
- 
--ifeq ($(MOZ_OBJFORMAT),elf)
--DLL_SUFFIX		= so
+-MKSHLIB			= $(CC) $(DSO_LDOPTS)
 +ifneq (,$(filter alpha ia64,$(OS_TEST)))
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic -lc $(DSO_LDOPTS)
- else
--DLL_SUFFIX		= so.1.0
++else
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
- endif
--
--MKSHLIB			= $(CC) $(DSO_LDOPTS)
++endif
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
