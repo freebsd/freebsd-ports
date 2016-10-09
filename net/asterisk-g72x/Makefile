@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk-g72x
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 
