@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
