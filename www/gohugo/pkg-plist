@@ -7,6 +7,7 @@ man/man1/hugo_convert.1.gz
 man/man1/hugo_convert_toJSON.1.gz
 man/man1/hugo_convert_toTOML.1.gz
 man/man1/hugo_convert_toYAML.1.gz
+man/man1/hugo_env.1.gz
 man/man1/hugo_gen.1.gz
 man/man1/hugo_gen_autocomplete.1.gz
 man/man1/hugo_gen_doc.1.gz
@@ -15,6 +16,7 @@ man/man1/hugo_import.1.gz
 man/man1/hugo_import_jekyll.1.gz
 man/man1/hugo_list.1.gz
 man/man1/hugo_list_drafts.1.gz
+man/man1/hugo_list_expired.1.gz
 man/man1/hugo_list_future.1.gz
 man/man1/hugo_new.1.gz
 man/man1/hugo_new_site.1.gz
