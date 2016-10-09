@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Net::Interface.3.gz
-%%PERL5_MAN3%%/Net::Interface::Developer.3.gz
-%%PERL5_MAN3%%/Net::Interface::NetSymbols.3.gz
 %%SITE_ARCH%%/Net/Interface.pm
 %%SITE_ARCH%%/Net/Interface/Developer.pm
 %%SITE_ARCH%%/Net/Interface/NetSymbols.pm
 %%SITE_ARCH%%/auto/Net/Interface/Interface.so
+%%PERL5_MAN3%%/Net::Interface.3.gz
+%%PERL5_MAN3%%/Net::Interface::Developer.3.gz
+%%PERL5_MAN3%%/Net::Interface::NetSymbols.3.gz
