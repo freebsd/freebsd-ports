@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.librevisa.org/download/
 DISTNAME=	vish-${PORTVERSION}
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source VISA shell for interfacing test and measurement equipment
 
 LIB_DEPENDS=	libvisa.so:devel/librevisa

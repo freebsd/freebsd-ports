@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/emeryberger/Hoard/releases/download/${PORTVERSION}/
 DISTNAME=	Hoard-${PORTVERSION}-source
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, scalable, and memory-efficient allocator for MP
 
 LICENSE=	GPLv2+

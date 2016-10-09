@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
 LIB_DEPENDS=	libcvm-v2client.so:security/cvm
