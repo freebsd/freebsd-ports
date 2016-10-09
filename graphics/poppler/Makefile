@@ -3,7 +3,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.46.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
+		--disable-libnss \
 		--disable-gtk-test \
 		--without-html-dir \
 		--disable-static
