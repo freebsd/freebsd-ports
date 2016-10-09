@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unix-Passwd-File
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Crypt-Password-Util>=0.06:security/p5-Crypt-Password-Util \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
-		p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny \
+		p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-File-chdir>=0:devel/p5-File-chdir \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
