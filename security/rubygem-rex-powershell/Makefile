@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rex-powershell
-PORTVERSION=	0.1.64
+PORTVERSION=	0.1.66
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
