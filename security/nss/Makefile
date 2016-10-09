@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.27
+PORTVERSION=	3.27.1
 #DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
+
+LICENSE=	MPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		nspr>=4.12:devel/nspr \
