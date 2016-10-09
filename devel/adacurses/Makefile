@@ -3,7 +3,7 @@
 
 PORTNAME=	adacurses
 PORTVERSION=	20150808
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}
@@ -13,10 +13,11 @@ COMMENT=	Ada95 bindings for ncurses
 
 LICENSE=	MIT
 
-USES=		ada gmake ncurses:port tar:tgz
+USES=		ada gmake pkgconfig ncurses:port tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 		--with-ada-objects=${PREFIX}/lib/adacurses \
+		--with-curses-dir=${NCURSESBASE} \
 		--libdir=${PREFIX}/lib/adacurses \
 		--enable-widec
 PORTDOCS=	ada Ada95.html
@@ -41,7 +42,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gen/adacurses-config \
 		${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat
-	${SED} "s|@PREFIX@|${PREFIX}|g" ${FILESDIR}/adacurses.gpr.in > \
+	${SED} "s|@PREFIX@|${NCURSESBASE}|g" ${FILESDIR}/adacurses.gpr.in > \
 		${STAGEDIR}${PREFIX}/lib/gnat/adacurses.gpr
 
 do-install-DOCS-on:
