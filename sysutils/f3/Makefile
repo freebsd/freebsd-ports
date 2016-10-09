@@ -6,7 +6,7 @@ PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fight Flash Fraud or Fight Fake Flash test tool
 
 LICENSE=	GPLv3
