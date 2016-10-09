@@ -9,15 +9,6 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -10913,7 +10913,7 @@ freebsd* | dragonfly*)
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
--      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-+      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
-       need_version=no
-       need_lib_prefix=no
-       ;;
 @@ -12248,7 +12248,7 @@ hardcode_automatic_CXX=no
  inherit_rpath_CXX=no
  module_cmds_CXX=
@@ -27,15 +18,6 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -14748,7 +14748,7 @@ freebsd* | dragonfly*)
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
--      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-+      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
-       need_version=no
-       need_lib_prefix=no
-       ;;
 @@ -15767,6 +15767,9 @@ case $host_os in
  	*mingw32* )
  		WERROR=""

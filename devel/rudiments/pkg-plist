@@ -3,7 +3,6 @@ include/rudiments/bytebuffer.h
 include/rudiments/bytestring.h
 include/rudiments/character.h
 include/rudiments/charstring.h
-include/rudiments/chat.h
 include/rudiments/client.h
 include/rudiments/codetree.h
 include/rudiments/commandline.h
@@ -40,8 +39,6 @@ include/rudiments/private/bytestringincludes.h
 include/rudiments/private/characterincludes.h
 include/rudiments/private/charstring.h
 include/rudiments/private/charstringincludes.h
-include/rudiments/private/chat.h
-include/rudiments/private/chatincludes.h
 include/rudiments/private/client.h
 include/rudiments/private/clientincludes.h
 include/rudiments/private/codetree.h
@@ -117,6 +114,8 @@ include/rudiments/private/permissions.h
 include/rudiments/private/permissionsincludes.h
 include/rudiments/private/process.h
 include/rudiments/private/processincludes.h
+include/rudiments/private/prompt.h
+include/rudiments/private/promptincludes.h
 include/rudiments/private/protocolentry.h
 include/rudiments/private/protocolentryincludes.h
 include/rudiments/private/randomnumber.h
@@ -130,6 +129,8 @@ include/rudiments/private/server.h
 include/rudiments/private/serverincludes.h
 include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
+include/rudiments/private/sha1.h
+include/rudiments/private/sha1includes.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
 include/rudiments/private/signalclassesincludes.h
@@ -182,6 +183,7 @@ include/rudiments/private/xmldomnodeincludes.h
 include/rudiments/private/xmlsax.h
 include/rudiments/private/xmlsaxincludes.h
 include/rudiments/process.h
+include/rudiments/prompt.h
 include/rudiments/protocolentry.h
 include/rudiments/randomnumber.h
 include/rudiments/regularexpression.h
@@ -190,6 +192,7 @@ include/rudiments/security.h
 include/rudiments/semaphoreset.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
+include/rudiments/sha1.h
 include/rudiments/sharedmemory.h
 include/rudiments/signalclasses.h
 include/rudiments/singlylinkedlist.h

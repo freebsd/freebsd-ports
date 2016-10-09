@@ -1,2 +1,3 @@
-SHA256 (sqlrelay-0.65.0.tar.gz) = ada267a55ac1bcaaf3ec73af2d14c42671f270c00fb426ee1074c746b1181f34
-SIZE (sqlrelay-0.65.0.tar.gz) = 3970412
+TIMESTAMP = 1476017283
+SHA256 (sqlrelay-0.66.0.tar.gz) = 5eaee027df449971455245e66d6d318eb4d94ea4e3565577dfd04c9410ae002c
+SIZE (sqlrelay-0.66.0.tar.gz) = 4249607
