@@ -17,6 +17,7 @@ share/icons/hicolor/48x48/apps/tanglet.png
 share/icons/hicolor/512x512/apps/tanglet.png
 share/icons/hicolor/64x64/apps/tanglet.png
 share/icons/hicolor/scalable/apps/tanglet.svg
+share/mime/packages/tanglet.xml
 share/pixmaps/tanglet.xpm
 %%DATADIR%%/data/cs/dice
 %%DATADIR%%/data/cs/dictionary
@@ -52,7 +53,6 @@ share/pixmaps/tanglet.xpm
 %%DATADIR%%/data/nl/name
 %%DATADIR%%/data/nl/words
 %%DATADIR%%/translations/tanglet_cs.qm
-%%DATADIR%%/translations/tanglet_csb.qm
 %%DATADIR%%/translations/tanglet_de.qm
 %%DATADIR%%/translations/tanglet_en.qm
 %%DATADIR%%/translations/tanglet_es.qm

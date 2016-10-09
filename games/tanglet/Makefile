@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tanglet
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tanglet/
@@ -14,19 +14,17 @@ LICENSE=	GPLv3+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++11-lib qmake tar:bzip2
-USE_QT5=	buildtools_build widgets
-INSTALLS_ICONS=	yes
+USES=		compiler:c++11-lib desktop-file-utils qmake shared-mime-info tar:bzip2
+USE_QT5=	buildtools_build linguisttools_build core gui widgets
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
+		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|c++0x|c++11| ; \
-		 /link_pkgconfig/d ; \
+		 '/link_pkgconfig/d ; \
 		 s|PKGCONFIG|LIBS| ; \
 		 s|zlib|-lz| ; \
 		 s|share/man|man|' ${WRKSRC}/tanglet.pro
-	@${REINPLACE_CMD} -e \
-		's|std::lround|lround|' ${WRKSRC}/src/letter.cpp
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
