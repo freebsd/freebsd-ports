@@ -3,6 +3,7 @@
 
 PORTNAME=	pesign
 PORTVERSION=	0.110
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
