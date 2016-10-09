@@ -37,3 +37,21 @@
                  ret = 1;
          }
          close (fd);
+@@ -10409,10 +10421,17 @@ wxArrayString *EnumerateSerialPorts( voi
+ 
+     //Initialize the pattern table
+     if( devPatern[0] == NULL ) {
++#ifdef __linux__
+         paternAdd ( "ttyUSB" );
+         paternAdd ( "ttyACM" );
+         paternAdd ( "ttyGPS" );
+         paternAdd ( "refcom" );
++#else
++        paternAdd ( "ttyU" );
++        paternAdd ( "ttyu" );
++        paternAdd ( "ttyd" );
++        paternAdd ( "gps" );
++#endif
+     }
+ 
+  //  Looking for user privilege openable devices in /dev
