@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rex-bin_tools
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
