@@ -3,7 +3,7 @@
 PORTNAME=	opencpn
 PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 
 MAINTAINER=	freebsd@netfence.it
 COMMENT=	Concise ChartPlotter/Navigator
