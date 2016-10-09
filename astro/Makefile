@@ -43,6 +43,7 @@
     SUBDIR += mkgmap-splitter
     SUBDIR += mymoon
     SUBDIR += nightfall
+    SUBDIR += opencpn
     SUBDIR += openuniverse
     SUBDIR += osmium
     SUBDIR += osmosis
