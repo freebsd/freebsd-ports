@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Interface
-PORTVERSION=	1.012
-PORTREVISION=	1
+PORTVERSION=	1.016
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,5 +12,8 @@ COMMENT=	Perl extension to access network interfaces
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Interface/Interface.so
 
 .include <bsd.port.mk>
