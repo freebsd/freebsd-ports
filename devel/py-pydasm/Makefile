@@ -15,6 +15,8 @@ COMMENT=	Python interface to libdasm
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	No more upstream and known bugs, use devel/py-capstone instead
+EXPIRATION_DATE=	2016-11-10
 
 USES=		python
 USE_PYTHON=	distutils autoplist
