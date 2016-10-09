@@ -158,12 +158,6 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/derby/doc/images/view_source.jpg
 %%DATADIR%%/plugins/derby/doc/licence.txt
 %%DATADIR%%/plugins/derby/doc/readme.html
-%%DATADIR%%/plugins/editextras.jar
-%%DATADIR%%/plugins/editextras/doc/changes.txt
-%%DATADIR%%/plugins/editextras/doc/licence.txt
-%%DATADIR%%/plugins/editextras/doc/readme.html
-%%DATADIR%%/plugins/editextras/doc/readme.txt
-%%DATADIR%%/plugins/editextras/doc/toolspopup.jpg
 %%DATADIR%%/plugins/example.jar
 %%DATADIR%%/plugins/example/doc/changes.txt
 %%DATADIR%%/plugins/example/doc/licence.txt
