@@ -3,16 +3,21 @@
 
 PORTNAME=	singledispatch
 PORTVERSION=	3.4.0.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Provides single-dispatch generic functions
+COMMENT=	Backport of functools.singledispatch from Python 3.4
 
 LICENSE=	MIT
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+
+USES=		python:-3.3
+USE_PYTHON=	distutils concurrent autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
