@@ -14,8 +14,7 @@ COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
 CONFIGURE_WRKSRC=${WRKSRC}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-USES=		tar:tgz
-USE_OPENSSL=	yes
+USES=		ssl tar:tgz
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	challenge.txt
