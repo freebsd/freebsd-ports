@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www ftp
 MASTER_SITES=	http://cr.yp.to/publicfile/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, read-only, anonymous HTTP/FTP server
 
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \

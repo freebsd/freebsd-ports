@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD specific volume manager
 
 USE_GITHUB=	yes

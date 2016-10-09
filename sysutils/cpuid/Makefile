@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.etallen.com/cpuid/
 PKGNAMESUFFIX=	${CPUID_SUFFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to dump x86 CPUID information about the CPU(s)
 
 LICENSE=	GPLv2
