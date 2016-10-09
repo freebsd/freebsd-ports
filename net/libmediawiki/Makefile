@@ -7,6 +7,8 @@ CATEGORIES=	net kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for accessing MediaWiki sites
 
+PORTSCOUT=	limit:^4\.12\.
+
 USES=		pathfix
 USE_LDCONFIG=	yes
 
