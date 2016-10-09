@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip-ada
-PORTVERSION=	51
+PORTVERSION=	52
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
 DISTNAME=	zipada${PORTVERSION}
@@ -16,11 +16,33 @@ USES=		ada perl5 dos2unix zip
 USE_PERL5=	build
 WRKSRC=		${WRKDIR}/zip-ada
 MAKE_ENV+=	Build_Mode=Fast
-ZTOOLS=		bunzip comp_zip find_zip lz lzma_dec random_data rezip zipada
-DEMOS=		demo_csv_into_zip demo_unzip demo_zip test_chunk \
-		test_extract test_extract_tb test_lz_scramble \
-		test_stream_performance test_unz_streams \
-		test_zip_info_timing za_gnat zip_with_many_files ziptest
+ZTOOLS=		zipada \
+		comp_zip \
+		find_zip \
+		rezip \
+		za_gnat \
+		rz_gnat \
+		bunzip \
+		lz \
+		lzma_dec \
+		lzma_enc \
+		lz77_stats \
+		random_data \
+		several_sizes
+DEMOS=		demo_csv_into_zip \
+		demo_zip \
+		demo_unzip \
+		test_unz_streams \
+		test_chunk \
+		ziptest \
+		zip_with_many_files \
+		test_zip_info_timing \
+		test_stream_performance \
+		test_extract \
+		test_extract_tb \
+		test_lz_scramble \
+		test_llhc \
+		test_lz77
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -p -P zipada.gpr)
