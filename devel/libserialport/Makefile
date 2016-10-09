@@ -6,7 +6,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libserialport/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, serial port support library
 
 LICENSE=	LGPL3

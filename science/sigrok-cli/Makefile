@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/sigrok-cli/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, CLI client
 
 LICENSE=	GPLv3

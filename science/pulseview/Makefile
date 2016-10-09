@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GUI client that supports various hardware logic analyzers
 
 LICENSE=	GPLv3
