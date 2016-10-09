@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Autopod
-PORTVERSION=	1.206
+PORTVERSION=	1.207
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
