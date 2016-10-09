@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-extras
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@gmail.com
@@ -18,5 +18,6 @@ GH_ACCOUNT=	tj
 USES=		gmake
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

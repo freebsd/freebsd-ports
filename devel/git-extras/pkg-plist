@@ -6,6 +6,7 @@ bin/git-bug
 bin/git-changelog
 bin/git-chore
 bin/git-clear
+bin/git-clear-soft
 bin/git-commits-since
 bin/git-contrib
 bin/git-count
@@ -37,9 +38,11 @@ bin/git-obliterate
 bin/git-pr
 bin/git-psykorebase
 bin/git-pull-request
+bin/git-reauthor
 bin/git-rebase-patch
 bin/git-refactor
 bin/git-release
+bin/git-rename-branch
 bin/git-rename-tag
 bin/git-repl
 bin/git-reset-file
@@ -52,6 +55,7 @@ bin/git-show-merged-branches
 bin/git-show-tree
 bin/git-show-unmerged-branches
 bin/git-squash
+bin/git-standup
 bin/git-summary
 bin/git-sync
 bin/git-touch
@@ -65,6 +69,7 @@ man/man1/git-back.1.gz
 man/man1/git-bug.1.gz
 man/man1/git-changelog.1.gz
 man/man1/git-chore.1.gz
+man/man1/git-clear-soft.1.gz
 man/man1/git-clear.1.gz
 man/man1/git-commits-since.1.gz
 man/man1/git-contrib.1.gz
@@ -93,11 +98,15 @@ man/man1/git-locked.1.gz
 man/man1/git-merge-into.1.gz
 man/man1/git-merge-repo.1.gz
 man/man1/git-missing.1.gz
+man/man1/git-obliterate.1.gz
 man/man1/git-pr.1.gz
 man/man1/git-psykorebase.1.gz
+man/man1/git-pull-request.1.gz
+man/man1/git-reauthor.1.gz
 man/man1/git-rebase-patch.1.gz
 man/man1/git-refactor.1.gz
 man/man1/git-release.1.gz
+man/man1/git-rename-branch.1.gz
 man/man1/git-rename-tag.1.gz
 man/man1/git-repl.1.gz
 man/man1/git-reset-file.1.gz
@@ -109,6 +118,7 @@ man/man1/git-show-merged-branches.1.gz
 man/man1/git-show-tree.1.gz
 man/man1/git-show-unmerged-branches.1.gz
 man/man1/git-squash.1.gz
+man/man1/git-standup.1.gz
 man/man1/git-summary.1.gz
 man/man1/git-sync.1.gz
 man/man1/git-touch.1.gz
