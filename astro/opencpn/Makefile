@@ -3,6 +3,7 @@
 PORTNAME=	opencpn
 PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	astro geography
 
 MAINTAINER=	freebsd@netfence.it
@@ -28,6 +29,7 @@ USE_XORG=	x11
 INSTALLS_ICONS=	yes
 
 CMAKE_ARGS=	-DBUNDLE_DOCS=ON -DBUNDLE_GSHHS=CRUDE -DBUNDLE_TCDATA=ON
+LDFLAGS+=	-Wl,-E # plugins
 LDFLAGS+=	-Wl,--as-needed # ICE, SM, Xext
 
 post-patch:

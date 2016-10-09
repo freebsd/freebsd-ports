@@ -47,19 +47,26 @@ inline _LIBCPP_INLINE_VISIBILITY const wchar_t* wcsstr(const wchar_t* __s1, cons
 
 --- include/printtable.h.orig	2016-06-25 12:26:20 UTC
 +++ include/printtable.h
-@@ -27,7 +27,11 @@
+@@ -27,8 +27,6 @@
   */
  #include <iostream>
  #include <vector>
 -using namespace std;
-+using std::endl;
-+using std::ostream;
-+using std::string;
-+using std::stringstream;
-+using std::vector;
- 
+-
  
  #ifndef __PRINTTABLE_H__
+ #define __PRINTTABLE_H__
+@@ -44,6 +42,10 @@ using namespace std;
+ #include "ocpn_types.h"
+ #include "navutil.h"
+ 
++using std::ostream;
++using std::string;
++using std::vector;
++
+ /**
+  * \brief
+  *  Enumeration is used to notice the state of the table.
 --- include/routeprintout.h.orig	2016-06-25 12:26:20 UTC
 +++ include/routeprintout.h
 @@ -24,7 +24,6 @@
@@ -80,6 +87,16 @@ inline _LIBCPP_INLINE_VISIBILITY const wchar_t* wcsstr(const wchar_t* __s1, cons
  
  #include "wx/wxprec.h"
  
+@@ -74,6 +73,9 @@ using namespace std;
+ 
+ #include "printtable.h"
+ 
++using std::endl;
++using std::stringstream;
++
+ void PrintCell::Init( const wxString& _content, wxDC* _dc, int _width, int _cellpadding, bool _bold_font )
+ {
+     bold_font   = _bold_font;
 --- src/routeprintout.cpp.orig	2016-06-25 12:26:20 UTC
 +++ src/routeprintout.cpp
 @@ -24,7 +24,6 @@
