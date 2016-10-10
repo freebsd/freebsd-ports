@@ -87,8 +87,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
 
-post-install-PAM-on:
-	${INSTALL_DATA} ${FILESDIR}/netatalk.pam \
-	    	${STAGEDIR}${PREFIX}/etc/pam.d/netatalk
-
 .include <bsd.port.mk>
