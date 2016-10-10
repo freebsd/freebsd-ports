@@ -1163,6 +1163,7 @@
     SUBDIR += pecl-syck
     SUBDIR += pecl-wbxml
     SUBDIR += pecl-xdiff
+    SUBDIR += pecl-xdiff2
     SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
     SUBDIR += peco
