@@ -70,9 +70,7 @@ CONFIGURE_ARGS=	--disable-valgrind \
 
 PORTDOCS=	*
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	VERBOSE=1
-.endif
 
 OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
