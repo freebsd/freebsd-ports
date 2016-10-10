@@ -1026,6 +1026,7 @@
     SUBDIR += py-soappy
     SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
+    SUBDIR += py-sshuttle
     SUBDIR += py-suds
     SUBDIR += py-terminado
     SUBDIR += py-tofu
