@@ -57,6 +57,8 @@ DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 			libSeExprEditor.so:graphics/seexpr
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,atomic<int,boost::&,' \
+		${WRKSRC}/src/appleseed/renderer/kernel/rendering/localsampleaccumulationbuffer.cpp
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 
 .include <bsd.port.mk>
