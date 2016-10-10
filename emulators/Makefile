@@ -16,6 +16,8 @@
     SUBDIR += catapult
     SUBDIR += cinc
     SUBDIR += cingb
+    SUBDIR += citra
+    SUBDIR += citra-qt5
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += cpmtools2
