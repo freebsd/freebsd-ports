@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PREACTION
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Import a set of modules into the calling module
 
 LICENSE=	ART10 GPLv1
