@@ -22,8 +22,8 @@ BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		gradle:devel/gradle \
 		swt-devel>0:x11-toolkits/swt-devel
 RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
-LIB_DEPENDS=	libjpeg.so:graphics/jpeg-turbo
 
+USES=		jpeg
 USE_GL=		yes
 USE_GNOME=	gtk20
 USE_JAVA=	yes
