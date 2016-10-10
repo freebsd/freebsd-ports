@@ -17,11 +17,11 @@ COMMENT=	Brain teasers, puzzle, and memory games for kids in one pack
 LICENSE=	unknown GPLv2
 LICENSE_COMB=	dual
 LICENSE_NAME_unknown=	Freeware License
-LICENSE_PERMS_unknown=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_unknown=	${WRKDIR}/Memonix/License
-LICENSE_DISTFILE_unknown=	memx16.tar.gz
-LICENSE_DISTFILE_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_FILE_GPLv2=	${WRKSRC}/License.txt
+LICENSE_PERMS_unknown=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_DISTFILES_unknown=	memx16.tar.gz
+LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 USES=		cmake zip
 USE_SDL=	sdl mixer image
@@ -41,7 +41,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Memonix ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/Memonix/gamedata.vfs ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
