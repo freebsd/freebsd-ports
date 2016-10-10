@@ -13,8 +13,6 @@ DISTNAME=	wl-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Yet another message interface on Emacsen
 
-BROKEN=		fails to configure
-
 USE_EMACS=	yes
 NO_ARCH=	yes
 
@@ -74,7 +72,7 @@ PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 WRK_STARTUP_FILE=	${WRKDIR}/wanderlust-startup.el
 MAKE_ARGS+=	EMACS=${EMACS_CMD} \
 		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
-		FLAGS="-batch -q -no-site-file -l ${WRK_STARTUP_FILE:C/\/\/*/\//g}"
+		FLAGS="-batch -q -no-site-file"
 INFO=		wl wl-ja
 PLIST=		${PKGDIR}/pkg-plist.emacs
 MAKE_ARGS+=	INFODIR=${STAGEDIR}${INFODIR} \
@@ -83,38 +81,12 @@ MAKE_ARGS+=	INFODIR=${STAGEDIR}${INFODIR} \
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
 
-.if (${EMACS_PORT_NAME} == "emacs-devel")
-STARTUP_TMPL=	${FILESDIR}/wanderlust-startup.emacs22.el.tmpl
-.else
-STARTUP_TMPL=	${FILESDIR}/wanderlust-startup.${EMACS_PORT_NAME}.el.tmpl
-.endif
-
-post-configure:
-	@${SED} \
-		-e "s,%%PREFIX%%,${PREFIX},g" \
-		-e "s,%%EMACS_LIBDIR%%,${EMACS_LIBDIR},g" \
-		-e "s,%%EMACS_LIBDIR_WITH_VER%%,${EMACS_LIBDIR_WITH_VER},g" \
-		-e "s,%%EMACS_PACKAGESDIR%%,${EMACS_PACKAGESDIR},g" \
-		< ${STARTUP_TMPL} > ${WRKDIR}/wanderlust-startup.el
-
-pre-build:
-.if defined(EMACS_PACKAGESDIR)
-	@${CP} ${FILESDIR}/_pkg.el ${WRKSRC}
-.endif
-
 post-install:
 .if !exists(${EMACS_W3M_LISP_FILE})
-.if defined(EMACS_PACKAGESDIR)
-	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
-.else
 	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
-.endif
 .endif
 	${MAKE} install-samples
 	${MAKE} install-utils
-.if defined(EMACS_PACKAGESDIR)
-	${MAKE} install-manifest
-.endif
 
 # local targets
 post-install-DOCS-on:
@@ -143,13 +115,6 @@ install-utils:
 	${INSTALL_DATA} ${WRKSRC}/utils/${i} ${STAGEDIR}${PREFIX}/${UTILSDIR}
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/${STARTUPDIR}
-	${INSTALL_DATA} ${WRKDIR}/wanderlust-startup.el ${STAGEDIR}${PREFIX}/${STARTUPDIR}
-
-install-manifest:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
-	${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
-		${SED} -e "s!^%%EMACS_PACKAGESDIR%%!!" > ${WRKDIR}/${MANIFEST}
-	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
-	${INSTALL_DATA} ${FILESDIR}/_pkg.el ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
+	${INSTALL_DATA} ${FILESDIR}/wanderlust-startup.el ${STAGEDIR}${PREFIX}/${STARTUPDIR}
 
 .include <bsd.port.post.mk>
