@@ -9,6 +9,9 @@ Before starting kippo you need to perform the following steps:
 
 	$EDITOR %%DATADIR%%/kippo.cfg
 
+   An example configuration file can be found here:
+        %%DATADIR%%/kippo.cfg.dist
+
    Please keep in mind when editing the configuration file that kippo
    can't be run as root and is started by the 'kippo' unprivileged
    user instead. This implies that the following folders hierarchy
