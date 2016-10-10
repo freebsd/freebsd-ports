@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	LWPx-ParanoidAgent
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	www security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
