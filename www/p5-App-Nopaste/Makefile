@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	1.006
+PORTVERSION=	1.007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -22,7 +21,9 @@ BUILD_DEPENDS=	p5-Browser-Open>=0:www/p5-Browser-Open \
 		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
+		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-libwww>=0:www/p5-libwww
 
