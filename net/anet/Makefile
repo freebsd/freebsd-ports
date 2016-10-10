@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anet
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -21,7 +20,7 @@ MAKE_ARGS+=	NUM_CPUS=${MAKE_JOBS_NUMBER} \
 		OS=bsd
 
 OPTIONS_DEFINE=	TEST DOCS
-TEST_DESC=	Run unit test suite before installation
+TEST_DESC=		Run unit test suite before installation
 TEST_ALL_TARGET=	tests
 TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 DOCS_USES=		gmake
