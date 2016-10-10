@@ -1,4 +1,4 @@
---- src/statTimer/statisticalTimer.h.orig	2016-04-20 18:47:13 UTC
+--- src/statTimer/statisticalTimer.h.orig	2016-08-31 21:46:51 UTC
 +++ src/statTimer/statisticalTimer.h
 @@ -21,6 +21,7 @@
  #include <vector>
