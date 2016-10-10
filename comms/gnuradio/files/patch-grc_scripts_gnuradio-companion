@@ -1,13 +1,12 @@
---- grc/scripts/gnuradio-companion.orig	2015-05-12 09:39:44 UTC
+--- grc/scripts/gnuradio-companion.orig	2016-10-02 20:26:15 UTC
 +++ grc/scripts/gnuradio-companion
-@@ -22,6 +22,10 @@ import os
- import sys
+@@ -23,6 +23,9 @@ import sys
  import optparse
+ import warnings
  
-+# XXX workaround to make sure we import gcc47's libgcc_s.so not
-+# the older one from base:
-+from numpy.linalg import lapack_lite
-+
- import pygtk
- pygtk.require('2.0')
- import gtk
++# XXX workaround to make sure we import gcc libgcc4
++# the older one from base: 
++from numpy.linalg import lapack_lite 
+ 
+ GR_IMPORT_ERROR_MESSAGE = """\
+ Cannot import gnuradio.

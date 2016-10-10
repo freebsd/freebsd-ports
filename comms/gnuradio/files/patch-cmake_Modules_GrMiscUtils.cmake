@@ -1,4 +1,4 @@
---- cmake/Modules/GrMiscUtils.cmake.orig	2015-05-12 09:39:44 UTC
+--- cmake/Modules/GrMiscUtils.cmake.orig	2015-04-13 14:32:43 UTC
 +++ cmake/Modules/GrMiscUtils.cmake
 @@ -148,7 +148,31 @@ function(GR_LIBRARY_FOO target)
          ARCHIVE DESTINATION ${GR_LIBRARY_DIR} COMPONENT ${GR_LIBRARY_DEVEL_COMPONENT}   # .lib file

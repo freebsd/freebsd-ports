@@ -1,4 +1,4 @@
---- cmake/Modules/FindUSB.cmake.orig	2015-05-12 09:39:44 UTC
+--- cmake/Modules/FindUSB.cmake.orig	2015-04-13 14:32:43 UTC
 +++ cmake/Modules/FindUSB.cmake
 @@ -1,20 +1,30 @@
  if(NOT LIBUSB_FOUND)
