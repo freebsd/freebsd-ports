@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile-Cache
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +21,6 @@ TEST_DEPENDS=	p5-XML-Compile-Tester>=0.02:devel/p5-XML-Compile-Tester
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
