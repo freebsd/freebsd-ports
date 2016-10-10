@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	1.8.11
+PORTVERSION=	1.8.12
 CATEGORIES=	devel net
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
