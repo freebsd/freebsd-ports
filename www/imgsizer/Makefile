@@ -4,8 +4,7 @@
 PORTNAME=	imgsizer
 PORTVERSION=	2.9
 CATEGORIES=	www textproc
-MASTER_SITES=	http://www.catb.org/~esr/imgsizer/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	http://www.catb.org/~esr/imgsizer/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
