@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	cave9
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.4.1.git20150408
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}_src-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz \
-		${PORTNAME}_data-${DATAVER}.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gravity cave-exploration game
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv3+ CC-BY-SA-3.0 CC-BY-2.5
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/data/README.txt # CC licenses
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.txt
 
-DATAVER=	4
+USE_GITHUB=	yes
+GH_ACCOUNT=	bart9h
+GH_TAGNAME=	e6896eb
 
 USES=		gmake
 USE_SDL=	sdl ttf image
+USE_GL=		gl glu
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 
 MAKEFILE=	GNUmakefile
@@ -31,16 +30,24 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS
+DESKTOP_ENTRIES="${PORTNAME}" \
+		"" \
+		"${DATADIR}/icon.png" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		""
 
-post-extract:
-	@${MV} ${WRKDIR}/data ${WRKSRC}/
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cave9 ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for d in wav png ttf jpg
+	${INSTALL_DATA} ${WRKSRC}/data/*.$d ${STAGEDIR}${DATADIR}/
+.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS.txt ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
