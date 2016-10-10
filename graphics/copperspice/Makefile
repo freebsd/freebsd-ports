@@ -52,10 +52,10 @@ BROKEN_i386=		qx11embed_x11.cpp:470:20: non-constant-expression\
 
 post-patch:
 	# fix something wrong with v1.3.2 generatior
-	${REINPLACE_CMD} -e '/config.status:/ s/:.*/:/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/config.status:/ s/:.*/:/' ${WRKSRC}/Makefile.in
 
 post-configure:
-	${REINPLACE_CMD} -e '/^hardcode_libdir_flag/ \
+	@${REINPLACE_CMD} -e '/^hardcode_libdir_flag/ \
 		s|spec=.*|spec="-Wl,-rpath,${LOCALBASE}/lib"|' \
 		${WRKSRC}/libtool
 
