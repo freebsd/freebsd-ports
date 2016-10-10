@@ -21,19 +21,19 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@cd ${WRKSRC} && \
-	${GNATMAKE} -O3 words ${GNATLINK_ARGS} && \
-	${GNATMAKE} makedict && \
-	${GNATMAKE} makestem && \
-	${GNATMAKE} makeefil && \
-	${GNATMAKE} makeinfl && \
-	${ECHO_CMD} G | ./makedict DICTLINE.GEN && \
-	${ECHO_CMD} G | ./makestem STEMLIST.GEN && \
-	./makeefil EWDSLIST.GEN && \
-	./makeinfl INFLECTS.LAT
+		${GNATMAKE} -O3 words ${GNATLINK_ARGS} && \
+		${GNATMAKE} makedict && \
+		${GNATMAKE} makestem && \
+		${GNATMAKE} makeefil && \
+		${GNATMAKE} makeinfl && \
+		${ECHO_CMD} G | ./makedict DICTLINE.GEN && \
+		${ECHO_CMD} G | ./makestem STEMLIST.GEN && \
+		./makeefil EWDSLIST.GEN && \
+		./makeinfl INFLECTS.LAT
 	@${CAT} ${FILESDIR}/words | ${SED} -e 's|%%DATADIR%%|${DATADIR}|' > ${WRKDIR}/words.sh
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/words ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/DICTFILE.GEN ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/STEMFILE.GEN ${STAGEDIR}${DATADIR}
@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/words.sh ${STAGEDIR}${PREFIX}/bin/words
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/wordsdoc.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
