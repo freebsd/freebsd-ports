@@ -13,15 +13,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
-		libpng.so:graphics/png \
-		libjpeg.so:graphics/jpeg-turbo
+		libpng.so:graphics/png
 
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glyptodon
 
-USES=		autoreconf libtool localbase pkgconfig shebangfix ssl
+USES=		autoreconf jpeg libtool localbase pkgconfig shebangfix ssl
 USE_GNOME=	cairo
 SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
 
