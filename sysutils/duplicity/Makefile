@@ -90,10 +90,10 @@ post-patch-GIO-off:
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/giobackend.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so
 
 post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
