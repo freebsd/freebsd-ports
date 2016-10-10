@@ -27,6 +27,7 @@
     SUBDIR += aimage
     SUBDIR += aird
     SUBDIR += am-utils
+    SUBDIR += amazon-ssm-agent
     SUBDIR += amrstat
     SUBDIR += amtc
     SUBDIR += anacron
