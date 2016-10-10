@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MongoDB
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -30,6 +30,7 @@ BUILD_DEPENDS+=	p5-Config-AutoConf>=0.220:devel/p5-Config-AutoConf \
 		p5-Path-Tiny>=0.052:devel/p5-Path-Tiny
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-JSON>=2:converters/p5-JSON \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Test-Deep>=0.111:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
