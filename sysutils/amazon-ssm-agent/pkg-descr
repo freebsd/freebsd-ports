@@ -1,0 +1,6 @@
+Amazon SSM (Simple Systems Manager) is a service for remotely controlling
+(executing code on) EC2 instances.  This port provides the SSM "Agent",
+which polls an Amazon Web Services API for commands, spawns them, and
+sends their output back.
+
+WWW: https://github.com/aws/amazon-ssm-agent
