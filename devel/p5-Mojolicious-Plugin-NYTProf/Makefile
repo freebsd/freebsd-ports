@@ -7,7 +7,7 @@ CATEGORIES=	devel www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto handling of Devel::NYTProf in your Mojolicious app
 
 LICENSE=	ART10 GPLv1
