@@ -2,6 +2,6 @@ GNU Radio is a collection of software that when combined with
 minimal hardware, allows the construction of radios where the
 actual waveforms transmitted and received are defined by software.
 What this means is that it turns the digital modulation schemes
-used in today's high performance wireless devices into software problems.
+used in today's high performance wireless devices into software problems. 
 
 WWW: http://gnuradio.org/redmine/projects/gnuradio

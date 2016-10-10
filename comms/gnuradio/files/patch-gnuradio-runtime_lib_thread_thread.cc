@@ -1,4 +1,4 @@
---- gnuradio-runtime/lib/thread/thread.cc.orig	2015-05-12 09:39:44 UTC
+--- gnuradio-runtime/lib/thread/thread.cc.orig	2015-04-13 14:32:43 UTC
 +++ gnuradio-runtime/lib/thread/thread.cc
 @@ -276,6 +276,7 @@ namespace gr {
      void
