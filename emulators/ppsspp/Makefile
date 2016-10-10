@@ -47,7 +47,7 @@ DESKTOP_ENTRIES="PPSSPP" \
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT4 QT5 SDL
 OPTIONS_SLAVE?=	SDL
-OPTIONS_EXCLUDE=	${OPTIONS_SINGLE_GUI}
+OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_GUI}
 
 QT4_USES=	qmake:outsource
 QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,opengl
