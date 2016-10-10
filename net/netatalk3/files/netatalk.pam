@@ -1,3 +1,0 @@
-netatalk        auth    required        pam_unix.so     try_first_pass
-netatalk        account required        pam_unix.so     try_first_pass
-netatalk        session required        pam_permit.so
