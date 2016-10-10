@@ -358,6 +358,7 @@
     SUBDIR += gnuchess
     SUBDIR += gnudoku
     SUBDIR += gnugo
+    SUBDIR += gnujump
     SUBDIR += gnurobbo
     SUBDIR += gnurobots
     SUBDIR += gnushogi
