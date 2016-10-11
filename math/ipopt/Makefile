@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Ipopt
-PORTVERSION=	3.12.5
+PORTVERSION=	3.12.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
@@ -19,6 +19,7 @@ LICENSE=	EPL
 USES=		blaslapack fortran libtool pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig \
@@ -33,7 +34,7 @@ PORTDOCS=	*
 
 DEBUG_CXXFLAGS=	-fomit-frame-pointer
 
-post-patch::
+pre-build:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		-e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g'
@@ -54,9 +55,5 @@ post-install-DOCS-on:
 	   ${STAGEDIR}${DOCSDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/coin/doc ${STAGEDIR}${DOCSDIR}
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/coin
-
-check regression-test test: build
-	@(cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
