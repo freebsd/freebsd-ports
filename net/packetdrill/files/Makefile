@@ -1,5 +1,5 @@
 # $FreeBSD$
 
-SUBDIR=	libpd packetdrill checksum_test packet_parser_test packet_to_string_test
+SUBDIR=	libpd packetdrill
 
 .include <bsd.subdir.mk>
