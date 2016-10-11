@@ -2,30 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	sam2p
-PORTVERSION=	0.49.2
-PORTREVISION=	2
+PORTVERSION=	0.49.3
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
+#USE_GITHUB=	yes
+GH_ACCOUNT=	pts
 
 RUN_DEPENDS=	zip:archivers/zip \
 		tif22pnm:graphics/tif22pnm
 
 USES=		ghostscript:run gmake jpeg:run perl5
 USE_PERL5=	build
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_pts_bash="${SH}"
 CONFIGURE_ARGS=	--enable-gif
-MAKE_ARGS=	CXXX="${CXX}" LDALL="${CXX}" CXXFLAGSB="${CXXFLAGS}" CC="${CC}" CXX="${CXX}"
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	*
