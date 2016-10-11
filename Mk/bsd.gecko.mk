@@ -85,7 +85,7 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		cpe gmake iconv perl5 pkgconfig \
+USES+=		cpe compiler:c++11-lang gmake iconv perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
@@ -96,11 +96,9 @@ BUNDLE_LIBS=	yes
 .endif
 
 # call to implicitly-deleted copy constructor of 'mozilla::WidevineVideoFrame'
-.if ${MOZILLA_VER:R:R} >= 49
-USES+=		compiler:c++14-lang
-FAVORITE_COMPILER=	gcc # c++14-lib
-.else
-USES+=		compiler:c++11-lang
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000019 && ${MOZILLA_VER:R:R} >= 49
+# XXX USES=compiler:c++11-lib cannot be used due to ports/208538
+USE_GCC=	5+
 .endif
 
 MOZILLA_SUFX?=	none
