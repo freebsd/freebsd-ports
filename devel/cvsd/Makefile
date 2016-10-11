@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 		http://wiftp.com/
