@@ -2,7 +2,7 @@
 
 PORTNAME=	citra
 PORTVERSION=	s20161007
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,7 +33,7 @@ GH_TUPLE=	citra-emu:${PORTNAME}:136cbbe \
 		svn2github:inih:603729d:inih/externals/inih/inih
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
-FAVORITE_COMPILER=	gcc # c++14-lib
+FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # GL
