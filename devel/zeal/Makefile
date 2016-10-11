@@ -18,7 +18,7 @@ USES=		compiler:c++11-lib desktop-file-utils libarchive \
 		pkgconfig qmake:outsource
 USE_GL=		gl  # Dependency added by qt5-gui.
 USE_GITHUB=	yes
-USE_QT5=	concurrent core gui network sql webkit wigets x11extras \
+USE_QT5=	concurrent core gui network sql webkit widgets x11extras \
 		buildtools_build
 USE_XORG=	x11 xcb
 
