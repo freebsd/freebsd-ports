@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pipewalker
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	0.9.4
 CATEGORIES=	games
 MASTER_SITES=	SF
-EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the NetWalk game
@@ -14,13 +12,12 @@ COMMENT=	Clone of the NetWalk game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils
+LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		desktop-file-utils localbase
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl glu
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
