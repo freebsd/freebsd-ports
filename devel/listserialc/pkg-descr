@@ -1,0 +1,3 @@
+Simple multi-platform program to list serial ports with vid/pid/iserial fields.
+
+WWW: https://github.com/arduino/listSerialPortsC 
