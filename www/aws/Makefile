@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	17.0.0
-PORTREVISION=	1
+PORTVERSION=	17.0.1
 CATEGORIES=	www
 
 MAINTAINER=	marino@FreeBSD.org
@@ -13,18 +12,16 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gprbuild:devel/gprbuild \
-		templates_parser>11:textproc/templates_parser \
 		xmlada>=4.4:textproc/xmlada \
 		asis>=2013:lang/asis \
 		gnatpython>=20101207:devel/gnatpython
-RUN_DEPENDS=	templates_parser>11:textproc/templates_parser \
-		xmlada>=4.4:textproc/xmlada
+RUN_DEPENDS=	xmlada>=4.4:textproc/xmlada
 
 USES=		ada:run gmake python shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_PROJECT=	aws
-GH_TAGNAME=	31d491e
+GH_TAGNAME=	17.0
+GH_TUPLE=	AdaCore:templates-parser:17.0:tp/templates_parser
 
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
@@ -36,8 +33,6 @@ NAME_IP6=	--
 NAME_STD=	--
 BUILD_TYPE=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
-AUX_TARGET=	${ARCH:S/amd64/x86_64/}-aux-${OPSYS:tl}${OSREL}
-TEMPARSE=	${WRKSRC}/.build/${AUX_TARGET}/${BUILD_TYPE}
 SHEBANG_FILES=	tools/awsascb
 
 OPTIONS_SINGLE=		Secure-Socket-Layer
@@ -61,7 +56,6 @@ CONF_ARGS+=	PYTHON=python${PYTHON_VER}
 CONF_ARGS+=	XMLADA=true
 CONF_ARGS+=	PRJ_BUILD=${DOTBUILD}
 CONF_ARGS+=	prefix=${PREFIX}
-CONF_ARGS+=	LPATH=${PREFIX}/lib
 CONF_ARGS+=	ZPATH=/usr/lib
 CONF_ARGS+=	ZLIB=true
 CONF_ARGS+=	ASIS=true
@@ -81,8 +75,9 @@ IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
 CONF_ARGS+=	SOCKET=openssl
 CONF_ARGS+=	LPATH=${OPENSSLLIB}
 LINK_SSL=
-.endif
-.if ${PORT_OPTIONS:MGNUTLS}
+.else	
+# it's not SSL so it must be GNUTLS
+CONF_ARGS+=	LPATH=${PREFIX}/lib
 CONF_ARGS+=	SOCKET=gnutls
 LINK_TLS=
 .endif
@@ -126,42 +121,27 @@ CONF_ARGS+=	ENABLE_SHARED=false
 .endif
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/templates_parser \
-		${TEMPARSE}/static/obj/temparse \
-		${TEMPARSE}/static/lib/temparse \
-		${TEMPARSE}/relocatable/obj/temparse \
-		${TEMPARSE}/relocatable/lib/temparse \
-		${WRKSRC}/templates_parser/tools \
-		${WRKSRC}/templates_parser/xsrc \
-		${WRKSRC}/templates_parser/src
 	@${REINPLACE_CMD} \
 	    -e 's|@ADDITIONAL_RPATH@|${ADDL_RPATH}|' \
 	    -e 's|@PREFIX@|${LOCALBASE}|g' \
 		${WRKSRC}/aws.gpr \
 		${WRKSRC}/src/src.gpr \
 		${WRKSRC}/include/include.gpr
-	@${SED} -e 's|@PREFIX@|${LOCALBASE}|g' ${FILESDIR}/temparse.gpr.in \
-		> ${WRKSRC}/templates_parser/temparse.gpr
+	@${REINPLACE_CMD} -e 's|latexpdf||' ${WRKSRC}/Makefile
 
 do-configure:
-#	If we want to do templates_parser copy in an earlier target then
-#	templates_parser needs to be listed as an EXTRACT_DEPENDS
-	@${CP} ${LOCALBASE}/lib/templates_parser/* \
-		${TEMPARSE}/static/lib/temparse
-	@${CP} ${LOCALBASE}/lib/templates_parser.relocatable/*.ali \
-		${TEMPARSE}/relocatable/lib/temparse
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${MAKE_CMD} setup ${CONF_ARGS}
+	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${MAKE_CMD} setup ${CONF_ARGS})
 
 do-build:
 #	We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
 #	for PROCESSORS, but that also sets -j for gmake which breaks build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} build
-.if ${PORT_OPTIONS:MDOCS}
+
+do-build-DOCS-on:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} html
-.endif
 
 test:
 .if exists(${LOCALBASE}/bin/awsres)

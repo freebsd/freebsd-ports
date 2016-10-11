@@ -1,15 +1,5 @@
 --- aws.gpr.orig	2014-11-15 19:27:52 UTC
 +++ aws.gpr
-@@ -44,7 +44,8 @@ aggregate library project AWS is
-             when "Windows_NT" =>
-                for Library_Options use ("-lwsock32", "-lws2_32");
-             when others =>
--               null;
-+               for Library_Options use ("-R", "-Wl,-R,@PREFIX@/lib" &
-+                  ":@PREFIX@/lib/templates_parser.relocatable");
-          end case;
- 
-          case Shared.LDAP is
 @@ -55,7 +56,7 @@ aggregate library project AWS is
                         Project'Library_Options & ("-lwldap32");
                    when others =>
