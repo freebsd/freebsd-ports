@@ -3,6 +3,7 @@
 @sample %%WWWDIR%%/conf/config.inc.php.sample
 %%WWWDIR%%/index.php
 %%WWWDIR%%/lang/ca.inc.php
+%%WWWDIR%%/lang/cn.inc.php
 %%WWWDIR%%/lang/de.inc.php
 %%WWWDIR%%/lang/en.inc.php
 %%WWWDIR%%/lang/es.inc.php
@@ -11,7 +12,11 @@
 %%WWWDIR%%/lang/nl.inc.php
 %%WWWDIR%%/lang/pl.inc.php
 %%WWWDIR%%/lang/pt-BR.inc.php
+%%WWWDIR%%/lang/pt-PT.inc.php
 %%WWWDIR%%/lang/ru.inc.php
+%%WWWDIR%%/lang/sk.inc.php
+%%WWWDIR%%/lang/sl.inc.php
+%%WWWDIR%%/lang/zh-CN.inc.php
 %%WWWDIR%%/lib/detectbrowserlanguage.php
 %%WWWDIR%%/lib/functions.inc.php
 %%WWWDIR%%/lib/recaptchalib.php
