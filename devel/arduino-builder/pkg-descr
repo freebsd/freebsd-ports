@@ -1,0 +1,5 @@
+arduino-builder is a command line tool for compiling Arduino sketches.
+It is used by newer versions of the Arduino IDE, and may also be used
+standalone if provided hardware definitions and a tools directory. 
+
+WWW: https://github.com/arduino/arduino-builder
