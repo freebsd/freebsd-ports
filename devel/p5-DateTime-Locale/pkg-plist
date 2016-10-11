@@ -112,6 +112,7 @@
 %%SITE_PERL%%/DateTime/Locale/de_BE.pod
 %%SITE_PERL%%/DateTime/Locale/de_CH.pod
 %%SITE_PERL%%/DateTime/Locale/de_DE.pod
+%%SITE_PERL%%/DateTime/Locale/de_IT.pod
 %%SITE_PERL%%/DateTime/Locale/de_LI.pod
 %%SITE_PERL%%/DateTime/Locale/de_LU.pod
 %%SITE_PERL%%/DateTime/Locale/dje.pod
@@ -504,6 +505,9 @@
 %%SITE_PERL%%/DateTime/Locale/nb_SJ.pod
 %%SITE_PERL%%/DateTime/Locale/nd.pod
 %%SITE_PERL%%/DateTime/Locale/nd_ZW.pod
+%%SITE_PERL%%/DateTime/Locale/nds.pod
+%%SITE_PERL%%/DateTime/Locale/nds_DE.pod
+%%SITE_PERL%%/DateTime/Locale/nds_NL.pod
 %%SITE_PERL%%/DateTime/Locale/ne.pod
 %%SITE_PERL%%/DateTime/Locale/ne_IN.pod
 %%SITE_PERL%%/DateTime/Locale/ne_NP.pod
@@ -833,6 +837,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::de_BE.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::de_CH.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::de_DE.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::de_IT.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::de_LI.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::de_LU.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dje.3.gz
@@ -1225,6 +1230,9 @@
 %%PERL5_MAN3%%/DateTime::Locale::nb_SJ.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nd.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nd_ZW.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::nds.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::nds_DE.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::nds_NL.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ne.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ne_IN.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ne_NP.3.gz
