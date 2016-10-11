@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXfixes-5.0.1.tar.bz2) = 63bec085084fa3caaee5180490dd871f1eb2020ba9e9b39a30f93693ffc34767
-SIZE (xorg/lib/libXfixes-5.0.1.tar.bz2) = 291978
+TIMESTAMP = 1475695648
+SHA256 (xorg/lib/libXfixes-5.0.2.tar.bz2) = 9bd20edfec084a1bed481d48dd4815dee88139fffad091418cdda081129a9aea
+SIZE (xorg/lib/libXfixes-5.0.2.tar.bz2) = 305007
