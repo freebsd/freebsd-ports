@@ -5,6 +5,98 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161011:
+  AFFECTS: Users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  Before upgrading ejabberd to 16.09, please make sure to backup your 
+  ejabberd data using:
+ 
+     % sudo -u ejabberd -H ejabberdctl backup /path/to/backup/file
+
+  In some cases, ejabberd may fail to start, for which a workaround is to 
+  remove the schema.DAT file from /var/spool/ejabberd before starting, and
+  then restoring everything from the backup using:
+     
+     % sudo -u ejabberd -H ejabberdctl restore /path/to/backup/file
+
+  For more details:
+
+  https://github.com/processone/ejabberd/issues/1305
+
+20161005:
+  AFFECTS: Users of audio/squeezeboxserver (now audio/logitechmediaserver)
+  AUTHOR: woodsb02@FreeBSD.org
+
+  With the rename of the audio/squeezeboxserver port to
+  audio/logitechmediaserver, the server and database are now installed in
+  different locations by default (/usr/local/share/logitechmediaserver and
+  /var/db/logitechmediaserver respectively).
+
+  If you were an existing user of audio/squeezeboxserver, you should
+  consider backing up you server configuration files and database before
+  upgrading to audio/logitechmediaserver. If you wish to override the
+  default locations for storing the server and database, you can set the
+  SLIMDIR and SLIMDBDIR variables in your /etc/make.conf when building
+  the audio/logitechmediaserver port.
+
+20161004:
+  AFFECTS: mail/roundcube-carddav
+  AUTHOR:  gahr@FreeBSD.org
+
+  There is no upgrade path from the 1.0 version. You'll need to:
+
+  1. Log off from Roundcube.
+  2. Manually drop all carddav_* tables from your db backend.
+  3. Upgrade the mail/roundcube-carddav port.
+
+  The new tables will be created upon login. The CardDAV plugin will need to be
+  reconfigured.
+
+  If you are running php < 7.0.0, you'll need to set the plugin option:
+  $prefs['_GLOBAL']['suppress_version_warning'] = true;
+
+  See https://github.com/blind-coder/rcmcarddav/issues/165 for details.
+
+20160927:
+  AFFECTS: emulators/ppsspp
+  AUTHOR:  jbeich@FreeBSD.org
+
+  Qt* GUI was split into separate ports:
+
+      emulators/ppsspp-qt4
+      emulators/ppsspp-qt5
+
+20160927:
+  AFFECTS: sysutils/android-file-transfer
+  AUTHOR:  jbeich@FreeBSD.org
+
+  Qt* GUI was split into separate ports:
+
+      sysutils/android-file-transfer-qt4
+      sysutils/android-file-transfer-qt5
+
+20160922:
+  AFFECTS: users of databases/pglogical, databases/pglogical-output
+  AUTHOR:  matthew@FreeBSD.org
+
+  As of version 1.2.0, databases/pglogical-output has been merged into
+  databases/pglogical.  portmaster or portupgrade users should delete
+  pglogical-output manually before upgrading.
+
+20160921:
+  AFFECTS: users of mail/sieve-connect
+  AUTHOR: alexey@renatasystems.org
+
+  Version 0.88 contains two breaking changes:
+  1.  If the Sieve server does not offer STARTTLS, then connections should now
+      fail.
+  2.  When deriving a remote script name from the local filename, use the
+      basename and strip off directories.
+
+  For additional information see:
+  http://mail.globnix.net/pipermail/sieve-connect-announce/2016/000012.html
+
 20160919:
   AFFECTS: users of net/vtun
   AUTHOR: cy@FreeBSD.org

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-PageCache
-PORTVERSION=	0.31
-PORTREVISION=	2
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +20,6 @@ TEST_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

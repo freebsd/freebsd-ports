@@ -4,13 +4,11 @@
 PORTNAME=	tktray
 PORTVERSION=	1.3.9
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/tktray/tktray1.3.9.tar.gz/6f7f22e7c6f1d7dc9f7e19ee2e9a82aa/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES+=		tk:tea
 USE_XORG=	x11 xext

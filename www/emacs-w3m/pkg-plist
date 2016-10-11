@@ -119,8 +119,6 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-ffii.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-fml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-fml.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-gendai-net.el
-%%SHIMBUN%%%%LISPDIR%%/sb-gendai-net.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-geocrawler.el
 %%SHIMBUN%%%%LISPDIR%%/sb-geocrawler.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-glimpse.el
@@ -155,6 +153,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-kantei.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-kde.el
 %%SHIMBUN%%%%LISPDIR%%/sb-kde.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-kyoko-np.el
+%%SHIMBUN%%%%LISPDIR%%/sb-kyoko-np.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-laut-de.el
 %%SHIMBUN%%%%LISPDIR%%/sb-laut-de.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-linuxce-jp.el
@@ -197,6 +197,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-netbsd.el
 %%SHIMBUN%%%%LISPDIR%%/sb-netbsd.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-nikkangendai.el
+%%SHIMBUN%%%%LISPDIR%%/sb-nikkangendai.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-nikkansports.el
 %%SHIMBUN%%%%LISPDIR%%/sb-nikkansports.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-nikkei.el
@@ -309,6 +311,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri-html.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.el
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-yoshirin.el
+%%SHIMBUN%%%%LISPDIR%%/sb-yoshirin.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-zdnet-jp.el
 %%SHIMBUN%%%%LISPDIR%%/sb-zdnet-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-zeit-de.el

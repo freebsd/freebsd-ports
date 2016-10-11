@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	python-social-auth
-PORTVERSION=	0.2.14
-PORTREVISION=	1
+PORTVERSION=	0.2.21
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Python Social Auth is a social authentication/registration mechanism
+
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}python-openid>=2.2:security/py-python-openid \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.1:www/py-requests \

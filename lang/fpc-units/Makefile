@@ -3,7 +3,7 @@
 
 PORTNAME=	units
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -26,8 +26,11 @@ ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBLIB DBUS DTS FASTCGI \
 		RTL_EXTRA RTL_OBJPAS RTL_UNICODE SDL SVGALIB SYMBOLIC \
 		SYSLOG TCL UNZIP USERS UTMP UUID X11 XFORMS ZLIB
 
+# per PR 212919, the inclusion of the VLC unit will cause pkg(8) to require
+# the deinstallation of KDE, so it's not a default option until furter notice
+
 OPTIONS_DEFINE:=	${ALL_OPTIONS}
-OPTIONS_DEFAULT:=	${ALL_OPTIONS}
+OPTIONS_DEFAULT:=	${ALL_OPTIONS:NLIBVLC}
 
 A52_DESC=		Interface to a52 library
 ASPELL_DESC=		Interface to aspell spelling checker

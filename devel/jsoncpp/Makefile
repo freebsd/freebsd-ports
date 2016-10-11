@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com

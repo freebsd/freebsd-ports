@@ -1,0 +1,11 @@
+--- tools/menuselect/Makefile.orig	2016-10-04 19:53:16.199527000 +0000
++++ tools/menuselect/Makefile	2016-10-04 19:53:31.943912000 +0000
+@@ -64,7 +64,7 @@
+ $(OBJS) $(C_OBJS) $(N_OBJS) $(G_OBJS) $(M_OBJS): autoconfig.h menuselect.h
+ 
+ makeopts autoconfig.h: autoconfig.h.in makeopts.in
+-	@./configure $(CONFIGURE_SILENT) CC= LD= AR= CFLAGS=
++	@./configure $(CONFIGURE_SILENT) CC=${CC} LD= AR= CFLAGS=
+ 
+ $(ALL_TGTS): mxml/libmxml.a
+ 

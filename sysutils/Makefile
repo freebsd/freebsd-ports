@@ -27,10 +27,14 @@
     SUBDIR += aimage
     SUBDIR += aird
     SUBDIR += am-utils
+    SUBDIR += amazon-ssm-agent
     SUBDIR += amrstat
     SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
+    SUBDIR += android-file-transfer
+    SUBDIR += android-file-transfer-qt4
+    SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible1
     SUBDIR += apachetop
@@ -832,6 +836,7 @@
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
     SUBDIR += py-diffoscope
+    SUBDIR += py-dirsync
     SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
@@ -859,6 +864,7 @@
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
+    SUBDIR += py-scandir
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
@@ -999,6 +1005,7 @@
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
     SUBDIR += scanmem
+    SUBDIR += scct
     SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen

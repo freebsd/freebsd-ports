@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://www.theweb.dk/KickAssembler/
 DISTNAME=	KickAssembler${PORTVERSION}
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced MOS 65xx assembler with embedded script language
 
 USES=		zip

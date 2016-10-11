@@ -54,6 +54,8 @@
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls
+    SUBDIR += R-cran-nortest
+    SUBDIR += R-cran-numDeriv
     SUBDIR += R-cran-outliers
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-psych
@@ -66,6 +68,7 @@
     SUBDIR += R-cran-sspir
     SUBDIR += R-cran-stabledist
     SUBDIR += R-cran-survey
+    SUBDIR += R-cran-truncnorm
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += aamath
@@ -76,7 +79,6 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
-    SUBDIR += alt-ergo-spark
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
@@ -559,6 +561,7 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-bitset2
     SUBDIR += pecl-stats
+    SUBDIR += pecl-stats2
     SUBDIR += pecl-trader
     SUBDIR += php55-bcmath
     SUBDIR += php55-gmp
@@ -709,7 +712,6 @@
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += why3
-    SUBDIR += why3-spark
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima

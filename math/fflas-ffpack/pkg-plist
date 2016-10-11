@@ -53,8 +53,6 @@ include/fflas-ffpack/utils/print-utils.h
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/COPYING
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/INSTALL
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/annotated.html
-%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/bc_s.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/bdwn.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/bib.html
@@ -129,6 +127,8 @@ include/fflas-ffpack/utils/print-utils.h
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/index.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/inst.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/jquery.js
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/menu.js
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/menudata.js
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/modular-balanced-double_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/modular-balanced-float_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/modular-balanced-int32_8h.html

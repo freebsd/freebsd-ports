@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightzone
-PORTVERSION=	4.1.6
+PORTVERSION=	4.1.7
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 

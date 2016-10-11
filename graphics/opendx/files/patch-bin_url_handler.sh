@@ -1,6 +1,6 @@
---- ./bin/url_handler.sh.orig	Thu Apr 11 01:32:54 2002
-+++ ./bin/url_handler.sh	Sat Jan 28 15:27:41 2006
-@@ -39,8 +39,8 @@
+--- bin/url_handler.sh.orig	2002-04-10 23:32:54 UTC
++++ bin/url_handler.sh
+@@ -39,8 +39,8 @@ case $method in
  		if [ $use_xbrowser = n ]; then
  			lynx "$url" 
  		else

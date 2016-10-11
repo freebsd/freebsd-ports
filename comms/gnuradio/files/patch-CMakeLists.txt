@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2015-07-25 20:27:13 UTC
+--- CMakeLists.txt.orig	2016-04-11 02:35:01 UTC
 +++ CMakeLists.txt
 @@ -29,6 +29,11 @@ cmake_minimum_required(VERSION 2.6)
  project(gnuradio CXX C)

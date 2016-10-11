@@ -70,6 +70,7 @@ FreeCAD/Mod/Fem/FemConstraintSelfWeight.py
 FreeCAD/Mod/Fem/FemInputWriter.py
 FreeCAD/Mod/Fem/FemInputWriterCcx.py
 FreeCAD/Mod/Fem/FemInputWriterZ88.py
+FreeCAD/Mod/Fem/FemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/FemMeshTools.py
 FreeCAD/Mod/Fem/FemSelectionObserver.py
 FreeCAD/Mod/Fem/FemShellThickness.py
@@ -91,6 +92,7 @@ FreeCAD/Mod/Fem/_CommandAnalysis.py
 FreeCAD/Mod/Fem/_CommandBeamSection.py
 FreeCAD/Mod/Fem/_CommandConstraintSelfWeight.py
 FreeCAD/Mod/Fem/_CommandControlSolver.py
+FreeCAD/Mod/Fem/_CommandMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/_CommandMechanicalMaterial.py
 FreeCAD/Mod/Fem/_CommandMeshFromShape.py
 FreeCAD/Mod/Fem/_CommandPurgeResults.py
@@ -101,6 +103,7 @@ FreeCAD/Mod/Fem/_CommandSolverCalculix.py
 FreeCAD/Mod/Fem/_CommandSolverZ88.py
 FreeCAD/Mod/Fem/_FemBeamSection.py
 FreeCAD/Mod/Fem/_FemConstraintSelfWeight.py
+FreeCAD/Mod/Fem/_FemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/_FemShellThickness.py
 FreeCAD/Mod/Fem/_FemSolverCalculix.py
 FreeCAD/Mod/Fem/_FemSolverZ88.py
@@ -112,6 +115,7 @@ FreeCAD/Mod/Fem/_TaskPanelMechanicalMaterial.py
 FreeCAD/Mod/Fem/_TaskPanelShowResult.py
 FreeCAD/Mod/Fem/_ViewProviderFemBeamSection.py
 FreeCAD/Mod/Fem/_ViewProviderFemConstraintSelfWeight.py
+FreeCAD/Mod/Fem/_ViewProviderFemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/_ViewProviderFemShellThickness.py
 FreeCAD/Mod/Fem/_ViewProviderFemSolverCalculix.py
 FreeCAD/Mod/Fem/_ViewProviderFemSolverZ88.py

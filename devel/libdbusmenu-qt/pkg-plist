@@ -11,8 +11,6 @@ lib/libdbusmenu-qt%%QTVER_SUFFIX%%.so.2
 lib/libdbusmenu-qt%%QTVER_SUFFIX%%.so.2.6.0
 libdata/pkgconfig/dbusmenu-qt%%QTVER_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/annotated.html
-%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/bc_s.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/bdwn.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/classDBusMenuExporter-members.html
@@ -41,6 +39,8 @@ libdata/pkgconfig/dbusmenu-qt%%QTVER_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/hierarchy.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/index.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/jquery.js
+%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/menu.js
+%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/menudata.js
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/nav_f.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/nav_g.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/nav_h.png

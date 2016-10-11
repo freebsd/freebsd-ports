@@ -27,7 +27,7 @@ pidfile=${tox_bootstrapd_pidfile:="$_pidprefix/tox-bootstrapd.pid"}
 long_name="Tox DHT bootstrap daemon."
 tox_bootstrapd_user="%%TOXDHT%%"
 command="%%PREFIX%%/bin/tox-bootstrapd"
-command_args="${tox_bootstrapd_config}"
+command_args="--config ${tox_bootstrapd_config}"
 
 stop_cmd=${name}_stop
 

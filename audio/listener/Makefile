@@ -24,7 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-g |$$(CPPFLAGS) | ; \
 		 s|-O2 || ; \
-		 s|-ldl |$$(LDFLAGS) |' ${WRKSRC}/Makefile
+		 s|-ldl |$$(LDFLAGS) $$(LIBS) |' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/listener ${WRKSRC}/setlistener \

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Interactive Python shell
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING.rst
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:misc/py-pexpect \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3
@@ -18,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:misc/py-pexpect \
 USES=		python
 USE_PYTHON=	autoplist distutils
 USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	X11 HTML_NOTEBOOK ZMQ EXAMPLES
 OPTIONS_DEFAULT=X11 ZMQ
@@ -29,29 +33,20 @@ OPTIONS_DEFAULT+=	HTML_NOTEBOOK
 HTML_NOTEBOOK_DESC=	HTML notebook support
 ZMQ_DESC=		ZMQ support (parallel computing, qt console, notebook)
 
-.include <bsd.port.options.mk>
+X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+			${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:graphics/py-qt4-svg \
+			${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments
 
-.if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:graphics/py-qt4-svg \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments
-.endif
+HTML_NOTEBOOK_RUN_DEPENDS=\
+			${PYTHON_PKGNAMEPREFIX}tornado>=2.0:www/py-tornado \
+			${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
+			${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
+			${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune \
+			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:net/py-pyzmq
 
-.if ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
-		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune
-.endif
-
-.if ${PORT_OPTIONS:MZMQ} || ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:net/py-pyzmq
-.endif
+ZMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:net/py-pyzmq
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 	@${ECHO_CMD} "/EASY-INSTALL"	> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "a"		>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "import os"	>> ${WRKDIR}/ex.script
@@ -62,10 +57,7 @@ post-install:
 		ex $${file} < ${WRKDIR}/ex.script > /dev/null; \
 	done
 
-.include <bsd.port.pre.mk>
+post-install-EXAMPLES-on:
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.if ${PYTHON_VER} == "3.1" || ${PYTHON_VER} == "3.2"
-IGNORE=		only Python versions 2.7, 3.3 and 3.4 are supported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -9,10 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork/variant of Cataclysm Roguelike by Whales
 
-LICENSE=	CCPL.BY-SA.30
-LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 Unported License
+LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		alias compiler:c++11-lib execinfo gmake shebangfix
 SHEBANG_FILES=	lang/*.sh

@@ -1,0 +1,30 @@
+--- src/GNUmakefile.orig	2015-04-07 14:37:56 UTC
++++ src/GNUmakefile
+@@ -2,8 +2,8 @@
+ 
+ TARGET = ../cave9
+ 
+-CFLAGS += -std=c99 -Wall -Werror -ggdb `sdl-config --cflags`
+-LDFLAGS += -lSDL_ttf -lSDL_image `sdl-config --libs` -L/usr/X11/lib -lGL -lGLU -lm
++CFLAGS += -std=c99 -Wall -Werror -isystem ${LOCALBASE}/include `sdl-config --cflags`
++LDFLAGS += -lSDL_ttf -lSDL_image -L${LOCALBASE}/lib `sdl-config --libs` -lGL -lGLU -lm
+ 
+ ifdef GLOBAL_SCORE
+ CFLAGS += -DGLOBAL_SCORE
+@@ -11,7 +11,6 @@ LDFLAGS += -lSDL_net
+ endif
+ 
+ # necessary when some SDL libs are on /usr/local, and others on /usr
+-CFLAGS += -I/usr/local/include/SDL -I/usr/include/SDL
+ 
+ 
+ #{{{1  build rules
+@@ -29,6 +28,8 @@ SRCS = \
+ 
+ OBJS = $(subst .c,.o,$(SRCS))
+ 
++all: $(TARGET)
++
+ $(TARGET): $(OBJS)
+ 	$(CC) $^ $(LDFLAGS) -o $@
+ 

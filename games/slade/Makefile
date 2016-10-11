@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-PORTVERSION=	3.1.1.3
+PORTVERSION=	3.1.1.4
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,6 +21,7 @@ GH_PROJECT=	${PORTNAME:tu}
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_WX=		3.0+
+USE_GL=		glew
 USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/slade share/slade3/slade.pk3

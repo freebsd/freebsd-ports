@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.7.0.151113
-PORTREVISION=	3
+PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -24,19 +24,18 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tox
-GH_TAGNAME=	9f0feb7
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
-X11_USE=	XORG=x11
+X11_USE=	GNOME=gdkpixbuf2,glib20 XORG=x11
 X11_MAKE_ARGS_OFF=	DISABLE_X11=1 DISABLE_DESKTOP_NOTIFY=1
 X11_LIB_DEPENDS=libnotify.so:devel/libnotify
 
 MAKE_ENV=	USER_CFLAGS="${CFLAGS}" USER_LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
-USES=		desktop-file-utils gmake ncurses openal:al,alut pkgconfig
+USES=		desktop-file-utils gettext-runtime gmake ncurses openal:al,alut pkgconfig
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD.*$$|${GH_TAGNAME}|'	\

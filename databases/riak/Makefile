@@ -2,13 +2,13 @@
 
 PORTNAME=	riak
 PORTVERSION=	1.4.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	robak@FreeBSD.org
-COMMENT=	Riak is an open source, distributed, noSQL database
+COMMENT=	Open source, distributed, noSQL database
 
 LICENSE=	APACHE20
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pglogical
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.2ndquadrant.com/pglogical/tarballs/
 
@@ -11,9 +10,6 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Logical replication system as a PostgreSQL extension
 
 LICENSE=	PostgreSQL
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/postgresql/pglogical_output.so:databases/pglogical-output
-RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/pglogical_output.so:databases/pglogical-output
 
 USES=		gmake pgsql:9.4+ tar:bzip2
 WANT_PGSQL=	client server
@@ -39,6 +35,7 @@ PLIST_SUB=	PGSQL94="@comment "
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pglogical_create_subscriber
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pglogical.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pglogical_output.so
 .if ${PGSQL_VER:M9.4}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pglogical_dump
 .endif

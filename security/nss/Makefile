@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.26
+PORTVERSION=	3.27.1
+PORTREVISION=	1
 #DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
+
+LICENSE=	MPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		nspr>=4.12:devel/nspr \
@@ -86,7 +90,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss/nss ${STAGEDIR}${PREFIX}/lib/nss
 	${FIND} ${DIST}/public/nss -type l \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss/nss \;
-	${INSTALL_LIB} ${BINS}/lib/*.so.1 \
+	${INSTALL_LIB} ${BINS}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/nss
 	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
 		${STAGEDIR}${PREFIX}/lib/nss
@@ -94,8 +98,6 @@ do-install:
 	${INSTALL_PROGRAM} ${BINS}/bin/${bin} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
-	cd ${BINS}/lib && \
-		${TAR} -cf - *.so | ${TAR} --unlink -C ${STAGEDIR}${PREFIX}/lib/nss -xf -
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 

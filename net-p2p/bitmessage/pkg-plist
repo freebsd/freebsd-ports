@@ -134,9 +134,6 @@ share/pybitmessage/bitmessageqt/wanlan.ui
 share/pybitmessage/bitmessageqt/widgets.py
 share/pybitmessage/bitmessageqt/widgets.pyc
 share/pybitmessage/bitmessageqt/widgets.pyo
-share/pybitmessage/bitmsghash/Makefile
-share/pybitmessage/bitmsghash/bitmsghash.cl
-share/pybitmessage/bitmsghash/bitmsghash.cpp
 share/pybitmessage/build_osx.py
 share/pybitmessage/build_osx.pyc
 share/pybitmessage/build_osx.pyo
@@ -170,6 +167,12 @@ share/pybitmessage/class_singleListener.pyo
 share/pybitmessage/class_singleWorker.py
 share/pybitmessage/class_singleWorker.pyc
 share/pybitmessage/class_singleWorker.pyo
+share/pybitmessage/class_smtpDeliver.py
+share/pybitmessage/class_smtpDeliver.pyc
+share/pybitmessage/class_smtpDeliver.pyo
+share/pybitmessage/class_smtpServer.py
+share/pybitmessage/class_smtpServer.pyc
+share/pybitmessage/class_smtpServer.pyo
 share/pybitmessage/class_sqlThread.py
 share/pybitmessage/class_sqlThread.pyc
 share/pybitmessage/class_sqlThread.pyo
@@ -194,6 +197,9 @@ share/pybitmessage/helper_generic.pyo
 share/pybitmessage/helper_inbox.py
 share/pybitmessage/helper_inbox.pyc
 share/pybitmessage/helper_inbox.pyo
+share/pybitmessage/helper_msgcoding.py
+share/pybitmessage/helper_msgcoding.pyc
+share/pybitmessage/helper_msgcoding.pyo
 share/pybitmessage/helper_search.py
 share/pybitmessage/helper_search.pyc
 share/pybitmessage/helper_search.pyo
@@ -320,6 +326,8 @@ share/pybitmessage/translations/bitmessage_nl.ts
 share/pybitmessage/translations/bitmessage_no.qm
 share/pybitmessage/translations/bitmessage_no.ts
 share/pybitmessage/translations/bitmessage_pl.ts
+share/pybitmessage/translations/bitmessage_pl.qm
+share/pybitmessage/translations/bitmessage_pt.qm
 share/pybitmessage/translations/bitmessage_pt.ts
 share/pybitmessage/translations/bitmessage_ru.qm
 share/pybitmessage/translations/bitmessage_ru.ts

@@ -9,12 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
-LICENSE=	GPLv2+ CCbyNCSA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_FILE=	${WRKSRC}/doc/license
-LICENSE_TEXT_CCbyNCSA3=CC-BY 3.0
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
+LICENSE=	GPLv2+ CC-BY-3.0 CC-BY-SA-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/doc/license
 
 USES=		gmake pkgconfig
 USE_SDL=	image2 mixer2 net2 sdl2 ttf2

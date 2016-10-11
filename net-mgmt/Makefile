@@ -280,6 +280,7 @@
     SUBDIR += py-snmp4
     SUBDIR += py-snmp4-apps
     SUBDIR += py-snmp4-mibs
+    SUBDIR += py-snmp_passpersist
     SUBDIR += py-yapsnmp
     SUBDIR += qkismet
     SUBDIR += rackmonkey
@@ -290,6 +291,7 @@
     SUBDIR += remarp
     SUBDIR += resource-agents
     SUBDIR += riemann
+    SUBDIR += riemann-c-client
     SUBDIR += rotorouter
     SUBDIR += routers2
     SUBDIR += routers2-extensions
@@ -355,5 +357,9 @@
     SUBDIR += zabbix3-frontend
     SUBDIR += zabbix3-proxy
     SUBDIR += zabbix3-server
+    SUBDIR += zabbix32-agent
+    SUBDIR += zabbix32-frontend
+    SUBDIR += zabbix32-proxy
+    SUBDIR += zabbix32-server
 
 .include <bsd.port.subdir.mk>

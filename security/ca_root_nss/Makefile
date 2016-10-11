@@ -19,7 +19,7 @@ OPTIONS_SUB=		yes
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
 ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 
-USES=		perl5
+USES=		perl5 ssl:build
 USE_PERL5=	build
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
@@ -32,7 +32,7 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.26
+VERSION_NSS=	3.27.1
 #NSS_SUFFIX=	-with-ckbi-1.98
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
@@ -50,7 +50,8 @@ do-extract:
 	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
 
 do-build:	apply-slist
-	@${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
+	@${SETENV} PATH=${LOCALBASE}/bin:$${PATH} \
+		${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
 	    < ${WRKDIR}/certdata.txt > \
 	    ${WRKDIR}/ca-root-nss.crt
 

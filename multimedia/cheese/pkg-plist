@@ -19,7 +19,7 @@ lib/libcheese.so.8.0.3
 libdata/pkgconfig/cheese-gtk.pc
 libdata/pkgconfig/cheese.pc
 libexec/gnome-camera-service
-man/man1/cheese.1.gz
+%%MANPAGES%%man/man1/cheese.1.gz
 share/appdata/org.gnome.Cheese.appdata.xml
 share/applications/org.gnome.Cheese.desktop
 share/dbus-1/services/org.gnome.Camera.service

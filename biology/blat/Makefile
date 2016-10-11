@@ -15,14 +15,14 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
 
-USES=		gmake mysql zip
-USE_OPENSSL=	yes
+USES=		gmake mysql ssl zip
 MAKEFILE=	makefile
 MAKE_ENV=	MACHTYPE="${ARCH}" STRIP="${TRUE}"
 MAKE_ARGS=	HOME="${WRKSRC}/${BINDIR}"
 
-CPPFLAGS+=	$$(libpng-config --cflags)
-LDFLAGS+=	$$(libpng-config --ldflags) \
+CFLAGS+=	-I${OPENSSLINC}
+CPPFLAGS+=	-I${OPENSSLINC} $$(libpng-config --cflags)
+LDFLAGS+=	-L${OPENSSLLIB} $$(libpng-config --ldflags) \
 		-L${LOCALBASE}/lib/mysql
 
 SUB_FILES=	pkg-message

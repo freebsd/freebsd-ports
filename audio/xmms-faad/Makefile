@@ -11,10 +11,13 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for MP4/M4A/AAC files
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../../../COPYING
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms \
 		libfaad.so:audio/faad
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/plugins/xmms/src
+WRKSRC_SUBDIR=	plugins/xmms/src
 
 USE_GNOME=	gtk12
 USES=		pkgconfig tar:bzip2
@@ -34,6 +37,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}
-	cd ${WRKSRC}; ${INSTALL_LIB} libmp4.so ${STAGEDIR}${PLUGINS_DIR}
+	${INSTALL_LIB} ${WRKSRC}/libmp4.so ${STAGEDIR}${PLUGINS_DIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+# $FreeBSD$
+
+PORTREVISION=	0
+PKGNAMESUFFIX=	-qt5
+
+MASTERDIR=	${.CURDIR}/../ppsspp
+
+OPTIONS_SLAVE=	QT5
+
+.include "${MASTERDIR}/Makefile"

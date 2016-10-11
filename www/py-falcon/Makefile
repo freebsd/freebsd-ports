@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	falcon
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,8 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	cython>=0.11.2:lang/cython
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:devel/py-testtools \
-		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:devel/py-mimeparse
 
 USES=		python
 USE_PYTHON=	distutils autoplist

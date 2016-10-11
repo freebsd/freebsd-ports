@@ -6,7 +6,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Easy to use system logging library
 
 LICENSE=	BSD2CLAUSE

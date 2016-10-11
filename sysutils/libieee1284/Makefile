@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libieee1284
-PORTVERSION=	0.2.10
-PORTREVISION=	3
+PORTVERSION=	0.2.11
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cyberelk.net/tim/data/libieee1284/stable/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IEEE 1284 communication library

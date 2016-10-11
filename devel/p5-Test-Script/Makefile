@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Script
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test::Script - Cross-platform basic tests for scripts
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-IPC-Run3>=0.034:devel/p5-IPC-Run3 \
 		p5-Probe-Perl>=0.01:sysutils/p5-Probe-Perl

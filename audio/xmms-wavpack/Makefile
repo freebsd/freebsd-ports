@@ -9,13 +9,14 @@ MASTER_SITES=	http://www.wavpack.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play WavPack files
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libwavpack.so:audio/wavpack \
 		libxmms.so:multimedia/xmms
 
-USES=		iconv libtool pkgconfig tar:bzip2
+USES=		iconv libtool localbase pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/xmms/Input/libwavpack.so
 

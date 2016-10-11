@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eiskaltdcpp
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-gtk
 

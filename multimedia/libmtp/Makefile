@@ -13,22 +13,22 @@ LICENSE=	LGPL21+
 
 CONFLICTS_INSTALL=libosmo-sccp-[0-9]* # lib/libmtp.a
 
-OPTIONS_DEFINE=	MTPZ
-OPTIONS_DEFAULT=	MTPZ
-MTPZ_DESC=	Enable functionality to connect to MTPZ devices
-
+USES=		iconv libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	MTPZ
+OPTIONS_DEFAULT=MTPZ
+
+MTPZ_DESC=	Enable functionality to connect to MTPZ devices
+MTPZ_CONFIGURE_ENABLE=	mtpz
+MTPZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
 CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 .endif
-
-MTPZ_CONFIGURE_ENABLE=	mtpz
-MTPZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 post-patch:
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)

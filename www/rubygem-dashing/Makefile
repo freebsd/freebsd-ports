@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dashing
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 

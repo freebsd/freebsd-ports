@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-WTF
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,11 @@ TESTS_DESC=		Install test suite dependencies
 TESTS_BUILD_DEPENDS=	${RUN_DEPENDS} \
 			${TEST_DEPENDS}
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel ssh command execution and file transfer on multiple hosts
 
 BROKEN=		mismatch in distfile checksum
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 LICENSE=	GPLv3+
 

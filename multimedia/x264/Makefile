@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -38,11 +38,11 @@ BUILD_DEPENDS=	yasm>=1.2.0:devel/yasm \
 		bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
-X264_BUILD=	144
-X264_REV=	2533
-X264_COMMIT=	c8a773ebfca148ef04f5a60d42cbd7336af0baf6
+X264_BUILD=	148
+X264_REV=	2708
+X264_COMMIT=	86b71982e131eaa70125f8d0e725fcade9c4c677
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20150629
+X264_SNAPSHOT=	20160921
 
 USES?=		pkgconfig
 USES+=		gmake localbase shebangfix tar:bzip2
@@ -63,28 +63,28 @@ LSMASH_DESC=		L-SMASH library support
 MP4_DESC=		MPEG-4 output
 SWSCALE_DESC=		Resize video filter
 
-ASM_CONFIGURE_OFF=	--disable-asm
+ASM_CONFIGURE_ENABLE=	asm
 
-DEBUG_CONFIGURE_ON=	--enable-debug
+DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
 
 FFMS_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
-FFMS_CONFIGURE_OFF=	--disable-ffms
+FFMS_CONFIGURE_ENABLE=	ffms
 FFMS_IMPLIES=		SWSCALE
 
 GCC_VARS=		USE_GCC=yes
 
-GPAC_CONFIGURE_OFF=	--disable-gpac
 GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
+GPAC_CONFIGURE_ENABLE=	gpac
 
-LAVF_CONFIGURE_OFF=	--disable-lavf
 LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
 			libavutil.so:multimedia/ffmpeg
+LAVF_CONFIGURE_ENABLE=	lavf
 LAVF_IMPLIES=		SWSCALE
 
 LSMASH_LIB_DEPENDS=	liblsmash.so:multimedia/l-smash
-LSMASH_CONFIGURE_OFF=	--disable-lsmash
+LSMASH_CONFIGURE_ENABLE=lsmash
 
 PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
 PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
@@ -96,15 +96,14 @@ PGO_VARS=		USE_GCC=any \
 			RESTRICTED="${Y4M_VIDEO_DISTFILE} file may not be mirrored" \
 			RESTRICTED_FILES="${Y4M_VIDEO_DISTFILE}"
 
-SWSCALE_CONFIGURE_OFF=	--disable-swscale
 SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 			libswscale.so:multimedia/ffmpeg
+SWSCALE_CONFIGURE_ENABLE=	swscale
 
 CONFIGURE_ARGS?=	--system-libx264
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
-			--extra-ldflags="${LDFLAGS}" \
-			--disable-opencl \
+			--extra-ldflags="${LDFLAGS}"
 
 CFLAGS_armv6+=		-mcpu=arm1136jf-s
 

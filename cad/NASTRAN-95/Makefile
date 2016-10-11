@@ -10,9 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NASA Structural Analysis System
 
 LICENSE=	NOSA
-LICENSE_NAME=   NASA OPEN SOURCE AGREEMENT VERSION 1.3
+LICENSE_NAME=	NASA OPEN SOURCE AGREEMENT VERSION 1.3
 LICENSE_FILE=	${FILESDIR}/NASTRAN95-license.txt
-LICENSE_PERMS= dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	twuerfl
@@ -21,10 +21,12 @@ GH_TAGNAME=	0e77a84
 USES=		fortran gmake
 
 ALL_TARGET=	# empty
-INSTALL_TARGET=install-strip
+INSTALL_TARGET=	install-strip
 
 NASTHOME= 	${PREFIX}/libexec/${PORTNAME}
 PLIST_SUB=	NASTHOME=${NASTHOME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+g;' \
@@ -47,16 +49,17 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${NASTHOME}/bin
 	${INSTALL} ${WRKSRC}/sb/nastran.exe ${STAGEDIR}${NASTHOME}/bin/nastrn.exe
 	${INSTALL} ${WRKSRC}/utility/chkfil.exe ${STAGEDIR}${NASTHOME}/bin/
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pdf	${STAGEDIR}${DOCSDIR}
-.for dir in rf
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${NASTHOME})
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "rf" ${STAGEDIR}${NASTHOME})
 	@${MKDIR} ${STAGEDIR}${NASTHOME}/um/
 	${INSTALL} ${WRKSRC}/um/nasthelp.exe ${STAGEDIR}${NASTHOME}/um/
 	${INSTALL_DATA} ${WRKSRC}/um/*.TXT ${STAGEDIR}${NASTHOME}/um/
-.for dir in demoout inp test
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${EXAMPLESDIR})
-.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pdf	${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "demoout inp test" ${STAGEDIR}${EXAMPLESDIR})
+
 .include <bsd.port.mk>

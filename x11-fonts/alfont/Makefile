@@ -21,6 +21,8 @@ LICENSE_NAME=	The FreeType Project LICENSE (FTL)
 LICENSE_FILE=	${WRKSRC}/docs/FTL.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		unfetchable
+
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 LIB_DEPENDS=	liballeg.so.4:devel/allegro \
 		libfreetype.so:print/freetype2

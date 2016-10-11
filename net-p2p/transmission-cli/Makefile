@@ -4,8 +4,8 @@ PORTNAME=	transmission
 PORTVERSION=	2.92
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
-#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
-MASTER_SITES=	http://transmission.cachefly.net/
+MASTER_SITES=	https://github.com/transmission/transmission-releases/raw/master/ \
+		http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
 MAINTAINER?=	crees@FreeBSD.org

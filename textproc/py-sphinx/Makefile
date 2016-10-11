@@ -3,6 +3,7 @@
 
 PORTNAME=	sphinx
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel\
 		${PYTHON_PKGNAMEPREFIX}alabaster>=0.7:textproc/py-alabaster \
 		${PYTHON_PKGNAMEPREFIX}snowballstemmer>=1.1:textproc/py-snowballstemmer \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}imagesize>=0.7.1:graphics/py-imagesize
+		${PYTHON_PKGNAMEPREFIX}imagesize>=0.7.1:graphics/py-imagesize \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		python
 USE_PYTHON=	autoplist distutils

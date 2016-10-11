@@ -1,6 +1,6 @@
 --- Makefile.am.orig	2016-08-17 04:57:11 UTC
 +++ Makefile.am
-@@ -242,29 +242,12 @@ endif # TESTAPP
+@@ -250,30 +250,12 @@ endif # TESTAPP
  if UNIT_TEST
  TESTS = test/unit_test
  
@@ -16,9 +16,10 @@
 -	test/extra/musl-libm/__sin.c \
 -	test/extra/musl-libm/cos.c \
 -	test/extra/musl-libm/fpu_wrapper.c \
+-	test/extra/musl-libm/expf.c \
 -	test/extra/musl-libm/libm.h \
+-	test/extra/musl-libm/logf.c \
 -	test/extra/musl-libm/mymath.h \
--	test/extra/musl-libm/pow.c \
 -	test/extra/musl-libm/powf.c \
 -	test/extra/musl-libm/sin.c
 -

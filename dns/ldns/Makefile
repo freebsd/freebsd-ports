@@ -51,8 +51,6 @@ RRTYPECDS_CONFIGURE_ENABLE=	rrtype-cds
 RRTYPEURI_CONFIGURE_ENABLE=	rrtype-uri
 RRTYPETA_CONFIGURE_ENABLE=	rrtype-ta
 
-.include <bsd.port.options.mk>
-
 .if defined(BUILD_PYLDNS)
 USES+=		python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -86,6 +84,8 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGOST}
 .  if !defined(SSL_DEFAULT) || ${SSL_DEFAULT} == "base"
@@ -135,4 +135,4 @@ post-install:
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

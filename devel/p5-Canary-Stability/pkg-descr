@@ -1,8 +1,8 @@
-This module is used by Schmorp's modules during configuration stage
-to test the installed perl for compatibility with his modules.
+This module is used by a guy who calls himself "schmorp" to produce
+warnings if you're using any supported version of Perl.
 
-It's not, at this stage, meant as a tool for other module authors,
-although in principle nothing prevents them from subscribing to the
-same ideas.
+This port is designed to prevent these warnings, but you can set
+the "ACTIVATE" option to turn them back on. All of the instructions
+in the warnings are considered harmful and should not be followed.
 
 WWW: https://metacpan.org/release/Canary-Stability

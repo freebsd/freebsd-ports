@@ -1,0 +1,27 @@
+# Created by: Yuri Victorovich <yuri@rawbw.com>
+# $FreeBSD$
+
+PORTNAME=	pathlib2
+PORTVERSION=	2.1.0
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@rawbw.com
+COMMENT=	Object-oriented filesystem paths
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+
+do-test:
+	@(cd ${WRKSRC} && \
+		${PYTHON_CMD} test_pathlib2.py && \
+		${PYTHON_CMD} test_pathlib2_with_py2_unicode_literals.py)
+
+.include <bsd.port.mk>

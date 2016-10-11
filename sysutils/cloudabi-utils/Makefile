@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-utils
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	CloudABI has not yet been ported to other architectures
 
 USES=		cmake compiler:c11 pkgconfig tar:xz

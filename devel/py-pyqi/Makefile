@@ -1,4 +1,3 @@
-# Created by: Joseph Mingrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	pyqi
@@ -7,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tools for developing and testing command line interfaces in Python
 
 LICENSE=	BSD3CLAUSE

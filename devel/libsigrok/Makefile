@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, core library
 
 LICENSE=	GPLv3

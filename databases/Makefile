@@ -559,6 +559,7 @@
     SUBDIR += pg_citus
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
+    SUBDIR += pg_qualstats
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_statsinfo
     SUBDIR += pgaccess
@@ -573,7 +574,7 @@
     SUBDIR += pglesslog
     SUBDIR += pgloader
     SUBDIR += pglogical
-    SUBDIR += pglogical-output
+    SUBDIR += pgmodeler
     SUBDIR += pgpool
     SUBDIR += pgpool-II
     SUBDIR += pgpool-II-22
@@ -653,21 +654,12 @@
     SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-libpqxx3
     SUBDIR += postgresql-odbc
-    SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-repmgr2
-    SUBDIR += postgresql91-client
-    SUBDIR += postgresql91-contrib
-    SUBDIR += postgresql91-docs
-    SUBDIR += postgresql91-pgtcl
-    SUBDIR += postgresql91-plperl
-    SUBDIR += postgresql91-plpython
-    SUBDIR += postgresql91-pltcl
-    SUBDIR += postgresql91-server
     SUBDIR += postgresql92-client
     SUBDIR += postgresql92-contrib
     SUBDIR += postgresql92-docs
@@ -708,6 +700,8 @@
     SUBDIR += postgresql96-plpython
     SUBDIR += postgresql96-pltcl
     SUBDIR += postgresql96-server
+    SUBDIR += powa-archivist
+    SUBDIR += powa-web
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql
     SUBDIR += proftpd-mod_sql_odbc

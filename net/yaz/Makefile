@@ -2,28 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.16.0
-PORTREVISION=	2
+PORTVERSION=	5.17.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
-LIB_DEPENDS=	libicuuc.so:devel/icu
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libgnutls.so:security/gnutls
 
-USES=		execinfo iconv libtool pathfix pkgconfig shebangfix tcl
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		execinfo iconv libtool ncurses pathfix pkgconfig readline \
+		shebangfix tcl
 SHEBANG_FILES=	util/yaz-asncomp
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
-		--with-iconv=${ICONV_PREFIX} --with-xml2=${LOCALBASE} \
-		--with-xslt=${LOCALBASE} --with-icu=${LOCALBASE} \
-		--enable-tcpd
+CONFIGURE_ARGS=	--enable-shared --with-iconv=${ICONV_PREFIX} \
+		--with-xml2=${LOCALBASE} --with-xslt=${LOCALBASE} \
+		--with-icu=${LOCALBASE} --enable-tcpd
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lexecinfo
 

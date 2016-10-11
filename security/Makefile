@@ -273,6 +273,7 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
+    SUBDIR += kdbx-viewer
     SUBDIR += kgpg-kde4
     SUBDIR += knock
     SUBDIR += knocker
@@ -380,10 +381,6 @@
     SUBDIR += nacl
     SUBDIR += ncrack
     SUBDIR += ncrypt
-    SUBDIR += nessus
-    SUBDIR += nessus-libnasl
-    SUBDIR += nessus-libraries
-    SUBDIR += nessus-plugins
     SUBDIR += netpgp
     SUBDIR += nettle
     SUBDIR += nikto
@@ -840,7 +837,9 @@
     SUBDIR += py-cryptkit
     SUBDIR += py-cryptography
     SUBDIR += py-cybox
+    SUBDIR += py-dfdatetime
     SUBDIR += py-dfvfs
+    SUBDIR += py-dfwinreg
     SUBDIR += py-ecdsa
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
@@ -935,6 +934,7 @@
     SUBDIR += py-zope.security
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
+    SUBDIR += py3-libnacl
     SUBDIR += qtkeychain-qt4
     SUBDIR += qtkeychain-qt5
     SUBDIR += quantis
@@ -1016,6 +1016,8 @@
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools
     SUBDIR += rubygem-rex-core
+    SUBDIR += rubygem-rex-encoder
+    SUBDIR += rubygem-rex-exploitation
     SUBDIR += rubygem-rex-java
     SUBDIR += rubygem-rex-mime
     SUBDIR += rubygem-rex-nop

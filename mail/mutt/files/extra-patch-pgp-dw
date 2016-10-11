@@ -130,7 +130,7 @@
      }
 +
 +    /* otherwise inline won't work...ask for revert */
-+    if ((i = query_quadoption (OPT_PGPMIMEASK, _("Message can't be sent inline.  Revert to using PGP/MIME?"))) != M_YES)
++    if ((i = query_quadoption (OPT_PGPMIMEASK, _("Message can't be sent inline.  Revert to using PGP/MIME?"))) != MUTT_YES)
 +      return -1;
 +
 +    /* go ahead with PGP/MIME */
@@ -145,8 +145,8 @@
 +++ hook.c Feb 2004 06:07:13 -0000
 @@ -119,3 +119,7 @@ int mutt_parse_hook (BUFFER *buf, BUFFER
      {
-+#ifdef M_CRYPTHOOK
-+      if (data & (M_FOLDERHOOK | M_SENDHOOK | M_MESSAGEHOOK | M_ACCOUNTHOOK | M_REPLYHOOK | M_CRYPTHOOK))
++#ifdef MUTT_CRYPTHOOK
++      if (data & (MUTT_FOLDERHOOK | MUTT_SENDHOOK | MUTT_MESSAGEHOOK | MUTT_ACCOUNTHOOK | MUTT_REPLYHOOK | MUTT_CRYPTHOOK))
 +#else
        if (data & (M_FOLDERHOOK | M_SENDHOOK | M_MESSAGEHOOK | M_ACCOUNTHOOK | M_REPLYHOOK))
 +#endif
@@ -167,7 +167,7 @@
 +  {
 +    if (!hook->command)
 +      continue;
-+    if (!(hook->type & M_CRYPTHOOK))
++    if (!(hook->type & MUTT_CRYPTHOOK))
 +      continue;
 +
 +    if ((regexec (hook->rx.rx, adr->mailbox, 0, NULL, 0) == 0) ^ hook->rx.not)
@@ -250,7 +250,7 @@
 @@ -1423,11 +1484,8 @@ struct option_t MuttVars[] = {
    */
 -  { "pgp_create_traditional", DT_QUAD, R_NONE, OPT_PGPTRADITIONAL, M_NO },
-+  { "pgp_mime_ask", DT_QUAD, R_NONE, OPT_PGPMIMEASK, M_NO },
++  { "pgp_mime_ask", DT_QUAD, R_NONE, OPT_PGPMIMEASK, MUTT_NO },
    /*
    ** .pp
 -  ** This option controls whether Mutt generates old-style inline PGP
@@ -373,7 +373,7 @@
 -	if (is_numerical_keyid (keyID))
 +	keyID = (char *)hook->data;
 +	snprintf (buf, sizeof (buf), _("Use keyID = \"%s\" for %s?"), keyID, p->mailbox);
-+	if (!option(OPTCRYPTCONFIRMHOOK) || (r = mutt_yesorno (buf, M_YES)) == M_YES)
++	if (!option(OPTCRYPTCONFIRMHOOK) || (r = mutt_yesorno (buf, MUTT_YES)) == MUTT_YES)
  	{
 -	  if (strncmp (keyID, "0x", 2) == 0)
 -	    keyID += 2;

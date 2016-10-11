@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xrdp
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR=	${PORTNAME}
@@ -16,9 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf:build libtool pkgconfig
+USES=		autoreconf:build libtool pkgconfig ssl
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
-USE_OPENSSL=	yes
 USE_RC_SUBR=	xrdp
 USE_XORG=	x11 xfixes
 

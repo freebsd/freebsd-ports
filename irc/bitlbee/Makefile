@@ -2,6 +2,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix

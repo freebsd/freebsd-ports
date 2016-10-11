@@ -1,6 +1,6 @@
---- binsrc/tests/Makefile.in	2010-07-09 11:17:05.000000000 -0500
-+++ binsrc/tests/Makefile.in	2010-08-15 01:57:14.000000000 -0500
-@@ -56,7 +56,7 @@
+--- binsrc/tests/Makefile.in.orig	2016-04-25 16:12:58.000000000 +0000
++++ binsrc/tests/Makefile.in	2016-10-04 17:37:15.132578000 +0000
+@@ -100,7 +100,7 @@
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -9,19 +9,21 @@
  	$(am__EXEEXT_1)
  noinst_PROGRAMS = M2$(EXEEXT) paramstats$(EXEEXT) ins$(EXEEXT) \
  	blobs$(EXEEXT) blobs2$(EXEEXT) blobnulls$(EXEEXT) \
-@@ -763,13 +763,13 @@
- ins-iodbc$(EXEEXT): $(ins_iodbc_OBJECTS) $(ins_iodbc_DEPENDENCIES) 
+@@ -903,7 +903,7 @@
  	@rm -f ins-iodbc$(EXEEXT)
- 	$(ins_iodbc_LINK) $(ins_iodbc_OBJECTS) $(ins_iodbc_LDADD) $(LIBS)
--isql$(EXEEXT): $(isql_OBJECTS) $(isql_DEPENDENCIES) 
-+isql-vt$(EXEEXT): $(isql_OBJECTS) $(isql_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(ins_iodbc_LINK) $(ins_iodbc_OBJECTS) $(ins_iodbc_LDADD) $(LIBS)
+ 
+-isql$(EXEEXT): $(isql_OBJECTS) $(isql_DEPENDENCIES) $(EXTRA_isql_DEPENDENCIES) 
++isql-vt$(EXEEXT): $(isql_OBJECTS) $(isql_DEPENDENCIES) $(EXTRA_isql_DEPENDENCIES) 
  	@rm -f isql$(EXEEXT)
- 	$(isql_LINK) $(isql_OBJECTS) $(isql_LDADD) $(LIBS)
- isql-iodbc$(EXEEXT): $(isql_iodbc_OBJECTS) $(isql_iodbc_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(isql_LINK) $(isql_OBJECTS) $(isql_LDADD) $(LIBS)
+ 
+@@ -911,7 +911,7 @@
  	@rm -f isql-iodbc$(EXEEXT)
- 	$(isql_iodbc_LINK) $(isql_iodbc_OBJECTS) $(isql_iodbc_LDADD) $(LIBS)
--isqlw$(EXEEXT): $(isqlw_OBJECTS) $(isqlw_DEPENDENCIES) 
-+isqlw-vt$(EXEEXT): $(isqlw_OBJECTS) $(isqlw_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(isql_iodbc_LINK) $(isql_iodbc_OBJECTS) $(isql_iodbc_LDADD) $(LIBS)
+ 
+-isqlw$(EXEEXT): $(isqlw_OBJECTS) $(isqlw_DEPENDENCIES) $(EXTRA_isqlw_DEPENDENCIES) 
++isqlw-vt$(EXEEXT): $(isqlw_OBJECTS) $(isqlw_DEPENDENCIES) $(EXTRA_isqlw_DEPENDENCIES) 
  	@rm -f isqlw$(EXEEXT)
- 	$(isqlw_LINK) $(isqlw_OBJECTS) $(isqlw_LDADD) $(LIBS)
- isqlw-iodbc$(EXEEXT): $(isqlw_iodbc_OBJECTS) $(isqlw_iodbc_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(isqlw_LINK) $(isqlw_OBJECTS) $(isqlw_LDADD) $(LIBS)
+ 

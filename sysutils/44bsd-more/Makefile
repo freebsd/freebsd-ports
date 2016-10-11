@@ -3,11 +3,14 @@
 
 PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported
+
+EXTRACT_DEPENDS=	rcs:devel/rcs57
 
 USES=		ncurses tar:bzip2
 NO_WRKSUBDIR=	yes

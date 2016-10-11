@@ -1,0 +1,24 @@
+To activate powa-archvist on your PostgreSQL server, add 'powa' to the list of
+shared_preload_libraries in $PGDATA/postgresql.conf:
+
+shared_preload_libraries = 'pg_stat_statements,powa'
+track_io_timing = on
+
+Also, create the powa database and add extensions
+
+createdb powa
+psql -d powa -c "
+CREATE EXTENSION pg_stat_statements;
+CREATE EXTENSION btree_gist;
+CREATE EXTENSION powa;
+"
+
+After this, restart postgresql to start the background worker.
+
+See http://powa.readthedocs.org/en/latest/powa-archivist/installation.html#id1
+for detailed installation instructions.
+
+Optionally, but warmly recommended, is the use of databases/pg_qualstats and
+databases/pg_stat_kcache together with powa.
+
+Use the databases/powa-web port to visualize the data.

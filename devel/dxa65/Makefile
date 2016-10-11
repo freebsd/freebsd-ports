@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 PKGNAMESUFFIX=	65
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disassembler for MOS 6502 and compatible CPUs
 
 OPTIONS_DEFINE=	DOCS

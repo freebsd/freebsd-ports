@@ -1,4 +1,5 @@
-SHA256 (ioncube/5.0.21/ioncube_loaders_fre_9_x86.tar.gz) = 32af208171af6f3d272c663c7b99c953ddb2b4621688914cea57d33f73d1b671
-SIZE (ioncube/5.0.21/ioncube_loaders_fre_9_x86.tar.gz) = 6912151
-SHA256 (ioncube/5.0.21/ioncube_loaders_fre_9_x86-64.tar.gz) = c9d2fd015a6c148335a3ff83fa0bf69ee601b167f694833bbb0de60c1e17de28
-SIZE (ioncube/5.0.21/ioncube_loaders_fre_9_x86-64.tar.gz) = 7520648
+TIMESTAMP = 1474858342
+SHA256 (ioncube/6.0.4/ioncube_loaders_fre_9_x86.tar.gz) = b68b71b0de52b769852dde92ea27c018f09d6339ca4d5a338f485a2b568bc6f5
+SIZE (ioncube/6.0.4/ioncube_loaders_fre_9_x86.tar.gz) = 7688526
+SHA256 (ioncube/6.0.4/ioncube_loaders_fre_9_x86-64.tar.gz) = 7db51c96747894f5eaa001a3abbe7c948376566574e4ec03f21479e7c3a6b2f7
+SIZE (ioncube/6.0.4/ioncube_loaders_fre_9_x86-64.tar.gz) = 8381168

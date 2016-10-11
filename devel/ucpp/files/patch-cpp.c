@@ -1,6 +1,6 @@
---- cpp.c.orig	2008-10-01 21:15:41.000000000 +0400
-+++ cpp.c	2011-03-17 21:08:15.000000000 +0300
-@@ -65,8 +65,8 @@
+--- cpp.c.orig	2015-03-21 06:43:07 UTC
++++ cpp.c
+@@ -65,8 +65,8 @@ int emit_dependencies = 0, emit_defines 
  FILE *emit_output;
  
  #ifdef STAND_ALONE
@@ -11,7 +11,7 @@
  #endif
  
  char *current_filename = 0, *current_long_filename = 0;
-@@ -2364,7 +2364,7 @@
+@@ -2371,7 +2371,7 @@ static int parse_opt(int argc, char *arg
  	char *filename = 0;
  	int with_std_incpath = 1;
  	int print_version = 0, print_defs = 0, print_asserts = 0;

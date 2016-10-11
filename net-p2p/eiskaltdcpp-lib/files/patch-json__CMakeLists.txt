@@ -1,11 +1,11 @@
---- json/CMakeLists.txt.orig	2013-08-29 21:25:02.000000000 +0400
-+++ json/CMakeLists.txt	2014-08-14 09:48:27.364617149 +0400
+--- json/CMakeLists.txt.orig	2015-04-19 21:57:16.000000000 +0000
++++ json/CMakeLists.txt	2016-10-04 14:36:02.121665000 +0000
 @@ -12,7 +12,7 @@
+                                 ${PROJECT_SOURCE_DIR}/jsonrpc-cpp/networking.cpp)
  set_source_files_properties(${PROJECT_SOURCE_DIR}/jsonrpc-cpp/mongoose.c PROPERTIES COMPILE_FLAGS "-DNDEBUG -DNO_CGI -DNO_SSL")
- #option (LOCAL_JSONCPP "Use local JsonCpp" ON)
- #if (LOCAL_JSONCPP)
+ if (LOCAL_JSONCPP)
 -    set (JSONCPP_LIBRARY jsoncpp)
 +    set (JSONCPP_LIBRARY jsoncpp ${CMAKE_THREAD_LIBS_INIT})
      set (JSONCPP_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/jsoncpp/)
-     include_directories(${JSONCPP_INCLUDE_DIR})
-     aux_source_directory(${PROJECT_SOURCE_DIR}/jsoncpp/ jsoncpp_SRCS)
+     aux_source_directory(${PROJECT_SOURCE_DIR}/jsoncpp/src jsoncpp_SRCS)
+     add_library (jsoncpp STATIC ${jsoncpp_SRCS})

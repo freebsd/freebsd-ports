@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stringi
-DISTVERSION=	1.1.1
-PORTREVISION=	2
+DISTVERSION=	1.1.2
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,6 +13,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=	cran:auto-plist pkgconfig:build
+USES=	cran:auto-plist,compiles pkgconfig:build
 
 .include <bsd.port.mk>

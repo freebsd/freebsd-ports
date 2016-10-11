@@ -8464,7 +8464,6 @@ math/libneural||2016-07-04|Has expired: Broken for more than 6 months
 math/open-axiom||2016-07-04|Has expired: Broken for more than 6 months
 irc/nefarious||2016-07-04|Has expired: Broken for more than 6 months
 irc/slirc||2016-07-04|Has expired: Broken for more than 6 months
-irc/ratbox-respond||2016-07-04|Has expired: Broken for more than 6 months
 irc/qwebirc||2016-07-04|Has expired: Broken for more than 6 months
 biology/platon||2016-07-04|Has expired: Broken for more than 6 months
 news/slnr||2016-07-04|Has expired: Broken for more than 6 months
@@ -8500,7 +8499,6 @@ mail/mailtray||2016-07-04|Has expired: Broken for more than 6 months
 mail/pflogstats||2016-07-04|Has expired: Broken for more than 6 months
 mail/exact||2016-07-04|Has expired: Broken for more than 6 months
 mail/wmpop3||2016-07-04|Has expired: Broken for more than 6 months
-mail/qmail-conf||2016-07-04|Has expired: Broken for more than 6 months
 mail/gld||2016-07-04|Has expired: Broken for more than 6 months
 mail/dsbl-testers||2016-07-04|Has expired: Broken for more than 6 months
 mail/vqregister||2016-07-04|Has expired: Broken for more than 6 months
@@ -8626,10 +8624,55 @@ net/asterisk||2016-09-12|Has expired: Asterisk 1.8 reached EOL on 2015-10-21
 www/mediawiki124||2016-09-13|Has expired: EOL upstream
 sysutils/rsyslog7|sysutils/rsyslog8|2016-09-13|Has expired: Upgrade to rsyslog 8
 www/moodle28||2016-09-13|Has expired: EOL upstream
-devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack.
+devel/php5-msgpack|devel/pecl-msgpack|2016-09-13|Has expired: This is an older version of the software, please use devel/pecl-msgpack
 textproc/asciinema|textproc/py3-asciinema|2016-09-13|Has expired: use textproc/py3-asciinema instead
 x11-toolkits/qtada||2016-09-13|Has expired: No development since 2012, usefulness unclear
 security/letsencrypt.sh|security/dehydrated|2016-09-13|Upstream renamed the project
 devel/py-dogpile.core|devel/py-dogpile.cache|2016-09-13|EOL upstream. Merged into devel/py-dogpile.cache since 0.6.0
 korean/imhangul||2016-09-15|Split into korean/imhangul-gtk2 and korean/imhangul-gtk3
 devel/poco-devel|devel/poco|2016-09-18|Has expired: older than stable devel/poco
+databases/pglogical-output|databases/pglogical|2016-09-22|databases/pglogical-output merged into databases/pglogical
+mail/gml||2016-09-23|Has expired: Deprecated upstream. Use native gmail tools to import
+net/nats|net/gnatsd|2016-09-24|Switched to upstream naming
+devel/py-unittest2||2016-09-26|Has expired: Was only required for Pythons lesser than 2.7
+graphics/evas_generic_loaders|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-gst|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-pdf|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-ps|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-raw|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-svg|devel/efl|2016-09-27|Merged into devel/efl
+graphics/evas_generic_loaders-xcf|devel/efl|2016-09-27|Merged into devel/efl
+multimedia/emotion_generic_players-vlc|devel/efl|2016-09-27|Merged into devel/efl
+x11-toolkits/elementary|devel/efl|2016-09-27|Merged into devel/efl
+devel/google-sparsehash|devel/sparsehash|2016-09-30|Moved to GitHub under a different name
+games/fgrun||2016-09-30|Incompatible with latest flightgear
+math/why3-spark||2016-09-30|Has expired: Only useful for deprecated lang/spark
+lang/spark||2016-09-30|Has expired: Broken for more than 6 months
+math/alt-ergo-spark||2016-09-30|Has expired: Only useful for deprecate lang/spark
+security/nessus-libnasl||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus-libraries||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+security/nessus-plugins||2016-09-30|Has expired: Abandoned, consider using OpenVAS
+www/node010||2016-10-01|Has expired: Upstream has placed 0.10.x in maintenance mode, see https://github.com/nodejs/LTS
+databases/postgresql91-contrib||2016-10-01|Has expired: End-of-life is near
+databases/postgresql91-plpython||2016-10-01|Has expired: End-of-life is near
+databases/postgresql91-plperl||2016-10-01|Has expired: End-of-life is near
+databases/postgresql91-pltcl||2016-10-02|Has expired: End-of-life is near
+databases/postgresql91-docs||2016-10-02|Has expired: End-of-life is near
+www/mediawiki125||2016-10-02|Has expired: EOL upstream
+graphics/opencv|graphics/opencv2|2016-10-03|Renamed
+graphics/opencv-core|graphics/opencv2-core|2016-10-03|Renamed
+graphics/opencv-java|graphics/opencv2-java|2016-10-03|Renamed
+graphics/py-opencv|graphics/py-opencv2|2016-10-03|Renamed
+databases/postgresql91-client||2016-10-03|Has expired: End-of-life is near
+databases/postgresql91-pgtcl||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
+databases/postgresql91-server||2016-10-03|Has expired: End-of-life is near
+databases/postgresql-pllua||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
+multimedia/kvazaar-devel|multimedia/kvazaar|2016-10-05|Out of date: use multimedia/kvazaar for now
+emulators/virtualbox-ose-lite|emulators/virtualbox-ose-nox11|2016-10-05|Renamed
+audio/squeezeboxserver|audio/logitechmediaserver|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-dynamicplaylist|audio/logitechmediaserver-dynamicplaylist|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-lazysearch|audio/logitechmediaserver-lazysearch|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-sqlplaylist|audio/logitechmediaserver-sqlplaylist|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-superdatetime|audio/logitechmediaserver-superdatetime|2016-10-05|Squeezebox Server renamed to Logitech Media Server
+audio/squeezeboxserver-trackstat|audio/logitechmediaserver-trackstat|2016-10-05|Squeezebox Server renamed to Logitech Media Server

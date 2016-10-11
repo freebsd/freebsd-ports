@@ -6,7 +6,7 @@ PORTNAME=	protobuf
 PORTVERSION=	2.5.0
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/protobuf/protobuf-2.5.0.tar.bz2/a72001a9067a4c2c4e0e836d0f92ece4/
 PKGNAMESUFFIX=	25
 
 MAINTAINER=	demon@FreeBSD.org
@@ -14,8 +14,6 @@ COMMENT=	Data interchange format library
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
-
-BROKEN=		Unfetchable (google code has gone away)
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/protobuf25

@@ -256,7 +256,7 @@ index 87db361..7947626 100644
 +MOZ_NATIVE_SOUNDTOUCH=)
 +
 +if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
-+    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.8.0)
++    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.9.0)
 +
 +    AC_LANG_SAVE
 +    AC_LANG_CPLUSPLUS
@@ -300,9 +300,9 @@ index 2127256..1ec09fe 100644
 +#ifndef MOZ_NATIVE_SOUNDTOUCH
    , mTimeStretcher(nullptr)
 +#endif
-   , mLatencyRequest(HighLatency)
-   , mReadPoint(0)
    , mDumpFile(nullptr)
+   , mBytesPerFrame(0)
+   , mState(INITIALIZED)
 @@ -152,9 +154,11 @@ AudioStream::~AudioStream()
    if (mDumpFile) {
      fclose(mDumpFile);
@@ -343,7 +343,7 @@ index a552e3e..02b80b1 100644
  
  namespace mozilla {
  
-@@ -329,7 +333,11 @@ private:
+@@ -277,7 +277,11 @@ private:
    // Number of frames written to the buffers.
    int64_t mWritten;
    AudioClock mAudioClock;
@@ -352,9 +352,9 @@ index a552e3e..02b80b1 100644
 +#else
    soundtouch::SoundTouch* mTimeStretcher;
 +#endif
-   nsRefPtr<AsyncLatencyLogger> mLatencyLog;
  
-   // copy of Latency logger's starting time for offset calculations
+   // Stream start time for stream open delay telemetry.
+   TimeStamp mStartTime;
 diff --git dom/media/moz.build dom/media/moz.build
 index 7526cff..e0a0ca0 100644
 --- mozilla/dom/media/moz.build

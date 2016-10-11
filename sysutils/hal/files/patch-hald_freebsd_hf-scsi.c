@@ -9,6 +9,15 @@
  	    {
  	      hal_device_property_set_string(device, "storage.bus", "usb");
  	      hal_device_property_set_string(device, "storage.originating_device", hal_device_get_udi(parent));
+@@ -301,7 +301,7 @@
+ 
+       driver = hal_device_property_get_string(child, "freebsd.driver");
+       /* ATAPI devices: CD-ROM (acd), tape (ast) or floppy (afd) */
+-      if (! driver || (strcmp(driver, "acd") && strcmp(driver, "ast") && strcmp(driver, "afd")))
++      if (! driver || (strcmp(driver, "acd") && strcmp(driver, "ast") && strcmp(driver, "afd") && strcmp(driver, "cd")))
+         continue;
+ 
+       phys_device = hal_device_property_get_string(child, "storage.originating_device");
 @@ -508,6 +508,16 @@
  	      if (! parent || ! hal_device_property_get_bool(parent, "info.ignore"))
  		{

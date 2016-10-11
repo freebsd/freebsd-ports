@@ -1,2 +1,3 @@
-SHA256 (scrypt-0.7.1.tar.gz) = f5f68c300c816178384b6531f071a07e705beb1ecd9b37ba8fe3960c20f61da3
-SIZE (scrypt-0.7.1.tar.gz) = 30382
+TIMESTAMP = 1474573767
+SHA256 (scrypt-0.8.0.tar.gz) = d4a5a4f53450b8ef629bbf1ee4be6105c69936e49b3d8bc621ac2287f0c86020
+SIZE (scrypt-0.8.0.tar.gz) = 39042

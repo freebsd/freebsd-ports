@@ -1,0 +1,8 @@
+Loading this plugin causes your tests to fail if there any
+warnings while they run. Each warning generates a new failing
+test and the warning content is outputted via diag.
+
+This module uses $SIG{__WARN__}, so if the code you're testing
+sets this, then this module will stop working.
+
+WWW: http://search.cpan.org/dist/Test2-Plugin-NoWarnings/

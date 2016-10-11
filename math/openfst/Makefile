@@ -18,6 +18,7 @@ USES=		compiler:c++11-lib libtool python:2
 USE_LDCONFIG=	${LOCALBASE}/lib/fst
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-bin --enable-compact-fsts --enable-compress --enable-const-fsts --enable-far --enable-linear-fsts --enable-lookahead-fsts --enable-mpdt --enable-ngram-fsts --enable-pdt --enable-python
+CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 

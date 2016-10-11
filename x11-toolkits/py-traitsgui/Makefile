@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Gui toolkit derived from the Enthought python traits library
 
+DEPRECATED=	Depends on broken and expiring x11-toolkits/py-traitsbackendwx
+EXPIRATION_DATE=	2016-11-01
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitsbackendwx>=3.1.0:x11-toolkits/py-traitsbackendwx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

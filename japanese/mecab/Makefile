@@ -5,15 +5,13 @@ PORTNAME=	mecab
 PORTVERSION=	0.996
 PORTREVISION=	2
 CATEGORIES=	japanese textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE&dummy=/
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
-
-BROKEN=		Unfetchable (google code has gone away)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no

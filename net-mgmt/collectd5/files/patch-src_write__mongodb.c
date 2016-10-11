@@ -1,6 +1,6 @@
---- src/write_mongodb.c.orig	2015-12-01 15:28:11 UTC
+--- src/write_mongodb.c.orig	2016-09-11 08:10:25 UTC
 +++ src/write_mongodb.c
-@@ -41,7 +41,7 @@
+@@ -39,7 +39,7 @@
  #else
  # define MONGO_USE_LONG_LONG_INT 1
  #endif

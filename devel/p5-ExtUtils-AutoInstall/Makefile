@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-AutoInstall
-PORTVERSION=	0.63
-PORTREVISION=	2
+PORTVERSION=	0.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatic install of dependencies via CPAN
 
-USES=		perl5
-USE_PERL5=	extract configure
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-post-extract:
-	@${PERL} -i.bak -ne 'print unless m,^features, .. m,^\);,' ${WRKSRC}/Makefile.PL
+USES=		perl5
+USE_PERL5=	configure
+NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^features/,/^);/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

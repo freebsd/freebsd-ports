@@ -1,6 +1,6 @@
---- config-top.h.orig	2014-03-02 13:36:24.000000000 -0500
-+++ config-top.h	2014-03-02 13:38:13.000000000 -0500
-@@ -59,18 +59,18 @@
+--- config-top.h.orig	2016-05-19 18:34:02 UTC
++++ config-top.h
+@@ -63,18 +63,18 @@
  /* The default value of the PATH variable. */
  #ifndef DEFAULT_PATH_VALUE
  #define DEFAULT_PATH_VALUE \

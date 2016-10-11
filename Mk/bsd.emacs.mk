@@ -7,7 +7,7 @@
 Emacs_Include=			bsd.emacs.mk
 Emacs_Include_MAINTAINER=	ashish@FreeBSD.org
 
-EMACS_PORT_NAME?=	emacs24
+EMACS_PORT_NAME?=	emacs25
 
 #
 # This file for ports which depend on emacs family.
@@ -63,11 +63,11 @@ EMACS_PORT_NAME?=	emacs24
 
 EMACS_MASTERDIR_PKGFILES?=	NO
 
-# Emacs-24.x
-.if (${EMACS_PORT_NAME} == "emacs24")
+# Emacs-25.x
+.if (${EMACS_PORT_NAME} == "emacs25")
 EMACS_NAME=		emacs
-EMACS_VER=		24.5
-EMACS_MAJOR_VER=	24
+EMACS_VER=		25.1
+EMACS_MAJOR_VER=	25
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTDIR=		editors/emacs
@@ -80,10 +80,10 @@ DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
-# Emacs-24.x (development version)
+# Emacs-25.x (development version)
 .elif (${EMACS_PORT_NAME} == "emacs-devel")
 EMACS_NAME=		emacs
-EMACS_VER=		25.1
+EMACS_VER=		25.2.50
 EMACS_MAJOR_VER=	25
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
@@ -99,8 +99,8 @@ PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 
 .elif (${EMACS_PORT_NAME} == "emacs-nox11")
 EMACS_NAME=		emacs
-EMACS_VER=		24.5
-EMACS_MAJOR_VER=	24
+EMACS_VER=		25.1
+EMACS_MAJOR_VER=	25
 EMACS_LIBDIR=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?= share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTDIR=		editors/emacs-nox11
@@ -117,7 +117,7 @@ PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs24 emacs-devel emacs-nox11"
+	@${ECHO} "	Emacs  family: emacs25 emacs-devel emacs-nox11"
 	@${FALSE}
 .endif
 

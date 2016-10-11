@@ -274,6 +274,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/AttachmentCollection.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/Email.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/EmailCollection.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/EmailDep.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/Constants.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/DkimStatus.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/Header.php
@@ -644,7 +645,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Helper.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Manager.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Property.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Prem/Provider.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AbstractProvider.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/AddressBookInterface.php
@@ -671,6 +671,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ConditionsType.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/FiltersInterface.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/SieveStorage.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Prem.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings/DefaultSettings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings/ISettings.php
@@ -970,6 +971,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/de_DE.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/en_US.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/es_ES.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/fa_IR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/fr_FR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/hu_HU.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/it_IT.yml
@@ -984,6 +986,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/zh_CN.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/langs.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/af.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar-ly.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar-ma.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar-sa.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar-tn.js
@@ -1043,6 +1046,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/lt.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/lv.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/me.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mi.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mk.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ml.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mr.js
@@ -1083,6 +1087,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/vi.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/x-pseudo.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/zh-cn.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/zh-hk.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/zh-tw.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/README
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/_source.en.yml
@@ -1095,6 +1100,8 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/en_US.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/es_ES.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/et_EE.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/fa_IR.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/fi_FI.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/fr_FR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/hu_HU.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/is_IS.yml
@@ -1186,6 +1193,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsDomain.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsDomainAlias.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsPlugin.html
+%%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Common/Cmd.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Common/Pagenator.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Common/PopupsAsk.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Common/PopupsKeyboardShortcutsHelp.html
@@ -1265,8 +1273,10 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/browsers/firefox.gif
 %%WWWDIR%%/rainloop/v/%%VER%%/static/browsers/opera.gif
 %%WWWDIR%%/rainloop/v/%%VER%%/static/browsers/safari.gif
+%%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/FIXES.txt
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/build-config.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/ckeditor.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/ckeditor.orig.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/config.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/contents.css
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/af.js
@@ -1278,6 +1288,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/cs.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/cy.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/da.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/de-ch.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/de.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/el.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/lang/en-au.js
@@ -1427,10 +1438,10 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/app.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/boot.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/libs.js
-%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/admin.js
-%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/app.js
-%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/boot.js
-%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/libs.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/admin.min.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/app.min.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/boot.min.js
+%%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/libs.min.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/openpgp.min.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/min/openpgp.worker.min.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/manifest.json

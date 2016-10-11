@@ -136,8 +136,6 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .  if !defined(CLIENT_ONLY)
 EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
 .  endif
-### Just like deperecated `WITH_OPENSSL_PORT=yes` a workaround for building on 9.X ###
-DEFAULT_VERSIONS+=ssl=openssl
 .endif
 
 .include <bsd.port.pre.mk>

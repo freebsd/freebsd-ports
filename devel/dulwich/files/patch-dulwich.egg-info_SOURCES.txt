@@ -1,10 +1,11 @@
---- dulwich.egg-info/SOURCES.txt.orig	2015-03-25 01:54:03 UTC
+--- dulwich.egg-info/SOURCES.txt.orig	2016-07-05 22:58:54 UTC
 +++ dulwich.egg-info/SOURCES.txt
-@@ -61,118 +61,6 @@ dulwich/contrib/__init__.py
+@@ -73,123 +73,6 @@ dulwich/contrib/paramiko_vendor.py
  dulwich/contrib/swift.py
  dulwich/contrib/test_swift.py
  dulwich/contrib/test_swift_smoke.py
 -dulwich/tests/__init__.py
+-dulwich/tests/test_archive.py
 -dulwich/tests/test_blackbox.py
 -dulwich/tests/test_client.py
 -dulwich/tests/test_config.py
@@ -24,6 +25,7 @@
 -dulwich/tests/test_patch.py
 -dulwich/tests/test_porcelain.py
 -dulwich/tests/test_protocol.py
+-dulwich/tests/test_reflog.py
 -dulwich/tests/test_refs.py
 -dulwich/tests/test_repository.py
 -dulwich/tests/test_server.py
@@ -51,6 +53,9 @@
 -dulwich/tests/data/packs/pack-bc63ddad95e7321ee734ea11a7a62d314e0d7481.idx
 -dulwich/tests/data/packs/pack-bc63ddad95e7321ee734ea11a7a62d314e0d7481.pack
 -dulwich/tests/data/repos/.gitattributes
+-dulwich/tests/data/repos/issue88_expect_ack_nak_client.export
+-dulwich/tests/data/repos/issue88_expect_ack_nak_other.export
+-dulwich/tests/data/repos/issue88_expect_ack_nak_server.export
 -dulwich/tests/data/repos/server_new.export
 -dulwich/tests/data/repos/server_old.export
 -dulwich/tests/data/repos/a.git/HEAD

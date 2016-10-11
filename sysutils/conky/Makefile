@@ -2,126 +2,141 @@
 # $FreeBSD$
 
 PORTNAME=	conky
-PORTVERSION=	1.9.0
-PORTREVISION=	6
+PORTVERSION=	1.10.5
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT?=	Advanced, highly configurable system monitor for X11
+
+LIB_DEPENDS=	libtolua++-5.1.so:lang/tolua++ \
+		libinotify.so:devel/libinotify
+BUILD_DEPENDS=	db2x_xsltproc:textproc/docbook2X \
+		docbook-xsl>=0:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
 
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		cpe gmake iconv localbase pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-hddtemp \
-			--disable-alsa \
-			--disable-bmpx \
-			--disable-iostats
+USES=           cpe cmake compiler:c++11-lib gettext-runtime iconv \
+		localbase lua:51 pkgconfig tar:bzip2
+CMAKE_ARGS+=	-DBUILD_PORT_MONITORS:BOOL=false \
+		-DBUILD_IBM:BOOL=false \
+		-DBUILD_HDDTEMP:BOOL=false \
+		-DBUILD_IOSTATS:BOOL=false \
+		-DBUILD_AUDACIOUS:BOOL=false
 
 PLIST_FILES=	bin/conky man/man1/conky.1.gz
-PORTEXAMPLES=	conkyrc.sample
-PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
-		docs.html variables.html config_settings.html
+PORTEXAMPLES=	conky.conf conky_no_x11.conf convert.lua
+PORTDOCS=	html/config_settings.html html/docs.html html/lua.html html/variables.html
 
-OPTIONS_DEFINE=	APCUPSD AUDACIOUS INOTIFY LUA METAR MOC MPD NCURSES RSS \
+USE_GITHUB=	yes
+GH_ACCOUNT=	brndnmtthws
+
+OPTIONS_DEFINE=	APCUPSD CURL DOCS EXAMPLES IPV6 METAR MOC MPD NCURSES RSS \
 		X11 XMMS2 XOAP
 
 OPTIONS_GROUP?=	X11
-OPTIONS_GROUP_X11=	ARGB DOUBLE_BUFFER IMLIB2 XFT LUA_CAIRO LUA_IMLIB2
+OPTIONS_GROUP_X11=	ARGB DOUBLE_BUFFER IMLIB2 XFT XINERAMA LUA_CAIRO LUA_IMLIB2 LUA_RSVG
 OPTIONS_DEFAULT?=	X11 ARGB DOUBLE_BUFFER XFT
 
 APCUPSD_DESC=		Monitor APCUPSD
-APCUPSD_CONFIGURE_ENABLE=apcupsd
+APCUPSD_CMAKE_BOOL=	BUILD_APCUPSD
 
 ARGB_DESC=		Use an ARGB visual to draw on X11
-ARGB_CONFIGURE_ENABLE=	argb
+ARGB_CMAKE_BOOL=	BUILD_ARGB
 ARGB_IMPLIES=		X11
 
-AUDACIOUS_DESC=		Control Audacious sound player
-AUDACIOUS_CONFIGURE_ENABLE=audacious
-AUDACIOUS_LIB_DEPENDS=	libaudclient.so:multimedia/audacious
+CURL_CMAKE_BOOL=	BUILD_CURL
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 DOUBLE_BUFFER_DESC=	X11 double buffering
-DOUBLE_BUFFER_CONFIGURE_ENABLE=double-buffer
+DOUBLE_BUFFER_CMAKE_BOOL=BUILD_XDBE
 DOUBLE_BUFFER_IMPLIES=	X11
 
-IMLIB2_CONFIGURE_ENABLE=imlib2
+IMLIB2_CMAKE_BOOL=	BUILD_IMLIB2
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_IMPLIES=		X11
 
-INOTIFY_DESC=		Monitor file changes via Inotify
-INOTIFY_CONFIGURE_ENABLE=inotify
-INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
-
-LUA_USES=		lua:51
-LUA_CONFIGURE_ENABLE=	lua
-LUA_LIB_DEPENDS=	libtolua++-5.1.so:lang/tolua++
+IPV6_CMAKE_BOOL=	BUILD_IPV6
 
 LUA_CAIRO_DESC=		Lua-Cairo binding
-LUA_CAIRO_CONFIGURE_ENABLE=lua-cairo
+LUA_CAIRO_CMAKE_BOOL=	BUILD_LUA_CAIRO
 LUA_CAIRO_USE=		gnome=cairo
-LUA_CAIRO_IMPLIES=	LUA X11
+LUA_CAIRO_PLIST_FILES=	lib/conky/libcairo.so
+LUA_CAIRO_IMPLIES=	X11
 
 LUA_IMLIB2_DESC=	Lua-Imlib2 binding
-LUA_IMLIB2_CONFIGURE_ENABLE=lua-imlib2
-LUA_IMLIB2_IMPLIES=	IMLIB2 LUA X11
+LUA_IMLIB2_CMAKE_BOOL=	BUILD_LUA_IMLIB2
+LUA_IMLIB2_PLIST_FILES=	lib/conky/libimlib2.so
+LUA_IMLIB2_IMPLIES=	IMLIB2 X11
+
+LUA_RSVG_DESC=		Lua-rsvg binding
+LUA_RSVG_CMAKE_BOOL=	BUILD_LUA_RSVG
+LUA_RSVG_USE=		gnome=librsvg2
+LUA_RSVG_PLIST_FILES=	lib/conky/librsvg.so
+LUA_RSVG_IMPLIES=	X11
 
 METAR_DESC=		Display METAR weather reports
-METAR_CONFIGURE_ENABLE=	weather-metar
-METAR_LIB_DEPENDS=	libcurl.so:ftp/curl
+METAR_CMAKE_BOOL=	BUILD_WEATHER_METAR
+METAR_IMPLIES=		CURL
 
 MOC_DESC=		Control MOC (Music On Console)
-MOC_CONFIGURE_ENABLE=	moc
+MOC_CMAKE_BOOL=		BUILD_MOC
 
 MPD_DESC=		Control MPD (Music Player Daemon)
-MPD_CONFIGURE_ENABLE=	mpd
+MPD_CMAKE_BOOL=		BUILD_MPD
 
 NCURSES_DESC=		Use ncurses to draw on terminals
-NCURSES_CONFIGURE_ENABLE=ncurses
+NCURSES_CMAKE_BOOL=	BUILD_NCURSES
+NCURSES_USES=		ncurses:port
 
 RSS_DESC=		Display RSS feeds
-RSS_CONFIGURE_ENABLE=	rss
+RSS_CMAKE_BOOL=		BUILD_RSS
 RSS_USE=		gnome=glib20,libxml2
-RSS_LIB_DEPENDS=	libcurl.so:ftp/curl
+RSS_IMPLIES=		CURL
 
 X11_USE=		xorg=x11,xext,xdamage,xfixes
-X11_CONFIGURE_ENABLE=	x11 own-window
+X11_CMAKE_BOOL=		BUILD_X11 OWN_WINDOW
 X11_VARS=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky.conf
 X11_VARS_OFF=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky_no_x11.conf
 
-XFT_CONFIGURE_ENABLE=	xft
+XFT_CMAKE_BOOL=		BUILD_XFT
 XFT_USE=		xorg=xft
 XFT_IMPLIES=		X11
 
+XINERAMA_CMAKE_BOOL=	BUILD_XINERAMA
+XINERAMA_USE=		xorg=xinerama
+XINERAMA_IMPLIES=	X11
+
 XMMS2_DESC=		Control XMMS2 media player
-XMMS2_CONFIGURE_ENABLE=	xmms2
+XMMS2_CMAKE_BOOL=	BUILD_XMMS2
 XMMS2_LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 
 XOAP_DESC=		Display XOAP weather reports
-XOAP_CONFIGURE_ENABLE=	weather-xoap
-XOAP_LIB_DEPENDS=	libcurl.so:ftp/curl
+XOAP_CMAKE_BOOL=	BUILD_WEATHER_XOAP
+XOAP_IMPLIES=		CURL METAR
 XOAP_USE=		gnome=libxml2
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,lua5\.1,lua-5.1,g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,imlib_context_disconnect_display();,,g' \
-		${WRKSRC}/src/imlib2.c
+.include <bsd.port.options.mk>
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLE_CONF_FILE} ${STAGEDIR}${EXAMPLESDIR}/conkyrc.sample
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README AUTHORS ChangeLog TODO NEWS
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for i in docs.html variables.html config_settings.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+.if ${PORT_OPTIONS:MLUA_CAIRO} && ${PORT_OPTIONS:MLUA_IMLIB2}
+PLIST_FILES+=		lib/conky/libcairo_imlib2_helper.so
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/^#\(set(RELEASE true\)/\1/' \
+		-e 's/-D_POSIX_C_SOURCE=200809L/& -D__BSD_VISIBLE=1 -D_XOPEN_SOURCE=700/' \
+		${WRKSRC}/cmake/Conky.cmake
+	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
+		-e 's/ -lbsd/ -lintl -linotify/' \
+		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
+	@${REINPLACE_CMD} -e 's,LOCALBASE,${LOCALBASE},' \
+		${WRKSRC}/doc/docgen.sh \
+		${WRKSRC}/doc/docs.xml
+
+post-build:
+	(cd ${WRKSRC}/doc && ${SH} docgen.sh)
 
 .include <bsd.port.mk>

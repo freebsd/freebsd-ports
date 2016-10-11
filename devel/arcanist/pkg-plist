@@ -20,10 +20,10 @@ lib/php/arcanist/scripts/repository/binary_safe_diff.sh
 lib/php/arcanist/src/__phutil_library_init__.php
 lib/php/arcanist/src/__phutil_library_map__.php
 lib/php/arcanist/src/__tests__/ArcanistLibraryTestCase.php
+lib/php/arcanist/src/configuration/ArcanistBlindlyTrustHTTPEngineExtension.php
 lib/php/arcanist/src/configuration/ArcanistConfiguration.php
 lib/php/arcanist/src/configuration/ArcanistConfigurationManager.php
 lib/php/arcanist/src/configuration/ArcanistSettings.php
-lib/php/arcanist/src/configuration/__tests__/ArcanistBritishTestCase.php
 lib/php/arcanist/src/difference/ArcanistDiffUtils.php
 lib/php/arcanist/src/difference/__tests__/ArcanistDiffUtilsTestCase.php
 lib/php/arcanist/src/differential/ArcanistDifferentialCommitMessage.php
@@ -355,6 +355,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistInterfaceMethodBodyXHPASTL
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistInvalidDefaultParameterXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistInvalidModifiersXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistInvalidOctalNumericScalarXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistIsAShouldBeInstanceOfXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistKeywordCasingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistLambdaFuncFunctionXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistLanguageConstructParenthesesXHPASTLinterRule.php
@@ -373,6 +374,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPHPCompatibilityXHPASTLint
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPHPEchoTagXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPHPOpenTagXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPHPShortTagXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPaamayimNekudotayimSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParentMemberReferenceXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParenthesesSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParseStrUseXHPASTLinterRule.php
@@ -383,6 +385,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistRaggedClassTreeEdgeXHPASTL
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistReusedAsIteratorXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistReusedIteratorReferenceXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistReusedIteratorXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistSelfClassReferenceXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistSelfMemberReferenceXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistSemicolonSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistSlownessXHPASTLinterRule.php
@@ -453,6 +456,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistInterfaceMethodB
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistInvalidDefaultParameterXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistInvalidModifiersXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistInvalidOctalNumericScalarXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistIsAShouldBeInstanceOfXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistKeywordCasingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistLambdaFuncFunctionXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistLanguageConstructParenthesesXHPASTLinterRuleTestCase.php
@@ -470,6 +474,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPHPCompatibility
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPHPEchoTagXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPHPOpenTagXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPHPShortTagXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPaamayimNekudotayimSpacingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParentMemberReferenceXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParenthesesSpacingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParseStrUseXHPASTLinterRuleTestCase.php
@@ -480,6 +485,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistRaggedClassTreeE
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistReusedAsIteratorXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistReusedIteratorReferenceXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistReusedIteratorXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistSelfClassReferenceXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistSelfMemberReferenceXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistSemicolonSpacingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistSlownessXHPASTLinterRuleTestCase.php
@@ -571,7 +577,11 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/invalid-octal-numeric-sc
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/invalid-octal-numeric-scalar/decimal.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/invalid-octal-numeric-scalar/hexadecimal.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/invalid-octal-numeric-scalar/octal.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/is_a-should-be-instanceof/allow_string.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/is_a-should-be-instanceof/is_a.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/keyword-casing/keyword-casing.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/keyword-casing/parent.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/keyword-casing/self.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/language-construct-parentheses/language-construct-parentheses.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/list-assignment/list-assignment.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/logical-operators/logical-operators.lint-test
@@ -587,6 +597,9 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/nested-namespaces/nested
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/newline-after-open-tag/newline-after-open-tag.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/no-parent-scope/no-parent-scope.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/object-operator-spacing/object-operator-spacing.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/paamayim-nekudotayim-spacing/comment.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/paamayim-nekudotayim-spacing/newline.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/paamayim-nekudotayim-spacing/paamayim-nekudotayim-spacing.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parent-member-references/not-parent.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parent-member-references/parent.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parentheses-spacing/array.lint-test
@@ -612,6 +625,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ragged-classtree-edge/ra
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/reused-as-iterator/reused-as-iterator.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/reused-iterator-reference/reused-iterator-reference.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/reused-iterator/reused-iterator.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/self-class-reference/self-class-references.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/self-member-reference/php53.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/self-member-reference/php54.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/self-member-reference/self-member-reference.lint-test
@@ -676,6 +690,7 @@ lib/php/arcanist/src/parser/__tests__/diff/basic-multi-hunk-content.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/basic-multi-hunk.udiff
 lib/php/arcanist/src/parser/__tests__/diff/colorized.hggitdiff
 lib/php/arcanist/src/parser/__tests__/diff/comment.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/custom-prefixes-edit.gitdiff
 lib/php/arcanist/src/parser/__tests__/diff/custom-prefixes.gitdiff
 lib/php/arcanist/src/parser/__tests__/diff/git-binary-change.gitdiff
 lib/php/arcanist/src/parser/__tests__/diff/git-binary.gitdiff

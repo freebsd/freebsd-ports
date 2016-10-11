@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.2.14
+PORTVERSION=	6.2.15
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -18,9 +18,7 @@ RESTRICTED=	Free for personal use only
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	mysqli session mbstring pcre xml
-WANT_PHP_WEB=	yes
-USE_MYSQL=	yes
-USES=		shebangfix
+USES=		mysql shebangfix php:web
 SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		groupoffice \
 		groupofficecli.php \
@@ -46,9 +44,9 @@ IMAP_USE=		PHP=iconv imap
 WBXML_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
 post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/go/base/Config.php
-	${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
+	@${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
 		${WRKSRC}/go/base/Config.php \
 		${WRKSRC}/install/configFile.php \
 		${WRKSRC}/modules/serverclient/HttpClient.php \

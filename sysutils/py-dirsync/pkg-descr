@@ -1,0 +1,20 @@
+Advanced directory tree synchronisation tool
+
+(c) 2014-2016 Thomas Khyn (c) 2003-2015 Anand B Pillai
+
+Advanced directory tree synchronisation tool
+
+based on Python robocopier by Anand B Pillai
+
+Usage
+
+From the command line:
+
+dirsync <sourcedir> <targetdir> [options]
+
+From python:
+
+from dirsync import sync
+sync(sourcedir, targetdir, action, **options)
+
+WWW: https://bitbucket.org/tkhyn/dirsync/

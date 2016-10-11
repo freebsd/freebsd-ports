@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2014-03-02 13:39:04.000000000 -0500
-+++ doc/Makefile.in	2014-03-02 13:39:56.000000000 -0500
-@@ -167,7 +167,7 @@
+--- doc/Makefile.in.orig	2015-12-07 00:55:56 UTC
++++ doc/Makefile.in
+@@ -175,7 +175,7 @@ pdf: ${PDFFILES}
  bashref.dvi: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
  	${SET_TEXINPUTS} $(TEXI2DVI) $(srcdir)/bashref.texi || { ${RM} $@ ; exit 1; }
  
@@ -8,14 +8,14 @@
 +bash.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
  	$(MAKEINFO) --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
  
- # can also use:
-@@ -175,9 +175,6 @@
+ # experimental
+@@ -188,9 +188,6 @@ bashref.pdf: $(BASHREF_FILES) $(HSUSER) 
  bashref.html: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
- 	$(TEXI2HTML) -menu -monolithic -I $(TEXINPUTDIR) $(srcdir)/bashref.texi
+ 	$(MAKEINFO) --html --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
  
 -bash.info: bashref.info
 -	${SHELL} ${INFOPOST} < $(srcdir)/bashref.info > $@ ; \
 -
  bash.txt: bash.1
  bash.ps: bash.1
- bash.html: bash.1 $(MAN2HTML)
+ bash.html: bash.1

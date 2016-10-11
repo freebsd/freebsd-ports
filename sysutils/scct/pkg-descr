@@ -1,0 +1,8 @@
+scct - Simple Cluster_SSH Clone using Tmux
+
+- Quickly create multiple tmux panes, each with an ssh connection to a specified
+  host and optionally synchronize input
+- Written in POSIX sh
+- Only depends on tmux
+
+WWW: https://github.com/Jehops/scct

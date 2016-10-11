@@ -1,0 +1,2 @@
+@sample etc/asterisk/espeak.conf.sample
+lib/asterisk/modules/app_espeak.so

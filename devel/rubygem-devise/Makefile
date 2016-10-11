@@ -25,8 +25,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-BROKEN_RUBY23=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|, "test/rails_app/config/routes.rb"||' ${WRKSRC}/${PORTNAME}.gemspec
 

@@ -1,9 +1,12 @@
 %%SITE_PERL%%/DBIWrapper.pm
 %%SITE_PERL%%/DBIWrapper/ResultSet.pm
+%%SITE_PERL%%/DBIWrapper/Time/Now/Duration.pm
+%%SITE_PERL%%/DBIWrapper/Time/Now/HiRes.pm
 %%SITE_PERL%%/DBIWrapper/XMLParser.pm
 %%SITE_PERL%%/auto/DBIWrapper/ResultSet/autosplit.ix
 %%SITE_PERL%%/auto/DBIWrapper/XMLParser/autosplit.ix
 %%SITE_PERL%%/auto/DBIWrapper/autosplit.ix
 %%PERL5_MAN3%%/DBIWrapper.3.gz
 %%PERL5_MAN3%%/DBIWrapper::ResultSet.3.gz
+%%PERL5_MAN3%%/DBIWrapper::Time::Now::HiRes.3.gz
 %%PERL5_MAN3%%/DBIWrapper::XMLParser.3.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
 USES=		compiler:c++11-lib cpe gmake iconv pkgconfig
 MAKE_ENV=	V=1
+
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 OPENSSL PERL PYTHON TCL
 OPTIONS_DEFAULT=	OPENSSL PERL
@@ -53,8 +55,6 @@ TCL_CONFIGURE_ENABLE=	tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
 TCL_USES=	tcl
 
-PORTDOCS=	README.md
-
 # Instead of using bundled swig generated files, delete them to force
 # regeneration using swig 2.0.11+ (fixes port compilation using clang)
 #
@@ -76,6 +76,5 @@ post-install-DOCS-on:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	bzflag
-PORTVERSION=	2.4.2
-PORTREVISION=	5
+PORTVERSION=	2.4.6
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
+MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT?=	Multiplayer 3D tank battle game
@@ -12,14 +11,17 @@ COMMENT?=	Multiplayer 3D tank battle game
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libcares.so:dns/c-ares
 
 GNU_CONFIGURE=	yes
-USES=		libtool tar:bzip2
+USES=		compiler:c++11-lib libtool localbase tar:bzip2
+INSTALL_TARGET=	install-strip
 
 .ifndef SERVER_ONLY
-USE_GL=		glew
+USE_GL=		gl glu
 USE_SDL=	sdl
+USE_XORG=	x11 xext xxf86vm sm ice
 .endif
 
 MAKE_JOBS_UNSAFE=	yes

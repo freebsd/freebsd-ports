@@ -1,7 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	rlvm
-PORTVERSION=	0.14.0.20150425
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	0.14-67
+DISTVERSIONSUFFIX=	-g9350209
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
-GH_TAGNAME=	373a3db # release-${PORTVERSION}
 
 USES=		compiler:c++11-lib pkgconfig scons
 USE_GL=		glew glu
@@ -27,23 +29,23 @@ USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 		luabind utf8cpp # leaving only pygame, xclannad, *.cpp
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
+CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
+LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
 INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS.TXT NEWS.TXT README.md STATUS.TXT notes
 
-CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
-LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
-
 OPTIONS_DEFINE=	DEBUG DOCS NLS TEST
-OPTIONS_GROUP=	JAPANESE_FONT
-OPTIONS_GROUP_JAPANESE_FONT=KOCHI MONA SAZANAMI
+OPTIONS_DEFAULT=MONA
+OPTIONS_MULTI=	JAPANESE_FONT
+OPTIONS_MULTI_JAPANESE_FONT=KOCHI MONA SAZANAMI
 OPTIONS_SUB=	yes
 
 JAPANESE_FONT_DESC=msgothic.ttc alternatives with verified metrics (unless --font)
 KOCHI_DESC=	kochi-gothic-subst.ttf from japanese/font-kochi
 KOCHI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/kochi-gothic-subst.ttf:japanese/font-kochi
-MONA_DESC=	mona.ttf from japanese/monafonts-ttf
-MONA_RUN_DEPENDS=${LOCALBASE}/share/fonts/TrueType/mona.ttf:japanese/monafonts-ttf
+MONA_DESC=	mona.ttf from japanese/font-mona-ttf
+MONA_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/mona.ttf:japanese/font-mona-ttf
 SAZANAMI_DESC=	sazanami-gothic.ttf from japanese/font-sazanami
 SAZANAMI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/sazanami-gothic.ttf:japanese/font-sazanami
 
@@ -59,13 +61,12 @@ TEST_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-test
 post-patch:
 	@${GREP} -Flr 'utf8cpp/' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-i .bak.utf8cpp -e 's,utf8cpp/,,'
-# Default to TTF/ subdir where japanese/ fonts are often installed
-	@${GREP} -Flr '/usr/share' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-i .bak.paths \
-		-e 's,/usr/share,${PREFIX}/share,' \
+	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
+		${WRKSRC}/src/platforms/gtk/gtk_rlvm_instance.cc
+	@${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,' \
 		-e 's,truetype/ttf-dejavu,dejavu,' \
-		-e 's,truetype/mona,TrueType,' \
-		-e 's,truetype/[^/"]*,TTF,'
+		-e 's,truetype/[^/"]*/,TTF/,' \
+		${WRKSRC}/src/utilities/find_font_file.cc
 
 pre-install-TEST-on:
 	(cd ${WRKSRC} && build/${PORTNAME}_unittests)

@@ -45,9 +45,15 @@
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/docl.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/eval.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/info.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/ping.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/capture_io.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/complete.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/module_info.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/process_commands.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/response.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/server.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/server/io.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/server/socket.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/run.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-test-mode.el
 %%EMACS_SITE_LISPDIR%%/alchemist-utils.el

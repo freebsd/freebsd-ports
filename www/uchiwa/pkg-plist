@@ -1729,6 +1729,9 @@ bin/uchiwa
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/directives/progress-bar.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/directives/relative-time.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/login/index.html
+%%DATADIR%%/public/bower_components/uchiwa-web/partials/modals/clear-silenced.html
+%%DATADIR%%/public/bower_components/uchiwa-web/partials/modals/create-silenced.html
+%%DATADIR%%/public/bower_components/uchiwa-web/partials/modals/silenced.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/navbar.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/page-header.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/panel/actions.html
@@ -1741,7 +1744,6 @@ bin/uchiwa
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/panel/status.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/panel/subscriptions.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/sidebar.html
-%%DATADIR%%/public/bower_components/uchiwa-web/partials/stash-modal.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/aggregate.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/aggregates.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/checks.html
@@ -1751,6 +1753,8 @@ bin/uchiwa
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/events.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/info.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/settings.html
+%%DATADIR%%/public/bower_components/uchiwa-web/partials/views/silenced-entry.html
+%%DATADIR%%/public/bower_components/uchiwa-web/partials/views/silenced.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/stash.html
 %%DATADIR%%/public/bower_components/uchiwa-web/partials/views/stashes.html
 %%DATADIR%%/public/bower_components/uchiwa-web/test/karma/conf.js

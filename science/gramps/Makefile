@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science gnome python
 

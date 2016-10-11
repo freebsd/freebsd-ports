@@ -151,7 +151,6 @@
     SUBDIR += gmime24-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
-    SUBDIR += gml
     SUBDIR += gnarwl
     SUBDIR += gnome-gmail-notifier
     SUBDIR += gnubiff
@@ -558,6 +557,7 @@
     SUBDIR += qmail-activedir
     SUBDIR += qmail-auditor
     SUBDIR += qmail-autoresponder
+    SUBDIR += qmail-conf
     SUBDIR += qmail-contrib
     SUBDIR += qmail-dk
     SUBDIR += qmail-ldap

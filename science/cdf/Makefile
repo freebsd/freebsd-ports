@@ -3,7 +3,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	LOCAL/thierry/${PORTNAME} \
 		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/
@@ -12,6 +12,11 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
+
+LICENSE=	NASA-G
+LICENSE_NAME=	NASA/Goddard Space Flight Center
+LICENSE_FILE=	${WRKSRC}/CDF_copyright.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fortran ncurses
 USE_LDCONFIG=	yes

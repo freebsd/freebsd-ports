@@ -3,6 +3,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.84
+PORTREVISION=	1
 CATEGORIES=		games gnustep
 MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.84/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
@@ -11,11 +12,9 @@ DIST_SUBDIR=		oolite
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
 
-LICENSE=		CCBYNCSAv3 GPLv2 ZLIB
+LICENSE=		CC-BY-NC-SA-3.0 GPLv2 ZLIB
 LICENSE_COMB=		multi
-LICENSE_NAME_CCBYNCSAv3=	Creative Commons Attribution-NonCommercial-ShareAlike License version 3.0
-LICENSE_FILE_CCBYNCSAv3=	${WRKSRC}/Doc/LICENSE.TXT
-LICENSE_PERMS_CCBYNCSAv3=	dist-mirror pkg-mirror auto-accept
+LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/Doc/LICENSE.TXT
 
 BUILD_DEPENDS=		zip:archivers/zip \
 			${LOCALBASE}/bin/unzip:archivers/unzip

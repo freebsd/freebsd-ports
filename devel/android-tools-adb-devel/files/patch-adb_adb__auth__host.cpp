@@ -1,9 +1,9 @@
 --- adb/adb_auth_host.cpp.orig	2016-06-29 23:43:15 UTC
 +++ adb/adb_auth_host.cpp
-@@ -33,7 +33,9 @@
+@@ -34,7 +34,9 @@
+ #include <android-base/stringprintf.h>
+ #include <android-base/strings.h>
  #include <crypto_utils/android_pubkey.h>
- #include <cutils/list.h>
- 
 +#if defined(OPENSSL_IS_BORINGSSL)
  #include <openssl/base64.h>
 +#endif

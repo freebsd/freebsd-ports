@@ -9,10 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Web2.0 CMS
 
-LICENSE=	CCA30
-LICENSE_NAME=	Creative Commons Attribution 3.0 Unported Copyright
+LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_PRODUCT=	pligg_cms

@@ -1,0 +1,14 @@
+scandir, a better directory iterator and faster os.walk()
+
+scandir() is a generator version of os.listdir() that returns an iterator
+over files in a directory, and also exposes the extra information most
+operating systems provide while iterating files in a directory (such as
+type and stat information).
+
+This module also includes a version of os.walk() that uses scandir()
+to speed it up significantly.
+
+NOTE: If you're using Python version 3.5+, os.scandir() and the speed
+improvements to os.walk() are already available in the standard library.
+
+WWW: https://github.com/benhoyt/scandir

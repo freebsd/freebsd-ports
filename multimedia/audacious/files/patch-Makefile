@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-08-24 14:50:57 UTC
++++ Makefile
+@@ -14,6 +14,8 @@ DATA = AUTHORS \
+        images/playlist.png \
+        images/plugins.png
+ 
++CONTRIB = contrib/audacious.appdata.xml
++
+ include buildsys.mk
+ 
+ install-extra:

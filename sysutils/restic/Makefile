@@ -11,6 +11,8 @@ COMMENT=	Restic backup program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
+BROKEN=		fails to build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	restic:DEFAULT,chunker juju:errors golang:crypto
 GH_PROJECT=	chunker:chunker errors:errors crypto:crypto

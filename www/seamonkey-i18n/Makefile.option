@@ -15,7 +15,6 @@ OPTIONS_DEFINE=	LANG_BE \
 		LANG_HU \
 		LANG_IT \
 		LANG_JA \
-		LANG_JP \
 		LANG_LT \
 		LANG_NB \
 		LANG_PL \

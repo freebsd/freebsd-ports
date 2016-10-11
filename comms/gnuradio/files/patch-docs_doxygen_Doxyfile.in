@@ -1,11 +1,11 @@
---- docs/doxygen/Doxyfile.in.orig	2015-05-12 09:39:44 UTC
+--- docs/doxygen/Doxyfile.in.orig	2015-04-14 14:38:41 UTC
 +++ docs/doxygen/Doxyfile.in
-@@ -1864,7 +1864,7 @@ DOT_FONTSIZE           = 10
+@@ -1891,7 +1891,7 @@ DOT_FONTSIZE           = 10
  # If you specify a different font using DOT_FONTNAME you can use DOT_FONTPATH to
  # set the path where dot can find it.
  
 -DOT_FONTPATH           =
-+DOT_FONTPATH           =	%%PREFIX%%/share/fonts/freefont-ttf
++DOT_FONTPATH           =	%%LOCALBASE%%/share/fonts/freefont-ttf
  
  # If the CLASS_GRAPH and HAVE_DOT tags are set to YES then doxygen
  # will generate a graph for each documented class showing the direct and

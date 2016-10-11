@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	brainparty
-PORTVERSION=	0.5
-PORTREVISION=	8
+PORTVERSION=	0.61
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxradar.com/files/brainparty/ \
+MASTER_SITES=	https://launchpad.net/brainparty/trunk/${PORTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Family-friendly set of 36 puzzle games
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_SDL=	sdl mixer ttf gfx image
@@ -29,9 +31,11 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Content/* ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CREDITS ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

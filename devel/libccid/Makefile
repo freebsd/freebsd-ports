@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.24
+PORTVERSION=	1.4.25
 CATEGORIES=	devel
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4171/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4187/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 
 LICENSE=	LGPL21
@@ -21,17 +21,13 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
 CONFIGURE_ENV=	LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
 		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_SUB=	VER=${PORTVERSION}
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl
-	${REINPLACE_CMD} -e "s,ndef __APPLE__, !(__APPLE__ || __FreeBSD__)," ${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
-	${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h," \
+	@${REINPLACE_CMD} -e "s,ndef __APPLE__, !(__APPLE__ || __FreeBSD__)," ${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
+	@${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h," \
 		${WRKSRC}/configure ${WRKSRC}/src/ccid_usb.c \
 		${WRKSRC}/src/ccid_usb.h \
 		${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
@@ -42,4 +38,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

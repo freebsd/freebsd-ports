@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.4
+PORTVERSION=	0.11.5
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libev.so:devel/libev \
 		libnettle.so:security/nettle
 
-USES=		autoreconf cpe gettext gmake gperf libtool localbase ncurses \
+USES=		autoreconf cpe gmake gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
 CPE_VENDOR=	infradead
 GNU_CONFIGURE=	yes

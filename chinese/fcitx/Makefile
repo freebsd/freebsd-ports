@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.9.1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -37,9 +38,10 @@ SUB_LIST+=	PORTSDIR=${PORTSDIR}
 CONFLICTS=	zh-scim-fcitx-3.*
 
 USE_GNOME=	pango intltool libxml2 introspection
-USE_XORG=	x11 xext xkbfile
+USE_XORG=	x11 xext xkbfile sm ice
 USE_LDCONFIG=	yes
-USES=		tar:xz cmake desktop-file-utils execinfo gettext iconv:wchar_t \
+USES=		tar:xz cmake desktop-file-utils execinfo \
+		gettext-tools:build,run gettext-runtime iconv:wchar_t \
 		pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 
@@ -86,7 +88,7 @@ SUB_LIST+=	GTK3_IM=xim
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui inputmethods
+USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui inputmethods corelib
 USE_LDCONFIG+=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else

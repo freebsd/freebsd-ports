@@ -64,7 +64,8 @@ SQLITE_CONFIGURE_ON=	--with-sqlite3
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/SVNREV\//s|^|#| ; \
-		 s|/-liconv} -liconv|}| ; \
+		 s|LIBS="-liconv"|LIBS="-liconv $$LIBS"| ; \
+		 s|/-liconv}|}| ; \
 		 s|"-Wl,-rpath,"|""| ; \
 		 s|\[\[ |[ |g ; \
 		 s| \]\]| ]|g ; \

@@ -159,6 +159,7 @@
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs
+    SUBDIR += gnatsd
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
@@ -171,6 +172,7 @@
     SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
+    SUBDIR += go-nats
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
@@ -252,6 +254,7 @@
     SUBDIR += iipsrv
     SUBDIR += ilbc
     SUBDIR += imapproxy
+    SUBDIR += intel-em-kmod
     SUBDIR += intel-ixl-kmod
     SUBDIR += iodine
     SUBDIR += ip2location
@@ -421,7 +424,6 @@
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
-    SUBDIR += nats
     SUBDIR += nats-streaming-server
     SUBDIR += nats-top
     SUBDIR += nbd-server
@@ -855,10 +857,10 @@
     SUBDIR += pear-Net_Finger
     SUBDIR += pear-Net_Geo
     SUBDIR += pear-Net_GeoIP
+    SUBDIR += pear-Net_Growl
     SUBDIR += pear-Net_IDNA
     SUBDIR += pear-Net_IPv4
     SUBDIR += pear-Net_IPv6
-    SUBDIR += pear-Net_Growl
     SUBDIR += pear-Net_Ident
     SUBDIR += pear-Net_LDAP
     SUBDIR += pear-Net_LDAP2
@@ -894,6 +896,7 @@
     SUBDIR += pecl-ip2location
     SUBDIR += pecl-mosquitto
     SUBDIR += pecl-oauth
+    SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
@@ -1024,6 +1027,7 @@
     SUBDIR += py-soappy
     SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
+    SUBDIR += py-sshuttle
     SUBDIR += py-suds
     SUBDIR += py-terminado
     SUBDIR += py-tofu
@@ -1067,6 +1071,7 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
+    SUBDIR += rclone
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
@@ -1303,6 +1308,7 @@
     SUBDIR += tcpslice
     SUBDIR += tcpsplit
     SUBDIR += tcpstat
+    SUBDIR += tcptestsuite
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
     SUBDIR += tcptraceroute-devel

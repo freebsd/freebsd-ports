@@ -1,6 +1,6 @@
---- doc/info/Makefile.in.orig	2015-11-09 06:18:56 UTC
+--- doc/info/Makefile.in.orig	2016-05-12 13:42:26 UTC
 +++ doc/info/Makefile.in
-@@ -1282,16 +1282,10 @@ clean-html:
+@@ -1469,16 +1469,7 @@ clean-html:
  @CHM_TRUE@	rm -rf chm
  
  check_texinfo:
@@ -8,9 +8,8 @@
 -	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
 -	[ -z  "$$bad_files" ] || ( echo "ERROR: The following files have unexpanded Tabs: $$bad_files" ; \
 -	echo "Run make distclean and then /doc/info/fix_tab to fix the problem." ; exit 1 )
-+	echo "check_texinfo dummy target"
- 
- warn_texinfo:
+-
+-warn_texinfo:
 -	@pattern=`printf "\t"` ; \
 -	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
 -	[ -z  "$$bad_files" ] || ( echo "WARNING: The following files have unexpanded Tabs: $$bad_files" ; \

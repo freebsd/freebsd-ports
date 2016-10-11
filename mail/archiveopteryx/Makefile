@@ -3,7 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 
@@ -16,8 +16,9 @@ BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	jam:devel/jam
 
-USES=		perl5 pgsql:9.1+ ssl tar:bzip2
+USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build
+WITH_PGSQL=	client
 
 PORTDOCS=	COPYING README bsd.txt
 

@@ -114,7 +114,7 @@ PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USES+=	ssl
+USES+=	ssl pkgconfig
 CONFIGURE_ARGS+=	--enable-openssl
 EXTRAS:=${EXTRAS},m_ssl_openssl.cpp
 PLIST_SUB+=	OPENSSL=""

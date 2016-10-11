@@ -3,7 +3,7 @@
 
 PORTNAME=	osmium
 PORTVERSION=	git20130522
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libexpat.so:textproc/expat2 \
 		libgeos.so:graphics/geos \
 		libprotobuf.so:devel/protobuf
-BUILD_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash
-RUN_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash
+BUILD_DEPENDS=	sparsehash>=2.0.2:devel/sparsehash
+RUN_DEPENDS=	sparsehash>=2.0.2:devel/sparsehash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	joto

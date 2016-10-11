@@ -120,7 +120,6 @@ USES+=		tk:run
 .if ${PORT_OPTIONS:MWX}
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
-WX_UNICODE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 .endif
 

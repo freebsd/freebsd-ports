@@ -3,6 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -89,8 +90,7 @@ UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
-USES+=	libedit
-LDFLAGS+=	-L${LOCALBASE}/lib # to link in lncurses pulled in by libedit
+USES+=		libedit
 
 CONFIGURE_ARGS+=	--with-system-editline
 CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"

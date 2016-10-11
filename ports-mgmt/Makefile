@@ -39,6 +39,7 @@
     SUBDIR += pkgcompare
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
+    SUBDIR += port-index-uniquifier
     SUBDIR += port-maintenance-tools
     SUBDIR += portal
     SUBDIR += portconf

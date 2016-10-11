@@ -6,7 +6,7 @@ PORTVERSION=	1.0.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SysV banner
 
 USES=		gmake

@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix3
 PORTVERSION=	3.0.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -60,8 +60,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 .if ${ZABBIX_BUILD} != "agent"
 USES+=		execinfo
 
-CPPFLAGS+=	${EXECINFO_CPPFLAGS}
-LDFLAGS+=	${EXECINFO_LDFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
@@ -150,7 +149,7 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires newer OpenSSL (set SSL_DEFAULT=openssl)
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
 .endif
 
 .if ${SSL_DEFAULT:Mlibressl*}

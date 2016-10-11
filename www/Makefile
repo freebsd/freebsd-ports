@@ -351,6 +351,7 @@
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
     SUBDIR += libhubbub
+    SUBDIR += libjwt
     SUBDIR += libmicrohttpd
     SUBDIR += libsocialweb
     SUBDIR += libwww
@@ -390,7 +391,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mediawiki123
-    SUBDIR += mediawiki125
     SUBDIR += mediawiki126
     SUBDIR += mediawiki127
     SUBDIR += mergelog
@@ -533,7 +533,6 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node010
     SUBDIR += node012
     SUBDIR += node4
     SUBDIR += nostromo
@@ -1766,6 +1765,7 @@
     SUBDIR += py-rfc3986
     SUBDIR += py-rfc3987
     SUBDIR += py-rhodecode
+    SUBDIR += py-rollbar
     SUBDIR += py-routes
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
@@ -2050,6 +2050,7 @@
     SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
+    SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-underscore-rails

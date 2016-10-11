@@ -2,7 +2,7 @@
 
 PORTNAME=	libmspub
 PORTVERSION=	0.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++0x libtool pathfix pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-werror --without-docs

@@ -1,6 +1,6 @@
---- config.m4.orig	2013-12-11 00:31:06.000000000 +0100
-+++ config.m4	2013-12-24 21:11:19.000000000 +0100
-@@ -233,7 +233,7 @@
+--- config.m4.orig	2016-09-15 23:02:50.000000000 +0200
++++ config.m4	2016-09-28 10:10:26.335642000 +0200
+@@ -228,7 +228,7 @@ AC_DEFUN([PHP_GD_T1LIB],[
      ],[
        AC_MSG_ERROR([Problem with libt1.(a|so). Please check config.log for more information.])
      ],[

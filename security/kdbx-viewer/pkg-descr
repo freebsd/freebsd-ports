@@ -1,0 +1,10 @@
+Command-line tool written in C for KeePass2 Database files (kdbx).
+It works completely read-only at the moment.
+
+Features:
+- ncurses GUI to browse and view password database
+- Dump raw, decrypted XML content with obscured passwords
+- Display tree structure with de-obscured (=readable) passwords
+- Get tab-separated (TSV/CSV) password list
+
+WWW: https://max-weller.github.io/kdbx-viewer/

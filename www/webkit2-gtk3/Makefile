@@ -3,7 +3,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	2.8.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -54,6 +54,10 @@ FULLDEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE=Release
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == armv6
+CMAKE_ARGS+=	-DENABLE_JIT:BOOL=OFF
+.endif
 
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc

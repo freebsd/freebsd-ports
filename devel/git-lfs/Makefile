@@ -13,6 +13,8 @@ COMMENT=	Git extension for versioning large files
 LICENSE=	MIT
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-11-01
 
 USES=		go
 USE_GITHUB=	yes

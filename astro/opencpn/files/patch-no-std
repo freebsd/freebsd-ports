@@ -1,0 +1,109 @@
+OpenCPN-4.4.0/src/chart1.cpp: In member function 'virtual int MyApp::OnExit()':
+OpenCPN-4.4.0/src/chart1.cpp:2174:13: error: call of overloaded 'isnan(double&)' is ambiguous
+         if( wxIsNaN(gCog) ) cog.Printf( _T("COG ----- ") );
+             ^
+OpenCPN-4.4.0/src/chart1.cpp:2174:13: note: candidates are:
+In file included from /usr/local/include/wx-3.0/wx/math.h:18:0,
+                 from /usr/local/include/wx-3.0/wx/gdicmn.h:23,
+                 from /usr/local/include/wx-3.0/wx/event.h:20,
+                 from /usr/local/include/wx-3.0/wx/wx.h:24,
+                 from OpenCPN-4.4.0/src/chart1.cpp:28:
+/usr/include/math.h:234:6: note: int isnan(double)
+ int (isnan)(double) __pure2;
+      ^
+In file included from /usr/local/include/wx-3.0/wx/math.h:58:0,
+                 from /usr/local/include/wx-3.0/wx/gdicmn.h:23,
+                 from /usr/local/include/wx-3.0/wx/event.h:20,
+                 from /usr/local/include/wx-3.0/wx/wx.h:24,
+                 from OpenCPN-4.4.0/src/chart1.cpp:28:
+/usr/local/lib/gcc48/include/c++/cmath:626:3: note: constexpr bool std::isnan(long double)
+   isnan(long double __x)
+   ^
+/usr/local/lib/gcc48/include/c++/cmath:622:3: note: constexpr bool std::isnan(double)
+   isnan(double __x)
+   ^
+/usr/local/lib/gcc48/include/c++/cmath:618:3: note: constexpr bool std::isnan(float)
+   isnan(float __x)
+   ^
+
+In file included from OpenCPN-4.4.0/src/routeprintout.cpp:32:
+In file included from /usr/local/include/wx-3.0/wx/wx.h:15:
+In file included from /usr/local/include/wx-3.0/wx/object.h:19:
+In file included from /usr/local/include/wx-3.0/wx/memory.h:15:
+In file included from /usr/local/include/wx-3.0/wx/string.h:4305:
+In file included from /usr/local/include/wx-3.0/wx/crt.h:19:
+/usr/local/include/wx-3.0/wx/wxcrt.h:577:14: error: call to 'wcsstr' is ambiguous
+    { return wxCRT_StrstrW(haystack, needle); }
+             ^~~~~~~~~~~~~
+/usr/local/include/wx-3.0/wx/wxcrtbase.h:155:26: note: expanded from macro 'wxCRT_StrstrW'
+#define wxCRT_StrstrW    wcsstr
+                         ^~~~~~
+/usr/include/wchar.h:152:10: note: candidate function
+wchar_t *wcsstr(const wchar_t * __restrict, const wchar_t * __restrict)
+         ^
+/usr/include/c++/v1/cwchar:189:49: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY const wchar_t* wcsstr(const wchar_t* __s1, const wchar_t* __s2) {return ::wcsstr(__s1, __s2);}
+                                                ^
+
+--- include/printtable.h.orig	2016-06-25 12:26:20 UTC
++++ include/printtable.h
+@@ -27,8 +27,6 @@
+  */
+ #include <iostream>
+ #include <vector>
+-using namespace std;
+-
+ 
+ #ifndef __PRINTTABLE_H__
+ #define __PRINTTABLE_H__
+@@ -44,6 +42,10 @@ using namespace std;
+ #include "ocpn_types.h"
+ #include "navutil.h"
+ 
++using std::ostream;
++using std::string;
++using std::vector;
++
+ /**
+  * \brief
+  *  Enumeration is used to notice the state of the table.
+--- include/routeprintout.h.orig	2016-06-25 12:26:20 UTC
++++ include/routeprintout.h
+@@ -24,7 +24,6 @@
+  **************************************************************************/
+ 
+ #include <iostream>
+-using namespace std; // FIXME: 'using namespace' must not be used in header files
+ 
+ 
+ #ifndef __ROUTEPRINTOUT_H__
+--- src/printtable.cpp.orig	2016-06-25 12:26:20 UTC
++++ src/printtable.cpp
+@@ -28,7 +28,6 @@
+ #include <sstream>
+ #include <vector>
+ #include <algorithm>
+-using namespace std;
+ 
+ #include "wx/wxprec.h"
+ 
+@@ -74,6 +73,9 @@ using namespace std;
+ 
+ #include "printtable.h"
+ 
++using std::endl;
++using std::stringstream;
++
+ void PrintCell::Init( const wxString& _content, wxDC* _dc, int _width, int _cellpadding, bool _bold_font )
+ {
+     bold_font   = _bold_font;
+--- src/routeprintout.cpp.orig	2016-06-25 12:26:20 UTC
++++ src/routeprintout.cpp
+@@ -24,7 +24,6 @@
+  **************************************************************************/
+ 
+ #include <iostream>
+-using namespace std;
+ 
+ #include "wx/wxprec.h"
+ 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.6.7.2
+PORTVERSION=	1.6.8
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTML, XML, SAX, and Reader parser
 
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 
 USE_RUBY=	yes
 USES=		gem pkgconfig

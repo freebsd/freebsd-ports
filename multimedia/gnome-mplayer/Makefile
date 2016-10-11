@@ -4,14 +4,13 @@
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.9
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S,/files/,/svn/packages/,}
+MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
+DISTNAME=	gnome-mplayer_1.0.9.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for MPlayer
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgmtk.so:multimedia/gmtk
@@ -26,6 +25,7 @@ CONFIGURE_ARGS=	--disable-nautilus \
 		--disable-schemas-install \
 		--without-libgda
 INSTALLS_ICONS=	yes
+WRKSRC=		${WRKDIR}/gnome-mplayer-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

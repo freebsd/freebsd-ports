@@ -13,6 +13,8 @@ COMMENT=	Simple x86 disassembly library
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	No more upstream and known bugs, use devel/capstone3 instead
+EXPIRATION_DATE=	2016-11-10
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${STAGEDIR}${PREFIX}"
 USE_LDCONFIG=	yes

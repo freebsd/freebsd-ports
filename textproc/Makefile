@@ -1163,6 +1163,7 @@
     SUBDIR += pecl-syck
     SUBDIR += pecl-wbxml
     SUBDIR += pecl-xdiff
+    SUBDIR += pecl-xdiff2
     SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
     SUBDIR += peco
@@ -1315,6 +1316,7 @@
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
+    SUBDIR += py-ucl
     SUBDIR += py-whoosh
     SUBDIR += py-wicked
     SUBDIR += py-wordnet

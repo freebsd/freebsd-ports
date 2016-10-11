@@ -1,0 +1,43 @@
+--- Makefile.orig	2016-03-11 15:16:11 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-PREFIX=/usr
++PREFIX?=/usr
+ DATADIR=${PREFIX}/share/wordwarvi
+-MANDIR?=${PREFIX}/share/man
++MANDIR?=${PREFIX}/man
+ MANPAGEDIR=${MANDIR}/man6
+ 
+ SCREENSAVERFLAG=
+@@ -45,7 +45,7 @@ OPENLASELIBDIR=
+ endif
+ 
+ CC ?= gcc
+-BUILD_CC ?= gcc
++BUILD_CC ?= ${CC}
+ 
+ # DEBUG=-g
+ # DEBUG=
+@@ -54,7 +54,8 @@ BUILD_CC ?= gcc
+ #OPTIMIZE_FLAG=
+ # OPTIMIZE_FLAG=-O3
+ #OPTIMIZE_FLAG=-O3 -pedantic -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+-CFLAGS ?= -O3 -pedantic
++CFLAGS ?= -O3
++CFLAGS += -pedantic
+ OPTIMIZE_FLAG = ${CFLAGS} ${CPPFLAGS}
+ WARNFLAG=-pedantic -W -Wall
+ 
+@@ -116,10 +117,10 @@ wordwarvi.6.gz:	wordwarvi.6
+ 	gzip -c wordwarvi.6 > wordwarvi.6.gz
+ 
+ install: wordwarvi wordwarvi.6.gz
+-	mkdir -p $(DESTDIR)$(PREFIX)/games
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	mkdir -p $(DESTDIR)$(DATADIR)/sounds
+ 	mkdir -p $(DESTDIR)$(MANPAGEDIR)
+-	install -p -m 755 wordwarvi $(DESTDIR)$(PREFIX)/games
++	install -p -m 755 wordwarvi $(DESTDIR)$(PREFIX)/bin
+ 	install -p -m 644 sounds/*.ogg $(DESTDIR)$(DATADIR)/sounds
+ 	install -p -m 644 wordwarvi.6.gz $(DESTDIR)$(MANPAGEDIR)
+ 

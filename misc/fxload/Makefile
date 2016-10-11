@@ -8,7 +8,7 @@ MASTER_SITES=	https://bitbucket.org/DJOConnor/fxload/get/
 DISTNAME=	RELEASE_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firmware download for Cypress EZ-USB devices
 
 LICENSE=	GPLv2+

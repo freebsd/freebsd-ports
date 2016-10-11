@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.28
+PORTVERSION=	1.0.29
 CATEGORIES=	security
 MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 		http://www.tinc-vpn.org/packages/
@@ -14,9 +14,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-USES=		cpe makeinfo
+USES=		cpe ssl makeinfo
 CPE_VENDOR=	tinc-vpn
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

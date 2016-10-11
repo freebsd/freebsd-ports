@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MechanicalSoup
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ COMMENT=	Python library for automating interaction with websites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.11:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>4:www/py-beautifulsoup \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hickford

@@ -198,6 +198,7 @@
  51.29870,	1.07005,	"tdb"				# Canterbury, United Kingdom
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
+ 50.819610,	-0.136490,	"sevan"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
  52.21065,	0.09235,	"rwatson"			# (CORE) Cambridge, UK
  52.116761,	0.056618,	"dmlb"				# Cambridge, UK
@@ -229,6 +230,7 @@
 -25.477905,	-49.212143,	"wg"				# Curitiba, PR, Brazil
 -30.043826,	-51.13801,	"mnag"				# Porto Alegre, RS, Brazil
 -34.600,	-58.450,	"alepulver"			# Buenos Aires, Argentina
+ 44.63,		-63.58,		"jrm"				# Halifax, Nova Scotia, Canada
  42.1411,	-70.8453,	"jeh"		align=below	# Hanover, MA, USA
  42.375,	-71.106,	"cracauer"			# Cambridge, MA, USA
  42.34,		-71.19,		"wollman"	align=right	# Brighton, MA, USA
@@ -239,7 +241,6 @@
  42.73656,	-73.67030,	"jon"				# Troy, NY, USA
  42.72915,	-73.68172,	"gad"				# RPI @ Troy, NY, USA
  40.741778,	-73.903098,	"skreuzer"			# Woodside, NY, USA
- 40.660,	-73.950,	"eadler"			# West Hempstead, NY, USA
  40.75,		-73.97,		"sahil"				# New York, NY, USA 
  40.86004,	-73.98038,	"jkim"				# Leonia, NJ, USA
  43,		-75,		"gnn"				# (CORE) New York, NY, USA
@@ -334,6 +335,7 @@
  37.90641,	-122.30927,	"gshapiro"			# Richmond, CA, USA
  47.672538,	-122.383830,	"zml"				# Seattle, WA, USA
  45.31,		-122.39,	"alexbl"			# Portland, OR, USA
+ 37.7749,	-122.4194,	"eadler"			# San Francisco, CA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  37.8067,	-122.4113,	"jmallett"			# North Beach, San Francisco, CA, USA
  37.76,		-122.42,	"lx"				# San Francisco, CA, USA

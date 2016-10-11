@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X-Face encoder/decoder/viewer for Emacsen
 
-EMACS_PORT_NAME?=	emacs24
+EMACS_PORT_NAME?=	emacs25
 
 RUN_DEPENDS=	compface:mail/faces
 

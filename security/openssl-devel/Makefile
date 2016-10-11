@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	1.1.0
+PORTVERSION=	1.1.0b
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -14,7 +14,6 @@ COMMENT=	SSL and crypto library (1.1.x)
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 CONFLICTS=	libressl-[0-9]* \
 		libressl-devel-[0-9]* \
 		openssl-[0-9]*
@@ -31,7 +30,7 @@ OPTIONS_GROUP_OPTIMIZE=	ASM EC SSE2 THREADS
 OPTIONS_DEFINE_i386=	I386
 OPTIONS_GROUP_PROTOCOLS=	NEXTPROTONEG SCTP SSL3
 
-OPTIONS_DEFINE=	SHARED THREADS ZLIB RFC3779 MAN3
+OPTIONS_DEFINE=	MAN3 RFC3779 SHARED THREADS ZLIB
 
 OPTIONS_DEFINE_amd64=	EC
 OPTIONS_DEFAULT_amd64=	EC
@@ -41,7 +40,7 @@ OPTIONS_DEFAULT_ia64=	EC
 OPTIONS_DEFINE+=	EC
 OPTIONS_DEFAULT+=	EC
 .endif
-OPTIONS_DEFAULT=	ASM MAN3 RMD160 SCTP SHARED SSE2 THREADS
+OPTIONS_DEFAULT=	ASM MAN3 MD4 RC2 RC4 RMD160 SCTP SHARED SSE2 THREADS
 
 ASM_DESC=	Assembler code
 CIPHERS_DESC=	Cipher Suite Support
@@ -92,6 +91,8 @@ I386_CONFIGURE_ON=	386
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE=		ldconfig=yes
+SSL3_CONFIGURE_ON+=	enable-ssl3-method
+ZLIB_CONFIGURE_ON=	zlib-dynamic
 
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr
@@ -100,10 +101,6 @@ IGNORE=	the OpenSSL port can not be installed over the base version
 
 OPENSSLDIR?=	${PREFIX}/openssl
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
-
-OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
-OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
-OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 
 .include "version.mk"
 
@@ -117,6 +114,10 @@ post-patch:
 		-e 's| install_html_docs$$||' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
+
+post-patch-MAN3-off:
+	${GREP} -L openssl_manual_section ${WRKSRC}/doc/crypto/*.pod | ${XARGS} ${RM}
+	${GREP} -L openssl_manual_section ${WRKSRC}/doc/ssl/*.pod | ${XARGS} ${RM}
 
 post-configure:
 	${REINPLACE_CMD} \
@@ -135,10 +136,6 @@ post-install-SHARED-on:
 .for i in capi padlock
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-1.1/${i}.so
 .endfor
-
-post-install-MAN3-off:
-	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
-	${REINPLACE_CMD} -e 's|^man/man3/.*||' ${TMPPLIST}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl

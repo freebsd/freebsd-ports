@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	17.0.0
+PORTVERSION=	17.0.1
 CATEGORIES=	www
 PKGNAMESUFFIX=	-demos
 
@@ -19,8 +19,8 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 USES=		ada gmake python tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_PROJECT=	aws
-GH_TAGNAME=	31d491e
+GH_TAGNAME=	17.0
+GH_TUPLE=	AdaCore:templates-parser:17.0:tp/templates_parser
 
 DISTINFO_FILE=	${PORTSDIR}/www/aws/distinfo
 
@@ -32,6 +32,8 @@ OPTIONS_DEFINE=		SSL LDAP
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
 
+SSL_USES=		ssl
+
 DEMO_DIRS+=	auth
 DEMO_DIRS+=	autobahn
 DEMO_DIRS+=	cert
@@ -42,7 +44,6 @@ DEMO_DIRS+=	dowload_manager
 DEMO_DIRS+=	hello_world
 DEMO_DIRS+=	hello_wsdl
 DEMO_DIRS+=	hotplug
-DEMO_DIRS+=	https
 DEMO_DIRS+=	interoplab
 DEMO_DIRS+=	jabber_demo
 DEMO_DIRS+=	multiple_sessions
@@ -66,57 +67,96 @@ DEMO_DIRS+=	ws
 DEMO_DIRS+=	ws_candy
 DEMO_DIRS+=	zdemo
 
-.include <bsd.port.options.mk>
+PROGS=		multiple_sessions/multiple_sessions \
+		jabber_demo/jabber_demo \
+		auth/auth \
+		text_input/text_input \
+		web_block/web_block \
+		web_mail/web_mail \
+		websockets/websock \
+		wps/wps \
+		interoplab/interoplab_main \
+		soap_demo/soap_server \
+		soap_demo/soap_client \
+		web_block_ajax/web_block_ajax \
+		web_elements/web_elements_program \
+		cert/cert \
+		com/com_2 \
+		com/com_1 \
+		dowload_manager/download_manager \
+		hello_world/hello_world \
+		hello_wsdl/wsdl_demo_client \
+		hello_wsdl/wsdl_demo_server \
+		hotplug/main \
+		hotplug/hotplug \
+		res_demo/res_demo \
+		soap_vs/soap_svs \
+		soap_vs/soap_cvs \
+		test_mail/test_mail \
+		upload/upload \
+		vh_demo/vh_demo \
+		ws/ws \
+		ws_candy/candy \
+		split/split \
+		dispatch/dispatch \
+		zdemo/zdemo \
+		soap_disp/soap_server_disp \
+		soap_disp/soap_client
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
+.endif
 
 .if ${PORT_OPTIONS:MSSL}
-USES+=	ssl
-WITH_OPENSSL_PORT=	yes
 CONF_ARGS+=	SOCKET=openssl
 DEMO_DIRS+=	agent
+DEMO_DIRS+=	https
 DEMO_DIRS+=	runme
+PROGS+=		agent/agent \
+		https/https \
+		runme/runme
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 CONF_ARGS+=	LDAP=true
 DEMO_DIRS+=	test_ldap
+PROGS+=		test_ldap/test_ldap
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${LOCALBASE}|g' \
 		${WRKSRC}/demos/test_ldap/test_ldap.gpr
-	@${REINPLACE_CMD} -e 's| setup_tp | |' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|latexpdf||' ${WRKSRC}/Makefile
+.for dd in ${DEMO_DIRS}
+	@${REINPLACE_CMD} -i '' -e 's|gprclean|gprclean -c|' \
+		${WRKSRC}/demos/${dd}/Makefile
+.endfor
 
 do-configure:
 	${MKDIR} ${WRKSRC}/.build/native/debug/static/obj
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	   ${MAKE_CMD} setup ${CONF_ARGS}
+	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${MAKE_CMD} setup ${CONF_ARGS})
 
 do-build:
 .for dd in ${DEMO_DIRS}
 	@${ECHO_MSG} "=== BUILD ${dd} ==="
-	cd ${WRKSRC}/demos/${dd} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
+	(cd ${WRKSRC}/demos/${dd} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
+	(cd ${WRKSRC}/demos/${dd} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} clean && ${RM} -r Makefile *.ad[bs] *.gpr src)
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/templates \
-		${STAGEDIR}${EXAMPLESDIR}/images
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/demos
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} web_elements \
+		${STAGEDIR}${EXAMPLESDIR})
 .for dd in ${DEMO_DIRS:Nautobahn}
-	${FIND} ${WRKSRC}/demos/${dd} -type f -perm -0001 \
-	   -exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
+	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} ${dd} \
+		${STAGEDIR}${EXAMPLESDIR}/demos)
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/demos/autobahn/obj/autobahn \
-		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/demos/autobahn/autobahn/run.sh \
-		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demos/autobahn/autobahn/aws.json \
-		${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && \
-		${COPYTREE_SHARE} web_elements ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demos/runme/aws_*.png \
-		${STAGEDIR}${EXAMPLESDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/demos/web_mail/*html \
-		${STAGEDIR}${EXAMPLESDIR}/templates
-	${INSTALL_DATA} ${FILESDIR}/templates.tads \
-		${STAGEDIR}${EXAMPLESDIR}/templates
+.for prog in ${PROGS}
+	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/demos/${prog}
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

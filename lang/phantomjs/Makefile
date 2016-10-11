@@ -2,7 +2,7 @@
 
 PORTNAME=	phantomjs
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ariya/phantomjs/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -19,7 +19,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libicui18n.so:devel/icu \
 		libpng.so:graphics/png
 
-PROJECTHOST=	phantomjs
+BROKEN_sparc64=		does not link on sparc64
+BROKEN_FreeBSD_9_i386=	does not build
+
 USES=		bison:build compiler:c++11-lang gmake gperf jpeg perl5 pkgconfig python:build zip
 USE_PERL5=	build
 USE_RUBY=	yes
@@ -29,7 +31,10 @@ PLIST_FILES=	bin/phantomjs
 #PATCH_DEBUG=	yes
 NO_CCACHE=	yes
 
-USE_XORG=	x11
+OPTIONS_DEFINE=	X11
+X11_USE=	XORG=x11
+
+.include <bsd.port.options.mk>
 
 # NOTE:
 #   build.sh --qtwebkit=system requires Qt 5.3.x.  We cannot use it.
@@ -54,10 +59,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

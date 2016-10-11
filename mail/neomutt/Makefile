@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20160916
+PORTVERSION=	20161003
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -9,7 +9,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Bringing together all the Mutt Code
 
 LICENSE=	GPLv1
-LICENSE_FILE=	${WRKSRC}/GPL
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USE_GITHUB=	yes
 
@@ -81,6 +81,7 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/\`date/\`gdate/" ${WRKSRC}/Makefile.am ${WRKSRC}/doc/Makefile.am
+	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
 
 post-install:
 	${RM} -f ${STAGEDIR}${PREFIX}/etc/mime*

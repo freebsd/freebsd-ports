@@ -13,7 +13,7 @@ COMMENT=	Simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	libopenquicktime.so:multimedia/openquicktime
 
-USES=		localbase tar:tgz
+USES=		localbase:ldflags tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/oqtencoder

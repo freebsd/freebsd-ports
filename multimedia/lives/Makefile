@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liboil-0.3.so:devel/liboil \
 		libprojectM.so:graphics/libprojectm \
 		libvisual-0.4.so:graphics/libvisual04 \
-		libopencv_calib3d.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_calib3d.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libpng16.so:graphics/png \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
@@ -58,8 +59,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-ldvgrab
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-fPIC
-
 DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		OMC/lives-OMC.txt RFX/LiVES-Perl.odt RFX/rfxbuilder.odt \
 		RFX/RFX.spec docs/clip_format.txt \
@@ -79,6 +78,8 @@ NLS_USES=		gettext-tools
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+		's/^LIBS = $$/&@LIBS@/'
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \

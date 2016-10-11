@@ -1,12 +1,11 @@
-# Created by: jrm@ftfl.ca
 # $FreeBSD$
 
 PORTNAME=	diamond
-PORTVERSION=	0.8.22
+PORTVERSION=	0.8.23
 DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
-MAINTAINER=	jrm@ftfl.ca
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	BLAST-compatible local sequence aligner
 
 LICENSE=	BSD2CLAUSE

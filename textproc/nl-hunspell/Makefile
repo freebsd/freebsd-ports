@@ -13,11 +13,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch hunspell dictionaries
 
-LICENSE=	BSD2CLAUSE CCbyNCSA3
+LICENSE=	BSD2CLAUSE CC-BY-3.0
 LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_TEXT_CCbyNCSA3=http://creativecommons.org/licenses/by/3.0/legalcode
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
 NO_ARCH=	yes
 NO_BUILD=	yes

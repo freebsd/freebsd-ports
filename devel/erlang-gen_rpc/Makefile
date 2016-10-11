@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gen_rpc
-PORTVERSION=	1.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
@@ -14,7 +14,8 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	priestjim
 
-ERL_BUILD_DEPS= devel/erlang-lager
+ERL_BUILD_DEPS=	devel/erlang-hut \
+		devel/erlang-ssl_verify_fun
 ERL_RUN_DEPS:=  ${ERL_BUILD_DEPS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
---- Makefile.orig	2016-05-02 19:51:46 UTC
+--- Makefile.orig	2016-08-21 09:56:25 UTC
 +++ Makefile
 @@ -16,9 +16,9 @@ install:
  	mkdir -p ${DESTDIR}${PREFIX}
@@ -26,7 +26,7 @@
 +	echo ' echo "BitMessage directory not found"' >> ${DESTDIR}${PREFIX}/bin/${APP}
 +	echo '  exit 1' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	echo 'fi' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo 'exec python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
++	echo 'exec /usr/local/bin/python2.7 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	chmod +x ${DESTDIR}${PREFIX}/bin/${APP}
  uninstall:
 -	rm -f ${PREFIX}/share/man/man1/${APP}.1.gz

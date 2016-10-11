@@ -1,8 +1,8 @@
---- doc/Makefile.in.orig	2006-02-07 04:06:14.000000000 +0900
-+++ doc/Makefile.in	2009-07-08 16:30:38.000000000 +0900
-@@ -22,7 +22,7 @@
- 
+--- doc/Makefile.in.orig	2010-12-28 10:04:45 UTC
++++ doc/Makefile.in
+@@ -23,7 +23,7 @@ SHELL=/bin/sh
  prefix=@prefix@
+ datarootdir = @datarootdir@
  mandir=$(DESTDIR)@mandir@
 -docdir=$(DESTDIR)${prefix}/doc/wwwoffle
 +docdir=$(DESTDIR)@docdir@

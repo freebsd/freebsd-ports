@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.39
-MOZILLA_VER=	42 # above + 3
-PORTREVISION=	13
+DISTVERSION=	2.40
+MOZILLA_VER=	43 # above + 3
+PORTREVISION=	1
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -15,25 +15,25 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
-		nss>=3.19.4:security/nss \
+		nss>=3.20.1:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
-		soundtouch>=1.8.0:audio/soundtouch \
-		harfbuzz>=0.9.42:print/harfbuzz \
-		graphite2>=1.2.4:graphics/graphite2 \
+		soundtouch>=1.9.0:audio/soundtouch \
+		harfbuzz>=1.0.3:print/harfbuzz \
+		graphite2>=1.3.4:graphics/graphite2 \
+		png>=1.6.17:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
-		libvpx>=1.3.0:multimedia/libvpx \
-		sqlite3>=3.8.9:databases/sqlite3 \
+		libvpx>=1.5.0:multimedia/libvpx \
+		sqlite3>=3.8.11.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
 		zip:archivers/zip
-#		opus>=1.1:audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
-EM_VERSION=	1.9.1
-L_VERSION=	4.4
+EM_VERSION=	1.9.5
+L_VERSION=	4.5
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
@@ -45,14 +45,15 @@ MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
 		--enable-application=suite
 
-USE_MOZILLA=	-opus
+USE_MOZILLA=	# empty
 MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
 
-OPTIONS_EXCLUDE=LOGGING
-OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CANBERRA CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS RUST
+OPTIONS_SINGLE=	TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
+OPTIONS_DEFAULT=CANBERRA CHATZILLA COMPOSER ENIGMAIL GTK2 LDAP LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -119,8 +120,6 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
-		${MOZSRC}/configure.in ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/suite/app/nsSuiteApp.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \

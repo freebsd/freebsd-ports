@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httest
-PORTVERSION=	2.4.16
-PORTREVISION=	1
+PORTVERSION=	2.4.17
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -12,6 +11,7 @@ COMMENT=	HTTP Test Tool
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgdbm.so:databases/gdbm \
 		libpcre.so:devel/pcre \
@@ -28,16 +28,19 @@ CONFIGURE_ARGS=	--enable-lua-module \
 CPPFLAGS+=	-I${LUA_INCDIR}
 GNU_CONFIGURE=	yes
 USES=		iconv lua libtool bdb ssl
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 PORTEXAMPLES=	*
 
 INSTALL_TARGET=	install-strip
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||; s|-llua|-llua-${LUA_VER}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh
+	@${REINPLACE_CMD} -e 's|<pcre/pcre.h>|<pcre.h>|' ${WRKSRC}/src/httest.c ${WRKSRC}/src/regex.c \
+		${WRKSRC}/src/body.c ${WRKSRC}/src/module.h ${WRKSRC}/src/worker.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

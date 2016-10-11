@@ -1,7 +1,17 @@
-diff -aru src.orig/uipp/base/Application.C src/uipp/base/Application.C
---- src.orig/uipp/base/Application.C	2005-11-09 21:56:17.000000000 +0300
-+++ src/uipp/base/Application.C	2014-05-12 09:46:06.000000000 +0400
-@@ -136,7 +136,7 @@
+--- src/exec/libdx/lock.c.orig	2003-07-12 00:12:11 UTC
++++ src/exec/libdx/lock.c
+@@ -936,7 +936,7 @@ DXunlock(lock_type *l, int who)
+     if (_lock->knt == 0)
+     {
+         DXSetError(ERROR_INTERNAL, "Unlocking an unlocked lock?");
+-	return;
++	return ERROR;
+     }
+ 
+     /*
+--- src/uipp/base/Application.C.orig	2005-11-09 18:56:17 UTC
++++ src/uipp/base/Application.C
+@@ -136,7 +136,7 @@ void Application::installDefaultResource
      //this->setDefaultResources(baseWidget, Application::DefaultResources);
  }
  
@@ -10,7 +20,7 @@ diff -aru src.orig/uipp/base/Application.C src/uipp/base/Application.C
  {
  
      //
-@@ -235,7 +235,7 @@
+@@ -235,7 +235,7 @@ boolean Application::initializeWindowSys
      return TRUE;
  }
  
@@ -19,7 +29,7 @@ diff -aru src.orig/uipp/base/Application.C src/uipp/base/Application.C
                                 XrmOptionDescList optlist, int optlistsize)
  {
      char res_file[256];
-@@ -280,7 +280,7 @@
+@@ -280,7 +280,7 @@ void Application::parseCommand(unsigned 
      //
  }
  
@@ -28,10 +38,9 @@ diff -aru src.orig/uipp/base/Application.C src/uipp/base/Application.C
  {
      //
      // Initialize the window system if not done already.
-diff -aru src.orig/uipp/base/Application.h src/uipp/base/Application.h
---- src.orig/uipp/base/Application.h	2005-11-09 21:26:29.000000000 +0300
-+++ src/uipp/base/Application.h	2014-05-12 09:46:33.000000000 +0400
-@@ -49,7 +49,7 @@
+--- src/uipp/base/Application.h.orig	2005-11-09 18:26:29 UTC
++++ src/uipp/base/Application.h
+@@ -49,7 +49,7 @@ class Application : public UIComponent, 
      //
      // The main program needs to access protected member functions.
      //
@@ -40,7 +49,7 @@ diff -aru src.orig/uipp/base/Application.h src/uipp/base/Application.h
  		     char**       argv);
  
  
-@@ -71,9 +71,9 @@
+@@ -71,9 +71,9 @@ class Application : public UIComponent, 
      //
      // Initialize the window system.
      //
@@ -52,7 +61,7 @@ diff -aru src.orig/uipp/base/Application.h src/uipp/base/Application.h
  			       XrmOptionDescList optlist, int optlistsize);
  
      //
-@@ -145,7 +145,7 @@
+@@ -145,7 +145,7 @@ class Application : public UIComponent, 
      // Initializes any Application specfic state.  This routine should 
      // be called by main() or subclasses only.
      //
@@ -61,10 +70,9 @@ diff -aru src.orig/uipp/base/Application.h src/uipp/base/Application.h
  
      //
      // Allow others to access our event processing mechanism
-diff -aru src.orig/uipp/base/IBMApplication.C src/uipp/base/IBMApplication.C
---- src.orig/uipp/base/IBMApplication.C	2004-04-03 00:32:43.000000000 +0400
-+++ src/uipp/base/IBMApplication.C	2014-05-12 09:46:49.000000000 +0400
-@@ -349,7 +349,7 @@
+--- src/uipp/base/IBMApplication.C.orig	2004-04-02 20:32:43 UTC
++++ src/uipp/base/IBMApplication.C
+@@ -349,7 +349,7 @@ int status;
  }
  
  
@@ -73,7 +81,7 @@ diff -aru src.orig/uipp/base/IBMApplication.C src/uipp/base/IBMApplication.C
  {
  
      if (!this->Application::initializeWindowSystem(argcp, argv))
-@@ -375,7 +375,7 @@
+@@ -375,7 +375,7 @@ boolean IBMApplication::initializeWindow
      return TRUE;
  }
  
@@ -82,10 +90,9 @@ diff -aru src.orig/uipp/base/IBMApplication.C src/uipp/base/IBMApplication.C
  				   char**        argv)
  {
      if (!this->Application::initialize(argcp,argv))
-diff -aru src.orig/uipp/base/IBMApplication.h src/uipp/base/IBMApplication.h
---- src.orig/uipp/base/IBMApplication.h	2003-09-20 09:35:22.000000000 +0400
-+++ src/uipp/base/IBMApplication.h	2014-05-12 09:47:07.000000000 +0400
-@@ -77,7 +77,7 @@
+--- src/uipp/base/IBMApplication.h.orig	2003-09-20 05:35:22 UTC
++++ src/uipp/base/IBMApplication.h
+@@ -77,7 +77,7 @@ class IBMApplication : public Applicatio
      //
      // Initialize the window system.
      //
@@ -94,7 +101,7 @@ diff -aru src.orig/uipp/base/IBMApplication.h src/uipp/base/IBMApplication.h
  
      //
      // Protected member data:
-@@ -88,7 +88,7 @@
+@@ -88,7 +88,7 @@ class IBMApplication : public Applicatio
  
      HelpWin		*helpWindow;
  
@@ -103,10 +110,9 @@ diff -aru src.orig/uipp/base/IBMApplication.h src/uipp/base/IBMApplication.h
  
      //
      // Load application specific action routines
-diff -aru src.orig/uipp/dxui/Main.C src/uipp/dxui/Main.C
---- src.orig/uipp/dxui/Main.C	2005-12-07 20:50:53.000000000 +0300
-+++ src/uipp/dxui/Main.C	2014-05-12 09:44:51.000000000 +0400
-@@ -48,7 +48,7 @@
+--- src/uipp/dxui/Main.C.orig	2005-12-07 17:50:53 UTC
++++ src/uipp/dxui/Main.C
+@@ -48,7 +48,7 @@ extern unsigned long _etext;
  //
  const char *AssertMsgString = "Internal error detected at \"%s\":%d.\n";
   
@@ -115,10 +121,9 @@ diff -aru src.orig/uipp/dxui/Main.C src/uipp/dxui/Main.C
  	  char**       argv)
  {
  #if defined(HAVE_HCLXMINIT)
-diff -aru src.orig/uipp/dxuilib/DXApplication.C src/uipp/dxuilib/DXApplication.C
---- src.orig/uipp/dxuilib/DXApplication.C	2006-06-22 23:45:34.000000000 +0400
-+++ src/uipp/dxuilib/DXApplication.C	2014-05-12 09:47:15.000000000 +0400
-@@ -2248,7 +2248,7 @@
+--- src/uipp/dxuilib/DXApplication.C.orig	2006-06-22 19:45:34 UTC
++++ src/uipp/dxuilib/DXApplication.C
+@@ -2248,7 +2248,7 @@ void DXApplication::installDefaultResour
      this->setDefaultResources(baseWidget, _defaultDXResources);
      this->IBMApplication::installDefaultResources(baseWidget);
  }
@@ -127,10 +132,9 @@ diff -aru src.orig/uipp/dxuilib/DXApplication.C src/uipp/dxuilib/DXApplication.C
  								  char**        argv)
  {
  	boolean wasSetBusy = FALSE;
-diff -aru src.orig/uipp/dxuilib/DXApplication.h src/uipp/dxuilib/DXApplication.h
---- src.orig/uipp/dxuilib/DXApplication.h	2006-05-08 20:20:10.000000000 +0400
-+++ src/uipp/dxuilib/DXApplication.h	2014-05-12 09:47:31.000000000 +0400
-@@ -372,7 +372,7 @@
+--- src/uipp/dxuilib/DXApplication.h.orig	2006-05-08 16:20:10 UTC
++++ src/uipp/dxuilib/DXApplication.h
+@@ -372,7 +372,7 @@ class DXApplication : public IBMApplicat
      // Overrides the Application class version:
      //   Initializes Xt Intrinsics with option list (switches).
      //
@@ -139,10 +143,9 @@ diff -aru src.orig/uipp/dxuilib/DXApplication.h src/uipp/dxuilib/DXApplication.h
  			    char**        argv);
  
      //
-diff -aru src.orig/uipp/mb/MBApplication.C src/uipp/mb/MBApplication.C
---- src.orig/uipp/mb/MBApplication.C	2006-05-08 20:20:13.000000000 +0400
-+++ src/uipp/mb/MBApplication.C	2014-05-12 09:47:39.000000000 +0400
-@@ -117,7 +117,7 @@
+--- src/uipp/mb/MBApplication.C.orig	2006-05-08 16:20:13 UTC
++++ src/uipp/mb/MBApplication.C
+@@ -117,7 +117,7 @@ InitializeSignals(void)
  #endif       
  }            
  
@@ -151,10 +154,9 @@ diff -aru src.orig/uipp/mb/MBApplication.C src/uipp/mb/MBApplication.C
  			       char**        argv)
  {
      ASSERT(argcp);
-diff -aru src.orig/uipp/mb/MBApplication.h src/uipp/mb/MBApplication.h
---- src.orig/uipp/mb/MBApplication.h	1999-05-10 19:46:25.000000000 +0400
-+++ src/uipp/mb/MBApplication.h	2014-05-12 09:47:56.000000000 +0400
-@@ -51,7 +51,7 @@
+--- src/uipp/mb/MBApplication.h.orig	1999-05-10 15:46:25 UTC
++++ src/uipp/mb/MBApplication.h
+@@ -51,7 +51,7 @@ class MBApplication : public IBMApplicat
      // Overrides the Application class version:
      //   Initializes Xt Intrinsics with option list (switches).
      //
@@ -163,10 +165,9 @@ diff -aru src.orig/uipp/mb/MBApplication.h src/uipp/mb/MBApplication.h
  			    char**        argv);
  
      static MBResource	resource;
-diff -aru src.orig/uipp/mb/Main.C src/uipp/mb/Main.C
---- src.orig/uipp/mb/Main.C	2000-05-20 21:49:40.000000000 +0400
-+++ src/uipp/mb/Main.C	2014-05-12 09:44:59.000000000 +0400
-@@ -22,7 +22,7 @@
+--- src/uipp/mb/Main.C.orig	2000-05-20 17:49:40 UTC
++++ src/uipp/mb/Main.C
+@@ -22,7 +22,7 @@ extern "C" void HCLXmInit();
  //
  const char *AssertMsgString = "Internal error detected at \"%s\":%d.\n";
  
@@ -175,10 +176,9 @@ diff -aru src.orig/uipp/mb/Main.C src/uipp/mb/Main.C
  	  char**       argv)
  {
  #if defined(HAVE_HCLXMINIT)
-diff -aru src.orig/uipp/prompter/GARApplication.C src/uipp/prompter/GARApplication.C
---- src.orig/uipp/prompter/GARApplication.C	2006-05-08 20:20:13.000000000 +0400
-+++ src/uipp/prompter/GARApplication.C	2014-05-12 09:48:05.000000000 +0400
-@@ -198,7 +198,7 @@
+--- src/uipp/prompter/GARApplication.C.orig	2006-05-08 16:20:13 UTC
++++ src/uipp/prompter/GARApplication.C
+@@ -198,7 +198,7 @@ InitializeSignals(void)
      }
  }            
  
@@ -187,10 +187,9 @@ diff -aru src.orig/uipp/prompter/GARApplication.C src/uipp/prompter/GARApplicati
  			       char**        argv)
  {
      ASSERT(argcp);
-diff -aru src.orig/uipp/prompter/GARApplication.h src/uipp/prompter/GARApplication.h
---- src.orig/uipp/prompter/GARApplication.h	2003-09-20 09:33:21.000000000 +0400
-+++ src/uipp/prompter/GARApplication.h	2014-05-12 09:48:24.000000000 +0400
-@@ -129,7 +129,7 @@
+--- src/uipp/prompter/GARApplication.h.orig	2003-09-20 05:33:21 UTC
++++ src/uipp/prompter/GARApplication.h
+@@ -129,7 +129,7 @@ class GARApplication : public IBMApplica
      // Overrides the Application class version:
      //   Initializes Xt Intrinsics with option list (switches).
      //
@@ -199,10 +198,9 @@ diff -aru src.orig/uipp/prompter/GARApplication.h src/uipp/prompter/GARApplicati
  			    char**        argv);
  
      CommandScope       *commandScope;   // command scope
-diff -aru src.orig/uipp/prompter/Main.C src/uipp/prompter/Main.C
---- src.orig/uipp/prompter/Main.C	2000-05-16 22:52:59.000000000 +0400
-+++ src/uipp/prompter/Main.C	2014-05-12 09:45:07.000000000 +0400
-@@ -17,7 +17,7 @@
+--- src/uipp/prompter/Main.C.orig	2000-05-16 18:52:59 UTC
++++ src/uipp/prompter/Main.C
+@@ -17,7 +17,7 @@ extern "C" void HCLXmInit();
  #endif
  
  
@@ -211,9 +209,8 @@ diff -aru src.orig/uipp/prompter/Main.C src/uipp/prompter/Main.C
  	  char**       argv)
  {
  #if defined(HAVE_HCLXMINIT)
-diff -aru src.orig/uipp/startup/Main.C src/uipp/startup/Main.C
---- src.orig/uipp/startup/Main.C	2000-05-16 22:53:07.000000000 +0400
-+++ src/uipp/startup/Main.C	2014-05-12 09:45:13.000000000 +0400
+--- src/uipp/startup/Main.C.orig	2000-05-16 18:53:07 UTC
++++ src/uipp/startup/Main.C
 @@ -14,7 +14,7 @@
  extern "C" void HCLXmInit();
  #endif
@@ -223,10 +220,9 @@ diff -aru src.orig/uipp/startup/Main.C src/uipp/startup/Main.C
  	  char**       argv)
  {
  #if defined(HAVE_HCLXMINIT)
-diff -aru src.orig/uipp/startup/StartupApplication.C src/uipp/startup/StartupApplication.C
---- src.orig/uipp/startup/StartupApplication.C	2005-11-10 22:48:22.000000000 +0300
-+++ src/uipp/startup/StartupApplication.C	2014-05-12 09:48:31.000000000 +0400
-@@ -117,7 +117,7 @@
+--- src/uipp/startup/StartupApplication.C.orig	2005-11-10 19:48:22 UTC
++++ src/uipp/startup/StartupApplication.C
+@@ -117,7 +117,7 @@ InitializeSignals(void)
  #endif       
  }            
  
@@ -235,10 +231,9 @@ diff -aru src.orig/uipp/startup/StartupApplication.C src/uipp/startup/StartupApp
  			       char**        argv)
  {
      ASSERT(argcp);
-diff -aru src.orig/uipp/startup/StartupApplication.h src/uipp/startup/StartupApplication.h
---- src.orig/uipp/startup/StartupApplication.h	2003-09-20 09:33:56.000000000 +0400
-+++ src/uipp/startup/StartupApplication.h	2014-05-12 09:48:50.000000000 +0400
-@@ -84,7 +84,7 @@
+--- src/uipp/startup/StartupApplication.h.orig	2003-09-20 05:33:56 UTC
++++ src/uipp/startup/StartupApplication.h
+@@ -84,7 +84,7 @@ class StartupApplication : public IBMApp
      // Overrides the Application class version:
      //   Initializes Xt Intrinsics with option list (switches).
      //
@@ -247,10 +242,9 @@ diff -aru src.orig/uipp/startup/StartupApplication.h src/uipp/startup/StartupApp
  
      CommandScope       *commandScope;   // command scope
  
-diff -aru src.orig/uipp/tutor/Main.C src/uipp/tutor/Main.C
---- src.orig/uipp/tutor/Main.C	2000-05-16 22:53:15.000000000 +0400
-+++ src/uipp/tutor/Main.C	2014-05-12 09:45:22.000000000 +0400
-@@ -31,7 +31,7 @@
+--- src/uipp/tutor/Main.C.orig	2000-05-16 18:53:15 UTC
++++ src/uipp/tutor/Main.C
+@@ -31,7 +31,7 @@ extern "C" void HCLXmInit();
  //
  const char *AssertMsgString = "Internal error detected at \"%s\":%d.\n";
   
@@ -259,10 +253,9 @@ diff -aru src.orig/uipp/tutor/Main.C src/uipp/tutor/Main.C
  	  char**       argv)
  {
  #if defined(HAVE_HCLXMINIT)
-diff -aru src.orig/uipp/tutor/TutorApplication.C src/uipp/tutor/TutorApplication.C
---- src.orig/uipp/tutor/TutorApplication.C	2006-05-08 20:20:14.000000000 +0400
-+++ src/uipp/tutor/TutorApplication.C	2014-05-12 09:48:59.000000000 +0400
-@@ -196,7 +196,7 @@
+--- src/uipp/tutor/TutorApplication.C.orig	2006-05-08 16:20:14 UTC
++++ src/uipp/tutor/TutorApplication.C
+@@ -196,7 +196,7 @@ InitializeSignals(void)
  #endif       
  }            
  
@@ -271,10 +264,9 @@ diff -aru src.orig/uipp/tutor/TutorApplication.C src/uipp/tutor/TutorApplication
  			       char**        argv)
  {
      ASSERT(argcp);
-diff -aru src.orig/uipp/tutor/TutorApplication.h src/uipp/tutor/TutorApplication.h
---- src.orig/uipp/tutor/TutorApplication.h	1999-05-10 19:46:30.000000000 +0400
-+++ src/uipp/tutor/TutorApplication.h	2014-05-12 09:49:16.000000000 +0400
-@@ -69,7 +69,7 @@
+--- src/uipp/tutor/TutorApplication.h.orig	1999-05-10 15:46:30 UTC
++++ src/uipp/tutor/TutorApplication.h
+@@ -69,7 +69,7 @@ class TutorApplication : public IBMAppli
      // Overrides the Application class version:
      //   Initializes Xt Intrinsics with option list (switches).
      //

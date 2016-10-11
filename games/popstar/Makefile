@@ -14,11 +14,9 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple puzzle game involving floating stars
 
-LICENSE=	GPLv2 CCbyNCSA3
-LICENSE_COMB=	dual
-LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_FILE_CCbyNCSA3=${WRKSRC}/docs/COPYING-CC-Attrib30.txt
-LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
+LICENSE=	GPLv2+ CC-BY-SA-2.5 CC-BY-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/docs/COPYING-CC-Attrib30.txt
 
 USES=		gmake
 USE_SDL=	image mixer sdl

@@ -3,7 +3,6 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -19,6 +18,8 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+_USES_PYTHON?=	python:build
+USES+=		${_USES_PYTHON}
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -49,10 +50,13 @@ CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
+CLANG_GH_SUBDIR=	tools/clang:clang
 CLANG_GH_TAGNAME=	${CLANG_COMMIT}:clang
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
+CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
+COMPILER_RT_IMPLIES=	CLANG
 COMPILER_RT_GH_PROJECT=	compiler-rt:compiler_rt
 COMPILER_RT_GH_TAGNAME=	${COMPILER_RT_COMMIT}:compiler_rt
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|}
@@ -64,23 +68,29 @@ DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 EXTRAS_DESC=		Extra clang tools
 EXTRAS_IMPLIES=		CLANG
 EXTRAS_GH_PROJECT=	clang-tools-extra:extras
+EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
+LLDB_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
+LLD_GH_SUBDIR=		tools/lld:lld
 LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
 LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
+LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_USES=		execinfo
+LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
+OPENMP_GH_SUBDIR=	tools/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
+GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 
 OPTIONS_SUB=	yes
 
@@ -127,10 +137,12 @@ STRIP_LIBS=	BugpointPasses.so \
 
 EXTRAS_COMMANDS= \
 		clang-apply-replacements \
+		clang-change-namespace \
 		clang-include-fixer \
 		clang-modernize \
 		clang-query \
 		clang-rename \
+		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
 		modularize
@@ -147,7 +159,7 @@ EXTRAS_LIBS=	\
 		libclangTidyUtils \
 		libfindAllSymbols \
 		libmodernizeCore
-EXTRAS_PATTERN= ${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
@@ -158,6 +170,7 @@ COMMANDS+=	c-index-test \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-offload-bundler \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1 \
@@ -171,7 +184,6 @@ COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray)
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
-_USES_PYTHON=	python
 LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
@@ -180,29 +192,25 @@ COMMANDS+=	lldb \
 		lldb-argdumper \
 		lldb-mi \
 		lldb-server
-_USES_PYTHON=	python
 .endif
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=    COMPILER_RT="@comment "
+PLIST_SUB+=	COMPILER_RT="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
 # Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=    GOLD="@comment "
+PLIST_SUB+=	GOLD="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=    OPENMP="@comment "
+PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
-
-_USES_PYTHON?=	python:build
-USES+=		${_USES_PYTHON}
 
 MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
@@ -275,21 +283,6 @@ BROKEN=	Working C++11 compiler and library required
 .if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
 BROKEN=	LLDB does not build with Python 3
 .endif
-
-post-extract-CLANG-on:
-	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
-
-post-extract-EXTRAS-on:
-	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
-
-post-extract-LLD-on:
-	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-
-post-extract-LLDB-on:
-	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
-
-post-extract-OPENMP-on:
-	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \

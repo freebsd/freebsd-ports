@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/LWPx::ParanoidAgent.3.gz
 %%SITE_PERL%%/LWPx/ParanoidAgent.pm
 %%SITE_PERL%%/LWPx/Protocol/http_paranoid.pm
 %%SITE_PERL%%/LWPx/Protocol/https_paranoid.pm
+%%PERL5_MAN3%%/LWPx::ParanoidAgent.3.gz

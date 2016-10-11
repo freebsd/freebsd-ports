@@ -119,8 +119,6 @@ lib/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/algorithm_8hpp_source.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/annotated.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/annotated_dup.js
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/arrowdown.png
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/arrowright.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/assert__has_8hpp.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/assert__has_8hpp.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/assert__has_8hpp_source.html

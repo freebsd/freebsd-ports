@@ -1,12 +1,12 @@
---- mix.exs.orig	2015-07-08 10:43:54 UTC
+--- mix.exs.orig	2016-09-21 07:51:15 UTC
 +++ mix.exs
-@@ -9,8 +9,7 @@ defmodule UUID.Mixfile do
-      homepage_url: "http://hexdocs.pm/uuid",
-      elixir: "~> 1.0",
-      description: description,
--     package: package,
--     deps: deps]
-+     package: package]
+@@ -13,8 +13,7 @@ defmodule UUID.Mixfile do
+             source_ref: "v#{@version}"],
+      source_url: "https://github.com/zyro/elixir-uuid",
+      description: description(),
+-     package: package(),
+-     deps: deps()]
++     package: package()]
    end
  
    # Application configuration.
