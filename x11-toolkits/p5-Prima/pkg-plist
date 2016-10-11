@@ -49,7 +49,9 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/Drawable.pod
 %%SITE_ARCH%%/Prima/Drawable/Basic.pm
 %%SITE_ARCH%%/Prima/Drawable/CurvedText.pm
+%%SITE_ARCH%%/Prima/Drawable/Markup.pm
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
+%%SITE_ARCH%%/Prima/Drawable/TextBlock.pm
 %%SITE_ARCH%%/Prima/Edit.pm
 %%SITE_ARCH%%/Prima/EditDialog.pm
 %%SITE_ARCH%%/Prima/EventHook.pm
@@ -186,6 +188,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/examples/animate.pl
 %%SITE_ARCH%%/Prima/examples/async.pl
 %%SITE_ARCH%%/Prima/examples/bidi.pl
+%%SITE_ARCH%%/Prima/examples/blend.pl
 %%SITE_ARCH%%/Prima/examples/buttons.pl
 %%SITE_ARCH%%/Prima/examples/buttons2.pl
 %%SITE_ARCH%%/Prima/examples/calendar.pl
@@ -208,10 +211,13 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/examples/grip.pl
 %%SITE_ARCH%%/Prima/examples/iv.pl
 %%SITE_ARCH%%/Prima/examples/keys.pl
+%%SITE_ARCH%%/Prima/examples/keyselector.pl
 %%SITE_ARCH%%/Prima/examples/label.pl
 %%SITE_ARCH%%/Prima/examples/launch.pl
+%%SITE_ARCH%%/Prima/examples/layered.pl
 %%SITE_ARCH%%/Prima/examples/listbox.pl
 %%SITE_ARCH%%/Prima/examples/macro.pl
+%%SITE_ARCH%%/Prima/examples/markup.pl
 %%SITE_ARCH%%/Prima/examples/matrix.gif
 %%SITE_ARCH%%/Prima/examples/matrix.pl
 %%SITE_ARCH%%/Prima/examples/mdi.pl
@@ -225,6 +231,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/examples/pitch.pl
 %%SITE_ARCH%%/Prima/examples/pointers.pl
 %%SITE_ARCH%%/Prima/examples/print.pl
+%%SITE_ARCH%%/Prima/examples/ps_fonts.pl
 %%SITE_ARCH%%/Prima/examples/ps_setup.pl
 %%SITE_ARCH%%/Prima/examples/rot.pl
 %%SITE_ARCH%%/Prima/examples/rtc.pl
@@ -249,6 +256,8 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/noARGV.pm
 %%SITE_ARCH%%/Prima/noX11.pm
+%%SITE_ARCH%%/Prima/rop1.gif
+%%SITE_ARCH%%/Prima/rop2.gif
 %%SITE_ARCH%%/Prima/scalings.gif
 %%SITE_ARCH%%/Prima/sys/gtk2/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/FileDialog.pm
@@ -294,7 +303,9 @@ bin/tmlink
 %%PERL5_MAN3%%/Prima::Docks.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Basic.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::CurvedText.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Markup.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::TextBlock.3.gz
 %%PERL5_MAN3%%/Prima::Edit.3.gz
 %%PERL5_MAN3%%/Prima::EditDialog.3.gz
 %%PERL5_MAN3%%/Prima::EventHook.3.gz

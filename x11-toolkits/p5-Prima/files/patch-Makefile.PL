@@ -1,8 +1,8 @@
---- Makefile.PL.orig	2015-08-05 07:18:10 UTC
+--- Makefile.PL.orig	2016-09-18 18:14:36 UTC
 +++ Makefile.PL
-@@ -1270,13 +1270,13 @@ EOF
- 	$cmd_options{WITH_ICONV} = 0 unless $cmd_options{WITH_XFT}; # iconv is used for xft only
- 	if ( $cmd_options{WITH_ICONV} && have_header( "iconv.h")) {
+@@ -1428,13 +1428,13 @@ sub setup_iconv
+ {
+ 	if ( have_header( "iconv.h")) {
  		printlog "Checking for presence of libiconv... ";
 -		if ( defined find_lib( 'iconv', '', '')) {
 -			push @LIBS, 'iconv';
