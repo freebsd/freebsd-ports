@@ -1454,6 +1454,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
+    SUBDIR += listserialc
     SUBDIR += liteide
     SUBDIR += lldb37
     SUBDIR += lldb38
