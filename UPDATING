@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161011:
+  AFFECTS: Users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  Before upgrading ejabberd to 16.09, please make sure to backup your 
+  ejabberd data using:
+ 
+     % sudo -u ejabberd -H ejabberdctl backup /path/to/backup/file
+
+  In some cases, ejabberd may fail to start, for which a workaround is to 
+  remove the schema.DAT file from /var/spool/ejabberd before starting, and
+  then restoring everything from the backup using:
+     
+     % sudo -u ejabberd -H ejabberdctl restore /path/to/backup/file
+
+  For more details:
+
+  https://github.com/processone/ejabberd/issues/1305
+
 20161005:
   AFFECTS: Users of audio/squeezeboxserver (now audio/logitechmediaserver)
   AUTHOR: woodsb02@FreeBSD.org
