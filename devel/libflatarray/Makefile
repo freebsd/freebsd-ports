@@ -11,7 +11,7 @@ COMMENT=	Struct of arrays library with object oriented interface for C++
 
 LICENSE=	BSL
 
-BUILD_DEPENDS=	boost-libs>=1.48:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=1.48:devel/boost-libs
 
 USES=		cmake:outsource
 
