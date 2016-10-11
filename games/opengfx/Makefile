@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	games
-MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
-		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
-		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-all
+MASTER_SITES=	http://bundles.openttdcoop.org/${PORTNAME}/releases/${PORTVERSION}/ \
+		http://m1cro.me/ports/distfiles/${PORTNAME}/releases/${PORTVERSION}/
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative graphics for OpenTTD game engine
