@@ -1,4 +1,3 @@
-with "templates_parser";
 with "xmlada";
 
 project AWS is
