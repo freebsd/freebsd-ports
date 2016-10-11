@@ -1,0 +1,9 @@
+TIMESTAMP = 1474688787
+SHA256 (arduino-arduino-builder-1.3.21_GH0.tar.gz) = 3ccdc5657370600c350fdd7259755723640c6018a8f7c3e4393908365f8abc10
+SIZE (arduino-arduino-builder-1.3.21_GH0.tar.gz) = 202545
+SHA256 (go-errors-errors-a418503_GH0.tar.gz) = 6ab9a4b65930b72d0b94110670d22c6bdb0fe69d333dc5835f5ffd2b7a1d1080
+SIZE (go-errors-errors-a418503_GH0.tar.gz) = 7842
+SHA256 (stretchr-testify-v1.1.3_GH0.tar.gz) = 36c8493b914485dab92670fb39c4c105596fdc03493d4c007c6917c9637cd672
+SIZE (stretchr-testify-v1.1.3_GH0.tar.gz) = 81051
+SHA256 (jstemmer-go-junit-report-833f8ea_GH0.tar.gz) = 74519a9276270bc98e787b05ebcc9b8e90226d9594461d305e41bf648bc75f75
+SIZE (jstemmer-go-junit-report-833f8ea_GH0.tar.gz) = 6903
