@@ -1,14 +1,51 @@
---- src/CMakeLists.txt.orig	2014-10-12 13:00:51 UTC
-+++ src/CMakeLists.txt
-@@ -47,10 +47,7 @@
- 
- target_link_libraries(kshutdown kdecore kdeui kio ${KDE4_KNOTIFYCONFIG_LIBS} ${KDE4_KUTILS_LIBS})
- 
--install(
--	PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/kshutdown"
--	DESTINATION bin
--)
-+install(TARGETS kshutdown RUNTIME DESTINATION bin)
- install(FILES kshutdown.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
- install(FILES kshutdown.notifyrc DESTINATION ${DATA_INSTALL_DIR}/kshutdown)
- 
+From https://sourceforge.net/p/kshutdown/patches/6/:
+
+The attached patch switches the INSTALL(PROGRAMS) calls in src/CMakeLists.txt
+to calls to INSTALL(TARGETS).
+CMake's documentation for INSTALL(PROGRAMS) says:
+		This form is intended to install programs that are not
+		targets, such as shell scripts. Use the TARGETS form to
+		install targets built within the project.
+Additionally, installing a target also causes CMake to create additional
+targets, suchas install/strip, to automatically strip the binary (useful
+for packagers and people building in release mode).
+
+
+Index: src/CMakeLists.txt
+===================================================================
+--- src/CMakeLists.txt	(revision 835)
++++ src/CMakeLists.txt	(working copy)
+@@ -54,6 +54,7 @@
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+ if(KS_PURE_QT)
++	set_target_properties(kshutdown PROPERTIES OUTPUT_NAME kshutdown-qt)
+ 	target_link_libraries(kshutdown ${Qt5Widgets_LIBRARIES} ${Qt5DBus_LIBRARIES})
+ elseif(KS_KF5)
+ 	target_link_libraries(kshutdown Qt5::DBus Qt5::Widgets KF5::ConfigCore KF5::ConfigWidgets KF5::DBusAddons KF5::GlobalAccel KF5::I18n KF5::IdleTime KF5::Notifications KF5::NotifyConfig KF5::XmlGui)
+@@ -66,14 +67,13 @@
+ 	set(XDG_APPS_INSTALL_DIR ${DATA_INSTALL_DIR}/applications)
+
+ 	install(
+-		PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/kshutdown"
++		TARGETS kshutdown
+ 		DESTINATION bin
+-		RENAME kshutdown-qt
+ 	)
+ 	install(FILES kshutdown-qt.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+ elseif(KS_KF5)
+ 	install(
+-		PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/kshutdown"
++		TARGETS kshutdown
+ 		DESTINATION bin
+ 	)
+ 	install(FILES kshutdown.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+@@ -80,7 +80,7 @@
+ 	install(FILES kshutdown.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+ else()
+ 	install(
+-		PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/kshutdown"
++		TARGETS kshutdown
+ 		DESTINATION bin
+ 	)
+ 	install(FILES kshutdown.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
