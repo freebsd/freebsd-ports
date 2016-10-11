@@ -1,2 +1,3 @@
-SHA256 (setuptools_scm-1.10.1.tar.bz2) = 1cdea91bbe1ec4d52b3e9c451ab32ae6e1f3aa3fd91e90580490a9eb75bea286
-SIZE (setuptools_scm-1.10.1.tar.bz2) = 16244
+TIMESTAMP = 1476204846
+SHA256 (setuptools_scm-1.13.1.tar.gz) = dfb59aa2c50e3e6e0bfde5267eff552e167b296cd67ef27443bbfa22fdcb7036
+SIZE (setuptools_scm-1.13.1.tar.gz) = 22200
