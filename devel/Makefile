@@ -99,6 +99,7 @@
     SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
+    SUBDIR += arduino-sevseg
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
