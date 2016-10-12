@@ -4308,6 +4308,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
     SUBDIR += py-os-client-config
+    SUBDIR += py-osc-lib
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.utils
