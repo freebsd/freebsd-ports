@@ -9,7 +9,7 @@
 -    install_libdir  	= $(prefix)/php
 -else
 -    install_phpdir  	= $(prefix)/share/php
--    install_libdir  	= $(shell php -r "echo(ini_get('extension_dir'));")
+-    install_libdir  	= $(shell $(PHP_CONFIG) --extension-dir)
 -endif
 +install_phpdir  	= $(prefix)/share/pear
 +install_libdir  	= $(prefix)/lib/php/$(PHP_EXT_DIR)
