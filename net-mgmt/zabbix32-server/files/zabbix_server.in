@@ -15,6 +15,8 @@
 #         default.
 # zabbix_server_pidfile (string):    Location of the zabbix_server pid file
 #                               Default is /var/run/zabbix/zabbix_server.pid
+# zabbix_server_paths (string): Set to standard path by default.  Set a search
+#         if you have custom userparams that need binaries elsewhere.
 #
 
 . /etc/rc.subr
@@ -27,10 +29,12 @@ load_rc_config $name
 : ${zabbix_server_enable:=NO}
 : ${zabbix_server_config:=%%ETCDIR%%/${name}.conf}
 : ${zabbix_server_pidfile:=/var/run/zabbix/zabbix_server.pid}
+: ${zabbix_server_paths:=$PATH}
 
 command="%%PREFIX%%/sbin/${name}"
 required_files="${zabbix_server_config}"
 
+start_cmd=zabbix_server_cmd
 start_precmd=zabbix_server_precmd 
 status_precmd=zabbix_server_precmd
 stop_precmd=zabbix_server_precmd
@@ -52,6 +56,11 @@ zabbix_server_precmd()
 	# check_process, which may leak SysV IPC objects and prevent restart
 	# and/or race condition on restart.
 	rc_pid=$(check_pidfile ${pidfile} ${command})
+}
+
+zabbix_server_cmd()
+{
+	PATH=$zabbix_server_paths $command -c $zabbix_server_config
 }
 
 run_rc_command "$1"
