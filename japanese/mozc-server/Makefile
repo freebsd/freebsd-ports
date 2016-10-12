@@ -419,8 +419,6 @@ do-install-mozc_el:
 .endif
 
 do-build: ${BUILD_MOZC_LIST:S/^/do-build-/}
-post-build:
-	${RMDIR} /root/.mozc
 do-install: ${BUILD_MOZC_LIST:S/^/do-install-/}
 
 .include <bsd.port.post.mk>
