@@ -46,6 +46,7 @@ PORTDATA=	*
 
 INFO=		gst gst-base gst-libs
 
+BROKEN_aarch64=	Fails to link: undefined reference to sbrk
 BROKEN_sparc64=	Fails to install on sparc64
 
 post-patch:
