@@ -4053,6 +4053,7 @@
     SUBDIR += py-click
     SUBDIR += py-click-log
     SUBDIR += py-click-threading
+    SUBDIR += py-cliff
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cloudpickle
