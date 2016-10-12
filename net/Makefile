@@ -996,6 +996,7 @@
     SUBDIR += py-ntplib
     SUBDIR += py-oauth
     SUBDIR += py-oauth2
+    SUBDIR += py-openstackclient
     SUBDIR += py-paho-mqtt
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
