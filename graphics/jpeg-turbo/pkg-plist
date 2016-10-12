@@ -10,7 +10,8 @@
 %%JPEG%%lib/libjpeg.a
 %%JPEG%%lib/libjpeg.so
 %%JPEG%%lib/libjpeg.so.8
-%%JPEG%%lib/libjpeg.so.8.0.2
+%%JPEG%%lib/libjpeg.so.8.1.2
+%%JPEG%%libdata/pkgconfig/libjpeg.pc
 %%JPEG%%man/man1/cjpeg.1.gz
 %%JPEG%%man/man1/djpeg.1.gz
 %%JPEG%%man/man1/jpegtran.1.gz
@@ -22,3 +23,4 @@
 %%LIBTURBOJPEG%%lib/libturbojpeg.so
 %%LIBTURBOJPEG%%lib/libturbojpeg.so.0
 %%LIBTURBOJPEG%%lib/libturbojpeg.so.0.1.0
+%%LIBTURBOJPEG%%libdata/pkgconfig/libturbojpeg.pc
