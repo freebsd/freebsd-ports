@@ -14,7 +14,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-NOT_FOR_ARCHS=	ia64 powerpc sparc64
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
