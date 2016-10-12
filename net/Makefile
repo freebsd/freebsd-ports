@@ -1039,7 +1039,6 @@
     SUBDIR += py-txrestapi
     SUBDIR += py-upnp-inspector
     SUBDIR += py-uritemplate
-    SUBDIR += py-uritemplate.py
     SUBDIR += py-urllib3
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
