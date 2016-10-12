@@ -1,4 +1,4 @@
-TIMESTAMP = 1473890109
+TIMESTAMP = 1476231167
 SHA256 (nginx-1.10.1.tar.gz) = 1fd35846566485e03c0e318989561c135c598323ff349c503a6c14826487a801
 SIZE (nginx-1.10.1.tar.gz) = 909077
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
@@ -91,8 +91,8 @@ SHA256 (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 552c54aff81c4701ace4eb1ce20c
 SIZE (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 53024
 SHA256 (arut-nginx-let-module-v0.0.4_GH0.tar.gz) = cbf6fcddc00a7e30289134bdeace12565e000cc7d4efee2d2ebb8799d0b88270
 SIZE (arut-nginx-let-module-v0.0.4_GH0.tar.gz) = 20534
-SHA256 (openresty-lua-nginx-module-v0.10.6rc1_GH0.tar.gz) = 86806a1893c775d813a58912b6f3b99b55efa7ab126ac5f28a57bc9a10b6044e
-SIZE (openresty-lua-nginx-module-v0.10.6rc1_GH0.tar.gz) = 581366
+SHA256 (openresty-lua-nginx-module-v0.10.6_GH0.tar.gz) = b98c4f648589bbf3e2c3d5fd18664e7a7ef89ac083e96c8e984fa919e7a7c073
+SIZE (openresty-lua-nginx-module-v0.10.6_GH0.tar.gz) = 597217
 SHA256 (openresty-memc-nginx-module-v0.16_GH0.tar.gz) = 24f3c3270831aed2d157c01ef74cb26eab26b832971fe7b9f42a03dbfac10ce4
 SIZE (openresty-memc-nginx-module-v0.16_GH0.tar.gz) = 38560
 SHA256 (nbs-system-naxsi-0.54_GH0.tar.gz) = 9cc2c09405bc71f78ef26a8b6d70afcea3fccbe8125df70cb0cfc480133daba5
