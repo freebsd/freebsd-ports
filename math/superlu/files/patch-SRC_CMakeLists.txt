@@ -1,0 +1,11 @@
+--- SRC/CMakeLists.txt.orig	2016-05-22 15:58:44 UTC
++++ SRC/CMakeLists.txt
+@@ -241,6 +241,6 @@ install(TARGETS superlu
+ )
+ 
+ install(FILES ${headers}
+-#  DESTINATION ${CMAKE_INSTALL_PREFIX}/include
+-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++  DESTINATION ${CMAKE_INSTALL_PREFIX}/include/superlu
++#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+ )

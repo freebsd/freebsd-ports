@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	superlu
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://crd-legacy.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd-legacy.lbl.gov/~xiaoye/:doc
@@ -16,11 +16,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 USES=		cmake:outsource fortran
-
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuperLU_${PORTVERSION}
-PLIST_SUB=	P_VERSION="${P_VERSION}" P_VER="${P_VER}"
+PLIST_SUB=	P_VERSION="${PORTVERSION}" P_VER="${PORTVERSION:R:R}"
 
 CMAKE_ARGS=	-DUSE_XSDK_DEFAULTS:BOOL=ON \
 		-Denable_examples:BOOL=OFF
@@ -29,7 +28,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS TEST
 OPTIONS_SINGLE=		BLAS
-OPTIONS_SINGLE_BLAS=	ATLAS GOTOBLAS REFERENCE
+OPTIONS_SINGLE_BLAS=	ATLAS GOTOBLAS OPENBLAS REFERENCE
 OPTIONS_DEFAULT=	REFERENCE
 
 ATLAS_USES=		blaslapack:atlas
@@ -40,13 +39,14 @@ DOCS_EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 GOTOBLAS_DESC=		GotoBLAS blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
 GOTOBLAS_CMAKE_ARGS=	-DBLA_VENDOR:STRING="Goto"
+OPENBLAS_DESC=		OpenBLAS blas implementation
+OPENBLAS_USES=		blaslapack:openblas
+OPENBLAS_CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS"
 REFERENCE_DESC=		Reference blas implementation
 REFERENCE_USES=		blaslapack
 REFERENCE_CMAKE_ARGS=	-DBLA_VENDOR:STRING="Generic"
 TEST_CMAKE_ARGS=	-Denable_tests:BOOL=ON
 
-P_VERSION=	5.1.1
-P_VER=		${P_VERSION:C/^([[:alnum:]]+).*/\1/}
 SLU_DOCS=	SLU_general.ps.gz simax-29176.pdf
 
 post-patch:
@@ -54,8 +54,6 @@ post-patch:
 		'/CMAKE_C_FLAGS_RELEASE/s|^|#|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		'/FFLAGS/s|FATAL_ERROR|WARNING|' ${WRKSRC}/cmake/XSDKDefaults.cmake
-	@${REINPLACE_CMD} -e \
-		's|\(/include\)$$|\1/superlu|' ${WRKSRC}/SRC/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
