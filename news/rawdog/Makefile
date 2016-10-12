@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rawdog
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
