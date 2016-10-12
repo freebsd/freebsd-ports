@@ -4457,6 +4457,7 @@
     SUBDIR += py-repoze.who-friendlyform
     SUBDIR += py-repoze.who-testutil
     SUBDIR += py-repoze.xmliter
+    SUBDIR += py-requestsexceptions
     SUBDIR += py-resolver
     SUBDIR += py-resourcepackage
     SUBDIR += py-responses
