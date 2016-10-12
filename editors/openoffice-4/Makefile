@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	10
+#PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -49,6 +49,7 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
 		p5-libwww>=0:www/p5-libwww				\
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		${LOCALBASE}/bin/unzip:archivers/unzip			\
 		zip:archivers/zip					\
@@ -97,10 +98,10 @@ RUN_DEPENDS=								\
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	2
+AOOVERSION3=	3
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO412m3\(Build:9782\)
-SVNREVISION=	1709696
+AOOTAG=		AOO413m1\(Build:9783\)
+SVNREVISION=	1761381
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
