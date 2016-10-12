@@ -37,8 +37,5 @@ post-install:
 		-exec ${CHMOD} u+w {} \;
 	@${PYTHON_CMD} -m compileall -d ${PYSITEDIR}/Ice ${STAGEDIR}${PYSITEDIR}/Ice
 	@${PYTHON_CMD} -O -m compileall -d ${PYSITEDIR}/Ice ${STAGEDIR}${PYSITEDIR}/Ice
-	${INSTALL_MAN} ${WRKSRC}/man/man1/slice2py.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/config/s2py.py \
-		${STAGEDIR}${PREFIX}/bin/slice2py
 
 .include "${MASTERDIR}/Makefile"

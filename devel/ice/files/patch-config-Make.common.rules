@@ -1,5 +1,5 @@
---- config/Make.common.rules.orig	2015-06-23 15:30:20.000000000 +0000
-+++ config/Make.common.rules	2015-06-27 23:55:59.468049240 +0000
+--- config/Make.common.rules.orig	2016-10-05 16:59:08.000000000 +0200
++++ config/Make.common.rules	2016-10-11 22:39:50.774367911 +0200
 @@ -19,7 +19,8 @@
  SHORT_VERSION   = 3.6
  SOVERSION	= 36
@@ -10,7 +10,7 @@
  INSTALL_PROGRAM	= ${INSTALL}
  INSTALL_LIBRARY	= ${INSTALL}
  INSTALL_DATA	= ${INSTALL}
-@@ -49,13 +50,13 @@
+@@ -53,13 +54,13 @@
  #
  # usr_dir_install means we want to install with a /usr style layout.
  #
@@ -31,33 +31,20 @@
  
  #
  # A /usr style layout can be forced by setting USR_DIR_INSTALL=yes.
-@@ -461,20 +463,24 @@
- 	    then \
- 		    ln -s Ice-$(VERSION)/slice $(DESTDIR)/$(prefix)/share/slice ; \
- 	    fi ; \
-+	fi
-+
-+	@if test -d $(DESTDIR)$(install_slicedir) ; \
-+	then \
- 	    cd $(top_srcdir)/../slice ; \
- 	    for subdir in * ; \
- 	    do \
- 	        echo "Copying slice/$$subdir to $(DESTDIR)$(install_slicedir)..." ; \
- 	        cp -fpr $$subdir $(DESTDIR)$(install_slicedir) ; \
- 	    done ; \
--	    fi
-+	fi
+@@ -507,12 +508,12 @@
+ 		fi ; \
+ 	fi
  
 -	@if test ! -f $(DESTDIR)$(install_docdir)/ICE_LICENSE$(TEXT_EXTENSION) ; \
 +	@if test ! -f $(DESTDIR)$(install_slicedir)/ICE_LICENSE$(TEXT_EXTENSION) ; \
  	then \
--	    $(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
-+	    $(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
+-		$(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
++		$(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
  	fi
  
 -	@if test ! -f $(DESTDIR)$(install_docdir)/LICENSE$(TEXT_EXTENSION) ; \
 +	@if test ! -f $(DESTDIR)$(install_slicedir)/LICENSE$(TEXT_EXTENSION) ; \
  	then \
--	    $(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
-+	    $(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
+-		$(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
++		$(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
  	fi

@@ -1,5 +1,5 @@
---- cpp/test/IceGrid/deployer/AllTests.cpp.orig	2015-07-04 13:12:57.306420997 +0200
-+++ cpp/test/IceGrid/deployer/AllTests.cpp	2015-07-04 13:13:30.146599997 +0200
+--- cpp/test/IceGrid/deployer/AllTests.cpp.orig	2016-10-05 16:59:08.000000000 +0200
++++ cpp/test/IceGrid/deployer/AllTests.cpp	2016-10-11 23:09:05.053078910 +0200
 @@ -126,21 +126,21 @@
          //
          // Test with empty file.
@@ -48,7 +48,7 @@
          test(it->read(1024, lines) && lines.empty());
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
-         
+ 
 -        it = session->openServerLog("LogServer", testDir + "/log2.txt", 1);
 +        it = session->openServerLog("LogServer", testDir + "/db/log2.txt", 1);
          test(it->read(1024, lines) && lines.size() == 1);
@@ -64,7 +64,7 @@
 @@ -195,37 +195,37 @@
          //
          // Test with log file with one line with EOL on last line.
-         // 
+         //
 -        string path = testDir + "/log3.txt";
 +        string path = testDir + "/db/log3.txt";
          ofstream os(path.c_str());
@@ -84,7 +84,7 @@
          test(it->read(1024, lines) && lines.empty());
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
-         
+ 
 -        it = session->openServerLog("LogServer", testDir + "/log3.txt", 1);
 +        it = session->openServerLog("LogServer", testDir + "/db/log3.txt", 1);
          test(it->read(1024, lines) && lines.size() == 2);
@@ -131,7 +131,7 @@
          test(it->read(1024, lines) && lines.empty());
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
-         
+ 
 -        it = session->openServerLog("LogServer", testDir + "/log4.txt", 1);
 +        it = session->openServerLog("LogServer", testDir + "/db/log4.txt", 1);
          test(it->read(1024, lines) && lines.size() == 2);
@@ -182,7 +182,7 @@
          test(it->read(1024, lines) && lines.size() == 2 && isLongLineEnd(lines[0]) && lines[1].empty());
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
-         
+ 
 -        it = session->openServerLog("LogServer", testDir + "/log1.txt", 2);
 +        it = session->openServerLog("LogServer", testDir + "/db/log1.txt", 2);
          test(!it->read(1024, lines) && lines.size() == 1 && isLongLineStart(lines[0]));

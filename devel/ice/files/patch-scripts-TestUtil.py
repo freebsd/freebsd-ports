@@ -1,8 +1,8 @@
---- scripts/TestUtil.py.orig	2015-06-23 15:30:20.000000000 +0000
-+++ scripts/TestUtil.py	2015-06-27 10:59:56.354249500 +0000
-@@ -120,6 +120,25 @@
- def isSles():
-     return isLinux() and linuxDistribution and linuxDistribution == "SUSE LINUX"
+--- scripts/TestUtil.py.orig	2016-10-05 16:59:08.000000000 +0200
++++ scripts/TestUtil.py	2016-10-11 23:30:25.933993909 +0200
+@@ -145,6 +145,25 @@
+ def iceUseOpenSSL():
+     return any(sys.platform.startswith(p) for p in ["linux", "freebsd"])
  
 +def isFreeBSD():
 +    return sys.platform.startswith("freebsd")
@@ -26,7 +26,7 @@
  def getCppCompiler():
      compiler = ""
      if os.environ.get("CPP_COMPILER", "") != "":
-@@ -324,7 +324,7 @@
+@@ -340,7 +359,7 @@
          print("uname failed:\n" + p.stdout.read().strip())
          sys.exit(1)
      line = p.stdout.readline().decode('UTF-8').strip()
@@ -35,17 +35,17 @@
          x64 = True
      elif line == "armv7l":
          armv7l = True
-@@ -1887,7 +1906,7 @@
-         if lang == "java":
-             addLdPath(os.path.join(getIceDir("cpp"), "bin", "x64" if x64 else ""), env) # Add bin for db53_vc100.dll
+@@ -2013,7 +2032,7 @@
+         addLdPath(getCppLibDir(lang), env)
+     elif isAIX():
          addLdPath(getCppLibDir(lang), env)
 -    elif lang in ["python", "ruby", "php", "js", "objective-c"]:
 +    elif lang in ["cpp", "python", "ruby", "php", "js", "objective-c"]:
+         # C++ binaries use rpath $ORIGIN or similar to find the Ice libraries
          addLdPath(getCppLibDir(lang), env)
  
-     if lang == "java":
-@@ -2233,6 +2252,14 @@
-                 print("%s*** test not supported under Darwin%s" % (prefix, suffix))
+@@ -2366,6 +2385,14 @@
+                 print("%s*** test not supported under Yocto%s" % (prefix, suffix))
                  continue
  
 +            if isFreeBSD() and "nofreebsd" in config:

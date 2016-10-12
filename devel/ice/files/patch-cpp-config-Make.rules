@@ -26,12 +26,3 @@
  	endif
     endif
  endif
-@@ -381,7 +381,7 @@
- .cpp.o:
- 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $<
- 	@mkdir -p .depend
--	@$(CXX) -DMAKEDEPEND -MM $(CPPFLAGS) $< > .depend/$(*F).d
-+	@$(CXX) -DMAKEDEPEND -MM $(CPPFLAGS) $(CXXFLAGS) $< > .depend/$(*F).d
- 
- .c.o:
- 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
