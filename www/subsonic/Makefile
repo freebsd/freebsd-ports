@@ -120,7 +120,7 @@ SUB_LIST+=	CONTAINERFLAGS="resin3_flags"
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} -xf ${WRKDIR}/${PORTNAME}.war -C ${WRKSRC}
+	@${UNZIP_CMD} -d ${WRKSRC} ${WRKDIR}/${PORTNAME}.war
 
 pre-install:
 	@${RM} ${PLIST}
