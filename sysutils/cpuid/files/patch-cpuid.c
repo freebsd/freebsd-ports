@@ -1,41 +1,43 @@
---- cpuid.c.orig	2014-01-24 01:26:27 UTC
+--- cpuid.c.orig	2016-08-15 03:54:53 UTC
 +++ cpuid.c
-@@ -17,6 +17,8 @@
- ** 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
+@@ -23,6 +23,8 @@
+ #define USE_KERNEL_SCHED_SETAFFINITY
+ #endif
  
 +#define CPUID_MAJOR 0
 +
  #define _GNU_SOURCE
  #include <stdio.h>
  #include <sys/types.h>
-@@ -26,11 +28,14 @@
- #include <unistd.h>
- #include <stdlib.h>
+@@ -34,6 +36,8 @@
  #include <string.h>
--#include <linux/major.h>
-+//#include <linux/major.h>
  #include <regex.h>
  #include <getopt.h>
- #include <sys/syscall.h>
- 
 +#include <pthread.h>
 +#include <pthread_np.h>
-+
- typedef int   boolean;
- #define TRUE  1
- #define FALSE 0
-@@ -5877,7 +5882,8 @@ real_setup(unsigned int  cpu,
-             = (1 << cpu % (sizeof(unsigned int)*8));
  
+ #ifdef USE_CPUID_MODULE
+ #include <linux/major.h>
+@@ -6420,11 +6424,16 @@ real_setup(unsigned int  cpu,
           int  status;
--         status = syscall(__NR_sched_setaffinity, 0, sizeof(mask), &mask);
-+         //status = syscall(__NR_sched_setaffinity, 0, sizeof(mask), &mask);
-+         status = pthread_setaffinity_np(0, sizeof(mask), &mask);
+          status = syscall(__NR_sched_setaffinity, 0, sizeof(mask), &mask);
+ #else
+-         cpu_set_t  cpuset;
++         cpuset_t  cpuset;
+          CPU_ZERO(&cpuset);
+          CPU_SET(cpu, &cpuset);
+          int  status;
+-         status = sched_setaffinity(0, sizeof(cpu_set_t), &cpuset);
++#if defined(__FreeBSD__)
++	  status = cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
++	    -1, sizeof(cpuset_t), &cpuset);
++#else
++         status = sched_setaffinity(0, sizeof(cpuset_t), &cpuset);
++#endif
+ #endif
           if (status == -1) {
              if (cpu > 0) {
-                if (errno == EINVAL) return -1;
-@@ -5987,11 +5993,14 @@ static int real_get (int           cpuid
+@@ -6539,11 +6548,14 @@ static int real_get (int           cpuid
            : "a" (reg), 
              "c" (ecx));
     } else {
@@ -53,7 +55,7 @@
        if (result == -1) {
           if (quiet) {
              return FALSE;
-@@ -6432,7 +6441,8 @@ main(int     argc,
+@@ -7050,7 +7062,8 @@ main(int     argc,
     };
  
     boolean  opt_one_cpu  = FALSE;
@@ -63,7 +65,7 @@
     boolean  opt_kernel   = FALSE;
     boolean  opt_raw      = FALSE;
     boolean  opt_debug    = FALSE;
-@@ -6508,7 +6518,8 @@ main(int     argc,
+@@ -7134,7 +7147,8 @@ main(int     argc,
     }
  
     // Default to -i.  So use inst unless -k is specified.
