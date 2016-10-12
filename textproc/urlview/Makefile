@@ -3,6 +3,7 @@
 
 PORTNAME=	urlview
 PORTVERSION=	0.9.20131021
+PORTREVISION=	1
 CATEGORIES=	textproc www
 
 MAINTAINER=	udvzsolt@gmail.com
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/urlview \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		-e 's/url_handler.sh/firefox/' \
+		-e 's/DEFAULT_COMMAND.*url_handler.sh/DEFAULT_COMMAND "firefox/' \
 		${WRKSRC}/*
 
 do-install:
