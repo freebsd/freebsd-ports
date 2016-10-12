@@ -16,7 +16,6 @@ USES=		dos2unix
 USE_GITHUB=	yes
 GH_ACCOUNT=	z3t0
 GH_PROJECT=	Arduino-IRremote
-GH_TAGNAME=	2.1.0
 
 NO_BUILD=	yes
 
