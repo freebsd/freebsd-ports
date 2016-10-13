@@ -3,6 +3,7 @@
 
 PORTNAME=	retroshare
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -34,7 +35,6 @@ DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro
 USE_GITHUB=	yes
 GH_ACCOUNT=	RetroShare
 GH_PROJECT=	RetroShare
-GH_TAGNAME=	53e26983
 
 .include <bsd.port.pre.mk>
 
