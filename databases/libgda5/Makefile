@@ -31,8 +31,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
-		--enable-introspection \
-		--disable-silent-rules
+		--enable-introspection
 
 .include <bsd.port.options.mk>
 
