@@ -6,6 +6,7 @@ PORTVERSION=	2.1.14
 CATEGORIES=	security
 MASTER_SITES=	https://bin.equinox.io/c/4VmDzA7iaHb/
 DISTNAME=	${PORTNAME}-stable-freebsd-${NGROK_ARCH}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jhixson@gmail.com
 COMMENT=	Secure tunnels to localhost
