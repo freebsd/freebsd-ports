@@ -1,6 +1,6 @@
---- Documentation/Makefile.orig	2015-11-05 21:31:55 UTC
+--- Documentation/Makefile.orig	2016-10-03 22:19:09 UTC
 +++ Documentation/Makefile
-@@ -86,11 +86,11 @@ DOC_MAN1 = $(patsubst %.txt,%.1,$(MAN1_T
+@@ -87,11 +87,11 @@ DOC_MAN1 = $(patsubst %.txt,%.1,$(MAN1_T
  DOC_MAN5 = $(patsubst %.txt,%.5,$(MAN5_TXT))
  DOC_MAN7 = $(patsubst %.txt,%.7,$(MAN7_TXT))
  
@@ -15,7 +15,7 @@
  mandir ?= $(prefix)/share/man
  man1dir = $(mandir)/man1
  man5dir = $(mandir)/man5
-@@ -212,7 +212,7 @@ ifndef V
+@@ -214,7 +214,7 @@ ifndef V
  endif
  endif
  
