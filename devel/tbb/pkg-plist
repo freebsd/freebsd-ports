@@ -103,3 +103,4 @@ lib/libtbb.so
 lib/libtbb.so.4
 lib/libtbbmalloc.so
 lib/libtbbmalloc.so.4
+libdata/pkgconfig/tbb.pc
