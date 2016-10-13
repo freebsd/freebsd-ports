@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netif
-PORTVERSION=	1.0
+PORTVERSION=	1.0.20161013
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cython>0:lang/cython
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-netif
-GH_TAGNAME=	4432c12
+GH_TAGNAME=	d663844
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -27,8 +27,8 @@ USE_PYTHON=	autoplist distutils
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100036
-IGNORE=	This module requires at least FreeBSD 11
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
+IGNORE=        This module requires at least FreeBSD 10.3
 .endif
 
 .include <bsd.port.post.mk>
