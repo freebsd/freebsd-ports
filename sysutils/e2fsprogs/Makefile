@@ -50,10 +50,7 @@ post-extract:
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-# get more details into tinderbox logs
-.if defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	V=1
-.endif
 
 .include <bsd.port.options.mk>
 
