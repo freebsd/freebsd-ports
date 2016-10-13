@@ -30,10 +30,6 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS=	--verbose
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|$$[{]LIBDIRNAME[}]/pkgconfig|libdata/pkgconfig| ; \
