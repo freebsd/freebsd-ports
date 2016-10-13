@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libxmp
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/xmp/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module rendering library for xmp
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.LIB
 
 USES=		gmake
 GNU_CONFIGURE=	yes
