@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab
 PORTVERSION=	8.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -121,7 +121,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sass-rails5>=5.0.0:textproc/rubygem-sass-rails5 \
 	rubygem-coffee-rails4>=4.1.0:devel/rubygem-coffee-rails4 \
 	rubygem-uglifier>=2.7.2:www/rubygem-uglifier \
-	rubygem-turbolinks>=2.5.0:www/rubygem-turbolinks \
+	rubygem-turbolinks-classic>=2.5.0:www/rubygem-turbolinks-classic \
 	rubygem-jquery-turbolinks>=2.1.0:www/rubygem-jquery-turbolinks \
 	rubygem-addressable>=2.3.8:www/rubygem-addressable \
 	rubygem-bootstrap-sass>=3.3.0:www/rubygem-bootstrap-sass \
