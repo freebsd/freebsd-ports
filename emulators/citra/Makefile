@@ -36,6 +36,8 @@ USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
 FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
+CXXFLAGS+=	${CXXFLAGS_${OPSYS}_${OSREL}}
+CXXFLAGS_FreeBSD_10.1=	-Dtuple_element_t=tuple_element # libcxx r202673 (c++14)
 LDFLAGS+=	-Wl,--as-needed # GL
 
 OPTIONS_MULTI=	GUI
