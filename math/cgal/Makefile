@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cgal
-PORTVERSION=	4.8.1
+PORTVERSION=	4.9
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.8.1/
+MASTER_SITES=	https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.9/
 DISTNAME=	CGAL-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -22,18 +22,9 @@ BROKEN_sparc64:	Does not build: fails to compile all_files.cpp
 
 USE_LDCONFIG=		yes
 USES=			cmake shebangfix tar:xz
-USE_QT5=		buildtools_build core qmake_build widgets
+USE_QT5=		buildtools_build core gui opengl qmake_build widgets
 SHEBANG_FILES=		scripts/cgal_create_CMakeLists \
 			scripts/cgal_create_cmake_script
-HAS_CONFIGURE=		yes
-
-OPTIONS_DEFINE=		GUI
-OPTIONS_DEFAULT=	GUI
-OPTIONS_SUB=		yes
-
-GUI_DESC=		Build libCGAL_ImageIO and libCGAL_Qt4
-GUI_USE=		GL=glu,gl QT5=gui,opengl
-GUI_CMAKE_OFF=		-DWITH_CGAL_Qt4=OFF -DWITH_CGAL_ImageIO=OFF
 
 .include <bsd.port.options.mk>
 
