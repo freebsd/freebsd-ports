@@ -383,6 +383,7 @@
     SUBDIR += ncrypt
     SUBDIR += netpgp
     SUBDIR += nettle
+    SUBDIR += ngrok
     SUBDIR += nikto
     SUBDIR += nist-kat
     SUBDIR += nmap
