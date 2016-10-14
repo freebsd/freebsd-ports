@@ -3,7 +3,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net gnome
 MASTER_SITES=	SF
 
@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${LN} -sf tsclient.png \
+	@${LN} -sf tsclient/tsclient.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/tsclient.png
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
