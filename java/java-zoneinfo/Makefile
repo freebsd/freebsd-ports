@@ -11,6 +11,8 @@ DISTNAME=	javazi-${DISTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Updated Java timezone definitions
 
+LICENSE=	PD
+
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
