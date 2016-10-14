@@ -284,6 +284,7 @@
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += ratfor
+    SUBDIR += referenceassemblies-pcl
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
     SUBDIR += rexx-regutil
