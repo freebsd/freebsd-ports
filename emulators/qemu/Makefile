@@ -14,12 +14,14 @@ COMMENT?=	QEMU CPU Emulator
 LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
+USES?=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
+MAKE_ENV+=	BSD_MAKE="${MAKE}"
+.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
 USE_XORG=	pixman
 USE_GNOME+=	cairo glib20
-MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
+.endif
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
@@ -68,18 +70,18 @@ DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
-PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
+PORTDOCS?=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
-LIB_DEPENDS+=	libnettle.so:security/nettle \
+LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
