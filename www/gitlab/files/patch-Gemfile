@@ -8,7 +8,7 @@
  gem 'rails-deprecated_sanitizer', '~> 1.0.3'
  
  # Responders respond_to and respond_with
-@@ -8,13 +8,12 @@ gem 'responders', '~> 2.0'
+@@ -8,14 +8,13 @@ gem 'responders', '~> 2.0'
  
  # Specify a sprockets version due to increased performance
  # See https://gitlab.com/gitlab-org/gitlab-ce/issues/6069
@@ -21,9 +21,11 @@
  
  # Supported DBs
 -gem "mysql2", '~> 0.3.16', group: :mysql
- gem "pg", '~> 0.18.2', group: :postgres
+-gem "pg", '~> 0.18.2', group: :postgres
++gem "pg", '>= 0.18.2', group: :postgres
  
  # Authentication libraries
+ gem 'devise',                 '~> 4.0'
 @@ -28,13 +27,12 @@ gem 'omniauth-cas3',          '~> 1.1.2'
  gem 'omniauth-facebook',      '~> 3.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
