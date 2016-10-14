@@ -8677,3 +8677,4 @@ audio/squeezeboxserver-sqlplaylist|audio/logitechmediaserver-sqlplaylist|2016-10
 audio/squeezeboxserver-superdatetime|audio/logitechmediaserver-superdatetime|2016-10-05|Squeezebox Server renamed to Logitech Media Server
 audio/squeezeboxserver-trackstat|audio/logitechmediaserver-trackstat|2016-10-05|Squeezebox Server renamed to Logitech Media Server
 net/py-uritemplate.py|net/py-uritemplate|2016-10-12|Upstream has consolidated on net/py-uritemplate
+misc/fortune_strfile||2016-10-14|Has expired: unmaintained and duplicated from base
