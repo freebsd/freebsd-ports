@@ -6,4 +6,4 @@ that doesn't share libraries with other virtualenv environments
 
 Usage: virtualenv YOUR_NEW_PYTHON_ENV
 
-WWW: http://www.virtualenv.org/
+WWW: https://virtualenv.pypa.io
