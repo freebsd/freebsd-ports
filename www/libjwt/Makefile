@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.3.1
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -18,10 +18,16 @@ LIB_DEPENDS=	libcheck.so:devel/libcheck \
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
 
-USES=		libtool pkgconfig pathfix ssl
+USES=		autoreconf libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I/usr/include" \
+		OPENSSL_LIBS="-lcrypto -lssl"
+
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/libjwt/Makefile.am
 
 .include <bsd.port.mk>
