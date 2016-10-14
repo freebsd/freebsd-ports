@@ -123,6 +123,7 @@
     SUBDIR += qemu-launcher
     SUBDIR += qemu-sbruno
     SUBDIR += qemu-user-static
+    SUBDIR += qemu-utils
     SUBDIR += qmc2
     SUBDIR += qtemu
     SUBDIR += quasi88
