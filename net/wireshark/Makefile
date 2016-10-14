@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.0.5
+PORTVERSION=	2.2.0
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -27,7 +27,7 @@ DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
-USES=		alias cpe gmake libtool perl5 pkgconfig python:build ssl tar:bzip2
+USES=		alias cpe gmake libtool pathfix perl5 pkgconfig python:build ssl tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=	--program-transform-name="" \
@@ -40,7 +40,7 @@ LIBS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype androiddump
+    reordercap captype androiddump randpktdump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
@@ -49,7 +49,8 @@ CONFIGURE_ARGS+=	--enable-$x=no
 OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA ADNS CARES
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
-			${x:tu}_MAN=""
+			${x:tu}_MAN="" \
+			${x:tu}_LIB=""
 .endif
 .endfor
 
