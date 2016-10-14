@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=IntelliJ IDEA Ultimate Edition
+GenericName=IntelliJ IDEA Ultimate Edition
+Comment=IntelliJ Integrated Development Environment
+Icon=%%IDEA_HOME%%/idea.png
+Exec=%%IDEA_HOME%%/bin/idea.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;
