@@ -1,0 +1,18 @@
+IntelliJ IDEA is an advanced IDE developed by JetBrains and focused on
+developer productivity.  The community edition features:
+* An intelligent code editor that understands Java code; provides
+  refactorings, code inspections and intentions, and allows for
+  fast code navigation.
+* Integration with such tools as JUnit and TestNG, Ant and Maven,
+  and popular version control systems including: CVS, Subversion
+  and git.
+* XML-Java interoperability and comprehensive Groovy programming
+  language support.
+* The Swing UI designer complements the suite of tools for
+  developing Java desktop applications.
+
+The difference between intellij and intellij-ultimate can be found at
+
+http://www.jetbrains.com/idea/features/editions_comparison_matrix.html
+
+WWW: http://www.jetbrains.com/idea/
