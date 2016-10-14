@@ -96,6 +96,7 @@
     SUBDIR += arcanist
     SUBDIR += arduino
     SUBDIR += arduino-builder
+    SUBDIR += arduino-core
     SUBDIR += arduino-ctags
     SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
