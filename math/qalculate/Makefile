@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcln.so:math/cln \
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		wget:ftp/wget
 
-USES=		autoreconf gettext gmake localbase
+USES=		autoreconf gettext gmake libtool:build localbase
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
 GNU_CONFIGURE=	yes
 DATADIR=	share/${GH_PROJECT}
