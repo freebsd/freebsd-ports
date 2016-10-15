@@ -107,6 +107,7 @@
     SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
+    SUBDIR += ceres-solver
     SUBDIR += cgal
     SUBDIR += chaco
     SUBDIR += chryzodus
