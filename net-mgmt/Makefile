@@ -271,6 +271,7 @@
     SUBDIR += pnp-icinga
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
+    SUBDIR += prometheus
     SUBDIR += py-flowtools
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
