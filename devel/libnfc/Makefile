@@ -3,13 +3,15 @@
 
 PORTNAME=	libnfc
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.bintray.com/nfc-tools/sources/ \
 		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
+
+LICENSE=	LGPL3+
 
 #OPTIONS_DEFINE=	ACR122_PCSC ACR122_USB ACR122S ARYGON PN532_I2C PN532_SPI PN532_UART PN53X_USB
 #OPTIONS_DEFAULT=ACR122_USB ACR122S ARYGON PN532_I2C PN532_SPI PN532_UART PN53X_USB
@@ -26,7 +28,7 @@ PN53X_USB_DESC=	PN53X USB driver
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:bzip2 libtool
+USES=		gmake libtool pathfix pkgconfig readline tar:bzip2
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 
 # Restrict to stable (even) versions, indicated by the second component.
