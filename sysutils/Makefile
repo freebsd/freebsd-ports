@@ -648,6 +648,7 @@
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
+    SUBDIR += node_exporter
     SUBDIR += nomad
     SUBDIR += npadmin
     SUBDIR += nrg2iso
