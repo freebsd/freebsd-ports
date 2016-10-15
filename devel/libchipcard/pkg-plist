@@ -5,7 +5,7 @@ bin/geldkarte
 bin/kvkcard
 bin/memcard
 etc/chipcard/chipcardc.conf.default
-etc/chipcard/chipcardc.conf.example
+@sample etc/chipcard/chipcardc.conf.example etc/chipcard/chipcardc.conf
 include/libchipcard5/chipcard/card.h
 include/libchipcard5/chipcard/card_imp.h
 include/libchipcard5/chipcard/card_l.h
@@ -38,10 +38,13 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.xml
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.a
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.so
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.xml
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/zkacard.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/zkacard.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/zkacard.xml
 lib/libchipcard.a
 lib/libchipcard.so
 lib/libchipcard.so.6
-lib/libchipcard.so.6.0.2
+lib/libchipcard.so.6.0.4
 share/aclocal/chipcard.m4
 share/chipcard/apps/README
 share/chipcard/apps/ddv.xml
