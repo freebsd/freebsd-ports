@@ -4,8 +4,8 @@ bin/ofxdump
 include/libofx/libofx.h
 lib/libofx.a
 lib/libofx.so
-lib/libofx.so.6
-lib/libofx.so.6.0.0
+lib/libofx.so.7
+lib/libofx.so.7.0.0
 libdata/pkgconfig/libofx.pc
 man/man1/ofxconnect.1.gz
 man/man1/ofxdump.1.gz
