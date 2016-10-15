@@ -2,6 +2,7 @@
 
 PORTNAME=	logitechmediaserver
 PORTVERSION=	7.9.0.g2016.09.30
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	mark@tranquillussoftware.co.uk
