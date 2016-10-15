@@ -108,7 +108,6 @@
     SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elmo
-    SUBDIR += elmo-devel
     SUBDIR += emailrelay
     SUBDIR += emil
     SUBDIR += enma
