@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libchipcard
-PORTVERSION=	5.0.2
-PORTREVISION=	4
+PORTVERSION=	5.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=26&file=01&dummy=/
+MASTER_SITES=	http://www2.aquamaniac.de/sites/download/download.php?package=02&release=200&file=01&dummy=/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for easy access to chipcards
@@ -15,8 +14,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libgwenhywfar.so:devel/gwenhywfar
 
-USES=		gmake libtool
-USE_OPENSSL=	yes
+USES=		gmake libtool ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	aq_distrib_name="FreeBSD"
@@ -53,7 +51,7 @@ post-build-DOXYGEN-on:
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
-		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/apidoc
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidoc
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
 
