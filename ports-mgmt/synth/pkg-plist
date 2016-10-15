@@ -2,6 +2,11 @@ bin/synth
 etc/bash_completion.d/_synth.bash
 libexec/synthexec
 man/man1/synth.1.gz
+%%DATADIR%%/favicon.png
+%%DATADIR%%/progress.css
+%%DATADIR%%/progress.html
+%%DATADIR%%/progress.js
+%%DATADIR%%/synth.png
 share/zsh/site-functions/_synth
 @dir /var/log/synth
 @dir /var/synth
