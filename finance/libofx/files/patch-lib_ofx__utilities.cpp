@@ -1,6 +1,6 @@
---- ./lib/ofx_utilities.cpp.orig	2013-04-16 15:50:51.000000000 -0400
-+++ ./lib/ofx_utilities.cpp	2014-06-22 19:44:48.000000000 -0400
-@@ -115,9 +115,14 @@
+--- lib/ofx_utilities.cpp.orig	2013-04-16 19:50:51 UTC
++++ lib/ofx_utilities.cpp
+@@ -115,9 +115,14 @@ time_t ofxdate_to_time_t(const string of
    char time_zone_specified = false;
    string ofxdate_whole;
    time_t temptime;

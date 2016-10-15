@@ -1,6 +1,6 @@
---- ./lib/Makefile.in.orig	2014-06-22 19:45:04.000000000 -0400
-+++ ./lib/Makefile.in	2014-06-22 19:46:20.000000000 -0400
-@@ -299,7 +299,7 @@
+--- lib/Makefile.in.orig	2016-10-15 10:42:55 UTC
++++ lib/Makefile.in
+@@ -400,7 +400,7 @@ AM_CPPFLAGS = \
  
  
  #libofx_la_LIBADD = @LIBOBJS@ ${OPENSPLIBS} -lstdc++
