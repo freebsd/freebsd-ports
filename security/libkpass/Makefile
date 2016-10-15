@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libkpass
-PORTVERSION=	5
-PORTREVISION=	1
+PORTVERSION=	6
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Library for a reading/writing KeePass 1.x DB
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnettle.so:security/nettle
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	bldewolf
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
