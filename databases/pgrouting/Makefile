@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgrouting
-PORTVERSION=	2.2.4
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	databases geography
 
