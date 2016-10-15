@@ -14,8 +14,8 @@ include/libqalculate/qalculate.h
 include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.so
-lib/libqalculate.so.5
-lib/libqalculate.so.5.0.0
+lib/libqalculate.so.6
+lib/libqalculate.so.6.0.0
 libdata/pkgconfig/libqalculate.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libqalculate.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libqalculate.mo
