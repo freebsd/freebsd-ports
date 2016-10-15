@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.14.0
-PORTREVISION?=	1
+PORTVERSION=	4.15.3
+PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=01&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=201&file=01&dummy=/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -13,15 +13,15 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgnutls.so:security/gnutls
+		libgnutls.so:security/gnutls \
+		libgpg-error.so:security/libgpg-error
 
-USES=		gettext gmake iconv libtool pathfix pkgconfig
-USE_OPENSSL=	yes
+USES=		gettext gmake iconv libtool pathfix pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
 		--with-guis="${SLAVEPORT}"
-CPPFLAGS+=	-DGCRYPT_NO_DEPRECATED -I${LOCALBASE}/include
+CPPFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -54,11 +54,13 @@ CONFIGURE_ARGS+=--with-fox-includes=${LOCALBASE}/include/fox-1.6 \
 .  endif
 
 .  if ${SLAVEPORT}=="gtk2"
-USE_GNOME+=	gtk20
+LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+USE_GNOME+=	cairo gdkpixbuf2 gtk20
 .  endif
 
 .  if ${SLAVEPORT}=="qt4"
-USE_QT4=	gui moc_build uic_build
+USE_QT4=	corelib gui moc_build uic_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 		--with-qt4-libs=${QT_LIBDIR} \
@@ -76,18 +78,14 @@ post-patch:
 			-e '/^SUBDIRS/s|cpp ||g'
 .endif
 
-post-build:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-build-DOXYGEN-on:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} srcdoc
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidoc
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
