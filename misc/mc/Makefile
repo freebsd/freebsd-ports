@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.17
+PORTVERSION=	4.8.18
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
@@ -78,7 +78,7 @@ DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	FAQ HACKING MAINTAINERS *.txt
 
 post-patch:
-	${REINPLACE_CMD} -e 's|missing-parameter-type|unused-variable|; \
+	@${REINPLACE_CMD} -e 's|missing-parameter-type|unused-variable|; \
 		s|but-set-variable|variable|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|SUBDIRS = intl|SUBDIRS =|' ${WRKSRC}/Makefile.in
