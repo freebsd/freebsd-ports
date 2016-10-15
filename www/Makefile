@@ -1736,6 +1736,7 @@
     SUBDIR += py-praw
     SUBDIR += py-prewikka
     SUBDIR += py-puppetboard
+    SUBDIR += py-puppetboard02
     SUBDIR += py-py-restclient
     SUBDIR += py-pySmartDL
     SUBDIR += py-pyjwt
