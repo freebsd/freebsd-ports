@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -27,13 +27,16 @@ DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
-USES=		alias cpe gmake libtool pathfix perl5 pkgconfig python:build ssl tar:bzip2
+USES=		alias cpe gettext-runtime gmake libtool pathfix perl5 \
+		pkgconfig python:build ssl tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
 
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
@@ -75,9 +78,9 @@ KRB_HEIMDAL_DESC=	Kerberos support via security/heimdal
 KRB_MIT_DESC=		Kerberos support via security/krb5
 KRB_NONE_DESC=		Disable Kerberos support
 
-GTK2_USE=	GNOME=gtk20
-GTK3_USE=	GNOME=gtk30
-QT5_USE=	QT5=core,gui,widgets,printsupport,buildtools_build
+GTK2_USE=	GNOME=gtk20,cairo
+GTK3_USE=	GNOME=gtk30,cairo
+QT5_USE=	qt5=core,gui,widgets,printsupport,buildtools_build,linguisttools_build
 
 LUA_USES=		lua:5[1-2]
 KRB_BASE_USES=		gssapi
@@ -85,6 +88,7 @@ KRB_HEIMDAL_USES=	gssapi:heimdal
 KRB_MIT_USES=		gssapi:mit
 
 RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+RTP_CPPFLAGS=		-I${LOCALBASE}/include
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 ADNS_LIB_DEPENDS=	libadns.so:dns/adns
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
@@ -111,6 +115,7 @@ DECRYPT_CONFIGURE_WITH=	gnutls gcrypt
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 
+QT5_CONFIGURE_ENV=	PATH="${PATH}:${QT_BINDIR}"
 QT5_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
 QT5_VARS=		PKGNAMESUFFIX=-qt5
 QT5_PLIST_SUB=		GUI_GTK="@comment "
@@ -146,6 +151,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g ; \
 		s|-DQT_GUI_LIB|-DQT_GUI_LIB $$CPPFLAGS| ' \
 		${WRKSRC}/configure
+	# XXX: Should be optional as to whether or not this flag works at runtime
+	@${REINPLACE_CMD} -e 's|-msse4.2||g' \
+	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/applications|${DESKTOPDIR}|g ; \
 		s|/usr/share|${LOCALBASE}/share|g ; \
 		s|{mime/packages,applications}|mime/packages| ; \
