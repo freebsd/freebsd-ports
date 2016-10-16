@@ -3,11 +3,11 @@
 
 PORTNAME=	mysql-connector-c++
 PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL database connector for C++
 
 LICENSE=	GPLv2 # only
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake:outsource mysql
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}" -DCMAKE_ENABLE_C++11=ON
+CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
