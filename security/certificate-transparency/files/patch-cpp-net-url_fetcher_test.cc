@@ -1,4 +1,4 @@
---- cpp/net/url_fetcher_test.cc.orig	2016-02-02 11:35:23 UTC
+--- cpp/net/url_fetcher_test.cc.orig	2016-10-14 17:11:57 UTC
 +++ cpp/net/url_fetcher_test.cc
 @@ -7,6 +7,9 @@
  #include <fcntl.h>

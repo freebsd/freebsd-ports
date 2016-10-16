@@ -1,4 +1,4 @@
---- cpp/util/bench_etcd.cc.orig	2016-02-02 11:35:23 UTC
+--- cpp/util/bench_etcd.cc.orig	2016-10-14 17:11:57 UTC
 +++ cpp/util/bench_etcd.cc
 @@ -105,7 +105,7 @@ void test_etcd(int thread_num) {
  

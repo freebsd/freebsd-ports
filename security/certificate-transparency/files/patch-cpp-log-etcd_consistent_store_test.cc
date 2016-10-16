@@ -1,4 +1,4 @@
---- cpp/log/etcd_consistent_store_test.cc.orig	2016-02-02 11:35:23 UTC
+--- cpp/log/etcd_consistent_store_test.cc.orig	2016-10-14 17:11:57 UTC
 +++ cpp/log/etcd_consistent_store_test.cc
 @@ -1,6 +1,9 @@
  #include "log/etcd_consistent_store.h"
