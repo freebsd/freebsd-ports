@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
 
 LICENSE=	ZSH
