@@ -1,4 +1,5 @@
 bin/hexalate
+share/appdata/hexalate.appdata.xml
 share/applications/hexalate.desktop
 %%DATADIR%%/translations/hexalate_ca.qm
 %%DATADIR%%/translations/hexalate_cs.qm
@@ -9,6 +10,8 @@ share/applications/hexalate.desktop
 %%DATADIR%%/translations/hexalate_et.qm
 %%DATADIR%%/translations/hexalate_fr.qm
 %%DATADIR%%/translations/hexalate_hu.qm
+%%DATADIR%%/translations/hexalate_it.qm
+%%DATADIR%%/translations/hexalate_lt.qm
 %%DATADIR%%/translations/hexalate_ms.qm
 %%DATADIR%%/translations/hexalate_nl.qm
 %%DATADIR%%/translations/hexalate_pl.qm
@@ -16,6 +19,7 @@ share/applications/hexalate.desktop
 %%DATADIR%%/translations/hexalate_ro.qm
 %%DATADIR%%/translations/hexalate_ru.qm
 %%DATADIR%%/translations/hexalate_tr.qm
+share/icons/hicolor/1024x1024/apps/hexalate.png
 share/icons/hicolor/128x128/apps/hexalate.png
 share/icons/hicolor/16x16/apps/hexalate.png
 share/icons/hicolor/22x22/apps/hexalate.png
@@ -23,5 +27,7 @@ share/icons/hicolor/24x24/apps/hexalate.png
 share/icons/hicolor/256x256/apps/hexalate.png
 share/icons/hicolor/32x32/apps/hexalate.png
 share/icons/hicolor/48x48/apps/hexalate.png
+share/icons/hicolor/512x512/apps/hexalate.png
 share/icons/hicolor/64x64/apps/hexalate.png
+share/man/man6/hexalate.6
 share/pixmaps/hexalate.xpm
