@@ -1,7 +1,5 @@
 %%PGSQL94%%bin/pglogical_dump
 bin/pglogical_create_subscriber
-include/pglogical_output/compat.h
-include/pglogical_output/hooks.h
 lib/postgresql/pglogical.so
 lib/postgresql/pglogical_output.so
 share/postgresql/extension/pglogical--1.0.0--1.0.1.sql
@@ -10,7 +8,9 @@ share/postgresql/extension/pglogical--1.0.1--1.1.0.sql
 share/postgresql/extension/pglogical--1.1.0--1.1.1.sql
 share/postgresql/extension/pglogical--1.1.1--1.1.2.sql
 share/postgresql/extension/pglogical--1.1.2--1.2.0.sql
+share/postgresql/extension/pglogical--1.2.0--1.2.1.sql
 share/postgresql/extension/pglogical--1.2.0.sql
+share/postgresql/extension/pglogical--1.2.1.sql
 share/postgresql/extension/pglogical.control
 share/postgresql/extension/pglogical_origin--1.0.0.sql
 share/postgresql/extension/pglogical_origin.control
