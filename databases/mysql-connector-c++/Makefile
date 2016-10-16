@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql-connector-c++
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
 
@@ -17,12 +17,18 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake:outsource mysql
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}"
+CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}" -DCMAKE_ENABLE_C++11=ON
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
+CMAKE_ARGS+=-DCMAKE_ENABLE_C++11=ON
+.endif
 
 post-install:
 	@${RM} -f ${STAGEDIR}${DOCSDIR}/INSTALL \
@@ -60,4 +66,4 @@ regression-test: build
 	test/unit/classes/statement )
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
