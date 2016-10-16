@@ -14,15 +14,11 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libgwenhywfar.so:devel/gwenhywfar
 
-USES=		gmake libtool ssl
+USES=		gmake libtool localbase pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	aq_distrib_name="FreeBSD"
-CONFIGURE_ARGS+=--enable-release="yes" \
-		--with-pcsc-includes=${LOCALBASE}/include \
-		--with-pcsc-libs=${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=--enable-release="yes"
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
