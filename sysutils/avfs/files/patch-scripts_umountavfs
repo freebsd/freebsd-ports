@@ -1,6 +1,6 @@
---- scripts/umountavfs.orig	2015-02-07 16:14:17.372402564 +0600
-+++ scripts/umountavfs	2015-02-07 16:15:29.270400346 +0600
-@@ -14,11 +14,11 @@
+--- scripts/umountavfs.orig	2016-09-16 18:43:19 UTC
++++ scripts/umountavfs
+@@ -14,11 +14,11 @@ else
      MntDir="${HOME}/.avfs"
  fi
  
