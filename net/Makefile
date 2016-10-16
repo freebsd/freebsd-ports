@@ -607,6 +607,7 @@
     SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Flow
     SUBDIR += p5-Net-Frame
+    SUBDIR += p5-Net-Frame-Device
     SUBDIR += p5-Net-Frame-Dump
     SUBDIR += p5-Net-Frame-Layer-ICMPv6
     SUBDIR += p5-Net-Frame-Layer-IPv6
