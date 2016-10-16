@@ -1,9 +1,5 @@
-For LyX to work you need to install some kind of TeX distribution.
-
-  - The print/teTeX port in the ports tree.
-  - The print/texlive-* ports in the ports tree.
-
-Either one should work fine.
+For LyX to work you need to install some kind of TeX distribution. See the
+print/texlive-* ports in the ports tree.
 
 ***
 
