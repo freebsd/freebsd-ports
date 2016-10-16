@@ -12,8 +12,6 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	datastax
 GH_PROJECT=	cpp-driver
