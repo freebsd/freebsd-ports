@@ -245,7 +245,6 @@
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += levmar
-    SUBDIR += libR
     SUBDIR += libRmath
     SUBDIR += libflame
     SUBDIR += libjbigi
