@@ -1,14 +1,6 @@
---- Makefile.am.orig	2016-02-02 11:35:23 UTC
+--- Makefile.am.orig	2016-10-14 17:11:57 UTC
 +++ Makefile.am
-@@ -3,7 +3,6 @@ ACLOCAL_AMFLAGS = -Im4
- AM_CPPFLAGS = \
- 	-I$(GMOCK_DIR)/include \
- 	-I$(GTEST_DIR)/include \
--	-Ithird_party/objecthash \
- 	$(evhtp_CFLAGS) \
- 	$(icu_CFLAGS) \
- 	$(json_c_CFLAGS)
-@@ -12,8 +11,6 @@ AM_CXXFLAGS = \
+@@ -11,8 +11,6 @@ AM_CXXFLAGS = \
  	-fno-exceptions
  
  BUILT_SOURCES = \
@@ -17,7 +9,7 @@
  	cpp/monitoring/prometheus/metrics.pb.cc \
  	cpp/monitoring/prometheus/metrics.pb.h \
  	proto/ct.pb.cc \
-@@ -124,9 +121,6 @@ endif
+@@ -131,9 +129,6 @@ endif
  cpp/gtest-all.cc: $(GTEST_DIR)/src/gtest-all.cc
  	$(AM_V_at)cp $^ $@
  
@@ -27,7 +19,7 @@
  test/testdata/urlfetcher_test_certs/localhost-key.pem: test/create_url_fetcher_test_certs.sh
  	$(AM_V_GEN)test/create_url_fetcher_test_certs.sh
  
-@@ -215,8 +209,6 @@ cpp_libtest_a_CPPFLAGS = \
+@@ -226,8 +221,6 @@ cpp_libtest_a_CPPFLAGS = \
  	-I$(GTEST_DIR) \
  	$(AM_CPPFLAGS)
  cpp_libtest_a_SOURCES = \
@@ -36,13 +28,3 @@
  	cpp/util/testing.cc
  
  cpp_server_ct_mirror_LDADD = \
-@@ -297,8 +289,7 @@ cpp_server_xjson_server_SOURCES = \
- 	cpp/server/server_helper.cc \
- 	cpp/server/xjson-server.cc \
- 	cpp/server/x_json_handler.cc \
--	cpp/util/json_wrapper.cc \
--	third_party/objecthash/objecthash.cc
-+	cpp/util/json_wrapper.cc
- 
- cpp_tools_ct_clustertool_LDADD = \
- 	cpp/libcore.a \
