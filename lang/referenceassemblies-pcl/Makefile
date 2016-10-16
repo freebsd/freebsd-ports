@@ -37,7 +37,12 @@ do-extract:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${NETPORTABLEDIR}
+# XXX: tar(1)'s 'g' flag is broken on FreeBSD<11.
+#      Repeat the pattern as a workaround.
 	tar -xC ${STAGEDIR}${PREFIX}/${NETPORTABLEDIR} -f ${WRKDIR}/PortableReferenceAssemblies.zip \
+		-s'|\\|/|g' \
+		-s'|\\|/|g' \
+		-s'|\\|/|g' \
 		-s'|\\|/|g'
 	tar -xC ${STAGEDIR}${PREFIX}/${NETPORTABLEDIR} -f ${DISTDIR}/referenceassemblies-pcl_2014.04.14.orig.tar.bz2 \
 		-s'|${PRADIR}||g' \
