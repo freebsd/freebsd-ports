@@ -1,6 +1,17 @@
---- configure.orig	2013-06-12 07:13:59.000000000 +0000
+--- configure.orig	2013-06-12 07:13:59 UTC
 +++ configure
-@@ -304,6 +304,14 @@ case $host in
+@@ -127,6 +127,10 @@ searchbin()
+ {
+     if test "x$1" = "x"; then return 0; fi
+     echo_n "binary $1: "
++    if test -x "$1"; then
++        echo "found"
++        return 1
++    fi
+     IFS=':'
+     for i in $PATH
+     do
+@@ -304,6 +308,14 @@ case $host in
              arch='i686'
          fi
  	;;
@@ -15,7 +26,7 @@
      i386-*darwin* | x86_64-*darwin*)
          ccdef="-DZ_UNDERSCORE_PREFIX -DZ_MACOS $ccdef"
          if test "x$wordsize" = "x64"; then
-@@ -401,7 +409,7 @@ CFLAGS=$ccinc $ccdef $ccopt
+@@ -401,7 +413,7 @@ CFLAGS=$ccinc $ccdef $ccopt
  ASFLAGS=$ccdef $asopt
  LIBS=$cclib
  ARCH=$arch
