@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	MP4 muxer and other tools
 
-LICENSE=	MIT
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
