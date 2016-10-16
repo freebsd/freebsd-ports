@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.14.1
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -21,7 +21,7 @@ USE_RC_SUBR=	nghttpx
 USE_GITHUB=	yes
 
 CONFIGURE_ARGS=	--disable-python-bindings \
-		--disable-examples 
+		--disable-examples
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
