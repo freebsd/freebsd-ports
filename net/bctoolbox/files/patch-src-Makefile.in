@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2016-08-11 12:03:19 UTC
++++ src/Makefile.in
+@@ -378,7 +378,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-lib_LTLIBRARIES = libbctoolbox.la libbctoolbox-tester.la
++lib_LTLIBRARIES = libbctoolbox.la
+ libbctoolbox_la_SOURCES = vfs.c utils/port.c logging/logging.c \
+ 	containers/list.c containers/map.cc $(am__append_1) \
+ 	$(am__append_2) $(am__append_3)

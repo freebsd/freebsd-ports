@@ -2,7 +2,7 @@
 
 PORTNAME=	libosmo-abis
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmo-abis/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/

@@ -1,0 +1,10 @@
+--- gtk/Makefile.in.orig	2016-08-30 14:20:12 UTC
++++ gtk/Makefile.in
+@@ -543,6 +543,7 @@ EXTRA_DIST = \
+ @BUILD_GTK_UI_TRUE@	$(am__append_4)
+ @BUILD_GTK_UI_TRUE@linphone_LDADD =  \
+ @BUILD_GTK_UI_TRUE@	$(top_builddir)/coreapi/liblinphone.la \
++@BUILD_GTK_UI_TRUE@	$(MEDIASTREAMER_LIBS) -lbctoolbox \
+ @BUILD_GTK_UI_TRUE@	$(LIBGTK_LIBS) $(NOTIFY1_LIBS) \
+ @BUILD_GTK_UI_TRUE@	$(NOTIFY4_LIBS) $(LIBGTKMAC_LIBS) \
+ @BUILD_GTK_UI_TRUE@	$(INTLLIBS) $(SQLITE3_LIBS) \

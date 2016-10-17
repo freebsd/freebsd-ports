@@ -49,6 +49,7 @@
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
     SUBDIR += bugs
+    SUBDIR += bzrtp
     SUBDIR += ca_root_nss
     SUBDIR += calife
     SUBDIR += cardpeek
@@ -297,7 +298,6 @@
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
-    SUBDIR += libbzrtp
     SUBDIR += libcryptui
     SUBDIR += libecc
     SUBDIR += libfprint
