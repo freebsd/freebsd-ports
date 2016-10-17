@@ -3,6 +3,7 @@
 
 PORTNAME=	spice-gtk
 PORTVERSION=	0.32
+PORTREVISION?=	0
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -13,7 +14,8 @@ LICENSE=	GPLv2
 
 USE_XORG=	pixman
 USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
-USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix python ssl localbase
+USES=		autoreconf cpe gmake jpeg libtool pkgconfig tar:bzip2 \
+		python ssl localbase:ldflags
 CPE_VENDOR=	redhat
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
@@ -27,7 +29,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--with-python
-PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
 .endif
 
 SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
@@ -37,6 +38,9 @@ CONFIGURE_ENV+=	SSL_CFLAGS="${SPICE_SSL_CFLAGS}" SSL_LIBS="${SPICE_SSL_LIBS}" \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+# we can't use pathfix with USES=autoreconf
+MAKE_ARGS=	pkgconfigdir="$(PREFIX)/libdata/pkgconfig"
 
 INSTALL_TARGET=	install-strip
 
