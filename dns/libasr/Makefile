@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Asynchronous DNS resolver library
 
 LICENSE=	ISCL BSD4CLAUSE BSD3CLAUSE BSD2CLAUSE
