@@ -19,6 +19,9 @@
 # - tcp6:[ipv6_addr]:port (for ipv6)
 # fcgiwrap_flags=
 # Use fcgiwrap_user to run fcgiwrap as user
+# Use fcgiwrap_socket_mode to change the mode of the socket
+# Use fcgiwrap_socket_owner to change the owner of the socket
+# Use fcgiwrap_socket_group to change the group of the socket
 
 # fcgiwrap rc.d script supports multiple profiles (a-la rc.d/nginx)
 # When profiles are specified, the non-profile specific parameters become defaults.
@@ -29,10 +32,12 @@
 # fcgiwrap_enable="YES"
 # fcgiwrap_profiles="myserver myotherserver"
 # fcgiwrap_flags="-c 4"
+# fcgiwrap_socket_owner="www"
 # fcgiwrap_myserver_socket="unix:/var/run/fcgiwrap.myserver.socket"
 # fcgiwrap_myserver_user="myuser"
 # fcgiwrap_myotherserver_socket="unix:/var/run/fcgiwrap.myotherserver.socket"
 # fcgiwrap_myotherserver_user="myotheruser"
+# fcgiwrap_myserver_socket_mode="0775"
 # fcgiwrap_myotherserver_flags=""  # No flags for this profile.
 
 . /etc/rc.subr
@@ -62,6 +67,26 @@ fcgiwrap_precmd() {
 	install -d -o root -g wheel -m 1777 /var/run/fcgiwrap
 }
 
+fcgiwrap_postcmd() {
+	# This is only for unix sockets
+	case "${fcgiwrap_socket}" in
+		unix:*)
+			;;
+		*)
+			return
+			;;
+	esac
+	if [ -n "${fcgiwrap_socket_mode}" ]; then
+		chmod ${fcgiwrap_socket_mode} ${fcgiwrap_socket#unix:}
+	fi
+	if [ -n "${fcgiwrap_socket_owner}" ]; then
+		chown ${fcgiwrap_socket_owner} ${fcgiwrap_socket#unix:}
+	fi
+	if [ -n "${fcgiwrap_socket_group}" ]; then
+		chgrp ${fcgiwrap_socket_group} ${fcgiwrap_socket#unix:}
+	fi
+}
+
 fcgiwrap_cleansocket() {
 	# Workaround the fact that fcgiwrap doesn't cleanup his socket at stopping
 	case ${fcgiwrap_socket} in 
@@ -78,6 +103,7 @@ pidfile="${pidprefix}.pid"  # May be a different path if profiles are in use
 procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
 start_precmd="fcgiwrap_precmd"
+start_postcmd="fcgiwrap_postcmd"
 stop_postcmd="fcgiwrap_cleansocket"
 
 load_rc_config $name
@@ -86,6 +112,9 @@ load_rc_config $name
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
 fcgiwrap_user=${fcgiwrap_user:-"root"}
 fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
+fcgiwrap_socket_mode=${fcgiwrap_socket_mode:-"0755"}
+fcgiwrap_socket_owner=${fcgiwrap_socket_owner:-"root"}
+fcgiwrap_socket_group=${fcgiwrap_socket_group:-"wheel"}
 
 # This handles profile specific vars.
 if [ -n "$2" ]; then
@@ -96,6 +125,9 @@ if [ -n "$2" ]; then
 		eval fcgiwrap_fib="\${fcgiwrap_${profile}_fib:-${fcgiwrap_fib}}"
 		eval fcgiwrap_user="\${fcgiwrap_${profile}_user:-${fcgiwrap_user}}"
 		eval fcgiwrap_socket="\${fcgiwrap_${profile}_socket:?}"
+		eval fcgiwrap_socket_mode="\${fcgiwrap_${profile}_socket_mode:-${fcgiwrap_socket_mode}}"
+		eval fcgiwrap_socket_owner="\${fcgiwrap_${profile}_socket_owner:-${fcgiwrap_socket_owner}}"
+		eval fcgiwrap_socket_group="\${fcgiwrap_${profile}_socket_group:-${fcgiwrap_socket_group}}"
 		eval fcgiwrap_flags="\${fcgiwrap_${profile}_flags:-${fcgiwrap_flags}}"
 	else
 		echo "$0: extra argument ignored"
