@@ -32,7 +32,7 @@ NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_CONFIGURE_ENABLE=	nas
 NLS_CONFIGURE_OFF=	--disable-i18n
 NLS_USES=		gettext
-NLS_LDFLAGS=		-lintl
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.options.mk>
 
