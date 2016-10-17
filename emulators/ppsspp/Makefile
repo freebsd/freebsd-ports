@@ -53,7 +53,7 @@ QT4_USES=	qmake:outsource
 QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,opengl
 QT5_USES=	qmake:outsource
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
-SDL_USES=	cmake:outsource ninja
+SDL_USES=	cmake:outsource
 SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
