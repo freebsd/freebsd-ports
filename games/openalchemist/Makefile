@@ -11,12 +11,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tetris-like game
 
-LICENSE=	GPLv2 CC-BY-SA-2.0
+LICENSE=	GPLv2+ CC-BY-SA-2.0
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
-	libpng.so:graphics/png
+		libpng.so:graphics/png
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
