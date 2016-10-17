@@ -1,6 +1,6 @@
---- doc/Makefile.am.orig	2014-05-31 14:09:54.000000000 +0200
-+++ doc/Makefile.am	2014-05-31 14:12:07.000000000 +0200
-@@ -77,14 +77,7 @@
+--- doc/Makefile.am.orig	2016-10-08 19:30:21 UTC
++++ doc/Makefile.am
+@@ -79,14 +79,7 @@ install-data-local: makedoc-all instdoc
  	-for f in $(HTML_DOCFILES) ; do \
  		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
  	done
@@ -16,7 +16,7 @@
  
  uninstall-local:
  	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 smime_keys.1 pgpewrap.1 pgpring.1; do \
-@@ -107,9 +100,7 @@
+@@ -109,9 +102,7 @@ uninstall-local:
  
  check:
  manual.txt: manual.html

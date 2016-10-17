@@ -1,5 +1,5 @@
---- doc/manual.xml.head.orig	2009-06-22 08:35:06.000000000 +0200
-+++ doc/manual.xml.head	2009-06-22 08:37:31.000000000 +0200
+--- doc/manual.xml.head.orig	2016-10-08 19:35:50 UTC
++++ doc/manual.xml.head
 @@ -1,6 +1,6 @@
  <?xml version="1.0" standalone="no"?>
  <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"

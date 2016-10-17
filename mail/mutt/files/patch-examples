@@ -1,58 +1,6 @@
---- contrib/Makefile.am.orig	2015-09-10 08:43:38.000000000 +0200
-+++ contrib/Makefile.am	2015-09-10 08:48:05.000000000 +0200
-@@ -1,6 +1,7 @@
- # $Id$
- 
- subdir = contrib
-+samplesdir = @samplesdir@
- 
- SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
- 	sample.muttrc  sample.mailcap sample.muttrc-tlr \
-@@ -14,12 +15,12 @@
- 	iconv/make.sh
- 
- install-data-local:
--	$(MKDIR_P) $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
-+	$(MKDIR_P) $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
- 	for f in $(SAMPLES) ; do \
--		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
-+		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir) ;	\
- 	done
- 	for f in $(srcdir)/iconv/*.rc ; do					\
--		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
-+		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;		\
- 	done
- 
- uninstall-local:
---- init.h.orig	2009-02-06 13:27:52.000000000 +0100
-+++ init.h	2009-02-06 13:34:09.000000000 +0100
-@@ -1808,9 +1808,8 @@
-   ** .pp
-   ** For examples on how to configure these formats for the various versions
-   ** of PGP which are floating around, see the pgp and gpg sample configuration files in
--  ** the \fCsamples/\fP subdirectory which has been installed on your system
--  ** alongside the documentation.
--  ** (PGP only)
-+  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
-+  **  your system. (PGP only)
-   */
-   { "pgp_getkeys_command",	DT_STR, R_NONE, UL &PgpGetkeysCommand, 0},
-   /*
-@@ -2017,9 +2016,8 @@
-   ** .de
-   ** .pp
-   ** For examples on how to configure these formats, see the \fCsmime.rc\fP in
--  ** the \fCsamples/\fP subdirectory which has been installed on your system
--  ** alongside the documentation.
--  ** (S/MIME only)
-+  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
-+  ** your system. (S/MIME only)
-   */
-   { "smime_verify_command", 	DT_STR, R_NONE, UL &SmimeVerifyCommand, 0},
-   /*
---- INSTALL.orig	Mon Nov 25 15:16:46 2002
-+++ INSTALL	Wed Mar 26 15:59:57 2003
-@@ -225,13 +225,13 @@
+--- INSTALL.orig	2016-10-08 19:30:21 UTC
++++ INSTALL
+@@ -228,13 +228,13 @@ If you decide to use your system's iconv
  need to tell mutt about implementation-defined names for some
  character sets.  Sample configuration files for various systems can
  be found in the directory contrib/iconv/ in this source
@@ -68,9 +16,35 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	2015-08-30 19:25:51.000000000 +0200
-+++ doc/manual.txt	2015-09-10 08:56:32.000000000 +0200
-@@ -7736,8 +7736,8 @@
+--- contrib/Makefile.am.orig	2016-10-08 19:30:21 UTC
++++ contrib/Makefile.am
+@@ -1,6 +1,7 @@
+ # $Id$
+ 
+ subdir = contrib
++samplesdir = @samplesdir@
+ 
+ SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
+ 	sample.mailcap sample.muttrc sample.muttrc-sidebar sample.muttrc-tlr \
+@@ -14,12 +15,12 @@ EXTRA_DIST = language.txt language50.txt
+ 	iconv/make.sh
+ 
+ install-data-local:
+-	$(MKDIR_P) $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
++	$(MKDIR_P) $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
+ 	for f in $(SAMPLES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
++		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir) ;	\
+ 	done
+ 	for f in $(srcdir)/iconv/*.rc ; do					\
+-		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;		\
+ 	done
+ 
+ uninstall-local:
+--- doc/manual.txt.orig	2016-10-08 19:55:06 UTC
++++ doc/manual.txt
+@@ -8073,8 +8073,8 @@ set imap_authenticators="gssapi:cram-md5
  
     For examples on how to configure these formats for the various versions
     of PGP which are floating around, see the pgp and gpg sample
@@ -79,10 +53,10 @@
 +   configuration files in the share/examples/mutt/ subdirectory which has
 +   been installed on your system alongside the documentation. (PGP only)
  
- 3.162. pgp_decrypt_command
+ 3.166. pgp_decrypt_command
  
-@@ -8783,8 +8783,8 @@
-       "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
+@@ -9332,8 +9332,8 @@ set sidebar_delim_chars='.'
+    or "-CAfile [1766]$$ssmmiimmee__ccaa__llooccaattiioonn".
  
     For examples on how to configure these formats, see the smime.rc in the
 -   samples/ subdirectory which has been installed on your system alongside
@@ -90,5 +64,31 @@
 +   share/examples/mutt/ subdirectory which has been installed on your system
 +   alongside the documentation. (S/MIME only)
  
- 3.252. smime_decrypt_use_default_key
+ 3.271. smime_decrypt_use_default_key
  
+--- init.h.orig	2016-10-08 19:35:50 UTC
++++ init.h
+@@ -1814,9 +1814,8 @@ struct option_t MuttVars[] = {
+   ** .pp
+   ** For examples on how to configure these formats for the various versions
+   ** of PGP which are floating around, see the pgp and gpg sample configuration files in
+-  ** the \fCsamples/\fP subdirectory which has been installed on your system
+-  ** alongside the documentation.
+-  ** (PGP only)
++  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
++  **  your system. (PGP only)
+   */
+   { "pgp_decrypt_command", 	DT_STR, R_NONE, UL &PgpDecryptCommand, 0},
+   /*
+@@ -2942,9 +2941,8 @@ struct option_t MuttVars[] = {
+   ** .de
+   ** .pp
+   ** For examples on how to configure these formats, see the \fCsmime.rc\fP in
+-  ** the \fCsamples/\fP subdirectory which has been installed on your system
+-  ** alongside the documentation.
+-  ** (S/MIME only)
++  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
++  ** your system. (S/MIME only)
+   */
+   { "smime_decrypt_use_default_key",	DT_BOOL, R_NONE, OPTSDEFAULTDECRYPTKEY, 1 },
+   /*
