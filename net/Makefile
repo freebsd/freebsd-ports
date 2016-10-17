@@ -42,6 +42,7 @@
     SUBDIR += axa
     SUBDIR += babeld
     SUBDIR += balance
+    SUBDIR += bctoolbox
     SUBDIR += beacon
     SUBDIR += beanstalkd
     SUBDIR += belle-sip

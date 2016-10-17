@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ortp
-PORTVERSION=	0.25.0
+PORTVERSION=	0.27.0
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/ortp/sources
 
@@ -11,6 +11,8 @@ COMMENT=	Real-time Transport Protocol (RTP) library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
