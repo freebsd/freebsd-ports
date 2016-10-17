@@ -1,0 +1,19 @@
+--- configure.orig	2016-08-11 12:03:20 UTC
++++ configure
+@@ -16340,7 +16340,7 @@ fi
+ 
+ 
+ if test "$mbedtls_prefix" != "/usr" ; then
+-	MBEDTLS_CFLAGS="-I${mbedtls_prefix}"
++	MBEDTLS_CFLAGS="-I${mbedtls_prefix}/include"
+ 	MBEDTLS_LIBS="-L${mbedtls_prefix}/lib"
+ fi
+ 
+@@ -16408,7 +16408,6 @@ fi
+ 
+ 
+ if test "$cunit_found" != "true" ; then
+-	as_fn_error $? "\"CUnit not found\"" "$LINENO" 5
+ else
+ 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for CU_get_suite in -lcunit" >&5

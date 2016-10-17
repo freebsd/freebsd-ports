@@ -1,6 +1,6 @@
---- configure.orig	2015-11-02 13:54:22 UTC
+--- configure.orig	2016-08-30 14:20:13 UTC
 +++ configure
-@@ -20432,12 +20432,6 @@ $as_echo "#define HAVE_NOTIFY1 1" >>conf
+@@ -20308,12 +20308,6 @@ $as_echo "#define HAVE_NOTIFY1 1" >>conf
  	fi
  fi
  
@@ -13,7 +13,25 @@
  case "$host_cpu" in
  	*arm*)
  
-@@ -22107,14 +22101,14 @@ fi
+@@ -21198,17 +21192,10 @@ fi
+ 
+ 
+ if test "$lime" != "false" ; then
+-	if test "x$found_polarssl" != "xyes" ; then
+-		if test "$lime" = "true" ; then
+-			as_fn_error $? "\"LIME requires POLARSSL in version >= 1.3\"" "$LINENO" 5
+-		fi
+-		lime=false
+-	else
+ 
+ $as_echo "#define HAVE_LIME 1" >>confdefs.h
+ 
+ 		lime=true
+-	fi
+ fi
+ 
+  if test x$console_ui = xtrue; then
+@@ -22153,14 +22140,14 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_sqlite3_sqlite3_open" >&5
  $as_echo "$ac_cv_lib_sqlite3_sqlite3_open" >&6; }
  if test "x$ac_cv_lib_sqlite3_sqlite3_open" = xyes; then :
@@ -25,25 +43,8 @@
  
  	fi
  	if test "$found_sqlite" = "yes"; then
--		SQLITE3_CFLAGS+=" -DMSG_STORAGE_ENABLED"
-+		SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DMSG_STORAGE_ENABLED"
+-		SQLITE3_CFLAGS+=" -DSQLITE_STORAGE_ENABLED"
++		SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DSQLITE_STORAGE_ENABLED"
  		if test "$build_macos" = "yes" -o "$ios_found" = "yes"; then
  			SQLITE3_LIBS+=" -liconv"
  		fi
-@@ -22262,14 +22256,14 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_sqlite3_sqlite3_open" >&5
- $as_echo "$ac_cv_lib_sqlite3_sqlite3_open" >&6; }
- if test "x$ac_cv_lib_sqlite3_sqlite3_open" = xyes; then :
--  SQLITE3_LIBS+=" -lsqlite3 "; found_sqlite=yes
-+  SQLITE3_LIBS="$SQLITE3_LIBS -lsqlite3 "; found_sqlite=yes
- else
-   foo=bar
- fi
- 
-         fi
-         if test "$found_sqlite" = "yes"; then
--                SQLITE3_CFLAGS+=" -DCALL_LOGS_STORAGE_ENABLED"
-+                SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DCALL_LOGS_STORAGE_ENABLED"
-                 if test "$build_macos" = "yes" -o "$ios_found" = "yes"; then
-                         SQLITE3_LIBS+=" -liconv"
-                 fi
