@@ -21,6 +21,7 @@ USES=		gmake python:2.7,run shebangfix
 SHEBANG_LANG=	python2.7
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
 .ifnmake describe
+WRKSRC_git!=	${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git
 MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${PORTSDIR}/devel/git
 MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${PORTSDIR}/devel/git
 .endif
@@ -30,8 +31,7 @@ PORTDATA=	*
 PORTDOCS=	README.md
 
 post-configure:
-	@${TAR} cf - -C$$(${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
-		${TAR} xof - -C${WRKSRC}/git-core
+	@(cd ${WRKSRC_git} && ${COPYTREE_SHARE} . ${WRKSRC}/git-core)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
