@@ -1,6 +1,7 @@
 # Created by: olevole@olevole.ru
 # $FreeBSD$
 
+PORTREVISION=	1
 COMMENT=	Python bindings for SPICE remote desktop servers
 MASTERDIR=	${.CURDIR}/../spice-gtk
 
