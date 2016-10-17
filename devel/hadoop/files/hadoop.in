@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+
 for i in `ls %%ETCDIR%%/envvars.d/*.env`
 do
    . ${i}
 done
 
-exec %%DATADIR%%/bin/hadoop $@
+exec %%DATADIR%%/bin/hadoop "$@"

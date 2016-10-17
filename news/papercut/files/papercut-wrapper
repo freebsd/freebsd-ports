@@ -9,5 +9,4 @@ export PYTHONPATH
 # You can change this to point to your Python interpreter if you wish.
 PYTHON=__PYTHON__
 
-exec "$PYTHON" ${PPCPATH}/papercut.py $@
-
+exec "$PYTHON" ${PPCPATH}/papercut.py "$@"

@@ -41,17 +41,18 @@ do-configure:
 	@${ECHO_CMD} "#!${SH}" > ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} >> ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} 'cd "${CHILDSPLAYDIR}"' >> ${WRKDIR}/childsplay.sh
-	@${ECHO_CMD} 'exec ${PYTHON_CMD} childsplay.py $$@' >> ${WRKDIR}/childsplay.sh
+	@${ECHO_CMD} 'exec ${PYTHON_CMD} childsplay.py "$$@"' \
+		>> ${WRKDIR}/childsplay.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/childsplay.sh ${STAGEDIR}${PREFIX}/bin/childsplay
+	${INSTALL_SCRIPT} ${WRKDIR}/childsplay.sh \
+		${STAGEDIR}${PREFIX}/bin/childsplay
 	@${MKDIR} ${STAGEDIR}${CHILDSPLAYDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${CHILDSPLAYDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "SPWidgets alphabetsounds lib" \
 		${STAGEDIR}${CHILDSPLAYDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${PREFIX}/share)
 	${INSTALL_DATA} ${WRKSRC}/sp_content.db ${STAGEDIR}${CHILDSPLAYDIR}
-
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
