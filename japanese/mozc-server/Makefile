@@ -110,7 +110,7 @@ post-patch:
 
 .if !${BUILD_MOZC_LIST:Mmozc_el}
 ${BUILD_WRKSRC}/mozcmake:
-	${PRINTF} "%s\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} $$@' \
+	${PRINTF} "%s\n\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} "$$@"' \
 	    > ${BUILD_WRKSRC}/mozcmake
 	${CHMOD} +x ${BUILD_WRKSRC}/mozcmake
 
