@@ -4161,6 +4161,7 @@
     SUBDIR += py-fusefs
     SUBDIR += py-future
     SUBDIR += py-futures
+    SUBDIR += py-futurist
     SUBDIR += py-game
     SUBDIR += py-game_sdl2
     SUBDIR += py-gamin
