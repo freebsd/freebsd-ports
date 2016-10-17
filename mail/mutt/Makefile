@@ -120,6 +120,7 @@ URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 .endif
 
 .if defined (MUTT_LITE)
+PKGNAMESUFFIX=	-lite
 USES+=	ncurses
 PLIST_SUB+=	MAILBOX_MANPAGES=""
 PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
