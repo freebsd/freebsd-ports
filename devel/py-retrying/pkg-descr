@@ -1,0 +1,5 @@
+Retrying is an Apache 2.0 licensed general-purpose retrying library, written
+in Python, to simplify the task of adding retry behavior to just about
+anything.
+
+WWW: https://github.com/rholder/retrying
