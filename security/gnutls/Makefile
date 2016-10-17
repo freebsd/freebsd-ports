@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.4.15
+PORTVERSION=	3.4.16
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -19,14 +19,13 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cpe gmake iconv libtool makeinfo pathfix pkgconfig tar:xz
+USES=		cpe gmake iconv libtool localbase makeinfo pathfix pkgconfig \
+		tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
 		--enable-local-libopts \
 		ac_cv_type_max_align_t=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 
