@@ -35,17 +35,13 @@ etc/pam.d/cups
 include/cups/adminutil.h
 include/cups/array.h
 include/cups/backend.h
-include/cups/cgi.h
 include/cups/cups.h
 include/cups/dir.h
 include/cups/file.h
-include/cups/help-index.h
 include/cups/http.h
 include/cups/ipp.h
 include/cups/language.h
-include/cups/mime.h
 include/cups/ppd.h
-include/cups/ppdc.h
 include/cups/pwg.h
 include/cups/raster.h
 include/cups/sidechannel.h
@@ -503,6 +499,8 @@ sbin/reject
 %%NLS%%%%DATADIR%%/templates/pt_BR/error.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/header.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/help-header.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/help-printable.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/help-trailer.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/job-cancel.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/job-hold.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/job-move.tmpl
@@ -524,6 +522,7 @@ sbin/reject
 %%NLS%%%%DATADIR%%/templates/pt_BR/pager.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/printer-accept.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/printer-added.tmpl
+%%NLS%%%%DATADIR%%/templates/pt_BR/printer-cancel-jobs.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/printer-configured.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/printer-confirm.tmpl
 %%NLS%%%%DATADIR%%/templates/pt_BR/printer-default.tmpl
@@ -635,19 +634,17 @@ sbin/reject
 %%NLS%%%%DOCSDIR%%/de/index.html
 %%NLS%%%%DOCSDIR%%/es/index.html
 %%PORTDOCS%%%%DOCSDIR%%/help/accounting.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-admin.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-array.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-cups.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-driver.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-filedir.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-filter.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-httpipp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-mime.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-ppd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-ppdc.html
 %%PORTDOCS%%%%DOCSDIR%%/help/api-raster.html
 %%PORTDOCS%%%%DOCSDIR%%/help/cgi.html
+%%PORTDOCS%%%%DOCSDIR%%/help/encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/help/glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/help/kerberos.html
 %%PORTDOCS%%%%DOCSDIR%%/help/license.html
@@ -703,7 +700,6 @@ sbin/reject
 %%PORTDOCS%%%%DOCSDIR%%/help/security.html
 %%PORTDOCS%%%%DOCSDIR%%/help/sharing.html
 %%PORTDOCS%%%%DOCSDIR%%/help/spec-banner.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-cmp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/spec-command.html
 %%PORTDOCS%%%%DOCSDIR%%/help/spec-design.html
 %%PORTDOCS%%%%DOCSDIR%%/help/spec-ipp.html
@@ -748,7 +744,6 @@ sbin/reject
 %%NLS%%share/locale/ja/cups_ja.po
 %%NLS%%share/locale/pt_BR/cups_pt_BR.po
 %%NLS%%share/locale/ru/cups_ru.po
-@dir(,cups,) %%ETCDIR%%/interfaces
 @dir(,cups,) %%ETCDIR%%/ppd
 @dir(,cups,700) %%ETCDIR%%/ssl
 @dir(,cups,) %%ETCDIR%%
