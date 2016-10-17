@@ -4405,6 +4405,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra
+    SUBDIR += py-python-editor
     SUBDIR += py-python-gist
     SUBDIR += py-python-jenkins
     SUBDIR += py-python-magic
