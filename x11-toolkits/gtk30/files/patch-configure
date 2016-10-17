@@ -1,6 +1,15 @@
---- configure.orig	2015-12-27 22:02:19.433821000 +0100
-+++ configure	2015-12-27 22:02:39.743841000 +0100
-@@ -26046,9 +26046,7 @@
+--- configure.orig	2016-02-24 05:04:43 UTC
++++ configure
+@@ -25758,7 +25758,7 @@ fi
+     CUPS_API_MAJOR=`echo $ECHO_N $CUPS_API_VERSION | awk -F. '{print $1}'`
+     CUPS_API_MINOR=`echo $ECHO_N $CUPS_API_VERSION | awk -F. '{print $2}'`
+ 
+-    if test $CUPS_API_MAJOR -gt 1 -o \
++    if test $CUPS_API_MAJOR -lt 1 -o \
+             $CUPS_API_MAJOR -eq 1 -a $CUPS_API_MINOR -lt 2; then
+       as_fn_error $? "CUPS >= 1.2 not found" "$LINENO" 5
+     fi
+@@ -26190,9 +26190,7 @@ fi
  if test "$have_cups" = "yes"; then
    GTK_PRINT_BACKENDS="$GTK_PRINT_BACKENDS,cups"
  fi
