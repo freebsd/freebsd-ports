@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.13
+PORTVERSION=	2.1.15
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
@@ -18,13 +18,15 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
 		libksba.so:security/libksba \
 		libnpth.so:devel/npth
-BUILD_DEPENDS=	libgpg-error>=1.16:security/libgpg-error
+BUILD_DEPENDS=	libassuan>=2.4.3:security/libassuan \
+		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry>0:security/pinentry
 
 GNU_CONFIGURE=	YES
-USES=		cpe gmake iconv pkgconfig tar:bzip2
+USES=		cpe gmake iconv pkgconfig sqlite tar:bzip2
 USE_LDCONFIG=	YES
 # libreadline.so.8 is placed in /lib, but --with-readline argument
 # will be treated as $value/lib, so try using /usr instead.
