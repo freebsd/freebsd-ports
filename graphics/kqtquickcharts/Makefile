@@ -2,9 +2,7 @@
 
 PORTNAME=	kqtquickcharts
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	graphics kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	graphics kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtQuick plugin to render interactive charts

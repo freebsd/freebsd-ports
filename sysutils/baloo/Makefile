@@ -3,9 +3,7 @@
 PORTNAME=	baloo
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	2
-CATEGORIES=	sysutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE framework for searching and managing user metadata
