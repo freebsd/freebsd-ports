@@ -180,6 +180,8 @@
     SUBDIR += gpass
     SUBDIR += gpgdir
     SUBDIR += gpgme
+    SUBDIR += gpgme-cpp
+    SUBDIR += gpgme-qt5
     SUBDIR += gputty
     SUBDIR += greenbone-security-assistant
     SUBDIR += gringotts
@@ -848,6 +850,7 @@
     SUBDIR += py-flask-httpauth
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
+    SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-halberd
     SUBDIR += py-hkdf
