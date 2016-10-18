@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-qt5
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@rawbw.com
