@@ -710,7 +710,7 @@ LIB_DEPENDS+= 	libjpeg.so:graphics/jpeg \
 		libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
-		libMagickWand-6.so:graphics/ImageMagick
+		libMagickWand-6.so:graphics/ImageMagick-nox11
 GH_ACCOUNT+=	wandenberg:vte
 GH_PROJECT+=	nginx-video-thumbextractor-module:vte
 GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:vte
@@ -942,8 +942,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
 NGINX_SMALL_LIGHT_VERSION=	0.8.0
-LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick \
-		libMagickWand-6.so:graphics/ImageMagick \
+LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick-nox11 \
+		libMagickWand-6.so:graphics/ImageMagick-nox11 \
 		libpcre.so:devel/pcre
 GH_ACCOUNT+=	cubicdaiya:small_light
 GH_PROJECT+=	ngx_small_light:small_light
