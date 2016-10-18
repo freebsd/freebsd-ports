@@ -3,6 +3,7 @@
 
 PORTNAME=	prometheus
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -16,10 +17,6 @@ USE_GITHUB=	yes
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
 
-PLIST_FILES=	bin/prometheus \
-		bin/promtool \
-		etc/prometheus.yml
-
 USE_RC_SUBR=	prometheus
 
 USERS=		prometheus
@@ -31,9 +28,12 @@ do-build:
 	(cd ${GO_WRKSRC}/cmd/prometheus ; ${SETENV} ${GO_ENV} go install)
 	(cd ${GO_WRKSRC}/cmd/promtool ; ${SETENV} ${GO_ENV} go install)
 
+post-stage:
+	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/prometheus
+
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/prometheus ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/promtool ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/documentation/examples/prometheus.yml ${STAGEDIR}${LOCALBASE}/etc
+	${INSTALL_DATA} ${WRKSRC}/documentation/examples/prometheus.yml ${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
 
 .include <bsd.port.mk>
