@@ -1,0 +1,12 @@
+This module is a polyfill, implementing ChainMap for reasonably-recent versions
+of Python that do not have collections.ChainMap--namely, Python 2.6, Python 3.2,
+and PyPy3 releases based on Python 3.2. (It will also work as expected on Python
+2.7, PyPy, and Python 3.3 and higher, but it is not needed there since those
+verions' collections modules contains a ChainMap implementation.)
+
+The code for this package is closely derived from the Python 3.5 source code at
+hg.python.org, (especially the collections and reprlib modules). Several changes
+have been made to ensure Python 2.6 compatibility, and tests and packaging have
+been added.
+
+WWW: https://bitbucket.org/jeunice/chainmap
