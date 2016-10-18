@@ -209,6 +209,7 @@
     SUBDIR += google-appengine
     SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
+    SUBDIR += googler
     SUBDIR += goose
     SUBDIR += gotty
     SUBDIR += gpx2map
