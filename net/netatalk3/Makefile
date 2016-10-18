@@ -3,6 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -73,6 +74,8 @@ LIBWRAP_CONFIGURE_ENABLE=tcp-wrappers
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 		s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
@@ -87,4 +90,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
 
-.include <bsd.port.mk>
+.if ${PORT_OPTIONS:MPAM}
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/netatalk.sample
+.endif
+
+.include <bsd.port.post.mk>

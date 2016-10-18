@@ -12,7 +12,7 @@ bin/netatalk-config
 %%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
 %%DBUS%%etc/dbus-session.conf.netatalk
 @sample etc/extmap.conf.sample
-%%PAM%%etc/pam.d/netatalk
+%%PAM%%@sample etc/pam.d/netatalk.sample
 libexec/netatalk-uams/uams_clrtxt.so
 libexec/netatalk-uams/uams_dhx.so
 libexec/netatalk-uams/uams_dhx2.so
