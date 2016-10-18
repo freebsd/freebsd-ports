@@ -1615,6 +1615,7 @@
     SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-login
     SUBDIR += py-flask-oauthlib
+    SUBDIR += py-flask-principal
     SUBDIR += py-flask-restful
     SUBDIR += py-flask-restplus
     SUBDIR += py-flask-restplus08
