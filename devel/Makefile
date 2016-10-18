@@ -606,7 +606,6 @@
     SUBDIR += funnelweb
     SUBDIR += gaa
     SUBDIR += gamin
-    SUBDIR += gaphor
     SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gazpacho
