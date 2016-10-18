@@ -161,6 +161,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.result
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.test
+%%DATADIR%%/tests/suite/query_response_time/query_response_time-check.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.result
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.test
