@@ -9,5 +9,6 @@ man/man1/tor.1.gz
 man/man1/torify.1.gz
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
-@dir(_tor,_tor,750) /var/run/tor
-@dir(_tor,_tor,750) /var/log/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/run/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/log/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/db/tor
