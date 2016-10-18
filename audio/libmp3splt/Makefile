@@ -3,6 +3,7 @@
 
 PORTNAME=	libmp3splt
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -43,8 +44,8 @@ VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 PCRE_CONFIGURE_ENABLE=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
-MID3_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
-MID3_CONFIGURE_ENABLE=	id3tag
+ID3_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
+ID3_CONFIGURE_ENABLE=	id3tag
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
