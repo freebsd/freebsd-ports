@@ -4484,6 +4484,7 @@
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sanetime
+    SUBDIR += py-sarge
     SUBDIR += py-scripttest
     SUBDIR += py-sdl2
     SUBDIR += py-selection
