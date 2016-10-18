@@ -36,7 +36,7 @@ NUGET_PACKAGEDIR=	${WRKSRC}/packages
 
 .for depend in ${NUGET_DEPENDS}
 id=		${depend:C/-.*$//}
-version=	${depend:S/${id}-//}
+version=	${depend:C/^[^-]*-//}
 group=		nuget_${id:S/.//g}
 nupkg=		${id:tl}.${version}.nupkg
 DISTFILES_${group}:=	${nupkg}:${group}
@@ -52,7 +52,7 @@ post-extract:
 .for nupkg in ${NUGET_NUPKGS}
 	@${MKDIR} ${NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S/-/./}
 	@tar -xf ${DISTDIR}/${nupkg:C/:.*$//} -C ${NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S/-/./} \
-		-s/%2B/\+/g \
+		-s/%2B/\+/g -s/%2B/\+/g -s/%2B/\+/g \
 		--exclude '\[Content_Types\].xml' \
 		--exclude package/ \
 		--exclude _rels/
