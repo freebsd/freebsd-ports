@@ -3,6 +3,7 @@
 
 PORTNAME=	oslo.config
 PORTVERSION=	3.17.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +23,11 @@ NO_ARCH=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" \
+		${WRKSRC}/doc/source/sphinxconfiggen.rst \
+		${WRKSRC}/oslo_config/_list_opts.py \
+		${WRKSRC}/oslo_config/cfg.py
 
 .include <bsd.port.mk>
