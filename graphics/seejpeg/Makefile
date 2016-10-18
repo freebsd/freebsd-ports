@@ -22,8 +22,4 @@ PLIST_FILES=	bin/seejpeg man/man1/seejpeg.1.gz
 post-extract:
 	${CHMOD} 0644 ${WRKSRC}/Makefile
 
-post-patch:
-	${MV}	${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	${SED}	"s|-O3|${CFLAGS}|g" ${WRKSRC}/Makefile.prev >  ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
