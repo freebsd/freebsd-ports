@@ -21,6 +21,8 @@ while getopts "mrw" FLAG; do
 		w)
 			# Only list dependencies that have a WRKDIR.  Used for
 			# 'make clean-depends'.
+			# Without -r recurse when WRKDIR exists; with -r
+			# always recurse.
 			requires_wrkdir=1
 			;;
 		*)
@@ -80,13 +82,10 @@ check_dep() {
 
 		# Grab any needed vars from the port.
 
-		if [ ${requires_wrkdir} -eq 1 -a ${recursive} -eq 1 ]; then
+		if [ ${requires_wrkdir} -eq 1 ]; then
 			set -- $(${dp_MAKE} -C ${d} -VWRKDIR -V_UNIFIED_DEPENDS)
 			wrkdir="$1"
 			shift
-		elif [ ${requires_wrkdir} -eq 1 -a ${recursive} -eq 0 ]; then
-			set -- "$(${dp_MAKE} -C ${d} -VWRKDIR)"
-			wrkdir="$1"
 		elif [ ${recursive} -eq 1 ]; then
 			set -- $(${dp_MAKE} -C ${d} -V_UNIFIED_DEPENDS)
 		fi
@@ -97,7 +96,7 @@ check_dep() {
 			show_dep=0
 		fi
 		[ ${show_dep} -eq 1 ] && echo ${d}
-		if [ ${recursive} -eq 1 ]; then
+		if [ ${recursive} -eq 1 -o ${requires_wrkdir} -eq 1 -a ${show_dep} -eq 1 ]; then
 			check_dep $@
 		fi
 	done
