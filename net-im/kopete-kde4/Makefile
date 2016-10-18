@@ -3,9 +3,7 @@
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	3
-CATEGORIES=	net-im kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	net-im kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger

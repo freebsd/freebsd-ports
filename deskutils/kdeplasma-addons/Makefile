@@ -3,9 +3,7 @@
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	2
-CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	deskutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE SC 4

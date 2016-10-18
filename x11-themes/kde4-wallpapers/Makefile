@@ -2,9 +2,7 @@
 
 PORTNAME=	kde-wallpapers
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	x11-themes kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	x11-themes kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of wallpapers for the KDE Plasma workspace

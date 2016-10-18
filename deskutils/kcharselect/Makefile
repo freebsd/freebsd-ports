@@ -3,9 +3,7 @@
 
 PORTNAME=	kcharselect
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	deskutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Character selector for KDE
