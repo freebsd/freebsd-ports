@@ -26,7 +26,7 @@ load_rc_config ${name}
 
 : ${tor_enable="NO"}
 : ${tor_conf="%%PREFIX%%/etc/tor/torrc"}
-: ${tor_user="_tor"}
+: ${tor_user="%%USER%%"}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
 : ${tor_datadir="/var/db/tor"}
 
