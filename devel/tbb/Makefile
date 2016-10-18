@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTVERSION=	2017.1
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20151115oss_src
+DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20160916oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
