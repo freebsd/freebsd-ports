@@ -103,6 +103,7 @@ _CMAKE_MSG=		"===>  Performing out-of-source build"
 CONFIGURE_WRKSRC=	${WRKDIR}/.build
 BUILD_WRKSRC?=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC?=	${CONFIGURE_WRKSRC}
+TEST_WRKSRC?=		${CONFIGURE_WRKSRC}
 .endif
 
 .if !target(do-configure)
