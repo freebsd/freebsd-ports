@@ -14,7 +14,7 @@
 # prometheus_group (string):    Set group to run prometheus
 #                               Default is "prometheus"
 # prometheus_data_dir (string): Set dir to run prometheus in
-#                               Default is "/var/tmp/prometheus"
+#                               Default is "/var/db/prometheus"
 # prometheus_log_file (string): Set file that prometheus will log to
 #                               Default is "/var/log/prometheus.log"
 # prometheus_args (string):     Set additional command line arguments
