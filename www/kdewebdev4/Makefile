@@ -4,9 +4,7 @@
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	1
-CATEGORIES=	www kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	www kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comprehensive html/website development environment

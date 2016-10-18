@@ -3,10 +3,8 @@
 
 PORTNAME=	mplayerthumbs
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	multimedia kde kde-kde4
 PKGNAMEPREFIX=	kdemultimedia-
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	MPlayer-based thumbnail generator for video files

@@ -3,9 +3,7 @@
 
 PORTNAME=	kfloppy
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	sysutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Floppy disk formatter for KDE

@@ -3,9 +3,7 @@
 
 PORTNAME=	kde-base-artwork
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	x11-themes kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	x11-themes kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base artwork for the KDE Plasma Desktop

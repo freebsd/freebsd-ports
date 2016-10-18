@@ -2,11 +2,9 @@
 
 PORTNAME=	krosspython
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	devel kde python
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	devel kde kde-kde4 python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	kross-interpreters-${PORTVERSION}
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kross Python scripting library

@@ -4,9 +4,7 @@
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	7
-CATEGORIES=	sysutils kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core Nepomuk system libraries and services for KDE
