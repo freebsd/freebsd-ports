@@ -10,6 +10,9 @@ MASTER_SITES=	http://tinkering.hambrew.net/geomgui/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Viewer for kernel geom layer
 
+DEPRECATED=	Development stopped years ago.
+EXPIRATION_DATE=	2016-12-31
+
 LIB_DEPENDS=	libgvc.so:graphics/graphviz
 
 USE_GNOME=	gtk20 librsvg2
