@@ -4316,6 +4316,7 @@
     SUBDIR += py-os-client-config
     SUBDIR += py-osc-lib
     SUBDIR += py-oslo.config
+    SUBDIR += py-oslo.context
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.utils
