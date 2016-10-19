@@ -8680,5 +8680,6 @@ net/py-uritemplate.py|net/py-uritemplate|2016-10-12|Upstream has consolidated on
 misc/fortune_strfile||2016-10-14|Has expired: unmaintained and duplicated from base
 mail/elmo-devel|mail/elmo|2016-10-15|Has expired: Same version as mail/elmo, use it instead
 math/libR||2016-10-16|Has expired: math/R LIBR option is now on by default
+security/libbzrtp|security/bzrtp|2016-10-17|Renamed
 devel/gaphor||2016-10-18|Has expired: runtime failure uncorrected for 1 year after first report
 editors/winefish||2016-10-18|Has expired: upstream disappeared (project dead?), segfaults on multiple arches
