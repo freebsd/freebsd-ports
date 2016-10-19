@@ -57,7 +57,7 @@ USE_GNOME=	glib20
 
 .if ${PORT_OPTIONS:MHYPERSCAN}
  CMAKE_ARGS+=		-DENABLE_HYPERSCAN=ON
- BUILD_DEPENDS+=	${LOCALBASE}/lib/libhs.a:devel/hyperscan
+ LIB_DEPENDS+=		libhs.so:devel/hyperscan
  ONLY_FOR_ARCHS=	amd64
 .endif
 
