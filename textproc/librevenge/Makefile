@@ -2,6 +2,7 @@
 
 PORTNAME=	librevenge
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,13 +19,13 @@ INSTALL_TARGET=	install-strip
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	-disable-werror --disable-tests
 
 PORTDOCS=	*
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CONFIGURE_OFF=	--without-docs
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_OFF=	--without-docs
 
 .include <bsd.port.mk>
