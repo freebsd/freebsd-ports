@@ -57,7 +57,6 @@ bin/umount
 bin/uname
 bin/unlink
 bin/uuidgen
-dev/shm
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
 etc/DIR_COLORS.lightbgcolor
@@ -2773,6 +2772,7 @@ usr/share/man/man8/x86_64.8.gz
 usr/tmp
 @rmtry var/cache/ldconfig/aux-cache
 var/mail
+@dir dev/shm
 @dir etc/X11/applnk
 @dir etc/X11/fontpath.d
 @dir etc/blkid
