@@ -1,0 +1,9 @@
+TIMESTAMP = 1475154589
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl-libs-1.0.1e-51.el7_2.7.i686.rpm) = acae0134d0426a80dca9548b918dd1e680966b18bfcadf39a77e74588584b79b
+SIZE (rpm/centos/7.2.1511/x86_64/openssl-libs-1.0.1e-51.el7_2.7.i686.rpm) = 962504
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl-libs-1.0.1e-51.el7_2.7.x86_64.rpm) = 9f8480889c72db6e05d6b87def4799659d4abeb93fa0c9436e69b9fafcce3736
+SIZE (rpm/centos/7.2.1511/x86_64/openssl-libs-1.0.1e-51.el7_2.7.x86_64.rpm) = 975936
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl-1.0.1e-51.el7_2.7.x86_64.rpm) = a383f9d15fbc2c740a773ffafdddb325b6db18a8c59732b347d694f5f89e2dda
+SIZE (rpm/centos/7.2.1511/x86_64/openssl-1.0.1e-51.el7_2.7.x86_64.rpm) = 729500
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl-1.0.1e-51.el7_2.7.src.rpm) = d360d24d02c44f4e6f11d25ba7c0f7f8085c7dd2f1e13e5ec6b9b76014b879bd
+SIZE (rpm/centos/7.2.1511/x86_64/openssl-1.0.1e-51.el7_2.7.src.rpm) = 3323775

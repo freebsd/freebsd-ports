@@ -1,0 +1,5 @@
+TIMESTAMP = 1473703336
+SHA256 (rpm/centos/7.2.1511/x86_64/openal-soft-1.16.0-3.el7.x86_64.rpm) = 775242cb1d603b85a53eb325c9d85a6aed9639968430c5d45893c90252b07429
+SIZE (rpm/centos/7.2.1511/x86_64/openal-soft-1.16.0-3.el7.x86_64.rpm) = 288688
+SHA256 (rpm/centos/7.2.1511/x86_64/openal-soft-1.16.0-3.el7.src.rpm) = 906734a0d59518d4ccd106ae5a96e01196f1214dab7a96e2c8cabd8f9f930d64
+SIZE (rpm/centos/7.2.1511/x86_64/openal-soft-1.16.0-3.el7.src.rpm) = 399644

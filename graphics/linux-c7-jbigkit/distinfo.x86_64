@@ -1,0 +1,7 @@
+TIMESTAMP = 1475767839
+SHA256 (rpm/centos/7.2.1511/x86_64/jbigkit-libs-2.0-11.el7.i686.rpm) = c5b36ce4d671f75a80911b57e2b59beeb7ef780bd70e4bffbd35cc8e9d2bfbab
+SIZE (rpm/centos/7.2.1511/x86_64/jbigkit-libs-2.0-11.el7.i686.rpm) = 46576
+SHA256 (rpm/centos/7.2.1511/x86_64/jbigkit-libs-2.0-11.el7.x86_64.rpm) = e45ad2a3ced73359dfac1b047e6e51fea155b0b528b90c1fe4e69cd7ce7875f5
+SIZE (rpm/centos/7.2.1511/x86_64/jbigkit-libs-2.0-11.el7.x86_64.rpm) = 47560
+SHA256 (rpm/centos/7.2.1511/x86_64/jbigkit-2.0-11.el7.src.rpm) = c48801775bedc4d2bb33fc263663588efca0ca3f8865d688bee5695452721c43
+SIZE (rpm/centos/7.2.1511/x86_64/jbigkit-2.0-11.el7.src.rpm) = 448365

@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355565
+SHA256 (rpm/centos/7.2.1511/i386/gnutls-3.3.8-14.el7_2.i686.rpm) = b2a82e473add3e5dbda27c34d836ab84b7c6b922a6038638b25ad62fe1952273
+SIZE (rpm/centos/7.2.1511/i386/gnutls-3.3.8-14.el7_2.i686.rpm) = 647504
+SHA256 (rpm/centos/7.2.1511/i386/gnutls-3.3.8-14.el7_2.src.rpm) = 6bb78e62521dbbba7e8ff0f8e42b1b94f1fc80ed0fede9fc0f285ca460af424d
+SIZE (rpm/centos/7.2.1511/i386/gnutls-3.3.8-14.el7_2.src.rpm) = 6205031
