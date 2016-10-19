@@ -4330,6 +4330,7 @@
     SUBDIR += py-osc-lib
     SUBDIR += py-oslo.config
     SUBDIR += py-oslo.context
+    SUBDIR += py-oslo.db
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.policy
     SUBDIR += py-oslo.serialization
