@@ -1,6 +1,5 @@
 @preexec [ -n "`/sbin/sysctl -q %%SYSCTLMIB%%`" ] || ( echo "Cannot install package: kernel missing 64-bit Linux support"; exit 1 )
 bin
-dev/shm
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
 etc/DIR_COLORS.lightbgcolor
@@ -653,6 +652,8 @@ usr/lib/libext2fs.so.2
 usr/lib/libext2fs.so.2.4
 usr/lib/libfam.so.0
 usr/lib/libfam.so.0.0.0
+usr/lib/libffi.so.6
+usr/lib/libffi.so.6.0.1
 usr/lib/libform.so.5
 usr/lib/libform.so.5.9
 usr/lib/libformw.so.5
@@ -1103,6 +1104,8 @@ usr/lib64/libext2fs.so.2
 usr/lib64/libext2fs.so.2.4
 usr/lib64/libfam.so.0
 usr/lib64/libfam.so.0.0.0
+usr/lib64/libffi.so.6
+usr/lib64/libffi.so.6.0.1
 usr/lib64/libform.so.5
 usr/lib64/libform.so.5.9
 usr/lib64/libformw.so.5
@@ -1542,6 +1545,8 @@ usr/share/doc/libcap-2.22/capability.notes
 usr/share/doc/libcom_err-1.42.9/COPYING
 usr/share/doc/libdb-5.3.21/LICENSE
 usr/share/doc/libdb-5.3.21/README
+usr/share/doc/libffi-3.0.13/LICENSE
+usr/share/doc/libffi-3.0.13/README
 usr/share/doc/libgcc-4.8.5/COPYING
 usr/share/doc/libgcc-4.8.5/COPYING.LIB
 usr/share/doc/libgcc-4.8.5/COPYING.RUNTIME
@@ -3017,6 +3022,7 @@ usr/tmp
 var/db/Makefile
 @rmtry var/cache/ldconfig/aux-cache
 var/mail
+@dir dev/shm
 @dir etc/X11/applnk
 @dir etc/X11/fontpath.d
 @dir etc/bash_completion.d
