@@ -1,15 +1,15 @@
---- lang/python/Makefile.in.orig	2016-10-16 12:54:58 UTC
+--- lang/python/Makefile.in.orig	2016-10-18 17:27:17 UTC
 +++ lang/python/Makefile.in
-@@ -747,7 +747,7 @@ copystamp: $(COPY_FILES) $(COPY_FILES_PY
+@@ -753,7 +753,7 @@ config.h:
  all-local: copystamp
  	for PYTHON in $(PYTHONS); do \
- 	  CFLAGS="$(CFLAGS) -I$(top_srcdir)" \
+ 	  CFLAGS="$(CFLAGS)" \
 -	    $$PYTHON setup.py build --verbose ; \
 +	    $$PYTHON setup.py build --verbose build_ext --swig=$(SWIG) ; \
  	done
  
  dist/pyme3-$(VERSION).tar.gz dist/pyme3-$(VERSION).tar.gz.asc: copystamp
-@@ -780,7 +780,8 @@ install-exec-local:
+@@ -789,7 +789,8 @@ install-exec-local:
  	rm -f install_files.txt
  	for PYTHON in $(PYTHONS); do \
  	  $$PYTHON setup.py install \
