@@ -3,6 +3,7 @@
 PORTNAME=	kmouth
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	accessibility kde kde-kde4
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Speech synthesizer frontend for KDE
 
