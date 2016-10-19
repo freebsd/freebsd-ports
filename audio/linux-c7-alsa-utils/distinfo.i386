@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356022
+SHA256 (rpm/centos/7.2.1511/i386/alsa-utils-1.0.28-4.el7.i686.rpm) = 9d6f0b9c73a6e979b67507e6bedda296a0b7e54fe178f6aaf401075eef65641e
+SIZE (rpm/centos/7.2.1511/i386/alsa-utils-1.0.28-4.el7.i686.rpm) = 1058224
+SHA256 (rpm/centos/7.2.1511/i386/alsa-utils-1.0.28-4.el7.src.rpm) = 560f8ccbb0933ec9f4fb0e9b5449ea3a1ee6f5ed7b3eb65e11850815d9689b9e
+SIZE (rpm/centos/7.2.1511/i386/alsa-utils-1.0.28-4.el7.src.rpm) = 1190041

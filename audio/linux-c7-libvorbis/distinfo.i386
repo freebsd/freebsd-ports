@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356040
+SHA256 (rpm/centos/7.2.1511/i386/libvorbis-1.3.3-8.el7.i686.rpm) = 58049ebe1fbafe6073befa04935ea11f8a1482c4a165927371797f8ec6e78b8b
+SIZE (rpm/centos/7.2.1511/i386/libvorbis-1.3.3-8.el7.i686.rpm) = 199332
+SHA256 (rpm/centos/7.2.1511/i386/libvorbis-1.3.3-8.el7.src.rpm) = f3074b1eac13d8993395fdbdade24e4c10431830f8903006ffec310ea2662f83
+SIZE (rpm/centos/7.2.1511/i386/libvorbis-1.3.3-8.el7.src.rpm) = 1103121

@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674788
+SHA256 (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.i686.rpm) = 5601fe96c5ab00b81d99213513933988fe846e85d4ce2625be81de2269151e5d
+SIZE (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.i686.rpm) = 105804
+SHA256 (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.x86_64.rpm) = de7cada14fbbfbf5db29a401e275fd143ddfc97a30c818cb639278831c88fdc5
+SIZE (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.x86_64.rpm) = 104756
+SHA256 (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.src.rpm) = 4b89825083866dc17c6ef8a44a886b206409cba9340bbb221ec237267ae09ec1
+SIZE (rpm/centos/7.2.1511/x86_64/dbus-glib-0.100-7.el7.src.rpm) = 744517

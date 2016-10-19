@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356050
+SHA256 (rpm/centos/7.2.1511/i386/pulseaudio-utils-6.0-7.el7.i686.rpm) = 75a3693e9234948c82305d43e42efb83aa81eae1a6c72453e585f8aae3489413
+SIZE (rpm/centos/7.2.1511/i386/pulseaudio-utils-6.0-7.el7.i686.rpm) = 75504
+SHA256 (rpm/centos/7.2.1511/i386/pulseaudio-6.0-7.el7.src.rpm) = ad594904077ae78083a6dcabb59b396b08b30024f33f8995a2ca01c249fb8fea
+SIZE (rpm/centos/7.2.1511/i386/pulseaudio-6.0-7.el7.src.rpm) = 1523061

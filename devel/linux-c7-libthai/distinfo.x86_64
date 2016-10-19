@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674793
+SHA256 (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.i686.rpm) = a6b87ad56b74fa7674933190697d39535e0dc6e0270af02875c7d683fc0cd8ad
+SIZE (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.i686.rpm) = 192076
+SHA256 (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.x86_64.rpm) = 2453d1e627c5e55924bbf902a9cf59720f5cac9fc0c765cac2d7634835f62f03
+SIZE (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.x86_64.rpm) = 190988
+SHA256 (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.src.rpm) = d6dafbff82e2f2361ac15302a01d232f4f349eab41d9520b0d0d990ffab627fe
+SIZE (rpm/centos/7.2.1511/x86_64/libthai-0.1.14-9.el7.src.rpm) = 871367

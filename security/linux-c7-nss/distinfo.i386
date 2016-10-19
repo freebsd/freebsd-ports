@@ -1,0 +1,15 @@
+TIMESTAMP = 1473760804
+SHA256 (rpm/centos/7.2.1511/i386/nss-3.21.0-9.el7_2.i686.rpm) = acc0e05d8f247791db76ab9b21359abc7908c1ab9ead506964b52955287fe25b
+SIZE (rpm/centos/7.2.1511/i386/nss-3.21.0-9.el7_2.i686.rpm) = 868084
+SHA256 (rpm/centos/7.2.1511/i386/nss-util-3.21.0-2.2.el7_2.i686.rpm) = 73472239f7a39dfce534c7a7d354a0c47c56d4164bd751e9709285dc52526a52
+SIZE (rpm/centos/7.2.1511/i386/nss-util-3.21.0-2.2.el7_2.i686.rpm) = 72216
+SHA256 (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.2.el7_2.i686.rpm) = 3119ce33b30bd2aee2e386f0a3f2f01c90c9869ae2cb39a685f913e7a4d0e14a
+SIZE (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.2.el7_2.i686.rpm) = 313276
+SHA256 (rpm/centos/7.2.1511/i386/nss-softokn-freebl-3.16.2.3-14.2.el7_2.i686.rpm) = c579edfa53c72797701474fbbbc1c19d90ed7c407046d7718e25234b0887acb7
+SIZE (rpm/centos/7.2.1511/i386/nss-softokn-freebl-3.16.2.3-14.2.el7_2.i686.rpm) = 191996
+SHA256 (rpm/centos/7.2.1511/i386/nss-3.21.0-9.el7_2.src.rpm) = 7b8295c752cbd420b5ae52a8b4aa8fa9b6979c57f9caa8279c14e3865ce62883
+SIZE (rpm/centos/7.2.1511/i386/nss-3.21.0-9.el7_2.src.rpm) = 7299400
+SHA256 (rpm/centos/7.2.1511/i386/nss-util-3.21.0-2.2.el7_2.src.rpm) = e90e5e5834289fae968dd2d04f9d563d7a67e3c733ebc2291b7ab131f93c5e14
+SIZE (rpm/centos/7.2.1511/i386/nss-util-3.21.0-2.2.el7_2.src.rpm) = 1005693
+SHA256 (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.2.el7_2.src.rpm) = 698e112d5ce13a9e9703bac655fe9d2a75fa85bc828af64a965bbc0e880c62d2
+SIZE (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.2.el7_2.src.rpm) = 1748499

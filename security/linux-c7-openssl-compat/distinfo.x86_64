@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674612
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.i686.rpm) = bda50ad8086ae3f1265eab271d0523c86cde3e9d1ef1fccbd4cce1abf13636e8
+SIZE (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.i686.rpm) = 821984
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.x86_64.rpm) = 65f73db4d80916a1315f5d6b79cc6dcfbed20ccf84a3a7ab05600b287ab25fcf
+SIZE (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.x86_64.rpm) = 812020
+SHA256 (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.src.rpm) = c26eecaec1161dca9a32db13cd26c70f811bdb3050b30e02b4ea483d31c67d44
+SIZE (rpm/centos/7.2.1511/x86_64/openssl098e-0.9.8e-29.el7.centos.3.src.rpm) = 3145537

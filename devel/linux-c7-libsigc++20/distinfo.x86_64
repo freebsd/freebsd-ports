@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674635
+SHA256 (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.i686.rpm) = 3136ed6109d2dfe5f2f3c10e83586f3f2999e7083546fefec800b5c8e667cdd8
+SIZE (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.i686.rpm) = 61024
+SHA256 (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.x86_64.rpm) = 14ca5f0a5a4bcefa87d4538c693fd79761da5d80b8c402800328b644cab5190d
+SIZE (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.x86_64.rpm) = 60644
+SHA256 (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.src.rpm) = ca13e5a97d402ebf94522e39f87d878bf655aaa65dc744397988447eea055d14
+SIZE (rpm/centos/7.2.1511/x86_64/libsigc++20-2.3.1-4.el7.src.rpm) = 3471231

@@ -1,0 +1,5 @@
+TIMESTAMP = 1473339452
+SHA256 (rpm/centos/7.2.1511/i386/sqlite-3.7.17-8.el7.i686.rpm) = bee2874e940b42f11a2557b5c76427e3122f62aa78b98fcec957bf6edfe8a400
+SIZE (rpm/centos/7.2.1511/i386/sqlite-3.7.17-8.el7.i686.rpm) = 405904
+SHA256 (rpm/centos/7.2.1511/i386/sqlite-3.7.17-8.el7.src.rpm) = d9a3d6e632ab757c1d214e25a3446207011df09a4195261653b6c82f8f8ee190
+SIZE (rpm/centos/7.2.1511/i386/sqlite-3.7.17-8.el7.src.rpm) = 9048219

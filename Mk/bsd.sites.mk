@@ -239,6 +239,12 @@ MASTER_SITE_EPEL+= \
 	http://dl.fedoraproject.org/pub/epel/6/SRPMS/:SOURCE
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_EPEL7)
+MASTER_SITE_EPEL7+= \
+	http://dl.fedoraproject.org/pub/epel/7/${LINUX_ARCH}/%SUBDIR%/ \
+	http://dl.fedoraproject.org/pub/epel/7/SRPMS/%SUBDIR%/:SOURCE
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
 MASTER_SITE_FEDORA_LINUX+= \
 	http://archives.fedoraproject.org/pub/archive/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \

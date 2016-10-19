@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355653
+SHA256 (rpm/centos/7.2.1511/i386/libgpg-error-1.12-3.el7.i686.rpm) = 491381cb722ada5fbef1f1d942bd3f874570ea4e109fd7ee728693d13b5220f3
+SIZE (rpm/centos/7.2.1511/i386/libgpg-error-1.12-3.el7.i686.rpm) = 89068
+SHA256 (rpm/centos/7.2.1511/i386/libgpg-error-1.12-3.el7.src.rpm) = 3e068d41653bfba16eb25a545d4fd84a16342e832b8d8c6566bbc1884191cc1a
+SIZE (rpm/centos/7.2.1511/i386/libgpg-error-1.12-3.el7.src.rpm) = 500370
