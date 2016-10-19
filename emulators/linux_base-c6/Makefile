@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 
@@ -144,6 +144,7 @@ post-patch:
 .endif
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/dev/shm
 	${TOUCH} ${STAGEDIR}${PREFIX}/etc/mtab
 	${MV} ${STAGEDIR}${PREFIX}/etc/krb5.conf \
 		${STAGEDIR}${PREFIX}/etc/krb5.conf.sample
@@ -151,7 +152,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/nsswitch.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive.tmpl \
 		${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive
-	${LN} -sf /tmp ${STAGEDIR}${PREFIX}/dev/shm
 	${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
 	${LN} -sf ../usr/bin/[ ${STAGEDIR}${PREFIX}/bin/[
 	${LN} -sf ../usr/bin/expr ${STAGEDIR}${PREFIX}/bin/expr
