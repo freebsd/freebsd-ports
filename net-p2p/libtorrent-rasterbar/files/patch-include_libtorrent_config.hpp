@@ -1,4 +1,4 @@
---- include/libtorrent/config.hpp.orig  2016-04-10 21:39:14 UTC
+--- include/libtorrent/config.hpp.orig	2016-08-23 04:28:09 UTC
 +++ include/libtorrent/config.hpp
 @@ -180,12 +180,6 @@ POSSIBILITY OF SUCH DAMAGE.
  #define TORRENT_USE_EXECINFO 1
