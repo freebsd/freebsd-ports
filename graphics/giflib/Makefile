@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	giflib
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
@@ -10,7 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
-CONFLICTS=	libungif-[0-9]*
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+TEST_DEPENDS=	ghead:sysutils/coreutils
 
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes
@@ -20,6 +23,7 @@ OPTIONS_DEFINE=	DOCBOOK DOCS
 OPTIONS_SUB=	yes
 DOCBOOK_DESC=	Generate API documentation (requires DOCS)
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check-TESTS
 
 .include <bsd.port.options.mk>
 
