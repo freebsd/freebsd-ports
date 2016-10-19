@@ -1,0 +1,4 @@
+@sample etc/pam.d/mysqld.sample
+lib/mysql/plugin/auth_pam.so
+lib/mysql/plugin/auth_pam_compat.so
+lib/mysql/plugin/dialog.so
