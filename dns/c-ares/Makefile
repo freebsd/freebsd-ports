@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c-ares
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
