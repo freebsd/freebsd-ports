@@ -4332,6 +4332,7 @@
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.db
     SUBDIR += py-oslo.i18n
+    SUBDIR += py-oslo.log
     SUBDIR += py-oslo.policy
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.utils
