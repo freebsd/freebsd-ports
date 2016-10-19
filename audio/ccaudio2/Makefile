@@ -9,7 +9,7 @@ MASTER_SITES=	GNU/ccaudio
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 		libgsm.so:audio/gsm \
 		libspeex.so:audio/speex
 
-USES=		cmake:outsource pathfix pkgconfig
+USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include \
+CMAKE_ARGS=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include \
 		-DCMAKE_INSTALL_MANDIR:STRING=man
 
 .include <bsd.port.mk>
