@@ -18,7 +18,6 @@ DOCSDIR=	${PREFIX}/share/doc/sather/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${TAR} -xzf ${DISTDIR}/${DISTFILES} -C ${STAGEDIR}${DOCSDIR}
-	@${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
