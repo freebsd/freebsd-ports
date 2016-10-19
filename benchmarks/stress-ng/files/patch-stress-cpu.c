@@ -1,4 +1,4 @@
---- stress-cpu.c.orig	2016-07-15 14:26:33 UTC
+--- stress-cpu.c.orig	2016-10-17 09:59:22 UTC
 +++ stress-cpu.c
 @@ -57,7 +57,6 @@
  #define	ccosl	ccos
@@ -7,4 +7,4 @@
 -#define powl	pow
  #endif
  
- /*
+ #if defined(__minix__)

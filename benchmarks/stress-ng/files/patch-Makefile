@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-10-17 09:59:22 UTC
++++ Makefile
+@@ -601,7 +601,7 @@ stress-cpu.o: stress-cpu.c
+ 	@rm -f test-decimal.c test-decimal.o
+ 
+ perf.o: perf.c perf-event.c
+-	@gcc -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
++	@$(CC) -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ stress-wcstr.o: stress-wcstr.c
