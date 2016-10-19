@@ -3,7 +3,7 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
@@ -11,7 +11,7 @@ MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		SF/mscorefonts2/cabs:group3
 DISTFILES=	andale32.exe:group1 arialb32.exe:group1 comic32.exe:group1 \
 		courie32.exe:group1 georgi32.exe:group1 impact32.exe:group1 \
-		webdin32.exe:group1 EUupdate.EXE:group3
+		verdan32.exe:group1 webdin32.exe:group1 EUupdate.EXE:group3
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -29,10 +29,10 @@ NO_BUILD=	yes
 RESTRICTED=	Restrictive license - cannot sell for profit or distribute in modified form
 
 EXTRACT_CMD=		${LOCALBASE}/bin/cabextract
-EXTRACT_BEFORE_ARGS=	-qLF '*.ttf' -d ${WRKSRC}
+EXTRACT_BEFORE_ARGS=	-qLF '[a-uw-z]*.ttf' -d ${WRKSRC}
 EXTRACT_AFTER_ARGS=
 
-OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE
+OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA
 OPTIONS_SUB=	yes
 
 EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
@@ -40,6 +40,8 @@ EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
 
 CLEARTYPE_DESC=	Install ClearType fonts
 CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
+
+NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
 
 SUB_FILES=	pkg-message
 
@@ -54,6 +56,12 @@ post-extract-CLEARTYPE-on:
 	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} \
 		${_DISTDIR}/PowerPointViewer.exe
 	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${WRKSRC}/ppviewer.cab
+
+post-extract-NEWVERDANA-off:
+	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${_DISTDIR}/verdan32.exe
+
+post-extract-NEWVERDANA-on:
+	${EXTRACT_CMD} -qLF 'v*.ttf' -d ${WRKSRC} ${_DISTDIR}/EUupdate.EXE
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
