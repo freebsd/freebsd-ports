@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-Rijndael>=1.0:security/p5-Crypt-Rijndael \
-		p5-MIME-Base64>=1.0:converters/p5-MIME-Base64
+		p5-MIME-Base64>=1.0:converters/p5-MIME-Base64 \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
