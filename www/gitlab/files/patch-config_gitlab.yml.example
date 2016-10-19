@@ -1,21 +1,31 @@
---- config/gitlab.yml.example.orig	2016-07-11 19:38:44 UTC
+--- config/gitlab.yml.example.orig	2016-10-11 15:15:22 UTC
 +++ config/gitlab.yml.example
-@@ -451,11 +451,11 @@ production: &base
+@@ -433,7 +433,7 @@ production: &base
+     # Paths where repositories can be stored. Give the canonicalized absolute pathname.
+     # NOTE: REPOS PATHS MUST NOT CONTAIN ANY SYMLINK!!!
+     storages: # You must have at least a `default` storage path.
+-      default: /home/git/repositories/
++      default: /usr/home/git/repositories/
+ 
+   ## Backup settings
+   backup:
+@@ -458,12 +458,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
 -    path: /home/git/gitlab-shell/
-+    path: /usr/local/share/gitlab-shell/
- 
-     # REPOS_PATH MUST NOT BE A SYMLINK!!!
--    repos_path: /home/git/repositories/
 -    hooks_path: /home/git/gitlab-shell/hooks/
-+    repos_path: /usr/home/git/repositories/
++    path: /usr/local/share/gitlab-shell/
 +    hooks_path: /usr/local/share/gitlab-shell/hooks/
  
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
-@@ -472,7 +472,7 @@ production: &base
+-    # secret_file: /home/git/gitlab/.gitlab_shell_secret
++    # secret_file: /usr/home/git/gitlab/.gitlab_shell_secret
+ 
+     # Git over HTTP
+     upload_pack: true
+@@ -476,7 +476,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
