@@ -1,0 +1,27 @@
+usr/bin/pango-querymodules-32
+usr/bin/pango-view
+usr/lib/girepository-1.0/Pango-1.0.typelib
+usr/lib/girepository-1.0/PangoCairo-1.0.typelib
+usr/lib/girepository-1.0/PangoFT2-1.0.typelib
+usr/lib/girepository-1.0/PangoXft-1.0.typelib
+usr/lib/libpango-1.0.so.0
+usr/lib/libpango-1.0.so.0.3600.8
+usr/lib/libpangocairo-1.0.so.0
+usr/lib/libpangocairo-1.0.so.0.3600.8
+usr/lib/libpangoft2-1.0.so.0
+usr/lib/libpangoft2-1.0.so.0.3600.8
+usr/lib/libpangoxft-1.0.so.0
+usr/lib/libpangoxft-1.0.so.0.3600.8
+usr/lib/pango/1.8.0/modules/pango-arabic-lang.so
+usr/lib/pango/1.8.0/modules/pango-indic-lang.so
+usr/lib/pango/1.8.0/modules/pango-thai-lang.so
+@postexec %D/usr/bin/pango-querymodules-32 --update-cache
+@rmtry usr/lib/pango/1.8.0/modules.cache
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HELLO.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/man/man1/pango-querymodules-32.1.gz
+usr/share/man/man1/pango-querymodules.1.gz
+usr/share/man/man1/pango-view.1.gz

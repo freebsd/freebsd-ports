@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355734
+SHA256 (rpm/centos/7.2.1511/i386/aspell-0.60.6.1-9.el7.i686.rpm) = a14ec40910e3b300b32ca92c425ef82ba52ae6deec5462c9a453592e4aa55a77
+SIZE (rpm/centos/7.2.1511/i386/aspell-0.60.6.1-9.el7.i686.rpm) = 684648
+SHA256 (rpm/centos/7.2.1511/i386/aspell-0.60.6.1-9.el7.src.rpm) = 57962d3924beca2013037f7f455f994bb7f4542f32fd9a7f94ce42f5a415eeff
+SIZE (rpm/centos/7.2.1511/i386/aspell-0.60.6.1-9.el7.src.rpm) = 1886324

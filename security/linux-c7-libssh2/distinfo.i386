@@ -1,0 +1,5 @@
+TIMESTAMP = 1473354094
+SHA256 (rpm/centos/7.2.1511/i386/libssh2-1.4.3-10.el7.i686.rpm) = c834cc8f2f2117b44dd0c06bbff2a80cabb2096da0149f90fecb5a30bbdf6761
+SIZE (rpm/centos/7.2.1511/i386/libssh2-1.4.3-10.el7.i686.rpm) = 136188
+SHA256 (rpm/centos/7.2.1511/i386/libssh2-1.4.3-10.el7.src.rpm) = 92e5e8bd92c85c4015b95d0621b9605bc652ad1418f450a0715ef983884d454b
+SIZE (rpm/centos/7.2.1511/i386/libssh2-1.4.3-10.el7.src.rpm) = 719727

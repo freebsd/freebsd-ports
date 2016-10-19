@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674802
+SHA256 (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.i686.rpm) = 03c9ee1ae21edaaf93b5ef57f121eb3aa3ea35c41826dfd967a9606660d4749a
+SIZE (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.i686.rpm) = 140724
+SHA256 (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.x86_64.rpm) = c03ea98ad63f0410bd07e808143f532f2798428445d399d983ecd0c1d6f6b2ad
+SIZE (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.x86_64.rpm) = 137244
+SHA256 (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.src.rpm) = a5767b5e2153a7136807d1a2ed391241de45256a91410e0dfc0a7342e1893b50
+SIZE (rpm/centos/7.2.1511/x86_64/libjpeg-turbo-1.2.90-5.el7.src.rpm) = 1357131

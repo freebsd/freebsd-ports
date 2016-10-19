@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674960
+SHA256 (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.i686.rpm) = 4af97a940e0ec9142927da899e82343f73eaf9726980169e16933194f5450e82
+SIZE (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.i686.rpm) = 1980728
+SHA256 (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.x86_64.rpm) = e555b0a9c959e893db38ca5797d91c705162dfa32983dc59f5ad252f1f4f0830
+SIZE (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.x86_64.rpm) = 1980564
+SHA256 (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.src.rpm) = 00fc05113dc320351b1f7cece9ebd9867c4e62abe3bd1c8ac9955195011711be
+SIZE (rpm/centos/7.2.1511/x86_64/tcl-8.5.13-8.el7.src.rpm) = 4517447

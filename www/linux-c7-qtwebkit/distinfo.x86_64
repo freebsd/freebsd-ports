@@ -1,0 +1,5 @@
+TIMESTAMP = 1474540221
+SHA256 (rpm/centos/7.2.1511/x86_64/qtwebkit-2.3.4-6.el7.x86_64.rpm) = cacf9b15d4212e36c08fd595dd582260f12688fb129c23faeb1b2bc588bbca63
+SIZE (rpm/centos/7.2.1511/x86_64/qtwebkit-2.3.4-6.el7.x86_64.rpm) = 10473996
+SHA256 (rpm/centos/7.2.1511/x86_64/qtwebkit-2.3.4-6.el7.src.rpm) = b5afdf32c3d6fa8621f9cb216dbcf2b799f8cecd6f93e17dc910a5edd970da10
+SIZE (rpm/centos/7.2.1511/x86_64/qtwebkit-2.3.4-6.el7.src.rpm) = 51552665

@@ -344,6 +344,15 @@
     SUBDIR += linux-c6-nss
     SUBDIR += linux-c6-openssl
     SUBDIR += linux-c6-openssl-compat
+    SUBDIR += linux-c7-cyrus-sasl2
+    SUBDIR += linux-c7-gnutls
+    SUBDIR += linux-c7-libgcrypt
+    SUBDIR += linux-c7-libgpg-error
+    SUBDIR += linux-c7-libssh2
+    SUBDIR += linux-c7-libtasn1
+    SUBDIR += linux-c7-nss
+    SUBDIR += linux-c7-openssl
+    SUBDIR += linux-c7-openssl-compat
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-gnutls
     SUBDIR += linux-f10-libgcrypt

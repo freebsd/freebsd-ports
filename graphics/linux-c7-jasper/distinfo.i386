@@ -1,0 +1,5 @@
+TIMESTAMP = 1474464087
+SHA256 (rpm/centos/7.2.1511/i386/jasper-libs-1.900.1-29.el7.i686.rpm) = 0fa495242ba6e8ec8d85c1c87ad0f5ea055818503cb45fb7ad589584cd57f85c
+SIZE (rpm/centos/7.2.1511/i386/jasper-libs-1.900.1-29.el7.i686.rpm) = 149580
+SHA256 (rpm/centos/7.2.1511/i386/jasper-1.900.1-29.el7.src.rpm) = d3b5e15864e79338b895140f56cadfd9e6b91f62b5a12efe3f1cc7fe81e36e67
+SIZE (rpm/centos/7.2.1511/i386/jasper-1.900.1-29.el7.src.rpm) = 1412129

@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355803
+SHA256 (rpm/centos/7.2.1511/i386/dbus-libs-1.6.12-13.el7.i686.rpm) = 8bfd161a7d620e4e3e5ee03bbf610cb8d3576808ff1299210a8ab68545ce55db
+SIZE (rpm/centos/7.2.1511/i386/dbus-libs-1.6.12-13.el7.i686.rpm) = 154888
+SHA256 (rpm/centos/7.2.1511/i386/dbus-1.6.12-13.el7.src.rpm) = ffbf834635bdf5ebaf1524c2bfaa1b91f48034851f4c7a6dc472fd762c531af3
+SIZE (rpm/centos/7.2.1511/i386/dbus-1.6.12-13.el7.src.rpm) = 1987262

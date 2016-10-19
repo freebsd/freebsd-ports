@@ -1,0 +1,5 @@
+TIMESTAMP = 1473703212
+SHA256 (rpm/centos/7.2.1511/x86_64/esound-libs-0.2.41-12.el7.x86_64.rpm) = fa0c8a1ea02a46633137e3d8787e2952022b952133112048bf0c09c96d94dce9
+SIZE (rpm/centos/7.2.1511/x86_64/esound-libs-0.2.41-12.el7.x86_64.rpm) = 79540
+SHA256 (rpm/centos/7.2.1511/x86_64/esound-0.2.41-12.el7.src.rpm) = 3e8a2b20914fa977a256d659d4c6d0d09d62cc3ecd7fc69d7c10fd47e75aaa5a
+SIZE (rpm/centos/7.2.1511/x86_64/esound-0.2.41-12.el7.src.rpm) = 414450

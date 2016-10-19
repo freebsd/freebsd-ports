@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674913
+SHA256 (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.i686.rpm) = fe08fbb663d201cdd44f59d81edbf9112e6d0c6cb8edaf217377bbb81454fd50
+SIZE (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.i686.rpm) = 293428
+SHA256 (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.x86_64.rpm) = 1349734c7fec5787306d9fb3be711ad9a8e1eaca7e7b63c6ede60cff3b05b137
+SIZE (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.x86_64.rpm) = 293496
+SHA256 (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.src.rpm) = 65dd6acc50460d2ee6158ac790d519e5af0c0a27eaecb9307178dddc905a2362
+SIZE (rpm/centos/7.2.1511/x86_64/pango-1.36.8-2.el7.src.rpm) = 1071163

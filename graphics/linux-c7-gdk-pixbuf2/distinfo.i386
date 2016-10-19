@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355853
+SHA256 (rpm/centos/7.2.1511/i386/gdk-pixbuf2-2.31.6-3.el7.i686.rpm) = 66f20d649deedd1043e4ecf4f3434c92d4699e5e3aba248158fc1235a6194bda
+SIZE (rpm/centos/7.2.1511/i386/gdk-pixbuf2-2.31.6-3.el7.i686.rpm) = 570528
+SHA256 (rpm/centos/7.2.1511/i386/gdk-pixbuf2-2.31.6-3.el7.src.rpm) = c1d659347f60fa62efeec58d9b8361f1f346740192f7fac11c03894143aba637
+SIZE (rpm/centos/7.2.1511/i386/gdk-pixbuf2-2.31.6-3.el7.src.rpm) = 2422061

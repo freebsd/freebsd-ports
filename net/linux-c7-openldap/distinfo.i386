@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355715
+SHA256 (rpm/centos/7.2.1511/i386/openldap-2.4.40-8.el7.i686.rpm) = 268b6e1b3157282e10d4d4e8fcb44b18db30a6db41aa570fc8077dfeeceecbc0
+SIZE (rpm/centos/7.2.1511/i386/openldap-2.4.40-8.el7.i686.rpm) = 354008
+SHA256 (rpm/centos/7.2.1511/i386/openldap-2.4.40-8.el7.src.rpm) = 4997b450cb771ae2d58096a67c4abb4e2e51d65afd37515d39fedef8e69e2e06
+SIZE (rpm/centos/7.2.1511/i386/openldap-2.4.40-8.el7.src.rpm) = 5735998

@@ -22,7 +22,7 @@ OPTIONS_DEFAULT=	VIDEO
 NO_BUILD=	yes
 
 USES=		cpe desktop-file-utils linux tar:bzip2
-USE_LINUX=	fontconfig xorglibs qt47 qt47-x11 qt47-webkit openssl pulseaudio-libs
+USE_LINUX=	fontconfig xorglibs qt qt-x11 qtwebkit openssl pulseaudio-libs
 
 RESTRICTED=	Redistribution prohibited.
 

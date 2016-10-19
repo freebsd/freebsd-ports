@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674966
+SHA256 (rpm/centos/7.2.1511/x86_64/libv4l-0.9.5-4.el7.i686.rpm) = 7c9fb65097d72f0a796220f39613c89cf86f075b18510e11e296b75bfea71f7d
+SIZE (rpm/centos/7.2.1511/x86_64/libv4l-0.9.5-4.el7.i686.rpm) = 193748
+SHA256 (rpm/centos/7.2.1511/x86_64/libv4l-0.9.5-4.el7.x86_64.rpm) = b05704ce53c147cbf0f9c873cff2e676207298c2b2258ebda84b673682250355
+SIZE (rpm/centos/7.2.1511/x86_64/libv4l-0.9.5-4.el7.x86_64.rpm) = 199064
+SHA256 (rpm/centos/7.2.1511/x86_64/v4l-utils-0.9.5-4.el7.src.rpm) = c7a72b926f05e1dc780105d4dc5356d4fbb02ba69b19bc59e543cf0c0cbdb317
+SIZE (rpm/centos/7.2.1511/x86_64/v4l-utils-0.9.5-4.el7.src.rpm) = 996684

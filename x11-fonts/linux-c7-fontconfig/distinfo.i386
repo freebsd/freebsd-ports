@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356094
+SHA256 (rpm/centos/7.2.1511/i386/fontconfig-2.10.95-7.el7.i686.rpm) = 7c8f5ac6c6009883adb1c09569c5f415a03d11a89ee2c7794484f5c189373249
+SIZE (rpm/centos/7.2.1511/i386/fontconfig-2.10.95-7.el7.i686.rpm) = 234380
+SHA256 (rpm/centos/7.2.1511/i386/fontconfig-2.10.95-7.el7.src.rpm) = d1d259b7e3194a235256addd29b66a8fcbf523f7f5900c3972d817a210771989
+SIZE (rpm/centos/7.2.1511/i386/fontconfig-2.10.95-7.el7.src.rpm) = 1566528

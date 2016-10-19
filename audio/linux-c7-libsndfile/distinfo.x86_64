@@ -1,0 +1,9 @@
+TIMESTAMP = 1473877189
+SHA256 (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.i686.rpm) = 1d8d3c9fb6fc12ffaacfe1f3330be92a90a269d6190192a28496c1193d86537d
+SIZE (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.i686.rpm) = 162888
+SHA256 (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.x86_64.rpm) = 50fad657626376fa5b8eca66fd5c9d549f5c036345f2458dc6b6f462c220e1b7
+SIZE (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.x86_64.rpm) = 152776
+SHA256 (rpm/centos/7.2.1511/x86_64/libsndfile-utils-1.0.25-10.el7.x86_64.rpm) = d80f4f78c24651b775895b40ad3ac8c80d63b8bbfb94880180500c68c667e91a
+SIZE (rpm/centos/7.2.1511/x86_64/libsndfile-utils-1.0.25-10.el7.x86_64.rpm) = 60344
+SHA256 (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.src.rpm) = 21628d8e805d912d8dfc705f3f0f6283d14c51f89fe62f60b8bbf7a688f778f5
+SIZE (rpm/centos/7.2.1511/x86_64/libsndfile-1.0.25-10.el7.src.rpm) = 1072937
