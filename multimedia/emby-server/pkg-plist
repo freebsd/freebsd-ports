@@ -377,6 +377,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreato
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreator/seriesrecordingeditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreator/seriesrecordingeditor.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/refreshdialog/refreshdialog.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/registrationservices/registrationservices.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/registrationservices/style.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requirecss.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requirehtml.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requiretext.js
@@ -734,6 +736,7 @@ lib/emby-server/dashboard-ui/components/guestinviter/connectlink.template.html
 lib/emby-server/dashboard-ui/components/guestinviter/guestinviter.js
 lib/emby-server/dashboard-ui/components/guestinviter/guestinviter.template.html
 lib/emby-server/dashboard-ui/components/humanedate.js
+lib/emby-server/dashboard-ui/components/iap.js
 lib/emby-server/dashboard-ui/components/imagedownloader/imagedownloader.js
 lib/emby-server/dashboard-ui/components/imagedownloader/imagedownloader.template.html
 lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.js
@@ -1025,7 +1028,6 @@ lib/emby-server/dashboard-ui/scripts/playlistedit.js
 lib/emby-server/dashboard-ui/scripts/playlists.js
 lib/emby-server/dashboard-ui/scripts/plugincatalogpage.js
 lib/emby-server/dashboard-ui/scripts/pluginspage.js
-lib/emby-server/dashboard-ui/scripts/registrationservices.js
 lib/emby-server/dashboard-ui/scripts/remotecontrol.js
 lib/emby-server/dashboard-ui/scripts/reports.js
 lib/emby-server/dashboard-ui/scripts/scheduledtaskpage.js
