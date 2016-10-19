@@ -1,6 +1,6 @@
---- config/initializers/1_settings.rb.orig	2016-07-11 19:38:44 UTC
+--- config/initializers/1_settings.rb.orig	2016-10-11 15:15:22 UTC
 +++ config/initializers/1_settings.rb
-@@ -191,12 +191,8 @@ Settings.gitlab['email_reply_to'] ||= EN
+@@ -189,12 +189,8 @@ Settings.gitlab['email_reply_to'] ||= EN
  Settings.gitlab['base_url']   ||= Settings.send(:build_base_gitlab_url)
  Settings.gitlab['url']        ||= Settings.send(:build_gitlab_url)
  Settings.gitlab['user']       ||= 'git'
