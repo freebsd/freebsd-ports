@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -60,12 +60,13 @@ INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 
 .  if ${SLAVEPORT} == "cpp"
 CONFIGURE_ARGS+=--enable-languages="cpp"
+USES+=		compiler:c++11-lang
 .  endif
 
 .  if ${SLAVEPORT} == "qt5"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
 CONFIGURE_ARGS+=--enable-languages="cpp qt"
-USES+=		pkgconfig
+USES+=		compiler:c++11-lang pkgconfig
 USE_QT5=	buildtools_build core testlib
 CONFLICTS_INSTALL=	kdepimlibs-4.*
 .  endif
