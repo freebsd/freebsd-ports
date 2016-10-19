@@ -14,7 +14,8 @@ COMMENT?=	Multithreaded SQL database (server)
 
 BROKEN_powerpc64=	Does not build
 
-SLAVEDIRS=	databases/percona56-client
+SLAVEDIRS=	databases/percona56-client \
+		databases/percona-pam-for-mysql
 USES=		bison cmake perl5 shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED TOKUDB
@@ -48,8 +49,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DWITH_EDITLINE=system \
-		-DWITH_LIBWRAP=1 \
-		-DHAVE_PAM=0
+		-DWITH_LIBWRAP=1
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -57,8 +57,14 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.ifdef CLIENT_ONLY
+# Client part
+USES+=		libedit
+.elifdef PLUGIN_ONLY
+# For building plugins (percona-pam-for-mysql, etc)
+# Currently do nothing special
+.else
 # MySQL-Server part
-.if !defined(CLIENT_ONLY)
 USES+=mysql:56p
 
 CONFLICTS_INSTALL=	mysql*-server-* \
@@ -83,9 +89,6 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
-
-.else
-USES+=		libedit
 .endif
 
 post-patch:
@@ -107,6 +110,5 @@ IGNORE=	unsupported on FreeBSD 9 or older
 .endif
 
 .endif
-
 
 .include <bsd.port.post.mk>
