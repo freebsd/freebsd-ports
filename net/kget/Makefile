@@ -4,6 +4,7 @@ PORTNAME=	kget
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	1
 CATEGORIES=	net kde kde-kde4
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE download manager
 
