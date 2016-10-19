@@ -102,6 +102,7 @@
     SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
     SUBDIR += arduino-sevseg
+    SUBDIR += arduino-tools
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
