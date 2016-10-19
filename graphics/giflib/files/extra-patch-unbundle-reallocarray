@@ -1,4 +1,4 @@
---- lib/Makefile.in.orig	2016-01-07 12:54:02 UTC
+--- lib/Makefile.in.orig	2016-04-02 15:36:45 UTC
 +++ lib/Makefile.in
 @@ -134,7 +134,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  LTLIBRARIES = $(lib_LTLIBRARIES)

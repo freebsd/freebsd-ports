@@ -1,4 +1,4 @@
---- lib/dgif_lib.c.orig	2016-01-07 10:44:44 UTC
+--- lib/dgif_lib.c.orig	2016-04-02 15:34:00 UTC
 +++ lib/dgif_lib.c
 @@ -41,6 +41,9 @@ static int DGifDecompressInput(GifFileTy
  static int DGifBufferedInput(GifFileType *GifFile, GifByteType *Buf,
