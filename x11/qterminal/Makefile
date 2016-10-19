@@ -23,6 +23,10 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_QXT:BOOL=OFF -DUSE_QT5:BOOL=ON
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
 
-LDFLAGS+=	-lulog
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OPSYS} == FreeBSD
+LDFLAGS+=	-lulog
+.endif
+
+.include <bsd.port.post.mk>
