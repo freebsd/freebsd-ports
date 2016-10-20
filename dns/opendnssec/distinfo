@@ -1,2 +1,3 @@
-SHA256 (opendnssec-1.4.10.tar.gz) = 55b44c1da3a665eef0af1d1b3f4d1c57d20f50f77858b1dd3d03ca6ebc1df7cb
-SIZE (opendnssec-1.4.10.tar.gz) = 1036069
+TIMESTAMP = 1476788134
+SHA256 (opendnssec-1.4.12.tar.gz) = 4ba6cf06fcd1131c1ed913d61959ddc90726ed5e4f153c90f45ec64445528a0c
+SIZE (opendnssec-1.4.12.tar.gz) = 1036392
