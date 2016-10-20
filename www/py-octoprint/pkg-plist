@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/octoprint/templates/_data/AUTHORS.md
+%%PYTHON_SITELIBDIR%%/octoprint/templates/_data/CHANGELOG.md
+%%PYTHON_SITELIBDIR%%/octoprint/templates/_data/SUPPORTERS.md
+%%PYTHON_SITELIBDIR%%/octoprint/templates/_data/THIRDPARTYLICENSES.md
