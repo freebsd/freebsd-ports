@@ -3,6 +3,7 @@
 
 PORTNAME=	glx-utils
 PORTVERSION=	8.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
