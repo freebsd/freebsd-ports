@@ -7,10 +7,13 @@ PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kenji@k2r.org
 COMMENT=	Yet another dictionary server for SKK
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	jj1bdx
+GH_PROJECT=	dbskkd-cdb
+GH_TAGNAME=	2.00-20161005
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:databases/tinycdb
 RUN_DEPENDS=	${SKKJISYOCDB}:japanese/skk-jisyo-cdb
@@ -26,14 +29,14 @@ MAKE_ENV+=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV+=	SKKJISYOCDB="${SKKJISYOCDB}"
 
 PORTDOCS=	${PORTDOCS_FILE} ${PORTDOCS_SH}
-PORTDOCS_FILE=	CHANGES LICENSE READMEJP \
+PORTDOCS_FILE=	CHANGES LICENSE READMEJP.md \
 		example-daemontools.txt example-inetd.txt
 PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-.for f in READMEJP makeskkcdb.sh
+.for f in READMEJP.md makeskkcdb.sh
 	${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" \
 		-e "s!%%SKKDIR%%!${SKKDIR}!g" \
 		-e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" ${WRKSRC}/${f}
