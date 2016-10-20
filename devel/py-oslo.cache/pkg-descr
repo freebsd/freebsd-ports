@@ -1,0 +1,6 @@
+oslo.cache aims to provide a generic caching mechanism for OpenStack projects
+by wrapping the dogpile.cache library. The dogpile.cache library provides
+support memoization, key value storage and interfaces to common caching
+backends such as Memcached.
+
+WWW: https://pypi.python.org/pypi/oslo.cache
