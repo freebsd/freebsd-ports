@@ -55,7 +55,7 @@ PUPPET4_RUN_DEPENDS=	puppet:sysutils/puppet4 \
 			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
 post-patch:
-	@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s|/usr/bin/env ruby|${RUBY}|g" \
 		-e "s|/usr/bin/ruby|${RUBY}|g" \
 		-e "s|%%PREFIX%%|${PREFIX}|g" \

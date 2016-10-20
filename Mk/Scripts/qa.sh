@@ -642,7 +642,7 @@ proxydeps() {
 				# Check that the .so we need has a SONAME
 				if [ "${dep_file_pkg}" != "${PKGORIGIN}" ]; then
 					if ! readelf -d "${dep_file}" | grep -q SONAME; then
-						err "${file} is linked to ${dep_file} which does not have a SONAME.  ${dep_file_pkg} needs to be fixed."
+						err "${file} is linked to ${dep_file} which does not have a SONAME.  ${dep_file_pkg} needs to be fixed."
 					fi
 				fi
 
