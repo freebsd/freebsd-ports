@@ -63,6 +63,7 @@ USES+=		libedit
 .elifdef PLUGIN_ONLY
 # For building plugins (percona-pam-for-mysql, etc)
 # Currently do nothing special
+USES+=		libedit
 .else
 # MySQL-Server part
 USES+=mysql:56p
