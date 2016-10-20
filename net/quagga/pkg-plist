@@ -1,10 +1,11 @@
+bin/bgp_btoa
 %%PIMD%%bin/test_igmpv3_join
 bin/vtysh
-bin/bgp_btoa
 include/quagga/buffer.h
 include/quagga/checksum.h
 include/quagga/command.h
 include/quagga/distribute.h
+include/quagga/event_counter.h
 include/quagga/fifo.h
 include/quagga/filter.h
 include/quagga/getopt.h
@@ -20,6 +21,7 @@ include/quagga/md5.h
 include/quagga/memory.h
 include/quagga/memtypes.h
 include/quagga/network.h
+include/quagga/nexthop.h
 include/quagga/ospfapi/ospf_apiclient.h
 include/quagga/ospfd/ospf_api.h
 include/quagga/ospfd/ospf_asbr.h
@@ -52,6 +54,10 @@ include/quagga/workqueue.h
 include/quagga/zassert.h
 include/quagga/zclient.h
 include/quagga/zebra.h
+lib/libfpm_pb.a
+lib/libfpm_pb.so
+lib/libfpm_pb.so.0
+lib/libfpm_pb.so.0.0.0
 lib/libospf.a
 lib/libospf.so
 lib/libospf.so.0
@@ -60,6 +66,10 @@ lib/libospfapiclient.a
 lib/libospfapiclient.so
 lib/libospfapiclient.so.0
 lib/libospfapiclient.so.0.0.0
+lib/libquagga_pb.a
+lib/libquagga_pb.so
+lib/libquagga_pb.so.0
+lib/libquagga_pb.so.0.0.0
 lib/libzebra.a
 lib/libzebra.so
 lib/libzebra.so.0
