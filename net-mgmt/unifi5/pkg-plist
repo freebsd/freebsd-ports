@@ -1,9 +1,9 @@
 %%JAVASHAREDIR%%/unifi/bin/mongod
-%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.7.17.5220/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U2HSR/3.7.17.5220/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U2IW/3.7.17.5220/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.7.17.5220/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.7.17.5220/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.7.8.5016/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2HSR/3.7.8.5016/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2IW/3.7.8.5016/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.7.8.5016/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.7.8.5016/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/U7PG2/3.7.17.5220/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/US24P250/3.7.17.5220/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
