@@ -1,4 +1,0 @@
-The shape extension wraps libshape and provides the ability to write programs
-for manipulating ESRI shapefiles.
-
-WWW: http://pecl.php.net/package/shape/

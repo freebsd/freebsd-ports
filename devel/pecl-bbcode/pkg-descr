@@ -1,5 +1,0 @@
-The bbcode extension is a quick and efficient BBCode Parsing Library.
-It provides various tag types, high speed one pass parsing, callback
-system and tag position restriction.
-
-WWW: http://pecl.php.net/package/bbcode/

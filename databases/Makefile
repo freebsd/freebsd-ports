@@ -541,13 +541,10 @@
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
     SUBDIR += pecl-leveldb
-    SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongo
     SUBDIR += pecl-mongodb
-    SUBDIR += pecl-mysqlnd_ms
-    SUBDIR += pecl-mysqlnd_qc
     SUBDIR += pecl-pdo_user
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant

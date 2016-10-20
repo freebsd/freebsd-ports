@@ -1,5 +1,0 @@
-PHP PECL extension provides possibility to overload operators for PHP objects.
-At the moment it allows overloading of the following operators:
-+ - * / % << >> . | & ^ ~ ! ++ -- += -= *= /= %= <<= >>= .= |= &= ^= and ~=
-
-WWW: http://pecl.php.net/package/operator

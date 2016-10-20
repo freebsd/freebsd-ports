@@ -8683,3 +8683,21 @@ math/libR||2016-10-16|Has expired: math/R LIBR option is now on by default
 security/libbzrtp|security/bzrtp|2016-10-17|Renamed
 devel/gaphor||2016-10-18|Has expired: runtime failure uncorrected for 1 year after first report
 editors/winefish||2016-10-18|Has expired: upstream disappeared (project dead?), segfaults on multiple arches
+misc/jive||2016-10-20|Has expired: Offensive
+devel/pecl-spread||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-mcve||2016-10-20|Has expired: Works only with EOL php 5.5
+security/pecl-tcpwrap||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-shape||2016-10-20|Has expired: Works only with EOL php 5.5
+textproc/pecl-enchant||2016-10-20|Has expired: Works only with EOL php 5.5
+databases/pecl-mysqlnd_ms||2016-10-20|Has expired: Works only with EOL php 5.5
+textproc/pecl-html_parse||2016-10-20|Has expired: Works only with EOL php 5.5
+mail/pecl-esmtp||2016-10-20|Has expired: Works only with EOL php 5.5
+net/pecl-cvsclient||2016-10-20|Has expired: Works only with EOL php 5.5
+databases/pecl-mdbtools||2016-10-20|Has expired: Works only with EOL php 5.5
+databases/pecl-mysqlnd_qc||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-operator||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-parsekit||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-hidef||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-automap||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-bbcode||2016-10-20|Has expired: Works only with EOL php 5.5
+devel/pecl-bcompiler||2016-10-20|Has expired: Works only with EOL php 5.5
