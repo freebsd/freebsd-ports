@@ -4343,6 +4343,7 @@
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.service
     SUBDIR += py-oslo.utils
+    SUBDIR += py-osprofiler
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-path.py
