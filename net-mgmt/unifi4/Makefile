@@ -44,6 +44,9 @@ WRKSRC=		${WRKDIR}/UniFi
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi2-* unifi3-*
 
+DEPRECATED=	EoL as of 2017-01-01
+EXPIRES=	2017-01-01
+
 post-patch:
 	${RM} ${WRKSRC}/lib/snappy-java-1.0.5.jar
 	(cd ${WRKSRC}/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.0.5.jar)
