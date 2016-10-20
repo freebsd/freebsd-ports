@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: octoprint
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=octoprint
+rcvar=octoprint_enable
+desc="OctoPrint 3D printer control daemon"
+
+load_rc_config $name
+
+: ${octoprint_enable:=NO}
+: ${octoprint_host=0.0.0.0}
+: ${octoprint_port=5000}
+: ${octoprint_flags="--basedir %%HOME%% --host $octoprint_host --port $octoprint_port"}
+: ${octoprint_user=octoprint}
+: ${octoprint_group=octoprint}
+
+octoprint_env=PYTHON_EGG_CACHE=%%HOME%%
+
+command=%%PREFIX%%/bin/$name
+pidfile=/var/run/$name/$name.pid
+command_args="daemon $octoprint_flags --pid $pidfile start"
+command_interpreter=%%PYTHON%%
+start_precmd=octo_prestart
+
+octo_prestart()
+{
+        # octoprint_flags gets appended when we don't want it to.
+	rc_flags=""
+
+	if [ ! -d /var/run/$name ]; then
+		install -d -o ${octoprint_user} -g ${octoprint_group} -m 755 /var/run/$name
+	fi
+}
+
+run_rc_command "$1"
