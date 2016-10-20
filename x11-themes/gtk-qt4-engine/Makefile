@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	x11-themes
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 
 BROKEN=		Unfetchable (google code has gone away)

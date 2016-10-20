@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
 LIB_DEPENDS=	libgsl.so:math/gsl \

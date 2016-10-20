@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://colorcode.laebisch.com/download/
 DISTNAME=	ColorCode-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced MasterMind game and solver
 
 USE_QT5=	gui widgets buildtools_build

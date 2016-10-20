@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/wikipedia/Support%20files/${PORTNAME}%20Linux-x86%20source%20%2B%20binary
 DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
 
 USES=		gmake

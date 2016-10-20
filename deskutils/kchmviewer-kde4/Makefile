@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE viewer for CHM files
 
 LIB_DEPENDS=	libchm.so:misc/chmlib \

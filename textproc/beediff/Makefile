@@ -7,7 +7,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.beesoft.pl/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based diff frontend
 
 USES=		qmake

@@ -8,7 +8,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/javadesktop/javahelp/
 DISTNAME=	${PORTNAME}2_0_05
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online help support for Java applications
 
 USES=		zip

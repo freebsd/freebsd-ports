@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/source
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
 
 LICENSE=	APACHE20

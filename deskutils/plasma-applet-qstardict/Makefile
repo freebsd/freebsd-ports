@@ -7,7 +7,7 @@ CATEGORIES=	deskutils textproc kde
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 PKGNAMEPREFIX=	plasma-applet-
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary plasma applet for KDE
 
 RUN_DEPENDS=	${QSTARDICT_PLUGIN_PATH}/libstardict.so:textproc/qstardict

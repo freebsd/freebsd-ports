@@ -6,7 +6,7 @@ CATEGORIES=	russian
 MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/ru/
 DISTNAME=	stardict-Mueller7accentGPL-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary with accents
 
 USES=		tar:bzip2

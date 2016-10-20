@@ -8,7 +8,7 @@ PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
 LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \

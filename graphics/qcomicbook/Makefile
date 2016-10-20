@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.org/releases/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based comic book archive viewer
 
 LICENSE=	GPLv2

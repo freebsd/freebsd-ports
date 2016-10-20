@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	plasma-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plasma applet to monitor the status of APC UPS
 
 BROKEN=		Unfetchable (google code has gone away)

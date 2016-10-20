@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im audio multimedia
 MASTER_SITES=	http://delta.affinix.com/download/psimedia/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice and video API for Psi-like IM clients
 
 LIB_DEPENDS=	liboil-0.3.so:devel/liboil \

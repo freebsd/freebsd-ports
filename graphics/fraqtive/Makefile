@@ -6,7 +6,7 @@ PORTVERSION=	0.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USES=		qmake tar:bzip2

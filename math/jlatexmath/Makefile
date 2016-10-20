@@ -7,7 +7,7 @@ CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/
 DISTNAME=	${PORTNAME}-src-all-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API to display mathematical formulas written in LaTeX
 
 LICENSE=	GPLv2

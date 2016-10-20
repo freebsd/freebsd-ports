@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based Jabber client
 
 LIB_DEPENDS=	libqca.so:devel/qca \
