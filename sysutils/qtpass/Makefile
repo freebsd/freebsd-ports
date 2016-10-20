@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtpass
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -26,6 +26,8 @@ DESKTOP_ENTRIES=	"QtPass" "" \
 			"${PREFIX}/share/pixmaps/qtpass.png" \
 			"${PREFIX}/bin/qtpass" \
 			"Security;Utility;" true
+
+WRKSRC=		${WRKDIR}/QtPass-${PORTVERSION}
 
 # Install the icon of the port.
 post-install:
