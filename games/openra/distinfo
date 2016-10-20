@@ -1,4 +1,4 @@
-TIMESTAMP = 1476601345
+TIMESTAMP = 1476910506
 SHA256 (StyleCopPlus.MSBuild-4.7.49.5.zip) = b98a8ed20c5e82ff5fe6c2a52ecd45bffd4d4ab284611f35a25889c3bba364c3
 SIZE (StyleCopPlus.MSBuild-4.7.49.5.zip) = 124724
 SHA256 (StyleCop.MSBuild-4.7.49.0.zip) = 6680dedaa5d27fb1ead475015de98e476e58fa9a27e4b7ad0f08d5f7d8f6ee66
@@ -35,5 +35,5 @@ SHA256 (Eluant.dll) = 218c4ea5424b44d746b5343563123beebc652fd9731967dfd49fed071b
 SIZE (Eluant.dll) = 71168
 SHA256 (GeoLite2-Country.mmdb.gz) = be007196c155814b9e46f3969d992aca43158b0b8840b747079312c0aafaa530
 SIZE (GeoLite2-Country.mmdb.gz) = 1302893
-SHA256 (openra-OpenRA-release-20161015_GH0.tar.gz) = 758bdbadee2a8cfe3c9f0da339878688c3bc8ddb63ce2a3de5d20005a192b2b7
-SIZE (openra-OpenRA-release-20161015_GH0.tar.gz) = 12016189
+SHA256 (openra-OpenRA-release-20161019_GH0.tar.gz) = 1cbc258466e1e1180a9ad95d44f3867191552a611dd45be0561372b1e6c055df
+SIZE (openra-OpenRA-release-20161019_GH0.tar.gz) = 12017426
