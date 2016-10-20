@@ -1,0 +1,4 @@
+This package contains middleware modules designed to provide authentication
+and authorization features to web services other than Keystone.
+
+WWW: http://launchpad.net/keystonemiddleware
