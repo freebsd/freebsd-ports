@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20161015
+PORTVERSION=	20161019
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
