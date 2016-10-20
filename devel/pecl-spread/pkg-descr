@@ -1,6 +1,0 @@
-pecl-spread is a extension for PHP to support the Spread toolkit API.
-While Spread is an open source toolkit that provides a high performance
-messaging service that is resilient to faults across local and wide area
-networks.
-
-WWW: http://pecl.php.net/package/spread/

@@ -1,5 +1,0 @@
-Esmtp is a wrapper for SMTP client library based on the libESMTP library
-(http://www.stafford.uklinux.net/libesmtp/). You can use it to send messages
-using internal SASL, and external/openssl SSL support.
-
-WWW: http://pecl.php.net/package/esmtp
