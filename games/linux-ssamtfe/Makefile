@@ -98,6 +98,8 @@ do-install:
 .if ${PORT_OPTIONS:MVORBIS}
 	${LN} -fs ${LINUXBASE}/usr/lib/libvorbisfile.so.3 ${STAGEDIR}${DATADIR}/Bin/libvorbisfile.so
 .endif
+	# This looks like an attempt of duplicating what USES=dos2unix does,
+	# but I don't have the CDROM to test.
 	@${FIND} -E ${STAGEDIR}${DATADIR} -type f \
 		-iregex ".*\.(ctl|txt|lst|ini|cfg|des|reg)" \
 		-exec ${SH} -c "${SED} "s/`printf '\r'`//" '{}' \
