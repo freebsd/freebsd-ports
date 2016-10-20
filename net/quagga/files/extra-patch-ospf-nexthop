@@ -1,4 +1,4 @@
---- ospfd/ospf_asbr.c.orig	2016-03-15 23:17:17 UTC
+--- ospfd/ospf_asbr.c.orig	2016-10-18 13:03:52 UTC
 +++ ospfd/ospf_asbr.c
 @@ -122,6 +122,7 @@ ospf_reset_route_map_set_values (struct 
  {
@@ -8,7 +8,7 @@
  }
  
  int
---- ospfd/ospf_asbr.h.orig	2016-03-15 23:17:17 UTC
+--- ospfd/ospf_asbr.h.orig	2016-10-18 13:03:52 UTC
 +++ ospfd/ospf_asbr.h
 @@ -27,6 +27,7 @@ struct route_map_set_values
  {
@@ -26,7 +26,7 @@
  };
  
  #define OSPF_ASBR_CHECK_DELAY 30
---- ospfd/ospf_lsa.c.orig	2016-03-15 23:17:17 UTC
+--- ospfd/ospf_lsa.c.orig	2016-10-18 13:03:52 UTC
 +++ ospfd/ospf_lsa.c
 @@ -1644,7 +1644,8 @@ ospf_external_lsa_body_set (struct strea
    stream_put_ospf_metric (s, mvalue);
@@ -38,10 +38,10 @@
  
    /* Put forwarding address. */
    stream_put_ipv4 (s, fwd_addr.s_addr);
---- ospfd/ospf_routemap.c.orig	2016-03-15 23:17:17 UTC
+--- ospfd/ospf_routemap.c.orig	2016-10-18 13:03:52 UTC
 +++ ospfd/ospf_routemap.c
-@@ -531,6 +531,62 @@ struct route_map_rule_cmd route_set_metr
-   route_set_metric_type_free,
+@@ -668,6 +668,62 @@ struct route_map_rule_cmd route_set_tag_
+   route_set_tag_free,
  };
  
 +/* `set ip next-hop IP_ADDRESS' */
@@ -103,9 +103,9 @@
  DEFUN (match_ip_nexthop,
         match_ip_nexthop_cmd,
         "match ip next-hop (<1-199>|<1300-2699>|WORD)",
-@@ -785,6 +841,49 @@ ALIAS (no_set_metric_type,
-        "OSPF[6] external type 1 metric\n"
-        "OSPF[6] external type 2 metric\n")
+@@ -984,6 +1040,49 @@ ALIAS (no_set_tag,
+        "Tag value for routing protocol\n"
+        "Tag value\n")
  
 +DEFUN (set_ip_nexthop,
 +       set_ip_nexthop_cmd,
@@ -153,30 +153,32 @@
  /* Route-map init */
  void
  ospf_route_map_init (void)
-@@ -804,6 +903,7 @@ ospf_route_map_init (void)
- 
+@@ -1005,6 +1104,7 @@ ospf_route_map_init (void)
    route_map_install_set (&route_set_metric_cmd);
    route_map_install_set (&route_set_metric_type_cmd);
+   route_map_install_set (&route_set_tag_cmd);
 +  route_map_install_set (&route_set_ip_nexthop_cmd);
  
    install_element (RMAP_NODE, &match_ip_nexthop_cmd);
    install_element (RMAP_NODE, &no_match_ip_nexthop_cmd);
-@@ -827,4 +927,7 @@ ospf_route_map_init (void)
+@@ -1031,6 +1131,9 @@ ospf_route_map_init (void)
    install_element (RMAP_NODE, &set_metric_type_cmd);
    install_element (RMAP_NODE, &no_set_metric_type_cmd);
    install_element (RMAP_NODE, &no_set_metric_type_val_cmd);
 +  install_element (RMAP_NODE, &set_ip_nexthop_cmd);
 +  install_element (RMAP_NODE, &no_set_ip_nexthop_cmd);
 +  install_element (RMAP_NODE, &no_set_ip_nexthop_val_cmd);
- }
---- vtysh/extract.pl.in.orig	2016-03-15 23:17:17 UTC
+   install_element (RMAP_NODE, &set_tag_cmd);
+   install_element (RMAP_NODE, &no_set_tag_cmd);
+   install_element (RMAP_NODE, &no_set_tag_val_cmd);
+--- vtysh/extract.pl.in.orig	2016-10-20 11:59:56 UTC
 +++ vtysh/extract.pl.in
 @@ -180,7 +180,7 @@ foreach (@ARGV) {
      }
  }
  
--my $bad_cli_stomps = 89;
-+my $bad_cli_stomps = 92;
+-my $bad_cli_stomps = 102;
++my $bad_cli_stomps = 105;
  # Currently we have $bad_cli_stomps.  This was determined by
  # running this script and counting up the collisions from what
  # was returned.
