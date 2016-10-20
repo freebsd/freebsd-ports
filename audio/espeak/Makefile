@@ -52,7 +52,6 @@ BROKEN_sparc64=	Does not compile on sparc64
 
 post-patch:
 	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_FILES}
-post-patch-PORTAUDIO-on:
 	${MV} ${WRKSRC}/src/portaudio19.h ${WRKSRC}/src/portaudio.h
 
 post-install:
