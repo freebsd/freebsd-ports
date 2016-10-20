@@ -271,6 +271,7 @@
     SUBDIR += kedpm
     SUBDIR += keepass
     SUBDIR += keepassx
+    SUBDIR += keepassx-devel
     SUBDIR += keepassx2
     SUBDIR += keybase
     SUBDIR += keychain
