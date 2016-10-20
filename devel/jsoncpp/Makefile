@@ -41,8 +41,8 @@ do-install:
 	${CP} ${WRKSRC}/pkg-config/jsoncpp.pc.in ${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 	@${REINPLACE_CMD} -i '' \
 		-e 's|@CMAKE_INSTALL_PREFIX@|${PREFIX}|g' \
-		-e 's|@LIBRARY_INSTALL_DIR@|${PREFIX}/lib|g' \
-		-e 's|@INCLUDE_INSTALL_DIR@|${PREFIX}/include/jsoncpp|g' \
+		-e 's|@LIBRARY_INSTALL_DIR@|lib|g' \
+		-e 's|@INCLUDE_INSTALL_DIR@|include/jsoncpp|g' \
 		-e 's|@JSONCPP_VERSION@|${DISTVERSION}|g' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 
