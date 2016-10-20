@@ -3,6 +3,7 @@
 
 PORTNAME=	tcp_wrappers-libs
 PORTVERSION=	7.6
+PORTREVISION=	1
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
