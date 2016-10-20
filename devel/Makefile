@@ -4329,6 +4329,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-os-client-config
     SUBDIR += py-osc-lib
+    SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.config
     SUBDIR += py-oslo.context
