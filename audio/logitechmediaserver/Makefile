@@ -61,6 +61,7 @@ CONFFILES=	convert.conf types.conf
 
 PLIST_SUB=	SLIMDIR=${SLIMDIR} \
 		SLIMDBDIR=${SLIMDBDIR} \
+		OPSYS=${OPSYS:tl} \
 		ARCH=${ARCH}
 
 SUB_FILES=	Custom.pm \
