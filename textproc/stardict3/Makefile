@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary lookup program written in Gtk2
 
 BROKEN=		Unfetchable (google code has gone away)

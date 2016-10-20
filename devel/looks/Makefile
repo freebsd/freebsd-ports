@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/ \
 		LOCAL/makc
 DISTNAME=	jgoodies-${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved appearance for Java Swing applications
 
 LICENSE=	BSD3CLAUSE

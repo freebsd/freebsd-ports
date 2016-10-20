@@ -8,7 +8,7 @@ CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/
 PKGNAMEPREFIX=	kde4-style-
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE style and window decoration
 
 LICENSE=	LGPL20+

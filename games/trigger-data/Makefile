@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 DISTNAME=	trigger-rally-${PORTVERSION}-data
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for trigger-rally
 
 USES=		tar:bzip2

@@ -8,7 +8,7 @@ MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
 USE_JAVA=	yes

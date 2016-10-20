@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	editors kde
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX source editor for KDE
 
 RUN_DEPENDS=	identify:graphics/ImageMagick

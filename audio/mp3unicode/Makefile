@@ -5,7 +5,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags charset converter
 
 LIB_DEPENDS=	libtag.so:audio/taglib

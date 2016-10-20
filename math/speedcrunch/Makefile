@@ -5,7 +5,7 @@ PORTNAME=	speedcrunch
 DISTVERSION=	0.11
 CATEGORIES=	math
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard-oriented desktop scientific calculator
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui network

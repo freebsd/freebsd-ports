@@ -5,7 +5,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://download.tuxfamily.org/ctpl/releases/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C Template (Parser) Library
 
 GNU_CONFIGURE=	yes
