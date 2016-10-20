@@ -7,7 +7,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	6
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
 USES=		gmake qmake tar:bzip2

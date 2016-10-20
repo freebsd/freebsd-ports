@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 PKGNAMESUFFIX=	-doc
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The QtiPlot Handbook
 
 BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \

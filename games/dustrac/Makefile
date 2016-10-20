@@ -4,7 +4,7 @@ PORTNAME=	dustrac
 PORTVERSION=	1.11.0
 CATEGORIES=	games
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D top-view racing game
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis

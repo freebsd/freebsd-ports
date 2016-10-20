@@ -7,7 +7,7 @@ CATEGORIES=	math graphics multimedia
 MASTER_SITES=	LOCAL/makc
 PKGNAMEPREFIX=	scilab-toolbox-
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab

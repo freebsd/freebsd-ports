@@ -5,7 +5,7 @@ PORTVERSION=	0.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PyVISA backend in a pure Python
 
 USE_GITHUB=	yes

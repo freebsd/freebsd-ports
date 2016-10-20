@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontmatrix.net/archives/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical font manager
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme

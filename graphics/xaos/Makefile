@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics math
 MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time fractal browser
 
 LIB_DEPENDS=	libpng.so:graphics/png \

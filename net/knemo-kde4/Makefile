@@ -6,7 +6,7 @@ CATEGORIES=	net kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE network monitor
 
 USES=		cmake gettext kde:4 shebangfix tar:xz

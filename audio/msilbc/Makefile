@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mediastreamer plugin for the iLBC audio codec
 
 LIB_DEPENDS=	libortp.so:net/ortp \

@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single player racing game
 
 LICENSE=	GPLv2

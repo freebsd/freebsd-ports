@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S,.0$,,}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based Qemu frontend
 
 LIB_DEPENDS=	libvncclient.so:net/libvncserver

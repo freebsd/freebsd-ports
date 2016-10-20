@@ -4,7 +4,7 @@ PORTNAME=	minitube
 PORTVERSION=	2.4
 CATEGORIES=	multimedia www
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TV-like client for YouTube
 
 USE_QT4=	dbus gui network phonon script sql xml \

@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt4
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
 USES=		dos2unix qmake tar:tgz

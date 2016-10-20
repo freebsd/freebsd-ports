@@ -7,7 +7,7 @@ CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 DISTNAME=	Kst-${DISTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
 LIB_DEPENDS=	libgsl.so:math/gsl

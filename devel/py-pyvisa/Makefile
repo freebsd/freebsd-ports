@@ -5,7 +5,7 @@ PORTVERSION=	1.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python VISA bindings for GPIB, RS232, and USB instruments
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:devel/py-pyvisa-py

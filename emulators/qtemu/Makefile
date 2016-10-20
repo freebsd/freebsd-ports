@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based frontend for QEMU
 
 USE_QT4=	gui xml uic_build moc_build rcc_build

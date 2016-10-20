@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:devel/boost-libs

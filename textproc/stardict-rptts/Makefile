@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	WyabdcRealPeopleTTS
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real People TTS for StarDict
 
 BROKEN=		Unfetchable (google code has gone away)

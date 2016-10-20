@@ -8,7 +8,7 @@ MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
 DISTFILES=	${DISTNAME}-3-src${EXTRACT_SUFX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab

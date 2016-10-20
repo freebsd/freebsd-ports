@@ -6,7 +6,7 @@ PORTREVISION?=	1
 CATEGORIES=	x11-themes linux
 PKGNAMEPREFIX=	linux-f10-
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QtCurve GTK2 Theme Engine (Linux Fedora 10)
 
 USES=		linux:f10
