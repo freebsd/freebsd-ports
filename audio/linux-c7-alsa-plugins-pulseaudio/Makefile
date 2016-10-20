@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-plugins-pulseaudio
 PORTVERSION=	1.0.27
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -20,9 +21,5 @@ USE_LINUX_RPM=	yes
 RPMVERSION=	3.el7
 
 USE_LDCONFIG=	yes
-
-# We will use native configuration file, so delete a linux one
-post-extract:
-	@${RM} -r ${WRKSRC}/etc
 
 .include <bsd.port.mk>
