@@ -1,2 +1,5 @@
-SHA256 (axis2-1.7.1-bin.zip) = cf0ddefbf82689fc06c5b7b7aa10786794f45e9e21563a2a780e672e5c96708f
-SIZE (axis2-1.7.1-bin.zip) = 22362277
+TIMESTAMP = 1476566283
+SHA256 (axis2-1.7.3-bin.zip) = 9605e2726af535a0bc6007dff59d6a4d03dab0c2b119b234ad1d5b34b77f5d2d
+SIZE (axis2-1.7.3-bin.zip) = 22315355
+SHA256 (axis2-1.7.3-war.zip) = 73625e6a462f93e4b996e8f78bf63286e6e071cc8e42495c5cea3d2034c2f211
+SIZE (axis2-1.7.3-war.zip) = 20191858

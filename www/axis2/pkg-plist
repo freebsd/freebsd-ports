@@ -3,13 +3,33 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/commons-logging.properties
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/log4j.properties
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport/http/AxisAdminServlet.class
-%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AdminAgent.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/Action.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/ActionHandler.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/ActionResult.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AdminActions.class
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AxisAdminServlet.class
-%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%%
-%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%%
-%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%%
-%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%%
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/CSRFPreventionResponseWrapper.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/CSRFTokenCache.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/Redirect.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/Status.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/StatusCache$1.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/StatusCache.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/View.class
+@sample %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.sample
+@sample %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.sample
+@sample %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.sample
+@sample %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.sample
+@mode 644
+%%APPHOME%%/webapps/axis2/WEB-INF/include/LeftFrame.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/include/adminfooter.inc
+%%APPHOME%%/webapps/axis2/WEB-INF/include/adminfooter.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/include/adminheader.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/include/footer.inc
+%%APPHOME%%/webapps/axis2/WEB-INF/include/header.inc
+%%APPHOME%%/webapps/axis2/WEB-INF/include/httpbase.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/include/link-footer.inc
+%%APPHOME%%/webapps/axis2/WEB-INF/include/link-footer.jsp
+@mode
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/activation-1.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/activation-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/antlr-2-LICENSE.txt
@@ -17,10 +37,10 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-0.7.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.17.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.17.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.17.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.17.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.19.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.19.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.19.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.19.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-%%PORTVERSION%%.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-codegen-%%PORTVERSION%%.jar
@@ -80,9 +100,9 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-2.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.2.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.2.5.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.2.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.2.5.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-1.5rc3.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-LICENSE.txt
@@ -117,8 +137,8 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/stax2-api.LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-6.0.16.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-1.0M10.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woodstox-core-asl-4.2.0.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woodstox-core-asl-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/wsdl4j-1.6.2.jar
@@ -130,6 +150,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-2.5.0.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-2.2.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/addressing-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/mex-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/modules.list
@@ -139,148 +160,334 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/soapmonitor-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/services/services.list
 %%APPHOME%%/webapps/axis2/WEB-INF/services/version.aar
-%%APPHOME%%/webapps/axis2/WEB-INF/web.xml.%%CONF_EXT%%
-%%APPHOME%%/webapps/axis2/axis2-web/ActivateService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/EngageToServiceGroup.jsp
+@mode 644
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/Login.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/SelectService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/activateService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/admin.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/deactivateService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/editServiceParameters.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/engageGlobally.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/engageToOperation.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/engageToService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/engageToServiceGroup.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/errorModule.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/globalModules.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/listModules.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/listServiceGroups.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/listServices.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/listSingleService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/upload.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewContexts.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewGlobalChains.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewOperationSpecificChains.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewServiceContext.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewServiceGroupContext.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewphases.jsp
+@mode
+@sample %%APPHOME%%/webapps/axis2/WEB-INF/web.xml.sample
 %%APPHOME%%/webapps/axis2/axis2-web/Error/AuthError.html
 %%APPHOME%%/webapps/axis2/axis2-web/Error/GenError.html
 %%APPHOME%%/webapps/axis2/axis2-web/Error/error404.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/Error/error500.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/HappyAxis.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/InActivateService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/LeftFrame.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/ListServiceGroup.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/Login.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/MainFrame.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/SelectService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/ServiceParaEdit.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/TopFrame.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/ViewContexts.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/ViewGlobalHandlers.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/ViewServiceHandlers.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/admin.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/css/axis-style.css
-%%APPHOME%%/webapps/axis2/axis2-web/deleteService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/disengage.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/engagingglobally.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/engagingtoanoperation.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/engagingtoaservice.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/error.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/errorModule.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/globalModules.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/images/asf-logo.gif
 %%APPHOME%%/webapps/axis2/axis2-web/images/axis.gif
 %%APPHOME%%/webapps/axis2/axis2-web/images/axis.jpg
 %%APPHOME%%/webapps/axis2/axis2-web/images/axis_l.jpg
-%%APPHOME%%/webapps/axis2/axis2-web/include/adminfooter.inc
-%%APPHOME%%/webapps/axis2/axis2-web/include/adminfooter.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/include/adminheader.inc
-%%APPHOME%%/webapps/axis2/axis2-web/include/adminheader.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/include/footer.inc
-%%APPHOME%%/webapps/axis2/axis2-web/include/header.inc
-%%APPHOME%%/webapps/axis2/axis2-web/include/httpbase.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/include/link-footer.inc
-%%APPHOME%%/webapps/axis2/axis2-web/include/link-footer.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/index.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/listFaultyService.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/listGroupService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listModules.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listService.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/listServices.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listSingleService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/upload.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/viewServiceContext.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/viewServiceGroupContext.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/viewphases.jsp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/databinding/client/src/%%CONF_EXT%%s/databinding
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/StockQuote.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/StockQuoteService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/castorbuilder.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/client/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/client/src/samples/databinding/StockClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/client/src/samples/databinding/StockClient2.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/service/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/service/src/samples/databinding/StockQuoteServiceSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/bank.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/client/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/client/src/example/BankClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/docs/FaultHandlingSampleGuide.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/service/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faulthandling/service/src/example/BankServiceSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/main/demo/hw/server/HelloWorld.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/main/demo/hw/server/HelloWorldImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/webapp/WEB-INF/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/webapp/WEB-INF/classes/commons-logging.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/webapp/WEB-INF/classes/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java_first_jaxws/src/webapp/WEB-INF/web.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/src/AddressBookEntry.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/src/org/apache/axis2/jaxws/addressbook/AddressBook.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/src/org/apache/axis2/jaxws/addressbook/AddressBookClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-addressbook/src/org/apache/axis2/jaxws/addressbook/AddressBookImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/resources/META-INF/CalculatorService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/resources/META-INF/CalculatorService_schema1.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/Add.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/AddNumbersException.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/AddNumbersException_Exception.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/AddResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/Calculator.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/CalculatorServer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/CalculatorService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/GetTicket.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/GetTicketResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/Add.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/AddNumbersException.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/AddNumbersException_Exception.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/AddResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/AddSEIClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/Calculator.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/CalculatorService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/GetTicket.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/GetTicketResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-dynamic/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-dynamic/resources/wsdl/DynamicSample.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-dynamic/src/org/apache/axis2/jaxws/sample/dynamic/DynamicServiceProvider.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/resources/META-INF/BaseDataTypesDocLitB.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/resources/META-INF/xsd0.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/resources/META-INF/xsd1.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/resources/META-INF/xsd2.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/com/microsoft/schemas/_2003/_10/serialization/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/apache/axis2/jaxws/interop/InteropSampleClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/apache/axis2/jaxws/interop/InteropSampleService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/datacontract/schemas/_2004/_07/system/DateTimeOffset.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/datacontract/schemas/_2004/_07/system/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/datacontract/schemas/_2004/_07/system/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/tempuri/BaseDataTypesDocLitBService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/tempuri/IBaseDataTypesDocLitB.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-interop/src/org/tempuri/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/SampleClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoService12.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoService12PortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoService12PortTypeClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoServiceCallbackHandler.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoServicePortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/echo/EchoServicePortTypeClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/mtom/MtomSample12PortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/mtom/MtomSamplePortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/mtom/MtomSampleService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/mtom/MtomSampleService12.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/mtom/SampleMTOMTests.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingService12.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingService12PortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingService12PortTypeClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingServicePortProxy.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/client/ping/PingServicePortTypeClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoService12PortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoService12PortType.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoServicePortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoServicePortType.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoStringInput.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/EchoStringResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/handler/LoggingSOAPHandler.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/ImageDepot.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/MtomSample.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/MtomSample12.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/MtomSample12PortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/MtomSamplePortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/SendImage.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/SendImageResponse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/ObjectFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/PingService12PortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/PingService12PortType.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/PingServicePortImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/PingServicePortType.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/PingStringInput.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping/package-info.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/servlet/EchoPingSampleServlet.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/servlet/MTOMSampleServlet.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/classes/commons-logging.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/classes/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/classes/org/apache/axis2/jaxws/samples/echo/loghandler.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/jsp/demoEchoPing.jsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/jsp/demoMTOM.jsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/web.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/Echo.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/Echo12.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/ImageDepot.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/ImageDepot12.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/Ping.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/WEB-INF/wsdl/Ping12.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-samples/src/webapp/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/resources/META-INF/version.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/resources/META-INF/version.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jaxws-version/src/sample/jaxws/Version.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/resources/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/src/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/src/sample/json/client/JsonClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/src/sample/json/service/Address.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/src/sample/json/service/JsonService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/src/sample/json/service/User.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/resources/MTOMSample.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/resources/xmime.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/src/sample/mtom/client/Client.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtom/src/sample/mtom/service/MTOMSampleSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/src/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/src/sample/addressbook/adbclient/AddressBookADBClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/src/sample/addressbook/entry/Entry.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/src/sample/addressbook/rpcclient/AddressBookRPCClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojo/src/sample/addressbook/service/AddressBookService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/src/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/src/sample/pojo/data/Weather.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/src/sample/pojo/rpcclient/WeatherRPCClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguide/src/sample/pojo/service/WeatherService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/applicationContext.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/client/WeatherSpringRPCClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/sample/spring/bean/Weather.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/sample/spring/service/SpringInit.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pojoguidespring/src/sample/spring/service/WeatherSpringService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/src/samples/quickstart/service/pojo/StockQuoteService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/resources/META-INF/StockQuoteService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/src/samples/quickstart/clients/ADBClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartadb/src/samples/quickstart/service/adb/StockQuoteServiceSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/resources/META-INF/StockQuoteService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/src/samples/quickstart/clients/AXIOMClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartaxiom/src/samples/quickstart/service/axiom/StockQuoteService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/resources/META-INF/StockQuoteService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/src/samples/quickstart/clients/JiBXClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartjibx/src/samples/quickstart/service/jibx/StockQuoteServiceSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/resources/META-INF/StockQuoteService.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/src/samples/quickstart/clients/XMLBEANSClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstartxmlbeans/src/samples/quickstart/service/xmlbeans/StockQuoteServiceSkeleton.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/doc/servicelifecycleguide.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/client/LibraryServiceClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/LibraryConstants.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/LibraryLifeCycle.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/LibraryService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/UsersService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/bean/Book.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/bean/BookList.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/bean/User.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servicelifecycle/src/sample/servicelifecycle/bean/UserList.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soapwithattachments/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soapwithattachments/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soapwithattachments/resources/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soapwithattachments/src/sample/soapwithattachments/client/SWAClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soapwithattachments/src/sample/soapwithattachments/service/AttachmentService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsClient/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsClient/src/main/java/org/apache/axis2/examples/httpsclient/SimpleServiceClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsService/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsService/src/main/java/org/apache/axis2/examples/httpsservice/SimpleService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsService/src/main/webapp/WEB-INF/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsService/src/main/webapp/WEB-INF/services/SimpleService/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/httpsService/src/main/webapp/WEB-INF/web.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/https-sample/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/jmsService/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/jmsService/src/main/java/org/apache/axis2/examples/jmsservice/SimpleService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/jmsService/src/main/resources/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/jmsService/src/main/resources/services/SimpleService/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transport/jms-sample/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/conf/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/ClientForWebServiceWithModule.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/ClientSideModuleEngagement.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/ClientUtil.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/EchoBlockingClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/EchoBlockingDualClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/EchoBlockingWsaBasedClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/EchoNonBlockingClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/EchoNonBlockingDualClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/MailClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/PingClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/RESTClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/clients/TCPClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example1/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example1/MyService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example2/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example2/MyService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example3/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/example3/MyService.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/loggingmodule/LogHandler.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/loggingmodule/LoggingModule.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userguide/src/userguide/loggingmodule/META-INF/module.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version/src/sample/axisversion/META-INF/services.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version/src/sample/axisversion/Version.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wsdl/Axis2SampleDocLit.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wsdl/perf.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/resources/axis2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/src/sample/yahooservices/JSONSearch/JSONSearchClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/src/sample/yahooservices/JSONSearch/JSONSearchModel.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoojsonsearch/src/sample/yahooservices/JSONSearch/UserInterface.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoorestsearch/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoorestsearch/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoorestsearch/src/sample/yahooservices/RESTSearch/RESTSearchClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoorestsearch/src/sample/yahooservices/RESTSearch/RESTSearchModel.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yahoorestsearch/src/sample/yahooservices/RESTSearch/UserInterface.java
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/databinding/docs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/databinding/service/src/%%CONF_EXT%%s/databinding
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/faulthandling/client/src/example
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/faulthandling/docs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/faulthandling/service/src/example
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/java_first_jaxws/src/main/demo/hw/server
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/java_first_jaxws/src/webapp/WEB-INF/classes
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-addressbook/src/org/apache/axis2/jaxws/addressbook
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-calculator/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-dynamic/resources/wsdl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-dynamic/src/org/apache/axis2/jaxws/%%CONF_EXT%%/dynamic
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-interop/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-interop/src/com/microsoft/schemas/_2003/_10/serialization
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-interop/src/org/apache/axis2/jaxws/interop
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-interop/src/org/datacontract/schemas/_2004/_07/system
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-interop/src/org/tempuri
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/client/echo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/client/mtom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/client/ping
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/echo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/handler
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/mtom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/ping
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/main/org/apache/axis2/jaxws/%%CONF_EXT%%s/servlet
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/webapp/WEB-INF/classes/org/apache/axis2/jaxws/%%CONF_EXT%%s/echo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/webapp/WEB-INF/jsp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-%%CONF_EXT%%s/src/webapp/WEB-INF/wsdl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-version/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/jaxws-version/src/%%CONF_EXT%%/jaxws
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/json/resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/json/src/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/json/src/%%CONF_EXT%%/json/client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/json/src/%%CONF_EXT%%/json/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/mtom/resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/mtom/src/%%CONF_EXT%%/mtom/client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/mtom/src/%%CONF_EXT%%/mtom/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojo/src/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojo/src/%%CONF_EXT%%/addressbook/adbclient
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojo/src/%%CONF_EXT%%/addressbook/entry
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojo/src/%%CONF_EXT%%/addressbook/rpcclient
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojo/src/%%CONF_EXT%%/addressbook/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguide/src/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguide/src/%%CONF_EXT%%/pojo/data
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguide/src/%%CONF_EXT%%/pojo/rpcclient
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguide/src/%%CONF_EXT%%/pojo/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguidespring/src/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguidespring/src/client
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguidespring/src/lib
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguidespring/src/%%CONF_EXT%%/spring/bean
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/pojoguidespring/src/%%CONF_EXT%%/spring/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstart/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstart/src/%%CONF_EXT%%s/quickstart/service/pojo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartadb/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartadb/src/%%CONF_EXT%%s/quickstart/clients
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartadb/src/%%CONF_EXT%%s/quickstart/service/adb
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartaxiom/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartaxiom/src/%%CONF_EXT%%s/quickstart/clients
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartaxiom/src/%%CONF_EXT%%s/quickstart/service/axiom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartjibx/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartjibx/src/%%CONF_EXT%%s/quickstart/clients
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartjibx/src/%%CONF_EXT%%s/quickstart/service/jibx
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartxmlbeans/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartxmlbeans/src/%%CONF_EXT%%s/quickstart/clients
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/quickstartxmlbeans/src/%%CONF_EXT%%s/quickstart/service/xmlbeans
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/servicelifecycle/doc
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/servicelifecycle/src/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/servicelifecycle/src/client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/servicelifecycle/src/%%CONF_EXT%%/servicelifecycle/bean
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/soapwithattachments/resources/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/soapwithattachments/src/%%CONF_EXT%%/soapwithattachments/client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/soapwithattachments/src/%%CONF_EXT%%/soapwithattachments/service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/transport/https-%%CONF_EXT%%/httpsClient/src/main/java/org/apache/axis2/examples/httpsclient
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/transport/https-%%CONF_EXT%%/httpsService/src/main/java/org/apache/axis2/examples/httpsservice
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/transport/https-%%CONF_EXT%%/httpsService/src/main/webapp/WEB-INF/services/SimpleService/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/transport/jms-%%CONF_EXT%%/jmsService/src/main/java/org/apache/axis2/examples/jmsservice
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/transport/jms-%%CONF_EXT%%/jmsService/src/main/resources/services/SimpleService/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/conf
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/src/userguide/clients
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/src/userguide/example1/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/src/userguide/example2/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/src/userguide/example3/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/userguide/src/userguide/loggingmodule/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/version/src/%%CONF_EXT%%/axisversion/META-INF
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/wsdl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/yahoojsonsearch/resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/yahoojsonsearch/src/%%CONF_EXT%%/yahooservices/JSONSearch
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/yahoorestsearch/src/%%CONF_EXT%%/yahooservices/RESTSearch
+@mode 755
 @dir %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF
 @dir %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport/http
 @dir %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport
@@ -298,8 +505,6 @@
 @dir %%APPHOME%%/webapps/axis2/axis2-web/Error
 @dir %%APPHOME%%/webapps/axis2/axis2-web/css
 @dir %%APPHOME%%/webapps/axis2/axis2-web/images
-@dir %%APPHOME%%/webapps/axis2/axis2-web/include
 @dir %%APPHOME%%/webapps/axis2/axis2-web
 @dir %%APPHOME%%/webapps/axis2
-@dir %%APPHOME%%/webapps
-@dir %%APPHOME%%
+@mode
