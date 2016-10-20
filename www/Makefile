@@ -1656,6 +1656,7 @@
     SUBDIR += py-meld3
     SUBDIR += py-mt
     SUBDIR += py-nevow
+    SUBDIR += py-octoprint
     SUBDIR += py-pafy
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
