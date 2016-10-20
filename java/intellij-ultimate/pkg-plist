@@ -185,7 +185,7 @@ bin/idea
 %%IDEA_HOME%%/lib/servlet-api.jar
 %%IDEA_HOME%%/lib/slf4j-api-1.7.10.jar
 %%IDEA_HOME%%/lib/slf4j-log4j12-1.7.10.jar
-%%IDEA_HOME%%/lib/snappy-in-java-0.3.1.jar
+%%IDEA_HOME%%/lib/snappy-in-java-0.5.1.jar
 %%IDEA_HOME%%/lib/sqlite-jdbc-3.6.20.1.jar
 %%IDEA_HOME%%/lib/src/src_css-api.zip
 %%IDEA_HOME%%/lib/src/src_database-openapi.zip
@@ -374,6 +374,7 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/build.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/android-extensions-compiler.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-annotation-processing.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common-test.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar

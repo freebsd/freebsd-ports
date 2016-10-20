@@ -4,7 +4,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2016.2.4
+PORTVERSION=	2016.2.5
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 USE_LDCONFIG=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86_64/
 USE_LDCONFIG32=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86/
 
-WRKDIST=	${WRKDIR}/idea-IU-162.2032.8
+WRKDIST=	${WRKDIR}/idea-IU-162.2228.15
 
 .include "${.CURDIR}/../intellij/common.mk"
 
