@@ -24,6 +24,8 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 
 CONFLICTS_BUILD=	xmlrpc-c-*
 
+BROKEN=			unfetchable (checksum mismatch) and attempts to strip libfreeswitch.a\
+			(returns file format not recognized)
 BROKEN_FreeBSD_9=	Fails in configure due to compiler issues
 ONLY_FOR_ARCHS=	amd64
 
