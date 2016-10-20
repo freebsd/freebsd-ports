@@ -5,4 +5,4 @@ to use as possible and is designed to follow all of reddit's API rules.
 You have to give a useragent that follows the rules, everything else is
 handled by PRAW so you needn't worry about violating them.
 
-WWW: http://praw.readthedocs.org
+WWW: https://praw.readthedocs.io

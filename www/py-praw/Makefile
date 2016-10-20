@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	praw
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock
 # betamax >=0.5.1
 # betamax-matchers >=0.2.0
 # betamax-serializers >=0.1.1
+
+NO_ARCH=	yes
 
 USES=		python
 USE_GITHUB=	yes
