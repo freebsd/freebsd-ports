@@ -4252,6 +4252,7 @@
     SUBDIR += py-kayako
     SUBDIR += py-kazoo
     SUBDIR += py-keystoneauth1
+    SUBDIR += py-keystonemiddleware
     SUBDIR += py-kid
     SUBDIR += py-kitchen
     SUBDIR += py-kjbuckets
