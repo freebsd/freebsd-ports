@@ -10,6 +10,8 @@ COMMENT=	Prometheus exporter for machine metrics
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_9=	does not build
+
 USES=		go
 USE_GITHUB=	yes
 
