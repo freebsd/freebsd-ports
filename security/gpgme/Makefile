@@ -87,6 +87,12 @@ CONFLICTS_INSTALL=	py*-pyme-[0-9]*
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
+.  if (${SLAVEPORT} == "cpp" || ${SLAVEPORT} == "qt5")
+.    if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1
+.    endif
+.  endif
 .  if ${SLAVEPORT} == "python"
 .    if ${PYTHON_REL} >= 3000
 CONFIGURE_ARGS+=--enable-languages="python3"
