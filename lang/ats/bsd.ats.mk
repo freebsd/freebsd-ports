@@ -34,7 +34,7 @@ pre-build:
 do-install:
 	${MKDIR} ${ATS_LIBDIR}/contrib
 	cd ${INSTALL_WRKSRC}/contrib && \
-	${RM} -f ${ATS_CTRB}/contrib && \
+	${RM} ${ATS_CTRB}/contrib && \
 	${COPYTREE_SHARE} ${ATS_CTRB} ${ATS_LIBDIR}/contrib
 .if !defined(NOPORTEXAMPLES) && defined(ATS_CTRBEXAMPLE)
 	${MKDIR} ${ATS_CTRBEXAMPLEDIR}

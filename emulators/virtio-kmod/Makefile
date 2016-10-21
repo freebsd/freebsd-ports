@@ -68,7 +68,7 @@ maintainer-tar:
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/9/sys/dev/virtio dev/virtio
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/9/sys/modules/virtio modules/virtio
 	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_9} dev modules
-	cd ${EXPDIR} && ${RM} -rf dev modules
+	cd ${EXPDIR} && ${RM} -r dev modules
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/8/sys/dev/virtio dev/virtio
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/8/sys/modules/virtio modules/virtio
 	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_8} dev modules

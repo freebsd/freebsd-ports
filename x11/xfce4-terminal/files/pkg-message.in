@@ -1,0 +1,7 @@
+To reduce the height of tabs, create ~/.config/gtk-3.0/gtk.css file with
+the following content:
+
+TerminalWindow GtkNotebook.notebook {
+        padding-top: 0;
+        padding-bottom: 0;
+}

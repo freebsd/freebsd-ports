@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vertically scrolling shoot'em up
 
 USES=		qmake

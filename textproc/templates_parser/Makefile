@@ -44,7 +44,7 @@ do-build-DOCS-on:
 		${MAKE_CMD} ${MAKE_ARGS} html
 
 post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/gpr/manifests
+	${RM} -r ${STAGEDIR}${PREFIX}/share/gpr/manifests
 	${MV} ${DESTINC}.relocatable/templates_parser-conf*.ads \
 		${DESTINC}.relocatable/templates_parser-configuration.ads
 	${MV} ${DESTINC}/templates_parser-conf*.ads \

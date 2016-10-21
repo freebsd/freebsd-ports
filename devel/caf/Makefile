@@ -18,7 +18,6 @@ LDFLAGS+=	-pthread
 USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
-TEST_WRKSRC=	${BUILD_WRKSRC}
 USE_GITHUB=	yes
 GH_ACCOUNT=	actor-framework
 GH_PROJECT=	${GH_ACCOUNT}

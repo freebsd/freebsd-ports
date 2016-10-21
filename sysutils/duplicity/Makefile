@@ -63,22 +63,22 @@ post-patch-PEXPECT-off:
 		-name '*ssh_pexpect*' -delete
 
 post-patch-FTP-off:
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/ftpbackend.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/ftpbackend.py
 
 post-patch-FTPS-off:
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/ftpsbackend.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/ftpsbackend.py
 
 post-patch-S3-off:
 .for f in botobackend _boto_multi _boto_single
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/${f}.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
 .endfor
 
 post-patch-GDOCS-off:
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
 
 post-patch-CLOUDFILES-off:
 .for f in cfbackend _cf_cloudfiles _cf_pyrax
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/${f}.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
 .endfor
 
 post-patch-CLOUDFILES-on:
@@ -87,7 +87,7 @@ post-patch-CLOUDFILES-on:
 	@${REINPLACE_CMD} 's|"pyrax"|"cloudfiles"|' ${WRKSRC}/${PORTNAME}/globals.py
 
 post-patch-GIO-off:
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/giobackend.py
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/giobackend.py
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so

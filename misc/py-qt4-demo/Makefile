@@ -26,7 +26,7 @@ USE_PYQT=	assistant_run core_run dbus_run dbussupport_run declarative_run \
 		xmlpatterns_run sip_run qscintilla2_run
 
 do-install:
-	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
+	${RM} ${WRKSRC}/examples/designer/plugins/plugins.py.orig
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

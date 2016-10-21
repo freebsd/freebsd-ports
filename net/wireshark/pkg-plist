@@ -1,4 +1,3 @@
-%%ANDROIDDUMP%%
 %%CAPINFOS%%
 %%CAPTYPE%%
 %%DFTEST%%
@@ -17,14 +16,19 @@ bin/idl2wrs
 bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.so
-lib/libwireshark.so.6
-lib/libwireshark.so.6.1.5
+lib/libwireshark.so.8
+lib/libwireshark.so.8.0.1
 lib/libwiretap.so
-lib/libwiretap.so.5
-lib/libwiretap.so.5.0.5
+lib/libwiretap.so.6
+lib/libwiretap.so.6.0.1
+%%GUI%%lib/libwscodecs.so
+%%GUI%%lib/libwscodecs.so.1
+%%GUI%%lib/libwscodecs.so.1.0.0
 lib/libwsutil.so
-lib/libwsutil.so.6
-lib/libwsutil.so.6.0.0
+lib/libwsutil.so.7
+lib/libwsutil.so.7.0.0
+%%ANDROIDDUMP_LIB%%lib/wireshark/extcap/androiddump
+%%RANDPKTDUMP_LIB%%lib/wireshark/extcap/randpktdump
 lib/wireshark/plugins/%%PORTVERSION%%/docsis.so
 lib/wireshark/plugins/%%PORTVERSION%%/ethercat.so
 lib/wireshark/plugins/%%PORTVERSION%%/gryphon.so
@@ -38,6 +42,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/unistim.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimax.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxmacphy.so
+libdata/pkgconfig/wireshark.pc
 %%ANDROIDDUMP_MAN%%man/man1/androiddump.1.gz
 %%CAPINFOS_MAN%%man/man1/capinfos.1.gz
 man/man1/dumpcap.1.gz
@@ -47,9 +52,11 @@ man/man1/dumpcap.1.gz
 %%TEXT2PCAP_MAN%%man/man1/text2pcap.1.gz
 %%DFTEST_MAN%%man/man1/dftest.1.gz
 %%RANDPKT_MAN%%man/man1/randpkt.1.gz
+%%RANDPKTDUMP_MAN%%man/man1/randpktdump.1.gz
 %%REORDERCAP_MAN%%man/man1/reordercap.1.gz
 man/man1/tshark.1.gz
 %%GUI%%man/man1/wireshark.1.gz
+man/man4/extcap.4.gz
 man/man4/wireshark-filter.4.gz
 %%GUI%%share/appdata/wireshark.appdata.xml
 %%GUI%%share/applications/wireshark.desktop
@@ -75,6 +82,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/androiddump.html
 %%DATADIR%%/capinfos.html
 %%DATADIR%%/cfilters
+%%DATADIR%%/ciscodump.html
 %%DATADIR%%/colorfilters
 %%LUA%%%%DATADIR%%/console.lua
 %%DATADIR%%/dfilters
@@ -83,6 +91,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/AlcatelLucent.xml
 %%DATADIR%%/diameter/Cisco.xml
+%%DATADIR%%/diameter/CiscoSystems.xml
 %%DATADIR%%/diameter/Custom.xml
 %%DATADIR%%/diameter/Ericsson.xml
 %%DATADIR%%/diameter/HP.xml
@@ -116,6 +125,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/dtds/xcap-caps.dtd
 %%DATADIR%%/dtds/xcap-error.dtd
 %%DATADIR%%/editcap.html
+%%DATADIR%%/extcap.html
 %%LUA%%%%DATADIR%%/init.lua
 %%DATADIR%%/help/capture_filters.txt
 %%DATADIR%%/help/capturing.txt
@@ -290,6 +300,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/radius/dictionary.roaringpenguin
 %%DATADIR%%/radius/dictionary.ruckus
 %%DATADIR%%/radius/dictionary.ruggedcom
+%%DATADIR%%/radius/dictionary.sangoma
 %%DATADIR%%/radius/dictionary.sg
 %%DATADIR%%/radius/dictionary.shasta
 %%DATADIR%%/radius/dictionary.shiva
@@ -330,9 +341,11 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/radius/dictionary.zte
 %%DATADIR%%/radius/dictionary.zyxel
 %%DATADIR%%/randpkt.html
+%%DATADIR%%/randpktdump.html
 %%DATADIR%%/rawshark.html
 %%DATADIR%%/reordercap.html
 %%DATADIR%%/services
+%%DATADIR%%/sshdump.html
 %%DATADIR%%/smi_modules
 %%DATADIR%%/tshark.html
 %%DATADIR%%/text2pcap.html

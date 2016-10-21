@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
 BROKEN_powerpc64=	Does not build

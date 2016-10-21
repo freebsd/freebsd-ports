@@ -1,14 +1,14 @@
---- Gemfile.orig	2016-07-11 19:38:44 UTC
+--- Gemfile.orig	2016-10-11 15:15:22 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
- source "https://rubygems.org"
+ source 'https://rubygems.org'
  
--gem 'rails', '4.2.6'
-+gem 'rails', '>= 4.2.6'
+-gem 'rails', '4.2.7.1'
++gem 'rails', '>= 4.2.7.1'
  gem 'rails-deprecated_sanitizer', '~> 1.0.3'
  
  # Responders respond_to and respond_with
-@@ -8,13 +8,12 @@ gem 'responders', '~> 2.0'
+@@ -8,14 +8,13 @@ gem 'responders', '~> 2.0'
  
  # Specify a sprockets version due to increased performance
  # See https://gitlab.com/gitlab-org/gitlab-ce/issues/6069
@@ -16,21 +16,21 @@
 +gem 'sprockets', '>= 3.6.0'
  
  # Default values for AR models
--gem "default_value_for", "~> 3.0.0"
-+gem "default_value_for", ">= 3.0.0"
+-gem 'default_value_for', '~> 3.0.0'
++gem 'default_value_for', '>= 3.0.0'
  
  # Supported DBs
--gem "mysql2", '~> 0.3.16', group: :mysql
- gem "pg", '~> 0.18.2', group: :postgres
+-gem 'mysql2', '~> 0.3.16', group: :mysql
+-gem 'pg', '~> 0.18.2', group: :postgres
++gem 'pg', '>= 0.18.2', group: :postgres
  
  # Authentication libraries
-@@ -28,13 +27,12 @@ gem 'omniauth-cas3',          '~> 1.1.2'
- gem 'omniauth-facebook',      '~> 3.0.0'
+ gem 'devise',                 '~> 4.0'
+@@ -29,12 +28,11 @@ gem 'omniauth-facebook',      '~> 3.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
  gem 'omniauth-gitlab',        '~> 1.0.0'
--gem 'omniauth-google-oauth2', '~> 0.2.0'
+ gem 'omniauth-google-oauth2', '~> 0.4.1'
 -gem 'omniauth-kerberos',      '~> 0.3.0', group: :kerberos
-+gem 'omniauth-google-oauth2', '>= 0.2.0'
  gem 'omniauth-saml',          '~> 1.6.0'
  gem 'omniauth-shibboleth',    '~> 1.2.0'
  gem 'omniauth-twitter',       '~> 1.2.0'
@@ -40,17 +40,21 @@
  gem 'jwt'
  
  # Spam and anti-bot protection
-@@ -61,15 +59,15 @@ gem 'gitlab_omniauth-ldap', '~> 1.2.1', 
+@@ -52,7 +50,7 @@ gem 'browser', '~> 2.2'
  
- # Git Wiki
- # Required manually in config/initializers/gollum.rb to control load order
--gem 'gollum-lib', '~> 4.1.0', require: false
-+gem 'gollum-lib', '>= 4.1.0', require: false
+ # Extracting information from a git repository
+ # Provide access to Gitlab::Git library
+-gem 'gitlab_git', '~> 10.3.2'
++gem 'gitlab_git', '>= 10.3.2'
+ 
+ # LDAP Auth
+ # GitLab fork with several improvements to original library. For full list of changes
+@@ -65,11 +63,11 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.2', require: false
  
  # Language detection
--gem "github-linguist", "~> 4.7.0", require: "linguist"
-+gem "github-linguist", ">= 4.7.0", require: "linguist"
+-gem 'github-linguist', '~> 4.7.0', require: 'linguist'
++gem 'github-linguist', '>= 4.7.0', require: 'linguist'
  
  # API
 -gem 'grape',        '~> 0.13.0'
@@ -60,21 +64,17 @@
  gem 'rack-cors',    '~> 0.4.0', require: 'rack/cors'
  
  # Pagination
-@@ -79,7 +77,7 @@ gem "kaminari", "~> 0.17.0"
- gem "haml-rails", '~> 0.9.0'
+@@ -79,7 +77,7 @@ gem 'kaminari', '~> 0.17.0'
+ gem 'hamlit', '~> 2.6.1'
  
  # Files attachments
--gem "carrierwave", '~> 0.10.0'
-+gem "carrierwave", '>= 0.10.0'
+-gem 'carrierwave', '~> 0.10.0'
++gem 'carrierwave', '>= 0.10.0'
  
  # Drag and Drop UI
  gem 'dropzonejs-rails', '~> 0.7.1'
-@@ -104,26 +102,26 @@ gem "seed-fu", '~> 2.3.5'
- # Markdown and HTML processing
- gem 'html-pipeline', '~> 1.11.0'
- gem 'task_list',     '~> 1.0.2', require: 'task_list/railtie'
--gem 'github-markup', '~> 1.3.1'
-+gem 'github-markup', '>= 1.3.1'
+@@ -108,10 +106,10 @@ gem 'task_list',     '~> 1.0.2', require
+ gem 'github-markup', '~> 1.4'
  gem 'redcarpet',     '~> 3.3.3'
  gem 'RedCloth',      '~> 4.3.2'
 -gem 'rdoc',          '~>3.6'
@@ -84,11 +84,9 @@
 -gem 'wikicloth',     '0.8.1'
 +gem 'wikicloth',     '>= 0.8.1'
  gem 'asciidoctor',   '~> 1.5.2'
--gem 'rouge',         '~> 1.11'
-+gem 'rouge',         '>= 1.11'
+ gem 'rouge',         '~> 2.0'
  
- # See https://groups.google.com/forum/#!topic/ruby-security-ann/aSbgDiwb24s
- # and https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM
+@@ -120,11 +118,11 @@ gem 'rouge',         '~> 2.0'
  gem 'nokogiri', '~> 1.6.7', '>= 1.6.7.2'
  
  # Diffs
@@ -97,17 +95,17 @@
  
  # Application server
  group :unicorn do
--  gem "unicorn", '~> 4.9.0'
-+  gem "unicorn", '>= 4.9.0'
+-  gem 'unicorn', '~> 4.9.0'
++  gem 'unicorn', '>= 4.9.0'
    gem 'unicorn-worker-killer', '~> 0.4.2'
  end
  
-@@ -174,10 +172,10 @@ gem "gitlab-flowdock-git-hook", "~> 1.0.
- gem "gemnasium-gitlab-service", "~> 0.2"
+@@ -175,10 +173,10 @@ gem 'gitlab-flowdock-git-hook', '~> 1.0.
+ gem 'gemnasium-gitlab-service', '~> 0.2'
  
  # Slack integration
--gem "slack-notifier", "~> 1.2.0"
-+gem "slack-notifier", ">= 1.2.0"
+-gem 'slack-notifier', '~> 1.2.0'
++gem 'slack-notifier', '>= 1.2.0'
  
  # Asana integration
 -gem 'asana', '~> 0.4.0'
@@ -115,43 +113,42 @@
  
  # FogBugz integration
  gem 'ruby-fogbugz', '~> 0.2.1'
-@@ -189,17 +187,17 @@ gem 'd3_rails', '~> 3.5.0'
- gem "underscore-rails", "~> 1.8.0"
+@@ -190,17 +188,17 @@ gem 'd3_rails', '~> 3.5.0'
+ gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
--gem "sanitize", '~> 2.0'
-+gem "sanitize", '>= 2.0'
+-gem 'sanitize', '~> 2.0'
++gem 'sanitize', '>= 2.0'
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
- gem "loofah", "~> 2.0.3"
+ gem 'loofah', '~> 2.0.3'
  
  # Working with license
 -gem 'licensee', '~> 8.0.0'
 +gem 'licensee', '>= 8.0.0'
  
  # Protect against bruteforcing
--gem "rack-attack", '~> 4.3.1'
-+gem "rack-attack", '>= 4.3.1'
+-gem 'rack-attack', '~> 4.3.1'
++gem 'rack-attack', '>= 4.3.1'
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.0.2'
-@@ -215,11 +213,11 @@ gem 'chronic_duration', '~> 0.10.6'
+@@ -216,11 +214,11 @@ gem 'chronic_duration', '~> 0.10.6'
  
- gem "sass-rails", '~> 5.0.0'
- gem "coffee-rails", '~> 4.1.0'
--gem "uglifier", '~> 2.7.2'
--gem 'turbolinks', '~> 2.5.0'
-+gem "uglifier", '>= 2.7.2'
-+gem 'turbolinks', '>= 2.5.0'
+ gem 'sass-rails', '~> 5.0.0'
+ gem 'coffee-rails', '~> 4.1.0'
+-gem 'uglifier', '~> 2.7.2'
++gem 'uglifier', '>= 2.7.2'
+ gem 'turbolinks', '~> 2.5.0'
  gem 'jquery-turbolinks', '~> 2.1.0'
  
 -gem 'addressable',        '~> 2.3.8'
 +gem 'addressable',        '>= 2.3.8'
  gem 'bootstrap-sass',     '~> 3.3.0'
  gem 'font-awesome-rails', '~> 4.6.1'
- gem 'gitlab_emoji',       '~> 0.3.0'
-@@ -227,10 +225,10 @@ gem 'gon',                '~> 6.0.1'
+ gem 'gemojione',          '~> 3.0'
+@@ -228,10 +226,10 @@ gem 'gon',                '~> 6.0.1'
  gem 'jquery-atwho-rails', '~> 1.3.2'
  gem 'jquery-rails',       '~> 4.1.0'
  gem 'jquery-ui-rails',    '~> 5.0.0'
@@ -164,7 +161,7 @@
  gem 'base32',             '~> 0.3.0'
  
  # Sentry integration
-@@ -238,90 +236,6 @@ gem 'sentry-raven', '~> 0.15'
+@@ -239,88 +237,6 @@ gem 'sentry-raven', '~> 2.0.0'
  
  gem 'premailer-rails', '~> 1.9.0'
  
@@ -176,14 +173,13 @@
 -end
 -
 -group :development do
--  gem "foreman"
+-  gem 'foreman', '~> 0.78.0'
 -  gem 'brakeman', '~> 3.3.0', require: false
 -
 -  gem 'letter_opener_web', '~> 1.3.0'
--  gem 'quiet_assets', '~> 1.0.2'
 -  gem 'rerun', '~> 0.11.0'
--  gem 'bullet', require: false
--  gem 'rblineprof', platform: :mri, require: false
+-  gem 'bullet', '~> 5.0.0', require: false
+-  gem 'rblineprof', '~> 0.3.6', platform: :mri, require: false
 -  gem 'web-console', '~> 2.0'
 -
 -  # Better errors handler
@@ -191,23 +187,23 @@
 -  gem 'binding_of_caller', '~> 0.7.2'
 -
 -  # Docs generator
--  gem "sdoc", '~> 0.3.20'
+-  gem 'sdoc', '~> 0.3.20'
 -
 -  # thin instead webrick
--  gem 'thin', '~> 1.6.1'
+-  gem 'thin', '~> 1.7.0'
 -end
 -
 -group :development, :test do
--  gem 'byebug', platform: :mri
--  gem 'pry-rails'
+-  gem 'byebug', '~> 8.2.1', platform: :mri
+-  gem 'pry-rails', '~> 0.3.4'
 -
 -  gem 'awesome_print', '~> 1.2.0', require: false
 -  gem 'fuubar', '~> 2.0.0'
 -
 -  gem 'database_cleaner',   '~> 1.4.0'
 -  gem 'factory_girl_rails', '~> 4.6.0'
--  gem 'rspec-rails',        '~> 3.4.0'
--  gem 'rspec-retry'
+-  gem 'rspec-rails',        '~> 3.5.0'
+-  gem 'rspec-retry',        '~> 0.4.5'
 -  gem 'spinach-rails',      '~> 0.2.1'
 -  gem 'spinach-rerun-reporter', '~> 0.0.2'
 -
@@ -229,19 +225,18 @@
 -  gem 'spring-commands-spinach',  '~> 1.1.0'
 -  gem 'spring-commands-teaspoon', '~> 0.0.2'
 -
--  gem 'rubocop', '~> 0.40.0', require: false
+-  gem 'rubocop', '~> 0.41.2', require: false
 -  gem 'rubocop-rspec', '~> 1.5.0', require: false
 -  gem 'scss_lint', '~> 0.47.0', require: false
--  gem 'coveralls', '~> 0.8.2', require: false
 -  gem 'simplecov', '~> 0.11.0', require: false
--  gem 'flog', require: false
--  gem 'flay', require: false
--  gem 'bundler-audit', require: false
+-  gem 'flog', '~> 4.3.2', require: false
+-  gem 'flay', '~> 2.6.1', require: false
+-  gem 'bundler-audit', '~> 0.5.0', require: false
 -
--  gem 'benchmark-ips', require: false
+-  gem 'benchmark-ips', '~> 2.3.0', require: false
 -
--  gem "license_finder", require: false
--  gem 'knapsack'
+-  gem 'license_finder', '~> 2.1.0', require: false
+-  gem 'knapsack', '~> 1.11.0'
 -end
 -
 -group :test do
@@ -249,23 +244,18 @@
 -  gem 'email_spec', '~> 1.6.0'
 -  gem 'webmock', '~> 1.21.0'
 -  gem 'test_after_commit', '~> 0.4.2'
--  gem 'sham_rack'
+-  gem 'sham_rack', '~> 1.3.6'
 -end
 -
  group :production do
-   gem "gitlab_meta", '7.0'
+   gem 'gitlab_meta', '7.0'
  end
-@@ -339,10 +253,12 @@ gem 'activerecord-session_store', '~> 1.
- gem "nested_form", '~> 0.3.2'
+@@ -347,5 +263,7 @@ gem 'paranoia', '~> 2.0'
+ gem 'health_check', '~> 2.1.0'
  
- # OAuth
--gem 'oauth2', '~> 1.0.0'
-+gem 'oauth2', '>= 1.0.0'
- 
- # Soft deletion
- gem "paranoia", "~> 2.0"
- 
-+gem "rinku"
+ # System information
+-gem 'vmstat', '~> 2.1.1'
++gem 'vmstat', '>= 2.1.1'
+ gem 'sys-filesystem', '~> 1.1.6'
 +
- # Health check
- gem 'health_check', '~> 1.5.1'
++gem 'rinku'

@@ -3,13 +3,14 @@
 
 PORTNAME=	7kaa
 PORTVERSION=	2.14.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/skfans/7KAA%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Seven Kingdoms: Ancient Adversaries
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libenet.so:net/enet
@@ -26,6 +27,6 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/COPYING
+	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

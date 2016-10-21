@@ -3,7 +3,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 
@@ -21,7 +21,7 @@ USES=		gettext tar:tgz
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP
+OPTIONS_DEFINE=	DOCS MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP MEMCACHE
 OPTIONS_DEFAULT=REQPHP
 
 MYSQL_DESC=	Enable MySQL PDO support
@@ -32,6 +32,7 @@ ODBC_DESC=	Enable ODBC PDO support
 SQLITE_DESC=	Enable SQLite v3 PDO support
 REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
+MEMCACHE_DESC= Enable memcache support
 
 PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 
@@ -47,11 +48,16 @@ USE_PHP+=	sqlite
 .else
 USE_PHP+=	sqlite3
 .endif
-RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
-		pecl-memcached>=0:databases/pecl-memcached
+
 .endif
+
 .if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	bcmath bitset json posix
+.endif
+
+.if ${PORT_OPTIONS:MMCACHE}
+RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
+		pecl-memcached>=0:databases/pecl-memcached
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

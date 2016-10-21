@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.54
+PORTVERSION=	1.62
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	marino@FreeBSD.org
@@ -45,6 +44,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions \
+		${STAGEDIR}${PREFIX}/share/synth \
 		${STAGEDIR}/var/log/synth \
 		${STAGEDIR}/var/synth/live_packages
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synth \
@@ -56,5 +56,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/shell-completers/_synth \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/www/* ${STAGEDIR}${PREFIX}/share/synth
 
 .include <bsd.port.post.mk>

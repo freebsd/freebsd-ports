@@ -16,6 +16,8 @@ EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
+LICENSE=	NONE
+
 FCVER=		22
 PORTSCOUT=	ignore:1
 NO_ARCH=	yes

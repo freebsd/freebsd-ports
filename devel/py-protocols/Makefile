@@ -16,6 +16,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/setuptools
+	@${RM} -r ${WRKSRC}/setuptools
 
 .include <bsd.port.mk>

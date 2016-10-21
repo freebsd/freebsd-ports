@@ -30,8 +30,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2016.10.10
-HASH=		d3f29e7
+ISCVERSION=	9.12.0a.2016.10.16
+HASH=		0b15ee0
 
 USES=	cpe libedit
 
@@ -55,6 +55,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 ETCDIR=		${PREFIX}/etc/namedb
+LDFLAGS+=	-L${LOCALBASE}/lib	# for ports-based libedit
 
 CONFLICTS+=	bind9*-9.[456789].* bind910-* bind911-*  bind9*-sdb-9.[456789].*
 

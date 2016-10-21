@@ -92,7 +92,7 @@ post-install:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	@${RM} -f ${WRKSRC}/src/racoon/samples/*.in
+	@${RM} ${WRKSRC}/src/racoon/samples/*.in
 	@${CP} -r ${WRKSRC}/src/racoon/samples/* ${STAGEDIR}/${EXAMPLESDIR}
 
 post-install-DOCS-on:

@@ -17,12 +17,12 @@ GH_TAGNAME=     32951af2f3e7b1ddb56486c9f15b2e1033605bd6
 
 CONFLICTS=	usrp-[0-9]*
 
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs \
-		cheetah-analyze:${PORTSDIR}/devel/py-cheetah \
-		rst2html:${PORTSDIR}/textproc/py-docutils \
-		orcc:${PORTSDIR}/devel/orc \
-		${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
+		cheetah-analyze:devel/py-cheetah \
+		rst2html:textproc/py-docutils \
+		orcc:devel/orc \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
 
 USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7 pathfix
 USE_LDCONFIG=		yes
@@ -44,7 +44,7 @@ DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 HAVEDOCS=	YES
 .endif

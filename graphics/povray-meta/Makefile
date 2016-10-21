@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta port for all povray ports
 
 NO_BUILD=	yes

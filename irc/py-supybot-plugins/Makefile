@@ -19,7 +19,7 @@ USES=		python tar:bzip2
 post-extract:
 # Delete, because it now included in irc/py-supybot
 .for data in BadWords Dunno Success _darcs
-	@${RM} -rf ${WRKSRC}/${data}
+	@${RM} -r ${WRKSRC}/${data}
 .endfor
 
 do-build:

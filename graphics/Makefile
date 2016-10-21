@@ -546,6 +546,18 @@
     SUBDIR += linux-c6-sdl_image
     SUBDIR += linux-c6-sdl_ttf
     SUBDIR += linux-c6-tiff
+    SUBDIR += linux-c7-cairo
+    SUBDIR += linux-c7-dri
+    SUBDIR += linux-c7-gdk-pixbuf2
+    SUBDIR += linux-c7-glx-utils
+    SUBDIR += linux-c7-jasper
+    SUBDIR += linux-c7-jbigkit
+    SUBDIR += linux-c7-jpeg
+    SUBDIR += linux-c7-libGLU
+    SUBDIR += linux-c7-png
+    SUBDIR += linux-c7-sdl_image
+    SUBDIR += linux-c7-sdl_ttf
+    SUBDIR += linux-c7-tiff
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf
@@ -762,8 +774,6 @@
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
     SUBDIR += php5-ffmpeg
-    SUBDIR += php55-exif
-    SUBDIR += php55-gd
     SUBDIR += php56-exif
     SUBDIR += php56-gd
     SUBDIR += php70-exif

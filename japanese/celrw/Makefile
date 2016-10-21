@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 .for file in config.guess config.sub install.sh
-	@${RM} -f ${WRKSRC}/${file}
+	@${RM} ${WRKSRC}/${file}
 	@${TOUCH} ${WRKSRC}/${file}
 .endfor
 

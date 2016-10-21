@@ -22,6 +22,6 @@ USES=		perl5 dos2unix
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/HTTP/Recorder.pm.orig
+	@${RM} ${WRKSRC}/lib/HTTP/Recorder.pm.orig
 
 .include <bsd.port.mk>

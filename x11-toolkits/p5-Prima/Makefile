@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Prima
-PORTVERSION=	1.47
+PORTVERSION=	1.49
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,7 +38,7 @@ XFT_USE=		XORG=xft
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Prima/Prima.so
-	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
+	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
 		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Prima/Config.pm
 
 .include <bsd.port.mk>

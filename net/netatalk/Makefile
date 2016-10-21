@@ -118,7 +118,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/nu ${STAGEDIR}${PREFIX}/bin/lp2pap.sh \
+	@${RM} ${STAGEDIR}${PREFIX}/bin/nu ${STAGEDIR}${PREFIX}/bin/lp2pap.sh \
 		${STAGEDIR}${PREFIX}/bin/test_parse_mtab \
 		${STAGEDIR}${PREFIX}/bin/afpd-mtab.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \

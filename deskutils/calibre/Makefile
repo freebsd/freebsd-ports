@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.69.0
+PORTVERSION=	2.70.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
 		libfontconfig.so:x11-fonts/fontconfig \

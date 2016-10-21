@@ -187,7 +187,7 @@ debug-krb:
 	    ${GSSAPILIBS} ${GSSAPILDFLAGS} ${_DEBUG_KRB_RPATH} \
 	    /tmp/${.TARGET}.c && \
 	    ldd /tmp/${.TARGET}.x; \
-	    rm -f /tmp/${.TARGET}.x
+	    ${RM} /tmp/${.TARGET}.x
 	@echo "PREFIX: ${PREFIX}"
 	@echo "GSSAPIBASEDIR: ${GSSAPIBASEDIR}"
 	@echo "GSSAPIINCDIR: ${GSSAPIINCDIR}"

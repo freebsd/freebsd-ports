@@ -18,15 +18,16 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
 
 MAJOR_VERSION=	2.2
-MINOR_VERSION=	1
+MINOR_VERSION=	2
 
 USES=		desktop-file-utils execinfo gmake iconv pkgconfig perl5 \
 		python:2 tar:xz
-USE_QT4=	corelib gui svg moc_build uic_build rcc_build
+USE_QT5=	core concurrent gui svg widgets buildtools_build qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
-		--disable-qt5 \
+		--enable-qt5 \
+		--with-qt-dir=${LOCALBASE}/lib/qt5 \
 		${ICONV_CONFIGURE_ARG} \
 		--with-extra-prefix=${LOCALBASE}
 

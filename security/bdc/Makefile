@@ -47,7 +47,7 @@ do-install:
 
 	${MV} ${STAGEDIR}${PREFIX}/bdc/doc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/bdc/man/bdc.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${RM} -f ${STAGEDIR}${PREFIX}/bdc/man
+	${RM} ${STAGEDIR}${PREFIX}/bdc/man
 
 	${INSTALL_SCRIPT} ${WRKDIR}/bdc ${STAGEDIR}${PREFIX}/bin
 

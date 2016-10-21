@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-QRCode
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +20,8 @@ USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|qrencode.h|${LOCALBASE}/include/&|' ${WRKSRC}/Makefile.PL ${WRKSRC}/QRCode.xs
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/QRCode/QRCode.so
 
 .include <bsd.port.mk>

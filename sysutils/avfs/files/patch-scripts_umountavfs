@@ -1,0 +1,16 @@
+--- scripts/umountavfs.orig	2016-09-16 18:43:19 UTC
++++ scripts/umountavfs
+@@ -14,11 +14,11 @@ else
+     MntDir="${HOME}/.avfs"
+ fi
+ 
+-grep -qE "${MntDir}.*avfsd" /proc/mounts && {
++mount -p | grep -qE "${MntDir}.*fusefs" && {
+    echo unMounting AVFS on $MntDir...
+    if type -p fusermount > /dev/null 2>&1 ; then
+       fusermount -u -z "$MntDir"
+    else
+-      umount -l "$MntDir"
++      umount "$MntDir"
+    fi
+ }

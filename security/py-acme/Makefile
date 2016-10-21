@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.3
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.8:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>0:net/py-ndg_httpsclient \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1 \
+		${PYTHON_PKGNAMEPREFIX}dnspython>=1.12:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>0:devel/py-pyrfc3339 \

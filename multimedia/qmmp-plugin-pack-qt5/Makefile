@@ -53,6 +53,6 @@ XMP_LIB_DEPENDS=	libxmp.so:audio/libxmp
 XMP_CMAKE_BOOL=	USE_XMP
 
 pre-configure:
-	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
+	@${RM} ${BUILD_WRKSRC}/CMakeCache.txt
 
 .include <bsd.port.mk>

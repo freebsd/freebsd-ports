@@ -24,8 +24,8 @@ PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -f ${WRKSRC}/timidity/inst/GUS/power/h-hihatp.pat.orig
-	@${RM} -f ${WRKSRC}/timidity/inst/GUS/power/h-snare.pat.orig
+	@${RM} ${WRKSRC}/timidity/inst/GUS/power/h-hihatp.pat.orig
+	@${RM} ${WRKSRC}/timidity/inst/GUS/power/h-snare.pat.orig
 
 do-build:
 	${SED}	-e "s|%%PREFIX%%|${PREFIX}|g" \

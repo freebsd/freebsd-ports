@@ -1,0 +1,11 @@
+include/bctoolbox/crypto.h
+include/bctoolbox/list.h
+include/bctoolbox/logging.h
+include/bctoolbox/map.h
+include/bctoolbox/port.h
+include/bctoolbox/tester.h
+include/bctoolbox/vfs.h
+lib/libbctoolbox.so
+lib/libbctoolbox.so.0
+lib/libbctoolbox.so.0.0.0
+libdata/pkgconfig/bctoolbox.pc

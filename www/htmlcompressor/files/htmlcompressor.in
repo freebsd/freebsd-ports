@@ -1,3 +1,4 @@
 #!/bin/sh
 # $FreeBSD$
-JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java -jar %%JAVAJARDIR%%/htmlcompressor.jar $@
+
+JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java -jar %%JAVAJARDIR%%/htmlcompressor.jar "$@"

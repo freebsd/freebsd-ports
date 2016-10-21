@@ -1,0 +1,7 @@
+The python-openstacksdk is a collection of libraries for building
+applications to work with OpenStack clouds. The project aims to 
+provide a consistent and complete set of interactions with 
+OpenStack's many services, along with complete documentation,
+examples, and tools.
+
+WWW: https://pypi.python.org/pypi/python-openstacksdk

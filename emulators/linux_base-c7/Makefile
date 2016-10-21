@@ -2,6 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*.src.rpm*:Nfilesystem-*}
@@ -48,6 +49,7 @@ LIB_DISTFILES=	bzip2-libs-1.0.6-13.el7${EXTRACT_SUFX} \
 		libcap-2.22-8.el7${EXTRACT_SUFX} \
 		libcom_err-1.42.9-7.el7${EXTRACT_SUFX} \
 		libdb-5.3.21-19.el7${EXTRACT_SUFX} \
+		libffi-3.0.13-16.el7${EXTRACT_SUFX} \
 		libgcc-4.8.5-4.el7${EXTRACT_SUFX} \
 		libidn-1.28-4.el7${EXTRACT_SUFX} \
 		libselinux-2.2.2-6.el7${EXTRACT_SUFX} \
@@ -89,6 +91,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7.src.rpm:SOURCE \
 		less-458-9.el7.src.rpm:SOURCE \
 		libcap-2.22-8.el7.src.rpm:SOURCE \
 		libdb-5.3.21-19.el7.src.rpm:SOURCE \
+		libffi-3.0.13-16.el7.src.rpm:SOURCE \
 		libidn-1.28-4.el7.src.rpm:SOURCE \
 		libselinux-2.2.2-6.el7.src.rpm:SOURCE \
 		libsepol-2.1.9-3.el7.src.rpm:SOURCE \
@@ -162,6 +165,7 @@ post-patch:
 .endif
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/dev/shm
 	${TOUCH} ${STAGEDIR}${PREFIX}/etc/mtab
 	${MV} ${STAGEDIR}${PREFIX}/etc/krb5.conf \
 		${STAGEDIR}${PREFIX}/etc/krb5.conf.sample
@@ -169,7 +173,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/nsswitch.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive.tmpl \
 		${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive
-	${LN} -sf /tmp ${STAGEDIR}${PREFIX}/dev/shm
 	${LN} -sf /var/run ${STAGEDIR}${PREFIX}/run
 	${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
 

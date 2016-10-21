@@ -1,0 +1,6 @@
+bin/qemu-img
+bin/qemu-io
+bin/qemu-nbd
+man/man1/qemu-img.1.gz
+man/man1/qemu.1.gz
+man/man8/qemu-nbd.8.gz

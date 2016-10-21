@@ -27,6 +27,6 @@ USES+=		ghostscript
 .endif
 
 pre-configure:
-	${RM} -rf ${WRKSRC}/GWMetadata
+	${RM} -r ${WRKSRC}/GWMetadata
 
 .include <bsd.port.mk>

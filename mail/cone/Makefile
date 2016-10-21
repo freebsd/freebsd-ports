@@ -39,7 +39,7 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mailtool
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/cone
 		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${STAGEDIR}${PREFIX}/sbin/cone-sysconftool
-		${RM} -f ${STAGEDIR}${PREFIX}/share/cone/rootcerts/.0
+		${RM} ${STAGEDIR}${PREFIX}/share/cone/rootcerts/.0
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 

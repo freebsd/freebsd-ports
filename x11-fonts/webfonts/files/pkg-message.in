@@ -11,3 +11,7 @@ line to the "Modules" section of xorg.conf or XF86Config:
 Add the following line to the "Files" section of xorg.conf or XF86Config:
 
 	FontPath "%%FONTSDIR%%/"
+
+NOTE: Due to known freetype bug some glyphs (N, W) of y2006 Verdana Bold
+      font are not rendered correctly in anti-aliased mode within the range
+      9-16 ppem

@@ -19,6 +19,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/getopt*
+	@${RM} ${WRKSRC}/src/getopt*
 
 .include <bsd.port.mk>

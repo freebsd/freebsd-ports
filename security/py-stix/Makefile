@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stix
-PORTVERSION=	1.1.1.5
+PORTVERSION=	1.1.1.6
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}lxml>=3.1:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.9:security/py-cybox
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.3:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.11:security/py-cybox
 
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README.rst
@@ -25,9 +26,11 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

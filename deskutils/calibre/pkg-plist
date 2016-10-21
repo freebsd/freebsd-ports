@@ -454,6 +454,7 @@ lib/calibre/calibre/ebooks/oeb/polish/container.py
 lib/calibre/calibre/ebooks/oeb/polish/cover.py
 lib/calibre/calibre/ebooks/oeb/polish/create.py
 lib/calibre/calibre/ebooks/oeb/polish/css.py
+lib/calibre/calibre/ebooks/oeb/polish/download.py
 lib/calibre/calibre/ebooks/oeb/polish/embed.py
 lib/calibre/calibre/ebooks/oeb/polish/errors.py
 lib/calibre/calibre/ebooks/oeb/polish/fonts.py
@@ -1062,6 +1063,7 @@ lib/calibre/calibre/gui2/tweak_book/diff/__init__.py
 lib/calibre/calibre/gui2/tweak_book/diff/highlight.py
 lib/calibre/calibre/gui2/tweak_book/diff/main.py
 lib/calibre/calibre/gui2/tweak_book/diff/view.py
+lib/calibre/calibre/gui2/tweak_book/download.py
 lib/calibre/calibre/gui2/tweak_book/editor/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/canvas.py
 lib/calibre/calibre/gui2/tweak_book/editor/comments.py
@@ -1339,14 +1341,6 @@ lib/calibre/calibre/utils/opensearch/query.py
 lib/calibre/calibre/utils/opensearch/url.py
 lib/calibre/calibre/utils/ordered_dict.py
 lib/calibre/calibre/utils/podofo/__init__.py
-lib/calibre/calibre/utils/pyconsole/__init__.py
-lib/calibre/calibre/utils/pyconsole/console.py
-lib/calibre/calibre/utils/pyconsole/controller.py
-lib/calibre/calibre/utils/pyconsole/formatter.py
-lib/calibre/calibre/utils/pyconsole/history.py
-lib/calibre/calibre/utils/pyconsole/interpreter.py
-lib/calibre/calibre/utils/pyconsole/main.py
-lib/calibre/calibre/utils/pyparsing.py
 lib/calibre/calibre/utils/rapydscript.py
 lib/calibre/calibre/utils/recycle_bin.py
 lib/calibre/calibre/utils/resources.py
@@ -1711,11 +1705,9 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/config.png
 %%DATADIR%%/images/connect_share.png
 %%DATADIR%%/images/connect_share_on.png
-%%DATADIR%%/images/console.png
 %%DATADIR%%/images/convert.png
 %%DATADIR%%/images/copy-to-library.png
 %%DATADIR%%/images/cover_flow.png
-%%DATADIR%%/images/cover_texture.png
 %%DATADIR%%/images/debug.png
 %%DATADIR%%/images/default_cover.png
 %%DATADIR%%/images/devices/bambook.png
@@ -1741,7 +1733,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/dot_green.png
 %%DATADIR%%/images/dot_red.png
 %%DATADIR%%/images/download-metadata.png
-%%DATADIR%%/images/drawer.png
 %%DATADIR%%/images/drm-locked.png
 %%DATADIR%%/images/drm-unlocked.png
 %%DATADIR%%/images/edit-clear.png
@@ -1898,6 +1889,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/trash.png
 %%DATADIR%%/images/trim.png
 %%DATADIR%%/images/tweak.png
+%%DATADIR%%/images/tweaks.png
 %%DATADIR%%/images/unpack-book.png
 %%DATADIR%%/images/user_profile.png
 %%DATADIR%%/images/view-image.png

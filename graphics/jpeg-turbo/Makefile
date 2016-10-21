@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpeg-turbo
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTVERSION}
@@ -11,12 +11,21 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
 
-USES=		cpe libtool
+LICENSE=	BSD3CLAUSE IJG ZLIB 
+LICENSE_COMB=	multi
+LICENSE_GROUPS_IJG=	FSF GPL
+LICENSE_NAME_IJG=	Independent JPEG Group License
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/turbojpeg.c
+LICENSE_FILE_IJG=	${WRKSRC}/README.ijg
+LICENSE_FILE_ZLIB=	${WRKSRC}/simd/jsimdext.inc
+LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		cpe libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg8
 USE_LDCONFIG=	yes
-ALL_TARGET=	test
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
 CPE_VENDOR=	d.r.commander
 CPE_PRODUCT=	libjpeg-turbo
 

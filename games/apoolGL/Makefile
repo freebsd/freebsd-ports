@@ -15,13 +15,14 @@ LICENSE=	GPLv2+
 
 USE_SDL=	sdl
 USE_GL=		gl
+USES=		dos2unix
+DOS2UNIX_FILES=	ApoolGL.txt
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	ApoolGL.txt CHANGELOG OpenGL-Features
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|`${PRINTF} '\r'`$$||" ${WRKSRC}/ApoolGL.txt
 	@${REINPLACE_CMD} -e 's|SDL/||' ${WRKSRC}/*.c
 
 do-build:

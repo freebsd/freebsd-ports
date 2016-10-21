@@ -246,7 +246,7 @@ post-install:
 	done
 	@cd ${STAGEDIR}${LIBDIR}; \
 	for lib in *.so; do \
-	    ${RM} -f $$lib; \
+	    ${RM} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R}; \
 	    ${LN} -sf $$lib.${PORTVERSION:R} $$lib.${PORTVERSION:R:R}; \
 	    ${LN} -sf $$lib.${PORTVERSION:R:R} $$lib; \
@@ -254,7 +254,7 @@ post-install:
 .if ${PORT_OPTIONS:MQT4}
 	@cd ${STAGEDIR}${LIBDIR}; \
 	for lib in libQVTK*.so; do \
-	    ${RM} -f $$lib; \
+	    ${RM} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \
 	done

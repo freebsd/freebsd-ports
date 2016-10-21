@@ -195,6 +195,10 @@ post-patch: .SILENT
 .if ! ${PORT_OPTIONS:MLINUX}
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/${NVSRC}/nv-freebsd.h
+.  if ${NVVERSION} >= 358.009
+	${REINPLACE_CMD} -E 's/define (NVKMS_SUPPORT_LINUX_COMPAT)/undef \1/' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
+.  endif
 .endif
 .if ${PORT_OPTIONS:MPAE}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_PAE)/define \1/' \

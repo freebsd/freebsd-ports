@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alembic
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Database migration tool for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7.3:databases/py-sqlalchemy07 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako
 
 USES=		python

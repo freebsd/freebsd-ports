@@ -38,7 +38,7 @@ do-install:
 		${STAGEDIR}${DATADIR})
 	${INSTALL_MAN} ${WRKSRC}/boost.png \
 		${STAGEDIR}${PREFIX}/share/doc/boost.png
-	(cd ${WRKSRC}/doc && ${RM} -rf Jamfile.v2 project-root.jam \
+	(cd ${WRKSRC}/doc && ${RM} -r Jamfile.v2 project-root.jam \
 		html/userman_HTML.manifest src)
 
 do-install-DOCS-on:

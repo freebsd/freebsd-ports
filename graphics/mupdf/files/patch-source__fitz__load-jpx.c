@@ -1,4 +1,4 @@
---- source/fitz/load-jpx.c.orig	2015-04-16 08:57:45 UTC
+--- source/fitz/load-jpx.c.orig	2016-04-21 11:14:32 UTC
 +++ source/fitz/load-jpx.c
 @@ -1,14 +1,6 @@
  #include "mupdf/fitz.h"

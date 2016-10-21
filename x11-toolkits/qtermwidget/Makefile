@@ -16,9 +16,13 @@ USE_QT5=	buildtools_build core gui qmake_build widgets
 
 CMAKE_ARGS+=	-DBUILD_DESIGNER_PLUGIN:BOOL=OFF -DUSE_QT5:BOOL=ON
 
-CFLAGS+=	-DHAVE_UTEMPTER
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-DHAVE_UTEMPTER
+.endif
+
+.include <bsd.port.post.mk>

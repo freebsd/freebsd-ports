@@ -1,0 +1,4 @@
+The Oslo messaging API supports RPC and notifications over a number of
+different messaging transports.
+
+WWW: https://pypi.python.org/pypi/oslo.messaging

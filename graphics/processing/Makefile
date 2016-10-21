@@ -27,7 +27,7 @@ SUB_FILES=	processing
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-	${RM} -rf ${WRKSRC}/java
+	${RM} -r ${WRKSRC}/java
 	${MV} ${WRKSRC}/processing ${WRKSRC}/start-processing
 	${LN} -s ${JAVA_HOME} ${WRKSRC}/java
 	${FIND} ${WRKSRC}/modes/java/reference/ -exec ${CHMOD} 555 {} \;

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.9.2
-PORTREVISION=	2
+DISTVERSION=	2.10.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -37,6 +36,7 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/diff-highlight/diff-highlight \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py
+TEST_TARGET=	test
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
@@ -183,7 +183,7 @@ post-install:
 	# recreate it after. This is necessary because the distfile is
 	# extracted with --no-same-owner. If the distfile is extracted as a
 	# non-root user then the symlink will have the incorrect owner.
-	${RM} -f ${WRKDIR}/htmldocs/index.html
+	${RM} ${WRKDIR}/htmldocs/index.html
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html

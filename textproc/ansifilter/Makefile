@@ -47,7 +47,7 @@ post-patch:
 		 s|$$(CFLAGS)|$$(CXXFLAGS)|' ${WRKSRC}/src/${MAKEFILE}
 
 pre-build:
-	@${RM} -f ${WRKSRC}/src/qt-gui/moc_*.cpp
+	@${RM} ${WRKSRC}/src/qt-gui/moc_*.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \

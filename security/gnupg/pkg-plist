@@ -1,6 +1,7 @@
 bin/gpg-agent
 bin/dirmngr
 bin/dirmngr-client
+bin/gpgscm
 bin/gpgsm
 bin/gpgtar
 bin/gpg-connect-agent
@@ -49,7 +50,6 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list
 %%PORTDOCS%%%%DOCSDIR%%/examples/scd-event
 %%PORTDOCS%%%%DOCSDIR%%/examples/trustlist.txt
-%%PORTDOCS%%%%DATADIR%%/com-certs.pem
 %%DATADIR%%/dirmngr-conf.skel
 %%DATADIR%%/distsigkey.gpg
 %%DATADIR%%/gpg-conf.skel
@@ -81,7 +81,6 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DATADIR%%/help.txt
 %%PORTDOCS%%%%DATADIR%%/help.zh_CN.txt
 %%PORTDOCS%%%%DATADIR%%/help.zh_TW.txt
-%%PORTDOCS%%%%DATADIR%%/qualified.txt
 %%DATADIR%%/sks-keyservers.netCA.pem
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg2.mo

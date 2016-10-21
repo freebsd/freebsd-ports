@@ -2,9 +2,7 @@
 
 PORTNAME=	kdenetwork-filesharing
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	net kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	net kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Filesharing via Samba

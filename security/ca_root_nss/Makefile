@@ -47,7 +47,7 @@ do-extract:
 	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/nss-${VERSION_NSS}${NSS_SUFFIX}${EXTRACT_SUFX} \
 	    ${CERTDATA_TXT_PATH}
 	@${CP} ${WRKDIR}/${CERTDATA_TXT_PATH} ${WRKDIR}
-	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
+	@${RM} -r ${WRKDIR}/nss-${VERSION_NSS}
 
 do-build:	apply-slist
 	@${SETENV} PATH=${LOCALBASE}/bin:$${PATH} \

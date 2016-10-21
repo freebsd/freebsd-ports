@@ -127,7 +127,7 @@ post-extract:
 	@${MV} ${WRKSRC_ldap} ${WRKSRC}/src/github.com/go-ldap/ldap
 	@${MV} ${WRKSRC_pq} ${WRKSRC}/src/github.com/lib/pq
 
-	${RM} -rf ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/public
+	${RM} -r ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/public
 	${MV} ${WRKDIR}/public  ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/
 	${RM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/public/.DS_Store
 	${RM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/public/app/.DS_Store

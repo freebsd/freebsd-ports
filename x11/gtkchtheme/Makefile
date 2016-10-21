@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://plasmasturm.org/code/gtk-chtheme/
 DISTNAME=	gtk-chtheme-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 theme changer
 
 USES=		gmake pkgconfig tar:bzip2

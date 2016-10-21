@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 DISTNAME=	trigger-rally-${PORTVERSION}-data
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for trigger-rally
 
 USES=		tar:bzip2
@@ -24,7 +24,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/trigger.png
 .endfor
 # Avoid conflict with trigger-rally
-	@${RM} -f ${STAGEDIR}${DATADIR}/COPYING* \
+	@${RM} ${STAGEDIR}${DATADIR}/COPYING* \
 		${STAGEDIR}${DATADIR}/README*
 
 .include <bsd.port.mk>

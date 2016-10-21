@@ -32,12 +32,12 @@ WRKSRC=	${WRKDIR}/twiki
 USES+=		cpe
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/lib/CPAN
+	@${RM} -r ${WRKSRC}/lib/CPAN
 	@${CAT} ${.CURDIR}/../twiki-*/pkg-plist |\
 		${SED} -e 's|%%TWDIR%%|${WRKSRC}|;/^@/d' |\
-		${XARGS} ${RM} -f
+		${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name \*,v | while read f; do\
-		[ -e $${f%%,v} ] || ${RM} -f $$f; done
+		[ -e $${f%%,v} ] || ${RM} $$f; done
 	@${FIND} ${WRKSRC} -type d -empty -delete
 
 post-patch:

@@ -1,0 +1,5 @@
+Get network device and gateway information
+
+It is especially useful when you want to do low-level network programming.
+
+WWW: http://search.cpan.org/dist/Net-Frame-Device/

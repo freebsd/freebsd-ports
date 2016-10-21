@@ -24,6 +24,11 @@ sh_CMD=		${SH}
 WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6 armv6hf
 
+# NB: apparently this failure is only when running under emulation via
+# qemu; it works fine on native hardware.  Let's leave the line in as a
+# reminder, but commented out for now while this is being investigated.
+#BROKEN_armv6=		Fails to configure: wait: interrupted system call
+
 .include <bsd.port.pre.mk>
 
 # If cc is clang, change it to clang to help Go identify the compiler

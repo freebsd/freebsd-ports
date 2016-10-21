@@ -21,6 +21,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/dlg-assi.html
 %%DATADIR%%/help/dlg-bud1.html
 %%DATADIR%%/help/dlg-cate.html
+%%DATADIR%%/help/dlg-curr.html
 %%DATADIR%%/help/dlg-filt.html
 %%DATADIR%%/help/dlg-mult.html
 %%DATADIR%%/help/dlg-paye.html
@@ -61,6 +62,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/dlg-assign1.png
 %%DATADIR%%/help/images/dlg-budget1.png
 %%DATADIR%%/help/images/dlg-category1.png
+%%DATADIR%%/help/images/dlg-currencies1.png
 %%DATADIR%%/help/images/dlg-filter1.png
 %%DATADIR%%/help/images/dlg-filter2.png
 %%DATADIR%%/help/images/dlg-filter3.png
@@ -68,6 +70,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/dlg-filter5.png
 %%DATADIR%%/help/images/dlg-filter6.png
 %%DATADIR%%/help/images/dlg-payee1.png
+%%DATADIR%%/help/images/dlg-payee2.png
 %%DATADIR%%/help/images/dlg-prefs1.png
 %%DATADIR%%/help/images/dlg-prefs2.png
 %%DATADIR%%/help/images/dlg-prefs3.png
@@ -109,6 +112,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/pm-transfer.png
 %%DATADIR%%/help/images/tip-accorder.png
 %%DATADIR%%/help/images/tip-listsearch.png
+%%DATADIR%%/help/images/tip-multiedit.png
 %%DATADIR%%/help/images/use-assignment1.png
 %%DATADIR%%/help/images/use-budget1.png
 %%DATADIR%%/help/images/use-budget2.png
@@ -124,6 +128,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/use-vehiclecost1.png
 %%DATADIR%%/help/images/use-vehiclecost2.png
 %%DATADIR%%/help/images/use-vehiclecost3.png
+%%DATADIR%%/help/images/warn.png
 %%DATADIR%%/help/images/web_title.png
 %%DATADIR%%/help/images/win-account1.png
 %%DATADIR%%/help/images/win-balance1.png
@@ -186,6 +191,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-assign.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-budget.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-category.png
+%%DATADIR%%/icons/hicolor/24x24/actions/hb-currency.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-file-export.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-file-import.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-file-invalid.png
@@ -251,24 +257,18 @@ share/locale/eu/LC_MESSAGES/homebank.mo
 share/locale/fa/LC_MESSAGES/homebank.mo
 share/locale/fi/LC_MESSAGES/homebank.mo
 share/locale/fr/LC_MESSAGES/homebank.mo
-share/locale/ga/LC_MESSAGES/homebank.mo
 share/locale/gl/LC_MESSAGES/homebank.mo
-share/locale/gu/LC_MESSAGES/homebank.mo
 share/locale/he/LC_MESSAGES/homebank.mo
 share/locale/hr/LC_MESSAGES/homebank.mo
-share/locale/ht/LC_MESSAGES/homebank.mo
 share/locale/hu/LC_MESSAGES/homebank.mo
-share/locale/ia/LC_MESSAGES/homebank.mo
 share/locale/id/LC_MESSAGES/homebank.mo
 share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
 share/locale/ja/LC_MESSAGES/homebank.mo
 share/locale/ka/LC_MESSAGES/homebank.mo
-share/locale/kn/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
 share/locale/lv/LC_MESSAGES/homebank.mo
-share/locale/ml/LC_MESSAGES/homebank.mo
 share/locale/mr/LC_MESSAGES/homebank.mo
 share/locale/ms/LC_MESSAGES/homebank.mo
 share/locale/nb/LC_MESSAGES/homebank.mo
@@ -286,8 +286,6 @@ share/locale/sk/LC_MESSAGES/homebank.mo
 share/locale/sl/LC_MESSAGES/homebank.mo
 share/locale/sr/LC_MESSAGES/homebank.mo
 share/locale/sv/LC_MESSAGES/homebank.mo
-share/locale/ta/LC_MESSAGES/homebank.mo
-share/locale/th/LC_MESSAGES/homebank.mo
 share/locale/tr/LC_MESSAGES/homebank.mo
 share/locale/uk/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo

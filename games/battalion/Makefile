@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@${GZCAT} ${DISTDIR}/battalionSUN4.tar.gz | \
 		(cd ${WRKDIR} && ${TAR} --unlink -xf -)
-	@${RM} -f ${WRKSRC}/*.o
+	@${RM} ${WRKSRC}/*.o
 
 post-patch:
 	@${REINPLACE_CMD} -e \

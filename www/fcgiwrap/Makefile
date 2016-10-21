@@ -2,7 +2,7 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 

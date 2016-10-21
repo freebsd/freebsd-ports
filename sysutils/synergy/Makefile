@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	kevlo@FreeBSD.org

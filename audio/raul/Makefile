@@ -21,10 +21,6 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS=	--verbose
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libraul.so
 

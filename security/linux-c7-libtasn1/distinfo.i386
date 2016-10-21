@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355649
+SHA256 (rpm/centos/7.2.1511/i386/libtasn1-3.8-2.el7.i686.rpm) = 3b809e6dac614a2d5c40e4cec8d41ce14ae1b358fd0660b5706faab2b42fd1d2
+SIZE (rpm/centos/7.2.1511/i386/libtasn1-3.8-2.el7.i686.rpm) = 326948
+SHA256 (rpm/centos/7.2.1511/i386/libtasn1-3.8-2.el7.src.rpm) = 31f6ba7a03e640bad4b782af1e468a1f9f8bc01bc9a5f3bed63e57600ff4c670
+SIZE (rpm/centos/7.2.1511/i386/libtasn1-3.8-2.el7.src.rpm) = 1878124

@@ -1,0 +1,5 @@
+TIMESTAMP = 1473408321
+SHA256 (rpm/centos/7.2.1511/i386/ncurses-base-5.9-13.20130511.el7.noarch.rpm) = 7fe2d59101e4c115e1213aacf190ee9cb929fc4dcc6366ffb22dd08975f5625a
+SIZE (rpm/centos/7.2.1511/i386/ncurses-base-5.9-13.20130511.el7.noarch.rpm) = 69844
+SHA256 (rpm/centos/7.2.1511/i386/ncurses-5.9-13.20130511.el7.src.rpm) = 563ee995fab10d5257ff12c90b50880c48934ef211e8a74fc6f6db3d7a12d4af
+SIZE (rpm/centos/7.2.1511/i386/ncurses-5.9-13.20130511.el7.src.rpm) = 3940100

@@ -30,6 +30,7 @@ MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	#
 HAS_CONFIGURE=	yes
+MAKE_ARGS+=	--verbose
 WAF_CMD?=	./waf
 
 CONFIGURE_TARGET?=	configure

@@ -23,6 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 # Remove traits/testing directory files are not compatible with Python 3
-	cd ${WRKSRC} && ${RM} -Rf traits/testing/
+	cd ${WRKSRC} && ${RM} -R traits/testing/
 
 .include <bsd.port.mk>

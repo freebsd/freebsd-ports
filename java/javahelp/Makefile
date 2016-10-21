@@ -8,7 +8,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/javadesktop/javahelp/
 DISTNAME=	${PORTNAME}2_0_05
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online help support for Java applications
 
 USES=		zip
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 post-patch:
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhindexer
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhsearch
-	(cd ${WRKSRC} && ${RM} -rf `${FIND} . -type d -name .svn`)
+	(cd ${WRKSRC} && ${RM} -r `${FIND} . -type d -name .svn`)
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.html ${STAGEDIR}${JAVAJARDIR}/LICENSE.${PORTNAME}.html

@@ -495,9 +495,9 @@ SUB_LIST:=	${SUB_LIST} ${opt}="@comment " NO_${opt}=""
 
 .  if ${PORT_OPTIONS:M${opt}}
 .    if defined(${opt}_USE)
-.      for option in ${${opt}_USE}
-_u=		${option:C/=.*//g}
-USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
+.      for option in ${${opt}_USE:C/=.*//:O:u}
+_u=		${option}
+USE_${_u:tu}+=	${${opt}_USE:M${option}=*:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS)
@@ -545,9 +545,9 @@ _OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}
 .    endfor
 .  else
 .    if defined(${opt}_USE_OFF)
-.      for option in ${${opt}_USE_OFF}
-_u=		${option:C/=.*//g}
-USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
+.      for option in ${${opt}_USE_OFF:C/=.*//:O:u}
+_u=		${option}
+USE_${_u:tu}+=	${${opt}_USE_OFF:M${option}=*:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS_OFF)

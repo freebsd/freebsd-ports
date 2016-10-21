@@ -26,7 +26,7 @@ PLIST_FILES=	bin/pixilate man/man1/pixilate.1.gz
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@cd ${WRKSRC} && ${RM} -f INSTALL install-sh missing mkinstalldirs
+	@cd ${WRKSRC} && ${RM} INSTALL install-sh missing mkinstalldirs
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

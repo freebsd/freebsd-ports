@@ -6,7 +6,7 @@ PORTVERSION=	5.27.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra modules and scripts for CMake
 
 LICENSE=	BSD3CLAUSE

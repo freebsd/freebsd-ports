@@ -49,7 +49,7 @@ XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
 XMMS_CONFIGURE_WITH=	xmms
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/players/S
+	@${RM} -r ${WRKSRC}/players/S
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' \

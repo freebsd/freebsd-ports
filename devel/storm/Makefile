@@ -26,11 +26,11 @@ STORM_CFG_DIRS=	conf logback
 STORM_CFG_FILES=	conf/storm.yaml conf/storm_env.ini logback/cluster.xml
 
 post-extract:
-		${RM} -f ${WRKSRC}/bin/*.cmd
+		${RM} ${WRKSRC}/bin/*.cmd
 
 post-patch:
 		${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python2.7|" ${WRKSRC}/bin/storm
-		${RM} -f ${WRKSRC}/bin/*.bak
+		${RM} ${WRKSRC}/bin/*.bak
 .for i in ${STORM_CFG_FILES}
 		${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sample
 .endfor

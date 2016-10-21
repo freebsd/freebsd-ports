@@ -45,7 +45,7 @@ post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
 pre-build:
-	@${RM} -f ${BUILD_WRKSRC}/*.c
+	@${RM} ${BUILD_WRKSRC}/*.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

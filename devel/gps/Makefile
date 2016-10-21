@@ -109,7 +109,7 @@ do-build:
 	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/support
 
 post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gps/html/*/_sources
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/gps/html/*/_sources
 	${INSTALL_SCRIPT} ${WRKDIR}/gps ${STAGEDIR}${PREFIX}/bin
 	echo "This is the GPS GPL Edition for the ${OPSYS} Ports Collection." \
 		> ${STAGEDIR}${PREFIX}/share/gps/about.txt

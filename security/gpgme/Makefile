@@ -2,26 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.6.0
-PORTREVISION=	1
-CATEGORIES=	security
+PORTVERSION=	1.7.1
+PORTREVISION?=	0
+CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Library to make access to GnuPG easier
+COMMENT?=	Library to make access to GnuPG easier
 
-LICENSE=	LGPL21
+LICENSE?=	LGPL21
+LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool tar:bzip2
+USES=		cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
 CPE_VENDOR=	gnu
+
+.if !defined(SLAVEPORT)
+CONFIGURE_ARGS+=--enable-languages="cl"
 
 INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README THANKS TODO
@@ -41,6 +45,7 @@ GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
 
 UISERVER_DESC=			GnuPG UI server support
 UISERVER_CONFIGURE_ENABLE=	fd-passing
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -48,12 +53,66 @@ UISERVER_CONFIGURE_ENABLE=	fd-passing
 CONFIGURE_ARGS+=	--disable-gpgsm-test
 .endif
 
+.if defined(SLAVEPORT)
+LIB_DEPENDS+=	libgpgme.so:security/gpgme
+BUILD_WRKSRC=	${WRKSRC}/lang
+INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
+
+.  if ${SLAVEPORT} == "cpp"
+CONFIGURE_ARGS+=--enable-languages="cpp"
+USES+=		compiler:c++11-lang
+.  endif
+
+.  if ${SLAVEPORT} == "qt5"
+LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
+CONFIGURE_ARGS+=--enable-languages="cpp qt"
+USES+=		compiler:c++11-lang pkgconfig
+USE_QT5=	buildtools_build core testlib
+CONFLICTS_INSTALL=	kdepimlibs-4.*
+.  endif
+
+.  if ${SLAVEPORT} == "python"
+BUILD_DEPENDS+=	swig3.0:devel/swig30 \
+		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+USES+=		python
+USE_PYTHON=	py3kplist
+BUILD_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
+CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0
+PLIST_SUB+=	VERSION=${PORTVERSION}
+CONFLICTS_INSTALL=	py*-pyme-[0-9]*
+.  endif
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(SLAVEPORT)
+.  if (${SLAVEPORT} == "cpp" || ${SLAVEPORT} == "qt5")
+.    if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1
+.    endif
+.  endif
+.  if ${SLAVEPORT} == "python"
+.    if ${PYTHON_REL} >= 3000
+CONFIGURE_ARGS+=--enable-languages="python3"
+.    else
+CONFIGURE_ARGS+=--enable-languages="python2"
+.    endif
+.  endif
+.endif
+
 post-patch:
+.if defined(SLAVEPORT)
+	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
+	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'
+.endif
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 					${WRKSRC}/lang/cl/Makefile.in
-
-post-install:
+.if !defined(SLAVEPORT)
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -57,6 +57,6 @@ XMP_CMAKE_ON=	-DUSE_XMP:BOOL=TRUE
 XMP_CMAKE_OFF=	-DUSE_XMP:BOOL=FALSE
 
 pre-configure:
-	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
+	@${RM} ${BUILD_WRKSRC}/CMakeCache.txt
 
 .include <bsd.port.mk>

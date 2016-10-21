@@ -1,0 +1,10 @@
+--- daemon/Makefile.in.orig	2016-08-30 14:20:12 UTC
++++ daemon/Makefile.in
+@@ -538,6 +538,7 @@ linphone_daemon_pipetest_LDADD = $(ORTP_
+ linphone_daemon_LDADD = $(top_builddir)/coreapi/liblinphone.la $(READLINE_LIBS)  \
+ 		$(MEDIASTREAMER_LIBS) \
+ 		$(ORTP_LIBS) \
++		-lbctoolbox \
+ 		$(SPEEX_LIBS) \
+ 		$(LIBXML2_LIBS)
+ 

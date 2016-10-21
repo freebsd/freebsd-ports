@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
@@ -12,20 +12,25 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	mutt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://home.woolridge.ca/mutt/patches/:dw
+		http://home.uchicago.edu/~dgc/sw/mutt/:dgc \
+		https://www.schrab.com/aaron/mutt/:ats \
+		http://vc.org.ua/mutt/:vc
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=	patch-1.5.1.dgc.deepif.1:dgc \
+			patch-1.7.0.ats.date_conditional.1:ats
 
 MAINTAINER?=	dereks@lifeofadishwasher.com
-COMMENT?=	The Mongrel of Mail User Agents
+COMMENT?=	Small but powerful text based program for read/writing e-mail
 
 LICENSE=	GPLv2+
 
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
-DIST_SUBDIR=	mutt
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt
@@ -49,11 +54,6 @@ AUTOMAKE_ARGS=	--add-missing --foreign
 OPTIONS_SUB=	yes
 
 .if defined (MUTT_LITE)
-LITE=	yes
-USES+=	ncurses
-.endif
-
-.if defined (LITE)
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
 .else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
@@ -111,7 +111,7 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
-.if !defined (LITE)
+.if !defined (MUTT_LITE)
 ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
 ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
@@ -119,8 +119,9 @@ ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 .endif
 
-.if defined (LITE)
+.if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
+USES+=	ncurses
 PLIST_SUB+=	MAILBOX_MANPAGES=""
 PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
 PLIST_SUB+=	HTML="@comment "
@@ -129,6 +130,11 @@ PLIST_SUB+=	NNTP="@comment "
 # XXX bug in bpm ?
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls --disable-iconv --without-idn
+.endif
+
+.ifmake makesum # for optional distfiles patchfiles
+PORT_DBDIR=		/dev/null
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 .endif
 
 DEBUG_CONFIGURE_ON=	--enable-debug
@@ -187,6 +193,8 @@ SMTP_CONFIGURE_ENABLE=	smtp
 
 MAILDIR_HEADER_CACHE_CONFIGURE_OFF=	--without-qdbm
 
+GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
+
 COMPRESSED_FOLDERS_DISTFILES=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
 COMPRESSED_FOLDERS_CONFIGURE_ON=	--enable-compressed
 COMPRESSED_FOLDERS_VARS=	XML_NEEDED=yes
@@ -209,15 +217,19 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 .include <bsd.port.options.mk>
 
-DW_PATCH_VERSION=	1.5.6
+# un/comment as each VERSION is created for PORTVERSION
+#VVV_PATCH_VERSION=	1.7.0
+#RR_PATCH_VERSION=	1.7.0
+#GREETING_PATCH_VERSION=	1.7.0
+
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(RR_PATCH_VERSION)
 RR_PATCH_VERSION=	${PORTVERSION}
 .endif
-.if !defined(DW_PATCH_VERSION)
-DW_PATCH_VERSION=	${PORTVERSION}
+.if !defined(GREETING_PATCH_VERSION)
+GREETING_PATCH_VERSION=	${PORTVERSION}
 .endif
 
 # XXX
@@ -233,8 +245,6 @@ pre-build::
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
 CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
-
-PATCH_DIST_STRIP=	-p1
 
 pre-patch-PARENT_CHILD_MATCH_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
@@ -273,9 +283,6 @@ post-install:
 post-install-NNTP-on:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
 
-post-patch-GREETING_PATCH-on:
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-greeting
-
 post-patch-IFDEF_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
 
@@ -290,7 +297,7 @@ post-patch::
 		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
-	@${RM} -f ${WRKSRC}/missing
+	@${RM} ${WRKSRC}/missing
 .if defined(WITH_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \

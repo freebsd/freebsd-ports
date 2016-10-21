@@ -35,7 +35,7 @@ SUB_LIST+=	MAGENTODIR=${MAGENTODIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	${SUB_LIST}
 
 post-patch:
-	@${RM} -f ${WRKSRC}/cron.sh ${WRKSRC}/.htaccess
+	@${RM} ${WRKSRC}/cron.sh ${WRKSRC}/.htaccess
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MAGENTODIR}
@@ -47,7 +47,7 @@ do-install:
 do-install-SESSIONS-on:
 	@${REINPLACE_CMD} -e 's,<active>false,<active>true,' \
 		${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml
-	@${RM} -f ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml.bak
+	@${RM} ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml.bak
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}

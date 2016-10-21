@@ -3,6 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.10
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -47,14 +48,15 @@ KERBEROS5_CONFIGURE_ON=	--enable-krbV-uam
 KERBEROS_CONFIGURE_WITH=kerberos
 KERBEROS_LIB_DEPENDS=libgpg-error.so:security/libgpg-error
 PAM_CONFIGURE_WITH=pam
-ZEROCONF_CONFIGURE_OFF=	--disable-zeroconf
 AVAHI_CONFIGURE_ON=	--enable-zeroconf=${LOCALBASE}
 AVAHI_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
+AVAHI_SUB_LIST=		ZEROCONF="avahi_daemon"
 MDNSRESPONDER_CONFIGURE_ON=	--enable-zeroconf=${LOCALBASE}
 MDNSRESPONDER_CONFIGURE_ENV=	ac_cv_lib_avahi_client_avahi_client_new=no
 MDNSRESPONDER_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MDNSRESPONDER_LIB_DEPENDS=		libdns_sd.so:net/mDNSResponder
+MDNSRESPONDER_SUB_LIST=	ZEROCONF="mdnsd"
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 LDAP_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDAP_USE=	OPENLDAP=yes
@@ -73,6 +75,13 @@ LIBWRAP_CONFIGURE_ENABLE=tcp-wrappers
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
 
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MAVAHI}=="" && ${PORT_OPTIONS:MMDNSRESPONDER}==""
+SUB_LIST+=	ZEROCONF=""
+CONFIGURE_ARGS+=--disable-zeroconf
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 		s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
@@ -87,4 +96,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
 
-.include <bsd.port.mk>
+.if ${PORT_OPTIONS:MPAM}
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/netatalk.sample
+.endif
+
+.include <bsd.port.post.mk>

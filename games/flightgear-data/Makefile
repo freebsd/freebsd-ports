@@ -21,10 +21,10 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${RM} -f ${WRKSRC}/COPYING
+	@${RM} ${WRKSRC}/COPYING
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
 		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/|' >> ${PLIST} && \

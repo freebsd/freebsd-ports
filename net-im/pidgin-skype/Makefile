@@ -25,11 +25,11 @@ USE_GNOME=	glib20
 # Note that googlecode.com is gone.
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
-	${RM} -rf ${WRKSRC}
+	${RM} -r ${WRKSRC}
 	svn export -r${PORTVERSION:E} \
 	    http://skype4pidgin.googlecode.com/svn/trunk/ ${WRKSRC}
 	tar -C ${WRKSRC}/.. -cvf - ${WRKSRC:T} | ${XZ_CMD} -vvc >${DISTFILES} || \
-	    { ${RM} -f ${DISTFILES} ; exit 1 ; }
+	    { ${RM} ${DISTFILES} ; exit 1 ; }
 
 upload-tarball: build-tarball
 	scp ${DISTFILES} freefall.freebsd.org:public_distfiles/

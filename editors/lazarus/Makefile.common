@@ -61,7 +61,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}

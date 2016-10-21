@@ -77,7 +77,7 @@ do-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR} )
 .if !defined(FORCE_VULNERABLE_OPENSSL)
 .for lib in ${OPENSSL_LIBS}
-	@${RM} -f ${WRKSRC}/${lib}
+	@${RM} ${WRKSRC}/${lib}
 .endfor
 .endif
 

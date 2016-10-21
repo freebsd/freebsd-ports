@@ -34,7 +34,7 @@ post-patch:
 	s|CXX=gcc|CXX?=${CC}| ; \
 	s|CFLAGS=-Wall ${SDL_CFLAGS}|CFLAGS+=-w ${SDL_CFLAGS}|' \
 		${WRKSRC}/Makefile
-	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

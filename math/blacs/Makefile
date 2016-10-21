@@ -83,7 +83,7 @@ do-build:
 	(cd ${WRKSRC_SHARED}; make mpi; make tester)
 
 post-build:
-	${RM} -rf ${WRKDIR}/tmp_shared
+	${RM} -r ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
 	${MV} ${WRKSRC_SHARED}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a          ${WRKSRC_SHARED}/LIB/libblacsc.a
 	${MV} ${WRKSRC_SHARED}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a   ${WRKSRC_SHARED}/LIB/libblacsf77.a

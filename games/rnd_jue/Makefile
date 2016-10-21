@@ -56,10 +56,10 @@ post-extract-script:
 		"Tutorial Alpha" rnd_tutorial_alpha)
 
 	@(cd ${WRKSRC}/levels/"Walpurgis Collection" && \
-		${RM} -fr "Walpurgis Gardens" "Walpurgis World")
-	@(cd ${WRKSRC}/levels/rnd_the_h_world && ${RM} -fr hwld_dceos)
-	@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
-	@${RM} -f ${WRKSRC}/levels/Readme.txt
+		${RM} -r "Walpurgis Gardens" "Walpurgis World")
+	@(cd ${WRKSRC}/levels/rnd_the_h_world && ${RM} -r hwld_dceos)
+	@${RM} ${WRKDIR}/${PORTNAME}/Readme.txt
+	@${RM} ${WRKSRC}/levels/Readme.txt
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674939
+SHA256 (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.i686.rpm) = 10be74f7196e416422f01294080cb02655ae734e1ebb2765247dd441e3af6959
+SIZE (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.i686.rpm) = 25500
+SHA256 (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.x86_64.rpm) = 16a5f4baeabf78f77399395e3c22b22e2968bfa37e17221c042469c30ea4b9a2
+SIZE (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.x86_64.rpm) = 24932
+SHA256 (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.src.rpm) = d6d938858eb0251a5aac8c159682e0fa62cc74519975e6ae05809cc0d6a20799
+SIZE (rpm/centos/7.2.1511/x86_64/libogg-1.3.0-7.el7.src.rpm) = 311857

@@ -1,12 +1,12 @@
---- lib/pure/os.nim.orig
+--- lib/pure/os.nim.orig	2016-10-08 02:25:13 UTC
 +++ lib/pure/os.nim
-@@ -1785,8 +1785,7 @@
-     result = getApplAux("/proc/" & $getpid() & "/path/a.out")
-     if result.len == 0: result = getApplHeuristic()
-   elif defined(freebsd):
--    result = getApplAux("/proc/" & $getpid() & "/file")
--    if result.len == 0: result = getApplHeuristic()
-+     result = getApplHeuristic()
-   elif defined(macosx):
-     var size: cuint32
-     getExecPath1(nil, size)
+@@ -1450,9 +1450,6 @@ proc getAppFilename*(): string {.rtl, ex
+     elif defined(solaris):
+       result = getApplAux("/proc/" & $getpid() & "/path/a.out")
+     elif defined(freebsd):
+-      result = getApplAux("/proc/" & $getpid() & "/file")
+-    # little heuristic that may work on other POSIX-like systems:
+-    if result.len == 0:
+       result = getApplHeuristic()
+ 
+ proc getApplicationFilename*(): string {.rtl, extern: "nos$1", deprecated.} =

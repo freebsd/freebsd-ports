@@ -4,7 +4,7 @@ PORTNAME=	librecad
 DISTVERSION=	2.0.8
 CATEGORIES=	cad
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D CAD system
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs

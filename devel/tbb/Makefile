@@ -2,16 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	4.4.2
+PORTVERSION=	2017.1
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20151115oss_src
+DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20160916oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
 LICENSE=	GPLv2
+
+SUB_FILES=	tbb.pc
+SUB_LIST=	prefix="${PREFIX}" \
+		name="${PORTNAME}" \
+		description="${COMMENT}" \
+		version="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
@@ -45,15 +51,18 @@ do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbb.so \
 		${STAGEDIR}${PREFIX}/lib/libtbb.so.4; \
-	${LN} -sf ${PREFIX}/lib/libtbb.so.4 \
+	${LN} -sf libtbb.so.4 \
 		${STAGEDIR}${PREFIX}/lib/libtbb.so; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbbmalloc.so \
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so.4; \
-	${LN} -sf ${PREFIX}/lib/libtbbmalloc.so.4 \
+	${LN} -sf libtbbmalloc.so.4 \
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/tbb.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.post.mk>

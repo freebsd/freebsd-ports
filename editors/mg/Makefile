@@ -19,11 +19,11 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1002506
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002506
 BROKEN=	does not build, requires futimens system call
 .endif
 
-.if ${OSVERSION} >= 1002506 && ${OSVERSION} < 1100072
+.if ${OPSYS} != FreeBSD || (${OSVERSION} >= 1002506 && ${OSVERSION} < 1100072)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-def.h
 
 post-patch:

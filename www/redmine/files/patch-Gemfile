@@ -55,6 +55,15 @@
  platforms :jruby do
    # jruby-openssl is bundled with JRuby 1.7.0
    gem "jruby-openssl" if Object.const_defined?(:JRUBY_VERSION) && JRUBY_VERSION < '1.7.0'
+@@ -72,7 +55,7 @@ if File.exist?(database_file)
+       when 'mysql'
+         gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
+       when /postgresql/
+-        gem "pg", "~> 0.18.1", :platforms => [:mri, :mingw, :x64_mingw]
++        gem "pg", ">= 0.18.1", :platforms => [:mri, :mingw, :x64_mingw]
+         gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
+       when /sqlite3/
+         gem "sqlite3", :platforms => [:mri, :mingw, :x64_mingw]
 @@ -92,21 +75,6 @@ else
    warn("Please configure your config/database.yml first")
  end

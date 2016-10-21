@@ -21,7 +21,7 @@ SUB_FILES=	jlex.sh pkg-message
 SUB_LIST=	JAVAJARDIR=${JAVAJARDIR}
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/Main.java ${WRKDIR}
 

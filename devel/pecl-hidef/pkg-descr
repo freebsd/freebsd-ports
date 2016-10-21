@@ -1,5 +1,0 @@
-Allow definition of user defined constants in simple ini files,
-which are then processed like internal constants, without any
-of the usual performance penalties.
-
-WWW: http://pecl.php.net/package/hidef/

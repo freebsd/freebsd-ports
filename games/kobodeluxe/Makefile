@@ -45,7 +45,7 @@ post-patch:
 		${WRKSRC}/enemy.cpp
 
 post-install:
-	@${RM} -rf ${STAGEDIR}/var
+	@${RM} -r ${STAGEDIR}/var
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobodeluxe.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobo-icon.xpm \

@@ -18,8 +18,8 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=		Does not build: No rule to make target aarch64.o, needed by libasmrun.a
 BROKEN_powerpc64=	Does not build
-
 BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
@@ -147,7 +147,7 @@ post-configure:
 		-e 's,(${PATTERN}+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
 
 check-test: do-install
-	@cd ${WRKSRC}/testsuite; ${RM} -f _log; for d in tests/* ; do \
+	@cd ${WRKSRC}/testsuite; ${RM} _log; for d in tests/* ; do \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} one DIR=$${d} \
 	2>&1 | tee -a _log || ${TRUE} ; done ; \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} report

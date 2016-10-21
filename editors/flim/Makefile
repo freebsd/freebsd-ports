@@ -202,7 +202,7 @@ info-package-install:
 	done)
 
 manifest-install:
-	@${RM} -f ${WRKDIR}/${MANIFEST}
+	@${RM} ${WRKDIR}/${MANIFEST}
 	@${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
 		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \

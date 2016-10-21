@@ -10,6 +10,7 @@ share/postgresql/extension/pg_qualstats--0.0.8.sql
 share/postgresql/extension/pg_qualstats--0.0.9.sql
 share/postgresql/extension/pg_qualstats--1.0.0.sql
 share/postgresql/extension/pg_qualstats--1.0.1.sql
+share/postgresql/extension/pg_qualstats--1.0.2.sql
 share/postgresql/extension/pg_qualstats.control
 share/doc/postgresql/extension/pg_qualstats-README.md
 share/doc/postgresql/extension/pg_qualstats-LICENSE

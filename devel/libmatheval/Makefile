@@ -13,13 +13,13 @@ COMMENT=	Library to evaluate mathematical functions
 BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
 LIB_DEPENDS=	libguile.so:lang/guile
 
+BROKEN_FreeBSD_9_amd64=	does not link
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
-USES=		libtool makeinfo pathfix
+USES=		libtool localbase makeinfo pathfix
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		libmatheval
 

@@ -14,10 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig python:build tar:bzip2 waf
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS+=	--verbose
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/autowaf.build_pc/s|^|#|' ${WRKSRC}/wscript
 	@(cd ${WRKSRC} && ${SED} -e \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.9.19
+PORTVERSION=	1.9.20
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
@@ -75,7 +75,7 @@ DISTFILES=
 .endif
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} -C ${WRKDIR} --include '/usr/local/share/licenses/${DISTNAME}/LICENSE' -s '|/usr/local/share/licenses/${DISTNAME}/||g'
 
@@ -87,7 +87,7 @@ ${PLIST}: fetch
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$\|ldconfig32' | ${SED} 's|/usr/local/||g' | sort > ${PLIST}
 
 port-update:
-	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
+	${RM} ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 .for osrel in 9 10 11 12
 .for suffix in -devel -staging
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}

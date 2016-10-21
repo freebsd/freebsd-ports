@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 WEBMIN_MODULES=
 
 post-extract:
-	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
+	@${RM} ${WRKSRC}/mount/freebsd-mounts-?
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \

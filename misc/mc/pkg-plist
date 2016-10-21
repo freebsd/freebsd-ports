@@ -152,6 +152,7 @@ share/applications/mc.desktop
 %%NLS%%%%DATADIR%%/help/mc.hlp.ru
 %%NLS%%%%DATADIR%%/help/mc.hlp.sr
 %%DATADIR%%/hints/mc.hint
+%%NLS%%%%DATADIR%%/hints/mc.hint.af
 %%NLS%%%%DATADIR%%/hints/mc.hint.ar
 %%NLS%%%%DATADIR%%/hints/mc.hint.az
 %%NLS%%%%DATADIR%%/hints/mc.hint.be
@@ -198,6 +199,7 @@ share/applications/mc.desktop
 %%NLS%%%%DATADIR%%/hints/mc.hint.te
 %%NLS%%%%DATADIR%%/hints/mc.hint.tr
 %%NLS%%%%DATADIR%%/hints/mc.hint.uk
+%%NLS%%%%DATADIR%%/hints/mc.hint.uz
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh_CN
 %%ICONV%%%%DATADIR%%/mc.charsets
@@ -235,6 +237,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/cmake.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cs.syntax
 %%EDITOR%%%%DATADIR%%/syntax/css.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cuda.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cxx.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cython.syntax
 %%EDITOR%%%%DATADIR%%/syntax/d.syntax
@@ -251,6 +254,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/f90.syntax
 %%EDITOR%%%%DATADIR%%/syntax/filehighlight.syntax
 %%EDITOR%%%%DATADIR%%/syntax/fortran.syntax
+%%EDITOR%%%%DATADIR%%/syntax/glsl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/go.syntax
 %%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax

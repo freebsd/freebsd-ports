@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${EXAMPLESDIR} && ${RM} -rf ${WRKSRC}/docs)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${EXAMPLESDIR} && ${RM} -r ${WRKSRC}/docs)
 	(cd ${WRKSRC} && ${MV} vbv_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/)
 	(cd ${WRKSRC} && ${MV} mcs_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/)
 	(cd ${WRKSRC} && ${MV} robots_example.txt ${STAGEDIR}${EXAMPLESDIR}/)

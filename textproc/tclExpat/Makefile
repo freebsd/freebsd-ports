@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 # Remove the old version of expat bundled with the package:
 post-extract:
-	${RM} -rf ${WRKSRC}/expat
+	${RM} -r ${WRKSRC}/expat
 
 post-build test:
 	${LN} -sf libtclexpat.so ${WRKSRC}/tclexpat.so

@@ -76,7 +76,9 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp6.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mailcap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-sidebar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-tlr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.vimrc-sidebar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smime.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smime_keys_test.pl
 %%NLS%%share/locale/bg/LC_MESSAGES/mutt.mo

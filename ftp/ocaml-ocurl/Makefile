@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocurl
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	ftp
 MASTER_SITES=	http://ygrek.org.ua/p/release/ocurl/
 PKGNAMEPREFIX=	ocaml-

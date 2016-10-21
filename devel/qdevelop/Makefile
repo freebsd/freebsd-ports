@@ -8,7 +8,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	http://biord-software.org/downloads/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment entirely dedicated to Qt 4
 
 RUN_DEPENDS=	exctags:devel/ctags

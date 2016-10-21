@@ -1,5 +1,6 @@
-SHA256 (Ipopt-3.12.5.tgz) = 53e7af6eefcb6de1f8e936c9c887c7bcb5a9fa4fcf7673a227f16de131147325
-SIZE (Ipopt-3.12.5.tgz) = 4515902
+TIMESTAMP = 1476029922
+SHA256 (Ipopt-3.12.6.tgz) = 6aaa6bd862d54eba6fb966950fa6928ca01d66cf4cb842b2f41a7ebfa61eee2b
+SIZE (Ipopt-3.12.6.tgz) = 4526724
 SHA256 (metis-4.0.3.tar.gz) = 5efa35de80703c1b2c4d0de080fafbcf4e0d363a21149a1ad2f96e0144841a55
 SIZE (metis-4.0.3.tar.gz) = 522624
 SHA256 (MUMPS_4.10.0.tar.gz) = d0f86f91a74c51a17a2ff1be9c9cee2338976f13a6d00896ba5b43a5ca05d933

@@ -38,7 +38,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
 
 do-test:
-	@${RM} -fr ${TEST_WRKSRC}/build/lib/tests
+	@${RM} -r ${TEST_WRKSRC}/build/lib/tests
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.post.mk>

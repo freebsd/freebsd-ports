@@ -17,7 +17,7 @@ SUB_FILES=	unixbench
 MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
-	${RM} -f ${WRKSRC}/pgms/select
+	${RM} ${WRKSRC}/pgms/select
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${STAGEDIR}${PREFIX}/bin/

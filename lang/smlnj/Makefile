@@ -225,7 +225,7 @@ do-build:
 	./makeml
 	@${ECHO} '(* Removing old libs and heaps: *)'
 	cd ${WRKSRC}/${RECOMPILEDIR} && \
-	${RM} -rf ../../lib && ${MKDIR} ../../lib && \
+	${RM} -r ../../lib && ${MKDIR} ../../lib && \
 	${FIND} ../../bin/.heap -name '*.${MLARCH}-bsd' \
 	\! -name 'sml.${MLARCH}-bsd' -delete -print
 	@${ECHO} '(* Installing the recompiled libs and heap: *)'

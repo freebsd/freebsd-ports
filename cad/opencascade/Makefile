@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -124,7 +124,7 @@ post-install:
 	done)
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/OpenCASCADE
 	(cd ${STAGEDIR}${OCCROOT}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/OpenCASCADE)
-	${RM} -rf ${STAGEDIR}${OCCROOT}/inc
+	${RM} -r ${STAGEDIR}${OCCROOT}/inc
 	${LN} -sf ${PREFIX}/include/OpenCASCADE ${STAGEDIR}${OCCROOT}/inc
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} tests ${STAGEDIR}${OCCROOT})
 post-install-DOCS-on:

@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based configuration manager for DOSBox
 
 RUN_DEPENDS=	dosbox:emulators/dosbox

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine modification
 
 # Loads libraries at run-time, thus RUN_DEPENDS.

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.5.3
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -23,20 +22,18 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-osmosdr.so:comms/gr-osmosdr \
 		libpulse.so:audio/pulseaudio \
-		libpulse-simple.so:audio/pulseaudio
+		libpulse-simple.so:audio/pulseaudio \
+		libboost_system.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
+GH_TAGNAME=	v${PORTVERSION:S/.0$//}
 
 USES=		pkgconfig qmake
 
-OPTIONS_SINGLE=	GUI
-OPTIONS_SINGLE_GUI=	QT4 QT5
-
-QT4_USE=	QT4=corelib,gui,network
-QT5_USE=	QT5=buildtools_build,core,gui,svg,network,widgets
-
-OPTIONS_DEFAULT=	QT5
+USE_GL=		gl
+USE_QT5=	buildtools_build core gui svg network widgets
 
 PLIST_FILES=	bin/gqrx share/applications/gqrx.desktop
 

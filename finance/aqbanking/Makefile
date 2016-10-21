@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.5.1
+PORTVERSION=	5.6.12
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=118&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=208&file=01&dummy=/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
@@ -12,21 +12,20 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
-		libgmp.so:math/gmp
+		libltdl.so:devel/libltdl \
+		libgmp.so:math/gmp \
+		libgnutls.so:security/gnutls
 
-USES=		compiler:features gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool localbase pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
-CONFIGURE_ENV=	COMPILER_TYPE="${COMPILER_TYPE}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lintl
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-AQB_SHLIB_VER=	34
+AQB_SHLIB_VER=	35
 PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}"
 
 OPTIONS_DEFINE=		DOCS DOXYGEN EBICS KTOBLZCHECK
@@ -58,21 +57,17 @@ LIB_DEPENDS+=	libktoblzcheck.so:finance/ktoblzcheck
 PORTDOCS=	*
 .endif
 
-post-build:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-build-DOXYGEN-on:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} srcdoc
-.endif
 
-post-install:
-.if !${PORT_OPTIONS:MDOCS}
-	@${RM} -rf ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOCS-off:
+	@${RM} -r ${STAGEDIR}${DOCSDIR}
+
+post-install-DOXYGEN-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidoc
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>

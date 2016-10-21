@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0022
+PORTVERSION=	8.0.0035
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -35,7 +35,7 @@ LANGBIND_DESC=		Optional language bindings
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}"
 MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
-MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
+MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=ncurses
 REINPLACE_ARGS=	-i ''
 USES=		cpe iconv ncurses pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes

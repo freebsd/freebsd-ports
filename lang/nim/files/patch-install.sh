@@ -1,6 +1,6 @@
---- install.sh.orig
+--- install.sh.orig	2016-09-30 22:23:34 UTC
 +++ install.sh
-@@ -15,39 +15,14 @@
+@@ -32,48 +32,14 @@ if [ $# -eq 1 ] ; then
      "--help"|"-h"|"help"|"h")
        echo "Nim installation script"
        echo "Usage: [sudo] sh install.sh DIR"
@@ -8,7 +8,7 @@
 -      echo "  /usr/bin"
 -      echo "  /usr/local/bin"
 -      echo "  /opt"
--      echo "  <some other dir> (treated like '/opt')"
+-      echo "  <some other dir> (treated similar to '/opt')"
 -      echo "To deinstall, use the command:"
 -      echo "sh deinstall.sh DIR"
        exit 1
@@ -19,6 +19,7 @@
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
@@ -26,6 +27,18 @@
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
+-      ;;
+-    "/opt")
+-      bindir="/opt/nim/bin"
+-      configdir="/opt/nim/config"
+-      libdir="/opt/nim/lib"
+-      docdir="/opt/nim/doc"
+-      datadir="/opt/nim/data"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
+-      mkdir -p /opt/nim
+-      mkdir -p $bindir
+-      mkdir -p $configdir
 -      ;;
      *)
 -      bindir="$1/nim/bin"
@@ -33,15 +46,11 @@
 -      libdir="$1/nim/lib"
 -      docdir="$1/nim/doc"
 -      datadir="$1/nim/data"
--      
--      mkdir -p $1/nim
--      mkdir -p $bindir
--      mkdir -p $configdir
 +      bindir="$1/bin"
 +      configdir="$1/etc"
-+      libdir="$1/lib/nim"
++      libdir="$1/lib"
 +      docdir="$1/share/doc/nim"
 +      datadir="$1/share/nim"
-       ;;
-   esac
-   mkdir -p $libdir
+       nimbleDir="$1/nim"
+       mkdir -p $1/nim
+       mkdir -p $bindir

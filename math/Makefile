@@ -107,6 +107,7 @@
     SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
+    SUBDIR += ceres-solver
     SUBDIR += cgal
     SUBDIR += chaco
     SUBDIR += chryzodus
@@ -244,7 +245,6 @@
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += levmar
-    SUBDIR += libR
     SUBDIR += libRmath
     SUBDIR += libflame
     SUBDIR += libjbigi
@@ -563,8 +563,6 @@
     SUBDIR += pecl-stats
     SUBDIR += pecl-stats2
     SUBDIR += pecl-trader
-    SUBDIR += php55-bcmath
-    SUBDIR += php55-gmp
     SUBDIR += php56-bcmath
     SUBDIR += php56-gmp
     SUBDIR += php70-bcmath

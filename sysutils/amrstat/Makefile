@@ -35,7 +35,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES+=	${PERIODICSCRIPT}
 
 post-extract:
-	${RM} -f ${WRKSRC}/amrstat
+	${RM} ${WRKSRC}/amrstat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amrstat ${STAGEDIR}${PREFIX}/sbin

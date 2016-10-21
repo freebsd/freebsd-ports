@@ -1,6 +1,23 @@
---- Makefile.am.orig	2015-09-10 07:37:42.000000000 +0200
-+++ Makefile.am	2015-09-10 07:38:51.000000000 +0200
-@@ -162,10 +162,6 @@
+--- Makefile.am.orig	2016-10-08 19:30:21 UTC
++++ Makefile.am
+@@ -10,7 +10,7 @@ IMAP_SUBDIR = imap
+ IMAP_INCLUDES = -I$(top_srcdir)/imap
+ endif
+ 
+-SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
++SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . doc
+ 
+ bin_SCRIPTS = muttbug flea $(SMIMEAUX_TARGET)
+ 
+@@ -157,18 +157,9 @@ install-exec-hook:
+ 		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
+ 		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
+ 	fi
+-	if test -f $(DESTDIR)$(bindir)/mutt_dotlock && test x$(DOTLOCK_GROUP) != x ; then \
+-		chgrp $(DOTLOCK_GROUP) $(DESTDIR)$(bindir)/mutt_dotlock && \
+-		chmod $(DOTLOCK_PERMISSION) $(DESTDIR)$(bindir)/mutt_dotlock || \
+-		{ echo "Can't fix mutt_dotlock's permissions!  This is required to lock mailboxes in the mail spool directory." >&2 ; exit 1 ; } \
+-	fi
  
  install-data-local:
  	$(MKDIR_P) $(DESTDIR)$(sysconfdir)

@@ -33,7 +33,7 @@ do-install:
 
 gen-dist:
 	${MKDIR} ${WRKDIR}
-	${RM} -rf ${WRKSRC}
+	${RM} -r ${WRKSRC}
 	svn export -r ${SVN_REV} ${SVNROOT} ${WRKSRC}
 	${TAR} -cvy -C ${WRKDIR} --exclude FreeBSDport -f ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 

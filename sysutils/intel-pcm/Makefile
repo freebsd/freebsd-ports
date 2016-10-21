@@ -19,6 +19,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/IntelPerformanceCounterMonitor-V${PORTVERSION}
 MAKE_ARGS=	CXX="${CXX}" LIB=-lpthread
 
+BROKEN_FreeBSD_9=	Does not build
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/*.x ${STAGEDIR}${PREFIX}/sbin
 

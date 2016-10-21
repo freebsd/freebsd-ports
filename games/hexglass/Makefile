@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris-like puzzle game based on a hexagonal grid
 
 BROKEN=		Unfetchable (google code has gone away)

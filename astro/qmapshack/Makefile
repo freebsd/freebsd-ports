@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmapshack
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.1
 CATEGORIES=	astro
 MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 

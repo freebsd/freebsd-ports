@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	retroshare
-PORTVERSION=	0.6.0e
+PORTVERSION=	0.6.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	peter@netkey.at
@@ -35,7 +35,6 @@ DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro
 USE_GITHUB=	yes
 GH_ACCOUNT=	RetroShare
 GH_PROJECT=	RetroShare
-GH_TAGNAME=	9f7ef8b
 
 .include <bsd.port.pre.mk>
 
@@ -55,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/data/retroshare06.desktop
 .if defined(GH_TAGNAME)
-	@${REINPLACE_CMD} -e 's|01234567|0${GH_TAGNAME}|' \
+	@${REINPLACE_CMD} -e 's|RS_REVISION_NUMBER.*|RS_REVISION_NUMBER   0x${GH_TAGNAME}|' \
 		${WRKSRC}/libretroshare/src/retroshare/rsversion.h
 .endif
 

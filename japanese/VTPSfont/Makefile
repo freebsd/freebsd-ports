@@ -18,7 +18,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-extract:
-		@${RM} -rf ${WRKSRC}
+		@${RM} -r ${WRKSRC}
 		@${MKDIR} ${WRKSRC}
 		@for file in ${DISTFILES}; do \
 			${CP} ${DISTDIR}/${DIST_SUBDIR}/$${file} ${WRKSRC}; \

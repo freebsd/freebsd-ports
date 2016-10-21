@@ -894,10 +894,15 @@ share/ppd/HP/hp-officejet_pro_551_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_8000_enterprise_a811a-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_8210-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_8730-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_8732-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_8740-ps.ppd.gz
+share/ppd/HP/hp-pagewide_352_printer-ps.ppd.gz
+share/ppd/HP/hp-pagewide_377_mfp-ps.ppd.gz
 share/ppd/HP/hp-pagewide_color_556-ps.ppd.gz
+share/ppd/HP/hp-pagewide_color_e55650-ps.ppd.gz
 share/ppd/HP/hp-pagewide_color_flow_mfp_586-ps.ppd.gz
 share/ppd/HP/hp-pagewide_color_mfp_586-ps.ppd.gz
+share/ppd/HP/hp-pagewide_color_mfp_e58650-ps.ppd.gz
 share/ppd/HP/hp-pagewide_mfp_p57750-ps.ppd.gz
 share/ppd/HP/hp-pagewide_p55250-ps.ppd.gz
 share/ppd/HP/hp-pagewide_pro_452_printer-ps.ppd.gz

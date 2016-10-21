@@ -185,7 +185,7 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/RT.pm.in.orig
+	@${RM} ${WRKSRC}/lib/RT.pm.in.orig
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${PREFIX}/${SITE_PERL_REL}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
@@ -193,10 +193,10 @@ post-patch:
 	    ${RM} ${WRKSRC}/lib/RT/Interface/CLI.pm.bak
 
 pre-install:
-	@${RM} -f ${WRKSRC}/lib/RT.pm.in
+	@${RM} ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-	@${RM} -rf ${STAGEDIR}/${WWWDIR}${PKGNAMESUFFIX}
+	@${RM} -r ${STAGEDIR}/${WWWDIR}${PKGNAMESUFFIX}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")

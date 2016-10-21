@@ -160,8 +160,8 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/sanselan-0.98-snapshot.jar
 %%IDEA_HOME%%/lib/serviceMessages.jar
 %%IDEA_HOME%%/lib/slf4j-api-1.7.10.jar
+%%IDEA_HOME%%/lib/snappy-in-java-0.5.1.jar
 %%IDEA_HOME%%/lib/slf4j-log4j12-1.7.10.jar
-%%IDEA_HOME%%/lib/snappy-in-java-0.3.1.jar
 %%IDEA_HOME%%/lib/sqlite-jdbc-3.6.20.1.jar
 %%IDEA_HOME%%/lib/src/trove4j_src.jar
 %%IDEA_HOME%%/lib/swingx-core-1.6.2.jar
@@ -239,6 +239,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/bin/kotlinc.bat
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/build.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/android-extensions-compiler.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-annotation-processing.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common-test.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar

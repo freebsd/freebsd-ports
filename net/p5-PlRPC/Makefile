@@ -19,7 +19,7 @@ USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -r
 	@${REINPLACE_CMD} -i '' -e 's/perldoc -t/echo perldoc -t/' \
 		${WRKSRC}/Makefile.PL
 

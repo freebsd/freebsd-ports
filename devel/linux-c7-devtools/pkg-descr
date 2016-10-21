@@ -1,0 +1,5 @@
+Development tools and base libraries for linux_base-c7.  Required by
+some Linux applications such as Matlab, which allows the user to integrate
+custom C, C++, and Fortran code via the MEX compiler.
+
+WWW: http://gcc.gnu.org/

@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.8.7
+DISTVERSION=	1.9.1
 _PKG_VERSION=	${DISTVERSION}
-PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/${PORTNAME}/ \

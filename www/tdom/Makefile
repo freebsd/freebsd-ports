@@ -17,7 +17,7 @@ USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
 
 pre-configure:
-	${RM} -f ${WRKSRC}/generic/domalloc.?
+	${RM} ${WRKSRC}/generic/domalloc.?
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-DISTVERSION=	R33.1
+DISTVERSION=	R34
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -59,7 +59,7 @@ SIMD_CONFIGURE_ENABLE=		x86-asm
 # COMPS group
 
 CORE_DESC=			Core library
-CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.2:graphics/sekrit-twc-zimg
+CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.3:graphics/sekrit-twc-zimg
 CORE_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
 CORE_USES=			compiler:c++11-lib
 CORE_CONFIGURE_ENABLE=		core

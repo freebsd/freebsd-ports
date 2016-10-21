@@ -1,4 +1,3 @@
-bin/embree2/benchmark
 bin/embree2/bvh_access
 bin/embree2/bvh_builder
 bin/embree2/convert
@@ -29,7 +28,6 @@ bin/embree2/models/subdiv8.xml
 bin/embree2/models/subdiv9.xml
 bin/embree2/motion_blur_geometry
 bin/embree2/pathtracer
-bin/embree2/retrace
 bin/embree2/subdivision_geometry
 bin/embree2/triangle_geometry
 bin/embree2/user_geometry

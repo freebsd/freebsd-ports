@@ -1,0 +1,27 @@
+# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
+# $FreeBSD$
+
+PORTNAME=	openssl
+PORTVERSION=	1.0.1e
+CATEGORIES=	security linux
+BIN_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+LIB_DISTFILES=	${PORTNAME}-libs-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
+SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	OpenSSL toolkit (Linux CentOS ${LINUX_DIST_VER})
+
+LICENSE=	OpenSSL
+LICENSE_FILE=	${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/LICENSE
+
+CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+
+RPMVERSION=	51.el7_2.7
+USES=		linux:c7
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+
+.include <bsd.port.mk>

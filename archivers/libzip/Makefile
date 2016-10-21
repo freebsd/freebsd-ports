@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives
 
 CPE_VENDOR=	nih

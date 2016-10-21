@@ -17,9 +17,6 @@ BUILD_DEPENDS=	po4a:textproc/po4a
 RUN_DEPENDS=	gtar:archivers/gtar \
 		gpatch:devel/patch
 
-NOT_FOR_ARCHS=		sparc64
-NOT_FOR_ARCHS_REASON=	Debian does is not available for ${ARCH}
-
 GNU_CONFIGURE=	yes
 USES=		cpe gmake iconv libtool ncurses perl5 pkgconfig tar:xz
 CPE_VENDOR=	debian

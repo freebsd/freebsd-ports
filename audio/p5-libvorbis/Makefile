@@ -19,7 +19,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/blib ${WRKSRC}/pm_to_blib
+	@${RM} -r ${WRKSRC}/blib ${WRKSRC}/pm_to_blib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/Makefile.PL

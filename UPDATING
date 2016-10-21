@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161018:
+  AFFECTS: users of x11/xfce4-terminal
+  AUTHOR: olivierd@FreeBSD.org
+
+  The port has been updated to the latest stable version 0.8.0.
+  A warning appears each time we open new tab:
+
+  Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate
+  widget with...
+
+  This issue will disappear with Gtk > 3.21.
+
+20161014:
+  AFFECTS: users of lang/python3
+  AUTHOR: antoine@FreeBSD.org
+
+  The default version of python3 has changed from 3.4 to 3.5.
+  If you wish to stick with older version, add "python3=3.4" to your
+  DEFAULT_VERSIONS variable in /etc/make.conf.  To upgrade:
+
+  If using portupgrade:
+  # portupgrade -o lang/python35 lang/python34
+
+  If using portmaster:
+  # portmaster -o lang/python35 lang/python34
+
 20161011:
   AFFECTS: Users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org

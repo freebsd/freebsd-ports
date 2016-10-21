@@ -7,7 +7,7 @@ CATEGORIES=	misc kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	153410-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE thumbnail generator for CHM files
 
 LIB_DEPENDS=	libchm.so:misc/chmlib

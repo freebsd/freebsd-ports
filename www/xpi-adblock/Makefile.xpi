@@ -168,7 +168,7 @@ do-install:
 		${ECHO_CMD} "@dir $${sldir}" ${_A}; \
 	done
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${XPI_ID} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} $$_dir/${XPI_ID} ; }' ${_A}
 .endif
 
 .if !target(relink)
@@ -187,7 +187,7 @@ xpi-post-extract:
 .endif
 
 post-extract: xpi-post-extract
-	@${RM} -rf ${WRKSRC}/META-INF
+	@${RM} -r ${WRKSRC}/META-INF
 
 # Maintainer section
 xpi-gen:	extract
@@ -210,7 +210,7 @@ xpi-plist:	extract
 
 xpi-pre-chrome:
 	@${CHMOD} g+w ${_TD_FULL}
-	@${RM} -f ${_TD_FULL}/chrome.manifest
+	@${RM} ${_TD_FULL}/chrome.manifest
 
 xpi-post-chrome:
 	@${CP} -f ${_TD_FULL}/chrome.manifest ${FILESDIR}/

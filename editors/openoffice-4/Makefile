@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	10
+#PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -49,6 +49,7 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
 		p5-libwww>=0:www/p5-libwww				\
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		${LOCALBASE}/bin/unzip:archivers/unzip			\
 		zip:archivers/zip					\
@@ -97,10 +98,10 @@ RUN_DEPENDS=								\
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	2
+AOOVERSION3=	3
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO412m3\(Build:9782\)
-SVNREVISION=	1709696
+AOOTAG=		AOO413m1\(Build:9783\)
+SVNREVISION=	1761381
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -281,13 +282,13 @@ pre-everything::
 # really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
-	${RM} -f ${WRKDIR}/.PLIST*
-	${RM} -f ${WRKDIR}/.install_done.*
-	${RM} -f ${WRKDIR}/.package_done.*
-	${RM} -f ${WRKDIR}/.extract_done.*
-	${RM} -f ${WRKDIR}/.patch_done.*
-	${RM} -f ${WRKDIR}/.configure_done.*
-	${RM} -f ${WRKDIR}/.build_done.*
+	${RM} ${WRKDIR}/.PLIST*
+	${RM} ${WRKDIR}/.install_done.*
+	${RM} ${WRKDIR}/.package_done.*
+	${RM} ${WRKDIR}/.extract_done.*
+	${RM} ${WRKDIR}/.patch_done.*
+	${RM} ${WRKDIR}/.configure_done.*
+	${RM} ${WRKDIR}/.build_done.*
 	${MKDIR} ${WRKDIR}
 	${TOUCH} ${EXTRACT_COOKIE}
 	${TOUCH} ${PATCH_COOKIE}
@@ -300,7 +301,7 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	${CP} ${FILESDIR}/freebsd-aoo-intro.png ${WRKSRC}/default_images/introabout/intro.png
 	${CP} ${FILESDIR}/freebsd-aoo-about.png ${WRKSRC}/default_images/introabout/about.png
-	${RM} -rf ${WRKSRC}/l10n
+	${RM} -r ${WRKSRC}/l10n
 	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
 		-e '\|^For PostScript(R) AFM|,/^__/p'			\

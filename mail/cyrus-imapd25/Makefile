@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -195,7 +195,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-DRAC-on:
-	@${RM} -rf ${WRKSRC}/autom4te.cache
+	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

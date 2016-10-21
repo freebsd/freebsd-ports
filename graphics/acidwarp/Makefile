@@ -29,7 +29,7 @@ BINMODE=	4555
 .endif
 
 post-extract:
-	${RM} -f ${WRKSRC}/acidwarp
+	${RM} ${WRKSRC}/acidwarp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/acidwarp ${STAGEDIR}${PREFIX}/bin

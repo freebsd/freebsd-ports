@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.23.0
+PORTVERSION=	1.28.0
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/release-${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet another download tool
@@ -12,10 +12,11 @@ COMMENT=	Yet another download tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CA_BUNDLE DOCS NLS SQLITE
+OPTIONS_DEFINE=	CA_BUNDLE DOCS NLS SQLITE SSH2
 OPTIONS_DEFAULT=SQLITE
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Use CA bundle from Mozilla Project
+SSH2_DESC=	SSH2 protocol support
 
 CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-libaria2 \
 		--enable-metalink --enable-shared --enable-ssl --enable-static \
@@ -35,9 +36,8 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib libtool pathfix pkgconfig ssl tar:xz
 
 PORTDOCS=	*
 
@@ -50,6 +50,8 @@ NLS_LDFLAGS=		-lintl
 NLS_USES=		gettext localbase
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USES=		sqlite
+SSH2_CONFIGURE_WITH=	libssh2
+SSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 ARIA2_DISK_CACHE?=	16M
 

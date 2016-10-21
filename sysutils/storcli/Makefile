@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	storcli
-PORTVERSION=	1.17.08
+PORTVERSION=	1.19.04
 CATEGORIES=	sysutils
-MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/https:/avagodocs.s3.amazonaws.com:443/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTNAME=	MR_SAS_StorCLI_${PORTVERSION}
+MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/docs-and-downloads/raid-controllers/raid-controllers-common-files/
+DISTNAME=	${PORTVERSION}_StorCLI
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
@@ -27,11 +27,10 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/storcli
 PKGMESSAGE=	${WRKDIR}/pkg-message
-BINSRC=		${WRKSRC}/FreeBSD
+BINSRC=		${WRKSRC}/storcli_all_os/FreeBSD
 FETCH_AFTER_ARGS=-v
 
 post-extract:
-	@${TAR} xf ${WRKSRC}/storcli_all_os.zip -C${WRKSRC}
 	@${TAR} xf ${BINSRC}/storcli${ARCH:S/i386//:S/amd64/64/}.tar -C${WRKSRC}
 	@${REINPLACE_CMD} 's#\(StorCli\).*StorCli64#\1#'\
 		${BINSRC}/FreeBSD_readme.txt

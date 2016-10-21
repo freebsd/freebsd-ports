@@ -26,7 +26,7 @@ WRITABLE_DIRS=	tmp tmp/templates_c tmp/cache \
 		uploads uploads/images modules
 
 post-extract:
-	cd ${WRKSRC} && ${RM} -f config.php
+	cd ${WRKSRC} && ${RM} config.php
 
 do-install:
 .for i in ${CMS_DIRS}

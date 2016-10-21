@@ -3,11 +3,9 @@
 
 PORTNAME=	dragon
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	multimedia kde kde-kde4
 # Avoid clash with devel/dragon
 PKGNAMESUFFIX=	-player
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multimedia player with a focus on simplicity

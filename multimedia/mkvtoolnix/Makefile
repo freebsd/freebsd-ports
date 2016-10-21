@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.4.2
+PORTVERSION=	9.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -20,21 +20,19 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libmatroska.so:multimedia/libmatroska
 
 BROKEN_FreeBSD_9=	does not build: g++48 internal compiler error
+BROKEN_sparc64=	does not install
 
-USES=		compiler:c++11-lib iconv pkgconfig tar:xz
+USES=		compiler:c++11-lib iconv localbase pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no ZLIB_CFLAGS=-I/usr/include ZLIB_LIBS=-lz
 CONFIGURE_ARGS=	--without-curl \
 		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
-
-BROKEN_sparc64=	does not install
+MAKE_ENV=	V=1
 
 OPTIONS_DEFINE=	FLAC NLS QT5
 OPTIONS_DEFAULT=	FLAC QT5
@@ -49,12 +47,7 @@ NLS_CONFIGURE_WITH=	gettext
 QT5_DESC=	Build and install GUI application (Qt 5)
 QT5_USES=	desktop-file-utils shared-mime-info
 QT5_USE=	QT5=buildtools_build,core,gui,network,quick,widgets
-QT5_CONFIGURE_ON=	--enable-qt
-QT5_CONFIGURE_OFF=	--disable-qt
-
-.if defined(PACKAGE_BUILDING)
-MAKE_ENV+=	V=1
-.endif
+QT5_CONFIGURE_ENABLE=	qt
 
 .include <bsd.port.options.mk>
 
@@ -83,7 +76,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|std::lround|lround|g' \
 		${WRKSRC}/src/propedit/tag_target.cpp
 .endif
-	${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
+	@${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
 		${WRKSRC}/configure
 
 post-configure-NLS-off:

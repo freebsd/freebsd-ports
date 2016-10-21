@@ -51,7 +51,7 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/include/CL
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/CL
 
 #post-install-TESTS-on:
 #	@cd ${WRKSRC}/utests && sh ./setenv.sh && ./utest_run

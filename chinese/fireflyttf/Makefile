@@ -37,7 +37,7 @@ post-extract:
 	@${TAR} -C ${WRKSRC} -zxf ${DISTDIR}/fireflysung-1.3.0p1.tar.gz \
 		fireflysung-1.3.0p1/fireflysung.ttf
 	@${MV} ${WRKSRC}/fireflysung-1.3.0p1/fireflysung.ttf  ${WRKSRC}
-	@${RM} -rf ${WRKSRC}/fireflysung-1.3.0p1
+	@${RM} -r ${WRKSRC}/fireflysung-1.3.0p1
 .else
 	${TRUE}
 .endif

@@ -54,6 +54,6 @@ pre-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*.bak*
+	@${RM} ${STAGEDIR}${PREFIX}/bin/*.bak*
 
 .include <bsd.port.mk>

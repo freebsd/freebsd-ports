@@ -1,0 +1,7 @@
+TIMESTAMP = 1473798842
+SHA256 (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.i686.rpm) = a1288ca1da85f225b62d3e1f5d458dba40dc26dd10300de9df5b30996286f996
+SIZE (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.i686.rpm) = 216756
+SHA256 (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.x86_64.rpm) = 20add1fd02fc7ae0bb74195322b864816b7e5b01817135e5d023ee606faf8ebb
+SIZE (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.x86_64.rpm) = 209280
+SHA256 (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.src.rpm) = b41b7da5c099f4ae64ee725c14afbee3d1be1aa7dd843c740f23594facd18ca4
+SIZE (rpm/centos/7.2.1511/x86_64/SDL-1.2.15-14.el7.src.rpm) = 3569191

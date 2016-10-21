@@ -25,7 +25,7 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 post-extract:
-	${FIND} ${WRKSRC} -type d -name __pycache__ -or -type f -name '*.py[co]' -exec ${RM} -rf {} +
+	${FIND} ${WRKSRC} -type d -name __pycache__ -or -type f -name '*.py[co]' -exec ${RM} -r {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

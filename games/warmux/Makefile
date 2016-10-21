@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
 		http://download.gna.org/${PORTNAME}/archive/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based artillery game with free software mascots
 
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \

@@ -41,7 +41,7 @@ post-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/emacs/yorick.el ${WRKSRC}/relocatable
-	@${RM} -rf ${WRKSRC}/relocatable/doc ${PREFIX}/lib/${PORTNAME}
+	@${RM} -r ${WRKSRC}/relocatable/doc ${PREFIX}/lib/${PORTNAME}
 	@${MV} ${WRKSRC}/relocatable ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for f in gist yorick
 	${INSTALL_MAN} ${WRKSRC}/doc/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1

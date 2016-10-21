@@ -61,7 +61,7 @@ pre-build:
 		>> ${WRKDIR}/wrappers/stepmania
 	@${ECHO_CMD} 'cd ${PREFIX}/lib/stepmania' \
 		>> ${WRKDIR}/wrappers/stepmania
-	@${ECHO_CMD} 'exec ./stepmania $$@' \
+	@${ECHO_CMD} 'exec ./stepmania "$$@"' \
 		>> ${WRKDIR}/wrappers/stepmania
 
 do-install:

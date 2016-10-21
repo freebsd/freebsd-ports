@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing Matlab MAT files
 
 LICENSE=	BSD2CLAUSE

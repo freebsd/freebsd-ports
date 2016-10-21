@@ -712,7 +712,7 @@ gnome-post-omf:
 .if defined(INSTALLS_ICONS)
 _USES_install+=	690:gnome-post-icons
 gnome-post-icons:
-	@${RM} -f ${TMPPLIST}.icons1
+	@${RM} ${TMPPLIST}.icons1
 	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
 		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
 			>> ${TMPPLIST}.icons1; \
@@ -723,7 +723,7 @@ gnome-post-icons:
 	done
 	@if test -f ${TMPPLIST}.icons1; then \
 		${CAT} ${TMPPLIST}.icons1 ${TMPPLIST} > ${TMPPLIST}.icons2; \
-		${RM} -f ${TMPPLIST}.icons1; \
+		${RM} ${TMPPLIST}.icons1; \
 		${MV} -f ${TMPPLIST}.icons2 ${TMPPLIST}; \
 	fi
 .endif

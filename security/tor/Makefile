@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.8.7
-PORTREVISION=	1
+PORTVERSION=	0.2.8.9
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -29,13 +28,15 @@ OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
 
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
-TOR2WEB_DESC=		Faster but non-anonymous hidden services
+TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
 OPTIONS_DEFAULT=	TRANSPARENT
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
+SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
+PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
 
 GROUPS=		_tor
 USERS=		_tor
@@ -88,6 +89,16 @@ CONFIGURE_ARGS+=	--enable-transparent
 CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
+pre-everything::
+.if ${PORT_OPTIONS:MTOR2WEB}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Warning: The expert option 'tor2web' is chosen."
+	@${ECHO_MSG} "         With this option tor cannot be used for regular traffic,"
+	@${ECHO_MSG} "         only for non-anonymous hidden service traffic."
+	@${ECHO_MSG} "         Please make sure you understand this option."
+	@${ECHO_MSG}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
@@ -109,7 +120,7 @@ post-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/var/log/tor ${STAGEDIR}/var/run/tor
+	@${MKDIR} ${STAGEDIR}/var/log/tor ${STAGEDIR}/var/run/tor ${STAGEDIR}/var/db/tor
 
 .if ! ${PORT_OPTIONS:MTOR2WEB}
 check regression-test test: build

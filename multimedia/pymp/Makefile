@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|; \
 		s|PREFIX/lib/pymp|${DATADIR}|' ${WRKSRC}/${PORTNAME}
-	@${RM} -f ${WRKSRC}/build.py
+	@${RM} ${WRKSRC}/build.py
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

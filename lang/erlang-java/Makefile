@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.1.2
+PORTVERSION=	19.1.5
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -14,7 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.1.1 patch-otp-19.1.2
+PATCHFILES=	patch-otp-19.1.1 patch-otp-19.1.2 patch-otp-19.1.3 \
+		patch-otp-19.1.4 patch-otp-19.1.5
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang interface for Java

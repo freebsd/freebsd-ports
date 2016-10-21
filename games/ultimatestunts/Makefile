@@ -43,7 +43,7 @@ DESKTOP_ENTRIES="Ultimate Stunts" "" "${PORTNAME}" \
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${FIND} ${WRKSRC} -name .svn -print0 | ${XARGS} -0 ${RM} -fr
+	@${FIND} ${WRKSRC} -name .svn -print0 | ${XARGS} -0 ${RM} -r
 	@(cd ${WRKSRC} && ${CP} ${PORTNAME}.conf.in ${PORTNAME}.conf)
 
 post-patch:

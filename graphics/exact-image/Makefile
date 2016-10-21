@@ -38,7 +38,7 @@ PLIST_FILES=	${BINS:S|^|bin/|} \
 		%%PYTHON_SITELIBDIR%%/_ExactImage.so
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/agg-2.4/
+	@${RM} -r ${WRKSRC}/agg-2.4/
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|;s|/usr/local|${LOCALBASE}|;\

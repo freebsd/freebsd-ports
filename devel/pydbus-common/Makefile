@@ -76,9 +76,9 @@ USES+=		python:3
 .endif
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/include/dbus-1.0 \
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/dbus-1.0 \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/dbus-python.pc
-	@${RM} -fr ${STAGEDIR}/${DOCSDIR}
+	@${RM} -r ${STAGEDIR}/${DOCSDIR}
 .endif # end of slaving block
 
 .include <bsd.port.mk>

@@ -59,8 +59,6 @@ XMP_RUN_DEPENDS=	xmp:audio/xmp
 MPC_RUN_DEPENDS=	mpcdec:audio/musepack
 APE_RUN_DEPENDS=	mac:audio/mac
 
-.include <bsd.port.options.mk>
-
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -77,6 +75,8 @@ PLIST_SUB+=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 SUB_FILES=	message-common\
 	message-transcoding
 SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}"
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT8}
 APPPKGMESSAGE=	pkg-message-tomcat
@@ -120,7 +120,7 @@ SUB_LIST+=	CONTAINERFLAGS="resin3_flags"
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} -xf ${WRKDIR}/${PORTNAME}.war -C ${WRKSRC}
+	@${EXTRACT_CMD} -d ${WRKSRC} ${WRKDIR}/${PORTNAME}.war
 
 pre-install:
 	@${RM} ${PLIST}

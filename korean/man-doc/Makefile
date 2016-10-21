@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/groff:japanese/groff
 post-patch:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,gnroff,groff,g' ${WRKSRC}/scripts/kman.in > ${WRKDIR}/kman
-	${RM} -rf ${WRKSRC}/scripts
+	${RM} -r ${WRKSRC}/scripts
 
 do-build:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${GZIP_CMD}

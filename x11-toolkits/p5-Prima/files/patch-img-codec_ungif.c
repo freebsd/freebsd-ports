@@ -1,6 +1,6 @@
---- img/codec_ungif.c.orig	2011-07-25 17:52:32 UTC
+--- img/codec_ungif.c.orig	2016-09-05 09:17:09 UTC
 +++ img/codec_ungif.c
-@@ -37,6 +37,10 @@
+@@ -9,6 +9,10 @@
  extern "C" {
  #endif
  

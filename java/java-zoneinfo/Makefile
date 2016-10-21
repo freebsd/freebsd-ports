@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2016f
+DISTVERSION=	2016g
 CATEGORIES=	java misc
 MASTER_SITES=	LOCAL/glewis/javazi
 PKGNAMEPREFIX=	java-
@@ -10,6 +10,8 @@ DISTNAME=	javazi-${DISTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Updated Java timezone definitions
+
+LICENSE=	PD
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes

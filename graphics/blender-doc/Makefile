@@ -21,7 +21,7 @@ post-extract:
 	@${CHMOD} u+rwx ${WRKSRC}/* && ${CHMOD} u+rwx ${WRKSRC}/*/* && \
 		${CHMOD} u+rwx ${WRKSRC}/*/*/* && ${CHMOD} u+rwx ${WRKSRC}/*/*/*/*
 	@cd ${WRKSRC}/htmlI/PartAT/volumetrics/gfx/ && \
-		${RM} -rf  "Nuova cartella" "Nuova cartella (2)"
+		${RM} -r  "Nuova cartella" "Nuova cartella (2)"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

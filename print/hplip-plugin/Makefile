@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.16.8
+PORTVERSION=	3.16.9
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary plugin for some HP Printers and All-in-One devices
 
 LICENSE=	HPLIP_PLUGIN

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.16.8
+PORTVERSION=	3.16.9
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LICENSE=	GPLv2 MIT BSD3CLAUSE

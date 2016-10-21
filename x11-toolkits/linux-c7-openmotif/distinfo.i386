@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356002
+SHA256 (rpm/centos/7.2.1511/i386/motif-2.3.4-7.el7.i686.rpm) = 0328b79931a8ec493cb022f7950c2080412dfbc8d7cad5e5fd80565635b61b1b
+SIZE (rpm/centos/7.2.1511/i386/motif-2.3.4-7.el7.i686.rpm) = 1461584
+SHA256 (rpm/centos/7.2.1511/i386/motif-2.3.4-7.el7.src.rpm) = 2e8ebb8e5a7b429a969b4765b0c9af63afb3cfa48f41783e580e43c1c697de6b
+SIZE (rpm/centos/7.2.1511/i386/motif-2.3.4-7.el7.src.rpm) = 9448909

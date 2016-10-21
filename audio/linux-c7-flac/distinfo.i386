@@ -1,0 +1,7 @@
+TIMESTAMP = 1473356016
+SHA256 (rpm/centos/7.2.1511/i386/flac-libs-1.3.0-5.el7_1.i686.rpm) = e9b89ac816e668e4b98ddc90c5bc1a89ce9244455f3923eb6e74b8785f873a7c
+SIZE (rpm/centos/7.2.1511/i386/flac-libs-1.3.0-5.el7_1.i686.rpm) = 175616
+SHA256 (rpm/centos/7.2.1511/i386/flac-1.3.0-5.el7_1.i686.rpm) = a68ce55c8d21f19d3b4f1808586a742fdcd51a8ca9c1aa2e8fee8919cb2a329b
+SIZE (rpm/centos/7.2.1511/i386/flac-1.3.0-5.el7_1.i686.rpm) = 581088
+SHA256 (rpm/centos/7.2.1511/i386/flac-1.3.0-5.el7_1.src.rpm) = f68b46f5e9f8b368e0070d88b81d970626d7f53a0c70396dc590681c917b17fe
+SIZE (rpm/centos/7.2.1511/i386/flac-1.3.0-5.el7_1.src.rpm) = 1101665

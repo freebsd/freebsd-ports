@@ -64,7 +64,7 @@ maintainer-diff:
 	${FETCH_CMD} -o ${MASTERDIR}/files-9.1/patch-aa https://github.com/kuriyama/freebsd/compare/freebsd:releng/9.1...6rd-releng-9.1.diff
 
 maintainer-tar:
-	-${RM} -rf ${EXPDIR}
+	-${RM} -r ${EXPDIR}
 	${MKDIR} ${EXPDIR}
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${OSREL}/sys/net net
 	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${OSREL}/sys/modules/if_stf modules/if_stf
@@ -77,11 +77,11 @@ maintainer-check:
 	if [ "$${new}" != "$${old}" ]; then ${ECHO_MSG} "New stf rev: $${new}"; fi
 
 make-distinfo:
-	${RM} -f distinfo.tmp.*
+	${RM} distinfo.tmp.*
 .for r in 8.4 9.1 9.3 10.1
 	${MAKE} OSREL=${r} OSVERSION=${r:C/\.//}0000 UNAMER=${r}-RELEASE DISTINFO_FILE=${MASTERDIR}/distinfo.tmp.${r} makesum
 .endfor
 	${CAT} ${MASTERDIR}/distinfo.tmp.* > ${MASTERDIR}/distinfo
-	${RM} -f distinfo.tmp.*
+	${RM} distinfo.tmp.*
 
 .include <bsd.port.post.mk>

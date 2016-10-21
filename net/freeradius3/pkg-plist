@@ -13,7 +13,6 @@ bin/radsqlrelay
 bin/radtest
 bin/radwho
 bin/radzap
-bin/rbmonkey
 bin/rlm_ippool_tool
 bin/smbencrypt
 include/freeradius/attributes.h
@@ -142,6 +141,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_eap_gtc.a
 %%LIBDIR%%/rlm_eap_gtc.la
 %%LIBDIR%%/rlm_eap_gtc.so
+%%LIBDIR%%/rlm_eap_fast.a
+%%LIBDIR%%/rlm_eap_fast.la
+%%LIBDIR%%/rlm_eap_fast.so
 %%LIBDIR%%/rlm_eap_leap.a
 %%LIBDIR%%/rlm_eap_leap.la
 %%LIBDIR%%/rlm_eap_leap.so
@@ -298,6 +300,8 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_wimax.a
 %%LIBDIR%%/rlm_wimax.la
 %%LIBDIR%%/rlm_wimax.so
+man/man1/dhcpclient.1.gz
+man/man1/rad_counter.1.gz
 man/man1/radclient.1.gz
 man/man1/radeapclient.1.gz
 man/man1/radlast.1.gz
@@ -648,6 +652,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
 %%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
 %%EXAMPLESDIR%%/raddb/mods-enabled/chap
+%%EXAMPLESDIR%%/raddb/mods-enabled/date
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
 %%EXAMPLESDIR%%/raddb/mods-enabled/dhcp
@@ -684,6 +689,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/policy.d/dhcp
 %%EXAMPLESDIR%%/raddb/policy.d/eap
 %%EXAMPLESDIR%%/raddb/policy.d/filter
+%%EXAMPLESDIR%%/raddb/policy.d/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/policy.d/operator-name
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
@@ -724,6 +730,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.acc
 %%DATADIR%%/dictionary.acme
 %%DATADIR%%/dictionary.actelis
+%%DATADIR%%/dictionary.adtran
 %%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
@@ -758,6 +765,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.cablelabs
 %%DATADIR%%/dictionary.cabletron
 %%DATADIR%%/dictionary.camiant
+%%DATADIR%%/dictionary.checkpoint
 %%DATADIR%%/dictionary.chillispot
 %%DATADIR%%/dictionary.cisco
 %%DATADIR%%/dictionary.cisco.asa
@@ -882,6 +890,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.ruckus
 %%DATADIR%%/dictionary.ruggedcom
+%%DATADIR%%/dictionary.sangoma
 %%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva

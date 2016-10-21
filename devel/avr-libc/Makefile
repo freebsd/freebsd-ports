@@ -63,7 +63,7 @@ post-patch:
 .endif
 
 do-install:
-		${RM} -f ${TMPPLIST}
+		${RM} ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOXYGEN}
 		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
 		 ${FIND} . -type f \

@@ -68,6 +68,7 @@ NAS_CONFIGURE_WITH=	nas
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=pulse
 
+.include <bsd.port.pre.mk>
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s/tests//' \
 		${WRKSRC}/src/Makefile.in
@@ -76,7 +77,7 @@ post-install:
 .for f in ${ETCFILES}
 	@${MV} ${STAGEDIR}${ETCDIR}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
-	@${RM} -rf ${STAGEDIR}${DATADIR}/conf
+	@${RM} -r ${STAGEDIR}${DATADIR}/conf
 	@${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
@@ -84,13 +85,22 @@ post-install:
 
 .else
 
-USES+=		python:3
+NO_ARCH=	yes
+USES+=		python:3.3+
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py3-xdg
 
-USE_PYTHON=	py3kplist
-PLIST_SUB=	PYVER=${PYTHON_VER:S|.||}
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+PYOEXTENSION=	pyo
+.else
+PYOEXTENSION=	opt-1.pyc
+.endif
+
+PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
+		PYVER=${PYTHON_VER:S/.//}
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

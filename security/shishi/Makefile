@@ -35,7 +35,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/shishi.info*
+	@${RM} ${WRKSRC}/doc/shishi.info*
 	@cd ${WRKSRC}/db/gl && ${LN} -s ../../build-aux/link-warning.h
 
 post-patch:

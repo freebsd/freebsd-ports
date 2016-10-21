@@ -12,8 +12,9 @@ COMMENT=	Library to work with PuppetDB's REST API
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CONFLICTS_INSTALL=	pypuppetdb03-*
 USE_GITHUB=	yes
-GH_ACCOUNT=	puppet-community
+GH_ACCOUNT=	voxpupuli
 
 USES=	python
 USE_PYTHON=	autoplist distutils

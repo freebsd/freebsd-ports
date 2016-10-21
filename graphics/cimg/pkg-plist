@@ -76,7 +76,6 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_draw_gradient.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_jpeg_buffer.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_nlmeans.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_patchmatch.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_skeleton.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_tiff_stream.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_tinymatwriter.cpp

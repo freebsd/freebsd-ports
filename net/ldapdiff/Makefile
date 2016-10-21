@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
 .endif
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f *.o ldapdiff Makefile config.h
+	@cd ${WRKSRC} && ${RM} *.o ldapdiff Makefile config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${STAGEDIR}${PREFIX}/bin

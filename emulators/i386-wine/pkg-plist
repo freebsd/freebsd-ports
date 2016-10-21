@@ -822,6 +822,7 @@ include/wine/windows/wintrust.h
 include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
+include/wine/windows/wlanapi.h
 include/wine/windows/wmistr.h
 include/wine/windows/wmiutils.h
 include/wine/windows/wmiutils.idl

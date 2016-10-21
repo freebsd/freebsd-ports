@@ -1,0 +1,5 @@
+TIMESTAMP = 1473356058
+SHA256 (rpm/centos/7.2.1511/i386/libasyncns-0.8-7.el7.i686.rpm) = 86006ec7b6b5bc63c4225d98fe3d309d75d5b5f43f75bb81274e379e3f4573f1
+SIZE (rpm/centos/7.2.1511/i386/libasyncns-0.8-7.el7.i686.rpm) = 26592
+SHA256 (rpm/centos/7.2.1511/i386/libasyncns-0.8-7.el7.src.rpm) = ada6388ee1a4198ca82fe18a0333937d4c9d72715106c46aa2413d5dc27982ab
+SIZE (rpm/centos/7.2.1511/i386/libasyncns-0.8-7.el7.src.rpm) = 347143

@@ -1,0 +1,7 @@
+TIMESTAMP = 1473674935
+SHA256 (rpm/centos/7.2.1511/x86_64/alsa-plugins-pulseaudio-1.0.27-3.el7.i686.rpm) = e01a3d9ab8492593a82816da304532d73ee68862770498e322c0e86c50873590
+SIZE (rpm/centos/7.2.1511/x86_64/alsa-plugins-pulseaudio-1.0.27-3.el7.i686.rpm) = 41204
+SHA256 (rpm/centos/7.2.1511/x86_64/alsa-plugins-pulseaudio-1.0.27-3.el7.x86_64.rpm) = 35a1e3dfa9d8f2585b5e6ad2cd6b1f6fc951214bb46db6d0be5d37c208733638
+SIZE (rpm/centos/7.2.1511/x86_64/alsa-plugins-pulseaudio-1.0.27-3.el7.x86_64.rpm) = 41936
+SHA256 (rpm/centos/7.2.1511/x86_64/alsa-plugins-1.0.27-3.el7.src.rpm) = beb2c6be273b3c85fe960634c77ea0dc9b8dba3d0cacddfbb0eaf2a463b58e25
+SIZE (rpm/centos/7.2.1511/x86_64/alsa-plugins-1.0.27-3.el7.src.rpm) = 378782

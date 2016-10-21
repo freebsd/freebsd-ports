@@ -54,12 +54,12 @@ PLIST_SUB+=	SPARC64="@comment "
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${TARGET_DIR}
-	${RM} -f ${WRKSRC}/libpthread.so.1
+	${RM} ${WRKSRC}/libpthread.so.1
 	(cd ${STAGEDIR}${TARGET_DIR} && ${LN} -sf libthr.so.1 libpthread.so.1)
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${STAGEDIR}${TARGET32_DIR}
-	${RM} -f ${WRKSRC}/lib32/libpthread.so.1
+	${RM} ${WRKSRC}/lib32/libpthread.so.1
 	(cd ${STAGEDIR}${TARGET32_DIR} && ${LN} -sf libthr.so.1 libpthread.so.1)
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET32_DIR})
 .endif

@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	www kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:C,\..*,.0,}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
 
 USES=		cmake:outsource gettext kde:4 tar:xz

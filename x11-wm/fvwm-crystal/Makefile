@@ -41,7 +41,7 @@ DOCS_INSTALL_TARGET=	install-doc
 
 post-extract:
 	@cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn \
-		-exec ${RM} -rf {} \;
+		-exec ${RM} -r {} \;
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \

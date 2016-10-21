@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/iWebCal
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 post-extract:
-	-@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
+	-@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -r
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

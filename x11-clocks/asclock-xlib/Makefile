@@ -24,7 +24,7 @@ post-patch:
 
 pre-configure:
 	@(cd ${WRKSRC}; \
-	  ${RM} -rf default_theme; \
+	  ${RM} -r default_theme; \
 	  ${LN} -s themes/Orb default_theme)
 
 post-install:

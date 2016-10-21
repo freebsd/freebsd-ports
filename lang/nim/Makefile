@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	0.11.2
+PORTVERSION=	0.15.0
 CATEGORIES=	lang
 MASTER_SITES=	http://nim-lang.org/download/
 
@@ -16,7 +16,7 @@ BROKEN_powerpc64=	Does not build
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		compiler zip
+USES=		compiler tar:xz
 
 .include <bsd.port.pre.mk>
 

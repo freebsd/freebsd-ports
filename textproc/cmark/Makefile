@@ -18,7 +18,6 @@ USES=		cmake:outsource python:3,test
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
-TEST_WRKSRC=	${BUILD_WRKSRC}
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 

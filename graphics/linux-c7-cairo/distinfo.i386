@@ -1,0 +1,5 @@
+TIMESTAMP = 1473355866
+SHA256 (rpm/centos/7.2.1511/i386/cairo-1.14.2-1.el7.i686.rpm) = 5f50b93ddd90d42a3ac6ed23f9db59dfe6c269f49a05f225500e4f081abc1a46
+SIZE (rpm/centos/7.2.1511/i386/cairo-1.14.2-1.el7.i686.rpm) = 757648
+SHA256 (rpm/centos/7.2.1511/i386/cairo-1.14.2-1.el7.src.rpm) = b2d9ae1faae434bcddfcbe8424b864db1fd6b1538ef37147942cb9f4371f4214
+SIZE (rpm/centos/7.2.1511/i386/cairo-1.14.2-1.el7.src.rpm) = 35402204

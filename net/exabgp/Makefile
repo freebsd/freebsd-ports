@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.4.16
+PORTVERSION=	3.4.17
 CATEGORIES=	net
 MASTER_SITES=	GH \
 		http://mirrors.rit.edu/zi/

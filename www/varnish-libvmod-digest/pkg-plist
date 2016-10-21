@@ -1,0 +1,4 @@
+lib/varnish/vmods/libvmod_digest.so
+man/man3/vmod_digest.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.rst

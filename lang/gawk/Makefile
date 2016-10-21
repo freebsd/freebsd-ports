@@ -31,7 +31,7 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${RM} -f ${WRKSRC}/doc/*.info
+	@${RM} ${WRKSRC}/doc/*.info
 	@${REINPLACE_CMD} -e 's/ -export-dynamic/ -Wl,--export-dynamic/' \
 		${WRKSRC}/configure
 

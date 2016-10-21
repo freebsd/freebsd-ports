@@ -1,0 +1,7 @@
+etc/openal/alsoft.conf
+usr/bin/openal-info
+usr/lib64/libopenal.so.1
+usr/lib64/libopenal.so.1.16.0
+usr/share/openal/alsoftrc.sample
+usr/share/openal/hrtf/default-44100.mhr
+usr/share/openal/hrtf/default-48000.mhr

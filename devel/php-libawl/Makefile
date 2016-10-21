@@ -29,7 +29,7 @@ pre-everything::
 	@${ECHO_CMD} "# by setting LIBAWLDIR in /etc/make.conf"
 
 post-patch:
-	${RM} -f ${WRKSRC}/inc/*.orig
+	${RM} ${WRKSRC}/inc/*.orig
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${LIBAWLDIR}

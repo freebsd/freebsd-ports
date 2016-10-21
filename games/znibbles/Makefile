@@ -29,7 +29,7 @@ GTK1_PLIST_FILES=	bin/gznibbles man/man6/gznibbles.6.gz
 GTK1_CONFIGURE_ENABLE=	gtk
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/getopt.h
+	@${RM} ${WRKSRC}/src/getopt.h
 
 post-patch:
 	@${REINPLACE_CMD} -e \

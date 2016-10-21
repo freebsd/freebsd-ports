@@ -3,6 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	2.17.2322.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	https://codeload.github.com/google/${PORTNAME}/tar.gz/9b4c9e0?dummy=/:main \
 		https://codeload.github.com/hiroyuki-komatsu/japanese-usage-dictionary/tar.gz/e5b3425?dummy=/:udic
@@ -18,7 +19,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ninja:devel/ninja \
-		python:lang/python \
 		gyp:devel/py-gyp
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
@@ -26,8 +26,9 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
-		tar:bzip2 python:build
+		tar:bzip2 python:2.7,build shebangfix
 WRKSRC=		${WRKDIR}/${PORTNAME}-9b4c9e0
+SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
 
 BUILD_MOZC_LIST?=	mozc_server
@@ -98,6 +99,8 @@ BUILD_GYP_CMD=	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gyp
 post-patch:
 	${REINPLACE_CMD} 's,-liconv,${ICONV_LIB},g' \
 	    ${BUILD_WRKSRC}/gui/qt_libraries.gypi
+	${FIND} ${BUILD_WRKSRC} \( -name '*.gyp' -o -name '*.gypi' \) -exec \
+	    ${REINPLACE_CMD} "s,'python','${PYTHON_CMD}',g" {} \;
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 	${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
 	    ${BUILD_WRKSRC}/unix/fcitx/gen_fcitx_mozc_i18n.sh
@@ -107,7 +110,7 @@ post-patch:
 
 .if !${BUILD_MOZC_LIST:Mmozc_el}
 ${BUILD_WRKSRC}/mozcmake:
-	${PRINTF} "%s\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} $$@' \
+	${PRINTF} "%s\n\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} "$$@"' \
 	    > ${BUILD_WRKSRC}/mozcmake
 	${CHMOD} +x ${BUILD_WRKSRC}/mozcmake
 

@@ -648,6 +648,7 @@
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
+    SUBDIR += node_exporter
     SUBDIR += nomad
     SUBDIR += npadmin
     SUBDIR += nrg2iso
@@ -782,8 +783,6 @@
     SUBDIR += pftables
     SUBDIR += pftop
     SUBDIR += phantom
-    SUBDIR += php55-fileinfo
-    SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
     SUBDIR += php56-posix
     SUBDIR += php70-fileinfo
@@ -1129,6 +1128,7 @@
     SUBDIR += u-boot-pine64
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-rpi2
+    SUBDIR += u-boot-rpi3
     SUBDIR += u-boot-sinovoip-bpi-m3
     SUBDIR += u-boot-utilite
     SUBDIR += u-boot-wandboard

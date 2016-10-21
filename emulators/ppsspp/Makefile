@@ -21,9 +21,9 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
-GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
-GH_TAGNAME?=	cdf4a8d:lang 1ffab37:ext_armips
+GH_ACCOUNT=	hrydgard
+GH_TUPLE?=	hrydgard:${PORTNAME}-lang:cdf4a8d:lang/lang \
+		Kingcom:armips:1ffab37:armips/ext/armips
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
@@ -53,17 +53,10 @@ QT4_USES=	qmake:outsource
 QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,opengl
 QT5_USES=	qmake:outsource
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
-SDL_USES=	cmake:outsource ninja
+SDL_USES=	cmake:outsource
 SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
-
-post-extract:
-# Convert USE_GITHUB groups to git-submodule(1) paths
-.for group in ${GH_PROJECT:C/.*://}
-	@${RMDIR} ${WRKSRC}/${group:S,_,/,g}
-	@${MV} ${WRKSRC_${group}} ${WRKSRC}/${group:S,_,/,g}
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \

@@ -39,6 +39,6 @@ post-patch:
 		${WRKSRC}/etc/enigma.desktop
 
 post-install:
-	@${RM} -d ${STAGEDIR}${DOCSDIR}/COPYING
+	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

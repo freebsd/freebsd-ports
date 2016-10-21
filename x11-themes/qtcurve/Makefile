@@ -4,7 +4,7 @@ PORTNAME=	qtcurve
 PORTVERSION=	1.8.18
 CATEGORIES=	x11-themes
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
 
 .if !defined(QTCURVE_SLAVE)

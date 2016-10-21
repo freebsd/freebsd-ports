@@ -1,0 +1,4 @@
+The Oslo Policy library provides support for RBAC policy enforcement across
+all OpenStack services.
+
+WWW: http://launchpad.net/oslo.policy

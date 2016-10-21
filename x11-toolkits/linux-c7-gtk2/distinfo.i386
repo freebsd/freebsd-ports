@@ -1,0 +1,7 @@
+TIMESTAMP = 1475694975
+SHA256 (rpm/centos/7.2.1511/i386/gtk2-2.24.28-8.el7.i686.rpm) = da549877230a23ae7521bba5f562dd6f98f85e10799377e3f63d5cf8f601d98e
+SIZE (rpm/centos/7.2.1511/i386/gtk2-2.24.28-8.el7.i686.rpm) = 3520508
+SHA256 (rpm/centos/7.2.1511/i386/gtk2-immodules-2.24.28-8.el7.i686.rpm) = f5fcfac28a4d42a72b2ea802981ceabedc85cffd24e841b9448611313d08d02e
+SIZE (rpm/centos/7.2.1511/i386/gtk2-immodules-2.24.28-8.el7.i686.rpm) = 31260
+SHA256 (rpm/centos/7.2.1511/i386/gtk2-2.24.28-8.el7.src.rpm) = b144c45e8314f56f67ff354e6cbd4a3bde17903bd9c9735d834e3c6b1d604fd1
+SIZE (rpm/centos/7.2.1511/i386/gtk2-2.24.28-8.el7.src.rpm) = 18521357

@@ -155,7 +155,7 @@ post-patch:
 		${WRKSRC}/tools/masssievec
 
 post-patch-DRAC-on:
-	@${RM} -rf ${WRKSRC}/autom4te.cache
+	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

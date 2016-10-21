@@ -3252,7 +3252,10 @@ include/ITK-%%ITK_VER%%/laso/dnppla.h
 include/ITK-%%ITK_VER%%/laso/dortqr.h
 include/ITK-%%ITK_VER%%/laso/dvsort.h
 include/ITK-%%ITK_VER%%/laso/urand.h
-include/ITK-%%ITK_VER%%/linalg/lsqr.h
+include/ITK-%%ITK_VER%%/linalg/lsmrBase.h
+include/ITK-%%ITK_VER%%/linalg/lsmrDense.h
+include/ITK-%%ITK_VER%%/linalg/lsqrBase.h
+include/ITK-%%ITK_VER%%/linalg/lsqrDense.h
 include/ITK-%%ITK_VER%%/linpack/cqrdc.h
 include/ITK-%%ITK_VER%%/linpack/cqrsl.h
 include/ITK-%%ITK_VER%%/linpack/csvdc.h
@@ -3748,6 +3751,7 @@ lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTIFF.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTestKernel.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKThresholding.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTransform.cmake
+lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTransformFactory.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVNL.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVNLInstantiation.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVTK.cmake
@@ -3850,6 +3854,8 @@ lib/libITKStatistics-%%ITK_VER%%.so
 lib/libITKStatistics-%%ITK_VER%%.so.1
 lib/libITKTransform-%%ITK_VER%%.so
 lib/libITKTransform-%%ITK_VER%%.so.1
+lib/libITKTransformFactory-%%ITK_VER%%.so
+lib/libITKTransformFactory-%%ITK_VER%%.so.1
 lib/libITKVNLInstantiation-%%ITK_VER%%.so
 lib/libITKVNLInstantiation-%%ITK_VER%%.so.1
 lib/libITKVTK-%%ITK_VER%%.so

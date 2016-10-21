@@ -24,6 +24,6 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/libexec/gjs
+	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/gjs
 
 .include <bsd.port.mk>

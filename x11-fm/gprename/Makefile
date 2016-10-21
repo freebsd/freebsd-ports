@@ -26,7 +26,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/build
+	@${RM} -r ${WRKSRC}/build
 
 post-patch:
 	@${REINPLACE_CMD} -e \

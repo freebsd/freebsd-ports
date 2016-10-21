@@ -45,8 +45,8 @@ bin/suricata
 %%NO_HTP_PORT%%include/htp/htp_urlencoded.h
 %%NO_HTP_PORT%%include/htp/htp_utf8_decoder.h
 %%NO_HTP_PORT%%include/htp/htp_version.h
-%%NO_HTP_PORT%%lib/libhtp-0.5.21.so.1
-%%NO_HTP_PORT%%lib/libhtp-0.5.21.so.1.0.0
+%%NO_HTP_PORT%%lib/libhtp-0.5.22.so.1
+%%NO_HTP_PORT%%lib/libhtp-0.5.22.so.1.0.0
 %%NO_HTP_PORT%%lib/libhtp.a
 %%NO_HTP_PORT%%lib/libhtp.so
 %%NO_HTP_PORT%%libdata/pkgconfig/htp.pc

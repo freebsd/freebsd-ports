@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="njam" \
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/*.o
+	@${RM} ${WRKSRC}/src/*.o
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/games|/var/games|' \

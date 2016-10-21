@@ -3,4 +3,4 @@ HSV, HLS, CIEXYZ, CIELUV, HCL (polar CIELUV), CIELAB and polar
 CIELAB. Qualitative, sequential, and diverging color palettes based
 on HCL colors are provided.
 
-WWW: http://cran.r-project.org/web/packages/colorspace/
+WWW: https://cran.r-project.org/web/packages/colorspace/

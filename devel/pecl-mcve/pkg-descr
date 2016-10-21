@@ -1,7 +1,0 @@
-pecl-mcve is a Interface for the MCVE/Monetra API
-(libmonetra [formerly libmcve]), allowing you to
-work directly with MCVE/Monetra from your PHP
-scripts. Monetra is Main Street Softworks' solution
-to direct credit card processing for Unix.
-
-WWW: http://pecl.php.net/package/mcve/

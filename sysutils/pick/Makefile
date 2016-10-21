@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pick
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://github.com/thoughtbot/pick/releases/download/v${PORTVERSION}/
+MASTER_SITES=	http://github.com/calleerlandsson/pick/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Tool for choosing one option from a set of choices with an interface

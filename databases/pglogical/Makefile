@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pglogical
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.2ndquadrant.com/pglogical/tarballs/
 

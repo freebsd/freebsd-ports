@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cuttlefish
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

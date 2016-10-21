@@ -20,10 +20,6 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 USES=		pkgconfig tar:bzip2 waf
 USE_LDCONFIG=	yes
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS=	--verbose
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/pkgconfig/s|$${LIBDIRNAME}|libdata|' ${WRKSRC}/autowaf.py

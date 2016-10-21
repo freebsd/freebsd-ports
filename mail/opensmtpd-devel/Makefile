@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 
 LICENSE=	ISCL

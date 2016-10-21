@@ -29,9 +29,10 @@ SHEBANG_FILES=	namefix-cli.pl namefix.pl
 do-configure:
 .for bin in ${PORTNAME} ${PORTNAME}-cli
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${bin}.in
+	@${ECHO_CMD} >> ${WRKDIR}/${bin}.in
 	@${ECHO_CMD} 'namefix_dir=${PREFIX}/${SITE_PERL_REL}/${PORTNAME}' \
 		>> ${WRKDIR}/${bin}.in
-	@${ECHO_CMD} 'cd $${namefix_dir}; exec ./${bin}.pl $$@' \
+	@${ECHO_CMD} 'cd $${namefix_dir} && exec ./${bin}.pl "$$@"' \
 		>> ${WRKDIR}/${bin}.in
 .endfor
 

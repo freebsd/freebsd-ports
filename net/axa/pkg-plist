@@ -16,7 +16,6 @@ include/axa/json.h
 include/axa/strbuf.h
 include/axa/open_nmsg_out.h
 include/axa/protocol.h
-include/axa/rad_mod.h
 include/axa/socket.h
 include/axa/trie.h
 include/axa/wire.h

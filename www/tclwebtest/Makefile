@@ -22,7 +22,7 @@ PLIST_SUB+=	LIBDIR="${LIBDIR}"
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
 	@${SED}	-i "" -e "s| tclsh | ${LOCALBASE}/bin/tclsh |g" ${WRKSRC}/tclwebtest
 
 do-install:

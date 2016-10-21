@@ -45,8 +45,8 @@ do-build:
 	@${CC} ${CFLAGS} -o ${WRKSRC}/build/hmakeindex \
 		${WRKSRC}/util/hmakeindex.c
 
-	@${RM} -rf ${WRKSRC}/latex/euc/unfonts
-	@${RM} -rf ${WRKSRC}/latex/utf/unfonts
+	@${RM} -r ${WRKSRC}/latex/euc/unfonts
+	@${RM} -r ${WRKSRC}/latex/utf/unfonts
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

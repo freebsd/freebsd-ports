@@ -1,0 +1,12 @@
+Arduino seven segment display library
+
+This library turns your Arduino into a seven segment display
+controller! Use it to easily display numbers on your seven segment
+display without any additional controllers.
+
+It supports common cathode and common anode displays, and the use
+of switching transistors. Displays with 1 to 9 digits can be used,
+and decimal places are supported. Characters and strings are not
+supported.
+
+WWW: https://github.com/DeanIsMe/SevSeg

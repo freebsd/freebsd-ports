@@ -39,7 +39,7 @@ RTMPDUMP_RUN_DEPENDS=	${LOCALBASE}/bin/rtmpdump:multimedia/rtmpdump
 
 post-extract:
 	@# remove tarball provided version, build our own
-	@${RM} -f ${WRKSRC}/youtube-dl
+	@${RM} ${WRKSRC}/youtube-dl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python devscripts/|${PYTHON_CMD} devscripts/|' ${WRKSRC}/Makefile

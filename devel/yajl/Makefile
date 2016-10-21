@@ -20,7 +20,6 @@ USES=		cmake:outsource
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 TEST_TARGET=	test test-api
-TEST_WRKSRC=	${BUILD_WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,share/pkgconfig,libdata/pkgconfig,g" \

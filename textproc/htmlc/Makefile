@@ -22,7 +22,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${LOCALBASE}
 
 post-patch:
-	${RM} -f ${WRKSRC}/doc/Makefile
+	${RM} ${WRKSRC}/doc/Makefile
 	${TOUCH} ${WRKSRC}/doc/Makefile
 	${ECHO} "all:" > ${WRKSRC}/doc/Makefile
 	${REINPLACE_CMD} 's|-warn-error A||g' ${WRKSRC}/config/Makefile

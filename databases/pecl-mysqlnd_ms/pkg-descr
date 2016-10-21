@@ -1,9 +1,0 @@
-The replication and load balancing plugin is a plugin for the mysqlnd library.
-It can be used with PHP MySQL extensions (ext/mysql, ext/mysqli, PDO_MySQL) if
-they are compiled to use mysqlnd. The plugin inspects queries to do read-write
-splitting. Read-only queries are send to configured MySQL replication slave
-servers all other queries are redirected to the MySQL replication master server.
-Very little, if any, application changes required, dependent on the usage
-scenario required.
-
-WWW: http://pecl.php.net/package/mysqlnd_ms

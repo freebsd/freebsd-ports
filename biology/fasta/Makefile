@@ -22,7 +22,7 @@ PORTDOCS=	COPYRIGHT README.versions fasta20.doc fasta20.me format.doc \
 OPTIONS_DEFINE=	DOCS
 
 do-extract:
-	@ ${RM} -rf ${WRKDIR}
+	@ ${RM} -r ${WRKDIR}
 	@ ${MKDIR} ${WRKSRC}
 	@ for f in ${EXTRACT_ONLY}; do \
 	  cd ${WRKSRC} && (${GZCAT} ${DISTDIR}/$${f} | ${SH} >/dev/null); \

@@ -1,0 +1,11 @@
+TIMESTAMP = 1473798586
+SHA256 (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-6.0-7.el7.i686.rpm) = a61f9d122fb307d8d23de053bb2aefd35c85bff10cb2fc80a3fa9e9853b70ea3
+SIZE (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-6.0-7.el7.i686.rpm) = 576692
+SHA256 (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-glib2-6.0-7.el7.i686.rpm) = 32de3a0f5e23fdd398845ced384755cae681ec6af28fef66a938214633cf5f33
+SIZE (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-glib2-6.0-7.el7.i686.rpm) = 27208
+SHA256 (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-6.0-7.el7.x86_64.rpm) = 820c805ff472a9f200804265a1b52c9bdfa0dfbb85fa04372e8216a15bf47b2b
+SIZE (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-6.0-7.el7.x86_64.rpm) = 589936
+SHA256 (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-glib2-6.0-7.el7.x86_64.rpm) = 2ad3f979a70ead66d46d0625ba5e1facc93485a0e440c2ed85ee232644806cfc
+SIZE (rpm/centos/7.2.1511/x86_64/pulseaudio-libs-glib2-6.0-7.el7.x86_64.rpm) = 27160
+SHA256 (rpm/centos/7.2.1511/x86_64/pulseaudio-6.0-7.el7.src.rpm) = ad594904077ae78083a6dcabb59b396b08b30024f33f8995a2ca01c249fb8fea
+SIZE (rpm/centos/7.2.1511/x86_64/pulseaudio-6.0-7.el7.src.rpm) = 1523061

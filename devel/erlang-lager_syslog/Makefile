@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lager_syslog
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

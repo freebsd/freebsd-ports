@@ -1,6 +1,5 @@
 %%DATADIR%%/.gitignore
 %%DATADIR%%/.gitlab-ci.yml
-%%DATADIR%%/.hound.yml
 %%DATADIR%%/.rspec
 %%DATADIR%%/.rubocop.yml
 %%DATADIR%%/CHANGELOG
@@ -33,6 +32,7 @@
 %%DATADIR%%/lib/gitlab_net.rb
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_projects.rb
+%%DATADIR%%/lib/gitlab_redis.rb
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
 %%DATADIR%%/lib/names_helper.rb
@@ -70,6 +70,8 @@
 %%DATADIR%%/spec/vcr_cassettes/denied-push-with-user.yml
 %%DATADIR%%/spec/vcr_cassettes/denied-push.yml
 %%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/http-access-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-access-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml

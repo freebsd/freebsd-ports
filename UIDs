@@ -108,7 +108,7 @@ pootle:*:158:158::0:0:Pootle User:/var/db/pootle:/usr/sbin/nologin
 nocat:*:159:159::0:0:NoCat Daemon:/libexec/nocat:/sbin/nologin
 _ypldap:*:160:160::0:0:YP Ldap unprivileged user:/var/empty:/usr/sbin/nologin
 solr:*:161:161::0:0:Apache Solr System:/var/db/solr:/usr/sbin/nologin
-# free: 162
+octoprint:*:162:162::0:0:OctoPrint Daemon:/usr/local/octoprint:/usr/sbin/nologin
 # free: 163
 # free: 164
 # free: 165
@@ -136,7 +136,7 @@ dnslog:*:186:186::0:0:dnslog pseudo-user:/nonexistent:/usr/sbin/nologin
 swift:*:187:187::0:0:Swift daemon pseudo-user:/nonexistent:/usr/sbin/nologin
 netxms:*:188:188::0:0:netxms pseudo-user:/nonexistent:/usr/sbin/nologin
 leofs:*:189:189::0:0:LeoFS daemons pseudo-user:/var/db/leofs:/usr/sbin/nologin
-# free: 190
+keystone:*:190:190::0:0:Keystone pseudo-user:/var/lib/keystone:/usr/sbin/nologin
 # free: 191
 moinmoin:*:192:192::0:0:MoinMoin User:/nonexistent:/usr/sbin/nologin
 cups:*:193:193::0:0:Cups Owner:/nonexistent:/usr/sbin/nologin
@@ -424,7 +424,7 @@ nomad:*:472:472::0:0:Nomad Daemon:/var/tmp/nomad:/usr/sbin/nologin
 # free: 475
 # free: 476
 # free: 477
-# free: 478
+prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologin
 # free: 479
 # free: 480
 # free: 481

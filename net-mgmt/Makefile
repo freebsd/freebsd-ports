@@ -258,7 +258,6 @@
     SUBDIR += pandorafms_server
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
-    SUBDIR += php55-snmp
     SUBDIR += php56-snmp
     SUBDIR += php70-snmp
     SUBDIR += phpip
@@ -271,6 +270,7 @@
     SUBDIR += pnp-icinga
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
+    SUBDIR += prometheus
     SUBDIR += py-flowtools
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy

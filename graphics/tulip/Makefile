@@ -12,6 +12,8 @@ COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3
 
+BROKEN_FreeBSD_9=	does not build
+
 LIB_DEPENDS=	libquazip.so:archivers/quazip \
 		libpng.so:graphics/png \
 		libOGDF.so:math/ogdf \

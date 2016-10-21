@@ -265,11 +265,11 @@ post-build:
 .if ${PORT_OPTIONS:MTZUPDATE}
 	@# Update time zones
 .if defined(BUILD_JRE)
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib
 .else
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
 .endif

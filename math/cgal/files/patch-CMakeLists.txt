@@ -1,20 +1,18 @@
---- CMakeLists.txt.orig	2016-06-13 12:37:16 UTC
+--- CMakeLists.txt.orig	2016-09-16 19:00:17 UTC
 +++ CMakeLists.txt
-@@ -729,7 +729,7 @@ set ( CGAL_INSTALL_DOC_DIR "share/doc/${
-   CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX" 
+@@ -759,11 +759,11 @@ set ( CGAL_INSTALL_CMAKE_DIR "${CGAL_INS
+   CACHE STRING "The folder where CGAL CMake modules will be installed, relative to CMAKE_INSTALL_PREFIX" 
    )
  
--set ( CGAL_INSTALL_MAN_DIR "share/man/man1"  
-+set ( CGAL_INSTALL_MAN_DIR "man/man1"  
-   CACHE STRING "The folder where manual pages for CGAL scripts will be installed, relative to CMAKE_INSTALL_PREFIX" 
+-set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
+-  CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX"
+-  )
++# set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
++#  CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX"
++#  )
+ 
+-set ( CGAL_INSTALL_MAN_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/man/man1"
++set ( CGAL_INSTALL_MAN_DIR "man/man1"
+   CACHE STRING "The folder where manual pages for CGAL scripts will be installed, relative to CMAKE_INSTALL_PREFIX"
    )
  
-@@ -816,7 +816,7 @@ create_CGALconfig_files()
- # DESTINATION option is mandatory; skipping it breaks CPack!
- 
- if(CGAL_INSTALL_DOC_DIR)
--  install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
-+#  install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
- endif()
- 
- #install all includes collected in trunk et cetera

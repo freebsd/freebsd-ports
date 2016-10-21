@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.0
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and utility for reading OriginLab project files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs

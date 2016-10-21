@@ -3,7 +3,6 @@ include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
 include/libtorrent/alert.hpp
 include/libtorrent/alert_manager.hpp
-include/libtorrent/alert_observer.hpp
 include/libtorrent/alert_types.hpp
 include/libtorrent/alloca.hpp
 include/libtorrent/allocator.hpp
@@ -172,6 +171,7 @@ include/libtorrent/time.hpp
 include/libtorrent/timestamp_history.hpp
 include/libtorrent/tommath.h
 include/libtorrent/tommath_class.h
+include/libtorrent/tommath_private.h
 include/libtorrent/tommath_superclass.h
 include/libtorrent/torrent.hpp
 include/libtorrent/torrent_handle.hpp

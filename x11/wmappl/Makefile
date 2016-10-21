@@ -22,7 +22,7 @@ IMLIB2_LIB_DEPENDS= 	libImlib2.so:graphics/imlib2
 IMLIB2_CONFIGURE_ENABLE=Imlib2
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/icons/CVS
+	@${RM} -r ${WRKSRC}/icons/CVS
 
 post-patch:
 	@${REINPLACE_CMD} -e \

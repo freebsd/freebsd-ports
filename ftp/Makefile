@@ -40,6 +40,7 @@
     SUBDIR += lftp
     SUBDIR += libfilezilla
     SUBDIR += linux-c6-curl
+    SUBDIR += linux-c7-curl
     SUBDIR += linux-f10-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
@@ -62,8 +63,6 @@
     SUBDIR += pavuk
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
-    SUBDIR += php55-curl
-    SUBDIR += php55-ftp
     SUBDIR += php56-curl
     SUBDIR += php56-ftp
     SUBDIR += php70-curl

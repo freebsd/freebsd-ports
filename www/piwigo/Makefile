@@ -64,7 +64,7 @@ pre-install-EXAMPLES-on:
 
 do-install:
 	@cd ${WRKSRC}/doc/ && ${RM} ${PORTDOCS}
-	@${RM} -fr ${WRKSRC}/tools ${WRKSRC}/_data/dummy.txt
+	@${RM} -r ${WRKSRC}/tools ${WRKSRC}/_data/dummy.txt
 	@${INSTALL} -d ${STAGEDIR}${WWWDIR}
 	@${TAR} -C ${WRKSRC} -cf - . | \
 	${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -

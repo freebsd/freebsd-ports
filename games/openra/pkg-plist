@@ -1,6 +1,7 @@
 bin/openra
 bin/openra-server
 share/applications/openra-join-servers.desktop
+share/applications/openra-launch-mod.desktop
 share/applications/openra-replays.desktop
 share/applications/openra.desktop
 share/icons/hicolor/128x128/apps/openra.png

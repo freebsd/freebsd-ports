@@ -18,8 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}pypuppetdb>=0.1.1:databases/py-pypuppetdb \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.2.1:www/py-requests
 
+CONFLICTS_INSTALL=puppetboard02-*
 USE_GITHUB=	yes
-GH_ACCOUNT=	puppet-community
+GH_ACCOUNT=	voxpupuli
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils

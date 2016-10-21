@@ -7,7 +7,7 @@ PORTREVISION?=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
 
 USES=		tar:bzip2

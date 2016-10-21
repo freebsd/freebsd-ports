@@ -1,4 +1,3 @@
-SHA256 (hf-1.5.tar.gz) = beb3ad2e4a7ef80bd741c4abe8190aa663313f52bc627509284657fbd8a47ab5
-SIZE (hf-1.5.tar.gz) = 99638
-SHA256 (hf-1.5.tar.gz.asc) = eedc55dd3359a942d6bdbe3d01bb32277a266aad9d8e82c767dd132f4bd133c5
-SIZE (hf-1.5.tar.gz.asc) = 181
+TIMESTAMP = 1476317295
+SHA256 (hf-1.7.tar.gz) = c612d6c42d90427fd62c41d0abf92b9375c9002e21f305f3fe7f1d9c92dfd014
+SIZE (hf-1.7.tar.gz) = 100517

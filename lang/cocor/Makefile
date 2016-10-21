@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|' ${WRKSRC}/${i}
 .endfor
 .for i in cplus2 taste taste_cp
-	@${RM} -f ${WRKSRC}/${i}/unix.mk.*
+	@${RM} ${WRKSRC}/${i}/unix.mk.*
 .endfor
 
 do-install:

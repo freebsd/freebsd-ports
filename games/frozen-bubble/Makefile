@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 LICENSE=	GPLv2

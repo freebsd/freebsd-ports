@@ -63,7 +63,7 @@ help:	pre-everything
 
 aclean:	all
 	@${ECHO} "Cleaning tests tree..."
-	-@(cd ${WRKSRC} && ${RM} -f ${RUN_RESULT} && ${MAKE_CMD} clean)
+	-@(cd ${WRKSRC} && ${RM} ${RUN_RESULT} && ${MAKE_CMD} clean)
 
 rerun:	all
 .if defined(WITH_THRLIB)

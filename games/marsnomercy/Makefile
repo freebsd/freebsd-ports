@@ -50,6 +50,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${STAGEDIR}${PREFIX}/libexec/mars
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	@${RM} -f ${STAGEDIR}${DATADIR}/SConscript
+	@${RM} ${STAGEDIR}${DATADIR}/SConscript
 
 .include <bsd.port.mk>

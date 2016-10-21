@@ -82,9 +82,9 @@ PSUFX=	-letter
 PSUFX=	-letterdj
 .endif
 .if !empty(PORT_OPTIONS:MHPIJS)
-RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hpijs
+RUN_DEPENDS+=	hpijs:print/hpijs
 .elif !empty(PORT_OPTIONS:MHPLIP)
-RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hplip
+RUN_DEPENDS+=	hpijs:print/hplip
 .endif
 
 _DEPENDS_ASCII=	a2ps:print/a2ps \
@@ -136,7 +136,7 @@ RUN_DEPENDS+=	${_DEPENDS_CONVERT}
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
+	${RM} ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
 	${LN} -sfn ${PREFIX}/share/apsfilter ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
 
 .include <bsd.port.mk>

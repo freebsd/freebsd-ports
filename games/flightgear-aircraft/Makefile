@@ -72,7 +72,7 @@ post-patch:
 		\( -name COPYING -or -name LICENSE -or -name copyright \) -delete
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
 		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/Aircraft/|' >> ${PLIST} && \

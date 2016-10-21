@@ -1,0 +1,29 @@
+--- doc/Makefile.am.orig	2016-10-08 19:30:21 UTC
++++ doc/Makefile.am
+@@ -79,14 +79,7 @@ install-data-local: makedoc-all instdoc
+ 	-for f in $(HTML_DOCFILES) ; do \
+ 		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
+ 	done
+-	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
+-	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
+-		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ -f $(DESTDIR)$(pkgdatadir)/../Muttrc ] ; then \
+-	 	mv $(DESTDIR)$(pkgdatadir)/../Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
+-		$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	fi
++	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.sample
+ 
+ uninstall-local:
+ 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 smime_keys.1 pgpewrap.1 pgpring.1; do \
+@@ -109,9 +102,7 @@ uninstall-local:
+ 
+ check:
+ manual.txt: manual.html
+-	-LC_ALL=C lynx -dump -nolist -with_backspaces -display_charset=us-ascii manual.html > $@ || \
+-	LC_ALL=C w3m -dump manual.html > $@ || \
+-	LC_ALL=C elinks -dump -no-numbering -no-references manual.html | sed -e 's,\\001, ,g' > $@
++	-LC_ALL=C lynx -dump -nolist -with_backspaces -display_charset=us-ascii manual.html > $@
+ 
+ Muttrc: stamp-doc-rc
+ 

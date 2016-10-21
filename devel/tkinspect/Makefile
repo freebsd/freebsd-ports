@@ -32,6 +32,6 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/stl-lite/* \
 			${STAGEDIR}${PREFIX}/lib/tkinspect/stl-lite
 		(cd ${STAGEDIR}${PREFIX}/lib/tkinspect && \
-			${RM} -f README dot.tkinspect_init install.tcl sls.xbm stl-lite/COPYRIGHT tkinspect.tcl)
+			${RM} README dot.tkinspect_init install.tcl sls.xbm stl-lite/COPYRIGHT tkinspect.tcl)
 
 .include <bsd.port.mk>

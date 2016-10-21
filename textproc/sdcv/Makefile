@@ -37,7 +37,7 @@ post-patch:
 		's|@mandir@/uk|@mandir@|' ${WRKSRC}/doc/uk/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|getopt1.c getopt.h||' ${WRKSRC}/src/Makefile.am
-	@${RM} -f ${WRKSRC}/src/getopt.h
+	@${RM} ${WRKSRC}/src/getopt.h
 	@${REINPLACE_CMD} '/AM_GNU_GETTEXT_VERSION/s/0\.14\.1/0.19.1/' \
 		${WRKSRC}/configure.ac
 

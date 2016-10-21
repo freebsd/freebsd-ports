@@ -52,7 +52,7 @@ trace-distfile: distclean
 	@cd ${.CURDIR} && make FETCH_ARGS=-vFpr makesum
 
 rm-install:
-	${SU_CMD} '${RM} -rf ${WWWDIR}/install'
+	${SU_CMD} '${RM} -r ${WWWDIR}/install'
 
 .endif
 

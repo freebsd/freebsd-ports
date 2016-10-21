@@ -72,6 +72,6 @@ post-install:
 	${LN} -sf ${GCC_TARGET}-g++.1.gz ${STAGEDIR}/${MANDIR}1/c++.1.gz
 	${LN} -sf ${GCC_TARGET}-gcc  ${STAGEDIR}/usr/bin/cc ; \
 	${LN} -sf ${GCC_TARGET}-gcc.1.gz ${STAGEDIR}/${MANDIR}1/cc.1.gz
-	${RM} -rf ${STAGEDIR}/usr/share/info
+	${RM} -r ${STAGEDIR}/usr/share/info
 
 .include <bsd.port.mk>

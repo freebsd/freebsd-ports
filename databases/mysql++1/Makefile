@@ -38,6 +38,6 @@ post-install:
 		${SED} -e "s|/usr/include/mysql|${LOCALBASE}/include/mysql|" | \
 		${SED} -e "s|-lmysqlpp|-L${PREFIX}/lib -L${LOCALBASE}/lib/mysql -lmysqlpp|" \
 		> ${STAGEDIR}${EXAMPLESDIR}/Makefile
-	@${RM} -f ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp
+	@${RM} ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp
 
 .include <bsd.port.mk>

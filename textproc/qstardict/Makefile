@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based dictionary program (stardict clone)
 
 USES=		dos2unix pkgconfig qmake tar:bzip2

@@ -74,10 +74,10 @@ do-install:
 		${STAGEDIR}${SQ_HOME}/conf/sonar.properties.sample
 	@${MV} -f ${STAGEDIR}${SQ_HOME}/conf/wrapper.conf \
 		${STAGEDIR}${SQ_HOME}/conf/wrapper.conf.sample
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-32
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/macosx-universal-64
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-32
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-64
+	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/linux-x86-32
+	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64
+	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/macosx-universal-64
+	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/windows-x86-32
+	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/windows-x86-64
 
 .include <bsd.port.mk>

@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-zlib-root=/usr
-INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -73,6 +72,6 @@ pre-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} dnetter
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
 
 .include <bsd.port.mk>

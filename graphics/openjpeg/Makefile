@@ -3,6 +3,7 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
