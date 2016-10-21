@@ -22,17 +22,20 @@ USES=		python
 USE_PYTHON=	distutils
 USE_WX=		3.0+
 WX_COMPS=	python:run
+NO_ARCH=	yes
 
 PORTDOCS=	README
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="OBApps" "" ${PORTNAME} \
 		"${PORTNAME}" "Settings;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
