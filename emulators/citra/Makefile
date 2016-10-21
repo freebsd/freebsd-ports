@@ -18,7 +18,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LIB_DEPENDS=	libpng.so:graphics/png
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
-BROKEN_i386=	https://github.com/MerryMage/dynarmic/issues/35
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 # XXX Switch to system Boost after ports/199601
