@@ -8701,3 +8701,4 @@ devel/pecl-hidef||2016-10-20|Has expired: Works only with EOL php 5.5
 devel/pecl-automap||2016-10-20|Has expired: Works only with EOL php 5.5
 devel/pecl-bbcode||2016-10-20|Has expired: Works only with EOL php 5.5
 devel/pecl-bcompiler||2016-10-20|Has expired: Works only with EOL php 5.5
+databases/php-adodb-ext||2016-10-21|Has expired: Works only with EOL php 5.5

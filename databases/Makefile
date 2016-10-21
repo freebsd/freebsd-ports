@@ -589,7 +589,6 @@
     SUBDIR += pgtune
     SUBDIR += pguri
     SUBDIR += pgworksheet
-    SUBDIR += php-adodb-ext
     SUBDIR += php-mdcached
     SUBDIR += php5-pdo_cassandra
     SUBDIR += php5-tarantool
