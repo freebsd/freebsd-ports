@@ -12,7 +12,8 @@ COMMENT=	Open-source 3D chess game
 
 USE_SDL=	sdl image
 USE_GL=		gl
-USES=		gmake
+USES=		dos2unix gmake
+DOS2UNIX_GLOB=	*.cpp *.h Makefile config.ini
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
 
@@ -26,10 +27,6 @@ DESKTOP_ENTRIES="pouetChess" \
 		false
 
 post-patch:
-	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name Makefile \
-		-o -name config.ini \) -exec ${REINPLACE_CMD} -e \
-		"s|$$(${PRINTF} '\r')$$||" {} \;
-
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^LIBS/ s|$$| -L${LOCALBASE}/lib|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/CXX	/ d' ${WRKSRC}/Makefile
