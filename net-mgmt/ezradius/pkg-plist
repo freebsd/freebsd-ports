@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/resources/mysql-dump/radius.sql
 %%WWWDIR%%/resources/hotspotlogin-without-popup/Connections/conStatus.php
 %%WWWDIR%%/resources/hotspotlogin-without-popup/get-status.js
