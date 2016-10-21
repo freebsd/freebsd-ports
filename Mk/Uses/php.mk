@@ -108,9 +108,6 @@ PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 56
 PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
-.    elif ${PHP_VER} == 55
-PHP_EXT_DIR=	20121212
-PHP_EXT_INC=	pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
 PHP_EXT_DIR=	20131226
@@ -298,7 +295,6 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER55=	${_USE_PHP_ALL} mssql mysql sybase_ct
 _USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
 _USE_PHP_VER70=	${_USE_PHP_ALL}
 
