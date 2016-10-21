@@ -1,8 +1,11 @@
 # Created by: Andy Pavlo
 # $FreeBSD$
+#
+# Note: Make sure there are no older versions of HTCondor installed during
+#       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
-PORTVERSION=	8.2.8
+PORTVERSION=	8.4.9
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -18,12 +21,13 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		libboost_python.so:devel/boost-python-libs
+		libboost_python.so:devel/boost-python-libs \
+		libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 # Does not build with Python 3
-USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix
+USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix ssl
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
@@ -40,11 +44,8 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
 
-# This was an issue in previous releases, but I've tested 8.2.8 extensively
-# on machines with as many as 16 cores.
-# MAKE_JOBS_UNSAFE=	yes
-
 SUB_FILES=	condor-config condor_config.local pkg-message
+PLIST_SUB+=	CONDOR_UVER=${PORTVERSION:S/./_/g}
 
 USERS=		condor
 GROUPS=		${USERS}
@@ -71,6 +72,7 @@ post-patch:
 		-e 's|/usr/local/condor|${PREFIX}|g' \
 		-e 's|$$(LOCAL_DIR)/condor_config.local|$$(RELEASE_DIR)/etc/condor_config.local|g' \
 		-e 's|/bin/mail|/usr/bin/mail|g' \
+		-e 's|/usr/bin/java|${LOCALBASE}/bin/java|g' \
 		-e 's|^CONDOR_HOST|##  CONDOR_HOST|' \
 		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
