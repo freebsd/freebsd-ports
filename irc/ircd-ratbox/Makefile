@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
+BROKEN_FreeBSD_9=	does not build
+
 USES=		cpe libtool sqlite tar:bzip2
 CPE_VENDOR=	ratbox
 USE_RC_SUBR=	ircd-ratbox
