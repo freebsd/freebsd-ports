@@ -136,9 +136,6 @@
     SUBDIR += pecl-fribidi
     SUBDIR += pecl-igbinary
     SUBDIR += php5-bsdconv
-    SUBDIR += php55-iconv
-    SUBDIR += php55-mbstring
-    SUBDIR += php55-recode
     SUBDIR += php56-iconv
     SUBDIR += php56-mbstring
     SUBDIR += php56-recode

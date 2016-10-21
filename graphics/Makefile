@@ -774,8 +774,6 @@
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
     SUBDIR += php5-ffmpeg
-    SUBDIR += php55-exif
-    SUBDIR += php55-gd
     SUBDIR += php56-exif
     SUBDIR += php56-gd
     SUBDIR += php70-exif

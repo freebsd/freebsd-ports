@@ -360,7 +360,6 @@
     SUBDIR += pear-Text_Figlet
     SUBDIR += pecl-timezonedb
     SUBDIR += pfm
-    SUBDIR += php55-calendar
     SUBDIR += php56-calendar
     SUBDIR += php70-calendar
     SUBDIR += phraze

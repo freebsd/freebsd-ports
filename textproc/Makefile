@@ -1172,16 +1172,6 @@
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php-mecab
-    SUBDIR += php55-ctype
-    SUBDIR += php55-dom
-    SUBDIR += php55-enchant
-    SUBDIR += php55-pspell
-    SUBDIR += php55-simplexml
-    SUBDIR += php55-wddx
-    SUBDIR += php55-xml
-    SUBDIR += php55-xmlreader
-    SUBDIR += php55-xmlwriter
-    SUBDIR += php55-xsl
     SUBDIR += php56-ctype
     SUBDIR += php56-dom
     SUBDIR += php56-enchant
