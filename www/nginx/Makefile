@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.10.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -121,6 +122,7 @@ OPTIONS_DEFINE=	\
 	SRCACHE \
 	STATSD \
 	UDPLOG \
+	X11 \
 	XRID_HEADER \
 	XSS
 
@@ -228,6 +230,7 @@ SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
 STATSD_DESC=			3rd party statsd module
 UDPLOG_DESC=			3rd party udplog (syslog) module
+X11_DESC=			graphics/ImageMagick[-nox11] dependency
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
@@ -235,6 +238,12 @@ VIDEO_DESC=			Video module support
 WANT_GNOME=	yes
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick
+.else
+IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick-nox11
+.endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
 CATEGORIES+=	ruby
@@ -710,7 +719,7 @@ LIB_DEPENDS+= 	libjpeg.so:graphics/jpeg \
 		libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
-		libMagickWand-6.so:graphics/ImageMagick-nox11
+		${IMAGEMAGICK_LIB_DEPENDS}
 GH_ACCOUNT+=	wandenberg:vte
 GH_PROJECT+=	nginx-video-thumbextractor-module:vte
 GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:vte
@@ -942,8 +951,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
 NGINX_SMALL_LIGHT_VERSION=	0.8.0
-LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick-nox11 \
-		libMagickWand-6.so:graphics/ImageMagick-nox11 \
+LIB_DEPENDS+=	${IMAGEMAGICK_LIB_DEPENDS} \
 		libpcre.so:devel/pcre
 GH_ACCOUNT+=	cubicdaiya:small_light
 GH_PROJECT+=	ngx_small_light:small_light
