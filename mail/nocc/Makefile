@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Webmail system which access POP3 and IMAP mail servers
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS
 
+USES=		php:web
 USE_PHP=	ctype iconv imap mbstring pcre session
-WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
@@ -25,13 +27,16 @@ NOCCCOMP=	.htaccess favicon.ico robots.txt \
 
 PORTDOCS=	*
 
+post-extract:
+	@${FIND} ${WRKSRC} -type d -empty -delete
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 .for i in ${NOCCCOMP}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -not -type d) | ${SORT} | \
