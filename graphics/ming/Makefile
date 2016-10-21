@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USES=		autoreconf bison gmake libtool localbase pathfix shebangfix
 

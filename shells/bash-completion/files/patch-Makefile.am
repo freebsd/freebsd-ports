@@ -1,6 +1,6 @@
---- Makefile.am.orig	2013-04-05 09:43:56.000000000 +0000
+--- Makefile.am.orig	2016-10-04 13:52:42 UTC
 +++ Makefile.am
-@@ -5,10 +5,10 @@ pkgdata_DATA = bash_completion
+@@ -5,7 +5,7 @@ pkgdata_DATA = bash_completion
  # Empty, but here just to get the compat dir created with install
  compat_DATA =
  
@@ -8,11 +8,7 @@
 +profiledir = $(prefix)/share/bash-completion
  profile_DATA = bash_completion.sh
  
--pkgconfigdir = $(datadir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = bash-completion.pc
- 
- bash_completion.sh: bash_completion.sh.in Makefile
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
 @@ -20,8 +20,10 @@ EXTRA_DIST = CHANGES $(sysconf_DATA) $(p
          .dir-locals.el
  

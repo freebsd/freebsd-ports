@@ -12,6 +12,7 @@ COMMENT=	Session Management library for X11
 
 LICENSE=	MIT
 
+USES=		pathfix
 XORG_CAT=	lib
 USE_XORG=	ice xproto:both xtrans
 

@@ -35,8 +35,6 @@ post-extract:
 	cd ${WRKSRC}; ${TAR} xjf ${DISTDIR}/${GLIBC_DISTFILE} ${CHARMAPSDIR}
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$${datadir}/pkgconfig|$${prefix}/libdata/pkgconfig|g'
 	@${REINPLACE_CMD} -E 's|(m17n_scriptdir = ).*|\1${PREFIX}/bin|' \
 		${WRKSRC}/Makefile.in
 

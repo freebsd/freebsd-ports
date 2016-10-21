@@ -12,7 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
-USES=		libtool tar:xz
+USES=		libtool pathfix tar:xz
 USE_LDCONFIG=	yes
 USE_TEX=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

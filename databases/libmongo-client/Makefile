@@ -19,6 +19,5 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig gmake pathfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=Makefile.am
 
 .include <bsd.port.mk>

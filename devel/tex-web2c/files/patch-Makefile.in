@@ -15,12 +15,3 @@
  nodist_man_MANS = 
  EXTRA_DIST = PROJECTS cftests cpascal.h help.h w2c/config.h \
  	triptrap-sh tangle.web tangle.ch tangleboot.pin cwebdir \
-@@ -3557,7 +3557,7 @@
- 
- nodist_libsynctex_a_SOURCES = $(libsynctex_la_SOURCES)
- syncincludedir = ${includedir}/synctex
--pkgconfigdir = ${libdir}/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- @SYNCTEX_TRUE@syncinclude_HEADERS = \
- @SYNCTEX_TRUE@	synctexdir/synctex_parser.h \
- @SYNCTEX_TRUE@	synctexdir/synctex_parser_utils.h

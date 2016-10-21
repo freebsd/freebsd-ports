@@ -22,13 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
 		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt
 
-USES=		gettext gmake pkgconfig python:2
+USES=		gettext gmake pathfix pkgconfig python:2
 GNU_CONFIGURE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|{datadir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 test:
 	@cd ${WRKSRC} && ${MAKE_CMD} check

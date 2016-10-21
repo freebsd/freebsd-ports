@@ -1,14 +1,5 @@
 --- Makefile.in.orig	2015-08-18 19:51:04 UTC
 +++ Makefile.in
-@@ -399,7 +399,7 @@ top_srcdir = @top_srcdir@
- AUTOMAKE_OPTIONS = foreign dist-bzip2
- ACLOCAL_AMFLAGS = -I m4
- dist_doc_DATA = README TECHNICAL
--pkgconfigdir = @libdir@/pkgconfig
-+pkgconfigdir = @prefix@/libdata/pkgconfig
- dist_pkgconfig_DATA = libirman.pc
- EXTRA_DIST = COPYING.lib TECHNICAL libirman.pc.in
- EXTRA_LTLIBRARIES = libirman_sw.la
 @@ -778,7 +778,7 @@ install-dist_sysconfDATA: $(dist_sysconf
  	done | $(am__base_list) | \
  	while read files; do \

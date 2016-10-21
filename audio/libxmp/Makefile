@@ -12,7 +12,7 @@ COMMENT=	Module rendering library for xmp
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.LIB
 
-USES=		gmake
+USES=		gmake pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

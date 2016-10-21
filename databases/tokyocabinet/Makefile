@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		pathfix gmake
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -66,11 +66,8 @@ SHLIB_VER_MAJ=	9
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
-# Because gnomehack will search "(libdir)" and it doesn't work, we need
-# to patch it manually.
 post-patch:
-	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
-		-e 's|@datarootdir@|@datarootdir@/doc|' \
+	${REINPLACE_CMD} -e 's|@datarootdir@|@datarootdir@/doc|' \
 		${WRKSRC}/Makefile.in
 
 post-patch-FASTEST-on:

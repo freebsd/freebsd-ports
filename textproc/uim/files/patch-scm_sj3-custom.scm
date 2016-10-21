@@ -1,5 +1,5 @@
---- scm/sj3-custom.scm.orig	2010-10-17 14:09:36.000000000 +0900
-+++ scm/sj3-custom.scm	2010-10-17 14:10:09.000000000 +0900
+--- scm/sj3-custom.scm.orig	2013-06-30 04:26:09 UTC
++++ scm/sj3-custom.scm
 @@ -339,7 +339,7 @@
    (N_ "SJ3 user name")
    (N_ "long description will be here."))

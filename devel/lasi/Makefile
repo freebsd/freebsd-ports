@@ -16,7 +16,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		cmake pkgconfig
+USES=		cmake pathfix pkgconfig
+PATHFIX_CMAKELISTSTXT=	pkg-config.cmake
 USE_GNOME=	pango
 PKG_CONFIG_PATH=	${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}

@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	engla
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
 GNU_CONFIGURE=	yes

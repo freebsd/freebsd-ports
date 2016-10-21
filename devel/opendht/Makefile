@@ -23,13 +23,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-python
 USE_LDCONFIG=	yes
 
-USES=		autoreconf compiler:c++11-lib libtool pkgconfig
+USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 post-stage:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/opendht.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendht.so.0.0.0
 
 .include <bsd.port.mk>

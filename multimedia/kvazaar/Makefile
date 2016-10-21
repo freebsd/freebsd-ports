@@ -20,7 +20,6 @@ GH_SUBDIR=	greatest:greatest
 CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
 USES=		autoreconf compiler:c11 libtool pathfix
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip

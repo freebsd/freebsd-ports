@@ -21,7 +21,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libldns.so:dns/ldns \
 		libunbound.so:dns/unbound
 
-USES=		libtool
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
@@ -53,8 +53,6 @@ CONFIGURE_ARGS+=	--disable-gost
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
 		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
 

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 
 CONFLICTS=	leptonlib-[0-9]*
 
-USES=		jpeg libtool
+USES=		jpeg libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

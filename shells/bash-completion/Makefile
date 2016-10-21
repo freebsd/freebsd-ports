@@ -17,7 +17,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bzip2
+USES=		gmake pathfix tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh

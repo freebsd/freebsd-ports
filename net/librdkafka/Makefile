@@ -23,7 +23,7 @@ GH_ACCOUNT=	edenhill
 USES=		gmake perl5 python shebangfix ssl
 SHEBANG_FILES=	lds-gen.py
 GNU_CONFIGURE=	yes
-MAKE_ENV=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
+MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 USE_LDCONFIG=	yes
 

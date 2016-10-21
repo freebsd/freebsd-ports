@@ -1,4 +1,4 @@
---- src/Makefile.in.orig	2015-02-06 03:20:27 UTC
+--- src/Makefile.in.orig	2016-02-06 03:58:09 UTC
 +++ src/Makefile.in
 @@ -11,7 +11,7 @@ LOBJS = @LOBJS@
  .SUFFIXES: .lo
@@ -9,7 +9,7 @@
  
  .cpp.obj:
  	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $<
-@@ -22,26 +22,26 @@ clean:
+@@ -22,7 +22,7 @@ clean:
  	$(LTCLEAN) $(RM) *.lo *.o *.obj *.$(LIBEXT) *.lib *.exp *.idb *.pdb *.manifest
  
  librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
@@ -18,32 +18,3 @@
  
  install: $(INSTALLLIB)
  
- installdll:
--	$(MKINSTALLDIRS) $(bindir)
--	$(LTINSTALL) $(CP) librudiments.$(LIBEXT) $(bindir)
--	$(MKINSTALLDIRS) $(libdir)
--	$(LTINSTALL) $(CP) librudiments.lib $(libdir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
-+	$(LTINSTALL) $(CP) librudiments.$(LIBEXT) $(DESTDIR)$(bindir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
-+	$(LTINSTALL) $(CP) librudiments.lib $(DESTDIR)$(libdir)
- 
- installlib:
--	$(MKINSTALLDIRS) $(libdir)
--	$(LTINSTALL) $(CP) librudiments.$(LIBEXT) $(libdir)
--	$(LTFINISH) $(libdir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
-+	$(LTINSTALL) $(CP) librudiments.$(LIBEXT) $(DESTDIR)$(libdir)
-+	$(LTFINISH) $(DESTDIR)$(libdir)
- 
- uninstall: $(UNINSTALLLIB)
- 
- uninstalldll:
--	$(LTUNINSTALL) $(RM) $(bindir)/librudiments.$(LIBEXT)
--	$(LTUNINSTALL) $(RM) $(libdir)/librudiments.lib
-+	$(LTUNINSTALL) $(RM) $(DESTDIR)$(bindir)/librudiments.$(LIBEXT)
-+	$(LTUNINSTALL) $(RM) $(DESTDIR)$(libdir)/librudiments.lib
- 
- uninstalllib:
--	$(LTUNINSTALL) $(RM) $(libdir)/librudiments.$(LIBEXT)
-+	$(LTUNINSTALL) $(RM) $(DESTDIR)$(libdir)/librudiments.$(LIBEXT)

@@ -16,7 +16,6 @@ GH_ACCOUNT=	rsyslog
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

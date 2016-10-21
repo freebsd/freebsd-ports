@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgadu.so:polish/libgadu \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake perl5 pkgconfig tar:bzip2 libtool
+USES=		gettext gmake pathfix perl5 pkgconfig tar:bzip2 libtool
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
@@ -80,7 +80,7 @@ XOSD_CONFIGURE_WITH=	xosd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,=.*},=${PREFIX},' ${WRKSRC}/src/plugins/dbus/org.freedesktop.im.GG.service
-	@${REINPLACE_CMD} -e 's, -ldl,, ; s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' ${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's, -ldl,,' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's,(datadir)/pixmaps,(datadir)/icons/hicolor/48x48/apps,' ${WRKSRC}/pixmaps/Makefile.in
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/plugins/GUI/gtkimhtml.c
 

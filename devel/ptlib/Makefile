@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 CONFLICTS=	pwlib-1.*
 
-USES=		autoreconf:build bison gmake pkgconfig ssl tar:xz
+USES=		autoreconf:build bison gmake pathfix pkgconfig ssl tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include

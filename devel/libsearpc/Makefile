@@ -20,7 +20,6 @@ GH_TAGNAME=	v3.0-latest
 
 USES=		autoreconf gettext libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
-USES=		compiler:c++11-lib cpe gmake iconv pkgconfig
+USES=		compiler:c++11-lib cpe gmake iconv pathfix pkgconfig
 MAKE_ENV=	V=1
 
 PORTDOCS=	README.md
@@ -65,9 +65,6 @@ pre-configure-PYTHON-on:
 	@${RM} ${WRKSRC}/modules/modpython/_znc_core.cpp
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's#$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's#/usr/local#${LOCALBASE}#' ${WRKSRC}/configure
 

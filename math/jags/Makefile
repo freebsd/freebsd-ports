@@ -19,7 +19,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison compiler:features fortran gmake libtool localbase
+USES=		bison compiler:features fortran gmake libtool localbase pathfix
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 
@@ -58,8 +58,6 @@ PORTEXAMPLES=	*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/etc/Makefile.in
 	@${REINPLACE_CMD} \
 		-e '/@WINDOWS_FALSE@bin_SCRIPTS =/s/jags/mcmc-&/' \
 		-e '/CLEANFILES =/s/jags/mcmc-&/' \

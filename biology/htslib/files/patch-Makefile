@@ -1,4 +1,4 @@
---- Makefile.orig	2015-12-15 16:34:33 UTC
+--- Makefile.orig	2016-04-22 08:45:12 UTC
 +++ Makefile
 @@ -22,16 +22,7 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
@@ -17,7 +17,7 @@
  
  # For now these don't work too well as samtools also needs to know to
  # add -lbz2 and -llzma if linking against the static libhts.a library.
-@@ -58,16 +49,10 @@ includedir  = $(prefix)/include
+@@ -58,17 +49,11 @@ includedir  = $(prefix)/include
  libdir      = $(exec_prefix)/lib
  libexecdir  = $(exec_prefix)/libexec
  datarootdir = $(prefix)/share
@@ -25,17 +25,17 @@
 +mandir      = $(prefix)/man
  man1dir     = $(mandir)/man1
  man5dir     = $(mandir)/man5
--pkgconfigdir= $(libdir)/pkgconfig
--
+ pkgconfigdir= $(prefix)/libdata/pkgconfig
+ 
 -MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_PROGRAM = $(INSTALL)
 -INSTALL_DATA    = $(INSTALL) -m 644
 -INSTALL_DIR     = $(MKDIR_P) -m 755
-+pkgconfigdir= $(exec_prefix)/libdata/pkgconfig
- 
+-
  # Set by config.mk if plugins are enabled
  plugindir =
+ 
 @@ -86,7 +71,7 @@ BUILT_TEST_PROGRAMS = \
  	test/test-vcf-api \
  	test/test-vcf-sweep
@@ -45,7 +45,7 @@
  
  HTSPREFIX =
  include htslib_vars.mk
-@@ -361,7 +346,7 @@ installdirs:
+@@ -360,7 +345,7 @@ installdirs:
  # and libhts.so.NN (used by client executables at runtime).
  
  install-so: libhts.so installdirs

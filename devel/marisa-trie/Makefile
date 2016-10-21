@@ -19,7 +19,7 @@ GH_ACCOUNT=	s-yata
 GH_PROJECT=	marisa-trie
 GH_TAGNAME=	961ed33
 
-USES=	autoreconf libtool:build
+USES=	autoreconf libtool:build pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

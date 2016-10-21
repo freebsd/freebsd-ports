@@ -10,7 +10,7 @@ MASTER_SITES=	http://libestr.adiscon.com/files/download/
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Library for some string essentials
 
-USES=		libtool
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \

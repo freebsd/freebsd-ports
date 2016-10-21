@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		autoreconf gettext libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

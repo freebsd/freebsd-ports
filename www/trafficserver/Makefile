@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe execinfo gmake libtool perl5 pkgconfig sqlite ssl tar:bzip2 tcl
+USES=		cpe execinfo gmake libtool pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run

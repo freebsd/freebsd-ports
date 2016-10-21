@@ -42,6 +42,5 @@ pre-configure:
 
 post-configure:
 	${REINPLACE_CMD} -e 's|; make|; $${MAKE}|g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's#$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	BOOST DOCS EXAMPLES
 CONFIGURE_ARGS=	--disable-ewarning
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USES=		autoreconf libtool localbase pathfix
 

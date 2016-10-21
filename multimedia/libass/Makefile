@@ -19,7 +19,6 @@ USE_GITHUB=	yes
 USES=		autoreconf iconv libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	HARFBUZZ

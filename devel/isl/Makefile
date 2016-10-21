@@ -17,10 +17,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 CONFIGURE_ARGS=	--with-gmp-prefix=${LOCALBASE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:xz
+USES=		libtool pathfix tar:xz
+PATHFIX_MAKEFILEIN=	configure
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's@pkgconfig_libdir=.*@pkgconfig_libdir=$${prefix}/libdata/pkgconfig@' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

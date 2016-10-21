@@ -29,7 +29,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 CONFIGURE_ENV=	wwwdir=${WWWDIR} yawsdir=${APPDIR}
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=Makefile.am
 
 .include <bsd.port.options.mk>
 

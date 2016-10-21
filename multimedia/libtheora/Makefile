@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--disable-sdltest \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:bzip2
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

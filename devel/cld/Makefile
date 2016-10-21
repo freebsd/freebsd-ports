@@ -14,7 +14,7 @@ COMMENT=	Chromium compact language detector library
 
 BROKEN=		Unfetchable (google code has gone away)
 
-USES=		libtool
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

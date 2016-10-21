@@ -17,7 +17,6 @@ USES=		autoreconf gmake libtool pathfix
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

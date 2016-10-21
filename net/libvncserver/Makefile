@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LibVNC
 
 USES=		autoreconf jpeg libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

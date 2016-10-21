@@ -42,7 +42,7 @@ ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
-USES=			pkgconfig kmod libtool
+USES=			pathfix pkgconfig kmod libtool
 USE_GNOME=		glib20
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations

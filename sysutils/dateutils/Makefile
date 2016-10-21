@@ -12,15 +12,11 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
-USES=		tar:xz
+USES=		pathfix tar:xz
 GNU_CONFIGURE=	yes
 
 INFO=		dateutils
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

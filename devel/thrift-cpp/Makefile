@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libevent.so:devel/libevent2
 
 USES=			autoreconf pkgconfig gmake compiler:c++11-lang \
-			libtool ssl
+			libtool pathfix ssl
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes
@@ -59,9 +59,6 @@ BROKEN_FreeBSD_9=	does not build with 9.x base OpenSSL
 .if ${COMPILER_TYPE} == clang
 USE_CXXSTD=	c++11
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/cpp/Makefile.am
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so

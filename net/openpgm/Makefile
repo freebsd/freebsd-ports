@@ -18,7 +18,6 @@ GH_ACCOUNT=	steve-o
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf pathfix perl5 libtool python:build
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	openpgm/pgm
 INSTALL_TARGET=	install-strip

@@ -42,7 +42,6 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
 OPTIONS_SUB=	yes
 USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
