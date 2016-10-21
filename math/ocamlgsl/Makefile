@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ocaml-gsl
-PORTVERSION=	1.15.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.19.1
 CATEGORIES=	math
-MASTER_SITES=	http://bitbucket.org/mmottl/gsl-ocaml/downloads/
-DISTNAME=	gsl-ocaml-${PORTVERSION}
+DISTNAME=	gsl-ocaml
+DISTFILES=	${DISTNAME}-${DISTVERSION}.tar.gz
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Interface to GSL for the Objective Caml language
@@ -18,6 +18,10 @@ BUILD_DEPENDS=	gawk:lang/gawk \
 		${OCAMLC_DEPEND}
 RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
+GH_PROJECT=	${DISTNAME}
+
 USES=			gmake
 USE_OCAML=		YES
 USE_OCAML_FINDLIB=	YES
@@ -27,6 +31,8 @@ OCAML_PKGDIRS=		gsl
 HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=			${WRKDIR}/gsl-ocaml-${PORTVERSION}
+
+DOCSDIR=	${LOCALBASE}/share/doc
 
 OPTIONS_DEFINE=	DOCS
 
