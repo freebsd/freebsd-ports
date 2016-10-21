@@ -1,6 +1,6 @@
---- po/Makefile.in.in.orig	2007-09-25 01:35:53.000000000 +0900
-+++ po/Makefile.in.in	2007-09-25 01:36:59.000000000 +0900
-@@ -33,7 +33,7 @@
+--- po/Makefile.in.in.orig	2013-06-30 04:27:11 UTC
++++ po/Makefile.in.in
+@@ -33,7 +33,7 @@ exec_prefix = @exec_prefix@
  datadir = @datadir@
  datarootdir = @datarootdir@
  libdir = @libdir@

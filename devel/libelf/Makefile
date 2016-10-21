@@ -22,7 +22,7 @@ SANITY_DESC=	Avoid loading invalid ELF files
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
 USE_LDCONFIG=	yes
-USES=		desthack
+USES=		desthack pathfix
 
 .if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake pathfix
 USE_RC_SUBR=	ttserver
 
 OPTIONS_DEFINE=	LUA
@@ -29,11 +29,7 @@ LUA_CFLAGS+=	-I${LUA_INCDIR}
 LUA_CPPFLAGS+=	-I${LUA_INCDIR}
 LUA_USES=		lua
 
-# Since gnomehack only works for "(libdir)" case, we need to patch it
-# manually.
 post-patch:
-	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g' ${WRKSRC}/configure
 
 post-install:

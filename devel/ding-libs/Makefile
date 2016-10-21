@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
-USES=		autoreconf iconv gettext libtool pkgconfig
+USES=		autoreconf iconv gettext libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -26,7 +26,6 @@ CONFIGURE_ENV+=	DOXYGEN=""
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/collection/collection_tools.c \
 		${WRKSRC}/refarray/ref_array.c
 	@${REINPLACE_CMD} -e 's|git log -1 &>/dev/null|true|g' \

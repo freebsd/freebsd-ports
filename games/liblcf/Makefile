@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 
 USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

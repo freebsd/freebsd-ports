@@ -16,7 +16,7 @@ LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GNOME=	gtk20 intltool intlhack glib20
-USES=		gettext pkgconfig libtool
+USES=		gettext pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -40,9 +40,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^pkgconfigdir = $${libdir}/pkgconfig|pkgconfigdir = $${prefix}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	divVerent
 GH_TAGNAME=	ff1ce7e
 
-USES=		autoreconf libtool ssl
+USES=		autoreconf libtool pathfix ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl
 USE_LDCONFIG=	yes

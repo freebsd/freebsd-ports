@@ -14,7 +14,6 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

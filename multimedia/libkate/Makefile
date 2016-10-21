@@ -17,7 +17,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake libtool
+USES=		pathfix pkgconfig gmake libtool
 USE_LDCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
@@ -51,10 +51,6 @@ PLIST_SUB+=	KATEDJ="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
-		"s|^(katepcdir =).*|\1 ${PREFIX}/libdata/pkgconfig|" \
-		${WRKSRC}/Makefile.in
-
 .if ! ${PORT_OPTIONS:MKATEDJ}
 	@${REINPLACE_CMD} -e \
 		"s|  HAVE_PYTHON_TRUE=$$|  HAVE_PYTHON_TRUE='#'|; \

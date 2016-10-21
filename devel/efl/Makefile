@@ -152,11 +152,6 @@ LIB_DEPENDS+=			libluajit-5.1.so:lang/luajit
 PLIST_SUB+=			ELUA=""
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
-
 post-stage:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/gdb
 	for i in `${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib -type f`; do \

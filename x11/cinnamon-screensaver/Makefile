@@ -24,7 +24,6 @@ GH_ACCOUNT=	linuxmint
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS=		-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib

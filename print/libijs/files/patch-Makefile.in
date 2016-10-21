@@ -1,14 +1,5 @@
 --- Makefile.in.orig	Wed Feb 11 20:51:54 2004
 +++ Makefile.in	Thu Mar 11 13:37:51 2004
-@@ -117,7 +117,7 @@
- 
- MAINT_CHARSET = latin1
- m4datadir = $(datadir)/aclocal
--pkgconfigdatadir = $(prefix)/lib/pkgconfig
-+pkgconfigdatadir = $(prefix)/libdata/pkgconfig
- 
- lib_LTLIBRARIES = libijs.la
- 
 @@ -143,12 +143,12 @@
  @SYSDEPS_WINDOWS_TRUE@libijs_la_LIBADD = ijs_exec_win.lo $(IJS_DEPLIBS)
  @SYSDEPS_WINDOWS_FALSE@libijs_la_LIBADD = ijs_exec_unix.lo $(IJS_DEPLIBS)

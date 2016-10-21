@@ -11,17 +11,13 @@ COMMENT=	Extremely memory-efficient hash_map implementation
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pathfix
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	${REINPLACE_CMD} -e \
-		's|^pkgconfigdir = .*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 post-patch-DOCS-on:
 	${REINPLACE_CMD} -e \

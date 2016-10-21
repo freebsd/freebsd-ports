@@ -29,7 +29,8 @@ PORTSCOUT=	limit:^2\.4\.
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
 USES=		bison compiler:c++11-lib gettext gmake gperf libtool localbase \
-		perl5 pkgconfig shebangfix sqlite tar:xz
+		pathfix perl5 pkgconfig shebangfix sqlite tar:xz
+PATHFIX_MAKEFILEIN=	GNUmakefile.in
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 introspection:build libxslt
@@ -100,8 +101,6 @@ post-patch:
 # Since ruby 2.2 there is no ruby symlink
 	@${REINPLACE_CMD} -e 's|ruby|${RUBY_NAME}|g' \
 		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/GtkLauncher \

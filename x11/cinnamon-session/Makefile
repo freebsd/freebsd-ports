@@ -27,7 +27,6 @@ USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ARGS=	--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral -Wno-error=implicit-function-declaration
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral -Wno-error=implicit-function-declaration

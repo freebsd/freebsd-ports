@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		autoreconf libtool gmake
+USES=		autoreconf libtool gmake pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -22,8 +22,6 @@ INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -e 's|AC_CONFIG_AUX_DIR.*|AC_CONFIG_AUX_DIR([.])|g' \
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's|AM_CONFIG_HEADER.*|AM_CONFIG_HEADER([./config.h])|g' \

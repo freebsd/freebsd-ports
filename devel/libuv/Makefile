@@ -20,7 +20,6 @@ TEST_DEPENDS=	gyp:devel/py-gyp \
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

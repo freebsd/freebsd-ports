@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbinio.so:devel/libbinio
 
-USES=		pkgconfig libtool makeinfo
+USES=		libtool makeinfo pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
@@ -38,9 +38,6 @@ post-patch:
 		${WRKSRC}/src/fprovide.cpp \
 		${WRKSRC}/src/database.cpp \
 		${WRKSRC}/src/dmo.cpp
-	@${REINPLACE_CMD} -e 's|^\(pkgconfigdir\ =\).*|\1 $$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's/-lstdc++//g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

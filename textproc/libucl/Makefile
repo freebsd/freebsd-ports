@@ -44,7 +44,6 @@ GNU_CONFIGURE=	yes
 
 GH_ACCOUNT=	vstakhov
 
-PATHFIX_MAKEFILEIN=	Makefile.am
 CONFLICTS_INSTALL=	ucl
 
 INSTALL_TARGET=	install-strip

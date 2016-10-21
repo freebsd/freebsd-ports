@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	clp-[0-9]* ogdf-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=	libtool pkgconfig tar:tgz
+USES=	libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig
 CXXFLAGS+=	-ffast-math
@@ -40,8 +40,7 @@ STRIP_FILES=	libCoinUtils libOsi libOsiClp libOsiCommonTests libClp libClpSolver
 		libCgl libCbc libCbcSolver libOsiCbc libCoinMP
 
 post-patch::
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g' \
 		-e 's|addlibs_DATA = examples/Makefile examples/example.c||g' \
 		-e 's|DocInstallDir = $$(datadir)/coin/doc/$$(PACKAGE_NAME)|DocInstallDir = $$(datadir)/doc/CoinMP/$$(PACKAGE_NAME)|' \

@@ -16,7 +16,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
-USES=		libtool
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBESTR_CFLAGS="-I${LOCALBASE}/include" LIBESTR_LIBS="-L${LOCALBASE}/lib -lestr"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-testbench

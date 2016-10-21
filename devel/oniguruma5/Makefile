@@ -24,7 +24,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kkos
 
 USES=		pathfix autoreconf libtool
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

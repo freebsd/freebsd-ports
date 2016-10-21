@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 CONFLICTS=	varnish-2.* varnish-3.*
 BROKEN_arm=	does not configure
 
-USES=		autoreconf cpe gmake libedit libtool pkgconfig python:2,build \
+USES=		autoreconf cpe gmake libedit libtool pathfix pkgconfig python:2,build \
 		readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 CPE_VENDOR=	varnish-cache
@@ -39,8 +39,6 @@ EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am
 .if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
 .endif

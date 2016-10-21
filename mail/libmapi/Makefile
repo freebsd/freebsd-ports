@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/openchange-openchange-${PORTVERSION}-${CODENAME}
 USE_MYSQL=	yes
 USES=		autoreconf:build bison compiler:c++11-lib gmake pathfix \
 		pkgconfig python shebangfix sqlite
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -44,7 +45,6 @@ SHEBANG_FILES=	libmapi/conf/mparse.pl \
 		setup/openchange_neworganization \
 		setup/openchange_newuser \
 		setup/openchange_provision
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BOOST DOXYGEN
@@ -71,8 +71,7 @@ PLIST_SUB+=	SAMBA=samba42
 #  --enable-openchange-qt4 Compile OpenChange Qt4 wrapper.
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/mkdir --parent/mkdir -p/g; \
-		s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,g" \
+	@${REINPLACE_CMD} -e "s/mkdir --parent/mkdir -p/g" \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|g' \
 		${WRKSRC}/configure.ac

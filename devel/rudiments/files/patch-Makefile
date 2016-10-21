@@ -1,28 +1,20 @@
---- Makefile.orig	2015-08-05 23:06:25.000000000 +0200
-+++ Makefile	2015-08-08 12:40:43.305908000 +0200
-@@ -16,12 +16,9 @@
+--- Makefile.orig	2016-10-03 12:37:06 UTC
++++ Makefile
+@@ -17,9 +17,6 @@ install:
  	cd bin $(AND) $(MAKE) install
  	cd doc $(AND) $(MAKE) install
  	cd man $(AND) $(MAKE) install
 -	$(MKINSTALLDIRS) $(licensedir)
 -	$(CP) COPYING $(licensedir)
 -	$(CHMOD) 0644 $(licensedir)/COPYING
--	$(MKINSTALLDIRS) $(libdir)/pkgconfig
--	$(CP) rudiments.pc $(libdir)/pkgconfig
--	$(CHMOD) 644 $(libdir)/pkgconfig/rudiments.pc
-+	$(MKINSTALLDIRS) $(DESTDIR)$(prefix)/libdata/pkgconfig
-+	$(CP) rudiments.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
-+	$(CHMOD) 644 $(DESTDIR)$(prefix)/libdata/pkgconfig/rudiments.pc
- 
- uninstall:
- 	cd src $(AND) $(MAKE) uninstall
-@@ -29,8 +26,7 @@
+ 	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
+ 	$(CP) rudiments.pc $(prefix)/libdata/pkgconfig
+ 	$(CHMOD) 644 $(prefix)/libdata/pkgconfig/rudiments.pc
+@@ -30,7 +27,6 @@ uninstall:
  	cd bin $(AND) $(MAKE) uninstall
  	cd doc $(AND) $(MAKE) uninstall
  	cd man $(AND) $(MAKE) uninstall
 -	$(RMTREE) $(licensedir)
--	$(RM) $(libdir)/pkgconfig/rudiments.pc
-+	$(RM) $(DESTDIR)$(prefix)/libdata/pkgconfig/rudiments.pc
+ 	$(RM) $(prefix)/libdata/pkgconfig/rudiments.pc
  
  distclean: clean
- 	$(RM) config.mk config.cache config.h config.log config.status features.mk libtool rudiments.pc include/Makefile include/rudiments/private/config.h include/rudiments/private/config.h.in~ bin/rudiments-config src/Makefile msvc/rudiments.opensdf msvc/rudiments.sdf msvc/rudiments.suo

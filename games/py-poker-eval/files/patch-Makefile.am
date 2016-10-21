@@ -15,12 +15,3 @@
  if PYTHON_2_6
  py2_6exec_LTLIBRARIES = _pokereval_2_6.la
  _pokereval_2_6_la_SOURCES = pypokereval.c
-@@ -64,7 +72,7 @@
- _pokereval_2_3_la_CFLAGS = ${PYTHON2_3_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_3\" -D'VERSION_NAME(w)=w\#\#2_3'
- endif
- 
--pkgconfigdir = ${libdir}/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = pypoker-eval.pc
- 
- EXTRA_DIST = config/python.m4 config/ccpython.m4 \

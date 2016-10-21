@@ -21,7 +21,7 @@ DOXYGEN_BUILD_DEPENDS+=	doxygen:devel/doxygen
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
 
-USES=		cmake compiler:c++11-lang gmake
+USES=		cmake compiler:c++11-lang gmake pathfix
 
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 OPTIONS_DEFAULT=${OPTIONS_DEFINE}
@@ -40,7 +40,6 @@ DATADIR=	${PREFIX}/share/doc/RapidJSON
 PORTDATA=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIB_INSTALL_DIR}/pkgconfig"|CMAKE_INSTALL_PREFIX}/libdata/pkgconfig"|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|DOC_INSTALL_DIR}/examples"|CMAKE_INSTALL_PREFIX}/share/examples/${PORTNAME}"|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/example/CMakeLists.txt ${WRKSRC}/test/unittest/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|.*travis.*||' ${WRKSRC}/CMakeLists.txt   # travis_doc breaks cmake, see https://github.com/miloyip/rapidjson/issues/715

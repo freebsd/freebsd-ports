@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficios
 
-USES=		autoreconf:build bison gettext-runtime gmake libtool pkgconfig
+USES=		autoreconf:build bison gettext-runtime gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug-info
 USE_GNOME=	glib20
@@ -40,8 +40,6 @@ BUILD_DEPENDS+=	flex>=2.5.35:textproc/flex
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|LICENSE mit-license.txt gpl-2.0.txt||' \
-		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|/pkgconfig|/../libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|machine\/endian|sys\/endian|' \
 		${WRKSRC}/include/babeltrace/endian.h

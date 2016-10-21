@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=unused-function
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=unused-function
 LDFLAGS+=	-L${LOCALBASE}/lib
-PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ENV=	LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--enable-compile-warnings=maximum
 MAKE_ARGS=	V=1

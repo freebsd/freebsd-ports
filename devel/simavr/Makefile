@@ -20,7 +20,8 @@ BUILD_DEPENDS=	avr-gcc:devel/avr-gcc \
 USE_GITHUB=	yes
 GH_ACCOUNT=	buserror
 
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 ALL_TARGET=	build-simavr
 MAKE_ARGS=	"RELEASE=1 PREFIX=${PREFIX} DESTDIR=${STAGEDIR}${PREFIX}"
 

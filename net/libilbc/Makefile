@@ -21,7 +21,7 @@ CONFLICTS=	ilbc-r[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	TimothyGu
 
-USES=		cmake
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

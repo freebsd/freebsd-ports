@@ -13,7 +13,8 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
+PATHFIX_MAKEFILEIN=	configure
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--disable-gtk-doc
@@ -42,7 +43,6 @@ MAKE_ARGS+=	SUBDIRS="${SUBDIRS}"
 post-patch:
 	@${REINPLACE_CMD} \
 		-E -e '/LIBS/s/-lrt(\ )*//; /LIBRT/s/-lrt//' \
-		-e 's|pkgconfigdir=.*|pkgconfigdir=\"\\$$(prefix)/libdata/pkgconfig\"|g' \
 		${WRKSRC}/configure
 
 post-install:

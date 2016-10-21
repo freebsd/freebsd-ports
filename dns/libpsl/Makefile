@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--enable-man \
 		--with-psl-testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USES=		autoreconf libtool pathfix pkgconfig python:build shebangfix
 

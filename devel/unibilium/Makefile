@@ -15,13 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LGPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	mauke
 
-USES=		gmake libtool:build perl5 pkgconfig
+USES=		gmake libtool:build pathfix perl5 pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
-
-post-patch:
-	${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libunibilium.so

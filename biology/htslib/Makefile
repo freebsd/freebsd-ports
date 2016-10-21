@@ -17,10 +17,11 @@ TEST_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
 
-USES=		autoreconf gmake perl5 shebangfix
+USES=		autoreconf gmake pathfix perl5 shebangfix
 USE_PERL5=	test
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=	test/compare_sam.pl test/test.pl
 
 OPTIONS_DEFINE=		CURL

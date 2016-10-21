@@ -12,7 +12,8 @@ COMMENT=	C++ class library for daemons, clients, servers, and more
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig shebangfix
+USES=		libtool pathfix pkgconfig shebangfix
+PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=	doc/programming/insert.pl
 USE_LDCONFIG=	yes
 

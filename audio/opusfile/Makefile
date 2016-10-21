@@ -19,7 +19,6 @@ USES=		autoreconf gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 PORTDOCS=	AUTHORS README.txt
 

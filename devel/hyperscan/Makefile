@@ -16,7 +16,7 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
-USES=	compiler:c++11-lib cmake:outsource python:build pkgconfig
+USES=	compiler:c++11-lib cmake:outsource pathfix python:build pkgconfig
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	SSSE3 is required for work
 
@@ -51,10 +51,5 @@ PLIST_SUB+=	SHARED="" \
 .else
 PLIST_SUB+=	SHARED="@comment "
 .endif
-
-post-stage:
-	${MV} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/libhs.pc \
-		${STAGEDIR}/${PREFIX}/libdata/pkgconfig/
-	${RMDIR} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/
 
 .include <bsd.port.mk>

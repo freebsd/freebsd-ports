@@ -56,7 +56,7 @@ DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		cpe gmake libtool ncurses
+USES=		cpe gmake libtool ncurses pathfix
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -177,8 +177,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lthr|g' \
 			  -e 's|LC_REVISION=22|LC_REVISION=24|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf.sample \
 		${WRKSRC}/etc/freshclam.conf.sample \

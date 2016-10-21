@@ -1,6 +1,6 @@
---- gtk2/pad/Makefile.in.orig	2012-04-01 03:20:14.000000000 +0900
-+++ gtk2/pad/Makefile.in	2012-04-01 03:21:13.000000000 +0900
-@@ -63,9 +63,7 @@
+--- gtk2/pad/Makefile.in.orig	2016-10-14 09:57:35 UTC
++++ gtk2/pad/Makefile.in
+@@ -80,9 +80,7 @@ am__uim_input_pad_ja_SOURCES_DIST = ja.c
  @GTK2_TRUE@am_uim_input_pad_ja_OBJECTS =  \
  @GTK2_TRUE@	uim_input_pad_ja-ja.$(OBJEXT)
  uim_input_pad_ja_OBJECTS = $(am_uim_input_pad_ja_OBJECTS)
@@ -11,7 +11,7 @@
  uim_input_pad_ja_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_input_pad_ja_CFLAGS) \
  	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -353,8 +351,8 @@
+@@ -378,8 +376,8 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  uim_pixmapsdir = @uim_pixmapsdir@
  @GTK2_TRUE@uim_input_pad_ja_SOURCES = ja.c

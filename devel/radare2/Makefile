@@ -19,7 +19,8 @@ LIB_DEPENDS+=		libcapstone.so:devel/capstone4
 
 CONFIGURE_ARGS+=	--with-syscapstone
 
-USES=		gmake pkgconfig tar:xz
+USES=		gmake pathfix pkgconfig tar:xz
+PATHFIX_MAKEFILEIN=	Makefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -29,8 +30,6 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|..LIBDIR./pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/libr/Makefile
 	${ECHO_CMD} 'CFLAGS+=-I${LOCALBASE}/include' >> ${WRKSRC}/libr/anal/Makefile
 	${ECHO_CMD} 'CFLAGS+=-I${LOCALBASE}/include' >> ${WRKSRC}/libr/asm/Makefile
 

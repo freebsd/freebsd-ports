@@ -9,15 +9,6 @@
    # uninstall target
    configure_file(
      "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
-@@ -142,7 +142,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-       ${PROJECT_BINARY_DIR}/rime.pc
-       @ONLY)
-   install(FILES include/rime_api.h DESTINATION include)
--  install(FILES ${PROJECT_BINARY_DIR}/rime.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-+  install(FILES ${PROJECT_BINARY_DIR}/rime.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
-   install(FILES cmake/RimeConfig.cmake DESTINATION share/cmake/rime)
-   if(BUILD_DATA)
-     install(FILES ${PROJECT_SOURCE_DIR}/data/default.yaml DESTINATION ${pkgdatadir})
 @@ -153,7 +153,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
      file(GLOB supplement_schema ${PROJECT_SOURCE_DIR}/data/supplement/*.yaml)
      install(FILES ${supplement_schema} DESTINATION ${pkgdatadir})

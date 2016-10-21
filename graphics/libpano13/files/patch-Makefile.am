@@ -27,12 +27,3 @@
  libpano13_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
  
  pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)
-@@ -108,7 +118,7 @@
- noinst_HEADERS = $(INTERNAL_HDR) $(SYS_HDR) $(MAC_HDR)
- 
- # Pkg-config script.
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
- pkgconfig_DATA = libpano13.pc
- DISTCLEANFILES = $(pkgconfig_DATA)
- 

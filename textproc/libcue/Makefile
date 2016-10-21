@@ -18,6 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lipnitsk
 
 USE_LDCONFIG=	yes
-USES=		bison cmake:outsource
+USES=		bison cmake:outsource pathfix
 
 .include <bsd.port.mk>

@@ -20,7 +20,6 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig autoreconf
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

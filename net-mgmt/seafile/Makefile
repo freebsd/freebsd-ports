@@ -40,8 +40,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
-PATHFIX_MAKEFILEIN=	Makefile.am
-
 CONFIGURE_ARGS=	--enable-server
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/evhtp
