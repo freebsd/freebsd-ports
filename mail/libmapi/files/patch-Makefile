@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-10-21 15:02:43 UTC
 +++ Makefile
-@@ -255,9 +255,6
+@@ -255,9 +255,6 @@
  	$(INSTALL) -m 0644 gen_ndr/ndr_property.h $(DESTDIR)$(includedir)/gen_ndr/
  	$(INSTALL) -m 0644 gen_ndr/asyncemsmdb.h $(DESTDIR)$(includedir)/gen_ndr/
  	$(INSTALL) -m 0644 gen_ndr/ndr_asyncemsmdb.h $(DESTDIR)$(includedir)/gen_ndr/
