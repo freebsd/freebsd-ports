@@ -34,6 +34,7 @@ bin/condor_suspend
 bin/condor_tail
 bin/condor_test_match
 bin/condor_transfer_data
+bin/condor_update_machine_ad
 bin/condor_userlog
 bin/condor_userlog_job_counter
 bin/condor_userprio
@@ -42,15 +43,15 @@ bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
 bin/condor_who
-@sample etc/condor_config.sample
-@sample etc/condor_config.local.sample
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/examples/README
+%%ETCDIR%%/examples/condor-tmpfiles.conf
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
 %%ETCDIR%%/examples/condor.init
 %%ETCDIR%%/examples/condor.plist
+%%ETCDIR%%/examples/condor.service
 %%ETCDIR%%/examples/condor.sysconfig
 %%ETCDIR%%/examples/condor_config.annotated
 %%ETCDIR%%/examples/condor_config.generic
@@ -68,6 +69,8 @@ bin/condor_who
 %%ETCDIR%%/examples/mp2script
 %%ETCDIR%%/examples/openmpiscript
 %%ETCDIR%%/sysconfig/condor
+@sample etc/condor_config.local.sample
+@sample etc/condor_config.sample
 include/MyString.h
 include/chirp_client.h
 include/classad/attrrefs.h
@@ -127,7 +130,7 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
-lib/libpyclassad%%PYTHON_VER%%_8_2_8.a
+lib/libpyclassad%%PYTHON_VER%%_%%CONDOR_UVER%%.a
 lib/python/classad.so
 lib/python/htcondor.so
 lib/scimark2lib.jar
@@ -144,14 +147,17 @@ libexec/condor_power_state
 libexec/condor_rooster
 libexec/condor_schedd.init
 libexec/condor_shared_port
+libexec/condor_sinful
 libexec/condor_ssh
 libexec/condor_ssh_to_job_shell_setup
 libexec/condor_ssh_to_job_sshd_setup
+libexec/condor_testingd
 libexec/condor_transferer
 libexec/condor_urlfetch
 libexec/curl_plugin
 libexec/data_plugin
 libexec/interactive.sub
+libexec/libclassad_python_user.so
 libexec/libvirt_simple_script.awk
 libexec/sshd.sh
 man/man1/bosco_cluster.1.gz
@@ -180,6 +186,7 @@ man/man1/condor_gpu_discovery.1.gz
 man/man1/condor_history.1.gz
 man/man1/condor_hold.1.gz
 man/man1/condor_install.1.gz
+man/man1/condor_job_router_info.1.gz
 man/man1/condor_master.1.gz
 man/man1/condor_off.1.gz
 man/man1/condor_on.1.gz
@@ -213,6 +220,7 @@ man/man1/condor_submit_dag.1.gz
 man/man1/condor_suspend.1.gz
 man/man1/condor_tail.1.gz
 man/man1/condor_transfer_data.1.gz
+man/man1/condor_update_machine_ad.1.gz
 man/man1/condor_updates_stats.1.gz
 man/man1/condor_urlfetch.1.gz
 man/man1/condor_userlog.1.gz
