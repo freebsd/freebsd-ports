@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.41
-PORTREVISION=	1
+PORTVERSION=	1.4.42
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -19,6 +18,7 @@ LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool localbase pkgconfig tar:xz
+USE_CSTD=	gnu99
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USE_RC_SUBR=	lighttpd
 
-OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM IPV6 LIBEV LUA MEMCACHED MYSQL MYSQLAUTH \
+OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM GEOIP IPV6 LIBEV LUA MEMCACHED MYSQL \
 		LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
 OPTIONS_DEFAULT=	OPENSSL
@@ -43,7 +43,6 @@ LIBEV_DESC=	Fast events support via libev (disables kqueue)
 LUA_DESC=	lua support (mod_cml, mod_magnet)
 MEMCACHED_DESC=	memcached storage (mod_trigger_b4_dl)
 MYSQL_DESC=	MySQL support (mod_mysql_vhost)
-MYSQLAUTH_DESC=	MySQL authentication
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
@@ -55,6 +54,8 @@ FAM_CONFIGURE_ON=	--with-fam
 FAM_CONFIGURE_ENV=	FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+GEOIP_CONFIGURE_WITH=	geoip
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LIBEV_CONFIGURE_WITH=	libev=${LOCALBASE}
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
@@ -63,7 +64,6 @@ LUA_CONFIGURE_WITH=	lua
 LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHED_CONFIGURE_WITH=memcached
-MYSQLAUTH_IMPLIES=	MYSQL
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl-includes=${OPENSSLINC} --with-openssl-libs=${OPENSSLLIB}
@@ -71,6 +71,10 @@ SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
 VALGRIND_BUILD_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_CONFIGURE_WITH=valgrind
+WEBDAV_USE=		GNOME=libxml2
+WEBDAV_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+			libsqlite3.so:databases/sqlite3
+WEBDAV_CONFIGURE_WITH=	webdav-props webdav-locks
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
@@ -113,26 +117,10 @@ CONFIGURE_ARGS+=	--with-mysql
 _REQUIRE+=		mysql
 .endif
 
-.if ${PORT_OPTIONS:MMYSQLAUTH}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src_Makefile.am \
-			${FILESDIR}/extra-patch-src_Makefile.in \
-			${FILESDIR}/extra-patch-src_http__auth.c \
-			${FILESDIR}/extra-patch-src_http__auth.h \
-			${FILESDIR}/extra-patch-src_mod__auth.c
-PORTDOCS+=		README.mysqlauth mysql_auth.sql
-.endif
-
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 _REQUIRE+=		slapd
-.endif
-
-.if ${PORT_OPTIONS:MWEBDAV}
-USE_GNOME+=		libxml2
-LIB_DEPENDS+=		libuuid.so:misc/e2fsprogs-libuuid \
-			libsqlite3.so:databases/sqlite3
-CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
 .endif
 
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
@@ -180,12 +168,6 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for FILE in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-. endfor
-
-post-install-MYSQLAUTH-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for FILE in README.mysqlauth mysql_auth.sql
-	${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 
 test: build
