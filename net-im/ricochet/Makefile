@@ -17,6 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	tor:security/tor
 
+BROKEN_FreeBSD_9_amd64=	does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im
 
