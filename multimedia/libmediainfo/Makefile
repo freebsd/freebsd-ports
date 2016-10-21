@@ -50,6 +50,6 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libmediainfo-config ${STAGEDIR}${PREFIX}/bin/libmediainfo-config
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
-	${RM} -fr ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/
+	${RM} -r ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/
 
 .include <bsd.port.mk>

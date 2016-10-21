@@ -25,10 +25,10 @@ NO_BUILD=	yes
 SHEBANG_FILES=	keitairc
 
 post-extract:
-	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -rf
+	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -r
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
+	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -r
 	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  \
 		${WRKSRC}/keitairc
 	${REINPLACE_CMD} -i '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  \

@@ -359,7 +359,7 @@ post-configure:
 
 do-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS} distro-pack-install
-	@${RM} -f ${PLISTD} ${PLISTF}
+	@${RM} ${PLISTD} ${PLISTF}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -empty -exec ${ECHO_CMD} "@dir {}" \; >> ${PLISTD}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin etc lib man \

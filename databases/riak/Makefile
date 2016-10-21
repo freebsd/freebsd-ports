@@ -52,7 +52,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rel/vars.config
 
 pre-install:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 	${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 	(cd ${WRKSRC}/rel/${PORTNAME}; ${FIND} releases -type f \
 		| ${AWK} '{print length, $$0}' | ${SORT} -rn | ${SED} -e 's/^/lib\//' \

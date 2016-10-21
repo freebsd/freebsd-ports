@@ -41,7 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|${i}/|${DATADIR}/${i}/|g" \
 	    ${WRKSRC}/src/main.cxx
 .endfor
-	@${FIND} ${WRKSRC} -name .thumbnails | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name .thumbnails | ${XARGS} ${RM} -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

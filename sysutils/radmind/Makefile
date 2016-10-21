@@ -40,7 +40,7 @@ IGNORE_TIMESTAMPS_DESC=	Add '-t' option to fsdiff
 
 post-install:
 	# Ugly hack to remove generated man pages
-	${RM} -rf ${WRKSRC}/tmp
+	${RM} -r ${WRKSRC}/tmp
 
 	# Port's Docs (Copyright & wire protocol info)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

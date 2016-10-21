@@ -37,6 +37,6 @@ INFO=		gmp
 INFO_PATH=	${GMP_TARG}/info
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/gmp.info*
+	@${RM} ${WRKSRC}/doc/gmp.info*
 
 .include <bsd.port.mk>

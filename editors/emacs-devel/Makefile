@@ -241,7 +241,7 @@ LDFLAGS+=-ltinfo
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/info/*
+	@${RM} ${WRKSRC}/info/*
 
 ## stage-qa will give a warning, but don't pull in desktop-file-utils
 ## portlint -AC will give a warning about INSTALL_ICONS, but don't pull in those

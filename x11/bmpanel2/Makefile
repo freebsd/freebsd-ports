@@ -34,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,uint,unsigned,' ${WRKSRC}/args.c
 # Disable unused optional features (and thus unbreak "make clean")
 	@${REINPLACE_CMD} -e '/^OPTION/s, ON, OFF,' ${WRKSRC}/CMakeLists.txt
-	@${RM} -f ${WRKSRC}/themes/striped/theme.orig
+	@${RM} ${WRKSRC}/themes/striped/theme.orig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmpanel2

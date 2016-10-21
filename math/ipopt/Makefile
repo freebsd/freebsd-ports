@@ -47,13 +47,13 @@ post-extract:
 	@(${MV} ${WRKSRC}/ThirdParty/Mumps/MUMPS_4.10.0 ${WRKSRC}/ThirdParty/Mumps/MUMPS);
 
 post-install-DOCS-off:
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/coin
+	${RM} -r ${STAGEDIR}${PREFIX}/share/coin
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Ipopt/doc/documentation.pdf\
 	   ${STAGEDIR}${DOCSDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/coin/doc ${STAGEDIR}${DOCSDIR}
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/coin
+	${RM} -r ${STAGEDIR}${PREFIX}/share/coin
 
 .include <bsd.port.mk>

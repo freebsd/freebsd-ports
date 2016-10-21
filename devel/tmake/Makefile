@@ -17,7 +17,7 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/progen bin/tmake
 
 post-patch:
-	@${RM} -f ${WRKSRC}/bin/tmake.orig ${WRKSRC}/lib/unix/generic.t.orig
+	@${RM} ${WRKSRC}/bin/tmake.orig ${WRKSRC}/lib/unix/generic.t.orig
 	@${REINPLACE_CMD} \
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|/usr/X11R6|${LOCALBASE}|g' \

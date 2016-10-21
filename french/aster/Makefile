@@ -341,12 +341,12 @@ do-install:
 	@${DO_NADA}
 
 post-install:
-	${RM} -rf ${STAGEDIR}${inst_dir}/etc	# Installed by cad/astk-serveur
+	${RM} -r ${STAGEDIR}${inst_dir}/etc	# Installed by cad/astk-serveur
 	${MV} ${STAGEDIR}${inst_dir}/${VE}/share/aster/tests	\
 		${STAGEDIR}${inst_dir}/${VE}/
 	${MV} ${STAGEDIR}${inst_dir}/${VE}/share/aster/*	\
 		${STAGEDIR}${inst_dir}/${VE}/
-	${RM} -rf ${STAGEDIR}${inst_dir}/${VE}/share
+	${RM} -r ${STAGEDIR}${inst_dir}/${VE}/share
 .for f in ${V_H2FIX}
 	${REINPLACE_CMD} -e 's|${V_HOMARD0}|${V_HOMARD}|' ${STAGEDIR}${inst_dir}/${f}
 .endfor

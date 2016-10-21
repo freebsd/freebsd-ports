@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/tests
+	@${RM} -r ${WRKSRC}/tests
 
 .include <bsd.port.mk>

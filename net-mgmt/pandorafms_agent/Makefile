@@ -40,8 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '\|PREFIX=|s|=[^;]*|=${PREFIX}|' ${WRKSRC}/pandora_agent_installer
 
 post-install:
-	@${RM} -f ${STAGEDIR}${LOGDIR}/pandora_agent.log
-	@${RM} -f ${STAGEDIR}${DATADIR}/collections/.empty
+	@${RM} ${STAGEDIR}${LOGDIR}/pandora_agent.log
+	@${RM} ${STAGEDIR}${DATADIR}/collections/.empty
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}

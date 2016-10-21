@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared \
 		--sysconfdir=${ETCDIR}
 
 pre-configure:
-	@${RM} -f ${WRKSRC}/acinclude.m4
-	@${RM} -f ${WRKSRC}/utils/missing
+	@${RM} ${WRKSRC}/acinclude.m4
+	@${RM} ${WRKSRC}/utils/missing
 
 .include <bsd.port.mk>

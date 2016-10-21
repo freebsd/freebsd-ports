@@ -30,7 +30,7 @@ PLIST_SUB+=	TEST=
 
 post-install:
 .if empty(PORT_OPTIONS:MTEST)
-	@${RM} -rf ${STAGEDIR}${PREFIX}/tests
+	@${RM} -r ${STAGEDIR}${PREFIX}/tests
 .endif
 
 .include <bsd.port.mk>

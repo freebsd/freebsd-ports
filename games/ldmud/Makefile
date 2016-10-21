@@ -66,7 +66,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
 		| ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/Makefile
+	@${RM} ${STAGEDIR}${DOCSDIR}/Makefile
 .endif
 
 .include <bsd.port.mk>

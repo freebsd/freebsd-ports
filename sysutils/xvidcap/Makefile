@@ -54,7 +54,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${RM} -f ${NULLDOCS:S|^|${STAGEDIR}${DOCSDIR}/|}
+	${RM} ${NULLDOCS:S|^|${STAGEDIR}${DOCSDIR}/|}
 .endif
 
 .include <bsd.port.mk>

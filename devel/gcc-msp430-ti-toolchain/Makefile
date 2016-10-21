@@ -110,11 +110,11 @@ pre-extract:
 
 # Till we don't have Insight, we don't need to build tcl anyway
 post-patch:
-	@${RM} -rf ${WRKSRC}/tcl ${WRKSRC}/tk ${WRKSRC}/itcl \
+	@${RM} -r ${WRKSRC}/tcl ${WRKSRC}/tk ${WRKSRC}/itcl \
 		${WRKSRC}/libgui
 
 post-patch-PURE-off:
-	@${RM} -rf ${WRKSRC}/gmp ${WRKSRC}/mpfr ${WRKSRC}/mpc
+	@${RM} -r ${WRKSRC}/gmp ${WRKSRC}/mpfr ${WRKSRC}/mpc
 
 post-stage:
 	@${ECHO_MSG} "Remove unneeded host files..."
@@ -122,7 +122,7 @@ post-stage:
 		${RM} "${STAGEDIR}${GNU_CONFIGURE_PREFIX}/$$f" ; \
 	done
 	@for f in ${UNNEEDED_HOST_DIRS} ; do \
-		${RM} -rf "${STAGEDIR}${GNU_CONFIGURE_PREFIX}/$$f" ; \
+		${RM} -r "${STAGEDIR}${GNU_CONFIGURE_PREFIX}/$$f" ; \
 	done
 	@${ECHO_MSG} "Install devices' headers and linker scripts..."
 	@${MKDIR} ${STAGEDIR}${GNU_CONFIGURE_PREFIX}/include

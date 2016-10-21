@@ -23,7 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>9\.0a1<|<em:maxVersion>99.*<|' ${WRKSRC}/install.rdf
 
 pre-install:
-	@${RM} -f ${WRKSRC}/install.rdf.bak
+	@${RM} ${WRKSRC}/install.rdf.bak
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

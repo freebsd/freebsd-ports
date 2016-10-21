@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="gcompmgr" \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${RM} -f ${WRKSRC}/INSTALL
+	@${RM} ${WRKSRC}/INSTALL
 	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::mem_fun|g ; \
 		s|#include <sigc++\/compatibility\.h>||g' \
 			${WRKSRC}/src/*.cc

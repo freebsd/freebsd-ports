@@ -27,12 +27,12 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1
 
 regression-test:
-	${RM} -rf ${WRKDIR}/regression-test1
+	${RM} -r ${WRKDIR}/regression-test1
 	${MKDIR} ${WRKDIR}/regression-test1
 	${MV} ${WRKSRC}/*.[cho] ${WRKDIR}/regression-test1
-	${RM} -f ${WRKDIR}/test.zip
+	${RM} ${WRKDIR}/test.zip
 	(cd ${WRKDIR}/regression-test1 && ${WRKSRC}/minizip ${WRKDIR}/test.zip *)
-	${RM} -rf ${WRKDIR}/regression-test2
+	${RM} -r ${WRKDIR}/regression-test2
 	${MKDIR} ${WRKDIR}/regression-test2
 	${WRKSRC}/miniunzip ${WRKDIR}/test.zip -d ${WRKDIR}/regression-test2
 	${DIFF} -ur ${WRKDIR}/regression-test1 ${WRKDIR}/regression-test2 > /dev/null

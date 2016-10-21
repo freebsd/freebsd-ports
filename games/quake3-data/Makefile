@@ -30,7 +30,7 @@ TEAMARENA_DESC=		Install Quake III Team Arena data files
 .include <bsd.port.options.mk>
 
 do-extract:
-	@${RM} -rf ${WRKSRC}
+	@${RM} -r ${WRKSRC}
 	@${MKDIR} ${WRKSRC}
 	@${TAIL} +356 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} xzf - -C ${WRKSRC}

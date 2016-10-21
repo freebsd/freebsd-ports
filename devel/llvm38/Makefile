@@ -393,7 +393,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
@@ -421,7 +421,7 @@ build-plist:
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
-	${RM} -f ${PLIST}.tmp
+	${RM} ${PLIST}.tmp
 
 
 check-commands:

@@ -66,7 +66,7 @@ pre-install:
 # XXX: make gendist generates distfile.  Use with WITH_CVS.
 gendist: extract
 	cd ${WRKDIR} && \
-		${FIND} . -type d -a -name CVS | ${XARGS} ${RM} -rf && \
+		${FIND} . -type d -a -name CVS | ${XARGS} ${RM} -r && \
 		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 
 .include <bsd.port.mk>

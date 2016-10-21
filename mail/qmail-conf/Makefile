@@ -49,7 +49,7 @@ post-build:
 	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-qmail ${WRKSRC}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	@cd ${WRKSRC} ; ${RM} install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
 	@${TOUCH} ${WRKSRC}/*-conf
 	@${MV} -f ${WRKSRC}/conf-qmail.sav ${WRKSRC}/conf-qmail

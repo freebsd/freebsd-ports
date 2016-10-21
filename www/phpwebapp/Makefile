@@ -20,7 +20,7 @@ SHEBANG_FILES=	web_app/boxes/menu/edit/xsl/test/*.sh \
 		web_app/l10n-module/app/*.sh
 
 post-patch:
-	@${FIND} ${WRKSRC}/web_app/ -name .svn -type d | ${XARGS} -J % ${RM} -fr %
+	@${FIND} ${WRKSRC}/web_app/ -name .svn -type d | ${XARGS} -J % ${RM} -r %
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/

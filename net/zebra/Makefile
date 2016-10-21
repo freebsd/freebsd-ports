@@ -82,7 +82,7 @@ IGNORE=		RIPNGD requires IPV6 option
 .endif
 
 post-install:
-	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; \
+	@( cd ${WRKSRC}/doc; ${RM} zebra*info*; \
 	   ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} zebra.info install )
 	@${ECHO_MSG} "===>     installing zebra startup file..."
 	${INSTALL_SCRIPT} ${WRKDIR}/zebractl ${STAGEDIR}${PREFIX}/sbin/zebractl

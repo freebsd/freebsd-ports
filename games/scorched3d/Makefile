@@ -48,7 +48,7 @@ PLIST_FILES=	bin/scorched3d \
 PORTDATA=	*
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/client/GLEXT/[a-z]*
+	@${RM} ${WRKSRC}/src/client/GLEXT/[a-z]*
 
 post-patch:
 	@${REINPLACE_CMD} -e \

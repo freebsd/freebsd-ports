@@ -64,7 +64,7 @@ do-install:
 		else \
 			${SETENV} SIMPLE_BACKUP_SUFFIX=.CyrPS VERSION_CONTROL= \
 				${PATCH} "${FONTMAP}" ${WRKSRC}/Fontmap.diff ; \
-			${RM} -f "${FONTMAP}".CyrPS ; \
+			${RM} "${FONTMAP}".CyrPS ; \
 	fi
 .endif
 	${ECHO_CMD} ${FONTMAP} > ${STAGEDIR}${CPS_DIR}/fontmap.path

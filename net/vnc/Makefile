@@ -74,7 +74,7 @@ PLIST_SUB+=	SERVER="@comment "
 post-extract:
 .if ${PORT_OPTIONS:MSERVER}
 	@cd ${WRKSRC} && ${TAR} -cf - -C ${WRKDIR} xc | ${TAR} -xf - && \
-	${RM} -rf ${WRKDIR}/xc
+	${RM} -r ${WRKDIR}/xc
 .endif
 
 post-patch:

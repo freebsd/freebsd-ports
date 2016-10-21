@@ -94,7 +94,7 @@ pgo-clean:
 . endfor
 # Only remove some files from lib to preserve profiling information.
 	@${FIND} -E ${BUILD_WRKSRC}/lib -iregex ".*\.(a|la|lai|lo|o|so|so\..*)$$" \
-		-exec ${RM} -f {} \;
+		-exec ${RM} {} \;
 .endif # if ${PORT_OPTIONS:MPGO}
 
 .include <bsd.port.mk>

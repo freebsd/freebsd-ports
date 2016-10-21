@@ -22,7 +22,7 @@ EXAMPLES=	Makefile README error.c lookupdns.c proxy.c \
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
+	@${RM} ${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
 	@${CP} ${FILESDIR}/Makefile.main ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/Makefile.examples ${WRKSRC}/examples/Makefile
 

@@ -52,7 +52,7 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qplatformdefs.h
 # Clean up files created by patching
 	@${RM} ${WRKSRC}/mkspecs/*/*.orig
-	@${RM} -Rf ${WRKSRC}/mkspecs/unsupported/freebsd-g++46
+	@${RM} -R ${WRKSRC}/mkspecs/unsupported/freebsd-g++46
 
 post-build:
 # Complete configure stage to generate *.pri files.

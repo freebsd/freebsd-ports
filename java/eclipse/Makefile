@@ -110,7 +110,7 @@ do-build:
 		-DbuildId=${ECLIPSE_BUILDID})
 
 do-install:
-	@${RM} -rf ${STAGEDIR}${PORTDESTDIR}
+	@${RM} -r ${STAGEDIR}${PORTDESTDIR}
 	@( cd ${STAGEDIR}${PREFIX}/lib; ${TAR} xfz ${PRODUCT_TARFILE} )
 	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name \*.orig -delete
 	@${SED} \
@@ -139,6 +139,6 @@ do-install:
 	@${ECHO_CMD} "@dir share/eclipse/dropins" >> ${TMPPLIST}
 
 distclean:
-	${RM} -rf ${DISTDIR}/eclipse
+	${RM} -r ${DISTDIR}/eclipse
 
 .include <bsd.port.mk>

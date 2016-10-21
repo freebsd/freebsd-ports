@@ -27,7 +27,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -f ${WRKSRC}/sound/WS_FTP.LOG
+	@${RM} ${WRKSRC}/sound/WS_FTP.LOG
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} \

@@ -21,6 +21,6 @@ USE_PERL5=	configure
 
 post-patch:
 	# Really old M::I code
-	${RM} -rf ${WRKSRC}/inc
+	${RM} -r ${WRKSRC}/inc
 
 .include <bsd.port.mk>

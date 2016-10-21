@@ -25,7 +25,7 @@ PORTDOCS=	ia64user.txt readme
 OPTIONS_DEFINE=	DOCS
 
 pre-build:
-	@${RM} -f ${WRKSRC}/obj/*.o ${WRKSRC}/ia64sim
+	@${RM} ${WRKSRC}/obj/*.o ${WRKSRC}/ia64sim
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ia64sim ${STAGEDIR}${PREFIX}/bin

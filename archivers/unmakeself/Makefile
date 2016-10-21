@@ -17,7 +17,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/unmakeself
 
 do-configure:
-	@${RM} -f ${WRKSRC}/config.h
+	@${RM} ${WRKSRC}/config.h
 	@if ${GREP} -q memmem /usr/include/string.h; then \
 		${ECHO_CMD} "#define HAS_MEMMEM" > ${WRKSRC}/config.h; \
 	else \

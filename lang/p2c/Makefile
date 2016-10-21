@@ -20,7 +20,7 @@ USE_PERL5=	run
 ALL_TARGET=	all p2cc
 
 pre-build:
-	@${RM} -f ${WRKSRC}/p2c.man.inst
+	@${RM} ${WRKSRC}/p2c.man.inst
 
 post-build:
 	@${LN} -sf p2c.man.inst ${WRKSRC}/p2c.1

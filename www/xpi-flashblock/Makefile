@@ -19,7 +19,7 @@ post-patch:
 	    ${WRKSRC}/install.rdf
 
 pre-install:
-	@${RM} -f ${WRKSRC}/install.rdf.bak
+	@${RM} ${WRKSRC}/install.rdf.bak
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

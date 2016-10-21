@@ -17,7 +17,7 @@ USES=		python tar:bzip2
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

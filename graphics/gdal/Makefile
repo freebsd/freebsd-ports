@@ -114,14 +114,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' ${WRKSRC}/configure
 # Cleanup bundled libraries
-	@${RM} -fr ${WRKSRC}/frmts/gif/giflib/
-	@${RM} -fr ${WRKSRC}/frmts/gtiff/libgeotiff/
-	@${RM} -fr ${WRKSRC}/frmts/gtiff/libtiff/
-	@${RM} -fr ${WRKSRC}/frmts/jpeg/libjpeg/
-	@${RM} -fr ${WRKSRC}/frmts/jpeg/libjpeg12/
-	@${RM} -fr ${WRKSRC}/frmts/png/libpng/
-	@${RM} -fr ${WRKSRC}/frmts/zlib/
-	@${RM} -fr ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
+	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libgeotiff/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg12/
+	@${RM} -r ${WRKSRC}/frmts/png/libpng/
+	@${RM} -r ${WRKSRC}/frmts/zlib/
+	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/

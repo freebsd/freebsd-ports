@@ -31,7 +31,7 @@ PORTDOCS=	FiSH-xchat.txt \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${RM} -f ${WRKSRC}/mir*
+	${RM} ${WRKSRC}/mir*
 	${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
 
 do-install:

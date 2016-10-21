@@ -24,7 +24,7 @@ post-patch:	.SILENT
 	${ECHO_CMD} '.PHONY: $$(SYSTEMS)' >>${WRKSRC}/makefile
 
 do-configure:
-	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
+	-cd ${WRKSRC} ; ${RM} -r termio m68000 msdos vax pyramid ns32000 \
 			pdp11 cursor/cursor.dos cursor/cursor.ukc
 
 do-install:

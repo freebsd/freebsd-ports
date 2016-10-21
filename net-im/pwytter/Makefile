@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOS2UNIX_GLOB=	 *.py
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/twclient/simplejson
+	@${RM} -r ${WRKSRC}/twclient/simplejson
 	@${REINPLACE_CMD} -e "s|'simplejson|}, #&|" \
 		-e "s|pwParam|pwCache','&|" \
 		-e "s|d\[p\]|d\['share/'+p\]|g" \

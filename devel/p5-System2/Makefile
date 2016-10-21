@@ -15,6 +15,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 pre-configure:
-	${RM} -f ${WRKSRC}/io_test.pl
+	${RM} ${WRKSRC}/io_test.pl
 
 .include <bsd.port.mk>

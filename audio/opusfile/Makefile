@@ -50,7 +50,7 @@ post-patch:
 	@${CP} ${FILESDIR}/ftime.c ${WRKSRC}/src/
 
 post-install-DOXYGEN-on:
-	@${RM} -f ${WRKDIR}/PLIST.doc ; \
+	@${RM} ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \

@@ -49,8 +49,8 @@ post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
 		${FIND} $${dir} -name "Makefile*" -delete; \
 	done
-	@${RM} -f ${WRKSRC}/lib/getopt.h
-	@${RM} -f ${WRKSRC}/doc/*.info*
+	@${RM} ${WRKSRC}/lib/getopt.h
+	@${RM} ${WRKSRC}/doc/*.info*
 
 post-install:
 .for dir in levels pics tilesets

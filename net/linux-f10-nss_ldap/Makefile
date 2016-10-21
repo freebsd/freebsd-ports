@@ -48,11 +48,11 @@ post-patch:
 	fi
 .if !${PORT_OPTIONS:MPAM}
 	@if [ -f ${WRKSRC}/lib/security/pam_ldap.so ]; then \
-		${RM} -rf ${WRKSRC}/lib/; \
+		${RM} -r ${WRKSRC}/lib/; \
 	fi
 	@if [ -f ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/COPYING.pam_ldap ]; then \
 		${RM} ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/*.pam*; \
-		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d; \
+		${RM} -r ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d; \
 	fi
 	@if [ -f ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz ]; then \
 		${RM} ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz; \
@@ -60,7 +60,7 @@ post-patch:
 .else
 .if !${PORT_OPTIONS:MDOCS}
 	@if [ -d ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d ]; then \
-		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d/; \
+		${RM} -r ${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/pam.d/; \
 	fi
 .endif
 .endif

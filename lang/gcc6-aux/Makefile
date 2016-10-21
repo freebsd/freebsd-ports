@@ -273,7 +273,7 @@ post-stage:
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/include ${NEWBSDIR}/
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/libexec ${NEWBSDIR}/
 	${RM} ${NEWBSDIR}/bin/${GARCH}*
-	${RM} -rf ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
+	${RM} -r ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
 	(cd ${NEWBSDIR}/.. ; ${TAR} -cyf ${BSFILENAME} bootstrap)
 .endif
 

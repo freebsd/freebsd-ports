@@ -18,7 +18,7 @@ post-patch:
 	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
 
 do-install:
-	${RM} -f ${WRKSRC}/modules/tcllibc/license.terms
+	${RM} ${WRKSRC}/modules/tcllibc/license.terms
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tcllib
 	${MV} ${WRKSRC}/modules/tcllibc ${STAGEDIR}${PREFIX}/lib/tcllib/
 	${SED} -e s,%%PLATFORM%%,`${LOCALBASE}/bin/critcl -show | ${SED} -n 's| *platform *||p'`,\

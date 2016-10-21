@@ -61,7 +61,7 @@ post-build-DOXYGEN-on:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} srcdoc
 
 post-install-DOCS-off:
-	@${RM} -rf ${STAGEDIR}${DOCSDIR}
+	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
 post-install-DOXYGEN-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc

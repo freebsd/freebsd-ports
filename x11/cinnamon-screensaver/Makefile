@@ -45,7 +45,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/cinnamon-screensaver.pam \
 		${STAGEDIR}${PREFIX}/etc/pam.d/cinnamon-screensaver
-	${RM} -fr ${STAGEDIR}${PREFIX}/etc/pam.d/pam.d/
+	${RM} -r ${STAGEDIR}${PREFIX}/etc/pam.d/pam.d/
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh

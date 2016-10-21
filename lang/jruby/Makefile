@@ -51,7 +51,7 @@ post-patch:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` `${FIND} ${WRKSRC} -name '*.bak'`
+	@${RM} `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` `${FIND} ${WRKSRC} -name '*.bak'`
 	@${ECHO_MSG} " [ DONE ]"
 
 .for target in ${REPLACE_FILES}

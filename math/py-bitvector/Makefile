@@ -20,7 +20,7 @@ PYDISTUTILS_PKGNAME=	BitVector
 PORTDOCS=	README BitVector-${PORTVERSION}.html
 
 post-extract:
-	@${RM} -f ${WRKSRC}/test.py
+	@${RM} ${WRKSRC}/test.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

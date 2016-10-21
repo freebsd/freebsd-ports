@@ -32,7 +32,7 @@ post-extract:
 	@${RM} ${WRKSRC}/base/*.pk3
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC}/base && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST}
 

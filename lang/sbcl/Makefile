@@ -177,7 +177,7 @@ post-patch:
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} CC="${CC}" ${SH} make.sh ${MAKE_SH_ARGS})
-	${RM} -rf ${WRKSRC}/contrib/sb-cover/test-output
+	${RM} -r ${WRKSRC}/contrib/sb-cover/test-output
 	${REINPLACE_CMD} -E -e \
 		's|\$$Date\$$|'"`${SETENV} LANG=C /bin/date '+%B %d, %Y'`|g" \
 		${WRKSRC}/doc/sbcl.1

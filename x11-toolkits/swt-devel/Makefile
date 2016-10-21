@@ -80,7 +80,7 @@ DIST_EXT=	gtk-linux-x86
 
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_NATIVE_CMD} -qo *.zip)
-	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
+	@${RM} ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
 
 post-patch:
 	@${SED} -E -e 's|%%ARCH%%|${ARCH}|' \

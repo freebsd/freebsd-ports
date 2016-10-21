@@ -89,7 +89,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x49gp ${STAGEDIR}${PREFIX}/bin/x49gp-bin
 
 	${INSTALL_SCRIPT} ${WRKDIR}/hp50g.sh ${STAGEDIR}${PREFIX}/bin/hp50g
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/hp49g+
+	${RM} ${STAGEDIR}${PREFIX}/bin/hp49g+
 	${LN} ${STAGEDIR}${PREFIX}/bin/hp50g ${STAGEDIR}${PREFIX}/bin/hp49g+
 
 	${INSTALL_DATA} ${DISTDIR}/sdcard64.tar.gz ${STAGEDIR}${DATADIR}/

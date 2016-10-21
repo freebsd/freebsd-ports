@@ -39,7 +39,7 @@ pre-patch:
 
 post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${RM} `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_MSG} " [ DONE ]"
 
 do-install:

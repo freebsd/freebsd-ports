@@ -93,13 +93,13 @@ post-install:
 		       ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBMAJ} ; done
 
 post-install-JAVA-off:
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/java
+	${RM} -r ${STAGEDIR}${DOCSDIR}/java
 .for i in gsg gsg_db_rep gsg_txn
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}/JAVA
+	${RM} -r ${STAGEDIR}${DOCSDIR}/${i}/JAVA
 .endfor
 
 post-install-SQL-off:
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/bdb-sql
+	${RM} -r ${STAGEDIR}${DOCSDIR}/bdb-sql
 
 post-install-TCL-on:
 	echo "package ifneeded Db_tcl ${BDBVER} \
@@ -108,7 +108,7 @@ post-install-TCL-on:
 
 post-install-TCL-off:
 .for i in api_reference/TCL
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ GTK1_USE_OFF=	GNOME=gtk20
 GTK1_VARS_OFF=	GTK_PC=gtk+-2.0
 
 post-extract:
-	@${RM} -f ${WRKSRC}/getopt.h
+	@${RM} ${WRKSRC}/getopt.h
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME} \

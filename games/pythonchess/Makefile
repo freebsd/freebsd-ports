@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Python Chess" "" "${PORTNAME}" \
 
 post-patch:
 	@${FIND} ${WRKDIR} -name Thumbs.db -or -name pygame2exe_Chess.py | \
-		${XARGS} ${RM} -fr
+		${XARGS} ${RM} -r
 	@${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|' \
 		${WRKSRC}/*.py
 	@(cd ${WRKSRC} && ${RM} *.py.bak)

@@ -32,7 +32,7 @@ pre-everything::
 do-configure:
 	${REINPLACE_CMD} -e "s|/usr/bin/pg|${LOCALBASE}/bin/pg|" \
 		${WRKSRC}/conf/config.inc.php-dist
-	${RM} -f ${WRKSRC}/conf/config.inc.php \
+	${RM} ${WRKSRC}/conf/config.inc.php \
 		${WRKSRC}/conf/config.inc.php-dist.bak
 
 do-install:

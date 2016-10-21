@@ -17,7 +17,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -f ${WRKSRC}/pm_to_blib
+	@${RM} ${WRKSRC}/pm_to_blib
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Text/PDF/examples

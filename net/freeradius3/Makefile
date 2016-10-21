@@ -361,7 +361,7 @@ post-patch:
 		${WRKSRC}/src/modules/rlm_krb5/configure
 .endif
 .if empty(PORT_OPTIONS:MRUBY)
-	@${RM} -fr ${WRKSRC}/src/modules/rlm_ruby/
+	@${RM} -r ${WRKSRC}/src/modules/rlm_ruby/
 .endif
 
 post-build:

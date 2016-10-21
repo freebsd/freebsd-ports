@@ -54,7 +54,7 @@ post-patch::
 .if ${PORT_OPTIONS:MSOUND}
 post-install::
 	cd ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data; \
-		${RM} -f Make*; \
+		${RM} Make*; \
 		${CP} -R ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data \
 		${STAGEDIR}${DATADIR};
 .endif

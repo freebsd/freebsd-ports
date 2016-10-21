@@ -125,7 +125,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${STAGEDIR}${MANPREFIX}/man/man1/melt.1
-	@${RM} -f ${WRKSRC}/docs/melt.1
+	@${RM} ${WRKSRC}/docs/melt.1
 .if ${PORT_OPTIONS:MDOCS}
 . for f in ${PORTDOCS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DOCSDIR}

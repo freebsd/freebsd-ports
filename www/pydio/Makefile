@@ -27,7 +27,7 @@ SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST+=	GOWDIR=${WWWDIR:H}
 
 post-patch:
-	@${RM} -f ${WRKSRC}/plugins/gui.ajax/res/themes/vision/images/mimes/16/._users-folder.png
+	@${RM} ${WRKSRC}/plugins/gui.ajax/res/themes/vision/images/mimes/16/._users-folder.png
 	@${MV} ${WRKSRC}/conf/bootstrap_conf.php ${WRKDIR}/bootstrap_conf.php.sample
 	@${MV} ${WRKSRC}/conf/bootstrap_context.php ${WRKDIR}/bootstrap_context.php.sample
 	@${MV} ${WRKSRC}/conf/bootstrap_repositories.php ${WRKDIR}/bootstrap_repositories.php.sample

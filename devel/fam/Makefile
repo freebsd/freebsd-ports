@@ -31,7 +31,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/libfam/Makefile.am
 
 pre-configure:
-	${RM} -fr ${WRKSRC}/util
+	${RM} -r ${WRKSRC}/util
 	${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
 	${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am

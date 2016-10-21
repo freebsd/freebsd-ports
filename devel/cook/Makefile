@@ -28,6 +28,6 @@ pre-install:
 # cook installs extra copies of the manpages in a directory that MANLANG can't
 # cope with.  Delete the extra copies.
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/cook/en/man1
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/cook/en/man1
 
 .include <bsd.port.mk>

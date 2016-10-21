@@ -129,7 +129,7 @@ pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/bin
 
 pre-install:
-	cd ${WRKSRC}/Resource/Init && ${RM} -f \
+	cd ${WRKSRC}/Resource/Init && ${RM} \
 	    gs_statd.ps.orig gs_ttf.ps.orig pdf_font.ps.orig
 	${MKDIR} ${STAGEDIR}${DATADIR}
 

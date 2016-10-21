@@ -31,8 +31,8 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	${TAR} xfjp ${_DISTDIR}/${PORTNAME}_music${EXTRACT_SUFX} -C \
 		${WRKSRC}/data/music/
-	@cd ${WRKSRC}/data/music ; ${RM} -f *.mod
-	@${FIND} ${WRKDIR} -name .xvpics -print0 | ${XARGS} -0 ${RM} -fr
+	@cd ${WRKSRC}/data/music ; ${RM} *.mod
+	@${FIND} ${WRKDIR} -name .xvpics -print0 | ${XARGS} -0 ${RM} -r
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/bugsquish/|${DATADIR}/| ; \

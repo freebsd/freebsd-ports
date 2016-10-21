@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 post-patch:
-	${RM} -f ${WRKSRC}/doc/gcrypt.info*
+	${RM} ${WRKSRC}/doc/gcrypt.info*
 	${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
 
 post-install:

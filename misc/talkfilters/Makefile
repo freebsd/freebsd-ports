@@ -28,7 +28,7 @@ post-extract:
 	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-patch:
-	@${RM} -f ${WRKSRC}/*.info*
+	@${RM} ${WRKSRC}/*.info*
 	@${REINPLACE_CMD} -e \
 		's|^\(pkgconfigdir\ =\ \).*|\1$$(prefix)/libdata/pkgconfig|' \
 			${WRKSRC}/Makefile.am \

@@ -28,8 +28,8 @@ post-patch:
 		 s|gtk\.idle_add|gobject\.idle_add|g' ${WRKSRC}/gretools.py
 
 post-install:
-	${RM} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gretools/gretools.pyc
-	${RM} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gretools/gretools.pyo
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gretools/gretools.pyc
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gretools/gretools.pyo
 	${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR}/gretools \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gretools

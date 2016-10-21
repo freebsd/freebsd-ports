@@ -23,8 +23,8 @@ pre-install::
 	${RM} ${WRKSRC}/${PORTNAME}/docs/index.php
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/${PORTNAME}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	${RM} -rf ${WRKSRC}/${PORTNAME}/README
-	${RM} -rf ${WRKSRC}/${PORTNAME}/docs
+	${RM} -r ${WRKSRC}/${PORTNAME}/README
+	${RM} -r ${WRKSRC}/${PORTNAME}/docs
 
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

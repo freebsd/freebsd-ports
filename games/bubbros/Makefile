@@ -33,7 +33,7 @@ post-patch:
 		${WRKSRC}/display/setup.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete \
 		-or -name "*.cvsignore" -delete
-	@${FIND} ${WRKSRC} -name CVS -print0 | ${XARGS} -0 ${RM} -fr
+	@${FIND} ${WRKSRC} -name CVS -print0 | ${XARGS} -0 ${RM} -r
 
 do-build:
 	# Compile the statesaver extension module
@@ -41,7 +41,7 @@ do-build:
 	# Compile the X-window client extension module
 	cd ${WRKSRC}/display; ${PYTHON_CMD} setup.py build_ext -i
 .for d in bubbob display
-	@(cd ${WRKSRC}/${d} && ${RM} -fr build)
+	@(cd ${WRKSRC}/${d} && ${RM} -r build)
 .endfor
 
 do-install:

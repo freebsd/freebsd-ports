@@ -297,7 +297,7 @@ post-patch::
 		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
-	@${RM} -f ${WRKSRC}/missing
+	@${RM} ${WRKSRC}/missing
 .if defined(WITH_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \

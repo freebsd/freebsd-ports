@@ -30,6 +30,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
+	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

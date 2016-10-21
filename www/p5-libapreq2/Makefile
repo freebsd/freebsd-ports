@@ -39,7 +39,7 @@ post-patch:
 post-stage:
 	# remove all the non-perl stuff
 	${RM} ${STAGEDIR}${PREFIX}/bin/apreq2-config
-	${RM} -rf ${STAGEDIR}${PREFIX}/include/apreq2
+	${RM} -r ${STAGEDIR}${PREFIX}/include/apreq2
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/apreq2/apreq_module_apache2.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/libapreq2*
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2*

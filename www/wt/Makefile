@@ -220,7 +220,7 @@ CMAKE_ARGS+=	-DMYSQL_PREFIX:STRING=${LOCALBASE}
 .endif
 
 post-stage:
-	@${RM} -f ${STAGEDIR}${ETCDIR}/wt_config.xml
+	@${RM} ${STAGEDIR}${ETCDIR}/wt_config.xml
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${CP} -p ${BUILD_WRKSRC}/wt_config.xml \
 		${STAGEDIR}${ETCDIR}/wt_config.xml.sample

@@ -41,6 +41,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${SEALIB}
 	(cd ${STAGEDIR}${PREFIX}/lib && \
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
 
 .include <bsd.port.mk>

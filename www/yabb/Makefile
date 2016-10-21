@@ -44,7 +44,7 @@ PERLFILES=	AdminIndex.pl BoardConvert.pl Convert.pl \
 		Convert2x.pl Setup.pl Sources/SpellChecker.pl YaBB.pl
 
 post-extract:
-	@${RM} -rf ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
+	@${RM} -r ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
 
 do-patch:
 .for _I in ${PERLFILES}

@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 ALL_TARGET=	octave
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

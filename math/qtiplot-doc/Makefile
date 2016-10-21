@@ -25,7 +25,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${RM} -rf ${WRKSRC}/html/pics-it
+	${RM} -r ${WRKSRC}/html/pics-it
 	cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

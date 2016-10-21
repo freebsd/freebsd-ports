@@ -74,7 +74,7 @@ DATABASE+=	sqlite
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name *.orig -type f -delete
 
 post-configure:

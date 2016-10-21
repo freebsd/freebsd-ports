@@ -21,6 +21,6 @@ CLIENT_ONLY=	yes
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4
-	${RM} -rf ${STAGEDIR}${PREFIX}/include/mysql/private
+	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/private
 
 .include "${MASTERDIR}/Makefile"

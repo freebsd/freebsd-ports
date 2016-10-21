@@ -18,7 +18,7 @@ SHEBANG_FILES=	demo.pl
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${RM} -f ${WRKSRC}/._*
+	@${RM} ${WRKSRC}/._*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -53,7 +53,7 @@ post-patch:
 .endfor
 
 	@${MV} -f ${WRKSRC}/contrib/gosa.conf.5 ${WRKSRC}
-	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} +
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} +
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

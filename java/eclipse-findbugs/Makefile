@@ -25,7 +25,7 @@ PLIST_SUB=	\
 	DISTNAME="${DISTNAME}"
 
 post-extract:
-	@${RM} -Rf ${WRKSRC}/src
+	@${RM} -R ${WRKSRC}/src
 
 do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${DISTNAME})

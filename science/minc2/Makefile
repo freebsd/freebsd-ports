@@ -38,8 +38,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS=	minc-1* zh-tk-[0-9]*
 
 pre-patch:
-	@${RM} -f ${WRKSRC}/ac_config_aux/*
-	@${RM} -f ${WRKSRC}/progs/minccalc/gram.[ch]
-	@${RM} -f ${WRKSRC}/progs/mincgen/ncgentab.[ch]
+	@${RM} ${WRKSRC}/ac_config_aux/*
+	@${RM} ${WRKSRC}/progs/minccalc/gram.[ch]
+	@${RM} ${WRKSRC}/progs/mincgen/ncgentab.[ch]
 
 .include <bsd.port.mk>

@@ -17,6 +17,6 @@ PLIST_FILES=	bin/gnugo \
 		man/man6/gnugo.6.gz
 
 post-extract:
-	${RM} -f ${WRKSRC}/doc/gnugo.info*
+	${RM} ${WRKSRC}/doc/gnugo.info*
 
 .include <bsd.port.mk>

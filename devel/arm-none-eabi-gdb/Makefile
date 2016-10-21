@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--target=arm-none-eabi --program-prefix=arm-none-eabi- --disable
 		--disable-werror
 
 pre-configure:
-	cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
+	cd ${WRKSRC} ; ${RM} -r dejagnu expect tcl texinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \

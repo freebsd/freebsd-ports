@@ -20,7 +20,7 @@ MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}" \
 PLIST_FILES=	bin/nosefart
 
 pre-build:
-	@${RM} -rf ${BUILD_WRKSRC}/nsfobj
+	@${RM} -r ${BUILD_WRKSRC}/nsfobj
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nsfobj/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

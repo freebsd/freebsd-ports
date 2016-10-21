@@ -398,7 +398,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor

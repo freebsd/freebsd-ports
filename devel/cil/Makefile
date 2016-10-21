@@ -85,7 +85,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${RM} -rf ${WRKSRC}/doc/cilcode.tmp
+	@${RM} -r ${WRKSRC}/doc/cilcode.tmp
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -134,7 +134,7 @@ maint-gen-distfile:
 	svn export -r${SVN_REV} \
 		 https://svn.code.sf.net/p/vbam/code/trunk/ ${DISTNAME}
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
-	${RM} -rf ${DISTNAME}
+	${RM} -r ${DISTNAME}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vbam

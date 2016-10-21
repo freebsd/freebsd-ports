@@ -92,6 +92,6 @@ post-patch:
 
 # rbzeitgeist plugin needs py3-zeitgeist
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/rhythmbox/plugins/rbzeitgeist
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/rhythmbox/plugins/rbzeitgeist
 
 .include <bsd.port.post.mk>

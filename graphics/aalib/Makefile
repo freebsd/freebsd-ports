@@ -33,10 +33,10 @@ CONFIGURE_ARGS=	--with-x=no
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/aalib.info*
+	@${RM} ${WRKSRC}/doc/aalib.info*
 
 post-patch:
-	@${RM} -f ${WRKSRC}/config.cache
+	@${RM} ${WRKSRC}/config.cache
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g' \
 		${WRKSRC}/configure

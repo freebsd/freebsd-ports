@@ -44,7 +44,7 @@ QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/qt/interfaces.ppu:edito
 QT4_MAKE_ARGS=	PLATFORM=qt
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/src/lnet/lib/openssl.pas
+	@${RM} -r ${WRKSRC}/src/lnet/lib/openssl.pas
 
 post-patch:
 	@${SED} -e s!%%LOCALBASE%%!${LOCALBASE}!g \
@@ -65,7 +65,7 @@ post-patch:
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
 		${WRKSRC}/Makefile
-	${RM} -rf ${WRKSRC}/src/mysql
+	${RM} -r ${WRKSRC}/src/mysql
 	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fLoTWExport.lrs \
 		${WRKSRC}/src/fLoTWExport.lfm
 	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fPreferences.lrs \

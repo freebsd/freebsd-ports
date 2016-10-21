@@ -358,7 +358,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/src/libvlc-module.c
-	@${RM} -rf ${WRKSRC}/modules/access/v4l2/linux
+	@${RM} -r ${WRKSRC}/modules/access/v4l2/linux
 # XXX FreeBSD doesn't have strerror_l() - use the android version of error.c
 	@${CP} ${WRKSRC}/src/android/error.c ${WRKSRC}/src/posix
 .if ${PORT_OPTIONS:MQT4}

@@ -31,8 +31,8 @@ post-patch:
 		cd ${WRKSRC} && \
 			${MV} contrib/conkeror.desktop . && \
 			${MV} contrib/man/conkeror.1 . && \
-			${RM} -rf contrib/debian contrib/dist contrib/man debian tests && \
-			${RM} -f contrib/build.sh contrib/install.sh contrib/mketags.sh \
+			${RM} -r contrib/debian contrib/dist contrib/man debian tests && \
+			${RM} contrib/build.sh contrib/install.sh contrib/mketags.sh \
 			contrib/testrun.sh contrib/run-conkeror && \
 			${MKDIR} share  && \
 			${MV} branding chrome components content \

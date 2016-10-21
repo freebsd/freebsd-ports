@@ -30,10 +30,10 @@ WRITEABLES=	config sess tmp
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} -f %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
 .for CONFIG in ${CONFIGS}
 	@${ECHO_CMD} '@sample ${WWWDIR_REL}/config/${CONFIG}.sample' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/${CONFIG}_sample ]; then ${RM} -f %D/${WWWDIR_REL}/config/${CONFIG}_sample; fi' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/${CONFIG}_sample ]; then ${RM} %D/${WWWDIR_REL}/config/${CONFIG}_sample; fi' >> ${TMPPLIST}
 .endfor
 .for I in ${LAMDATA}
 	@${FIND} -s ${WRKSRC}/${I} -type f -not -name '*.sample' | ${SED} -e 's,^${WRKSRC},${WWWDIR_REL},' >> ${TMPPLIST}

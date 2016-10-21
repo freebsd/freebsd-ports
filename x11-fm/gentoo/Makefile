@@ -41,6 +41,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	${RM} -f ${STAGEDIR}${DOCSDIR}/gentoo.1x
+	${RM} ${STAGEDIR}${DOCSDIR}/gentoo.1x
 
 .include <bsd.port.mk>

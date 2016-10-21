@@ -242,7 +242,7 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/${header}/*.h \
 			${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
 .    endfor
-	@${RM} -f ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
+	@${RM} ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${GREP} "#define \(COMPILE\|HAVE\|USE\)_" ${WRKSRC}/config.h \
 		> ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
@@ -264,7 +264,7 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec grep -v ext/${PHP_MODNAME}/config.h %D/include/php/ext/php_config.h.orig > %D/include/php/ext/php_config.h || true" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rm %D/include/php/ext/php_config.h.orig" \
+	@${ECHO_CMD} "@unexec ${RM} %D/include/php/ext/php_config.h.orig" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "${PHP_EXT_INI_FILE}" \
 		>> ${TMPPLIST}

@@ -77,7 +77,7 @@ post-install:
 .for f in ${ETCFILES}
 	@${MV} ${STAGEDIR}${ETCDIR}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
-	@${RM} -rf ${STAGEDIR}${DATADIR}/conf
+	@${RM} -r ${STAGEDIR}${DATADIR}/conf
 	@${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}

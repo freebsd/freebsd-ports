@@ -24,13 +24,13 @@ SVN_CMD2=	svn export -r15423
 
 maint-gen-distfile:
 	@if [ ! -f "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" ] ; then \
-		${MKDIR} ${WRKDIR} ; cd ${WRKDIR} ; ${RM} -Rf ${WRKDIR}/${DISTNAME} ; \
+		${MKDIR} ${WRKDIR} ; cd ${WRKDIR} ; ${RM} -R ${WRKDIR}/${DISTNAME} ; \
 		${ECHO_MSG} "=> Checking out PyCalendar from svn.calendarserver.org/..."; \
 		${SVN_CMD2} ${SVN_REPOSITORY_URL}/${SVN_TAG2} > /dev/null ; \
 		${MV} trunk ${DISTNAME} ; \
 		${ECHO_MSG} "=> Creating tar archive ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}"; \
 		cd ${WRKDIR} ; tar -czf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${DISTNAME} ; \
-		${RM} -Rf ${WRKDIR}/${DISTNAME} ; \
+		${RM} -R ${WRKDIR}/${DISTNAME} ; \
 	else \
 		${ECHO_MSG} "===>	${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} found." ; \
 	fi

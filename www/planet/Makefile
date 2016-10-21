@@ -20,7 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
 	@${RM}	${WRKSRC}/.bzrignore
-	@${FIND} ${WRKSRC}/ -type d -name '.bzr' | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC}/ -type d -name '.bzr' | ${XARGS} ${RM} -r
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

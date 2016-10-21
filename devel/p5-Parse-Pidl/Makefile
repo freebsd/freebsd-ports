@@ -29,6 +29,6 @@ PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC=			${WRKDIR}/${DISTNAME}/pidl
 
 post-extract:
-			@${RM} -rf ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
+			@${RM} -r ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
 
 .include "${MASTERDIR}/Makefile"

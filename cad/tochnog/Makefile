@@ -94,7 +94,7 @@ do-install:
 	  ${STAGEDIR}${GID_PTYPES}/tochnog.gid
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${RM} -f ${WRKDIR}/Sources/test/*.orig
+	${RM} ${WRKDIR}/Sources/test/*.orig
 	${INSTALL_DATA} ${WRKDIR}/Sources/test/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

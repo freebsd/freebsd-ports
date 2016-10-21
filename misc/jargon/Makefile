@@ -15,7 +15,7 @@ DATADIR=	${PREFIX}/share/jargon
 
 post-extract:
 	(cd ${WRKSRC}; \
-	 ${RM} -rf html/graphics/.xvpics graphics/.xvpics \
+	 ${RM} -r html/graphics/.xvpics graphics/.xvpics \
 		html/letters.html~ html/online-preface.html~)
 
 do-install:

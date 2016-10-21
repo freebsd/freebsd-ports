@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-strip
 INFO=		gsl-ref
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/gsl-ref.info*
+	@${RM} ${WRKSRC}/doc/gsl-ref.info*
 
 #prevent regression test coredumps from causing failures on the
 #package-building cluster:

@@ -16,6 +16,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
+	@${RM} ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
 
 .include <bsd.port.mk>

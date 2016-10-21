@@ -30,8 +30,8 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
 
 post-extract:
-	${FIND} ${WRKSRC} -type d -name __pycache__ -exec ${RM} -rf {} + && \
-	${FIND} ${WRKSRC} -type f -name '*.py[co]' -exec ${RM} -f {} +
+	${FIND} ${WRKSRC} -type d -name __pycache__ -exec ${RM} -r {} + && \
+	${FIND} ${WRKSRC} -type f -name '*.py[co]' -exec ${RM} {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

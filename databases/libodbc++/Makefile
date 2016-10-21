@@ -28,7 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	progref
 
 post-extract:
-	${RM} -f ${WRKSRC}/doc/progref/progref-stamp
+	${RM} ${WRKSRC}/doc/progref/progref-stamp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' ${WRKSRC}/configure

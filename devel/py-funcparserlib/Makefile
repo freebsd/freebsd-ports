@@ -22,7 +22,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${RM} -f ${WRKSRC}/doc/Makefile
+	@${RM} ${WRKSRC}/doc/Makefile
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${INSTALL_WRKSRC} \
 	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \

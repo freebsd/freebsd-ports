@@ -20,7 +20,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-extract:
-	@${RM} -f ${WRKSRC}/_mssql.c
+	@${RM} ${WRKSRC}/_mssql.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mssql.so \

@@ -28,7 +28,7 @@ post-patch:
 	${REINPLACE_CMD} 's/ $$(LDFLAGS)//' ${WRKSRC}/Makefile.in
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>
