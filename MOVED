@@ -8770,3 +8770,4 @@ www/mod_php55||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
 www/php55-opcache||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
 www/php55-session||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
 www/php55-tidy||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
+www/lighttpd-mod_geoip|www/lighttpd|2016-10-21|Integrated into www/lighttpd
