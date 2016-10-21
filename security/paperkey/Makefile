@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paperkey
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/ \
 		http://mirrors.rit.edu/zi/
