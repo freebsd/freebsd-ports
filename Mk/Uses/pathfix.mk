@@ -17,7 +17,11 @@ IGNORE=	USES=pathfix does not require args
 .endif
 
 PATHFIX_CMAKELISTSTXT?=	CMakeLists.txt
+.if ${USES:Mautoreconf*}
+PATHFIX_MAKEFILEIN?=	Makefile.am
+.else
 PATHFIX_MAKEFILEIN?=	Makefile.in
+.endif
 PATHFIX_WRKSRC?=	${WRKSRC}
 
 _USES_patch+=	190:pathfix
