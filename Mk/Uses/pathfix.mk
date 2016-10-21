@@ -39,10 +39,14 @@ pathfix:
 		's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 		s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]LIBDIR[)]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \
+		s|@libdir@/locale|@prefix@/share/locale|g ; \
+		s|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g ; \
 		s|[{]libdir[}]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[{]LIBDIR[}]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \
 		s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[{]datadir[}]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[[:<:]]lib/pkgconfig|libdata/pkgconfig|g; \
 		s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
 		s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 .endif
