@@ -45,8 +45,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/usrshare/package_doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
-	${RM} -rf ${STAGEDIR}${DATADIR}/setup_install/cyg
-	@${RM} -rf ${STAGEDIR}${DOCSDIR}/CHANGES ${STAGEDIR}${DOCSDIR}/LICENCE.GPL
-	@${RM} -rf ${STAGEDIR}${DATADIR}/doc_user ${STAGEDIR}${DATADIR}/package_doc
+	${RM} -r ${STAGEDIR}${DATADIR}/setup_install/cyg
+	@${RM} -r ${STAGEDIR}${DOCSDIR}/CHANGES ${STAGEDIR}${DOCSDIR}/LICENCE.GPL
+	@${RM} -r ${STAGEDIR}${DATADIR}/doc_user ${STAGEDIR}${DATADIR}/package_doc
 
 .include <bsd.port.mk>

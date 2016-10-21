@@ -18,7 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/zlib
+	@${RM} -r ${WRKSRC}/zlib
 
 post-patch:
 	@${REINPLACE_CMD} '/main/s/unsigned int/int/' \

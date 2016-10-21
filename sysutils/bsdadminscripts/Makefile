@@ -49,7 +49,7 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
-	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample
+	${RM} -r ${STAGEDIR}${PREFIX}/etc/*.sample
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

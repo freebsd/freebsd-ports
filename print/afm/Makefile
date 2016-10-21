@@ -14,6 +14,6 @@ COMMENT=	Adobe Font Metrics
 
 NO_BUILD=	yes
 pre-patch:
-	@${RM} -rf ${WRKSRC}/RCS
+	@${RM} -r ${WRKSRC}/RCS
 
 .include <bsd.port.mk>

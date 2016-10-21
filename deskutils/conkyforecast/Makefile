@@ -39,7 +39,7 @@ post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/bin/python,/usr/bin/env,g' \
 		conkyForecast \
 		conkyForecast-SunsetSunriseCountdown
-	@cd ${WRKSRC} && ${RM} -fr test/*.bak example/*.bak
+	@cd ${WRKSRC} && ${RM} -r test/*.bak example/*.bak
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

@@ -85,7 +85,7 @@ PLIST_SUB+=	AMD64="@comment "
 
 .if !${PORT_OPTIONS:MDOCS}
 post-patch:
-	@${RM} -rf ${WRKSRC}/docs/html
+	@${RM} -r ${WRKSRC}/docs/html
 .endif
 
 post-build:

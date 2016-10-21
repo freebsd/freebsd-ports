@@ -56,7 +56,7 @@ CLASSPATH:=${CLASSPATH}:${JAVALIBDIR}/${jar}
 .endfor
 
 post-patch:
-	${RM} -rf ${WRKSRC}/org/eclipse
+	${RM} -r ${WRKSRC}/org/eclipse
 	@${SED} -E -e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
 

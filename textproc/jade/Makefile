@@ -31,7 +31,7 @@ post-extract:
 
 pre-install:
 	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) \
-		-exec ${RM} -f \{} \;
+		-exec ${RM} \{} \;
 
 post-install:
 .for i in jade nsgmls sgmlnorm spam spent sx

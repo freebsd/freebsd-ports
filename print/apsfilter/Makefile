@@ -136,7 +136,7 @@ RUN_DEPENDS+=	${_DEPENDS_CONVERT}
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
+	${RM} ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
 	${LN} -sfn ${PREFIX}/share/apsfilter ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
 
 .include <bsd.port.mk>

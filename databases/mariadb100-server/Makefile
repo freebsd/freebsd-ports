@@ -154,7 +154,7 @@ USE_GCC=	yes
 .endif
 
 post-extract-OQGRAPH-off:
-	@${RM} -rf ${WRKSRC}/storage/oqgraph
+	@${RM} -r ${WRKSRC}/storage/oqgraph
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt

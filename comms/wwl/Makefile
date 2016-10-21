@@ -15,7 +15,7 @@ CONFLICTS=	locator*
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wwl ${STAGEDIR}${PREFIX}/bin
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/locator
+	@${RM} ${STAGEDIR}${PREFIX}/bin/locator
 	@${LN} -sf wwl ${STAGEDIR}${PREFIX}/bin/locator
 	@${INSTALL_DATA} ${WRKSRC}/wwl.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

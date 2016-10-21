@@ -93,7 +93,7 @@ post-patch: avahi-post-patch
 avahi-post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/man/*.*
-	@${RM} -f ${WRKSRC}/man/*.bak
+	@${RM} ${WRKSRC}/man/*.bak
 	@${REINPLACE_CMD} -e 's|-ldl||g ; s|netdev|network|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \

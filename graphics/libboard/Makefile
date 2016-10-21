@@ -43,13 +43,13 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-	${RM} -rf ${STAGEDIR}${DOCSDIR}/.svn
+	${RM} -r ${STAGEDIR}${DOCSDIR}/.svn
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/bin/ && ${COPYTREE_BIN} . ${STAGEDIR}${EXAMPLESDIR}/
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/.svn
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/.svn
 .endif
 
 regression-test:

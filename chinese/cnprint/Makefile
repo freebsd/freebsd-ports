@@ -31,7 +31,7 @@ do-extract:
 .endfor
 	cd ${WRKSRC} ; \
 	${TAR} pzvxf hbf.tar.gz ; ${MV} hbf/* . ; \
-	${RM} -fr hbf ; \
+	${RM} -r hbf ; \
 	${GUNZIP_CMD} *.gz || ${TRUE}
 
 post-patch:

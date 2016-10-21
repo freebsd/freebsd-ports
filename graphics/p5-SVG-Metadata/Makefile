@@ -18,6 +18,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	${RM} -f ${WRKSRC}/lib/SVG/Metadata.pm.orig
+	${RM} ${WRKSRC}/lib/SVG/Metadata.pm.orig
 
 .include <bsd.port.mk>

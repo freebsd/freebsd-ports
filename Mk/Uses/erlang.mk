@@ -86,12 +86,12 @@ post-patch-erlang:
 		${REINPLACE_CMD} -i '' -e "s@\./rebar3@${REBAR3_CMD}@; s@\./rebar@${REBAR_CMD}@" \
 			${WRKSRC}/rebar.config; \
 	fi
-	@${RM} -f ${WRKSRC}/src/*.orig ${WRKSRC}/include/*.orig
+	@${RM} ${WRKSRC}/src/*.orig ${WRKSRC}/include/*.orig
 
 .if !target(do-build)
 do-build:
 # This will cause calls to local rebar and rebar3 to fail; makes it easier to spot them
-	@${RM} -f ${WRKSRC}/rebar ${WRKSRC}/rebar3
+	@${RM} ${WRKSRC}/rebar ${WRKSRC}/rebar3
 .for target in ${REBAR_TARGETS}
 # Remove rebar.lock every time - it can be created again after each run of rebar3
 	@${RM} ${WRKSRC}/rebar.lock

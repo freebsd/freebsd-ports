@@ -34,7 +34,7 @@ PLIST_SUB= 	OWNER="${SHAREOWN}" GROUP="${SHAREGRP}" MODE="${SHAREMODE}"
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${RM} -rf ${WRKSRC}
+	@${RM} -r ${WRKSRC}
 	@${MKDIR} ${WRKSRC}
 	@for file in ${DICTFILES}; do \
 		${ECHO} "Extracting $$file"; \

@@ -27,7 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R $$(${MAKE} -C ${PORTSDIR}/irc/eggdrop -V WRKSRC) ${WRKSRC}
 	cd ${WRKSRC}/src/mod && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}

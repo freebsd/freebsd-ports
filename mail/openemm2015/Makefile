@@ -77,7 +77,7 @@ post-extract:
 	${RM} ${WRKSRC}/backend/GNUMakefile
 	# remove the c libs which are also installed as dependencies ports
 	# ${WRKSRC}/backend/contrib/sa-1.2.6.tar.gz  -> net/ossp-sa   and ${WRKSRC}/backend/contrib/slang-1.4.9.tar.gz -> devel/libslang2
-	${RM} -rf ${WRKSRC}/backend/contrib
+	${RM} -r ${WRKSRC}/backend/contrib
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -180,7 +180,7 @@ do-build:
 	${RM} ${WRKSRC}/target/bin/openemm.py
 
 	${MV} ${WRKSRC}/target/bin/USR_SHARE ${WRKSRC}/USR_SHARE
-	${RM} -rf ${WRKSRC}/target/src
+	${RM} -r ${WRKSRC}/target/src
 
 	# remove problem tld with missing classes
 	# SEEMS TO BE REMOVED ... @${RM} ${WRKSRC}/target/webapps/openemm/WEB-INF/struts-tiles.tld

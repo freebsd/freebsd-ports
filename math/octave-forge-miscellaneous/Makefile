@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:math/octave-forge-general
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

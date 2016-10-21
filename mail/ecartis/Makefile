@@ -30,6 +30,6 @@ pre-install:
 	${MKDIR} ${IDEST}
 	cd ${WRKDIR}/${PORTNAME}-1.0.0 && ${FIND} * -print | \
 		${CPIO} -pdu --quiet ${IDEST}
-	${RM} -rf ${IDEST}/src/ ${IDEST}/debian ${IDEST}/ecartis.ds[pw]
+	${RM} -r ${IDEST}/src/ ${IDEST}/debian ${IDEST}/ecartis.ds[pw]
 
 .include <bsd.port.mk>

@@ -51,7 +51,7 @@ PLIST_SUB+=	MODEL_SUFFIX="md2b"
 post-extract:
 	${RM} ${WRKSRC}/models/*
 	@cd ${WRKSRC}/models && \
-		${RM} -f * && \
+		${RM} * && \
 		${UNZIP_CMD} -qj ${DISTDIR}/shotgun-debugger-1.0.mac-ppc.zip \
 			'sdb-1.0-macosx/models/*.md2b'
 .endif

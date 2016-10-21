@@ -37,7 +37,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -name __pycache__ -type d -exec ${RM} -rf {} +
+	${FIND} ${WRKSRC} -name __pycache__ -type d -exec ${RM} -r {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

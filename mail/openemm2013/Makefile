@@ -79,10 +79,10 @@ post-extract:
 
 	# remove the c libs which are also installed as dependencies ports
 	# ${WRKSRC}/contrib/sa-1.2.6.tar.gz  -> net/ossp-sa   and ${WRKSRC}/contrib/slang-1.4.9.tar.gz -> devel/libslang2
-	${RM} -rf ${WRKSRC}/contrib
+	${RM} -r ${WRKSRC}/contrib
 
 	# remove not needed c buildscripts
-	${RM} -rf ${WRKSRC}/other/make_backend.sh
+	${RM} -r ${WRKSRC}/other/make_backend.sh
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -196,7 +196,7 @@ do-build:
 	${RM} ${WRKSRC}/target/bin/openemm.py
 
 	${MV} ${WRKSRC}/target/USR_SHARE ${WRKSRC}/USR_SHARE
-	${RM} -rf ${WRKSRC}/target/src
+	${RM} -r ${WRKSRC}/target/src
 
 	# remove problem tld with missing classes
 	${RM} ${WRKSRC}/target/webapps/openemm/WEB-INF/struts-tiles.tld

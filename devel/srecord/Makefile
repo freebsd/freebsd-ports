@@ -52,7 +52,7 @@ test:
 	@cd ${WRKSRC} && ${MAKE} sure
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 	${MAKE} makeplist | \
 	    ${GREP} -v /you/have/to/check/what/makeplist/gives/you >> ${PLIST}
 

@@ -42,7 +42,7 @@ post-patch:
 		-e 's/@MYCFLAGS@/@CFLAGS@ -Wall -fPIC -fsigned-char/' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
-	@${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
+	@${RM} ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libestraier.so

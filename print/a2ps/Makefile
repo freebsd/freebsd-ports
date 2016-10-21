@@ -86,6 +86,6 @@ post-install:
 .endif
 	cd ${WRKSRC}/doc && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${MAKE_ARGS} ${INSTALL_TARGET}
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/liba2ps.la
+	${RM} ${STAGEDIR}${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>

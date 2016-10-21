@@ -66,6 +66,6 @@ do-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
 	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
 
 .include <bsd.port.mk>

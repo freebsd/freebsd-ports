@@ -54,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 	@${REINPLACE_CMD} -e 's|unix.conf|freebsd.conf|' \
 		${WRKSRC:H}/mkspecs/freebsd-icc/qmake.conf
-	@${RM} -Rf ${WRKSRC:H}/mkspecs/freebsd-g++46
+	@${RM} -R ${WRKSRC:H}/mkspecs/freebsd-g++46
 
 # Add mkspec for clang
 	@${CP} -a ${WRKSRC:H}/mkspecs/freebsd-g++ \

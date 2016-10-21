@@ -17,7 +17,7 @@ USES=		dos2unix uidfix
 PLIST_FILES=	include/asm-xml.h lib/libasm-xml.a
 
 post-extract:
-	${RM} -rf ${WRKSRC}/obj
+	${RM} -r ${WRKSRC}/obj
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile

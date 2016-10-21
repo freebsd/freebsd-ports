@@ -147,7 +147,7 @@ post-configure:
 		-e 's,(${PATTERN}+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
 
 check-test: do-install
-	@cd ${WRKSRC}/testsuite; ${RM} -f _log; for d in tests/* ; do \
+	@cd ${WRKSRC}/testsuite; ${RM} _log; for d in tests/* ; do \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} one DIR=$${d} \
 	2>&1 | tee -a _log || ${TRUE} ; done ; \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} report

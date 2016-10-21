@@ -41,6 +41,6 @@ post-patch:
 		${WRKSRC}/install.rdf
 
 pre-install:
-	@${RM} -f ${WRKSRC}/install.rdf.bak
+	@${RM} ${WRKSRC}/install.rdf.bak
 
 .include <bsd.port.mk>

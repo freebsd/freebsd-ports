@@ -80,7 +80,7 @@ post-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/internat
 	(cd ${WRKSRC}/doc/internat &&	\
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
-	${RM} -f ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
+	${RM} ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
 	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
 
 post-install-DOCS-on:

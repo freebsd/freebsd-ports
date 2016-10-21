@@ -30,7 +30,7 @@ do-install:
 	  ${CP} $$info ${STAGEDIR}${PREFIX}/info && \
 	  ${CP} -r ${WRKSRC}/* ${STAGEDIR}${FDOC} && \
 	  cd ${STAGEDIR}${FDOC} && \
-	  ${RM} -f $$info && \
+	  ${RM} $$info && \
 	  ${RMDIR} festival/info
 
 .include <bsd.port.mk>

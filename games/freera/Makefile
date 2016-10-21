@@ -29,7 +29,7 @@ post-patch:
 		${WRKSRC}/src/video/graphicsengine.cpp ${WRKSRC}/src/vfs/vfs.cpp \
 		${WRKSRC}/data/settings/files.ini
 	@${RM} ${WRKSRC}/data/settings/files.ini.bak
-	@${RM} -rf ${WRKSRC}/data/settings/ra/.svn ${WRKSRC}/data/settings/td/.svn
+	@${RM} -r ${WRKSRC}/data/settings/ra/.svn ${WRKSRC}/data/settings/td/.svn
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freera ${STAGEDIR}${PREFIX}/bin/

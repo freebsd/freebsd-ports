@@ -30,7 +30,7 @@ post-patch:
 		${WRKSRC}/examples/*.py \
 		${WRKSRC}/${PORTNAME}/*.py
 	@${FIND} ${WRKSRC} -name '.svn' -or -name '*.bak' | \
-		${XARGS} ${RM} -rf
+		${XARGS} ${RM} -r
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}

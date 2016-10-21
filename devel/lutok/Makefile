@@ -53,7 +53,7 @@ PLIST_SUB+=	TESTS="@comment "
 
 .if ! ${PORT_OPTIONS:MDOCS}
 pre-install: .SILENT
-	${RM} -rf ${WRKSRC}/api-docs
+	${RM} -r ${WRKSRC}/api-docs
 .endif
 
 .include <bsd.port.mk>

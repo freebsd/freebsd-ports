@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/docear-1.2.0.0_stable_build291
 SUB_FILES=	docear.desktop
 
 do-install:
-	@${RM} -f ${WRKSRC}/docear.bat ${WRKSRC}/docear.exe ${WRKSRC}/*.bak
+	@${RM} ${WRKSRC}/docear.bat ${WRKSRC}/docear.exe ${WRKSRC}/*.bak
 # We can't install into $DOCSDIR or support disabling a DOCS option
 # since the documentation is an integral part of the installation,
 # such as online help via the program menus.

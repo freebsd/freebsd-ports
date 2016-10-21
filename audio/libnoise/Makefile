@@ -36,6 +36,6 @@ do-install:
 		${INSTALL_LIB} libnoise.la ${STAGEDIR}${PREFIX}/lib)
 	(cd ${WRKSRC}/include && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/noise)
-	${RM} -f ${STAGEDIR}${PREFIX}/include/noise/Makefile
+	${RM} ${STAGEDIR}${PREFIX}/include/noise/Makefile
 
 .include <bsd.port.mk>

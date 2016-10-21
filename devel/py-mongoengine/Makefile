@@ -21,6 +21,6 @@ USE_PYTHON=	autoplist distutils
 
 # bson is provided by pymongo
 post-patch:
-	@${RM} -rf ${WRKSRC}/bson
+	@${RM} -r ${WRKSRC}/bson
 
 .include <bsd.port.mk>

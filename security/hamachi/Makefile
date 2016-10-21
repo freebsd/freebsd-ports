@@ -22,7 +22,7 @@ PORTDOCS=	README CHANGES
 MAKE_ENV=	HAMACHI_DST=${STAGEDIR}${PREFIX}/bin TUNCFG_DST=${STAGEDIR}${PREFIX}/sbin
 
 post-patch:
-	${RM} -f ${WRKSRC}/tuncfg/tuncfg
+	${RM} ${WRKSRC}/tuncfg/tuncfg
 	${LOCALBASE}/bin/upx -d ${WRKSRC}/hamachi
 
 do-build:

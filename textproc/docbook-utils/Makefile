@@ -39,6 +39,6 @@ post-patch:
 			${WRKSRC}/backends/txt
 
 pre-configure:
-	${RM} -f ${WRKSRC}/config.cache
+	${RM} ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>

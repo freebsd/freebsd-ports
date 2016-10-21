@@ -70,7 +70,7 @@ install-doc:
 
 # Remove unused file
 remove-empty-files:
-	@${RM} -f ${STAGEDIR}${DATADIR}/site-forth/siteinit.fs
+	@${RM} ${STAGEDIR}${DATADIR}/site-forth/siteinit.fs
 
 # Remove unused directories
 remove-empty-dirs:

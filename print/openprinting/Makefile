@@ -93,7 +93,7 @@ post-patch:
 
 post-install:
 .for unneeded in bin sbin man/man1 man/mani share
-	@${RM} -rf ${STAGEDIR}${PREFIX}/${unneeded}
+	@${RM} -r ${STAGEDIR}${PREFIX}/${unneeded}
 .endfor
 
 .include <bsd.port.mk>

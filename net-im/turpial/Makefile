@@ -28,7 +28,7 @@ LOCALES_DIR=	ca de eo es fr it ja pt_BR pt_PT ru_RU tr
 post-extract:
 # setuptools doesn't exclude these directories
 .for dir in unity gtk
-	@${RM} -Rf ${WRKSRC}/turpial/ui/${dir}
+	@${RM} -R ${WRKSRC}/turpial/ui/${dir}
 .endfor
 
 post-patch:

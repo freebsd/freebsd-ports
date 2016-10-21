@@ -27,7 +27,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/inc
+	@${RM} -r ${WRKSRC}/inc
 
 .include <bsd.port.pre.mk>
 

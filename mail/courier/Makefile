@@ -329,7 +329,7 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${STAGEDIR}${DATADIR}/htmldoc/* ${STAGEDIR}${DOCSDIR}/html
 .endif
-	@${RM} -rf ${STAGEDIR}${DATADIR}/htmldoc
+	@${RM} -r ${STAGEDIR}${DATADIR}/htmldoc
 	@-${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
 	@${CHMOD} -R a+r ${STAGEDIR}${DATADIR}/courierwebadmin
 	@${CHMOD} -R a-w ${STAGEDIR}${DATADIR} ${STAGEDIR}${LIBEXECDIR}/courier

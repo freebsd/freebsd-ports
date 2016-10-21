@@ -22,7 +22,7 @@ USES+=		makeinfo
 INFO=		libtool
 
 post-patch:
-	@${RM} -f ${WRKSRC}/doc/*.info*
+	@${RM} ${WRKSRC}/doc/*.info*
 	@${TOUCH} ${WRKSRC}/doc/libtool.1
 
 .include <bsd.port.mk>

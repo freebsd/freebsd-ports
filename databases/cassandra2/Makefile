@@ -75,7 +75,7 @@ post-patch:
 .endfor
 	${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
 		${WRKSRC}/bin/cassandra.in.sh
-	${RM} -f ${WRKSRC}/conf/*.orig
+	${RM} ${WRKSRC}/conf/*.orig
 .if ${PORT_OPTIONS:MCQL}
 	${REINPLACE_CMD} -e 's|os.path.dirname(__file__)|"${DATADIR}/bin"|' \
 		${WRKSRC}/bin/cqlsh

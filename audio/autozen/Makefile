@@ -33,7 +33,7 @@ USE_GNOME=	gtk20
 MAKE_ENV=	GTK_CONFIG="pkg-config gtk+-2.0"
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f autozen seq2wav
+	@cd ${WRKSRC} && ${RM} autozen seq2wav
 
 post-patch:
 	@${REINPLACE_CMD} -e \

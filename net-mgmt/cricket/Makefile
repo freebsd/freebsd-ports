@@ -38,7 +38,7 @@ do-install:
 	${MKDIR} -m 755 ${CRICKETBASE}/cricket-${PORTVERSION}
 	${CP} -R ${WRKSRC}/* ${CRICKETBASE}/cricket-${PORTVERSION}
 	${FIND} ${CRICKETBASE}/cricket-${PORTVERSION} -name \*.orig -or \
-		-name \*.bak | ${XARGS} ${RM} -f
+		-name \*.bak | ${XARGS} ${RM}
 	${LN} -s cricket-${PORTVERSION} \
 		${CRICKETBASE}/cricket
 	if [ -f ${LOCALBASE}/cricket/compile ] ; then \

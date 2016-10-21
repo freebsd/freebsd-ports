@@ -45,7 +45,7 @@ post-patch:
 		-e 's|^Exec.*|Exec=${PORTNAME}|' \
 		${WRKSRC}/data/pysol.desktop
 	@${FIND} ${WRKDIR} -name .thumbnails -or -name .xvpics | \
-		${XARGS} ${RM} -rf
+		${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 post-patch-NLS-off:
@@ -58,7 +58,7 @@ post-install:
 
 post-install-CARDSETS-on:
 .for cdir in ${CARDSET_DUPS}
-	@${RM} -rf ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
+	@${RM} -r ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
 .endfor
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}

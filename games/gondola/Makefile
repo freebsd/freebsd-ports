@@ -37,7 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' ${WRKSRC}/gamelib/*.py
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/gamelib/data.py ${WRKSRC}/gamelib/main.py
-	@${RM} -f ${WRKSRC}/gamelib/*.{bak,orig}
+	@${RM} ${WRKSRC}/gamelib/*.{bak,orig}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "snowui gamelib simplejson run_game.py" \

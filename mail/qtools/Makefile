@@ -37,7 +37,7 @@ post-build:
 	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
 	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o auto_home.c
+	@cd ${WRKSRC} ; ${RM} install instcheck install.o instcheck.o hier.o auto_home.o auto_home.c
 	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
 	@${TOUCH} ${WRKSRC}/replier-config
 	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home

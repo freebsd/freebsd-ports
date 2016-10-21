@@ -79,8 +79,8 @@ do-build:
 
 # Dynamic PLIST sucks, but it's over 8K lines, which sucks even more :(
 post-build:
-	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
-	${RM} -rf `${FIND} ${WRKSRC} -name .hg -o -name .hgignore \
+	${RM} -r `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
+	${RM} -r `${FIND} ${WRKSRC} -name .hg -o -name .hgignore \
 		-o -name .hgtags -o -name .cvsignore`
 	@( cd ${WRKDIR} ; \
 	  ${FIND} plan9 -type f; \

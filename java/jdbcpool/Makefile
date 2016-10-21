@@ -20,7 +20,7 @@ PORTDOCS+=	javadoc
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
-	@${FIND} ${WRKSRC} -name CVS -type dir | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS -type dir | ${XARGS} ${RM} -r
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar

@@ -29,8 +29,8 @@ DEBUG_VARS=		DEBUG_FLAGS="-DDEBUG -g"
 OPTIMIZED_CFLAGS_VARS=	PTYPES_CFLAGS+="-O2"
 
 pre-install:
-	@${RM} -f ${WRKSRC}/include/*.orig
-	@${RM} -f ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
+	@${RM} ${WRKSRC}/include/*.orig
+	@${RM} ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ptypes

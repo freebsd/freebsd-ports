@@ -27,6 +27,6 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/COPYING
+	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

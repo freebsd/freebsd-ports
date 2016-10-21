@@ -60,8 +60,8 @@ post-patch:
 do-build:
 	${RM} ${WRKSRC}/bin/*.bat
 	${RM} ${WRKSRC}/bin/*.ps1
-	${RM} -rf ${WRKSRC}/bin/service
-	${RM} -rf ${WRKSRC}/bin/init.d
+	${RM} -r ${WRKSRC}/bin/service
+	${RM} -r ${WRKSRC}/bin/init.d
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}

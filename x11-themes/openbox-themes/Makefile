@@ -20,7 +20,7 @@ NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/debian
+	@${RM} -r ${WRKSRC}/debian
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes

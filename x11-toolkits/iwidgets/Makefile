@@ -36,7 +36,7 @@ post-patch:
 		-e 's,@ITCL_VERSION@,3.3,g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/iwidgets
+	${RM} ${STAGEDIR}${PREFIX}/lib/iwidgets
 	${LN} -s ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/iwidgets
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

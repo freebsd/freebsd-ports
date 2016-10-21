@@ -47,7 +47,7 @@ SUB_FILES=	pkg-message
 post-extract:
 	@${CP} ${_DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
 	@${CP} ${_DISTDIR}/*.pl ${WRKSRC}/
-	@${RM} -rf ${WRKSRC}/theme/us_english.pl
+	@${RM} -r ${WRKSRC}/theme/us_english.pl
 	@for i in ${WRKSRC}/data/*xml ${WRKSRC}/*config.pl;\
 		do ${MV} $$i $$i.sample; done
 	@${SED} -e 's/iso-8859-1/utf-8/' ${WRKSRC}/us_english.pl >\
@@ -55,7 +55,7 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/theme/ical/.keep_me
 
 post-patch:
-	@${RM} -f ${WRKSRC}/theme/plans.template.orig
+	@${RM} ${WRKSRC}/theme/plans.template.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -36,7 +36,7 @@ post-patch:
 			${REINPLACE_CMD} -E 's,([^-]auto)(conf|make|reconf|update|header|scan),\1\2-${BUILD_VERSION},g ; \
 						s,(config\.guess|config\.sub|ifnames),\1-${BUILD_VERSION},g' $$file ; \
 		done)
-	@(cd ${WRKSRC}/doc && ${RM} -f *.info)
+	@(cd ${WRKSRC}/doc && ${RM} *.info)
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@PACKAGE@$$|@PACKAGE@-@VERSION@|'
 

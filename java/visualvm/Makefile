@@ -24,8 +24,8 @@ SUB_FILES=	visualvm.desktop
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.dll' -or -name '*.exe' \) -delete
-	@${RM} -rf ${WRKSRC}/profiler/lib/deployed
-	@${RM} -rf ${WRKSRC}/profiler/lib/jfluid-server-15.jar
+	@${RM} -r ${WRKSRC}/profiler/lib/deployed
+	@${RM} -r ${WRKSRC}/profiler/lib/jfluid-server-15.jar
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/visualvm

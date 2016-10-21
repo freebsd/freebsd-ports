@@ -118,7 +118,7 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	cd ${WRKSRC}/doc/html && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}/html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/settings
-	cd ${WRKSRC}/doc/settings && ${RM} -rf CVS \
+	cd ${WRKSRC}/doc/settings && ${RM} -r CVS \
 		&& ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
 
 .include <bsd.port.mk>

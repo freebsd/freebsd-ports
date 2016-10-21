@@ -63,8 +63,8 @@ CONFLICTS_INSTALL=	timidity-[0-9]*
 DOCFILES=	README.alsaseq README.dl README.m2m README.mts README.sf
 
 pre-patch:
-	@${RM} -f ${WRKSRC}/libarc/*.h
-	@${RM} -f ${WRKSRC}/utils/mblock.h
+	@${RM} ${WRKSRC}/libarc/*.h
+	@${RM} ${WRKSRC}/utils/mblock.h
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIMID_LIBDIR}

@@ -32,7 +32,7 @@ pre-patch:
 		${WRKSRC}/doormand.c
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/etc/doormand/ipf_add
+	${RM} ${STAGEDIR}${PREFIX}/etc/doormand/ipf_add
 	(cd ${FILESDIR} && ${INSTALL_SCRIPT} ipf_add.atend ipf_delete \
 		ipf_add.before_block ${STAGEDIR}${PREFIX}/etc/doormand)
 	${INSTALL_DATA} ${WRKDIR}/doormand.cf.EXAMPLE \

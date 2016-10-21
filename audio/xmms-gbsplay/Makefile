@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-nas --prefix=${PREFIX}
 PLIST_FILES=	lib/xmms/Input/gbsxmms.so
 
 post-extract:
-	@${RM} -f ${WRKSRC}/po/subdir.mk
+	@${RM} ${WRKSRC}/po/subdir.mk
 
 post-patch:
 	@${REINPLACE_CMD} -e \

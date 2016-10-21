@@ -21,6 +21,6 @@ do-install:
 	PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-clean:
-	@${RM} -f ${STAGEDIR}${PREFIX}/etc/ph_server
+	@${RM} ${STAGEDIR}${PREFIX}/etc/ph_server
 
 .include <bsd.port.mk>

@@ -40,7 +40,7 @@ test:
 	cd ${WRKSRC} ; ${MAKE_CMD} test
 
 pre-install:
-	${RM} -rf ${ORIGWRKSRC}/docs-tla/PLUGIN \
+	${RM} -r ${ORIGWRKSRC}/docs-tla/PLUGIN \
 		${ORIGWRKSRC}/docs-tla/{arch} ${ORIGWRKSRC}/docs-tla/.arch-ids
 
 do-install:

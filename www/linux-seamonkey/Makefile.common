@@ -35,7 +35,7 @@ _Q=	2>/dev/null || true
 
 .if !target(post-extract)
 post-extract:
-	@${RM} -rf ${WRKSRC}/updates
+	@${RM} -r ${WRKSRC}/updates
 	@${LN} -sf ${LOCALBASE}/lib/browser_plugins/symlinks/${APP_NAME} \
 		${WRKSRC}/${APP_SUBDIR}plugins
 .endif

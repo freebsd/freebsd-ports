@@ -31,7 +31,7 @@ OPTIONS_SUB=	yes
 TESTS_DESC=	Install tests
 
 post-patch:
-	@cd ${WRKSRC}; ${RM} -f cute_icons_for_site/Thumbs.db
+	@cd ${WRKSRC}; ${RM} cute_icons_for_site/Thumbs.db
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

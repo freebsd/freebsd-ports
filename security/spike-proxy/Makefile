@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${RM} -rf ${WRKSRC}/*.bak
+	@${RM} -r ${WRKSRC}/*.bak
 	${CP} -Rp ${WRKSRC}/* ${STAGEDIR}${DATADIR}
 	${SED} "s|DATADIR|${DATADIR}|" ${SCRIPTDIR}/spkproxy.sh > \
 		${STAGEDIR}${PREFIX}/bin/spkproxy.sh

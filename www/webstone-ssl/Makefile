@@ -31,7 +31,7 @@ CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
 pre-configure:
-	@${RM} -f ${WRKSRC}/src/config.cache
+	@${RM} ${WRKSRC}/src/config.cache
 
 do-install:
 	@${RMDIR} ${WRKSRC}/bin/runs

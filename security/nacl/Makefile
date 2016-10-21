@@ -30,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -i -e "s|c++|${CXX}|" ${WRKSRC}/okcompilers/cpp
 
 pre-build:
-	${RM} -rf ${WRKSRC}/crypto_onetimeauth/poly1305/amd64
+	${RM} -r ${WRKSRC}/crypto_onetimeauth/poly1305/amd64
 
 do-build:
 	cd ${WRKSRC} && ./do

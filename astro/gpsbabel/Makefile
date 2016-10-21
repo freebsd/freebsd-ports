@@ -36,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} '/langPath_ = / \
 		s|QApplication::applicationDirPath()|"${DATADIR}"|' \
 			${WRKSRC}/gui/mainwindow.cc
-	@${RM} -rf ${WRKSRC}/zlib/contrib/minizip
+	@${RM} -r ${WRKSRC}/zlib/contrib/minizip
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${STAGEDIR}${PREFIX}/bin/

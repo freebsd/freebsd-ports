@@ -25,6 +25,6 @@ USE_PERL5=	configure
 
 # Do not use bundled Inline::MakeMaker
 post-patch:
-	@${RM} -fr ${WRKSRC}/Inline/
+	@${RM} -r ${WRKSRC}/Inline/
 
 .include <bsd.port.mk>

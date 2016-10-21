@@ -253,11 +253,11 @@ post-install-script:
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	# Cleanup the indexen created by gen_contents_index
-	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/doc-index-*.html" >> ${TMPPLIST}
-	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/index*.html" >> ${TMPPLIST}
-	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/*.png" >> ${TMPPLIST}
+	@${ECHO} "@unexec ${RM} %D/${DOCSDIR_REL}/html/libraries/doc-index-*.html" >> ${TMPPLIST}
+	@${ECHO} "@unexec ${RM} %D/${DOCSDIR_REL}/html/libraries/index*.html" >> ${TMPPLIST}
+	@${ECHO} "@unexec ${RM} %D/${DOCSDIR_REL}/html/libraries/*.png" >> ${TMPPLIST}
 .endif
-	@${ECHO} '@unexec ${RM} -f %D/${GHC_LIBDIR_REL}/package.conf.d/package.cache' >>${TMPPLIST}
+	@${ECHO} '@unexec ${RM} %D/${GHC_LIBDIR_REL}/package.conf.d/package.cache' >>${TMPPLIST}
 	@${ECHO} "@exec %D/bin/ghc-pkg recache" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} '@exec ${SH} -c "cd %D/${DOCSDIR_REL}/html/libraries && ./gen_contents_index"' >> ${TMPPLIST}
@@ -299,7 +299,7 @@ pre-configure:
 .endif
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/haddock
+	@${RM} ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf haddock-ghc-${GHC_VERSION} ${STAGEDIR}${PREFIX}/bin/haddock
 .endif

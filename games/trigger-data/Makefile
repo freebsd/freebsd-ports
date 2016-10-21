@@ -24,7 +24,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/trigger.png
 .endfor
 # Avoid conflict with trigger-rally
-	@${RM} -f ${STAGEDIR}${DATADIR}/COPYING* \
+	@${RM} ${STAGEDIR}${DATADIR}/COPYING* \
 		${STAGEDIR}${DATADIR}/README*
 
 .include <bsd.port.mk>

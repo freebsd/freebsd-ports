@@ -47,7 +47,7 @@ DESKTOP_ENTRIES="MediathekView" \
 		false
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
 	@${UNZIP_CMD} -q -d ${WRKSRC} ${DISTDIR}/${EXTRACT_ONLY}
 

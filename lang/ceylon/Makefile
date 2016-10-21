@@ -27,7 +27,7 @@ CEYLON_DIRS=	contrib lib repo samples templates
 .include <bsd.port.pre.mk>
 
 do-install:
-	${RM} -f ${WRKSRC}/bin/*.bat
+	${RM} ${WRKSRC}/bin/*.bat
 
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/* ${STAGEDIR}/${MAN1PREFIX}/man/man1
 

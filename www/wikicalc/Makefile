@@ -18,7 +18,7 @@ SHEBANG_FILES=	*.pl
 perl_CMD=	${LOCALBASE}/bin/perl -I${DATADIR}
 
 post-extract:
-	@${RM} -f ${WRKSRC}/gpl.txt
+	@${RM} ${WRKSRC}/gpl.txt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

@@ -42,8 +42,8 @@ LIBXMDIR=	${LOCALBASE}
 .endif
 
 pre-patch:
-	@${RM} -fv ${WRKSRC}/ddd/ddd.info*
-	@${RM} -fv ${WRKSRC}/ddd/ddd-themes.info*
+	@${RM}v ${WRKSRC}/ddd/ddd.info*
+	@${RM}v ${WRKSRC}/ddd/ddd-themes.info*
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} \

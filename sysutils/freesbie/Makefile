@@ -30,7 +30,7 @@ pre-configure:
 
 do-install:
 	@ ${MKDIR} ${STAGEDIR}${DATADIR}
-	@ ${RM} -f ${WRKSRC}/scripts/iso.sh.orig \
+	@ ${RM} ${WRKSRC}/scripts/iso.sh.orig \
 		${WRKSRC}/scripts/pkginstall.sh.orig \
 		${WRKSRC}/scripts/pkgselect.sh.orig
 	@ cd ${WRKSRC} && ${FIND} . -type f -print | tar -cf - -T - | \

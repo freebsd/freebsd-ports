@@ -277,7 +277,7 @@ do-install:
 		-e 's,%%LOCALBASE%%,${LOCALBASE},'	\
 		-e 's,%%PREFIX%%,${PREFIX},'		\
 		${STAGEDIR}${DOCSDIR}/Sophos.install.freebsd
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/Sophos.install.freebsd.bak
+	@${RM} ${STAGEDIR}${DOCSDIR}/Sophos.install.freebsd.bak
 .else
 	@${ECHO_MSG} -n ">> Installing manpage..."
 .endif

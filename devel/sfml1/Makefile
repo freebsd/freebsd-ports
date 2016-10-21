@@ -36,7 +36,7 @@ PORTSCOUT=	limit:[^c]$$
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -f ${WRKSRC}/lib/*
+	@${RM} ${WRKSRC}/lib/*
 	@${FIND} ${WRKSRC}/samples/bin/ -type f -maxdepth 1 -delete
 
 post-install:

@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 GCONF_SCHEMAS=	at-spi.schemas
 
 post-extract:
-	@${RM} -f ${WRKSRC}/registryd/Accessibility_Registry.server
+	@${RM} ${WRKSRC}/registryd/Accessibility_Registry.server
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" ${WRKSRC}/Makefile.in

@@ -45,8 +45,8 @@ USES=		perl5
 USE_PERL5=	modbuild
 
 post-patch:
-	@cd ${WRKSRC} && ${RM} -f bin/send_nsca
-	@cd ${WRKSRC} && ${RM} -f t/send_nsca.t
+	@cd ${WRKSRC} && ${RM} bin/send_nsca
+	@cd ${WRKSRC} && ${RM} t/send_nsca.t
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./Build test

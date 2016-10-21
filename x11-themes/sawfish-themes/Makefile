@@ -26,7 +26,7 @@ DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow \
 		debian gorilla gorillaz mxflat typo
 
 post-extract:
-	${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -rf
+	${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/sawfish/themes

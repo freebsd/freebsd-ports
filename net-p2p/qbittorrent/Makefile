@@ -78,7 +78,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endif
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/man
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/man
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

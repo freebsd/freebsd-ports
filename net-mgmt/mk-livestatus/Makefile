@@ -47,7 +47,7 @@ COMMAND_FILE?=	/var/spool/nagios/rw/live
 # Actual version can be found on CPAN
 # http://search.cpan.org/~nierlein/Monitoring-Livestatus/
 post-extract:
-	@${RM} -rf ${WRKSRC}/api/perl
+	@${RM} -r ${WRKSRC}/api/perl
 
 post-patch:
 	@${SED} -i '' -e 's|/usr/bin/python|${LOCALBASE}/bin/python2.7|g' \

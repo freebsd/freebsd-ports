@@ -26,7 +26,7 @@ post-patch:
 	${REINPLACE_CMD} 's/sed/gsed/g' ${WRKSRC}/Makefile
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

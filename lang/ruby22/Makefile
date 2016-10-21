@@ -143,11 +143,11 @@ post-patch:
 # Remove modules we don't want
 #
 .for d in win32ole
-	@${RM} -rf ${BUILD_WRKSRC}/ext/${d}
+	@${RM} -r ${BUILD_WRKSRC}/ext/${d}
 .endfor
 # We get rake from ports.
 .for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
-	@${RM} -rf ${BUILD_WRKSRC}/${d}
+	@${RM} -r ${BUILD_WRKSRC}/${d}
 .endfor
 # We get the gem executable from ports.
 	@${RM} ${BUILD_WRKSRC}/bin/gem
@@ -236,7 +236,7 @@ regression-test test:
 
 validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
-	${RM} -rf ${WRKSRC}/rubyspec/*
+	${RM} -r ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
 	(cd ${WRKSRC}/rubyspec/rubyspec && ${SETENV} PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)

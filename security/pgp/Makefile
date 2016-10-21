@@ -22,7 +22,7 @@ PGPLIB=		${STAGEDIR}${PREFIX}/share/pgp
 
 post-extract:
 	cd ${WRKDIR}; ${TAR} -xf pgp263ii.tar; \
-		${RM} -f pgp263ii.tar
+		${RM} pgp263ii.tar
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgp ${STAGEDIR}${PREFIX}/bin/

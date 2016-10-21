@@ -22,7 +22,7 @@ PORTDOCS=	ANNOUNCEMENT CHANGES COPYRIGHT LICENSE README
 
 # do not install any openldap configuration directories/files
 post-extract:
-	${RM} -rf ${WRKSRC}/etc
+	${RM} -r ${WRKSRC}/etc
 
 # use a native openldap configuration directories/files
 post-install:

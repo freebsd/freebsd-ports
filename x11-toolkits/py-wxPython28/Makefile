@@ -125,10 +125,10 @@ post-install:
 	${CHMOD} -R a+rX \
 		${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
 # Remove unwanted .egg-info
-	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
-	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
-	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxversion*
-	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*.egg-info
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxversion*
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*.egg-info
 .endif
 
 .include <bsd.port.post.mk>

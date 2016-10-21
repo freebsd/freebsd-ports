@@ -109,7 +109,7 @@ pre-configure:
 .endfor
 
 post-build:
-	${RM} -rf ${WRKSRC}/CMakeFiles ${WRKSRC}/CMakeCache.txt
+	${RM} -r ${WRKSRC}/CMakeFiles ${WRKSRC}/CMakeCache.txt
 	${CP} -p ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 	(cd ${WRKSRC} &&	\
 	${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS:C|BUILD_STATIC_LIBS|BUILD_SHARED_LIBS|} ${CMAKE_SOURCE_PATH})

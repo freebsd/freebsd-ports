@@ -115,12 +115,12 @@ post-extract:
 	@${TAR} -xf ${SRC_DIR}/newlib.tar.bz2 -C ${SRC_DIR}
 
 do-configure:
-	@${RM} -rf ${BUILD_DIR}
+	@${RM} -r ${BUILD_DIR}
 	@${MKDIR} ${BUILD_DIR}
-	@${RM} -rf ${INTERIM_PREFIX}
+	@${RM} -r ${INTERIM_PREFIX}
 	@${MKDIR} ${INTERIM_PREFIX}
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
-	@${RM} -f ${WRKDIR}/Makefile.inc
+	@${RM} ${WRKDIR}/Makefile.inc
 .for VAR in ${VAR_TO_SUBMAKE}
 	@${ECHO} '${VAR}=${${VAR}}' >> ${WRKDIR}/Makefile.inc
 .endfor

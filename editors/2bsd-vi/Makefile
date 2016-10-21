@@ -21,7 +21,7 @@ PRESERVEDIR=	/var/preserve/${PKGBASE}
 PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"
 
 post-extract:	.SILENT
-	${RM} -fr ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
+	${RM} -r ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
 
 post-patch:
 .for f in Makefile ex.1 expreserve.c exrecover.c vi.1

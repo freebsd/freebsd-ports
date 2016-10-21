@@ -29,7 +29,7 @@ INSTANCE_FILE=	030005-${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
 
 post-extract:
-	${RM} -f ${WRKSRC}/bin/*.bat
+	${RM} ${WRKSRC}/bin/*.bat
 	${ECHO_CMD} "${DATADIR}" > ${WRKSRC}/${INSTANCE_FILE}
 
 do-install:

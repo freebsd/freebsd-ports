@@ -37,7 +37,7 @@ USES=		gmake tar:bzip2
 
 post-patch:
 # Use devel/build instead of the port's bundled copy.
-	${RM} -fr ${WRKSRC}/build-0.3
+	${RM} -r ${WRKSRC}/build-0.3
 	${LN} -s ${LOCALBASE}/include/build-0.3 ${WRKSRC}/build-0.3
 
 post-install:

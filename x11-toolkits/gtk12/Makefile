@@ -41,7 +41,7 @@ post-patch:
 	@${MV} ${WRKSRC}/gtk/gtkrc.zh_TW.big5 ${WRKSRC}/gtk/gtkrc.zh_TW.Big5
 
 pre-build:
-	${RM} -rf ${WRKSRC}/docs/gtk.info*
+	${RM} -r ${WRKSRC}/docs/gtk.info*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk/themes/engines

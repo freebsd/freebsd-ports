@@ -70,7 +70,7 @@ pre-everything::
 post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBB_URL}/templates#" \
 	  ${WRKSRC}/docs/*.html
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+	@${RM} `${FIND} ${WRKSRC} -name '*.orig'`
 
 do-install:
 	@ ${MKDIR} -m 0775 ${STAGEDIR}${PREFIX}/${PHPBBDIR}

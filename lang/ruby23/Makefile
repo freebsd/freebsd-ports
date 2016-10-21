@@ -146,11 +146,11 @@ post-patch:
 # Remove modules we don't want
 #
 .for d in win32ole
-	@${RM} -rf ${BUILD_WRKSRC}/ext/${d}
+	@${RM} -r ${BUILD_WRKSRC}/ext/${d}
 .endfor
 # We get rake from ports.
 .for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
-	@${RM} -rf ${BUILD_WRKSRC}/${d}
+	@${RM} -r ${BUILD_WRKSRC}/${d}
 .endfor
 # We get the gem executable from ports.
 	@${RM} ${BUILD_WRKSRC}/bin/gem

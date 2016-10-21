@@ -55,7 +55,7 @@ CONFIGURE_ARGS:=	--with-ircd=${_IRCD} \
 MODES_CONFIGURE_OFF=	--enable-no-modes
 
 post-patch: .SILENT
-	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -rf {} \;
+	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -r {} \;
 	${REINPLACE_CMD} -e 's,thales.conf,${PREFIX}/etc/&,' \
 		${WRKSRC}/src/conf.h
 

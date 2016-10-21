@@ -33,7 +33,7 @@ post-patch:
 		${WRKSRC}/cdb.c
 
 post-extract:
-	${RM} -f ${WRKSRC}/cdb
+	${RM} ${WRKSRC}/cdb
 	${LN} -s `cd ${CDB_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/cdb
 
 post-install:

@@ -16,6 +16,6 @@ USES=	tar:bzip2
 GNU_CONFIGURE=	YES
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
-MAKE_ARGS=	RM="${RM} -f"
+MAKE_ARGS=	RM="${RM}"
 
 .include <bsd.port.mk>

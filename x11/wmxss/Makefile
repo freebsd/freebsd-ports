@@ -16,7 +16,7 @@ PLIST_FILES=	bin/wmxss
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/Src
 
 post-extract:
-	@( cd ${WRKSRC} ; ${MAKE} clean ; ${RM} -f .nfs* )
+	@( cd ${WRKSRC} ; ${MAKE} clean ; ${RM} .nfs* )
 
 post-patch:
 	@${REINPLACE_CMD} -E \

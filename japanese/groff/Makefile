@@ -50,7 +50,7 @@ post-patch:
 	    ${WRKSRC}/doc/groff.texinfo
 
 post-build:
-	${RM} -f ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
+	${RM} ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 	cd ${WRKSRC} && ${FIND} font -name DESC \
 	    | ${XARGS} ${REINPLACE_CMD} -E \

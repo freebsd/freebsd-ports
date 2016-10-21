@@ -37,7 +37,7 @@ X11_MAKE_ENV=	WITH_X11=yes
 MANPAGES_DISTFILES=	netpbm-manpages-2013-03-09${EXTRACT_SUFX}:man
 
 post-extract-X11-off:
-	@-${RM} -f ${WRKDIR}/doc/pamx.1 # only relevant for MANPAGES=on
+	@-${RM} ${WRKDIR}/doc/pamx.1 # only relevant for MANPAGES=on
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \

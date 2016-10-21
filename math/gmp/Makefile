@@ -41,7 +41,7 @@ CONFIGURE_ENV+=	ABI="32"
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/gmp.info*
+	@${RM} ${WRKSRC}/doc/gmp.info*
 
 post-patch:
 	@${REINPLACE_CMD} "s/\(athlon64\-\*\-\*\)/amd64-*-* | \1/;s/\(x86_64)\)/amd64 | \1/" \

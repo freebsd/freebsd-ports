@@ -16,6 +16,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-extract:
-	@${RM} -f ${WRKSRC}/lib/Lingua/EN/Sentence.pm~
+	@${RM} ${WRKSRC}/lib/Lingua/EN/Sentence.pm~
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="SDL Jewels" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;BoardGame;" ""
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/data/CVS
+	@${RM} -r ${WRKSRC}/data/CVS
 	@${REINPLACE_CMD} -e 's|data/bigfont.ppm|${DATADIR}/data/bigfont.ppm| ; \
 	s|dirlist\[\]="data";|dirlist[]="${DATADIR}/data";| ; \
 	s|char name[256],|char name[512],|' \

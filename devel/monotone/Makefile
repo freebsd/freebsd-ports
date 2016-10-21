@@ -37,7 +37,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-extract:
-	@${RM} -f ${WRKSRC}/monotone.info*
+	@${RM} ${WRKSRC}/monotone.info*
 
 post-patch:
 	@${REINPLACE_CMD} \

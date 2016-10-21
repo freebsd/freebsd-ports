@@ -30,7 +30,7 @@ NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/bison.info*
+	@${RM} ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
 
 PORTEXAMPLES=	calc++

@@ -34,8 +34,8 @@ post-patch:
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
-	${RM} -f ${WRKSRC}/doc/fidogate.info-?
-	${RM} -f ${WRKSRC}/doc/fidogate.txt
+	${RM} ${WRKSRC}/doc/fidogate.info-?
+	${RM} ${WRKSRC}/doc/fidogate.txt
 	${REINPLACE_CMD} -e "s|[.]info-|.info|" ${WRKSRC}/doc/Makefile
 	${REINPLACE_CMD} -e "s|.{PREFIX}|${PREFIX}|g" \
 		 -e "s|.{LOCALBASE}|${LOCALBASE}|g" \

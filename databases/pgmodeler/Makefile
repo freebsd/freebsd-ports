@@ -30,6 +30,6 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}/${LOCALBASE}/lib/${PORTNAME}/plugins
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/tests
+	@${RM} ${STAGEDIR}${PREFIX}/bin/tests
 
 .include <bsd.port.mk>

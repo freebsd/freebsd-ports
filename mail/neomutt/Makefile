@@ -86,6 +86,6 @@ post-patch:
 	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/etc/mime*
+	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
 
 .include <bsd.port.mk>
