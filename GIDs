@@ -131,7 +131,7 @@ dnslog:*:186:
 swift:*:187:
 netxms:*:188:
 leofs:*:189:
-keystone:*:190
+keystone:*:190:
 # free: 191
 moinmoin:*:192:
 cups:*:193:
