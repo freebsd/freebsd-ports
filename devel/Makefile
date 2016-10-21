@@ -1169,6 +1169,7 @@
     SUBDIR += libassetml
     SUBDIR += libast
     SUBDIR += libastylej
+    SUBDIR += libastylej-arduino
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
