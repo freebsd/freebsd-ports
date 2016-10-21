@@ -10,15 +10,3 @@ DMDIR?=		${LOCALBASE}/share/doom
 MAKE_ENV+=	DMDIR="${DMDIR}"
 PLIST_SUB+=	DMDIR="${DMDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DMDIR="${DMDIR}"
-
-.if defined(USE_CRLF)
-.   if defined(USE_ZIP)
-EXTRACT_BEFORE_ARGS=	-aqo
-.   else
-pre-patch:
-	@${FIND} ${WRKDIR} -type f -print0 | \
-		${XARGS} -0 ${FILE} | ${GREP} 'CRLF' | \
-		${SED} -e "s/:.*//" | ${SED} -e 's/ /\\ /g' | \
-		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
-.   endif
-.endif
