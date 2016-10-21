@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTVERSION=	2.11.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
 		http://mirror.mainloop.se/amavisd/
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Mail scanner interface between mailer and content checkers
 
 LICENSE=	GPLv2
