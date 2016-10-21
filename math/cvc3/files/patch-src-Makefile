@@ -32,12 +32,12 @@
  endif
 -	mkdir -p $(bindir)
 -	$(INSTALL) $(INSTALL_FLAGS) -m 755 $(CVC_EXE) $(bindir)
--	mkdir -p $(libdir)/pkgconfig
--	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(libdir)/pkgconfig
+-	mkdir -p $(prefix)/libdata/pkgconfig
+-	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(prefix)/libdata/pkgconfig
 +	mkdir -p $(DESTDIR)$(bindir)
 +	$(INSTALL) $(INSTALL_FLAGS) -m 755 $(CVC_EXE) $(DESTDIR)$(bindir)
-+	mkdir -p $(DESTDIR)$(libdir)/pkgconfig
-+	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(DESTDIR)$(libdir)/pkgconfig
++	mkdir -p $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
  
  ifndef FILELIST
  FILELIST = /dev/null

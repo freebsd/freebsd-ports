@@ -76,7 +76,7 @@ LIGHTTPD_DESC=		RUN_DEPEND on Lighttpd instead of Apache
 SETUID_DESC=		Run as root:mail with setuid (insecure)
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5 libtool shebangfix
+USES=		perl5 libtool pathfix shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -512,13 +512,6 @@ pre-configure:
 .endif
 
 post-install:
-########
-# stupid hack until I figure out where/how to patch
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/dspam.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dspam.pc
-	${TEST} `ls -1 ${STAGEDIR}${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
-		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
-
 .if ${PORT_OPTIONS:MEXAMPLES}
 .if ${PORT_OPTIONS:MMYSQL}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mysql

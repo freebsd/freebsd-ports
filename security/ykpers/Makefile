@@ -14,7 +14,7 @@ LIB_DEPENDS=	libyubikey.so:security/libyubikey
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pkgconfig
+USES=		libtool pathfix pkgconfig
 
 PLIST_FILES=	bin/ykchalresp \
 		bin/ykinfo \
@@ -41,10 +41,6 @@ STATIC_PLIST_FILES=		lib/libykpers-1.a
 MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS+=	-L/usr/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^pkgconfigdir = .*|pkgconfigdir = /usr/local/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 regression-test: build
 	@(cd ${WRKSRC}; ${MAKE} check)

@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsof
 USE_GITHUB=	yes
 GH_TUPLE=	google:google-gdata:edcd096379
 
-USES=		dos2unix gmake mono
+USES=		dos2unix gmake mono pathfix
+PATHFIX_MAKEFILEIN=	Makefile
 WRKSRC_SUBDIR=	clients/cs
 DOS2UNIX_FILES=	${WRKSRC}/Makefile ${WRKSRC}/misc/gdata-sharp-core.pc.in
 MAKE_ARGS=	CSC=${LOCALBASE}/bin/mcs

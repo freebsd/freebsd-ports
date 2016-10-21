@@ -13,7 +13,7 @@ COMMENT=	C library for parsing and processing BibTeX data files
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		perl5 libtool
+USES=		perl5 libtool pathfix
 USE_PERL5=	build
 
 .include <bsd.port.mk>

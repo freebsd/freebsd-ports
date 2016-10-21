@@ -18,7 +18,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DOCS
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool pathfix
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

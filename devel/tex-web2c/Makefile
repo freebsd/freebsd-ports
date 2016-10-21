@@ -17,7 +17,7 @@ LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libzzip.so:devel/zziplib \
 		libmpfr.so:math/mpfr
 
-USES=		pkgconfig libtool tar:xz
+USES=		pathfix pkgconfig libtool tar:xz
 USE_TEX=	kpathsea ptexenc
 USE_XORG=	pixman
 USE_GNOME=	cairo

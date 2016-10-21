@@ -28,8 +28,6 @@ USES=		autoreconf compiler:features libtool pathfix \
 		pkgconfig python:2
 USE_LDCONFIG=	yes
 
-PATHFIX_MAKEFILEIN=	Makefile.am
-
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

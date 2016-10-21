@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 
 USES=		libtool localbase pathfix autoreconf
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

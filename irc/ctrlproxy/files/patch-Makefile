@@ -1,7 +1,7 @@
---- Makefile.orig	Sun Apr 15 14:17:58 2007
-+++ Makefile	Sat Jun 16 12:00:33 2007
-@@ -108,7 +108,7 @@
- ctrlproxy.pc Makefile.settings: configure Makefile.settings.in ctrlproxy.pc.in
+--- Makefile.orig	2008-12-06 17:36:33 UTC
++++ Makefile
+@@ -145,7 +145,7 @@ endif
+ ctrlproxy.pc Makefile.settings config.h: configure Makefile.settings.in ctrlproxy.pc.in
  	./$<
  
 -install: all install-dirs install-bin install-header install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
@@ -9,7 +9,7 @@
  install-dirs:
  	$(INSTALL) -d $(DESTDIR)$(modulesdir)
  
-@@ -133,7 +133,6 @@
+@@ -177,7 +177,6 @@ doc::
  
  install-doc:: doc
  	$(INSTALL) -d $(DESTDIR)$(docdir)
@@ -17,14 +17,3 @@
  
  uninstall-doc: 
  	$(MAKE) -C doc uninstall
-@@ -156,8 +154,8 @@
-	$(INSTALL) -m 0644 config.admin $(DESTDIR)$(DEFAULT_CONFIG_DIR)/networks/admin
- 
- install-pkgconfig:
--	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
--	$(INSTALL) -m 0644 ctrlproxy.pc $(DESTDIR)$(libdir)/pkgconfig
-+	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
-+	$(INSTALL) -m 0644 ctrlproxy.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
- 
- uninstall-pkgconfig:
- 	-rm -f $(DESTDIR)$(libdir)/pkgconfig/ctrlproxy.pc

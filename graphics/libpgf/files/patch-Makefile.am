@@ -13,14 +13,3 @@
  
  PACKAGE		= @PACKAGE@
  VERSION		= @VERSION@
-@@ -22,8 +22,8 @@ RPMRELEASE=$(PACKAGE_RELEASE)
- ACLOCAL_AMFLAGS = -I m4
- 
- install-data-local:: $(PACKAGE).pc
--	$(mkinstalldirs) $(DESTDIR)$(libdir)/pkgconfig
--	$(INSTALL) -m 644 $(PACKAGE).pc $(DESTDIR)$(libdir)/pkgconfig/$(PACKAGE).pc
-+	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
-+	$(INSTALL) -m 644 $(PACKAGE).pc $(DESTDIR)$(prefix)/libdata/pkgconfig/$(PACKAGE).pc
- 
- 
- .PHONY: ChangeLog

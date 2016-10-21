@@ -10,8 +10,6 @@ COMMENT=	X.Org joystick input driver
 
 XORG_CAT=	driver
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+USES=		pathfix
 
 .include <bsd.port.mk>

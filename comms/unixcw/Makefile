@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 			--disable-alsa --disable-pulseaudio
 
 USE_LDCONFIG=	yes
-USES+=		gmake libtool ncurses pkgconfig
+USES+=		gmake libtool ncurses pathfix pkgconfig
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 MAJOR_LIB_VER=	6

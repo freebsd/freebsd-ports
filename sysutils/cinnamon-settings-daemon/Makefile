@@ -35,7 +35,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gudev \

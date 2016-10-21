@@ -1,14 +1,5 @@
 --- Makefile.in.orig	2009-10-01 18:04:07.000000000 +0000
 +++ Makefile.in	2009-12-21 01:17:02.000000000 +0000
-@@ -177,7 +177,7 @@
- 	theora-uninstalled.pc.in
- 
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = theora.pc theoradec.pc theoraenc.pc
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 @@ -200,7 +200,7 @@
  	missing mkinstalldirs theora-uninstalled.pc.in theora.pc.in \
  	theoradec-uninstalled.pc.in theoradec.pc.in \

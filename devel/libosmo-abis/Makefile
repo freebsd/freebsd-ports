@@ -17,7 +17,6 @@ LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libortp.so:net/ortp
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

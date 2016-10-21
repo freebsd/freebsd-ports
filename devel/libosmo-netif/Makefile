@@ -21,7 +21,6 @@ BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=	Does not build: undefined reference to __bswap_16
 
 USES=		autoreconf libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

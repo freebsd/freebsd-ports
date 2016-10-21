@@ -24,7 +24,6 @@ GH_ACCOUNT=	divVerent
 GH_TAGNAME=	f6ec862
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=Makefile.am
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

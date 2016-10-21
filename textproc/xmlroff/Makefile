@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libfo>=0.6.2:textproc/libfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		autoreconf gmake gettext libtool pkgconfig pathfix
+USES=		autoreconf gmake gettext libtool pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	libgnomeprint libartlgpl2 pango glib20 \
 		libxslt libxml2 gdkpixbuf2

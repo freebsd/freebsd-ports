@@ -20,7 +20,6 @@ COMMENT=	Skeletal based 3D character animation library written in C++
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

@@ -23,7 +23,6 @@ USES=		autoreconf gmake libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 

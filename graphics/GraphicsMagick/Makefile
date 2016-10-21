@@ -24,7 +24,7 @@ CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase tar:bzip2
+USES=		libtool localbase pathfix tar:bzip2
 
 PORTDATA=	*
 PORTDOCS=	*

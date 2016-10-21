@@ -14,7 +14,6 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf pathfix libtool
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--program-suffix=sa

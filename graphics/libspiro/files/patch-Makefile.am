@@ -1,16 +1,13 @@
---- Makefile.am.orig	2015-07-02 13:50:20 UTC
+--- Makefile.am.orig	2016-10-03 14:37:13 UTC
 +++ Makefile.am
-@@ -1,8 +1,8 @@
+@@ -1,6 +1,6 @@
  # Makefile.am - Top level automakefile for libspiro
  
 -SUBDIRS = . tests
 +SUBDIRS = .
  
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = ${PREFIX}/libdata/pkgconfig
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libspiro.pc
- 
- ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 @@ -13,7 +13,7 @@ AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-und
  LIBTOOL_DEPS = @LIBTOOL_DEPS@
  

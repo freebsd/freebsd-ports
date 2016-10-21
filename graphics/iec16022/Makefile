@@ -20,8 +20,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		autoreconf gmake libtool pathfix pkgconfig
 
-PATHFIX_MAKEFILEIN=	Makefile.am
-
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -fPIC
 
 INSTALL_TARGET=	install-strip

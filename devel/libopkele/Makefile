@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxslt.so:textproc/libxslt
 
 USE_LDCONFIG=	yes
-USES=		libtool gmake pkgconfig compiler:c++11-lang ssl
+USES=		libtool gmake pathfix pkgconfig compiler:c++11-lang ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 		OPENSSL_LIBS=-L${OPENSSLLIB}
@@ -33,10 +33,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # by design, we need to remove the openssl dependency
 # in pkgconfig/libopkele.pc.
 
-post-patch:
-	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
-	    ${WRKSRC}/Makefile.in
 .if ${SSL_DEFAULT} == base
+post-patch:
 	@ ${REINPLACE_CMD} -e "s|Requires: openssl|Requires:|" ${WRKSRC}/libopkele.pc.in
 .endif
 

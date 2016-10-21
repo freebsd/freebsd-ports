@@ -16,6 +16,4 @@ USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sherlock265 --disable-dec265
 
-PATHFIX_MAKEFILEIN=	Makefile.am
-
 .include <bsd.port.mk>

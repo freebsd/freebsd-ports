@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbi.so:databases/libdbi \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
-USES=		autoreconf compiler:c11 gmake pkgconfig
+USES=		autoreconf compiler:c11 gmake pathfix pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
@@ -44,8 +44,6 @@ NAT_RUN_DEPENDS=	${LOCALBASE}/lib/libsccp.a:devel/libosmo-sccp
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 post-patch:
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 
 .include <bsd.port.mk>

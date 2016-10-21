@@ -16,7 +16,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/synctexdir/README.txt
 
 CONFLICTS=	tex-web2c-20150521
-USES=		libtool pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz
 USE_TEX=	kpathsea
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

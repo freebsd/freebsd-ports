@@ -20,7 +20,7 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 
-USES=		autoreconf pkgconfig gmake libtool
+USES=		autoreconf pathfix pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -42,8 +42,5 @@ CONFIGURE_ARGS+=        \
 		--without-python \
 		--without-ruby \
 		--without-go
-
-post-patch:
-	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/c_glib/Makefile.am
 
 .include <bsd.port.mk>

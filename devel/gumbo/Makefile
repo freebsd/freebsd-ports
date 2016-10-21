@@ -18,7 +18,6 @@ USES=		autoreconf gmake pathfix libtool
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=Makefile.am
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgumbo.so.1.0.0

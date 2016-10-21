@@ -12,7 +12,6 @@ LICENSE=	PD
 
 USES=		autoreconf pathfix tar:xz
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 PLIST_FILES=	${DATADIR}/serviceproviders.2.dtd \
 		${DATADIR}/serviceproviders.xml \

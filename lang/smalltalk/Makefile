@@ -23,7 +23,7 @@ TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
 PGSQL_USES=	pgsql
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
-USES=		execinfo gmake iconv libtool localbase makeinfo pkgconfig \
+USES=		execinfo gmake iconv libtool localbase makeinfo pathfix pkgconfig \
 		shebangfix sqlite tar:xz
 USE_GNOME=	pango
 USE_XORG=	ice xi xmu
@@ -57,8 +57,6 @@ post-patch:
 		${WRKSRC}/libgst/prims.inl
 	@${REINPLACE_CMD} -e '/^ac_include/s/\\$$/#include <wctype.h> \\/' \
 		${WRKSRC}/snprintfv/configure
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 post-build:
 	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \

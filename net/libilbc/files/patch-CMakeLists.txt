@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2014-12-14 19:34:22 UTC
+--- CMakeLists.txt.orig	2016-10-04 12:45:35 UTC
 +++ CMakeLists.txt
 @@ -50,7 +50,6 @@ else()
  endif()
@@ -20,7 +20,7 @@
  endif()
  
  ###################################################################################################
-@@ -186,18 +186,15 @@ endif()
+@@ -186,12 +186,7 @@ endif()
  set(prefix "${CMAKE_INSTALL_PREFIX}")
  set(exec_prefix "${prefix}")
  set(includedir "${prefix}/include")
@@ -33,11 +33,8 @@
 +set(libdir "${exec_prefix}/lib")
  
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libilbc.pc
--        DESTINATION ${libdir}/pkgconfig)
-+        DESTINATION ${prefix}/libdata/pkgconfig)
- install(FILES ilbc/interface/ilbc.h
-         DESTINATION ${includedir})
- install(TARGETS ilbc
+         DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
+@@ -201,3 +196,5 @@ install(TARGETS ilbc
          ARCHIVE DESTINATION ${libdir}
          LIBRARY DESTINATION ${libdir}
          RUNTIME DESTINATION bin)

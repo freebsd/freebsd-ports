@@ -14,7 +14,7 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libGTLCore.so:graphics/opengtl
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
-USES=		cmake:outsource pkgconfig tar:bzip2
+USES=		cmake:outsource pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/graphics/opengtl/pkg-descr
@@ -26,9 +26,6 @@ OPTIONS_DEFINE=	EXAMPLES
 pre-configure:
 	@${REINPLACE_CMD} -e 's,set(QTGTL_LIB_SOVERSION.*,set(QTGTL_LIB_SOVERSION "0"),' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,$${LIB_INSTALL_DIR}/pkgconfig,${PREFIX}/libdata/pkgconfig,g' \
-		${PATCH_WRKSRC}/QtGTL/CMakeLists.txt \
-		${PATCH_WRKSRC}/QtShiva/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

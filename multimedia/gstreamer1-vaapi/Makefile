@@ -26,9 +26,4 @@ USE_XORG=	x11 xrandr xrender xproto:build
 # drm backend needs libudev so disable it for now.
 CONFIGURE_ARGS+=--disable-drm
 
-# manual since pathfix doesn't work.
-post-patch:
-	@${REINPLACE_CMD} -e 's|[{]libdir[}]/pkgconfig|{prefix}/libdata/pkgconfig|g' \
-		${WRKSRC}/configure
-
 .include <bsd.port.mk>

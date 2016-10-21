@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 HAS_CONFIGURE=	yes
-USES=		gmake localbase pkgconfig tar:bzip2
+USES=		gmake localbase pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 

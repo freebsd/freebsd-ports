@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		alias autoreconf execinfo gmake libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=Makefile.am
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 USE_LDCONFIG=	yes

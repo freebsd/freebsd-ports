@@ -9,12 +9,3 @@
  MogrifyDelegate = @MogrifyDelegate@
  NM = @NM@
  NMEDIT = @NMEDIT@
-@@ -4381,7 +4381,7 @@ PERLMAGICK_MAINTAINER_TARGETS = $(top_sr
- @WITH_PERL_DYNAMIC_FALSE@@WITH_PERL_STATIC_TRUE@@WITH_PERL_TRUE@PERLSTATICNAME = PerlMagick
- 
- # Pkgconfig directory
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- 
- # Files to install in Pkgconfig directory
- pkgconfig_DATA = \

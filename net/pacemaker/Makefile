@@ -43,8 +43,6 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--without-heartbeat
 INSTALL_TARGET=	install-strip
 
-PATHFIX_MAKEFILEIN=	Makefile.am
-
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	${SH}
 sh_CMD=		${LOCALBASE}/bin/bash

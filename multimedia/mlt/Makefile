@@ -23,6 +23,7 @@ USE_GNOME=	libxml2
 USE_SDL=	image
 USE_XORG=	x11
 USES=		alias gmake iconv pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --target-os=FreeBSD
 USE_LDCONFIG=	yes
@@ -120,8 +121,6 @@ pre-configure:
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
-	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${STAGEDIR}${MANPREFIX}/man/man1/melt.1

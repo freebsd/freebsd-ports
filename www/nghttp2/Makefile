@@ -28,7 +28,6 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		ZLIB_LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USES=		autoreconf compiler:c++11-lib gmake libtool localbase pathfix pkgconfig ssl

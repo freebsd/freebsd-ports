@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-03-12 14:42:02 UTC
+--- Makefile.in.orig	2016-10-04 13:42:08 UTC
 +++ Makefile.in
-@@ -396,9 +396,10 @@ libptexenc_la_SOURCES = \
+@@ -396,7 +396,8 @@ libptexenc_la_SOURCES = \
  libptexenc_la_LIBADD = $(KPATHSEA_LIBS)
  nobase_include_HEADERS = \
  	ptexenc/ptexenc.h \
@@ -8,8 +8,5 @@
 +	ptexenc/unicode.h \
 +	ptexenc/unicode-jp.h
  
--pkgconfigdir = ${libdir}/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = ptexenc.pc
- EXTRA_DIST = COPYRIGHT ChangeLog.jp
- 

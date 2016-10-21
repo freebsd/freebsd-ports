@@ -16,16 +16,13 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	fails to compile vec_memcpy.S
 
-USES=		libtool pkgconfig
+USES=		libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	configure
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
 INSTALL_TARGET=	install-strip
 CFLAGS:=	${CFLAGS:N-O*} -O2
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\\$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

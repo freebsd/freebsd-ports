@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

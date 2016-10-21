@@ -16,7 +16,6 @@ GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-c
 
 USES=		autoreconf libtool pathfix
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

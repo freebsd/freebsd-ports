@@ -1,14 +1,5 @@
 --- Makefile.orig	2007-11-26 20:47:43 UTC
 +++ Makefile
-@@ -4,7 +4,7 @@ endif
- include config.mak
- 
- DISTFILE = libdlna-$(VERSION).tar.bz2
--PKGCONFIG_DIR = $(libdir)/pkgconfig
-+PKGCONFIG_DIR = $(prefix)/libdata/pkgconfig
- PKGCONFIG_FILE = libdlna.pc
- 
- LIBTEST = test-libdlna
 @@ -19,7 +19,7 @@ EXTRADIST = AUTHORS \
  SUBDIRS = src \
  

@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/adflib
 INSTALL_TARGET=	install-strip
 USES=		autoreconf libtool pathfix tar:bzip2
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=	DOCS
 

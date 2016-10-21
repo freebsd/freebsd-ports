@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	libhtp-[0-9]*
 
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

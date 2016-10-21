@@ -14,7 +14,7 @@ COMMENT=	Lua library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/LICENSE.MIT
 
-USES=		tar:xz libtool pkgconfig
+USES=		tar:xz libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=		build-aux libs/lua52

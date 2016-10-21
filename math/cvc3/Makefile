@@ -18,14 +18,14 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--with-extra-libs=${LOCALBASE}/lib
 CXXFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-USES=		bison gmake perl5
+USES=		bison gmake pathfix perl5
+PATHFIX_MAKEFILEIN=	Makefile
 USE_GCC=	any
 USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/Makefile.std
 	${REINPLACE_CMD} -e 's,.*$$(LDCONFIG).*,,' ${WRKSRC}/src/Makefile
-	${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,' ${WRKSRC}/src/Makefile
 
 post-install:
 	${INSTALL_PROGRAM} `readlink ${WRKSRC}/bin/cvc3` ${STAGEDIR}${PREFIX}/bin
