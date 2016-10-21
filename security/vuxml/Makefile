@@ -33,7 +33,7 @@ dir_DTD=	share/xml/dtd/vuxml
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .for f in ${DISTFILES}
 	${CP} ${_DISTDIR}/${f} ${WRKDIR}/${f}

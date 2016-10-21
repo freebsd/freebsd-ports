@@ -43,7 +43,7 @@ QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 NO_ARCH=	yes
 
 pre-build:
-	@${RM} -f ${WRKSRC}/resources/__init__.py
+	@${RM} ${WRKSRC}/resources/__init__.py
 	@${MKDIR} ${WRKSRC}/resources/i18n/qm
 	@set -e; \
 	for TSFILE in ${WRKSRC}/resources/i18n/*.ts; do \

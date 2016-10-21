@@ -183,7 +183,7 @@ post-install:
 	# recreate it after. This is necessary because the distfile is
 	# extracted with --no-same-owner. If the distfile is extracted as a
 	# non-root user then the symlink will have the incorrect owner.
-	${RM} -f ${WRKDIR}/htmldocs/index.html
+	${RM} ${WRKDIR}/htmldocs/index.html
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html

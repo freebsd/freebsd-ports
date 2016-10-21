@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/xmake
 PLIST_FILES=	bin/xmake man/man1/xmake.1.gz
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/obj
+	@${RM} -r ${WRKSRC}/obj
 
 post-patch:
 	@${REINPLACE_CMD} 's|gcc|cc|' ${WRKSRC}/defs.h

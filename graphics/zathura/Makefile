@@ -52,7 +52,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
 		${WRKSRC}/zathura/config.h \
 		${WRKSRC}/doc/man/zathurarc.5.rst
-	(cd ${WRKSRC}; ${RM} -f zathura.1 zathurarc.5)
+	(cd ${WRKSRC}; ${RM} zathura.1 zathurarc.5)
 
 post-patch-NLS-off: .SILENT
 	${REINPLACE_CMD} -e '/-C po/d'\

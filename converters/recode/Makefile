@@ -26,7 +26,7 @@ INFO=		recode
 
 post-extract:
 	@${CP} ${FILESDIR}/ru.po ${WRKSRC}/i18n
-	@${RM} -f ${WRKSRC}/doc/${PORTNAME}.info*
+	@${RM} ${WRKSRC}/doc/${PORTNAME}.info*
 
 post-patch:
 	@${REINPLACE_CMD} -E \

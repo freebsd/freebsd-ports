@@ -35,7 +35,7 @@ DESKTOP_ENTRIES="Barbie Seahorse Adventures" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f data/REMOVE_ME.txt data/sample.txt \
+	@cd ${WRKSRC} && ${RM} data/REMOVE_ME.txt data/sample.txt \
 		lib/pgu/LICENSE.txt
 
 post-patch:

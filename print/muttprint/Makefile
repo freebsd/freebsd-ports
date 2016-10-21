@@ -56,7 +56,7 @@ pre-everything::
 	@${ECHO}
 
 post-patch:
-	@${RM} -f ${WRKSRC}/pics/*.orig
+	@${RM} ${WRKSRC}/pics/*.orig
 .if ${PAPERSIZE}==a4
 	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE:tu}|' \
 		${WRKSRC}/muttprint

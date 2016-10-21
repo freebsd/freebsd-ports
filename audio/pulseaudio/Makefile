@@ -92,6 +92,6 @@ post-install:
 .endfor
 
 post-install-BASH-off:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/bash-completion
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/bash-completion
 
 .include <bsd.port.mk>

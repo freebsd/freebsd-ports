@@ -133,7 +133,7 @@ post-patch:
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|-freg-struct-return||' ${WRKSRC}/configure.in
 .endif
-	@${RM} -f ${WRKSRC}/popper/md5.h
+	@${RM} ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
 	@${REINPLACE_CMD} -e \
 		's|\$${sbindir}/sendmail|${LOCALBASE}/sbin/sendmail|g' \

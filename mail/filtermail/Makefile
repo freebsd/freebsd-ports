@@ -40,6 +40,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|filtermail.sourceforge|mailfilter.sourceforge|g' ${WRKSRC}/README
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/getopt.h
+	@${RM} ${WRKSRC}/src/getopt.h
 
 .include <bsd.port.mk>

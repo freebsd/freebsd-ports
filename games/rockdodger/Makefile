@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="Rock Dodger" "" "${PORTNAME}" \
 post-extract:
 	${TAR} xfjp ${_DISTDIR}/${PORTNAME}_music${EXTRACT_SUFX} -C \
 		${WRKSRC}/data/
-	@cd ${WRKSRC}/data ; ${RM} -f *.mod
+	@cd ${WRKSRC}/data ; ${RM} *.mod
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@gamesdir@|${DATADIR}|; \

@@ -35,7 +35,7 @@ PROGS+=		qn24b_mpi
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/qn24b_base
+	@${RM} ${WRKSRC}/qn24b_base
 
 do-build:
 	cd ${WRKSRC} && \

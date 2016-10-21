@@ -94,6 +94,6 @@ PLIST_SUB+=	HAL="@comment "
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/systemd
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>

@@ -42,7 +42,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/
 	@(cd ${WRKSRC} && ${CP} backslide\@codeisland.org/schemas/org.gnome.shell.extensions.backslide.gschema.xml \
 		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/)
-	@${RM} -fr ${WRKSRC}/backslide\@codeisland.org/schemas
+	@${RM} -r ${WRKSRC}/backslide\@codeisland.org/schemas
 	@(cd ${WRKSRC} && ${CP} -pPR backslide\@codeisland.org \
 		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/)
 

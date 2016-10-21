@@ -21,7 +21,7 @@ NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS -exec ${RM} -rf {} +
+	@${FIND} ${WRKSRC} -type d -name CVS -exec ${RM} -r {} +
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}

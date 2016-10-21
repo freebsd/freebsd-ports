@@ -24,7 +24,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC}/src && \
 		${RM} config/kibana.yml bin/kibana.sh bin/kibana.bat && \
-		${RM} -rf node_modules/bunyan/node_modules/dtrace-provider && \
+		${RM} -r node_modules/bunyan/node_modules/dtrace-provider && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	@${CP} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${PREFIX}/etc/kibana.yml.sample
 

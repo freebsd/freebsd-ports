@@ -32,6 +32,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${STAGEDIR}${DOCSDIR} -xf-
 	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf-
-	@${RM} -fr ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
+	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
 
 .include <bsd.port.mk>

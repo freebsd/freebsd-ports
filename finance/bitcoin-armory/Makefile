@@ -47,7 +47,7 @@ post-patch:
 
 post-stage:
 	@${SED} -i.bak -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}/${LOCALBASE}/bin/armory && \
-		${RM} -f ${STAGEDIR}/${LOCALBASE}/bin/armory.bak
+		${RM} ${STAGEDIR}/${LOCALBASE}/bin/armory.bak
 	@${REINPLACE_CMD} 's|Exec=/usr/bin/armory|Exec=${LOCALBASE}/bin/armory|' ${STAGEDIR}/${LOCALBASE}/share/applications/*.desktop
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/

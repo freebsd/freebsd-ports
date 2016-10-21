@@ -20,7 +20,7 @@ PLIST_FILES=	bin/glade-- bin/glademm-embed
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${RM} -f ${WRKSRC}/src/getopt.*
+	@${RM} ${WRKSRC}/src/getopt.*
 	@${REINPLACE_CMD} \
 		-Ee '/^@AMDEP/!s|getopt([^[:space:]])+||g' \
 		-Ee '/^@AMDEP(.)+getopt/d' \

@@ -28,7 +28,7 @@ pre-extract:
 	@${MKDIR} ${WRKSRC}
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
 		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/Aircraft/|' >> ${PLIST} && \

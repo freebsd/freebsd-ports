@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	i386
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/compupic
+	${RM} ${STAGEDIR}${PREFIX}/bin/compupic
 	${LN} -sf ${PREFIX}/compupic/compupic ${STAGEDIR}${PREFIX}/bin/compupic
 	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/compupic/compupic.1 \
 		${STAGEDIR}${PREFIX}/man/man1

@@ -818,7 +818,7 @@ post-build:
 	@${MV} -f ${WRKSRC}/conf-qmail ${WRKSRC}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-qmail
 	@${MV} -f ${WRKSRC}/install ${WRKSRC}/install.nostage
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	@cd ${WRKSRC} ; ${RM} install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
 	@${MV} -f ${WRKSRC}/conf-qmail.sav ${WRKSRC}/conf-qmail
 
@@ -912,7 +912,7 @@ post-install:
 	  ${ECHO_CMD} "@unexec rmdir ${QMAIL_PREFIX} 2>/dev/null || :"; \
 	} >> ${TMPPLIST}
 # Stop check-orphans finding the queue dir
-	${RM} -rf ${STAGEDIR}${PREFIX}/queue/
+	${RM} -r ${STAGEDIR}${PREFIX}/queue/
 
 certificate:
 .if defined(SLAVE_TLS) || defined(SLAVE_LDAP)

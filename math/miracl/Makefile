@@ -56,7 +56,7 @@ post-patch:
 # Don't error when files not found
 # Fix mrmuldv.cc not existing due to s/gcc/CC/ replacement above.
 	@${REINPLACE_CMD} -E \
-		-e 's|^rm |${RM} -f |' \
+		-e 's|^rm |${RM} |' \
 		-e 's|^cp mrmuldv\.${CC} mrmuldv\.c|${CP} mrmuldv.gcc mrmuldv.c|' \
 		${WRKSRC}/${BUILDCMD}
 

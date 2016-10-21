@@ -26,7 +26,7 @@ ALL_TARGET=	exmars
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/fsh94nop0.2
+	@${RM} -r ${WRKSRC}/fsh94nop0.2
 	@${MV} ${WRKDIR}/fsh* ${WRKDIR}/optimax/fsh* ${WRKSRC}
 
 post-patch:

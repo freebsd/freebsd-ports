@@ -35,7 +35,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Icon/48x48/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/
 	@${INSTALL_DATA} ${WRKSRC}/Icon/128x128/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/
 	@${INSTALL_DATA} ${WRKSRC}/Icon/256x256/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/
-	@${RM} -rf ${WRKSRC}/Icon/
+	@${RM} -r ${WRKSRC}/Icon/
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/sublime_text
 	@${INSTALL_SCRIPT} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime

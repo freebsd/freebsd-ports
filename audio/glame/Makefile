@@ -30,7 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lltdl
 
 post-extract:
-	@cd ${WRKSRC}/doc && ${RM} -f *.info*
+	@cd ${WRKSRC}/doc && ${RM} *.info*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| libltdl|| ; s|,$$LIBLTDL,|,,| ; \

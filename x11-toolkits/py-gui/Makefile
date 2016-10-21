@@ -29,7 +29,7 @@ OPENGL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolk
 post-patch:
 	@${REINPLACE_CMD} -e 's|"GUI.Cocoa",||g' ${WRKSRC}/setup.py
 	@${TOUCH} ${WRKSRC}/GUI/Generic/__init__.py ${WRKSRC}/GUI/Gtk/__init__.py
-	@${RM} -fr ${WRKSRC}/Demos/BlobEdit/.gdb_history ${WRKSRC}/Demos/BlobEdit/Makefile ${WRKSRC}/GUI/Cocoa
+	@${RM} -r ${WRKSRC}/Demos/BlobEdit/.gdb_history ${WRKSRC}/Demos/BlobEdit/Makefile ${WRKSRC}/GUI/Cocoa
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

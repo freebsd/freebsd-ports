@@ -19,6 +19,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	${RM} -f ${WRKSRC}/lib/HTML/Truncate.pm.orig
+	${RM} ${WRKSRC}/lib/HTML/Truncate.pm.orig
 
 .include <bsd.port.mk>

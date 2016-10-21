@@ -148,7 +148,7 @@ PLIST_SUB+=	XHTML11="@comment "
 post-extract:
 	${FIND} ${WRKSRC} \( -name '.*' -or -name '*.sh' -or -name '*.LOG' \) -delete
 	${FIND} ${WRKSRC}/extensions -type d -mindepth 1 -maxdepth 1 -print0 |\
-		${XARGS} -0 ${RM} -rf
+		${XARGS} -0 ${RM} -r
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}

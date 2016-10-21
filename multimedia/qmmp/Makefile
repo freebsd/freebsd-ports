@@ -292,7 +292,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|'
 
 pre-configure:
-	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
+	@${RM} ${BUILD_WRKSRC}/CMakeCache.txt
 
 post-build-DOXYGEN-on:
 	cd ${WRKSRC}/doc && doxygen Doxyfile
@@ -307,7 +307,7 @@ post-install-DOXYGEN-on:
 		${INSTALL_MAN} *.html *.png *.css ${STAGEDIR}${DOCSDIR}/html ; \
 	cd ${WRKSRC}/doc/html/search && \
 		${INSTALL_MAN} *.html *.png *.css *.js ${STAGEDIR}${DOCSDIR}/html/search ; \
-	${RM} -f ${WRKDIR}/PLIST.doc ; \
+	${RM} ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \

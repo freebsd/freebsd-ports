@@ -53,7 +53,7 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
 .endif
 .if ! ${PORT_OPTIONS:MDOCS} && ! ${PORT_OPTIONS:MEXAMPLES}
-	@${RM} -rf ${STAGEDIR}${DATADIR}/*
+	@${RM} -r ${STAGEDIR}${DATADIR}/*
 .endif
 	@${TEST} -d ${STAGEDIR}${DATADIR} && \
 		${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}

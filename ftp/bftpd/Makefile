@@ -24,7 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h
 	@${REINPLACE_CMD} -e 's, -ldl,,g' ${WRKSRC}/configure.in
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/

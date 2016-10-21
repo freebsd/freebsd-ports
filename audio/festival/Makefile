@@ -100,7 +100,7 @@ do-install:
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} ${FESTIVAL} -type f -name *.orig -delete
 	${CP} -pPR ${FESTIVAL}/lib ${FESTIVAL}/examples ${STAGEDIR}${DATADIR}
-	${RM} -rf ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
+	${RM} -r ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
 	    ${STAGEDIR}${DATADIR}/lib/etc/*unknown
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${STAGEDIR}${PREFIX}/libexec/festival.naked

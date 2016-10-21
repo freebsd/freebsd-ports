@@ -142,7 +142,7 @@ USE_SDL=	sdl
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/doc/vice.info*
+	@${RM} ${WRKSRC}/doc/vice.info*
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \

@@ -95,7 +95,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libpure.so.*.*
 .if ${PORT_OPTIONS:METC}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/etc/
-	@(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC} && ${RM} etc/*.in && ${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -56,7 +56,7 @@ post-patch:
 
 post-install:
 	${MKDIR} -m 0755 ${STAGEDIR}${EXAMPLESDIR}
-	@${RM} -f ${EX_WRKSRC}/Makefile.unix ${EX_WRKSRC}/ChangeLog \
+	@${RM} ${EX_WRKSRC}/Makefile.unix ${EX_WRKSRC}/ChangeLog \
 		${EX_WRKSRC}/CMakeLists.txt
 	cd ${EX_WRKSRC} && ${PAX} -rw * ${STAGEDIR}${EXAMPLESDIR}
 

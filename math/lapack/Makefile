@@ -213,7 +213,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 package-manpages: build-manpages
-	@${RM} -f ${WRKDIR}/lapack-manpages-${PORTVERSION}.tar.gz ; \
+	@${RM} ${WRKDIR}/lapack-manpages-${PORTVERSION}.tar.gz ; \
 	cd ${WRKSRC}/DOCS/man; \
 	${TAR} -czvf ${WRKDIR}/lapack-manpages-${PORTVERSION}.tar.gz \
 	${MAN3L:S|^|man3/|}

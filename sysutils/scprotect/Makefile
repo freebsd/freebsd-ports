@@ -22,6 +22,6 @@ BROKEN=		does not build on 11.x
 .endif
 
 post-extract:
-	@cd ${WRKSRC}/kmod && ${RM} -f machine
+	@cd ${WRKSRC}/kmod && ${RM} machine
 
 .include <bsd.port.post.mk>

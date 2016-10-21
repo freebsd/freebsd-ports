@@ -282,13 +282,13 @@ pre-everything::
 # really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
-	${RM} -f ${WRKDIR}/.PLIST*
-	${RM} -f ${WRKDIR}/.install_done.*
-	${RM} -f ${WRKDIR}/.package_done.*
-	${RM} -f ${WRKDIR}/.extract_done.*
-	${RM} -f ${WRKDIR}/.patch_done.*
-	${RM} -f ${WRKDIR}/.configure_done.*
-	${RM} -f ${WRKDIR}/.build_done.*
+	${RM} ${WRKDIR}/.PLIST*
+	${RM} ${WRKDIR}/.install_done.*
+	${RM} ${WRKDIR}/.package_done.*
+	${RM} ${WRKDIR}/.extract_done.*
+	${RM} ${WRKDIR}/.patch_done.*
+	${RM} ${WRKDIR}/.configure_done.*
+	${RM} ${WRKDIR}/.build_done.*
 	${MKDIR} ${WRKDIR}
 	${TOUCH} ${EXTRACT_COOKIE}
 	${TOUCH} ${PATCH_COOKIE}
@@ -301,7 +301,7 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	${CP} ${FILESDIR}/freebsd-aoo-intro.png ${WRKSRC}/default_images/introabout/intro.png
 	${CP} ${FILESDIR}/freebsd-aoo-about.png ${WRKSRC}/default_images/introabout/about.png
-	${RM} -rf ${WRKSRC}/l10n
+	${RM} -r ${WRKSRC}/l10n
 	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
 		-e '\|^For PostScript(R) AFM|,/^__/p'			\

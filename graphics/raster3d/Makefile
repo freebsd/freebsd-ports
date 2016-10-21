@@ -60,7 +60,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
 .endif
 
 .include <bsd.port.mk>

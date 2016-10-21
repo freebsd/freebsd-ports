@@ -33,7 +33,7 @@ post-patch:
 		's|yy_flex_realloc|yyrealloc|' ${WRKSRC}/${PORTNAME}.l
 
 pre-build:
-	@${RM} -f ${WRKSRC}/${PORTNAME}.cpp
+	@${RM} ${WRKSRC}/${PORTNAME}.cpp
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \

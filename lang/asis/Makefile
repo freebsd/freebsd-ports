@@ -33,7 +33,7 @@ post-extract:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Makefile.stub \
 		${WRKSRC}/common.gpr
-	@${RM} -rf ${WRKSRC}/gnat
+	@${RM} -r ${WRKSRC}/gnat
 
 do-build:
 	# This target is recreated because -j cannot be set, but

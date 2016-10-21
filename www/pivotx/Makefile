@@ -71,7 +71,7 @@ post-extract:
 post-patch:
 .for FILES in ${PORTEXAMPLES}
 	@${SED} -e 's#%%BLOGURL%%#${BLOGURL}#g' '${WRKSRC}/${FILES}' >'${TEMP_WRKSRC}/${FILES}'
-	@${RM} -f '${WRKSRC}/${FILES}'
+	@${RM} '${WRKSRC}/${FILES}'
 .endfor
 	@cd '${WRKSRC}' && ${FIND} . -type f -name '*.orig' -delete
 

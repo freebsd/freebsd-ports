@@ -52,7 +52,7 @@ do-extract:
 	@cd ${WRKSRC} && ${TAR} zxf setupstuff.tar.gz
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} ${LIBDIRS} -type f | ${SORT} \
 		| ${SED} -e 's|^|${UTDIR_REL}/|' >> ${PLIST}

@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deco ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in LICENSE Makefile NEWS README config.mk
-	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.7/${i}
+	${RM} -r ${WRKSRC}/../${PORTNAME}-archive-1.7/${i}
 .endfor
 	@cd ${WRKDIR}/${PORTNAME}-archive-1.7/x/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	@${FIND} ${STAGEDIR}${DATADIR} -type f -exec ${CHMOD} +x {} \;

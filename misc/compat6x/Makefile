@@ -33,12 +33,12 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 
 do-install:
 	@${MKDIR} -m 755 ${STAGEDIR}${TARGET_DIR}
-	${RM} -f ${WRKSRC}/lib/libpthread.so.2
+	${RM} ${WRKSRC}/lib/libpthread.so.2
 	(cd ${STAGEDIR}${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${STAGEDIR}${TARGET32_DIR}
-	${RM} -f ${WRKSRC}/lib32/libpthread.so.2
+	${RM} ${WRKSRC}/lib32/libpthread.so.2
 	(cd ${STAGEDIR}${TARGET32_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET32_DIR})
 .endif

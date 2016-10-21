@@ -42,7 +42,7 @@ post-patch:
 .	endif
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 .	if ${PKGNAMESUFFIX} == "-video-rice"
 		@${ECHO_CMD} "%%DATADIR%%/RiceVideoLinux.ini" >> ${PLIST}
 .	endif

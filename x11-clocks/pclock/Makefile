@@ -19,7 +19,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
 		LIBDIR="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 post-extract:
-	cd ${WRKSRC} && ${RM} -f getopt*
+	cd ${WRKSRC} && ${RM} getopt*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pclock ${STAGEDIR}${PREFIX}/bin

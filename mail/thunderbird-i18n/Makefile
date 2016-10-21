@@ -43,7 +43,7 @@ XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
 .endfor
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
 	@for lang in ${THUNDERBIRD_I18N_}; do \
 		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
@@ -66,7 +66,7 @@ do-install:
 	done
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS}; { ${RM} $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \

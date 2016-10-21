@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
-	@cd ${WRKSRC} && ${RM} -f .depend
+	@cd ${WRKSRC} && ${RM} .depend
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/^CC=/d; /^CFLAGS=/s/=/+=/' \

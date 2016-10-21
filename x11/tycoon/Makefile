@@ -24,6 +24,6 @@ post-patch:
 		's,FL_REVISION>=80,FL_REVISION >= 80 || FL_VERSION != 0,g'
 
 pre-configure:
-	@${RM} -f ${WRKSRC}/xbackdrop/backdrops/index?*
+	@${RM} ${WRKSRC}/xbackdrop/backdrops/index?*
 
 .include <bsd.port.mk>

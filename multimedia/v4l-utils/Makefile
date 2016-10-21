@@ -15,6 +15,6 @@ INSTALL_WRKSRC=	${WRKSRC}/utils
 
 # no need for udev rules
 post-install:
-	@${RM} -rf ${STAGEDIR}/lib/udev
+	@${RM} -r ${STAGEDIR}/lib/udev
 
 .include "${MASTERDIR}/Makefile"

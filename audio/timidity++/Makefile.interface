@@ -121,8 +121,8 @@ DESKTOP_ENTRIES="XSkinMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/libarc/*.h
-	@${RM} -f ${WRKSRC}/utils/mblock.h
+	@${RM} ${WRKSRC}/libarc/*.h
+	@${RM} ${WRKSRC}/utils/mblock.h
 
 post-patch:
 .if ${INTERFACE} == "slang"

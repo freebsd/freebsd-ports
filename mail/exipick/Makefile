@@ -19,7 +19,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}
 

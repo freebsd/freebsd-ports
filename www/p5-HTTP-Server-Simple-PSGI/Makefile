@@ -23,6 +23,6 @@ USES=		perl5
 
 post-patch:
 # Remove bundle Plack::Handler::HTTP::Server::Simple
-	@${RM} -fr ${WRKSRC}/lib/Plack/
+	@${RM} -r ${WRKSRC}/lib/Plack/
 
 .include <bsd.port.mk>

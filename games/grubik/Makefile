@@ -16,7 +16,7 @@ USES=		tar:tgz gnustep
 USE_GNUSTEP=	back build
 
 post-patch:
-	${RM} -rf ${WRKSRC}/GRubik.app/ix86
+	${RM} -r ${WRKSRC}/GRubik.app/ix86
 	${REINPLACE_CMD} -e 's|^//|# //|' \
 		-e "/GNUSTEP_INSTALLATION_DIR/d" ${WRKSRC}/GNUmakefile
 

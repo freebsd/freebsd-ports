@@ -34,7 +34,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -Ee 's/tests//' \
 		-e '/mode=compile ..CC/s/\\$$/-fPIC -DPIC &/' \
 		${WRKSRC}/Makefile.in
-	${RM} -f ${WRKSRC}/doc/*.info*
+	${RM} ${WRKSRC}/doc/*.info*
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}

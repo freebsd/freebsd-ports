@@ -58,7 +58,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|' \
 		${WRKSRC}/src/Makefile.in
-	@${RM} -rf ${WRKSRC}/src/zscanner/scanner.c
+	@${RM} -r ${WRKSRC}/src/zscanner/scanner.c
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/knot.sample.conf \

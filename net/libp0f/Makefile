@@ -20,8 +20,8 @@ USES=		gmake libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 
 post-stage:
-	${RM} -f ${STAGEDIR}${LOCALBASE}/bin/p0f
+	${RM} ${STAGEDIR}${LOCALBASE}/bin/p0f
 	${MV} ${STAGEDIR}/etc/p0f ${STAGEDIR}${LOCALBASE}/etc/libp0f
-	${RM} -rf ${STAGEDIR}/etc
+	${RM} -r ${STAGEDIR}/etc
 
 .include <bsd.port.mk>

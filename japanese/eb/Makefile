@@ -83,7 +83,7 @@ NLS_CONFIGURE_ON=	--with-gettext-includes=${LOCALBASE}/include \
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-extract:
-	${RM} -fr ${WRKSRC}/zlib
+	${RM} -r ${WRKSRC}/zlib
 	${MKDIR} ${WRKDIR}/appendix
 .for file in ${APPENDIXFILES}
 	${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \

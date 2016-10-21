@@ -61,7 +61,7 @@ BROKEN=		does not build with gcc 4.2
 .endif
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/src/ode
+	@${RM} -r ${WRKSRC}/src/ode
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure

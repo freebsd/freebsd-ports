@@ -34,7 +34,7 @@ FLTK_CONFIG=	${LOCALBASE}/bin/fltk-config
 GUI_LIBS=	$$(${FLTK_CONFIG} --use-gl --ldflags)
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/libgfx/
+	@${RM} -r ${WRKSRC}/libgfx/
 
 post-patch:
 	@${REINPLACE_CMD} -e '/gfx-config/d' ${CONFIGURE_WRKSRC}/mix-config.in

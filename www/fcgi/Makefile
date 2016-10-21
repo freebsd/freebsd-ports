@@ -35,7 +35,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/*.[13]
+	@${RM} ${STAGEDIR}${DOCSDIR}/*.[13]
 .endif
 
 .include <bsd.port.mk>

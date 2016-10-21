@@ -28,7 +28,7 @@ YOUBINBINDIR=	${LOCALBASE}
 .include <bsd.port.pre.mk>
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@(cd ${WRKDIR}; \
 	  if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
@@ -38,7 +38,7 @@ do-extract:
 	  fi)
 
 pre-patch:
-	@(${RM} -rf ${WRKSRC}/LocPixmap.c; \
+	@(${RM} -r ${WRKSRC}/LocPixmap.c; \
 	  ${CP} ${FILESDIR}/LocPixmap.c ${WRKSRC} );
 
 post-patch:

@@ -18,6 +18,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-extract:
-	@${RM} -f ${WRKSRC}/Net
+	@${RM} ${WRKSRC}/Net
 
 .include <bsd.port.mk>

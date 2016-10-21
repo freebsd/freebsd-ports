@@ -34,9 +34,9 @@ DEBUG_CONFIGURE_ON=	--debug --trace
 PLIST_SUB+=	PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
 post-patch:
 .if ${PYTHON_MAJOR_VER} == "2"
-	${RM} -rf ${WRKSRC}/pyuic/uic/port_v3
+	${RM} -r ${WRKSRC}/pyuic/uic/port_v3
 .elif ${PYTHON_MAJOR_VER} == "3"
-	${RM} -rf ${WRKSRC}/pyuic/uic/port_v2
+	${RM} -r ${WRKSRC}/pyuic/uic/port_v2
 .endif
 
 post-install:

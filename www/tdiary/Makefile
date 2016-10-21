@@ -76,7 +76,7 @@ pre-patch:
 	@${RM} ${WRKSRC}/config.ru
 	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
-	@${RM} -rf ${WRKSRC}/.bundle
+	@${RM} -r ${WRKSRC}/.bundle
 	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.11.2
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec

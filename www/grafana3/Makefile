@@ -219,7 +219,7 @@ post-extract:
 	@${MV} ${WRKSRC_redis} \
 		${WRKSRC}/src/gopkg.in/redis.v2
 
-	${RM} -rf ${WRKSRC}/src/github.com/grafana/grafana/public
+	${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
 	${MV} ${WRKSRC_grafana_public} ${WRKSRC}/src/github.com/grafana/grafana/public
 	${MV} ${WRKSRC}/src/github.com/grafana/grafana/public/public_gen \
 		${WRKSRC}/src/github.com/grafana/grafana/public_gen

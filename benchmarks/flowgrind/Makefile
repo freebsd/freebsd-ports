@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-pcap --enable-gsl
 CONFIGURE_ENV=  LIBS="${LIBS} -lpcap"
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/build-aux
+	@${RM} -r ${WRKSRC}/build-aux
 	@${REINPLACE_CMD} -e 's|AC_LIB_RPATH||g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

@@ -38,12 +38,12 @@ pre-extract:
 
 post-extract:
 	${MV} ${EXTRACT_DIR} ${WRKDIR}
-	${RM} -rf ${WRKDIRPREFIX}${.CURDIR}/worktmp
+	${RM} -r ${WRKDIRPREFIX}${.CURDIR}/worktmp
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
-	${RM} -rf ${STAGEDIR}${DATADIR}/docs
+	${RM} -r ${STAGEDIR}${DATADIR}/docs
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

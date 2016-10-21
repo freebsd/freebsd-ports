@@ -16,8 +16,8 @@ ALL_TARGET=	block bed
 MAKE_ARGS=	LL="${LDFLAGS} -lncurses" CLL="${LDFLAGS} -lncurses"
 
 post-extract:
-	@${RM} -f ${WRKSRC}/block
-	@${RM} -f ${WRKSRC}/bed
+	@${RM} ${WRKSRC}/block
+	@${RM} ${WRKSRC}/bed
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/block ${STAGEDIR}${PREFIX}/bin

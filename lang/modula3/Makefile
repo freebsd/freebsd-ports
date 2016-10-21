@@ -128,7 +128,7 @@ do-install:
 		${RM} cm3 && ${LN} -s ../../../bin/cm3 .)
 
 new-bootstrap:
-	@${RM} -rf ${NEWBOOTDIR}
+	@${RM} -r ${NEWBOOTDIR}
 	@${MKDIR} ${NEWBOOTDIR:H}
 	${CP} -a ${INTERMED}/min-dist ${NEWBOOTDIR}
 	@${FIND} ${NEWBOOTDIR} -type f -perm +111 | \

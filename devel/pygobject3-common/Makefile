@@ -69,7 +69,7 @@ PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 .endif
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/include/pygobject-3.0 \
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/pygobject-3.0 \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/pygobject-3.0.pc
 .endif
 

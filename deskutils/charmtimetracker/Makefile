@@ -27,6 +27,6 @@ PORTDOCS=	ReadMe.txt
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${RM} -f ${STAGEDIR}${DOCSDIR}/License.txt
+	${RM} ${STAGEDIR}${DOCSDIR}/License.txt
 
 .include <bsd.port.mk>

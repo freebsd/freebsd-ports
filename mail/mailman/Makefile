@@ -179,10 +179,10 @@ post-install:
 	    && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
-	@${RM} -f ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
+	@${RM} ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
 	@# mm_cfg.py is handled by pkg-plist, no need to archive a copy:
-	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
-	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
+	@${RM} ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
+	@${RM} ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
 	${CP} -p ${STAGEDIR}${MAILMANDIR}/icons/* ${STAGEDIR}${PREFIX}/${IMGDIR}
 	${INSTALL_DATA} ${FILESDIR}/powerlogo.png \

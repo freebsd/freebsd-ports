@@ -179,7 +179,7 @@ post-patch:
 
 pre-configure:
 	@if [ -f "${WRKDIR}/courier-authlib.cache" -a -s "${WRKDIR}/courier-authlib.cache" ] ; then \
-		${RM} -f "${WRKDIR}/courier-authlib.cache" ; \
+		${RM} "${WRKDIR}/courier-authlib.cache" ; \
 	fi
 
 post-install:

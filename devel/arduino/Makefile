@@ -82,7 +82,7 @@ pre-patch:
 .endif
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/hardware/tools/
+	@${RM} -r ${WRKSRC}/hardware/tools/
 	@${MKDIR} ${WRKSRC}/hardware/tools/avr/
 	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
 	@${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
@@ -91,7 +91,7 @@ post-patch:
 	@${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
 
 	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
-	@${RM} -rf ${WRKSRC}/reference/img/
+	@${RM} -r ${WRKSRC}/reference/img/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}

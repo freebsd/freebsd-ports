@@ -38,7 +38,7 @@ post-patch:
 .endfor
 
 post-build:
-	${RM} -rf ${WRKSRC}/lib/${PYTHON_VERSION}
+	${RM} -r ${WRKSRC}/lib/${PYTHON_VERSION}
 	${REINPLACE_CMD} -e 's|${WRKSRC}|${ETCDIR}|' ${WRKSRC}/dshell ${WRKSRC}/dshell-decode
 	${REINPLACE_CMD} -e 's|BINPATH=${WRKSRC}/bin|BINPATH=${PREFIX}/libexec/dshell|' \
 		-e 's|DSHELL=${WRKSRC}|DSHELL=${PYTHON_SITELIBDIR}|' \

@@ -20,7 +20,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -f ${WRKSRC}/getsqlite.pl
+	@${RM} ${WRKSRC}/getsqlite.pl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/SQLite2/SQLite2.so

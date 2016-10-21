@@ -35,7 +35,7 @@ PKGMESSAGE=	${WRKDIR}/pkg_message
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${RM} -rf ${STAGEDIR}${LSTATEDIR}
+	${RM} -r ${STAGEDIR}${LSTATEDIR}
 	(cd ${STAGEDIR}${PREFIX} \
 	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	-d ${PREFIX} -f ${DATADIR:S;${PREFIX}/;;})

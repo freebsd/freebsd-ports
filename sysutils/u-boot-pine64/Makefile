@@ -38,7 +38,7 @@ IGNORE=		requires FreeBSD 10 or later
 
 post-extract:
 	(cd ${WRKSRC}; ${EXTRACT_CMD} xvf ${DISTDIR}/firmware-pine64-20160329-6.1.src.rpm)
-	${RM} -fr ${WRKSRC}/arm-trusted-firmware
+	${RM} -r ${WRKSRC}/arm-trusted-firmware
 	(cd ${WRKSRC}; ${EXTRACT_CMD} xvf pine64atf.tar.xz)
 
 do-configure:

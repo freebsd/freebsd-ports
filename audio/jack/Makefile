@@ -61,9 +61,9 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	@${REINPLACE_CMD} -e 's|md5sum|md5 -q|g' \
 		${WRKSRC}/jackd/Makefile.in
-	@${RM} -f ${WRKSRC}/doc/reference/html/*
+	@${RM} ${WRKSRC}/doc/reference/html/*
 
 post-build:
-	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
+	@${RM} ${WRKSRC}/doc/reference/html/dir__2F*
 
 .include <bsd.port.mk>

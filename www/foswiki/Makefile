@@ -53,7 +53,7 @@ SUB_FILES+=	LocalSite.cfg
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/lib/CPAN
+	@${RM} -r ${WRKSRC}/lib/CPAN
 	@${MV} ${WRKSRC}/bin-htaccess.txt ${WRKSRC}/bin/.htaccess.txt
 	@${CP} ${WRKSRC}/subdir-htaccess.txt ${WRKSRC}/working/.htaccess
 	@cd ${WRKSRC} && \

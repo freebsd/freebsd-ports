@@ -49,7 +49,7 @@ GMSH_RUN_DEPENDS=	gmsh:cad/gmsh
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -print0 -or -name .cvsignore -type f -print0 | \
-		${XARGS} -0 ${RM} -rf
+		${XARGS} -0 ${RM} -r
 
 do-install:
 	(cd ${WRKDIR} && ${INSTALL_SCRIPT} impact impactgui \

@@ -33,6 +33,6 @@ CONFIGURE_ARGS+=	--with-sharedptr=boost
 .endif
 
 post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
+	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.post.mk>

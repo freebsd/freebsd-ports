@@ -19,6 +19,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-extract:
-	@${RM} -f ${WRKSRC}/lib/MooseX/._Async.pm
+	@${RM} ${WRKSRC}/lib/MooseX/._Async.pm
 
 .include <bsd.port.mk>

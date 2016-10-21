@@ -59,7 +59,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${KBUILD_ENV} ./kBuild/env.sh --full ${MAKE_CMD} -f bootstrap.gmk
-	cd ${WRKSRC} && ${RM} -rf out
+	cd ${WRKSRC} && ${RM} -r out
 	cd ${WRKSRC} && ./kBuild/env.sh kmk
 	cd ${WRKSRC} && ./kBuild/env.sh kmk NIX_INSTALL_DIR=${PREFIX} BUILD_TYPE=release -C ${WRKSRC}
 

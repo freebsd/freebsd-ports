@@ -29,6 +29,6 @@ post-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${FHOME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME}
-	${RM} -f ${STAGEDIR}${PREFIX}/share/festival/lib/voices/spanish/el_diphone/COPYING
+	${RM} ${STAGEDIR}${PREFIX}/share/festival/lib/voices/spanish/el_diphone/COPYING
 
 .include <bsd.port.mk>

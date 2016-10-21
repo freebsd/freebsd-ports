@@ -90,7 +90,7 @@ post-install:
 	@${RMDIR} ${STAGEDIR}/var/log/atheme
 	@${RMDIR} ${STAGEDIR}/var/run/atheme
 .if !${PORT_OPTIONS:MDOCS}
-	@${RM} -Rf ${STAGEDIR}${PREFIX}/share/doc/atheme
+	@${RM} -R ${STAGEDIR}${PREFIX}/share/doc/atheme
 .endif
 
 .include <bsd.port.mk>

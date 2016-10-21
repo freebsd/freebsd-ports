@@ -19,7 +19,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \
 		${WRKSRC}/pgfouine.php ${WRKSRC}/pgfouine_vacuum.php
-	${FIND} -d ${WRKSRC} -type d -name 'CVS' -exec ${RM} -rf {} \;
+	${FIND} -d ${WRKSRC} -type d -name 'CVS' -exec ${RM} -r {} \;
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine.php ${STAGEDIR}${PREFIX}/bin/pgfouine

@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
 .if defined(BAD_TESTS)
-	${RM} -f ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
+	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
 .endif
 
 regression-test check test: build

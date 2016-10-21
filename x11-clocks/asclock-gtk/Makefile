@@ -38,7 +38,7 @@ SHAPED_THEME_DESC=	Shaped theme
 
 do-configure:
 	@(cd ${WRKSRC}; \
-	  ${RM} -rf default_theme; \
+	  ${RM} -r default_theme; \
 	  ${LN} -s themes/${PORT_OPTIONS:M*_THEME:S/_THEME//:tl} default_theme)
 
 .include <bsd.port.mk>

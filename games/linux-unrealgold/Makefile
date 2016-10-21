@@ -97,7 +97,7 @@ do-extract:
 .for group in System_English Sounds_All System_All Manual_English
 	@${CP} -Rp ${WRKDIR}/source/${group}/ \
 		${WRKDIR}/source/${group:S,_English,,:S,_All,,}
-	@${RM} -rf ${WRKDIR}/source/${group}
+	@${RM} -r ${WRKDIR}/source/${group}
 .endfor
 	@${MV} ${WRKDIR}/source/Sounds_English ${WRKDIR}/source/Sounds/int
 # Original CD

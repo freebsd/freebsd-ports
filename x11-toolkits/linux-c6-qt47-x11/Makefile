@@ -30,6 +30,6 @@ NVIDIA_GL_USE_OFF=	LINUX=dri
 DESCR=	${.CURDIR}/../../devel/qt4/pkg-descr
 
 post-patch:
-	${RM} -f ${WRKSRC}/usr/share/qt47/translations/qt_help_*.qm
+	${RM} ${WRKSRC}/usr/share/qt47/translations/qt_help_*.qm
 
 .include <bsd.port.mk>

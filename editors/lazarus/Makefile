@@ -110,7 +110,7 @@ do-build:
 
 post-build:
 	@cd ${WRKSRC} && \
-		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
+		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
 			ide/Makefile*.orig ide/Makefile*.bak lcl/units components/ideintf/units \
 				components/synedit/units components/lazcontrols/lib
 
@@ -119,8 +119,8 @@ pre-install:
 	@${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/lazarus-wrapper
 	@${ECHO} "exec ./startlazarus" >> ${WRKDIR}/lazarus-wrapper
 
-	@${RM} -f ${PLIST}
-	@${RM} -f ${WRKSRC}/lcl/units
+	@${RM} ${PLIST}
+	@${RM} ${WRKSRC}/lcl/units
 	@${RM} -r ${WRKSRC}/components/chmhelp/lhelp/lhelp.app/Contents/MacOS \
 		${WRKSRC}/lazarus.app/Contents/MacOS \
 		${WRKSRC}/lazarus.app/Contents/Resources/startlazarus.app/Contents/MacOS

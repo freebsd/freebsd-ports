@@ -23,6 +23,6 @@ WRKSRC=		${WRKDIR}/src
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/share/${PORTNAME},${DATADIR},g' \
 		conkyEmail  conkyEmail.py setup.py example/conkyrc
-	cd ${WRKSRC} && ${RM} -fr example/conkyrc.bak
+	cd ${WRKSRC} && ${RM} -r example/conkyrc.bak
 
 .include <bsd.port.mk>
