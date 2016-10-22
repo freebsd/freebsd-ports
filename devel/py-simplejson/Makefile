@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplejson
-PORTVERSION=	3.8.2
+PORTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,9 @@ COMMENT=	Simple, fast, extensible JSON encoder/decoder
 
 # dual-licensed under MIT and Academic Free License version 2.1
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+# 2.5-2.7,3.3+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
@@ -20,6 +22,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejson/_speedups.so
 
 do-test:
-	cd ${WRKSRC}/ && ${PYTHON_CMD} ${PYSETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
