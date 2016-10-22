@@ -15,13 +15,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=0:audio/py-discid \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:textproc/py-qt4-xml
+		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen
 
-USES=		gettext python:2 desktop-file-utils
+USES=		gettext pyqt:4 python:2 desktop-file-utils
+USE_PYQT=	core_run gui_run network_run xml_run
 USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes
 
