@@ -8,7 +8,7 @@
 -                 {tag,"2.8.0"}}},
 -
 -    {hackney, ".*", {git, "https://github.com/benoitc/hackney.git",
--                     {tag, "1.4.4"}}}
+-                     {tag, "1.6.2"}}}
  ],
  
  case IsRebar3 of
