@@ -2,7 +2,7 @@
 
 PORTNAME=	arduino-builder
 PORTVERSION=	1.3.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -20,6 +20,7 @@ GH_TUPLE=	go-errors:errors:a418503:goerrors/src/github.com/go-errors/errors \
 		stretchr:testify:v1.1.3:stretchr/src/github.com/stretchr/testify \
 		jstemmer:go-junit-report:833f8ea:jstemmer/src/github.com/jstemmer/go-junit-report
 
+GO_ENV+=	GOPATH=${WRKSRC}
 STRIP=		# stripping can break go binaries
 
 PLIST_FILES=	arduino/hardware/platform.keys.rewrite.txt \
@@ -27,7 +28,7 @@ PLIST_FILES=	arduino/hardware/platform.keys.rewrite.txt \
 		bin/${PORTNAME}
 
 do-build:
-	@( cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build arduino.cc/arduino-builder )
+	@( cd ${WRKSRC} ; ${SETENV} ${GO_ENV} go build arduino.cc/arduino-builder )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
