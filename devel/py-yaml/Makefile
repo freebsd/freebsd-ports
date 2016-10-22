@@ -3,7 +3,7 @@
 
 PORTNAME=	yaml
 PORTVERSION=	3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 USES?=		python
 USE_PYTHON=	distutils autoplist
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
