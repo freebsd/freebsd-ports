@@ -20,7 +20,6 @@ USE_GNOME=	glib20 intltool libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qalculate
