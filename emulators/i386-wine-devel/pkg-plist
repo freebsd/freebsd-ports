@@ -2162,6 +2162,7 @@ lib32/wine/fakedlls/stdole32.tlb
 lib32/wine/fakedlls/sti.dll
 lib32/wine/fakedlls/storage.dll16
 lib32/wine/fakedlls/stress.dll16
+lib32/wine/fakedlls/subst.exe
 lib32/wine/fakedlls/svchost.exe
 lib32/wine/fakedlls/svrapi.dll
 lib32/wine/fakedlls/sxs.dll
@@ -2241,6 +2242,7 @@ lib32/wine/fakedlls/wined3d.dll
 lib32/wine/fakedlls/winedbg.exe
 lib32/wine/fakedlls/winedevice.exe
 lib32/wine/fakedlls/winefile.exe
+lib32/wine/fakedlls/winehid.sys
 lib32/wine/fakedlls/winemapi.dll
 lib32/wine/fakedlls/winemenubuilder.exe
 lib32/wine/fakedlls/winemine.exe
@@ -2775,6 +2777,7 @@ lib32/wine/stdole32.tlb.so
 lib32/wine/sti.dll.so
 lib32/wine/storage.dll16.so
 lib32/wine/stress.dll16.so
+lib32/wine/subst.exe.so
 lib32/wine/svchost.exe.so
 lib32/wine/svrapi.dll.so
 lib32/wine/sxs.dll.so
@@ -2854,6 +2857,7 @@ lib32/wine/wined3d.dll.so
 lib32/wine/winedbg.exe.so
 lib32/wine/winedevice.exe.so
 lib32/wine/winefile.exe.so
+lib32/wine/winehid.sys.so
 lib32/wine/winemapi.dll.so
 lib32/wine/winemenubuilder.exe.so
 lib32/wine/winemine.exe.so
