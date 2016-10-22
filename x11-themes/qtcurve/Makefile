@@ -4,7 +4,7 @@ PORTNAME=	qtcurve
 PORTVERSION=	1.8.18
 CATEGORIES=	x11-themes
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
 
 .if !defined(QTCURVE_SLAVE)
@@ -21,6 +21,9 @@ QT4_RUN_DEPENDS=	qt4-style-qtcurve>=1.8.18:x11-themes/qtcurve-qt4
 QT5_RUN_DEPENDS=	qt5-style-qtcurve>=1.8.18:x11-themes/qtcurve-qt5
 
 .else # !defined(QTCURVE_SLAVE)
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	QtCurve
 
