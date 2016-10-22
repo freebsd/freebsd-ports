@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tsshbatch
-PORTVERSION=	1.228
+PORTVERSION=	1.317
 CATEGORIES=	security python
 MASTER_SITES=	http://www.tundraware.com/Software/tsshbatch/
 
@@ -30,6 +30,7 @@ PORTDOCS=	WHATSNEW.txt \
 OPTIONS_DEFINE=	DOCS
 
 do-install:
+	cp -p ${WRKSRC}/Docs/* ${WRKSRC}/
 	${INSTALL_SCRIPT} ${WRKSRC}/tsshbatch.py ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tsshbatch.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
