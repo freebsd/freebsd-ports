@@ -103,6 +103,7 @@
     SUBDIR += arduino-mk
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
+    SUBDIR += arduino16
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
