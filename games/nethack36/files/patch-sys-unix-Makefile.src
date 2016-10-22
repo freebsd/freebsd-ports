@@ -61,7 +61,7 @@
  # WINTTYLIB = -lcurses16
  # WINTTYLIB = -lncurses
 -#WINTTYLIB = -ltermlib
-+WINTTYLIB = -ltermlib
++WINTTYLIB = -lncurses -L${LOCALBASE}/lib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
