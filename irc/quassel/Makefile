@@ -6,7 +6,7 @@ PORTVERSION=	0.12.4
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Qt 5 based distributed IRC client
 
 USES=		cmake:outsource compiler:c++11-lib cpe execinfo pkgconfig tar:bzip2
