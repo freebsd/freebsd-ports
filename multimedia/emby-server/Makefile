@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.0.8200
+PORTVERSION=	3.0.8300
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
