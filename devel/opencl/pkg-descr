@@ -3,4 +3,4 @@ for general purpose parallel programming across CPUs, GPUs and
 other processors, giving software developers portable and efficient
 access to the power of these heterogeneous processing platforms.
 
-This is OpenCL 2.0
+These header are covering OpenCL API 2.1
