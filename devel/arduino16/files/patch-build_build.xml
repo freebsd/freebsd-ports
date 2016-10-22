@@ -1,0 +1,319 @@
+--- build/build.xml.orig	2016-09-21 10:09:37 UTC
++++ build/build.xml
+@@ -99,7 +99,7 @@
+   </fileset>
+ 
+   <target name="build" description="Build Arduino.">
+-    <antcall target="${platform}-build" />
++    <antcall target="linux64-build" />
+ 
+     <antcall target="generate-hourly-build-txt"/>
+   </target>
+@@ -177,46 +177,23 @@
+ 
+     <mkdir dir="${target.path}/reference"/>
+ 
+-    <!-- Unzip documentation -->
+-    <antcall target="unzip">
+-      <param name="archive_file" value="shared/reference-1.6.6-3.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/reference-1.6.6-3.zip" />
+-      <param name="final_folder" value="${target.path}/reference/www.arduino.cc" />
+-      <param name="dest_folder" value="${target.path}/reference/" />
+-    </antcall>
+-    <antcall target="unzip">
+-      <param name="archive_file" value="shared/Galileo_help_files-1.6.2.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/Galileo_help_files-1.6.2.zip" />
+-      <param name="final_folder" value="${target.path}/reference/Galileo_help_files" />
+-      <param name="dest_folder" value="${target.path}/reference/" />
+-    </antcall>
+-    <antcall target="unzip">
+-      <param name="archive_file" value="shared/Edison_help_files-1.6.2.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/Edison_help_files-1.6.2.zip" />
+-      <param name="final_folder" value="${target.path}/reference/Edison_help_files" />
+-      <param name="dest_folder" value="${target.path}/reference/" />
+-    </antcall>
+-
+-    <!-- Fix wrong permissions from zip file root folder -->
+-    <chmod perm="755" dir="${target.path}/reference/Galileo_help_files" />
+-    <chmod perm="755" dir="${target.path}/reference/Edison_help_files" />
++    <antcall target="assemble-docs" />
+ 
+     <!-- Write the revision file! -->
+     <echo file="${target.path}/lib/version.txt" message="${version}" />
+ 
+     <antcall target="assemble-libraries" />
++  </target>
+ 
+-    <!-- Add WiFi101 updater tool -->
+-    <antcall target="unzip">
+-      <param name="archive_file" value="shared/WiFi101-Updater-ArduinoIDE-Plugin-0.8.0.zip" />
+-      <param name="archive_url" value="https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.8.0/WiFi101-Updater-ArduinoIDE-Plugin-0.8.0.zip" />
+-      <param name="final_folder" value="${target.path}/tools/WiFi101" />
+-      <param name="dest_folder" value="${target.path}/tools/" />
+-    </antcall>
++  <target name="assemble-docs" unless="no_docs">
++      <!-- Fix wrong permissions from zip file root folder -->
++      <chmod perm="755" dir="${target.path}/reference/Galileo_help_files" />
++      <chmod perm="755" dir="${target.path}/reference/Edison_help_files" />
+   </target>
+ 
+   <!-- copy library folder -->
+-  <target name="assemble-libraries" unless="light_bundle">
++  <target name="assemble-libraries" depends="assemble-libraries-full, assemble-libraries-light" />
++  <target name="assemble-libraries-full" unless="light_bundle">
+     <copy todir="${target.path}/libraries">
+       <fileset dir="../libraries"/>
+     </copy>
+@@ -232,6 +209,9 @@
+     <download-library name="Mouse" version="1.0.1"/>
+     <download-library name="Keyboard" version="1.0.1"/>
+   </target>
++  <target name="assemble-libraries-light" if="light_bundle">
++    <mkdir dir="${target.path}/libraries" />
++  </target>
+ 
+   <macrodef name="download-library">
+     <attribute name="name"/>
+@@ -250,13 +230,17 @@
+   </macrodef>
+ 
+   <!-- copy hardware folder -->
+-  <target name="assemble-hardware" unless="light_bundle">
++  <target name="assemble-hardware" depends="assemble-hardware-full, assemble-hardware-light" />
++  <target name="assemble-hardware-full" unless="light_bundle">
+     <copy todir="${target.path}/hardware">
+       <fileset dir="../hardware">
+         <exclude name="arduino/sam/**"/>
+       </fileset>
+     </copy>
+   </target>
++  <target name="assemble-hardware-light" if="light_bundle">
++    <copy file="../hardware/package_index_bundled.json" todir="${target.path}/hardware" />
++  </target>
+ 
+   <!-- - - - - - - - - -->
+   <!-- Revision check  -->
+@@ -362,7 +346,7 @@
+ 
+     <antcall target="unzip">
+       <param name="archive_file" value="${staging_folder}/appbundler-1.0ea-arduino4.jar.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/appbundler-1.0ea-arduino4.jar.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/appbundler-1.0ea-arduino4.jar.zip" />
+       <param name="final_folder" value="${staging_folder}/appbundler-1.0ea-arduino4" />
+       <param name="dest_folder" value="${staging_folder}/appbundler-1.0ea-arduino4" />
+     </antcall>
+@@ -447,7 +431,7 @@
+ 
+     <antcall target="unzip">
+       <param name="archive_file" value="./libastylej-2.05.1-3.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
+       <param name="final_folder" value="${staging_folder}/libastylej-2.05.1" />
+       <param name="dest_folder" value="${staging_folder}" />
+     </antcall>
+@@ -458,7 +442,7 @@
+ 
+     <antcall target="unzip">
+       <param name="archive_file" value="./liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+       <param name="final_folder" value="${staging_folder}/liblistSerials-${LIBLISTSERIAL-VERSION}" />
+       <param name="dest_folder" value="${staging_folder}" />
+     </antcall>
+@@ -469,7 +453,7 @@
+     <mkdir dir="${staging_folder}/arduino-builder-macosx"/>
+     <antcall target="untar">
+       <param name="archive_file" value="./arduino-builder-macosx-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/arduino-builder-macosx-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/arduino-builder-macosx-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+       <param name="final_folder" value="${staging_folder}/arduino-builder-macosx/arduino-builder" />
+       <param name="dest_folder" value="${staging_folder}/arduino-builder-macosx" />
+     </antcall>
+@@ -643,53 +627,15 @@
+   </target>
+ 
+   <target name="linux-libastyle-x86" depends="linux-build" description="Download libastyle.so for x86/x64 arch">
+-    <antcall target="unzip">
+-      <param name="archive_file" value="./libastylej-2.05.1-3.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
+-      <param name="final_folder" value="${staging_folder}/libastylej-2.05.1" />
+-      <param name="dest_folder" value="${staging_folder}" />
+-    </antcall>
+-    <copy file="linux/libastylej-2.05.1/libastylej${arch-bits}.so" tofile="linux/work/lib/libastylej.so" />
+-    <chmod perm="755" file="linux/work/lib/libastylej.so" />
+-
+     <antcall target="portable-${portable}">
+       <param name="parentdir" value="linux/work" />
+     </antcall>
+-
+-    <antcall target="unzip">
+-      <param name="archive_file" value="./liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="final_folder" value="${staging_folder}/liblistSerials-${LIBLISTSERIAL-VERSION}" />
+-      <param name="dest_folder" value="${staging_folder}" />
+-    </antcall>
+-    <copy file="linux/liblistSerials-${LIBLISTSERIAL-VERSION}/linux${arch-bits}/liblistSerialsj.so" todir="linux/work/lib/" />
+-    <chmod perm="755" file="linux/work/lib/liblistSerialsj.so" />
+-
+   </target>
+ 
+   <target name="linux-libastyle-arm" depends="linux-build" description="Download libastyle.so for ARM">
+-    <antcall target="unzip">
+-      <param name="archive_file" value="./libastylej-2.05.1-3.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
+-      <param name="final_folder" value="${staging_folder}/libastylej-2.05.1" />
+-      <param name="dest_folder" value="${staging_folder}" />
+-    </antcall>
+-    <copy file="linux/libastylej-2.05.1/libastylej_arm.so" tofile="linux/work/lib/libastylej.so" />
+-    <chmod perm="755" file="linux/work/lib/libastylej.so" />
+-
+     <antcall target="portable-${portable}">
+       <param name="parentdir" value="linux/work" />
+     </antcall>
+-
+-    <antcall target="unzip">
+-      <param name="archive_file" value="./liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="final_folder" value="${staging_folder}/liblistSerials-${LIBLISTSERIAL-VERSION}" />
+-      <param name="dest_folder" value="${staging_folder}" />
+-    </antcall>
+-    <copy file="linux/liblistSerials-${LIBLISTSERIAL-VERSION}/arm/liblistSerialsj.so" todir="linux/work/lib/" />
+-    <chmod perm="755" file="linux/work/lib/liblistSerialsj.so" />
+-
+   </target>
+ 
+   <target name="linuxarm-build" depends="linux-libastyle-arm" description="Build linux (32-bit) version">
+@@ -701,7 +647,7 @@
+     <mkdir dir="${staging_folder}/arduino-builder-arm"/>
+     <antcall target="untar">
+       <param name="archive_file" value="./arduino-builder-arm-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/arduino-builder-arm-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/arduino-builder-arm-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+       <param name="final_folder" value="${staging_folder}/arduino-builder-arm/arduino-builder" />
+       <param name="dest_folder" value="${staging_folder}/arduino-builder-arm" />
+     </antcall>
+@@ -731,7 +677,7 @@
+     <mkdir dir="${staging_folder}/arduino-builder-linux32"/>
+     <antcall target="untar">
+       <param name="archive_file" value="./arduino-builder-linux32-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/arduino-builder-linux32-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/arduino-builder-linux32-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+       <param name="final_folder" value="${staging_folder}/arduino-builder-linux32/arduino-builder" />
+       <param name="dest_folder" value="${staging_folder}/arduino-builder-linux32" />
+     </antcall>
+@@ -756,30 +702,6 @@
+     <antcall target="linux-jvm-${linux-bundle-jvm-task}">
+       <param name="JVM" value="${LINUX64_BUNDLED_JVM}"/>
+     </antcall>
+-
+-    <delete dir="${staging_folder}/arduino-builder-linux64" includeemptydirs="true"/>
+-    <mkdir dir="${staging_folder}/arduino-builder-linux64"/>
+-    <antcall target="untar">
+-      <param name="archive_file" value="./arduino-builder-linux64-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/arduino-builder-linux64-${ARDUINO-BUILDER-VERSION}.tar.bz2" />
+-      <param name="final_folder" value="${staging_folder}/arduino-builder-linux64/arduino-builder" />
+-      <param name="dest_folder" value="${staging_folder}/arduino-builder-linux64" />
+-    </antcall>
+-    <copy file="${staging_folder}/arduino-builder-linux64/arduino-builder" tofile="linux/work/arduino-builder" />
+-    <chmod perm="755" file="linux/work/arduino-builder" />
+-    <move file="${staging_folder}/arduino-builder-linux64/tools" tofile="linux/work/tools-builder"/>
+-    <copy todir="linux/work/hardware" overwrite="true">
+-      <fileset dir="${staging_folder}/arduino-builder-linux64/hardware" includes="*.txt"/>
+-    </copy>
+-    <delete dir="${staging_folder}/arduino-builder-linux64" includeemptydirs="true"/>
+-
+-    <antcall target="avr-toolchain-bundle">
+-      <param name="unpack_target" value="untar"/>
+-      <param name="gcc_archive_file" value="avr-gcc-${AVRGCC-VERSION}-x86_64-pc-linux-gnu.tar.bz2"/>
+-      <param name="gcc_version" value="${AVRGCC-VERSION}"/>
+-      <param name="avrdude_archive_file" value="avrdude-${AVRDUDE-VERSION}-x86_64-pc-linux-gnu.tar.bz2"/>
+-      <param name="avrdude_version" value="${AVRDUDE-VERSION}"/>
+-    </antcall>
+   </target>
+ 
+   <target name="linux-jvm-noop"/>
+@@ -822,8 +744,21 @@
+ 
+   <!-- Retrieve tool -->
+   <target name="untar-unzip-download" depends="untar-unzip-check" unless="${archive_file}_available">
++      <antcall target="untar-unzip-download-web" />
++      <antcall target="untar-unzip-download-local" />
++  </target>
++  <target name="untar-unzip-download-web" unless="local_sources">
+     <get src="${archive_url}" dest="${archive_file}" verbose="true" ignoreerrors="true" />
+   </target>
++  <target name="untar-unzip-download-local" if="local_sources">
++    <basename file="${archive_file}" property="basename" />
++    <echo>Skipping download of ${archive_url}, using makepkg downloaded ${basename}</echo>
++    <exec executable="ln" failonerror="true">
++        <arg value="-s" />
++        <arg value="${basedir}/../../${basename}" />
++        <arg value="${archive_file}" />
++    </exec>
++  </target>
+ 
+   <target name="untar-unzip-checksum" depends="untar-unzip-download">
+     <echo>Testing checksum of "${archive_file}"</echo>
+@@ -926,7 +861,7 @@
+   <target name="download-launch4j-windows">
+     <antcall target="unzip-with-ant-task">
+       <param name="archive_file" value="windows/launch4j-3.8-win32.zip"/>
+-      <param name="archive_url" value="http://downloads.sourceforge.net/project/launch4j/launch4j-3/3.8/launch4j-3.8-win32.zip"/>
++      <param name="archive_url" value="https://downloads.sourceforge.net/project/launch4j/launch4j-3/3.8/launch4j-3.8-win32.zip"/>
+       <param name="final_folder" value="windows/launcher/launch4j"/>
+       <param name="dest_folder" value="windows/launcher/"/>
+     </antcall>
+@@ -935,7 +870,7 @@
+   <target name="download-launch4j-linux">
+     <antcall target="untar">
+       <param name="archive_file" value="windows/launch4j-3.8-linux.tgz"/>
+-      <param name="archive_url" value="http://downloads.sourceforge.net/project/launch4j/launch4j-3/3.8/launch4j-3.8-linux.tgz"/>
++      <param name="archive_url" value="https://downloads.sourceforge.net/project/launch4j/launch4j-3/3.8/launch4j-3.8-linux.tgz"/>
+       <param name="final_folder" value="windows/launcher/launch4j"/>
+       <param name="dest_folder" value="windows/launcher/"/>
+     </antcall>
+@@ -977,7 +912,7 @@
+ 
+     <antcall target="unzip">
+       <param name="archive_file" value="./libastylej-2.05.1-3.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/libastylej-2.05.1-3.zip" />
+       <param name="final_folder" value="${staging_folder}/libastylej-2.05.1" />
+       <param name="dest_folder" value="${staging_folder}" />
+     </antcall>
+@@ -987,7 +922,7 @@
+ 
+     <antcall target="unzip">
+       <param name="archive_file" value="./liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/liblistSerials/liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
+       <param name="final_folder" value="${staging_folder}/liblistSerials-${LIBLISTSERIAL-VERSION}" />
+       <param name="dest_folder" value="${staging_folder}" />
+     </antcall>
+@@ -998,7 +933,7 @@
+     <mkdir dir="${staging_folder}/arduino-builder-windows"/>
+     <antcall target="unzip-with-ant-task">
+       <param name="archive_file" value="./arduino-builder-windows-${ARDUINO-BUILDER-VERSION}.zip" />
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/arduino-builder-windows-${ARDUINO-BUILDER-VERSION}.zip" />
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/arduino-builder-windows-${ARDUINO-BUILDER-VERSION}.zip" />
+       <param name="final_folder" value="${staging_folder}/arduino-builder-windows/arduino-builder.exe" />
+       <param name="dest_folder" value="${staging_folder}/arduino-builder-windows" />
+     </antcall>
+@@ -1136,7 +1071,7 @@
+ 
+     <antcall target="${unpack_target}">
+       <param name="archive_file" value="${staging_folder}/${gcc_archive_file}"/>
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/${gcc_archive_file}"/>
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/${gcc_archive_file}"/>
+       <param name="final_folder" value="${staging_folder}/work/${staging_hardware_folder}/tmp/gcc/${gcc_version}/"/>
+       <param name="dest_folder" value="${staging_folder}/work/${staging_hardware_folder}/tmp/gcc/"/>
+     </antcall>
+@@ -1145,7 +1080,7 @@
+ 
+     <antcall target="${unpack_target}">
+       <param name="archive_file" value="${staging_folder}/${avrdude_archive_file}"/>
+-      <param name="archive_url" value="http://downloads.arduino.cc/tools/${avrdude_archive_file}"/>
++      <param name="archive_url" value="https://downloads.arduino.cc/tools/${avrdude_archive_file}"/>
+       <param name="final_folder" value="${staging_folder}/work/${staging_hardware_folder}/tmp/avrdude/${avrdude_version}"/>
+       <param name="dest_folder" value="${staging_folder}/work/${staging_hardware_folder}/tmp/avrdude/"/>
+     </antcall>
