@@ -16,12 +16,12 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
 
-USES=		cmake tar:xz
+USES=		cmake:outsource tar:xz
 USE_QT5=	buildtools_build qmake_build designer phonon4
 CMAKE_ARGS=	-DPHONON_QT_PLUGIN_INSTALL_DIR=${PREFIX}/${QT_PLUGINDIR_REL}/designer \
 		-DPHONON_BUILD_PHONON4QT5=ON
 
-BUILD_WRKSRC=	${WRKSRC}/designer
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}/designer
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DISTINFO_FILE=	${.CURDIR:H}/qt5-phonon4/distinfo
 
