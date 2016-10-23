@@ -108,7 +108,6 @@
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += dimes
-    SUBDIR += dosdetector
     SUBDIR += dpdk
     SUBDIR += dpinger
     SUBDIR += drawterm
