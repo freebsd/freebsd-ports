@@ -1,0 +1,5 @@
+isort is a Python utility and library to sort imports automatically, and
+automatically into sections. It provides a command line utility, library and
+plugins for various editors to quickly sort all your imports.
+
+WWW: https://github.com/timothycrosley/isort
