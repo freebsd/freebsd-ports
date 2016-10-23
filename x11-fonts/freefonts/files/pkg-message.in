@@ -1,0 +1,10 @@
+============================================================
+You'll have to add %%FONTSDIR%%
+to your X font path by either:
+
+$ xset fp+ %%FONTSDIR%%
+$ xset fp rehash
+
+or by adding it to your X-server configuration file and
+restarting the X-server.
+============================================================
