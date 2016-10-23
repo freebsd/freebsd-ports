@@ -17,7 +17,7 @@ LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-backend//}
 
-USES=		cmake pkgconfig tar:xz
+USES=		cmake:outsource pkgconfig tar:xz
 USE_QT5=	core gui widgets phonon4 \
 		buildtools_build qmake_build
 CMAKE_ARGS=	-DPHONON_BUILD_PHONON4QT5=ON
