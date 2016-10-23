@@ -1,3 +1,5 @@
+bin/altonegen
+bin/bsincgen
 bin/makehrtf
 %%CONFIG%%bin/alsoft-config
 bin/openal-info
@@ -10,7 +12,7 @@ include/AL/alext.h
 include/AL/efx.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
-lib/libopenal.so.1.16.0
+lib/libopenal.so.1.17.2
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
