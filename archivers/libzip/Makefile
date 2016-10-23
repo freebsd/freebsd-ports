@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libzip
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CPE_VENDOR=	nih
 
