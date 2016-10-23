@@ -1,26 +1,6 @@
---- CMakeLists.txt.orig	2014-08-15 07:06:59 UTC
+--- CMakeLists.txt.orig	2016-01-25 03:12:39 UTC
 +++ CMakeLists.txt
-@@ -62,8 +62,8 @@ ELSE()
-     SET(LIBNAME openal)
- 
-     # These are needed on non-Windows systems for extra features
--    ADD_DEFINITIONS(-D_GNU_SOURCE=1 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700)
--    SET(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -D_GNU_SOURCE=1 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700")
-+    ADD_DEFINITIONS(-D_GNU_SOURCE=1)
-+    SET(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -D_GNU_SOURCE=1")
- ENDIF()
- 
- # Set defines for large file support
-@@ -186,7 +186,7 @@ HAVE_C11_ALIGNAS)
- # Check if we have C11 _Atomic
- CHECK_C_SOURCE_COMPILES(
- "#include <stdatomic.h>
-- int _Atomic foo;
-+ const int _Atomic foo = ATOMIC_VAR_INIT(~0);
-  int main()
-  {
-      return atomic_load(&foo);
-@@ -523,10 +523,6 @@ IF(NOT HAVE_WINDOWS_H)
+@@ -582,10 +582,6 @@ int main()
  
      CHECK_SYMBOL_EXISTS(pthread_mutex_timedlock pthread.h HAVE_PTHREAD_MUTEX_TIMEDLOCK)
  
@@ -31,12 +11,12 @@
  ENDIF()
  
  # Check for a 64-bit type
-@@ -1108,7 +1104,7 @@ INSTALL(FILES include/AL/al.h
-         DESTINATION include/AL
- )
- INSTALL(FILES "${OpenAL_BINARY_DIR}/openal.pc"
--        DESTINATION "lib${LIB_SUFFIX}/pkgconfig")
-+        DESTINATION "libdata/pkgconfig")
+@@ -1184,7 +1180,7 @@ IF(ALSOFT_INSTALL)
+             DESTINATION include/AL
+     )
+     INSTALL(FILES "${OpenAL_BINARY_DIR}/openal.pc"
+-            DESTINATION "lib${LIB_SUFFIX}/pkgconfig")
++            DESTINATION "libdata/pkgconfig")
+ ENDIF()
  
  
- MESSAGE(STATUS "")
