@@ -1,12 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Command-line driven graphing utility
+
+LICENSE=	Gnuplot
+LICENSE_NAME=	Gnuplot license
+LICENSE_FILE=	${WRKSRC}/Copyright
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		iconv lua pkgconfig readline
 USE_TEX=	kpathsea
