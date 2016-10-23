@@ -4,7 +4,7 @@ PORTNAME=	migration
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-PKGNAMEPREFIX=	elasticsearch-plugin-
+PKGNAMEPREFIX=	elasticsearch2-plugin-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ElasticSearch Migration Plugin
