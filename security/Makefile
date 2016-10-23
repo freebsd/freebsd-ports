@@ -268,6 +268,7 @@
     SUBDIR += jbrofuzz
     SUBDIR += john
     SUBDIR += kc
+    SUBDIR += kdbx-viewer
     SUBDIR += kedpm
     SUBDIR += keepass
     SUBDIR += keepassx
@@ -277,7 +278,6 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
-    SUBDIR += kdbx-viewer
     SUBDIR += kgpg-kde4
     SUBDIR += knock
     SUBDIR += knocker
@@ -868,6 +868,7 @@
     SUBDIR += py-keystone
     SUBDIR += py-libnacl
     SUBDIR += py-m2crypto
+    SUBDIR += py-maec
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
     SUBDIR += py-oauth2client
