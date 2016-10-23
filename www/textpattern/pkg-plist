@@ -1,37 +1,107 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/HISTORY.txt
+%%WWWDIR%%/LICENSE-BSD-3.txt
+%%WWWDIR%%/LICENSE-LESSER.txt
+%%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/css.php
-%%WWWDIR%%/images/1.gif
-%%WWWDIR%%/images/2.gif
+%%WWWDIR%%/files/.htaccess-dist
 %%WWWDIR%%/index.php
 %%WWWDIR%%/rpc/TXP_RPCServer.php
 %%WWWDIR%%/rpc/index.php
 %%WWWDIR%%/sites/README.txt
+%%WWWDIR%%/sites/site1/admin/admin-themes
 %%WWWDIR%%/sites/site1/admin/index.php
-%%WWWDIR%%/sites/site1/admin/jquery.js
 %%WWWDIR%%/sites/site1/admin/setup/index.php
 %%WWWDIR%%/sites/site1/admin/textpattern.css
 %%WWWDIR%%/sites/site1/admin/textpattern.js
-%%WWWDIR%%/sites/site1/admin/theme
-%%WWWDIR%%/sites/site1/admin/txp_img
+%%WWWDIR%%/sites/site1/admin/vendors
 %%WWWDIR%%/sites/site1/private/config-dist.php
+%%WWWDIR%%/sites/site1/public/.htaccess
 %%WWWDIR%%/sites/site1/public/admin
 %%WWWDIR%%/sites/site1/public/css.php
-%%WWWDIR%%/sites/site1/public/images/1.gif
-%%WWWDIR%%/sites/site1/public/images/2.gif
+%%WWWDIR%%/sites/site1/public/files/.htaccess-dist
+%%WWWDIR%%/sites/site1/public/images/.gitignore
 %%WWWDIR%%/sites/site1/public/index.php
+%%WWWDIR%%/sites/site1/public/rpc
 %%WWWDIR%%/sites/site1/public/setup
 %%WWWDIR%%/sites/site1/public/theme
+%%WWWDIR%%/textpattern/.htaccess
+%%WWWDIR%%/textpattern/admin-themes/classic/README.textile
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/css/custom-example.css
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/css/textpattern.css
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/css/textpattern.min.css
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/arrow-up-down.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/expand-collapse.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/favicon.ico
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/spinner.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/spinner@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/sprite.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-333333.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-error.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-ffffff.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-info.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-success.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-icon-sprite-warning.svg
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-progressbar-indeterminate.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-progressbar-indeterminate@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-progressbar.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/img/ui-progressbar@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/js/main.js
+%%WWWDIR%%/textpattern/admin-themes/classic/assets/js/main.min.js
+%%WWWDIR%%/textpattern/admin-themes/classic/classic.php
+%%WWWDIR%%/textpattern/admin-themes/classic/screenshot.png
+%%WWWDIR%%/textpattern/admin-themes/hive/README.textile
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/css/custom-example.css
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/css/textpattern.css
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/css/textpattern.min.css
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/favicon.ico
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/spinner.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/spinner@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/sprite.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/textpattern.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-333333.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-error.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-ffffff.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-info.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-success.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-icon-sprite-warning.svg
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-progressbar-indeterminate.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-progressbar-indeterminate@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-progressbar.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/img/ui-progressbar@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/js/main.js
+%%WWWDIR%%/textpattern/admin-themes/hive/assets/js/main.min.js
+%%WWWDIR%%/textpattern/admin-themes/hive/hive.php
+%%WWWDIR%%/textpattern/admin-themes/hive/screenshot.png
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/README.textile
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/css/custom-example.css
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/css/textpattern.css
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/css/textpattern.min.css
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/favicon.ico
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/spinner.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/spinner@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/sprite.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/textpattern.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-333333.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-error.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-ffffff.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-info.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-success.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-icon-sprite-warning.svg
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-progressbar-indeterminate.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-progressbar-indeterminate@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-progressbar.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img/ui-progressbar@2x.gif
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/js/main.js
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/js/main.min.js
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/hiveneutral.php
+%%WWWDIR%%/textpattern/admin-themes/hiveneutral/screenshot.png
 %%WWWDIR%%/textpattern/checksums.txt
 %%WWWDIR%%/textpattern/config-dist.php
 %%WWWDIR%%/textpattern/css.php
-%%WWWDIR%%/textpattern/include/import/BloggerImportTemplate.txt
-%%WWWDIR%%/textpattern/include/import/import_b2.php
-%%WWWDIR%%/textpattern/include/import/import_blogger.php
-%%WWWDIR%%/textpattern/include/import/import_mt.php
-%%WWWDIR%%/textpattern/include/import/import_mtdb.php
-%%WWWDIR%%/textpattern/include/import/import_wp.php
 %%WWWDIR%%/textpattern/include/txp_admin.php
 %%WWWDIR%%/textpattern/include/txp_article.php
 %%WWWDIR%%/textpattern/include/txp_auth.php
@@ -42,23 +112,24 @@
 %%WWWDIR%%/textpattern/include/txp_file.php
 %%WWWDIR%%/textpattern/include/txp_form.php
 %%WWWDIR%%/textpattern/include/txp_image.php
-%%WWWDIR%%/textpattern/include/txp_import.php
+%%WWWDIR%%/textpattern/include/txp_lang.php
 %%WWWDIR%%/textpattern/include/txp_link.php
 %%WWWDIR%%/textpattern/include/txp_list.php
 %%WWWDIR%%/textpattern/include/txp_log.php
 %%WWWDIR%%/textpattern/include/txp_page.php
+%%WWWDIR%%/textpattern/include/txp_pane.php
 %%WWWDIR%%/textpattern/include/txp_plugin.php
 %%WWWDIR%%/textpattern/include/txp_prefs.php
-%%WWWDIR%%/textpattern/include/txp_preview.php
 %%WWWDIR%%/textpattern/include/txp_section.php
 %%WWWDIR%%/textpattern/include/txp_tag.php
 %%WWWDIR%%/textpattern/index.php
-%%WWWDIR%%/textpattern/jquery.js
 %%WWWDIR%%/textpattern/lang/README
 %%WWWDIR%%/textpattern/lang/en-gb.txt
 %%WWWDIR%%/textpattern/lib/IXRClass.php
+%%WWWDIR%%/textpattern/lib/PasswordHash.php
 %%WWWDIR%%/textpattern/lib/admin_config.php
 %%WWWDIR%%/textpattern/lib/class.thumb.php
+%%WWWDIR%%/textpattern/lib/class.trace.php
 %%WWWDIR%%/textpattern/lib/classTextile.php
 %%WWWDIR%%/textpattern/lib/constants.php
 %%WWWDIR%%/textpattern/lib/i18n-ascii.txt
@@ -69,50 +140,41 @@
 %%WWWDIR%%/textpattern/lib/txplib_head.php
 %%WWWDIR%%/textpattern/lib/txplib_html.php
 %%WWWDIR%%/textpattern/lib/txplib_misc.php
+%%WWWDIR%%/textpattern/lib/txplib_publish.php
 %%WWWDIR%%/textpattern/lib/txplib_theme.php
 %%WWWDIR%%/textpattern/lib/txplib_update.php
+%%WWWDIR%%/textpattern/lib/txplib_validator.php
 %%WWWDIR%%/textpattern/lib/txplib_wrapper.php
-%%WWWDIR%%/textpattern/license.txt
+%%WWWDIR%%/textpattern/publish.php
 %%WWWDIR%%/textpattern/publish/atom.php
 %%WWWDIR%%/textpattern/publish/comment.php
 %%WWWDIR%%/textpattern/publish/log.php
 %%WWWDIR%%/textpattern/publish/rss.php
 %%WWWDIR%%/textpattern/publish/search.php
 %%WWWDIR%%/textpattern/publish/taghandlers.php
-%%WWWDIR%%/textpattern/publish.php
+%%WWWDIR%%/textpattern/setup/article.body.textile
+%%WWWDIR%%/textpattern/setup/article.excerpt.textile
 %%WWWDIR%%/textpattern/setup/en-gb.php
+%%WWWDIR%%/textpattern/setup/forms/article.article_listing.txp
+%%WWWDIR%%/textpattern/setup/forms/article.default.txp
+%%WWWDIR%%/textpattern/setup/forms/article.search_results.txp
+%%WWWDIR%%/textpattern/setup/forms/comment.comment_form.txp
+%%WWWDIR%%/textpattern/setup/forms/comment.comments.txp
+%%WWWDIR%%/textpattern/setup/forms/comment.comments_display.txp
+%%WWWDIR%%/textpattern/setup/forms/comment.popup_comments.txp
+%%WWWDIR%%/textpattern/setup/forms/file.files.txp
+%%WWWDIR%%/textpattern/setup/forms/link.plainlinks.txp
+%%WWWDIR%%/textpattern/setup/forms/misc.images.txp
+%%WWWDIR%%/textpattern/setup/forms/misc.search_input.txp
 %%WWWDIR%%/textpattern/setup/index.php
+%%WWWDIR%%/textpattern/setup/pages/archive.txp
+%%WWWDIR%%/textpattern/setup/pages/default.txp
+%%WWWDIR%%/textpattern/setup/pages/error_default.txp
 %%WWWDIR%%/textpattern/setup/setup-langs.php
+%%WWWDIR%%/textpattern/setup/styles/default.css
 %%WWWDIR%%/textpattern/setup/txpsql.php
 %%WWWDIR%%/textpattern/textpattern.css
 %%WWWDIR%%/textpattern/textpattern.js
-%%WWWDIR%%/textpattern/theme/classic/carver.gif
-%%WWWDIR%%/textpattern/theme/classic/classic.php
-%%WWWDIR%%/textpattern/theme/classic/down.gif
-%%WWWDIR%%/textpattern/theme/classic/down2.gif
-%%WWWDIR%%/textpattern/theme/classic/htmldown.gif
-%%WWWDIR%%/textpattern/theme/classic/htmlup.gif
-%%WWWDIR%%/textpattern/theme/classic/previewdown.gif
-%%WWWDIR%%/textpattern/theme/classic/previewup.gif
-%%WWWDIR%%/textpattern/theme/classic/screenshot.png
-%%WWWDIR%%/textpattern/theme/classic/tabs.gif
-%%WWWDIR%%/textpattern/theme/classic/tabshadow.gif
-%%WWWDIR%%/textpattern/theme/classic/textdown.gif
-%%WWWDIR%%/textpattern/theme/classic/textpattern.css
-%%WWWDIR%%/textpattern/theme/classic/textpattern.gif
-%%WWWDIR%%/textpattern/theme/classic/texttabshadow.gif
-%%WWWDIR%%/textpattern/theme/classic/textup.gif
-%%WWWDIR%%/textpattern/theme/classic/up.gif
-%%WWWDIR%%/textpattern/theme/classic/up2.gif
-%%WWWDIR%%/textpattern/theme/remora/dropshadow.gif
-%%WWWDIR%%/textpattern/theme/remora/remora.php
-%%WWWDIR%%/textpattern/theme/remora/screenshot.png
-%%WWWDIR%%/textpattern/theme/remora/textpattern.css
-%%WWWDIR%%/textpattern/txp_img/arrowupdn.gif
-%%WWWDIR%%/textpattern/txp_img/carver.gif
-%%WWWDIR%%/textpattern/txp_img/expandcollapse.gif
-%%WWWDIR%%/textpattern/txp_img/txp_slug105x45.gif
-%%WWWDIR%%/textpattern/txp_img/txp_slug105x70.gif
 %%WWWDIR%%/textpattern/update/_to_1.0.0.php
 %%WWWDIR%%/textpattern/update/_to_4.0.2.php
 %%WWWDIR%%/textpattern/update/_to_4.0.3.php
@@ -122,8 +184,159 @@
 %%WWWDIR%%/textpattern/update/_to_4.0.7.php
 %%WWWDIR%%/textpattern/update/_to_4.0.8.php
 %%WWWDIR%%/textpattern/update/_to_4.2.0.php
+%%WWWDIR%%/textpattern/update/_to_4.3.0.php
+%%WWWDIR%%/textpattern/update/_to_4.5.0.php
+%%WWWDIR%%/textpattern/update/_to_4.5.7.php
+%%WWWDIR%%/textpattern/update/_to_4.6.0.php
 %%WWWDIR%%/textpattern/update/_update.php
 %%WWWDIR%%/textpattern/update/index.html
-@dir %%WWWDIR%%/textpattern/tmp
-@dir %%WWWDIR%%/sites/site1/public/files
+%%WWWDIR%%/textpattern/vendors/Netcarver/Textile/DataBag.php
+%%WWWDIR%%/textpattern/vendors/Netcarver/Textile/LICENSE.txt
+%%WWWDIR%%/textpattern/vendors/Netcarver/Textile/Parser.php
+%%WWWDIR%%/textpattern/vendors/Netcarver/Textile/Tag.php
+%%WWWDIR%%/textpattern/vendors/PrismJS/prism/LICENSE.txt
+%%WWWDIR%%/textpattern/vendors/PrismJS/prism/prism.js
+%%WWWDIR%%/textpattern/vendors/Textpattern/Adaptable/AdapterInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Adaptable/Providable.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Adaptable/ProvidableInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Admin/Theme.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Container/Container.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Container/ContainerInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Container/FactorableInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Container/FactoryInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Container/ReusableInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Date/Timezone.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Filter/Exception.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Filter/FilterCallable.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Filter/StringFilter.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Http/Request.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Iterator/FileIterator.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/L10n/Locale.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Loader.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Adapter/Mail.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/AdapterInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Compose.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Encode.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Exception.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Message.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Password/Adapter/PasswordHash.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Password/AdapterInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Password/Generator.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Password/Hash.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Password/Random.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Search/Filter.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Search/Method.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Security/Exception.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Security/Filter.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Server/Config.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Registry.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax/Authors.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax/File.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax/Image.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax/Link.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax/Partial.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Base.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Constraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Nl2Br.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Plain.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Registry.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/TextfilterInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter/Textile.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textile/Parser.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textpack/Parser.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textpack/String/Iterator.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Textpack/StringInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Type/StringType.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Type/TypeCallable.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Type/TypeInterface.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/BlankConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/CategoryConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/ChoiceConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/Constraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/FalseConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/FormConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/SectionConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/TrueConstraint.php
+%%WWWDIR%%/textpattern/vendors/Textpattern/Validator/Validator.php
+%%WWWDIR%%/textpattern/vendors/Txp.php
+%%WWWDIR%%/textpattern/vendors/dropbox/zxcvbn/LICENSE.txt
+%%WWWDIR%%/textpattern/vendors/dropbox/zxcvbn/zxcvbn.js
+%%WWWDIR%%/textpattern/vendors/jquery/jquery-ui/LICENSE.txt
+%%WWWDIR%%/textpattern/vendors/jquery/jquery-ui/jquery-ui.js
+%%WWWDIR%%/textpattern/vendors/jquery/jquery/LICENSE.txt
+%%WWWDIR%%/textpattern/vendors/jquery/jquery/jquery.js
+@dir %%WWWDIR%%
 @dir %%WWWDIR%%/files
+@dir %%WWWDIR%%/images
+@dir %%WWWDIR%%/rpc
+@dir %%WWWDIR%%/sites
+@dir %%WWWDIR%%/sites/site1
+@dir %%WWWDIR%%/sites/site1/admin
+@dir %%WWWDIR%%/sites/site1/admin/setup
+@dir %%WWWDIR%%/sites/site1/private
+@dir %%WWWDIR%%/sites/site1/public
+@dir %%WWWDIR%%/sites/site1/public/files
+@dir %%WWWDIR%%/sites/site1/public/images
+@dir %%WWWDIR%%/textpattern
+@dir %%WWWDIR%%/textpattern/admin-themes
+@dir %%WWWDIR%%/textpattern/admin-themes/classic
+@dir %%WWWDIR%%/textpattern/admin-themes/classic/assets
+@dir %%WWWDIR%%/textpattern/admin-themes/classic/assets/css
+@dir %%WWWDIR%%/textpattern/admin-themes/classic/assets/img
+@dir %%WWWDIR%%/textpattern/admin-themes/classic/assets/js
+@dir %%WWWDIR%%/textpattern/admin-themes/hive
+@dir %%WWWDIR%%/textpattern/admin-themes/hive/assets
+@dir %%WWWDIR%%/textpattern/admin-themes/hive/assets/css
+@dir %%WWWDIR%%/textpattern/admin-themes/hive/assets/img
+@dir %%WWWDIR%%/textpattern/admin-themes/hive/assets/js
+@dir %%WWWDIR%%/textpattern/admin-themes/hiveneutral
+@dir %%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets
+@dir %%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/css
+@dir %%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/img
+@dir %%WWWDIR%%/textpattern/admin-themes/hiveneutral/assets/js
+@dir %%WWWDIR%%/textpattern/include
+@dir %%WWWDIR%%/textpattern/lang
+@dir %%WWWDIR%%/textpattern/lib
+@dir %%WWWDIR%%/textpattern/publish
+@dir %%WWWDIR%%/textpattern/setup
+@dir %%WWWDIR%%/textpattern/setup/forms
+@dir %%WWWDIR%%/textpattern/setup/pages
+@dir %%WWWDIR%%/textpattern/setup/styles
+@dir %%WWWDIR%%/textpattern/tmp
+@dir %%WWWDIR%%/textpattern/update
+@dir %%WWWDIR%%/textpattern/vendors
+@dir %%WWWDIR%%/textpattern/vendors/Netcarver
+@dir %%WWWDIR%%/textpattern/vendors/Netcarver/Textile
+@dir %%WWWDIR%%/textpattern/vendors/PrismJS
+@dir %%WWWDIR%%/textpattern/vendors/PrismJS/prism
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Adaptable
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Admin
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Container
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Date
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Filter
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Http
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Iterator
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/L10n
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Mail
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Mail/Adapter
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Password
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Password/Adapter
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Search
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Security
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Server
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Tag
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Tag/Syntax
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Textfilter
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Textile
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Textpack
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Textpack/String
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Type
+@dir %%WWWDIR%%/textpattern/vendors/Textpattern/Validator
+@dir %%WWWDIR%%/textpattern/vendors/dropbox
+@dir %%WWWDIR%%/textpattern/vendors/dropbox/zxcvbn
+@dir %%WWWDIR%%/textpattern/vendors/jquery
+@dir %%WWWDIR%%/textpattern/vendors/jquery/jquery
+@dir %%WWWDIR%%/textpattern/vendors/jquery/jquery-ui
+@owner
+@group
