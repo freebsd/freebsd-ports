@@ -22,6 +22,9 @@ LIB_DEPENDS=	libsexy.so:x11-toolkits/libsexy \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 
+DEPRECATED=	No longer supported by upstream, replaced with deskutils/xfce4-notifyd
+EXPIRATION_DATE=2016-11-23
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
