@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ts
-PORTVERSION=	0.7.6
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/
 
