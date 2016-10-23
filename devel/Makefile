@@ -4206,6 +4206,7 @@
     SUBDIR += py-ipython_genutils
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
+    SUBDIR += py-isort
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jaraco.classes
