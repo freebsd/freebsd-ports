@@ -159,6 +159,7 @@
     SUBDIR += elasticsearch2
     SUBDIR += elasticsearch2-plugin-hq
     SUBDIR += elasticsearch2-plugin-marvel
+    SUBDIR += elasticsearch2-plugin-migration
     SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
