@@ -12,7 +12,10 @@ For initial setup:
 
  - Setup an empty mysql database
  - Open web browser and browse textpattern directory
-     http://yourserver/textpattern/setup/
+     http://yourserver/textpattern/setup/index.php
  - Follow steps on setup wizard
 
+For more detailed setup information, see:
+ - %%WWWDIR%%/README.txt
+ - http://www.textpattern.net/wiki/index.php?title=FTP_installation
 -----------------------------------------------------------
