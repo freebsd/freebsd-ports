@@ -2,6 +2,7 @@
 
 PORTNAME=		arduino
 PORTVERSION=		1.6.12
+PORTREVISION=		1
 CATEGORIES=		devel java
 PKGNAMESUFFIX=		16
 DIST_SUBDIR=		${PORTNAME}
@@ -93,7 +94,7 @@ do-install:
 	(cd ${WRKSRC}/../ && ${COPYTREE_SHARE} "libraries" ${STAGEDIR}${PREFIX}/${PORTNAME} ${FIND_EXPR})
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
-	${LN} -s ../../lib/jni/libarduino-astylej.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
+	${LN} -s ../../lib/jni/libastyle-arduinoj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${LN} -s ../../lib/jni/liblistSerialsj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
 	${INSTALL_SCRIPT} ${BUILD_DIR}/arduino ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${LN} -s ../${PORTNAME}/arduino ${STAGEDIR}${PREFIX}/bin/arduino
