@@ -75,15 +75,6 @@
    VBOX_WITH_DOCS=
    VBOX_WITH_DOCS_PACKING=
   endif
-@@ -2562,7 +2558,7 @@ $(PATH_OUT)/DynamicConfig.kmk: \
- 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-delete-non-virtual-dtor    ?= $(call VBOX_GCC_CHECK_CXX,-Wno-delete-non-virtual-dtor,)'
- 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-int-to-pointer-cast        ?= $(call VBOX_GCC_CHECK_CC,-Wno-int-to-pointer-cast,)'
- 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-invalid-offsetof           ?= $(call VBOX_GCC_CHECK_CXX,-Wno-invalid-offsetof,)'
--if $(KBUILD_TARGET) != "darwin" || !defined(VBOX_WITH_NEW_XCODE) ## @todo somthing goes entirely sideways with the detection. clang doesn't know the option, but only complains when we use it in webservices/Makefile.kmk!
-+if ($(KBUILD_TARGET) != "darwin" || !defined(VBOX_WITH_NEW_XCODE)) && $(KBUILD_TARGET) != "freebsd" ## @todo somthing goes entirely sideways with the detection. clang doesn't know the option, but only complains when we use it in webservices/Makefile.kmk!
- 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-literal-suffix             ?= $(call VBOX_GCC_CHECK_CXX,-Wno-literal-suffix,)'
- else
- 	$(QUIET)$(APPEND) '$@' 'VBOX_GCC_Wno-literal-suffix             ?='
 @@ -4247,7 +4243,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
