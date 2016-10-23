@@ -6,7 +6,7 @@ PORTVERSION=	1.1.3
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives
 
 LICENSE=	BSD3CLAUSE
