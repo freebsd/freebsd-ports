@@ -14,7 +14,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PORTDOCS=	*
 
-OPTIONS_SET_FORCE=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."

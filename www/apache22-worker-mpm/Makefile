@@ -10,6 +10,5 @@ DESCR=			${.CURDIR}/pkg-descr
 
 PORT_OPTIONS+=		CGID
 OPTIONS_EXCLUDE=	CGI
-OPTIONS_UNSET+=		CGI
 
 .include "${MASTERDIR}/Makefile"

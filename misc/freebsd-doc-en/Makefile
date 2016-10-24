@@ -49,7 +49,7 @@ TXT_DESC=		Plain text
 
 # if PACKAGE_BUILDING=yes, enable all of $AVAILABLEFORMATS.
 .if defined(PACKAGE_BUILDING)
-OPTIONS_SET+=	${AVAILABLEFORMATS}
+OPTIONS_DEFAULT+=	${AVAILABLEFORMATS}
 .endif
 
 .include <bsd.port.options.mk>
