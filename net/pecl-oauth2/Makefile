@@ -23,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	56
 CONFLICTS=	pecl-oauth-1*
 
 .include <bsd.port.mk>
