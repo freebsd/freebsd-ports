@@ -6,20 +6,21 @@ PORTVERSION=	5.2.12
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	5-docs
-DISTFILES=	${PORTNAME}-docs-${PORTVERSION}.tar.bz2
+DISTNAME=	${PORTNAME}-docs-${PORTVERSION}
 
 CONFLICTS=	bacula-*
 
 MAINTAINER=	dan@langille.org
 COMMENT=	Bacula document set
 
+USES=		tar:bz2
 NO_BUILD=	yes
 
 PORTDOCS=	*.pdf
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manuals/en \
+	${FIND} ${WRKSRC}/manuals/en \
 		-name "*.pdf" -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/ \;
 
 .include <bsd.port.mk>
