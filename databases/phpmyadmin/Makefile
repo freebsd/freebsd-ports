@@ -19,7 +19,6 @@ CPE_PRODUCT=	${PORTNAME:tl}
 NO_ARCH=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-IGNORE_WITH_PHP=5 54
 USE_PHP=	ctype session filter mbstring json spl mysqli
 .endif
 
