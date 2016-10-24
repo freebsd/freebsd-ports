@@ -12,7 +12,7 @@ COMMENT=	Pure interface to C++ STL map and vectors
 
 LICENSE=	BSD3CLAUSE
 
-USES=		pkgconfig pure
+USES=		compiler:c++11-lib pkgconfig pure
 
 PORTDOCS=	*
 
@@ -24,8 +24,6 @@ DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	*.pdf
 
 PORTEXAMPLES=	*
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS ?=|' \
