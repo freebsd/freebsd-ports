@@ -2042,6 +2042,8 @@ usr/lib/libiberty.a
 usr/lib/libieee.a
 usr/lib/libm.so
 usr/lib/libmcheck.a
+usr/lib/libmpc.so.3
+usr/lib/libmpc.so.3.0.0
 usr/lib/libnsl.so
 usr/lib/libnss_compat.so
 usr/lib/libnss_db.so
@@ -2084,6 +2086,8 @@ usr/lib64/libiberty.a
 usr/lib64/libieee.a
 usr/lib64/libm.so
 usr/lib64/libmcheck.a
+usr/lib64/libmpc.so.3
+usr/lib64/libmpc.so.3.0.0
 usr/lib64/libmpfr.so.4
 usr/lib64/libmpfr.so.4.1.1
 usr/lib64/libnsl.so
@@ -2195,6 +2199,9 @@ usr/libexec/getconf/default
 %%PORTDOCS%%usr/share/doc/gcc-gfortran-4.8.5/ChangeLog.ptr.bz2
 %%PORTDOCS%%usr/share/doc/libgomp-4.8.5/ChangeLog.bz2
 %%PORTDOCS%%usr/share/doc/libgomp-4.8.5/ChangeLog.graphite.bz2
+%%PORTDOCS%%usr/share/doc/libmpc-1.0.1/COPYING.LESSER
+%%PORTDOCS%%usr/share/doc/libmpc-1.0.1/NEWS
+%%PORTDOCS%%usr/share/doc/libmpc-1.0.1/README
 %%PORTDOCS%%usr/share/doc/libstdc++-devel-4.8.5/ChangeLog-1998.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel-4.8.5/ChangeLog-1999.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel-4.8.5/ChangeLog-2000.bz2
