@@ -267,7 +267,6 @@
     SUBDIR += msdl
     SUBDIR += msopenh264
     SUBDIR += msx264
-    SUBDIR += multicat
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
