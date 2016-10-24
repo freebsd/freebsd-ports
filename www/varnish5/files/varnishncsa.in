@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: varnishncsa
+# REQUIRE: DAEMON varnishd
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable varnishncsa:
+#
+# varnishncsa_enable="YES"
+#
+# Configuration variables and their default values:
+#
+# varnishncsa_pidfile - full path to the PID file.
+#	default: "/var/run/varnishncsa.pid"
+#
+# varnishncsa_file - full path to the log file.
+#	default: "/var/log/varnishncsa.log"
+#
+# varnishncsa_flags - command line arguments.
+#	default: "-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"
+#
+# varnishncsa_logformat - log file format.
+#       default: "" (uses varnishncsa's default format)
+#       example: "%h %l %u %t %r %s %b %{Referer}i %{User-agent}i"
+#
+# Add the following line to /etc/newsyslog.conf to rotate the log file
+# once a day:
+#
+# /var/log/varnishncsa.log varnishlog:varnish 640 7 * @T00 JB /var/run/varnishncsa.pid
+#
+# See varnishncsa(1) for a detailed overview of command-line options.
+#
+
+. /etc/rc.subr
+
+name=varnishncsa
+rcvar=varnishncsa_enable
+
+load_rc_config ${name}
+
+: ${varnishncsa_enable:=NO}
+: ${varnishncsa_pidfile=/var/run/${name}.pid}
+: ${varnishncsa_file=/var/log/${name}.log}
+: ${varnishncsa_flags="-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file} ${varnishncsa_logformat:+-F \"$varnishncsa_logformat\"}"}
+
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -u varnishlog ${procname} ${varnishncsa_flags}"
+pidfile=${varnishncsa_pidfile}
+start_precmd=precmd
+
+precmd()
+{
+        # $varnishncsa_flags gets applied too early if we don't do this.
+        rc_flags=""
+
+	if [ ! -e ${pidfile} ]; then
+		install -o varnishlog -g varnish -m 644 /dev/null ${pidfile};
+	fi
+
+	if [ ! -e ${varnishncsa_file} ]; then
+		install -o varnishlog -g varnish -m 640 /dev/null ${varnishncsa_file};
+	fi
+}
+
+run_rc_command "$1"
