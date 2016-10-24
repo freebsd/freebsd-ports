@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.6.90.g20160728
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -14,6 +15,8 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
+
+BROKEN_FreeBSD_9=	does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
