@@ -70,11 +70,10 @@ do-install:
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} ebin ${STAGEDIR}${APP_DIR}
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} java_src ${STAGEDIR}${APP_DIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/jinterface/priv/OtpErlang.jar ${STAGEDIR}${APP_DIR}/priv
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} doc ${STAGEDIR}${APP_DIR}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/erlang lib/jinterface-${APP_VERSION}
-.endif
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
 
 .include <bsd.port.mk>
