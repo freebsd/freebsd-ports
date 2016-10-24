@@ -3,6 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 BIN_DISTFILES=	binutils-2.23.52.0.1-55.el7${EXTRACT_SUFX} \
 		glibc-headers-2.17-105.el7${EXTRACT_SUFX} \
@@ -15,10 +16,12 @@ BIN_DISTFILES=	binutils-2.23.52.0.1-55.el7${EXTRACT_SUFX} \
 LIB_DISTFILES=	binutils-devel-2.23.52.0.1-55.el7${EXTRACT_SUFX} \
 		glibc-devel-2.17-105.el7${EXTRACT_SUFX} \
 		libstdc++-devel-4.8.5-4.el7${EXTRACT_SUFX} \
-		libgomp-4.8.5-4.el7${EXTRACT_SUFX}
+		libgomp-4.8.5-4.el7${EXTRACT_SUFX} \
+		libmpc-1.0.1-3.el7${EXTRACT_SUFX}
 SRC_DISTFILES=	binutils-2.23.52.0.1-55.el7${SRC_SUFX}:SOURCE \
 		glibc-2.17-105.el7${SRC_SUFX}:SOURCE \
 		kernel-3.10.0-327.36.2.el7${SRC_SUFX}:SOURCE \
+		libmpc-1.0.1-3.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-4.el7${SRC_SUFX}:SOURCE
 
@@ -38,13 +41,13 @@ USE_LINUX_RPM=	yes
 
 post-install:
 .if ${LINUX_ARCH} == x86_64
-	${LN} -sf ${LINUXBASE}/lib64/libgcc_s.so.1 \
+	${LN} -sf ${LINUXBASE}/usr/lib64/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libgcc_s.so
 
-	${LN} -sf ${LINUXBASE}/lib/libgcc_s.so.1 \
+	${LN} -sf ${LINUXBASE}/usr/lib/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/32/libgcc_s.so
 .else
-	${LN} -sf ${LINUXBASE}/lib/libgcc_s.so.1 \
+	${LN} -sf ${LINUXBASE}/usr/lib/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.8.2/libgcc_s.so
 .endif
 
