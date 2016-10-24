@@ -13,10 +13,10 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libfst.so:math/openfst
 
-USES=		compiler:c++11-lib libtool
+BROKEN_FreeBSD_9=	does not build
+
+USES=		compiler:c++11-lib libtool localbase
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
