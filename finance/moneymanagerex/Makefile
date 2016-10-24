@@ -50,6 +50,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${CHOSEN_COMPILER_TYPE} == "gcc"
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/lexical_cast.hpp:devel/boost-libs
 .endif
 
 post-extract:
