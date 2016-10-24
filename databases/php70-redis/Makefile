@@ -13,7 +13,7 @@ LICENSE=	PHP301
 
 USES=		php:ext
 USE_PHP=	session:build
-PHP_DEFAULT=	7.0
+PHP_VER=	70
 IGNORE_WITH_PHP=	55 56
 
 USE_GITHUB=	yes
