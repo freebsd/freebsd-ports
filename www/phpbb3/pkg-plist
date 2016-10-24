@@ -549,8 +549,6 @@
 %%PHPBBDIR%%/language/en/plupload.php
 %%PHPBBDIR%%/language/en/posting.php
 %%PHPBBDIR%%/language/en/search.php
-%%PHPBBDIR%%/language/en/search_ignore_words.php
-%%PHPBBDIR%%/language/en/search_synonyms.php
 %%PHPBBDIR%%/language/en/ucp.php
 %%PHPBBDIR%%/language/en/viewforum.php
 %%PHPBBDIR%%/language/en/viewtopic.php
@@ -812,6 +810,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/timezone_p2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/topic_sort_username.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/ucp_popuppm_module.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/add_log_time_index.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/increase_size_of_dateformat.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/m_pm_report.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/m_softdelete_global.php
@@ -820,6 +819,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/profilefield_yahoo_update_url.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/style_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/update_custom_bbcodes_with_idn.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3110.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3110rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v311.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v312.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v312rc1.php
@@ -1290,7 +1291,6 @@
 %%PHPBBDIR%%/vendor/composer/autoload_real.php
 %%PHPBBDIR%%/vendor/composer/installed.json
 %%PHPBBDIR%%/vendor/lusitanian/oauth/LICENSE
-%%PHPBBDIR%%/vendor/lusitanian/oauth/.scrutinizer.yml
 %%PHPBBDIR%%/vendor/lusitanian/oauth/composer.json
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/AutoLoader.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer/Credentials.php
@@ -1744,10 +1744,10 @@
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/README.md
-%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.ser
-%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.ser
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/composer.json
+%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%PHPBBDIR%%/vendor/symfony/routing/Symfony/Component/Routing/Annotation/Route.php
 %%PHPBBDIR%%/vendor/symfony/routing/Symfony/Component/Routing/CompiledRoute.php
 %%PHPBBDIR%%/vendor/symfony/routing/Symfony/Component/Routing/Exception/ExceptionInterface.php
@@ -1807,7 +1807,6 @@
 %%PHPBBDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Yaml.php
 %%PHPBBDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/composer.json
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
-%%PHPBBDIR%%/vendor/twig/twig/README.rst
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Autoloader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php
