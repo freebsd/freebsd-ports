@@ -1,0 +1,16 @@
+multicat is a 1 input/1 output application. Inputs and outputs can
+be network streams (unicast and multicast), files, directories,
+character devices or FIFOs. It is thought to be a multicast equivalent
+of the popular netcat tool. Typical applications are recording live
+transport streams, or playing out TS files without modification.
+Also it is able to record a continuous stream into a directory,
+rotate the files periodically, and make seamless extracts from it.
+
+Multicat tries to rebuild the internal clock of the input stream;
+but it wants to remain agnostic of what is transported, so in case
+of files the said clock is stored to an auxiliary file (example.aux
+accompanies example.ts) while recording. Other inputs are considered
+"live", and the input clock is simply derived from the reception
+time of the packets.
+
+WWW: http://www.videolan.org/projects/multicat.html
