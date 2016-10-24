@@ -4,12 +4,14 @@
 PORTNAME=	bmkdep
 PORTVERSION=	20140112
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Construct Makefile dependency list
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	trociny
 
 USES=		uidfix
 MAKE_ENV=	PKGDIR="${PKGDIR}" NO_OBJ=YES
