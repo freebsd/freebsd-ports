@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.12.0
+PORTVERSION?=	1.12.1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/dist/:bootstrap \
