@@ -2,6 +2,7 @@
 
 PORTNAME=	arduino-tools
 PORTVERSION=	1.6.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# Mostly metaport - installs files, no build
 DISTFILES=	#
@@ -15,10 +16,9 @@ LICENSE=	NONE
 RUN_DEPENDS=	avrdude:devel/avrdude \
 		bossac:devel/bossa \
 		avr-as:devel/avr-binutils \
-		avr-ld:devel/avr-binutils \
 		avr-gcc:devel/avr-gcc \
+		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc \
 		arm-none-eabi-gcc:devel/arm-none-eabi-gcc \
-		arm-none-eabi-g++:devel/arm-none-eabi-gcc \
 		${LOCALBASE}/arduino/tools-builder/ctags/${CTAGS_VERS}/ctags:devel/arduino-ctags \
 		arm-none-eabi-newlib>=0:devel/arm-none-eabi-newlib \
 		arduino-core>=0:devel/arduino-core
