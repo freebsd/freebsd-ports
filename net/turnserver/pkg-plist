@@ -1,5 +1,7 @@
 bin/turnserver
 bin/turnadmin
+bin/turnutils_natdiscovery
+bin/turnutils_oauth
 bin/turnutils_peer
 bin/turnutils_stunclient
 bin/turnutils_uclient
@@ -9,6 +11,8 @@ etc/turnserver.conf.default
 man/man1/turnserver.1.gz
 man/man1/turnadmin.1.gz
 man/man1/turnutils.1.gz
+man/man1/turnutils_natdiscovery.1.gz
+man/man1/turnutils_oauth.1.gz
 man/man1/turnutils_peer.1.gz
 man/man1/turnutils_stunclient.1.gz
 man/man1/turnutils_uclient.1.gz
