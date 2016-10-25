@@ -14,6 +14,8 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:devel/pcre \
 		${LOCALBASE}/lib/libsqlite3.a:databases/sqlite3
 
+BROKEN_FreeBSD_9_i386=	does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 
