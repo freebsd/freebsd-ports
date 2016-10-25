@@ -4312,6 +4312,7 @@
     SUBDIR += py-optik
     SUBDIR += py-option_merge
     SUBDIR += py-orbit
+    SUBDIR += py-ordered-set
     SUBDIR += py-ordereddict
     SUBDIR += py-os-client-config
     SUBDIR += py-osc-lib
