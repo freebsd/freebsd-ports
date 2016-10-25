@@ -1,11 +1,11 @@
---- go/base/Config.php.orig	2016-07-25 13:35:05 UTC
+--- go/base/Config.php.orig	2016-10-07 11:58:58 UTC
 +++ go/base/Config.php
 @@ -22,7 +22,7 @@
   * This class holds the main configuration options of Group-Office
   * Don't modify this file. The values defined here are just default values.
   * They are overwritten by the configuration options in /config.php or
 - * /etc/groupoffice/{HOSTNAME}/config.php
-+ * /usr/local/etc/groupoffice/{HOSTNAME}/config.php
++ * /usr/local/usr/local/etc/groupoffice/{HOSTNAME}/config.php
   *
   * To edit these options use install.php.
   *
@@ -51,8 +51,8 @@
  		//suppress error for open_basedir warnings etc
 -		if(@file_exists('/etc/groupoffice/globalconfig.inc.php')) {
 -			require('/etc/groupoffice/globalconfig.inc.php');
-+		if(@file_exists('/usr/local/etc/groupoffice/globalconfig.inc.php')) {
-+			require('/usr/local/etc/groupoffice/globalconfig.inc.php');
++		if(@file_exists('/usr/local/usr/local/etc/groupoffice/globalconfig.inc.php')) {
++			require('/usr/local/usr/local/etc/groupoffice/globalconfig.inc.php');
  		}
  
  		$config_file = $this->get_config_file();
@@ -61,14 +61,14 @@
  			}*/
  			if(!empty($_SERVER['SERVER_NAME'])){
 -				$config_file = '/etc/groupoffice/'.$_SERVER['SERVER_NAME'].'/config.php';
-+				$config_file = '/usr/local/etc/groupoffice/'.$_SERVER['SERVER_NAME'].'/config.php';
++				$config_file = '/usr/local/usr/local/etc/groupoffice/'.$_SERVER['SERVER_NAME'].'/config.php';
  				if(@file_exists($config_file)) {
  					$_SESSION['GO_SESSION']['config_file']=$config_file;
  					return $config_file;
  				}
  			}
 -			$config_file = '/etc/groupoffice/config.php';
-+			$config_file = '/usr/local/etc/groupoffice/config.php';
++			$config_file = '/usr/local/usr/local/etc/groupoffice/config.php';
  			if(@file_exists($config_file)) {
  				$_SESSION['GO_SESSION']['config_file']=$config_file;
  				return $config_file;
