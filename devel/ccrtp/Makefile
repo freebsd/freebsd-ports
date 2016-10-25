@@ -14,22 +14,20 @@ LIB_DEPENDS=	libcommoncpp.so:devel/ucommon \
 		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		gmake gettext libtool iconv pkgconfig
+USES=		compiler:c++11-lib gmake gettext libtool localbase iconv pkgconfig
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-INFO=	ccrtp
+INFO=		ccrtp
 
 post-patch:
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \;
 
 post-configure:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-	    ${REINPLACE_CMD} -e 's|-l-pthread|-pthread|g'
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e 's|-l-pthread|-pthread|g'
 
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libccrtp.so.2.0.6
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libccrtp.so.2.0.6
 
 .include <bsd.port.mk>
