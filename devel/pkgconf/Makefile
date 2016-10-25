@@ -3,7 +3,7 @@
 PORTNAME=	pkgconf
 PORTVERSION=	1.0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
+MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 		http://files.etoilebsd.net/pkgconf/
 
 MAINTAINER=	bapt@FreeBSD.org
