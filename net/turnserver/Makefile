@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	4.5.0.4
+PORTVERSION=	4.5.0.5
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/:prog \
 		http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
 		turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
-MAINTAINER=	mom040267@gmail.com
+MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 
 LICENSE=	BSD3CLAUSE
@@ -33,14 +33,15 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	turnserver
 
 MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 \
-		turnutils_stunclient.1 turnutils_uclient.1 coturn.1
+		turnutils_stunclient.1 turnutils_uclient.1 coturn.1 \
+		turnutils_oauth.1 turnutils_natdiscovery.1
 
 DOCS=	html TurnNetworks.pdf
 PORTREADMEDOCS=	LICENSE README.turnserver README.turnadmin README.turnutils INSTALL
 PORTDOCS=	${DOCS} ${PORTREADMEDOCS} postinstall.txt schema.sql schema.mongo.sh \
 		schema.userdb.redis schema.stats.redis
 
-_BIN_UTILS=	peer stunclient uclient
+_BIN_UTILS=	peer stunclient uclient oauth natdiscovery
 
 _ETC_EXAMPLES=	turnserver.conf turn_client_cert.pem \
 		turn_client_pkey.pem turn_server_cert.pem turn_server_pkey.pem
