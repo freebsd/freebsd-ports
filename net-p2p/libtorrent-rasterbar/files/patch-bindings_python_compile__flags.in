@@ -1,0 +1,5 @@
+--- bindings/python/compile_flags.in.orig	2016-05-24 02:57:40 UTC
++++ bindings/python/compile_flags.in
+@@ -1 +1 @@
+--I@top_srcdir@/include @COMPILETIME_OPTIONS@ @CPPFLAGS@ @BOOST_CPPFLAGS@ @OPENSSL_INCLUDES@
++-I@top_srcdir@/include @COMPILETIME_OPTIONS@ @CPPFLAGS@ -std=c++11 @BOOST_CPPFLAGS@ @OPENSSL_INCLUDES@
