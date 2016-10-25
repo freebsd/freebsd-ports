@@ -3,11 +3,17 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.3.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	53
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	https://github.com/salazar/lua/commit/:bugfixes
+PATCHFILES=	fac3159120c9967f32c1147f894bd4a319d45425.diff:-p1:bugfixes \
+		a555c584bb33989cc49017837903331ad1c5aa97.diff:-p1:bugfixes \
+		8ee844d13671a5c41d70f87709b3ea35fc8a4fd1.diff:-p1:bugfixes
+
+MAINTAINER=	gmesalazar@gmail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
