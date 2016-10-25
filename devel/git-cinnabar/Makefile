@@ -20,6 +20,7 @@ GH_ACCOUNT=	glandium
 USES=		gmake python:2.7,run shebangfix
 SHEBANG_LANG=	python2.7
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
+ALL_TARGET=	${PORTNAME}-helper
 .ifnmake describe
 WRKSRC_git!=	${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git
 MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${PORTSDIR}/devel/git
