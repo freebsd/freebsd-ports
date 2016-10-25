@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
@@ -33,7 +35,7 @@ PLIST_FILES=	bin/bsdcat \
 		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
-		lib/libarchive.so.13.2.1 \
+		lib/libarchive.so.13.2.2 \
 		libdata/pkgconfig/libarchive.pc \
 		man/man1/bsdcat.1.gz \
 		man/man1/bsdcpio.1.gz \
