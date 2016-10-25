@@ -5,7 +5,7 @@ PORTNAME=	msdl
 PORTVERSION=	1.2.7r2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-r/1}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-r/}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Streaming multimedia files downloader
