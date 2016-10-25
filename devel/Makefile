@@ -4615,6 +4615,7 @@
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
     SUBDIR += py-wcwidth
+    SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
     SUBDIR += py-wheel
     SUBDIR += py-wrapt
