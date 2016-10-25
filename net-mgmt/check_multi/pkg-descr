@@ -2,8 +2,10 @@ check_multi is kind of a wrapper plugin which takes benefit of the
 Nagios 3.x capability to display multiple lines of plugin output.
 It calls multiple child plugins and displays their output in the
 long_plugin_output. A summary is given in the standard plugin output.
-The child return code with the highest severity becomes the parent
-(check_multi) plugin return code.
+
+Normally the child return code with the highest severity becomes the
+parent (check_multi) plugin return code. But you can influence this
+by specifying flexible state evaluation rules.
 
 The configuration is very simple: a NRPE-stylish config file contains
 a tag for each child plugin and then the check command line.
@@ -11,7 +13,5 @@ a tag for each child plugin and then the check command line.
 check_multi can cover complex Business Process Views - using a builtin
 state evaluation mechanism. The second benefit is cluster monitoring
 with no need for extra services. All you need is provided by check_multi.
-
-LICENSE: GPL2 or later
 
 WWW: http://www.my-plugin.de/wiki/projects/check_multi/start
