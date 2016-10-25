@@ -658,7 +658,7 @@ proxydeps() {
 			fi
 			already="${already} ${dep_file}"
 		done <<-EOT
-		$(LD_LIBRARY_PATH=${LOCALBASE}/lib ldd -a "${STAGEDIR}${file}" | \
+		$(ldd -a "${STAGEDIR}${file}" | \
 			awk '\
 			BEGIN {section=0}\
 			/^\// {section++}\
