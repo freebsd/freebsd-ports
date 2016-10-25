@@ -32,7 +32,6 @@ USERS=		varnish varnishlog
 GROUPS=		varnish
 
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
-SUB_FILES=	pkg-message
 .if defined(NO_INET6) || defined(WITHOUT_INET6)
 BAD_TESTS+=	r00832
 EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
