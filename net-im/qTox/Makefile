@@ -24,6 +24,8 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
+BROKEN_FreeBSD_9_i386=	does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
 
