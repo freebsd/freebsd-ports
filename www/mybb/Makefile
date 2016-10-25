@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mybb
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	www
 
 MAINTAINER=	joneum@bsdproject.de
@@ -11,7 +11,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1807
+GH_TAGNAME=	${PORTNAME}_1808
 
 USES=		cpe mysql php
 NO_BUILD=	yes
