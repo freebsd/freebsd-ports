@@ -4,6 +4,8 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/aequorea
 %%DATADIR%%/scripts/bartholomea
 %%DATADIR%%/scripts/breezy
+%%DATADIR%%/scripts/bullseye
+%%DATADIR%%/scripts/buster
 %%DATADIR%%/scripts/chromodoris
 %%DATADIR%%/scripts/dapper
 %%DATADIR%%/scripts/dasyatis
@@ -24,6 +26,7 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/lucid
 %%DATADIR%%/scripts/maverick
 %%DATADIR%%/scripts/natty
+%%DATADIR%%/scripts/oldoldstable
 %%DATADIR%%/scripts/oldstable
 %%DATADIR%%/scripts/oneiric
 %%DATADIR%%/scripts/potato
@@ -51,3 +54,4 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/woody.buildd
 %%DATADIR%%/scripts/xenial
 %%DATADIR%%/scripts/yakkety
+%%DATADIR%%/scripts/zesty
