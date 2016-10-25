@@ -16,6 +16,9 @@ LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis
 
+BROKEN_sparc64=	does not compile due to internal compiler error
+BROKEN_FreeBSD_9=	does not build
+
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
 USE_GL=		gl glu
@@ -27,7 +30,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 
-USES=		cpe iconv pkgconfig:build tar:bzip2
+USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:bzip2
 CPE_VENDOR=	david_shadoff
 
 OPTIONS_DEFINE=	NLS DOCS JACK
@@ -69,8 +72,6 @@ PSX_CONFIGURE_ENABLE=psx
 SMS_CONFIGURE_ENABLE=sms
 SWAN_CONFIGURE_ENABLE=wswan
 VB_CONFIGURE_ENABLE=vb
-
-BROKEN_sparc64=	does not compile due to internal compiler error
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
