@@ -4,7 +4,8 @@
 PORTNAME=	libuv
 PORTVERSION=	1.10.0
 CATEGORIES=	devel
-MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/
+MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
