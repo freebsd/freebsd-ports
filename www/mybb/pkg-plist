@@ -2,6 +2,7 @@
 @group www
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/announcements.php
+%%WWWDIR%%/admin/backups/.htaccess
 %%WWWDIR%%/admin/backups/index.html
 %%WWWDIR%%/admin/inc/class_form.php
 %%WWWDIR%%/admin/inc/class_page.php
@@ -100,6 +101,7 @@
 %%WWWDIR%%/admin/modules/config/post_icons.php
 %%WWWDIR%%/admin/modules/config/profile_fields.php
 %%WWWDIR%%/admin/modules/config/questions.php
+%%WWWDIR%%/admin/modules/config/report_reasons.php
 %%WWWDIR%%/admin/modules/config/settings.php
 %%WWWDIR%%/admin/modules/config/smilies.php
 %%WWWDIR%%/admin/modules/config/spiders.php
@@ -470,6 +472,7 @@
 %%WWWDIR%%/inc/languages/english/admin/config_post_icons.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_profile_fields.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_questions.lang.php
+%%WWWDIR%%/inc/languages/english/admin/config_report_reasons.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_settings.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_smilies.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_spiders.lang.php
@@ -635,6 +638,7 @@
 %%WWWDIR%%/install/resources/upgrade33.php
 %%WWWDIR%%/install/resources/upgrade34.php
 %%WWWDIR%%/install/resources/upgrade35.php
+%%WWWDIR%%/install/resources/upgrade36.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
