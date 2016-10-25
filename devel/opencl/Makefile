@@ -17,8 +17,8 @@ CONFLICTS=	opencl-1.[0-2]
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
-GH_PROJECT=	OpenCL-Headers:DEFAULT OpenCL-CLHPP:clhpp
-GH_TAGNAME=	${HEADER_TAG}:DEFAULT ${CLHPP_TAG}:clhpp
+GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
+GH_TAGNAME=	${HEADER_TAG} ${CLHPP_TAG}:clhpp
 
 # the header releases don't have tags yet, so use git commit for now
 HEADER_TAG=	2d06e09

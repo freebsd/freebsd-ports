@@ -2,6 +2,7 @@
 
 PORTNAME=	rollbar
 PORTVERSION=	0.13.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +19,5 @@ USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 
 GH_PROJECT=	pyrollbar
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

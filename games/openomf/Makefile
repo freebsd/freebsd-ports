@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.omf2097.com/pub/files/omf/:data
 DISTFILES+=	omf2097.rar:data
 EXTRACT_ONLY=	${DISTFILE_shadow} ${DISTFILE_libdumb} \
-		${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}_GH0.tar.gz
+		${DISTNAME}.tar.gz
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Rewritten engine for One Must Fall 2097

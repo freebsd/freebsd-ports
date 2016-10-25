@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anastmag
-GH_PROJECT=	checkheaders
-GH_TAGNAME=	1.0.1
 
 USES=		gmake
 MAKE_ARGS=	CXX="${CXX}"

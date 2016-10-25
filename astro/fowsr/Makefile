@@ -4,18 +4,18 @@
 PORTNAME=	fowsr
 PORTVERSION=	${FILEVER}
 CATEGORIES=	astro
-DISTNAME=	fowsr-${FILEVER}
-USE_GITHUB=	yes
-GH_ACCOUNT=	apachler
-GH_PROJECT=	fowsr
-GH_TAGNAME= 571db38
+
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fine Offset Weather Station Reader
 
 LICENSE=	GPLv3
 
 FILEVER=	2.0
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}/${PORTNAME}.src
+WRKSRC_SUBDIR=	${PORTNAME}.src
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	apachler
+GH_TAGNAME= 571db38
 
 USES=		gmake dos2unix
 
