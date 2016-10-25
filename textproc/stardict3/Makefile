@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stardict
-PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTVERSION=	3.0.6
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/stardict-4/${PORTVERSION}
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionary lookup program written in Gtk2
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libenchant.so:textproc/enchant
@@ -22,13 +19,13 @@ CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
 		--disable-tools \
-		--disable-updateinfo
+		--disable-updateinfo \
+		--disable-advertisement
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	intltool
-
-PROJECTHOST=	stardict-3
 
 OPTIONS_DEFINE=	GNOME
 OPTIONS_SUB=	yes
@@ -36,13 +33,8 @@ OPTIONS_SUB=	yes
 GNOME_USE=	GNOME=gnomeprefix,gnomedocutils,libgnomeui
 GNOME_USE_OFF=	GNOME=gtk20
 GNOME_CONFIGURE_ENABLE=	gnome-support schemas-install scrollkeeper
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOME}
-GCONF_SCHEMAS=	stardict.schemas
-INSTALLS_OMF=	yes
-.endif
+GNOME_VARS=	GCONF_SCHEMAS=stardict.schemas \
+		INSTALLS_OMF=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
@@ -51,6 +43,9 @@ post-patch:
 		-e '/as_fn_error.*gnome-doc-utils/d' \
 		-e '/DEP_MODULES=/s/"$$/ gmodule-2.0"/' \
 		${WRKSRC}/dict/configure
+	@${REINPLACE_CMD} \
+		-e '/^DEP_MODULES=/s/zlib//' \
+		${WRKSRC}/lib/configure
 
 post-patch-GNOME-off:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
