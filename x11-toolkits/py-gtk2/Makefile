@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo
 USES=		gettext gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	libglade2 pygobject
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PYTHON="${PYTHON_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-docs
