@@ -27,7 +27,6 @@ EMACS_REV=	20161001
 GNU_CONFIGURE=	yes
 USES=		autoreconf cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 CPE_VENDOR=	gnu
 
 SUB_FILES+=	sources.el

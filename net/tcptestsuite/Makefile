@@ -3,7 +3,6 @@
 PORTNAME=	tcptestsuite
 PORTVERSION=	0.0.1
 CATEGORIES=	net ipv6
-DISTNAME=	${PORTNAME}-94d4ef3
 
 MAINTAINER=	gnn@freebsd.org
 COMMENT=	Network stack test suite

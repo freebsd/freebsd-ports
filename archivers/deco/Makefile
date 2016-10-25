@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	peha
 GH_PROJECT=	deco-archive:archive
-GH_TAGNAME=	1.6.4 1.7:archive
+GH_TAGNAME=	1.7:archive
 
 RUN_DEPENDS=	arc:archivers/arc \
 		arj:archivers/arj \

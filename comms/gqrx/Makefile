@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -28,7 +29,6 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
-GH_TAGNAME=	v${PORTVERSION:S/.0$//}
 
 USES=		pkgconfig qmake
 
