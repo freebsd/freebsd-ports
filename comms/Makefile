@@ -70,6 +70,7 @@
     SUBDIR += ibp
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
+    SUBDIR += java-simple-serial-connector
     SUBDIR += jerm
     SUBDIR += jsdr
     SUBDIR += kb
