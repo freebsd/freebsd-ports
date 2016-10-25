@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/ahh/OldFiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 LICENSE=	GPLv2+
