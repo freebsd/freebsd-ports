@@ -1,7 +1,0 @@
-libexec/nagios/check_multi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check_multi.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluster_example/download.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluster_example/download.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluster_example/download_my-plugin.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluster_example/download_sourceforge.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify_service_html
