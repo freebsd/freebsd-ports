@@ -4,8 +4,7 @@
 PORTNAME=	libuv
 PORTVERSION=	1.10.0
 CATEGORIES=	devel
-MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/ \
-		http://mirror.amdmi3.ru/distfiles/
+#MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,6 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	gyp:devel/py-gyp \
 		gmake:devel/gmake
+
+USE_GITHUB=	yes
+GH_TAGNAME=	v1.10.0
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
