@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/omnitty/omnitty/omnitty-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	Curses-based SSH multiplexer
 
 LIB_DEPENDS=	librote.so:devel/rote
