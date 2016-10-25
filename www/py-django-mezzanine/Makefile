@@ -15,6 +15,8 @@ COMMENT=	Content management platform built using the Django framework
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build due to dependency conflict (django16 vs. django18)
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}django-mezzanine-filebrowser>=0.3.4:www/py-django-mezzanine-filebrowser \
 		${PYTHON_PKGNAMEPREFIX}django-mezzanine-grappelli>=0.3.12:www/py-django-mezzanine-grappelli \
