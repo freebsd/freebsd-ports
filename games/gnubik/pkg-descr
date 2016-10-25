@@ -1,0 +1,7 @@
+The GNUbik program is an interactive, graphical, single player
+puzzle. Yes, this is another implementation of the classic game
+like that invented by Erno Rubik. You have to manipulate the cube
+using the mouse. When each face shows only one colour, the game is
+solved.
+
+WWW: https://www.gnu.org/software/gnubik/
