@@ -1,0 +1,50 @@
+--- configure.ac.orig	2016-10-26 08:05:08 UTC
++++ configure.ac
+@@ -2,6 +2,7 @@ AC_PREREQ(2.59)
+ AC_COPYRIGHT([Copyright (c) 2016 Varnish Software Group])
+ AC_INIT([varnish-modules], [0.9.1])
+ AC_CONFIG_MACRO_DIR([m4])
++AC_CONFIG_AUX_DIR([build-aux])
+ m4_ifndef([VARNISH_VMOD_INCLUDES], AC_MSG_ERROR([Need varnish.m4 -- see README.rst]))
+ AM_CONFIG_HEADER(config.h)
+ 
+@@ -18,6 +19,13 @@ if test "x$ac_cv_prog_cc_c99" = xno; the
+ fi
+ AC_PROG_CPP
+ 
++AX_PTHREAD(,[AC_MSG_ERROR([Could not configure pthreads support])])
++
++LIBS="$PTHREAD_LIBS $LIBS"
++CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
++CC="$PTHREAD_CC"
++
++LT_INIT([disable-static])
+ AC_PROG_INSTALL
+ AC_PROG_LIBTOOL
+ AC_PROG_MAKE_SET
+@@ -52,6 +60,7 @@ AS_VAR_IF([$1], [""], [$5], [$4])dnl
+ ])
+ 
+ PKG_CHECK_MODULES([libvarnishapi], [varnishapi])
++PKG_CHECK_VAR([LIBVARNISHAPI_PREFIX], [varnishapi], [prefix])
+ PKG_CHECK_VAR([LIBVARNISHAPI_DATAROOTDIR], [varnishapi], [datarootdir])
+ PKG_CHECK_VAR([LIBVARNISHAPI_BINDIR], [varnishapi], [bindir])
+ PKG_CHECK_VAR([LIBVARNISHAPI_SBINDIR], [varnishapi], [sbindir])
+@@ -68,6 +77,17 @@ PKG_CHECK_VAR([VARNISH_PLUS], [varnishap
+ VARNISH_VMOD_INCLUDES
+ VARNISH_VMOD_DIR
+ VARNISH_VMODTOOL
++# inherit the prefix from Varnish.
++# acessing ac_ variable because AC_PREFIX_DEFAULT acts too early
++ac_default_prefix=$LIBVARNISHAPI_PREFIX
++
++save_CFLAGS="$CFLAGS"
++CFLAGS="$VMOD_INCLUDES"
++AC_CHECK_MEMBERS(struct objcore.exp,
++  [AC_DEFINE([HAVE_OBJCORE_EXP], [1],
++    [Define if exp is present in the objcore struct])],
++  [], [#include <cache/cache.h>])
++CFLAGS="$save_CFLAGS"
+ 
+ AC_PATH_PROG([VARNISHTEST], [varnishtest], [],
+     [$LIBVARNISHAPI_BINDIR:$LIBVARNISHAPI_SBINDIR:$PATH])

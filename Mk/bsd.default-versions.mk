@@ -130,6 +130,9 @@ SSL_DEFAULT?=	base
 # Possible values: 8.4, 8.5, 8.6
 TCLTK_DEFAULT?=		8.6
 
+# Possible values: 4, 5
+VARNISH_DEFAULT?=	4
+
 # Version of lang/gcc.  Do not override!
 LANG_GCC_IS=		4.8
 
