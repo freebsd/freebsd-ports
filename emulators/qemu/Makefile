@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 HAS_CONFIGURE=	yes
 USES?=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
-MAKE_ENV+=	BSD_MAKE="${MAKE}"
+MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
 USE_XORG=	pixman
 USE_GNOME+=	cairo glib20
