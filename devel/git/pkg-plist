@@ -19,8 +19,6 @@ bin/git-upload-pack
 %%PERL%%%%SITE_PERL%%/Git/SVN/Prompt.pm
 %%PERL%%%%SITE_PERL%%/Git/SVN/Ra.pm
 %%PERL%%%%SITE_PERL%%/Git/SVN/Utils.pm
-lib/xemacs/site-lisp/git/git-blame.el
-lib/xemacs/site-lisp/git/git.el
 libexec/git-core/git
 libexec/git-core/git-add
 libexec/git-core/git-add--interactive
