@@ -757,6 +757,7 @@
     SUBDIR += go-pretty
     SUBDIR += go-protobuf
     SUBDIR += go-raw
+    SUBDIR += go-runewidth
     SUBDIR += go-shellwords
     SUBDIR += go-slices
     SUBDIR += go-sql-driver
