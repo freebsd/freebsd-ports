@@ -1,5 +1,5 @@
---- src/rtg.h.orig	2010-04-21 21:26:38.587554904 +0100
-+++ src/rtg.h	2010-04-21 21:31:40.436052227 +0100
+--- src/rtg.h.orig	2003-09-25 15:56:04 UTC
++++ src/rtg.h
 @@ -42,9 +42,7 @@
  #define DEFAULT_DB_PASS "rtgdefault"
  #define DEFAULT_SNMP_VER 1
