@@ -8772,3 +8772,7 @@ www/php55-session||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
 www/php55-tidy||2016-10-21|Has expired: EOL upstream since 21 Jul 2016
 www/lighttpd-mod_geoip|www/lighttpd|2016-10-21|Integrated into www/lighttpd
 net/dosdetector||2016-10-23|Has expired: No maintainer activity in over a decade
+devel/go-btree||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
+devel/go-flags||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
+devel/go-runewidth||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
+devel/go-termbox||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
