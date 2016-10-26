@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haesbaert
 GH_PROJECT=	mdnsd
 
+CONFLICTS_INSTALL=	mDNSResponder # sbin/mdnsd
+
 USES=		localbase uidfix
 USE_RC_SUBR=	mdnsd
 MAKE_ENV=	LDADD="${LIBS}"
