@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 MAINTAINER=	imp@FreeBSD.org
-USES=		u-boot gmake
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		pandaboard
 BOARD_CONFIG=	omap4_panda_config
 FAMILY=		omap
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
