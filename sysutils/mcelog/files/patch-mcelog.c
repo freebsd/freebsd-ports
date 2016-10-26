@@ -1,4 +1,4 @@
---- mcelog.c.orig	2016-02-10 18:38:43 UTC
+--- mcelog.c.orig	2016-10-10 22:08:11 UTC
 +++ mcelog.c
 @@ -20,9 +20,22 @@
  #define _GNU_SOURCE 1
@@ -23,7 +23,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -61,9 +74,25 @@
+@@ -60,9 +73,25 @@
  #include "bus.h"
  #include "unknown.h"
  
@@ -49,7 +49,7 @@
  
  int ignore_nodev;
  int filter_bogus = 1;
-@@ -74,7 +103,9 @@ int ascii_mode;
+@@ -73,7 +102,9 @@ int ascii_mode;
  int dump_raw_ascii;
  int daemon_mode;
  static char *inputfile;
@@ -59,7 +59,7 @@
  static int foreground;
  int filter_memory_errors;
  static struct config_cred runcred = { .uid = -1U, .gid = -1U };
-@@ -83,6 +114,10 @@ static char pidfile_default[] = PID_FILE
+@@ -82,6 +113,10 @@ static char pidfile_default[] = PID_FILE
  static char logfile_default[] = LOG_FILE;
  static char *pidfile = pidfile_default;
  static char *logfile;
@@ -70,7 +70,39 @@
  static int debug_numerrors;
  int imc_log = -1;
  static int check_only = 0;
-@@ -482,6 +517,7 @@ static void dump_mce_raw_ascii(struct mc
+@@ -196,6 +231,7 @@ static void parse_cpuid(u32 cpuid, u32 *
+ 		*model += c.c.ext_model << 4;
+ }
+ 
++#ifdef __Linux__
+ static u32 unparse_cpuid(unsigned family, unsigned model)
+ {
+ 	union { 
+@@ -213,6 +249,7 @@ static u32 unparse_cpuid(unsigned family
+ 		c.c.ext_model = model >> 4;
+ 	return c.v;
+ }
++#endif
+ 
+ static char *cputype_name[] = {
+ 	[CPU_GENERIC] = "generic CPU",
+@@ -325,6 +362,7 @@ static char *vendor[] = {
+ 	[8] = "NSC"
+ };
+ 
++#ifdef __Linux__
+ static unsigned cpuvendor_to_num(char *name)
+ {
+ 	unsigned i;
+@@ -339,6 +377,7 @@ static unsigned cpuvendor_to_num(char *n
+ 			return i;
+ 	return 0;
+ }
++#endif
+ 
+ static char *cpuvendor_name(u32 cpuvendor)
+ {
+@@ -483,6 +522,7 @@ static void dump_mce_raw_ascii(struct mc
  	Wprintf("\n");
  }
  
@@ -78,12 +110,12 @@
  int is_cpu_supported(void)
  { 
  	enum { 
-@@ -552,13 +588,58 @@ int is_cpu_supported(void)
+@@ -553,14 +593,61 @@ int is_cpu_supported(void)
  
  	return 1;
  } 
 +#endif
- 
++
 +#ifdef __FreeBSD__
 +int is_cpu_supported(void)
 +{
@@ -123,9 +155,10 @@
 +	/* Add checks for other CPUs here */
 +		else
 +		return 1;
++	return 0;
 +}
 +#endif
-+
+ 
 +#ifdef __Linux__
  static char *skipspace(char *s)
  {
@@ -135,9 +168,81 @@
  }
 +#endif
  
++#ifdef __Linux__
  static char *skip_syslog(char *s)
  {
-@@ -667,6 +748,7 @@ static int match_patterns(char *s, char 
+ 	char *p;
+@@ -571,7 +658,9 @@ static char *skip_syslog(char *s)
+ 		return p + sizeof("mcelog: ") - 1;
+ 	return s;
+ }
++#endif
+ 	
++#ifdef __Linux__
+ static char *skipgunk(char *s)
+ {
+ 	s = skip_syslog(s);
+@@ -596,12 +685,16 @@ static char *skipgunk(char *s)
+ 
+ 	return skipspace(s);
+ }
++#endif
+ 
++#ifdef __Linux__
+ static inline int urange(unsigned val, unsigned lo, unsigned hi)
+ {
+ 	return val >= lo && val <= hi;
+ }
++#endif
+ 
++#ifdef __Linux__
+ static int is_short(char *name)
+ {
+ 	return strlen(name) == 3 && 
+@@ -609,7 +702,9 @@ static int is_short(char *name)
+ 		islower(name[1]) &&
+ 		islower(name[2]);
+ }
++#endif
+ 
++#ifdef __Linux__
+ static unsigned skip_date(char *s)
+ {
+ 	unsigned day, hour, min, year, sec; 
+@@ -626,6 +721,7 @@ static unsigned skip_date(char *s)
+ 		return 0;
+ 	return next;
+ }
++#endif
+ 
+ static void dump_mce_final(struct mce *m, char *symbol, int missing, int recordlen, 
+ 			   int dseen)
+@@ -646,6 +742,7 @@ static void dump_mce_final(struct mce *m
+ 	flushlog();
+ }
+ 
++#ifdef __Linux__
+ static char *skip_patterns[] = {
+ 	"MCA:*",
+ 	"MCi_MISC register valid*",
+@@ -654,7 +751,9 @@ static char *skip_patterns[] = {
+ 	"Kernel does not support page offline interface",
+ 	NULL
+ };
++#endif
+ 
++#ifdef __Linux__
+ static int match_patterns(char *s, char **pat)
+ {
+ 	for (; *pat; pat++) 
+@@ -662,12 +761,14 @@ static int match_patterns(char *s, char 
+ 			return 0;
+ 	return 1;
+ }
++#endif
+ 
+ #define FIELD(f) \
+ 	if (recordlen < endof_field(struct mce, f)) \
  		recordlen = endof_field(struct mce, f)
  
  /* Decode ASCII input for fatal messages */
@@ -145,7 +250,7 @@
  static void decodefatal(FILE *inf)
  {
  	struct mce m;
-@@ -877,6 +959,227 @@ restart:
+@@ -878,6 +979,227 @@ restart:
  	if (data)
  		dump_mce_final(&m, symbol, missing, recordlen, disclaimer_seen);
  }
@@ -373,7 +478,7 @@
  
  static void remove_pidfile(void)
  {
-@@ -941,6 +1244,10 @@ void usage(void)
+@@ -943,6 +1265,10 @@ void usage(void)
  "  mcelog [options] --ascii < log\n"
  "  mcelog [options] --ascii --file log\n"
  "Decode machine check ASCII output from kernel logs\n"
@@ -384,7 +489,7 @@
  "\n"
  "Options:\n"  
  "--version           Show the version of mcelog and exit\n"
-@@ -1147,6 +1454,14 @@ static int modifier(int opt)
+@@ -1147,6 +1473,14 @@ static int modifier(int opt)
  	case O_IS_CPU_SUPPORTED:
  		check_only = 1;
  		break;
@@ -399,7 +504,7 @@
  	case 0:
  		break;
  	default:
-@@ -1197,10 +1512,12 @@ static int combined_modifier(int opt)
+@@ -1195,10 +1529,12 @@ static int combined_modifier(int opt)
  
  static void general_setup(void)
  {
@@ -412,7 +517,7 @@
  	config_cred("global", "run-credentials", &runcred);
  	if (config_bool("global", "filter-memory-errors") == 1)
  		filter_memory_errors = 1;
-@@ -1223,6 +1540,7 @@ static void drop_cred(void)
+@@ -1221,6 +1557,7 @@ static void drop_cred(void)
  	}
  }
  
@@ -420,7 +525,7 @@
  static void process(int fd, unsigned recordlen, unsigned loglen, char *buf)
  {	
  	int i; 
-@@ -1275,6 +1593,173 @@ static void process(int fd, unsigned rec
+@@ -1273,6 +1610,173 @@ static void process(int fd, unsigned rec
  	if (finish)
  		exit(0);
  }
@@ -594,7 +699,7 @@
  
  static void noargs(int ac, char **av)
  {
-@@ -1333,12 +1818,14 @@ struct mcefd_data {
+@@ -1331,12 +1835,14 @@ struct mcefd_data {
  	char *buf;
  };
  
@@ -609,7 +714,7 @@
  
  static void handle_sigusr1(int sig)
  {
-@@ -1347,13 +1834,18 @@ static void handle_sigusr1(int sig)
+@@ -1345,13 +1851,18 @@ static void handle_sigusr1(int sig)
  
  int main(int ac, char **av) 
  { 
@@ -630,7 +735,7 @@
  		if (opt == '?') {
  			usage(); 
  		} else if (combined_modifier(opt) > 0) {
-@@ -1375,11 +1867,13 @@ int main(int ac, char **av) 
+@@ -1371,11 +1882,13 @@ int main(int ac, char **av) 
  	} 
  
  	/* before doing anything else let's see if the CPUs are supported */
@@ -644,7 +749,7 @@
  	if (check_only)
  		exit(0);
  
-@@ -1398,13 +1892,21 @@ int main(int ac, char **av) 
+@@ -1394,13 +1907,21 @@ int main(int ac, char **av) 
  	}
  
  	modifier_finish();
@@ -666,7 +771,7 @@
  	fd = open(logfn, O_RDONLY); 
  	if (fd < 0) {
  		if (ignore_nodev) 
-@@ -1419,27 +1921,44 @@ int main(int ac, char **av) 
+@@ -1415,27 +1936,44 @@ int main(int ac, char **av) 
  		err("MCE_GET_LOG_LEN");
  
  	d.buf = xalloc(d.recordlen * d.loglen); 
