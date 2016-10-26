@@ -1,6 +1,0 @@
-Package flags provides an extensive command line option parser.  The
-flags package is similar in functionality to the go built-in flag
-package but provides more options and uses reflection to provide a
-convenient and succinct way of specifying command line options.
-
-WWW: http://godoc.org/github.com/jessevdk/go-flags
