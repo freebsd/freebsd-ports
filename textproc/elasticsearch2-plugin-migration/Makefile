@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	migration
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch2-plugin-
@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
 GH_PROJECT=	elasticsearch-migration
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
