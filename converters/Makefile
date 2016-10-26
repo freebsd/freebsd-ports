@@ -143,6 +143,7 @@
     SUBDIR += php70-mbstring
     SUBDIR += php70-recode
     SUBDIR += psiconv
+    SUBDIR += py-bcode
     SUBDIR += py-bencode
     SUBDIR += py-bencoder
     SUBDIR += py-better-bencode
