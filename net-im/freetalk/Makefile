@@ -2,32 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	freetalk
-PORTVERSION=	3.2
-PORTREVISION=	5
+PORTVERSION=	4.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
-MASTER_SITES=	SAVANNAH/freetalk \
-		http://itdev.spb.ru/mirror/
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	GNU console based Jabber client
 
-OPTIONS_DEFINE=	NLS
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
-BUILD_DEPENDS=	guile>=1.8.6:lang/guile
-RUN_DEPENDS=	guile>=1.8.6:lang/guile
+LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
+		libguile-2.0.so:lang/guile2 \
+		libgc-threaded.so:devel/boehm-gc-threaded
 
-USES=		pkgconfig
+USES=		autoreconf gettext-runtime localbase makeinfo pkgconfig readline
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	GNUFreetalk
+
 INFO=		freetalk
-
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
-NLS_CONFIGURE_WITH=libintl-prefix=${LOCALBASE}
-NLS_CONFIGURE_OFF= --disable-nls
 
 .include <bsd.port.mk>
