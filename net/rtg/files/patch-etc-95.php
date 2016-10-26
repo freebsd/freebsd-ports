@@ -1,5 +1,5 @@
---- etc/95.php.orig	2014-06-22 15:27:55.587467922 +0100
-+++ etc/95.php	2014-06-22 15:28:47.947474934 +0100
+--- etc/95.php.orig	2003-09-24 20:40:57 UTC
++++ etc/95.php
 @@ -4,10 +4,8 @@
    print "<HTML>\n<!-- RTG Version $VERSION -->\n<HEAD>\n";
  
@@ -12,7 +12,7 @@
  
    if ($PHP_SELF == "") {
      $PHP_SELF = "95.php";
-@@ -50,8 +48,8 @@
+@@ -50,8 +48,8 @@ function int_stats($statement, $dbc) {
    $max = $avg = $nintyfifth = 0;
    $rate = array();
  
@@ -23,7 +23,7 @@
      $counter = $selectRow->counter;
      $sample_secs = $selectRow->unixtime;
      $total += $counter;
-@@ -89,9 +87,8 @@
+@@ -89,9 +87,8 @@ Report: 95th percentile<BR>
  <?php
    echo "<FORM ACTION=\"$PHP_SELF\" METHOD=\"GET\">\n";
    if (($bt || $smonth)) { 
@@ -35,7 +35,7 @@
      /* Format into GNU date syntax */
      if ($bt == "") {
        $bt = strtotime("$syear-$smonth-$sday $shour:$smin:00");
-@@ -104,11 +101,11 @@
+@@ -104,11 +101,11 @@ Report: 95th percentile<BR>
      $range="dtime>FROM_UNIXTIME($bt) AND dtime<=FROM_UNIXTIME($et)";
  
      $selectQuery="SELECT id, name, description, rid FROM interface WHERE description LIKE \"%$customer%\"";
@@ -50,7 +50,7 @@
          $ids[$selectRow->id] = $selectRow->name; 
          $rids[$selectRow->id] = $selectRow->rid; 
  	$desc[$selectRow->id] = $selectRow->description;
-@@ -127,8 +124,8 @@
+@@ -127,8 +124,8 @@ Report: 95th percentile<BR>
        foreach($ids as $iid=>$name) {
  
          $selectQuery="SELECT name FROM router WHERE rid=$rids[$iid]";
@@ -61,7 +61,7 @@
  	$router = $selectRow->name;
  
          if ($yellow) $yellow = 0;
-@@ -201,7 +198,7 @@
+@@ -201,7 +198,7 @@ Report: 95th percentile<BR>
      echo "<P><INPUT TYPE=\"SUBMIT\" VALUE=\"Ok\">";
    }
  

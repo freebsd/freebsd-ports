@@ -219,7 +219,7 @@ meta1:*:264:
 haclient:*:275:
 frontbase:*:276:
 # free: 277
-# free: 278
+rtg:*:278:
 mrtg:*:279:
 xymon:*:280:
 prelude:*:281:
