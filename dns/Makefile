@@ -108,6 +108,7 @@
     SUBDIR += opendnssec
     SUBDIR += opendnssec13
     SUBDIR += opendnssec2
+    SUBDIR += openmdns
     SUBDIR += openresolv
     SUBDIR += p5-AnyEvent-CacheDNS
     SUBDIR += p5-AnyEvent-DNS-EtcHosts
