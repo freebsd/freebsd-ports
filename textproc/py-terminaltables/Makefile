@@ -11,6 +11,7 @@ COMMENT=	Generate simple tables in terminals from a nested list of strings
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
