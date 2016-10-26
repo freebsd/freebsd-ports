@@ -4,7 +4,7 @@
 PORTNAME=	icecast
 DISTVERSIONPREFIX=	icecast-
 DISTVERSION=	${ICVERSION}-kh${KH}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio net ipv6
 PKGNAMESUFFIX=	-kh
 
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	karlheyes
 GH_PROJECT=	icecast-kh
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig ssl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -34,12 +34,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 ICVERSION=	2.3.3
 KH=		10
 
-OPTIONS_DEFINE=		CURL DOCS KATE SPEEX SSL_PORT
+OPTIONS_DEFINE=		CURL DOCS KATE SPEEX
 OPTIONS_DEFAULT=	CURL KATE SPEEX
 CURL_DESC=		Support Directory server interaction (YP) via curl
 KATE_DESC=		Support Kate/Skeleton codec within Ogg streams
 SPEEX_DESC=		Support Speex codec within Ogg streams
-SSL_PORT_DESC=		Use OpenSSL from ports instead of one in the base
 
 CONFLICTS_INSTALL=	icecast-[0-9]* icecast2-[0-9]*
 
@@ -63,12 +62,6 @@ BUILD_DEPENDS+=	speex>=1:audio/speex
 CONFIGURE_ARGS+=	--with-speex=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-speex
-.endif
-
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=	yes
-.else
-WITH_OPENSSL_BASE=	yes
 .endif
 
 .include <bsd.port.mk>
