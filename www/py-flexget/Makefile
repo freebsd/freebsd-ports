@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FlexGet-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Program to automate downloading from different sources
 
 LICENSE=	MIT
