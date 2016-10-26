@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	6
+PORTREVISION=	7
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
@@ -80,11 +80,11 @@ SMTP_CONFIGURE_OFF=		--disable-smtp
 SMTP_LIB_DEPENDS=		libesmtp.so:mail/libesmtp
 SMTP_PLIST_FILES=		lib/syslog-ng/libafsmtp.so
 
-MSQL_CONFIGURE_ENABLE=		sql
-MSQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
-MSQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
-MSQL_LDFLAGS=			-L${LOCALBASE}/lib
-MSQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
+SQL_CONFIGURE_ENABLE=		sql
+SQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
+SQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
+SQL_LDFLAGS=			-L${LOCALBASE}/lib
+SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
 MONGO_BUILD_DEPENDS=		mongo:databases/mongodb
