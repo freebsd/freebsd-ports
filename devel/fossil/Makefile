@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	fossil
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTVERSION=	1.36
 DISTVERSIONPREFIX=	src-
 PORTEPOCH=	2
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.fossil-scm.org/download/
+MASTER_SITES=	http://fossil-scm.org/index.html/uv/download/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
