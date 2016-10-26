@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
