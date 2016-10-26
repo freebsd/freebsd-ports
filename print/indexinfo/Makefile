@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	indexinfo
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	print ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
