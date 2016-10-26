@@ -742,11 +742,9 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bayesian
     SUBDIR += go-bindata
-    SUBDIR += go-btree
     SUBDIR += go-cobra
     SUBDIR += go-codec
     SUBDIR += go-faker
-    SUBDIR += go-flags
     SUBDIR += go-form
     SUBDIR += go-go.uuid
     SUBDIR += go-goregen
@@ -759,11 +757,9 @@
     SUBDIR += go-pretty
     SUBDIR += go-protobuf
     SUBDIR += go-raw
-    SUBDIR += go-runewidth
     SUBDIR += go-shellwords
     SUBDIR += go-slices
     SUBDIR += go-sql-driver
-    SUBDIR += go-termbox
     SUBDIR += go-tools
     SUBDIR += go-uuid
     SUBDIR += go-yaml
