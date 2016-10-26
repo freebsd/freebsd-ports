@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
