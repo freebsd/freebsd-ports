@@ -1218,6 +1218,7 @@
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
+    SUBDIR += py-colorclass
     SUBDIR += py-creole
     SUBDIR += py-csvkit
     SUBDIR += py-dbfread
