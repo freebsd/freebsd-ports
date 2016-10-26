@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: mdnsd
-# REQUIRE: LOGIN FILESYSTEMS
+# REQUIRE: NETWORKING
+# BEFORE:  DAEMON
 # KEYWORD: shutdown
 
 . /etc/rc.subr
