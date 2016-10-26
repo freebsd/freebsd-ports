@@ -12,7 +12,8 @@ COMMENT=	Bonjour (zero-configuration networking) by Apple
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-CONFLICTS=	avahi-libdns-[0-9]*
+# lib/libdns_sd.so.1 sbin/mdnsd
+CONFLICTS_INSTALL=	avahi-libdns openmdns
 
 ALL_TARGET=	all dnsextd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
