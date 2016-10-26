@@ -3,18 +3,19 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.3.3
-PORTREVISION?=	2
+PORTVERSION=	3.3.5
+PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 #current flavors: default, float, long, and quad
 FFTW3_FLAVOR?=	default
@@ -26,7 +27,8 @@ USES=		libtool pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=		--enable-shared --enable-threads --disable-fortran
+CONFIGURE_ARGS=	--enable-shared --enable-threads --disable-fortran
+MPIDIR?=	${LOCALBASE}/mpi/openmpi
 
 .if ${FFTW3_FLAVOR} == "default"
 INFO=	fftw3
@@ -36,43 +38,60 @@ INFO=	fftw3
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS_DEFINE=		G77_WRAPPERS OPENMP OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		G77_WRAPPERS OPENMP OPENMPI OPTIMIZED_CFLAGS SIMD
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS SIMD
+.if ${FFTW3_FLAVOR} == "quad"
+OPTIONS_EXCLUDE+=	OPENMPI
+.endif
+OPTIONS_SUB=		yes
 
-G77_WRAPPERS_DESC=	Alter Fortran wrappers for use with g77
-OPENMP_DESC=		Build OpenMP multithreaded libraries
+G77_WRAPPERS_DESC=		Alter Fortran wrappers for use with g77
 
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+OPENMP_DESC=			Build OpenMP multithreaded libraries
+OPENMP_USES=			compiler:openmp
+OPENMP_USES_OFF=		compiler:env
+OPENMP_CONFIGURE_ENABLE=	openmp
+OPENMP_EXTRA_PATCHES=		${FILESDIR}/extrapatch-tests_fftw-bench.c
+
+OPENMPI_DESC=			Build OpenMPI parallel libraries
+OPENMPI_LIB_DEPENDS=		libmpi.so:net/openmpi
+OPENMPI_CONFIGURE_ENABLE=	mpi
+OPENMPI_CONFIGURE_ENV=		MPICC=${MPIDIR}/bin/mpicc \
+				MPIRUN=${MPIDIR}/bin/mpirun
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENMP}
-CONFIGURE_ARGS+=	--enable-openmp
-PLIST_SUB+=	OPENMP=""
-USES+=		compiler:openmp
-.else
-CONFIGURE_ARGS+=	--disable-openmp
-PLIST_SUB+=	OPENMP="@comment "
-USES+=		compiler:env
-.endif
 
 #Users must add altivec to MACHINE_CPU when desired:
 #this is not currently done in bsd.cpu.mk
 .if ${FFTW3_FLAVOR} == "default"
-.  if !empty(MACHINE_CPU:Mavx)
+.  if ${PORT_OPTIONS:MSIMD}
+.    if !empty(MACHINE_CPU:Mavx)
 CONFIGURE_ARGS+=--enable-avx
-.  elif !empty(MACHINE_CPU:Msse2)
+.    endif
+.    if !empty(MACHINE_CPU:Mavx2)
+CONFIGURE_ARGS+=--enable-avx2 --enable-fma
+.    endif
+.    if !empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=--enable-sse2
+.    endif
 .  endif
 .elif ${FFTW3_FLAVOR} == "float"
 FFTW3_SUFX=	f
 FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
-.  if !empty(MACHINE_CPU:Mavx)
+.  if ${PORT_OPTIONS:MSIMD}
+.    if !empty(MACHINE_CPU:Mavx)
 CONFIGURE_ARGS+=--enable-avx
-.  elif !empty(MACHINE_CPU:Msse)
-CONFIGURE_ARGS+=--enable-sse
-.  elif !empty(ARCH:Mpowerpc*) && !empty(MACHINE_CPU:Maltivec)
+.    endif
+.    if !empty(MACHINE_CPU:Mavx2)
+CONFIGURE_ARGS+=--enable-avx2 --enable-fma
+.    endif
+.    if !empty(MACHINE_CPU:Msse)
+CONFIGURE_ARGS+=--enable-sse2
+.    endif
+.    if !empty(ARCH:Mpowerpc*) && !empty(MACHINE_CPU:Maltivec)
 CONFIGURE_ARGS+=--enable-altivec
+.    endif
 .  endif
 .elif ${FFTW3_FLAVOR} == "long"
 FFTW3_SUFX=	l
@@ -101,7 +120,7 @@ CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
 .  if !defined(WITH_DEBUG)
 CFLAGS+=	-fomit-frame-pointer
 .  endif
-.  if ${ARCH} == "i386" && (${COMPILER_TYPE} == "gcc" || !empty(USE_GCC))
+.  if ${ARCH} == "i386" && (${COMPILER_TYPE} == "gcc" || !empty(USE_GCC)) && !${PORT_OPTIONS:MOPENMPI}
 CFLAGS+=	-malign-double
 .  endif
 WITHOUT_NO_STRICT_ALIASING=	yes
@@ -119,7 +138,6 @@ post-patch:
 	/[^\]$$/s/[^[:blank:]]*fftw-wisdom-to-conf[^[:blank:]]*//' \
 		${WRKSRC}/tools/Makefile.in
 .endif
-	@${FIND} ${WRKSRC} -type f \( -name \*.bak -or -name \*.orig \) -delete
 
 post-configure:
 #After issuing --disable-fortran in order to avoid using a Fortran compiler
@@ -129,21 +147,20 @@ post-configure:
 	@${ECHO_CMD} "#define F77_FUNC(name,NAME) name ## _" >> ${WRKSRC}/config.h
 	@${ECHO_CMD} "#define F77_FUNC_(name,NAME) name ## _" >> ${WRKSRC}/config.h
 	@${ECHO_CMD} "#define F77_FUNC_EQUIV 1" >> ${WRKSRC}/config.h
-.if ${PORT_OPTIONS:MG77_WRAPPERS}
+
+post-configure-G77_WRAPPERS-on:
 	@${ECHO_CMD} "#define WITH_G77_WRAPPERS 1" >> ${WRKSRC}/config.h
-.endif
 
 .if ${FFTW3_FLAVOR} != "default"
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/man/man1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 .endif
 
 regression-test test: smallcheck
 
-.for t in bigcheck check exhaustive-check paranoid-check smallcheck
-${t}: build
-	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_ARGS} ${t})
-.endfor
+bigcheck check exhaustive-check paranoid-check smallcheck: build
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/tests \
+		${MAKE_ARGS} $@
 
 .include <bsd.port.post.mk>
