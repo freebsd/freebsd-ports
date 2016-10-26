@@ -396,6 +396,7 @@
     SUBDIR += libexttextcat
     SUBDIR += libflate
     SUBDIR += libfo
+    SUBDIR += libgepub
     SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
