@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/futurebsd/futurebsd/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	Home Automation Software for the X10 FireCracker kit
 
 USES=		gmake
