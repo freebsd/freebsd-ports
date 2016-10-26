@@ -7,6 +7,7 @@ bin/flickr_make_test_values.pl
 %%SITE_PERL%%/Flickr/API/Reflection.pm
 %%SITE_PERL%%/Flickr/API/Request.pm
 %%SITE_PERL%%/Flickr/API/Response.pm
+%%SITE_PERL%%/Flickr/API/Upload.pm
 %%PERL5_MAN1%%/flickr_dump_stored_config.pl.1.gz
 %%PERL5_MAN1%%/flickr_make_stored_config.pl.1.gz
 %%PERL5_MAN1%%/flickr_make_test_values.pl.1.gz
@@ -16,3 +17,4 @@ bin/flickr_make_test_values.pl
 %%PERL5_MAN3%%/Flickr::API::Reflection.3.gz
 %%PERL5_MAN3%%/Flickr::API::Request.3.gz
 %%PERL5_MAN3%%/Flickr::API::Response.3.gz
+%%PERL5_MAN3%%/Flickr::API::Upload.3.gz
