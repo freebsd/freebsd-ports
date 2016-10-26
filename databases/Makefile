@@ -796,7 +796,6 @@
     SUBDIR += py35-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
-    SUBDIR += pymongo28
     SUBDIR += pypy-gdbm
     SUBDIR += pypy-sqlite3
     SUBDIR += pyspatialite
