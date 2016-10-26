@@ -1,6 +1,6 @@
---- etc/rtgtargmkr.pl.in.orig	2010-04-21 20:55:58.903081619 +0100
-+++ etc/rtgtargmkr.pl.in	2010-04-21 20:56:15.567832088 +0100
-@@ -126,7 +126,7 @@
+--- etc/rtgtargmkr.pl.in.orig	2016-10-25 16:28:59 UTC
++++ etc/rtgtargmkr.pl.in
+@@ -126,7 +126,7 @@ sub find_router_id {
          &sql_insert($sql);
          $rid = &find_router_id($router);
          foreach $mib ( keys %mibs_of_interest ) {

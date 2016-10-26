@@ -224,7 +224,7 @@ meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
 # free: 277
-# free: 278
+rtg:*:278:278::0:0:RTG daemon:/nonexistent:/usr/sbin/nologin
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
 xymon:*:280:280::0:0:Xymon Monitor:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281::0:0:Prelude user:/nonexistent:/usr/sbin/nologin

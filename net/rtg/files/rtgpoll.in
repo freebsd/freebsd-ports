@@ -21,7 +21,8 @@
 name="rtgpoll"
 rcvar=rtgpoll_enable
 
-command=%%PREFIX%%/bin/${name}
+cmd=%%PREFIX%%/bin/${name}
+command="/usr/sbin/daemon"
 
 load_rc_config $name
 
@@ -29,10 +30,25 @@ load_rc_config $name
 : ${rtgpoll_config="%%PREFIX%%/etc/rtg/rtg.conf"}
 : ${rtgpoll_targets="%%PREFIX%%/etc/rtg/targets.cfg"}
 : ${rtgpoll_pidfile="/var/run/${name}.pid"}
+: ${rtgpoll_user="rtg"}
+: ${rtgpoll_group="rtg"}
 
 required_files="$rtgpoll_targets"
 
-command_args="-p $rtgpoll_pidfile -c $rtgpoll_config -t $rtgpoll_targets &"
+command_args="-f -p $rtgpoll_pidfile $cmd -c $rtgpoll_config -t $rtgpoll_targets"
+
+start_precmd="rtgpoll_prestart"
+
+rtgpoll_prestart() {
+  if [ ! -e "${rtgpoll_pidfile}" ]; then
+	touch $rtgpoll_pidfile
+  fi
+
+  chown "${rtgpoll_user}:${rtgpoll_group}" "$rtgpoll_pidfile"
+  chmod 640 "$rtgpoll_pidfile"
+  chown -R "${rtgpoll_user}:${rtgpoll_group}" "%%PREFIX%%/etc/rtg"
+  chmod -R u+rwX,g+rX "%%PREFIX%%/etc/rtg"
+}
 
 run_rc_command "$1"
 

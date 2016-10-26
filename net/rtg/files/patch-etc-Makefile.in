@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2003-10-02 16:59:32.000000000 +0100
-+++ etc/Makefile.in	2014-05-10 17:29:11.995407415 +0100
-@@ -84,19 +84,19 @@
+--- etc/Makefile.in.orig	2003-10-02 15:59:32 UTC
++++ etc/Makefile.in
+@@ -84,19 +84,19 @@ am__quote = @am__quote@
  install_sh = @install_sh@
  
  top_builddir = ..
@@ -26,7 +26,7 @@
  
  subdir = etc
  mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
-@@ -220,14 +220,14 @@
+@@ -220,14 +220,14 @@ uninstall-am: uninstall-info-am
  all:
  
  install: installdirs
