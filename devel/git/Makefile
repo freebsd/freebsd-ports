@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -189,15 +190,10 @@ post-install:
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git-blame.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git.el    \
-		${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/git/git.el
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
-		${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
 .if ${PORT_OPTIONS:MCONTRIB}
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/git-core/contrib
@@ -208,7 +204,5 @@ post-install:
 .if ${PORT_OPTIONS:MP4}
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
 .endif
-
-post-stage:
 
 .include <bsd.port.mk>
