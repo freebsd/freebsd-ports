@@ -1,6 +1,6 @@
---- core/com/lowagie/text/pdf/PdfStamperImp.java.orig	2016-06-20 15:02:42 UTC
+--- core/com/lowagie/text/pdf/PdfStamperImp.java.orig	2016-10-26 08:23:27 UTC
 +++ core/com/lowagie/text/pdf/PdfStamperImp.java
-@@ -208,8 +208,17 @@ class PdfStamperImp extends PdfWriter {
+@@ -208,13 +208,22 @@ class PdfStamperImp extends PdfWriter {
          }
          // metadata
          int skipInfo = -1;
@@ -20,3 +20,18 @@
          String producer = null;
          if (iInfo != null)
              skipInfo = iInfo.getNumber();
+         if (oldInfo != null && oldInfo.get(PdfName.PRODUCER) != null)
+-        	producer = oldInfo.getAsString(PdfName.PRODUCER).toString();
++        	producer = oldInfo.getAsString(PdfName.PRODUCER).toUnicodeString();
+         if (producer == null) {
+         	producer = Document.getVersion();
+         }
+@@ -343,7 +352,7 @@ class PdfStamperImp extends PdfWriter {
+             }
+         }
+         newInfo.put(PdfName.MODDATE, date);
+-        newInfo.put(PdfName.PRODUCER, new PdfString(producer));
++        newInfo.put(PdfName.PRODUCER, new PdfString(producer, PdfObject.TEXT_UNICODE));
+         if (append) {
+             if (iInfo == null)
+                 info = addToBody(newInfo, false).getIndirectReference();

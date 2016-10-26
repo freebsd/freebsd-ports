@@ -3,7 +3,7 @@
 
 PORTNAME=	itext
 PORTVERSION=	4.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	LOCAL/ale
@@ -14,12 +14,12 @@ COMMENT=	Java-PDF Library
 LICENSE=	MPL LGPL20
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle \
-		${JAVAJARDIR}/dom4j.jar:textproc/dom4j \
-		${JAVAJARDIR}/pdf-renderer.jar:print/pdf-renderer
-RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle \
-		${JAVAJARDIR}/dom4j.jar:textproc/dom4j \
-		${JAVAJARDIR}/pdf-renderer.jar:print/pdf-renderer
+BUILD_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle \
+		${JAVALIBDIR}/dom4j.jar:textproc/dom4j \
+		${JAVALIBDIR}/pdf-renderer.jar:print/pdf-renderer
+RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle \
+		${JAVALIBDIR}/dom4j.jar:textproc/dom4j \
+		${JAVALIBDIR}/pdf-renderer.jar:print/pdf-renderer
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,6 +30,7 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	jar jar.rtf jar.rups
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-rtf.jar \
@@ -45,16 +46,16 @@ ALL_TARGET+=	javadoc
 .endif
 
 do-install:
-	@${INSTALL_DATA} ${WRKDIR}/lib/iText.jar \
+	${INSTALL_DATA} ${WRKDIR}/lib/iText.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${INSTALL_DATA} ${WRKDIR}/lib/iText-rtf.jar \
+	${INSTALL_DATA} ${WRKDIR}/lib/iText-rtf.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-rtf.jar
-	@${INSTALL_DATA} ${WRKDIR}/lib/iText-rups.jar \
+	${INSTALL_DATA} ${WRKDIR}/lib/iText-rups.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-rups.jar
-	@${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}-rups \
+	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}-rups \
 		${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
 	(cd ${WRKDIR}/build/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidocs)
 .endif
 
