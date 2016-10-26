@@ -1,4 +1,4 @@
---- Makefile.orig	2016-09-02 21:52:54 UTC
+--- Makefile.orig	2016-10-18 22:32:19 UTC
 +++ Makefile
 @@ -1,5 +1,4 @@
 -CFLAGS := -g -Os
@@ -7,7 +7,7 @@
  etcprefix :=
  MANDIR := ${prefix}/share/man
  # Define appropiately for your distribution
-@@ -27,13 +26,20 @@ all: mcelog
+@@ -27,14 +26,21 @@ all: mcelog
  
  .PHONY: install clean depend FORCE
  
@@ -16,10 +16,11 @@
         nehalem.o dunnington.o tulsa.o config.o memutil.o msg.o   \
 -       eventloop.o leaky-bucket.o memdb.o server.o trigger.o 	 \
 -       client.o cache.o sysfs.o yellow.o page.o rbtree.o 	 \
-+       eventloop.o leaky-bucket.o memdb.o server.o 	 \
-+       client.o cache.o rbtree.o 	 \
++       eventloop.o leaky-bucket.o memdb.o server.o	 	 \
++       client.o cache.o rbtree.o			 	 \
         sandy-bridge.o ivy-bridge.o haswell.o		 	 \
         broadwell_de.o broadwell_epex.o skylake_xeon.o		 \
+        denverton.o						 \
 -       msr.o bus.o unknown.o
 +       msr.o
 +ifndef FREEBSD
@@ -31,7 +32,7 @@
  CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o \
  	version.o version.c version.tmp
  DOC := mce.pdf
-@@ -42,7 +48,7 @@ ADD_DEFINES :=
+@@ -43,7 +49,7 @@ ADD_DEFINES :=
  
  SRC := $(OBJ:.o=.c)
  
@@ -40,7 +41,7 @@
  
  # dbquery intentionally not installed by default
  install: mcelog mcelog.conf mcelog.conf.5 mcelog.triggers.5
-@@ -81,7 +87,7 @@ depend: .depend
+@@ -82,7 +88,7 @@ depend: .depend
  
  version.tmp: FORCE
  	( echo -n "char version[] = \"" ; 	\
@@ -49,7 +50,7 @@
  	if [ -d .git ] ; then 			\
  		git describe --tags HEAD | tr -d '\n'; 	\
  	else 					\
-@@ -97,8 +103,6 @@ version.c: version.tmp
+@@ -98,8 +104,6 @@ version.c: version.tmp
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
  
