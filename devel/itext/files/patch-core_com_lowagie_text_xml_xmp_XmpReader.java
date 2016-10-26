@@ -1,4 +1,4 @@
---- core/com/lowagie/text/xml/xmp/XmpReader.java.orig	2016-06-20 15:02:42 UTC
+--- core/com/lowagie/text/xml/xmp/XmpReader.java.orig	2016-10-26 08:23:27 UTC
 +++ core/com/lowagie/text/xml/xmp/XmpReader.java
 @@ -103,8 +103,19 @@ public class XmpReader {
  	public boolean replace(String namespaceURI, String localName, String value) {
