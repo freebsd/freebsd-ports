@@ -20,8 +20,8 @@ USES=		gmake python:2.7,run shebangfix
 SHEBANG_LANG=	python2.7
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
 .ifnmake describe
-MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${PORTSDIR}/devel/git
-MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${PORTSDIR}/devel/git
+MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${.CURDIR}/../git
+MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${.CURDIR}/../git
 .endif
 MAKE_ENV+=	PYTHON_PATH="${PYTHON_CMD}"
 DATADIR=	${PREFIX}/libexec/git-core
