@@ -11,6 +11,7 @@ COMMENT=	Colorful worry-free console applications
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
