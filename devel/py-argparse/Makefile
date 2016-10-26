@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argparse
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +14,8 @@ LICENSE=	PSFL
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+DEPRECATED=	Part of Python standard library for Python >= 2.7 and >= 3.2
+EXPIRATION_DATE=	2016-11-30
 
 .include <bsd.port.mk>
