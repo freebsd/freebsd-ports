@@ -1,4 +1,4 @@
---- core/com/lowagie/text/pdf/PdfReader.java.orig	2016-06-20 15:02:42 UTC
+--- core/com/lowagie/text/pdf/PdfReader.java.orig	2016-10-26 08:23:27 UTC
 +++ core/com/lowagie/text/pdf/PdfReader.java
 @@ -1464,7 +1464,7 @@ public class PdfReader implements PdfVie
              }
