@@ -1,0 +1,11 @@
+--- configure.orig	2016-07-30 20:34:50 UTC
++++ configure
+@@ -14397,7 +14397,7 @@ fi
+ esac
+ 
+ case "${ax_cv_c_compiler_vendor}" in
+-    gnu|intel)
++    gnu|intel|clang)
+ 	# SSE/SSE2
+ 	if test "$have_sse2" = "yes" -a "x$SSE2_CFLAGS" = x; then
+ 	    if test "$PRECISION" = d; then flag=msse2; else flag=msse; fi
