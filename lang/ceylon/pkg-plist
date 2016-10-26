@@ -11,10 +11,12 @@ man/man1/ceylon-config.1.gz
 man/man1/ceylon-copy.1.gz
 man/man1/ceylon-doc-tool.1.gz
 man/man1/ceylon-doc.1.gz
+man/man1/ceylon-fat-jar.1.gz
 man/man1/ceylon-help.1.gz
 man/man1/ceylon-import-jar.1.gz
 man/man1/ceylon-info.1.gz
 man/man1/ceylon-jigsaw.1.gz
+man/man1/ceylon-new.1.gz
 man/man1/ceylon-p2.1.gz
 man/man1/ceylon-plugin.1.gz
 man/man1/ceylon-run-js.1.gz
