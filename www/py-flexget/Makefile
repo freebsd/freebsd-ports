@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	2.2.22
-PORTREVISION=	1
+PORTVERSION=	2.5.3
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -21,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.2.1:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5:www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}rss2gen>0:textproc/py-rss2gen \
+		${PYTHON_PKGNAMEPREFIX}colorclass>=2.2.0:textproc/py-colorclass \
+		${PYTHON_PKGNAMEPREFIX}terminaltables>=3.1.0:textproc/py-terminaltables \
 		${PYTHON_PKGNAMEPREFIX}pynzb>0:news/py-pynzb \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
 		${PYTHON_PKGNAMEPREFIX}rpyc>0:devel/py-RPyC \
@@ -33,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.2.1:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.3.2:www/py-flask-login \
 		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.7.0:www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.2:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing \
 		${PYTHON_PKGNAMEPREFIX}safe>=0.4:security/py-safe \
