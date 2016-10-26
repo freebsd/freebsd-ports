@@ -19,6 +19,7 @@
     SUBDIR += ctorrent
     SUBDIR += dclib
     SUBDIR += deluge
+    SUBDIR += deluge-cli
     SUBDIR += digitalcoin
     SUBDIR += dogecoin
     SUBDIR += ed2k
