@@ -2,6 +2,7 @@ bin/kdig
 bin/khost
 bin/knsec3hash
 bin/knsupdate
+bin/kzonecheck
 %%ETCDIR%%/example.com.zone
 @sample %%ETCDIR%%/knot.conf.sample
 include/dnssec/binary.h
@@ -72,8 +73,8 @@ lib/libdnssec.so.2
 lib/libdnssec.so.2.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.3
-lib/libknot.so.3.0.0
+lib/libknot.so.4
+lib/libknot.so.4.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.1
@@ -95,4 +96,3 @@ man/man8/knotd.8.gz
 sbin/keymgr
 sbin/knotc
 sbin/knotd
-sbin/kzonecheck
