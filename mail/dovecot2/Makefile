@@ -13,8 +13,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.25
-PORTREVISION=	6
+PORTVERSION=	2.2.26
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
