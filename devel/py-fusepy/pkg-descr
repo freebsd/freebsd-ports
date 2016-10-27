@@ -1,0 +1,4 @@
+fusepy is a Python module that provides a simple interface to FUSE and
+MacFUSE. It's just one file and is implemented using ctypes.
+
+WWW: https://pypi.python.org/pypi/fusepy

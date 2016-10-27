@@ -4158,6 +4158,7 @@
     SUBDIR += py-funcsigs
     SUBDIR += py-functools32
     SUBDIR += py-fusefs
+    SUBDIR += py-fusepy
     SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-futurist
