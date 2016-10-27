@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openbor
-PORTVERSION=	3.0.r4167
-PORTREVISION=	1
+PORTVERSION=	3.0.r4235
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
