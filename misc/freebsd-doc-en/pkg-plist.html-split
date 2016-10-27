@@ -43,6 +43,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/tracking.license.grants.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ideas-contributing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ports-contributing.html
@@ -767,6 +768,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-usb-tethering.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-vlan.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/one-time-passwords.html
@@ -830,7 +832,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-parallels.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-virtualbox-guest-additions.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-virtualbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-virtualpc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-vmware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-bhyve.html
@@ -901,6 +903,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-use-posix-standards.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-verbose-logs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/gnome-components.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
@@ -1008,6 +1011,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-horde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-iconv.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-imake.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-kde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-kmod.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-lha.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-libarchive.html
