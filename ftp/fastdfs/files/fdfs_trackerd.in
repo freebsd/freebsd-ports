@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: fdfs_trackerd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable `fdfs_trackerd':
+#
+# fdfs_trackerd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="fdfs_trackerd"
+rcvar=fdfs_trackerd_enable
+
+command="%%PREFIX%%/bin/fdfs_trackerd"
+pidfile="/var/run/fdfs_trackerd.pid"
+
+start_postcmd="${name}_poststart"
+stop_postcmd="rm ${pidfile}"
+
+fdfs_trackerd_poststart()
+{
+        /bin/ps auxwww|/usr/bin/grep fdfs_trackerd|/usr/bin/grep -v 'grep'|grep -v 'rc.d'|/usr/bin/awk '{print $2;}' > /var/run/fdfs_trackerd.pid
+
+        currpid=`/bin/cat /var/run/fdfs_trackerd.pid`
+
+        if [ "$currpid" -gt 0 ]; then
+                echo "Started fdfs_trackerd."
+        fi
+}
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${fdfs_trackerd_enable="NO"}
+: ${fdfs_trackerd_config="%%PREFIX%%/etc/fdfs/tracker.conf"}
+
+command_args="${fdfs_trackerd_config}"
+required_files="${fdfs_trackerd_config}"
+
+run_rc_command "$1"
+

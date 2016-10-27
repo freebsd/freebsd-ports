@@ -17,6 +17,7 @@
     SUBDIR += curl-hiphop
     SUBDIR += curlpp
     SUBDIR += dmachine
+    SUBDIR += fastdfs
     SUBDIR += filezilla
     SUBDIR += fmirror
     SUBDIR += fpc-libcurl
@@ -64,8 +65,10 @@
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
     SUBDIR += php56-curl
+    SUBDIR += php56-fastdfs
     SUBDIR += php56-ftp
     SUBDIR += php70-curl
+    SBUDIR += php70-fastdfs
     SUBDIR += php70-ftp
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor

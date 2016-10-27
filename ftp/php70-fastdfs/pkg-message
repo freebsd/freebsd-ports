@@ -1,0 +1,15 @@
+Before you can start using this module;
+- Make sure you have configured client.conf to point to your FastDFS cluster
+  and that you see the cluster with fdfs_monitor
+- Add this to your php.ini file
+==================================================================
+fastdfs_client.base_path = /var/tmp
+fastdfs_client.connect_timeout = 2
+fastdfs_client.network_timeout = 60
+fastdfs_client.log_level = info
+fastdfs_client.log_filename =
+fastdfs_client.http.anti_steal_secret_key =
+fastdfs_client.tracker_group_count = 1
+fastdfs_client.tracker_group0 = /usr/local/etc/fdfs/client.conf
+fastdfs_client.use_connection_pool = false
+fastdfs_client.connection_pool_max_idle_time = 3600
