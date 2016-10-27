@@ -2,6 +2,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.txt
