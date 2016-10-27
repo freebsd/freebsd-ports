@@ -14,6 +14,8 @@ COMMENT=	Cross-build das u-boot for ${MODEL}
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc
+
 USES=		gmake
 
 USE_GITHUB=	yes
