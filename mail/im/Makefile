@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	im
-PORTVERSION=	152
+PORTVERSION=	153
 CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/
 
