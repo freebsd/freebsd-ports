@@ -29,11 +29,9 @@ pre-configure:
 	${ECHO_CMD} "m4_define([UV_EXTRA_AUTOMAKE_FLAGS], [ serial-tests])" \
 		> ${WRKSRC}/m4/libuv-extra-automake-flags.m4
 
-.if defined(MAINTAINER_MODE)
-regression-test:
+do-test:
 	(cd ${WRKSRC} && ./gyp_uv.py -f make &&	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C out && \
 	./out/Debug/run-tests)
-.endif
 
 .include <bsd.port.mk>
