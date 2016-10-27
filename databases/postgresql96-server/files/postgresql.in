@@ -58,8 +58,8 @@ if [ -n "$2" ]; then
 			echo "You must define a data directory (postgresql_${profile}_data)"
 			exit 1
 		fi
-		eval postgresql_enable="\${postgresql_${profile}_enable:-${postgresql_enable}}
-		eval postgresql_data="\${postgresql_${profile}_data:-${postgresql_data}}
+		eval postgresql_enable="\${postgresql_${profile}_enable:-${postgresql_enable}}"
+		eval postgresql_data="\${postgresql_${profile}_data:-${postgresql_data}}"
 		eval postgresql_flags="\${postgresql_${profile}_flags:-${postgresql_flags}}"
 		eval postgresql_initdb_flags="\${postgresql_${profile}_initdb_flags:-${postgresql_initdb_flags}}"
 	fi
