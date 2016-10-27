@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	botocore
-PORTVERSION=	1.4.61
+PORTVERSION=	1.4.67
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	Low-level, core functionality of boto 3
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1:devel/py-jmespath \
