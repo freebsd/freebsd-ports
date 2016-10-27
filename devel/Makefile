@@ -4014,6 +4014,7 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
     SUBDIR += py-asyncio
+    SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
     SUBDIR += py-attrs
     SUBDIR += py-avro
