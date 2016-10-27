@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		fstrm
-PORTVERSION=		0.2.0
+PORTVERSION=		0.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
@@ -20,6 +20,7 @@ GH_ACCOUNT=		farsightsec
 GNU_CONFIGURE=		yes
 USES=			autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=		yes
+TEST_TARGET=		check
 
 OPTIONS_DEFINE=		DOXYGEN
 DOXYGEN_DESC=		Use doxygen for docs
