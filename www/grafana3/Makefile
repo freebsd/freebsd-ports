@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	grafana3
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
@@ -16,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	grafana3
+TAG=	${DISTVERSIONPREFIX}${PORTVERSION}
 
 USES=	compiler
 
@@ -45,7 +45,7 @@ GH_PROJECT=	grafana toml:toml com:com aws-sdk-go:aws_sdk_go \
 	amqp:amqp net:net oauth2:oauth2 sys:sys asn1-ber:asn1_ber \
 	bufio:bufio macaron:macaron redis:redis grafana_public:grafana_public
 
-GH_TAGNAME=	0daadc9 v0.2.0:toml v1:com v1.1.36:aws_sdk_go \
+GH_TAGNAME=	${TAG} v0.2.0:toml v1:com v1.1.36:aws_sdk_go \
 	release.r60:assert release.r60:gomemcache v1.17.0:cli \
 	5215b55:go_spew v0.1:color fc08df6:goreq v1.12.0:ini v2.3.0:ldap \
 	bd00823:binding cad1c65:gzip c5ab7bf:inject 66031fc:session \
@@ -55,7 +55,7 @@ GH_TAGNAME=	0daadc9 v0.2.0:toml v1:com v1.1.36:aws_sdk_go \
 	7cafcd8:text e2402a7:pq v0.0.5:go_colorable v0.0.1:go_isatty \
 	v1.1.0:go_sqlite3 cb7f23e:unidecode c53abc9:goconvey 2e25825:amqp \
 	bc3663d:net 65a8d08:oauth2 62bee03:sys v1:asn1_ber v1:bufio \
-	v1:macaron v2:redis v3.0.4:grafana_public
+	v1:macaron v2:redis ${TAG}:grafana_public
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -63,15 +63,15 @@ GRAFANA_GROUP?=	grafana
 USERS=	${GRAFANA_USER}
 GROUPS=	${GRAFANA_GROUP}
 
-GRAFANAHOMEDIR= ${PREFIX}/share/grafana/
-GRAFANADATADIR= /var/db/${PORTNAME}/
-GRAFANALOGDIR=  /var/log/${PORTNAME}/
-GRAFANAPIDDIR=  /var/run/${PORTNAME}/
-GRAFANAPLUGINDIR= /var/db/${PORTNAME}/plugins
-GRAFANADASHBOARDDIR= /var/db/${PORTNAME}/dashboards
+GRAFANAHOMEDIR=	${PREFIX}/share/grafana/
+GRAFANADATADIR=	/var/db/${PORTNAME}/
+GRAFANALOGDIR=	/var/log/${PORTNAME}/
+GRAFANAPIDDIR=	/var/run/${PORTNAME}/
+GRAFANAPLUGINDIR=	/var/db/${PORTNAME}/plugins
+GRAFANADASHBOARDDIR=	/var/db/${PORTNAME}/dashboards
 
-SUB_FILES=  grafana3 grafana3.conf
-SUB_LIST+=  GRAFANA_USER=${GRAFANA_USER} \
+SUB_FILES=	grafana3 grafana3.conf
+SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
     GRAFANA_GROUP=${GRAFANA_GROUP} \
     GRAFANADATADIR=${GRAFANADATADIR} \
     GRAFANALOGDIR=${GRAFANALOGDIR} \
@@ -220,9 +220,9 @@ post-extract:
 		${WRKSRC}/src/gopkg.in/redis.v2
 
 	${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
-	${MV} ${WRKSRC_grafana_public} ${WRKSRC}/src/github.com/grafana/grafana/public
-	${MV} ${WRKSRC}/src/github.com/grafana/grafana/public/public_gen \
-		${WRKSRC}/src/github.com/grafana/grafana/public_gen
+	${MV} ${WRKSRC_grafana_public}/public ${WRKSRC}/src/github.com/grafana/grafana/public
+	${MV} ${WRKSRC_grafana_public}/public_gen ${WRKSRC}/src/github.com/grafana/grafana/public_gen
+	${MV} ${WRKSRC_grafana_public}/node_modules ${WRKSRC}/src/github.com/grafana/grafana/node_modules
 
 do-build:
 	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana; \
@@ -237,6 +237,8 @@ do-install:
 		${COPYTREE_SHARE} public ${STAGEDIR}${PREFIX}/share/grafana
 	cd ${WRKSRC}/src/github.com/grafana/grafana && \
 		${COPYTREE_SHARE} public_gen ${STAGEDIR}${PREFIX}/share/grafana
+	cd ${WRKSRC}/src/github.com/grafana/grafana && \
+		${COPYTREE_SHARE} node_modules ${STAGEDIR}${PREFIX}/share/grafana
 	${MKDIR} ${STAGEDIR}${GRAFANAPIDDIR}
 	${MKDIR} ${STAGEDIR}${GRAFANALOGDIR}
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}
