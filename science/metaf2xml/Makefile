@@ -36,7 +36,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_VER} >= 5.22
+.if ${PERL_LEVEL} >= 502200
 RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
 .endif
 
