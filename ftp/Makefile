@@ -68,7 +68,7 @@
     SUBDIR += php56-fastdfs
     SUBDIR += php56-ftp
     SUBDIR += php70-curl
-    SBUDIR += php70-fastdfs
+    SUBDIR += php70-fastdfs
     SUBDIR += php70-ftp
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
