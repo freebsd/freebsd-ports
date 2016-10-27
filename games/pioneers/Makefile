@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pioneers
-PORTVERSION=	15.3
+PORTVERSION=	15.4
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source
 
