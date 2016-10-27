@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.6.so
+lib/libracket3m-6.7.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -224,6 +224,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/file/compiled/cache_rkt.zo
 %%DATADIR%%/collects/file/compiled/convertible_rkt.dep
 %%DATADIR%%/collects/file/compiled/convertible_rkt.zo
+%%DATADIR%%/collects/file/compiled/glob_rkt.dep
+%%DATADIR%%/collects/file/compiled/glob_rkt.zo
 %%DATADIR%%/collects/file/compiled/gunzip_rkt.dep
 %%DATADIR%%/collects/file/compiled/gunzip_rkt.zo
 %%DATADIR%%/collects/file/compiled/gzip_rkt.dep
@@ -247,6 +249,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/file/compiled/zip_rkt.dep
 %%DATADIR%%/collects/file/compiled/zip_rkt.zo
 %%DATADIR%%/collects/file/convertible.rkt
+%%DATADIR%%/collects/file/glob.rkt
 %%DATADIR%%/collects/file/gunzip.rkt
 %%DATADIR%%/collects/file/gzip.rkt
 %%DATADIR%%/collects/file/ico.rkt
@@ -254,8 +257,11 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/file/private/check-path.rkt
 %%DATADIR%%/collects/file/private/compiled/check-path_rkt.dep
 %%DATADIR%%/collects/file/private/compiled/check-path_rkt.zo
+%%DATADIR%%/collects/file/private/compiled/glob_rkt.dep
+%%DATADIR%%/collects/file/private/compiled/glob_rkt.zo
 %%DATADIR%%/collects/file/private/compiled/strip-prefix_rkt.dep
 %%DATADIR%%/collects/file/private/compiled/strip-prefix_rkt.zo
+%%DATADIR%%/collects/file/private/glob.rkt
 %%DATADIR%%/collects/file/private/strip-prefix.rkt
 %%DATADIR%%/collects/file/resource.rkt
 %%DATADIR%%/collects/file/sha1.rkt
@@ -384,6 +390,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/pkg/private/catalog-update.rkt
 %%DATADIR%%/collects/pkg/private/catalog.rkt
 %%DATADIR%%/collects/pkg/private/check-will-exist.rkt
+%%DATADIR%%/collects/pkg/private/checkout-credentials.rkt
 %%DATADIR%%/collects/pkg/private/clone-path.rkt
 %%DATADIR%%/collects/pkg/private/collects.rkt
 %%DATADIR%%/collects/pkg/private/compiled/addl-installs_rkt.dep
@@ -402,6 +409,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/pkg/private/compiled/catalog_rkt.zo
 %%DATADIR%%/collects/pkg/private/compiled/check-will-exist_rkt.dep
 %%DATADIR%%/collects/pkg/private/compiled/check-will-exist_rkt.zo
+%%DATADIR%%/collects/pkg/private/compiled/checkout-credentials_rkt.dep
+%%DATADIR%%/collects/pkg/private/compiled/checkout-credentials_rkt.zo
 %%DATADIR%%/collects/pkg/private/compiled/clone-path_rkt.dep
 %%DATADIR%%/collects/pkg/private/compiled/clone-path_rkt.zo
 %%DATADIR%%/collects/pkg/private/compiled/collects_rkt.dep
@@ -610,6 +619,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/compiled/info_rkt.zo
 %%DATADIR%%/collects/racket/compiled/init_rkt.dep
 %%DATADIR%%/collects/racket/compiled/init_rkt.zo
+%%DATADIR%%/collects/racket/compiled/interactive_rkt.dep
+%%DATADIR%%/collects/racket/compiled/interactive_rkt.zo
 %%DATADIR%%/collects/racket/compiled/kernel_rkt.dep
 %%DATADIR%%/collects/racket/compiled/kernel_rkt.zo
 %%DATADIR%%/collects/racket/compiled/keyword-transform_rkt.dep
@@ -876,6 +887,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/include.rkt
 %%DATADIR%%/collects/racket/info.rkt
 %%DATADIR%%/collects/racket/init.rkt
+%%DATADIR%%/collects/racket/interactive.rkt
 %%DATADIR%%/collects/racket/kernel.rkt
 %%DATADIR%%/collects/racket/kernel/compiled/init_rkt.dep
 %%DATADIR%%/collects/racket/kernel/compiled/init_rkt.zo
@@ -1615,10 +1627,6 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse-aux_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.zo
-%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander-prop_rkt.dep
-%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander-prop_rkt.zo
-%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander_rkt.dep
-%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-attrs_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-attrs_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-data_rkt.dep
@@ -1652,8 +1660,6 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/opt.rkt
 %%DATADIR%%/collects/syntax/parse/private/parse-aux.rkt
 %%DATADIR%%/collects/syntax/parse/private/parse.rkt
-%%DATADIR%%/collects/syntax/parse/private/pattern-expander-prop.rkt
-%%DATADIR%%/collects/syntax/parse/private/pattern-expander.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-attrs.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-data.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-patterns.rkt
