@@ -53,13 +53,9 @@ INSTALL_DIRS=	library extras/library externals/dojo/dijit \
 
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		opcache pcre pdo session simplexml soap \
+		opcache pcre pdo session simplexml soap sqlite3 \
 		wddx xml zlib
-.if ${PHP_VER} == 52
-USE_PHP+=	sqlite
-.else
-USE_PHP+=	sqlite3
-.endif
+
 RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
 		pecl-memcached>=0:databases/pecl-memcached
 .endif

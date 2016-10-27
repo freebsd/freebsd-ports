@@ -42,13 +42,7 @@ PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 # if chosen by the user.
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		opcache pcre pdo session simplexml soap wddx xml zlib
-.if ${PHP_VER} == 52
-USE_PHP+=	sqlite
-.else
-USE_PHP+=	sqlite3
-.endif
-
+		opcache pcre pdo session simplexml soap sqlite3 wddx xml zlib
 .endif
 
 .if ${PORT_OPTIONS:MOPTPHP}

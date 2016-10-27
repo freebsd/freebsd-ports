@@ -35,12 +35,6 @@ APACHE_USE=	APACHE=22+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-.  if ${PHP_VER} == "54" && (${APACHE_VERSION} >= 24)
-RUN_DEPENDS+=	mod_php5>=0:www/mod_php5
-.  endif
-.  if ${PHP_VER} == "55" && (${APACHE_VERSION} >= 24)
-RUN_DEPENDS+=	mod_php55>=0:www/mod_php55
-.  endif
 .  if ${APACHE_VERSION} >= 24
 AP24=		""
 .  endif
