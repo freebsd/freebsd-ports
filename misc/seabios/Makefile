@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seabios
-PORTVERSION=	1.9.3
+PORTVERSION=	1.10.0
 CATEGORIES=	misc
 MASTER_SITES=	http://code.coreboot.org/p/seabios/downloads/get/
 
