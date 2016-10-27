@@ -1239,6 +1239,7 @@
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
+    SUBDIR += libfastcommon
     SUBDIR += libfastjson
     SUBDIR += libffi
     SUBDIR += libfirm

@@ -259,7 +259,7 @@ backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 # free: 310
 # free: 311
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
-# free: 313
+_fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
 # free: 314
 # free: 315
 # free: 316
