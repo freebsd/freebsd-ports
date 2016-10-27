@@ -18,6 +18,7 @@ bin/ctel
 %%PERL5_MAN3%%/App::ClusterSSH::Host.3.gz
 %%PERL5_MAN3%%/App::ClusterSSH::L10N.3.gz
 %%PERL5_MAN3%%/App::ClusterSSH::L10N::en.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Range.3.gz
 %%SITE_PERL%%/App/ClusterSSH.pm
 %%SITE_PERL%%/App/ClusterSSH/Base.pm
 %%SITE_PERL%%/App/ClusterSSH/Cluster.pm
@@ -27,3 +28,4 @@ bin/ctel
 %%SITE_PERL%%/App/ClusterSSH/Host.pm
 %%SITE_PERL%%/App/ClusterSSH/L10N.pm
 %%SITE_PERL%%/App/ClusterSSH/L10N/en.pm
+%%SITE_PERL%%/App/ClusterSSH/Range.pm
