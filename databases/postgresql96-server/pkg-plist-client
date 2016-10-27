@@ -990,6 +990,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_config-9.6.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_dump-9.6.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pgscripts-9.6.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/psql-9.6.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/pg_config-9.6.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ecpg-9.6.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ecpglib6-9.6.mo

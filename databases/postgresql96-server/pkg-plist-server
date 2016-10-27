@@ -477,6 +477,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vientiane
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vladivostok
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yakutsk
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Yangon
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yekaterinburg
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yerevan
 %%TZDATA%%%%DATADIR%%/timezone/Atlantic/Azores

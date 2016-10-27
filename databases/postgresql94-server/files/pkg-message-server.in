@@ -8,8 +8,8 @@ appropriately.
 The port is set up to use autovacuum for new databases, but you might
 also want to vacuum and perhaps backup your database regularly. There
 is a periodic script, %%PREFIX%%/etc/periodic/daily/502.pgsql, that
-you may find useful. You can use it to backup and perfom vacuum on all
-databases nightly. Per default, it perfoms `vacuum analyze'. See the
+you may find useful. You can use it to backup and perform vacuum on all
+databases nightly. Per default, it performs `vacuum analyze'. See the
 script for instructions. For autovacuum settings, please review
 ~pgsql/data/postgresql.conf.
 
