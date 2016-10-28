@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20161007
-PORTREVISION?=	1
+PORTVERSION=	s20161027
+PORTREVISION?=	0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 # XXX Switch to system Boost after ports/199601
-GH_TUPLE=	citra-emu:${PORTNAME}:136cbbe \
+GH_TUPLE=	citra-emu:${PORTNAME}:8b833d3 \
 		citra-emu:ext-boost:f005c95:boost/externals/boost \
 		citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:943487e:dynarmic/externals/dynarmic \
