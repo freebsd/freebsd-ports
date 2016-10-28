@@ -1,6 +1,6 @@
---- setup.py.orig	Sat Aug 23 16:31:00 2003
-+++ setup.py	Fri Dec  5 21:24:43 2003
-@@ -33,7 +33,7 @@
+--- setup.py.orig	2005-09-22 13:00:21 UTC
++++ setup.py
+@@ -33,7 +33,7 @@ setup(name = "pygopherd",
        url = pygopherd.version.homepage,
        packages = ['pygopherd', 'pygopherd.handlers', 'pygopherd.protocols'],
        scripts = ['bin/pygopherd'],

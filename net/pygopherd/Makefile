@@ -3,19 +3,23 @@
 
 PORTNAME=	pygopherd
 PORTVERSION=	2.0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/ \
 		http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Multiprotocol Information Server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
 USE_PYTHON=	distutils
-PYDISTUTILS_PKGVERSION=	2.0.15
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+NO_ARCH=	yes
 
 post-patch:
 .for f in setup.py bin/pygopherd conf/pygopherd.conf doc/pygopherd.8
