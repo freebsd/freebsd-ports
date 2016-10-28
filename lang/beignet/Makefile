@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
 
 USES=		cmake gmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
-USE_GL=		gl
+USE_GL=		gl egl
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh
 LLVMVER=	37
 
