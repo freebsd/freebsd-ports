@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	Virtual OSS multi device mixer application.
+COMMENT=	Virtual OSS multi-device mixer application
 
 LICENSE=	BSD2CLAUSE
 
@@ -28,7 +28,6 @@ LIB_DEPENDS+=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
 
 BLUETOOTH_DESC=	Build with bluetooth support
 BLUETOOTH_MAKE_ARGS=	HAVE_BLUETOOTH="YES"
-DEBUG_DESC=	Build with debugging support
 DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
 
 PLIST_FILES=	sbin/virtual_oss \
