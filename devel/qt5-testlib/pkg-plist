@@ -19,6 +19,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestlog_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestresult_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtesttable_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestutil_macos_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestxunitstreamer_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qxctestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qxmltestlogger_p.h
