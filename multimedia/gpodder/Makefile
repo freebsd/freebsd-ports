@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	intltool-extract:textproc/intltool \
 		help2man:misc/help2man
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:devel/py-mygpoclient \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
@@ -35,7 +36,7 @@ ALL_TARGET=	messages
 MAKE_ENV=	GPODDER_MANPATH_NO_SHARE="yes"
 MAKEFILE=	makefile
 NO_ARCH=	yes
-USES=		gettext gmake python:2 shebangfix
+USES=		gettext gmake python:-2.7 shebangfix
 SHEBANG_FILES=	src/gpodder/*.py share/gpodder/examples/*.py share/gpodder/extensions/*.py
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
