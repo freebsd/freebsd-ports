@@ -3598,7 +3598,6 @@
 %%QT_DOCDIR%%/qtdoc/qmlapplications.html
 %%QT_DOCDIR%%/qtdoc/qmlbasictypes.html
 %%QT_DOCDIR%%/qtdoc/qmlfirststeps.html
-%%QT_DOCDIR%%/qtdoc/qmlmodules.html
 %%QT_DOCDIR%%/qtdoc/qmltypes.html
 %%QT_DOCDIR%%/qtdoc/qpa.html
 %%QT_DOCDIR%%/qtdoc/qt-activex.html
@@ -5311,7 +5310,6 @@
 %%QT_DOCDIR%%/qtlinguist/style/offline.css
 %%QT_DOCDIR%%/qtlocation.qch
 %%QT_DOCDIR%%/qtlocation/examples-manifest.xml
-%%QT_DOCDIR%%/qtlocation/images/api-map.png
 %%QT_DOCDIR%%/qtlocation/images/api-mapcircle.png
 %%QT_DOCDIR%%/qtlocation/images/api-mappolygon.png
 %%QT_DOCDIR%%/qtlocation/images/api-mappolyline.png
@@ -5330,6 +5328,7 @@
 %%QT_DOCDIR%%/qtlocation/images/ico_out.png
 %%QT_DOCDIR%%/qtlocation/images/logo.png
 %%QT_DOCDIR%%/qtlocation/images/mapviewer.png
+%%QT_DOCDIR%%/qtlocation/images/minimal_map.png
 %%QT_DOCDIR%%/qtlocation/images/places.png
 %%QT_DOCDIR%%/qtlocation/images/places_list.png
 %%QT_DOCDIR%%/qtlocation/images/places_map.png
@@ -5532,6 +5531,11 @@
 %%QT_DOCDIR%%/qtlocation/qtlocation-mapviewer-menus-mainmenu-qml.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-mapviewer-menus-mappopupmenu-qml.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-mapviewer-menus-markerpopupmenu-qml.html
+%%QT_DOCDIR%%/qtlocation/qtlocation-minimal-map-example.html
+%%QT_DOCDIR%%/qtlocation/qtlocation-minimal-map-main-cpp.html
+%%QT_DOCDIR%%/qtlocation/qtlocation-minimal-map-main-qml.html
+%%QT_DOCDIR%%/qtlocation/qtlocation-minimal-map-minimal-map-pro.html
+%%QT_DOCDIR%%/qtlocation/qtlocation-minimal-map-qml-qrc.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-module.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-places-example.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-places-forms-message-qml.html
@@ -10056,6 +10060,9 @@
 %%QT_DOCDIR%%/qtwebchannel/images/btn_prev.png
 %%QT_DOCDIR%%/qtwebchannel/images/bullet_dn.png
 %%QT_DOCDIR%%/qtwebchannel/images/bullet_sq.png
+%%QT_DOCDIR%%/qtwebchannel/images/chatclient-html.png
+%%QT_DOCDIR%%/qtwebchannel/images/chatclient-qml.png
+%%QT_DOCDIR%%/qtwebchannel/images/chatserver-cpp.png
 %%QT_DOCDIR%%/qtwebchannel/images/home.png
 %%QT_DOCDIR%%/qtwebchannel/images/ico_note.png
 %%QT_DOCDIR%%/qtwebchannel/images/ico_note_attention.png
@@ -12512,7 +12519,6 @@
 %%QT_DOCDIR%%/qtwinextras/images/taskbar-progress-stopped.png
 %%QT_DOCDIR%%/qtwinextras/images/taskbar-progress.png
 %%QT_DOCDIR%%/qtwinextras/images/thumbbar.png
-%%QT_DOCDIR%%/qtwinextras/images/used-in-examples/musicplayer/images/musicplayer.png
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-pause-16.png
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-pause-32.png
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-play-16.png
@@ -12520,7 +12526,6 @@
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-seek-backward-32.png
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-seek-forward-32.png
 %%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/media-stop-32.png
-%%QT_DOCDIR%%/qtwinextras/images/used-in-examples/quickplayer/images/quickplayer.png
 %%QT_DOCDIR%%/qtwinextras/qml-qtwinextras-dwmfeatures-members.html
 %%QT_DOCDIR%%/qtwinextras/qml-qtwinextras-dwmfeatures.html
 %%QT_DOCDIR%%/qtwinextras/qml-qtwinextras-jumplist-members.html
@@ -12550,7 +12555,6 @@
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-musicplayer-cpp.html
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-musicplayer-h.html
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-musicplayer-pro.html
-%%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-musicplayer-qrc.html
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-volumebutton-cpp.html
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-musicplayer-volumebutton-h.html
 %%QT_DOCDIR%%/qtwinextras/qtwinextras-overview.html

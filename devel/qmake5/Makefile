@@ -37,22 +37,7 @@ post-patch:
 # Prevent qconfig.pri from being module dependent.
 	@${REINPLACE_CMD} -E -e '/"\$$QT_CONFIG +(${TBR_CONFIG})"/ d' \
 		${WRKSRC}/configure
-# Write the file location paths into mkspecs/common/freebsd.conf
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/mkspecs/common/freebsd.conf
-	@${REINPLACE_CMD} -e 's|unix.conf|freebsd.conf|' \
-		${WRKSRC}/mkspecs/freebsd-icc/qmake.conf
-# Add mkspec for g++. The clang is now the officially supported compiler for
-# Qt>=5.6.0 on FreeBSD.
-	@${MV} ${WRKSRC}/mkspecs/unsupported/freebsd-g++ \
-		${WRKSRC}/mkspecs/freebsd-g++
-	@${REINPLACE_CMD} -e 's|(../|(|g' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e 's|"../|"|g' \
-		${WRKSRC}/mkspecs/freebsd-g++/qplatformdefs.h
-# Clean up files created by patching
 	@${RM} ${WRKSRC}/mkspecs/*/*.orig
-	@${RM} -R ${WRKSRC}/mkspecs/unsupported/freebsd-g++46
 
 post-build:
 # Complete configure stage to generate *.pri files.
