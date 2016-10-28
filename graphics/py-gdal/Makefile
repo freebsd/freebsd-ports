@@ -27,8 +27,8 @@ WRKSRC_SUBDIR=	swig/python
 
 SHEBANG_FILES=	scripts/*.py
 
-NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy
-NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy
+NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy
+NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy
 NUMPY_USES=		fortran
 
 post-install:
