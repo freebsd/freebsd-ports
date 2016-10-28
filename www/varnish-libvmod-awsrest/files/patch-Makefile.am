@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2015-07-04 13:33:43 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
+-ACLOCAL_AMFLAGS = -I m4 -I ${LIBVARNISHAPI_DATAROOTDIR}/aclocal
++ACLOCAL_AMFLAGS = -I m4
+ 
+ SUBDIRS = src
+ 
