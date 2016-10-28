@@ -1,10 +1,10 @@
-# Created by: Ralf Nolden <nolden@kde.org>
+# Created by: Marie Loise Nolden <nolden@kde.org>
 # $FreeBSD$
 
 PORTNAME=	doc
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	misc
-MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/${QT5_SUBDIR}/single
+MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/single
 PKGNAMEPREFIX=	qt5-
 DISTNAME=	qt-everywhere-opensource-src-${QT5_VERSION}
 DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}

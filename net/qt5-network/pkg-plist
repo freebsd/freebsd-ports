@@ -44,7 +44,6 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyfileimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyhttpimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyimpl_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplynsurlconnectionimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkrequest_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworksession_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsharednetworksession_p.h

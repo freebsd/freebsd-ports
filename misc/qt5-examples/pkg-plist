@@ -794,6 +794,12 @@
 %%QT_EXAMPLEDIR%%/location/mapviewer/resources/marker.png
 %%QT_EXAMPLEDIR%%/location/mapviewer/resources/scale.png
 %%QT_EXAMPLEDIR%%/location/mapviewer/resources/scale_end.png
+%%QT_EXAMPLEDIR%%/location/minimal_map/doc/images/minimal_map.png
+%%QT_EXAMPLEDIR%%/location/minimal_map/doc/src/minimal_map.qdoc
+%%QT_EXAMPLEDIR%%/location/minimal_map/main.cpp
+%%QT_EXAMPLEDIR%%/location/minimal_map/main.qml
+%%QT_EXAMPLEDIR%%/location/minimal_map/minimal_map.pro
+%%QT_EXAMPLEDIR%%/location/minimal_map/qml.qrc
 %%QT_EXAMPLEDIR%%/location/places/doc/images/places.png
 %%QT_EXAMPLEDIR%%/location/places/doc/src/places.qdoc
 %%QT_EXAMPLEDIR%%/location/places/forms/Message.qml
@@ -2763,7 +2769,6 @@
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/PhotoViewerCore/images/busy.png
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/PhotoViewerCore/images/cardboard.png
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/PhotoViewerCore/script/script.js
-%%QT_EXAMPLEDIR%%/quick/demos/photoviewer/deployment.pri
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/doc/images/qtquick-demo-photoviewer-small.png
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/doc/src/photoviewer.qdoc
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_de.qm
@@ -3180,7 +3185,6 @@
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/doc/images/qtquickwidgets-example.png
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/doc/src/quickwidget.qdoc
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/main.cpp
-%%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/qtquickwidgets-example.png
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/quickwidget.pro
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/quickwidget.qrc
 %%QT_EXAMPLEDIR%%/quick/quickwidgets/quickwidget/rotatingsquare.qml
@@ -4416,13 +4420,16 @@
 %%QT_EXAMPLEDIR%%/uitools/uitools.pro
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-html/chatclient-html.pro
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-html/chatclient.html
+%%QT_EXAMPLEDIR%%/webchannel/chatclient-html/doc/images/chatclient-html.png
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-html/doc/src/chatclient-html.qdoc
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-qml/chatclient-qml.pro
+%%QT_EXAMPLEDIR%%/webchannel/chatclient-qml/doc/images/chatclient-qml.png
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-qml/doc/src/chatclient-qml.qdoc
 %%QT_EXAMPLEDIR%%/webchannel/chatclient-qml/qmlchatclient.qml
 %%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/chatserver-cpp.pro
 %%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/chatserver.cpp
 %%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/chatserver.h
+%%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/doc/images/chatserver-cpp.png
 %%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/doc/src/chatserver-cpp.qdoc
 %%QT_EXAMPLEDIR%%/webchannel/chatserver-cpp/main.cpp
 %%QT_EXAMPLEDIR%%/webchannel/exampleassets.pri
