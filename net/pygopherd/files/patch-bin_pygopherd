@@ -1,6 +1,6 @@
---- bin/pygopherd.orig	Sun Sep  8 02:58:15 2002
-+++ bin/pygopherd	Fri Aug  9 01:59:33 2002
-@@ -24,7 +24,7 @@
+--- bin/pygopherd.orig	2005-09-22 13:00:21 UTC
++++ bin/pygopherd
+@@ -23,7 +23,7 @@
  from pygopherd import *
  import sys
  
