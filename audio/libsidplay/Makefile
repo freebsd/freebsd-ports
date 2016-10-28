@@ -5,16 +5,19 @@ PORTNAME=	libsidplay
 PORTVERSION=	1.36.59
 PORTREVISION=	1
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/ \
+		LOCAL/ehaupt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Commodore SID-chip emulator library to play SID music files
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	sid_cv_have_ios_binary=yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool tar:tgz
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
