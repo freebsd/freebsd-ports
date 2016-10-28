@@ -1,6 +1,6 @@
---- setup.py.orig	2008-08-06 21:24:28.756047734 +0200
-+++ setup.py	2008-08-06 21:24:18.122056264 +0200
-@@ -58,6 +58,10 @@
+--- setup.py.orig	2009-03-16 14:45:54 UTC
++++ setup.py
+@@ -58,6 +58,10 @@ if os.name == 'nt':
  				'zipfile': None
  			})
  
@@ -11,7 +11,7 @@
  setup(name="rdiff-backup",
  	  version=version_string,
  	  description="Local/remote mirroring+incremental backup",
-@@ -68,14 +72,8 @@
+@@ -68,14 +72,8 @@ setup(name="rdiff-backup",
  	  ext_modules = [Extension("rdiff_backup.C", ["cmodule.c"]),
  					 Extension("rdiff_backup._librsync",
  							   ["_librsyncmodule.c"],
