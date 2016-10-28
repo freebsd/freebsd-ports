@@ -1,3 +1,7 @@
+%%FCDIR%%/64-google-roboto-condensed.conf
+%%FCDIR%%/64-google-roboto.conf
+%%FCDIR_LINKS%%/64-google-roboto-condensed.conf
+%%FCDIR_LINKS%%/64-google-roboto.conf
 %%FONTSDIR%%/Roboto-Black.ttf
 %%FONTSDIR%%/Roboto-BlackItalic.ttf
 %%FONTSDIR%%/Roboto-Bold.ttf
