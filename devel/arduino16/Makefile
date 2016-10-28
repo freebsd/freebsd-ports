@@ -2,7 +2,7 @@
 
 PORTNAME=		arduino
 PORTVERSION=		1.6.12
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		devel java
 PKGNAMESUFFIX=		16
 DIST_SUBDIR=		${PORTNAME}
@@ -98,7 +98,6 @@ do-install:
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/jssc-2.8.0.jar
 	${LN} -s ../../lib/jni/libastyle-arduinoj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${LN} -s ../../lib/jni/liblistSerialsj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
-	${LN} -s ${JAVA_HOME}/jre/lib/ext/jssc-2.8.0.jar ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/jssc-2.8.0.jar
 	${INSTALL_SCRIPT} ${BUILD_DIR}/arduino ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${LN} -s ../${PORTNAME}/arduino ${STAGEDIR}${PREFIX}/bin/arduino
 	${LN} -s ../bin/arduino-builder ${STAGEDIR}${PREFIX}/arduino/arduino-builder
