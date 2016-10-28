@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
-	${PYTHON_PKGNAMEPREFIX}numpy>=1.6.2:math/py-numpy
+	${PYTHON_PKGNAMEPREFIX}numpy>=1.6.2,1:math/py-numpy
 
 USES=		python
 USE_PYTHON=	autoplist distutils

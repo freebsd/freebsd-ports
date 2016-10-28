@@ -13,7 +13,7 @@ COMMENT=	Fast numerical array expression evaluator for Python and NumPy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.6:math/py-numpy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.6,1:math/py-numpy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	autoplist concurrent distutils
