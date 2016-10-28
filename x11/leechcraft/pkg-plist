@@ -1,6 +1,6 @@
-%%QT_BINDIR%%/leechcraft
-%%QT_BINDIR%%/leechcraft-add-file
-%%QT_BINDIR%%/leechcraft-handle-file
+bin/leechcraft
+bin/leechcraft-add-file
+bin/leechcraft-handle-file
 include/leechcraft/config.h
 include/leechcraft/interfaces/an/constants.h
 include/leechcraft/interfaces/an/entityfields.h
@@ -515,7 +515,7 @@ share/man/man1/leechcraft.1.gz
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_pl.qm
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ru_RU.qm
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_uk_UA.qm
-%%ANHERO%%%%QT_BINDIR%%/lc_anhero_crashprocess
+%%ANHERO%%bin/lc_anhero_crashprocess
 %%ANHERO%%lib/leechcraft/plugins/libleechcraft_anhero.so
 %%ANHERO%%%%DATADIR%%/translations/leechcraft_anhero_ar.qm
 %%ANHERO%%%%DATADIR%%/translations/leechcraft_anhero_de.qm
@@ -863,7 +863,7 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/isida-bot4.png
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabber.el.png
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbim.png
-%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jab%%QT_BINDIR%%.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbin.png
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbroid.png
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabiru.png
 %%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jajc.png
@@ -1541,7 +1541,7 @@ share/man/man1/leechcraft.1.gz
 %%DOLOZHEE%%lib/leechcraft/plugins/libleechcraft_dolozhee.so
 %%DOLOZHEE%%%%DATADIR%%/translations/leechcraft_dolozhee_en.qm
 %%DOLOZHEE%%%%DATADIR%%/translations/leechcraft_dolozhee_ru_RU.qm
-%%FENET%%%%QT_BINDIR%%/leechcraft-session
+%%FENET%%bin/leechcraft-session
 %%FENET%%lib/leechcraft/plugins/libleechcraft_fenet.so
 %%FENET%%%%DATADIR%%/fenet/compositing/compton.json
 %%FENET%%%%DATADIR%%/fenet/wms/awesome.json
