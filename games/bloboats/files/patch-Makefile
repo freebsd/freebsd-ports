@@ -1,5 +1,5 @@
---- ./Makefile.orig	2010-11-23 20:27:16.000000000 +0100
-+++ ./Makefile	2013-10-28 13:29:56.337790819 +0100
+--- Makefile.orig	2010-11-23 19:27:16 UTC
++++ Makefile
 @@ -7,16 +7,13 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -18,7 +18,7 @@
  CONFIGDIR = $(PREFIX)/etc
  
  PRIVATEDIR = ~/.bloboats
-@@ -53,13 +50,13 @@
+@@ -53,13 +50,13 @@ ICON_CMD = i586-mingw32msvc-windres -i s
  
  
  ### C++ compiler to be used
@@ -34,7 +34,7 @@
  
  
  ### SDL-Config in your system
-@@ -154,14 +151,14 @@
+@@ -154,14 +151,14 @@ config:
  	echo "#define DEBUG $(DEBUG)" >> src/compiling_settings.h
  
  install:
