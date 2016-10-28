@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -24,7 +24,7 @@ BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler execinfo gmake python:2 pkgconfig localbase
+USES=		compiler:c++11-lib execinfo gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -58,20 +58,6 @@ WITH_OPENSSL_PORT=yes
 .if !empty(SSL_DEFAULT:Mlibressl*)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
-.endif
-
-.if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	LINK=clang++
-CFLAGS+=	-Wno-unused-private-field
-.if ${COMPILER_VERSION} >= 33
-CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
-.if ${COMPILER_VERSION} >= 34
-CFLAGS+=	-Wno-unused-const-variable
-.endif
-.endif
-.else
-MAKE_ARGS+=	strictaliasing=off
-USE_GCC=	yes
 .endif
 
 post-patch:
