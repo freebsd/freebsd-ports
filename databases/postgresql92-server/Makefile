@@ -106,7 +106,6 @@ MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
-DEBUG_DESC=	Builds with debugging symbols
 
 OPTIONS_DEFINE+=	SSL
 SSL_DESC=	Build with OpenSSL support

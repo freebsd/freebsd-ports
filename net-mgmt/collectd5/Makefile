@@ -38,7 +38,6 @@ CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
 CURL_JSON_DESC=		Enable curl_json plugin (implies curl and json)
 CURL_XML_DESC=		Enable ascent, bind, curl_xml plugins (implies curl and xml)
 DBI_DESC=		Enable dbi plugin
-DEBUG_DESC=		Enable debugging
 GCRYPT_DESC=		Build with libgcrypt
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins

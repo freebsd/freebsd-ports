@@ -39,7 +39,6 @@ OPTIONS_SUB=
 
 OPTIONS_DEFAULT=	PYTHON
 
-DEBUG_DESC=	Compile in debugging mode
 PYTHON_DESC=	Build python bindings for broccoli
 RUBY_DESC=	Build ruby bindings for broccoli
 

@@ -44,7 +44,6 @@ PLIST_SUB+=	TT_USER=${USERS} \
 	TT_RUNDIR=${TT_RUNDIR}
 
 OPTIONS_DEFINE=	DEBUG
-DEBUG_DESC=	Enable debug
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
