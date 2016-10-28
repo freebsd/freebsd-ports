@@ -105,8 +105,6 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
 			--extra-ldflags="${LDFLAGS}"
 
-CFLAGS_armv6+=		-mcpu=arm1136jf-s
-
 post-extract-PGO-on:
 	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} \
 		>${WRKDIR}/${Y4M_VIDEO}
