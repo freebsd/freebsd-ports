@@ -31,7 +31,31 @@
          ARCH="AARCH64"
          stack_alignment=16
          if [ "$SYS" = MACOSX ] ; then
-@@ -1225,10 +1219,6 @@ if cc_check '' -Wshadow ; then
+@@ -882,9 +876,8 @@ if [ $asm = auto -a $ARCH = ARM ] ; then
+         cc_check '' '' '__asm__("vadd.i16 q0, q0, q0");' && define HAVE_NEON
+         ASFLAGS="$ASFLAGS -c"
+     else
+-        echo "You specified a pre-ARMv6 or Thumb-1 CPU in your CFLAGS."
+-        echo "If you really want to run on such a CPU, configure with --disable-asm."
+-        exit 1
++        echo "No usable SIMD found, adding --disable-asm."
++        asm="no"
+     fi
+ fi
+ 
+@@ -911,9 +904,8 @@ if [ $asm = auto -a $ARCH = MIPS ] ; the
+     if cc_check '' '' '__asm__("addvi.b $w0, $w1, 1");' ; then
+         define HAVE_MSA
+     else
+-        echo "You specified a pre-MSA CPU in your CFLAGS."
+-        echo "If you really want to run on such a CPU, configure with --disable-asm."
+-        exit 1
++        echo "No usable SIMD found, adding --disable-asm."
++        asm="no"
+     fi
+ fi
+ 
+@@ -1225,10 +1217,6 @@ if cc_check '' -Wshadow ; then
      CFLAGS="-Wshadow $CFLAGS"
  fi
  
