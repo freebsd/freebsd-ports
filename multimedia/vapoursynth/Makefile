@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-DISTVERSION=	R34
+DISTVERSION=	R35
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
