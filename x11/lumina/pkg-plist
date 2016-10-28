@@ -18,10 +18,10 @@ include/LuminaThemes.h
 include/LuminaUtils.h
 include/LuminaX11.h
 include/LuminaXDG.h
-%%QT_LIBDIR%%/%%QT_LIBDIR%%LuminaUtils.so
-%%QT_LIBDIR%%/%%QT_LIBDIR%%LuminaUtils.so.1
-%%QT_LIBDIR%%/%%QT_LIBDIR%%LuminaUtils.so.1.0
-%%QT_LIBDIR%%/%%QT_LIBDIR%%LuminaUtils.so.1.0.0
+lib/libLuminaUtils.so
+lib/libLuminaUtils.so.1
+lib/libLuminaUtils.so.1.0
+lib/libLuminaUtils.so.1.0.0
 share/applications/lumina-calculator.desktop
 share/applications/lumina-config.desktop
 share/applications/lumina-fileinfo.desktop
