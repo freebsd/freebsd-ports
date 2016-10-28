@@ -2,6 +2,7 @@
 
 PORTNAME=	arduino-core
 PORTVERSION=	1.6.12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -22,6 +23,7 @@ OPTIONS_SUB=	yes
 NO_BUILD=	yes
 SAMD_DESC=	Core support for SAMD boards (Zero/MKR1000)
 SAMD_GH_TUPLE=	arduino:ArduinoCore-samd:1.6.8:samd/hardware/arduino/samd
+SAMD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-hardware_arduino_samd_platform.txt
 
 .include <bsd.port.pre.mk>
 
