@@ -1,7 +1,7 @@
 bin/RetroShare06
 bin/RetroShare06-nogui
-%%QT_LIBDIR%%/retroshare/extensions6/%%QT_LIBDIR%%FeedReader.so
-%%QT_LIBDIR%%/retroshare/extensions6/%%QT_LIBDIR%%VOIP.so
+lib/retroshare/extensions6/libFeedReader.so
+lib/retroshare/extensions6/libVOIP.so
 share/RetroShare06/bdboot.txt
 share/RetroShare06/qss/blacknight.qss
 share/RetroShare06/qss/blacknight/check_sel.png
