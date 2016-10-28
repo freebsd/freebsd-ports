@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy \
-		${PYTHON_PKGNAMEPREFIX}fabric>=1.4.0:devel/py-fabric
+		${PYTHON_PKGNAMEPREFIX}fabric>=1.4.0,1:devel/py-fabric
 
 USES=		python:-2.7 zip
 USE_PYTHON=	autoplist distutils

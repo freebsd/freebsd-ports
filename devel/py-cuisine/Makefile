@@ -12,7 +12,7 @@ COMMENT=	Chef-like functionality for Fabric
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fabric>=1.7:devel/py-fabric
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fabric>=1.7,1:devel/py-fabric
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
