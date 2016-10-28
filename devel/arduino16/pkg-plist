@@ -287,7 +287,6 @@ arduino/lib/jmdns-3.4.1.jar
 arduino/lib/jna-4.1.0.jar
 arduino/lib/jna-platform-4.1.0.jar
 arduino/lib/jsch-0.1.50.jar
-arduino/lib/jssc-2.8.0.jar
 arduino/lib/keywords.txt
 arduino/lib/libastylej.so
 arduino/lib/liblistSerialsj.so
