@@ -9,8 +9,10 @@ MASTER_SITES=	http://www.biojava.org/download/bj17/all/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java tools for processing biological data
+
+BROKEN=		Does not build
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
