@@ -107,6 +107,5 @@ bin/rdiff-backup-statistics
 man/man1/rdiff-backup-statistics.1.gz
 man/man1/rdiff-backup.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/README
