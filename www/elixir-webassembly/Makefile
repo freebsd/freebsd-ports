@@ -7,7 +7,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=	elixir-
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	DSL for creating HTML structure straight with Elixir blocks.
+COMMENT=	DSL for creating HTML structure straight with Elixir blocks
 
 LICENSE=	BSD2CLAUSE
 

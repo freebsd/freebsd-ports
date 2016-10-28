@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
-COMMENT=	Small Python module to parse various kinds of time expressions.
+COMMENT=	Small Python module to parse various kinds of time expressions
 
 LICENSE=	MIT
 

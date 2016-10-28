@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Misc. Norwegian methods for Perl, conversion/dates/numbers etc.
+COMMENT=	Miscellaneous Norwegian-specific conversion methods for Perl
 
 USES=		perl5
 USE_PERL5=	configure
