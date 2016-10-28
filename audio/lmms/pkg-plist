@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/lmms
+bin/lmms
 include/lmms/AudioAlsa.h
 include/lmms/AudioDevice.h
 include/lmms/AudioDummy.h
@@ -2656,10 +2656,10 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/zoom.png
 %%DATADIR%%/themes/default/zoom_x.png
 %%DATADIR%%/themes/default/zoom_y.png
-%%DATADIR%%/wavetables/moog.%%QT_BINDIR%%
-%%DATADIR%%/wavetables/saw.%%QT_BINDIR%%
-%%DATADIR%%/wavetables/sqr.%%QT_BINDIR%%
-%%DATADIR%%/wavetables/tri.%%QT_BINDIR%%
+%%DATADIR%%/wavetables/moog.bin
+%%DATADIR%%/wavetables/saw.bin
+%%DATADIR%%/wavetables/sqr.bin
+%%DATADIR%%/wavetables/tri.bin
 share/man/man1/lmms.1.gz
 share/menu/lmms
 share/mime/packages/lmms.xml
