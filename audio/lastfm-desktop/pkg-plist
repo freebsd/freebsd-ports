@@ -147,7 +147,7 @@ bin/lastfm-desktop
 %%DATADIR%%/qrc/share_29x29_hover.png
 %%DATADIR%%/qrc/share_29x29_pressed.png
 %%DATADIR%%/qrc/share_29x29_rest.png
-%%DATADIR%%/qrc/slider_nub%%QT_BINDIR%%.png
+%%DATADIR%%/qrc/slider_nubbin.png
 %%DATADIR%%/qrc/start_bg.png
 %%DATADIR%%/qrc/subscribe_bg.png
 %%DATADIR%%/qrc/subscribe_radio.png
