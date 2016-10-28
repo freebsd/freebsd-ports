@@ -17,10 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:devel/py-ToscaWidgets \
 		${PYTHON_PKGNAMEPREFIX}repoze.tm2>=0:devel/py-repoze.tm2 \
 		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.3.0:devel/py-turbojson \
 		${PYTHON_PKGNAMEPREFIX}repoze.who>=1.0.0:devel/py-repoze.who \
-		${PYTHON_PKGNAMEPREFIX}repoze.who-testutil>=1.0.8:devel/py-repoze.who-testutil \
+		${PYTHON_PKGNAMEPREFIX}repoze.who-testutil>=1.0.1,1:devel/py-repoze.who-testutil \
 		${PYTHON_PKGNAMEPREFIX}repoze.what>=1.0.8:devel/py-repoze.what \
 		${PYTHON_PKGNAMEPREFIX}repoze.what-pylons>=1.0:devel/py-repoze.what-pylons \
-		${PYTHON_PKGNAMEPREFIX}repoze.tm2>=1.0:devel/py-repoze.tm2 \
+		${PYTHON_PKGNAMEPREFIX}repoze.tm2>=1.0,1:devel/py-repoze.tm2 \
 		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.4:devel/py-turbokid \
