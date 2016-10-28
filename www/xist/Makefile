@@ -14,7 +14,7 @@ COMMENT=	XML-based extensible HTML generator
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0:www/py-cssutils \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.6:graphics/py-pillow
 

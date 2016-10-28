@@ -31,11 +31,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \
