@@ -3,6 +3,7 @@
 
 PORTNAME=	runwhen
 PORTVERSION=	2015.02.24
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
@@ -11,7 +12,7 @@ COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:devel/skalibs
+LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		tar:bzip2
 
