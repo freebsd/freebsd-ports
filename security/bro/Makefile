@@ -60,7 +60,6 @@ OPTIONS_SUB=	yes
 BROCCOLI_DESC=	Build support for libbroccoli communications
 BROCTL_DESC=	BroControl support (implies BROCCOLI and IPSUMDUMP)
 BROKER_DESC=	Enable the Broker communication library
-DEBUG_DESC=	Compile in debugging mode
 IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
