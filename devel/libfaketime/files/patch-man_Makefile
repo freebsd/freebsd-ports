@@ -1,0 +1,22 @@
+--- man/Makefile.orig	2016-06-27 06:54:00 UTC
++++ man/Makefile
+@@ -1,14 +1,16 @@
+ INSTALL ?= install
+ 
+ PREFIX ?= /usr/local
++MANDIR ?= /share/man
+ 
+ all:
+ 
+ install:
+-	$(INSTALL) -Dm0644 faketime.1 "${DESTDIR}${PREFIX}/share/man/man1/faketime.1"
+-	gzip -f "${DESTDIR}${PREFIX}/share/man/man1/faketime.1"
++	$(INSTALL) -dm0755 "${DESTDIR}${PREFIX}$(MANDIR)/man1"
++	$(INSTALL) -Dm0644 faketime.1 "$(DESTDIR)$(PREFIX)$(MANDIR)/man1"
++	gzip -f $(DESTDIR)$(PREFIX)$(MANDIR)/man1/faketime.1
+ 
+ uninstall:
+-	rm -f "${DESTDIR}${PREFIX}/share/man/man1/faketime.1.gz"
++	rm -f "$(DESTDIR)$(PREFIX)$(MANDIR)/man1/faketime.1.gz"
+ 
+ .PHONY: all install uninstall
