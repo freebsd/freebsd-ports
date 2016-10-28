@@ -14,8 +14,6 @@ BUILD_DEPENDS=	go:lang/go \
 		cups>=0:print/cups \
 		avahi-app>=0:net/avahi-app
 
-BROKEN=		does not build
-
 USES=		compiler pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	google:DEFAULT codegangsta:cli coreos:gosystemd \
