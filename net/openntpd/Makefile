@@ -2,7 +2,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	6.0p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -12,24 +12,16 @@ COMMENT=	Network Time Protocol (NTP) daemon
 
 LICENSE=	ISCL
 
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+
+USE_RC_SUBR=	openntpd
 USERS=		_ntp
 GROUPS=		_ntp
 
-USE_RC_SUBR=	openntpd
+USES=		ssl
 
 GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=		RESSL
-RESSL_DESC=		SSL/TLS support via LibreSSL
-
-OPTIONS_DEFAULT=	RESSL
-
-# Requires libtls from LibreSSL
-RESSL_USES=		ssl
-RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
-RESSL_CPPFLAGS=		-I${OPENSSLINC}
-RESSL_LDFLAGS=		-L${OPENSSLLIB}
-RESSL_RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+CONFIGURE_ARGS=	--with-cacert=${LOCALBASE}/etc/ssl/cert.pem
 
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
@@ -40,8 +32,25 @@ post-stage:
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MRESSL} && empty(SSL_DEFAULT:Mlibressl*)
-IGNORE=	Requires LibreSSL from ports, define DEFAULT_VERSIONS+=ssl=libressl in your make.conf and rebuild everything.
-.endif
+# Requires libtls from LibreSSL
+.if ${SSL_DEFAULT:Mlibressl*}
+CPPFLAGS+=		-I${OPENSSLINC}
+LDFLAGS+=		-L${OPENSSLLIB}
+.else # SSL_DEFAULT
+BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=		-I${WRKDIR}/libressl/include
+LDFLAGS+=		-L${WRKDIR}/libressl/lib
+# security/libressl ignores implicit SSP_UNSAFE, see Mk/bsd.ssp.mk
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000036 && ${ARCH} == i386
+SSP_CFLAGS?=	-fstack-protector
+CFLAGS+=	${SSP_CFLAGS}
+LDFLAGS+=	-fstack-protector
+LIBS+=		-lssp_nonshared
+. endif
+
+pre-configure:
+	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${LOCALBASE} \
+	    && ${COPYTREE_SHARE} . ${WRKDIR}/libressl "! -name *.so*"
+.endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>
