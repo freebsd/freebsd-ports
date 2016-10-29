@@ -2,7 +2,7 @@
 
 PORTNAME=		arduino
 PORTVERSION=		1.6.12
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		devel java
 PKGNAMESUFFIX=		16
 DIST_SUBDIR=		${PORTNAME}
@@ -44,6 +44,7 @@ GH_PROJECT=		Arduino
 GH_TUPLE+=		${BUNDLE_GH_ACCOUNT}:${blib}/linux/work/libraries/${blib:C/\:.*//}
 .endfor
 
+USES=			desktop-file-utils
 LIB_DIRS+=		${LOCALBASE}/lib ${LOCALBASE}/lib/jni
 WRKSRC_SUBDIR=		build
 PATCH_WRKSRC=		${WRKSRC}/../
@@ -88,6 +89,8 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${PATCH_WRKSRC}/arduino-core/src/processing/app/BaseNoGui.java
+	${REINPLACE_CMD} -e 's:<BINARY_LOCATION>:arduino:' -e 's:<ICON_NAME>:arduino:' \
+		${PATCH_WRKSRC}/build/linux/dist/desktop.template
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
@@ -101,5 +104,7 @@ do-install:
 	${INSTALL_SCRIPT} ${BUILD_DIR}/arduino ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${LN} -s ../${PORTNAME}/arduino ${STAGEDIR}${PREFIX}/bin/arduino
 	${LN} -s ../bin/arduino-builder ${STAGEDIR}${PREFIX}/arduino/arduino-builder
+	${CP} ${WRKSRC}/shared/icons/arduino.xpm ${STAGEDIR}/${PREFIX}/share/pixmaps
+	${CP} ${PATCH_WRKSRC}/build/linux/dist/desktop.template ${STAGEDIR}/${PREFIX}/share/applications/arduino.desktop
 
 .include <bsd.port.mk>
