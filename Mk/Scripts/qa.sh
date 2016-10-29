@@ -12,6 +12,10 @@ fi
 LF=$(printf '\nX')
 LF=${LF%X}
 
+notice() {
+	echo "Notice: $@" >&2
+}
+
 warn() {
 	echo "Warning: $@" >&2
 }
@@ -703,9 +707,53 @@ sonames() {
 	EOT
 }
 
+perlcore() {
+	local portname version module gotsome
+	[ -x "${LOCALBASE}/bin/corelist" ] || return 0
+	for dep in ${UNIFIED_DEPENDS}; do
+		portname=$(expr "${dep}" : ".*/p5-\(.*\)")
+		if [ -n "${portname}" ]; then
+			gotsome=1
+			module=$(echo ${portname}|sed -e 's/-/::/g')
+			version=$(expr "${dep}" : ".*>=*\([^:<]*\)")
+
+			while read l; do
+				case "${l}" in
+					*was\ not\ in\ CORE*)
+						# This never was with Perl
+						# CORE, so nothing to do here
+						;;
+					*and\ removed*)
+						# This was in Perl CORE but has
+						# been removed since.
+						warn "${dep##*:} was in Perl CORE.  Check with \`corelist ${module} ${version}\` and \`corelist -a ${module}\` if it should be conditionally added depending on PERL_LEVEL"
+						;;
+					*deprecated*in*)
+						# This is in Perl CORE but is
+						# deprecated.
+						warn "${dep##*:} is in Perl CORE but deprecated.  Check with \`corelist ${module} ${version}\` and \`corelist -a ${module}\` if the dependency is really needed or if it should be conditionally added depending on PERL_LEVEL"
+						;;
+					*was\ first\ released*)
+						# This is in Perl CORE and is
+						# maybe not needed.
+						warn "${dep##*:} is present in Perl CORE.  Check with \`corelist ${module} ${version}\` and \`corelist -a ${module}\` if the dependency is really needed or if it should be conditionally added depending on PERL_LEVEL"
+						;;
+					*)
+						err "This line is not handled: \"${l}\""
+				esac
+			done <<-EOT
+			$(${LOCALBASE}/bin/corelist "${module}"|tail -1)
+			EOT
+		fi
+	done
+	if [ -n "${gotsome}" ] && ! pkg info -e devel/p5-Module-CoreList; then
+		notice "You have some Perl modules as dependencies but you do not have devel/p5-Module-CoreList installed, the perlcore QA check gets better results when using it, especially with older Perl versions."
+	fi
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
-checks="$checks proxydeps sonames"
+checks="$checks proxydeps sonames perlcore"
 
 ret=0
 cd ${STAGEDIR}
