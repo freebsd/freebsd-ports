@@ -1,0 +1,45 @@
+Downgrade SIMD usage to real armv6 (like Raspberry Pi)
+
+--- common/arm/quant-a.S.orig	2016-09-21 20:45:06 UTC
++++ common/arm/quant-a.S
+@@ -316,6 +316,7 @@ dequant_4x4_dc_rshift:
+     bx          lr
+ endfunc
+ 
++#if ARCH_AARCH64 || HAVE_ARMV6T2
+ .macro decimate_score_1x size
+ function x264_decimate_score\size\()_neon
+     vld1.16     {q0, q1}, [r0, :128]
+@@ -361,6 +362,7 @@ endfunc
+ 
+ decimate_score_1x 15
+ decimate_score_1x 16
++#endif
+ 
+ function x264_decimate_score64_neon
+     push        {lr}
+--- common/quant.c.orig	2016-09-21 20:45:06 UTC
++++ common/quant.c
+@@ -761,8 +761,10 @@ void x264_quant_init( x264_t *h, int cpu
+         pf->coeff_last[DCT_LUMA_4x4] = x264_coeff_last16_neon;
+         pf->coeff_last[DCT_LUMA_8x8] = x264_coeff_last64_neon;
+         pf->denoise_dct = x264_denoise_dct_neon;
++#if ARCH_AARCH64 || HAVE_ARMV6T2
+         pf->decimate_score15 = x264_decimate_score15_neon;
+         pf->decimate_score16 = x264_decimate_score16_neon;
++#endif
+         pf->decimate_score64 = x264_decimate_score64_neon;
+     }
+ #endif
+--- configure.orig	2016-09-21 20:45:06 UTC
++++ configure
+@@ -874,9 +874,6 @@ if [ $asm = auto -a \( $ARCH = X86 -o $A
+ fi
+ 
+ if [ $asm = auto -a $ARCH = ARM ] ; then
+-    # set flags so neon is built by default
+-    echo $CFLAGS | grep -Eq '(-mcpu|-march|-mfpu)' || CFLAGS="$CFLAGS -mcpu=cortex-a8 -mfpu=neon"
+-
+     if  cc_check '' '' '__asm__("rev ip, ip");' ; then      define HAVE_ARMV6
+         cc_check '' '' '__asm__("movt r0, #0");'         && define HAVE_ARMV6T2
+         cc_check '' '' '__asm__("vadd.i16 q0, q0, q0");' && define HAVE_NEON
