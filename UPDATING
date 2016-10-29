@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161029:
+  AFFECTS: users of irc/quassel
+  AUTHOR: woodsb02@freebsd.org
+
+  Quassel is now split into two ports / packages; one for providing
+  the server backend (irc/quassel-core), and one for providing the
+  client front-end (irc/quassel). Alternatively, the irc/quassel
+  port can be built with the MONO option enabled to also install
+  the client and server combined into a single monolithic binary.
+
 20161028:
   AFFECTS: users of security/openssl and security/openssl-devel
   AUTHOR: brnrd@freebsd.org
