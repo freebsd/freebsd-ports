@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.6
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -39,7 +39,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}Flask>=0.7:www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}Flask-Compress>=1.2.1:www/py-flask-compress \
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=2.1.2:www/py-flask-cors \
-		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.3.2:www/py-flask-login \
+		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.4.0:www/py-flask-login \
 		${PYTHON_PKGNAMEPREFIX}Flask-RESTful>=0.3.3:www/py-flask-restful \
 		${PYTHON_PKGNAMEPREFIX}flask-restplus08=0.8.6:www/py-flask-restplus08 \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib \
