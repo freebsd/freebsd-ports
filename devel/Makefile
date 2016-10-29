@@ -4020,6 +4020,7 @@
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
     SUBDIR += py-attrs
+    SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
