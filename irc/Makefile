@@ -99,6 +99,7 @@
     SUBDIR += py-supybot
     SUBDIR += py-supybot-plugins
     SUBDIR += quassel
+    SUBDIR += quassel-core
     SUBDIR += quirc
     SUBDIR += ratbox-respond
     SUBDIR += ratbox-services
