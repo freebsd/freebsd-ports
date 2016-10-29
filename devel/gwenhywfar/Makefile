@@ -27,7 +27,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 GWEN_SHLIB_VER=	60
-PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
+PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}" \
+		GWEN_MAJ_MIN_VER="${PORTVERSION:R}"
 
 .if !defined(SLAVEPORT)
 OPTIONS_DEFINE=			DOXYGEN MEMDEBUG
@@ -51,21 +52,27 @@ INSTALL_WRKSRC=	${WRKSRC}/gui/${SLAVEPORT}
 LIB_DEPENDS+=	libFOX-1.6.so:x11-toolkits/fox16
 CONFIGURE_ARGS+=--with-fox-includes=${LOCALBASE}/include/fox-1.6 \
 		--with-fox-libs=${LOCALBASE}/lib
-.  endif
-
-.  if ${SLAVEPORT}=="gtk2"
+.  elif ${SLAVEPORT}=="gtk2"
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 USE_GNOME+=	cairo gdkpixbuf2 gtk20
-.  endif
-
-.  if ${SLAVEPORT}=="qt4"
+.  elif ${SLAVEPORT}=="qt4"
 USE_QT4=	corelib gui moc_build uic_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 		--with-qt4-libs=${QT_LIBDIR} \
 		--with-qt4-moc=${MOC} \
 		--with-qt4-uic=${UIC}
+.  elif ${SLAVEPORT}=="qt5"
+USE_GL=		gl
+USE_QT5=	core dbus gui network printsupport qml testlib widgets xml \
+		buildtools_build linguisttools_build qmake_build
+QT_NONSTANDARD=	yes
+CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
+		--with-qt5-moc=${MOC} \
+		--with-qt5-uic=${UIC} \
+		--with-qt5-lrelease=${LRELEASE} \
+		--with-qt5-lupdate=${LUPDATE}
 .  endif
 .endif
 
