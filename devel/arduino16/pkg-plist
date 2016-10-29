@@ -2053,3 +2053,5 @@ arduino/tools/WiFi101/src/cc/arduino/plugins/wifi101/flashers/java/JavaFlasher.j
 arduino/tools/WiFi101/src/cc/arduino/plugins/wifi101/flashers/java/SSLCertDownloader.java
 arduino/tools/howto.txt
 bin/arduino
+share/applications/arduino.desktop
+share/pixmaps/arduino.xpm
