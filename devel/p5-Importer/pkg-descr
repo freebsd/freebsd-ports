@@ -1,0 +1,7 @@
+Importer acts as a layer between Exporter and modules which consume exports. It
+is feature-compatible with Exporter, plus some much needed extras. You can use
+this to import symbols from any exporter that follows Exporters specification.
+The exporter modules themselves do not need to use or inherit from the Exporter
+module, they just need to set @EXPORT and/or other variables.
+
+WWW: http://search.cpan.org/dist/Importer/
