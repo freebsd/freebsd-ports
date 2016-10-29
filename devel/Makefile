@@ -2549,6 +2549,7 @@
     SUBDIR += p5-IPC-System-Simple
     SUBDIR += p5-Import-Base
     SUBDIR += p5-Import-Into
+    SUBDIR += p5-Importer
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
     SUBDIR += p5-Inline-C
