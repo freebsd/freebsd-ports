@@ -3,7 +3,7 @@
 
 PORTNAME=	sshfp
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns security
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -12,7 +12,6 @@ COMMENT=	Generate SSHFP DNS records from knownhosts files or ssh-keyscan
 LICENSE=	GPLv2
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}ipcalc>=0.6:net-mgmt/py-ipcalc \
 		${PYTHON_SITELIBDIR}/ldns.py:dns/py-ldns
 
