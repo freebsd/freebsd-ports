@@ -50,7 +50,7 @@ IGNORE?=	cannot be installed: different KDE versions specified via kde:[${_KDE_S
 IGNORE?=	kde:[${_KDE_SUPPORTED:S/ //g}] needs an argument  #'
 .  endif
 
-_KDE_RELNAME=           KDE${_KDE_VERSION}
+_KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Old KDE desktop.
