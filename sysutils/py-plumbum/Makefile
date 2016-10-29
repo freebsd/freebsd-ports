@@ -16,7 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	distutils concurrent
+USE_PYTHON=	autoplist distutils concurrent 
 GH_ACCOUNT=	tomerfiliba
 
 do-test:
