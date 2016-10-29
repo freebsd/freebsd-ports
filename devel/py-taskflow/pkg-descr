@@ -1,0 +1,5 @@
+A library to do [jobs, tasks, flows] in a highly available, easy to understand
+and declarative manner (and more!) to be used with OpenStack and other
+projects.
+
+WWW: https://launchpad.net/taskflow
