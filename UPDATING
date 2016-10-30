@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161030:
+  AFFECTS: users of security/srm
+  AUTHOR: rakuco@FreeBSD.org
+
+  srm has been updated from 1.2.12 to 1.2.15. Since version 1.2.14,
+  srm defaults to using its "simple" mode to overwrite files (one pass
+  writing 0x00 to the files) instead of the 35-pass Gutmann method.
+
 20161029:
   AFFECTS: users of irc/quassel
   AUTHOR: woodsb02@freebsd.org
