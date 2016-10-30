@@ -75,6 +75,7 @@
     SUBDIR += cnd
     SUBDIR += coda6_client
     SUBDIR += coda6_server
+    SUBDIR += concourse-fly
     SUBDIR += corkscrew
     SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
