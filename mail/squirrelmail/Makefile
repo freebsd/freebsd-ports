@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20160216
+PORTVERSION=	20161030
 CATEGORIES=	mail www
 MASTER_SITES=	LOCAL/adamw/squirrelmail
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
@@ -13,21 +13,18 @@ COMMENT=	Webmail system which accesses mail over IMAP
 
 LICENSE=	GPLv2
 
-# This snapshot tarball contains php 5.4 and 5.5 compatibility
-# patches, but the only guaranteed compatibility is with php 5.3.
-# If you encounter problems, downgrade to php 5.3.
-
+USES=		cpe gettext perl5 php:web tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
-WANT_PHP_WEB=	yes
-
-USES=		cpe gettext perl5 tar:bzip2
 USE_PERL5=	run
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
 OPTIONS_DEFINE=	DATABASE LDAP DOCS
-DATABASE_DESC=	PEAR database support (must also install a driver)
+DATABASE_DESC=	PDO database support (must also install a driver)
+
+DATABASE_USE=	PHP=pdo
+LDAP_USE=	PHP=ldap
 
 # if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${WWWDIR}
@@ -46,9 +43,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
 CONFLICTS=	squirreloutlook-[0-9]*
-
-DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
-LDAP_USE=	PHP=ldap
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/aspell|g' \
