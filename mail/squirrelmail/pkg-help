@@ -1,5 +1,5 @@
-If you enable the PEAR database framework option, you still need to install a
-database-specific PEAR driver.
+If you enable the PDO database framework option, you still need to install a
+database-specific PDO driver.
 
-SquirrelMail is only compatible with old-style pear-DB drivers, not the newer
-MDB2 drivers.
+For example, if you're using php 7.0, you could install php70-pdo_sqlite,
+from /usr/ports/databases/php70-pdo_sqlite.
