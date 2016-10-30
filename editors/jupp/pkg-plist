@@ -30,6 +30,7 @@ etc/joe/syntax/csh.jsf
 etc/joe/syntax/mason.jsf
 etc/joe/syntax/diff.jsf
 etc/joe/syntax/asm.jsf
+etc/joe/syntax/tex.jsf
 etc/joe/charmaps/klingon
 man/man1/joe.1.gz
 man/man1/jmacs.1.gz
