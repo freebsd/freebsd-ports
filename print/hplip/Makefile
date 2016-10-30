@@ -33,7 +33,8 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-mimedir=${PREFIX}/share/cups/mime \
 		--with-docdir=${DOCSDIR} \
 		--with-htmldir=${DOCSDIR} \
-		--with-drvdir=${PREFIX}/share/cups/drv
+		--with-drvdir=${PREFIX}/share/cups/drv \
+		--enable-cups-ppd-install
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
