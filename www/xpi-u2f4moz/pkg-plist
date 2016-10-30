@@ -1,0 +1,13 @@
+lib/firefox/browser/extensions/u2f4moz@prefiks.org
+lib/xpi/u2f4moz@prefiks.org/appIdValidator.js
+lib/xpi/u2f4moz@prefiks.org/bin/freebsd_%%SYSTEM_PROCESSOR%%-gcc3/u2f
+lib/xpi/u2f4moz@prefiks.org/bootstrap.js
+lib/xpi/u2f4moz@prefiks.org/data/content-script.js
+lib/xpi/u2f4moz@prefiks.org/data/logs.html
+lib/xpi/u2f4moz@prefiks.org/data/logs.js
+lib/xpi/u2f4moz@prefiks.org/icon.png
+lib/xpi/u2f4moz@prefiks.org/icon64.png
+lib/xpi/u2f4moz@prefiks.org/index.js
+lib/xpi/u2f4moz@prefiks.org/install.rdf
+lib/xpi/u2f4moz@prefiks.org/options.xul
+lib/xpi/u2f4moz@prefiks.org/package.json
