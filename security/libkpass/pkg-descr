@@ -1,4 +1,4 @@
 Libkpass is a from-scratch C implementation of reading and writing
 KeePass 1.x format password databases.
 
-WWW: http://libkpass.sourceforge.net/
+WWW: https://github.com/bldewolf/libkpass
