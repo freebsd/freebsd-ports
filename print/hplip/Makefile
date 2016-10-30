@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.16.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -34,8 +34,7 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-mimedir=${PREFIX}/share/cups/mime \
 		--with-docdir=${DOCSDIR} \
 		--with-htmldir=${DOCSDIR} \
-		--with-drvdir=${PREFIX}/share/cups/drv \
-		--enable-cups-ppd-install
+		--with-drvdir=${PREFIX}/share/cups/drv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
