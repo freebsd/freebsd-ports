@@ -1,0 +1,7 @@
+The `fly` tool is a command line interface to Concourse. It is used for
+a number of tasks from connecting to a shell in one of your build's
+containers to uploading new pipeline configuration into a running
+Concourse. Learning how to use `fly` will make using Concourse faster
+and more useful.
+
+WWW: http://concourse.ci/
