@@ -2409,6 +2409,7 @@
     SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-torbutton
     SUBDIR += xpi-twitterfox
+    SUBDIR += xpi-u2f4moz
     SUBDIR += xpi-uBlock_origin
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink

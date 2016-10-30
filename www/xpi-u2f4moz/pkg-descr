@@ -1,0 +1,6 @@
+This extension adds support for the U2F specification with Yubico devices
+to Firefox.
+
+It can be used by accessing window.u2f object from content pages.
+
+WWW: https://github.com/prefiks/u2f4moz
