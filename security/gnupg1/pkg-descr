@@ -1,9 +1,6 @@
-GnuPG is a complete and free replacement for PGP.
+GnuPG is a complete and free replacement for PGP. The security/gnupg
+port is the modern 2.x branch with support for newer algorithms, but
+the 1.x branch has few dependencies and is sufficient for most PGP
+operations using common algorithms.
 
-Because it does not use the patented IDEA algorithm, it can be used
-without any restrictions.  GnuPG is an RFC2440 (OpenPGP) compliant
-application.
-
-WWW: http://www.gnupg.org/
-
-kuriyama@FreeBSD.org
+WWW: https://www.gnupg.org/
