@@ -14,7 +14,7 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
-USES=		gmake ssl tar:tgz
+USES=		gmake tar:tgz
 
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PREFIX=${STAGEDIR}/${PREFIX}
@@ -47,10 +47,12 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ! ${SSL_DEFAULT:Mlibressl*}
-BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
-CPPFLAGS+=		-I${WRKDIR}/libressl/include
-LDFLAGS+=		-L${WRKDIR}/libressl/lib
+.if ${SSL_DEFAULT:Mlibressl*}
+USES+=		ssl
+.else
+BUILD_DEPENDS+=	${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=	-I${WRKDIR}/libressl/include
+LDFLAGS+=	-L${WRKDIR}/libressl/lib
 . ifnmake describe
 STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
 . endif
