@@ -2,12 +2,13 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.21
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	The GNU Privacy Guard
+COMMENT=	Minimal version of the PGP-compatible GNU Privacy Guard
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CPE_VENDOR=	gnupg
 
 USES=		charsetfix cpe gmake tar:bzip2
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-camellia \
+		--enable-noexecstack
 
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
@@ -59,10 +62,8 @@ CFLAGS+=	-fheinous-gnu-extensions
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in DETAILS FAQ HACKING OpenPGP
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for i in ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
+.for i in doc/DETAILS doc/FAQ doc/HACKING doc/OpenPGP \
+	ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
 	README THANKS TODO VERSION
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
