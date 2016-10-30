@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	yamerl
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-1
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 
@@ -16,6 +15,6 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	yakaz
 
-ERL_DOCS=	README.md doc
+ERL_DOCS=	README.md doc-md
 
 .include <bsd.port.mk>
