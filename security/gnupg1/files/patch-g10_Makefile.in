@@ -9,32 +9,3 @@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -465,7 +465,11 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I
- 	@LIBUSB_CPPFLAGS@ $(am__append_1)
- needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a
- other_libs = $(LIBICONV) $(DNSLIBS) $(LIBINTL) $(CAPLIBS)
-+ifdef NOPORTDOCS
-+dist_pkgdata_DATA = 
-+else
- dist_pkgdata_DATA = options.skel
-+endif
- @ENABLE_BZIP2_SUPPORT_FALSE@bzip2_source = 
- @ENABLE_BZIP2_SUPPORT_TRUE@bzip2_source = compress-bz2.c
- common_source = \
-@@ -731,6 +735,8 @@ distclean-compile:
- @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
- install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
-+ifdef NOPORTDOCS
-+else
- 	@$(NORMAL_INSTALL)
- 	@list='$(dist_pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
- 	if test -n "$$list"; then \
-@@ -745,6 +751,7 @@ install-dist_pkgdataDATA: $(dist_pkgdata
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgdatadir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgdatadir)" || exit $$?; \
- 	done
-+endif
- 
- uninstall-dist_pkgdataDATA:
- 	@$(NORMAL_UNINSTALL)
