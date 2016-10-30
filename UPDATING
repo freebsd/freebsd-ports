@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20161030:
+  AFFECTS: users of mail/squirrelmail
+  AUTHOR: adamw@FreeBSD.org
+
+  For better php70 support, the squirrelmail port has switched from
+  PEAR database access to PDO. If you are using squirrelmail with
+  a database backend, you'll need to install a corresponding PDO
+  database module, such as php56-pdo_sqlite.
+
+20161030:
   AFFECTS: users of security/srm
   AUTHOR: rakuco@FreeBSD.org
 
