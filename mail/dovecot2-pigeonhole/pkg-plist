@@ -10,8 +10,6 @@ include/dovecot-2.2-pigeonhole/sieve/sieve-address-source.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-version.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-ext-imap4flags.h
-include/dovecot-2.2-pigeonhole/sieve/program-client-private.h
-include/dovecot-2.2-pigeonhole/sieve/program-client.h
 include/dovecot-2.2-pigeonhole/sieve/realpath.h
 include/dovecot-2.2-pigeonhole/sieve/rfc2822.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-actions.h
