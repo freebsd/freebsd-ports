@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=	yes
 GUI_DESC=	Build with graphics/gd dependency
 
-GUI_LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+GUI_LIB_DEPENDS+=	libgd.so:graphics/gd
 
 .include <bsd.port.options.mk>
 
