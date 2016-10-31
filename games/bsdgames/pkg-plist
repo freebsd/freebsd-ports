@@ -6,16 +6,17 @@ bin/backgammon
 bin/bs-game
 @(,games,2555) bin/canfield
 bin/cfscores
+bin/colorbars
 @(,games,2555) bin/cribbage
 bin/fish-game
 @(,games,2555) bin/hack
+bin/hals_end
 bin/hangman
 bin/hunt
 bin/huntd
 bin/larn
 bin/mille
 @(,games,2555) bin/phantasia
-bin/piano
 bin/pig
 bin/quiz
 bin/rain
@@ -38,16 +39,17 @@ man/man6/battlestar.6.gz
 man/man6/bs-game.6.gz
 man/man6/canfield.6.gz
 man/man6/cfscores.6.gz
+man/man6/colorbars.6.gz
 man/man6/cribbage.6.gz
 man/man6/fish-game.6.gz
 man/man6/hack.6.gz
+man/man6/hals_end.6.gz
 man/man6/hangman.6.gz
 man/man6/hunt.6.gz
 man/man6/huntd.6.gz
 man/man6/larn.6.gz
 man/man6/mille.6.gz
 man/man6/phantasia.6.gz
-man/man6/piano.6.gz
 man/man6/pig.6.gz
 man/man6/quiz.6.gz
 man/man6/rain.6.gz
