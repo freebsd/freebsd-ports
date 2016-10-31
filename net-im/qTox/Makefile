@@ -24,8 +24,6 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-BROKEN_FreeBSD_9_i386=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
 
@@ -46,6 +44,13 @@ PLIST_FILES=	bin/qtox \
 .for SZ in ${ICON_SIZES}
 PLIST_FILES+=	share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == "gcc" && ${ARCH} == i386 && !${CFLAGS:M-march=*}
+# Needed for __atomic_fetch_add_8
+CFLAGS+=	-march=i586
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -75,4 +80,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
