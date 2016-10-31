@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	1.2.0
+PORTVERSION=	1.5.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python-gphoto2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Python bindings for libgphoto2
 
 LICENSE=	GPLv3
