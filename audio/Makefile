@@ -478,6 +478,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
+    SUBDIR += lv2
     SUBDIR += lv2core
     SUBDIR += lxmusic
     SUBDIR += mac
