@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -13,10 +13,11 @@ COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVAJARDIR}/slf4j-api.jar:devel/slf4j
+RUN_DEPENDS=	${JAVALIBDIR}/slf4j-api.jar:devel/slf4j
 
 OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
+OPTIONS_SUB=	yes
 PLUGINS_DESC=	Install bundled plugins
 
 USES=		cpe dos2unix zip
@@ -44,14 +45,7 @@ GROUPS=		${USERS}
 PLIST_SUB+=	VARLOG=${VARLOG} \
 		VARDB=${VARDB}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPLUGINS}
-ALL_TARGET+=	plugins
-PLIST_SUB+=	PLUGINS=""
-.else
-PLIST_SUB+=	PLUGINS="@comment "
-.endif
+PLUGINS_ALL_TARGET=	plugins
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
@@ -69,19 +63,6 @@ do-install:
 	(cd ${INSTALL_WRKSRC}/plugins/admin && ${FIND} . \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/plugins/admin)
 
-.if ${PORT_OPTIONS:MPLUGINS}
-	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
-	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/plugins)
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.html README.html changelog.html \
-	    ${STAGEDIR}${DOCSDIR})
-
-	(cd ${WRKSRC}/documentation/docs && ${FIND} . \! -path ./javadoc\* \
-	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1 )
-.endif
 	${LN} -sf ${ETCDIR} ${STAGEDIR}${DATADIR}/conf
 	${LN} -sf ${ETCDIR} ${STAGEDIR}${DATADIR}/resources/security
 	${LN} -sf ${VARDB} ${STAGEDIR}${DATADIR}/embedded-db
@@ -94,5 +75,19 @@ do-install:
 		${STAGEDIR}${ETCDIR}/keystore.sample
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/conf/security.xml \
 		${STAGEDIR}${ETCDIR}/security.xml.sample
+
+do-install-PLUGINS-on:
+	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
+	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/plugins)
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.html README.html changelog.html \
+	    ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/documentation/docs && ${FIND} . \! -path ./javadoc\* \
+	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1 )
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/resources/nativeAuth/linux-i386/libshaj.so
 
 .include <bsd.port.mk>
