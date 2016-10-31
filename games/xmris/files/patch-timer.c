@@ -9,3 +9,14 @@
  #else
  #  ifdef __hpux /* hpux is a weird mixture of BSD & SYSV */
  /* don't know if this is right */
+@@ -572,7 +572,10 @@ extern VOIDFUNC timer_wait FUNCARGVOID
+       else
+ 	{
+ 	  while(!tickafter(now, timer.timeout))
++	  {
++	    usleep(tickdelta(timer.timeout, now) * TICKTIME);
+ 	    gettick(&now);
++	  }
+ 	  timer.timeout = tickadd(timer.timeout, timer.delay);
+ 	  point = -1;
+ 	}
