@@ -117,7 +117,7 @@ if [ -n "${USERS}" ]; then
 				/|/nonexistent|/var/empty)
 					;;
 				*)
-					echo "${dp_INSTALL} -d -g $gid -o $uid $homedir" >> "${dp_UG_INSTALL}"
+					echo "${dp_INSTALL} -d -g $login -o $login $homedir" >> "${dp_UG_INSTALL}"
 					;;
 			esac
 		done <<-eot
