@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	APCSMART_DRV APCDUMB_DRV PCNET_DRV USB TCP_WRAPPERS MODBUS
 APCSMART_DRV_DESC=	Compile APC SmartUPS serial driver
 APCDUMB_DRV_DESC=	Compile dumb UPS driver
 CLIENT_ONLY_DESC=	Only NIS client (no network server or drivers)
-CGI_DESC=		Compile with CGI programms to show status
+CGI_DESC=		Compile with CGI programs to show status
 PCNET_DRV_DESC=		Compile PowerChute Network Shutdown driver
 USB_DESC=		Compile with USB Support driver
 SNMP_DRV_DESC=		Compile with SNMP driver
@@ -56,6 +56,7 @@ CGI_CONFIGURE_ENABLE=		cgi
 CGI_CONFIGURE_ON=		--with-cgi-bin=${ETCDIR}/cgi
 CGI_LIB_DEPENDS=		libgd.so:graphics/gd
 GAPCMON_CONFIGURE_ENABLE=	gapcmon
+GAPCMON_USES=			pkgconfig
 GAPCMON_USE=			GNOME=gconf2
 GAPCMON_CONFLICTS=		gapcmon-[0-9]*
 PCNET_DRV_CONFIGURE_ENABLE=	pcnet
