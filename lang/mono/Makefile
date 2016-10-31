@@ -2,20 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	4.4.2.11
-PORTREVISION=	1
+PORTVERSION=	4.6.1.5
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
-
-PATCHFILES=
-PATCH_SITES=	https://github.com/mono/mono/commit/
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		bison compiler:c11 cpe gettext gmake iconv libtool pathfix perl5 tar:bzip2
 USE_GNOME=	glib20
@@ -51,19 +47,17 @@ post-patch:
 		-e 's|^#!/bin/bash|#!/bin/sh|g'
 	@${REINPLACE_CMD} 's/isinf (1)/isinf (1.0)/g' ${WRKSRC}/configure
 
-tests: build
-	@${ECHO_MSG} "===> Running mono regression tests"
-	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} Makefile ${MAKE_ARGS} check)
-
 post-configure:
 	@${REINPLACE_CMD} -e 's|share\/man|man|g' \
 		${WRKSRC}/mcs/jay/Makefile
-
 # Fix build on FreeBSD 9.3 (and maybe other unsupported releases)
 .if ${OSVERSION} < 1000000
 	@${REINPLACE_CMD} 's/^#define HAVE_LOCALCHARSET_H 1/#undef HAVE_LOCALCHARSET_H/' \
 		${WRKSRC}/eglib/config.h
 .endif
+
+do-test:
+	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} Makefile ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>

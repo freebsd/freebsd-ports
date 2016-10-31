@@ -1,0 +1,11 @@
+--- external/fsharpbinding/.paket/paket.targets.orig	2016-09-22 11:49:00 UTC
++++ external/fsharpbinding/.paket/paket.targets
+@@ -34,7 +34,5 @@
+   <Target Name="DownloadPaket">
+     <Exec Command="$(DownloadPaketCommand)" IgnoreStandardErrorWarningFormat="true" Condition=" '$(DownloadPaket)' == 'true' AND !Exists('$(PaketExePath)')" />
+   </Target>
+-  <Target Name="RestorePackages" DependsOnTargets="CheckPrerequisites">
+-    <Exec Command="$(RestoreCommand)" IgnoreStandardErrorWarningFormat="true" WorkingDirectory="$(PaketRootPath)" Condition="Exists('$(PaketReferences)')" />
+-  </Target>
++  <Target Name="RestorePackages" />
+ </Project>
