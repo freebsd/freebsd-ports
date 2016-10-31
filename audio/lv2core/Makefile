@@ -12,6 +12,8 @@ COMMENT=	LV2 Core Package
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS_INSTALL=	lv2
+
 USES=		pkgconfig python:build tar:bzip2 waf
 
 post-patch:
