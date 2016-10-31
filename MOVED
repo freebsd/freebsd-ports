@@ -8663,3 +8663,4 @@ databases/postgresql91-pltcl||2016-10-02|Has expired: End-of-life is near
 databases/postgresql91-docs||2016-10-02|Has expired: End-of-life is near
 www/mediawiki125||2016-10-02|Has expired: EOL upstream
 multimedia/kvazaar-devel|multimedia/kvazaar|2016-10-05|Out of date: use multimedia/kvazaar for now
+www/lighttpd-mod_geoip|www/lighttpd|2016-10-21|Integrated into www/lighttpd
