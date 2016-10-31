@@ -43,13 +43,9 @@ LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
 READLINE_USES=			readline
 READLINE_CONFIGURE_ENABLE=	pcretest-libreadline
 
-.include <bsd.port.options.mk>
+STACK_RECURSION_CONFIGURE_ENABLE=	stack-for-recursion
 
-# Using the heap rather than the stack for recursion is slower but less
-# prone to segfaults from stack exhaustion when matching certain patterns
-.if !${PORT_OPTIONS:MSTACK_RECURSION}
-CONFIGURE_ARGS+=	--disable-stack-for-recursion
-.endif
+.include <bsd.port.pre.mk>
 
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):
 
@@ -84,9 +80,7 @@ CONFIGURE_ARGS+=	--with-parens-nest-limit=${WITH_PARENS_NEST_LIMIT}
 CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "sparc64" && ${ARCH} != "ia64" && ${ARCH:Mmips64*} == ""
+.if ${ARCH} != "sparc64" && ${ARCH} != "ia64" && empty(ARCH:Mmips64*)
 CONFIGURE_ARGS+=	--enable-jit
 .else
 CONFIGURE_ARGS+=	--disable-jit
