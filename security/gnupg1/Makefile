@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	gnupg
 
-USES=		charsetfix cpe gmake tar:bzip2
+USES=		charsetfix compiler cpe gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-camellia \
 		--enable-noexecstack
@@ -54,9 +54,9 @@ NLS_CONFIGURE_ENABLE=	nls
 SUID_GPG_PLIST_SUB=	GPGMODE=4555
 SUID_GPG_PLIST_SUB_OFF=	GPGMODE=
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && (${CC} == "clang" || ${OSVERSION} >= 1000024)
+.if ${ARCH} == "i386" && ${COMPILER_TYPE} == "clang"
 CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
