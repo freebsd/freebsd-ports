@@ -1,6 +1,7 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-www/glpi/plugins/fusioninventory/CHANGES
+www/glpi/plugins/fusioninventory/.coveralls.yml
+www/glpi/plugins/fusioninventory/.travis.yml
 www/glpi/plugins/fusioninventory/LICENSE
 www/glpi/plugins/fusioninventory/PICTURES
 www/glpi/plugins/fusioninventory/README.asciidoc
@@ -11,6 +12,7 @@ www/glpi/plugins/fusioninventory/ajax/deploygroup_results.php
 www/glpi/plugins/fusioninventory/ajax/deploypackage_form.php
 www/glpi/plugins/fusioninventory/ajax/deployuser.logged.in.php
 www/glpi/plugins/fusioninventory/ajax/dropdownCredentials.php
+www/glpi/plugins/fusioninventory/ajax/dropdown_taskjob.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactionlist.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactionselection.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactiontype.php
@@ -24,6 +26,7 @@ www/glpi/plugins/fusioninventory/ajax/dropdownlocation.php
 www/glpi/plugins/fusioninventory/ajax/dropdownsoftwarelicenses.php
 www/glpi/plugins/fusioninventory/ajax/dropdowntype.php
 www/glpi/plugins/fusioninventory/ajax/dropdowntypelist.php
+www/glpi/plugins/fusioninventory/ajax/expand_task.php
 www/glpi/plugins/fusioninventory/ajax/inventorycomputerblacklist.tabs.php
 www/glpi/plugins/fusioninventory/ajax/jobstates_logs.php
 www/glpi/plugins/fusioninventory/ajax/serverfilestreesons.php
@@ -42,12 +45,10 @@ www/glpi/plugins/fusioninventory/b/deploy/index.php
 www/glpi/plugins/fusioninventory/b/esx/index.php
 www/glpi/plugins/fusioninventory/css/deploy.css
 www/glpi/plugins/fusioninventory/css/views.css
-www/glpi/plugins/fusioninventory/docs/CHANGELOG.TXT
-www/glpi/plugins/fusioninventory/docs/LISEZMOI.TXT
-www/glpi/plugins/fusioninventory/docs/README.TXT
-www/glpi/plugins/fusioninventory/docs/ROADMAP.TXT
-www/glpi/plugins/fusioninventory/docs/THANKS.TXT
-www/glpi/plugins/fusioninventory/docs/THANKSWALKS.TXT
+www/glpi/plugins/fusioninventory/docs/CHANGES
+www/glpi/plugins/fusioninventory/docs/README
+www/glpi/plugins/fusioninventory/docs/THANKS
+www/glpi/plugins/fusioninventory/docs/THANKSWALKS
 www/glpi/plugins/fusioninventory/effects.js
 www/glpi/plugins/fusioninventory/front/agent.form.php
 www/glpi/plugins/fusioninventory/front/agent.php
@@ -71,6 +72,7 @@ www/glpi/plugins/fusioninventory/front/credential.form.php
 www/glpi/plugins/fusioninventory/front/credential.php
 www/glpi/plugins/fusioninventory/front/credentialip.form.php
 www/glpi/plugins/fusioninventory/front/credentialip.php
+www/glpi/plugins/fusioninventory/front/deployfile.clean.php
 www/glpi/plugins/fusioninventory/front/deploygroup.form.php
 www/glpi/plugins/fusioninventory/front/deploygroup.php
 www/glpi/plugins/fusioninventory/front/deploymirror.form.php
@@ -127,9 +129,11 @@ www/glpi/plugins/fusioninventory/front/timeslot.php
 www/glpi/plugins/fusioninventory/front/timeslotentry.form.php
 www/glpi/plugins/fusioninventory/front/unmanaged.form.php
 www/glpi/plugins/fusioninventory/front/unmanaged.php
+www/glpi/plugins/fusioninventory/fusioninventory.xml
 www/glpi/plugins/fusioninventory/hook.php
 www/glpi/plugins/fusioninventory/inc/agent.class.php
 www/glpi/plugins/fusioninventory/inc/agentmodule.class.php
+www/glpi/plugins/fusioninventory/inc/agentwakeup.class.php
 www/glpi/plugins/fusioninventory/inc/collect.class.php
 www/glpi/plugins/fusioninventory/inc/collect_file.class.php
 www/glpi/plugins/fusioninventory/inc/collect_file_content.class.php
@@ -248,7 +252,9 @@ www/glpi/plugins/fusioninventory/install/mysql/usbid.sql
 www/glpi/plugins/fusioninventory/install/update.php
 www/glpi/plugins/fusioninventory/install/update.tasks.php
 www/glpi/plugins/fusioninventory/js/stats.js
+www/glpi/plugins/fusioninventory/js/stats.min.js
 www/glpi/plugins/fusioninventory/js/taskjobs.js
+www/glpi/plugins/fusioninventory/js/taskjobs.min.js
 www/glpi/plugins/fusioninventory/lib/REDIPS_drag/drag_table_rows.js
 www/glpi/plugins/fusioninventory/lib/REDIPS_drag/redips-drag-min.js
 www/glpi/plugins/fusioninventory/lib/REDIPS_drag/redips-drag-source.js
@@ -766,6 +772,9 @@ www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/xhr/text-test.js
 www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/xhr/xhr-test.js
 www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/xhr/xml-test.js
 www/glpi/plugins/fusioninventory/lib/deploy_editsubtype.js
+www/glpi/plugins/fusioninventory/lib/deploy_editsubtype.min.js
+www/glpi/plugins/fusioninventory/lib/expanding/expanding.js
+www/glpi/plugins/fusioninventory/lib/expanding/expanding.min.js
 www/glpi/plugins/fusioninventory/lib/extjs/adapter/ext/ext-base-debug.js
 www/glpi/plugins/fusioninventory/lib/extjs/adapter/ext/ext-base.js
 www/glpi/plugins/fusioninventory/lib/extjs/adapter/prototype/ext-prototype-adapter-debug.js
@@ -1156,10 +1165,9 @@ www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/window/right
 www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/window/right-corners.psd
 www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/window/top-bottom.png
 www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/window/top-bottom.psd
-www/glpi/plugins/fusioninventory/lib/expanding/expanding.js
-www/glpi/plugins/fusioninventory/lib/expanding/expanding.min.js
 www/glpi/plugins/fusioninventory/lib/extjs/s.gif
 www/glpi/plugins/fusioninventory/lib/jquery/jquery-1.9.1.min.js
+www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/.gitignore
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/.npmignore
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/.travis.yml
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/CHANGES.md
@@ -1181,6 +1189,7 @@ www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/lazy.min.js
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/lazy.node.js
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/package.json
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/perf/perf_race.js
+www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/.gitignore
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/Gemfile
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/config.rb
 www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/deft.json
@@ -1639,8 +1648,12 @@ www/glpi/plugins/fusioninventory/lib/nvd3/test/stackedAreaChartTest.html
 www/glpi/plugins/fusioninventory/lib/nvd3/test/testScript.js
 www/glpi/plugins/fusioninventory/lib/nvd3/test/teststyle.css
 www/glpi/plugins/fusioninventory/lib/plusbutton.js
+www/glpi/plugins/fusioninventory/lib/plusbutton.min.js
 www/glpi/plugins/fusioninventory/lib/pretty_json.php
 www/glpi/plugins/fusioninventory/lib/timeslot.js
+www/glpi/plugins/fusioninventory/lib/timeslot.min.js
+www/glpi/plugins/fusioninventory/locales/cs_CZ.mo
+www/glpi/plugins/fusioninventory/locales/cs_CZ.po
 www/glpi/plugins/fusioninventory/locales/de_DE.mo
 www/glpi/plugins/fusioninventory/locales/de_DE.po
 www/glpi/plugins/fusioninventory/locales/en_GB.mo
@@ -1671,8 +1684,99 @@ www/glpi/plugins/fusioninventory/locales/sl_SI.mo
 www/glpi/plugins/fusioninventory/locales/sl_SI.po
 www/glpi/plugins/fusioninventory/locales/tr_TR.mo
 www/glpi/plugins/fusioninventory/locales/tr_TR.po
+www/glpi/plugins/fusioninventory/locales/uk_UA.mo
+www/glpi/plugins/fusioninventory/locales/uk_UA.po
 www/glpi/plugins/fusioninventory/locales/zh_TW.mo
 www/glpi/plugins/fusioninventory/locales/zh_TW.po
+www/glpi/plugins/fusioninventory/phpunit/0_Install/BootstrapTest.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/FusinvDB.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/FusinvInstallTest.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/FusinvUpdateTest.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/GLPIInstallTest.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/SaveInstallTest.php
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/.goutputstream-VRUOUW
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-0.83+2.1.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-1.0.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-1.1.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.0.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.0.1.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.0.2.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.1.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.1.1.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.1.2.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.1.3.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.2.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.2.1.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.3.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.3.2.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.3.3.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/i-2.4.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/matrice.txt
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/u-1.0.0_to_1.1.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/u-1.0.0_to_2.0.0.sql
+www/glpi/plugins/fusioninventory/phpunit/0_Install/mysql/u-1.1.0_to_2.0.0.sql
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/AgentTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerLogTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerTransformationTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerUpdateTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/DeleteLinkedObjectsTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/FormatConvertDataTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/NetworkEquipmentTransformationTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/NetworkEquipmentUpdateDiscoveryTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/NetworkEquipmentUpdateTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/PrinterTransformationTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/PrinterUpdateTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/SoftwareUpdateTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/Tasks/TaskTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/TimeslotTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/ToolboxTest.php
+www/glpi/plugins/fusioninventory/phpunit/1_Unit/VirtualmachineTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/CollectRuleTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerDynamicTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerEntityTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerLicenseTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerMonitorTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerPeripheralTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerPrinterTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/DevicesLocksTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/NetworkEquipmentLLDPTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/RestURLTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/RuleEntityTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/RuleIgnoredImportTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/RuleImportTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/RuleLocationTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/SoftwareEntityCreationTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/SoftwareVersionAddTest.json
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/SoftwareVersionAddTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/TaskDeployDynamicGroupTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/Tasks/CronTaskTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/Tasks/DeleteTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/Tasks/GetTaskByFiltersTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/Tasks/NetworkDiscoveryTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/Tasks/NetworkInventoryTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/UnmanagedImportTest.php
+www/glpi/plugins/fusioninventory/phpunit/2_Integration/UnmanagedManagedTest.php
+www/glpi/plugins/fusioninventory/phpunit/AllTests.php
+www/glpi/plugins/fusioninventory/phpunit/Common_TestCase.php
+www/glpi/plugins/fusioninventory/phpunit/LogTest.php
+www/glpi/plugins/fusioninventory/phpunit/README.asc
+www/glpi/plugins/fusioninventory/phpunit/RestoreDatabase_TestCase.php
+www/glpi/plugins/fusioninventory/phpunit/bootstrap.php
+www/glpi/plugins/fusioninventory/phpunit/build.xml
+www/glpi/plugins/fusioninventory/phpunit/commonfunction.php
+www/glpi/plugins/fusioninventory/phpunit/composer.json
+www/glpi/plugins/fusioninventory/phpunit/custom-build.xml
+www/glpi/plugins/fusioninventory/phpunit/emulatoragent.php
+www/glpi/plugins/fusioninventory/phpunit/testsuites_install.xml
+www/glpi/plugins/fusioninventory/phpunit/testsuites_integration.xml
+www/glpi/plugins/fusioninventory/phpunit/testsuites_unit.xml
+www/glpi/plugins/fusioninventory/phpunit/testsuites_update.xml
+www/glpi/plugins/fusioninventory/phpunit/tools/download_composer.sh
+www/glpi/plugins/fusioninventory/phpunit/tools/format_phpunitlogs.sh
+www/glpi/plugins/fusioninventory/phpunit/tools/get_composer.sh
+www/glpi/plugins/fusioninventory/phpunit/tools/merge.xslt
+www/glpi/plugins/fusioninventory/phpunit/tools/phpunit.log.xslt
+www/glpi/plugins/fusioninventory/phpunit/units/CommunicationTest.php
 www/glpi/plugins/fusioninventory/pics/RC2.png
 www/glpi/plugins/fusioninventory/pics/RCI.png
 www/glpi/plugins/fusioninventory/pics/Translate.png
@@ -1752,6 +1856,8 @@ www/glpi/plugins/fusioninventory/pics/fingerprint-bad.png
 www/glpi/plugins/fusioninventory/pics/fingerprint-good.png
 www/glpi/plugins/fusioninventory/pics/fond_form_off.png
 www/glpi/plugins/fusioninventory/pics/fusioninventory_icon.png
+www/glpi/plugins/fusioninventory/pics/fusioninventory_logo.png
+www/glpi/plugins/fusioninventory/pics/fusioninventory_logo_square.png
 www/glpi/plugins/fusioninventory/pics/general_inventory.png
 www/glpi/plugins/fusioninventory/pics/icon_InventoryComputerESX.png
 www/glpi/plugins/fusioninventory/pics/icon_collect.png
@@ -1768,6 +1874,7 @@ www/glpi/plugins/fusioninventory/pics/menu_authentification.png
 www/glpi/plugins/fusioninventory/pics/menu_authentification_1.png
 www/glpi/plugins/fusioninventory/pics/menu_blacklist.png
 www/glpi/plugins/fusioninventory/pics/menu_checkintegrity.png
+www/glpi/plugins/fusioninventory/pics/menu_cleanfiles.png
 www/glpi/plugins/fusioninventory/pics/menu_credentialips.png
 www/glpi/plugins/fusioninventory/pics/menu_credentials.png
 www/glpi/plugins/fusioninventory/pics/menu_deploy_status.png
@@ -1849,6 +1956,11 @@ www/glpi/plugins/fusioninventory/report/computer_last_inventory.php
 www/glpi/plugins/fusioninventory/report/not_queried_recently.php
 www/glpi/plugins/fusioninventory/report/ports_date_connections.php
 www/glpi/plugins/fusioninventory/report/switch_ports.history.php
+www/glpi/plugins/fusioninventory/screenshots/0.90-central.png
+www/glpi/plugins/fusioninventory/screenshots/0.90-deploypackage.png
+www/glpi/plugins/fusioninventory/screenshots/0.90-monitoring.png
+www/glpi/plugins/fusioninventory/screenshots/0.90-rules.png
+www/glpi/plugins/fusioninventory/screenshots/0.90-tasks.png
 www/glpi/plugins/fusioninventory/scripts/.htaccess
 www/glpi/plugins/fusioninventory/scripts/cleanup_repository.php
 www/glpi/plugins/fusioninventory/scripts/cli_install.php
@@ -1859,146 +1971,18 @@ www/glpi/plugins/fusioninventory/scripts/get_job_logs.php
 www/glpi/plugins/fusioninventory/scripts/logging.php
 www/glpi/plugins/fusioninventory/scripts/prepare_jobs.php
 www/glpi/plugins/fusioninventory/setup.php
-@dir www/glpi/plugins/fusioninventory/scripts
-@dir www/glpi/plugins/fusioninventory/report
-@dir www/glpi/plugins/fusioninventory/pics/ext/extensions
-@dir www/glpi/plugins/fusioninventory/pics/ext
-@dir www/glpi/plugins/fusioninventory/pics
-@dir www/glpi/plugins/fusioninventory/locales
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/test
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/src/models/backup
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/src/models
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/src
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/lib
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/examples/images
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/examples
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/deprecated/charts
-@dir www/glpi/plugins/fusioninventory/lib/nvd3/deprecated
-@dir www/glpi/plugins/fusioninventory/lib/nvd3
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/wrappers/qooxdoo
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/wrappers/mootools
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/wrappers/jquery
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/wrappers/dojo
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/test/_files
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/test
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/hooks
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0/bin
-@dir www/glpi/plugins/fusioninventory/lib/mustache.js-2.0.0
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/spec/support
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/spec/data
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/spec
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/stylesheets/demos
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/stylesheets
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/layouts
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/javascripts/docs
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/javascripts/demos
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/javascripts
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/images
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/demos/primes
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/demos/json
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/demos/generators
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source/demos/events
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site/source
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/site
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/perf
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/experimental
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0/autodoc
-@dir www/glpi/plugins/fusioninventory/lib/lazy.js-0.4.0
-@dir www/glpi/plugins/fusioninventory/lib/jquery
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/window
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/tree
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/toolbar
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/tabs
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/slider
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/sizer
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/shared
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/qtip
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/progress
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/panel
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/menu
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/layout
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/grid
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/form
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/editor
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/dd
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/button
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default/box
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/images/default
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/css/visual
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/css/theme-gray
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/css/theme-access
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/css/structure
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources/css
-@dir www/glpi/plugins/fusioninventory/lib/extjs/resources
-@dir www/glpi/plugins/fusioninventory/lib/extjs/locale
-@dir www/glpi/plugins/fusioninventory/lib/extjs/adapter/prototype
-@dir www/glpi/plugins/fusioninventory/lib/extjs/adapter/ext
-@dir www/glpi/plugins/fusioninventory/lib/extjs
-@dir www/glpi/plugins/fusioninventory/lib/expanding
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/xhr
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/transition
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/time
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/svg
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/selection
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/scale
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/math
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/locale
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/layout
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/interpolate
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/geom
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/geo
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/format
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/event
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/dsv
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/data
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/core
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/color
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test/arrays
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/test
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/xhr
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/transition
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/time
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/svg
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/selection
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/scale
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/math
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/locale
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/layout
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/interpolate
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/geom/voronoi
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/geom
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/geo
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/format
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/event
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/dsv
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/core
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/compat
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/color
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/behavior
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src/arrays
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/src
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/science
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/rhill-voronoi
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/protovis
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/polymaps
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/penner
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/geographiclib
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/lib/colorbrewer
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3/bin
-@dir www/glpi/plugins/fusioninventory/lib/d3-3.4.3
-@dir www/glpi/plugins/fusioninventory/lib/REDIPS_drag
-@dir www/glpi/plugins/fusioninventory/lib
-@dir www/glpi/plugins/fusioninventory/js
-@dir www/glpi/plugins/fusioninventory/install/mysql
-@dir www/glpi/plugins/fusioninventory/install
-@dir www/glpi/plugins/fusioninventory/inc
-@dir www/glpi/plugins/fusioninventory/front
-@dir www/glpi/plugins/fusioninventory/docs
-@dir www/glpi/plugins/fusioninventory/css
-@dir www/glpi/plugins/fusioninventory/b/esx
-@dir www/glpi/plugins/fusioninventory/b/deploy
-@dir www/glpi/plugins/fusioninventory/b/collect
-@dir www/glpi/plugins/fusioninventory/ajax
-@dir www/glpi/plugins/fusioninventory
-@owner
-@group
+www/glpi/plugins/fusioninventory/tools/.htaccess
+www/glpi/plugins/fusioninventory/tools/create_pofile.pl
+www/glpi/plugins/fusioninventory/tools/datafilter/FilesToDB.php
+www/glpi/plugins/fusioninventory/tools/datafilter/oui.txt
+www/glpi/plugins/fusioninventory/tools/datafilter/pci.ids
+www/glpi/plugins/fusioninventory/tools/datafilter/usb.ids
+www/glpi/plugins/fusioninventory/tools/dev/coding-standard.xml
+www/glpi/plugins/fusioninventory/tools/dev/fix.superfluous_whitespaces.sh
+www/glpi/plugins/fusioninventory/tools/extract_template.sh
+www/glpi/plugins/fusioninventory/tools/networkdiscovery.xml
+www/glpi/plugins/fusioninventory/tools/phpcs.xml
+www/glpi/plugins/fusioninventory/tools/removeContext.pl
+www/glpi/plugins/fusioninventory/tools/replacelang_plugins.php
+www/glpi/plugins/fusioninventory/tools/update_mo.pl
+www/glpi/plugins/fusioninventory/tools/update_po.pl
