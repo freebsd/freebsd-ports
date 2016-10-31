@@ -1,0 +1,30 @@
+Waf doesn't support changing pkg-config data install path
+
+--- wscript.orig	2016-09-20 01:34:12 UTC
++++ wscript
+@@ -400,7 +400,7 @@ def build(bld):
+     bld(features     = 'subst',
+         source       = 'lv2.pc.in',
+         target       = 'lv2.pc',
+-        install_path = '${LIBDIR}/pkgconfig',
++        install_path = '${LIBDIR}data/pkgconfig',
+         PREFIX       = bld.env.PREFIX,
+         INCLUDEDIR   = bld.env.INCLUDEDIR,
+         VERSION      = VERSION)
+--- lv2/lv2plug.in/ns/lv2core/wscript.orig	2016-09-10 13:54:00 UTC
++++ lv2/lv2plug.in/ns/lv2core/wscript
+@@ -52,7 +52,13 @@ def build(bld):
+         bld.install_files('${LV2DIR}/lv2core.lv2', 'lv2.h')
+ 
+         # Pkgconfig file
+-        autowaf.build_pc(bld, 'LV2CORE', LV2CORE_VERSION, '', [])
++        bld(features     = 'subst',
++            source       = 'lv2core.pc.in',
++            target       = 'lv2core.pc',
++            install_path = '${LIBDIR}data/pkgconfig',
++            PREFIX       = bld.env.PREFIX,
++            INCLUDEDIR   = bld.env.INCLUDEDIR,
++            VERSION      = LV2CORE_VERSION)
+ 
+         # URI-like header include
+         include_dir = os.path.join(bld.env['INCLUDEDIR'], 'lv2/lv2plug.in/ns')
