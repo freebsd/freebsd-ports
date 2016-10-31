@@ -4,42 +4,17 @@ PORTNAME=	openra
 PORTVERSION=	20161019
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	games
-# XXX Convert to USES=nuget or package dependencies instead
-MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
-		https://nuget.org/api/v2/package/StyleCop.MSBuild/4.7.49.0?dummy=/:StyleCop \
-		https://nuget.org/api/v2/package/SharpZipLib/0.86.0?dummy=/:SharpZipLib \
-		https://nuget.org/api/v2/package/Newtonsoft.Json/8.0.3?dummy=/:Newtonsoft_Json \
-		https://nuget.org/api/v2/package/MaxMind.Db/2.0.0?dummy=/:MaxMind_Db \
-		https://nuget.org/api/v2/package/MaxMind.GeoIP2/2.6.0?dummy=/:MaxMind_GeoIP2 \
-		https://nuget.org/api/v2/package/SharpFont/3.1.0?dummy=/:SharpFont \
-		https://nuget.org/api/v2/package/NUnit/3.0.1?dummy=/:NUnit \
-		https://nuget.org/api/v2/package/NUnit.Console/3.0.1?dummy=/:NUnit_Console \
-		https://nuget.org/api/v2/package/Open.Nat/2.1.0?dummy=/:Open_Nat \
-		https://nuget.org/api/v2/package/FuzzyLogicLibrary/1.2.0?dummy=/:FuzzyLogicLibrary \
-		https://nuget.org/api/v2/package/SmartIrc4net/0.4.5.1?dummy=/:SmartIrc4net \
-		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20151227/:SDL2_CS \
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20151227/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
 		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant \
 		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
-DISTFILES=	StyleCopPlus.MSBuild-4.7.49.5.zip:StyleCopPlus \
-		StyleCop.MSBuild-4.7.49.0.zip:StyleCop \
-		SharpZipLib-0.86.0.zip:SharpZipLib \
-		Newtonsoft.Json-8.0.3.zip:Newtonsoft_Json \
-		MaxMind.Db-2.0.0.zip:MaxMind_Db \
-		MaxMind.GeoIP2-2.6.0.zip:MaxMind_GeoIP2 \
-		SharpFont-3.1.0.zip:SharpFont \
-		NUnit-3.0.1.zip:NUnit \
-		NUnit.Console-3.0.1.zip:NUnit_Console \
-		Open.Nat-2.1.0.zip:Open_Nat \
-		FuzzyLogicLibrary-1.2.0.zip:FuzzyLogicLibrary \
-		SmartIrc4net-0.4.5.1.zip:SmartIrc4net \
-		SDL2-CS.dll:SDL2_CS \
+DISTFILES=	SDL2-CS.dll:SDL2_CS \
 		SDL2-CS.dll.config:SDL2_CS \
 		OpenAL-CS.dll:OpenAL_CS \
 		OpenAL-CS.dll.config:OpenAL_CS \
 		Eluant.dll:Eluant \
 		GeoLite2-Country.mmdb.gz:GeoLite2
-EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.dll:N*.config:N*.mmdb*}
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.mmdb*:N*.nupkg}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
@@ -48,15 +23,28 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgdiplus.so:x11-toolkits/libgdiplus
+NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
+		MaxMind.Db=2.0.0 \
+		MaxMind.GeoIP2=2.6.0 \
+		NUnit=3.0.1 \
+		NUnit.Console=3.0.1 \
+		Newtonsoft.Json=8.0.3 \
+		Open.NAT=2.1.0 \
+		SharpFont=3.1.0 \
+		SharpZipLib=0.86.0 \
+		SmartIrc4net=0.4.5.1 \
+		StyleCop.MSBuild=4.7.49.0 \
+		StyleCopPlus.MSBuild=4.7.49.5
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
-USES=		desktop-file-utils gmake lua:51,run mono openal:soft \
+USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft \
 		shared-mime-info shebangfix
-SHEBANG_FILES=	launch-dedicated.sh
 USE_SDL=	sdl2
+TARGET_ORDER_OVERRIDE=	520:nuget-extract
+SHEBANG_FILES=	launch-dedicated.sh
 MAKE_ENV=	prefix="${PREFIX}" mandir="${PREFIX}/man"
 MAKE_ARGS=	VERSION="${GH_TAGNAME}"
 INSTALL_TARGET=	install-all install-man-page \
@@ -80,11 +68,11 @@ ZENITY_DESC=	Use native crash dialog
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/thirdparty/download
-	@${CP} -v ${DISTFILES:C/:.*//:N*.tar*:N*.zip:S,^,${_DISTDIR}/,} \
+	@${CP} -v ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:N*.zip:S,^,${_DISTDIR}/,} \
 		${WRKSRC}/thirdparty/download
 	@for f in $$(${SED} -n 's/\.$$//; s,cp \./,,p' \
 			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh); do \
-		${MV} -v ${WRKDIR}/$${f#*/} ${WRKSRC}/thirdparty/download; \
+		${MV} -v ${NUGET_PACKAGEDIR}/$$f ${WRKSRC}/thirdparty/download; \
 	done
 
 post-patch:
