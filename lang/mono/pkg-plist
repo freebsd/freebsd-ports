@@ -37,6 +37,7 @@ bin/mdvalidater
 bin/mkbundle
 bin/mod
 bin/mono
+bin/mono-api-html
 bin/mono-api-info
 bin/mono-boehm
 bin/mono-cil-strip
@@ -144,10 +145,12 @@ lib/libmono-2.0.a
 lib/libmono-2.0.so
 lib/libmono-2.0.so.1
 lib/libmono-2.0.so.1.0.0
+lib/libmono-profiler-aot-static.a
 lib/libmono-profiler-aot.a
 lib/libmono-profiler-aot.so
 lib/libmono-profiler-aot.so.0
 lib/libmono-profiler-aot.so.0.0.0
+lib/libmono-profiler-iomap-static.a
 lib/libmono-profiler-iomap.a
 lib/libmono-profiler-iomap.so
 lib/libmono-profiler-iomap.so.0
@@ -430,7 +433,6 @@ lib/mono/4.5-api/Microsoft.Web.Infrastructure.dll
 lib/mono/4.5-api/Mono.C5.dll
 lib/mono/4.5-api/Mono.CSharp.dll
 lib/mono/4.5-api/Mono.Cairo.dll
-lib/mono/4.5-api/Mono.Cecil.Mdb.dll
 lib/mono/4.5-api/Mono.Cecil.dll
 lib/mono/4.5-api/Mono.CodeContracts.dll
 lib/mono/4.5-api/Mono.CompilerServices.SymbolWriter.dll
@@ -536,7 +538,6 @@ lib/mono/4.5-api/System.Xml.Linq.dll
 lib/mono/4.5-api/System.Xml.Serialization.dll
 lib/mono/4.5-api/System.Xml.dll
 lib/mono/4.5-api/System.dll
-lib/mono/4.5-api/SystemWebTestShim.dll
 lib/mono/4.5-api/WebMatrix.Data.dll
 lib/mono/4.5-api/WindowsBase.dll
 lib/mono/4.5-api/cscompmgd.dll
@@ -564,7 +565,6 @@ lib/mono/4.5/Facades/System.Data.SqlClient.dll
 lib/mono/4.5/Facades/System.Diagnostics.Contracts.dll
 lib/mono/4.5/Facades/System.Diagnostics.Debug.dll
 lib/mono/4.5/Facades/System.Diagnostics.FileVersionInfo.dll
-lib/mono/4.5/Facades/System.Diagnostics.PerformanceCounter.dll
 lib/mono/4.5/Facades/System.Diagnostics.Process.dll
 lib/mono/4.5/Facades/System.Diagnostics.StackTrace.dll
 lib/mono/4.5/Facades/System.Diagnostics.TextWriterTraceListener.dll
@@ -594,7 +594,6 @@ lib/mono/4.5/Facades/System.Linq.Queryable.dll
 lib/mono/4.5/Facades/System.Linq.dll
 lib/mono/4.5/Facades/System.Net.AuthenticationManager.dll
 lib/mono/4.5/Facades/System.Net.Cache.dll
-lib/mono/4.5/Facades/System.Net.Http.WebRequestHandler.dll
 lib/mono/4.5/Facades/System.Net.HttpListener.dll
 lib/mono/4.5/Facades/System.Net.Mail.dll
 lib/mono/4.5/Facades/System.Net.NameResolution.dll
@@ -609,8 +608,6 @@ lib/mono/4.5/Facades/System.Net.WebHeaderCollection.dll
 lib/mono/4.5/Facades/System.Net.WebSockets.Client.dll
 lib/mono/4.5/Facades/System.Net.WebSockets.dll
 lib/mono/4.5/Facades/System.ObjectModel.dll
-lib/mono/4.5/Facades/System.Private.CoreLib.InteropServices.dll
-lib/mono/4.5/Facades/System.Private.CoreLib.Threading.dll
 lib/mono/4.5/Facades/System.Reflection.Emit.ILGeneration.dll
 lib/mono/4.5/Facades/System.Reflection.Emit.Lightweight.dll
 lib/mono/4.5/Facades/System.Reflection.Emit.dll
@@ -632,7 +629,6 @@ lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll
 lib/mono/4.5/Facades/System.Runtime.dll
 lib/mono/4.5/Facades/System.Security.AccessControl.dll
 lib/mono/4.5/Facades/System.Security.Claims.dll
-lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.DeriveBytes.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encoding.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encryption.Aes.dll
@@ -738,6 +734,7 @@ lib/mono/4.5/System.Data.OracleClient.dll
 lib/mono/4.5/System.Data.Services.Client.dll
 lib/mono/4.5/System.Data.Services.dll
 lib/mono/4.5/System.Data.dll
+lib/mono/4.5/System.Deployment.dll
 lib/mono/4.5/System.Design.dll
 lib/mono/4.5/System.DirectoryServices.Protocols.dll
 lib/mono/4.5/System.DirectoryServices.dll
@@ -795,8 +792,10 @@ lib/mono/4.5/System.Web.Extensions.dll
 lib/mono/4.5/System.Web.Http.SelfHost.dll
 lib/mono/4.5/System.Web.Http.WebHost.dll
 lib/mono/4.5/System.Web.Http.dll
+lib/mono/4.5/System.Web.Mobile.dll
 lib/mono/4.5/System.Web.Mvc.dll
 lib/mono/4.5/System.Web.Razor.dll
+lib/mono/4.5/System.Web.RegularExpressions.dll
 lib/mono/4.5/System.Web.Routing.dll
 lib/mono/4.5/System.Web.Services.dll
 lib/mono/4.5/System.Web.WebPages.Deployment.dll
@@ -806,6 +805,9 @@ lib/mono/4.5/System.Web.dll
 lib/mono/4.5/System.Windows.Forms.DataVisualization.dll
 lib/mono/4.5/System.Windows.Forms.dll
 lib/mono/4.5/System.Windows.dll
+lib/mono/4.5/System.Workflow.Activities.dll
+lib/mono/4.5/System.Workflow.ComponentModel.dll
+lib/mono/4.5/System.Workflow.Runtime.dll
 lib/mono/4.5/System.Xaml.dll
 lib/mono/4.5/System.Xml.Linq.dll
 lib/mono/4.5/System.Xml.Serialization.dll
@@ -880,7 +882,10 @@ lib/mono/4.5/mkbundle.exe
 lib/mono/4.5/mkbundle.exe.mdb
 lib/mono/4.5/mod.exe
 lib/mono/4.5/mod.exe.mdb
+lib/mono/4.5/mono-api-html.exe
+lib/mono/4.5/mono-api-html.exe.mdb
 lib/mono/4.5/mono-api-info.exe
+lib/mono/4.5/mono-api-info.exe.mdb
 lib/mono/4.5/mono-cil-strip.exe
 lib/mono/4.5/mono-cil-strip.exe.mdb
 lib/mono/4.5/mono-service.exe
@@ -1086,6 +1091,8 @@ lib/mono/gac/System.Data.Services/4.0.0.0__b77a5c561934e089/System.Data.Services
 lib/mono/gac/System.Data.Services/4.0.0.0__b77a5c561934e089/System.Data.Services.dll.mdb
 lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
 lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll.mdb
+lib/mono/gac/System.Deployment/4.0.0.0__b03f5f7f11d50a3a/System.Deployment.dll
+lib/mono/gac/System.Deployment/4.0.0.0__b03f5f7f11d50a3a/System.Deployment.dll.mdb
 lib/mono/gac/System.Design/4.0.0.0__b03f5f7f11d50a3a/System.Design.dll
 lib/mono/gac/System.Design/4.0.0.0__b03f5f7f11d50a3a/System.Design.dll.mdb
 lib/mono/gac/System.DirectoryServices.Protocols/4.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.Protocols.dll
@@ -1200,10 +1207,14 @@ lib/mono/gac/System.Web.Http.WebHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.W
 lib/mono/gac/System.Web.Http.WebHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.WebHost.dll.mdb
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll.mdb
+lib/mono/gac/System.Web.Mobile/4.0.0.0__b03f5f7f11d50a3a/System.Web.Mobile.dll
+lib/mono/gac/System.Web.Mobile/4.0.0.0__b03f5f7f11d50a3a/System.Web.Mobile.dll.mdb
 lib/mono/gac/System.Web.Mvc/%%GTK3_VERSION%%.0__31bf3856ad364e35/System.Web.Mvc.dll
 lib/mono/gac/System.Web.Mvc/%%GTK3_VERSION%%.0__31bf3856ad364e35/System.Web.Mvc.dll.mdb
 lib/mono/gac/System.Web.Razor/2.0.0.0__31bf3856ad364e35/System.Web.Razor.dll
 lib/mono/gac/System.Web.Razor/2.0.0.0__31bf3856ad364e35/System.Web.Razor.dll.mdb
+lib/mono/gac/System.Web.RegularExpressions/4.0.0.0__b03f5f7f11d50a3a/System.Web.RegularExpressions.dll
+lib/mono/gac/System.Web.RegularExpressions/4.0.0.0__b03f5f7f11d50a3a/System.Web.RegularExpressions.dll.mdb
 lib/mono/gac/System.Web.Routing/4.0.0.0__31bf3856ad364e35/System.Web.Routing.dll
 lib/mono/gac/System.Web.Routing/4.0.0.0__31bf3856ad364e35/System.Web.Routing.dll.mdb
 lib/mono/gac/System.Web.Services/4.0.0.0__b03f5f7f11d50a3a/System.Web.Services.dll
@@ -1221,6 +1232,12 @@ lib/mono/gac/System.Windows.Forms.DataVisualization/4.0.0.0__31bf3856ad364e35/Sy
 lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
 lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll.mdb
 lib/mono/gac/System.Windows/4.0.0.0__b03f5f7f11d50a3a/System.Windows.dll
+lib/mono/gac/System.Workflow.Activities/4.0.0.0__31bf3856ad364e35/System.Workflow.Activities.dll
+lib/mono/gac/System.Workflow.Activities/4.0.0.0__31bf3856ad364e35/System.Workflow.Activities.dll.mdb
+lib/mono/gac/System.Workflow.ComponentModel/4.0.0.0__31bf3856ad364e35/System.Workflow.ComponentModel.dll
+lib/mono/gac/System.Workflow.ComponentModel/4.0.0.0__31bf3856ad364e35/System.Workflow.ComponentModel.dll.mdb
+lib/mono/gac/System.Workflow.Runtime/4.0.0.0__31bf3856ad364e35/System.Workflow.Runtime.dll
+lib/mono/gac/System.Workflow.Runtime/4.0.0.0__31bf3856ad364e35/System.Workflow.Runtime.dll.mdb
 lib/mono/gac/System.Xaml/4.0.0.0__b77a5c561934e089/System.Xaml.dll
 lib/mono/gac/System.Xaml/4.0.0.0__b77a5c561934e089/System.Xaml.dll.mdb
 lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll
@@ -1273,6 +1290,10 @@ lib/mono/xbuild-frameworks/.NETFramework/v4.5.2/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.5/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.6.1/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.6/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETPortable/v5.0/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETPortable/v5.0/SupportedFrameworks/.NET Framework 4.6.xml
+lib/mono/xbuild-frameworks/.NETPortable/v5.0/SupportedFrameworks/ASP.NET Core 1.0.xml
+lib/mono/xbuild-frameworks/.NETPortable/v5.0/SupportedFrameworks/Windows Universal 10.0.xml
 lib/mono/xbuild/12.0/bin/MSBuild/Microsoft.Build.CommonTypes.xsd
 lib/mono/xbuild/12.0/bin/MSBuild/Microsoft.Build.Core.xsd
 lib/mono/xbuild/12.0/bin/Microsoft.Build.Engine.dll
@@ -1290,6 +1311,9 @@ lib/mono/xbuild/12.0/bin/xbuild.exe
 lib/mono/xbuild/12.0/bin/xbuild.exe.config
 lib/mono/xbuild/12.0/bin/xbuild.exe.mdb
 lib/mono/xbuild/12.0/bin/xbuild.rsp
+lib/mono/xbuild/14.0/Imports/Microsoft.Common.props/ImportBefore/Microsoft.NuGet.ImportBefore.props
+lib/mono/xbuild/14.0/Microsoft.Common.props
+lib/mono/xbuild/14.0/Microsoft.Common.targets/ImportAfter/Microsoft.NuGet.ImportAfter.targets
 lib/mono/xbuild/14.0/bin/MSBuild/Microsoft.Build.CommonTypes.xsd
 lib/mono/xbuild/14.0/bin/MSBuild/Microsoft.Build.Core.xsd
 lib/mono/xbuild/14.0/bin/Microsoft.Build.Engine.dll
@@ -1307,6 +1331,10 @@ lib/mono/xbuild/14.0/bin/xbuild.exe
 lib/mono/xbuild/14.0/bin/xbuild.exe.config
 lib/mono/xbuild/14.0/bin/xbuild.exe.mdb
 lib/mono/xbuild/14.0/bin/xbuild.rsp
+lib/mono/xbuild/Microsoft/NuGet/Microsoft.NuGet.Build.Tasks.dll
+lib/mono/xbuild/Microsoft/NuGet/Microsoft.NuGet.Build.Tasks.dll.mdb
+lib/mono/xbuild/Microsoft/NuGet/Microsoft.NuGet.props
+lib/mono/xbuild/Microsoft/NuGet/Microsoft.NuGet.targets
 lib/mono/xbuild/Microsoft/Portable/Microsoft.Portable.Core.props
 lib/mono/xbuild/Microsoft/Portable/Microsoft.Portable.Core.targets
 lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.CSharp.targets
@@ -1318,6 +1346,9 @@ lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.VisualBasic.targets
 lib/mono/xbuild/Microsoft/Portable/v4.6/Microsoft.Portable.CSharp.targets
 lib/mono/xbuild/Microsoft/Portable/v4.6/Microsoft.Portable.Common.targets
 lib/mono/xbuild/Microsoft/Portable/v4.6/Microsoft.Portable.VisualBasic.targets
+lib/mono/xbuild/Microsoft/Portable/v5.0/Microsoft.Portable.CSharp.targets
+lib/mono/xbuild/Microsoft/Portable/v5.0/Microsoft.Portable.Common.targets
+lib/mono/xbuild/Microsoft/Portable/v5.0/Microsoft.Portable.VisualBasic.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v10.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v11.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v12.0/WebApplications/Microsoft.WebApplication.targets

@@ -12,6 +12,10 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings to embed Mozilla
 
+BROKEN=		Does not compile against recent mono
+DEPRECATED=	Broken, no upstream found and no release in 8 years
+EXPIRATION_DATE=2016-11-27
+
 USE_GNOME=	gtksharp20
 USES=		gmake mono pathfix pkgconfig gecko tar:bzip2
 GNU_CONFIGURE=	yes
