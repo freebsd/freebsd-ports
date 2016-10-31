@@ -6,7 +6,7 @@ PORTVERSION=	0.93
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
 LIB_DEPENDS=	libcddb.so:audio/libcddb
