@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
 	https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
@@ -34,10 +34,10 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_QMAKE_OFF=	"CONFIG+=without_djvu"
 
-QT4_USE=	qt4=dbus,gui,linguisttools,moc_build,rcc_build,sql,sql-sqlite3,svg,xml
+QT4_USE=	qt4=dbus,gui,imageformats,linguisttools,moc_build,rcc_build,sql,sql-sqlite3,svg,xml
 QT4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
-QT5_USE=	qt5=buildtools_build,concurrent,linguisttools,printsupport,sql,sql-sqlite3,svg,xml
+QT5_USE=	qt5=buildtools_build,concurrent,imageformats,linguisttools,printsupport,sql,sql-sqlite3,svg,xml
 QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 PS_LIB_DEPENDS=	libspectre.so:print/libspectre
