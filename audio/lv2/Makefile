@@ -9,7 +9,7 @@ MASTER_SITES=	http://lv2plug.in/spec/
 MAINTAINER=	beerml@sigma6audio.de
 COMMENT=	Open standard for audio plugins (successor to LADSPA)
 
-LICENSE=	MIT ISCL
+LICENSE=	ISCL MIT
 LICENSE_COMB=	multi
 # Only lv2specgen.py is under MIT
 LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
