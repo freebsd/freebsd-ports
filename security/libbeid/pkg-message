@@ -4,7 +4,9 @@ not by the citizens.  You should assume that the government can forge digital
 signatures and decrypt encrypted content.
 
 The procfs file system must be mounted on /proc for these libraries to work
-correctly.
+correctly.  Add the following line to /etc/fstab and run "mount procfs".
+
+procfs		/proc		procfs	rw		0	0
 
 To use your eID in Firefox you can add libbeidpkcs11.so as a security module:
 - Make sure you have installed a pcsc-lite driver for your card reader (such
