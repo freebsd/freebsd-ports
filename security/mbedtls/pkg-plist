@@ -60,6 +60,7 @@ include/mbedtls/certs.h
 include/mbedtls/check_config.h
 include/mbedtls/cipher.h
 include/mbedtls/cipher_internal.h
+include/mbedtls/cmac.h
 include/mbedtls/compat-1.3.h
 include/mbedtls/config.h
 include/mbedtls/ctr_drbg.h
@@ -83,6 +84,7 @@ include/mbedtls/md5.h
 include/mbedtls/md_internal.h
 include/mbedtls/memory_buffer_alloc.h
 include/mbedtls/net.h
+include/mbedtls/net_sockets.h
 include/mbedtls/oid.h
 include/mbedtls/padlock.h
 include/mbedtls/pem.h
@@ -92,6 +94,7 @@ include/mbedtls/pkcs11.h
 include/mbedtls/pkcs12.h
 include/mbedtls/pkcs5.h
 include/mbedtls/platform.h
+include/mbedtls/platform_time.h
 include/mbedtls/ripemd160.h
 include/mbedtls/rsa.h
 include/mbedtls/sha1.h
