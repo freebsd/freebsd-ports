@@ -1,6 +1,6 @@
---- bin/sbt-launch-lib.bash.orig	2013-08-28 10:14:44.000000000 +0200
-+++ bin/sbt-launch-lib.bash	2013-08-28 10:20:01.000000000 +0200
-@@ -31,7 +31,7 @@
+--- bin/sbt-launch-lib.bash.orig	2016-10-28 17:46:00 UTC
++++ bin/sbt-launch-lib.bash
+@@ -26,7 +26,7 @@ dlog () {
  }
  
  jar_file () {

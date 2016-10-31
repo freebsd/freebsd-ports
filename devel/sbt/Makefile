@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	0.13.11
+PORTVERSION=	0.13.13
 CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/sbt/native-packages/sbt/${PORTVERSION}/
 
@@ -17,8 +17,9 @@ ADVANCED_DESC=	Install advanced bash shell-script
 
 USES=		tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_JAVA=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-launcher-packaging-${PORTVERSION}
 
 PLIST_FILES=	bin/sbt \
 		%%DATADIR%%/sbt-launch.jar
@@ -33,10 +34,6 @@ PLIST_FILES+=	%%DATADIR%%/sbt \
 .else
 SUB_FILES=	sbt.sh
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/bin/sbt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
