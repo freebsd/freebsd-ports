@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	axis2
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/axis/${PORTNAME}/java/core/${PORTVERSION}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-bin.zip ${PORTNAME}-${PORTVERSION}-war.zip
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
@@ -39,17 +39,14 @@ PLIST_SUB+=	APPHOME=${APPHOME:S|^${PREFIX}/||} \
 	PORTVERSION=${PORTVERSION}
 
 do-install:
-	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib && cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib )
-	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes && cd ${WRKSRC}/webapp/WEB-INF/classes && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes )
+	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF && cd ${WRKSRC}/webapp/WEB-INF && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF )
+	( cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib )
 	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/axis2-web && cd ${WRKSRC}/webapp/axis2-web && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/axis2-web )
 	( cd ${WRKSRC}/repository && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF )
-	${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
 .for f in axis2.policy axis2.xml commons-logging.properties log4j.properties
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf/${f}.sample
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml.sample
-	@${TAR} -C ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/ \
-		-xf ${WRKDIR}/${PORTNAME}.war WEB-INF/include/ WEB-INF/views/
+	${MV} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml.sample
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
