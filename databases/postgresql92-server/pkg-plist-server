@@ -464,6 +464,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vientiane
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vladivostok
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yakutsk
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Yangon
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yekaterinburg
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yerevan
 %%TZDATA%%%%DATADIR%%/timezone/Atlantic/Azores
@@ -761,4 +762,3 @@ lib/postgresql/utf8_and_win.so
 %%DATADIR%%/tsearch_data/ispell_sample.dict
 %%DATADIR%%/tsearch_data/synonym_sample.syn
 %%DATADIR%%/tsearch_data/thesaurus_sample.ths
-@dir(%%PG_USER%%,%%PG_GROUP%%,) %%PG_USER%%

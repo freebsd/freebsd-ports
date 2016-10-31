@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LuaJIT-2.0.3/COPYRIGHT
 
 BROKEN_powerpc64=	Does not build
 
-USES=		tar:xz libtool pkgconfig
+USES=		tar:xz libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=		build-aux libs/luajit

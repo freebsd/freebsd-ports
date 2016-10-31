@@ -90,7 +90,7 @@ include/dovecot/crc32.h
 include/dovecot/cydir-storage.h
 include/dovecot/cydir-sync.h
 include/dovecot/data-stack.h
-include/dovecot/dcrypt-iostream-private.h
+include/dovecot/dcrypt-iostream.h
 include/dovecot/dcrypt-private.h
 include/dovecot/dcrypt.h
 include/dovecot/db-checkpassword.h
@@ -146,11 +146,13 @@ include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
 include/dovecot/fs-test.h
+include/dovecot/fs-wrapper.h
 include/dovecot/fsync-mode.h
 include/dovecot/fts-api-private.h
 include/dovecot/fts-api.h
 include/dovecot/fts-common.h
 include/dovecot/fts-expunge-log.h
+include/dovecot/fts-filter-common.h
 include/dovecot/fts-filter-private.h
 include/dovecot/fts-filter.h
 include/dovecot/fts-icu.h
@@ -312,6 +314,7 @@ include/dovecot/lib-signals.h
 include/dovecot/lib.h
 include/dovecot/llist.h
 include/dovecot/lmtp-client.h
+include/dovecot/log-throttle.h
 include/dovecot/login-common.h
 include/dovecot/login-proxy-state.h
 include/dovecot/login-proxy.h
@@ -444,6 +447,7 @@ include/dovecot/ostream-dot.h
 include/dovecot/ostream-encrypt.h
 include/dovecot/ostream-escaped.h
 include/dovecot/ostream-failure-at.h
+include/dovecot/ostream-file-private.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-null.h
@@ -470,6 +474,7 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/program-client.h
 include/dovecot/push-notification-drivers.h
 include/dovecot/push-notification-event-flagsclear.h
 include/dovecot/push-notification-event-flagsset.h

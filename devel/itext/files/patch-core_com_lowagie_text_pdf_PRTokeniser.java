@@ -1,4 +1,4 @@
---- core/com/lowagie/text/pdf/PRTokeniser.java.orig	2016-06-20 15:02:42 UTC
+--- core/com/lowagie/text/pdf/PRTokeniser.java.orig	2016-10-26 08:23:27 UTC
 +++ core/com/lowagie/text/pdf/PRTokeniser.java
 @@ -281,6 +281,12 @@ public class PRTokeniser {
                  }

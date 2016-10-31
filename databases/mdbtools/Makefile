@@ -22,7 +22,6 @@ OPTIONS_SUB=	yes
 USES=		autoreconf bison iconv libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brianb
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

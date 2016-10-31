@@ -1,6 +1,6 @@
---- gtk2/switcher/Makefile.in.orig	2012-04-01 03:28:48.000000000 +0900
-+++ gtk2/switcher/Makefile.in	2012-04-01 03:30:27.000000000 +0900
-@@ -63,11 +63,7 @@
+--- gtk2/switcher/Makefile.in.orig	2016-10-14 09:57:35 UTC
++++ gtk2/switcher/Makefile.in
+@@ -80,11 +80,7 @@ am__uim_im_switcher_gtk_SOURCES_DIST = g
  @GTK2_TRUE@am_uim_im_switcher_gtk_OBJECTS =  \
  @GTK2_TRUE@	uim_im_switcher_gtk-gtk.$(OBJEXT)
  uim_im_switcher_gtk_OBJECTS = $(am_uim_im_switcher_gtk_OBJECTS)
@@ -13,7 +13,7 @@
  uim_im_switcher_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
  	$(uim_im_switcher_gtk_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -356,10 +352,9 @@
+@@ -381,10 +377,9 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  uim_pixmapsdir = @uim_pixmapsdir@
  @GTK2_TRUE@uim_im_switcher_gtk_SOURCES = gtk.c

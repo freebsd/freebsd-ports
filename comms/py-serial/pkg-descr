@@ -3,4 +3,4 @@ backends for Python running on Windows, Linux, BSD (possibly any POSIX
 compliant system), Jython, and IronPython (.NET and Mono).  The module
 named "serial" automatically selects the appropriate backend.
 
-WWW: http://pyserial.sourceforge.net
+WWW: https://github.com/pyserial/pyserial

@@ -8,8 +8,11 @@ MAINTAINER=	jamie@chair6.net
 COMMENT=	C library implementing Javascript Object Signing & Encryption (JOSE)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	libjansson.so:devel/jansson
+LIB_DEPENDS=	libjansson.so:devel/jansson
+
+BROKEN_FreeBSD_9=	does not build
 
 USES=		libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
@@ -17,7 +20,6 @@ INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
-GH_PROJECT=	cjose
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}

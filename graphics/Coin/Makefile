@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USES=		openal:al libtool
+USES=		openal:al libtool pathfix
 USE_GL=		yes
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes

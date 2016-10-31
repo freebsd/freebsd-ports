@@ -1,6 +1,6 @@
---- Makefile.in.orig	2005-04-23 18:43:23.000000000 -0400
-+++ Makefile.in	2015-03-26 18:36:07.358178000 -0400
-@@ -38,7 +38,7 @@
+--- Makefile.in.orig	2005-04-23 22:43:23 UTC
++++ Makefile.in
+@@ -38,7 +38,7 @@ RELEASE = @ALLOWRELEASE@
  
  # libtool compile/link/install
  LTCOMPILE = $(LIBTOOL) --mode=compile $(TCC)
@@ -9,18 +9,14 @@
  LTINSTALL = $(LIBTOOL) --mode=install $(INSTALL)
  
  # Compiler options needed for programs that use the TCL library.
-@@ -471,8 +471,12 @@
- 	$(LTINSTALL) sqlite $(DESTDIR)$(exec_prefix)/bin
- 	$(INSTALL) -d $(DESTDIR)$(prefix)/include
- 	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)$(prefix)/include
--	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
--	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
-+	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig
-+	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig
-+
+@@ -474,6 +474,10 @@ install:	sqlite libsqlite.la sqlite.h
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+ 	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+ 
 +install-tcl:	libtclsqlite.la
 +	$(INSTALL) -d $(DESTDIR)$(prefix)/lib/sqlite
 +	$(LTINSTALL) libtclsqlite.la $(DESTDIR)$(prefix)/lib/sqlite
- 
++
  clean:	
  	rm -f *.lo *.la *.o sqlite@TARGET_EXEEXT@ libsqlite.la sqlite.h opcodes.*
+ 	rm -rf .libs .deps 

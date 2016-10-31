@@ -19,9 +19,9 @@ OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
 
-CONFLICTS?=	libressl-devel-[0-9]* \
-		openssl-[0-9]* \
-		openssl-devel-[0-9]*
+CONFLICTS_INSTALL=	libressl-devel-[0-9]* \
+			openssl-[0-9]* \
+			openssl-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig

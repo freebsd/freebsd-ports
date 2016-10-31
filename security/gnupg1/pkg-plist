@@ -1,4 +1,4 @@
-bin/gpg
+@(,,%%GPGMODE%%) bin/gpg
 bin/gpg-zip
 bin/gpgsplit
 bin/gpgv

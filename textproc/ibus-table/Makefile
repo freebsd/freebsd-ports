@@ -17,7 +17,7 @@ LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 USE_GNOME=	pygtk2
-USES=		gmake pkgconfig python
+USES=		gmake pathfix pkgconfig python
 
 GNU_CONFIGURE=	yes
 
@@ -36,8 +36,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|g" ${WRKSRC}/engine/*.py
 
 .include <bsd.port.mk>

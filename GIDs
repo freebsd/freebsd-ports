@@ -118,7 +118,7 @@ polipo:*:173:
 flowtools:*:174:
 twms:*:175:
 mlvpn:*:176:
-# free: 177
+_mdnsd:*:177:
 otpw:*:178:
 gdnsd:*:179:
 rt:*:180:
@@ -219,7 +219,7 @@ meta1:*:264:
 haclient:*:275:
 frontbase:*:276:
 # free: 277
-# free: 278
+rtg:*:278:
 mrtg:*:279:
 xymon:*:280:
 prelude:*:281:
@@ -254,7 +254,7 @@ backuppc:*:300:
 # free: 310
 # free: 311
 _sphinx:*:312:
-# free: 313
+_fastdfs:*:313:
 # free: 314
 # free: 315
 # free: 316

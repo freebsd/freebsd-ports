@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 
 GNU_CONFIGURE=	yes
 
-USES=		pkgconfig tar:bzip2
+USES=		pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxslt
 
 post-patch:
@@ -23,8 +23,5 @@ post-patch:
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		-e 's|getopt|${LOCALBASE}/bin/getopt|' \
 		${WRKSRC}/src/bcop.in
-	@${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

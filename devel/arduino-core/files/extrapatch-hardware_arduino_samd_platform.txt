@@ -1,0 +1,20 @@
+--- hardware/arduino/samd/platform.txt.orig	2016-10-12 14:28:09 UTC
++++ hardware/arduino/samd/platform.txt
+@@ -111,7 +111,7 @@ recipe.size.regex=\.text\s+([0-9]+).*
+ #
+ # BOSSA
+ #
+-tools.bossac.path={runtime.tools.bossac-1.7.0.path}
++tools.bossac.path={runtime.tools.bossac.path}/bin
+ tools.bossac.cmd=bossac
+ tools.bossac.cmd.windows=bossac.exe
+ 
+@@ -125,7 +125,7 @@ tools.bossac_remote.upload.pattern=/usr/
+ # OpenOCD sketch upload
+ #
+ 
+-tools.openocd.path={runtime.tools.openocd-0.9.0-arduino.path}
++tools.openocd.path={runtime.tools.openocd.path}/bin
+ tools.openocd.cmd=bin/openocd
+ tools.openocd.cmd.windows=bin/openocd.exe
+ 

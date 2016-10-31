@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-DISTVERSION=	R34
+DISTVERSION=	R35
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE=	LGPL21+
 USE_GITHUB=	yes
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 INSTALL_TARGET=	install-strip

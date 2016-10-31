@@ -17,7 +17,6 @@ USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 AUTORECONF_WRKSRC=	${WRKSRC}/build
 CONFIGURE_CMD=	${AUTORECONF_WRKSRC}/configure
 INSTALL_TARGET=	install-strip

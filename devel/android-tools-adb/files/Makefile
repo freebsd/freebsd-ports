@@ -15,6 +15,7 @@ SRCS+= adb_io.cpp
 SRCS+= adb_listeners.cpp
 SRCS+= adb_trace.cpp
 SRCS+= adb_utils.cpp
+SRCS+= bugreport.cpp
 SRCS+= commandline.cpp
 SRCS+= console.cpp
 SRCS+= diagnose_usb.cpp
@@ -31,6 +32,7 @@ SRCS+= transport_usb.cpp
 
 TEST_SRCS+= adb_io_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
+TEST_SRCS+= bugreport_test.cpp
 TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
 TEST_SRCS+= socket_test.cpp
@@ -39,6 +41,9 @@ TEST_SRCS+= transport_test.cpp
 
 .PATH: ${.CURDIR}/client
 SRCS+= main.cpp
+
+.PATH: ${.CURDIR}/sysdeps
+TEST_SRCS+= stat_test.cpp
 
 .PATH: ${EXTRADIR}
 SRCS+= get_my_path_freebsd.cpp
@@ -104,6 +109,7 @@ CXXFLAGS+= ${CPPFLAGS}
 .endif
 
 TEST_CPPFLAGS+= $$(${GTEST_CONFIG} --cppflags)
+TEST_CPPFLAGS+= $$(${GMOCK_CONFIG} --cppflags)
 .for f in ${TEST_SRCS}
 CPPFLAGS.${f}+= ${TEST_CPPFLAGS}
 .endfor
@@ -113,12 +119,14 @@ LDADD+= $$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
 LDADD+= -lz \-lpthread
 DPADD+= ${LIBCRYPTO} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 TEST_LDADD+= $$(${GTEST_CONFIG} --libs --ldflags)
+TEST_LDADD+= $$(${GMOCK_CONFIG} --libs --ldflags)
 
 TEST_OBJS+= ${TEST_SRCS:R:S/$/.o/}
 CLEANFILES+= ${PROG}_test ${TEST_OBJS}
 
 GIT?= git
 GTEST_CONFIG?= gtest-config
+GMOCK_CONFIG?= gmock-config
 PKG_CONFIG?= pkg-config
 
 beforeinstall:

@@ -7,6 +7,8 @@
 %%QT_MKSPECDIR%%/aix-xlc-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/aix-xlc/qmake.conf
 %%QT_MKSPECDIR%%/aix-xlc/qplatformdefs.h
+%%QT_MKSPECDIR%%/android-clang/qmake.conf
+%%QT_MKSPECDIR%%/android-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/android-g++/qmake.conf
 %%QT_MKSPECDIR%%/android-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/blackberry-armle-v7-qcc/qmake.conf
@@ -14,12 +16,15 @@
 %%QT_MKSPECDIR%%/blackberry-x86-qcc/qmake.conf
 %%QT_MKSPECDIR%%/blackberry-x86-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/aix/qplatformdefs.h
+%%QT_MKSPECDIR%%/common/android-base-head.conf
+%%QT_MKSPECDIR%%/common/android-base-tail.conf
 %%QT_MKSPECDIR%%/common/android/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/angle.conf
+%%QT_MKSPECDIR%%/common/bsd/bsd.conf
+%%QT_MKSPECDIR%%/common/bsd/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/c89/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/clang-mac.conf
 %%QT_MKSPECDIR%%/common/clang.conf
-%%QT_MKSPECDIR%%/common/freebsd.conf
 %%QT_MKSPECDIR%%/common/g++-base.conf
 %%QT_MKSPECDIR%%/common/g++-macx.conf
 %%QT_MKSPECDIR%%/common/g++-unix.conf
@@ -44,7 +49,9 @@
 %%QT_MKSPECDIR%%/common/nacl/nacl-base.conf
 %%QT_MKSPECDIR%%/common/nacl/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/posix/qplatformdefs.h
+%%QT_MKSPECDIR%%/common/qcc-base-qnx-aarch64le.conf
 %%QT_MKSPECDIR%%/common/qcc-base-qnx-armle-v7.conf
+%%QT_MKSPECDIR%%/common/qcc-base-qnx-x86-64.conf
 %%QT_MKSPECDIR%%/common/qcc-base-qnx-x86.conf
 %%QT_MKSPECDIR%%/common/qcc-base-qnx.conf
 %%QT_MKSPECDIR%%/common/qcc-base.conf
@@ -109,6 +116,8 @@
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi2-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rpi3-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rpi3-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-rpi3-vc4-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-rpi3-vc4-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7108-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7108-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7540-g++/qmake.conf
@@ -241,6 +250,7 @@
 %%QT_MKSPECDIR%%/features/win32/qt_dll.prf
 %%QT_MKSPECDIR%%/features/win32/rtti.prf
 %%QT_MKSPECDIR%%/features/win32/rtti_off.prf
+%%QT_MKSPECDIR%%/features/win32/separate_debug_info.prf
 %%QT_MKSPECDIR%%/features/win32/stl.prf
 %%QT_MKSPECDIR%%/features/win32/stl_off.prf
 %%QT_MKSPECDIR%%/features/win32/windeployqt.prf
@@ -254,8 +264,6 @@
 %%QT_MKSPECDIR%%/freebsd-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/freebsd-g++/qmake.conf
 %%QT_MKSPECDIR%%/freebsd-g++/qplatformdefs.h
-%%QT_MKSPECDIR%%/freebsd-icc/qmake.conf
-%%QT_MKSPECDIR%%/freebsd-icc/qplatformdefs.h
 %%QT_MKSPECDIR%%/haiku-g++/qmake.conf
 %%QT_MKSPECDIR%%/haiku-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/hpux-acc-64/qmake.conf
@@ -366,6 +374,7 @@
 %%QT_MKSPECDIR%%/macx-ios-clang/features/testcase_targets.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/xcodebuild.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/ios_destinations.sh
+%%QT_MKSPECDIR%%/macx-ios-clang/ios_devices.pl
 %%QT_MKSPECDIR%%/macx-ios-clang/qmake.conf
 %%QT_MKSPECDIR%%/macx-ios-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/macx-ios-clang/xcodebuild.mk
@@ -387,8 +396,12 @@
 %%QT_MKSPECDIR%%/qdevice.pri
 %%QT_MKSPECDIR%%/qfeatures.pri
 %%QT_MKSPECDIR%%/qmodule.pri
+%%QT_MKSPECDIR%%/qnx-aarch64le-qcc/qmake.conf
+%%QT_MKSPECDIR%%/qnx-aarch64le-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/qnx-armle-v7-qcc/qmake.conf
 %%QT_MKSPECDIR%%/qnx-armle-v7-qcc/qplatformdefs.h
+%%QT_MKSPECDIR%%/qnx-x86-64-qcc/qmake.conf
+%%QT_MKSPECDIR%%/qnx-x86-64-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/qnx-x86-qcc/qmake.conf
 %%QT_MKSPECDIR%%/qnx-x86-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/sco-cc/qmake.conf

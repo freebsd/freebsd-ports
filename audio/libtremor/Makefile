@@ -16,7 +16,6 @@ LIB_DEPENDS=	libogg.so:audio/libogg
 
 GIT_COMMIT=	b56ffc
 USES=		autoreconf libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

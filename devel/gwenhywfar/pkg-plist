@@ -125,10 +125,10 @@ include/gwenhywfar4/gwenhywfar/widget_be.h
 include/gwenhywfar4/gwenhywfar/xml.h
 include/gwenhywfar4/gwenhywfar/xmlctx.h
 include/gwenhywfar4/gwenhywfar/xsdnode.h
-lib/cmake/gwengui-cpp-4.15/gwengui-cpp-config-version.cmake
-lib/cmake/gwengui-cpp-4.15/gwengui-cpp-config.cmake
-lib/cmake/gwenhywfar-4.15/gwenhywfar-config-version.cmake
-lib/cmake/gwenhywfar-4.15/gwenhywfar-config.cmake
+lib/cmake/gwengui-cpp-%%GWEN_MAJ_MIN_VER%%/gwengui-cpp-config-version.cmake
+lib/cmake/gwengui-cpp-%%GWEN_MAJ_MIN_VER%%/gwengui-cpp-config.cmake
+lib/cmake/gwenhywfar-%%GWEN_MAJ_MIN_VER%%/gwenhywfar-config-version.cmake
+lib/cmake/gwenhywfar-%%GWEN_MAJ_MIN_VER%%/gwenhywfar-config.cmake
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/configmgr/dir.so
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/configmgr/dir.xml
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ohbci.so

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.12.0
-PORTREVISION=	1
+PORTVERSION=	4.12.1
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	XFCE
+MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -16,7 +15,10 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES=	${WRKSRC}/COPYING \
 	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+	libdbus-glib-1.so:devel/dbus-glib \
+	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
 
 USES=		desktop-file-utils gmake libtool pathfix gettext-tools perl5 \
 		pkgconfig tar:bzip2
@@ -25,7 +27,8 @@ INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libwnck cairo
 USE_LDCONFIG=	yes
 USE_XFCE=	garcon libexo
-USE_XORG=	x11 sm
+USE_XORG=	ice sm x11 xext
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=--enable-gio-unix --without-html-dir
 

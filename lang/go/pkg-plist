@@ -5693,6 +5693,7 @@ go/test/fixedbugs/issue16133.go
 go/test/fixedbugs/issue16193.go
 go/test/fixedbugs/issue16249.go
 go/test/fixedbugs/issue16515.go
+go/test/fixedbugs/issue17318.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go

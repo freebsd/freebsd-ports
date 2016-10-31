@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wojtekka
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
 		--disable-tests --without-gnutls

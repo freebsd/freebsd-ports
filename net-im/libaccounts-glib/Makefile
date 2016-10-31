@@ -23,7 +23,6 @@ INSTALL_TARGET=	install-strip
 
 USES=		autoreconf gmake libtool pathfix pkgconfig python sqlite:3
 USE_GNOME=	pygobject3 introspection libxml2
-PATHFIX_MAKEFILEIN=Makefile.am
 
 # GitLab variables.
 GL_ACCOUNT=	accounts-sso

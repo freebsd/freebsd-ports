@@ -7,7 +7,7 @@ DISTNAME=	subversion-${PORTVERSION}
 CATEGORIES=	www
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	Apache module for subversion serving.
+COMMENT=	Apache module for subversion serving
 
 .if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
 MASTERDIR=	${.CURDIR}/../../devel/subversion18
@@ -35,6 +35,7 @@ INSTALL_TARGET=	install-mods-shared
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
-	${INSTALL_DATA} ${WRKDIR}/220_subversion.conf.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/220_subversion.conf.sample \
+		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 .include <bsd.port.post.mk>

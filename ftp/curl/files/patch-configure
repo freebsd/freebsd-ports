@@ -70,16 +70,6 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -21417,7 +21425,8 @@ if test "$curl_ssl_msg" = "$init_ssl_msg
-         PKGTEST="no"
-     PREFIX_OPENSSL=$OPT_SSL
- 
--                OPENSSL_PCDIR="$OPT_SSL/lib/pkgconfig"
-+                # Use the FreeBSD location of the pkgconf libdir
-+                OPENSSL_PCDIR="$LOCALBASE/libdata/pkgconfig"
-     { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
- $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
-     if test -f "$OPENSSL_PCDIR/openssl.pc"; then
 @@ -25050,29 +25059,30 @@ $as_echo "found" >&6; }
      ;;
    off)

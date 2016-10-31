@@ -542,7 +542,7 @@
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qgraphicsvideoitem.h
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qimageencodercontrol.h
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qlocalmediaplaylistprovider.h
-%%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qmedia%%QT_BINDIR%%dableinterface.h
+%%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qmediabindableinterface.h
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qmediacontainercontrol.h
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qmediacontent.h
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/qmediacontrol.h

@@ -21,7 +21,7 @@ RUN_DEPENDS=	m17n-db>=1.6.4:devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf gettext-tools libtool pkgconfig
+USES=		autoreconf gettext-tools libtool pathfix pkgconfig
 USE_XORG=	ice sm x11 xaw xft xt
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -47,8 +47,6 @@ THAI_LIB_DEPENDS=	libthai.so:devel/libthai
 THAI_CONFIGURE_OFF=	--without-libthai
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|libdir}/pkgconfig|prefix}/libdata/pkgconfig|g ; \
-		 s|-ldl||g'
+	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e 's|-ldl||g'
 
 .include <bsd.port.mk>

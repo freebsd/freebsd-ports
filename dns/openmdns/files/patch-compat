@@ -1,0 +1,62 @@
+--- mdnsd/mdns.h.orig	2015-05-29 14:18:11 UTC
++++ mdnsd/mdns.h
+@@ -31,6 +31,37 @@
+ #include <event.h>
+ #include <string.h>
+ 
++#ifndef T_NSEC
++#define	T_NSEC			47  /* from OpenBSD */
++#endif
++
++#ifndef IFT_CARP
++#define	IFT_CARP		0xf8 /* from DragonFly and NetBSD */
++#endif
++
++#ifndef LINK_STATE_IS_UP /* from DragonFly and OpenBSD */
++#define	LINK_STATE_IS_UP(_s)	((_s) >= LINK_STATE_UP)
++#endif
++
++/* Copied from <sys/time.h> on OpenBSD */
++#ifndef timespeccmp
++#define	timespeccmp(tsp, usp, cmp)					\
++	(((tsp)->tv_sec == (usp)->tv_sec) ?				\
++	    ((tsp)->tv_nsec cmp (usp)->tv_nsec) :			\
++	    ((tsp)->tv_sec cmp (usp)->tv_sec))
++#endif
++#ifndef timespecsub
++#define	timespecsub(tsp, usp, vsp)					\
++	do {								\
++		(vsp)->tv_sec = (tsp)->tv_sec - (usp)->tv_sec;		\
++		(vsp)->tv_nsec = (tsp)->tv_nsec - (usp)->tv_nsec;	\
++		if ((vsp)->tv_nsec < 0) {				\
++			(vsp)->tv_sec--;				\
++			(vsp)->tv_nsec += 1000000000L;			\
++		}							\
++	} while (0)
++#endif
++
+ #define MAXCHARSTR	MAXHOSTNAMELEN
+ #define MAXLABELLEN	64
+ #define MAXPROTOLEN	4
+--- mdnsd/mdnsd.c.orig	2015-05-29 14:18:11 UTC
++++ mdnsd/mdnsd.c
+@@ -46,7 +46,9 @@ void		fetchmyname(char [MAXHOSTNAMELEN])
+ void		fetchhinfo(struct hinfo *);
+ 
+ struct mdnsd_conf	*conf = NULL;
++#ifdef __OpenBSD__
+ extern char		*malloc_options;
++#endif
+ 
+ __dead void
+ usage(void)
+@@ -230,7 +232,9 @@ main(int argc, char *argv[])
+ 		switch (ch) {
+ 		case 'd':
+ 			debug = 1;
++#ifdef __OpenBSD__
+ 			malloc_options = "AFGJPX";
++#endif
+ 			break;
+ 		case 'v':
+ 			display_version();

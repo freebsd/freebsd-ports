@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
-QT5_VERSION?=	5.6.1
+QT5_VERSION?=	5.6.2
 
 QT_PREFIX?=		${LOCALBASE}
 
@@ -181,8 +181,7 @@ CONFIGURE_ARGS+=-verbose
 .  if ${_QT_VERSION:M4*}
 _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
 .  else
-_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h \
-			${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests_unix_libdl_libdl.pro
+_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \

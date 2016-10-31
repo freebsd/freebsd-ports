@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		bison cmake gmake kde:4 pkgconfig tar:bzip2
+USES=		bison cmake gmake kde:4 pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20
@@ -31,9 +31,5 @@ GST_VERSION=	${PORTVERSION:C/..$//}
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

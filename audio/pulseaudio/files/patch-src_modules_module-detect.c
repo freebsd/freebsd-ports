@@ -1,16 +1,6 @@
---- src/modules/module-detect.c.orig	2015-09-10 04:51:41 UTC
+--- src/modules/module-detect.c.orig	2016-05-10 12:28:04 UTC
 +++ src/modules/module-detect.c
-@@ -46,7 +46,9 @@ PA_MODULE_DESCRIPTION("Detect available 
- PA_MODULE_VERSION(PACKAGE_VERSION);
- PA_MODULE_LOAD_ONCE(true);
- PA_MODULE_USAGE("just-one=<boolean>");
-+#ifdef __linux__
- PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");
-+#endif
- 
- static const char* const valid_modargs[] = {
-     "just-one",
-@@ -157,8 +159,7 @@ static int detect_oss(pa_core *c, int ju
+@@ -160,8 +160,7 @@ static int detect_oss(pa_core *c, int ju
                  continue;
  
          } else if (sscanf(line, "pcm%u: ", &device) == 1) {

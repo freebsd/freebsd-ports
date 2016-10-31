@@ -28,6 +28,10 @@ BROKEN_powerpc=	does not compile
 IGNORE=		requires kernel source files
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
+BROKEN=		does not build on FreeBSD 11+
+.endif
+
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF
 CMAKE_ARGS+=	-DOPCODE_VERIFICATION:BOOL=OFF
 CMAKE_ARGS+=	-DKMODDIR="${KMODDIR}"

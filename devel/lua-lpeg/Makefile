@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lpeg
-PORTVERSION=	0.12
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}

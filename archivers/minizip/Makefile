@@ -14,7 +14,6 @@ COMMENT=	Zip library and programs from Zlib distribution
 LICENSE=	ZLIB
 
 USES=		autoreconf libtool pathfix tar:xz
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip

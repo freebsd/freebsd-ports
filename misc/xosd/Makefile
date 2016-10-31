@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig libtool
 USE_CSTD=	gnu89
-USE_XORG=	x11 xext xt sm ice
+USE_XORG=	x11 xext xt sm ice xinerama
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}'

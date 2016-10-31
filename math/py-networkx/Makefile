@@ -32,7 +32,7 @@ OPTIONS_GROUP_RENDER=	MPL GRAPHVIZ
 OPTIONS_DEFAULT=	NUMPY SCIPY MPL GRAPHVIZ YAML
 
 NUMPY_DESC=	Matrix representation of graphs
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2:math/py-numpy
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2,1:math/py-numpy
 
 SCIPY_DESC=	Sparse matrix representation of graphs
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.15.1:science/py-scipy \

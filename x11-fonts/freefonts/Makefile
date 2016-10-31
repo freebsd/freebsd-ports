@@ -3,7 +3,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
@@ -14,9 +14,11 @@ MASTER_SITE_SUBDIR=	gimp/fonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of ATM fonts (not all free) from the CICA archives
 
-USES=	fonts
-
 BUILD_DEPENDS=	type1inst:x11-fonts/p5-type1inst
+
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
+USES=		fonts
 
 # Some of the fonts are shareware. Some are freeware. Permission must
 # be obtained before distributing at least four (mazama.license,

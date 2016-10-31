@@ -14,7 +14,6 @@ GH_TAGNAME=	0c9b50f
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
-PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

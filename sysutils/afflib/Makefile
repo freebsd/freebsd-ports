@@ -21,7 +21,6 @@ GH_PROJECT=	AFFLIBv3
 
 USE_LDCONFIG=	yes
 USES=		autoreconf fuse libtool pathfix readline ssl
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-s3=yes
 INSTALL_TARGET=	install-strip

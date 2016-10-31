@@ -45,6 +45,13 @@ PLIST_FILES=	bin/qtox \
 PLIST_FILES+=	share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == "gcc" && ${ARCH} == i386 && !${CFLAGS:M-march=*}
+# Needed for __atomic_fetch_add_8
+CFLAGS+=	-march=i586
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning: qTox won't build if the option NaCl was selected for Tox!"
@@ -73,4 +80,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

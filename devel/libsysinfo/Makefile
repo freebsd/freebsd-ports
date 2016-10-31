@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	libsysinfo
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.0.3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+PORTREVSION=	1
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	imp@bsdimp.com
 COMMENT=	GNU libc's sysinfo port for FreeBSD
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	bsdimp
+DISTVERSIONPREFIX= v
 
 USES=		uidfix
 USE_LDCONFIG=	yes
-PROJECTHOST=	sysinfo-bsd
 
 LDFLAGS+=	-lkvm
 

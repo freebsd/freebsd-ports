@@ -21,7 +21,7 @@ GH_PROJECT=	brotli:brotli
 GH_TAGNAME=	${BROTLI_VERSION}:brotli
 GH_SUBDIR=	brotli:brotli
 
-USES=		pkgconfig autoreconf libtool compiler:c++0x
+USES=		pkgconfig autoreconf libtool compiler:c++0x pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}

@@ -12,7 +12,7 @@ COMMENT=	Generates assembly language code at run-time
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-USES=		libtool
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-disassembler=no
 INSTALL_TARGET=	install-strip

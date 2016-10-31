@@ -2,40 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	opencl
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.khronos.org/registry/cl/api/${PORTVERSION}/
-DISTFILES=	opencl.h cl_platform.h cl.h cl_ext.h cl_dx9_media_sharing.h \
-		cl_d3d10.h cl_d3d11.h  cl_gl.h cl_gl_ext.h cl.hpp
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=
 
 MAINTAINER=	ohartman@zedat.fu-berlin.de
-COMMENT=	Open Computing Language (OpenCL) specifications V2.0 (header files)
+COMMENT=	Open Computing Language (OpenCL) specifications V2.1 (header files)
 
 LICENSE=	unknown
 LICENSE_NAME=	BSD-esque license agreement
 LICENSE_TEXT=	License is included in each of the header files of this port
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	opencl-1.[0-1]
+CONFLICTS=	opencl-1.[0-2]
 
-NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	KhronosGroup
+GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
+GH_TAGNAME=	${HEADER_TAG} ${CLHPP_TAG}:clhpp
 
-.for f in ${DISTFILES}
-PLIST_FILES+=include/CL/$f
-.endfor
+# the header releases don't have tags yet, so use git commit for now
+HEADER_TAG=	2d06e09
+CLHPP_TAG=	v2.0.10
 
-pre-patch:
-		@${MKDIR} ${WRKSRC}
-.for f in ${DISTFILES}
-		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$f ${WRKSRC}/
-.endfor
+USES=		python:build
+NO_CONFIGURE=	yes
+
+do-build:
+	@cd ${WRKSRC_clhpp} && ${PYTHON_CMD} gen_cl_hpp.py
 
 do-install:
-		@${MKDIR} ${STAGEDIR}${PREFIX}/include/CL
-.for f in ${DISTFILES}
-		${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/include/CL
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/CL
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/CL
+	${INSTALL_DATA} ${WRKSRC_clhpp}/cl.hpp \
+		${STAGEDIR}${PREFIX}/include/CL/cl.hpp
+	${INSTALL_DATA} ${WRKSRC_clhpp}/input_cl2.hpp \
+		${STAGEDIR}${PREFIX}/include/CL/cl2.hpp
 
 .include <bsd.port.mk>

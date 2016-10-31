@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: mdnsd
+# REQUIRE: NETWORKING
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mdnsd"
+desc="%%COMMENT%%"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+command_args="em0"
+extra_commands="reload"
+
+: ${mdnsd_enable:="NO"}
+
+load_rc_config $name
+run_rc_command "$1"

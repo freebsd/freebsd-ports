@@ -11,7 +11,7 @@ COMMENT=	Library for Evation's Irman infrared receiver
 
 LICENSE=	LGPL20
 
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

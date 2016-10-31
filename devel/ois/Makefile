@@ -16,7 +16,6 @@ LICENSE=	ZLIB
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf gmake libtool pathfix
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 

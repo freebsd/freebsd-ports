@@ -12,7 +12,7 @@ COMMENT=	Progressive Graphics Format (PGF) library
 
 LICENSE=	LGPL21
 
-USES=		autoreconf dos2unix libtool zip
+USES=		autoreconf dos2unix libtool pathfix zip
 USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	configure.ac

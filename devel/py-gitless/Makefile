@@ -4,6 +4,7 @@
 PORTNAME=	gitless
 PORTVERSION=	0.8.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,8 +14,7 @@ COMMENT=	Version control system built on top of Git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}clint>=0.3.6:devel/py-clint \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clint>=0.3.6:devel/py-clint \
 		${PYTHON_PKGNAMEPREFIX}pygit2>=0.23.0:devel/py-pygit2 \
 		${PYTHON_PKGNAMEPREFIX}sh>=1.11:devel/py-sh \
 		git:devel/git

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	raven
-PORTVERSION=	5.13.0
+PORTVERSION=	5.31.0
 CATEGORIES=	devel python
 #MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,17 @@ COMMENT=	Client for Sentry
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3
+USES=		python
 # either CHEESESHOP or github, whatever is newer
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
 GH_PROJECT=	raven-python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2
+.endif
+
+.include <bsd.port.post.mk>

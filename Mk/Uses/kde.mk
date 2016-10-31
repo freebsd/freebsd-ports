@@ -50,7 +50,7 @@ IGNORE?=	cannot be installed: different KDE versions specified via kde:[${_KDE_S
 IGNORE?=	kde:[${_KDE_SUPPORTED:S/ //g}] needs an argument  #'
 .  endif
 
-_KDE_RELNAME=           KDE${_KDE_VERSION}
+_KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Old KDE desktop.
@@ -80,7 +80,7 @@ KTP_BRANCH?=			stable
 KDE_PREFIX=	${LOCALBASE}
 # ==============================================================================
 
-# === _KDE_DIST HANDLING -- SETTING DEFAULT VALUES =============================
+# === CATEGORIES HANDLING -- SETTING DEFAULT VALUES ============================
 # Doing MASTER_SITES magic based on the category of the port
 _KDE_CATEGORIES_SUPPORTED=	kde-kde4
 .  for cat in ${_KDE_CATEGORIES_SUPPORTED}
@@ -94,15 +94,15 @@ IGNORE?=	cannot be installed: multiple kde-<...> categories specified via CATEGO
 .  endfor
 
 .  if defined(_KDE_CATEGORY)
-# KDE is normally licencensed LGPL 2.0.
+# KDE is normally licensed under the LGPL 2.0.
 LICENSE?=		LGPL20
 
 # Set CPE Vendor Information
-#    As KDE_DIST is set we can assume it is port release by KDE and the vendor
-#    is therefore kde.
+#    As _KDE_CATEGORY is set we can assume it is port release by KDE and the
+#    vendor is therefore kde.
 CPE_VENDOR?=		kde
 
-.    if  ${_KDE_CATEGORY:Mkde-kde4}
+.    if ${_KDE_CATEGORY:Mkde-kde4}
 PORTVERSION?=		${KDE4_VERSION}
 MASTER_SITES?=		KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
 DIST_SUBDIR?=		KDE/${KDE4_VERSION}
@@ -153,7 +153,7 @@ PLIST_SUB+=		PYCACHE="" \
 			PYO_SUFFIX=pyo
 .  endif
 # ==============================================================================
-_USE_KDE4_ALL=  	baloo baloo-widgets baseapps kactivities kate kdelibs \
+_USE_KDE4_ALL=		baloo baloo-widgets baseapps kactivities kate kdelibs \
 			kfilemetadata korundum libkcddb libkcompactdisc \
 			libkdcraw libkdeedu libkdegames libkexiv2 libkipi \
 			libkonq libksane marble nepomuk-core nepomuk-widgets \

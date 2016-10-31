@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge
 
-USES=		gmake libtool autoreconf
+USES=		autoreconf gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

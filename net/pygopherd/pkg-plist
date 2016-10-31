@@ -130,4 +130,8 @@ etc/pygopherd/mime.types
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.py
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyo
+%%PYTHON_SITELIBDIR%%/pygopherd-2.0.15-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pygopherd-2.0.15-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pygopherd-2.0.15-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pygopherd-2.0.15-py%%PYTHON_VER%%.egg-info/top_level.txt
 man/man8/pygopherd.8.gz

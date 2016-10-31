@@ -4,6 +4,7 @@ include/pcap-namedb.h
 include/pcap.h
 include/pcap/bluetooth.h
 include/pcap/bpf.h
+include/pcap/can_socketcan.h
 include/pcap/dlt.h
 include/pcap/export-defs.h
 include/pcap/ipnet.h
@@ -15,8 +16,8 @@ include/pcap/usb.h
 include/pcap/vlan.h
 lib/libpcap.a
 lib/libpcap.so
-lib/libpcap.so.%%PORTVERSION%%
 lib/libpcap.so.1
+lib/libpcap.so.%%PORTVERSION%%
 man/man1/pcap-config.1.gz
 man/man3/pcap.3.gz
 man/man3/pcap_activate.3.gz

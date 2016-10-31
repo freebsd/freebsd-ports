@@ -23,7 +23,7 @@ PORTEXAMPLES=	*
 SUB_FILES+=	pkg-message
 
 do-build:
-	${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${LOCALBASE}/bin/${PYTHON_VERSION}|' \
+	${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|' \
 		${WRKSRC}/codespell.py
 
 do-install:

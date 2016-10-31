@@ -11,14 +11,15 @@ DISTNAME=	adflib-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-DOCSDIR=	${PREFIX}/share/doc/adflib
+USES=		autoreconf libtool pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/adflib
 INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool pathfix tar:bzip2
-PATHFIX_MAKEFILEIN=	Makefile.am
+
+DOCSDIR=	${PREFIX}/share/doc/adflib
 
 OPTIONS_DEFINE=	DOCS
 

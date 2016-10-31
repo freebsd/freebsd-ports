@@ -69,7 +69,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.0
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.19.0
+lib/libpulse.so.0.20.0
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/libalsa-util.so

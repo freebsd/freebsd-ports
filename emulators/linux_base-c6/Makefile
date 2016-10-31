@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 
@@ -20,7 +20,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		elfutils-0.164-2.el6${EXTRACT_SUFX} \
 		findutils-4.4.2-9.el6${EXTRACT_SUFX} \
 		glibc-common-2.12-1.192.el6${EXTRACT_SUFX} \
-		grep-2.20-3.el6_7.1${EXTRACT_SUFX} \
+		grep-2.20-5.el6_8${EXTRACT_SUFX} \
 		info-4.13a-8.el6${EXTRACT_SUFX} \
 		keyutils-1.4-5.el6${EXTRACT_SUFX} \
 		less-436-13.el6${EXTRACT_SUFX} \
@@ -62,49 +62,49 @@ LIB_DISTFILES=	bzip2-libs-1.0.5-7.el6_0${EXTRACT_SUFX} \
 		slang-2.2.1-1.el6${EXTRACT_SUFX} \
 		util-linux-ng-2.17.2-12.24.el6${EXTRACT_SUFX} \
 		zlib-1.2.3-29.el6${EXTRACT_SUFX}
-SRC_DISTFILES=	acl-2.2.49-6.el6.src.rpm:SOURCE \
-		attr-2.4.44-7.el6.src.rpm:SOURCE \
-		basesystem-10.0-4.el6.src.rpm:SOURCE \
-		bash-4.1.2-40.el6.src.rpm:SOURCE \
-		bzip2-1.0.5-7.el6_0.src.rpm:SOURCE \
-		centos-release-6-8.el6.centos.12.3.src.rpm:SOURCE \
-		compat-db-4.6.21-15.el6.src.rpm:SOURCE \
-		compat-gcc-296-2.96-144.el6.src.rpm:SOURCE \
-		compat-gcc-32-3.2.3-69.el6.src.rpm:SOURCE \
-		coreutils-8.4-43.el6.src.rpm:SOURCE \
-		db4-4.7.25-20.el6_7.src.rpm:SOURCE \
-		e2fsprogs-1.41.12-22.el6.src.rpm:SOURCE \
-		elfutils-0.164-2.el6.src.rpm:SOURCE \
-		filesystem-2.4.30-3.el6.src.rpm:SOURCE \
-		findutils-4.4.2-9.el6.src.rpm:SOURCE \
-		freetype-2.3.11-17.el6.src.rpm:SOURCE \
-		gamin-0.1.10-9.el6.src.rpm:SOURCE \
-		gcc-4.4.7-17.el6.src.rpm:SOURCE \
-		gdbm-1.8.0-39.el6.src.rpm:SOURCE \
-		glib2-2.28.8-5.el6.src.rpm:SOURCE \
-		glibc-2.12-1.192.el6.src.rpm:SOURCE \
-		gmp-4.3.1-10.el6.src.rpm:SOURCE \
-		grep-2.20-3.el6_7.1.src.rpm:SOURCE \
-		keyutils-1.4-5.el6.src.rpm:SOURCE \
-		krb5-1.10.3-57.el6.src.rpm:SOURCE \
-		less-436-13.el6.src.rpm:SOURCE \
-		libcap-2.16-5.5.el6.src.rpm:SOURCE \
-		libidn-1.18-2.el6.src.rpm:SOURCE \
-		libselinux-2.0.94-7.el6.src.rpm:SOURCE \
-		libsepol-2.0.41-4.el6.src.rpm:SOURCE \
-		ncurses-5.7-4.20090207.el6.src.rpm:SOURCE \
-		pcre-7.8-7.el6.src.rpm:SOURCE \
-		popt-1.13-7.el6.src.rpm:SOURCE \
-		readline-6.0-4.el6.src.rpm:SOURCE \
-		redhat-lsb-4.0-7.el6.centos.src.rpm:SOURCE \
-		sed-4.2.1-10.el6.src.rpm:SOURCE \
-		setserial-2.17-25.el6.src.rpm:SOURCE \
-		setup-2.8.14-20.el6_4.1.src.rpm:SOURCE \
-		slang-2.2.1-1.el6.src.rpm:SOURCE \
-		texinfo-4.13a-8.el6.src.rpm:SOURCE \
-		util-linux-ng-2.17.2-12.24.el6.src.rpm:SOURCE \
-		which-2.19-6.el6.src.rpm:SOURCE \
-		zlib-1.2.3-29.el6.src.rpm:SOURCE
+SRC_DISTFILES=	acl-2.2.49-6.el6${SRC_SUFX}:SOURCE \
+		attr-2.4.44-7.el6${SRC_SUFX}:SOURCE \
+		basesystem-10.0-4.el6${SRC_SUFX}:SOURCE \
+		bash-4.1.2-40.el6${SRC_SUFX}:SOURCE \
+		bzip2-1.0.5-7.el6_0${SRC_SUFX}:SOURCE \
+		centos-release-6-8.el6.centos.12.3${SRC_SUFX}:SOURCE \
+		compat-db-4.6.21-15.el6${SRC_SUFX}:SOURCE \
+		compat-gcc-296-2.96-144.el6${SRC_SUFX}:SOURCE \
+		compat-gcc-32-3.2.3-69.el6${SRC_SUFX}:SOURCE \
+		coreutils-8.4-43.el6${SRC_SUFX}:SOURCE \
+		db4-4.7.25-20.el6_7${SRC_SUFX}:SOURCE \
+		e2fsprogs-1.41.12-22.el6${SRC_SUFX}:SOURCE \
+		elfutils-0.164-2.el6${SRC_SUFX}:SOURCE \
+		filesystem-2.4.30-3.el6${SRC_SUFX}:SOURCE \
+		findutils-4.4.2-9.el6${SRC_SUFX}:SOURCE \
+		freetype-2.3.11-17.el6${SRC_SUFX}:SOURCE \
+		gamin-0.1.10-9.el6${SRC_SUFX}:SOURCE \
+		gcc-4.4.7-17.el6${SRC_SUFX}:SOURCE \
+		gdbm-1.8.0-39.el6${SRC_SUFX}:SOURCE \
+		glib2-2.28.8-5.el6${SRC_SUFX}:SOURCE \
+		glibc-2.12-1.192.el6${SRC_SUFX}:SOURCE \
+		gmp-4.3.1-10.el6${SRC_SUFX}:SOURCE \
+		grep-2.20-5.el6_8${SRC_SUFX}:SOURCE \
+		keyutils-1.4-5.el6${SRC_SUFX}:SOURCE \
+		krb5-1.10.3-57.el6${SRC_SUFX}:SOURCE \
+		less-436-13.el6${SRC_SUFX}:SOURCE \
+		libcap-2.16-5.5.el6${SRC_SUFX}:SOURCE \
+		libidn-1.18-2.el6${SRC_SUFX}:SOURCE \
+		libselinux-2.0.94-7.el6${SRC_SUFX}:SOURCE \
+		libsepol-2.0.41-4.el6${SRC_SUFX}:SOURCE \
+		ncurses-5.7-4.20090207.el6${SRC_SUFX}:SOURCE \
+		pcre-7.8-7.el6${SRC_SUFX}:SOURCE \
+		popt-1.13-7.el6${SRC_SUFX}:SOURCE \
+		readline-6.0-4.el6${SRC_SUFX}:SOURCE \
+		redhat-lsb-4.0-7.el6.centos${SRC_SUFX}:SOURCE \
+		sed-4.2.1-10.el6${SRC_SUFX}:SOURCE \
+		setserial-2.17-25.el6${SRC_SUFX}:SOURCE \
+		setup-2.8.14-20.el6_4.1${SRC_SUFX}:SOURCE \
+		slang-2.2.1-1.el6${SRC_SUFX}:SOURCE \
+		texinfo-4.13a-8.el6${SRC_SUFX}:SOURCE \
+		util-linux-ng-2.17.2-12.24.el6${SRC_SUFX}:SOURCE \
+		which-2.19-6.el6${SRC_SUFX}:SOURCE \
+		zlib-1.2.3-29.el6${SRC_SUFX}:SOURCE
 
 CONFLICTS=	linux_base-gentoo* linux_base-f10-[0-9]* linux-glib2-*
 PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}

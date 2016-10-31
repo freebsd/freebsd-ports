@@ -16,13 +16,13 @@ COMMENT=	Software package for large-scale nonlinear optimization
 
 LICENSE=	EPL
 
-USES=		blaslapack fortran libtool pkgconfig tar:tgz
+USES=		blaslapack fortran libtool pathfix pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig \
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CXX="${CXX} -B${LOCALBASE}/bin"
 CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
 		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
@@ -33,11 +33,6 @@ OPTIONS_DEFINE=	DEBUG DOCS
 PORTDOCS=	*
 
 DEBUG_CXXFLAGS=	-fomit-frame-pointer
-
-pre-build:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		-e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g'
 
 post-extract:
 	@(${ECHO} "Extracting Metis and Mumps ThirdParty libraries ..." )

@@ -1,0 +1,8 @@
+include/imsg.h
+include/ohash.h
+lib/libopenbsd.a
+lib/libopenbsd.so
+lib/libopenbsd.so.0
+man/man3/imsg_init.3.gz
+man/man3/ohash_init.3.gz
+man/man3/ohash_interval.3.gz

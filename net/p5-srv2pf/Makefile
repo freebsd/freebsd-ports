@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	srv2pf
-PORTVERSION=	20160530
+PORTVERSION=	20161021
 CATEGORIES=	net
 MASTER_SITES=	GH
 PKGNAMEPREFIX=  p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Create and update PF tables from LDAP groups
+
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \

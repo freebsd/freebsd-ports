@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests
 USES=		autoreconf compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=		install-strip
 
 OPTIONS_DEFINE=		DAEMON

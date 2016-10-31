@@ -1,5 +1,5 @@
 PyPy is a fast, compliant alternative implementation of the Python language
-(2.7.1). It has several advantages and distinct features:
+(2.7.10). It has several advantages and distinct features:
 
  - Speed: thanks to its Just-in-Time compiler, Python programs often run faster
           on PyPy.

@@ -18,7 +18,7 @@ BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		compiler:c++11-lib gettext-runtime gmake libtool pkgconfig python:build shebangfix
+USES=		compiler:c++11-lib gettext-runtime gmake libtool pathfix pkgconfig python:build shebangfix
 SHEBANG_FILES=	data/db/android/create_db.py
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
@@ -46,9 +46,6 @@ OPENCC_LIB_DEPENDS=		libopencc.so:chinese/opencc
 
 post-extract-OPENPHRASE_DB-on:
 	@${CP} ${DISTDIR}/${OPENPHRASE_DBFILE} ${WRKSRC}/data/db/open-phrase
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}-1.0.so

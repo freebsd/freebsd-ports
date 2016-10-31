@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.16.9
+PORTVERSION=	3.16.10
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LICENSE=	GPLv2 MIT BSD3CLAUSE
@@ -15,8 +15,8 @@ LICENSE_FILES=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcupsimage.so:print/cups \
 		libdbus-1.so:devel/dbus
-RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
+RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus
 
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
@@ -63,33 +63,31 @@ FILES4FIX=	Makefile.in \
 		ui/devmgr4.py \
 		ui4/devmgr5.py
 
-PYTHON_SITELIBDIR_REL=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
-
 OPTIONS_DEFINE=	DOCS FAX SNMP SCAN X11 XSANE
 OPTIONS_DEFAULT=SNMP SCAN X11
 OPTIONS_SUB=	yes # FAX SCAN X11
 
-FAX_DESC=	PC Send Fax support
-FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
+FAX_DESC=		PC Send Fax support
+FAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab
 FAX_CONFIGURE_ENABLE=	fax-build
 
-SNMP_DESC=	Network/JetDirect support
-SNMP_USES=	ssl
+SNMP_DESC=		Network/JetDirect support
+SNMP_USES=		ssl
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	network-build
 
-SCAN_DESC=	Scanning support
+SCAN_DESC=		Scanning support
 SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
 SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
-X11_DESC=	Graphical User Interface (Qt 4)
-X11_RUN_DEPENDS=${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:devel/py-qt4-dbussupport
+X11_DESC=		Graphical User Interface (Qt 4)
+X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+			${PYTHON_PKGNAMEPREFIX}qt4-dbussupport>=0:devel/py-qt4-dbussupport
 X11_CONFIGURE_ENABLE=	qt4 gui-build
 
-XSANE_DESC=	Install XSane for scanning (requires SCAN)
-XSANE_IMPLIES=	SCAN
+XSANE_DESC=		Install XSane for scanning (requires SCAN)
+XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 DOCS_CONFIGURE_ENABLE=	doc-build

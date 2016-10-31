@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qelectrotech
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.5
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20130928/
+MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20151127/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	vg@FreeBSD.org
@@ -15,14 +14,16 @@ COMMENT=	QElectroTech is application to design electric diagrams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils qmake shared-mime-info
-USE_QT4=	gui moc_build network rcc_build \
-		sql-sqlite3_run svg uic_build xml designer
-USE_GCC=	yes
-INSTALLS_ICONS=	yes
+USES=		compiler:c++11-lib desktop-file-utils qmake shared-mime-info
+USE_QT5=	buildtools_build gui network printsupport \
+		sql-sqlite3 svg xml
 
-CXXFLAGS+=	"-fno-ipa-sra"
-QMAKE_ARGS+=	QMAKE_RPATHDIR="${_GCC_RUNTIME}"
+OPTIONS_DEFINE=       DEBUG
+
+DEBUG_VARS=           BUILD_TYPE=debug
+DEBUG_VARS_OFF=       BUILD_TYPE=release
+
+ALL_TARGET=           ${BUILD_TYPE}-all
 
 pre-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT

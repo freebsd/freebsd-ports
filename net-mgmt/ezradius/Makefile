@@ -3,7 +3,7 @@
 
 PORTNAME=	ezradius
 PORTVERSION=	0.2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.1stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable
@@ -21,14 +21,10 @@ USE_MYSQL=	yes
 USE_PHP=	mysql session xml
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=	70
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && \
-	${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
-	@cd ${WRKSRC} && \
-	${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

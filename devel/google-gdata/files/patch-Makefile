@@ -1,14 +1,5 @@
 --- Makefile.orig	2016-10-16 13:47:41 UTC
 +++ Makefile
-@@ -5,7 +5,7 @@ DEFINES=/d:TRACE
- 
- VERSION=$(shell egrep AssemblyVersion version/AssemblyVersion.cs | egrep -o \([[:digit:]]\.\)+[[:digit:]]+)
- PREFIX=/usr/local
--PKGCONFIGDIR = $(PREFIX)/lib/pkgconfig
-+PKGCONFIGDIR = $(PREFIX)/libdata/pkgconfig
- 
- CORELIBS= \
-   Google.GData.Client.dll \
 @@ -33,7 +33,7 @@ ALLLIBS = \
  
  UNINSTALLLIBS = $(basename $(ALLLIBS))

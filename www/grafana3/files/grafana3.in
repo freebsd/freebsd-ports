@@ -12,7 +12,7 @@
 # grafana3_enable (bool): 	Set to YES to enable grafana
 #				Default: NO
 # grafana3_conf (str):		grafana configration file
-#				Default: ${PREFIX}/etc/grafana.cfg
+#				Default: %%PREFIX%%/etc/grafana.cfg
 # grafana3_user (str):		grafana daemon user
 #				Default: %%GRAFANA_USER%%
 # grafana3_group (str):		grafana daemon group
@@ -22,6 +22,7 @@
 
 name="grafana3"
 rcvar=grafana3_enable
+load_rc_config $name
 
 : ${grafana3_enable:="NO"}
 : ${grafana3_user:="%%GRAFANA_USER%%"}
@@ -44,5 +45,4 @@ grafana_precmd()
     install -o ${grafana3_user} /dev/null ${pidfile}
 }
 
-load_rc_config $name
 run_rc_command "$1"

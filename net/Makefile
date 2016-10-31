@@ -75,6 +75,7 @@
     SUBDIR += cnd
     SUBDIR += coda6_client
     SUBDIR += coda6_server
+    SUBDIR += concourse-fly
     SUBDIR += corkscrew
     SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
@@ -108,7 +109,6 @@
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += dimes
-    SUBDIR += dosdetector
     SUBDIR += dpdk
     SUBDIR += dpinger
     SUBDIR += drawterm
@@ -425,6 +425,7 @@
     SUBDIR += msend
     SUBDIR += mtr
     SUBDIR += mtr-nox11
+    SUBDIR += multicat
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
@@ -1000,6 +1001,7 @@
     SUBDIR += py-oauth2
     SUBDIR += py-openstackclient
     SUBDIR += py-paho-mqtt
+    SUBDIR += py-pamqp
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
@@ -1021,6 +1023,7 @@
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
     SUBDIR += py-qt5-network
+    SUBDIR += py-rabbitpy
     SUBDIR += py-radix
     SUBDIR += py-raet
     SUBDIR += py-rainbowstream

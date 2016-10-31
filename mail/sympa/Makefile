@@ -101,7 +101,7 @@ SYBASE_DESC=	Sybase database
 DB_TYPE:=	${DB_TYPE:tu}
 .  for option in ${OPTIONS_RADIO_DATABASE}
 .    if ${DB_TYPE} == ${option:S,PGSQL,PG,}
-OPTIONS_SET+=	${option}
+OPTIONS_DEFAULT+=	${option}
 .warning You need to replace your DB_TYPE variable in make.conf with mail_sympa_SET+=${option}
 .    endif
 .  endfor

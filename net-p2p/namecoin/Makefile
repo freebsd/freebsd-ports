@@ -9,7 +9,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
 MAINTAINER=	milios@ccsys.com
-COMMENT=	Decentralized, open DNS system and general purpose key/value store
+COMMENT=	Decentralized, open DNS and general purpose key/value store
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,8 +19,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 OPTIONS_DEFINE=	X11 UPNP QRCODES DBUS
 OPTIONS_DEFAULT=	X11 QRCODES
 
-UPNP_DESC=	Build with UPNP support
-QRCODES_DESC=	Build with QR code display
+QRCODES_DESC=	QR code display support
 
 USE_GITHUB=	yes
 

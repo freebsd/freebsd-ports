@@ -11,7 +11,8 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK3 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk30
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu99
 LIBDIR=		${PREFIX}/lib
@@ -24,8 +25,6 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|^\(CFLAGS +=\) -std=c11|\1|' \
 		${WRKSRC}/config.mk
 

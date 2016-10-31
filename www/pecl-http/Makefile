@@ -25,8 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2 \
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent2
 
-PHP_DEFAULT=	7.0
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	56
 USES=		php:ext tar:tgz
 CONFLICTS=	pecl-http[12]*
 

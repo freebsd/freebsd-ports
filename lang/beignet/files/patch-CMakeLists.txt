@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2015-03-16 05:39:34.000000000 +0100
-+++ CMakeLists.txt	2015-03-27 20:29:34.695731000 +0100
-@@ -101,7 +101,7 @@
+--- CMakeLists.txt.orig	2016-08-30 10:06:31 UTC
++++ CMakeLists.txt
+@@ -41,7 +41,6 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINA
+ 
+ INCLUDE (FindPkgConfig)
+ 
+-SET(CMAKE_VERBOSE_MAKEFILE "false")
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMake/")
+ INCLUDE (GNUInstallDirs OPTIONAL)
+ # support old CMake without GNUInstallDirs
+@@ -111,7 +110,7 @@ ELSE (USE_STANDALONE_GBE_COMPILER STREQU
  ENDIF (USE_STANDALONE_GBE_COMPILER STREQUAL "true")
  
  
@@ -9,7 +17,7 @@
  
  # XLib
  Find_Package(X11)
-@@ -190,7 +190,7 @@
+@@ -230,7 +229,7 @@ IF(OCLIcd_FOUND)
      "intel-beignet.icd.in"
      "${ICD_FILE_NAME}"
    )

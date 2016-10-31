@@ -1,4 +1,4 @@
-# Created by: Ralf Nolden <nolden@kde.org>
+# Created by: Marie Loise Nolden <nolden@kde.org>
 # $FreeBSD$
 
 PORTNAME=	qt5-style-plugins

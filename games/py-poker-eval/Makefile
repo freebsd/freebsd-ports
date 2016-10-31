@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpoker-eval.so:games/poker-eval
 
-USES=		autoreconf libtool pkgconfig python:2
+USES=		autoreconf libtool pathfix pkgconfig python:2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PYTHON=""
 

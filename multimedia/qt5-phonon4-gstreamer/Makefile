@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-mo
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-backend//}
 
-USES=		cmake pkgconfig tar:xz
+USES=		cmake:outsource pkgconfig tar:xz
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER1=	yes

@@ -15,7 +15,7 @@ COMMENT=	PECL extension for manipulating bitsets
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=55 56
+IGNORE_WITH_PHP=56
 USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

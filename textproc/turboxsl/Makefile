@@ -16,7 +16,7 @@ LIB_DEPENDS=	libck.so:devel/concurrencykit \
 
 BROKEN_powerpc64=	Does not build
 ONLY_FOR_ARCHS=	amd64 ia64 powerpc64 sparc64
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Litres

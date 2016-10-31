@@ -1100,6 +1100,7 @@
 %%DRUPAL_BASE%%/update.php
 %%DRUPAL_BASE%%/web.config
 %%DRUPAL_BASE%%/xmlrpc.php
+%%WWWDIR%%/modules/update/tests/themes/update_test_admintheme/update_test_admintheme.info
 @dir %%DRUPAL_BASE%%/sites/all/libraries
 @dir %%DRUPAL_BASE%%/sites/default/files
 @unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true

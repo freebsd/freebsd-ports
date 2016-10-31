@@ -5,6 +5,63 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161030:
+  AFFECTS: users of mail/squirrelmail
+  AUTHOR: adamw@FreeBSD.org
+
+  For better php70 support, the squirrelmail port has switched from
+  PEAR database access to PDO. If you are using squirrelmail with
+  a database backend, you'll need to install a corresponding PDO
+  database module, such as php56-pdo_sqlite.
+
+20161030:
+  AFFECTS: users of security/srm
+  AUTHOR: rakuco@FreeBSD.org
+
+  srm has been updated from 1.2.12 to 1.2.15. Since version 1.2.14,
+  srm defaults to using its "simple" mode to overwrite files (one pass
+  writing 0x00 to the files) instead of the 35-pass Gutmann method.
+
+20161029:
+  AFFECTS: users of irc/quassel
+  AUTHOR: woodsb02@freebsd.org
+
+  Quassel is now split into two ports / packages; one for providing
+  the server backend (irc/quassel-core), and one for providing the
+  client front-end (irc/quassel). Alternatively, the irc/quassel
+  port can be built with the MONO option enabled to also install
+  the client and server combined into a single monolithic binary.
+
+20161028:
+  AFFECTS: users of security/openssl and security/openssl-devel
+  AUTHOR: brnrd@freebsd.org
+
+  The shared library versions of OpenSSL have been bumped to avoid
+  issues with ports' and base's OpenSSL not being binary compatible.
+
+  Please rebuild all ports that depend on OpenSSL if you use OpenSSL
+  from ports.
+
+  If you use portmaster:
+        portmaster -r openssl
+  If you use portupgrade:
+        portupgrade -fr security/openssl
+
+20161026:
+  AFFECTS: users of net-p2p/deluge
+  AUTHOR: rm@FreeBSD.org
+
+  Deluge port has been split out onto CLI part and GUI part. So if user
+  only needs deluged, net-p2p/deluge-cli should be installed. For full
+  deluge installation, including GTK+ GUI client, net-p2p/deluge should
+  be installed as a usual.
+
+  Old deluge package should be removed manually first:
+
+  # pkg delete deluge
+
+  After that install preferred deluge package as usual.
+
 20161018:
   AFFECTS: users of x11/xfce4-terminal
   AUTHOR: olivierd@FreeBSD.org

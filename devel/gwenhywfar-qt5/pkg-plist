@@ -1,0 +1,7 @@
+include/gwenhywfar4/gwen-gui-qt5/qt5_gui.hpp
+lib/cmake/gwengui-qt5-%%GWEN_MAJ_MIN_VER%%/gwengui-qt5-config-version.cmake
+lib/cmake/gwengui-qt5-%%GWEN_MAJ_MIN_VER%%/gwengui-qt5-config.cmake
+lib/libgwengui-qt5.so
+lib/libgwengui-qt5.so.0
+lib/libgwengui-qt5.so.0.0.0
+libdata/pkgconfig/gwengui-qt5.pc

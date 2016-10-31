@@ -29,7 +29,6 @@ USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
 		python:-2.7 shebangfix ssl
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/*.py
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes

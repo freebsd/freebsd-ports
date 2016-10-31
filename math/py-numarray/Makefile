@@ -27,10 +27,15 @@ post-configure:
 		${PYTHON_CMD} Include/numarray/genapis.py
 
 post-install:
-	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/numarray -name "*.so" -exec \
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/numarray -name "*.so" -exec \
 		${STRIP_CMD} {} \;
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${STAGEDIR}${DOCSDIR} -xf-
+
+port-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf-
 	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
 

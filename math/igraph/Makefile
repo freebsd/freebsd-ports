@@ -14,17 +14,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool pathfix
 USE_GNOME=	libxml2
 CONFIGURE_ARGS+=	--enable-gmp
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.pre.mk>
 

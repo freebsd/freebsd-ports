@@ -55,4 +55,11 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100077
+post-extract:
+	${CHMOD} +x ${WRKSRC}/lib/unix ${WRKSRC}/lib/windows
+.endif
+
+.include <bsd.port.post.mk>

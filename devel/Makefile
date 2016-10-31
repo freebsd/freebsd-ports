@@ -103,6 +103,7 @@
     SUBDIR += arduino-mk
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
+    SUBDIR += arduino16
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
@@ -741,11 +742,9 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bayesian
     SUBDIR += go-bindata
-    SUBDIR += go-btree
     SUBDIR += go-cobra
     SUBDIR += go-codec
     SUBDIR += go-faker
-    SUBDIR += go-flags
     SUBDIR += go-form
     SUBDIR += go-go.uuid
     SUBDIR += go-goregen
@@ -762,7 +761,6 @@
     SUBDIR += go-shellwords
     SUBDIR += go-slices
     SUBDIR += go-sql-driver
-    SUBDIR += go-termbox
     SUBDIR += go-tools
     SUBDIR += go-uuid
     SUBDIR += go-yaml
@@ -813,6 +811,7 @@
     SUBDIR += gwenhywfar-fox16
     SUBDIR += gwenhywfar-gtk2
     SUBDIR += gwenhywfar-qt4
+    SUBDIR += gwenhywfar-qt5
     SUBDIR += gzstream
     SUBDIR += hachoir-core
     SUBDIR += hachoir-parser
@@ -1169,6 +1168,7 @@
     SUBDIR += libassetml
     SUBDIR += libast
     SUBDIR += libastylej
+    SUBDIR += libastylej-arduino
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
@@ -1240,6 +1240,8 @@
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
+    SUBDIR += libfaketime
+    SUBDIR += libfastcommon
     SUBDIR += libfastjson
     SUBDIR += libffi
     SUBDIR += libfirm
@@ -1321,6 +1323,7 @@
     SUBDIR += libolecf
     SUBDIR += liboobs
     SUBDIR += liboop
+    SUBDIR += libopenbsd
     SUBDIR += libopencm3
     SUBDIR += libopensync
     SUBDIR += libopkele
@@ -2547,6 +2550,7 @@
     SUBDIR += p5-IPC-System-Simple
     SUBDIR += p5-Import-Base
     SUBDIR += p5-Import-Into
+    SUBDIR += p5-Importer
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
     SUBDIR += p5-Inline-C
@@ -4013,8 +4017,10 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
     SUBDIR += py-asyncio
+    SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
     SUBDIR += py-attrs
+    SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
@@ -4038,6 +4044,7 @@
     SUBDIR += py-calendar
     SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
+    SUBDIR += py-castellan
     SUBDIR += py-cclib
     SUBDIR += py-celery
     SUBDIR += py-cffi
@@ -4081,6 +4088,7 @@
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
+    SUBDIR += py-cursive
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
     SUBDIR += py-cycler
@@ -4156,6 +4164,7 @@
     SUBDIR += py-funcsigs
     SUBDIR += py-functools32
     SUBDIR += py-fusefs
+    SUBDIR += py-fusepy
     SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-futurist
@@ -4174,6 +4183,7 @@
     SUBDIR += py-gitless
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
+    SUBDIR += py-glance-store
     SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
@@ -4204,6 +4214,7 @@
     SUBDIR += py-ipython_genutils
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
+    SUBDIR += py-isort
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jaraco.classes
@@ -4309,6 +4320,7 @@
     SUBDIR += py-optik
     SUBDIR += py-option_merge
     SUBDIR += py-orbit
+    SUBDIR += py-ordered-set
     SUBDIR += py-ordereddict
     SUBDIR += py-os-client-config
     SUBDIR += py-osc-lib
@@ -4547,6 +4559,7 @@
     SUBDIR += py-tabulate
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
+    SUBDIR += py-taskflow
     SUBDIR += py-tblib
     SUBDIR += py-tconfpy
     SUBDIR += py-tempora
@@ -4612,12 +4625,14 @@
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
     SUBDIR += py-wcwidth
+    SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
     SUBDIR += py-wheel
     SUBDIR += py-wrapt
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
+    SUBDIR += py-wsme
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg

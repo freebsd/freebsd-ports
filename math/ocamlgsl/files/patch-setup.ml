@@ -1,6 +1,6 @@
---- setup.ml.orig	2014-04-26 21:42:25.000000000 +0200
-+++ setup.ml	2014-04-26 21:42:34.000000000 +0200
-@@ -6679,7 +6679,7 @@
+--- setup.ml.orig	2015-11-18 15:14:41 UTC
++++ setup.ml
+@@ -6717,7 +6717,7 @@ let setup_t =
              {
                 pre_command = [(OASISExpr.EBool true, None)];
                 post_command =
@@ -9,7 +9,7 @@
              };
            build_type = (`Build, "ocamlbuild", Some "0.4");
            build_custom =
-@@ -7856,7 +7856,7 @@
+@@ -7914,7 +7914,7 @@ let setup_t =
                             (OASISExpr.EFlag "docs", true)
                          ];
                        doc_install = [(OASISExpr.EBool true, true)];

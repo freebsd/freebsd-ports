@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

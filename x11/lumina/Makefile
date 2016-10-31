@@ -3,7 +3,7 @@
 
 PORTNAME=	lumina
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-Release-p1
+DISTVERSION=	1.1.0-p1
 PORTEPOCH=	2
 CATEGORIES=	x11
 
@@ -43,7 +43,7 @@ USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
 USE_QT5=	core gui widgets network svg multimedia imageformats \
-		buildtools_build x11extras concurrent
+		buildtools_build x11extras concurrent linguisttools quick
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos

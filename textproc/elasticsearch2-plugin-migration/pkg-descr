@@ -1,0 +1,5 @@
+This plugin will help you to check whether you can upgrade directly to
+Elasticsearch version 5.x, or whether you need to make changes to your data
+before doing so. It will run on Elasticsearch version 2.3.x.
+
+WWW: https://github.com/elastic/elasticsearch-migration

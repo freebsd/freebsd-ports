@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-volz
 GH_PROJECT=	dbus-cplusplus
 
-USES=		autoreconf compiler:c++11-lib gettext gmake libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lib gettext gmake libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
@@ -31,9 +31,6 @@ CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--disable-tests \
 		--disable-examples \
 		--disable-doxygen-docs
-
-post-patch:
-	@${REINPLACE_CMD} 's|^pkgconfigdir = .*|pkgconfigdir=$${prefix}/libdata/pkgconfig|' ${WRKSRC}/Makefile.am
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdbus-c++-1.so

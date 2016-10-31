@@ -1,4 +1,4 @@
---- src/Makefile.am.orig	2016-08-01 13:40:08 UTC
+--- src/Makefile.am.orig	2016-07-07 14:48:43 UTC
 +++ src/Makefile.am
 @@ -5,7 +5,6 @@ vmod_LTLIBRARIES = libvmod_cookie.la \
  	libvmod_header.la \

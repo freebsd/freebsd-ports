@@ -37,10 +37,6 @@ CFLAGS+=	-DNDEBUG
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		glXCreateContext fails during configure
-.endif
-
 .if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install-strip
 .endif

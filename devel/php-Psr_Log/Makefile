@@ -28,8 +28,6 @@ PLIST_FILES=	share/pear/Psr/Log/AbstractLogger.php \
 		share/pear/Psr/Log/NullLogger.php \
 		share/pear/Psr/Log/Test/LoggerInterfaceTest.php
 
-IGNORE_WITH_PHP=52
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pear/Psr/Log/Test
 .for file in ${PLIST_FILES}

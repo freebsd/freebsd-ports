@@ -1063,7 +1063,6 @@ lib/emby-server/dashboard-ui/scripts/wizardagreement.js
 lib/emby-server/dashboard-ui/scripts/wizardcontroller.js
 lib/emby-server/dashboard-ui/scripts/wizardlivetvguide.js
 lib/emby-server/dashboard-ui/scripts/wizardlivetvtuner.js
-lib/emby-server/dashboard-ui/scripts/wizardservice.js
 lib/emby-server/dashboard-ui/scripts/wizardsettings.js
 lib/emby-server/dashboard-ui/scripts/wizardstartpage.js
 lib/emby-server/dashboard-ui/scripts/wizarduserpage.js
@@ -1158,7 +1157,6 @@ lib/emby-server/dashboard-ui/wizardfinish.html
 lib/emby-server/dashboard-ui/wizardlibrary.html
 lib/emby-server/dashboard-ui/wizardlivetvguide.html
 lib/emby-server/dashboard-ui/wizardlivetvtuner.html
-lib/emby-server/dashboard-ui/wizardservice.html
 lib/emby-server/dashboard-ui/wizardsettings.html
 lib/emby-server/dashboard-ui/wizardstart.html
 lib/emby-server/dashboard-ui/wizarduser.html

@@ -5,7 +5,7 @@ PORTNAME=	libpff
 DISTVERSION=	alpha-20120802
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScU9qcG5ScEZKZE0/ \
+MASTER_SITES=	https://github.com/libyal/legacy/raw/master/libpff/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org

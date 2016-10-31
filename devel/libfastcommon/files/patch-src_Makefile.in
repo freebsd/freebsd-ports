@@ -1,0 +1,28 @@
+--- src/Makefile.in.orig	2016-09-08 07:44:31 UTC
++++ src/Makefile.in
+@@ -41,7 +41,7 @@ ALL_LIBS = $(SHARED_LIBS) $(STATIC_LIBS)
+ 
+ all: $(ALL_OBJS) $(ALL_PRGS) $(ALL_LIBS)
+ libfastcommon.so:
+-	$(COMPILE) -o $@ $< -shared $(FAST_SHARED_OBJS) $(LIB_PATH)
++	$(COMPILE) -o $@ $< -shared -Wl,-soname,libfastcommon.so $(FAST_SHARED_OBJS) $(LIB_PATH)
+ libfastcommon.a: $(FAST_STATIC_OBJS)
+ 	ar rcs $@ $(FAST_STATIC_OBJS)
+ .o:
+@@ -53,12 +53,10 @@ libfastcommon.a: $(FAST_STATIC_OBJS)
+ .c.lo:
+ 	$(COMPILE) -c -fPIC -o $@ $<  $(INC_PATH)
+ install:
+-	mkdir -p $(DESTDIR)/usr/$(LIB_VERSION)
+-	mkdir -p $(DESTDIR)/usr/lib
+-	install -m 755 $(SHARED_LIBS) $(DESTDIR)/usr/$(LIB_VERSION)
+-	install -m 755 $(SHARED_LIBS) $(DESTDIR)/usr/lib
+-	mkdir -p $(DESTDIR)/usr/include/fastcommon
+-	install -m 644 $(HEADER_FILES) $(DESTDIR)/usr/include/fastcommon
++	mkdir -p $(DESTDIR)$(PREFIX)/$(LIB_VERSION)
++	install -m 755 $(SHARED_LIBS) $(DESTDIR)$(PREFIX)/$(LIB_VERSION)
++	mkdir -p $(DESTDIR)$(PREFIX)/include/fastcommon
++	install -m 644 $(HEADER_FILES) $(DESTDIR)$(PREFIX)/include/fastcommon
+ clean:
+ 	rm -f $(ALL_OBJS) $(ALL_PRGS) $(ALL_LIBS)
+ 

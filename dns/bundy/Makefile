@@ -36,7 +36,6 @@ USE_OPENSSL=	yes
 USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf
 
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
 		--without-werror \

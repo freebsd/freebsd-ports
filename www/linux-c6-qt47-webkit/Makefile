@@ -18,7 +18,7 @@ USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png xorglibs sqlite3 qt47 qt47-x11
 USE_LINUX_RPM=	yes
-DESCR=  ${.CURDIR}/../../www/webkit-gtk3/pkg-descr # contains no GTK references, reuse
+DESCR=		${.CURDIR}/../../www/webkit-gtk3/pkg-descr # contains no GTK references, reuse
 
 SRC_DISTFILES=	# unretrievable
 

@@ -12,13 +12,10 @@ COMMENT=	High-speed character set detection library
 LIB_DEPENDS=	libmowgli.so:devel/libmowgli
 
 USES=		gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${DESTDIR}$${libdir}/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
