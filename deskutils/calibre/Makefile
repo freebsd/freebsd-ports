@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.70.0
+PORTVERSION=	2.71.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -60,8 +60,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
-USES=		desktop-file-utils gettext-runtime gnome pkgconfig python:2 \
-		shared-mime-info shebangfix ssl tar:xz
+USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
+		python:2 shared-mime-info shebangfix ssl tar:xz
 SHEBANG_FILES=	resources/calibre-portable.sh \
 		src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
@@ -71,8 +71,6 @@ USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_XORG=	xrender xext x11
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \

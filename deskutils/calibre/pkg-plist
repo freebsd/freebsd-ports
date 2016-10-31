@@ -1742,6 +1742,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/edit-redo.png
 %%DATADIR%%/images/edit-select-all.png
 %%DATADIR%%/images/edit-undo.png
+%%DATADIR%%/images/edit_book.png
 %%DATADIR%%/images/edit_input.png
 %%DATADIR%%/images/eject.png
 %%DATADIR%%/images/embed-fonts.png
@@ -1856,6 +1857,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/random.png
 %%DATADIR%%/images/rating.png
 %%DATADIR%%/images/reader.png
+%%DATADIR%%/images/remove_books.png
 %%DATADIR%%/images/reports.png
 %%DATADIR%%/images/resize.png
 %%DATADIR%%/images/rotate-right.png
