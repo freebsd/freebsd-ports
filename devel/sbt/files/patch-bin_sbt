@@ -1,6 +1,6 @@
---- bin/sbt.orig	2013-08-28 10:14:39.000000000 +0200
-+++ bin/sbt	2013-08-28 10:16:02.000000000 +0200
-@@ -63,7 +63,7 @@
+--- bin/sbt.orig	2016-10-28 17:46:00 UTC
++++ bin/sbt
+@@ -62,7 +62,7 @@ cygwinpath() {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
@@ -9,10 +9,10 @@
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
  
  usage() {
-@@ -98,7 +98,7 @@
+@@ -99,7 +99,7 @@ Usage: $script_name [options]
    SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
-   .sbtopts           if this file exists in the current directory, it is
-                      prepended to the runner args
+   .sbtopts           if this file exists in the current directory, its contents
+                      are prepended to the runner args
 -  /etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
 +  ${sbt_home}/etc/sbtopts   if this file exists, it is prepended to the runner args
    -Dkey=val          pass -Dkey=val directly to the java runtime
