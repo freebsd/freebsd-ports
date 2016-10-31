@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	soco
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	SoCo
 GH_PROJECT=	SoCo
 
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
