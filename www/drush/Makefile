@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	8.1.5
-PORTREVISION=	1
+PORTVERSION=	8.1.7
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION}/
 DISTNAME=	drush
