@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mbedtls
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 DISTVERSIONSUFFIX=	-apache
-PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	https://tls.mbed.org/download/
 
@@ -24,6 +23,7 @@ WRKSRC=		${WRKDIR}/mbedtls-${PORTVERSION}
 CONFLICTS_INSTALL=	polarssl13-[0-9]*
 
 post-patch:
+	@${RM} ${WRKSRC}/include/mbedtls/*.orig
 	@${REINPLACE_CMD} \
 		-e 's/PREFIX/NAMEPREFIX/' \
 		-e 's/$$(DESTDIR)/&$$(PREFIX)/' \
