@@ -37,10 +37,10 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-0.7.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.19.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.19.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.19.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.19.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.20.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.20.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.20.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.20.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-%%PORTVERSION%%.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-codegen-%%PORTVERSION%%.jar
@@ -100,9 +100,9 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-2.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.2.5.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.5.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.2.5.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.4.4.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-1.5rc3.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-LICENSE.txt
@@ -160,7 +160,9 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/soapmonitor-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/services/services.list
 %%APPHOME%%/webapps/axis2/WEB-INF/services/version.aar
-@mode 644
+%%APPHOME%%/webapps/axis2/WEB-INF/tags/status.tag
+%%APPHOME%%/webapps/axis2/WEB-INF/views/listFaultyService.jsp
+%%APPHOME%%/webapps/axis2/WEB-INF/views/listServices.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/Login.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/SelectService.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/activateService.jsp
@@ -184,7 +186,6 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewServiceContext.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewServiceGroupContext.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/admin/viewphases.jsp
-@mode
 @sample %%APPHOME%%/webapps/axis2/WEB-INF/web.xml.sample
 %%APPHOME%%/webapps/axis2/axis2-web/Error/AuthError.html
 %%APPHOME%%/webapps/axis2/axis2-web/Error/GenError.html
@@ -199,9 +200,6 @@
 %%APPHOME%%/webapps/axis2/axis2-web/images/axis.jpg
 %%APPHOME%%/webapps/axis2/axis2-web/images/axis_l.jpg
 %%APPHOME%%/webapps/axis2/axis2-web/index.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listFaultyService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listGroupService.jsp
-%%APPHOME%%/webapps/axis2/axis2-web/listServices.jsp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/StockQuote.xsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/databinding/StockQuoteService.wsdl
