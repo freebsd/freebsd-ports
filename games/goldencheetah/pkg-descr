@@ -1,0 +1,14 @@
+Golden Cheetah is a cycling performance software. It imports ride data
+downloaded from various devices or exported from other programs,
+including TrainingPeaks WKO+ and the manufacturers' software for the
+Ergomo, Garmin, Polar, PowerTap, and SRM devices. It provides a rich
+set of analysis tools, including a critical power graph, BikeScore
+calculation, histogram analysis, a best interval finder, and a pedal
+force versus pedal velocity chart, to name just a few.
+
+KML file support will be missing until libkml 1.3 becomes available.
+
+Connecting with Strava has been made impossible by Strava's own API
+Agreement.
+
+WWW: http://goldencheetah.org/
