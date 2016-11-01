@@ -4,7 +4,7 @@
 %%APP%%bin/nghttp
 %%APP%%bin/nghttpd
 %%APP%%bin/nghttpx
-@sample etc/nghttpx/nghttpx.conf.sample etc/nghttpx/nghttpx.conf
+@sample etc/nghttpx/nghttpx.conf.sample
 %%ASIO%%include/nghttp2/asio_http2.h
 %%ASIO%%include/nghttp2/asio_http2_client.h
 %%ASIO%%include/nghttp2/asio_http2_server.h
