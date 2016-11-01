@@ -362,6 +362,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/changegroups.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/requirements.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/revlogs.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/internals/wireprotocol.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/merge-tools.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/multirevs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/patterns.txt
@@ -501,6 +502,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/posix.py
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/profiling.py
+%%PYTHON_SITELIBDIR%%/mercurial/profiling.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/profiling.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/progress.py
 %%PYTHON_SITELIBDIR%%/mercurial/progress.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/progress.pyo
