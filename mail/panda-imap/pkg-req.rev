@@ -1,0 +1,23 @@
+#! /bin/sh
+# anders@fix.no, 2001-06-19
+
+if [ ! -f "$1" ]
+then
+	echo "Your installation of the cclient port is outdated. Please delete it before"
+	echo "continuing."
+	exit 1
+fi
+
+portver=`grep "^#define CCLIENT_PORTVERSION" $1 | awk '{print $3}' \
+| sed s/\"//g`
+
+if [ "$portver" = "$2" ]
+then
+	echo "Your imap-uw port matches the version of your cclient port. Fine."
+	exit 0
+else
+	echo "Your cclient port (PORTVERSION $portver) does not match the version of imap-uw"
+	echo "(PORTVERSION $2) you are trying to install. Please delete your"
+	echo "installation of the cclient port before continuing."
+	exit 1
+fi
