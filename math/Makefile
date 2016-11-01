@@ -306,7 +306,6 @@
     SUBDIR += octave
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
-    SUBDIR += octave-forge-ad
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
@@ -363,7 +362,6 @@
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-octclip
-    SUBDIR += octave-forge-octgpr
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-odepkg
@@ -386,7 +384,6 @@
     SUBDIR += octave-forge-sparsersb
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
-    SUBDIR += octave-forge-spline-gcvspl
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-statistics
     SUBDIR += octave-forge-stk
@@ -398,7 +395,6 @@
     SUBDIR += octave-forge-tisean
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
-    SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += ogdf
@@ -621,7 +617,6 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
-    SUBDIR += py-pyfst
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
     SUBDIR += py-pysparse

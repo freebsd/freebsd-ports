@@ -8775,3 +8775,18 @@ net/dosdetector||2016-10-23|Has expired: No maintainer activity in over a decade
 devel/go-btree||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
 devel/go-flags||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
 devel/go-termbox||2016-10-26|The only consumer of this port (peco) started to bundle a snapshot
+math/octave-forge-octgpr||2016-11-01|Has expired: Broken for more than 6 months
+math/octave-forge-spline-gcvspl||2016-11-01|Has expired: Broken for more than 6 months
+www/pear-Services_SharedBook||2016-11-01|Has expired: Broken for more than 6 months
+devel/py-snackwich||2016-11-01|Has expired: Depends on broken and expiring devel/py-snack
+math/octave-forge-ad||2016-11-01|Has expired: Broken for more than 6 months
+math/octave-forge-xraylib||2016-11-01|Has expired: Broken for more than 6 months
+x11-toolkits/py-traitsbackendwx||2016-11-01|Has expired: Broken for more than 6 months
+x11-toolkits/py-traitsgui||2016-11-01|Has expired: Depends on broken and expiring x11-toolkits/py-traitsbackendwx
+security/lsh||2016-11-01|Has expired: Broken for more than 6 months
+devel/py-snack||2016-11-01|Has expired: Broken for more than 6 months
+security/massh||2016-11-01|Has expired: Broken for more than 6 months
+www/hydra||2016-11-01|Has expired: Broken for more than 6 months
+math/py-pyfst||2016-11-01|Has expired: Broken for more than 6 months
+archivers/ruby-zip||2016-11-01|Has expired: Broken will all supported versions of Ruby
+devel/ruby-langscan||2016-11-01|Has expired: Broken will all supported versions of Ruby
