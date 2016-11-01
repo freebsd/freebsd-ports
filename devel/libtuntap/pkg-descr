@@ -1,0 +1,9 @@
+libtuntap is a library for configuring TUN or TAP devices in a portable manner.
+
+TUN and TAP are virtual networking devices which allow
+userland applications to receive packets sent to it.
+
+The userland applications can also send their own packets to the devices
+and they will be forwarded to the kernel.
+
+WWW: https://github.com/LaKabane/libtuntap

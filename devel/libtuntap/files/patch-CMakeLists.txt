@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2016-10-29 14:49:34 UTC
++++ CMakeLists.txt
+@@ -124,6 +124,11 @@ if(UNIX)
+ 	install(TARGETS tuntap DESTINATION lib)
+ 	install(TARGETS tuntap-static DESTINATION lib)
+ 	install(FILES tuntap.h DESTINATION include)
++	if(ENABLE_CXX)
++		install(TARGETS tuntap++ DESTINATION lib)
++		install(TARGETS tuntap++-static DESTINATION lib)
++		install(FILES bindings/cpp/tuntap++.hh DESTINATION include)
++	endif(ENABLE_CXX)
+ endif(UNIX)
+ 
+ include(CMakeLists.txt.local OPTIONAL)
