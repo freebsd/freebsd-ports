@@ -27,10 +27,12 @@ that system. Example:
 
 Python notes:
 
-If you have Python 3.x as the default, please set
+Python 3.x support is BETA. Most modules should work
+and important ones have been audited and tested.
+If you have issues with Python 3, please set
 ansible_python_interpreter=%%LOCALBASE%%/bin/python2
 
-Ansible 2 requires that lang/python27 port is built
+Ansible 2 requires that lang/python port is built
 with SEM option enabled, which is the default
 
 ===============================================================================
