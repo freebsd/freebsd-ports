@@ -2,7 +2,7 @@ bin/senna
 bin/senna-cfg
 bin/sennachk
 include/senna/senna.h
-lib/pkgconfig/senna.pc
+libdata/pkgconfig/senna.pc
 lib/libsenna.a
 lib/libsenna.so
 lib/libsenna.so.0

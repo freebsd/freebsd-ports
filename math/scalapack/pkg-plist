@@ -11,7 +11,7 @@ lib/cmake/scalapack-%%PORTVERSION%%/scalapack-targets.cmake
 lib/libscalapack.a
 lib/libscalapack.so
 lib/libscalapack.so.%%SVERSION%%
-lib/pkgconfig/scalapack.pc
+libdata/pkgconfig/scalapack.pc
 man/manl/cdbtf2.l.gz
 man/manl/cdbtrf.l.gz
 man/manl/cdttrf.l.gz

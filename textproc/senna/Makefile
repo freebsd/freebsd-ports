@@ -2,7 +2,7 @@
 
 PORTNAME=	senna
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SFJP/senna/46945
@@ -14,7 +14,7 @@ BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	YES
 USE_GCC=	any
-USES=		gmake libtool
+USES=		gmake libtool pathfix
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
