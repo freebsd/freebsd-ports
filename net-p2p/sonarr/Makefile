@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarr
-PORTVERSION=	2.0.0.4326
+PORTVERSION=	2.0.0.4374
 PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
@@ -15,7 +15,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	mono>0:lang/mono \
 		mediainfo>0:multimedia/mediainfo \
 		sqlite3>0:databases/sqlite3
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgdiplus.so:x11-toolkits/libgdiplus
 
 USE_RC_SUBR=	sonarr
 
