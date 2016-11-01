@@ -108,7 +108,7 @@ lib/cmake/uhd/UHDConfigVersion.cmake
 lib/libuhd.so
 lib/libuhd.so.003
 lib/libuhd.so.003.009
-lib/pkgconfig/uhd.pc
+libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/LICENSE
 %%DOXYGEN%%%%DOCSDIR%%/README.md
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/Ettus_Logo.png

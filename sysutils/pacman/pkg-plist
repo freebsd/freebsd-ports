@@ -22,7 +22,7 @@ lib/libalpm.a
 lib/libalpm.so
 lib/libalpm.so.9
 lib/libalpm.so.9.0.0
-lib/pkgconfig/libalpm.pc
+libdata/pkgconfig/libalpm.pc
 man/man1/makepkg-template.1.gz
 man/man3/libalpm.3.gz
 man/man5/PKGBUILD.5.gz
