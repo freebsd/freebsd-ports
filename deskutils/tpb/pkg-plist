@@ -1,7 +1,7 @@
 bin/tpb
 etc/tpbrc.default
 man/man1/tpb.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/callback_example.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback_example.sh
 %%NLS%%share/locale/da/LC_MESSAGES/tpb.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tpb.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tpb.mo
