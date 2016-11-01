@@ -983,6 +983,7 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-vagrant-bhyve
     SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-winrm-fs
