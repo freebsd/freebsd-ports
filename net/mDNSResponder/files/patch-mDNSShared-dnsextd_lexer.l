@@ -1,6 +1,6 @@
---- mDNSShared/dnsextd_lexer.l.orig	2016-07-01 01:07:18 UTC
+--- mDNSShared/dnsextd_lexer.l.orig	2016-03-11 09:47:07 UTC
 +++ mDNSShared/dnsextd_lexer.l
-@@ -23,6 +23,13 @@
+@@ -23,6 +23,12 @@
  
  extern YYSTYPE yylval;
  
@@ -9,7 +9,6 @@
 +int yylineno = 1;
 +#endif
 +#endif
-+
 +
  #define YY_NO_INPUT 1
  int  yylex(void);
