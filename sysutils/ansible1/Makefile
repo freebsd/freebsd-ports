@@ -10,6 +10,8 @@ CONFLICTS=	ansible-*
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+USES=	cpe python:2 shebangfix
+
 SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py
 
 EXTRA_PATCHES=
