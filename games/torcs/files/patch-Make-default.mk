@@ -1,6 +1,6 @@
---- Make-default.mk.orig	2010-10-17 19:26:58.000000000 +0200
-+++ Make-default.mk	2010-10-17 19:27:26.000000000 +0200
-@@ -134,7 +134,7 @@
+--- Make-default.mk.orig	2013-01-12 14:25:08 UTC
++++ Make-default.mk
+@@ -134,7 +134,7 @@ include .depend
  endif
  
  .depend:
