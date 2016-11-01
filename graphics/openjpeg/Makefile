@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openjpeg
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -23,8 +24,6 @@ USES=		cmake cpe pkgconfig
 PLIST_SUB=	VER=${PORTVERSION:R}
 
 GH_ACCOUNT=	uclouvain
-#GH_TAGNAME=	version.${PORTVERSION:R}
-GH_TAGNAME=	9c911c0
 USE_GITHUB=	yes
 
 post-patch:

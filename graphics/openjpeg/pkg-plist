@@ -5,7 +5,7 @@ include/openjpeg-%%VER%%/openjpeg.h
 include/openjpeg-%%VER%%/opj_config.h
 include/openjpeg-%%VER%%/opj_stdint.h
 lib/libopenjp2.so
-lib/libopenjp2.so.%%VER%%.0
+lib/libopenjp2.so.%%VER%%.2
 lib/libopenjp2.so.7
 lib/openjpeg-%%VER%%/OpenJPEGConfig.cmake
 lib/openjpeg-%%VER%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
