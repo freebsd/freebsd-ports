@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Aug 19 17:07:30 2006
-+++ Makefile	Mon Oct  9 22:08:30 2006
-@@ -78,7 +78,7 @@
+--- Makefile.orig	2008-09-03 21:49:41 UTC
++++ Makefile
+@@ -71,7 +71,7 @@ SUBDIRS		= src
  
  DATADIR 	= .
  
