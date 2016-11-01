@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -40,10 +40,9 @@ JPEG_CONFIGURE_WITH=	jpeg
 JPEG_CPPFLAGS=		-I${LOCALBASE}/include
 JPEG_LDFLAGS=		-L${LOCALBASE}/lib
 
-PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
 PIXBUF_USES=		gettext
-PIXBUF_USE=		gnome=glib20
+PIXBUF_USE=		gnome=glib20,gdkpixbuf2
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
