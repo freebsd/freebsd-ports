@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=		aseprite
-PORTVERSION=		1.1.7
+PORTVERSION=		1.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=		graphics
 
 MAINTAINER=		yuri@rawbw.com
 COMMENT=		Animated sprite editor & pixel art tool
 
-LICENSE=		GPLv2
-LICENSE_FILE=		${WRKSRC}/LICENSE.txt
+LICENSE=		EULA
+LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR ASEPRITE
+LICENSE_FILE=		${WRKSRC}/EULA.txt
+LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:x11/pixman:extract
 LIB_DEPENDS=		libfreetype.so:print/freetype2 \
@@ -28,14 +30,15 @@ OPTIONS_DEFAULT=	WEBP
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USE_GITHUB=		yes
-GH_TUPLE=		aseprite:clip:96ed960:clip/src/clip
+GH_TUPLE=		aseprite:clip:3e9533e:clip/src/clip
 GH_TUPLE+=		aseprite:flic:65a6072:flic/src/flic
 GH_TUPLE+=		aseprite:gtest:d63c625:gtest/third_party/gtest
 GH_TUPLE+=		aseprite:simpleini:0687587:simpleini/third_party/simpleini
-GH_TUPLE+=		aseprite:duktape:0de771c:duk/third_party/duktape
-GH_TUPLE+=		dacap:observable:89c9740:observable/src/observable
+GH_TUPLE+=		aseprite:duktape:0de771c:duktape/third_party/duktape
+GH_TUPLE+=		aseprite:undo:f39b188:undo/src/undo
+GH_TUPLE+=		dacap:observable:83dfe27:observable/src/observable
 
-USES=			cmake:outsource compiler:c++11-lib jpeg pkgconfig
+USES=			cmake:outsource compiler:c++11-lang jpeg ninja pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
 
 CMAKE_ARGS+=		-DUSE_SHARED_ALLEGRO4=1
