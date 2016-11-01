@@ -2,7 +2,7 @@
 
 PORTNAME=	uhd
 PORTVERSION=	3.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.ettus.com/binaries/images/
 DISTFILES=	${IMAGE_FILE}
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		orcc:devel/orc \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
 
-USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7 pathfix
+USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #MAKE_JOBS_UNSAFE=	yes
@@ -48,6 +48,11 @@ BUILD_DEPENDS+=	doxygen:devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 HAVEDOCS=	YES
 .endif
+
+post-patch:
+# USES=pathfix handles LIBRARY_INSTALL_DIR but not LIBRARY_DIR
+	@${REINPLACE_CMD} '/pkgconfig/s|LIBRARY_DIR}|CMAKE_INSTALL_PREFIX}/libdata|' \
+		${PATCH_WRKSRC}/host/CMakeLists.txt
 
 do-install:
 # install host component

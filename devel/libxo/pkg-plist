@@ -19,7 +19,7 @@ lib/libxo/encoder/libenc_test.so
 lib/libxo/encoder/libenc_test.so.0
 lib/libxo/encoder/libenc_test.so.0.0.0
 lib/libxo/encoder/test.enc
-lib/pkgconfig/libxo.pc
+libdata/pkgconfig/libxo.pc
 man/man1/xo.1.gz
 man/man1/xohtml.1.gz
 man/man1/xolint.1.gz
