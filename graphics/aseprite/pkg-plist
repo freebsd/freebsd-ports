@@ -32,6 +32,8 @@ bin/aseprite
 %%DATADIR%%/data/palettes/cpc-boy.gpl
 %%DATADIR%%/data/palettes/db16.gpl
 %%DATADIR%%/data/palettes/db32.gpl
+%%DATADIR%%/data/palettes/edg16.gpl
+%%DATADIR%%/data/palettes/edg32.gpl
 %%DATADIR%%/data/palettes/eroge-copper.gpl
 %%DATADIR%%/data/palettes/gameboy-color-type1.gpl
 %%DATADIR%%/data/palettes/gameboy.gpl
