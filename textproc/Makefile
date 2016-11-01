@@ -1481,6 +1481,7 @@
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
+    SUBDIR += rubygem-ruby_expect
     SUBDIR += rubygem-ruby-augeas
     SUBDIR += rubygem-ruby-xslt
     SUBDIR += rubygem-rubypants
