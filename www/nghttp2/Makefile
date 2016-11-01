@@ -12,13 +12,12 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	APP SPDY ASIO DOCS HPACK
+OPTIONS_DEFINE=	APP ASIO DOCS HPACK SPDY
 OPTIONS_DEFAULT=APP HPACK SPDY
 OPTIONS_SUB=	yes
-
-USE_RC_SUBR=	nghttpx
-
-USE_GITHUB=	yes
+APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
+SPDY_DESC=	Enable SPDY in h2load and nghttpx
+SPDY_IMPLIES=	APP
 
 CONFIGURE_ARGS=	--disable-python-bindings \
 		--disable-examples
@@ -30,32 +29,29 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	nghttpx
 USES=		autoreconf compiler:c++11-lib gmake libtool localbase pathfix pkgconfig ssl
 
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
 
-APP_DESC=		Build nghttp, nghttpd, nghttpx, h2load
-APP_BUILD_DEPENDS=	libev>=4.15:devel/libev
-APP_LIB_DEPENDS=	libev.so:devel/libev
-APP_CONFIGURE_ENABLE=	app
-APP_USE=		GNOME=libxml2
-APP_CONFIGURE_OFF=	--without-libxml2
+USE_GITHUB=	yes
 
+APP_BUILD_DEPENDS=	libev>=4.15:devel/libev
+APP_CONFIGURE_OFF=	--without-libxml2
+APP_CONFIGURE_ENABLE=	app
+APP_LIB_DEPENDS=	libev.so:devel/libev
+APP_USE=		GNOME=libxml2
 ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
-
 HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
-
-SPDY_DESC=		Enable SPDY in nghttpx and h2load
 SPDY_BUILD_DEPENDS=	spdylay>=1.3.0:www/spdylay
-SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
-SPDY_IMPLIES=		APP
 SPDY_CONFIGURE_WITH=	spdylay
+SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
 .include <bsd.port.pre.mk>
 
