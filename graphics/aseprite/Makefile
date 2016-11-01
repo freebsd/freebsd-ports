@@ -22,8 +22,6 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libcurl.so:ftp/curl \
 			libtinyxml.so:textproc/tinyxml
 
-BROKEN_FreeBSD_9=	Fails due to compiler issues
-
 OPTIONS_DEFINE=		WEBP
 OPTIONS_DEFAULT=	WEBP
 
@@ -38,7 +36,7 @@ GH_TUPLE+=		aseprite:duktape:0de771c:duktape/third_party/duktape
 GH_TUPLE+=		aseprite:undo:f39b188:undo/src/undo
 GH_TUPLE+=		dacap:observable:83dfe27:observable/src/observable
 
-USES=			cmake:outsource compiler:c++11-lang jpeg ninja pkgconfig
+USES=			cmake:outsource compiler:c++11-lib jpeg ninja pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
 
 CMAKE_ARGS+=		-DUSE_SHARED_ALLEGRO4=1
@@ -56,6 +54,7 @@ CMAKE_ARGS+=		-DFREETYPE_INCLUDE_DIR=${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
+CXXFLAGS+=		-D_GLIBCXX_USE_C99 # XXX ports/193528
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
