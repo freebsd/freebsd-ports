@@ -1258,6 +1258,7 @@
     SUBDIR += zetaback
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
+    SUBDIR += zfs-snap-diff
     SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zfs-stats
