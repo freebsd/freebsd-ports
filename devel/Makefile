@@ -5055,6 +5055,7 @@
     SUBDIR += rubygem-forwardable-extended
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
+    SUBDIR += rubygem-gem-compare
     SUBDIR += rubygem-gemcutter
     SUBDIR += rubygem-gemnasium-gitlab-service
     SUBDIR += rubygem-gemnasium-parser
