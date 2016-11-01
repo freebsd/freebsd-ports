@@ -1404,6 +1404,7 @@
     SUBDIR += libtifiles2
     SUBDIR += libtool
     SUBDIR += libtpl
+    SUBDIR += libtuntap
     SUBDIR += libublio
     SUBDIR += libukcprog
     SUBDIR += libunicode
