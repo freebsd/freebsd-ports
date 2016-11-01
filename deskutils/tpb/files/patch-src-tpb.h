@@ -1,6 +1,6 @@
---- src/tpb.h.orig	Mon Jun 13 14:32:31 2005
-+++ src/tpb.h	Mon Jun 13 14:44:47 2005
-@@ -70,6 +70,7 @@
+--- src/tpb.h.orig	2005-07-18 14:15:59 UTC
++++ src/tpb.h
+@@ -70,6 +70,7 @@ typedef struct {
    unsigned int ac_state;            /* ac connected */
    unsigned int powermgt_ac;         /* power management mode ac */
    unsigned int powermgt_battery;    /* power management mode battery */

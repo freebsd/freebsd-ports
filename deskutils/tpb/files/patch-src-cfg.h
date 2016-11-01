@@ -1,6 +1,6 @@
---- src/cfg.h.orig	Mon May 30 00:06:16 2005
-+++ src/cfg.h	Mon May 30 00:06:32 2005
-@@ -67,7 +67,7 @@
+--- src/cfg.h.orig	2005-07-18 14:15:59 UTC
++++ src/cfg.h
+@@ -74,7 +74,7 @@ enum mode {MODE_COMMENT, MODE_INDENT, MO
  #ifdef SYSCONFDIR
  #define GLOBAL_CONFIG_FILE SYSCONFDIR "/tpbrc"
  #else /* SYSCONFDIR */
