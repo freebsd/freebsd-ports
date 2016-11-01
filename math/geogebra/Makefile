@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.270.0
+PORTVERSION=	5.0.286.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
-DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION}
+DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION:S/./-/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
