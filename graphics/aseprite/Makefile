@@ -20,8 +20,6 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libcurl.so:ftp/curl \
 			libtinyxml.so:textproc/tinyxml
 
-BROKEN_FreeBSD_9=	Fails due to compiler issues
-
 OPTIONS_DEFINE=		WEBP
 OPTIONS_DEFAULT=	WEBP
 
@@ -53,6 +51,7 @@ CMAKE_ARGS+=		-DFREETYPE_INCLUDE_DIR=${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
+CXXFLAGS+=		-D_GLIBCXX_USE_C99 # XXX ports/193528
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
