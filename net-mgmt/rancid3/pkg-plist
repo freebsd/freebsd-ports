@@ -1,5 +1,6 @@
 bin/rancid-cvs
 bin/rancid-run
+etc/periodic/hourly/200.rancid
 lib/rancid/acos.pm
 lib/rancid/arbor.pm
 lib/rancid/ciscowlc.pm
