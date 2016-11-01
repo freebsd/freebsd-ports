@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jun  9 01:19:36 2005
-+++ Makefile.in	Thu Jun  9 01:19:52 2005
-@@ -92,7 +92,7 @@
+--- Makefile.in.orig	2005-07-25 08:55:38 UTC
++++ Makefile.in
+@@ -92,7 +92,7 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIB
  USE_NLS = @USE_NLS@
  VERSION = @VERSION@
  

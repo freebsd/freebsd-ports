@@ -1,6 +1,6 @@
---- src/cfg.c.orig	2009-11-12 09:26:15.000000000 +0100
-+++ src/cfg.c	2009-11-12 08:33:55.000000000 +0100
-@@ -1548,12 +1548,14 @@
+--- src/cfg.c.orig	2005-07-18 14:15:59 UTC
++++ src/cfg.c
+@@ -1548,12 +1548,14 @@ void find_nvram(config *cfg) /* {{{ */
      _exit(1);
    }
    if((fdsc=open(cfg->nvram, O_RDONLY|O_NONBLOCK) == -1) && errno == ENOENT) {
