@@ -5057,6 +5057,7 @@
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
     SUBDIR += rubygem-gemnasium-gitlab-service
+    SUBDIR += rubygem-gemnasium-parser
     SUBDIR += rubygem-gems
     SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-generator_spec-rails4
