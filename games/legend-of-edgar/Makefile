@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edgar
-DISTVERSION=	1.24
+DISTVERSION=	1.25
 CATEGORIES=	games
 PKGNAMEPREFIX=	legend-of-
 
