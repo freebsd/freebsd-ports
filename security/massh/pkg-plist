@@ -1,8 +1,0 @@
-bin/massh
-lib/libmassh.sh
-@sample etc/massh.conf.sample
-man/man1/massh.1.gz
-@dir %%MASSHDIR%%/pull
-@dir %%MASSHDIR%%/push
-@dir %%MASSHDIR%%/scripts
-@dir %%MASSHDIR%%
