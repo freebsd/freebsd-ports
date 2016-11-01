@@ -79,6 +79,7 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
+    SUBDIR += amath
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc

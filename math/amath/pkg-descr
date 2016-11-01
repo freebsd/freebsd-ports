@@ -1,0 +1,7 @@
+Features a case sensitive command line interface, internal IEEE 754
+calculations with 15 significant digits, calculations with real and
+complex numbers, variables and user defined functions, logarithmic
+and exponential functions, trigonometric and hyperbolic function
+and selected mathematical constants and rounding functions.
+
+WWW: https://gitlab.com/rnger/amath/
