@@ -1,0 +1,4 @@
+A Vagrant plugin which automatically installs the host's VirtualBox Guest
+Additions on the guest system.
+
+WWW: https://github.com/dotless-de/vagrant-vbguest
