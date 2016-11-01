@@ -1,9 +1,0 @@
-Massh makes it possible to perform the following on hundreds, or even
-thousands of hosts in a parallelized fashion:
-
-    * Run Remote Commands
-    * Push and Execute Pre-Written Scripts
-    * Push Files
-    * Pull Files
-
-WWW: http://m.a.tt/er/massh/

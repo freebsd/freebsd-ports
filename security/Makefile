@@ -365,7 +365,6 @@
     SUBDIR += lockdown
     SUBDIR += log2timeline
     SUBDIR += logcheck
-    SUBDIR += lsh
     SUBDIR += luasec
     SUBDIR += lynis
     SUBDIR += mac-robber
@@ -374,7 +373,6 @@
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
     SUBDIR += masscan
-    SUBDIR += massh
     SUBDIR += matrixssl
     SUBDIR += mbedtls
     SUBDIR += mcrypt

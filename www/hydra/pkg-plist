@@ -1,6 +1,0 @@
-bin/boa_indexer
-bin/hydra
-bin/webindex.pl
-@sample %%ETCDIR%%/hydra.conf.sample
-@sample %%ETCDIR%%/mime.types.sample
-@dir(www,www) %%LOGDIR%%

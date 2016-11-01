@@ -4536,8 +4536,6 @@
     SUBDIR += py-sip
     SUBDIR += py-six
     SUBDIR += py-smmap
-    SUBDIR += py-snack
-    SUBDIR += py-snackwich
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
     SUBDIR += py-spark
@@ -4875,7 +4873,6 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-korundum
     SUBDIR += ruby-krossruby
-    SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
