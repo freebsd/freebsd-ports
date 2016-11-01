@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-10-29 06:01:08 UTC
++++ CMakeLists.txt
+@@ -80,7 +80,7 @@ elseif(UNIX) # Linux, BSD etc
+         set(SHAREDIR "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}")
+         set(BINDIR "${CMAKE_INSTALL_PREFIX}/bin")
+         set(DOCDIR "${CMAKE_INSTALL_PREFIX}/share/doc/${PROJECT_NAME}")
+-        set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
++        set(MANDIR "${CMAKE_INSTALL_PREFIX}/man")
+         set(EXAMPLE_CONF_DIR ${DOCDIR})
+         set(XDG_APPS_DIR "${CMAKE_INSTALL_PREFIX}/share/applications")
+         set(APPDATADIR "${CMAKE_INSTALL_PREFIX}/share/appdata")
