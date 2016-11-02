@@ -15,9 +15,9 @@ COMMENT=	SSL and crypto library (1.1.x)
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	libressl-[0-9]* \
-		libressl-devel-[0-9]* \
-		openssl-[0-9]*
+CONFLICTS_INSTALL=	libressl-[0-9]* \
+			libressl-devel-[0-9]* \
+			openssl-[0-9]*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
