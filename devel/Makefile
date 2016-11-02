@@ -4571,6 +4571,7 @@
     SUBDIR += py-testtools
     SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
+    SUBDIR += py-thriftpy
     SUBDIR += py-timelib
     SUBDIR += py-tinyarray
     SUBDIR += py-tipper
