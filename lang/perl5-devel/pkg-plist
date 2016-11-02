@@ -555,7 +555,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/as.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/az.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/be.pl
-%%PRIV_LIB%%/Unicode/Collate/Locale/bg.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/bn.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ca.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/cs.pl
@@ -603,7 +602,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/pa.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/pl.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ro.pl
-%%PRIV_LIB%%/Unicode/Collate/Locale/ru.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/sa.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/se.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/si.pl
@@ -620,6 +618,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/tn.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/to.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/tr.pl
+%%PRIV_LIB%%/Unicode/Collate/Locale/ug_cyrl.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/uk.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ur.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/vi.pl
