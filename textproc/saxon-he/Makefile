@@ -7,7 +7,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	SF/saxon/Saxon-HE/${PORTVERSION:R:R}
 DISTNAME=	SaxonHE${PORTVERSION:S,.,-,g}J
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
 LICENSE=	MPL
