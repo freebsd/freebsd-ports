@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: glance_registry
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable glance-registry:
+#
+# glance_registry_enable (bool):	Set it to "YES" to enable glance-registry.
+# 					Default is "NO".
+
+. /etc/rc.subr
+
+name="glance_registry"
+rcvar=glance_registry_enable
+
+extra_commands="reload shutdown status"
+reload_cmd="glance-control registry reload"
+shutdown_cmd="glance-control registry shutdown"
+start_cmd="glance-control registry start"
+status_cmd="glance-control registry status"
+stop_cmd="glance-control registry stop"
+
+required_files=%%PREFIX%%/etc/glance/glance-registry.conf
+
+PATH=%%PREFIX%%/bin:$PATH
+
+load_rc_config $name
+
+: ${glance_registry_enable:="NO"}
+
+run_rc_command "$1"

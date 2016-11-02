@@ -1,0 +1,18 @@
+@owner glance
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/glance-swift.conf.sample
+@sample %%ETCDIR%%/ovf-metadata.json.sample
+@sample %%ETCDIR%%/property-protections-policies.conf.sample
+@sample %%ETCDIR%%/property-protections-roles.conf.sample
+@sample %%ETCDIR%%/glance-api.conf.sample
+@sample %%ETCDIR%%/glance-cache.conf.sample
+@sample %%ETCDIR%%/glance-glare.conf.sample
+@sample %%ETCDIR%%/glance-manage.conf.sample
+@sample %%ETCDIR%%/glance-registry.conf.sample
+@sample %%ETCDIR%%/glance-scrubber.conf.sample
+%%ETCDIR%%/policy.json
+%%ETCDIR%%/schema-image.json
+%%ETCDIR%%/glance-api-paste.ini
+%%ETCDIR%%/glance-glare-paste.ini
+%%ETCDIR%%/glance-registry-paste.ini
+@dir %%ETCDIR%%/metadefs
