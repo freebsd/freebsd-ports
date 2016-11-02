@@ -18,9 +18,6 @@ LICENSE=	GPLv2+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|setMark:|setMarkScheme:|' \
 		${WRKSRC}/SchemeTypes.h ${WRKSRC}/SchemeTypes.m

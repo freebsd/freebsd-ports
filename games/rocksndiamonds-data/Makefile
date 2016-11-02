@@ -91,7 +91,7 @@ post-extract-script:
 
 .for l in DX_Boulderdash Supaplex
 	@${FIND} ${WRKDIR}/${PORTNAME}/${l} -name '*.level' | ${XARGS} \
-		${CHMOD} 644
+		${CHMOD} go-w
 .endfor
 
 .for l in ${LEVELS_BD_FANS:S/$/.zip/} Alans_Random_Levels.zip \

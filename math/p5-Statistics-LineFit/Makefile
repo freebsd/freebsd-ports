@@ -15,7 +15,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-extract:
-	${CHMOD} 755 ${WRKSRC}
-
 .include <bsd.port.mk>

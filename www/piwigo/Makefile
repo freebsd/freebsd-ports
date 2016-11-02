@@ -50,10 +50,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
 .endif
 .endif
 
-post-extract:
-	@${FIND} -d ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} -d ${WRKSRC} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/

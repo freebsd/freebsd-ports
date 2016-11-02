@@ -33,11 +33,17 @@ DISTFILES+=	HLARef_html${EXTRACT_SUFX} HLAstdlib_html${EXTRACT_SUFX}
 DISTFILES+=	hello.hla
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	${MKDIR} ${WRKDIR}/stdlib && \
 	    ${TAR} -zxf ${_DISTDIR}/bsd.${PORTNAME}.tar.gz -C ${WRKDIR}/stdlib
 	${CP} ${_DISTDIR}/lex.yy.c ${WRKSRC}
-	${FIND} ${WRKDIR} -type d -exec ${CHMOD} 755 {} \;
+.if ${OSVERSION} < 1100077
+# chmod -R bug.
+# Do not use "-exec ... +", because of the same bug, it will not work.
+	@${FIND} ${WRKDIR} -type d -exec ${CHMOD} 755 {} \;
+.endif
 
 post-extract-TEST-on:
 	${CP} ${_DISTDIR}/hello.hla ${WRKSRC}
@@ -79,4 +85,4 @@ do-test-TEST-on:
 	    ${WRKSRC}/hello \
 	)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

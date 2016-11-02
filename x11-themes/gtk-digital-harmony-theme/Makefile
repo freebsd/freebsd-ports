@@ -30,7 +30,6 @@ PLIST_SUB+=	GTK20="@comment " METACITY=""
 post-extract:
 	@${RM} -r ${WRKSRC}/gtk-2.0/Scrollbars/Backup \
 		${WRKSRC}/gtk-2.0/ReadME.txt
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${THEME_DIR}

@@ -27,6 +27,5 @@ LICENSE_DISTFILES=	${SKKDIC_FILE}
 
 post-extract:
 	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/${SKKDIC_FILE} > ${WRKSRC}/dict/SKK-JISYO.L
-	${CHMOD} a+x ${WRKSRC}/configure
 
 .include "${MASTERDIR}/Makefile"

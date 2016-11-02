@@ -43,9 +43,6 @@ QT4_VARS=			QT_NONSTANDARD=yes
 QT4_DESKTOP_ENTRIES=		"Silex" "Silex browser for Silo files" \
 				"" "silex" "" true
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(_Qt_dir/include\)"|\1/qt4"| ; \

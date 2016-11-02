@@ -20,8 +20,11 @@ PLIST_FILES=	${FONTSDIR_REL}/local.conf-odo
 
 .include "${.CURDIR}/../ttfm/Makefile.ttf"
 
+.if ${OSVERSION} < 1100077
+# chmod -R bug
 post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/license
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},; s,opendesktop,,g' \

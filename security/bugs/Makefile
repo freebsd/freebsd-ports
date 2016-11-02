@@ -25,8 +25,6 @@ DOCSDIR=	${PREFIX}/${DISTNAME}/doc
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-# Sanitize permissions so "make clean" can work
-	@${CHMOD} +x ${WRKSRC}/lib/unix ${WRKSRC}/lib/windows
 # Allow parallel builds (-jX): fix make(1) syntax, register dependencies
 	@${REINPLACE_CMD} -E 's+cd (.*); make+$$(MAKE) -C \1+' \
 		${WRKSRC}/Makefile.bsd

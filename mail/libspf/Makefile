@@ -41,9 +41,6 @@ CONFIGURE_ARGS+=	--enable-logfile-stats
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-post-extract:
-	@${CHMOD} u+w ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

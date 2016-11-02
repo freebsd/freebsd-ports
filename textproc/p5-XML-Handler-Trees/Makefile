@@ -15,7 +15,4 @@ USES=		perl5 dos2unix
 USE_PERL5=	configure
 DOS2UNIX_FILES=	Trees.pm
 
-post-extract:
-	@${CHMOD} +w ${WRKSRC}/Trees.pm
-
 .include <bsd.port.mk>

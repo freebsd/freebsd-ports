@@ -46,9 +46,6 @@ PLIST_SUB+=	SDL_IMAGE=""
 PLIST_SUB+=	SDL_IMAGE="@comment "
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} go+r
-
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|addons|lib|' ${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MSDL_TTF}

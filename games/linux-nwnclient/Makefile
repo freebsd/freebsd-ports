@@ -89,10 +89,7 @@ do-configure:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR})
-	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 .if defined(BINKPLAYERFILE)
 	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)

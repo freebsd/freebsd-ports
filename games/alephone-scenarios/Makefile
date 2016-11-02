@@ -142,8 +142,6 @@ pre-install:
 .for f in ${AO_PACKS}
 	@cd ${WRKDIR} && ${SED} -e 's|%%GAMEDIR%%|${f}|' wrapper > alephone-${f}
 .endfor
-	@cd ${WRKSRC} && \
-		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -31,7 +31,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.mk>
