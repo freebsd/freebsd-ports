@@ -46,7 +46,6 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 	@${RM} -r ${WRKSRC}/fonts/locale/vi_docs
 
 post-patch:

@@ -14,7 +14,4 @@ COMMENT=	Library for displaying tabular data in an ASCII table format
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.mk>

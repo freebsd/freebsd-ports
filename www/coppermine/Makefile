@@ -38,9 +38,6 @@ pre-everything::
 	@${ECHO_MSG} "You may select IMAGEMAGICK to depend on ImageMagick instead of GD."
 	@${ECHO_MSG} ""
 
-post-extract:
-	@${CHMOD} -R o-w ${WRKSRC}/
-
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}

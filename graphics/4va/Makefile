@@ -19,9 +19,6 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 4VA_DATA_FILES=		16cell.4vd 24cell.4vd 5cell.4vd 600cell.4vd ctor.4vd \
 			ctor2.4vd hcube.4vd hsph.4vd sin.4vd tripris.4vd
 
-post-extract:
-	@${CHMOD} -R go-x ${WRKSRC}/
-
 do-install:
 .for file in 4va 4vdmake ctorus cutctorus
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin

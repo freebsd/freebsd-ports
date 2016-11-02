@@ -26,8 +26,4 @@ NO_ARCH=	yes
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
-post-extract:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
-	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
-
 .include <bsd.port.mk>

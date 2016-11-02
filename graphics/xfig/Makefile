@@ -56,10 +56,7 @@ post-extract:
 	@${RM} ${WRKSRC}/Doc/html/images/pspbrwse.jbf
 	@${RM} ${WRKSRC}/Libraries/Examples/xfig.exe.stackdump
 	@${RM} ${WRKSRC}/Libraries/Fasteners/Fasteners.tar
-	@cd ${WRKSRC}/Doc && ${FIND} -s . -type d -print0 | ${XARGS} -0 ${CHMOD} a+rx
 	@cd ${WRKSRC}/Doc && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x+r
-	@${CHMOD} a+rx ${WRKSRC}/Libraries
-	@cd ${WRKSRC}/Libraries && ${FIND} -s . -type d -print0 | ${XARGS} -0 ${CHMOD} a+rx
 	@cd ${WRKSRC}/Libraries && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x+r
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
 

@@ -31,9 +31,6 @@ MYSQL_VARS=	IGNORE_WITH_PHP+=70
 PGSQL_USE=	PHP=pgsql
 PGSQL_USES=	pgsql
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 do-install:
 	${MV} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}

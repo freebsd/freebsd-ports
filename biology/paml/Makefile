@@ -30,9 +30,8 @@ PORTDATA=	${DATA} dat examples Technical
 
 OPTIONS_DEFINE=	DOCS
 
-# Fix broken permissions and remove Windows executables
+# Remove Windows executables
 post-extract:
-	@${CHMOD} -R a+rX ${WRKDIR}
 	@${FIND} ${WRKSRC}/Technical -name "*.exe" -delete
 
 do-build:

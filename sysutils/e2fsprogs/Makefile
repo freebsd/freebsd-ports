@@ -42,10 +42,6 @@ NOTESTS_DESC=	Do not run any self-tests (only Tier-1 & DISCOURAGED)
 SMALLTESTS_DESC=Run tests that fit into 500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (requires more RAM & disk space)
 PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
-
-post-extract:
-	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}

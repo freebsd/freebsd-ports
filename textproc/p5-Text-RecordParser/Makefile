@@ -27,8 +27,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	modbuild
 
-post-extract:
-		# workaround for https://rt.cpan.org/Public/Bug/Display.html?id=87855
-		${CHMOD} +w ${WRKSRC}/README.md
-
 .include <bsd.port.mk>

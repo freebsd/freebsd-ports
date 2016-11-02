@@ -59,8 +59,6 @@ do-install:
 
 do-install-EXAMPLES-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "random-bits" ${STAGEDIR}/${EXAMPLESDIR})
-	${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}

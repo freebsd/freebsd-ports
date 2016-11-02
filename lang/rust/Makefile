@@ -118,7 +118,6 @@ pre-fetch:
 post-extract:
 	@${MKDIR} ${WRKSRC}/dl
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
-	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} +
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

@@ -44,7 +44,6 @@ NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 
 post-extract:
-	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
 
 post-patch:

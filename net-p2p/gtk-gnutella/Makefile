@@ -56,9 +56,6 @@ TLS_CONFIGURE_OFF=	-Ud_gnutls
 CONFIGURE_ARGS+=	-ders
 .endif
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@exit 0|@echo done|'

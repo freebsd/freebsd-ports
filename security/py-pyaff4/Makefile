@@ -20,9 +20,6 @@ NO_ARCH=	yes
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 post-patch:
 	${REINPLACE_CMD} 's/aff4-snappy == 0.5/python-snappy >= 0.5/' ${WRKSRC}/setup.py
 

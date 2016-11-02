@@ -31,8 +31,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -R ${WRKSRC}/runDir/* ${STAGEDIR}${DATADIR}
-	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	cd ${WRKSRC}/runDir && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

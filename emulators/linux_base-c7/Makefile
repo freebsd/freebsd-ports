@@ -149,12 +149,6 @@ post-extract:
 	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DIST_SUBDIR}/filesystem-3.2-20.el7${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS})
-# Fix permissions so a regular user can run make clean.
-.if ${LINUX_ARCH} == x86_64
-	@${CHMOD} 755 ${WRKSRC}/usr/lib64/pm-utils
-.else
-	@${CHMOD} 755 ${WRKSRC}/usr/lib/pm-utils
-.endif
 
 post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}

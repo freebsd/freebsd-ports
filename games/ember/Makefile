@@ -53,10 +53,8 @@ post-patch:
 		${WRKSRC}/src/components/ogre/terrain/HeightMap.cpp
 
 post-install:
-	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
-		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/media)
-	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/media)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

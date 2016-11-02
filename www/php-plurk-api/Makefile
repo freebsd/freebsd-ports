@@ -28,8 +28,6 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${CHMOD} 755 ${STAGEDIR}${WWWDIR}/example.php
 
 .include <bsd.port.mk>

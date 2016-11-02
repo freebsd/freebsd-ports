@@ -28,10 +28,6 @@ FHOME=		${PREFIX}/share/festival
 IGNORE=	distfile can only be fetched if you accept the license. Go to https://www.cslu.ogi.edu/tts/download/data/OGIlexicon-2.2.tar.gz and put ${DISTFILE} into ${DISTDIR}
 .endif
 
-post-extract:
-	@ ${CHMOD} -R a+r ${WRKSRC}
-	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-
 do-install:
 	${MKDIR} ${STAGEDIR}${FHOME}
 	cd ${WRKSRC} && ${CP} -pPR * ${STAGEDIR}${FHOME}

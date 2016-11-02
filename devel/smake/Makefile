@@ -27,7 +27,6 @@ MKLINKS=	${WRKSRC}/RULES/MKLINKS
 GCCRULE=	${WRKSRC}/RULES/cc-gcc.rul
 
 pre-build:
-	@${CHMOD} +w ${MKLINKS} ${GCCRULE}
 	@${REINPLACE_CMD} -e 's|gcc$$|${CC}|' ${GCCRULE}
 	@${ECHO_CMD} "\$$symlink i386-freebsd-cc.rul ${ARCH}-freebsd-${CC}.rul" >> ${MKLINKS}
 
