@@ -1,6 +1,6 @@
---- lib/Makefile.orig	2016-08-31 16:09:10 UTC
+--- lib/Makefile.orig	2016-11-01 18:13:22 UTC
 +++ lib/Makefile
-@@ -90,15 +90,15 @@ libzstd.pc: libzstd.pc.in
+@@ -90,16 +90,16 @@ libzstd.pc: libzstd.pc.in
               $< >$@
  
  install: libzstd libzstd.pc
@@ -11,7 +11,8 @@
 -	@cp -a libzstd.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
 -	@install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
 -	@install -m 644 zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
--	@install -m 644 common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h
+-	@install -m 644 common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)/zstd_errors.h
+-	@install -m 644 common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h   # Deprecated streaming functions
 -	@install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
 +	@install -d -m 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
 +	@$(BSD_INSTALL_LIB) libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_VER)
@@ -20,7 +21,8 @@
 +	@$(BSD_INSTALL_DATA) libzstd.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
 +	@$(BSD_INSTALL_LIB) libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
 +	@$(BSD_INSTALL_DATA) zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
-+	@$(BSD_INSTALL_DATA) common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h
++	@$(BSD_INSTALL_DATA) common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)/zstd_errors.h
++	@$(BSD_INSTALL_DATA) common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h   # Deprecated streaming functions
 +	@$(BSD_INSTALL_DATA) dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
  	@echo zstd static and shared library installed
  
