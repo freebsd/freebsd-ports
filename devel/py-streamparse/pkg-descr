@@ -1,0 +1,6 @@
+Streamparse lets you run Python code against real-time streams of data
+via Apache Storm. With streamparse you can create Storm bolts and spouts
+in Python without having to write a single line of Java. It also
+provides handy CLI utilities for managing Storm clusters and projects.
+
+WWW: https://github.com/Parsely/streamparse
