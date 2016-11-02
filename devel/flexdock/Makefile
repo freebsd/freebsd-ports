@@ -6,7 +6,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
 
 USE_ANT=	yes
