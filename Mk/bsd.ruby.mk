@@ -31,7 +31,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # USE_RUBY		- Says that the port uses ruby for building and running.
 # RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
 # RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
-# USE_LIBRUBY		- Says that the port uses libruby.
 # USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.
 #			  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb
@@ -95,7 +94,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
 #
-# DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 #
@@ -272,7 +270,6 @@ RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
 
 # Depends
-DEPEND_LIBRUBY?=	lib${RUBY_NAME}.so.${RUBY_SHLIBVER}:${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${RUBY_PORT}
 
 # Directories
@@ -392,10 +389,6 @@ ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
-.endif
-
-.if defined(USE_LIBRUBY)
-LIB_DEPENDS+=		${DEPEND_LIBRUBY}
 .endif
 
 .if defined(USE_RUBY)
