@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.25
+PORTVERSION=	1.4.33
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -27,8 +27,7 @@ SASL_DESC=	Enable SASL Authentication
 USE_RC_SUBR=	memcached
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-USES=		cpe shebangfix autoreconf:build
-USE_AUTOTOOLS=	aclocal
+USES=		cpe shebangfix autoreconf
 SHEBANG_FILES=	scripts/memcached-tool
 
 USE_CSTD=	c99
@@ -36,6 +35,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--program-prefix= \
 		--disable-coverage
+
+DOCS_BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
 
 DTRACE_CONFIGURE_ENABLE=	dtrace
 
@@ -57,19 +58,15 @@ CONFIGURE_ARGS+=	--enable-64bit
 BROKEN=			DTRACE broken with gcc/clang - reported upstream
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
-.endif
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in protocol-binary-range.txt protocol-binary.txt protocol.txt \
 		readme.txt threads.txt
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 regression-test: test
 test: build
