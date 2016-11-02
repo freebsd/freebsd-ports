@@ -1,14 +1,5 @@
 --- lib/com_err/Makefile.in.orig	2014-08-31 01:54:15.000000000 +0900
 +++ lib/com_err/Makefile.in	2014-08-31 01:58:56.000000000 +0900
-@@ -750,7 +750,7 @@
- uninstall: uninstall-am
- 
- install-am: all-am
--	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
-+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
- 
- installcheck: installcheck-am
- install-strip:
 @@ -802,7 +802,7 @@
  
  install-dvi-am:
