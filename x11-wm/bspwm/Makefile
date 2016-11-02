@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bspwm
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gor@clogic.com.ua
 COMMENT=	Tiling window manager based on binary space partitioning
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
+LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 RUN_DEPENDS=	sxhkd:x11/sxhkd
 
 USE_GITHUB=	yes

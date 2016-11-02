@@ -3,5 +3,6 @@ bin/bspwm
 man/man1/bspc.1.gz
 man/man1/bspwm.1.gz
 share/bash-completion/completions/bspc
+share/fish/vendor_completions.d/bspc.fish
 share/xsessions/bspwm.desktop
 share/zsh/site-functions/_bspc
