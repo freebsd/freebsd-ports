@@ -12,6 +12,9 @@ DISTNAME=	gtkDPS-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
+DEPRECATED=	No more upstream. Not used in the ports tree
+EXPIRATION_DATE=	2016-12-02
+
 LIB_DEPENDS=	libdpstk.so:x11/dgs
 
 USES=		libtool
