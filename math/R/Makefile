@@ -3,6 +3,7 @@
 
 PORTNAME=		R
 PORTVERSION=		3.3.2
+PORTREVISION=		1
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -64,7 +65,7 @@ ALLDOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
 ALLDOCS_INSTALL_TARGET=	install-pdf
 ALLDOCS_USE=		tex=dvipsk:build,kpathsea:build,pdftex:build
 ATLAS_USES=		blaslapack:atlas
-ALTAS_CONFIGURE_ON=	--disable-BLAS-shlib
+ATLAS_CONFIGURE_ON=	--disable-BLAS-shlib
 ATLAS_VARS=		MANUAL_PACKAGE_BUILD=\
 "Choose a BLAS option other than ATLAS for package building."
 CAIROPANGO_IMPLIES=	X11
