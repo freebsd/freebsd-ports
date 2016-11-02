@@ -2481,6 +2481,10 @@ llvm39/lib/libLTO.so
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/TestingConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/__init__.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/discovery.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/base.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/googletest.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/shtest.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/util.py
