@@ -11,6 +11,8 @@ DISTNAME=	iroffer-dinoex-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
 
+LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
+
 LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
@@ -44,7 +46,7 @@ OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	-curl
-RUBY_USE=		RUBY=yes LIBRUBY=yes
+RUBY_USE=		RUBY=yes
 RUBY_CONFIGURE_ON=	-ruby
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CONFIGURE_ON=	-upnp
