@@ -13,9 +13,7 @@ LICENSE=	LGPL21+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
-GH_PROJECT=	greatest:greatest
-GH_TAGNAME=	v0.9.2-78-g60e25ce:greatest # 1.0.0 release actually
-GH_SUBDIR=	greatest:greatest
+GH_TUPLE=	silentbicycle:greatest:v1.0.0:greatest/greatest
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
