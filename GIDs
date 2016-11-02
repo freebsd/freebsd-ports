@@ -132,7 +132,7 @@ swift:*:187:
 netxms:*:188:
 leofs:*:189:
 keystone:*:190:
-# free: 191
+glance:*:191:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:
