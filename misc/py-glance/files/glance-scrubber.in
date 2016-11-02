@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: glance_scrubber
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable glance-scrubber:
+#
+# glance_scrubber_enable (bool):	Set it to "YES" to enable glance-scrubber.
+# 					Default is "NO".
+
+. /etc/rc.subr
+
+name="glance_scrubber"
+rcvar=glance_scrubber_enable
+
+extra_commands="shutdown status"
+shutdown_cmd="glance-control scrubber shutdown"
+start_cmd="glance-control scrubber start"
+status_cmd="glance-control scrubber status"
+stop_cmd="glance-control scrubber stop"
+
+required_files=%%PREFIX%%/etc/glance/glance-scrubber.conf
+
+PATH=%%PREFIX%%/bin:$PATH
+
+load_rc_config $name
+
+: ${glance_scrubber_enable:="NO"}
+
+run_rc_command "$1"
