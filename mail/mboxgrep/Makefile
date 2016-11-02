@@ -10,15 +10,20 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 
-USES=		ssl
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		localbase ssl
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+
 CFLAGS+=	-I${OPENSSLINC}
-LIBS+=		-L${OPENSSLLIB} -L${LOCALBASE}/lib
+LIBS+=		-L${OPENSSLLIB}
 
 INFO=		mboxgrep
 
-DOCS=		ChangeLog NEWS README TODO
+PORTDOCS=	ChangeLog NEWS README TODO
+PLIST_FILES=	bin/mboxgrep \
+		man/man1/mboxgrep.1.gz
 
 OPTIONS_DEFINE=	DOCS PCRE
 
@@ -31,9 +36,9 @@ post-patch:
 		-e 's,$$(infodir),$$(DESTDIR)$$(infodir),g' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/doc/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
