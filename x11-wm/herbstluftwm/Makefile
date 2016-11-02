@@ -10,9 +10,9 @@ COMMENT=	Manual tiling window manager for X11
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c++11-lib gmake pkgconfig shebangfix
+USES=		compiler:c++11-lib gettext-runtime gmake pkgconfig shebangfix
 SHEBANG_FILES=	scripts/*.sh share/autostart share/*.sh
-USE_XORG=	x11 xinerama
+USE_XORG=	x11 xext xinerama
 USE_GNOME=	glib20
 
 MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
