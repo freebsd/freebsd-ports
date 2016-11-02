@@ -71,7 +71,6 @@ bin/onelab.py
 %%SHARED%%include/gmsh/MeshQualityObjContribIdealJac.h
 %%SHARED%%include/gmsh/MeshQualityObjContribInvCond.h
 %%SHARED%%include/gmsh/MeshQualityOptimizer.h
-%%SHARED%%include/gmsh/MetricBasis.h
 %%SHARED%%include/gmsh/Numeric.h
 %%SHARED%%include/gmsh/OS.h
 %%SHARED%%include/gmsh/Octree.h
