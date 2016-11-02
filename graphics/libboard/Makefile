@@ -14,6 +14,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 HAS_CONFIGURE=	yes
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	CXX=${CXX}
 
