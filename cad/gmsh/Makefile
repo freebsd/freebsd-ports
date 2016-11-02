@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.1
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -25,6 +25,8 @@ RUN_DEPENDS=	getdp:science/getdp
 
 BROKEN_powerpc64=Does not build on powerpc64
 BROKEN_FreeBSD_12_i386=Does not build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-svn-20161101-source
 
 SLAVEDIRS=	cad/gmsh-occ
 
