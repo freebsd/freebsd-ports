@@ -17,7 +17,4 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.mk>

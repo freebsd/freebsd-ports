@@ -24,9 +24,6 @@ PORTDOCS=	COPYING Changelog README TODO \
 		alternative_programs.txt
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
-
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(fopen\( *"/etc/)mtab|\1fstab|; \
 		s|iso9660|cd9660|' ${WRKSRC}/dvd.c

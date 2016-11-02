@@ -42,11 +42,6 @@ CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 INSTALL_TARGET+=gcc-install-doc
 .endif
 
-.if !target(post-extract)
-post-extract:
-	${CHMOD} a+x ${WRKSRC}/configure
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/compile/config.mk.in
 

@@ -24,9 +24,6 @@ SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 
 post-extract:
 	${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/*.exe
-	${FIND} ${WRKSRC} -print0 -type f | ${XARGS} -0 ${CHMOD} og+r
-	${FIND} ${WRKSRC} -print0 -type f -perm +0111 | ${XARGS} -0 ${CHMOD} og+rx
-	${FIND} ${WRKSRC} -print0 -type d | ${XARGS} -0 ${CHMOD} og+rx
 	${FIND} ${WRKSRC} -name "._*" -delete
 
 do-install:

@@ -16,7 +16,4 @@ LICENSE=	BSD3CLAUSE
 USE_PYTHON=	autoplist distutils
 USES=		python:2.7
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.mk>

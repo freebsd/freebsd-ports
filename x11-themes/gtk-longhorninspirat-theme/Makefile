@@ -30,7 +30,6 @@ PLIST_SUB+=	GTK20="@comment " METACITY=""
 .endif
 
 post-extract:
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${RM} -r ${WRKSRC}/gtk-2.0/.Trash-roberto
 
 do-install:

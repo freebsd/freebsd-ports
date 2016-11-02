@@ -99,9 +99,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${TAR} --exclude man -cf - .) | \
-		(cd ${STAGEDIR}${DOCSDIR} && ${TAR} --unlink -xf -)
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@(cd ${WRKSRC}/doc && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not ( -name man -o -path ./man\/* )')
 
 .include <bsd.port.mk>

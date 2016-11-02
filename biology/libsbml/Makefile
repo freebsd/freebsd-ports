@@ -46,8 +46,7 @@ post-patch:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
-		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} --unlink -xf -
-	@${CHMOD} -R a+rX ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR} '! -name *Makefile*'
 
 .include <bsd.port.mk>

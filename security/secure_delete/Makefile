@@ -26,9 +26,6 @@ PLIST_FILES=	bin/sdel bin/sfill bin/smem bin/srm bin/sswap \
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	@${CHMOD} u+w ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC=|CC?=| ; \

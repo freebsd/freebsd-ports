@@ -477,10 +477,6 @@ INSTALL_TARGET=	installservers installbin installscripts installdat \
 INSTALL_TARGET+=installswat
 .endif
 
-pre-configure:
-	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
-	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
-
 post-configure:
 # It's in another port
 	@${RM} ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.7.html

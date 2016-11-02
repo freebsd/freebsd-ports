@@ -25,7 +25,6 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-install:
-	${CHMOD} +x ${WRKSRC}/${DISTFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${DISTFILES} ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

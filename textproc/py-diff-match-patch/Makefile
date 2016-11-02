@@ -20,9 +20,6 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 

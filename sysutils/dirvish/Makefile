@@ -29,7 +29,7 @@ do-patch:
 		${FILESDIR}/header.pl > ${WRKDIR}/header.pl
 .for _E in ${EXECUTABLES}
 	@(cd ${WRKSRC} && ${CAT} ${WRKDIR}/header.pl ${_E}.pl loadconfig.pl \
-		> ${_E} && ${CHMOD} 755 ${_E})
+		> ${_E})
 .endfor
 
 do-install:

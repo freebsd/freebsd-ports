@@ -21,13 +21,12 @@ RUN_DEPENDS=	p5-Unicode-String>=0:converters/p5-Unicode-String
 USES=		perl5
 USE_PERL5=	configure
 
-# Fixing non root builds.
-# Distfile has directories with mode 644, which is not nice.  Cannot
-# use ${FIND} because it will not be able to read because it is not
-# root and will not override the directories non executable status.
+.if ${OSVERSION} < 1100077
+# chmod -R bug
 post-extract:
 .for d in / /lib /lib/Unicode /t
 	@${CHMOD} 755 ${WRKSRC}${d}
 .endfor
+.endif
 
 .include <bsd.port.mk>

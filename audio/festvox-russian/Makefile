@@ -23,10 +23,6 @@ NO_BUILD=	yes
 
 FHOME=		${PREFIX}/share/festival/lib/voices/russian/msu_ru_nsh_clunits
 
-post-extract:
-	@ ${CHMOD} -R a+r ${WRKSRC}
-	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${FHOME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME})

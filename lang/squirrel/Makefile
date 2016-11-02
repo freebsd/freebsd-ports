@@ -25,10 +25,6 @@ CFLAGS+=	-fPIC
 ALL_TARGET=	sq32
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
 		-e '/^MAKE/d; s|gcc|$${CC}|; s|-O2|$${CFLAGS}|; s|g++|$${CXX}|' \

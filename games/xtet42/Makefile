@@ -15,9 +15,6 @@ CONFIGURE_ARGS=	--localstatedir=/var/games
 USE_XORG=	x11
 ALL_TARGET=	${PORTNAME}
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtet42 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xtet42.6 ${STAGEDIR}${MANPREFIX}/man/man6

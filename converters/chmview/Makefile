@@ -20,7 +20,4 @@ WRKSRC=		${WRKDIR}/src
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/chmview
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 .include <bsd.port.mk>

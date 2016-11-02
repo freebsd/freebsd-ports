@@ -24,7 +24,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 	@${RM} -r ${WRKSRC}/sample_projects
 
 .include <bsd.port.mk>

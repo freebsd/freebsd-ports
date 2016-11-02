@@ -141,9 +141,6 @@ post-patch:
 		${WRKSRC}/popper/main.c
 .endif
 
-pre-configure:
-	@(cd ${WRKSRC}; ${CHMOD} u+w configure*)
-
 do-install:
 .if ${PORT_OPTIONS:MAPOP}
 	${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${STAGEDIR}${PREFIX}/bin/qpopauth

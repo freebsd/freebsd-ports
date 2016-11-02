@@ -20,11 +20,17 @@ SUB_FILES=	pkg-message
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
-
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100077
+# chmod -R bug.
+# Do not use "-exec ... +", because of the same bug, it will not work.
+post-extract:
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+.endif
+
+.include <bsd.port.post.mk>

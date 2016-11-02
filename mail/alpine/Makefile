@@ -123,9 +123,6 @@ PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
 .endif
 
-pre-patch:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 post-patch:
 	@${CP} ${WRKSRC}/imap/Makefile ${WRKSRC}/imap/Makefile.presed
 	@${SED}	-e "s#^\(all:.*\) bundled\$$#\1#" \

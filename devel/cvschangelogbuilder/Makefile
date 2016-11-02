@@ -22,10 +22,6 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/cvschangelogbuilder
 PORTDOCS=	*
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -35,4 +31,12 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${STAGEDIR}${DOCSDIR}/images
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100077
+# chmod -R bug.
+post-extract:
+	@${CHMOD} 755 ${WRKSRC}/docs/images
+.endif
+
+.include <bsd.port.post.mk>

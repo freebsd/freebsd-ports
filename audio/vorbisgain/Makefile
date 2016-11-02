@@ -24,7 +24,4 @@ PLIST_FILES=	bin/vorbisgain \
 
 RECURSIVE_CONFIGURE_ARGS=	--enable-recursive
 
-pre-configure:
-	@${CHMOD} +x ${WRKSRC}/configure
-
 .include <bsd.port.mk>

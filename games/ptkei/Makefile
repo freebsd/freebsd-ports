@@ -16,8 +16,6 @@ USES=		python
 
 do-build:
 	@${FIND} ${WRKSRC} -name "*.pyc" -delete
-	@${FIND} ${WRKSRC} \( -type f -or -type l \) | ${XARGS} ${CHMOD} 644
-	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:
