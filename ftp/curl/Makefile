@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.50.3
-PORTREVISION=	1
+PORTVERSION=	7.51.0
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -62,14 +61,12 @@ PORTEXAMPLES=	*
 
 CPE_VENDOR=	haxx
 
-DOCS=		BINDINGS BUGS CODE_OF_CONDUCT.md CODE_STYLE.md CONTRIBUTE.md FAQ \
+DOCS=		BUGS CODE_OF_CONDUCT.md CODE_STYLE.md CONTRIBUTE.md FAQ \
 		FEATURES HISTORY.md HTTP-COOKIES.md HTTP2.md INSTALL \
-		INSTALL.devcpp INTERNALS.md KNOWN_BUGS LICENSE-MIXING.md \
+		INTERNALS.md KNOWN_BUGS LICENSE-MIXING.md \
 		MAIL-ETIQUETTE MANUAL RELEASE-PROCEDURE RESOURCES ROADMAP.md \
 		SECURITY.md SSL-PROBLEMS.md SSLCERTS.md THANKS TODO \
-		TheArtOfHttpScripting VERSIONS curl-config.html \
-		curl-config.pdf curl.html curl.pdf index.html \
-		mk-ca-bundle.html mk-ca-bundle.pdf
+		TheArtOfHttpScripting VERSIONS
 .endif
 
 SHEBANG_FILES=	*/*.pl
@@ -169,7 +166,7 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.m4 *.pdf ${STAGEDIR}${DOCSDIR}/libcurl/
+	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.m4 ${STAGEDIR}${DOCSDIR}/libcurl/
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
