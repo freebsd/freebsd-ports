@@ -4,6 +4,7 @@
     COMMENT = Ports for managing, installing, and developing FreeBSD ports and packages
 
     SUBDIR += chucky
+    SUBDIR += create-rb-port
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
     SUBDIR += distilator
