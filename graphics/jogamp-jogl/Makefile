@@ -9,7 +9,7 @@ MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/ \
 DISTFILES=	jogl-v${PORTVERSION}.tar.7z \
 		gluegen-v${PORTVERSION}.tar.7z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
 EXTRACT_DEPENDS=	${7Z_CMD}:archivers/p7zip

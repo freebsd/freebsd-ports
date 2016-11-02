@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
 		${PORTNAME}-engine-${PORTVERSION}.jar:engine
 EXTRACT_ONLY=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 
 USES=		zip

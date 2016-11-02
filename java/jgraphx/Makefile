@@ -5,7 +5,7 @@ PORTVERSION=	2.5.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
 
 LICENSE=	BSD3CLAUSE
