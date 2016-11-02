@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.18.3
+PORTVERSION=	1.18.4
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -11,6 +11,8 @@ DIST_SUBDIR=	xorg/xserver
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Nesting X server from X.Org
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
