@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-launcher similar to the Windows(tm) "Run..." dialog
 
+DEPRECATED=	No more upstream.
+EXPIRATION_DATE=	2016-12-02
+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-testfile
