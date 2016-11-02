@@ -126,14 +126,6 @@ SYSCTLMIB=	kern.features.linux64
 SYSCTLMIB=	compat.linux.osrelease
 .endif
 
-post-extract:
-# Fix permissions so a regular user can run make clean.
-.if ${LINUX_ARCH} == x86_64
-	@${CHMOD} 755 ${WRKSRC}/usr/lib64/pm-utils
-.else
-	@${CHMOD} 755 ${WRKSRC}/usr/lib/pm-utils
-.endif
-
 post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}
 	@${RM} ${REMOVE_FILES:S|^|${WRKSRC}/|}

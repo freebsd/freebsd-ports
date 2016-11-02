@@ -26,8 +26,13 @@ PLIST_FILES=	bin/gotmail man/man1/gotmail.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100077
+# chmod -R bug
 post-extract:
 	@${CHMOD} 755 ${WRKSRC}
+.endif
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
@@ -40,4 +45,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

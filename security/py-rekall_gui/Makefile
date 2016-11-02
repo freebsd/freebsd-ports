@@ -27,7 +27,4 @@ USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_INSTALLARGS+=--install-data ${PYTHONPREFIX_SITELIBDIR}
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.post.mk>

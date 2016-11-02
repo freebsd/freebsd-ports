@@ -22,9 +22,4 @@ USE_LINUX_RPM=	nolib
 SRC_DISTFILES=
 PLIST=		${PKGDIR}/pkg-plist
 
-# normalize permissions of symbolic links to prevent a package with
-# missing files
-post-extract:
-	${FIND} ${WRKSRC} -type l -exec ${CHMOD} -h 0755 {} \;
-
 .include <bsd.port.mk>

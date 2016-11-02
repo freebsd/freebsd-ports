@@ -60,8 +60,7 @@ pre-build:
 XE=	${.CURDIR}/../p5-XML-Encoding
 extract-encodings:
 	@cd ${XE}; \
-	${MAKE} patch; \
-	${CHMOD} og+rX `make -VWRKSRC`
+	${MAKE} patch
 
 build-encodings:
 .for e in 1 6 10 11 13 14 15

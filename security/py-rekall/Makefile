@@ -20,9 +20,6 @@ NO_ARCH=	yes
 USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} 's|ipython >= 4.1.2, < 5.0|ipython|' ${WRKSRC}/setup.py
 

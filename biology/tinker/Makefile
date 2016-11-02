@@ -41,9 +41,6 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
 .endif
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 pre-build:
 	@${RM} ${BUILD_WRKSRC}/*.c
 

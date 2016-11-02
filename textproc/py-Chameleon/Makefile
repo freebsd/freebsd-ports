@@ -16,7 +16,4 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 .include <bsd.port.mk>

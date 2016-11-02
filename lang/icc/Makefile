@@ -94,8 +94,6 @@ pre-patch: intel-patch
 	for i in `${CAT} ${FILESDIR}/exclude_noportdocs`; do \
 		${RM} -r ${WRKSRC}/opt/${COMPILERDIR}/$$i; done
 .endif
-# Allow everyone to use it.
-	${CHMOD} a+rx ${WRKSRC}/opt
 # Remove unneeded/unsafe access rights.
 .for i in doc include lib
 	${FIND} ${WRKSRC}/opt/${COMPILERDIR}/${i} -type f -print0 | \

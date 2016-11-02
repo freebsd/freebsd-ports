@@ -35,7 +35,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name *.bak")
 
-	@${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 0444 {} \;
-	@${FIND} ${STAGEDIR}${WWWDIR} -type d -exec ${CHMOD} 0755 {} \;
-
 .include <bsd.port.mk>

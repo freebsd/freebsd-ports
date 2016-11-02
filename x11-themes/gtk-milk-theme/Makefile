@@ -29,9 +29,6 @@ THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="@comment " METACITY=""
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${THEME_DIR}
 	${INSTALL_DATA} ${WRKSRC}/index.theme ${STAGEDIR}${THEME_DIR}

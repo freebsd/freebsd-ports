@@ -34,9 +34,6 @@ BASEDIR=	lib/${PORTNAME}${BASE_VERSION}
 PLIST_FILES=	${BASEDIR}/${PORTNAME}.so \
 		${BASEDIR}/pkgIndex.tcl
 
-post-extract:
-	${CHMOD} -R u+w ${WRKSRC}
-
 post-patch:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|; \

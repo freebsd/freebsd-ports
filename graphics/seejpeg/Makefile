@@ -19,7 +19,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/seejpeg man/man1/seejpeg.1.gz
 
-post-extract:
-	${CHMOD} 0644 ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
