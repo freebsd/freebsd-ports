@@ -1,0 +1,11 @@
+--- scripts/sendsms.orig	2010-07-08 12:41:13 UTC
++++ scripts/sendsms
+@@ -80,7 +80,7 @@ echo "Text: $TEXT"
+ 
+ ALPHABET=""
+ if which iconv > /dev/null 2>&1; then
+-  if ! $ECHO -n "$TEXT" | iconv -t ISO-8859-15 >/dev/null 2>&1; then
++  if $ECHO -n "$TEXT" | iconv -t ISO-8859-15 2>&1 | grep "invalid" > /dev/null; then
+     ALPHABET="Alphabet: UCS"
+   fi
+ fi

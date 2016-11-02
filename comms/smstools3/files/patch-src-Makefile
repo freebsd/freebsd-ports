@@ -1,5 +1,5 @@
---- src/Makefile.orig	2010-06-16 14:02:36.000000000 +0200
-+++ src/Makefile	2010-07-06 22:00:30.303633098 +0200
+--- src/Makefile.orig	2010-09-21 11:29:14 UTC
++++ src/Makefile
 @@ -1,7 +1,7 @@
  # In case of windows, use os_cygwin=yes setting in the configuration file (smsd.conf).
  
@@ -9,7 +9,7 @@
  
  # Uncomment for Solaris
  # CFLAGS += -D SOLARIS
-@@ -9,7 +9,7 @@
+@@ -9,13 +9,13 @@ CFLAGS = -D NUMBER_OF_MODEMS=64
  # CC=gcc
  
  # Comment this out, to enable statistics
@@ -18,12 +18,28 @@
  
  # Comment this out if iconv is not available on the system
  #CFLAGS += -D USE_ICONV
-@@ -50,7 +50,7 @@
+ 
+ # Uncomment this is iconv is used and it's not included in libc:
+-#LFLAGS += -liconv
++#LDFLAGS += -liconv
+ 
+ # Uncomment this to force smsd to run in terminal mode
+ #CFLAGS += -D TERMINAL
+@@ -43,14 +43,14 @@ smsd: smsd.c extras.o locking.o cfgfile.
+ 
+ ifneq (,$(findstring SOLARIS,$(CFLAGS)))
+ ifeq (,$(findstring DISABLE_INET_SOCKET,$(CFLAGS)))
+-override LFLAGS += -lsocket -lnsl
++override LDFLAGS += -lsocket -lnsl
+ endif
+ endif
+ 
  ifneq (,$(findstring NOSTATS,$(CFLAGS)))
- 	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
+-	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
  else 
 -	$(CC) `mm-config --cflags` $(CFLAGS) -o $@ $^ `mm-config --ldflags --libs` $(LFLAGS)
-+	$(CC) `$(LOCALBASE)/bin/mm-config --cflags` $(CFLAGS) -o $@ $^ `$(LOCALBASE)/bin/mm-config --ldflags --libs` $(LFLAGS)
++	$(CC) `$(LOCALBASE)/bin/mm-config --cflags` $(CFLAGS) -o $@ $^ `$(LOCALBASE)/bin/mm-config --ldflags --libs` $(LDFLAGS)
  endif
  
  clean:
