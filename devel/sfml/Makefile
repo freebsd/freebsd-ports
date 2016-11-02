@@ -19,9 +19,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvorbis.so:audio/libvorbis \
 		libxcb-image.so:x11/xcb-util-image
 
-BROKEN_FreeBSD_9=	does not build
-
-USES=		cmake dos2unix jpeg openal:al zip:infozip
+USES=		cmake compiler:c++11-lang dos2unix jpeg openal:al zip:infozip
 CMAKE_ARGS=	-DSFML_INSTALL_PKGCONFIG_FILES=ON
 DOS2UNIX_FILES=	CMakeLists.txt
 USE_XORG=	x11 xcb
