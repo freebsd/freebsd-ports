@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161102:
+  AFFECTS: users of security/acme-client
+  AUTHOR: brnrd@FreeBSD.org
+
+  The default configuration paths have changed from 'letsencrypt' to
+  'acme'. Rename the directories used accordingly
+
+        mv /usr/local/etc/letsencrypt /usr/local/etc/acme
+        mv /usr/local/etc/ssl/letsencrypt /usr/local/etc/ssl/acme
+        mv /usr/local/www/letsencrypt /usr/local/www/acme
+
+  Check your scripts to ensure proper operation.
+
 20161030:
   AFFECTS: users of mail/squirrelmail
   AUTHOR: adamw@FreeBSD.org
