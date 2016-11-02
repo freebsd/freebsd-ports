@@ -1,5 +1,5 @@
---- install.sh.orig	2007-04-22 13:43:17.000000000 +0200
-+++ install.sh	2013-10-16 12:22:40.725619989 +0200
+--- install.sh.orig	2007-04-22 11:43:17 UTC
++++ install.sh
 @@ -3,7 +3,7 @@
  
  BINDIR=$1
@@ -9,7 +9,7 @@
  fi
  
  makepath()
-@@ -84,38 +84,6 @@
+@@ -84,38 +84,6 @@ fi
  delete $BINDIR/getsms
  delete $BINDIR/putsms
  
