@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.42
-PORTREVISION=	1
+PORTVERSION=	1.4.43
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -31,19 +30,21 @@ INSTALL_TARGET=	install-strip
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USE_RC_SUBR=	lighttpd
 
-OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM GEOIP IPV6 LIBEV LUA MEMCACHED MYSQL \
-		LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
+OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM GEOIP IPV6 KRB5 LIBEV LUA MEMCACHED \
+		MYSQL LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
 OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_SUB=	yes
 
 ATTR_DESC=	extended attributes support
 BZIP2_DESC=	bzip2 support (mod_compress)
 GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
-LDAP_DESC=	LDAP authentication
+KRB5_DESC=	Kerberos authentication (mod_authn_gssapi)
+LDAP_DESC=	LDAP authentication (mod_authn_ldap)
 LIBEV_DESC=	Fast events support via libev (disables kqueue)
 LUA_DESC=	lua support (mod_cml, mod_magnet)
 MEMCACHED_DESC=	memcached storage (mod_trigger_b4_dl)
-MYSQL_DESC=	MySQL support (mod_mysql_vhost)
+MYSQL_DESC=	MySQL support (mod_authn_mysql, mod_mysql_vhost)
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
@@ -58,6 +59,11 @@ GDBM_CONFIGURE_WITH=	gdbm
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_WITH=	geoip
 IPV6_CONFIGURE_OFF=	--disable-ipv6
+KRB5_CONFIGURE_WITH=	krb5
+KRB5_CPPFLAGS=		${GSSAPICPPFLAGS}
+KRB5_LDFLAGS=		${GSSAPILDFLAGS}
+KRB5_LIBS=		${GSSAPILIBS}
+KRB5_USES=		gssapi:mit
 LIBEV_CONFIGURE_WITH=	libev=${LOCALBASE}
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LUA_USES=		lua
