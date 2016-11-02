@@ -230,6 +230,7 @@
     SUBDIR += el
     SUBDIR += el-data
     SUBDIR += ember
+    SUBDIR += emptyepsilon
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
     SUBDIR += endless-sky
