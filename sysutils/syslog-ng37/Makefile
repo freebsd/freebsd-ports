@@ -96,6 +96,7 @@ JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
 
 JAVA_CONFIGURE_ENABLE=		java
+JAVA_BROKEN=			Unsupported maven downloads.
 JAVA_USE_JAVA=			yes
 JAVA_BUILD_DEPENDS=		gradle:devel/gradle
 JAVA_BUILD_DEPENDS=		bash:shells/bash
