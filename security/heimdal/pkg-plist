@@ -32,6 +32,8 @@ include/heimdal/asn1-common.h
 include/heimdal/asn1_err.h
 include/heimdal/base64.h
 include/heimdal/cms_asn1.h
+include/heimdal/com_err.h
+include/heimdal/com_right.h
 include/heimdal/crmf_asn1.h
 include/heimdal/der-private.h
 include/heimdal/der-protos.h
