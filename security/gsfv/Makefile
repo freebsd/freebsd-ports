@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/ijliao
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or verify Simple File Verification (SFV) checksum files
 
+DEPRECATED=	No more upstream.
+EXPIRATION_DATE=	2016-12-02
+
 LICENSE=	BSD2CLAUSE
 
 USE_GNOME=	gtk12
