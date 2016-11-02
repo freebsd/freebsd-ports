@@ -3,15 +3,15 @@
 set -e
 
 DOMAIN="example.net"
-LEDIR="%%PREFIX%%/etc/ssl/letsencrypt"
+ACMEDIR="%%PREFIX%%/etc/ssl/acme"
 JAILSDIR="/usr/jails"
 TARGETS="mail http"
 for jail in ${targets}; do
   targetdir="${JAILSDIR}/${jail}/etc/ssl"
   # Check if the certificate has changed
-  [[ -z "`diff -rq ${LEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
-  cp -L "${LEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
-  cp -L "${LEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
+  [[ -z "`diff -rq ${ACMEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
+  cp -L "${ACMEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
+  cp -L "${ACMEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
   chmod 400 "${targetdir}/priv/${domain}.pem"
   chmod 644 "${targetdir}/certs/${domain}.pem"
   # Restart/-load relevant services
@@ -25,9 +25,9 @@ done
 #for jail in ${targets}; do
 #  targetdir="${JAILSDIR}/${jail}/etc/ssl"
 #  # Check if the certificate has changed
-#  [[ -z "`diff -rq ${LEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
-#  cp -L "${LEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
-#  cp -L "${LEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
+#  [[ -z "`diff -rq ${ACMEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
+#  cp -L "${ACMEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
+#  cp -L "${ACMEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
 #  chmod 400 "${targetdir}/priv/${domain}.pem"
 #  chmod 644 "${targetdir}/certs/${domain}.pem"
 #  # Restart/-load relevant services
