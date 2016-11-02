@@ -1,10 +1,10 @@
 bin/acme-client
 man/man1/acme-client.1.gz
 etc/periodic/weekly/000.acme-client.sh
-@dir(,,0700) etc/letsencrypt
+@dir(,,0700) etc/acme
 @dir(,,0755) etc/ssl
-@dir(,,0755) etc/ssl/letsencrypt
-@dir(,,0700) etc/ssl/letsencrypt/private
+@dir(,,0755) etc/ssl/acme
+@dir(,,0700) etc/ssl/acme/private
 @dir(,www,) %%WWWDIR%%
-@sample etc/letsencrypt/deploy.sh.sample
-@sample etc/letsencrypt/acme-client.sh.sample
+@sample etc/acme/deploy.sh.sample
+@sample etc/acme/acme-client.sh.sample

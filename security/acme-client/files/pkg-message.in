@@ -1,11 +1,14 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!! WARNING: letskencrypt has been renamed to acme-client !!
-!! rename all weekly_letskencrypt_* periodic variables   !!
-!! to         weekly_acme_client_* in your periodic.conf !!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! WARNING: The default configuration paths have changed,    !!
+!! rename                                                    !!
+!! /usr/local/www/letsencrypt to /usr/local/www/acme,        !!
+!! /usr/local/etc/letsencrypt to /usr/local/etc/acme and     !!
+!! /usr/local/etc/ssl/letsencrypt to /usr/local/etc/ssl/acme !!
+!! and verify paths in your scripts                          !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 There are example scripts in
-    %%PREFIX%%/etc/letsencrypt
+    %%PREFIX%%/etc/acme
 that you can use for renewing and deploying multiple certificates
 
 In order to run the script regularly to update
@@ -27,7 +30,7 @@ To set additional acme-client arguments (see acme-client(1))
 
 To run a specific script for the renewal (ignore previously set variables)
 allows generating/renewing multiple keys/certificates
-    weekly_acme_client_renewscript=""%%PREFIX%%/etc/letsencrypt/%%PORTNAME%%.sh"
+    weekly_acme_client_renewscript=""%%PREFIX%%/etc/acme/%%PORTNAME%%.sh"
 
 To run a script after the renewal to deploy changed certs
-    weekly_acme_client_deployscript="%%PREFIX%%/etc/letsencrypt/deploy.sh"
+    weekly_acme_client_deployscript="%%PREFIX%%/etc/acme/deploy.sh"
