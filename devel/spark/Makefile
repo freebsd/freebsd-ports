@@ -60,7 +60,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib ${STAGEDIR}${DATADIR}/examples ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${DATADIR}/sbin ${STAGEDIR}${DATADIR}/conf
-	${ECHO_CMD} "Spark $PORTVERSION built for Hadoop 2.7.2" > ${STAGEDIR}${DATADIR}/RELEASE
+	${ECHO_CMD} "Spark ${PORTVERSION} built for Hadoop 2.7.2" > ${STAGEDIR}${DATADIR}/RELEASE
 	${INSTALL_DATA} ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar ${STAGEDIR}${DATADIR}/lib/
 	${INSTALL_DATA} ${WRKSRC}/examples/target/scala*/spark-examples*.jar ${STAGEDIR}${DATADIR}/lib/
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}/examples/
