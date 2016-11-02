@@ -169,6 +169,8 @@ lib/slurm/mpi_pmi2.a
 lib/slurm/mpi_pmi2.so
 lib/slurm/node_features_knl_cray.a
 lib/slurm/node_features_knl_cray.so
+lib/slurm/node_features_knl_generic.a
+lib/slurm/node_features_knl_generic.so
 lib/slurm/power_none.a
 lib/slurm/power_none.so
 lib/slurm/preempt_job_prio.a
