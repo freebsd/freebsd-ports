@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sxhkd
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gor@clogic.com.ua
 COMMENT=	Simple X hotkey daemon
 
 LICENSE=	BSD2CLAUSE
