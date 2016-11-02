@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2016-10-31 05:06:07 UTC
++++ CMakeLists.txt
+@@ -395,11 +395,11 @@ else()
+   install(TARGETS ${EXECUTABLE_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
+ endif()
+ 
+-find_package(PythonInterp)
+-if(PYTHONINTERP_FOUND)
+-  add_custom_target(scriptdoc ALL ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMENT "Building script reference documentation.")
+-  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
+-endif()
++#find_package(PythonInterp)
++#if(PYTHONINTERP_FOUND)
++#  add_custom_target(scriptdoc ALL ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMENT "Building script reference documentation.")
++#  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
++#endif()
+ 
+ set(CPACK_PACKAGE_EXECUTABLES ${EXECUTABLE_NAME})
+ set(CPACK_GENERATOR "ZIP")
