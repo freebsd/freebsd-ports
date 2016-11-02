@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/avalon/${PORTNAME}/binaries
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming
 
 USE_JAVA=	yes
