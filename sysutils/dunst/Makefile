@@ -35,6 +35,9 @@ PLIST_FILES=	bin/dunst \
 		man/man1/dunst.1.gz \
 		share/dbus-1/services/org.knopwob.dunst.service
 
+post-extract:
+	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/VERSION
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dunst
 
