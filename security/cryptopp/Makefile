@@ -66,8 +66,8 @@ do-install:
 	${CP} ${WRKSRC}/Readme.txt ${STAGEDIR}${PREFIX}/share/doc/cryptopp/README
 	${CP} ${WRKSRC}/License.txt ${STAGEDIR}${PREFIX}/share/doc/cryptopp/License
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: unrecognized C++ options
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on ${ARCH}: unrecognized C++ options
 .endif
 
 .include <bsd.port.mk>
