@@ -51,9 +51,6 @@ CFLAGS+=		-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT -I${LOCALBASE}/inc
 CFLAGS+=		-DNDEBUG
 .endif
 
-BROKEN_ia64=		Does not compile on ${ARCH}
-BROKEN_sparc64=		Does not compile on ${ARCH}
-
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
 MAKE_ENV+=		LP64=yes
 .endif
