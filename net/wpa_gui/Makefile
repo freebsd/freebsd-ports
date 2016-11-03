@@ -3,7 +3,7 @@
 
 PORTNAME=	wpa_gui
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
@@ -17,6 +17,7 @@ COMMENT=	Qt-based frontend for wpa_supplicant
 
 LICENSE=	BSD3CLAUSE
 
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC_SUBDIR=	wpa_supplicant/wpa_gui-qt4
 
 PLIST_FILES=	"@mode 4555" \
@@ -30,7 +31,8 @@ PLIST_FILES=	"@mode 4555" \
 SUB_FILES=	pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
-USE_QT4=	corelib gui moc_build rcc_build uic_build
+USE_QT4=	corelib gui moc_build rcc_build uic_build \
+		imageformats_run
 USES=		qmake
 INSTALLS_ICONS=	yes
 
