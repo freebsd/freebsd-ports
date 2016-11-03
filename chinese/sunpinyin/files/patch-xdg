@@ -1,5 +1,5 @@
---- src/ime-core/imi_options.cpp~	2012-05-13 22:55:19.000000000 -0500
-+++ src/ime-core/imi_options.cpp	2012-05-13 23:08:27.566965023 -0500
+--- src/ime-core/imi_options.cpp.orig	2014-11-14 14:17:48 UTC
++++ src/ime-core/imi_options.cpp
 @@ -73,12 +73,15 @@ CSimplifiedChinesePolicy::loadResources(
  
      if (!m_user_data_dir.size()) {
@@ -22,16 +22,14 @@
          m_user_data_dir = path;
      }
  
-diff -uNr src/ime-core/imi_options.h src/ime-core/imi_options.h
---- src/ime-core/imi_options.h	2010-09-22 13:14:35.883000000 +0800
-+++ src/ime-core/imi_options.h	2010-09-22 13:15:20.760000002 +0800
-@@ -50,7 +50,7 @@
- #include "pinyin/shuangpin_seg.h"
+--- src/ime-core/imi_options.h.orig	2014-11-14 14:17:48 UTC
++++ src/ime-core/imi_options.h
+@@ -52,7 +52,7 @@
+ #include "pinyin/hunpin_seg.h"
  
  #ifndef SUNPINYIN_USERDATA_DIR_PREFIX
 -#define SUNPINYIN_USERDATA_DIR_PREFIX ".sunpinyin"
 +#define SUNPINYIN_USERDATA_DIR_PREFIX "sunpinyin"
  #endif
  
- struct CSimplifiedChinesePolicy : public IConfigurable
-
+ struct CSimplifiedChinesePolicy : public IConfigurable {
