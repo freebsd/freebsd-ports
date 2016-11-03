@@ -55,10 +55,6 @@ ALL_TARGET=	${OSNAME}-x86-64
 ALL_TARGET=	generic
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 CFLAGS+=	-flax-vector-conversions
 .endif
