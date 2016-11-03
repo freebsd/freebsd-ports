@@ -16,6 +16,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
+DEPRECATED=	Support ends when 5.26 is released mid-2017, please upgrade to a more recent version of Perl
+EXPIRATION_DATE=2017-12-31
+
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 		LD_LIBRARY_PATH=${WRKSRC}
