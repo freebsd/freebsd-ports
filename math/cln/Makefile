@@ -21,8 +21,6 @@ USE_LDCONFIG=	yes
 
 INFO=		cln
 
-BROKEN_sparc64=	Does not compile on sparc64
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == armv6
