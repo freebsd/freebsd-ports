@@ -15,7 +15,8 @@ tree is updated:
   > synth upgrade-system
 
 During the building process, a curses-based display will show the status
-of all the builders and the entire bulk run process.  Synth is intended
+of all the builders and the entire bulk run process. A dynamic and
+searchable web-based report is generated simultaneously. Synth is intended
 to be grasped and utilized by novice users within minutes, but offers
 most of the same powerful features as Poudriere for the power users.
 Synth requires no preparation; it works immediately upon installation.
