@@ -3,6 +3,7 @@
 PORTNAME=	Coro
 PORTVERSION=	6.51.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,8 +38,8 @@ perl_OLD_CMD=	/.*/bin/perl
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 502200
-BROKEN=		Perl >= 5.22 is not supported
+.if ${PERL_LEVEL} >= 502200 && ${PERL_LEVEL} < 502400
+BROKEN=		Perl >= 5.22 and < 5.24 is not supported
 .endif
 
 post-install:
