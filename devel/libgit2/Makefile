@@ -33,8 +33,6 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CMAKE_ON=		-DCURL=ON
 CURL_CMAKE_OFF=		-DCURL=OFF
 
-BROKEN_sparc64=	does not install: thread-local storage not supported
-
 .include <bsd.port.pre.mk>
 
 post-patch:
