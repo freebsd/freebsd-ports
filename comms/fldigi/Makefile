@@ -52,7 +52,6 @@ HAMLIB_LIB_DEPENDS=		libhamlib.so:comms/hamlib
 NLS_CONFIGURE_ENABLE=		nls
 NLS_USES=			gettext
 
-BROKEN_sparc64=		Fails to install
 # Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc
 
