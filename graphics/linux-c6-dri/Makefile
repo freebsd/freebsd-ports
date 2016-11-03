@@ -3,7 +3,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	11.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 LIB_DISTFILES=	mesa-libGL-${PORTVERSION}-4.el6${EXTRACT_SUFX} \
 		mesa-libGLU-${PORTVERSION}-4.el6${EXTRACT_SUFX} \
@@ -20,7 +20,7 @@ COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux_dri-[0-9]* linux_dri-devel-[0-9]* linux-f10-dri-[0-9]* linux-dri-[0-9]*
 
 USES=		linux:c6
-USE_LINUX=	xorglibs
+USE_LINUX=	libpciaccess xorglibs
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
