@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		perl5 tar:xz
+USES=		gmake perl5 tar:xz
 
 WRKSRC_SUBDIR=	swig/perl
 
