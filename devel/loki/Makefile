@@ -33,10 +33,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: TLS not supported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
