@@ -25,8 +25,6 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	WNHOME=${WNHOME}
 
-BROKEN_sparc64=	Does not build on sparc64
-
 post-patch:
 	@${FIND} ${WRKSRC}/build -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		 "/wndictpath/s|'dict'|''|"
