@@ -32,6 +32,10 @@ PLIST_SUB+=	PERL_ARCH=${PERL_ARCH}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ByteLoader_bytecode.h
 .endif
 
+.if ${PERL_LEVEL} >= 502400 && ${OSVERSION} < 1000054
+BROKEN=		Does not build
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s|PERL_INC|PERL_INC_STAGE|g" ${WRKSRC}/Makefile.PL
 	${MKDIR} ${PERL_INC_STAGE}
