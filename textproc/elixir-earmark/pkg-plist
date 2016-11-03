@@ -1,3 +1,4 @@
+lib/elixir/lib/earmark/ebin/Elixir.Collectable.Earmark.Options.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.BlockQuote.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Code.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.FnDef.beam
@@ -15,6 +16,7 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Table.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.CLI.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Context.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.AttrParser.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LeexHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LineHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LinkParser.beam
@@ -66,11 +68,11 @@ lib/elixir/lib/earmark/ebin/link_text_lexer.beam
 lib/elixir/lib/earmark/ebin/link_text_parser.beam
 lib/elixir/lib/earmark/ebin/string_lexer.beam
 lib/elixir/lib/earmark/lib/earmark.ex
-lib/elixir/lib/earmark/lib/earmark/alt_parser.ex
 lib/elixir/lib/earmark/lib/earmark/block.ex
 lib/elixir/lib/earmark/lib/earmark/cli.ex
 lib/elixir/lib/earmark/lib/earmark/context.ex
 lib/elixir/lib/earmark/lib/earmark/helpers.ex
+lib/elixir/lib/earmark/lib/earmark/helpers/attr_parser.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/leex_helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/line_helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/link_parser.ex
