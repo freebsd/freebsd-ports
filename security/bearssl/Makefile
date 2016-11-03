@@ -11,6 +11,8 @@ COMMENT=	Implementation of TLS/SSL in C
 
 LICENSE=	MIT
 
+USES=		compiler:c11
+
 post-patch:
 	${REINPLACE_CMD} 's|CC = gcc|CC ?= gcc|' ${WRKSRC}/Makefile
 
