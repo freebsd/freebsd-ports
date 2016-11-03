@@ -5,7 +5,7 @@ PORTNAME=	Date
 PORTVERSION=	1.4.7
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Date and Time Zone Classes
 
 USES=		pear

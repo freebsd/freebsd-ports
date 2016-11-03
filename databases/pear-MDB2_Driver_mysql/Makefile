@@ -5,7 +5,7 @@ PORTNAME=	MDB2_Driver_mysql
 DISTVERSION=	1.5.0b4
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR MySQL MDB2 driver
 
 LICENSE=	BSD3CLAUSE

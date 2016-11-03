@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_PHPdotNet
 PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Driver based class to calculate birthdays of members of PHP.net
 
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays

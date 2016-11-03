@@ -5,7 +5,7 @@ PORTNAME=	DBA_Relational
 PORTVERSION=	0.2.0
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Berkely-style database abstraction class
 
 PORTSCOUT=	skipv:0.19
