@@ -40,6 +40,7 @@ man/man1/nvidia-smi.1.gz
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGL.so.1.2.0 ] || ln -sf libGL.so.1.2.0 %%LINUXBASE%%/usr/lib/libGL.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so
