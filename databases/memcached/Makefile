@@ -37,6 +37,7 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--disable-coverage
 
 DOCS_BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
+DOCS_CONFIGURE_ENABLE=	docs
 
 DTRACE_CONFIGURE_ENABLE=	dtrace
 
