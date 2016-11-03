@@ -1,5 +1,5 @@
---- SConstruct.orig	2014-11-14 09:17:48.000000000 -0500
-+++ SConstruct	2015-04-01 16:11:27.540297600 -0400
+--- SConstruct.orig	2014-11-14 14:17:48 UTC
++++ SConstruct
 @@ -215,10 +215,11 @@ def CreateEnvironment():
          make = 'gmake'
          tar = 'gtar'
