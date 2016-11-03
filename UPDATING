@@ -5,6 +5,41 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150513:
+  AFFECTS: users of lang/perl5*
+  AUTHOR: mat@FreeBSD.org
+
+  The default Perl version has been switched to Perl 5.24.  If you are using
+  binary packages to upgrade your system, you do not have anything to do, pkg
+  upgrade will do the right thing.  For the other people, assuming you are
+  migrating from 5.20 to 5.24, do:
+
+  First, add to /etc/make.conf:
+
+  DEFAULT_VERSIONS+=  perl5=5.24
+
+  Portupgrade users:
+	portupgrade -o lang/perl5.24 -f lang/perl5.20
+
+	  You can now remove the DEFAULT_VERSIONS line added earlier
+	  from /etc/make.conf
+
+	  Then you will need to rebuild everything that uses libperl.so, you
+	  can do so with:
+
+	portupgrade -f `pkg shlib -qR libperl.so.5.20`
+
+  Portmaster users:
+	portmaster -o lang/perl5.24 lang/perl5.20
+
+	  You can now remove the DEFAULT_VERSIONS line added earlier
+	  from /etc/make.conf
+
+	  Then you will need to rebuild everything that uses libperl.so, you
+	  can do so with:
+
+	portmaster -f `pkg shlib -qR libperl.so.5.20`
+
 20161102:
   AFFECTS: users of security/acme-client
   AUTHOR: brnrd@FreeBSD.org
