@@ -10,17 +10,16 @@ MASTER_SITES=	http://ftp.gwdg.de/pub/linux/handhelds/projects/xstroke/release-0.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison imake
+USES=		bison imake localbase
 USE_XORG=	xft x11 xext xi xtst
 
 PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet man/man1/xstroke.1.gz
 
 CFLAGS+=	-I.
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/etc/Imakefile
