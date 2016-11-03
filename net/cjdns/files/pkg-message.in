@@ -26,13 +26,13 @@ only need to add the public key of the server in the section
 ipTunnel/outgoingConnections. You may also need to bridge the tunN
 interface on the server to connect the segments of the VPN network.
 
-Here are some websites on CJDNS Hyperboria network:
+Here are some websites on the CJDNS Hyperboria network:
 * http://socialno.de/ - social network
 * https://rows.io/ - Jabber server
 * http://forum.meshbits.io/ - forums
 * http://h.fc00.org/ - network map
 
-Warning: When CJDNS daemon is connected to outside network, tunN
+Warning: When the CJDNS daemon is connected to an outside network, tunN
 interface will generally directly expose your computer to that network,
 bypassing the regular firewall that you normally use.
 ======================================================================
