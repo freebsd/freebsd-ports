@@ -3,7 +3,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \
@@ -24,21 +24,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 NO_BUILD=	yes
 RESTRICTED=	Distribution not allowed
 USES=		linux
-USE_LINUX=	sdl12 xorglibs
+USE_LINUX=	dri sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
-
-.ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX+=	libglu
-.else
-USE_LINUX+=	dri
-.endif
 
 OPTIONS_DEFINE=	NWMOVIES
 NWMOVIES_DESC=	Support for movies using BinkPlayer
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 # Client detection.  Currently, detects only original and Diamond editions.
 .if exists(${LOCALBASE}/share/nwndata/xp2.key)
@@ -98,4 +90,4 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

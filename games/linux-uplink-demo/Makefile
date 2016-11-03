@@ -3,7 +3,7 @@
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.introversion.co.uk/uplink/downloads/
 PKGNAMEPREFIX=	linux-
@@ -15,7 +15,7 @@ COMMENT=	High tech computer crime and industrial espionage on the Internet
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	sdl12 jpeg sdlmixer mikmod libvorbis xorglibs
+USE_LINUX=	dri jpeg libvorbis mikmod sdl12 sdlmixer xorglibs
 USE_LDCONFIG=	yes
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
@@ -26,17 +26,7 @@ SUB_FILES=	uplink
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 
-OPTIONS_DEFINE=	NVIDIA DOCS
-NVIDIA_DESC=	support for nvidia
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX+=	libglu
-.else
-USE_LINUX+=	dri
-.endif
+OPTIONS_DEFINE=	DOCS
 
 do-extract:
 	@cd ${WRKSRC} && ${TAIL} +376 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \

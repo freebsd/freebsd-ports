@@ -3,7 +3,7 @@
 
 PORTNAME=	nerogame
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://nn.cs.utexas.edu/nero/downloads/
 PKGNAMEPREFIX=	linux-
@@ -13,26 +13,13 @@ MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
 
 USES=		linux
-USE_LINUX=	libvorbis sdl12 libtheora
+USE_LINUX=	dri libtheora libvorbis sdl12
 NO_BUILD=	yes
 RESTRICTED=	Nero is freeware, but i am not sure of its license
 
 SUB_FILES=	nerogame pkg-message
 DATADIR=	share/${PKGNAMEPREFIX}${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
-OPTIONS_DEFINE=	NVIDIA
-NVIDIA_DESC=	Nvidia support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA}
-.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-.	endif
-.else
-USE_LINUX+=	dri
-.endif
 
 do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/nero.bin

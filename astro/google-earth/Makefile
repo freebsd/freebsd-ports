@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=	LINUX_DRI
 OPTIONS_SINGLE=		LIBGL
 OPTIONS_SINGLE_LIBGL=	LINUX_DRI NVIDIA_GL NVIDIA_GL_340 NVIDIA_GL_304
 LINUX_DRI_DESC=		libGL support via Linux DRI libraries
+NVIDIA_GL_DESC=		libGL support via nvidia-driver
 NVIDIA_GL_340_DESC=	libGL support via nvidia-driver-340
 NVIDIA_GL_304_DESC=	libGL support via nvidia-driver-304
 
