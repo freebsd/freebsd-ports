@@ -22,6 +22,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 LIBS+=		-L${LOCALBASE}/lib -lX11
 
-BROKEN_sparc64=	yes
-
 .include <bsd.port.mk>
