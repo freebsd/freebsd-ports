@@ -23,8 +23,6 @@ ALL_TARGET=	posix
 INCDIR=		include/${PORTNAME}
 PLIST_SUB=	INCDIR=${INCDIR}
 
-BROKEN_sparc64=		hangs while building on sparc64
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/malloc-2.8.3.h ${STAGEDIR}${PREFIX}/${INCDIR}/malloc.h
