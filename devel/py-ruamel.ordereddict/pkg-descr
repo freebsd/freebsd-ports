@@ -1,0 +1,7 @@
+This is an implementation of an ordered dictionary with Key Insertion
+Order (KIO: updates of values do not affect the position of the key),
+Key Value Insertion Order (KVIO, an existing key’s position is removed
+and put at the back). The standard library module OrderedDict,
+implemented later, implements a subset of ordereddict functionality.
+
+WWW: https://bitbucket.org/ruamel/ordereddict
