@@ -12,7 +12,6 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 LICENSE=	APACHE20
 
 BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=	Does not build: fails to compile symbol-table-ops.cc
 
 USES=		compiler:c++11-lib libtool python:2
 USE_LDCONFIG=	${LOCALBASE}/lib/fst
