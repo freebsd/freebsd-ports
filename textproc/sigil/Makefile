@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,12 +22,12 @@ USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
 		pkgconfig python:3 shebangfix
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
-USE_QT5=	concurrent gui network printsupport svg webkit widgets \
-		xml xmlpatterns \
+USE_QT5=	concurrent core gui network printsupport svg webkit \
+		widgets xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build \
 		imageformats_run
-CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=ON \
-		-DINSTALL_BUNDLED_DICTS:BOOL=OFF
+CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1 \
+		-DINSTALL_BUNDLED_DICTS:BOOL=0
 USE_LDCONFIG=	${PREFIX}/lib/sigil
 
 # Upstream uses pkg-config output to pass libhunspell-1.3.so and
