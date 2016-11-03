@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hgsvn
-PORTVERSION=	0.3.15
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	svn:devel/subversion \
 		hg:devel/mercurial
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 
