@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-client
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
