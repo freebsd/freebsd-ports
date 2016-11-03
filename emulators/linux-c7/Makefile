@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -61,6 +62,7 @@ RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 		linux-c7-expat>0:textproc/linux-c7-expat \
 		linux-c7-aspell>0:textproc/linux-c7-aspell \
 		linux-c7-libxml2>0:textproc/linux-c7-libxml2 \
+		linux-c7-dri>0:graphics/linux-c7-dri \
 		linux-c7-png>0:graphics/linux-c7-png \
 		linux-c7-tiff>0:graphics/linux-c7-tiff \
 		linux-c7-jpeg>0:graphics/linux-c7-jpeg \
@@ -83,11 +85,5 @@ RUN_DEPENDS+=	linux-c7-sdl_image>0:graphics/linux-c7-sdl_image \
 		linux-c7-sdl_ttf>0:graphics/linux-c7-sdl_ttf \
 		linux-c7-qtwebkit>0:www/linux-c7-qtwebkit
 .endif
-
-OPTIONS_DEFINE=	NVIDIA_GL
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver \
-			linux-c7-libGLU>0:graphics/linux-c7-libGLU
-NVIDIA_GL_RUN_DEPENDS_OFF=	linux-c7-dri>0:graphics/linux-c7-dri
 
 .include <bsd.port.post.mk>

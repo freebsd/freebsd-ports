@@ -3,7 +3,7 @@
 
 PORTNAME=	defcon
 PORTVERSION=	1.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://download.introversion.co.uk/defcon/linux/
 PKGNAMEPREFIX=	linux-
@@ -14,24 +14,14 @@ COMMENT=	Defcon for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	sdl12 libogg libvorbis xorglibs
+USE_LINUX=	dri libogg libvorbis sdl12 xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	defcon
 
-OPTIONS_DEFINE=	NVIDIA DOCS
-NVIDIA_DESC=	support for nvidia
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX+=	libglu
-.else
-USE_LINUX+=	dri
-.endif
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
