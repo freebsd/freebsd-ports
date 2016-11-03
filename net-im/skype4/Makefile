@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:audio/linux-skype_
 CONFLICTS=	skype-devel-[0-9]*
 
 OPTIONS_DEFINE=	VIDEO
-OPTIONS_DEFAULT=	VIDEO
+OPTIONS_DEFAULT=VIDEO
 
 NO_BUILD=	yes
 
@@ -31,10 +31,6 @@ PORTDOCS=	LICENSE README
 PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_USE=		LINUX=xorglibs
-NVIDIA_GL_USE_OFF=	LINUX=dri
 
 .include <bsd.port.options.mk>
 

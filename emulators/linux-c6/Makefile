@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-c6
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -68,6 +69,7 @@ RUN_DEPENDS=	linux-c6-libasyncns>0:dns/linux-c6-libasyncns \
 		linux-c6-expat>0:textproc/linux-c6-expat \
 		linux-c6-aspell>0:textproc/linux-c6-aspell \
 		linux-c6-libxml2>0:textproc/linux-c6-libxml2 \
+		linux-c6-dri>0:graphics/linux-c6-dri \
 		linux-c6-sdl_image>0:graphics/linux-c6-sdl_image \
 		linux-c6-sdl_ttf>0:graphics/linux-c6-sdl_ttf \
 		linux-c6-png>0:graphics/linux-c6-png \
@@ -78,11 +80,5 @@ RUN_DEPENDS=	linux-c6-libasyncns>0:dns/linux-c6-libasyncns \
 		linux-c6-cairo>0:graphics/linux-c6-cairo
 
 USES=		linux:c6 metaport
-
-OPTIONS_DEFINE=	NVIDIA_GL
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver \
-			linux-c6-libGLU>0:graphics/linux-c6-libGLU
-NVIDIA_GL_RUN_DEPENDS_OFF=	linux-c6-dri>0:graphics/linux-c6-dri
 
 .include <bsd.port.mk>

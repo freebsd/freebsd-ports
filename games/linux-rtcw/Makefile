@@ -3,7 +3,7 @@
 
 PORTNAME=	rtcw
 DISTVERSION=	1.41b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	IDSOFTWARE/wolf/linux
 PKGNAMEPREFIX=	linux-
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein (Linux version)
 
 USES=		linux makeself
-USE_LINUX=	xorglibs
+USE_LINUX=	dri xorglibs
 NO_WRKSUBDIR=	yes
 
 WRAPPERS=	wolf wolfded wolfsp
@@ -24,16 +24,7 @@ PORTSCOUT=	skipv:1.41-3
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS NVIDIA_GL
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_EXTVER=	'__GL_ExtensionStringVersion=18999 '
-.else
-USE_LINUX+=	dri
-.endif
+OPTIONS_DEFINE=	DOCS
 
 # XXX: should probably be converted to use the LICENSE framework
 post-extract:
@@ -43,7 +34,7 @@ do-build:
 .for f in ${WRAPPERS}
 	(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD}; \
 	 ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-	 ${ECHO_CMD} '${NVIDIA_GL_EXTVER}exec ./${f} "$$@"') > ${WRKDIR}/${f}
+	 ${ECHO_CMD} 'exec ./${f} "$$@"') > ${WRKDIR}/${f}
 .endfor
 
 do-install:

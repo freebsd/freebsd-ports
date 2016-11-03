@@ -3,7 +3,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	2.1.0.81
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
@@ -14,14 +14,14 @@ COMMENT=	P2P VoIP software
 
 CONFLICTS=	skype-devel-[0-9]*
 
-OPTIONS_DEFINE=	NVIDIA_GL VIDEO
-OPTIONS_DEFAULT=	VIDEO
+OPTIONS_DEFINE=	VIDEO
+OPTIONS_DEFAULT=VIDEO
 
 NO_BUILD=	yes
 
 USES=		cpe linux tar:bzip2
-USE_LINUX=	alsalib alsa-plugins-oss expat fontconfig libasyncns \
-		libsigcpp20
+USE_LINUX=	alsalib alsa-plugins-oss dri expat fontconfig libasyncns \
+		libsigcpp20 xorglibs
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}
@@ -32,13 +32,6 @@ SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX+=	xorglibs
-.else
-USE_LINUX+=	dri
-.endif
 
 .if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	webcamd:multimedia/webcamd
