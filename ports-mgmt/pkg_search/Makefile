@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/ \
 MAINTAINER=	schmidtm@mathematik.uni-marburg.de
 COMMENT=	Nifty script searching the ports database
 
-DEPRECATED=	works only with pkg_* tools and not pkg(8)
-EXPIRATION_DATE=	2016-11-30
+IGNORE_DragonFly=	Requires update to work for DragonFly
 
 PLIST_FILES=	bin/pkg_search man/man1/pkg_search.1.gz
 
