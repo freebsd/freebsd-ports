@@ -23,10 +23,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.2
-.endif
-
 .if ${ARCH} == amd64
 USE_LDCONFIG32=	${TARGET32_DIR}
 .endif
