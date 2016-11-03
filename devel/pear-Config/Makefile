@@ -5,7 +5,7 @@ PORTNAME=	Config
 PORTVERSION=	1.10.12
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Your configurations swiss-army knife
 
 OPTIONS_DEFINE=	PEAR_XML_PARSER PEAR_XML_UTIL

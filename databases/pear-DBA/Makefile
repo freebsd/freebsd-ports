@@ -5,7 +5,7 @@ PORTNAME=	DBA
 PORTVERSION=	1.1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Berkely-style database abstraction class
 
 USES=		pear

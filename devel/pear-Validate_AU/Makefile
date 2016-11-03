@@ -6,7 +6,7 @@ PORTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR data validation class for Australia
 
 USES=	pear

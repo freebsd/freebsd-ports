@@ -5,7 +5,7 @@ PORTNAME=	DB_DataObject
 PORTVERSION=	1.11.5
 CATEGORIES=	databases pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	SQL Builder, Object Interface to Database Tables
 
 LICENSE=	PHP301
