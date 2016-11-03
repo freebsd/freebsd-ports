@@ -34,14 +34,19 @@ share/pixmaps/sigil.png
 %%DATADIR%%/plugin_launchers/python/validationresult.py
 %%DATADIR%%/plugin_launchers/python/wrapper.py
 %%DATADIR%%/polyfills/MathJax.js
+%%DATADIR%%/python3lib/gencheck.py
 %%DATADIR%%/python3lib/metadata_utils.py
 %%DATADIR%%/python3lib/metaproc2.py
 %%DATADIR%%/python3lib/metaproc3.py
+%%DATADIR%%/python3lib/ncxdata.py
 %%DATADIR%%/python3lib/ncxgenerator.py
+%%DATADIR%%/python3lib/opf2data.py
+%%DATADIR%%/python3lib/opf3data.py
 %%DATADIR%%/python3lib/opf_newparser.py
 %%DATADIR%%/python3lib/sanitycheck.py
 %%DATADIR%%/python3lib/updatechecker.py
 %%DATADIR%%/python3lib/xmlprocessor.py
+%%DATADIR%%/python3lib/xmlsanitycheck.py
 %%DATADIR%%/translations/sigil_ca.qm
 %%DATADIR%%/translations/sigil_cs.qm
 %%DATADIR%%/translations/sigil_da_DK.qm
@@ -59,6 +64,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_ko.qm
 %%DATADIR%%/translations/sigil_nl.qm
 %%DATADIR%%/translations/sigil_pl.qm
+%%DATADIR%%/translations/sigil_pt.qm
 %%DATADIR%%/translations/sigil_pt_BR.qm
 %%DATADIR%%/translations/sigil_ru.qm
 %%DATADIR%%/translations/sigil_sk.qm
