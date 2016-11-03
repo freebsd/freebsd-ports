@@ -3,7 +3,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Lightweight Directory Access Protocol libraries (Linux CentOS ${LINUX_D
 CONFLICTS=	linux-f10-openldap-[0-9]*
 
 USES=		linux:c6
-#USE_LINUX=	openssl
+USE_LINUX=	cyrus-sasl2 nss nspr
 RPMVERSION=	12.el6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
