@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	26
+PORTVERSION=	27
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -15,7 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USES=		gmake libtool readline
 
+CONFIGURE_ARGS+=	--with-readline=yes
+
+OPTIONS_DEFINE=		DEBUG X11
+OPTIONS_DEFAULT=	X11
+
+X11_USE=		XORG=ice,sm,x11,xaw,xext,xmu,xt
+X11_CONFIGURE_ENABLE=	xspice
+X11_CONFIGURE_WITH=	x
+
 DEBUG_CONFIGURE_ENABLE=	debug
-CONFIGURE_ARGS+=	--enable-xspice --with-readline=yes
 
 .include <bsd.port.mk>
