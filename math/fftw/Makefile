@@ -26,8 +26,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-BROKEN_sparc64=	does not build
-
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
 
 PORTSCOUT=	limit:^2\.
