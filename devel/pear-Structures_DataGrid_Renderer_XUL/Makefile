@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_Renderer_XUL
 PORTVERSION=	0.1.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	XUL Renderer for pear-Structures_DataGrid
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \

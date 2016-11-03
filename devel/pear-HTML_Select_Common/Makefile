@@ -5,7 +5,7 @@ PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Some small PEAR classes to handle common <select> lists
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common	\
