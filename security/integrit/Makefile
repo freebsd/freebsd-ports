@@ -17,8 +17,6 @@ PLIST_FILES=	bin/i-ls sbin/i-viewdb sbin/integrit man/man1/i-ls.1.gz \
 		man/man1/i-viewdb.1.gz man/man1/integrit.1.gz
 INFO=		integrit
 
-BROKEN_sparc64=	Does not compile on sparc64
-
 post-patch:
 	@${REINPLACE_CMD} -E 's,[\({](infodir|MANDIR)[\)}],(DESTDIR)$$&,' \
 		${WRKSRC}/doc/Makefile.in
