@@ -1,5 +1,5 @@
---- src/sunpinyin-dictgen.mk.in.orig	2014-11-14 09:17:48.000000000 -0500
-+++ src/sunpinyin-dictgen.mk.in	2015-04-01 14:42:35.541184598 -0400
+--- src/sunpinyin-dictgen.mk.in.orig	2014-11-14 14:17:48 UTC
++++ src/sunpinyin-dictgen.mk.in
 @@ -42,22 +42,7 @@ DL_ROOT = ${DL_HOST}/open-gram
  DICT_PAT = 'dict\.utf8-[0-9]\+.tar.bz2'
  SLM_PAT = 'lm_sc\.3gm\.arpa-[0-9]\+.tar.bz2'
