@@ -5,7 +5,7 @@ PORTNAME=	FSM
 PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Finite State Machine
 
 OPTIONS_DEFINE=	PEAR_GRAPGHVIZ

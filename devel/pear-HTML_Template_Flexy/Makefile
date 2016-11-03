@@ -5,7 +5,7 @@ PORTNAME=	HTML_Template_Flexy
 PORTVERSION=	1.3.13
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Extremely powerful Tokenizer driven Template engine
 
 LICENSE=	PHP202

@@ -5,7 +5,7 @@ PORTNAME=	MDB2_Driver_pgsql
 DISTVERSION=	1.5.0b4
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR pgsql MDB2 driver
 
 LICENSE=	BSD3CLAUSE

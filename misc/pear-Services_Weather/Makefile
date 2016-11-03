@@ -6,7 +6,7 @@ PORTVERSION=	1.4.6
 PORTEPOCH=	1
 CATEGORIES=	misc www pear geography
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR interface to various online weather-services
 
 LICENSE=	BSD2CLAUSE
