@@ -29,8 +29,6 @@ TBR_CONFIG=	concurrent|inotify|xlib
 QMAKESPEC=	${WRKSRC}/mkspecs/freebsd-${QMAKE_COMPILER}
 INSTALL_TARGET=	install_qmake install_mkspecs
 
-BROKEN_sparc64=		Fails to build: internal compiler error
-
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 post-patch:
