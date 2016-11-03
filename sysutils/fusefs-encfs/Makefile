@@ -17,7 +17,6 @@ LIB_DEPENDS=	librlog.so:devel/rlog \
 		libboost_serialization.so:devel/boost-libs
 
 BROKEN_powerpc64=	does not build
-BROKEN_sparc64=		cannot link with boost
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
