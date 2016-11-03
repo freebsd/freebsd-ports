@@ -4210,6 +4210,7 @@
     SUBDIR += py-instant
     SUBDIR += py-interface
     SUBDIR += py-intervaltree
+    SUBDIR += py-invoke
     SUBDIR += py-ioflo
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
