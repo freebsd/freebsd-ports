@@ -43,10 +43,6 @@ TEST_TARGET=	check
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to package on sparc64: fails self-tests
-.endif
-
 BF_LIBS?=		-l${BDB_LIB_NAME}
 BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
