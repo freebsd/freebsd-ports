@@ -3,7 +3,7 @@
 
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.soulride.com/products/images/
 PKGNAMEPREFIX=	linux-
@@ -12,22 +12,16 @@ DISTNAME=	virtual_jay_peak_linux_1_1a
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of snowboarding at the Jay Peak resort in Vermont
 
-OPTIONS_DEFINE=	DOCS NVIDIA
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/soulride
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	xorglibs
+USE_LINUX=	dri xorglibs
 NO_BUILD=	yes
 SUB_FILES=	virtual-jay-peak
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-.else
-USE_LINUX+=	dri
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/virtual-jay-peak ${STAGEDIR}${PREFIX}/bin

@@ -3,7 +3,7 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games linux
 MASTER_SITES=	IDSOFTWARE/et/:patch \
 		IDSOFTWARE/et/linux/:full
@@ -16,15 +16,12 @@ COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux zip:infozip
-USE_LINUX=	xorglibs
+USE_LINUX=	dri xorglibs
 NO_CDROM=	Redistribution limited
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 PATCH_260B_DIR=	Enemy Territory 2.60b
 
-OPTIONS_DEFINE=	DOCS NVIDIA_GL
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_USE_OFF=	LINUX=dri
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

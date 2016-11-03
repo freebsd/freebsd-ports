@@ -3,7 +3,7 @@
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.hup.hu/~trey/DOOM3/ \
 		http://darkstar.ist.utl.pt/pub/games/ \
@@ -18,7 +18,7 @@ COMMENT=	DOOM III demo for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	xorglibs
+USE_LINUX=	dri xorglibs
 NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -28,11 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3-demo
 SUB_LIST=	DOOMDIR="${DOOMDIR}"
 
-OPTIONS_DEFINE=	DOCS NVIDIA_GL
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_USE_OFF=	LINUX=dri
-
+OPTIONS_DEFINE=	DOCS
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
