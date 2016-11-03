@@ -24,8 +24,6 @@ MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 
 MAKE_ARGS+=	CC="${CC}"
 
-BROKEN_sparc64=	Does not link on sparc64
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pxz
 
