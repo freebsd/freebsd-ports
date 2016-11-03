@@ -3843,6 +3843,7 @@
 %%WWWDIR%%/spec/lib/gitlab/highlight_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/avatar_restorer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/avatar_saver_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/import_export/file_importer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/import_export_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/members_mapper_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/project.json
@@ -4153,6 +4154,7 @@
 %%WWWDIR%%/spec/support/gitlab_stubs/projects.json
 %%WWWDIR%%/spec/support/gitlab_stubs/session.json
 %%WWWDIR%%/spec/support/gitlab_stubs/user.json
+%%WWWDIR%%/spec/support/import_export/common_util.rb
 %%WWWDIR%%/spec/support/import_export/import_export.yml
 %%WWWDIR%%/spec/support/import_spec_helper.rb
 %%WWWDIR%%/spec/support/issue_tracker_service_shared_example.rb
