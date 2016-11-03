@@ -1,4 +1,17 @@
-pkg_search queries the appropriate database file of FreeBSD, DragonFlyBSD or
-NetBSD for a given package name.
+pkg_search scans the ports INDEX file to use as a database, fetching it
+if necessary.  Example of usage to search for a package:
+
+ # pkg_search cyrus-sasl
+ cyrus-sasl-1.5.28_5   RFC 2222 SASL (Simple Authentication and Security Layer)
+ cyrus-sasl-2.1.22     RFC 2222 SASL (Simple Authentication and Security Layer)
+ cyrus-sasl-ldapdb-2.1.22      SASL LDAPDB auxprop plugin
+ cyrus-sasl-saslauthd-2.1.22   SASL authentication server for cyrus-sasl2
+
+ # pkg_search -i cyrus-sasl-2.1.22
+ Name : cyrus-sasl-2.1.22-50
+ Dir  : /usr/ports/security/cyrus-sasl2                   
+ Desc : RFC 2222 SASL (Simple Authentication and Security Layer)
+ URL  : http://cyrusimap.web.cmu.edu/                     
+ Deps : 
 
 WWW: http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/
