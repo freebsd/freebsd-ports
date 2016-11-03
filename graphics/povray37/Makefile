@@ -11,9 +11,9 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+
+BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
 OPTIONS_DEFAULT=PNG JPEG
@@ -99,10 +99,6 @@ CONFIGURE_ARGS+=--without-openexr
 
 .if !${PORT_OPTIONS:MPNG} || !${PORT_OPTIONS:MJPEG} || !${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=NON_REDISTRIBUTABLE_BUILD=yes
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: thread-local storage not supported
 .endif
 
 MAN1=		${PORTNAME}${PKGNAMESUFFIX}.1
