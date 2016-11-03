@@ -1,5 +1,5 @@
---- wpagui.cpp.orig	2015-09-27 19:02:05 UTC
-+++ wpagui.cpp
+--- wpa_supplicant/wpa_gui-qt4/wpagui.cpp.orig	2015-09-27 19:02:05 UTC
++++ wpa_supplicant/wpa_gui-qt4/wpagui.cpp
 @@ -302,7 +302,8 @@ int WpaGui::openCtrlConnection(const cha
  #endif /* _DIRENT_HAVE_D_TYPE */
  
