@@ -13,7 +13,7 @@ COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/slf4j-api.jar:devel/slf4j
+RUN_DEPENDS=	slf4j>=1.7.7:devel/slf4j
 
 OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
