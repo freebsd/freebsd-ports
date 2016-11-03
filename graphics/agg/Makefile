@@ -28,6 +28,4 @@ MAKE_JOBS_UNSAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 
-BROKEN_sparc64=		Does not compile
-
 .include <bsd.port.mk>
