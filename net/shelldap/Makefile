@@ -29,7 +29,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 post-extract:
-	${LOCALBASE}/bin/pod2man < ${WRKSRC}/shelldap > ${WRKSRC}/shelldap.1
+	${LOCALBASE}/bin/pod2man ${WRKSRC}/shelldap ${WRKSRC}/shelldap.1
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/shelldap.1 ${STAGEDIR}${MANPREFIX}/man/man1
