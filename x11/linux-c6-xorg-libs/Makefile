@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 linux
 LIB_DISTFILES=	libICE-1.0.6-1.el6${EXTRACT_SUFX} \
 		libSM-1.2.1-2.el6${EXTRACT_SUFX} \
@@ -37,8 +37,7 @@ LIB_DISTFILES=	libICE-1.0.6-1.el6${EXTRACT_SUFX} \
 		libXxf86vm-1.1.3-2.1.el6${EXTRACT_SUFX} \
 		libfontenc-1.1.2-3.el6${EXTRACT_SUFX} \
 		libxcb-1.11-2.el6${EXTRACT_SUFX} \
-		libxkbfile-1.0.6-1.1.el6${EXTRACT_SUFX} \
-		mesa-libGLw-6.5.1-10.el6${EXTRACT_SUFX}
+		libxkbfile-1.0.6-1.1.el6${EXTRACT_SUFX}
 SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm:SOURCE \
 		libSM-1.2.1-2.el6.src.rpm:SOURCE \
 		libX11-1.6.3-2.el6.src.rpm:SOURCE \
@@ -71,8 +70,7 @@ SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm:SOURCE \
 		libXxf86vm-1.1.3-2.1.el6.src.rpm:SOURCE \
 		libfontenc-1.1.2-3.el6.src.rpm:SOURCE \
 		libxcb-1.11-2.el6.src.rpm:SOURCE \
-		libxkbfile-1.0.6-1.1.el6.src.rpm:SOURCE \
-		mesa-libGLw-6.5.1-10.el6.src.rpm:SOURCE
+		libxkbfile-1.0.6-1.1.el6.src.rpm:SOURCE
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
