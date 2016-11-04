@@ -31,8 +31,8 @@
 -	  echo " $(INSTALL_DATA) $$p $(lispdir)/$$p"; \
 -	  $(INSTALL_DATA) $$p $(lispdir)/$$p; \
 +	  echo " $(INSTALL_DATA) $$p $(DESTDIR)$(lispdir)/$$p"; \
-+	  $(INSTALL_DATA) $$p $(DESTDIR)$(lispdir)/$$p; \
 +	  $(INSTALL_DATA) `echo $$p | sed 's/elc$$/el/'` $(DESTDIR)$(lispdir)/`echo $$p | sed 's/elc$$/el/'` ; \
++	  $(INSTALL_DATA) $$p $(DESTDIR)$(lispdir)/$$p; \
  	done
 -	$(INSTALL_DATA) iso88591.map $(lispdir)
 +	$(INSTALL_DATA) iso88591.map $(DESTDIR)$(lispdir)
