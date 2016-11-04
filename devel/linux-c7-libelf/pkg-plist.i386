@@ -1,0 +1,11 @@
+usr/lib/libelf-0.163.so
+usr/lib/libelf.so.1
+usr/share/licenses/elfutils-libelf-0.163/COPYING-GPLV2
+usr/share/licenses/elfutils-libelf-0.163/COPYING-LGPLV3
+%%NLS%%usr/share/locale/de/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/en@boldquot/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/en@quot/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/uk/LC_MESSAGES/elfutils.mo
