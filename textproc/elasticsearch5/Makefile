@@ -2,36 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	textproc java devel
-MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
+MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
-CONFLICTS=	elasticsearch-[0-9]* elasticsearch5-[0-9]*
+RUN_DEPENDS=	bash>0:shells/bash
 
-USES=		cpe
+CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]*
+
+USES=		cpe shebangfix
 NO_ARCH=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 USE_RC_SUBR=	${PORTNAME}
+SHEBANG_FILES=	bin/elasticsearch-plugin \
+		bin/elasticsearch
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	5.5.2
-CONFIG_FILES=	elasticsearch.yml logging.yml
+LUCENEVER=	6.2.0
+CONFIG_FILES=	elasticsearch.yml log4j2.properties jvm.options
 BINS=		elasticsearch.in.sh \
 		elasticsearch \
-		plugin
+		elasticsearch-plugin
 
 DOCS=		LICENSE.txt \
 		NOTICE.txt \
@@ -77,7 +80,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/elasticsearch
 	@${MKDIR} ${STAGEDIR}${ELASTIC_DBDIR} ${STAGEDIR}${ELASTIC_LOGDIR}
-	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${PREFIX}/lib/elasticsearch/bin/plugin elasticsearch-plugin
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${PREFIX}/lib/elasticsearch/bin/elasticsearch-plugin elasticsearch-plugin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
