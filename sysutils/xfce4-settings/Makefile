@@ -18,6 +18,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libxklavier.so:x11/libxklavier
 
+PORTSCOUT=	limit:^4\.12\.
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 cairo intltool intlhack
