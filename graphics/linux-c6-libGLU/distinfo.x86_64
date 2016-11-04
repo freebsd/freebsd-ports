@@ -1,7 +1,0 @@
-TIMESTAMP = 1466257509
-SHA256 (rpm/x86_64/centos/6.8/mesa-libGLU-11.0.7-4.el6.x86_64.rpm) = b56e0217bf287fa0211ce209a2180305b74d93d867c6dee91e55a46b5da78508
-SIZE (rpm/x86_64/centos/6.8/mesa-libGLU-11.0.7-4.el6.x86_64.rpm) = 202272
-SHA256 (rpm/x86_64/centos/6.8/mesa-libGLU-11.0.7-4.el6.i686.rpm) = 23af90e8395cbdd59eb6f5e08cd011a876883a8f60e66dbe67e70e1268c9e7b0
-SIZE (rpm/x86_64/centos/6.8/mesa-libGLU-11.0.7-4.el6.i686.rpm) = 200644
-SHA256 (rpm/x86_64/centos/6.8/mesa-11.0.7-4.el6.src.rpm) = 9db7bd5036fcc8fa25585cd5625e56d95118092b816ba09867073e310db44b5d
-SIZE (rpm/x86_64/centos/6.8/mesa-11.0.7-4.el6.src.rpm) = 129624873
