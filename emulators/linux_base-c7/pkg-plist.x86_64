@@ -3039,7 +3039,7 @@ var/mail
 @dir etc/xinetd.d
 @dir mnt
 @dir opt
-@dir proc
+@dir(,,555) proc
 @dir srv
 @dir sys
 @dir usr/etc
