@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161104:
+  AFFECTS: users of mail/mu4e and mail/mu4e-maildirs
+  AUTHOR: hrs@FreeBSD.org
+
+  The package name of mail/mu4e* have been changed from mu4e* to
+  mu4e*-emacsNN.  When upgrading the older versions, this change can
+  cause the following error which prevents it from upgrading:
+
+   pkg-static: mu4e-emacs25-0.9.16 conflicts with mu4e-0.9.16 (installs files into the same place).
+
+  If this error occurs, please remove the old packages by using
+  "pkg delete" manually:
+
+   # pkg delete mu4e-0.9.16 mu4e-maildirs-0.8.20160126_1
+
 20161103:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org
