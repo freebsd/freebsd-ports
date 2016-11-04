@@ -3,6 +3,7 @@
 
 PORTNAME=	mu
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
 
-USES=		autoreconf gmake libtool makeinfo pkgconfig
+USES=		autoreconf gettext-runtime gmake libtool makeinfo pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk --disable-mu4e
