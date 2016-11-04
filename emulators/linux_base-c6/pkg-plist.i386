@@ -2363,7 +2363,7 @@ var/mail
 @dir lib/tls
 @dir mnt
 @dir opt
-@dir proc
+@dir(,,555) proc
 @dir selinux
 @dir srv
 @dir sys
