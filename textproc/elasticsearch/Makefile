@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	java-sigar>=0:java/sigar
 
-CONFLICTS=	elasticsearch2-[0-9]*
+CONFLICTS=	elasticsearch[0-9]-[0-9]*
 
 USES=		cpe
 NO_ARCH=	yes
