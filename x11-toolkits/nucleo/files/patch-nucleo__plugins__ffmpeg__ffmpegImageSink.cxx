@@ -152,7 +152,7 @@
 +
 +    int got_packet = 0 ;
 +    int ret = avcodec_encode_video2(cctx, &pkt, picture, &got_packet) ;
-+    if (ret) {
++    if (ret < 0 || !got_packet || pkt.size <= 0) {
 +	 std::cerr << "ffmpegImageSink: avcodec_encode_video2 failed" << std::endl ;
  	 stop() ;
  	 return false ;
