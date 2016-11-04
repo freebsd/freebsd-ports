@@ -5,7 +5,7 @@ PORTNAME=	HTTP_Upload
 PORTVERSION=	0.9.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Easy and secure management of files submitted via HTML Forms
 
 USES=	pear

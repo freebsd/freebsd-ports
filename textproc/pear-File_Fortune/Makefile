@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	textproc pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Interface for reading from and writing to fortune files
 
 USES=	pear

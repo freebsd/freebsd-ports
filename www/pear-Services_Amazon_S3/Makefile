@@ -5,7 +5,7 @@ PORTNAME=	Services_Amazon_S3
 PORTVERSION=	0.4.0
 CATEGORIES=	www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP API for Amazon S3 (Simple Storage Service)
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2 \

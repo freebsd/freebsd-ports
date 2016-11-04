@@ -5,7 +5,7 @@ PORTNAME=	Net_Finger
 PORTVERSION=	1.0.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class that provides a tool for querying finger servers
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
