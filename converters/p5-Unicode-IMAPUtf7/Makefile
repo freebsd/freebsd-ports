@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-Unicode-String>=0:converters/p5-Unicode-String
 USES=		perl5
 USE_PERL5=	configure
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 1100077
 # chmod -R bug
 post-extract:
@@ -29,4 +31,4 @@ post-extract:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
