@@ -1,4 +1,4 @@
-TIMESTAMP = 1476910506
+TIMESTAMP = 1478024499
 SHA256 (SDL2-CS.dll) = 76206c2795cd3fae569fececb95025d1f9d92c618e2625188510b3331e171c3f
 SIZE (SDL2-CS.dll) = 86016
 SHA256 (SDL2-CS.dll.config) = eff0594f7e86d40a94c1b28f8db87478f3de1cf0857f3d46e384bcc6744ce094
@@ -9,8 +9,8 @@ SHA256 (OpenAL-CS.dll.config) = 58eaf46a749e466fce0a0ec43184073b0153aa8eb24c8652
 SIZE (OpenAL-CS.dll.config) = 301
 SHA256 (Eluant.dll) = 218c4ea5424b44d746b5343563123beebc652fd9731967dfd49fed071b58df31
 SIZE (Eluant.dll) = 71168
-SHA256 (GeoLite2-Country.mmdb.gz) = be007196c155814b9e46f3969d992aca43158b0b8840b747079312c0aafaa530
-SIZE (GeoLite2-Country.mmdb.gz) = 1302893
+SHA256 (GeoLite2-Country.mmdb.gz) = 2be4eae00c562dbab4ea198abbf5f58f575e554eb0b43f1407296d5275c0d929
+SIZE (GeoLite2-Country.mmdb.gz) = 1298653
 SHA256 (fuzzylogiclibrary.1.2.0.nupkg) = b464509236260f53d963771ed99410a7e1cdbd268a2bde43b189e7d15044a174
 SIZE (fuzzylogiclibrary.1.2.0.nupkg) = 70571
 SHA256 (maxmind.db.2.0.0.nupkg) = 095d62c6ecda38c1e8fe79935b4eaf228d2637f9498caec48b8b48a0aba6d5aa
