@@ -11,8 +11,6 @@ COMMENT=	Simple GUI tool for tracking port updates
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_sparc64=	fails to compile: error in C++ code
-
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \
 		share/portrac/up-to-date.png \
