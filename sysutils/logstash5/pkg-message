@@ -1,0 +1,14 @@
+To start logstash as an agent during startup, add
+
+    logstash_enable="YES"
+
+to your /etc/rc.conf.
+
+Extra options can be found in startup script.
+
+NOTE: Since version 1.5.0, logstash is started in agent mode.
+The Kibana web application is no longer embedded in this Logstash
+distribution.
+
+NOTE: Since version 2, logstash does not support an embedded
+ElasticSearch instance.

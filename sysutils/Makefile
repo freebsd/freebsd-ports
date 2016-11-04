@@ -541,6 +541,7 @@
     SUBDIR += logstalgia
     SUBDIR += logstash
     SUBDIR += logstash-forwarder
+    SUBDIR += logstash5
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
