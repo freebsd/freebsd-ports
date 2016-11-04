@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0.r4
 CATEGORIES=	www devel pear
 DISTNAME=	${PORTNAME}-1.0.0RC4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	WebDAV Server Baseclass
 
 USES=	pear

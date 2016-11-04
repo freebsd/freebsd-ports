@@ -5,7 +5,7 @@ PORTNAME=	File_Passwd
 PORTVERSION=	1.1.7
 CATEGORIES=	security pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to manipulate many kinds of password files
 
 USES=	pear
