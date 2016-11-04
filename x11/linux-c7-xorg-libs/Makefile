@@ -3,6 +3,7 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.7
+PORTREVISION=	1
 CATEGORIES=	x11 linux
 LIB_DISTFILES=	libICE-1.0.9-2.el7${EXTRACT_SUFX} \
 		libSM-1.2.2-2.el7${EXTRACT_SUFX} \
@@ -37,7 +38,7 @@ LIB_DISTFILES=	libICE-1.0.9-2.el7${EXTRACT_SUFX} \
 		libfontenc-1.1.2-3.el7${EXTRACT_SUFX} \
 		libxcb-1.11-4.el7${EXTRACT_SUFX} \
 		libxkbfile-1.0.8-5.el7${EXTRACT_SUFX} \
-		mesa-libGLw-8.0.0-4.el7${EXTRACT_SUFX}
+		libxshmfence-1.2-1.el7${EXTRACT_SUFX}
 SRC_DISTFILES=	libICE-1.0.9-2.el7${SRC_SUFX}:SOURCE \
 		libSM-1.2.2-2.el7${SRC_SUFX}:SOURCE \
 		libX11-1.6.3-2.el7${SRC_SUFX}:SOURCE \
@@ -71,7 +72,7 @@ SRC_DISTFILES=	libICE-1.0.9-2.el7${SRC_SUFX}:SOURCE \
 		libfontenc-1.1.2-3.el7${SRC_SUFX}:SOURCE \
 		libxcb-1.11-4.el7${SRC_SUFX}:SOURCE \
 		libxkbfile-1.0.8-5.el7${SRC_SUFX}:SOURCE \
-		mesa-libGLw-8.0.0-4.el7${SRC_SUFX}:SOURCE
+		libxshmfence-1.2-1.el7${SRC_SUFX}:SOURCE
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
