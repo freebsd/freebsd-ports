@@ -2528,7 +2528,7 @@ var/mail
 @dir usr/include
 @dir usr/games
 @dir usr/etc
-@dir sys
+@dir(,,555) sys
 @dir srv
 @dir selinux
 @dir(,,555) proc

@@ -2591,7 +2591,7 @@ var/mail
 @dir opt
 @dir(,,555) proc
 @dir srv
-@dir sys
+@dir(,,555) sys
 @dir usr/etc
 @dir usr/games
 @dir usr/include
