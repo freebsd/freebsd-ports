@@ -23,6 +23,7 @@ GH_ACCOUNT=	andrewrk
 USES=		cmake:outsource
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes
+CFLAGS+=	-Wno-error=deprecated-declarations # ffmpeg 3.1
 
 PLIST_SUB+=	VER1=${PORTVERSION:R:R} \
 		VER3=${PORTVERSION}
