@@ -3,6 +3,7 @@
 
 PORTNAME=	bearssl
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://bearssl.org/
 
@@ -18,7 +19,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/brssl ${STAGEDIR}${LOCALBASE}/bin/
-	(cd ${WRKSRC}/inc && ${COPYTREE_SHARE} \* ${STAGEDIR}${LOCALBASE}/include/)
-	${INSTALL_LIB} ${WRKSRC}/libbearssl.a ${STAGEDIR}${LOCALBASE}/lib/
+	(cd ${WRKSRC}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/include/)
+	${INSTALL_DATA} ${WRKSRC}/libbearssl.a ${STAGEDIR}${LOCALBASE}/lib/
 
 .include <bsd.port.mk>
