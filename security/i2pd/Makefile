@@ -34,6 +34,12 @@ UPNP_DESC=		Include support for UPnP client
 UPNP_CMAKE_BOOL=	WITH_UPNP
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+BROKEN=		does not build with LibreSSL (unsupported DSA_set0_pqg(), DSA_set0_key())
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
@@ -43,4 +49,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/configuration.md ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
