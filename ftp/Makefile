@@ -87,6 +87,7 @@
     SUBDIR += rubygem-curb
     SUBDIR += scythia
     SUBDIR += smbftpd
+    SUBDIR += spegla
     SUBDIR += tftp-hpa
     SUBDIR += tnftp
     SUBDIR += tnftpd
