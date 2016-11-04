@@ -3,7 +3,7 @@
 
 PORTNAME=		R
 PORTVERSION=		3.3.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -29,7 +29,7 @@ USE_PERL5=		build
 OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER LIBR MEMPROF NLS RPROF X11
 OPTIONS_GROUP=		NEEDGCC NEEDX11
 OPTIONS_GROUP_NEEDGCC=	LTO OPENMP
-OPTIONS_GROUP_NEEDX11=	DOCS GHOSTSCRIPT JPEG CAIROPANGO PNG TCLTK TIFF
+OPTIONS_GROUP_NEEDX11=	GHOSTSCRIPT JPEG CAIROPANGO PNG TCLTK TEXDOCS TIFF
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB RBLAS
 
@@ -38,7 +38,6 @@ OPTIONS_SUB=		YES
 ATLAS_DESC=		ATLAS BLAS implementation
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
-DOCS_DESC=		All documentation (TeX build dependency)
 INFO_DESC=		GNU info manuals
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
@@ -53,17 +52,12 @@ OPENBLAS_DESC=		OpenBLAS BLAS implementation
 PNG_DESC=		PNG graphics device
 RBLAS_DESC=		Use R-bundled BLAS implementation
 RPROF_DESC=		R profiling via Rprof()
+TEXDOCS_DESC=		Build/Install TeX-dependent documentation files
 X11_DESC=		X11 graphics device
 
 OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE LIBR PNG \
 			RBLAS RPROF TCLTK TIFF X11
 
-DOCS_BUILD_DEPENDS=	texi2any:print/texinfo
-.for i in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
-DOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
-.endfor
-DOCS_INSTALL_TARGET=	install-pdf
-DOCS_USE=		tex=dvipsk:build,kpathsea:build,pdftex:build
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CONFIGURE_ON=	--disable-BLAS-shlib
 ATLAS_VARS=		MANUAL_PACKAGE_BUILD=\
@@ -109,6 +103,12 @@ RPROF_CONFIGURE_ENABLE=	R-profiling
 TCLTK_IMPLIES=		X11
 TCLTK_USES=		tcl tk:84+
 TCLTK_CONFIGURE_WITH=	tcltk
+TEXDOCS_BUILD_DEPENDS=	texi2any:print/texinfo
+.for i in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
+TEXDOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
+.endfor
+TEXDOCS_INSTALL_TARGET=	install-pdf
+TEXDOCS_USE=		tex=dvipsk:build,kpathsea:build,pdftex:build
 TIFF_IMPLIES=		X11
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	libtiff
