@@ -25,4 +25,7 @@ USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGL.so.1
+
 .include <bsd.port.mk>
