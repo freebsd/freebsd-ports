@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-python \
 		--disable-cppunit \
 		--disable-zzuf
+MAKE_ENV=	V=1
 INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
@@ -45,15 +46,15 @@ LIB_DEPENDS+=	libftgl.so:graphics/ftgl
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MFTGL}
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*ftgl/ s|ftgl|no-&|' ${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's|-g -O2 ||g ; s| -fomit-frame-pointer||g ; \
 		s|arpa\/inet.h ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; s| csharp||g' \
 			${WRKSRC}/Makefile.in
 
-post-install:
+post-patch-FTGL-off:
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*ftgl/ s|ftgl|no-&|' ${WRKSRC}/configure
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
