@@ -5,7 +5,7 @@ PORTNAME=	Auth
 PORTVERSION=	1.6.4
 CATEGORIES=	security pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class for creating an authentication system
 
 USES=	pear

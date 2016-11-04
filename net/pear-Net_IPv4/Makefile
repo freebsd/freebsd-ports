@@ -5,7 +5,7 @@ PORTNAME=	Net_IPv4
 DISTVERSION=	1.3.4
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	IPv4 network calculations and validation
 
 USES=	pear

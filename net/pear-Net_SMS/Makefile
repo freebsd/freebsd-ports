@@ -5,7 +5,7 @@ PORTNAME=	Net_SMS
 PORTVERSION=	0.2.1
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR SMS functionality
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:mail/pear-Mail \

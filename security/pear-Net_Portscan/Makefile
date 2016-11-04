@@ -5,7 +5,7 @@ PORTNAME=	Net_Portscan
 PORTVERSION=	1.0.3
 CATEGORIES=	security pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Provides an API for scanning ports
 
 USES=	pear

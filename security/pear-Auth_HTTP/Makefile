@@ -4,7 +4,7 @@ PORTNAME=	Auth_HTTP
 PORTVERSION=	2.1.8
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR HTTP authentication
 
 USES=	pear

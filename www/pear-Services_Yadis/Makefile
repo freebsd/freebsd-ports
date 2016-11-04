@@ -5,7 +5,7 @@ PORTNAME=	Services_Yadis
 PORTVERSION=	0.5.2
 CATEGORIES=	www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 
 USES=	pear

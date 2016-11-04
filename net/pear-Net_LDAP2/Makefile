@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 USES=	pear
