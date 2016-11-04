@@ -5,7 +5,7 @@ PORTNAME=	Net_SMTP
 PORTVERSION=	1.7.2
 CATEGORIES=	net mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
 LICENSE=	PHP301

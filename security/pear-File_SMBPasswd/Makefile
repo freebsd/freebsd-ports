@@ -5,7 +5,7 @@ PORTNAME=	File_SMBPasswd
 PORTVERSION=	1.0.3
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class for managing SAMBA style password files
 
 BUILD_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP

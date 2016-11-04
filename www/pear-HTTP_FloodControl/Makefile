@@ -5,7 +5,7 @@ PORTNAME=	HTTP_FloodControl
 PORTVERSION=	0.1.1
 CATEGORIES=	www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR classes to detect and protect from attempts to flood a site
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP

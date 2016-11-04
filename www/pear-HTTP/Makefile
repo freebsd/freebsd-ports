@@ -5,7 +5,7 @@ PORTNAME=	HTTP
 PORTVERSION=	1.4.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR miscellaneous HTTP utilities
 
 USES=	pear
