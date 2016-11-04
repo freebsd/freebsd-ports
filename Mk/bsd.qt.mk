@@ -62,9 +62,6 @@ MASTER_SITES=	${MASTER_SITE_QT}
 #PKGNAMEPREFIX?=	${_QT_RELNAME}-
 DISTINFO_FILE?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/distinfo
 
-# Can go after a while.
-CONFLICTS_BUILD=qt-3.* qt-copy-3.*
-
 LICENSE?=		LGPL21
 
 . if !exists(${PKGDIR}/pkg-descr)
