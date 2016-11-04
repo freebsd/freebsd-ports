@@ -5,14 +5,12 @@ PORTNAME=	wbar
 PORTVERSION=	2.3.4
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple and highly customizable quick launch bar
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable (google code has gone away)
 
 BUILD_DEPENDS=	intltool-update:textproc/intltool
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
