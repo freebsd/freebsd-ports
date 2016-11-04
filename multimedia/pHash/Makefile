@@ -3,6 +3,7 @@
 
 PORTNAME=	pHash
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	http://phash.org/releases/ \
 		http://www.cyberbotx.com/pHash/
@@ -53,5 +54,9 @@ VIDEO_CONFIGURE_ENABLE=	video-hash
 VIDEO_BUILD_DEPENDS=	${LOCALBASE}/include/CImg.h:graphics/cimg
 VIDEO_RUN_DEPENDS=	${LOCALBASE}/include/CImg.h:graphics/cimg
 VIDEO_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+
+post-patch:
+# Avoid USES=autoreconf while keeping configure.ac patch for reference
+	@${TOUCH} -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
