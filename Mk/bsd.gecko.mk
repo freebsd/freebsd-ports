@@ -266,8 +266,7 @@ MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
 .endif
 # others
 MOZ_OPTIONS+=	--with-system-zlib		\
-		--with-system-bz2		\
-		--disable-debug-symbols
+		--with-system-bz2
 
 # API keys from www/chromium 
 # http://www.chromium.org/developers/how-tos/api-keys
@@ -381,7 +380,7 @@ MOZ_OPTIONS+=	--disable-rust
 MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
-MOZ_OPTIONS+=	--disable-debug --enable-release
+MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
