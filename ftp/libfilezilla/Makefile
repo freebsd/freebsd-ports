@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libfilezilla
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	ftp
-MASTER_SITES=	SF/filezilla/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://download.filezilla-project.org/${PORTNAME}/
 
 MAINTAINER=	matthew@reztek.cz
 COMMENT=	C++ library for building platform-independent programs
