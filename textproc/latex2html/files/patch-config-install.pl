@@ -1,6 +1,6 @@
---- config/install.pl.orig	2002-11-29 20:49:01.000000000 +0900
-+++ config/install.pl	2013-11-03 02:31:07.000000000 +0900
-@@ -372,7 +372,7 @@
+--- config/install.pl.orig	2016-04-19 16:52:35 UTC
++++ config/install.pl
+@@ -372,7 +372,7 @@ foreach $item (sort keys %Install_items)
  
  if($cfg{TEXPATH}) {
    print "\nNote: trying to install LaTeX2HTML style files in TeX directory tree\n     ($cfg{TEXPATH})\n";
