@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	esniper
-DISTVERSION=	2-31-0
+DISTVERSION=	2-32-0
 CATEGORIES=	misc net
 MASTER_SITES=	SF
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-curl-config=${LOCALBASE}/bin/curl-config
-USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/esniper man/man1/esniper.1.gz
 
