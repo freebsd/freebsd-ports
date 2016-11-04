@@ -19,7 +19,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USES=		cpe
-USE_PHP=	bcmath curl json mysql pcre xml
+USE_PHP=	bcmath curl json mysqli pcre xml
 
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
