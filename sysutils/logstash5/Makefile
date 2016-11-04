@@ -5,6 +5,7 @@ PORTNAME=	logstash
 PORTVERSION=	5.0.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Server-side data ingest and transfomation tool
