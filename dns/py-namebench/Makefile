@@ -5,8 +5,8 @@ PORTNAME=	namebench
 PORTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	dns python benchmarks
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/jgh/dns/
+MASTER_SITES=	SF/bsdsrc/${PORTDIRNAME}/ \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
@@ -14,8 +14,6 @@ MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source DNS benchmark utility
 
 LICENSE=	APACHE20
-
-BROKEN=		Unfetchable (google code has gone away)
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy \
