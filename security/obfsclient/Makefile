@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	security
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tor-managed pluggable transport client
 
 LICENSE=	BSD2CLAUSE MIT ISCL BSD3CLAUSE
