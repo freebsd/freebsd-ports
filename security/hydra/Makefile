@@ -17,8 +17,6 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre \
 		libsasl2.so:security/cyrus-sasl2
 
-CONFLICTS_INSTALL=	hydra-web-[0-9]*
-
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
 		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
 GNU_CONFIGURE=	yes
