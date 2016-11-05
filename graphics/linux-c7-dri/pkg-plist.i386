@@ -8,6 +8,9 @@ usr/lib/dri/r600_dri.so
 usr/lib/dri/radeonsi_dri.so
 usr/lib/dri/swrast_dri.so
 usr/lib/dri/vmwgfx_dri.so
+@postexec [ -e %D/usr/lib/libEGL.so.1 ] || ln -sf libEGL.so.1.0.0 %D/usr/lib/libEGL.so.1
+@postunexec [ -e %D/usr/lib/libEGL.so.1 ] || rm -f %D/usr/lib/libEGL.so.1
+usr/lib/libEGL.so.1.0.0
 @postexec [ -e %D/usr/lib/libGL.so.1 ] || ln -sf libGL.so.1.2.0 %D/usr/lib/libGL.so.1
 @postunexec [ -e %D/usr/lib/libGL.so.1 ] || rm -f %D/usr/lib/libGL.so.1
 usr/lib/libGL.so.1.2.0
@@ -45,5 +48,6 @@ usr/lib/udev/rules.d/91-drm-modeset.rules
 %%PORTDOCS%%usr/share/doc/freeglut-2.8.1/progress.html
 %%PORTDOCS%%usr/share/doc/freeglut-2.8.1/structure.html
 %%PORTDOCS%%usr/share/doc/libdrm-2.4.60/README
+%%PORTDOCS%%usr/share/doc/mesa-libEGL-10.6.5/COPYING
 %%PORTDOCS%%usr/share/doc/mesa-libGL-10.6.5/COPYING
 %%PORTDOCS%%usr/share/doc/mesa-private-llvm-3.6.2/LICENSE.TXT
