@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161105:
+  AFFECTS: users of security/heimdal
+  AUTHOR: hrs@FreeBSD.org
+
+  kadmin(8) in heimdal-1.5.3_5 and prior did not create a database
+  in /var/heimdal in Berkeley DB format which kdc(8) required.  This
+  problem has been fixed in heimdal-1.5.3_6.
+
 20161104:
   AFFECTS: users of mail/mu4e and mail/mu4e-maildirs
   AUTHOR: hrs@FreeBSD.org
