@@ -33,10 +33,10 @@ lib/linuxsampler/liblinuxsampler.so
 lib/linuxsampler/liblinuxsampler.so.3
 lib/linuxsampler/liblinuxsampler.so.3.0.0
 lib/linuxsampler/plugins/.keep_me
-%%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.a
-%%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.so
-%%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.ttl
-%%LV2CORE%%lib/lv2/linuxsampler.lv2/manifest.ttl
+%%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.a
+%%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.so
+%%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.ttl
+%%LV2%%lib/lv2/linuxsampler.lv2/manifest.ttl
 libdata/pkgconfig/linuxsampler.pc
 man/man1/linuxsampler.1.gz
 /var/lib/linuxsampler/instruments.db
