@@ -35,6 +35,8 @@ GNUTLS_CPPFLAGS=	$$(pkg-config --cflags gnutls)
 GNUTLS_LDFLAGS=		$$(pkg-config --libs gnutls)
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
+OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
+OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
