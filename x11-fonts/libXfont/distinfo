@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXfont-1.5.1.tar.bz2) = b70898527c73f9758f551bbab612af611b8a0962202829568d94f3edf4d86098
-SIZE (xorg/lib/libXfont-1.5.1.tar.bz2) = 502903
+TIMESTAMP = 1478372826
+SHA256 (xorg/lib/libXfont-1.5.2.tar.bz2) = 02945ea68da447102f3e6c2b896c1d2061fd115de99404facc2aca3ad7010d71
+SIZE (xorg/lib/libXfont-1.5.2.tar.bz2) = 530367
