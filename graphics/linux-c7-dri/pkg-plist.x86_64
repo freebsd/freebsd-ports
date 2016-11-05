@@ -25,6 +25,8 @@ usr/lib/libdrm_nouveau.so.2
 usr/lib/libdrm_nouveau.so.2.0.0
 usr/lib/libdrm_radeon.so.1
 usr/lib/libdrm_radeon.so.1.0.1
+usr/lib/libgbm.so.1
+usr/lib/libgbm.so.1.0.0
 usr/lib/libglapi.so.0
 usr/lib/libglapi.so.0.0.0
 usr/lib/libglut.so.3
@@ -58,6 +60,8 @@ usr/lib64/libdrm_nouveau.so.2
 usr/lib64/libdrm_nouveau.so.2.0.0
 usr/lib64/libdrm_radeon.so.1
 usr/lib64/libdrm_radeon.so.1.0.1
+usr/lib64/libgbm.so.1
+usr/lib64/libgbm.so.1.0.0
 usr/lib64/libglapi.so.0
 usr/lib64/libglapi.so.0.0.0
 usr/lib64/libglut.so.3
@@ -82,4 +86,5 @@ usr/lib64/libkms.so.1.0.0
 %%PORTDOCS%%usr/share/doc/libdrm-2.4.60/README
 %%PORTDOCS%%usr/share/doc/mesa-libEGL-10.6.5/COPYING
 %%PORTDOCS%%usr/share/doc/mesa-libGL-10.6.5/COPYING
+%%PORTDOCS%%usr/share/doc/mesa-libgbm-10.6.5/COPYING
 %%PORTDOCS%%usr/share/doc/mesa-private-llvm-3.6.2/LICENSE.TXT
