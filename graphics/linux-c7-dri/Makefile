@@ -3,11 +3,12 @@
 
 PORTNAME=	dri
 PORTVERSION=	10.6.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics linux
 LIB_DISTFILES=	mesa-libEGL-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX} \
 		mesa-libGL-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX} \
 		mesa-libGLU-9.0.0-4.el7${EXTRACT_SUFX} \
+		mesa-libgbm-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX} \
 		mesa-libglapi-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX} \
 		mesa-dri-drivers-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX} \
 		mesa-private-llvm-3.6.2-2.el7${EXTRACT_SUFX} \
@@ -31,7 +32,9 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGL.so.1
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGL.so.1
 
 .include <bsd.port.mk>
