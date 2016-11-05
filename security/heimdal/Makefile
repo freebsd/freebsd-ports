@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -55,8 +55,7 @@ OPTIONS_SUB=	yes
 IPV6_CONFIGURE_WITH=	ipv6
 
 BDB_DESC=		Enable BerkeleyDB KDC backend support
-BDB_CONFIGURE_ON=	--with-berkeley-db \
-			--with-berkeley-db-include=/usr/include
+BDB_CONFIGURE_ON=	--with-berkeley-db
 BDB_CONFIGURE_OFF=	--without-berkeley-db
 
 SQLITE_DESC=		Enable SQLite KDC backend support
