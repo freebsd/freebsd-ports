@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	lv2
 
+DEPRECATED=	Superseded by audio/lv2
+EXPIRATION_DATE=	2016-11-30
+
 USES=		pkgconfig python:build tar:bzip2 waf
 
 post-patch:

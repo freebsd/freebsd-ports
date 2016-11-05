@@ -3,7 +3,7 @@
 
 PORTNAME=	slv2
 PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -13,7 +13,7 @@ COMMENT=	LV2 Application Support Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:audio/lv2core
+BUILD_DEPENDS=	lv2>=1.14.0_1:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		librdf.so:textproc/redland
 
