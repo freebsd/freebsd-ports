@@ -3,7 +3,7 @@
 
 PORTNAME=	slv2
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -13,7 +13,7 @@ COMMENT=	LV2 Application Support Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:audio/lv2core
+BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		librdf.so:textproc/redland
 
@@ -25,6 +25,7 @@ post-patch:
 		'/pkgconfig/s|$${LIBDIRNAME}|libdata|' ${WRKSRC}/autowaf.py
 	@${REINPLACE_CMD} -e \
 		'/autowaf.build_dox/s|^|#| ; \
+		 s/lv2core/lv2/ ; \
 		 /HTMLDIR/s|^|#| ; \
 		 /MANDIR/s|^|#|' ${WRKSRC}/wscript
 	@${REINPLACE_CMD} -e \
