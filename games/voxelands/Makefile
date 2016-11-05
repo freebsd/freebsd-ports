@@ -2,6 +2,7 @@
 
 PORTNAME=		voxelands
 PORTVERSION=		1604.00
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		http://voxelands.com/downloads/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
@@ -33,8 +34,7 @@ SOUND_DESC=		Enable menu background music and in-game sound effects
 SQLITE3_DESC=		Use bundled SQLite3 instead of databases/sqlite3
 
 CLIENT_CMAKE_BOOL=	BUILD_CLIENT
-CLIENT_LIB_DEPENDS=	libpng16.so:graphics/png \
-			libjpeg.so:graphics/jpeg
+CLIENT_LIB_DEPENDS=	libpng.so:graphics/png
 CLIENT_USE=		xorg=x11,xxf86vm gl=gl
 CLIENT_USES=		jpeg
 NLS_USES=		gettext
