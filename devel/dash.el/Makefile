@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dash.el
-PORTVERSION=	2.12.1
+PORTVERSION=	2.13.0
 CATEGORIES=	devel elisp
 
 MAINTAINER=	rpaulo@FreeBSD.org
