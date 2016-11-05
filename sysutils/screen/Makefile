@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -49,9 +49,6 @@ PLIST_SUB+=	MAN=""
 PLIST_SUB+=	MAN="@comment"
 .endif
 .if ${PORT_OPTIONS:MINFO}
-.if !exists(/usr/bin/install-info)
-RUN_DEPENDS+=	install-info:print/texinfo
-.endif
 INFO=		screen
 MAKE_ARGS+=	WITH_INFO=1
 .endif
