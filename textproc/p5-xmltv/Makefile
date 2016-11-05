@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.67
+PORTVERSION=	0.5.68
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,6 @@ XMLTV_DEPENDS=	\
 	p5-PerlIO-gzip>=0:archivers/p5-PerlIO-gzip \
 	p5-CGI>=0:www/p5-CGI \
 	p5-IO-Compress>=0:archivers/p5-IO-Compress \
-	p5-Data-Dumper>=0:devel/p5-Data-Dumper \
 	p5-libwww>=0:www/p5-libwww \
 	p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent \
 	p5-HTML-Tree>=0:www/p5-HTML-Tree \
