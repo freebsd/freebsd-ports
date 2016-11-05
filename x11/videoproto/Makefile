@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	videoproto
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Video extension headers
+
+LICENSE=	MIT
 
 XORG_CAT=	proto
 
