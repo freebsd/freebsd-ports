@@ -14,7 +14,7 @@ include/sndfile.hh
 lib/libsndfile.a
 lib/libsndfile.so
 lib/libsndfile.so.1
-lib/libsndfile.so.1.0.26
+lib/libsndfile.so.1.0.27
 libdata/pkgconfig/sndfile.pc
 man/man1/sndfile-cmp.1.gz
 man/man1/sndfile-concat.1.gz
@@ -41,3 +41,8 @@ man/man1/sndfile-salvage.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sndfile_info.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/win32.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+
