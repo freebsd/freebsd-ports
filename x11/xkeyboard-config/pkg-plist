@@ -91,11 +91,13 @@ share/X11/xkb/symbols/am
 share/X11/xkb/symbols/apl
 share/X11/xkb/symbols/ara
 share/X11/xkb/symbols/at
+share/X11/xkb/symbols/au
 share/X11/xkb/symbols/az
 share/X11/xkb/symbols/ba
 share/X11/xkb/symbols/bd
 share/X11/xkb/symbols/be
 share/X11/xkb/symbols/bg
+share/X11/xkb/symbols/bn
 share/X11/xkb/symbols/br
 share/X11/xkb/symbols/brai
 share/X11/xkb/symbols/bt
@@ -116,6 +118,7 @@ share/X11/xkb/symbols/digital_vndr/pc
 share/X11/xkb/symbols/digital_vndr/us
 share/X11/xkb/symbols/digital_vndr/vt
 share/X11/xkb/symbols/dk
+share/X11/xkb/symbols/dz
 share/X11/xkb/symbols/ee
 share/X11/xkb/symbols/empty
 share/X11/xkb/symbols/epo
@@ -137,6 +140,7 @@ share/X11/xkb/symbols/group
 share/X11/xkb/symbols/hp_vndr/us
 share/X11/xkb/symbols/hr
 share/X11/xkb/symbols/hu
+share/X11/xkb/symbols/id
 share/X11/xkb/symbols/ie
 share/X11/xkb/symbols/il
 share/X11/xkb/symbols/in
@@ -188,6 +192,7 @@ share/X11/xkb/symbols/mm
 share/X11/xkb/symbols/mn
 share/X11/xkb/symbols/mt
 share/X11/xkb/symbols/mv
+share/X11/xkb/symbols/my
 share/X11/xkb/symbols/nbsp
 share/X11/xkb/symbols/nec_vndr/jp
 share/X11/xkb/symbols/ng
@@ -198,6 +203,7 @@ share/X11/xkb/symbols/nokia_vndr/rx-51
 share/X11/xkb/symbols/nokia_vndr/su-8w
 share/X11/xkb/symbols/np
 share/X11/xkb/symbols/olpc
+share/X11/xkb/symbols/parens
 share/X11/xkb/symbols/pc
 share/X11/xkb/symbols/ph
 share/X11/xkb/symbols/pk
