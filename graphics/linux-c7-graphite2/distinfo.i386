@@ -1,0 +1,5 @@
+TIMESTAMP = 1478346200
+SHA256 (rpm/centos/7.2.1511/i386/graphite2-1.3.6-1.el7_2.i686.rpm) = 5833acac7b610ae47aaff9fff6976044184dcef52f724a1f94142e69e2215116
+SIZE (rpm/centos/7.2.1511/i386/graphite2-1.3.6-1.el7_2.i686.rpm) = 115780
+SHA256 (rpm/centos/7.2.1511/i386/graphite2-1.3.6-1.el7_2.src.rpm) = 24e94805fcb7de71ccd8fd1ecaf44cf56602da1a030a14c4d7862c3bcd87bbea
+SIZE (rpm/centos/7.2.1511/i386/graphite2-1.3.6-1.el7_2.src.rpm) = 3618675
