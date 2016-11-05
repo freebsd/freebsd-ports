@@ -482,6 +482,7 @@
     SUBDIR += mifluz
     SUBDIR += miller
     SUBDIR += minised
+    SUBDIR += minixmlto
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
     SUBDIR += ml-aspell
