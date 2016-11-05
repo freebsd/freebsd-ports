@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsamplerate
-PORTVERSION=	0.1.8
-PORTREVISION=	6
+PORTVERSION=	0.1.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
