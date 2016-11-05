@@ -37,7 +37,8 @@ do-build:
 		${SH} build.sh -platform ${PLATFORMKEYWORD} \
 		-qtbin ${QT_PREFIX}/bin \
 		-qtinc ${QT_INCDIR} \
-		-qtlib ${QT_LIBDIR}
+		-qtlib ${QT_LIBDIR} \
+		-python ${PYTHON_CMD}
 
 do-install:
 	cd ${WRKSRC}/bin.${PLATFORMKEYWORD} && \
