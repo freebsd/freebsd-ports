@@ -1,0 +1,5 @@
+TIMESTAMP = 1478345628
+SHA256 (rpm/centos/7.2.1511/i386/harfbuzz-0.9.36-1.el7.i686.rpm) = 2bb37a0c0b8b0156c5074b7c3e96e93c645b0203e4a5d030931ac331faf121f9
+SIZE (rpm/centos/7.2.1511/i386/harfbuzz-0.9.36-1.el7.i686.rpm) = 159380
+SHA256 (rpm/centos/7.2.1511/i386/harfbuzz-0.9.36-1.el7.src.rpm) = e2f9caad7fed5451c19271b904cf597b210676120a63246b1094060ca9aa6873
+SIZE (rpm/centos/7.2.1511/i386/harfbuzz-0.9.36-1.el7.src.rpm) = 1168365

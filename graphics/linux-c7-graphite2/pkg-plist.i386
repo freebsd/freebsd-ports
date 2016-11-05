@@ -1,0 +1,6 @@
+usr/bin/gr2fonttest
+usr/lib/libgraphite2.so.3
+usr/lib/libgraphite2.so.3.0.1
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
