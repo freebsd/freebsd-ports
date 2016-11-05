@@ -1,2 +1,3 @@
-SHA256 (xorg/proto/xcb-proto-1.11.tar.bz2) = b4aceee6502a0ce45fc39b33c541a2df4715d00b72e660ebe8c5bb444771e32e
-SIZE (xorg/proto/xcb-proto-1.11.tar.bz2) = 139213
+TIMESTAMP = 1478371121
+SHA256 (xorg/proto/xcb-proto-1.12.tar.bz2) = 5922aba4c664ab7899a29d92ea91a87aa4c1fc7eb5ee550325c3216c480a4906
+SIZE (xorg/proto/xcb-proto-1.12.tar.bz2) = 153890
