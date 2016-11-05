@@ -35,6 +35,7 @@ man/man1/nvidia-smi.1.gz
 /%%KMODDIR%%/nvidia-modeset.ko
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libEGL.so.1.0.0 ] || ln -sf libEGL.so.1.0.0 %%LINUXBASE%%/usr/lib/libEGL.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.0
 %%LINUX%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so
