@@ -4,7 +4,7 @@
 PORTNAME=	closure-compiler
 PORTVERSION=	20131014
 CATEGORIES=	www java
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://dl.google.com/closure-compiler/
 DISTNAME=	compiler-${PORTVERSION}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
@@ -12,8 +12,7 @@ COMMENT=	Closure Compiler
 
 LICENSE=	APACHE20
 
-BROKEN=		Unfetchable (google code has gone away)
-
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	closure-compiler
