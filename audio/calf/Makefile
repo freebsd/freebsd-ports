@@ -3,7 +3,7 @@
 
 PORTNAME=	calf
 PORTVERSION=	0.0.60
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://calf-studio-gear.org/files/
 
@@ -33,8 +33,8 @@ OPTIONS_SUB=		yes
 LASH_LIB_DEPENDS=	liblash.so:audio/lash
 LASH_CONFIGURE_WITH=	lash
 LV2_DESC=		LV2 audio plugin
-LV2_BUILD_DEPENDS=	lv2core>0:audio/lv2core
-LV2_RUN_DEPENDS=	lv2core>0:audio/lv2core
+LV2_BUILD_DEPENDS=	lv2>=1.14.0_1:audio/lv2
+LV2_RUN_DEPENDS=	lv2>=1.14.0_1:audio/lv2
 LV2_CONFIGURE_WITH=	lv2
 
 .include <bsd.port.pre.mk>
