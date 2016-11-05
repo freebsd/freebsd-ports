@@ -193,7 +193,6 @@
     SUBDIR += libmatroska
     SUBDIR += libmediaart
     SUBDIR += libmediainfo
-    SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
     SUBDIR += libmtp
