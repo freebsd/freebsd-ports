@@ -11,6 +11,9 @@ DIST_SUBDIR=	apache22
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM} MPM
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre
