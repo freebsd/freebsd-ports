@@ -25,7 +25,6 @@ post-patch:
 		'/pkgconfig/s|$${LIBDIRNAME}|libdata|' ${WRKSRC}/autowaf.py
 	@${REINPLACE_CMD} -e \
 		'/autowaf.build_dox/s|^|#| ; \
-		 s/lv2core/lv2/ ; \
 		 /HTMLDIR/s|^|#| ; \
 		 /MANDIR/s|^|#|' ${WRKSRC}/wscript
 	@${REINPLACE_CMD} -e \
