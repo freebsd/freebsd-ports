@@ -17,6 +17,7 @@ RUN_DEPENDS=	curl:ftp/curl
 USE_GITHUB=	yes
 GH_ACCOUNT=	lukas2511
 
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	SHELL
 OPTIONS_SINGLE_SHELL=	BASH ZSH
 BASH_DESC=	Use the Bourne Again shell (BASH)
@@ -69,15 +70,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt ${STAGEDIR}${ETCDIR}/domains.txt.example
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
 
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .	for d in dns-verification domains_txt ecc hook_chain import-from-official-client \
 		per-certificate-config staging troubleshooting wellknown
 		${INSTALL_MAN} ${WRKSRC}/docs/${d}.md ${STAGEDIR}${DOCSDIR}
 .	endfor
-
-post-stage:
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
 
 .include <bsd.port.mk>
