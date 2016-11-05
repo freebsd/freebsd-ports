@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mycli
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,15 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=0.60:devel/py-prompt_toolkit \
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.0:devel/py-prompt_toolkit \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}pymysql>=0.6.2:databases/py-pymysql \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.1.16:databases/py-sqlparse
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.0:databases/py-sqlparse
 
 NO_ARCH=	yes
-USE_MYSQL=	yes
 USE_PYTHON=	autoplist distutils
-USES=		python
+USES=		mysql python
 
 .include <bsd.port.mk>
