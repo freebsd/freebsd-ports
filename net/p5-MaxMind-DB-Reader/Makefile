@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Reader
-PORTVERSION=	1.000009
-PORTREVISION=	1
+PORTVERSION=	1.000012
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -17,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-IEEE754>=0:devel/p5-Data-IEEE754 \
 		p5-Data-Printer>=0:devel/p5-Data-Printer \
-		p5-Data-Validate-IP>=0.16:net-mgmt/p5-Data-Validate-IP \
+		p5-Data-Validate-IP>=0.25:net-mgmt/p5-Data-Validate-IP \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
-		p5-MaxMind-DB-Common>=0.040000:net/p5-MaxMind-DB-Common \
+		p5-MaxMind-DB-Common>=0.040001:net/p5-MaxMind-DB-Common \
 		p5-Module-Implementation>=0:devel/p5-Module-Implementation \
 		p5-Moo>=1.003000:devel/p5-Moo \
 		p5-MooX-StrictConstructor>=0:devel/p5-MooX-StrictConstructor \
