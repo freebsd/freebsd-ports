@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxkbcommon
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xkbcommon.org/download/
 
@@ -23,6 +22,7 @@ CONFIGURE_ARGS=	--without-default-layout \
 		--without-default-options \
 		--without-default-rules \
 		--without-default-variant \
-		--without-doxygen
+		--without-doxygen \
+		--with-x-locale-root=${PREFIX}/lib/X11/locale
 
 .include <bsd.port.mk>
