@@ -1,13 +1,13 @@
 PR ports/187433: fix build on FreeBSD 10 
 ========================================
 
---- ./src/LogCache.cc.orig	2014-03-16 19:32:30.000000000 +0100
-+++ ./src/LogCache.cc	2014-03-16 19:33:20.000000000 +0100
-@@ -25,6 +25,7 @@
- #include <time.h>
- #include <sys/types.h>
+--- src/LogCache.cc.orig	2016-10-20 15:07:59 UTC
++++ src/LogCache.cc
+@@ -24,6 +24,7 @@
+ 
+ #include "LogCache.h"
  #include <dirent.h>
 +#include <pthread.h>
- #include <unistd.h>
- #include <stddef.h>
  #include <stdarg.h>
+ #include <stddef.h>
+ #include <stdio.h>

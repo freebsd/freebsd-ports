@@ -1,6 +1,6 @@
---- ./src/Makefile.in.orig	2014-02-10 10:54:03.000000000 +0100
-+++ ./src/Makefile.in	2014-02-20 22:47:49.000000000 +0100
-@@ -260,7 +260,7 @@
+--- src/Makefile.in.orig	2016-10-20 15:08:36 UTC
++++ src/Makefile.in
+@@ -297,7 +297,7 @@ am__leading_dot = @am__leading_dot@
  am__quote = @am__quote@
  am__tar = @am__tar@
  am__untar = @am__untar@
