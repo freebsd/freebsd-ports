@@ -7,7 +7,7 @@
 
 PORTNAME=	Module-Build-Tiny
 PORTVERSION=	0.039
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,10 +20,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-Config>=0.003:devel/p5-ExtUtils-Config \
 		p5-ExtUtils-Helpers>=0.020:devel/p5-ExtUtils-Helpers \
-		p5-ExtUtils-InstallPaths>=0.002:devel/p5-ExtUtils-InstallPaths \
-		p5-Test-Harness>=3.29:devel/p5-Test-Harness
+		p5-ExtUtils-InstallPaths>=0.002:devel/p5-ExtUtils-InstallPaths
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
