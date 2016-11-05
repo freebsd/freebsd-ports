@@ -3,6 +3,7 @@
 
 PORTNAME=	lv2
 PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
@@ -38,6 +39,9 @@ EXAMPLES_USE=		GNOME=cairo,gtk20
 EXAMPLES_CONFIGURE_ENV=	CC='${CC} -Wl,--as-needed' # Gtk deps
 
 post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/*.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig/
 # Waf doesn't have built-in strip support
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \
 		-name '*.so' -exec ${STRIP_CMD} {} +
