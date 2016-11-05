@@ -79,6 +79,7 @@
     SUBDIR += rubygem-gdsii
     SUBDIR += sceptre
     SUBDIR += scotch
+    SUBDIR += sp2sp
     SUBDIR += spice
     SUBDIR += stepcode
     SUBDIR += sweethome3d
