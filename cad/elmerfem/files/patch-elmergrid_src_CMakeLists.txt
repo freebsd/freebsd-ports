@@ -1,6 +1,6 @@
---- elmergrid/src/CMakeLists.txt.orig	2016-07-15 11:02:59 UTC
+--- elmergrid/src/CMakeLists.txt.orig	2016-10-26 13:01:22 UTC
 +++ elmergrid/src/CMakeLists.txt
-@@ -29,7 +29,7 @@ ADD_EXECUTABLE(ElmerGrid ${elmergrid_SRC
+@@ -31,7 +31,7 @@ ADD_EXECUTABLE(ElmerGrid ${elmergrid_SRC
  
  TARGET_LINK_LIBRARIES(ElmerGrid metis m)
  IF(NOT(WIN32))

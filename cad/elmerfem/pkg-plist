@@ -131,6 +131,7 @@ share/elmersolver/lib/ElasticSolve.so
 share/elmersolver/lib/ElectricForce.so
 share/elmersolver/lib/Electrokinetics.so
 share/elmersolver/lib/ElementSizeSolver.so
+share/elmersolver/lib/ElementStats.so
 share/elmersolver/lib/EliminateDirichlet.so
 share/elmersolver/lib/EliminatePeriodic.so
 share/elmersolver/lib/EnergyRelease.so
@@ -164,6 +165,7 @@ share/elmersolver/lib/OdeSolver.so
 share/elmersolver/lib/ParStokes.so
 share/elmersolver/lib/ParticleAdvector.so
 share/elmersolver/lib/ParticleDynamics.so
+share/elmersolver/lib/PartitionMesh.so
 share/elmersolver/lib/PhaseChangeSolve.so
 share/elmersolver/lib/Poisson.so
 share/elmersolver/lib/PoissonBEM.so
