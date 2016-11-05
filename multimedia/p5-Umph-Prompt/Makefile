@@ -5,17 +5,14 @@ PORTNAME=	Umph-Prompt
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	multimedia perl5
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/sunpoet
-PROJECTHOST=	umph
+MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interactive prompt module for umph and similar programs
 
 LICENSE=	LGPL21
-
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
 USE_PERL5=	configure
