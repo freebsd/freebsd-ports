@@ -15,6 +15,8 @@ LICENSE_COMB=	dual
 # lib/libdns_sd.so.1 sbin/mdnsd
 CONFLICTS_INSTALL=	avahi-libdns openmdns
 
+PORTSCOUT=	skipv:625.60.4
+
 ALL_TARGET=	all dnsextd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
