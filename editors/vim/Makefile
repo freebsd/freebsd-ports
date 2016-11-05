@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0054
+PORTVERSION=	8.0.0063
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -92,16 +92,16 @@ ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
 CONSOLE_PLIST_SUB=	GUI="@comment "
 
-GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$$(X_LIBS) -lX11 -lXpm -lXt"
+GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2
 GNOME_PLIST_SUB=	GUI=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,glproto,x11,xpm,xt
 
-GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2 X_LIBS="$$(X_LIBS) -lX11 -lXpm -lXt"
+GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2
 GTK2_PLIST_SUB=		GUI=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
 
-GTK3_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk3 X_LIBS="$$(X_LIBS) -lX11 -lXpm -lXt"
+GTK3_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk3
 GTK3_PLIST_SUB=		GUI=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
 
@@ -110,9 +110,9 @@ MOTIF_PLIST_SUB=	GUI=""
 MOTIF_USES=		motif
 MOTIF_USE=		XORG=ice,sm,x11,xmu,xt
 
-X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$$(X_LIBS) -lX11 -lXt"
+X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x"
 X11_PLIST_SUB=		GUI="@comment "
-X11_USE=		XORG=x11,xt
+X11_USE=		XORG=ice,sm,x11,xt
 
 # LANGUAGE BINDINGS
 LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
