@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	go-runewidth>0:devel/go-runewidth \
 		go-shellwords>0:devel/go-shellwords
 
-USES=		compiler go
+USES=		compiler go ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
