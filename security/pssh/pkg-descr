@@ -10,4 +10,4 @@ in the distribution:
 What are these tools good for? Mainly for controlling large collections
 of nodes in the wide-area.
 
-WWW: http://code.google.com/p/parallel-ssh/
+WWW: https://pypi.python.org/pypi/pssh
