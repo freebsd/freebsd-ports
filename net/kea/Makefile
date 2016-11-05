@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kea
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${PORTVERSION}
 
@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
-USES=		autoreconf libtool pathfix python:3.3+
+USES=		autoreconf libtool pathfix python:3.3+ ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
