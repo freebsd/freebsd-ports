@@ -3,7 +3,7 @@
 
 PORTNAME=	goom
 PORTVERSION=	2k4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2k4/0
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
@@ -11,33 +11,26 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual effects library
 
+LICENSE=	LGPL20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
-USES=		pathfix libtool
+USES=		pathfix libtool localbase
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-sdltest --enable-static
+CONFIGURE_ENV=	ac_cv_path_SDL_CONFIG="no"
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-.if exists(${X11R6}/bin/xmms) || defined(WITH_XMMS)
-LIB_DEPENDS+=	libxmms.so:multimedia/xmms
-PLIST_SUB+=	XMMS=""
-.else
-PLIST_SUB+=	XMMS="@comment "
-.endif
+BROKEN_powerpc=	Does not build
 
-pre-everything::
-.if !defined(WITH_XMMS)
-	@${ECHO} ""
-	@${ECHO} "Define WITH_XMMS to build goom xmms visualization plugin"
-	@${ECHO} ""
-.endif
+OPTIONS_DEFINE=	XMMS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
+XMMS_DESC=		Build XMMS visualization plugin
+XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
+XMMS_USES=		gettext-runtime
+XMMS_USE=		GNOME=glib12,gtk12 \
+			XORG=x11,xext,xi
+XMMS_CONFIGURE_ENV_OFF=	ac_cv_path_XMMS_CONFIG="no"
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
