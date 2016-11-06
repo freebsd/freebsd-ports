@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.g20160927
+DISTVERSION=	0.17.g20161104
 CATEGORIES=	cad
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
 LICENSE=	LGPL20
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2		\
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken
 
 USE_GITHUB=	yes
-GH_TAGNAME=	958686d
+GH_TAGNAME=	0ea7373
 
 USES=		compiler:c++11-lib cmake:outsource jpeg python localbase
 USE_XORG=	ice sm x11 xext xt
