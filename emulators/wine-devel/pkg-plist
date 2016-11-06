@@ -959,6 +959,7 @@ lib/wine/api-ms-win-core-processthreads-l1-1-1.dll.so
 lib/wine/api-ms-win-core-processthreads-l1-1-2.dll.so
 lib/wine/api-ms-win-core-profile-l1-1-0.dll.so
 lib/wine/api-ms-win-core-psapi-l1-1-0.dll.so
+lib/wine/api-ms-win-core-psapi-obsolete-l1-1-0.dll.so
 %%STAGING%%lib/wine/api-ms-win-core-quirks-l1-1-0.dll.so
 lib/wine/api-ms-win-core-realtime-l1-1-0.dll.so
 lib/wine/api-ms-win-core-registry-l1-1-0.dll.so
@@ -1210,9 +1211,13 @@ lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
 lib/wine/explorerframe.dll.so
 %%STAGING%%lib/wine/ext-ms-win-appmodel-usercontext-l1-1-0.dll.so
+lib/wine/ext-ms-win-gdi-dc-create-l1-1-1.dll.so
 lib/wine/ext-ms-win-gdi-devcaps-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-kernel32-package-current-l1-1-0.dll.so
+lib/wine/ext-ms-win-ntuser-message-l1-1-1.dll.so
 %%STAGING%%lib/wine/ext-ms-win-ntuser-mouse-l1-1-0.dll.so
+lib/wine/ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll.so
+lib/wine/ext-ms-win-rtcore-ntuser-dpi-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-uxtheme-themes-l1-1-0.dll.so
@@ -1294,6 +1299,7 @@ lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-2.dll
 lib/wine/fakedlls/api-ms-win-core-profile-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-psapi-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-psapi-obsolete-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-core-quirks-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-realtime-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-registry-l1-1-0.dll
@@ -1545,9 +1551,13 @@ lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
 lib/wine/fakedlls/explorerframe.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-appmodel-usercontext-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-gdi-dc-create-l1-1-1.dll
 lib/wine/fakedlls/ext-ms-win-gdi-devcaps-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-kernel32-package-current-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-message-l1-1-1.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-ntuser-mouse-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-dpi-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-uxtheme-themes-l1-1-0.dll
