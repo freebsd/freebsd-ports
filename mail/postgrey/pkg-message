@@ -1,4 +1,3 @@
-
 NETWORK LISTENER WARNING
 ------------------------
 
@@ -30,4 +29,3 @@ would be --greylist-text='4.7.1 Greylisted'.
 
 Please see the "Greylist Text" section of the postgrey(1) man page for more
 information.
-
