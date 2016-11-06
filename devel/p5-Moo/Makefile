@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moo
-PORTVERSION=	2.002004
+PORTVERSION=	2.002005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -17,9 +17,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.10:devel/p5-Class-Method-Modifiers \
 		p5-Devel-GlobalDestruction>=0.11:devel/p5-Devel-GlobalDestruction \
 		p5-Module-Runtime>=0.014:devel/p5-Module-Runtime \
-		p5-Role-Tiny>=2:devel/p5-Role-Tiny
+		p5-Role-Tiny>=2.000004:devel/p5-Role-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0.003:devel/p5-Test-Fatal \
+		${XS_BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	XS
 
