@@ -8794,3 +8794,4 @@ graphics/linux-c6-libGLU|graphics/linux-c6-dri|2016-11-04|Unused
 graphics/linux-c7-libGLU|graphics/linux-c7-dri|2016-11-04|Unused
 multimedia/libmovtar||2016-11-05|Not used anymore, abandonware
 devel/p5-Test-Exception-LessClever||2016-11-06|Deprecated by upstream
+www/py-django-piston||2016-11-06|Has expired: Abandoned upstream. Doesn't work with django>=1.6
