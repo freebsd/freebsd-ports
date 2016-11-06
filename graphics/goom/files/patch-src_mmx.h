@@ -1,4 +1,4 @@
---- src/mmx.h.orig
+--- src/mmx.h.orig	2005-02-07 13:46:41 UTC
 +++ src/mmx.h
 @@ -715,13 +715,13 @@ void zoom_filter_xmmx (int prevX, int pr
  	{ \
