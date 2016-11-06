@@ -1,6 +1,6 @@
---- src/samplerate.h.orig	2011-01-19 10:39:21 UTC
+--- src/samplerate.h.orig	2016-09-13 10:13:14 UTC
 +++ src/samplerate.h
-@@ -174,7 +174,7 @@ enum
+@@ -160,7 +160,7 @@ enum
  	SRC_SINC_MEDIUM_QUALITY		= 1,
  	SRC_SINC_FASTEST			= 2,
  	SRC_ZERO_ORDER_HOLD			= 3,
