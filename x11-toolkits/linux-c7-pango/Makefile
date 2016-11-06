@@ -3,7 +3,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.36.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,7 +15,7 @@ CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
 RPMVERSION=	2.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	cairo expat fontconfig harfbuzz libthai xorglibs
+USE_LINUX=	cairo fontconfig harfbuzz libthai xorglibs
 USE_LINUX_RPM=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
