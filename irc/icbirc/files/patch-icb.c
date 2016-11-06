@@ -1,16 +1,14 @@
---- icb.c.orig	2004-11-19 06:14:28.000000000 +0900
-+++ icb.c	2014-05-17 02:34:25.000000000 +0900
-@@ -30,7 +30,9 @@
+--- icb.c.orig	2015-08-21 19:01:12 UTC
++++ icb.c
+@@ -30,7 +30,6 @@
   *
   */
  
-+#if 0
- static const char rcsid[] = "$Id: icb.c,v 1.15 2004/11/18 21:14:28 dhartmei Exp $";
-+#endif
+-static const char rcsid[] = "$Id: icb.c,v 1.3 2015/08/21 19:01:12 dhartmei Exp $";
  
  #include <stdio.h>
  #include <stdlib.h>
-@@ -40,8 +42,8 @@
+@@ -40,8 +39,8 @@ static const char rcsid[] = "$Id: icb.c,
  
  extern int	 sync_write(int, const char *, int);
  
@@ -21,7 +19,7 @@
  static void		 icb_ico(int, const char *);
  static void		 icb_iwl(int, const char *, const char *, long,
  			    long, const char *, const char *);
-@@ -108,7 +110,7 @@
+@@ -109,7 +108,7 @@ static unsigned off;
   */
  
  void
@@ -30,7 +28,7 @@
  {
  	while (**s && strchr(skip, **s) != NULL)
  		(*s)++;
-@@ -149,7 +151,7 @@
+@@ -164,7 +163,7 @@ icb_recv(const char *buf, unsigned len, 
  }
  
  static unsigned char
@@ -39,7 +37,7 @@
  {
  	unsigned char i = 0, j = 0, k = 0;
  
-@@ -175,10 +177,10 @@
+@@ -190,10 +189,10 @@ icb_args(const char *data, unsigned char
  }
  
  static void
@@ -52,7 +50,7 @@
  	unsigned char i, j;
  	char s[8192];
  
-@@ -254,7 +256,7 @@
+@@ -269,7 +268,7 @@ icb_cmd(const char *cmd, unsigned char l
  			char old_nick[256], new_nick[256];
  
  			scan(&a, old_nick, sizeof(old_nick), " ", " ");
@@ -61,7 +59,7 @@
  				return;
  			a += 21;
  			scan(&a, new_nick, sizeof(new_nick), " ", " ");
-@@ -268,7 +270,7 @@
+@@ -283,7 +282,7 @@ icb_cmd(const char *cmd, unsigned char l
  			char nick[256], topic[256];
  
  			scan(&a, nick, sizeof(nick), " ", " ");
@@ -70,7 +68,7 @@
  				return;
  			a += 23;
  			scan(&a, topic, sizeof(topic), "", "\"");
-@@ -279,13 +281,13 @@
+@@ -294,13 +293,13 @@ icb_cmd(const char *cmd, unsigned char l
  			char old_mod[256], new_mod[256];
  
  			scan(&a, old_mod, sizeof(old_mod), " ", " ");
@@ -86,7 +84,7 @@
  				snprintf(s, sizeof(s),
  				    ":%s MODE %s +o %s\r\n",
  				    icb_hostid, irc_channel, old_mod);
-@@ -297,7 +299,7 @@
+@@ -312,7 +311,7 @@ icb_cmd(const char *cmd, unsigned char l
  			char nick[256];
  
  			scan(&a, nick, sizeof(nick), " ", " ");
@@ -95,7 +93,7 @@
  				return;
  			snprintf(s, sizeof(s), ":%s KICK %s %s :booted\r\n",
  			    icb_moderator, irc_channel, nick);
-@@ -508,7 +510,7 @@
+@@ -523,7 +522,7 @@ icb_send_openmsg(int fd, const char *msg
  		cmd[off++] = 0;
  		cmd[0] = off - 1;
  		/* cmd[0] <= MAX_MSG_SIZE */
@@ -104,7 +102,7 @@
  	}
  }
  
-@@ -533,7 +535,7 @@
+@@ -548,7 +547,7 @@ icb_send_privmsg(int fd, const char *nic
  		cmd[off++] = 0;
  		cmd[0] = off - 1;
  		/* cmd[0] <= MAX_MSG_SIZE */
