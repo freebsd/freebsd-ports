@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgrey
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -19,10 +19,13 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB \
 		p5-Net-Server>=0:net/p5-Net-Server \
 		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP
 
+USES=		perl5 shebangfix
 USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}
-NO_BUILD=	yes
+
 NO_ARCH=	yes
+NO_BUILD=	yes
+
 POD2MAN?=	pod2man
 PORTDOCS=	README Changes README.exim
 
@@ -45,9 +48,6 @@ GROUPS=		${PG_GROUP}
 MANPAGES=	postgrey.1 policy-test.1 postgreyreport.1
 ETCFILES=	whitelist_clients whitelist_recipients
 
-USE_RC_SUBR=	postgrey
-
-USES=		perl5 shebangfix
 SHEBANG_FILES=	postgrey policy-test contrib/postgreyreport
 
 OPTIONS_DEFINE=	DOCS
