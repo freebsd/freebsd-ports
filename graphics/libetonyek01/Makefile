@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		librevenge-0.0.so:textproc/librevenge \
+		liblangtag.so:devel/liblangtag \
 		libxml2.so:textproc/libxml2
 
 OPTIONS_DEFINE=	TEST
