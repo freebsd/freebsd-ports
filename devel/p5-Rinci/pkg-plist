@@ -8,9 +8,6 @@
 %%SITE_PERL%%/Rinci/package.pod
 %%SITE_PERL%%/Rinci/resmeta.pod
 %%SITE_PERL%%/Rinci/variable.pod
-%%SITE_PERL%%/Sah/Schema/rinci/function_meta.pm
-%%SITE_PERL%%/Sah/Schema/rinci/meta.pm
-%%SITE_PERL%%/Sah/Schema/rinci/result_meta.pm
 %%PERL5_MAN3%%/Rinci.3.gz
 %%PERL5_MAN3%%/Rinci::FAQ.3.gz
 %%PERL5_MAN3%%/Rinci::Transaction.3.gz
@@ -20,6 +17,3 @@
 %%PERL5_MAN3%%/Rinci::package.3.gz
 %%PERL5_MAN3%%/Rinci::resmeta.3.gz
 %%PERL5_MAN3%%/Rinci::variable.3.gz
-%%PERL5_MAN3%%/Sah::Schema::rinci::function_meta.3.gz
-%%PERL5_MAN3%%/Sah::Schema::rinci::meta.3.gz
-%%PERL5_MAN3%%/Sah::Schema::rinci::result_meta.3.gz
