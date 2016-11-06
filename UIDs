@@ -414,7 +414,7 @@ ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
-slurm:*:468:468::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin
+slurm:*:468:468::0:0:SLURM Daemon:/nonexistent:/usr/sbin/nologin
 consul:*:469:469::0:0:Consul Daemon:/var/tmp/consul:/usr/sbin/nologin
 serf:*:470:470::0:0:Serf Daemon:/nonexistent:/usr/sbin/nologin
 vault:*:471:471::0:0:Vault Daemon:/nonexistent:/usr/sbin/nologin
