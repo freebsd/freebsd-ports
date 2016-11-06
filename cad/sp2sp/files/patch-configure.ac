@@ -1,9 +1,12 @@
 --- configure.ac.orig	2009-02-13 14:00:57.000000000 +0900
-+++ configure.ac	2016-11-06 03:36:13.237251000 +0900
-@@ -16,20 +16,6 @@
- AC_PATH_PROGS(PERL, perl perl5, no)
- AC_SUBST(PERL)
- 
++++ configure.ac	2016-11-07 06:46:23.065992000 +0900
+@@ -13,22 +13,6 @@
+ AC_PROG_CC
+ AC_PROG_RANLIB
+ AC_PROG_LN_S
+-AC_PATH_PROGS(PERL, perl perl5, no)
+-AC_SUBST(PERL)
+-
 -# this tries to find GNU graph only, not traditional berkeley/sysv graph,
 -# so we do the right thing on solaris, where an unusable one is in /usr/bin
 -# and the graph we want is usually in /usr/local/bin or some such.
@@ -17,11 +20,10 @@
 -		AC_DEFINE_UNQUOTED(PROG_GRAPH, "$GRAPH", [If present, the pathname of graph, from GNU plotutils.])
 -	fi
 -fi
--
+ 
  dnl do we need libtool? 
  dnl even though we aren't building shared libraries, it seemed to help on HP-UX
- dnl AM_PROG_LIBTOOL
-@@ -51,62 +37,8 @@
+@@ -51,62 +35,8 @@
  dnl check for gtk/glib features
  AC_CHECK_LIB(c, g_slice_set_config, AC_DEFINE(HAVE_G_SLICE_SET_CONFIG,1,[Define this if your version of glib2 has the slice allocator and g_slice_set_config]),,[$GTK_LIBS])
  
