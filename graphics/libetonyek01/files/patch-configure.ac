@@ -1,4 +1,4 @@
---- configure.ac
+--- configure.ac.orig	2016-01-12 18:21:19 UTC
 +++ configure.ac
 @@ -24,8 +24,8 @@ AC_LANG([C++])
  # Configure options
