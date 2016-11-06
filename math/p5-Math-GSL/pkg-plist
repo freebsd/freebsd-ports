@@ -1,6 +1,3 @@
-bin/smoke_some_mathgsl
-bin/smolder_mathgsl
-bin/smolder_smoke_signal
 %%SITE_ARCH%%/Math/GSL.pm
 %%SITE_ARCH%%/Math/GSL/BLAS.pm
 %%SITE_ARCH%%/Math/GSL/BSpline.pm
@@ -30,6 +27,7 @@ bin/smolder_smoke_signal
 %%SITE_ARCH%%/Math/GSL/Min.pm
 %%SITE_ARCH%%/Math/GSL/Monte.pm
 %%SITE_ARCH%%/Math/GSL/Multifit.pm
+%%SITE_ARCH%%/Math/GSL/Multilarge.pm
 %%SITE_ARCH%%/Math/GSL/Multimin.pm
 %%SITE_ARCH%%/Math/GSL/Multiroots.pm
 %%SITE_ARCH%%/Math/GSL/NTuple.pm
@@ -81,7 +79,6 @@ bin/smolder_smoke_signal
 %%SITE_ARCH%%/auto/Math/GSL/MatrixComplex/MatrixComplex.so
 %%SITE_ARCH%%/auto/Math/GSL/Min/Min.so
 %%SITE_ARCH%%/auto/Math/GSL/Monte/Monte.so
-%%SITE_ARCH%%/auto/Math/GSL/Multifit/Multifit.so
 %%SITE_ARCH%%/auto/Math/GSL/Multimin/Multimin.so
 %%SITE_ARCH%%/auto/Math/GSL/Multiroots/Multiroots.so
 %%SITE_ARCH%%/auto/Math/GSL/NTuple/NTuple.so
@@ -105,7 +102,6 @@ bin/smolder_smoke_signal
 %%SITE_ARCH%%/auto/Math/GSL/Version/Version.so
 %%SITE_ARCH%%/auto/Math/GSL/Wavelet/Wavelet.so
 %%SITE_ARCH%%/auto/Math/GSL/Wavelet2D/Wavelet2D.so
-%%PERL5_MAN1%%/smolder_smoke_signal.1.gz
 %%PERL5_MAN3%%/Math::GSL.3.gz
 %%PERL5_MAN3%%/Math::GSL::BLAS.3.gz
 %%PERL5_MAN3%%/Math::GSL::BSpline.3.gz
@@ -135,6 +131,7 @@ bin/smolder_smoke_signal
 %%PERL5_MAN3%%/Math::GSL::Min.3.gz
 %%PERL5_MAN3%%/Math::GSL::Monte.3.gz
 %%PERL5_MAN3%%/Math::GSL::Multifit.3.gz
+%%PERL5_MAN3%%/Math::GSL::Multilarge.3.gz
 %%PERL5_MAN3%%/Math::GSL::Multimin.3.gz
 %%PERL5_MAN3%%/Math::GSL::Multiroots.3.gz
 %%PERL5_MAN3%%/Math::GSL::NTuple.3.gz
