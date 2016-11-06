@@ -15,4 +15,5 @@ lib/libgoom2.so
 lib/libgoom2.so.0
 lib/libgoom2.so.0.0.0
 libdata/pkgconfig/libgoom2.pc
+%%XMMS%%lib/xmms/Visualization/libxmmsgoom2.a
 %%XMMS%%lib/xmms/Visualization/libxmmsgoom2.so
