@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.51.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -104,8 +105,8 @@ HTTP2_CONFIGURE_WITH=	nghttp2
 HTTP2_LIB_DEPENDS=	libnghttp2.so:www/nghttp2
 HTTP2_RUN_DEPENDS=	nghttp2>=1.0.0:www/nghttp2
 HTTP2_USES=		pkgconfig
-IDN_CONFIGURE_WITH=	libidn
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
+IDN_CONFIGURE_WITH=	libidn2
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 LDAP_CONFIGURE_ENABLE=	ldap
