@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-Database-Core
-PORTVERSION=	0.16
+PORTVERSION=	0.20
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
