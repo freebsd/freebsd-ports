@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcheck.so:devel/libcheck \
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
 
-USES=		autoreconf libtool pkgconfig ssl
+USES=		autoreconf gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I/usr/include" \
