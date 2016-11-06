@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Writer
-PORTVERSION=	0.201000
+PORTVERSION=	0.201001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -13,6 +13,7 @@ COMMENT=	Create MaxMind DB database files
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-Data-IEEE754>=0:devel/p5-Data-IEEE754 \
