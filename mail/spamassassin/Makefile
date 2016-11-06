@@ -3,7 +3,7 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.1
-PORTREVISION?=	7	# also bump japanese/spamassassin
+PORTREVISION?=	8	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -29,7 +29,7 @@ CONFLICTS?=	ja-spamassassin-[0-9]*
 
 CPE_VENDOR=	apache
 
-USES=		perl5 cpe
+USES=		cpe perl5
 USE_PERL5=	configure
 USE_LDCONFIG=	yes
 
@@ -78,6 +78,8 @@ SUB_LIST+=	SPAMD_OWN="${USERS}:${GROUPS}"
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 OPTIONS_SUB=	yes
 
+AS_ROOT_SUB_LIST=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
+AS_ROOT_SUB_LIST_OFF=	RUN_AS_USER=
 DCC_RUN_DEPENDS=	dcc-dccd>=1.3.111:mail/dcc-dccd
 DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 			p5-Mail-DKIM>=0.37:mail/p5-Mail-DKIM \
@@ -91,7 +93,7 @@ RAZOR_RUN_DEPENDS=	razor-agents>=2.84:mail/razor-agents
 RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:net/p5-Geo-IP
 SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:mail/p5-Mail-SPF
 
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 SSL_CONFIGURE_ON=	ENABLE_SSL=yes
 SSL_CONFIGURE_OFF=	ENABLE_SSL=no
@@ -128,12 +130,6 @@ SUB_LIST+=	SQL_FLAG="-Q"
 SUB_LIST+=	SQL_FLAG=""
 .endif
 
-.if empty(PORT_OPTIONS:MAS_ROOT)
-SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
-.else
-SUB_LIST+=	RUN_AS_USER=""
-.endif
-
 .if ${PORT_OPTIONS:MUPDATE_AND_COMPILE} && empty(PACKAGE_BUILDING) && empty(BATCH)
 PLIST_SUB+=	UPDATE_ON_INSTALL="yes"
 .else
@@ -161,8 +157,6 @@ post-patch::
 	${REINPLACE_CMD} -e '/${${var}_INITVAR}/s/^loadplugin/\# loadplugin/' ${WRKSRC}/rules/*.pre
 .  endif
 .endfor
-
-	${FIND} ${WRKSRC} -name '*.orig' -or -name '*.bak' -delete
 
 pre-su-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
