@@ -88,7 +88,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} \
 	    ${WRKSRC}/README.kt \
-	    ${DISTDIR}/${DIST_SUBDIR}/README.wallpaper.ja \
+	    ${WRKSRC}/README.wallpaper.ja \
 	    ${FILESDIR}/dot.termcap \
 	    ${STAGEDIR}${DOCSDIR}
 post-install-VGAFONT-on:
