@@ -1,5 +1,5 @@
---- src/save.c.orig	Sun Aug 15 19:46:58 2004
-+++ src/save.c	Sun Aug 15 19:47:44 2004
+--- src/save.c.orig	2003-04-03 13:27:29 UTC
++++ src/save.c
 @@ -8,6 +8,7 @@
  
  #define FILENAME_LEN 1024
