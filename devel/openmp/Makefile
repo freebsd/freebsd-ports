@@ -10,22 +10,17 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Support for the OpenMP language
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_9=	does not build
+ONLY_FOR_ARCHS=	amd64 # i386
 
-USES=		tar:xz cmake perl5 compiler:c11
+USES=		cmake compiler:c++11-lib perl5 tar:xz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DLIBOMP_LIBFLAGS:STRING="-Wl,-soname,libomp.so.0"
-ONLY_FOR_ARCHS=	amd64 # i386
 PLIST_FILES=	include/omp.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
 		lib/libomp.so.0 \
 		lib/libomp.so
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/lib/libomp.so ${STAGEDIR}${PREFIX}/lib/libomp.so.0
-	${LN} -sf libomp.so.0 ${STAGEDIR}${PREFIX}/lib/libomp.so
 
 .include <bsd.port.mk>
