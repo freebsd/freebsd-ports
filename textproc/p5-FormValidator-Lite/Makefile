@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.38
-PORTREVISION=	1
+PORTVERSION=	0.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +22,8 @@ TEST_DEPENDS=	p5-Test-Requires>=0.05:devel/p5-Test-Requires \
 		p5-Text-TestBase>=0:textproc/p5-Text-TestBase \
 		p5-YAML>=0:textproc/p5-YAML
 
-USE_PERL5=	modbuild
+NO_ARCH=	yes
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>
