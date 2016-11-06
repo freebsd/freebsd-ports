@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -21,8 +21,8 @@ BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq \
 		dmidecode:sysutils/dmidecode
 
-OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU SASL
-OPTIONS_DEFAULT=	GNUTLS
+OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL
+OPTIONS_DEFAULT=	GNUTLS READLINE
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
@@ -57,6 +57,9 @@ NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 NSS_CONFIGURE_WITH=	nss-plugin
 
+READLINE_CONFIGURE_WITH=	readline
+READLINE_USES=		readline
+
 SASL_CONFIGURE_WITH=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
@@ -70,6 +73,7 @@ USE_RC_SUBR=	libvirtd virtlogd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-avahi \
+		--without-dbus \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
