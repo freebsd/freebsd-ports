@@ -1,2 +1,3 @@
-SHA256 (Protocol-HTTP2-1.07.tar.gz) = efa7de7d6f7574eb27a24f2dc35b0dfa0212c5a38dd255a1a7bb7080f6d058ed
-SIZE (Protocol-HTTP2-1.07.tar.gz) = 50787
+TIMESTAMP = 1478370345
+SHA256 (Protocol-HTTP2-1.08.tar.gz) = 0f1884cb2b24c08ee777c561d1ab9015dddd9038056dd5230464d8f59f6cc11b
+SIZE (Protocol-HTTP2-1.08.tar.gz) = 51037
