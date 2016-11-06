@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minixmlto
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	bapt@FreeBSD.org
