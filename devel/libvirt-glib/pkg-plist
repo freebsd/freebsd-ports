@@ -36,6 +36,8 @@ include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graph
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-spice.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-vnc.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-hostdev-pci.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-hostdev.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-input.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-interface-bridge.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-interface-filterref-parameter.h
@@ -115,8 +117,6 @@ lib/libvirt-glib-%%VERSION%%.so.%%SHLIB_VER%%
 lib/libvirt-gobject-%%VERSION%%.so
 lib/libvirt-gobject-%%VERSION%%.so.0
 lib/libvirt-gobject-%%VERSION%%.so.%%SHLIB_VER%%
-%%PYTHON_SITELIBDIR%%/libvirtglib.py
-%%PYTHON_SITELIBDIR%%/libvirtglibmod.so
 libdata/pkgconfig/libvirt-gconfig-%%VERSION%%.pc
 libdata/pkgconfig/libvirt-glib-%%VERSION%%.pc
 libdata/pkgconfig/libvirt-gobject-%%VERSION%%.pc
@@ -140,7 +140,6 @@ share/gtk-doc/html/Libvirt-gconfig/api-index-full.html
 share/gtk-doc/html/Libvirt-gconfig/ch01.html
 share/gtk-doc/html/Libvirt-gconfig/home.png
 share/gtk-doc/html/Libvirt-gconfig/index.html
-share/gtk-doc/html/Libvirt-gconfig/index.sgml
 share/gtk-doc/html/Libvirt-gconfig/left-insensitive.png
 share/gtk-doc/html/Libvirt-gconfig/left.png
 share/gtk-doc/html/Libvirt-gconfig/object-tree.html
@@ -158,7 +157,6 @@ share/gtk-doc/html/Libvirt-glib/api-index-full.html
 share/gtk-doc/html/Libvirt-glib/ch01.html
 share/gtk-doc/html/Libvirt-glib/home.png
 share/gtk-doc/html/Libvirt-glib/index.html
-share/gtk-doc/html/Libvirt-glib/index.sgml
 share/gtk-doc/html/Libvirt-glib/left-insensitive.png
 share/gtk-doc/html/Libvirt-glib/left.png
 share/gtk-doc/html/Libvirt-glib/object-tree.html
@@ -185,7 +183,6 @@ share/gtk-doc/html/Libvirt-gobject/api-index-full.html
 share/gtk-doc/html/Libvirt-gobject/ch01.html
 share/gtk-doc/html/Libvirt-gobject/home.png
 share/gtk-doc/html/Libvirt-gobject/index.html
-share/gtk-doc/html/Libvirt-gobject/index.sgml
 share/gtk-doc/html/Libvirt-gobject/left-insensitive.png
 share/gtk-doc/html/Libvirt-gobject/left.png
 share/gtk-doc/html/Libvirt-gobject/object-tree.html
@@ -289,3 +286,7 @@ share/locale/zh_CN/LC_MESSAGES/libvirt-glib.mo
 share/locale/zh_HK/LC_MESSAGES/libvirt-glib.mo
 share/locale/zh_TW/LC_MESSAGES/libvirt-glib.mo
 share/locale/zu/LC_MESSAGES/libvirt-glib.mo
+%%VALA%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.vapi
+%%VALA%%share/vala/vapi/libvirt-glib-%%VERSION%%.vapi
+%%VALA%%share/vala/vapi/libvirt-gobject-%%VERSION%%.deps
+%%VALA%%share/vala/vapi/libvirt-gobject-%%VERSION%%.vapi
