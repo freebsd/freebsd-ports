@@ -1,12 +1,12 @@
 include/openobex/obex.h
 include/openobex/obex_const.h
 include/openobex/version.h
-lib/cmake/OpenObex-1.7.1/openobex-target-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/OpenObex-1.7.1/openobex-config-version.cmake
-lib/cmake/OpenObex-1.7.1/openobex-target.cmake
-lib/cmake/OpenObex-1.7.1/openobex-config.cmake
+lib/cmake/OpenObex-1.7.2/openobex-target-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenObex-1.7.2/openobex-config-version.cmake
+lib/cmake/OpenObex-1.7.2/openobex-target.cmake
+lib/cmake/OpenObex-1.7.2/openobex-config.cmake
 lib/libopenobex.so
-lib/libopenobex.so.1.7.1
+lib/libopenobex.so.1.7.2
 lib/libopenobex.so.2
 libdata/pkgconfig/openobex.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
