@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.jmknoble.net/software/x11-ssh-askpass/
 DISTNAME=	x11-ssh-askpass-${PORTVERSION}
