@@ -1,6 +1,15 @@
---- ./src/CMakeLists.txt.orig	2014-01-29 21:24:08.000000000 +0000
-+++ ./src/CMakeLists.txt	2014-03-30 08:34:09.135721829 +0000
-@@ -71,12 +71,13 @@
+--- src/CMakeLists.txt.orig	2014-01-29 21:24:08 UTC
++++ src/CMakeLists.txt
+@@ -19,8 +19,6 @@ IF(COMMAND cmake_policy)
+  CMAKE_POLICY(SET CMP0005 OLD)   # remove this and the quoted arguments in
+                                  # ADD_DEFINITONS() once CMake 2.6 is used
+ ENDIF(COMMAND cmake_policy)
+-SET(CMAKE_COLOR_MAKEFILE      ON)
+-SET(CMAKE_VERBOSE_MAKEFILE    OFF)
+ SET(CMAKE_INCLUDE_CURRENT_DIR TRUE)
+ 
+ SET(QT_MIN_VERSION "4.8.0")
+@@ -71,12 +69,13 @@ ENDIF( APPLE )
  
  ADD_CUSTOM_TARGET( confclean COMMAND rm -rf Makefile CMakeFiles/ CMakeCache.txt cmake_install.cmake DartTestfile.txt install_manifest.txt )
  
@@ -19,7 +28,7 @@
  
  # only needed for static builds when directx is enabled in qt and you
  # get a linker error because of missing a directx function
-@@ -98,6 +99,7 @@
+@@ -98,6 +97,7 @@ TARGET_LINK_LIBRARIES(testevaluator ${QT
  ADD_TEST(testevaluator testevaluator)
  
  ADD_EXECUTABLE(testfloatnum ${testfloatnum_SOURCES})
