@@ -14,7 +14,12 @@ You should complete the following post-installation tasks:
 	3) To run spamd, add the following to /etc/rc.conf:
 	   spamd_enable="YES"
 
-	4) Install mail/spamass-rules if you want some third-party
+	4) If this is a new installation, you should run sa-update
+	   and sa-compile. If this isn't a new installation, you
+	   should probably run those commands on a regular basis
+	   anyway.
+
+	5) Install mail/spamass-rules if you want some third-party
 	   spam-catching rulesets
 
 SECURITY NOTE:
