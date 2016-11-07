@@ -1,69 +1,69 @@
 bin/aqemu
 man/man1/aqemu.1.gz
 share/applications/aqemu.desktop
-share/aqemu/English.qm
-share/aqemu/French.qm
-share/aqemu/German.qm
-share/aqemu/Russian.qm
-share/aqemu/Ukrainian.qm
-share/aqemu/aqemu_links.html
-share/aqemu/crystalsvg_icons.rcc
-share/aqemu/os_icons/alt.png
-share/aqemu/os_icons/aptosid.png
-share/aqemu/os_icons/arch.png
-share/aqemu/os_icons/asp.png
-share/aqemu/os_icons/centos.png
-share/aqemu/os_icons/damnsmalllinux.png
-share/aqemu/os_icons/debian.png
-share/aqemu/os_icons/fedora.png
-share/aqemu/os_icons/freebsd.png
-share/aqemu/os_icons/gentoo.png
-share/aqemu/os_icons/knoppix.png
-share/aqemu/os_icons/knoppix_v2.png
-share/aqemu/os_icons/kubuntu.png
-share/aqemu/os_icons/kubuntu_v2.png
-share/aqemu/os_icons/lunar.png
-share/aqemu/os_icons/mac.png
-share/aqemu/os_icons/mandriva.png
-share/aqemu/os_icons/mepis.png
-share/aqemu/os_icons/mint.png
-share/aqemu/os_icons/netbsd.png
-share/aqemu/os_icons/novell.png
-share/aqemu/os_icons/openbsd.png
-share/aqemu/os_icons/opensolaris.png
-share/aqemu/os_icons/pclinuxos.png
-share/aqemu/os_icons/puppy.png
-share/aqemu/os_icons/redhat.png
-share/aqemu/os_icons/sabayon.png
-share/aqemu/os_icons/slackware.png
-share/aqemu/os_icons/slackware_v2.png
-share/aqemu/os_icons/solaris.png
-share/aqemu/os_icons/suse-novell.png
-share/aqemu/os_icons/suse.png
-share/aqemu/os_icons/symphony.png
-share/aqemu/os_icons/ubuntu.png
-share/aqemu/os_icons/ubuntu_v2.png
-share/aqemu/os_icons/xubuntu.png
-share/aqemu/os_templates/FreeBSD 4.aqvmt
-share/aqemu/os_templates/FreeBSD 7.aqvmt
-share/aqemu/os_templates/FreeBSD 8.aqvmt
-share/aqemu/os_templates/Linux 2.0.aqvmt
-share/aqemu/os_templates/Linux 2.4.aqvmt
-share/aqemu/os_templates/Linux 2.6 x86_64.aqvmt
-share/aqemu/os_templates/Linux 2.6.aqvmt
-share/aqemu/os_templates/MacOS X x86.aqvmt
-share/aqemu/os_templates/Windows 2000.aqvmt
-share/aqemu/os_templates/Windows 7 x64.aqvmt
-share/aqemu/os_templates/Windows 7.aqvmt
-share/aqemu/os_templates/Windows 9X.aqvmt
-share/aqemu/os_templates/Windows Vista x64.aqvmt
-share/aqemu/os_templates/Windows Vista.aqvmt
-share/aqemu/os_templates/Windows XP x64.aqvmt
-share/aqemu/os_templates/Windows XP.aqvmt
-share/aqemu/oxygen_icons.rcc
-share/doc/aqemu/AUTHORS.bz2
-share/doc/aqemu/CHANGELOG.bz2
-share/doc/aqemu/README.bz2
-share/doc/aqemu/TODO.bz2
+%%DATADIR%%/English.qm
+%%DATADIR%%/French.qm
+%%DATADIR%%/German.qm
+%%DATADIR%%/Russian.qm
+%%DATADIR%%/Ukrainian.qm
+%%DATADIR%%/aqemu_links.html
+%%DATADIR%%/crystalsvg_icons.rcc
+%%DATADIR%%/os_icons/alt.png
+%%DATADIR%%/os_icons/aptosid.png
+%%DATADIR%%/os_icons/arch.png
+%%DATADIR%%/os_icons/asp.png
+%%DATADIR%%/os_icons/centos.png
+%%DATADIR%%/os_icons/damnsmalllinux.png
+%%DATADIR%%/os_icons/debian.png
+%%DATADIR%%/os_icons/fedora.png
+%%DATADIR%%/os_icons/freebsd.png
+%%DATADIR%%/os_icons/gentoo.png
+%%DATADIR%%/os_icons/knoppix.png
+%%DATADIR%%/os_icons/knoppix_v2.png
+%%DATADIR%%/os_icons/kubuntu.png
+%%DATADIR%%/os_icons/kubuntu_v2.png
+%%DATADIR%%/os_icons/lunar.png
+%%DATADIR%%/os_icons/mac.png
+%%DATADIR%%/os_icons/mandriva.png
+%%DATADIR%%/os_icons/mepis.png
+%%DATADIR%%/os_icons/mint.png
+%%DATADIR%%/os_icons/netbsd.png
+%%DATADIR%%/os_icons/novell.png
+%%DATADIR%%/os_icons/openbsd.png
+%%DATADIR%%/os_icons/opensolaris.png
+%%DATADIR%%/os_icons/pclinuxos.png
+%%DATADIR%%/os_icons/puppy.png
+%%DATADIR%%/os_icons/redhat.png
+%%DATADIR%%/os_icons/sabayon.png
+%%DATADIR%%/os_icons/slackware.png
+%%DATADIR%%/os_icons/slackware_v2.png
+%%DATADIR%%/os_icons/solaris.png
+%%DATADIR%%/os_icons/suse-novell.png
+%%DATADIR%%/os_icons/suse.png
+%%DATADIR%%/os_icons/symphony.png
+%%DATADIR%%/os_icons/ubuntu.png
+%%DATADIR%%/os_icons/ubuntu_v2.png
+%%DATADIR%%/os_icons/xubuntu.png
+%%DATADIR%%/os_templates/FreeBSD 4.aqvmt
+%%DATADIR%%/os_templates/FreeBSD 7.aqvmt
+%%DATADIR%%/os_templates/FreeBSD 8.aqvmt
+%%DATADIR%%/os_templates/Linux 2.0.aqvmt
+%%DATADIR%%/os_templates/Linux 2.4.aqvmt
+%%DATADIR%%/os_templates/Linux 2.6 x86_64.aqvmt
+%%DATADIR%%/os_templates/Linux 2.6.aqvmt
+%%DATADIR%%/os_templates/MacOS X x86.aqvmt
+%%DATADIR%%/os_templates/Windows 2000.aqvmt
+%%DATADIR%%/os_templates/Windows 7 x64.aqvmt
+%%DATADIR%%/os_templates/Windows 7.aqvmt
+%%DATADIR%%/os_templates/Windows 9X.aqvmt
+%%DATADIR%%/os_templates/Windows Vista x64.aqvmt
+%%DATADIR%%/os_templates/Windows Vista.aqvmt
+%%DATADIR%%/os_templates/Windows XP x64.aqvmt
+%%DATADIR%%/os_templates/Windows XP.aqvmt
+%%DATADIR%%/oxygen_icons.rcc
+%%DOCSDIR%%/AUTHORS.bz2
+%%DOCSDIR%%/CHANGELOG.bz2
+%%DOCSDIR%%/README.bz2
+%%DOCSDIR%%/TODO.bz2
 share/pixmaps/aqemu_48x48.png
 share/pixmaps/aqemu_64x64.png
