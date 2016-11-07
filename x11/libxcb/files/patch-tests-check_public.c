@@ -1,6 +1,6 @@
---- tests/check_public.c.orig	Wed Jan 24 15:16:59 2007
-+++ tests/check_public.c	Wed Jan 24 15:22:33 2007
-@@ -70,7 +70,10 @@
+--- tests/check_public.c.orig	2011-07-02 20:20:42 UTC
++++ tests/check_public.c
+@@ -30,7 +30,10 @@ static void parse_display_pass(const cha
  		else if(test_type == TEST_ENVIRONMENT)
  		{
  			argument = 0;
@@ -12,7 +12,7 @@
  		}
  
  		got_host = (char *) -1;
-@@ -148,7 +151,7 @@
+@@ -150,7 +153,7 @@ END_TEST
  
  START_TEST(parse_display_negative)
  {
