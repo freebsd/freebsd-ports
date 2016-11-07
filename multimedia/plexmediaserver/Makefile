@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.1.4.2757
+PORTVERSION?=	1.2.6.2975
 PORTREVISION?=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
+MASTER_SITES=	https://downloads.plex.tv/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-${ARCH}
 
 MAINTAINER?=	feld@FreeBSD.org
 COMMENT=	Plex Media Server component
 
 USES=		cpe tar:bzip2
-PLEX_BUILD?=	24ffd60
+PLEX_BUILD?=	9394c87
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
 
