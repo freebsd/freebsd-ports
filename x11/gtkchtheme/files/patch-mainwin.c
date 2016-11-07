@@ -1,6 +1,6 @@
---- mainwin.c.orig	Wed Jun 23 11:38:32 2004
-+++ mainwin.c	Wed Jun 23 11:39:27 2004
-@@ -42,6 +42,7 @@
+--- mainwin.c.orig	2004-02-08 13:28:55 UTC
++++ mainwin.c
+@@ -42,6 +42,7 @@ static void ok_clicked(GtkWidget *widget
  GtkWidget* create_mainwin(void)
  {
  	GtkWidget *mainwin = gtk_dialog_new();
@@ -8,7 +8,7 @@
  	gtk_widget_realize(mainwin);
  	gtk_window_set_title(GTK_WINDOW(mainwin), PROJNAME);
  	gtk_window_set_resizable(GTK_WINDOW(mainwin), TRUE);
-@@ -54,21 +55,21 @@
+@@ -54,21 +55,21 @@ GtkWidget* create_mainwin(void)
  	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwin)->vbox), gtk_hseparator_new(), FALSE, FALSE, 0);
  	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwin)->vbox), create_font_sel(), FALSE, FALSE, 0);
  
