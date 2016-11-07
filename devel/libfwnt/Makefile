@@ -3,7 +3,7 @@
 
 PORTNAME=	libfwnt
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20160418
+DISTVERSION=	experimental-20161103
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfwnt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -12,6 +12,7 @@ MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library for Windows NT data types
 
 LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
