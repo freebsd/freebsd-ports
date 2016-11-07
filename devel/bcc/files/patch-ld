@@ -7,7 +7,7 @@
  
 -OBJS		=dumps.o io.o ld.o readobj.o table.o typeconv.o writebin.o
 +CFLAGS		+=-DBSD_A_OUT -DSTANDARD_GNU_A_OUT
-+CFLAGS		+=-Wall
++CFLAGS		+=-Wall -m32
 +LDFLAGS		=
  
 -ld: $(OBJS)
