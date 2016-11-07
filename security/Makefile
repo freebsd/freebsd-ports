@@ -870,6 +870,7 @@
     SUBDIR += py-maec
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
+    SUBDIR += py-mixbox
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
     SUBDIR += py-openssl
