@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpx2map
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -18,6 +18,7 @@ GH_ACCOUNT=	sd2k9
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	gpx2map
+NO_ARCH=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
