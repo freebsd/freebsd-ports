@@ -11,6 +11,9 @@ DISTNAME=	gtk-chtheme-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 theme changer
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
@@ -19,6 +22,6 @@ PLIST_FILES=	bin/gtk-chtheme \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk-chtheme ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

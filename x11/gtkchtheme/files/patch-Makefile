@@ -1,5 +1,5 @@
---- Makefile.orig	2010-10-31 11:27:20.000000000 +0100
-+++ Makefile	2010-10-31 11:27:35.000000000 +0100
+--- Makefile.orig	2004-02-09 17:08:41 UTC
++++ Makefile
 @@ -4,7 +4,7 @@ CFLAGS := $(if $(RPM_OPT_FLAGS), $(RPM_O
  
  LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
