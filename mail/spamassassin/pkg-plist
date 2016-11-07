@@ -221,5 +221,3 @@ lib/libspamc.so.0
 @postunexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
 @postunexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
 @comment ##################################################################
-@postexec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Downloading SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-update || true; fi
-@postexec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Compiling SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-compile || true; fi
