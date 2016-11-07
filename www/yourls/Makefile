@@ -3,6 +3,7 @@
 
 PORTNAME=	yourls
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +20,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USES=		cpe
-USE_PHP=	bcmath curl json mysql pcre xml
+USE_PHP=	bcmath curl json mysqli pcre xml
 
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message

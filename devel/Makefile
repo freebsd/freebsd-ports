@@ -2012,6 +2012,7 @@
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-ConfigReader-Simple
     SUBDIR += p5-Connector
+    SUBDIR += p5-Const-Exporter
     SUBDIR += p5-Const-Fast
     SUBDIR += p5-Context-Preserve
     SUBDIR += p5-Contextual-Return
@@ -3279,7 +3280,6 @@
     SUBDIR += p5-Test-Distribution
     SUBDIR += p5-Test-EOL
     SUBDIR += p5-Test-Exception
-    SUBDIR += p5-Test-Exception-LessClever
     SUBDIR += p5-Test-Expect
     SUBDIR += p5-Test-FailWarnings
     SUBDIR += p5-Test-Fake-HTTPD

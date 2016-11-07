@@ -1,0 +1,18 @@
+**************************************************************************
+For old programs that use XLFD, please add %%FONTSDIR%%
+to your X server either by:
+
+# xset fp+ %%FONTSDIR%%
+# xset fp rehash
+
+or by adding the following line to the section "Files" of
+your X-server configuration file (usually /etc/X11/xorg.conf)
+and restarting the X-server:
+
+Section "Files"
+...
+    FontPath   "%%FONTSDIR%%"
+...
+EndSection
+
+**************************************************************************

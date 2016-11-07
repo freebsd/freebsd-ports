@@ -30,6 +30,7 @@
 
 name="tor"
 rcvar=tor_enable
+exit_code=0
 
 load_rc_config ${name}
 
@@ -42,13 +43,14 @@ load_rc_config ${name}
 : ${tor_datadir="/var/db/tor"}
 : ${tor_disable_default_instance="NO"}
 
-instance=${2}
+instance=${slave_instance}
 if [ -n "${instance}" ]; then
-  # extended instance: parameters are set explicitly
   inst_def=${instance}
   inst_name=${inst_def%%:*}
+  [ "${inst_name}" != "main" ] || err 1 "${name} instance can't be named 'main'"
   inst_def=${inst_def#$inst_name}
   if [ -n "$inst_def" ]; then
+    # extended instance: parameters are set explicitly
     inst_def=${inst_def#:}
     tor_conf=${inst_def%%:*}
     inst_def=${inst_def#$tor_conf:}
@@ -59,7 +61,7 @@ if [ -n "${instance}" ]; then
     tor_pidfile=${inst_def%%:*}
     tor_datadir=${inst_def#$tor_pidfile:}
     if [ -z "${tor_conf}" -o -z "${tor_user}" -o -z "${tor_group}" -o -z "${tor_pidfile}" -o -z "${tor_datadir}" ]; then
-      warn "invalid tor instance ${inst_name} settings"
+      warn "invalid tor instance ${inst_name} settings: ${instance}"
       exit 1
     fi
   else
@@ -82,10 +84,25 @@ if [ -n "${instance}" ]; then
 fi
 
 if [ -z "${instance}" -a -n "${tor_instances}" ]; then
+  inst_only="$2"
+  inst_done=0
   for i in ${tor_instances}; do
-    %%PREFIX%%/etc/rc.d/tor $1 ${i} || warn "$1 failed for the tor instance $i"
+    inst_name=${i%%:*}
+    if [ -z "${inst_only}" -o "${inst_name}" = "${inst_only}" ]; then
+      echo -n "${name} instance ${inst_name}: "
+      if ! slave_instance=${i} %%PREFIX%%/etc/rc.d/tor "$1"; then
+        exit_code=1
+      fi
+      inst_done=$((inst_done+1))
+    fi
   done
-  checkyesno tor_disable_default_instance && return 0
+  if [ -z "${inst_only}" -o "${inst_only}" = "main" ]; then
+    checkyesno tor_disable_default_instance && return $exit_code
+    echo -n "${name} main instance: "
+  elif [ -n "${inst_only}" ]; then
+    [ $inst_done -gt 0 ] || err 1 "${name} instance '$inst_only' isn't defined"
+    return  $exit_code
+  fi
 fi
 
 required_files=${tor_conf}
@@ -95,5 +112,8 @@ command="%%PREFIX%%/bin/${name}"
 command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
 extra_commands="reload"
 
-run_rc_command "$1"
+if ! run_rc_command "$1"; then
+  exit_code=1
+fi
 
+return $exit_code

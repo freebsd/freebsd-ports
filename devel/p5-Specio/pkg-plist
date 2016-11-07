@@ -31,6 +31,7 @@
 %%SITE_PERL%%/Specio/Role/Inlinable.pm
 %%SITE_PERL%%/Specio/TypeChecks.pm
 %%SITE_PERL%%/TODO.pod
+%%SITE_PERL%%/Test/Specio.pm
 %%PERL5_MAN3%%/Specio.3.gz
 %%PERL5_MAN3%%/Specio::Coercion.3.gz
 %%PERL5_MAN3%%/Specio::Constraint::AnyCan.3.gz
@@ -64,3 +65,4 @@
 %%PERL5_MAN3%%/Specio::Role::Inlinable.3.gz
 %%PERL5_MAN3%%/Specio::TypeChecks.3.gz
 %%PERL5_MAN3%%/TODO.3.gz
+%%PERL5_MAN3%%/Test::Specio.3.gz

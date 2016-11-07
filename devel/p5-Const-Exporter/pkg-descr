@@ -1,0 +1,4 @@
+Const::Exporter allows you to declare constants that can be exported to other
+modules.
+
+WWW: http://search.cpan.org/dist/Const-Exporter/

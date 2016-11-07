@@ -17,6 +17,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

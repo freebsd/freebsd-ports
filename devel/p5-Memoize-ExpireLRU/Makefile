@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Memoize-ExpireLRU
-PORTVERSION=	0.55
-PORTREVISION=	2
+PORTVERSION=	0.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +12,9 @@ COMMENT=	Expiry plug-in for Memoize that adds LRU cache expiration
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
