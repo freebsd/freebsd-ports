@@ -1,0 +1,8 @@
+lib/elixir/lib/gen_state_machine/ebin/Elixir.GenStateMachine.Application.beam
+lib/elixir/lib/gen_state_machine/ebin/Elixir.GenStateMachine.Translator.beam
+lib/elixir/lib/gen_state_machine/ebin/Elixir.GenStateMachine.beam
+lib/elixir/lib/gen_state_machine/ebin/gen_state_machine.app
+lib/elixir/lib/gen_state_machine/lib/gen_state_machine.ex
+lib/elixir/lib/gen_state_machine/lib/gen_state_machine/application.ex
+lib/elixir/lib/gen_state_machine/lib/gen_state_machine/translator.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md
