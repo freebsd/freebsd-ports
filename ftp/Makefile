@@ -14,7 +14,6 @@
     SUBDIR += cftp
     SUBDIR += cmdftp
     SUBDIR += curl
-    SUBDIR += curl-hiphop
     SUBDIR += curlpp
     SUBDIR += dmachine
     SUBDIR += fastdfs
