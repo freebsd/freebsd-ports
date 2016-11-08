@@ -875,6 +875,7 @@
     SUBDIR += py-oauthlib
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
+    SUBDIR += py-paramiko1
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pgpdump
