@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.4.9
+PORTVERSION=	1.6.2
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	GNOME/sources/gnome-commander/1.4
+MASTER_SITES=	GNOME/sources/gnome-commander/${PORTVERSION:R}
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
