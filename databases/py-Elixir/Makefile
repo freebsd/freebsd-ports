@@ -14,6 +14,9 @@ COMMENT=	Declarative Mapper for SQLAlchemy
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired py-sqlalchemy06
+EXPIRATION_DATE=	2016-12-08
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.0:databases/py-sqlalchemy06
 
 USES=		python
