@@ -4,6 +4,7 @@ bin/pmd
 %%DATADIR%%/asm-5.0.4.jar
 %%DATADIR%%/commons-io-2.4.jar
 %%DATADIR%%/commons-lang3-3.4.jar
+%%DATADIR%%/groovy-2.4.7.jar
 %%DATADIR%%/gson-2.5.jar
 %%DATADIR%%/javacc-5.0.jar
 %%DATADIR%%/jaxen-1.1.6.jar
@@ -15,6 +16,7 @@ bin/pmd
 %%DATADIR%%/pmd-cs-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-fortran-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-go-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-groovy-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-java-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-javascript-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-jsp-%%PORTVERSION%%.jar
