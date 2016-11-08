@@ -1,6 +1,6 @@
---- ./qtemu.pro.orig	2007-11-12 22:31:00.000000000 +0300
-+++ ./qtemu.pro	2007-11-15 00:11:48.000000000 +0300
-@@ -31,4 +31,4 @@
+--- qtemu.pro.orig	2007-11-12 19:31:00 UTC
++++ qtemu.pro
+@@ -31,4 +31,4 @@ TRANSLATIONS =   translations/template_q
    translations/qtemu_es.ts \
    translations/qtemu_pt-BR.ts \
    translations/qtemu_pl.ts
