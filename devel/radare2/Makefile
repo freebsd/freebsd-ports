@@ -12,7 +12,10 @@ COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_arm64=		Does not build: Unsupported BSD architecture
+BROKEN_mips64=		Does not build: Unsupported BSD architecture
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build
 
 BUILD_DEPENDS+=		pkg-config:devel/pkgconf
 LIB_DEPENDS+=		libcapstone.so:devel/capstone4
