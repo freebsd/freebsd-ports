@@ -45,6 +45,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libx264.so:multimedia/libx264 \
 		libmp3lame.so:audio/lame
 
+BROKEN_arm64=	Fails to build: invokes x86 asm
+
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
 LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
