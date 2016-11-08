@@ -85,7 +85,6 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/ValidateFile.pm
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
-%%SITE_ARCH%%/auto/XMLTV/.packlist
 %%PERL5_MAN1%%/tv_augment.1.gz
 %%PERL5_MAN1%%/tv_augment_tz.1.gz
 %%PERL5_MAN1%%/tv_cat.1.gz
