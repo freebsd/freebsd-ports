@@ -30,6 +30,7 @@
     SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs
+    SUBDIR += bsod
     SUBDIR += buffer
     SUBDIR += cave
     SUBDIR += cdcollect
