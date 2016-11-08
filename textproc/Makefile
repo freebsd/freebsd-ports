@@ -1341,6 +1341,7 @@
     SUBDIR += py3-asciinema
     SUBDIR += py3-chardet
     SUBDIR += py3-libxml2
+    SUBDIR += py3-pager
     SUBDIR += pychm
     SUBDIR += qprint
     SUBDIR += qstardict
