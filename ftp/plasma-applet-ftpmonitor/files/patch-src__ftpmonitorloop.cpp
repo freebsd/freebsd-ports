@@ -1,6 +1,6 @@
---- ./src/ftpmonitorloop.cpp.orig	2010-06-12 10:18:35.000000000 +0400
-+++ ./src/ftpmonitorloop.cpp	2010-08-30 12:10:58.553618412 +0400
-@@ -84,7 +84,7 @@
+--- src/ftpmonitorloop.cpp.orig	2010-06-12 06:18:35 UTC
++++ src/ftpmonitorloop.cpp
+@@ -84,7 +84,7 @@ QString FTPMonitorLoop::getExecutedFtpWh
  bool FTPMonitorLoop::ftpdServerIsRunning(QString ftpdServerName)
  {
  	QProcess checkFtpd;
