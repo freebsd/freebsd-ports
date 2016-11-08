@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME?=	remmina-plugins
-PORTVERSION=	1.0.0
-PORTREVISION?=	4
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.2.0-rcgit.16
 CATEGORIES=	net gnome
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	woodsb02@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
 USE_GITHUB=	yes
@@ -17,44 +17,21 @@ GH_PROJECT=	Remmina
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 
-OPTIONS_DEFINE=	KEYRING VNC XDMCP TELEP NX NLS
-OPTIONS_DEFAULT=	KEYRING VNC XDMCP TELEP
-KEYRING_DESC=	GNOME Keyring plugin
-VNC_DESC=	VNC protocol plugin
-XDMCP_DESC=	XDMCP protocol plugin
-TELEP_DESC=	Telepathy protocol plugin
-NX_DESC=	NX protocol plugin
+USES=	metaport
 
-NO_BUILD=	yes
-PATCHDIR=	# none
+OPTIONS_DEFINE=		KEYRING NX TELEP VNC XDMCP
+OPTIONS_DEFAULT=	KEYRING TELEP VNC XDMCP
+KEYRING_DESC=		GNOME Keyring plugin
+VNC_DESC=		VNC protocol plugin
+XDMCP_DESC=		XDMCP protocol plugin
+TELEP_DESC=		Telepathy protocol plugin
+NX_DESC=		NX protocol plugin
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKEYRING}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugins-gnome.so:net/remmina-plugin-gnome
-.endif
-
-.if ${PORT_OPTIONS:MVNC}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:net/remmina-plugin-vnc
-.endif
-
-.if ${PORT_OPTIONS:MXDMCP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:net/remmina-plugin-xdmcp
-.endif
-
-.if ${PORT_OPTIONS:MTELEP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:net/remmina-plugin-telepathy
-.endif
-
-.if ${PORT_OPTIONS:MNX}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-nx.so:net/remmina-plugin-nx
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:net/remmina-plugin-i18n
-.endif
-
-do-install:	# empty
+KEYRING_RUN_DEPENDS=	remmina-plugin-gnome>=0:net/remmina-plugin-gnome
+NX_RUN_DEPENDS=		remmina-plugin-nx>=0:net/remmina-plugin-nx
+TELEP_RUN_DEPENDS=	remmina-plugin-telepathy>=0:net/remmina-plugin-telepathy
+VNC_RUN_DEPENDS=	remmina-plugin-vnc>=0:net/remmina-plugin-vnc
+XDMCP_RUN_DEPENDS=	remmina-plugin-xdmcp>=0:net/remmina-plugin-xdmcp
 
 .include <bsd.port.mk>
 
