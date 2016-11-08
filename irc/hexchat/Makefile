@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
 
