@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.6.90.g20160728
-PORTREVISION=	1
+PORTVERSION=	2.7.50.g20161024
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -18,10 +17,11 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 BROKEN_FreeBSD_9=	does not build
 
+LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	c47c4e2
+GH_TAGNAME=	e0c9a90
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -71,7 +71,7 @@ USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-libssh2
-PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
+PORTDOCS=	docs qemu-doc.html qmp-commands.txt
 
 .if defined(QEMU_USER_STATIC)
 .if ${ARCH} != "amd64"
@@ -243,6 +243,13 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
 
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
+.if (${OSVERSION} < 1100000)
+PLIST_SUB+=	LINUXBOOT_DMA="@comment "
+.else
+PLIST_SUB+=	LINUXBOOT_DMA=""
+.endif
+
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
 post-patch:
@@ -250,6 +257,16 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
+.if (${OSVERSION} < 1100000)
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/pc-bios/optionrom/Makefile
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/Makefile
+.endif
+
 #.if ${PORT_OPTIONS:MPCAP}
 #	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 #.endif
