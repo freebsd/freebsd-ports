@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
+BROKEN_arm64=		does not build: error: Please implement AtomicPointer for this platform
 BROKEN_powerpc64=	does not build
 
 MAKE_ARGS=	CC="${CXX}"
