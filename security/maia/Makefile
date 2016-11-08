@@ -3,6 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -317,6 +318,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|daemon_user  = 'maia'|daemon_user  = '${USERS}'|" \
 		-e "s|daemon_group = 'maia'|daemon_group = '${GROUPS}'|" \
 		-e "s|/var/lib/maia|${MAIAHOME}|" \
+		-e "s|'unrar'|'unrar v -c- -p- --'|" \
 		-e "s|DO_SYSLOG = 0|DO_SYSLOG = 1|" ${WRKSRC}/maiad.conf.dist
 
 	@${REINPLACE_CMD} -e "s|/etc/maia.conf|${ETCDIR}/maia.conf|" \
