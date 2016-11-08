@@ -12,7 +12,7 @@ COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_arm64=	Fails to build: Target architecture was not detected as supported by Double-Conversion
+BROKEN_aarch64=	Fails to build: Target architecture was not detected as supported by Double-Conversion
 
 USES=		libtool
 GNU_CONFIGURE=	yes

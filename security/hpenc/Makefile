@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 BROKEN_powerpc64=	Does not build
 
 BROKEN_FreeBSD_9=	does not build
-NOT_FOR_ARCHS=		arm64 sparc64
+NOT_FOR_ARCHS=		aarch64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 USES=		tar:xz compiler:c++11-lib gmake

@@ -21,7 +21,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-BROKEN_arm64=	does not build: error: Unported platform
+BROKEN_aarch64=	does not build: error: Unported platform
 BROKEN_sparc64=	does not build
 
 MAKE_JOBS_UNSAFE=yes

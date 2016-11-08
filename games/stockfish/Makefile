@@ -17,7 +17,7 @@ COMMENT=	Open source chess engine
 LICENSE=	GPLv3
 
 NOT_FOR_ARCHS=	sparc64
-BROKEN_arm64=	Fails to build: cannot detect architecture
+BROKEN_aarch64=	Fails to build: cannot detect architecture
 BROKEN_mips64=	Fails to build: cannot detect architecture
 
 USES=		compiler gmake zip

@@ -37,7 +37,7 @@ QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
-BROKEN_arm64=		fails to build: invokes x86 asm
+BROKEN_aarch64=		fails to build: invokes x86 asm
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_DESC=		Install the Qt5 api documentation

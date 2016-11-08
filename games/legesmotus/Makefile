@@ -13,7 +13,7 @@ COMMENT=	Team-based, networked, 2D shooter set in zero-gravity
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BROKEN_arm64=	Fails to build: Disallowed architecture for this platform: aarch64
+BROKEN_aarch64=	Fails to build: Disallowed architecture for this platform: aarch64
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \

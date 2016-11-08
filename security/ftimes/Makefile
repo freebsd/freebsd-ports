@@ -13,7 +13,7 @@ COMMENT=		System baselining and evidence collection tool
 LICENSE=		BSD3CLAUSE APACHE20 MIT
 LICENSE_COMB=		multi
 
-BROKEN_arm64=		fails to build: aarch64 is not currently supported
+BROKEN_aarch64=		fails to build: aarch64 is not currently supported
 BROKEN_mips64=		fails to build: mips64 is not currently supported
 
 GNU_CONFIGURE=		yes
