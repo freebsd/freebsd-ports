@@ -59,4 +59,4 @@ diff -urN ../pre-conf/include/config.make include/config.make
 +
 +# fake files needed
 +HFAKE= sys/timeb.h
-+OFAKE= fgetline.o fsync.o
++OFAKE= fgetline.o
