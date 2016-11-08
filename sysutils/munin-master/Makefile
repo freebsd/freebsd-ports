@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -62,4 +63,10 @@ post-install:
 	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502100
+RUN_DEPENDS+=	p5-CGI-Fast>=0:www/p5-CGI-Fast
+.endif
+
+.include <bsd.port.post.mk>
