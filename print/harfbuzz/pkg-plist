@@ -16,6 +16,7 @@ include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-icu.h
 include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
+include/harfbuzz/hb-ot-math.h
 include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-tag.h
 include/harfbuzz/hb-ot.h
@@ -40,6 +41,7 @@ libdata/pkgconfig/harfbuzz-icu.pc
 libdata/pkgconfig/harfbuzz.pc
 share/gir-1.0/HarfBuzz-0.0.gir
 share/gtk-doc/html/harfbuzz/HarfBuzz.png
+share/gtk-doc/html/harfbuzz/a-clustering-example-for-levels-0-and-1.html
 share/gtk-doc/html/harfbuzz/adding-text-to-the-buffer.html
 share/gtk-doc/html/harfbuzz/annotation-glossary.html
 share/gtk-doc/html/harfbuzz/api-index-0-9-10.html
@@ -60,10 +62,13 @@ share/gtk-doc/html/harfbuzz/api-index-0-9-8.html
 share/gtk-doc/html/harfbuzz/api-index-1-0-5.html
 share/gtk-doc/html/harfbuzz/api-index-1-1-2.html
 share/gtk-doc/html/harfbuzz/api-index-1-1-3.html
+share/gtk-doc/html/harfbuzz/api-index-1-2-3.html
+share/gtk-doc/html/harfbuzz/api-index-1-4-0.html
 share/gtk-doc/html/harfbuzz/api-index-full.html
 share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
 share/gtk-doc/html/harfbuzz/building.html
-share/gtk-doc/html/harfbuzz/ch07.html
+share/gtk-doc/html/harfbuzz/ch08.html
+share/gtk-doc/html/harfbuzz/clusters.html
 share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
 share/gtk-doc/html/harfbuzz/deprecated-api-index.html
 share/gtk-doc/html/harfbuzz/fonts-and-faces.html
@@ -82,6 +87,7 @@ share/gtk-doc/html/harfbuzz/harfbuzz-hb-graphite2.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-icu.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-font.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-layout.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-math.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-shape.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-tag.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot.html
@@ -98,15 +104,18 @@ share/gtk-doc/html/harfbuzz/index.html
 share/gtk-doc/html/harfbuzz/install-harfbuzz.html
 share/gtk-doc/html/harfbuzz/left-insensitive.png
 share/gtk-doc/html/harfbuzz/left.png
+share/gtk-doc/html/harfbuzz/level-2.html
 share/gtk-doc/html/harfbuzz/object-tree.html
 share/gtk-doc/html/harfbuzz/plans-and-caching.html
 share/gtk-doc/html/harfbuzz/pt01.html
 share/gtk-doc/html/harfbuzz/pt02.html
+share/gtk-doc/html/harfbuzz/reordering-in-levels-0-and-1.html
 share/gtk-doc/html/harfbuzz/right-insensitive.png
 share/gtk-doc/html/harfbuzz/right.png
 share/gtk-doc/html/harfbuzz/setting-buffer-properties.html
 share/gtk-doc/html/harfbuzz/shaping-and-shape-plans.html
 share/gtk-doc/html/harfbuzz/style.css
+share/gtk-doc/html/harfbuzz/the-distinction-between-levels-0-and-1.html
 share/gtk-doc/html/harfbuzz/up-insensitive.png
 share/gtk-doc/html/harfbuzz/up.png
 share/gtk-doc/html/harfbuzz/using-harfbuzzs-native-opentype-implementation.html
