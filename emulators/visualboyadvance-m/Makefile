@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN_arm64=	Fails to build: regparm is not valid on this platform
+
 USE_GITHUB=	yes
 GH_TAGNAME=	VBA-M_Beta_2
 
