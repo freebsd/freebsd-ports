@@ -15,7 +15,7 @@ COMMENT=	Featureful Unix password cracker
 
 LICENSE=	GPLv2
 
-BROKEN_arm64=	Fails to build: Cannot detect CPU architechture
+BROKEN_aarch64=	Fails to build: Cannot detect CPU architechture
 BROKEN_mips64=	Fails to build: Cannot detect CPU architechture
 
 USES=		gmake shebangfix ssl tar:bzip2

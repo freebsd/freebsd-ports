@@ -46,7 +46,7 @@ MAKE_ARGS=	${OVERRIDE_INS}
 PLIST_SUB=	LONG_VER=1.3
 
 BROKEN_FreeBSD_9=	PR 193528 (c++11 support is broken)
-BROKEN_arm64=		Fails to build: Unable to detect architecture, please update
+BROKEN_aarch64=		Fails to build: Unable to detect architecture, please update
 BROKEN_i386=		qx11embed_x11.cpp:470:20: non-constant-expression\
 			cannot be narrowed from type 'unsigned int' to 'long'\
 			in initializer list [-Wc++11-narrowing]

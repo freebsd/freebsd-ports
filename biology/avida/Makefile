@@ -12,7 +12,7 @@ COMMENT=	Auto-adaptive genetic system designed for ALife research
 
 LICENSE=	GPLv3
 
-BROKEN_arm64=		invokes x86 asm
+BROKEN_aarch64=		invokes x86 asm
 BROKEN_mips=		invokes x86 asm
 BROKEN_mips64=		invokes x86 asm
 BROKEN_sparc64=		missing atomics implementation

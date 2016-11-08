@@ -12,7 +12,7 @@ EXTRACT_SUFX=	-patched-src.tar.gz
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Program to play mpeg movies on X displays
 
-BROKEN_arm64=	fails to build: Unknown endianness of architecture
+BROKEN_aarch64=	fails to build: Unknown endianness of architecture
 BROKEN_mips64=	fails to build: Unknown endianness of architecture
 
 WRKSRC=		${WRKDIR}/mpeg_play
