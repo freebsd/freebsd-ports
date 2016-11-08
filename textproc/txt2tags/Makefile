@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 
-USES=		python:2 shebangfix tar:tgz
+USES=		python:2 shebangfix
 SHEBANG_FILES=	extras/html-update.sh txt2tags
 NO_BUILD=	yes
 NO_ARCH=	yes
