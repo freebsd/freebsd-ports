@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 CONFLICTS=	hping-[0-9]*
 
-BROKEN_arm64=	fails to build: can not find the byte order for this architecture, fix bytesex.h
+BROKEN_aarch64=	fails to build: can not find the byte order for this architecture, fix bytesex.h
 
 GNU_CONFIGURE=	yes
 USES=		alias gmake

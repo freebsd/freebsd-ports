@@ -18,7 +18,7 @@ RUN_DEPENDS=	xorg-fonts>0:x11-fonts/xorg-fonts
 
 CONFLICTS=	fvwm-1.* fvwm-2.*
 
-BROKEN_arm64=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
+BROKEN_aarch64=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
 
 USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BROKEN_arm64=	fails to compile: CPUINFO not defined
+BROKEN_aarch64=	fails to compile: CPUINFO not defined
 BROKEN_mips64=	fails to compile: strndup not found
 
 USES=		cmake perl5 sqlite

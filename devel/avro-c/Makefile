@@ -15,7 +15,7 @@ COMMENT=	Data serialization system for ANSI C
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-BROKEN_arm64=	Fails to build: error: No atomic implementation
+BROKEN_aarch64=	Fails to build: error: No atomic implementation
 BROKEN_armv6=	Fails to build: error: No atomic implementation
 BROKEN_mips=	Fails to build: error: No atomic implementation
 BROKEN_mips64=	Fails to build: error: No atomic implementation

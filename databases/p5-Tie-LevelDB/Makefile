@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
-BROKEN_arm64=		does not build: error: Please implement AtomicPointer for this platform
+BROKEN_aarch64=		does not build: error: Please implement AtomicPointer for this platform
 BROKEN_powerpc64=	does not build
 BROKEN_sparcpc64=	does not build: unrecognized command line options
 

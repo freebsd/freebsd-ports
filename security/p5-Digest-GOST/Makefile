@@ -12,7 +12,7 @@ COMMENT=	Perl interface to the GOST R 34.11-94 digest algorithm
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BROKEN_arm64=	fails to build: Cannot detect CPU architechture
+BROKEN_aarch64=	fails to build: Cannot detect CPU architechture
 BROKEN_mips64=	fails to build: Cannot detect CPU architechture
 
 USES=		perl5
