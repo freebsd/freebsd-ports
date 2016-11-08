@@ -1,7 +1,6 @@
-diff -urN -urN -x .svn ../vendor/wmanager/inc/WManager.H ./inc/WManager.H
---- ../vendor/wmanager/inc/WManager.H	2007-12-11 12:42:04.000000000 +0200
-+++ ./inc/WManager.H	2007-12-17 16:00:13.000000000 +0200
-@@ -80,17 +80,17 @@
+--- inc/WManager.H.orig	1999-11-14 15:28:36 UTC
++++ inc/WManager.H
+@@ -80,17 +80,17 @@ public:
    
  private:
    Interface* _Interface;
