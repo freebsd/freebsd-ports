@@ -8797,3 +8797,4 @@ devel/p5-Test-Exception-LessClever||2016-11-06|Deprecated by upstream
 www/py-django-piston||2016-11-06|Has expired: Abandoned upstream. Doesn't work with django>=1.6
 net/remmina-plugin-i18n||2016-11-08|Plugin translations removed upstream in GH commit 2dd0526
 net/p5-Net-Ping||2016-11-08|Has expired: This or newer version included in all supported versions of perl
+ftp/curl-hiphop||2016-11-08|Has expired: useful only for removed hiphop-php
