@@ -1,4 +1,4 @@
---- scripts/dkimproxy.out.orig	2010-11-15 16:54:28 UTC
+--- scripts/dkimproxy.out.orig	2016-11-08 12:35:41 UTC
 +++ scripts/dkimproxy.out
 @@ -314,17 +314,11 @@ sub process_request
  {
@@ -19,3 +19,12 @@
  	};
  	if (my $E = $@)
  	{
+@@ -713,7 +707,7 @@ which have a sender matching one of thes
+ matched domain as the d= value of the generated signature.
+ 
+ Please note that the d= value of the generated signature can also be
+-specified using signature options (see L</"SIGNATURE OPTIONS"). The
++specified using signature options (see L</"SIGNATURE OPTIONS">). The
+ signature options will override the value specified here.
+ 
+ Therefore, if you want to sign all messages, and you are specifying
