@@ -14,6 +14,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Date \
 		Horde_Exception \
 		Horde_Http \
+		Horde_Translation \
 		Horde_Url
 
 .include <bsd.port.mk>
