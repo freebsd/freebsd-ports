@@ -13,6 +13,9 @@ COMMENT=	ASCII art to image converter written in Python
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on broken and expired py-reportlab2
+EXPIRATION_DATE=	2016-12-08
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
 

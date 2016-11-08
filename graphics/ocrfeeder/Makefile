@@ -12,6 +12,9 @@ COMMENT=	Document layout analysis and optical character recognition
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on broken and expired py-reportlab2
+EXPIRATION_DATE=	2016-12-08
+
 BUILD_DEPENDS=	goocanvas2>0:graphics/goocanvas2 \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}sane>0:graphics/py-sane \
