@@ -27,12 +27,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:www/py-cherrypy \
 USES=		gettext python:2
 USE_PYTHON=	distutils autoplist
 
-OPTIONS_DEFINE=	ELIXIR NOSE SQLOBJECT SQLALCHEMY
+OPTIONS_DEFINE=	ELIXIR NOSE SQLOBJECT
 OPTIONS_DEFAULT=SQLOBJECT
 ELIXIR_DESC=	Use Elixir as plugin
 NOSE_DESC=	Use nose TG[testtools]
 SQLOBJECT_DESC=	Use SQLObject as DB backend
-SQLALCHEMY_DESC=Use SQLAlchemy as DB backend TG[future]
 
 .include <bsd.port.options.mk>
 
@@ -50,10 +49,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0.9.1:devel/py-nose
 
 .if ${PORT_OPTIONS:MSQLOBJECT}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:databases/py-sqlobject
-.endif
-
-.if ${PORT_OPTIONS:MSQLALCHEMY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.3.4:databases/py-sqlalchemy06
 .endif
 
 .include <bsd.port.mk>
