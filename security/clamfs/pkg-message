@@ -1,5 +1,5 @@
 **************************************************************************
-In order to use clamav, you should load fuse.ko module.
+In order to use clamfs, you should load fuse.ko module.
 
 Type "sudo kldload fuse.ko"
 
