@@ -61,6 +61,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		xdpyinfo:x11/xdpyinfo
 
+BROKEN=		Fails to build against libsamplerate-0.1.9
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
