@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	anastmag@gmail.com
+MAINTAINER=	anastasios@mageirias.com
 COMMENT=	User-space fs with on-access antivirus scanning
 
 LICENSE=	GPLv2
