@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ricochet
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -22,10 +22,9 @@ BROKEN_FreeBSD_9_amd64=	does not build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im
 
-USES=		compiler:c++11-lib gmake pkgconfig qmake
-USE_OPENSSL=	yes
+USES=		compiler:c++11-lib gmake pkgconfig qmake ssl
 USE_GL=		gl
-USE_QT5=	core gui network qml quick quickcontrols widgets multimedia buildtools_build linguisttools_build
+USE_QT5=	core gui network qml quick widgets multimedia buildtools_build linguisttools_build
 QMAKE_ARGS+=	DEFINES+=RICOCHET_NO_PORTABLE OPENSSLDIR=${LOCALBASE}
 
 PLIST_FILES=	bin/ricochet \
