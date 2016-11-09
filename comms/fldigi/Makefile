@@ -18,6 +18,8 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate\
 		libboost_system.so:devel/boost-libs\
 		libfltk.so:x11-toolkits/fltk
 
+BROKEN=		Fails to build against libsamplerate-0.1.9
+
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib execinfo gmake perl5 pkgconfig shebangfix
