@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansiweather
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	misc
 
 MAINTAINER=	dbaio@bsd.com.br
@@ -29,6 +29,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/ansiweather ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ansiweather.plugin.zsh ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/ansiweather.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
