@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.23.03
+PORTVERSION=	3.23.15
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
-		LOCAL/db
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
@@ -17,8 +16,6 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc\
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate\
 		libboost_system.so:devel/boost-libs\
 		libfltk.so:x11-toolkits/fltk
-
-BROKEN=		Fails to build against libsamplerate-0.1.9
 
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
