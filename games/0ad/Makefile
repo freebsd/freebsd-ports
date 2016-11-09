@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.20
-PORTREVISION=	3
+PORTVERSION=	0.0.21
 CATEGORIES=	games
-MASTER_SITES=	SF/zero-ad/releases \
-		http://releases.wildfiregames.com/
+MASTER_SITES=	http://releases.wildfiregames.com/ \
+		SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
 
@@ -70,7 +69,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs31-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs38-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}
