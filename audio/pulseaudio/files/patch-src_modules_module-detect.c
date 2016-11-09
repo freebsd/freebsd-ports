@@ -1,6 +1,6 @@
 --- src/modules/module-detect.c.orig	2016-05-10 12:28:04 UTC
 +++ src/modules/module-detect.c
-@@ -160,11 +160,48 @@ static int detect_oss(pa_core *c, int ju
+@@ -160,11 +160,45 @@ static int detect_oss(pa_core *c, int ju
                  continue;
  
          } else if (sscanf(line, "pcm%u: ", &device) == 1) {
@@ -16,10 +16,7 @@
 +            if (!pa_endswith(line, "default"))
 +                continue;
 +
-+            char *p = strrchr(line, '>');
-+
-+            if (p)
-+                p = strchr(p, '(');
++            const char *p = strrchr(line, '(');
 +
 +            if (!p)
                  continue;
