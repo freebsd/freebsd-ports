@@ -20,6 +20,14 @@
  check_header sys/videoio.h
  
  check_func_headers "windows.h vfw.h" capCreateCaptureWindow "$vfwcap_indev_extralibs"
+@@ -3128,6 +3128,7 @@ elif enabled llvm_gcc; then
+     check_cflags -mllvm -stack-alignment=16
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
++    check_cflags -mstack-alignment=16
+     check_cflags -Qunused-arguments
+ elif enabled armcc; then
+     # 2523: use of inline assembler is deprecated
 @@ -3322,7 +3322,7 @@
  SRC_PATH="$source_path"
  SRC_PATH_BARE=$source_path
