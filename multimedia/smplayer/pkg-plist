@@ -23,7 +23,8 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_cs.qm
 %%DATADIR%%/translations/smplayer_da.qm
 %%DATADIR%%/translations/smplayer_de.qm
-%%DATADIR%%/translations/smplayer_el_GR.qm
+%%DATADIR%%/translations/smplayer_el.qm
+%%DATADIR%%/translations/smplayer_en.qm
 %%DATADIR%%/translations/smplayer_en_GB.qm
 %%DATADIR%%/translations/smplayer_en_US.qm
 %%DATADIR%%/translations/smplayer_es.qm
