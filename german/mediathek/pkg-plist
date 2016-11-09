@@ -4,9 +4,9 @@ bin/mediathek
 %%DATADIR%%/MediathekView.ico
 %%DATADIR%%/MediathekView.jar
 %%DATADIR%%/lib/MSearch.jar
-%%DATADIR%%/lib/commons-compress-1.8.1.jar
-%%DATADIR%%/lib/commons-lang3-3.3.2.jar
-%%DATADIR%%/lib/jackson-core-2.4.1.jar
+%%DATADIR%%/lib/commons-compress-1.12.jar
+%%DATADIR%%/lib/commons-lang3-3.4.jar
+%%DATADIR%%/lib/jackson-core-2.7.0.jar
 %%DATADIR%%/lib/jchart2d-3.2.2.jar
 %%DATADIR%%/lib/jgoodies-common-1.8.0.jar
 %%DATADIR%%/lib/jgoodies-forms-1.8.0.jar
