@@ -1,5 +1,5 @@
---- ./src/headers.h.orig	2008-12-16 11:21:54.000000000 -0500
-+++ ./src/headers.h	2011-02-09 20:52:34.000000000 -0500
+--- src/headers.h.orig	2014-05-22 05:42:44 UTC
++++ src/headers.h
 @@ -43,11 +43,11 @@
  #   define HAVE_PCRE
  #  endif /* HAVE_PCRE_H or HAVE_PCRE_PCRE_H */
