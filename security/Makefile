@@ -417,6 +417,7 @@
     SUBDIR += openconnect
     SUBDIR += opencryptoki
     SUBDIR += openct
+    SUBDIR += openiked
     SUBDIR += opensaml2
     SUBDIR += opensc
     SUBDIR += openscep

@@ -1,0 +1,15 @@
+@sample etc/ikeca.cnf.sample
+@sample etc/iked.conf.sample
+man/man5/iked.conf.5.gz
+man/man8/ikectl.8.gz
+man/man8/iked.8.gz
+sbin/ikectl
+sbin/iked
+@dir etc/iked/ca
+@dir etc/iked/certs
+@dir etc/iked/crls
+@dir(,,700) etc/iked/private
+@dir etc/iked/pubkeys/fqdn
+@dir etc/iked/pubkeys/ipv4
+@dir etc/iked/pubkeys/ipv6
+@dir etc/iked/pubkeys/ufqdn
