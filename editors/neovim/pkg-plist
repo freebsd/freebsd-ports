@@ -47,6 +47,7 @@ share/nvim/runtime/autoload/gnat.vim
 share/nvim/runtime/autoload/gzip.vim
 share/nvim/runtime/autoload/health.vim
 share/nvim/runtime/autoload/health/nvim.vim
+share/nvim/runtime/autoload/health/provider.vim
 share/nvim/runtime/autoload/htmlcomplete.vim
 share/nvim/runtime/autoload/javascriptcomplete.vim
 share/nvim/runtime/autoload/man.vim
@@ -175,6 +176,7 @@ share/nvim/runtime/doc/autocmd.txt
 share/nvim/runtime/doc/change.txt
 share/nvim/runtime/doc/cmdline.txt
 share/nvim/runtime/doc/debug.txt
+share/nvim/runtime/doc/deprecated.txt
 share/nvim/runtime/doc/develop.txt
 share/nvim/runtime/doc/diff.txt
 share/nvim/runtime/doc/digraph.txt
@@ -225,7 +227,6 @@ share/nvim/runtime/doc/print.txt
 share/nvim/runtime/doc/provider.txt
 share/nvim/runtime/doc/quickfix.txt
 share/nvim/runtime/doc/quickref.txt
-share/nvim/runtime/doc/quotes.txt
 share/nvim/runtime/doc/recover.txt
 share/nvim/runtime/doc/remote.txt
 share/nvim/runtime/doc/remote_plugin.txt
@@ -350,6 +351,7 @@ share/nvim/runtime/ftplugin/gitsendemail.vim
 share/nvim/runtime/ftplugin/go.vim
 share/nvim/runtime/ftplugin/gpg.vim
 share/nvim/runtime/ftplugin/gprof.vim
+share/nvim/runtime/ftplugin/groovy.vim
 share/nvim/runtime/ftplugin/group.vim
 share/nvim/runtime/ftplugin/grub.vim
 share/nvim/runtime/ftplugin/haml.vim
@@ -779,6 +781,7 @@ share/nvim/runtime/syntax/autohotkey.vim
 share/nvim/runtime/syntax/autoit.vim
 share/nvim/runtime/syntax/automake.vim
 share/nvim/runtime/syntax/ave.vim
+share/nvim/runtime/syntax/avra.vim
 share/nvim/runtime/syntax/awk.vim
 share/nvim/runtime/syntax/ayacc.vim
 share/nvim/runtime/syntax/b.vim
