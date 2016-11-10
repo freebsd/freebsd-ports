@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Newsreader
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		tar:Z
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
 

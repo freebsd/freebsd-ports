@@ -19,6 +19,8 @@ LIB_DEPENDS=	libtre.so:textproc/libtre \
 RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
 TEST_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

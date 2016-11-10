@@ -33,7 +33,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 CONFLICTS=	ace+tao-5*
 
-BROKEN_ia64=		Does not compile on ${ARCH}
+BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc=		Does not compile on ${ARCH}
 BROKEN_powerpc64=	Does not build on ${ARCH}
 BROKEN_sparc64=		Does not compile on ${ARCH}

@@ -21,6 +21,7 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc64=	Does not build
 
 SUB_FILES=	pkg-message
@@ -145,7 +146,7 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .if ${PORT_OPTIONS:MTOKUDB}
 NOT_FOR_ARCHS=  i386
 NOT_FOR_ARCHS_REASON=   TokuDB not supported on 32-bit platforms, see \
-                        https://github.com/percona/PerconaFT/blob/master/README.md
+			https://github.com/percona/PerconaFT/blob/master/README.md
 .endif
 
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000

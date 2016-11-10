@@ -11,6 +11,8 @@ DISTNAME=	cider1b1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixed-level circuit and device simulator (includes SPICE3)
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 CONFLICTS=	spice-[0-9]*
 WRKSRC=		${WRKDIR}/sim
 USE_XORG=	xt xaw xmu
