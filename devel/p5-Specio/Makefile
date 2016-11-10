@@ -3,6 +3,7 @@
 
 PORTNAME=	Specio
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -14,7 +15,7 @@ COMMENT=	Type constraints and coercions for Perl
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-xBUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0:devel/p5-Eval-Closure \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Role-Tiny>=1.003003:devel/p5-Role-Tiny
