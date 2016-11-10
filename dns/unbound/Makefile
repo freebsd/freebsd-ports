@@ -12,6 +12,8 @@ COMMENT=	Validating, recursive, and caching DNS resolver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES+=		autoreconf cpe libtool ssl
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes

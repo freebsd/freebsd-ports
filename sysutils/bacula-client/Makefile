@@ -16,4 +16,6 @@ OPTIONS_DEFAULT=ENABLE_IPV6
 
 ENABLE_IPV6_DESC=	Enable IPv6 support
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include "${MASTERDIR}/Makefile"

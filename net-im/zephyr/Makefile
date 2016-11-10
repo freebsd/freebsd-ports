@@ -12,6 +12,8 @@ COMMENT=	Enterprise-scale distributed messaging system
 
 LICENSE=	MIT
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 GNU_CONFIGURE=	yes
 # it is an upstream bug that --with-krb5 needs a path
 CONFIGURE_ARGS=	--with-krb5="${KRB5_DIR}"

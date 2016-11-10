@@ -14,6 +14,8 @@ COMMENT=	Alternative threads-aware malloc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake

@@ -13,6 +13,8 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USE_RC_SUBR=	pmacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes

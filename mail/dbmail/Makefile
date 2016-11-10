@@ -20,6 +20,8 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto \
 		docbook-sgml>0:textproc/docbook-sgml
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 CONFLICTS=	dbmail22-[0-9]*
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE

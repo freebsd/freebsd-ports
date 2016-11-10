@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		cpe gmake pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99

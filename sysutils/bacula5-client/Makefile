@@ -16,4 +16,6 @@ MASTERDIR=	${.CURDIR}/../../sysutils/bacula5-server
 OPTIONS_DEFINE=	NLS OPENSSL PYTHON
 OPTIONS_DEFAULT=OPENSSL
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include "${MASTERDIR}/Makefile"

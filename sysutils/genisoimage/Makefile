@@ -15,4 +15,6 @@ SLAVE_PORT=	cdrkit
 
 MASTERDIR=	${.CURDIR}/../cdrkit
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 .include "${MASTERDIR}/Makefile"

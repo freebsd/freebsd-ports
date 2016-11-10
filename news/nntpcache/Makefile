@@ -15,6 +15,9 @@ COMMENT=	News caching/anti-spam/server-merging system
 SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
+
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		gmake autoreconf shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR} \
