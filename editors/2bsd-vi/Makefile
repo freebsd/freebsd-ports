@@ -15,6 +15,8 @@ COMMENT=	The original vi editor, updated to run on modern OSes
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		ncurses tar:bzip2
 
 PRESERVEDIR=	/var/preserve/${PKGBASE}

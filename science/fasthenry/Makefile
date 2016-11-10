@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipole-accelerated inductance analysis program
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC=		${WRKDIR}/fasthenry-3.0wr

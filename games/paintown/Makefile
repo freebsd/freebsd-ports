@@ -17,6 +17,8 @@ LIB_DEPENDS=	liballeg.so:devel/allegro \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		dos2unix scons tar:bzip2
 USE_SDL=	yes
 INSTALLS_ICONS=	yes

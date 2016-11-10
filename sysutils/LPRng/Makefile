@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

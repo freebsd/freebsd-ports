@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
 RUNDIR=		/var/run/ircd

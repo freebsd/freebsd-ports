@@ -13,6 +13,8 @@ COMMENT=	Mixed-signal circuit simulator derived from Spice and Cider
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool readline
 

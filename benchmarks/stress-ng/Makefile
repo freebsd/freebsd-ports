@@ -11,6 +11,8 @@ COMMENT=	Stress test benchmarks
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		gmake
 ALL_TARGET=	# empty
 

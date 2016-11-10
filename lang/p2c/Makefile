@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 WRKSRC_SUBDIR=	src
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	p2cc.perl
 perl_OLD_CMD=	/bin/perl
