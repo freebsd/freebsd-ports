@@ -78,6 +78,7 @@ OPTIONS_DEFINE=	\
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
 	HTTP_FOOTER \
+	HTTP_GEOIP2 \
 	HTTP_JSON_STATUS \
 	HTTP_MOGILEFS \
 	HTTP_MP4_H264 \
@@ -186,6 +187,7 @@ HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
 HTTP_FOOTER_DESC=		3rd party http_footer module
+HTTP_GEOIP2_DESC=		3rd party geoip2 module
 HTTP_JSON_STATUS_DESC=		3rd party http_json_status module
 HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
@@ -505,6 +507,20 @@ GH_ACCOUNT+=	alibaba:footer
 GH_PROJECT+=	nginx-http-footer-filter:footer
 GH_TAGNAME+=	${NGINX_FOOTER_VERSION}:footer
 CONFIGURE_ARGS+=--add-module=${WRKSRC_footer}
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_GEOIP2}
+# WWW: https://github.com/leev/ngx_http_geoip2_module
+NGINX_HTTP_GEOIP2_VERSION=	2.0
+GH_ACCOUNT+=	leev:geoip2
+GH_PROJECT+=	ngx_http_geoip2_module:geoip2
+GH_TAGNAME+=	${NGINX_HTTP_GEOIP2_VERSION}:geoip2
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_geoip2}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_geoip2}
+.endif
+LIB_DEPENDS+=	libmaxminddb.so:net/libmaxminddb
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FLV}
