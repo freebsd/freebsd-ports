@@ -1247,6 +1247,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/EVP_OpenInit.3.gz
 %%MAN3%%man/man3/EVP_OpenUpdate.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_add1_hkdf_info.3.gz
+%%MAN3%%man/man3/EVP_PKEY_CTX_add1_tls1_prf_seed.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_ctrl.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_ctrl_str.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_dup.3.gz
@@ -1258,6 +1259,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_new_id.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set1_hkdf_key.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set1_hkdf_salt.3.gz
+%%MAN3%%man/man3/EVP_PKEY_CTX_set1_tls1_prf_secret.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_app_data.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_cb.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_dh_paramgen_generator.3.gz
@@ -1271,6 +1273,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_rsa_pss_saltlen.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_rsa_rsa_keygen_bits.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_set_signature_md.3.gz
+%%MAN3%%man/man3/EVP_PKEY_CTX_set_tls1_prf_md.3.gz
 %%MAN3%%man/man3/EVP_PKEY_assign_DH.3.gz
 %%MAN3%%man/man3/EVP_PKEY_assign_DSA.3.gz
 %%MAN3%%man/man3/EVP_PKEY_assign_EC_KEY.3.gz
@@ -2437,8 +2440,6 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/X509_CINF_new.3.gz
 %%MAN3%%man/man3/X509_CRL_INFO_free.3.gz
 %%MAN3%%man/man3/X509_CRL_INFO_new.3.gz
-%%MAN3%%man/man3/X509_CRL_METHOD_free.3.gz
-%%MAN3%%man/man3/X509_CRL_METHOD_new.3.gz
 %%MAN3%%man/man3/X509_CRL_add0_revoked.3.gz
 %%MAN3%%man/man3/X509_CRL_add1_ext_i2d.3.gz
 %%MAN3%%man/man3/X509_CRL_add_ext.3.gz
