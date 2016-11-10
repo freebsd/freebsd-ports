@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.2.27
+PORTVERSION=	6.2.28
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	-lts
@@ -17,7 +17,8 @@ PORTSCOUT=	limit:^6\.2\.
 
 USES=		cpe shebangfix php:web
 SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/update-static-composer.sh \
-		typo3/sysext/core/Build/Scripts/xlfcheck.sh
+		typo3/sysext/core/Build/Scripts/xlfcheck.sh \
+		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
