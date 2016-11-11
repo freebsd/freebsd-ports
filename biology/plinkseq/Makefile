@@ -13,6 +13,8 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		Does not build: Host architecture was not detected as supported by protobuf
+BROKEN_mips64=		Does not build: Host architecture was not detected as supported by protobuf
 BROKEN_powerpc64=	Does not build
 
 USES=		libtool gmake

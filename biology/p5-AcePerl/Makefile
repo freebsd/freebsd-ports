@@ -17,13 +17,15 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_aarch64=	Fails to link: unresolvable R_AARCH64_ADR_PREL_PG_HI21 relocation
+
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 

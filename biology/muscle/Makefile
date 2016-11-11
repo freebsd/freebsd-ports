@@ -21,7 +21,8 @@ ALL_TARGET=	muscle
 
 PLIST_FILES=	bin/muscle
 
-BROKEN_powerpc64=	Does not build on powerpc64
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	Fails to install: tries to modify /dev/tty
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muscle ${STAGEDIR}${PREFIX}/bin

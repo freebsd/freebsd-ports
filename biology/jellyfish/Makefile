@@ -27,6 +27,7 @@ GH_PROJECT=	Jellyfish
 INSTALL_TARGET=	install-strip
 
 BROKEN_FreeBSD_9_i386=	multiple code issues on i386 < 10.0-RELEASE
+BROKEN_aarch64=		Fails to compile: error: variable res is uninitialized
 
 .include <bsd.port.pre.mk>
 
