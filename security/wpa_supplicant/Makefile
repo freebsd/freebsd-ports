@@ -9,12 +9,16 @@ MASTER_SITES=	http://w1.fi/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/README
+
 USES=		cpe gmake readline ssl
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
+MAKE_ENV=	V=1
 
 SUB_FILES=	pkg-message
 PORTDOCS=	README ChangeLog
@@ -29,7 +33,7 @@ OPTIONS_DEFINE=		WPS WPS_ER WPS_NOREG WPS_NFC PKCS12 SMARTCARD \
 			HT_OVERRIDES VHT_OVERRIDES TLSV12 IEEE80211W \
 			IEEE80211R DEBUG_FILE DEBUG_SYSLOG PRIVSEP \
 			DELAYED_MIC IEEE80211N IEEE80211AC INTERWORKING \
-			HS20 NO_ROAMING P2P TDLS
+			HS20 NO_ROAMING P2P TDLS DOCS
 OPTIONS_DEFAULT=	BSD WIRED NDIS \
 			TLS PEAP TTLS MD5 MSCHAPv2 GTC LEAP OTP PSK \
 			WPS PKCS12 SMARTCARD IEEE80211R DEBUG_SYSLOG \
@@ -88,6 +92,8 @@ SAKE_DESC=		Shared-Secret Authentication & Key Establishment
 GPSK_DESC=		Generalized Pre-Shared Key
 TNC_DESC=		Trusted Network Connect
 
+PRIVSEP_PLIST_FILES=	sbin/wpa_priv
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIM} || ${PORT_OPTIONS:MAKA} || ${PORT_OPTIONS:MAKA_PRIME}
@@ -96,9 +102,6 @@ CFLAGS+=	-I${LOCALBASE}/include/PCSC
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if ${PORT_OPTIONS:MPRIVSEP}
-PLIST_FILES+= sbin/wpa_priv
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
@@ -149,14 +152,16 @@ post-patch:
 	@${ECHO} CONFIG_TLS=openssl >> ${CFG}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} wpa_supplicant wpa_cli \
 		wpa_passphrase ${STAGEDIR}${PREFIX}/sbin)
-.if ${PORT_OPTIONS:MPRIVSEP}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wpa_priv ${STAGEDIR}${PREFIX}/sbin
-.endif
 	${INSTALL_DATA} ${BUILD_WRKSRC}/wpa_supplicant.conf \
 		${STAGEDIR}${PREFIX}/etc/wpa_supplicant.conf.sample
+
+do-install-PRIVSEP-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wpa_priv ${STAGEDIR}${PREFIX}/sbin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC} && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
