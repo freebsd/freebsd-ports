@@ -3,7 +3,7 @@
 
 PORTNAME=	rpy2
 PORTVERSION=	2.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY} \
 		R:math/R
 
-USES=		python readline
-USE_GCC=	yes
+USES=		fortran python readline
 USE_PYTHON=	distutils autoplist
+LDFLAGS+=	-Wl,--as-needed
 
 pre-configure:
 	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
