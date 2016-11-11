@@ -3,9 +3,9 @@
 
 PORTNAME=	riemann
 PORTVERSION=	0.2.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	https://wintermute.skunkwerks.at/${PORTNAME}/releases/${PORTVERSION}/ \
-		http://aphyr.com/${PORTNAME}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	dch@skunkwerks.at
 COMMENT=	Monitors distributed systems
@@ -50,6 +50,7 @@ do-install:
 	${MKDIR} \
 		${STAGEDIR}${JAVAJARDIR} \
 		${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${ETCDIR}/conf.d \
 		${STAGEDIR}${RIEMANN_LOGDIR}
 	${INSTALL_DATA} \
 				${WRKSRC}/lib/${PORTNAME}.jar \
