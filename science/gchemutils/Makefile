@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
 
 PORTSCOUT=	limitw:1,even
 
+BROKEN_aarch64=	Fails to compile: error: call to abs is ambiguous
+
 USE_XORG=	x11
 USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
 USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
