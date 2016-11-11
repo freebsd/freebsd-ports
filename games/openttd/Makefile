@@ -20,7 +20,6 @@ COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libicui18n.so:devel/icu \
 		liblzo2.so:archivers/lzo2
 
 USES=		cpe gmake pkgconfig tar:xz
@@ -58,6 +57,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_RC_SUBR=	${PORTNAME}
 .else
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
+		libicui18n.so:devel/icu \
 		libfontconfig.so:x11-fonts/fontconfig
 USE_SDL=	sdl
 INSTALLS_ICONS=	yes
