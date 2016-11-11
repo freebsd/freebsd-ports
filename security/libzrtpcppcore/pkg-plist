@@ -6,5 +6,5 @@ include/libzrtpcpp/ZrtpUserCallback.h
 include/libzrtpcpp/common/osSpecifics.h
 lib/libzrtpcppcore.so
 lib/libzrtpcppcore.so.4
-lib/libzrtpcppcore.so.4.6.3
+lib/libzrtpcppcore.so.4.6.4
 libdata/pkgconfig/libzrtpcppcore.pc
