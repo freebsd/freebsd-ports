@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
-DISTFILES=	consul_${PORTVERSION}_web_ui.zip:web_ui
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
@@ -36,10 +34,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${WRKDIR}/dist
-	${MV} ${WRKDIR}/index.html ${WRKDIR}/static ${WRKDIR}/dist
-	cd ${WRKDIR}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.pre.mk>
 
