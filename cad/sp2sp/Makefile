@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+BROKEN_aarch64=	Fails to configure: PKG_PROG_PKG_CONFIG: not found
+
 USES=		autoreconf gettext-runtime pkgconfig
 USE_GNOME=	gtk20 pango atk cairo gdkpixbuf2 glib20
 GNU_CONFIGURE=	yes
