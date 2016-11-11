@@ -22,7 +22,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi		\
 		libcairo.so:graphics/cairo	\
 		libpng.so:graphics/png
 
-BROKEN_arm64=	does not build: error: Unported platform
+BROKEN_aarch64=	does not build: error: Unported platform
 BROKEN_sparc64=	does not build
 
 MAKE_JOBS_UNSAFE=yes
