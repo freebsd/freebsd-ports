@@ -2,6 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.21
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -14,6 +15,7 @@ COMMENT=	Real-time strategy (RTS) game of ancient warfare
 BUILD_DEPENDS=	zip:archivers/zip \
 		cmake:devel/cmake
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libicui18n.so:devel/icu \
 		libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \

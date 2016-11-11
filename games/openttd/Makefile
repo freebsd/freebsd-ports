@@ -3,7 +3,7 @@
 
 PORTNAME=	openttd
 DISTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ca.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
 		http://cz.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
@@ -20,6 +20,7 @@ COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
+		libicui18n.so:devel/icu \
 		liblzo2.so:archivers/lzo2
 
 USES=		cpe gmake pkgconfig tar:xz

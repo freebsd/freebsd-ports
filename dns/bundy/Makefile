@@ -3,7 +3,7 @@
 
 PORTNAME=	bundy
 PORTVERSION=	0.20160125
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/mat/bundy SF/boost/boost/1.55.0:boost
 DISTFILES+=	boost_1_55_0.tar.bz2:boost
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/log4cplus/logger.h:devel/log4cplus \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		liblog4cplus.so:devel/log4cplus \
-		libicuuc.so:devel/icu \
 		libgmp.so:math/gmp \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3

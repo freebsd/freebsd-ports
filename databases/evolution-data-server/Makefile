@@ -3,7 +3,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.18.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:devel/libsoup-gnome \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgdata.so:devel/libgdata \
 		libical.so:devel/libical \
+		libicui18n.so:devel/icu \
 		libnss3.so:security/nss \
 		libtasn1.so:security/libtasn1 \
 		libsecret-1.so:security/libsecret
