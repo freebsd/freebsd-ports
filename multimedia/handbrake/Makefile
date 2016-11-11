@@ -55,6 +55,7 @@ LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:features gmake iconv \
 		libtool:build localbase:ldflags pkgconfig python:build
+MAKE_ENV=	V=1
 
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 PLIST_FILES=	bin/HandBrakeCLI
