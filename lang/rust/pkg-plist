@@ -7,7 +7,7 @@ lib/libfmt_macros-%%RUST_VSN_HASH%%.so
 lib/libgetopts-%%RUST_VSN_HASH%%.so
 lib/libgraphviz-%%RUST_VSN_HASH%%.so
 lib/liblog-%%RUST_VSN_HASH%%.so
-lib/librbml-%%RUST_VSN_HASH%%.so
+lib/libproc_macro-%%RUST_VSN_HASH%%.so
 lib/librustc-%%RUST_VSN_HASH%%.so
 lib/librustc_back-%%RUST_VSN_HASH%%.so
 lib/librustc_borrowck-%%RUST_VSN_HASH%%.so
@@ -19,6 +19,7 @@ lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/librustc_llvm-%%RUST_VSN_HASH%%.so
+lib/librustc_macro-%%RUST_VSN_HASH%%.so
 lib/librustc_metadata-%%RUST_VSN_HASH%%.so
 lib/librustc_mir-%%RUST_VSN_HASH%%.so
 lib/librustc_passes-%%RUST_VSN_HASH%%.so
@@ -51,7 +52,7 @@ lib/rustlib/%%RUST_TARGET%%/lib/liballoc_jemalloc-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/liballoc_system-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libarena-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libcollections-%%RUST_VSN_HASH%%.rlib
-lib/rustlib/%%RUST_TARGET%%/lib/libcompiler-rt.a
+lib/rustlib/%%RUST_TARGET%%/lib/libcompiler_builtins-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libcore-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libflate-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libfmt_macros-%%RUST_VSN_HASH%%.so
@@ -62,8 +63,8 @@ lib/rustlib/%%RUST_TARGET%%/lib/liblibc-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/liblog-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libpanic_abort-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libpanic_unwind-%%RUST_VSN_HASH%%.rlib
+lib/rustlib/%%RUST_TARGET%%/lib/libproc_macro-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librand-%%RUST_VSN_HASH%%.rlib
-lib/rustlib/%%RUST_TARGET%%/lib/librbml-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_back-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_bitflags-%%RUST_VSN_HASH%%.rlib
@@ -76,6 +77,7 @@ lib/rustlib/%%RUST_TARGET%%/lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_llvm-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/librustc_macro-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_metadata-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_mir-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_passes-%%RUST_VSN_HASH%%.so
