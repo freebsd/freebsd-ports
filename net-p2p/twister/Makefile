@@ -3,7 +3,7 @@
 
 PORTNAME=	twister-core
 PORTVERSION=	0.9.34
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
@@ -18,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
-		libleveldb.so:databases/leveldb	\
-		libicui18n.so:devel/icu
+		libleveldb.so:databases/leveldb
 
 OPTIONS_DEFINE=	DOCS
 

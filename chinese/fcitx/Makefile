@@ -3,7 +3,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libdbus-1.so:devel/dbus \
-		libicuuc.so:devel/icu \
 		libXfixes.so:x11/libXfixes \
 		libXinerama.so:x11/libXinerama \
 		libXrender.so:x11/libXrender \
