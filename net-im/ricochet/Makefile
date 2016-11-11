@@ -17,8 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	tor:security/tor
 
-BROKEN_FreeBSD_9_amd64=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im
 
@@ -32,8 +30,14 @@ PLIST_FILES=	bin/ricochet \
 		share/icons/hicolor/48x48/apps/ricochet.png \
 		share/icons/hicolor/scalable/apps/ricochet.svg
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E 's| -fsanitize=[a-z-]+| |g' \
 		${WRKSRC}/hardened.pri
+.if ${ARCH} == amd64 && ${OSREL:R} == 9
+	@${REINPLACE_CMD} -E 's| -pie| |g' \
+		${WRKSRC}/hardened.pri
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
