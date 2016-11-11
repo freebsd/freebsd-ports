@@ -1,0 +1,21 @@
+`MFront` is a code generator which translates a set of closely related
+domain specific languages into plain C++ on top of the `TFEL`
+library. Those languages covers three kind of material knowledge:
+
+- material properties (for instance the
+  Young modulus, the thermal conductivity, etc.)
+- mechanical behaviours. Numerical performances of
+  generated mechanical behaviours was given a particular
+  attention. Various benchmarks shows that `MFront`
+  implementations are competitive with native implementations
+  available in the `Cast3M`, `Code-Aster` and `Cyrano3` solvers.
+- simple point-wise models, such as material swelling
+  used in fuel performance codes.
+
+`MFront` comes with an handy easy-to-use tool called `MTest` that can
+test the local behaviour of a material, by imposing independent
+constraints on each component of the strain or the stress. This tool
+has been much faster (from ten to several hundred times depending on
+the test case) than using a full-fledged finite element solver.
+
+WWW: http://tfel.sourceforge.net/
