@@ -29,6 +29,12 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm \
 		man/man1/gspiceui.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CFLAGS:=	${CFLAGS:C/-O[2-9]/-O1/g}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/gspiceui|${DOCSDIR}|g' \
 	    ${WRKSRC}/src/main/HelpTasks.cpp
@@ -47,4 +53,4 @@ do-install:
 		"! -name Makefile")
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
