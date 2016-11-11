@@ -179,6 +179,7 @@
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
+    SUBDIR += tfel
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += veusz
