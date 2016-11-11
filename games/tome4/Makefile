@@ -20,8 +20,6 @@ BUILD_DEPENDS=	premake4:devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng16.so:graphics/png
 
-BROKEN_aarch64=	Fails to build: No support for this architecture (yet)
-
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;RolePlaying;" ""
 
@@ -35,9 +33,14 @@ USE_CSTD=	gnu89
 SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
 
+LUA_TYPE=
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
+.if ${ARCH} == aarch64
+	(cd ${WRKSRC} && premake4 --lua=default gmake)
+.else
 	(cd ${WRKSRC} && premake4 gmake)
+.endif
 	@${REINPLACE_CMD} 's|-lpthread|-pthread|' ${WRKSRC}/build/TEngine.make
 
 do-install:
