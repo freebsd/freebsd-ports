@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpleeval
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,5 +13,7 @@ LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
