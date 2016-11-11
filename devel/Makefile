@@ -1204,7 +1204,6 @@
     SUBDIR += libcxxrt
     SUBDIR += libdaemon
     SUBDIR += libdap
-    SUBDIR += libdasm
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
@@ -4393,7 +4392,6 @@
     SUBDIR += py-pycerberus
     SUBDIR += py-pycmd
     SUBDIR += py-pycparser
-    SUBDIR += py-pydasm
     SUBDIR += py-pydenticon
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
