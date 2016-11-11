@@ -3,7 +3,7 @@
 
 PORTNAME=	viking
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -65,6 +65,7 @@ GPSD_LIB_DEPENDS=	libgpsd.so:astro/gpsd
 GPSD_CONFIGURE_ENABLE=	realtime-gps-tracking
 
 MAPNIK_LIB_DEPENDS=	libmapnik.so:graphics/mapnik
+MAPNIK_CONFIGURE_ENV=	ac_cv_lib_icuuc_main=no # indirect
 MAPNIK_CONFIGURE_ENABLE=	mapnik
 
 MBTILES_USES=		sqlite
@@ -74,6 +75,7 @@ JOSM_RUN_DEPENDS=	josm:astro/josm
 MERKAATOR_RUN_DEPENDS=	merkaartor:astro/merkaartor
 
 post-patch:
+	@${REINPLACE_CMD} -e '/as_fn_error.*libicuuc/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|Science;|Education;Science;|' \
 		${WRKSRC}/src/viking.desktop.in
