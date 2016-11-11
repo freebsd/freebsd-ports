@@ -1056,6 +1056,7 @@
 %%WWWDIR%%/install/updatescripts/13_insert_system_cron.php
 %%WWWDIR%%/install/updatescripts/14_insert_disk_usage_cron.php
 %%WWWDIR%%/install/updatescripts/15_update_dutch_holidays.php
+%%WWWDIR%%/install/updatescripts/16_update_db_collation_utf8_general_ci_to_utf8mb4_unicode_ci.php
 %%WWWDIR%%/install/upgrade.php
 %%WWWDIR%%/language/addressformats.php
 %%WWWDIR%%/language/common/bg.php
@@ -2714,10 +2715,15 @@
 %%WWWDIR%%/modules/files/FilesTemplate.js
 %%WWWDIR%%/modules/files/FolderPanel.js
 %%WWWDIR%%/modules/files/FolderPropertiesDialog.js
+%%WWWDIR%%/modules/files/FolderbrowserTabPanel.js
 %%WWWDIR%%/modules/files/ImageViewer.js
 %%WWWDIR%%/modules/files/NewFolderDialog.js
 %%WWWDIR%%/modules/files/OpenFileWindow.js
 %%WWWDIR%%/modules/files/Portlet.js
+%%WWWDIR%%/modules/files/PortletExpiredFiles.js
+%%WWWDIR%%/modules/files/PortletExpiredFilesGrid.js
+%%WWWDIR%%/modules/files/PortletFolderBrowser.js
+%%WWWDIR%%/modules/files/PortletFolderBrowserGrid.js
 %%WWWDIR%%/modules/files/RecentFilesGrid.js
 %%WWWDIR%%/modules/files/SaveAsDialog.js
 %%WWWDIR%%/modules/files/SelectFile.js
@@ -2939,6 +2945,7 @@
 %%WWWDIR%%/modules/freebusypermissions/Plugin.js
 %%WWWDIR%%/modules/freebusypermissions/install/install.sql
 %%WWWDIR%%/modules/freebusypermissions/install/uninstall.sql
+%%WWWDIR%%/modules/freebusypermissions/install/updates.php
 %%WWWDIR%%/modules/freebusypermissions/language/bg.php
 %%WWWDIR%%/modules/freebusypermissions/language/bn_BD.php
 %%WWWDIR%%/modules/freebusypermissions/language/cs.php
@@ -3137,6 +3144,7 @@
 %%WWWDIR%%/modules/ipwhitelist/controller/EnableWhitelistController.php
 %%WWWDIR%%/modules/ipwhitelist/controller/IpAddressController.php
 %%WWWDIR%%/modules/ipwhitelist/install/install.sql
+%%WWWDIR%%/modules/ipwhitelist/install/updates.php
 %%WWWDIR%%/modules/ipwhitelist/language/bn_BD.php
 %%WWWDIR%%/modules/ipwhitelist/language/en.php
 %%WWWDIR%%/modules/ipwhitelist/language/fr.php
@@ -3508,6 +3516,7 @@
 %%WWWDIR%%/modules/presidents/customfields/model/President.php
 %%WWWDIR%%/modules/presidents/install/install.sql
 %%WWWDIR%%/modules/presidents/install/uninstall.sql
+%%WWWDIR%%/modules/presidents/install/updates.php
 %%WWWDIR%%/modules/presidents/language/bn_BD.php
 %%WWWDIR%%/modules/presidents/language/en.php
 %%WWWDIR%%/modules/presidents/language/fr.php
@@ -3637,6 +3646,7 @@
 %%WWWDIR%%/modules/projects2/report/ProjectsReport.php
 %%WWWDIR%%/modules/projects2/report/ProjectsReportLarge.php
 %%WWWDIR%%/modules/projects2/report/TimeTrackingCsv.php
+%%WWWDIR%%/modules/projects2/report/TimeTrackingReport.php
 %%WWWDIR%%/modules/projects2/scripts.inc.php
 %%WWWDIR%%/modules/projects2/scripts.txt
 %%WWWDIR%%/modules/projects2/themes/Default/images/complete.png
