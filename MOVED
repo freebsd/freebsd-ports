@@ -8800,3 +8800,4 @@ net/p5-Net-Ping||2016-11-08|Has expired: This or newer version included in all s
 ftp/curl-hiphop||2016-11-08|Has expired: useful only for removed hiphop-php
 textproc/rubygem-string-scrub||2016-11-08|Has expired: needed only for EOL versions of Ruby
 cad/py-gdsii|cad/python-gdsii|2016-11-10|Renamed
+textproc/erlang-p1xml|textproc/erlang-fast_xml|2016-11-08|Project was renamed
