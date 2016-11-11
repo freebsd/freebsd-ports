@@ -34,6 +34,9 @@ SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
 
 LUA_TYPE=
+
+.include <bsd.port.pre.mk>
+
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
 .if ${ARCH} == aarch64
@@ -51,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
