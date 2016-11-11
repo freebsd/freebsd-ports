@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.396 2016/11/09 00:33:57 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.397 2016/11/11 02:12:15 jclarke Exp $
 #
 
 use strict;
@@ -395,10 +395,10 @@ sub checkdistinfo {
 		}
 		if (/^TIMESTAMP\s+=\s+(\d+)$/) {
 			my $now = time;
-			if ($_ > $now) {
+			if ($1 > $now) {
 				&perror("FATAL", $file, $., "TIMESTAMP is in the future");
 			} else {
-				if ($now - $_ > 2592000) {
+				if ($now - $1 > (30 * 60 * 60 * 24)) {
 					&perror("WARN", $file, $., "TIMESTAMP is over 30 days old");
 				}
 			}
