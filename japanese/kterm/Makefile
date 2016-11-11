@@ -15,6 +15,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	nkf:japanese/nkf
 
+BROKEN_aarch64=	Fails to build: fatal error: kfontlist.c file not found
+
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_GITHUB=	yes
