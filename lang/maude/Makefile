@@ -5,15 +5,11 @@ PORTNAME=	maude
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
+MASTER_SITES=	http://maude.cs.illinois.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance reflective language
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -48,7 +44,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mixfix-lexerAux
 .if ${PORT_OPTIONS:MFULL_MAUDE}
 MASTER_SITES+=	http://maude.lcc.uma.es/FullMaude/FM${FULL_MAUDE_VER}/:fm
 FULL_MAUDE=	full-maude${FULL_MAUDE_VER}.maude
-FULL_MAUDE_DIST=	${FULL_MAUDE}.zip
+FULL_MAUDE_DIST=	full-maude.maude.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FULL_MAUDE_DIST}:fm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:archivers/unzip
