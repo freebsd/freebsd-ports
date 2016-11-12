@@ -200,8 +200,8 @@ WIIMOTEDEV_CMAKE_OFF=	-DENABLE_WIIMOTEDEV=OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 39
-CXXFLAGS+=	-Wno-undefined-var-template
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-unknown-warning-option -Wno-undefined-var-template
 .endif
 
 .include <bsd.port.post.mk>
