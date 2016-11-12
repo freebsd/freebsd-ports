@@ -296,7 +296,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in application-registry applications icons mime mime-info mimelnk
+.for subdir in application-registry applications icons mime mime-info mimelnk bash-completion
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
