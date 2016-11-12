@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	games
 MASTER_SITES=	http://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
@@ -32,8 +32,6 @@ USE_GL=		gl glu
 USE_CSTD=	gnu89
 SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
-
-LUA_TYPE=
 
 .include <bsd.port.pre.mk>
 
