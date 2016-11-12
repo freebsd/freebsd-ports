@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Support for the OpenMP language
+COMMENT=	Open Multi-Processing runtime for LLVM/Clang
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
