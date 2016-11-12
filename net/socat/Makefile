@@ -45,8 +45,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not configure on arm
-.endif
-
 .include <bsd.port.post.mk>
