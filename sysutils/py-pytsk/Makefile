@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-PORTVERSION=	20160721
+PORTVERSION=	20161109
 CATEGORIES=	sysutils security devel python
-MASTER_SITES=	https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/ \
-		LOCAL/antoine
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
