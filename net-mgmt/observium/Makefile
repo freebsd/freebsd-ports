@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	observium
-PORTVERSION=	0.16.1.7533
-PORTREVISION=	2
+PORTVERSION=	0.16.10.8128
+PORTREVISION= 0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -30,6 +30,7 @@ SHEBANG_FILES=	mibs/process.pl \
 	scripts/agent-local/ksm \
 	scripts/agent-local/lighttpd \
 	scripts/agent-local/lmsensors \
+	scripts/agent-local/lvs_stats \
 	scripts/agent-local/postfix_mailgraph \
 	scripts/agent-local/postfix_qshape \
 	scripts/agent-local/postgresql.pl \
@@ -40,6 +41,7 @@ SHEBANG_FILES=	mibs/process.pl \
 	scripts/agent-local/vmwaretools \
 	scripts/agent-local/zimbra \
 	scripts/add_ds.pl \
+	scripts/add_ds_to_rrd.pl \
 	scripts/get-geshi.sh \
 	scripts/get-jpgraph.sh \
 	scripts/ifAlias \
@@ -49,8 +51,7 @@ SHEBANG_FILES=	mibs/process.pl \
 	scripts/removespikes.php \
 	scripts/removespikes.pl \
 	scripts/rename-mibs.pl \
-	scripts/rrdtoolx.py \
-	scripts/watchmaillog/watchmaillog.pl
+	scripts/rrdtoolx.py
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli posix session snmp tokenizer xml zlib
 WANT_PHP_CLI=	yes
