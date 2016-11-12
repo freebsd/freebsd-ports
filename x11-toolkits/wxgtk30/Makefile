@@ -58,7 +58,7 @@ WEBKIT_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 .include <bsd.port.pre.mk>
 
 # PR 196703, 197031
-.if ${COMPILER_TYPE} == "gcc"
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ARGS+=--disable-precomp-headers
 .endif
 
