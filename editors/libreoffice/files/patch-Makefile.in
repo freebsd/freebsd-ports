@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-08-22 06:41:35 UTC
+--- Makefile.in.orig	2016-10-28 14:50:26 UTC
 +++ Makefile.in
-@@ -321,7 +321,7 @@ else
+@@ -355,7 +355,7 @@ else
  	@exit 1
  endif
  

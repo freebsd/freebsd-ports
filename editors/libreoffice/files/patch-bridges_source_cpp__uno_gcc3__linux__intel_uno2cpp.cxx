@@ -1,4 +1,4 @@
---- bridges/source/cpp_uno/gcc3_linux_intel/uno2cpp.cxx.orig	2015-08-22 06:41:35 UTC
+--- bridges/source/cpp_uno/gcc3_linux_intel/uno2cpp.cxx.orig	2016-10-28 14:50:26 UTC
 +++ bridges/source/cpp_uno/gcc3_linux_intel/uno2cpp.cxx
 @@ -198,10 +198,17 @@ static void cpp_call(
       catch (...)
