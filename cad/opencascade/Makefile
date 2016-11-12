@@ -55,7 +55,7 @@ USE_LDCONFIG=	yes
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
-PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${COMPILER_TYPE}
+PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON	\
 			-DUSE_FREETYPE:BOOL=ON
@@ -110,17 +110,17 @@ post-build-DOCS-on:
 	(cd ${WRKSRC} && ./gendoc -overview)
 
 post-install:
-	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE	\
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/bin/DRAWEXE	\
 		${STAGEDIR}${PREFIX}/bin/
 	(cd ${STAGEDIR}${PREFIX}/bin &&							\
-	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE)
-	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/lib*.so	\
+	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/bin/DRAWEXE)
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/lib/lib*.so	\
 		${STAGEDIR}${PREFIX}/lib/
 	(cd ${STAGEDIR}${PREFIX}/lib							\
 	&& for l in lib*.so; do								\
 	${MV} $${l} $${l}.0;								\
 	${LN} -sf $${l}.0 $${l};							\
-	${LN} -sf $${l}.0 ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/$${l};	\
+	${LN} -sf $${l}.0 ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/lib/$${l};	\
 	done)
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/OpenCASCADE
 	(cd ${STAGEDIR}${OCCROOT}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/OpenCASCADE)
