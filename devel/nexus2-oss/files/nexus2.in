@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%NEXUS_RC%%
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable Nexus:
+#
+#  %%NEXUS_RC%%_enable="YES"
+
+. /etc/rc.subr
+
+name=%%NEXUS_RC%%
+desc="%%DESC%%"
+rcvar=%%NEXUS_RC%%_enable
+
+load_rc_config ${name}
+
+%%NEXUS_RC%%_enable="${%%NEXUS_RC%%_enable:-"NO"}"
+%%NEXUS_RC%%_user=%%USER%%
+%%NEXUS_RC%%_group=%%GROUP%%
+
+pidfile=%%RUNDIR%%/%%NEXUS_RC%%.pid
+
+command=%%WRAPPER_CMD%%
+command_args="%%ETCDIR%%/wrapper.conf wrapper.syslog.ident=%%NEXUS_RC%% \
+  wrapper.pidfile=${pidfile} wrapper.lockfile=%%RUNDIR%%/%%NEXUS_RC%%.lock \
+  wrapper.java.pidfile=%%RUNDIR%%/%%NEXUS_RC%%.java.pid wrapper.daemonize=TRUE \
+  wrapper.name=%%NEXUS_RC%% wrapper.displayname=Nexus\ Repository\ Manager\ OSS"
+
+run_rc_command "$1"
+

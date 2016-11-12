@@ -1610,6 +1610,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
+    SUBDIR += nexus2-oss
     SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
