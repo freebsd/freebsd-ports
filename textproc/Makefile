@@ -177,7 +177,6 @@
     SUBDIR += erlang-edown
     SUBDIR += erlang-fast_xml
     SUBDIR += erlang-p1_utils
-    SUBDIR += erlang-p1xml
     SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
