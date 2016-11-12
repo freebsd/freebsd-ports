@@ -1473,6 +1473,7 @@ plexpy/lib/pytz/zoneinfo/America/Edmonton
 plexpy/lib/pytz/zoneinfo/America/Eirunepe
 plexpy/lib/pytz/zoneinfo/America/El_Salvador
 plexpy/lib/pytz/zoneinfo/America/Ensenada
+plexpy/lib/pytz/zoneinfo/America/Fort_Nelson
 plexpy/lib/pytz/zoneinfo/America/Fort_Wayne
 plexpy/lib/pytz/zoneinfo/America/Fortaleza
 plexpy/lib/pytz/zoneinfo/America/Glace_Bay
@@ -1605,6 +1606,7 @@ plexpy/lib/pytz/zoneinfo/Asia/Baghdad
 plexpy/lib/pytz/zoneinfo/Asia/Bahrain
 plexpy/lib/pytz/zoneinfo/Asia/Baku
 plexpy/lib/pytz/zoneinfo/Asia/Bangkok
+plexpy/lib/pytz/zoneinfo/Asia/Barnaul
 plexpy/lib/pytz/zoneinfo/Asia/Beirut
 plexpy/lib/pytz/zoneinfo/Asia/Bishkek
 plexpy/lib/pytz/zoneinfo/Asia/Brunei
@@ -1676,6 +1678,7 @@ plexpy/lib/pytz/zoneinfo/Asia/Tel_Aviv
 plexpy/lib/pytz/zoneinfo/Asia/Thimbu
 plexpy/lib/pytz/zoneinfo/Asia/Thimphu
 plexpy/lib/pytz/zoneinfo/Asia/Tokyo
+plexpy/lib/pytz/zoneinfo/Asia/Tomsk
 plexpy/lib/pytz/zoneinfo/Asia/Ujung_Pandang
 plexpy/lib/pytz/zoneinfo/Asia/Ulaanbaatar
 plexpy/lib/pytz/zoneinfo/Asia/Ulan_Bator
@@ -1781,6 +1784,7 @@ plexpy/lib/pytz/zoneinfo/Etc/Universal
 plexpy/lib/pytz/zoneinfo/Etc/Zulu
 plexpy/lib/pytz/zoneinfo/Europe/Amsterdam
 plexpy/lib/pytz/zoneinfo/Europe/Andorra
+plexpy/lib/pytz/zoneinfo/Europe/Astrakhan
 plexpy/lib/pytz/zoneinfo/Europe/Athens
 plexpy/lib/pytz/zoneinfo/Europe/Belfast
 plexpy/lib/pytz/zoneinfo/Europe/Belgrade
@@ -1801,6 +1805,7 @@ plexpy/lib/pytz/zoneinfo/Europe/Istanbul
 plexpy/lib/pytz/zoneinfo/Europe/Jersey
 plexpy/lib/pytz/zoneinfo/Europe/Kaliningrad
 plexpy/lib/pytz/zoneinfo/Europe/Kiev
+plexpy/lib/pytz/zoneinfo/Europe/Kirov
 plexpy/lib/pytz/zoneinfo/Europe/Lisbon
 plexpy/lib/pytz/zoneinfo/Europe/Ljubljana
 plexpy/lib/pytz/zoneinfo/Europe/London
@@ -1828,6 +1833,7 @@ plexpy/lib/pytz/zoneinfo/Europe/Stockholm
 plexpy/lib/pytz/zoneinfo/Europe/Tallinn
 plexpy/lib/pytz/zoneinfo/Europe/Tirane
 plexpy/lib/pytz/zoneinfo/Europe/Tiraspol
+plexpy/lib/pytz/zoneinfo/Europe/Ulyanovsk
 plexpy/lib/pytz/zoneinfo/Europe/Uzhgorod
 plexpy/lib/pytz/zoneinfo/Europe/Vaduz
 plexpy/lib/pytz/zoneinfo/Europe/Vatican
