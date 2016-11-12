@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qnapi
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -13,13 +13,15 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	qt-maybe>0:devel/qt-maybe \
 		libmaia>0:net/libmaia
-LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo
+LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
+		libzen.so:multimedia/libzen
 RUN_DEPENDS=	7z:archivers/p7zip
 
 USE_GITHUB=	yes
 
 USES=		compiler:c++11-lib pkgconfig qmake
-USE_QT5=	buildtools_build gui network widgets xml
+USE_GL=		gl
+USE_QT5=	buildtools_build core gui network widgets xml
 
 CXXFLAGS+=	-I${LOCALBASE}/include/maia
 QMAKE_ARGS=	LIBS=-lmaia
