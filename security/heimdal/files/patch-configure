@@ -1,6 +1,15 @@
---- configure.orig	2012-12-09 22:09:32 UTC
-+++ configure
-@@ -9567,29 +9567,6 @@ fi
+--- configure.orig	2012-12-10 07:09:32.000000000 +0900
++++ configure	2016-11-13 03:23:46.814899000 +0900
+@@ -8869,7 +8869,7 @@
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -9567,29 +9567,6 @@
        hardcode_shlibpath_var=no
        ;;
  
@@ -30,7 +39,7 @@
      # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
      freebsd* | dragonfly*)
        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-@@ -10561,10 +10538,6 @@ dgux*)
+@@ -10561,10 +10538,6 @@
    shlibpath_var=LD_LIBRARY_PATH
    ;;
  
@@ -41,7 +50,7 @@
  freebsd* | dragonfly*)
    # DragonFly does not have aout.  When/if they implement a new
    # versioning mechanism, adjust this.
-@@ -10572,7 +10545,6 @@ freebsd* | dragonfly*)
+@@ -10572,7 +10545,6 @@
      objformat=`/usr/bin/objformat`
    else
      case $host_os in
@@ -49,7 +58,7 @@
      *) objformat=elf ;;
      esac
    fi
-@@ -10590,18 +10562,6 @@ freebsd* | dragonfly*)
+@@ -10590,18 +10562,6 @@
    esac
    shlibpath_var=LD_LIBRARY_PATH
    case $host_os in
@@ -68,26 +77,37 @@
    *) # from 4.6 on, and DragonFly
      shlibpath_overrides_runpath=yes
      hardcode_into_libs=yes
-@@ -14227,7 +14187,7 @@ case "$host" in
+@@ -11661,7 +11621,7 @@
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -14227,9 +14187,9 @@
  	native_pthread_support="netbsd 3 uses explict pthread"
  		PTHREAD_LIBADD="-lpthread"
  	;;
 -*-*-freebsd[56789]*)
 +*-*-freebsd*)
  	native_pthread_support=yes
- 	PTHREAD_LIBADD="-pthread"
+-	PTHREAD_LIBADD="-pthread"
++	PTHREAD_LIBADD="-lpthread"
  	;;
-@@ -14393,9 +14353,6 @@ done
+ *-*-openbsd*)
+ 	native_pthread_support=yes
+@@ -14488,7 +14448,7 @@
+ fi
+ # db_create
+ eval "ac_tr_func=HAVE_`echo db_create | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
+-eval "ac_tr_lib=HAVE_LIB`echo $ac_res | sed -e 's/-l//' | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
++eval "ac_tr_lib=HAVE_LIB`echo $ac_res | sed -e 's/-l//;s/[-.]/_/g' | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
+ eval "LIB_db_create=$ac_res"
  
- else
-   for ac_header in 					\
--	           db5/db.h				\
--	           db4/db.h				\
--	           db3/db.h				\
- 	           db.h					\
- 
- do :
-@@ -28245,7 +28202,7 @@ fi
+ case "$ac_res" in
+@@ -28245,7 +28205,7 @@
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""

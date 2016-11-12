@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -25,6 +25,11 @@ USE_LDCONFIG=	${GSSAPILIBDIR}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
+		ac_cv_header_db_h=no \
+		ac_cv_header_db3_db_h=no \
+		ac_cv_header_db4_db_h=no \
+		ac_cv_header_db5_db_h=no \
+		ac_cv_header_db5_h=no \
 		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et
 CONFIGURE_ARGS=	--with-libintl \
 		--with-libintl-include="${LOCALBASE}/include" \
@@ -37,13 +42,14 @@ CONFIGURE_ARGS=	--with-libintl \
 		--with-openssl-lib="${OPENSSLLIB}" \
 		--enable-otp \
 		--enable-pthread-support \
+		--with-readline="${LOCALBASE}" \
 		--with-hdbdir="/var/${PORTNAME}" \
 		--sysconfdir="${PREFIX}/etc"
+# XXX --with-readline picks up libreadline even if found in /usr/lib.
 MAKE_ENV=	INSTALL_CATPAGES=no
 .if !exists(/etc/rc.d/ipropd_master)
 USE_RC_SUBR=	ipropd_master ipropd_slave
 .endif
-
 INFO=		heimdal hx509
 
 MAKE_JOBS_UNSAFE=	yes
@@ -55,22 +61,24 @@ OPTIONS_SUB=	yes
 IPV6_CONFIGURE_WITH=	ipv6
 
 BDB_DESC=		Enable BerkeleyDB KDC backend support
-BDB_CONFIGURE_ON=	--with-berkeley-db
-BDB_CONFIGURE_OFF=	--without-berkeley-db
+BDB_USES=		bdb:5 localbase
+BDB_CONFIGURE_WITH=	berkeley-db
+BDB_CONFIGURE_ENV=	ac_cv_header_db${BDB_VER}_db_h=yes \
+			ac_cv_func_db_create=yes \
+			ac_cv_funclib_db_create="-l${BDB_LIB_NAME}"
+BDB_CONFIGURE_ON=	--disable-ndbm-db
 
 SQLITE_DESC=		Enable SQLite KDC backend support
 SQLITE_USES=		sqlite
-SQLITE_CONFIGURE_ON=	--with-sqlite3 \
-			--with-sqlite3-include="${LOCALBASE}/include" \
+SQLITE_CONFIGURE_ON=	--with-sqlite3-include="${LOCALBASE}/include" \
 			--with-sqlite3-lib="${LOCALBASE}/lib"
-SQLITE_CONFIGURE_OFF=	--without-sqlite3
+SQLITE_CONFIGURE_WITH=	sqlite3
 
 LDAP_DESC=		Enable OpenLDAP KDC backend support
 LDAP_USE=		OPENLDAP=yes
-LDAP_CONFIGURE_ON=	--with-openldap \
-			--with-openldap-include="${LOCALBASE}/include" \
+LDAP_CONFIGURE_ON= 	--with-openldap-include="${LOCALBASE}/include" \
 			--with-openldap-lib="${LOCALBASE}/lib"
-LDAP_CONFIGURE_OFF=	--without-openldap
+LDAP_CONFIGURE_WITH=	openldap
 
 PKINIT_DESC=		Enable PK-INIT support
 PKINIT_CONFIGURE_ENABLE=pk-init
