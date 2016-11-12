@@ -4208,6 +4208,7 @@
     SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
     SUBDIR += py-ice
+    SUBDIR += py-incremental
     SUBDIR += py-inflect
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
