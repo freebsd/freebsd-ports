@@ -1,0 +1,13 @@
+lib/erlang/lib/fast_tls-%%VERSION%%/ebin/fast_tls.app
+lib/erlang/lib/fast_tls-%%VERSION%%/ebin/fast_tls.beam
+lib/erlang/lib/fast_tls-%%VERSION%%/ebin/fast_tls_app.beam
+lib/erlang/lib/fast_tls-%%VERSION%%/ebin/fast_tls_sup.beam
+lib/erlang/lib/fast_tls-%%VERSION%%/ebin/p1_sha.beam
+lib/erlang/lib/fast_tls-%%VERSION%%/priv/lib/fast_tls_drv.so
+lib/erlang/lib/fast_tls-%%VERSION%%/priv/lib/p1_sha.so
+lib/erlang/lib/fast_tls-%%VERSION%%/src/fast_tls.app.src
+lib/erlang/lib/fast_tls-%%VERSION%%/src/fast_tls.erl
+lib/erlang/lib/fast_tls-%%VERSION%%/src/fast_tls_app.erl
+lib/erlang/lib/fast_tls-%%VERSION%%/src/fast_tls_sup.erl
+lib/erlang/lib/fast_tls-%%VERSION%%/src/p1_sha.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -8803,3 +8803,4 @@ cad/py-gdsii|cad/python-gdsii|2016-11-10|Renamed
 textproc/erlang-p1xml|textproc/erlang-fast_xml|2016-11-08|Project was renamed
 devel/py-pydasm|devel/py-capstone|2016-11-11|Has expired: No more upstream and known bugs, use devel/py-capstone instead
 devel/libdasm|devel/capstone3|2016-11-11|Has expired: No more upstream and known bugs, use devel/capstone3 instead
+security/erlang-p1tls|security/erlang-fast_tls|2016-11-11|Project was renamed
