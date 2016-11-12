@@ -5,6 +5,66 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161112:
+  AFFECTS: users of security/heimdal
+  AUTHOR: hrs@FreeBSD.org
+
+  Heimdal in the base system and security/heimdal <= 1.5.3_6 use
+  Berkeley DB to store principals into /var/heimdal/heimdal.db and
+  the database format is version 3 by default.  On the other hand,
+  security/heimdal 1.5.3_7 or newer use the newer version of
+  Berkeley DB and the database format is version 9.
+  These two versions are not compatible with each other.  If there is
+  a mismatch between Heimdal utilities and its database format,
+  you will get an error like the following:
+
+  # /usr/local/sbin/kadmin -l dump
+  BDB0641 __db_meta_setup: /var/heimdal/heimdal.db: unexpected file type or format
+  kadmin: hdb_open: opening /var/heimdal/heimdal: Invalid argument
+
+  This mismatch can occur in the following three cases:
+
+  1. You used Heimdal in the base system and switch to use security/heimdal
+     after creating /var/db/heimdal.db.
+
+  2. You used security/heimdal >= 1.5.3_7 and switch to use one in the
+     base system.
+
+  3. You used security/heimdal < 1.5.3_7 and upgrade it to 1.5.3_7 or later.
+
+  To fix this mismatch, you need to dump contents of heimdal.db and
+  rebuild the database by using kadmin(8) utility.
+
+  If you use Heimdal in the base system or older versions of
+  security/heimdal, and plan to switch to use
+  security/heimdal >= 1.5.3_7, execute the following command
+  *after* creating a backup copy of /var/heimdal and installing
+  security/heimdal:
+
+  # /usr/bin/kadmin -l dump /var/heimdal/heimdal.db.dump
+  # rm /var/heimdal/heimdal.db
+  # /usr/local/sbin/kadmin -l load /var/heimdal/heimdal.db.dump
+  # rm /var/heimdal/heimdal.db.dump
+
+  The above example assumes security/heimdal is installed into
+  /usr/local.  If your base system is compiled with WITHOUT_KERBEROS
+  use the following instead:
+
+  # db_dump185-5 /var/heimdal/heimdal.db | db_load-5 /var/heimdal/heimdal.db.new
+  # chown 0600 /var/heimdal/heimdal.db.new
+  # mv /var/heimdal/heimdal.db.new /var/heimdal/heimdal.db
+
+  db_dump and db_load utilitites are installed by database/db5 as
+  dependency of security/heimdal.
+
+  If you want to switch from security/heimdal to Heimdal in the base
+  system, use the following:
+
+  # /usr/local/sbin/kadmin -l dump /var/heimdal/heimdal.db.dump
+  # rm /var/heimdal/heimdal.db
+  # /usr/bin/kadmin -l load /var/heimdal/heimdal.db.dump
+  # rm /var/heimdal/heimdal.db.dump
+
 20161105:
   AFFECTS: users of security/heimdal
   AUTHOR: hrs@FreeBSD.org
