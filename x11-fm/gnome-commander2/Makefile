@@ -22,7 +22,7 @@ LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique \
 RUN_DEPENDS=	meld:textproc/meld \
 		yelp:x11/yelp
 
-USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
+USES=		compiler:c++11-lang gettext gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gnomedocutils gnomeprefix gnomevfs2 intltool libgnomeui
 USE_XORG=	ice sm
 GNU_CONFIGURE=	yes
