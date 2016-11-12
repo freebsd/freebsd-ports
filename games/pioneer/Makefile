@@ -72,7 +72,7 @@ PROFILER_CONFIGURE_ON=	--enable-profiler
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 # Unhide std::to_string() for GCC (ports/193528)
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
