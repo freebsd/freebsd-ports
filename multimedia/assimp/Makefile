@@ -23,7 +23,7 @@ CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON -DASSIMP_BUILD_TESTS:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 # GCC C++11 support is broken on FreeBSD (see PR 193528 for details)
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif

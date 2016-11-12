@@ -104,7 +104,7 @@ DOS2UNIX_FILES=	hatari/Makefile.libretro
 .include <bsd.port.pre.mk>
 
 # Avoid a lot of patching for 9.
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_CXXSTD=	gnu++11
 .endif
 

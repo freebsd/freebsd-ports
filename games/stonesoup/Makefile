@@ -70,7 +70,7 @@ LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} != clang
+.if ${CHOSEN_COMPILER_TYPE} != clang
 CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
