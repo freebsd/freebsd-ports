@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-10-20 18:15:13 UTC
++++ Makefile.in
+@@ -434,7 +434,7 @@ endif
+ ifeq ($(findstring osx,@ARCH@), osx)
+ 	$(SILENT_LD) $(CXX) $(LDFLAGS) -o @APP_NAME_LC@.bin $(MAINOBJS) -Wl,-all_load,-ObjC $(MAINOBJS) $(DYNOBJSXBMC) $(NWAOBJSXBMC) $(OBJSXBMC) $(LIBS) -rdynamic
+ else
+-	$(SILENT_LD) $(CXX) $(CXXFLAGS) $(LDFLAGS) -o @APP_NAME_LC@.bin $(MAINOBJS) -Wl,--start-group $(MAINOBJS) $(DYNOBJSXBMC) $(OBJSXBMC) -Wl,--end-group $(NWAOBJSXBMC) $(LIBS) -rdynamic
++	$(SILENT_LD) $(CXX) $(CXXFLAGS) $(LDFLAGS) -o @APP_NAME_LC@.bin $(MAINOBJS) -Wl,--start-group $(MAINOBJS) $(DYNOBJSXBMC) $(OBJSXBMC) -Wl,--end-group $(NWAOBJSXBMC) $(LIBS) -rdynamic ./tools/depends/native/libsquish-native/squish-install/lib/libsquish.a
+ endif
+ 
+ @APP_NAME_LC@-xrandr: xbmc-xrandr.c
