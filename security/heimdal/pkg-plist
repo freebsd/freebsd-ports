@@ -124,10 +124,6 @@ lib/heimdal/libheimbase.a
 lib/heimdal/libheimbase.so
 lib/heimdal/libheimbase.so.1
 lib/heimdal/libheimbase.so.1.0.0
-lib/heimdal/libheimedit.a
-lib/heimdal/libheimedit.so
-lib/heimdal/libheimedit.so.0
-lib/heimdal/libheimedit.so.0.0.36
 lib/heimdal/libheimntlm.a
 lib/heimdal/libheimntlm.so
 lib/heimdal/libheimntlm.so.0
