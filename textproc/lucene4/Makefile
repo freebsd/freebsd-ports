@@ -6,7 +6,7 @@ PORTVERSION=	4.10.4
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 4.x branch
 
 LICENSE=	APACHE20
