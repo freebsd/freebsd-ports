@@ -307,11 +307,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field
-.if ${COMPILER_VERSION} >= 35
+CXXFLAGS+=	-Wno-unknown-warning-option
 CXXFLAGS+=	-Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-dynamic-class-memaccess
-.endif
 .endif
 
 .include <bsd.port.post.mk>
