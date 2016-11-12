@@ -1,0 +1,5 @@
+Fast TSL is a native TLS / SSL driver for Erlang / Elixir. 
+It is based on OpenSSL, a proven and efficient TLS implementation.
+It is designed for efficiency, speed and compliance.
+
+WWW: https://github.com/processone/fast_tls/
