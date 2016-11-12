@@ -10,16 +10,16 @@ MASTER_SITES=	http://hyperelliptic.org/nacl/
 MAINTAINER= 	johans@FreeBSD.org
 COMMENT=	High speed cryptography library
 
-BROKEN_powerpc64=	Does not build
-
 USES=		tar:bzip2
 ALL_TARGET=	do
 USE_BINUTILS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-BROKEN_ia64=	Does not compile on ia64, powerpc, or sparc64
-BROKEN_powerpc=	Does not compile on ia64, powerpc, or sparc64
-BROKEN_sparc64=	Does not compile on ia64, powerpc, or sparc64
+BROKEN_aarch64=		Does not build: /proc/cpuinfo: No such file or directory
+BROKEN_mips64=		Does not build: /proc/cpuinfo: No such file or directory
+BROKEN_powerpc=		Does not compile on powerpc
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not compile on sparc64
 
 HOSTNAME_CMD?=	/bin/hostname -s
 MYARCH=		${ARCH:S/i386/x86/:S/powerpc/ppc/}
