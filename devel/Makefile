@@ -4028,6 +4028,7 @@
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
+    SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
     SUBDIR += py-bandit
