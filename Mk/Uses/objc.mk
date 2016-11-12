@@ -48,8 +48,8 @@ ALT_COMPILER_TYPE=	gcc
 .endif
 
 # We do always need clang
-.if (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 34) || ${COMPILER_TYPE} != clang
-.if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= 34
+.if ${COMPILER_TYPE} != clang
+.if ${ALT_COMPILER_TYPE} == clang
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
