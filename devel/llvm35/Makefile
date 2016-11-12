@@ -138,7 +138,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MCMAKE} && ${COMPILER_TYPE} != clang
+.if ${PORT_OPTIONS:MCMAKE} && ${CHOSEN_COMPILER_TYPE} != clang
 BROKEN=	CMake support only works with clang
 .endif
 
