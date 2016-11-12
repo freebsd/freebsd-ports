@@ -1,22 +1,22 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	p1tls
-PORTVERSION=	0.20150803
+PORTNAME=	fast_tls
+PORTVERSION=	1.0.7
 CATEGORIES=	security
 PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	farrokhi@FreeBSD.org
-COMMENT=	TLS / SSL native driver for Erlang
+COMMENT=	TLS / SSL OpenSSL-based native driver for Erlang / Elixir
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
 
 USES=		erlang:rebar ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
-GH_PROJECT=	tls
-GH_TAGNAME=	e56321a
 
+ERL_BUILD_DEPS=	textproc/erlang-p1_utils
+ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
