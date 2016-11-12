@@ -2,8 +2,9 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	5.2.3
+PORTREVISION=	1
 CATEGORIES+=	editors
- 
+
 MAINTAINER=	office@FreeBSD.org
 
 LICENSE=	LGPL3+ MPL
