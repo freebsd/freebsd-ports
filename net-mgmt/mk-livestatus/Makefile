@@ -13,7 +13,7 @@ COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		compiler:c++11-lib gmake
 GNU_CONFIGURE=	yes
 
 OPTIONS_SINGLE=	NAGIOS
