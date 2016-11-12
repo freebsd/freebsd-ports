@@ -1,0 +1,22 @@
+Nexus Repository Manager OSS provides you with an essential level of control
+over the external repositories you use and the internal repositories you create.
+It provides infrastructure and services for organizations that use repository
+managers to obtain and deliver software. If you create software libraries or
+applications for your end users, you can use Nexus Repository Manager OSS to
+distribute your software. If your software depends on open source software
+components, you can cache software components from remote repositories.
+
+Nexus Repository Manager OSS features:
+- Hosting repositories
+- Proxy remote repositories
+- Repository groups
+- Numerous repository formats
+- Hosting project websites
+- Fine-grained security model
+- Flexible LDAP integration
+- Component search
+- Scheduled rasks
+- REST services
+- Integration with m2eclipse
+
+WWW: https://www.sonatype.com/nexus-repository-oss
