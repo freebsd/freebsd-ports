@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mksh
-PORTVERSION=	53a
+PORTVERSION=	54
 DISTVERSIONPREFIX=	R
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
@@ -10,6 +10,13 @@ MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	MirBSD Korn Shell
+
+LICENSE=	BSD3CLAUSE ISCL ML PD
+LICENSE_COMB=	multi
+LICENSE_NAME_ML=	MirOS License
+LICENSE_PERMS_ML=	${_LICENSE_LIST_PERMS}
+LICENSE_GROUPS_ML=	OSI
+LICENSE_TEXT_ML=	Please, read it contains from https://www.mirbsd.org/LICENCE
 
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
