@@ -1,0 +1,14 @@
+--- c_src/CMakeLists.txt.orig	2016-10-27 08:19:19 UTC
++++ c_src/CMakeLists.txt
+@@ -57,10 +57,7 @@ ELSEIF(UNIX)
+     ENDIF(USE_LIBUSB)
+     SET(TARGET_LOCATION linux_${SYSTEM_PROCESSOR}-gcc3)
+   ELSE()
+-    FIND_PACKAGE(PkgConfig)
+-    PKG_CHECK_MODULES(libusb REQUIRED libusb-1.0)
+-    LIST(APPEND extra_LIBS ${libusb_LIBRARIES})
+-    LIST(APPEND extra_INCLUDES ${libusb_INCLUDE_DIRS})
++    LIST(APPEND extra_LIBS -lusb)
+     SET(hidapi_SRC hidapi/hid-linux-libusb.c)
+     SET(TARGET_LOCATION freebsd_${SYSTEM_PROCESSOR}-gcc3)
+   ENDIF()
