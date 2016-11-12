@@ -4085,6 +4085,7 @@
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
+    SUBDIR += py-constantly
     SUBDIR += py-construct
     SUBDIR += py-contextlib2
     SUBDIR += py-country
