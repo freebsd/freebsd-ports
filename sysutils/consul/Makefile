@@ -2,6 +2,7 @@
 
 PORTNAME=	consul
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -30,7 +31,8 @@ post-extract:
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
-		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/consul
+		-ldflags "-X github.com/hashicorp/consul/version.GitDescribe=v${PORTVERSION}" \
+		-o bin/consul
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
