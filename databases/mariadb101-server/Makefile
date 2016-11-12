@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.18
-PORTREVISION=	1
+PORTVERSION=	10.1.19
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -175,10 +174,8 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
-.if exists(${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt)
-post-configure:
+post-configure-MROONGA-on:
 	@${REINPLACE_CMD} "s|/usr/bin/c++ |/usr/bin/c++ -L${LOCALBASE}/lib |" \
 		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
-.endif
 
 .include <bsd.port.post.mk>
