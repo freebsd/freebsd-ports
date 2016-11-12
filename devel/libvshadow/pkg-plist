@@ -1,3 +1,4 @@
+bin/vshadowdebug
 bin/vshadowinfo
 bin/vshadowmount
 include/libvshadow.h
