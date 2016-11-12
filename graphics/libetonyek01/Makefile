@@ -24,9 +24,11 @@ OPTIONS_DEFINE=	TEST
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
+		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lang gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c++11-lib gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
