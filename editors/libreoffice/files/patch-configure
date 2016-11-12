@@ -1,0 +1,11 @@
+--- configure.orig	2016-10-28 14:59:52 UTC
++++ configure
+@@ -31912,7 +31912,7 @@ fi
+ 
+ 
+ 
+-    elif test "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" \
++    elif test "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" -o "$_os" = "FreeBSD" \
+             && test "$with_system_openssl" != "no"; then
+         with_system_openssl=yes
+         SYSTEM_OPENSSL=TRUE

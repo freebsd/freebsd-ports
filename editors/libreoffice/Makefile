@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
+		${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
 		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
-		liborcus-0.10.so:devel/liborcus \
+		liborcus-0.11.so:devel/liborcus \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
@@ -75,7 +75,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosext
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src \
+DISTFILES+=	ce12af00283eb90d9281956524250d6e-xmlsec1-1.2.20.tar.gz:src \
 		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
 
 .if defined(PRERELEASE)
@@ -88,13 +88,12 @@ INSTALL_TARGET=	distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal
 USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		bison compiler:c++11-lib cpe firebird gmake jpeg perl5 pkgconfig \
+USES=		autoreconf:build bison compiler:c++11-lib cpe firebird gmake jpeg perl5 pkgconfig \
 		python shared-mime-info tar:xz
 WANT_GNOME=	yes
 
@@ -114,10 +113,10 @@ WEBDAV_DESC=	Enable webdav protocol
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
-GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
-GNOME_IMPLIES=	GTK2
+GNOME_CONFIGURE_ENABLE=	dbus dconf
+GNOME_IMPLIES=	GTK3
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-GNOME_USE=	GNOME=gconf2
+GNOME_USE=	GNOME=dconf
 
 GTK_USE_GNOME=	gtk-update-icon-cache
 GTK_USES=	desktop-file-utils
@@ -296,7 +295,7 @@ post-install:
 	${FIND} -s lib/libreoffice -type d -empty \
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} -s bin etc lib man -not -type d >> ${TMPPLIST}
+	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
 .for subdir in application-registry applications icons mime mime-info mimelnk
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}

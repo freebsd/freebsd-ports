@@ -1,6 +1,6 @@
---- sal/osl/unx/system.hxx.orig	2015-08-22 06:41:35 UTC
+--- sal/osl/unx/system.hxx.orig	2016-10-28 14:50:26 UTC
 +++ sal/osl/unx/system.hxx
-@@ -113,7 +113,9 @@
+@@ -106,7 +106,9 @@
  #endif
  
  #ifdef FREEBSD
