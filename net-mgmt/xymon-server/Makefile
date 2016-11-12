@@ -2,7 +2,7 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -29,9 +29,8 @@ XYMONUSER?=	xymon
 XYMONHOSTNAME?=	xymon.example.com
 XYMONHOSTIP?=	127.0.0.1
 
-USES=		cpe gmake shebangfix
+USES=		cpe gmake shebangfix ssl
 SHEBANG_FILES=	${WRKSRC}/xymond/xymonreports.sh.DIST ${WRKSRC}/build/upgrade430.sh
-USE_OPENSSL=	yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=	MAKE=gmake
 MAKE_ENV+=	XYMONUSER="${XYMONUSER}"
@@ -73,6 +72,13 @@ post-patch:
 	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 	${RM} ${WRKSRC}/docs/manpages/man1/xymonping.1.html
 	${RM} ${WRKSRC}/xymonnet/xymonping.1
+	${REINPLACE_CMD} -e 's|@CGIDIR@|${WWWDIR}/server/cgi-bin|g' \
+	-e 's|@SECURECGIDIR@|${WWWDIR}/server/cgi-secure|g' \
+	-e 's|@INSTALLETCDIR@|${WWWDIR}/server/etc|g' \
+	-e 's|@INSTALLWWWDIR@|${WWWDIR}/server/www|g' \
+	-e 's|@SECUREXYMONCGIURL@|/cgi-secure|g' \
+	-e 's|@XYMONCGIURL@|/cgi-bin|g' \
+	-e 's|@XYMONHOSTURL@|/xymon|g' ${WRKSRC}/xymond/etcfiles/xymon-apache-*.DIST
 
 # Configure script is interactive
 do-configure:
