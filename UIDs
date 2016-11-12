@@ -521,7 +521,7 @@ polkitd:*:565:565::0:0:Polkit Daemon User:/var/empty:/usr/sbin/nologin
 # free: 572
 # free: 573
 # free: 574
-# free: 575
+nexus:*:575:575::0:0:Nexus Repository Manager OSS:/nonexistent:/usr/sbin/nologin
 # free: 576
 # free: 577
 # free: 578

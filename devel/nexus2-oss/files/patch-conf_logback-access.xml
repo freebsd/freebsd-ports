@@ -1,0 +1,18 @@
+--- conf/logback-access.xml.orig	2016-09-17 19:33:10 UTC
++++ conf/logback-access.xml
+@@ -16,13 +16,13 @@
+ <configuration>
+ 
+   <appender name="request.logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-    <File>${nexus-work}/logs/request.log</File>
++    <File>${nexus-log}/request.log</File>
+     <Append>true</Append>
+     <encoder class="org.sonatype.nexus.bootstrap.log.AccessPatternLayoutEncoder">
+       <pattern>%clientHost %l %user [%date] "%requestURL" %statusCode %bytesSent %elapsedTime</pattern>
+     </encoder>
+     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+-      <fileNamePattern>${nexus-work}/logs/request-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
++      <fileNamePattern>${nexus-log}/request-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+       <maxHistory>90</maxHistory>
+     </rollingPolicy>
+   </appender>
