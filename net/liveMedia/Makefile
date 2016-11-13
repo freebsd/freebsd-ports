@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	liveMedia
-PORTVERSION=	2014.12.17
-PORTREVISION=	1
+PORTVERSION=	2016.11.06
 PORTEPOCH=	2
 CATEGORIES=	net devel
-MASTER_SITES=	LOCAL/wg \
-		http://www.live555.com/liveMedia/public/
+MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
+		https://download.videolan.org/contrib/live555/
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
