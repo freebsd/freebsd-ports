@@ -3,6 +3,7 @@
 
 PORTNAME=	hoverboard
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,7 +21,7 @@ GH_PROJECT=	${PORTNAME}-sdl
 
 USES=		cmake compiler:c++11-lib
 CMAKE_ARGS=	-DSYSTEMWIDE=ON
-USE_SDL=	sdl2 image2 ttf2
+USE_SDL=	sdl2 image2 ttf2 mixer2
 
 PORTDATA=	*
 PORTDOCS=	*
