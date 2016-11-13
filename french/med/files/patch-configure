@@ -1,0 +1,47 @@
+--- configure.orig	2016-01-21 16:50:07 UTC
++++ configure
+@@ -3692,7 +3692,7 @@ $as_echo "$as_me: WARNING: Can't compile
+ 
+ 
+ 
+-if test "x`sed -n '/^#define *H5_HAVE_PARALLEL *1\{0,1\}/{s/.*/MED_CATCH_H5_HAVE_PARALLEL/p;}' ${hdf5home}/include/H5pubconf.h`" = "xMED_CATCH_H5_HAVE_PARALLEL"
++if test "x`sed -n '/^#define *H5_HAVE_PARALLEL *1\{0,1\}/{s/.*/MED_CATCH_H5_HAVE_PARALLEL/p;}' ${hdf5home}/include/hdf5-18/H5pubconf.h`" = "xMED_CATCH_H5_HAVE_PARALLEL"
+ then
+  mpi_wanted_test="yes"
+ else
+@@ -6793,7 +6793,7 @@ done
+       CPPFLAGS_save="$CPPFLAGS"
+ 
+       LDFLAGS="-L$hdf5home/lib $LDFLAGS"
+-      CPPFLAGS="-I$hdf5home/include $CPPFLAGS "
++      CPPFLAGS="-I$hdf5home/include/hdf5-18 $CPPFLAGS "
+ 
+         { $as_echo "$as_me:${as_lineno-$LINENO}: checking absolute name of <H5public.h>" >&5
+ $as_echo_n "checking absolute name of <H5public.h>... " >&6; }
+@@ -6932,7 +6932,7 @@ fi
+ 
+ 
+       # Extract the first word of "h5dump", so it can be a program name with args.
+-set dummy h5dump; ac_word=$2
++set dummy h5dump-18; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_H5DUMP+:} false; then :
+@@ -6973,7 +6973,7 @@ fi
+ 
+ 
+       if test "X$H5DUMP" = "Xno"; then
+-         as_fn_error $? "Can't find h5dump, please verify your env. var. PATH" "$LINENO" 5
++         as_fn_error $? "Can't find h5dump-18, please verify your env. var. PATH" "$LINENO" 5
+       fi
+ 
+ 
+@@ -6983,7 +6983,7 @@ fi
+ 
+ 
+ 
+-      HDF5_CPPFLAGS="$HDF5_CPPFLAGS -I$hdf5home/include"
++      HDF5_CPPFLAGS="$HDF5_CPPFLAGS -I$hdf5home/include/hdf5-18"
+       HDF5_LDFLAGS="-L$hdf5home/lib"
+       LDFLAGS="$LDFLAGS_save"
+       CPPFLAGS="$CPPFLAGS_save"

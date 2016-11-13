@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astk
-DISTVERSION=	1.13.5-1
+DISTVERSION=	1.13.8-2
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -40,6 +40,7 @@ REINPLACE_ARGS=	-i ""
 
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
 
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	inst_dir=${inst_dir} tools_dir=${tools_dir}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -47,8 +48,7 @@ LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
 S_SCRIPTS=	bin/as_run bin/parallel_cp asrun/installation.py	\
-		share/codeaster/asrun/data/mpirun_template		\
-		etc/profile.csh
+		share/codeaster/asrun/data/mpirun_template
 S_PYLIBS=	share/codeaster/asrun/examples/alamain.py		\
 		unittest/datafiles/config_serveurs unittest/010_misc.py	\
 		unittest/015_package.py unittest/run_test.py
@@ -58,13 +58,14 @@ conf_dir=	${WRKSRC}/etc/astkrc
 
 .include <bsd.port.pre.mk>
 
+WRKCONF=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/configuration
 .if !defined(CLIENT_SEUL)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
-PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
+PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "\
 		vaster=${vaster}
-PATCH2RM=	bin/as_run bin/parallel_cp etc/asrun etc/profile.csh etc/profile.sh	\
-		asrun/config.py asrun/installation.py asrun/system.py			\
+PATCH2RM=	bin/as_run bin/parallel_cp etc/asrun etc/profile.sh	\
+		asrun/config.py asrun/installation.py asrun/system.py	\
 		asrun/common/sysutils.py asrun/system_command.py
 . if exists(${LOCALBASE}/sbin/pbs_server)
 WITH_PBS=	yes
@@ -121,6 +122,9 @@ SHIA=		zsh
 .endif
 SHIADEP=	${SHIA}
 BASH2RC=	asrun/calcul.py share/codeaster/asrun/data/mpirun_template
+BASH2RC2=	lib/tkselecteur.tcl
+BASH2RC3=	deprecated_outils.sh extract_info.py deprecated_client.sh	\
+		deprecated_server.sh
 
 .if !defined(WITH_ED)
 . if exists(${LOCALBASE}/bin/nedit)
@@ -132,9 +136,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:editors/vim
 . elif exists(${LOCALBASE}/bin/emacs)
 WITH_ED=	emacs
 RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:editors/emacs
-. elif exists(${LOCALBASE}/bin/xemacs)
-WITH_ED=	xemacs
-RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:editors/xemacs
 . elif exists(${LOCALBASE}/bin/gedit)
 WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:editors/gedit
@@ -197,16 +198,14 @@ do-configure:
 		-e "s|LOCALBASE|${LOCALBASE}|"					\
 		${WRKSRC}/etc/${sc}
 . endfor
-. for sh in sh csh
 	${REINPLACE_CMD} -e "s|?ASTER_ROOT?|${LOCALBASE}/aster|"		\
 		-e 's|?HOME_PYTHON?|${PYTHONBASE}|'				\
 		-e 's|?ASRUN_SITE_PKG?|${PREFIX}/${LINSTDIR}/ASTK_SERV|'	\
 		-e 's|?PYTHON_EXE?|${PYTHON_CMD}|'				\
 		-e 's|?HOME_MED?|${LOCALBASE}|'					\
 		-e 's|?HOME_HDF?|${LOCALBASE}|'					\
-		-e "s|?WISH_EXE?|${WISH}|"				\
-		${WRKSRC}/etc/profile.${sh}
-. endfor
+		-e "s|?WISH_EXE?|${WISH}|"					\
+		${WRKSRC}/etc/profile.sh
 . for libs in ${S_PYLIBS}
 	${REINPLACE_CMD} -e "s|/opt/aster/NEW9|${aster_dir}|"			\
 		 -e "s|/opt/aster/NEW10|${aster_dir}|"				\
@@ -262,7 +261,13 @@ do-configure:
 		${WRKSRC}/lib/tkselecteur.tcl
 	${REINPLACE_CMD} -e "s|%%unamesm%%|${unamesm}|"				\
 		${WRKSRC}/lib/init.tcl
+. for sh in ${BASH2RC2}
+	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
+. endfor
 .endif
+.for sh in ${BASH2RC3}
+	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKCONF}/${sh}
+.endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${inst_dir}
@@ -278,6 +283,7 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX} \
 		 && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		 -d ${PREFIX} -f aster)
+	${MV} ${STAGEDIR}${ETCDIR}/profile.sh ${STAGEDIR}${ETCDIR}/profile_astk.sh
 . if defined(WITH_MPI)
 	${ECHO_CMD} "localhost" > ${STAGEDIR}${PREFIX}/aster/aster-mpihosts
 . endif
