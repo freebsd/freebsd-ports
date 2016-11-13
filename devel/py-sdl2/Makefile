@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://bitbucket.org/marcusva/py-sdl2/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
