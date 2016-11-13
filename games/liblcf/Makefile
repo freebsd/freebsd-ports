@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblcf
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
