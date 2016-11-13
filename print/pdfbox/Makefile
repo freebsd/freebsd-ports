@@ -6,6 +6,7 @@ PORTVERSION=	1.8.11
 CATEGORIES=	print textproc java
 MASTER_SITES=	APACHE/pdfbox/${PORTVERSION}
 DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java tool for working with PDF documents
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle	\
 JAR_NAMES=	pdfbox fontbox jempbox preflight xmpbox
 
 USE_JAVA=	yes
-NO_EXTRACT=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	${JAR_NAMES:S/^/%%JAVAJARDIR%%\//:S/$/.jar/}
