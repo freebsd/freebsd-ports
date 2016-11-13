@@ -6,16 +6,6 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20161113:
-  AFFECTS: users of editors/libreoffice
-  AUTHOR: bapt@FreeBSD.org
-
-  Building libreoffice with devel/mdds0 installed is known to fail.
-  Users of portmaster/portupgrade and the one building in place should
-  first remove devel/mdds0:
-
-  # pkg delete mdds0
-
-20161113:
   AFFECTS: users of devel/libosinfo
   AUTHOR: novel@FreeBSD.org
 
