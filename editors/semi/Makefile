@@ -8,8 +8,8 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	SEMI, Library of MIME feature for GNU Emacs for emacs
 
 LICENSE=	GPLv2
 
@@ -47,24 +47,10 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
-.if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs25") || (${EMACS_PORT_NAME} == "emacs-nox11") || (${EMACS_PORT_NAME} == "emacs-devel")
-DEPPORT_SUFFIX=
-.else
-DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
-.endif
-.if (${EMACS_PORT_NAME} == "emacs25") || (${EMACS_PORT_NAME} == "emacs-nox11") || (${EMACS_PORT_NAME} == "emacs-devel")
 PLIST=		${PKGDIR}/pkg-plist.emacs20
-.endif
 # depends on flim
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:editors/flim${DEPPORT_SUFFIX}
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:editors/flim${DEPPORT_SUFFIX}
-.else
-.BEGIN:
-	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_PORT_NAME."
-	@${FALSE}
-.endif
+BUILD_DEPENDS+=	flim-${EMACS_PORT_NAME}>0:editors/flim
+RUN_DEPENDS+=	flim-${EMACS_PORT_NAME}>0:editors/flim
 
 .if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
