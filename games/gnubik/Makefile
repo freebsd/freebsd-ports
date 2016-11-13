@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnubik
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -25,10 +25,6 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 INFO=		gnubik
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24/apps
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
