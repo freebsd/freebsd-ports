@@ -1,2 +1,3 @@
-SHA256 (singularity-0.30c-src.tar.gz) = f4759fc059ef136c2d4d9668a021b14922dd7300ab5f37ed318ad6778c83f28f
-SIZE (singularity-0.30c-src.tar.gz) = 2265133
+TIMESTAMP = 1478957325
+SHA256 (singularity-singularity-v0.30c_GH0.tar.gz) = 9658249e10cc0f360a048a6838178faf152a3883386abea6b05ccb72d497d8f1
+SIZE (singularity-singularity-v0.30c_GH0.tar.gz) = 2149627
