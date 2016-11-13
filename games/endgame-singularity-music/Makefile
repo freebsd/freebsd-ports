@@ -3,23 +3,24 @@
 
 PORTNAME=	endgame-singularity-music
 PORTVERSION=	007
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	endgame-singularity
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Music pack for endgame-singularity
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	CC-BY-SA-3.0
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		zip
+USE_GITHUB=	yes
+GH_TUPLE=	singularity:singularity-music:968faad
 
 DATADIR=	${PREFIX}/share/singularity
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "*.ogg win lose" ${STAGEDIR}${DATADIR}/music
+	cd ${WRKSRC}/music && ${COPYTREE_SHARE} "*.ogg win lose" ${STAGEDIR}${DATADIR}/music
 
 .include <bsd.port.mk>
