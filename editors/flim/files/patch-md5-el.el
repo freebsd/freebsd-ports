@@ -1,6 +1,6 @@
---- md5-el.el.orig	2000-11-06 22:03:19.000000000 +0900
-+++ md5-el.el	2012-08-23 00:42:35.000000000 +0900
-@@ -169,11 +169,10 @@
+--- md5-el.el.orig	2000-11-06 13:03:19 UTC
++++ md5-el.el
+@@ -169,11 +169,10 @@ Returns a vector of 16 bytes containing 
  (defsubst md5-I (x y z) (logxor y (logior x (logand 65535 (lognot z)))))
  
  (defmacro md5-make-step (name func)
@@ -15,7 +15,7 @@
            (m2 (logand 65535 (+ m1 (lsh l1 -16))))
            (l2 (logand 65535 l1))
            (m3 (logand 65535 (if (> s 15)
-@@ -182,7 +181,7 @@
+@@ -182,7 +181,7 @@ Returns a vector of 16 bytes containing 
            (l3 (logand 65535 (if (> s 15)
                                  (+ (lsh l2 (- s 32)) (lsh m2 (- s 16)))
                                (+ (lsh l2 s) (lsh m2 (- s 16)))))))
