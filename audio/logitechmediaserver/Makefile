@@ -2,7 +2,7 @@
 
 PORTNAME=	logitechmediaserver
 PORTVERSION=	7.9.0.g2016.09.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	mark@tranquillussoftware.co.uk
@@ -83,6 +83,7 @@ SLIMGROUP?=	${SLIMUSER}
 
 do-build:
 	cd ${WRKSRC_vendor}/CPAN && ./buildme.sh
+	cd ${WRKSRC}/CPAN/arch && ${CP} -R 5.22 5.24
 
 do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR})
@@ -109,8 +110,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Bin/dbish ${STAGEDIR}${PREFIX}/${SLIMDIR}/Bin/
 	(cd ${WRKSRC_vendor}/CPAN/build && \
 		${COPYTREE_SHARE} arch ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN)
-	(cd ${WRKSRC_vendor}/CPAN/build/5.20/lib/perl5 && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/5.20/)
+	(cd ${WRKSRC_vendor}/CPAN/build/${PERL_VER}/lib/perl5 && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/${PERL_VER}/)
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR})
