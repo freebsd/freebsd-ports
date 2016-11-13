@@ -1,8 +1,8 @@
 Index: md4.el
 ===================================================================
---- md4.el	(revision 2)
-+++ md4.el	(working copy)
-@@ -78,21 +78,20 @@
+--- md4.el.orig	2007-09-05 23:39:48 UTC
++++ md4.el
+@@ -78,21 +78,20 @@ bytes long.  N is required to handle str
        (setq m (md4-copy64 (substring buf 64)))
        (md4-64 m)))
  
@@ -31,7 +31,7 @@ Index: md4.el
            (h2 (logand 65535 (+ h1 (lsh l1 -16))))
            (l2 (logand 65535 l1))
  	  ;; cyclic shift of 32 bits integer
-@@ -102,7 +101,7 @@
+@@ -102,7 +101,7 @@ bytes long.  N is required to handle str
            (l3 (logand 65535 (if (> s 15)
                                  (+ (lsh l2 (- s 32)) (lsh h2 (- s 16)))
                                (+ (lsh l2 s) (lsh h2 (- s 16)))))))
