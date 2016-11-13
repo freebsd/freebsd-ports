@@ -9,4 +9,4 @@ libjit on a machine for which a native code generator is not yet available,
 then libjit will fall back to interpreting the code. This way, you don't need
 to write your own interpreter for your bytecode format if you don't want to.
 
-WWW: http://www.gnu.org/software/dotgnu/
+WWW: http://www.gnu.org/software/libjit/
