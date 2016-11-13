@@ -283,6 +283,7 @@
     SUBDIR += opencyc
     SUBDIR += openr2
     SUBDIR += orville-write
+    SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
     SUBDIR += otter
     SUBDIR += p5-Acme-ButFirst
