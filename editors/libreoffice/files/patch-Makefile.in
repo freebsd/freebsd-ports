@@ -1,4 +1,4 @@
---- Makefile.in.orig	2016-11-11 12:49:08 UTC
+--- Makefile.in.orig	2016-10-28 14:50:26 UTC
 +++ Makefile.in
 @@ -52,7 +52,7 @@ $(BUILDDIR)/config_host.mk : $(wildcard 
  
