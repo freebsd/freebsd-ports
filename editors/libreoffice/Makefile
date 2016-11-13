@@ -12,6 +12,8 @@ EXTRACT_ONLY:=	${DISTFILES}
 
 COMMENT=	Full integrated office productivity suite
 
+CONFLICTS_BUILD=	mdds0
+
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
