@@ -1,6 +1,6 @@
---- as_setup.py.orig	2014-03-05 09:41:19.000000000 +0100
-+++ as_setup.py	2014-05-24 15:16:48.000000000 +0200
-@@ -45,6 +45,8 @@
+--- as_setup.py.orig	2016-09-07 08:44:22 UTC
++++ as_setup.py
+@@ -45,6 +45,8 @@ import tarfile
  import compileall
  import imp
  import pprint
@@ -9,7 +9,7 @@
  import distutils.sysconfig as SC
  from subprocess import Popen, PIPE
  
-@@ -408,6 +410,7 @@
+@@ -410,6 +412,7 @@ class SETUP:
              archive filename !),
           extract_as : rename content.
        """
@@ -17,7 +17,7 @@
        self._print(self._fmt_title % _('Extraction'))
        if kargs.get('external')<>None:
           self._call_external(**kargs)
-@@ -516,6 +519,47 @@
+@@ -518,6 +521,52 @@ class SETUP:
        if iextr_as:
           self.Clean(to_delete=path)
  
@@ -55,11 +55,16 @@
 +            if nl > 0:
 +               ligne =ligne.replace("malloc.h", "stdlib.h")
 +         sys.stdout.write(ligne)
-+      file2patch = os.path.join(self.workdir, self.content, 'bibc/utilitai/mempid.c')
-+      self._print('FreeBSD patch: VmData VmSize and VmPeak in /proc/%pid%/status ' + file2patch)
 +      system=SYSTEM({ 'verbose' : True, 'debug' : False },
 +         **{'maxcmdlen' : 2**31, 'log' : self})
-+      iret, out = system.local_shell('cd ' + os.path.join(self.workdir, self.content) + '&& /usr/bin/patch -p0 < ' + '%%FILESDIR%%' + '/bibc_utilitai_mempid.c.diff')
++      file2patch = os.path.join(self.workdir, self.content, 'waftools/med.py')
++      self._print('FreeBSD patch: only hdf5-18 is supported ' + file2patch)
++      for ligne in fileinput.input(file2patch, inplace=1):
++         nl = 0
++         nl = string.find(ligne, "opts.hdf5_libs = 'hdf5'")
++         if nl > 0:
++            ligne =ligne.replace("'hdf5'", "'hdf5-18'")
++         sys.stdout.write(ligne)
 +      # End of FreeBSD patches
 +
  #-------------------------------------------------------------------------------

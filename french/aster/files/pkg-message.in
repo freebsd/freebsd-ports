@@ -1,11 +1,3 @@
-Pour lancer Code_Aster via ASTK, entrez :
-%%tools_dir%%/astk
-
-Sur plates-formes i386 ou amd64, nous vous suggérons d'installer les ports
-french/gibi et french/homard, deux outils de maillage additionnels.
-
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
 To run Code_Aster through ASTK, type:
 %%tools_dir%%/astk
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eficas
-DISTVERSION=	7.5.0-1
+DISTVERSION=	2016.0-1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw	\
 		bash:shells/bash					\
 		${PYNUMPY}
 
-USES=		shebangfix python
-USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
+USES=		python shebangfix
+#USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 SHEBANG_FILES=	eficas eficasQt
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
@@ -37,9 +37,7 @@ EF_LANG=	ang
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui	\
 		xdg-open:devel/xdg-utils
 
-FIXUBIN=	Openturns_Study/prefs_OPENTURNS_STUDY.py	\
-		Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.py	\
-		Aster/prefs_ASTER.py
+FIXUBIN=	Aster/prefs_ASTER.py
 
 pre-configure:
 	${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"		\
