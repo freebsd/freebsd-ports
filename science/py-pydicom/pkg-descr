@@ -4,4 +4,4 @@ way. The modifications can be written again to a new file. As a pure
 python package, it should run anywhere python runs without any other
 requirements.
 
-WWW: http://code.google.com/p/pydicom/
+WWW: http://www.pydicom.org/

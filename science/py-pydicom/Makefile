@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pydicom
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
+DISTVERSIONPREFIX=v
 CATEGORIES=	science python
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -13,9 +12,11 @@ COMMENT=	Read, modify, and write DICOM files with Python code
 
 LICENSE=	MIT
 
-BROKEN=		Unfetchable (google code has gone away)
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/source
 
 USES=		python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	darcymason
 SHEBANG_FILES=	dicom/test/shell_all
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
