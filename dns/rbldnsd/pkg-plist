@@ -1,13 +1,8 @@
 @owner rbldns
 @group rbldns
 sbin/rbldnsd
-etc/rbldnsd/example
+%%ETCDIR%%/example
 man/man8/rbldnsd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.81
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/changelog
-%%PORTDOCS%%%%DOCSDIR%%/copyright
-%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.default
-%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.init
-%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.spec
