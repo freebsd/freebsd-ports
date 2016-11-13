@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>0:www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama \
 		${PYTHON_PKGNAMEPREFIX}django-markwhat>0:www/py-django-markwhat
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist concurrent distutils

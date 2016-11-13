@@ -28,10 +28,6 @@ GH_TAGNAME=	b24df9f
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3000
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2
-.endif
-
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
