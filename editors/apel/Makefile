@@ -8,8 +8,8 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	Portable Emacs Library
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	Portable Emacs Library
 
 LICENSE=	GPLv2
 
@@ -33,14 +33,6 @@ MAKE_ARGS+=	PREFIX="${STAGEDIR}${LOCALBASE}" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_VER:C/\..*//} >= 23
-PLIST_SUB+=	EMACS23="" NOEMACS23="@comment "
-.else
-PLIST_SUB+=	EMACS23="@comment " NOEMACS23=""
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} ; \
@@ -48,4 +40,4 @@ post-install-DOCS-on:
 	    ${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR} ; \
 	done)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

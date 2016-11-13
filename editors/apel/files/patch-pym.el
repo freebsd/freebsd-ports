@@ -1,7 +1,7 @@
 Index: pym.el
 ===================================================================
---- pym.el	(revision 2)
-+++ pym.el	(working copy)
+--- pym.el.orig	2005-07-06 02:08:53 UTC
++++ pym.el
 @@ -63,15 +63,15 @@
  See also the function `defun'."
    (or (and (fboundp name)
@@ -27,7 +27,7 @@ Index: pym.el
  
  (put 'defmacro-maybe 'lisp-indent-function 'defun)
  (defmacro defmacro-maybe (name &rest everything-else)
-@@ -79,15 +79,15 @@
+@@ -79,15 +79,15 @@ See also the function `defun'."
  See also the function `defmacro'."
    (or (and (fboundp name)
  	   (not (get name 'defmacro-maybe)))
@@ -52,7 +52,7 @@ Index: pym.el
  
  (put 'defsubst-maybe 'lisp-indent-function 'defun)
  (defmacro defsubst-maybe (name &rest everything-else)
-@@ -95,15 +95,15 @@
+@@ -95,15 +95,15 @@ See also the function `defmacro'."
  See also the macro `defsubst'."
    (or (and (fboundp name)
  	   (not (get name 'defsubst-maybe)))
@@ -77,7 +77,7 @@ Index: pym.el
  
  (defmacro defalias-maybe (symbol definition)
    "Define SYMBOL as an alias for DEFINITION if SYMBOL is not defined.
-@@ -111,35 +111,35 @@
+@@ -111,35 +111,35 @@ See also the function `defalias'."
    (setq symbol (eval symbol))
    (or (and (fboundp symbol)
  	   (not (get symbol 'defalias-maybe)))
@@ -130,7 +130,7 @@ Index: pym.el
  
  (defmacro defun-maybe-cond (name args &optional doc &rest clauses)
    "Define NAME as a function if NAME is not defined.
-@@ -152,26 +152,26 @@
+@@ -152,26 +152,26 @@ See also the function `defun'."
  	    doc nil))
    (or (and (fboundp name)
  	   (not (get name 'defun-maybe)))
@@ -177,7 +177,7 @@ Index: pym.el
  
  (defmacro defmacro-maybe-cond (name args &optional doc &rest clauses)
    "Define NAME as a macro if NAME is not defined.
-@@ -184,26 +184,26 @@
+@@ -184,26 +184,26 @@ See also the function `defmacro'."
  	    doc nil))
    (or (and (fboundp name)
  	   (not (get name 'defmacro-maybe)))
@@ -224,7 +224,7 @@ Index: pym.el
  
  (defmacro defsubst-maybe-cond (name args &optional doc &rest clauses)
    "Define NAME as an inline function if NAME is not defined.
-@@ -216,26 +216,26 @@
+@@ -216,26 +216,26 @@ See also the macro `defsubst'."
  	    doc nil))
    (or (and (fboundp name)
  	   (not (get name 'defsubst-maybe)))
@@ -271,7 +271,7 @@ Index: pym.el
  
  
  ;;; Edebug spec.
-@@ -246,7 +246,7 @@
+@@ -246,7 +246,7 @@ See also the macro `defsubst'."
    "Set the edebug-form-spec property of SYMBOL according to SPEC.
  Both SYMBOL and SPEC are unevaluated. The SPEC can be 0, t, a symbol
  \(naming a function\), or a list."
