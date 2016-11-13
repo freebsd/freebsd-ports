@@ -1,6 +1,6 @@
---- ./configure.orig	2013-04-21 08:49:43.000000000 +0000
-+++ ./configure	2013-04-21 15:48:06.000000000 +0000
-@@ -5649,7 +5649,7 @@
+--- configure.orig	2016-11-09 22:20:54 UTC
++++ configure
+@@ -5771,7 +5771,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
  $as_echo_n "checking whether NLS is requested... " >&6; }
      # Check whether --enable-nls was given.
  if test "${enable_nls+set}" = set; then :
@@ -9,7 +9,7 @@
  else
    USE_NLS=yes
  fi
-@@ -13186,7 +13186,7 @@
+@@ -13772,7 +13772,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>
  
      fi
    fi
