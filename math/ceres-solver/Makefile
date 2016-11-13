@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ceres-solver
-DISTVERSION=	1.12.0rc1
-PORTREVISION=	2
+DISTVERSION=	1.12.0rc2-3
+DISTVERSIONSUFFIX=	-gc5c6f55
 CATEGORIES=	math
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ SHEBANG_FILES=	examples/slam/pose_graph_*/plot_results.py \
 		scripts/make_docs.py
 CMAKE_ARGS=	-DCXX11=on -DBUILD_SHARED_LIBS=on
 LDFLAGS+=	-Wl,--as-needed # -lccolamd -lcholmod -lrt from suitesparse
-PLIST_SUB=	VERSION=${PORTVERSION:R}
+PLIST_SUB=	VERSION=${DISTVERSION:C/rc.*//}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:S/-solver//}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-solver//}
 PORTDOCS=	*
