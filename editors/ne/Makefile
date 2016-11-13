@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
 LICENSE=	GPLv3+
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -59,6 +59,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/syntax
 	(cd ${WRKSRC}/syntax && ${INSTALL_DATA} *.jsf \
 		${STAGEDIR}${DATADIR}/syntax)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES NEWS README.md \
 		${STAGEDIR}${DOCSDIR})
