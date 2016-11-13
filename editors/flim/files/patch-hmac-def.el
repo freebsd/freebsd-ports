@@ -1,6 +1,6 @@
---- hmac-def.el.orig	2007-09-06 08:39:48.000000000 +0900
-+++ hmac-def.el	2012-08-23 00:42:35.000000000 +0900
-@@ -39,46 +39,46 @@
+--- hmac-def.el.orig	2007-09-05 23:39:48 UTC
++++ hmac-def.el
+@@ -39,46 +39,46 @@ a string and return a digest of it (in b
  B is a byte-length of a block size of H. (B=64 for both SHA1 and MD5.)
  L is a byte-length of hash outputs. (L=16 for MD5, L=20 for SHA1.)
  If BIT is non-nil, truncate output to specified bits."
