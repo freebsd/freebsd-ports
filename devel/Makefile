@@ -1555,6 +1555,7 @@
     SUBDIR += mercator
     SUBDIR += mercurial
     SUBDIR += mercurialeclipse
+    SUBDIR += meson
     SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mimir
