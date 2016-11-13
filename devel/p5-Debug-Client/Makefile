@@ -27,4 +27,11 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
+RUN_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
+.endif
+
+.include <bsd.port.post.mk>
