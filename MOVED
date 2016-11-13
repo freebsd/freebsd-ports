@@ -6022,7 +6022,6 @@ multimedia/xmms-weasel||2014-04-28|Has expired: Abandonware, please consider usi
 audio/xmms-sexyspc||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/libmusicbrainz4|audio/libmusicbrainz5|2014-04-28|Has expired: Please use audio/libmusicbrainz5 instead
 cad/kicad-library||2014-05-02|kicad-library is no more distributed separately
-science/hdf5-18|science/hdf5|2014-05-03|Use science/hdf5 instead
 science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
