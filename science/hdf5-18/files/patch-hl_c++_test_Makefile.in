@@ -1,0 +1,16 @@
+--- hl/c++/test/Makefile.in.orig	2016-05-10 21:24:53 UTC
++++ hl/c++/test/Makefile.in
+@@ -395,10 +395,11 @@ AMTAR = @AMTAR@
+ AM_CFLAGS = @AM_CFLAGS@ @H5_CFLAGS@
+ 
+ # Include directories
+-AM_CPPFLAGS = @AM_CPPFLAGS@ @H5_CPPFLAGS@ -I$(top_srcdir)/src \
++AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	-I$(top_srcdir)/c++/src -I$(top_srcdir)/hl/src \
+ 	-I$(top_srcdir)/hl/c++/src -I$(top_srcdir)/test \
+-	-I$(top_builddir)/hl/test -I$(top_srcdir)/hl/test
++	-I$(top_builddir)/hl/test -I$(top_srcdir)/hl/test \
++	@AM_CPPFLAGS@ @H5_CPPFLAGS@
+ AM_CXXFLAGS = @AM_CXXFLAGS@ @H5_CXXFLAGS@
+ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+ AM_FCFLAGS = @AM_FCFLAGS@ @H5_FCFLAGS@
