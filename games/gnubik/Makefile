@@ -26,6 +26,9 @@ INFO=		gnubik
 
 OPTIONS_DEFINE=	DOCS
 
+post-install:
+	${LN} -s ../icons/hicolor/32x32/apps/gnubik.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
