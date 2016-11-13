@@ -3,25 +3,26 @@
 
 PORTNAME=	singularity
 PORTVERSION=	0.30c
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	endgame-
-EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Simulates the life of a true AI
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	py*-game>=1.8:devel/py-game \
 		${PYNUMPY}
+
+USE_GITHUB=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO
-PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MUSIC DOCS
