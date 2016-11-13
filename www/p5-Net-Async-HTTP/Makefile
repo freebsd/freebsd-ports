@@ -34,4 +34,11 @@ USES=		perl5
 SSL_BUILD_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL
 SSL_RUN_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.29:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.29:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
