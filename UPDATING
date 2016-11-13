@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161113:
+  AFFECTS: users of devel/libosinfo
+  AUTHOR: novel@FreeBSD.org
+
+  The libosinfo port was separated into three different ports
+  to follow the upstream split:
+
+   - sysutils/osinfo-db-tools: contains the CLI tools
+   - misc/osinfo-db: contains database with OS data
+   - devel/libosinfo: the library
+
+  As osinfo-db-tools now ships binaries that previously were 
+  part of libosinfo, it's required to delete the old libosinfo
+  package to prevent conflict because of same files installation:
+
+  # pkg delete libosinfo
+
+  And then install the new version.
+
 20161112:
   AFFECTS: users of security/heimdal
   AUTHOR: hrs@FreeBSD.org
