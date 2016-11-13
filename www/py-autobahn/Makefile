@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}txaio>=2.2.0:devel/py-txaio
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.7.2:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2 \
 		${PYTHON_PKGNAMEPREFIX}trollius>0:devel/py-trollius # Not really a depends, but the test doesnt skip
 
 USES=		python
