@@ -53,7 +53,7 @@ MANUAL_CONFIGURE_OFF=	--disable-manual
 MANUAL_BUILD_DEPENDS=	docbook-utils>0:textproc/docbook-utils
 
 NLS_CONFIGURE_OFF=	--disable-nls
-NLS_USES=		gettext
+NLS_USES=		gettext-tools
 
 STARTUP_DESC=		Startup notification support
 STARTUP_CONFIGURE_ENABLE=	startup-notification
