@@ -610,8 +610,10 @@
 %%DOCSDIR%%/html/_sources/api/qqmlpropertyvaluesource.txt
 %%DOCSDIR%%/html/_sources/api/qqmlscriptstring.txt
 %%DOCSDIR%%/html/_sources/api/qquaternion.txt
+%%DOCSDIR%%/html/_sources/api/qquickasyncimageprovider.txt
 %%DOCSDIR%%/html/_sources/api/qquickframebufferobject.txt
 %%DOCSDIR%%/html/_sources/api/qquickimageprovider.txt
+%%DOCSDIR%%/html/_sources/api/qquickimageresponse.txt
 %%DOCSDIR%%/html/_sources/api/qquickitem.txt
 %%DOCSDIR%%/html/_sources/api/qquickitemgrabresult.txt
 %%DOCSDIR%%/html/_sources/api/qquickpainteditem.txt
@@ -640,6 +642,7 @@
 %%DOCSDIR%%/html/_sources/api/qregularexpressionvalidator.txt
 %%DOCSDIR%%/html/_sources/api/qresizeevent.txt
 %%DOCSDIR%%/html/_sources/api/qresource.txt
+%%DOCSDIR%%/html/_sources/api/qrgba64.txt
 %%DOCSDIR%%/html/_sources/api/qrotationfilter.txt
 %%DOCSDIR%%/html/_sources/api/qrotationreading.txt
 %%DOCSDIR%%/html/_sources/api/qrotationsensor.txt
@@ -889,6 +892,7 @@
 %%DOCSDIR%%/html/_sources/api/qwebelement.txt
 %%DOCSDIR%%/html/_sources/api/qwebelementcollection.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginecertificateerror.txt
+%%DOCSDIR%%/html/_sources/api/qwebenginecookiestore.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginedownloaditem.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginehistory.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginehistoryitem.txt
@@ -897,6 +901,10 @@
 %%DOCSDIR%%/html/_sources/api/qwebenginescript.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginescriptcollection.txt
 %%DOCSDIR%%/html/_sources/api/qwebenginesettings.txt
+%%DOCSDIR%%/html/_sources/api/qwebengineurlrequestinfo.txt
+%%DOCSDIR%%/html/_sources/api/qwebengineurlrequestinterceptor.txt
+%%DOCSDIR%%/html/_sources/api/qwebengineurlrequestjob.txt
+%%DOCSDIR%%/html/_sources/api/qwebengineurlschemehandler.txt
 %%DOCSDIR%%/html/_sources/api/qwebengineview.txt
 %%DOCSDIR%%/html/_sources/api/qwebframe.txt
 %%DOCSDIR%%/html/_sources/api/qwebhistory.txt
@@ -1623,8 +1631,10 @@
 %%DOCSDIR%%/html/api/qqmlpropertyvaluesource.html
 %%DOCSDIR%%/html/api/qqmlscriptstring.html
 %%DOCSDIR%%/html/api/qquaternion.html
+%%DOCSDIR%%/html/api/qquickasyncimageprovider.html
 %%DOCSDIR%%/html/api/qquickframebufferobject.html
 %%DOCSDIR%%/html/api/qquickimageprovider.html
+%%DOCSDIR%%/html/api/qquickimageresponse.html
 %%DOCSDIR%%/html/api/qquickitem.html
 %%DOCSDIR%%/html/api/qquickitemgrabresult.html
 %%DOCSDIR%%/html/api/qquickpainteditem.html
@@ -1653,6 +1663,7 @@
 %%DOCSDIR%%/html/api/qregularexpressionvalidator.html
 %%DOCSDIR%%/html/api/qresizeevent.html
 %%DOCSDIR%%/html/api/qresource.html
+%%DOCSDIR%%/html/api/qrgba64.html
 %%DOCSDIR%%/html/api/qrotationfilter.html
 %%DOCSDIR%%/html/api/qrotationreading.html
 %%DOCSDIR%%/html/api/qrotationsensor.html
@@ -1902,6 +1913,7 @@
 %%DOCSDIR%%/html/api/qwebelement.html
 %%DOCSDIR%%/html/api/qwebelementcollection.html
 %%DOCSDIR%%/html/api/qwebenginecertificateerror.html
+%%DOCSDIR%%/html/api/qwebenginecookiestore.html
 %%DOCSDIR%%/html/api/qwebenginedownloaditem.html
 %%DOCSDIR%%/html/api/qwebenginehistory.html
 %%DOCSDIR%%/html/api/qwebenginehistoryitem.html
@@ -1910,6 +1922,10 @@
 %%DOCSDIR%%/html/api/qwebenginescript.html
 %%DOCSDIR%%/html/api/qwebenginescriptcollection.html
 %%DOCSDIR%%/html/api/qwebenginesettings.html
+%%DOCSDIR%%/html/api/qwebengineurlrequestinfo.html
+%%DOCSDIR%%/html/api/qwebengineurlrequestinterceptor.html
+%%DOCSDIR%%/html/api/qwebengineurlrequestjob.html
+%%DOCSDIR%%/html/api/qwebengineurlschemehandler.html
 %%DOCSDIR%%/html/api/qwebengineview.html
 %%DOCSDIR%%/html/api/qwebframe.html
 %%DOCSDIR%%/html/api/qwebhistory.html
