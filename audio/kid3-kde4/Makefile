@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 PORTREVISION?=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
@@ -11,97 +11,93 @@ COMMENT?=	MP3/Ogg/FLAC tag editor for KDE
 
 LICENSE=	GPLv2
 
-USE_PERL5=	build
-USES=		cmake:outsource kde:4 perl5
+USES=		cmake:outsource kde:4 pkgconfig
+USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook \
 		-DWITH_MANDIR=man \
 		-DFFMPEG_ROOT=${LOCALBASE} \
 		-DWITH_QML=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	CHROMAPRINT FLAC ID3LIB MP4V2 VORBIS TAGLIB \
-		CLI
-OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB PHONON
+OPTIONS_DEFAULT=	CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB
+OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
-
-.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt5"
-CONFLICTS_INSTALL+=	kid3-qt4-3.*
-
-USE_QT5=	core dbus gui multimedia network testlib xml widgets \
-		buildtools_build linguisttools_build qmake_build
-CMAKE_ARGS+=	-DWITH_QT5=true
-.else
-# Qt 4 and KDE 4
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguisttools_build
-.endif
-
-.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt4"
-CONFLICTS_INSTALL+=	kid3-qt5-3.*
-
-USE_QT4+=	corelib dbus gui network xml
-
-OPTIONS_DEFINE+=	PHONON
-PHONON_DESC=	Build with Phonon support
-PHONON_CMAKE_OFF=	-DWITH_PHONON=OFF
-PHONON_USE=	QT4=phonon
-.endif
 
 .if defined(PKGNAMESUFFIX)
 # Qt 4 and Qt 5
-CONFLICTS_INSTALL+=	kid3-3.*
-
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
 USES+=		desktop-file-utils
 USE_GNOME=	libxslt:build
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}QT"
 PLIST_SUB+=	QT="" KDE="@comment "
-.else
-CONFLICTS_INSTALL+=	kid3-qt4-3.* kid3-qt5-3.*
+.  if ${PKGNAMESUFFIX} == "-qt5"
+# Qt 5 only
+CONFLICTS_INSTALL=	kid3-3.* kid3-qt4-3.*
 
+USE_QT5=	core dbus gui multimedia network testlib xml widgets \
+		buildtools_build linguisttools_build qmake_build
+CMAKE_ARGS+=	-DWITH_QT5=true
+OPTIONS_EXCLUDE=PHONON
+.  elif ${PKGNAMESUFFIX} == "-qt4"
+# Qt 4 only
+CONFLICTS_INSTALL=	kid3-3.* kid3-qt5-3.*
+
+USE_QT4=	corelib dbus gui network xml \
+		qmake_build moc_build rcc_build uic_build \
+		linguisttools_build
+.  endif
+.else
+# KDE 4 only
+CONFLICTS_INSTALL=	kid3-qt4-3.* kid3-qt5-3.*
+
+USE_QT4=	corelib dbus gui network svg xml \
+		qmake_build moc_build rcc_build uic_build \
+		linguisttools_build
 USE_KDE=	kdelibs automoc4
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
+OPTIONS_SLAVE=	PHONON
 .endif
 
 PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 
-CLI_DESC=	Build and install command line utility
-CLI_USES=	readline
-CLI_VARS=	KID3_CLI=CLI;
+ACOUSTID_DESC=		AcoustID audio fingerprinting support
+ACOUSTID_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
+			libavcodec.so:multimedia/ffmpeg
+ACOUSTID_CMAKE_ON=	-DWITH_CHROMAPRINT=ON -DWITH_FFMPEG=ON
+ACOUSTID_CMAKE_OFF=	-DWITH_CHROMAPRINT=OFF
 
-FLAC_DESC=	Support for FLAC files
+CLI_DESC=		Build and install command line utility
+CLI_USES=		readline
+CLI_VARS=		KID3_CLI=CLI;
+
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_ON=		-DWITH_FLAC=ON
 FLAC_CMAKE_OFF=		-DWITH_FLAC=OFF
 
-ID3LIB_DESC=	Support for mp3 files
-ID3LIB_LIB_DEPENDS=	libid3.so:audio/id3lib
-ID3LIB_CMAKE_ON=	-DWITH_ID3LIB=ON
-ID3LIB_CMAKE_OFF=	-DWITH_ID3LIB=OFF
+MP3_LIB_DEPENDS=	libid3.so:audio/id3lib
+MP3_CMAKE_ON=		-DWITH_ID3LIB=ON
+MP3_CMAKE_OFF=		-DWITH_ID3LIB=OFF
 
-MP4V2_DESC=	Support for mp4 files
-MP4V2_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
-MP4V2_CMAKE_ON=		-DWITH_MP4V2=ON
-MP4V2_CMAKE_OFF=	-DWITH_MP4V2=OFF
+MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
+MP4_CMAKE_ON=		-DWITH_MP4V2=ON
+MP4_CMAKE_OFF=		-DWITH_MP4V2=OFF
 
-VORBIS_DESC=	Support for Ogg/Vorbis files
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-			libogg.so:audio/libogg
-VORBIS_CMAKE_ON=	-DWITH_VORBIS=ON
-VORBIS_CMAKE_OFF=	-DWITH_VORBIS=OFF
+PHONON_CMAKE_ON=	-DWITH_PHONON=ON
+PHONON_CMAKE_OFF=	-DWITH_PHONON=OFF
+PHONON_USE=		QT4=phonon
 
-TAGLIB_DESC=	Support for various audio formats
+TAGLIB_DESC=		Various audio formats support via Taglib
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CMAKE_ON=	-DWITH_TAGLIB=ON
 TAGLIB_CMAKE_OFF=	-DWITH_TAGLIB=OFF
 
-CHROMAPRINT_DESC=	Support for Chromaprint audio fingerprints
-CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
-CHROMAPRINT_CMAKE_ON=	-DWITH_CHROMAPRINT=ON
-CHROMAPRINT_CMAKE_OFF=	-DWITH_CHROMAPRINT=OFF
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
+VORBIS_CMAKE_ON=	-DWITH_VORBIS=ON
+VORBIS_CMAKE_OFF=	-DWITH_VORBIS=OFF
 
 .include <bsd.port.options.mk>
 
