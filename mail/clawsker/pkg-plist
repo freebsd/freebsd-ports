@@ -2,11 +2,14 @@ bin/clawsker
 man/man1/clawsker.1.gz
 share/applications/clawsker.desktop
 share/icons/hicolor/128x128/apps/clawsker.png
+share/icons/hicolor/48x48/apps/clawsker.png
 share/icons/hicolor/64x64/apps/clawsker.png
 %%NLS%%share/locale/ca/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/da/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/de/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/id/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/clawsker.mo
