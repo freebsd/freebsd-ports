@@ -6,7 +6,7 @@
 # Support of GTK+ is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
