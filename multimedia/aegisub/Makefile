@@ -3,7 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
@@ -25,8 +25,11 @@ USES=		compiler:c++11-lib desktop-file-utils gettext gmake iconv \
 USE_GNOME=	intltool
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-USE_GL=		glu
+USE_GL=		gl
 USE_CSTD=	c99
+USE_CXXSTD=	c++11
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
+LDFLAGS+=	-Wl,--as-needed # freetype
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ICONV_LIBS="${ICONV_LIB}" PTHREAD_LIBS="-pthread" \
 		agi_cv_with_iconv=yes
@@ -61,25 +64,10 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == "gcc"
-USE_CXXSTD=	gnu++11
+# src/audio_display.o: undefined reference to symbol '__atomic_load_8@@LIBATOMIC_1.0'
 .if empty(CFLAGS:M-march=*)
-CFLAGS_i386=	-march=pentium
-.endif
-.else
-USE_CXXSTD=	c++11
-CXXFLAGS+=	-Wno-c++11-narrowing
-.if ${COMPILER_VERSION} < 34
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++ \
-		${LOCALBASE}/bin/clang34:lang/clang34
-CPP=		clang-cpp34
-CC=		clang34
-CXX=		clang++34
-CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
-LDFLAGS+=	-L${LOCALBASE}lib/c++
-.endif
+CFLAGS+=		${CFLAGS_${ARCH}_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_i386_gcc=	-march=pentium
 .endif
 
 post-patch:
@@ -91,14 +79,10 @@ post-patch:
 		's|^CC=|CC?=| ; \
 		 /^CCOPT_/s|=.*|=| ; \
 		 /^CCDEBUG/s|=.*|=|' ${WRKSRC}/vendor/luajit/src/Makefile
-.if ${COMPILER_TYPE} == "gcc"
-	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} ${REINPLACE_CMD} -e \
-		'/virtual /s|= default;$$|{ }|'
-.endif
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		automation/v4-docs ${STAGEDIR}${DOCSDIR})
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aegisub-*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
