@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gammu
-PORTVERSION=	1.37.3
+PORTVERSION=	1.37.91
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/
 
