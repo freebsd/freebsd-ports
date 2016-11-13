@@ -35,11 +35,11 @@ include/gammu/gammu-types.h
 include/gammu/gammu-unicode.h
 include/gammu/gammu-wap.h
 lib/libGammu.so
-lib/libGammu.so.7
-lib/libGammu.so.7.%%VERSION%%
+lib/libGammu.so.8
+lib/libGammu.so.8.%%VERSION%%
 lib/libgsmsd.so
-lib/libgsmsd.so.7
-lib/libgsmsd.so.7.%%VERSION%%
+lib/libgsmsd.so.8
+lib/libgsmsd.so.8.%%VERSION%%
 libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
 man/man1/gammu.1.gz
