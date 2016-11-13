@@ -1,0 +1,20 @@
+HDF5 is a completely new Hierarchical Data Format product consisting of a data
+format specification and a supporting library implementation. HDF5 is designed
+to address some of the limitations of the older HDF product and to address
+current and anticipated requirements of modern systems and applications.
+
+HDF5 includes the following improvements:
+- A new file format designed to address some of the deficiencies of HDF4.x,
+  particularly the need to store larger files and more objects per file.
+- A simpler, more comprehensive data model that includes only two basic
+  structures: a multidimensional array of record structures, and a grouping
+  structure.
+- A simpler, better-engineered library and API, with improved support for
+  parallel I/O, threads, and other requirements imposed by modern systems
+  and applications.
+
+Note: two releases of HDF5 are available. HDF5-1.10 can read files created with
+earlier releases, but earlier releases such as HDF5-1.8 may not be able to read
+HDF5-1.10 files. If you need the latest, please see the port science/hdf5.
+
+WWW: http://www.hdfgroup.org/HDF5/

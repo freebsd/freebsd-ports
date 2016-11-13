@@ -1,0 +1,11 @@
+--- hl/fortran/test/Makefile.in.orig	2016-05-10 21:24:53 UTC
++++ hl/fortran/test/Makefile.in
+@@ -160,7 +160,7 @@ am__v_FC_1 = 
+ FCLD = $(FC)
+ FCLINK = $(LIBTOOL) $(AM_V_lt) --tag=FC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(FCLD) $(AM_FCFLAGS) $(FCFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LDFLAGS) -o $@
+ AM_V_FCLD = $(am__v_FCLD_@AM_V@)
+ am__v_FCLD_ = $(am__v_FCLD_@AM_DEFAULT_V@)
+ am__v_FCLD_0 = @echo "  FCLD    " $@;
