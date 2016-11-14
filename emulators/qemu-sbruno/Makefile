@@ -29,7 +29,7 @@ USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
-BROKEN_i386=	aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream.
+BROKEN_i386=	aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR X86_TARGETS BSD_USER \

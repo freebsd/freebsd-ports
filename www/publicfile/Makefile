@@ -25,19 +25,12 @@ LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 .include <bsd.port.options.mk>
 
-pre-everything::
 .if ${PORT_OPTIONS:MBASICAUTH} && ${PORT_OPTIONS:MCOMMONLOG}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Currently the common log and auth patches conflict."
-	@${ECHO_MSG}
-BROKEN=	Currently the common log and auth patches conflict.
+BROKEN=	common log and auth patches are currently in conflict
 .endif
 
 .if ${PORT_OPTIONS:MBASICAUTH} && ${PORT_OPTIONS:MREDIRECT_SLASH}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Currently the redirect slash and auth patches conflict."
-	@${ECHO_MSG}
-BROKEN=	Currently the redirect slash and auth patches conflict.
+BROKEN=	redirect slash and auth patches are currently in conflict
 .endif
 
 .if ${PORT_OPTIONS:MREDIRECT_SLASH}
