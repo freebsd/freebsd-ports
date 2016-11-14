@@ -23,15 +23,14 @@ USE_RC_SUBR=	miniupnpd
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-OPTIONS_DEFINE=	PF_ENABLE_FILTER_RULES CHECK_PORTINUSE IPV6 UPNP_IGDV2 UPNP_STRICT LEASEFILE
-PF_ENABLE_FILTER_RULES_DESC=	Enable pf generation of filter rules
+OPTIONS_DEFINE=	PF_FILTER_RULES CHECK_PORTINUSE IPV6 UPNP_IGDV2 UPNP_STRICT LEASEFILE
+PF_FILTER_RULES_DESC=	Enable pf generation of filter rules
 CHECK_PORTINUSE_DESC=	Check if ports are in use
-IPV6_DESC=	Enable IPv6
 UPNP_IGDV2_DESC=	Build an IGDv2 instead of an IGDv1
-UPNP_STRICT_DESC=	Be more strict regarding compliance with UPnP specifications
+UPNP_STRICT_DESC=	More strict UPnP specification compliance
 LEASEFILE_DESC=	Enable lease file
 
-PF_ENABLE_FILTER_RULES_EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
+PF_FILTER_RULES_EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
 CHECK_PORTINUSE_EXTRA_PATCHES=	${PATCHDIR}/enable_check_portinuse.patch
 IPV6_EXTRA_PATCHES=	${PATCHDIR}/enable_ipv6.patch
 UPNP_IGDV2_EXTRA_PATCHES=	${PATCHDIR}/enable_igdv2.patch
