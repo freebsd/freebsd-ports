@@ -360,6 +360,8 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kf5-kcodecs
+    SUBDIR += kf5-sonnet
     SUBDIR += kenlm
     SUBDIR += kibana3
     SUBDIR += kibana41

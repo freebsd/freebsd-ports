@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2016-04-03 20:42:08 UTC
++++ CMakeLists.txt
+@@ -59,10 +59,12 @@ set_package_properties(LMDB
+ add_definitions(-DQT_NO_KEYWORDS)
+ remove_definitions(-DQT_NO_CAST_FROM_ASCII)
+
+-set(BUILD_KINOTIFY False)
+-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+-    set(BUILD_KINOTIFY True)
+-endif()
++find_package(Libinotify)
++set_package_properties(Libinotify PROPERTIES
++    PURPOSE "Filesystem alteration notifications using inotify"
++    TYPE REQUIRED
++)
++set(BUILD_KINOTIFY ${LIBINOTIFY_FOUND})
+
+ include_directories(
+     ${CMAKE_BINARY_DIR}
+@@ -80,6 +82,7 @@ include_directories(
+     ${CMAKE_SOURCE_DIR}/src/file
+     ${CMAKE_BINARY_DIR}/src/dbus
+     ${CMAKE_SOURCE_DIR}/src/dbus
++    ${LIBINOTIFY_INCLUDE_DIRS}
+ )
+
+ # targets

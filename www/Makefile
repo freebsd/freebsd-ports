@@ -336,6 +336,10 @@
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
     SUBDIR += kdewebdev4
+    SUBDIR += kf5-kdewebkit
+    SUBDIR += kf5-khtml
+    SUBDIR += kf5-kjs
+    SUBDIR += kf5-kjsembed
     SUBDIR += kohana
     SUBDIR += kpartsplugin
     SUBDIR += kplaylist

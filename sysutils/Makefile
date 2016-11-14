@@ -493,6 +493,8 @@
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keyboard-daemon
+    SUBDIR += kf5-baloo
+    SUBDIR += kf5-kwallet
     SUBDIR += kfilemetadata
     SUBDIR += kfloppy
     SUBDIR += kiconvtool

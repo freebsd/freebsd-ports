@@ -1,0 +1,5 @@
+KDED stands for KDE Daemon which isn't very descriptive. KDED runs in the
+background and performs a number of small tasks. Some of these tasks are
+built in, others are started on demand.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kded/html/index.html

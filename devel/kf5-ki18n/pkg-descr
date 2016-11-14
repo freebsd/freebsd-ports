@@ -1,0 +1,6 @@
+KI18n provides functionality for internationalizing user interface text in
+applications, based on the GNU Gettext translation system. It wraps the
+standard Gettext functionality, so that the programmers and translators can
+use the familiar Gettext tools and workflows.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/index.html
