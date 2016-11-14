@@ -1,32 +1,18 @@
---- librhash/Makefile.orig	2014-08-01 10:53:45 UTC
+--- librhash/Makefile.orig	2016-11-06 15:49:40 UTC
 +++ librhash/Makefile
-@@ -1,11 +1,11 @@
- # Makefile for LibRHash
--CC      = gcc
--AR      = ar
-+CC      ?= gcc
-+AR      ?= ar
+@@ -2,9 +2,9 @@
+ CC      ?= gcc
+ AR      ?= ar
  #NOTE: NDEBUG turns off asserts
 -OPTFLAGS   = -O2 -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
-+OPTFLAGS   = $(CFLAGS) -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
++OPTFLAGS   = -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
  OPTLDFLAGS =
 -CFLAGS     = $(OPTFLAGS)
--LDFLAGS    = $(OPTLDFLAGS)
-+#CFLAGS     = $(OPTFLAGS)
-+LDFLAGS    += $(OPTLDFLAGS)
++CFLAGS     += $(OPTFLAGS)
+ LDFLAGS    = $(OPTLDFLAGS)
  ADDCFLAGS  =
  LIBCFLAGS  =
- ADDLDFLAGS =
-@@ -24,7 +24,7 @@ LEGACY_LIB_HEADERS = rhash_timing.h
- SO_HEADERS = $(LIB_HEADERS) $(LEGACY_LIB_HEADERS)
- # installation directories and names
- DESTDIR =
--PREFIX  = /usr/local
-+PREFIX  ?= /usr/local
- INCDIR  = $(PREFIX)/include
- LIBDIR  = $(PREFIX)/lib
- LIBRARY = librhash.a
-@@ -182,7 +182,7 @@ test-dll: $(DLLNAME) test_hashes.o
+@@ -187,7 +187,7 @@ test-dll: $(DLLNAME) test_hashes.o
  
  # shared and static libraries
  $(SONAME): $(SOURCES)
