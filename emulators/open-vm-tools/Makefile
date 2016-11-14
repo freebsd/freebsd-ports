@@ -64,11 +64,12 @@ CONFLICTS=		open-vm-tools-nox11-[0-9]*
 CONFLICTS=		open-vm-tools-[0-9]*
 .endif
 
-.include <bsd.port.pre.mk>
+BROKEN_aarch64=		Fails to configure: error: Unknown architecture
 
-.if ${ARCH} == "sparc64"
-IGNORE=		not yet ported to sparc64
-.endif
+NOT_FOR_ARCHS=		sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
+
+.include <bsd.port.pre.mk>
 
 post-build:
 	cd ${WRKSRC}/modules && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
