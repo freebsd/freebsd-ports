@@ -167,6 +167,7 @@
     SUBDIR += crafty-open-medium
     SUBDIR += crafty-tablebase-no-pawn
     SUBDIR += crafty-tablebase-pawn
+    SUBDIR += crashtest
     SUBDIR += cre
     SUBDIR += cretan-hubris
     SUBDIR += crimson
