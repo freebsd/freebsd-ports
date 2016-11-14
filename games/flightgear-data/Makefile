@@ -20,6 +20,10 @@ DATADIR=	${PREFIX}/share/flightgear
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
+BROKEN_aarch64=		Fails to install: runaway process
+BROKEN_armv64=		Fails to install: runaway process
+BROKEN_mips64=		Fails to install: runaway process
+
 post-patch:
 	@${RM} ${WRKSRC}/COPYING
 
