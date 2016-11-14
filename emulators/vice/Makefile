@@ -3,7 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	2.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -155,6 +155,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|CODEC_ID_|AV_CODEC_ID_|' \
 		-e 's|PIX_FMT_|AV_PIX_FMT_|' \
 		${WRKSRC}/src/gfxoutputdrv/ffmpegdrv.c
+	${REINPLACE_CMD} \
+		-e 's|enum PixelFormat|enum AVPixelFormat|g' \
+		${WRKSRC}/src/gfxoutputdrv/ffmpeglib.h
 .for i in da.po de.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
 	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
 	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
