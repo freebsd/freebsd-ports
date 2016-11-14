@@ -35,6 +35,8 @@ QT4_USE=		qt4=corelib,gui,moc_build
 QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}"
 QT4_CONFIGURE_WITH=	qt4
 
+BROKEN_aarch64=		Fails to compile: error: conflicting types for __wcwidth
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MQT4}
