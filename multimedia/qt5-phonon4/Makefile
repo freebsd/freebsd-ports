@@ -14,9 +14,9 @@ COMMENT=	Phonon 4 transitional library for Qt 5
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
 
-USES=		cmake:outsource pathfix tar:xz
+USES=		cmake:outsource kde:5 pathfix tar:xz
+USE_KDE=	ecm
 USE_QT5=	core dbus gui opengl widgets \
 		buildtools_build qmake_build
 CMAKE_ARGS=	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:BOOL=TRUE \

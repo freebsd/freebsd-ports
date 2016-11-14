@@ -124,6 +124,10 @@
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kdeartwork4
+    SUBDIR += kf5-breeze-icons
+    SUBDIR += kf5-kemoticons
+    SUBDIR += kf5-kiconthemes
+    SUBDIR += kf5-oxygen-icons5
     SUBDIR += linux-c6-hicolor-icon-theme
     SUBDIR += linux-c7-hicolor-icon-theme
     SUBDIR += linux-f10-hicolor-icon-theme

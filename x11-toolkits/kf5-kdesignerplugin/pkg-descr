@@ -1,0 +1,5 @@
+This framework provides plugins for Qt Designer that allow it to display the
+widgets provided by various KDE frameworks, as well as a utility that can be
+used to generate other such plugins from ini-style description files.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kdesignerplugin/html/index.html

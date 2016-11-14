@@ -279,6 +279,7 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
+    SUBDIR += kf5-kdesu
     SUBDIR += kgpg-kde4
     SUBDIR += knock
     SUBDIR += knocker

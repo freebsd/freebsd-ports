@@ -1,0 +1,7 @@
+KActivities provides the infrastructure needed to manage a user's activites,
+allowing them to switch between tasks, and for applications to update their
+state to match the user's current activity. This includes a daemon, a library
+for interacting with that daemon, and plugins for integration with other
+frameworks.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kactivities/html/index.html

@@ -82,6 +82,17 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
+    SUBDIR += kf5-attica
+    SUBDIR += kf5-kcompletion
+    SUBDIR += kf5-kconfigwidgets
+    SUBDIR += kf5-kdesignerplugin
+    SUBDIR += kf5-kguiaddons
+    SUBDIR += kf5-kitemviews
+    SUBDIR += kf5-kjobwidgets
+    SUBDIR += kf5-ktextwidgets
+    SUBDIR += kf5-kwidgetsaddons
+    SUBDIR += kf5-kxmlgui
+    SUBDIR += kirigami
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu

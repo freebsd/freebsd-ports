@@ -1,0 +1,140 @@
+From 211e150f1ccbc1ac2a6e74575535dd6858cdbeaf Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <andreas.sturmlechner@gmail.com>
+Date: Sun, 25 Sep 2016 14:58:22 +0200
+Subject: [PATCH] Use Gpgmepp from GpgME-1.7.0
+
+REVIEW: 129071
+---
+ src/runtime/kwalletd/CMakeLists.txt         | 18 ++++++++----------
+ src/runtime/kwalletd/backend/CMakeLists.txt | 10 +++++-----
+ tests/kwalletd/CMakeLists.txt               | 12 ++++++------
+ 3 files changed, 19 insertions(+), 21 deletions(-)
+
+diff --git a/src/runtime/kwalletd/CMakeLists.txt b/src/runtime/kwalletd/CMakeLists.txt
+index d7e9ca2..a883af7 100644
+--- src/runtime/kwalletd/CMakeLists.txt
++++ src/runtime/kwalletd/CMakeLists.txt
+@@ -13,16 +13,14 @@ find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIRED)
+
+ ########### find needed packages ######
+-find_package(Gpgme)  # Called by KF5Gpgmepp, but since we call some gpgme
+-                     # functions ourselves we need to link against it directly.
+-find_package(KF5Gpgmepp) # provided by kdepimlibs
++find_package(Gpgmepp) # provided by GpgME
+
+-if (KF5Gpgmepp_FOUND)
++if (Gpgmepp_FOUND)
+     message("GPG support enabled")
+     add_definitions(-DHAVE_QGPGME)
+     add_definitions(-DBOOST_NO_EXCEPTIONS)
+     include_directories(${GPGME_INCLUDES})
+-endif(KF5Gpgmepp_FOUND)
++endif(Gpgmepp_FOUND)
+
+
+ ########### build backends #########
+@@ -67,7 +65,7 @@ ki18n_wrap_ui(kwalletd_SRCS
+    migrationwizard2.ui
+ )
+
+-if (KF5Gpgmepp_FOUND)
++if (Gpgmepp_FOUND)
+     set(kwalletd_SRCS
+         ${kwalletd_SRCS}
+         knewwalletdialog.cpp
+@@ -78,7 +76,7 @@ if (KF5Gpgmepp_FOUND)
+         knewwalletdialogintro.ui
+         knewwalletdialoggpg.ui
+     )
+-endif(KF5Gpgmepp_FOUND)
++endif(Gpgmepp_FOUND)
+
+ find_file(kwallet_xml org.kde.KWallet.xml HINTS ${CMAKE_CURRENT_SOURCE_DIR}/../../api/KWallet)
+
+@@ -112,10 +110,10 @@ target_link_libraries(kwalletd5
+     KF5::WidgetsAddons
+     KF5::WindowSystem
+     KF5::Notifications)
+-if (KF5Gpgmepp_FOUND)
+-    target_link_libraries(kwalletd5 KF5::Gpgmepp )
++if (Gpgmepp_FOUND)
++    target_link_libraries(kwalletd5 Gpgmepp)
+     kde_target_enable_exceptions(kwalletd5 PRIVATE)
+-endif(KF5Gpgmepp_FOUND)
++endif(Gpgmepp_FOUND)
+
+ install(TARGETS kwalletd5  ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+
+diff --git a/src/runtime/kwalletd/backend/CMakeLists.txt b/src/runtime/kwalletd/backend/CMakeLists.txt
+index 20bd4d9..310953e 100644
+--- src/runtime/kwalletd/backend/CMakeLists.txt
++++ src/runtime/kwalletd/backend/CMakeLists.txt
+@@ -5,10 +5,10 @@ include(GenerateExportHeader)
+
+ check_include_files(stdint.h HAVE_STDINT_H)
+ check_include_files(sys/bitypes.h HAVE_SYS_BITYPES_H)
+-if (KF5Gpgmepp_FOUND)
++if (Gpgmepp_FOUND)
+     add_definitions(-DHAVE_QGPGME)
+     add_definitions(-DBOOST_NO_EXCEPTIONS)
+-endif(KF5Gpgmepp_FOUND)
++endif(Gpgmepp_FOUND)
+
+ configure_file (config-kwalletbackend.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kwalletbackend.h )
+
+@@ -48,9 +48,9 @@ generate_export_header(kwalletbackend5)
+ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KWALLETBACKEND SOVERSION 5)
+
+ target_link_libraries(kwalletbackend5 Qt5::Widgets KF5::WidgetsAddons KF5::CoreAddons KF5::Notifications KF5::I18n ${LIBGCRYPT_LIBRARIES})
+-if(KF5Gpgmepp_FOUND)
+-target_link_libraries(kwalletbackend5 KF5::Gpgmepp)
+-endif(KF5Gpgmepp_FOUND)
++if(Gpgmepp_FOUND)
++   target_link_libraries(kwalletbackend5 Gpgmepp)
++endif(Gpgmepp_FOUND)
+
+ # link with advapi32 on windows
+ if(WIN32 AND NOT WINCE)
+diff --git a/tests/kwalletd/CMakeLists.txt b/tests/kwalletd/CMakeLists.txt
+index c84c1db..1bb32d9 100644
+--- tests/kwalletd/CMakeLists.txt
++++ tests/kwalletd/CMakeLists.txt
+@@ -11,7 +11,7 @@ find_package(KF5CoreAddons ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
+-find_package(KF5Gpgmepp) # provided by kdepimlibs
++find_package(Gpgmepp) # provided by GpgME
+
+ remove_definitions(-DQT_NO_CAST_FROM_ASCII)
+ remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
+@@ -29,10 +29,10 @@ qt5_wrap_ui(kwalletwizardtest_SRCS
+    ../../src/runtime/kwalletd/kwalletwizardpagegpgkey.ui
+ )
+
+-if (KF5Gpgmepp_FOUND)
++if (Gpgmepp_FOUND)
+     qt5_wrap_ui(kwalletwizardtest_SRCS
+         ../../src/runtime/kwalletd/kwalletwizardpagepasswordgpg.ui)
+-endif(KF5Gpgmepp_FOUND)
++endif(Gpgmepp_FOUND)
+
+ add_executable(kwalletwizardtest ${kwalletwizardtest_SRCS})
+ ecm_mark_as_test(kwalletwizardtest)
+@@ -43,9 +43,9 @@ target_link_libraries(kwalletwizardtest
+     KF5::I18n
+     KF5::IconThemes
+     KF5::WidgetsAddons)
+-if (KF5Gpgmepp_FOUND)
+-    target_link_libraries(kwalletwizardtest KF5::Gpgmepp)
+-endif(KF5Gpgmepp_FOUND)
++if (Gpgmepp_FOUND)
++    target_link_libraries(kwalletwizardtest Gpgmepp)
++endif(Gpgmepp_FOUND)
+
+ set(kwallettestlib_SRCS kwallettest.cpp)
+ add_library(kwallettestlib STATIC ${kwallettestlib_SRCS})
+--
+2.10.1
+

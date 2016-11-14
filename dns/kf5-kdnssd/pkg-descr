@@ -1,0 +1,5 @@
+KDNSSD is a library for handling the DNS-based Service Discovery Protocol,
+the layer of Zeroconf that allows network services, such as printers, to be
+discovered without any user intervention or centralized infrastructure.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kdnssd/html/index.html

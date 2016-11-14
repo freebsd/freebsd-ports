@@ -1,0 +1,5 @@
+KItemViews includes a set of views, which can be used with item models.
+It includes views for categorizing lists and to add search filters to
+flat and hierarchical lists.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kitemviews/html/index.html
