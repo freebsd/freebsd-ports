@@ -26,6 +26,8 @@ OPTIONS_SUB=	yes
 
 SOUND_CONFIGURE_OFF=	--without-sound
 
+BROKEN_aarch64=		Fails to configure: machine arm64-unknown not recognized
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xgalaga
 
