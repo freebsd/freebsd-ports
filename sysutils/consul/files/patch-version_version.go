@@ -6,7 +6,7 @@
  	// build tag-specific files.
 -	Version           = "unknown"
 -	VersionPrerelease = "unknown"
-+	Version           = ""
++	Version           = "0.7.1"
 +	VersionPrerelease = ""
  )
  
