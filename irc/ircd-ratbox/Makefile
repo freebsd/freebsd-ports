@@ -52,8 +52,6 @@ PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 OPTIONS_DEFINE=		OPENSSL IPV6 ZIPLINKS SHARED_MODS ASSERT SMALL_NET	\
 			SERVICES SHORTCUTS
-OPENSSL_DESC=		Support OpenSSL encrypted connections
-IPV6_DESC=		Enable IPv6 support
 ZIPLINKS_DESC=		Support compressed server links
 SHARED_MODS_DESC=	Support shared modules
 ASSERT_DESC=		Enable debugging code

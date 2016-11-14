@@ -36,7 +36,6 @@ OPTIONS_DEFINE=	DAEMON IPMI SSL PRINTER SNMP
 
 DAEMON_DESC=	Daemon mode
 IPMI_DESC=	Collect information about IPMI
-SSL_DESC=	Get SSL communications working
 PRINTER_DESC=	Printers detection
 SNMP_DESC=	Scan network devices using SNMP
 

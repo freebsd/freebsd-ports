@@ -53,8 +53,6 @@ MYSQL_DESC=	Use MySQL db to store white/red/delaylists
 MATCHRE_DESC=	Match IP ranges and CIDR blocks in lists
 SENDERB_DESC=	Country Code checks
 MIMEMOD_DESC=	Multiple Attachement detection
-SSL_DESC=	SSL secure sockets support
-IPV6_DESC=	IPv6 sockets support
 
 OPTIONS_DEFAULT=	EMVALID SPF SRS SEND FBACKW CLAMAV DNSBL MATCHRE SENDERB MIMEMOD SSL
 

@@ -41,7 +41,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS_DEFINE=	APOP_ONLY APOP DOCUMENTATION DRAC FULL_POPD_DEBUG PAM \
 	POPPASSD SAMPLE_POPUSERS SHY_ENABLED \
-	SSL STANDALONE_MODE U_OPTION
+	OPENSSL STANDALONE_MODE U_OPTION
 
 APOP_ONLY_DESC=	build with APOP authentication only
 APOP_DESC=	build with APOP
@@ -52,14 +52,13 @@ PAM_DESC=	build with PAM authentication
 POPPASSD_DESC=	build the poppassd daemon
 SAMPLE_POPUSERS_DESC=	build a default reject file
 SHY_ENABLED_DESC=	hide qpopper version in POP3 banner
-SSL_DESC=	build with SSL/TLS support
 STANDALONE_MODE_DESC=	build qpopper to be run without inetd
 U_OPTION_DESC=	include support for user .qpopper-options
 
-OPTIONS_DEFAULT=	APOP SSL U_OPTION
+OPTIONS_DEFAULT=	APOP OPENSSL U_OPTION
 OPTIONS_SUB=	yes
 
-SSL_USES=	ssl
+OPENSSL_USES=	ssl
 
 .include <bsd.port.pre.mk>
 
@@ -119,7 +118,7 @@ USE_RC_SUBR=	 ${PORTNAME}
 .endif
 
 # The default is to build without SSL/TLS support.
-.if ${PORT_OPTIONS:MSSL}
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
