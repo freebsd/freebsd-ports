@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -36,8 +36,7 @@ USE_GNOME=	cairo dconf gtk30 gnomedocutils
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
