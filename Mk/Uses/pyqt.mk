@@ -209,6 +209,8 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 # PyQt5's configure.py generates .pro files and calls qmake to generate the
 # Makefiles. qmake's Makefiles use INSTALL_ROOT instead of DESTDIR.
 DESTDIRNAME=	INSTALL_ROOT
+# Limit PyQt5's version to the Qt5 version in ports
+PORTSCOUT?=	limit:^${_QT_VERSION:R}
 .endif
 
 PATCHDIR=	${.CURDIR}/../../devel/${PYQT_RELNAME}-core/files
