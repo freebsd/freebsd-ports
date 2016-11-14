@@ -11,8 +11,6 @@ COMMENT=	Convert HTML (or live webpages) to PDF or image
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
@@ -25,6 +23,11 @@ USE_GITHUB=	yes
 WKQT_TAGNAME=	fe194f9
 GH_TUPLE=	${PORTNAME}:qt:${WKQT_TAGNAME}:qt
 HAS_CONFIGURE=	yes
+
+BROKEN_aarch64=		Does not build: error: cast from pointer to smaller type loses information
+BROKEN_armv6=		Does not build: error: Not supported ARM architecture
+BROKEN_mips64=		Does not link: undefined reference to __sync_add_and_fetch_4
+BROKEN_powerpc64=	Does not build
 
 PATCH_WRKSRC=		${WRKSRC}/qt
 CONFIGURE_WRKSRC=	${WRKSRC}/build/qt

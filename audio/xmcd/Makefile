@@ -22,6 +22,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}
 
+BROKEN_aarch64=		Fails to compile: many undefined symbols in xorg.cf
+BROKEN_armv6=		Fails to compile: many undefined symbols in xorg.cf
+BROKEN_mips64=		Fails to compile: many undefined symbols in xorg.cf
 BROKEN_powerpc64=	Does not build on powerpc64
 
 pre-patch:

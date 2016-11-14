@@ -35,6 +35,8 @@ PORTDOCS=	*
 SHLIB_MAJOR_VER=5
 SHLIB_MINOR_VER=${PORTVERSION:S|0$||}
 
+BROKEN_sparc64=	Fails to compile: malloc.h has been replaced by stdlib.h
+
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} libcfitsio.a ${STAGEDIR}${PREFIX}/lib/
