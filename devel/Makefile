@@ -541,7 +541,6 @@
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
-    SUBDIR += extra-cmake-modules
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
