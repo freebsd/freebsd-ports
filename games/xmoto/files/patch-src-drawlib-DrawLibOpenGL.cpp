@@ -1,6 +1,6 @@
---- src/drawlib/DrawLibOpenGL.cpp.orig	2011-10-12 00:18:26.000000000 +0400
-+++ src/drawlib/DrawLibOpenGL.cpp	2014-11-24 22:08:12.925973647 +0300
-@@ -80,7 +80,7 @@
+--- src/drawlib/DrawLibOpenGL.cpp.orig	2011-10-11 20:18:26 UTC
++++ src/drawlib/DrawLibOpenGL.cpp
+@@ -80,7 +80,7 @@ public:
    /* a glyph from other glyphs */
    /*kejo:why not just grrr create a copy contructor*/
    GLFontGlyph(const std::string& i_value,
@@ -9,7 +9,7 @@
    virtual ~GLFontGlyph();
  
    std::string Value() const;
-@@ -132,11 +132,11 @@
+@@ -132,11 +132,11 @@ public:
  private:
    std::vector<std::string> m_glyphsKeys;
    std::vector<GLFontGlyph*> m_glyphsValues;
@@ -23,7 +23,7 @@
  
    unsigned int getLonguestLineSize(const std::string& i_value, unsigned int i_start = 0, unsigned int i_nbLinesToRead = -1);
  };
-@@ -825,7 +825,7 @@
+@@ -825,7 +825,7 @@ GLFontGlyph::GLFontGlyph(const std::stri
  }
  
  GLFontGlyph::GLFontGlyph(const std::string& i_value,
