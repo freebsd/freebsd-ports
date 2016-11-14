@@ -71,7 +71,7 @@ IGNORE=	go to Intel Premier Support \(https://premier.intel.com/\) to obtain ${D
 .endfor
 
 .if exists(${LINUXBASE}/boot/kernel.h)
-BROKEN=	Cannot coexist with linux_devtools.
+BROKEN=	cannot coexist with linux_devtools
 .endif
 
 post-extract:
