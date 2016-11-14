@@ -153,7 +153,7 @@
  
     /* open the input database (read-write) */
 +#ifdef USE_DB185
-+   dns_db = dbopen(in_file, O_RDONLY, 0664, DB_HASH, NULL);
++   dns_db = dbopen(in_file, O_RDWR|O_CREAT, 0664, DB_HASH, NULL);
 +   i = errno;
 +   if (!dns_db)
 +#else
