@@ -11,10 +11,7 @@ USE_RC_SUBR=	bacula-fd
 PLIST=		${PKGDIR}/pkg-plist.client
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 
-OPTIONS_DEFINE=	NLS PYTHON ENABLE_IPV6
-OPTIONS_DEFAULT=ENABLE_IPV6
-
-ENABLE_IPV6_DESC=	Enable IPv6 support
+OPTIONS_DEFINE=	NLS PYTHON IPV6
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 

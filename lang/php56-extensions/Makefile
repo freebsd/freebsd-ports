@@ -52,7 +52,6 @@ MYSQL_DESC=		MySQL database support
 MYSQLI_DESC=		MySQLi database support
 ODBC_DESC=		ODBC support
 OPCACHE_DESC=		OPcache support
-OPENSSL_DESC=		OpenSSL support
 PCNTL_DESC=		pcntl support (CLI only)
 PDF_DESC=		PDFlib support (implies GD)
 PDO_DESC=		PHP Data Objects Interface (PDO)

@@ -55,7 +55,6 @@ OPTIONS_SINGLE_GPG=	GNUPG_NONE GNUPG GNUPG2
 OPTIONS_DEFAULT=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
-SSL_DESC=		Build spamd/spamc with SSL support
 
 DATABASE_DESC=		Optional user-config/bayes database backends
 
