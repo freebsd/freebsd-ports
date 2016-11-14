@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/ \
 		CHEESESHOP
