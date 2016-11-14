@@ -52,6 +52,28 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS #OPENMP
 #OPENMP_USES=	compiler:openmp
 
+post-patch:
+# Replace methods and types that were marked deprecated by OpenSSL 0.9.7
+# and removed in OpenSSL 1.1.0 and LibreSSL
+	@${REINPLACE_CMD} -e 's|des_string_to_key|DES_string_to_key|' \
+		${WRKSRC}/KRB4_fmt_plug.c
+	@${REINPLACE_CMD} -e 's|des_set_odd_parity|DES_set_odd_parity|' \
+		${WRKSRC}/KRB4_std_plug.c
+	@${REINPLACE_CMD} -e 's|C_Block|DES_cblock|' \
+		${WRKSRC}/efs_fmt_plug.c \
+		${WRKSRC}/gpg_fmt_plug.c \
+		${WRKSRC}/keychain_fmt_plug.c \
+		${WRKSRC}/mozilla_ng_fmt_plug.c \
+		${WRKSRC}/opencl_gpg_fmt_plug.c \
+		${WRKSRC}/opencl_keychain_fmt_plug.c \
+		${WRKSRC}/ssh_ng_fmt_plug.c
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000024
+CFLAGS+=	-flax-vector-conversions
+.endif
+
 do-install:
 .for b in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/../run/${b} ${STAGEDIR}${PREFIX}/bin
@@ -71,4 +93,4 @@ do-install-DOCS-on:
 	@${RM} ${WRKSRC}/../doc/COPYING
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
