@@ -1,5 +1,5 @@
-TIMESTAMP = 1466256792
-SHA256 (rpm/i686/centos/6.8/libgcrypt-1.4.5-11.el6_4.i686.rpm) = 800d11a507a330b28e59d300bf7383b19c95b5a857863b1501b8aa1f0b9388dc
-SIZE (rpm/i686/centos/6.8/libgcrypt-1.4.5-11.el6_4.i686.rpm) = 233684
-SHA256 (rpm/i686/centos/6.8/libgcrypt-1.4.5-11.el6_4.src.rpm) = c963b5bf4c84d5798d987e86b4e600ce3c7ae03e035096d88982385a81dcdbbc
-SIZE (rpm/i686/centos/6.8/libgcrypt-1.4.5-11.el6_4.src.rpm) = 1257444
+TIMESTAMP = 1478991104
+SHA256 (rpm/i686/centos/6.8/libgcrypt-1.4.5-12.el6_8.i686.rpm) = 12f569a66c65aedcf6899fdc85fd4a7ece9179735863e8863c3819b03b901faf
+SIZE (rpm/i686/centos/6.8/libgcrypt-1.4.5-12.el6_8.i686.rpm) = 233772
+SHA256 (rpm/i686/centos/6.8/libgcrypt-1.4.5-12.el6_8.src.rpm) = e7510256aa30561185faf8b9e6881f714a19d18ee39f0a39a949d28a97d83114
+SIZE (rpm/i686/centos/6.8/libgcrypt-1.4.5-12.el6_8.src.rpm) = 1259217
