@@ -52,6 +52,7 @@ DATADIR=	${PREFIX}/share/mysql
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_armv6=		Does not compile on armv6
+BROKEN_sparc64=		Does not compile: Unsupported platform
 
 .if defined(USE_MYSQL)
 .error You have 'USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.

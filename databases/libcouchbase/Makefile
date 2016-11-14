@@ -22,4 +22,7 @@ USE_PERL5=	build run
 
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
+BROKEN_mips64=		Fails to link: ld: failed to merge target specific data
+
 .include <bsd.port.mk>
