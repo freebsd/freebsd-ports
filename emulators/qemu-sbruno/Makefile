@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.50.g20161111
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -250,12 +251,8 @@ PLIST_SUB+=	LINUXBOOT_DMA="@comment "
 PLIST_SUB+=	LINUXBOOT_DMA=""
 .endif
 
-# -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
-# but it shouldn't matter much
 post-patch:
 	@${MV} ${WRKDIR}/dtc ${WRKSRC}
-	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 # clang in freebsd 10 is unable to assemble linuxboot_dma.bin
 .if (${OSVERSION} < 1100000)
