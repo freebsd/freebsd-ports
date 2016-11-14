@@ -32,6 +32,8 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_PARALLEL_PORT.txt z_SETTINGS.txt \
 			z_USERS_EXTRA.txt z_USERS_HWARE.txt
 
+BROKEN_sparc64=		Fails to compile: implicit declaration of function outb
+
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
 BINFILE=	xlinrad

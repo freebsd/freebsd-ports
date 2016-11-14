@@ -26,6 +26,9 @@ CFLAGS+=	-DAUTO_PPP
 
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN_aarch64=		Fails to compile: error: initializer element is not a compile-time constant
+BROKEN_mips64=		Fails to compile: error: initializer element is not a compile-time constant
+
 OPTIONS_DEFINE=	FIDO
 FIDO_DESC=	Enable FIDO EMSI support
 FIDO_CFLAGS=	-DFIDO
