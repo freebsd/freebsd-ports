@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 SUB_FILES=	${PORTNAME}
 
+BROKEN_aarch64=		Fails to link: error: ldd command returned with exit code 256
+
 post-patch:
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e \

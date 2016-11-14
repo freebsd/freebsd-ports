@@ -59,4 +59,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
+BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1 which cannot be narrowed to type char
+
 .include <bsd.port.mk>

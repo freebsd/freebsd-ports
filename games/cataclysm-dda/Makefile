@@ -59,6 +59,8 @@ SOUND_IMPLIES=		SDL
 
 SOUND_FILES=	cataclysmthemeREV6.ogg Dark_Days_Ahead_demo_2.ogg
 
+BROKEN_aarch64=		Fails to compile: error: comparison of integers of different signs: wchar_t and const int
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
