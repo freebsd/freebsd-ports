@@ -1,0 +1,14 @@
+--- src/lib/CMakeLists.txt.orig	2016-05-07 15:08:21 UTC
++++ src/lib/CMakeLists.txt
+@@ -20,6 +20,11 @@ if (FAM_FOUND)
+    set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${FAM_LIBRARIES})
+ endif ()
+
++if (LIBINOTIFY_FOUND)
++   include_directories(${LIBINOTIFY_INCLUDE_DIRS})
++   set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${LIBINOTIFY_LIBRARIES})
++endif ()
++
+ if(NOT WIN32)
+     set(kcoreaddons_OPTIONAL_SRCS caching/kshareddatacache.cpp)
+     set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${CMAKE_THREAD_LIBS_INIT})

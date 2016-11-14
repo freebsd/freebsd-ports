@@ -1,0 +1,4 @@
+KAuth provides a convenient, system-integrated way to offload actions that need
+to be performed as a privileged user to small helper utilities.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kauth/html/index.html

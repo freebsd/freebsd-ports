@@ -48,6 +48,7 @@
     SUBDIR += innoextract
     SUBDIR += javatar
     SUBDIR += jzlib
+    SUBDIR += kf5-karchive
     SUBDIR += kzip
     SUBDIR += laszip
     SUBDIR += lbrate

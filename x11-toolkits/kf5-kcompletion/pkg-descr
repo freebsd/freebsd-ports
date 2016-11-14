@@ -1,0 +1,8 @@
+When typing filenames, email addresses and other text where the user often wants
+to select from existing data (including what they previously typed) rather than
+enter anything wholly original, users often find it helpful if they only need to
+type the first few characters, and then have the application offer them a set of
+choices or attempt to finish off what they were typing. Email clients, shells
+and "open file" dialogs often provide this functionality.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kcompletion/html/index.html

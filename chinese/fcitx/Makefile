@@ -21,8 +21,7 @@ COMMENT=	Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libdbus-1.so:devel/dbus \
 		libXfixes.so:x11/libXfixes \
@@ -37,11 +36,12 @@ SUB_LIST+=	PORTSDIR=${PORTSDIR}
 CONFLICTS=	zh-scim-fcitx-3.*
 
 USE_GNOME=	pango intltool libxml2 introspection
+USE_KDE=	ecm
 USE_XORG=	x11 xext xkbfile sm ice
 USE_LDCONFIG=	yes
 USES=		tar:xz cmake desktop-file-utils execinfo \
 		gettext-tools:build,run gettext-runtime iconv:wchar_t \
-		pkgconfig shared-mime-info
+		kde:5 pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS

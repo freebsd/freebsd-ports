@@ -14,9 +14,8 @@ COMMENT=	Qt 5 Designer plugin for Phonon 4
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/extra-cmake-modules
-
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource kde:5 tar:xz
+USE_KDE=	ecm
 USE_QT5=	buildtools_build qmake_build designer phonon4
 CMAKE_ARGS=	-DPHONON_QT_PLUGIN_INSTALL_DIR=${PREFIX}/${QT_PLUGINDIR_REL}/designer \
 		-DPHONON_BUILD_PHONON4QT5=ON

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2016-05-09 16:05:04 UTC
++++ CMakeLists.txt
+@@ -35,9 +35,14 @@ set(HAVE_FAM ${FAM_FOUND})
+ 
+ option(ENABLE_INOTIFY "Try to use inotify for directory monitoring" ON)
+ if(ENABLE_INOTIFY)
+-    include(CheckIncludeFiles)
+-    check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+-    set(HAVE_SYS_INOTIFY_H ${SYS_INOTIFY_H_FOUND})
++# Find libinotify
++find_package(Libinotify)
++set_package_properties(Libinotify PROPERTIES
++     PURPOSE "Filesystem alteration notifications using inotify")
++
++set(HAVE_SYS_INOTIFY_H ${LIBINOTIFY_FOUND})
++else()
++set(HAVE_SYS_INOTIFY_H FALSE)
+ endif()
+ 
+ # Generate io/config-kdirwatch.h
