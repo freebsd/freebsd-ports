@@ -21,6 +21,8 @@ MAKE_ARGS+=	WITHOUT_SSL=yes
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .endif
 
+BROKEN_aarch64=		Fails to compile: error: cast from pointer to smaller type loses information
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fusenshi
 

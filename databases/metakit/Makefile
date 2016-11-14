@@ -18,6 +18,9 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 
+BROKEN_aarch64=		Fails to build: error: typedef redefinition with different types
+BROKEN_mips64=		Fails to build: error: conflicting declaration typedef long int t4_i32
+
 OPTIONS_DEFINE=	PYTHON TCL DOCS
 OPTIONS_DEFAULT=	PYTHON
 

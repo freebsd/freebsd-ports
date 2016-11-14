@@ -18,7 +18,7 @@ LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 BROKEN_aarch64=		does not build: error: Please implement AtomicPointer for this platform
 BROKEN_powerpc64=	does not build
-BROKEN_sparcpc64=	does not build: unrecognized command line options
+BROKEN_sparc64=		does not build: unrecognized command line options
 
 MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure

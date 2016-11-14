@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-python-prefix="${LOCALBASE}"
 
+BROKEN_aarch64=		Fails to configure: machine aarch64-portbld not recognized
+
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
 do-extract:

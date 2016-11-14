@@ -20,8 +20,6 @@ COMMENT=	Riak is an open source, distributed, noSQL database
 
 LICENSE=	APACHE20
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:lang/erlang-riak
 
 USES=		gmake readline shebangfix
@@ -30,7 +28,9 @@ SHEBANG_FILES=	deps/eper/priv/bin/* \
 USE_RC_SUBR=	riak
 USE_GCC=	yes
 
-BROKEN_i386=	does not build
+BROKEN_i386=		Does not build
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build: Please implement AtomicPointer for this platform
 
 USERS=		riak
 GROUPS=		riak
