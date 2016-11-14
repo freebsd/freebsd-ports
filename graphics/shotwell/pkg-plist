@@ -9,6 +9,7 @@ lib/shotwell/plugins/builtin/shotwell-publishing.so
 lib/shotwell/plugins/builtin/shotwell-transitions.so
 libexec/shotwell/shotwell-settings-migrator
 libexec/shotwell/shotwell-video-thumbnailer
+man/man1/shotwell.1.gz
 share/appdata/shotwell.appdata.xml
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
@@ -429,7 +430,6 @@ share/locale/vi/LC_MESSAGES/shotwell.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_HK/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
-share/man/man1/shotwell.1
 %%DATADIR%%/icons/all-rejected.png
 %%DATADIR%%/icons/crop-pivot-reticle.png
 %%DATADIR%%/icons/crop.svg
