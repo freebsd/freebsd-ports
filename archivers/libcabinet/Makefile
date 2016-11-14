@@ -12,6 +12,8 @@ COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
 
 USE_LDCONFIG=	yes
 
+BROKEN_aarch64=	Fails to link: linker command failed with exit code 1
+
 USES=		uidfix
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}

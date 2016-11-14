@@ -26,6 +26,8 @@ ALL_TARGET=	lrelease manpages all
 
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
+BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1
+
 OPTIONS_DEFINE=		ALSA JACK PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	PORTAUDIO
 
