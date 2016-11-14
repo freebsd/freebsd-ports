@@ -182,6 +182,7 @@
     SUBDIR += cotty
     SUBDIR += cpdup
     SUBDIR += cpu
+    SUBDIR += cpu-x
     SUBDIR += cpuburn
     SUBDIR += cpuid
     SUBDIR += cpulimit
