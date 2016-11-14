@@ -1,0 +1,19 @@
+Getting the current time sometimes is not very helpful
+for testing scenarios.
+Instead, if you could obtain a known value during the runtime
+of a testcase will make your results predictable.
+
+Why another Date Mocker?
+I wanted something simple with a very concise usage pattern
+and a mocked date should only exist and stay constant inside a scope.
+After leaving the scope the current time should be back.
+This lead to this tiny module.
+
+This simple module allows faking a given date and time
+for the runtime of a subsequent code block.
+By default the on keyword is exported into the namespace
+of the test file.
+The date to get mocked must be in a format that is recognized
+by DateTime::Format::DateParse.
+
+WWW: http://search.cpan.org/dist/Test-MockDateTime/
