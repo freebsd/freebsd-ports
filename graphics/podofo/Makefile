@@ -17,7 +17,7 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake dos2unix ssl
+USES=		cmake compiler dos2unix ssl
 CMAKE_ARGS=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
 		-DPODOFO_BUILD_STATIC:BOOL=FALSE \
 		-DOPENSSL_INCLUDE_DIR:PATH="${OPENSSLINC}" \
@@ -43,4 +43,10 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 TIFF_CMAKE_ON=		-DWANT_TIFF:BOOL=TRUE
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} >= 50
+CXXFLAGS+=	-std=gnu++11 -D_GLIBCXX_USE_C99=1
+.endif
+
+.include <bsd.port.post.mk>
