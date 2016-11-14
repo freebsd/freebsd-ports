@@ -106,6 +106,7 @@
     SUBDIR += brickshooter
     SUBDIR += brikx
     SUBDIR += briquolo
+    SUBDIR += brumbrumrally
     SUBDIR += brutalchess
     SUBDIR += bs
     SUBDIR += bsdgames
