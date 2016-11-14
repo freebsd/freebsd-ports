@@ -1,5 +1,5 @@
---- src/GameInit.cpp.orig	2015-01-10 18:22:36.000000000 +0100
-+++ src/GameInit.cpp	2015-01-10 18:27:28.000000000 +0100
+--- src/GameInit.cpp.orig	2011-10-11 20:18:35 UTC
++++ src/GameInit.cpp
 @@ -248,7 +248,7 @@ void GameApp::run_load(int nNumArgs, cha
    Logger::setActiv(XMSession::instance()->noLog() == false); /* apply log activ mode */
  
