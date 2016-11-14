@@ -169,7 +169,7 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT} && ${PORT_OPTIONS:MDOVECOT2}
-BROKEN=Please run 'make config' again and choose only one version of Dovecot. Both version 1.x and 2.x cannot co-exist.
+BROKEN=	please run 'make config' again and choose only one version of Dovecot (versions 1.x and 2.x cannot coexist)
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT}

@@ -199,7 +199,7 @@ PLIST_FILES+=	\
 	${SAN_LIBDIR}/libclang_rt.ubsan_standalone-i386.a \
 	${SAN_LIBDIR}/libclang_rt.ubsan_standalone_cxx-i386.a
 .else
-BROKEN=	no packaging data for sanitizers on ${ARCH}.  Disable COMPILER_RT.
+BROKEN=	no packaging data for sanitizers on ${ARCH}; disable COMPILER_RT
 .endif
 .endif
 
@@ -229,7 +229,7 @@ PLIST_SUB+=	GOLD="@comment "
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=    OPENMP="@comment "
+PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
 
