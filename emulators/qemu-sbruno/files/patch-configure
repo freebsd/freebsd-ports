@@ -1,0 +1,15 @@
+--- configure.orig	2016-11-10 11:32:23.000000000 -0700
++++ configure	2016-11-13 09:06:21.654976000 -0700
+@@ -2977,10 +2977,10 @@
+ # curses probe
+ if test "$curses" != "no" ; then
+   if test "$mingw32" = "yes" ; then
+-    curses_inc_list="$($pkg_config --cflags ncurses 2>/dev/null):"
++    curses_inc_list="$($pkg_config --cflags-only-I ncurses 2>/dev/null):"
+     curses_lib_list="$($pkg_config --libs ncurses 2>/dev/null):-lpdcurses"
+   else
+-    curses_inc_list="$($pkg_config --cflags ncursesw 2>/dev/null):-I/usr/include/ncursesw:"
++    curses_inc_list="$($pkg_config --cflags-only-I ncursesw 2>/dev/null):-I/usr/include/ncursesw:"
+     curses_lib_list="$($pkg_config --libs ncursesw 2>/dev/null):-lncursesw:-lcursesw"
+   fi
+   curses_found=no
