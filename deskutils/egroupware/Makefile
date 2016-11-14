@@ -31,10 +31,9 @@ SUB_LIST=	EG_DIR=${EG_DIR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	EGroupware
 
-OPTIONS_DEFINE=	MYSQL POSTGRES OSSL ZIP GD LDAP MBSTRING
-OPTIONS_DEFAULT=MYSQL OSSL ZIP
+OPTIONS_DEFINE=	MYSQL POSTGRES SSL ZIP GD LDAP MBSTRING
+OPTIONS_DEFAULT=MYSQL SSL ZIP
 
-OSSL_DESC=	Enable SSL connection support
 MBSTRING_DESC=	Support multi-byte character sets
 POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
@@ -42,7 +41,7 @@ ZIP_DESC=	Install PHP zip extension
 MYSQL_USE=	PHP=mysqli,pdo_mysql
 POSTGRES_USE=	PHP=pgsql,pdo_pgsql
 MBSTRING_USE=	PHP=mbstring
-OSSL_USE=	PHP=openssl
+SSL_USE=	PHP=openssl
 ZIP_USE=	PHP=zip
 GD_USE=		PHP=gd
 LDAP_USE=	PHP=ldap

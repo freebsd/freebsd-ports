@@ -39,7 +39,6 @@ CARES_CONFIGURE_WITH=	c-ares=${LOCALBASE}
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-IPV6_DESC=	Support for analysis of flow records containing IPv6 addresses
 
 GNUTLS_CONFIGURE_WITH=	gnutls=${LOCALBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls

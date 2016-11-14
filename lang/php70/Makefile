@@ -50,7 +50,6 @@ EMBED_DESC=	Build embedded library
 DEBUG_DESC=	Enable debug
 PHPDBG_DESC=	Interactive PHP debugger
 DTRACE_DESC=	Enable DTrace support
-IPV6_DESC=	Enable ipv6 support
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 

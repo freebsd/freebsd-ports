@@ -31,7 +31,6 @@ ETCFILES=	rwhoisd.allow rwhoisd.auth_area rwhoisd.conf rwhoisd.deny \
 PLIST_SUB+=	ETCFILES="${ETCFILES}"
 
 OPTIONS_DEFINE=	IPV6 DOCS
-IPV6_DESC=	Enable IPV6 support
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 
 post-patch:

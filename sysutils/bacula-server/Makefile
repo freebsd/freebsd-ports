@@ -32,10 +32,9 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS ENABLE_IPV6
-OPTIONS_DEFAULT?=	NLS PGSQL ENABLE_IPV6
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
+OPTIONS_DEFAULT?=	NLS PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
-ENABLE_IPV6_DESC=	Enable IPv6 support
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -142,7 +141,7 @@ readline_CONFIGURE=	yes
 .endif
 
 # if IPv6 is not in the kernel, it generates many errors
-.if ! ${PORT_OPTIONS:MENABLE_IPV6}
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
