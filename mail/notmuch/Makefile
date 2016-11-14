@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.22.2
+PORTVERSION=	0.23.1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -18,6 +18,14 @@ LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libtalloc.so:devel/talloc
 
 BROKEN_powerpc64=	Does not build
+
+HAS_CONFIGURE=	yes
+USES=		gmake pkgconfig python:build
+USE_GNOME=	glib20
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+USE_LDCONFIG=	yes
+
+MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	BASH DOXYGEN EMACS MANPAGES RUBY ZSH
 EMACS_DESC=	Install EMACS lisp files (requires emacs)
@@ -36,16 +44,14 @@ MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 RUBY_USE=	RUBY=yes
 ZSH_CONFIGURE_WITH=	zsh-completion
 
-HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig python:build
-USE_GNOME=	glib20
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
-USE_LDCONFIG=	yes
+.include <bsd.port.pre.mk>
 
-MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
+.if ${OSVERSION} < 1000000
+CONFIGURE_ENV=	zlib_cflags="" zlib_ldflags="-lz" PKG_CONFIG_PATH=""
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.3.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.4.0
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
