@@ -1,5 +1,5 @@
---- src/include/xm_hashmap.h.orig	2015-01-12 23:04:54.000000000 +0100
-+++ src/include/xm_hashmap.h	2015-01-12 23:07:53.000000000 +0100
+--- src/include/xm_hashmap.h.orig	2011-10-11 20:18:17 UTC
++++ src/include/xm_hashmap.h
 @@ -13,13 +13,18 @@
  #include <hash_map>
  namespace HashNamespace=std;
