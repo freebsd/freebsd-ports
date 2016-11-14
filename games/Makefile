@@ -103,6 +103,7 @@
     SUBDIR += braincurses
     SUBDIR += brainparty
     SUBDIR += brainworkshop
+    SUBDIR += brickout
     SUBDIR += brickshooter
     SUBDIR += brikx
     SUBDIR += briquolo
