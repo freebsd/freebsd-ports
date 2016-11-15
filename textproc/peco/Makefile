@@ -20,7 +20,7 @@ GO_PKG_GITURL=	https://github.com/${PORTNAME}/${PORTNAME}
 GO_PKG_SUBDIR=	cmd/peco
 GO_PKGNAME=	${GO_PKG_GITURL:S|^https://||}/${GO_PKG_SUBDIR}
 PLIST_FILES=	bin/peco
-UPLOAD_FILE=	${_DISTDIR:S|/$||}/${DISTFILES:[1]}
+UPLOAD_FILE=	${_DISTDIR:S|/$||}/${DISTFILES:Mpeco-*.tar.gz}
 
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H:H:H}
