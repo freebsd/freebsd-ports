@@ -27,13 +27,12 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
 
-BROKEN_aarch64=		Fails to compile: cc: error: unable to execute command: Executable as does not exist
-
 OPTIONS_DEFINE=	DEBUG PLUGINS TEST
 OPTIONS_DEFAULT=PLUGINS
 OPTIONS_SUB=	yes
 
 DEBUG_BUILD_DEPENDS_OFF=	${DEBUG_BUILD_DEPENDS_OFF_${ARCH}}
+DEBUG_BUILD_DEPENDS_OFF_aarch64=as:devel/binutils
 DEBUG_BUILD_DEPENDS_OFF_amd64=	nasm:devel/nasm
 DEBUG_BUILD_DEPENDS_OFF_i386=	nasm:devel/nasm
 DEBUG_MAKE_ARGS=BUILDTYPE=Debug
