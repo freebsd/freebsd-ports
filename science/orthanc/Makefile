@@ -3,6 +3,7 @@
 
 PORTNAME=	orthanc
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
