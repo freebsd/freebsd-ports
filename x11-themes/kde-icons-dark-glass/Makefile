@@ -10,6 +10,8 @@ DISTNAME=	DarkGlass_Reworked
 
 COMMENT=	KDE Dark Glass iconset
 
+BROKEN=		does not fetch
+
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
