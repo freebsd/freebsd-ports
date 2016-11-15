@@ -187,22 +187,13 @@ index a962553..1f780f4 100644
  };
  
  enum stream_state {
-@@ -262,7 +309,7 @@ alsa_refill_stream(cubeb_stream * stm)
+@@ -260,10 +307,10 @@ alsa_refill_stream(cubeb_stream * stm)
  
    pthread_mutex_lock(&stm->mutex);
  
--  r = snd_pcm_poll_descriptors_revents(stm->pcm, stm->fds, stm->nfds, &revents);
-+  r = WRAP(snd_pcm_poll_descriptors_revents)(stm->pcm, stm->fds, stm->nfds, &revents);
-   if (r < 0 || revents != POLLOUT) {
-     /* This should be a stream error; it makes no sense for poll(2) to wake
-        for this stream and then have the stream report that it's not ready.
-@@ -271,10 +318,10 @@ alsa_refill_stream(cubeb_stream * stm)
-     return RUNNING;
-   }
- 
 -  avail = snd_pcm_avail_update(stm->pcm);
 +  avail = WRAP(snd_pcm_avail_update)(stm->pcm);
-   if (avail == -EPIPE) {
+   if (avail < 0) {
 -    snd_pcm_recover(stm->pcm, avail, 1);
 -    avail = snd_pcm_avail_update(stm->pcm);
 +    WRAP(snd_pcm_recover)(stm->pcm, avail, 1);
@@ -210,19 +201,8 @@ index a962553..1f780f4 100644
    }
  
    /* Failed to recover from an xrun, this stream must be broken. */
-@@ -293,8 +340,8 @@ alsa_refill_stream(cubeb_stream * stm)
-      available to write.  If avail is still zero here, the stream must be in
-      a funky state, so recover and try again. */
-   if (avail == 0) {
--    snd_pcm_recover(stm->pcm, -EPIPE, 1);
--    avail = snd_pcm_avail_update(stm->pcm);
-+    WRAP(snd_pcm_recover)(stm->pcm, -EPIPE, 1);
-+    avail = WRAP(snd_pcm_avail_update)(stm->pcm);
-     if (avail <= 0) {
-       pthread_mutex_unlock(&stm->mutex);
-       stm->state_callback(stm, stm->user_ptr, CUBEB_STATE_ERROR);
-@@ -302,7 +349,7 @@ alsa_refill_stream(cubeb_stream * stm)
-     }
+@@ -286,7 +333,7 @@ alsa_refill_stream(cubeb_stream * stm)
+     return RUNNING;
    }
  
 -  p = calloc(1, snd_pcm_frames_to_bytes(stm->pcm, avail));
@@ -230,13 +210,13 @@ index a962553..1f780f4 100644
    assert(p);
  
    pthread_mutex_unlock(&stm->mutex);
-@@ -327,10 +374,10 @@ alsa_refill_stream(cubeb_stream * stm)
+@@ -312,10 +359,10 @@ alsa_refill_stream(cubeb_stream * stm)
          b[i] *= stm->volume;
        }
      }
 -    wrote = snd_pcm_writei(stm->pcm, p, got);
 +    wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
-     if (wrote == -EPIPE) {
+     if (wrote < 0) {
 -      snd_pcm_recover(stm->pcm, wrote, 1);
 -      wrote = snd_pcm_writei(stm->pcm, p, got);
 +      WRAP(snd_pcm_recover)(stm->pcm, wrote, 1);
@@ -514,15 +494,15 @@ index a962553..1f780f4 100644
 +  r = WRAP(snd_pcm_nonblock)(stm->pcm, 1);
    assert(r == 0);
  
-   /* Ugly hack: the PA ALSA plugin allows buffer configurations that can't
-@@ -859,7 +965,7 @@ alsa_stream_init(cubeb * ctx, cubeb_stre
-     latency = latency < 500 ? 500 : latency;
+   latency_us = latency_frames * 1e6 / stm->params.rate;
+@@ -855,7 +961,7 @@ alsa_stream_init(cubeb * ctx, cubeb_stre
+     latency_us = latency_us < min_latency ? min_latency: latency_us;
    }
  
 -  r = snd_pcm_set_params(stm->pcm, format, SND_PCM_ACCESS_RW_INTERLEAVED,
 +  r = WRAP(snd_pcm_set_params)(stm->pcm, format, SND_PCM_ACCESS_RW_INTERLEAVED,
                           stm->params.channels, stm->params.rate, 1,
-                          latency * 1000);
+                          latency_us);
    if (r < 0) {
 @@ -867,15 +973,15 @@ alsa_stream_init(cubeb * ctx, cubeb_stre
      return CUBEB_ERROR_INVALID_FORMAT;
@@ -567,12 +547,12 @@ index a962553..1f780f4 100644
    if (r < 0) {
      return CUBEB_ERROR;
    }
-@@ -963,34 +1069,34 @@ alsa_get_preferred_sample_rate(cubeb * ctx, uint32_t * rate) {
+@@ -969,34 +1075,34 @@ alsa_get_preferred_sample_rate(cubeb * c
  
    /* get a pcm, disabling resampling, so we get a rate the
     * hardware/dmix/pulse/etc. supports. */
--  r = snd_pcm_open(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
-+  r = WRAP(snd_pcm_open)(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
+-  r = snd_pcm_open(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK, SND_PCM_NO_AUTO_RESAMPLE);
++  r = WRAP(snd_pcm_open)(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK, SND_PCM_NO_AUTO_RESAMPLE);
    if (r < 0) {
      return CUBEB_ERROR;
    }
@@ -1137,14 +1117,14 @@ diff --git media/libcubeb/update.sh media/libcubeb/update.sh
 index a96badd..2f9585e 100755
 --- media/libcubeb/update.sh
 +++ media/libcubeb/update.sh
-@@ -10,6 +10,7 @@ cp $1/src/cubeb_audiounit.c src
- cp $1/src/cubeb_pulse.c src
- cp $1/src/cubeb_sndio.c src
+@@ -16,6 +16,7 @@ cp $1/src/cubeb_audiounit.cpp src
+ cp $1/src/cubeb_osx_run_loop.h src
+ cp $1/src/cubeb_jack.cpp src
  cp $1/src/cubeb_opensl.c src
 +cp $1/src/cubeb_oss.c src
- cp $1/src/cubeb_audiotrack.c src
- cp $1/src/cubeb_wasapi.cpp src
- cp $1/src/cubeb_resampler.h src
+ cp $1/src/cubeb_panner.cpp src
+ cp $1/src/cubeb_panner.h src
+ cp $1/src/cubeb_pulse.c src
 diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index 991f03f..3d99eb5 100644
 --- media/webrtc/signaling/test/common.build
