@@ -12,16 +12,21 @@ DISTNAME=	gnuplot-py-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to gnuplot plotting program
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

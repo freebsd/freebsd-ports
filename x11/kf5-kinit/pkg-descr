@@ -1,0 +1,4 @@
+kdeinit is a process launcher somewhat similar to the famous init used for
+booting UNIX.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kinit/html/index.html

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		liblcf.so:games/liblcf
+		liblcf.so:games/liblcf \
+		libharfbuzz.so:print/harfbuzz \
+		libmpg123.so:audio/mpg123 \
+		libvorbis.so:audio/libvorbis \
+		libsndfile.so:audio/libsndfile \
+		libxmp.so:audio/libxmp \
+		libspeexdsp.so:audio/speexdsp
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
@@ -25,6 +31,7 @@ GH_PROJECT=	Player
 
 USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions
 USE_XORG=	pixman
 USE_SDL=	sdl2 mixer2
 

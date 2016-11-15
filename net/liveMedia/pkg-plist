@@ -76,7 +76,6 @@ include/liveMedia/DVVideoFileServerMediaSubsession.hh
 include/liveMedia/DVVideoRTPSink.hh
 include/liveMedia/DVVideoRTPSource.hh
 include/liveMedia/DVVideoStreamFramer.hh
-include/liveMedia/DarwinInjector.hh
 include/liveMedia/DeviceSource.hh
 include/liveMedia/DigestAuthentication.hh
 include/liveMedia/FileServerMediaSubsession.hh
@@ -85,6 +84,7 @@ include/liveMedia/FramedFileSource.hh
 include/liveMedia/FramedFilter.hh
 include/liveMedia/FramedSource.hh
 include/liveMedia/GSMAudioRTPSink.hh
+include/liveMedia/GenericMediaServer.hh
 include/liveMedia/H261VideoRTPSource.hh
 include/liveMedia/H263plusVideoFileServerMediaSubsession.hh
 include/liveMedia/H263plusVideoRTPSink.hh
@@ -133,6 +133,7 @@ include/liveMedia/MPEG1or2VideoStreamDiscreteFramer.hh
 include/liveMedia/MPEG1or2VideoStreamFramer.hh
 include/liveMedia/MPEG2IndexFromTransportStream.hh
 include/liveMedia/MPEG2TransportFileServerMediaSubsession.hh
+include/liveMedia/MPEG2TransportStreamAccumulator.hh
 include/liveMedia/MPEG2TransportStreamFramer.hh
 include/liveMedia/MPEG2TransportStreamFromESSource.hh
 include/liveMedia/MPEG2TransportStreamFromPESSource.hh
@@ -156,6 +157,7 @@ include/liveMedia/Media.hh
 include/liveMedia/MediaSession.hh
 include/liveMedia/MediaSink.hh
 include/liveMedia/MediaSource.hh
+include/liveMedia/MediaTranscodingTable.hh
 include/liveMedia/MultiFramedRTPSink.hh
 include/liveMedia/MultiFramedRTPSource.hh
 include/liveMedia/OggFile.hh

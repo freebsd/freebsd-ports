@@ -7,6 +7,7 @@ CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz 	\
 		speech_tools-${PORTVERSION}-release.tar.gz
+DIST_SUBDIR=	festival
 
 PATCHFILES=	src_modules_diphone_diphone.h.diff?id=b58a836:debian	\
 		src_modules_diphone_di_io.cc.diff?id=b58a836:debian	\
@@ -24,11 +25,14 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
+BROKEN_aarch64=		XXX
+BROKEN_armv6=		Fails to link: cc.mak: No such file or directory
+BROKEN_mips64=		Fails to link: cc.mak: No such file or directory
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
-
-DIST_SUBDIR=	festival
 
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
@@ -42,8 +46,6 @@ WRKSRC=		${WRKDIR}
 
 SPT_PATCHES=	include_ling__class_EST__FeatureFunctionPackage.h	\
 		include_unix_EST__socket__unix.h
-
-BROKEN_powerpc64=	Does not build
 
 do-build:
 .for d in speech_tools festival

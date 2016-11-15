@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.39
+PORTVERSION=	4.12.41
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -94,14 +94,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${PAX} -rw . ${STAGEDIR}${DATADIR}
 .for f in ${SCRIPTS}
-	${PRINTF} '#!/bin/sh\ncd ${DATADIR} && ./${f} "$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${f}
+	${LN} -s ../${DATADIR_REL}/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 post-install:
-.for f in ${SCRIPTS}
-	@${ECHO} "@(,,555) bin/${f}" >> ${TMPPLIST}
-.endfor
-	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
+	@${FIND} ${STAGEDIR} ! -type d | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; /Gemfile.lock/s|^|@(,,0666) |' >> ${TMPPLIST}
 	@${FIND} -ds ${STAGEDIR}${DATADIR} -type d -empty | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dir ,' >> ${TMPPLIST}

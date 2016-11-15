@@ -1,7 +1,7 @@
 Index: static.el
 ===================================================================
---- static.el	(revision 2)
-+++ static.el	(working copy)
+--- static.el.orig	2005-07-06 02:08:53 UTC
++++ static.el
 @@ -29,38 +29,38 @@
    "Like `if', but evaluate COND at compile time."
    (if (eval cond)

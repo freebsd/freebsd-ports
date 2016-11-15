@@ -36,7 +36,7 @@ load_rc_config $name
 pidfile=/var/run/vault.pid
 procname="%%PREFIX%%/bin/vault"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/bin/env ${vault_env} ${procname} server -config=${vault_config}"
+command_args="-f -t ${name} -p ${pidfile} /usr/bin/env ${vault_env} ${procname} server -config=${vault_config}"
 
 start_precmd=vault_startprecmd
 

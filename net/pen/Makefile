@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pen
-PORTVERSION=	0.33.2
+PORTVERSION=	0.34.0
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Load balancer for UDP and TCP based protocols
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 USE_RC_SUBR=	pen
 CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} --with-geoip \
 		--with-ssl=${OPENSSLBASE}

@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ libraries with a network/internet focus (full version)
 
 LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	poco-[0-9]*
 
@@ -40,18 +41,17 @@ MYSQL_CONFIGURE_OFF=	--omit=Data/MySQL
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--omit=Data/SQLite
 
-.include <bsd.port.options.mk>
+post-extract:
+	@${RM} -f ${WRKSRC}/Foundation/include/Poco/._Version.h
 
-post-patch:
-.if empty(PORT_OPTIONS:MTEST)
+post-patch-TEST-off:
 	@${REINPLACE_CMD} -e '/^all:/s/tests//' ${WRKSRC}/Makefile
-.endif
-.if empty(PORT_OPTIONS:MSAMPLES)
+
+post-patch-SAMPLES-off:
 	@${REINPLACE_CMD} -e '/^all:/s/samples//' ${WRKSRC}/Makefile
-.endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*d
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*d.so.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*d
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*d.so.*
 
 .include <bsd.port.mk>

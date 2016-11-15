@@ -1,6 +1,6 @@
---- about_dialog.c.orig	Wed Jun 23 11:37:15 2004
-+++ about_dialog.c	Wed Jun 23 11:38:24 2004
-@@ -37,21 +37,22 @@
+--- about_dialog.c.orig	2004-02-07 00:19:34 UTC
++++ about_dialog.c
+@@ -37,21 +37,22 @@ Foundation, 59 Temple Place - Suite 330,
  
  void show_about_dialog(void) {
  	GtkWidget* about_dlg = gtk_dialog_new();

@@ -12,4 +12,6 @@ OPTIONS_DEFAULT=	GNUTLS MODULES SOURCES XML
 
 MASTERDIR=		${.CURDIR}/../emacs
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include "${MASTERDIR}/Makefile"

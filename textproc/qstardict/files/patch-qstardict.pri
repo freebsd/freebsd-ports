@@ -1,6 +1,6 @@
---- ./qstardict.pri.orig	2009-02-03 21:36:16.000000000 +0300
-+++ ./qstardict.pri	2009-02-05 10:24:18.000000000 +0300
-@@ -44,7 +44,6 @@
+--- qstardict.pri.orig	2016-11-07 11:15:01 UTC
++++ qstardict.pri
+@@ -49,7 +49,6 @@ win32 {
  }
  
  unix:DEFINES += HAVE_MMAP

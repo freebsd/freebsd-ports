@@ -11,6 +11,14 @@
      check_cc $($cflags_filter $flags) || return
      flags=$($ldflags_filter $flags)
      libs=$($ldflags_filter $libs)
+@@ -4436,6 +4436,7 @@ elif enabled llvm_gcc; then
+     check_cflags -mllvm -stack-alignment=16
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
++    check_cflags -mstack-alignment=16
+     check_cflags -Qunused-arguments
+     check_cflags -Werror=implicit-function-declaration
+     check_cflags -Werror=missing-prototypes
 @@ -4644,7 +4644,7 @@ DOCDIR=\$(DESTDIR)$docdir
  MANDIR=\$(DESTDIR)$mandir
  SRC_PATH=$source_path

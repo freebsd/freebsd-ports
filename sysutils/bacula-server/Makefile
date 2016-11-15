@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.4.4
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -32,10 +32,9 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS ENABLE_IPV6
-OPTIONS_DEFAULT?=	NLS PGSQL ENABLE_IPV6
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
+OPTIONS_DEFAULT?=	NLS PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
-ENABLE_IPV6_DESC=	Enable IPv6 support
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -142,7 +141,7 @@ readline_CONFIGURE=	yes
 .endif
 
 # if IPv6 is not in the kernel, it generates many errors
-.if ! ${PORT_OPTIONS:MENABLE_IPV6}
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
@@ -188,10 +187,13 @@ post-patch:
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/sample-query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
-	${MV} ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
+	# bacula-dir attempts to install query.sql as bpart of bacula-server, but that should only installed by bacula-client.
+	${RM} ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql
+
 	#the following are installed by the -CLIENT port, and I (ler@lerctr.org)
 	#don't know how to remove them from being built for the -SERVER port.
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/bpipe-fd.so

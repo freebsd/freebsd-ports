@@ -19,6 +19,8 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
+BROKEN_aarch64=	fails to build: invokes x86 asm
+
 USES=		alias cmake compiler:c++11-lib dos2unix gettext \
 		gmake jpeg openal:al pkgconfig tar:xz
 USE_GL=		gl glu

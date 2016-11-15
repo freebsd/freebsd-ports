@@ -1,5 +1,5 @@
---- ./src/prefspaneldialog.h.orig	2008-04-06 13:47:45.000000000 +0400
-+++ ./src/prefspaneldialog.h	2008-04-07 01:12:12.000000000 +0400
+--- src/prefspaneldialog.h.orig	2008-04-07 20:45:09 UTC
++++ src/prefspaneldialog.h
 @@ -12,7 +12,7 @@
  #ifndef PREFSPANELDIALOG_H
  #define PREFSPANELDIALOG_H

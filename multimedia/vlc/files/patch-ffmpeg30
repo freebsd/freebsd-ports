@@ -1,0 +1,154 @@
+Some changes are identical to upstream:
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=7db8b37716c0
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=d185cfaad535
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=5f91febe28de
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=3d2850fe7284
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=dbad0d2747e7
+
+--- configure.orig	2016-05-31 16:56:33 UTC
++++ configure
+@@ -36544,7 +36544,6 @@ $as_echo "yes" >&6; }
+   :
+ else
+ 
+-      as_fn_error $? "libavutil versions 55 and later are not supported." "$LINENO" 5
+ 
+ fi
+ 
+@@ -36836,7 +36835,6 @@ if test "${have_vaapi}" = "yes" -a "${ha
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+ 
+-        as_fn_error $? "VA API requires FFmpeg libavcodec < 57.10 or libav." "$LINENO" 5
+ 
+ fi
+       ;;
+@@ -45112,7 +45110,6 @@ if test "${have_vdpau}" = "yes" -a "${ha
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+ 
+-        as_fn_error $? "VDPAU requires FFmpeg libavcodec < 57.10 or libav." "$LINENO" 5
+ 
+ fi
+       ;;
+--- modules/codec/avcodec/audio.c.orig	2016-01-18 20:49:57 UTC
++++ modules/codec/avcodec/audio.c
+@@ -39,7 +39,7 @@
+ #include <libavcodec/avcodec.h>
+ #include <libavutil/mem.h>
+ 
+-#include <libavutil/audioconvert.h>
++#include <libavutil/channel_layout.h>
+ 
+ #include "avcodec.h"
+ 
+--- modules/codec/avcodec/avcommon_compat.h.orig	2015-02-02 19:42:29 UTC
++++ modules/codec/avcodec/avcommon_compat.h
+@@ -506,6 +506,11 @@ enum {
+ 
+ #endif /* HAVE_LIBAVUTIL_AVUTIL_H */
+ 
++/* libavutil/pixfmt.h */
++#ifndef PixelFormat
++# define PixelFormat AVPixelFormat
++#endif
++
+ #ifdef HAVE_LIBAVFORMAT_AVFORMAT_H
+ # include <libavformat/avformat.h>
+ 
+--- modules/codec/avcodec/encoder.c.orig	2015-10-21 17:48:45 UTC
++++ modules/codec/avcodec/encoder.c
+@@ -41,7 +41,7 @@
+ #include <vlc_cpu.h>
+ 
+ #include <libavcodec/avcodec.h>
+-#include <libavutil/audioconvert.h>
++#include <libavutil/channel_layout.h>
+ 
+ #include "avcodec.h"
+ #include "avcommon.h"
+@@ -311,7 +311,7 @@ int OpenEncoder( vlc_object_t *p_this )
+     else if( !GetFfmpegCodec( p_enc->fmt_out.i_codec, &i_cat, &i_codec_id,
+                              &psz_namecodec ) )
+     {
+-        if( FindFfmpegChroma( p_enc->fmt_out.i_codec ) == PIX_FMT_NONE )
++        if( FindFfmpegChroma( p_enc->fmt_out.i_codec ) == AV_PIX_FMT_NONE )
+             return VLC_EGENERIC; /* handed chroma output */
+ 
+         i_cat      = VIDEO_ES;
+@@ -1017,7 +1017,7 @@ errmsg:
+         }
+     }
+ 
+-    p_sys->frame = avcodec_alloc_frame();
++    p_sys->frame = av_frame_alloc();
+     if( !p_sys->frame )
+     {
+         goto error;
+@@ -1088,7 +1088,7 @@ static block_t *EncodeVideo( encoder_t *
+     AVFrame *frame = NULL;
+     if( likely(p_pict) ) {
+         frame = p_sys->frame;
+-        avcodec_get_frame_defaults( frame );
++        av_frame_unref( frame );
+         for( i_plane = 0; i_plane < p_pict->i_planes; i_plane++ )
+         {
+             p_sys->frame->data[i_plane] = p_pict->p[i_plane].p_pixels;
+@@ -1329,7 +1329,7 @@ static block_t *handle_delay_buffer( enc
+     //How much we need to copy from new packet
+     const int leftover = leftover_samples * p_sys->p_context->channels * p_sys->i_sample_bytes;
+ 
+-    avcodec_get_frame_defaults( p_sys->frame );
++    av_frame_unref( p_sys->frame );
+     p_sys->frame->format     = p_sys->p_context->sample_fmt;
+     p_sys->frame->nb_samples = leftover_samples + p_sys->i_samples_delay;
+ 
+@@ -1451,7 +1451,7 @@ static block_t *EncodeAudio( encoder_t *
+     while( ( p_aout_buf->i_nb_samples >= p_sys->i_frame_size ) ||
+            ( p_sys->b_variable && p_aout_buf->i_nb_samples ) )
+     {
+-        avcodec_get_frame_defaults( p_sys->frame );
++        av_frame_unref( p_sys->frame );
+         if( p_sys->b_variable )
+             p_sys->frame->nb_samples = p_aout_buf->i_nb_samples;
+         else
+--- modules/codec/avcodec/vaapi.c.orig	2015-02-02 19:42:29 UTC
++++ modules/codec/avcodec/vaapi.c
+@@ -595,7 +595,7 @@ static int Create( vlc_va_t *p_va, AVCod
+         return err;
+ 
+     /* Only VLD supported */
+-    p_va->pix_fmt = PIX_FMT_VAAPI_VLD;
++    p_va->pix_fmt = AV_PIX_FMT_VAAPI_VLD;
+     p_va->setup = Setup;
+     p_va->get = Get;
+     p_va->release = Release;
+--- modules/codec/avcodec/video.c.orig	2016-04-07 19:36:15 UTC
++++ modules/codec/avcodec/video.c
+@@ -234,7 +234,7 @@ int InitVideoDec( decoder_t *p_dec, AVCo
+     p_sys->p_codec = p_codec;
+     p_sys->i_codec_id = i_codec_id;
+     p_sys->psz_namecodec = psz_namecodec;
+-    p_sys->p_ff_pic = avcodec_alloc_frame();
++    p_sys->p_ff_pic = av_frame_alloc();
+     p_sys->b_delayed_open = true;
+     p_sys->p_va = NULL;
+     vlc_sem_init( &p_sys->sem_mt, 0 );
+@@ -446,7 +446,7 @@ int InitVideoDec( decoder_t *p_dec, AVCo
+     if( ffmpeg_OpenCodec( p_dec ) < 0 )
+     {
+         msg_Err( p_dec, "cannot open codec (%s)", p_sys->psz_namecodec );
+-        avcodec_free_frame( &p_sys->p_ff_pic );
++        av_frame_free( &p_sys->p_ff_pic );
+         vlc_sem_destroy( &p_sys->sem_mt );
+         free( p_sys );
+         return VLC_EGENERIC;
+@@ -826,7 +826,7 @@ void EndVideoDec( decoder_t *p_dec )
+     wait_mt( p_sys );
+ 
+     if( p_sys->p_ff_pic )
+-        avcodec_free_frame( &p_sys->p_ff_pic );
++        av_frame_free( &p_sys->p_ff_pic );
+ 
+     if( p_sys->p_va )
+         vlc_va_Delete( p_sys->p_va );

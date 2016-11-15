@@ -11,28 +11,37 @@ PKGNAMESUFFIX=	-com
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
+LICENSE=	BSD2CLAUSE
+
 CONFLICTS_INSTALL=	conserver-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-pam --with-libwrap --with-openssl
+
 USE_OPENSSL=	yes
 USE_RC_SUBR=	conserver
 
-OPTIONS_DEFINE=	UDS GSSAPI GSSAPIONLY STRIPREALM
-UDS_DESC=	Use Unix domain sockets for client/server
-STRIPREALM_DESC=Strip @REALM when using GSSAPI
+OPTIONS_DEFINE=	FREEIPMI GSSAPI GSSAPIONLY STRIPREALM UDS
+FREEIPMI_DESC=	Compile in FreeIPMI support
 GSSAPIONLY_DESC=Never prompt for a password when using GSSAPI
-STRIPREALM_IMPLIES=	GSSAPI
 GSSAPIONLY_IMPLIES=	GSSAPI
+STRIPREALM_DESC=Strip @REALM when using GSSAPI
+STRIPREALM_IMPLIES=	GSSAPI
+UDS_DESC=	Use Unix domain sockets for client/server
 
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
-UDS_CONFIGURE_WITH=	uds
+FREEIPMI_CONFIGURE_ON=	--with-freeipmi=${LOCALBASE}
+FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
 GSSAPI_CONFIGURE_WITH=	gssapi
-STRIPREALM_CONFIGURE_WITH=	striprealm
 GSSAPIONLY_EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
+STRIPREALM_CONFIGURE_WITH=	striprealm
+UDS_CONFIGURE_WITH=	uds
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,impi,ipmi,' ${WRKSRC}/conserver.cf/conserver.cf.man
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/conserver-convert

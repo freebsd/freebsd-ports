@@ -8,6 +8,9 @@ MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags charset converter
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		iconv pkgconfig tar:bzip2
@@ -17,8 +20,11 @@ CONFIGURE_ENV=	ICONV_CFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_FILES=	bin/mp3unicode \
 		man/man1/mp3unicode.1.gz
-PORTDOCS=	COPYING README
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/dist_doc_DATA/ s|COPYING||' ${WRKSRC}/Makefile.*
 
 .include <bsd.port.mk>

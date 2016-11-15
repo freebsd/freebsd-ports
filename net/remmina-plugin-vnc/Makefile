@@ -1,7 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	6
 PKGNAMESUFFIX=	-vnc
 
 COMMENT=	Remmina plugin for VNC protocol
@@ -11,6 +10,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libvncserver.so:net/libvncserver
 
 USES=		jpeg
+USE_GNOME+=	cairo
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 

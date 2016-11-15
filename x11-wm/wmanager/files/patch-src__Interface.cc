@@ -1,5 +1,5 @@
---- src/Interface.cc.orig	Wed Nov 17 03:25:42 1999
-+++ src/Interface.cc	Sun Nov  2 02:38:20 2003
+--- src/Interface.cc.orig	1999-11-16 18:25:42 UTC
++++ src/Interface.cc
 @@ -23,6 +23,7 @@
  
  // SYSTEM INCLUDES //////////////////////////////////
@@ -16,7 +16,7 @@
  
  // logo image
  static unsigned char *image_mt[] = {
-@@ -130,10 +132,12 @@
+@@ -130,10 +132,12 @@ Interface::Interface()
  Interface::~Interface()
  {
    delete _WMWindow;

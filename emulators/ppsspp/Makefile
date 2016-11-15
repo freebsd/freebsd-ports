@@ -27,6 +27,11 @@ GH_TUPLE?=	hrydgard:${PORTNAME}-lang:cdf4a8d:lang/lang \
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
+# [QT4] FakeJit.cpp:42:37: error: no matching constructor for initialization of 'JitBlockCache'
+# [QT5] c++: error: the clang compiler does not support '-march=armv7-a'
+# [SDL] SplineCommon.cpp:639:17: error: use of undeclared identifier 'AllocateAlignedMemory'
+BROKEN_aarch64=		https://github.com/hrydgard/ppsspp/issues/9032
+
 USES=		compiler:c++11-lib localbase:ldflags pkgconfig
 EXCLUDE=	glew snappy libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}

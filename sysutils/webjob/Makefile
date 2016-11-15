@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	klm@uidzero.org
 COMMENT=	Download and execute a program over HTTP/HTTPS
 
+BROKEN_aarch64=	fails to build: aarch64 is not currently supported
+BROKEN_mips64=	fails to build: mips64 is not currently supported
+
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	tools/xshar/xshar
 GNU_CONFIGURE=	yes

@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
+BROKEN_aarch64=	Fails to build: The collector has not been ported to this machine/OS combination
+
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool

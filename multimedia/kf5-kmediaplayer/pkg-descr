@@ -1,0 +1,4 @@
+KMediaPlayer builds on the KParts framework to provide a common interface for
+KParts that can play media files.
+
+WWW: https://api.kde.org/frameworks/kmediaplayer/html/index.html

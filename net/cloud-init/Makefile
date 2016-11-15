@@ -6,7 +6,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	harm@weites.com
+MAINTAINER=	bertjw@regeer.org
 COMMENT=	Init scripts for use on cloud images
 
 LICENSE=	GPLv3

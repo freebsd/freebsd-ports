@@ -464,6 +464,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-gen_state_machine
     SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
     SUBDIR += elixir-inflex
@@ -540,7 +541,6 @@
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
-    SUBDIR += extra-cmake-modules
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
@@ -1144,6 +1144,34 @@
     SUBDIR += kdevelop-php
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
+    SUBDIR += kf5-extra-cmake-modules
+    SUBDIR += kf5-kapidox
+    SUBDIR += kf5-kauth
+    SUBDIR += kf5-kbookmarks
+    SUBDIR += kf5-kcmutils
+    SUBDIR += kf5-kconfig
+    SUBDIR += kf5-kcoreaddons
+    SUBDIR += kf5-kcrash
+    SUBDIR += kf5-kdbusaddons
+    SUBDIR += kf5-kdeclarative
+    SUBDIR += kf5-kdoctools
+    SUBDIR += kf5-kfilemetadata
+    SUBDIR += kf5-ki18n
+    SUBDIR += kf5-kidletime
+    SUBDIR += kf5-kio
+    SUBDIR += kf5-kitemmodels
+    SUBDIR += kf5-knewstuff
+    SUBDIR += kf5-knotifications
+    SUBDIR += kf5-knotifyconfig
+    SUBDIR += kf5-kpackage
+    SUBDIR += kf5-kparts
+    SUBDIR += kf5-kpeople
+    SUBDIR += kf5-kpty
+    SUBDIR += kf5-kservice
+    SUBDIR += kf5-ktexteditor
+    SUBDIR += kf5-kunitconversion
+    SUBDIR += kf5-solid
+    SUBDIR += kf5-threadweaver
     SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kore
@@ -1203,7 +1231,6 @@
     SUBDIR += libcxxrt
     SUBDIR += libdaemon
     SUBDIR += libdap
-    SUBDIR += libdasm
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
@@ -1555,6 +1582,7 @@
     SUBDIR += mercator
     SUBDIR += mercurial
     SUBDIR += mercurialeclipse
+    SUBDIR += meson
     SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mimir
@@ -1610,6 +1638,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
+    SUBDIR += nexus2-oss
     SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
@@ -3318,6 +3347,7 @@
     SUBDIR += p5-Test-Mock-Guard
     SUBDIR += p5-Test-Mock-LWP
     SUBDIR += p5-Test-Mock-LWP-Dispatch
+    SUBDIR += p5-Test-MockDateTime
     SUBDIR += p5-Test-MockModule
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-MockRandom
@@ -4027,6 +4057,7 @@
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
+    SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
     SUBDIR += py-bandit
@@ -4083,6 +4114,7 @@
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
+    SUBDIR += py-constantly
     SUBDIR += py-construct
     SUBDIR += py-contextlib2
     SUBDIR += py-country
@@ -4206,6 +4238,7 @@
     SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
     SUBDIR += py-ice
+    SUBDIR += py-incremental
     SUBDIR += py-inflect
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
@@ -4389,10 +4422,10 @@
     SUBDIR += py-pycadf
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
+    SUBDIR += py-pycapsicum
     SUBDIR += py-pycerberus
     SUBDIR += py-pycmd
     SUBDIR += py-pycparser
-    SUBDIR += py-pydasm
     SUBDIR += py-pydenticon
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
@@ -4661,6 +4694,7 @@
     SUBDIR += py-z3c.formwidget.query
     SUBDIR += py-z3c.zcmlhook
     SUBDIR += py-zExceptions
+    SUBDIR += py-zkpython
     SUBDIR += py-zLOG
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
@@ -5310,6 +5344,7 @@
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
+    SUBDIR += rubygem-sprockets-es6
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
     SUBDIR += rubygem-sprockets-sass

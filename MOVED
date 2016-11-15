@@ -6022,7 +6022,6 @@ multimedia/xmms-weasel||2014-04-28|Has expired: Abandonware, please consider usi
 audio/xmms-sexyspc||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/libmusicbrainz4|audio/libmusicbrainz5|2014-04-28|Has expired: Please use audio/libmusicbrainz5 instead
 cad/kicad-library||2014-05-02|kicad-library is no more distributed separately
-science/hdf5-18|science/hdf5|2014-05-03|Use science/hdf5 instead
 science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
@@ -8795,3 +8794,15 @@ graphics/linux-c7-libGLU|graphics/linux-c7-dri|2016-11-04|Unused
 multimedia/libmovtar||2016-11-05|Not used anymore, abandonware
 devel/p5-Test-Exception-LessClever||2016-11-06|Deprecated by upstream
 www/py-django-piston||2016-11-06|Has expired: Abandoned upstream. Doesn't work with django>=1.6
+net/remmina-plugin-i18n||2016-11-08|Plugin translations removed upstream in GH commit 2dd0526
+net/p5-Net-Ping||2016-11-08|Has expired: This or newer version included in all supported versions of perl
+ftp/curl-hiphop||2016-11-08|Has expired: useful only for removed hiphop-php
+textproc/rubygem-string-scrub||2016-11-08|Has expired: needed only for EOL versions of Ruby
+cad/py-gdsii|cad/python-gdsii|2016-11-10|Renamed
+textproc/erlang-p1xml|textproc/erlang-fast_xml|2016-11-08|Project was renamed
+devel/py-pydasm|devel/py-capstone|2016-11-11|Has expired: No more upstream and known bugs, use devel/py-capstone instead
+devel/libdasm|devel/capstone3|2016-11-11|Has expired: No more upstream and known bugs, use devel/capstone3 instead
+security/erlang-p1tls|security/erlang-fast_tls|2016-11-11|Project was renamed
+mail/trojita-qt4|mail/trojita|2016-11-13|Qt4 support was dropped, use mail/trojita instead
+devel/extra-cmake-modules|devel/kf5-extra-cmake-modules|2016-11-14|Renamed to match other KF5 port
+net/vnc||2016-11-14|Has expired: Distfiles no longer available.

@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2015-05-06 11:12:04 UTC
++++ Makefile.in
+@@ -483,11 +483,11 @@ XGETTEXT_OPTIONS = \
+ GMOFILES = $(POFILES:.po=.gmo)
+ themedir = $(DESTDIR)$(datadir)/icons/hicolor
+ context = apps
+-sizes = 16 22 24 32 48
++sizes = 16 22 32 48
+ desktopdir = $(datadir)/applications
+ INSTALL_DATA_HOOKS = install-icons install-desktop
+ UNINSTALL_DATA_HOOKS = uninstall-icons uninstall-desktop
+-desktop_DATA = icons/gen-dot-desktop.scm
++desktop_DATA = 
+ ACLOCAL_AMFLAGS = -I m4
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+@@ -1784,9 +1784,9 @@ uninstall-icons:
+ 	gtk-update-icon-cache --ignore-theme-index $(themedir)
+ 
+ install-desktop:
+-	$(MKDIR_P) $(desktopdir)
+-	chmod u+w $(desktopdir)
+-	$(INSTALL_DATA) $(top_builddir)/icons/gnubik.desktop $(desktopdir)/gnubik.desktop
++	$(MKDIR_P) $(DESTDIR)$(desktopdir)
++	chmod u+w $(DESTDIR)$(desktopdir)
++	$(INSTALL_DATA) $(top_builddir)/icons/gnubik.desktop $(DESTDIR)$(desktopdir)/gnubik.desktop
+ 
+ uninstall-desktop:
+ 	$(RM) $(desktopdir)/gnubik.desktop

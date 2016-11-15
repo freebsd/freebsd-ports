@@ -14,6 +14,9 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libmpfr.so:math/mpfr
 
+BROKEN_aarch64=	Fails to build: error Boost.Numeric.Interval: Please specify rounding control mechanism
+BROKEN_mips64=	Fails to build: error Boost.Numeric.Interval: Please specify rounding control mechanism
+
 USES=		bison gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes

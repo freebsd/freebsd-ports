@@ -3208,6 +3208,7 @@
 %%WWWDIR%%/apps/dav/lib/Files/Sharing/PublicLinkCheckPlugin.php
 %%WWWDIR%%/apps/dav/lib/HookManager.php
 %%WWWDIR%%/apps/dav/lib/Migration/Classification.php
+%%WWWDIR%%/apps/dav/lib/Migration/FixBirthdayCalendarComponent.php
 %%WWWDIR%%/apps/dav/lib/Migration/GenerateBirthdays.php
 %%WWWDIR%%/apps/dav/lib/RootCollection.php
 %%WWWDIR%%/apps/dav/lib/Server.php
@@ -8026,6 +8027,7 @@
 %%WWWDIR%%/apps/user_ldap/lib/Command/ShowConfig.php
 %%WWWDIR%%/apps/user_ldap/lib/Command/ShowRemnants.php
 %%WWWDIR%%/apps/user_ldap/lib/Command/TestConfig.php
+%%WWWDIR%%/apps/user_ldap/lib/Command/UpdateGroup.php
 %%WWWDIR%%/apps/user_ldap/lib/Configuration.php
 %%WWWDIR%%/apps/user_ldap/lib/Connection.php
 %%WWWDIR%%/apps/user_ldap/lib/FilesystemHelper.php
@@ -8297,6 +8299,7 @@
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
+%%WWWDIR%%/core/doc/admin/_images/trashbin-1.png
 %%WWWDIR%%/core/doc/admin/_images/upgrade-1.png
 %%WWWDIR%%/core/doc/admin/_images/upgrade-2.png
 %%WWWDIR%%/core/doc/admin/_images/user_mounts.png
@@ -8341,6 +8344,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/files_locking_transactional.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/previews_configuration.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration_files/trashbin_options.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_mimetypes/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_mimetypes/mimetype_aliases.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_mimetypes/mimetype_mapping.txt
@@ -8413,7 +8417,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/linux_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/nginx_examples.txt
-%%WWWDIR%%/core/doc/admin/_sources/installation/nginx_owncloud_9x.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/php_54_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/php_55_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/selinux_configuration.txt
@@ -8540,6 +8543,7 @@
 %%WWWDIR%%/core/doc/admin/configuration_files/files_locking_transactional.html
 %%WWWDIR%%/core/doc/admin/configuration_files/index.html
 %%WWWDIR%%/core/doc/admin/configuration_files/previews_configuration.html
+%%WWWDIR%%/core/doc/admin/configuration_files/trashbin_options.html
 %%WWWDIR%%/core/doc/admin/configuration_mimetypes/index.html
 %%WWWDIR%%/core/doc/admin/configuration_mimetypes/mimetype_aliases.html
 %%WWWDIR%%/core/doc/admin/configuration_mimetypes/mimetype_mapping.html
@@ -8613,7 +8617,6 @@
 %%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/installation/linux_installation.html
 %%WWWDIR%%/core/doc/admin/installation/nginx_examples.html
-%%WWWDIR%%/core/doc/admin/installation/nginx_owncloud_9x.html
 %%WWWDIR%%/core/doc/admin/installation/php_54_installation.html
 %%WWWDIR%%/core/doc/admin/installation/php_55_installation.html
 %%WWWDIR%%/core/doc/admin/installation/selinux_configuration.html
@@ -10666,6 +10669,7 @@
 %%WWWDIR%%/updater/src/Formatter/HtmlOutputFormatter.php
 %%WWWDIR%%/updater/src/Http/Request.php
 %%WWWDIR%%/updater/src/Resources/views/base.php
+%%WWWDIR%%/updater/src/Resources/views/partials/error.php
 %%WWWDIR%%/updater/src/Resources/views/partials/inner.php
 %%WWWDIR%%/updater/src/Resources/views/partials/login.php
 %%WWWDIR%%/updater/src/Tests/Controller/DownloadControllerTest.php

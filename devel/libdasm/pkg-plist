@@ -1,4 +1,0 @@
-include/libdasm.h
-lib/libdasm.a
-lib/libdasm.so
-lib/libdasm.so.1

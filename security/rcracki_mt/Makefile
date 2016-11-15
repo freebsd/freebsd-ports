@@ -11,7 +11,7 @@ COMMENT=	Rainbow table based crack tool
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=	arm sparc64
+NOT_FOR_ARCHS=	aarch64 armv6 mips mips64 sparc64
 NOT_FOR_ARCHS_REASON=	cannot detect endianness
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

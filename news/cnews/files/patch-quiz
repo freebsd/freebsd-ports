@@ -1,0 +1,19 @@
+--- quiz.orig	1995-04-28 02:50:34.000000000 +0200
++++ quiz	2016-09-05 23:40:26.915845000 +0200
+@@ -268,11 +268,11 @@
+ esac
+ 
+ newfakehdrs=
+-#if test " `$notinlist "$newfake" ftime.o`" != " yes"
+-#then
+-#	newfakehdrs="$newfakehdrs sys/timeb.h"
+-#fi
+-newfakehdrs="$newfakehdrs sys/timeb.h"
++#if test " `$notinlist "$newfake" ftime.o`" != " yes"
++#then
++#	newfakehdrs="$newfakehdrs sys/timeb.h"
++#fi
++#newfakehdrs="$newfakehdrs sys/timeb.h"
+ if test " `$notinlist "$newfake" gettimeofday.o`" != " yes"
+ then
+ 	newfakehdrs="$newfakehdrs sys/time.h"

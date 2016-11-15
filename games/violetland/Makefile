@@ -2,43 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	violetland
-PORTVERSION=	0.4.3
-PORTREVISION=	6
+PORTVERSION=	0.5
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
 
+LICENSE=	GPLv3 CC-BY-SA-3.0
+LICENSE_COMB=	multi
+#LICENSE_FILE_GPLv3=		"${WRKSRC}/LICENSE (code)" # framework doesn't handle these properly
+#LICENSE_FILE_CC-BY-SA-3.0=	"${WRKSRC}/LICENSE (content)"
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ooxi
+GH_TUPLE=	jarro2783:CMake-Gettext:6ee6405:cmakegettext/lib/CMake-Gettext
 
-USES=		cmake dos2unix gettext
+USES=		cmake gettext
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
-DOS2UNIX_FILES=	CMakeLists.txt src/system/utility/FileUtility.cpp
-CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
+CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}" \
+		-DLOCALE_INSTALL_DIR="${PREFIX}/share/locale"
 
-PLIST_FILES=	bin/violetland \
-		share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/set.libList/ s|)| ${LOCALBASE}/lib/libintl.so&|' \
-		${WRKSRC}/CMakeLists.txt
-
 post-install:
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/icon-light.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG README_EN.TXT README_RU.TXT \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG.md README.md README_RU.TXT \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

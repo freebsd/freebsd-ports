@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}iniparse>0:devel/py-iniparse \
 		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber
 
-ONLY_FOR_ARCHS=		amd64 arm64 armv6 i386
+ONLY_FOR_ARCHS=		amd64 aarch64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	linux is not available for ${ARCH}
 
 USES=		cpe gettext gmake python shebangfix

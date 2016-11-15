@@ -10,6 +10,9 @@ MASTER_SITES=	http://gailly.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Go (weiqi, baduk) client for the Internet Go Server
 
+LICENSE=	GPLv2+ NONE # some files have unclear license
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
@@ -21,7 +24,7 @@ CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e "s,#ifndef _POSIX_SOURCE,#if 0," \
+	@${REINPLACE_CMD} -e "s,#ifndef _POSIX_SOURCE,#if 0," \
 		${WRKSRC}/connect.c ${WRKSRC}/relay.c ${WRKSRC}/relog.c \
 		${WRKSRC}/rport.c
 
@@ -32,8 +35,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/board.xpm ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pagoda.xpm ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

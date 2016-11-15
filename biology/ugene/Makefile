@@ -18,6 +18,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:shells/bash
 
+BROKEN_aarch64=	Fails to build: invokes x86 asm
+
 USES=		desktop-file-utils execinfo qmake
 USE_GL=		glu
 USE_QT5=	buildtools_build linguisttools_build scripttools_build \

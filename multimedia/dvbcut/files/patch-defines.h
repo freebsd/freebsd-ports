@@ -1,4 +1,4 @@
---- src/defines.h.orig	2013-06-16 09:57:51 UTC
+--- src/defines.h.orig	2016-06-23 12:34:35 UTC
 +++ src/defines.h
 @@ -42,6 +42,11 @@ static inline int videostream(int s=0)
  #endif

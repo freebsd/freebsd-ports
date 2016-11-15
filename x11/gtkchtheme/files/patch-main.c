@@ -1,6 +1,6 @@
---- main.c.orig	Wed Jun 23 11:39:35 2004
-+++ main.c	Wed Jun 23 11:54:03 2004
-@@ -75,15 +75,18 @@
+--- main.c.orig	2004-02-09 04:33:28 UTC
++++ main.c
+@@ -75,15 +75,18 @@ void cleanup_temporary(void)
  
  void apply_new_look(gboolean is_preview)
  {
@@ -21,7 +21,7 @@
  
  	fprintf(gtkrc_fh,
  		"# -- THEME AUTO-WRITTEN DO NOT EDIT\n" "include \"%s\"\n\n",
-@@ -101,7 +104,8 @@
+@@ -101,7 +104,8 @@ void apply_new_look(gboolean is_preview)
  	fprintf(gtkrc_fh, "# -- THEME AUTO-WRITTEN DO NOT EDIT\n");
  	fclose(gtkrc_fh);
  

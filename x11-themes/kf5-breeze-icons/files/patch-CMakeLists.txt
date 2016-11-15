@@ -1,0 +1,21 @@
+Do not try to run the svg validation script.
+
+--- CMakeLists.txt.orig	2016-09-27 06:30:58 UTC
++++ CMakeLists.txt
+@@ -64,16 +64,6 @@ function(generate_binary_resource target
+ endfunction()
+ endif()
+ 
+-find_program(BASH_EXE bash)
+-if (BASH_EXE)
+-    file(GLOB_RECURSE SVGS "*.svg")
+-    add_custom_target(breeze-validate-svg ALL
+-        COMMAND ${BASH_EXE} ${CMAKE_SOURCE_DIR}/validate_svg.sh
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-        SOURCES ${SVGS}
+-    )
+-endif()
+-
+ add_subdirectory(autotests)
+ add_subdirectory(icons)
+ add_subdirectory(icons-dark)

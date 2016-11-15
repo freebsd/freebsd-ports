@@ -2,9 +2,9 @@
 QStarDict can support for StarDict dictionaries.
 You can install some dictionaries for StarDict(QStarDict):
 
- chinese/stardict2-dict-zh_CN  Simplified Chinese - English
- chinese/stardict2-dict-zh_TW  Traditional Chinese - English
- japanese/stardict2-dict-ja    Japanese - English
+ chinese/stardict2-dict-zh_CN   Simplified Chinese - English
+ chinese/stardict2-dict-zh_TW   Traditional Chinese - English
+ japanese/stardict2-dict-ja     Japanese - English
  textproc/stardict2-dictd_mova	Dictionaries from www.mova.org
  textproc/stardict2-quick	Dictionaries from Quick for StarDict
 =======================================================================

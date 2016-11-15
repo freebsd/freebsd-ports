@@ -1,5 +1,5 @@
---- ./beediff.pro.orig	2008-06-29 15:19:35.000000000 +0400
-+++ ./beediff.pro	2008-07-05 16:18:49.000000000 +0400
+--- beediff.pro.orig	2008-09-14 07:47:41 UTC
++++ beediff.pro
 @@ -1,7 +1,5 @@
  TEMPLATE =  app
  CONFIG +=  qt release warn_on x11

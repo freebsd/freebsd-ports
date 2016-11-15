@@ -74,7 +74,7 @@ MAKE_JOBS_UNSAFE=	yes
 DOS2UNIX_WRKSRC=${WRKDIR}/${WXSC_DISTNAME}
 DOS2UNIX_FILES=	wx-scintilla/src/scintilla/src/Editor.cxx
 
-BROKEN_FreeBSD_9=	Does not build.
+BROKEN_FreeBSD_9=	does not build
 
 DESKTOP_ENTRIES="Padre" \
 		"The Perl IDE" \

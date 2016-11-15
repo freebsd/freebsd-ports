@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.393 2016/07/24 14:20:19 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.397 2016/11/11 02:12:15 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 4;
+my $micro = 5;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -393,8 +393,15 @@ sub checkdistinfo {
 			&perror("FATAL", $file, $., "found blank line.");
 			next;
 		}
-		if (/^TIMESTAMP\s+=\s+\d+$/) {
-			# TIMESTAMP is a valid distinfo option
+		if (/^TIMESTAMP\s+=\s+(\d+)$/) {
+			my $now = time;
+			if ($1 > $now) {
+				&perror("FATAL", $file, $., "TIMESTAMP is in the future");
+			} else {
+				if ($now - $1 > (30 * 60 * 60 * 24)) {
+					&perror("WARN", $file, $., "TIMESTAMP is over 30 days old");
+				}
+			}
 			next;
 		}
 		if (/(\S+)\s+\((\S+)\)\s+=\s+(\S+)/) {
@@ -491,14 +498,14 @@ sub checkdescr {
 			"other local characters.  files should be in ".
 			"plain 7-bit ASCII");
 	}
-	if ($file =~ /\bpkg-descr/ && $tmp =~ m,http://,) {
+	if ($file =~ /\bpkg-descr/ && $tmp =~ m,https?://,) {
 		my $has_url = 0;
 		my $has_www = 0;
 		my $cpan_url = 0;
 		my $has_endslash = 0;
-		foreach my $line (grep($_ =~ "http://", split(/\n+/, $tmp))) {
+		foreach my $line (grep($_ =~ "https?://", split(/\n+/, $tmp))) {
 			$has_url = 1;
-			if ($line =~ m,WWW:[ \t]+http://,) {
+			if ($line =~ m,WWW:[ \t]+https?://,) {
 				$has_www = 1;
 				if ($line =~ m,search.cpan.org,) {
 					$cpan_url = 1;

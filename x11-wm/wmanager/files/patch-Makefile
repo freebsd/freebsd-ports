@@ -1,6 +1,5 @@
-diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
---- ../vendor/wmanager/Makefile	2007-12-11 12:42:04.000000000 +0200
-+++ ./Makefile	2008-05-21 18:21:47.000000000 +0300
+--- Makefile.orig	1999-11-14 15:29:24 UTC
++++ Makefile
 @@ -28,39 +28,39 @@
  # make settings
  SHELL     = /bin/sh
@@ -61,7 +60,7 @@ diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
  # documentational files for developer
  docdir    = ./doc
  templates = $(docdir)/templates
-@@ -82,8 +82,7 @@
+@@ -82,8 +82,7 @@ OBJ  = $(patsubst %.cc,%.o,$(SRC)) 
  # project version
  VERSION = 0.1.1
  
@@ -71,7 +70,7 @@ diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
  
  wmanager: $(OBJ)
  	$(LD) -o $@ $^ $(LDDIRS) $(LDFLAGS) 
-@@ -92,7 +91,7 @@
+@@ -92,7 +91,7 @@ static: $(OBJ)
  	$(LD) -o wmanager $^ $(LDDIRS) $(LDFLAGS) -static
  
  install: wmanager

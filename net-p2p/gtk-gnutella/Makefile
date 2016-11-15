@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 

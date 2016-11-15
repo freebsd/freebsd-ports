@@ -1,0 +1,5 @@
+This framework implements almost all the file management functions you will ever
+need. In fact, the KDE file manager (Dolphin) and the KDE file dialog also uses
+this to provide its network-enabled file management.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kio/html/index.html

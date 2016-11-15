@@ -1,14 +1,13 @@
---- Makefile.orig	2016-07-11 15:33:10 UTC
+--- Makefile.orig	2016-10-24 16:28:22 UTC
 +++ Makefile
-@@ -91,8 +91,12 @@ LIBS+=-lz $(LIBS_TOOLS)
+@@ -90,7 +90,11 @@ LIBS+=-lz $(LIBS_TOOLS)
  HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
 +DOCS=qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
 +else
- DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
- DOCS+=qmp-commands.txt
+ DOCS=qemu-doc.html qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
 +endif
  ifdef CONFIG_VIRTFS
  DOCS+=fsdev/virtfs-proxy-helper.1
@@ -18,8 +17,8 @@
  install-doc: $(DOCS)
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
 +ifndef NOPORTDOCS
- 	$(INSTALL_DATA) qemu-doc.html  qemu-tech.html "$(DESTDIR)$(qemu_docdir)"
- 	$(INSTALL_DATA) qmp-commands.txt "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) qemu-doc.html "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) $(SRC_PATH)/docs/qmp-commands.txt "$(DESTDIR)$(qemu_docdir)"
 +endif
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"

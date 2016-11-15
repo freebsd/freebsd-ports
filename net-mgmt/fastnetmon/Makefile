@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastnetmon
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt security
 
@@ -15,10 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		liblog4cpp.so:devel/log4cpp
+		liblog4cpp.so:devel/log4cpp \
+		libndpi.so:net/ndpi \
+		libluajit-5.1.so:lang/luajit \
+		libmongoc-1.0.so:devel/mongo-c-driver \
+		libjson-c.so:devel/json-c
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	FastVPSEestiOu
+GH_ACCOUNT=	pavel-odintsov
 
 USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}
@@ -26,9 +30,14 @@ GROUPS=	${PORTNAME}
 USES=	cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 
+CMAKE_ARGS+=	-DDISABLE_PF_RING_SUPPORT=ON
+CMAKE_INSTALL_PREFIX=	${PREFIX}
+
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS REDIS
+
+REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 
 PORTDOCS=	*
 
@@ -44,7 +53,11 @@ post-patch:
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "README.md docs" ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}/var/run/fastnetmon ${STAGEDIR}/var/log/fastnetmon
+	${INSTALL_MAN} ${WRKSRC}/src/man/fastnetmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/man/fastnetmon_client.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-DOCS-on:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "README.md docs" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

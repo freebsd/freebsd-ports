@@ -11,6 +11,10 @@ DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamically loadable
 
+BROKEN_aarch64=	Fails to build: error: operand of type va_list where arithmetic or pointer type is required
+DEPRECATED=	Abandonware, please use bundled zlib package [http://tcl.tk/man/tcl8.6/TclCmd/zlib.htm]
+EXPIRATION_DATE=2017-01-15
+
 USES+=		tcl zip
 
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}

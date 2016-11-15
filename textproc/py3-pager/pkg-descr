@@ -1,0 +1,4 @@
+Python module that pages output to the screen, reads keys and console 
+dimensions without executing external utils.
+
+WWW: https://pypi.python.org/pypi/pager/

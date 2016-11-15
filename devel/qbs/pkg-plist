@@ -39,11 +39,11 @@ include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.so
 lib/libqbscore.so.1
 lib/libqbscore.so.1.6
-lib/libqbscore.so.1.6.0
+lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/libqbsqtprofilesetup.so
 lib/libqbsqtprofilesetup.so.1
 lib/libqbsqtprofilesetup.so.1.6
-lib/libqbsqtprofilesetup.so.1.6.0
+lib/libqbsqtprofilesetup.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libqbs_cpp_scanner.so
 lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/android-ndk-module.html

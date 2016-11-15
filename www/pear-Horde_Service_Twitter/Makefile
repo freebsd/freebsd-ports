@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Twitter
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.5
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -13,6 +13,7 @@ USE_HORDE_RUN=	Horde_Controller \
 		Horde_Exception \
 		Horde_Http \
 		Horde_Oauth \
-		Horde_Url
+		Horde_Url \
+		Horde_Util
 
 .include <bsd.port.mk>

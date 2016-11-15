@@ -1,6 +1,6 @@
---- ./src/ftpserver/ncftpdmonitor.h.orig	2010-06-12 01:33:45.000000000 +0400
-+++ ./src/ftpserver/ncftpdmonitor.h	2010-06-15 22:44:14.585409143 +0400
-@@ -55,7 +55,7 @@
+--- src/ftpserver/ncftpdmonitor.h.orig	2010-06-11 21:33:45 UTC
++++ src/ftpserver/ncftpdmonitor.h
+@@ -55,7 +55,7 @@ class NcftpdMonitor : public FTPMonitorL
  		void createExecCommand(bool useSudo,QString whoPath)
  		{
  			if (whoPath=="")

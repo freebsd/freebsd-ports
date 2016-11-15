@@ -1,7 +1,11 @@
---- configure.orig	2015-06-16 17:43:10.000000000 +0200
-+++ configure	2015-10-21 23:07:22.017310000 +0200
-@@ -22640,6 +22640,11 @@
-   arm*)
+--- configure.orig	2015-10-28 16:31:48.000000000 +0000
++++ configure	2016-11-04 17:02:00.798706000 +0000
+@@ -22637,9 +22637,14 @@
+ 	esac
+ 	GLX_ARCH_DEFINES="-D__GLX_ALIGN64 -mieee"
+ 	;;
+-  arm*)
++  arm*|aarch64*)
  	ARM_VIDEO=yes
  	DEFAULT_INT10="stub"
 +	case $host_os in

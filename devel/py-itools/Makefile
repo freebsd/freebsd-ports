@@ -14,6 +14,9 @@ COMMENT=	Python library Provides Wide Range Of Capabilities
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on broken and expired py-reportlab2
+EXPIRATION_DATE=	2016-12-08
+
 BUILD_DEPENDS=  ${LOCALBASE}/include/poppler/goo/gtypes.h:graphics/poppler \
 		${LOCALBASE}/include/git2.h:devel/libgit2 \
 		${PYTHON_PKGNAMEPREFIX}reportlab2>=2.3:print/py-reportlab2 \

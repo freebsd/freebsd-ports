@@ -1,5 +1,5 @@
---- cmake/modules/FREETYPEConfig.cmake.orig	2008-04-07 22:45:10.000000000 +0200
-+++ cmake/modules/FREETYPEConfig.cmake	2015-12-02 14:40:47.871063000 +0100
+--- cmake/modules/FREETYPEConfig.cmake.orig	2008-04-07 20:45:10 UTC
++++ cmake/modules/FREETYPEConfig.cmake
 @@ -1,10 +1,10 @@
  #
  # Find the native FREETYPE includes and library

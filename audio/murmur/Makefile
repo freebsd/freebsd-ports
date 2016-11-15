@@ -58,7 +58,7 @@ CONFIG+=	no-bonjour
 
 .include <bsd.port.pre.mk>
 # PCH is broken on GCC
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIG+=	no-pch
 .endif
 

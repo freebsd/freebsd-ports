@@ -3,6 +3,7 @@
 
 PORTNAME=	paramiko
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+CONFLICTS_INSTALL=	py??-paramiko1-*
 
 OPTIONS_DEFINE=	EXAMPLES
 

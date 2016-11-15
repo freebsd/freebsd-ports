@@ -24,7 +24,10 @@ OPTIONS_DEFINE=	SIMD
 
 SIMD_CONFIGURE_OFF=	--disable-builtin-popcount --disable-simd
 
+BROKEN_aarch64=		Does not build: invokes x86 asm
+BROKEN_mips64=		Does not build: invokes x86 asm
 BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_sparc64=		Does not build: invokes x86 asm
 
 # shebang_fix operates during patch.
 # These scripts are created during configure.

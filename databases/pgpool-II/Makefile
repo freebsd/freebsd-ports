@@ -29,7 +29,6 @@ PORTDOCShtml=	pgpool-en.html pgpool-ja.html pgpool.css
 PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 OPTIONS_DEFINE+=	DOCS SSL
-SSL_DESC=	Build with OpenSSL support
 
 .include <bsd.port.options.mk>
 

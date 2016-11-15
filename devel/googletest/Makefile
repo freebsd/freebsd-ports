@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	googletest
-PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	release-
+DISTVERSION=	1.8.0-11
+DISTVERSIONSUFFIX=	-ga2b8a8e
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
 USES=		autoreconf libtool
+WRKSRC_SUBDIR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 # fused-src python tests are only useful for bundling. There's no point in
 # running them before installing system-wide without source files.

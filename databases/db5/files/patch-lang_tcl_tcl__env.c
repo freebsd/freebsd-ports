@@ -1,4 +1,4 @@
---- lang/tcl/tcl_env.c.orig	2016-05-24 08:19:08 UTC
+--- lang/tcl/tcl_env.c.orig	2013-09-09 15:35:07 UTC
 +++ lang/tcl/tcl_env.c
 @@ -2864,9 +2864,10 @@ env_GetFlags(interp, objc, objv, dbenv)
  		for (i = 0; open_flags[i].flag != 0; i++)

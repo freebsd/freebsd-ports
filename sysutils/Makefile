@@ -182,6 +182,7 @@
     SUBDIR += cotty
     SUBDIR += cpdup
     SUBDIR += cpu
+    SUBDIR += cpu-x
     SUBDIR += cpuburn
     SUBDIR += cpuid
     SUBDIR += cpulimit
@@ -492,6 +493,8 @@
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keyboard-daemon
+    SUBDIR += kf5-baloo
+    SUBDIR += kf5-kwallet
     SUBDIR += kfilemetadata
     SUBDIR += kfloppy
     SUBDIR += kiconvtool
@@ -668,6 +671,7 @@
     SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += ori
+    SUBDIR += osinfo-db-tools
     SUBDIR += osquery
     SUBDIR += p5-BSD-Jail-Object
     SUBDIR += p5-BSD-Process

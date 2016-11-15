@@ -9,9 +9,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based frontend for QEMU
 
-USE_QT4=	gui xml uic_build moc_build rcc_build
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		qmake tar:bzip2
-CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
+USE_QT4=	gui xml uic_build moc_build rcc_build
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 		"qtemu" "" true

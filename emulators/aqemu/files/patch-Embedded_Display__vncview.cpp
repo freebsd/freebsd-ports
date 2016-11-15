@@ -1,5 +1,5 @@
---- Embedded_Display/vncview.cpp~	2012-05-21 15:10:07.000000000 -0300
-+++ Embedded_Display/vncview.cpp	2012-05-21 15:10:25.000000000 -0300
+--- Embedded_Display/vncview.cpp.orig	2010-02-26 13:40:40 UTC
++++ Embedded_Display/vncview.cpp
 @@ -23,6 +23,11 @@
  
  #include "vncview.h"

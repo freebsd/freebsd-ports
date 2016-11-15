@@ -6,6 +6,7 @@ bin/git-shell
 bin/git-upload-archive
 bin/git-upload-pack
 %%GUI%%bin/gitk
+etc/bash_completion.d/git.sh
 %%PERL%%%%SITE_PERL%%/Git.pm
 %%PERL%%%%SITE_PERL%%/Git/I18N.pm
 %%PERL%%%%SITE_PERL%%/Git/IndexInfo.pm
@@ -1443,4 +1444,5 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/sv/LC_MESSAGES/git.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
+share/zsh/site-functions/_git
 @dir share/git-core/templates/branches

@@ -2,85 +2,71 @@
 # $FreeBSD$
 
 PORTNAME=	remmina
-PORTVERSION=	1.0.0
-PORTREVISION=	5
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.2.0-rcgit.16
 CATEGORIES=	net gnome
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK+ Remote Desktop Client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake gmake pkgconfig
-USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
-INSTALLS_ICONS=	yes
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib  -Wl,-rpath -Wl,${LOCALBASE}/lib \
-		-lX11 -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -lgmodule-2.0 \
-		-lgtk-x11-2.0
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include -fPIC
-SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina
 
-OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI NLS
-OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI
-SSH_DESC=	Build with SSH tunneling support
-GCRYPT_DESC=	Build with libgcrypt support for password encryption
-TERM_DESC=	Build with terminal support
-AVAHI_DESC=	Build with Avahi support
+USES=		cmake:outsource gmake pathfix pkgconfig
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_XORG=	ice sm x11 xext
+PATHFIX_WRKSRC=		${WRKSRC}/remmina
+INSTALLS_ICONS=	yes
+CMAKE_ARGS=	--build=build \
+		-DWITH_APPINDICATOR:BOOL=false
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		AVAHI GCRYPT NLS SSH SURVEY TERM
+OPTIONS_DEFAULT=	AVAHI GCRYPT SSH TERM
+OPTIONS_SUB=		yes
 
-CMAKE_ARGS+=	--build=build
-# now cannot build with gtk30 because requisite ports are old
-CMAKE_ARGS+=	-DGTK_VERSION=2
+AVAHI_DESC=		Build with Avahi support
+GCRYPT_DESC=		Build with libgcrypt support for password encryption
+SSH_DESC=		Build with SSH tunneling support
+SURVEY_DESC=		Enable user survey to allow developers to understand usage
+TERM_DESC=		Build with terminal support
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
-.else
-USES+=		gettext	# doesn't build otherwise
-LDFLAGS+=	-lintl	# doesn't build otherwise
-PLIST_SUB+=	NLS="@comment "
-.endif
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
+			libavahi-ui-gtk3.so:net/avahi-gtk3
+AVAHI_CMAKE_BOOL=	WITH_AVAHI
 
-.if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh_threads.so:security/libssh
-LDFLAGS+=	-fstack-protector
-.else
-CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
-.endif
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
-.if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
-.else
-CMAKE_ARGS+=	-DWITH_GCRYPT=OFF
-.endif
+NLS_USES=		gettext localbase
+NLS_CMAKE_BOOL=		WITH_GETTEXT
 
-.if ${PORT_OPTIONS:MTERM}
-USE_GNOME+=	vte
-.else
-CMAKE_ARGS+=	-DWITH_VTE=OFF
-.endif
+SSH_LIB_DEPENDS=	libssh_threads.so:security/libssh
+SSH_LDFLAGS=		-fstack-protector
+SSH_CMAKE_BOOL=		WITH_LIBSSH
 
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-ui.so:net/avahi-gtk
-.else
-CMAKE_ARGS+=	-DWITH_AVAHI=OFF
+SURVEY_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+SURVEY_CMAKE_BOOL=	WITH_SURVEY
+
+TERM_USE=		gnome=vte3
+TERM_CMAKE_BOOL=	WITH_VTE
+
+.include <bsd.port.pre.mk>
+
+# utimensat(5) only available in FreeBSD from 10.3-RELEASE
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002506
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-remmina_src_remmina__file.c
 .endif
 
 post-patch:
-	# fix pkgconfig
-	${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_LIBDIR}/pkgconfig,libdata/pkgconfig,' ${WRKSRC}/remmina/CMakeLists.txt
 	# do not build plugins and locales , they are provided by separated ports
 	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e's|add_subdirectory(external_tools)||' ${WRKSRC}/remmina/CMakeLists.txt
-.if !${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e's|add_subdirectory(po)||' ${WRKSRC}/remmina/CMakeLists.txt
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -62,6 +62,8 @@ PERL_BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_MAKE_ARGS_OFF=	NO_PERL=1
 
+GITWEB_IMPLIES=		PERL
+
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	libpcre
 
@@ -122,10 +124,6 @@ RMMAN1+=	git-citool.1 \
 RMMAN1+=	git-svn.1
 .endif
 
-.if ${PORT_OPTIONS:MGITWEB} && empty(PORT_OPTIONS:MPERL)
-IGNORE=	using GITWEB support requires PERL support
-.endif
-
 .if empty(PORT_OPTIONS:MCVS)
 RMMAN1+=	git-cvsimport.1 \
 		git-cvsexportcommit.1 \
@@ -133,13 +131,11 @@ RMMAN1+=	git-cvsimport.1 \
 RMMAN7+=	gitcvs-migration.7
 .endif
 
-post-extract:
-.if ${PORT_OPTIONS:MHTMLDOCS}
+post-extract-HTMLDOCS-on:
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS}
-.endif
 
 post-patch:
 .for FILE in ${RMMAN1}
@@ -149,29 +145,29 @@ post-patch:
 	@${RM} ${WRKDIR}/man7/${FILE}
 .endfor
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
-.if empty(PORT_OPTIONS:MCVS)
+
+post-patch-CVS-off:
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
 		/git-cvsserver.perl/d; \
 		/documented,gitcvs-migration/d; \
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
-.endif
-.if empty(PORT_OPTIONS:MSVN)
+
+post-patch-SVN-off:
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
-.endif
-.if empty(PORT_OPTIONS:MGITWEB)
+
+post-patch-GITWEB-off:
 	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/t/gitweb-lib.sh
-.endif
-.if empty(PORT_OPTIONS:MP4)
+
+post-patch-P4-off:
 	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
 		${WRKSRC}/contrib/subtree/git-subtree.sh
-.endif
 
-post-build:
 .if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
+post-build:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
 
@@ -179,7 +175,13 @@ post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1)
 	(cd ${WRKDIR}/man5/ && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man5)
 	(cd ${WRKDIR}/man7/ && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man7)
-.if ${PORT_OPTIONS:MHTMLDOCS}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
+		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git-blame.el \
+		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
+
+post-install-HTMLDOCS-on:
 	# Manually remove the index.html symlink before installing, and then
 	# recreate it after. This is necessary because the distfile is
 	# extracted with --no-same-owner. If the distfile is extracted as a
@@ -188,21 +190,32 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html
-.endif
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git-blame.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
-.if ${PORT_OPTIONS:MCONTRIB}
+
+post-install-CONTRIB-on:
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/git-core/contrib
 	${CP} -R ${WRKSRC}/contrib/* ${STAGEDIR}${PREFIX}/share/git-core/contrib
 	cd ${WRKSRC}/contrib/subtree && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} install install-doc
-.endif
-.if ${PORT_OPTIONS:MP4}
+	# Symlink the completions from the contrib directory to where they
+	# will be useful
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	@${LN} -s ../../share/git-core/contrib/completion/git-completion.bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
+	@${LN} -s ../../../share/git-core/contrib/completion/git-completion.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_git
+
+post-install-CONTRIB-off:
+	# Install the contrib completions anyway
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_git
+
+post-install-P4-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
-.endif
 
 .include <bsd.port.mk>

@@ -8,11 +8,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PyVISA backend in a pure Python
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hgrecco
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 OPTIONS_GROUP=	DRIVERS
 DRIVERS_DESC=	Additional modules

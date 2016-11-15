@@ -1,0 +1,38 @@
+--- src/CMakeLists.txt.orig	2014-01-29 21:24:08 UTC
++++ src/CMakeLists.txt
+@@ -19,8 +19,6 @@ IF(COMMAND cmake_policy)
+  CMAKE_POLICY(SET CMP0005 OLD)   # remove this and the quoted arguments in
+                                  # ADD_DEFINITONS() once CMake 2.6 is used
+ ENDIF(COMMAND cmake_policy)
+-SET(CMAKE_COLOR_MAKEFILE      ON)
+-SET(CMAKE_VERBOSE_MAKEFILE    OFF)
+ SET(CMAKE_INCLUDE_CURRENT_DIR TRUE)
+ 
+ SET(QT_MIN_VERSION "4.8.0")
+@@ -71,12 +69,13 @@ ENDIF( APPLE )
+ 
+ ADD_CUSTOM_TARGET( confclean COMMAND rm -rf Makefile CMakeFiles/ CMakeCache.txt cmake_install.cmake DartTestfile.txt install_manifest.txt )
+ 
+-find_library(x11 X11)
+-IF(x11)
+-  TARGET_LINK_LIBRARIES(${PROGNAME} ${QT_LIBRARIES} X11)
+-ELSE(x11)
++find_package(X11)
++IF(X11_FOUND)
++  INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
++  TARGET_LINK_LIBRARIES(${PROGNAME} ${QT_LIBRARIES} ${X11_LIBRARIES})
++ELSE(X11_FOUND)
+   TARGET_LINK_LIBRARIES(${PROGNAME} ${QT_LIBRARIES})
+-ENDIF(x11)
++ENDIF(X11_FOUND)
+ 
+ # only needed for static builds when directx is enabled in qt and you
+ # get a linker error because of missing a directx function
+@@ -98,6 +97,7 @@ TARGET_LINK_LIBRARIES(testevaluator ${QT
+ ADD_TEST(testevaluator testevaluator)
+ 
+ ADD_EXECUTABLE(testfloatnum ${testfloatnum_SOURCES})
++TARGET_LINK_LIBRARIES(testfloatnum m)
+ ADD_TEST(testfloatnum testfloatnum)
+ 
+ INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR} thirdparty core gui math)

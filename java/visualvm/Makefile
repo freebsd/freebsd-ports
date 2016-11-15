@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	visualvm
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	https://java.net/downloads/visualvm/release${PORTVERSION:S/.//g}/
+MASTER_SITES=	https://github.com/visualvm/visualvm.src/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}-ml
 
 MAINTAINER=	swills@FreeBSD.org
@@ -18,7 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		zip:infozip
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 WRKSRC=		${WRKDIR}/visualvm_${PORTVERSION:S/.//g}
 SUB_FILES=	visualvm.desktop
 

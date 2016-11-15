@@ -27,7 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twiggy>0:devel/py-twiggy \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2 \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 OPTIONS_DEFINE=		BUGZILLA JIRA PHABRICATOR

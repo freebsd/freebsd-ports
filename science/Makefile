@@ -61,6 +61,7 @@
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += hdf5-18
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
     SUBDIR += jstrack
@@ -179,6 +180,7 @@
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
+    SUBDIR += tfel
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += veusz

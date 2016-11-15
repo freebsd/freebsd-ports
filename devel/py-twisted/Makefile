@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twisted
-PORTVERSION=	16.4.1
+PORTVERSION=	16.5.0
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,26 @@ COMMENT=	Asynchronous networking framework written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly \
+		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly \
+		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental
 
-USES=		python:2 tar:bzip2
-USE_PYTHON=	distutils
+# Actually 2.7,3.3+
+USES=		python tar:bzip2
+USE_PYTHON=	autoplist concurrent distutils
+
+.include <bsd.port.pre.mk>
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.c" -and -exec ${RM} {} \;
+.if ${PYTHON_REL} < 3000
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/python/_sendmsg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/test/raiser.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/runner/portmap.so
+.endif
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/test/raiser.so
 
-.include <bsd.port.mk>
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m twisted.trial -e twisted
+
+.include <bsd.port.post.mk>

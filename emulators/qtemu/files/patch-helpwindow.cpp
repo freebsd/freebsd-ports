@@ -1,6 +1,6 @@
---- ./helpwindow.cpp.orig	Mon Mar 19 15:56:21 2007
-+++ ./helpwindow.cpp	Tue Jun 12 13:23:44 2007
-@@ -72,7 +72,7 @@
+--- helpwindow.cpp.orig	2007-11-12 19:31:00 UTC
++++ helpwindow.cpp
+@@ -80,7 +80,7 @@ QUrl HelpWindow::getHelpFile()
              return testUrl;
      
          //check for case when qtemu executable is in bin/ (installed on linux)
@@ -9,7 +9,7 @@
          if (QFile::exists(testUrl.toString()))
              return testUrl;
      }
-@@ -88,7 +88,7 @@
+@@ -96,7 +96,7 @@ QUrl HelpWindow::getHelpFile()
          return testUrl;
  
      //check for case when qtemu executable is in bin/ (installed on linux)

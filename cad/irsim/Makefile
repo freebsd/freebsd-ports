@@ -31,6 +31,8 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}

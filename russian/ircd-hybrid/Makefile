@@ -6,7 +6,6 @@ PORTVERSION=	7.2.4
 CATEGORIES=	russian irc
 MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru-${PORTVERSION} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
-
 PKGNAMESUFFIX=	-hybrid
 DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 
@@ -17,6 +16,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd-hybrid-[0-9]*
+
+BROKEN_aarch64=	Fails to compile: error: passing void * to parameter of incompatible type
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-ru
 USE_OPENSSL=	yes
@@ -70,10 +71,10 @@ pre-install:
 	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/etc/example.conf
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/RELNOTE* ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/server-version-info ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELNOTE* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/server-version-info ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

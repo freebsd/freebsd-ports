@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnubik
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -27,8 +27,7 @@ INFO=		gnubik
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24/apps
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24
+	${LN} -s ../icons/hicolor/32x32/apps/gnubik.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

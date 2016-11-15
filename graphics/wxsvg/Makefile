@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.5.9
+PORTVERSION=	1.5.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,7 +12,8 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libexif.so:graphics/libexif
 
 USES=		compiler:c++11-lib gettext-runtime gmake libtool pathfix pkgconfig tar:bzip2
 USE_WX=		3.0

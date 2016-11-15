@@ -1,0 +1,13 @@
+--- scripts/dkimproxy_out.conf.example.orig	2016-11-08 12:35:41 UTC
++++ scripts/dkimproxy_out.conf.example
+@@ -1,8 +1,8 @@
+ # specify what address/port DKIMproxy should listen on
+-listen    127.0.0.1:10027
++listen    host.name:10027
+ 
+ # specify what address/port DKIMproxy forwards mail to
+-relay     127.0.0.1:10028
++relay     host.name:10028
+ 
+ # specify what domains DKIMproxy can sign for (comma-separated, no spaces)
+ domain    example.org

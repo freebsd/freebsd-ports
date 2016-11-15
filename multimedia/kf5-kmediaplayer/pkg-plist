@@ -1,0 +1,16 @@
+include/KF5/KMediaPlayer/KMediaPlayer/Player
+include/KF5/KMediaPlayer/KMediaPlayer/View
+include/KF5/KMediaPlayer/kmediaplayer/kmediaplayer_export.h
+include/KF5/KMediaPlayer/kmediaplayer/player.h
+include/KF5/KMediaPlayer/kmediaplayer/view.h
+include/KF5/kmediaplayer_version.h
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfig.cmake
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfigVersion.cmake
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerTargets.cmake
+lib/libKF5MediaPlayer.so
+lib/libKF5MediaPlayer.so.5
+lib/libKF5MediaPlayer.so.%%KDE_FRAMEWORKS_VERSION%%
+share/dbus-1/interfaces/kf5_org.kde.KMediaPlayer.xml
+share/kservicetypes5/kmediaplayer.desktop
+share/kservicetypes5/kmediaplayerengine.desktop

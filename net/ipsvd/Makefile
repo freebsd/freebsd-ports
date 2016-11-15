@@ -9,6 +9,9 @@ MASTER_SITES=	http://smarden.org/ipsvd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet protocol service daemons
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/package/COPYING
+
 WRKSRC=		${WRKDIR}/net/${DISTNAME}
 ALL_TARGET=	default
 
@@ -31,6 +34,8 @@ do-install:
 .for n in 5 7 8
 	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${MANPREFIX}/man/man${n}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 

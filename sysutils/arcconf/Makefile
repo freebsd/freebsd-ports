@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v1_8_21375
+DISTVERSION=	1_8_21375
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
-DISTNAME=	arcconf_${DISTVERSION}
+DISTNAME=	arcconf_v${DISTVERSION}
 
 MAINTAINER=	michael@fuckner.net
 COMMENT=	Adaptec SCSI/SAS RAID administration tool

@@ -8,6 +8,7 @@ share/icons/hicolor/16x16/apps/gnubik.png
 share/icons/hicolor/22x22/apps/gnubik.png
 share/icons/hicolor/32x32/apps/gnubik.png
 share/icons/hicolor/48x48/apps/gnubik.png
+share/locale/ar/LC_MESSAGES/gnubik.mo
 share/locale/bg/LC_MESSAGES/gnubik.mo
 share/locale/ca/LC_MESSAGES/gnubik.mo
 share/locale/da/LC_MESSAGES/gnubik.mo
@@ -19,6 +20,7 @@ share/locale/es/LC_MESSAGES/gnubik.mo
 share/locale/eu/LC_MESSAGES/gnubik.mo
 share/locale/fi/LC_MESSAGES/gnubik.mo
 share/locale/fr/LC_MESSAGES/gnubik.mo
+share/locale/gl/LC_MESSAGES/gnubik.mo
 share/locale/he/LC_MESSAGES/gnubik.mo
 share/locale/hr/LC_MESSAGES/gnubik.mo
 share/locale/it/LC_MESSAGES/gnubik.mo
@@ -35,4 +37,6 @@ share/locale/sr/LC_MESSAGES/gnubik.mo
 share/locale/sv/LC_MESSAGES/gnubik.mo
 share/locale/tr/LC_MESSAGES/gnubik.mo
 share/locale/uk/LC_MESSAGES/gnubik.mo
+share/locale/vi/LC_MESSAGES/gnubik.mo
 share/locale/zh_CN/LC_MESSAGES/gnubik.mo
+share/pixmaps/gnubik.png

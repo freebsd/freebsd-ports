@@ -13,6 +13,7 @@ lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.OwnershipError.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Pool.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Poolboy.Worker.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Poolboy.beam
+lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.PrepareStream.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Query.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Sojourn.Broker.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Sojourn.Pool.beam
@@ -21,9 +22,12 @@ lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Sojourn.Starter.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Sojourn.Supervisor.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Sojourn.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.SojournError.beam
+lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Stream.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Task.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Watcher.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.beam
+lib/elixir/lib/db_connection/ebin/Elixir.Enumerable.DBConnection.PrepareStream.beam
+lib/elixir/lib/db_connection/ebin/Elixir.Enumerable.DBConnection.Stream.beam
 lib/elixir/lib/db_connection/ebin/db_connection.app
 lib/elixir/lib/db_connection/lib/db_connection.ex
 lib/elixir/lib/db_connection/lib/db_connection/app.ex

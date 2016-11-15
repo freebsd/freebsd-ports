@@ -1,5 +1,9 @@
 bin/fastnetmon
 bin/fastnetmon_client
+etc/networks_list
+etc/networks_whitelist
+man/man1/fastnetmon.1.gz
+man/man1/fastnetmon_client.1.gz
 @sample etc/fastnetmon.conf.sample
 @dir(fastnetmon,fastnetmon) /var/run/fastnetmon
 @dir(fastnetmon,fastnetmon) /var/log/fastnetmon

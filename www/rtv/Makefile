@@ -1,31 +1,30 @@
 # $FreeBSD$
 
 PORTNAME=	rtv
-PORTVERSION=	1.9.1
+PORTVERSION=	1.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Commandline client for reddit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=3.2:www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}praw>=3.4.0:www/py-praw \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}kitchen>=1.2.4:devel/py-kitchen
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}praw>=3.5.0:www/py-praw \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}kitchen>=1.2.4:devel/py-kitchen \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.1:www/py-beautifulsoup \
+		${PYTHON_PKGNAMEPREFIX}decorator>=4.0.10:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}mailcap_fix>=0.1.3:devel/py-mailcap-fix \
+		${PYTHON_PKGNAMEPREFIX}update_checker>=0.11:devel/py-update_checker
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
-USES=		tar:xz python:3.3+
+
+NO_ARCH=	yes
+USES=	tar:xz python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

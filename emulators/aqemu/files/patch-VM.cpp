@@ -1,6 +1,6 @@
---- ./VM.cpp.orig	2011-07-26 19:36:32.000000000 +0000
-+++ ./VM.cpp	2013-12-07 17:23:12.244540117 +0000
-@@ -4563,7 +4563,7 @@
+--- VM.cpp.orig	2011-07-26 19:36:32 UTC
++++ VM.cpp
+@@ -4563,7 +4563,7 @@ bool Virtual_Machine::Load_VM( const QSt
  				else
  					AQError( "bool Virtual_Machine::Load_VM( const QString &file_name )", "SPICE image compression type invalid!" );
  				
@@ -9,7 +9,7 @@
  				
  				SPICE.Use_Renderer( Second_Element.firstChildElement( "Use_Renderer" ).text() == "true" );
  				
-@@ -4595,7 +4595,7 @@
+@@ -4595,7 +4595,7 @@ bool Virtual_Machine::Load_VM( const QSt
  						SPICE.Set_Renderer_List( rendererList );
  				}
  				

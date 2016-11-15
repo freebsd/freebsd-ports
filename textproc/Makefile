@@ -177,7 +177,6 @@
     SUBDIR += erlang-edown
     SUBDIR += erlang-fast_xml
     SUBDIR += erlang-p1_utils
-    SUBDIR += erlang-p1xml
     SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
@@ -361,6 +360,8 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kf5-kcodecs
+    SUBDIR += kf5-sonnet
     SUBDIR += kenlm
     SUBDIR += kibana3
     SUBDIR += kibana41
@@ -1341,6 +1342,7 @@
     SUBDIR += py3-asciinema
     SUBDIR += py3-chardet
     SUBDIR += py3-libxml2
+    SUBDIR += py3-pager
     SUBDIR += pychm
     SUBDIR += qprint
     SUBDIR += qstardict
@@ -1402,6 +1404,8 @@
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-autoprefixer-rails
+    SUBDIR += rubygem-babel-source
+    SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-coderay
@@ -1504,7 +1508,6 @@
     SUBDIR += rubygem-simplecov-html
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp
-    SUBDIR += rubygem-string-scrub
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-terminal-table

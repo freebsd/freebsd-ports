@@ -20,6 +20,9 @@ CMAKE_ARGS+=	-DENABLE_DTRACE=OFF
 
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 
+BROKEN_aarch64=		Fails to build: error: passing int to parameter of incompatible type va_list
+BROKEN_armv6=		Fails to build: error: passing int to parameter of incompatible type va_list
+
 MANPAGES=	comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_find_rows.1 \
 		mysql_waitpid.1 mysqlaccess.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1

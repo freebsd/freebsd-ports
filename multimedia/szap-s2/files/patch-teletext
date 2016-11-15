@@ -1,5 +1,5 @@
---- a/szap-s2.c
-+++ b/szap-s2.c
+--- szap-s2.c.orig	2010-01-29 22:54:19 UTC
++++ szap-s2.c
 @@ -206,6 +206,7 @@ static char *usage_str =
      "     -i        : run interactively, allowing you to type in channel names\n"
      "     -p        : add pat and pmt to TS recording (implies -r)\n"

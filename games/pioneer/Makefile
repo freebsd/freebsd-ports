@@ -36,9 +36,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20161028
+GH_TAGNAME=	20161110
 
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf compiler:c++11-lib gmake localbase pkgconfig
 USE_GL=		gl
 USE_SDL=	image2 sdl2
 
@@ -72,21 +72,18 @@ PROFILER_CONFIGURE_ON=	--enable-profiler
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
-USE_GCC=	yes
-.else
-USES+=		compiler:c++11-lang
-CPPFLAGS+=	-I${LOCALBASE}/include
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+# Unhide std::to_string() for GCC (ports/193528)
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^OPTIMISE=/d' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's/std:://g' \
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
+	${REINPLACE_CMD} -e 's/std::acosh/acosh/g ; s/std::copysign/copysign/g' \
 		${WRKSRC}/src/Orbit.cpp
-	${REINPLACE_CMD} -e 's/std::to_string/to_string/g' \
-		${WRKSRC}/src/graphics/opengl/GenGasGiantColourMaterial.cpp \
-		${WRKSRC}/src/graphics/opengl/RendererGL.cpp
+.endif
 
 post-patch-MODELCOMPILER-off: .SILENT
 	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \

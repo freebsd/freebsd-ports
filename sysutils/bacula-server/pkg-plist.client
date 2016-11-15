@@ -15,3 +15,4 @@ sbin/bacula-fd
 @dir(bacula,bacula,)  %%BACULA_DIR%%
 @dir share/bacula
 @dir(,bacula,) %%ETCDIR%%
+@sample(,bacula,644) share/bacula/query.sql.sample

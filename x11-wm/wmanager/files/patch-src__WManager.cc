@@ -1,6 +1,5 @@
-diff -urN -urN -x .svn ../vendor/wmanager/src/WManager.cc ./src/WManager.cc
---- ../vendor/wmanager/src/WManager.cc	2007-12-11 12:42:04.000000000 +0200
-+++ ./src/WManager.cc	2007-12-17 16:09:16.000000000 +0200
+--- src/WManager.cc.orig	1999-11-14 15:28:36 UTC
++++ src/WManager.cc
 @@ -24,8 +24,12 @@
  // SYSTEM INCLUDES /////////////////////////////////
  #include <string>                                 // standard string class
@@ -22,7 +21,7 @@ diff -urN -urN -x .svn ../vendor/wmanager/src/WManager.cc ./src/WManager.cc
  
  // constructor
  WManager::WManager()
-@@ -302,7 +307,7 @@
+@@ -302,7 +307,7 @@ WManager::_TokenizeAndAddToBrowser(char*
      } else {
        fl_alert("Error near %s while parsing configuration file %s!"
  	       "Try to read on...",
@@ -31,7 +30,7 @@ diff -urN -urN -x .svn ../vendor/wmanager/src/WManager.cc ./src/WManager.cc
      } // end if
    } // end if
  }
-@@ -310,7 +315,7 @@
+@@ -310,7 +315,7 @@ WManager::_TokenizeAndAddToBrowser(char*
  
  // cut rest from the beginning of str
  char*

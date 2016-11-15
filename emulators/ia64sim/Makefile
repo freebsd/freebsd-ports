@@ -13,6 +13,9 @@ COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
 LICENSE=	PD
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	never ported to non-x86 architectures
+
 USES=		gmake zip
 MAKEFILE=	makefile.unx
 MAKE_ARGS=	CC="${CC}"

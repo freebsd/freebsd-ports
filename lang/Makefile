@@ -145,6 +145,7 @@
     SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
+    SUBDIR += kf5-kross
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci

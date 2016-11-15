@@ -18,6 +18,8 @@ RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
 
+BROKEN_aarch64=	Fails to build: invokes x86 asm
+
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]* tigervnc-*
 WRKSRC=		${WRKDIR}/vnc_unixsrc

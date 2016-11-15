@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-diskperf-plugin
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -11,11 +10,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Graphical representation of the disk IO
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack
+USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	gtk30 intltool cairo
 USE_XFCE=	panel
 
 LIBS+=		-ldevstat

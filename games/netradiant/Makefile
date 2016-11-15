@@ -32,6 +32,8 @@ SUB_FILES=	${PORTNAME}
 SUB_LIST=	ARCH=${ARCH}
 PLIST_SUB:=	${SUB_LIST}
 
+BROKEN_aarch64=		Fails to link: ldd: install/modules/archivepak.so: not a FreeBSD ELF shared object
+
 post-patch:
 # Add missing checks for __FreeBSD__
 	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \

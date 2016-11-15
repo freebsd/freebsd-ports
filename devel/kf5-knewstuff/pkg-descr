@@ -1,0 +1,4 @@
+The KNewStuff library implements collaborative data sharing for applications.
+It uses libattica to support the Open Collaboration Services specification.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/knewstuff/html/index.html

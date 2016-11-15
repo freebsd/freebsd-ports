@@ -36,7 +36,7 @@ ALL_TARGET=	bsf
 OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT DRAC NETSCAPE_BRAIN_DAMAGE DOCS
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=	yes
-SSL_DESC=		Compile with SSL support
+
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 DRAC_DESC=		Dynamically open MTA for relaying
 NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation

@@ -37,6 +37,8 @@ QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
+BROKEN_aarch64=		fails to build: invokes x86 asm
+
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_DESC=		Install the Qt5 api documentation
 DOCS_USE=		QT5=doc_run
@@ -67,6 +69,5 @@ pre-configure:
 # occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
-
 
 .include <bsd.port.mk>

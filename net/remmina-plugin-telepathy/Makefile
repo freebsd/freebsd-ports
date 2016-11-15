@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-telepathy
 
 COMMENT=	Remmina plugin for Telepathy support
 
-USE_GNOME+=	gtk30
+USE_GNOME+=	cairo gtk30
 LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins

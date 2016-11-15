@@ -17,6 +17,8 @@ EXTRACT_DEPENDS=gtar:archivers/gtar
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:devel/qt4-qtsolutions-soap	\
 		libmpir.so:math/mpir
 
+BROKEN_aarch64=	Fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
+
 USES=		dos2unix qmake compiler:c++11-lib tar:tgz
 USE_CXXSTD=	c++11
 USE_GL=		glew glu

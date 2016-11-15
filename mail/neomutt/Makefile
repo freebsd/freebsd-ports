@@ -12,14 +12,13 @@ COMMENT=	Bringing together all the Mutt Code
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
+		urlview:textproc/urlview
+
 USE_GITHUB=	yes
 
 USES=		autoreconf localbase ncurses shebangfix ssl
 GNU_CONFIGURE=	yes
-
-BUILD_DEPENDS=	gdate:sysutils/coreutils
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
-		urlview:textproc/urlview
 
 OPTIONS_SUB=	yes
 SHEBANG_FILES=	smime_keys.pl
@@ -83,7 +82,6 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			lynx:www/lynx
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/\`date/\`gdate/" ${WRKSRC}/Makefile.am ${WRKSRC}/doc/Makefile.am
 	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
 
 post-install:

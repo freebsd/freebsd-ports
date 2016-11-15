@@ -12,28 +12,35 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenging 2D motocross platform game
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 GNU_CONFIGURE=	yes
-USES=		compiler:features dos2unix gmake jpeg lua:51 sqlite
+USES=		compiler:features dos2unix gmake jpeg localbase lua:51 sqlite
 USE_GNOME=	libxml2
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
+CPPFLAGS+=	-isystem${LUA_INCDIR}
+LDFLAGS+=	-L${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 PORTDATA=	*
+
+DESKTOP_ENTRIES="XMoto" \
+		"Motorcross game" \
+		"${DATADIR}/xmoto_icone_x.ico" \
+		"xmoto" \
+		"Game;SportsGame;ArcadeGame;" \
+		false
 
 OPTIONS_DEFINE=	ASIAN_TTF DOCS NLS
 OPTIONS_SUB=	yes
@@ -47,13 +54,6 @@ ASIAN_TTF_CONFIGURE_OFF=--without-asian-ttf-file
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-DESKTOP_ENTRIES="XMoto" \
-		"Motorcross game" \
-		"${DATADIR}/xmoto_icone_x.ico" \
-		"xmoto" \
-		"Game;SportsGame;ArcadeGame;" \
-		false
-
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
@@ -66,8 +66,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor

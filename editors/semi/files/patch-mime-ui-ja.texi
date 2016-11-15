@@ -1,5 +1,5 @@
---- ./mime-ui-ja.texi.orig	2002-10-15 06:59:21.000000000 +0000
-+++ ./mime-ui-ja.texi	2014-06-29 07:49:58.000000000 +0000
+--- mime-ui-ja.texi.orig	2002-10-15 06:59:21 UTC
++++ mime-ui-ja.texi
 @@ -1,6 +1,10 @@
  \input texinfo.tex
  @setfilename mime-ui-ja.info

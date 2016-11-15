@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Command line ftp tools for listing and mirroring
 
+BROKEN_aarch64=	Fails to build: regparm is not valid on this platform
+
 USES=		perl5
 USE_PERL5=	build
 

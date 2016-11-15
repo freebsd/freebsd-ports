@@ -290,6 +290,7 @@
     SUBDIR += kdenetwork4-filesharing
     SUBDIR += kdenetwork4-strigi-analyzers
     SUBDIR += kea
+    SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kget
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
@@ -684,7 +685,6 @@
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
     SUBDIR += p5-Net-PcapUtils
-    SUBDIR += p5-Net-Ping
     SUBDIR += p5-Net-Ping-External
     SUBDIR += p5-Net-Proxy
     SUBDIR += p5-Net-PubSubHubbub-Publisher
@@ -1089,7 +1089,6 @@
     SUBDIR += relayd
     SUBDIR += remmina
     SUBDIR += remmina-plugin-gnome
-    SUBDIR += remmina-plugin-i18n
     SUBDIR += remmina-plugin-nx
     SUBDIR += remmina-plugin-telepathy
     SUBDIR += remmina-plugin-vnc
@@ -1382,7 +1381,6 @@
     SUBDIR += vinagre
     SUBDIR += vino
     SUBDIR += vmware-vsphere-cli
-    SUBDIR += vnc
     SUBDIR += vncreflector
     SUBDIR += vnstat
     SUBDIR += vortex

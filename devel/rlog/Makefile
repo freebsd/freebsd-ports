@@ -3,19 +3,21 @@
 
 PORTNAME=	rlog
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Flexible message logging facility for C++
-
-BROKEN=		Unfetchable (google code has gone away)
-
-OPTIONS_DEFINE=	DOCS
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	anastmag
+GH_PROJECT=	rlog
+GH_TAGNAME=	1.4
+
+OPTIONS_DEFINE=	DOCS
 
 USES=		gmake pathfix libtool
 GNU_CONFIGURE=	yes

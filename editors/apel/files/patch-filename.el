@@ -1,8 +1,8 @@
 Index: filename.el
 ===================================================================
---- filename.el	(revision 2)
-+++ filename.el	(working copy)
-@@ -102,26 +102,26 @@
+--- filename.el.orig	2005-07-06 02:08:52 UTC
++++ filename.el
+@@ -102,26 +102,26 @@ Moreover, if you want to convert Japanes
  		inc-i '(1+ i))
  	(setq sref 'aref
  	      inc-i '(+ i (char-length chr))))

@@ -103,7 +103,7 @@
 %%SOFTMMU%%%%DATADIR%%/keymaps/tr
 %%SOFTMMU%%%%DATADIR%%/kvmvapic.bin
 %%SOFTMMU%%%%DATADIR%%/linuxboot.bin
-%%SOFTMMU%%%%DATADIR%%/linuxboot_dma.bin
+%%LINUXBOOT_DMA%%%%SOFTMMU%%%%DATADIR%%/linuxboot_dma.bin
 %%SOFTMMU%%%%DATADIR%%/multiboot.bin
 %%SOFTMMU%%%%DATADIR%%/openbios-ppc
 %%SOFTMMU%%%%DATADIR%%/openbios-sparc32

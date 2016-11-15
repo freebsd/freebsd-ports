@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.23.03
+PORTVERSION=	3.23.15
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
-		LOCAL/db
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia

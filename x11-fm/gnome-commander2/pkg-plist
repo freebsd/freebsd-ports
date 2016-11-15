@@ -18,6 +18,8 @@ lib/gnome-commander/plugins/sha1sum.pyo
 man/man1/gnome-commander.1.gz
 share/appdata/gnome-commander.appdata.xml
 share/applications/gnome-commander.desktop
+share/glib-2.0/schemas/org.gnome.gnome-commander.enums.xml
+share/glib-2.0/schemas/org.gnome.gnome-commander.gschema.xml
 %%DATADIR%%/mime/XMLnamespaces
 %%DATADIR%%/mime/aliases
 %%DATADIR%%/mime/generic-icons
@@ -54,6 +56,7 @@ share/gnome/help/gnome-commander/C/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/C/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/C/figures/mounting.png
 share/gnome/help/gnome-commander/C/gnome-commander.xml
@@ -81,6 +84,7 @@ share/gnome/help/gnome-commander/cs/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/cs/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/cs/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/cs/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/cs/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/cs/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/cs/figures/mounting.png
 share/gnome/help/gnome-commander/cs/gnome-commander.xml
@@ -108,6 +112,7 @@ share/gnome/help/gnome-commander/de/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/de/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/de/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/de/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/de/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/de/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/de/figures/mounting.png
 share/gnome/help/gnome-commander/de/gnome-commander.xml
@@ -135,6 +140,7 @@ share/gnome/help/gnome-commander/el/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/el/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/el/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/el/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/el/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/el/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/el/figures/mounting.png
 share/gnome/help/gnome-commander/el/gnome-commander.xml
@@ -162,6 +168,7 @@ share/gnome/help/gnome-commander/es/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/es/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/es/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/es/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/es/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/es/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/es/figures/mounting.png
 share/gnome/help/gnome-commander/es/gnome-commander.xml
@@ -189,6 +196,7 @@ share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/fr/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/fr/figures/mounting.png
 share/gnome/help/gnome-commander/fr/gnome-commander.xml
@@ -216,6 +224,7 @@ share/gnome/help/gnome-commander/ru/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/ru/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/ru/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/ru/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/ru/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/ru/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/ru/figures/mounting.png
 share/gnome/help/gnome-commander/ru/gnome-commander.xml
@@ -243,6 +252,7 @@ share/gnome/help/gnome-commander/sl/figures/gnome-commander_options_layout.png
 share/gnome/help/gnome-commander/sl/figures/gnome-commander_options_layout_colors.png
 share/gnome/help/gnome-commander/sl/figures/gnome-commander_options_programs.png
 share/gnome/help/gnome-commander/sl/figures/gnome-commander_options_tabs.png
+share/gnome/help/gnome-commander/sl/figures/gnome-commander_simple_plugins_example.png
 share/gnome/help/gnome-commander/sl/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/sl/figures/mounting.png
 share/gnome/help/gnome-commander/sl/gnome-commander.xml
@@ -271,6 +281,7 @@ share/locale/id/LC_MESSAGES/gnome-commander.mo
 share/locale/it/LC_MESSAGES/gnome-commander.mo
 share/locale/ja/LC_MESSAGES/gnome-commander.mo
 share/locale/ko/LC_MESSAGES/gnome-commander.mo
+share/locale/lt/LC_MESSAGES/gnome-commander.mo
 share/locale/nb/LC_MESSAGES/gnome-commander.mo
 share/locale/ne/LC_MESSAGES/gnome-commander.mo
 share/locale/nl/LC_MESSAGES/gnome-commander.mo
@@ -289,6 +300,7 @@ share/locale/sr/LC_MESSAGES/gnome-commander.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-commander.mo
 share/locale/sv/LC_MESSAGES/gnome-commander.mo
 share/locale/th/LC_MESSAGES/gnome-commander.mo
+share/locale/tr/LC_MESSAGES/gnome-commander.mo
 share/locale/uk/LC_MESSAGES/gnome-commander.mo
 share/locale/vi/LC_MESSAGES/gnome-commander.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-commander.mo
@@ -379,15 +391,11 @@ share/pixmaps/gnome-commander/mime-icons/i-music.png
 share/pixmaps/gnome-commander/mime-icons/i-regular.png
 share/pixmaps/gnome-commander/mime-icons/i-socket.png
 share/pixmaps/gnome-commander/mime-icons/i-symlink.png
-share/pixmaps/gnome-commander/nautilus.svg
 share/pixmaps/gnome-commander/overlay_symlink.xpm
 share/pixmaps/gnome-commander/overlay_umount.xpm
 share/pixmaps/gnome-commander/pin.png
-share/pixmaps/gnome-commander/python.svg
 share/pixmaps/gnome-commander/rotate-180-16.xpm
 share/pixmaps/gnome-commander/rotate-270-16.xpm
 share/pixmaps/gnome-commander/rotate-90-16.xpm
 share/pixmaps/gnome-commander/terminal.svg
-share/pixmaps/gnome-commander/toggle_horizontal.xpm
-share/pixmaps/gnome-commander/toggle_vertical.xpm
 share/pixmaps/gnome-commander/unpin.png

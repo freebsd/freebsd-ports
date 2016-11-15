@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 5.x branch
 
 LICENSE=	APACHE20

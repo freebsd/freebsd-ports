@@ -56,7 +56,7 @@ load_rc_config $name
 
 pidfile="%%RIEMANN_PIDFILE%%"
 command="/usr/sbin/daemon"
-command_args="-f -c -r -P ${pidfile} \
+command_args="-f -t ${name} -c -r -P ${pidfile} \
     ${riemann_java_home}/bin/java \
     ${riemann_java_opts} \
     -jar ${riemann_jarfile} ${riemann_config}"
@@ -66,6 +66,11 @@ riemann_prestart()
 {
     	install -o ${riemann_user} /dev/null ${pidfile}
 }
-start_precmd=${name}_prestart
+start_precmd="${name}_prestart"
+
+# support SIGHUP to reload config file using pkill. parent pid
+# is that of daemon(8) and not of riemann's JVM instance
+extra_commands="reload"
+reload_cmd="pkill -SIGHUP -U ${riemann_user} -G ${riemann_group} -f Dapp=riemann"
 
 run_rc_command "$1"

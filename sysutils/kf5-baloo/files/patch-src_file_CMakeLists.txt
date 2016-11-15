@@ -1,0 +1,10 @@
+--- src/file/CMakeLists.txt.orig	2015-08-04 10:42:23 UTC
++++ src/file/CMakeLists.txt
+@@ -51,6 +51,7 @@ target_link_libraries(baloofilecommon
+     KF5::Crash
+     KF5::ConfigCore
+     KF5::BalooEngine
++    ${LIBINOTIFY_LIBRARIES}
+ )
+ 
+ set(file_SRCS

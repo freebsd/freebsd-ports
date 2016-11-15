@@ -1,0 +1,7 @@
+CPU-X is a free software that gathers information about CPU, motherboard, and
+more on one's system.  It is similar to well-known CPU-Z program for Windows.
+
+It can be used in graphic mode by using GTK+3, or in text-based mode by using
+ncurses.  Non-interactive dump mode is also available.
+
+WWW: http://x0rg.github.io/CPU-X/

@@ -9,16 +9,19 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based configuration manager for DOSBox
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+
 RUN_DEPENDS=	dosbox:emulators/dosbox
 
-USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
+USE_QT4=	corelib gui network xml uic_build moc_build qmake_build rcc_build
 USES=		qmake tar:bzip2
 
 PLIST_FILES=	bin/dboxfe \
 		bin/dboxfetray \
 		share/pixmaps/dboxfe.png
 
-DESKTOP_ENTRIES=	"DBoxFE" "DOSBox configuration manager" \
+DESKTOP_ENTRIES="DBoxFE" "DOSBox configuration manager" \
 		"${PREFIX}/share/pixmaps/dboxfe.png" \
 		"dboxfe" "Utility;Qt;" true \
 		"DBoxFEtray" "DBoxFE systray icon" \

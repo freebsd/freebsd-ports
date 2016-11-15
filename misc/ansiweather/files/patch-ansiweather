@@ -1,15 +1,6 @@
---- ansiweather.orig	2016-07-26 11:16:31 UTC
+--- ansiweather.orig	2016-10-18 17:14:59 UTC
 +++ ansiweather
-@@ -66,7 +66,7 @@ done
- 
- if [ "$usage" = true ]
- then
--	printf "%s\n" \
-+	gprintf "%s\n" \
- 		"" \
- 		"AnsiWeather 1.08" \
- 		"Copyright (c) 2013-2016, Frederic Cambus" \
-@@ -224,7 +224,7 @@ then
+@@ -205,7 +205,7 @@ then
  	forecast=$([ "$forecast" -gt "$flength" ] && echo "$flength" || echo "$forecast")
  else
  	city=$(echo "$weather" | jq -r '.name')
@@ -18,7 +9,7 @@
  	humidity=$(echo "$weather" | jq '.main.humidity')
  	pressure=$(echo "$weather" | jq '.main.pressure')
  	sky=$(echo "$weather" | jq -r '.weather[0].main')
-@@ -304,7 +304,7 @@ case $units in
+@@ -285,7 +285,7 @@ case $units in
  		scale="°C"
  		speed_unit="m/s"
  		pressure_unit="hPa"
@@ -27,7 +18,7 @@
  		;;
  	imperial)
  		scale="°F"
-@@ -312,7 +312,7 @@ case $units in
+@@ -293,7 +293,7 @@ case $units in
  		pressure_unit="inHg"
  		if [ "$forecast" = 0 ]
  		then
@@ -36,7 +27,7 @@
  		fi
  		;;
  esac
-@@ -368,8 +368,8 @@ then
+@@ -349,8 +349,8 @@ then
  	do
  		day=$(echo "$weather" | jq ".list[$i]")
  		date=$(epoch_to_date "$(echo "$day" | jq -r '.dt')")
@@ -47,7 +38,7 @@
  
  		icon=""
  		if [ "$symbols" = true ]
-@@ -401,7 +401,7 @@ fi
+@@ -397,7 +397,7 @@ fi
  
  if [ "$ansi" = true ]
  then

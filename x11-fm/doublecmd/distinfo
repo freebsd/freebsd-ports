@@ -1,5 +1,5 @@
-TIMESTAMP = 1473665081
-SHA256 (doublecmd-0.7.5-src.tar.gz) = b92fcd6a29cb0ed4eedb4e209c44fc6614f1b3455e0d9a9721be21f5b6bf725b
-SIZE (doublecmd-0.7.5-src.tar.gz) = 6675706
+TIMESTAMP = 1477756979
+SHA256 (doublecmd-0.7.6-src.tar.gz) = e6f9e2230c44a83ae66cf96636fae58b8a1799abacfbcea85ffcbafc359b64d5
+SIZE (doublecmd-0.7.6-src.tar.gz) = 6676117
 SHA256 (doublecmd-help-0.6.0-src.tar.gz) = d50a58f0e8c25c07720f2afd987213f330dfce268e2aef349d1da3de2eef1c39
 SIZE (doublecmd-help-0.6.0-src.tar.gz) = 11514996

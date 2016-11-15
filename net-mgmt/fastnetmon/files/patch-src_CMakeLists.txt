@@ -1,46 +1,102 @@
---- src/CMakeLists.txt.orig	2015-06-02 16:43:16 UTC
+
+$FreeBSD$
+
+--- src/CMakeLists.txt.orig	2016-06-22 05:22:26 UTC
 +++ src/CMakeLists.txt
-@@ -14,8 +14,8 @@ set (Tutorial_VERSION_MAJOR 1)
- set (Tutorial_VERSION_MINOR 1)
+@@ -27,6 +27,13 @@ project(FastNetMon)
+ set (FASTNETMON_VERSION_MAJOR 1)
+ set (FASTNETMON_VERSION_MINOR 1)
  
- # It's pretty safe and provide big speedup for our packet processor and patricia code
--set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 ")
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
-+set(CMAKE_C_FLAGS_RELEASE "-O2")
-+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
++# Respect PREFIX variable in FreeBSD
++if($ENV{PREFIX})
++    set(PREFIX $ENV{PREFIX})
++else()
++    set(PREFIX "/usr/local")
++endif()
++
+ if (ENABLE_GOBGP_SUPPORT)
+     # We could not compile gRPC without C++ 11
+     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11")
+@@ -59,12 +66,14 @@ SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL
+ 
+ message(STATUS "C++ compilation flags: ${CMAKE_CXX_FLAGS_RELEASE}")
+ 
+-set(HIREDIS_CUSTOM_INSTALL_PATH "/opt/libhiredis_0_13")
+-set(LOG4CPP_CUSTOM_INSTALL_PATH "/opt/log4cpp1.1.1")
+-set(JSONC_CUSTOM_INSTALL_PATH "/opt/json-c-0.12")
+-set(PFRING_CUSTOM_INSTALL_PATH "/opt/pf_ring_6.0.3")
+-set(LIBPCAP_CUSTOM_INSTALL_PATH "/opt/libpcap_1.7.4")
+-set(MONGO_C_CUSTOM_INSTALL_PATH "/opt/mongo_c_driver_1_1_9")
++set(HIREDIS_CUSTOM_INSTALL_PATH ${PREFIX})
++set(LOG4CPP_CUSTOM_INSTALL_PATH ${PREFIX})
++set(JSONC_CUSTOM_INSTALL_PATH ${PREFIX})
++set(PFRING_CUSTOM_INSTALL_PATH ${PREFIX})
++set(LIBPCAP_CUSTOM_INSTALL_PATH ${PREFIX})
++set(MONGO_C_CUSTOM_INSTALL_PATH ${PREFIX})
++set(NDPI_CUSTOM_INSTALL_PATH ${PREFIX})
++set(LUAJIT_CUSTOM_INSTALL_PATH ${PREFIX})
  
  set(FASTNETMON_PROFILER OFF)
  
-@@ -91,11 +91,13 @@ target_link_libraries(netflow_plugin ipf
- add_library(pcap_plugin STATIC pcap_plugin/pcap_collector.cpp)
- target_link_libraries(pcap_plugin pcap)
+@@ -190,15 +199,15 @@ if (ENABLE_DPI_SUPPORT) 
  
-+find_package(Threads)
-+
- if (ENABLE_PFRING_SUPPORT) 
-     add_library(pfring_plugin STATIC pfring_plugin/pfring_collector.cpp)
-     target_link_libraries(pfring_plugin ${PFRING_LIBRARIES})
-     target_link_libraries(pfring_plugin numa)
--    target_link_libraries(pfring_plugin pthread)
-+    target_link_libraries(pfring_plugin ${CMAKE_THREAD_LIBS_INIT})
+     add_library(fast_dpi STATIC fast_dpi.cpp)
+ 
+-    set(NDPI_INCLUDE_DIRS "/opt/ndpi/include/libndpi-1.7.1")
+-
+-    find_library(NDPI_LIBRARIES NAMES ndpi PATHS "/opt/ndpi/lib" NO_DEFAULT_PATH)
++    file(GLOB NDPI_SEARCH_PATHS "${NDPI_CUSTOM_INSTALL_PATH}/include/libndpi-*")
++    find_path(NDPI_INCLUDE_DIRS NAMES libndpi/ndpi_api.h PATHS ${NDPI_SEARCH_PATHS} NO_DEFAULT_PATH)
++    find_library(NDPI_LIBRARIES NAMES ndpi PATHS "${NDPI_CUSTOM_INSTALL_PATH}/lib" NO_DEFAULT_PATH)
+ 
+     if (NOT NDPI_LIBRARIES)
+         message(FATAL_ERROR "Could not find nDPI library")
+     endif()
+ 
+-    link_directories("/opt/ndpi/lib")
++    link_directories(${NDPI_LIBRARIES})
+     include_directories(${NDPI_INCLUDE_DIRS})
+ 
+     add_definitions(-DENABLE_DPI)
+@@ -215,8 +224,6 @@ if (ENABLE_LUA_SUPPORT)
+ 
+     add_definitions(-DENABLE_LUA_HOOKS)
+ 
+-    set(LUAJIT_CUSTOM_INSTALL_PATH "/opt/luajit_2.0.4")
+-
+     link_directories("${LUAJIT_CUSTOM_INSTALL_PATH}/lib")
+     include_directories("${LUAJIT_CUSTOM_INSTALL_PATH}/include")
+ 
+@@ -578,14 +585,14 @@ if (BUILD_TESTS) 
  endif()
  
- # example plugin
-@@ -169,7 +171,7 @@ endif()
+ if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "DragonFly")
+-    install(TARGETS fastnetmon DESTINATION bin)
+-    install(TARGETS fastnetmon_client DESTINATION bin)
++    install(TARGETS fastnetmon DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++    install(TARGETS fastnetmon_client DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
  
- target_link_libraries(fastnetmon ${LOG4CPP_LIBRARY_PATH})
+-    install(FILES fastnetmon.conf DESTINATION etc)
++    install(FILES fastnetmon.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
  
--target_link_libraries(fastnetmon pthread)
-+target_link_libraries(fastnetmon ${CMAKE_THREAD_LIBS_INIT})
+     # Install blank files for networks list and whitelist
+-    install(FILES networks_list DESTINATION etc)
+-    install(FILES networks_whitelist DESTINATION etc)
++    install(FILES networks_list DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
++    install(FILES networks_whitelist DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
+ else()
+     # Linux
+     install(TARGETS fastnetmon DESTINATION /usr/sbin)
+@@ -599,8 +606,10 @@ else()
+ endif()
  
- # Our libs
- target_link_libraries(fastnetmon patricia)
-@@ -217,6 +219,8 @@ endif()
- install(TARGETS fastnetmon DESTINATION bin)
- install(TARGETS fastnetmon_client DESTINATION bin)
- 
-+install(FILES fastnetmon.conf DESTINATION etc)
+ # man pages
+-install(FILES man/fastnetmon.1 DESTINATION /usr/share/man/man1)
+-install(FILES man/fastnetmon_client.1 DESTINATION /usr/share/man/man1)
++#install(FILES man/fastnetmon.1 DESTINATION /usr/share/man/man1)
++#install(FILES man/fastnetmon_client.1 DESTINATION /usr/share/man/man1)
 +
++install(FILES fastnetmon.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
+ 
  # Configure cpack package builder
  # Run it with: cd build; cpack -G DEB ..
- set(CPACK_PACKAGE_NAME "fastnetmon")

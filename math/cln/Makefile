@@ -23,7 +23,7 @@ INFO=		cln
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6
+.if ${ARCH} == aarch64 || ${ARCH} == armv6
 CPPFLAGS+=	-DNO_ASM
 .endif
 
