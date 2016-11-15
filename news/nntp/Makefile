@@ -3,13 +3,13 @@
 
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=	nntp-patch-y2k
+PATCHFILES=	nntp-patch-ansi
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
@@ -50,9 +50,6 @@ post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
 pre-configure:
-	# fix for compiler with broken namespace
-	${REINPLACE_CMD} -e 's|\([(! 	]\)log\([)+ 	]\)|\1dolog\2|g' \
-		${WRKSRC}/server/msgidd.c
 	${REINPLACE_CMD} ${ALONE} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
