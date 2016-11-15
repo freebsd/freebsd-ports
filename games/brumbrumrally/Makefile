@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://dataapa.net/brumbrumrally/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Tacing game with randomized tracks
+COMMENT=	Racing game with randomized tracks
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
