@@ -1,6 +1,6 @@
 Pithub provides a set of modules to access the Github v3 API in an object
-oriented way. There is also Net::GitHub which does the same for all the versions
-(v1, v2, v3) of the Github API. Pithub supports all API calls so far, but only
-for v3.
+oriented way. There is also Net::GitHub which does the same for all the
+versions (v1, v2, v3) of the Github API. Pithub supports all API calls so
+far, but only for v3.
 
-http://search.cpan.org/dist/Pithub/ WWW: http://search.cpan.org/dist/Pithub/
+WWW: http://search.cpan.org/dist/Pithub/
