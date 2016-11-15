@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		DEBIAN
@@ -14,7 +14,6 @@ COMMENT=	Various OpenPGP related tools
 RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
 		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
-		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
 		p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
 		p5-Mail-Tools>=0:mail/p5-Mail-Tools \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
