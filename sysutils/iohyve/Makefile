@@ -2,6 +2,7 @@
 
 PORTNAME=	iohyve
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lme@FreeBSD.org
