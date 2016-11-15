@@ -2,11 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	dmd
-PKGNAMESUFFIX=	2
 PORTVERSION=	2.071.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
+PKGNAMESUFFIX=	2
 DISTNAME=	dmd.${PORTVERSION}
+
+MAINTAINER=	cy@FreeBSD.org
+COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
+
+LICENSE=	ART10 DMD BSL
+LICENSE_COMB=	multi
+LICENSE_NAME_DMD=	Digital Mars license
+LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
+LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
+EXTRACT_ONLY=	${DISTNAME}.freebsd-64${EXTRACT_SUFX}
 DISTFILES=	${DISTNAME}.freebsd-64${EXTRACT_SUFX} \
 		dmd.2.067.1.zip
 # The souces in the following files can be used instead. Either way the
@@ -14,11 +25,6 @@ DISTFILES=	${DISTNAME}.freebsd-64${EXTRACT_SUFX} \
 # binaries using the sources that come with the distribution.
 # DISTFILES=	${DISTNAME}.freebsd-32${EXTRACT_SUFX}
 # DISTFILES=	${DISTNAME}.linux${EXTRACT_SUFX}
-
-EXTRACT_ONLY=	${DISTNAME}.freebsd-64${EXTRACT_SUFX}
-
-MAINTAINER=	cy@FreeBSD.org
-COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
 USES=		gmake zip
 MAKEFILE=	posix.mak
@@ -28,21 +34,15 @@ EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
-LICENSE_COMB=	multi
-LICENSE=	ART10 DMD BSL
-LICENSE_NAME_DMD=	Digital Mars license
-LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
-LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
+BROKEN_aarch64=		Does not configure: no cpu specified, assuming X86
+BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option -m32
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not install: divide-by-zero error
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: divide-by-zero error
-.endif
 
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	MODEL=64

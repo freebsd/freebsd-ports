@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dmd
-PKGNAMESUFFIX=	2
 PORTVERSION=	2.067.1
 CATEGORIES=	lang
+PKGNAMESUFFIX=	2
 DISTNAME=	dmd.${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,11 +21,9 @@ PORTDOCS=	*.txt html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 .undef		DEVELOPER
 
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=		Does not install: divide-by-zero error
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: divide-by-zero error
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	MODEL=64
