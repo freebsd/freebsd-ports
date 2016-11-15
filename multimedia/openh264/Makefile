@@ -27,6 +27,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
 
+BROKEN_aarch64=		Fails to compile: cc: error: unable to execute command: Executable as does not exist
+
 OPTIONS_DEFINE=	DEBUG PLUGINS TEST
 OPTIONS_DEFAULT=PLUGINS
 OPTIONS_SUB=	yes
