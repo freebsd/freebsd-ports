@@ -2180,6 +2180,9 @@ llvm39/lib/cmake/llvm/LLVMInstallSymlink.cmake
 llvm39/lib/cmake/llvm/LLVMProcessSources.cmake
 llvm39/lib/cmake/llvm/TableGen.cmake
 llvm39/lib/cmake/llvm/VersionFromVCS.cmake
+llvm39/lib/libLLVM-%%LLVM_MAJOR%%.so
+llvm39/lib/libLLVM-%%LLVM_RELEASE%%.so
+llvm39/lib/libLLVM.so
 llvm39/lib/libLLVMAArch64AsmParser.a
 llvm39/lib/libLLVMAArch64AsmPrinter.a
 llvm39/lib/libLLVMAArch64CodeGen.a
