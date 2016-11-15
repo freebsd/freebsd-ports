@@ -65,7 +65,7 @@ MAKE_ARGS+=	USE_OPENSSL=1
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
 .endif
-.if ${SSL_DEFAULT:Mlibressl*}
+.if !empty(SSL_DEFAULT:Mlibressl*)
 BROKEN= does not build with libressl
 .endif
 .endif
