@@ -9,4 +9,6 @@ COMMENT=	X.Org siliconmotion display driver
 
 XORG_CAT=	driver
 
+ONLY_FOR_ARCHS=		amd64 i386
+
 .include <bsd.port.mk>
