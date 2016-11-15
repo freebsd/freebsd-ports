@@ -10,4 +10,6 @@ COMMENT=	X.Org vmware display driver
 XORG_CAT=	driver
 USE_XORG=	xextproto xineramaproto videoproto
 
+BROKEN_aarch64=		Fails to compile:  implicit declaration of function outl is invalid in C99
+
 .include <bsd.port.mk>
