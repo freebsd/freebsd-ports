@@ -62,8 +62,11 @@ IGNORE?=	enable PCRE support to use DeviceAtlas
 .if ${PORT_OPTIONS:MOPENSSL}
 USES+=		ssl
 MAKE_ARGS+=	USE_OPENSSL=1
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
+.endif
+.if ${SSL_DEFAULT:Mlibressl*}
+BROKEN= does not build with libressl
 .endif
 .endif
 
