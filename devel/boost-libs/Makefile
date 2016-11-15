@@ -37,6 +37,8 @@ PLIST_SUB+=	COROUTINE="@comment " CONTEXT="@comment " \
 PLIST_SUB+=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
 .endif
 
+BROKEN_aarch64=		Fails to compile: multiple instances of error: platform not supported
+
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
