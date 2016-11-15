@@ -15,6 +15,8 @@ COMMENT=	Perforce server
 
 RUN_DEPENDS=	p4:devel/p4
 
+BROKEN=		checksum mismatch
+
 RESTRICTED=	Restricted distribution
 
 NO_BUILD=	yes

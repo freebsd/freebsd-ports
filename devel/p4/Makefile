@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce client
 
+BROKEN=		checksum mismatch
+
 RESTRICTED=	Restricted distribution
 
 NO_BUILD=	yes
