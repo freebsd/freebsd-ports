@@ -15,8 +15,6 @@ COMMENT=	Hadoop database, a distributed, scalable, big data store
 
 LICENSE=	APACHE20
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
 		${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
