@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.14.1
-PORTREVISION=	1
+PORTVERSION=	3.15.0
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -207,5 +206,9 @@ post-build:
 .if ${ARCH}=="i386"
 	@${ECHO_MSG} "===> WARNING: on ${ARCH} don't pass atof1-* tests"
 .endif
+
+# for compares with checksum from of the site
+sha1:
+	@sha1 ${DISTDIR}/${ALLFILES}
 
 .include <bsd.port.mk>
