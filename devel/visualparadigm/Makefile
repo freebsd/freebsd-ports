@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	13.2.20161021
+PORTVERSION=	13.2.20161101
 CATEGORIES=	devel java
 MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce${PORTVERSION:R}/${PORTVERSION:E}/
 DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
@@ -27,8 +27,6 @@ WRKSRC=		${WRKDIR}/${EXTRACT_NAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 EXTRACT_NAME=	Visual_Paradigm_CE_${PORTVERSION:R}
-
-FETCH_ARGS=	-Fpr
 
 post-patch:
 	@${FIND} ${WRKSRC} -name *.dll -delete -or -name *.exe -delete -or -name *.orig -delete
