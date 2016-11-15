@@ -4,9 +4,11 @@ bin/ptree
 share/doc/gps/html/adacontrol_pm.html
 share/doc/gps/html/adacontrol_ug.html
 share/gprconfig/adacontrol.xml
-share/gps/plug-ins/adactl.gif
+share/gps/plug-ins/adactl-ask.gif
+share/gps/plug-ins/adactl-ask.svg
+share/gps/plug-ins/adactl-file.gif
+share/gps/plug-ins/adactl-file.svg
 share/gps/plug-ins/adactl.py
-share/gps/plug-ins/adactl_ask.gif
 share/gps/plug-ins/pfni.py
 share/gps/plug-ins/pfni.xml
 share/gps/plug-ins/zadactl.xml
