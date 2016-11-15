@@ -10,6 +10,8 @@ MASTER_SITES=	http://physics.ramapo.edu/downloads/ \
 
 COMMENT=	KDE IcOsX iconset
 
+BROKEN=		does not fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
