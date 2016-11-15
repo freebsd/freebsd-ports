@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -23,6 +23,8 @@ CONFLICTS_INSTALL=	libressl-devel-[0-9]* \
 			openssl-[0-9]* \
 			openssl-devel-[0-9]*
 
+MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MAN3
+
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -38,9 +40,5 @@ post-stage-NC-on:
 
 post-stage:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
-
-post-install-MAN3-off:
-	${RM} -r ${STAGEDIR}/${PREFIX}/man/man3
-	${REINPLACE_CMD} -e '/^man\/man3/d' ${TMPPLIST}
 
 .include <bsd.port.mk>
