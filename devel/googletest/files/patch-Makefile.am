@@ -1,0 +1,16 @@
+Move custom headers into their own directory
+
+--- Makefile.am.orig	2016-11-03 20:36:28 UTC
++++ Makefile.am
+@@ -208,7 +208,10 @@ pkginclude_internal_HEADERS = \
+   include/gtest/internal/gtest-port-arch.h \
+   include/gtest/internal/gtest-string.h \
+   include/gtest/internal/gtest-tuple.h \
+-  include/gtest/internal/gtest-type-util.h \
++  include/gtest/internal/gtest-type-util.h
++
++pkginclude_internal_customdir = $(pkgincludedir)/internal/custom
++pkginclude_internal_custom_HEADERS = \
+   include/gtest/internal/custom/gtest.h \
+   include/gtest/internal/custom/gtest-port.h \
+   include/gtest/internal/custom/gtest-printers.h

@@ -1,53 +1,65 @@
-Index: include/gtest/internal/gtest-port.h
-===================================================================
---- include/gtest/internal/gtest-port.h	(revision 692)
-+++ include/gtest/internal/gtest-port.h	(working copy)
-@@ -128,6 +128,10 @@
- //     GTEST_OS_IOS    - iOS
- //       GTEST_OS_IOS_SIMULATOR - iOS simulator
- //   GTEST_OS_NACL     - Google Native Client (NaCl)
-+//   GTEST_OS_GNU_KFREEBSD - GNU/kFreeBSD
-+//   GTEST_OS_DRAGONFLY - DragonFly
-+//   GTEST_OS_FREEBSD  - FreeBSD
-+//   GTEST_OS_NETBSD   - NetBSD
- //   GTEST_OS_OPENBSD  - OpenBSD
- //   GTEST_OS_QNX      - QNX
- //   GTEST_OS_SOLARIS  - Sun Solaris
-@@ -341,6 +345,14 @@
+o Add DragonFly, NetBSD and GNU/kFreeBSD support
+o Implement GetThreadCount() for BSDs
+o Work around StreamingListenerTest with GCC 4.2
+
+--- include/gtest/internal/gtest-port-arch.h.orig	2016-11-03 20:36:28 UTC
++++ include/gtest/internal/gtest-port-arch.h
+@@ -67,6 +67,10 @@
+ # if TARGET_OS_IPHONE
+ #  define GTEST_OS_IOS 1
+ # endif
++#elif defined __DragonFly__
++# define GTEST_OS_DRAGONFLY 1
++#elif defined(__GLIBC__) && defined(__FreeBSD_kernel__)
++# define GTEST_OS_GNU_KFREEBSD 1
+ #elif defined __FreeBSD__
+ # define GTEST_OS_FREEBSD 1
+ #elif defined __linux__
+@@ -84,6 +88,8 @@
  # define GTEST_OS_HPUX 1
  #elif defined __native_client__
  # define GTEST_OS_NACL 1
-+#elif defined(__GLIBC__) && defined(__FreeBSD_kernel__)
-+# define GTEST_OS_GNU_KFREEBSD 1
-+#elif defined __DragonFly__
-+# define GTEST_OS_DRAGONFLY 1
-+#elif defined __FreeBSD__
-+# define GTEST_OS_FREEBSD 1
 +#elif defined __NetBSD__
 +# define GTEST_OS_NETBSD 1
  #elif defined __OpenBSD__
  # define GTEST_OS_OPENBSD 1
  #elif defined __QNX__
-@@ -611,6 +623,8 @@ struct _RTL_CRITICAL_SECTION;
+--- include/gtest/internal/gtest-port.h.orig	2016-11-03 20:36:28 UTC
++++ include/gtest/internal/gtest-port.h
+@@ -121,13 +121,16 @@
+ //
+ //   GTEST_OS_AIX      - IBM AIX
+ //   GTEST_OS_CYGWIN   - Cygwin
++//   GTEST_OS_DRAGONFLY - DragonFly
+ //   GTEST_OS_FREEBSD  - FreeBSD
++//   GTEST_OS_GNU_KFREEBSD - GNU/kFreeBSD
+ //   GTEST_OS_HPUX     - HP-UX
+ //   GTEST_OS_LINUX    - Linux
+ //     GTEST_OS_LINUX_ANDROID - Google Android
+ //   GTEST_OS_MAC      - Mac OS X
+ //     GTEST_OS_IOS    - iOS
+ //   GTEST_OS_NACL     - Google Native Client (NaCl)
++//   GTEST_OS_NETBSD   - NetBSD
+ //   GTEST_OS_OPENBSD  - OpenBSD
+ //   GTEST_OS_QNX      - QNX
+ //   GTEST_OS_SOLARIS  - Sun Solaris
+@@ -607,6 +610,7 @@ typedef struct _RTL_CRITICAL_SECTION GTE
  // To disable threading support in Google Test, add -DGTEST_HAS_PTHREAD=0
  // to your compiler flags.
  # define GTEST_HAS_PTHREAD (GTEST_OS_LINUX || GTEST_OS_MAC || GTEST_OS_HPUX \
-+    || GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_FREEBSD \
-+    || GTEST_OS_NETBSD || GTEST_OS_OPENBSD \
-     || GTEST_OS_QNX)
++    || GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_NETBSD || GTEST_OS_OPENBSD \
+     || GTEST_OS_QNX || GTEST_OS_FREEBSD || GTEST_OS_NACL)
  #endif  // GTEST_HAS_PTHREAD
  
-@@ -791,7 +805,8 @@ using ::std::tuple_size;
-      (GTEST_OS_MAC && !GTEST_OS_IOS) || GTEST_OS_IOS_SIMULATOR || \
+@@ -800,6 +804,7 @@ using ::std::tuple_size;
+      (GTEST_OS_MAC && !GTEST_OS_IOS) || \
       (GTEST_OS_WINDOWS_DESKTOP && _MSC_VER >= 1400) || \
       GTEST_OS_WINDOWS_MINGW || GTEST_OS_AIX || GTEST_OS_HPUX || \
--     GTEST_OS_OPENBSD || GTEST_OS_QNX)
-+     GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_FREEBSD || \
-+     GTEST_OS_NETBSD || GTEST_OS_OPENBSD || GTEST_OS_QNX)
++     GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_NETBSD ||	\
+      GTEST_OS_OPENBSD || GTEST_OS_QNX || GTEST_OS_FREEBSD)
  # define GTEST_HAS_DEATH_TEST 1
- # include <vector>  // NOLINT
  #endif
-@@ -824,7 +839,8 @@ using ::std::tuple_size;
+@@ -832,7 +837,8 @@ using ::std::tuple_size;
      (GTEST_OS_WINDOWS || GTEST_OS_CYGWIN || GTEST_OS_SYMBIAN || GTEST_OS_AIX)
  
  // Determines whether test results can be streamed to a socket.
@@ -57,11 +69,9 @@ Index: include/gtest/internal/gtest-port.h
  # define GTEST_CAN_STREAM_RESULTS_ 1
  #endif
  
-Index: src/gtest-port.cc
-===================================================================
---- src/gtest-port.cc	(revision 692)
-+++ src/gtest-port.cc	(working copy)
-@@ -51,6 +51,14 @@
+--- src/gtest-port.cc.orig	2016-11-03 20:36:28 UTC
++++ src/gtest-port.cc
+@@ -52,6 +52,14 @@
  # include <mach/vm_map.h>
  #endif  // GTEST_OS_MAC
  
@@ -76,7 +86,7 @@ Index: src/gtest-port.cc
  #if GTEST_OS_QNX
  # include <devctl.h>
  # include <fcntl.h>
-@@ -104,6 +112,80 @@ size_t GetThreadCount() {
+@@ -131,6 +139,80 @@ size_t GetThreadCount() {
    }
  }
  
@@ -157,47 +167,32 @@ Index: src/gtest-port.cc
  #elif GTEST_OS_QNX
  
  // Returns the number of threads running in the process, or 0 to indicate that
-Index: src/gtest.cc
-===================================================================
---- src/gtest.cc	(revision 692)
-+++ src/gtest.cc	(working copy)
-@@ -126,7 +126,7 @@
+--- src/gtest.cc.orig	2016-11-03 20:36:28 UTC
++++ src/gtest.cc
+@@ -127,7 +127,7 @@
  #endif
  
  #if GTEST_CAN_STREAM_RESULTS_
 -# include <arpa/inet.h>  // NOLINT
-+# include <sys/socket.h>
++# include <sys/socket.h>  // NOLINT
  # include <netdb.h>  // NOLINT
- #endif
- 
-Index: test/gtest-port_test.cc
-===================================================================
---- test/gtest-port_test.cc	(revision 692)
-+++ test/gtest-port_test.cc	(working copy)
-@@ -304,7 +304,8 @@ TEST(FormatCompilerIndependentFileLocationTest, Fo
+ # include <sys/socket.h>  // NOLINT
+ # include <sys/types.h>  // NOLINT
+--- test/gtest-port_test.cc.orig	2016-11-03 20:36:28 UTC
++++ test/gtest-port_test.cc
+@@ -304,7 +304,8 @@ TEST(FormatCompilerIndependentFileLocati
    EXPECT_EQ("unknown file", FormatCompilerIndependentFileLocation(NULL, -1));
  }
  
--#if GTEST_OS_MAC || GTEST_OS_QNX
-+#if GTEST_OS_MAC || GTEST_OS_QNX || GTEST_OS_DRAGONFLY || GTEST_OS_FREEBSD || \
-+    GTEST_OS_GNU_KFREEBSD || GTEST_OS_NETBSD || GTEST_OS_OPENBSD
+-#if GTEST_OS_LINUX || GTEST_OS_MAC || GTEST_OS_QNX
++#if GTEST_OS_LINUX || GTEST_OS_MAC || GTEST_OS_QNX || GTEST_OS_DRAGONFLY || \
++    GTEST_OS_FREEBSD || GTEST_OS_GNU_KFREEBSD || GTEST_OS_NETBSD || GTEST_OS_OPENBSD
  void* ThreadFunc(void* data) {
-   pthread_mutex_t* mutex = static_cast<pthread_mutex_t*>(data);
-   pthread_mutex_lock(mutex);
-@@ -355,7 +356,7 @@ TEST(GetThreadCountTest, ReturnsCorrectValue) {
- TEST(GetThreadCountTest, ReturnsZeroWhenUnableToCountThreads) {
-   EXPECT_EQ(0U, GetThreadCount());
- }
--#endif  // GTEST_OS_MAC || GTEST_OS_QNX
-+#endif  // GTEST_OS_MAC || GTEST_OS_QNX || GTEST_OS_*BSD
- 
- TEST(GtestCheckDeathTest, DiesWithCorrectOutputOnFailure) {
-   const bool a_false_condition = false;
-Index: test/gtest_unittest.cc
-===================================================================
---- test/gtest_unittest.cc	(revision 692)
-+++ test/gtest_unittest.cc	(working copy)
-@@ -117,6 +117,7 @@ TEST_F(StreamingListenerTest, OnTestIterationEnd)
+   internal::Mutex* mutex = static_cast<internal::Mutex*>(data);
+   mutex->Lock();
+--- test/gtest_unittest.cc.orig	2016-11-03 20:36:28 UTC
++++ test/gtest_unittest.cc
+@@ -118,6 +118,7 @@ TEST_F(StreamingListenerTest, OnTestIter
    EXPECT_EQ("event=TestIterationEnd&passed=1&elapsed_time=0ms\n", *output());
  }
  
@@ -205,7 +200,7 @@ Index: test/gtest_unittest.cc
  TEST_F(StreamingListenerTest, OnTestCaseStart) {
    *output() = "";
    streamer_.OnTestCaseStart(TestCase("FooTest", "Bar", NULL, NULL));
-@@ -128,6 +129,7 @@ TEST_F(StreamingListenerTest, OnTestCaseEnd) {
+@@ -129,6 +130,7 @@ TEST_F(StreamingListenerTest, OnTestCase
    streamer_.OnTestCaseEnd(TestCase("FooTest", "Bar", NULL, NULL));
    EXPECT_EQ("event=TestCaseEnd&passed=1&elapsed_time=0ms\n", *output());
  }
