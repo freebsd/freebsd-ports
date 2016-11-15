@@ -17,14 +17,14 @@ diff --git config/system-headers config/system-headers
 index 55e4cd1..76567b3 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -629,6 +629,7 @@ libgnome/libgnome.h
+@@ -624,6 +624,7 @@ libgnome/libgnome.h
  libgnomeui/gnome-icon-lookup.h
  libgnomeui/gnome-icon-theme.h
  libgnomeui/gnome-ui-init.h
 +libv4l2.h
- limits
  limits.h
  link.h
+ #ifdef ANDROID
 diff --git old-configure.in configure.in
 index 55e4cd1..76567b3 100644
 --- old-configure.in
