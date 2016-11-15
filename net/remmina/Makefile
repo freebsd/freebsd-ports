@@ -41,7 +41,7 @@ AVAHI_CMAKE_BOOL=	WITH_AVAHI
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
-NLS_USES=		gettext
+NLS_USES=		gettext localbase
 NLS_CMAKE_BOOL=		WITH_GETTEXT
 
 SSH_LIB_DEPENDS=	libssh_threads.so:security/libssh
