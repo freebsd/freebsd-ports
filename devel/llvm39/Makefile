@@ -5,9 +5,9 @@ DISTVERSION=	3.9.0
 PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
+PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
-PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
@@ -48,8 +48,6 @@ OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT
 OPTIONS_SUB=	yes
 
-PLIST_FILES=
-
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-svn-r280672 \
@@ -74,7 +72,7 @@ DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 EXTRAS_DESC=		Extra clang tools
 EXTRAS_IMPLIES=		CLANG
-EXTRAS_DISTFILES= clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
+EXTRAS_DISTFILES=	clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
@@ -195,19 +193,19 @@ COMMANDS+=	argdumper \
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=    COMPILER_RT="@comment "
+PLIST_SUB+=	COMPILER_RT="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
 # Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=    GOLD="@comment "
+PLIST_SUB+=	GOLD="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=    OPENMP="@comment "
+PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
 
@@ -222,7 +220,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
+_CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
@@ -424,7 +422,7 @@ build-plist:
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-	awk '{ \
+	${AWK} '{ \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|${EXTRAS_PATTERN}|libclang_rt)/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
@@ -435,7 +433,6 @@ build-plist:
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} ${PLIST}.tmp
-
 
 check-commands:
 .for command in ${COMMANDS}
@@ -451,7 +448,7 @@ _LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
 svn-patch-clang:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
-	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
+	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
 .endif
 .if make(svn-patch-compiler-rt)
 .if !defined(PATCH_REV)
@@ -462,7 +459,7 @@ _LLVM_BASE=http://llvm.org/svn/llvm-project/compiler-rt/trunk
 svn-patch-compiler-rt:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
-	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/compiler-rt/;' >> ${_PATCH_FILE}
+	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/compiler-rt/;' >> ${_PATCH_FILE}
 .endif
 .if make(svn-patch-lldb)
 .if !defined(PATCH_REV)
