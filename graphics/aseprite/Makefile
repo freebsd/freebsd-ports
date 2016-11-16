@@ -56,6 +56,9 @@ CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
 CXXFLAGS+=		-D_GLIBCXX_USE_C99 # XXX ports/193528
 
+BROKEN_aarch64=		Fails to build: undefined reference to __va_copy
+BROKEN_sparc64=		Fails to build: error: vsnprintf is not a member of std
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
 	@${CP} `${MAKE} -C ${PORTSDIR}/x11/pixman -V WRKSRC`/pixman/pixman-combine32.h \

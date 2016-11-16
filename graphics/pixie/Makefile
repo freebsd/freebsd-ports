@@ -41,7 +41,8 @@ CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BROKEN_sparc64=	Does not compile on sparc64
+BROKEN_aarch64=		Fails to compile: error: use of undeclared identifier CRenderer
+BROKEN_sparc64=		Does not compile on sparc64
 
 OPTIONS_DEFINE=	DOCS
 

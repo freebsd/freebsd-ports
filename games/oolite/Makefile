@@ -52,6 +52,8 @@ PLIST_FILES+=	bin/oolite %%DATADIR%%/oolite \
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN_aarch64=		Fails to configure: error: These compiler flags are invalid: -O
+
 .include <bsd.port.pre.mk>
 
 .if exists(${CC})
