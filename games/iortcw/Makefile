@@ -43,6 +43,8 @@ SP_INSTALL_TARGET=	sp-install
 MP_ALL_TARGET=	mp
 MP_INSTALL_TARGET=	mp-install
 
+BROKEN_aarch64=		Fails to configure: error: Architecture not supported
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

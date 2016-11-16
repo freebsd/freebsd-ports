@@ -13,8 +13,6 @@ COMMENT=	Advanced JPEG encoder for the Web
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 
@@ -43,6 +41,11 @@ TURBOJPEG_DESC=	Include the TurboJPEG wrapper library and associated tests
 SIMD_CONFIGURE_WITH=		simd
 SIMD_BUILD_DEPENDS=		yasm:devel/yasm
 TURBOJPEG_CONFIGURE_WITH=	turbojpeg
+
+BROKEN_aarch64=		Does not configure: error: SIMD support cannot be enabled
+BROKEN_mips64=		Does not configure: error: SIMD support cannot be enabled
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not configure: error: SIMD support cannot be enabled
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir/s|=.*|= ${DOCSDIR}|; \
