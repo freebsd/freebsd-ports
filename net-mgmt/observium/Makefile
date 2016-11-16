@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.16.10.8128
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python shebangfix
+USES=		php:cli python shebangfix
 SHEBANG_FILES=	mibs/process.pl \
 	scripts/agent-local/areca-hw \
 	scripts/agent-local/asterisk \
@@ -51,10 +51,10 @@ SHEBANG_FILES=	mibs/process.pl \
 	scripts/removespikes.php \
 	scripts/removespikes.pl \
 	scripts/rename-mibs.pl \
-	scripts/rrdtoolx.py
+	scripts/rrdtoolx.py \
+	poller-wrapper.py
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli posix session snmp tokenizer xml zlib
-WANT_PHP_CLI=	yes
 IGNORE_WITH_PHP=	70
 
 NO_BUILD=	yes
@@ -102,17 +102,17 @@ PORTDOCS=	INSTALL README
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
 .if ${PORT_OPTIONS:MAPACHEMOD} && !defined(PACKAGE_BUILDING)
-WANT_PHP_MOD=	yes
+USES+=	php:mod
 USE_APACHE_RUN=	22+
 .else
 # Package builder doesn't create php5 with module
-WANT_PHP_WEB=	yes
+USES+=	php:web
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLD}
-USE_MYSQL=	server
+USES+=	mysql:server
 .else
-USE_MYSQL=	client
+USES+=	mysql:client
 .endif
 
 post-patch:
