@@ -23,4 +23,6 @@ MAKE_ARGS=	CC=${CC} INSTALL_PATH=${PREFIX}/rejik3
 USERS=		squid
 GROUPS=		squid
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
