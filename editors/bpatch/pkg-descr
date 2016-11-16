@@ -1,0 +1,14 @@
+Original code written by Garry M. Johnson and Steven Lisk.
+
+This is a neat program that contains some neat code.  It allows you
+to dump or edit files (binary or ascii), displayed by 256-byte records
+in side-by-side hex and ascii formats.  Other features (eg. toggled
+swap within byte pairs) are included.
+
+The most interesting feature of this editor is that it doesn't load the
+entire file at once, unlike all other hex editors.  Thus, you can browse
+and edit very large files or even raw disks.
+
+The program does not include a redistribution notice, but it was posted
+to comp.sources.unix ages ago, and the README mentions the word "public
+domain".
