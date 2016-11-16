@@ -11,6 +11,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
 BROKEN=		Unfetchable (google code has gone away)
+BROKEN_aarch64=	Fails to build: undefined reference to xdo_mouselocation
 
 LIB_DEPENDS=	libxdo.so:x11/xdotool \
 		libcairo.so:graphics/cairo

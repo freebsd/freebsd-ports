@@ -16,4 +16,7 @@ RUN_DEPENDS=	fc-cache:x11-fonts/fontconfig
 
 XORG_CAT=	app
 USE_XORG=	xft xt xaw
+
+BROKEN_aarch64=		Fails to build: exec(xgettext) failed (No such file or directory)
+
 .include <bsd.port.mk>
