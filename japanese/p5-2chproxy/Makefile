@@ -23,7 +23,6 @@ GH_ACCOUNT=	yama-natuki
 GH_PROJECT=	${PORTNAME}.pl
 USE_RC_SUBR=	twochproxy
 NO_BUILD=	yes
-SUB_FILES=	twochproxy
 PLIST_FILES=	sbin/${PORTNAME}.pl
 
 do-install:
