@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sogo2
-PORTVERSION=		2.3.13
-PORTREVISION=		1
+PORTVERSION=		2.3.17
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -27,7 +26,7 @@ ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 USERS=			sogod
 GROUPS=			sogod
 
-USES=			gnustep objc
+USES=			gnustep ssl objc
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 
@@ -44,6 +43,7 @@ post-patch:
 	@${GREP} -rlF '/etc/sogo' ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} 's#/etc/sogo#${PREFIX}/etc/sogo#g'
 	@${REINPLACE_CMD} -e 's|/usr/lib/GNUstep|${GNUSTEP_LOCAL_ROOT}/Library|' ${WRKSRC}/Apache/SOGo.conf
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-patch-ACTIVESYNC-on:
 	@${REINPLACE_CMD} -e 's/Tools/Tools ActiveSync/' ${WRKSRC}/GNUmakefile
