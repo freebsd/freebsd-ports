@@ -14,8 +14,6 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_powerpc64=	Does not build
-
 USES=		gmake
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix
@@ -27,6 +25,9 @@ PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 
 MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
+
+BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
+BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.pre.mk>
 

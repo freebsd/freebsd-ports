@@ -11,13 +11,13 @@ COMMENT=	Drivers and tools for Meinberg PTP/GPS cards
 
 LICENSE=	BSD
 
-BROKEN_powerpc64=	Does not build
-
 USE_RC_SUBR=	mbgsvcd
 
 USES=		kmod uidfix
 
-BROKEN_arm=	cannot compile: unused variables
-BROKEN_sparc64=	cannot compile: error in structure definitions
+BROKEN_aarch64=		cannot compile: unused variables
+BROKEN_mips64=		cannot compile: unused variables
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		cannot compile: error in structure definitions
 
 .include <bsd.port.mk>
