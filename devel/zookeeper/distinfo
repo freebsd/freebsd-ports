@@ -1,2 +1,3 @@
-SHA256 (zookeeper-3.4.7.tar.gz) = 2e043e04c4da82fbdb38a68e585f3317535b3842c726e0993312948afcc83870
-SIZE (zookeeper-3.4.7.tar.gz) = 21816477
+TIMESTAMP = 1479220970
+SHA256 (zookeeper-3.4.9.tar.gz) = e7f340412a61c7934b5143faef8d13529b29242ebfba2eba48169f4a8392f535
+SIZE (zookeeper-3.4.9.tar.gz) = 22724574
