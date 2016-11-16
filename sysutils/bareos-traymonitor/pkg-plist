@@ -1,0 +1,7 @@
+@sample %%ETCDIR%%/tray-monitor.d/client/FileDaemon-local.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/director/Director-local.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/monitor/bareos-mon.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/storage/StorageDaemon-local.conf.sample
+share/applications/bareos-tray-monitor.desktop
+share/pixmaps/bareos-tray-monitor.xpm
+%%QT_BINDIR%%/bareos-tray-monitor
