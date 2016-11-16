@@ -14,4 +14,6 @@ USES=		uidfix
 
 CONFLICTS=	bin86-[0-9]* dev86-[0-9]*
 
+BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
+
 .include <bsd.port.mk>
