@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mlr man/man1/mlr.1.gz
 
+BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000

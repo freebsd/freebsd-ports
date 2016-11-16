@@ -12,8 +12,6 @@ COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
@@ -31,6 +29,9 @@ CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=	uidfix
+
+BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
+BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.options.mk>
 
