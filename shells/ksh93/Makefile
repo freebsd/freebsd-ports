@@ -36,6 +36,8 @@ KSHVERSION=	2012-08-01
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 
+BROKEN_aarch64=		Fails to compile: error: unknown type name Dllscan_t
+
 .include <bsd.port.pre.mk>
 
 post-patch:
