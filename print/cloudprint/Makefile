@@ -3,7 +3,7 @@
 
 PORTNAME=	cloudprint
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 
 MAINTAINER=	decke@FreeBSD.org
@@ -12,7 +12,9 @@ COMMENT=	Google Cloud Print proxy for local CUPS printers
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycups>=0:print/py-pycups \
-		${PYTHON_PKGNAMEPREFIX}daemon>0:devel/py-daemon
+		${PYTHON_PKGNAMEPREFIX}daemon>0:devel/py-daemon \
+		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	armooo
