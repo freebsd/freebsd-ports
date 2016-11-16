@@ -1,28 +1,28 @@
---- tools/clang/lib/Driver/Tools.cpp.orig	2016-09-02 19:55:01.000873648 +0000
-+++ tools/clang/lib/Driver/Tools.cpp	2016-09-02 19:54:32.001875868 +0000
-@@ -2733,13 +2733,22 @@
+--- tools/clang/lib/Driver/Tools.cpp.orig	2016-11-15 23:32:35.007899310 +0000
++++ tools/clang/lib/Driver/Tools.cpp	2016-11-15 23:41:11.888863662 +0000
+@@ -3151,13 +3151,22 @@
  
-   switch (getOpenMPRuntime(TC, Args)) {
-   case OMPRT_OMP:
+   switch (TC.getDriver().getOpenMPRuntime(Args)) {
+   case Driver::OMPRT_OMP:
 -    CmdArgs.push_back("-lomp");
 +    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
 +      CmdArgs.push_back("-lomp");
 +    else
 +      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libomp.so");
      break;
-   case OMPRT_GOMP:
+   case Driver::OMPRT_GOMP:
 -    CmdArgs.push_back("-lgomp");
 +    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
 +      CmdArgs.push_back("-lgomp");
 +    else
 +      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libgomp.so");
      break;
-   case OMPRT_IOMP5:
+   case Driver::OMPRT_IOMP5:
 -    CmdArgs.push_back("-liomp5");
 +    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
 +      CmdArgs.push_back("-liomp5");
 +    else
 +      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libiomp5.so");
      break;
-   case OMPRT_Unknown:
+   case Driver::OMPRT_Unknown:
      // Already diagnosed.
