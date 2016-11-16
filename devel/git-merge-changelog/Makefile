@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 
+BROKEN_aarch64=		Fails to compile: error: bit-field _gl_verify_error_if_negative has negative width (-1)
+
 .include <bsd.port.pre.mk>
 
 GNULIB_DIR=	${LOCALBASE}/share/gnulib

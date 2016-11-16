@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INFO=		bfd
 
+BROKEN_aarch64=		Fails to configure: machine aarch64-portbld not recognized
+BROKEN_armv64=		Fails to configure: BFD does not support target armv6-portbld-freebsd12.0
+BROKEN_mips64=		Fails to configure: BFD does not support target mips64-portbld-freebsd12.0
+
 pre-configure:
 # Configure and build pic version of libiberty
 	(cd ${WRKSRC}/../libiberty && \

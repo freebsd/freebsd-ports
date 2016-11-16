@@ -13,7 +13,10 @@ COMMENT=	Collection of general-purpose C++ classes
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	does not configure
+BROKEN_aarch64=		does not configure: error: check for atomictype failed
+BROKEN_mips=		does not configure: in section .data.rel.ro of csvdeserializer-test.o: defined in discarded section
+BROKEN_mips64=		does not configure: in section .data.rel.ro of csvdeserializer-test.o: defined in discarded section
+BROKEN_sparc64=		does not configure
 
 USES=		cpe iconv libtool localbase pathfix
 CPE_VENDOR=	tntnet

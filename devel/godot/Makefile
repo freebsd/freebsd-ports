@@ -62,6 +62,9 @@ PULSEAUDIO_MAKE_ARGS=	pulseaudio=yes
 GODOTFILE=		${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	bin/${GODOTFILE}
 
+BROKEN_sparc64=		Fails to compile: error: This platform cannot use safe refcount, compile with NO_THREADS or implement it
+BROKEN_aarch64=		Fails to compile: error: This platform cannot use safe refcount, compile with NO_THREADS or implement it
+
 .ifmake makesum
 # Always include optional distfiles
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}" OPTIONS_EXCLUDE=

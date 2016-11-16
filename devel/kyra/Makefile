@@ -26,6 +26,8 @@ MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
 		RELEASE_CFLAGS="${CFLAGS}" RELEASE_CXXFLAGS="${CXXFLAGS}"
 
+BROKEN_aarch64=		Fails to compile: error: invalid output constraint =A in asm
+
 do-install:
 .for i in encoder spriteed
 	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} kr${i} ${STAGEDIR}${PREFIX}/bin)
