@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trace a chain of DNS servers to the source
 
 USES=		gmake

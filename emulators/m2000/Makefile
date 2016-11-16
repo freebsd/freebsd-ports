@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME:tu}${EXTRACT_SUFX}:code \
 DIST_SUBDIR=	m2000
 EXTRACT_ONLY=	${PORTNAME:tu}${EXTRACT_SUFX}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable emulator for the Philips P2000 home computer
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip

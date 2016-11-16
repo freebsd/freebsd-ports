@@ -6,7 +6,7 @@ DISTVERSION=	134
 CATEGORIES=	dns
 MASTER_SITES=	http://dnscap.dns-oarc.net/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
 
 HAS_CONFIGURE=	yes

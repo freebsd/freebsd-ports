@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fight off villainous robots (X version)
 
 USES=		imake

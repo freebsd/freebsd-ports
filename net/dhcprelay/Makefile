@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
 LIB_DEPENDS=	libdnet.so:net/libdnet

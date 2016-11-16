@@ -7,7 +7,7 @@ CATEGORIES=	security textproc
 MASTER_SITES=	http://www.didierstevens.com/files/software/
 DISTNAME=	XORSearch_V1_2_0
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search for a given string in an XOR or ROL encoded binary file
 
 USES=		dos2unix zip

@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/
 DISTFILES=
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for TCL (Tool Command Language)
 
 NO_WRKSUBDIR=	yes

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplex multiple PostgreSQL databases to one relay
 
 PLIST_FILES=	bin/postgresql-relay etc/postgresql-relay.conf-sample \

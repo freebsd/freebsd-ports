@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic game engine for 2D double-buffering animation
 
 GNU_CONFIGURE=	yes

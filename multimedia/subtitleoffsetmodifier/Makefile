@@ -8,7 +8,7 @@ CATEGORIES=	multimedia textproc converters
 MASTER_SITES=	http://thomas.enix.org/pub/code/perl/
 DISTFILES=	subtitle-offset-modificator.pl
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle offset modificator
 
 USES=		perl5 shebangfix

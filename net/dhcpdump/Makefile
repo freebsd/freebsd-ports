@@ -6,7 +6,7 @@ PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
 
 PLIST_FILES=	bin/dhcpdump man/man8/dhcpdump.8.gz
