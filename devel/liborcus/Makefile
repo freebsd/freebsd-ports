@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
