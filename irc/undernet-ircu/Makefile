@@ -57,6 +57,8 @@ LEAKDETECT_CONFIGURE_WITH=	leak-detect
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
+BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/convert-conf \

@@ -57,6 +57,8 @@ CONFIGURE_ARGS+=	--with-compressed-classes=no
 PLIST_SUB+=		WITHOUT_ZIP="" WITH_ZIP="@comment "
 .endif
 
+BROKEN_aarch64=		Fails to configure: Endianess not declared
+
 post-patch:
 	@${CP} -f ${WRKSRC}/resource/java/security/classpath.security \
 	    ${WRKSRC}/resource/java/security/SableVM.security
