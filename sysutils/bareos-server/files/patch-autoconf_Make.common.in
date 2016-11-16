@@ -1,0 +1,13 @@
+--- autoconf/Make.common.in	2016-11-09 23:17:41.055746000 -0500
++++ autoconf/Make.common.in	2016-11-09 23:17:59.647897000 -0500
+@@ -62,8 +62,8 @@
+ MKDIR = @BUILD_DIR@/autoconf/mkinstalldirs
+ INSTALL = @INSTALL@
+ # add the -s to the following in PRODUCTION mode
+-INSTALL_PROGRAM = $(INSTALL) -m @SBINPERM@
+-INSTALL_LIB = $(INSTALL) -m 755
++INSTALL_PROGRAM = $(INSTALL) -s -m @SBINPERM@
++INSTALL_LIB = $(INSTALL) -s -m 755
+ INSTALL_DATA = $(INSTALL) -m 644
+ INSTALL_SCRIPT = $(INSTALL) -m @SBINPERM@
+ INSTALL_CONFIG = $(INSTALL) -m 640

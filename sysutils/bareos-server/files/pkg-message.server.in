@@ -2,7 +2,18 @@
 
 bareos server was installed
 
-1) Important information about new version of bareos can be found in the
+1) Sample files are installed in %%PREFIX%%/etc/bareos/bareos-dir.d/ and
+   %%PREFIX%%/etc/bareos/bareos-sd.d/ directories
+
+2) Add bareos_dir_enable="YES" and bareos_sd_enable="YES" to /etc/rc.conf.
+
+3) If you want to retain old configuration scheme, you must add the following
+   to /etc/rc.conf
+
+  bareos_dir_config="%%PREFIX%%/etc/bareos/bareos-dir.conf"
+  bareos_sd_config="%%PREFIX%%/etc/bareos/bareos-sd.conf"
+
+4) Important information about new version of bareos can be found in the
    ReleaseNotes.
 
    https://github.com/bareos/bareos/blob/master/README.md
@@ -17,7 +28,8 @@ chio command is included and installed at
 Please have a look at it if you want to use an
 autochanger. You have to configure the usage in
 
-  %%PREFIX%%/etc/bareos/bareos-dir.conf
+  %%PREFIX%%/etc/bareos/bareos-dir.conf or
+  %%PREFIX%%/etc/bareos/bareos-dir.d/storage/
 
 Take care of correct permissions for changer and
 tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e.
@@ -51,7 +63,7 @@ the user bareos.  Check your permissions.
 For USB support read the bareos manual. It could be necessary
 to configure/compile a new kernel.
 
-Look at %%PREFIX%%/lib/bareos/update_bareos_tables for
+Look at %%PREFIX%%/lib/bareos/scripts/update_bareos_tables for
 database update procedure.
 
 If you are using sqlite you need to run the make_sqlite_tables script as
