@@ -13,8 +13,6 @@ COMMENT=	Python module for the libnet packet construction library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		python
@@ -29,6 +27,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
+
+BROKEN_aarch64=		Fails to install: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libnet.so: No such file or directory
+BROKEN_powerpc64=	Does not build
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py

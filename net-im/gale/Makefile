@@ -26,6 +26,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/w3c-libwww
 LIBS+=		-L${LOCALBASE}/lib
 
+BROKEN_aarch64=		Fails to compile: error: conflicting types for __wcwidth
+
 post-patch:
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
