@@ -13,7 +13,7 @@ MASTER_SITES=	http://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${PO
 PKGNAMESUFFIX=	-RC7
 DISTNAME=	${PORTNAME}-${PORTVERSION}_20100615
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webbased calendar with iCal support
 
 LICENSE=	GPLv2

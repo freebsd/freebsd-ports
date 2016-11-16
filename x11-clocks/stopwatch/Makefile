@@ -8,7 +8,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://expect.nist.gov/stopwatch/
 DISTNAME=	stopwatch
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4

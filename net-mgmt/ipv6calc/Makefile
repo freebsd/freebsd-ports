@@ -6,7 +6,7 @@ PORTVERSION=	0.96.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert, change, and calculate with IPv6 addresses
 
 USES=		gettext gmake perl5

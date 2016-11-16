@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire card game for X Window System
 
 LIB_DEPENDS=	libshhopt.so.1:devel/libshhopt \

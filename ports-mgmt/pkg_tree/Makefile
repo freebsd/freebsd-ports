@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Get a 'graphical' tree-overview of installed packages
 
 USES=		perl5 shebangfix

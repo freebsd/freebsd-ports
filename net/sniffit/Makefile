@@ -12,7 +12,7 @@ PATCH_SITES=	http://www.mavetju.org/download/adopted/
 PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sniffer program. For educational use
 
 GNU_CONFIGURE=	yes

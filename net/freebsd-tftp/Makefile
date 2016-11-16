@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upcoming replacement for tftp(1) and tftpd(8)
 
 PLIST_FILES=	bin/tftp libexec/tftpd \

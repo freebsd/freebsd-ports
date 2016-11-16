@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate db(3)'s btree(3) and hash(3) databases - NetBSD port
 
 PLIST_FILES=	bin/db \

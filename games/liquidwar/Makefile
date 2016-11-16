@@ -9,7 +9,7 @@ MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 		SAVANNAH \
 		http://ufoot.hd.free.fr/pub/archive/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	You control an army of liquid and have to try and eat your opponents
 
 LIB_DEPENDS=	liballeg.so:devel/allegro

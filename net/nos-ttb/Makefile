@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.djcbsoftware.nl/code/ttb/
 DISTNAME=	ttb-${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NOS teletekst browser
 
 #don't know if pygtk-1.X could also be used
