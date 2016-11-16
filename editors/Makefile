@@ -14,6 +14,7 @@
     SUBDIR += biew
     SUBDIR += bitedit
     SUBDIR += boiling-egg
+    SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += calligra
     SUBDIR += calligra-l10n
