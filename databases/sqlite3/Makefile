@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.15.0
+PORTVERSION=	3.15.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -166,12 +166,12 @@ STMT_CPPFLAGS=	-DSQLITE_ENABLE_STMT_SCANSTATUS=1
 EXTENSION_CONFIGURE_ENABLE=	dynamic-extensions
 
 THREADS_CONFIGURE_ENABLE=	threadsafe
-THREADS_LDFLAGS=		-lpthread
+THREADS_LIBS=		-lpthread
 
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
 ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
-ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
+ICU_LIBS=	`${LOCALBASE}/bin/icu-config --ldflags`
 
 UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
@@ -201,6 +201,7 @@ post-configure:
 	@${ECHO_MSG} "===> CPPFLAGS=${CPPFLAGS}"
 	@${ECHO_MSG} "===> CFLAGS=${CFLAGS}"
 	@${ECHO_MSG} "===> LDFLAGS=${LDFLAGS}"
+	@${ECHO_MSG} "===> LIBS=${LIBS}"
 
 post-build:
 .if ${ARCH}=="i386"
