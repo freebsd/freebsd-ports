@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	u-boot
-PORTVERSION=	2016.09
+PORTVERSION=	2016.11
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
 		LOCAL/db:bootfiles

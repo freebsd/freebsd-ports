@@ -1,4 +1,4 @@
---- lib/efi_loader/efi_net.c.orig	2016-09-12 14:05:51 UTC
+--- lib/efi_loader/efi_net.c.orig	2016-11-14 16:27:11 UTC
 +++ lib/efi_loader/efi_net.c
 @@ -27,7 +27,8 @@ struct efi_net_obj {
  	struct efi_simple_network net;
@@ -10,7 +10,7 @@
  	/* PXE struct to transmit dhcp data */
  	struct efi_pxe pxe;
  	struct efi_pxe_mode pxe_mode;
-@@ -198,7 +199,7 @@ static efi_status_t efi_net_open_dp(void
+@@ -205,7 +206,7 @@ static efi_status_t EFIAPI efi_net_open_
  	struct efi_simple_network *net = handle;
  	struct efi_net_obj *netobj = container_of(net, struct efi_net_obj, net);
  
@@ -19,7 +19,7 @@
  
  	return EFI_SUCCESS;
  }
-@@ -229,11 +230,10 @@ void efi_net_set_dhcp_ack(void *pkt, int
+@@ -236,11 +237,10 @@ void efi_net_set_dhcp_ack(void *pkt, int
  int efi_net_register(void **handle)
  {
  	struct efi_net_obj *netobj;
@@ -34,7 +34,7 @@
  	};
  	struct efi_device_path_file_path dp_end = {
  		.dp.type = DEVICE_PATH_TYPE_END,
-@@ -272,8 +272,9 @@ int efi_net_register(void **handle)
+@@ -279,8 +279,9 @@ int efi_net_register(void **handle)
  	netobj->net.receive = efi_net_receive;
  	netobj->net.mode = &netobj->net_mode;
  	netobj->net_mode.state = EFI_NETWORK_STARTED;
