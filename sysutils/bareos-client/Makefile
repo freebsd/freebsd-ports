@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Backup archiving recovery open sourced (client)
@@ -15,7 +15,7 @@ USE_RC_SUBR=	bareos-fd
 PLIST=		${PKGDIR}/pkg-plist.client
 MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 
-OPTIONS_DEFINE=	NLS PYTHON LMDB
+OPTIONS_DEFINE=	NLS PYTHON LMDB SCSICRYPTO
 OPTIONS_DEFAULT=#
 LMDB_DESC=	Enable build of LMDB support
 

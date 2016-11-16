@@ -25,6 +25,6 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-stored \
 			--with-jansson=${LOCALBASE}
 
-BROKEN_aarch64=		Fails to link: missing sbrk
+BROKEN_aarch64=	Fails to link: missing sbrk
 
 .include "${MASTERDIR}/Makefile"
