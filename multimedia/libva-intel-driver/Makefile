@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/va/i965_drv_video.so
 
+BROKEN_aarch64=		Fails to compile: fatal error: intel_bufmgr.h file not found
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
 		${WRKSRC}/src/Makefile.am
