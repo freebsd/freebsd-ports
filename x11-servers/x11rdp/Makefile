@@ -23,8 +23,6 @@ COMMENT=	X11 server for xrdp
 
 LICENSE=	MIT
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	xorg-fonts>=0:x11-fonts/xorg-fonts
 
 # SVN revision of x11rdp
@@ -35,6 +33,11 @@ USE_OPENSSL=	yes
 CONFLICTS_INSTALL=	xrdp-devel-[0-9]* x11rdp-devel-[0-9]*
 
 PLIST_FILES=	bin/X11rdp
+
+BROKEN_aarch64=		Fails to compile: error: GLYPHPADBYTES must be 4
+BROKEN_armv6=		Fails to compile: error: GLYPHPADBYTES must be 4
+BROKEN_mips64=		Fails to compile: No PCI support available for this architecture/OS combination
+BROKEN_powerpc64=	Does not build
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/build_dir
