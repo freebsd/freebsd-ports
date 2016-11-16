@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTREVISION=	0
-COMMENT=	The client and server (local) port of ossec-hids
+COMMENT=	Client and server (local) port of ossec-hids
 
 LOCAL_ONLY=	yes
 
