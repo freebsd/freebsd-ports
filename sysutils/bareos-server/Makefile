@@ -3,14 +3,17 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	15.2.2
-PORTREVISION?=	3
+DISTVERSION=	16.2.4
+#PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
+
+LICENSE=	AGPLv3 LGPL3
+LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 
@@ -32,29 +35,34 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	MTX PYTHON NDMP NLS OPENSSL
-OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
+OPTIONS_DEFINE?=	MTX PYTHON NDMP NLS OPENSSL SCSICRYPTO
+OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL SCSICRYPTO
 OPTIONS_SUB=		yes
 MTX_DESC=		Install mtx for control of autochanger devices
 NDMP_DESC=		Enable build of NDMP support
+SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "-server"
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE=		DATABASE
 DATABASE_DESC=		Database support
 
-NDMP_CONFIGURE_ON=      --enable-ndmp=yes
-NDMP_CONFIGURE_OFF=     --enable-ndmp=no
+NDMP_CONFIGURE_ON=	--enable-ndmp=yes
+NDMP_CONFIGURE_OFF=	--enable-ndmp=no
 .endif
 
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
+
+SCSICRYPTO_CONFIGURE_ON=	--enable-scsi-crypto=yes
+SCSICRYPTO_CONFIGURE_OFF=	--enable-scsi-crypto=no
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 PYTHON_USES=		  python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
+PYTHON_PLUGIN=		yes
 
 .if !defined(WITH_CLIENT_ONLY)
 LIB_DEPENDS+=	libbareos.so:sysutils/bareos-client
@@ -173,36 +181,43 @@ post-patch:
 #	This port does not install docs.  See bareos-docs for that
 	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
 #	Default bconsole.conf is in ${ETCDIR}
-	@${REINPLACE_CMD} -e 's|./bconsole.conf|${ETCDIR}/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|bareos-dir.d/||g' ${WRKSRC}/src/plugins/filed/Makefile.in
 .else
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
 		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
 		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in
+	@${REINPLACE_CMD} -e 's|../../lib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/plugins/dird/Makefile.in ${WRKSRC}/src/plugins/stored/Makefile.in
 	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
 		${WRKSRC}/src/tools/bpluginfo.c
 .endif
 
+post-extract:
+.if defined(WITH_CLIENT_ONLY)
+.	if defined(PYTHON_PLUGIN)
+		@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/fileset
+		@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/job
+.	endif
+.endif
+	@${MV} ${WRKSRC}/src/defaultconfigs/bareos-dir.d/fileset/'Windows All Drives.conf' \
+		${WRKSRC}/src/defaultconfigs/bareos-dir.d/fileset/'WindowsAllDrives.conf'
+
 .if !target(post-install)
 post-install:
 .if defined(WITH_CLIENT_ONLY)
-	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
-	${MV} ${STAGEDIR}${ETCDIR}/plugin-python-ldap.conf ${STAGEDIR}${ETCDIR}/plugin-python-ldap.conf.sample
+	${MKDIR} ${STAGEDIR}${ETCDIR}/bconsole.d/
+	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.d/bconsole.conf.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bareos ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample
 	${CHMOD} o+x ${STAGEDIR}${PREFIX}/bin/bsmtp
+	${MV} ${STAGEDIR}${ETCDIR}/mtx-changer.conf ${STAGEDIR}${ETCDIR}/mtx-changer.conf.sample
 .endif
-	for na in ${CONFFILES}; do \
-		${MV} ${STAGEDIR}${ETCDIR}/bareos-$$na.conf ${STAGEDIR}${ETCDIR}/bareos-$$na.conf.sample; \
-	done
 	@${MKDIR} ${STAGEDIR}/var/run/bareos
 .endif
 .else

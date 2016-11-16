@@ -1,30 +1,43 @@
-@sample %%ETCDIR%%/bareos-fd.conf.sample
+@sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
 @group bareos
-@sample %%ETCDIR%%/bconsole.conf.sample
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
+@group bareos
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
+%%PYTHON%%@group bareos
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
+%%PYTHON%%@group bareos
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
+%%PYTHON%%@group bareos
+@sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
 @group wheel
 %%LMDB%%@sample %%ETCDIR%%/plugin-python-ldap.conf.sample
 lib/libbareos.la
 lib/libbareos.so
-lib/libbareos-15.2.2.so
+lib/libbareos-16.2.4.so
 lib/libbareoscfg.la
 lib/libbareoscfg.so
-lib/libbareoscfg-15.2.2.so
+lib/libbareoscfg-16.2.4.so
 lib/libbareosfind.la
 lib/libbareosfind.so
-lib/libbareosfind-15.2.2.so
+lib/libbareosfind-16.2.4.so
 %%LMDB%%lib/libbareoslmdb.la
 %%LMDB%%lib/libbareoslmdb.so
-%%LMDB%%lib/libbareoslmdb-15.2.2.so
-lib/bareos/plugins/BareosFdPluginBaseclass.py
-%%LMDB%%lib/bareos/plugins/BareosFdPluginLDAP.py
-lib/bareos/plugins/BareosFdPluginLocalFileset.py
-lib/bareos/plugins/BareosFdWrapper.py
-lib/bareos/plugins/bareos-fd-local-fileset.py
-lib/bareos/plugins/bareos-fd-mock-test.py
-%%LMDB%%lib/bareos/plugins/bareos-fd-ldap.py
-lib/bareos/plugins/bareos_fd_consts.py
-lib/bareos/plugins/bareos-fd.py.template
+%%LMDB%%lib/libbareoslmdb-16.2.4.so
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFileset.py
+%%PYTHON%%lib/bareos/plugins/BareosFdWrapper.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-local-fileset.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-mock-test.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-ldap.py
+%%PYTHON%%lib/bareos/plugins/bareos_fd_consts.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd.py.template
 lib/bareos/plugins/bpipe-fd.so
+%%PYTHON%%lib/bareos/plugins/python-fd.so
 man/man8/bareos-fd.8.gz
 man/man1/bconsole.1.gz
 sbin/bareos-fd
@@ -33,7 +46,8 @@ sbin/bconsole
 bin/bconsole
 @group wheel
 @dir(bareos,bareos,)  %%BAREOS_DIR%%
-@dir(,bareos,) %%ETCDIR%%
+%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/fileset
+%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/job
 @dir lib/bareos/plugins
 @dir lib/bareos/scripts
 @dir(bareos,bareos,) /var/log/bareos
