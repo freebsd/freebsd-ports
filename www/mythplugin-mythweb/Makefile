@@ -4,6 +4,7 @@
 PORTNAME=	mythweb
 PORTVERSION=	0.27.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 
@@ -16,7 +17,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 
 NO_BUILD=	yes
+USES=		php shebangfix
 USE_PHP=	spl session mysql pcre posix json
+
+SHEBANG_FILES=	mythweb.pl modules/_shared/lang/build_translation.pl \
+		modules/coverart/handler.pl modules/stream/*.pl
+
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
@@ -39,9 +45,6 @@ post-patch:
 		${WRKSRC}/mythweb.conf.lighttpd
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name *.orig")
-	${CHMOD} -R 775 ${STAGEDIR}${WWWDIR}/data
 
 .include <bsd.port.mk>
