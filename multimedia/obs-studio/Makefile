@@ -38,6 +38,8 @@ GH_ACCOUNT=	jp9000
 
 INSTALLS_ICONS=	yes
 
+BROKEN_aarch64=		Fails to compile: invalid conversion between vector type and integer type
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc

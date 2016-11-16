@@ -33,6 +33,8 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
 
+BROKEN_aarch64=		Fails to compile: error: call to member function insert is ambiguous
+
 # fixes build on non UTF-8 enviroments
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo $<|LANG=C; LC_ALL=C; &|' \

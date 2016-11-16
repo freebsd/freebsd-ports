@@ -23,6 +23,8 @@ EXTRACT_AFTER_ARGS+=	--exclude "md5*"
 
 WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-1d3b6e448e01/source
 
+BROKEN_mips64=		Fails to link: Nonrepresentable section on output
+
 do-test:
 	${WRKSRC}/test/TestBench
 
