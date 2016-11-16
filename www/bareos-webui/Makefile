@@ -3,7 +3,7 @@
 
 PORTNAME=	bareos-webui
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	15.2.2
+DISTVERSION=	16.2.4
 PORTREVISION=	0
 CATEGORIES=	www sysutils
 
@@ -56,7 +56,8 @@ post-patch:
 
 do-install:
 	@${ECHO} "Installing in ${BAREOSWEB_HOME}"
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/console
+	${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile
 	${MKDIR} ${STAGEDIR}${BAREOSWEB_HOME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "config data module public vendor" \
 		${STAGEDIR}${BAREOSWEB_HOME}
@@ -64,8 +65,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/composer* ${STAGEDIR}${BAREOSWEB_HOME}
 	${INSTALL_DATA} ${WRKSRC}/phpunit.xml ${STAGEDIR}${BAREOSWEB_HOME}
 	${INSTALL_DATA} ${WRKSRC}/install/directors.ini ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/install/bareos/webui-consoles.conf ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/install/bareos/webui-profiles.conf ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/install/configuration.ini ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/install/bareos/bareos-dir.d/console/admin.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/console/admin.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/install/bareos/bareos-dir.d/profile/webui-admin.conf ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-admin.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/install/apache/bareos-webui.conf ${STAGEDIR}${ETCDIR}/apache-bareos-webui.conf
+	${INSTALL_DATA} ${WRKSRC}/install/nginx/bareos-webui.conf ${STAGEDIR}${ETCDIR}/nginx-bareos-webui.conf
 
 .include <bsd.port.mk>
