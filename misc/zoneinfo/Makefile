@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/
 DISTNAME=	tzdata${DISTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Updated timezone definitions
 
 NO_WRKSUBDIR=	yes
