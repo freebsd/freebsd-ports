@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sope2
-PORTVERSION=		2.3.13
-PORTREVISION=		1
+PORTVERSION=		2.3.17
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -40,6 +39,9 @@ LDAP_USE=		OPENLDAP=client
 PGSQL_USES=		pgsql
 MYSQL_USE=		MYSQL=client
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-patch-LDAP-off:
 	@${REINPLACE_CMD} -e '/checkLinking "ldap"/d' ${WRKSRC}/configure
