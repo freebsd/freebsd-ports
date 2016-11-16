@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-linux/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action-puzzle maze escape game (SDL)
 
 USE_SDL=	gfx image mixer sdl

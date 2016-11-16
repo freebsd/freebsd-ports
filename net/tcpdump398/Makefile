@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool - FreeBSD 7 version for FreeBSD 8
 
 PLIST_FILES=	bin/tcpdump398 man/man1/tcpdump398.1.gz

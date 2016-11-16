@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send DHCP request to DHCP server for monitoring purposes
 
 HAS_CONFIGURE=	yes

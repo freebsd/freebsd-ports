@@ -6,7 +6,7 @@ PORTVERSION=	3.7
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-c/${PORTVERSION}/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hebrew Calendar calculator
 
 USES=		makeinfo

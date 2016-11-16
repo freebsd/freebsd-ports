@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL Squid Access Report
 
 BUILD_DEPENDS=	bash:shells/bash

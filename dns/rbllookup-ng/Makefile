@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	dns mail
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check given IP/Host presence in RBLs
 
 BUILD_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \

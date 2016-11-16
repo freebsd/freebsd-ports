@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.wormulon.net/smap/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP scanner and identifier
 
 USES=		gmake

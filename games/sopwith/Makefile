@@ -6,7 +6,7 @@ PORTVERSION=	1.8.4
 CATEGORIES=	games
 MASTER_SITES=	SF/sdl-${PORTNAME}/sdl_${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic WW1 biplane game
 
 LICENSE=	GPLv2+

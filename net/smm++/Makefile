@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/smm/smm/${PORTVERSION}
 DISTNAME=	smm611
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical mudclient with mapper
 
 RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets

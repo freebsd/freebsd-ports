@@ -9,7 +9,7 @@ MASTER_SITES=	ISC/cron
 DISTNAME=	cron_${PORTVERSION}.shar
 EXTRACT_SUFX=
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISC Cron, former Vixie Cron
 
 WRKSRC=		${WRKDIR}
