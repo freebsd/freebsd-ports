@@ -1,11 +1,9 @@
 dbskkd-cdb is a dictionary server for the SKK Japanese input method
-system.  dbskkd-cdb is based on the code of skkserv (the original SKK
-server) 3.9.3, using the cdb constant database package of
-D. J. Bernstein (DJB) for faster dictionary access.
+system. dbskkd-cdb uses the cdb constant database package for faster
+dictionary access.
 
 dbskkd-cdb is compatible with skkserv on the protocol behavior.  It is
-called from "super-server" programs such as inetd or tcpserver, and the
-I/O operation is solely with the stdio interface, so the code is compact
-and the access to the server can be easily restricted.
+designed to be called from "super-server" programs such as inetd
+or tcpserver. The I/O operation is solely with the stdio interface.
 
-WWW: http://code.google.com/p/dbskkd-cdb/
+WWW: https://github.com/jj1bdx/dbskkd-cdb/
