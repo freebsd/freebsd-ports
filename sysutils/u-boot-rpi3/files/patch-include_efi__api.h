@@ -1,6 +1,6 @@
---- include/efi_api.h.orig	2016-09-12 14:05:51 UTC
+--- include/efi_api.h.orig	2016-11-14 16:27:11 UTC
 +++ include/efi_api.h
-@@ -264,6 +264,18 @@ struct efi_device_path {
+@@ -268,6 +268,18 @@ struct efi_device_path {
  	u16 length;
  };
  
