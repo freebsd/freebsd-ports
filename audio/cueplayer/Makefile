@@ -5,12 +5,12 @@ PORTNAME=	cueplayer
 PORTVERSION=	0.28
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-src
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	CUE player
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
@@ -18,8 +18,6 @@ USES=		pkgconfig qmake
 USE_QT4=	gui xml uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
 USE_XORG=	x11
-
-LICENSE=	GPLv3
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
