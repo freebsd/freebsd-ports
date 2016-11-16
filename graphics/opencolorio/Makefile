@@ -11,8 +11,6 @@ COMMENT?=	Complete color management solution
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenColorIO
@@ -36,6 +34,12 @@ SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 #.else
 #CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 #.endif
+
+BROKEN_aarch64=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
+BROKEN_armv6=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
+BROKEN_mips64=		Does not compile: error: unrecognized command line option -msse2
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not compile: error: unrecognized command line option -msse2
 
 .include <bsd.port.options.mk>
 

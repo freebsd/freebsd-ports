@@ -18,8 +18,6 @@ LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2 \
 		libfreeimage.so:graphics/freeimage
 
-BROKEN_powerpc=	does not install
-
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake:outsource pkgconfig compiler:c++11-lib
 USE_SDL=	sdl
@@ -31,6 +29,9 @@ OPTIONS_SUB=	yes
 
 BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+
+BROKEN_aarch64=		does not compile: error: class member cannot be redeclared
+BROKEN_powerpc=		does not install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \
