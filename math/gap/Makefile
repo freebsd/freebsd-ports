@@ -38,6 +38,8 @@ GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
 PLIST_FILES=	bin/gap
 
+BROKEN_aarch64=		Fails to link: undefined reference to SyAllocBags
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' ${WRKSRC}/pkg/happrime/make_tarball
 

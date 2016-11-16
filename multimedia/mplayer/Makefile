@@ -115,6 +115,9 @@ CONFIGURE_ARGS+=--disable-x11
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.options"
 
+BROKEN_armv6=		Fails to compile: Error: garbage following instruction -- vmov s16,SCALE
+BROKEN_aarch64=		Fails to compile: error: invalid operand for instruction
+
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
