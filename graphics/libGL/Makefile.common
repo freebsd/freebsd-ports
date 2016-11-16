@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--disable-opencl
 CONFIGURE_ARGS+=	--enable-osmesa
 
 # gallium
-BUILD_DEPENDS+= llvm${MESA_LLVM_VER}>=3.7.l_1:devel/llvm${MESA_LLVM_VER}
+BUILD_DEPENDS+= llvm${MESA_LLVM_VER}>=3.7.1_1:devel/llvm${MESA_LLVM_VER}
 .if ${COMPONENT:Mdri} != "" || ${COMPONENT:Mclover} != "" || ${COMPONENT:Megl} != ""
 RUN_DEPENDS+=   llvm${MESA_LLVM_VER}>=3.7.1_1:devel/llvm${MESA_LLVM_VER}
 .endif
