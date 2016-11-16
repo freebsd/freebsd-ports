@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Bruce's C compiler (with as and ld); can do 16-bit code
 
+BROKEN=		unfetchable (MASTER_SITES not defined)
+
 USES=		uidfix
 
 CONFLICTS=	bin86-[0-9]* dev86-[0-9]*
