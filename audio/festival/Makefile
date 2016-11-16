@@ -25,7 +25,7 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-BROKEN_aarch64=		XXX
+BROKEN_aarch64=		Fails to link: arm64_unknown.mak: No such file or directory
 BROKEN_armv6=		Fails to link: cc.mak: No such file or directory
 BROKEN_mips64=		Fails to link: cc.mak: No such file or directory
 BROKEN_powerpc64=	Does not build
