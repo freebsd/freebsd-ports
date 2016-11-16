@@ -35,6 +35,8 @@ FULL_MAUDE_DESC=	Install full-maude${FULL_MAUDE_VER}
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1000000
