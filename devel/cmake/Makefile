@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
