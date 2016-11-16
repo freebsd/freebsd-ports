@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db-tools
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
 
