@@ -25,8 +25,7 @@ SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
-#CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
-CMAKE_ARGS=
+CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
@@ -47,6 +46,7 @@ PLIST_FILES=
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
+	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
@@ -116,6 +116,7 @@ COMMANDS=	bugpoint \
 		llvm-mcmarkup \
 		llvm-nm \
 		llvm-objdump \
+		llvm-opt-report \
 		llvm-profdata \
 		llvm-ranlib \
 		llvm-readobj \
@@ -123,6 +124,7 @@ COMMANDS=	bugpoint \
 		llvm-size \
 		llvm-split \
 		llvm-stress \
+		llvm-strings \
 		llvm-symbolizer \
 		llvm-tblgen \
 		macho-dump \
@@ -179,7 +181,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray)
+COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray_interface.h)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
