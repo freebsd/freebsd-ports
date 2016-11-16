@@ -1,4 +1,4 @@
---- lib/efi_loader/efi_console.c.orig	2016-09-12 14:05:51 UTC
+--- lib/efi_loader/efi_console.c.orig	2016-11-14 16:27:11 UTC
 +++ lib/efi_loader/efi_console.c
 @@ -9,9 +9,9 @@
  #include <common.h>

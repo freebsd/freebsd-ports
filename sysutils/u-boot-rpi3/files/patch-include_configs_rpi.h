@@ -1,6 +1,6 @@
---- include/configs/rpi.h.orig	2016-09-12 14:05:51 UTC
+--- include/configs/rpi.h.orig	2016-11-14 16:27:11 UTC
 +++ include/configs/rpi.h
-@@ -108,11 +108,13 @@
+@@ -104,11 +104,13 @@
  #endif
  
  /* Console UART */

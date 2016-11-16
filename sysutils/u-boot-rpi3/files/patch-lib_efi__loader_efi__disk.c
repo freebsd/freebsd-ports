@@ -1,6 +1,6 @@
---- lib/efi_loader/efi_disk.c.orig	2016-09-12 14:05:51 UTC
+--- lib/efi_loader/efi_disk.c.orig	2016-11-14 16:27:11 UTC
 +++ lib/efi_loader/efi_disk.c
-@@ -196,11 +196,13 @@ static void efi_disk_add_dev(const char 
+@@ -197,11 +197,13 @@ static void efi_disk_add_dev(const char 
  			     const char *if_typename,
  			     const struct blk_desc *desc,
  			     int dev_index,
@@ -15,7 +15,7 @@
  
  	/* Don't add empty devices */
  	if (!desc->lba)
-@@ -217,16 +219,28 @@ static void efi_disk_add_dev(const char 
+@@ -218,16 +220,28 @@ static void efi_disk_add_dev(const char 
  	diskobj->ops = block_io_disk_template;
  	diskobj->ifname = if_typename;
  	diskobj->dev_index = dev_index;
@@ -48,7 +48,7 @@
  
  	/* Fill in device path */
  	dp = (void*)&diskobj[1];
-@@ -261,8 +275,7 @@ static int efi_disk_create_eltorito(stru
+@@ -262,8 +276,7 @@ static int efi_disk_create_eltorito(stru
  	while (!part_get_info(desc, part, &info)) {
  		snprintf(devname, sizeof(devname), "%s:%d", pdevname,
  			 part);
@@ -58,7 +58,7 @@
  		part++;
  		disks++;
  	}
-@@ -271,6 +284,30 @@ static int efi_disk_create_eltorito(stru
+@@ -272,6 +285,30 @@ static int efi_disk_create_eltorito(stru
  	return disks;
  }
  
@@ -89,7 +89,7 @@
  /*
   * U-Boot doesn't have a list of all online disk devices. So when running our
   * EFI payload, we scan through all of the potentially available ones and
-@@ -295,13 +332,14 @@ int efi_disk_register(void)
+@@ -296,13 +333,14 @@ int efi_disk_register(void)
  		const char *if_typename = dev->driver->name;
  
  		printf("Scanning disk %s...\n", dev->name);
@@ -105,7 +105,7 @@
  		disks += efi_disk_create_eltorito(desc, if_typename,
  						  desc->devnum, dev->name);
  	}
-@@ -331,15 +369,17 @@ int efi_disk_register(void)
+@@ -332,15 +370,17 @@ int efi_disk_register(void)
  
  			snprintf(devname, sizeof(devname), "%s%d",
  				 if_typename, i);
