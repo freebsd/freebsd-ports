@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.4.0.a1.01092016
+PORTVERSION=	1.4.0.a2.16112016
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -23,7 +23,7 @@ RSPAMD_VERSION=	1.4.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	99c2eb2
+GH_TAGNAME=	a5eef8b
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
 GPERF_DESC=		Google perf-tools profiling
@@ -67,7 +67,7 @@ WITH_DEBUG=	yes
 
 .if ${PORT_OPTIONS:MHYPERSCAN}
  CMAKE_ARGS+=		-DENABLE_HYPERSCAN=ON
- BUILD_DEPENDS+=	${LOCALBASE}/lib/libhs.a:devel/hyperscan
+ LIB_DEPENDS+=		libhs.so:devel/hyperscan
  ONLY_FOR_ARCHS=	amd64
 .endif
 
