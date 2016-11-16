@@ -12,8 +12,6 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit (development version)
 
-BROKEN_powerpc=		missing __sync_bool_compare_and_swap_8()
-
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 USE_GL=		glut
@@ -29,6 +27,9 @@ PORTDOCS=	*
 MAJORVER=	${PORTVERSION:R}
 PLIST_SUB+=	MAJORVER=${MAJORVER}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
+
+BROKEN_aarch64=		Fails to compile: cannot initialize a parameter of type void * with an lvalue of type long
+BROKEN_powerpc=		missing __sync_bool_compare_and_swap_8()
 
 OPTIONS_DEFINE=	DOCS JPEG PNG TIFF WEBP
 OPTIONS_DEFAULT=	JPEG PNG TIFF WEBP
