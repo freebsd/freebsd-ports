@@ -82,6 +82,7 @@
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
+    SUBDIR += bareos-traymonitor
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond
