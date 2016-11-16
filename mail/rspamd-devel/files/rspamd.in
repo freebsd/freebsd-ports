@@ -34,13 +34,15 @@ pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
 command=%%PREFIX%%/bin/rspamd
 command_adm=%%PREFIX%%/bin/rspamadm
 restart_precmd="rspamd_checkconfig"
+reload_precmd="rspamd_checkconfig"
 configtest_cmd="rspamd_checkconfig"
 reopenlog_cmd="reopenlog_cmd"
 
 required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
 command_args="-u ${rspamd_user} -g ${rspamd_group}"
-extra_commands="configtest reopenlog"
+extra_commands="reload configtest reopenlog"
 stop_postcmd="rm -f $pidfile"
+sig_reload="HUP"
 
 rspamd_checkconfig()
 {
