@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sogo3
-PORTVERSION=		3.1.5
+PORTVERSION=		3.2.1
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -27,7 +27,7 @@ ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 USERS=			sogod
 GROUPS=			sogod
 
-USES=			gnustep objc
+USES=			gnustep ssl objc
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 
