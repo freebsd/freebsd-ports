@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161116
+  AFFECTS: Users of sysutils/bareos-*
+  AUTHOR: rand@iteris.com
+
+  Bareos v1.6.x changed the configuration scheme, from one configuration
+  file per Bareos component (file daemon, storage daemon, and director)
+  to several configuration files, in several directories, for each 
+  component. See http://doc.bareos.org/master/html/bareos-manual-main-reference.html
+
+  The new scheme will use all files named *.conf in the directory
+  hierarchies for each component:
+
+    /usr/local/etc/bareos/bareos-dir.d/
+    /usr/local/etc/bareos/bareos-fd.d/
+    /usr/local/etc/bareos/bareos-sd.d/
+
+  To retain the old configuration scheme of one file per component add
+  appropriate lines such as these to your /etc/rc.conf:
+
+    bareos_dir_config="/usr/local/etc/bareos/bareos-dir.conf"
+    bareos_fd_config="/usr/local/etc/bareos/bareos-fd.conf"
+    bareos_sd_config="/usr/local/etc/bareos/bareos-sd.conf"
+
 20161113:
   AFFECTS: users of devel/libosinfo
   AUTHOR: novel@FreeBSD.org
