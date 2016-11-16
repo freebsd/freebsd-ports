@@ -17,18 +17,16 @@ RUN_DEPENDS=	p5-HTTP-Daemon>0:www/p5-HTTP-Daemon \
 		p5-libwww>0:www/p5-libwww
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	${WRKSRC}/${PORTNAME}.pl
+SHEBANG_FILES=	${PORTNAME}.pl
 USE_GITHUB=	yes
 GH_ACCOUNT=	yama-natuki
 GH_PROJECT=	${PORTNAME}.pl
+USE_RC_SUBR=	twochproxy
 NO_BUILD=	yes
-RC_SUBR=	${WRKDIR}/twochproxy
-SUB_FILES=	${FILESDIR_REL}/twochproxy
-PLIST_FILES=	sbin/${PORTNAME}.pl \
-		etc/rc.d/twochproxy
+SUB_FILES=	twochproxy
+PLIST_FILES=	sbin/${PORTNAME}.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/twochproxy ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
