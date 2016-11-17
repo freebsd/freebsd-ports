@@ -23,7 +23,8 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/va/i965_drv_video.so
 
-BROKEN_aarch64=		Fails to compile: fatal error: intel_bufmgr.h file not found
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Driver for hardware present only on intel i386 and amd64 CPUs
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
