@@ -6,7 +6,7 @@ PORTVERSION=	0.27.5.20150616
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \

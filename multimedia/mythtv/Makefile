@@ -6,7 +6,7 @@ PORTVERSION=	0.27.5.20150616
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \

@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV
 
 LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
