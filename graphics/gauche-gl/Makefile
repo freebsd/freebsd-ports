@@ -16,16 +16,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gosh:lang/gauche
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	gosh:lang/gauche
 
-USES=		makeinfo tar:tgz
+USES=		localbase makeinfo tar:tgz
 USE_XORG=	ice sm x11 xext xmu xi
-USE_GL=		glut
+USE_GL=		gl glu glut
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
@@ -50,14 +47,16 @@ do-install:
 	${GZCAT} ${WRKSRC}/doc/${i}.info.gz \
 		> ${STAGEDIR}${PREFIX}/${INFO_PATH}/${i}.info
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README \
-		${STAGEDIR}${DOCSDIR})
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${EXAMPLESDIR})
 	@(cd ${STAGEDIR}${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET} && \
 		${CHMOD} u+w libgauche-*.so && ${STRIP_CMD} libgauche-*.so && \
 		${CHMOD} u-w libgauche-*.so)
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
