@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openiked
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security net ipv6
 
 MAINTAINER=	marcel@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-BROKEN_FreeBSD_9=does not builds
+BROKEN_FreeBSD_9=does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xcllnt
