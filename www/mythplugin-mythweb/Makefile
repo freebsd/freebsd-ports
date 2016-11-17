@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
