@@ -60,13 +60,15 @@ INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 
 .  if ${SLAVEPORT} == "cpp"
 CONFIGURE_ARGS+=--enable-languages="cpp"
-USES+=		compiler:c++11-lang
+USES+=		compiler:c++11-lib
+# Unhide std::to_string() to fix build with GCC 4.8 (ports/193528).
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .  endif
 
 .  if ${SLAVEPORT} == "qt5"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
 CONFIGURE_ARGS+=--enable-languages="cpp qt"
-USES+=		compiler:c++11-lang pkgconfig
+USES+=		compiler:c++11-lib pkgconfig
 USE_QT5=	buildtools_build core testlib
 CONFLICTS_INSTALL=	kdepimlibs-4.*
 .  endif
@@ -86,18 +88,6 @@ CONFLICTS_INSTALL=	py*-pyme-[0-9]*
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-.  if ${SLAVEPORT} == "cpp"
-.    if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-CXXFLAGS+=	-stdlib=libc++ -isystem ${LOCALBASE}/include/c++/v1
-.    endif
-.  endif
-.  if ${SLAVEPORT} == "qt5"
-.    if ${OPSYS} == FreeBSD && (${OSVERSION} < 1001000 || (${OSVERSION} >= 1001507 && ${OSVERSION} < 1100080))
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-CXXFLAGS+=	-stdlib=libc++ -isystem ${LOCALBASE}/include/c++/v1
-.    endif
-.  endif
 .  if ${SLAVEPORT} == "python"
 .    if ${PYTHON_REL} >= 3000
 CONFIGURE_ARGS+=--enable-languages="python3"
