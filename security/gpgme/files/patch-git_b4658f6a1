@@ -1,0 +1,35 @@
+From: Andras Mantia <andras@kdab.com>
+Date: Wed, 2 Nov 2016 09:23:42 +0000 (+0200)
+Subject: qt: Fix build with g++ 4.8.x
+X-Git-Tag: gpgme-1.8.0~36
+X-Git-Url: http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=commitdiff_plain;h=b4658f6a1110bb0b54bd5dfc9df8e8b390e38d61
+
+qt: Fix build with g++ 4.8.x
+
+* lang/qt/src/defaultkeygenerationjob.cpp
+(DefaultKeyGenerationJob::start): Explicitly connect pointer
+in the QPointer.
+
+--
+Commit message written by Andre Heinecke <aheinecke@intevation.de>
+---
+
+diff --git a/lang/qt/src/defaultkeygenerationjob.cpp b/lang/qt/src/defaultkeygenerationjob.cpp
+index d26e824..020f4d2 100644
+--- lang/qt/src/defaultkeygenerationjob.cpp
++++ lang/qt/src/defaultkeygenerationjob.cpp
+@@ -105,11 +105,11 @@ GpgME::Error DefaultKeyGenerationJob::start(const QString &email, const QString
+ 
+     d->job = openpgp()->keyGenerationJob();
+     d->job->installEventFilter(this);
+-    connect(d->job, &KeyGenerationJob::result,
++    connect(d->job.data(), &KeyGenerationJob::result,
+             this, &DefaultKeyGenerationJob::result);
+-    connect(d->job, &KeyGenerationJob::done,
++    connect(d->job.data(), &KeyGenerationJob::done,
+             this, &DefaultKeyGenerationJob::done);
+-    connect(d->job, &KeyGenerationJob::done,
++    connect(d->job.data(), &KeyGenerationJob::done,
+             this, &QObject::deleteLater);
+     return d->job->start(args);
+ }
