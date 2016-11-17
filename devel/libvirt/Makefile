@@ -81,6 +81,7 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-sysctl \
 		--without-xen \
 		--without-login-shell \
+		--without-wireshark-dissector \
 		--with-ssh2 \
 		--localstatedir=${VARDIR}
 
