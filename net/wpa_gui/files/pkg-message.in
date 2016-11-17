@@ -1,13 +1,6 @@
 ======================================================================
 You installed wpa_gui: Qt frontend for wpa_supplicant.
 
-It expects the running wpa_supplicant from the port
-security/wpa_supplicant. In order to use wpa_gui you need:
-* to have the functioning wifi network interface
-* to install the wpa_supplicant port security/wpa_supplicant
-* to run the wpa_supplicant:
-  # sysrc wpa_supplicant_enable="YES"
-  # sysrc wpa_supplicant_program="%%PREFIX%%/sbin/wpa_supplicant"
-  and possibly
-  # service wpa_supplicant start wlan0
+To use matching versions of wpa_gui and wpa_supplicant, install
+security/wpa_supplicant.
 ======================================================================
