@@ -4,4 +4,4 @@ The GNU binutils contain: as, ld, ar, objcopy, objdump and many other
 utilities. The format of object files is ELF-32. The GNU Binutils support
 translation to other formats such as S-records, Intel HEX records, ...
 
-WWW: http://www.gnu-m68hc11.org/
+WWW: http://savannah.gnu.org/projects/m68hc11/

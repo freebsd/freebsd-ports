@@ -12,9 +12,14 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20040801.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The binutils cross-toolchain for the 6811
+COMMENT=	Binutils cross-toolchain for the 6811
 
-NOT_FOR_ARCHS=	amd64
+FORBIDDEN=		multiple vulnerabilities: CVE-2014-8503, CVE-2014-8502, CVE-2014-8501
+DEPRECATED=		multiple vulnerabilities, version is years behind upstream
+EXPIRATION_DATE=	2017-02-17
+
+ONLY_FOR_ARCHS=	i386
+
 USES=		gmake
 HAS_CONFIGURE=	yes
 
