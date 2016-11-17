@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wpa_supplicant
-PORTVERSION=	2.5
-PORTREVISION=	2
+PORTVERSION=	2.6
 CATEGORIES=	security net
 MASTER_SITES=	http://w1.fi/releases/
 
@@ -96,15 +95,22 @@ PRIVSEP_PLIST_FILES=	sbin/wpa_priv
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MNDIS} && ${PORT_OPTIONS:MPRIVSEP}
+BROKEN=	Fails to compile with both NDIS and PRIVSEP
+.endif
+
+.if ${PORT_OPTIONS:MIEEE80211AC} && ${PORT_OPTIONS:MIEEE80211N}
+BROKEN=	Fails to compile with both IEEE80211AC and IEEE80211N
+.endif
+
 .if ${PORT_OPTIONS:MSIM} || ${PORT_OPTIONS:MAKA} || ${PORT_OPTIONS:MAKA_PRIME}
 LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 CFLAGS+=	-I${LOCALBASE}/include/PCSC
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-
 post-patch:
-	${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
+	@${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
 		${WRKSRC}/src/utils
 	# Set driver(s)
 .for item in BSD NDIS WIRED ROBOSWITCH TEST NONE
@@ -157,12 +163,12 @@ do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/wpa_supplicant.conf \
 		${STAGEDIR}${PREFIX}/etc/wpa_supplicant.conf.sample
 
-do-install-PRIVSEP-on:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wpa_priv ${STAGEDIR}${PREFIX}/sbin
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC} && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+do-install-PRIVSEP-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wpa_priv ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
