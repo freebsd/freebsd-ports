@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblangtag
-PORTVERSION=	0.5.8
+PORTVERSION=	0.6.2
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://bitbucket.org/tagoh/liblangtag/downloads/ \
 		LOCAL/jkim
