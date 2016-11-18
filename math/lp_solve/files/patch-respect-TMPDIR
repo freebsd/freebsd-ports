@@ -1,5 +1,5 @@
---- lp_solve/ccc.orig	2009-01-25 21:39:03.000000000 +0300
-+++ lp_solve/ccc	2011-02-04 10:52:07.000000000 +0300
+--- lp_solve/ccc.orig	2009-01-25 18:39:03 UTC
++++ lp_solve/ccc
 @@ -2,31 +2,33 @@
  src='../lp_MDO.c ../shared/commonlib.c ../colamd/colamd.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c lp_solve.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
  c=cc
@@ -48,8 +48,8 @@
  
  opts='-O3'
  
---- lpsolve55/ccc.bak	2009-03-25 03:27:18.000000000 +0300
-+++ lpsolve55/ccc	2011-02-04 11:00:40.000000000 +0300
+--- lpsolve55/ccc.orig	2009-03-25 00:27:18 UTC
++++ lpsolve55/ccc
 @@ -2,29 +2,31 @@
  src='../lp_MDO.c ../shared/commonlib.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../colamd/colamd.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
  c=cc
