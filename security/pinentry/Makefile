@@ -81,6 +81,7 @@ LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 
 .if ${PINENTRY_GUI} == "gnome3"
 OPTIONS_SLAVE=	LIBSECRET
+USES+=		ncurses
 USE_GNOME+=	gtk20
 LIB_DEPENDS+=	libgcr-base-3.so:security/gcr
 PLIST_FILES=	bin/pinentry-gnome3
