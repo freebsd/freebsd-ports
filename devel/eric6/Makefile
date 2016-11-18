@@ -35,6 +35,9 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+post-patch:
+	${RM} ${WRKSRC}/eric/i18n/*.qm ${WRKSRC}/eric/i18n/*.ts
+
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \
