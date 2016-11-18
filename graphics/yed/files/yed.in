@@ -1,2 +1,11 @@
 #!/bin/sh
+
+#: ${JAVA_HOME=%%PREFIX%%/openjdk8}
+JAVA_HOME=%%PREFIX%%/openjdk8
+
+if [ ! -x ${JAVA_HOME}/bin/java ]; then
+	echo "No java distribution in ${JAVA_HOME}"
+	exit 1
+fi
+
 exec java -Dawt.useSystemAAFontSettings=on -jar %%DATADIR%%/yed.jar
