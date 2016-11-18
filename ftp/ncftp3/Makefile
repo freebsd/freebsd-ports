@@ -20,6 +20,7 @@ USES=		ncurses tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
 
 PORTDOCS=	*
 
