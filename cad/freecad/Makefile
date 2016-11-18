@@ -7,7 +7,8 @@ CATEGORIES=	cad
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
-LICENSE=	LGPL20
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	pyside-rcc:devel/pyside-tools		\
 		swig:devel/swig13	\
@@ -28,6 +29,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2		\
 		libmed.so:french/med			\
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken
 
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
+
 USE_GITHUB=	yes
 GH_TAGNAME=	0ea7373
 
@@ -36,13 +39,10 @@ USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT4=	qmake_build corelib gui moc_build network opengl rcc_build \
 		uic_build svg xml webkit
-
-BROKEN_FreeBSD_9=	Does not build on FreeBSD 9.x
+CMAKE_ARGS=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
+		-DFREECAD_USE_EXTERNAL_PIVY=1
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-
-CMAKE_ARGS+=	"-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE"
-CMAKE_ARGS+=	"-DFREECAD_USE_EXTERNAL_PIVY=1 -DCMAKE_BUILD_TYPE=Release ."
 
 DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Engineering;" false
