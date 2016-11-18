@@ -2,7 +2,7 @@
 +++ install-i18n.py	2013-10-05 17:55:20.162267518 +0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python3
-+#!/usr/bin/env python2
++#!/usr/bin/env python
  # -*- coding: utf-8 -*-
  
  # Copyright (c) 2004 - 2015 Detlev Offenbach <detlev@die-offenbachs.de>
@@ -21,7 +21,7 @@
 -        targetDir = configDir
 +        targetDir = distDir + getConfig('ericTranslationsDir')
 +        if not os.path.exists(targetDir):
-+            os.makedirs(targetDir, 0755)
++            os.makedirs(targetDir, 493) # 0o755
      else:
          targetDir = getConfig('ericTranslationsDir')
      
@@ -30,7 +30,7 @@
  
      try:
 -        optlist, args = getopt.getopt(argv[1:], "hp")
-+        optlist, args = getopt.getopt(argv[1:],"hp:")
++        optlist, args = getopt.getopt(argv[1:], "hp:")
      except getopt.GetoptError:
          usage()
  
