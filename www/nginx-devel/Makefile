@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.11.5
-PORTREVISION=	1
+PORTVERSION=	1.11.6
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -737,6 +736,7 @@ DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfa
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream_fair_module.c
+IGNORE=	HTTP_UPSTREAM_FAIR: a patch requires
 .endif
 .endif
 
@@ -789,6 +789,7 @@ GH_PROJECT+=	drizzle-nginx-module:drizzle
 GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
 CONFIGURE_ARGS+=--add-module=${WRKSRC_drizzle}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
+IGNORE=	DRIZZLE: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
@@ -858,6 +859,7 @@ GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
 CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
+IGNORE=	MEMC: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -916,6 +918,7 @@ GH_PROJECT+=	ngx_postgres:postgres
 GH_TAGNAME+=	${NGINX_POSTGRES_VERSION}:postgres
 CONFIGURE_ARGS+=--add-module=${WRKSRC_postgres}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
+IGNORE=	POSTGRES: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
@@ -940,6 +943,7 @@ GH_ACCOUNT+=	openresty:redis2
 GH_PROJECT+=	redis2-nginx-module:redis2
 GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
 CONFIGURE_ARGS+=--add-module=${WRKSRC_redis2}
+IGNORE=	REDIS2: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
