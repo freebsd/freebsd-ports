@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packetdrill
-PORTVERSION=	0.0.20161001
+PORTVERSION=	0.0.20161117
 CATEGORIES=	net ipv6
 
 MAINTAINER=	gnn@FreeBSD.org
@@ -14,7 +14,7 @@ BROKEN_FreeBSD_9=	Fails in lexer
 USES=		bison uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
-GH_TAGNAME=	467b39b
+GH_TAGNAME=	570c391
 WRKSRC_SUBDIR=	gtests/net/packetdrill
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	packetdrill.el packetdrill.vim
