@@ -58,6 +58,7 @@ lib/rivet/rivet-tcl/redirect.tcl
 lib/rivet/rivet-tcl/rivet_command_document.tcl
 lib/rivet/rivet-tcl/tclIndex
 lib/rivet/rivet-tcl/try.tcl
+lib/rivet/rivet-tcl/url_query.tcl
 lib/rivet/rivet-tcl/wrap.tcl
 lib/rivet/rivet-tcl/xml.tcl
 %%APACHEMODDIR%%/mod_rivet.so
