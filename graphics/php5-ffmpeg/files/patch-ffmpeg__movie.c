@@ -36,7 +36,7 @@
                      _php_get_filename(ffmovie_ctx));
              return NULL;
          }
-@@ -964,12 +964,14 @@ static const char* _php_get_codec_name(f
+@@ -964,13 +964,15 @@ static const char* _php_get_codec_name(f
      /* Copied from libavcodec/utils.c::avcodec_string */
      if (p) {
          codec_name = p->name;
@@ -47,7 +47,9 @@
              else if (decoder_ctx->sub_id == 1)
                  codec_name = "mp1";
          }
+-    } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
 + */
-     } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
++    } else if (decoder_ctx->codec_id == AV_CODEC_ID_MPEG2TS) {
          /* fake mpeg2 transport stream codec (currently not registered) */
          codec_name = "mpeg2ts";
+     } else if (decoder_ctx->codec_name[0] != '\0') {
