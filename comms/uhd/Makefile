@@ -24,7 +24,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		orcc:devel/orc \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
 
-USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix python:2.7
+USES=		compiler:c++0x cmake:outsource gmake ncurses pkgconfig \
+		dos2unix python:2.7
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #MAKE_JOBS_UNSAFE=	yes
