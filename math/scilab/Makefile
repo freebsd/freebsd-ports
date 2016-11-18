@@ -24,7 +24,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cpe desktop-file-utils fortran gettext gmake iconv \
-		libtool pathfix pkgconfig shared-mime-info
+		libtool ncurses pathfix pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
