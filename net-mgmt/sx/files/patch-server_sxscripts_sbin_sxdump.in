@@ -1,8 +1,0 @@
---- server/sxscripts/sbin/sxdump.in.orig	2015-05-22 16:15:46 UTC
-+++ server/sxscripts/sbin/sxdump.in
-@@ -1,4 +1,4 @@
--#! /usr/bin/python
-+#!/usr/bin/env python
- 
- """ Print commands to recreate users, volumes and ACL on a new SX cluster  """
- 
