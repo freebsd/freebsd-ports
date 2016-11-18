@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-PORTVERSION=	2.4
+PORTVERSION=	2.5.2
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,14 +14,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 
 USES=		qmake
-USE_QT4=	corelib dbus gui network phonon script sql xml \
-		moc_build rcc_build imageformats_run
+USE_GL=		gl
+USE_QT5=	core dbus gui network phonon4 script sql widgets \
+		buildtools_build imageformats_run sql-sqlite3_run
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE} \
 		DEFINES+=APP_GOOGLE_API_KEY="${MINITUBE_GOOGLE_API_KEY}"
+INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USE=	QT4=linguisttools_build
+NLS_USE=	QT5=linguisttools_build
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
@@ -29,7 +31,9 @@ pre-everything::
 post-patch:
 # Remove BOM
 	@${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
-		 ${WRKSRC}/src/aggregatevideosource.cpp
+		${WRKSRC}/src/aggregatevideosource.cpp
+	@${REINPLACE_CMD} -e 's|/usr/include|/usr/local/include|g' \
+		${WRKSRC}/minitube.pro
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
