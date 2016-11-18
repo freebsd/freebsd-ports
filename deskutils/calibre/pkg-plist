@@ -1728,6 +1728,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/document-encrypt.png
 %%DATADIR%%/images/document-import.png
 %%DATADIR%%/images/document-new.png
+%%DATADIR%%/images/document-split.png
 %%DATADIR%%/images/document_open.png
 %%DATADIR%%/images/donate.png
 %%DATADIR%%/images/dot_green.png
