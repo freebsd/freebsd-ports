@@ -3,6 +3,7 @@
 
 PORTNAME=	dwarffortress
 DISTVERSION=	0.43.05
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
@@ -26,8 +27,10 @@ LICENSE_TEXT=	Copyright (c) 2002-2016. All rights are retained by Tarn Adams, \
 		contact Tarn Adams at toadyone@bay12games.com.
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+RUN_DEPENDS=	linux-${linux_ARGS}-sdl_ttf>0:graphics/linux-${linux_ARGS}-sdl_ttf
+
 USES=		linux tar:bzip2
-USE_LINUX=	gtk2 libsndfile openal-soft sdlimage sdlttf xorglibs
+USE_LINUX=	dri gtk2 libsndfile openal-soft sdlimage xorglibs
 
 SUB_FILES=	dwarffortress
 NO_BUILD=	yes
@@ -48,8 +51,11 @@ do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/libs/Dwarf_Fortress
 	${INSTALL_PROGRAM} ${WRKSRC}/libs/Dwarf_Fortress \
 		${STAGEDIR}${PREFIX}/libexec/dwarffortress
-	(cd ${WRKSRC}/libs && ${INSTALL_LIB} libgcc_s.so.1 libgraphics.so \
-		libstdc++.so.6 ${STAGEDIR}${PREFIX}/libexec/dwarffortress)
+.for lib in libgcc_s.so.1 libgraphics.so libstdc++.so.6
+	${BRANDELF} -t Linux ${WRKSRC}/libs/${lib}
+	${INSTALL_LIB} ${WRKSRC}/libs/${lib} \
+		${STAGEDIR}${PREFIX}/libexec/dwarffortress
+.endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/data
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} raw ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "announcement art dipscript \
