@@ -16,8 +16,8 @@ bin/sxvol
 %%SXSERVER%%%%ETCDIR%%/sxserver/sxhttpd.conf.default
 include/sx.h
 lib/libsxclient.so
-lib/libsxclient.so.3
-lib/libsxclient.so.3.0.0
+lib/libsxclient.so.6
+lib/libsxclient.so.6.0.0
 lib/sxclient/libsxf_attribs-13.so
 lib/sxclient/libsxf_attribs.so
 lib/sxclient/libsxf_undelete-12.so
@@ -26,7 +26,6 @@ lib/sxclient/libsxf_zcomp-12.so
 lib/sxclient/libsxf_zcomp.so
 %%SXSERVER%%sbin/sx.fcgi
 %%SXSERVER%%sbin/sxadm
-%%SXSERVER%%sbin/sxdump
 %%SXSERVER%%sbin/sxhttpd
 %%SXSERVER%%sbin/sxreport-server
 %%SXSERVER%%sbin/sxserver
@@ -65,6 +64,7 @@ man/man1/sxvol-create.1.gz
 man/man1/sxvol-filter.1.gz
 man/man1/sxvol-modify.1.gz
 man/man1/sxvol-remove.1.gz
+man/man1/sxvol-rename.1.gz
 man/man1/sxvol.1.gz
 %%SXSERVER%%man/man5/sxfcgi.conf.5.gz
 %%SXSERVER%%man/man5/sxsetup.conf.5.gz
@@ -72,7 +72,6 @@ man/man1/sxvol.1.gz
 %%SXSERVER%%man/man8/sxadm-cluster.8.gz
 %%SXSERVER%%man/man8/sxadm-node.8.gz
 %%SXSERVER%%man/man8/sxadm.8.gz
-%%SXSERVER%%man/man8/sxdump.8.gz
 %%SXSERVER%%man/man8/sxreport-server.8.gz
 %%SXSERVER%%man/man8/sxserver.8.gz
 %%SXSERVER%%man/man8/sxsetup.8.gz
