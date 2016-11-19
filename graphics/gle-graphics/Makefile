@@ -48,7 +48,8 @@ USE_GCC=	yes
 USE_GL=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	gui moc network opengl rcc
-USES=	gmake pathfix
+USES=		gmake ncurses pathfix
+CPPFLAGS+=	-I${NCURSESINC}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
