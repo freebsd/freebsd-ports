@@ -1259,6 +1259,7 @@
     SUBDIR += p5-WWW-DHL
     SUBDIR += p5-WWW-Dilbert
     SUBDIR += p5-WWW-Facebook-API
+    SUBDIR += p5-WWW-Form-UrlEncoded
     SUBDIR += p5-WWW-FreeProxy
     SUBDIR += p5-WWW-GitHub-Gist
     SUBDIR += p5-WWW-Google-Calculator
