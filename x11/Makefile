@@ -171,7 +171,9 @@
     SUBDIR += libexo
     SUBDIR += libfakekey
     SUBDIR += libfm
+    SUBDIR += libfmqt-l10n
     SUBDIR += libfm-extra
+    SUBDIR += libfm-qt
     SUBDIR += libgnome
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd

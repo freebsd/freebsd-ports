@@ -1326,6 +1326,8 @@
     SUBDIR += liblouis
     SUBDIR += liblouisxml
     SUBDIR += libltdl
+    SUBDIR += liblxqt
+    SUBDIR += liblxqt-l10n
     SUBDIR += libmaa
     SUBDIR += libmatheval
     SUBDIR += libmba
@@ -1381,6 +1383,7 @@
     SUBDIR += libpthread-stubs
     SUBDIR += libqb
     SUBDIR += libqcow
+    SUBDIR += libqtxdg
     SUBDIR += libr3
     SUBDIR += librcc
     SUBDIR += librcd
