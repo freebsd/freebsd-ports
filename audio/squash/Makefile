@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libFLAC.so:audio/flac \
 		libao.so:audio/libao
 RUN_DEPENDS=	id3v2:audio/id3v2
 
-USES=		tar:bzip2 gmake
+USES=		gmake ncurses tar:bzip2
 USE_RUBY=	yes
 MAKE_ARGS=	CC="${CC}"
 
