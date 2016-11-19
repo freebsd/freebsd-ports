@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gupnp>=0.3:net/gupnp
 LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp \
