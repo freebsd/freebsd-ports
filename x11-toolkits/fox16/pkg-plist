@@ -294,11 +294,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.51
+lib/libCHART-%%MAJORVER%%.so.0.0.52
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.51
+lib/libFOX-%%MAJORVER%%.so.0.0.52
 libdata/pkgconfig/fox.pc
 %%APPS%%man/man1/PathFinder-16.1.gz
 %%APPS%%man/man1/adie-16.1.gz
