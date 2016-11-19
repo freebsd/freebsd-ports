@@ -18,6 +18,7 @@ USE_PERL5=	run build patch
 SHEBANG_FILES=	wrap breed
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configures
+CONFIGURE_ENV+=		INCDIR="${NCURSESINC}"
 
 post-patch:
 	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/configures
