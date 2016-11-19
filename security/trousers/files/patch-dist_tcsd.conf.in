@@ -1,4 +1,4 @@
---- dist/tcsd.conf.in.orig	2014-04-24 18:05:43 UTC
+--- dist/tcsd.conf.in.orig	2014-07-23 19:42:44 UTC
 +++ dist/tcsd.conf.in
 @@ -35,7 +35,7 @@
  #  log data. The interface to this log is usually provided by the TPM
