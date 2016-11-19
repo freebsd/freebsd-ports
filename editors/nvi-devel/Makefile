@@ -26,7 +26,7 @@ CONFIGURE_SCRIPT=	../dist/configure
 
 WIDECHAR_CONFIGURE_ON=	--enable-widechar
 
-CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include -I${NCURSESINC}
 LDFLAGS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
 post-patch:
