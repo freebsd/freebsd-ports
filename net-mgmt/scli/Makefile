@@ -14,7 +14,7 @@ COMMENT=	A collection of SNMP command line management tools
 LIB_DEPENDS=	libgsnmp.so:net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig readline
+USES=		gmake ncurses pkgconfig readline
 USE_GNOME=	libxml2
 
 INFO=		scli
