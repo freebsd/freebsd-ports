@@ -16,11 +16,11 @@ LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libcdk.so:devel/cdk
 
-USES=		perl5 tar:tgz
+USES=		ncurses perl5 tar:tgz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${NCURSESINC}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
