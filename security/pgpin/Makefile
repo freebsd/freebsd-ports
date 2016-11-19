@@ -15,8 +15,7 @@ LICENSE=	MIT
 
 PORTSCOUT=	ignore:1
 
-BROKEN_aarch64=		Does not build: do not know how to make freebsd-aarch64
-BROKEN_mips64=		Does not build: do not know how to make freebsd-mips64
+BROKEN_mips64=		Does not build
 BROKEN_powerpc64=	Does not build
 
 USES=		tar:tgz

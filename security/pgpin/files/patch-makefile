@@ -1,5 +1,5 @@
 --- makefile.orig	2001-03-23 11:44:58.000000000 +0100
-+++ makefile	2016-10-07 07:05:13.258216000 +0200
++++ makefile	2016-11-19 13:49:38.970838000 +0100
 @@ -50,15 +50,15 @@
  # -DUSE_SELECT to use select() system call
  # -DUSE_NBIO   to use non-blocking read()
@@ -31,7 +31,7 @@
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -175,11 +176,46 @@
+@@ -175,11 +176,54 @@
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -76,6 +76,14 @@
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
 +	-DMAX_NAMELEN=255 -DMPORTABLE"
++freebsd-aarch64:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
++	-DMAX_NAMELEN=255"
++freebsd-powerpc64:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
++	-DMAX_NAMELEN=255"
 +
  386bsd:
  	$(MAKE) all CC=gcc LD=gcc OBJS_EXT="_80386.o _zmatch.o" \
