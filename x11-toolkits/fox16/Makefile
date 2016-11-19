@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.6.51
+PORTVERSION=	1.6.52
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
 		http://ftp.fox-toolkit.org/pub/
@@ -16,8 +16,9 @@ LICENSE=	LGPL3+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		jpeg libtool pathfix
-USE_GL=		glu
+USES=		compiler:features jpeg libtool pathfix
+USE_GL=		gl glu
+USE_XORG=	x11 xext xfixes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
@@ -31,15 +32,12 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		APPS DEBUG DOCS OPTIMIZED_CFLAGS PROFILE SHM \
 			XCURSOR XFT XINPUT XRANDR XRENDER
-OPTIONS_DEFAULT= 	SHM XCURSOR XFT XINPUT XRANDR XRENDER
+OPTIONS_DEFAULT=	SHM XCURSOR XFT XINPUT XRANDR XRENDER
 OPTIONS_SUB=		yes
 
 APPS_DESC=		Install sample applications
 DEBUG_CONFIGURE_ON=	--enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-release
-OPTIMIZED_CFLAGS_CXXFLAGS=\
-			-ffast-math -fexpensive-optimizations \
-			-finline-functions -fomit-frame-pointer
 PROFILE_CONFIGURE_ON=	--with-profiling=gprof
 SHM_DESC=		Shared Memory support
 SHM_CONFIGURE_ON=	--with-xshm=yes
@@ -48,6 +46,8 @@ XCURSOR_USE=		xorg=xcursor
 XCURSOR_CONFIGURE_ON=	--with-xcursor=yes
 XCURSOR_CONFIGURE_OFF=	--with-xcursor=no
 XFT_USE=		xorg=xft
+XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libfontconfig.so:x11-fonts/fontconfig
 XFT_CONFIGURE_ON=	--with-xft=yes
 XFT_CONFIGURE_OFF=	--with-xft=no
 XFT_CPPFLAGS=		$$(freetype-config --cflags)
@@ -66,6 +66,18 @@ XRENDER_CONFIGURE_ON=	--with-xrender=yes
 XRENDER_CONFIGURE_OFF=	--with-xrender=no
 
 MAJORVER=	${PORTVERSION:R}
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CXXFLAGS+=	-ffast-math
+.  if !${PORT_OPTIONS:MPROFILE}
+CXXFLAGS+=	-fomit-frame-pointer
+.  endif
+.  if ${COMPILER_TYPE} == "gcc"
+CXXFLAGS+=	-fexpensive-optimizations -finline-functions
+.  endif
+.endif
 
 post-patch:
 # Rename man pages as in manpage.1 --> manpage-16.1 to avoid
@@ -108,4 +120,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so.[0-9].*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so.[0-9].*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
