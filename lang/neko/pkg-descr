@@ -1,0 +1,7 @@
+The Neko Programming Language
+
+Neko is a high-level dynamically typed programming language which can 
+also be used as an embedded scripting language. It has been designed to 
+provide a common runtime for several different languages.
+
+WWW: http://nekovm.org/
