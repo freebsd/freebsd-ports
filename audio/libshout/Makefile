@@ -24,8 +24,7 @@ OPTIONS_DEFAULT=SPEEX THEORA
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig ssl
 
 PORTDOCS=	*
 
