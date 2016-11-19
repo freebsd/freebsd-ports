@@ -19,7 +19,9 @@ BROKEN_sparc64=		missing atomics implementation
 BROKEN_powerpc64=	Does not build on powerpc64
 
 USES=		cmake:outsource ncurses
-CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF -DAVD_UNIT_TESTS:BOOL=OFF
+CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF \
+		-DAVD_UNIT_TESTS:BOOL=OFF \
+		-DNCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 PORTDOCS=	*
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
