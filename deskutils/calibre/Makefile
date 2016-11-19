@@ -20,21 +20,13 @@ LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
 		libpodofo.so:graphics/podofo \
 		libmtp.so:multimedia/libmtp \
 		libfreetype.so:print/freetype2
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:devel/py-qt5-core \
-		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:x11-toolkits/py-qt5-gui \
-		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:net/py-qt5-network \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:www/py-qt5-webkit \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:x11-toolkits/py-qt5-widgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:www/py-qt5-webkitwidgets \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
@@ -43,14 +35,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}mechanize>=0:www/py-mechanize \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:devel/py-qt5-core \
-		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:x11-toolkits/py-qt5-gui \
-		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:net/py-qt5-network \
-		${PYTHON_PKGNAMEPREFIX}qt5-svg>=0:graphics/py-qt5-svg \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:www/py-qt5-webkit \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:x11-toolkits/py-qt5-widgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:www/py-qt5-webkitwidgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-xmlpatterns>=0:textproc/py-qt5-xmlpatterns \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
 		${PYTHON_PKGNAMEPREFIX}cssselect>=0:www/py-cssselect \
@@ -61,11 +45,12 @@ USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
-		python:2 shared-mime-info shebangfix ssl tar:xz
+		python:2 pyqt:5 shared-mime-info shebangfix ssl tar:xz
 SHEBANG_FILES=	resources/calibre-portable.sh \
 		src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
+USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
 USE_QT5=	buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
 USE_GNOME=	glib20
