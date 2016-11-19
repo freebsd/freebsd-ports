@@ -11,6 +11,7 @@
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Simple.pm
 %%SITE_PERL%%/MooseX/App/ParsedArgv.pm
 %%SITE_PERL%%/MooseX/App/ParsedArgv/Element.pm
+%%SITE_PERL%%/MooseX/App/ParsedArgv/Value.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta/Class.pm
@@ -55,6 +56,7 @@
 %%PERL5_MAN3%%/MooseX::App::Meta::Role::Class::Documentation.3.gz
 %%PERL5_MAN3%%/MooseX::App::ParsedArgv.3.gz
 %%PERL5_MAN3%%/MooseX::App::ParsedArgv::Element.3.gz
+%%PERL5_MAN3%%/MooseX::App::ParsedArgv::Value.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::BashCompletion.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Color.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Config.3.gz
