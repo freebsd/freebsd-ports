@@ -2,7 +2,9 @@
 %%SITE_PERL%%/Math/BigInt.pm
 %%SITE_PERL%%/Math/BigInt/Calc.pm
 %%SITE_PERL%%/Math/BigInt/CalcEmu.pm
+%%SITE_PERL%%/Math/BigInt/Lib.pm
 %%PERL5_MAN3%%/Math::BigFloat.3.gz
 %%PERL5_MAN3%%/Math::BigInt.3.gz
 %%PERL5_MAN3%%/Math::BigInt::Calc.3.gz
 %%PERL5_MAN3%%/Math::BigInt::CalcEmu.3.gz
+%%PERL5_MAN3%%/Math::BigInt::Lib.3.gz
