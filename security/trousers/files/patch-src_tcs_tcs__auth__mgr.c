@@ -1,4 +1,4 @@
---- src/tcs/tcs_auth_mgr.c.orig	2016-06-20 15:21:26 UTC
+--- src/tcs/tcs_auth_mgr.c.orig	2016-11-19 03:09:49 UTC
 +++ src/tcs/tcs_auth_mgr.c
 @@ -108,7 +108,7 @@ void
  auth_mgr_swap_in()

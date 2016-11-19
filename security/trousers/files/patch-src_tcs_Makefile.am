@@ -1,4 +1,4 @@
---- src/tcs/Makefile.am.orig	2014-04-24 18:05:44 UTC
+--- src/tcs/Makefile.am.orig	2014-07-23 19:42:44 UTC
 +++ src/tcs/Makefile.am
 @@ -1,8 +1,7 @@
 -noinst_LIBRARIES=libtcs.a
