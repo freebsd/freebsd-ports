@@ -49,6 +49,12 @@ ALONE=	-e 's|\#define.ALONE|\#undef	ALONE|'
 post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's=getline(=xmit_getline(=' \
+		${WRKSRC}/xmit/nntpxmit.c
+
 pre-configure:
 	${REINPLACE_CMD} ${ALONE} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
