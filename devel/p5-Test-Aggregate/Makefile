@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Aggregate
-PORTVERSION=	0.373
+PORTVERSION=	0.374
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Test-Most>=0.21:devel/p5-Test-Most \
 		p5-Test-Trap>0:devel/p5-Test-Trap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
