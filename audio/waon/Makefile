@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate
 
-USES=		pkgconfig
+USES=		ncurses pkgconfig
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/waon bin/pv bin/gwaon \
