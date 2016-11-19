@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:devel/guile-lib
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool ncurses
 USE_LDCONFIG=	yes
 
 INFO=	libruin
