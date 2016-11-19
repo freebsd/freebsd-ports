@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Apache/AuthCookie.pm
-%%SITE_PERL%%/Apache/AuthCookie/Autobox.pm
 %%SITE_PERL%%/Apache/AuthCookie/FAQ.pod
 %%SITE_PERL%%/Apache/AuthCookie/Params.pm
 %%SITE_PERL%%/Apache/AuthCookie/Params/Base.pm
@@ -15,7 +14,6 @@
 %%PERL5_MAN3%%/Apache2::AuthCookie::Params.3.gz
 %%PERL5_MAN3%%/Apache2_4::AuthCookie.3.gz
 %%PERL5_MAN3%%/Apache::AuthCookie.3.gz
-%%PERL5_MAN3%%/Apache::AuthCookie::Autobox.3.gz
 %%PERL5_MAN3%%/Apache::AuthCookie::FAQ.3.gz
 %%PERL5_MAN3%%/Apache::AuthCookie::Params.3.gz
 %%PERL5_MAN3%%/Apache::AuthCookie::Params::Base.3.gz
