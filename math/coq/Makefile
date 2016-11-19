@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${COQVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 		ocamlfind:devel/ocaml-findlib
 
@@ -27,12 +30,14 @@ CONFIGURE_ARGS=	--prefix ${PREFIX} \
 		--opt
 MAKE_ENV=	COQINSTALLPREFIX=${DESTDIR}
 
+BROKEN_powerpc=		does not link
+
 OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	IDE
 OPTIONS_SUB=		yes
 IDE_DESC=		Include desktop environment (coqide)
 IDE_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-IDE_RUN_DEPENDS:=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+IDE_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_CONFIGURE_OFF=	--coqide no
 DOCS_USE=		TEX=latex:build,dvipsk:build,texmf:build
 DOCS_BUILD_DEPENDS=	hevea:textproc/hevea
@@ -43,12 +48,6 @@ PORTDOCS=		*
 add-plist-post:
 	@${DO_NADA}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/FreeBSD.*\.byte/s/^/#/' \
 		-e '1s:/bin/bash:/bin/sh:' \
@@ -57,6 +56,7 @@ post-patch:
 		${WRKSRC}/Makefile* ${WRKSRC}/install.sh
 	@${REINPLACE_CMD} -e '/^#COQINSTALLPREFIX/{s/^#//;s|$$|$${DESTDIR}|;}' \
 		${WRKSRC}/Makefile.build
-	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' ${WRKSRC}/Makefile.doc
+	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
+		${WRKSRC}/Makefile.doc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
