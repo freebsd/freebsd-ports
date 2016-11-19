@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
-USES=		libedit
+USES=		libedit ncurses
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.rus.html

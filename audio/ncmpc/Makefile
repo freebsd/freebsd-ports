@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	NLS LYRICS
 OPTIONS_DEFAULT=	LYRICS
 LYRICS_DESC=	Compile with lyrics screen
 
-USES=		iconv localbase pkgconfig
+USES=		iconv localbase ncurses pkgconfig
 PLIST_FILES=	bin/ncmpc \
 		man/man1/ncmpc.1.gz \
 		%%EXAMPLESDIR%%/config \
