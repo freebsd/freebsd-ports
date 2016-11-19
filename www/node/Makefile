@@ -27,7 +27,7 @@ USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[456]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[4567]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
