@@ -5,7 +5,7 @@
  # rather than local curses)
  
 -if [ -n "$terminfo_exists" -a -z "$termcap_exists" ]
-+if true
++if false
  then
  	echo "Neither terminfo or termcap are on this system!  "
  	if [ -f /usr/include/curses.h ]
