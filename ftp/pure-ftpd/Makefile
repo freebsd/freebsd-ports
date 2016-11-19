@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.42
-PORTREVISION=	3
+PORTVERSION=	1.0.43
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -84,7 +83,7 @@ THROTTLING_CONFIGURE_WITH=	throttling
 TLS_CONFIGURE_WITH=	tls
 TLS_CPPFLAGS=		-I${OPENSSLINC}
 TLS_LDFLAGS=		-L${OPENSSLLIB}
-TLS_USE=		OPENSSL=yes
+TLS_USES=		ssl
 UPLOADSCRIPT_CONFIGURE_WITH=	uploadscript
 UTF8_CONFIGURE_WITH=	rfc2640
 UTF8_USES=		iconv
