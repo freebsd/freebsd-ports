@@ -13,7 +13,7 @@ COMMENT=	Tool to effectively maintain todo lists aimed at developers
 CONFLICTS=	tdl-[0-9]* todo-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		readline
+USES=		ncurses readline
 
 OPTIONS_DEFINE=	EXAMPLES
 
