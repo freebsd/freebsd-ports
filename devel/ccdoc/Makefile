@@ -24,6 +24,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-configure:
 	@${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
 		-e "s:%%CXX%%:${CXX}:" \
