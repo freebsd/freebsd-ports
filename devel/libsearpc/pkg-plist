@@ -1,5 +1,6 @@
 bin/searpc-codegen.py
 include/searpc-client.h
+include/searpc-named-pipe-transport.h
 include/searpc-server.h
 include/searpc-utils.h
 include/searpc.h
