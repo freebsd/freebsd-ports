@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.7.2
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/12070/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/12760/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,8 +21,7 @@ NETCDF_IMPLIES=	HDF5
 
 PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
 
-CONFIGURE_ARGS=	--disable-cgribex \
-		--disable-data \
+CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
 		--disable-grib \
 		--disable-ieg \
