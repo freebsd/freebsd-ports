@@ -3,6 +3,7 @@ bin/gg_sub_area_check
 bin/grib1to2
 bin/grib2ppm
 bin/grib_add
+bin/grib_check_gaussian_grid
 bin/grib_cmp
 bin/grib_compare
 bin/grib_convert
