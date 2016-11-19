@@ -5,7 +5,7 @@ include/idn2.h
 lib/libidn2.a
 lib/libidn2.so
 lib/libidn2.so.0
-lib/libidn2.so.0.0.10
+lib/libidn2.so.0.%%PORTVERSION%%
 man/man1/idn2.1.gz
 man/man3/idn2_check_version.3.gz
 man/man3/idn2_free.3.gz
@@ -19,10 +19,13 @@ share/gtk-doc/html/libidn2/api-index-full.html
 share/gtk-doc/html/libidn2/home.png
 share/gtk-doc/html/libidn2/index.html
 share/gtk-doc/html/libidn2/index.sgml
+share/gtk-doc/html/libidn2/left-insensitive.png
 share/gtk-doc/html/libidn2/left.png
 share/gtk-doc/html/libidn2/libidn2-idn2.html
 share/gtk-doc/html/libidn2/libidn2.devhelp2
 share/gtk-doc/html/libidn2/libidn2.html
+share/gtk-doc/html/libidn2/right-insensitive.png
 share/gtk-doc/html/libidn2/right.png
 share/gtk-doc/html/libidn2/style.css
+share/gtk-doc/html/libidn2/up-insensitive.png
 share/gtk-doc/html/libidn2/up.png

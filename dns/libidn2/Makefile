@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn2
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	dns
 MASTER_SITES=	GNU_ALPHA/libidn
 
@@ -18,5 +18,6 @@ USES=		charsetfix gmake iconv libtool localbase shebangfix
 USE_LDCONFIG=	yes
 
 INFO=		libidn2
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
