@@ -18,6 +18,6 @@ BUILD_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
 RUN_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
 		R-cran-zoo>0:math/R-cran-zoo
 
-USES=		cran:compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

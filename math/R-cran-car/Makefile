@@ -17,6 +17,6 @@ RUN_DEPENDS=	R-cran-pbkrtest>=0.3.2:math/R-cran-pbkrtest \
 TEST_DEPENDS=	R-cran-lmtest>=0.9.26:finance/R-cran-lmtest \
 		R-cran-sandwich>0:math/R-cran-sandwich
 
-USES=		cran
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
