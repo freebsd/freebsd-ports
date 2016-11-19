@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Feersum
-PORTVERSION=	1.403
+PORTVERSION=	1.404
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AUDREYT
@@ -16,8 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-EV>=4.0:devel/p5-EV \
 		p5-Plack>=0.9950:www/p5-Plack
-RUN_DEPENDS=	p5-EV>=4.0:devel/p5-EV \
-		p5-Plack>=0.9950:www/p5-Plack
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-AnyEvent>=5.26.1:devel/p5-AnyEvent \
 		p5-Guard>=1.012:devel/p5-Guard \
 		p5-JSON-XS>=2:converters/p5-JSON-XS \
