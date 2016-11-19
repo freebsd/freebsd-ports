@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pymetar
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	astro python geography
-MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
-		LOCAL/sunpoet
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
