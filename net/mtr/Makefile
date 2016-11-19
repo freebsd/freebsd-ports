@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		LOCAL/sunpoet
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single network diagnostic tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	IPV6 X11
 OPTIONS_DEFAULT=X11
