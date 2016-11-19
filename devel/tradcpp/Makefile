@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	tradcpp
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
+MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traditional (K&R-style) C preprocessor
