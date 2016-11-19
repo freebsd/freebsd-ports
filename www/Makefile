@@ -542,6 +542,7 @@
     SUBDIR += node
     SUBDIR += node012
     SUBDIR += node4
+    SUBDIR += node6
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
