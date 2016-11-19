@@ -11,6 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Detect and get configuration setting for SDL
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Text-Patch>=1.4:textproc/p5-Text-Patch
