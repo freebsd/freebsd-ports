@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciutils
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
