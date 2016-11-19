@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-CheckCompiler
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +13,8 @@ COMMENT=	Check the compiler availability
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
-
 NO_ARCH=	yes
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>
