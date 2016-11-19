@@ -1267,6 +1267,7 @@
     SUBDIR += socketpipe
     SUBDIR += socketw
     SUBDIR += sofia-sip
+    SUBDIR += softethervpn
     SUBDIR += spideroak
     SUBDIR += splatd
     SUBDIR += spoofer
