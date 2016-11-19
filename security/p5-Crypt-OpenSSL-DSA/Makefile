@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-DSA
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
-post-patch:
-	@${RM} ${WRKSRC}/lib/Crypt/OpenSSL/DSA.pm.orig
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/OpenSSL/DSA/DSA.so
 
 .include <bsd.port.mk>
