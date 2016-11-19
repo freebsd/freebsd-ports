@@ -34,6 +34,7 @@ include/rocksdb/metadata.h
 include/rocksdb/options.h
 include/rocksdb/perf_context.h
 include/rocksdb/perf_level.h
+include/rocksdb/persistent_cache.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
@@ -54,15 +55,21 @@ include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/document_db.h
+include/rocksdb/utilities/env_librados.h
 include/rocksdb/utilities/env_mirror.h
+include/rocksdb/utilities/env_registry.h
 include/rocksdb/utilities/flashcache.h
 include/rocksdb/utilities/geo_db.h
 include/rocksdb/utilities/info_log_finder.h
 include/rocksdb/utilities/json_document.h
+include/rocksdb/utilities/ldb_cmd.h
+include/rocksdb/utilities/ldb_cmd_execute_result.h
 include/rocksdb/utilities/leveldb_options.h
 include/rocksdb/utilities/memory_util.h
 include/rocksdb/utilities/optimistic_transaction_db.h
+include/rocksdb/utilities/option_change_migration.h
 include/rocksdb/utilities/options_util.h
+include/rocksdb/utilities/sim_cache.h
 include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h
@@ -75,6 +82,7 @@ include/rocksdb/version.h
 include/rocksdb/wal_filter.h
 include/rocksdb/write_batch.h
 include/rocksdb/write_batch_base.h
+include/rocksdb/write_buffer_manager.h
 lib/librocksdb.a
 lib/librocksdb.so
 lib/librocksdb.so.0
