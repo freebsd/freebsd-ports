@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	icu-le-hb
-PORTVERSION=	1.0.3
+DISTVERSION=	1.0.3-3
+DISTVERSIONSUFFIX=	-gb8a3163
 CATEGORIES=	devel print
-MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	ICU Layout Engine API on top of HarfBuzz shaping library
@@ -16,7 +16,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		gmake libtool pathfix pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	behdad
+
+USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
