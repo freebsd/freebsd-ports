@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Email-Simple
-PORTVERSION=	2.210
+PORTVERSION=	2.211
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Simple parsing of RFC2822 message format and headers
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Email-Date-Format>=0:mail/p5-Email-Date-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
