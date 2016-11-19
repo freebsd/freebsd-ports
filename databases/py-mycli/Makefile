@@ -3,6 +3,7 @@
 
 PORTNAME=	mycli
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}pymysql>=0.6.2:databases/py-pymysql \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.0:databases/py-sqlparse
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.2:databases/py-sqlparse
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
