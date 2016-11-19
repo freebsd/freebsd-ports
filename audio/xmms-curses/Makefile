@@ -14,7 +14,7 @@ BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS=	xmms:multimedia/xmms
 LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs
 
-USES=		gettext iconv
+USES=		gettext iconv ncurses
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
 
