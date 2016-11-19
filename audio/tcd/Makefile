@@ -12,6 +12,7 @@ COMMENT=	Simple, user-friendly ncurses-based CD player
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 
