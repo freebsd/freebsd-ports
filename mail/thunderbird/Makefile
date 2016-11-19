@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	45.4.0
-PORTREVISION=	2
+DISTVERSION=	45.5.0
+PORTREVISION=	0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -31,8 +31,8 @@ BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
-EM_VERSION=	1.9.5
-L_VERSION=	4.7.4
+EM_VERSION=	1.9.6.1
+L_VERSION=	4.7.5
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
