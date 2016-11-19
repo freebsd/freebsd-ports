@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Inline-Python
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,13 @@ COMMENT=	Write Perl Subroutines in Python
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline>=0.79:devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0.46:devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Proc-ProcessTable>=0.53:devel/p5-Proc-ProcessTable \
+		p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USE_PERL5=	configure
-USES=		perl5 python:2
+USES=		perl5 python
 CONFIGURE_ENV=	INLINE_PYTHON_EXECUTABLE="${PYTHON_CMD}"
 
 post-install:
