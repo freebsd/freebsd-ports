@@ -1,0 +1,8 @@
+WWW::Form::UrlEncoded provides application/x-www-form-urlencoded parser and
+builder. This module aims to have compatibility with other CPAN modules like
+HTTP::Body's urlencoded parser.
+
+This module try to use WWW::Form::UrlEncoded::XS by default and fail to it, use
+WWW::Form::UrlEncoded::PP instead
+
+WWW: http://search.cpan.org/dist/WWW-Form-UrlEncoded/
