@@ -17,6 +17,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/cs.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/cy.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/da.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/de_at_ph.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/de_phone.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ee.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/eo.pl
@@ -28,7 +29,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/fi_phone.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/fil.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/fo.pl
-%%SITE_ARCH%%/Unicode/Collate/Locale/fr.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/fr_ca.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/gu.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ha.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/haw.pl
