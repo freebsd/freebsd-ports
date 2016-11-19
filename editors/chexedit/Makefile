@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
 PLIST_FILES=	bin/chexedit \
 		man/man1/chexedit.1.gz
 
