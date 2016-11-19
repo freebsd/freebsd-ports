@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssdp
-PORTVERSION=	0.14.16
+PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.6.7:devel/gobject-introspection
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
