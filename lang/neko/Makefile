@@ -15,14 +15,13 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libpcre.so:devel/pcre libpcreposix.so:devel/pcre \
 		libmbedtls.so:security/mbedtls libmbedcrypto.so:security/mbedtls libmbedx509.so:security/mbedtls \
 		libfontconfig.so:x11-fonts/fontconfig libfreetype.so:print/freetype2 \
-		libmysqlclient.so:databases/mysql56-client \
-		libsqlite3.so:databases/sqlite3
+		libmysqlclient.so:databases/mysql56-client
 
 BROKEN_FreeBSD_9=	does not build
 
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig sqlite:3
 
-USE_GNOME=	gtk20 pango atk cairo gdkpixbuf2 glib20
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_GITHUB=	yes
 GH_ACCOUNT=	HaxeFoundation
 # GH_PROJECT is the same as port name
