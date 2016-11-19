@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	3.2-20161106
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
