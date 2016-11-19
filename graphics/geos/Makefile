@@ -3,6 +3,7 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
@@ -19,6 +20,7 @@ OPTIONS_SUB=	yes
 CONFIGURE_ARGS=	ac_cv_path_SWIG=${LOCALBASE}/bin/swig3.0
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		gmake libtool tar:bzip2
 
@@ -37,5 +39,8 @@ RUBY_USE=		RUBY=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||' ${WRKSRC}/tests/geostest/Makefile.in ${WRKSRC}/tests/thread/Makefile.in
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile -exec ${REINPLACE_CMD} -e '/CXXFLAGS = / s| -O2||' '{}' \;
 
 .include <bsd.port.mk>
