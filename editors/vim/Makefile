@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0082
+PORTVERSION=	8.0.0094
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -139,6 +139,9 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 .endif
 .endif
 
+post-extract:
+	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
+
 post-patch:
 	@${FIND} ${WRKSRC}/ -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e 's| $$<| $$>|'
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
@@ -168,15 +171,9 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#define HAVE_SYSINFO 1|/* #undef HAVE_SYSINFO */|' ${WRKSRC}/src/auto/config.h
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/
-.for file in evim rview rvim vimdiff
-	${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
+.for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
+	${LN} -s vim ${STAGEDIR}${PREFIX}/bin/$F
 .endfor
-.if empty(PORT_OPTIONS:MCONSOLE) && empty(PORT_OPTIONS:MX11)
-.for file in eview gview gvim gvimdiff rgview rgvim
-	${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
-.endif
 
 post-install-DEFAULT_VIMRC-on:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -184,11 +181,8 @@ post-install-DEFAULT_VIMRC-on:
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
 
 post-install-NLS-off:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
-	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
-
-post-install-NLS-on:
-	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 
 .include <bsd.port.post.mk>
