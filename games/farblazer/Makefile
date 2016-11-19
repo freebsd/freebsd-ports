@@ -15,18 +15,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Originally based of StarBlazer on the Apple ][
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python
+NO_ARCH=	yes
 
 PORTDOCS=	README.txt THANKS.txt
-OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Farblazer" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -44,6 +47,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
