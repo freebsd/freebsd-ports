@@ -98,7 +98,7 @@ WITH_OPENSSL_PORT=	yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
-USES+=		readline
+USES+=		ncurses readline
 .else
 # MySQL-Server part
 USES+=		mysql:100m

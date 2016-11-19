@@ -101,7 +101,7 @@ OPTIONS_SUB=		yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
-USES+=		readline
+USES+=		ncurses readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 
 post-install:

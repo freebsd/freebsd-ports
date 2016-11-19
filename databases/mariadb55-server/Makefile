@@ -78,7 +78,7 @@ CMAKE_ARGS+=	-DREADLINE_INCLUDE_DIR=/usr/include \
 
 .else
 # MySQL-Client part
-USES+=		readline
+USES+=		ncurses readline
 .endif
 
 OPTIONS_DEFINE+=	FASTMTX
