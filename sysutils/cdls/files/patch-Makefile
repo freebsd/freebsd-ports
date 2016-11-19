@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  all:
 -	cc -O2 -Wall -o cdls cdls.c -lncurses
-+	${CC} -O2 -Wall -o cdls cdls.c ${LDFLAGS} -lncurses
++	${CC} ${CFLAGS} -o cdls cdls.c ${LDFLAGS} -lncurses
  install:
  	install -o root -g wheel cdls /usr/local/bin/cdls
  clean:
