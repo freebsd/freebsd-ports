@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjackctl
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		gmake
+USES=		gmake localbase pkgconfig
+USE_XORG=	x11
+INSTALLS_ICONS=	yes
 QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_qmake=${QMAKE} \
@@ -39,15 +41,15 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_ENABLE=	portaudio
 
 SYSTRAY_DESC=		System tray icon support
-SYSTRAY_CONFIGURE_WITH=	system-tray
+SYSTRAY_CONFIGURE_ENABLE=	system-tray
 
-QT4_USE=		qt4=corelib,dbus,gui,xml \
-			qt4=linguisttools_build \
-			qt4=moc_build,qmake_build,rcc_build,uic_build
+QT4_USE=		QT4=corelib,dbus,gui,xml \
+			QT4=linguisttools_build \
+			QT4=moc_build,qmake_build,rcc_build,uic_build
 QT4_CONFIGURE_ENABLE=	qt4
-QT5_USE=		qt5=core,dbus,gui,widgets,x11extras,xml \
-			qt5=buildtools_build,linguisttools_build,qmake_build
-QT5_CONFIGURE_ENABLE=	qt5
+QT5_USE=		QT5=core,dbus,gui,widgets,x11extras,xml \
+			QT5=buildtools_build,linguisttools_build,qmake_build \
+			GL=gl
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
