@@ -5,6 +5,7 @@ PORTVERSION=	6.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server (6.x)
@@ -17,7 +18,7 @@ OPTIONS_SUB=	yes
 
 BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USES_OFF=		ssl
-BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
+BUNDLED_SSL_CONFIGURE_OFF+=	--shared-openssl
 
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
@@ -26,7 +27,7 @@ USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[456]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[45]-[0-9]* node01[02]-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
