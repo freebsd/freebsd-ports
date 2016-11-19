@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp
-PORTVERSION=	0.20.18
+PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.6.4:devel/gobject-introspection \
 		gssdp>=0.14.13:net/gssdp
