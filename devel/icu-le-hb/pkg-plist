@@ -1,0 +1,16 @@
+include/icu-le-hb/layout/LEFontInstance.h
+include/icu-le-hb/layout/LEGlyphFilter.h
+include/icu-le-hb/layout/LEGlyphStorage.h
+include/icu-le-hb/layout/LEInsertionList.h
+include/icu-le-hb/layout/LELanguages.h
+include/icu-le-hb/layout/LEScripts.h
+include/icu-le-hb/layout/LESwaps.h
+include/icu-le-hb/layout/LETypes.h
+include/icu-le-hb/layout/LayoutEngine.h
+include/icu-le-hb/layout/loengine.h
+lib/libicu-le-hb.a
+lib/libicu-le-hb.so
+lib/libicu-le-hb.so.0
+lib/libicu-le-hb.so.0.0.0
+libdata/pkgconfig/icu-le-hb.pc
+libdata/pkgconfig/icu-le.pc
