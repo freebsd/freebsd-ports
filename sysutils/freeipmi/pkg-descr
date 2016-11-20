@@ -7,5 +7,5 @@ sensor monitoring, system event monitoring, power control, and serial-over-LAN
 access and utilize these and many other features. A number of useful features
 for large HPC or cluster environments have also been implemented into FreeIPMI.
 
-WWW: http://www.gnu.org/software/freeipmi/
-WWW: http://savannah.gnu.org/projects/freeipmi/
+WWW: https://www.gnu.org/software/freeipmi/
+WWW: https://savannah.gnu.org/projects/freeipmi/
