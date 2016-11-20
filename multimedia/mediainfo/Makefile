@@ -19,7 +19,6 @@ LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 
 BROKEN_powerpc64=	does not build
 
-CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig tar:xz
