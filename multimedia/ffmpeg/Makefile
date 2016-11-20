@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.8.8
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -297,7 +297,6 @@ SPEEX_CONFIGURE_ENABLE=	libspeex
 
 # sse support
 SSE_CONFIGURE_ENABLE=	sse
-SSE_VARS=		FFMPEG_CFLAGS+="-msse"
 SSE_IMPLIES=		MMX
 
 # ssh
