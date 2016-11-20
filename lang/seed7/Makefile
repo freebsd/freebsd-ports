@@ -42,7 +42,9 @@ PORTDOCS=	*
 MAKEFILE=	mk_freebsd.mk
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
+		-e 's|^CFLAGS = |CFLAGS = -I${NCURSESINC} |' \
+		${WRKSRC}/${MAKEFILE}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} depend
