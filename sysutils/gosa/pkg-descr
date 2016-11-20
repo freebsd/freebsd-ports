@@ -1,7 +1,0 @@
-GOsa is a combination of system-administrator and end-user web
-interface, designed to handle LDAP based setups.  Provided is access
-to posix, shadow, samba, proxy, fax, and kerberos accounts. It is able
-to manage the postfix/cyrus server combination and can write user
-adapted sieve scripts.
-
-WWW: http://www.gosa-project.org/

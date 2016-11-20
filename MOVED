@@ -8804,3 +8804,5 @@ security/erlang-p1tls|security/erlang-fast_tls|2016-11-11|Project was renamed
 mail/trojita-qt4|mail/trojita|2016-11-13|Qt4 support was dropped, use mail/trojita instead
 devel/extra-cmake-modules|devel/kf5-extra-cmake-modules|2016-11-14|Renamed to match other KF5 port
 net/vnc||2016-11-14|Has expired: Distfiles no longer available.
+sysutils/gosa||2016-11-20|Has expired: this version of gosa cannot be fixed (requires PHP < 5.4)
+security/krb5-112||2016-11-20|Has expired: EOL twelve months after release of krb5-1.14
