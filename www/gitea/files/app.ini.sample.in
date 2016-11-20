@@ -1,0 +1,74 @@
+#
+# Sample Configuration for Gitea using SQLite
+#
+# For information on the available settings, consult the online
+# documentation, or see the accompanying file app.ini.defaults, which
+# contains the settings incorporated into the gitea binary.
+#
+# This sample configuration runs Gitea with a local database.
+# Before running this configuration, make sure to change the security
+# token SECRET_KEY at the end of this file.  There are no pre-configured
+# users; the first user to register becomes an admin.  In this sample
+# configuration, the HTTP server only listens on localhost.
+#
+# If you'd rather use the web-based installer, remove this conf/app.ini file
+# and make %%PREFIX%%/etc/gitea/conf writeable to the git user.
+
+APP_NAME = Gitea: Git with a cup of tea
+RUN_USER = %%GITUSER%%
+RUN_MODE = prod
+
+[log]
+ROOT_PATH = /var/log/gitea
+MODE      = file
+LEVEL     = Info
+
+[database]
+DB_TYPE  = sqlite3
+HOST     = 127.0.0.1:3306
+NAME     = gitea
+USER     = root
+PASSWD   = 
+SSL_MODE = disable
+PATH     = /var/db/gitea/gitea.db
+
+[repository]
+ROOT = /var/db/gitea/gitea-repositories
+
+[repository.upload]
+TEMP_PATH = /var/db/gitea/data/tmp/uploads
+
+[server]
+DOMAIN       = localhost
+HTTP_ADDR    = 127.0.0.1
+HTTP_PORT    = 3000
+ROOT_URL     = http://localhost:3000/
+DISABLE_SSH  = false
+SSH_PORT     = 22
+OFFLINE_MODE = false
+APP_DATA_PATH = /var/db/gitea/data
+
+[session]
+PROVIDER_CONFIG = /var/db/gitea/data/sessions
+
+[mailer]
+ENABLED = false
+
+[service]
+REGISTER_EMAIL_CONFIRM = false
+ENABLE_NOTIFY_MAIL     = false
+DISABLE_REGISTRATION   = false
+ENABLE_CAPTCHA         = true
+REQUIRE_SIGNIN_VIEW    = false
+
+[picture]
+DISABLE_GRAVATAR        = false
+ENABLE_FEDERATED_AVATAR = false
+
+[session]
+PROVIDER = file
+
+[security]
+INSTALL_LOCK = true
+SECRET_KEY   = ChangeMeBeforeRunning
+
