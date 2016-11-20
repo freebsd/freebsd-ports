@@ -12,7 +12,7 @@ COMMENT=	Roguelike game and as such a remake of the classic game Larn
 
 LICENSE=	GPLv3
 
-USES=		gmake lua:51 pkgconfig
+USES=		gmake lua:51 ncurses pkgconfig
 USE_GNOME=	glib20
 
 post-configure:
