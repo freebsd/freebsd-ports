@@ -42,7 +42,7 @@ DOCSDIR=		share/doc/opensips
 
 USE_RC_SUBR=		opensips
 
-USES=			gmake perl5 pkgconfig shebangfix ssl
+USES=			gmake ncurses perl5 pkgconfig shebangfix ssl
 USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
