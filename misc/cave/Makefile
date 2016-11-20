@@ -12,6 +12,7 @@ COMMENT=	Character Animation Viewer for Everyone
 USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS="${LDFLAGS} -lncurses"
+CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/cave.1.gz
