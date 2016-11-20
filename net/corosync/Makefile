@@ -3,7 +3,7 @@
 
 PORTNAME=	corosync
 PORTVERSION=	2.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://build.clusterlabs.org/corosync/releases/
 

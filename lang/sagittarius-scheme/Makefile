@@ -3,6 +3,7 @@
 
 PORTNAME=	sagittarius
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish

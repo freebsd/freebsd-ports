@@ -2,6 +2,7 @@
 
 PORTNAME=	amath
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://suyai.innolan.net/
 

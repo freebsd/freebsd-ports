@@ -3,7 +3,7 @@
 
 PORTNAME=	darkplaces
 PORTVERSION=	20140513
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}

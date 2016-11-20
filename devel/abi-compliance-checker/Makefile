@@ -3,6 +3,7 @@
 
 PORTNAME=	abi-compliance-checker
 PORTVERSION=	1.99
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	LOCAL/bf/${PORTNAME}
 

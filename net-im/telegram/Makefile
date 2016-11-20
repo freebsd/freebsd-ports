@@ -3,6 +3,7 @@
 
 PORTNAME=	telegram
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org

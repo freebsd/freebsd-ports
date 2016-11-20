@@ -3,6 +3,7 @@
 
 PORTNAME=	hashcat-legacy
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	lifanov@mail.lifanov.com

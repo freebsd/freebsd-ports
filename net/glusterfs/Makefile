@@ -2,6 +2,7 @@
 
 PORTNAME=	glusterfs
 PORTVERSION=	3.7.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 

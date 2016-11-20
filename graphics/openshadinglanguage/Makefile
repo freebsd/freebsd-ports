@@ -3,6 +3,7 @@
 
 PORTNAME=	openshadinglanguage
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	Release-
 CATEGORIES=	graphics devel
 

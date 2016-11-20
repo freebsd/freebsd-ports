@@ -2,6 +2,7 @@
 
 PORTNAME=	codec2
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://files.freedv.org/codec2/ \
 		LOCAL/db

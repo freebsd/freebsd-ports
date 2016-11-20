@@ -3,6 +3,7 @@
 
 PORTNAME=		opensips
 PORTVERSION=		2.1.4
+PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 

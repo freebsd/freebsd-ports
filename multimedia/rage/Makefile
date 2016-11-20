@@ -3,6 +3,7 @@
 
 PORTNAME=	rage
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 

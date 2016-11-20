@@ -3,6 +3,7 @@
 
 PORTNAME=	cvc3
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/
 

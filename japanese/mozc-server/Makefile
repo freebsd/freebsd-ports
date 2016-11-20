@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	2.17.2322.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	https://codeload.github.com/google/${PORTNAME}/tar.gz/9b4c9e0?dummy=/:main \
 		https://codeload.github.com/hiroyuki-komatsu/japanese-usage-dictionary/tar.gz/e5b3425?dummy=/:udic

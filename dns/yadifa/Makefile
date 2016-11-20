@@ -3,6 +3,7 @@
 
 PORTNAME=	yadifa
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-6281
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/

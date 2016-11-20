@@ -3,6 +3,7 @@
 
 PORTNAME=	intellij-fsnotifier
 PORTVERSION=	20160221
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 MAINTAINER=	t@tobik.me

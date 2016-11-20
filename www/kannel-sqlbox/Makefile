@@ -2,6 +2,7 @@
 
 PORTNAME=	kannel-sqlbox
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dbaio@bsd.com.br
