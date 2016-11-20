@@ -3,6 +3,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/

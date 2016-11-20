@@ -3,7 +3,7 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	SF/fireflyserver-server/Sources/mt-daapd/svn-${PORTVERSION}
 DISTNAME=	mt-daapd-svn-${PORTVERSION}

@@ -3,6 +3,7 @@
 
 PORTNAME=	waffle
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.waffle-gl.org/files/release/waffle-${PORTVERSION}/
 

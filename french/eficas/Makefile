@@ -3,6 +3,7 @@
 
 PORTNAME=	eficas
 DISTVERSION=	2016.0-1
+PORTREVISION=	1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org

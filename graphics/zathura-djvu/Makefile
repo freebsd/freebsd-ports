@@ -3,6 +3,7 @@
 
 PORTNAME=	zathura-djvu
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 

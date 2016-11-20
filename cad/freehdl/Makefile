@@ -3,7 +3,7 @@
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 

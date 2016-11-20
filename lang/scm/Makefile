@@ -3,7 +3,7 @@
 
 PORTNAME=	scm
 PORTVERSION=	5f2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD

@@ -2,6 +2,7 @@
 
 PORTNAME=	libsodium
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.libsodium.org/libsodium/releases/
 

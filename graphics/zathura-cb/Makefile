@@ -2,6 +2,7 @@
 
 PORTNAME=	zathura-cb
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura-cb/download/
 
