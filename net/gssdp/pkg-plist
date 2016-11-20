@@ -8,7 +8,7 @@ lib/girepository-1.0/GSSDP-1.0.typelib
 lib/libgssdp-1.0.a
 lib/libgssdp-1.0.so
 lib/libgssdp-1.0.so.3
-lib/libgssdp-1.0.so.3.0.0
+lib/libgssdp-1.0.so.3.0.1
 libdata/pkgconfig/gssdp-1.0.pc
 %%GTK3%%%%DATADIR%%/gssdp-device-sniffer.ui
 share/gir-1.0/GSSDP-1.0.gir
