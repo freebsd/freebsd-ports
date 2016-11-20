@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,7 +15,6 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
-IGNORE_WITH_PHP=70
 USE_PHP=	session:build
 USES=		php:ext tar:tgz
 
