@@ -1,0 +1,49 @@
+commit c0d2685148b5
+Author: Jonathan Kew <jkew@mozilla.com>
+Date:   Wed Nov 9 15:07:54 2016 +0000
+
+    Bug 1315986 - Update line-break class mapping in nsJISx4051LineBreaker to handle new classes in ICU58/Unicode 9, and add assertions to detect any future additions that will require further updates. r=masayuki
+---
+ intl/lwbrk/nsJISx4051LineBreaker.cpp | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git intl/lwbrk/nsJISx4051LineBreaker.cpp intl/lwbrk/nsJISx4051LineBreaker.cpp
+index 0d89e91..1b262fa 100644
+--- intl/lwbrk/nsJISx4051LineBreaker.cpp
++++ intl/lwbrk/nsJISx4051LineBreaker.cpp
+@@ -12,6 +12,10 @@
+ #include "nsTArray.h"
+ #include "nsUnicodeProperties.h"
+ 
++#if ENABLE_INTL_API
++#include "unicode/uchar.h"  // for U_LB_COUNT until bug 1305700
++#endif
++
+ /* 
+ 
+    Simplification of Pair Table in JIS X 4051
+@@ -547,10 +551,22 @@ GetClass(uint32_t u)
+     /* CLOSE_PARENTHESIS = 36,            [CP] */ CLASS_CLOSE_LIKE_CHARACTER,
+     /* CONDITIONAL_JAPANESE_STARTER = 37, [CJ] */ CLASS_CLOSE,
+     /* HEBREW_LETTER = 38,                [HL] */ CLASS_CHARACTER,
+-    /* REGIONAL_INDICATOR = 39,           [RI] */ CLASS_CHARACTER
++    /* REGIONAL_INDICATOR = 39,           [RI] */ CLASS_CHARACTER,
++#if U_ICU_VERSION_MAJOR_NUM > 57
++    /* E_BASE = 40,                       [EB] */ CLASS_BREAKABLE,
++    /* E_MODIFIER = 41,                   [EM] */ CLASS_CHARACTER,
++    /* ZWJ = 42,                          [ZWJ]*/ CLASS_CHARACTER,
++#endif
+   };
+ 
+-  return sUnicodeLineBreakToClass[mozilla::unicode::GetLineBreakClass(u)];
++#if ENABLE_INTL_API
++  static_assert(U_LB_COUNT == mozilla::ArrayLength(sUnicodeLineBreakToClass),
++                "Gecko vs ICU LineBreak class mismatch");
++#endif
++
++  auto cls = mozilla::unicode::GetLineBreakClass(u);
++  MOZ_ASSERT(cls < mozilla::ArrayLength(sUnicodeLineBreakToClass));
++  return sUnicodeLineBreakToClass[cls];
+ }
+ 
+ static bool
