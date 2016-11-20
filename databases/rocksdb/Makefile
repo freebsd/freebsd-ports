@@ -15,9 +15,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
 
-OPTIONS_DEFINE=	DEBUG
+BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
+BROKEN_aarch64=	does not build: the clang compiler does not support -march=native
+BROKEN_armv6=	does not build: the clang compiler does not support -march=native
+BROKEN_powerpc64=	does not build
+BROKEN_sparc64=	cannot build: uses unknown compiler flags
+
+OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
 
 ALL_TARGET=	shared_lib static_lib all
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	make_config.mk
+CONFIGURE_ENV=	ROCKSDB_ROOT=${WRKSRC}
+CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 CPPFLAGS+=	-DOS_FREEBSD
 MAKE_ENV=	CXX=${CXX}
 USE_CXXSTD=	c++11
@@ -29,17 +39,13 @@ PORTDATA=	make_config.mk
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
 
-BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
-BROKEN_aarch64=		does not build: the clang compiler does not support -march=native
-BROKEN_armv6=		does not build: the clang compiler does not support -march=native
-BROKEN_powerpc64=	does not build
-BROKEN_sparc64=		cannot build: uses unknown compiler flags
-
 BENCHMARKS=	cache_bench db_bench memtablerep_bench table_reader_bench
 TOOLS=		db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump write_stress
 
 DEBUG_MAKE_ENV=		DEBUG_LEVEL=2
 DEBUG_MAKE_ENV_OFF=	DEBUG_LEVEL=0
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +58,7 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||; /^dummy :=/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
 	@${REINPLACE_CMD} -e 's|#include "gtest/gtest.h"|#include "gtest.h"|' ${WRKSRC}/third-party/gtest-1.7.0/fused-src/gtest/gtest-all.cc
 .if defined(WITHOUT_PROFILE)
@@ -62,6 +68,12 @@ post-patch:
 .if ${ARCH} == i386
 	@${REINPLACE_CMD} -e 's|#ifdef __SSE4_2__|&DISABLED__|' ${WRKSRC}/util/crc32c.cc
 .endif
+
+post-patch-LZ4-off:
+	@${REINPLACE_CMD} -e '/lz4/Id' ${WRKSRC}/build_tools/build_detect_platform
+
+post-patch-ZSTD-off:
+	@${REINPLACE_CMD} -e '/zstd/Id' ${WRKSRC}/build_tools/build_detect_platform
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/rocksdb/ ${STAGEDIR}${DATADIR}/
