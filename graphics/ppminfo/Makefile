@@ -6,13 +6,13 @@ PORTVERSION=	0.1
 PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vanheusden.com/ppminfo/ CENKES
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows details of a ppm file
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
+USES=		ncurses tar:tgz
 PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
