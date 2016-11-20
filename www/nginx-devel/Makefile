@@ -788,8 +788,8 @@ GH_ACCOUNT+=	openresty:drizzle
 GH_PROJECT+=	drizzle-nginx-module:drizzle
 GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
 CONFIGURE_ARGS+=--add-module=${WRKSRC_drizzle}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
-IGNORE=	DRIZZLE: a patch requires
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
+		${PATCHDIR}/extra-patch-ngx_http_drizzle_upstream.c
 .endif
 
 .if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
@@ -917,8 +917,8 @@ GH_ACCOUNT+=	FRiCKLE:postgres
 GH_PROJECT+=	ngx_postgres:postgres
 GH_TAGNAME+=	${NGINX_POSTGRES_VERSION}:postgres
 CONFIGURE_ARGS+=--add-module=${WRKSRC_postgres}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
-IGNORE=	POSTGRES: a patch requires
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config \
+		${PATCHDIR}/extra-patch-ngx_postgres_module.c
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
