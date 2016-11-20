@@ -1,0 +1,4 @@
+etc/php/ext-20-geos.ini
+include/php/ext/geos/config.h
+include/php/ext/geos/php_geos.h
+lib/php/%%PHP_EXT_DIR%%/geos.so
