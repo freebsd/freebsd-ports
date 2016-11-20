@@ -709,6 +709,7 @@
     SUBDIR += sfront
     SUBDIR += shairplay
     SUBDIR += shairport
+    SUBDIR += shairport-sync
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
