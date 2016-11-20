@@ -2,7 +2,4 @@ libdap is A C++ SDK which contains an implementation of DAP 2.0 and 3.1,
 Client- and Server-side support classes and a prototype implementation
 of the AIS.
 
-OpeNDAP's public key is available at
-http://opendap.org/download/index.html#public_key
-
-WWW: http://opendap.org/download/libdap
+WWW: https://www.opendap.org/software/libdap
