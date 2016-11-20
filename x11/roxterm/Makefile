@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	roxterm
-PORTVERSION=	2.9.7
+PORTVERSION=	3.3.2
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -16,29 +16,25 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:devel/py-lockfile \
 		docbook-xsl>0:textproc/docbook-xsl \
 		itstool:textproc/itstool \
 		po4a:textproc/po4a
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgnutls.so:security/gnutls
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		gettext libtool:build pkgconfig python:build tar:bzip2
-USE_GNOME=	librsvg2:run libxslt:build
+USES=		gettext libtool:build pkgconfig python:build tar:xz
+USE_XORG=	ice sm x11
+USE_GNOME=	cairo librsvg2:run libxslt:build
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	DOCS GTK3
+OPTIONS_DEFINE=	DOCS
 
-MAITCHFLAGS=	DISABLE_GTK3=${DISABLE_GTK3};DISABLE_GIT=True;
+MAITCHFLAGS=	DISABLE_GIT=True;
 MAITCHFLAGS+=	CC=${CC};GCC=${CC};CPP=${CC};CFLAGS=${CFLAGS};
 MAITCHFLAGS+=	PARALLEL=${MAKE_JOBS_NUMBER};PREFIX=${PREFIX};
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK3}
-#USE_GNOME+=	vte3
-# use older vte3-290 port until roxterm can support the 2.91 API from vte3
-LIB_DEPENDS+=	libvte2_90.so:x11-toolkits/vte290
-.else
-USE_GNOME+=	vte
-DISABLE_GTK3=	True
-.endif
+USE_GNOME+=	vte3
 
 post-patch:
 	@${REINPLACE_CMD} -e \
