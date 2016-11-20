@@ -11,7 +11,7 @@ COMMENT=	RFC1413 auth/identd daemon providing a fixed fake reply
 
 LICENSE=	BSD3CLAUSE
 
-USES=		uidfix tar:xz
+USES=		ncurses uidfix tar:xz
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 MAKE_ENV+=	NO_WERROR="defined"
 
