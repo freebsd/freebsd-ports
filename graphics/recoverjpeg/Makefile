@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoverjpeg
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	exif:graphics/exif \
 USES=		autoreconf python shebangfix
 GNU_CONFIGURE=	yes
 
-SHEBANG_FILES=	remove-duplicates
+SHEBANG_FILES=	scripts/remove-duplicates
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samueltardieu
