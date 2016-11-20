@@ -4,6 +4,6 @@ include/fitsio2.h
 include/longnam.h
 lib/libcfitsio.a
 lib/libcfitsio.so
-lib/libcfitsio.so.%%SHLIB_MAJOR_VER%%
-lib/libcfitsio.so.%%SHLIB_MAJOR_VER%%.%%SHLIB_MINOR_VER%%
+lib/libcfitsio.so.%%SHLIB_MAJOR%%
+lib/libcfitsio.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 libdata/pkgconfig/cfitsio.pc
