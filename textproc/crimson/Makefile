@@ -19,19 +19,24 @@ JAVAVM?=	${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 SUB_FILES=	pkg-message
 PLIST_FILES=	share/java/classes/crimson.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/java/classes
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/crimson.jar ${STAGEDIR}${PREFIX}/share/java/classes
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} README.html ChangeLog ${STAGEDIR}${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} examples ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
