@@ -66,7 +66,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
 		libksba.so:security/libksba
 
-USES+=		iconv gmake pkgconfig
+USES+=		iconv gmake ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pinentry-emacs
 
@@ -81,7 +81,6 @@ LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 
 .if ${PINENTRY_GUI} == "gnome3"
 OPTIONS_SLAVE=	LIBSECRET
-USES+=		ncurses
 USE_GNOME+=	gtk20
 LIB_DEPENDS+=	libgcr-base-3.so:security/gcr
 PLIST_FILES=	bin/pinentry-gnome3
@@ -113,7 +112,6 @@ CONFIGURE_ARGS+=--disable-pinentry-gtk2
 .endif
 
 .if ${PINENTRY_GUI} == "curses"
-USES+=		ncurses
 PLIST_FILES=	bin/pinentry-curses
 .else
 CONFIGURE_ARGS+=--disable-pinentry-curses
