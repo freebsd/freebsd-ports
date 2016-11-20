@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libolecf
-DISTVERSION=	alpha-20160814
+DISTVERSION=	alpha-20161113
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libolecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
