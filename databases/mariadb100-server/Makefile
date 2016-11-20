@@ -29,7 +29,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo gmake shebangfix ssl
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo \
+		ncurses gmake shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -99,7 +100,7 @@ WITH_OPENSSL_PORT=	yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
-USES+=		ncurses readline
+USES+=		readline
 .else
 # MySQL-Server part
 USES+=		mysql:100m
