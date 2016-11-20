@@ -4,7 +4,7 @@
 PORTNAME=	reduce
 PORTVERSION=	20141130
 CATEGORIES=	math lang
-MASTER_SITES=	SF/${PORTNAME}-algebra/Snapshot_2014-11-30/
+MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
 DISTNAME=	${PORTNAME}-src-2014-11-30
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -18,6 +18,8 @@ USES=		autoreconf:build gmake ncurses tar:bzip2
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+SFSUBDIR=	Snapshot_2014-11-30-kept-only-for-historical-interest
 
 # Avoid GNU_CONFIGURE as it breaks staging
 HAS_CONFIGURE=	yes
