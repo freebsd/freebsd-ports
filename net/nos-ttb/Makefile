@@ -11,11 +11,21 @@ DISTNAME=	ttb-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NOS teletekst browser
 
-#don't know if pygtk-1.X could also be used
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
+
+# there is a successor project called TTX at
+# https://github.com/djcb/ttx
+DEPRECATED=	does not work due to protocol changes
+EXPIRATION_DATE=2017-02-20
 
 NO_BUILD=	yes
 USES=		python
+
+PLIST_FILES=	bin/ttb \
+		share/ttb/ttb.glade \
+		share/ttb/ttb.png
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ttb
