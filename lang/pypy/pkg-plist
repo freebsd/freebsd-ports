@@ -548,8 +548,8 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/encodings/zlib_codec.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__init__.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__main__.py
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-6.1.1-py2.py3-none-any.whl
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-15.2-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/_uninstall.py
 %%PYPY_DIR%%/lib-python/2.7/filecmp.py
 %%PYPY_DIR%%/lib-python/2.7/fileinput.py
@@ -650,6 +650,8 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/idlelib/configSectionNameDialog.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/dynOptionMenuWidget.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/extend.txt
+%%PYPY_DIR%%/lib-python/2.7/idlelib/help.html
+%%PYPY_DIR%%/lib-python/2.7/idlelib/help.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/help.txt
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle.bat
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle.py
@@ -665,8 +667,10 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_config_name.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_configdialog.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_delegator.py
+%%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_editmenu.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_formatparagraph.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_grep.py
+%%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_helpabout.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_hyperparser.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_idlehistory.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_io.py
@@ -1259,7 +1263,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/badsyntax_future8.py
 %%PYPY_DIR%%/lib-python/2.7/test/badsyntax_future9.py
 %%PYPY_DIR%%/lib-python/2.7/test/badsyntax_nocaret.py
-%%PYPY_DIR%%/lib-python/2.7/test/buffer_tests.py
 %%PYPY_DIR%%/lib-python/2.7/test/capath/0e4015b9.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/4e1295a3.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/5ed36f99.0
@@ -1604,7 +1607,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/test_codecmaps_tw.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_codecs.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_codeop.py
-%%PYPY_DIR%%/lib-python/2.7/test/test_coding.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_coercion.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_collections.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_colorsys.py
@@ -1780,15 +1782,14 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/test_openpty.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_operator.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_optparse.py
+%%PYPY_DIR%%/lib-python/2.7/test/test_ordered_dict.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_os.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_ossaudiodev.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_parser.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pdb.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_peepholer.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pep247.py
-%%PYPY_DIR%%/lib-python/2.7/test/test_pep263.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pep277.py
-%%PYPY_DIR%%/lib-python/2.7/test/test_pep292.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pep352.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pickle.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_pickletools.py
@@ -1850,6 +1851,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/test_socketserver.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_softspace.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_sort.py
+%%PYPY_DIR%%/lib-python/2.7/test/test_source_encoding.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_spwd.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_sqlite.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_ssl.py
@@ -1899,6 +1901,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/test_ttk_guionly.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_ttk_textonly.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_tuple.py
+%%PYPY_DIR%%/lib-python/2.7/test/test_turtle.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_typechecks.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_types.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_ucn.py
