@@ -3,7 +3,7 @@
 
 PORTNAME=	lxterminal
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libvte.so:x11-toolkits/vte
 USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
