@@ -143,7 +143,7 @@ ocaml-findlib:
 	@${FIND} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
 		's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 .   endif
-	@${ECHO_CMD} "@unexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
+	@${ECHO_CMD} "@postunexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
 		>> ${TMPPLIST}
 .  endfor
 . endif
