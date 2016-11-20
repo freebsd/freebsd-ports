@@ -199,6 +199,7 @@
     SUBDIR += get_flash_videos
     SUBDIR += getleft
     SUBDIR += gist
+    SUBDIR += gitea
     SUBDIR += gitlab
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish

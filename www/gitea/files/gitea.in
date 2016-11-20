@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gitea
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable gitea:
+#
+#gitea_enable="YES"
+
+. /etc/rc.subr
+
+name="gitea"
+rcvar="gitea_enable"
+
+load_rc_config $name
+
+: ${gitea_user:="%%GITUSER%%"}
+: ${gitea_enable:="NO"}
+: ${gitea_shared:="%%PREFIX%%/share/${name}"}
+
+command="%%PREFIX%%/sbin/${name} web"
+procname="%%PREFIX%%/sbin/${name}"
+githome="$(eval echo ~${gitea_user})"
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+gitea_start() {
+	/usr/sbin/daemon -f -u ${gitea_user} -p ${pidfile} /usr/bin/env -i \
+		"GITEA_WORK_DIR=${gitea_shared}" \
+		"GITEA_CUSTOM=%%PREFIX%%/etc/${name}" \
+		"HOME=${githome}" \
+		"PATH=%%PREFIX%%/bin:${PATH}" \
+		"USER=%%GITUSER%%" \
+		$command
+}
+
+run_rc_command "$1"
