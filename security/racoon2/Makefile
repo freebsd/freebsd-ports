@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 
-MAINTAINER= 	cy@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
 USES=		perl5 tar:tgz
@@ -23,10 +23,9 @@ CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	KERBEROS
-OPTIONS_RADIO_KERBEROS=	KRB5 KRB5_112 KRB5_113 KRB5_114 \
+OPTIONS_RADIO_KERBEROS=	KRB5 KRB5_113 KRB5_114 \
 		HEIMDAL_PORTS HEIMDAL_BASE
 KRB5_DESC=	Build with Kerberos (security/krb5)
-KRB5_112_DESC=	Build with Kerberos (security/krb5-112)
 KRB5_113_DESC=	Build with Kerberos (security/krb5-113)
 KRB5_114_DESC=	Build with Kerberos (security/krb5-114)
 HEIM_AL_PORTS_DESC=	Build with Heimdal in ports (security/heimdal)
@@ -39,14 +38,6 @@ KRB5_PLIST_SUB=		KINK=""
 KRB5_LIB_DEPENDS=	libkrb5support.so:security/krb5
 KRB5_RUN_DEPENDS=	kinit:security/krb5
 KRB5_VARS=		KINK=yes
-
-KRB5_112_USES=		gssapi:mit
-KRB5_112_CONFIGURE_ON=	--enable-kinkd
-KRB5_112_MAKE_ENV=	WITH_KINK=yes
-KRB5_112_PLIST_SUB=	KINK=""
-KRB5_112_LIB_DEPENDS=	libkrb5support.so:security/krb5-112
-KRB5_112_RUN_DEPENDS=	kinit:security/krb5-112
-KRB5_112_VARS=		KINK=yes
 
 KRB5_113_USES=		gssapi:mit
 KRB5_113_CONFIGURE_ON=	--enable-kinkd
@@ -61,7 +52,7 @@ KRB5_114_CONFIGURE_ON=	--enable-kinkd
 KRB5_114_MAKE_ENV=	WITH_KINK=yes
 KRB5_114_PLIST_SUB=	KINK=""
 KRB5_114_LIB_DEPENDS=	libkrb5support.so:security/krb5-114
-KRB5_114_RUN_DEPENDS= 	kinit:security/krb5-113
+KRB5_114_RUN_DEPENDS=	kinit:security/krb5-113
 KRB5_114_VARS=		KINK=yes
 
 HEIMDAL_PORT_USES=	gssapi:heimdal
