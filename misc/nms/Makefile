@@ -14,6 +14,8 @@ COMMENT=	Recreate decrypting text effect from the Sneakers movie
 LICENSE=	GPLv3
 
 USES=		gmake ncurses
+MAKE_ARGS+=	NCURSES_H=${NCURSESINC}/ncurses.h
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bartobri
 GH_PROJECT=	no-more-secrets
