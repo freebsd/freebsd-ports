@@ -393,7 +393,6 @@
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome_subr
     SUBDIR += goaccess
-    SUBDIR += gosa
     SUBDIR += gpart
     SUBDIR += gpte
     SUBDIR += graffer
