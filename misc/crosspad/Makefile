@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crosspad data downloader/converter
 
-USES=		perl5
+USES=		ncurses perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_path_perl=${PERL}
