@@ -382,7 +382,7 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.9.0
+lib/libgeos_c.so.1.10.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
@@ -391,4 +391,3 @@ lib/libgeos_c.so.1.9.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
-%%PHP%%lib/php/%%PHP_EXT_DIR%%/geos.so
