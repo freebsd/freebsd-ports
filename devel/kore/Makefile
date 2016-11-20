@@ -47,17 +47,16 @@ JSONRPC_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 DEBUG_VARS=	MAKE_ARGS+=DEBUG=1
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	Base OpenSSL on FreeBSD 9.x is too old
-.endif
+BROKEN_FreeBSD_9=	does not build
 
 post-patch:
-# Disable kore's own optimizations flags
-	@${REINPLACE_CMD} 's|CFLAGS+=-O|#|g' ${WRKSRC}/Makefile
-# Make sure the correct flags are set when LOCALBASE is not /usr/local
-	@${REINPLACE_CMD} 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/Makefile
+# Disable kore's own optimizations flags, make sure the correct flags
+# are set when LOCALBASE is not /usr/local, and allow __generic on
+# FreeBSD 12.0-CURRENT after r308264
+	@${REINPLACE_CMD} -e 's|CFLAGS+=-O|#|g' \
+		-e 's|/usr/local/|${LOCALBASE}/|g' \
+		-e 's|-pedantic|-pedantic -Wno-error=c11-extensions|g' \
+		${WRKSRC}/Makefile
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/kore
@@ -66,4 +65,4 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
