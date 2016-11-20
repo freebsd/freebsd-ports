@@ -3,6 +3,7 @@
 
 PORTNAME=	gupnp-av
 PORTVERSION=	0.12.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,7 +22,7 @@ VALA_DESC=	Vala binding
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_GNOME=	glib20 introspection:build
+USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 
