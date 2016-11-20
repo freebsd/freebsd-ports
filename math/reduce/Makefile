@@ -18,6 +18,7 @@ USES=		autoreconf:build gmake ncurses tar:bzip2
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
+CPPFLAGS+=	-I${NCURSESINC}
 
 SFSUBDIR=	Snapshot_2014-11-30-kept-only-for-historical-interest
 
