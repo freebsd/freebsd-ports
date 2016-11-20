@@ -38,7 +38,7 @@ FIREBIRD_DEFAULT?=	2.5
 # Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.0
 # Possible values: 4.6, 4.7, 4.8, 4.9, 5
-GCC_DEFAULT?=		4.8
+GCC_DEFAULT?=		4.9
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: f10, c6, c6_64, c7, c7_64
@@ -134,6 +134,6 @@ TCLTK_DEFAULT?=		8.6
 VARNISH_DEFAULT?=	4
 
 # Version of lang/gcc.  Do not override!
-LANG_GCC_IS=		4.8
+LANG_GCC_IS=		4.9
 
 .endif
