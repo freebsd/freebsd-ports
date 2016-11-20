@@ -3,7 +3,7 @@
 
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	http://lacklustre.net/projects/ems-flasher/ \
 		https://cooltrainer.org/freebsd-ports/ems-flasher/

@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel
 MASTER_SITES=   GNU/gdb/ \
 		http://aldan.algebra.com/~mi/:gdbtk

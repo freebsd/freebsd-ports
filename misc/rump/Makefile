@@ -3,6 +3,7 @@
 
 PORTNAME=	rump
 PORTVERSION=	20131213
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/stacktic/
 DISTNAME=	buildrump-${PORTVERSION}

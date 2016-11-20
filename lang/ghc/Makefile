@@ -3,6 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.10.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/pgj/:boot

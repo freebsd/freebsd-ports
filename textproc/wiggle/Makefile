@@ -3,6 +3,7 @@
 
 PORTNAME=	wiggle
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 

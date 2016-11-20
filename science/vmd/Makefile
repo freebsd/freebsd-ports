@@ -3,7 +3,7 @@
 
 PORTNAME=	vmd
 DISTVERSION=	1.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
 		http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \

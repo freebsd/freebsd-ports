@@ -2,6 +2,7 @@
 
 PORTNAME=	b2sum
 PORTVERSION=	0.0.d${B2VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://blake2.net/
 DISTNAME=	blake2_code_${B2VERSION}${EXTRACT_SUFFX}

@@ -2,6 +2,7 @@
 
 PORTNAME=	clone
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://googledrive.com/host/0BzyUSAiURzitVGlOeXFsTW9XOVk/
 
