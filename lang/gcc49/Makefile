@@ -23,6 +23,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
+CONFLICTS=	gcc-4.9.*
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
