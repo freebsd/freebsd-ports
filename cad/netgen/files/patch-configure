@@ -153,15 +153,3 @@
        need_version=no
        need_lib_prefix=no
        ;;
-@@ -15534,9 +15534,9 @@ fi
- ffmpegon=false
- # Check whether --enable-ffmpeg was given.
- if test "${enable_ffmpeg+set}" = set; then :
--  enableval=$enable_ffmpeg; FFMPEG_INCLUDES="-DFFMPEG -D__STDC_CONSTANT_MACROS"
-+  enableval=$enable_ffmpeg; FFMPEG_INCLUDES="-I/usr/local/include/ffmpeg0 -DFFMPEG -D__STDC_CONSTANT_MACROS"
- 
--        FFMPEG_LIBS="-lavutil -lavformat -lavcodec -lavutil -lswscale -lz -lbz2"
-+        FFMPEG_LIBS="-L/usr/local/lib/ffmpeg0 -lavutil0 -lavformat0 -lavcodec0 -lavutil0 -lswscale -lz -lbz2"
- 
-         if test "$enableval" = yes; then ffmpegon=true; else ffmpegon=false; fi
- 
