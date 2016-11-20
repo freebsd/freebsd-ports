@@ -1,0 +1,12 @@
+--- Makefile.defs.orig	2016-11-20 04:17:33 UTC
++++ Makefile.defs
+@@ -23,6 +23,6 @@ ifeq ($(DEBUG),1)
+ DEFS    += -DG_DISABLE_DEPRECATED -DDEBUG
+ endif
+ 
+-CFLAGS   = ${OPT} 
+-CPPFLAGS = ${INCLDIR} ${DEFS}
+-LDFLAGS  = ${LIBDIR} ${LIBS}
++CFLAGS   += ${OPT} 
++CPPFLAGS += ${INCLDIR} ${DEFS}
++LDFLAGS  += ${LIBDIR} ${LIBS}
