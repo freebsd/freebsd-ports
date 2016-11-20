@@ -13,7 +13,7 @@ COMMENT=	Quake3 map viewer (and powerful 3D game engine)
 
 LICENSE=	GPLv2
 
-USES=		gmake jpeg zip
+USES=		gmake jpeg ncurses zip
 USE_GL=		glut
 USE_XORG=	x11 xext xmu xt xi sm ice
 
