@@ -3,6 +3,7 @@
 
 PORTNAME=	pcmanfm-qt
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT/${PORTNAME}
 DIST_SUBDIR=	lxqt
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 	libfm.so:x11/libfm
 
 USES=	cmake:outsource compiler:c++11-lib desktop-file-utils \
-	gettext-runtime localbase lxqt pkgconfig tar:xz
+	gettext-runtime localbase:ldflags lxqt pkgconfig tar:xz
 USE_QT5=	buildtools_build qmake_build core dbus gui widgets \
 	x11extras
 USE_LXQT=	lxqt libfmqt
