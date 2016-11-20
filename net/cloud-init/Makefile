@@ -37,6 +37,9 @@ USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
+
 post-build:
 	@cd ${WRKSRC} && ${MV} config/cloud.cfg-freebsd config/cloud.cfg
 
