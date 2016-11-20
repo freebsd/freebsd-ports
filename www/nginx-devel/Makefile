@@ -859,7 +859,7 @@ GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
 CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
-IGNORE=	MEMC: a patch requires
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_memc_util.c
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -943,7 +943,7 @@ GH_ACCOUNT+=	openresty:redis2
 GH_PROJECT+=	redis2-nginx-module:redis2
 GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
 CONFIGURE_ARGS+=--add-module=${WRKSRC_redis2}
-IGNORE=	REDIS2: a patch requires
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_redis2_util.c
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
