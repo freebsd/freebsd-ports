@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Crypt::OpenSSL::Bignum.3.gz
-%%PERL5_MAN3%%/Crypt::OpenSSL::Bignum::CTX.3.gz
 %%SITE_ARCH%%/Crypt/OpenSSL/Bignum.pm
 %%SITE_ARCH%%/Crypt/OpenSSL/Bignum/CTX.pm
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/Bignum/Bignum.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::Bignum.3.gz
+%%PERL5_MAN3%%/Crypt::OpenSSL::Bignum::CTX.3.gz
