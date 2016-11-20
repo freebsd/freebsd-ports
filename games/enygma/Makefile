@@ -17,5 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
+CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
 
 .include <bsd.port.mk>
