@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jan  1 20:00:06 1999
-+++ Makefile	Mon Jul  5 19:51:50 1999
+--- Makefile.orig	1999-01-02 04:00:06 UTC
++++ Makefile
 @@ -1,14 +1,14 @@
  # These two definitions are used if you 'make install'
  # the value of LIBDIR should be the same as OMEGALIB in defs.h
@@ -18,7 +18,7 @@
  #CFLAGS = -DSYSV -O
  # I also had to define -cckr (K&R style C) for system V
  #CFLAGS = -DMSDOS -O
-@@ -17,14 +17,14 @@
+@@ -17,14 +17,14 @@ CFLAGS = -DBSD -ggdb
  # CPP should contain the command to run the C preprocessor.
  #CPP = cc -E
  #CPP = /lib/cpp
@@ -35,9 +35,12 @@
  
  # comment out one of the following two, after establishing whether your
  # machine uses termcap (most BSD machines) or terminfo (System-V)
-@@ -48,7 +48,10 @@
+@@ -46,9 +46,12 @@ OBJ = omega.o abyss.o aux1.o aux2.o aux3
+       spell.o time.o trap.o util.o village.o compress.o
+ 
  omega: $(OBJ)
- 	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o omega
+-	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o omega
++	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(LIBS) -o omega
  
 -install: omega $(BINDIR) $(LIBDIR)
 +install: omega
@@ -47,15 +50,17 @@
  	cp omega $(BINDIR)
  	chmod 4711 $(BINDIR)/omega
  	- cp lib/* $(LIBDIR)
-@@ -71,9 +74,9 @@
+@@ -71,9 +74,9 @@ clean:
  
  $(OBJ): clrgen.h defs.h extern.h glob.h
  
 -clrgen.h clrgen.c: genclr.c minit.h defs.h
 -	$(MAKE) genclr
+-	$(CPP) -DOMEGA_CLRGEN *.[ch] | ./genclr clrgen.c clrgen.h
 +clrgen.c: genclr
- 	$(CPP) -DOMEGA_CLRGEN *.[ch] | ./genclr clrgen.c clrgen.h
++	$(CPP) $(CFLAGS) -DOMEGA_CLRGEN *.[ch] | ./genclr clrgen.c clrgen.h
 +clrgen.h: | clrgen.c
  
  genclr: genclr.o
- 	$(CC) $(LDFLAGS) genclr.o -o genclr
+-	$(CC) $(LDFLAGS) genclr.o -o genclr
++	$(CC) $(CFLAGS) $(LDFLAGS) genclr.o -o genclr
