@@ -2,12 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PORTVERSION=		4.4
+PATCHLEVEL=		5
+PORTVERSION=		4.4.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
+DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+PATCHFILES!=		/usr/bin/jot -s " " -w \
+			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
@@ -96,7 +103,7 @@ cklatest:
 	@${ECHO} -n "Currently at: "
 	@${MAKE} -V PATCHLEVEL
 	-ncftpls \
-		ftp://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}-patches/ \
+		ftp://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
 		| fgrep -v .sig | ${TAIL}
 
 .include <bsd.port.mk>
