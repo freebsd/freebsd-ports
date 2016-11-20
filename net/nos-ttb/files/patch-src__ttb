@@ -1,6 +1,6 @@
---- src/ttb.orig	2008-11-29 21:57:30.000000000 +1100
-+++ src/ttb	2009-05-03 20:52:11.000000000 +1000
-@@ -49,7 +49,7 @@
+--- src/ttb.orig	2008-11-29 10:57:30 UTC
++++ src/ttb
+@@ -49,7 +49,7 @@ ttb_cache_time = 300
  ttb_max_history = 50
  
  ttb_glade_data = 'ttb/ttb.glade'
