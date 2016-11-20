@@ -774,6 +774,7 @@
     SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-gdal
+    SUBDIR += php-geos
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
     SUBDIR += php5-ffmpeg
