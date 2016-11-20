@@ -12,27 +12,26 @@ COMMENT=	Qmail filter for monitoring and intercepting SMTP connections
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
+BROKEN_powerpc64=	Does not build
 
 USES=		cpe qmail tar:tgz
-
+WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 GNU_CONFIGURE=	yes
-
 ALL_TARGET=	spamdyke
-
 USE_GCC=	any
 
-OPTIONS_DEFINE=	TLS DEBUG DEBUG_EXCESSIVE DOCS
+OPTIONS_DEFINE=		TLS DEBUG DEBUG_EXCESSIVE DOCS
 OPTIONS_DEFAULT=	TLS
-DEBUG_DESC=	Enable debugging output
+DEBUG_DESC=		Enable debugging output
 DEBUG_EXCESSIVE_DESC=	Enable excessive debugging output
 
-TLS_CONFIGURE_ENABLE=			tls
-TLS_USE=				OPENSSL=yes
+TLS_CONFIGURE_ENABLE=	tls
+TLS_USES=		ssl
+TLS_LDFLAGS=		-L${OPENSSLLIB}
+TLS_CFLAGS=		-I${OPENSSLINC}
+
 DEBUG_CONFIGURE_ENABLE=			debug-output
 DEBUG_EXCESSIVE_CONFIGURE_ENABLE=	excessive-output
 
