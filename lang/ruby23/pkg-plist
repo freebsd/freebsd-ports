@@ -741,6 +741,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/state.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/requirement_list.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/set.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/source_set.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/spec_specification.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/specification.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/stats.rb
@@ -770,6 +771,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/GeoTrustGlobalCA.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/GlobalSignRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
@@ -4015,6 +4017,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d28/struct7_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/fiddle_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/fiddle_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/union_f_l_o_a_t___s_w_a_p_p_e_r.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2d/structchild__info.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d31/struct_dbls.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d32/dir_8c.html
@@ -4333,6 +4336,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/ossl__pkey_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/ossl__pkey_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/structrb__blocking__region__buffer.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/union_d_o_u_b_l_e___s_w_a_p_p_e_r.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.png
@@ -7113,7 +7117,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/get_platform_from_requirements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/get_version_from_requirements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/new-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/unyank_gem-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/yank_api_request-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/YankCommand/yank_gem-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/cdesc-Commands.ri
@@ -7370,6 +7373,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/InvalidSpecificationException/cdesc-InvalidSpecificationException.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Licenses/cdesc-Licenses.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Licenses/match%3f-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Licenses/suggestions-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/List/cdesc-List.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/List/each-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/List/new-c.ri
@@ -7546,6 +7550,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PackageTask/init-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PackageTask/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PathSupport/cdesc-PathSupport.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/PathSupport/default_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PathSupport/home-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PathSupport/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/PathSupport/path%3d-i.ri
@@ -7679,6 +7684,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/resolve_current-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/soft_missing-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/sorted_requests-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/source_set-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/specs-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RequestSet/specs_in-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Requirement/%3d%3d%3d-i.ri
@@ -7782,6 +7788,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/LockSpecification/cdesc-LockSpecification.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/LockSpecification/install-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/LockSpecification/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/LockSpecification/sources-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/LockSpecification/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/Molinillo/CircularDependencyError/cdesc-CircularDependencyError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/Molinillo/CircularDependencyError/dependencies-i.ri
@@ -7912,6 +7919,10 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/Set/prefetch-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/Set/prerelease-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/Set/remote-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SourceSet/add_source_gem-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SourceSet/cdesc-SourceSet.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SourceSet/get_set-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SourceSet/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SpecSpecification/cdesc-SpecSpecification.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SpecSpecification/dependencies-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/SpecSpecification/full_name-i.ri
@@ -8358,6 +8369,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/refute_path_exists-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/req-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/rubybin-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/save_gemspec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/save_loaded_features-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/scan_make_command_lines-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/setup-i.ri
@@ -11190,8 +11202,12 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/Extension/value-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionError/cdesc-ExtensionError.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/cdesc-ExtensionFactory.ri
-%%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/config%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/config-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/hash-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Proc/%3d%3d%3d-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Proc/%5b%5d-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Proc/call-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Proc/yield-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/create_ext-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/create_ext_from_array-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/X509/ExtensionFactory/create_ext_from_hash-i.ri
