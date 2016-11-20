@@ -32,6 +32,10 @@ MAKE_ARGS_clang=	use_llvm=yes
 CXXFLAGS+=	-DGLEW_NO_GLU -DRTAUDIO_ENABLED
 CXXFLAGS_i386=	${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_i386_gcc=	-march=i586
+CXXFLAGS_aarch64= 	-DNO_THREADS
+CXXFLAGS_sparc64= 	-DNO_THREADS
+CXXFLAGS_mips= 		-DNO_THREADS
+CXXFLAGS_mips64=	-DNO_THREADS
 
 OPTIONS_DEFINE=	EXAMPLES TOOLS
 OPTIONS_DEFAULT=	OSS
@@ -61,9 +65,6 @@ PULSEAUDIO_MAKE_ARGS=	pulseaudio=yes
 
 GODOTFILE=		${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	bin/${GODOTFILE}
-
-BROKEN_sparc64=		Fails to compile: error: This platform cannot use safe refcount, compile with NO_THREADS or implement it
-BROKEN_aarch64=		Fails to compile: error: This platform cannot use safe refcount, compile with NO_THREADS or implement it
 
 .ifmake makesum
 # Always include optional distfiles
