@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	www
 
@@ -14,8 +14,7 @@ LICENSE=	GPLv2+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gd gettext json mbstring mysqli pcre session
-USES=		cpe
-WANT_PHP_WEB=	yes
+USES=		cpe php:web
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -41,7 +40,7 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 genplist: do-clean extract
 	${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	${ECHO_CMD} '@group www' >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	cd ${WRKSRC}/ && ${FIND} * -type f | ${SETENV} LC_ALL=C ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
 .for dir in ${MS_DIR}
 	${ECHO_CMD} '@dir %%WWWDIR%%/${dir}' >> ${MS_PLIST}
 .endfor
