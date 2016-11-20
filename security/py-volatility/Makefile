@@ -3,6 +3,7 @@
 
 PORTNAME=	volatility
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://downloads.volatilityfoundation.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
