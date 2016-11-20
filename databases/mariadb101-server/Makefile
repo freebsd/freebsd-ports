@@ -28,7 +28,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb101-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo ssl shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo ncurses \
+		shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -101,7 +102,7 @@ OPTIONS_SUB=		yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
-USES+=		ncurses readline
+USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 
 post-install:
