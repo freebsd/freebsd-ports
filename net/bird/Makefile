@@ -13,7 +13,7 @@ COMMENT?=	Dynamic IP routing daemon (IPv4 version)
 
 LICENSE=	GPLv2
 
-USES=		bison gmake readline
+USES=		bison gmake ncurses readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 
