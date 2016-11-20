@@ -59,7 +59,7 @@ BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5 shebangfix
+USES=		perl5
 USE_PERL5=	modbuild
 NO_ARCH=	yes
 
@@ -74,17 +74,21 @@ SQLITETEST_BUILD_DEPENDS=	p5-DBD-SQLite>=1:databases/p5-DBD-SQLite
 post-patch:
 	@${FIND} ${WRKSRC}/examples ${WRKSRC}/doc -name "*.pl" -o -name "*.cgi" \
 		-o -name "*.PL" | ${XARGS} ${REINPLACE_CMD} -i '' -Ee \
-		'1s|(/usr)?/bin/perl|${perl_CMD}|'
+		'1s|(/usr)?/bin/perl|${PERL}|'
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -R ${WRKSRC}/scripts ${WRKSRC}/models ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS BUGS Changes DEPENDENCIES DEPRECATED INSTALL LICENSE MANIFEST README
 	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${CP} -R ${WRKSRC}/doc ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
