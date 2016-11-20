@@ -18,6 +18,7 @@ bin/watchgnupg
 libexec/gpg-check-pattern
 libexec/gpg-preset-passphrase
 libexec/gpg-protect-tool
+libexec/gpg-wks-client
 %%SCDAEMON%%libexec/scdaemon
 %%PORTDOCS%%man/man1/dirmngr-client.1.gz
 %%PORTDOCS%%man/man1/gpg-agent.1.gz
@@ -49,6 +50,13 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/gpgconf.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list
 %%PORTDOCS%%%%DOCSDIR%%/examples/scd-event
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/dirmngr.service
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/dirmngr.socket
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent-extra.socket
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent-ssh.socket
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.service
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/trustlist.txt
 %%DATADIR%%/dirmngr-conf.skel
 %%DATADIR%%/distsigkey.gpg

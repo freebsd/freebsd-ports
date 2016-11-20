@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.15
+PORTVERSION=	2.1.16
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
@@ -32,7 +32,8 @@ USE_LDCONFIG=	YES
 # will be treated as $value/lib, so try using /usr instead.
 # Otherwise, $PREFIX/lib/libreadline.so.6 will be linked when
 # devel/readline is installed.
-CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun --with-readline=/usr
+CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun --with-readline=/usr \
+			--disable-wks-tools
 CONFLICTS=	gnupg-2.0.* dirmngr-*
 CPE_VENDOR=	gnupg
 

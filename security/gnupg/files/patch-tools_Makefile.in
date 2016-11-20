@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	2016-11-19 11:06:10 UTC
++++ tools/Makefile.in
+@@ -669,7 +669,7 @@ gpg_wks_client_SOURCES = \
+ gpg_wks_client_CFLAGS = $(LIBASSUAN_CFLAGS) $(GPG_ERROR_CFLAGS) $(INCICONV)
+ gpg_wks_client_LDADD = $(libcommon) \
+ 		       $(LIBASSUAN_LIBS) $(LIBGCRYPT_LIBS) $(GPG_ERROR_LIBS) \
+-		       $(LIBICONV)
++		       $(LIBICONV) $(LIBINTL)
+ 
+ all: all-am
+ 
