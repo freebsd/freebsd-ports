@@ -26,7 +26,7 @@ BUILD_DEPENDS=	libassuan>=2.4.3:security/libassuan \
 RUN_DEPENDS=	pinentry>0:security/pinentry
 
 GNU_CONFIGURE=	YES
-USES=		cpe gmake iconv pkgconfig sqlite tar:bzip2
+USES=		compiler:c11 cpe gmake iconv pkgconfig sqlite tar:bzip2
 USE_LDCONFIG=	YES
 # libreadline.so.8 is placed in /lib, but --with-readline argument
 # will be treated as $value/lib, so try using /usr instead.
