@@ -1,18 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	nomad
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Cluster manager and scheduler
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	go>=1.4:lang/go
-RUN_DEPENDS=	go>=1.4:lang/go
+BUILD_DEPENDS=	go>=1.7:lang/go
+RUN_DEPENDS=	go>=1.7:lang/go
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -23,8 +22,8 @@ GH_ACCOUNT=	hashicorp:DEFAULT kardianos:govendor mitchellh:gox \
 		golang:tools axw:gocov matm:gocov_html ugorji:go
 GH_PROJECT=	govendor:govendor gox:gox tools:tools gocov:gocov \
 		gocov-html:gocov_html go:go
-GH_TAGNAME=	36255b7:govendor 6e9ee79:gox 0d2bde8:tools \
-		f5b2b5c:gocov b729399:gocov_html b94837a:go
+GH_TAGNAME=	v1.0.8:govendor v0.3.0:gox  8b84dae:tools \
+		 c77561c:gocov v1.1:gocov_html faddd61:go
 
 USE_RC_SUBR= nomad
 
