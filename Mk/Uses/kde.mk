@@ -212,7 +212,7 @@ _USE_FRAMEWORKS_TIER4= 	frameworkintegration
 # Porting Aids frameworks provide code and utilities to ease the transition from
 # kdelibs 4 to KDE Frameworks 5. Code should aim to port away from this framework,
 # new projects should avoid using these libraries.
-_USE_FRAMEWORKS_PORTING=js jsembed kdelibs4support khtmlmediaplayer kross
+_USE_FRAMEWORKS_PORTING=js jsembed kdelibs4support khtml mediaplayer kross
 
 # These are weird items: not officially released as Frameworks, but
 # required by them (and from KDE).
