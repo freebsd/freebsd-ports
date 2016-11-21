@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnsgif
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
