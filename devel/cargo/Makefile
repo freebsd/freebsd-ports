@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -33,8 +33,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-08-21/:bootstrap \
-		LOCAL/jbeich:registry
+MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-11-02/:bootstrap \
+		LOCAL/dumbbell/cargo:registry
 .if !defined(SKIP_CARGO_REGISTRY)
 DISTFILES+=	${CARGO_REGISTRY}:registry
 .endif
@@ -61,8 +61,7 @@ LIB_DEPENDS=	libssh2.so:security/libssh2 \
 RUN_DEPENDS=	rustc:${RUST_PORT}
 RUST_PORT?=	lang/rust
 
-USES=		gmake python:-2.7,build pkgconfig
-USE_OPENSSL=	yes
+USES=		gmake python:-2.7,build pkgconfig ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man"
 MAKE_ENV=	ARGS="${CARGO_ARGS}"
