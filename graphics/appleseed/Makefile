@@ -3,6 +3,7 @@
 
 PORTNAME=	appleseed
 DISTVERSION=	1.5.2-beta
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -24,6 +25,7 @@ ONLY_FOR_ARCHS_REASON=	not ported to it yet
 USES=		cmake:outsource
 USE_QT4=	moc_build qmake_build rcc_build uic_build opengl
 
+LDFLAGS+=	-lboost_atomic
 CMAKE_ARGS=	-DUSE_STATIC_BOOST:BOOL=OFF -DUSE_STATIC_OIIO:BOOL=OFF \
 		-DUSE_STATIC_OSL:BOOL=OFF -DWITH_DOXYGEN:BOOL=OFF \
 		-DWITH_HEADERS:BOOL=OFF -DWITH_PYTHON:BOOL=OFF \
