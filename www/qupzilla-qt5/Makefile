@@ -16,12 +16,12 @@ LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4*
 
-USES=		desktop-file-utils execinfo pkgconfig qmake tar:xz
-USE_QT5=	core concurrent gui network script webkit x11extras xml \
-		buildtools_build linguisttools_build \
-		imageformats_run sql-sqlite3_run
+USES=		desktop-file-utils execinfo pkgconfig qmake ssl tar:xz
+USE_QT5=	core concurrent gui network printsupport script sql webkit \
+		widgets x11extras xml imageformats_run sql-sqlite3_run \
+		buildtools_build linguisttools_build
 USE_XORG=	x11
-USE_OPENSSL=	yes
+USE_GL=		gl
 CONFIGURE_ENV=	QUPZILLA_PREFIX=${PREFIX}/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -37,7 +37,8 @@ DBUS_CONFIGURE_ENV_OFF=	DISABLE_DBUS="true"
 GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 GNOMEKEYRING_CONFIGURE_ENV=	GNOME_INTEGRATION="true"
 
-KWALLET_USE=		KDE5=wallet
+KWALLET_USES=		kde:5
+KWALLET_USE=		KDE=wallet
 KWALLET_CONFIGURE_ENV=	KDE_INTEGRATION="true"
 
 .include <bsd.port.options.mk>
