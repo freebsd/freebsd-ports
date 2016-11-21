@@ -3,21 +3,17 @@
 
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-p2p
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PROJECTNAME}/${PORTVERSION}/
 DISTNAME=	transgui-${PORTVERSION}-src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
 
-BROKEN=		Unfetchable (google code has gone away)
-
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
-
-PROJECTHOST=	transmisson-remote-gui
 
 USE_FPC=	cairo fcl-base fcl-image fcl-net pasjpeg rtl-objpas rtl-extra \
 		x11
@@ -31,8 +27,9 @@ SUB_FILES=	pkg-message
 LAZARUS_PROJECT_FILE=	transgui.lpi
 LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
-LAZARUS_VER=		1.6.0
+LAZARUS_VER=		1.6.2
 LAZARUS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
+PROJECT_NAME=		transgui
 
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK2 QT4
