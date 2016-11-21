@@ -1,6 +1,6 @@
---- conf/Makefile.in.orig	2015-03-27 20:02:47 UTC
+--- conf/Makefile.in.orig	2016-10-20 09:09:55 UTC
 +++ conf/Makefile.in
-@@ -860,15 +860,15 @@ install-data-local: $(plugins_install_sr
+@@ -883,15 +883,15 @@ install-data-local: $(plugins_install_sr
  	test -e "$(DESTDIR)${strongswanconfdir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanconfdir)" || true
  	test -e "$(DESTDIR)${strongswanddir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanddir)" || true
  	test -e "$(DESTDIR)${charonconfdir}" || $(INSTALL) -d "$(DESTDIR)$(charonconfdir)" || true

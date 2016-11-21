@@ -369,6 +369,7 @@ man/man8/charon-cmd.8.gz
 %%XAUTHGEN%%%%DATADIR%%/templates/config/plugins/xauth-generic.conf
 %%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
 @sample etc/ipsec.conf.sample
+@sample etc/ipsec.secrets.sample
 @sample %%ETCDIR%%.conf.sample
 @sample %%ETCDIR%%.d/charon-logging.conf.sample
 @sample %%ETCDIR%%.d/charon.conf.sample
@@ -430,6 +431,7 @@ lib/ipsec/libtls.so.0.0.0
 %%SWANCTL%%@dir etc/swanctl/ecdsa
 %%SWANCTL%%@dir etc/swanctl/pkcs12
 %%SWANCTL%%@dir etc/swanctl/pkcs8
+%%SWANCTL%%@dir etc/swanctl/private
 %%SWANCTL%%@dir etc/swanctl/pubkey
 %%SWANCTL%%@dir etc/swanctl/rsa
 %%SWANCTL%%@dir etc/swanctl/x509
