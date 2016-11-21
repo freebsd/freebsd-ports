@@ -29,6 +29,10 @@ load_rc_config $name
 
 command=%%PREFIX%%/sbin/bareos-sd
 command_args="-c ${bareos_sd_config}"
-pidfile="${bacula_sd_pidfile}"
+pidfile="${bareos_sd_pidfile}"
+
+start_precmd() {
+	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+}
 
 run_rc_command "$1"
