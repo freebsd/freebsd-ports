@@ -1,4 +1,4 @@
-[B[B[B[B# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	peazip
