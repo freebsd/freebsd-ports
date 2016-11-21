@@ -20,6 +20,7 @@ GH_SUBDIR:=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 GH_TUPLE=	junegunn:go-runewidth:63c378b:runwidth/src/github.com/junegunn/go-runewidth \
     		junegunn:go-shellwords:35d512a:shellwords/src/github.com/junegunn/go-shellwords \
 		junegunn:go-isatty:66b8e73:isatty/src/github.com/junegunn/go-isatty
+MAKE_ENV+=	CGO_CPPFLAGS="-I${NCURSESINC}"
 
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
 
