@@ -1,0 +1,8 @@
+polyclipping - Polygon and line clipping and offsetting library.
+
+The Clipper library performs clipping and offsetting for both
+lines and polygons. All four boolean clipping operations are
+supported - intersection, union, difference and exclusive-or.
+Polygons can be of any shape including self-intersecting polygons.
+
+WWW: http://sourceforge.net/projects/polyclipping/
