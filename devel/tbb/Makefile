@@ -3,6 +3,7 @@
 
 PORTNAME=	tbb
 PORTVERSION=	2017.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
@@ -34,18 +35,16 @@ WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${CC} != "gcc"
-	@${CP} ${WRKSRC}/build/FreeBSD.gcc.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
+.if ${CC} != ${COMPILER_TYPE}
+	@${LN} -sf FreeBSD.${COMPILER_TYPE}.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
 .endif
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e 's|g++|${CXX}|g' \
-		${WRKSRC}/build/FreeBSD.${CC}.inc
-.if ${COMPILER_TYPE} != "gcc"
-	@${REINPLACE_CMD} -e 's| -fno-schedule-insns2||g' \
-		${WRKSRC}/build/FreeBSD.${CC}.inc
-.endif
+	@${REINPLACE_CMD} \
+		-e '/^CONLY =/s/^CONLY =.*/CONLY = ${CC}/' \
+		-e '/^CPLUS =/s/^CPLUS =.*/CPLUS = ${CXX}/' \
+			${WRKSRC}/build/FreeBSD.${CC}.inc
 
 do-install:
 	cd ${WRKSRC}; \
