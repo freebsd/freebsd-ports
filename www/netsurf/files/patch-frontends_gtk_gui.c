@@ -1,6 +1,6 @@
---- gtk/gui.c.orig	2016-04-06 10:39:35 UTC
-+++ gtk/gui.c
-@@ -199,7 +199,7 @@ static nserror set_defaults(struct nsopt
+--- frontends/gtk/gui.c.orig	2016-11-19 13:37:41 UTC
++++ frontends/gtk/gui.c
+@@ -198,7 +198,7 @@ static nserror set_defaults(struct nsopt
  	}
  
  	/* default path to certificates */
