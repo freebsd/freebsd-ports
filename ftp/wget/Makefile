@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=GNUTLS OPENSSL
-OPTIONS_DEFINE=	IPV6 NLS IDN PCRE
+OPTIONS_DEFINE=	IPV6 NLS IDN METALINK PCRE PSL
 OPTIONS_DEFAULT=OPENSSL IDN
 
 PCRE_DESC=	Support Perl regular expressions in addition to POSIX
@@ -37,10 +37,16 @@ IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ENABLE=	iri
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
 
+METALINK_CONFIGURE_WITH=metalink
+METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
+
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CPPFLAGS=		-I${LOCALBASE}/include
 PCRE_LDFLAGS=		-L${LOCALBASE}/lib
 PCRE_CONFIGURE_ENV_OFF=	ac_cv_header_pcre_h=no
+
+PSL_CONFIGURE_WITH=	libpsl
+PSL_LIB_DEPENDS=	libpsl.so:dns/libpsl
 
 .include <bsd.port.options.mk>
 
