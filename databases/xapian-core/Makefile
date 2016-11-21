@@ -28,9 +28,16 @@ PORTDOCS=	*
 
 SSE2_CONFIGURE_ENABLE=	sse
 
+.include <bsd.port.pre.mk>
+
+# FreeBSD 9 does not have SOCK_CLOEXEC.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-backends_flint__lock.cc
+.endif
+
 post-install:
 .for file in copydatabase delve quest
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${STAGEDIR}${PREFIX}/bin/xapian-${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
