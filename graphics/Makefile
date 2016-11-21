@@ -804,6 +804,7 @@
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
     SUBDIR += podofo
+    SUBDIR += polyclipping
     SUBDIR += poppler
     SUBDIR += poppler-data
     SUBDIR += poppler-glib
