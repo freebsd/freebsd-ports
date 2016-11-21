@@ -1,6 +1,6 @@
---- Makefile.orig	2015-04-22 11:58:28 UTC
-+++ Makefile
-@@ -16,6 +16,7 @@ MAKE_PCH += -x c++-header
+--- Makefile.orig	2016-04-11 14:08:50.000000000 +0200
++++ Makefile	2016-05-02 09:51:27.848060000 +0200
+@@ -16,6 +16,7 @@
  USE_PCH += -include $(PCH_HEADER)
  
  export BOOST_DIR
@@ -8,7 +8,7 @@
  export BIT32
  export STATIC
  export DEBUG
-@@ -73,14 +74,14 @@ ifeq ($(PLATFORM),Linux)
+@@ -76,15 +77,15 @@
  
  	HIDOBJ := $(LIBTHIRD)/hid-libusb.o
  else
@@ -16,7 +16,9 @@
 +#	CXX:= clang++
  
 -	OUTPUT := libmsp430.dylib
+-	STATICOUTPUT := mac64
 +	OUTPUT := libmsp430.so
++	STATICOUTPUT := libmsp430
  
  	ifdef STATIC
 -	STATIC_LIBS += -framework CoreFoundation -framework IOKit -lhidapi
@@ -27,7 +29,7 @@
  	endif
  
  	ifdef BOOST_DIR
-@@ -88,9 +89,14 @@ else
+@@ -92,9 +93,14 @@
  	LIBDIRS += -L$(BOOST_DIR)/lib
  	endif
  
