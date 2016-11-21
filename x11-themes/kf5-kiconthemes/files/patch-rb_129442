@@ -1,0 +1,32 @@
+From 46da91e76f80668a350cf8b8589709c6733bf23d Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@gmail.com>
+Date: Sun, 20 Nov 2016 14:50:56 +0100
+Subject: [PATCH] Fix build on FreeBSD with gcc-4.9.
+
+/wrkdirs/usr/ports/x11-themes/kf5-kiconthemes/work/kiconthemes-5.27.0/src/tools/kiconfinder/kiconfinder.cpp:43:55:
+  error: 'printf' was not declared in this scope
+             printf("%s\n", icon.toLatin1().constData());
+             ^
+
+https://git.reviewboard.kde.org/r/129442/
+                                         
+---
+ src/tools/kiconfinder/kiconfinder.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/tools/kiconfinder/kiconfinder.cpp b/src/tools/kiconfinder/kiconfinder.cpp
+index a9818af..28ba056 100644
+--- src/tools/kiconfinder/kiconfinder.cpp
++++ src/tools/kiconfinder/kiconfinder.cpp
+@@ -23,6 +23,8 @@
+ #include <kiconloader.h>
+ #include <../kiconthemes_version.h>
+ 
++#include <cstdio>
++
+ int main(int argc, char *argv[])
+ {
+     QGuiApplication app(argc, argv);
+-- 
+2.10.1
+
