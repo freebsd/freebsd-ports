@@ -103,7 +103,7 @@ cklatest:
 	@${ECHO} -n "Currently at: "
 	@${MAKE} -V PATCHLEVEL
 	-ncftpls \
-		ftp://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
+		${PATCH_SITES:Mftp*:Ox:[1]} \
 		| fgrep -v .sig | ${TAIL}
 
 .include <bsd.port.mk>
