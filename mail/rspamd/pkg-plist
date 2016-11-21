@@ -12,23 +12,28 @@ bin/rspamc
 @sample %%ETCDIR%%/composites.conf.sample
 @sample %%ETCDIR%%/dmarc_whitelist.inc.sample
 @sample %%ETCDIR%%/logging.inc.sample
+%%ETCDIR%%/maillist.inc
 @sample %%ETCDIR%%/metrics.conf.sample
+%%ETCDIR%%/mid.inc
 @sample %%ETCDIR%%/modules.conf.sample
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/dkim.conf
 %%ETCDIR%%/modules.d/dmarc.conf
 %%ETCDIR%%/modules.d/emails.conf
+%%ETCDIR%%/modules.d/fann_redis.conf
 %%ETCDIR%%/modules.d/forged_recipients.conf
 %%ETCDIR%%/modules.d/fuzzy_check.conf
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/ip_score.conf
 %%ETCDIR%%/modules.d/maillist.conf
+%%ETCDIR%%/modules.d/mid.conf
 %%ETCDIR%%/modules.d/mime_types.conf
 %%ETCDIR%%/modules.d/multimap.conf
 %%ETCDIR%%/modules.d/once_received.conf
 %%ETCDIR%%/modules.d/phishing.conf
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
+%%ETCDIR%%/modules.d/redis.conf
 %%ETCDIR%%/modules.d/regexp.conf
 %%ETCDIR%%/modules.d/rspamd_update.conf
 %%ETCDIR%%/modules.d/spf.conf
@@ -44,13 +49,15 @@ bin/rspamc
 @sample %%ETCDIR%%/worker-fuzzy.inc.sample
 @sample %%ETCDIR%%/worker-normal.inc.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
-etc/newsyslog.conf.d/rspamd.newsyslog.conf
-lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lua/antivirus.lua
 %%DATADIR%%/lua/asn.lua
 %%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
+%%DATADIR%%/lua/dynamic_conf.lua
 %%DATADIR%%/lua/emails.lua
+%%DATADIR%%/lua/fann_classifier.lua
+%%DATADIR%%/lua/fann_redis.lua
 %%DATADIR%%/lua/fann_scores.lua
 %%DATADIR%%/lua/forged_recipients.lua
 %%DATADIR%%/lua/fun.lua
@@ -58,13 +65,17 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/hfilter.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
+%%DATADIR%%/lua/metadata_exporter.lua
+%%DATADIR%%/lua/metric_exporter.lua
+%%DATADIR%%/lua/mid.lua
 %%DATADIR%%/lua/mime_types.lua
 %%DATADIR%%/lua/multimap.lua
+%%DATADIR%%/lua/mx_check.lua
 %%DATADIR%%/lua/once_received.lua
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
-%%DATADIR%%/lua/replies.lua
 %%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/replies.lua
 %%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
@@ -74,6 +85,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/misc.lua
+%%DATADIR%%/rules/regexp/compromised_hosts.lua
 %%DATADIR%%/rules/regexp/drugs.lua
 %%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
@@ -82,24 +94,35 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/www/README.md
+%%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/datatables.min.css
 %%DATADIR%%/www/css/glyphicons-halflings-regular.woff
 %%DATADIR%%/www/css/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/css/rspamd.css
 %%DATADIR%%/www/favicon.ico
+%%DATADIR%%/www/fonts/glyphicons-halflings-regular.ttf
+%%DATADIR%%/www/fonts/glyphicons-halflings-regular.woff
+%%DATADIR%%/www/fonts/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/img/asc.png
 %%DATADIR%%/www/img/desc.png
+%%DATADIR%%/www/img/rspamd_logo_navbar.png
 %%DATADIR%%/www/img/spinner.gif
 %%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/bootstrap.min.js
+%%DATADIR%%/www/js/d3.min.js
 %%DATADIR%%/www/js/d3evolution.min.js
 %%DATADIR%%/www/js/d3pie.min.js
 %%DATADIR%%/www/js/datatables.min.js
 %%DATADIR%%/www/js/humanize.min.js
+%%DATADIR%%/www/js/jquery-3.1.1.min.js
+%%DATADIR%%/www/js/jquery.cookie.min.js
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
+etc/newsyslog.conf.d/rspamd.newsyslog.conf
+lib/rspamd/librspamd-actrie.so
 man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
