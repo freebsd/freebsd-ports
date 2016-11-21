@@ -24,9 +24,9 @@ LIB_DEPENDS=	libffi.so:devel/libffi		\
 
 BROKEN_aarch64=	does not build: error: Unported platform
 BROKEN_sparc64=	does not build
-BROKEN_10_i386=	segfaults during build
-BROKEN_11_i386=	segfaults during build
-BROKEN_12_i386=	segfaults during build
+BROKEN_FreeBSD_10_i386=	segfaults during build
+BROKEN_FreeBSD_11_i386=	segfaults during build
+BROKEN_FreeBSD_12_i386=	segfaults during build
 
 MAKE_JOBS_UNSAFE=yes
 
