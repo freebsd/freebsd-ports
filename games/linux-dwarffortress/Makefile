@@ -3,7 +3,7 @@
 
 PORTNAME=	dwarffortress
 DISTVERSION=	0.43.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
@@ -35,6 +35,7 @@ USE_LINUX=	dri gtk2 libsndfile openal-soft sdlimage xorglibs
 SUB_FILES=	dwarffortress
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/df_linux
+STRIP=		# breaks execution, changes library ABI to FreeBSD type
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -51,11 +52,8 @@ do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/libs/Dwarf_Fortress
 	${INSTALL_PROGRAM} ${WRKSRC}/libs/Dwarf_Fortress \
 		${STAGEDIR}${PREFIX}/libexec/dwarffortress
-.for lib in libgcc_s.so.1 libgraphics.so libstdc++.so.6
-	${BRANDELF} -t Linux ${WRKSRC}/libs/${lib}
-	${INSTALL_LIB} ${WRKSRC}/libs/${lib} \
-		${STAGEDIR}${PREFIX}/libexec/dwarffortress
-.endfor
+	(cd ${WRKSRC}/libs && ${INSTALL_LIB} libgcc_s.so.1 libgraphics.so \
+		libstdc++.so.6 ${STAGEDIR}${PREFIX}/libexec/dwarffortress)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/data
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} raw ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "announcement art dipscript \
