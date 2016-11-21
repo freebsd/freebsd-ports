@@ -16,12 +16,11 @@ LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt5*
 
-USES=		desktop-file-utils execinfo pkgconfig qmake tar:xz
+USES=		desktop-file-utils execinfo pkgconfig qmake ssl tar:xz
 USE_QT4=	corelib gui network script sql webkit xml \
 		linguisttools_build moc_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run
 USE_XORG=	x11
-USE_OPENSSL=	yes
 CONFIGURE_ENV=	QUPZILLA_PREFIX=${PREFIX}/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -49,5 +48,7 @@ post-patch:
 		${WRKSRC}/src/install.pri \
 		${WRKSRC}/src/defines.pri \
 		${WRKSRC}/src/lib/plugins/plugins.cpp
+	@${REINPLACE_CMD} -e 's|%%KDE4_INC%%|${LOCALBASE}/include/kde4|g' \
+		${WRKSRC}/src/plugins/KWalletPasswords/KWalletPasswords.pro
 
 .include <bsd.port.mk>
