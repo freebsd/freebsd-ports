@@ -4,15 +4,13 @@ PORTNAME=	dxirc
 PORTVERSION=	1.10.0
 PORTREVISION=	3
 CATEGORIES=	irc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	arch_dvx@users.sourceforge.net
 COMMENT=	Simple IRC client written using the FOX toolkit
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
