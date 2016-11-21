@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.90.g20161116
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -56,6 +57,9 @@ USE_RC_SUBR=	qemu_user_static
 SUB_LIST=	NAME=qemu_user_static
 CONFIGURE_ARGS+=	--disable-tools
 .endif
+.else
+# qemu-system-* targets require pixman to build, add an explicit dependency.
+USE_XORG=	pixman
 .endif
 
 # When static linking we have a build dependency on libglib-2.0.a, otherwise
@@ -144,7 +148,6 @@ CONFIGURE_ARGS+=	--disable-sdl
 .else
 CONFIGURE_ARGS+=	--enable-sdl
 USE_SDL=	sdl
-USE_XORG=	pixman
 .endif
 
 .if empty(PORT_OPTIONS:MGTK2)
