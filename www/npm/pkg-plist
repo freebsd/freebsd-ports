@@ -3439,6 +3439,8 @@ lib/node_modules/npm/scripts/publish-tag.js
 lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/scripts/relocate.sh
 lib/node_modules/npm/scripts/update-authors.sh
+lib/node_modules/npm/test/broken-under-nyc-and-travis/lifecycle-path.js
+lib/node_modules/npm/test/broken-under-nyc-and-travis/whoami.js
 lib/node_modules/npm/test/common-tap.js
 lib/node_modules/npm/test/fixtures/config/builtin
 lib/node_modules/npm/test/fixtures/config/globalconfig
@@ -3468,6 +3470,7 @@ lib/node_modules/npm/test/network/legacy-shrinkwrap.js
 lib/node_modules/npm/test/network/legacy-url-dep.js
 lib/node_modules/npm/test/network/outdated-symlink.js
 lib/node_modules/npm/test/network/registry.js
+lib/node_modules/npm/test/slow/legacy-npm-self-install.js
 lib/node_modules/npm/test/tap/00-check-mock-dep.js
 lib/node_modules/npm/test/tap/00-config-setup.js
 lib/node_modules/npm/test/tap/00-verify-bundle-deps.js
@@ -3594,13 +3597,11 @@ lib/node_modules/npm/test/tap/legacy-dir-bin.js
 lib/node_modules/npm/test/tap/legacy-ignore-nested-nm.js
 lib/node_modules/npm/test/tap/legacy-missing-bindir.js
 lib/node_modules/npm/test/tap/legacy-no-auth-leak.js
-lib/node_modules/npm/test/tap/legacy-npm-self-install.js
 lib/node_modules/npm/test/tap/legacy-platform-all.js
 lib/node_modules/npm/test/tap/legacy-platform.js
 lib/node_modules/npm/test/tap/legacy-private.js
 lib/node_modules/npm/test/tap/legacy-test-package.js
 lib/node_modules/npm/test/tap/lifecycle-order.js
-lib/node_modules/npm/test/tap/lifecycle-path.js
 lib/node_modules/npm/test/tap/lifecycle-signal.js
 lib/node_modules/npm/test/tap/lifecycle.js
 lib/node_modules/npm/test/tap/link.js
@@ -3735,5 +3736,4 @@ lib/node_modules/npm/test/tap/version-sub-directory-shrinkwrap.js
 lib/node_modules/npm/test/tap/version-sub-directory.js
 lib/node_modules/npm/test/tap/version-update-shrinkwrap.js
 lib/node_modules/npm/test/tap/view.js
-lib/node_modules/npm/test/tap/whoami.js
 lib/node_modules/npm/test/tap/zz-cleanup.js
