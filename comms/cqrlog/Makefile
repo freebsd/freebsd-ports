@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -28,7 +28,7 @@ USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-web \
 WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
-LAZARUS_VER=	1.6.0
+LAZARUS_VER=	1.6.2
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
 OPTIONS_SINGLE=		LCL
@@ -55,20 +55,17 @@ post-patch:
 	${REINPLACE_CMD} -e s!%%LOCALBASE%%!${LOCALBASE}!g \
 		${WRKSRC}/help/cwd.html ${WRKSRC}/help/h1.html \
 		${WRKSRC}/src/cqrlog.lpi ${WRKSRC}/src/dData.pas \
-		${WRKSRC}/src/dUtils.pas ${WRKSRC}/src/fLoTWExport.lrs \
+		${WRKSRC}/src/dUtils.pas \
 		${WRKSRC}/src/fLoTWExport.pas ${WRKSRC}/src/fLoTWExport.lfm \
 		${WRKSRC}/src/fPreferences.pas ${WRKSRC}/src/fRotControl.pas \
 		${WRKSRC}/src/fTRXControl.pas ${WRKSRC}/src/fGrayline.pas \
-		${WRKSRC}/src/fPreferences.lfm ${WRKSRC}/src/fPreferences.pas \
-		${WRKSRC}/src/fPreferences.lrs
+		${WRKSRC}/src/fPreferences.lfm ${WRKSRC}/src/fPreferences.pas
 	${REINPLACE_CMD} -e s!%%DATADIR%%!${DATADIR}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
 		${WRKSRC}/Makefile
 	${RM} -r ${WRKSRC}/src/mysql
-	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fLoTWExport.lrs \
-		${WRKSRC}/src/fLoTWExport.lfm
-	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fPreferences.lrs \
-		${WRKSRC}/src/fPreferences.lfm
+	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fLoTWExport.lfm
+	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fPreferences.lfm
 
 .include <bsd.port.mk>
