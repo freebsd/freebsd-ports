@@ -55,3 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|packages_${OPSYS:tl}=fcl-net fcl-web|packages_${OPSYS:tl}=fcl-net|g' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
 .endif
+.if ${PKGNAMESUFFIX} == "-rtl-extra"
+	@${REINPLACE_CMD} -e 's|android,linux,|android,linux,freebsd,dragonfly,|g' \
+		${WRKDIR}/${WRKUNITDIR}/fpmake.pp
+.endif
