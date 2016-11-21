@@ -2,25 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.7.50
-PORTREVISION=	1
+PORTVERSION=	1.7.56
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
 		ftp://ftp.fox-toolkit.org/pub/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit (development version)
 
-USES=		libtool pathfix
+LICENSE=	LGPL3+
+
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+
+USES=		compiler:c++11-lib libtool pathfix
 GNU_CONFIGURE=	yes
-USE_GL=		glut
-USE_XORG=	sm xft
+USE_GL=		gl glu
+USE_XORG=	ice sm x11 xcursor xext xfixes xft xi xrandr xrender
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-opengl=yes \
 		--bindir=${PREFIX}/bin/${PORTNAME}-${MAJORVER}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -fPIC -DPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	*
 
@@ -31,51 +35,72 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
 BROKEN_aarch64=		Fails to compile: cannot initialize a parameter of type void * with an lvalue of type long
 BROKEN_powerpc=		missing __sync_bool_compare_and_swap_8()
 
-OPTIONS_DEFINE=	DOCS JPEG PNG TIFF WEBP
-OPTIONS_DEFAULT=	JPEG PNG TIFF WEBP
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES OPTIMIZED_CFLAGS PROFILE
+OPTIONS_GROUP=		IMGFMTS
+OPTIONS_GROUP_IMGFMTS=	JPEG OPENJPEG PNG TIFF WEBP
+OPTIONS_DEFAULT=	JPEG OPENJPEG PNG TIFF WEBP
+IMGFMTS_DESC=		Image formats
 
-.include <bsd.port.options.mk>
+DEBUG_CONFIGURE_ON=	--enable-debug
+DEBUG_CONFIGURE_OFF=	--enable-release
 
-.if ${PORT_OPTIONS:MJPEG}
-USES+=		jpeg
-.else
-CONFIGURE_ARGS+=--disable-jpeg
-.endif
+JPEG_USES=		jpeg
+JPEG_CONFIGURE_ENABLE=	jpeg
 
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:graphics/png
-.else
-CONFIGURE_ARGS+=--disable-png
-.endif
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
+OPENJPEG_CONFIGURE_ENABLE=	jp2
 
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	libtiff.so:graphics/tiff
-.else
-CONFIGURE_ARGS+=--disable-tiff
-.endif
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CONFIGURE_ENABLE=	png
 
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	libwebp.so:graphics/webp
-.else
-CONFIGURE_ARGS+=--disable-webp
+PROFILE_CONFIGURE_ON=	--with-profiling=gprof
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CONFIGURE_ENABLE=	tiff
+
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CONFIGURE_ENABLE=	webp
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CXXFLAGS+=	-ffast-math
+.  if !${PORT_OPTIONS:MPROFILE}
+CXXFLAGS+=	-fomit-frame-pointer
+.  endif
+.  if ${COMPILER_TYPE} == "gcc"
+CXXFLAGS+=	-fexpensive-optimizations -finline-functions
+.  endif
 .endif
 
 post-patch:
 # Rename man pages as in manpage.1 --> manpage-17.1 to avoid
 # conflicts with fox14 and fox16
-	files=$$(${FIND} ${WRKSRC} -name *.1); \
+	@files=$$(${FIND} ${WRKSRC} -name *.1); \
 	for f in $$files; do \
-		${MV} $$f `echo $$f | sed -e 's|\.1|-17.1|'`; \
+		${MV} $$f `${ECHO_CMD} $$f | ${SED} -e 's|\.1|-17.1|'`; \
 	done;
-	${FIND} ${WRKSRC} -name Makefile.am -o -name Makefile.in | ${XARGS} \
-	    ${REINPLACE_CMD} -i '' -e '/man_MANS/s|\.1|-17.1|g'
-	${REINPLACE_CMD} -e '/^Libs:/s|$$| -pthread|; s|"||g' ${WRKSRC}/fox17.pc.in
-.if !${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
-.endif
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/man_MANS/s|\.1|-17.1|g'
+	@${REINPLACE_CMD} -e '/^Libs:/s|$$| -pthread|; s|"||g' ${WRKSRC}/fox17.pc.in
+# CXXFLAGS safeness
+	@${REINPLACE_CMD} -e \
+		's|^\(CXXFLAGS=""\)|#\1|; \
+		 /CXXFLAGS/s|-O2 ||; \
+		 /CXXFLAGS/s|\(-Wuninitialized\).*"|\1"|; \
+		 /LDFLAGS/s|-s ||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-patch-EXAMPLES-off:
+	@${REINPLACE_CMD} -e \
+		's|^\(SUBDIRS.*\)adie|\1|; \
+		 s|^\(SUBDIRS.*\)pathfinder|\1|; \
+		 s|^\(SUBDIRS.*\)shutterbug|\1|; \
+		 s|^\(SUBDIRS.*\)calculator|\1|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so \
 		${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
