@@ -39,4 +39,8 @@ bareos_dir_testconfig()
 	eval ${command} ${bareos_dir_flags} -t
 }
 
+start_precmd() {
+	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+}
+
 run_rc_command "$1"
