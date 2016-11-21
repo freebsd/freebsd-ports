@@ -215,8 +215,8 @@ include/rudiments/xmldom.h
 include/rudiments/xmldomevents.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
-lib/librudiments.so.2
-lib/librudiments.so.2.0.0
+lib/librudiments.so.3
+lib/librudiments.so.3.0.0
 lib/librudiments.a
 lib/librudiments.so
 libdata/pkgconfig/rudiments.pc
