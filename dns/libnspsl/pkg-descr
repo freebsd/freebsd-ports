@@ -1,0 +1,10 @@
+Library to generate static code representation of the Public suffix list.
+The public suffix list is a database of top level domain names. The database
+allows an application to determine if if a domain name requires an additional
+label to be valid.
+
+The principle use in a web browser is to restrict supercookies being set
+although it can also serve secondary purposes in the UI such as domain
+highlighting.
+
+WWW: http://www.netsurf-browser.org/
