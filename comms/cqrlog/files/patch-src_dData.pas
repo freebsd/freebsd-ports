@@ -54,25 +54,6 @@
    d := fHomeDir+'voice_keyer'+PathDelim;
    if not FileExistsUTF8(d+'voice_keyer.sh') then
      CopyFile(s+'voice_keyer.sh',d+'voice_keyer.sh')
-@@ -1288,12 +1288,12 @@ begin
- 
-   {
- 
--  if FileExistsUTF8('/usr/bin/mysqld') then
--    mysqld := '/usr/bin/mysqld';
--  if FileExistsUTF8('/usr/bin/mysqld_safe') then //Fedora
--    mysqld := '/usr/bin/mysqld_safe';
--  if FileExistsUTF8('/usr/sbin/mysqld') then //openSUSE
--    mysqld := '/usr/sbin/mysqld';
-+  if FileExistsUTF8('%%LOCALBASE%%/bin/mysqld') then
-+    mysqld := '%%LOCALBASE%%/bin/mysqld';
-+  if FileExistsUTF8('%%LOCALBASE%%/bin/mysqld_safe') then //Fedora
-+    mysqld := '%%LOCALBASE%%/bin/mysqld_safe';
-+  if FileExistsUTF8('%%LOCALBASE%%/sbin/mysqld') then //openSUSE
-+    mysqld := '%%LOCALBASE%%/sbin/mysqld';
-   if mysqld = '' then  //don't know where mysqld is, so hopefully will be in  $PATH
-     mysqld := 'mysqld';
- 
 @@ -3462,12 +3462,12 @@ var
    l : TStringList;
    info : String;
