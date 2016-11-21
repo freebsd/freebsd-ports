@@ -31,7 +31,6 @@ LLVM_VERSION=	37
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes
-#USES=		autoreconf gmake localbase pathfix pkgconfig libtool
 USES=		gmake localbase ncurses pathfix pkgconfig libtool:keepla
 
 INSTALL_TARGET= install-strip
@@ -40,7 +39,6 @@ MAKE_ARGS+=	PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
 
 CONFIGURE_ENV=	LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
 		CLANGXX_FLAGS=-std=gnu++11
-#CONFIGURE_ARGS+=	--enable-pedantic
 # needed for the libltdl configure check
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -61,7 +59,6 @@ OCLBOOK_ALL_TARGET=	check
 
 DEBUG_CONFIGURE_ENABLE=	debug
 
-do-test:
-	cd ${WRKSRC} && ${GMAKE} check
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
