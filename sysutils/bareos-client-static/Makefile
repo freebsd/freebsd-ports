@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Backup archiving recovery open sourced (static client)
