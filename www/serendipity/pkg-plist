@@ -2158,6 +2158,7 @@
 %%WWWDIR%%/templates/2k11/admin/entries.inc.tpl
 %%WWWDIR%%/templates/2k11/admin/entries.tpl
 %%WWWDIR%%/templates/2k11/admin/entries_overview.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/font/config.json
 %%WWWDIR%%/templates/2k11/admin/font/fontello.eot
 %%WWWDIR%%/templates/2k11/admin/font/fontello.svg
 %%WWWDIR%%/templates/2k11/admin/font/fontello.ttf
