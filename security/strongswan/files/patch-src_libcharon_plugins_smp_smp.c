@@ -1,4 +1,4 @@
---- src/libcharon/plugins/smp/smp.c.orig	2013-11-01 10:40:35 UTC
+--- src/libcharon/plugins/smp/smp.c.orig	2016-04-22 20:01:35 UTC
 +++ src/libcharon/plugins/smp/smp.c
 @@ -737,7 +737,7 @@ METHOD(plugin_t, destroy, void,
   */
