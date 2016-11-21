@@ -1,21 +1,11 @@
---- lib/FXAtomic.cpp.orig	2013-07-26 16:35:43.000000000 +0200
-+++ lib/FXAtomic.cpp	2013-08-29 09:24:35.000000000 +0200
-@@ -71,6 +71,9 @@
- #if defined( __INTEL_COMPILER ) && !defined( __ia64__ )
- #undef HAVE_BUILTIN_SYNC
- #endif
-+#if defined(__FreeBSD__) && defined(__amd64__) && __FreeBSD_version < 900000
-+#undef HAVE_BUILTIN_SYNC
-+#endif
- #endif
+--- lib/FXAtomic.cpp.orig	2016-11-19 22:24:23 UTC
++++ lib/FXAtomic.cpp
+@@ -54,7 +54,7 @@
  
  
-@@ -393,7 +396,7 @@
-                         "andl   $1, %%eax\n\t" : "=a"(ret) : "D"(ptr), "a"(cmpa), "d"(cmpb), "b"(a), "c"(b) : "memory", "cc");
-   return ret;
+ // New __atomic_XXX() builtins are available
+-#if ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7)))
++#if ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) || defined(__clang__)
+ #define HAVE_BUILTIN_ATOMIC 1
  #endif
--#elif ((defined(__GNUC__) || defined(__INTEL_COMPILER)) && defined(__x86_64__))
-+#elif ((defined(__GNUC__) || defined(__INTEL_COMPILER)) && defined(__x86_64__)) && (!defined(__FreeBSD__) || __FreeBSD_version > 900000)
-   register FXbool ret;
-   __asm__ __volatile__ ("lock\n\t"
-                         "cmpxchg16b (%1)\n\t"
+ 
