@@ -5,7 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20161116
+20161121:
+  AFFECTS: Users of graphics/tiff
+  AUTHOR: antoine@FreeBSD.org
+
+  The tiff port was updated to 4.0.7.
+  The following tools are removed from this release: bmp2tiff, gif2tiff, ras2tiff, rgb2ycbcr and thumbnail.
+
+20161116:
   AFFECTS: Users of sysutils/bareos-*
   AUTHOR: rand@iteris.com
 
