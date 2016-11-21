@@ -24,6 +24,7 @@ load_rc_config $name
 
 rabbitmq_server="%%PREFIX%%/sbin/rabbitmq-server"
 rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
+rabbitmq_env_conf="%%PREFIX%%/etc/rabbitmq/rabbitmq-env.conf"
 pidfile="/var/run/${name}.pid"
 daemon_pidfile="/var/run/${name}-daemon.pid"
 
@@ -33,8 +34,13 @@ rotate_logs_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\
 status_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
 extra_commands="rotate_logs status"
 
+: ${RABBITMQ_LOG_BASE:=/var/log/${name}}
+
+if [ -f ${rabbitmq_env_conf} ]; then
+    . ${rabbitmq_env_conf}
+fi
+
 export RABBITMQ_HOME=/var/db/${name}
-export RABBITMQ_LOGDIR=/var/log/${name}
 
 # Prevent conflicts with amqp_client and rabbit_common applications that
 # may be installed in ERL_LIBS.
@@ -48,8 +54,8 @@ rabbitmq_start()
 		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
 	fi
 
-	if [ -d ${RABBITMQ_LOGDIR} ]; then
-		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOGDIR}
+	if [ -d ${RABBITMQ_LOG_BASE} ]; then
+		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
 	fi
 
 	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
