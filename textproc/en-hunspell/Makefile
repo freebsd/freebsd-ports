@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	2016.06.26
+PORTVERSION=	2016.11.20
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wordlist/speller/${PORTVERSION}/
 PKGNAMEPREFIX=	en-
@@ -87,5 +87,17 @@ do-install-CA_LARGE-on:
 do-install-US_LARGE-on:
 	${LN} -s en_US-large.aff ${STAGEDIR}${DATADIR}/en_US.aff
 	${LN} -s en_US-large.dic ${STAGEDIR}${DATADIR}/en_US.dic
+
+# maintainer section:
+
+.if defined(MAINTAINER_MODE)
+DISTFILES=	hunspell-en_CA-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_CA-large-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_GB-large-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_GB-ise-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_GB-ize-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_US-${PORTVERSION}${EXTRACT_SUFX} \
+		hunspell-en_US-large-${PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 .include <bsd.port.mk>
