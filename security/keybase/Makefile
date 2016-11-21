@@ -11,6 +11,8 @@ COMMENT=	Keybase.io client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	does not build
+
 GO_PKGNAME=	github.com/keybase/client/go
 GO_TARGET=	-tags production ${GO_PKGNAME}/keybase
 USES=		go
