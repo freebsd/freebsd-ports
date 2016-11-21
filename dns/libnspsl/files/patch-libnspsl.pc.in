@@ -1,0 +1,10 @@
+--- libnspsl.pc.in.orig	2016-11-19 10:09:21 UTC
++++ libnspsl.pc.in
+@@ -1,6 +1,6 @@
+ prefix=PREFIX
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/LIBDIR
++libdir=${exec_prefix}/lib
+ includedir=${prefix}/INCLUDEDIR
+ 
+ Name: libnspsl
