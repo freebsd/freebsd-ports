@@ -1,0 +1,25 @@
+First part: this is false, this was due to a libtool bug, which is fixed now
+Second part: cmp --quiet is long for the -s option, use that since FreeBSD
+cmp doesn't have the long option.
+
+--- Makefile.in.orig	2016-09-13 22:57:13.327123000 +0200
++++ Makefile.in	2016-09-13 23:01:18.738696000 +0200
+@@ -116,8 +116,7 @@
+ @POCL_ANDROID_FALSE@am__append_1 = scripts examples tests
+ 
+ #TODO: this naming scheme is used on other platforms (primarly BSDs?) too
+-@BUILD_ICD_TRUE@@FREEBSD_HOST_OS_TRUE@am__append_2 = -e 's,so.VER,so.$(LIB_CURRENT_VERSION),g'
+-@BUILD_ICD_TRUE@@FREEBSD_HOST_OS_FALSE@am__append_3 = -e 's,so.VER,so.$(LIB_FIRST_VERSION).$(LIB_AGE_VERSION).$(LIB_REVISION_VERSION),g'
++@BUILD_ICD_TRUE@am__append_3 = -e 's,so.VER,so.$(LIB_FIRST_VERSION).$(LIB_AGE_VERSION).$(LIB_REVISION_VERSION),g'
+ @BUILD_ICD_TRUE@am__append_4 = pocl.icd
+ @BUILD_ICD_TRUE@am__append_5 = pocl.icd
+ subdir = .
+@@ -1076,7 +1075,7 @@
+ 	echo "#define PKGDATADIR \"${pkgdatadir}\"" > $@.new
+ 	echo "#define PKGLIBEXECDIR \"${pkglibexecdir}\"" >> $@.new
+ 	echo "#define PKGINCLUDEDIR \"${pkgincludedir}\"" >> $@.new
+-	@if cmp --quiet $@.new $@ ; then \
++	@if cmp -s $@.new $@ ; then \
+ 		: "Paths not changed" ;\
+ 		$(RM) $@.new ;\
+ 	else \
