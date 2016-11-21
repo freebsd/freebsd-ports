@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netsurf
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -23,17 +23,26 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnsgif.so:graphics/libnsgif \
 		libnsbmp.so:graphics/libnsbmp \
 		libdom.so:www/libdom \
-		libcss.so:textproc/libcss
+		libcss.so:textproc/libcss \
+		libparserutils.so:devel/libparserutils \
+		libwapcaplet.so:textproc/libwapcaplet \
+		libhubbub.so:www/libhubbub \
+		libexpat.so:textproc/expat2 \
+		libnspsl.so:dns/libnspsl
+RUN_DEPENDS=	duk:lang/duktape \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 ALL_TARGET=	#empty
-LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
+LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto ${ICONV_LIB}
+CFLAGS+=	-I${OPENSSLINC}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
+		TARGET="gtk3" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
-USES=		bison desktop-file-utils gmake iconv jpeg \
-		localbase perl5 pkgconfig shebangfix
-USE_GNOME=	glib20 gtk20 librsvg2
+USES=		bison desktop-file-utils gettext-runtime gmake iconv jpeg \
+		localbase pkgconfig shebangfix ssl
+USE_GNOME=	glib20 gtk30 cairo librsvg2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
@@ -49,13 +58,9 @@ post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/d' \
 		${WRKSRC}//Makefile.defaults
 	@${REINPLACE_CMD} 's| -O2||' \
-		${WRKSRC}/gtk/Makefile.defaults
-	@${REINPLACE_CMD} \
-		-e '/OpenSSL/d' -e 's| -g||' \
-		-e 's/-DG_DISABLE_DEPRECATED//' \
-		${WRKSRC}/gtk/Makefile.target
+		${WRKSRC}/frontends/gtk/Makefile.defaults
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/gtk/gui.c
+		${WRKSRC}/frontends/gtk/gui.c
 
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}
@@ -67,5 +72,16 @@ do-configure:
 	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
 		${WRKSRC}/Makefile.config
 .endif
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf netsurf-gtk3 \
+		netsurf-gtk
+.for d in applications pixmaps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/${d}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf-gtk.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.post.mk>
