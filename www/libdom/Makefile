@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdom
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
 	libhubbub.so:www/libhubbub \
 	libexpat.so:textproc/expat2
 
-USES=	gmake localbase pkgconfig
+USES=	gmake iconv localbase pkgconfig
 USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/-src//}
