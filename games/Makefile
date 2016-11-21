@@ -52,6 +52,7 @@
     SUBDIR += assaultcube
     SUBDIR += asteroid
     SUBDIR += asteroids3d
+    SUBDIR += asylum
     SUBDIR += atanks
     SUBDIR += atomix
     SUBDIR += atr3d

@@ -1,0 +1,6 @@
+@(,games,2555) bin/asylum
+@sample(,games,664) /var/games/asylum/EgoHighScores.sample
+@sample(,games,664) /var/games/asylum/ExtendedHighScores.sample
+@sample(,games,664) /var/games/asylum/IdHighScores.sample
+@sample(,games,664) /var/games/asylum/PsycheHighScores.sample
+@dir(,games,775) /var/games/asylum
