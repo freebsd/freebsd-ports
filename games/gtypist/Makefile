@@ -12,8 +12,10 @@ LICENSE=	GPLv3
 
 USES=		iconv ncurses shebangfix tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	EMACS=no
+CONFIGURE_ENV=	EMACS=no \
+		ac_cv_header_ncursesw_ncurses_h=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKDIR}/include
+CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${LOCALBASE}/libs
 
 INFO=		gtypist gtypist.cs gtypist.es
@@ -26,9 +28,12 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-# wide curses header expected at <ncursesw/ncurses.h>
-pre-configure:
-	@${MKDIR} ${WRKDIR}/include
-	@${LN} -sf /usr/include ${WRKDIR}/include/ncursesw
+post-patch:
+	${REINPLACE_CMD} -e 's|<ncursesw/ncurses.h>|<ncurses.h>|' \
+		${WRKSRC}/src/error.c \
+		${WRKSRC}/src/cursmenu.c \
+		${WRKSRC}/src/script.c \
+		${WRKSRC}/src/gtypist.c \
+		${WRKSRC}/src/utf8.c
 
 .include <bsd.port.mk>
