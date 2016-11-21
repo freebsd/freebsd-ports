@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcss
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
