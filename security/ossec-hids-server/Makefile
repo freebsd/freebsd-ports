@@ -4,7 +4,7 @@
 PORTNAME=	ossec-hids
 PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-server
 
@@ -17,8 +17,7 @@ USE_RC_SUBR=	ossec-hids
 
 CFLAGS+=	-ferror-limit=0
 
-USES=		readline
-USE_OPENSSL=	yes
+USES=		readline ssl
 
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs
@@ -89,6 +88,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DLUA_USE_LINUX|& ${CPPFLAGS}|' \
 		-e 's|-lreadline|& ${LDFLAGS}|' \
 		${WRKSRC}/src/external/lua-5.2.3/src/Makefile
+	@${REINPLACE_CMD} -e 's|OPENSSLCMD=|OPENSSLCMD=-L${OPENSSLLIB} |' \
+		${WRKSRC}/src/Makeall
 
 do-build:
 .if defined(WITH_DB)
