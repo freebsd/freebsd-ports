@@ -3,6 +3,7 @@
 
 PORTNAME=	WinFF
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://winff.org/docs/source/
 DISTNAME=	${_PORTNAME}-${PORTVERSION}-source
@@ -32,7 +33,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 			true
 
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
-LAZARUS_VER=	1.6.0
+LAZARUS_VER=	1.6.2
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
 
