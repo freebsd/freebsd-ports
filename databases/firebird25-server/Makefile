@@ -58,8 +58,8 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS+=	firebird-client-2.0* firebird-server-2.0* \
-		firebird-client-2.1* firebird-server-2.1*
+# sparc64 fails due to lack of valid AtomicCounter implementation in
+# src/common/classes/fb_atomic.h; presumably other tier-2s would as well
 
 INSTALL_FB=	${INSTALL} ${COPY}
 IPCRM_CMD=	/usr/bin/ipcrm
