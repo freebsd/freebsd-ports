@@ -1,6 +1,5 @@
 pgFouine is a PostgreSQL log analyzer used to generate detailed reports
 from a PostgreSQL log file. pgFouine can help you to determine which
-queries you should optimize to speed up your PostgreSQL based
-application.
+queries you should optimize to speed up your PostgreSQL based application.
 
-WWW:  http://pgfouine.projects.postgresql.org/
+WWW: http://pgfouine.projects.postgresql.org/

@@ -4,4 +4,4 @@ algorithms and modes in libmcrypt (BLOWFISH, TWOFISH, DES, TripleDES,
 CAST, ARCFOUR and WAKE), and is compatibile with UNIX crypt(1) and
 with des(1) from Solaris.
 
-WWW:  http://mcrypt.sourceforge.net/
+WWW: http://mcrypt.sourceforge.net/

@@ -5,6 +5,4 @@ in two or more output files.  The output files are indistinguishable
 from random noise, except that when the pad utility is used to XOR
 them together again, the original data files may be recovered.
 
-WWW:  http://web.archive.org/web/20011030104813/www.lammah.com/pad/
-
-Jason Harris <jharris@widomaker.com>
+WWW: http://web.archive.org/web/20011030104813/www.lammah.com/pad/

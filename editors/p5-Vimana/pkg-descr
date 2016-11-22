@@ -1,8 +1,8 @@
-Vimana is an easy to use system for searching, downloading, and
-installing vim scripts.
+Vimana is an easy to use system for searching, downloading, and installing
+vim scripts.
 
-Vimana provides a command-line interface much like the aptitude
-program on Debian Linux, for you to search, download, install, and
-upgrade scripts from http://www.vim.org/ (vimonline site).
+Vimana provides a command-line interface much like the aptitude program on
+Debian Linux, for you to search, download, install, and upgrade scripts
+from http://www.vim.org/ (vimonline site).
 
-WWW:    http://search.cpan.org/dist/Vimana/
+WWW: http://search.cpan.org/dist/Vimana/

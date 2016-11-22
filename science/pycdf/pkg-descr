@@ -1,5 +1,5 @@
-Pycdf is a python interface to the Unidata netCDF library. It provides an
+Pycdf is a Python interface to the Unidata netCDF library. It provides an
 almost complete coverage of the netCDF C API, wrapping it inside easy to
-use python classes.
+use Python classes.
 
-WWW:  http://pysclint.sourceforge.net/pycdf/
+WWW: http://pysclint.sourceforge.net/pycdf/

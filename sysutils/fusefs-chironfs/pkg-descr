@@ -4,4 +4,4 @@ filesystems may be of any kind you want the only requisite is that you
 mount it. No need for special configuration files, the setup is as simple
 as one mount command (or one line in fstab).
 
-WWW:    http://code.google.com/p/chironfs/
+WWW: http://code.google.com/p/chironfs/
