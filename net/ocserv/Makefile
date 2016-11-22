@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.5
+PORTVERSION=	0.11.6
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -10,6 +10,7 @@ MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	autogen:devel/autogen \
 		gsed:textproc/gsed \
@@ -44,7 +45,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
 
 GSSAPI_USES=		gssapi:mit
@@ -52,24 +53,19 @@ GSSAPI_LIB_DEPENDS=	libkrb5support.so:security/krb5
 GSSAPI_CONFIGURE_OFF=	--without-gssapi
 
 post-patch:
-	${RM} ${WRKSRC}/doc/occtl.8
-	${RM} ${WRKSRC}/doc/ocpasswd.8
-	${RM} ${WRKSRC}/doc/ocserv.8
+	@${RM} ${WRKSRC}/doc/*.8
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/occtl
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocpasswd
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ocserv
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv/
-	${MKDIR} ${STAGEDIR}/var/run/ocserv/
-	${CP} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/conf.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv/
+	@${MKDIR} ${STAGEDIR}/var/run/ocserv/
+	${INSTALL_DATA} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/conf.sample
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
