@@ -1,4 +1,4 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>VE_IPV6
+# Created by: Alfred Perlstein <alfred@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
