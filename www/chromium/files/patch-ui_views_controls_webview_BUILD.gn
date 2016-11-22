@@ -1,0 +1,11 @@
+--- ui/views/controls/webview/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
++++ ui/views/controls/webview/BUILD.gn	2016-09-03 00:18:20.159623000 +0300
+@@ -39,7 +39,7 @@
+     "//ui/views",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     sources += [ "unhandled_keyboard_event_handler_default.cc" ]
+   }
+ }

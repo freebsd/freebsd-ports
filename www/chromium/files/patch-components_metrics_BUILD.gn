@@ -1,0 +1,34 @@
+--- components/metrics/BUILD.gn.orig	2016-10-06 04:02:16.000000000 +0300
++++ components/metrics/BUILD.gn	2016-10-16 20:52:28.476935000 +0300
+@@ -107,6 +107,13 @@
+   if (is_win) {
+     sources -= [ "machine_id_provider_stub.cc" ]
+   }
++
++  if (is_bsd) {
++    sources -= [
++      "system_memory_stats_recorder_linux.cc"
++    ]
++  }
++
+ }
+ 
+ if (!is_ios) {
+@@ -266,7 +273,7 @@
+   ]
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   # GYP version: components/metrics.gypi:metrics_serialization
+   static_library("serialization") {
+     sources = [
+@@ -321,7 +328,7 @@
+     "//ui/gfx/geometry",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [ "serialization/serialization_utils_unittest.cc" ]
+     deps += [ ":serialization" ]
+   }

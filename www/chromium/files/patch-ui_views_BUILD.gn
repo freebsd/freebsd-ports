@@ -1,0 +1,20 @@
+--- ui/views/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
++++ ui/views/BUILD.gn	2016-09-03 00:17:57.369360000 +0300
+@@ -60,7 +60,7 @@
+   if (use_x11 && !is_chromeos) {
+     deps += [ "//ui/display/util" ]
+   }
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     sources -= [ "window/window_button_order_provider.cc" ]
+     deps += [ "//ui/shell_dialogs" ]
+   } else {
+@@ -128,7 +128,7 @@
+       } else if (use_ozone) {
+         sources += gypi_values.views_desktop_aura_ozone_sources
+       }
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += gypi_values.views_desktop_aura_linux_sources
+       }
+     }

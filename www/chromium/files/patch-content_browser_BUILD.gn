@@ -1,0 +1,58 @@
+--- content/browser/BUILD.gn.orig	2016-10-06 04:02:18.000000000 +0300
++++ content/browser/BUILD.gn	2016-10-13 10:50:30.206508000 +0300
+@@ -196,7 +196,7 @@
+       "//third_party/webrtc/media:rtc_media",
+       "//third_party/webrtc/modules/desktop_capture:primitives",
+     ]
+-    if (is_linux || is_mac || is_win) {
++    if (is_linux || is_bsd || is_mac || is_win) {
+       sources += [
+         "media/capture/desktop_capture_device.cc",
+         "media/capture/desktop_capture_device.h",
+@@ -288,7 +288,7 @@
+     }
+   }
+ 
+-  if (is_linux && use_aura) {
++  if ((is_linux || is_bsd) && use_aura) {
+     deps += [ "//build/linux:fontconfig" ]
+   }
+ 
+@@ -368,6 +368,19 @@
+       "//chromeos",
+       "//chromeos:power_manager_proto",
+     ]
++  } else if (is_bsd) {
++    sources -= [
++        "zygote_host/zygote_communication_linux.cc",
++        "zygote_host/zygote_communication_linux.h",
++        "zygote_host/zygote_handle_linux.cc",
++        "zygote_host/zygote_host_impl_linux.cc",
++        "zygote_host/zygote_host_impl_linux.h",
++        "../zygote/zygote_linux.cc",
++        "../zygote/zygote_linux.h",
++        "../zygote/zygote_main_linux.cc",
++        "download/file_metadata_linux.cc",
++        "download/file_metadata_linux.h",
++    ]
+   }
+ 
+   if (use_aura) {
+@@ -450,7 +463,7 @@
+     deps += [ "//third_party/flac" ]
+   }
+ 
+-  if (is_linux && use_dbus) {
++  if ((is_linux || is_bsd) && use_dbus) {
+     deps += [ "//dbus" ]
+   }
+ 
+@@ -461,7 +474,7 @@
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//third_party/boringssl" ]
+   }
+ 

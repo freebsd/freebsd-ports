@@ -1,11 +1,12 @@
 bin/chrome
 man/man1/chrome.1.gz
-%%DRIVER%%bin/chromedriver
 share/applications/chromium-browser.desktop
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
-%%DATADIR%%/content_resources.pak
+%%DATADIR%%/chrome_200_percent.pak
+%%DATADIR%%/icudtl.dat
+%%DATADIR%%/natives_blob.bin
 %%DATADIR%%/keyboard_resources.pak
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
@@ -22,6 +23,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/es.pak
 %%DATADIR%%/locales/et.pak
 %%DATADIR%%/locales/fa.pak
+%%DATADIR%%/locales/fake-bidi.pak
 %%DATADIR%%/locales/fi.pak
 %%DATADIR%%/locales/fil.pak
 %%DATADIR%%/locales/fr.pak
@@ -61,9 +63,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/mksnapshot
-%%DATADIR%%/pseudo_locales/fake-bidi.pak
 %%DATADIR%%/resources.pak
-%%DATADIR%%/resources/extension/demo/library.js
 %%DATADIR%%/resources/inspector/Images/accelerometer-back.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-bottom.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-front.png
@@ -121,16 +121,12 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/resourcesTimeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/searchNext.png
 %%DATADIR%%/resources/inspector/Images/searchPrev.png
-%%DATADIR%%/resources/inspector/Images/securityPropertyInfo.svg
-%%DATADIR%%/resources/inspector/Images/securityPropertyInsecure.svg
-%%DATADIR%%/resources/inspector/Images/securityPropertySecure.svg
-%%DATADIR%%/resources/inspector/Images/securityPropertyUnknown.svg
-%%DATADIR%%/resources/inspector/Images/securityPropertyWarning.svg
-%%DATADIR%%/resources/inspector/Images/securityStateInsecure.svg
-%%DATADIR%%/resources/inspector/Images/securityStateNeutral.svg
-%%DATADIR%%/resources/inspector/Images/securityStateSecure.svg
+%%DATADIR%%/resources/inspector/Images/securityIcons.png
+%%DATADIR%%/resources/inspector/Images/securityIcons_2x.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
+%%DATADIR%%/resources/inspector/Images/smallIcons.png
+%%DATADIR%%/resources/inspector/Images/smallIcons_2x.png
 %%DATADIR%%/resources/inspector/Images/speech.png
 %%DATADIR%%/resources/inspector/Images/toolbarButtonGlyphs.png
 %%DATADIR%%/resources/inspector/Images/toolbarButtonGlyphs_2x.png
@@ -142,23 +138,22 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
 %%DATADIR%%/resources/inspector/Tests.js
-%%DATADIR%%/resources/inspector/accessibility_module.js
-%%DATADIR%%/resources/inspector/animation_module.js
-%%DATADIR%%/resources/inspector/audits_module.js
-%%DATADIR%%/resources/inspector/cm_modes_module.js
-%%DATADIR%%/resources/inspector/components_lazy_module.js
-%%DATADIR%%/resources/inspector/console_module.js
-%%DATADIR%%/resources/inspector/devices_module.js
+%%DATADIR%%/resources/inspector/accessibility/accessibility_module.js
+%%DATADIR%%/resources/inspector/animation/animation_module.js
+%%DATADIR%%/resources/inspector/audits/audits_module.js
+%%DATADIR%%/resources/inspector/cm_modes/cm_modes_module.js
+%%DATADIR%%/resources/inspector/components_lazy/components_lazy_module.js
+%%DATADIR%%/resources/inspector/console/console_module.js
+%%DATADIR%%/resources/inspector/devices/devices_module.js
 %%DATADIR%%/resources/inspector/devtools.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
-%%DATADIR%%/resources/inspector/diff_module.js
-%%DATADIR%%/resources/inspector/elements_module.js
-%%DATADIR%%/resources/inspector/emulated_devices_module.js
-%%DATADIR%%/resources/inspector/es_tree_module.js
+%%DATADIR%%/resources/inspector/diff/diff_module.js
+%%DATADIR%%/resources/inspector/elements/elements_module.js
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus5X-landscape.svg
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus5X-portrait.svg
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus6P-landscape.svg
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus6P-portrait.svg
+%%DATADIR%%/resources/inspector/emulated_devices/emulated_devices_module.js
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-2x.png
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-1x.png
@@ -191,51 +186,33 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6-portrait.svg
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-landscape.svg
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
+%%DATADIR%%/resources/inspector/es_tree/es_tree_module.js
 %%DATADIR%%/resources/inspector/formatter_worker.js
-%%DATADIR%%/resources/inspector/gonzales_module.js
+%%DATADIR%%/resources/inspector/gonzales/gonzales_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker.js
 %%DATADIR%%/resources/inspector/inspector.html
 %%DATADIR%%/resources/inspector/inspector.js
-%%DATADIR%%/resources/inspector/layers_module.js
-%%DATADIR%%/resources/inspector/network_module.js
-%%DATADIR%%/resources/inspector/profiler_module.js
-%%DATADIR%%/resources/inspector/resources_module.js
-%%DATADIR%%/resources/inspector/sass_module.js
-%%DATADIR%%/resources/inspector/screencast_module.js
-%%DATADIR%%/resources/inspector/security_module.js
-%%DATADIR%%/resources/inspector/settings_module.js
-%%DATADIR%%/resources/inspector/snippets_module.js
-%%DATADIR%%/resources/inspector/source_frame_module.js
-%%DATADIR%%/resources/inspector/sources_module.js
+%%DATADIR%%/resources/inspector/layers/layers_module.js
+%%DATADIR%%/resources/inspector/network/network_module.js
+%%DATADIR%%/resources/inspector/profiler/profiler_module.js
+%%DATADIR%%/resources/inspector/resources/resources_module.js
+%%DATADIR%%/resources/inspector/sass/sass_module.js
+%%DATADIR%%/resources/inspector/screencast/screencast_module.js
+%%DATADIR%%/resources/inspector/security/security_module.js
+%%DATADIR%%/resources/inspector/settings/settings_module.js
+%%DATADIR%%/resources/inspector/snippets/snippets_module.js
+%%DATADIR%%/resources/inspector/source_frame/source_frame_module.js
+%%DATADIR%%/resources/inspector/sources/sources_module.js
 %%DATADIR%%/resources/inspector/temp_storage_shared_worker.js
-%%DATADIR%%/resources/inspector/timeline_module.js
+%%DATADIR%%/resources/inspector/timeline/timeline_module.js
+%%DATADIR%%/resources/inspector/timeline_model/timeline_model_module.js
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
-%%DATADIR%%/resources/inspector/ui_lazy_module.js
+%%DATADIR%%/resources/inspector/ui_lazy/ui_lazy_module.js
+%%DRIVER%%bin/chromedriver
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
 share/icons/hicolor/256x256/apps/chrome.png
 share/icons/hicolor/48x48/apps/chrome.png
 share/icons/hicolor/64x64/apps/chrome.png
-@dir %%DATADIR%%/locales
-@dir %%DATADIR%%/resources/extension/demo
-@dir %%DATADIR%%/resources/extension
-@dir %%DATADIR%%/resources/inspector/Images
-@dir %%DATADIR%%/resources/inspector
-@dir %%DATADIR%%/resources
-@dir %%DATADIR%%
-@dir share/icons/hicolor/128x128/apps
-@dir share/icons/hicolor/128x128
-@dir share/icons/hicolor/22x22/apps
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/24x24/apps
-@dir share/icons/hicolor/24x24
-@dir share/icons/hicolor/256x256/apps
-@dir share/icons/hicolor/256x256
-@dir share/icons/hicolor/48x48/apps
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/64x64/apps
-@dir share/icons/hicolor/64x64
-@dir share/icons/hicolor
-@dir share/icons

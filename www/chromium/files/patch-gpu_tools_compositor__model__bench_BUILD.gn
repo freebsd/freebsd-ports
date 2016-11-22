@@ -1,0 +1,11 @@
+--- gpu/tools/compositor_model_bench/BUILD.gn.orig	2016-10-06 04:02:20.000000000 +0300
++++ gpu/tools/compositor_model_bench/BUILD.gn	2016-10-13 07:33:53.916483000 +0300
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/ui.gni")
+ 
+-if (is_linux && !is_chromeos && current_cpu != "arm" && use_x11) {
++if ((is_linux || is_bsd) && !is_chromeos && current_cpu != "arm" && use_x11) {
+   # GYP version: //gpu/tools/tools.gyp:compositor_model_bench
+   executable("compositor_model_bench") {
+     sources = [

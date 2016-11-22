@@ -1,0 +1,21 @@
+--- components/crash/content/browser/BUILD.gn.orig	2016-08-03 22:02:16.000000000 +0300
++++ components/crash/content/browser/BUILD.gn	2016-09-13 13:38:48.133784000 +0300
+@@ -16,7 +16,7 @@
+ 
+   deps = [
+     "//base",
+-    "//breakpad:client",
++    #"//breakpad:client",
+     "//components/crash/content/app",
+     "//content/public/browser",
+     "//content/public/common",
+@@ -39,7 +39,7 @@
+   # This is not in the GYP build but this target includes breakpad client
+   # headers, so add the dependency here.
+   if (is_posix && !is_ios) {
+-    configs += [ "//breakpad:client_config" ]
+-    public_configs = [ "//breakpad:client_config" ]
++    #configs += [ "//breakpad:client_config" ]
++    #public_configs = [ "//breakpad:client_config" ]
+   }
+ }

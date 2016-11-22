@@ -1,0 +1,20 @@
+--- sdch/BUILD.gn.orig	2016-08-03 22:02:22.000000000 +0300
++++ sdch/BUILD.gn	2016-09-13 17:24:52.015350000 +0300
+@@ -11,7 +11,7 @@
+ # from a config and can't be on the target directly.
+ config("sdch_warnings") {
+   cflags = []
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     # TODO(mostynb): remove this if open-vcdiff is ever updated for c++11:
+     cflags += [ "-Wno-deprecated-declarations" ]
+   }
+@@ -61,7 +61,7 @@
+     "//third_party/zlib",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     include_dirs = [ "linux" ]
+   } else if (is_ios) {
+     include_dirs = [ "ios" ]

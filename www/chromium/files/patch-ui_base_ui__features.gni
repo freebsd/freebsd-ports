@@ -1,0 +1,8 @@
+--- ui/base/ui_features.gni.orig	2016-08-03 22:02:41.000000000 +0300
++++ ui/base/ui_features.gni	2016-09-01 03:07:44.861869000 +0300
+@@ -2,4 +2,4 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-enable_hidpi = is_mac || is_win || is_linux
++enable_hidpi = is_mac || is_win || is_linux || is_bsd

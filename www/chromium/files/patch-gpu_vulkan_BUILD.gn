@@ -1,0 +1,11 @@
+--- gpu/vulkan/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
++++ gpu/vulkan/BUILD.gn	2016-09-02 23:57:07.910753000 +0300
+@@ -13,7 +13,7 @@
+   component("vulkan") {
+     output_name = "vulkan_wrapper"
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       assert(use_x11, "Vulkan only support x11 at this point.")
+       sources = [
+         "vulkan_command_buffer.cc",

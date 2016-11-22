@@ -1,0 +1,20 @@
+--- media/base/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
++++ media/base/BUILD.gn	2016-09-03 01:53:50.754526000 +0300
+@@ -281,7 +281,7 @@
+     allow_circular_includes_from += [ "//media/base/android" ]
+   }
+ 
+-  if (is_linux && use_x11) {
++  if ((is_linux || is_bsd) && use_x11) {
+     configs += [
+       "//build/config/linux:x11",
+       "//build/config/linux:xext",
+@@ -317,7 +317,7 @@
+     deps += [ ":media_yasm" ]
+   }
+ 
+-  if (is_linux || is_win) {
++  if (is_linux || is_bsd || is_win) {
+     sources += [
+       "keyboard_event_counter.cc",
+       "keyboard_event_counter.h",

@@ -1,0 +1,20 @@
+--- media/cdm/ppapi/ppapi_cdm_adapter.gni.orig	2016-08-03 22:02:20.000000000 +0300
++++ media/cdm/ppapi/ppapi_cdm_adapter.gni	2016-09-03 01:55:54.607135000 +0300
+@@ -7,7 +7,7 @@
+ # depend on media/media_cdm_adapter.gyp:cdmadapter which would in turn modify
+ # your target with direct_dependent_settings.
+ template("ppapi_cdm_adapter") {
+-  if (is_mac || is_linux) {
++  if (is_mac || is_linux || is_bsd) {
+     _target_type = "loadable_module"
+   } else {
+     _target_type = "shared_library"
+@@ -59,7 +59,7 @@
+       libs += [ "rt" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       # CDM adapter depends on a CDM in component and non-component builds.
+       configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+     }

@@ -1,5 +1,5 @@
---- ui/base/resource/resource_bundle.cc.orig	2016-07-22 00:07:12.000000000 -0400
-+++ ui/base/resource/resource_bundle.cc	2016-08-03 16:45:43.939993000 -0400
+--- ui/base/resource/resource_bundle.cc.orig	2016-07-20 22:03:45.000000000 +0300
++++ ui/base/resource/resource_bundle.cc	2016-08-01 22:13:38.986790000 +0300
 @@ -626,7 +626,7 @@
  }
  

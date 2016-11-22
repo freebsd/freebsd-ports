@@ -1,0 +1,10 @@
+--- third_party/webrtc/base/BUILD.gn.orig	2016-08-03 22:04:03.000000000 +0300
++++ third_party/webrtc/base/BUILD.gn	2016-09-25 15:11:54.051352000 +0300
+@@ -525,7 +525,6 @@
+       "x11windowpicker.h",
+     ]
+     libs += [
+-      "dl",
+       "rt",
+       "Xext",
+       "X11",

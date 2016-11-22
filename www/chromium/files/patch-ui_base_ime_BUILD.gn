@@ -1,0 +1,20 @@
+--- ui/base/ime/BUILD.gn.orig	2016-10-06 04:02:44.000000000 +0300
++++ ui/base/ime/BUILD.gn	2016-10-14 18:28:15.896660000 +0300
+@@ -123,7 +123,7 @@
+     ":text_input_types",
+   ]
+ 
+-  if (!use_aura || (!is_linux && !use_ozone)) {
++  if (!use_aura || (!(is_linux || is_bsd) && !use_ozone) || !is_bsd) {
+     sources -= [
+       "input_method_auralinux.cc",
+       "input_method_auralinux.h",
+@@ -137,7 +137,7 @@
+     ]
+   }
+ 
+-  if (!is_chromeos && is_linux) {
++  if (!is_chromeos && (is_linux || is_bsd)) {
+     sources += [
+       "linux/text_edit_command_auralinux.cc",
+       "linux/text_edit_command_auralinux.h",

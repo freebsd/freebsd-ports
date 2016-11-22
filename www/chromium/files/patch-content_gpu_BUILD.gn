@@ -1,0 +1,10 @@
+--- content/gpu/BUILD.gn.orig	2016-10-06 04:02:19.000000000 +0300
++++ content/gpu/BUILD.gn	2016-10-15 10:05:38.417673000 +0300
+@@ -98,6 +98,7 @@
+ 
+   if (use_x11) {
+     deps += [ "//ui/events/platform/x11" ]
++    configs += [ "//build/config/linux:x11" ]
+   }
+ 
+   if (use_ozone) {
