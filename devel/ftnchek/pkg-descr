@@ -11,4 +11,4 @@ their Fortran 77 program.  It is not intended to catch all syntax errors.
 This is the function of the compiler.  Prior to using ftnchek, the user
 should verify that the program compiles correctly.
 
-WWW:  http://www.dsm.fordham.edu/~ftnchek/
+WWW: http://www.dsm.fordham.edu/~ftnchek/

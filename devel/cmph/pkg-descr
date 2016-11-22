@@ -1,16 +1,14 @@
-CMPH - C Minimal Perfect Hashing Library
-
 A perfect hash function maps a static set of n keys into a set of m integer
-numbers without collisions, where m is greater than or equal to n. If m is equal
-to n, the function is called minimal.
+numbers without collisions, where m is greater than or equal to n.  If m is
+equal to n, the function is called minimal.
 
-Minimal perfect hash functions are widely used for memory efficient storage and
-fast retrieval of items from static sets, such as words in natural languages,
-reserved words in programming languages or interactive systems, universal
-resource locations (URLs) in Web search engines, or item sets in data mining
-techniques. Therefore, there are applications for minimal perfect hash functions
-in information retrieval systems, database systems, language translation
-systems, electronic commerce systems, compilers, operating systems, among
-others.
+Minimal perfect hash functions are widely used for memory efficient storage
+and fast retrieval of items from static sets, such as words in natural
+languages, reserved words in programming languages or interactive systems,
+universal resource locations (URLs) in Web search engines, or item sets in
+data mining techniques.  Therefore, there are applications for minimal
+perfect hash functions in information retrieval systems, database systems,
+language translation systems, electronic commerce systems, compilers,
+operating systems, among others.
 
-WWW:    http://cmph.sourceforge.net/
+WWW: http://cmph.sourceforge.net/

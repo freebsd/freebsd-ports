@@ -1,4 +1,4 @@
-ical2html takes an iCalendar file and outputs an HTML file showing
-one or more months in the form of tables.
+ical2html takes an iCalendar file and outputs an HTML file showing one or
+more months in the form of tables.
 
-WWW:    http://www.w3.org/Tools/Ical2html/
+WWW: http://www.w3.org/Tools/Ical2html/

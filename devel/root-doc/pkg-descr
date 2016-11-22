@@ -1,7 +1,5 @@
 This package contains HTML documentation for the Root framework.
 
-The installed package is 110 MB large.
-
 ROOT stand for "<R>OOTs <O>bject-<O>riented <T>echnologies" - it is an object
 oriented data analysis framework written in C++. ROOT has its origin at the
 Centre Europeenne pour la Recherche Nucleaire (CERN) and is a cross platform
@@ -19,4 +17,4 @@ hundreds of classes, which provides functionalities u.a. for:
  - Inline Documentation and PostScript Interface
  - PROOF Server (parallel computing)
 
-WWW:  http://root.cern.ch/
+WWW: http://root.cern.ch/

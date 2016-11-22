@@ -1,6 +1,6 @@
-MusicBrainz::DiscID is a class to calculate a MusicBrainz DiscID
-from an audio CD in the drive. The coding style is slightly different
-to the C interface to libdiscid, because it makes use of perl's
-Object Oriented functionality.
+MusicBrainz::DiscID is a class to calculate a MusicBrainz DiscID from an
+audio CD in the drive.  The coding style is slightly different to the C
+interface to libdiscid, because it makes use of Perl's Object Oriented
+functionality.
 
-WWW:    http://search.cpan.org/dist/MusicBrainz-DiscID
+WWW: http://search.cpan.org/dist/MusicBrainz-DiscID

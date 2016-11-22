@@ -1,4 +1,4 @@
-This is a Qt4 version of QwtPlot3d - a feature-rich Qt/OpenGL-based
-C++ programming library, providing essentially a bunch of 3D-widgets.
+This is a Qt4 version of QwtPlot3d -- a feature-rich Qt/OpenGL-based C++
+programming library, providing essentially a bunch of 3D-widgets.
 
-WWW:    http://qwtplot3d.sourceforge.net/
+WWW: http://qwtplot3d.sourceforge.net/

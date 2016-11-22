@@ -3,4 +3,4 @@ RFC 2821 compliant SMTP service that always returns a 4xx soft error
 to the RCPT TO verb. Use it to keep spammers who try to exploit the
 MX with highest PRI away.
 
-WWW:    http://smtptrapd.sourceforge.net/
+WWW: http://smtptrapd.sourceforge.net/
