@@ -3,7 +3,7 @@
 PORTNAME=	hunspell
 PORTVERSION=	2016.02.10
 CATEGORIES=	textproc
-MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/14/
+MASTER_SITES=	SF/aoo-extensions/1204/14/
 PKGNAMEPREFIX=	it-
 DISTNAME=	dict-it
 EXTRACT_SUFX=	.oxt
