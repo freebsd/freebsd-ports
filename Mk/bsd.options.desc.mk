@@ -457,6 +457,7 @@ SVGALIB_DESC?=		SVGA graphics support
 SVN_DESC?=		Subversion support
 SWFDEC_DESC?=		Flash support via Swfdec
 SWIG_DESC?=		SWIG binding/wrapper support
+SYBASE_DESC?=		Sybase SQL Server support
 SYSLOG_DESC?=		Syslog logging support
 SZIP_DESC?=		Szip compression support
 TCL_DESC?=		Tcl scripting language support
