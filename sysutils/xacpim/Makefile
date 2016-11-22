@@ -10,6 +10,8 @@ MASTER_SITES=	http://shapeshifter.se/pub/xacpim/
 MAINTAINER=	henriknj@0xmilk.org
 COMMENT=	Utility to display battery status and temperature on the root-display
 
+DEPRECATED=	Mastersite disappeared
+
 USES=		gmake
 USE_XORG=	x11
 PLIST_FILES=	bin/xacpim
