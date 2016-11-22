@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.8.4
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	https://banu.com/pub/tinyproxy/${PORTVERSION:R}/ \
-		LOCAL/sunpoet
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	jason.mann+freebsd-ports@gmail.com
 COMMENT=	Small, efficient HTTP proxy server
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	REVERSE TRANSPARENT XHEADER
 REVERSE_DESC=		Reverse proxy support
@@ -24,19 +23,19 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		gmake
+USES=		autoreconf gmake
 
 REVERSE_CONFIGURE_ENABLE=	reverse
 TRANSPARENT_CONFIGURE_ENABLE=	transparent
 XHEADER_CONFIGURE_ENABLE=	xtinyproxy
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|tinyproxy/tinyproxy|tinyproxy|g; s|/etc/tinyproxy|${PREFIX}&|' \
 		${WRKSRC}/docs/man5/tinyproxy.conf.txt.in \
 		${WRKSRC}/docs/man8/tinyproxy.txt.in \
 		${WRKSRC}/etc/tinyproxy.conf.in
 	@${REINPLACE_CMD} -e '/\/usr\/share\/tinyproxy/d' ${WRKSRC}/etc/tinyproxy.conf.in
+	@${REINPLACE_CMD} -e 's/^#LogFile/LogFile/; s/^#PidFile/PidFile/' ${WRKSRC}/etc/tinyproxy.conf.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/tinyproxy.conf ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf.sample
