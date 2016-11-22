@@ -1,4 +1,5 @@
 bin/kea-msg-compiler
+include/kea/cc/data.h
 include/kea/config.h
 include/kea/asiolink/io_address.h
 include/kea/cc/data.h
@@ -154,13 +155,19 @@ sbin/perfdhcp
 %%DATADIR%%/dhcp4.spec
 %%DATADIR%%/dhcp6.spec
 %%DATADIR%%/scripts/admin-utils.sh
+%%DATADIR%%/scripts/cql/dhcpdb_create.cql
+%%DATADIR%%/scripts/cql/dhcpdb_drop.cql
 %%DATADIR%%/scripts/mysql/dhcpdb_create.mysql
+%%DATADIR%%/scripts/pgsql/dhcpdb_create.pgsql
+%%DATADIR%%/scripts/mysql/dhcpdb_drop.mysql
+%%DATADIR%%/scripts/pgsql/dhcpdb_drop.pgsql
 %%DATADIR%%/scripts/mysql/upgrade_1.0_to_2.0.sh
 %%DATADIR%%/scripts/mysql/upgrade_2.0_to_3.0.sh
 %%DATADIR%%/scripts/mysql/upgrade_3.0_to_4.0.sh
+%%DATADIR%%/scripts/mysql/upgrade_4.1_to_5.0.sh
 %%DATADIR%%/scripts/mysql/upgrade_4.0_to_4.1.sh
 %%DATADIR%%/scripts/pgsql/upgrade_1.0_to_2.0.sh
-%%DATADIR%%/scripts/pgsql/dhcpdb_create.pgsql
+%%DATADIR%%/scripts/pgsql/upgrade_2.0_to_3.0.sh
 %%DATADIR%%/scripts/cql/dhcpdb_create.cql
 %%DATADIR%%/scripts/cql/dhcpdb_drop.cql
 %%DATADIR%%/scripts/mysql/dhcpdb_drop.mysql
