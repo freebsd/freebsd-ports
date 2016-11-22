@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	3.10.10
+PORTVERSION=	4.0.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	gmake:devel/gmake \
 		node>=0.8.0:www/node
 
-CONFLICTS_INSTALL=	npm2-[0-9]*
+CONFLICTS_INSTALL=	npm2- npm3-
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
