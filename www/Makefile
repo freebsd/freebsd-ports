@@ -552,6 +552,7 @@
     SUBDIR += npm
     SUBDIR += npm012
     SUBDIR += npm2
+    SUBDIR += npm3
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
