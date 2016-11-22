@@ -1,0 +1,42 @@
+################################################################################
+Complete instructions for installing and configuring Drupal can be found here:
+
+%%DOCSDIR%%/INSTALL.txt
+
+You need to create the DB where Drupal is going to live, and depending on
+which database you intend to use, you should consult one of the following
+documents:
+
+ %%DOCSDIR%%/INSTALL.mysql.txt
+ %%DOCSDIR%%/INSTALL.pgsql.txt
+ %%DOCSDIR%%/INSTALL.sqlite.txt
+
+You also need to add appropriate configuration directives to your apache
+configuration file (%%PREFIX%%/etc/apache(2)/httpd.conf).
+
+A typical configuration might read:
+
+    Alias /drupal "%%DRUPAL_DIR%%"
+    <Directory "%%DRUPAL_DIR%%">
+        Options Indexes FollowSymlinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+Please see http://drupal.org/cron for important information on setting up
+periodic maintenance tasks in Drupal.
+
+Please see http://drupal.org/requirements for important information on
+system requirements for Drupal 8.  In particular, please ensure that your
+configuration:
+
+- uses PHP 5.2.5 or later
+- PHP "memory_limit" is set to "32Mb" or larger
+- PHP "register_globals" is set to "Off"
+- PHP "safe_mode" is set to "Off"
+- PHP "session.cache_limiter" is set to "nocache"
+
+For important information about upgrading from previous versions of Drupal, please
+please see: %%DOCSDIR%%/UPDATE.txt
+################################################################################
