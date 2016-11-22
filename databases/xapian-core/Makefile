@@ -31,7 +31,7 @@ SSE2_CONFIGURE_ENABLE=	sse
 .include <bsd.port.pre.mk>
 
 # FreeBSD 9 does not have SOCK_CLOEXEC.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000031
 CXXFLAGS+=	-DSOCK_CLOEXEC=0
 .endif
 
