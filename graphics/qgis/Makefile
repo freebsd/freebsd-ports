@@ -11,7 +11,8 @@ COMMENT=	Geographical Information System (GIS) data viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	txt2tags:textproc/txt2tags
+BUILD_DEPENDS=	txt2tags:textproc/txt2tags \
+		python:lang/python
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \

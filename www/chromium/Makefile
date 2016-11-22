@@ -17,6 +17,7 @@ BROKEN_FreeBSD_9=does not configure
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
 		bash:shells/bash \
+		python:lang/python \
 		yasm:devel/yasm \
 		flock:sysutils/flock \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \

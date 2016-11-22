@@ -25,7 +25,8 @@ COMMENT=	Open source Geographical Information System (GIS)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13 \
+		python:lang/python
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libpng.so:graphics/png \
 		libproj.so:graphics/proj \

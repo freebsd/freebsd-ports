@@ -14,6 +14,7 @@ COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
 BUILD_DEPENDS=	gtkdoc-rebase:textproc/gtk-doc \
 		p5-Switch>0:lang/p5-Switch \
+		python:lang/python \
 		geoclue>=0:net/geoclue
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libsecret-1.so:security/libsecret \
