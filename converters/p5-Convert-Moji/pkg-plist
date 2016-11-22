@@ -1,2 +1,5 @@
 %%PERL5_MAN3%%/Convert::Moji.3.gz
 %%SITE_PERL%%/Convert/Moji.pm
+%%SITE_PERL%%/Convert/Moji.pod
+%%SITE_PERL%%/Convert/Moji.pod.tmpl
+%%SITE_PERL%%/Convert/make-pod.pl
