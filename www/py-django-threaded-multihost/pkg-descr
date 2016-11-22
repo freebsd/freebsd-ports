@@ -2,4 +2,4 @@ This small app provides multi-host utilities to Django projects by using
 threadlocals, middleware and simple utilities. Using the middleware provided,
 you can "easily" provide multi-site awareness to any project.
 
-WWW:    http://bitbucket.org/bkroeze/django-threaded-multihost/
+WWW: http://bitbucket.org/bkroeze/django-threaded-multihost/

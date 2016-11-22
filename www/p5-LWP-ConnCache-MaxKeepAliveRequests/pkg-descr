@@ -5,4 +5,4 @@ a limited number of requests (in Apache 2 this is achieved with the
 MaxKeepAliveRequests directive). This module allows you to limit
 the maximum number of keep alive requests to a server.
 
-WWW:     http://search.cpan.org/dist/LWP-ConnCache-MaxKeepAliveRequests/
+WWW: http://search.cpan.org/dist/LWP-ConnCache-MaxKeepAliveRequests/

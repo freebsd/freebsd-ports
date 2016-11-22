@@ -3,4 +3,4 @@ Amazon's Mechanical Turk and Alexa web services and any other web
 services that Amazon might make in the future that require an
 encrypted signature, assuming they follow the same convention.
 
-WWW:    http://search.cpan.org/dist/Net-Amazon-Signature/
+WWW: http://search.cpan.org/dist/Net-Amazon-Signature/

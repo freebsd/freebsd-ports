@@ -3,4 +3,4 @@ Clickatell is a commercial service that allows its users to send SMS messages
 to anyone in the world. This service supports many ways to send messages, for
 example HTTP, SMTP and SMPP, among others.
 
-WWW:    http://search.cpan.org/dist/Net-SMS-Clickatell-0.05/
+WWW: http://search.cpan.org/dist/Net-SMS-Clickatell-0.05/
