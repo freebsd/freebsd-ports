@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c \
 		libproj.so:graphics/proj
 
-CONFLICTS_INSTALL=	postgis-2.1.* postgis22-*
+CONFLICTS_INSTALL=	postgis- postgis22- postgis23-
 
 OPTIONS_DEFINE=	LOADERGUI NLS RASTER TOPOLOGY
 OPTIONS_DEFAULT=TOPOLOGY
@@ -25,6 +25,8 @@ OPTIONS_SUB=	yes
 LOADERGUI_DESC=	Enable shp2pgsql-gui
 RASTER_DESC=	Raster support
 TOPOLOGY_DESC=	Topology support
+
+PORTSCOUT=	limit:^2.0.[0-9]*
 
 CONFIGURE_ARGS=	--with-geosconfig=${LOCALBASE}/bin/geos-config \
 		--with-jsondir=${LOCALBASE} \
