@@ -53,6 +53,7 @@
     SUBDIR += bird6
     SUBDIR += bittwist
     SUBDIR += bmon
+    SUBDIR += bnxt-kmod
     SUBDIR += boclient
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
