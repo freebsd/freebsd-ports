@@ -61,10 +61,6 @@ PLIST=		${.CURDIR}/pkg-plist
 .include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL which is interpreted as unsupported OpenSSL > v1.1
-.endif
-
 .if ${ARCH} == "i386" || ${ARCH} == "armv6"
 PYPY_BITS=	32
 .elif ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
