@@ -1,0 +1,12 @@
+--- base/allocator/BUILD.gn.orig	2016-10-06 04:02:08.000000000 +0300
++++ base/allocator/BUILD.gn	2016-10-13 04:07:29.886540000 +0300
+@@ -330,6 +330,9 @@
+       ]
+     } else if (is_linux && use_allocator == "none") {
+       sources += [ "allocator_shim_default_dispatch_to_glibc.cc" ]
++    } else if (is_bsd && use_allocator == "none") {
++      # TODO move the code to allocator_shim_default_dispatch_to_libc.cc"
++      sources += [ "allocator_shim_default_dispatch_to_glibc.cc" ]
+     } else if (is_android && use_allocator == "none") {
+       sources += [
+         "allocator_shim_default_dispatch_to_linker_wrapped_symbols.cc",

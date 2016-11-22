@@ -1,0 +1,23 @@
+--- third_party/mesa/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/mesa/BUILD.gn	2016-09-25 07:24:36.558482000 +0300
+@@ -88,6 +88,10 @@
+     defines += [ "_GNU_SOURCE" ]
+   }
+ 
++  if (is_bsd) {
++    defines += [ "_BSD_SOURCE" ]
++  }
++
+   if (is_win) {
+     defines += [
+       # Generated files use const only if __cplusplus or __STDC__ is defined.
+@@ -755,7 +759,8 @@
+   ]
+ 
+   # Required for the allocator implementation, which is not used on Mac.
+-  if (!is_mac) {
++  # For BSD, there's no poing to include everything.
++  if (!is_mac && !is_bsd) {
+     deps += [ "//base" ]
+   }
+ 

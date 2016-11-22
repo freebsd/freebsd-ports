@@ -1,7 +1,7 @@
---- crypto/nss_util.cc.orig	2016-05-11 19:02:22 UTC
-+++ crypto/nss_util.cc
-@@ -15,7 +15,7 @@
- 
+--- crypto/nss_util.cc.orig	2016-10-06 04:02:19.000000000 +0300
++++ crypto/nss_util.cc	2016-10-13 07:19:30.151634000 +0300
+@@ -20,7 +20,7 @@
+ #include "base/threading/thread_task_runner_handle.h"
  #include "crypto/nss_util_internal.h"
  
 -#if defined(OS_OPENBSD)
@@ -9,16 +9,7 @@
  #include <sys/mount.h>
  #include <sys/param.h>
  #endif
-@@ -147,7 +147,7 @@ char* PKCS11PasswordFunc(PK11SlotInfo* s
- // detection when database_dir is on NFS.  See http://crbug.com/48585.
- //
- // TODO(wtc): port this function to other USE_NSS_CERTS platforms.  It is
--// defined only for OS_LINUX and OS_OPENBSD simply because the statfs structure
-+// defined only for OS_LINUX and OS_BSD simply because the statfs structure
- // is OS-specific.
- //
- // Because this function sets an environment variable it must be run before we
-@@ -158,10 +158,10 @@ void UseLocalCacheOfNSSDatabaseIfNFS(con
+@@ -150,10 +150,10 @@
    base::FileSystemType fs_type = base::FILE_SYSTEM_UNKNOWN;
    if (base::GetFileSystemType(database_dir, &fs_type))
      db_on_nfs = (fs_type == base::FILE_SYSTEM_NFS);

@@ -1,21 +1,17 @@
---- v8/src/base/platform/platform-posix.cc.orig	2016-05-11 19:04:08 UTC
-+++ v8/src/base/platform/platform-posix.cc
-@@ -55,6 +55,14 @@
- #include <sys/prctl.h>  // NOLINT, for prctl
+--- v8/src/base/platform/platform-posix.cc.orig	2016-10-06 04:05:41.000000000 +0300
++++ v8/src/base/platform/platform-posix.cc	2016-10-13 09:39:34.732843000 +0300
+@@ -27,6 +27,10 @@
+ #include <sys/sysctl.h>  // NOLINT, for sysctl
  #endif
  
-+#if V8_OS_FREEBSD && !defined(__DragonFly__)
-+#include <sys/thr.h>   // for thr_self
-+#endif
-+
 +#if V8_OS_NETBSD
 +#include <lwp.h>       // for _lwp_self
 +#endif
 +
- #if !defined(V8_OS_NACL) && !defined(_AIX)
- #include <sys/syscall.h>
- #endif
-@@ -329,6 +337,12 @@ int OS::GetCurrentThreadId() {
+ #undef MAP_TYPE
+ 
+ #if defined(ANDROID) && !defined(V8_ANDROID_LOG_STDOUT)
+@@ -329,6 +333,12 @@
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

@@ -1,0 +1,11 @@
+--- third_party/libxslt/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/libxslt/BUILD.gn	2016-09-03 01:40:07.403577000 +0300
+@@ -82,7 +82,7 @@
+   public_configs = [ ":libxslt_config" ]
+ 
+   cflags = []
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     include_dirs = [ "linux" ]
+   } else if (is_win) {
+     include_dirs = [ "win32" ]

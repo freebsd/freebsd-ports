@@ -1,0 +1,20 @@
+--- build/config/sanitizers/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ build/config/sanitizers/BUILD.gn	2016-09-03 00:19:39.656881000 +0300
+@@ -280,7 +280,7 @@
+ 
+ config("msan_flags") {
+   if (is_msan) {
+-    assert(is_linux, "msan only supported on linux x86_64")
++    assert(is_linux || is_bsd, "msan only supported on linux x86_64")
+     msan_blacklist_path =
+         rebase_path("//tools/msan/blacklist.txt", root_build_dir)
+     cflags = [
+@@ -293,7 +293,7 @@
+ 
+ config("tsan_flags") {
+   if (is_tsan) {
+-    assert(is_linux, "tsan only supported on linux x86_64")
++    assert(is_linux || is_bsd, "tsan only supported on linux x86_64")
+     tsan_blacklist_path =
+         rebase_path("//tools/memory/tsan_v2/ignores.txt", root_build_dir)
+     cflags = [

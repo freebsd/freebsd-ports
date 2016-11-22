@@ -1,14 +1,14 @@
---- content/gpu/gpu_main.cc.orig	2016-07-22 00:06:54.000000000 -0400
-+++ content/gpu/gpu_main.cc	2016-08-03 12:37:05.590978000 -0400
+--- content/gpu/gpu_main.cc.orig	2016-07-20 22:03:24.000000000 +0300
++++ content/gpu/gpu_main.cc	2016-08-10 15:59:24.697490000 +0300
 @@ -102,7 +102,7 @@
                                 const base::CommandLine& command_line);
  bool WarmUpSandbox(const base::CommandLine& command_line);
- 
+
 -#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_FREEBSD) //XXX(rene) added !FreeBSD
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
  bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info);
  #endif
- 
+
 @@ -192,13 +192,13 @@
    // Use a UI message loop because ANGLE and the desktop GL platform can
    // create child windows to render to.
@@ -21,7 +21,7 @@
    std::unique_ptr<ui::PlatformEventSource> event_source =
        ui::PlatformEventSource::CreateDefault();
 -#elif defined(OS_LINUX)
-+#elif (defined(OS_LINUX) || defined(OS_BSD))
++#elif defined(OS_LINUX) || defined(OS_BSD)
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_DEFAULT);
  #elif defined(OS_MACOSX)
    // This is necessary for CoreAnimation layers hosted in the GPU process to be
@@ -30,16 +30,16 @@
        base::TimeTicks before_collect_context_graphics_info =
            base::TimeTicks::Now();
 -#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_FREEBSD) //XXX(rene) added !FreeBSD
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
        if (!CollectGraphicsInfo(gpu_info))
          dead_on_arrival = true;
- 
+
 @@ -491,7 +491,7 @@
    return true;
  }
- 
+
 -#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_FREEBSD)//XXX(rene) added !FreeBSD
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
  bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
    TRACE_EVENT0("gpu,startup", "Collect Graphics Info");
- 
+

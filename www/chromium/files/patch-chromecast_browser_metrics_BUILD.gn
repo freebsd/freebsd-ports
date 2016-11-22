@@ -1,0 +1,11 @@
+--- chromecast/browser/metrics/BUILD.gn.orig	2016-08-03 22:02:15.000000000 +0300
++++ chromecast/browser/metrics/BUILD.gn	2016-09-03 01:39:05.920888000 +0300
+@@ -26,7 +26,7 @@
+     "//content/public/common",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
+       "external_metrics.cc",
+       "external_metrics.h",

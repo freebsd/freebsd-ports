@@ -1,0 +1,10 @@
+--- components/variations/proto/study.proto.orig	2016-10-06 04:02:18.000000000 +0300
++++ components/variations/proto/study.proto	2016-10-13 13:02:20.586397000 +0300
+@@ -189,6 +189,7 @@
+     PLATFORM_CHROMEOS = 3;
+     PLATFORM_ANDROID  = 4;
+     PLATFORM_IOS      = 5;
++    PLATFORM_BSD      = 6;
+   }
+ 
+   // Possible form factors Chrome is running on.

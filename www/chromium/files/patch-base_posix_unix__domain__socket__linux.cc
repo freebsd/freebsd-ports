@@ -1,10 +1,10 @@
---- base/posix/unix_domain_socket_linux.cc.orig	2016-03-25 13:04:44 UTC
-+++ base/posix/unix_domain_socket_linux.cc
+--- base/posix/unix_domain_socket_linux.cc.orig	2016-08-03 22:02:10.000000000 +0300
++++ base/posix/unix_domain_socket_linux.cc	2016-09-06 23:39:53.563078000 +0300
 @@ -23,6 +23,15 @@
  
  namespace base {
  
-+#if defined(__FreeBSD__)
++#if defined(OS_BSD)
 +// Port over Linux ucred structure
 +struct ucred {
 +  pid_t pid; // process ID of the sending process
@@ -16,25 +16,26 @@
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
  #if !defined(OS_NACL_NONSFI)
-@@ -41,7 +50,13 @@ static bool CreateSocketPair(ScopedFD* o
+@@ -40,8 +49,14 @@
+ 
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
-   const int enable = 1;
-+#if defined(__FreeBSD__)
++#if defined(OS_BSD)
 +  // XXX(rene) do this? :
 +  // taken from dbus, Academic Free License 2.1 / GPL 2+
 +  return 0; // fake OK
 +#else
+   const int enable = 1;
    return setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &enable, sizeof(enable)) == 0;
 +#endif
  }
  #endif  // !defined(OS_NACL_NONSFI)
  
-@@ -147,7 +162,11 @@ ssize_t UnixDomainSocket::RecvMsgWithFla
+@@ -147,7 +162,11 @@
        // The PNaCl toolchain for Non-SFI binary build does not support
        // SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&
-+#if defined(__FreeBSD__)
++#if defined(OS_BSD)
 +        1) { // XXX(rene) carpet getting full ...
 +#else
            cmsg->cmsg_type == SCM_CREDENTIALS) {

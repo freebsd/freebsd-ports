@@ -1,0 +1,11 @@
+--- ppapi/tests/extensions/BUILD.gn.orig	2016-10-06 04:02:23.000000000 +0300
++++ ppapi/tests/extensions/BUILD.gn	2016-10-13 08:10:32.687869000 +0300
+@@ -20,7 +20,7 @@
+     ":ppapi_tests_extensions_popup($newlib)",
+     ":ppapi_tests_extensions_socket_permissions($newlib)",
+   ]
+-  if ((target_cpu == "x86" || target_cpu == "x64") && is_linux &&
++  if ((target_cpu == "x86" || target_cpu == "x64") && (is_linux || is_bsd) &&
+       enable_nacl_nonsfi) {
+     nonsfi = "//build/toolchain/nacl:newlib_pnacl_nonsfi"
+     data_deps += [ ":ppapi_tests_extensions_packaged_app($nonsfi)" ]

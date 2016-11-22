@@ -1,0 +1,11 @@
+--- device/geolocation/BUILD.gn.orig	2016-10-06 04:02:19.000000000 +0300
++++ device/geolocation/BUILD.gn	2016-10-13 13:27:05.983826000 +0300
+@@ -93,7 +93,7 @@
+   if (is_android) {
+     sources -= [ "wifi_data_provider_common.cc" ]
+   }
+-  if (is_chromeos || (is_linux && !use_dbus)) {
++  if (is_chromeos || (is_linux && !use_dbus) || is_bsd) {
+     sources -= [ "wifi_data_provider_linux.cc" ]
+   }
+   if (is_linux && use_dbus) {

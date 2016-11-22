@@ -1,5 +1,5 @@
---- content/shell/browser/shell_browser_context.cc.orig	2016-07-22 00:06:54.000000000 -0400
-+++ content/shell/browser/shell_browser_context.cc	2016-08-03 15:17:20.501518000 -0400
+--- content/shell/browser/shell_browser_context.cc.orig	2016-07-20 22:03:24.000000000 +0300
++++ content/shell/browser/shell_browser_context.cc	2016-08-01 04:13:15.131738000 +0300
 @@ -24,7 +24,7 @@
  
  #if defined(OS_WIN)

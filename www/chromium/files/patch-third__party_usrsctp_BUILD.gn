@@ -1,0 +1,15 @@
+--- third_party/usrsctp/BUILD.gn.orig	2016-08-03 22:02:40.000000000 +0300
++++ third_party/usrsctp/BUILD.gn	2016-09-20 02:42:29.328962000 +0300
+@@ -112,6 +112,12 @@
+       "__Userspace_os_Linux",
+       "_GNU_SOURCE",
+     ]
++  } else if (is_bsd) {
++    # For now, freebsd hard coding, differentiate different bsd is a plan
++    defines += [
++      "__Userspace_os_FreeBSD",
++    ]
++    cflags += [ "-U__FreeBSD__" ]
+   } else if (is_mac || is_ios) {
+     defines += [
+       "HAVE_SA_LEN",

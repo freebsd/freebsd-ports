@@ -1,0 +1,11 @@
+--- build/config/linux/gtk3/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ build/config/linux/gtk3/BUILD.gn	2016-09-03 01:35:58.974361000 +0300
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/linux/pkg_config.gni")
+ 
+-assert(is_linux, "This file should only be referenced on Linux")
++assert(is_linux || is_bsd, "This file should only be referenced on Linux")
+ 
+ # Depend on //build/config/linux/gtk3 to use GTKv3.
+ #
