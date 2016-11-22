@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.4.70:devel/py-botocore \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.10:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.2:security/py-rsa
 
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
