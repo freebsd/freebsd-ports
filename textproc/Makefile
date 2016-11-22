@@ -93,6 +93,7 @@
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += cs-hunspell
+    SUBDIR += cs-hyphen
     SUBDIR += cs-mythes
     SUBDIR += csb-aspell
     SUBDIR += csv2latex
