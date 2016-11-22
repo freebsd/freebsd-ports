@@ -4,12 +4,13 @@ enough information to identify the operating system.  In contrast to active
 scanners such as nmap and QueSO, p0f does not send anything to the host
 being identified.
 
+For more information, refer to Lance Spitzner's old paper about passive OS
+fingerprinting: http://old.honeynet.org/papers/finger/.
+
 Use of this program requires read access to the packet filtering device,
 typically /dev/bpf0.  Granting such access allows the users who have it to
 put your Ethernet device into promiscuous mode and sniff your network.
-
-See http://www.infoworld.com/articles/op/xml/00/05/29/000529opswatch.xml
-if you do not understand how this can be harmful.  Running p0f with no
-options will cause it to analyze packets intended for other hosts.
+Running p0f with no options will cause it to analyze packets intended for
+other hosts.
 
 WWW: http://lcamtuf.coredump.cx/p0f3/
