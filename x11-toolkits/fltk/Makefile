@@ -3,7 +3,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -15,17 +15,14 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		jpeg pkgconfig
-USE_XORG=	xft
+USES=		jpeg localbase pkgconfig
+USE_XORG=	x11 xcursor xext xfixes xft xinerama
 USE_GL=		glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTEXAMPLES=	*
 
