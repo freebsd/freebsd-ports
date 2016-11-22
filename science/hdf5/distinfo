@@ -1,2 +1,3 @@
-SHA256 (hdf5-1.10.0.tar.bz2) = 31ff70dc7c7317066ab3bda3eec4498a8b099c69c1271b008ed3df388e743d28
-SIZE (hdf5-1.10.0.tar.bz2) = 11239053
+TIMESTAMP = 1479825372
+SHA256 (hdf5-1.10.0-patch1.tar.bz2) = f772264dd853dceb18855418a81c63c9cdcca7bcd075b9c54eb516af006fdfba
+SIZE (hdf5-1.10.0-patch1.tar.bz2) = 11233647
