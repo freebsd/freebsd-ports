@@ -4,6 +4,7 @@
 PORTNAME=	rocksdb
 PORTVERSION=	4.11.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,6 +23,7 @@ BROKEN_powerpc64=	does not build
 BROKEN_sparc64=	cannot build: uses unknown compiler flags
 
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
+OPTIONS_DEFAULT=LZ4
 
 ALL_TARGET=	shared_lib static_lib all
 HAS_CONFIGURE=	yes
