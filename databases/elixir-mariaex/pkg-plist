@@ -3,8 +3,10 @@ lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Cache.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Coder.Utils.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Coder.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Column.beam
+lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Connection.Ssl.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Connection.Tcp.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Connection.beam
+lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Cursor.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Error.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.LruCache.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Messages.beam
@@ -12,6 +14,7 @@ lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Protocol.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.ProtocolHelper.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Query.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Result.beam
+lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.RowParser.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.beam
 lib/elixir/lib/mariaex/ebin/Elixir.String.Chars.Mariaex.Query.beam
 lib/elixir/lib/mariaex/ebin/mariaex.app
@@ -20,11 +23,13 @@ lib/elixir/lib/mariaex/lib/mariaex/cache.ex
 lib/elixir/lib/mariaex/lib/mariaex/coder.ex
 lib/elixir/lib/mariaex/lib/mariaex/column.ex
 lib/elixir/lib/mariaex/lib/mariaex/connection.ex
+lib/elixir/lib/mariaex/lib/mariaex/connection/ssl.ex
 lib/elixir/lib/mariaex/lib/mariaex/connection/tcp.ex
 lib/elixir/lib/mariaex/lib/mariaex/lru_cache.ex
 lib/elixir/lib/mariaex/lib/mariaex/messages.ex
 lib/elixir/lib/mariaex/lib/mariaex/protocol.ex
 lib/elixir/lib/mariaex/lib/mariaex/protocol_helper.ex
 lib/elixir/lib/mariaex/lib/mariaex/query.ex
+lib/elixir/lib/mariaex/lib/mariaex/row_parser.ex
 lib/elixir/lib/mariaex/lib/mariaex/structs.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
