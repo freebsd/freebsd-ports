@@ -54,6 +54,9 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's=getline(=xmit_getline(=' \
 		${WRKSRC}/xmit/nntpxmit.c
+	${REINPLACE_CMD} \
+		-e 's=reaper()=reaper(int unused)=' \
+		${WRKSRC}/server/netaux.c
 
 pre-configure:
 	${REINPLACE_CMD} ${ALONE} \
