@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	p1_utils
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 
