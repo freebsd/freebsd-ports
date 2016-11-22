@@ -11,6 +11,6 @@ the instructions in the guide at:
 https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/update/freebsd_patch_versions.md
 
 If you just installed an major upgrade of GitLab, for example you
-switched from 8.9.x to 8.10.x, please follow the instructions in the guide at:
+switched from 8.10.x to 8.11.x, please follow the instructions in the guide at:
 
-https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/update/8.9-to-8.10-freebsd.md
+https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/update/8.10-to-8.11-freebsd.md
