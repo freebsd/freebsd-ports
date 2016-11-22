@@ -10,7 +10,7 @@ lib/libnetcdf.a
 lib/libnetcdf.settings
 lib/libnetcdf.so
 lib/libnetcdf.so.11
-lib/libnetcdf.so.11.0.3
+lib/libnetcdf.so.11.0.4
 libdata/pkgconfig/netcdf.pc
 man/man1/nccopy.1.gz
 man/man1/ncdump.1.gz
