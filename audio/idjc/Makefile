@@ -45,6 +45,10 @@ BROKEN_powerpc64=	Does not build
 PLIST_SUB+=		PORTVERSION="${PORTVERSION}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} 's,PYTHON=python,PYTHON=${PYTHON_CMD},' ${WRKSRC}/py-compile
+
 pre-install:
 	${REINPLACE_CMD} 's|libvorbis.so.0|libvorbis.so|' \
 		${WRKSRC}/python/format.py
