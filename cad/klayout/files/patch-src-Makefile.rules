@@ -1,8 +1,8 @@
---- src/Makefile.rules.orig	Fri Nov  9 04:31:39 2007
-+++ src/Makefile.rules	Sun Jan  6 18:59:35 2008
-@@ -25,8 +25,8 @@
- CCOPTS=$(CCWARN) $(DEFS) $(CCOPT)
- CCOPTS_DEP=$(DEFS) $(CCOPT_DEP) 
+--- src/Makefile.rules.orig	2016-06-19 16:35:32 UTC
++++ src/Makefile.rules
+@@ -73,8 +73,8 @@ ifeq ($(LOPT_TEST),)
+   LOPT_TEST=$(LOPT)
+ endif
  
 -MOC=$(QTBIN)/moc
 -UIC=$(QTBIN)/uic
@@ -10,4 +10,4 @@
 +UIC=$(QTBIN)/uic-qt4
  RCC=$(QTBIN)/rcc
  
- # this target must be first:
+ TESTSRC=$(TOP_SOURCE)/..
