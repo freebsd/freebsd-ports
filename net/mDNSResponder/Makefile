@@ -1,8 +1,8 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>
+# Created by: Alfred Perlstein <alfred@FreeBSD.org>VE_IPV6
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	625.41.2
+PORTVERSION=	765.1.2
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
@@ -13,16 +13,14 @@ LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 # lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL=	avahi-libdns openmdns
+CONFLICTS_INSTALL=	avahi-libdns- openmdns-
 
 OPTIONS_DEFINE=	IPV6
-
-PORTSCOUT=	skipv:625.60.4
 
 ALL_TARGET=	all dnsextd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
-MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man STRIP=${STRIP_CMD} os=freebsd
+MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MAN_PATH=${MANPREFIX}/man STRIP=${STRIP_CMD} os=freebsd
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponderposix
