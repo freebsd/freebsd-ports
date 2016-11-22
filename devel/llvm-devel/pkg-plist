@@ -881,7 +881,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/ThisThread.h
 %%LLDB%%llvm-devel/include/lldb/Host/ThreadLauncher.h
 %%LLDB%%llvm-devel/include/lldb/Host/Time.h
-%%LLDB%%llvm-devel/include/lldb/Host/TimeValue.h
 %%LLDB%%llvm-devel/include/lldb/Host/XML.h
 %%LLDB%%llvm-devel/include/lldb/Host/android/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/android/HostInfoAndroid.h
@@ -1970,7 +1969,6 @@ llvm-devel/include/llvm/Support/TargetSelect.h
 llvm-devel/include/llvm/Support/ThreadLocal.h
 llvm-devel/include/llvm/Support/ThreadPool.h
 llvm-devel/include/llvm/Support/Threading.h
-llvm-devel/include/llvm/Support/TimeValue.h
 llvm-devel/include/llvm/Support/Timer.h
 llvm-devel/include/llvm/Support/ToolOutputFile.h
 llvm-devel/include/llvm/Support/TrailingObjects.h
@@ -2031,6 +2029,7 @@ llvm-devel/include/llvm/Transforms/IPO/FunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/FunctionImport.h
 llvm-devel/include/llvm/Transforms/IPO/GlobalDCE.h
 llvm-devel/include/llvm/Transforms/IPO/GlobalOpt.h
+llvm-devel/include/llvm/Transforms/IPO/GlobalSplit.h
 llvm-devel/include/llvm/Transforms/IPO/InferFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/InlinerPass.h
 llvm-devel/include/llvm/Transforms/IPO/Internalize.h
@@ -2284,6 +2283,7 @@ llvm-devel/lib/libLLVMAsmPrinter.a
 llvm-devel/lib/libLLVMBPFAsmPrinter.a
 llvm-devel/lib/libLLVMBPFCodeGen.a
 llvm-devel/lib/libLLVMBPFDesc.a
+llvm-devel/lib/libLLVMBPFDisassembler.a
 llvm-devel/lib/libLLVMBPFInfo.a
 llvm-devel/lib/libLLVMBitReader.a
 llvm-devel/lib/libLLVMBitWriter.a
@@ -2407,6 +2407,7 @@ llvm-devel/lib/libLTO.so.40.0svn
 %%CLANG%%llvm-devel/lib/libclangFrontend.a
 %%CLANG%%llvm-devel/lib/libclangFrontendTool.a
 %%EXTRAS%%llvm-devel/lib/libclangIncludeFixer.a
+%%EXTRAS%%llvm-devel/lib/libclangIncludeFixerPlugin.a
 %%CLANG%%llvm-devel/lib/libclangIndex.a
 %%CLANG%%llvm-devel/lib/libclangLex.a
 %%CLANG%%llvm-devel/lib/libclangMove.a
