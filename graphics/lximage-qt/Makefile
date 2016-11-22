@@ -3,6 +3,7 @@
 
 PORTNAME=	lximage-qt
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 	libfm.so:x11/libfm
 
 USES=	cmake:outsource compiler:c++11-lib desktop-file-utils gettext-runtime \
-	localbase lxqt pkgconfig tar:xz
+	localbase:ldflags lxqt pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_QT5=	buildtools_build qmake_build core dbus gui printsupport \
 	svg widgets x11extras
