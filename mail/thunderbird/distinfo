@@ -1,5 +1,5 @@
-TIMESTAMP = 1475317656
-SHA256 (thunderbird-45.4.0.source.tar.xz) = 36f66edbb9b0f1ff9d0de8f12eab6cccbfa23db79e01db307fb2186904a38e61
-SIZE (thunderbird-45.4.0.source.tar.xz) = 201094212
-SHA256 (enigmail-1.9.5.tar.gz) = 831e53a4add0f465241f075be9475103367aa1452675adae054d8fb272e5d3ad
-SIZE (enigmail-1.9.5.tar.gz) = 1744278
+TIMESTAMP = 1479487203
+SHA256 (thunderbird-45.5.0.source.tar.xz) = 9571dee75d14cab3533e09599b2c183624f159cf8ae623f01ca6dc69eb846082
+SIZE (thunderbird-45.5.0.source.tar.xz) = 201122644
+SHA256 (enigmail-1.9.6.1.tar.gz) = 3874331e981aed864443d3c965d856e003fd84f73e5a89fd5004ced9dc29b96f
+SIZE (enigmail-1.9.6.1.tar.gz) = 1745021
