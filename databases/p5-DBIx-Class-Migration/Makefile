@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.057
+PORTVERSION=	0.058
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ RUN_DEPENDS=	\
 	p5-DBIx-Class-Schema-Loader>=0.07042:databases/p5-DBIx-Class-Schema-Loader \
 	p5-Devel-PartialDump>=0.17:devel/p5-Devel-PartialDump \
 	p5-File-ShareDir-ProjectDistDir>=1.0.4:devel/p5-File-ShareDir-ProjectDistDir \
-	p5-JSON-XS>=3.01:converters/p5-JSON-XS \
+	p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS \
 	p5-Moose>=2.1403:devel/p5-Moose \
 	p5-MooseX-Attribute-ENV>=0.02:devel/p5-MooseX-Attribute-ENV \
 	p5-MooseX-Getopt>=0.68:devel/p5-MooseX-Getopt \
