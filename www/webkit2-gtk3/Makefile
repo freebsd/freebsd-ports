@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-BUILD_DEPENDS=	geoclue>=0:net/geoclue
+BUILD_DEPENDS=	geoclue>=0:net/geoclue \
+		python:lang/python
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \

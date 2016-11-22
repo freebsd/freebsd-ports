@@ -13,6 +13,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 
 BUILD_DEPENDS=	zip:archivers/zip \
+		python:lang/python \
 		cmake:devel/cmake
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \

@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 LICENSE_COMB=	single
 
 LIB_DEPENDS=	libmlt.so:${MASTER_PORT}
-BUILD_DEPENDS=	swig:devel/swig13
+BUILD_DEPENDS=	swig:devel/swig13 \
+		python:lang/python
 
 USES=		python:2
 MASTERDIR=	${.CURDIR:H:H}/multimedia/mlt
