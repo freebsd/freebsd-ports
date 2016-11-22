@@ -1,5 +1,5 @@
---- build.sh.orig	2016-06-20 01:35:28.000000000 +0900
-+++ build.sh	2016-11-05 05:47:55.089440000 +0900
+--- build.sh.orig	2016-06-19 16:35:28 UTC
++++ build.sh
 @@ -3,7 +3,7 @@
  EXEC_NAME=klayout
  IS_MAC="no"
@@ -9,7 +9,7 @@
  
  CURR_DIR=`pwd`
  PLATFORM="linux-32-gcc-release"
-@@ -39,6 +39,9 @@
+@@ -39,6 +39,9 @@ Darwin*)
    PLATFORM="mac-yosemite-gcc-release"
    EXEC_HOLDER="klayout.app/Contents/MacOS"
    ;;
@@ -19,7 +19,7 @@
  *)
    # Assume Linux for the remaining variants
    case `arch` in
-@@ -374,7 +377,7 @@
+@@ -374,7 +377,7 @@ if [ $HAVE_64BIT_COORD != 0 ]; then
    echo "    64 bit coordinates enabled"
  fi
  
@@ -28,7 +28,7 @@
  if [ "$gcc_path" = "" ]; then
    echo "*** ERROR: unable to locate gcc in path"
    exit 1
-@@ -398,11 +401,11 @@
+@@ -398,11 +401,11 @@ mac-*)
    ;;
  esac
  
@@ -42,7 +42,7 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -463,11 +466,7 @@
+@@ -463,11 +466,7 @@ else
    cd $CURR_DIR
  fi
  
@@ -55,7 +55,7 @@
  
  mkdir -p $BUILD
  echo "WIN_CYGWIN=$WIN_CYGWIN"  >$BUILD/Makefile
-@@ -515,6 +514,9 @@
+@@ -515,6 +514,9 @@ echo "PYTHONINCLUDE=$PYTHONINCLUDE" >>$B
  echo "HAVE_PYTHON=$HAVE_PYTHON" >>$BUILD/Makefile.env
  echo "HAVE_QTBINDINGS=$HAVE_QTBINDINGS" >>$BUILD/Makefile.env
  echo "HAVE_64BIT_COORD=$HAVE_64BIT_COORD" >>$BUILD/Makefile.env
@@ -65,7 +65,7 @@
  
  echo "Building plugins: $PLUGINS"
  echo ""
-@@ -549,12 +551,12 @@
+@@ -549,12 +551,12 @@ if [ $WIN_CYGWIN = 0 ]; then
    fi
    echo ""
    echo "Final binary is ready in $EXEC_FULL_PATH."

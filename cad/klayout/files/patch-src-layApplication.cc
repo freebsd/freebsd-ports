@@ -1,5 +1,5 @@
---- src/layApplication.cc.orig	2016-06-20 01:35:29.000000000 +0900
-+++ src/layApplication.cc	2016-11-16 08:59:47.386261000 +0900
+--- src/layApplication.cc.orig	2016-06-19 16:35:29 UTC
++++ src/layApplication.cc
 @@ -20,6 +20,7 @@
  
  */
@@ -16,7 +16,7 @@
  
  namespace lay
  {
-@@ -351,7 +353,7 @@
+@@ -351,7 +353,7 @@ static void install_signal_handlers ()
    act.sa_sigaction = signal_handler;
    sigemptyset (&act.sa_mask);
    act.sa_flags = SA_SIGINFO;
