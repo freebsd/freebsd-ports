@@ -1,0 +1,11 @@
+--- base/test/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ base/test/BUILD.gn	2016-09-02 23:56:39.647089000 +0300
+@@ -249,7 +249,7 @@
+   ]
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   shared_library("malloc_wrapper") {
+     testonly = true
+     sources = [

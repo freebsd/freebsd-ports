@@ -1,0 +1,11 @@
+--- chrome/common/features.gni.orig	2016-10-06 04:02:14.000000000 +0300
++++ chrome/common/features.gni	2016-10-13 06:19:10.348914000 +0300
+@@ -21,7 +21,7 @@
+   enable_background = !is_ios && !is_android && !is_chromecast
+ 
+   enable_one_click_signin =
+-      is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
++      is_win || is_mac || is_bsd || (is_linux && !is_chromeos && !is_chromecast)
+ 
+   # Google Now is disabled to prepare for its removal.
+   # http://crbug.com/539674

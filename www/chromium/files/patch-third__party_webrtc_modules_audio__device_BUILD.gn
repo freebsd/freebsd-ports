@@ -1,0 +1,20 @@
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2016-10-06 04:05:36.000000000 +0300
++++ third_party/webrtc/modules/audio_device/BUILD.gn	2016-10-17 00:53:40.915668000 +0300
+@@ -52,7 +52,7 @@
+   ]
+ 
+   include_dirs = []
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     include_dirs += [ "linux" ]
+   }
+   if (is_ios) {
+@@ -98,7 +98,7 @@
+     if (rtc_use_dummy_audio_file_devices) {
+       defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
+     } else {
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += [
+           "linux/alsasymboltable_linux.cc",
+           "linux/alsasymboltable_linux.h",

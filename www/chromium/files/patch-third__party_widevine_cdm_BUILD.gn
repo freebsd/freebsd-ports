@@ -1,0 +1,29 @@
+--- third_party/widevine/cdm/BUILD.gn.orig	2016-08-03 22:02:40.000000000 +0300
++++ third_party/widevine/cdm/BUILD.gn	2016-09-03 01:41:31.936198000 +0300
+@@ -22,7 +22,7 @@
+     widevine_cdm_version_h_file =
+         "chromeos/$widevine_arch/widevine_cdm_version.h"
+     widevine_cdm_binary_files = [ "chromeos/$widevine_arch/libwidevinecdm.so" ]
+-  } else if (is_linux) {
++  } else if (is_linux || is_bsd) {
+     widevine_cdm_version_h_file = "linux/$widevine_arch/widevine_cdm_version.h"
+     widevine_cdm_binary_files = [ "linux/$widevine_arch/libwidevinecdm.so" ]
+   } else if (is_win) {
+@@ -130,7 +130,7 @@
+       ":widevinecdmadapter_resources",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       ldflags =
+           [ rebase_path("$root_out_dir/libwidevinecdm.so", root_build_dir) ]
+     } else if (is_win) {
+@@ -150,7 +150,7 @@
+ # This target exists for tests to depend on that pulls in a runtime dependency
+ # on the license server.
+ source_set("widevine_test_license_server") {
+-  if (is_chrome_branded && is_linux) {
++  if (is_chrome_branded && is_linux || is_bsd) {
+     deps = [
+       # TODO(jrummell)
+       # This target should be removed and targets should have data_deps on this target:

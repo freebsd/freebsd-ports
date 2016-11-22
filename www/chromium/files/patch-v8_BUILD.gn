@@ -1,0 +1,23 @@
+--- v8/BUILD.gn.orig	2016-10-06 04:05:41.000000000 +0300
++++ v8/BUILD.gn	2016-10-14 04:33:56.674783000 +0300
+@@ -2096,6 +2096,12 @@
+       "dl",
+       "rt",
+     ]
++  } else if (is_bsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "rt", "execinfo" ]
+   } else if (is_android) {
+     if (current_toolchain == host_toolchain) {
+       libs = [
+@@ -2227,6 +2233,7 @@
+     sources = [
+       "src/snapshot/mksnapshot.cc",
+     ]
++    libs = ["execinfo"]
+ 
+     configs = [ ":internal_config" ]
+ 

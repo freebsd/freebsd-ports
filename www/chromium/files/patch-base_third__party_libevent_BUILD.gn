@@ -1,0 +1,12 @@
+--- base/third_party/libevent/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ base/third_party/libevent/BUILD.gn	2016-10-12 18:30:43.933710000 +0300
+@@ -29,6 +29,9 @@
+   } else if (is_linux) {
+     sources += [ "epoll.c" ]
+     include_dirs = [ "linux" ]
++  } else if (is_bsd) {
++    sources += [ "kqueue.c" ]
++    include_dirs = [ "freebsd" ]
+   } else if (is_android) {
+     sources += [ "epoll.c" ]
+     include_dirs = [ "android" ]

@@ -1,0 +1,47 @@
+--- remoting/host/BUILD.gn.orig	2016-10-06 04:02:23.000000000 +0300
++++ remoting/host/BUILD.gn	2016-10-13 08:18:22.564549000 +0300
+@@ -420,7 +420,7 @@
+     deps += [ "//components/policy:generated" ]
+   }
+ 
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     libs += [ "pam" ]
+   }
+ 
+@@ -439,7 +439,7 @@
+       "input_injector_x11.cc",
+       "local_input_monitor_x11.cc",
+     ]
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       # These will already be filtered out on non-Linux.
+       sources -= [
+         "linux/unicode_to_keysym.cc",
+@@ -648,7 +648,7 @@
+     "win/worker_process_launcher_unittest.cc",
+   ]
+ 
+-  if (!use_x11 && is_linux) {
++  if (!use_x11 && (is_linux || is_bsd)) {
+     sources -= [ "linux/unicode_to_keysym_unittest.cc" ]
+   }
+   if (use_ozone || is_chromeos) {
+@@ -1217,7 +1217,7 @@
+     if (is_desktop_linux) {
+       deps += [ "//build/config/linux/gtk2" ]
+     }
+-    if ((is_linux && !is_chromeos) || is_mac) {
++    if ((is_linux && !is_chromeos) || is_mac || is_bsd) {
+       libs = [ "pam" ]
+     }
+ 
+@@ -1359,7 +1359,7 @@
+       }
+     }
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       copy("remoting_me2me_host_copy_script") {
+         sources = [
+           "linux/linux_me2me_host.py",

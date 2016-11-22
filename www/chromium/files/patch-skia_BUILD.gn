@@ -1,0 +1,46 @@
+--- skia/BUILD.gn.orig	2016-08-03 22:02:22.000000000 +0300
++++ skia/BUILD.gn	2016-10-09 06:26:37.625935000 +0300
+@@ -213,7 +213,7 @@
+   }
+ 
+   # Settings for text blitting, chosen to approximate the system browser.
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     defines += [
+       "SK_GAMMA_EXPONENT=1.2",
+       "SK_GAMMA_CONTRAST=0.2",
+@@ -405,7 +405,7 @@
+     sources -= [ "//third_party/skia/src/ports/SkFontHost_mac.cpp" ]
+   }
+ 
+-  if (!is_linux) {
++  if (!is_linux && !is_bsd) {
+     sources -= [
+       "//third_party/skia/src/fonts/SkFontMgr_fontconfig.cpp",
+       "//third_party/skia/src/ports/SkFontConfigInterface_direct.cpp",
+@@ -416,14 +416,14 @@
+ 
+   # Add the files for the SkFontMgr_Android. This is used to emulate android
+   # fonts on linux. See content/zygote/zygote_main_linux.cc
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
+       "//third_party/skia/src/ports/SkFontMgr_android.cpp",
+       "//third_party/skia/src/ports/SkFontMgr_android_parser.cpp",
+     ]
+   }
+ 
+-  if (!is_linux && !is_android) {
++  if (!is_linux && !is_bsd && !is_android) {
+     sources -= [
+       "//third_party/skia/src/ports/SkFontHost_FreeType.cpp",
+       "//third_party/skia/src/ports/SkFontHost_FreeType_common.cpp",
+@@ -463,7 +463,7 @@
+     "//third_party/zlib",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (use_pango) {
+       configs += [ "//build/config/linux/pangocairo" ]
+     }

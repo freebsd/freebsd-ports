@@ -1,0 +1,37 @@
+--- third_party/angle/BUILD.gn.orig	2016-10-06 04:04:51.000000000 +0300
++++ third_party/angle/BUILD.gn	2016-10-31 01:36:29.431524000 +0200
+@@ -15,6 +15,12 @@
+   }
+ }
+ 
++if (use_x11) {
++  pkg_config("x11") {
++    packages = [ "x11", "xi", "xext" ]
++  }
++}
++
+ angle_git_is_present = exec_script("src/commit_id.py",
+                                    [
+                                      "check",
+@@ -350,11 +356,7 @@
+     if (use_x11) {
+       sources += rebase_path(gles_gypi.libangle_gl_glx_sources, ".", "src")
+       deps += [ "src/third_party/libXNVCtrl:libXNVCtrl" ]
+-      libs += [
+-        "X11",
+-        "Xi",
+-        "Xext",
+-      ]
++      configs += [ ":x11" ]
+     }
+     if (is_mac) {
+       sources += rebase_path(gles_gypi.libangle_gl_cgl_sources, ".", "src")
+@@ -492,7 +494,7 @@
+ 
+ config("angle_util_config") {
+   include_dirs = [ "util" ]
+-  if (is_linux && use_x11) {
++  if ((is_linux || is_bsd) && use_x11) {
+     libs = [ "X11" ]
+   }
+ }

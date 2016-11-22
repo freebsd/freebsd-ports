@@ -1,9 +1,10 @@
---- extensions/browser/api/serial/serial_api.cc.orig	2016-07-22 00:06:55.000000000 -0400
-+++ extensions/browser/api/serial/serial_api.cc	2016-08-03 15:23:41.022195000 -0400
-@@ -86,11 +86,13 @@
+--- extensions/browser/api/serial/serial_api.cc.orig	2016-08-12 04:05:07.712438000 +0300
++++ extensions/browser/api/serial/serial_api.cc	2016-08-12 04:06:56.974572000 +0300
+@@ -85,12 +85,13 @@
+ 
  void SerialGetDevicesFunction::Work() {
    DCHECK_CURRENTLY_ON(BrowserThread::FILE);
- 
+-
 +#if !defined(OS_BSD)
    std::unique_ptr<device::SerialDeviceEnumerator> enumerator =
        device::SerialDeviceEnumerator::Create();

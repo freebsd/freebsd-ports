@@ -1,0 +1,13 @@
+--- build/config/sanitizers/sanitizers.gni.orig	2016-10-06 04:02:08.000000000 +0300
++++ build/config/sanitizers/sanitizers.gni	2016-10-24 22:57:06.565590000 +0300
+@@ -53,8 +53,8 @@
+   # See http://clang.llvm.org/docs/ControlFlowIntegrity.html
+   #
+   # TODO(pcc): Remove this flag if/when CFI is enabled in all official builds.
+-  is_cfi = target_os == "linux" && !is_chromeos && target_cpu == "x64" &&
+-           is_chrome_branded && is_official_build
++  is_cfi = (target_os == "linux" || target_os == "bsd") && !is_chromeos &&
++           target_cpu == "x64" && is_chrome_branded && is_official_build
+ 
+   # Enable checks for bad casts: derived cast and unrelated cast.
+   # TODO(krasin): remove this, when we're ready to add these checks by default.

@@ -1,0 +1,11 @@
+--- gpu/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
++++ gpu/BUILD.gn	2016-09-02 23:58:15.934039000 +0300
+@@ -122,7 +122,7 @@
+     libs += [ "android" ]
+     deps += [ "//ui/android:ui_java" ]
+   }
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }

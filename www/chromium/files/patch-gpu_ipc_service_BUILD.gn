@@ -1,0 +1,16 @@
+--- gpu/ipc/service/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
++++ gpu/ipc/service/BUILD.gn	2016-10-10 14:57:36.952170000 +0300
+@@ -92,11 +92,12 @@
+     ]
+     libs += [ "android" ]
+   }
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [ "image_transport_surface_linux.cc" ]
+   }
+   if (use_x11) {
+     sources += [ "x_util.h" ]
++    configs += [ "//build/config/linux:x11" ]
+   }
+   if (use_ozone) {
+     sources += [

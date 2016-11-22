@@ -1,0 +1,18 @@
+--- third_party/ffmpeg/BUILD.gn.orig	2016-08-03 22:03:29.000000000 +0300
++++ third_party/ffmpeg/BUILD.gn	2016-10-10 14:53:20.790578000 +0300
+@@ -6,8 +6,13 @@
+ import("ffmpeg_generated.gni")
+ 
+ # Path to platform configuration files.
+-platform_config_root =
+-    "chromium/config/$ffmpeg_branding/$os_config/$ffmpeg_arch"
++if (!is_bsd) {
++  platform_config_root =
++      "chromium/config/$ffmpeg_branding/$os_config/$ffmpeg_arch"
++} else {
++  platform_config_root =
++      "chromium/config/$ffmpeg_branding/linux/$ffmpeg_arch"
++}
+ 
+ has_yasm_deps = ffmpeg_yasm_sources != [] && (current_cpu == "x86" || current_cpu == "x64") && os_config != "linux-noasm"
+ if (has_yasm_deps) {

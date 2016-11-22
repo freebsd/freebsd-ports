@@ -1,0 +1,27 @@
+--- gpu/config/BUILD.gn.orig	2016-10-06 04:02:20.000000000 +0300
++++ gpu/config/BUILD.gn	2016-10-29 18:18:32.848959000 +0300
+@@ -8,7 +8,8 @@
+ 
+ declare_args() {
+   # Use the PCI lib to collect GPU information on Linux.
+-  use_libpci = is_linux && (!is_chromecast || is_cast_desktop_build) &&
++  use_libpci = (is_linux || is_bsd) &&
++               (!is_chromecast || is_cast_desktop_build) &&
+                (use_x11 || use_ozone)
+ }
+ 
+@@ -97,6 +98,14 @@
+       ]
+     }
+   }
++
++  if (is_bsd) {
++    sources -= [
++      "gpu_info_collector_linux.cc",
++      "gpu_info_collector_linux.h"
++    ]
++  }
++
+   if (is_mac) {
+     libs = [
+       "IOKit.framework",

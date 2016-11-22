@@ -1,0 +1,11 @@
+--- content/app/BUILD.gn.orig	2016-10-06 04:02:18.000000000 +0300
++++ content/app/BUILD.gn	2016-10-13 06:35:58.585406000 +0300
+@@ -66,7 +66,7 @@
+     ]
+   }
+ 
+-  if (is_linux && enable_plugins) {
++  if ((is_linux || is_bsd) && enable_plugins) {
+     content_app_deps += [ "//content/ppapi_plugin:ppapi_plugin_sources" ]
+   }
+ 

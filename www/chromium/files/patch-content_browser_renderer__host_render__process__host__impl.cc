@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2016-05-20 17:18:26 UTC
-+++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -366,7 +366,7 @@ SiteProcessMap* GetSiteProcessMapForBrow
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2016-07-20 22:03:24.000000000 +0300
++++ content/browser/renderer_host/render_process_host_impl.cc	2016-08-18 02:32:43.439813000 +0300
+@@ -359,7 +359,7 @@
    return map;
  }
  
@@ -9,7 +9,7 @@
  // This static member variable holds the zygote communication information for
  // the renderer.
  ZygoteHandle g_render_zygote;
-@@ -399,7 +399,7 @@ class RendererSandboxedProcessLauncherDe
+@@ -392,7 +392,7 @@
    }
  
  #elif defined(OS_POSIX)
@@ -18,7 +18,7 @@
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -539,7 +539,7 @@ void RenderProcessHost::SetMaxRendererPr
+@@ -514,7 +514,7 @@
    g_max_renderer_count_override = count;
  }
  
@@ -27,3 +27,12 @@
  // static
  void RenderProcessHostImpl::EarlyZygoteLaunch() {
    DCHECK(!g_render_zygote);
+@@ -684,7 +684,7 @@
+   renderer_prefix =
+       browser_command_line.GetSwitchValueNative(switches::kRendererCmdPrefix);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   int flags = renderer_prefix.empty() ? ChildProcessHost::CHILD_ALLOW_SELF
+                                       : ChildProcessHost::CHILD_NORMAL;
+ #else

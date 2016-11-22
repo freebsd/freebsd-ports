@@ -1,0 +1,11 @@
+--- third_party/zlib/BUILD.gn.orig	2016-08-03 22:02:40.000000000 +0300
++++ third_party/zlib/BUILD.gn	2016-09-29 17:46:32.878236000 +0300
+@@ -115,7 +115,7 @@
+       "contrib/minizip/iowin32.h",
+     ]
+   }
+-  if (is_mac || is_ios || is_android) {
++  if (is_mac || is_ios || is_android || is_bsd) {
+     # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
+     # use fopen, ftell, and fseek instead on these systems.
+     defines = [ "USE_FILE32API" ]

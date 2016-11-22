@@ -1,0 +1,20 @@
+--- third_party/glslang/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/glslang/BUILD.gn	2016-09-03 01:42:51.603010000 +0300
+@@ -8,7 +8,7 @@
+   include_dirs = [ "src" ]
+ 
+   defines = []
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     defines += [ "GLSLANG_OSINCLUDE_UNIX" ]
+   } else if (is_win) {
+     defines += [ "GLSLANG_OSINCLUDE_WIN32" ]
+@@ -132,7 +132,7 @@
+     "src/glslang/Public/ShaderLang.h",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     sources += [ "src/glslang/OSDependent/Unix/ossource.cpp" ]
+   } else if (is_win) {
+     sources += [

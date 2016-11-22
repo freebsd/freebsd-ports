@@ -1,0 +1,19 @@
+--- media/capture/BUILD.gn.orig	2016-08-03 22:02:20.000000000 +0300
++++ media/capture/BUILD.gn	2016-10-10 16:10:21.736539000 +0300
+@@ -114,6 +114,16 @@
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "video/linux/video_capture_device_linux.cc",
++      "video/linux/video_capture_device_linux.h",
++      "video/linux/video_capture_device_factory_linux.cc",
++      "video/linux/video_capture_device_factory_linux.h",
++      "video/linux/v4l2_capture_delegate.cc",
++    ]
++  }
++
+   if (is_win) {
+     public_deps += [ "//media/base/win" ]
+     libs = [

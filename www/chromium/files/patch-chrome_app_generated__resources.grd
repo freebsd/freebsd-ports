@@ -1,11 +1,38 @@
---- chrome/app/generated_resources.grd.orig	2016-05-11 19:02:13 UTC
-+++ chrome/app/generated_resources.grd
-@@ -6564,7 +6564,7 @@ Keep your key file in a safe place. You 
+--- chrome/app/generated_resources.grd.orig	2016-10-06 04:02:10.000000000 +0300
++++ chrome/app/generated_resources.grd	2016-10-14 07:09:15.305398000 +0300
+@@ -6841,7 +6841,7 @@
        <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
            Right-to-left
        </message>
 -      <if expr="is_win or is_linux">
-+      <if expr="is_win or is_linux or is_posix">
++      <if expr="is_win or is_linux or is_bsd">
          <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
            Enable Input IME API
+         </message>
+@@ -10134,7 +10134,7 @@
+       <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
+         Appearance
+       </message>
+-      <if expr="not is_linux or chromeos">
++      <if expr="not is_linux or not is_bsd or chromeos">
+         <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
+           Themes
+         </message>
+@@ -10142,7 +10142,7 @@
+       <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
+         Reset to default theme
+       </message>
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_linux or is_bsd and not chromeos">
+         <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
+           Use GTK+ theme
+         </message>
+@@ -11429,7 +11429,7 @@
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_linux or is_bsd and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS_MENU" desc="The menu entry text in the tab strip context menu.  This toggles the system title bar and window borders (window decorations) on linux.">
+           Use system title bar and borders
          </message>

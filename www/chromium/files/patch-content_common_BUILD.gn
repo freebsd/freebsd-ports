@@ -1,0 +1,27 @@
+--- content/common/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
++++ content/common/BUILD.gn	2016-10-09 05:21:51.439131000 +0300
+@@ -179,7 +179,7 @@
+   if (use_seccomp_bpf) {
+     defines += [ "USE_SECCOMP_BPF" ]
+   } else {
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources -= [
+         "sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc",
+         "sandbox_linux/bpf_cros_arm_gpu_policy_linux.h",
+@@ -193,6 +193,15 @@
+         "sandbox_linux/bpf_utility_policy_linux.h",
+         "sandbox_linux/sandbox_bpf_base_policy_linux.cc",
+         "sandbox_linux/sandbox_bpf_base_policy_linux.h",
++        "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
++        "sandbox_linux/sandbox_seccomp_bpf_linux.h",
++      ]
++    }
++    if (is_bsd) {
++      sources -= [
++        "sandbox_linux/sandbox_linux.cc",
++        "sandbox_linux/sandbox_linux.h",
++        "sandbox_linux/sandbox_init_linux.cc",
+       ]
+     }
+     if (is_android) {

@@ -1,0 +1,11 @@
+--- chrome/browser/resources/safe_browsing/BUILD.gn.orig	2016-08-03 22:02:13.000000000 +0300
++++ chrome/browser/resources/safe_browsing/BUILD.gn	2016-09-20 02:51:43.112078000 +0300
+@@ -26,6 +26,8 @@
+     target_arch = "mac"
+   } else if (is_linux) {
+     target_arch = "linux"
++  } else if (is_bsd) {
++    target_arch = "bsd"
+   } else {
+     # This will cause the script to fail.
+     target_arch = "unknown_target_arch"
