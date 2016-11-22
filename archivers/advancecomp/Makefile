@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	advancecomp
-PORTVERSION=	1.19
-PORTREVISION=	1
+PORTVERSION=	1.23
 CATEGORIES=	archivers
 MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libzopfli.so:archivers/zopfli
 
 USES=		gmake
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	zopfli_SOURCES="" am__objects_2=""
+MAKE_ARGS=	zopfli_SOURCES="" am__objects_3=""
 CPPFLAGS+=	-I${LOCALBASE}/include/zopfli
 LDFLAGS+=	-L${LOCALBASE}/lib -lzopfli
 
