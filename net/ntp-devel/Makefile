@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.93
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -22,6 +22,7 @@ USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig ssl gettext-runtime
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-leap-smear
 
 TEST_TARGET=	check
 
