@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2014-12-13 00:57:23 UTC
++++ Makefile.am
+@@ -2,7 +2,6 @@ SUBDIRS = \
+ 	src \
+ 	data \
+ 	etc \
+-	docs \
+ 	m4macros \
+ 	tests
+ 
