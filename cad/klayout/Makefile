@@ -10,7 +10,7 @@ COMMENT=	Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++0x gmake python:build
+USES=		compiler:c++0x execinfo gmake python:build
 USE_RUBY=	yes
 USE_QT4=	corelib designer gui network moc_build sql uic_build \
 		rcc_build qt3support xml
@@ -33,7 +33,7 @@ do-build:
 	cd ${WRKSRC} && \
 	    ${SETENV} CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-		_MAKE_JOBS="${_MAKE_JOBS}" \
+		_MAKE_JOBS="${_MAKE_JOBS}" LOCALBASE="${LOCALBASE}" \
 		${SH} build.sh -platform ${PLATFORMKEYWORD} \
 		-qtbin ${QT_PREFIX}/bin \
 		-qtinc ${QT_INCDIR} \
