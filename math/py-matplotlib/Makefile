@@ -3,6 +3,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib gettext pkgconfig python:2 shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext pkgconfig python:2.7 shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
