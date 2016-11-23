@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata:DEFAULT
 GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		Sirupsen:logrus:219c8cb:logrus \
-		aerospike:aerospike-client-go:45863b7:aerospike_client_go \
+		aerospike:aerospike-client-go:7f3a312:aerospike_client_go \
 		amir:raidman:53c1b96:raidman \
 		aws:aws-sdk-go:13a1206:aws_sdk_go \
 		beorn7:perks:3ac7bf7:perks \
@@ -40,7 +40,7 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		go-sql-driver:mysql:1fca743:mysql \
 		gobwas:glob:49571a1:glob \
 		golang:protobuf:552c7b9:protobuf \
-		golang:snappy:427fb6f:snappy \
+		golang:snappy:d9eb7a3:snappy \
 		gonuts:go-shellquote:e842a11:go_shellquote \
 		gorilla:context:1ea2538:context \
 		gorilla:mux:c9e326e:mux \
@@ -48,8 +48,9 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		hashicorp:consul:5aa9045:consul \
 		hpcloud:tail:b294095:tail \
 		influxdata:config:b79f682:config \
-		influxdata:influxdb:e094138:influxdb \
+		influxdata:influxdb:fc57c0f:influxdb \
 		influxdata:toml:af4df43:toml \
+		influxdata:wlog:7c63b0a:wlog \
 		kardianos:osext:29ae4ff:osext \
 		kardianos:service:5e33559:service \
 		klauspost:crc32:19b0b33:crc32 \
@@ -58,8 +59,8 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		miekg:dns:cce6c13:dns \
 		mreiferson:go-snappystream:028eae7:go_snappystream \
 		naoina:go-stringutil:6b638e9:go_stringutil \
-		nats-io:nats:b13fc9d:nats \
-		nats-io:nuid:4f84f5f:nuid \
+		nats-io:go-nats:ea8b4fd:go_nats \
+		nats-io:nuid:a5152d6:nuid \
 		nsqio:go-nsq:0b80d6f:go_nsq \
 		opencontainers:runc:89ab7f2:runc \
 		prometheus:client_golang:18acf99:client_golang \
@@ -68,7 +69,7 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		prometheus:procfs:406e5b7:procfs \
 		samuel:go-zookeeper:218e9c8:go_zookeeper \
 		shirou:gopsutil:4d0c402:gopsutil \
-		soniah:gosnmp:eb32571:gosnmp \
+		soniah:gosnmp:3fe3beb:gosnmp \
 		sparrc:gdm:66023a5:gdm \
 		streadway:amqp:b4f3cea:amqp \
 		stretchr:testify:1f4a164:testify \
@@ -77,7 +78,7 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		wvanbergen:kazoo-go:0f76871:kazoo_go \
 		yuin:gopher-lua:bf3808a:gopher_lua \
 		zensqlmonitor:go-mssqldb:ffe5510:go_mssqldb \
-		golang:crypto:5dc8cb4:crypto \
+		golang:crypto:c197bcf:crypto \
 		golang:net:6acef71:net \
 		golang:text:a71fd10:text \
 		golang:tools:fc2b74b:tools \
@@ -141,11 +142,10 @@ post-patch:
 	${WRKSRC}/src/gopkg.in/dancannon \
 	${WRKSRC}/src/gopkg.in/fatih
 	cd ${WRKSRC} && ${MV} CHANGELOG.md CONTRIBUTING.md Godeps Godeps_windows \
-		LICENSE Makefile README.md accumulator.go agent circle.yml cmd docs etc filter \
-		input.go internal metric.go metric_test.go output.go plugins scripts testutil \
+		LICENSE Makefile README.md accumulator.go agent aggregator.go circle.yml cmd docs etc filter \
+		input.go internal logger metric.go metric_test.go output.go plugins processor.go scripts testutil \
 		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-	@${LN} -s ${WRKSRC}/src/github.com/aerospike/aerospike-client-go ${WRKSRC}/src/github.com/sparrc/aerospike-client-go
-	@${MV} ${WRKSRC_sarama} ${WRKSRC}/src/github.com/Shopify/sarama ;\
+	${MV} ${WRKSRC_sarama} ${WRKSRC}/src/github.com/Shopify/sarama ;\
 	${MV} ${WRKSRC_logrus} ${WRKSRC}/src/github.com/Sirupsen/logrus ;\
 	${MV} ${WRKSRC_aerospike_client_go} ${WRKSRC}/src/github.com/aerospike/aerospike-client-go ;\
 	${MV} ${WRKSRC_raidman} ${WRKSRC}/src/github.com/amir/raidman ;\
@@ -176,6 +176,7 @@ post-patch:
 	${MV} ${WRKSRC_config} ${WRKSRC}/src/github.com/influxdata/config ;\
 	${MV} ${WRKSRC_influxdb} ${WRKSRC}/src/github.com/influxdata/influxdb ;\
 	${MV} ${WRKSRC_toml} ${WRKSRC}/src/github.com/influxdata/toml ;\
+	${MV} ${WRKSRC_wlog} ${WRKSRC}/src/github.com/influxdata/wlog ;\
 	${MV} ${WRKSRC_osext} ${WRKSRC}/src/github.com/kardianos/osext ;\
 	${MV} ${WRKSRC_service} ${WRKSRC}/src/github.com/kardianos/service ;\
 	${MV} ${WRKSRC_crc32} ${WRKSRC}/src/github.com/klauspost/crc32 ;\
@@ -184,7 +185,7 @@ post-patch:
 	${MV} ${WRKSRC_dns} ${WRKSRC}/src/github.com/miekg/dns ;\
 	${MV} ${WRKSRC_go_snappystream} ${WRKSRC}/src/github.com/mreiferson/go-snappystream ;\
 	${MV} ${WRKSRC_go_stringutil} ${WRKSRC}/src/github.com/naoina/go-stringutil ;\
-	${MV} ${WRKSRC_nats} ${WRKSRC}/src/github.com/nats-io/nats ;\
+	${MV} ${WRKSRC_go_nats} ${WRKSRC}/src/github.com/nats-io/nats ;\
 	${MV} ${WRKSRC_nuid} ${WRKSRC}/src/github.com/nats-io/nuid ;\
 	${MV} ${WRKSRC_go_nsq} ${WRKSRC}/src/github.com/nsqio/go-nsq ;\
 	${MV} ${WRKSRC_runc} ${WRKSRC}/src/github.com/opencontainers/runc ;\
