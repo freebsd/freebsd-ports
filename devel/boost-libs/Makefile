@@ -27,14 +27,6 @@ ICU_VARS_OFF=		BJAM_ARGS+=boost.locale.icu=off
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
 BJAM_ARGS+=	--without-python
-.if defined(X_BUILD_FOR)
-BJAM_ARGS+=	--without-context --without-coroutine \
-		--without-locale --without-log
-PLIST_SUB+=	COROUTINE="@comment " CONTEXT="@comment " \
-		LOCALE="@comment " LOG="@comment "
-.else
-PLIST_SUB+=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
-.endif
 
 BROKEN_aarch64=		Fails to compile: multiple instances of error: platform not supported
 
