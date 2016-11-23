@@ -3,7 +3,7 @@
 
 PORTNAME=	fritzing
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/fritzing/fritzing-app/archive/:source \
 		https://github.com/fritzing/fritzing-parts/archive/:parts

@@ -3,6 +3,7 @@
 
 PORTNAME=	quantis
 DISTVERSION=	v13.11.08
+PORTREVISION=	1
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
 		LOCAL/ale

@@ -1,6 +1,6 @@
---- tools/build/v2/tools/clang-linux.jam.orig	2011-06-06 22:36:21.000000000 +0200
-+++ tools/build/v2/tools/clang-linux.jam	2014-02-09 22:19:34.000000000 +0100
-@@ -31,7 +31,7 @@
+--- tools/build/src/tools/clang-linux.jam.orig	2016-09-21 14:33:28 UTC
++++ tools/build/src/tools/clang-linux.jam
+@@ -31,7 +31,7 @@ generators.override clang-linux.compile.
  generators.override clang-linux.compile.c++.pch : pch.default-cpp-pch-generator ;
   
  type.set-generated-target-suffix PCH
@@ -9,7 +9,7 @@
  
  toolset.inherit-rules clang-linux : gcc ;
  toolset.inherit-flags clang-linux : gcc 
-@@ -95,24 +95,24 @@
+@@ -96,24 +96,24 @@ rule compile.c++ ( targets * : sources *
    gcc.setup-fpic $(targets) : $(sources) : $(properties) ;
    gcc.setup-address-model $(targets) : $(sources) : $(properties) ;
  
@@ -40,7 +40,7 @@
  }
  
  rule compile.c ( targets * : sources * : properties * )
-@@ -121,25 +121,25 @@
+@@ -122,25 +122,25 @@ rule compile.c ( targets * : sources * :
    gcc.setup-fpic $(targets) : $(sources) : $(properties) ;
    gcc.setup-address-model $(targets) : $(sources) : $(properties) ;    
  
@@ -72,7 +72,7 @@
  }
  
  ###############################################################################
-@@ -152,7 +152,7 @@
+@@ -153,7 +153,7 @@ rule compile.c++.pch ( targets * : sourc
  }
  
  actions compile.c++.pch {
@@ -81,7 +81,7 @@
  }
  
  rule compile.c.pch ( targets * : sources * : properties * ) {
-@@ -163,7 +163,7 @@
+@@ -164,7 +164,7 @@ rule compile.c.pch ( targets * : sources
  
  actions compile.c.pch
  {

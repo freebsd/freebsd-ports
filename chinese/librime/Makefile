@@ -4,6 +4,7 @@
 PORTNAME=	librime
 PORTVERSION=	1.2.9
 DISTVERSIONPREFIX=	rime-
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lichray@gmail.com

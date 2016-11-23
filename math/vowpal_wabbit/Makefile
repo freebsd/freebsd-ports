@@ -3,6 +3,7 @@
 
 PORTNAME=	vowpal_wabbit
 PORTVERSION=	7.10
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	demon@FreeBSD.org

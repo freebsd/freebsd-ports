@@ -3,7 +3,7 @@
 
 PORTNAME=	anyterm
 PORTVERSION=	1.1.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://anyterm.org/download/ \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \

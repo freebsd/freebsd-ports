@@ -3,6 +3,7 @@
 
 PORTNAME=	kenlm
 PORTVERSION=	20140830
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://kheafield.com/code/
 DISTNAME=	${PORTNAME}

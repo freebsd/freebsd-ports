@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	14
+PORTREVISION=	0
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
@@ -25,8 +25,6 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 .include "${.CURDIR}/../boost-all/common.mk"
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
-
-BROKEN_aarch64=		Fails to compile: multiple instances of error: platform not supported
 
 MAKE_ARGS+=	--without-python
 ALL_TARGET=	stage
