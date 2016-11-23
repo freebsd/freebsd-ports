@@ -22,4 +22,6 @@ USES=		autoreconf gmake libtool pathfix pkgconfig
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
+BROKEN_sparc64=	Fails to compile: no atomic ops available for FreeBSD/sparc64
+
 .include <bsd.port.mk>
