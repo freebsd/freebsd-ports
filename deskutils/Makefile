@@ -261,7 +261,6 @@
     SUBDIR += xchm
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin
-    SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-notifyd
     SUBDIR += xfce4-tumbler
     SUBDIR += xfce4-volumed
