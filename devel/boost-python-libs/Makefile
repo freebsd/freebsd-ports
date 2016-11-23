@@ -18,14 +18,13 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
 LIB_DEPENDS+=	libboost_thread.so:devel/boost-libs
+MAKE_ARGS+=	--with-python
+ALL_TARGET=	stage
 
-BUILD_DEPENDS+=	${BJAM}:devel/boost-jam
+BUILD_DEPENDS+=	bjam:devel/boost-jam
 
-do-build:
+pre-build:
 	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
-# build the library
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} --with-python stage
 
 do-install:
 	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${STAGEDIR}${PREFIX}/lib
