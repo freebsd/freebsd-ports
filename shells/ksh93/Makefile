@@ -19,7 +19,7 @@ MASTER_SITES=	http://www2.research.att.com/~astopen/download/tgz/ \
 DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	Official AT&T release of KornShell 93
 
 LICENSE=	EPL
