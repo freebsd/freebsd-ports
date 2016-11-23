@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -18,8 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libssh2.so:security/libssh2
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		xsltproc:textproc/libxslt
-RUN_DEPENDS=	dnsmasq:dns/dnsmasq \
-		dmidecode:sysutils/dmidecode
+RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 
 OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL
 OPTIONS_DEFAULT=	GNUTLS READLINE
@@ -163,4 +163,10 @@ post-install:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
+
+.include <bsd.port.post.mk>
