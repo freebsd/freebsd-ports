@@ -2,6 +2,7 @@
 
 PORTNAME=	node
 PORTVERSION=	7.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -13,8 +14,17 @@ COMMENT=	V8 JavaScript for client and server (7.x)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
+OPTIONS_DEFAULT=	DTRACE
 OPTIONS_SUB=	yes
+
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+
+OPTIONS_EXCLUDE_FreeBSD_9+=	DTRACE
+OPTIONS_EXCLUDE_FreeBSD_10+=	DTRACE
+OPTIONS_EXCLUDE+=		${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
 
 BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USES_OFF=		ssl
@@ -23,7 +33,9 @@ BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig localbase
+USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig \
+		localbase shebangfix
+
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -35,6 +47,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--shared-cares \
 		--shared-libuv \
 		--shared-zlib
+
+SHEBANG_FILES=	tools/specialize_node_d.py tools/genv8constants.py
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
@@ -69,6 +83,13 @@ CONFIGURE_ARGS=	--openssl-no-asm
 .if ${COMPILER_TYPE} == gcc
 # GCC does not expose std::snprintf() without this define
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
+
+.if ${PORT_OPTIONS:MDTRACE}
+PLIST_SUB+=	DTRACE=""
+CONFIGURE_ARGS+=	--with-dtrace
+.else
+PLIST_SUB+=	DTRACE="@comment "
 .endif
 
 post-patch:
