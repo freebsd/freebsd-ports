@@ -70,7 +70,6 @@ LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
 CONFIGURE_ARGS+=--enable-languages="cpp qt"
 USES+=		compiler:c++11-lib pkgconfig
 USE_QT5=	buildtools_build core testlib
-CONFLICTS_INSTALL=	kdepimlibs-4.*
 .  endif
 
 .  if ${SLAVEPORT} == "python"
