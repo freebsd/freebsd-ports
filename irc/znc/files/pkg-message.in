@@ -9,3 +9,11 @@ Please visit the following URL for more information:
 http://wiki.znc.in/ChangeLog/1.0
 
 *****************************************************************************
+
+For generate your config file using znc user, execute:
+
+su -m znc -c 'znc -d %%ETCDIR%% --makeconf'
+or
+sudo -u znc znc -d %%ETCDIR%% --makeconf
+
+*****************************************************************************

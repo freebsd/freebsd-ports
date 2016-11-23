@@ -3,12 +3,12 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Advanced IRC bouncer
 
 LICENSE=	APACHE20
@@ -16,10 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
+SUB_FILES=	pkg-message
 USES=		compiler:c++11-lib cpe gmake iconv pathfix pkgconfig
 MAKE_ENV=	V=1
 
 PORTDOCS=	README.md
+
+USERS=		znc
+GROUPS=		znc
 
 OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 OPENSSL PERL PYTHON TCL
 OPTIONS_DEFAULT=	OPENSSL PERL
@@ -73,5 +77,8 @@ post-install-DOCS-on:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
