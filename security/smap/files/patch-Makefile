@@ -1,0 +1,13 @@
+--- Makefile.orig	2007-05-10 13:45:31 UTC
++++ Makefile
+@@ -8,8 +8,8 @@
+ #
+ # $Id: Makefile,v 1.15 2007/05/10 13:45:31 hscholz Exp $
+ 
+-LDFLAGS= -L/usr/local/lib -lm
+-CFLAGS= -Wall -g -I/usr/local/include
++LDFLAGS+= -lm
++CFLAGS+= -Wall
+ CFLAGS+= -DHAVE_RANDOM -DRAW_SOCKET
+ CC?= gcc
+ OBJS= error.o fingerprint.o helpers.o icmpping.o localip.o request.o randomizer.o response.o scan.o sip.o smap.o stats.o stun.o test_accept.o test_allow.o test_supported.o test_headers.o transport_udp.o transport_tcp.o
