@@ -33,9 +33,6 @@ BROKEN_aarch64=		Fails to compile: multiple instances of error: platform not sup
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
-	#Compatibility layer to avoid rebuilding everything this time
-	@cd ${WRKSRC}/stage/lib && \
-		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.${PORTVERSION}}.5; done )
 
 do-install:
 	@cd ${WRKSRC} && \
