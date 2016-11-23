@@ -1209,9 +1209,9 @@ lib/libmailtransport.so.%%KDE4_KDELIBS_VERSION%%
 lib/libmicroblog.so
 lib/libmicroblog.so.4
 lib/libmicroblog.so.%%KDE4_KDELIBS_VERSION%%
-lib/libqgpgme.so
-lib/libqgpgme.so.1
-lib/libqgpgme.so.1.0.1
+lib/libqgpgme4.so
+lib/libqgpgme4.so.1
+lib/libqgpgme4.so.1.0.1
 lib/libsyndication.so
 lib/libsyndication.so.4
 lib/libsyndication.so.%%KDE4_KDELIBS_VERSION%%
