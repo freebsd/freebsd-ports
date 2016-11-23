@@ -3,18 +3,20 @@
 
 PORTNAME=	super-smack
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking, stress testing, and load generation tool for Databases
 
+LICENSE=	GPLv2+
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
+CONFIGURE_ARGS=	--with-smacks-dir=${DATADIR}
 MAKE_JOBS_UNSAFE=	yes
 
-PORTDOCS=	README TUTORIAL
+PORTDOCS=	CHANGES README MANUAL TUTORIAL
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		DB
@@ -31,7 +33,7 @@ PGSQL_CONFIGURE_ON=	--with-pgsql \
 			--with-pgsql-include=${LOCALBASE}/include \
 			--with-pgsql-lib=${LOCALBASE}/lib
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
