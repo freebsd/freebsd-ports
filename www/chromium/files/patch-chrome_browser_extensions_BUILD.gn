@@ -1,0 +1,24 @@
+--- chrome/browser/extensions/BUILD.gn.orig	2016-10-06 04:02:11.000000000 +0300
++++ chrome/browser/extensions/BUILD.gn	2016-10-13 05:50:49.572236000 +0300
+@@ -186,7 +186,7 @@
+     sources -= [ "global_shortcut_listener_ozone.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//build/linux:fontconfig" ]
+ 
+     if (use_dbus) {
+@@ -252,6 +252,12 @@
+     defines += [ "ENABLE_HOTWORDING" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "api/image_writer_private/removable_storage_provider_linux.cc",
++    ]
++  }
++
+   if (enable_service_discovery) {
+     sources += rebase_path(
+             gypi_values.chrome_browser_extensions_service_discovery_sources,

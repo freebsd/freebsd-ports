@@ -1,0 +1,66 @@
+--- build/config/BUILDCONFIG.gn.orig	2016-10-06 04:02:08.000000000 +0300
++++ build/config/BUILDCONFIG.gn	2016-10-13 04:48:31.029743000 +0300
+@@ -134,12 +134,13 @@
+   is_debug = !is_official_build
+ 
+   # Whether we're a traditional desktop unix.
+-  is_desktop_linux = current_os == "linux"
++  is_desktop_linux = current_os == "linux" || current_os == "bsd"
+ 
+   # Set to true when compiling with the Clang compiler. Typically this is used
+   # to configure warnings.
+   is_clang = current_os == "mac" || current_os == "ios" ||
+-             current_os == "linux" || current_os == "chromeos"
++             current_os == "linux" || current_os == "chromeos" ||
++             current_os == "bsd"
+ 
+   # Allows the path to a custom target toolchain to be injected as a single
+   # argument, and set as the default toolchain.
+@@ -183,8 +184,8 @@
+   # TODO(dpranke): Add some sort of assert here that verifies that
+   # no toolchain omitted host_toolchain from its toolchain_args().
+ 
+-  if (host_os == "linux") {
+-    if (target_os != "linux") {
++  if (host_os == "linux" || host_os == "bsd") {
++    if (target_os != "linux" || target_os != "bsd") {
+       # TODO(dpranke) - is_clang normally applies only to the target
+       # build, and there is no way to indicate that you want to override
+       # it for both the target build *and* the host build. Do we need to
+@@ -220,7 +221,7 @@
+   } else {
+     _default_toolchain = "//build/toolchain/android:$target_cpu"
+   }
+-} else if (target_os == "chromeos" || target_os == "linux") {
++} else if (target_os == "chromeos" || target_os == "linux" || target_os == "bsd") {
+   # See comments in build/toolchain/cros/BUILD.gn about board compiles.
+   if (is_clang) {
+     _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
+@@ -340,8 +341,17 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++} else if (current_os == "bsd") {
++  is_android = false
++  is_chromeos = false
++  is_ios = false
++  is_linux = false
++  is_bsd = true
++  is_mac = false
++  is_nacl = false
++  is_posix = true
++  is_win = false
+ }
+-
+ # =============================================================================
+ # SOURCES FILTERS
+ # =============================================================================
+@@ -410,7 +420,7 @@
+ if (!is_mac && !is_ios) {
+   sources_assignment_filter += [ "*.mm" ]
+ }
+-if (!is_linux) {
++if (!is_linux && !is_bsd) {
+   sources_assignment_filter += [
+     "*_linux.h",
+     "*_linux.cc",

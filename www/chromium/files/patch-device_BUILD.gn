@@ -1,0 +1,11 @@
+--- device/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
++++ device/BUILD.gn	2016-09-03 02:02:55.005651000 +0300
+@@ -162,7 +162,7 @@
+     ]
+   }
+ 
+-  if ((is_chromeos || is_linux) && use_dbus) {
++  if ((is_chromeos || is_linux || is_bsd) && use_dbus) {
+     configs += [ "//build/config/linux/dbus" ]
+ 
+     sources += [

@@ -4,7 +4,7 @@
    state.pc = reinterpret_cast<void*>(mcontext->__ss.REG_64_32(__rip, __eip));
    state.sp = reinterpret_cast<void*>(mcontext->__ss.REG_64_32(__rsp, __esp));
    state.fp = reinterpret_cast<void*>(mcontext->__ss.REG_64_32(__rbp, __ebp));
-+#elif defined(OS_FREEBSD)
++#elif defined(OS_BSD)
 +  state.pc = reinterpret_cast<void*>(mcontext.REG_64_32(mc_rip, mc_eip));
 +  state.sp = reinterpret_cast<void*>(mcontext.REG_64_32(mc_rsp, mc_esp));
 +  state.fp = reinterpret_cast<void*>(mcontext.REG_64_32(mc_rbp, mc_ebp));

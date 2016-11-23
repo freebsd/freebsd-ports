@@ -25,7 +25,7 @@
  #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    ret = pthread_mach_thread_np(pthread_self());
 +#elif defined(WEBRTC_BSD)
-+  ret = static_cast<int>(pthread_getthreadid_np());
++  ret = reinterpret_cast<int>(pthread_getthreadid_np());
  #elif defined(WEBRTC_LINUX)
    ret =  syscall(__NR_gettid);
  #elif defined(WEBRTC_ANDROID)

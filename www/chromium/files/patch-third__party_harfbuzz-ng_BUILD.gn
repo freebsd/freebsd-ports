@@ -1,0 +1,20 @@
+--- third_party/harfbuzz-ng/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/harfbuzz-ng/BUILD.gn	2016-09-03 01:51:35.889144000 +0300
+@@ -48,7 +48,7 @@
+ 
+   # See also chrome/browser/ui/libgtk2ui/BUILD.gn which pulls this.
+   config("pangoft2_link_hack") {
+-    if (is_linux && use_pango && !is_chromeos && !is_official_build &&
++    if ((is_linux || is_bsd) && use_pango && !is_chromeos && !is_official_build &&
+         current_cpu != "arm" && current_cpu != "mipsel" && !is_component_build) {
+       # These symbols are referenced from libpangoft2, which will be
+       # dynamically linked later.
+@@ -186,7 +186,7 @@
+     # in the tree, all symbols pango needs must be included, or
+     # pango uses mixed versions of harfbuzz and leads to crash.
+     # See crbug.com/462689.
+-    if (is_linux && use_pango && !is_chromeos && !is_official_build &&
++    if ((is_linux || is_bsd) && use_pango && !is_chromeos && !is_official_build &&
+         current_cpu != "arm" && current_cpu != "mipsel") {
+       deps += [ "//build/linux:freetype2" ]
+       configs -= [ "//build/config/gcc:symbol_visibility_hidden" ]

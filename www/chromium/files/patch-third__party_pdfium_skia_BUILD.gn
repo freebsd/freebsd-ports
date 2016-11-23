@@ -1,0 +1,29 @@
+--- third_party/pdfium/skia/BUILD.gn.orig	2016-10-06 04:05:20.000000000 +0300
++++ third_party/pdfium/skia/BUILD.gn	2016-10-13 08:54:45.371706000 +0300
+@@ -180,7 +180,7 @@
+   }
+ 
+   # Settings for text blitting, chosen to approximate the system browser.
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     defines += [
+       "SK_GAMMA_EXPONENT=1.2",
+       "SK_GAMMA_CONTRAST=0.2",
+@@ -329,7 +329,7 @@
+       "//third_party/skia/src/ports/SkFontMgr_android_parser.cpp",
+     ]
+   }
+-  if (!is_linux && !is_android && !is_win && !is_mac) {
++  if (!is_linux && !is_android && !is_win && !is_mac || !is_bsd) {
+     sources -= [
+       "//third_party/skia/src/ports/SkFontHost_FreeType.cpp",
+       "//third_party/skia/src/ports/SkFontHost_FreeType_common.cpp",
+@@ -358,7 +358,7 @@
+     "../third_party:fx_zlib",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//third_party/icu:icuuc" ]
+   }
+ 

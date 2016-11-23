@@ -1,0 +1,86 @@
+--- net/BUILD.gn.orig	2016-10-06 04:02:22.000000000 +0300
++++ net/BUILD.gn	2016-10-18 00:25:21.260605000 +0300
+@@ -175,6 +175,11 @@
+       ]
+       if (is_android) {
+         sources -= [ "base/openssl_private_key_store_android.cc" ]
++      } else if (is_bsd) {
++        sources -= [
++          "base/address_tracker_linux.cc",
++          "base/address_tracker_linux.h",
++        ]
+       }
+     } else {
+       if (is_android) {
+@@ -298,6 +303,13 @@
+       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
+     }
+ 
++    if (is_bsd) {
++      sources -= [
++         "base/network_change_notifier_linux.cc",
++         "base/network_change_notifier_linux.h",
++      ]
++    }
++
+     if (is_ios || is_mac) {
+       sources += gypi_values.net_base_mac_ios_sources
+     }
+@@ -1025,7 +1037,7 @@
+   }
+ }
+ 
+-if (is_linux || is_mac) {
++if (is_linux || is_bsd || is_mac) {
+   executable("cachetool") {
+     testonly = true
+     sources = [
+@@ -1054,7 +1066,7 @@
+   }
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   static_library("epoll_server") {
+     sources = [
+       "tools/epoll_server/epoll_server.cc",
+@@ -1160,7 +1172,7 @@
+   }
+ }
+ 
+-if (is_android || is_linux) {
++if (is_android || is_linux || is_bsd) {
+   executable("disk_cache_memory_test") {
+     testonly = true
+     sources = [
+@@ -1353,7 +1365,7 @@
+     "third_party/nist-pkits/",
+   ]
+ 
+-  if (is_linux || is_mac || is_win) {
++  if (is_linux || is_bsd || is_mac || is_win) {
+     deps += [
+       "//third_party/pyftpdlib/",
+       "//third_party/pywebsocket/",
+@@ -1376,7 +1388,7 @@
+   if (is_desktop_linux) {
+     deps += [ ":epoll_quic_tools" ]
+   }
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += gypi_values.net_linux_test_sources
+     deps += [
+       ":epoll_quic_tools",
+@@ -1392,6 +1404,12 @@
+     sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "base/address_tracker_linux_unittest.cc",
++    ]
++  }
++
+   if (v8_use_external_startup_data) {
+     deps += [ "//gin" ]
+   }

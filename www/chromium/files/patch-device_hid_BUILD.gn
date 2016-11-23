@@ -1,0 +1,16 @@
+--- device/hid/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
++++ device/hid/BUILD.gn	2016-09-24 04:03:54.837948000 +0300
+@@ -57,6 +57,13 @@
+     deps += [ "//device/udev_linux" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     deps += [ "//chromeos" ]
+   }

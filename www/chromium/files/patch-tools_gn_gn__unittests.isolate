@@ -1,0 +1,11 @@
+--- tools/gn/gn_unittests.isolate.orig	2016-08-03 22:02:40.000000000 +0300
++++ tools/gn/gn_unittests.isolate	2016-09-02 20:40:26.667487000 +0300
+@@ -3,7 +3,7 @@
+ # found in the LICENSE file.
+ {
+   'conditions': [
+-    ['OS=="linux" or OS=="mac" or OS=="win"', {
++    ['OS=="linux" or OS=="bsd" or OS=="mac" or OS=="win"', {
+       'variables': {
+         'command': [
+           '<(PRODUCT_DIR)/gn_unittests<(EXECUTABLE_SUFFIX)',

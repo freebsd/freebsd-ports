@@ -1,0 +1,17 @@
+--- components/plugins/renderer/BUILD.gn.orig	2016-08-03 22:02:16.000000000 +0300
++++ components/plugins/renderer/BUILD.gn	2016-09-26 06:14:10.664010000 +0300
+@@ -25,6 +25,7 @@
+   }
+ 
+   deps = [
++    "//v8",
+     "//content/public/child",
+     "//content/public/common",
+     "//content/public/renderer",
+@@ -33,6 +34,5 @@
+     "//third_party/WebKit/public:blink",
+     "//third_party/re2",
+     "//ui/base",
+-    "//v8",
+   ]
+ }

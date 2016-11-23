@@ -1,5 +1,5 @@
---- media/audio/audio_manager.cc.orig	2016-07-22 00:06:55.000000000 -0400
-+++ media/audio/audio_manager.cc	2016-08-03 15:25:47.683860000 -0400
+--- media/audio/audio_manager.cc.orig	2016-07-20 22:03:25.000000000 +0300
++++ media/audio/audio_manager.cc	2016-08-01 04:22:25.372043000 +0300
 @@ -92,7 +92,7 @@
    }
  #endif

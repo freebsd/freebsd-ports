@@ -1,0 +1,11 @@
+--- components/crash/content/app/BUILD.gn.orig	2016-08-03 22:02:16.000000000 +0300
++++ components/crash/content/app/BUILD.gn	2016-09-18 01:39:59.921593000 +0300
+@@ -141,7 +141,7 @@
+ 
+       #'../breakpad/breakpad.gyp:breakpad_sender',  TODO(GYP)
+     ]
+-  } else if (is_posix && !is_ios) {
++  } else if (is_posix && !is_ios && !is_bsd) {
+     deps += [ "//breakpad:client" ]
+   }
+ }

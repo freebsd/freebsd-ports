@@ -1,0 +1,10 @@
+--- gpu/ipc/client/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
++++ gpu/ipc/client/BUILD.gn	2016-10-10 14:54:17.518422000 +0300
+@@ -53,6 +53,7 @@
+   configs += [
+     "//build/config/compiler:no_size_t_to_int_warning",
+     "//gpu:gpu_implementation",
++    "//build/config/linux:x11",
+   ]
+   deps = [
+     "//base",

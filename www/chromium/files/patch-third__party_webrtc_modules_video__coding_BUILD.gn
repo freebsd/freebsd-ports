@@ -1,0 +1,40 @@
+--- third_party/webrtc/modules/video_coding/BUILD.gn.orig	2016-08-03 22:04:03.000000000 +0300
++++ third_party/webrtc/modules/video_coding/BUILD.gn	2016-09-25 02:37:44.041881000 +0300
+@@ -135,9 +135,6 @@
+     "codecs/h264/include/h264.h",
+   ]
+ 
+-  configs += [ "../..:common_config" ]
+-  public_configs = [ "../..:common_inherited_config" ]
+-
+   if (is_clang) {
+     # Suppress warnings from Chrome's Clang plugins.
+     # See http://code.google.com/p/webrtc/issues/detail?id=163 for details.
+@@ -145,9 +142,7 @@
+   }
+ 
+   defines = []
+-  deps = [
+-    "../../system_wrappers",
+-  ]
++  deps = []
+ 
+   if (rtc_use_h264) {
+     defines += [ "WEBRTC_USE_H264" ]
+@@ -161,11 +156,15 @@
+       "codecs/h264/h264_encoder_impl.h",
+     ]
+     deps += [
+-      "../../common_video",
+       "//third_party/ffmpeg:ffmpeg",
+       "//third_party/openh264:encoder",
++      "../../common_video",
+     ]
+   }
++  deps += ["../../system_wrappers"]
++  configs += [ "../..:common_config" ]
++  public_configs = [ "../..:common_inherited_config" ]
++
+ }
+ 
+ # TODO(tkchin): Source set for webrtc_h264_video_toolbox. Currently not

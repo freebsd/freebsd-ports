@@ -1,0 +1,11 @@
+--- build/secondary/third_party/nss/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ build/secondary/third_party/nss/BUILD.gn	2016-09-03 00:19:12.999091000 +0300
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/linux/pkg_config.gni")
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   # This is a dependency on NSS with no libssl. On Linux we use a built-in SSL
+   # library but the system NSS libraries. Non-Linux platforms using NSS use the
+   # hermetic one in //third_party/nss.

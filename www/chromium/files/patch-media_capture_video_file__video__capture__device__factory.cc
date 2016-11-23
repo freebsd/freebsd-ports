@@ -1,11 +1,11 @@
---- media/capture/video/file_video_capture_device_factory.cc.orig	2016-05-11 19:02:23 UTC
-+++ media/capture/video/file_video_capture_device_factory.cc
-@@ -50,7 +50,7 @@ void FileVideoCaptureDeviceFactory::GetD
-   device_names->push_back(VideoCaptureDevice::Name(
+--- media/capture/video/file_video_capture_device_factory.cc.orig	2016-10-06 04:02:21.000000000 +0300
++++ media/capture/video/file_video_capture_device_factory.cc	2016-10-13 07:41:41.678945000 +0300
+@@ -49,7 +49,7 @@
+ #elif defined(OS_MACOSX)
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
-       VideoCaptureDevice::Name::AVFOUNDATION));
+       VideoCaptureApi::MACOSX_AVFOUNDATION
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   device_names->push_back(VideoCaptureDevice::Name(
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
-       VideoCaptureDevice::Name::V4L2_SINGLE_PLANE));
+       VideoCaptureApi::LINUX_V4L2_SINGLE_PLANE
+ #else

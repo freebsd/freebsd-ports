@@ -1,0 +1,38 @@
+--- content/shell/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
++++ content/shell/BUILD.gn	2016-09-18 01:45:17.587900000 +0300
+@@ -275,7 +275,7 @@
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [
+       "//build/linux:fontconfig",
+       "//ui/gfx:test_support",
+@@ -296,7 +296,7 @@
+     deps += [ "//content/shell/android:content_shell_jni_headers" ]
+   }
+ 
+-  if (is_posix && !is_mac) {
++  if (is_posix && !is_mac && !is_bsd) {
+     deps += [
+       "//components/crash/content/app",
+       "//components/crash/content/browser",
+@@ -338,7 +338,7 @@
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//third_party/freetype2" ]
+   }
+ 
+@@ -496,7 +496,7 @@
+       }
+     }
+ 
+-    if (is_linux && !is_component_build) {
++    if ((is_linux || is_bsd) && !is_component_build) {
+       # Set rpath to find our own libfreetype even in a non-component build.
+       configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+     }

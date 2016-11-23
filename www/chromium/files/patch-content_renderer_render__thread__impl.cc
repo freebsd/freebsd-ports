@@ -1,5 +1,5 @@
---- content/renderer/render_thread_impl.cc.orig	2016-07-22 00:06:54.000000000 -0400
-+++ content/renderer/render_thread_impl.cc	2016-08-03 14:17:16.736255000 -0400
+--- content/renderer/render_thread_impl.cc.orig	2016-07-20 22:03:24.000000000 +0300
++++ content/renderer/render_thread_impl.cc	2016-08-01 04:09:35.329085000 +0300
 @@ -1424,7 +1424,7 @@
    const bool enable_video_accelerator =
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);

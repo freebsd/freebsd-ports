@@ -1,0 +1,20 @@
+--- mojo/edk/test/BUILD.gn.orig	2016-08-03 22:02:20.000000000 +0300
++++ mojo/edk/test/BUILD.gn	2016-09-02 23:44:49.826221000 +0300
+@@ -43,7 +43,7 @@
+     "//testing/gtest",
+   ]
+ 
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     public_configs = [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }
+@@ -63,7 +63,7 @@
+     "run_all_perftests.cc",
+   ]
+ 
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     public_configs = [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }

@@ -1,0 +1,11 @@
+--- build/config/allocator.gni.orig	2016-10-06 04:02:08.000000000 +0300
++++ build/config/allocator.gni	2016-10-13 10:29:19.634367000 +0300
+@@ -44,7 +44,7 @@
+ assert(!is_win || use_allocator == "none", "Tcmalloc doesn't work on Windows.")
+ 
+ assert(
+-    !use_experimental_allocator_shim || is_linux || is_android || is_win,
++    !use_experimental_allocator_shim || is_linux || is_android || is_win || is_bsd,
+     "use_experimental_allocator_shim supported only on Linux, Android and Windows targets")
+ 
+ if (is_win && use_experimental_allocator_shim) {

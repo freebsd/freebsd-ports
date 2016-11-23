@@ -1,20 +1,13 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2016-05-11 19:02:16 UTC
-+++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -114,12 +114,16 @@ views::View* FirstRunDialog::CreateExtra
- bool FirstRunDialog::Accept() {
-   GetWidget()->Hide();
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2016-10-06 04:02:13.000000000 +0300
++++ chrome/browser/ui/views/first_run_dialog.cc	2016-10-15 10:10:45.850050000 +0300
+@@ -35,8 +35,10 @@
+ namespace {
  
-+#if !defined(OS_BSD)
-   if (report_crashes_ && report_crashes_->checked()) {
-     if (GoogleUpdateSettings::SetCollectStatsConsent(true))
-       breakpad::InitCrashReporter(std::string());
--  } else {
-+  } else
-+#else
-+  {
-     GoogleUpdateSettings::SetCollectStatsConsent(false);
-   }
+ void InitCrashReporterIfEnabled(bool enabled) {
++#ifndef OS_BSD
+   if (enabled)
+     breakpad::InitCrashReporter(std::string());
 +#endif
+ }
  
-   if (make_default_ && make_default_->checked())
-     shell_integration::SetAsDefaultBrowser();
+ }  // namespace

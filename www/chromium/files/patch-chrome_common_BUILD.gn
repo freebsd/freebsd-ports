@@ -1,0 +1,16 @@
+--- chrome/common/BUILD.gn.orig	2016-08-03 22:02:14.000000000 +0300
++++ chrome/common/BUILD.gn	2016-09-27 19:17:20.410265000 +0300
+@@ -156,6 +156,13 @@
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "component_flash_hint_file_linux.cc",
++      "component_flash_hint_file_linux.h",
++    ]
++  }
++
+   if (enable_extensions) {
+     sources += rebase_path(gypi_values.chrome_common_extensions_sources,
+                            ".",

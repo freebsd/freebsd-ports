@@ -1,12 +1,12 @@
---- media/capture/video/video_capture_device_factory.cc.orig	2016-07-22 00:06:55.000000000 -0400
-+++ media/capture/video/video_capture_device_factory.cc	2016-08-04 16:01:12.907434000 -0400
+--- media/capture/video/video_capture_device_factory.cc.orig	2016-08-13 01:27:17.328942000 +0300
++++ media/capture/video/video_capture_device_factory.cc	2016-08-13 01:16:43.725148000 +0300
 @@ -18,6 +18,10 @@
  std::unique_ptr<VideoCaptureDeviceFactory>
  VideoCaptureDeviceFactory::CreateFactory(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {
 +#if defined(OS_BSD)
-+  return std::unique_ptr<VideoCaptureDeviceFactory>(new
-+      media::FakeVideoCaptureDeviceFactory());
++  return std::unique_ptr<VideoCaptureDeviceFactory>(
++          new media::FakeVideoCaptureDeviceFactory());
 +#else
    const base::CommandLine* command_line =
        base::CommandLine::ForCurrentProcess();
@@ -17,5 +17,14 @@
    }
 +#endif
  }
- 
+
  VideoCaptureDeviceFactory::VideoCaptureDeviceFactory() {
+@@ -56,7 +61,7 @@
+   callback.Run(std::move(device_names));
+ }
+
+-#if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_ANDROID) && \
++#if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_BSD) && !defined(OS_ANDROID) && \
+     !defined(OS_WIN)
+ // static
+ VideoCaptureDeviceFactory*

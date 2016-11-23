@@ -1,0 +1,11 @@
+--- breakpad/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ breakpad/BUILD.gn	2016-09-03 00:07:22.742094000 +0300
+@@ -420,7 +420,7 @@
+   }
+ }
+ 
+-if (is_linux || is_android) {
++if (is_linux || is_bsd || is_android) {
+   if (current_toolchain == host_toolchain) {
+     executable("symupload") {
+       sources = [

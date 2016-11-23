@@ -1,0 +1,11 @@
+--- ui/compositor/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
++++ ui/compositor/BUILD.gn	2016-09-03 00:17:02.164382000 +0300
+@@ -199,7 +199,7 @@
+     "//ui/gl",
+     "//ui/resources",
+   ]
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//third_party/mesa:osmesa" ]
+   }
+ }
