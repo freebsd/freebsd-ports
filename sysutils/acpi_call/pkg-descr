@@ -1,1 +1,1 @@
-Kernel module for calling arbitrary ACPI methods from userspace.
+Kernel module and utility for calling arbitrary ACPI methods from userspace.
