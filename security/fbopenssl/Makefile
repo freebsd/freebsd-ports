@@ -10,12 +10,12 @@ COMMENT=	GSS-API and SPNEGO extensions for OpenSSL
 
 LICENSE=	GPLv2
 
-USES=		uidfix
+USES=		uidfix ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 MAKEFILE=	BSDMakefile
-MAKE_ENV=	BSD_INSTALL_DATA="${BSD_INSTALL_DATA}"
+MAKE_ENV=	BSD_INSTALL_DATA="${INSTALL_DATA}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
 PORTDOCS=	readme.txt
 
 .if defined(NO_PROFILE)
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/BSDMakefile ${WRKSRC}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
