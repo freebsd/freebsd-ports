@@ -32,6 +32,10 @@ PLIST_FILES=	bin/ricochet \
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE= Detected LibreSSL (missing RSA_get0_factors)
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's| -fsanitize=[a-z-]+| |g' \
 		${WRKSRC}/hardened.pri
