@@ -10,6 +10,7 @@ PKG_MESSAGE_FILE_PYTHON=	${PORTSDIR}/devel/boost-all/pkg-message.python
 
 BJAM_ARGS=	--layout=system \
 		--prefix=${PREFIX} \
+		-d2
 
 # Our compiler-flags will be added AFTER those set by bjam. We remove
 # the optimization level, because Boost sets it itself (to -O3 in case
@@ -20,8 +21,6 @@ BOOST_TOOLSET=	${CHOSEN_COMPILER_TYPE}
 
 BJAM_ARGS+=	--toolset=${BOOST_TOOLSET} \
 		${_MAKE_JOBS}
-
-VERBOSE_BUILD_VARS=	BJAM_ARGS+=-d2
 
 DEBUG_VARS=	BJAM_ARGS+=debug
 DEBUG_VARS_OFF=	BJAM_ARGS+=release
