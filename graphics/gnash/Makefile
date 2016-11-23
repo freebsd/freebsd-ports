@@ -19,6 +19,10 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
+BROKEN=		fails to build after many Boost updates
+DEPRECATED=	broken on FreeBSD 10+ for more than 2 years
+EXPIRATION_DATE=2016-12-31
+
 USES=		cpe gmake jpeg kde:4 libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GCC=	any
@@ -68,10 +72,6 @@ VAAPI_DESC=	VAAPI support (requires FFMPEG)
 CYGNAL_CONFIGURE_ENABLE=	cygnal
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 1000000
-BROKEN=	unable to link in libboost_system
-.endif
 
 # Cygnal option processing
 .if ${PORT_OPTIONS:MCYGNAL}
