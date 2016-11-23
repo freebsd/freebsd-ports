@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flock
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}/
 DISTNAME=	util-linux-${PORTVERSION}
