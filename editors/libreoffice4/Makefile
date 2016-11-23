@@ -2,7 +2,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/extern/:ext \

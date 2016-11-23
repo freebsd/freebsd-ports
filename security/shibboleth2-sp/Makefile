@@ -3,6 +3,7 @@
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 

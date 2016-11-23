@@ -3,6 +3,7 @@
 
 PORTNAME=	vsqlite
 PORTVERSION=	0.3.13
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	kwm@FreeBSD.org

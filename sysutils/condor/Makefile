@@ -6,6 +6,7 @@
 
 PORTNAME=	condor
 PORTVERSION=	8.4.9
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all

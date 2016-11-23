@@ -3,7 +3,7 @@
 
 PORTNAME=	springlobby
 PORTVERSION=	0.180
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/

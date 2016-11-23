@@ -3,6 +3,7 @@
 
 PORTNAME=	avro
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 		APACHE/${PORTNAME}/stable

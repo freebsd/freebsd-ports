@@ -13,7 +13,7 @@ MAKE_FLAGS=	#
 _MAKE_JOBS=	#
 MAKEFILE=	#
 
-WRKSRC_SUBDIR=	tools/build/v2/engine
+WRKSRC_SUBDIR=	tools/build/src/engine
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
