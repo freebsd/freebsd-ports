@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+BUILD_DEPENDS=	autogen:devel/autogen
 LIB_DEPENDS=	libevent.so:devel/libevent2 \
 		libmd5.so:www/libwww
 
