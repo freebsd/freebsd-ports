@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20161002
+DISTVERSION=	05_20161031
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -24,7 +24,6 @@ USE_XORG=	x11
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
-MAKEFILE=	makefile
 MAKE_ENV+=	S7_LIB_DIR=${S7_LIB_DIR} \
 		SEED7_LIBRARY=${SEED7_LIBRARY} \
 		C_COMPILER=${CC} \
@@ -36,8 +35,6 @@ S7_LIBS=	s7_comp.a s7_con.a s7_draw.a s7_data.a seed7_05.a
 
 PORTEXAMPLES=	*
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
 
 MAKEFILE=	mk_freebsd.mk
 
@@ -64,15 +61,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../bin/${s7_lib} ${STAGEDIR}${S7_LIB_DIR}
 .endfor
 #	install PORTDOCS
-.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
-.endif
 #	install PORTEXAMPLES
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} '*.dna *.sd7 *.dat *.s7i' ${STAGEDIR}${EXAMPLESDIR}
-.endif
 #	insall man pages
 	${INSTALL_DATA} ${WRKSRC}/../doc/s7.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${STAGEDIR}${PREFIX}/man/man1
