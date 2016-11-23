@@ -11,7 +11,8 @@ COMMENT=	Keybase.io client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BROKEN_i386=	does not build
+# https://github.com/keybase/go-ps/blob/master/process_freebsd.go#L1
+ONLY_FOR_ARCHS=	amd64
 
 GO_PKGNAME=	github.com/keybase/client/go
 GO_TARGET=	-tags production ${GO_PKGNAME}/keybase
