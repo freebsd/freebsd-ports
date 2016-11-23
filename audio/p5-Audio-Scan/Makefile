@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Audio-Scan
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +16,8 @@ TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/Scan/Scan.so
 
 .include <bsd.port.mk>
