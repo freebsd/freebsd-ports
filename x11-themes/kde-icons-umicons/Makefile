@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.gz
 
 COMMENT=	KDE Umicons iconset
 
+BROKEN=		does not fetch
+
 WRKSRC=		${WRKDIR}/Umicons_${PORTVERSION}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
