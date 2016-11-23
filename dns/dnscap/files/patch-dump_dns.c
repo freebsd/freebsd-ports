@@ -1,7 +1,6 @@
-diff -u -r1.2 dump_dns.c
---- dump_dns.c	14 Mar 2008 21:33:28 -0000	1.2
-+++ dump_dns.c	17 Sep 2008 04:49:12 -0000
-@@ -61,7 +61,6 @@
+--- dump_dns.c.orig	2011-03-11 21:38:56 UTC
++++ dump_dns.c
+@@ -60,7 +60,6 @@ static const char rcsid[] = "$Id: dump_d
  #include <time.h>
  #include <unistd.h>
  
@@ -9,7 +8,7 @@ diff -u -r1.2 dump_dns.c
  extern const char *_res_sectioncodes[];
  #define p_rcode __p_rcode
  extern const char *p_rcode(int rcode);
-@@ -87,6 +86,26 @@
+@@ -86,6 +85,26 @@ static void dump_dns_rr(ns_msg *, ns_rr 
  	(cp) += INT32SZ; \
  } while (0)
  
