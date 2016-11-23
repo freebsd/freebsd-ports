@@ -9,7 +9,9 @@ MASTER_SITES=	http://dnscap.dns-oarc.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
 
-HAS_CONFIGURE=	yes
+LICENSE=	ISCL
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dnscap man/man1/dnscap.1.gz
 
