@@ -10,12 +10,14 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplex multiple PostgreSQL databases to one relay
 
+LICENSE=	BSD2CLAUSE # from website
+
+USES=		perl5
+USE_PERL5=	build
+USE_RC_SUBR=	postgresql-relay
+
 PLIST_FILES=	bin/postgresql-relay etc/postgresql-relay.conf-sample \
 		man/man8/postgresql-relay.8.gz
-
-USE_RC_SUBR=	postgresql-relay
-USES+=		perl5
-USE_PERL5=	build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${STAGEDIR}${PREFIX}/bin
