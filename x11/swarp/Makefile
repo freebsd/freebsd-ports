@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mason@blisses.org
 COMMENT=	X11 generic pointer warping utility
 
 LICENSE=	MIT
