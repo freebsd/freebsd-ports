@@ -4,6 +4,7 @@
 PORTNAME=	pgrouting
 PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org

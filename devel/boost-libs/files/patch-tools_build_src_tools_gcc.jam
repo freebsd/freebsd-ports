@@ -1,0 +1,32 @@
+Adding /usr/lib32 to LD_LIBRARY_PATH may be poisonous if /usr/lib64
+doesn't exist while /usr/lib only constains .so but not .so.SOVERSION
+files. Besides, LD_LIBRARY_PATH + -Wl,-rpath-link is same as -Wl,-rpath
+that USE_GCC already passes.
+
+--- tools/build/src/tools/gcc.jam.orig	2016-09-21 14:33:28 UTC
++++ tools/build/src/tools/gcc.jam
+@@ -210,24 +210,6 @@ rule init ( version ? : command * : opti
+     }
+     init-link-flags gcc $(linker) $(condition) ;
+ 
+-    # If gcc is installed in a non-standard location, we would need to add
+-    # LD_LIBRARY_PATH when running programs created with it (for unit-test/run
+-    # rules).
+-    if $(command)
+-    {
+-        # On multilib 64-bit boxes, there are both 32-bit and 64-bit libraries
+-        # and all must be added to LD_LIBRARY_PATH. The linker will pick the
+-        # right onces. Note that we do not provide a clean way to build a 32-bit
+-        # binary using a 64-bit compiler, but user can always pass -m32
+-        # manually.
+-        local lib_path = $(root)/bin $(root)/lib $(root)/lib32 $(root)/lib64 ;
+-        if $(.debug-configuration)
+-        {
+-            ECHO notice: using gcc libraries :: $(condition) :: $(lib_path) ;
+-        }
+-        toolset.flags gcc.link RUN_PATH $(condition) : $(lib_path) ;
+-    }
+-
+     # If we are not using a system gcc installation we should adjust the various
+     # programs as needed to prefer using their installation specific versions.
+     # This is essential for correct use of MinGW and for cross-compiling.

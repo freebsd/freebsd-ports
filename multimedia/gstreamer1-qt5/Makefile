@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer-qt
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	5
 
 MASTERDIR=	${.CURDIR:H}/gstreamer1-qt4

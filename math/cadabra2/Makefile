@@ -3,6 +3,7 @@
 
 PORTNAME=	cadabra2
 PORTVERSION=	2.0.930
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@rawbw.com

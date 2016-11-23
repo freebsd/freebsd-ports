@@ -2,6 +2,7 @@
 
 PORTNAME=	liborcus
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 PKGNAMESUFFIX=	07

@@ -4,7 +4,7 @@ MAKE_CMD=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
-USES+=		compiler:c++11-lang
+USES+=		compiler:features
 
 PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION}
 
@@ -33,13 +33,14 @@ MAKE_ARGS+=	optimization=speed
 OPTIMIZED_CFLAGS_MAKE_ARGS=	inlining=full
 
 # ccache build fails when using precompiled headers, on a cached build.
-.if defined(WITH_CCACHE_BUILD)
-BJAM_ARGS+=	pch=off
-.endif
+#
+# base gcc 4.2.1 fails when using precompiled headers on 11.0+ kernel.
+# https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+MAKE_ARGS+=	pch=off
 
 post-patch:
 .if defined(USE_BINUTILS)
-	@${ECHO} "using ${CHOSEN_COMPILER_TYPE} : : ${CXX} : <linkflags>-B${LOCALBASE}/bin ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
+	@${ECHO} "using ${CHOSEN_COMPILER_TYPE} : : ${CXX} : <linkflags>-B${LOCALBASE}/bin ;" >> ${WRKSRC}/tools/build/src/user-config.jam
 .else
-	@${ECHO} "using ${CHOSEN_COMPILER_TYPE} : : ${CXX} ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
+	@${ECHO} "using ${CHOSEN_COMPILER_TYPE} : : ${CXX} ;" >> ${WRKSRC}/tools/build/src/user-config.jam
 .endif

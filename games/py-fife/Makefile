@@ -3,7 +3,7 @@
 
 PORTNAME=		fife
 PORTVERSION=		0.3.5
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		games
 MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:source \
 			http://sourceforge.net/projects/${PORTNAME}/files/active/demos/:demo \
