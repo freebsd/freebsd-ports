@@ -6,8 +6,7 @@ COMMENT=	Framework for interfacing Python and C++
 
 USES+=		python
 
-OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
-VERBOSE_BUILD_DESC=	Show compiler messages
+OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
