@@ -169,3 +169,4 @@ man/man1/znc.1.gz
 %%DATADIR%%/webskins/ice/pub/pagebg.gif
 %%DATADIR%%/webskins/ice/tmpl/FooterTag.tmpl
 %%DATADIR%%/webskins/ice/tmpl/Header.tmpl
+@dir(znc,znc,755) %%ETCDIR%%
