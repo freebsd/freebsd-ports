@@ -1,0 +1,50 @@
+--- qt/CMakeLists.txt.orig	2015-11-16 14:35:35 UTC
++++ qt/CMakeLists.txt
+@@ -13,11 +13,11 @@ project(dxirc-qt)
+ option(QT5 "Compile with Qt 5" TRUE)
+ 
+ if(UNIX)
+-    if(BSD)
++    if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+         set(CMAKE_THREAD_LIBS -pthread)
+         set(CMAKE_USE_PTHREADS ON)
+         set(CMAKE_EXE_LINKER_FLAGS -pthread)
+-    endif(BSD)
++    endif(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+ endif(UNIX)
+ 
+ SET(DXIRCQT_LIBS "")
+@@ -35,11 +35,20 @@ endif(HAVE_LUA)
+ 
+ if(NOT APPLE)
+     if(HAVE_ENCHANT)
+-        if(PKG_CONFIG_FOUND)
+-            pkg_check_modules(ENCHANT enchant)
+-            list(APPEND DXIRCQT_LIBS ${ENCHANT_LIBRARIES})
+-            list(APPEND DXIRCQT_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
+-        endif(PKG_CONFIG_FOUND)
++      if(PKG_CONFIG_FOUND)
++         pkg_check_modules(ENCHANT enchant)
++         find_path(ENCHANT_INCLUDE_DIR enchant++.h
++         PATHS
++         ${ENCHANT_INCLUDE_DIRS}
++         /usr/include
++         /usr/local/include)
++         find_library(ENCHANT_LIBRARY enchant
++         ${ENCHANT_LIBRARY_DIRS}
++         /usr/lib
++         /usr/local/lib)
++         list(APPEND DXIRCQT_LIBS ${ENCHANT_LIBRARY})
++         list(APPEND DXIRCQT_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIR})
++       endif(PKG_CONFIG_FOUND)
+         if(NOT ENCHANT_FOUND)
+             set(ENCHANT_INCLUDE_DIR "" CACHE PATH "Path to enchant include dir")
+             set(ENCHANT_LIBRARY "" CACHE FILEPATH "Filepath to enchant library")
+@@ -110,6 +119,7 @@ dialogs/scriptdialog.h
+ dialogs/dccsenddialog.h
+ dialogs/configdialog.h
+ dialogs/keydialog.h
++dialogs/listdialog.h
+ engine/dxsocket.h
+ engine/ircengine.h
+ engine/dccengine.h
