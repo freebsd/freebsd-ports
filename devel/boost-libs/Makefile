@@ -16,27 +16,24 @@ ICONV_DESC=		Boost.Locale with iconv encoding support
 ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 
 ICONV_USES=		iconv
-ICONV_VARS=		BJAM_ARGS+=-sICONV_PATH=${ICONV_PREFIX}
-ICONV_VARS_OFF=		BJAM_ARGS+=boost.locale.iconv=off
+ICONV_MAKE_ARGS=	-sICONV_PATH=${ICONV_PREFIX}
+ICONV_MAKE_ARGS_OFF=	boost.locale.iconv=off
 ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
-ICU_VARS=		BJAM_ARGS+=-sICU_PATH=${LOCALBASE}
-ICU_VARS_OFF=		BJAM_ARGS+=boost.locale.icu=off
+ICU_MAKE_ARGS=		-sICU_PATH=${LOCALBASE}
+ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
-BJAM_ARGS+=	--without-python
-
 BROKEN_aarch64=		Fails to compile: multiple instances of error: platform not supported
 
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
+MAKE_ARGS+=	--without-python
+ALL_TARGET=	stage
 
 do-install:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} --prefix=${STAGEDIR}${PREFIX} ${BJAM_ARGS} install
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
 # For some reasons BJAM forget about the links
 	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
 
