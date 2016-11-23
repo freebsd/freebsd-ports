@@ -1,5 +1,5 @@
-TIMESTAMP = 1473635828
-SHA256 (teeworlds-0.6.3-src.tar.gz) = 490ee7c372898761c609af8d7b0c6bd55942c6c6fcd7f361eefa00abfc70077b
-SIZE (teeworlds-0.6.3-src.tar.gz) = 13101446
+TIMESTAMP = 1478890194
+SHA256 (teeworlds-0.6.4-src.tar.gz) = 7815787035a8e2ea83a0b3b08cf862e6af59b78071a268f985b1e76b387f7257
+SIZE (teeworlds-0.6.4-src.tar.gz) = 9084190
 SHA256 (bam-0.4.0.tar.gz) = 5e4e4920b4d265da582f66774e9b1ec8ddfbe75ddc028fba86c12f686ea18db3
 SIZE (bam-0.4.0.tar.gz) = 206780

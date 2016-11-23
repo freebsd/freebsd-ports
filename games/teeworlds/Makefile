@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	games
 MASTER_SITES=	https://downloads.teeworlds.com/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -24,7 +24,7 @@ BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
 USE_GCC=	any
 
-PLIST_FILES+=	bin/${PORTNAME}_srv
+PLIST_FILES=	bin/${PORTNAME}_srv
 PORTDATA=	*
 
 OPTIONS_DEFINE=	SERVER_ONLY
