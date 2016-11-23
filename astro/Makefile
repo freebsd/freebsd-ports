@@ -34,6 +34,7 @@
     SUBDIR += libgal
     SUBDIR += libkgeomap
     SUBDIR += libnova
+    SUBDIR += libosmium
     SUBDIR += libosmpbf
     SUBDIR += luna
     SUBDIR += marble
@@ -45,7 +46,6 @@
     SUBDIR += nightfall
     SUBDIR += opencpn
     SUBDIR += openuniverse
-    SUBDIR += osmium
     SUBDIR += osmosis
     SUBDIR += p5-Astro
     SUBDIR += p5-Astro-ADS
