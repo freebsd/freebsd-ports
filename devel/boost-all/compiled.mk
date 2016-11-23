@@ -3,7 +3,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 BJAM=		bjam
 USES+=		compiler:c++11-lang
 
-PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION} COMPAT_LIB_VER=5
+PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION}
 
 PKG_MESSAGE_FILE_THREADS=	${PORTSDIR}/devel/boost-all/pkg-message.threads
 PKG_MESSAGE_FILE_PYTHON=	${PORTSDIR}/devel/boost-all/pkg-message.python

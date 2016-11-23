@@ -26,9 +26,6 @@ do-build:
 # build the library
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} --with-python stage
-# do not break compat yet
-	@cd ${WRKSRC}/stage/lib && \
-		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.${PORTVERSION}}.5; done )
 
 do-install:
 	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${STAGEDIR}${PREFIX}/lib
