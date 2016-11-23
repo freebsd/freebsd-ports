@@ -3,23 +3,23 @@
 
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic game engine for 2D double-buffering animation
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
-
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO THANKS
+PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
