@@ -3,29 +3,32 @@
 
 PORTNAME=	rbllookup-ng
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns mail
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check given IP/Host presence in RBLs
 
-BUILD_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
-		p5-Term-ANSIColor>=0:devel/p5-Term-ANSIColor
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_BUILD=	yes
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
+
 USES=		perl5 shebangfix
+SHEBANG_FILES=	rbllookup.pl getmoensted.pl
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/rbllookup bin/getmoensted "@sample etc/rbllookup.conf.sample"
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
-SHEBANG_FILES=	rbllookup.pl getmoensted.pl
 
 CONFLICTS=	rbllookup-0.*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/rbllookup.pl
 
 do-install:
