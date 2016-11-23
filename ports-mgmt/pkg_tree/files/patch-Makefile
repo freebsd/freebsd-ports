@@ -6,8 +6,8 @@
  install:
 -	install -o root -g wheel -m 755 -c pkg_tree /usr/local/bin
 -	install -o root -g wheel -m 644 -c pkg_tree.7 /usr/local/man/man7
-+	__INSTALL_SCRIPT__ pkg_tree __PREFIX__/bin
-+	__INSTALL_MAN__ pkg_tree.7 __PREFIX__/man/man7
++	${BSD_INSTALL_SCRIPT} pkg_tree ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN} pkg_tree.7 ${DESTDIR}${PREFIX}/man/man7
  
  clean:
  	rm pkg_tree.7
