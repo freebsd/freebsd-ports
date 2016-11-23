@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:tl}
-DISTVERSION=	0.7.6
+DISTVERSION=	0.7.7
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:R}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six \
 
 ORIGNAME=	RBTools
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
