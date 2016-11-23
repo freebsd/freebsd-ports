@@ -1,5 +1,5 @@
 ---------------------------------------------------
-%%PORTNAME%% has been successfully installed.
+cgit has been successfully installed.
 
 You probably want to add a 'Directory' section for cgit, along the lines of:
 
