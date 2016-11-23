@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 
@@ -45,7 +45,7 @@ LIB_DISTFILES=	bzip2-libs-1.0.5-7.el6_0${EXTRACT_SUFX} \
 		krb5-libs-1.10.3-57.el6${EXTRACT_SUFX} \
 		libacl-2.2.49-6.el6${EXTRACT_SUFX} \
 		libattr-2.4.44-7.el6${EXTRACT_SUFX} \
-		libblkid-2.17.2-12.24.el6${EXTRACT_SUFX} \
+		libblkid-2.17.2-12.24.el6_8.1${EXTRACT_SUFX} \
 		libcap-2.16-5.5.el6${EXTRACT_SUFX} \
 		libcom_err-1.41.12-22.el6${EXTRACT_SUFX} \
 		libgcc-4.4.7-17.el6${EXTRACT_SUFX} \
@@ -53,14 +53,14 @@ LIB_DISTFILES=	bzip2-libs-1.0.5-7.el6_0${EXTRACT_SUFX} \
 		libselinux-2.0.94-7.el6${EXTRACT_SUFX} \
 		libsepol-2.0.41-4.el6${EXTRACT_SUFX} \
 		libstdc++-4.4.7-17.el6${EXTRACT_SUFX} \
-		libuuid-2.17.2-12.24.el6${EXTRACT_SUFX} \
+		libuuid-2.17.2-12.24.el6_8.1${EXTRACT_SUFX} \
 		ncurses-libs-5.7-4.20090207.el6${EXTRACT_SUFX} \
 		pcre-7.8-7.el6${EXTRACT_SUFX} \
 		popt-1.13-7.el6${EXTRACT_SUFX} \
 		readline-6.0-4.el6${EXTRACT_SUFX} \
 		redhat-lsb-core-4.0-7.el6.centos${EXTRACT_SUFX} \
 		slang-2.2.1-1.el6${EXTRACT_SUFX} \
-		util-linux-ng-2.17.2-12.24.el6${EXTRACT_SUFX} \
+		util-linux-ng-2.17.2-12.24.el6_8.1${EXTRACT_SUFX} \
 		zlib-1.2.3-29.el6${EXTRACT_SUFX}
 SRC_DISTFILES=	acl-2.2.49-6.el6${SRC_SUFX}:SOURCE \
 		attr-2.4.44-7.el6${SRC_SUFX}:SOURCE \
@@ -102,7 +102,7 @@ SRC_DISTFILES=	acl-2.2.49-6.el6${SRC_SUFX}:SOURCE \
 		setup-2.8.14-20.el6_4.1${SRC_SUFX}:SOURCE \
 		slang-2.2.1-1.el6${SRC_SUFX}:SOURCE \
 		texinfo-4.13a-8.el6${SRC_SUFX}:SOURCE \
-		util-linux-ng-2.17.2-12.24.el6${SRC_SUFX}:SOURCE \
+		util-linux-ng-2.17.2-12.24.el6_8.1${SRC_SUFX}:SOURCE \
 		which-2.19-6.el6${SRC_SUFX}:SOURCE \
 		zlib-1.2.3-29.el6${SRC_SUFX}:SOURCE
 
