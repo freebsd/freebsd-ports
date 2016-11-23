@@ -29,7 +29,8 @@ USES=		compiler:c++0x cmake:outsource gmake ncurses pkgconfig \
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #MAKE_JOBS_UNSAFE=	yes
-CXXFLAGS+=	-msse2
+CXXFLAGS_amd64=	-msse2
+CXXFLAGS_i386=	-msse2
 
 CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
