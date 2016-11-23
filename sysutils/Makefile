@@ -1116,6 +1116,7 @@
     SUBDIR += tren
     SUBDIR += ts
     SUBDIR += tss
+    SUBDIR += ttyd
     SUBDIR += tty-clock
     SUBDIR += ttyload
     SUBDIR += tuptime
