@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS+=	remmina>=${PORTVERSION}:net/remmina
 RUN_DEPENDS+=	remmina>=${PORTVERSION}:net/remmina
 
-USES+=		cmake gmake pkgconfig
+USES+=		cmake gmake localbase:ldflags pkgconfig
 USE_GNOME+=	atk gdkpixbuf2 glib20 gtk30 pango
 INSTALLS_ICONS=	yes
 
