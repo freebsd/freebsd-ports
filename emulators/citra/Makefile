@@ -2,7 +2,7 @@
 
 PORTNAME=	citra
 PORTVERSION=	s20161115
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,6 +20,7 @@ LICENSE_TEXT_UNLICENSE=	See http://unlicense.org/
 LICENSE_PERMS_UNLICENSE=	${_LICENSE_PERMS_PD}
 LICENSE_GROUPS_UNLICENSE=	${_LICENSE_GROUPS_PD}
 
+BUILD_DEPENDS=	boost-libs>=1.57:devel/boost-libs
 LIB_DEPENDS=	libpng.so:graphics/png
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
@@ -29,7 +30,6 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 USE_GITHUB=	yes
 # XXX Switch to system Boost after ports/199601
 GH_TUPLE=	citra-emu:${PORTNAME}:fb13bfe \
-		citra-emu:ext-boost:f005c95:boost/externals/boost \
 		citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:943487e:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-108-g2ae6bca:fmt/externals/dynarmic/externals/fmt \
