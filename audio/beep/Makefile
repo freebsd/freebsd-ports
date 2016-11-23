@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64 pc98
 PLIST_FILES=	bin/beep man/man1/beep.1.gz
 
 post-patch:
-	${REINPLACE_CMD} 's|machine/speaker\.h|dev/speaker/speaker.h|' \
+	@${REINPLACE_CMD} 's|machine/speaker\.h|dev/speaker/speaker.h|' \
 		${WRKSRC}/beep.c
 
 .include <bsd.port.mk>
