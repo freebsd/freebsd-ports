@@ -1,0 +1,11 @@
+--- chromecast/crash/BUILD.gn.orig	2016-08-03 22:02:15.000000000 +0300
++++ chromecast/crash/BUILD.gn	2016-09-03 01:38:37.198322000 +0300
+@@ -48,7 +48,7 @@
+   ]
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   test("cast_crash_unittests") {
+     sources = [
+       "cast_crashdump_uploader_unittest.cc",

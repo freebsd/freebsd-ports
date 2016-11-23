@@ -1,0 +1,29 @@
+--- third_party/boringssl/BUILD.gn.orig	2016-08-03 22:02:37.000000000 +0300
++++ third_party/boringssl/BUILD.gn	2016-09-03 01:48:31.761556000 +0300
+@@ -83,7 +83,7 @@
+     } else if (current_cpu == "x64") {
+       if (is_mac) {
+         sources += crypto_sources_mac_x86_64
+-      } else if (is_linux || is_android) {
++      } else if (is_linux || is_bsd || is_android) {
+         sources += crypto_sources_linux_x86_64
+       } else {
+         public_configs = [ ":no_asm_config" ]
+@@ -91,14 +91,14 @@
+     } else if (current_cpu == "x86") {
+       if (is_mac) {
+         sources += crypto_sources_mac_x86
+-      } else if (is_linux || is_android) {
++      } else if (is_linux || is_bsd || is_android) {
+         sources += crypto_sources_linux_x86
+       } else {
+         public_configs = [ ":no_asm_config" ]
+       }
+-    } else if (current_cpu == "arm" && (is_linux || is_android)) {
++    } else if (current_cpu == "arm" && (is_linux || is_bsd || is_android)) {
+       sources += crypto_sources_linux_arm
+-    } else if (current_cpu == "arm64" && (is_linux || is_android)) {
++    } else if (current_cpu == "arm64" && (is_linux || is_bsd || is_android)) {
+       sources += crypto_sources_linux_aarch64
+ 
+       # TODO(davidben): Remove explicit arch flag once https://crbug.com/576858

@@ -1,5 +1,5 @@
---- net/proxy/proxy_service.cc.orig	2016-07-22 00:06:56.000000000 -0400
-+++ net/proxy/proxy_service.cc	2016-08-03 15:29:21.017256000 -0400
+--- net/proxy/proxy_service.cc.orig	2016-07-20 22:03:27.000000000 +0300
++++ net/proxy/proxy_service.cc	2016-08-01 04:25:47.866569000 +0300
 @@ -48,7 +48,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
@@ -14,7 +14,7 @@
               << "be used only for examples.";
    return base::WrapUnique(new UnsetProxyConfigService);
 -#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_FREEBSD)
++#elif defined(OS_LINUX) || defined(OS_BSD)
    std::unique_ptr<ProxyConfigServiceLinux> linux_config_service(
        new ProxyConfigServiceLinux());
- 
+

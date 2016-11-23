@@ -1,0 +1,11 @@
+--- third_party/fontconfig/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/fontconfig/BUILD.gn	2016-09-03 01:45:52.485587000 +0300
+@@ -2,7 +2,7 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-assert(is_linux)
++assert(is_linux || is_bsd)
+ 
+ config("fontconfig_config") {
+   include_dirs = [ "src" ]

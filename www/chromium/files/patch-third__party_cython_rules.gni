@@ -1,0 +1,29 @@
+--- third_party/cython/rules.gni.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/cython/rules.gni	2016-09-03 01:42:35.847781000 +0300
+@@ -6,7 +6,7 @@
+ 
+ template("python_binary_source_set") {
+   # Only available on linux for now.
+-  assert(is_linux)
++  assert(is_linux || is_bsd)
+   assert(defined(invoker.cython_sources) || defined(invoker.sources))
+ 
+   config_name = target_name + "_python_config"
+@@ -81,7 +81,7 @@
+ 
+ template("python_binary_module") {
+   # Only available on linux for now.
+-  assert(is_linux)
++  assert(is_linux || is_bsd)
+ 
+   has_sources = defined(invoker.cython_sources) || defined(invoker.sources)
+ 
+@@ -92,7 +92,7 @@
+   sources_target_name = target_name + "_cython_sources"
+   shared_library_name = target_name + "_shared_library"
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     shared_library_prefix = "lib"
+     shared_library_suffix = ".so"
+     python_module_suffix = ".so"

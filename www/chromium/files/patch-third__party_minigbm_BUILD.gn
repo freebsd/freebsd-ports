@@ -1,0 +1,11 @@
+--- third_party/minigbm/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
++++ third_party/minigbm/BUILD.gn	2016-09-03 01:40:26.605383000 +0300
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/linux/pkg_config.gni")
+ 
+-assert(is_linux)
++assert(is_linux || is_bsd)
+ 
+ declare_args() {
+   # Controls whether the build should use the version of minigbm library

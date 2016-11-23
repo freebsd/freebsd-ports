@@ -1,0 +1,11 @@
+--- chromecast/BUILD.gn.orig	2016-08-03 22:02:15.000000000 +0300
++++ chromecast/BUILD.gn	2016-09-03 01:38:51.775473000 +0300
+@@ -44,7 +44,7 @@
+     "//ui/base:ui_base_unittests",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     tests += [ "//chromecast/crash:cast_crash_unittests" ]
+   }
+ 

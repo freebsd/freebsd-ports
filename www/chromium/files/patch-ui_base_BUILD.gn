@@ -1,0 +1,65 @@
+--- ui/base/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
++++ ui/base/BUILD.gn	2016-09-28 09:32:40.317599000 +0300
+@@ -341,7 +341,7 @@
+     sources += [ "touch/touch_device_android.cc" ]
+   } else if (is_ios) {
+     sources += [ "touch/touch_device_ios.cc" ]
+-  } else if (is_linux) {
++  } else if (is_linux || is_bsd) {
+     sources += [ "touch/touch_device_linux.cc" ]
+   } else {
+     # Empty implementation for all other cases.
+@@ -443,7 +443,7 @@
+     ]
+   }
+ 
+-  if (!use_aura || !is_linux) {
++  if (!use_aura || !(is_linux || is_bsd)) {
+     sources -= [ "resource/resource_bundle_auralinux.cc" ]
+   }
+ 
+@@ -451,7 +451,7 @@
+     sources -= [ "dragdrop/drag_utils_aura.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//build/linux:fontconfig" ]
+   }
+ 
+@@ -459,7 +459,7 @@
+     configs += [ "//build/config/linux:glib" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (!toolkit_views && !use_aura) {
+       sources -= [
+         "dragdrop/drag_utils.cc",
+@@ -794,7 +794,7 @@
+       "ime/win/imm32_manager_unittest.cc",
+       "ime/win/tsf_input_scope_unittest.cc",
+     ]
+-    if (is_linux && use_aura && !is_chromeos) {
++    if ((is_linux || is_bsd) && use_aura && !is_chromeos) {
+       sources += [ "ime/input_method_auralinux_unittest.cc" ]
+     }
+     if (is_mac) {
+@@ -919,7 +919,7 @@
+     ]
+   }
+ 
+-  if (is_android || is_linux || is_mac || is_win) {
++  if (is_android || is_linux || is_bsd || is_mac || is_win) {
+     # TODO(brettw): We should be able to depend on //ui/resources:ui_test_pak
+     # instead of depending directly on the non-test .pak files, but depending
+     # on ui_test_pak seems to have no effect.
+@@ -932,7 +932,7 @@
+       "//third_party/mesa:osmesa",
+     ]
+   }
+-  if (is_linux || is_win) {
++  if (is_linux || is_bsd || is_win) {
+     data += [
+       # TODO(brettw): Remove these two lines.
+       "$root_out_dir/ui/en-US.pak",

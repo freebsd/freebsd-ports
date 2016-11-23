@@ -3,27 +3,27 @@
 @@ -5,6 +5,7 @@
  #ifndef MEDIA_FILTERS_FILE_DATA_SOURCE_H_
  #define MEDIA_FILTERS_FILE_DATA_SOURCE_H_
- 
+
 +#include <cstdio>
  #include <string>
- 
+
  #include "base/files/file.h"
 --- content/public/common/child_process_sandbox_support_linux.h.orig	2013-10-11 19:30:28.000000000 +0200
 +++ content/public/common/child_process_sandbox_support_linux.h	2013-10-16 15:29:00.000000000 +0200
 @@ -7,6 +7,7 @@
- 
+
  #include <stdint.h>
  #include <string>
 +#include <sys/types.h>
- 
+
  #include "content/common/content_export.h"
- 
+
 --- third_party/ffmpeg/libavutil/cpu.c.orig	2013-11-16 01:26:14.000000000 +0100
 +++ third_party/ffmpeg/libavutil/cpu.c	2013-11-19 00:24:53.000000000 +0100
 @@ -24,6 +24,9 @@
  #include "opt.h"
  #include "common.h"
- 
+
 +/* TODO(rene) work around a compile error with GCC 4.6.4 on FreeBSD */
 +#define __BSD_VISIBLE 1
 +
@@ -35,22 +35,22 @@
 @@ -2,6 +2,8 @@
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
- 
+
 +#include <stdio.h>
 +
  #include "content/browser/browser_shutdown_profile_dumper.h"
- 
+
  #include "base/base_switches.h"
 --- testing/perf/perf_test.cc	2014-03-03 12:59:30.000000000 -0500
 +++ testing/perf/perf_test.cc.orig	2014-02-20 15:28:27.000000000 -0500
 @@ -2,10 +2,10 @@
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
- 
+
 +#include <stdio.h>
 +
  #include "testing/perf/perf_test.h"
- 
+
 -#include <stdio.h>
 -
  #include "base/logging.h"
@@ -59,7 +59,7 @@
 --- ui/gfx/codec/jpeg_codec.cc.orig	2014-10-02 19:19:03.000000000 +0200
 +++ ui/gfx/codec/jpeg_codec.cc	2014-10-05 22:38:28.000000000 +0200
 @@ -13,6 +13,7 @@
- 
+
  extern "C" {
  #if defined(USE_SYSTEM_LIBJPEG)
 +#include <stdio.h>
@@ -70,77 +70,44 @@
 +++ third_party/webrtc/common_audio/wav_file.h	2014-10-18 12:04:03.000000000 +0200
 @@ -14,6 +14,7 @@
  #ifdef __cplusplus
- 
+
  #include <stdint.h>
 +#include <stdio.h>
  #include <cstddef>
  #include <string>
- 
+
 --- v8/src/base/platform/platform.h.orig	2015-01-27 03:22:59.000000000 +0100
 +++ v8/src/base/platform/platform.h	2015-01-28 18:37:43.268781292 +0100
 @@ -22,6 +22,7 @@
  #define V8_BASE_PLATFORM_PLATFORM_H_
- 
+
  #include <cstdarg>
 +#include <cstdio>
  #include <string>
  #include <vector>
- 
+
 --- v8/src/compiler/graph-visualizer.cc.orig	2015-04-28 22:29:10.000000000 +0200
 +++ v8/src/compiler/graph-visualizer.cc	2015-05-02 21:01:32.086593000 +0200
 @@ -5,6 +5,7 @@
  #include "src/compiler/graph-visualizer.h"
- 
+
  #include <sstream>
 +#include <cstdio>
  #include <string>
- 
+
  #include "src/code-stubs.h"
-@@ -25,7 +26,7 @@
- namespace compiler {
- 
- 
--FILE* OpenVisualizerLogFile(CompilationInfo* info, const char* phase,
-+std::FILE* OpenVisualizerLogFile(CompilationInfo* info, const char* phase,
-                             const char* suffix, const char* mode) {
-   EmbeddedVector<char, 256> filename;
-   SmartArrayPointer<char> function_name;
 --- third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c.orig	2015-07-24 22:27:11.000000000 +0200
 +++ third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c	2015-07-26 17:38:40.937606000 +0200
-@@ -34,6 +34,7 @@
- #include <windows.h>
- #endif
- #if HAVE_SYSCTL
+@@ -1,2 +1,3 @@
+ // File automatically generated. See crbug.com/495833.
 +#define __BSD_VISIBLE 1
- #if HAVE_SYS_PARAM_H
- #include <sys/param.h>
- #endif
---- v8/src/compiler/graph-visualizer.h.orig	2015-07-24 22:28:03.000000000 +0200
-+++ v8/src/compiler/graph-visualizer.h	2015-07-26 18:37:45.488253000 +0200
-@@ -5,7 +5,7 @@
- #ifndef V8_COMPILER_GRAPH_VISUALIZER_H_
- #define V8_COMPILER_GRAPH_VISUALIZER_H_
- 
--#include <stdio.h>
-+#include <cstdio>
- #include <iosfwd>
- 
- namespace v8 {
-@@ -21,7 +21,7 @@
- class Schedule;
- class SourcePositionTable;
- 
--FILE* OpenVisualizerLogFile(CompilationInfo* info, const char* phase,
-+std::FILE* OpenVisualizerLogFile(CompilationInfo* info, const char* phase,
-                             const char* suffix, const char* mode);
- 
- struct AsDOT {
+ #include "cpu.c"
 --- v8/src/log-utils.h.orig	2015-10-13 21:04:45.000000000 +0200
 +++ v8/src/log-utils.h	2015-10-17 10:17:35.535561000 +0200
 @@ -5,6 +5,9 @@
  #ifndef V8_LOG_UTILS_H_
  #define V8_LOG_UTILS_H_
- 
+
 +#include <cstdarg>
 +#include <cstdio>
 +
@@ -151,7 +118,7 @@
 +++ third_party/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc	2015-11-01 11:32:36.293750000 +0100
 @@ -11,6 +11,7 @@
  #include "webrtc/modules/remote_bitrate_estimator/overuse_detector.h"
- 
+
  #include <algorithm>
 +#include <cstdio>
  #include <sstream>
@@ -162,15 +129,15 @@
 @@ -42,7 +42,7 @@
    else if (hue * 3.0 < 2.0)
      result = temp1 + (temp2 - temp1) * (2.0 / 3.0 - hue) * 6.0;
- 
+
 -  return static_cast<int>(std::round(result * 255));
 +  return static_cast<int>(round(result * 255));
  }
- 
+
  // Assumes sRGB.
 @@ -85,7 +85,7 @@
  }
- 
+
  uint8_t GetLuma(SkColor color) {
 -  return static_cast<uint8_t>(std::round((0.299 * SkColorGetR(color)) +
 +  return static_cast<uint8_t>(round((0.299 * SkColorGetR(color)) +
@@ -188,12 +155,12 @@
 +                        static_cast<int>(round(g)),
 +                        static_cast<int>(round(b)));
  }
- 
+
  void BuildLumaHistogram(const SkBitmap& bitmap, int histogram[256]) {
 @@ -275,10 +275,10 @@
    double b = (SkColorGetB(foreground) * f_weight +
                SkColorGetB(background) * b_weight) / 255.0;
- 
+
 -  return SkColorSetARGB(static_cast<int>(std::round(normalizer)),
 -                        static_cast<int>(std::round(r)),
 -                        static_cast<int>(std::round(g)),
@@ -203,18 +170,18 @@
 +                        static_cast<int>(round(g)),
 +                        static_cast<int>(round(b)));
  }
- 
+
  bool IsDark(SkColor color) {
 --- media/filters/audio_clock.cc.orig	2016-04-07 11:55:00.678817033 +0200
 +++ media/filters/audio_clock.cc	2016-04-07 11:55:28.152814716 +0200
 @@ -121,7 +121,7 @@
    }
- 
+
    return base::TimeDelta::FromMicroseconds(
 -      std::round(frames_until_timestamp * microseconds_per_frame_));
 +      round(frames_until_timestamp * microseconds_per_frame_));
  }
- 
+
  void AudioClock::ContiguousAudioDataBufferedForTesting(
 --- media/filters/audio_clock.h.orig	2016-04-08 14:22:02.833940146 +0200
 +++ media/filters/audio_clock.h	2016-04-08 14:22:14.433876920 +0200
@@ -230,7 +197,7 @@
 -        std::round(back_timestamp_micros_));
 +        round(back_timestamp_micros_));
    }
- 
+
    // Returns the amount of wall time until |timestamp| will be played by the
 --- content/browser/web_contents/web_contents_impl.cc.orig	2016-04-08 15:44:21.989537858 +0200
 +++ content/browser/web_contents/web_contents_impl.cc	2016-04-08 15:44:44.574535099 +0200
@@ -246,7 +213,7 @@
 --- chrome/browser/ui/views/frame/browser_root_view.cc.orig	2016-04-08 17:23:19.749128496 +0200
 +++ chrome/browser/ui/views/frame/browser_root_view.cc	2016-04-08 17:23:30.609126494 +0200
 @@ -139,10 +139,10 @@
- 
+
        // Number of integer scroll events that have passed in each direction.
        int whole_scroll_amount_x =
 -          std::lround(static_cast<double>(scroll_remainder_x_) /
@@ -256,16 +223,16 @@
 -          std::lround(static_cast<double>(scroll_remainder_y_) /
 +          lround(static_cast<double>(scroll_remainder_y_) /
                        ui::MouseWheelEvent::kWheelDelta);
- 
+
        // Adjust the remainder such that any whole scrolls we have taken action
 --- base/process/memory.h.orig	2016-06-06 21:05:12.000000000 +0200
 +++ base/process/memory.h	2016-06-12 20:04:24.000000000 +0200
 @@ -6,6 +6,7 @@
  #define BASE_PROCESS_MEMORY_H_
- 
+
  #include <stddef.h>
 +#include <stdlib.h>
- 
+
  #include "base/base_export.h"
  #include "base/process/process_handle.h"
 --- media/audio/audio_output_device.cc.orig	2016-06-06 21:05:19.000000000 +0200
@@ -278,61 +245,39 @@
 +  render_callback_->Render(output_bus_.get(), round(frames_delayed),
                             frames_skipped);
  }
- 
+
 --- media/audio/audio_output_stream_sink.cc.orig	2016-06-06 21:05:19.000000000 +0200
 +++ media/audio/audio_output_stream_sink.cc	2016-06-12 20:35:05.000000000 +0200
 @@ -85,7 +85,7 @@
    if (!active_render_callback_)
      return 0;
- 
+
 -  uint32_t frames_delayed = std::round(static_cast<double>(total_bytes_delay) /
 +  uint32_t frames_delayed = round(static_cast<double>(total_bytes_delay) /
                                         active_params_.GetBytesPerFrame());
- 
+
    return active_render_callback_->Render(dest, frames_delayed, frames_skipped);
---- media/base/audio_renderer_mixer_input.cc.orig	2016-06-06 21:05:19.000000000 +0200
-+++ media/base/audio_renderer_mixer_input.cc	2016-06-12 20:50:35.000000000 +0200
-@@ -164,7 +164,7 @@
-   // TODO(chcunningham): Delete this conversion and change ProvideInput to more
-   // precisely describe delay as a count of frames delayed instead of TimeDelta.
-   // See http://crbug.com/587522.
--  uint32_t frames_delayed = std::round(buffer_delay.InMicroseconds() /
-+  uint32_t frames_delayed = round(buffer_delay.InMicroseconds() /
-                                        params_.GetMicrosecondsPerFrame());
- 
-   int frames_filled = callback_->Render(audio_bus, frames_delayed, 0);
---- media/base/audio_renderer_mixer.cc.orig	2016-06-06 21:05:19.000000000 +0200
-+++ media/base/audio_renderer_mixer.cc	2016-06-12 20:52:34.000000000 +0200
-@@ -138,7 +138,7 @@
-   // expect a count of frames delayed instead of TimeDelta (less precise).
-   // See http://crbug.com/587522.
-   base::TimeDelta audio_delay = base::TimeDelta::FromMicroseconds(
--      std::round(frames_delayed * output_params_.GetMicrosecondsPerFrame()));
-+      round(frames_delayed * output_params_.GetMicrosecondsPerFrame()));
- 
-   master_converter_.ConvertWithDelay(audio_delay, audio_bus);
-   return audio_bus->frames();
 --- third_party/WebKit/Source/modules/battery/battery_status.h.orig	2016-06-06 21:05:36.000000000 +0200
 +++ third_party/WebKit/Source/modules/battery/battery_status.h	2016-06-13 20:21:31.000000000 +0200
 @@ -46,7 +46,7 @@
      // of reducing the possibility of fingerprinting and triggers less level
      // change events on platforms where the granularity is high.
-     ASSERT(level >= 0 && level <= 1);
+     DCHECK(level >= 0 && level <= 1);
 -    return std::round(level * 100) / 100.f;
 +    return round(level * 100) / 100.f;
    }
- 
+
    bool charging_;
 --- chrome/common/channel_info_posix.cc.orig	2016-06-06 21:05:14.000000000 +0200
 +++ chrome/common/channel_info_posix.cc	2016-06-13 21:36:53.000000000 +0200
 @@ -8,6 +8,8 @@
  #include "build/build_config.h"
  #include "components/version_info/version_info.h"
- 
+
 +#include <stdlib.h>
 +
  namespace chrome {
- 
+
  namespace {
 --- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2016-06-06 21:05:14.000000000 +0200
 +++ chrome/browser/ui/views/tabs/tab_strip.cc	2016-06-13 22:03:03.000000000 +0200
@@ -360,3 +305,13 @@
            CreateShadowDrawLooper(SkColorSetA(stroke_color, alpha)));
        canvas->DrawPath(fill, paint);
 
+--- base/trace_event/heap_profiler_allocation_context_tracker.cc.orig	2016-08-03 22:02:10.000000000 +0300
++++ base/trace_event/heap_profiler_allocation_context_tracker.cc	2016-08-21 04:17:53.717876000 +0300
+@@ -13,6 +13,7 @@
+ #include "base/threading/thread_local_storage.h"
+ #include "base/trace_event/heap_profiler_allocation_context.h"
+
++#include <stdio.h>
+ #if defined(OS_LINUX) || defined(OS_ANDROID)
+ #include <sys/prctl.h>
+ #endif

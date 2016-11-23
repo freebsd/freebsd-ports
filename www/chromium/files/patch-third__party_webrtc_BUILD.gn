@@ -1,0 +1,12 @@
+--- third_party/webrtc/BUILD.gn.orig	2016-10-06 04:05:35.000000000 +0300
++++ third_party/webrtc/BUILD.gn	2016-10-14 17:24:44.301409000 +0300
+@@ -60,6 +60,9 @@
+   if (is_linux) {
+     defines += [ "WEBRTC_LINUX" ]
+   }
++  if (is_bsd) {
++    defines += [ "WEBRTC_LINUX", "WEBRTC_BSD", "WEBRTC_THREAD_RR" ]
++  }
+   if (is_mac) {
+     defines += [ "WEBRTC_MAC" ]
+   }

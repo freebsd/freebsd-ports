@@ -1,0 +1,11 @@
+--- components/policy/BUILD.gn.orig	2016-08-03 22:02:16.000000000 +0300
++++ components/policy/BUILD.gn	2016-09-03 01:58:22.866259000 +0300
+@@ -141,7 +141,7 @@
+     if (is_android) {
+       outputs += policy_templates_android_outputs
+     }
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       outputs += policy_templates_linux_outputs
+     }
+     if (is_mac) {

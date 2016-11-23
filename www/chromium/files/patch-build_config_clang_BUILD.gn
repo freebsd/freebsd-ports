@@ -1,0 +1,20 @@
+--- build/config/clang/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
++++ build/config/clang/BUILD.gn	2016-09-03 01:38:15.236274000 +0300
+@@ -21,7 +21,7 @@
+             "//third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.dylib",
+             root_build_dir),
+       ]
+-    } else if (is_linux || is_android) {
++    } else if (is_linux || is_bsd || is_android) {
+       cflags += [
+         "-Xclang",
+         "-load",
+@@ -51,7 +51,7 @@
+       "check-implicit-copy-ctors",
+     ]
+ 
+-    if ((is_linux || is_android) && !is_chromecast) {
++    if ((is_linux || is_bsd || is_android) && !is_chromecast) {
+       cflags += [
+         "-Xclang",
+         "-plugin-arg-find-bad-constructs",

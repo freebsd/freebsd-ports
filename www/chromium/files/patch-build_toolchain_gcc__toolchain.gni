@@ -1,0 +1,38 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2016-10-06 04:02:08.000000000 +0300
++++ build/toolchain/gcc_toolchain.gni	2016-10-13 10:28:11.777849000 +0300
+@@ -453,14 +453,28 @@
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
+-    ld = cxx
++    if (is_bsd) {
++      # cc = getenv("CC")
++      # assert(cc != "", "CC env must me set with >= clang39")
++      # cxx = getenv("CXX")
++      # assert(cxx != "", "CXX env must me set with >= clang++39")
++      # ld = cxx
++      cc = "${toolprefix}clang39"
++      cxx = "${toolprefix}clang++39"
++      ld = cxx
++      readelf = "readelf"
++      ar = "${toolprefix}llvm-ar39"
++      nm = "${toolprefix}llvm-nm39"
++    } else {
++      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
++      cc = "$prefix/clang"
++      cxx = "$prefix/clang++"
++      ld = cxx
+ 
+-    readelf = "${toolprefix}readelf"
+-    ar = "${toolprefix}ar"
+-    nm = "${toolprefix}nm"
++      readelf = "${toolprefix}readelf"
++      ar = "${toolprefix}ar"
++      nm = "${toolprefix}nm"
++    }
+ 
+     forward_variables_from(invoker, [ "strip" ])
+ 

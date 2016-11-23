@@ -1,0 +1,10 @@
+--- content/renderer/devtools/v8_sampling_profiler.cc.orig	2016-10-06 04:02:19.000000000 +0300
++++ content/renderer/devtools/v8_sampling_profiler.cc	2016-10-30 03:00:33.775227000 +0300
+@@ -22,6 +22,7 @@
+
+ #if defined(OS_POSIX)
+ #include <signal.h>
++#include <ucontext.h>
+ #define USE_SIGNALS
+ #endif
+

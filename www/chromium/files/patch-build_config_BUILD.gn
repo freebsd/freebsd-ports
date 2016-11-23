@@ -1,0 +1,20 @@
+--- build/config/BUILD.gn.orig	2016-10-06 04:02:08.000000000 +0300
++++ build/config/BUILD.gn	2016-10-13 04:42:48.294016000 +0300
+@@ -297,7 +297,7 @@
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if (is_linux && current_cpu == "x64" && enable_iterator_debugging) {
++  } else if ((is_linux || is_bsd) && current_cpu == "x64" && enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+     # TODO(phajdan.jr): Should we enable this for all of POSIX?
+@@ -411,7 +411,7 @@
+     ]
+   } else if (is_ios) {
+     configs += [ "//build/config/ios:ios_dynamic_flags" ]
+-  } else if (is_linux || is_android) {
++  } else if (is_linux || is_android || is_bsd) {
+     configs += [ "//build/config/gcc:executable_ldconfig" ]
+     if (is_android) {
+       configs += [ "//build/config/android:executable_config" ]

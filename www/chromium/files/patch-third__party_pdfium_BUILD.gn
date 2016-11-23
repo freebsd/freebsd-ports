@@ -1,0 +1,11 @@
+--- third_party/pdfium/BUILD.gn.orig	2016-10-06 04:05:20.000000000 +0300
++++ third_party/pdfium/BUILD.gn	2016-10-13 08:51:40.306487000 +0300
+@@ -40,7 +40,7 @@
+   cflags = []
+   configs = [ ":pdfium_common_config" ]
+   defines = [ "V8_DEPRECATION_WARNINGS" ]
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (current_cpu == "x64") {
+       defines += [ "_FX_CPU_=_FX_X64_" ]
+       cflags += [ "-fPIC" ]

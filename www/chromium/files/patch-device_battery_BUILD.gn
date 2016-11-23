@@ -1,0 +1,11 @@
+--- device/battery/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
++++ device/battery/BUILD.gn	2016-09-03 02:03:11.489591000 +0300
+@@ -47,7 +47,7 @@
+       ]
+     }
+ 
+-    if (is_linux && !is_chromeos) {
++    if ((is_linux || is_bsd) && !is_chromeos) {
+       if (use_dbus) {
+         configs += [ "//build/config/linux/dbus" ]
+         deps += [ "//dbus" ]
