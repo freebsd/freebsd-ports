@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2016-09-23 22:50:09 UTC
++++ src/CMakeLists.txt
+@@ -83,7 +83,7 @@ set(QT_LIBRARIES Qt5::Widgets Qt5::Core 
+ target_link_libraries(lximage-qt
+     fm-qt
+     ${QT_LIBRARIES}
+-    ${EXIF_LIBRARIES}
++    ${EXIF_LDFLAGS}
+     ${X11_LIBRARIES}
+     ${XFIXES_LIBRARIES}
+ )
