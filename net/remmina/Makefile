@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina
 
-USES=		cmake:outsource gmake pathfix pkgconfig
+USES=		cmake:outsource gettext gmake localbase:ldflags pathfix pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext
 PATHFIX_WRKSRC=		${WRKSRC}/remmina
@@ -41,8 +41,7 @@ AVAHI_CMAKE_BOOL=	WITH_AVAHI
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
-NLS_USES=		gettext localbase
-NLS_CMAKE_BOOL=		WITH_GETTEXT
+NLS_CMAKE_BOOL=		WITH_TRANSLATIONS
 
 SSH_LIB_DEPENDS=	libssh_threads.so:security/libssh
 SSH_LDFLAGS=		-fstack-protector
@@ -66,7 +65,5 @@ post-patch:
 	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e's|add_subdirectory(external_tools)||' ${WRKSRC}/remmina/CMakeLists.txt
-post-patch-NLS-off:
-	${REINPLACE_CMD} -e's|add_subdirectory(po)||' ${WRKSRC}/remmina/CMakeLists.txt
 
 .include <bsd.port.post.mk>
