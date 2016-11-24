@@ -1,6 +1,6 @@
---- db.c.orig	Thu Jun 21 11:20:05 2007
-+++ db.c	Thu Jun 21 11:20:32 2007
-@@ -571,11 +571,11 @@
+--- db.c.orig	2005-06-20 02:53:38 UTC
++++ db.c
+@@ -551,11 +551,11 @@ encode_data(size_t len, char *data, char
  		buflen = elen;
  	}
  	*edata = buf;
