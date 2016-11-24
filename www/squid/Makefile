@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.20
+PORTVERSION=	3.5.22
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -294,7 +294,7 @@ post-patch:
 		${change_files})
 	@(cd ${WRKSRC} && ${MV} src/mime.conf.default src/mime.conf.sample)
 
-.if !${PORT_OPTIONS:MIPV6}
+post-patch-IPV6-off:
 	@${REINPLACE_CMD} -e's/ ::1//' -e's/ fc00::\/7//' \
 		-e's/ fe80::\/10//' -e's/ 2001:DB8::2//' \
 		-e's/ 2001:DB8::a:0\/64//' \
@@ -302,7 +302,6 @@ post-patch:
 		-e'/tcp_outgoing_address 2001:db8::beef normal_service_net/d' \
 		-e'/tcp_outgoing_address 2001:db8::1/d' \
 		${WRKSRC}/src/cf.data.pre
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
