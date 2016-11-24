@@ -11,7 +11,10 @@ DISTNAME=	tspc-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexago Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
-USES=		gmake tar:tgz
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../CLIENT-LICENSE.TXT
+
+USES=		gmake ssl tar:tgz
 MAKE_ARGS=	target=freebsd CC="${CC}" CXX="${CXX}" \
 		installdir="${STAGEDIR}${PREFIX}" ETCDIR="${ETCDIR}"
 
