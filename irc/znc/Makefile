@@ -3,12 +3,12 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Advanced IRC bouncer
 
 LICENSE=	APACHE20
@@ -16,8 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
-USES=		compiler:c++11-lib cpe gmake iconv pkgconfig
+SUB_FILES=	pkg-message
+USES=		compiler:c++11-lib cpe gmake iconv pathfix pkgconfig
 MAKE_ENV=	V=1
+
+PORTDOCS=	README.md
+
+USERS=		znc
+GROUPS=		znc
 
 OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 OPENSSL PERL PYTHON TCL
 OPTIONS_DEFAULT=	OPENSSL PERL
@@ -53,8 +59,6 @@ TCL_CONFIGURE_ENABLE=	tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
 TCL_USES=	tcl
 
-PORTDOCS=	README.md
-
 # Instead of using bundled swig generated files, delete them to force
 # regeneration using swig 2.0.11+ (fixes port compilation using clang)
 #
@@ -66,9 +70,6 @@ pre-configure-PYTHON-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's#$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
 		's#/usr/local#${LOCALBASE}#' ${WRKSRC}/configure
 
 post-install-DOCS-on:
@@ -76,6 +77,8 @@ post-install-DOCS-on:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
