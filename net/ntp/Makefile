@@ -13,10 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		Does not build under FreeBSD-9
-.endif
-
 BUILD_DEPENDS=	autogen:devel/autogen
 LIB_DEPENDS=	libevent.so:devel/libevent2 \
 		libmd5.so:www/libwww
@@ -68,6 +64,12 @@ THREADS_CONFIGURE_WITH=		threads
 ${D}_CONFIGURE_ON=	--enable-${D}
 .endfor
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		Does not build under FreeBSD-9, aclocal not found
+.endif
+
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
 	@${TOUCH} ${WRKSRC}/scripts/build/checkHtmlFileDates
@@ -81,4 +83,4 @@ post-install:
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
