@@ -1,0 +1,11 @@
+--- scripts/w3mhelp.cgi.in.orig	2016-11-20 23:37:09.729134000 +0900
++++ scripts/w3mhelp.cgi.in	2016-11-20 23:37:31.174087000 +0900
+@@ -48,7 +48,7 @@
+ 	}
+ 	# print "tlang=$tlang\n";
+ 	eval {require "w3mhelp-funcdesc.$tlang.pl";};
+-	if (defined(%funcdesc)) {
++	if (%funcdesc) {
+ 	    $lang = $tlang;
+ 	}
+     }
