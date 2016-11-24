@@ -3,8 +3,11 @@
 
 PORTNAME=	brotli
 PORTVERSION=	0.5.2
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	archivers
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Brotli-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic-purpose lossless compression algorithm
@@ -13,12 +16,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	autoplist distutils
-USES=		compiler:c++0x python
+USES=		compiler:c++0x python zip
 
 PLIST_FILES=	bin/brotli
-
-GH_ACCOUNT=	google
-USE_GITHUB=	yes
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/python/bro.py ${STAGEDIR}${PREFIX}/bin/brotli
