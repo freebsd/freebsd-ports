@@ -12,6 +12,7 @@ COMMENT=	Documentation for TCL (Tool Command Language)
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 VERSIONS=	8.4.20 \
 		8.5.15 \
