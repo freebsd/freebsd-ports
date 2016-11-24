@@ -10,6 +10,7 @@ bin/h2i
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/http2/hpack.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/icmp.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/idna.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/internal/iana.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ipv4.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ipv6.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/lex/httplex.a
@@ -212,6 +213,8 @@ bin/h2i
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/idna_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/punycode.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/punycode_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/internal/iana/const.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/internal/iana/gen.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/bpf_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/bpfopt_linux.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/bpfopt_stub.go
