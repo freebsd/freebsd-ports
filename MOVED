@@ -8808,3 +8808,4 @@ sysutils/gosa||2016-11-20|Has expired: this version of gosa cannot be fixed (req
 security/krb5-112||2016-11-20|Has expired: EOL twelve months after release of krb5-1.14
 astro/osmium|astro/libosmium|2016-11-23|Rename according to upstream
 deskutils/xfce4-notification-daemon|deskutils/xfce4-notifyd|2016-11-23|Has expired: No longer supported by upstream, replaced with deskutils/xfce4-notifyd
+archivers/brotli|archivers/py-brotli|2016-11-24|Brotli is a python module
