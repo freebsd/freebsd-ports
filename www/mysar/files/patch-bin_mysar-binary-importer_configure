@@ -1,6 +1,6 @@
---- configure.orig	2008-04-28 12:03:38.000000000 +0000
-+++ configure	2008-04-28 12:03:54.000000000 +0000
-@@ -569,7 +569,7 @@
+--- configure.orig	2007-08-17 09:05:19 UTC
++++ configure
+@@ -569,7 +569,7 @@ cross_compiling=no
  subdirs=
  MFLAGS=
  MAKEFLAGS=
