@@ -11,6 +11,9 @@ DISTNAME=	smm611
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical mudclient with mapper
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../docu/GPL
+
 RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl.so:lang/itcl
@@ -18,16 +21,16 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:x11-toolkits/itk \
 WRKSRC=		${WRKDIR}/smm/Install.unix
 USES=		gmake tk tar:tgz
 EXTRACT_AFTER_ARGS=--exclude CVS
-
-MAKE_ENV+=	STAGEDIR=${STAGEDIR}
+DESTDIRNAME=	STAGEDIR
+NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh
+	@${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type f | ${XARGS} \
-	    ${CHMOD} ${SHAREMODE}
-	${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type d | ${XARGS} \
-	    ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type f | ${XARGS} \
+		${CHMOD} ${SHAREMODE}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type d | ${XARGS} \
+		${CHMOD} 755
 
 .include <bsd.port.mk>
