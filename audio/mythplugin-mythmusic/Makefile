@@ -3,13 +3,16 @@
 
 PORTNAME=	mythmusic
 PORTVERSION=	0.27.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 		libFLAC.so:audio/flac \
@@ -29,7 +32,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/plugins
 DESTDIRNAME=	INSTALL_ROOT
 
-PLIST_SUB+=	MYTHSHARE="share/mythtv"
+PLIST_SUB=	MYTHSHARE="share/mythtv"
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
