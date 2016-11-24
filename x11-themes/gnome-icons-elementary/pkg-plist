@@ -746,6 +746,7 @@ share/icons/elementary/apps/32/postscript-viewer.svg
 share/icons/elementary/apps/32/preferences-desktop-font.svg
 share/icons/elementary/apps/32/preferences-desktop.svg
 share/icons/elementary/apps/32/system-file-manager.svg
+share/icons/elementary/apps/32/system-os-install.svg
 share/icons/elementary/apps/32/system-software-install.svg
 share/icons/elementary/apps/32/system-software-update.svg
 share/icons/elementary/apps/32/system-users.svg
@@ -777,6 +778,7 @@ share/icons/elementary/apps/48/postscript-viewer.svg
 share/icons/elementary/apps/48/preferences-desktop-font.svg
 share/icons/elementary/apps/48/preferences-desktop.svg
 share/icons/elementary/apps/48/system-file-manager.svg
+share/icons/elementary/apps/48/system-os-install.svg
 share/icons/elementary/apps/48/system-software-install.svg
 share/icons/elementary/apps/48/system-software-update.svg
 share/icons/elementary/apps/48/system-users.svg
@@ -807,6 +809,7 @@ share/icons/elementary/apps/64/postscript-viewer.svg
 share/icons/elementary/apps/64/preferences-desktop-font.svg
 share/icons/elementary/apps/64/preferences-desktop.svg
 share/icons/elementary/apps/64/system-file-manager.svg
+share/icons/elementary/apps/64/system-os-install.svg
 share/icons/elementary/apps/64/system-software-install.svg
 share/icons/elementary/apps/64/system-software-update.svg
 share/icons/elementary/apps/64/system-users.svg
@@ -1229,6 +1232,7 @@ share/icons/elementary/devices/symbolic/drive-harddisk-usb-symbolic.svg
 share/icons/elementary/devices/symbolic/drive-multidisk-symbolic.svg
 share/icons/elementary/devices/symbolic/drive-optical-symbolic.svg
 share/icons/elementary/devices/symbolic/drive-removable-media-symbolic.svg
+share/icons/elementary/devices/symbolic/fingerprint-symbolic.svg
 share/icons/elementary/devices/symbolic/input-dialpad-symbolic.svg
 share/icons/elementary/devices/symbolic/input-gaming-symbolic.svg
 share/icons/elementary/devices/symbolic/input-keyboard-symbolic.svg
@@ -2195,7 +2199,6 @@ share/icons/elementary/places/symbolic/user-desktop-symbolic.svg
 share/icons/elementary/places/symbolic/user-home-symbolic.svg
 share/icons/elementary/places/symbolic/user-trash-symbolic.svg
 share/icons/elementary/places@2x
-share/icons/elementary/pre-commit
 share/icons/elementary/status/128/avatar-default.svg
 share/icons/elementary/status/128/dialog-information.svg
 share/icons/elementary/status/128/image-missing.svg
@@ -2393,6 +2396,7 @@ share/icons/elementary/status/48/battery-low-symbolic.svg
 share/icons/elementary/status/48/battery-low.svg
 share/icons/elementary/status/48/battery-missing.svg
 share/icons/elementary/status/48/bluetooth-disabled-symbolic.svg
+share/icons/elementary/status/48/brightness-display-symbolic.svg
 share/icons/elementary/status/48/dialog-error.svg
 share/icons/elementary/status/48/dialog-information.svg
 share/icons/elementary/status/48/dialog-password.svg
