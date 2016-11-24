@@ -20,6 +20,7 @@ PLIST=		${.CURDIR}/pkg-plist
 PIDGIN_SLAVE=	yes
 WITH_GTKUI=	yes
 
+USES=		python:build
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gtk20 intltool
 USE_XORG=	xscrnsaver sm
