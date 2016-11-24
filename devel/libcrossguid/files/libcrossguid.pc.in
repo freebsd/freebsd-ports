@@ -5,6 +5,5 @@ includedir=${prefix}/include
 Name: libguid
 Description: minimal and cross platform C++ GUID library
 Version: %VERSION%
-Libs: -L${libdir} -lguid
+Libs: -L${libdir} -lcrossguid
 Cflags: -I${includedir}
-
