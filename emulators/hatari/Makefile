@@ -3,6 +3,7 @@
 
 PORTNAME=	hatari
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libpng.so:graphics/png
+BUILD_DEPENDS=	python:lang/python
+RUN_DEPENDS=	python:lang/python
 
 USES=		cmake desktop-file-utils python readline shared-mime-info \
 		shebangfix tar:bzip2
