@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbvmomi
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.9.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,14 +13,16 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
-		rubygem-nokogiri>=1.4.1:textproc/rubygem-nokogiri \
-		rubygem-trollop>=0:devel/rubygem-trollop \
+		rubygem-json>=1.8:devel/rubygem-json \
+		rubygem-nokogiri>=1.5:textproc/rubygem-nokogiri \
+		rubygem-trollop>=2.1:devel/rubygem-trollop
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	examples/run.sh
 
 PLIST_FILES=	bin/rbvmomish
+
+SHEBANG_FILES=	examples/run.sh
 
 .include <bsd.port.mk>
