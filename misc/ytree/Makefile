@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses readline
 ALL_TARGET=	ytree
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lreadline
 
 OPTIONS_DEFINE=	DOCS
