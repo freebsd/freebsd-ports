@@ -20,6 +20,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/dkim.conf
 %%ETCDIR%%/modules.d/dmarc.conf
 %%ETCDIR%%/modules.d/emails.conf
+%%ETCDIR%%/modules.d/fann_redis.conf
 %%ETCDIR%%/modules.d/forged_recipients.conf
 %%ETCDIR%%/modules.d/fuzzy_check.conf
 %%ETCDIR%%/modules.d/hfilter.conf
@@ -32,6 +33,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/phishing.conf
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
+%%ETCDIR%%/modules.d/redis.conf
 %%ETCDIR%%/modules.d/regexp.conf
 %%ETCDIR%%/modules.d/rspamd_update.conf
 %%ETCDIR%%/modules.d/spf.conf
@@ -52,6 +54,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/lua/antivirus.lua
 %%DATADIR%%/lua/asn.lua
+%%DATADIR%%/lua/clickhouse.lua
 %%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/dynamic_conf.lua
