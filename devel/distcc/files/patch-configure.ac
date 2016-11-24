@@ -1,6 +1,6 @@
---- configure.ac.orig	2008-12-03 05:50:31.000000000 +0800
-+++ configure.ac	2010-08-24 21:55:30.000000000 +0800
-@@ -86,9 +86,12 @@
+--- configure.ac.orig	2008-12-02 23:17:13 UTC
++++ configure.ac
+@@ -86,9 +86,12 @@ AC_ARG_WITH(included-popt,
  	AC_HELP_STRING([--with-included-popt], [use bundled popt library, not from system]))
  
  AC_ARG_ENABLE(rfc2553,
