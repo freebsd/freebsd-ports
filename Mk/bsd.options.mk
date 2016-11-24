@@ -36,6 +36,8 @@
 # OPTIONS_EXCLUDE		- List of options unsupported (useful for slave ports)
 # OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
 # OPTIONS_EXCLUDE_${OPSYS}	- List of options unsupported on a given ${OPSYS}
+# OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R} - List of options unsupported on a given
+#				  ${OPSYS} and major version (8/9/10...)
 # OPTIONS_SLAVE			- This is designed for slave ports, it removes an
 #				  option from the options list inherited from the
 #				  master port and it always adds it to PORT_OPTIONS
@@ -215,7 +217,8 @@ OPTIONS_DEFINE+=	${opt}
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
 
 _ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} \
-		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}}
+		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}} \
+		${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
 
 .for opt in ${OPTIONS_DEFINE:O:u}
 .  if !${_ALL_EXCLUDE:M${opt}}
