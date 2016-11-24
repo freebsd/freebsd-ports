@@ -2,6 +2,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -11,6 +12,7 @@ COMMENT=	High Performance Message Passing Library
 
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl \
+		libevent.so:devel/libevent2 \
 		libmunge.so:security/munge
 
 HAS_CONFIGURE=	yes
@@ -31,6 +33,12 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--with-hwloc=${LOCALBASE} \
 			--with-libltdl=${LOCALBASE} \
 			--enable-mpi-fortran=usempi \
+			--enable-mpi-cxx \
+			--enable-cxx-exceptions \
+			--enable-heterogeneous \
+			--enable-mpi-thread-multiple \
+			--with-libevent=${LOCALBASE}/include \
+			--with-libevent-libdir=${LOCALBASE}/lib \
 			ompi_cv_fortran_ignore_tkr_data=0
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -39,11 +47,13 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 
 MANPREFIX=	${PREFIX}/${MPIDIR}
 
-OPTIONS_DEFINE=	IPV6 SLURM TORQUE
+OPTIONS_DEFINE=	DEBUG IPV6 SLURM TORQUE
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
 OPTIONS_DEFAULT=	SLURM
 OPTIONS_SUB=	yes
+
+DEBUG_CONFIGURE_ENABLE=	debug
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
