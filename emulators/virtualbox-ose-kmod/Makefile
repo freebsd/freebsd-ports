@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.8
+PORTVERSION=	5.1.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
@@ -37,8 +37,8 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* \
-			virtualbox-ose-kmod-legacy-4*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-* \
+			virtualbox-ose-kmod-legacy-*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
 OPTIONS_SUB=	yes
