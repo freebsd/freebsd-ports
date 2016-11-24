@@ -213,6 +213,7 @@
     SUBDIR += py-kiwi
     SUBDIR += py-qt4-gui
     SUBDIR += py-qt5-gui
+    SUBDIR += py-qt5-quick
     SUBDIR += py-qt5-widgets
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
