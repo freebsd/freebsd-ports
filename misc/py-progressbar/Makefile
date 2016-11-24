@@ -11,9 +11,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Text progressbar library for python
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD3CLAUSE LGPL21+
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.txt
 
-USE_PYTHON=	autoplist distutils
-USES=		python:2.7
+NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 .include <bsd.port.mk>
