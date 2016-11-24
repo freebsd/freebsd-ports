@@ -1372,8 +1372,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.5d6c43ae9899d9decefb4fa901d972b3.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.ef78dfeb11d1c1a2d3fb12afe7cd052f.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.c24f784e8724c4478e8d18bec2ff6ac4.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.5d53a8d586fdf237818531aa0f18deb6.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-pass.e73cc397459c4930e842b86b27d05eb9.svg
@@ -1444,10 +1444,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.c86b1d7624b5ae14ca7a30d73674a808.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/songkick.28598beac20bee7c8dc681851d053bdf.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.ca37a25a2b86f3dfbb77.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.835c7cc24d41e4c664da.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.e03b68e82ebe9b435e8b.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.8a491cd589346009d464.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.0568d312929ad2305711.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.86a768f0bc5afd28ddc6.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.81ced83a78f77bb80332.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
@@ -1598,6 +1598,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/_osx_support.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/_pyio.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/_strptime.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_sysconfigdata.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/_threading_local.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/_weakrefset.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/abc.pyc
@@ -1714,6 +1715,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_values.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_varsize_struct.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_win32.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_wintypes.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/util.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/wintypes.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/curses/__init__.pyc
@@ -1874,6 +1876,11 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_8_sig.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/encodings/uu_codec.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/encodings/zlib_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ensurepip/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ensurepip/__main__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
+%%DATADIR%%/Resources/Python/lib/python2.7/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
+%%DATADIR%%/Resources/Python/lib/python2.7/ensurepip/_uninstall.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/filecmp.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/fileinput.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/fnmatch.pyc
@@ -1929,7 +1936,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_unicode.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/json/tool.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/keyword.pyc
-%%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/Python-2.7.4-py2.7.egg-info
+%%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/Python-2.7.12-py2.7.egg-info
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_bisect.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_codecs_cn.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1991,9 +1998,9 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/unicodedata.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/zlib.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/Grammar.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/Grammar2.7.4.final.0.pickle
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/Grammar2.7.12.final.0.pickle
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/PatternGrammar.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/PatternGrammar2.7.4.final.0.pickle
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/PatternGrammar2.7.12.final.0.pickle
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__init__.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__main__.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/btm_matcher.pyc
@@ -2002,6 +2009,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixer_util.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/__init__.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_apply.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_asserts.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_basestring.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_buffer.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_callable.pyc
@@ -2355,6 +2363,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/zipfile.pyc
 %%DATADIR%%/Resources/StatusItemTemplate.png
 %%DATADIR%%/Resources/StatusItemTemplate@2x.png
+%%DATADIR%%/Resources/black-h264.ts
 %%DATADIR%%/Resources/cacert.pem
 %%DATADIR%%/Resources/clientaccesspolicy.xml
 @mode 644
@@ -2442,7 +2451,7 @@
 %%DATADIR%%/libpython2.7.so.1
 %%DATADIR%%/libsoci_core.so.3.0.0
 %%DATADIR%%/libsoci_sqlite3.so.3.0.0
-%%DATADIR%%/libsqlite3.so.8
+%%DATADIR%%/libsqlite3.so.0
 %%DATADIR%%/libssl.so.1.0.0
 %%DATADIR%%/libswscale.so.4
 %%DATADIR%%/libtag.so.1
