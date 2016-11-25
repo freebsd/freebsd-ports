@@ -85,9 +85,9 @@ NLS_CMAKE_OFF=	-DDISABLE_NLS:BOOL=ON
 CMAKE_ARGS+=	-DENABLE_GENERIC:BOOL=ON
 .endif
 
-# When building with Gcc, needs Gcc 4.9+
+# When building with GCC, needs GCC 4.9+
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 49
-USE_GCC=	4.9+
+USE_GCC=	yes
 # Enable std::stoul()
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 # Enable log2f(), exp2f() and roundf()

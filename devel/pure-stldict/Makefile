@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 1000000
-USE_GCC=	4.9+
+USE_GCC=	yes
 .endif
 
 post-install:

@@ -20,7 +20,7 @@ PORTDOCS=	*
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
-USE_GCC=	4.9+
+USE_GCC=	yes
 
 USES=		shebangfix
 
