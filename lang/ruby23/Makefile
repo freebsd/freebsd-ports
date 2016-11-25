@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 
 .if (${ARCH} == "powerpc64" || ${ARCH} == "powerpc")
-USE_GCC=	4.9+
+USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"

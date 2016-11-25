@@ -24,7 +24,7 @@ GH_PROJECT=	seqan
 USES=		cmake:outsource
 CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
 
-USE_GCC=	4.9+
+USE_GCC=	yes
 
 .include <bsd.port.pre.mk>
 
