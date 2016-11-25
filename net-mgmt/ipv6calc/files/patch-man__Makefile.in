@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2009-01-07 03:37:45.000000000 +1100
-+++ man/Makefile.in	2009-01-12 21:52:53.000000000 +1100
-@@ -25,7 +25,7 @@
+--- man/Makefile.in.orig	2009-01-06 16:37:45 UTC
++++ man/Makefile.in
+@@ -25,7 +25,7 @@ clean:
  test:		
  
  install:
