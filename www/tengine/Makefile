@@ -456,6 +456,7 @@ LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
 			libswscale.so:multimedia/ffmpeg \
 			libMagickWand-6.so:graphics/ImageMagick
 USES+=		jpeg
+BROKEN=		fatal error: 'wand/magick_wand.h' file not found
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.2.0
 GH_ACCOUNT+=	wandenberg:videothumbextractor
 GH_PROJECT+=	nginx-video-thumbextractor-module:videothumbextractor
