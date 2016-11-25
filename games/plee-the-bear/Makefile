@@ -18,15 +18,16 @@ BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libclaw_application.so:devel/libclaw
 
-USE_SDL=	sdl mixer
-USE_GL=		gl glu
-INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
+BROKEN=		does not build with boost 1.62
 
 # gettext dep is unconditional; NLS option just disables translations install
 USES=		cmake gettext
 CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
 		-DBEAR_NO_EDITOR=YES
+USE_SDL=	sdl mixer
+USE_GL=		gl glu
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 
 PORTDATA=	*
 
