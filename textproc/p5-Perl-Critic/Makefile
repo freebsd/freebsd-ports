@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.12.5
-PORTREVISION=	1
+PORTVERSION=	1.12.6
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,7 +30,6 @@ BUILD_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Readonly>=2.00:devel/p5-Readonly \
 		p5-String-Format>=1.13:textproc/p5-String-Format \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
-		p5-Term-ANSIColor>=2.02:devel/p5-Term-ANSIColor \
 		perltidy:devel/p5-Perl-Tidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
