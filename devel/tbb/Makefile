@@ -3,7 +3,7 @@
 
 PORTNAME=	tbb
 PORTVERSION=	2017.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
@@ -49,12 +49,12 @@ post-patch:
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbb.so \
-		${STAGEDIR}${PREFIX}/lib/libtbb.so.4; \
-	${LN} -sf libtbb.so.4 \
+		${STAGEDIR}${PREFIX}/lib/libtbb.so.2; \
+	${LN} -sf libtbb.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libtbb.so; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbbmalloc.so \
-		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so.4; \
-	${LN} -sf libtbbmalloc.so.4 \
+		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so.2; \
+	${LN} -sf libtbbmalloc.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/
