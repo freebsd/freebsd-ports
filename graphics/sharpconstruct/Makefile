@@ -10,15 +10,18 @@ MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
 		libglademm-2.4.so:devel/libglademm24
 
-USES=		tar:bzip2 gmake pkgconfig
-USE_GL=		yes
-GNU_CONFIGURE=	yes
-
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions
+
+USES=		tar:bzip2 gmake pkgconfig
+GNU_CONFIGURE=	yes
+USE_GL=		yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

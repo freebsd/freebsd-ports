@@ -1,6 +1,6 @@
---- src/MainWindow.cc.orig	2013-10-02 09:31:18.000000000 +0000
+--- src/MainWindow.cc.orig	2006-01-02 10:18:20 UTC
 +++ src/MainWindow.cc
-@@ -786,7 +786,7 @@ void MainWindow::on_speed_test_clicked_(
+@@ -792,7 +792,7 @@ void MainWindow::on_speed_test_clicked_(
  			output += ToString( times[ i ] ) + " seconds\n";
  			adder += times[ i ];
  		}
@@ -9,7 +9,7 @@
  						   "\nAverage: " + ToString( adder / runs ) +
  						   " seconds" ).run();
  	}
-@@ -810,7 +810,7 @@ void MainWindow::on_speed_test_clicked_(
+@@ -816,7 +816,7 @@ void MainWindow::on_speed_test_clicked_(
  		for( unsigned i = 0; i < runs; ++i )
  			editor_.event( (GdkEvent*)( &click ) );
  		timer.stop();
