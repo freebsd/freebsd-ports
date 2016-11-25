@@ -58,6 +58,12 @@ DBUS_LIB_DEPENDS=	\
 	libdbus-c++-1.so:devel/dbus-c++
 OPTIONS_SUB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
+BROKEN=		does not build
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/contrib/native
 	@${MV} ${WRKDIR}/pjproject-2.4.5 ${WRKSRC}/contrib/native/
@@ -75,4 +81,4 @@ pre-configure:
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libring.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
