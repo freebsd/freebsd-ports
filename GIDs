@@ -720,7 +720,7 @@ postgres:*:770:
 # free: 776
 openxpki:*:777:
 # free: 778
-# free: 779
+bitcoin:*:779:
 zetacoin:*:780:
 # free: 781
 # free: 782
