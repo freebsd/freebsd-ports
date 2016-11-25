@@ -103,7 +103,7 @@ include/tbb/tbb_thread.h
 include/tbb/tbbmalloc_proxy.h
 include/tbb/tick_count.h
 lib/libtbb.so
-lib/libtbb.so.4
+lib/libtbb.so.2
 lib/libtbbmalloc.so
-lib/libtbbmalloc.so.4
+lib/libtbbmalloc.so.2
 libdata/pkgconfig/tbb.pc
