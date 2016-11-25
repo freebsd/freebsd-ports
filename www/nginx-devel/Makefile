@@ -751,12 +751,12 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.7.0
-LIB_DEPENDS+= 	libjpeg.so:graphics/jpeg \
-		libavformat.so:multimedia/ffmpeg \
+LIB_DEPENDS+= 	libavformat.so:multimedia/ffmpeg \
 		libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
 		${IMAGEMAGICK_LIB_DEPENDS}
+USES+=		jpeg
 GH_ACCOUNT+=	wandenberg:vte
 GH_PROJECT+=	nginx-video-thumbextractor-module:vte
 GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:vte
