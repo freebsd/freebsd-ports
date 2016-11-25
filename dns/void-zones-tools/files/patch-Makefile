@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-11-25 18:11:34 UTC
++++ Makefile
+@@ -24,7 +24,7 @@
+ 
+ 
+ CC     ?= clang
+-CFLAGS  = $(CDEFS) -std=c11 -g0 -Ofast -mssse3 -fstrict-aliasing -ffast-math -Wno-parentheses
++CFLAGS  ?= $(CDEFS) -std=c11
+ PREFIX ?= /usr/local
+ 
+ HEADERS = binutils.h store.h
