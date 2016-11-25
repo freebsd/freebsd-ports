@@ -4621,6 +4621,7 @@
     SUBDIR += py-thriftpy
     SUBDIR += py-timelib
     SUBDIR += py-tinyarray
+    SUBDIR += py-tinyrpc
     SUBDIR += py-tipper
     SUBDIR += py-total-ordering
     SUBDIR += py-tox
