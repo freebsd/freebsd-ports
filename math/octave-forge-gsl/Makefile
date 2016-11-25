@@ -2,25 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-gsl
-PORTVERSION=	1.0.8
-PORTREVISION=	17
+PORTVERSION=	2.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	HOME=${WRKSRC}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${DISTNAME}
 
-post-patch:
-	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/config*
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
+
+GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
+post-build:
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+
 .include <bsd.port.mk>
