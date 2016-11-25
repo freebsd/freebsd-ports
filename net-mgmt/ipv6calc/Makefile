@@ -9,12 +9,13 @@ MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert, change, and calculate with IPv6 addresses
 
-USES=		gettext gmake perl5
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext gmake perl5 ssl
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/ipv6calc bin/ipv6logconv bin/ipv6logstats \
-		bin/ipv6loganon man/man8/ipv6calc.8.gz \
-		man/man8/ipv6loganon.8.gz man/man8/ipv6logconv.8.gz \
-		man/man8/ipv6logstats.8.gz
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+bin/ipv6calc
+bin/ipv6loganon
+bin/ipv6logconv
+bin/ipv6logstats
+man/man8/ipv6calc.8.gz
+man/man8/ipv6loganon.8.gz
+man/man8/ipv6logconv.8.gz
+man/man8/ipv6logstats.8.gz
