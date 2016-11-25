@@ -5,11 +5,11 @@
 +
  dhcprelay: dhcprelay.o
 -	gcc -g -o $@ -Wall -L/usr/local/lib -lpcap -ldnet $>
-+	${CC} -g -o $@ -Wall -L${LOCALBASE}/lib -lpcap -ldnet $>
++	${CC} ${LDFLAGS} -o $@ -Wall -L${LOCALBASE}/lib -lpcap -ldnet $>
  
  dhcprelay.o: dhcprelay.c
 -	gcc -g -c -o $@ -Wall -I/usr/local/include $<
-+	${CC} -g -c -o $@ -Wall -I${LOCALBASE}/include $<
++	${CC} ${CFLAGS} -c -o $@ -Wall -I${LOCALBASE}/include $<
  
  clean:
  	rm -f dhcprelay.o dhcprelay dhcprelay.core
