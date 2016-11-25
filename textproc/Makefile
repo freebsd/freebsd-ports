@@ -81,7 +81,6 @@
     SUBDIR += clit
     SUBDIR += clucene
     SUBDIR += clucene-qt4
-    SUBDIR += clucene-qt5
     SUBDIR += cmark
     SUBDIR += coccigrep
     SUBDIR += code2html
