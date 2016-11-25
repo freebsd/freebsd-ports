@@ -1,7 +1,3 @@
-Sndio's OSS support (i.e. local playback/recording support) is highly
-experimental.  If you run into problems please file a bug at
-https://github.com/t6/sndio or send an email to t+sndio@tobik.me.
-
 Enable the sndiod server with:
 
     sysrc sndiod_enable=YES
@@ -13,19 +9,12 @@ plays through sndiod:
 
     aucat -f snd/0.monitor -o recording.wav
 
-Make sure you override sndiod_flags if this is not wanted:
+Make sure you override sndiod_flags if this is not wanted.
 
-    sysrc sndiod_flags=""
-
-If you want clients to auto-play to your remote sndio server set
-sndiod_flags accordingly:
-
-    sysrc sndiod_flags="-f snd@remotehost/0"
-
-Alternatively you can always set the AUDIODEVICE environment variable
-so clients know where to stream to:
-
-    export AUDIODEVICE=snd@remotehost/0
+By default the rc.d script passes '-c 0:7 -j off' to sndiod, so that
+it uses all 8 virtual channels provided by OSS.  If you override
+sndiod_flags consider keeping these options, so that multi-channel
+audio works as you'd expect.
 
 There is little sndio support in the FreeBSD ports tree right now.  If
 your favourite port is missing support please take a look at the fork
