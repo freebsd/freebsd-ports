@@ -16,7 +16,7 @@ GH_ACCOUNT=	mbr
 GH_PROJECT=	tinyrpc
 GH_TAGNAME=	0.5
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	HTTP WSGI ZEROMQ
@@ -27,9 +27,9 @@ ZEROMQ_DESC=	ZeroMQ support
 
 OPTIONS_DEFAULT=HTTP
 
-HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
-WSGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:${PORTSDIR}/www/py-gevent \
-			${PYTHON_PKGNAMEPREFIX}gevent>0:${PORTSDIR}/devel/py-werkzeug
-ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>0:${PORTSDIR}/net/py-pyzmq
+HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+WSGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent \
+			${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
+ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq
 
 .include <bsd.port.mk>
