@@ -9,6 +9,9 @@ CATEGORIES=	multimedia
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libfreetype.so:print/freetype2 \
 		libtag.so:audio/taglib \
@@ -72,6 +75,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
 OPENGL_CONFIGURE_ENABLE=	opengl-video
+OPENGL_USE=	QT4=opengl
 
 .include <bsd.port.options.mk>
 
@@ -105,22 +109,18 @@ RUN_DEPENDS+=	py*-lxml>=0:devel/py-lxml \
 CONFIGURE_ARGS+=--without-bindings=perl,python
 .endif
 
-.if ${PORT_OPTIONS:MOPENGL}
-USE_QT4+=	opengl
-.endif
-
 post-patch:
-		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-			${WRKSRC}/configure \
-			${WRKSRC}/libs/libmythtv/libmythtv.pro \
-			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
-			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
-			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
-			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
-			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/libs/libmythtv/libmythtv.pro \
+		${WRKSRC}/bindings/perl/MythTV/Recording.pm \
+		${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
+		${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
+		${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
+		${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
 post-install:
-		@${INSTALL} -d ${STAGEDIR}${PREFIX}/share/mythtv/database
-		@${CP} ${WRKSRC}/database/mc.sql ${STAGEDIR}${PREFIX}/share/mythtv/database
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mythtv/database
+	@${CP} ${WRKSRC}/database/mc.sql ${STAGEDIR}${PREFIX}/share/mythtv/database
 
 .include <bsd.port.mk>
