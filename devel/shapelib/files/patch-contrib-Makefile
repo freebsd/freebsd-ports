@@ -1,5 +1,5 @@
---- contrib/Makefile.orig	2010-01-04 12:08:02.000000000 +0800
-+++ contrib/Makefile	2013-10-13 21:39:57.405429171 +0800
+--- contrib/Makefile.orig	2010-01-04 04:08:02 UTC
++++ contrib/Makefile
 @@ -3,19 +3,36 @@
  #CFLAGS	=	-g
  
