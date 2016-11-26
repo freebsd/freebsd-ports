@@ -1222,9 +1222,9 @@ lib/wine/ext-ms-win-gdi-render-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-kernel32-package-current-l1-1-0.dll.so
 lib/wine/ext-ms-win-ntuser-message-l1-1-1.dll.so
 %%STAGING%%lib/wine/ext-ms-win-ntuser-mouse-l1-1-0.dll.so
-lib/wine/ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll.so
 lib/wine/ext-ms-win-ntuser-private-l1-1-1.dll.so
 lib/wine/ext-ms-win-ntuser-rectangle-ext-l1-1-0.dll.so
+lib/wine/ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll.so
 lib/wine/ext-ms-win-ntuser-window-l1-1-1.dll.so
 lib/wine/ext-ms-win-rtcore-gdi-object-l1-1-0.dll.so
 lib/wine/ext-ms-win-rtcore-gdi-rgn-l1-1-0.dll.so
@@ -1383,12 +1383,6 @@ lib/wine/fakedlls/api-ms-win-eventing-provider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventlog-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-rtcore-ntuser-draw-l1-1-0.dll
-lib/wine/fakedlls/ext-ms-win-ntuser-private-l1-1-1.dll
-lib/wine/fakedlls/ext-ms-win-ntuser-rectangle-ext-l1-1-0.dll
-lib/wine/fakedlls/ext-ms-win-ntuser-window-l1-1-1.dll
-lib/wine/fakedlls/ext-ms-win-rtcore-gdi-object-l1-1-0.dll
-lib/wine/fakedlls/ext-ms-win-rtcore-gdi-rgn-l1-1-0.dll
-lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-rtcore-ntuser-private-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-rtcore-ntuser-window-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-audit-l1-1-1.dll
@@ -1579,7 +1573,13 @@ lib/wine/fakedlls/ext-ms-win-gdi-render-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-kernel32-package-current-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-message-l1-1-1.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-ntuser-mouse-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-private-l1-1-1.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-rectangle-ext-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-window-l1-1-1.dll
+lib/wine/fakedlls/ext-ms-win-rtcore-gdi-object-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-rtcore-gdi-rgn-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-dpi-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll
