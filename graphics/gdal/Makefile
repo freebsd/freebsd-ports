@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -18,11 +19,12 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libgif.so:graphics/giflib \
 		libjson-c.so:devel/json-c \
 		libpng.so:graphics/png \
+		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GTA HDF5 JASPER \
-		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL PROJ \
-		SPATIALITE SQLITE WEBP XERCES
+		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL SPATIALITE \
+		SQLITE WEBP XERCES
 OPTIONS_DEFAULT=JASPER
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
@@ -39,6 +41,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-libtiff=yes \
 		--with-libz=/usr \
 		--with-png=yes \
+		--with-static-proj4=no \
 		--with-threads=yes \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
@@ -99,8 +102,6 @@ PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:graphics/podofo
 POPPLER_CONFIGURE_WITH=	poppler
 POPPLER_LIB_DEPENDS=	libpoppler.so:graphics/poppler
-PROJ_CONFIGURE_WITH=	static-proj4
-PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 SPATIALITE_CONFIGURE_WITH=	spatialite
 SPATIALITE_LIB_DEPENDS=	libspatialite.so:databases/spatialite
 SQLITE_CONFIGURE_WITH=	sqlite3
@@ -109,6 +110,12 @@ WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 XERCES_CONFIGURE_WITH=	xerces
 XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CFLAGS+=	-flax-vector-conversions
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
@@ -127,12 +134,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
-	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CFLAGS+=	-flax-vector-conversions
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
 
 .include <bsd.port.post.mk>
