@@ -870,6 +870,7 @@ LIB_DEPENDS+=	libapr-1.so:devel/apr1 \
 		libyajl.so:devel/yajl
 USE_APACHE=	22+
 USE_GNOME+=	libxml2
+USES+=		pkgconfig shebangfix
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
@@ -1282,7 +1283,9 @@ post-patch:
 pre-configure:
 .if ${PORT_OPTIONS:MMODSECURITY}
 	( cd ${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION} && \
-		CC="${CC}" ${CONFIGURE_CMD} --enable-standalone-module && \
+		CC="${CC}" ${CONFIGURE_CMD} --enable-standalone-module \
+		--with-pcre=${LOCALBASE} --with-yajl=${LOCALBASE} \
+		--with-curl=${LOCALBASE} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
 .endif
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
