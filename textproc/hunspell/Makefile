@@ -29,7 +29,4 @@ PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|444|644|g' ${WRKSRC}/src/parsers/Makefile
-
 .include <bsd.port.mk>
