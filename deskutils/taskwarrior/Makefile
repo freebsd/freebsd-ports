@@ -4,7 +4,6 @@
 PORTNAME=	taskwarrior
 PORTVERSION=	2.5.1
 CATEGORIES=	deskutils
-DISTNAME=	task-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
