@@ -2,4 +2,4 @@ bin/mplayer
 etc/mplayer/codecs.conf.sample
 etc/mplayer/input.conf.sample
 etc/mplayer/mplayer.conf.sample
-man/man1/mplayer.1.gz
+%%MANPAGES%%man/man1/mplayer.1.gz
