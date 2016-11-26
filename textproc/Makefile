@@ -1638,6 +1638,7 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
+    SUBDIR += UCD
     SUBDIR += uchardet
     SUBDIR += uim
     SUBDIR += uim-el
