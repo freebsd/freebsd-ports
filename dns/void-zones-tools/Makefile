@@ -3,7 +3,6 @@
 PORTNAME=	void-zones-tools
 DISTVERSION=	0.1a
 CATEGORIES=	dns
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}--${GH_TAGNAME}
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Prepare a list of void zones that can be readily fed into Unbound

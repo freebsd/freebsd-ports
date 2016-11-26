@@ -5,7 +5,6 @@ PORTNAME=	vcftools
 PORTVERSION=	0.1.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tools for working with VCF genomics files

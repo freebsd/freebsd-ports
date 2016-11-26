@@ -4,7 +4,6 @@
 PORTNAME=	trang
 PORTVERSION=	2015.11.27
 CATEGORIES=	textproc java
-DISTNAME=	jing-trang-${PORTVERSION:S/.//g}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG

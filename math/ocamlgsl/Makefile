@@ -5,8 +5,6 @@ PORTNAME=	ocaml-gsl
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.19.1
 CATEGORIES=	math
-DISTNAME=	gsl-ocaml
-DISTFILES=	${DISTNAME}-${DISTVERSION}.tar.gz
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Interface to GSL for the Objective Caml language
@@ -20,7 +18,7 @@ RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
-GH_PROJECT=	${DISTNAME}
+GH_PROJECT=	gsl-ocaml
 
 USES=			gmake
 USE_OCAML=		YES
@@ -30,7 +28,6 @@ USE_OCAML_LDCONFIG=	YES
 OCAML_PKGDIRS=		gsl
 HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
-WRKSRC=			${WRKDIR}/gsl-ocaml-${PORTVERSION}
 
 DOCSDIR=	${LOCALBASE}/share/doc
 

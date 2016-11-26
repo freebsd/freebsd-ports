@@ -4,7 +4,6 @@
 PORTNAME=	jing
 PORTVERSION=	2015.11.27
 CATEGORIES=	textproc java
-DISTNAME=	jing-trang-${PORTVERSION:S/.//g}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	RELAX NG validator in Java
