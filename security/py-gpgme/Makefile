@@ -13,6 +13,6 @@ BINDING_NAME=	python
 PLIST=		${.CURDIR}/pkg-plist
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/pyme/_gpgme.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/gpg/_gpgme.so
 
 .include "${MASTERDIR}/Makefile"

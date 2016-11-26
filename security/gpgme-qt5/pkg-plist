@@ -4,6 +4,7 @@ include/QGpgME/ChangeExpiryJob
 include/QGpgME/ChangeOwnerTrustJob
 include/QGpgME/ChangePasswdJob
 include/QGpgME/CryptoConfig
+include/QGpgME/DN
 include/QGpgME/DataProvider
 include/QGpgME/DecryptJob
 include/QGpgME/DecryptVerifyJob
@@ -43,6 +44,7 @@ include/qgpgme/decryptjob.h
 include/qgpgme/decryptverifyjob.h
 include/qgpgme/defaultkeygenerationjob.h
 include/qgpgme/deletejob.h
+include/qgpgme/dn.h
 include/qgpgme/downloadjob.h
 include/qgpgme/encryptjob.h
 include/qgpgme/exportjob.h
@@ -57,6 +59,7 @@ include/qgpgme/listallkeysjob.h
 include/qgpgme/multideletejob.h
 include/qgpgme/protocol.h
 include/qgpgme/qgpgme_export.h
+include/qgpgme/qgpgme_version.h
 include/qgpgme/qgpgmenewcryptoconfig.h
 include/qgpgme/refreshkeysjob.h
 include/qgpgme/signencryptjob.h
@@ -67,9 +70,8 @@ include/qgpgme/tofupolicyjob.h
 include/qgpgme/verifydetachedjob.h
 include/qgpgme/verifyopaquejob.h
 include/qgpgme/wkspublishjob.h
-include/qgpgme_version.h
-lib/cmake/Gpgmepp/QGpgmeConfig.cmake
-lib/cmake/Gpgmepp/QGpgmeConfigVersion.cmake
+lib/cmake/QGpgme/QGpgmeConfig.cmake
+lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.7
-lib/libqgpgme.so.7.0.0
+lib/libqgpgme.so.7.1.0

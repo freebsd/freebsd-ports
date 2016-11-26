@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -80,7 +80,6 @@ USES+=		python
 USE_PYTHON=	py3kplist
 CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0
 PLIST_SUB+=	VERSION=${PORTVERSION}
-CONFLICTS_INSTALL=	py*-pyme-[0-9]*
 .  endif
 .endif
 
