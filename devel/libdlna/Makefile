@@ -26,6 +26,10 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-optimize \
 		--includedir="${PREFIX}/include" \
 		--libdir="${PREFIX}/lib"
 
+post-extract:
+	${REINPLACE_CMD} -e 's|CODEC_ID|AV_CODEC_ID|g' \
+		${WRKSRC}/src/*.c
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdlna.so
 
