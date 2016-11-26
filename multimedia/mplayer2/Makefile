@@ -2,19 +2,19 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libavcodec.so:multimedia/ffmpeg
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 USES=		cpe gmake iconv ncurses pkgconfig python:3,build tar:xz
 HAS_CONFIGURE=	yes
@@ -37,10 +37,17 @@ MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 OPTIONS_DEFINE=	A52 ASS CACA CDIO DEBUG DV DVDREAD DVDNAV GIF IPV6 JACK LADSPA \
-		LIBBLURAY LIRC MAD OPENGL PORTAUDIO PULSEAUDIO \
+		LIBBLURAY LIRC MAD MANPAGES OPENGL PORTAUDIO PULSEAUDIO \
 		RTC SDL SMB SPEEX THEORA V4L VDPAU X11 XINERAMA
-OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV VDPAU X11
+OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV MANPAGES VDPAU X11
 OPTIONS_SUB=	yes
+
+# XXX After r417413 poudriere requires textproc/py-docutils being built
+# with the same python version as USES=python:3 here but it's currently
+# not possible due to https://github.com/freebsd/poudriere/issues/259
+.if defined(PACKAGE_BUILDING)
+OPTIONS_EXCLUDE=MANPAGES
+.endif
 
 OPTIONS_DEFINE_i386+=		WIN32
 .if !defined(PACKAGE_BUILDING)
@@ -114,6 +121,9 @@ LIRC_CONFIGURE_OFF=	--disable-lirc
 
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_OFF=	--disable-mad
+
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
+MANPAGES_INSTALL_TARGET_OFF=install-no-man
 
 OPENGL_USE=		GL=gl XORG=glproto
 OPENGL_CONFIGURE_OFF=	--disable-gl
@@ -196,6 +206,7 @@ post-patch:
 			-e 's|[[:space:]]gcc| ${CC}|' \
 			-e 's|\$$\(CC\)|${CC}|' \
 			-e 's|/usr/X11R6|${LOCALBASE}|'
+post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g ; \
@@ -214,10 +225,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE= you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
