@@ -1,0 +1,5 @@
+The Unicode Character Database (UCD) consists of a number of data files listing
+Unicode character properties and related data. It also includes data files
+containing test data for conformance to several important Unicode algorithms.
+
+WWW: http://unicode.org/ucd/
