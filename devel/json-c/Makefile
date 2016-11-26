@@ -16,9 +16,8 @@ CONFLICTS_INSTALL=	cocaine-core-[0-9]*
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_AUTOTOOLS=	autoheader
 USE_LDCONFIG=	yes
-USES=		cpe gmake libtool pathfix pkgconfig
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 
 CPE_VENDOR=	json-c_project
 
