@@ -5,7 +5,6 @@ PORTNAME=	dateutil
 PORTVERSION=	2.5.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-dateutil-${PORTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Extensions to the standard Python datetime module
