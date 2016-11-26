@@ -1,6 +1,0 @@
-%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/shellwords.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/shellwords_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/util_posix.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/util_windows.go
