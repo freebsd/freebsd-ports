@@ -2,21 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	abook
-PORTVERSION=	0.5.6
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	http://abook.sourceforge.net/devel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Addressbook program with mutt mail client support
 
 LICENSE=	GPLv2
 
-USES=		ncurses readline
+USES=		ncurses readline autoreconf localbase
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README \
 		THANKS TODO
