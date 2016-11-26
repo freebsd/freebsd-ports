@@ -28,11 +28,11 @@ include/hunspell/phonet.hxx
 include/hunspell/replist.hxx
 include/hunspell/suggestmgr.hxx
 include/hunspell/w_char.hxx
-lib/libhunspell-1.3.a
-lib/libhunspell-1.3.la
-lib/libhunspell-1.3.so
-lib/libhunspell-1.3.so.0
-lib/libhunspell-1.3.so.0.0.0
+lib/libhunspell-%%SHLIB_VER%%.a
+lib/libhunspell-%%SHLIB_VER%%.la
+lib/libhunspell-%%SHLIB_VER%%.so
+lib/libhunspell-%%SHLIB_VER%%.so.0
+lib/libhunspell-%%SHLIB_VER%%.so.0.0.0
 libdata/pkgconfig/hunspell.pc
 man/hu/man1/hunspell.1.gz
 man/man1/hunspell.1.gz
