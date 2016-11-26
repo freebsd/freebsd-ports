@@ -165,6 +165,7 @@
     SUBDIR += showfont
     SUBDIR += sourcecodepro-ttf
     SUBDIR += sourcesanspro-ttf
+    SUBDIR += sourceserifpro-ttf
     SUBDIR += stix-fonts
     SUBDIR += suxus
     SUBDIR += symbola
