@@ -3,7 +3,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
