@@ -14,6 +14,7 @@ include/gpgme++/gpgadduserideditinteractor.h
 include/gpgme++/gpgagentgetinfoassuantransaction.h
 include/gpgme++/gpgmefw.h
 include/gpgme++/gpgmepp_export.h
+include/gpgme++/gpgmepp_version.h
 include/gpgme++/gpgsetexpirytimeeditinteractor.h
 include/gpgme++/gpgsetownertrusteditinteractor.h
 include/gpgme++/gpgsignkeyeditinteractor.h
@@ -29,13 +30,13 @@ include/gpgme++/notation.h
 include/gpgme++/result.h
 include/gpgme++/scdgetinfoassuantransaction.h
 include/gpgme++/signingresult.h
+include/gpgme++/swdbresult.h
 include/gpgme++/tofuinfo.h
 include/gpgme++/trustitem.h
 include/gpgme++/verificationresult.h
 include/gpgme++/vfsmountresult.h
-include/gpgmepp_version.h
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake
 lib/libgpgmepp.so
 lib/libgpgmepp.so.6
-lib/libgpgmepp.so.6.2.0
+lib/libgpgmepp.so.6.3.0

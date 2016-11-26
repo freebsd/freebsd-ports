@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161126:
+  AFFECTS: Users of security/gpgme-*
+  AUTHOR: jhale@FreeBSD.org
+
+  Gpgme has been updated to 1.8.0.
+  With it comes the removal of libgpgme-pthread.so in favor of using
+  libgpgme.so itself as the thread-safe library. Ports that may have
+  linked to -lgpgme-pthread will now just link to -lgpgme. PORTREVISION
+  has been bumped on all ports with a dependency on security/gpgme.
+
+  The Python module provided by security/py-gpgme has been renamed
+  from pyme3 to gpg, as well.
+
+  Portmaster users:
+      portmaster -r gpgme
+  Portupgrade users:
+      portupgrade -fr security/gpgme
+
 20161121:
   AFFECTS: Users of graphics/tiff
   AUTHOR: antoine@FreeBSD.org
