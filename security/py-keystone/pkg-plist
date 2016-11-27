@@ -6,3 +6,4 @@
 %%ETCDIR%%/keystone-paste.ini
 %%ETCDIR%%/policy.json
 %%ETCDIR%%/sso_callback_template.html
+%%ETCDIR%%/policy.v3cloudsample.json
