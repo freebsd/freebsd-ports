@@ -4323,6 +4323,7 @@
     SUBDIR += py-memory_profiler
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
+    SUBDIR += py-microversion-parse
     SUBDIR += py-mimeparse
     SUBDIR += py-minimongo
     SUBDIR += py-mock
