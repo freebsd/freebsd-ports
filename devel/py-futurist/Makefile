@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	futurist
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Useful additions to futures, from the future
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.0:devel/py-futures \
