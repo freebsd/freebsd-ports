@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	os-client-config
-PORTVERSION=	1.22.0
+PORTVERSION=	1.24.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack Client Configuation Library
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.1.0:devel/py-yaml \
@@ -19,8 +21,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.1.0:devel/py-yaml \
 USES=		python
 USE_PYTHON=	distutils autoplist noegginfo
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,install_requires.*,,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
