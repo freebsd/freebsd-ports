@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	4.6.1.5
-PORTREVISION=	2
+PORTVERSION=	4.6.2.7
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash
@@ -22,7 +24,6 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/mono-${PORTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-dtrace
-
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 
 # Set location for .wapi creation.
@@ -36,6 +37,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		LC_ALL=C TZ=UTC
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
+PORTSCOUT=	^\d+\.\d+.[1-9]\d*
 
 .include <bsd.port.pre.mk>
 

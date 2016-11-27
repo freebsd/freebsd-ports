@@ -44,10 +44,11 @@ NO_ARCH=	yes
 USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft \
 		shared-mime-info shebangfix
 USE_SDL=	sdl2
-TARGET_ORDER_OVERRIDE=	520:nuget-extract
+NUGET_PACKAGEDIR=${WRKSRC}/thirdparty/download
 SHEBANG_FILES=	launch-dedicated.sh
 MAKE_ENV=	prefix="${PREFIX}" mandir="${PREFIX}/man"
 MAKE_ARGS=	VERSION="${GH_TAGNAME}"
+ALL_TARGET=	all
 INSTALL_TARGET=	install-all install-man-page \
 		install-linux-mime install-linux-shortcuts
 DATADIR=	${PREFIX}/lib/${PORTNAME}
@@ -68,25 +69,18 @@ ZENITY_RUN_DEPENDS=xdg-open:devel/xdg-utils \
 ZENITY_DESC=	Use native crash dialog
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/thirdparty/download
-	@${CP} -v ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:N*.zip:S,^,${_DISTDIR}/,} \
-		${WRKSRC}/thirdparty/download
-	@for f in $$(${SED} -n 's/\.$$//; s,cp \./,,p' \
-			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh); do \
-		${MV} -v ${NUGET_PACKAGEDIR}/$$f ${WRKSRC}/thirdparty/download; \
-	done
+	${CP} ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:S,^,${_DISTDIR}/,} \
+		${NUGET_PACKAGEDIR}
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e '\,thirdparty/.*\.sh,d' \
 		-e '/echo/!s/	@/	/' \
 		-e '/^mods:/s/$$/ version/' \
-		-e '/^docs:/s/$$/ all/' \
-		-e '/^test:/s/$$/ all/' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e '/linux/{ p; s//${OPSYS:tl}/; }' \
-		${WRKSRC}/thirdparty/download/*.config \
-		${WRKSRC}/thirdparty/*.config*
+	${REINPLACE_CMD} -e '/[[:<:]]get[[:blank:]]/d' \
+			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh
+	${FIND} ${WRKSRC}/thirdparty -name '*.config*' -exec ${REINPLACE_CMD} \
+		-i '.bak.os' -e '/linux/{ p; s//${OPSYS:tl}/; }' {} +
 	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
 		${WRKSRC}/thirdparty/Eluant.dll.config.in \
 		>${WRKSRC}/Eluant.dll.config
