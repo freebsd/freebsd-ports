@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.concurrency
-PORTVERSION=	3.14.0
+PORTVERSION=	3.15.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Oslo Concurrency library
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum34>=0:devel/py-enum34 \
