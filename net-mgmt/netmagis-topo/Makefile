@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-topo
 COMMENT=	Netmagis topology module
 
 RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
-		rancid-run:net-mgmt/rancid \
+		rancid-run:net-mgmt/rancid3 \
 		fping:net/fping
 
 NO_ARCH=	# no
