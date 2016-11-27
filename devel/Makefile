@@ -4679,6 +4679,7 @@
     SUBDIR += py-wcwidth
     SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
+    SUBDIR += py-websockify
     SUBDIR += py-wheel
     SUBDIR += py-wrapt
     SUBDIR += py-wsgi_xmlrpc
