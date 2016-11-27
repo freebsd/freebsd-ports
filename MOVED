@@ -8812,3 +8812,4 @@ archivers/brotli|archivers/py-brotli|2016-11-24|Brotli is a python module
 textproc/clucene-qt5||2016-11-25|Reintegrated into devel/qt5-help
 devel/go-shellwords||2016-11-26|Integrated into textproc/fzf build procedure
 www/gecko-sharp20||2016-11-27|Has expired: Broken, no upstream found and no release in 8 years
+net-mgmt/rancid|net-mgmt/rancid3|2016-11-27|Has expired: Not supported upstream. Please upgrade to net-mgmt/rancid3
