@@ -64,7 +64,6 @@ cbsdd_prestart() {
 
 	%%PREFIX%%/bin/cbsd sysinv mode=update
 	%%PREFIX%%/bin/cbsd netinv
-	update_hwinfo
 	update_netinfo
 	env sqlcolnames="1" ${miscdir}/sqlcli ${dbdir}/local.sqlite "SELECT * FROM local" > ${inventory}
 
