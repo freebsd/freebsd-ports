@@ -16,6 +16,9 @@
 #		packages in the format:
 #			${name}=${version}(:${PKGORIGIN})
 #
+#		EXTRACT_ONLY is conditionally overridden to exclude all
+#		files with a '.nupkg' extension.
+#
 # Targets:
 #
 # makenuget	This target will output the NUGET_DEPENDS based on the
@@ -51,31 +54,25 @@ GACUTIL_INSTALL=${GACUTIL} /i
 GACUTIL_INSTALL_PACKAGE=${GACUTIL} /i /package 1.0 /package 2.0
 
 .if ${mono_ARGS:Mnuget}
-NUGET_PACKAGEDIR=	${WRKSRC}/packages
+NUGET_PACKAGEDIR?=	${WRKSRC}/packages
 
 .  for depend in ${NUGET_DEPENDS}
 id=		${depend:C/=.*$//}
 version=	${depend:C/^.*=//}
 group=		nuget_${id:S/.//g:S/-//g}
 nupkg=		${id:tl}.${version}.nupkg
-NUPKG_${group}:=	${nupkg}
 DISTFILES_${group}:=	${nupkg}:${group}
 MASTER_SITES_${group}:=	https://www.nuget.org/api/v2/package/${id}/${version}?dummy=/:${group}
 NUGET_NUPKGS_${group}:=	${nupkg}:${depend}
 
-NUGET_DISTFILES+=${NUPKG_nuget_${depend:C/=.*$//:S/.//g:S/-//g}}
 DISTFILES+=	${DISTFILES_nuget_${depend:C/=.*$//:S/.//g:S/-//g}}
 MASTER_SITES+=	${MASTER_SITES_nuget_${depend:C/=.*$//:S/.//g:S/-//g}}
 NUGET_NUPKGS+=	${NUGET_NUPKGS_nuget_${depend:C/=.*$//:S/.//g:S/-//g}}
 .  endfor
 
-# Prevent the nuget packages from being extracted (and poluting ${WRKDIR}, however
-# only bmake supports this.
-.  if !defined(EXTRACT_ONLY) && defined(.PARSEDIR)
-EXTRACT_ONLY=	${_DISTFILES:[0]:C/${NUGET_DISTFILES}//g}
-.  endif
+EXTRACT_ONLY?=	${_DISTFILES:N*.nupkg}
 
-_USES_extract+=	900:nuget-extract
+_USES_extract+=	600:nuget-extract
 nuget-extract:
 .  for nupkg in ${NUGET_NUPKGS}
 	@${MKDIR} ${NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S/=/./}

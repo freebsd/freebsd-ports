@@ -7,8 +7,8 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	Library for direct access to iPod contents
+MAINTAINER?=	avilla@FreeBSD.org
+COMMENT?=	Library for direct access to iPod contents
 
 LICENSE=	LGPL20
 
@@ -21,12 +21,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
-USE_GNOME=	gdkpixbuf2 gtk20 intltool
+USE_GNOME=	gdkpixbuf2 gtk20 intltool libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS IMOBILE PYTHON # MONO
+OPTIONS_DEFINE=	DOCS IMOBILE PYTHON MONO
 OPTIONS_DEFAULT=IMOBILE
+OPTIONS_EXCLUDE?=	MONO
 OPTIONS_SUB=	yes
 
 IMOBILE_DESC=	Apple iPhone/iPod Touch support
@@ -35,11 +36,8 @@ IMOBILE_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice
 IMOBILE_CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 IMOBILE_CONFIGURE_WITH=	libimobiledevice
 
-# Mono 4+ doesn't seem to be supported.
 MONO_USE=		GNOME=gtksharp20
 MONO_CONFIGURE_WITH=	mono
-CONFIGURE_ARGS+=	--without-mono
-PLIST_SUB+=		MONO="@comment "
 
 PYTHON_BUILD_DEPENDS=	swig2.0:devel/swig20 \
 			${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen
@@ -57,9 +55,14 @@ PORTDOCS=	ChangeLog NEWS README*
 COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 .endif
 
+post-patch-MONO-on:
+	${REINPLACE_CMD} 's/gmcs/mcs/g' ${WRKSRC}/configure ${WRKSRC}/m4/mono.m4
+
+.if ${SLAVE_PORT} == no
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/ipod-time-sync \
 		${STAGEDIR}${PREFIX}/bin
+.endif
 
 post-install-MONO-off:
 	@${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libgpod-sharp.pc

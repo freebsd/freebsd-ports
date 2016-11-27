@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	monodevelop
-PORTVERSION=	6.1.1.15
+PORTVERSION=	6.1.2.44
 CATEGORIES=	devel
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	IDE for the .NET platform
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	mautil:devel/mono-addins \
 		fsharpc:lang/fsharp \
@@ -22,10 +25,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:x11-toolkits/libgdiplus \
 		fsharpc:lang/fsharp
 
 NUGET_DEPENDS=  ExtCore=0.8.45 \
-		FSharp.Compiler.CodeDom=1.0.0.1 \
+		FSharp.Compiler.CodeDom=0.9.2 \
 		FSharp.Compiler.Service=3.0.0 \
 		FSharp.Core=4.0.0.1 \
-		Fantomas=2.3.0 \
+		Fantomas=2.4.0 \
 		Microsoft.AspNet.Mvc=5.2.3 \
 		Microsoft.AspNet.Razor=3.2.3 \
 		Microsoft.AspNet.WebPages=3.2.3 \
@@ -61,6 +64,7 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	Build parallelization not implemented
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}/main
+PORTSCOUT=	^\d+\.\d+.[1-9]\d*
 
 post-extract:
 .for tuple in ${GH_TUPLE}
