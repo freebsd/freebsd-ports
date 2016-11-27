@@ -4367,6 +4367,7 @@
     SUBDIR += py-ordered-set
     SUBDIR += py-ordereddict
     SUBDIR += py-os-client-config
+    SUBDIR += py-os-win
     SUBDIR += py-osc-lib
     SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
