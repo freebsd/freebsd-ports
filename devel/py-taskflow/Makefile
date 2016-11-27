@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	taskflow
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,10 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Taskflow structured state management library
 
+LICENSE=	APACHE20
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}enum34>=0:devel/py-enum34 \
-		${PYTHON_PKGNAMEPREFIX}stevedore>=1.16.0:devel/py-stevedore \
+		${PYTHON_PKGNAMEPREFIX}stevedore>=1.17.1:devel/py-stevedore \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}retrying>=0:devel/py-retrying \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.16.0:devel/py-oslo.utils \
