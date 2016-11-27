@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	fortunepl
-PORTVERSION=	0.0.20051022
+PORTVERSION=	20091121
 CATEGORIES=	polish
-MASTER_SITES=	http://www.bsdguru.org/fortunes/
-DISTNAME=	fortunes-pl_${PORTVERSION}.orig
-
-PATCH_SITES=	http://bsdguru.org/fortunes/
-PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
-		fortunes-pl_${PORTVERSION}.filozofia
+MASTER_SITES=	ftp://master-ftp.pld-linux.org/${F_SUBDIR}/ \
+		ftp://ftp.atm.pld-linux.org/${F_SUBDIR}/ \
+		ftp://ftp.icm.edu.pl/pub/linux/distributions/pld-linux/${F_SUBDIR}/ \
+		ftp://distrib-coffee.ipsl.jussieu.fr/pub/linux/pld/${F_SUBDIR}/ \
+		ftp://ftp.heanet.ie/pub/pld-linux/${F_SUBDIR}/
+F_SUBDIR=	pool/f/fortunes-pl
+DISTFILES=	fortunes-pl-${PORTVERSION}-3.src.rpm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lot of funny Polish fortune files
 
-BROKEN=		unfetchable
+NO_ARCH=	yes
+WRKSRC=		${WRKDIR}/fortunes-pl-${PORTVERSION}
 
 .if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
@@ -23,35 +25,16 @@ STRCMD=		/usr/bin/strfile
 .else
 IGNORE=		needs strfile command. Please install games distribution of base system
 .endif
-WRKSRC=		${WRKDIR}/fortunes-pl-${PORTVERSION}.orig
 
-FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
-		dowcipy dowcipy-feministyczne dowcipy-lepper dowcipy-naukowcy \
-		dowcipy-niskopoziomowe dowcipy-szowinistyczne dwimc dzieci \
-		filozofia freebsd.pl gra_polslowek haiku http icpusers imiona \
-		ipv6.pl komputery konikbujany koscielne lcamtuf life matura \
-		microsoft milosc misc nauka ospl ospl-ad perl polish_manpages \
-		pratchett psy1 puchatek radio_maryja rywingate sad sapkowski \
-		seneka sigpl sigvirus slownik spolem sport stachura stirlitz \
-		teleturnieje testnaosobowosc wierszyki wieza-pilot zen \
-		znaki_zodiaku
-
-do-patch:
-	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.freebsd.pl ${WRKSRC}/freebsd.pl
-	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.filozofia ${WRKSRC}/filozofia
+post-extract:
+	@(cd ${WRKDIR} && ${TAR} zxf fortunes-pl-${PORTVERSION}.tar.bz2)
 
 do-build:
-.for FILE in ${FORTUNES}
-	@${STRCMD} ${WRKSRC}/${FILE}
-.endfor
+	(cd ${WRKSRC} && ${FIND} . -type f -exec ${STRCMD} {} \;)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune/pl
-.for FILE in ${FORTUNES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} \
+	${INSTALL_DATA} ${WRKSRC}/* \
 		${STAGEDIR}${PREFIX}/share/games/fortune/pl
-	${INSTALL_DATA} ${WRKSRC}/${FILE}.dat \
-		${STAGEDIR}${PREFIX}/share/games/fortune/pl
-.endfor
 
 .include <bsd.port.mk>
