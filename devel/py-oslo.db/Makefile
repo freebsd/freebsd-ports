@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.db
-PORTVERSION=	4.13.3
+PORTVERSION=	4.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Oslo Database library
 
+LICENSE=	APACHE20
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>=1.16.0:devel/py-stevedore \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>=1.17.1:devel/py-stevedore \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.9.6:databases/py-sqlalchemy-migrate \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.16.0:devel/py-oslo.utils \
