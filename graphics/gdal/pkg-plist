@@ -15,6 +15,8 @@ bin/gdalsrsinfo
 bin/gdaltindex
 bin/gdaltransform
 bin/gdalwarp
+%%GNM%%bin/gnmanalyse
+%%GNM%%bin/gnmmanage
 bin/nearblack
 bin/ogr2ogr
 bin/ogrinfo
@@ -76,6 +78,10 @@ include/gdalpansharpen.h
 include/gdalsse_priv.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
+%%GNM%%include/gnm.h
+%%GNM%%include/gnm_api.h
+%%GNM%%include/gnm_priv.h
+%%GNM%%include/gnmgraph.h
 include/gvgcpfit.h
 include/internal_qhull_headers.h
 include/memdataset.h
