@@ -3,12 +3,15 @@
 
 PORTNAME=	keystone
 PORTVERSION=	10.0.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack Keystone
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
