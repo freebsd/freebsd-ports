@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.13.0
+PORTVERSION=	4.13.1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -24,8 +24,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.1.26:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.0.8:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.2.1:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.1.2:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -43,7 +43,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
-		rubygem-rex-arch>=0:security/rubygem-rex-arch \
+		rubygem-rex-arch>=0.1.2:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
 		rubygem-rex-encoder>=0:security/rubygem-rex-encoder \
@@ -76,6 +76,7 @@ GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
 NO_ARCH=	yes
+STRIP=
 
 USE_RUBY=	yes
 
