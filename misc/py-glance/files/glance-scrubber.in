@@ -2,32 +2,54 @@
 #
 # $FreeBSD$
 #
+
 # PROVIDE: glance_scrubber
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
+
 #
-# Add the following lines to /etc/rc.conf to enable glance-scrubber:
+# Add the following lines to /etc/rc.conf to enable glance_scrubber:
 #
-# glance_scrubber_enable (bool):	Set it to "YES" to enable glance-scrubber.
-# 					Default is "NO".
+# glance_scrubber_enable="YES"
+#
+# glance_scrubber_enable (bool):
+#	Set it to "YES" to enable glance_scrubber.
+# 	Default is "NO".
+#
+# glance_scrubber_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_scrubber_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_scrubber_logdir}/glance-scrubber.log"
+#
 
 . /etc/rc.subr
 
-name="glance_scrubber"
+name=glance_scrubber
 rcvar=glance_scrubber_enable
 
-extra_commands="shutdown status"
-shutdown_cmd="glance-control scrubber shutdown"
-start_cmd="glance-control scrubber start"
-status_cmd="glance-control scrubber status"
-stop_cmd="glance-control scrubber stop"
-
 required_files=%%PREFIX%%/etc/glance/glance-scrubber.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
 
-PATH=%%PREFIX%%/bin:$PATH
+pidfile="/var/run/glance-scrubber.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=glance_precmd
 
 load_rc_config $name
 
 : ${glance_scrubber_enable:="NO"}
+: ${glance_scrubber_logdir:="/var/log/glance"}
+: ${glance_scrubber_args:="--log-file ${glance_scrubber_logdir}/glance-scrubber.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -u glance glance-scrubber ${glance_scrubber_args}"
+
+glance_precmd() {
+	mkdir -p ${glance_scrubber_logdir}
+	chown glance ${glance_scrubber_logdir}
+}
 
 run_rc_command "$1"
