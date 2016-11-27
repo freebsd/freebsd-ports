@@ -1,5 +1,5 @@
 --- xpp.cxx.orig	2004-12-06 11:00:04.000000000 -0800
-+++ xpp.cxx	2016-11-08 12:49:34.251265000 -0800
++++ xpp.cxx	2016-11-27 15:17:24.389315000 -0800
 @@ -30,6 +30,7 @@
   * Include necessary headers...
   */
@@ -17,6 +17,15 @@
  
  /*
   *  Parse options and send files for printing.
+@@ -168,7 +169,7 @@
+ 	    {	  
+ 	      char *tmp;
+ 
+-	      if ((tmp = strchr(dest,'/'))) {
++	      if ((tmp = (char *)strchr(dest,'/'))) {
+ 		tmp[0] = '\0';
+ 		instance = tmp + 1;
+ 	      }	
 @@ -651,7 +652,7 @@
  #endif
  #endif // !WIN32
