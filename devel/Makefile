@@ -4682,6 +4682,7 @@
     SUBDIR += py-websockify
     SUBDIR += py-wheel
     SUBDIR += py-wrapt
+    SUBDIR += py-wsgi_intercept
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
