@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -38,7 +37,7 @@ PORTDOCS=	*
 
 USE_GITHUB=	yes
 
-APP_BUILD_DEPENDS=	libev>=4.15:devel/libev
+APP_BUILD_DEPENDS=	libev>=4.11:devel/libev
 APP_CONFIGURE_OFF=	--without-libxml2
 APP_CONFIGURE_ENABLE=	app
 APP_LIB_DEPENDS=	libev.so:devel/libev
@@ -48,9 +47,10 @@ ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
+HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
 HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
-SPDY_BUILD_DEPENDS=	spdylay>=1.3.0:www/spdylay
+SPDY_BUILD_DEPENDS=	spdylay>=1.3.2:www/spdylay
 SPDY_CONFIGURE_WITH=	spdylay
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
