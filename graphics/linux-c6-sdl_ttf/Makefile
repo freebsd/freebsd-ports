@@ -23,6 +23,4 @@ USE_LINUX_RPM=	yes
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 
-DESCR=		${.CURDIR}/../linux-f10-sdl_ttf/pkg-descr
-
 .include <bsd.port.mk>
