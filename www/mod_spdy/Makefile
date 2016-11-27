@@ -25,9 +25,8 @@ BUILD_DEPENDS=	python:lang/python \
 		bash:shells/bash
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_OPENSSL=	yes
 USE_APACHE=	22
-USES=		compiler execinfo gmake python:2 tar:xz
+USES=		compiler execinfo gmake python:2 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -84,6 +83,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
+
+.if defined(OPENSSL_PORT) && "${OPENSSL_PORT:M*libressl*}" != ""
+IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
+.endif
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
