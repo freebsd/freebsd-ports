@@ -3,12 +3,15 @@
 
 PORTNAME=	glance
 PORTVERSION=	13.0.0
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack Image Service
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 
@@ -60,7 +63,7 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils noegginfo
 
-USE_RC_SUBR=	glance-api glance-registry glance-scrubber
+USE_RC_SUBR=	glance-api glance-registry glance-scrubber glance-glare
 USERS=		glance
 GROUPS=		glance
 

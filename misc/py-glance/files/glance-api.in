@@ -2,33 +2,60 @@
 #
 # $FreeBSD$
 #
+
 # PROVIDE: glance_api
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
+
 #
-# Add the following lines to /etc/rc.conf to enable glance-api:
+# Add the following lines to /etc/rc.conf to enable glance_api:
 #
-# glance_api_enable (bool):	Set it to "YES" to enable glance-api.
-# 				Default is "NO".
+# glance_api_enable="YES"
+#
+# glance_api_enable (bool):
+#	Set it to "YES" to enable glance_api.
+# 	Default is "NO".
+#
+# glance_api_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_api_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_api_logdir}/glance-api.log"
+#
 
 . /etc/rc.subr
 
-name="glance_api"
+name=glance_api
 rcvar=glance_api_enable
 
-extra_commands="reload shutdown status"
-reload_cmd="glance-control api reload"
-shutdown_cmd="glance-control api shutdown"
-start_cmd="glance-control api start"
-status_cmd="glance-control api status"
-stop_cmd="glance-control api stop"
-
 required_files=%%PREFIX%%/etc/glance/glance-api.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
 
-PATH=%%PREFIX%%/bin:$PATH
+pidfile="/var/run/glance-api.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=glance_precmd
+stop_postcmd=glance_postcmd
 
 load_rc_config $name
 
 : ${glance_api_enable:="NO"}
+: ${glance_api_logdir:="/var/log/glance"}
+: ${glance_api_args:="--log-file ${glance_api_logdir}/glance-api.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -u glance glance-api ${glance_api_args}"
+
+glance_precmd() {
+	mkdir -p ${glance_api_logdir}
+	chown glance ${glance_api_logdir}
+}
+
+glance_postcmd() {
+	# this is a workaround for a glance-api bug
+	pkill -u glance -f glance-api
+}
 
 run_rc_command "$1"
