@@ -3,10 +3,8 @@
 
 PORTNAME=	cocot
 PORTVERSION=	20120313
+DISTVERSIONPREFIX=	${PORTNAME}-1.1-
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
-		LOCAL/knu
-DISTNAME=	${PORTNAME}-1.1-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Code Converter on TTY
@@ -15,8 +13,10 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		iconv zip
-WRKSRC=		${WRKDIR}/vmi-${PORTNAME}-8bc9f64
+USE_GITHUB=     yes
+GH_ACCOUNT=	vmi
+
+USES=		iconv
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
