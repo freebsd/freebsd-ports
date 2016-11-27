@@ -20,8 +20,8 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Versioning.Path.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Versioning.Test.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Versioning.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.InvalidFormatter.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.MethodNotAllow.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.InvalidFormat.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.MethodNotAllowed.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.NotFound.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.UndefinedType.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.UndefinedValidator.beam
