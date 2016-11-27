@@ -4368,6 +4368,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-os-brick
     SUBDIR += py-os-client-config
+    SUBDIR += py-os-vif
     SUBDIR += py-os-win
     SUBDIR += py-osc-lib
     SUBDIR += py-oslo.cache
