@@ -6985,7 +6985,6 @@ net/cvsup||2014-09-09|Cascade removal (lang/ezm3)
 dns/posadis||2014-09-09|Not staged
 net/etherboot||2014-09-09|Not staged
 games/linux-savage||2014-09-09|Not staged
-lang/neko||2014-09-09|Not staged
 lang/ifc||2014-09-09|Not staged
 japanese/rskkserv||2014-09-09|Not staged
 graphics/passepartout||2014-09-09|Not staged
@@ -8796,14 +8795,14 @@ net/remmina-plugin-i18n||2016-11-08|Plugin translations removed upstream in GH c
 net/p5-Net-Ping||2016-11-08|Has expired: This or newer version included in all supported versions of perl
 ftp/curl-hiphop||2016-11-08|Has expired: useful only for removed hiphop-php
 textproc/rubygem-string-scrub||2016-11-08|Has expired: needed only for EOL versions of Ruby
-cad/py-gdsii|cad/python-gdsii|2016-11-10|Renamed
 textproc/erlang-p1xml|textproc/erlang-fast_xml|2016-11-08|Project was renamed
+cad/py-gdsii|cad/python-gdsii|2016-11-10|Renamed
 devel/py-pydasm|devel/py-capstone|2016-11-11|Has expired: No more upstream and known bugs, use devel/py-capstone instead
 devel/libdasm|devel/capstone3|2016-11-11|Has expired: No more upstream and known bugs, use devel/capstone3 instead
 security/erlang-p1tls|security/erlang-fast_tls|2016-11-11|Project was renamed
 mail/trojita-qt4|mail/trojita|2016-11-13|Qt4 support was dropped, use mail/trojita instead
 devel/extra-cmake-modules|devel/kf5-extra-cmake-modules|2016-11-14|Renamed to match other KF5 port
-net/vnc||2016-11-14|Has expired: Distfiles no longer available.
+net/vnc||2016-11-14|Has expired: Distfiles no longer available
 sysutils/gosa||2016-11-20|Has expired: this version of gosa cannot be fixed (requires PHP < 5.4)
 security/krb5-112||2016-11-20|Has expired: EOL twelve months after release of krb5-1.14
 astro/osmium|astro/libosmium|2016-11-23|Rename according to upstream
