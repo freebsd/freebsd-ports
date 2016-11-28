@@ -3,6 +3,7 @@
 
 PORTNAME=	notmuch
 PORTVERSION=	0.23.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -42,7 +43,8 @@ EMACS_CONFIGURE_ON=	--emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
 			--emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 EMACS_USE=	EMACS=yes
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-MUTT_RUN_DEPENDS=	p5-Mail-Tools>0:mail/p5-Mail-Tools \
+MUTT_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
+			p5-Mail-Tools>0:mail/p5-Mail-Tools \
 			p5-Mail-Box>0:mail/p5-Mail-Box \
 			p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
 MUTT_USE=	PERL=yes
