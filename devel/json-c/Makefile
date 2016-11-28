@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	json-c
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.12.1
 CATEGORIES=	devel
 MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/
 
