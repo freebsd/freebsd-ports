@@ -13,6 +13,7 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
 		libhunspell-1.3.so:textproc/hunspell
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py3-lxml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
