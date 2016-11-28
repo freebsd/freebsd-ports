@@ -12,6 +12,7 @@ bin/ufdbguardd
 bin/ufdbhttpd
 bin/ufdbsignal
 @sample %%ETCDIR%%/ufdbGuard.conf.sample
+man/man1/ufdbAnalyse.1.gz
 man/man1/ufdb_analyse_urls.1.gz
 man/man1/ufdb_analyse_users.1.gz
 man/man1/ufdb_top_urls.1.gz
