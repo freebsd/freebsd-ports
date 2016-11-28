@@ -1,15 +1,15 @@
---- src/check_config_file.orig	2015-06-09 01:03:38 UTC
+--- src/check_config_file.orig	2015-06-09 01:03:32 UTC
 +++ src/check_config_file
 @@ -32,16 +32,6 @@ then
     exit 1
  fi
  
--if [ ! -f $CONFIG.pre-v1.31 ]
+-if [ ! -f $CONFIG.pre-v1.32 ]
 -then
--   cp $CONFIG $CONFIG.pre-v1.31
--   if [ ! -f $CONFIG.pre-v1.31 ]
+-   cp $CONFIG $CONFIG.pre-v1.32
+-   if [ ! -f $CONFIG.pre-v1.32 ]
 -   then
--      echo "cannot copy configuration file to $CONFIG.pre-v1.31"
+-      echo "cannot copy configuration file to $CONFIG.pre-v1.32"
 -      exit 1
 -   fi
 -fi
@@ -17,11 +17,11 @@
  if [ ! -w $CONFIG ]
  then
     chmod u+w $CONFIG
-@@ -301,7 +291,6 @@ then
-    echo "It is recommended to verify all ACLs for the inclusion of these URL categories *****"
+@@ -340,7 +330,6 @@ then
+    echo "It is recommended to verify all ACLs for the inclusion of these URL categories ******"
  fi
  
--echo "The original configuration file is saved in $CONFIG.pre-v1.31"
+-echo "The original configuration file is saved in $CONFIG.pre-v1.32"
  echo
  
  exit 0
