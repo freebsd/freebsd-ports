@@ -307,8 +307,7 @@
 %%MMDIR%%/Mailman/htmlformat.pyc
 %%MMDIR%%/Mailman/i18n.py
 %%MMDIR%%/Mailman/i18n.pyc
-%%MMDIR%%/Mailman/mm_cfg.py.dist
-@postexec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
+@sample %%MMDIR%%/Mailman/mm_cfg.py.dist %%MMDIR%%/Mailman/mm_cfg.py
 %%MMDIR%%/Mailman/versions.py
 %%MMDIR%%/Mailman/versions.pyc
 %%MMDIR%%/bin/FreeBSD-post-install
