@@ -233,6 +233,7 @@
     SUBDIR += qt4-gui
     SUBDIR += qt4pas
     SUBDIR += qt5-canvas3d
+    SUBDIR += qt5-charts
     SUBDIR += qt5-declarative
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick
