@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
 
 NO_ARCH=	yes
-USES=	tar:xz python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
