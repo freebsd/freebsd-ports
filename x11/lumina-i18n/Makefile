@@ -9,11 +9,12 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina desktop environment localization files
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lumina>=0:x11/lumina
 
-USES=		tar:xz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
@@ -21,7 +22,7 @@ GH_PROJECT=	lumina-i18n
 GH_TAGNAME=	a96928d
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
-	tar xvf ${WRKSRC}/dist/${PORTNAME}.txz -C ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
+	${TAR} xvf ${WRKSRC}/dist/${PORTNAME}.txz -C ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
 
 .include <bsd.port.mk>
