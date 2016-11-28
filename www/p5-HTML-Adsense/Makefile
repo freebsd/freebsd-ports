@@ -21,4 +21,7 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
+post-extract:
+	@${FIND} ${WRKSRC} -name "._*" -delete
+
 .include <bsd.port.mk>
