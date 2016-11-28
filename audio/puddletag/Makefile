@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	puddletag
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	audio python
 
 MAINTAINER=	pawel@FreeBSD.org
