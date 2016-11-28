@@ -20,6 +20,8 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN_aarch64=	Fails to build: fatal error: machine/limits.h file not found
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in MODULE.jp README.jp STYLESHEET.jp XMULTI.jp
