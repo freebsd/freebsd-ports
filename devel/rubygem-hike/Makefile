@@ -11,9 +11,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for finding files in a set of paths
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
