@@ -28,7 +28,7 @@ PLIST_FILES=	sbin/pefs \
 		lib/pam_pefs.so \
 		man/man8/pam_pefs.8.gz \
 		man/man8/pefs.8.gz \
-		/${KMODDIR}/pefs.ko
+		${KMODDIR}/pefs.ko
 
 .include <bsd.port.options.mk>
 
