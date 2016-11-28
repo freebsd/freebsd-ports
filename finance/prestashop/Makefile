@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prestashop
-PORTVERSION=	1.6.1.8
+PORTVERSION=	1.7.0.1
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -10,15 +10,29 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source e-Commerce Software for Web 2.0
 
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 USES=		cpe shebangfix zip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	ctype dom gd mcrypt mysqli session simplexml
+USE_PHP=	ctype curl dom filter gd mcrypt mysqli pdo_mysql \
+		posix session simplexml soap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
-SHEBANG_FILES=	tools/swift/swiftmailer_generate_mimes_config.php
+SHEBANG_FILES=	vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
+		vendor/doctrine/orm/docs/bin/generate-docs.sh \
+		vendor/doctrine/orm/docs/bin/install-dependencies.sh \
+		vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build.sh \
+		vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_demo.sh \
+		vendor/symfony/symfony/src/Symfony/Component/Intl/Tests/Data/Bundle/Reader/Fixtures/build.sh \
+		vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
+
+post-extract:
+	@(cd ${WRKDIR} && ${UNZIP_CMD} -d prestashop ${WRKDIR}/prestashop.zip)
+	${REINPLACE_CMD} -e 's#@prefix@#${PREFIX}#g' \
+		${WRKSRC}/vendor/pear/archive_tar/scripts/phptar.in
+	${RM} ${WRKSRC}/vendor/pear/archive_tar/scripts/*.bak
 
 pre-install:
 	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}
@@ -28,6 +42,5 @@ pre-install:
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
