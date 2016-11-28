@@ -1,4 +1,4 @@
---- src/install_etcfiles.sh.in.orig	2015-06-09 01:25:36 UTC
+--- src/install_etcfiles.sh.in.orig	2016-08-02 02:36:07 UTC
 +++ src/install_etcfiles.sh.in
 @@ -25,15 +25,6 @@ then
     DESTDIR=${RPM_BUILD_ROOT:-}
@@ -16,18 +16,20 @@
  CFGDIR="$1"
  if [ ! -d "$CFGDIR" ]
  then
-@@ -335,10 +326,8 @@ fix_piddir_permissions () {
+@@ -373,12 +364,10 @@ fix_piddir_permissions () {
  
  
  case $OS in
--   freebsd)        install_freebsd ;;
-    solaris_smf)    install_solaris_smf ;;
-    linux_systemd)  install_linux_systemd ;;
--   *) 		   install_unix ;;
+-   freebsd)       install_freebsd ;;
+    openbsd)       install_openbsd ;;
+    linux_systemd) install_linux_systemd ;;
+    smoothwall)    install_smoothwall ;;
+    solaris_smf)   install_solaris_smf ;;
+-   *) 		  install_unix ;;
  esac
  
  
-@@ -355,14 +344,3 @@ fi
+@@ -395,14 +384,3 @@ fi
  # TODO: copy parameters from ufdbUpdate to $SYSCFGFILE ************************************************************ 
  
  fix_piddir_permissions

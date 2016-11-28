@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2016-02-18 17:47:07 UTC
+--- src/Makefile.in.orig	2016-10-19 19:37:29 UTC
 +++ src/Makefile.in
-@@ -210,7 +210,7 @@ install.bin: ufdbGenTable ufdbAnalyse uf
+@@ -224,7 +224,7 @@ install.bin: ufdbGenTable ufdbAnalyse uf
  	$(INSTALL_PROGRAM) ufdb_top_urls.pl $(DESTDIR)$(bindir)/ufdb_top_urls
  	$(INSTALL_PROGRAM) ufdb_top_users.pl $(DESTDIR)$(bindir)/ufdb_top_users
  	@if [ -f ufdbpeek ] ; then $(INSTALL_PROGRAM) ufdbpeek $(DESTDIR)$(bindir)/ufdbpeek ; fi
@@ -9,7 +9,7 @@
  
  install.pid::
  	if [ $(piddir) != /var/tmp ] ; then $(INSTALL) -d $(DESTDIR)$(piddir) ; fi
-@@ -221,10 +221,10 @@ install.update::
+@@ -235,10 +235,10 @@ install.update::
  
  install.security::
  	echo "Installing SSL root certificates"
