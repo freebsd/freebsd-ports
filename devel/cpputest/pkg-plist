@@ -1,6 +1,7 @@
 include/CppUTest/CommandLineArguments.h
 include/CppUTest/CommandLineTestRunner.h
 include/CppUTest/CppUTestConfig.h
+include/CppUTest/CppUTestGeneratedConfig.h
 include/CppUTest/JUnitTestOutput.h
 include/CppUTest/MemoryLeakDetector.h
 include/CppUTest/MemoryLeakDetectorMallocMacros.h
@@ -11,6 +12,7 @@ include/CppUTest/PlatformSpecificFunctions_c.h
 include/CppUTest/SimpleMutex.h
 include/CppUTest/SimpleString.h
 include/CppUTest/StandardCLibrary.h
+include/CppUTest/TeamCityTestOutput.h
 include/CppUTest/TestFailure.h
 include/CppUTest/TestFilter.h
 include/CppUTest/TestHarness.h
@@ -26,6 +28,7 @@ include/CppUTest/UtestMacros.h
 include/CppUTestExt/GMock.h
 include/CppUTestExt/GTest.h
 include/CppUTestExt/GTestConvertor.h
+include/CppUTestExt/IEEE754ExceptionsPlugin.h
 include/CppUTestExt/MemoryReportAllocator.h
 include/CppUTestExt/MemoryReportFormatter.h
 include/CppUTestExt/MemoryReporterPlugin.h
