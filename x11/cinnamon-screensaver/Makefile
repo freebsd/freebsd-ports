@@ -9,6 +9,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
 		gnome-autogen.sh:devel/gnome-common
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
@@ -18,7 +21,7 @@ RUN_DEPENDS=	pam_helper:security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
 		gnome-keyring>=0:security/gnome-keyring
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
