@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.07.02
+PORTVERSION=	0.07.07
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -21,7 +21,7 @@ PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-stress-cpu.c \
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-stress-cpu.h \
 		${FILESDIR}/extrapatch-Makefile
 .endif
 
