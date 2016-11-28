@@ -4,7 +4,8 @@
 PORTNAME=	njplot
 PORTVERSION=	2.4
 CATEGORIES=	biology
-MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/ \
+MASTER_SITES=	http://awarnach.mathstat.dal.ca/distfiles/ \
+		ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/ \
 		ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/archive/
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -21,7 +22,8 @@ USE_XORG=	x11 xmu xp xt
 
 BINARIES=	newicktops newicktotxt njplot unrooted
 PLIST_FILES=	${BINARIES:S|^|bin/|} man/man1/njplot.1.gz \
-		man/man1/unrooted.1.gz ${DATADIR}/njplot.help
+		man/man1/unrooted.1.gz
+PORTDATA=	njplot.help
 PORTDOCS=	njplot.html njplot.gif
 
 OPTIONS_DEFINE=	DOCS
