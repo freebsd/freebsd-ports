@@ -3,6 +3,7 @@
 
 PORTNAME=	go-runewidth
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	knu@FreeBSD.org
