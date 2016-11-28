@@ -5,11 +5,10 @@ PORTNAME=		cryptopp
 PORTVERSION=		5.6.2
 PORTREVISION=		3
 CATEGORIES=		security
-MASTER_SITES=		SF \
-			http://www.cryptopp.com/
+MASTER_SITES=		http://www.cryptopp.com/
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 
-MAINTAINER=		delphij@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Free C++ class library of Cryptographic Primitives
 
 OPTIONS_DEFINE=		DEBUG DOCS GCC STATIC THREADS
