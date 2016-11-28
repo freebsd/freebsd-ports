@@ -24,4 +24,7 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+post-extract:
+	@${FIND} ${WRKSRC} -name "._*" -delete
+
 .include <bsd.port.mk>
