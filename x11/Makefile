@@ -237,6 +237,7 @@
     SUBDIR += p5-X11-GUITest
     SUBDIR += p5-X11-IdleTime
     SUBDIR += p5-X11-Protocol
+    SUBDIR += p5-X11-Protocol-Other
     SUBDIR += p5-X11-Resolution
     SUBDIR += p5-X11-XCB
     SUBDIR += p5-X11-Xlib
