@@ -21,6 +21,9 @@ WWWDIR?=	${PREFIX}/www/roundcube/skins/mvision2_en
 
 SUB_FILES=	pkg-message
 
+post-extract:
+	@${FIND} ${WRKDIR} -name "._*" -delete
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKDIR}/mvision2_en && ${PAX} -r -w . \
