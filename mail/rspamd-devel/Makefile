@@ -10,6 +10,7 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system dev version
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmime-2.6.so:mail/gmime26 \
@@ -23,7 +24,6 @@ CONFLICTS_INSTALL=	rspamd
 RSPAMD_VERSION=	1.4.1
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_PROJECT=	rspamd
 GH_TAGNAME=	8ebc1e5
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
@@ -50,7 +50,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DGIT_ID=${GH_TAGNAME} \
 		-DENABLE_FANN=ON
 
-USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
+USES=		cmake:outsource gettext iconv pkgconfig perl5 \
 		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -93,8 +93,8 @@ WITH_DEBUG=	yes
  PLIST_SUB+=	REDIRECTOR="@comment "
 .endif
 
-post-stage:
-	${INSTALL} -d \
+post-install:
+	@${MKDIR} \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
@@ -103,8 +103,6 @@ post-stage:
 	# No need, since rspamd.conf.sample is a same
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 
