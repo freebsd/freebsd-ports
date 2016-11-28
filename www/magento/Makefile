@@ -3,6 +3,7 @@
 
 PORTNAME=	magento
 PORTVERSION=	1.8.1.0
+PORTREVISION=	1
 CATEGORIES=	www finance
 MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/${PORTVERSION}/
 
@@ -22,6 +23,7 @@ REDIS_DESC=	Depend on php56-redis for faster redis backend
 #SNAPPY_DESC=	Use google snappy for Redis Cache compression
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAGENTODIR?=	www/magento
 
 OAUTH_RUN_DEPENDS=	pecl-oauth>=1.2.3:net/pecl-oauth
@@ -31,25 +33,28 @@ REDIS_USE=	php=redis
 #SNAPPY_RUN_DEPENDS=	php5-snappy>=0.0.2:archivers/php5-snappy
 
 SUB_FILES=	pkg-message cron.sh pkg-install crontab
-SUB_LIST+=	MAGENTODIR=${MAGENTODIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-PLIST_SUB+=	${SUB_LIST}
+SUB_LIST=	MAGENTODIR=${MAGENTODIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	${SUB_LIST}
+PORTEXAMPLES=	*
 
 post-patch:
 	@${RM} ${WRKSRC}/cron.sh ${WRKSRC}/.htaccess
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MAGENTODIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/cron.sh ${STAGEDIR}${PREFIX}/${MAGENTODIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/cron.sh ${STAGEDIR}${PREFIX}/${MAGENTODIR}
 	@${FIND} ${STAGEDIR}${PREFIX}/${MAGENTODIR}/var -type d \
 		-exec ${CHMOD} a+w {} +
 	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc \
 		${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules
+
 do-install-SESSIONS-on:
 	@${REINPLACE_CMD} -e 's,<active>false,<active>true,' \
 		${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml
 	@${RM} ${STAGEDIR}${PREFIX}/${MAGENTODIR}/app/etc/modules/Cm_RedisSession.xml.bak
+
 do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
