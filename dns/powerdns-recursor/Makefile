@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs
 
 BROKEN_sparc64=	Does not compile on sparc64
-BROKEN_FreeBSD_9=	linker error
 
-USES=		compiler:c++11-lib cpe gmake pkgconfig ssl tar:bzip2
+USES=		compiler:c++11-lib cpe gmake localbase pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 CPE_VENDOR=	powerdns
 
@@ -54,4 +54,15 @@ USERS=		pdns_recursor
 GROUPS=		pdns
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_9=	FreeBSD 9.x requires SSL from ports
+.endif
+
+.if ${OSVERSION} < 1000000 && ${ARCH} == i386
+#BUILD_DEPENDS=		${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
+LDFLAGS+=		-latomic
+.endif
+
+.include <bsd.port.post.mk>
