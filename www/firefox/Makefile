@@ -57,9 +57,6 @@ OPTIONS_DEFAULT_i386=	RUST
 OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
-TEST_BROKEN=		No rule to make target '../../../dist/bin/libnspr4.so', needed by \
-			'../../../_tests/xpcshell/modules/libmar/tests/unit/libnspr4.so'
-
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
