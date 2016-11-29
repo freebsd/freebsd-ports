@@ -312,6 +312,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field
 .if ${COMPILER_VERSION} >= 35

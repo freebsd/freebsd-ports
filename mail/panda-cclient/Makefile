@@ -35,6 +35,10 @@ PKGMESSAGE=	pkg-message-ssl
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 USE_LDCONFIG=	yes
 ALL_TARGET=	bsf
 .if ! ${PORT_OPTIONS:MSSL}

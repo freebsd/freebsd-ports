@@ -527,6 +527,10 @@ USES+=	mysql
 
 .include <bsd.port.pre.mk>
 
+.if ${PHP_MODNAME} == "openssl" && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	libt1.so:devel/t1lib

@@ -87,6 +87,10 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${PORT_OPTIONS:MGOST}
 .  if !defined(SSL_DEFAULT) || ${SSL_DEFAULT} == "base"
 IGNORE_FreeBSD_9=	Requires openssl version >= 1.0.0

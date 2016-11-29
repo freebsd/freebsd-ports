@@ -215,6 +215,10 @@ CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${SSL_DEFAULT} != base
 LCRYPTO=	-lcrypto
 .else

@@ -77,6 +77,10 @@ USE_OPENSSL=		no
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 THREADS_CONFIGURE_WITH=	pthread
 MOUSE_CONFIGURE_ENABLE=	mouse
 NLS_CONFIGURE_ENABLE=	nls

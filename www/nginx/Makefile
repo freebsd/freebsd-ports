@@ -1360,4 +1360,10 @@ post-install:
 	${CAT} ${WRKSRC}/conf/nginx.conf \
 		>>${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(NGINX_OPENSSL) && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>
