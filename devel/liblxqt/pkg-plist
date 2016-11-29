@@ -31,9 +31,9 @@
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtsettings.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtsingleapplication.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqttranslator.h
-%%QT_LIBDIR%%/liblxqt.so
-%%QT_LIBDIR%%/liblxqt.so.0
-%%QT_LIBDIR%%/liblxqt.so.%%VERSION%%
+lib/liblxqt.so
+lib/liblxqt.so.0
+lib/liblxqt.so.%%VERSION%%
 libdata/pkgconfig/lxqt.pc
 share/cmake/lxqt/find-modules/FindXdgUserDirs.cmake
 share/cmake/lxqt/lxqt-config-version.cmake

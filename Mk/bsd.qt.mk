@@ -271,10 +271,17 @@ USES+=			qmake:_env
 
 PLIST_SUB+=		QT_PREFIX="${QT_PREFIX}"
 
-.for dir in BIN INC LIB ARCH PLUGIN LIBEXEC IMPORT \
+.for dir in INC ARCH PLUGIN LIBEXEC IMPORT \
 	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC
 QT_${dir}DIR=	${QT_PREFIX}/${QT_${dir}DIR_REL}
 PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
+.endfor
+
+.for dir in BIN LIB
+QT_${dir}DIR=        ${QT_PREFIX}/${QT_${dir}DIR_REL}
+.  if defined(QT_DIST)
+PLIST_SUB+=                QT_${dir}DIR="${QT_${dir}DIR_REL}"
+.  endif
 .endfor
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)

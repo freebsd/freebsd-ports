@@ -684,11 +684,11 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/10_electric/10_allpole/395_electronics&semiconductors/qet_directory
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/appareil_ferme_cle_prisonniere.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/appareil_ouvert_cle_prisonniere.elmt
-%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_absente_pene_rentree_manoeuvre_%%QT_LIBDIR%%re.elmt
+%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_absente_pene_rentree_manoeuvre_libre.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_absente_pene_sorti.elmt
-%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_%%QT_LIBDIR%%re_pene_rentree_manoeuvre_%%QT_LIBDIR%%re.elmt
-%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_%%QT_LIBDIR%%re_pene_sorti.elmt
-%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_prisioniere_pene_rentree_manoeuvre_%%QT_LIBDIR%%re.elmt
+%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_libre_pene_rentree_manoeuvre_libre.elmt
+%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_libre_pene_sorti.elmt
+%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_prisioniere_pene_rentree_manoeuvre_libre.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/cle_prisionniere_pene_rentree_manoeuvre_bloquee.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/contacteur_crm.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/contacteur_f_crm.elmt
@@ -716,7 +716,7 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/ligne_triphase.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/ligne_triphase_2.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/qet_directory
-%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/serrure_cle_tjs_%%QT_LIBDIR%%re.elmt
+%%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/serrure_cle_tjs_libre.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/serrure_cle_tjs_prisionniere.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/signal_capacitif.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/450_high_voltage/transf_cm.elmt
@@ -1682,7 +1682,7 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/90_TAC_Xenta/regulateurs/tac-xenta301.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/90_TAC_Xenta/regulateurs/tac-xenta302.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/90_TAC_Xenta/regulateurs/tac-xenta401.elmt
-%%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/90_TAC_Xenta/regulateurs/tac-xenta%%QT_LIBDIR%%.elmt
+%%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/90_TAC_Xenta/regulateurs/tac-xentalib.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/99_assembly_plan/gv2me.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/99_assembly_plan/lc1d.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/schneider_electric/99_assembly_plan/lc1k.elmt
@@ -2404,7 +2404,7 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/20_logic/40_flowchart/souspgm03.elmt
 %%DATADIR%%/elements/20_logic/40_flowchart/sur_page.elmt
 %%DATADIR%%/elements/20_logic/qet_directory
-%%DATADIR%%/elements/30_hydraulic/21_tanks/bache_a_l_air_%%QT_LIBDIR%%re.elmt
+%%DATADIR%%/elements/30_hydraulic/21_tanks/bache_a_l_air_libre.elmt
 %%DATADIR%%/elements/30_hydraulic/21_tanks/bache_pressurisee.elmt
 %%DATADIR%%/elements/30_hydraulic/21_tanks/qet_directory
 %%DATADIR%%/elements/30_hydraulic/31_control_valves/01_single_parts/11_actuation/bouton.elmt
@@ -2811,7 +2811,7 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/60_energy/11_water/schemas/grupo-seg-termo.elmt
 %%DATADIR%%/elements/60_energy/11_water/schemas/intercambiador.elmt
 %%DATADIR%%/elements/60_energy/11_water/schemas/llave-acometida.elmt
-%%DATADIR%%/elements/60_energy/11_water/schemas/llave-equi%%QT_LIBDIR%%rado.elmt
+%%DATADIR%%/elements/60_energy/11_water/schemas/llave-equilibrado.elmt
 %%DATADIR%%/elements/60_energy/11_water/schemas/llave-paso-regul.elmt
 %%DATADIR%%/elements/60_energy/11_water/schemas/llave-vivienda.elmt
 %%DATADIR%%/elements/60_energy/11_water/schemas/llavepaso.elmt
@@ -3094,8 +3094,8 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_01.elmt
 %%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_3v_a_secteur_01.elmt
 %%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_diferentielle.elmt
-%%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_equi%%QT_LIBDIR%%rage_debimetre_01.elmt
-%%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_equi%%QT_LIBDIR%%rage_ta_01.elmt
+%%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_equilibrage_debimetre_01.elmt
+%%DATADIR%%/elements/60_energy/31_solar_thermal/vanne/vanne_equilibrage_ta_01.elmt
 %%DATADIR%%/elements/60_energy/qet_directory
 %%DATADIR%%/examples/741.qet
 %%DATADIR%%/examples/ArduinoLCD.qet
