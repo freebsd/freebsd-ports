@@ -7,10 +7,12 @@ etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
 lib/xfce4/panel/plugins/libclipman.so
 share/appdata/xfce4-clipman.appdata.xml
 share/applications/xfce4-clipman.desktop
+share/icons/hicolor/16x16/apps/clipman-symbolic.svg
 share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
-share/icons/hicolor/22x22/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/32x32/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/48x48/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/64x64/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-clipman-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-clipman-plugin.mo
