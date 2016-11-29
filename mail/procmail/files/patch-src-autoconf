@@ -18,3 +18,15 @@
  if $MAKE _autotst >$DEVNULL 2>&1
   test -f _autotst
  then
+@@ -1491,6 +1493,11 @@
+   fi
+ done
+ 
++case ":$lpath:" in
++    *:/usr/local/bin:*) ;;
++    *) lpath="$lpath:/usr/local/bin" ;;
++esac
++
+ echo "#define defPATH \"PATH=\$HOME/bin:$lpath\"" >>$ACONF
+ echo "#define defSPATH \"PATH=$lpath\"" >>$ACONF
+ 

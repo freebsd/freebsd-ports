@@ -26,12 +26,12 @@
  	system mailbox.	 This also must be an absolute path */
  
 -#define ETCRC	"/etc/procmailrc"	/* optional global procmailrc startup
-+#define ETCRC   "%%PREFIX%%/etc/procmailrc"       /* optional global procmailrc startup
++#define ETCRC   "/usr/local/etc/procmailrc"       /* optional global procmailrc startup
  					   file (will only be read if procmail
  	is started with no rcfile on the command line). */
  
 -#define ETCRCS	"/etc/procmailrcs/"	/* optional trusted path prefix for
-+#define ETCRCS  "%%PREFIX%%/etc/procmailrcs/"     /* optional trusted path prefix for
++#define ETCRCS  "/usr/local/etc/procmailrcs/"     /* optional trusted path prefix for
  					   rcfiles which will be executed with
  	the uid of the owner of the rcfile (this only happens if procmail is
  	called with the -m option, without variable assignments on the command
