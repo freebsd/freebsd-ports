@@ -11,7 +11,8 @@ COMMENT=	Open source implementation of a 16bit X86 BIOS
 
 LICENSE=	LGPL3
 
-BROKEN_powerpc64=	Does not build
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	specific to x86
 
 USES=	gmake python:build
 
