@@ -64,7 +64,7 @@ FFMPEG_CFLAGS_OFF+=-msse
 
 .if ${ARCH} == aarch64 || ${ARCH} == armv6
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-CFLAGS=	-no-integrated-as
+CFLAGS+=	-no-integrated-as
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
