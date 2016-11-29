@@ -3,7 +3,7 @@
 
 PORTNAME=		R
 PORTVERSION=		3.3.2
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -65,7 +65,7 @@ ATLAS_VARS=		MANUAL_PACKAGE_BUILD=\
 CAIROPANGO_IMPLIES=	X11
 CAIROPANGO_CONFIGURE_WITH=cairo
 CAIROPANGO_USES=	gettext jpeg pkgconfig
-CAIROPANGO_USE=		gnome=pango,cairo
+CAIROPANGO_USE=		GNOME=pango,cairo
 GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
 ICU_CONFIGURE_WITH=	ICU
@@ -81,7 +81,11 @@ LDOUBLE_CONFIGURE_ENABLE=long-double
 LETTER_CONFIGURE_ENV=	R_PAPERSIZE=letter
 LIBR_CONFIGURE_ENABLE=	R-shlib
 LTO_CONFIGURE_ENABLE=	lto
-LTO_USE=		gcc=yes
+LTO_CONFIGURE_ENV=	AR="${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT:S/.//g}" \
+			RANLIB="${LOCALBASE}/bin/gcc-ranlib${GCC_DEFAULT:S/.//g}"
+LTO_USE=		GCC=yes
+LTO_VARS=		BINUTILS="ADDR2LINE AS CPPFILT GPROF LD NM OBJCOPY \
+			OBJDUMP READELF SIZE STRINGS"
 MEMPROF_CONFIGURE_ENABLE=memory-profiling
 NETLIB_USES=		blaslapack:netlib
 NETLIB_CONFIGURE_ON=	--disable-BLAS-shlib
@@ -90,7 +94,7 @@ NLS_USES=		gettext
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CONFIGURE_ON=	--disable-BLAS-shlib
 OPENMP_CONFIGURE_ENABLE=openmp
-OPENMP_USE=		compiler:openmp
+OPENMP_USES=		compiler:openmp
 PNG_IMPLIES=		X11
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	libpng
@@ -115,33 +119,9 @@ TIFF_CONFIGURE_WITH=	libtiff
 X11_CONFIGURE_WITH=	x
 X11_USE=		xorg=ice,sm,x11,xext,xmu,xscrnsaver,xt
 
-R_SOVERSION=		1
-RBLAS_SOVERSION=	2
-RLAPACK_SOVERSION=	4
-
-PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
-			RBLAS_SOVERSION="${RBLAS_SOVERSION}" \
-			RLAPACK_SOVERSION="${RLAPACK_SOVERSION}"
-
-.include <bsd.port.options.mk>
-.include "compiler.mk"
-
-.if ${PORT_OPTIONS:MLIBR} || ${PORT_OPTIONS:MRBLAS}
-USE_LDCONFIG=		${PREFIX}/lib/R/lib
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 
-## TODO: Add missing soname and soversion to shared libraries
-post-install:
-.for L in R Rblas Rlapack
-	if [ -d ${STAGEDIR}${PREFIX}/lib/R/lib ]; then \
-		cd ${STAGEDIR}${PREFIX}/lib/R/lib; \
-		if [ -f lib${L}.so ]; then \
-			${LN} -sf lib${L}.so lib${L}.so.${${L:tu}_SOVERSION}; \
-		fi; \
-	fi
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "compiler.mk"
+.include <bsd.port.post.mk>
