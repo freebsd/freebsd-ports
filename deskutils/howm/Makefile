@@ -1,14 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	howm
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Write fragmentarily and read collectively
-
-BROKEN=		fails to build
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes

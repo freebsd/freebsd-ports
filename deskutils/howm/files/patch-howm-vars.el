@@ -1,11 +1,11 @@
---- howm-vars.el.orig	2011-08-23 20:48:27.000000000 +0900
-+++ howm-vars.el	2012-03-11 22:18:42.730947048 +0900
-@@ -679,7 +679,7 @@
-   "*Command name for fgrep.
+--- howm-vars.el.orig	2015-12-31 22:41:45.000000000 +0900
++++ howm-vars.el	2016-11-26 22:46:32.596292000 +0900
+@@ -759,7 +759,7 @@
  This variable is obsolete and may be removed in future.")
  (defvar howm-view-grep-default-option
--  (labels ((ed (d) (concat "--exclude-dir=" d)))
-+  (labels ((ed (d) (concat "--exclude=" d)))
-     (let* ((has-ed (condition-case nil
-                        (eq 0 (call-process howm-view-grep-command nil nil nil
-                                            (ed "/") "--version"))
+   ;; "labels" causes a trouble in git-head emacs (d5e3922) [2015-01-31]
+-  (let* ((ed (lambda (d) (concat "--exclude-dir=" d)))
++  (let* ((ed (lambda (d) (concat "--exclude=" d)))
+          (has-ed (condition-case nil
+                      (eq 0 (call-process howm-view-grep-command nil nil nil
+                                          (apply ed "/") "--version"))
