@@ -32,7 +32,7 @@
 #	default: unset.
 #
 # varnishd_hash - hash algorithm
-#       default: "classic,16383"
+#       default: "critbit"
 #
 # varnishd_storage - storage method and parameters.
 #	default: "file,/tmp,100M"
@@ -60,7 +60,7 @@ load_rc_config ${name}
 : ${varnishd_admin=localhost:81}
 : ${varnishd_backend=localhost:8080}
 : ${varnishd_storage=file,/tmp,100M}
-: ${varnishd_hash=classic,16383}
+: ${varnishd_hash=critbit}
 : ${varnishd_jailuser=varnish}
 
 command="%%PREFIX%%/sbin/${name}"
