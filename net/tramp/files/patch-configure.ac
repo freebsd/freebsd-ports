@@ -1,21 +1,8 @@
---- configure.ac.orig	2010-11-20 19:59:36.000000000 +0900
-+++ configure.ac	2010-11-26 23:08:05.306093104 +0900
-@@ -55,11 +55,10 @@
- AC_EMACS_INFO
- 
- # Handle contrib files. "-" must be encoded as "_".
--TRAMP_CONTRIB_FILES=
-+TRAMP_CONTRIB_FILES=password.el
- 
- AC_CONTRIB_FILES([base64_encode_region],   [base64.el])
- AC_CONTRIB_FILES([format_spec],            [format_spec.el])
--AC_CONTRIB_FILES([password_cache_add],     [password.el],    [optional])
- if test "${EMACS_GW}" = yes; then
-    AC_CONTRIB_FILES([socks_open_network_stream], [socks.el], [optional])
- fi
-@@ -158,4 +157,4 @@
+--- configure.ac.orig	2016-06-26 19:35:17.000000000 +0900
++++ configure.ac	2016-11-26 22:49:34.137729000 +0900
+@@ -140,4 +140,4 @@
  # Regenerate autoloads.
  AC_MSG_NOTICE([regenerate autoloads])
  rm -f lisp/tramp-loaddefs.el
--make EMACS_INFO=${EMACS_INFO} -s -C lisp autoloads
+-make EMACS=${EMACS} -s -C lisp autoloads
 +gmake EMACS_INFO=${EMACS_INFO} -s -C lisp autoloads
