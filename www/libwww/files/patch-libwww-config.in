@@ -1,6 +1,6 @@
---- libwww-config.in.orig       Thu Jul  6 18:48:21 2006
-+++ libwww-config.in    Thu Jul  6 18:49:01 2006
-@@ -48,7 +48,7 @@
+--- libwww-config.in.orig	1999-06-23 18:05:01 UTC
++++ libwww-config.in
+@@ -48,7 +48,7 @@ while test $# -gt 0; do
        echo -I@includedir@ -I@includedir@/@PACKAGE@ @DEFS@
        ;;
      --libs)
@@ -9,4 +9,3 @@
        ;;
      *)
        echo "${usage}" 1>&2
-
