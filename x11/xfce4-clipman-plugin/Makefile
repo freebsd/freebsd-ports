@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -26,5 +26,6 @@ USE_XFCE=	panel
 USE_XORG=	ice sm x11 xtst xproto
 USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
