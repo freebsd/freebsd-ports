@@ -59,6 +59,8 @@ OPTIONS_DEFAULT=PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
 
+BROKEN_armv6=		Fails to patch: Error code 1 during gentables
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLOCALE_FIX}
