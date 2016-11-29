@@ -26,4 +26,8 @@ RESTRICTED=	license only allows redistribution and use of unmodified source and 
 .endif
 LEGAL_TEXT=	license restricts redistribution of source and binaries
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .include <bsd.port.post.mk>

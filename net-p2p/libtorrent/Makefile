@@ -35,6 +35,10 @@ KQUEUE_CONFIGURE_WITH=	kqueue
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 # Disable amd64 atomic ops on i386 when using gcc
 # undefined reference to __sync_add_and_fetch_8
 # undefined reference to __sync_fetch_and_and_8

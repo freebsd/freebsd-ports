@@ -71,6 +71,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000024
 CFLAGS+=	-flax-vector-conversions
 .endif

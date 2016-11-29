@@ -134,6 +134,11 @@ PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${readline_ARGS} == "port"
 readline_CONFIGURE=	${LOCALBASE}
 .else
