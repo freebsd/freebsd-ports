@@ -48,10 +48,10 @@
 %%QT_INCDIR%%/Qsci/qsciscintillabase.h
 %%QT_INCDIR%%/Qsci/qscistyle.h
 %%QT_INCDIR%%/Qsci/qscistyledtext.h
-%%QT_LIBDIR%%/libqscintilla2-qt5.so
-%%QT_LIBDIR%%/libqscintilla2-qt5.so.12
-%%QT_LIBDIR%%/libqscintilla2-qt5.so.12.0
-%%QT_LIBDIR%%/libqscintilla2-qt5.so.12.0.1
+lib/libqscintilla2-qt5.so
+lib/libqscintilla2-qt5.so.12
+lib/libqscintilla2-qt5.so.12.0
+lib/libqscintilla2-qt5.so.12.0.1
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 %%QT_DATADIR%%/qsci/api/python/Python-2.4.api
 %%QT_DATADIR%%/qsci/api/python/Python-2.5.api

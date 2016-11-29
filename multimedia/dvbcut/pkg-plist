@@ -1,4 +1,3 @@
-@comment %%QT_BINDIR%%/dvbcut
 bin/dvbcut
 share/applications/dvbcut.desktop
 share/mime/packages/dvbcut.xml

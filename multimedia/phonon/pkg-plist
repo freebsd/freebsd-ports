@@ -186,8 +186,8 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
 %%QT_PREFIX%%/%%QT_INCDIR%%/Phonon
 %%QT_PREFIX%%/%%QT_INCDIR%%/phonon
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so.4
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so.4
+%%QT_PREFIX%%/lib/qt4/libphonon.so
+%%QT_PREFIX%%/lib/qt4/libphonon.so.4
+%%QT_PREFIX%%/lib/qt4/libphononexperimental.so
+%%QT_PREFIX%%/lib/qt4/libphononexperimental.so.4
 %%QT_PREFIX%%/%%QT_MKSPECDIR%%/modules/qt_phonon.pri
