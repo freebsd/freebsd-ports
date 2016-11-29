@@ -11,6 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2015.11.13
+PORTREVISION=	1
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
@@ -19,17 +20,19 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gm4:devel/m4
-LIB_DEPENDS=	libXm.so:x11-toolkits/open-motif \
-		libR.so:math/R \
+BUILD_DEPENDS=	gm4:devel/m4 \
+		R:math/R
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libf2c.so:lang/f2c \
 		libgsl.so:math/gsl \
 		libnetcdff.so:science/netcdf-fortran \
 		libxml2.so:textproc/libxml2 \
-		libf2c.so:lang/f2c
-RUN_DEPENDS=	mpeg_encode:multimedia/mpeg_encode \
+		libXm.so:x11-toolkits/open-motif
+RUN_DEPENDS=	endian:sysutils/endian \
+		mpeg_encode:multimedia/mpeg_encode \
 		ppmtogif:graphics/netpbm \
-		endian:sysutils/endian \
-		qhull:math/qhull5
+		qhull:math/qhull5 \
+		R:math/R
 
 CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
@@ -47,8 +50,8 @@ USE_GNOME=	glib20
 
 BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
-USE_GL=		glw glu
-USE_XORG=	xi
+USE_GL=		gl glu glw
+USE_XORG=	x11 xext xi xmu xp xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
