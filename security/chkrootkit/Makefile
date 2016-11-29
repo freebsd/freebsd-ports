@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 		ftp://gd.tuwien.ac.at/infosys/security/chkrootkit/ \
