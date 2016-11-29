@@ -25,4 +25,10 @@ post-patch:
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Crypt/OpenSSL/X509/X509.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

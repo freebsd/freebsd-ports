@@ -98,6 +98,10 @@ NETTLE_CONFIGURE_OFF=	--with-openssl
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002504
 CONFIGURE_ENV+=	ac_cv_lzma_has_mt=no
 .endif

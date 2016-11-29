@@ -16,4 +16,10 @@ USE_OPENSSL=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

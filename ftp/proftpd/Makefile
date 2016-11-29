@@ -171,6 +171,10 @@ CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if !defined(_BUILDING_PROFTPD_MODULE)
 
 .if empty(ICONV_PREFIX)

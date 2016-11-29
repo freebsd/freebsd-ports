@@ -79,6 +79,10 @@ CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 # PORTEPOCH/PORTREVISION hack
 
 .if ${PORTEPOCH} != 0

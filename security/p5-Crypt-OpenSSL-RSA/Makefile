@@ -23,4 +23,10 @@ MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 regression-test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

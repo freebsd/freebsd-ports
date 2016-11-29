@@ -29,4 +29,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/POE/Filter/SSL/SSL.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>
