@@ -1,6 +1,6 @@
---- Library/src/HTMIMImp.c.orig	Sun Jun 30 22:51:48 2002
-+++ Library/src/HTMIMImp.c	Sun Jun 30 22:52:01 2002
-@@ -226,7 +226,7 @@
+--- Library/src/HTMIMImp.c.orig	1999-02-22 22:10:11 UTC
++++ Library/src/HTMIMImp.c
+@@ -226,7 +226,7 @@ PRIVATE int HTFindInt(char * haystack, c
      int value = deflt;
      if (start != NULL) {
  	start += strlen(needle);
