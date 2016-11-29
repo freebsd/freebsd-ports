@@ -3,7 +3,7 @@
 
 PORTNAME=	procmail
 PORTVERSION=	3.22
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
@@ -30,7 +30,7 @@ PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h ${WRKSRC}/src/autoconf
 # Allow parallel builds (-jX) to work
 	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|'
 
