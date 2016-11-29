@@ -1,0 +1,11 @@
+bin/goaccess
+@sample etc/goaccess.conf.sample
+man/man1/goaccess.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/app.css
+%%PORTDOCS%%%%DOCSDIR%%/app.js
+%%PORTDOCS%%%%DOCSDIR%%/bootstrap.min.css
+%%PORTDOCS%%%%DOCSDIR%%/charts.js
+%%PORTDOCS%%%%DOCSDIR%%/d3.v3.min.js
+%%PORTDOCS%%%%DOCSDIR%%/fa.min.css
+%%PORTDOCS%%%%DOCSDIR%%/hogan.min.js
+%%PORTDOCS%%%%DOCSDIR%%/tpls.html
