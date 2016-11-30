@@ -28,6 +28,9 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 
+BROKEN_aarch64=		Fails to compile: error in backend: Do not know how to split this operator's operand!
+BROKEN_armv6=		Fails to compile: error: invalid conversion between vector type and integer type
+
 OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART SUPEREQ SID FFAP VTX \
 		HOTKEYS OGG FFMPEG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY \
 		MUSEPACK WILDMIDI TTA DCA AAC MMS SHN SHELLEXEC NLS M3U \
