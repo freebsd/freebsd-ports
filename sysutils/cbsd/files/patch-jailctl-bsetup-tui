@@ -1,0 +1,11 @@
+--- jailctl/bsetup-tui.orig	2016-11-28 11:22:21 UTC
++++ jailctl/bsetup-tui
+@@ -54,7 +54,7 @@ commit()
+ 		fi
+ 
+ 		[ "${VAL}" = "${OVAL}" ] && continue
+-		bset mode=quiet jname=${_oldjname} $i=\"${VAL}\"
++		bset mode=quiet jname=${_oldjname} $i="${VAL}"
+ 	done
+ 
+ 	[ "${_oldjname}" != "${_newjname}" -a -n "${_newjname}" ] && cbsd brename old=${_oldjname} new=${_newjname}
