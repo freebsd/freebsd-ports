@@ -701,6 +701,7 @@
     SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-ruby-shout
     SUBDIR += s3mod
+    SUBDIR += sayonara
     SUBDIR += sbagen
     SUBDIR += schism
     SUBDIR += scrobbler
