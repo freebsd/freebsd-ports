@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	54.0.2840.100
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -109,7 +110,7 @@ OPTIONS_DEFINE=	ALSA CODECS GCONF PULSEAUDIO TEST KERBEROS DEBUG DRIVER
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
 
-OPTIONS_DEFAULT=	CODECS GCONF KERBEROS
+OPTIONS_DEFAULT=	ALSA CODECS GCONF KERBEROS
 OPTIONS_SUB=	yes
 
 GCONF_USE=	GNOME=gconf2
