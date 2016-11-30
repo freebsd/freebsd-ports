@@ -126,6 +126,7 @@ include/simgear/math/leastsqs.hxx
 include/simgear/math/sg_geodesy.hxx
 include/simgear/math/sg_random.h
 include/simgear/math/sg_types.hxx
+include/simgear/math/simd.hxx
 include/simgear/misc/CSSBorder.hxx
 include/simgear/misc/ListDiff.hxx
 include/simgear/misc/ResourceManager.hxx
