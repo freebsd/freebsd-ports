@@ -1,7 +1,0 @@
-include/lv2/lv2plug.in/ns/lv2core
-include/lv2.h
-lib/lv2/lv2core.lv2/lv2.h
-lib/lv2/lv2core.lv2/lv2core.doap.ttl
-lib/lv2/lv2core.lv2/lv2core.ttl
-lib/lv2/lv2core.lv2/manifest.ttl
-libdata/pkgconfig/lv2core.pc
