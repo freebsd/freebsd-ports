@@ -1,0 +1,11 @@
+--- jailctl/jsetup-tui.orig	2016-11-28 11:22:21 UTC
++++ jailctl/jsetup-tui
+@@ -34,7 +34,7 @@ commit()
+ 		fi
+ 		[ "${VAL}" = "${OVAL}" ] && continue
+ 		echo "jset mode=quiet jname=${_oldjname} $i=\"${VAL}\""
+-		jset mode=quiet jname=${_oldjname} $i=\"${VAL}\"
++		jset mode=quiet jname=${_oldjname} $i="${VAL}"
+ 	done
+ 
+ 	if [ "${_oldjname}" != "${_newjname}" -a -n "${_newjname}" ]; then
