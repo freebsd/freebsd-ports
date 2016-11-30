@@ -3,6 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITES=	CENTOS_LINUX/centos/${LINUX_DIST_VER}/cr/x86_64/Packages
 SRC_DISTFILES=	# not available
