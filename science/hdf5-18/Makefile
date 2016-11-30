@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.17
+PORTVERSION=	1.8.18
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
-		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
-		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
-		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/
+MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/current18/src/	\
+		http://support.hdfgroup.org/ftp/HDF5/current18/src/	\
+		ftp://ftp.hdfgroup.org/HDF5/current18/src/
 PKGNAMESUFFIX=	-18
 
 MAINTAINER=	thierry@FreeBSD.org
