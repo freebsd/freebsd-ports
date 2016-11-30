@@ -87,12 +87,14 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
+%%DATADIR%%/rules/mid.lua
 %%DATADIR%%/rules/misc.lua
 %%DATADIR%%/rules/regexp/compromised_hosts.lua
 %%DATADIR%%/rules/regexp/drugs.lua
 %%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/lotto.lua
+%%DATADIR%%/rules/regexp/misc.lua
 %%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
