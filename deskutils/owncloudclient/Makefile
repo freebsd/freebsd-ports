@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
