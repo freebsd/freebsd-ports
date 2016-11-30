@@ -12,9 +12,9 @@ bin/rspamc
 @sample %%ETCDIR%%/composites.conf.sample
 @sample %%ETCDIR%%/dmarc_whitelist.inc.sample
 @sample %%ETCDIR%%/logging.inc.sample
-%%ETCDIR%%/maillist.inc
+@sample %%ETCDIR%%/maillist.inc.sample
 @sample %%ETCDIR%%/metrics.conf.sample
-%%ETCDIR%%/mid.inc
+@sample %%ETCDIR%%/mid.inc.sample
 @sample %%ETCDIR%%/modules.conf.sample
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/dkim.conf
@@ -26,8 +26,8 @@ bin/rspamc
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/ip_score.conf
 %%ETCDIR%%/modules.d/maillist.conf
-%%ETCDIR%%/modules.d/mid.conf
 %%ETCDIR%%/modules.d/mime_types.conf
+%%ETCDIR%%/modules.d/mid.conf
 %%ETCDIR%%/modules.d/multimap.conf
 %%ETCDIR%%/modules.d/once_received.conf
 %%ETCDIR%%/modules.d/phishing.conf
@@ -49,9 +49,12 @@ bin/rspamc
 @sample %%ETCDIR%%/worker-fuzzy.inc.sample
 @sample %%ETCDIR%%/worker-normal.inc.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
+etc/newsyslog.conf.d/rspamd.newsyslog.conf
+lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/lua/antivirus.lua
 %%DATADIR%%/lua/asn.lua
+%%DATADIR%%/lua/clickhouse.lua
 %%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/dynamic_conf.lua
@@ -74,8 +77,8 @@ bin/rspamc
 %%DATADIR%%/lua/once_received.lua
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
-%%DATADIR%%/lua/rbl.lua
 %%DATADIR%%/lua/replies.lua
+%%DATADIR%%/lua/rbl.lua
 %%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
@@ -84,12 +87,14 @@ bin/rspamc
 %%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
+%%DATADIR%%/rules/mid.lua
 %%DATADIR%%/rules/misc.lua
 %%DATADIR%%/rules/regexp/compromised_hosts.lua
 %%DATADIR%%/rules/regexp/drugs.lua
 %%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/lotto.lua
+%%DATADIR%%/rules/regexp/misc.lua
 %%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
@@ -110,19 +115,17 @@ bin/rspamc
 %%DATADIR%%/www/img/spinner.gif
 %%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
-%%DATADIR%%/www/js/bootstrap.min.js
-%%DATADIR%%/www/js/d3.min.js
 %%DATADIR%%/www/js/d3evolution.min.js
 %%DATADIR%%/www/js/d3pie.min.js
 %%DATADIR%%/www/js/datatables.min.js
 %%DATADIR%%/www/js/humanize.min.js
+%%DATADIR%%/www/js/bootstrap.min.js
+%%DATADIR%%/www/js/d3.min.js
 %%DATADIR%%/www/js/jquery-3.1.1.min.js
 %%DATADIR%%/www/js/jquery.cookie.min.js
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
-etc/newsyslog.conf.d/rspamd.newsyslog.conf
-lib/rspamd/librspamd-actrie.so
 man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
