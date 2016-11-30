@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2016-10-30 11:53:25 UTC
++++ src/CMakeLists.txt
+@@ -161,6 +161,8 @@ IF(WIN32)
+ 	    api-ms-win-core-winrt-string-l1-1-0
+ 		${GIO_LIBRARIES}
+ 	)
++ELSE()
++	SET(OS_LIBRARIES execinfo)
+ ENDIF()
+ 
+ 
