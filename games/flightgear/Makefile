@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2016.3.1
-PORTREVISION=	4
+PORTVERSION=	2016.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -53,6 +52,7 @@ QT5_USE=	QT5=core,buildtools,gui,qmake,widgets
 # Chase devel/simgear compiler version
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
 USE_GCC=	yes
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-install:
