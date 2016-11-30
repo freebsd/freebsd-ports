@@ -40,8 +40,6 @@ OPTIONS_DEFAULT=
 COMWARE_DESC=		Add experimental support for Comware devices
 SVN_DESC=		Use Subversion instead of CVS
 
-CONFLICTS=	rancid-[0-9]*
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMWARE}
