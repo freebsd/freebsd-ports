@@ -10,7 +10,10 @@ CATEGORIES=	lang math
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interpreted language for scientific simulations
 
-USES=		makeinfo tar:tgz
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		makeinfo
 USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 
@@ -49,10 +52,12 @@ post-install:
 	${LN} -sf ../lib/${PORTNAME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/lib/codger
+	${INSTALL_DATA} ${WRKSRC}/doc/yorick.info* \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 	${LN} -sf ../../${DOCSDIR_REL} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/yorick.info* \
-		${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
