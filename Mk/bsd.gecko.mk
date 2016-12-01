@@ -104,6 +104,10 @@ CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 USES+=		compiler:c++11-lang
 .endif
 
+.if ${MOZILLA_VER:R:R} >= 50
+USE_XORG+=	xcb
+.endif
+
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
