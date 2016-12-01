@@ -36,6 +36,6 @@ BROKEN_powerpc64=	Does not build on powerpc64
 
 post-patch:     .SILENT
 	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
-		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' '{}' \;
+		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' {} \;
 
 .include <bsd.port.mk>

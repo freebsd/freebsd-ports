@@ -24,7 +24,7 @@ SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}
 
 post-patch:
-	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R "{}" \;
+	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R {} \;
 	@${RM} ${WRKSRC}/img/Thumbs.db
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php.sample
 
