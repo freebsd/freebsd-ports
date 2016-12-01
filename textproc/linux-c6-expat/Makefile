@@ -3,7 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,9 +11,9 @@ COMMENT=	Linux/i386 binary port of Expat XML-parsing library (Linux CentOS ${LIN
 
 CONFLICTS=	linux-expat-[0-9]* linux-f8-expat-[0-9]* linux-f10-expat-[0-9]*
 
+RPMVERSION=	13.el6_8
 USES=		linux:c6
 USE_LINUX_RPM=	yes
-RPMVERSION=	11.el6_2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	COPYING README
