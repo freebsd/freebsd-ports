@@ -83,6 +83,8 @@ libexec/git-core/git-grep
 libexec/git-core/git-hash-object
 libexec/git-core/git-help
 libexec/git-core/git-http-backend
+%%CURL%%libexec/git-core/git-http-fetch
+%%CURL%%libexec/git-core/git-http-push
 libexec/git-core/git-imap-send
 libexec/git-core/git-index-pack
 libexec/git-core/git-init
@@ -135,6 +137,10 @@ libexec/git-core/git-relink
 libexec/git-core/git-remote
 libexec/git-core/git-remote-ext
 libexec/git-core/git-remote-fd
+%%CURL%%libexec/git-core/git-remote-ftp
+%%CURL%%libexec/git-core/git-remote-ftps
+%%CURL%%libexec/git-core/git-remote-http
+%%CURL%%libexec/git-core/git-remote-https
 libexec/git-core/git-remote-testsvn
 libexec/git-core/git-repack
 libexec/git-core/git-replace
