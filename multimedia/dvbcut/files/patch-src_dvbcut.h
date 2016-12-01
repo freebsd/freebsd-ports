@@ -1,4 +1,4 @@
---- src/dvbcut.h.orig	2016-06-23 12:34:35 UTC
+--- src/dvbcut.h.orig	2016-11-18 13:31:01 UTC
 +++ src/dvbcut.h
 @@ -22,11 +22,14 @@
  #define _DVBCUT_DVBCUT_H

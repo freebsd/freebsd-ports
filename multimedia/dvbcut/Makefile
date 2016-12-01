@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvbcut
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu
 GH_PROJECT=	dvbcut-deb
-GH_TAGNAME=	381549c
+GH_TAGNAME=	040c1ef
 
 USES=		qmake:outsource pkgconfig desktop-file-utils shared-mime-info
 
