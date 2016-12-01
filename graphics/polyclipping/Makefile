@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	polyclipping
-PORTVERSION=	6.1.3a
+PORTVERSION=	6.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://downloads.sourceforge.net/polyclipping/
+MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	clipper_ver${PORTVERSION}
 
 MAINTAINER=	sikmir@gmail.com
@@ -22,11 +22,12 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/cpp
 
 PLIST_FILES=	include/polyclipping/clipper.hpp \
 		lib/libpolyclipping.so \
-		lib/libpolyclipping.so.16 \
-		lib/libpolyclipping.so.16.0.0 \
+		lib/libpolyclipping.so.22 \
+		lib/libpolyclipping.so.22.0.0 \
 		libdata/pkgconfig/polyclipping.pc
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|6.2.6|6.4|' ${WRKSRC}/cpp/clipper.hpp
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/cpp/CMakeLists.txt
 
 .include <bsd.port.mk>
