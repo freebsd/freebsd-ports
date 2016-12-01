@@ -9,6 +9,8 @@ CATEGORIES=	converters geography
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
 
+BROKEN=		Last update of graphics/geos broke compatibility
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
