@@ -1,4 +1,4 @@
---- src/avframe.cpp.orig	2016-06-23 12:34:35 UTC
+--- src/avframe.cpp.orig	2016-11-18 13:31:01 UTC
 +++ src/avframe.cpp
 @@ -52,7 +52,7 @@ avframe::avframe(AVFrame *src, AVCodecCo
    tobefreed = (uint8_t *)malloc(avpicture_get_size(ctx->pix_fmt, ctx->width, ctx->height));
