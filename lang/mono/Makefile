@@ -37,7 +37,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		LC_ALL=C TZ=UTC
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
-PORTSCOUT=	^\d+\.\d+.[1-9]\d*
+PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 
 .include <bsd.port.pre.mk>
 
