@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-12-01 13:14:44 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+-CFLAGS := -D_FORTIFY_SOURCE=2 -Wall -W -Wextra -pedantic -Werror -pedantic-errors $(shell imlib2-config --cflags) -O3
+-LDLIBS := -lm $(shell imlib2-config --libs)
++CFLAGS += -D_FORTIFY_SOURCE=2 $(shell imlib2-config --cflags)
++LDLIBS += -lm $(shell imlib2-config --libs)
+ PREFIX := /usr/local
+ BINDIR := $(PREFIX)/bin
+ MANDIR := $(PREFIX)/share/man/man1
