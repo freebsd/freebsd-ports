@@ -64,7 +64,7 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	Build parallelization not implemented
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}/main
-PORTSCOUT=	^\d+\.\d+.[1-9]\d*
+PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 
 post-extract:
 .for tuple in ${GH_TUPLE}
