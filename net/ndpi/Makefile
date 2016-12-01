@@ -9,7 +9,8 @@ CATEGORIES=	net
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
@@ -19,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-ljson-c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	autoreconf compiler:c++11-lang libtool pathfix pkgconfig tar:tgz
+USES=	 	autoreconf compiler:c++11-lang libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
@@ -28,9 +29,5 @@ GH_PROJECT=	nDPI
 GH_TAGNAME=	6fb81f1
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION}.0
-
-post-patch:
-	${REINPLACE_CMD} 's|$$(libdir)|$$(libdir)data|' \
-		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
