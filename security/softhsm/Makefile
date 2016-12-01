@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	1.3.7
-PORTREVISION=	3
+PORTVERSION=	1.3.8
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -25,6 +24,6 @@ INSTALL_TARGET=	install-strip
 USES=		libtool ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS=	softhsm2-2.0.*
+CONFLICTS=	softhsm2-[0-9]*
 
 .include <bsd.port.mk>
