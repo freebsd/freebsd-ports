@@ -131,13 +131,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${UFO_DIR}/radiant/${DIRE}
 	cd ${WRKSRC}/radiant/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${UFO_DIR}/radiant/${DIRE}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${UFO_DIR}/radiant/${DIRE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${UFO_DIR}/radiant/${DIRE}/{}" \;
 .endfor
 .endif
 
 	cd ${WRKSRC}/base/i18n && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/base/i18n/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/base/i18n/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${DATADIR}/base/i18n/{}" \;
 	${LN} -s ${PREFIX}/${DATADIR}/base ${STAGEDIR}${UFO_DIR}/base
 
 .include <bsd.port.post.mk>

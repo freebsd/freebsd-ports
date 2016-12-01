@@ -27,6 +27,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
 	(cd ${WRKSRC} \
 	    && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${WEBSVNDIR})
-	${FIND} ${STAGEDIR}${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 '{}' +
+	${FIND} ${STAGEDIR}${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 {} +
 
 .include <bsd.port.mk>

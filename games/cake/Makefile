@@ -31,7 +31,7 @@ post-patch: .SILENT
 		-name Makefile \) \
 		-exec ${REINPLACE_CMD} -E -e 's/[[:cntrl:]]*$$//' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*push[[:blank:]]*,[[:blank:]]*1[[:blank:]]*\)/#pragma pack(1)/g' \
-		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' '{}' \;
+		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' {} \;
 	${REINPLACE_CMD} -e 's/jpeg\/JPEGLIB\.H/jpeglib.h/' \
 		${WRKSRC}/cake/texture.cpp
 # Fmod library is not supported on FreeBSD, so no sound :(

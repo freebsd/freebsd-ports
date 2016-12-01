@@ -32,7 +32,7 @@ BROKEN_mips64=		Fails to install: runaway process
 
 post-extract:
 	@cd ${WRKSRC}/base && \
-		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKSRC}/base \;
+		${FIND} * -type f -exec ${UNZIP_CMD} {} -d ${WRKSRC}/base \;
 	@${RM} ${WRKSRC}/base/*.pk3
 
 pre-install:

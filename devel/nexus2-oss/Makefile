@@ -98,7 +98,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@(cd ${STAGEDIR}${DATADIR} && ${MV} conf ${STAGEDIR}${ETCDIR})
 	@(cd ${STAGEDIR}${ETCDIR} \
-		&& ${FIND} . -type f -exec ${MV} '{}' '{}'.sample \;)
+		&& ${FIND} . -type f -exec ${MV} {} {}.sample \;)
 	@${MKDIR} ${STAGEDIR}${NEXUS_RUNDIR}
 	@${MKDIR} ${STAGEDIR}${NEXUS_LOGDIR}
 	@${MKDIR} ${STAGEDIR}${NEXUS_WORKDIR}

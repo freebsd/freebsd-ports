@@ -75,6 +75,6 @@ do-install:
 	(cd ${STAGEDIR}${GB_HOME}/WEB-INF/data && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PORTNAME})
 	(cd ${STAGEDIR}${PREFIX}/${PORTNAME} && ${FIND} . -type f \
-		-not -name '*.gitignore' -exec ${MV} '{}' '{}'.sample \;)
+		-not -name '*.gitignore' -exec ${MV} {} {}.sample \;)
 
 .include <bsd.port.mk>

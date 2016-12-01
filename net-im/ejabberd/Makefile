@@ -101,6 +101,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/epam
 .endif
 	@${FIND} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR} -type f \
-		-name '*.so' -exec ${STRIP_CMD} '{}' \;
+		-name '*.so' -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.post.mk>

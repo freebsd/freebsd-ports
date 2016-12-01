@@ -60,7 +60,7 @@ do-install:
 	${FIND} ${LIBDIRS} -type d ! -empty -exec \
 		${MKDIR} "${STAGEDIR}${UTDIR}/{}" \; && \
 	${FIND} ${LIBDIRS} -type f -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}${UTDIR}/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}${UTDIR}/{}" \;
 	${CHMOD} ${BINMODE} ${STAGEDIR}${UTDIR}/Benchmark/*.sh ${STAGEDIR}${UTDIR}/System/*-bin
 	${CHMOD} ${LIBMODE} ${STAGEDIR}${UTDIR}/System/*.so*
 	@${MKDIR} ${STAGEDIR}${DATADIR}

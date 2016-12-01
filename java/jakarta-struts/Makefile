@@ -25,7 +25,7 @@ DEPRECATED=	Port is unmaintained and has known security vulnerabilites
 EXPIRATION_DATE=2016-12-01
 
 do-install:
-	cd ${WRKSRC} && ${FIND} . -type d -exec ${INSTALL} -d ${STAGEDIR}${PREFIX}/${TDIR}/'{}' \; && \
-	${FIND} . -type f -exec ${INSTALL_DATA} '{}' ${STAGEDIR}${PREFIX}/${TDIR}/'{}' \;
+	cd ${WRKSRC} && ${FIND} . -type d -exec ${INSTALL} -d ${STAGEDIR}${PREFIX}/${TDIR}/{} \; && \
+	${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/${TDIR}/{} \;
 
 .include <bsd.port.mk>

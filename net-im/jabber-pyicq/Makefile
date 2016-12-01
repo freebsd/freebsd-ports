@@ -96,8 +96,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/data/defaultAIMAvatar.png ${STAGEDIR}${INST_DIR}/data/
 	${INSTALL_DATA} ${WRKSRC}/data/defaultICQAvatar.png ${STAGEDIR}${INST_DIR}/data/
 	${CP} -Rv ${WRKSRC}/src/* ${STAGEDIR}${INST_DIR}/src/
-	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type d -exec ${CHMOD} 755 "{}" \;
-	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type f -exec ${CHMOD} 644 "{}" \;
+	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type d -exec ${CHMOD} 755 {} \;
+	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type f -exec ${CHMOD} 644 {} \;
 	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${PREFIX}/etc/jabber-pyicq.xml.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
