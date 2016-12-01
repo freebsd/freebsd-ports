@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bnxt-kmod
-PORTVERSION=	308813
+PORTVERSION=	309078
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/shurd
 
@@ -31,6 +31,9 @@ create-tarball:
 	svnlite update -r ${PORTVERSION} ${WRKSRC}/share/man/man4/bnxt.4
 	tar czf ${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR} --exclude=.svn ${DISTNAME}
 	scp ${DISTNAME}${EXTRACT_SUFX} freefall:public_distfiles/
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/sys/dev/bnxt/if_bnxt.c
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/bnxt/if_bnxt.ko ${STAGEDIR}${KMODDIR}/if_bnxt.ko
