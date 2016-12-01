@@ -1,6 +1,6 @@
---- br.cpp.orig	Tue Jun 19 17:54:16 2007
-+++ br.cpp	Tue Jun 19 17:55:30 2007
-@@ -160,6 +160,16 @@
+--- br.cpp.orig	2008-12-22 06:59:59 UTC
++++ br.cpp
+@@ -160,6 +160,16 @@ int buffered_reader::read_into_buffer(vo
  	return n_read;
  }
  
