@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
 USE_GITHUB=	yes
 GH_ACCOUNT=	HelloZeroNet
 GH_PROJECT=	ZeroNet
-GH_TAGNAME=	523a7d4
 
 SUB_FILES=	zeronet-service zeronet-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
@@ -52,8 +52,9 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}/
+	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name "*.orig"`
 	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name LICENSE`
-	@${RM} ${STAGEDIR}${DATADIR}/README.md ${STAGEDIR}${DATADIR}/requirements.txt
+	@${RM} ${STAGEDIR}${DATADIR}/README*.md ${STAGEDIR}${DATADIR}/CHANGELOG.md ${STAGEDIR}${DATADIR}/requirements.txt
 	@${RM} ${STAGEDIR}${DATADIR}/Vagrantfile ${STAGEDIR}${DATADIR}/Dockerfile
 	@${RM} -r `${FIND} ${STAGEDIR}${DATADIR} -name test`
 	@${MKDIR} ${STAGEDIR}/var/db/zeronet
