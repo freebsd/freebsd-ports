@@ -539,6 +539,9 @@
     SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel
+    SUBDIR += nginx-full
+    SUBDIR += nginx-lite
+    SUBDIR += nginx-naxsi
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node012
