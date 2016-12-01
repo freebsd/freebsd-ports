@@ -21,7 +21,7 @@ INFO=		ccrtp
 
 post-patch:
 	@cd ${WRKSRC}/src && \
-		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \;
+		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" {} \;
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \

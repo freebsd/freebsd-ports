@@ -33,7 +33,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \;
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/main.cs ${STAGEDIR}${PREFIX}/${DATADIR}
 

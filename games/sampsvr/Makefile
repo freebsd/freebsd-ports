@@ -37,7 +37,7 @@ do-install:
 .for i in filterscripts gamemodes include npcmodes scriptfiles
 	cd ${WRKSRC} && \
 	${FIND} ${i} -type f -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
 	${LN} -sf ${DATADIR}/${i} ${STAGEDIR}${SAMPDIR}/${i}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/server.cfg \

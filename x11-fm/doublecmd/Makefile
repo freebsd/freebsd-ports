@@ -368,7 +368,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 
 .for FILE in doublecmd.ext.example pixmaps.txt multiarc.ini install/linux/doublecmd.xml
@@ -387,7 +387,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${DOCSRC} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
 .endif
 
 .include <bsd.port.mk>

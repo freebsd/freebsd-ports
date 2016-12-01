@@ -25,6 +25,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} \
 		 && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 644 '{}' +
+	${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 644 {} +
 
 .include <bsd.port.mk>

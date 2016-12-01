@@ -43,7 +43,7 @@ do-install:
 		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${STAGEDIR}${PREFIX}/bin
 	@cd ${WRKSRC}/data && \
 		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
 	${LN} -sf ${DATADIR}/ima/icono.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 

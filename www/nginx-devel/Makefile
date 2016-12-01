@@ -1333,7 +1333,7 @@ do-install:
 # Install dynamic modules
 .if !empty(PORT_OPTIONS:MDSO)
 	(cd ${WRKSRC}/objs/ && ${FIND} . -name '*.so' -maxdepth 1 -type f \
-		-exec ${INSTALL_PROGRAM} "{}" ${STAGEDIR}${MODULESDIR} \;)
+		-exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${MODULESDIR} \;)
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
