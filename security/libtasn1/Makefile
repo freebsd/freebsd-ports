@@ -9,6 +9,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
 USE_LDCONFIG=	yes
 USES=		cpe pkgconfig pathfix gmake libtool
 GNU_CONFIGURE=	yes
@@ -22,7 +25,7 @@ DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
 INFO=		libtasn1
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
