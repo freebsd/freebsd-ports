@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -27,6 +28,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ARGS+=	DEVELOPER_CFLAGS=
 MAKE_ENV+=	V=1
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
@@ -56,7 +58,7 @@ NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
 
 PERL_USES=		perl5
-PERL_MAKE_ENV=		PERL_PATH=${PERL}
+PERL_CONFIGURE_WITH=	perl=${PERL}
 PERL_BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_MAKE_ARGS_OFF=	NO_PERL=1
@@ -198,21 +200,15 @@ post-install-CONTRIB-on:
 		${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} install install-doc
 	# Symlink the completions from the contrib directory to where they
 	# will be useful
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${LN} -s ../../share/git-core/contrib/completion/git-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
-	@${LN} -s ../../../share/git-core/contrib/completion/git-completion.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_git
 
 post-install-CONTRIB-off:
 	# Install the contrib completions anyway
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_git
 
 post-install-P4-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
