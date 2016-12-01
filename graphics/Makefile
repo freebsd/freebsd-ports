@@ -1011,6 +1011,7 @@
     SUBDIR += smillaenlarger
     SUBDIR += springgraph
     SUBDIR += squish
+    SUBDIR += ssocr
     SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += structuresynth
