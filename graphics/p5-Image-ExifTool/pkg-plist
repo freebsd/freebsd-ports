@@ -12,6 +12,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Apple.pm
 %%SITE_PERL%%/Image/ExifTool/Audible.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
+%%SITE_PERL%%/Image/ExifTool/BPG.pm
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
@@ -53,6 +54,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Turkish.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Vietnam.pm
 %%SITE_PERL%%/Image/ExifTool/DICOM.pm
+%%SITE_PERL%%/Image/ExifTool/DJI.pm
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
 %%SITE_PERL%%/Image/ExifTool/DPX.pm
 %%SITE_PERL%%/Image/ExifTool/DV.pm
@@ -61,6 +63,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/EXE.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/FLAC.pm
+%%SITE_PERL%%/Image/ExifTool/FLIF.pm
 %%SITE_PERL%%/Image/ExifTool/FLIR.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
 %%SITE_PERL%%/Image/ExifTool/Flash.pm
@@ -136,6 +139,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Ogg.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
 %%SITE_PERL%%/Image/ExifTool/OpenEXR.pm
+%%SITE_PERL%%/Image/ExifTool/Opus.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
@@ -209,6 +213,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Apple.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Audible.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BMP.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::BPG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BZZ.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BigTIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BuildTagLookup.3.gz
@@ -220,6 +225,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Casio.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Charset.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DICOM.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::DJI.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DPX.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DV.3.gz
@@ -228,6 +234,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::EXE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Exif.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLAC.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::FLIF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLIR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Fixup.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Flash.3.gz
@@ -303,6 +310,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Ogg.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Olympus.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OpenEXR.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Opus.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PDF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PGF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PICT.3.gz
