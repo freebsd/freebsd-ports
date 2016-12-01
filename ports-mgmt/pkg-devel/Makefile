@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--disable-maintainer-mode
 INSTALL_TARGET=	install-strip
 PORTDOCS=	NEWS
 
-# Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
+# Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
