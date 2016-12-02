@@ -41,9 +41,9 @@ lib/elasticsearch/plugins/x-pack/netty-transport-4.1.5.Final.jar
 lib/elasticsearch/plugins/x-pack/owasp-java-html-sanitizer-r239.jar
 lib/elasticsearch/plugins/x-pack/plugin-descriptor.properties
 lib/elasticsearch/plugins/x-pack/plugin-security.policy
-lib/elasticsearch/plugins/x-pack/rest-5.0.0.jar
-lib/elasticsearch/plugins/x-pack/sniffer-5.0.0.jar
-lib/elasticsearch/plugins/x-pack/transport-netty3-5.0.0.jar
-lib/elasticsearch/plugins/x-pack/transport-netty4-5.0.0.jar
+lib/elasticsearch/plugins/x-pack/rest-5.0.2.jar
+lib/elasticsearch/plugins/x-pack/sniffer-5.0.2.jar
+lib/elasticsearch/plugins/x-pack/transport-netty3-5.0.2.jar
+lib/elasticsearch/plugins/x-pack/transport-netty4-5.0.2.jar
 lib/elasticsearch/plugins/x-pack/unboundid-ldapsdk-3.1.1.jar
-lib/elasticsearch/plugins/x-pack/x-pack-5.0.0.jar
+lib/elasticsearch/plugins/x-pack/x-pack-5.0.2.jar
