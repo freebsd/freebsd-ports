@@ -33,6 +33,7 @@
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_projects.rb
 %%DATADIR%%/lib/gitlab_redis.rb
+%%DATADIR%%/lib/gitlab_reference_counter.rb
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
 %%DATADIR%%/lib/names_helper.rb
@@ -50,6 +51,7 @@
 %%DATADIR%%/lib/vendor/redis/lib/redis/pipeline.rb
 %%DATADIR%%/lib/vendor/redis/lib/redis/subscribe.rb
 %%DATADIR%%/lib/vendor/redis/lib/redis/version.rb
+%%DATADIR%%/spec/fixtures/gitlab_config_redis.yml
 %%DATADIR%%/spec/gitlab_access_spec.rb
 %%DATADIR%%/spec/gitlab_config_spec.rb
 %%DATADIR%%/spec/gitlab_keys_spec.rb
@@ -57,6 +59,7 @@
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_post_receive_spec.rb
 %%DATADIR%%/spec/gitlab_projects_spec.rb
+%%DATADIR%%/spec/gitlab_reference_counter_spec.rb
 %%DATADIR%%/spec/gitlab_shell_spec.rb
 %%DATADIR%%/spec/httpunix_spec.rb
 %%DATADIR%%/spec/names_helper_spec.rb
