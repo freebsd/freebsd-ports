@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	tux3
+GH_ACCOUNT=	qTox
 
 SUB_FILES=	pkg-message
 
