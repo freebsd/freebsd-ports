@@ -46,7 +46,7 @@ OPTIONS_DEFINE=	NLS
 NLS_CMAKE_ON=	-DFREEBSD_NLS_ON:BOOL=ON
 OPTIONS_SUB=	yes
 
-post-stage:
+post-install:
 	@${GZIP_CMD} ${GZIP} < ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/ring.svg > ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/ring.svgz
 	@${RM} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/ring.svg
 

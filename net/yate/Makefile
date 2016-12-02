@@ -87,7 +87,7 @@ SQLITE_USES=		pkgconfig sqlite
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.5.5.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/*.yate

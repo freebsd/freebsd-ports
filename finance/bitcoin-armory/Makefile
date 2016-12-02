@@ -45,7 +45,9 @@ post-patch:
 	@${REINPLACE_CMD} 's/python-config/$${PYTHON_CONFIG}/' ${WRKSRC}/cppForSwig/Makefile
 	@${REINPLACE_CMD} 's/O_DSYNC/O_SYNC/' ${WRKSRC}/cppForSwig/mdb/mdb.c
 
-post-stage:
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/armory/_CppBlockUtils.so
+
 	@${SED} -i.bak -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}/${LOCALBASE}/bin/armory && \
 		${RM} ${STAGEDIR}/${LOCALBASE}/bin/armory.bak
 	@${REINPLACE_CMD} 's|Exec=/usr/bin/armory|Exec=${LOCALBASE}/bin/armory|' ${STAGEDIR}/${LOCALBASE}/share/applications/*.desktop
@@ -54,8 +56,5 @@ post-stage:
 	${MV} ${STAGEDIR}/${PREFIX}/share/armory/img/armory_icon_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/armoryicon.png
 .endfor
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/armory/_CppBlockUtils.so
 
 .include <bsd.port.mk>

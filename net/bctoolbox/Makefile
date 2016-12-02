@@ -22,7 +22,7 @@ INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-post-stage:
+post-install:
 	${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/bctoolbox-tester.pc
 
 .include <bsd.port.mk>

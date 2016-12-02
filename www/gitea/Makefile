@@ -46,11 +46,6 @@ GO_TAGS+=	pam
 GO_TAGS+=	sqlite
 .endif
 
-post-stage:
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/log/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/run/${PORTNAME}
-
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}/conf
@@ -58,5 +53,9 @@ do-install:
 	${INSTALL_DATA} ${GO_WRKSRC}/conf/app.ini ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${GO_WRKSRC} && ${COPYTREE_SHARE} "public templates" ${STAGEDIR}${DATADIR})
+
+	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DESTDIR}/var/log/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DESTDIR}/var/run/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -333,7 +333,7 @@ post-patch:
 .endif
 
 .if !defined(PIDGIN_SLAVE) && ${PORT_OPTIONS:MPERL}
-post-stage:
+post-install:
 	@${SED} -i '' -e 's|^${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/lib/purple-2/perl/auto/Purple/.packlist
 .endif

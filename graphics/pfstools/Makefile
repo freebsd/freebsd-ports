@@ -80,7 +80,7 @@ octave_OLD_CMD?=/usr/bin/octave
 octave_CMD?=	${OCTAVE_BASE}/bin/octave
 .endif
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib//libpfs-1.2.so.0.0.0
 
 .include <bsd.port.mk>

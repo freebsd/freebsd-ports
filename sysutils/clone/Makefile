@@ -16,7 +16,7 @@ USES=		compiler:c11
 PLIST_FILES=	bin/clone \
 		man/man1/clone.1.gz
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/clone
 
 .include <bsd.port.mk>

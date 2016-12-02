@@ -108,11 +108,6 @@ post-patch:
 	)
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
-post-stage:
-	@${MKDIR} ${STAGEDIR}/var/openxpki/session
-	@${MKDIR} ${STAGEDIR}/var/log/openxpki
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
-
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*}
@@ -123,6 +118,10 @@ OXLIB=	${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OpenXPKI/OpenXPKI.so
 
 post-install:
 	${STRIP_CMD} ${OXLIB}
+
+	@${MKDIR} ${STAGEDIR}/var/openxpki/session
+	@${MKDIR} ${STAGEDIR}/var/log/openxpki
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

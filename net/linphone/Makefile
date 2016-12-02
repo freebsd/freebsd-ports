@@ -58,7 +58,7 @@ VIDEO_CONFIGURE_ENABLE=	video
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-post-stage:
+post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/gnome
 
 .include <bsd.port.mk>

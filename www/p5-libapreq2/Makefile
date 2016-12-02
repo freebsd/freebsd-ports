@@ -36,7 +36,7 @@ RUN_DEPENDS=	libapreq2>0:www/libapreq2 \
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
 		${WRKSRC}/glue/perl/Makefile.PL
-post-stage:
+post-install:
 	# remove all the non-perl stuff
 	${RM} ${STAGEDIR}${PREFIX}/bin/apreq2-config
 	${RM} -r ${STAGEDIR}${PREFIX}/include/apreq2

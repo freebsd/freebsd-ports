@@ -30,7 +30,7 @@ CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-stage:
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

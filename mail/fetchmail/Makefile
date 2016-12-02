@@ -79,7 +79,7 @@ post-patch:
 post-build:
 	@${MAKE_CMD} -C ${WRKSRC} check
 
-post-stage:
+post-install:
 	${INSTALL} -d ${STAGEDIR}/var/run/fetchmail
 	${INSTALL_DATA} ${FILESDIR}/fetchmailrc.sample \
 		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample

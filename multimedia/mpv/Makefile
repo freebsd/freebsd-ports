@@ -157,7 +157,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpv.so
 

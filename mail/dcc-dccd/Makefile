@@ -117,7 +117,7 @@ PLIST_SUB+=	IFD_MILT=""
 PLIST_SUB+=	IFD_MILT="@comment "
 .endif
 
-post-stage:
+post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/dcc/cgi-bin/footer-dist \
 		${STAGEDIR}${PREFIX}/dcc/cgi-bin/footer.sample
 	@${MV} ${STAGEDIR}${PREFIX}/dcc/cgi-bin/header-dist \

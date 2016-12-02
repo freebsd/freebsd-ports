@@ -14,7 +14,7 @@ USE_AUTOTOOLS=	aclocal autoconf
 INSTDIR=	${PREFIX}/${GEM_LIB_DIR}
 
 # Fixup path in mkmf-rice.rb so things that build using it can find -lrice.
-post-stage:
+post-install:
 	${REINPLACE_CMD} -e 's,${STAGEDIR}${INSTDIR},${INSTDIR},g' \
 		${STAGEDIR}${INSTDIR}/ruby/lib/mkmf-rice.rb
 

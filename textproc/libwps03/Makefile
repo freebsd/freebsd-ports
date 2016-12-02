@@ -32,7 +32,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 CONFIGURE_ARGS+=	--with-sharedptr=boost
 .endif
 
-post-stage:
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.post.mk>

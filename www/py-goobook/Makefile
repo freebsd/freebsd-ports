@@ -23,7 +23,7 @@ USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
 PLIST_FILES=	man/man1/goobook.1.gz
 
-post-stage:
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/goobook.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

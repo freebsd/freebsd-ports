@@ -78,7 +78,7 @@ pre-configure:
 	    cd contrib/native && \
 	    ../bootstrap && \
 	    ${GMAKE} .pjproject)
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libring.so
 
 .include <bsd.port.post.mk>

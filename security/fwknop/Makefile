@@ -42,7 +42,7 @@ PF_CONFIGURE_WITH=	pf=/sbin/pfctl
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_WITH=	gpgme
 
-post-stage:
+post-install:
 	(cd ${STAGEDIR}${PREFIX}/etc/fwknop && ${MV} access.conf access.conf.sample)
 	(cd ${STAGEDIR}${PREFIX}/etc/fwknop && ${MV} fwknopd.conf fwknopd.conf.sample)
 

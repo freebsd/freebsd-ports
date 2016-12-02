@@ -18,7 +18,7 @@ BROKEN_mips64=	fails to build: Cannot detect CPU architechture
 USES=		perl5
 USE_PERL5=	configure
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Digest/GOST/GOST.so
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium
 USE_LDCONFIG=	yes
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.12.0
 
 .include <bsd.port.mk>

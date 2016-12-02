@@ -16,7 +16,7 @@ BROKEN_powerpc64=	Does not build
 USES=		compiler:c++11-lang fuse pkgconfig python tar:bz2
 USE_PYTHON=	autoplist distutils
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/llfuse.so
 
 .include <bsd.port.mk>

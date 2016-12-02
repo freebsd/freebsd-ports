@@ -41,7 +41,7 @@ post-patch:
 	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.txt.*
 	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.*.orig
 
-post-stage:
+post-install:
 	-${RM} ${STAGEDIR}/${DOCSDIR}/manual.doxy
 	-${RM} ${STAGEDIR}/${DOCSDIR}/doxygen_sqlite3.db
 	-${RM} ${STAGEDIR}/${DOCSDIR}/*.bak

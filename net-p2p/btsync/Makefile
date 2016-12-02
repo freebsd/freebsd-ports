@@ -46,7 +46,6 @@ do-install:
 	${REINPLACE_CMD} -e 's;^//\([[:space:]]*"storage_path"[[:space:]]*:[[:space:]]*\)"/.*",$$;\1"/var/db/${PORTNAME}",;' ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	${REINPLACE_CMD} -e 's;^//\([[:space:]]*"pid_file"[[:space:]]*:[[:space:]]*"/var/run/${PORTNAME}/${PORTNAME}.pid",\)$$;\1;' ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-post-stage:
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 
 .include <bsd.port.post.mk>

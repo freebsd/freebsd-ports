@@ -149,7 +149,6 @@ pre-install:
 do-install:
 	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTDIRNAME} ${STAGEDIR}${WEBAPPDIR}
 
-post-stage:
 	${MKDIR} ${STAGEDIR}${MADSONIC_HOME}
 	${MKDIR} ${STAGEDIR}${MADSONIC_HOME}/transcode
 

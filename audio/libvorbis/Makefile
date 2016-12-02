@@ -22,7 +22,7 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
-post-stage:
+post-install:
 	cd ${STAGEDIR}${PREFIX}/share/doc && ${MV} ${DISTNAME} libvorbis
 	${LN} -s libvorbis.so.0 ${STAGEDIR}${PREFIX}/lib/libvorbis.so.4
 	${LN} -s libvorbisfile.so.3 ${STAGEDIR}${PREFIX}/lib/libvorbisfile.so.6

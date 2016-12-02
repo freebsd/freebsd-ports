@@ -67,7 +67,6 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/bin/pprof ${STAGEDIR}${PREFIX}/bin/perftools-pprof
 
-post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 # Two of the tests are known to fail on FreeBSD 10, uncomment this as soon as this is fixed

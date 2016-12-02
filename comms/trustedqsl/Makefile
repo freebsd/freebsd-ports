@@ -38,13 +38,13 @@ CONVERTER_CMAKE_ON=	-DBUILD_CONVERTER=ON
 
 OPTIONS_SUB=	yes
 
-post-stage-GEN_CRQ-on:
+post-install-GEN_CRQ-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gen_crq ${STAGEDIR}${PREFIX}/bin
-post-stage-LOAD_CERT-on:
+post-install-LOAD_CERT-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/load_cert ${STAGEDIR}${PREFIX}/bin
-post-stage-STATION_LOC-on:
+post-install-STATION_LOC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/station_loc ${STAGEDIR}${PREFIX}/bin
-post-stage-CONVERTER-on:
+post-install-CONVERTER-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/converter ${STAGEDIR}${PREFIX}/bin
 
 post-patch:

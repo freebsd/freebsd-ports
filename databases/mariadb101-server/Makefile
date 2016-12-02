@@ -105,9 +105,6 @@ OPTIONS_SUB=		yes
 # MySQL-Client part
 USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
-
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/wsrep*
 .else
 # MySQL-Server part
 USES+=		mysql:101m

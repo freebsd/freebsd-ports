@@ -19,7 +19,7 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
-post-stage:
+post-install:
 	${LN} -s libogg.so.0 ${STAGEDIR}${PREFIX}/lib/libogg.so.8
 
 .include <bsd.port.mk>

@@ -144,7 +144,6 @@ pre-install:
 do-install:
 	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTDIRNAME} ${STAGEDIR}${WEBAPPDIR}
 
-post-stage:
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}/transcode
 

@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	p5-XSLoader>=0.22:devel/p5-XSLoader
 RUN_DEPENDS+=	p5-XSLoader>=0.22:devel/p5-XSLoader
 .endif
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/List/MoreUtils/MoreUtils.so
 
 .include <bsd.port.post.mk>

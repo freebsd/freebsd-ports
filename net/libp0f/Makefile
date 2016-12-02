@@ -19,7 +19,7 @@ INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 
-post-stage:
+post-install:
 	${RM} ${STAGEDIR}${LOCALBASE}/bin/p0f
 	${MV} ${STAGEDIR}/etc/p0f ${STAGEDIR}${LOCALBASE}/etc/libp0f
 	${RM} -r ${STAGEDIR}/etc

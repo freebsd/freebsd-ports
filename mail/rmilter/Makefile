@@ -52,6 +52,6 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/rmilter ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${STAGEDIR}${PREFIX}/etc/
 
-post-stage:
 	${INSTALL} -d ${STAGEDIR}/var/run/rmilter
+
 .include <bsd.port.post.mk>

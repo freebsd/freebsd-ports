@@ -47,7 +47,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	(cd ${WRKSRC}/src/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name Makefile")
 
-post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmpsse.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpsse.so
 

@@ -31,7 +31,7 @@ USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-post-stage:
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libEGL.so.1

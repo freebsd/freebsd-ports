@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	buytenh
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libivykis.so.0.4.2
 
 .include <bsd.port.mk>
