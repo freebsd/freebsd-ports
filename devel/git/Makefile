@@ -3,7 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -43,8 +43,9 @@ TEST_TARGET=	test
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
-		SEND_EMAIL NLS PCRE
-OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL GITWEB ICONV CURL SEND_EMAIL PCRE
+		SEND_EMAIL NLS PCRE SUBTREE
+OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL GITWEB ICONV CURL SEND_EMAIL PCRE \
+			SUBTREE
 OPTIONS_SUB=	yes
 
 GITWEB_DESC=	Install gitweb
@@ -53,6 +54,7 @@ P4_DESC=	Enable Perforce support
 CVS_DESC=	Enable CVS support
 HTMLDOCS_DESC=	Install additional documentation
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
+SUBTREE_DESC=	Install git-subtree
 
 NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
@@ -95,7 +97,7 @@ GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
 SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 			p5-subversion>=0:devel/p5-subversion
 
-CONTRIB_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+SUBTREE_BUILD_DEPENDS=	xmlto:textproc/xmlto \
 			asciidoc:textproc/asciidoc \
 			docbook-xml>0:textproc/docbook-xml
 
@@ -192,12 +194,14 @@ post-install-HTMLDOCS-on:
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html
 
+post-install-SUBTREE-on:
+	cd ${WRKSRC}/contrib/subtree && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} install install-doc
+
 post-install-CONTRIB-on:
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/git-core/contrib
 	${CP} -R ${WRKSRC}/contrib/* ${STAGEDIR}${PREFIX}/share/git-core/contrib
-	cd ${WRKSRC}/contrib/subtree && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} install install-doc
 	# Symlink the completions from the contrib directory to where they
 	# will be useful
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
