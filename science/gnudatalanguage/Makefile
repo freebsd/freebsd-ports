@@ -111,7 +111,7 @@ do-install:
 .endif
 
 .if !defined(BUILD_PYTHON_MODULE)
-post-stage:
+post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/testsuite/)
 .endif

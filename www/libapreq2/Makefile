@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 SHLIB_MAJOR=	11
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libapreq2.so.3.8.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2.so
 

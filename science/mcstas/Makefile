@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-deinstall pkg-install
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcformat
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcstas
 

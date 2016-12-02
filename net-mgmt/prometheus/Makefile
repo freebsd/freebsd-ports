@@ -27,12 +27,11 @@ do-build:
 	(cd ${GO_WRKSRC}/cmd/prometheus ; ${SETENV} ${GO_ENV} go install)
 	(cd ${GO_WRKSRC}/cmd/promtool ; ${SETENV} ${GO_ENV} go install)
 
-post-stage:
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/prometheus
-
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/prometheus ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/promtool ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/documentation/examples/prometheus.yml ${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
+
+	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/prometheus
 
 .include <bsd.port.mk>

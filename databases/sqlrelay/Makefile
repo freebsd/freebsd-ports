@@ -153,7 +153,7 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/config.mk
 
-post-stage:
+post-install:
 .for f in ${TOSTRIP}
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 .endfor

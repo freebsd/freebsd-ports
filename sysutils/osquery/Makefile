@@ -70,7 +70,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/deployment/osquery.example.conf \
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
-post-stage:
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 
 .include <bsd.port.post.mk>

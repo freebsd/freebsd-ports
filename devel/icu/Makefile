@@ -43,7 +43,7 @@ PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%b.dat
 PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%l.dat
 .endif
 
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/bin/*conv \
 		${STAGEDIR}${PREFIX}/bin/icuinfo \

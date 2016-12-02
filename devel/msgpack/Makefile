@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686
 
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmsgpackc.so.2.0.0
 
 .include <bsd.port.post.mk>

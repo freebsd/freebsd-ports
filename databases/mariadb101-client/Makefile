@@ -18,7 +18,8 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 CLIENT_ONLY=	yes
 
-post-stage:
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/wsrep*
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4
 	${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/private
@@ -33,7 +34,7 @@ post-stage:
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388
 	@${REINPLACE_CMD} 's/-l-pthread/-lpthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
 
-post-stage-GSSAPI_NONE:
+post-install-GSSAPI_NONE:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
 
 .include "${MASTERDIR}/Makefile"

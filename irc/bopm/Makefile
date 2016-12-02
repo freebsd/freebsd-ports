@@ -29,7 +29,7 @@ post-patch:
 		-e 's,/some/path/scan.log,/var/log/bopm/scan.log,g' \
 		${WRKSRC}/bopm.conf.sample
 
-post-stage:
+post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/bopm
 
 .include <bsd.port.mk>

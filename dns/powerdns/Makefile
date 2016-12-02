@@ -123,7 +123,7 @@ TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 ZEROMQ_DESC=		Enable ZeroMQ connector (Implies REMOTE enabled)
 
-post-stage::
+post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${STAGEDIR}${LOCALBASE}/sbin/pdns_server --module-dir=${STAGEDIR}${LOCALBASE}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf

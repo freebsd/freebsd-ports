@@ -144,7 +144,6 @@ do-install:
 	@cd ${WRKDIR}/build/gdb && \
 	 ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 
-post-stage:
 	@${ECHO_MSG} "Remove unneeded host files..."
 	@for f in ${UNNEEDED_HOST_FILES} ; do \
 		${RM} "${STAGEDIR}${GNU_CONFIGURE_PREFIX}/$$f" ; \

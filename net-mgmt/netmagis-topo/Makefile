@@ -22,7 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 ALL_TARGET=build${PKGNAMESUFFIX?=}
 
-post-stage:
+post-install:
 	@${MKDIR} ${STAGEDIR}/var/netmagis/eqgen ${STAGEDIR}/var/netmagis/eqvirt
 
 .include "${MASTERDIR}/Makefile"

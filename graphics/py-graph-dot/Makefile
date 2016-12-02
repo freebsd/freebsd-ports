@@ -21,11 +21,11 @@ PROJECTHOST=	python-graph
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-# post-stage and add-plist-post should not act as reference on how to fix
+# post-install and add-plist-post should not act as reference on how to fix
 # egg-based conflicts.
 # https://code.google.com/p/python-graph/issues/detail?id=121 contains the
 # report for this issue.
-post-stage:
+post-install:
 .for suffix in py pyc pyo
 	rm ${STAGEDIR}${PYTHON_SITELIBDIR}/pygraph/readwrite/__init__.${suffix}
 .endfor

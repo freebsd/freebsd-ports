@@ -29,7 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,^(test_LDFLAGS.*$$),\1 -lcompat,' \
 		${WRKSRC}/Makefile.in
 
-post-stage:
+post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/srs ${STAGEDIR}${PREFIX}/bin/srs_alt
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsrs_alt.so.1.0.0
 

@@ -74,7 +74,7 @@ post-patch-OSS-on:
 		${REINPLACE_CMD} -e 's|alsa:plughw:0|oss:/dev/dsp|'
 
 .if ${PORTNAME}==svxlink
-post-stage:
+post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc \
 		${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/TclVoiceMail.conf \

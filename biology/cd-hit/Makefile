@@ -31,7 +31,7 @@ post-patch:
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/*.pl
 
-post-stage:
+post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin && \
 		${STRIP_CMD} cd-hit cd-hit-2d cd-hit-454 \
 		cd-hit-div cd-hit-est cd-hit-est-2d

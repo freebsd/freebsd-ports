@@ -136,7 +136,12 @@ pre-build:
 do-build:
 	cd ${WRKSRC} && ${GMAKE} ${ALL_TARGET}
 
-post-stage:
+do-install:
+	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
+.endif
+
 # Strip modules in lib/kamailio/modules
 	@${ECHO_CMD} "Stripping modules in ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/"
 
@@ -194,11 +199,5 @@ post-stage:
 .for k in kamailio kamcmd
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${k}
 .endfor
-
-do-install:
-	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
-.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
-.endif
 
 .include <bsd.port.mk>

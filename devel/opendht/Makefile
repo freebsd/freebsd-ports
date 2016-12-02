@@ -27,7 +27,7 @@ USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendht.so.0.0.0
 
 .include <bsd.port.mk>

@@ -379,7 +379,6 @@ do-install:
 	@${ECHO} ' done. *)'
 .endif
 
-post-install:
 # Only execute ${PKGINSTALL} when installing to ${PREFIX},
 # but not when staging.
 .ifmake install${CALM}
@@ -387,7 +386,6 @@ post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-post-stage:
 	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
 	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
 	( eval $${MLARCHOPSYS} ; \

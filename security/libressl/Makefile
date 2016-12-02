@@ -34,11 +34,11 @@ CFLAGS+=	-fpic -DPIC
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-post-stage-NC-on:
+post-install:
+	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
+
+post-install-NC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
 	${INSTALL_MAN} ${WRKSRC}/apps/nc/nc.1 ${STAGEDIR}/${PREFIX}/man/man1/nc.1
-
-post-stage:
-	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
 .include <bsd.port.mk>

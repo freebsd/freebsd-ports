@@ -23,7 +23,7 @@ MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	all camlp4/META
 INSTALL_TARGET=	install install-META
 
-post-stage:
+post-install:
 .for f in camlp4o camlp4of camlp4oof camlp4orf camlp4r camlp4rf
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}.opt
 .endfor

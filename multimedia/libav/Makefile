@@ -221,7 +221,7 @@ post-patch:
 post-configure-DOCS-off:
 	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
 
-post-stage:
+post-install:
 .for a in bin/avconv bin/avprobe lib/libav/libavdevice.so.55.0.0\
 	lib/libav/libavfilter.so.5.0.0 lib/libav/libavformat.so.56.1.0\
 	lib/libav/libavcodec.so.56.1.0 lib/libav/libavresample.so.2.1.0\

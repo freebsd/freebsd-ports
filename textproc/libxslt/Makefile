@@ -50,7 +50,7 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 
 .if !defined(MASTERDIR)
-post-stage:
+post-install:
 	${LN} -s libxslt.so.1 ${STAGEDIR}${PREFIX}/lib/libxslt.so.2
 	${LN} -s libexslt.so.0 ${STAGEDIR}${PREFIX}/lib/libexslt.so.8
 .endif

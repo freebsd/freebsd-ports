@@ -84,7 +84,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
-post-stage:
 	${LN} -sf ${STAGEDIR}/${PREFIX}/bin/dmd ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd
 
 .include <bsd.port.post.mk>

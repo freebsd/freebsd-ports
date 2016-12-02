@@ -24,7 +24,7 @@ USES+=		perl5
 USE_PERL5=	configure
 CC:=		${CXX}
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Cego/Cego.so
 
 .include <bsd.port.mk>

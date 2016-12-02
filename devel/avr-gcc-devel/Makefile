@@ -53,7 +53,7 @@ INFO=		cpp gcc gccint cppinternals gccinstall
 post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/4.10.0/liblto_plugin.so.0
 
 .include <bsd.port.post.mk>

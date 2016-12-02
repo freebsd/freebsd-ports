@@ -26,7 +26,7 @@ NO_ARCH=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
-post-stage:
+post-install:
 	cd ${STAGEDIR}${PREFIX}; ${FIND} lib/mono libdata/pkgconfig \
 		\( -type f -or -type l \) | ${SORT} >> ${TMPPLIST}
 

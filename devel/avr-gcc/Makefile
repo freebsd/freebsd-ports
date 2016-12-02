@@ -56,7 +56,7 @@ ARCH=		x86_64
 post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/${PORTVERSION}/liblto_plugin.so.0
 
 .include <bsd.port.post.mk>

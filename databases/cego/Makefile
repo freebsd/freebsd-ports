@@ -41,7 +41,6 @@ post-install:
 	${REINPLACE_CMD} -e 's/%%USER%%/${USERS}/g' ${WRKSRC}/samples/rc/cego
 	${CP} ${WRKSRC}/samples/rc/cego ${STAGEDIR}${PREFIX}/etc/rc.d/
 
-post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcego.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgwrap.so.2.0.0
 

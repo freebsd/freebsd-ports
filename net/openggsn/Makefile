@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtp.so.0
 
 .include <bsd.port.mk>

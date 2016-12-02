@@ -45,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|.*travis.*||' ${WRKSRC}/CMakeLists.txt   # travis_doc breaks cmake, see https://github.com/miloyip/rapidjson/issues/715
 	@${REINPLACE_CMD} -e 's|add_subdirectory.*googletest.*|link_directories(${LOCALBASE}/lib)|' ${WRKSRC}/test/CMakeLists.txt
 
-post-stage:
+post-install:
 	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/CMake*
 
 .include <bsd.port.mk>

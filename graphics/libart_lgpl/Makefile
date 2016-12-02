@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	libart-[0-9]*
 
-post-stage:
+post-install:
 	${LN} -s libart_lgpl_2.so.2 ${STAGEDIR}${PREFIX}/lib/libart_lgpl_2.so.5
 
 .include <bsd.port.mk>

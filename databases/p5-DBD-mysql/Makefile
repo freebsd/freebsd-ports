@@ -27,7 +27,7 @@ SSL_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 SSL_RUN_DEPENDS=	${SSL_BUILD_DEPENDS}
 SSL_CONFIGURE_ON=	--ssl
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/mysql/mysql.so
 
 .include <bsd.port.mk>

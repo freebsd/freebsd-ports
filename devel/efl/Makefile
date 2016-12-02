@@ -152,7 +152,7 @@ LIB_DEPENDS+=			libluajit-5.1.so:lang/luajit
 PLIST_SUB+=			ELUA=""
 .endif
 
-post-stage:
+post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/gdb
 	for i in `${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib -type f`; do \
 	    if ${FILE} $$i | ${GREP} -q "not stripped"; then ${STRIP_CMD} $$i; fi; \

@@ -30,7 +30,7 @@ CC=	/usr/bin/clang
 USE_GCC=	yes
 .endif
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Int128/Int128.so
 
 .include <bsd.port.post.mk>
