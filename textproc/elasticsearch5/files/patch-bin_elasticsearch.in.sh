@@ -1,4 +1,4 @@
---- bin/elasticsearch.in.sh.orig	2016-10-26 04:35:54 UTC
+--- bin/elasticsearch.in.sh.orig	2016-11-24 10:05:27 UTC
 +++ bin/elasticsearch.in.sh
 @@ -1,5 +1,19 @@
  #!/bin/bash
