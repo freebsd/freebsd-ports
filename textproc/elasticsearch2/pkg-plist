@@ -16,8 +16,7 @@ lib/elasticsearch/lib/jackson-dataformat-cbor-2.8.1.jar
 lib/elasticsearch/lib/jackson-dataformat-smile-2.8.1.jar
 lib/elasticsearch/lib/jackson-dataformat-yaml-2.8.1.jar
 lib/elasticsearch/lib/jna-4.1.0.jar
-lib/elasticsearch/lib/joda-convert-1.2.jar
-lib/elasticsearch/lib/joda-time-2.9.4.jar
+lib/elasticsearch/lib/joda-time-2.9.5.jar
 lib/elasticsearch/lib/jsr166e-1.1.0.jar
 lib/elasticsearch/lib/jts-1.13.jar
 lib/elasticsearch/lib/log4j-1.2.17.jar
