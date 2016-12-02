@@ -219,8 +219,8 @@ man/man1/rtmpget.1.gz
 man/man1/soldumper.1.gz
 %%GTK2%%man/man1/gnash-gtk-launcher.1.gz
 %%GTK2%%man/man1/gtk-gnash.1.gz
-%%KDE4%%man/man1/gnash-qt-launcher.1
-%%KDE4%%man/man1/kde4-gnash.1
+%%KDE4%%man/man1/gnash-qt-launcher.1.gz
+%%KDE4%%man/man1/kde4-gnash.1.gz
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
