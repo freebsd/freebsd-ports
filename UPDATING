@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161202:
+  AFFECTS: Users of textproc/p5-Search-Elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  As of the 5.01 release of ths package, the client libraries for older
+  versions of Elasticsearch have started to be shipped seperately.  If you are
+  using this library to access a none 5.X server you will need to install one of
+  the textproc/p5-Search-Elasticsearch-Client-* ports.
+
 20161126:
   AFFECTS: Users of security/gpgme-*
   AUTHOR: jhale@FreeBSD.org
