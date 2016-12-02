@@ -7,7 +7,7 @@ your .bashrc file:
 [[ $PS1 && -f %%RUNFILE%% ]] && \
 	source %%RUNFILE%%
 
-See %%DOCSDIR%%/README for more information.
+See %%DOCSDIR%%/README.md for more information.
 
 =====================================================================
 
