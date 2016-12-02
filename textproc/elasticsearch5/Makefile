@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	6.2.0
+LUCENEVER=	6.2.1
 CONFIG_FILES=	elasticsearch.yml log4j2.properties jvm.options
 BINS=		elasticsearch.in.sh \
 		elasticsearch \
@@ -62,6 +62,7 @@ PLIST_SUB=	SEARCHUSER=${SEARCHUSER} \
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/elasticsearch.in.sh
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/elasticsearch
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch

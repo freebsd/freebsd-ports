@@ -1,4 +1,4 @@
---- config/elasticsearch.yml.orig	2016-10-26 04:35:54 UTC
+--- config/elasticsearch.yml.orig	2016-11-24 10:05:27 UTC
 +++ config/elasticsearch.yml
 @@ -31,10 +31,15 @@
  # Path to directory where to store the data (separate multiple locations by comma):

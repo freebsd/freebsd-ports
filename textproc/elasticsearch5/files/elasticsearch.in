@@ -17,9 +17,6 @@
 #               Set it to required group.
 # elasticsearch_config (path):   Set to /usr/local/etc/elasticsearch/elasticsearch.yml by default.
 #               Set it to the config file location.
-# elasticsearch_min_mem (num): Minumum JVM heap size, 256m by default.
-# elasticsearch_max_mem (num): Maximum JVM heap size, 1g by default.
-# elasticsearch_props (args):  Additional java properties or arguments.
 # elasticsearch_tmp (path):  Set to /var/tmp/elasticsearch by default.
 #		Set it to the path to be used for temp files.
 #
@@ -119,16 +116,13 @@ if [ -n "$2" ]; then
             exit 1
         fi
         required_files="${elasticsearch_config}/elasticsearch.yml"
+        required_files="${elasticsearch_config}/jvm.options"
         eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
-        eval elasticsearch_props="\${elasticsearch_${profile}_props:-${elasticsearch_props}}"
-        eval elasticsearch_min_mem="\${elasticsearch_${profile}_min_mem:-${elasticsearch_min_mem}}"
-        eval elasticsearch_max_mem="\${elasticsearchlimits_${profile}_enable:-${elasticsearch_max_mem}}"
-        eval elasticsearch_tmp="\${elasticsearchlimits_${profile}_args:-${elasticsearch_tmp}}"
+        eval elasticsearch_tmp="\${elasticsearch_${profile}_args:-${elasticsearch_tmp}}"
     else
         echo "$0: extra argument ignored"
     fi
 else
-    eval elasticsearch_envvars=${envvars}
     if [ "x${elasticsearch_profiles}" != "x" -a "x$1" != "x" ]; then
         for profile in ${elasticsearch_profiles}; do
             eval _enable="\${elasticsearch_${profile}_enable}"
@@ -162,6 +156,19 @@ else
         done
         exit 0
     fi
+fi
+
+if [ "x${elasticsearch_mem_min}" != "x" ]; then
+    echo "The elasticsearch_mem_min variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_mem_max}" != "x" ]; then
+    echo "The elasticsearch_mem_max variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_props}" != "x" ]; then
+    echo "The elasticsearch_props variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
 fi
 
 run_rc_command "$1"
