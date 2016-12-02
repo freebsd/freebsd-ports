@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	jabref
-PORTVERSION=	3.5
+PORTVERSION=	3.7
 PORTEPOCH=	1
 CATEGORIES=	print java editors
-MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}/ http://builds.jabref.org/
+MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}/ \
+		http://builds.jabref.org/
 DISTNAME=	JabRef-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#
