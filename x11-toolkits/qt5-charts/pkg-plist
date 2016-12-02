@@ -225,14 +225,13 @@
 %%QT_INCDIR%%/QtCharts/qxylegendmarker.h
 %%QT_INCDIR%%/QtCharts/qxymodelmapper.h
 %%QT_INCDIR%%/QtCharts/qxyseries.h
-%%QT_LIBDIR%%/cmake/Qt5Charts/Qt5ChartsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Charts.prl
-%%QT_LIBDIR%%/libQt5Charts.so
-%%QT_LIBDIR%%/libQt5Charts.so.2
-%%QT_LIBDIR%%/libQt5Charts.so.2.1
-%%QT_LIBDIR%%/libQt5Charts.so.2.1.0
-%%QT_LIBDIR%%/pkgconfig/Qt5Charts.pc
+lib/cmake/Qt5Charts/Qt5ChartsConfig.cmake
+lib/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake
+lib/libQt5Charts.prl
+lib/libQt5Charts.so
+lib/libQt5Charts.so.2
+lib/libQt5Charts.so.2.1
+lib/libQt5Charts.so.2.1.0
 %%QT_MKSPECDIR%%/modules/qt_lib_charts.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_charts_private.pri
 %%QT_QMLDIR%%/QtCharts/designer/ChartViewSpecifics.qml
@@ -288,3 +287,4 @@
 %%QT_QMLDIR%%/QtCharts/libqtchartsqml2.so
 %%QT_QMLDIR%%/QtCharts/plugins.qmltypes
 %%QT_QMLDIR%%/QtCharts/qmldir
+libdata/pkgconfig/Qt5Charts.pc
