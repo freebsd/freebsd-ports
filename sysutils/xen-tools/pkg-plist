@@ -514,8 +514,8 @@ sbin/xl
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xl-psr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xsm-flask.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/livepatch.html
-share/pkgconfig/xenlight.pc
-share/pkgconfig/xlutil.pc
+libdata/pkgconfig/xenlight.pc
+libdata/pkgconfig/xlutil.pc
 share/qemu-xen/qemu/QEMU,cgthree.bin
 share/qemu-xen/qemu/QEMU,tcx.bin
 share/qemu-xen/qemu/acpi-dsdt.aml

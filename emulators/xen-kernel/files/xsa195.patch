@@ -1,0 +1,45 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86emul: fix huge bit offset handling
+
+We must never chop off the high 32 bits.
+
+This is XSA-195.
+
+Reported-by: George Dunlap <george.dunlap@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/x86_emulate/x86_emulate.c
++++ b/xen/arch/x86/x86_emulate/x86_emulate.c
+@@ -2549,6 +2549,12 @@ x86_emulate(
+         else
+         {
+             /*
++             * Instructions such as bt can reference an arbitrary offset from
++             * their memory operand, but the instruction doing the actual
++             * emulation needs the appropriate op_bytes read from memory.
++             * Adjust both the source register and memory operand to make an
++             * equivalent instruction.
++             *
+              * EA       += BitOffset DIV op_bytes*8
+              * BitOffset = BitOffset MOD op_bytes*8
+              * DIV truncates towards negative infinity.
+@@ -2560,14 +2566,15 @@ x86_emulate(
+                 src.val = (int32_t)src.val;
+             if ( (long)src.val < 0 )
+             {
+-                unsigned long byte_offset;
+-                byte_offset = op_bytes + (((-src.val-1) >> 3) & ~(op_bytes-1));
++                unsigned long byte_offset =
++                    op_bytes + (((-src.val - 1) >> 3) & ~(op_bytes - 1L));
++
+                 ea.mem.off -= byte_offset;
+                 src.val = (byte_offset << 3) + src.val;
+             }
+             else
+             {
+-                ea.mem.off += (src.val >> 3) & ~(op_bytes - 1);
++                ea.mem.off += (src.val >> 3) & ~(op_bytes - 1L);
+                 src.val &= (op_bytes << 3) - 1;
+             }
+         }

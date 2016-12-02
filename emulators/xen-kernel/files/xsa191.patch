@@ -1,0 +1,152 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/hvm: Fix the handling of non-present segments
+
+In 32bit, the data segments may be NULL to indicate that the segment is
+ineligible for use.  In both 32bit and 64bit, the LDT selector may be NULL to
+indicate that the entire LDT is ineligible for use.  However, nothing in Xen
+actually checks for this condition when performing other segmentation
+checks.  (Note however that limit and writeability checks are correctly
+performed).
+
+Neither Intel nor AMD specify the exact behaviour of loading a NULL segment.
+Experimentally, AMD zeroes all attributes but leaves the base and limit
+unmodified.  Intel zeroes the base, sets the limit to 0xfffffff and resets the
+attributes to just .G and .D/B.
+
+The use of the segment information in the VMCB/VMCS is equivalent to a native
+pipeline interacting with the segment cache.  The present bit can therefore
+have a subtly different meaning, and it is now cooked to uniformly indicate
+whether the segment is usable or not.
+
+GDTR and IDTR don't have access rights like the other segments, but for
+consistency, they are treated as being present so no special casing is needed
+elsewhere in the segmentation logic.
+
+AMD hardware does not consider the present bit for %cs and %tr, and will
+function as if they were present.  They are therefore unconditionally set to
+present when reading information from the VMCB, to maintain the new meaning of
+usability.
+
+Intel hardware has a separate unusable bit in the VMCS segment attributes.
+This bit is inverted and stored in the present field, so the hvm code can work
+with architecturally-common state.
+
+This is XSA-191.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/hvm/hvm.c                 |  8 ++++++++
+ xen/arch/x86/hvm/svm/svm.c             |  4 ++++
+ xen/arch/x86/hvm/vmx/vmx.c             | 20 +++++++++++---------
+ xen/arch/x86/x86_emulate/x86_emulate.c |  4 ++++
+ 4 files changed, 27 insertions(+), 9 deletions(-)
+
+diff --git a/xen/arch/x86/hvm/hvm.c b/xen/arch/x86/hvm/hvm.c
+index 704fd64..deb1783 100644
+--- a/xen/arch/x86/hvm/hvm.c
++++ b/xen/arch/x86/hvm/hvm.c
+@@ -2512,6 +2512,10 @@ bool_t hvm_virtual_to_linear_addr(
+          */
+         addr = (uint32_t)(addr + reg->base);
+ 
++        /* Segment not valid for use (cooked meaning of .p)? */
++        if ( !reg->attr.fields.p )
++            goto out;
++
+         switch ( access_type )
+         {
+         case hvm_access_read:
+@@ -2767,6 +2771,10 @@ static int hvm_load_segment_selector(
+     hvm_get_segment_register(
+         v, (sel & 4) ? x86_seg_ldtr : x86_seg_gdtr, &desctab);
+ 
++    /* Segment not valid for use (cooked meaning of .p)? */
++    if ( !desctab.attr.fields.p )
++        goto fail;
++
+     /* Check against descriptor table limit. */
+     if ( ((sel & 0xfff8) + 7) > desctab.limit )
+         goto fail;
+diff --git a/xen/arch/x86/hvm/svm/svm.c b/xen/arch/x86/hvm/svm/svm.c
+index 16427f6..4cba406 100644
+--- a/xen/arch/x86/hvm/svm/svm.c
++++ b/xen/arch/x86/hvm/svm/svm.c
+@@ -627,6 +627,7 @@ static void svm_get_segment_register(struct vcpu *v, enum x86_segment seg,
+     {
+     case x86_seg_cs:
+         memcpy(reg, &vmcb->cs, sizeof(*reg));
++        reg->attr.fields.p = 1;
+         reg->attr.fields.g = reg->limit > 0xFFFFF;
+         break;
+     case x86_seg_ds:
+@@ -660,13 +661,16 @@ static void svm_get_segment_register(struct vcpu *v, enum x86_segment seg,
+     case x86_seg_tr:
+         svm_sync_vmcb(v);
+         memcpy(reg, &vmcb->tr, sizeof(*reg));
++        reg->attr.fields.p = 1;
+         reg->attr.fields.type |= 0x2;
+         break;
+     case x86_seg_gdtr:
+         memcpy(reg, &vmcb->gdtr, sizeof(*reg));
++        reg->attr.bytes = 0x80;
+         break;
+     case x86_seg_idtr:
+         memcpy(reg, &vmcb->idtr, sizeof(*reg));
++        reg->attr.bytes = 0x80;
+         break;
+     case x86_seg_ldtr:
+         svm_sync_vmcb(v);
+diff --git a/xen/arch/x86/hvm/vmx/vmx.c b/xen/arch/x86/hvm/vmx/vmx.c
+index 9a8f694..a652c52 100644
+--- a/xen/arch/x86/hvm/vmx/vmx.c
++++ b/xen/arch/x86/hvm/vmx/vmx.c
+@@ -1035,10 +1035,12 @@ void vmx_get_segment_register(struct vcpu *v, enum x86_segment seg,
+     reg->sel = sel;
+     reg->limit = limit;
+ 
+-    reg->attr.bytes = (attr & 0xff) | ((attr >> 4) & 0xf00);
+-    /* Unusable flag is folded into Present flag. */
+-    if ( attr & (1u<<16) )
+-        reg->attr.fields.p = 0;
++    /*
++     * Fold VT-x representation into Xen's representation.  The Present bit is
++     * unconditionally set to the inverse of unusable.
++     */
++    reg->attr.bytes =
++        (!(attr & (1u << 16)) << 7) | (attr & 0x7f) | ((attr >> 4) & 0xf00);
+ 
+     /* Adjust for virtual 8086 mode */
+     if ( v->arch.hvm_vmx.vmx_realmode && seg <= x86_seg_tr 
+@@ -1118,11 +1120,11 @@ static void vmx_set_segment_register(struct vcpu *v, enum x86_segment seg,
+         }
+     }
+ 
+-    attr = ((attr & 0xf00) << 4) | (attr & 0xff);
+-
+-    /* Not-present must mean unusable. */
+-    if ( !reg->attr.fields.p )
+-        attr |= (1u << 16);
++    /*
++     * Unfold Xen representation into VT-x representation.  The unusable bit
++     * is unconditionally set to the inverse of present.
++     */
++    attr = (!(attr & (1u << 7)) << 16) | ((attr & 0xf00) << 4) | (attr & 0xff);
+ 
+     /* VMX has strict consistency requirement for flag G. */
+     attr |= !!(limit >> 20) << 15;
+diff --git a/xen/arch/x86/x86_emulate/x86_emulate.c b/xen/arch/x86/x86_emulate/x86_emulate.c
+index 7a707dc..7cb6f98 100644
+--- a/xen/arch/x86/x86_emulate/x86_emulate.c
++++ b/xen/arch/x86/x86_emulate/x86_emulate.c
+@@ -1367,6 +1367,10 @@ protmode_load_seg(
+                                  &desctab, ctxt)) )
+         return rc;
+ 
++    /* Segment not valid for use (cooked meaning of .p)? */
++    if ( !desctab.attr.fields.p )
++        goto raise_exn;
++
+     /* Check against descriptor table limit. */
+     if ( ((sel & 0xfff8) + 7) > desctab.limit )
+         goto raise_exn;

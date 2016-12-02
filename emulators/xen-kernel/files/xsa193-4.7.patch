@@ -1,0 +1,68 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/PV: writes of %fs and %gs base MSRs require canonical addresses
+
+Commit c42494acb2 ("x86: fix FS/GS base handling when using the
+fsgsbase feature") replaced the use of wrmsr_safe() on these paths
+without recognizing that wr{f,g}sbase() use just wrmsrl() and that the
+WR{F,G}SBASE instructions also raise #GP for non-canonical input.
+
+Similarly arch_set_info_guest() needs to prevent non-canonical
+addresses from getting stored into state later to be loaded by context
+switch code. For consistency also check stack pointers and LDT base.
+DR0..3, otoh, already get properly checked in set_debugreg() (albeit
+we discard the error there).
+
+The SHADOW_GS_BASE check isn't strictly necessary, but I think we
+better avoid trying the WRMSR if we know it's going to fail.
+
+This is XSA-193.
+
+Reported-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -890,7 +890,13 @@ int arch_set_info_guest(
+     {
+         if ( !compat )
+         {
+-            if ( !is_canonical_address(c.nat->user_regs.eip) ||
++            if ( !is_canonical_address(c.nat->user_regs.rip) ||
++                 !is_canonical_address(c.nat->user_regs.rsp) ||
++                 !is_canonical_address(c.nat->kernel_sp) ||
++                 (c.nat->ldt_ents && !is_canonical_address(c.nat->ldt_base)) ||
++                 !is_canonical_address(c.nat->fs_base) ||
++                 !is_canonical_address(c.nat->gs_base_kernel) ||
++                 !is_canonical_address(c.nat->gs_base_user) ||
+                  !is_canonical_address(c.nat->event_callback_eip) ||
+                  !is_canonical_address(c.nat->syscall_callback_eip) ||
+                  !is_canonical_address(c.nat->failsafe_callback_eip) )
+--- a/xen/arch/x86/traps.c
++++ b/xen/arch/x86/traps.c
+@@ -2723,19 +2723,22 @@ static int emulate_privileged_op(struct
+         switch ( regs->_ecx )
+         {
+         case MSR_FS_BASE:
+-            if ( is_pv_32bit_domain(currd) )
++            if ( is_pv_32bit_domain(currd) ||
++                 !is_canonical_address(msr_content) )
+                 goto fail;
+             wrfsbase(msr_content);
+             v->arch.pv_vcpu.fs_base = msr_content;
+             break;
+         case MSR_GS_BASE:
+-            if ( is_pv_32bit_domain(currd) )
++            if ( is_pv_32bit_domain(currd) ||
++                 !is_canonical_address(msr_content) )
+                 goto fail;
+             wrgsbase(msr_content);
+             v->arch.pv_vcpu.gs_base_kernel = msr_content;
+             break;
+         case MSR_SHADOW_GS_BASE:
+-            if ( is_pv_32bit_domain(currd) )
++            if ( is_pv_32bit_domain(currd) ||
++                 !is_canonical_address(msr_content) )
+                 goto fail;
+             if ( wrmsr_safe(MSR_SHADOW_GS_BASE, msr_content) )
+                 goto fail;
