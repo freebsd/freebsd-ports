@@ -8,6 +8,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/htmlindex.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/ianaindex.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/internal.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/internal/identifier.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/japanese.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/korean.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese.a

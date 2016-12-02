@@ -2,6 +2,7 @@
 
 PORTNAME=	go.text
 PORTVERSION=	20160702
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	jlaffaye@FreeBSD.org
@@ -25,6 +26,7 @@ GO_TARGET=	${GO_PKGNAME}/cases				\
 		${GO_PKGNAME}/encoding/htmlindex		\
 		${GO_PKGNAME}/encoding/ianaindex		\
 		${GO_PKGNAME}/encoding/internal			\
+		${GO_PKGNAME}/encoding/internal/identifier	\
 		${GO_PKGNAME}/encoding/japanese			\
 		${GO_PKGNAME}/encoding/korean			\
 		${GO_PKGNAME}/encoding/simplifiedchinese	\
