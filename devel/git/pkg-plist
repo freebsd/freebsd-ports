@@ -168,7 +168,7 @@ libexec/git-core/git-status
 libexec/git-core/git-stripspace
 libexec/git-core/git-submodule
 libexec/git-core/git-submodule--helper
-%%CONTRIB%%libexec/git-core/git-subtree
+%%SUBTREE%%libexec/git-core/git-subtree
 %%SVN%%libexec/git-core/git-svn
 libexec/git-core/git-symbolic-ref
 libexec/git-core/git-tag
@@ -342,7 +342,7 @@ man/man1/git-stash.1.gz
 man/man1/git-status.1.gz
 man/man1/git-stripspace.1.gz
 man/man1/git-submodule.1.gz
-%%CONTRIB%%man/man1/git-subtree.1.gz
+%%SUBTREE%%man/man1/git-subtree.1.gz
 %%SVN%%man/man1/git-svn.1.gz
 man/man1/git-symbolic-ref.1.gz
 man/man1/git-tag.1.gz
@@ -966,7 +966,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/git-stripspace.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-submodule.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-submodule.txt
-%%CONTRIB%%%%HTMLDOCS%%%%DOCSDIR%%/git-subtree.html
+%%SUBTREE%%%%HTMLDOCS%%%%DOCSDIR%%/git-subtree.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-svn.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-svn.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-symbolic-ref.html
