@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x-pack
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.2
 CATEGORIES=	textproc java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/packs/x-pack/
 PKGNAMEPREFIX=	kibana50-
