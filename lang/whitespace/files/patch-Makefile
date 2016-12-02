@@ -1,6 +1,6 @@
---- Makefile.orig	2003-03-31 14:39:29.000000000 +0200
-+++ Makefile	2011-03-26 12:58:40.517004812 +0100
-@@ -2,13 +2,12 @@
+--- Makefile.orig	2003-03-31 12:39:29 UTC
++++ Makefile
+@@ -2,13 +2,12 @@ GHC = ghc
  GHCI = ghci
  
  SRCS = main.hs Input.hs VM.hs Tokens.hs
@@ -17,7 +17,7 @@
  
  ghci: 
  	${GHCI} ${OPTS} main.hs
-@@ -19,21 +18,3 @@
+@@ -19,21 +18,3 @@ depend:
  clean:
  	rm -f ${TARGET} ${OBJS}
  	rm -f *~ *.hi
