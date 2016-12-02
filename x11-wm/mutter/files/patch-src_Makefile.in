@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-09-29 20:29:47.729666937 +0200
-+++ src/Makefile.in	2014-09-29 20:31:17.504662747 +0200
-@@ -951,7 +951,7 @@
+--- src/Makefile.in.orig	2016-04-21 10:20:11 UTC
++++ src/Makefile.in
+@@ -1021,7 +1021,7 @@ testboxes_LDADD = $(MUTTER_LIBS) libmutt
  @HAVE_INTROSPECTION_TRUE@	$(libmutterinclude_base_headers)	\
  @HAVE_INTROSPECTION_TRUE@	$(filter %.c,$(libmutter_la_SOURCES) $(nodist_libmutter_la_SOURCES))
  
