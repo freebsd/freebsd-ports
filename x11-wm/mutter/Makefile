@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mutter
-PORTVERSION=	3.18.3
+PORTVERSION=	3.18.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas
