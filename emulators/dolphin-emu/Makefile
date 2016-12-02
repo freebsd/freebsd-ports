@@ -3,6 +3,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 # Notes on dependencies:
 # - keep enet from Externals as Dolphin's version diverges
-# - xxhash, SOIL and gtest are not (yet?) in ports and built from Externals
+# - xxhash and SOIL are not (yet?) in ports and built from Externals
 # - skip ALSA (emulated), ao (buggy) and bluez support
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libavcodec.so:multimedia/ffmpeg \
@@ -27,7 +28,8 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
  		libsfml-system.so:devel/sfml \
 		libminiupnpc.so:net/miniupnpc \
  		libmbedtls.so:security/mbedtls \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libgtest.so:devel/googletest
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
@@ -43,6 +45,7 @@ USES=		cmake compiler:c++11-lib iconv openal pkgconfig
 CMAKE_ARGS+=	-DTRY_X11:BOOL=ON \
 		-DUSE_UPNP:BOOL=ON \
 		-DDISABLE_WX:BOOL=OFF \
+		-DUSE_SHARED_GTEST:BOOL=ON \
 		-DENABLE_PCH:BOOL=OFF \
 		-DCMAKE_REQUIRED_INCLUDES:PATH="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
