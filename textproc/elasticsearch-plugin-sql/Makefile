@@ -3,7 +3,7 @@
 PORTNAME=	sql
 PORTVERSION=	1.4.9
 CATEGORIES=	textproc
-MASTER_SITES=	http://github.com/NLPchina/elasticsearch-sql/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/NLPchina/elasticsearch-sql/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	elasticsearch-plugin-
 DISTNAME=	elasticsearch-${PORTNAME}-${PORTVERSION}
 

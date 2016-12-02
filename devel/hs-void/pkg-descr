@@ -1,4 +1,4 @@
 A Haskell 98 logically uninhabited data type.  Used to indicate that a
 given term should not exist.
 
-WWW: http://github.com/ekmett/void
+WWW: https://github.com/ekmett/void

@@ -2,4 +2,4 @@ This module provides a sqlite-backed dictionary conforming to the
 dbm interface, along with a shelve class that wraps the dict and
 provides serialization for it.
 
-WWW: http://github.com/Yelp/sqlite3dbm/
+WWW: https://github.com/Yelp/sqlite3dbm/

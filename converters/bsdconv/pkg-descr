@@ -1,4 +1,4 @@
 BSD licensed charset/encoding converter library with more function than
 libiconv. (Currently, only a few codecs are supported)
 
-WWW: http://github.com/buganini/bsdconv/
+WWW: https://github.com/buganini/bsdconv/

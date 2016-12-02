@@ -4,4 +4,4 @@ ssh, but have to leave and don't want to interrupt it? Just start
 a screen, use reptyr to grab it, and then kill the ssh session and
 head on home.
 
-WWW: http://github.com/nelhage/reptyr
+WWW: https://github.com/nelhage/reptyr

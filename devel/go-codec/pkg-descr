@@ -1,7 +1,7 @@
 High Performance and Feature-Rich Idiomatic encode/decode and rpc library for
 
 - msgpack: https://github.com/msgpack/msgpack
-- binc: http://github.com/ugorji/binc
+- binc: https://github.com/ugorji/binc
 - cbor: http://cbor.io http://tools.ietf.org/html/rfc7049
 - json: http://json.org http://tools.ietf.org/html/rfc7159
 

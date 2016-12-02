@@ -2,4 +2,4 @@ A low-level binding to the kqueue library as found in BSD and Mac OS X.
 It provides, among other things, a way of monitoring files and directories
 for changes.
 
-WWW: http://github.com/hesselink/kqueue
+WWW: https://github.com/hesselink/kqueue

@@ -4,7 +4,7 @@
 PORTNAME=	bsdowl
 PORTVERSION=	2.2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://github.com/michipili/bsdowl/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/michipili/bsdowl/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	BSD Make macros for TeX, OCaml, noweb and more

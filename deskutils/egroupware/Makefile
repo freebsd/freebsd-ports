@@ -4,8 +4,7 @@
 PORTNAME=	eGroupware
 PORTVERSION=	16.1.20161107
 CATEGORIES=	deskutils
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/ \
-		http://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}-epl-${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org

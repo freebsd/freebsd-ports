@@ -4,4 +4,4 @@ hashing function.  See <http://murmurhash.googlepages.com/> for details.
 This implementation is pure Haskell, so it might be a bit slower than a C
 FFI binding.
 
-WWW: http://github.com/nominolo/murmur-hash
+WWW: https://github.com/nominolo/murmur-hash

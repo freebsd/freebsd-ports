@@ -11,4 +11,4 @@ This is a Python library of web-related functions, such as:
   - sanitize urls (like browsers do)
   - extract arguments from urls
 
-WWW: http://github.com/scrapy/w3lib/
+WWW: https://github.com/scrapy/w3lib/

@@ -1,4 +1,4 @@
 This library can be used as a module for `fog` or as standalone provider to use
 the Azure cloud services in applications.
 
-WWW: http://github.com/fog/fog-azure
+WWW: https://github.com/fog/fog-azure

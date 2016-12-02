@@ -10,4 +10,4 @@ script will work.
 
 shFlags is a port of the google-gflags C++/Python library.
 
-WWW: http://github.com/kward/shflags
+WWW: https://github.com/kward/shflags

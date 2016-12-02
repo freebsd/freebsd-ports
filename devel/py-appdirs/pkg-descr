@@ -16,4 +16,4 @@ appdirs will help the application to choose an appropriate:
 - site config dir (site_config_dir)
 - user log dir (user_log_dir)
 
-WWW: http://github.com/ActiveState/appdirs
+WWW: https://github.com/ActiveState/appdirs

@@ -1,6 +1,6 @@
 Child - a Perl 5 OO interface to fork()
 
 My working version of this port is at:
-http://github.com/drench/FreeBSD-p5-Child
+https://github.com/drench/FreeBSD-p5-Child
 
 WWW: http://search.cpan.org/dist/Child/

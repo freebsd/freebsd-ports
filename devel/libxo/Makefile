@@ -4,7 +4,7 @@ PORTNAME=	libxo
 PORTVERSION=	0.6.1
 PORTREVISION=	1
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://github.com/Juniper/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/Juniper/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Library to generate text, XML, JSON, and HTML output

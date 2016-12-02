@@ -4,7 +4,7 @@
 PORTNAME=	lifelines
 PORTVERSION=	3.1.1
 CATEGORIES=	misc
-MASTER_SITES=   http://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
+MASTER_SITES=   https://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	Advanced genealogical system

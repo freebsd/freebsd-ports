@@ -3,7 +3,7 @@
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
+MASTER_SITES=	https://github.com/downloads/alonbl/mp3unicode/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags charset converter

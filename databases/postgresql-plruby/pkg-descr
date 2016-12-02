@@ -2,4 +2,4 @@ PL/Ruby is a loadable procedural language for the PostgreSQL database
 system (7.0 or later) that enables to write functions and trigger
 procedures in Ruby.
 
-WWW: http://github.com/knu/postgresql-plruby
+WWW: https://github.com/knu/postgresql-plruby

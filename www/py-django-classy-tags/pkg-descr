@@ -10,4 +10,4 @@ Features:
 * Supports (theoretically infinite) parse-until blocks.
 * Extensible!
 
-WWW: http://github.com/ojii/django-classy-tags
+WWW: https://github.com/ojii/django-classy-tags

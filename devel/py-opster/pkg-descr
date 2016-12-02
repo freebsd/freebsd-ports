@@ -5,4 +5,4 @@ and concise. Additionally it contains possibility to handle subcommands
 (i.e. hg commit or svn update).
 
 WWW: https://pypi.python.org/pypi/opster/
-WWW: http://github.com/piranha/opster/
+WWW: https://github.com/piranha/opster/

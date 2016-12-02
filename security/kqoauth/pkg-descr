@@ -3,4 +3,4 @@ authentication specification RFC 5849 (http://tools.ietf.org/html/rfc5849).
 Greetings go to Dominik Kapusta for writing the original OAuth library
 using Qt, QOAuth (http://blog.ayoy.net/2009/6/24/oauth).
 
-WWW: http://github.com/kypeli/kQOAuth/
+WWW: https://github.com/kypeli/kQOAuth/

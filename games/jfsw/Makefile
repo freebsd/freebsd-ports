@@ -5,10 +5,10 @@ PORTNAME=	jfsw
 PORTVERSION=	20131019
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://github.com/jonof/${PORTNAME}/archive/${JFSW_COMMIT}.tar.gz?dummy=/ \
-		http://github.com/jonof/jfbuild/archive/${JFBUILD_COMMIT}.tar.gz?dummy=/ \
-		http://github.com/jonof/jfaudiolib/archive/${JFAUDIO_COMMIT}.tar.gz?dummy=/ \
-		http://github.com/jonof/jfmact/archive/${JFMACT_COMMIT}.tar.gz?dummy=/
+MASTER_SITES=	https://github.com/jonof/${PORTNAME}/archive/${JFSW_COMMIT}.tar.gz?dummy=/ \
+		https://github.com/jonof/jfbuild/archive/${JFBUILD_COMMIT}.tar.gz?dummy=/ \
+		https://github.com/jonof/jfaudiolib/archive/${JFAUDIO_COMMIT}.tar.gz?dummy=/ \
+		https://github.com/jonof/jfmact/archive/${JFMACT_COMMIT}.tar.gz?dummy=/
 DISTFILES=	${PORTNAME}-${JFSW_COMMIT}.tar.gz \
 		jfbuild-${JFBUILD_COMMIT}.tar.gz \
 		jfaudiolib-${JFAUDIO_COMMIT}.tar.gz \

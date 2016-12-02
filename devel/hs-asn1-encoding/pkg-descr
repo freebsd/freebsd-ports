@@ -1,4 +1,4 @@
 ASN1 data reader and writer in raw form with supports for high level
 forms of ASN1 (BER, and DER).
 
-WWW: http://github.com/vincenthz/hs-asn1
+WWW: https://github.com/vincenthz/hs-asn1

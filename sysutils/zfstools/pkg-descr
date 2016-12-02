@@ -1,4 +1,4 @@
 ZFSTools is an OpenSolaris-like and compatible auto snapshotting
 script, which also supports auto snapshotting mysql databases.
 
-WWW: http://github.com/bdrewery/zfstools
+WWW: https://github.com/bdrewery/zfstools

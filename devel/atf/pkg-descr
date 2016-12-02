@@ -11,4 +11,4 @@ they cannot affect the running system.  The runtime engine is also
 responsible for gathering the results of all tests and composing reports.
 The current runtime of choice is Kyua.
 
-WWW: http://github.com/jmmv/atf/
+WWW: https://github.com/jmmv/atf/
