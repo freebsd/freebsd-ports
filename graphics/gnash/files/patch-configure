@@ -1,6 +1,6 @@
---- configure.orig	2012-01-19 17:19:29.000000000 -0200
-+++ configure	2013-10-09 15:07:40.051081546 -0300
-@@ -30836,12 +30836,17 @@
+--- configure.orig	2016-12-02 06:12:03 UTC
++++ configure
+@@ -30836,12 +30836,17 @@ fi
        esac
      fi
  
@@ -21,7 +21,35 @@
        else
          KDE4_PLUGINDIR="${KDE4_PREFIX}/lib/kde4"
        fi
-@@ -49394,7 +49399,7 @@
+@@ -30994,7 +30999,7 @@ $as_echo_n "checking whether NPString ha
+ 
+                   #include "npapi.h"
+                   #include "npruntime.h"
+-                  int main(int argc, char* argv){
++                  int main(int argc, char** argv){
+ 	            NPString str;
+                     uint32_t len = str.UTF8Length;
+ 	            return 0;
+@@ -31356,6 +31361,9 @@ else
+     if test x"${with_x11_incl}" != x ; then
+       if test -f ${with_x11_incl}/X11/X.h ; then
+        ac_cv_path_x11_incl="-I`(cd ${with_x11_incl}; pwd)`"
++
++$as_echo "#define HAVE_X11_X_H 1" >>confdefs.h
++
+       else
+        as_fn_error "${with_x11_incl} directory doesn't contain X.h" "$LINENO" 5
+       fi
+@@ -44135,7 +44143,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+   dirname=""
+   libname=""
+       boost_headers="detail/lightweight_mutex.hpp thread/thread.hpp multi_index_container.hpp multi_index/key_extractors.hpp thread/mutex.hpp program_options/options_description.hpp iostreams/stream.hpp"
+-      boost_libs="thread program_options iostreams"
++      boost_libs="thread program_options iostreams system"
+ 
+       cygnal_boost_libs="serialization date_time"
+ 
+@@ -49394,7 +49402,7 @@
  
  if test x$build_agg = xyes; then # {
    echo "        AGG Pixel format is: $pixelformat"
@@ -30,7 +58,7 @@
      if test x"$AGG_CFLAGS" != x; then # {
        echo "        AGG flags are: $AGG_CFLAGS"
      else # }{
-@@ -50044,7 +50049,7 @@
+@@ -50044,7 +50052,7 @@
    else
  
    pkg_out_fd=3
@@ -39,7 +67,7 @@
    deb_dest="$deb_err"
    rpm_dest="$rpm_err"
    yast_dest="$yast_err"
-@@ -50063,7 +50068,7 @@
+@@ -50063,7 +50071,7 @@
    else
  
    pkg_out_fd=3

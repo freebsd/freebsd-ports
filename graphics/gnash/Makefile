@@ -10,6 +10,8 @@ MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl \
@@ -19,19 +21,14 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-BROKEN=		fails to build after many Boost updates
-DEPRECATED=	broken on FreeBSD 10+ for more than 2 years
-EXPIRATION_DATE=2016-12-31
-
-USES=		cpe gmake jpeg kde:4 libtool pkgconfig tar:bzip2
+USES=		cpe tar:bzip2 pkgconfig gmake libtool jpeg
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
-USE_GCC=	any
 WANT_GSTREAMER=	yes
 USE_GNOME=	libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 INSTALLS_ICONS=	yes
 SYSCONFIGDIR=	${PREFIX}/etc
-CPE_VENDOR=	gnu
 
 # jemalloc leads to infinite recursion on FreeBSD
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
@@ -69,6 +66,7 @@ FFMPEG2_DESC=	ffmpeg2 media handler (broken)
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
+KDE4_USES=	kde:4
 CYGNAL_CONFIGURE_ENABLE=	cygnal
 
 .include <bsd.port.options.mk>
