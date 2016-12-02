@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	14.3.20160525
+PORTVERSION=	16.1.20161107
 CATEGORIES=	deskutils
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/ \
+		http://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
+DISTNAME=	${PORTNAME:tl}-epl-${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web-based GroupWare system
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+LICENSE_FILE=	${WRKDIR}/${PORTNAME:tl}/doc/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Net/Sieve.php:net/pear-Net_Sieve \
 		${LOCALBASE}/share/pear/Horde/Imap/Client.php:mail/pear-Horde_Imap_Client \
@@ -28,7 +31,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	EG_DIR=${EG_DIR} \
 		EG_DATA=${EG_DATA}
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	EGroupware
 
 OPTIONS_DEFINE=	MYSQL POSTGRES SSL ZIP GD LDAP MBSTRING
@@ -46,7 +48,7 @@ ZIP_USE=	PHP=zip
 GD_USE=		PHP=gd
 LDAP_USE=	PHP=ldap
 
-WRKSRC=	${WRKDIR}/egroupware-${PORTVERSION}
+WRKSRC=	${WRKDIR}/egroupware
 EG_DIR=	www/eg
 EG_WWWDIR=	${PREFIX}/${EG_DIR}
 EG_DATA=	www/egdata
