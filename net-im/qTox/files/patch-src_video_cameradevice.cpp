@@ -1,4 +1,4 @@
---- src/video/cameradevice.cpp.orig	2016-08-09 23:12:33 UTC
+--- src/video/cameradevice.cpp.orig	2016-11-13 15:20:00 UTC
 +++ src/video/cameradevice.cpp
 @@ -31,7 +31,7 @@ extern "C" {
  #ifdef Q_OS_WIN
@@ -27,7 +27,7 @@
      else if (iformat->name == QString("video4linux2,v4l2"))
          devices += v4l2::getDeviceList();
  #endif
-@@ -461,7 +461,7 @@ QVector<VideoMode> CameraDevice::getVide
+@@ -467,7 +467,7 @@ QVector<VideoMode> CameraDevice::getVide
      else if (iformat->name == QString("dshow"))
          return DirectShow::getDeviceModes(devName);
  #endif
@@ -36,8 +36,8 @@
      else if (iformat->name == QString("video4linux2,v4l2"))
          return v4l2::getDeviceModes(devName);
  #endif
-@@ -482,7 +482,7 @@ QVector<VideoMode> CameraDevice::getVide
- */
+@@ -488,7 +488,7 @@ QVector<VideoMode> CameraDevice::getVide
+  */
  QString CameraDevice::getPixelFormatString(uint32_t pixel_format)
  {
 -#ifdef Q_OS_LINUX
@@ -45,8 +45,8 @@
      return v4l2::getPixelFormatString(pixel_format);
  #else
      return QString("unknown");
-@@ -498,7 +498,7 @@ false otherwise (such as if there's no p
- */
+@@ -504,7 +504,7 @@ QString CameraDevice::getPixelFormatStri
+  */
  bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
  {
 -#ifdef Q_OS_LINUX
@@ -54,7 +54,7 @@
  	return v4l2::betterPixelFormat(a, b);
  #else
  	return false;
-@@ -518,7 +518,7 @@ bool CameraDevice::getDefaultInputFormat
+@@ -524,7 +524,7 @@ bool CameraDevice::getDefaultInputFormat
      avdevice_register_all();
  
      // Desktop capture input formats
@@ -63,7 +63,7 @@
      idesktopFormat = av_find_input_format("x11grab");
  #endif
  #ifdef Q_OS_WIN
-@@ -526,7 +526,7 @@ bool CameraDevice::getDefaultInputFormat
+@@ -532,7 +532,7 @@ bool CameraDevice::getDefaultInputFormat
  #endif
  
      // Webcam input formats
