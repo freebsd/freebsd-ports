@@ -4,6 +4,6 @@ Exchange.  There are two methods of using this module -- a functional
 interface that is depreciated, and an object-orientated method that
 provides greater flexibility and stability.
 
-Github repository is at http://github.com/pfenwick/finance-quote/
+Github repository is at https://github.com/pfenwick/finance-quote/
 
 WWW: http://search.cpan.org/dist/Finance-Quote/

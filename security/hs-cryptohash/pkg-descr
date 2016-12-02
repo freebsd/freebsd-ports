@@ -3,4 +3,4 @@ pure APIs, with performance close to the fastest implementations available
 in others languages.  The implementations are made in C with a haskell FFI
 wrapper that hide the C implementation.
 
-WWW: http://github.com/vincenthz/hs-cryptohash
+WWW: https://github.com/vincenthz/hs-cryptohash

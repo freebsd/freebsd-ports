@@ -4,4 +4,4 @@ wrapping other library dependencies, without depending on heavier-weight
 dependencies.  The basic idea is that this package should only depend on
 haskell-platform packages and conduit.
 
-WWW: http://github.com/snoyberg/conduit
+WWW: https://github.com/snoyberg/conduit

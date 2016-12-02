@@ -2,4 +2,4 @@ Public Key cryptography Supports RSA PKCS15, RSA OAEP, RSA PSS, DSA,
 ElGamal signature. Also have primitive support for Diffie Hellman, and
 ElGamal encryption.
 
-WWW: http://github.com/vincenthz/hs-crypto-pubkey
+WWW: https://github.com/vincenthz/hs-crypto-pubkey

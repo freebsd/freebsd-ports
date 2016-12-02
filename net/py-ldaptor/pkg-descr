@@ -9,4 +9,4 @@ Ldaptor is a pure-Python library that implements:
 Also included is a web-based user interface to search and edit information in
 an LDAP directory and a set of LDAP utilities for use from the command line.
 
-WWW: http://github.com/antong/ldaptor
+WWW: https://github.com/antong/ldaptor

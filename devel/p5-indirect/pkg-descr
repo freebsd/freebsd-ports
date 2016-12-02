@@ -1,6 +1,6 @@
 indirect - Lexically warn about using the indirect object syntax in Perl 5
 
 My working version of this port is at:
-http://github.com/drench/FreeBSD-p5-indirect
+https://github.com/drench/FreeBSD-p5-indirect
 
 WWW: http://search.cpan.org/dist/indirect/

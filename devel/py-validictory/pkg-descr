@@ -3,4 +3,4 @@ Validictory is a general purpose Python data validator.
 It works with Python 2.7 and Python 3.3+ and uses a Schema format
 based on JSON Schema Proposal (http://json-schema.org).
 
-WWW: http://github.com/sunlightlabs/validictory
+WWW: https://github.com/sunlightlabs/validictory

@@ -4,4 +4,4 @@ constant memory.  It is an alternative to lazy I/O which guarantees
 deterministic resource handling, and fits in the same general solution
 space as enumerator/iteratee and pipes.
 
-WWW: http://github.com/snoyberg/conduit
+WWW: https://github.com/snoyberg/conduit

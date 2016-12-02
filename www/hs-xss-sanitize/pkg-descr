@@ -1,4 +1,4 @@
 Run untrusted HTML through Text.HTML.SanitizeXSS.sanitizeXSS to prevent
 XSS attacks.
 
-WWW: http://github.com/yesodweb/haskell-xss-sanitize
+WWW: https://github.com/yesodweb/haskell-xss-sanitize

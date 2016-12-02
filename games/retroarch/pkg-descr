@@ -3,4 +3,4 @@ of implementations for this API includes videogame system emulators and
 game engines, but also more generalized 3D programs. These programs are
 instantiated as dynamic libraries. We refer to these as "libretro cores".
 
-WWW: http://github.com/libretro/RetroArch
+WWW: https://github.com/libretro/RetroArch

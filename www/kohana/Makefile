@@ -4,7 +4,7 @@ PORTNAME=	kohana
 PORTVERSION=	3.3.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Elegant HMVC PHP5 framework

@@ -5,7 +5,7 @@ PORTNAME=	glpi
 PORTVERSION=	0.90.5
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software

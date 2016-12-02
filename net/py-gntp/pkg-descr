@@ -3,4 +3,4 @@ Protocol ( http://www.growlforwindows.com/gfw/help/gntp.aspx )
 
 It should work as a dropin replacement for the older Python bindings.
 
-WWW: http://github.com/kfdm/gntp/
+WWW: https://github.com/kfdm/gntp/

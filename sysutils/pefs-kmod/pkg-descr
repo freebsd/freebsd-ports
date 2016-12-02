@@ -9,5 +9,5 @@ Key features:
 * Modern cryptographic algorithms: AES and Camellia in XTS mode,
   PKCS#5v2 and HKDF for key generation.
 
-WWW: http://github.com/glk/pefs
+WWW: https://github.com/glk/pefs
 WWW: http://wiki.freebsd.org/PEFS

@@ -26,7 +26,7 @@ STRIP=		# stripping can break go binaries
 # repository, which contains many Git submodules, including fly, and
 # build from there. So basically:
 #
-#     git clone --recursive http://github.com/concourse/concourse.gi
+#     git clone --recursive https://github.com/concourse/concourse.gi
 #     cd concourse
 #     export GOPATH=$PWD
 #     cd src/github.com/concourse/fly

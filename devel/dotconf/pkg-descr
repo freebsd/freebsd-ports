@@ -11,4 +11,4 @@ config files. Some behaviour can be toggled with flags at runtime.
 To keep dotconf from printing out warnings, you can install your
 own customized error handler.
 
-WWW: http://github.com/williamh/dotconf
+WWW: https://github.com/williamh/dotconf

@@ -4,7 +4,7 @@ PORTNAME=	mecab
 PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://github.com/downloads/rsky/php-${PORTNAME}/
+MASTER_SITES=	https://github.com/downloads/rsky/php-${PORTNAME}/
 DISTNAME=	php-mecab-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

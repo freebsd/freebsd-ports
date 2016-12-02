@@ -2,4 +2,4 @@ The point of this exception class is to be able to create an error
 class that automatically combines keyword arguments given to the
 exception instance
 
-WWW: http://github.com/delfick/delfick_error
+WWW: https://github.com/delfick/delfick_error

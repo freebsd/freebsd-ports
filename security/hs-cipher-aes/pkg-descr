@@ -10,4 +10,4 @@ also uses same implementation. If it matters for your case, you should
 make sure you have AES-NI available, or you'll need to use a different
 implementation.
 
-WWW: http://github.com/vincenthz/hs-cipher-aes
+WWW: https://github.com/vincenthz/hs-cipher-aes

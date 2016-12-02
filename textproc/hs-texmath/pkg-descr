@@ -5,4 +5,4 @@ pandoc's native format (allowing conversion, via pandoc, to a variety of
 different markup formats).  The TeX reader supports basic LaTeX and AMS
 extensions, and it can parse and apply LaTeX macros.
 
-WWW: http://github.com/jgm/texmath
+WWW: https://github.com/jgm/texmath

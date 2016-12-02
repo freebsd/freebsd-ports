@@ -1,4 +1,4 @@
 A Ruby library for accessing the Amazon Web Services EC2, ELB, RDS, Cloudwatch,
 and Autoscaling APIs.
 
-WWW: http://github.com/grempe/amazon-ec2
+WWW: https://github.com/grempe/amazon-ec2
