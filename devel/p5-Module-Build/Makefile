@@ -16,6 +16,7 @@ COMMENT=	Build and install Perl modules
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.17:devel/p5-PAR-Dist
