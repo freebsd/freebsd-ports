@@ -6,7 +6,7 @@ CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt
 #REVISEDATE=	20100927
-#PORTREVISION=	${REVISEDATE}
+PORTREVISION=	3
 
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
 # inherit its master port's PORTREVISION and be appended.
@@ -38,5 +38,6 @@ post-patch::
 		${ECHO_MSG} "===>  Applying extra patch $$i"; \
 		${PATCH} ${PATCH_ARGS} < $$i; \
 	done
+	@${REINPLACE_CMD} -e 's|裏|裡|' ${WRKSRC}/po/zh_TW.po
 
 .include "${MASTERDIR}/Makefile"
