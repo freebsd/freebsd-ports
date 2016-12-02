@@ -1,3 +1,3 @@
-TIMESTAMP = 1467863467
-SHA256 (mini_httpd-1.25.tar.gz) = 25a0325e698d6bf828ab8089d5ba8835edd7384936cd3074e1543ecafd85958c
-SIZE (mini_httpd-1.25.tar.gz) = 43628
+TIMESTAMP = 1480691505
+SHA256 (mini_httpd-1.26.tar.gz) = 86d56c3e2400d4a2dc004f2a2b1f3b9f7a416b02d414d8e84ab3045cc9a64054
+SIZE (mini_httpd-1.26.tar.gz) = 43390

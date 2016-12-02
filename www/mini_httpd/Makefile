@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
