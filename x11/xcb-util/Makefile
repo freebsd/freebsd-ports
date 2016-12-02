@@ -3,7 +3,7 @@
 
 PORTNAME=	xcb-util
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
@@ -11,9 +11,13 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Module with libxcb/libX11 extension/replacement libraries
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	lib
 USES=		gmake tar:bzip2
 USE_XORG=	xau xcb xdmcp
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e \
