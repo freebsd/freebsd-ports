@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reshape
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,8 +11,10 @@ COMMENT=	R package for flexibly restructuring and aggregating data
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr
+CRAN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
