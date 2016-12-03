@@ -708,7 +708,7 @@ proxydeps() {
 }
 
 sonames() {
-	[ -n "${BUNDLE_LIBS}" ] && return 0
+	[ ! -d ${STAGEDIR}${PREFIX}/lib -o -n "${BUNDLE_LIBS}" ] && return 0
 	while read f; do
 		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
