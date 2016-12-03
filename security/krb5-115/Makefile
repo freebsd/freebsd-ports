@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.13.7
+PORTVERSION=		1.15
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-113
+PKGNAMESUFFIX=		-115
 .endif
+
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -17,10 +18,7 @@ COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
 LICENSE=		MIT
 
-DEPRECATED=             EOL twelve months after release of krb5-1.15
-EXPIRATION_DATE=        2017-12-02
-
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-2]-* krb5-[0-9].*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-9]-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
