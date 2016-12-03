@@ -1,12 +1,11 @@
-proto (google code name r-proto) is an R package which facilitates
-a style of programming known as prototype-based programming.
-Prototype-based programming is a type of object oriented (OO)
-programming in which classes and objects are unified into a single
-concept, prototypes. This makes proto and prototye programming
-simpler than the usual OO model yet it retains the OO features of
-inheritance (known as delegation in the prototype model) and OO
-dispatch. Applications, News, Additional Information sources, Proto
-Bugs and Avoiding R Bugs sections are given below while associated
-Links are in the http://code.google.com/p/r-proto/wiki/Links
+Proto is an R package that facilitates prototype programming, a
+type of object-oriented programming that does not use classes as
+an atomic concept (but is powerful enough to encompass them).
 
-WWW: http://code.google.com/p/r-proto/
+The package is lightweight providing a thin layer on top of R
+environments. Unlike other packages which grow over time proto has
+become smaller over time as it was successively polished to reduce
+it to its essentials. Despite its small size prototype-based systems
+can be more powerful than more complex class-based systems.
+
+WWW: https://github.com/hadley/proto
