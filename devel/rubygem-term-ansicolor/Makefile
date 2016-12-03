@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -18,10 +18,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES=	bin/colortab bin/term_display bin/term_cdiff bin/term_decolor bin/term_mandel
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/cdiff ${STAGEDIR}${PREFIX}/bin/term_cdiff
-	${MV} ${STAGEDIR}${PREFIX}/bin/decolor ${STAGEDIR}${PREFIX}/bin/term_decolor
+PLIST_FILES=	bin/term_cdiff bin/term_colortab bin/term_decolor bin/term_display bin/term_mandel
 
 .include <bsd.port.mk>
