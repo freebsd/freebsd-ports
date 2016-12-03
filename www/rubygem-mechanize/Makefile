@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mechanize
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
