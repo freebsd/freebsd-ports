@@ -1,0 +1,11 @@
+--- cogbot.gemspec.orig	2016-12-03 11:23:29 UTC
++++ cogbot.gemspec
+@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<daemons>.freeze, ["~> 1.2.3"])
+       s.add_runtime_dependency(%q<twitter>.freeze, ["~> 5.15.0"])
+       s.add_runtime_dependency(%q<json>.freeze, ["~> 1.8.3"])
+-      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.2.1"])
++      s.add_runtime_dependency(%q<yajl-ruby>.freeze, [">= 1.2.1"])
+       s.add_runtime_dependency(%q<fortune_gem>.freeze, ["~> 0.0.8"])
+       s.add_development_dependency(%q<awesome_print>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
