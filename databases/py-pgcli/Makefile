@@ -3,6 +3,7 @@
 
 PORTNAME=	pgcli
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.1.6:devel/py-wcwidth
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		pgsql python
 
 .include <bsd.port.mk>
