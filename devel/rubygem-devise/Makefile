@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-bcrypt>=3.0:security/rubygem-bcrypt \
 		rubygem-orm_adapter>=0.1:devel/rubygem-orm_adapter \
 		rubygem-thread_safe>=0.1:devel/rubygem-thread_safe \
-		rubygem-responders>=0:www/rubygem-responders \
-		rubygem-warden>=1.2.3:devel/rubygem-warden \
 		rubygem-railties4>=4.1.1:www/rubygem-railties4 \
-		rubygem-responders>=0:www/rubygem-responders
+		rubygem-responders>=0:www/rubygem-responders \
+		rubygem-warden>=1.2.3:devel/rubygem-warden
 
 NO_ARCH=	yes
 USE_RUBY=	yes
