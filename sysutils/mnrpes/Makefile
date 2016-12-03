@@ -22,6 +22,7 @@ USE_RC_SUBR=	mnrpes_receiver \
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
