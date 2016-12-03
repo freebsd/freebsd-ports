@@ -3,7 +3,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -46,7 +46,7 @@ ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ENCHANT_CONFIGURE_OFF=	--without-enchant
 ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 HUNSPELL_CONFIGURE_OFF=	--without-hunspell
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 

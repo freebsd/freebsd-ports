@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2 \
 		libpodofo.so:graphics/podofo \
 		libboost_thread.so:devel/boost-libs \
-		libhunspell-1.3.so:textproc/hunspell \
+		libhunspell-1.5.so:textproc/hunspell \
 		libcairo.so:graphics/cairo \
 		libhyphen.so:textproc/hyphen \
 		libfontconfig.so:x11-fonts/fontconfig

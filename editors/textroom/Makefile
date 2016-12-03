@@ -3,7 +3,7 @@
 
 PORTNAME=	textroom
 PORTVERSION=	0.8.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	Full screen text editor
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libhunspell-1.3.so:textproc/hunspell \
+		libhunspell-1.5.so:textproc/hunspell \
 		libxml++-2.6.so:textproc/libxml++26
 
 USES=		desktop-file-utils pkgconfig qmake

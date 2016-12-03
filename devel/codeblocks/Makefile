@@ -3,7 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	16.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libhunspell-1.3.so:textproc/hunspell
+		libhunspell-1.5.so:textproc/hunspell
 
 USES=		autoreconf compiler desktop-file-utils fam:gamin localbase \
 		gettext-runtime libtool pathfix pkgconfig shared-mime-info

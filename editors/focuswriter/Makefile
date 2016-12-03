@@ -4,6 +4,7 @@
 PORTNAME=	focuswriter
 PORTVERSION=	1.5.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	lightside@gmx.com
@@ -14,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/resources/images/icons/oxygen/COPYING
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gottcode

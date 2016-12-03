@@ -3,7 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
@@ -53,7 +53,7 @@ FFMPEG_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
 FFMPEG_CONFIGURE_OFF=	--without-ffms
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW_CONFIGURE_OFF=	--without-fftw3
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 HUNSPELL_CONFIGURE_OFF=	--without-hunspell
 OPENAL_USES=		openal
 OPENAL_CONFIGURE_OFF=	--without-openal

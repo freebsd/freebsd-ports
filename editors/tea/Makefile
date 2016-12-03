@@ -3,6 +3,7 @@
 
 PORTNAME=	tea
 PORTVERSION=	43.1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -32,7 +33,7 @@ DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_QMAKE_ON=	CONFIG+=nohunspell
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 HUNSPELL_QMAKE_ON=	CONFIG+=noaspell
 
 post-patch:

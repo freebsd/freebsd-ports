@@ -3,7 +3,7 @@
 
 PORTNAME=	sigil
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
-		libhunspell-1.3.so:textproc/hunspell
+		libhunspell-1.5.so:textproc/hunspell
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py3-lxml
 
 USE_GITHUB=	yes
@@ -32,7 +32,7 @@ CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1 \
 		-DINSTALL_BUNDLED_DICTS:BOOL=0
 USE_LDCONFIG=	${PREFIX}/lib/sigil
 
-# Upstream uses pkg-config output to pass libhunspell-1.3.so and
+# Upstream uses pkg-config output to pass libhunspell-1.5.so and
 # libpcre16.so to the linker. pkg-config output does not include full
 # paths, so add a workaround to keep the port linking for now.
 LDFLAGS+=	-L${LOCALBASE}/lib

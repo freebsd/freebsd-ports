@@ -3,7 +3,7 @@
 
 PORTNAME=	goldendict
 PORTVERSION=	1.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:C|(.*)\.[0-9]*$|\1|}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,7 +13,7 @@ COMMENT=	Feature-rich Qt4 based dictionary lookup program
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \
+LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell \
 		libvorbis.so:audio/libvorbis
 
 NO_WRKSUBDIR=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	mythes
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/MyThes/${PORTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -13,7 +13,7 @@ COMMENT=	Simple thesaurus library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 
 USES=		libtool pathfix perl5 pkgconfig shebangfix
 USE_LDCONFIG=	yes
