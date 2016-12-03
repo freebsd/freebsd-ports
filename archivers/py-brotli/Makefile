@@ -3,7 +3,7 @@
 
 PORTNAME=	brotli
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Generic-purpose lossless compression algorithm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		compiler:c++0x python zip
 
 PLIST_FILES=	bin/brotli
