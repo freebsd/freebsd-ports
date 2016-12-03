@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	connection_pool
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
