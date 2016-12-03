@@ -1,7 +1,7 @@
---- lsmsr.c.orig	2011-04-05 15:54:04.000000000 -0700
-+++ lsmsr.c	2011-09-15 16:44:15.000000000 -0700
-@@ -31,6 +31,18 @@
- #include "AMD/fam11h.h"
+--- lsmsr/lsmsr.c.orig	2016-10-12 19:04:55 UTC
++++ lsmsr/lsmsr.c
+@@ -34,6 +34,18 @@
+ #include "AMD_fam15h.h"
  #include "generic_msr.h"
  
 +#if defined(__FreeBSD__)
@@ -19,8 +19,8 @@
  /* Todos:
   * - add (list and eventually write) support for write-only MSR
   * - add decoding support for bit fields
-@@ -116,6 +128,33 @@
- 	fprintf(stdout, "%s version %s\n", g.prog, VERSION);
+@@ -119,13 +131,40 @@ static void version(void)
+ 	fprintf(stdout, "%s version %s\n", g.prog, LSMSR_VERSION);
  }
  
 +#if defined(__FreeBSD__)
@@ -53,7 +53,15 @@
  static int get_msr_val(unsigned int msr, unsigned long long *val)
  {
  	off64_t off;
-@@ -141,11 +180,17 @@
+ 	int err;
+ 
+ 	*val = 0;
+-	off = lseek64(g.fd, (off64_t) msr, SEEK_SET);
++	off = lseek(g.fd, (off64_t) msr, SEEK_SET);
+ 	if (off == (off_t) -1) {
+ 		perror("invalid MSR");
+ 		return 1;
+@@ -144,11 +183,17 @@ static int get_msr_val(unsigned int msr,
  	return 0;
  }
  
@@ -71,12 +79,22 @@
  	g.fd = open(s, O_RDONLY);
  	if (g.fd < 0)
  		fprintf(stderr, "could not open device %s: %s\n", s,
-@@ -161,7 +206,7 @@
+@@ -317,6 +362,7 @@ static int set_msr_table(void)
+ }
  
- static int _show_msr(struct reg_spec *reg)
- {
--	unsigned long long val;
-+	unsigned long long val = 0;
- 	if (!g.list)
- 		if (get_msr_val(reg->address, &val))
- 			return 1;
+ struct reg_spec unknown_msr = {0, "unknown", "(at your own risk)", NULL, NULL};
++unsigned int nrCPUs = 1;
+ 
+ #define OPT_MAX 32
+ int main(int argc, char *argv[])
+@@ -325,6 +371,10 @@ int main(int argc, char *argv[])
+ 	int i, li, ret;
+ 	struct reg_spec *reg;
+ 
++	nrCPUs = sysconf(_SC_NPROCESSORS_ONLN);
++	if (nrCPUs > 65535)
++		nrCPUs = 1;
++
+ 	ret = 1;
+ 	if((g.prog = rindex(argv[0], '/')))
+ 		++g.prog;
