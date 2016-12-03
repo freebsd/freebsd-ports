@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	travis
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-gh>=0.13:devel/rubygem-gh \
 		rubygem-highline>=1.6:devel/rubygem-highline \
 		rubygem-launchy>=2.1:devel/rubygem-launchy \
+		rubygem-net-http-persistent>=2.9:www/rubygem-net-http-persistent \
 		rubygem-pusher-client>=0.4:www/rubygem-pusher-client \
 		rubygem-typhoeus>=0.6.8:www/rubygem-typhoeus
 
