@@ -2,6 +2,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20160407
+PORTREVISION=	1
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/ \
 		LOCAL/sunpoet/${PORTNAME}

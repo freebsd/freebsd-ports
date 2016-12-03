@@ -54,7 +54,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libnss3.so:security/nss \
 		libclucene-core.so:textproc/clucene \
 		libexpat.so:textproc/expat2 \
-		libhunspell-1.3.so:textproc/hunspell \
+		libhunspell-1.5.so:textproc/hunspell \
 		libhyphen.so:textproc/hyphen \
 		libabw-0.1.so:textproc/libabw \
 		libe-book-0.1.so:textproc/libe-book \

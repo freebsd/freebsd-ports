@@ -3,7 +3,7 @@
 
 PORTNAME=	codelite
 PORTVERSION=	9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors devel
 
 MAINTAINER=	mokhi64@gmail.com
@@ -12,7 +12,7 @@ COMMENT=	Open Source IDE for C/C++
 LICENSE=	GPLv2+
 
 RUN_DEPENDS=	xterm:x11/xterm
-LIB_DEPENDS+=	libhunspell-1.3.so:textproc/hunspell
+LIB_DEPENDS+=	libhunspell-1.5.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif

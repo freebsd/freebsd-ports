@@ -2,14 +2,14 @@
 
 PORTNAME=	texstudio
 PORTVERSION=	2.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TeXstudio%20${PORTVERSION}
 
 MAINTAINER=	abiliojr@gmail.com
 COMMENT=	Integrated writing environment for LaTeX documents
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \
+LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler
 
 USES=		desktop-file-utils dos2unix execinfo ghostscript:run \

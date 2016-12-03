@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	1.3.3
+PORTVERSION=	1.5.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
@@ -19,6 +18,7 @@ CONFLICTS_INSTALL=	tinker-[0-9]*
 CONFIGURE_ARGS=	--disable-nls ${ICONV_CONFIGURE_ARG} --with-readline --with-ui
 GNU_CONFIGURE=	yes
 USES=		libtool:keepla pathfix iconv ncurses readline shebangfix perl5
+USE_GITHUB=	yes
 SHEBANG_FILES=	src/tools/ispellaff2myspell
 USE_LDCONFIG=	yes
 USE_PERL5=	run

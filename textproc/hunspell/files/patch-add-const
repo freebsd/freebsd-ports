@@ -1,0 +1,90 @@
+Add back `const` keyword to keep consumers forward compatible by
+reverting https://github.com/hunspell/hunspell/commit/dd4b14899bfb
+
+--- src/hunspell/hunspell.cxx.orig	2016-11-28 10:34:55 UTC
++++ src/hunspell/hunspell.cxx
+@@ -110,7 +110,7 @@ public:
+   int remove(const std::string& word);
+   const std::string& get_version() const;
+   struct cs_info* get_csconv();
+-  std::vector<char> dic_encoding_vec;
++
+ 
+ private:
+   AffixMgr* pAMgr;
+@@ -181,9 +181,6 @@ HunspellImpl::HunspellImpl(const char* a
+   complexprefixes = pAMgr->get_complexprefixes();
+   wordbreak = pAMgr->get_breaktable();
+ 
+-  dic_encoding_vec.resize(encoding.size()+1);
+-  strcpy(&dic_encoding_vec[0], encoding.c_str());
+-
+   /* and finally set up the suggestion manager */
+   pSMgr = new SuggestMgr(try_string, MAXSUGGESTION, pAMgr);
+   if (try_string)
+@@ -1850,8 +1847,8 @@ int Hunspell::suffix_suggest(char*** sls
+   return munge_vector(slst, stems);
+ }
+ 
+-char* Hunspell::get_dic_encoding() {
+-  return &(m_Impl->dic_encoding_vec[0]);
++const char* Hunspell::get_dic_encoding() const {
++  return Hunspell_get_dic_encoding((Hunhandle*)(this));
+ }
+ 
+ int Hunspell::stem(char*** slst, char** desc, int n) {
+@@ -1896,8 +1893,8 @@ int Hunspell_spell(Hunhandle* pHunspell,
+   return reinterpret_cast<Hunspell*>(pHunspell)->spell(std::string(word));
+ }
+ 
+-char* Hunspell_get_dic_encoding(Hunhandle* pHunspell) {
+-  return reinterpret_cast<Hunspell*>(pHunspell)->get_dic_encoding();
++const char* Hunspell_get_dic_encoding(Hunhandle* pHunspell) {
++  return (reinterpret_cast<Hunspell*>(pHunspell)->get_dict_encoding()).c_str();
+ }
+ 
+ int Hunspell_suggest(Hunhandle* pHunspell, char*** slst, const char* word) {
+--- src/hunspell/hunspell.h.orig	2016-11-28 10:34:55 UTC
++++ src/hunspell/hunspell.h
+@@ -68,7 +68,7 @@ LIBHUNSPELL_DLL_EXPORTED int Hunspell_ad
+  */
+ LIBHUNSPELL_DLL_EXPORTED int Hunspell_spell(Hunhandle* pHunspell, const char*);
+ 
+-LIBHUNSPELL_DLL_EXPORTED char* Hunspell_get_dic_encoding(Hunhandle* pHunspell);
++LIBHUNSPELL_DLL_EXPORTED const char* Hunspell_get_dic_encoding(Hunhandle* pHunspell);
+ 
+ /* suggest(suggestions, word) - search suggestions
+  * input: pointer to an array of strings pointer and the (bad) word
+--- src/hunspell/hunspell.hxx.orig	2016-11-28 10:34:55 UTC
++++ src/hunspell/hunspell.hxx
+@@ -155,7 +155,7 @@ class LIBHUNSPELL_DLL_EXPORTED Hunspell 
+   H_DEPRECATED void free_list(char*** slst, int n);
+ 
+   const std::string& get_dict_encoding() const;
+-  char* get_dic_encoding();
++  H_DEPRECATED const char* get_dic_encoding() const;
+ 
+   /* morphological functions */
+ 
+--- src/win_api/hunspelldll.c.orig	2016-11-28 10:34:55 UTC
++++ src/win_api/hunspelldll.c
+@@ -73,7 +73,7 @@ LIBHUNSPELL_DLL_EXPORTED void hunspell_f
+   pMS->free_list(slst, len);
+ }
+ 
+-LIBHUNSPELL_DLL_EXPORTED char* hunspell_get_dic_encoding(Hunspell* pMS) {
++LIBHUNSPELL_DLL_EXPORTED const char* hunspell_get_dic_encoding(Hunspell* pMS) {
+   return pMS->get_dic_encoding();
+ }
+ 
+--- src/win_api/hunspelldll.h.orig	2016-11-28 10:34:55 UTC
++++ src/win_api/hunspelldll.h
+@@ -59,7 +59,7 @@ LIBHUNSPELL_DLL_EXPORTED void hunspell_f
+                                                  char*** slst,
+                                                  int len);
+ // make local copy of returned string!!
+-LIBHUNSPELL_DLL_EXPORTED char* hunspell_get_dic_encoding(Hunspell* pMS);
++LIBHUNSPELL_DLL_EXPORTED const char* hunspell_get_dic_encoding(Hunspell* pMS);
+ 
+ // add word to dict (word is valid until spell object is not destroyed)
+ LIBHUNSPELL_DLL_EXPORTED int hunspell_add(Hunspell* pMS, char* word);
