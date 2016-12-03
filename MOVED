@@ -8815,3 +8815,4 @@ net-mgmt/rancid|net-mgmt/rancid3|2016-11-27|Has expired: Not supported upstream.
 x11-servers/mga_hal||2016-11-28|Support for MGA_HAL feature was removed from xf86-video-mga in 2011
 audio/lv2core|audio/lv2|2016-11-30|Has expired: Superseded by audio/lv2
 java/jakarta-struts||2016-12-01|Has expired: Port is unmaintained and has known security vulnerabilites
+www/rubygem-url-mount|www/rubygem-url_mount|2016-12-03|Rename to match our rubygems naming
