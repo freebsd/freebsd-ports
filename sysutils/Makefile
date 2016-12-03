@@ -163,6 +163,7 @@
     SUBDIR += clsync
     SUBDIR += cluster-glue
     SUBDIR += cmdwatch
+    SUBDIR += cmocka
     SUBDIR += cmockery2
     SUBDIR += cmogstored
     SUBDIR += cmospwd
@@ -1116,8 +1117,8 @@
     SUBDIR += tren
     SUBDIR += ts
     SUBDIR += tss
-    SUBDIR += ttyd
     SUBDIR += tty-clock
+    SUBDIR += ttyd
     SUBDIR += ttyload
     SUBDIR += tuptime
     SUBDIR += tw_cli
