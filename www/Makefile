@@ -2073,8 +2073,8 @@
     SUBDIR += rubygem-underscore-rails
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-unicorn-worker-killer
-    SUBDIR += rubygem-url-mount
     SUBDIR += rubygem-url_escape
+    SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webkit-gtk
     SUBDIR += rubygem-webkit-gtk2
