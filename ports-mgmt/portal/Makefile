@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portal
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	culot@FreeBSD.org
@@ -9,7 +9,7 @@ COMMENT=	Front-end to pkg(8)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_9=	does not build: requires proper c++11 support (std::to_string)
+BROKEN_FreeBSD_9=	does not build: requires proper c++11 support
 BROKEN_powerpc64=	does not build
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -18,7 +18,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	culot
 
-USES=		compiler:c++11-lib
+USES=		ncurses compiler:c++11-lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
