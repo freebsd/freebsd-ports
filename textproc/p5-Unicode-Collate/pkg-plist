@@ -33,6 +33,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/gu.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ha.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/haw.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/he.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hi.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hr.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hu.pl
@@ -80,6 +81,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/uk.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ur.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/vi.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/vo.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/wae.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/wo.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/yo.pl
