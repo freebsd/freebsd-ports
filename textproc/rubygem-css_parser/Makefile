@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	css_parser
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.7
 CATEGORIES=	textproc www rubygems
 MASTER_SITES=	RG
 
