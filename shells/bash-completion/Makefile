@@ -10,6 +10,7 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
 
