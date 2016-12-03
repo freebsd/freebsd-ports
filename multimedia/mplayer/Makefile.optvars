@@ -98,6 +98,9 @@ SDL_USE=		SDL=sdl
 SDL_LIB_DEPENDS=	libaa.so:graphics/aalib
 SDL_CONFIGURE_OFF=	--disable-sdl
 
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_OFF=	--disable-sndio
+
 SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_OFF=	--disable-smb
 
