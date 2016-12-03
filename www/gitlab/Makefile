@@ -4,12 +4,14 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.11.11
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gem:devel/ruby-gems
 
@@ -168,8 +170,6 @@ GH_PROJECT=	gitlabhq
 
 USERS=	git
 GROUPS=	git
-
-.include <bsd.port.options.mk>
 
 NO_ARCH=	yes
 NO_BUILD=	yes
