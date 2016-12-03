@@ -110,6 +110,7 @@ include/dovecot/dict-sql.h
 include/dovecot/dict-transaction-memory.h
 include/dovecot/dict.h
 include/dovecot/dns-lookup.h
+include/dovecot/dns-util.h
 include/dovecot/doveadm-cmd.h
 include/dovecot/doveadm-dsync.h
 include/dovecot/doveadm-dump.h
@@ -522,8 +523,10 @@ include/dovecot/seq-range-array.h
 include/dovecot/service-settings.h
 include/dovecot/settings-parser.h
 include/dovecot/settings.h
+include/dovecot/sha-common.h
 include/dovecot/sha1.h
 include/dovecot/sha2.h
+include/dovecot/sha3.h
 include/dovecot/shared-storage.h
 include/dovecot/smtp-client.h
 include/dovecot/sort.h
@@ -570,6 +573,8 @@ lib/dovecot/doveadm/lib10_doveadm_quota_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.a
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
+lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.a
+lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so
 lib/dovecot/dovecot-config
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.so
@@ -577,12 +582,16 @@ lib/dovecot/lib02_imap_acl_plugin.a
 lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.a
 lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_mail_crypt_acl_plugin.a
+lib/dovecot/lib05_mail_crypt_acl_plugin.so
 lib/dovecot/lib05_pop3_migration_plugin.a
 lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.a
 lib/dovecot/lib05_snarf_plugin.so
 lib/dovecot/lib10_last_login_plugin.a
 lib/dovecot/lib10_last_login_plugin.so
+lib/dovecot/lib10_mail_crypt_plugin.a
+lib/dovecot/lib10_mail_crypt_plugin.so
 lib/dovecot/lib10_mail_filter_plugin.a
 lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.a
@@ -660,6 +669,10 @@ lib/dovecot/libdovecot.so.0
 lib/dovecot/libdovecot.so.0.0.0
 lib/dovecot/libfs_compress.a
 lib/dovecot/libfs_compress.so
+lib/dovecot/libfs_crypt.a
+lib/dovecot/libfs_crypt.so
+lib/dovecot/libfs_mail_crypt.a
+lib/dovecot/libfs_mail_crypt.so
 lib/dovecot/stats/libstats_auth.a
 lib/dovecot/stats/libstats_auth.so
 lib/dovecot/stats/libstats_mail.a
@@ -723,6 +736,7 @@ man/man1/doveadm-index.1.gz
 man/man1/doveadm-instance.1.gz
 man/man1/doveadm-kick.1.gz
 man/man1/doveadm-log.1.gz
+man/man1/doveadm-mailbox-cryptokey.1.gz
 man/man1/doveadm-mailbox.1.gz
 man/man1/doveadm-mount.1.gz
 man/man1/doveadm-move.1.gz
