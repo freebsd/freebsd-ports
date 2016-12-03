@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hipchat
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
