@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	octopress-hooks
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
