@@ -3,6 +3,7 @@
 
 PORTNAME=	visage-app
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +11,7 @@ MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Graph tool for Collectd
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	rubygem-errand>=0.7.3:devel/rubygem-errand \
 		rubygem-haml>=3.1.4:www/rubygem-haml \
