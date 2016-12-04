@@ -3,7 +3,7 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 MASTER_SITES=	https://github.com/bagder/libbrotli/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	devel archivers
