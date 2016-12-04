@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab_emoji
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
