@@ -55,7 +55,6 @@
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
-    SUBDIR += focuswriter-qt4
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += fxite
