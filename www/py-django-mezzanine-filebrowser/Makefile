@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-mezzanine-filebrowser
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,9 @@ COMMENT=	Fork of django-filebrowser for Mezzanine CMS
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
+
 USES=		gettext python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
