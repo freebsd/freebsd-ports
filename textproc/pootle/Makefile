@@ -18,7 +18,6 @@ RUN_DEPENDS=	translate-toolkit>=1.11.0:textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south\
 		${PYTHON_PKGNAMEPREFIX}cssmin>=0.1.4:www/py-cssmin \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.1.4:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>0.10:www/py-django-taggit \
 		${PYTHON_PKGNAMEPREFIX}django-assets>=0.8:www/py-django-assets \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south \
