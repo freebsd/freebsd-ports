@@ -3,6 +3,7 @@
 
 PORTNAME=	gevent
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,15 @@ TEST_WRKSRC=	${WRKSRC}/greentest
 USE_PYTHON=	autoplist concurrent distutils
 USES=		localbase python
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3000
+post-patch:
+	@${RM} ${WRKSRC}/gevent/_util_py2.py
+	@${REINPLACE_CMD} -e '/gevent._util_py2/d' ${WRKSRC}/gevent/hub.py
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gevent/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
