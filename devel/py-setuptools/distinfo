@@ -1,3 +1,3 @@
-TIMESTAMP = 1476238991
-SHA256 (python/setuptools-28.1.0.tar.gz) = 861c424c2b5464dc5f7d6283b69c458105bb9068fb8f28263df882a1a6599576
-SIZE (python/setuptools-28.1.0.tar.gz) = 640329
+TIMESTAMP = 1480888663
+SHA256 (python/setuptools-28.8.0.tar.gz) = 432a1ad4044338c34c2d09b0ff75d509b9849df8cf329f4c1c7706d9c2ba3c61
+SIZE (python/setuptools-28.8.0.tar.gz) = 646952
