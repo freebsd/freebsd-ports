@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -12,6 +12,7 @@ COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}
 
