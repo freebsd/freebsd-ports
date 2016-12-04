@@ -3,6 +3,7 @@
 
 PORTNAME=	netsurf
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -50,7 +51,8 @@ SHEBANG_FILES=	utils/split-messages.pl
 perl_CMD=	${SETENV} perl
 
 OPTIONS_DEFINE=	GSTREAMER
-GSTREAMER_USE=		GSTREAMER=yes
+OPTIONS_EXCLUDE=	GSTREAMER
+GSTREAMER_USE=		GSTREAMER=yes, good
 
 .include <bsd.port.pre.mk>
 
