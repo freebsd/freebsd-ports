@@ -1,0 +1,62 @@
+From 71a389ae940bc52bf897a6e5becd73fd8ede94c5 Mon Sep 17 00:00:00 2001
+From: Ian Jackson <ian.jackson@eu.citrix.com>
+Date: Thu, 3 Nov 2016 16:37:40 +0000
+Subject: [PATCH] pygrub: Properly quote results, when returning them to the
+ caller:
+
+* When the caller wants sexpr output, use `repr()'
+  This is what Xend expects.
+
+  The returned S-expressions are now escaped and quoted by Python,
+  generally using '...'.  Previously kernel and ramdisk were unquoted
+  and args was quoted with "..." but without proper escaping.  This
+  change may break toolstacks which do not properly dequote the
+  returned S-expressions.
+
+* When the caller wants "simple" output, crash if the delimiter is
+  contained in the returned value.
+
+  With --output-format=simple it does not seem like this could ever
+  happen, because the bootloader config parsers all take line-based
+  input from the various bootloader config files.
+
+  With --output-format=simple0, this can happen if the bootloader
+  config file contains nul bytes.
+
+This is XSA-198.
+
+Signed-off-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+Tested-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+ tools/pygrub/src/pygrub | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/tools/pygrub/src/pygrub b/tools/pygrub/src/pygrub
+index 40f9584..dd0c8f7 100755
+--- a/tools/pygrub/src/pygrub
++++ b/tools/pygrub/src/pygrub
+@@ -721,14 +721,17 @@ def sniff_netware(fs, cfg):
+     return cfg
+ 
+ def format_sxp(kernel, ramdisk, args):
+-    s = "linux (kernel %s)" % kernel
++    s = "linux (kernel %s)" % repr(kernel)
+     if ramdisk:
+-        s += "(ramdisk %s)" % ramdisk
++        s += "(ramdisk %s)" % repr(ramdisk)
+     if args:
+-        s += "(args \"%s\")" % args
++        s += "(args %s)" % repr(args)
+     return s
+                 
+ def format_simple(kernel, ramdisk, args, sep):
++    for check in (kernel, ramdisk, args):
++        if check is not None and sep in check:
++            raise RuntimeError, "simple format cannot represent delimiter-containing value"
+     s = ("kernel %s" % kernel) + sep
+     if ramdisk:
+         s += ("ramdisk %s" % ramdisk) + sep
+-- 
+2.1.4
+

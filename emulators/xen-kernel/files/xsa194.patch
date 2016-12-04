@@ -1,0 +1,144 @@
+From 71096b016f7fd54a72af73576948cb25cf42ebcb Mon Sep 17 00:00:00 2001
+From: Roger Pau Monné <roger.pau@citrix.com>Date: Wed, 2 Nov 2016 15:02:00 +0000
+Subject: [PATCH] libelf: fix stack memory leak when loading 32 bit symbol
+ tables
+
+The 32 bit Elf structs are smaller than the 64 bit ones, which means that
+when loading them there's some padding left uninitialized at the end of each
+struct (because the size indicated in e_ehsize and e_shentsize is
+smaller than the size of elf_ehdr and elf_shdr).
+
+Fix this by introducing a new helper that is used to set
+[caller_]xdest_{base/size} and that takes care of performing the appropriate
+memset of the region. This newly introduced helper is then used to set and
+unset xdest_{base/size} in elf_load_bsdsyms. Now that the full struct
+is zeroed, there's no need to specifically zero the undefined section.
+
+This is XSA-194.
+
+Suggested-by: Ian Jackson <ian.jackson@eu.citrix.com>
+
+Also remove the open coded (and redundant with the earlier
+elf_memset_unchecked()) use of caller_xdest_* from elf_init().
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+---
+ xen/common/libelf/libelf-loader.c | 14 +++-----------
+ xen/common/libelf/libelf-tools.c  | 11 +++++++++--
+ xen/include/xen/libelf.h          | 15 +++++++++------
+ 3 files changed, 21 insertions(+), 19 deletions(-)
+
+diff --git a/xen/common/libelf/libelf-loader.c b/xen/common/libelf/libelf-loader.c
+index 4d3ae4d..bc1f87b 100644
+--- a/xen/common/libelf/libelf-loader.c
++++ b/xen/common/libelf/libelf-loader.c
+@@ -43,8 +43,6 @@ elf_errorstatus elf_init(struct elf_binary *elf, const char *image_input, size_t
+     elf->ehdr = ELF_MAKE_HANDLE(elf_ehdr, (elf_ptrval)image_input);
+     elf->class = elf_uval_3264(elf, elf->ehdr, e32.e_ident[EI_CLASS]);
+     elf->data = elf_uval_3264(elf, elf->ehdr, e32.e_ident[EI_DATA]);
+-    elf->caller_xdest_base = NULL;
+-    elf->caller_xdest_size = 0;
+ 
+     /* Sanity check phdr. */
+     offset = elf_uval(elf, elf->ehdr, e_phoff) +
+@@ -284,9 +282,8 @@ do {                                                                \
+ #define SYMTAB_INDEX    1
+ #define STRTAB_INDEX    2
+ 
+-    /* Allow elf_memcpy_safe to write to symbol_header. */
+-    elf->caller_xdest_base = &header;
+-    elf->caller_xdest_size = sizeof(header);
++    /* Allow elf_memcpy_safe to write to header. */
++    elf_set_xdest(elf, &header, sizeof(header));
+ 
+     /*
+      * Calculate the position of the various elements in GUEST MEMORY SPACE.
+@@ -319,11 +316,7 @@ do {                                                                \
+     elf_store_field_bitness(elf, header_handle, e_phentsize, 0);
+     elf_store_field_bitness(elf, header_handle, e_phnum, 0);
+ 
+-    /* Zero the undefined section. */
+-    section_handle = ELF_MAKE_HANDLE(elf_shdr,
+-                     ELF_REALPTR2PTRVAL(&header.elf_header.section[SHN_UNDEF]));
+     shdr_size = elf_uval(elf, elf->ehdr, e_shentsize);
+-    elf_memset_safe(elf, ELF_HANDLE_PTRVAL(section_handle), 0, shdr_size);
+ 
+     /*
+      * The symtab section header is going to reside in section[SYMTAB_INDEX],
+@@ -404,8 +397,7 @@ do {                                                                \
+     }
+ 
+     /* Remove permissions from elf_memcpy_safe. */
+-    elf->caller_xdest_base = NULL;
+-    elf->caller_xdest_size = 0;
++    elf_set_xdest(elf, NULL, 0);
+ 
+ #undef SYMTAB_INDEX
+ #undef STRTAB_INDEX
+diff --git a/xen/common/libelf/libelf-tools.c b/xen/common/libelf/libelf-tools.c
+index 5a4757b..e73e729 100644
+--- a/xen/common/libelf/libelf-tools.c
++++ b/xen/common/libelf/libelf-tools.c
+@@ -59,8 +59,7 @@ bool elf_access_ok(struct elf_binary * elf,
+         return 1;
+     if ( elf_ptrval_in_range(ptrval, size, elf->dest_base, elf->dest_size) )
+         return 1;
+-    if ( elf_ptrval_in_range(ptrval, size,
+-                             elf->caller_xdest_base, elf->caller_xdest_size) )
++    if ( elf_ptrval_in_range(ptrval, size, elf->xdest_base, elf->xdest_size) )
+         return 1;
+     elf_mark_broken(elf, "out of range access");
+     return 0;
+@@ -373,6 +372,14 @@ bool elf_phdr_is_loadable(struct elf_binary *elf, ELF_HANDLE_DECL(elf_phdr) phdr
+     return ((p_type == PT_LOAD) && (p_flags & (PF_R | PF_W | PF_X)) != 0);
+ }
+ 
++void elf_set_xdest(struct elf_binary *elf, void *addr, uint64_t size)
++{
++    elf->xdest_base = addr;
++    elf->xdest_size = size;
++    if ( addr != NULL )
++        elf_memset_safe(elf, ELF_REALPTR2PTRVAL(addr), 0, size);
++}
++
+ /*
+  * Local variables:
+  * mode: C
+diff --git a/xen/include/xen/libelf.h b/xen/include/xen/libelf.h
+index 95b5370..cf62bc7 100644
+--- a/xen/include/xen/libelf.h
++++ b/xen/include/xen/libelf.h
+@@ -210,13 +210,11 @@ struct elf_binary {
+     uint64_t bsd_symtab_pend;
+ 
+     /*
+-     * caller's other acceptable destination
+-     *
+-     * Again, these are trusted and must be valid (or 0) so long
+-     * as the struct elf_binary is in use.
++     * caller's other acceptable destination.
++     * Set by elf_set_xdest.  Do not set these directly.
+      */
+-    void *caller_xdest_base;
+-    uint64_t caller_xdest_size;
++    void *xdest_base;
++    uint64_t xdest_size;
+ 
+ #ifndef __XEN__
+     /* misc */
+@@ -494,5 +492,10 @@ static inline void ELF_ADVANCE_DEST(struct elf_binary *elf, uint64_t amount)
+     }
+ }
+ 
++/* Specify a (single) additional destination, to which the image may
++ * cause writes.  As with dest_base and dest_size, the values provided
++ * are trusted and must be valid so long as the struct elf_binary
++ * is in use or until elf_set_xdest(,0,0) is called. */
++void elf_set_xdest(struct elf_binary *elf, void *addr, uint64_t size);
+ 
+ #endif /* __XEN_LIBELF_H__ */
+-- 
+2.1.4
+

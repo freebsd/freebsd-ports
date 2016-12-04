@@ -2,10 +2,10 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-PORTVERSION=	4.7.0
-PORTREVISION=   3
+PORTVERSION=	4.7.1
+PORTREVISION=   0
 CATEGORIES=	emulators
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
+MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -40,9 +40,11 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
 		${FILESDIR}/kconf_arch.patch:-p1 \
-		${FILESDIR}/xsa182-unstable.patch:-p1 \
-		${FILESDIR}/xsa183-unstable.patch:-p1
-
+		${FILESDIR}/xsa191.patch \
+		${FILESDIR}/xsa192.patch \
+		${FILESDIR}/xsa193-4.7.patch \
+		${FILESDIR}/xsa194.patch \
+		${FILESDIR}/xsa195.patch
 
 .include <bsd.port.options.mk>
 
