@@ -321,7 +321,6 @@
     SUBDIR += gtimelapse
     SUBDIR += gtk-update-icon-cache
     SUBDIR += gtkam
-    SUBDIR += gtkdps
     SUBDIR += gts
     SUBDIR += guilib
     SUBDIR += gwenview-kde4

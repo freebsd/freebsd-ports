@@ -165,7 +165,6 @@
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gregexp
-    SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gwhich
     SUBDIR += hb

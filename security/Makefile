@@ -187,7 +187,6 @@
     SUBDIR += greenbone-security-assistant
     SUBDIR += gringotts
     SUBDIR += gsasl
-    SUBDIR += gsfv
     SUBDIR += gss
     SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtk-knocker

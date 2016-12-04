@@ -8817,3 +8817,6 @@ audio/lv2core|audio/lv2|2016-11-30|Has expired: Superseded by audio/lv2
 java/jakarta-struts||2016-12-01|Has expired: Port is unmaintained and has known security vulnerabilites
 www/rubygem-url-mount|www/rubygem-url_mount|2016-12-03|Rename to match our rubygems naming
 editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, use editors/focuswriter instead
+graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
+security/gsfv||2016-12-04|Has expired: No more upstream.
+misc/grun||2016-12-04|Has expired: No more upstream.
