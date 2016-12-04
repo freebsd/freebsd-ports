@@ -20,7 +20,6 @@ RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \

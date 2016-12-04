@@ -15,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>0:www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}markdown2>0:textproc/py-markdown2 \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}boto>=2.4.1:devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}tornado>=3.2:www/py-tornado \
 		${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog \
