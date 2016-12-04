@@ -37,7 +37,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.5.jar
+%%T%%/lib/ecj-4.5.1.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -198,7 +198,7 @@
 %%T%%/webapps/docs/logging.html
 %%T%%/webapps/docs/manager-howto.html
 %%T%%/webapps/docs/maven-jars.html
-%%T%%/webapps/docs/mbeans-descriptor-howto.html
+%%T%%/webapps/docs/mbeans-descriptors-howto.html
 %%T%%/webapps/docs/monitoring.html
 %%T%%/webapps/docs/proxy-howto.html
 %%T%%/webapps/docs/realm-howto.html
