@@ -36,6 +36,9 @@ include/brotli/enc/transform.h
 include/brotli/enc/types.h
 include/brotli/enc/utf8_util.h
 include/brotli/enc/write_bits.h
+include/brotli/enc/compress_fragment.h
+include/brotli/enc/compress_fragment_two_pass.h
+include/brotli/enc/entropy_encode_static.h
 lib/libbrotlidec.a
 lib/libbrotlidec.so
 lib/libbrotlidec.so.1
