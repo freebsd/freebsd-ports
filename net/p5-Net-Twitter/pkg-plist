@@ -23,7 +23,9 @@
 %%SITE_PERL%%/Net/Twitter/Role/RetryOnError.pm
 %%SITE_PERL%%/Net/Twitter/Role/SimulateCursors.pm
 %%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
+%%SITE_PERL%%/Net/Twitter/Role/WrapResult.pm
 %%SITE_PERL%%/Net/Twitter/Search.pm
+%%SITE_PERL%%/Net/Twitter/WrappedResult.pm
 %%PERL5_MAN3%%/Net::Identica.3.gz
 %%PERL5_MAN3%%/Net::Twitter.3.gz
 %%PERL5_MAN3%%/Net::Twitter::API.3.gz
@@ -48,4 +50,6 @@
 %%PERL5_MAN3%%/Net::Twitter::Role::RetryOnError.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::SimulateCursors.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::WrapError.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Role::WrapResult.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Search.3.gz
+%%PERL5_MAN3%%/Net::Twitter::WrappedResult.3.gz
