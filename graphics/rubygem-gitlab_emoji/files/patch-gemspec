@@ -1,0 +1,11 @@
+--- gitlab_emoji.gemspec.orig	2016-12-04 18:30:27 UTC
++++ gitlab_emoji.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<gemojione>.freeze, [">= 2.2.1", "~> 2.2"])
++      s.add_runtime_dependency(%q<gemojione>.freeze, [">= 2.2.1"])
+     else
+       s.add_dependency(%q<gemojione>.freeze, [">= 2.2.1", "~> 2.2"])
+     end
