@@ -18,6 +18,8 @@ LIB_DEPENDS=	librsync.so:net/librsync1
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
+PORTSCOUT=	limitw:1,even
+
 USES=		python
 USE_PYTHON=	distutils
 USE_LDCONFIG=	yes
