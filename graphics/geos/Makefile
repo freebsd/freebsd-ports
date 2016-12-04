@@ -3,6 +3,7 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
