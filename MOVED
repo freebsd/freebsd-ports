@@ -8820,3 +8820,4 @@ editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, 
 graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
 security/gsfv||2016-12-04|Has expired: No more upstream.
 misc/grun||2016-12-04|Has expired: No more upstream.
+devel/py-argparse||2016-12-04|Has expired: Part of Python standard library for Python >= 2.7 and >= 3.2
