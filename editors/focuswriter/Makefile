@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	focuswriter
-PORTVERSION=	1.5.7
+PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	lightside@gmx.com
@@ -20,7 +19,10 @@ LIB_DEPENDS=	libhunspell-1.5.so:textproc/hunspell
 USE_GITHUB=	yes
 GH_ACCOUNT=	gottcode
 
-USES=		desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
+USE_GL=		gl
+USE_QT5=	concurrent core gui multimedia network printsupport widgets \
+		buildtools_build linguisttools_build
 INSTALLS_ICONS=	yes
 
 LIBS+=		-lz
@@ -28,21 +30,23 @@ LIBS+=		-lz
 PORTDATA=	*
 PORTDOCS=	CREDITS NEWS README
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	QT5
-OPTIONS_SINGLE=		QT
-OPTIONS_SINGLE_QT=	QT4 QT5
-QT_DESC=		Qt toolkit
+OPTIONS_DEFINE=	DOCS
 
-QT4_RUN_DEPENDS=	${LOCALBASE}/lib/libSDL2_mixer.so:audio/sdl2_mixer
-QT4_USE=	QT4=corelib,gui,network,moc_build,rcc_build
-QT5_USE=	QT5=concurrent,core,gui,multimedia,network,printsupport,widgets,buildtools_build
-QT5_USE+=	GL=gl
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PKGCONFIG/s/ zlib// ; \
 		/INSTALLS/s/man //' \
 		${WRKSRC}/focuswriter.pro
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
+	@${REINPLACE_CMD} -e 's/std::lround/lround/g' \
+		${WRKSRC}/src/daily_progress_dialog.cpp \
+		${WRKSRC}/src/scene_list.cpp \
+		${WRKSRC}/src/theme_dialog.cpp \
+		${WRKSRC}/src/fileformats/docx_reader.cpp \
+		${WRKSRC}/src/fileformats/odt_reader.cpp \
+		${WRKSRC}/src/fileformats/rtf_reader.cpp
+.endif
 
 do-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
@@ -51,4 +55,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/resources/unix/focuswriter.1 \
 		${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,6 +2,7 @@ bin/focuswriter
 man/man1/focuswriter.1.gz
 share/appdata/focuswriter.appdata.xml
 share/applications/focuswriter.desktop
+share/icons/hicolor/1024x1024/apps/focuswriter.png
 share/icons/hicolor/128x128/apps/focuswriter.png
 share/icons/hicolor/16x16/apps/focuswriter.png
 share/icons/hicolor/22x22/apps/focuswriter.png
@@ -9,6 +10,7 @@ share/icons/hicolor/24x24/apps/focuswriter.png
 share/icons/hicolor/256x256/apps/focuswriter.png
 share/icons/hicolor/32x32/apps/focuswriter.png
 share/icons/hicolor/48x48/apps/focuswriter.png
+share/icons/hicolor/512x512/apps/focuswriter.png
 share/icons/hicolor/64x64/apps/focuswriter.png
 share/icons/hicolor/scalable/apps/focuswriter.svg
 share/pixmaps/focuswriter.xpm
