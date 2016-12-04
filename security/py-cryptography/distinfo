@@ -1,3 +1,3 @@
-TIMESTAMP = 1471010865
-SHA256 (cryptography-1.4.tar.gz) = bb149540ed90c4b2171bf694fe6991d6331bc149ae623c8ff419324f4222d128
-SIZE (cryptography-1.4.tar.gz) = 399707
+TIMESTAMP = 1480367088
+SHA256 (cryptography-1.6.tar.gz) = 4d0d86d2c8d3fc89133c3fa0d164a688a458b6663ab6fa965c80d6c2cdaf9b3f
+SIZE (cryptography-1.6.tar.gz) = 410073
