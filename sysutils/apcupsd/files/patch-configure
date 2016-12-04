@@ -1,9 +1,28 @@
---- configure.orig	2015-01-04 20:35:43 UTC
+--- configure.orig	2016-04-18 20:26:31 UTC
 +++ configure
-@@ -12678,53 +12678,6 @@ $as_echo "$as_me: error: gethostbyname_r
+@@ -10584,7 +10584,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+- #include <tcpd.h>
++ #include "tcpd.h"
+               int deny_severity = 0;
+               int allow_severity = 0;
+               struct request_info *req;
+@@ -10636,7 +10636,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+- #include <tcpd.h>
++ #include "tcpd.h"
+                    int deny_severity = 0;
+                    int allow_severity = 0;
+                    struct request_info *req;
+@@ -12397,55 +12397,6 @@ $as_echo "$as_me: error: gethostbyname_r
+    ;;
  esac
  
- if test -n "$GCC"; then
+-if test -n "$GCC"; then
 -   # Starting with GCC 3.0, you must link C++ programs against either
 -   # libstdc++ (shared by default), or libsupc++ (always static).  If
 -   # you care about binary portability between Linux distributions,
@@ -50,7 +69,8 @@
 -      esac
 -      ;;
 -   esac
+-fi
 -
-    # See if GCC supports -fno-exceptions...
-    { $as_echo "$as_me:$LINENO: checking if GCC supports -fno-exceptions" >&5
- $as_echo_n "checking if GCC supports -fno-exceptions... " >&6; }
+ { $as_echo "$as_me:$LINENO: checking whether C compiler accepts -fno-exceptions" >&5
+ $as_echo_n "checking whether C compiler accepts -fno-exceptions... " >&6; }
+ if test "${ax_cv_check_cflags___fno_exceptions+set}" = set; then
