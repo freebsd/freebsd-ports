@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexpy
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.16
 PORTREVISION=	0
 CATEGORIES=	multimedia python
 DISTVERSIONPREFIX=v
@@ -27,6 +27,7 @@ python_OLD_CMD=	/bin/sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	drzoidberg33
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/plexpy
