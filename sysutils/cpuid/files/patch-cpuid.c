@@ -1,4 +1,4 @@
---- cpuid.c.orig	2016-11-14 01:57:53 UTC
+--- cpuid.c.orig	2016-11-30 14:34:23 UTC
 +++ cpuid.c
 @@ -23,6 +23,8 @@
  #define USE_KERNEL_SCHED_SETAFFINITY
@@ -18,7 +18,15 @@
  
  #ifdef USE_CPUID_MODULE
  #include <linux/major.h>
-@@ -6471,11 +6475,16 @@ real_setup(unsigned int  cpu,
+@@ -58,6 +62,7 @@ typedef const char* const  ccstring;
+ #define XSTR(x)  STR(x)
+ 
+ 
++#undef MAX
+ #define MAX(l,r)            ((l) > (r) ? (l) : (r))
+ 
+ #define LENGTH(array, type) (sizeof(array) / sizeof(type))
+@@ -6471,11 +6476,16 @@ real_setup(unsigned int  cpu,
           int  status;
           status = syscall(__NR_sched_setaffinity, 0, sizeof(mask), &mask);
  #else
@@ -37,7 +45,7 @@
  #endif
           if (status == -1) {
              if (cpu > 0) {
-@@ -6590,11 +6599,14 @@ static int real_get (int           cpuid
+@@ -6590,11 +6600,14 @@ static int real_get (int           cpuid
            : "a" (reg), 
              "c" (ecx));
     } else {
@@ -55,7 +63,7 @@
        if (result == -1) {
           if (quiet) {
              return FALSE;
-@@ -7134,7 +7146,7 @@ main(int     argc,
+@@ -7138,7 +7151,7 @@ main(int     argc,
     };
  
     boolean        opt_one_cpu     = FALSE;
@@ -64,7 +72,7 @@
     boolean        opt_kernel      = FALSE;
     boolean        opt_raw         = FALSE;
     boolean        opt_debug       = FALSE;
-@@ -7264,7 +7276,8 @@ main(int     argc,
+@@ -7268,7 +7281,8 @@ main(int     argc,
     }
  
     // Default to -i.  So use inst unless -k is specified.
