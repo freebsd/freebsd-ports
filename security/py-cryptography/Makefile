@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptography
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4.1:devel/py-six \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}iso8601>0:devel/py-iso8601
 
-USES=		python
-USE_OPENSSL=	yes
+USES=		python ssl
 USE_PYTHON=	autoplist distutils
 
 CFLAGS+=	-I${OPENSSLINC}
