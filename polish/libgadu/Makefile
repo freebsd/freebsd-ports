@@ -3,6 +3,7 @@
 
 PORTNAME=	libgadu
 PORTVERSION=	1.12.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 
@@ -12,7 +13,8 @@ COMMENT=	Instant messaging library for Gadu-Gadu protocol
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c
+LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
+		libgnutls.so:security/gnutls
 
 CONFLICTS=	pl-ekg-1.[0-6]*
 
@@ -22,7 +24,7 @@ GH_ACCOUNT=	wojtekka
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
-		--disable-tests --without-gnutls
+		--disable-tests
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -31,15 +33,5 @@ PLIST_FILES=	include/libgadu.h \
 		lib/libgadu.so.3 \
 		lib/libgadu.so.3.13.0 \
 		libdata/pkgconfig/libgadu.pc
-
-OPTIONS_DEFINE=	OPENSSL
-OPTIONS_DEFAULT=OPENSSL
-
-OPENSSL_CONFIGURE_WITH=	openssl
-OPENSSL_USES=		ssl
-
-pre-install-OPENSSL-on:
-# OpenSSL from base system lacks .pc file for pkgconfig
-	@${REINPLACE_CMD} -e 's|openssl| |g' ${WRKSRC}/pkgconfig/libgadu.pc
 
 .include <bsd.port.mk>
