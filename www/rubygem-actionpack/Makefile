@@ -3,6 +3,7 @@
 
 PORTNAME=	actionpack
 PORTVERSION=	3.2.22.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,9 +18,9 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:databases/rubygem-activemodel \
 		rubygem-builder>=3.0.0:devel/rubygem-builder \
 		rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-journey>=1.0.4:www/rubygem-journey \
-		rubygem-rack>=1.4.5:www/rubygem-rack \
 		rubygem-rack-cache>=1.2:www/rubygem-rack-cache \
 		rubygem-rack-test>=0.6.1:www/rubygem-rack-test \
+		rubygem-rack14>=1.4.5:www/rubygem-rack14 \
 		rubygem-sprockets22>=2.2.1:devel/rubygem-sprockets22
 
 NO_ARCH=	yes
