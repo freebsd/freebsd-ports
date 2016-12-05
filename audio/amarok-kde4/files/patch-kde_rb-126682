@@ -1,0 +1,85 @@
+# Fix build with FFmpeg 3.x; obtained from https://git.reviewboard.kde.org/r/126682
+#
+--- src/musicbrainz/MusicDNSAudioDecoder.cpp
++++ src/musicbrainz/MusicDNSAudioDecoder.cpp
+@@ -243,7 +243,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+             {
+                 if( !decodedFrame )
+                 {
+-                    decodedFrame = avcodec_alloc_frame();
++                    decodedFrame = av_frame_alloc();
+                     if( !decodedFrame )
+                     {
+                         warning() << "Unable to allocate enough memory to decode file.";
+@@ -251,7 +251,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+                         break;
+                     }
+                     else
+-                        avcodec_get_frame_defaults( decodedFrame );
++                        av_frame_unref( decodedFrame );
+                 }
+ 
+                 decoderRet = avcodec_decode_audio4( pCodecCtx, decodedFrame, &gotFrame, &avpkt );
+@@ -287,7 +287,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+ 
+     avcodec_close( pCodecCtx );
+     avformat_close_input( &pFormatCtx );
+-    av_free( decodedFrame );
++    av_frame_free( &decodedFrame );
+ 
+     return data->duration();
+ }
+@@ -361,7 +361,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+             {
+                 if( !decodedFrame )
+                 {
+-                    decodedFrame = avcodec_alloc_frame();
++                    decodedFrame = av_frame_alloc();
+                     if( !decodedFrame )
+                     {
+                         warning() << "Unable to allocate enough memory to decode file.";
+@@ -369,7 +369,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+                         break;
+                     }
+                     else
+-                        avcodec_get_frame_defaults( decodedFrame );
++                        av_frame_unref( decodedFrame );
+                 }
+ 
+                 decoderRet = avcodec_decode_audio4( pCodecCtx, decodedFrame, &gotFrame, &avpkt );
+@@ -405,7 +405,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+ 
+     avcodec_close( pCodecCtx );
+     avformat_close_input( &pFormatCtx );
+-    av_free( decodedFrame );
++    av_frame_free( &decodedFrame );
+ 
+     return data->duration();
+ }
+@@ -479,7 +479,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+             {
+                 if( !decodedFrame )
+                 {
+-                    decodedFrame = avcodec_alloc_frame();
++                    decodedFrame = av_frame_alloc();
+                     if( !decodedFrame )
+                     {
+                         warning() << "Unable to allocate enough memory to decode file.";
+@@ -487,7 +487,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+                         break;
+                     }
+                     else
+-                        avcodec_get_frame_defaults( decodedFrame );
++                        av_frame_unref( decodedFrame );
+                 }
+ 
+                 decoderRet = avcodec_decode_audio4( pCodecCtx, decodedFrame, &gotFrame, &avpkt );
+@@ -523,7 +523,7 @@ MusicDNSAudioDecoder::decode( const QString &fileName, DecodedAudioData *data, c
+ 
+     avcodec_close( pCodecCtx );
+     av_close_input_file( pFormatCtx );
+-    av_free( decodedFrame );
++    av_frame_free( &decodedFrame );
+ 
+     return data->duration();
+ }
