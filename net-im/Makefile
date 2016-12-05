@@ -148,6 +148,7 @@
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
+    SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts
     SUBDIR += ricochet
     SUBDIR += ring-daemon
