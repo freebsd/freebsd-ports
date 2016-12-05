@@ -22,10 +22,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:dev
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
 		${KDE_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
-USES=		cmake kde:4 pkgconfig shared-mime-info shebangfix tar:bzip2
+USES=		cmake kde:4 mysql:embedded pkgconfig shared-mime-info shebangfix tar:bzip2
 USE_KDE=	kdelibs libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
-USE_MYSQL=	embedded
 USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
