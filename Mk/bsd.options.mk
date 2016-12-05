@@ -153,6 +153,8 @@
 .if !defined(OPTIONSMKINCLUDED)
 OPTIONSMKINCLUDED=	bsd.options.mk
 
+.include "bsd.hardening.mk"
+
 OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
 OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 

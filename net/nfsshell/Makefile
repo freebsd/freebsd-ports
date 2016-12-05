@@ -20,6 +20,8 @@ MAKE_ARGS=	CC="${CC}" LIBS="-lreadline ${LDFLAGS}"
 
 PLIST_FILES=	bin/nfsshell
 
+NOPIE_PORTS=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nfsshell ${STAGEDIR}${PREFIX}/bin/nfsshell
 

@@ -12,6 +12,8 @@ COMMENT=	Slightly improved screen locker based on slock
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+EXPLICIT_SAFESTACK=	yes
+
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-image.so:x11/xcb-util-image \

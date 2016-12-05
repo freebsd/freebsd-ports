@@ -25,6 +25,8 @@ DOCS_DESC=	Install HTML documentation
 USES=		gmake
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+
 VERSION_BASE=	${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${VERSION_BASE}

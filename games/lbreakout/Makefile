@@ -18,6 +18,8 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 LIBS+=		-lcompat
 
+NOPIE_PORTS=	yes
+
 pre-install:
 	${MKDIR} ${STAGEDIR}/var/games/${PORTNAME}
 

@@ -20,6 +20,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	HDF5 SZIP TESTS TOOLS
 HDF5_DESC=	Enable HDF5 interface
 TESTS_DESC=	Enable test programs

@@ -20,6 +20,8 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 USES=		autoreconf libarchive tar:bzip2
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
 PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
 

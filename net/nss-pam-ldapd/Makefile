@@ -23,6 +23,9 @@ NSS_LDAP_SHMAJOR=	1
 PKGMESSAGE=		${WRKDIR}/pkg-message
 SUB_FILES+=		pkg-message
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 

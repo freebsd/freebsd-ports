@@ -33,9 +33,14 @@ OPTIONS_DEFAULT=SUID DEVD
 
 OPTIONS_EXCLUDE_sparc64=	HAL
 
+# HardenedBSD note:
+# Due to how xorg handles loadable modules, it cannot be compiled
+# with RELRO + BIND_NOW.
+NORELRO_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
-USES=		gmake libtool perl5 tar:bzip2
+USES+=		gmake libtool perl5 tar:bzip2
 USE_PERL5=	build
 USE_GL=		gbm egl gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \

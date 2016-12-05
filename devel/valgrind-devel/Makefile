@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BB_COMMIT=	ce1acb28953f
 BB_ACCOUNT=	stass
 BB_PROJECT=	valgrind-freebsd

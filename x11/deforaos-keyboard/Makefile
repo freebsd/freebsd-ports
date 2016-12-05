@@ -21,4 +21,6 @@ USES=		desktop-file-utils gettext pkgconfig
 USE_XORG=	xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

@@ -29,6 +29,9 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 OPTIONS_SUB=		yes
 

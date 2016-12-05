@@ -14,6 +14,9 @@ COMMENT=	Edinburgh-style Prolog compiler
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libodbc.so:databases/unixODBC
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes

@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GC_TAGNAME=	6d01e82
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	EXAMPLES
 
 BROKEN_FreeBSD_9=Does not build on 9.x: compiler options unrecognized

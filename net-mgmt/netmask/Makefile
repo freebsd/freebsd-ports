@@ -15,6 +15,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 GNU_CONFIGURE=	yes
 USES=		gmake
 
+NOPIE_PORTS=	yes
+
 INFO=		netmask
 PLIST_FILES=	bin/netmask \
 		man/man1/netmask.1.gz

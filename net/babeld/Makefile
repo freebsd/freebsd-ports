@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 MAKE_ARGS=	CDEBUGFLAGS="-O2 -g -Wall"
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/babeld \
 		man/man8/babeld.8.gz
 

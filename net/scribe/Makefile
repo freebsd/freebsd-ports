@@ -33,6 +33,9 @@ CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem \
 		PY_PREFIX="${PREFIX}"
 USE_RC_SUBR=	${PORTNAME}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/^AM_INIT_AUTOMAKE/#/' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/boost/! s/shared_ptr/boost::&/g' \

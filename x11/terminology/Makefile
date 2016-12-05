@@ -12,6 +12,8 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE
 
+EXPLICIT_SAFESTACK=	yes
+
 LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment

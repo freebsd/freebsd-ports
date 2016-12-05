@@ -22,6 +22,8 @@ LICENSE_FILE_IPL=	${WRKSRC}/builds/install/misc/IPLicense.txt
 LICENSE_PERMS_IDPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+NOPIE_PORTS=	yes
+
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USES=		cpe gmake pkgconfig tar:bzip2

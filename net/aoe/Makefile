@@ -18,6 +18,9 @@ KMODDIR=	${PREFIX}/lib/aoe
 
 USE_RC_SUBR=	aoe
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BROKEN_aarch64=		Fails to compile: error: redefinition of frame
 BROKEN_sparc64=		Fails to compile: error: redefinition of frame
 

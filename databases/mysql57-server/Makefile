@@ -20,6 +20,9 @@ SLAVEDIRS=	databases/mysql57-client
 USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix ssl
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 USE_PERL5=	run
 
 MY_DBDIR=	/var/db/mysql
@@ -158,6 +161,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
 
+post-stage:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}

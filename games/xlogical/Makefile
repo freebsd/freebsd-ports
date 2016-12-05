@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USES=		autoreconf dos2unix gmake tar:bzip2
 USE_SDL=	sdl image mixer
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:

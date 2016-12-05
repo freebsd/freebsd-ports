@@ -16,6 +16,8 @@ RUN_DEPENDS=	ebook2cw:comms/ebook2cw
 USE_WX=	2.8
 WX_UNICODE=	yes
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	*
 
 post-patch:

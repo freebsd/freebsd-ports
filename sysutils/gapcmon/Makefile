@@ -18,6 +18,8 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

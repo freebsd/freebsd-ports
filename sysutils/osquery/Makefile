@@ -40,6 +40,8 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 1000000
@@ -69,6 +71,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/deployment/osquery.example.conf \
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
+post-stage:
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 
 .include <bsd.port.post.mk>

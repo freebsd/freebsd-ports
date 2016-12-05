@@ -19,6 +19,9 @@ BB_PROJECT=	valgrind-freebsd
 
 LICENSE=	GPLv2
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CONFLICTS=	valgrind-devel-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

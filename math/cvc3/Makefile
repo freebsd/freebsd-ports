@@ -24,6 +24,8 @@ PATHFIX_MAKEFILEIN=	Makefile
 USE_GCC=	any
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/Makefile.std
 	${REINPLACE_CMD} -e 's,.*$$(LDCONFIG).*,,' ${WRKSRC}/src/Makefile

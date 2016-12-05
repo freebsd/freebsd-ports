@@ -17,6 +17,9 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 
 USES=		fortran gmake
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>

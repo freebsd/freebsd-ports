@@ -1,5 +1,8 @@
 # $FreeBSD$
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include "Makefile.version"
 
 LIB_DEPENDS=		libgmp.so:math/gmp

@@ -16,6 +16,8 @@ USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
 ALL_TARGET=	all
 
+NOPIE_PORTS=	yes
+
 USERS=		spread
 GROUPS=		spread
 RUNDIR=		/var/run/spread

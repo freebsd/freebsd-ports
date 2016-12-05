@@ -14,6 +14,8 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application designed for the dwm window manager
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

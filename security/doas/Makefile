@@ -9,6 +9,8 @@ COMMENT=	Simple sudo alternative to run commands as another user
 
 LICENSE=	ISCL
 
+EXPLICIT_SAFESTACK=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	slicer69
 GH_PROJECT=	doas

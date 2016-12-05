@@ -20,6 +20,9 @@ MAKE_JOBS_UNSAFE=	yes
 USES=			kmod libedit pkgconfig uidfix
 USE_RC_SUBR=		cx88d
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
 DEBUG_DESC=		Enable debugging and verbose driver output

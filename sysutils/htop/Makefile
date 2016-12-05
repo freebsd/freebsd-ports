@@ -10,6 +10,8 @@ COMMENT=	Better top(1) - interactive process viewer
 
 LICENSE=	GPLv2
 
+EXPLICIT_SAFESTACK=		yes
+
 RUN_DEPENDS=	lsof:sysutils/lsof
 
 GNU_CONFIGURE=	yes

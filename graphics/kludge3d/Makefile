@@ -24,6 +24,9 @@ PLIST_FILES=	bin/kludge3d
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PYTHON_LIBDIR}/config -lpthread -lm
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@EXTRA_CFLAGS@|@CFLAGS@|g ; \

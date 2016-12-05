@@ -16,6 +16,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		uidfix kmod
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/biosfont.4 ${STAGEDIR}${PREFIX}/man/man4

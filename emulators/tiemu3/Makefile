@@ -25,6 +25,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 CONFIGURE_ARGS=	--disable-gdb --without-kde
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

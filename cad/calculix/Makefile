@@ -37,6 +37,9 @@ USE_GCC=	yes
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL= 	gl glu glut
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BROWSER?=	firefox
 PSVIEWER?=	gv
 

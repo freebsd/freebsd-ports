@@ -25,6 +25,9 @@ USES=		cmake libedit
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 CXXFLAGS+=	-fno-rtti
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SUB_FILES=	ccons.sh
 PLIST_FILES=	bin/ccons man/man1/ccons.1.gz \
 		bin/ccons-bin

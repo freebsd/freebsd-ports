@@ -45,10 +45,14 @@ BROKEN_aarch64=		Fails to link: js-dtrace.o.arJ1an: error adding symbols: File i
 
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
 	--enable-single-profile --disable-profilesharing \
-	--enable-application=mail --enable-official-branding
+	--enable-application=mail --enable-official-branding \
+	--enable-pie
 MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_PKGCONFIG_FILES=
+
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
 
 PORTNAME_ICON=	${MOZILLA}.png
 PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png

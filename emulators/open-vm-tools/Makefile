@@ -56,6 +56,9 @@ SUB_FILES=		pkg-message
 
 USE_RC_SUBR=		vmware-guestd vmware-kmod
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

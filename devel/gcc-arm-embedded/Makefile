@@ -15,6 +15,9 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	Does not build
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB
 PURE_DESC=	Use all libraries from bundle, do not depend on anything

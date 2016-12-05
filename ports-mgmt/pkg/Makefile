@@ -5,9 +5,7 @@ DISTVERSION=	1.9.3
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
-		http://files.etoilebsd.net/${PORTNAME}/ \
-		LOCAL/portmgr \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		http://distsets.hardenedbsd.org/
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
@@ -21,6 +19,11 @@ CONFIGURE_ARGS=	--disable-maintainer-mode
 INSTALL_TARGET=	install-strip
 PORTDOCS=	NEWS
 
+CONFIGURE_ARGS+= \
+	--enable-pie \
+	--enable-safestack \
+	--disable-silent-rules
+
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
@@ -30,6 +33,7 @@ CFLAGS+=	-Wno-error
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
+NOPIE_PORTS=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)

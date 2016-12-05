@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
 
+NOPIE_PORTS=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
 GH_TAGNAME=	7905901

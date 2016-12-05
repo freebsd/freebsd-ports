@@ -25,6 +25,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 MAKE_ENV:=	${CONFIGURE_ENV}
 ALL_TARGET=	all makeimapaccess makedat
 

@@ -23,6 +23,8 @@ USES=		compiler:c++11-lib cpe gmake localbase pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
+NOPIE_PORTS=	yes
+
 CPE_VENDOR=	powerdns
 
 OPTIONS_DEFINE=	SETUID

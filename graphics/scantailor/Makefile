@@ -24,6 +24,8 @@ USE_QT4=	corelib gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 USE_XORG+=	xrender
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="Scan Tailor" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Scanning;" false
 

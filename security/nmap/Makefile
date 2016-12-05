@@ -17,6 +17,8 @@ COMMENT?=	Port scanning utility for large networks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+EXPLICIT_SAFESTACK=	yes
+
 .if !defined(MASTERDIR)
 
 LIB_DEPENDS=	libpcre.so:devel/pcre

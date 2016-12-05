@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	sockd
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>

@@ -17,6 +17,8 @@ USES=		autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	YACC=${YACC}
 
+NOPIE_PORTS=	yes
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/mfc/mfc.conf.sample ${STAGEDIR}${PREFIX}/etc
 

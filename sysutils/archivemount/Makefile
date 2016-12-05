@@ -13,6 +13,9 @@ COMMENT=	Mount archives with FUSE
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig iconv gmake libarchive
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	bin/archivemount \
 		man/man1/archivemount.1.gz
 

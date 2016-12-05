@@ -20,6 +20,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake tar:bzip2
 
+NOPIE_PORTS=	yes
+
 ONLY_FOR_ARCHS=	i386 amd64
 SBCL_HOME=	${PREFIX}/lib/sbcl
 MANUALS=	asdf.html sbcl.html

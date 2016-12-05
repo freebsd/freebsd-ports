@@ -18,6 +18,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre
 
+EXPLICIT_SAFESTACK=	yes
+
 CONFLICTS_INSTALL=	caudium14-1.* \
 			apache-*-2.2.* apache22-*
 

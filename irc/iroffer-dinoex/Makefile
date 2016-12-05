@@ -21,6 +21,9 @@ CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
 		help-admin-de.txt help-admin-en.txt \

@@ -91,6 +91,8 @@ LLVM_PREFIX=			${LOCALBASE}/llvm${LLVM_VER}
 TEST_TARGET=	check
 TEST_ENV+=	ALLOW_NONZERO_RLIMIT_CORE=1
 
+NOPIE_PORTS=	yes
+
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows

@@ -19,6 +19,9 @@ MAKEFILE=	makefile.freebsd
 USES=		webplugin:native tar:Z
 WEBPLUGIN_FILES=dummyflash.so
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
 	${INSTALL_LIB} ${BUILD_WRKSRC}/dummyflash.so ${STAGEDIR}${WEBPLUGIN_DIR}

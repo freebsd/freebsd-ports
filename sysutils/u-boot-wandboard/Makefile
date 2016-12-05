@@ -24,6 +24,9 @@ NO_ARCH=	yes
 USES=		gmake
 SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	${U_BOOT_DIR}/u-boot.imx \
 		${U_BOOT_DIR}/README

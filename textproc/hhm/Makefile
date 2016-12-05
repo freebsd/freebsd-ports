@@ -16,6 +16,8 @@ MAKEFILE=	${FILESDIR}/Makefile
 
 PLIST_FILES=	bin/hhm
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's!^typedef unsigned.*$$!!' ${WRKSRC}/hhm.c
 

@@ -39,6 +39,8 @@ MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
 
+NOPIE_PORTS=	yes
+
 USE_GL=		gl
 USES=		tar:xz
 
@@ -48,7 +50,8 @@ FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
-		--enable-official-branding
+		--enable-official-branding \
+		--enable-pie
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK2

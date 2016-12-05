@@ -42,6 +42,9 @@ CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DUSE_LIBSQUISH:BOOL=false \
 		-DUNITSYNC_PYTHON_WRAPPER:BOOL=false
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 .if exists(/usr/lib/libexecinfo.so)

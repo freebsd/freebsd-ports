@@ -13,6 +13,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		gmake perl5
 
+NOPIE_PORTS=	yes
+
 FIXDEST=	. doc doc/gatebau doc/html scripts/areas \
 		scripts/maintenance scripts/misc scripts/nodelist \
 		scripts/outbound scripts/run scripts/www src/areafix \

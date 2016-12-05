@@ -20,6 +20,9 @@ GH_ACCOUNT=	SolidRun
 GH_PROJECT=	u-boot-imx6
 GH_TAGNAME=	e4bc4c3
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 NO_ARCH=	yes
 
 USES=		gmake

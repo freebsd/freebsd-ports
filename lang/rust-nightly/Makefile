@@ -15,6 +15,9 @@ PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rust \

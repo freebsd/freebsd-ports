@@ -22,5 +22,7 @@ XINERAMA_FLAG_XORG=		xinerama
 XINERAMA_FLAG_CONFIGURE_ON=	--configure-option="--with-xinerama"
 XINERAMA_FLAG_CONFIGURE_OFF=	--configure-option="--without-xinerama"
 
+NOPIE_PORTS=	yes
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -21,6 +21,8 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		fping:net/fping \
 		mtr:net/mtr-nox11
 
+NOPIE_PORTS=	yes
+
 USERS=		xymon
 GROUPS=		xymon
 

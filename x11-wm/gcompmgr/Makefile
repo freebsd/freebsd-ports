@@ -18,6 +18,8 @@ USES=		autoreconf libtool pkgconfig
 USE_GNOME=	gtkmm24
 USE_XORG=	x11
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="gcompmgr" \
 		"Configure window effects" \
 		"" \

@@ -42,6 +42,9 @@ USES=		autoreconf compiler:c++11-lib gmake localbase pkgconfig
 USE_GL=		gl
 USE_SDL=	image2 sdl2
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
 CONFIGURE_ARGS=	--with-version="${GH_TAGNAME}"

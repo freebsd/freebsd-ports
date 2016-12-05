@@ -18,6 +18,8 @@ USES=		cmake compiler:c11 perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	share/h2o/start_server
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	README.md
 
 SUB_FILES=	${PORTNAME}

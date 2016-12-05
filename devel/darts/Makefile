@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTEXAMPLES=	darts.cpp mkdarts.cpp
 PORTDOCS=	AUTHORS ChangeLog README doc
 
+NOPIE_PORTS=	yes
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}

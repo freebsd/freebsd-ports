@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:bzip2
 USE_WX=		2.8
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="LisaEm" "" "lisaem" "lisaem" "" ""
 
 post-patch:

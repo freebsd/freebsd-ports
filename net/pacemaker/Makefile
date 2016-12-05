@@ -44,6 +44,9 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--without-heartbeat
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	${SH}
 sh_CMD=		${LOCALBASE}/bin/bash

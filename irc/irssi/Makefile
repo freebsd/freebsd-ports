@@ -11,6 +11,8 @@ COMMENT?=	Modular IRC client with many features
 
 LICENSE=	GPLv2
 
+EXPLICIT_SAFESTACK=	yes
+
 LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*

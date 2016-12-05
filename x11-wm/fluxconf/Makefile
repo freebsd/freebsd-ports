@@ -18,6 +18,9 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-error
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PORTDOCS=	fluxconf.png fluxkeys.png fluxmenu.png index.html
 PLIST_FILES=	bin/fluxbare bin/fluxconf bin/fluxkeys bin/fluxmenu \
 		share/locale/fi/LC_MESSAGES/fluxconf.mo \

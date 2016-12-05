@@ -29,6 +29,9 @@ USE_QT4=	gui corelib network sql sql-sqlite3 \
 USE_SDL=	mixer
 QMAKE_SOURCE_PATH=	pokerth.pro
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PORTDOCS=	server_setup_howto.txt
 
 post-patch:

@@ -24,6 +24,9 @@ PORTDOCS=	canna.bib canna.sty Imakefile README.jp Makefile \
 		intern lisp man
 MAKE_JOBS_UNSAFE=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 	    ${MAKEFILE} ${MAKE_ARGS} install.man

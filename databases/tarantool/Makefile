@@ -48,6 +48,8 @@ OPTIONS_DEFINE=	DEBUG
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -19,4 +19,6 @@ GNU_CONFIGURE=	yes
 
 LIBS+=		-lcompat
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

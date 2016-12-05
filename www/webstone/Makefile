@@ -22,6 +22,9 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	install
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

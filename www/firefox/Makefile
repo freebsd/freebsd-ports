@@ -45,7 +45,8 @@ BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-official-branding
+		--enable-official-branding \
+		--enable-pie
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK3
@@ -56,6 +57,11 @@ OPTIONS_DEFAULT_i386=	RUST
 
 OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
+
+# HardenedBSD note:
+# Firefox picks up PIE from the --enable-pie configure option.
+# As such, disable setting custom CFLAGS for PIE.
+NOPIE_PORTS=	yes
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 

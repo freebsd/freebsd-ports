@@ -19,6 +19,8 @@ CSUFF=		${_USE_GCC:S/.//}
 USE_GCC=	yes
 USES=		iconv gmake zip
 
+NOPIE_PORTS=	yes
+
 # gcj/libgcj don't exist on some platforms
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform

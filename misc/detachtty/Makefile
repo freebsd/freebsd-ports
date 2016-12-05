@@ -14,6 +14,8 @@ COMMENT=	Run interactive programs non-interactively
 WRKSRC=		${WRKDIR}/${PORTNAME}-9
 USES=		gmake
 
+NOPIE_PORTS=	yes
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/[ad][te]tachtty
 	${INSTALL_MAN} ${WRKSRC}/detachtty.1 ${STAGEDIR}${MANPREFIX}/man/man1

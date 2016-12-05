@@ -25,6 +25,8 @@ BUILD_DEPENDS=	libassuan>=2.4.3:security/libassuan \
 		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry>0:security/pinentry
 
+EXPLICIT_SAFESTACK=	yes
+
 GNU_CONFIGURE=	YES
 USES=		compiler:c11 cpe gmake iconv pkgconfig sqlite tar:bzip2
 USE_LDCONFIG=	YES
@@ -36,6 +38,8 @@ CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun --with-readline=/usr \
 			--disable-wks-tools
 CONFLICTS=	gnupg-2.0.* dirmngr-*
 CPE_VENDOR=	gnupg
+
+CPPFLAGS+=	-fPIC
 
 OPTIONS_DEFINE=		GNUTLS LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
 LDAP_DESC=		LDAP keyserver interface

@@ -17,6 +17,8 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|autoconf|${TRUE}|' ${WRKSRC}/Makefile.in
 

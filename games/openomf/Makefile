@@ -27,6 +27,8 @@ GH_TUPLE=	omf2097:openomf:c36c421 \
 USES=		cmake compiler:c++11-lang gettext
 USE_SDL=	sdl2
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="OpenOMF" "" \
 		"${PREFIX}/share/openomf/openomf_icon.png " \
 		"openomf" "Game;ArcadeGame;" false

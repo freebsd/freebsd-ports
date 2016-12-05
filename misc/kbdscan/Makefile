@@ -12,6 +12,8 @@ LICENSE=	ISCL
 
 USES=		tar:bzip2
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

@@ -16,6 +16,8 @@ ALL_TARGET=	clobber all
 MAKE_ARGS=	LIBS="-lncurses -lc"
 CFLAGS+=	-Wno-return-type
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/vnless \
 		bin/vnlesskey \
 		man/man1/vnless.1.gz \

@@ -14,6 +14,8 @@ COMMENT=	L4 health check daemon for IPFILTER
 USES=		gmake ssl tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's,service_type_t,script_type_t,g' ${WRKSRC}/service.c
 	${REINPLACE_CMD} -e 's,/usr/sbin,/sbin,g' ${WRKSRC}/l4ip.conf

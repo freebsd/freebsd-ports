@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PORTDOCS=	README
 PLIST_FILES=	bin/portmon etc/portmon.hosts.sample man/man8/portmon.8.gz
 

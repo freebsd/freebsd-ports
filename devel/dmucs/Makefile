@@ -15,6 +15,9 @@ USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dmucs bin/gethost bin/loadavg bin/monitor bin/remhost
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BROKEN_aarch64=	Fails to compile: error: passing char * to parameter of incompatible type __builtin_va_list
 
 .include <bsd.port.mk>

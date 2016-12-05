@@ -34,6 +34,8 @@ INSTALL_TARGET=	install-strip
 USES=		bison compiler:c11 gmake libtool localbase tar:bzip2
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		CLIENTS DOCS FLAC JACK OPTIMIZED_CFLAGS SDL SERVERS \

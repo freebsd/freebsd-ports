@@ -20,6 +20,8 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 ONLY_FOR_ARCHS_REASON=	Requires newer gcc/clang to compile.
 
+NOPIE_PORTS=	yes
+
 post-install:
 	${LN} -sf ${PORTNAME}-${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}

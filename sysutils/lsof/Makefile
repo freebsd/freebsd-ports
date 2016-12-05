@@ -30,6 +30,8 @@ LICENSE_NAME=lsof
 LICENSE_FILE=${FILESDIR}/LICENSE
 LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+EXPLICIT_SAFESTACK=		yes
+
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)

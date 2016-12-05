@@ -21,6 +21,8 @@ USE_WX=		2.8
 USE_XORG=	x11
 WX_CONF_ARGS=	absolute
 
+NOPIE_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/trunk
 
 PORTDOCS=	AUTHORS ChangeLog README

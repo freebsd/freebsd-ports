@@ -16,6 +16,8 @@ BROKEN_aarch64=	Fails to link: missing sbrk
 USES=		tar:Z
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
 
+NOPIE_PORTS=	yes
+
 pre-patch:
 	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h.unparsed
 

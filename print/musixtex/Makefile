@@ -18,6 +18,9 @@ USE_TEX=	basic
 
 EXAMPLE_VERSION=	T112
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/musixtex-${PORTVERSION}/examples
 	@${CP} ${WRKDIR}/musixexa-${EXAMPLE_VERSION}/* \

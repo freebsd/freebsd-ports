@@ -29,6 +29,9 @@ CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
 		--localstatedir=${STATEDIR:S/\/racoon//} \
 		--with-pkgversion=freebsd-${PORTVERSION}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 STATEDIR=	/var/db/racoon
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}

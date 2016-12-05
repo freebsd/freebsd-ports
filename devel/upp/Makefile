@@ -22,6 +22,8 @@ USES=		execinfo gmake
 USE_XORG=	xft
 USE_GNOME=	gtk20
 
+NOPIE_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc
 

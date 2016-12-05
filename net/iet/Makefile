@@ -33,6 +33,9 @@ MAKE_ENV+=	KMODDIR=${KMODDIR} DATADIR=${DATADIR} SYSDIR="${SRC_BASE}/sys"
 
 IET_CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources to build
 .endif

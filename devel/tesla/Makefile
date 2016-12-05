@@ -10,6 +10,9 @@ COMMENT=	Temporally Enhanced Security Logic Assertions
 
 USES=		cmake:outsource execinfo ninja
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BUILD_DEPENDS=	clang33:lang/clang33
 RUN_DEPENDS=	clang33:lang/clang33
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf

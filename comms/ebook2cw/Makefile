@@ -16,6 +16,8 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'g \
 	     ${WRKSRC}/Makefile

@@ -15,6 +15,8 @@ USES=		gmake
 
 LDFLAGS+=	-lcompat
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	README
 PLIST_FILES=	bin/braa
 

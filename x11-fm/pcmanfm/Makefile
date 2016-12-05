@@ -11,6 +11,8 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
+EXPLICIT_SAFESTACK=	yes
+
 LIB_DEPENDS=	libfm-gtk.so:x11/libfm
 
 USES=		autoreconf desktop-file-utils gettext gmake libtool pkgconfig \

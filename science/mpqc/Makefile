@@ -31,6 +31,9 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 		--enable-shared \
 		--with-sc-datadir=${PREFIX}/share/mpqc/${PORTVERSION}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=		DOCS ATLAS ICC MPICH OPTIFLAGS
 OPTIONS_SUB=		yes
 

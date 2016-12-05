@@ -27,6 +27,8 @@ LDFLAGS+=	`fltk-config --ldflags`
 USES=		gmake
 USE_GNOME=	glib20
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' \
 		${WRKSRC}/configure ${WRKSRC}/raop_play/Makefile.in

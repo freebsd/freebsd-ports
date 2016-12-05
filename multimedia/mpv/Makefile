@@ -13,6 +13,8 @@ COMMENT=	Free and open-source general-purpose video player
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
+EXPLICIT_SAFESTACK=    yes
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 BUILD_DEPENDS=	rst2man:textproc/py-docutils \
 		rst2html:textproc/py-docutils
@@ -45,6 +47,8 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--disable-wayland \
 		--enable-libmpv-shared \
 		--enable-html
+
+NOPIE_PORTS=	yes
 
 OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 \
 			LIBGUESS LUAJIT UCHARDET ZSH

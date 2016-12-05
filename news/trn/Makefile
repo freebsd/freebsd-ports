@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	-S
 
 SUB_FILES=	pkg-message
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	${REINPLACE_CMD} 's/$$install/\\$${DESTDIR}&/' ${WRKSRC}/Makefile.SH
 

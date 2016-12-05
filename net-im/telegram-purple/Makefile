@@ -26,6 +26,9 @@ USE_GNOME=	glib20 libxml2
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	majn:DEFAULT,tgl vysheng:tlparser
 GH_PROJECT=	tgl:tgl tl-parser:tlparser

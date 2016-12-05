@@ -26,6 +26,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnspr4.so:devel/nspr \
 		libenet.so:net/enet
 
+NOPIE_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release

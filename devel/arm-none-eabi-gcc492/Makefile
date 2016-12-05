@@ -28,6 +28,9 @@ PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 GCC_TARGET=	arm-none-eabi
 BU_PREFIX?=	${GCC_TARGET}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 # libstdcxx won't build, but we don't need it or multiple float-abi libs.

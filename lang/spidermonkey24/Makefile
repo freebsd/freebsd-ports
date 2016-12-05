@@ -54,6 +54,9 @@ TRACEJIT_CONFIGURE_ENABLE=	tracejit
 UTF8_DESC=		Treat strings as UTF8 instead of ISO-8859-1
 UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

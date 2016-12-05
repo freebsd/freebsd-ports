@@ -1,0 +1,7 @@
+/%%KMODDIR%%/secadm.ko
+etc/rc.d/secadm
+include/libsecadm.h
+include/secadm.h
+lib/libsecadm.so
+lib/libsecadm.so.0
+sbin/secadm

@@ -22,4 +22,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

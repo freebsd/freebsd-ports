@@ -20,4 +20,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 MAKE_ENV=	INCLUDES="-I${LOCALBASE}/include"
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.mk>

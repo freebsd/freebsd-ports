@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

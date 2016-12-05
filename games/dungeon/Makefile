@@ -25,6 +25,8 @@ COMMENT=	Text adventure which became Zork I-III
 USES=		ncurses
 NO_WRKSUBDIR=	yes
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/dungeon \
 		man/man6/dungeon.6.gz \
 		%%DATADIR%%/dundat \

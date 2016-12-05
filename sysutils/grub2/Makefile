@@ -32,6 +32,9 @@ CONFIGURE_ARGS=	--disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
 		LEX=${LOCALBASE}/bin/flex
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	MKFONT FUSE
 OPTIONS_SUB=	yes
 MKFONT_DESC=	Build grub-mkfont (require freetype2)

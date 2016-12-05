@@ -32,6 +32,9 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${STAGEDIR}${PREFIX}/lib -L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} '/confexecdir =/s/=.*/= $$(sysconfdir)/' \
 		${WRKSRC}/Makefile.in

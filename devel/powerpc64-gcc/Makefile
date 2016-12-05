@@ -13,6 +13,9 @@ COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
 
 USES=	gmake iconv libtool tar:bzip2 makeinfo compiler

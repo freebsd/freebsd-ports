@@ -23,6 +23,9 @@ CONFIGURE_SCRIPT=llvm/configure
 CONFIGURE_ARGS=	--enable-optimized --enable-targets=host-only \
 		--disable-bindings --enable-bindings=none
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/clamav-bytecode-compiler-${DISTNAME}
 
 MAKE_JOBS_UNSAFE=	yes

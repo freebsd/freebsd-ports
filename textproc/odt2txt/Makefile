@@ -19,6 +19,8 @@ PLIST_FILES=	bin/odt2txt man/man1/odt2txt.1.gz
 GH_ACCOUNT=	dstosberg
 USE_GITHUB=	yes
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; s|-liconv|${ICONV_LIB}|' ${WRKSRC}/Makefile
 

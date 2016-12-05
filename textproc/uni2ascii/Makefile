@@ -15,6 +15,9 @@ LICENSE=	GPLv3
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni man/man1/uni2ascii.1.gz \

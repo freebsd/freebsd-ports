@@ -22,6 +22,9 @@ INSTALL_TARGET=	install-strip
 USES=		libtool
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/r2proto.conf \
 		${STAGEDIR}${PREFIX}/etc/r2proto.conf.sample

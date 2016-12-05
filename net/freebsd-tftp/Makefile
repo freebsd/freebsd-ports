@@ -16,6 +16,8 @@ WRKSRC=		${WRKDIR}
 NO_PACKAGE=	Installs software in /usr/libexec and /usr/bin
 PREFIX=		/usr
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/tftp \
 		libexec/tftpd \
 		share/man/man8/tftpd.8.gz \

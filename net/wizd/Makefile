@@ -20,6 +20,8 @@ USE_RC_SUBR=	wizd
 USES=		dos2unix jpeg ncurses zip
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|./skin|${DATADIR}/skins|' ${WRKSRC}/wizd.conf
 

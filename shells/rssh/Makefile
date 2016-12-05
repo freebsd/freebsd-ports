@@ -23,6 +23,8 @@ RDIST_DESC=	rdist support
 RDIST_RUN_DEPENDS=	rdist6:net/rdist6
 RDIST_CONFIGURE_ON=	--with-rdist=${LOCALBASE}/bin/rdist6
 
+NOPIE_PORTS=	yes
+
 RSYNC3_DESC=		rsync3 support (Debian patch)
 RSYNC3_EXTRA_PATCHES=	${FILESDIR}/optional-patch-util.c
 

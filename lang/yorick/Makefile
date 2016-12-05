@@ -25,6 +25,8 @@ PORTDOCS=	FILE_FORMATS README drat.doc graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.tex std.doc \
 		yorick.pdf yorick.tex
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 # Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds

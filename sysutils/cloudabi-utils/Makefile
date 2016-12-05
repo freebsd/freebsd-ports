@@ -27,6 +27,9 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man
 CFLAGS+=	-I${LOCALBASE}/include
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1001511

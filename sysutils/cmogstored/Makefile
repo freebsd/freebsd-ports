@@ -9,6 +9,9 @@ MASTER_SITES=	http://bogomips.org/cmogstored/files/
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Alternative mogstored implementation for MogileFS
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
