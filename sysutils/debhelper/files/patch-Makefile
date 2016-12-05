@@ -1,13 +1,13 @@
---- Makefile.orig	2014-11-16 15:43:09 UTC
+--- Makefile.orig	2016-10-01 08:13:53 UTC
 +++ Makefile
 @@ -1,5 +1,5 @@
  # List of files of dh_* commands. Sorted for debhelper man page.
--COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | sort)
-+COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | cut -c3- | sort)
+-COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | LC_ALL=C sort)
++COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | cut -c3- | LC_ALL=C sort)
  
  # Find deprecated commands by looking at their synopsis.
  DEPRECATED=$(shell egrep -l '^dh_.* - .*deprecated' $(COMMANDS))
-@@ -88,17 +88,16 @@ endif
+@@ -94,17 +94,16 @@ endif
  	done;
  
  install:
@@ -32,4 +32,4 @@
 +	install -m 0644 Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
  
  test: version
- 	./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x } @ARGV' t/* t/buildsystems/*
+ 	./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x } @ARGV' t/* t/*/*
