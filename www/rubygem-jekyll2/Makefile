@@ -31,6 +31,9 @@ RUN_DEPENDS=	rubygem-classifier-reborn>=2.0:devel/rubygem-classifier-reborn \
 
 CONFLICTS_INSTALL=	rubygem-jekyll-3.*
 
+DEPRECATED=	Use www/rubygem-jekyll instead
+EXPIRATION_DATE=2016-12-31
+
 PORTSCOUT=	limit:^2\.
 
 NO_ARCH=	yes
