@@ -10,6 +10,7 @@ COMMENT=	HTML, XML, SAX, and Reader parser
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 
 USE_RUBY=	yes
