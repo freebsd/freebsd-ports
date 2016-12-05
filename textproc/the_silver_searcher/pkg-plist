@@ -1,4 +1,4 @@
 bin/ag
+etc/bash_completion.d/ag.bashcomp.sh
 man/man1/ag.1.gz
 share/zsh/site-functions/_the_silver_searcher
-%%DATADIR%%/completions/ag.bashcomp.sh
