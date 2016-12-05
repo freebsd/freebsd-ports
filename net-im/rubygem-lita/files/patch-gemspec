@@ -1,9 +1,9 @@
---- lita.gemspec.orig	2016-03-31 16:03:32 UTC
+--- lita.gemspec.orig	2016-12-04 12:54:57 UTC
 +++ lita.gemspec
 @@ -32,7 +32,6 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.7.7"])
        s.add_runtime_dependency(%q<puma>.freeze, [">= 2.7.1"])
-       s.add_runtime_dependency(%q<rack>.freeze, [">= 1.5.2"])
+       s.add_runtime_dependency(%q<rack>.freeze, ["< 2.0.0", ">= 1.5.2"])
 -      s.add_runtime_dependency(%q<rb-readline>.freeze, [">= 0.5.1"])
        s.add_runtime_dependency(%q<redis-namespace>.freeze, [">= 1.3.0"])
        s.add_runtime_dependency(%q<thor>.freeze, [">= 0.18.1"])
