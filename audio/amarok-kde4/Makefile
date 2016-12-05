@@ -3,7 +3,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -22,13 +22,15 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:dev
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
 		${KDE_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
-USES=		cmake kde:4 mysql:embedded pkgconfig shared-mime-info shebangfix tar:bzip2
-USE_KDE=	kdelibs libkcddb libkcompactdisc \
-		nepomuk-core runtime automoc4 strigi
+USES=		cmake kde:4 mysql pkgconfig \
+		shared-mime-info shebangfix tar:bzip2
+USE_GL=		gl
+USE_KDE=	automoc4 kdelibs libkcddb libkcompactdisc \
+		nepomuk-core runtime soprano strigi
 USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
-USE_XORG=	x11
+USE_XORG=	ice sm x11 xau xdmcp xext xft xpm
 SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 USE_LDCONFIG=	yes
 
@@ -42,7 +44,9 @@ AMAZON_DESC=		Amazon MP3 store support via clamz
 AMAZON_RUN_DEPENDS=	clamz:net/clamz
 
 IPOD_DESC=		Apple iPod support
-IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
+IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
+			libimobiledevice.so:comms/libimobiledevice \
+			libplist.so:devel/libplist
 IPOD_USE=		GNOME=gdkpixbuf2,glib20
 IPOD_CMAKE_OFF=		-DWITH_IPOD:BOOL=Off
 
@@ -50,7 +54,10 @@ MP3TUNES_DESC=		MP3tunes support
 MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
 			libcurl.so:ftp/curl
 MP3TUNES_USE=		GNOME=glib20,libxml2
-MP3TUNES_CMAKE_OFF=	-DWITH_MP3tunes:BOOL=Off
+MP3TUNES_USES=		ssl
+MP3TUNES_CMAKE_ON=	-DWITH_MP3Tunes:BOOL=ON \
+			-DWITH_Libgcrypt:BOOL=OFF
+MP3TUNES_CMAKE_OFF=	-DWITH_MP3Tunes:BOOL=Off
 
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CMAKE_OFF=		-DWITH_Mtp:BOOL=Off
