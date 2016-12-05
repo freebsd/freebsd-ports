@@ -1,0 +1,4 @@
+rubygem-aws-sigv4 is Amazon Web Services Signature Version 4 signing library
+which generates sigv4 signature for HTTP requests.
+
+WWW: https://github.com/aws/aws-sdk-ruby
