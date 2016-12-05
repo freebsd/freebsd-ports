@@ -25,7 +25,7 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix ssl tar:xz
+USES=		autoreconf gmake shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	DEVELOPER_CFLAGS=
