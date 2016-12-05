@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Contributed Rack Middleware and Utilities
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-git-version-bump>=0.15:devel/rubygem-git-version-bump \
 		rubygem-rack16>=1.4:www/rubygem-rack16
