@@ -4,7 +4,7 @@ lib/engines/pkcs11.so
 lib/libp11.a
 lib/libp11.so
 lib/libp11.so.2
-lib/libp11.so.2.4.2
+lib/libp11.so.2.4.3
 libdata/pkgconfig/libp11.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
