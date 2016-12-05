@@ -3,6 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -214,7 +215,8 @@ post-patch:
 	${MV} ${WRKSRC_yaml} ${WRKSRC}/src/gopkg.in/yaml.v2
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} && ${SETENV} GOPATH=${WRKSRC} go install ./...
+	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} && \
+		${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./...
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
