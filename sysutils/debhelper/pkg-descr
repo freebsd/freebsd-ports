@@ -4,4 +4,4 @@ included to install various files into your package, compress files, fix file
 permissions, integrate your package with the debian menu system, etc. This will
 be of use only to debian developers or others who wish to build debian packages.
 
-WWW: http://joeyh.name/code/debhelper/
+WWW: https://anonscm.debian.org/git/debhelper/debhelper.git
