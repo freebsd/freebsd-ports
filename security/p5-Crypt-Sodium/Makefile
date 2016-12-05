@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Sodium
-PORTVERSION=	0.07
-PORTREVISION=	3
+PORTVERSION=	0.08
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +15,10 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-CFLAGS+=	-I${LOCALBASE}/include
-USES=		perl5
+USES=		perl5 localbase
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Sodium/Sodium.so
 
 .include <bsd.port.mk>
