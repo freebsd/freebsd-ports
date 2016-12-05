@@ -41,6 +41,8 @@ do-install:
 	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/dsnake.sh
 	${ECHO_CMD} "cd ${DATADIR} && exec ./dsnake \"\$$@\"" >> ${WRKDIR}/dsnake.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/dsnake.sh ${STAGEDIR}${PREFIX}/bin/dsnake
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}
 
