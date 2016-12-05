@@ -61,8 +61,8 @@ include/qxmpp/QXmppVCardIq.h
 include/qxmpp/QXmppVCardManager.h
 include/qxmpp/QXmppVersionIq.h
 include/qxmpp/QXmppVersionManager.h
-include/qxmpp/qdnslookup.h
-include/qxmpp/qdnslookup_p.h
+%%QDNS%%include/qxmpp/qdnslookup.h
+%%QDNS%%include/qxmpp/qdnslookup_p.h
 lib/libqxmpp.so
 lib/libqxmpp.so.0
 lib/libqxmpp.so.%%VERSION_MAJOR%%

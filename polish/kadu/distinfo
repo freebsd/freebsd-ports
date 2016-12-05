@@ -1,5 +1,6 @@
-SHA256 (kadu/kadu-2.1.tar.bz2) = 9f8092756d4a870c1ecb016c0cba2c833e1697b3eb7e9bf51813b1f0a541ffb8
-SIZE (kadu/kadu-2.1.tar.bz2) = 6013519
+TIMESTAMP = 1480671433
+SHA256 (kadu/kadu-4.2.tar.bz2) = b6d8a55d2be20f76dbf29f6cddc0a3d4a3c6b6ba8166f64fcbe99ac0c6130307
+SIZE (kadu/kadu-4.2.tar.bz2) = 8080228
 SHA256 (kadu/kompatybilne_z_GG6.tar.gz) = f8a84acd8512fd8fc38e394aa564e6b6d7ec2e9fe9864bdf0c5b8f2edb23da6f
 SIZE (kadu/kompatybilne_z_GG6.tar.gz) = 254637
 SHA256 (kadu/dodatkowe_emoty_GG7.tar.gz) = aebeb45b6ac9139620032436f7b565aa5729a0165d1c361a473c1195b8807450
