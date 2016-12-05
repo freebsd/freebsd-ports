@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2016.3.4
+PORTVERSION=	2016.11.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,19 +45,6 @@ CPE_PRODUCT=	salt
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 PYDISTUTILS_EGGINFO=	salt-${DISTVERSION}-py${PYTHON_VER}.egg-info
-
-PYDISTUTILS_INSTALLARGS+=\
-		--prefix=${PREFIX} \
-		--salt-root-dir=/ \
-		--salt-config-dir=${ETCDIR} \
-		--salt-cache-dir=/var/cache/salt \
-		--salt-sock-dir=/var/run/salt \
-		--salt-srv-root-dir=${ETCDIR} \
-		--salt-base-file-roots-dir=${ETCDIR}/states \
-		--salt-base-pillar-roots-dir=${ETCDIR}/pillar \
-		--salt-base-master-roots-dir=${ETCDIR}/salt-master \
-		--salt-logs-dir=/var/log/salt \
-		--salt-pidfile-dir=/var/run
 
 USE_RC_SUBR=	salt_api \
 		salt_proxy \

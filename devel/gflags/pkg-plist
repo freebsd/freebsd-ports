@@ -1,4 +1,4 @@
-etc/bash_completion.d/gflags_completions.sh
+bin/gflags_completions.sh
 include/gflags/gflags.h
 include/gflags/gflags_completions.h
 include/gflags/gflags_declare.h

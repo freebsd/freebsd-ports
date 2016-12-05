@@ -3,7 +3,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	SF/gs-fonts/gs-fonts/${PORTVERSION}%20%28base%2035%2C%20GPL%29/:std \
 		SF/gs-fonts/gs-fonts/6.0%20%28misc%2C%20GPL%29/:other
@@ -18,6 +18,9 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${STAGEDIR}${PREFIX}/||}"
 OPTIONS_DEFINE=	DOCS
+
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:japanese/font-std \
+		${LOCALBASE}/share/fonts/std.zh_CN/STSong-Light:chinese/font-std \
 
 FONTSDIR=	${STAGEDIR}${PREFIX}/share/ghostscript/fonts
 CJKFONTS?=	std.ja_JP/Ryumin-Light \

@@ -4,7 +4,7 @@
 PORTNAME=	gflags
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,9 +28,5 @@ USES=		cmake pathfix shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	src/gflags_completions.sh
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
-	${MV} ${STAGEDIR}${PREFIX}/bin/gflags_completions.sh ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 
 .include <bsd.port.mk>

@@ -30,8 +30,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2016.11.08
-HASH=		3ac0165
+ISCVERSION=	9.12.0a.2016.12.05
+HASH=		df372d9
 
 USES=	cpe libedit
 
@@ -252,9 +252,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${HASH}#' \
 		${WRKSRC}/version
-	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
-		s|readline/history.h|histedit.h|' \
-		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
 .if defined(BIND_TOOLS_SLAVE)
 	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
 		-e 's#isc-config.sh installdirs#installdirs#' \
