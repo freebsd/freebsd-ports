@@ -1439,8 +1439,10 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/js/magick.js
 %%PORTDOCS%%%%DOCSDIR%%-6/www/license.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/links.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/magick.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/magick++.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/magick-core.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/magick-script.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/miff.html
