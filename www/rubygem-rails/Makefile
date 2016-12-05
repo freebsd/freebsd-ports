@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.2.22.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -24,7 +25,7 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:mail/rubygem-actionmailer \
 		rubygem-jquery-rails>=3.1.0:www/rubygem-jquery-rails \
 		rubygem-json>=1.7.6:devel/rubygem-json \
 		rubygem-sprockets22>=2.2.2:devel/rubygem-sprockets22 \
-		rubygem-rack>=1.4.4:www/rubygem-rack \
+		rubygem-rack14>=1.4.4:www/rubygem-rack14 \
 		rubygem-rdoc3>=3.4:devel/rubygem-rdoc3 \
 		rubygem-rack-test>=0.6.1:www/rubygem-rack-test \
 		rubygem-rake>=10.1.1:devel/rubygem-rake \

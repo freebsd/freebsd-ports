@@ -4,13 +4,14 @@
 # XXX: preferably, the full rubygem-* tree.  rack version requirements are specified with ~>
 # XXX: which requires *EXACTLY* that version.
 #
-# 	www/rubygem-actionpack4
+# 	www/rubygem-actionpack
 
 PORTNAME=	rack
-PORTVERSION=	1.6.5
+PORTVERSION=	1.4.7
+PORTEPOCH=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	16
+PKGNAMESUFFIX=	14
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
@@ -27,7 +28,7 @@ SHEBANG_LANG=	rackup
 rackup_OLD_CMD=	../../bin/rackup
 rackup_CMD=	${LOCALBASE}/bin/rackup
 
-PORTSCOUT=	limit:^1\.6
+PORTSCOUT=	limit:^1\.4
 
 # avoid duplicate file from www/rubygem-rack port
 post-install:

@@ -520,6 +520,7 @@
     SUBDIR += moodle29
     SUBDIR += moodle30
     SUBDIR += moodle31
+    SUBDIR += moodle32
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -2021,6 +2022,7 @@
     SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
+    SUBDIR += rubygem-rack14
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rails

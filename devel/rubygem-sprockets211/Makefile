@@ -20,6 +20,9 @@ RUN_DEPENDS=	rubygem-hike>=1.2:devel/rubygem-hike \
 
 CONFLICTS_INSTALL=	rubygem-sprockets-[0-9]*
 
+DEPRECATED=	Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
+EXPIRATION_DATE=2016-12-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
