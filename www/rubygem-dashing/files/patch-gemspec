@@ -1,4 +1,4 @@
---- dashing.gemspec.orig	2016-08-24 17:52:31 UTC
+--- dashing.gemspec.orig	2016-12-04 12:27:28 UTC
 +++ dashing.gemspec
 @@ -23,14 +23,14 @@ Gem::Specification.new do |s|
  
@@ -10,8 +10,9 @@
 +      s.add_runtime_dependency(%q<execjs>.freeze, [">= 2.0.2"])
        s.add_runtime_dependency(%q<sinatra>.freeze, ["~> 1.4.4"])
        s.add_runtime_dependency(%q<sinatra-contrib>.freeze, ["~> 1.4.2"])
-       s.add_runtime_dependency(%q<thin>.freeze, ["~> 1.6.1"])
+-      s.add_runtime_dependency(%q<thin>.freeze, ["~> 1.6.1"])
 -      s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 2.0.24"])
++      s.add_runtime_dependency(%q<thin>.freeze, [">= 1.6.1"])
 +      s.add_runtime_dependency(%q<rufus-scheduler>.freeze, [">= 2.0.24"])
        s.add_runtime_dependency(%q<thor>.freeze, ["> 0.18.1"])
 -      s.add_runtime_dependency(%q<sprockets>.freeze, ["~> 2.10.1"])
