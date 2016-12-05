@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-json>=1.8.1:devel/rubygem-json \
 		rubygem-rack16>=1.4:www/rubygem-rack16 \
 		rubygem-sinatra>=1.4.3:www/rubygem-sinatra \
-		${LOCALBASE}/bin/wget:ftp/wget
+		wget:ftp/wget
 
 OPTIONS_DEFINE=	BMC
 OPTIONS_RADIO=	PUPPET
