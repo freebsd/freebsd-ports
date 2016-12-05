@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases net-mgmt
 
@@ -22,13 +22,13 @@ GH_TUPLE=	BurntSushi:toml:9906417:toml \
 		bmizerany:pat:c068ca2:pat \
 		boltdb:bolt:5cc10bb:bolt \
 		davecgh:go-spew:5215b55:go_spew \
-		dgrijalva:jwt-go:9b486c8:jwt_go \
+		dgrijalva:jwt-go:63734ea:jwt_go \
 		dgryski:go-bits:2ad8d70:go_bits \
 		dgryski:go-bitstream:7d46cd2:go_bitstream \
-		gogo:protobuf:6abcf94:protobuf \
+		gogo:protobuf:0394392:protobuf \
 		golang:snappy:d9eb7a3:snappy \
-		influxdata:usage-client:475977e:usage_client \
-		jwilder:encoding:ac74639:encoding \
+		influxdata:usage-client:6d38953:usage_client \
+		jwilder:encoding:4dada27:encoding \
 		kimor79:gollectd:61d0dee:gollectd \
 		paulbellamy:ratecounter:5a11f58:ratecounter \
 		peterh:liner:8975875:liner \
@@ -112,7 +112,8 @@ post-patch:
 	@${MV} ${WRKSRC_crypto} ${WRKSRC}/src/golang.org/x/crypto
 
 do-build:
-		@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} && ${SETENV} GOPATH=${WRKSRC} go install ./...
+		@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} && \
+			${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./...
 
 do-install:
 		${MKDIR} ${STAGEDIR}${INFLUXD_DBDIR} \
