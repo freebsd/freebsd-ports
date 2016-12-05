@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	quilt
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	doj@cubic.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of bash scripts to ease working with patch files
 
 LICENSE=	GPLv2
