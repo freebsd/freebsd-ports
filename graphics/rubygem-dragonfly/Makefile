@@ -3,7 +3,7 @@
 
 PORTNAME=	dragonfly
 PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-multi_json>=1.0:devel/rubygem-multi_json \
-		rubygem-rack16>=1.3.0:www/rubygem-rack16
+		rubygem-rack>=1.3.0:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes
