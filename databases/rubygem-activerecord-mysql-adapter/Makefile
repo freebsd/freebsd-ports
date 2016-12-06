@@ -18,4 +18,7 @@ RUN_DEPENDS=	rubygem-activerecord>=3.2.9:databases/rubygem-activerecord \
 USE_RUBY=	yes
 USES=		gem
 
+DEPRECATED=	Depends on deprecated databases/rubygem-activerecord
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>

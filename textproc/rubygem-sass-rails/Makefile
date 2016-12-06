@@ -23,4 +23,7 @@ USES=		gem
 
 PORTSCOUT=	limit:^3\.
 
+DEPRECATED=	Depends on deprecated www/rubygem-railties
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>
