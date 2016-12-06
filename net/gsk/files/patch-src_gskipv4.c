@@ -1,5 +1,5 @@
---- src/gskipv4.c.orig	2006-05-18 03:39:35.000000000 +0900
-+++ src/gskipv4.c	2009-04-08 00:18:45.000000000 +0900
+--- src/gskipv4.c.orig	2006-05-17 18:39:35 UTC
++++ src/gskipv4.c
 @@ -1,7 +1,9 @@
  #include <string.h>
  #include <stdlib.h>
