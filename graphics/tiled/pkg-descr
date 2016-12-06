@@ -4,15 +4,15 @@ whether your game is an RPG, platformer or Breakout clone. Tiled
 is free software and written in C++, using the Qt application
 framework. The main features in a nutshell:
 
-    * General purpose tile map editor with XML-based map format
-    * Supports orthogonal and isometric maps
-    * Custom objects can be placed with pixel precision
-    * Full undo/redo and copy/paste support
-    * Add custom properties to tiles, layers, objects or the map
-    * Automatically reloads tilesets when changed externally
-    * Resize or offset your tile map later as needed
-    * Efficient tile editing tools like stamp and fill brushes
-    * Supports input/output plugins to open and save files in custom
-      formats
+ * General purpose tile map editor with XML-based map format
+ * Supports orthogonal and isometric maps
+ * Custom objects can be placed with pixel precision
+ * Full undo/redo and copy/paste support
+ * Add custom properties to tiles, layers, objects or the map
+ * Automatically reloads tilesets when changed externally
+ * Resize or offset your tile map later as needed
+ * Efficient tile editing tools like stamp and fill brushes
+ * Supports input/output plugins to open and save files in custom
+   formats
 
 WWW: http://www.mapeditor.org/
