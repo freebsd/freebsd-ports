@@ -3,6 +3,7 @@
 
 PORTNAME=	Dancer2
 PORTVERSION=	0.204001
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,7 +38,8 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
 		p5-Template-Tiny>=0:textproc/p5-Template-Tiny \
 		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww
+		p5-libwww>=0:www/p5-libwww \
+		p5-YAML>=0.86:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
