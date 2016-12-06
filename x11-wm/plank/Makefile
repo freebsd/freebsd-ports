@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/263736736/ \
+MASTER_SITES=	https://launchpadlibrarian.net/296808043/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -42,5 +42,9 @@ NLS_CONFIGURE_ENABLE=	nls
 
 DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUSMENU_CONFIGURE_ENABLE=	dbusmenu
+
+post-patch:
+	${REINPLACE_CMD} -e 's|CPUMonitor||' \
+		${WRKSRC}/docklets/Makefile.in
 
 .include <bsd.port.mk>
