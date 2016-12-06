@@ -16,6 +16,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	liblas12-1.2*
 
+PORTSCOUT=	skipv:progress-20071229
+
 USES=		cmake compiler:c++11-lang libtool
 LDFLAGS+=	-lpthread
 GNU_CONFIGURE=	yes
