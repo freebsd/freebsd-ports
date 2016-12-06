@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_dep
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Creates a version constraint of supported Rubies
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_RUBY=	yes
 USES=		gem
