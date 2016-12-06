@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.2.5
+DISTVERSION=	3.2.6
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
