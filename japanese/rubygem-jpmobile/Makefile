@@ -38,4 +38,7 @@ GEOKIT_RUN_DEPENDS=	rubygem-geokit>=1.5.0:graphics/rubygem-geokit
 IPADDRESSES_RUN_DEPENDS=	ja-rubygem-jpmobile-ipaddresses>=0.0.1:japanese/rubygem-jpmobile-ipaddresses
 TERMINFO_RUN_DEPENDS=	ja-rubygem-jpmobile-terminfo>=0.0.2:japanese/rubygem-jpmobile-terminfo
 
+DEPRECATED=	Depends on deprecated rubygem-rails
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.post.mk>
