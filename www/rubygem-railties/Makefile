@@ -25,4 +25,7 @@ USES=		gem
 
 PLIST_FILES=	bin/rails
 
+DEPRECATED=	Upstream support ended
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>

@@ -32,4 +32,7 @@ MYSQL_RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}mysql>=0:databases/ruby-mysql
 PGSQL_RUN_DEPENDS=	rubygem-pg>=0:databases/rubygem-pg
 SQLITE3_RUN_DEPENDS=	rubygem-sqlite3>=1.2.1:databases/rubygem-sqlite3
 
+DEPRECATED=	Upstream support ended
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>
