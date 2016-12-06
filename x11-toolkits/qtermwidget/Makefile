@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtermwidget
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	bacon4000@gmail.com
@@ -10,7 +10,7 @@ COMMENT=	Terminal widget for QTerminal
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig
+USES=		cmake:outsource compiler:c++11-lang pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core gui qmake_build widgets
 

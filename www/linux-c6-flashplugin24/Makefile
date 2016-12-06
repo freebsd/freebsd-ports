@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	24.0.0.154
+PORTVERSION=	24.0.0.170
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://fpdownload.macromedia.com/pub/labs/flashruntimes/flashplayer/linux32/ \
 		LOCAL/tijl/${DIST_SUBDIR}

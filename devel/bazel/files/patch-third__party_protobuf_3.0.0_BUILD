@@ -1,0 +1,11 @@
+--- third_party/protobuf/3.0.0/BUILD.orig	1979-12-31 23:00:00 UTC
++++ third_party/protobuf/3.0.0/BUILD
+@@ -87,7 +87,7 @@ COPTS = [
+     "-Wno-error=unused-variable",
+ ]
+ 
+-LINK_OPTS = ["-lpthread"]
++LINK_OPTS = ["-lpthread", "-lm"]
+ 
+ cc_library(
+     name = "protobuf_lite",
