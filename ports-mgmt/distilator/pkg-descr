@@ -1,4 +1,2 @@
 A command-line script to check the availability of a ports distfiles. This
 script can take advantage of perl threads if available.
-
-WWW: http://people.freebsd.org/~ehaupt/distilator/
