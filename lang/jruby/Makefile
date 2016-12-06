@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	1.7.26
+PORTVERSION=	9.1.6.0
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -18,83 +18,55 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cpe
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.8+
 
 JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-REPLACE_FILES=	bin/jruby
 REPLACE_LIST=	JAVA_HOME=${JAVA_HOME}
 REPLACE_LIST_TEMP=	${REPLACE_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-SHEBANG_FILES=	rake spec spec_translator Rakefile '*.rb'
 
-PLIST_SUB+=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} JRUBY_HOME=${JRUBY_HOME:S,${PREFIX}/,,}
+PLIST_SUB+=	PORTNAME=${PORTNAME} \
+		PORTVERSION=${PORTVERSION} \
+		JRUBY_HOME=${JRUBY_HOME:S,${PREFIX}/,,}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
-PORTDOCS=	*
 PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
-	@${ECHO_MSG} "Installation settings:"
-	@${ECHO_MSG} "   JRUBY_HOME:    ${JRUBY_HOME}"
-	@${ECHO_MSG} "   JAVA_HOME:     ${JAVA_HOME}"
-
 post-patch:
-	@${ECHO_MSG} -n ">> Adjusting shebangs to use /usr/bin/env ..."
-	@${FIND} ${WRKSRC}/bin -type f -exec ${GREP} -q '^#!/bin/bash' {} \; -exec ${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|' {} \;
-	@${FIND} ${WRKSRC} -type f -name '*.rb' -exec ${GREP} -q '^#!/usr/local/bin/ruby' {} \; -exec ${REINPLACE_CMD} -e 's|^#!/usr/local/bin/ruby|#!/usr/bin/env jruby|' {} \;
-.for target in ${SHEBANG_FILES}
-	@${FIND} ${WRKSRC} -type f -name ${target} -exec ${GREP} -q '^#!/usr/bin/env ruby' {} \; -exec ${REINPLACE_CMD} -e 's|^#!/usr/bin/env ruby|#!/usr/bin/env jruby|' {} \;
-.endfor
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` `${FIND} ${WRKSRC} -name '*.bak'`
-	@${ECHO_MSG} " [ DONE ]"
-
-.for target in ${REPLACE_FILES}
-	@${ECHO_MSG} -n ">> Customizing `basename ${target}`..."
-	@${REINPLACE_CMD} -i "" ${REPLACE_LIST_TEMP} ${WRKSRC}/${target}
-	@${ECHO_MSG} " [ DONE ]"
-.endfor
+	@${RM} -r \
+		${WRKSRC}/lib/jni/*AIX \
+		${WRKSRC}/lib/jni/*Linux \
+		${WRKSRC}/lib/jni/*SunOS \
+		${WRKSRC}/lib/jni/*Windows \
+		${WRKSRC}/lib/jni/Darwin \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*aix \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*cygwin \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*darwin \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*gnu \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*linux \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*netbsd \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*openbsd \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*solaris \
+		${WRKSRC}/lib/ruby/stdlib/ffi/platform/*windows
+	@${FIND} ${WRKSRC} \( -type f -name '*.bat' -or -name '*.exe' -or -name '*.dll' \) -delete
+	@${REINPLACE_CMD} -i "" ${REPLACE_LIST_TEMP} ${WRKSRC}/bin/jruby
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JRuby files..."
-
-	@cd ${WRKSRC}/bin \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${JRUBY_HOME}/bin/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_SCRIPT} {} ${STAGEDIR}${JRUBY_HOME}/bin/{} \;
-	@cd ${WRKSRC}/lib \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${JRUBY_HOME}/lib/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${JRUBY_HOME}/lib/{} \;
-
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Installing symlinks in ${STAGEDIR}${PREFIX}/bin..."
+	${MKDIR} ${STAGEDIR}${JRUBY_HOME}/bin
+	${MKDIR} ${STAGEDIR}${JRUBY_HOME}/lib
+	(cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${JRUBY_HOME}/bin/)
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${JRUBY_HOME}/lib)
 .for f in jruby jirb jgem
-	@${LN} -sf ${JRUBY_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
+	${LN} -sf ${JRUBY_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Stripping shared libraries for jnr-ffi"
-	@${FIND} ${STAGEDIR}${JRUBY_HOME}/lib/jni/x86_64-FreeBSD -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
-	@${ECHO_MSG} " [ DONE ]"
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing Documents files..."
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/ \
-	  && ${COPYTREE_SHARE} [A-Z]\* ${STAGEDIR}${DOCSDIR})
-	@(cd ${WRKSRC}/docs \
-	  && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
+	${FIND} ${STAGEDIR}${JRUBY_HOME}/lib/jni/x86_64-FreeBSD -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/samples \
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples \
 	  && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.post.mk>
