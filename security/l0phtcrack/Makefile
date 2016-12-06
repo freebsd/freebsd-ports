@@ -5,7 +5,7 @@ PORTNAME=	l0phtcrack
 PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
-		http://mirror.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
 #		http://www.cotse.com/sw/WinNT/
 DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
