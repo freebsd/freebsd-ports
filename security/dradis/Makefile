@@ -48,4 +48,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	( cd ${WRKSRC} && ${COPYTREE_SHARE} server ${STAGEDIR}${PREFIX}/${PORTNAME}/ )
 
+
+DEPRECATED=	Depends on deprecated www/rubygem-rails
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>
