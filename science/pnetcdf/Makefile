@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
@@ -17,13 +16,14 @@ OPTIONS_SINGLE=	MPI
 OPTIONS_SINGLE_MPI=	OPENMPI MPICH2
 OPTIONS_DEFAULT=OPENMPI
 
-CONFLICTS=	hdf-4.*
+CONFLICTS_INSTALL=	hdf-4.*
 
 CFLAGS+=	-fPIC -DPIC
+CONFIGURE_ARGS=	ac_cv_fc_compiler_nag=no
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	build
-USES=		fortran gmake perl5 tar:bzip2
+USES=		fortran gmake pathfix perl5 tar:bzip2
 
 PORTDOCS=	COPYRIGHT INSTALL README
 
@@ -34,10 +34,13 @@ OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e '/$$(INSTALL.*$$(...DIR)/ s|$$(...DIR)|$$(DESTDIR)&|'
+	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/src/lib/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
