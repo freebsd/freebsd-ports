@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblouis
-PORTVERSION=	2.6.5
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -18,5 +18,6 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
