@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qterminal
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	x11
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,14 +11,16 @@ COMMENT=	Lightweight Qt-based terminal emulator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget
-RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf
+RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf \
+	qterminal-l10n>0:x11/qterminal-l10n
 
-USES=		cmake:outsource compiler:c++11-lang gettext localbase:ldflags \
-		pkgconfig
-USE_QT5+=	buildtools_build core gui linguisttools_build qmake_build widgets
-USE_XORG+=	x11
+USES=		cmake:outsource compiler:c++11-lang localbase:ldflags \
+		lxqt pkgconfig tar:xz
+USE_QT5=	buildtools_build core gui qmake_build widgets x11extras
+USE_XORG=	x11
+USE_LXQT=	lxqt
 
-CMAKE_ARGS+=	-DUSE_SYSTEM_QXT:BOOL=OFF -DUSE_QT5:BOOL=ON
+CMAKE_ARGS+=	-DUSE_SYSTEM_QXT:BOOL=OFF
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
