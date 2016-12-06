@@ -10,11 +10,11 @@ MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Ruby FFI Library wrapper for GSSAPI
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-ffi>=1.9.3:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.0.1:devel/rubygem-ffi
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

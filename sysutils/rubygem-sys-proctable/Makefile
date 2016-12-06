@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-proctable
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.3
 DISTVERSIONSUFFIX=	-universal-freebsd
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -10,7 +10,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for getting process information
 
-LICENSE=	ART20
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 

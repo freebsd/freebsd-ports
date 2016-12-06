@@ -1,0 +1,11 @@
+--- travis.gemspec.orig	2016-12-05 17:22:06 UTC
++++ travis.gemspec
+@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<net-http-persistent>.freeze, ["~> 2.9"])
+       s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
+       s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
+-      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8", "~> 0.6"])
++      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8"])
+       s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])
+       s.add_development_dependency(%q<sinatra>.freeze, ["~> 1.3"])

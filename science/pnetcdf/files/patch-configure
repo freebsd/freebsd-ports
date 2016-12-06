@@ -1,0 +1,21 @@
+--- configure.orig	2016-03-03 20:07:36 UTC
++++ configure
+@@ -3056,12 +3056,12 @@ fi
+ 
+ 
+ 
+-if test "x$MPICC"  = x && test "x$CC"  != x ; then MPICC=$CC   ; fi
+-if test "x$MPICXX" = x && test "x$CXX" != x ; then MPICXX=$CXX ; fi
+-if test "x$MPIF77" = x && test "x$F77" != x ; then MPIF77=$F77 ; fi
+-if test "x$MPIF77" = x && test "x$FC"  != x ; then MPIF77=$FC  ; fi
+-if test "x$MPIF90" = x && test "x$F90" != x ; then MPIF90=$F90 ; fi
+-if test "x$MPIF90" = x && test "x$FC"  != x ; then MPIF90=$FC  ; fi
++#if test "x$MPICC"  = x && test "x$CC"  != x ; then MPICC=$CC   ; fi
++#if test "x$MPICXX" = x && test "x$CXX" != x ; then MPICXX=$CXX ; fi
++#if test "x$MPIF77" = x && test "x$F77" != x ; then MPIF77=$F77 ; fi
++#if test "x$MPIF77" = x && test "x$FC"  != x ; then MPIF77=$FC  ; fi
++#if test "x$MPIF90" = x && test "x$F90" != x ; then MPIF90=$F90 ; fi
++#if test "x$MPIF90" = x && test "x$FC"  != x ; then MPIF90=$FC  ; fi
+ 
+ CANDIDATE_MPICC="${MPICC} mpicc"
+ CANDIDATE_MPICXX="${MPICXX} mpicxx mpic++ mpiCC"

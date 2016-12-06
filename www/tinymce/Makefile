@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	4.3.3
+PORTVERSION=	4.5.0
 CATEGORIES=	www
-MASTER_SITES=	http://download.moxiecode.com/${PORTNAME}/ \
+MASTER_SITES=	http://download.ephox.com/${PORTNAME}/community/ \
 		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
