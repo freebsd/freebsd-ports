@@ -1,5 +1,2 @@
 bin/distilator
 %%SITE_PERL%%/FreeBSD/Ports/Distilator.pm
-%%SITE_PERL%%/FreeBSD/Ports/DistilatorCommon.pm
-%%SITE_PERL%%/FreeBSD/Ports/DistilatorSingle.pm
-%%SITE_PERL%%/FreeBSD/Ports/DistilatorThreaded.pm
