@@ -17,6 +17,7 @@ USE_PHP=	filter json mysql pcre pdf session xml xmlrpc xmlwriter zlib
 FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 NO_ARCH=	YES
+IGNORE_WITH_PHP=70
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
