@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -59,6 +59,7 @@ OPTIONS_DEFINE=	\
 	NJS \
 	STREAM \
 	STREAM_SSL \
+	STREAM_SSL_PREREAD \
 	THREADS \
 	WWW \
 	AJP \
@@ -132,7 +133,8 @@ OPTIONS_DEFAULT?=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
 		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
 		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
-		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL THREADS WWW
+		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL STREAM_SSL_PREREAD \
+		THREADS WWW
 
 DSO_DESC=			Enable dynamic modules support
 DEBUG_DESC=			Build with debugging support
@@ -169,6 +171,7 @@ HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
 NJS_DESC=			Enable http_javascript module
 STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
+STREAM_SSL_PREREAD_DESC=	Enable stream_ssl_preread module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
@@ -1075,6 +1078,9 @@ CONFIGURE_ARGS+=--with-stream
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-stream_ssl_module
+.if ${PORT_OPTIONS:MSTREAM_SSL_PREREAD}
+CONFIGURE_ARGS+=--with-stream_ssl_preread_module
+.endif
 .endif
 .endif
 
