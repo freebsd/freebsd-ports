@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doas
-PORTVERSION=	5.9p6
+PORTVERSION=	5.9p7
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -12,7 +12,7 @@ LICENSE=	ISCL
 USE_GITHUB=	yes
 GH_ACCOUNT=	slicer69
 GH_PROJECT=	doas
-GH_TAGNAME=	045f56f
+GH_TAGNAME=	a15e6ed
 
 USES=	gmake
 
