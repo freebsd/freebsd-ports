@@ -3,6 +3,7 @@
 
 PORTNAME=	med
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
