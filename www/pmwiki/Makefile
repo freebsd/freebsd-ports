@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.2.91
+PORTVERSION=	2.2.92
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
