@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.14.1
+PORTVERSION=	2.15.0
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -30,7 +30,7 @@ SLAVEDIRS=	cad/gmsh-occ
 
 USES=		blaslapack cmake fortran gmake jpeg tar:tgz
 USE_GL=		gl glu
-USE_XORG=	x11 xext xfixes xft
+USE_XORG=	x11 xcursor xext xinerama xfixes xft
 
 MAKE_JOBS_UNSAFE=yes
 

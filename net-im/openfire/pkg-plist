@@ -344,9 +344,6 @@
 %%DATADIR%%/resources/database/upgrade/9/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/9/openfire_sqlserver.sql
 %%DATADIR%%/resources/database/upgrade/9/openfire_sybase.sql
-%%DATADIR%%/resources/nativeAuth/linux-i386/libshaj.so
-%%DATADIR%%/resources/nativeAuth/osx-ppc/libshaj.jnilib
-%%DATADIR%%/resources/nativeAuth/win32-x86/shaj.dll
 %%DATADIR%%/resources/security
 %%DATADIR%%/resources/spank/WEB-INF/web.xml
 %%DATADIR%%/resources/spank/index.html

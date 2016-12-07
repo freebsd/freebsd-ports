@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-special-matrix
 PORTVERSION=	1.0.7
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

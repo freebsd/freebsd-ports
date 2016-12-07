@@ -3,6 +3,7 @@
 
 PORTNAME=	Clp
 PORTVERSION=	1.16.10
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/${PORTNAME}/ \
 		http://www.mavetju.org/download/adopted/
