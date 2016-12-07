@@ -104,6 +104,7 @@ COMMANDS=	bugpoint \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
+		llvm-cat \
 		llvm-config \
 		llvm-cov \
 		llvm-diff \
@@ -114,6 +115,7 @@ COMMANDS=	bugpoint \
 		llvm-link \
 		llvm-mc \
 		llvm-mcmarkup \
+		llvm-modextract \
 		llvm-nm \
 		llvm-objdump \
 		llvm-opt-report \
@@ -187,6 +189,10 @@ COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray_interface.h)
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
 LIT_COMMANDS=	lit llvm-lit FileCheck
+.endif
+
+.if ${PORT_OPTIONS:MLLD}
+COMMANDS+=	ld.lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
