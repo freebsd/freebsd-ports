@@ -22,4 +22,7 @@ USES=		gem
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/rdoc ${STAGEDIR}${PREFIX}/bin/ri
 
+DEPRECATED=	Older version no longer required
+EXPIRATION_DATE=	2017-01-08
+
 .include <bsd.port.mk>
