@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
