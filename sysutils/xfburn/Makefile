@@ -3,7 +3,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libburn.so:devel/libburn \
 		libisofs.so:devel/libisofs
-RUN_DEPENDS=	cdrdao:sysutils/cdrdao
+RUN_DEPENDS=	cdrdao:sysutils/cdrdao \
+	${LOCALBASE}/include/libburn/libburn.h:devel/libburn \
+	${LOCALBASE}/include/libisofs/libisofs.h:devel/libisofs
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool intlhack glib20 gtk20
