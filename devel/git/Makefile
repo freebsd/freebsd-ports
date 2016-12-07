@@ -24,8 +24,6 @@ GROUPS=		git_daemon
 
 SUB_FILES=	pkg-message
 
-EXPLICIT_SAFESTACK=	yes
-
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
