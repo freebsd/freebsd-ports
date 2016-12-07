@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 # PIE is picked up via configure argument.
 NOPIE_PORTS=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 CPE_VENDOR=	openinfosecfoundation
 
 INSTALL_TARGET=		install-strip
