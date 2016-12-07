@@ -8821,3 +8821,4 @@ graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports
 security/gsfv||2016-12-04|Has expired: No more upstream.
 misc/grun||2016-12-04|Has expired: No more upstream.
 devel/py-argparse||2016-12-04|Has expired: Part of Python standard library for Python >= 2.7 and >= 3.2
+www/node7|www/node|2016-12-07|www/node is now www/node7
