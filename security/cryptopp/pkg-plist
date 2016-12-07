@@ -1,4 +1,3 @@
-bin/cryptest
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
 include/cryptopp/aes.h
@@ -12,12 +11,14 @@ include/cryptopp/base32.h
 include/cryptopp/base64.h
 include/cryptopp/basecode.h
 include/cryptopp/bench.h
+include/cryptopp/blake2.h
 include/cryptopp/blowfish.h
 include/cryptopp/blumshub.h
 include/cryptopp/camellia.h
 include/cryptopp/cast.h
 include/cryptopp/cbcmac.h
 include/cryptopp/ccm.h
+include/cryptopp/chacha.h
 include/cryptopp/channels.h
 include/cryptopp/cmac.h
 include/cryptopp/config.h
@@ -39,6 +40,7 @@ include/cryptopp/emsa2.h
 include/cryptopp/eprecomp.h
 include/cryptopp/esign.h
 include/cryptopp/factory.h
+include/cryptopp/fhmqv.h
 include/cryptopp/files.h
 include/cryptopp/filters.h
 include/cryptopp/fips140.h
@@ -51,12 +53,15 @@ include/cryptopp/gfpcrypt.h
 include/cryptopp/gost.h
 include/cryptopp/gzip.h
 include/cryptopp/hex.h
+include/cryptopp/hkdf.h
 include/cryptopp/hmac.h
+include/cryptopp/hmqv.h
 include/cryptopp/hrtimer.h
 include/cryptopp/ida.h
 include/cryptopp/idea.h
 include/cryptopp/integer.h
 include/cryptopp/iterhash.h
+include/cryptopp/keccak.h
 include/cryptopp/lubyrack.h
 include/cryptopp/luc.h
 include/cryptopp/mars.h
@@ -64,6 +69,7 @@ include/cryptopp/md2.h
 include/cryptopp/md4.h
 include/cryptopp/md5.h
 include/cryptopp/mdc.h
+include/cryptopp/mersenne.h
 include/cryptopp/misc.h
 include/cryptopp/modarith.h
 include/cryptopp/modes.h
@@ -76,6 +82,7 @@ include/cryptopp/nr.h
 include/cryptopp/oaep.h
 include/cryptopp/oids.h
 include/cryptopp/osrng.h
+include/cryptopp/ossig.h
 include/cryptopp/panama.h
 include/cryptopp/pch.h
 include/cryptopp/pkcspad.h
@@ -89,6 +96,7 @@ include/cryptopp/randpool.h
 include/cryptopp/rc2.h
 include/cryptopp/rc5.h
 include/cryptopp/rc6.h
+include/cryptopp/rdrand.h
 include/cryptopp/rijndael.h
 include/cryptopp/ripemd.h
 include/cryptopp/rng.h
@@ -116,6 +124,7 @@ include/cryptopp/stdcpp.h
 include/cryptopp/strciphr.h
 include/cryptopp/tea.h
 include/cryptopp/tiger.h
+include/cryptopp/trap.h
 include/cryptopp/trdlocal.h
 include/cryptopp/trunhash.h
 include/cryptopp/ttmac.h
@@ -133,8 +142,7 @@ include/cryptopp/zdeflate.h
 include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
 lib/libcryptopp.a
-%%DYNAMIC_ENABLED%%lib/libcryptopp.so
-%%DYNAMIC_ENABLED%%lib/libcryptopp.so.%%LIBVERSION%%
-%%DYNAMIC_ENABLED%%lib/libcryptopp.so.%%PORTVERSION%%
+lib/libcryptopp.so
+lib/libcryptopp.so.%%LIBVERSION%%
+lib/libcryptopp.so.%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/License

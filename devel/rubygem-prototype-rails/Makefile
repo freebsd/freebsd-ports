@@ -16,4 +16,7 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+DEPRECATED=	Depends on deprecated www/rubygem-rails
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>

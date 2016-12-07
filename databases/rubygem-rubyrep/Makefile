@@ -34,4 +34,7 @@ PLIST_FILES=	bin/rubyrep
 PGSQL_RUN_DEPENDS=	rubygem-pg>=0:databases/rubygem-pg
 MYSQL_RUN_DEPENDS=	ruby-mysql>=0:databases/ruby-mysql
 
+DEPRECATED=	Depends on deprecated databases/rubygem-activerecord
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>

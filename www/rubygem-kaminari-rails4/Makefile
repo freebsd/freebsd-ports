@@ -13,7 +13,7 @@ COMMENT=	Sophisticated paginator for Rails 4
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack4>=4.0.0:www/rubygem-actionpack4 \
+RUN_DEPENDS?=	rubygem-actionpack4>=4.0.0:www/rubygem-actionpack4 \
 		rubygem-activesupport4>=4.0.0:devel/rubygem-activesupport4
 
 NO_ARCH=	yes

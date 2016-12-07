@@ -22,4 +22,7 @@ PLIST_FILES=	bin/install_rubigen_scripts \
 		bin/ruby_app \
 		bin/rubigen
 
+DEPRECATED=	Depends on deprecated devel/rubygem-activesupport
+EXPIRATION_DATE=	2017-01-07
+
 .include <bsd.port.mk>
