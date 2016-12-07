@@ -1,26 +1,40 @@
---- ./GNUmakefile.orig	2013-02-20 15:30:52.000000000 -0500
-+++ ./GNUmakefile	2014-02-05 14:26:22.994957010 -0500
-@@ -1,4 +1,4 @@
--CXXFLAGS = -DNDEBUG -g -O2
-+#CXXFLAGS = -DNDEBUG -g -O2
- # -O3 fails to link on Cygwin GCC version 4.5.3
- # -fPIC is supported. Please report any breakage of -fPIC as a bug.
- # CXXFLAGS += -fPIC
-@@ -38,8 +38,6 @@
- ifneq ($(GCC42_OR_LATER),0)
- ifeq ($(UNAME),Darwin)
- CXXFLAGS += -arch x86_64 -arch i386
+--- GNUmakefile.orig	2016-10-10 23:49:54 UTC
++++ GNUmakefile
+@@ -41,7 +41,7 @@ SUNCC_511_OR_LATER := $(shell $(CXX) -V 
+ SUNCC_512_OR_LATER := $(shell $(CXX) -V 2>&1 | $(EGREP) -c "CC: (Sun|Studio) .* (5\.1[2-9]|5\.[2-9]|6\.)")
+ SUNCC_513_OR_LATER := $(shell $(CXX) -V 2>&1 | $(EGREP) -c "CC: (Sun|Studio) .* (5\.1[3-9]|5\.[2-9]|6\.)")
+ 
+-HAS_SOLIB_VERSION := $(IS_LINUX)
++HAS_SOLIB_VERSION := 1
+ 
+ # Fixup SunOS
+ ifeq ($(IS_SUN),1)
+@@ -126,11 +126,6 @@ ifeq ($(IS_X86)$(IS_X32)$(IS_CYGWIN)$(IS
+ endif
+ 
+ # Guard use of -march=native
+-ifeq ($(GCC42_OR_LATER)$(IS_NETBSD),10)
+-   CXXFLAGS += -march=native
+-else ifneq ($(CLANG_COMPILER)$(INTEL_COMPILER),00)
+-   CXXFLAGS += -march=native
 -else
--CXXFLAGS += -march=native
- endif
- endif
+   # GCC 3.3 and "unknown option -march="
+   # Ubuntu GCC 4.1 compiler crash with -march=native
+   # NetBSD GCC 4.8 compiler and "bad value (native) for -march= switch"
+@@ -140,7 +135,6 @@ else
+   else ifeq ($(SUN_COMPILER)$(IS_X86),01)
+     CXXFLAGS += -m32
+   endif # X86/X32/X64
+-endif
  
-@@ -165,7 +163,7 @@
- 	$(RANLIB) $@
+ # Aligned access required for -O3 and above due to vectorization
+ UNALIGNED_ACCESS := $(shell $(EGREP) -c "^[[:space:]]*//[[:space:]]*\#[[:space:]]*define[[:space:]]*CRYPTOPP_NO_UNALIGNED_DATA_ACCESS" config.h)
+@@ -404,7 +398,7 @@ ifeq ($(HAS_SOLIB_VERSION),1)
+ # Full version suffix for shared library
+ SOLIB_VERSION_SUFFIX=.$(LIB_MAJOR).$(LIB_MINOR).$(LIB_PATCH)
+ # Different patchlevels are compatible, minor versions are not
+-SOLIB_COMPAT_SUFFIX=.$(LIB_MAJOR).$(LIB_MINOR)
++SOLIB_COMPAT_SUFFIX=.$(LIB_MAJOR)
+ SOLIB_FLAGS=-Wl,-soname,libcryptopp.so$(SOLIB_COMPAT_SUFFIX)
+ endif # HAS_SOLIB_VERSION
  
- libcryptopp.so: $(LIBOBJS)
--	$(CXX) -shared -o $@ $(LIBOBJS)
-+	$(CXX) -shared -o $@ $(CXXFLAGS) $(LDFLAGS) $(LIBOBJS)
- 
- cryptest.exe: libcryptopp.a $(TESTOBJS)
- 	$(CXX) -o $@ $(CXXFLAGS) $(TESTOBJS) ./libcryptopp.a $(LDFLAGS) $(LDLIBS)
