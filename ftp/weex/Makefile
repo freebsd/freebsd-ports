@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	weex
-PORTVERSION=	2.6.1.5
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	ftp
-MASTER_SITES=	SF
+MASTER_SITES=	SF/weex/weex
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Non-interactive FTP client
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
+USES=		autoreconf gmake ssl gettext-tools
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	ChangeLog README
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
+# NLS support is very broken in this release
+CONFIGURE_ARGS=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS.*\)debian|\1|' \
@@ -27,9 +28,5 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.weexrc ${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
 
 .include <bsd.port.mk>
