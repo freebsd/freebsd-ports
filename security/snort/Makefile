@@ -21,6 +21,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 BUILD_DEPENDS=	daq>=2.0.0:net/daq
 RUN_DEPENDS=	daq>=2.0.0:net/daq
 
+EXPLICIT_SAFESTACK=	yes
+
 OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
 			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER \
 			FILEINSPECT
@@ -72,7 +74,7 @@ APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 USE_RC_SUBR=	snort
 SUB_FILES=	pkg-message
 
-USES=		cpe libtool pathfix
+USES+=		cpe libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
