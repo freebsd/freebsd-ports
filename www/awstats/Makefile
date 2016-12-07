@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awstats
-PORTVERSION=	7.5
-PORTREVISION=	1
+PORTVERSION=	7.6
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -19,7 +18,7 @@ RUN_DEPENDS=	p5-Net-XWhois>=0:net/p5-Net-XWhois
 USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
 
-SHEBANG_FILES=	tools/*.pl wwwroot/cgi-bin/*.pl wwwroot/cgi-bin/plugins/*.pm
+SHEBANG_GLOB=	*.pl *.pm
 DOS2UNIX_GLOB=	*.xml *.pm
 
 NO_BUILD=	yes
