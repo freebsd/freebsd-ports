@@ -1,54 +1,62 @@
---- misc.h.orig	2010-08-06 18:46:18.000000000 +0000
-+++ misc.h	2013-05-22 08:43:01.949194748 +0000
-@@ -405,17 +405,13 @@
- 	return order == GetNativeByteOrder();
- }
- 
+This fixes a warning triggered by testing an unsigned parameter
+against 0.  The patch solves this by creating a different template
+for signed case. (PR: 178827)
+
+--- misc.h.orig	2016-10-10 23:49:54 UTC
++++ misc.h
+@@ -529,8 +529,10 @@ inline bool SafeConvert(T1 from, T2 &to)
+ //! \param value the value to convert
+ //! \param base the base to use during the conversion
+ //! \returns the string representation of value in base.
 +template<bool> struct IsUnsigned {};
 +
  template <class T>
--std::string IntToString(T a, unsigned int base = 10)
-+std::string IntToStringImpl(T a, unsigned int base, IsUnsigned<true>)
+-std::string IntToString(T value, unsigned int base = 10)
++std::string IntToStringImpl(T value, unsigned int base, IsUnsigned<true>)
  {
- 	if (a == 0)
+ 	// Hack... set the high bit for uppercase.
+ 	static const unsigned int HIGH_BIT = (1U << 31);
+@@ -541,12 +543,6 @@ std::string IntToString(T value, unsigne
+ 	if (value == 0)
  		return "0";
+ 
 -	bool negate = false;
--	if (a < 0)
+-	if (value < 0)
 -	{
 -		negate = true;
--		a = 0-a;	// VC .NET does not like -a
+-		value = 0-value;	// VC .NET does not like -a
 -	}
  	std::string result;
- 	while (a > 0)
+ 	while (value > 0)
  	{
-@@ -423,11 +419,30 @@
- 		result = char((digit < 10 ? '0' : ('a' - 10)) + digit) + result;
- 		a /= base;
+@@ -554,11 +550,30 @@ std::string IntToString(T value, unsigne
+ 		result = char((digit < 10 ? '0' : (CH - 10)) + digit) + result;
+ 		value /= base;
  	}
 +	return result;
 +}
 +
 +template <class T>
-+std::string IntToStringImpl(T a, unsigned int base, IsUnsigned<false>)
++std::string IntToStringImpl(T value, unsigned int base, IsUnsigned<false>)
 +{
 +	bool negate = false;
-+	if (a < 0)
++	if (value < 0)
 +	{
 +		negate = true;
-+		a = 0-a;	// VC .NET does not like -a
++		value = 0-value;	// VC .NET does not like -a
 +	}
-+	std::string result = IntToStringImpl(a, base, IsUnsigned<true>());
++	std::string result = IntToStringImpl(value, base, IsUnsigned<true>());
  	if (negate)
  		result = "-" + result;
  	return result;
  }
  
 +template <class T>
-+std::string IntToString(T a, unsigned int base = 10)
++std::string IntToString(T value, unsigned int base = 10)
 +{
-+	return IntToStringImpl(a, base, IsUnsigned<(static_cast<T>(-1) > 0)>());
++	return IntToStringImpl(value, base, IsUnsigned<(static_cast<T>(-1) > 0)>());
 +}
 +
- template <class T1, class T2>
- inline T1 SaturatingSubtract(const T1 &a, const T2 &b)
- {
+ //! \brief Converts an unsigned value to a string
+ //! \param value the value to convert
+ //! \param base the base to use during the conversion
