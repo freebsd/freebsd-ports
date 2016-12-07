@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 # XXX Remember to update files/patch-configure.am with any new version number.
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
