@@ -115,6 +115,7 @@
     SUBDIR += doas
     SUBDIR += doorman
     SUBDIR += doscan
+    SUBDIR += dotdotpwn
     SUBDIR += dradis
     SUBDIR += dropbear
     SUBDIR += dsniff
