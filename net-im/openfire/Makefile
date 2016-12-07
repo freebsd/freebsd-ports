@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -12,6 +12,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.html
 
 RUN_DEPENDS=	slf4j>=1.7.7:devel/slf4j
 
@@ -26,6 +27,7 @@ USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
+NO_ARCH=	yes
 
 CPE_VENDOR=	igniterealtime
 
@@ -56,8 +58,10 @@ do-install:
 	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar ${STAGEDIR}${DATADIR}/lib)
 	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 log4j.xml ${STAGEDIR}${DATADIR}/lib)
 
-	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \! -path ./security\* \
-	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/resources)
+	(cd ${INSTALL_WRKSRC}/resources && \
+	    ${FIND} . \! -path ./security\* \! -path ./nativeAuth\* | \
+	    ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} \
+	        ${STAGEDIR}${DATADIR}/resources)
 
 #	always install admin interface
 	(cd ${INSTALL_WRKSRC}/plugins/admin && ${FIND} . \
@@ -86,8 +90,5 @@ do-install-DOCS-on:
 	    ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/documentation/docs && ${FIND} . \! -path ./javadoc\* \
 	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1 )
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/resources/nativeAuth/linux-i386/libshaj.so
 
 .include <bsd.port.mk>
