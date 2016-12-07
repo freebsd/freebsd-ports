@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rbenv
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	devel ruby
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -27,7 +26,6 @@ post-patch:
 do-install:
 	CC="${CC}" ${WRKSRC}/src/${CONFIGURE_CMD}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/src
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-local-exec ${STAGEDIR}${PREFIX}/bin
 	( ${INSTALL_SCRIPT} ${WRKSRC}/libexec/* ${STAGEDIR}${PREFIX}/libexec/ )
 	@${LN} -sf ../libexec/rbenv ${STAGEDIR}${PREFIX}/bin/rbenv
 	@${MKDIR} ${STAGEDIR}${DATADIR}/completions

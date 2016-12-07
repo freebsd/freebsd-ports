@@ -1,5 +1,4 @@
 bin/rbenv
-bin/ruby-local-exec
 etc/rbenv.d/exec/gem-rehash.bash
 etc/rbenv.d/exec/gem-rehash/rubygems_plugin.rb
 libexec/rbenv
