@@ -15,6 +15,9 @@ COMMENT=	JBoss 7.2.0.Final
 
 LICENSE=	GPLv2
 
+DEPRECATED=     Unsupported, replaced by wildfly
+EXPIRATION_DATE=2017-02-07
+
 USE_GITHUB=	YES
 GH_ACCOUNT=	jbossas
 GH_PROJECT=	jboss-as
