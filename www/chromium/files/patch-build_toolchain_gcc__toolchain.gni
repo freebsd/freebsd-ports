@@ -1,6 +1,18 @@
---- build/toolchain/gcc_toolchain.gni.orig	2016-10-06 04:02:08.000000000 +0300
-+++ build/toolchain/gcc_toolchain.gni	2016-10-13 10:28:11.777849000 +0300
-@@ -453,14 +453,28 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2016-11-10 20:02:09 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -10,6 +10,11 @@ import("//build/toolchain/cc_wrapper.gni
+ import("//build/toolchain/goma.gni")
+ import("//build/toolchain/toolchain.gni")
+ 
++declare_args() {
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -453,14 +458,28 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
