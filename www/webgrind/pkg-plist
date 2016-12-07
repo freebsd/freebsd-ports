@@ -1,7 +1,10 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%WWWDIR%%/README.md
+%%WWWDIR%%/bin/preprocessor
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/config.php
+%%WWWDIR%%/favicon.ico
 %%WWWDIR%%/img/asc.gif
 %%WWWDIR%%/img/bg.gif
 %%WWWDIR%%/img/blank.gif
