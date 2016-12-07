@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 DEPRECATED=	Upstream has placed 0.12.x in maintenance mode, see https://github.com/nodejs/LTS#lts_schedule
 EXPIRATION_DATE=	2016-12-31
 
-CONFLICTS_INSTALL=	node[4567]-[0-9]* node010-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[456]-[0-9]* node010-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
