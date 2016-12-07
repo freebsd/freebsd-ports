@@ -4,6 +4,7 @@ bin/lli-devel
 bin/llvm-ar-devel
 bin/llvm-as-devel
 bin/llvm-bcanalyzer-devel
+bin/llvm-cat-devel
 bin/llvm-config-devel
 bin/llvm-cov-devel
 bin/llvm-diff-devel
@@ -14,6 +15,7 @@ bin/llvm-extract-devel
 bin/llvm-link-devel
 bin/llvm-mc-devel
 bin/llvm-mcmarkup-devel
+bin/llvm-modextract-devel
 bin/llvm-nm-devel
 bin/llvm-objdump-devel
 bin/llvm-opt-report-devel
@@ -39,6 +41,7 @@ bin/sancov-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/scan-build-devel
 %%CLANG%%bin/scan-view-devel
+%%LLD%%bin/ld.lld-devel
 %%LLDB%%bin/lldb-devel
 %%LLDB%%bin/lldb-argdumper-devel
 %%LLDB%%bin/lldb-mi-devel
@@ -97,6 +100,7 @@ llvm-devel/bin/llvm-ar
 llvm-devel/bin/llvm-as
 llvm-devel/bin/llvm-bcanalyzer
 llvm-devel/bin/llvm-c-test
+llvm-devel/bin/llvm-cat
 llvm-devel/bin/llvm-config
 llvm-devel/bin/llvm-cov
 llvm-devel/bin/llvm-cxxdump
@@ -113,6 +117,7 @@ llvm-devel/bin/llvm-lto
 llvm-devel/bin/llvm-lto2
 llvm-devel/bin/llvm-mc
 llvm-devel/bin/llvm-mcmarkup
+llvm-devel/bin/llvm-modextract
 llvm-devel/bin/llvm-nm
 llvm-devel/bin/llvm-objdump
 llvm-devel/bin/llvm-opt-report
@@ -382,6 +387,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Config/config.h
 %%CLANG%%llvm-devel/include/clang/Driver/Action.h
 %%CLANG%%llvm-devel/include/clang/Driver/Compilation.h
+%%CLANG%%llvm-devel/include/clang/Driver/Distro.h
 %%CLANG%%llvm-devel/include/clang/Driver/Driver.h
 %%CLANG%%llvm-devel/include/clang/Driver/DriverDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Driver/Job.h
@@ -725,8 +731,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Core/ClangForward.h
 %%LLDB%%llvm-devel/include/lldb/Core/Communication.h
 %%LLDB%%llvm-devel/include/lldb/Core/Connection.h
-%%LLDB%%llvm-devel/include/lldb/Core/ConnectionMachPort.h
-%%LLDB%%llvm-devel/include/lldb/Core/ConnectionSharedMemory.h
 %%LLDB%%llvm-devel/include/lldb/Core/ConstString.h
 %%LLDB%%llvm-devel/include/lldb/Core/DataBuffer.h
 %%LLDB%%llvm-devel/include/lldb/Core/DataBufferHeap.h
@@ -1107,6 +1111,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/StringExtractor.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StringLexer.h
 %%LLDB%%llvm-devel/include/lldb/Utility/TaskPool.h
+%%LLDB%%llvm-devel/include/lldb/Utility/Timeout.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Utils.h
 %%LLDB%%llvm-devel/include/lldb/lldb-defines.h
 %%LLDB%%llvm-devel/include/lldb/lldb-enumerations.h
@@ -1435,6 +1440,7 @@ llvm-devel/include/llvm/Config/AsmParsers.def
 llvm-devel/include/llvm/Config/AsmPrinters.def
 llvm-devel/include/llvm/Config/Disassemblers.def
 llvm-devel/include/llvm/Config/Targets.def
+llvm-devel/include/llvm/Config/abi-breaking.h
 llvm-devel/include/llvm/Config/llvm-config.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVDebugRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVRecord.h
@@ -1813,11 +1819,13 @@ llvm-devel/include/llvm/Object/IRObjectFile.h
 llvm-devel/include/llvm/Object/MachO.h
 llvm-devel/include/llvm/Object/MachOUniversal.h
 llvm-devel/include/llvm/Object/ModuleSummaryIndexObjectFile.h
+llvm-devel/include/llvm/Object/ModuleSymbolTable.h
 llvm-devel/include/llvm/Object/ObjectFile.h
 llvm-devel/include/llvm/Object/RelocVisitor.h
 llvm-devel/include/llvm/Object/StackMapParser.h
 llvm-devel/include/llvm/Object/SymbolSize.h
 llvm-devel/include/llvm/Object/SymbolicFile.h
+llvm-devel/include/llvm/Object/Wasm.h
 llvm-devel/include/llvm/ObjectYAML/COFFYAML.h
 llvm-devel/include/llvm/ObjectYAML/ELFYAML.h
 llvm-devel/include/llvm/ObjectYAML/MachOYAML.h
@@ -1972,11 +1980,13 @@ llvm-devel/include/llvm/Support/Threading.h
 llvm-devel/include/llvm/Support/Timer.h
 llvm-devel/include/llvm/Support/ToolOutputFile.h
 llvm-devel/include/llvm/Support/TrailingObjects.h
+llvm-devel/include/llvm/Support/TrigramIndex.h
 llvm-devel/include/llvm/Support/TypeName.h
 llvm-devel/include/llvm/Support/Unicode.h
 llvm-devel/include/llvm/Support/UnicodeCharRanges.h
 llvm-devel/include/llvm/Support/UniqueLock.h
 llvm-devel/include/llvm/Support/Valgrind.h
+llvm-devel/include/llvm/Support/Wasm.h
 llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
 llvm-devel/include/llvm/Support/WindowsError.h
