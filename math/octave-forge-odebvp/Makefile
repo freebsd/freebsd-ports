@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-odebvp
 PORTVERSION=	1.0.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

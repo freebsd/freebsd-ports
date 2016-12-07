@@ -2,6 +2,7 @@
 
 PORTNAME=	ceres-solver
 DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jbeich@FreeBSD.org

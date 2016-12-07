@@ -3,6 +3,7 @@
 
 PORTNAME=	arpack-ng
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org

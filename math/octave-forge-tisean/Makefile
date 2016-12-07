@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-tisean
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

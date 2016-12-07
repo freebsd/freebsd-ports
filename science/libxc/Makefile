@@ -3,6 +3,7 @@
 
 PORTNAME=	libxc
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/octopus/download/libxc/
 
