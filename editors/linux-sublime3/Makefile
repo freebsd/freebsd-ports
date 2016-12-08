@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	sublime
-PORTVERSION=	3.0.83
-PORTREVISION=	2
+PORTVERSION=	3.1.26
 CATEGORIES=	editors linux
-MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
+MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	3
-DISTNAME=	sublime_text_3_build_3083_x32
+DISTNAME_i386=	sublime_text_3_build_3126_x32
+DISTNAME_x86_64=sublime_text_3_build_3126_x64
 
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sophisticated text editor for code, markup and prose
 
-USES=		desktop-file-utils linux:c6 tar:bzip2
+USES=		desktop-file-utils linux tar:bzip2
 USE_LINUX=	xorglibs gtk2
 
 INSTALLS_ICONS=	yes
@@ -23,10 +23,6 @@ CONFLICTS_INSTALL=	linux-sublime-[0-9]*
 
 NO_BUILD=
 SUB_FILES=	sublime
-
-post-patch:
-	${BRANDELF} -t Linux ${WRKSRC}/sublime_text
-	${BRANDELF} -t Linux ${WRKSRC}/plugin_host
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} \
@@ -43,8 +39,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Icon/256x256/sublime-text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/
 	${INSTALL_DATA} ${WRKSRC}/sublime_text.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/sublime_text
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host
-	${INSTALL} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime
+	${INSTALL_SCRIPT} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime
 
 .include <bsd.port.mk>
