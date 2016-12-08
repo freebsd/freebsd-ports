@@ -3,7 +3,7 @@
 
 PORTNAME=	kye
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	http://games.moria.org.uk/kye/download/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:levels

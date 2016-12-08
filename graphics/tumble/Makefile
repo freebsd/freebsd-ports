@@ -3,7 +3,7 @@
 
 PORTNAME=	tumble
 PORTVERSION=	0.33
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print
 MASTER_SITES=	http://tumble.brouhaha.com/download/ \
 		http://www.sourcefiles.org/Graphics/Tools/Conversion/
