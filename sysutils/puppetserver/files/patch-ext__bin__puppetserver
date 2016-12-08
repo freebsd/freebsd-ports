@@ -1,0 +1,21 @@
+--- ext/bin/puppetserver.orig	2016-10-09 11:15:40.432509250 -0700
++++ ext/bin/puppetserver	2016-10-09 11:17:08.987503108 -0700
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ set -a
+ if [ -r "/etc/default/puppetserver" ] ; then
+@@ -11,6 +11,12 @@
+     USER="_puppet"
+     INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
+     CONFIG="/etc/puppetlabs/puppetserver/conf.d"
++elif [ `uname` == "FreeBSD" ] ; then
++    JAVA_BIN="%%JAVA%%"
++    JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"
++    USER="puppet"
++    INSTALL_DIR="%%DATADIR%%"
++    CONFIG="%%ETCDIR%%/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetserver or /etc/sysconfig/puppetserver" >&2
+     exit 1

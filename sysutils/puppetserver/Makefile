@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	puppetserver
-PORTVERSION=	2.4.0
+PORTVERSION=	2.7.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
-MAINTAINER=	xaque208@gmail.com
+MAINTAINER=	freebsd@zleslie.info
 COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
@@ -44,14 +44,17 @@ CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 post-patch:
-.for file in ext/config/bootstrap.cfg ext/config/logback.xml \
-	ext/config/request-logging.xml \
+.for file in ext/config/logback.xml ext/config/request-logging.xml \
 	ext/config/conf.d/global.conf ext/config/conf.d/puppetserver.conf \
 	ext/config/conf.d/web-routes.conf ext/config/conf.d/webserver.conf \
-	ext/config/conf.d/auth.conf
+	ext/config/conf.d/auth.conf ext/config/services.d/ca.cfg \
+	ext/system-config/services.d/bootstrap.cfg ext/bin/puppetserver
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|%%RUBY_VER%%|${RUBY_VER}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%JAVA%%|${JAVA}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%ETCDIR%%|${ETCDIR}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" ${WRKSRC}/${file}
 .endfor
 
 do-install:
@@ -60,17 +63,22 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/services.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}/var/log/puppetserver
-	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppetserver.jar
+	@${MKDIR} ${STAGEDIR}/var/puppet/server
+	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppet-server-release.jar
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/global.conf ${STAGEDIR}${ETCDIR}/conf.d/global.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/logback.xml ${STAGEDIR}${ETCDIR}/logback.xml.sample
-	${INSTALL_DATA} ${WRKSRC}/ext/config/bootstrap.cfg ${STAGEDIR}${ETCDIR}/bootstrap.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/request-logging.xml ${STAGEDIR}${ETCDIR}/request-logging.xml.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/puppetserver.conf ${STAGEDIR}${ETCDIR}/conf.d/puppetserver.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/web-routes.conf ${STAGEDIR}${ETCDIR}/conf.d/web-routes.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/webserver.conf ${STAGEDIR}${ETCDIR}/conf.d/webserver.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/auth.conf ${STAGEDIR}${ETCDIR}/conf.d/auth.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/config/services.d/ca.cfg ${STAGEDIR}${ETCDIR}/services.d/ca.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/system-config/services.d/bootstrap.cfg ${STAGEDIR}${ETCDIR}/services.d/bootstrap.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/bin/puppetserver ${STAGEDIR}${PREFIX}/bin/puppetserver
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/foreground ${STAGEDIR}${DATADIR}/cli/apps/foreground
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/gem ${STAGEDIR}${DATADIR}/cli/apps/gem
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/irb ${STAGEDIR}${DATADIR}/cli/apps/irb

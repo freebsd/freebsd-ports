@@ -45,7 +45,7 @@ rcvar=puppetserver_enable
 load_rc_config "${name}"
 
 : ${puppetserver_enable="NO"}
-: ${puppetserver_args="--config %%PREFIX%%/etc/puppetserver/conf.d -b %%PREFIX%%/etc/puppetserver/bootstrap.cfg"}
+: ${puppetserver_args="--config %%PREFIX%%/etc/puppetserver/conf.d -b %%PREFIX%%/etc/puppetserver/services.d"}
 : ${puppetserver_java_home="%%JAVA_HOME%%"}
 : ${puppetserver_user="puppet"}
 : ${puppetserver_group="puppet"}
@@ -55,7 +55,7 @@ pidfile="/var/run/puppetserver/puppetserver.pid"
 command="/usr/sbin/daemon"
 java_cmd="${puppetserver_java_home}/bin/java"
 procname="${java_cmd}"
-command_args="-p ${pidfile} ${java_cmd} -cp %%DATADIR%%/puppetserver.jar clojure.main -m puppetlabs.trapperkeeper.main ${puppetserver_args} > ${puppetserver_log_file} 2>&1"
+command_args="-p ${pidfile} ${java_cmd} -cp %%DATADIR%%/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main ${puppetserver_args} > ${puppetserver_log_file} 2>&1"
 
 
 required_files="${java_cmd}"
