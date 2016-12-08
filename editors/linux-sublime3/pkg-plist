@@ -48,6 +48,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/Regular Expressions.sublime-package
 %%DATADIR%%/Packages/RestructuredText.sublime-package
 %%DATADIR%%/Packages/Ruby.sublime-package
+%%DATADIR%%/Packages/Rust.sublime-package
 %%DATADIR%%/Packages/SQL.sublime-package
 %%DATADIR%%/Packages/Scala.sublime-package
 %%DATADIR%%/Packages/ShellScript.sublime-package
@@ -60,9 +61,9 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/YAML.sublime-package
 %%DATADIR%%/changelog.txt
 %%DATADIR%%/crash_reporter
-%%DATADIR%%/plugin_host
+@(,,555) %%DATADIR%%/plugin_host
 %%DATADIR%%/python3.3.zip
 %%DATADIR%%/sublime.py
 %%DATADIR%%/sublime_plugin.py
-%%DATADIR%%/sublime_text
+@(,,555) %%DATADIR%%/sublime_text
 %%DATADIR%%/sublime_text.desktop

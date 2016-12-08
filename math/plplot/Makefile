@@ -40,8 +40,8 @@ FREEFONT_DIR=	${LOCALBASE}/share/fonts/freefont-ttf
 
 OPTIONS_DEFINE=	FORTRAN GD LUA PYTHON QT4 TCLTK THREADS WXGTK X11 DOCS
 OPTIONS_RADIO=	QHULL
-OPTIONS_RADIO_QHULL=	QHULL2012 QHULL2003
-OPTIONS_DEFAULT=	QHULL2012 THREADS X11
+OPTIONS_RADIO_QHULL=	QHULL2015 QHULL2003
+OPTIONS_DEFAULT=	QHULL2015 THREADS X11
 OPTIONS_SUB=	yes
 
 FORTRAN_USES=		fortran
@@ -64,11 +64,11 @@ PYTHON_CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
 PYTHON_CMAKE_OFF=	-DENABLE_python:BOOL=OFF
 
 QHULL2003_DESC=		Legacy Qhull support
-QHULL2012_DESC=		Latest Qhull support
-QHULL2012_LIB_DEPENDS=	libqhull.so.6:math/qhull
+QHULL2015_DESC=		Latest Qhull support
+QHULL2015_LIB_DEPENDS=	libqhull.so.7:math/qhull
 QHULL2003_LIB_DEPENDS=	libqhull.so.5:math/qhull5
-QHULL2012_CMAKE_ON=	-DQHULL_INCLUDE_DIRS="${LOCALBASE}/include/libqhull"
-QHULL2012_2FIX=		lib/nn/delaunay.c src/plgridd.c
+QHULL2015_CMAKE_ON=	-DQHULL_INCLUDE_DIRS="${LOCALBASE}/include/libqhull"
+QHULL2015_2FIX=		lib/nn/delaunay.c src/plgridd.c
 
 TCLTK_LIB_DEPENDS=	libitk.so:x11-toolkits/itk
 TCLTK_RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
@@ -114,8 +114,8 @@ pre-configure:
 		${WRKSRC}/cmake/modules/FindLTDL.cmake
 	${GREP} -lR "/usr/local" ${WRKSRC}/cmake/modules | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
-.if ${PORT_OPTIONS:MQHULL2012}
-. for src in ${QHULL2012_2FIX}
+.if ${PORT_OPTIONS:MQHULL2015}
+. for src in ${QHULL2015_2FIX}
 	${REINPLACE_CMD} -e 's|qhull/qhull_a|libqhull/qhull_a|'	\
 		${WRKSRC}/${src}
 . endfor

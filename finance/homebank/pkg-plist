@@ -63,6 +63,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/dlg-budget1.png
 %%DATADIR%%/help/images/dlg-category1.png
 %%DATADIR%%/help/images/dlg-currencies1.png
+%%DATADIR%%/help/images/dlg-currencies2.png
 %%DATADIR%%/help/images/dlg-filter1.png
 %%DATADIR%%/help/images/dlg-filter2.png
 %%DATADIR%%/help/images/dlg-filter3.png
@@ -112,7 +113,6 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/pm-transfer.png
 %%DATADIR%%/help/images/tip-accorder.png
 %%DATADIR%%/help/images/tip-listsearch.png
-%%DATADIR%%/help/images/tip-multiedit.png
 %%DATADIR%%/help/images/use-assignment1.png
 %%DATADIR%%/help/images/use-budget1.png
 %%DATADIR%%/help/images/use-budget2.png

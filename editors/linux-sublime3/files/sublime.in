@@ -1,15 +1,2 @@
-#!/compat/linux/bin/sh
-if [ -L "/dev/shm" ];then
-	%%DATADIR%%/sublime_text "$@"
-else
-        echo    "Some Linux applications use shared memory.
-
-Sublime Text 3 can not function without it, you need to set up a link 
-from /dev/shm to a suitable place, e.g. by adding the following line
-to /etc/devfs.conf (takes effect on each boot - restart devfs to apply
-then change now):
-        link /tmp shm
-"
-        exit 1;
-fi
-
+#! /bin/sh
+exec %%DATADIR%%/sublime_text "$@"

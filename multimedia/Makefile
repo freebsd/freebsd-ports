@@ -454,5 +454,6 @@
     SUBDIR += xvid
     SUBDIR += yamdi
     SUBDIR += zoneminder
+    SUBDIR += zoneminder-h264
 
 .include <bsd.port.subdir.mk>

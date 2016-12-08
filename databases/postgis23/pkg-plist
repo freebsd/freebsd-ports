@@ -74,6 +74,7 @@ lib/postgresql/postgis-2.3.so
 %%DATADIR%%/tiger_geocoder/utility/standardize_tiger_data.sql
 %%DATADIR%%/tiger_geocoder/utility/utmzone.sql
 %%DATADIR%%/utils/README
+%%DATADIR%%/utils/check_all_upgrades.sh
 %%DATADIR%%/utils/create_spatial_ref_sys_config_dump.pl
 %%DATADIR%%/utils/create_undef.pl
 %%DATADIR%%/utils/create_unpackaged.pl
@@ -87,6 +88,7 @@ lib/postgresql/postgis-2.3.so
 %%DATADIR%%/utils/test_geography_estimation.pl
 %%DATADIR%%/utils/test_geography_joinestimation.pl
 %%DATADIR%%/utils/test_joinestimation.pl
+%%LOADERGUI%%share/postgresql/applications/shp2pgsql-gui.desktop
 share/postgresql/contrib/postgis-2.3/legacy.sql
 share/postgresql/contrib/postgis-2.3/legacy_gist.sql
 share/postgresql/contrib/postgis-2.3/legacy_minimal.sql
@@ -149,9 +151,10 @@ share/postgresql/contrib/postgis-2.3/uninstall_postgis.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.2.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.3.0--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%.sql
-%%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%rc1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%next--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis.control
@@ -177,7 +180,8 @@ share/postgresql/contrib/postgis-2.3/uninstall_postgis.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.3--%%PORTVERSION%%.sql
-%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--%%PORTVERSION%%.sql
+%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.4--%%PORTVERSION%%.sql
+%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.3.0--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -205,10 +209,11 @@ share/postgresql/contrib/postgis-2.3/uninstall_postgis.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.3.0--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%next--%%PORTVERSION%%.sql
-%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%rc1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder.control
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder.sql
@@ -234,7 +239,8 @@ share/postgresql/contrib/postgis-2.3/uninstall_postgis.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.3--%%PORTVERSION%%.sql
-%%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%rc1--%%PORTVERSION%%.sql
+%%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.4--%%PORTVERSION%%.sql
+%%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.3.0--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%next--%%PORTVERSION%%.sql
