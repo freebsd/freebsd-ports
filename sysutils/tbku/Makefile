@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tbku
-PORTVERSION=	1.117
+PORTVERSION=	1.120
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tbku/
 
