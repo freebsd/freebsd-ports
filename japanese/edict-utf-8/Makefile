@@ -3,6 +3,7 @@
 
 PORTNAME=	edict-utf-8
 PORTVERSION=	20100420
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}

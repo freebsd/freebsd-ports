@@ -3,6 +3,7 @@
 
 PORTNAME=	mapchan
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	libopensync-plugin-vformat
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/ \
 		LOCAL/danilo

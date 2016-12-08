@@ -3,7 +3,7 @@
 
 PORTNAME=	wmi
 PORTVERSION=	1.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dev.zenoss.org/trac/export/26435/trunk/inst/externallibs/ \
 		http://www.openvas.org/download/wmi/ \

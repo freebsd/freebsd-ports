@@ -3,7 +3,7 @@
 
 PORTNAME=	ldapvi
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.lichteblau.com/download/ \
 		LOCAL/sbz

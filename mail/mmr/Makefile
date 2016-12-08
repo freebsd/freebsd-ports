@@ -3,6 +3,7 @@
 
 PORTNAME=	mmr
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sourcefiles.org/Internet/Mail/Clients/Console/ \
 		http://slouken.libsdl.org/projects/mmr/

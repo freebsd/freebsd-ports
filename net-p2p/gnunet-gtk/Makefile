@@ -3,6 +3,7 @@
 
 PORTNAME=	gnunet-gtk
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU/gnunet
 

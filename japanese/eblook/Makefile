@@ -3,7 +3,7 @@
 
 PORTNAME=	eblook
 PORTVERSION=	1.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
