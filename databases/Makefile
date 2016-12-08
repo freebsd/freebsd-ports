@@ -611,6 +611,7 @@
     SUBDIR += php56-sybase_ct
     SUBDIR += php70-dba
     SUBDIR += php70-interbase
+    SUBDIR += php70-memcached
     SUBDIR += php70-mysqli
     SUBDIR += php70-odbc
     SUBDIR += php70-pdo

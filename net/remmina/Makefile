@@ -62,8 +62,12 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-remmina_src_remmina__file.c
 
 post-patch:
 	# do not build plugins and locales , they are provided by separated ports
-	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e's|add_subdirectory(external_tools)||' ${WRKSRC}/remmina/CMakeLists.txt
+	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' \
+		-e 's,FreeBSD,FreeBSD|DragonFly,' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins-gnome)||' \
+		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e's|add_subdirectory(external_tools)||' \
+		-e 's,FreeBSD,FreeBSD|DragonFly,' \
+		${WRKSRC}/remmina/CMakeLists.txt
 
 .include <bsd.port.post.mk>

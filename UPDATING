@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161207:
+  AFFECTS: users of www/node
+  AUTHOR: bradleythughes@fastmail.fm
+
+  The www/node port has been updated to node.js v7.2.0, the latest
+  upstream release. A new port, www/node6, has been created for the
+  v6.x LTS branch. Users wanting to stay on v6.x can replace www/node
+  with www/node6 with one of the following commands:
+
+  # pkg set -o www/node:www/node6
+    or
+  # portmaster -o www/node6 www/node
+    or
+  # portupgrade -o www/node6 www/node
+
 20161202:
   AFFECTS: Users of textproc/p5-Search-Elasticsearch
   AUTHOR: tj@FreeBSD.org

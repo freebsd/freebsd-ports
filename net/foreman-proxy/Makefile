@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.12.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
@@ -75,7 +74,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/smart-proxy \
 		${STAGEDIR}${PREFIX}/sbin/smart-proxy
 .for file in CHANGELOG Contributors Gemfile LICENSE README.md \
-	VERSION bundler.d config.ru lib modules public views
+	VERSION bundler.d config.ru lib modules
 	${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
 	${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
@@ -86,8 +85,11 @@ do-install:
 	${CP} -r ${WRKSRC}/extra/migrations ${STAGEDIR}${DATADIR}/extra
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
-.for cfg in bmc dhcp dns dns_dnscmd dns_nsupdate_gss dns_nsupdate dns_virsh \
-	facts puppet puppetca realm templates tftp
+.for cfg in bmc dhcp dhcp_isc dhcp_libvirt dhcp_ms_native dns dns_dnscmd \
+	dns_libvirt dns_nsupdate dns_nsupdate dns_nsupdate_gss \
+	facts logs puppet puppet_proxy_customrun puppet_proxy_legacy \
+	puppet_proxy_mcollective puppet_proxy_puppet_api puppet_proxy_puppetrun \
+	puppet_proxy_salt puppet_proxy_ssh puppetca realm templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor

@@ -98,6 +98,7 @@
     SUBDIR += cluttermm
     SUBDIR += code-eli
     SUBDIR += cogl
+    SUBDIR += colmap
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
