@@ -27,6 +27,11 @@ USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+# Modern py-cyptography requires newer OpenSSL
+.if ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
