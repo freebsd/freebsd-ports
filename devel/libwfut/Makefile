@@ -3,7 +3,7 @@
 
 PORTNAME=	libwfut
 PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/libwfut%20%28updates%20library%29/${PORTVERSION}
 

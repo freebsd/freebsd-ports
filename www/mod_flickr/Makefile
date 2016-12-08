@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_flickr
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.vshank.com/modcode/
 

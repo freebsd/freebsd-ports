@@ -3,6 +3,7 @@
 
 PORTNAME=	vxlog
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bitbucket.org/klepa/vxlog/downloads/ \
 		SF/${PORTNAME}
