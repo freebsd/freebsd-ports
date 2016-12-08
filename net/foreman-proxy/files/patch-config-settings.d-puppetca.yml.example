@@ -1,8 +1,9 @@
---- config/settings.d/puppetca.yml.example.orig	2014-09-27 09:16:47.493418158 +0200
-+++ config/settings.d/puppetca.yml.example	2014-09-27 09:16:08.243420797 +0200
-@@ -1,6 +1,6 @@
- ---
+--- config/settings.d/puppetca.yml.example.orig	2016-08-24 09:01:39.000000000 +0200
++++ config/settings.d/puppetca.yml.example	2016-09-05 23:43:16.509994000 +0200
+@@ -2,7 +2,7 @@
+ # Can be true, false, or http/https to enable just one of the protocols
  :enabled: false
+ 
 -#:ssldir: /var/lib/puppet/ssl
 -#:puppetdir: /etc/puppet
 +#:ssldir: /var/puppet/ssl

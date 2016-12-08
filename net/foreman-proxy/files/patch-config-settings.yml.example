@@ -1,6 +1,6 @@
---- config/settings.yml.example.orig	2014-12-04 11:41:56.011675735 +0100
-+++ config/settings.yml.example	2014-12-04 11:42:13.978674196 +0100
-@@ -25,7 +25,7 @@
+--- config/settings.yml.example.orig	2016-08-24 09:01:39.000000000 +0200
++++ config/settings.yml.example	2016-09-05 23:33:49.472857000 +0200
+@@ -38,7 +38,7 @@
  #:foreman_ssl_key: ssl/private_keys/fqdn.pem
  
  # by default smart_proxy runs in the foreground. To enable running as a daemon, uncomment 'daemon' setting

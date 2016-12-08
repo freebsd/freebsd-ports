@@ -1,9 +1,0 @@
---- config/settings.d/dns_nsupdate_gss.yml.example.orig	2015-12-24 23:18:07 UTC
-+++ config/settings.d/dns_nsupdate_gss.yml.example
-@@ -7,5 +7,5 @@
- #:dns_server: dns.domain.com
- # use dns_tsig_* for GSS-TSIG updates using Kerberos.  Required for Windows MS DNS with
- # Secure Dynamic Updates, or BIND as used in FreeIPA.  Set dns_provider to nsupdate_gss.
--#:dns_tsig_keytab: /usr/share/foreman-proxy/dns.keytab
-+#:dns_tsig_keytab: %%PREFIX%%/share/foreman-proxy/dns.keytab
- #:dns_tsig_principal: DNS/host.example.com@EXAMPLE.COM
