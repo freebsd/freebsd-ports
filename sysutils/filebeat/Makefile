@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filebeat
-PORTVERSION=	1.2.3
+PORTVERSION=	5.0.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -27,7 +27,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKSRC}/${GO_TARGETS}/${GO_TARGETS} \
 		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${GO_WRKSRC}/${GO_TARGETS}/etc/${GO_TARGETS}.yml \
+	${INSTALL_DATA} ${WRKSRC}/${GO_TARGETS}/${GO_TARGETS}.yml \
 		${STAGEDIR}${PREFIX}/etc/${GO_TARGETS}.yml.sample
 
 .include <bsd.port.mk>
