@@ -1,0 +1,12 @@
+Beats is the platform for building lightweight, open source data
+shippers for many types of operational data you want to enrich with
+Logstash, search and analyze in Elasticsearch, and visualize in Kibana.
+Whether you're interested in log files, infrastructure metrics, network
+packets, or any other type of data, Beats serves as the foundation for
+keeping a beat on your data.
+
+Metricbeat collects metrics from your systems and services. From CPU to
+memory, Redis to Nginx, and much more, Metricbeat is a lightweight way to
+send system statistics.
+
+WWW: https://www.elastic.co/products/beats/metricbeat

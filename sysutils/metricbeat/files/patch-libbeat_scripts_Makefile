@@ -1,0 +1,11 @@
+--- libbeat/scripts/Makefile.orig	2016-12-08 18:08:06.201040000 +0100
++++ libbeat/scripts/Makefile	2016-12-08 18:08:14.835100000 +0100
+@@ -30,7 +30,7 @@
+ GOFILES = $(shell find . -type f -name '*.go')
+ GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*")
+ GOFILES_ALL = $(GOFILES) $(shell find $(ES_BEATS) -type f -name '*.go')
+-SHELL=bash
++SHELL=sh
+ ES_HOST?="elasticsearch"
+ PWD=$(shell pwd)
+ BUILD_DIR?=$(shell pwd)/build
