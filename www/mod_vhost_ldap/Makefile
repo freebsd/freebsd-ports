@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_vhost_ldap
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN/pool/main/m/mod-vhost-ldap
 DISTNAME=	${PORTNAME:S/_/-/g}_${PORTVERSION}.orig

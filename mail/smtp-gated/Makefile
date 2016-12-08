@@ -3,7 +3,7 @@
 
 PORTNAME=	smtp-gated
 PORTVERSION=	1.4.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 

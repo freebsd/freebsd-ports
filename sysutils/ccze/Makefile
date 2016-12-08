@@ -2,7 +2,7 @@
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://falafel.200ok.org/distfiles/ccze/ \
 		http://200ok.org/distfiles/ccze/

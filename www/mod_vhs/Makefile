@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_vhs
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/${PORTNAME}/
 DIST_SUBDIR=	apache2
