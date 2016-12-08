@@ -2,6 +2,7 @@
 
 PORTNAME=	sqlite-ext-pcre
 PORTVERSION=	20100208
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	vivek@khera.org

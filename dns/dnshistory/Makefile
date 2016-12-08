@@ -3,7 +3,7 @@
 
 PORTNAME=	dnshistory
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.stedee.id.au/files/ \
 		http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/

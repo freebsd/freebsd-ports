@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.39
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
@@ -89,8 +90,5 @@ CONFIGURE_ARGS+=	--disable-jit
 post-patch:
 	@${REINPLACE_CMD} -e "/^\.rs/d" ${WRKSRC}/doc/*.3 ${WRKSRC}/doc/*.1
 	@${REINPLACE_CMD} -e "s/£//g" ${WRKSRC}/doc/pcre_compile2.3
-
-post-install:
-	${LN} -s libpcre.so.1 ${STAGEDIR}${PREFIX}/lib/libpcre.so.3
 
 .include <bsd.port.post.mk>

@@ -4,7 +4,7 @@
 
 PORTNAME=	mixmaster
 PORTVERSION=	3.0.2d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

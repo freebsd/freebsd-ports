@@ -3,6 +3,7 @@
 
 PORTNAME=	vanitygen
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	finance
 
 MAINTAINER=	ports@FreeBSD.org
