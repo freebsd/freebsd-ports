@@ -1,0 +1,23 @@
+The 'Portable QR-Code Generator' is a free Java program which generates QR
+Codes from 
+
+- WLAN credentials: SSID, network key and and network type
+    (WEP, WPA/WPA2, not encrypted)
+- VCard-Import
+  o Inlined images can optionally be removed to reduce the size of the
+    generated QR Code
+  o VCards up to version 3 (inclusive) are supported
+  o You can import the cards via drag&drop or by selecting them in a file
+    chooser dialog
+  o Supports a broad range of character encodings (ISO-8859-1, UTF-8, UTF-16,)
+    the actual number depends on the Java Virtual Machine you are using.
+- VCard generator
+- e-mail addresses
+- URLs
+- free text
+- geographic coordinates
+
+The QR Code can be printed, saved as BMP, GIF or PNG, or copied to clipboard to
+use in other applications.
+
+WWW: https://sites.google.com/site/qrcodeforwn/home/qr-code-generator-for-wireless-networks

@@ -1350,6 +1350,7 @@
     SUBDIR += py3-pager
     SUBDIR += pychm
     SUBDIR += qprint
+    SUBDIR += qrcodegen
     SUBDIR += qstardict
     SUBDIR += qt4-xml
     SUBDIR += qt4-xmlpatterns

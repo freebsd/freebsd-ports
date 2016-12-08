@@ -5,7 +5,6 @@ lib/libogg.a
 lib/libogg.so
 lib/libogg.so.0
 lib/libogg.so.0.8.2
-lib/libogg.so.8
 libdata/pkgconfig/ogg.pc
 share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/fish_xiph_org.png

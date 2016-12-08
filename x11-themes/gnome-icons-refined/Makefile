@@ -7,7 +7,7 @@
 
 PORTNAME=	refined
 PORTVERSION=	20030203
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Gnome-RH8
