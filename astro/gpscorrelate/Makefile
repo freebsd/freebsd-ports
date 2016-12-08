@@ -3,7 +3,7 @@
 
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 
 MAINTAINER=	ports@FreeBSD.org

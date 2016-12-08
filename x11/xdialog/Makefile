@@ -3,7 +3,7 @@
 
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/

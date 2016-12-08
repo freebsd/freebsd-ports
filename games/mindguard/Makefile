@@ -3,7 +3,7 @@
 
 PORTNAME=	mindguard
 PORTVERSION=	0.0.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://zapatopi.net/mindguard/
 

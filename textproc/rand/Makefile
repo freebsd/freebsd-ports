@@ -3,6 +3,7 @@
 
 PORTNAME=	rand
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://bzflag.bz/~erik/files/ \
 		http://elfga.com/~erik/files/

@@ -3,7 +3,7 @@
 
 PORTNAME=	NetSpades
 PORTVERSION=	4.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	TUCOWS/x11/entertain \
 		http://www.ece.rice.edu/~brentmh/spades/

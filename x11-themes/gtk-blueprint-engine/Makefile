@@ -3,7 +3,7 @@
 
 PORTNAME=	blueprint
 PORTVERSION=	0.9.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dlc.sun.com/osol/jds/downloads/extras/
 PKGNAMEPREFIX=	gtk-

@@ -3,7 +3,7 @@
 
 PORTNAME=	tagutils
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/tagutils/
 

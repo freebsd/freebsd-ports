@@ -3,7 +3,7 @@
 
 PORTNAME=	gsnmp
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 		http://ftp-ext.osuosl.org/pub/nslu2/sources/ \

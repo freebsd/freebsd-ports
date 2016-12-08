@@ -3,7 +3,7 @@
 
 PORTNAME=	yum-metadata-parser
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	http://yum.baseurl.org/download/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

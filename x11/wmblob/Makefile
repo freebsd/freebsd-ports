@@ -3,6 +3,7 @@
 
 PORTNAME=	wmblob
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://BSDforge.com/projects/source/x11/wmblob/
 

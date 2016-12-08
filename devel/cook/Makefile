@@ -3,7 +3,7 @@
 
 PORTNAME=	cook
 PORTVERSION=	2.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://miller.emu.id.au/pmiller/software/cook/ \
 		LOCAL/jasone

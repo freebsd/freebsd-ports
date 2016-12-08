@@ -1,7 +1,7 @@
 # Created by: Raphael Kubo da Costa <kubito@gmail.com>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer game-music-emu (libgme) frontend

@@ -2,7 +2,7 @@
 
 PORTNAME=	kb
 PORTVERSION=	8.04
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/ \
 		LOCAL/db

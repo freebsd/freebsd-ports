@@ -2,6 +2,7 @@
 
 PORTNAME=	poezio
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://dev.louiz.org/attachments/download/52/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	qstardict
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 

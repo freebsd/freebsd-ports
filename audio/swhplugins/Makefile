@@ -3,7 +3,7 @@
 
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/${PORTVERSION}/
 DISTNAME=	swh-plugins-${PORTVERSION}

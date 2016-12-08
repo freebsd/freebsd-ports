@@ -3,7 +3,7 @@
 
 PORTNAME=	cwirc
 PORTVERSION=	2.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc comms hamradio
 MASTER_SITES=	http://myspace.voo.be/pcoupard/cwirc/download/ \
 		LOCAL/db

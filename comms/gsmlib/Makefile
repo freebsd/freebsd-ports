@@ -3,7 +3,7 @@
 
 PORTNAME=	gsmlib
 PORTVERSION=	1.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN
 #TODO: examine the Debian patches, and changes in the Mandrake

@@ -3,7 +3,7 @@
 
 PORTNAME=	lianliankan
 DISTVERSION=	2.3beta1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/llk-linux/llk-linux-source/${DISTVERSION}
 DISTNAME=	llk_linux-${DISTVERSION}

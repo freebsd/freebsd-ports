@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v${PORTVERSION:R}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
