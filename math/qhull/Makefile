@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qhull
-PORTVERSION=	2012.1
+PORTVERSION=	2015.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-2015-src-7.2.0
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
