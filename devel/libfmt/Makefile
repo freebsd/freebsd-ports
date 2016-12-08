@@ -1,18 +1,18 @@
 # Created by: Viacheslav Mikerov <SlavaMikerov@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	libcppformat
-PORTVERSION=	2.1.0
+PORTNAME=	libfmt
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	SlavaMikerov@gmail.com
-COMMENT=	C++ Format is an open-source formatting library for C++
+COMMENT=	Fmt is an open-source formatting library for C++
 
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cppformat
-GH_PROJECT=	cppformat
+GH_ACCOUNT=	fmtlib
+GH_PROJECT=	fmt
 
 USES=		cmake:outsource compiler:c++11-lib
 CMAKE_ARGS=	-DFMT_DOC=OFF

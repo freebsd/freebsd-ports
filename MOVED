@@ -8828,3 +8828,4 @@ devel/py-itools||2016-12-08|Has expired: Depends on broken and expired py-report
 graphics/py-aafigure||2016-12-08|Has expired: Depends on broken and expired py-reportlab2
 converters/py-pisa||2016-12-08|Has expired: Deprecated upstream, depends on broken and expired py-reportlab2
 graphics/ocrfeeder||2016-12-08|Has expired: Depends on broken and expired py-reportlab2
+devel/libcppformat|devel/libfmt|2016-12-08|Project was renamed
