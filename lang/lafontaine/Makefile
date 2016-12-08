@@ -3,7 +3,7 @@
 
 PORTNAME=	lafontaine
 PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nongnu.org/lafontaine/archives/
 DISTNAME=	${PORTNAME}_0.4-1

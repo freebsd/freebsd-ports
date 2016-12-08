@@ -3,7 +3,7 @@
 
 PORTNAME=	shftool
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	http://www.df.lth.se/~triad/krad/shftool/
 

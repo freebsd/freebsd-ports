@@ -5,7 +5,7 @@
 # discretion.
 
 PORTNAME=	gettext-runtime
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNU gettext runtime libraries and programs
 
@@ -45,8 +45,5 @@ post-patch:
 		-e '/^install-data-local:/s/install-html//' \
 		-e '/^installdirs-local:/s/installdirs-html//' \
 		${WRKSRC}/libasprintf/Makefile.in ${WRKSRC}/man/Makefile.in
-
-post-install:
-	${LN} -s libintl.so.8 ${STAGEDIR}${PREFIX}/lib/libintl.so.9
 
 .include <bsd.port.mk>

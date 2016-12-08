@@ -4,6 +4,7 @@
 PORTNAME=		yasm
 PORTVERSION=		1.2.0.29
 DISTVERSIONSUFFIX=	.g87c0
+PORTREVISION=		1
 CATEGORIES=		devel lang
 MASTER_SITES=		http://www.tortall.net/projects/yasm/snapshots/v${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=		-devel

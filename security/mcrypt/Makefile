@@ -3,7 +3,7 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	imspector
 PORTVERSION=	20111108
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://tsatsenko.ru/ports/distfiles/
 

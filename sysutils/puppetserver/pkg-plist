@@ -1,15 +1,19 @@
+@(,,750) bin/puppetserver
 @sample %%ETCDIR%%/logback.xml.sample
-@sample %%ETCDIR%%/bootstrap.cfg.sample
 @sample %%ETCDIR%%/request-logging.xml.sample
 @sample %%ETCDIR%%/conf.d/auth.conf.sample
 @sample %%ETCDIR%%/conf.d/global.conf.sample
 @sample %%ETCDIR%%/conf.d/puppetserver.conf.sample
 @sample %%ETCDIR%%/conf.d/web-routes.conf.sample
 @sample %%ETCDIR%%/conf.d/webserver.conf.sample
+@sample %%ETCDIR%%/services.d/bootstrap.cfg.sample
+@sample %%ETCDIR%%/services.d/ca.cfg.sample
 @dir(,puppet,750) etc/puppet/code
-%%DATADIR%%/puppetserver.jar
-%%DATADIR%%/cli/apps/foreground
-%%DATADIR%%/cli/apps/gem
-%%DATADIR%%/cli/apps/irb
-%%DATADIR%%/cli/apps/ruby
+%%DATADIR%%/puppet-server-release.jar
+@(,,755) %%DATADIR%%/cli/apps/foreground
+@(,,755) %%DATADIR%%/cli/apps/gem
+@(,,755) %%DATADIR%%/cli/apps/irb
+@(,,755) %%DATADIR%%/cli/apps/ruby
 @dir(puppet,puppet,750) /var/log/puppetserver
+@dir(puppet,puppet,755) /var/puppet
+@dir(puppet,puppet,750) /var/puppet/server

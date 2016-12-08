@@ -3,7 +3,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/nvi/
 

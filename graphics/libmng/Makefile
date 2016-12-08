@@ -3,7 +3,7 @@
 
 PORTNAME=	libmng
 PORTVERSION=	1.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 		http://www.libmng.com/download/

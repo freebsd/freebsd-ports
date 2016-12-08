@@ -3,6 +3,7 @@
 
 PORTNAME=	busybee
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 

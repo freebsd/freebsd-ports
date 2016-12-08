@@ -596,6 +596,7 @@
     SUBDIR += memtest86
     SUBDIR += memtest86+
     SUBDIR += metalog
+    SUBDIR += metricbeat
     SUBDIR += mfid
     SUBDIR += mgeupsd
     SUBDIR += minimunin

@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-system-log
 PORTVERSION=	3.9.90
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

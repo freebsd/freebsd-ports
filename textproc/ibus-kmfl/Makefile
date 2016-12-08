@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus-kmfl
 PORTVERSION=	1.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/

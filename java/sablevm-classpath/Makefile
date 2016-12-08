@@ -3,7 +3,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	java devel
 MASTER_SITES=	SF/sablevm/sablevm/${PORTVERSION}
 

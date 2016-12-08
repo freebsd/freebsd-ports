@@ -3,6 +3,7 @@
 
 PORTNAME=	wise
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~birney/wise2/
 DISTNAME=	${PORTNAME}${PORTVERSION}

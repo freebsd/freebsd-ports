@@ -3,6 +3,7 @@
 
 PORTNAME=	gpsbabel
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	https://secure.ohos.nl/downloads/ \
 		LOCAL/beech

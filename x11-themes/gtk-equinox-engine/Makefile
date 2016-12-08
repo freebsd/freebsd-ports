@@ -3,7 +3,7 @@
 
 PORTNAME=	equinox
 PORTVERSION=	1.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	gtk-

@@ -3,7 +3,7 @@
 
 PORTNAME=	garith
 PORTVERSION=	2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 # Latest version (2.3.1) does not build with gtk 1.2.10

@@ -1228,7 +1228,6 @@
     SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
-    SUBDIR += libcppformat
     SUBDIR += libcrossguid
     SUBDIR += libcutl
     SUBDIR += libcwd
@@ -1277,6 +1276,7 @@
     SUBDIR += libffi
     SUBDIR += libfirm
     SUBDIR += libflatarray
+    SUBDIR += libfmt
     SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libfsntfs
@@ -4261,7 +4261,6 @@
     SUBDIR += py-isodate
     SUBDIR += py-isort
     SUBDIR += py-iterpipes
-    SUBDIR += py-itools
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.functools
     SUBDIR += py-jaraco.itertools

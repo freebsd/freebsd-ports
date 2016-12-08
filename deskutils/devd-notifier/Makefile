@@ -3,6 +3,7 @@
 
 PORTNAME=	devd-notifier
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GHC http://roladder.net/~flo/dist/
 

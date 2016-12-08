@@ -4,7 +4,7 @@
 
 PORTNAME=	eggdbus
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 

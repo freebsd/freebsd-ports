@@ -3,7 +3,7 @@
 
 PORTNAME=	grzip
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ \
 		http://BSDforge.com/projects/source/archivers/grzip/

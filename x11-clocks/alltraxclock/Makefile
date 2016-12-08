@@ -3,7 +3,7 @@
 
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://perso.wanadoo.fr/alltrax/ \
 		LOCAL/novel

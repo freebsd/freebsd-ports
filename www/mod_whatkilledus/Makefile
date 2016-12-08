@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_whatkilledus
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://people.apache.org/~trawick/ \
 		http://dl.moov.de/freebsd/${PORTNAME}/

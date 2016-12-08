@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-search-tool
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

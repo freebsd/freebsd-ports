@@ -3,7 +3,7 @@
 
 PORTNAME=	gstfs
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bobcopeland.com/gstfs/releases/ \
 		http://mirror.mcx2.org/

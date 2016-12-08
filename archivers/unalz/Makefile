@@ -3,7 +3,7 @@
 
 PORTNAME=	unalz
 PORTVERSION=	0.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://BSDforge.com/projects/source/archivers/unalz/
 

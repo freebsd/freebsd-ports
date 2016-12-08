@@ -3,6 +3,7 @@
 
 PORTNAME=	luaexpat
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
 				http://redundancy.redundancy.org/mirror/

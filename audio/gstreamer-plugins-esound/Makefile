@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/audio/gstreamer-plugins-esound/Makefile,v 1.5 2008/03/19 14:05:28 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer enlightenment sound library plugin

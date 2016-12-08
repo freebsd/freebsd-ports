@@ -2,7 +2,7 @@
 
 PORTNAME=	ipsorc
 PORTVERSION=	1.7.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net security
 MASTER_SITES=	http://200ok.org/distfiles/ipsorc/ \
 		http://bsdforge.com/projects/source/net/ipsorcery/

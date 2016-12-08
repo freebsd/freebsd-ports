@@ -3,7 +3,7 @@
 
 PORTNAME=	xvattr
 PORTVERSION=	1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
 MASTER_SITES=	http://xvattr.sourcearchive.com/downloads/1.3/
 DISTFILES=	xvattr_1.3.orig.tar.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	downtime
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nickwithers.com/downtime/
 

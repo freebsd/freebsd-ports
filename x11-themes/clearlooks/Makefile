@@ -4,7 +4,7 @@
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 

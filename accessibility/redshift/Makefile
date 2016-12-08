@@ -3,7 +3,7 @@
 
 PORTNAME=	redshift
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility
 MASTER_SITES=	http://launchpad.net/redshift/trunk/${PORTVERSION}/+download/
 

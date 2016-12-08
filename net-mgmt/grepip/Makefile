@@ -3,7 +3,7 @@
 
 PORTNAME=	grepip
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://komquats.com/distfiles/ \
 		LOCAL/cy

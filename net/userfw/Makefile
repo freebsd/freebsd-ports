@@ -3,6 +3,7 @@
 
 PORTNAME=	userfw
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://userfw.net/files/release/ \
 		http://imax.in.ua/files/ \

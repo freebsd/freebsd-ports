@@ -202,7 +202,6 @@
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab1
-    SUBDIR += py-reportlab2
     SUBDIR += py-rtf
     SUBDIR += py-trml2pdf
     SUBDIR += qpdf

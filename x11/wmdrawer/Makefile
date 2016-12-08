@@ -3,7 +3,7 @@
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/ \
 		http://www.sourcefiles.org/Utilities/Desktops/

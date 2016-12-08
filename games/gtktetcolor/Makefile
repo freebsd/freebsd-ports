@@ -3,7 +3,7 @@
 
 PORTNAME=	gtktetcolor
 DISTVERSION=	0.6.5pre3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://canopus.iacp.dvo.ru/pub/Games/gtktetcolor/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons

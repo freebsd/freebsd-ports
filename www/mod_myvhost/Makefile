@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_myvhost
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mod-myvhost.googlecode.com/files/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-epgsearch
 PORTVERSION=	1.0.1s20120322
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://winni.vdr-developer.org/epgsearch/downloads/beta/:beta \
 		LOCAL/nox/:snapshot

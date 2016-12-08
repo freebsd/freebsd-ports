@@ -3,7 +3,7 @@
 
 PORTNAME=	netcomponents
 PORTVERSION=	1.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java net
 MASTER_SITES=	http://www.savarese.org/oro/downloads/
 DISTNAME=	NetComponents-${PORTVERSION}

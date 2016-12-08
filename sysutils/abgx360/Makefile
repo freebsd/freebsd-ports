@@ -3,6 +3,7 @@
 
 PORTNAME=	abgx360
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://abgx360.xecuter.com/dl/ \
 		http://update.cooltrainer.org/freebsd-ports/sysutils/abgx360/ \

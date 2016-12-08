@@ -3,6 +3,7 @@
 
 PORTNAME=	pthreads
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/${PORTNAME}-win32/
 PKGNAMEPREFIX=	mingw32-

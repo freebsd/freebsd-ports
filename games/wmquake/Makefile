@@ -3,7 +3,7 @@
 
 PORTNAME=	wmquake
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		LOCAL/uqs

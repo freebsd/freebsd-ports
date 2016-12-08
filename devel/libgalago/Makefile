@@ -2,7 +2,7 @@
 
 PORTNAME=	libgalago
 PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/${PORTNAME}/
 

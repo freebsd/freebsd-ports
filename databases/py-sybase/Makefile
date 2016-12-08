@@ -3,7 +3,7 @@
 
 PORTNAME=	sybase
 PORTVERSION=	0.37
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases python
 MASTER_SITES=	http://object-craft.com.au/projects/sybase/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
