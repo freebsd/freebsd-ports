@@ -3,6 +3,7 @@
 
 PORTNAME=	vdr-plugin-markad
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1041/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
