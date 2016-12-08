@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-SimpleLinkChecker
-PORTVERSION=	1.164
+PORTVERSION=	1.165
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTTP-Message>=1.28:www/p5-HTTP-Message \
 		p5-LWP-Protocol-https>=1:www/p5-LWP-Protocol-https \
+		p5-Mojolicious>=4.50:www/p5-Mojolicious \
 		p5-libwww>0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
