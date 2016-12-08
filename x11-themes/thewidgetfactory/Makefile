@@ -2,7 +2,7 @@
 
 PORTNAME=	thewidgetfactory
 PORTVERSION=	0.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
 

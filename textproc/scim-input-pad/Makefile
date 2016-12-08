@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/0.1.3/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

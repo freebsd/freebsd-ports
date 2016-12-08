@@ -3,7 +3,7 @@
 
 PORTNAME=	spellutils
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sourcefiles.org/Utilities/Text_Utilities/
 

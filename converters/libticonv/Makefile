@@ -2,7 +2,7 @@
 
 PORTNAME=	libticonv
 PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
 

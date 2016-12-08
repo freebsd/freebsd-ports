@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 DISTNAME=	gnome-mplayer_1.0.9.orig

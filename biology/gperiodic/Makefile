@@ -4,7 +4,7 @@
 
 PORTNAME=	gperiodic
 PORTVERSION=	2.0.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	biology
 MASTER_SITES=	http://www.frantz.fi/software/
 

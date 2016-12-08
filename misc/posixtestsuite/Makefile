@@ -3,6 +3,7 @@
 
 PORTNAME=	posixtestsuite
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/posixtest/posixtest/${PORTNAME}-${PORTVERSION}
 

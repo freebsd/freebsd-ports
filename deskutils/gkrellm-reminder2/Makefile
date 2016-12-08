@@ -3,7 +3,7 @@
 
 PORTNAME=	reminder
 PORTVERSION=	2.0.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/Plugins/ \
 		http://depot.fsck.ch/mirror/distfiles/

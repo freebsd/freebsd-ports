@@ -3,7 +3,7 @@
 
 PORTNAME=	xpuyopuyo
 PORTVERSION=	0.9.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 

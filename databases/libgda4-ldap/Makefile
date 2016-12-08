@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/databases/libgda4-ldap/Makefile,v 1.3 2011/10/15 15:18:35 kwm Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	4-ldap
 

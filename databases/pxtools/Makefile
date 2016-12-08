@@ -3,7 +3,7 @@
 
 PORTNAME=	pxtools
 PORTVERSION=	0.0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/downloads/pxtools/ \
 		http://www.sourcefiles.org/Databases/Utilities/Conversion/

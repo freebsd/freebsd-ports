@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-cleanice-engine
 PORTVERSION=	2.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/elysium-project/gtk-engines-cleanice/${PORTVERSION} \
 		SF/elysium-project/gtk-engines-cleanice/1.2.7:theme

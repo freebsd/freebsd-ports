@@ -3,7 +3,7 @@
 
 PORTNAME=	spectools
 PORTVERSION=	201108.r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		LOCAL/brix

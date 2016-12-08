@@ -3,6 +3,7 @@
 
 PORTNAME=	ccrypt
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.mathstat.dal.ca/~selinger/ccrypt/download/
