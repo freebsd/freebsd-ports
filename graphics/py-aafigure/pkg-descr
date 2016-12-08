@@ -1,7 +1,0 @@
-aafigure is an ASCII art to image converter.
-
-ASCII art figures can be parsed and output as SVG, PNG, JPEG, PDF and more.
-This project provides a Python package, a command line script as well as
-Docutils and MoinMoin plugins.
-
-WWW: https://launchpad.net/aafigure/
