@@ -3,7 +3,7 @@
 
 PORTNAME=	xdtp
 PORTVERSION=	1.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 

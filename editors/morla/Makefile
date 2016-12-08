@@ -3,7 +3,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
