@@ -3,7 +3,7 @@
 
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		5.5.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386

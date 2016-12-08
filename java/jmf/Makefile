@@ -3,7 +3,7 @@
 
 PORTNAME=	jmf
 PORTVERSION=	2.1.1e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java multimedia
 MASTER_SITES=	#http://java.sun.com/products/java-media/jmf/2.1.1/download.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
