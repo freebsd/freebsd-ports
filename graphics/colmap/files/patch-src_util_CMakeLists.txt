@@ -1,0 +1,12 @@
+--- src/util/CMakeLists.txt.orig	2016-08-09 10:34:35 UTC
++++ src/util/CMakeLists.txt
+@@ -23,3 +23,9 @@ COLMAP_ADD_TEST(random_test random_test.
+ COLMAP_ADD_TEST(string_test string_test.cc)
+ COLMAP_ADD_TEST(threading_test threading_test.cc)
+ COLMAP_ADD_TEST(timer_test timer_test.cc)
++
++if(IS_CLANG AND CMAKE_SIZEOF_VOID_P EQUAL 4)
++  # -O2 exceeds max memory on i386
++  set_source_files_properties(camera_specs.cc
++    PROPERTIES COMPILE_FLAGS "-O1")
++endif()
