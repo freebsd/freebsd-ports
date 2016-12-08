@@ -3,7 +3,7 @@
 
 PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.21
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
@@ -19,8 +19,5 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	libart-[0-9]*
-
-post-install:
-	${LN} -s libart_lgpl_2.so.2 ${STAGEDIR}${PREFIX}/lib/libart_lgpl_2.so.5
 
 .include <bsd.port.mk>
