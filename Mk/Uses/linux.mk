@@ -303,11 +303,27 @@ PLIST?=			${PKGDIR}/pkg-plist.${LINUX_ARCH}
 
 .if !target(do-install)
 do-install:
-	(cd ${WRKSRC} && ${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;)
-	(cd ${WRKSRC} && ${FIND} * ! -type d | ${CPIO} -pm ${STAGEDIR}${PREFIX})
+	(cd ${WRKSRC} && ${FIND} * | ${CPIO} -dumpl ${STAGEDIR}${PREFIX})
 .endif
 
 .endif # USE_LINUX_RPM
+
+.ifdef DISTNAME_i386
+DISTFILES_i386?=	${DISTNAME_i386}${EXTRACT_SUFX}
+.endif
+.ifdef DISTNAME_x86_64
+DISTFILES_x86_64?=	${DISTNAME_x86_64}${EXTRACT_SUFX}
+.endif
+.ifdef DISTFILES_i386 || DISTFILES_x86_64
+.if make(makesum)
+.if !defined(DISTFILES)
+DISTFILES=		${DISTFILES_i386} ${DISTFILES_x86_64}
+EXTRACT_ONLY?=		${DISTFILES_${LINUX_ARCH}}
+.endif
+.else
+DISTFILES?=		${DISTFILES_${LINUX_ARCH}}
+.endif
+.endif
 
 # With fmake :M${var} only works when ${var} is a for loop variable.
 .for fmakehack in ${LINUX_ARCH:S/x86_64/amd64/}
