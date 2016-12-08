@@ -1,0 +1,37 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: metricbeat
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable metricbeat:
+#
+# metricbeat_enable (bool):	Set to YES to enable metricbeat
+# 				Default: NO
+# metricbeat_flags (str):		Extra flags passed to metricbeat
+# metricbeat_conf (str):		metricbeat configuration file
+#				Default: ${PREFIX}/etc/metricbeat.yml
+
+. /etc/rc.subr
+
+name="metricbeat"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${metricbeat_enable:="NO"}
+: ${metricbeat_config:="%%PREFIX%%/etc/${name}.yml"}
+
+# daemon
+start_precmd=metricbeat_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} -c ${metricbeat_config}"
+
+metricbeat_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+run_rc_command "$1"
