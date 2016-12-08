@@ -3,7 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.51.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -163,7 +163,6 @@ post-patch:
 
 .if !defined(BUILDING_HIPHOP)
 post-install:
-	${LN} -s libcurl.so.4 ${STAGEDIR}${PREFIX}/lib/libcurl.so.7
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 
 post-install-DOCS-on:

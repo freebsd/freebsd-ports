@@ -3,7 +3,7 @@
 
 PORTNAME=	rss2html
 PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.mcx2.org/
 

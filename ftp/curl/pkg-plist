@@ -13,7 +13,6 @@ lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
 lib/libcurl.so.4.4.0
-lib/libcurl.so.7
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz
 man/man1/curl.1.gz
