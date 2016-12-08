@@ -3,7 +3,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.29
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -48,12 +48,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$](bindir)/xsltproc|../xsltproc/xsltproc|g ; \
 		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
 		${WRKSRC}/doc/Makefile.in
-
-.if !defined(MASTERDIR)
-post-install:
-	${LN} -s libxslt.so.1 ${STAGEDIR}${PREFIX}/lib/libxslt.so.2
-	${LN} -s libexslt.so.0 ${STAGEDIR}${PREFIX}/lib/libexslt.so.8
-.endif
 
 .include <bsd.port.mk>
 
