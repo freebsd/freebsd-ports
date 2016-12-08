@@ -11,7 +11,6 @@ lib/libiconv.a
 lib/libiconv.so
 lib/libiconv.so.2
 lib/libiconv.so.2.5.1
-lib/libiconv.so.3
 man/man1/iconv.1.gz
 man/man3/iconv.3.gz
 man/man3/iconv_open.3.gz

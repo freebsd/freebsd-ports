@@ -3,6 +3,7 @@
 
 PORTNAME=	whois
 PORTVERSION=	5.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de

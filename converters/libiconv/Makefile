@@ -3,7 +3,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.14
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
@@ -37,8 +37,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
-
-post-install:
-	${LN} -s libiconv.so.2 ${STAGEDIR}${PREFIX}/lib/libiconv.so.3
 
 .include <bsd.port.mk>
