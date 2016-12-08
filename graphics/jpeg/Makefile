@@ -3,7 +3,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		http://sylvana.net/jpegcrop/:exif
@@ -46,7 +46,6 @@ test: build
 regression-test:	test
 
 post-install:
-	${LN} -s libjpeg.so.8 ${STAGEDIR}${PREFIX}/lib/libjpeg.so.11
 .for header in ${ADDITIONAL_HEADER}
 	${INSTALL_DATA} ${WRKSRC}/${header} ${STAGEDIR}${PREFIX}/include/
 .endfor
