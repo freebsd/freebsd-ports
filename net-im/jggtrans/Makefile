@@ -3,7 +3,7 @@
 
 PORTNAME=	jggtrans
 PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im polish
 MASTER_SITES=	https://github.com/Jajcus/jggtrans/releases/download/v${DISTVERSION}/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	domc
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ioplex.com/~miallen/domc/dl/
 

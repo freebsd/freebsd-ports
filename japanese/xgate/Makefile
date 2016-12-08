@@ -3,7 +3,7 @@
 
 PORTNAME=	xgate
 PORTVERSION=	3.7pl6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail www java
 MASTER_SITES=	http://www.orangesoft.co.jp/index.php/download_file/-/192/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}

@@ -2,7 +2,7 @@
 
 PORTNAME=	obexapp
 PORTVERSION=	1.4.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms net
 MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 

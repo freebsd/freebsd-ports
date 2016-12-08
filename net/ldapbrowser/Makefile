@@ -3,7 +3,7 @@
 
 PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	http://www.klop.ws/distfiles/ \
 		http://freebsd.nsu.ru/distfiles/ \
