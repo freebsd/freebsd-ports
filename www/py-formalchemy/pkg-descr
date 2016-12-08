@@ -7,4 +7,4 @@ HTML code should be returned by introspecting the model's properties
 and generate ready-to-use HTML code that will fit the developer's
 application.
 
-WWW: http://code.google.com/p/formalchemy/
+WWW: https://github.com/FormAlchemy/formalchemy
