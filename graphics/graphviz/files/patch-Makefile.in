@@ -1,0 +1,15 @@
+Backported from https://github.com/ellson/graphviz/pull/1179
+
+Use egrep so that the command works with base's BSD grep when it is built
+without compatibility with GNU grep.
+--- Makefile.in.orig	2016-12-05 10:31:12.865899000 +0100
++++ Makefile.in	        2016-12-05 10:31:32.065451000 +0100
+@@ -1246,7 +1246,7 @@
+ 	find $(distdir) -name CVS -type d -prune -exec rm -rf {} \;
+ 
+ $(top_builddir)/graphviz_version.h: config.h
+-	$(GREP) 'PACKAGE\|VERSION\|GVPLUGIN' config.h > $(top_builddir)/graphviz_version.h
++	$(EGREP) 'PACKAGE|VERSION|GVPLUGIN' config.h > $(top_builddir)/graphviz_version.h
+ 
+ .PHONY: rpm
+ rpm: dist
