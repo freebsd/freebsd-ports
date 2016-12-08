@@ -23,7 +23,6 @@ include/tiffio.hxx
 include/tiffvers.h
 lib/libtiff.a
 lib/libtiff.so
-lib/libtiff.so.4
 lib/libtiff.so.5
 lib/libtiff.so.5.2.5
 lib/libtiffxx.a

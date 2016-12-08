@@ -3,6 +3,7 @@
 
 PORTNAME=	jstrack
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/

@@ -7,7 +7,7 @@
 
 PORTNAME=	stylish
 PORTVERSION=	20030129
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Stylish

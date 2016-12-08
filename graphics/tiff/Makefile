@@ -3,6 +3,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/libtiff/
 
@@ -108,7 +109,6 @@ pre-configure:
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${LN} -s libtiff.so.5 ${STAGEDIR}${PREFIX}/lib/libtiff.so.4
 	( cd ${STAGEDIR}${PREFIX}/man/man3 && ${__pmlinks3} )
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/images ${STAGEDIR}${DOCSDIR}/man
