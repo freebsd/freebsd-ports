@@ -1,8 +1,0 @@
-include/cppformat/format.cc
-include/cppformat/format.h
-include/cppformat/posix.h
-lib/cmake/cppformat/cppformat-config-version.cmake
-lib/cmake/cppformat/cppformat-config.cmake
-lib/cmake/cppformat/cppformat-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/cppformat/cppformat-targets.cmake
-lib/libcppformat.a

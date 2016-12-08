@@ -1,0 +1,4 @@
+fmt is an open-source formatting library for C++. It can be used as a
+safe alternative to printf or as a fast alternative to IOStreams.
+
+WWW: http://fmtlib.net/
