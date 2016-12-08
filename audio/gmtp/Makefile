@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmtp
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/gMTP-${PORTVERSION}/
 
@@ -16,10 +16,8 @@ LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libvorbis.so:audio/libvorbis
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake pkgconfig
-USE_GNOME=	glib20
+USES=		gmake localbase pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 glib20
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 
@@ -31,20 +29,14 @@ OPTIONS_SUB=		yes
 
 GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_WITH=	gtk3
+GTK3_VARS=		GLIB_SCHEMAS=org.gnome.gmtp.gschema.xml
+GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libfontconfig.so:x11-fonts/fontconfig
 GTK2_USE=		GNOME=gtk20,gconf2
 GTK2_CONFIGURE_WITH=	gtk2
+GTK2_VARS=		GCONF_SCHEMAS=gmtp.schemas
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-GCONF_SCHEMAS=	gmtp.schemas
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-GLIB_SCHEMAS=	org.gnome.gmtp.gschema.xml
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
