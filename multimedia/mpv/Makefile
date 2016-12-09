@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.22.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -14,8 +15,6 @@ LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-BUILD_DEPENDS=	rst2man:textproc/py-docutils \
-		rst2html:textproc/py-docutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player waf-project:waf
@@ -43,12 +42,11 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--disable-videotoolbox-hwaccel \
 		--disable-videotoolbox-gl \
 		--disable-wayland \
-		--enable-libmpv-shared \
-		--enable-html
+		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 \
-			LIBGUESS LUAJIT UCHARDET ZSH
-OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV ENCA OPENGL \
+OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 LIBGUESS LUAJIT \
+			MANPAGES UCHARDET ZSH
+OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV ENCA MANPAGES OPENGL \
 			V4L VAAPI VDPAU X11 XINERAMA YTDL ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
@@ -80,6 +78,9 @@ CACA_CONFIGURE_OFF=		--disable-caca
 CDIO_LIB_DEPENDS=		libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=		--disable-cdda
 
+DOCS_BUILD_DEPENDS=		rst2html:textproc/py-docutils
+DOCS_CONFIGURE_ON=		--enable-html
+
 DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav
 DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
 
@@ -105,6 +106,9 @@ LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=		lua
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
+
+MANPAGES_BUILD_DEPENDS=		rst2man:textproc/py-docutils
+MANPAGES_CONFIGURE_OFF=		--disable-manpage
 
 OPENGL_USE=			GL=egl,gbm,gl
 OPENGL_CONFIGURE_OFF=		--disable-gl
@@ -154,6 +158,7 @@ ZSH_CONFIGURE_ENABLE=		zsh-comp
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
+post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
