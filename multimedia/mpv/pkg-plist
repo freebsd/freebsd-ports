@@ -8,7 +8,7 @@ lib/libmpv.so
 lib/libmpv.so.1
 lib/libmpv.so.1.23.0
 libdata/pkgconfig/mpv.pc
-man/man1/mpv.1.gz
+%%MANPAGES%%man/man1/mpv.1.gz
 share/applications/mpv.desktop
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
