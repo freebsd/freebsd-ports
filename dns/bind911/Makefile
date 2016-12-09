@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--disable-shared
 .endif
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS+=	bind9*-9.[456789].* bind910-* bind9*-sdb-9.[456789].*
+CONFLICTS+=	bind99 bind910 bind9-devel
 
 .if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
@@ -116,9 +116,9 @@ GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
 
 .if defined(BIND_TOOLS_SLAVE)
-CONFLICTS+=		bind910-9.10.*
+CONFLICTS+=		bind911
 .else
-CONFLICTS+=		bind-tools-9.*
+CONFLICTS+=		bind-tools
 .endif	# BIND_TOOLS_SLAVE
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
