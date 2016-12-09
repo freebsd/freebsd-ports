@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c
-RUN_DEPENDS=	postmaster:databases/postgresql${PGSQL_VER_NODOT}-server
 
 CONFLICTS=	postgis20-2.0.* postgis22-*
 
@@ -26,6 +25,7 @@ SHEBANG_FILES=	utils/postgis_restore.pl.in
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+WANT_PGSQL=	lib server
 
 OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY SFCGAL
 OPTIONS_DEFAULT=	TOPOLOGY
