@@ -95,6 +95,9 @@ share/postgresql/contrib/postgis-2.0/postgis_restore.pl
 %%RASTER%%share/postgresql/extension/postgis--2.0.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.0.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.0.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.5--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.6--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology.control
@@ -106,4 +109,7 @@ share/postgresql/contrib/postgis-2.0/postgis_restore.pl
 %%RASTER%%share/postgresql/extension/postgis_topology--2.0.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--2.0.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--2.0.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.5--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.6--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--unpackaged--%%PORTVERSION%%.sql
