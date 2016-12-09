@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -17,7 +17,7 @@ LICENSE_NAME=	LLVM Release License
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_powerpc64=	Does not build
+BROKEN_FreeBSD_9=	COMPILER_RT does not compile
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]$//}
@@ -85,6 +85,7 @@ LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb-patch-tools_lldb_source_Host_common_FileSpec.cpp
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_USES=		execinfo
@@ -278,7 +279,7 @@ PORTDOCS+=	lld
 .endif
 
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-BROKEN=	Working C++11 compiler and library required
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 .if ${PYTHON_REL} < 3400
