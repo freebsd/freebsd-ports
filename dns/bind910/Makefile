@@ -3,28 +3,14 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-.if defined(BIND_TOOLS_SLAVE)
-# dns/bind-tools here
 PORTREVISION=	1
-.else
-# dns/bind9xx here
-PORTREVISION=	1
-.endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-.if defined(BIND_TOOLS_SLAVE)
-PKGNAMESUFFIX=	-tools
-.else
 PKGNAMESUFFIX=	910
-.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
-.if defined(BIND_TOOLS_SLAVE)
-COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
-.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
-.endif
 
 LICENSE=	ISCL
 
@@ -49,33 +35,26 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
-.if defined(BIND_TOOLS_SLAVE)
-CONFIGURE_ARGS+=	--disable-shared
-.endif
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS+=	bind99 bind911 bind9-devel
+CONFLICTS+=	bind-tools bind99 bind911 bind9-devel
 
-.if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
-.endif
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON \
+			DLZ_FILESYSTEM RPZ_NSIP RPZ_NSDNAME
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
-			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
+			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA \
+			LINKS RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
+			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE \
+			START_LATE
 OPTIONS_RADIO=	CRYPTO GOSTDEF
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
 OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
-.if !defined(BIND_TOOLS_SLAVE)
-OPTIONS_DEFAULT+=	DLZ_FILESYSTEM RPZ_NSIP RPZ_NSDNAME 
-OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
-			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE \
-			START_LATE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
-.endif	# BIND_TOOLS_SLAVE
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
@@ -116,12 +95,6 @@ GSSAPI_NONE_DESC=	Disable
 MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
-
-.if defined(BIND_TOOLS_SLAVE)
-CONFLICTS+=		bind910
-.else
-CONFLICTS+=		bind-tools
-.endif	# BIND_TOOLS_SLAVE
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USES=		ssl
@@ -212,10 +185,8 @@ CONFIGURE_ARGS+=	--disable-threads
 PKGINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
-.if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
-.endif # !defined(BIND_TOOLS_SLAVE)
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
@@ -239,26 +210,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
 		s|readline/history.h|histedit.h|' \
 		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
-.if defined(BIND_TOOLS_SLAVE)
-	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
-		-e 's#isc-config.sh installdirs#installdirs#' \
-		-e 's#.*INSTALL.*isc-config.*##' \
-		-e 's#.*INSTALL.*bind.keys.*##' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
-		-e 's#^	.*check confgen ##' \
-		${WRKSRC}/bin/Makefile.in
-.else
-.  for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
+.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
-.  endfor
-.endif
+.endfor
 
-.if !defined(BIND_TOOLS_SLAVE)
 .if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
@@ -290,7 +249,5 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
-
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
