@@ -1,0 +1,119 @@
+From db396b9fbdc9cd54fb8545ea655185ca73a2a07e Mon Sep 17 00:00:00 2001
+From: "Alan W. Irwin" <airwin@users.sourceforge.net>
+Date: Sat, 19 Nov 2016 16:04:28 -0800
+Subject: [PATCH] Build system: Fix if argument dereferencing issue that occurs
+ for CMake-3.7.0
+
+My thanks to Tom Schoonjans for reporting this issue.
+
+CMake-3.1 and beyond implements policy CMP0054.  The OLD behaviour of
+this policy (which we are forced to adopt because we currently support
+CMake-3.0.2, ugh) is that quoted strings in if arguments are
+dereferenced if there is a variable of the same name that has been
+defined.
+
+For example in the following if statement
+
+if(BINDING STREQUAL "c")
+
+CMake looks for a variable called c that has been defined and uses the
+value of that variable (which is really a nasty bug in the older
+versions of CMake such as 3.0.2 since it is a huge surprise that that
+dereferencing occurs instead of just using the string as is for the
+comparison).  But we are stuck with that bug (because we support 3.0.2
+which implies the OLD behaviour of CMP0054).
+
+However, modern versions of CMake such as 3.1.x through 3.7.0 do warn
+when this bug shows up. We got no such warning up to 3.6.x, but
+evidentally for CMake-3.7.0, the c variable has been set somewhere in
+the official CMake code (e.g., in the find modules) so for that versin
+we got warnings for the above if statement each time our build system
+code executes the function (pkg_config_file) that contains the above
+statement, and the result was the above if statement failed when
+BINDING derefenced to c, and the pkg-config files that are configured
+by that function were screwed up as a result as noticed by Tom
+Schoonjans.
+
+I have worked around the problem by replacing the above logic with
+
+if("X${BINDING}X" STREQUAL "XcX")
+
+on the assumption that no CMake variable in our own build system logic
+and also the CMake code provided by CMake itself is going to have the name
+XcX, but I have also commented the result with "CMP0054" so it will
+be easy to find and remove this commit once we no longer have to
+support CMake-3.0.2 so that we can use the rational CMP0054 NEW behaviour
+which is that quoted strings such as "c" are not dereferenced in "if"
+statements!
+
+Meanwhile, we rely on sharp-eyed users like Tom to tell us whenever
+there is a message concerning CMP0054 for any CMake version of 3.1 or
+higher since that is a signal that in virtually every case our CMake
+logic will go wrong (as in this 4.7.0 case) do to this OLD CMP0054
+behaviour.
+
+Tested by: Alan W. Irwin <airwin@users.sourceforge.net> on Linux
+(Debian Jessie) by comparing pkg-config files we configure in
+pkgcfg/*.pc with equivalent good *.pc results that were derived with a
+previous version of CMake that did not define the "c" variable that
+triggered this bug.  In all cases for CMake-3.7.0, the file names and
+contents of those files are now identical to the good past results.
+Also, because of this fix all CMP0054 warnings now no longer occur
+with cmake-3.7.0.
+---
+ cmake/modules/pkg-config.cmake | 21 +++++++++++++--------
+ 1 file changed, 13 insertions(+), 8 deletions(-)
+
+diff --git a/cmake/modules/pkg-config.cmake b/cmake/modules/pkg-config.cmake
+index 6674efa..05a4a53 100644
+--- cmake/modules/pkg-config.cmake
++++ cmake/modules/pkg-config.cmake
+@@ -1,6 +1,6 @@
+ # cmake/modules/pkg-config.cmake
+ #
+-# Copyright (C) 2006-2015 Alan W. Irwin
++# Copyright (C) 2006-2016 Alan W. Irwin
+ #
+ # This file is part of PLplot.
+ #
+@@ -415,25 +415,30 @@ function(pkg_config_file BINDING PC_SHORT_NAME PC_LONG_NAME PC_LIBRARY_NAME PC_C
+       message(FATAL_ERROR "pkg_config_file called with wrong number of arguments")
+     endif(ARGC EQUAL 7)
+ 
+-    if(BINDING STREQUAL "c")
++    # N.B. all the tests on "X${BINDING}X" below rather than BINDING
++    # are to beat a potential dereferencing problem for strings in if statements.
++    # This problem only occurs with old CMake versions that don't
++    # have CMP0054 set to NEW.
++    
++    if("X${BINDING}X" STREQUAL "XcX")
+       set(PC_FILE_SUFFIX "")
+       set(PC_REQUIRES "")
+-    elseif(BINDING STREQUAL "wxwidgets")
++    elseif("X${BINDING}X" STREQUAL "XwxwidgetsX")
+       set(PC_FILE_SUFFIX "-${BINDING}")
+       set(PC_REQUIRES "plplot-c++")
+-    else(BINDING STREQUAL "c")
++    else("X${BINDING}X" STREQUAL "XcX")
+       set(PC_FILE_SUFFIX "-${BINDING}")
+       set(PC_REQUIRES "plplot")
+-    endif(BINDING STREQUAL "c")
++    endif("X${BINDING}X" STREQUAL "XcX")
+ 
+     if(NON_TRANSITIVE)
+-      if(BINDING STREQUAL "ocaml")
++      if("X${BINDING}X" STREQUAL "XocamlX")
+ 	# Don't know how to do non-transitive linking for
+         # Ocaml binding of PLplot.
+ 	set(PC_REQUIRES_TAG "Requires")
+-      else(BINDING STREQUAL "ocaml")
++      else("X${BINDING}X" STREQUAL "XocamlX")
+ 	set(PC_REQUIRES_TAG "Requires.private")
+-      endif(BINDING STREQUAL "ocaml")
++      endif("X${BINDING}X" STREQUAL "XocamlX")
+     else(NON_TRANSITIVE)
+       set(PC_REQUIRES_TAG "Requires")
+     endif(NON_TRANSITIVE)
+-- 
+2.10.1
+

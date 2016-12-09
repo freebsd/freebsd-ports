@@ -39,6 +39,10 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
+# Following commit https://github.com/kitware/cmake/commit/956054
+# we need to either change the whole man-shuffle below, or simply
+# redefine CMAKE_INSTALL_MANDIR
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 
 OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP

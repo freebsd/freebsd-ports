@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.6.3
+PORTVERSION=	3.7.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
@@ -31,7 +31,8 @@ HAS_CONFIGURE=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp \
+		libuv.so:devel/libuv
 RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:devel/cmake-modules
 
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
