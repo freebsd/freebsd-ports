@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
