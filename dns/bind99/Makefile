@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind910-* bind911-* bind-tools-9.*
+CONFLICTS=	bind-tools bind9-devel bind910 bind911
 
 SUB_FILES=	pkg-message
 
