@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Sub/Defer.pm
+%%SITE_PERL%%/Sub/Quote.pm
+%%PERL5_MAN3%%/Sub::Defer.3.gz
+%%PERL5_MAN3%%/Sub::Quote.3.gz
