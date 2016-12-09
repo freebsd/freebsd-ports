@@ -21,7 +21,6 @@ PORTDOCS=	NEWS
 
 CONFIGURE_ARGS+= \
 	--enable-pie \
-	--enable-safestack \
 	--disable-silent-rules
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
@@ -35,6 +34,10 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 
 NOPIE_PORTS=	yes
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1200000
+CONFIGURE_ARGS+=	--enable-safestack
+.endif
 
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
