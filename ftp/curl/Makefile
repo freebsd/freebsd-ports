@@ -8,8 +8,8 @@ CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
 
-MAINTAINER?=	sunpoet@FreeBSD.org
-COMMENT?=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -41,22 +41,19 @@ OPTIONS_DEFAULT+=	GSSAPI_NONE
 OPTIONS_DEFAULT+=	GSSAPI_BASE
 .endif
 
-CONFIGURE_ARGS+=--disable-werror \
+CONFIGURE_ARGS=	--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
 		--without-axtls
-CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_ENV=	${MAKE_ENV} LC_ALL=C
 TEST_TARGET=	test
-USE_PERL5=	build
-USES=		gmake libtool localbase pathfix perl5 shebangfix tar:lzma
-
-.if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
-USES+=		cpe
+USE_PERL5=	build
+USES=		cpe gmake libtool localbase pathfix perl5 shebangfix tar:lzma
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -65,15 +62,12 @@ CPE_VENDOR=	haxx
 
 DOCS=		BUGS CODE_OF_CONDUCT.md CODE_STYLE.md CONTRIBUTE.md FAQ \
 		FEATURES HISTORY.md HTTP-COOKIES.md HTTP2.md INSTALL \
-		INTERNALS.md KNOWN_BUGS LICENSE-MIXING.md \
-		MAIL-ETIQUETTE MANUAL RELEASE-PROCEDURE RESOURCES ROADMAP.md \
-		SECURITY.md SSL-PROBLEMS.md SSLCERTS.md THANKS TODO \
-		TheArtOfHttpScripting VERSIONS
-.endif
+		INTERNALS.md KNOWN_BUGS LICENSE-MIXING.md MAIL-ETIQUETTE \
+		MANUAL RELEASE-PROCEDURE RESOURCES ROADMAP.md SECURITY.md \
+		SSL-PROBLEMS.md SSLCERTS.md THANKS TODO TheArtOfHttpScripting \
+		VERSIONS
 
 SHEBANG_FILES=	*/*.pl
-
-SLAVEDIRS=	ftp/curl-hiphop
 
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
@@ -161,7 +155,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/curl_gssapi.h ${WRKSRC}/lib/urldata.h
 
-.if !defined(BUILDING_HIPHOP)
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 
@@ -173,7 +166,6 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 pre-test-PROXY-off:
 	@${ECHO_MSG} "******************************************"
