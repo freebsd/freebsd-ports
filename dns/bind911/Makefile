@@ -256,7 +256,7 @@ post-patch:
 		-e 's#.*INSTALL.*isc-config.*##' \
 		-e 's#.*INSTALL.*bind.keys.*##' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = dig delv dnssec tools nsupdate \\#' \
 		-e 's#^	.*check confgen ##' \
 		${WRKSRC}/bin/Makefile.in
 .else
@@ -301,10 +301,10 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
+.endif	# BIND_TOOLS_SLAVE
 
 # Can't use USE_PYTHON=autoplist
 post-install-PYTHON-on:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
