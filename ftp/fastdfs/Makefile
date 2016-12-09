@@ -9,6 +9,8 @@ COMMENT=	High performance distributed file system (DFS)
 
 LICENSE=	GPLv3
 
+IGNORE_FreeBSD_9_i386=	Does not build properly
+
 LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon
 
 USES=		perl5
