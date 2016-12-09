@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-PORTVERSION=	0.10.4
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://rada.re/get/
 
