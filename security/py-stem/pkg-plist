@@ -2,6 +2,7 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/__init__.py
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyo
+%%PYTHON_SITELIBDIR%%/stem/cached_tor_manual.cfg
 %%PYTHON_SITELIBDIR%%/stem/connection.py
 %%PYTHON_SITELIBDIR%%/stem/connection.pyc
 %%PYTHON_SITELIBDIR%%/stem/connection.pyo
@@ -17,6 +18,7 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.pyo
+%%PYTHON_SITELIBDIR%%/stem/descriptor/fallback_directories.cfg
 %%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.pyo
@@ -60,6 +62,9 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/interpreter/help.pyc
 %%PYTHON_SITELIBDIR%%/stem/interpreter/help.pyo
 %%PYTHON_SITELIBDIR%%/stem/interpreter/settings.cfg
+%%PYTHON_SITELIBDIR%%/stem/manual.py
+%%PYTHON_SITELIBDIR%%/stem/manual.pyc
+%%PYTHON_SITELIBDIR%%/stem/manual.pyo
 %%PYTHON_SITELIBDIR%%/stem/prereq.py
 %%PYTHON_SITELIBDIR%%/stem/prereq.pyc
 %%PYTHON_SITELIBDIR%%/stem/prereq.pyo
@@ -90,6 +95,7 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/response/protocolinfo.py
 %%PYTHON_SITELIBDIR%%/stem/response/protocolinfo.pyc
 %%PYTHON_SITELIBDIR%%/stem/response/protocolinfo.pyo
+%%PYTHON_SITELIBDIR%%/stem/settings.cfg
 %%PYTHON_SITELIBDIR%%/stem/socket.py
 %%PYTHON_SITELIBDIR%%/stem/socket.pyc
 %%PYTHON_SITELIBDIR%%/stem/socket.pyo

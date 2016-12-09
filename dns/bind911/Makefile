@@ -5,10 +5,10 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	1
 .else
 # dns/bind9xx here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
-		--with-readline=-ledit \
+		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 .if defined(BIND_TOOLS_SLAVE)
@@ -54,14 +54,14 @@ CONFIGURE_ARGS+=	--disable-shared
 .endif
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS+=	bind9*-9.[456789].* bind910-* bind9*-sdb-9.[456789].*
+CONFLICTS+=	bind99 bind910 bind9-devel
 
 .if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
 .endif
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE
-OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON \
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON
+OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO GOSTDEF
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
@@ -116,9 +116,9 @@ GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
 
 .if defined(BIND_TOOLS_SLAVE)
-CONFLICTS+=		bind910-9.10.*
+CONFLICTS+=		bind911
 .else
-CONFLICTS+=		bind-tools-9.*
+CONFLICTS+=		bind-tools
 .endif	# BIND_TOOLS_SLAVE
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
@@ -145,6 +145,9 @@ NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+
+JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
+JSON_CONFIGURE_WITH=	libjson
 
 GOST_CONFIGURE_ON=	--with-gost
 GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
@@ -253,7 +256,7 @@ post-patch:
 		-e 's#.*INSTALL.*isc-config.*##' \
 		-e 's#.*INSTALL.*bind.keys.*##' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = dig delv dnssec tools nsupdate \\#' \
 		-e 's#^	.*check confgen ##' \
 		${WRKSRC}/bin/Makefile.in
 .else
@@ -298,10 +301,10 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
+.endif	# BIND_TOOLS_SLAVE
 
 # Can't use USE_PYTHON=autoplist
 post-install-PYTHON-on:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>

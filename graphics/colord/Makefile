@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	colord
-PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTVERSION=	1.2.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	spotread:graphics/argyllcms
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
@@ -19,7 +20,7 @@ RUN_DEPENDS=	spotread:graphics/argyllcms
 USERS=		colord
 GROUPS=		colord
 
-USES=		gettext gmake libtool pathfix pkgconfig sqlite tar:xz
+USES=		gettext gmake libtool localbase pathfix pkgconfig sqlite tar:xz
 USE_GNOME=	glib20 intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,9 +32,8 @@ CONFIGURE_ARGS=	--disable-udev \
 		--disable-gusb \
 		--disable-sane \
 		--with-daemon-user=colord \
-		--disable-systemd-login
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+		--disable-systemd-login \
+		--enable-libcolordcompat
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
 		USB_LIBS="-L/usr/lib -lusb"
 INSTALL_TARGET=	install-strip

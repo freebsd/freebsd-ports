@@ -12,11 +12,7 @@
 %%SITE_PERL%%/Moo/_mro.pm
 %%SITE_PERL%%/Moo/_strictures.pm
 %%SITE_PERL%%/Moo/sification.pm
-%%SITE_PERL%%/Sub/Defer.pm
-%%SITE_PERL%%/Sub/Quote.pm
 %%SITE_PERL%%/oo.pm
 %%PERL5_MAN3%%/Moo.3.gz
 %%PERL5_MAN3%%/Moo::Role.3.gz
-%%PERL5_MAN3%%/Sub::Defer.3.gz
-%%PERL5_MAN3%%/Sub::Quote.3.gz
 %%PERL5_MAN3%%/oo.3.gz

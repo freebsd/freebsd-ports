@@ -520,6 +520,7 @@
     SUBDIR += libfov
     SUBDIR += libgames-support
     SUBDIR += libggz
+    SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
     SUBDIR += liblcf

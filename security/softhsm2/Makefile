@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/

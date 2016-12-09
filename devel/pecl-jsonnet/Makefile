@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonnet
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,9 +15,9 @@ COMMENT=	Google JsonNet for PHP
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libjsonnet.so:devel/jsonnet
+
+BROKEN_powerpc64=	does not build
 
 USES=		php:ext tar:tgz
 USE_PHP=	json:build

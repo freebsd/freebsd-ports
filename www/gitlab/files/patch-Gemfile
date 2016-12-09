@@ -1,4 +1,4 @@
---- Gemfile.orig	2016-10-11 15:09:17 UTC
+--- Gemfile.orig	2016-11-09 05:10:18 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
  source 'https://rubygems.org'
@@ -92,6 +92,15 @@
    gem 'unicorn-worker-killer', '~> 0.4.2'
  end
  
+@@ -144,7 +142,7 @@ gem 'sidekiq-cron', '~> 0.4.0'
+ gem 'redis-namespace', '~> 1.5.2'
+ 
+ # HTTP requests
+-gem 'httparty', '~> 0.13.3'
++gem 'httparty', '>= 0.13.3'
+ 
+ # Colored output to console
+ gem 'rainbow', '~> 2.1.0'
 @@ -173,10 +171,10 @@ gem 'gitlab-flowdock-git-hook', '~> 1.0.
  gem 'gemnasium-gitlab-service', '~> 0.2'
  

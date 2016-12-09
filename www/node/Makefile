@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	7.2.0
+PORTVERSION=	7.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
 MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server (7.x)
+
+BROKEN=	Does not fetch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,6 @@
 --- vncstorepw/Makefile.orig	2010-04-22 03:22:40 UTC
 +++ vncstorepw/Makefile
-@@ -7,8 +7,6 @@ UNWRAP = unwrap.so
+@@ -7,21 +7,18 @@ UNWRAP = unwrap.so
  LIMACC = lim_accept.so
  ULTDSM = ultravnc_dsm_helper
  
@@ -9,7 +9,12 @@
  
  all: $(CMD) $(UNWRAP) $(LIMACC) $(ULTDSM)
  
-@@ -21,7 +19,7 @@ $(UNWRAP): unwrap.c
+ $(CMD): vncauth.o vncstorepw.o d3des.o
+ 	PATH=$$PATH:$(EPATH) $(CC) -o $(CMD) vncstorepw.o vncauth.o d3des.o
+-	PATH=$$PATH:$(EPATH) strip $(CMD)
+ 	@ls -l $(CMD)
+ 
+ $(UNWRAP): unwrap.c
  	if [ `uname` = "Darwin" ]; then \
  		PATH=$$PATH:$(EPATH) $(CC) -o $(UNWRAP) -dynamiclib -fPIC unwrap.c; \
  	else \
@@ -18,7 +23,7 @@
  	fi
  	@ls -l $(UNWRAP)
  
-@@ -29,7 +27,7 @@ $(LIMACC): lim_accept.c
+@@ -29,7 +26,7 @@ $(LIMACC): lim_accept.c
  	if [ `uname` = "Darwin" ]; then \
  		PATH=$$PATH:$(EPATH) $(CC) -o $(LIMACC) -dynamiclib -fPIC -nostartfiles lim_accept.c; \
  	else \
@@ -27,12 +32,14 @@
  	fi
  	@ls -l $(LIMACC)
  
-@@ -39,7 +37,7 @@ $(ULTDSM): ultravnc_dsm_helper.c
+@@ -39,9 +36,8 @@ $(ULTDSM): ultravnc_dsm_helper.c 
  	if [ `uname` = "SunOS" ]; then \
  		PATH=$$PATH:$(EPATH) $(CC) -o $(ULTDSM) $(CPP_SSL) ultravnc_dsm_helper.c $(LD_SSL) -lssl -lcrypto -lsocket -lnsl; \
  	else \
 -		PATH=$$PATH:$(EPATH) $(CC) -o $(ULTDSM) $(CPP_SSL) ultravnc_dsm_helper.c $(LD_SSL) -lssl -lcrypto; \
 +		PATH=$$PATH:$(EPATH) $(CC) -o $(ULTDSM) $(CPP_SSL) ultravnc_dsm_helper.c $(CFLAGS) $(LDFLAGS) -lssl -lcrypto; \
  	fi
- 	PATH=$$PATH:$(EPATH) strip $(ULTDSM)
+-	PATH=$$PATH:$(EPATH) strip $(ULTDSM)
  	@ls -l $(ULTDSM)
+ 
+ test: $(CMD)
