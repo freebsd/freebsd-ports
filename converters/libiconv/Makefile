@@ -10,6 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Character set conversion library
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-nls \
