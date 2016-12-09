@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
-		--with-readline=-ledit \
+		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 .if defined(BIND_TOOLS_SLAVE)
