@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.4.16
+PORTVERSION=	3.4.17
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
 		--enable-local-libopts \
+		--with-trousers-lib=${LOCALBASE}/lib/libtspi.so.1 \
 		ac_cv_type_max_align_t=yes
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
@@ -47,13 +48,14 @@ IDN_CONFIGURE_WITH=	idn
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 
 NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	ac_cv_lib_intl_gettext=no
 NLS_USES=		gettext
 
 P11KIT_DESC=		PKCS\#11 and p11-kit support
 P11KIT_CONFIGURE_WITH=	p11-kit
 P11KIT_LIB_DEPENDS=	libp11-kit.so:security/p11-kit
 
-TPM_DESC=		TPM (trousers) support
+TPM_DESC=		Trusted Platform Module support
 TPM_CONFIGURE_WITH=	tpm
 TPM_LIB_DEPENDS=	libtspi.so:security/trousers
 
