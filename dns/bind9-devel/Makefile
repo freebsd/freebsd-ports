@@ -55,7 +55,6 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 ETCDIR=		${PREFIX}/etc/namedb
-LDFLAGS+=	-L${LOCALBASE}/lib	# for ports-based libedit
 
 CONFLICTS+=	bind9*-9.[456789].* bind910-* bind911-*  bind9*-sdb-9.[456789].*
 
