@@ -221,7 +221,6 @@ lib/node_modules/npm/lib/install/actions.js
 lib/node_modules/npm/lib/install/and-add-parent-to-errors.js
 lib/node_modules/npm/lib/install/and-finish-tracker.js
 lib/node_modules/npm/lib/install/and-ignore-errors.js
-lib/node_modules/npm/lib/install/build-path.js
 lib/node_modules/npm/lib/install/check-permissions.js
 lib/node_modules/npm/lib/install/copy-tree.js
 lib/node_modules/npm/lib/install/decompose-actions.js
@@ -238,6 +237,7 @@ lib/node_modules/npm/lib/install/is-fs-access-available.js
 lib/node_modules/npm/lib/install/is-opt-dep.js
 lib/node_modules/npm/lib/install/is-prod-dep.js
 lib/node_modules/npm/lib/install/is-registry-specifier.js
+lib/node_modules/npm/lib/install/module-staging-path.js
 lib/node_modules/npm/lib/install/mutate-into-logical-tree.js
 lib/node_modules/npm/lib/install/node.js
 lib/node_modules/npm/lib/install/read-shrinkwrap.js
@@ -2572,10 +2572,6 @@ lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/license
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/index.js
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/license
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/node_modules/number-is-nan/index.js
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/node_modules/number-is-nan/license
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/node_modules/number-is-nan/package.json
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/node_modules/number-is-nan/readme.md
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/package.json
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/readme.md
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/is-fullwidth-code-point/index.js
@@ -2763,7 +2759,6 @@ lib/node_modules/npm/node_modules/readable-stream/.npmignore
 lib/node_modules/npm/node_modules/readable-stream/.travis.yml
 lib/node_modules/npm/node_modules/readable-stream/LICENSE
 lib/node_modules/npm/node_modules/readable-stream/README.md
-lib/node_modules/npm/node_modules/readable-stream/doc/stream.md
 lib/node_modules/npm/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md
 lib/node_modules/npm/node_modules/readable-stream/duplex.js
 lib/node_modules/npm/node_modules/readable-stream/lib/_stream_duplex.js
@@ -3685,7 +3680,6 @@ lib/node_modules/npm/test/fixtures/config/builtin
 lib/node_modules/npm/test/fixtures/config/globalconfig
 lib/node_modules/npm/test/fixtures/config/malformed
 lib/node_modules/npm/test/fixtures/config/multi-ca
-lib/node_modules/npm/test/fixtures/config/package.json
 lib/node_modules/npm/test/fixtures/config/userconfig
 lib/node_modules/npm/test/fixtures/forked-underscore-1.5.1.tgz
 lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-bar.git.tar.gz
@@ -3709,7 +3703,6 @@ lib/node_modules/npm/test/network/legacy-shrinkwrap.js
 lib/node_modules/npm/test/network/legacy-url-dep.js
 lib/node_modules/npm/test/network/outdated-symlink.js
 lib/node_modules/npm/test/network/registry.js
-lib/node_modules/npm/test/slow/legacy-npm-self-install.js
 lib/node_modules/npm/test/tap/00-check-mock-dep.js
 lib/node_modules/npm/test/tap/00-config-setup.js
 lib/node_modules/npm/test/tap/00-verify-bundle-deps.js
@@ -3831,6 +3824,7 @@ lib/node_modules/npm/test/tap/install-save-local.js
 lib/node_modules/npm/test/tap/install-save-prefix.js
 lib/node_modules/npm/test/tap/install-scoped-already-installed.js
 lib/node_modules/npm/test/tap/install-scoped-link.js
+lib/node_modules/npm/test/tap/install-scoped-with-bundled-dependency.js
 lib/node_modules/npm/test/tap/install-scoped-with-peer-dependency.js
 lib/node_modules/npm/test/tap/install-shrinkwrapped-git.js
 lib/node_modules/npm/test/tap/install-with-dev-dep-duplicate.js
@@ -3842,6 +3836,7 @@ lib/node_modules/npm/test/tap/legacy-dir-bin.js
 lib/node_modules/npm/test/tap/legacy-ignore-nested-nm.js
 lib/node_modules/npm/test/tap/legacy-missing-bindir.js
 lib/node_modules/npm/test/tap/legacy-no-auth-leak.js
+lib/node_modules/npm/test/tap/legacy-npm-self-install.js
 lib/node_modules/npm/test/tap/legacy-platform-all.js
 lib/node_modules/npm/test/tap/legacy-platform.js
 lib/node_modules/npm/test/tap/legacy-private.js
