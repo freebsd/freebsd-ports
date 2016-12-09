@@ -4027,6 +4027,7 @@
     SUBDIR += py-Products.statusmessages
     SUBDIR += py-Products.validation
     SUBDIR += py-PyLD
+    SUBDIR += py-pyvalid
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
