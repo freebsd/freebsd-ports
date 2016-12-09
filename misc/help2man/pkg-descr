@@ -8,4 +8,4 @@ Given a program which produces resonably standard --help and --version
 outputs, help2man will attempt to re-arrange that output into something
 which resembles a manual page.
 
-WWW: http://www.gnu.org/software/help2man/
+WWW: https://www.gnu.org/software/help2man/

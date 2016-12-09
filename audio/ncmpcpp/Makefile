@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTVERSION=	0.7.7
 CATEGORIES=	audio
 MASTER_SITES=	http://ncmpcpp.rybczak.net/stable/
 
 MAINTAINER=	yamagi@yamagi.org
-COMMENT=	ncurses mpd client, clone of ncmpc with some new features
+COMMENT=	Ncurses mpd client, clone of ncmpc with some new features
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libicuuc.so:devel/icu \
 		libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++11-lib iconv libtool localbase ncurses:port pkgconfig tar:bzip2
+USES=		compiler:c++11-lib iconv libtool localbase ncurses pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 LDFLAGS+=	-lpthread
