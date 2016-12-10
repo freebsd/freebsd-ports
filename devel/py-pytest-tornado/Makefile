@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
