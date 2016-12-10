@@ -1,5 +1,5 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/www/tomcat-native/Makefile 422874 2016-09-28 13:47:53Z mat $
 
 PORTNAME=	tomcat-native
 PORTVERSION=	1.2.7
@@ -38,10 +38,6 @@ post-install:
 .if ${SSL_DEFAULT} == base
 IGNORE_FreeBSD_9=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
 IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (missing numerous symbols during linking)
 .endif
 
 .include <bsd.port.post.mk>
