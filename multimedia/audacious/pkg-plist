@@ -59,6 +59,7 @@ share/applications/audacious.desktop
 %%DATADIR%%/images/plugins.png
 share/icons/hicolor/48x48/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
