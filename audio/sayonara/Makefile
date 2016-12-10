@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 
-USES=		cmake execinfo pkgconfig
+USES=		cmake compiler:c++11-lib execinfo pkgconfig
 USE_GSTREAMER1=	flac mpg123 ogg opus vorbis	# XXX: likely incomplete
 USE_QT5=	dbus core gui network sql widgets xml \
 		buildtools_build qmake_build linguisttools_build
@@ -28,5 +28,9 @@ post-patch:
 		${WRKSRC}/resources/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/DESTINATION/s,/usr/,,' \
 		${WRKSRC}/src/GUI/Resources/Icons/CMakeLists.txt
+.if !exists(/usr/libdata/pkgconfig/zlib.pc)
+	@${REINPLACE_CMD} -e '/zlib/s/PKG_CHECK_MODULES/FIND_PACKAGE/' \
+		${WRKSRC}/src/Helper/Compressor/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
