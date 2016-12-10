@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.2:devel/py-pytest
 
+NO_ARCH=	yes
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
