@@ -3,6 +3,7 @@
 
 PORTNAME=	pytz
 PORTVERSION=	2016.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -12,8 +13,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3 tar:bzip2
+USES=		python:3.3+ tar:bzip2
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

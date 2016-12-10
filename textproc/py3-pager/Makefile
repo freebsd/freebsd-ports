@@ -3,6 +3,7 @@
 
 PORTNAME=	pager
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,7 @@ COMMENT=	Terminal/console pager module
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3
+USES=		python:3.3+
 USE_PYTHON=	autoplist concurrent distutils
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

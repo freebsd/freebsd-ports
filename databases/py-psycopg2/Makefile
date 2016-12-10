@@ -16,7 +16,7 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_PYTHON=	autoplist concurrent distutils
-USES=		pgsql python
+USES?=		pgsql python
 
 PORTDOCS=	AUTHORS INSTALL NEWS PKG-INFO README.rst
 PORTEXAMPLES=	*

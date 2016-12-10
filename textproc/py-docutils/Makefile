@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docutils
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF \
 		CHEESESHOP
@@ -17,6 +16,7 @@ LICENSE_COMB=	multi
 
 USES=	python
 USE_PYTHON=	distutils concurrent autoplist
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PYGMENTS
 PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments

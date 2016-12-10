@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	micro_proxy
-PORTVERSION=	20021030
+PORTVERSION=	20140814
 CATEGORIES=	net
 MASTER_SITES=	http://www.acme.com/software/micro_proxy/ \
 		LOCAL/ehaupt
-DISTNAME=	${PORTNAME}_30oct2002
+DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Really small HTTP/HTTPS proxy
