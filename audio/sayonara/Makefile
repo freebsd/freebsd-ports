@@ -3,6 +3,7 @@
 
 PORTNAME=	sayonara
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sayonara-player.com/sw/
 DISTNAME=	${PORTNAME}-player-${PORTVERSION}-git11-20161030
@@ -13,7 +14,8 @@ COMMENT=	Small, clear, and fast Qt-based audio player
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libtag.so:audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libmtp.so:multimedia/libmtp
 
 USES=		cmake compiler:c++11-lib execinfo pkgconfig
 USE_GSTREAMER1=	flac mpg123 ogg opus vorbis	# XXX: likely incomplete
