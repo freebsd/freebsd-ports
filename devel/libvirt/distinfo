@@ -1,3 +1,3 @@
-TIMESTAMP = 1478323826
-SHA256 (libvirt-2.4.0.tar.xz) = b727c5f43ed3d7337ec2c2f2031ebd4207507978f68d00ad13d4f0f84aad6224
-SIZE (libvirt-2.4.0.tar.xz) = 13237652
+TIMESTAMP = 1481343631
+SHA256 (libvirt-2.5.0.tar.xz) = 819dffefbfd6ae95dfe1b28cfdee15ebcf9f91bbd732157488a57705bf81cb1e
+SIZE (libvirt-2.5.0.tar.xz) = 13638636
