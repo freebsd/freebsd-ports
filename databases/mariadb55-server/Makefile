@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
-USES=		cmake execinfo gmake shebangfix ssl
+USES=		cmake execinfo shebangfix ssl
 SHEBANG_FILES=	scripts/*.sh
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \

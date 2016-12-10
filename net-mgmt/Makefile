@@ -144,6 +144,7 @@
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
     SUBDIR += nagircbot
+    SUBDIR += nagnu
     SUBDIR += nagstamon
     SUBDIR += nagtail
     SUBDIR += nagvis

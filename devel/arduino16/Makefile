@@ -68,10 +68,6 @@ DOCS_DISTFILES=		reference-1.6.6-3.zip:ref \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-ARCH=			x86_64
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 INSLIST+=		reference
 .endif
