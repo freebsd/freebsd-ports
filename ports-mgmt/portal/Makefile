@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	culot
 
 USES=		ncurses compiler:c++11-lib
+CFLAGS+=	-I${NCURSESINC}
+LDFLAGS+=	-L${NCURSESLIB}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
