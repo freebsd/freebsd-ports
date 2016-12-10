@@ -16,5 +16,6 @@ RUN_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 PLIST_FILES=	bin/minixmlto
+MAKE_ARGS=	PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>

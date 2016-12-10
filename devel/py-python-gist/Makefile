@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-gist
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt \
 		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses \
-		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdowner

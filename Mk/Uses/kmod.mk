@@ -34,13 +34,19 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" NO_XREF=yes
 PLIST_FILES+=	"@kld ${KMODDIR}"
 
 STRIP_CMD+=	--strip-debug # do not strip kernel symbols
+KERN_DEBUGDIR?=	${DEBUGDIR}
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_KMOD_POST_MK)
 _INCLUDE_USES_KMOD_POST_MK=	yes
 
 _USES_install+=	290:${STAGEDIR}${KMODDIR}
+_USES_install+=	291:${STAGEDIR}${KERN_DEBUGDIR}${KMODDIR}
+
 ${STAGEDIR}${KMODDIR}:
+	@${MKDIR} ${.TARGET}
+
+${STAGEDIR}${KERN_DEBUGDIR}${KMODDIR}:
 	@${MKDIR} ${.TARGET}
 
 .endif

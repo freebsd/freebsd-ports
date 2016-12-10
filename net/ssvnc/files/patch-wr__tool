@@ -1,0 +1,8 @@
+--- wr_tool.orig	2008-08-29 12:58:03 UTC
++++ wr_tool
+@@ -6,4 +6,4 @@ cat > $wr <<END
+ UNAME=.; export UNAME
+ exec $cmd "\$@"
+ END
+-chmod 755 $wr
++chmod 555 $wr

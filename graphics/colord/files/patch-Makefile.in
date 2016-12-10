@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-04-26 18:53:13.990362000 +0200
-+++ Makefile.in	2015-04-26 18:54:20.559863000 +0200
-@@ -92,7 +92,6 @@
+--- Makefile.in.orig	2016-11-21 22:27:07 UTC
++++ Makefile.in
+@@ -92,7 +92,6 @@ host_triplet = @host@
  @HAVE_UNIX_TRUE@am__append_1 = \
  @HAVE_UNIX_TRUE@	man						\
  @HAVE_UNIX_TRUE@	policy						\

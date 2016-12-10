@@ -3,6 +3,7 @@
 
 PORTNAME=	html-xml-utils
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Tools/HTML-XML-utils/
 
@@ -18,5 +19,6 @@ USES=		gmake iconv localbase shebangfix
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib
+CONFIGURE_ARGS=	LDFLAGS=${ICONV_LIB}
 
 .include <bsd.port.mk>

@@ -41,7 +41,7 @@ info/pkcs11-vision.png
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.6.8
+lib/libgnutls.so.30.7.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -541,6 +541,7 @@ man/man3/gnutls_pkcs7_get_crt_count.3.gz
 man/man3/gnutls_pkcs7_get_crt_raw.3.gz
 man/man3/gnutls_pkcs7_get_crt_raw2.3.gz
 man/man3/gnutls_pkcs7_get_embedded_data.3.gz
+man/man3/gnutls_pkcs7_get_embedded_data_oid.3.gz
 man/man3/gnutls_pkcs7_get_signature_count.3.gz
 man/man3/gnutls_pkcs7_get_signature_info.3.gz
 man/man3/gnutls_pkcs7_import.3.gz

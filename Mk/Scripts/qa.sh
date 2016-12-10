@@ -107,15 +107,19 @@ shebang() {
 baselibs() {
 	local rc
 	local found_openssl
+	local file
 	[ "${PKGBASE}" = "pkg" -o "${PKGBASE}" = "pkg-devel" ] && return
 	while read f; do
 		case ${f} in
+		File:\ .*)
+			file=${f#File: .}
+			;;
 		*NEEDED*\[libarchive.so.[56]])
-			err "Bad linking on ${f##* } please add USES=libarchive"
+			err "Bad linking on ${f##* } for ${file} please add USES=libarchive"
 			rc=1
 			;;
 		*NEEDED*\[libedit.so.7])
-			err "Bad linking on ${f##* } please add USES=libedit"
+			err "Bad linking on ${f##* } for ${file} please add USES=libedit"
 			rc=1
 			;;
 		*NEEDED*\[libcrypto.so.*]|*NEEDED*\[libssl.so.*])

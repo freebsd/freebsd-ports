@@ -12,6 +12,5 @@ However, bgpq3 can not be used as a full replacement of bgpq, because:
 - "more specific" prefix filtering is not implemented (and not planned).
 - GateD prefix-filters generation is not implemented (and not planned).
 - Cisco standard access-lists generation is not implemented (and not planned).
-- formatted output is not supported (yet?).
 
-WWW: http://snar.spb.ru/prog/bgpq3/
+WWW: http://github.com/snar/bgpq3

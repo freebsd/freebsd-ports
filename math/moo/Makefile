@@ -12,6 +12,8 @@ COMMENT=	Calculator that accepts C-like syntax as input
 
 PLIST_FILES=	bin/moo man/man1/moo.1.gz
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/moo ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/moo.1 ${STAGEDIR}${MANPREFIX}/man/man1
