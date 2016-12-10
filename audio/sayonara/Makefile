@@ -3,7 +3,7 @@
 
 PORTNAME=	sayonara
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sayonara-player.com/sw/
 DISTNAME=	${PORTNAME}-player-${PORTVERSION}-git11-20161030
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 
 USES=		cmake compiler:c++11-lib execinfo pkgconfig
 USE_GSTREAMER1=	flac mpg123 ogg opus vorbis	# XXX: likely incomplete
-USE_QT5=	dbus core gui network sql widgets xml \
+USE_QT5=	dbus core gui network sql sql-sqlite3_run widgets xml \
 		buildtools_build qmake_build linguisttools_build
 INSTALLS_ICONS=	yes
 
