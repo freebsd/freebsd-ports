@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan 14 17:23:41 2004
-+++ Makefile	Thu Oct 28 14:17:10 2004
+--- Makefile.orig	2011-01-11 02:35:54 UTC
++++ Makefile
 @@ -3,8 +3,8 @@
  # Makefile for Unix and GNU/Linux with gcc/g++ compiler
  # Edit here:
@@ -11,7 +11,7 @@
  
  # Hints:
  # if you use egcs-2.90.* version of GCC please add option -fno-exceptions 
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,7 @@ CPP=g++
  
  # Optimized version
  
