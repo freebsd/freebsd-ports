@@ -28,11 +28,13 @@ SAMD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-hardware_arduino_samd_platform.txt
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-ARCH=		x86_64
+ARDUINO_ARCH=	x86_64
+.else
+ARDUINO_ARCH=	${ARCH}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%ARCH%%|${ARCH}|g' -e 's|%%OSREL%%|${OSREL:R}|g' ${WRKSRC}/hardware/package_index_bundled.json
+	@${REINPLACE_CMD} -e 's|%%ARCH%%|${ARDUINO_ARCH}|g' -e 's|%%OSREL%%|${OSREL:R}|g' ${WRKSRC}/hardware/package_index_bundled.json
 
 do-install:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "hardware" ${STAGEDIR}${PREFIX}/arduino ${FIND_EXPR})
