@@ -14,6 +14,7 @@ include/urcu/futex.h
 include/urcu/hlist.h
 include/urcu/list.h
 include/urcu/map/urcu-bp.h
+include/urcu/map/urcu-mp.h
 include/urcu/map/urcu-qsbr.h
 include/urcu/map/urcu.h
 include/urcu/rcuhlist.h

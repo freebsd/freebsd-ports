@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liburcu
-PORTVERSION=	0.7.13
+PORTVERSION=	0.7.17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
@@ -24,8 +24,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
-
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
