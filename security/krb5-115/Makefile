@@ -107,6 +107,13 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
 
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		Does not build under FreeBSD-9, fails to build pkinit.so
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
 # html documentation
@@ -154,4 +161,4 @@ post-install:
 	@${ECHO} "for more information.                                 "
 	@${ECHO} "------------------------------------------------------"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
