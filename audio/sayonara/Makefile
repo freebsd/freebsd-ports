@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.sayonara-player.com/sw/
 DISTNAME=	${PORTNAME}-player-${PORTVERSION}-git11-20161030
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, clear, and fast Qt-based audio player
 
 LICENSE=	GPLv3
