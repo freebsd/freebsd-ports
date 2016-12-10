@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	neel@neelc.org
 COMMENT=	MySQL database connector for Python
 
-USES=		python mysql
+USES?=		python mysql
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	pymysql

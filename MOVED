@@ -8818,8 +8818,8 @@ java/jakarta-struts||2016-12-01|Has expired: Port is unmaintained and has known 
 www/rubygem-url-mount|www/rubygem-url_mount|2016-12-03|Rename to match our rubygems naming
 editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, use editors/focuswriter instead
 graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
-security/gsfv||2016-12-04|Has expired: No more upstream.
-misc/grun||2016-12-04|Has expired: No more upstream.
+security/gsfv||2016-12-04|Has expired: No more upstream
+misc/grun||2016-12-04|Has expired: No more upstream
 devel/py-argparse||2016-12-04|Has expired: Part of Python standard library for Python >= 2.7 and >= 3.2
 www/node7|www/node|2016-12-07|www/node is now www/node7
 databases/py-sqlalchemy06|databases/py-sqlalchemy10|2016-12-08|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
@@ -8829,3 +8829,5 @@ graphics/py-aafigure||2016-12-08|Has expired: Depends on broken and expired py-r
 converters/py-pisa||2016-12-08|Has expired: Deprecated upstream, depends on broken and expired py-reportlab2
 graphics/ocrfeeder||2016-12-08|Has expired: Depends on broken and expired py-reportlab2
 devel/libcppformat|devel/libfmt|2016-12-08|Project was renamed
+databases/py35-mysqlclient|databases/py3-mysqlclient|2016-12-10|Moved to match existing naming convention
+databases/py35-psycopg2|databases/py3-psycopg2|2016-12-10|Moved to match existing naming convention

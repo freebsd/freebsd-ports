@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 BROKEN_powerpc64=	Does not build
 
-USES=		gmake tar:bzip2
+USES=		gmake ssl tar:bzip2
 USE_RC_SUBR=	oscam
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 

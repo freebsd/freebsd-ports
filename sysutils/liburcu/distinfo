@@ -1,2 +1,3 @@
-SHA256 (userspace-rcu-0.7.13.tar.bz2) = 368a0db48926b127f86f62595f67b21ff09d9c1183b5d0342b48b25eae957b35
-SIZE (userspace-rcu-0.7.13.tar.bz2) = 390152
+TIMESTAMP = 1481228008
+SHA256 (userspace-rcu-0.7.17.tar.bz2) = 19ceae968fa29a3bb425a2743832f2965c3b28639e845cf01edfe2e75b31781c
+SIZE (userspace-rcu-0.7.17.tar.bz2) = 392424
