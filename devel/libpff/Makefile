@@ -2,36 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	libpff
-DISTVERSION=	alpha-20120802
-PORTREVISION=	2
+# If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
+DISTVERSION=	experimental-20161119
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/libyal/legacy/raw/master/libpff/ \
+MASTER_SITES=	https://github.com/libyal/libpff/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the PFF and the OFF formats
 
 LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libfwnt=no
-USES=		gettext libtool pathfix python:2.7
+CONFIGURE_ARGS=	--enable-python --with-libfwnt=${LOCALBASE}
+USES=		libtool pathfix python
 USE_LDCONFIG=	yes
-# Remove when configure gets LDFLAGS for python correctly
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
+OPTIONS_DEFINE=	DOCS NLS
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--disable-nls
+
 PORTDOCS=	AUTHORS ChangeLog
-PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}/* \
-		${WRKSRC}/examples/${PORTNAME:S,lib,py,}/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
