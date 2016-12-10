@@ -2,6 +2,6 @@
 
 MASTERDIR=	${.CURDIR}/../py-mysqlclient
 
-PYTHON_VERSION=	python3.5
+USES=		python:3.3+ mysql
 
 .include "${MASTERDIR}/Makefile"

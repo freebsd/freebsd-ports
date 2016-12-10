@@ -2,6 +2,6 @@
 
 MASTERDIR=	${.CURDIR}/../py-psycopg2
 
-PYTHON_VERSION=	python3.5
+USES=		pgsql python:3.3+
 
 .include "${MASTERDIR}/Makefile"
