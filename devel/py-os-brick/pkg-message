@@ -1,2 +1,5 @@
 Please note that this is a development version.
-Mounting cinder volumes doesn't work.
+Only initial NFS support was added.
+
+Enable NFS client in rc.conf
+# sysrc nfs_client_enable="YES"

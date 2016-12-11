@@ -1,0 +1,35 @@
+From fe3bf36779f577ef737108eb1d30b46a75fa4748 Mon Sep 17 00:00:00 2001
+From: Alexander Nusov <alexander.nusov@nfvexpress.com>
+Date: Thu, 8 Dec 2016 16:27:57 +0300
+Subject: [PATCH] initial NFS support
+
+---
+ os_brick/initiator/connectors/remotefs.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/os_brick/initiator/connectors/remotefs.py b/os_brick/initiator/connectors/remotefs.py
+index 50f11c1..f22b652 100644
+--- a/os_brick/initiator/connectors/remotefs.py
++++ b/os_brick/initiator/connectors/remotefs.py
+@@ -26,6 +26,8 @@ LOG = logging.getLogger(__name__)
+ class RemoteFsConnector(base.BaseLinuxConnector):
+     """Connector class to attach/detach NFS and GlusterFS volumes."""
+ 
++    os_type = initiator.OS_TYPE_FREEBSD
++
+     def __init__(self, mount_type, root_helper, driver=None,
+                  execute=None,
+                  device_scan_attempts=initiator.DEVICE_SCAN_ATTEMPTS_DEFAULT,
+@@ -35,8 +37,7 @@ class RemoteFsConnector(base.BaseLinuxConnector):
+         mount_type_lower = mount_type.lower()
+         if conn:
+             mount_point_base = conn.get('mount_point_base')
+-            if mount_type_lower in ('nfs', 'glusterfs', 'scality',
+-                                    'quobyte', 'vzstorage'):
++            if mount_type_lower in ('nfs',):
+                 kwargs[mount_type_lower + '_mount_point_base'] = (
+                     kwargs.get(mount_type_lower + '_mount_point_base') or
+                     mount_point_base)
+-- 
+2.8.1
+
