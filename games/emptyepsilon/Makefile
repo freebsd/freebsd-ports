@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	daid:EmptyEpsilon:${DISTVERSIONFULL}
 GH_TUPLE+=	daid:SeriousProton:${DISTVERSIONFULL}:sproton
 
-USES=		cmake compiler:c++11-lib gmake
+USES=		cmake compiler:c++11-lib
 USE_GL=		gl glu
 CMAKE_ARGS=	-DSERIOUS_PROTON_DIR="${WRKSRC_sproton}/"
 
