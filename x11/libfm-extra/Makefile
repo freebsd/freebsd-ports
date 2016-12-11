@@ -4,7 +4,7 @@
 PORTNAME=	libfm
 PKGNAMESUFFIX=	-extra
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	LibFM-Extra library
 
 LICENSE=	LGPL21
@@ -20,6 +20,6 @@ USE_LDCONFIG=	yes
 
 EXTRA_ONLY=	yes
 
-OPTIONS_EXCLUDE=DOCS NLS
+OPTIONS_EXCLUDE=	NLS
 
 .include "${MASTERDIR}/Makefile"

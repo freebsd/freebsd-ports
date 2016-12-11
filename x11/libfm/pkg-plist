@@ -68,11 +68,11 @@ include/libfm/fm-thumbnailer.h
 include/libfm/fm-utils.h
 include/libfm/fm.h
 lib/libfm-gtk.so
-lib/libfm-gtk.so.%%ABI_VERSION%%
-lib/libfm-gtk.so.%%ABI_VERSION%%.%%MICRO_VERSION%%
+lib/libfm-gtk.so.4
+lib/libfm-gtk.so.4.0.5
 lib/libfm.so
-lib/libfm.so.%%ABI_VERSION%%
-lib/libfm.so.%%ABI_VERSION%%.%%MICRO_VERSION%%
+lib/libfm.so.4
+lib/libfm.so.4.0.5
 lib/libfm/modules/gtk-fileprop-x-desktop.so
 lib/libfm/modules/gtk-fileprop-x-shortcut.so
 lib/libfm/modules/gtk-menu-actions.so
