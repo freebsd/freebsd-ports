@@ -4,4 +4,4 @@ class which includes IO::Like needs to provide only a few methods in order to
 enable the higher level methods.  Buffering is automatically provided by default
 for the methods which normally provide it in IO.
 
-WWW: http://rubygems.org/gems/io-like/
+WWW: https://rubygems.org/gems/io-like/

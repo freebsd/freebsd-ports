@@ -1,4 +1,4 @@
 Errand provides Ruby bindings for RRD functions (via librrd), and a concise DSL
 for interacting with RRDs.
 
-WWW: http://rubygems.org/gems/errand
+WWW: https://rubygems.org/gems/errand

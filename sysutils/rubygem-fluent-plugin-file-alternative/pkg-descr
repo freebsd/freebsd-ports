@@ -2,4 +2,4 @@ File output plugin alternative implementation, is 100% compatible with
 fluentd built-in 'out_file', and added many options to format output
 as you want.
 
-WWW: http://rubygems.org/gems/fluent-plugin-file-alternative
+WWW: https://rubygems.org/gems/fluent-plugin-file-alternative

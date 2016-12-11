@@ -1,4 +1,4 @@
 This is a deep_merge Ruby Gem that is used to recursively merge hashes,
 working with Ruby 1.9 and ActiveSupport.
 
-WWW: http://rubygems.org/gems/deep_merge
+WWW: https://rubygems.org/gems/deep_merge

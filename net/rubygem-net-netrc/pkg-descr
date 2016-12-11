@@ -1,4 +1,4 @@
 Net::Netrc is a pure-Ruby module providing ftp(1)-style .netrc
 parsing. It is inspired by Graham Barr's Perl Net::Netrc module.
 
-WWW: http://rubygems.org/gems/net-netrc/
+WWW: https://rubygems.org/gems/net-netrc/
