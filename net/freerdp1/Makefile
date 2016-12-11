@@ -64,8 +64,7 @@ X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
 X11_CMAKE_ON=		-DWITH_X11=ON
 X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext \
-			xcursor,xrandr,xi,xfixes,xrender
+X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xrandr,xi,xfixes,xrender
 
 .include <bsd.port.options.mk>
 
