@@ -4029,7 +4029,6 @@
     SUBDIR += py-Products.statusmessages
     SUBDIR += py-Products.validation
     SUBDIR += py-PyLD
-    SUBDIR += py-pyvalid
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
@@ -4501,6 +4500,7 @@
     SUBDIR += py-pytvmaze
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
+    SUBDIR += py-pyvalid
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxml2obj
@@ -4716,11 +4716,11 @@
     SUBDIR += py-z3c.formwidget.query
     SUBDIR += py-z3c.zcmlhook
     SUBDIR += py-zExceptions
-    SUBDIR += py-zkpython
     SUBDIR += py-zLOG
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zkpython
     SUBDIR += py-zope.annotation
     SUBDIR += py-zope.app.applicationcontrol
     SUBDIR += py-zope.app.appsetup
@@ -5118,8 +5118,8 @@
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-forwardable-extended
     SUBDIR += rubygem-gdata
-    SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gem-compare
+    SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
     SUBDIR += rubygem-gemnasium-gitlab-service
     SUBDIR += rubygem-gemnasium-parser
