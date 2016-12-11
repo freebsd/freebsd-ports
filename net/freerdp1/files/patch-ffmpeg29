@@ -2,9 +2,9 @@ Description: Replace deprecated FFmpeg API
 Author: Andreas Cadhalpun <Andreas.Cadhalpun@googlemail.com>
 Last-Update: <2015-11-02>
 
---- channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c.orig	2016-06-11 21:12:27.134896000 +0200
-+++ channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c	2016-06-11 21:14:05.282247000 +0200
-@@ -103,7 +103,7 @@
+--- channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c.orig	2014-09-11 22:46:32 UTC
++++ channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c
+@@ -103,7 +103,7 @@ static BOOL tsmf_ffmpeg_init_video_strea
  	mdecoder->codec_context->bit_rate = media_type->BitRate;
  	mdecoder->codec_context->time_base.den = media_type->SamplesPerSecond.Numerator;
  	mdecoder->codec_context->time_base.num = media_type->SamplesPerSecond.Denominator;
@@ -13,7 +13,7 @@ Last-Update: <2015-11-02>
  	return TRUE;
  }
  
-@@ -322,14 +322,14 @@
+@@ -322,14 +322,14 @@ static BOOL tsmf_ffmpeg_decode_video(ITS
  									 mdecoder->codec_context->width, mdecoder->codec_context->height);
  			mdecoder->decoded_data = malloc(mdecoder->decoded_size);
  			ZeroMemory(mdecoder->decoded_data, mdecoder->decoded_size);
@@ -30,7 +30,7 @@ Last-Update: <2015-11-02>
  		}
  	return ret;
  }
-@@ -385,7 +385,7 @@
+@@ -385,7 +385,7 @@ static BOOL tsmf_ffmpeg_decode_audio(ITS
  									(int16_t *) dst, &frame_size, src, src_size);
  #else
  		{
@@ -39,7 +39,7 @@ Last-Update: <2015-11-02>
  			int got_frame = 0;
  			AVPacket pkt;
  			av_init_packet(&pkt);
-@@ -398,7 +398,7 @@
+@@ -398,7 +398,7 @@ static BOOL tsmf_ffmpeg_decode_audio(ITS
  														decoded_frame->nb_samples, mdecoder->codec_context->sample_fmt, 1);
  				memcpy(dst, decoded_frame->data[0], frame_size);
  			}
@@ -48,7 +48,7 @@ Last-Update: <2015-11-02>
  		}
  #endif
  		if(len <= 0 || frame_size <= 0)
-@@ -464,7 +464,7 @@
+@@ -464,7 +464,7 @@ static UINT32 tsmf_ffmpeg_get_decoded_fo
  	TSMFFFmpegDecoder *mdecoder = (TSMFFFmpegDecoder *) decoder;
  	switch(mdecoder->codec_context->pix_fmt)
  	{
@@ -57,7 +57,7 @@ Last-Update: <2015-11-02>
  			return RDP_PIXFMT_I420;
  		default:
  			CLOG_ERR("unsupported pixel format %u",
-@@ -492,7 +492,7 @@
+@@ -492,7 +492,7 @@ static void tsmf_ffmpeg_free(ITSMFDecode
  {
  	TSMFFFmpegDecoder *mdecoder = (TSMFFFmpegDecoder *) decoder;
  	if(mdecoder->frame)
@@ -66,7 +66,7 @@ Last-Update: <2015-11-02>
  	if(mdecoder->decoded_data)
  		free(mdecoder->decoded_data);
  	if(mdecoder->codec_context)
-@@ -501,7 +501,7 @@
+@@ -501,7 +501,7 @@ static void tsmf_ffmpeg_free(ITSMFDecode
  			avcodec_close(mdecoder->codec_context);
  		if(mdecoder->codec_context->extradata)
  			free(mdecoder->codec_context->extradata);

@@ -3,15 +3,9 @@ From: ivan-83 <rozhuk.im@gmail.com>
 Date: Tue, 10 Mar 2015 04:40:47 +0300
 Subject: [PATCH] * FreeBSD timezone detection patch
 
----
- libfreerdp/locale/timezone.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
-
-diff libfreerdp/locale/timezone.c libfreerdp/locale/timezone.c
-index 92b74e8..0375f9c 100644
---- libfreerdp/locale/timezone.c
+--- libfreerdp/locale/timezone.c.orig	2014-09-11 22:46:32 UTC
 +++ libfreerdp/locale/timezone.c
-@@ -1521,8 +1523,11 @@ char* freerdp_get_unix_timezone_identifier()
+@@ -1507,8 +1507,11 @@ char* freerdp_get_unix_timezone_identifi
  		return tzid;
  	}
  
@@ -24,7 +18,7 @@ index 92b74e8..0375f9c 100644
  	if (fp != NULL)
  	{
  		fseek(fp, 0, SEEK_END);
-@@ -1678,8 +1683,10 @@ void freerdp_time_zone_detect(TIME_ZONE_INFO* clientTimeZone)
+@@ -1664,8 +1667,10 @@ void freerdp_time_zone_detect(TIME_ZONE_
  
  #ifdef HAVE_TM_GMTOFF
  	#if defined(__FreeBSD__)
@@ -37,6 +31,3 @@ index 92b74e8..0375f9c 100644
  	#else
  		clientTimeZone->bias = timezone / 60;
  	#endif
--- 
-2.4.1
-

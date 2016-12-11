@@ -1,4 +1,3 @@
-%%DIRECTFB%%bin/dfreerdp1
 %%X11%%bin/xfreerdp1
 include/freerdp/addin.h
 include/freerdp/altsec.h
@@ -222,15 +221,15 @@ lib/freerdp/smartcard-client.a
 %%GSTREAMER%%lib/freerdp/tsmf-client-gstreamer-decoder.a
 %%PULSEAUDIO%%lib/freerdp/tsmf-client-pulse-audio.a
 lib/freerdp/tsmf-client.a
-lib/libfreerdp1.so          
-lib/libfreerdp1.so.1.2      
-lib/libfreerdp1.so.1.2.0    
+lib/libfreerdp1.so
+lib/libfreerdp1.so.1.2
+lib/libfreerdp1.so.1.2.0
 lib/libfreerdp1-client.so
 lib/libfreerdp1-client.so.1.2
 lib/libfreerdp1-client.so.1.2.0
-lib/libwinpr1.so          
-lib/libwinpr1.so.1.1      
-lib/libwinpr1.so.1.1.0    
+lib/libwinpr1.so
+lib/libwinpr1.so.1.1
+lib/libwinpr1.so.1.1.0
 lib/libwinpr-makecert-tool.a
 %%X11%%lib/libxfreerdp1-client.so
 %%X11%%lib/libxfreerdp1-client.so.1.2
