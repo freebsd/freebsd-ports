@@ -3,6 +3,7 @@
 
 PORTNAME=	os-brick
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +30,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}os-win>=0.2.3:devel/py-os-win \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel
 
 NO_ARCH=	yes
+
+EXTRA_PATCHES=  ${FILESDIR}/01-os-type.patch:-p1 \
+		${FILESDIR}/02-nfs.patch:-p1
 
 USES=		python
 USE_PYTHON=	autoplist distutils
