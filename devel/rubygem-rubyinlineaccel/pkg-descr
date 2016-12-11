@@ -2,4 +2,4 @@ RubyInlineAcceleration is an extension to RubyInline
 which provides an easy way to use C libraries
 in Ruby by directly wrapping methods, structures and fields.
 
-WWW: http://rubygems.org/gems/rubyinlineaccel/
+WWW: https://rubygems.org/gems/rubyinlineaccel/

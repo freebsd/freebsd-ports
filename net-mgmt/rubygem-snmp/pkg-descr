@@ -3,4 +3,4 @@ Protocol). It is implemented in pure Ruby, so there are no dependencies
 on external libraries like net-snmp. You can run this library anywhere
 that Ruby can run.
 
-WWW: http://rubygems.org/gems/snmp/
+WWW: https://rubygems.org/gems/snmp/
