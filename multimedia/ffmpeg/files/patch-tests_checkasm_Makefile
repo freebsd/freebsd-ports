@@ -1,0 +1,11 @@
+--- tests/checkasm/Makefile.orig	2016-10-01 01:12:42 UTC
++++ tests/checkasm/Makefile
+@@ -24,7 +24,7 @@ AVFILTEROBJS-$(CONFIG_COLORSPACE_FILTER)
+ CHECKASMOBJS-$(CONFIG_AVFILTER) += $(AVFILTEROBJS-yes)
+ 
+ 
+--include $(SRC_PATH)/tests/checkasm/$(ARCH)/Makefile
++-include $(SRC_PATH)/tests/checkasm/$(FFMPEG_ARCH)/Makefile
+ 
+ CHECKASMOBJS += $(CHECKASMOBJS-yes) checkasm.o
+ CHECKASMOBJS := $(sort $(CHECKASMOBJS:%=tests/checkasm/%))

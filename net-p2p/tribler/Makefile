@@ -3,6 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.5.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/v${PORTVERSION}/
 DISTNAME=	Tribler-v${PORTVERSION}

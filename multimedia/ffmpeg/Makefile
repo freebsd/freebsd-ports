@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	2.8.8
-PORTREVISION=	9
+PORTVERSION=	3.2.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -23,17 +22,17 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
 
-PORTSCOUT=	limit:^2\.
+PORTSCOUT=	limit:^3\.
 
-OPTIONS_DEFINE= AACPLUS ALSA AMR_NB AMR_WB ASS BS2B CACA CDIO CELT DC1394 \
-		DEBUG DOCS FAAC FDK_AAC FFSERVER FLITE FONTCONFIG \
+OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB ASS BS2B CACA CDIO CELT CHROMAPRINT DC1394 \
+		DEBUG DOCS EBUR128 FDK_AAC FFSERVER FLITE FONTCONFIG \
 		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KVAZAAR LADSPA \
-		LAME LIBBLURAY MODPLUG OPENAL OPENCL OPENCV OPENGL \
-		OPENH264 OPENJPEG OPTIMIZED_CFLAGS OPUS PULSEAUDIO QUVI \
-		RTCPU RTMP SCHROEDINGER SDL SMB SNAPPY SNDIO SPEEX SSH \
-		THEORA TWOLAME V4L VAAPI VDPAU VIDSTAB VORBIS VO_AACENC \
+		LAME LIBBLURAY MODPLUG NETCDF OPENAL OPENCL OPENCV OPENGL \
+		OPENH264 OPENJPEG OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
+		RUBBERBAND RTCPU SCHROEDINGER SDL SMB SNAPPY SNDIO SPEEX SSH \
+		TESSERACT THEORA TWOLAME V4L VAAPI VDPAU VIDSTAB VORBIS \
 		VO_AMRWBENC VPX WAVPACK WEBP X11GRAB X264 X265 XCB XVID \
-		XVIDEO ZMQ ZVBI
+		XVIDEO ZIMG ZMQ ZVBI
 
 OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS ICONV \
 			OPENCV RTCPU SCHROEDINGER THEORA V4L VAAPI VDPAU \
@@ -54,7 +53,9 @@ OPTIONS_DEFAULT_i386=	MMX SSE
 ASS_DESC=	Subtitles rendering via libass
 BS2B_DESC=	Bauer Stereophonic-to-Binaural filter
 CDIO_DESC=	Audio CD grabbing with libcdio
+CHROMAPRINT_DESC=	Audio fingerprinting with chromaprint
 DC1394_DESC=	IIDC-1394 grabbing using libdc1394
+EBUR128_DESC=	EBU R128 measurement for loudnorm filter
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 FLITE_DESC=	Voice synthesis support via libflite
@@ -64,23 +65,22 @@ ILBC_DESC=	Internet Low Bit Rate codec
 KVAZAAR_DESC=	H.265 video codec support via Kvazaar
 LICENSE_DESC=	Licensing options
 NEON_DESC=	Enable Media Processing Engine instructions
+NETCDF_DESC=	SOFAlizer binaural filter
 NONFREE_DESC=	Allow use of nonfree code
 OPENH264_DESC=	H.264 video codec support via OpenH264
-QUVI_DESC=	Flash media stream URLs
+RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
 RTCPU_DESC=	Detect CPU capabilities at runtime
+LIBRTMP_DESC=	RTMP protocol support via librtmp
+TESSERACT_DESC=	Optical Character Recognition via Tesseract
 VFP_DESC=	Enable Vector Floating Point instructions
 VIDSTAB_DESC=	Video stabilization filter
 X11GRAB_DESC=	X11 grabbing (legacy)
 XCB_DESC=	X11 grabbing using XCB
+ZIMG_DESC=	"z" library video scaling filter
 ZMQ_DESC=	Message passing via libzmq${ZMQ_VERSION}
 ZVBI_DESC=	Teletext support via libzvbi
 
 OPTIONS_SUB=	yes
-
-# aacplus
-AACPLUS_LIB_DEPENDS=	libaacplus.so:audio/libaacplus
-AACPLUS_CONFIGURE_ENABLE=	libaacplus
-AACPLUS_IMPLIES=	NONFREE
 
 # alsa
 ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
@@ -117,6 +117,11 @@ CDIO_CONFIGURE_ENABLE=	libcdio
 CELT_LIB_DEPENDS=	libcelt0.so:audio/celt
 CELT_CONFIGURE_ENABLE=	libcelt
 
+# chromaprint
+CHROMAPRINT_BROKEN=		Dependency loop
+CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
+CHROMAPRINT_CONFIGURE_ENABLE=	chromaprint
+
 # dc1394
 DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
 DC1394_CONFIGURE_ENABLE=	libdc1394
@@ -129,10 +134,9 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_CONFIGURE_ENABLE=	htmlpages
 
-# faac
-FAAC_LIB_DEPENDS=	libfaac.so:audio/faac
-FAAC_CONFIGURE_ENABLE=	libfaac
-FAAC_IMPLIES=		NONFREE
+# ebur128
+EBUR128_LIB_DEPENDS=	libebur128.so:audio/libebur128
+EBUR128_CONFIGURE_ENABLE=	libebur128
 
 # fdk_aac
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
@@ -163,6 +167,10 @@ FREI0R_CONFIGURE_ENABLE=	frei0r
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	libfribidi
 
+# gcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+GCRYPT_CONFIGURE_ENABLE=	gcrypt
+
 # gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ENABLE=	gnutls
@@ -170,6 +178,11 @@ GNUTLS_CONFIGURE_ENABLE=	gnutls
 # gme
 GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CONFIGURE_ENABLE=	libgme
+
+# gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+GMP_CONFIGURE_ENABLE=	gmp
+GMP_IMPLIES=		GPL3
 
 # gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
@@ -218,6 +231,10 @@ MMX_CONFIGURE_ENABLE=	mmx
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	libmodplug
 
+# netcdf
+NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
+NETCDF_CONFIGURE_ENABLE=	netcdf
+
 # OpenAL
 OPENAL_LIB_DEPENDS=	libopenal.so:audio/openal-soft
 OPENAL_CONFIGURE_ENABLE=	openal
@@ -241,7 +258,7 @@ OPENH264_LIB_DEPENDS=	libopenh264.so:multimedia/openh264
 OPENH264_CONFIGURE_ENABLE=	libopenh264
 
 # openjpeg
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 # openssl
@@ -262,25 +279,25 @@ PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
 PULSEAUDIO_CONFIGURE_OFF=	--disable-indev=pulse \
 				--disable-outdev=pulse
 
-# quvi
-QUVI_LIB_DEPENDS=	libquvi.so:multimedia/libquvi
-QUVI_CONFIGURE_ENABLE=	libquvi
+# rubberband
+RUBBERBAND_LIB_DEPENDS=	librubberband.so:audio/rubberband
+RUBBERBAND_CONFIGURE_ENABLE=	librubberband
 
 # rtcpu
 RTCPU_CONFIGURE_ENABLE=	runtime-cpudetect
 
 # rtmp
-RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
-RTMP_CONFIGURE_ENABLE=	librtmp
+LIBRTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
+LIBRTMP_CONFIGURE_ENABLE=	librtmp
 
 # schroedinger
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 
 # sdl
-SDL_USE=		SDL=sdl
+SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ENABLE=	ffplay
-SDL_CONFIGURE_OFF=	--disable-outdev=sdl
+SDL_CONFIGURE_OFF=	--disable-outdev=sdl --disable-sdl2
 
 # smbclient
 SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
@@ -308,6 +325,10 @@ SSE_IMPLIES=		MMX
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_ENABLE=	libssh
 
+# tesseract
+TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
+TESSERACT_CONFIGURE_ENABLE=	libtesseract
+
 # theora
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	libtheora
@@ -328,11 +349,6 @@ VDPAU_CONFIGURE_ENABLE=	vdpau
 VFP_CONFIGURE_ENABLE=	vfp
 NEON_CONFIGURE_ENABLE=	neon
 NEON_CONFIGURE_ON=	--cpu=armv7-a
-
-# vo-aacenc
-VO_AACENC_LIB_DEPENDS=	libvo-aacenc.so:audio/vo-aacenc
-VO_AACENC_CONFIGURE_ENABLE=	libvo-aacenc
-VO_AACENC_IMPLIES=	GPL3
 
 # vo-amrwbenc
 VO_AMRWBENC_LIB_DEPENDS=	libvo-amrwbenc.so:audio/vo-amrwbenc
@@ -384,6 +400,10 @@ XVID_CONFIGURE_ENABLE=	libxvid
 XVIDEO_USE=		XORG=xv
 XVIDEO_CONFIGURE_OFF=	--disable-outdev=xv
 
+# zimg
+ZIMG_LIB_DEPENDS=	libzimg.so:graphics/sekrit-twc-zimg
+ZIMG_CONFIGURE_ENABLE=	libzimg
+
 # zmq
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq${ZMQ_VERSION}
 ZMQ_CONFIGURE_ENABLE=	libzmq
@@ -422,8 +442,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-avfilter \
 		--enable-avresample \
 		--enable-pthreads \
-		--disable-libstagefright-h264 \
-		--disable-libutvideo \
 		--disable-libsoxr \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
@@ -455,17 +473,18 @@ post-patch:
 		s|gsm/gsm.h|gsm.h|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-ldl||' \
-		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
-		-e 's|freetype/freetype.h|freetype.h|g' \
+		-e 's|require_pkg_config opencv|require_pkg_config opencv-core|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch-SDL-on:
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -E \
-		-e 's|#include <SDL|#include <SDL/SDL|'
+	@${REINPLACE_CMD} -E \
+		-e 's|#include <SDL|#include <SDL2/SDL|' \
+		${WRKSRC}/ffplay.c \
+		${WRKSRC}/libavdevice/opengl_enc.c \
+		${WRKSRC}/libavdevice/sdl2.c
 
 post-configure-THEORA-off:
 	@${REINPLACE_CMD} -E \
