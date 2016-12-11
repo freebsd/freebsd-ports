@@ -64,6 +64,7 @@ GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_BROKEN=		does not build with ffmpeg 3.x
 SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 SDL_USE=		SDL=sdl
