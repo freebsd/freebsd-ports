@@ -10,7 +10,7 @@ include/speex/speex_types.h
 lib/libspeex.a
 lib/libspeex.so
 lib/libspeex.so.1
-lib/libspeex.so.1.5.0
+lib/libspeex.so.1.5.1
 libdata/pkgconfig/speex.pc
 man/man1/speexdec.1.gz
 man/man1/speexenc.1.gz

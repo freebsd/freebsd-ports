@@ -3,7 +3,7 @@
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 		LOCAL/ehaupt

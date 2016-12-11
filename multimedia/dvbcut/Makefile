@@ -3,6 +3,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org

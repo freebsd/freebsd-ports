@@ -3,6 +3,7 @@
 
 PORTNAME=	hiptext
 PORTVERSION=	0.0.s20160621
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@rawbw.com

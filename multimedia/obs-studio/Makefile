@@ -2,6 +2,7 @@
 
 PORTNAME=	obs-studio
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org

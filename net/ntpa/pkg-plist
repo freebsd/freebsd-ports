@@ -4,7 +4,6 @@ sbin/ntpag
 sbin/ntpav
 libexec/ntpa/MySql.Data.dll
 libexec/ntpa/Npgsql.dll
-libexec/ntpa/NPlot.dll
 libexec/ntpa/Ntp.Analyzer.dll
 libexec/ntpa/Ntp.Analyzer.Cli.exe
 libexec/ntpa/Ntp.Analyzer.Data.dll

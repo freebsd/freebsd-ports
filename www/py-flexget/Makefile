@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.2
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -13,6 +13,7 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Program to automate downloading from different sources
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \

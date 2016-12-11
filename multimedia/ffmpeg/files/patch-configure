@@ -1,6 +1,6 @@
---- configure.orig	2015-06-19 20:47:55 UTC
+--- configure.orig	2016-10-27 16:17:39 UTC
 +++ configure
-@@ -2814,12 +2814,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3189,12 +3189,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -14,20 +14,17 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -5682,7 +5677,11 @@ elif enabled gcc; then
- elif enabled llvm_gcc; then
-     check_cflags -mllvm -stack-alignment=16
+@@ -6213,6 +6208,9 @@ elif enabled llvm_gcc; then
  elif enabled clang; then
--    check_cflags -mllvm -stack-alignment=16
+     check_cflags -mllvm -stack-alignment=16
+     check_cflags -mstack-alignment=16
 +    if enabled x86_32; then
-+        check_cflags -mllvm -stack-alignment=16
-+        check_cflags -mstack-alignment=16
 +        check_cflags -mstackrealign
 +    fi
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -5823,7 +5818,7 @@ ifndef MAIN_MAKEFILE
+@@ -6562,7 +6560,7 @@ ifndef MAIN_MAKEFILE
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
  CC_IDENT=$cc_ident
@@ -36,7 +33,7 @@
  INTRINSICS=$intrinsics
  CC=$cc
  CXX=$cxx
-@@ -6035,7 +6030,7 @@ exec_prefix=\${prefix}
+@@ -6799,7 +6797,7 @@ exec_prefix=\${prefix}
  libdir=$libdir
  includedir=$incdir
  
@@ -45,7 +42,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -6049,10 +6044,10 @@ EOF
+@@ -6813,10 +6811,10 @@ EOF
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."

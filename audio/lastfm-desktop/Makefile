@@ -3,6 +3,7 @@
 
 PORTNAME=	lastfm-desktop
 PORTVERSION=	2.1.36
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	vg@FreeBSD.org

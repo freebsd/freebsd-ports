@@ -4,6 +4,7 @@
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.8.1
 DISTVERSIONSUFFIX=	-gtk3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 PKGNAMESUFFIX=	${DISTVERSIONSUFFIX}

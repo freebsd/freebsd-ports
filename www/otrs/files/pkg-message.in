@@ -11,10 +11,8 @@ receiving emails.
 Do not forget to run otrs.SetPermissions.pl script.
 For example:
 # %%PREFIX%%/otrs/bin/otrs.SetPermissions.pl \
---web-user=%%WWWOWN%% --web-group=%%WWWOWN%% \
---otrs-user=%%OTRS_USER%% --otrs-group=%%OTRS_GROUP%% \
---admin-user=root --admin-group=wheel \
-%%PREFIX%%/otrs
+--web-group=%%WWWOWN%% --otrs-user=%%OTRS_USER%% \
+--admin-group=wheel %%PREFIX%%/otrs
 
 
 If you are upgrading from an earlier version, follow the instructions for

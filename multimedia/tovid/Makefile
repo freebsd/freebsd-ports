@@ -3,6 +3,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.35.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	https://github.com//tovid-suite/tovid/archive/
 
