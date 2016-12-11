@@ -5,4 +5,4 @@ gem has one goal: make INI file, structure, and stream manipulation
 as fast, safe, and simple as possible. We take a modal approach
 with a pluggable parser class.
 
-WWW: http://rubygems.org/gems/ini/
+WWW: https://rubygems.org/gems/ini/

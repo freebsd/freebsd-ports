@@ -3,4 +3,4 @@ The purpose of DO.rb is to rewrite existing Ruby database drivers to conform to
 a single interface.
 At present, PostgreSQL, MySQL, and SQLite adapters are available.
 
-WWW: http://rubygems.org/gems/do_sqlite3/
+WWW: https://rubygems.org/gems/do_sqlite3/

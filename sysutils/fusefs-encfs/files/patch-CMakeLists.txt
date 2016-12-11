@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-12-10 16:58:46 UTC
++++ CMakeLists.txt
+@@ -229,7 +229,7 @@ if (POD2MAN)
+             ${CMAKE_SOURCE_DIR}/encfs/encfsctl.pod encfsctl.1)
+ 
+   install (FILES ${CMAKE_BINARY_DIR}/encfs.1 ${CMAKE_BINARY_DIR}/encfsctl.1
+-    DESTINATION share/man/man1)
++    DESTINATION man/man1)
+ endif (POD2MAN)
+ 
+ # Tests

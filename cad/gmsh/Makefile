@@ -28,7 +28,7 @@ BROKEN_FreeBSD_12_i386=Does not build on FreeBSD 12 i386 due to a clang bug: htt
 
 SLAVEDIRS=	cad/gmsh-occ
 
-USES=		blaslapack cmake fortran gmake jpeg tar:tgz
+USES=		blaslapack cmake fortran jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft
 

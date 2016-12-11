@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	encfs
-PORTVERSION=	1.8.1
-DISTVERSIONPREFIX=v
-PORTREVISION=	2
+PORTVERSION=	1.9.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -12,32 +11,27 @@ MAINTAINER=	dg@syrec.org
 COMMENT=	Encrypted pass-through FUSE filesystem
 
 LICENSE=	GPLv3
-
-LIB_DEPENDS=	librlog.so:devel/rlog \
-		libboost_serialization.so:devel/boost-libs
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	does not build
 
-WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
-
-USES=		compiler:c++11-lib fuse autoreconf libtool pkgconfig
+USES=		cmake:outsource compiler:c++11-lib fuse ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vgough
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	BUNDLED_TINYXML MANPAGES NLS
+OPTIONS_DEFAULT=	BUNDLED_TINYXML MANPAGES
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
 
-pre-configure:
-	@${REINPLACE_CMD} '/OPENSSL_LIBS=/s/-lssl/& -lcrypto/' \
-		${WRKSRC}/configure.ac
+BUNDLED_TINYXML_DESC=	Use bundled TinyXML2 instead of textproc/tinyxml2
+BUNDLED_TINYXML_CMAKE_BOOL=	USE_INTERNAL_TINYXML
+BUNDLED_TINYXML_LIB_DEPENDS_OFF=	libtinyxml2.so:textproc/tinyxml2
+
+MANPAGES_DESC=	Install manpages (requires Perl 5)
+MANPAGES_USES=	perl5
+MANPAGES_USE=	perl5=build
+
+NLS_USES=	gettext
+NLS_CMAKE_BOOL=	ENABLE_NLS
 
 .include <bsd.port.mk>

@@ -2,8 +2,8 @@
 
 PORTNAME=	msgpack
 PORTVERSION=	1.4.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	cpp-
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -11,29 +11,25 @@ COMMENT=	MessagePack implementation for C and C++
 
 LICENSE=	APACHE20
 
+TEST_DEPENDS=	googletest>0:devel/googletest
+
 USE_GITHUB=	yes
 GH_PROJECT=	msgpack-c
 
-USES=		libtool:build autoreconf:build pathfix
-
+USES=		autoreconf:build libtool:build localbase pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 # required for __sync _* atomic operations on sparc
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == "i386"
-# Mayby not working on i386/i486/i586...
-CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
-.endif
-
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmsgpackc.so.2.0.0
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

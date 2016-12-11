@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libsigrok.so:devel/libsigrok \
 		libsigrokdecode.so:devel/libsigrokdecode
 
-USES=		cmake gmake pkgconfig
+USES=		cmake pkgconfig
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DDISABLE_WERROR:BOOL=TRUE

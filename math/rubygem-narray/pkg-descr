@@ -4,4 +4,4 @@ extension library incorporates fast calculation and easy manipulation of large
 numerical arrays into the Ruby language. NArray has features similar to NumPy,
 but NArray has vector and matrix subclasses.
 
-WWW: http://rubygems.org/gems/narray/
+WWW: https://rubygems.org/gems/narray/
