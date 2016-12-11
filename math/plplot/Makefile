@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USE_GNOME=	pango
 USE_PERL5=	build
-USES=		cmake ghostscript gmake localbase perl5 pathfix pkgconfig
+USES=		cmake ghostscript localbase perl5 pathfix pkgconfig
 CMAKE_ARGS=	-DENABLE_java:BOOL=OFF \
 		-DENABLE_octave:BOOL=OFF \
 		-DENABLE_pdl:BOOL=OFF \

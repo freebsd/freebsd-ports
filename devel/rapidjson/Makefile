@@ -21,7 +21,7 @@ DOXYGEN_BUILD_DEPENDS+=	doxygen:devel/doxygen
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
 
-USES=		cmake compiler:c++11-lang gmake pathfix
+USES=		cmake compiler:c++11-lang pathfix
 
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 OPTIONS_DEFAULT=${OPTIONS_DEFINE}

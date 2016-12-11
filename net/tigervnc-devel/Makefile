@@ -27,7 +27,7 @@ CONFLICTS=	tigervnc-[0-9]* \
 		tridiavnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		autoreconf:build cmake cpe gmake iconv jpeg libtool pkgconfig \
+USES=		autoreconf:build cmake cpe iconv jpeg libtool pkgconfig \
 		python ssl
 USE_GL=		gl
 USE_LDCONFIG=	yes
