@@ -25,7 +25,9 @@ PLIST_FILES=	${JAVA_HOME}/jre/lib/ext/jssc-${PORTVERSION}.jar
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
-ARCH=		arm
+JSSC_ARCH=		arm
+.else
+JSSC_ARCH=		${ARCH}
 .endif
 
 post-extract:
@@ -35,8 +37,8 @@ post-extract:
 pre-build:
 	${RM} -r ${WRKSRC_LIBS}/*
 	${MKDIR} ${WRKSRC_LIBS}/freebsd
-	(cd ${WRKSRC}/src/cpp/_nix_based && ${CXX} ${CXXFLAGS} ${CPPFLAGS} -shared -fPIC -o ${WRKSRC_LIBS}/freebsd/libjSSC-${MAJOR_MINOR}_${ARCH}.so jssc.cpp)
-	${STRIP_CMD} ${WRKSRC_LIBS}/freebsd/libjSSC-${MAJOR_MINOR}_${ARCH}.so
+	(cd ${WRKSRC}/src/cpp/_nix_based && ${CXX} ${CXXFLAGS} ${CPPFLAGS} -shared -fPIC -o ${WRKSRC_LIBS}/freebsd/libjSSC-${MAJOR_MINOR}_${JSSC_ARCH}.so jssc.cpp)
+	${STRIP_CMD} ${WRKSRC_LIBS}/freebsd/libjSSC-${MAJOR_MINOR}_${JSSC_ARCH}.so
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/ext

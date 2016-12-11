@@ -1,0 +1,11 @@
+--- winpr/tools/hash/CMakeLists.txt.orig	2016-12-04 14:51:44 UTC
++++ winpr/tools/hash/CMakeLists.txt
+@@ -29,7 +29,7 @@ add_executable(${MODULE_NAME} ${${MODULE
+ set(${MODULE_PREFIX}_LIBS
+ 	${ZLIB_LIBRARIES}
+ 	${OPENSSL_LIBRARIES}
+-	winpr)
++	winpr1)
+ 
+ target_link_libraries(${MODULE_NAME} ${${MODULE_PREFIX}_LIBS})
+ 

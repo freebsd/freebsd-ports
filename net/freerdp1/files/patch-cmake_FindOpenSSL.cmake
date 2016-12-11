@@ -1,6 +1,6 @@
---- cmake/FindOpenSSL.cmake.orig	2013-07-10 04:00:21.000000000 -0400
-+++ cmake/FindOpenSSL.cmake	2015-03-25 19:26:35.154024000 -0400
-@@ -270,7 +270,7 @@
+--- cmake/FindOpenSSL.cmake.orig	2014-09-11 22:46:32 UTC
++++ cmake/FindOpenSSL.cmake
+@@ -266,7 +266,7 @@ if (OPENSSL_INCLUDE_DIR)
      set(OPENSSL_VERSION "${_OPENSSL_VERSION}")
    elseif(OPENSSL_INCLUDE_DIR AND EXISTS "${OPENSSL_INCLUDE_DIR}/openssl/opensslv.h")
      file(STRINGS "${OPENSSL_INCLUDE_DIR}/openssl/opensslv.h" openssl_version_str

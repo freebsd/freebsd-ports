@@ -40,7 +40,7 @@ OPTIONS_DEFAULT=	RDP SSH VNC VORBIS PULSEAUDIO WEBP
 OPTIONS_SUB=		yes
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_DESC?=	VNC audio support (Experimental)
-RDP_LIB_DEPENDS=	libfreerdp.so:net/freerdp
+RDP_LIB_DEPENDS=	libfreerdp1.so:net/freerdp1
 RDP_DESC?=		RDP Protocal Support
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 SSH_USE=		GNOME=pango

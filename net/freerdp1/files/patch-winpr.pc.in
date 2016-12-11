@@ -1,8 +1,7 @@
 Index: winpr.pc.in
-diff -u winpr.pc.in.orig winpr.pc.in
---- winpr.pc.in.orig	2014-09-12 07:46:32.000000000 +0900
-+++ winpr.pc.in	2015-05-26 02:05:59.353925013 +0900
-@@ -9,7 +9,6 @@
+--- winpr.pc.in.orig	2014-09-11 22:46:32 UTC
++++ winpr.pc.in
+@@ -9,7 +9,6 @@ Description: WinPR: Windows Portable Run
  URL: http://www.freerdp.com/
  Version: @WINPR_VERSION_FULL@
  Requires: 

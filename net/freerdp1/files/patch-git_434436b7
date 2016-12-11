@@ -10,11 +10,9 @@ Subject: [PATCH] * BSD/FreeBSD build fix
  winpr/libwinpr/utils/CMakeLists.txt |  4 ++++
  4 files changed, 20 insertions(+), 1 deletion(-)
 
-diff CMakeLists.txt CMakeLists.txt
-index 0a9144a..386ae67 100644
---- CMakeLists.txt
+--- CMakeLists.txt.orig	2016-12-11 05:41:21 UTC
 +++ CMakeLists.txt
-@@ -358,6 +358,14 @@ if(APPLE)
+@@ -319,6 +319,14 @@ if(APPLE)
  	endif()
  endif(APPLE)
  
@@ -29,7 +27,7 @@ index 0a9144a..386ae67 100644
  # Android
  if(ANDROID)
    set(WITH_LIBRARY_VERSIONING "OFF")
-@@ -618,6 +626,12 @@ set(FREERDP_EXTENSION_PATH "${CMAKE_INSTALL_FULL_LIBDIR}/freerdp/extensions")
+@@ -558,6 +566,12 @@ set(FREERDP_EXTENSION_PATH "${CMAKE_INST
  include_directories(${CMAKE_CURRENT_BINARY_DIR})
  include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -42,9 +40,7 @@ index 0a9144a..386ae67 100644
  
  # Configure files
  add_definitions("-DHAVE_CONFIG_H")
-diff winpr/libwinpr/sysinfo/sysinfo.c winpr/libwinpr/sysinfo/sysinfo.c
-index 1529d54..457ab9d 100644
---- winpr/libwinpr/sysinfo/sysinfo.c
+--- winpr/libwinpr/sysinfo/sysinfo.c.orig	2014-09-11 22:46:32 UTC
 +++ winpr/libwinpr/sysinfo/sysinfo.c
 @@ -54,6 +54,7 @@
  #ifndef _WIN32
@@ -54,11 +50,9 @@ index 1529d54..457ab9d 100644
  
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
-diff winpr/libwinpr/utils/CMakeLists.txt winpr/libwinpr/utils/CMakeLists.txt
-index e524bf9..501f605 100644
---- winpr/libwinpr/utils/CMakeLists.txt
+--- winpr/libwinpr/utils/CMakeLists.txt.orig	2014-09-11 22:46:32 UTC
 +++ winpr/libwinpr/utils/CMakeLists.txt
-@@ -113,6 +113,10 @@ if(UNIX)
+@@ -105,6 +105,10 @@ if(UNIX)
  	winpr_library_add(m)
  endif()
  
@@ -69,6 +63,3 @@ index e524bf9..501f605 100644
  if(BUILD_TESTING)
  	add_subdirectory(test)
  endif()
--- 
-2.4.1
-
