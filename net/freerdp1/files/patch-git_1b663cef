@@ -12,7 +12,7 @@ Subject: [PATCH] build: cmake 3.1 compatibility
 	work with all cmake versions.
 
 Tested with 3.1.0-rc3
---- channels/CMakeLists.txt
+--- channels/CMakeLists.txt.orig	2014-09-11 22:46:32 UTC
 +++ channels/CMakeLists.txt
 @@ -202,8 +202,8 @@ set(FILENAME "ChannelOptions.cmake")
  file(GLOB FILEPATHS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*/${FILENAME}")
@@ -25,7 +25,7 @@ Tested with 3.1.0-rc3
  		set(CHANNEL_OPTION)
  		include(${FILEPATH})
  		if(${CHANNEL_OPTION})
---- channels/client/CMakeLists.txt
+--- channels/client/CMakeLists.txt.orig	2014-09-11 22:46:32 UTC
 +++ channels/client/CMakeLists.txt
 @@ -24,7 +24,9 @@ set(${MODULE_PREFIX}_SRCS
  	${CMAKE_CURRENT_SOURCE_DIR}/addin.c
@@ -37,7 +37,7 @@ Tested with 3.1.0-rc3
  
  foreach(STATIC_ENTRY ${CHANNEL_STATIC_CLIENT_ENTRIES})
  	foreach(STATIC_MODULE ${CHANNEL_STATIC_CLIENT_MODULES})
---- third-party/CMakeLists.txt
+--- third-party/CMakeLists.txt.orig	2014-09-11 22:46:32 UTC
 +++ third-party/CMakeLists.txt
 @@ -22,11 +22,11 @@
  file(GLOB all_valid_subdirs RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*/CMakeLists.txt")
