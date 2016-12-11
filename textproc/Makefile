@@ -18,6 +18,7 @@
     SUBDIR += R-cran-xml2
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
+    SUBDIR += UCD
     SUBDIR += ack
     SUBDIR += adabrowse
     SUBDIR += add-css-links
@@ -361,9 +362,9 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kenlm
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
-    SUBDIR += kenlm
     SUBDIR += kibana3
     SUBDIR += kibana41
     SUBDIR += kibana43
@@ -1498,9 +1499,9 @@
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
-    SUBDIR += rubygem-ruby_expect
     SUBDIR += rubygem-ruby-augeas
     SUBDIR += rubygem-ruby-xslt
+    SUBDIR += rubygem-ruby_expect
     SUBDIR += rubygem-rubypants
     SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
@@ -1642,7 +1643,6 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
-    SUBDIR += UCD
     SUBDIR += uchardet
     SUBDIR += uim
     SUBDIR += uim-el

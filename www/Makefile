@@ -1488,6 +1488,7 @@
     SUBDIR += py-Products.CMFPlone
     SUBDIR += py-Products.PloneLDAP
     SUBDIR += py-Products.TinyMCE
+    SUBDIR += py-Tenjin
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
@@ -1799,7 +1800,6 @@
     SUBDIR += py-splinter
     SUBDIR += py-spyne
     SUBDIR += py-surl
-    SUBDIR += py-Tenjin
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
     SUBDIR += py-tmdb3
