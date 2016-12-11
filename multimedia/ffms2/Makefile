@@ -2,6 +2,7 @@
 
 PORTNAME=	ffms2
 DISTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org

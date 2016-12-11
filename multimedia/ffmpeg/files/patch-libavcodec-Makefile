@@ -1,9 +1,9 @@
---- libavcodec/Makefile.orig	2015-06-19 20:44:36 UTC
+--- libavcodec/Makefile.orig	2016-02-15 02:29:38 UTC
 +++ libavcodec/Makefile
-@@ -877,7 +877,7 @@ SKIPHEADERS                            +
-                                           old_codec_ids.h               \
-                                           tableprint.h                  \
-                                           tableprint_vlc.h              \
+@@ -935,7 +935,7 @@ SKIPHEADERS                            +
+                                           aaccoder_trellis.h            \
+                                           aacenc_quantization.h         \
+                                           aacenc_quantization_misc.h    \
 -                                          $(ARCH)/vp56_arith.h          \
 +                                          $(FFMPEG_ARCH)/vp56_arith.h          \
  

@@ -3,6 +3,7 @@
 
 PORTNAME=	madsonic
 PORTVERSION=	6.1.8700
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://madsonic.org/download/6.1/
 DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
