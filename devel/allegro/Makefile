@@ -16,7 +16,7 @@ COMMENT=	Cross-platform library for games and multimedia programming
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake gmake makeinfo pkgconfig
+USES=		cmake makeinfo pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_LDCONFIG=	yes
