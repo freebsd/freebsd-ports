@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	l-smash-works
-DISTVERSION=	0.0-877 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g9828349
-PORTREVISION=	1
+DISTVERSION=	0.0-918 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-ga1a280b
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
@@ -14,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
+BUILD_DEPENDS+=	ffmpeg>=3.2,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblsmash.so:multimedia/l-smash
 
