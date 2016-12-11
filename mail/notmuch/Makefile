@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.23.2
-PORTREVISION=	1
+PORTVERSION=	0.23.3
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -17,6 +16,10 @@ BUILD_DEPENDS=	c++filt:devel/binutils
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libxapian.so:databases/xapian-core \
 		libtalloc.so:devel/talloc
+TEST_DEPENDS=	bash:shells/bash \
+		emacs:editors/emacs-nox11 \
+		dtach:misc/dtach \
+		base64:converters/base64
 
 BROKEN_powerpc64=	Does not build
 
@@ -26,7 +29,17 @@ USE_GNOME=	glib20
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
+MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
+
+## a lot of tests are failing because they're Linux oriented and need
+## some tweaking to run on FreeBSD
+TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic new count insert tagging json sexp \
+		emacs emacs-large-search-buffer crypto smime atomicity ruby \
+		parse-time-string upgrade thread-search thread-breakage \
+		message-property lock" V=1 \
+		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+
+TEST_TARGET=	test
 
 OPTIONS_DEFINE=	BASH DOXYGEN EMACS MANPAGES MUTT RUBY ZSH
 EMACS_DESC=	Install EMACS lisp files (requires emacs)
