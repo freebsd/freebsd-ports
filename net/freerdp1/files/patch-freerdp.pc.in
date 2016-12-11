@@ -1,13 +1,12 @@
 Index: freerdp.pc.in
-diff -u freerdp.pc.in.orig freerdp.pc.in
---- freerdp.pc.in.orig	2014-09-12 07:46:32.000000000 +0900
-+++ freerdp.pc.in	2015-05-26 02:05:37.874925433 +0900
-@@ -9,7 +9,7 @@
+--- freerdp.pc.in.orig	2014-09-11 22:46:32 UTC
++++ freerdp.pc.in
+@@ -9,7 +9,7 @@ Description: FreeRDP: A Remote Desktop P
  URL: http://www.freerdp.com/
  Version: @FREERDP_VERSION_FULL@
  Requires: 
 -Requires.private: winpr zlib libssl
-+Requires.private: winpr
++Requires.private: winpr1
  Libs: -L${libdir} ${libs}
  Libs.private: -ldl -lpthread
  Cflags: -I${includedir}
