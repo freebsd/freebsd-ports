@@ -3984,6 +3984,7 @@
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
+    SUBDIR += py-Pint
     SUBDIR += py-Products.ATContentTypes
     SUBDIR += py-Products.ATReferenceBrowserWidget
     SUBDIR += py-Products.Archetypes
