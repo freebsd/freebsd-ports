@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -129,9 +129,9 @@ HOTKEYS_CONFIGURE_OFF=	--disable-hotkeys
 OGG_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 OGG_CONFIGURE_OFF=	--disable-vorbis
 
-FFMPEG_LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
-		libavformat0.so:multimedia/ffmpeg0 \
-		libavutil0.so:multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libavformat.so:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
@@ -220,9 +220,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/timidity++/timidity-freepats.cfg:/etc/timidity/freepats.cfg:/etc/timidity/,${LOCALBASE}/share/,' \
 		${WRKSRC}/plugins/wildmidi/wildmidiplug.c
 	@${REINPLACE_CMD} \
-		-e 's,libavcodec ,libavcodec0 ,g' \
-		-e 's,libavutil ,libavutil0 ,g' \
-		-e 's,libavformat ,libavformat0 ,g' \
 		-e '/HAVE_OGG" = "yes"/ {n; n; /HAVE_VORBISPLUGIN=yes/d;}' \
 		${WRKSRC}/configure
 # Fix build with libzip-1.0
