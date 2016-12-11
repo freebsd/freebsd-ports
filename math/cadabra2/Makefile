@@ -33,7 +33,7 @@ BROKEN_FreeBSD_9=	does not build: fatal error: 'type_traits' file not found
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 
-USES=		compiler:c++14-lang cmake gettext-runtime gmake pkgconfig python:2 sqlite
+USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2 sqlite
 GUI_USE=	GNOME=gtkmm30,gdkpixbuf2
 USE_TEX=	base texmf texhash
 USE_LDCONFIG=	yes
