@@ -1,3 +1,5 @@
+bin/compile-r7rs
+bin/compile-%%PORTNAME%%
 bin/%%PORTNAME%%-config
 bin/%%PORTNAME%%-package
 bin/%%PORTNAME%%
@@ -56,6 +58,7 @@ include/%%PORTNAME%%/weak.h
 include/%%PORTNAME%%/win-compat.h
 include/%%PORTNAME%%/writer.h
 lib/lib%%PORTNAME%%.so
+lib/lib%%PORTNAME%%.so.%%PORTVERSION%%
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/arith.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/bignum.h
@@ -109,6 +112,8 @@ lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/vm.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/weak.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/win-compat.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/writer.h
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/compile-%%PORTNAME%%
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/lib%%PORTNAME%%.so.%%PORTVERSION%%
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/lib%%PORTNAME%%.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/sash
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--crypto.so
@@ -297,6 +302,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/mqtt/topic.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/transport.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/rss.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/consumer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/misc.scm
@@ -483,6 +489,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a133/vectors.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a134.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a134/ideque.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a135.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a135/texts.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a139.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a139/syntax-parameters.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
@@ -581,6 +591,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/132.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/133.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/134.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/135.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/139.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
@@ -632,6 +644,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/html.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/html-parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/htmlprag.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/object-builder.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html-ext.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/serializer.scm
@@ -657,6 +670,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/hashtables.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/heap.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/list.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/logging.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/port.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/queue.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/sparse.scm
