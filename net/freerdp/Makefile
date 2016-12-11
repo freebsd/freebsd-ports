@@ -3,6 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	2.0.0.g2016.11.24
+PORTREVISION=	1
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -59,8 +60,8 @@ SSE_CMAKE_BOOL=		WITH_SSE2
 
 X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
-X11_CMAKE_ON=		-DWITH_XKBDFILE=OFF
 X11_CMAKE_BOOL=		WITH_X11
+X11_CMAKE_OFF=		-DWITH_XKBFILE=OFF
 X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xrandr,xi,xfixes,xrender
 
 .include <bsd.port.pre.mk>
@@ -92,6 +93,5 @@ post-patch:
 		${WRKSRC}/server/CMakeLists.txt \
 		${WRKSRC}/server/shadow/CMakeLists.txt \
 		${WRKSRC}/libfreerdp/CMakeLists.txt
-
 
 .include <bsd.port.post.mk>
