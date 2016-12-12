@@ -9,6 +9,7 @@
 #
 # Available LXQt components are:
 #
+# buildtools	- Helpers CMake modules
 # libfmqt	- Libfm Qt bindings
 # lxqt		- LXQt core library
 # qtxdg		- Qt implementation of freedesktop.org xdg specs
@@ -42,7 +43,11 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANDIRS} \
 	-DPULL_TRANSLATIONS:BOOL=OFF
 
 # Available LXQt components are:
-_USE_LXQT_ALL=	libfmqt lxqt qtxdg
+_USE_LXQT_ALL=	buildtools libfmqt lxqt qtxdg
+
+_DATAROOTDIR=	${LOCALBASE}/share
+
+buildtools_BUILD_DEPENDS=	${_DATAROOTDIR}/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake:devel/lxqt-build-tools
 
 libfmqt_LIB_DEPENDS=	libfm-qt.so:x11/libfm-qt
 

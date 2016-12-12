@@ -1,17 +1,5 @@
-                           Shapefile C Library V1.2
-
-   Purpose
-
-      The Shapefile C Library provides the ability to write simple C
-      programs for reading, writing and updating (to a limited extent) ESRI
-      Shapefiles, and the associated attribute file (.dbf).
-
-   Documentation
-
-      /usr/local/share/doc/shapelib/shapelib.html - General docs
-      /usr/local/share/doc/shapelib/shp_api.html  - Shape (.SHP) File API
-      /usr/local/share/doc/shapelib/dbg_api.html  - Attribute (.DBF) File API
-
-Check Shapelib Homepage below:
+The Shapefile C Library provides the ability to write simple C programs for
+reading, writing and updating (to a limited extent) ESRI Shapefiles, and the
+associated attribute file (.dbf).
 
 WWW: http://shapelib.maptools.org/
