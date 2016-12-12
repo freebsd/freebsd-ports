@@ -1567,6 +1567,7 @@
     SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += lwp
+    SUBDIR += lxqt-build-tools
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
     SUBDIR += m17n-lib
