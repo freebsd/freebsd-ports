@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	2.5.2
+PORTVERSION=	3.69
 CATEGORIES=	lang
 MASTER_SITES=	http://releases.rubini.us/:source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source
@@ -11,18 +11,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \
-		${LOCALBASE}/bin/llvm-config35:devel/llvm35 \
-		${LOCALBASE}/bin/bison:devel/bison
+		${LOCALBASE}/bin/bison:devel/bison \
+		${LLVM_CONFIG_PATH}:${LLVM_PORT}
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-BROKEN_FreeBSD_9=	does not build
-BROKEN_FreeBSD_11=	does not build
-BROKEN_FreeBSD_12=	does not build
-
-BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 
 HAS_CONFIGURE=	yes
@@ -32,17 +28,26 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		-G "${PREFIX}/lib/ruby/gems/rubinius" \
 		-B "${PREFIX}/bin" \
 		-M "${PREFIX}/man" \
-		--cc ${CC} \
-		--cxx ${CXX} \
+		--cc ${LLVM_CC_PATH} \
+		--cxx ${LLVM_CXX_PATH} \
+		--llvm-config ${LLVM_CONFIG_PATH} \
 		--no-bin-links \
-		--llvm-config ${LOCALBASE}/bin/llvm-config35 \
-		--with-fibers --without-dtrace --release-build \
+		--without-dtrace --release-build \
 		--sitedir "${PREFIX}/lib/ruby/site_ruby/rubinius" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo \
 		--system-name ${OPSYS}
 
-USES=		compiler:c++11-lib execinfo gmake perl5 readline tar:bzip2
+OPTIONS_RADIO=		LLVM
+OPTIONS_DEFAULT=	LLVM39
+OPTIONS_RADIO_LLVM=	LLVM36 LLVM37 LLVM38 LLVM39
+
+LLVM36_DESC=	LLVM 3.6
+LLVM37_DESC=	LLVM 3.7
+LLVM38_DESC=	LLVM 3.8
+LLVM39_DESC=	LLVM 3.9
+
+USES=		execinfo gmake perl5 readline tar:bzip2 libedit
 USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -51,6 +56,11 @@ NO_INSTALL=	yes
 PLIST_SUB+=	FREEBSD_DIR=${FREEBSD_DIR}
 GEM_PATH=	${WRKSRC}/gems/ruby/${RUBY_VER}
 RAKE_BIN=	${GEM_PATH}/bin/rake
+
+# https://github.com/rubinius/rubinius/issues/3716
+CFLAGS+=	-Qunused-arguments
+CPPFLAGS+=	-Qunused-arguments
+CXXFLAGS+=	-Qunused-arguments
 
 # Hack to prevent rbx from creating $HOME/.rbx during compilation of gems
 MAKE_ENV+=	HOME=${WRKSRC}
@@ -64,6 +74,26 @@ MAKE_ENV+=	LANG=en_US.UTF-8
 F_OS=		${OPSYS:tl}
 F_MAJOR=	${OSREL:C/\..*$//}
 FREEBSD_DIR=	${F_ARCH}-${F_OS}-${F_MAJOR}
+LLVM_CC_PATH=	${LOCALBASE}/bin/${LLVM_CC}
+LLVM_CXX_PATH=	${LOCALBASE}/bin/${LLVM_CXX}
+LLVM_CONFIG_PATH=	${LOCALBASE}/bin/${LLVM_CONFIG}
+
+LLVM36_VARS=	LLVM_CONFIG=llvm-config36 \
+		LLVM_PORT=devel/llvm36 \
+		LLVM_CC=clang36 \
+		LLVM_CXX=clang++36
+LLVM37_VARS=	LLVM_CONFIG=llvm-config37 \
+		LLVM_PORT=devel/llvm37 \
+		LLVM_CC=clang37 \
+		LLVM_CXX=clang++37
+LLVM38_VARS=	LLVM_CONFIG=llvm-config38 \
+		LLVM_PORT=devel/llvm38 \
+		LLVM_CC=clang38 \
+		LLVM_CXX=clang++38
+LLVM39_VARS=	LLVM_CONFIG=llvm-config39 \
+		LLVM_PORT=devel/llvm39 \
+		LLVM_CC=clang39 \
+		LLVM_CXX=clang++39
 
 .include <bsd.port.pre.mk>
 
@@ -83,12 +113,21 @@ post-extract:
 .for DF in ${DISTFILES:N*\:source}
 	@${LN} -s ${DISTDIR}/${DF:C/:gems//g} ${WRKSRC}/vendor/cache/
 .endfor
+	@${CP} ${FILESDIR}/build-tool.c ${WRKDIR}
 
 post-patch:
 	@${GREP} -Rl '#!.*ruby$$'  ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e '/^#!.*ruby$$/s/ruby$$/${RUBY_NAME}/g'
+	@${REINPLACE_CMD} -e "s,%%CC%%,${LLVM_CC_PATH}," ${WRKSRC}/configure ${WRKDIR}/build-tool.c
+	@${REINPLACE_CMD} -e "s,%%CXX%%,${LLVM_CXX_PATH}," ${WRKSRC}/configure ${WRKDIR}/build-tool.c
 
 pre-configure:
 	@cd ${WRKSRC} && ${MKDIR} gems && ${LOCALBASE}/bin/bundle install --local --path=${WRKSRC}/gems
+
+post-configure:
+	# Setup paths to compilers
+	@${CC} -o ${WRKSRC}/build/bin/build-tool ${WRKDIR}/build-tool.c
+	@${LN} -sf ${WRKSRC}/build/bin/build-tool ${WRKSRC}/build/bin/cc
+	@${LN} -sf ${WRKSRC}/build/bin/build-tool ${WRKSRC}/build/bin/c++
 
 do-build:
 	# "build" target here installs into ${STAGEDIR}${PREFIX}

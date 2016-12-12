@@ -1,0 +1,13 @@
+--- configure.orig	2016-12-01 05:41:14 UTC
++++ configure
+@@ -710,8 +710,8 @@ not support #{name} compiler, please ema
+     check_tool_version @cc, '-dumpversion', [4, 1]
+     check_tool_version @cxx, '-dumpversion', [4, 1]
+ 
+-    supported_compiler "clang C" unless @cc =~ /clang/
+-    supported_compiler "clang++ C++" unless @cxx =~ /clang\+\+/
++    supported_compiler "clang C" unless @cc == "%%CC%%"
++    supported_compiler "clang++ C++" unless @cxx == "%%CXX%%"
+ 
+     if File.exist? @build_bin
+       if !File.directory? @build_bin
