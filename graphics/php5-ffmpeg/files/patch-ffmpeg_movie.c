@@ -53,3 +53,21 @@
          /* fake mpeg2 transport stream codec (currently not registered) */
          codec_name = "mpeg2ts";
      } else if (decoder_ctx->codec_name[0] != '\0') {
+@@ -1223,7 +1225,7 @@ static AVFrame* _php_read_av_frame(ff_mo
+         return NULL;
+     }
+ 
+-    frame = avcodec_alloc_frame();
++    frame = av_frame_alloc();
+ 
+     /* read next frame */ 
+     while (av_read_frame(ffmovie_ctx->fmt_ctx, &packet) >= 0) {
+@@ -1353,7 +1355,7 @@ static int _php_get_ff_frame(ff_movie_co
+         ff_frame->keyframe = is_keyframe;
+         ff_frame->pts = pts;
+         
+-        ff_frame->av_frame = avcodec_alloc_frame();
++        ff_frame->av_frame = av_frame_alloc();
+         avpicture_alloc((AVPicture*)ff_frame->av_frame, ff_frame->pixel_format,
+             ff_frame->width, ff_frame->height);
+  
