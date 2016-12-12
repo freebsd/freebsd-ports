@@ -3,6 +3,7 @@
 
 PORTNAME=	kallithea
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,6 +41,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress \
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 USE_RC_SUBR=	kallithea
 SUB_FILES=	pkg-message

@@ -40,7 +40,7 @@ command=%%PREFIX%%/bin/paster
 pidfile="${kallithea_pidfile}"
 required_files="${kallithea_config}"
 
-command_args=" serve --user=${kallithea_user} --group=${kallithea_group} --pid-file=${pidfile} --log-file=${kallithea_logfile} --daemon ${kallithea_config}"
+command_args=" serve --pid-file=${pidfile} --log-file=${kallithea_logfile} --daemon ${kallithea_config}"
 
 start_precmd=kallithea_prestart
 status_cmd=kallithea_status
