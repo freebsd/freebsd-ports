@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpsl
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -50,8 +49,5 @@ IDN2_USES=		iconv
 NLS_CPPFLAGS=		-DENABLE_NLS=1
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/psl2c ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
