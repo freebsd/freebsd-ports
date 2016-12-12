@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	apscheduler
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	APScheduler-${DISTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	In-process task scheduler with Cron-like capabilities
 
 LICENSE=	MIT
@@ -24,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.5.1:devel/py-pytest \
 NO_ARCH=	yes
 USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
-TEST_ENV=	${MAKE_ENV} TZ=UTC PYTHONPATH=.
+TEST_ENV=	${MAKE_ENV} TZ=UTC
 
 .include <bsd.port.pre.mk>
 
@@ -32,6 +31,9 @@ TEST_ENV=	${MAKE_ENV} TZ=UTC PYTHONPATH=.
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+.else
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio \
+		${PYTHON_PKGNAMEPREFIX}pytest-tornado>0:devel/py-pytest-tornado
 .endif
 
 post-patch:

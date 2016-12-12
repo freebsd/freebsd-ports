@@ -27,4 +27,10 @@ USES=		perl5 ssl
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SMIME/SMIME.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000015 && ${SSL_DEFAULT:Mbase}
+IGNORE=	Need a more recent version of OpenSSL.
+.endif
+
+.include <bsd.port.post.mk>
