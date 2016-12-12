@@ -35,7 +35,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		gmake libtool localbase pathfix
+USES=		execinfo gmake libtool localbase pathfix
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
@@ -59,6 +59,7 @@ CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| contrib||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|unsigned32 |uint32_t |' ${WRKSRC}/libcdi/src/cdilib.c ${WRKSRC}/libcdi/src/util.c
 
