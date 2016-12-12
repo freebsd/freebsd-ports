@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.095
+PORTVERSION=	2.096
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:devel/p5-Carp-Assert-More \
 		p5-Parse-RecDescent>=1.90.0:devel/p5-Parse-RecDescent \
 		p5-Path-Tiny>=0.70:devel/p5-Path-Tiny \
 		p5-Pod-POM>=0:textproc/p5-Pod-POM \
+		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff \
 		p5-Text-Levenshtein-Damerau>=0:devel/p5-Text-Levenshtein-Damerau
