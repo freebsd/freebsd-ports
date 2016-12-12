@@ -1173,7 +1173,7 @@ lib/calibre/calibre/library/server/opds.py
 lib/calibre/calibre/library/server/utils.py
 lib/calibre/calibre/library/server/xml.py
 lib/calibre/calibre/library/sqlite.py
-lib/calibre/calibre/library/test.py
+lib/calibre/calibre/library/test_cli.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/linux.py
 lib/calibre/calibre/plugins/_patiencediff_c.so

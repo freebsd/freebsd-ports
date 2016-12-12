@@ -4129,6 +4129,7 @@
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
+    SUBDIR += py-crank
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
