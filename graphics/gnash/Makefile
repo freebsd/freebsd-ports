@@ -21,6 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
+BROKEN=		fails to build with Boost 1.62
+
 USES=		cpe tar:bzip2 pkgconfig gmake libtool jpeg
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
