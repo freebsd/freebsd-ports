@@ -1,8 +1,8 @@
---- t/porting/customized.dat.orig	2016-11-14 00:17:42 UTC
+--- t/porting/customized.dat.orig	2016-12-11 21:33:47 UTC
 +++ t/porting/customized.dat
 @@ -4,6 +4,7 @@ CPAN cpan/CPAN/scripts/cpan 22610ed0301d
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
- Encode cpan/Encode/Encode.xs dba310bf3d362b1ade421b1a741875511d84809a
+ Encode cpan/Encode/Unicode/Unicode.pm 9749692c67f7d69083034de9184a93f070ab4799
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  File::Path cpan/File-Path/lib/File/Path.pm fd8ce4420a0c113d3f47dd3223859743655c1da8
