@@ -48,6 +48,7 @@
     SUBDIR += armagetron
     SUBDIR += arx-libertatis
     SUBDIR += asc
+    SUBDIR += ascii-invaders
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
     SUBDIR += asteroid
