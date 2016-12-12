@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-fPIC
-#IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USES=		php:build gmake localbase tar:xz
@@ -31,8 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|3.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|; s|^CXX=.*$$|CXX=${CXX}|; s|^CFLAGS=.*$$|CFLAGS=${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 
-# include/cpl_config.h will exist after build phase
-pre-build:
+# GDALmake.opt and cpl_config.h are not available until configure phase
+post-configure:
 	${SED} -e '/^GDAL_ROOT/d' ${DATADIR}/GDALmake.opt > ${WRKSRC}/../../GDALmake.opt
 	${CP} ${LOCALBASE}/include/cpl_config.h ${WRKSRC}/../../port/
 
