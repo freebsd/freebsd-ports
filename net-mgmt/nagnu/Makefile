@@ -2,6 +2,7 @@
 
 PORTNAME=	nagnu
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	fredrik@min-hemsida.net
@@ -11,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		ncurses:port
+USES=		ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	frlen
 PLIST_FILES=	bin/nagnu \
