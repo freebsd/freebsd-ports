@@ -8,4 +8,4 @@ calendars and compare dates that date pre 1970 and post 2038. This
 package also provides a class to convert date strings between
 Gregorian and Human calendar formats.
 
-WWW: http://pear.php.net/package/Date
+WWW: https://pear.php.net/package/Date

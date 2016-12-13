@@ -20,4 +20,4 @@ similar to XML_RSS.
 Since version 0.8.0 the package is able to treat XML documents
 similar to the simplexml extension of PHP 5.
 
-WWW: http://pear.php.net/package/XML_Serializer/
+WWW: https://pear.php.net/package/XML_Serializer

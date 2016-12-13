@@ -2,4 +2,4 @@ Provides a POP3 class to access POP3 server. Support all POP3 commands
 including UIDL listings, APOP authentication, DIGEST-MD5 and CRAM-MD5
 using optional Auth_SASL package.
 
-WWW: http://pear.php.net/package/Net_POP3/
+WWW: https://pear.php.net/package/Net_POP3

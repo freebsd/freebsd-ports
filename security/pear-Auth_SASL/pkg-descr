@@ -5,4 +5,4 @@ Provides PHP code to generate responses to common SASL mechanisms, including:
 - Anonymous
 - Login (Pseudo mechanism).
 
-WWW: http://pear.php.net/package/Auth_SASL
+WWW: https://pear.php.net/package/Auth_SASL

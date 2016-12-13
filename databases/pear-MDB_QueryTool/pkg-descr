@@ -10,4 +10,4 @@ easily build SQL-Statements and execute them.
 NB: this is a PEAR::MDB porting from the original DB_QueryTool written by
 Wolfram Kriesing and Paolo Panto (vision:produktion, wk@visionp.de).
 
-WWW: http://pear.php.net/package/MDB_QueryTool/
+WWW: https://pear.php.net/package/MDB_QueryTool

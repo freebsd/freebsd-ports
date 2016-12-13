@@ -8,4 +8,4 @@ server library, XML_RPC2 is capable of exposing methods from
 a class or object instance, seamlessly exporting local methods
 as remotely callable procedures.
 
-WWW: http://pear.php.net/package/XML_RPC2/
+WWW: https://pear.php.net/package/XML_RPC2

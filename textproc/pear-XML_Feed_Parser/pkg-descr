@@ -2,4 +2,4 @@ XML_Feed_Parser is a parser for (the various) RSS and Atom format XML feeds.
 It attempts to provide a somewhat unified API while still allowing access to
 the full details of each feed type.
 
-WWW: http://pear.php.net/package/XML_Feed_Parser/
+WWW: https://pear.php.net/package/XML_Feed_Parser

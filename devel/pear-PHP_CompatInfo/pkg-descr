@@ -3,4 +3,4 @@ minimum version and extensions required for it to run. Features advanced
 debug output which shows which functions require which version and CLI
 output script.
 
-WWW: http://pear.php.net/package/PHP_CompatInfo/
+WWW: https://pear.php.net/package/PHP_CompatInfo

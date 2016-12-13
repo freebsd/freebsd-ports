@@ -4,4 +4,4 @@ are produced. Various methods for accessing the major elements of the document,
 such as the hedline(s), byline, and lede are provided. This class was originally
 tested against the Associated Press's (AP) XML data feed.
 
-WWW: http://pear.php.net/package/XML_NITF/
+WWW: https://pear.php.net/package/XML_NITF

@@ -5,4 +5,4 @@ The core class is designed to be extended for each of your tables so that you
 put the data logic inside the data classes.
 included is a Generator to make your configuration files and your base classes.
 
-WWW: http://pear.php.net/package/DB_DataObject
+WWW: https://pear.php.net/package/DB_DataObject

@@ -1,4 +1,4 @@
 An interface for creating TinyURL's with their API as well as looking up
 destinations of given TinyURL's.
 
-WWW: http://pear.php.net/package/Services_TinyURL/
+WWW: https://pear.php.net/package/Services_TinyURL

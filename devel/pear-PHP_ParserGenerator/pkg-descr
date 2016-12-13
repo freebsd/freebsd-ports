@@ -1,4 +1,4 @@
 Translate a grammar file in the lemon parser generator format
 into a PHP 5-based parser
 
-WWW: http://pear.php.net/package/PHP_ParserGenerator/
+WWW: https://pear.php.net/package/PHP_ParserGenerator

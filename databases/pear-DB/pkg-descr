@@ -21,4 +21,4 @@ provide interchangeability when all of DB's portability options are
 enabled: fbsql, ibase, informix, msql, mssql, mysql, mysqli, oci8,
 odbc, pgsql, sqlite and sybase.
 
-WWW: http://pear.php.net/package/DB/
+WWW: https://pear.php.net/package/DB

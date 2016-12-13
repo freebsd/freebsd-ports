@@ -20,4 +20,4 @@ Currently, the following decorators are provided:
 - SpecialChars (replace html entities with their hex codes)
 - UTF-8 (to convert UTF-8 strings to ISO-8859-1)
 
-WWW: http://pear.php.net/package/Translation2/
+WWW: https://pear.php.net/package/Translation2

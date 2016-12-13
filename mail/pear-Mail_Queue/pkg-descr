@@ -8,4 +8,4 @@ waiting to be fed to the MTA (Mail Transport Agent),
 and sends them later (e.g. a certain amount of mails
 every few minutes) by crontab or in other way.
 
-WWW: http://pear.php.net/package/Mail_Queue/
+WWW: https://pear.php.net/package/Mail_Queue

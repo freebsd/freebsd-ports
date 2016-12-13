@@ -9,4 +9,4 @@ handlers available from Expat except namespace and external entity handlers.
 Provides methods for handling XML escapes as well as JSP/ASP opening and close
 tags.
 
-WWW: http://pear.php.net/package/XML_HTMLSax/
+WWW: https://pear.php.net/package/XML_HTMLSax

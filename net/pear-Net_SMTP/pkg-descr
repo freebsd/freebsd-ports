@@ -1,4 +1,4 @@
 This PEAR class provides an implementation of the SMTP protocol using PEAR's
 Net_Socket:: class.
 
-WWW: http://pear.php.net/package/Net_SMTP
+WWW: https://pear.php.net/package/Net_SMTP

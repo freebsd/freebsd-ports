@@ -9,4 +9,4 @@ Image_3D currently supports:
 * Unlimited number of light sources
 * Rendering output via GD, SVG or ASCII
 
-WWW: http://pear.php.net/package/Image_3D/
+WWW: https://pear.php.net/package/Image_3D

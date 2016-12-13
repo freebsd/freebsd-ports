@@ -6,4 +6,4 @@ Please note that as of December 5, 2006 Google is no longer issuing new
 API keys for the SOAP search API, so this package is only for developers
 which has an API key already.
 
-WWW: http://pear.php.net/package/Services_Google/
+WWW: https://pear.php.net/package/Services_Google

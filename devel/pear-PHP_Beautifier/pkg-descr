@@ -3,4 +3,4 @@ This program reformat and beautify PHP source code files automatically.
 The program is Open Source and distributed under the terms of PHP Licence. It
 is written in PHP 5 and has a command line tool.
 
-WWW: http://pear.php.net/package/PHP_Beautifier/
+WWW: https://pear.php.net/package/PHP_Beautifier
