@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -37,6 +37,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-Gtk2-Ex-PodViewer>0.17:x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Filesys-Df>0.92:sysutils/p5-Filesys-Df \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \
+		p5-Date-Calc>=6.4:devel/p5-Date-Calc \
 		${BUILD_DEPENDS}
 
 NO_ARCH=	yes
