@@ -372,13 +372,10 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
-    SUBDIR += linux-c6-flashplugin11
     SUBDIR += linux-c6-flashplugin24
     SUBDIR += linux-c6-qt47-webkit
-    SUBDIR += linux-c7-flashplugin11
     SUBDIR += linux-c7-flashplugin24
     SUBDIR += linux-c7-qtwebkit
-    SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
