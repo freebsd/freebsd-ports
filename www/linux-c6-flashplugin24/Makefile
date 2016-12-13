@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	24.0.0.170
+PORTVERSION=	24.0.0.186
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	https://fpdownload.macromedia.com/pub/labs/flashruntimes/flashplayer/linux32/ \
-		LOCAL/tijl/${DIST_SUBDIR}
+MASTER_SITES=	https://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION}/
 PKGNAMEPREFIX?=	linux-c6-
-PKGNAMESUFFIX=	24
 DISTFILES=	flash_player_npapi_linux.i386.tar.gz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
