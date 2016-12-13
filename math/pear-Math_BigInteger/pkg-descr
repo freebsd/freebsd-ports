@@ -2,4 +2,4 @@ Supports base-2, base-10, base-16, and base-256 numbers.
 Uses the GMP or BCMath extensions, if available,
 and an internal implementation, otherwise.
 
-WWW: http://pear.php.net/package/Math_BigInteger/
+WWW: https://pear.php.net/package/Math_BigInteger

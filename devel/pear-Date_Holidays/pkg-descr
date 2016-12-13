@@ -4,4 +4,4 @@ it is easy to add new drivers that calculate a country's holidays.
 The methods of the class can be used to get a holiday's date and
 title in various languages.
 
-WWW: http://pear.php.net/package/Date_Holidays
+WWW: https://pear.php.net/package/Date_Holidays

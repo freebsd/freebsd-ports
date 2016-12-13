@@ -2,4 +2,4 @@ With the PEAR Cache you can cache the result of certain function
 calls, as well as the output of a whole script run or share data
 between applications.
 
-WWW: http://pear.php.net/package/Cache/
+WWW: https://pear.php.net/package/Cache

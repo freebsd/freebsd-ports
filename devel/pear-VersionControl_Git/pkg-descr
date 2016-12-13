@@ -2,4 +2,4 @@ VersionControl_Git is a library that provides OO interface to
 handle Git repository. You can use Git command via the wrapper
 class. Some features are provided by high-featured interface.
 
-WWW: http://pear.php.net/package/VersionControl_Git
+WWW: https://pear.php.net/package/VersionControl_Git

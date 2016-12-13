@@ -3,4 +3,4 @@ from Roman numerals. It supports Roman numerals in both uppercase
 and lowercase styles and conversion for and to numbers up to 5 999
 999.
 
-WWW: http://pear.php.net/package/Numbers_Roman/
+WWW: https://pear.php.net/package/Numbers_Roman

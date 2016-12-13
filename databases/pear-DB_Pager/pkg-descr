@@ -5,4 +5,4 @@ paginated results from a database query of Pear DB.
 including fetching only the needed rows and giving extensive information
 for helping build an HTML or GTK query result display.
 
-WWW: http://pear.php.net/package/DB_Pager
+WWW: https://pear.php.net/package/DB_Pager

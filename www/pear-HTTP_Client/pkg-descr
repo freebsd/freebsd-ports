@@ -8,4 +8,4 @@ Features:
 * Implements the Subject-Observer design pattern: the base class sends
   events to listeners that do the response processing.
 
-WWW: http://pear.php.net/package/HTTP_Client/
+WWW: https://pear.php.net/package/HTTP_Client

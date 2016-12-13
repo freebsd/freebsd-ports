@@ -5,4 +5,4 @@ With this package you can connect to a running instance of the validator and
 retrieve the validation results (true|false) as well as the errors and warnings
 for a style sheet.
 
-WWW: http://pear.php.net/package/Services_W3C_CSSValidator/
+WWW: https://pear.php.net/package/Services_W3C_CSSValidator

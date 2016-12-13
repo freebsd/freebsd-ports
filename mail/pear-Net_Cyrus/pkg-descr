@@ -4,4 +4,4 @@ Cyrus IMAP servers.
 It can be used to create,delete and modify users and it's properties (Quota
 and ACL)
 
-WWW: http://pear.php.net/package/Net_Cyrus
+WWW: https://pear.php.net/package/Net_Cyrus

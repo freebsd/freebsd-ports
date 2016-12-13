@@ -8,4 +8,4 @@ Supports POST requests with data and file uploads, authentication,
 cookies, proxies, gzip and deflate encodings, monitoring the request
 progress with Observers.
 
-WWW: http://pear.php.net/package/HTTP_Request2
+WWW: https://pear.php.net/package/HTTP_Request2

@@ -8,4 +8,4 @@ The Math_FractionOp static class contains definitions for:
 - simplifying (reducing) and getting the reciprocal of a fraction
 - converting a float to fraction.
 
-WWW: http://pear.php.net/package/Math_Fraction/
+WWW: https://pear.php.net/package/Math_Fraction

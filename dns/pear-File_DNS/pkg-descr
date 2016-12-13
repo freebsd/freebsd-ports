@@ -1,4 +1,4 @@
 The File_DNS class provides a way to read,
 edit and write RFC1033 style DNS Zones.
 
-WWW: http://pear.php.net/package/File_DNS
+WWW: https://pear.php.net/package/File_DNS

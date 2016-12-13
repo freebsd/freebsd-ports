@@ -2,4 +2,4 @@ This class provides methods to set/modify HTTP headers
 and status codes including an HTTP caching facility.
 It also provides methods for checking Status types.
 
-WWW: http://pear.php.net/package/HTTP_Header/
+WWW: https://pear.php.net/package/HTTP_Header

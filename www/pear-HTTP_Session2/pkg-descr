@@ -2,4 +2,4 @@ PHP5 Object-oriented interface to the session_* family functions
 it provides extra features such as database storage for session
 data using DB/MDB2 packages.
 
-WWW: http://pear.php.net/package/HTTP_Session2/
+WWW: https://pear.php.net/package/HTTP_Session2

@@ -4,4 +4,4 @@ It uses a driver-based approach to communicate with different APIs out there.
 If a new blogging API is invented, someone just needs to write a driver for
 the Services_Blogging package, and everyone can access also this blogs.
 
-WWW: http://pear.php.net/package/Services_Blogging/
+WWW: https://pear.php.net/package/Services_Blogging
