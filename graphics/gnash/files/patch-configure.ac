@@ -1,0 +1,20 @@
+--- configure.ac.orig	2016-07-21 14:25:09.000000000 +0200
++++ configure.ac	2016-12-13 08:41:26.852652000 +0100
+@@ -4144,7 +4144,7 @@
+     fi
+     echo "        SSL libs are: $SSL_LIBS"
+   else
+-    PKG_ERR([No SSL development package is installed, but it's enabled."])
++    PKG_ERR([No SSL development package is installed, but it's enabled.])
+   fi
+ fi
+ 
+@@ -4157,7 +4157,7 @@
+     fi
+     echo "        SSH libs are: $SSH_LIBS"
+   else
+-    PKG_ERR([No SSH development package is installed, but it's enabled."])
++    PKG_ERR([No SSH development package is installed, but it's enabled.])
+   fi
+ fi
+ 
