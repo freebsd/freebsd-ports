@@ -3,27 +3,32 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
+DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libltdl.so:devel/libltdl \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libnspr4.so:devel/nspr \
+		libc++.so.1:devel/libc++ \
 		libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libcurl.so:ftp/curl \
 		libspeex.so:audio/speex \
-		libnspr4.so:devel/nspr
+		libspeexdsp.so:audio/speexdsp \
+		libboost_thread.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-BROKEN=		fails to build with Boost 1.62
-
-USES=		cpe tar:bzip2 pkgconfig gmake libtool jpeg
+USES=		cpe tar:bzip2 compiler:features autoreconf pkgconfig gmake libtool jpeg desktop-file-utils
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
@@ -33,25 +38,28 @@ INSTALLS_ICONS=	yes
 SYSCONFIGDIR=	${PREFIX}/etc
 
 # jemalloc leads to infinite recursion on FreeBSD
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--disable-testsuite \
 		--with-plugins-install=prefix \
 		--sysconfdir="${SYSCONFIGDIR}" \
+		--disable-testsuite \
 		--disable-kparts3 \
 		--disable-jemalloc
 
-GNASHVER=	${PORTVERSION}
+GNASHVER=	0.8.11dev
 CONFIG_FILES=	gnashpluginrc gnashrc
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GNASHVER}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
 OPTIONS_DEFINE=	PLUGIN CYGNAL VAAPI DOCS
 OPTIONS_SINGLE=	MEDIA GUI RENDERER
-OPTIONS_SINGLE_MEDIA=	FFMPEG FFMPEG2 GSTREAMER
+OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
 OPTIONS_SINGLE_GUI=	GTK2 KDE4
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
 OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG VAAPI
@@ -61,10 +69,9 @@ OPTIONS_SUB=	yes
 PLUGIN_DESC=	browser plugin
 CYGNAL_DESC=	Cygnal media server
 AGG_DESC=	AGG renderer
-OPENGL_DESC=	OpenGL renderer
-CAIRO_DESC=	Cairo renderer (experimental)
-FFMPEG_DESC=	ffmpeg0 media handler
-FFMPEG2_DESC=	ffmpeg2 media handler (broken)
+OPENGL_DESC=	OpenGL renderer (experimental)
+CAIRO_DESC=	Cairo renderer
+FFMPEG_DESC=	ffmpeg media handler
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
@@ -106,7 +113,8 @@ CONFIGURE_ARGS+=	--disable-npapi
 
 .if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MPLUGIN}
 PLIST_SUB+=	KPARTS4="${KDE_PREFIX}"
-CONFIGURE_ARGS+=	--with-kde4_prefix=${KDE_PREFIX}
+CONFIGURE_ARGS+=	--with-kde4_prefix=${KDE_PREFIX} \
+			--with-kde-appsdatadir=${KDE_PREFIX}/share/apps/klash
 .else
 PLIST_SUB+=	KPARTS4="@comment "
 CONFIGURE_ARGS+=	--disable-kparts4
@@ -118,7 +126,7 @@ CONFIGURE_ARGS+=	--disable-kparts4
 GNASH_GUIS=
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20 atk gconf2
+USE_GNOME+=	gtk20 pango atk gconf2
 GNASH_GUIS+=	gtk
 .endif
 
@@ -127,7 +135,11 @@ GNASH_GUIS+=	kde4
 USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
 USE_KDE=	kdelibs
+CONFIGURE_ARGS+=	--without-gconf
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE_PREFIX}/bin/kde4-config"
+.if ${PORT_OPTIONS:MNLS}
+LDFLAGS+=	-lintl
+.endif
 .endif
 
 .if ${GNASH_GUIS} == ""
@@ -147,6 +159,7 @@ GNASH_RENDERERS+=	agg
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
+IGNORE=		support for OpenGL is currently broken, use option AGG
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
@@ -166,39 +179,33 @@ GNASH_RENDERERS+=	cairo
 IGNORE=			needs at least one renderer enabled. Please rerun 'make config' and enable AGG, OPENGL or CAIRO
 .endif
 
-CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
+CONFIGURE_ARGS+=	--enable-renderer=${GNASH_RENDERERS:S/^ //W:S/ /,/gW}
 
 #
 # Hardware acceleration options processing
 #
 .if ${PORT_OPTIONS:MVAAPI}
-.if empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MFFMPEG2)
+.if empty(PORT_OPTIONS:MFFMPEG)
 IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
 .endif
 LIB_DEPENDS+=		libva.so:multimedia/libva
+CONFIGURE_ARGS+=	--enable-device=egl,x11,vaapi
 .else
 CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
+CONFIGURE_ARGS+=	--enable-device=egl,x11
 .endif
 
 #
 # Media handler options processing
 #
-.if ${PORT_OPTIONS:MFFMPEG2} && empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MGSTREAMER)
+.if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER)
 LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 			--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
 			--with-ffmpeg-lib=${LOCALBASE}/lib
 USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
-.elif ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MFFMPEG2) && empty(PORT_OPTIONS:MGSTREAMER)
-EXTRA_PATCHES+=		${FILESDIR}/ffmpeg0.patch
-LIB_DEPENDS+=		libavcodec0.so:multimedia/ffmpeg0
-CONFIGURE_ARGS+=	--enable-media=ffmpeg \
-			--with-ffmpeg-incl=${LOCALBASE}/include/ffmpeg0/libavcodec \
-			--with-ffmpeg-lib=${LOCALBASE}/lib/ffmpeg0
-USE_SDL+=		sdl
-MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg0"
-.elif ${PORT_OPTIONS:MGSTREAMER} && empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MFFMPEG2)
+.elif ${PORT_OPTIONS:MGSTREAMER} && empty(PORT_OPTIONS:MFFMPEG)
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
 USE_SDL+=		sdl
@@ -209,22 +216,14 @@ IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'mak
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
-.if ${PORT_OPTIONS:MOPENGL}
-	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
-	@sleep 3
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e '/KDE4_APPSDATADIR=/ s|share/kde4|share|' \
-		-e 's|/usr/local|${LOCALBASE}|g; \
-		s|/lib64|/lib|g; \
-		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
-		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
-	${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|libdir)|exec_prefix)/libdata|' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e '/^man1dir =/ s|=.*|= ${MAN1PREFIX}/man/man1|' \
-		${WRKSRC}/doc/C/Makefile.in
+	${REINPLACE_CMD} -e 's|lib64|lib|g' -e 's|lib32|lib|g' \
+		${WRKSRC}/macros/libslist
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+			-e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/macros/incllist
+	${REINPLACE_CMD} -e 's|CODEC_ID_|AV_CODEC_ID_|' \
+		${WRKSRC}/libmedia/ffmpeg/VideoDecoderFfmpegVaapi.cpp
 
 post-install:
 .for conf in ${CONFIG_FILES}

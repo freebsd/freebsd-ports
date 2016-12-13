@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2016-07-21 14:25:09.000000000 +0200
++++ Makefile.am	2016-12-13 10:23:36.939767000 +0100
+@@ -512,7 +512,7 @@
+ apidoc:
+ 	$(MAKE) -C doc $@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = \
+ 	gnash.pc \
+ 	$(NULL)
