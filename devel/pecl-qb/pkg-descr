@@ -12,4 +12,4 @@ regular PHP code is basically seamless. A key design objective of QB is to
 let developers harness greater processing power than what baseline PHP offers
 without the risk involved in adopting a brand new platform.
 
-WWW: http://pecl.php.net/package/qb/
+WWW: https://pecl.php.net/package/qb
