@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-f10
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -48,7 +49,6 @@ RUN_DEPENDS=	linux-f10-libasyncns>0:dns/linux-f10-libasyncns \
 		linux-f10-alsa-lib>0:audio/linux-f10-alsa-lib \
 		linux-f10-libv4l>0:multimedia/linux-f10-libv4l \
 		linux-f10-libtheora>0:multimedia/linux-f10-libtheora \
-		linux-f10-flashplugin>0:www/linux-f10-flashplugin11 \
 		linux-f10-nss>0:security/linux-f10-nss \
 		linux-f10-libtasn1>0:security/linux-f10-libtasn1 \
 		linux-f10-libgcrypt>0:security/linux-f10-libgcrypt \

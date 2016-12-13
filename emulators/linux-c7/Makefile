@@ -3,7 +3,7 @@
 
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -45,7 +45,6 @@ RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 		linux-c7-libvorbis>0:audio/linux-c7-libvorbis \
 		linux-c7-libtheora>0:multimedia/linux-c7-libtheora \
 		linux-c7-libv4l>0:multimedia/linux-c7-libv4l \
-		linux-c7-flashplugin>0:www/linux-c7-flashplugin11 \
 		linux-c7-cyrus-sasl2>0:security/linux-c7-cyrus-sasl2 \
 		linux-c7-libssh2>0:security/linux-c7-libssh2 \
 		linux-c7-openssl-compat>0:security/linux-c7-openssl-compat \
