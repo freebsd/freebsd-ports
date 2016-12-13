@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161213:
+  AFFECTS: users of devel/skalibs, lang/execline, sysutils/s6
+  AUTHOR: Colin Booth <colin-ports@heliocat.net>
+
+  skalibs has undergone a major version bump and compatibility is not
+  guaranteed for software with a runtime dependency on
+  libskarnet.so.2.3.9.0. This will not affect lang/execline or
+  sysutils/s6 as those are statically linked against libskarnet.a.
+
+  execline has undergone a major version bump and compatibility is not
+  guaranteed for software with a runtime dependency on
+  libexecline.so.2.1.4.5. This will not affect sysutils/s6 as all s6
+  programs are statically linked against libexecline.a.
+
+  s6 has undergone a major version bump and compatibility is not
+  guaranteed for software with a runtime dependency on
+  libs6.so.2.2.4.3. Additionally, s6-applyuidgid and s6-setuidgid
+  have moved from $PREFIX/sbin to $PREFIX/bin. Any scripts calling
+  those utilities that are not relying on $PATH resolution to find
+  them will need to be rewritten.
+
 20161207:
   AFFECTS: users of www/node
   AUTHOR: bradleythughes@fastmail.fm
