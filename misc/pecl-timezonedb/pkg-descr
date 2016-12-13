@@ -2,4 +2,4 @@ This extension is a drop-in replacement for the builtin timezone database that
 comes with PHP. You should only install this extension in case you need to get a
 later version of the timezone database then the one that ships with PHP.
 
-WWW: http://pecl.php.net/package/timezonedb
+WWW: https://pecl.php.net/package/timezonedb

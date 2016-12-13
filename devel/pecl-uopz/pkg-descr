@@ -3,4 +3,4 @@ extension exposes Zend Engine functionality normally used at compilation and
 execution time in order to allow modification of the internal structures that
 represent PHP code, and for user code to interact with the VM.
 
-WWW: http://pecl.php.net/package/uopz
+WWW: https://pecl.php.net/package/uopz
