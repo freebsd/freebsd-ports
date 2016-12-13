@@ -48,12 +48,10 @@ include/execline/config.h
 include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
-lib/libexecline.so.2.1
-lib/libexecline.so.2.1.4
-lib/libexecline.so.2.1.4.5
+lib/libexecline.so.2.2
+lib/libexecline.so.2.2.0
+lib/libexecline.so.2.2.0.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
 %%PORTDOCS%%%%DOCSDIR%%/backtick.html
