@@ -19,7 +19,7 @@ USES=		fonts zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	%%FONTSDIR%%/EmojiOneColor-SVGinOT.ttf
+PLIST_FILES=	${FONTSDIR}/EmojiOneColor-SVGinOT.ttf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}/
