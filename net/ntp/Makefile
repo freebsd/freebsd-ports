@@ -70,6 +70,10 @@ ${D}_CONFIGURE_ON=	--enable-${D}
 BROKEN=		Does not build under FreeBSD-9, aclocal not found
 .endif
 
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=		detected LibreSSL (md5 definition conflicts)
+.endif
+
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
 	@${TOUCH} ${WRKSRC}/scripts/build/checkHtmlFileDates
