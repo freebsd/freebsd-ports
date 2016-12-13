@@ -1,6 +1,7 @@
 bin/liteide
 lib/liteide/libcolorstyle.a
 lib/liteide/libcplusplus.a
+lib/liteide/libdiff_match_pitch.a
 lib/liteide/libdocbrowserapi.a
 lib/liteide/libdocumentbrowser.a
 lib/liteide/libeditorutil.a
@@ -187,6 +188,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/json.xml
 %%DATADIR%%/liteeditor/kate/katehelp.md
 %%DATADIR%%/liteeditor/kate/language.dtd
+%%DATADIR%%/liteeditor/kate/less.xml
 %%DATADIR%%/liteeditor/kate/lua.xml
 %%DATADIR%%/liteeditor/kate/markdown.xml
 %%DATADIR%%/liteeditor/kate/perl.xml
@@ -264,6 +266,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/welcome/images/liteide-logo128.png
 %%DATADIR%%/welcome/images/liteide-logo64.png
 %%DATADIR%%/welcome/images/liteide.png
+%%DATADIR%%/welcome/images/liteide128.xpm
 %%DATADIR%%/welcome/images/liteide400.png
 %%DATADIR%%/welcome/zh_CN/LGPL_EXCEPTION.TXT
 %%DATADIR%%/welcome/zh_CN/LICENSE.LGPL
