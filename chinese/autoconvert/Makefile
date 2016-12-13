@@ -5,14 +5,11 @@ PORTNAME=	autoconvert
 PORTVERSION=	0.3.16
 PORTREVISION=	5
 CATEGORIES=	chinese
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	libhz
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libhz/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent Chinese encoding converter
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
