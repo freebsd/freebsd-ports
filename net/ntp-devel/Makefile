@@ -59,7 +59,7 @@ THREADS_CONFIGURE_WITH=		threads
 
 .include <bsd.port.pre.mk>
 
-if ${SSL_DEFAULT:Mlibressl*}
+.if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=         detected LibreSSL (undefined references to MD5 symbols)
 .endif
 
