@@ -1,3 +1,12 @@
-How MySQL DBA & support engineer would imagine 'mysqldump' ;-)
+== What is mydumper? Why? ==
 
-WWW: https://launchpad.net/mydumper
+* Parallelism (hence, speed) and performance (avoids expensive character set
+  conversion routines, efficient code overall)
+* Easier to manage output (separate files for tables, dump metadata, etc, easy
+  to view/parse data)
+* Consistency - maintains snapshot across all threads, provides accurate master
+  and slave log positions, etc
+* Manageability - supports PCRE for specifying database and tables inclusions
+  and exclusions
+
+WWW: https://github.com/maxbube/mydumper
