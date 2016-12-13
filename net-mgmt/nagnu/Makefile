@@ -9,9 +9,9 @@ COMMENT=	Nagios dashboard
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libncurses.so:devel/ncurses
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
+USES=		ncurses:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	frlen
 PLIST_FILES=	bin/nagnu \
