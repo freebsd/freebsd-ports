@@ -1,0 +1,22 @@
+--- ../src/github.com/elastic/beats/vendor/github.com/shirou/gopsutil/disk/disk_freebsd_386.go.orig	2016-12-13 11:17:18.930219000 +0100
++++ ../src/github.com/elastic/beats/vendor/github.com/shirou/gopsutil/disk/disk_freebsd_386.go	2016-12-13 11:17:23.015481000 +0100
+@@ -39,6 +39,10 @@
+ 	MNT_SUSPEND = 4
+ )
+ 
++const (
++	sizeOfDevstat = 0xf0
++)
++
+ type (
+ 	_C_short       int16
+ 	_C_int         int32
+@@ -95,7 +99,7 @@
+ 	Flags         uint32
+ 	Device_type   uint32
+ 	Priority      uint32
+-	ID            *byte
++	Id            *byte
+ 	Sequence1     uint32
+ }
+ type Bintime struct {
