@@ -1,4 +1,4 @@
 A library that uses Maxmind's GeoIP databases to accurately determine
 geographic location of an IP address.
 
-WWW: http://pear.php.net/package/Net_GeoIP/
+WWW: https://pear.php.net/package/Net_GeoIP

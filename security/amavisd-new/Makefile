@@ -2,6 +2,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.11.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -229,7 +230,7 @@ post-patch:
 			-e "s|/var/lib/amavis|${AMAVISDIR}|" \
 			-e "s|/var/virusmails|${AMAVISQUARANTINE}|" \
 			-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
-			-e 's|/var/run/clamav/clamd|/var/run/clamav/clamd.sock|g' \
+			-e 's|/var/run/clamav/clamd|/var/run/clamav/clamd|g' \
 			${WRKSRC}/amavisd.conf
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny

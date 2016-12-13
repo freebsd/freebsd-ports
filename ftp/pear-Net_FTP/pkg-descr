@@ -4,4 +4,4 @@ supported by PHP and additionally features like recursive up- and downloading,
 dircreation and chmodding. It although implements an observer pattern to allow
 for example the view of a progress bar.
 
-WWW: http://pear.php.net/package/Net_FTP/
+WWW: https://pear.php.net/package/Net_FTP

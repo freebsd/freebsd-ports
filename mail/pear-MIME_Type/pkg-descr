@@ -7,4 +7,4 @@ PEAR::MIME_Type provides functionality for dealing with MIME types.
 * Autodetect a file's mime-type, either with mime_content_type() or the 'file'
 command.
 
-WWW: http://pear.php.net/package/MIME_Type/
+WWW: https://pear.php.net/package/MIME_Type

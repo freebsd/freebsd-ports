@@ -2,28 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	skalibs
-PORTVERSION=	2.3.9.0
+PORTVERSION=	2.4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	colin@heliocat.net
+MAINTAINER=	colin-ports@heliocat.net
 COMMENT=	General purpose C libraries used by skarnet.org software
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-default-path=${PREFIX}/bin:/usr/bin:/bin
 
-DOCS=		AUTHORS COPYING INSTALL README doc/*.html
+DOCS=		AUTHORS README doc/*.html
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskarnet.so.${PORTVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskarnet.so.${PORTVERSION}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .for d in libbiguint libdatastruct librandom libstdcrypto libstddjb libunixonacid
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	cd ${WRKSRC} && ${INSTALL_MAN} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}

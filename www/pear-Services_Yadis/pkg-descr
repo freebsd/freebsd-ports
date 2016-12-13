@@ -1,4 +1,4 @@
 Implementation of the Yadis Specification 1.0 protocol allowing a client to
 discover a list of Services a Yadis Identity Provider offers.
 
-WWW: http://pear.php.net/package/Services_Yadis/
+WWW: https://pear.php.net/package/Services_Yadis

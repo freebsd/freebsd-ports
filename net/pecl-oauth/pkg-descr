@@ -3,4 +3,4 @@ Oauth is an authorization protocol built on top of
 HTTP which allows applications to securely access
 data without having to store usernames and passwords.
 
-WWW: http://pecl.php.net/package/oauth/
+WWW: https://pecl.php.net/package/oauth

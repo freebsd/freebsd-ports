@@ -5,4 +5,4 @@ limit the data that is presented and processed. This concept is based on the
 .NET Framework DataGrid control and works very well with database and XML
 result sets.
 
-WWW: http://pear.php.net/package/Structures_DataGrid/
+WWW: https://pear.php.net/package/Structures_DataGrid

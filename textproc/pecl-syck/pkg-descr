@@ -7,4 +7,4 @@ interaction with scripting languages. YAML is optimized for data
 serialization, configuration settings, log files, Internet
 messaging and filtering.
 
-WWW: http://pecl.php.net/package/syck/
+WWW: https://pecl.php.net/package/syck

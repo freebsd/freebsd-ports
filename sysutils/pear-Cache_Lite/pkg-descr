@@ -1,4 +1,4 @@
 This package is a little cache system optimized for file containers. It is
 fast and safe (because it uses file locking and/or anti-corruption tests).
 
-WWW: http://pear.php.net/package/Cache_Lite
+WWW: https://pear.php.net/package/Cache_Lite

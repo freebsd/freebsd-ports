@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	self-service-password
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	net www
+MASTER_SITES=	http://tools.ltb-project.org/attachments/download/889/
+DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Set of PHP-scripts to change LDAP password over the web
 
-LICENSE=	GPLv2
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	ltb-project
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		php:web
 USE_PHP=	filter hash ldap mbstring mcrypt openssl session
@@ -30,9 +30,8 @@ SUB_FILES=	pkg-message
 
 post-extract:
 	@${MV} ${WRKSRC}/${CFGDIR}/${CFGFILE} ${WRKSRC}/${CFGDIR}/${CFGFILE}.sample
-	@${RM} -r ${WRKSRC}/packaging/
 
 do-install:
-	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/ "-not -name checklang.pl"
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

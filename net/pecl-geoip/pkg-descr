@@ -2,5 +2,5 @@ This PHP extension allows you to find the location of an IP address - City,
 State, Country, Longitude, Latitude, and other information as all, such as ISP
 and connection type. For more info, please visit Maxmind's website.
 
-WWW: http://pecl.php.net/package/geoip
+WWW: https://pecl.php.net/package/geoip
 WWW: http://www.maxmind.com/

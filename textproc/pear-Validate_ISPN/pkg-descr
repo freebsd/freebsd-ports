@@ -9,4 +9,4 @@ This class provides methods to validate:
 	- UCC-12 (U.P.C.) ID number
 	- SSCC (Serial Shipping Container Code)
 
-WWW: http://pear.php.net/package/Validate_ISPN
+WWW: https://pear.php.net/package/Validate_ISPN

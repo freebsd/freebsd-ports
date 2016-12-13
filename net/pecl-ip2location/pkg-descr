@@ -5,4 +5,4 @@ name, net speed, area code, weather station code, weather station name,
 mobile country code (MCC), mobile network code (MNC) and carrier brand,
 elevation, and usage type.
 
-WWW: http://pecl.php.net/package/ip2location
+WWW: https://pecl.php.net/package/ip2location

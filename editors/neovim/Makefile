@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	neovim
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -42,6 +42,6 @@ pre-build:
 		-I${LUA_INCDIR} -shared lmpack.c -o \
 		${BUILD_WRKSRC}/src/nvim/mpack.so \
 		${LUA_LIBDIR}/liblua-${LUA_VER}.so)
-	@${LN} -s ${BUILD_WRKSRC}/src/nvim/mpack.so ${BUILD_WRKSRC}/runtime/mpack.so 
+	@${LN} -s ${BUILD_WRKSRC}/src/nvim/mpack.so ${BUILD_WRKSRC}/runtime/mpack.so
 
 .include <bsd.port.mk>

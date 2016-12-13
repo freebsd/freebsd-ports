@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	EXAMPLES
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
 IGNORE_WITH_PHP=70
 USE_CSTD=	gnu89
-USE_PHP=	zlib:build session:build
+USE_PHP=	session:build zlib:build
 USES=		dos2unix php:ext tar:tgz
 
 post-install-EXAMPLES-on:

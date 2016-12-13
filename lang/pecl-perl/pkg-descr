@@ -2,4 +2,4 @@ This extension embeds Perl Interpreter into PHP.
 It allows execute Perl files, evaluate Perl code,
 access Perl variables and instantiate Perl objects.
 
-WWW: http://pecl.php.net/package/perl
+WWW: https://pecl.php.net/package/perl

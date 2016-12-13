@@ -12,7 +12,7 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python ssl
 USE_PYTHON=	distutils
 USE_RC_SUBR=	uwsgi
 
@@ -43,6 +43,8 @@ O_XML=		libxml2
 O_XML=		false
 .endif
 
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	${OPENSSL_LDFLAGS}
 MAKE_ENV+=	CPUCOUNT=${MAKE_JOBS_NUMBER} UWSGI_EMBED_PLUGINS=cgi
 
 PYSETUP=			uwsgiconfig.py

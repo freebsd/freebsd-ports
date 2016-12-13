@@ -6,4 +6,4 @@ It uses one of the following extensions for math calculations:
 - PHP GMP extension
 - PHP BCMath extension for both PHP4 and PHP5
 
-WWW: http://pear.php.net/package/Crypt_RSA/
+WWW: https://pear.php.net/package/Crypt_RSA

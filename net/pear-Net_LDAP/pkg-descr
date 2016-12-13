@@ -6,4 +6,4 @@ but has:
 * Simple modification, deletion and creation of ldapentries.
 * Support for schema handling.
 
-WWW: http://pear.php.net/package/Net_LDAP/
+WWW: https://pear.php.net/package/Net_LDAP

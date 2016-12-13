@@ -4,4 +4,4 @@ Creates an object hierarchy from a DNS server response, which allows you to
 view all of the information given by the DNS server. It bypasses the system
 resolver library and communicates directly with the server.
 
-WWW: http://pear.php.net/package/Net_DNS/
+WWW: https://pear.php.net/package/Net_DNS

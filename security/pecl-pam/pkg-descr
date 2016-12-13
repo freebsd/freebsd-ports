@@ -3,4 +3,4 @@ PAM is a system of libraries that handle the authentication tasks of
 applications and services. The library provides a stable API for
 applications to defer to for authentication tasks.
 
-WWW: http://pecl.php.net/package/PAM/
+WWW: https://pecl.php.net/package/PAM

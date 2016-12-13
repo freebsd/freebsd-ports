@@ -2,4 +2,4 @@ This stem extension for PHP provides stemming capability for a variety of
 languages using Dr. M.F. Porter's Snowball API, which can be found at:
 http://snowball.tartarus.org
 
-WWW: http://pecl.php.net/package/stem/
+WWW: https://pecl.php.net/package/stem

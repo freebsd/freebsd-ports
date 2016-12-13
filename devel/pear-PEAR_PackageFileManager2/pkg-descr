@@ -18,4 +18,4 @@ one that queries a Perforce repository.
 file from any directory.
 - can specify a different name for the package.xml file
 
-WWW: http://pear.php.net/package/PEAR_PackageFileManager2/
+WWW: https://pear.php.net/package/PEAR_PackageFileManager2

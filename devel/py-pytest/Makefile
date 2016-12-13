@@ -12,7 +12,7 @@ COMMENT=	Simple powerful testing with Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.4.29:devel/py-py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.4.29:devel/py${SLAVE_SUFFIX}-py
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis \
@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.13:devel/py-pytest-xdist
 
-USES=		python
+USES+=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -569,6 +569,7 @@ GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
 GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
 GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+_GH_TUPLE_OUT:=	${_GH_TUPLE_OUT} ${GH_ACCOUNT_${_group}}:${GH_PROJECT_${_group}}:${GH_TAGNAME_${_group}}:${_group}/${GH_SUBDIR_${_group}}
 DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
 DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
@@ -584,6 +585,8 @@ post-extract-gh-${_group}:
 .      endif
 .    endfor
 .  endif
+convert-to-gh-tuple:
+	@${ECHO_MSG} ${GH_ACCOUNT}:${GH_PROJECT}:${GH_TAGNAME} ${_GH_TUPLE_OUT:S/\/$//}
 .endif # defined(USE_GITHUB)
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 

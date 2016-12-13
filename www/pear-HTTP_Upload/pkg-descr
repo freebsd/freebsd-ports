@@ -8,4 +8,4 @@ from html forms. Features:
  * Validate allowed file extensions.
  * Multiple languages error messages support (es, en, de, fr, nl).
 
-WWW: http://pear.php.net/package/HTTP_Upload/
+WWW: https://pear.php.net/package/HTTP_Upload

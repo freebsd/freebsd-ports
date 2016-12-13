@@ -5,4 +5,4 @@ This release is (in most cases) 2x - 10x faster than Net_DNS, as well as
 includes more RR's (including DNSSEC RR's), and improved sockets and streams
 support.
 
-WWW: http://pear.php.net/package/Net_DNS2/
+WWW: https://pear.php.net/package/Net_DNS2

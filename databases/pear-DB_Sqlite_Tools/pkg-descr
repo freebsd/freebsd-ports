@@ -5,4 +5,4 @@ export in XML format, performance optmization and other functionalities like
 the insertion and retrieval of encrypted data from an Sqlite database without
 any external extension.
 
-WWW: http://pear.php.net/package/DB_Sqlite_Tools/
+WWW: https://pear.php.net/package/DB_Sqlite_Tools

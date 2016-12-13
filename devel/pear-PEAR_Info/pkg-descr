@@ -12,4 +12,4 @@ PEAR install.
 With a few parameters, the entire package.xml is automatically updated with a
 listing of all files in a package.
 
-WWW: http://pear.php.net/package/PEAR_Info/
+WWW: https://pear.php.net/package/PEAR_Info
