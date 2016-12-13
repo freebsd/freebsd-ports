@@ -52,6 +52,8 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--with-ufdb-dbhome=${DBDIR} \
 		--with-ufdb-images_dir=${EXAMPLESDIR}/images
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	UNIXSOCKETS
 OPTIONS_DEFAULT=	UNIXSOCKETS
 
