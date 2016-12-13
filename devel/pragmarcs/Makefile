@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pragmarcs
-PORTVERSION=	20160904
+PORTVERSION=	20161207
 CATEGORIES=	devel
 
 MAINTAINER=	marino@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		ada
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrcarter
 GH_PROJECT=	PragmARC
-GH_TAGNAME=	7dae727
+GH_TAGNAME=	1378e7a
 
 post-extract:
 	@${CP} ${FILESDIR}/buildlib.gpr ${WRKSRC}/

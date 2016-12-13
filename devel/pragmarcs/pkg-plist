@@ -85,8 +85,12 @@ include/pragmarcs/pragmarc-queue_unbounded_unprotected.adb
 include/pragmarcs/pragmarc-queue_unbounded_unprotected.ads
 include/pragmarcs/pragmarc-quick_searcher.adb
 include/pragmarcs/pragmarc-quick_searcher.ads
+include/pragmarcs/pragmarc-random_ranges.adb
+include/pragmarcs/pragmarc-random_ranges.ads
 include/pragmarcs/pragmarc-rational_numbers.adb
 include/pragmarcs/pragmarc-rational_numbers.ads
+include/pragmarcs/pragmarc-real_random_ranges.adb
+include/pragmarcs/pragmarc-real_random_ranges.ads
 include/pragmarcs/pragmarc-real_random_values.adb
 include/pragmarcs/pragmarc-real_random_values.ads
 include/pragmarcs/pragmarc-reflection.ads
@@ -186,7 +190,9 @@ lib/pragmarcs/pragmarc-queue_unbounded.ali
 lib/pragmarcs/pragmarc-queue_unbounded_blocking.ali
 lib/pragmarcs/pragmarc-queue_unbounded_unprotected.ali
 lib/pragmarcs/pragmarc-quick_searcher.ali
+lib/pragmarcs/pragmarc-random_ranges.ali
 lib/pragmarcs/pragmarc-rational_numbers.ali
+lib/pragmarcs/pragmarc-real_random_ranges.ali
 lib/pragmarcs/pragmarc-real_random_values.ali
 lib/pragmarcs/pragmarc-reflection.ali
 lib/pragmarcs/pragmarc-regular_expression_matcher.ali

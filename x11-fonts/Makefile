@@ -37,6 +37,7 @@
     SUBDIR += doulos-compact
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
+    SUBDIR += emojione-color-font-ttf
     SUBDIR += encodings
     SUBDIR += exo
     SUBDIR += fantasque-sans-mono

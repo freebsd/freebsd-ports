@@ -1,0 +1,9 @@
+A color and B&W emoji SVGinOT font built from EmojiOne artwork with support for
+ZWJ, skin tone diversity and country flags.
+
+The font works in all operating systems, but will currently only show color
+emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
+is not a limitation of the font, but of the operating systems and applications.
+Regular B&W outline emoji are included for backwards/fallback compatibility.
+
+WWW: https://github.com/eosrei/emojione-color-font

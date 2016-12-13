@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Authen-Radius
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,18 +23,7 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-RADDBFILES=	dictionary \
-		dictionary.ascend \
-		dictionary.cisco \
-		dictionary.compat \
-		dictionary.livingston \
-		dictionary.quintum \
-		dictionary.rfc2869 \
-		dictionary.shiva \
-		dictionary.tunnel \
-		dictionary.usr \
-		dictionary.versanet \
-		dictionary.xtradius
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/raddb|${DATADIR}|' ${WRKSRC}/Radius.pm
@@ -42,6 +31,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/raddb/ && ${INSTALL_DATA} ${RADDBFILES} ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

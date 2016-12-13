@@ -3,7 +3,7 @@
 
 PORTNAME=	childsplay
 PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3 # only
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
 
 NO_BUILD=	yes
