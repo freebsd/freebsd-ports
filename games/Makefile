@@ -32,6 +32,8 @@
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
     SUBDIR += alex4
+    SUBDIR += alienarena
+    SUBDIR += alienarena-data
     SUBDIR += alienblaster
     SUBDIR += alienwave
     SUBDIR += allacrost
