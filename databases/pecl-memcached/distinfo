@@ -1,2 +1,5 @@
-SHA256 (PECL/memcached-2.2.0.tgz) = 17b9600f6d4c807f23a3f5c45fcd8775ca2e61d6eda70370af2bef4c6e159f58
-SIZE (PECL/memcached-2.2.0.tgz) = 70449
+TIMESTAMP = 1481736896
+SHA256 (php-memcached-dev-php-memcached-2.2.0_GH0.tar.gz) = 7248ac9eefedd8ed6babb68da66d58c2a769e9d12380ab9409246cdd7478c00d
+SIZE (php-memcached-dev-php-memcached-2.2.0_GH0.tar.gz) = 79278
+SHA256 (php-memcached-dev-php-memcached-e65be32_GH0.tar.gz) = 36855bf3dd2ccd57cff9d5351c66b4c92985e54b8003c8343a1cd05bf0d6960a
+SIZE (php-memcached-dev-php-memcached-e65be32_GH0.tar.gz) = 82057
