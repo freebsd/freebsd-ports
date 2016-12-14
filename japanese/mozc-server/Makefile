@@ -5,12 +5,6 @@ PORTNAME=	mozc
 PORTVERSION=	2.17.2322.102
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	https://codeload.github.com/google/${PORTNAME}/tar.gz/9b4c9e0?dummy=/:main \
-		https://codeload.github.com/hiroyuki-komatsu/japanese-usage-dictionary/tar.gz/e5b3425?dummy=/:udic
-DISTFILES=	google-${PORTNAME}-9b4c9e0_GH0.tar.gz:main \
-		hiroyuki-komatsu-japanese-usage-dictionary-e5b3425.tar.gz:udic
-EXTRACT_ONLY=	google-${PORTNAME}-9b4c9e0_GH0.tar.gz \
-		hiroyuki-komatsu-japanese-usage-dictionary-e5b3425.tar.gz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
@@ -25,9 +19,12 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
+USE_GITHUB=	yes
+GH_TUPLE=	google:${PORTNAME}:9b4c9e0 \
+		hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
+
 USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
 		tar:bzip2 python:2.7,build shebangfix
-WRKSRC=		${WRKDIR}/${PORTNAME}-9b4c9e0
 SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -153,7 +150,7 @@ post-extract-mozc_server:
 	    ${PYTHON_CMD} ${BUILD_WRKSRC}/dictionary/gen_zip_code_seed.py \
 	    --zip_code=ken_all.csv --jigyosyo=jigyosyo.csv \
 	    >> dictionary09.txt
-	${MV} ${WRKDIR}/japanese-usage-dictionary-e5b3425/usage_dict.txt \
+	${MV} ${WRKSRC_udic}/usage_dict.txt \
 	    ${BUILD_WRKSRC}/third_party/japanese_usage_dictionary
 
 post-extract: post-extract-mozc_server
@@ -259,14 +256,7 @@ do-install-ibus_mozc:
 
 # uim_mozc
 .if ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc" || make(makesum)
-#USE_GITHUB=	yes	# XXX
-GH_ACCOUNT=	e-kato
-GH_PROJECT=	macuim
-GH_TAGNAME=	v0.6.16.2.1
-DISTFILES+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}:gh_uim
-EXTRACT_ONLY+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
-MASTER_SITES+=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/:gh_uim
-WRKSRC_MU=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+GH_TUPLE+=	e-kato:macuim:v0.6.16.2.1:MU
 
 LIB_DEPENDS+=	libuim.so:textproc/uim
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
