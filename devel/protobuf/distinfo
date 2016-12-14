@@ -1,2 +1,3 @@
-SHA256 (google-protobuf-v2.6.1_GH0.tar.gz) = 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1
-SIZE (google-protobuf-v2.6.1_GH0.tar.gz) = 1349051
+TIMESTAMP = 1481285848
+SHA256 (google-protobuf-v3.1.0_GH0.tar.gz) = 0a0ae63cbffc274efb573bdde9a253e3f32e458c41261df51c5dbc5ad541e8f7
+SIZE (google-protobuf-v3.1.0_GH0.tar.gz) = 4051503
