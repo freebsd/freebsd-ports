@@ -3,7 +3,7 @@
 
 PORTNAME=	kannel
 PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
@@ -17,26 +17,20 @@ LICENSE_NAME=	The Kannel Software License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-PORTSCOUT=	skipv:1.5.0
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
+
+PORTSCOUT=	skipv:1.5.0
 
 USERS=		kannel
 GROUPS=		kannel
 
-USES=		tar:bzip2 gmake bison
+USES=		bison gmake iconv ssl tar:bzip2
 USE_GCC=	yes
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}_bearerbox ${PORTNAME}_smsbox ${PORTNAME}_wapbox
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
-		--enable-pcre=yes --enable-docs=no --with-malloc=native \
-		--enable-start-stop-daemon=no --without-sdb --without-oracle \
-		--without-sqlite2
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+CONFIGURE_ARGS=	--enable-pcre=yes --enable-docs=no --with-malloc=native \
+		--enable-start-stop-daemon=no
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 OPTIONS_DEFAULT=	MYSQL
@@ -44,7 +38,7 @@ OPTIONS_DEFAULT=	MYSQL
 SQLITE3_USES=	sqlite:3
 SQLITE3_CONFIGURE_WITH=	sqlite3
 
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
 
 PGSQL_USES=	pgsql
