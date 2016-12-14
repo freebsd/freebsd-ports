@@ -8,7 +8,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-REL
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Comprehensive newsfeeding and newsreading software package
 
 LICENSE=	BSD3CLAUSE

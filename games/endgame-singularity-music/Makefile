@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 PROJECTHOST=	endgame-singularity
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
 LICENSE=	CC-BY-SA-3.0

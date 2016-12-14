@@ -8,7 +8,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 PKGNAMEPREFIX=	endgame-
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Simulates the life of a true AI
 
 LICENSE=	GPLv2
