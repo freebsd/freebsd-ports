@@ -2,8 +2,7 @@
 
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.4
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -12,12 +11,13 @@ COMMENT=	Next generation web interface for Icinga 1 and 2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/share/ZendFramework/bin/classmap_generator.php:www/zend-framework
+RUN_DEPENDS=	zf:www/zend-framework1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USES=		php:build
 USE_PHP=	ctype dom gd gettext hash json openssl session sockets
