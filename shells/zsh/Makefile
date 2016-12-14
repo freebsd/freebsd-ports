@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.2
-PORTREVISION=	4
+DISTVERSION=	5.3
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF \

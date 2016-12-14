@@ -1,11 +1,11 @@
---- Completion/Unix/Command/_sysctl.orig	2015-11-29 21:46:55 UTC
+--- Completion/Unix/Command/_sysctl.orig	2016-07-24 19:44:43 UTC
 +++ Completion/Unix/Command/_sysctl
-@@ -1,7 +1,7 @@
- #compdef sysctl
- 
- case $OSTYPE in
+@@ -13,7 +13,7 @@ case $OSTYPE in
+   dragonfly*|freebsd<8->.*)
+     args+=( "-i[silently exit if variable doesn't exist]" )
+   ;|
 -  *freebsd<5->.*|freebsd4.[4-9]*)
-+  *freebsd<5->.*|freebsd4.[4-9]*|*freebsd[0-9][0-9].*)
++  *freebsd<5->.*|freebsd4.[4-9]*|freebsd<10->.*)
      local -a sysctlvars
      sysctlvars=( $(_call_program sysctl-variables sysctl -aN) )
-     _arguments -s -A "-*" \
+     _arguments -s -S -A "-*" $args \
