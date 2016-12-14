@@ -79,7 +79,7 @@ ALL_CORES+=	libretro:yabause:yabause:b121882:x
 USE_GITHUB=	nodefault
 
 # variables that depend on ALL_CORES
-GH_TUPLE=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1:\2:\4:\3,}
+GH_TUPLE=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1:\2:\4:\3/\2,}
 CORE_DIRS=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}
 
 #PLIST_FILES+=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),libexec/libretro/\3_libretro.so,}
@@ -107,12 +107,6 @@ DOS2UNIX_FILES=	hatari/Makefile.libretro
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_CXXSTD=	gnu++11
 .endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
-.for dir in ${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2:\3,}
-	@${MV} ${WRKSRC_${dir:C/^([^:]*):([^:]*)/\2/}} ${WRKSRC}/${dir:C/^([^:]*):([^:]*)/\1/}
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/"__VA_ARGS__/" __VA_ARGS__/' \

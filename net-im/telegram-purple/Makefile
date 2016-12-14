@@ -30,15 +30,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	majn:DEFAULT,tgl vysheng:tlparser
 GH_PROJECT=	tgl:tgl tl-parser:tlparser
 GH_TAGNAME?=	624cf5a:tgl 36bf190:tlparser
+GH_SUBDIR=	tgl:tgl tgl/tl-parser:tlparser
 
 BROKEN_sparc64=	cannot compile: assertion fails
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/etc/telegram-purple/server.tglpub|${PREFIX}/etc/telegram-purple/server.tglpub|g' \
 		 ${WRKSRC}/telegram-purple.c
-
-post-extract:
-	@${MV} ${WRKSRC_tgl}/* ${WRKSRC}/tgl
-	@${MV} ${WRKSRC_tlparser}/* ${WRKSRC}/tgl/tl-parser
 
 .include <bsd.port.mk>

@@ -67,7 +67,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 CONFLICTS_BUILD=compat9x
 
 USE_GITHUB=	yes
-GH_TUPLE=	xbmc:xbmc:c327c53 xbmc:FFmpeg:2.8.6-Jarvis-16.0:ffmpeg
+GH_TUPLE=	xbmc:xbmc:c327c53 \
+		xbmc:FFmpeg:2.8.6-Jarvis-16.0:ffmpeg/tools/depends/target/ffmpeg
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:2 ssl
@@ -153,9 +154,6 @@ SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-texturepacker
-
-post-extract:
-	${MV} ${WRKSRC_ffmpeg} ${WRKSRC}/tools/depends/target/ffmpeg/
 
 post-patch:
 	${REINPLACE_CMD} 's;make;gmake;' \

@@ -118,14 +118,13 @@ label=		${dep:C,^.*:,,}
 GH_ACCOUNT:=	${GH_ACCOUNT} ${account}:${label}
 GH_PROJECT:=	${GH_PROJECT} ${project}:${label}
 GH_TAGNAME:=	${GH_TAGNAME} ${tagname}:${label}
+GH_SUBDIR:=	${GH_SUBDIR} deps/${label}:${label}
 .endfor
 
 post-extract:
 .for dep in ${LEOFS_DEPS}
 .for tagname in ${dep:C,^[^=]+=([^\?]+)\?.*$,\1,}
 .for label in ${dep:C,^.*:,,}
-	@${MKDIR} ${WRKSRC}/deps
-	@${MV} ${WRKSRC_${label}} ${WRKSRC}/deps/${label}
 	@if [ -f "${WRKSRC}/deps/${label}/src/${label}.app.src" ]; then \
 	    ${REINPLACE_CMD} -e "s|{vsn, *git}|{vsn, \"${tagname}\"}|" \
 		"${WRKSRC}/deps/${label}/src/${label}.app.src"; \
