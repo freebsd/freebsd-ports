@@ -2,6 +2,7 @@
 
 PORTNAME=	zbackup
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/zbackup/zbackup/archive/
 DISTNAME=	${PORTVERSION}
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		liblzo2.so:archivers/lzo2
 
-USES=		alias cmake
+USES=		alias cmake ssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -22,6 +23,9 @@ OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/zbackup
 PORTDOCS=	README.md
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| CHECK(| ZBACKUP_CHECK(|' ${WRKSRC}/*.cc ${WRKSRC}/*.hh ${WRKSRC}/tests/*/*.cc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
