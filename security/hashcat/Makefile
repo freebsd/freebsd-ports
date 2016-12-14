@@ -6,7 +6,7 @@ PORTVERSION=	3.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
 
 LICENSE=	MIT

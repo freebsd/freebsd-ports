@@ -6,7 +6,7 @@ PORTVERSION=	2.00
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
 
 LICENSE=	MIT
