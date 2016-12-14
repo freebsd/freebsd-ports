@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-PORTVERSION=	45.5.1
+PORTVERSION=	45.6.0
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}esr/linux-i686/xpi \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}esr-candidates/build1/linux-i686/xpi
