@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	2.6.1
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ COMMENT=	Google protobuf Python Client Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-apputils>=0:devel/py-google-apputils \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six \
 		protoc:devel/protobuf
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-apputils>=0:devel/py-google-apputils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six
 
 DO_MAKE_TEST=	${PYTHON_CMD} ${PYDISTUTILS_SETUP}
 NO_ARCH=	yes
