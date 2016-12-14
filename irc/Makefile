@@ -29,6 +29,7 @@
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
     SUBDIR += hexchat
+    SUBDIR += hexchat-fish
     SUBDIR += hybserv
     SUBDIR += icbirc
     SUBDIR += ii
