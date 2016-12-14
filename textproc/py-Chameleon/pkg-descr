@@ -6,4 +6,4 @@ HTML markup or XML. The language used is page templates, originally a Zope
 invention, but available here as a standalone library that you can use in any
 script or application running Python.
 
-WWW: http://www.pagetemplates.org/
+WWW: https://github.com/malthe/chameleon
