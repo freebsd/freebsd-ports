@@ -470,3 +470,4 @@ GNUstep/Local/Tools/wod
 GNUstep/System/Library/Makefiles/Additional/ngobjweb.make
 GNUstep/System/Library/Makefiles/woapp.make
 GNUstep/System/Library/Makefiles/wobundle.make
+libdata/ldconfig/sope2
