@@ -1,6 +1,6 @@
---- cmd/Makefile..orig
+--- cmd/Makefile.orig	2010-06-10 07:24:01 UTC
 +++ cmd/Makefile
-@@ -20,14 +20,14 @@
+@@ -20,14 +20,14 @@ CFLAGS += $(INCX11)
  include $(ROOT)/mk/many.mk
  include $(ROOT)/mk/dir.mk
  
