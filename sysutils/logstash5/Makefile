@@ -56,6 +56,6 @@ do-install:
 .for x in ${LOGSTASH_JRUBY_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_JRUBY_SUBDIR}/${x}
 .endfor
-	find ${STAGEDIR}${LOGSTASH_DIR}/vendor -type d -name bin | xargs find | xargs ${CHMOD} ${BINMODE}
+	find ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_VENDOR_SUBDIR} -type d -name bin | xargs find | xargs ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>
