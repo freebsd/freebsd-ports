@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://hyperelliptic.org/nacl/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High speed cryptography library
 
 LICENSE=	PD

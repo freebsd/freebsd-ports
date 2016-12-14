@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx

@@ -9,7 +9,7 @@ MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
 DISTNAME=	${PORTNAME}-${COQVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 LICENSE=	LGPL21

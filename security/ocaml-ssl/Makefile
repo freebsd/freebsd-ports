@@ -6,7 +6,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	security devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
 
 USE_GITHUB=	yes

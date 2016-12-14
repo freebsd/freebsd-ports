@@ -8,7 +8,7 @@ MASTER_SITES=	GNU \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/:liu
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-level cryptographic library
 
 LICENSE=	LGPL3 GPLv2+
