@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap48/tar.bz2/ \
 		ftp://ftp.gap-system.org/pub/gap/gap48/old/
 DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
 
 LIB_DEPENDS=	libgmp.so:math/gmp

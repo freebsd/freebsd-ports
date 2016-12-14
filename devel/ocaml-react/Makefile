@@ -8,7 +8,7 @@ MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml module for functional reactive programming
 
 LICENSE=	BSD3CLAUSE

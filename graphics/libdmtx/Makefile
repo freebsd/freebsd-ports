@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing Data Matrix barcodes
 
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick

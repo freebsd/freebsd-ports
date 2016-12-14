@@ -4,7 +4,7 @@ PORTNAME=	editline
 PORTVERSION=	1.15.2
 CATEGORIES=	devel
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minix editline: A free readline() for UNIX
 
 LICENSE=	BSD4CLAUSE

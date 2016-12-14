@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library implementing the OAuth Core standard
 
 LIB_DEPENDS=	libcurl.so:ftp/curl

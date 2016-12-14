@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PKGBASE}
 
 PATCH_SITES=	${MASTER_SITES}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
 
 LICENSE=	INRIA

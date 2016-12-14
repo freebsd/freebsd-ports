@@ -10,7 +10,7 @@ MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
 DISTNAME=	Pike-v${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic programming language with a syntax similar to C++
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
