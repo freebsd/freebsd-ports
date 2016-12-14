@@ -5,7 +5,7 @@ PORTNAME=	winetricks
 PORTVERSION=	20161012
 CATEGORIES=	emulators
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Easy way to work around problems in Wine
 
 LICENSE=	LGPL21

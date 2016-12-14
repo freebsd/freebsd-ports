@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	cowsay-
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
 
 LICENSE=	GPLv3+

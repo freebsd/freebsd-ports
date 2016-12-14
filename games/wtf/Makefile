@@ -6,7 +6,7 @@ PORTVERSION=	20161126
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 LICENSE=	PD

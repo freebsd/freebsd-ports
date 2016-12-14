@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://constexpr.org/innoextract/files/
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Program to extract Inno Setup files
 
 LICENSE=	ZLIB

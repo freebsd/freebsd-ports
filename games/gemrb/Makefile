@@ -6,7 +6,7 @@ PORTVERSION=	0.8.4
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION:.1=}%20Sources
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	GemRB (Game engine made with preRendered Background)
 
 LICENSE=	GPLv2+
