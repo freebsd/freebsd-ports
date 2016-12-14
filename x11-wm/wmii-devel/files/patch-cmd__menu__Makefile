@@ -1,6 +1,6 @@
---- cmd/menu/Makefile.orig
+--- cmd/menu/Makefile.orig	2010-06-10 07:24:01 UTC
 +++ cmd/menu/Makefile
-@@ -14,8 +14,8 @@
+@@ -14,8 +14,8 @@ HFILES=	dat.h fns.h
  
  PACKAGES += $(X11PACKAGES) xext xrandr xrender xinerama
  
