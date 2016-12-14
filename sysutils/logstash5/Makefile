@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	2.3.2
+PORTVERSION=	5.1.1
 CATEGORIES=	sysutils java
-MASTER_SITES=	http://download.elastic.co/logstash/logstash/
+MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 
-MAINTAINER=	enrico.m.crisostomo@gmail.com
-COMMENT=	Tool for managing events and logs
+MAINTAINER=	tj@FreeBSD.org
+COMMENT=	Server-side data ingest and transfomation tool
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-CONFLICTS=	logstash5-[0-9]*
+CONFLICTS=	logstash-[12]*
 
 USES=		cpe
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 NO_BUILD=	yes
@@ -34,10 +34,14 @@ LOGSTASH_DATA_DIR?=	/var/db/${PORTNAME}
 SUB_LIST=	LOGSTASH_DATA_DIR=${LOGSTASH_DATA_DIR} JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
-LOGSTASH_BIN_FILES=	  logstash
+LOGSTASH_BIN_FILES=	  cpdump \
+					  logstash \
+					  logstash-plugin \
+					  system-install
 LOGSTASH_JRUBY_SUBDIR=	  vendor/jruby/bin
 LOGSTASH_JRUBY_BIN_FILES=	ast irb jirb jruby jruby.sh rdoc testrb gem \
 				jgem jirb_swing jruby.bash jrubyc rake ri
+LOGSTASH_VENDOR_SUBDIR=	vendor
 
 do-install:
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
@@ -52,5 +56,6 @@ do-install:
 .for x in ${LOGSTASH_JRUBY_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_JRUBY_SUBDIR}/${x}
 .endfor
+	find ${STAGEDIR}${LOGSTASH_DIR}/vendor -type d -name bin | xargs find | xargs ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>
