@@ -19,7 +19,7 @@ USE_SDL=	image mixer ttf
 MAKEFILE=	Makefile.Linux
 ALL_TARGET=	ALL
 MAKE_ARGS=	RM="${RM}"
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed # limit jpeg to bin/*conv
 PORTDOCS=	*
 PLIST_FILES?=	bin/nsaconv \
 		bin/nsadec \
