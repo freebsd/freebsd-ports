@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
 LIB_DEPENDS=	libpopt.so:devel/popt \

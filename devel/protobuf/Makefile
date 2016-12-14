@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	2.6.1
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,6 +11,8 @@ COMMENT=	Data interchange format library
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_sparc64=	fails to compile: no atomic ops available
 
 CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI
 GNU_CONFIGURE=	yes
@@ -22,7 +24,5 @@ USES=		autoreconf gmake libtool pathfix pkgconfig
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
-
-BROKEN_sparc64=	fails to compile: no atomic ops available
 
 .include <bsd.port.mk>

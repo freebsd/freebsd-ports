@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU m4
 
 USES=		makeinfo tar:bzip2

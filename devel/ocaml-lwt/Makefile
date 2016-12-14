@@ -6,7 +6,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cooperative threading library for OCaml
 
 LICENSE=	LGPL21

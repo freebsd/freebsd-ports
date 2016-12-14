@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU portability library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo

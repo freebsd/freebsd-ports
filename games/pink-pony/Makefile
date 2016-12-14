@@ -3,6 +3,7 @@
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -48,9 +48,11 @@ LDFLAGS+=	-fstack-protector
 LIBS+=		-lssp_nonshared
 . endif
 
+# Don't use COPYTREE_SHARE here as it hard links files, and the original files
+# are owned by root, which creates problems of its own.
 pre-configure:
-	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${LOCALBASE} \
-	    && ${COPYTREE_SHARE} . ${WRKDIR}/libressl "! -name *.so*"
+	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
+	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	20130510
 CATEGORIES=	net
 #MASTER_SITES=	http://www.cs.vu.nl/pub/leendert/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland NFS command tool
 
 USE_GITHUB=	yes

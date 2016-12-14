@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library for dealing with text
 
 USE_GITHUB=	yes
