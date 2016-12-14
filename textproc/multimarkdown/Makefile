@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fletcher:DEFAULT nddrylliog:greg
 GH_PROJECT=	MultiMarkdown-4 greg:greg
 GH_TAGNAME=	98ecf13:greg
+GH_SUBDIR=	greg:greg
 
 ALL_TARGET=	${PORTNAME}
 USES=		gmake
@@ -27,24 +28,14 @@ HELPERS_DESC=		Helper scripts (conflicts with emulators/mtools)
 
 CHEAT_SHEET_GH_PROJECT=	human-markdown-reference:cheat
 CHEAT_SHEET_GH_TAGNAME=	199dae8:cheat
+CHEAT_SHEET_GH_SUBDIR=	cheat-sheet:cheat
 EXTRAS_GH_PROJECT=	MMD-Support:support
 EXTRAS_GH_TAGNAME=	685c95c:support
+EXTRAS_GH_SUBDIR=	Support:support
 
 HELPERS_CONFLICTS_INSTALL=	mtools-*
 
 OPTIONS_SUB=	yes
-
-post-extract:
-	@${RMDIR} ${WRKSRC}/greg
-	@${MV} ${WRKSRC_greg} ${WRKSRC}/greg
-
-post-extract-CHEAT_SHEET-on:
-	@${RMDIR} ${WRKSRC}/cheat-sheet
-	@${MV} ${WRKSRC_cheat} ${WRKSRC}/cheat-sheet
-
-post-extract-EXTRAS-on:
-	@${RMDIR} ${WRKSRC}/Support
-	@${MV} ${WRKSRC_support} ${WRKSRC}/Support
 
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CFLAGS).+=/\1 \+=/" ${WRKSRC}/Makefile ${WRKSRC}/greg/Makefile

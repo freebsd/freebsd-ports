@@ -1,5 +1,4 @@
 etc/bash_completion.d/icinga2
-%%EXAMPLESDIR%%/newsyslog/icinga2
 @sample %%ETCDIR%%/conf.d/app.conf.sample
 @sample %%ETCDIR%%/conf.d/commands.conf.sample
 @sample %%ETCDIR%%/conf.d/downtimes.conf.sample
@@ -39,24 +38,41 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/scripts/mail-service-notification.sh.sample
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
-lib/icinga2/sbin/icinga2
 lib/icinga2/libbase.so
+lib/icinga2/libbase.so.2.6.0
 lib/icinga2/libchecker.so
+lib/icinga2/libchecker.so.2.6.0
 lib/icinga2/libcli.so
+lib/icinga2/libcli.so.2.6.0
 lib/icinga2/libcompat.so
+lib/icinga2/libcompat.so.2.6.0
 lib/icinga2/libconfig.so
+lib/icinga2/libconfig.so.2.6.0
 %%DBBACKEND%%lib/icinga2/libdb_ido.so
+%%DBBACKEND%%lib/icinga2/libdb_ido.so.2.6.0
 %%MYSQL%%lib/icinga2/libdb_ido_mysql.so
+%%MYSQL%%lib/icinga2/libdb_ido_mysql.so.2.6.0
 %%PGSQL%%lib/icinga2/libdb_ido_pgsql.so
+%%PGSQL%%lib/icinga2/libdb_ido_pgsql.so.2.6.0
 lib/icinga2/libexecvpe.so
+lib/icinga2/libexecvpe.so.2.6.0
 lib/icinga2/libicinga.so
+lib/icinga2/libicinga.so.2.6.0
 lib/icinga2/liblivestatus.so
+lib/icinga2/liblivestatus.so.2.6.0
 lib/icinga2/libmethods.so
+lib/icinga2/libmethods.so.2.6.0
 lib/icinga2/libmmatch.so
+lib/icinga2/libmmatch.so.2.6.0
 lib/icinga2/libnotification.so
+lib/icinga2/libnotification.so.2.6.0
 lib/icinga2/libperfdata.so
+lib/icinga2/libperfdata.so.2.6.0
 lib/icinga2/libremote.so
+lib/icinga2/libremote.so.2.6.0
 lib/icinga2/libsocketpair.so
+lib/icinga2/libsocketpair.so.2.6.0
+lib/icinga2/sbin/icinga2
 man/man8/icinga2.8.gz
 sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -88,6 +104,7 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/markdown/7-agent-based-monitoring.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/8-advanced-topics.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/9-object-types.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsyslog/icinga2
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/mysql.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
@@ -95,6 +112,7 @@ sbin/icinga2
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.3.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.5.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.6.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/pgsql.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
@@ -102,12 +120,12 @@ sbin/icinga2
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.5.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.6.0.sql
 %%DATADIR%%/include/command-icinga.conf
 %%DATADIR%%/include/command-nscp-local.conf
 %%DATADIR%%/include/command-plugins-manubulon.conf
 %%DATADIR%%/include/command-plugins-windows.conf
 %%DATADIR%%/include/command-plugins.conf
-%%DATADIR%%/include/command.conf
 %%DATADIR%%/include/hangman
 %%DATADIR%%/include/itl
 %%DATADIR%%/include/manubulon
@@ -118,10 +136,12 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/hardware.conf
 %%DATADIR%%/include/plugins-contrib.d/icingacli.conf
 %%DATADIR%%/include/plugins-contrib.d/ipmi.conf
+%%DATADIR%%/include/plugins-contrib.d/logmanagement.conf
 %%DATADIR%%/include/plugins-contrib.d/metrics.conf
 %%DATADIR%%/include/plugins-contrib.d/network-components.conf
 %%DATADIR%%/include/plugins-contrib.d/network-services.conf
 %%DATADIR%%/include/plugins-contrib.d/operating-system.conf
+%%DATADIR%%/include/plugins-contrib.d/storage.conf
 %%DATADIR%%/include/plugins-contrib.d/virtualization.conf
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
 %%DATADIR%%/include/plugins-contrib.d/web.conf
