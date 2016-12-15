@@ -223,6 +223,7 @@ _pkcs11:*:602:
 freeswitch:*:610:
 caldavd:*:639:
 monkeysphere:*:641:
+logstash:*:651:
 aox:*:666:
 riak:*:667:
 bnetd:*:700:

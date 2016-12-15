@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-CONFLICTS=	logstash-[12]*
+CONFLICTS=	logstash-[0-9]
 
 USES=		cpe
 CPE_VENDOR=	elasticsearch
@@ -23,6 +23,15 @@ JAVA_VERSION=	1.8+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 NO_BUILD=	yes
+
+USERS=	logstash
+GROUPS=	logstash
+PLIST_SUB=	FIND=${FIND} \
+			XARGS=${XARGS} \
+			CHMOD=${CHMOD} \
+			CHOWN=${CHOWN} \
+			USERS=${USERS} \
+			GROUPS=${GROUPS}
 
 LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
 
@@ -51,6 +60,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LOGSTASH_DATA_DIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_DIR})
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/log4j2.properties ${STAGEDIR}${ETCDIR}/log4j2.properties.sample
+	${INSTALL_DATA} ${WRKSRC}/config/jvm.options ${STAGEDIR}${ETCDIR}/jvm.options.sample
 .for x in ${LOGSTASH_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/bin/${x}
 .endfor

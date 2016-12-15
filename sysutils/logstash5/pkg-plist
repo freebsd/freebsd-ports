@@ -1,15 +1,20 @@
 @sample %%ETCDIR%%/logstash.conf.sample
+@sample %%ETCDIR%%/log4j2.properties.sample
+@sample %%ETCDIR%%/jvm.options.sample
+@mode 644
 logstash/CHANGELOG.md
 logstash/CONTRIBUTORS
 logstash/Gemfile
 logstash/Gemfile.jruby-1.9.lock
 logstash/LICENSE
 logstash/NOTICE.TXT
+@mode 755
 logstash/bin/cpdump
 logstash/bin/logstash
 logstash/bin/logstash-plugin
 logstash/bin/logstash.lib.sh
 logstash/bin/system-install
+@mode 644
 logstash/config/jvm.options
 logstash/config/log4j2.properties
 logstash/config/logstash.yml
@@ -9498,6 +9503,7 @@ logstash/vendor/bundle/ruby/2.3.0/gems/minitar-0.5.4/tests/testall.rb
 logstash/vendor/bundle/ruby/2.3.0/specifications/minitar-0.5.4.gemspec
 logstash/vendor/jruby/COPYING
 logstash/vendor/jruby/LICENSE.RUBY
+@mode 755
 logstash/vendor/jruby/bin/ast
 logstash/vendor/jruby/bin/gem
 logstash/vendor/jruby/bin/irb
@@ -9515,6 +9521,7 @@ logstash/vendor/jruby/bin/rake
 logstash/vendor/jruby/bin/rdoc
 logstash/vendor/jruby/bin/ri
 logstash/vendor/jruby/bin/testrb
+@mode 644
 logstash/vendor/jruby/docs/CodeConventions.txt
 logstash/vendor/jruby/docs/LICENCE.bsf
 logstash/vendor/jruby/docs/LICENSE.ant
@@ -10528,16 +10535,7 @@ logstash/vendor/jruby/tool/nailgun/README.txt
 logstash/vendor/jruby/tool/nailgun/configure
 logstash/vendor/jruby/tool/nailgun/ng.exe
 logstash/vendor/jruby/tool/nailgun/src/c/ng.c
-@dir /var/db/logstash
-@dir /var/run/logstash
-@dir logstash/data
-@dir logstash/vendor/bundle/jruby/1.9/build_info
-@dir logstash/vendor/bundle/jruby/1.9/cache
-@dir logstash/vendor/bundle/jruby/1.9/doc
-@dir logstash/vendor/bundle/jruby/1.9/extensions
-@dir logstash/vendor/bundle/jruby/1.9/gems/manticore-0.6.0-java/spec/ssl
-@dir logstash/vendor/bundle/jruby/1.9/gems/redis-3.3.2/test/db
-@dir logstash/vendor/bundle/ruby/2.3.0/build_info
-@dir logstash/vendor/bundle/ruby/2.3.0/cache
-@dir logstash/vendor/bundle/ruby/2.3.0/doc
-@dir logstash/vendor/bundle/ruby/2.3.0/extensions
+@mode
+@dir(%%USERS%%,%%GROUPS%%,755) /var/db/logstash
+@postexec %%CHOWN%% -R %%USERS%%:%%GROUPS%% %D/logstash
+@postexec %%FIND%% %D/logstash/vendor -type d -name bin | %%XARGS%% %%FIND%% | %%XARGS%% %%CHMOD%% 755
