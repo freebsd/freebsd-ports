@@ -38,11 +38,11 @@ include/qbs/use_installed_corelib.pri
 include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.so
 lib/libqbscore.so.1
-lib/libqbscore.so.1.6
+lib/libqbscore.so.1.7
 lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/libqbsqtprofilesetup.so
 lib/libqbsqtprofilesetup.so.1
-lib/libqbsqtprofilesetup.so.1.6
+lib/libqbsqtprofilesetup.so.1.7
 lib/libqbsqtprofilesetup.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libqbs_cpp_scanner.so
 lib/qbs/plugins/libqbs_qt_scanner.so
@@ -80,6 +80,8 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/images/ico_out.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/innosetup-item.html
+%%PORTDOCS%%%%DOCSDIR%%/html/innosetup-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/installing-files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/installpackage-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/java-module.html
@@ -97,7 +99,9 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/language-introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lex-yacc-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/list-of-builtin-services.html
+%%PORTDOCS%%%%DOCSDIR%%/html/list-of-convenience-items.html
 %%PORTDOCS%%%%DOCSDIR%%/html/list-of-items.html
+%%PORTDOCS%%%%DOCSDIR%%/html/list-of-language-items.html
 %%PORTDOCS%%%%DOCSDIR%%/html/list-of-modules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/list-of-tools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/loadablemodule-item.html
@@ -125,8 +129,8 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/shell.html
 %%PORTDOCS%%%%DOCSDIR%%/html/staticlibrary-item.html
-%%PORTDOCS%%%%DOCSDIR%%/html/style/offline.css
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline-simple.css
+%%PORTDOCS%%%%DOCSDIR%%/html/style/offline.css
 %%PORTDOCS%%%%DOCSDIR%%/html/subproject-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/system-requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/typescript-module.html
@@ -203,6 +207,7 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/imports/qbs/Probes/FrameworkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/GccProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/IncludeProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/InnoSetupProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/JdkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/MsvcProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/NodeJsProbe.qbs
@@ -220,6 +225,7 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/imports/qbs/base/AutotestRunner.qbs
 %%DATADIR%%/imports/qbs/base/CppApplication.qbs
 %%DATADIR%%/imports/qbs/base/DynamicLibrary.qbs
+%%DATADIR%%/imports/qbs/base/InnoSetup.qbs
 %%DATADIR%%/imports/qbs/base/InstallPackage.qbs
 %%DATADIR%%/imports/qbs/base/JavaClassCollection.qbs
 %%DATADIR%%/imports/qbs/base/JavaJarFile.qbs
@@ -265,6 +271,7 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/modules/cpp/windows-msvc.qbs
 %%DATADIR%%/modules/ib/IBModule.qbs
 %%DATADIR%%/modules/ib/ib.js
+%%DATADIR%%/modules/innosetup/InnoSetupModule.qbs
 %%DATADIR%%/modules/java/JavaModule.qbs
 %%DATADIR%%/modules/java/io/qt/qbs/Artifact.java
 %%DATADIR%%/modules/java/io/qt/qbs/ArtifactListJsonWriter.java
