@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.7.1
-PORTREVISION=   0
+PORTREVISION=   1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -47,7 +47,8 @@ QEMU_ARGS=	--disable-gtk \
 EXTRA_PATCHES=	${FILESDIR}/var_paths.patch:-p1 \
 		${FILESDIR}/xsa198.patch:-p1 \
 		${FILESDIR}/0001-libxl-fix-creation-of-pkgconf-install-dir.patch \
-		${FILESDIR}/0001-tools-configure-fix-pkg-config-install-path-for-Free.patch
+		${FILESDIR}/0001-tools-configure-fix-pkg-config-install-path-for-Free.patch \
+		${FILESDIR}/0001-libs-xenstore-set-correct-FreeBSD-device.patch
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}" \
 			--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin

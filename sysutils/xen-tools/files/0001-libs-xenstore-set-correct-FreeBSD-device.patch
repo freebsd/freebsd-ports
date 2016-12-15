@@ -1,0 +1,32 @@
+From 7ff99b232e0f91a5189f429498868bfccf8d7154 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Mon, 12 Dec 2016 16:07:40 +0000
+Subject: [PATCH] libs/xenstore: set correct FreeBSD device
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The path to the xenstore FreeBSD device is /dev/xen/xenstore.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Wei Liu <wei.liu2@citrix.com>
+---
+ tools/xenstore/xs_lib.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/tools/xenstore/xs_lib.c b/tools/xenstore/xs_lib.c
+index 5ef3d6d..3e43f88 100644
+--- a/tools/xenstore/xs_lib.c
++++ b/tools/xenstore/xs_lib.c
+@@ -85,6 +85,8 @@ const char *xs_domain_dev(void)
+ 	return "/proc/xen/xenbus";
+ #elif defined(__NetBSD__)
+ 	return "/kern/xen/xenbus";
++#elif defined(__FreeBSD__)
++	return "/dev/xen/xenstore";
+ #else
+ 	return "/dev/xen/xenbus";
+ #endif
+-- 
+2.10.1 (Apple Git-78)
+
