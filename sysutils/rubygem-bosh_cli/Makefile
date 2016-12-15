@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh_cli
-PORTVERSION=	1.3215.0
-PORTREVISION=	2
+PORTVERSION=	1.3262.24.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -35,5 +34,8 @@ PLIST_FILES=	bin/bosh
 
 post-install:
 	${INSTALL_SCRIPT} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/bin/bosh ${STAGEDIR}${PREFIX}/bin
+	${REINPLACE_CMD} -i '' \
+		-e "s|require_relative '../bin/optionally_run_with_bundler'|require_relative '../${GEM_LIB_DIR}/bin/optionally_run_with_bundler'|" \
+		'${STAGEDIR}${PREFIX}/bin/bosh'
 
 .include <bsd.port.mk>
