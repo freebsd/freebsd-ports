@@ -12,10 +12,13 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
 
+LICENSE=	GPLv2+
+
 USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 USE_PERL5=	run
 NO_BUILD=	yes
-SHEBANG_FILES=	${PORTNAME}
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/sendEmail
 PORTDOCS=	CHANGELOG README TODO
@@ -28,6 +31,8 @@ SSL_RUN_DEPENDS=p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
