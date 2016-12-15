@@ -4,5 +4,6 @@ distributed.net/proxy/proxyper
 @sample distributed.net/proxy/proxyper.ini.sample
 @owner nobody
 @group daemon
+@dir distributed.net/proxy
 @group
 @owner
