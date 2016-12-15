@@ -1,6 +1,6 @@
---- install.sh.orig	2016-09-30 22:23:34 UTC
+--- install.sh.orig	2016-12-13 16:08:57 UTC
 +++ install.sh
-@@ -32,48 +32,14 @@ if [ $# -eq 1 ] ; then
+@@ -32,48 +32,14 @@
      "--help"|"-h"|"help"|"h")
        echo "Nim installation script"
        echo "Usage: [sudo] sh install.sh DIR"
@@ -19,7 +19,7 @@
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.2"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
@@ -27,7 +27,7 @@
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.2"
 -      ;;
 -    "/opt")
 -      bindir="/opt/nim/bin"
@@ -35,7 +35,7 @@
 -      libdir="/opt/nim/lib"
 -      docdir="/opt/nim/doc"
 -      datadir="/opt/nim/data"
--      nimbleDir="/opt/nimble/pkgs/compiler-0.15.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.15.2"
 -      mkdir -p /opt/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir

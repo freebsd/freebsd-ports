@@ -1,6 +1,6 @@
---- build.sh.orig	2016-10-08 02:10:59 UTC
+--- build.sh.orig	2016-12-13 16:14:36 UTC
 +++ build.sh
-@@ -26,10 +26,6 @@ do
+@@ -26,10 +26,6 @@
    esac
  done
  
