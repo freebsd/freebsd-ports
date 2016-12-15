@@ -5,6 +5,7 @@ PORTNAME=	logstash
 PORTVERSION=	5.1.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Server-side data ingest and transfomation tool
@@ -56,6 +57,6 @@ do-install:
 .for x in ${LOGSTASH_JRUBY_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_JRUBY_SUBDIR}/${x}
 .endfor
-	find ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_VENDOR_SUBDIR} -type d -name bin | xargs find | xargs ${CHMOD} ${BINMODE}
+	${FIND} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_VENDOR_SUBDIR} -type d -name bin | ${XARGS} ${FIND} | ${XARGS} ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>
