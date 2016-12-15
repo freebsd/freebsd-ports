@@ -3,6 +3,7 @@
 
 PORTNAME=	clamav-unofficial-sigs
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	sf@maxempire.com
