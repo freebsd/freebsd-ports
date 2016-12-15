@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 
 PATCH_SITES=	GNU/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for editing command lines as they are typed
 
 LICENSE=	GPLv3
