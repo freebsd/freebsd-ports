@@ -13,6 +13,7 @@ COMMENT=	Encryption plugin for Hexchat
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	hexchat:irc/hexchat
 RUN_DEPENDS=	hexchat:irc/hexchat
 
 USES=		tar:bz2 pkgconfig ssl
