@@ -1,4 +1,4 @@
---- clamav-unofficial-sigs.sh.orig	2016-06-03 09:51:21 UTC
+--- clamav-unofficial-sigs.sh.orig	2016-11-18 10:05:40 UTC
 +++ clamav-unofficial-sigs.sh
 @@ -753,6 +753,8 @@ function make_signature_database_from_as
  #Remove the clamav-unofficial-sigs script
@@ -27,7 +27,7 @@
 -        if [ "$(xshok_array_count  "$sanesecurity_mirror_ips")" -lt 1 ] ; then
 -          sanesecurity_mirror_ips=$(host -t A "$sanesecurity_url" | sed -n '/has address/{s/.*address \([^ ]*\).*/\1/;p;}')
 -        fi
-+        sanesecurity_mirror_ips=$(host "$sanesecurity_url" | sed 's/.*\s//')
++        sanesecurity_mirror_ips=$(host "$sanesecurity_url" | sed 's/.*[[:space:]]//')
  
          if [ "$(xshok_array_count  "$sanesecurity_mirror_ips")" -ge "1" ] ; then
            for sanesecurity_mirror_ip in $sanesecurity_mirror_ips ; do
@@ -37,7 +37,7 @@
 -            if [ "$sanesecurity_mirror_name" == "" ] ; then
 -              sanesecurity_mirror_name=$(host "$sanesecurity_mirror_ip" | sed -n '/name pointer/{s/.*pointer \([^ ]*\).*\.$/\1/;p;}')
 -            fi
-+            sanesecurity_mirror_name=$(host "$sanesecurity_mirror_ip" | sed 's/.*\s//' | sed 's/\.$//')
++            sanesecurity_mirror_name=$(host "$sanesecurity_mirror_ip" | sed 's/.*[[:space:]]//' | sed 's/\.$//')
              sanesecurity_mirror_site_info="$sanesecurity_mirror_name $sanesecurity_mirror_ip"
              xshok_pretty_echo_and_log "Sanesecurity mirror site used: $sanesecurity_mirror_site_info"
              $rsync_bin $rsync_output_level $no_motd --files-from="$sanesecurity_include_dbs" -ctuz $connect_timeout --timeout="$rsync_max_time" "rsync://$sanesecurity_mirror_ip/sanesecurity" "$work_dir_sanesecurity" 2>/dev/null
