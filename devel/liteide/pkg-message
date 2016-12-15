@@ -6,6 +6,6 @@ In order to have full Go support, please install LiteIDE Golang Tools:
 
 To have code autocompletion, you'll also need gocode:
 
-	go get -u github.com/nsf/gocode
+	pkg install devel/go-gocode
 
 ======================================================================
