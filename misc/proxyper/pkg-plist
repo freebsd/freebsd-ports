@@ -2,8 +2,4 @@ distributed.net/proxy/ChangeLog.txt
 distributed.net/proxy/manual.html
 distributed.net/proxy/proxyper
 @sample distributed.net/proxy/proxyper.ini.sample
-@owner nobody
-@group daemon
-@dir distributed.net/proxy
-@group
-@owner
+@dir(nobody,daemon,) distributed.net/proxy
