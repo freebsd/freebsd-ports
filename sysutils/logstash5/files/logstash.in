@@ -57,11 +57,14 @@ logdir="/var/log"
 : ${logstash_enable="NO"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
 : ${logstash_config="%%ETCDIR%%/${name}.conf"}
+: ${logstash_settings_dir="%%ETCDIR%%"}
 : ${logstash_log="YES"}
 : ${logstash_log_dir="${logdir}/${name}"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
 : ${logstash_java_opts=""}
 : ${logstash_opts=""}
+: ${logstash_user="logstash"}
+: ${logstash_group="logstash"}
 
 piddir=/var/run/${name}
 pidfile=${piddir}/${name}.pid
@@ -82,7 +85,7 @@ if checkyesno logstash_log; then
   logstash_log_options=" -l ${logstash_log_dir}" 
 fi
 
-logstash_args="-f ${logstash_config} ${logstash_log_options} ${logstash_opts}"
+logstash_args="--path.settings ${logstash_settings_dir} -f ${logstash_config} ${logstash_log_options} ${logstash_opts}"
 
 JAVA_OPTS="${logstash_java_opts}"
 JAVA_HOME="${logstash_java_home}"
@@ -99,7 +102,8 @@ PATH=/usr/local/bin:$PATH
 
 logstash_precmd()
 {
-    /usr/bin/install -d -o root -g wheel -m 750 ${logstash_log_dir}
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 750 ${logstash_log_dir}
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${piddir}
 }
 
 
