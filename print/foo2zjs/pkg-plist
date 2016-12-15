@@ -121,6 +121,7 @@ foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 foomatic/db/source/printer/Dell-1355.xml
 foomatic/db/source/printer/Dell-C1765.xml
+foomatic/db/source/printer/Epson-AcuLaser_CX17NF.xml
 foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
 foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM215.xml
@@ -202,6 +203,8 @@ foomatic/db/source/printer/Samsung-CLX-2160.xml
 foomatic/db/source/printer/Samsung-CLX-3160.xml
 foomatic/db/source/printer/Samsung-CLX-3175.xml
 foomatic/db/source/printer/Samsung-CLX-3185.xml
+foomatic/db/source/printer/Xerox-Phaser_3010.xml
+foomatic/db/source/printer/Xerox-Phaser_3040.xml
 foomatic/db/source/printer/Xerox-Phaser_6110.xml
 foomatic/db/source/printer/Xerox-Phaser_6115MFP.xml
 foomatic/db/source/printer/Xerox-Phaser_6121MFP.xml
@@ -209,6 +212,7 @@ foomatic/db/source/printer/Xerox-WorkCentre_3045.xml
 foomatic/db/source/printer/Xerox-WorkCentre_6015.xml
 share/cups/model/Dell-1355.ppd.gz
 share/cups/model/Dell-C1765.ppd.gz
+share/cups/model/Epson-AcuLaser_CX17NF.ppd.gz
 share/cups/model/Epson-AcuLaser_M1400.ppd.gz
 share/cups/model/Fuji_Xerox-DocuPrint_CM205.ppd.gz
 share/cups/model/Fuji_Xerox-DocuPrint_CM215.ppd.gz
@@ -290,6 +294,8 @@ share/cups/model/Samsung-CLX-2160.ppd.gz
 share/cups/model/Samsung-CLX-3160.ppd.gz
 share/cups/model/Samsung-CLX-3175.ppd.gz
 share/cups/model/Samsung-CLX-3185.ppd.gz
+share/cups/model/Xerox-Phaser_3010.ppd.gz
+share/cups/model/Xerox-Phaser_3040.ppd.gz
 share/cups/model/Xerox-Phaser_6110.ppd.gz
 share/cups/model/Xerox-Phaser_6115MFP.ppd.gz
 share/cups/model/Xerox-Phaser_6121MFP.ppd.gz

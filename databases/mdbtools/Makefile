@@ -19,7 +19,7 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 OPTIONS_DEFINE=	GNOME DOCS
 OPTIONS_SUB=	yes
 
-USES=		autoreconf bison iconv libtool pathfix pkgconfig
+USES=		autoreconf bison gettext-runtime iconv libtool pathfix pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	brianb
 USE_LDCONFIG=	yes

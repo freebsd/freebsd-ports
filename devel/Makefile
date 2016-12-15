@@ -749,7 +749,9 @@
     SUBDIR += go-codec
     SUBDIR += go-faker
     SUBDIR += go-form
+    SUBDIR += go-glide
     SUBDIR += go-go.uuid
+    SUBDIR += go-gocode
     SUBDIR += go-goregen
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
