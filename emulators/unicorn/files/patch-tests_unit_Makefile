@@ -1,0 +1,22 @@
+--- tests/unit/Makefile.orig	2015-10-15 16:22:04 UTC
++++ tests/unit/Makefile
+@@ -1,8 +1,8 @@
+ 
+ CFLAGS += -Wall -Werror -Wno-unused-function -g
+-CFLAGS += -L ../../
++CFLAGS += -L ../../ -L $(PREFIX)/lib
+ CFLAGS += -lcmocka -lunicorn
+-CFLAGS += -I ../../include
++CFLAGS += -I ../../include -I $(PREFIX)/include
+ 
+ ALL_TESTS = test_sanity test_x86 test_mem_map
+ 
+@@ -25,7 +25,7 @@ test_x86: test_x86.c
+ test_mem_map: test_mem_map.c
+ 
+ ${ALL_TESTS}:
+-	gcc ${CFLAGS} -o $@ $^
++	$(CC) ${CFLAGS} -o $@ $^
+ 
+ 
+ 
