@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.12.3
+PORTVERSION=	2.12.4
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
+DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	IRC chat program with GTK and Text Frontend
@@ -12,12 +13,15 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	devel/autoconf-archive>0:devel/autoconf-archive
 LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
 		libfreetype.so:print/freetype2
 
-USES=		gmake desktop-file-utils libtool pkgconfig tar:xz ssl
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		autoreconf gmake desktop-file-utils libtool pkgconfig ssl
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -36,7 +40,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOAT DOCS FISHLIM LUA NLS NOTIFY \
+OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA NLS NOTIFY \
 			PERL PYTHON SOCKS TEXTFE
 
 OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY PERL PYTHON
@@ -45,7 +49,6 @@ OPTIONS_SUB=	yes
 
 CA_BUNDLE_DESC=		Include CA bundle for SSL verification
 CANBERRA_DESC=		Audio support via Libcanberra
-DOAT_DESC=		Do At plugin
 FISHLIM_DESC=		FiSHLiM plugin
 TEXTFE_DESC=		Text frontend
 SOCKS_DESC=		SOCKS proxy support, FORBIDDEN in FreeBSD 10+
@@ -56,7 +59,6 @@ CANBERRA_CONFIGURE_ENABLE=libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_ENABLE=	dbus
 DBUS_USE=		GNOME=gconf2
-DOAT_CONFIGURE_ENABLE=	doat
 FISHLIM_CONFIGURE_ENABLE=fishlim
 LUA_CONFIGURE_ENABLE=	lua
 LUA_USES=		lua
