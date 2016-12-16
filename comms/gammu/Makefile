@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gammu
-PORTVERSION=	1.37.91
+PORTVERSION=	1.38.0
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/
 
@@ -13,11 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
-#RUN_DEPENDS=	cdialog:devel/cdialog
 
-CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
-
-CMAKE_ARGS=	-DINSTALL_LIBDATA_DIR:PATH=${PREFIX}/libdata
+CMAKE_ARGS=	-DINSTALL_LIBDATA_DIR:PATH=${PREFIX}/libdata \
+		-DINSTALL_MAN_DIR:PATH=${PREFIX}/man
 
 USES=		cmake:outsource gettext iconv pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	utils/jadmaker utils/gammu-config
@@ -40,7 +38,7 @@ DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CMAKE_OFF=		-DWITH_LibDBI:BOOL=OFF
 PGSQL_USES=		pgsql
 PGSQL_CMAKE_OFF=	-DWITH_Postgres:BOOL=OFF
-MYSQL_USE=		mysql=yes
+MYSQL_USES=		mysql
 MYSQL_CMAKE_OFF=	-DWITH_MySQL:BOOL=OFF
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CMAKE_OFF=		-DWITH_ODBC:BOOL=OFF

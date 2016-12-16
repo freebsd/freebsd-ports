@@ -1,5 +1,5 @@
---- libgammu/device/bluetooth/blue_bsd.c.orig	2016-11-12 10:13:02.619065000 +0800
-+++ libgammu/device/bluetooth/blue_bsd.c	2016-11-12 10:13:27.768173000 +0800
+--- libgammu/device/bluetooth/blue_bsd.c.orig	2016-12-12 13:47:26 UTC
++++ libgammu/device/bluetooth/blue_bsd.c
 @@ -10,6 +10,8 @@
  #ifdef GSM_ENABLE_BLUETOOTHDEVICE
  #ifdef BSD_BLUE_FOUND
