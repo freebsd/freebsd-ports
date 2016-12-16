@@ -1,0 +1,61 @@
+--- Makefile.orig	2015-10-15 16:22:04 UTC
++++ Makefile
+@@ -59,9 +59,9 @@ UNICORN_CFLAGS += -fPIC
+ V ?= 0
+ 
+ ifeq ($(UNICORN_DEBUG),yes)
+-CFLAGS += -O3
++#CFLAGS += -O3
+ else
+-CFLAGS += -g
++#CFLAGS += -g
+ endif
+ 
+ ifeq ($(CROSS),)
+@@ -158,7 +158,7 @@ LIBDIRARCH ?= lib
+ # Or better, pass 'LIBDIRARCH=lib64' to 'make install/uninstall' via 'make.sh'.
+ #LIBDIRARCH ?= lib64
+ 
+-LIBDIR ?= $(DESTDIR)$(PREFIX)/$(LIBDIRARCH)
++LIBDIR = $(DESTDIR)$(PREFIX)/$(LIBDIRARCH)
+ INCDIR ?= $(DESTDIR)$(PREFIX)/include
+ 
+ LIBDATADIR ?= $(LIBDIR)
+@@ -181,7 +181,7 @@ else
+ PKGCFGDIR ?= $(LIBDATADIR)/pkgconfig
+ endif
+ 
+-all: compile_lib
++all: compile_lib $(PKGCFGF)
+ ifeq (,$(findstring yes,$(UNICORN_BUILD_CORE_ONLY)))
+ ifeq ($(UNICORN_SHARED),yes)
+ ifeq ($(V),0)
+@@ -213,9 +213,8 @@ else
+ endif
+ 
+ compile_lib: config qemu/config-host.h-timestamp
+-	rm -rf lib$(LIBNAME)* $(LIBNAME)*.lib $(LIBNAME)*.dll && cd qemu && $(MAKE) -j 8
++	cd qemu && $(MAKE)
+ 	$(MAKE) unicorn
+-	cd samples && $(MAKE) clean
+ 
+ unicorn: $(LIBRARY) $(ARCHIVE)
+ 
+@@ -225,7 +224,7 @@ ifeq ($(V),0)
+ 	$(call log,GEN,$(LIBRARY))
+ 	@$(CC) $(CFLAGS) -shared $^ -o $(LIBRARY) $(GLIB) -lm
+ else
+-	$(CC) $(CFLAGS) -shared $^ -o $(LIBRARY) $(GLIB) -lm
++	$(CC) $(CFLAGS) -shared -Wl,-soname,libunicorn.so $^ -o $(LIBRARY) $(GLIB) -lm
+ endif
+ endif
+ 
+@@ -254,7 +253,7 @@ test: all
+ 	$(MAKE) -C tests/unit test
+ 
+ 
+-install: all $(PKGCFGF)
++install: all
+ 	mkdir -p $(LIBDIR)
+ ifeq ($(UNICORN_SHARED),yes)
+ 	$(INSTALL_LIB) $(LIBRARY) $(LIBDIR)

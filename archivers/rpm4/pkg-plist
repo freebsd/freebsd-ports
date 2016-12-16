@@ -64,8 +64,8 @@ lib/librpmsign.so.3.3.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmb.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpms.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
-lib/rpm-plugins/syslog.so
-lib/rpm-plugins/systemd_inhibit.so
+%%PLUGINS%%lib/rpm-plugins/syslog.so
+%%PLUGINS%%lib/rpm-plugins/systemd_inhibit.so
 lib/rpm/appdata.prov
 lib/rpm/brp-compress
 lib/rpm/brp-java-gcjcompile

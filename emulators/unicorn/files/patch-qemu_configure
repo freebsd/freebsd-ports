@@ -1,0 +1,18 @@
+--- qemu/configure.orig	2015-10-15 16:22:04 UTC
++++ qemu/configure
+@@ -285,11 +285,11 @@ QEMU_CFLAGS="-Wstrict-prototypes -Wredun
+ QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
+ QEMU_INCLUDES="-I. -I\$(SRC_PATH) -I\$(SRC_PATH)/include"
+ if test "$debug_info" = "yes"; then
+-    CFLAGS="-g $CFLAGS"
+-    LDFLAGS="-g $LDFLAGS"
++#    CFLAGS="-g $CFLAGS"
++#    LDFLAGS="-g $LDFLAGS"
+ else
+-    CFLAGS="-O3 $CFLAGS"
+-    LDFLAGS="-O3 $LDFLAGS"
++#    CFLAGS="-O3 $CFLAGS"
++#    LDFLAGS="-O3 $LDFLAGS"
+ fi
+ 
+ # make source path absolute

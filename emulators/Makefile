@@ -147,6 +147,7 @@
     SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
+    SUBDIR += unicorn
     SUBDIR += vba
     SUBDIR += vboxtool
     SUBDIR += vgb-bin

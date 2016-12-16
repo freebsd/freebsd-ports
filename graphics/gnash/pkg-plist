@@ -152,6 +152,7 @@ include/gnash/asobj/movie_root.h
 include/gnash/asobj/namedStrings.h
 include/gnash/display_pkg.h
 include/gnash/dsodefs.h
+%%CYGNAL%%include/gnash/extension.h
 include/gnash/external_pkg.h
 include/gnash/filters_pkg.h
 include/gnash/geom_pkg.h
@@ -164,6 +165,7 @@ include/gnash/noseek_fd_adapter.h
 include/gnash/parser/movie_definition.h
 include/gnash/rc.h
 include/gnash/ref_counted.h
+%%CYGNAL%%include/gnash/sharedlib.h
 include/gnash/snappingrange.h
 include/gnash/string_table.h
 include/gnash/text_pkg.h
