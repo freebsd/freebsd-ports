@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-c6
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -51,7 +52,6 @@ RUN_DEPENDS=	linux-c6-libasyncns>0:dns/linux-c6-libasyncns \
 		linux-c6-libtheora>0:multimedia/linux-c6-libtheora \
 		linux-c6-libv4l>0:multimedia/linux-c6-libv4l \
 		linux-c6-qt47-webkit>0:www/linux-c6-qt47-webkit \
-		linux-c6-flashplugin>0:www/linux-c6-flashplugin11 \
 		linux-c6-cyrus-sasl2>0:security/linux-c6-cyrus-sasl2 \
 		linux-c6-libssh2>0:security/linux-c6-libssh2 \
 		linux-c6-openssl-compat>0:security/linux-c6-openssl-compat \
