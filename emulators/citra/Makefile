@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20161215
+PORTVERSION=	s20161216
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
-GH_TUPLE=	citra-emu:${PORTNAME}:0e032573 \
+GH_TUPLE=	citra-emu:${PORTNAME}:cda7210f \
 		citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:34e19f1:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-146-g796beaa:fmt/externals/dynarmic/externals/fmt \
@@ -39,8 +39,6 @@ GH_TUPLE=	citra-emu:${PORTNAME}:0e032573 \
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
 FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
-CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}_${COMPILER_VERSION}}
-CFLAGS_clang_34=-msse4.1 # See LLVM r239883
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # GL
