@@ -25,12 +25,3 @@
      )
  
  # OpenCellID API key
-@@ -591,7 +589,7 @@ mark_as_advanced (INSTALL_DATA_DIR)
- set (INSTALL_DOC_DIR "share/doc/gammu" CACHE STRING "Path for documentation installation")
- mark_as_advanced (INSTALL_DOC_DIR)
- 
--set (INSTALL_MAN_DIR "share/man" CACHE STRING "Path for man pages installation")
-+set (INSTALL_MAN_DIR "man" CACHE STRING "Path for man pages installation")
- mark_as_advanced (INSTALL_MAN_DIR)
- 
- # Phone and protocol configuration
