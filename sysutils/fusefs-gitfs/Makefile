@@ -2,7 +2,7 @@
 
 PORTNAME=	gitfs
 DISTVERSION=	0.4.5.1
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils devel
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	jbeich@FreeBSD.org

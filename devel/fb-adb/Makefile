@@ -3,7 +3,7 @@
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-126
 DISTVERSIONSUFFIX=	-g6fd78ae
-CATEGORIES=	devel
+CATEGORIES=	devel comms
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Better shell for Android devices
