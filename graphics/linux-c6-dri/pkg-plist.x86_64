@@ -13,6 +13,7 @@ usr/lib/libGL.so.1
 usr/lib/libGL.so.1.2.0
 usr/lib/libGLU.so.1
 usr/lib/libGLU.so.1.3.1
+usr/lib/libLLVM-3.6-mesa.so
 usr/lib/libdrm.so.2
 usr/lib/libdrm.so.2.4.0
 usr/lib/libdrm_amdgpu.so.1
@@ -43,6 +44,7 @@ usr/lib64/libGL.so.1
 usr/lib64/libGL.so.1.2.0
 usr/lib64/libGLU.so.1
 usr/lib64/libGLU.so.1.3.1
+usr/lib64/libLLVM-3.6-mesa.so
 usr/lib64/libdrm.so.2
 usr/lib64/libdrm.so.2.4.0
 usr/lib64/libdrm_amdgpu.so.1
@@ -76,3 +78,4 @@ usr/share/doc/freeglut-2.6.0/ogl_sm.png
 usr/share/doc/freeglut-2.6.0/progress.html
 usr/share/doc/freeglut-2.6.0/structure.html
 usr/share/doc/libdrm-2.4.65/README
+usr/share/doc/mesa-private-llvm-3.6.2/LICENSE.TXT
