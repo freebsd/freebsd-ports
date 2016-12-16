@@ -12,7 +12,7 @@ EXTRACT_SUFX=		.tar
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
+COMMENT=		MIT implementation of RFC 4120 network authentication clients
 
 BUILD_DEPENDS=		krb5-config:security/krb5
 
