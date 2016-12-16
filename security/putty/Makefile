@@ -26,7 +26,7 @@ PLIST_FILES+=	man/man1/plink.1.gz man/man1/pscp.1.gz man/man1/psftp.1.gz man/man
 OPTIONS_DEFINE=	GSSAPI GTK2
 OPTIONS_DEFAULT=GSSAPI GTK2
 
-CONFLICTS=	pssh-[0-9]*
+CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 
 .include <bsd.port.options.mk>
 
