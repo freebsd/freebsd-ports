@@ -3,9 +3,8 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	graphics
-MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
 
@@ -34,6 +33,7 @@ GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
 USE_GNOME=	libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
+USE_GL=		egl
 INSTALLS_ICONS=	yes
 SYSCONFIGDIR=	${PREFIX}/etc
 
@@ -160,7 +160,6 @@ GNASH_RENDERERS+=	agg
 
 .if ${PORT_OPTIONS:MOPENGL}
 IGNORE=		support for OpenGL is currently broken, use option AGG
-USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
 LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
@@ -199,14 +198,17 @@ CONFIGURE_ARGS+=	--enable-device=egl,x11
 # Media handler options processing
 #
 .if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER)
-LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg
+LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg \
+			libtheora.so:multimedia/libtheora \
+			libogg.so:audio/libogg \
+			libvorbis.so:audio/libvorbis
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 			--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
 			--with-ffmpeg-lib=${LOCALBASE}/lib
 USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
 .elif ${PORT_OPTIONS:MGSTREAMER} && empty(PORT_OPTIONS:MFFMPEG)
-USE_GSTREAMER=		yes
+USE_GSTREAMER=		ffmpeg mad vorbis
 CONFIGURE_ARGS+=	--enable-media=gst
 USE_SDL+=		sdl
 .else
