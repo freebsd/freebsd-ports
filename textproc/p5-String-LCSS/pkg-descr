@@ -1,0 +1,8 @@
+String::LCSS provides the function "lcss" to ferret out the longest common
+substring shared by two strings passed as arguments. undef is returned if
+the susbstring length is one char or less.
+
+When used in an array context, lcss will returns the indexi of the match root
+in the two args.
+
+WWW: http://search.cpan.org/dist/String-LCSS/
