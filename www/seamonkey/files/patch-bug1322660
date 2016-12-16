@@ -1,0 +1,80 @@
+--- mozilla/modules/woff2/src/store_bytes.h
++++ mozilla/modules/woff2/src/store_bytes.h
+@@ -29,41 +29,44 @@ inline size_t StoreU32(uint8_t* dst, size_t offset, uint32_t x) {
+   dst[offset + 1] = x >> 16;
+   dst[offset + 2] = x >> 8;
+   dst[offset + 3] = x;
+   return offset + 4;
+ }
+ 
+ inline size_t Store16(uint8_t* dst, size_t offset, int x) {
+ #if (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__))
+-  *reinterpret_cast<uint16_t*>(dst + offset) =
+-      ((x & 0xFF) << 8) | ((x & 0xFF00) >> 8);
++  uint16_t v = ((x & 0xFF) << 8) | ((x & 0xFF00) >> 8);
++  memcpy(dst + offset, &v, 2);
+ #elif (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__))
+-  *reinterpret_cast<uint16_t*>(dst + offset) = static_cast<uint16_t>(x);
++  uint16_t v = static_cast<uint16_t>(x);
++  memcpy(dst + offset, &v, 2);
+ #else
+   dst[offset] = x >> 8;
+   dst[offset + 1] = x;
+ #endif
+   return offset + 2;
+ }
+ 
+ inline void StoreU32(uint32_t val, size_t* offset, uint8_t* dst) {
+   dst[(*offset)++] = val >> 24;
+   dst[(*offset)++] = val >> 16;
+   dst[(*offset)++] = val >> 8;
+   dst[(*offset)++] = val;
+ }
+ 
+ inline void Store16(int val, size_t* offset, uint8_t* dst) {
+ #if (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__))
+-  *reinterpret_cast<uint16_t*>(dst + *offset) =
++  uint16_t v = ((val & 0xFF) << 8) | ((val & 0xFF00) >> 8);
++  memcpy(dst + *offset, &v, 2);
+       ((val & 0xFF) << 8) | ((val & 0xFF00) >> 8);
+   *offset += 2;
+ #elif (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__))
+-  *reinterpret_cast<uint16_t*>(dst + *offset) = static_cast<uint16_t>(val);
++  uint16_t v = static_cast<uint16_t>(val);
++  memcpy(dst + *offset, &v, 2);
+   *offset += 2;
+ #else
+   dst[(*offset)++] = val >> 8;
+   dst[(*offset)++] = val;
+ #endif
+ }
+ 
+ inline void StoreBytes(const uint8_t* data, size_t len,
+--- mozilla/modules/woff2/src/woff2_common.cc
++++ mozilla/modules/woff2/src/woff2_common.cc
+@@ -20,22 +20,23 @@
+ 
+ namespace woff2 {
+ 
+ 
+ uint32_t ComputeULongSum(const uint8_t* buf, size_t size) {
+   uint32_t checksum = 0;
+   size_t aligned_size = size & ~3;
+   for (size_t i = 0; i < aligned_size; i += 4) {
++    uint32_t v;
++    memcpy(&v, buf + i, 4);
+ #if (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__))
+-    uint32_t v = *reinterpret_cast<const uint32_t*>(buf + i);
+     checksum += (((v & 0xFF) << 24) | ((v & 0xFF00) << 8) |
+       ((v & 0xFF0000) >> 8) | ((v & 0xFF000000) >> 24));
+ #elif (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__))
+-    checksum += *reinterpret_cast<const uint32_t*>(buf + i);
++    checksum += v;
+ #else
+     checksum += (buf[i] << 24) | (buf[i + 1] << 16) |
+       (buf[i + 2] << 8) | buf[i + 3];
+ #endif
+   }
+ 
+   // treat size not aligned on 4 as if it were padded to 4 with 0's
+   if (size != aligned_size) {

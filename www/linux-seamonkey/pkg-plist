@@ -51,7 +51,6 @@ lib/%%APP_NAME%%/chrome/icons/default/places16.png
 lib/%%APP_NAME%%/chrome/icons/default/places48.png
 lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/components/components.manifest
-lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libsuite.so
 lib/%%APP_NAME%%/crashreporter
 lib/%%APP_NAME%%/crashreporter-override.ini
@@ -66,11 +65,10 @@ lib/%%APP_NAME%%/defaults/profile/panels.rdf
 lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
-lib/%%APP_NAME%%/distribution/extensions/inspector@mozilla.org.xpi
-lib/%%APP_NAME%%/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
 lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org.xpi
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
 lib/%%APP_NAME%%/icons/updater.png
+lib/%%APP_NAME%%/icudt56l.dat
 lib/%%APP_NAME%%/isp/Bogofilter.sfd
 lib/%%APP_NAME%%/isp/DSPAM.sfd
 lib/%%APP_NAME%%/isp/POPFile.sfd
@@ -78,8 +76,8 @@ lib/%%APP_NAME%%/isp/SpamAssassin.sfd
 lib/%%APP_NAME%%/isp/SpamPal.sfd
 lib/%%APP_NAME%%/isp/movemail.rdf
 lib/%%APP_NAME%%/isp/rss.rdf
-lib/%%APP_NAME%%/libfreebl3.chk
-lib/%%APP_NAME%%/libfreebl3.so
+lib/%%APP_NAME%%/libfreeblpriv3.chk
+lib/%%APP_NAME%%/libfreeblpriv3.so
 lib/%%APP_NAME%%/libldap60.so
 lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/liblgpllibs.so
