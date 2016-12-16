@@ -1,0 +1,12 @@
+bin/go-for-it
+share/icons/hicolor/16x16/apps/go-for-it.svg
+share/icons/hicolor/24x24/apps/go-for-it.svg
+share/icons/hicolor/32x32/apps/go-for-it.svg
+share/icons/hicolor/48x48/apps/go-for-it.svg
+share/icons/hicolor/64x64/apps/go-for-it.svg
+share/icons/hicolor/128x128/apps/go-for-it.svg
+share/icons/hicolor/24x24/actions/go-for-it-open-menu-fallback.svg
+share/go-for-it/style/go-for-it-3.20.css
+share/go-for-it/style/go-for-it-3.10.css
+share/go-for-it/style/go-for-it-legacy.css
+share/applications/go-for-it.desktop
