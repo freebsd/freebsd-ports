@@ -34,6 +34,7 @@ MAKE_ARGS+=	ARCH=arm \
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%MODEL%%,${MODEL}," \
 		${WRKSRC}/include/configs/sunxi-common.h
+	@${LN} -sf compiler-gcc5.h ${WRKSRC}/include/linux/compiler-gcc6.h
 
 do-configure:
 	(cd ${WRKSRC}; ${MAKE_CMD} ${CONF_TARGET})
