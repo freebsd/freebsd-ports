@@ -74,8 +74,9 @@ if [ -d $piddir ]; then
 fi
 
 start_precmd="logstash_precmd"
-status_cmd="logstash_status"
-stop_cmd="logstash_stop"
+start_postcmd="logstash_postcmd"
+status_precmd="find_pid"
+stop_precmd="find_pid"
 
 logstash_cmd="${logstash_home}/bin/logstash"
 procname="${logstash_java_home}/bin/java"
@@ -96,6 +97,7 @@ export JAVA_HOME
 
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${logstash_cmd} ${logstash_args}"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 required_files="${logstash_home} ${logstash_java_home} ${logstash_cmd} ${logstash_config}"
 
 # Include %%LOCALBASE%%/bin in path because Logstash startup scripts
@@ -104,62 +106,22 @@ PATH=%%LOCALBASE%%/bin:$PATH
 
 logstash_precmd()
 {
-    rc_pid=$(logstash_check_pidfile $pidfile)
-    if [ -n "$rc_pid" ]; then
-        [ -n "$rc_fast" ] && return 0
-        echo "${name} is already running: $rc_pid"
-        return 1
-    fi
-    touch ${pidfile}
-    chown ${logstash_user}:${logstash_group} ${pidfile}
-    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 750 ${logstash_log_dir}
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${logstash_log_dir}
     /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${piddir}
 }
-
-logstash_status()
+logstash_postcmd()
 {
-    rc_pid=$(logstash_check_pidfile $pidfile)
-    if [ -n "$rc_pid" ]; then
-        [ -n "$rc_fast" ] && return 0
-        echo "${name} is already running: $rc_pid"
-        return 1
-    fi
-    echo "${name} is running as pid ${rc_pid}."
+    /bin/chmod 644 ${pidfile}
 }
 
-logstash_stop()
-{
-    rc_pid=$(logstash_check_pidfile $pidfile)
-
-    if [ -z "$rc_pid" ]; then
-        [ -n "$rc_fast" ] && return 0
-        echo "${name} not running? (check $pidfile)."
-        return 1
-    fi
-
-    echo "Stopping ${name}."
-    kill ${rc_pid} 2> /dev/null
+logstash_stop() {
+    /bin/kill -TERM ${rc_pid}
     wait_for_pids ${rc_pid}
 }
 
-logstash_check_pidfile()
+find_pid()
 {
-    _pidfile=$1
-    if [ -z "$_pidfile" ]; then
-        err 3 'USAGE: logstash_check_pidfile pidfile'
-    fi
-    if [ ! -f $_pidfile ]; then
-        debug "pid file ($_pidfile): not readable."
-        return
-    fi
-    read _pid _junk < $_pidfile
-    if [ -z "$_pid" ]; then
-        debug "pid file ($_pidfile): no pid in file."
-        return
-    fi
-    if [ -n "`/usr/bin/su -m ${logstash_user} -c '%%LOCALBASE%%/bin/jps -l' | grep -e "^$_pid"`" ]; then
-        echo -n $_pid
-    fi
+    rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
 }
 
 run_rc_command "$1"
