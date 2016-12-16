@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgme
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/
 DISTNAME=	game-music-emu-${PORTVERSION}
@@ -19,7 +19,7 @@ PORTDOCS=	changes.txt design.txt gme.txt readme.txt
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/pkgconfig/s,lib/,libdata/,' \
+	@${REINPLACE_CMD} -e '/pkgconfig/s/lib[[:>:]]/libdata/' \
 		${WRKSRC}/gme/CMakeLists.txt
 
 post-install-DOCS-on:

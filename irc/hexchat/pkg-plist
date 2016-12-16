@@ -2,7 +2,6 @@ bin/hexchat
 %%TEXTFE%%bin/hexchat-text
 include/hexchat-plugin.h
 lib/hexchat/plugins/checksum.so
-%%DOAT%%lib/hexchat/plugins/doat.so
 %%FISHLIM%%lib/hexchat/plugins/fishlim.so
 %%PERL%%lib/hexchat/plugins/perl.so
 %%PYTHON%%lib/hexchat/plugins/python.so

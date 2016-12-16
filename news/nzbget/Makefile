@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	16.4
-PORTREVISION=	3
+PORTVERSION=	17.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		ncurses pkgconfig shebangfix
+USES=		ncurses pkgconfig shebangfix compiler:c++14-lang
 USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
@@ -57,6 +56,12 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 .if (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--disable-sigchld-handler
+.endif
+
+.if ${OSVERSION} < 1000500
+USE_GCC=		4.9+
+CONFIGURE_ENV+=		zlib_LIBS='-lz ' \
+			zlib_CFLAGS=' '
 .endif
 
 post-install:

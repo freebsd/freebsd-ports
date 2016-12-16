@@ -51,8 +51,8 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g
 
 .elif ${gecko_ARGS:Mseamonkey}
 
-_GECKO_DEFAULT_VERSION=	40
-_GECKO_VERSIONS=		40
+_GECKO_DEFAULT_VERSION=	46
+_GECKO_VERSIONS=		46
 _GECKO_TYPE=	seamonkey
 
 .if exists(${LOCALBASE}/bin/seamonkey)
@@ -61,7 +61,7 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9]*:C/[0-9].([0-9][0-9]).*/\1/
 .endif
 
 # Dependence lines for different Seamonkey versions
-40_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:www/seamonkey
+46_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:www/seamonkey
 
 .elif ${gecko_ARGS:Mthunderbird}
 
