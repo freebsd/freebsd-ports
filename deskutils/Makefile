@@ -94,6 +94,7 @@
     SUBDIR += gnote
     SUBDIR += gnotime
     SUBDIR += gnustep-wrapper
+    SUBDIR += go-for-it
     SUBDIR += gourmet
     SUBDIR += griffith
     SUBDIR += growl-for-linux
