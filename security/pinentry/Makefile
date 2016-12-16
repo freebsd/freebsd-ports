@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTVERSION=	0.9.7
-PORTREVISION?=	1
+PORTVERSION=	1.0.0
+PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
 
@@ -42,7 +45,7 @@ QT4_RUN_DEPENDS=	${PINENTRY_QT4}:security/pinentry-qt4
 
 QT5_DESC=	Qt 5 frontend
 PINENTRY_QT5=	pinentry-qt5
-QT5_RUN_DEPENDS=	${PINENTRY_QT5}:security/pinentry-qt5 
+QT5_RUN_DEPENDS=	${PINENTRY_QT5}:security/pinentry-qt5
 
 GNOME3_DESC=	GNOME 3 frontend
 PINENTRY_GNOME3=	pinentry-gnome3
@@ -63,21 +66,19 @@ do-install:
 .else # !defined(PINENTRY_GUI)
 PKGNAMESUFFIX=	-${PINENTRY_GUI}
 LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgcrypt.so:security/libgcrypt \
-		libksba.so:security/libksba
+		libgpg-error.so:security/libgpg-error
 
-USES+=		iconv gmake ncurses pkgconfig
+USES+=		gmake iconv localbase ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pinentry-emacs
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=	LIBSECRET
 
 LIBSECRET_DESC=	Saving the passphrase with libsecret
 LIBSECRET_CONFIGURE_ENABLE=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
+LIBSECRET_USE=		GNOME=glib20
 
 .if ${PINENTRY_GUI} == "gnome3"
 OPTIONS_SLAVE=	LIBSECRET
@@ -90,7 +91,7 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 
 .if ${PINENTRY_GUI} == "qt4"
 USES+=		compiler:c++11-lib
-USE_QT4=	gui moc_build
+USE_QT4=	corelib gui moc_build
 PLIST_FILES=	bin/pinentry-qt4
 CONFIGURE_ARGS+=--disable-pinentry-qt5 \
 		--program-suffix=4
