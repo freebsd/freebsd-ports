@@ -69,6 +69,7 @@
     SUBDIR += heme
     SUBDIR += hexcurse
     SUBDIR += hexedit
+    SUBDIR += hexer
     SUBDIR += hexpert
     SUBDIR += hnb
     SUBDIR += hte
