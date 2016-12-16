@@ -3,6 +3,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.24.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 

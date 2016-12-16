@@ -3,6 +3,7 @@
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.93
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
