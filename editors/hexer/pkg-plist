@@ -1,0 +1,4 @@
+bin/hexer
+man/man1/hexer.1.gz
+%%MYC%%bin/myc
+%%MYC%%man/man1/myc.1.gz
