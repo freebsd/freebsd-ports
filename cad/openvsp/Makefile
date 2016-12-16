@@ -4,7 +4,7 @@
 PORTNAME=	openvsp
 PORTVERSION=	3.9.1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -39,7 +39,20 @@ WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}_${PORTVERSION}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
-USES=		cmake:outsource compiler:gcc-c++11-lib jpeg
+USES=		cmake:outsource jpeg
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} == 1001000
+# Fails to build with GCC 4.9 in 10.1
+USE_GCC=	4.8
+LDFLAGS+=	-L${LOCALBASE}/lib/c++
+CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+.else
+USES +=		compiler:gcc-c++11-lib
+.endif
+
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_LIBXML2:BOOLEAN=yes \
