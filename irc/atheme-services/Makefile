@@ -2,14 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	atheme-services
-PORTVERSION=	7.2.6
-CATEGORIES=	irc
-MASTER_SITES=	http://atheme.github.io/downloads/
+PORTVERSION=	7.2.7
+CATEGORIES=	irc ipv6 net
+MASTER_SITES=	https://github.com/atheme/atheme/releases/download/v${PORTVERSION}/
+DISTNAME=	atheme-${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Set of services for IRC networks
 
-USES=		tar:bzip2 pkgconfig pathfix gmake
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libmowgli-2.so:devel/libmowgli2
+
+USES=		cpe gmake localbase pathfix pkgconfig ssl tar:bzip2
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -18,13 +24,11 @@ CONFIGURE_ARGS=	--enable-fhs-paths \
 		--localstatedir=/var \
 		--disable-gtk-doc \
 		--enable-large-net
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+CPE_PRODUCT=	atheme
 
 USERS=		ircservices
 GROUPS=		ircservices
-
-LIB_DEPENDS+=	libmowgli-2.so:devel/libmowgli2
 
 USE_RC_SUBR=	atheme-services
 
@@ -36,61 +40,16 @@ CRACKLIB_DESC=	Use cracklib for checking password strength
 
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCONTRIB}
-CONFIGURE_ARGS+=	--enable-contrib
-.else
-CONFIGURE_ARGS+=	--disable-contrib
-.endif
-
-.if ${PORT_OPTIONS:MCRACKLIB}
-LIB_DEPENDS+=	libcrack.so:security/cracklib
-CONFIGURE_ARGS+=	--with-cracklib
-.else
-CONFIGURE_ARGS+=	--without-cracklib
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-CONFIGURE_ARGS+=	--with-pcre
-.else
-CONFIGURE_ARGS+=	--without-pcre
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-CONFIGURE_ARGS+=	--with-perl
-.else
-CONFIGURE_ARGS+=	--without-perl
-.endif
-
-post-install:
-# Treat atheme.motd like atheme.conf. So don't install it directly,
-# but instead copy it from atheme.motd.example if it doesn't exist,
-# and only remove it at deinstall time if it's unchanged.
-	@${RM} ${STAGEDIR}${PREFIX}/etc/atheme/atheme.motd
-# These are just to satisfy check-orphans
-	@${RMDIR} ${STAGEDIR}/var/lib/atheme
-	@${RMDIR} ${STAGEDIR}/var/lib
-	@${RMDIR} ${STAGEDIR}/var/log/atheme
-	@${RMDIR} ${STAGEDIR}/var/run/atheme
-.if !${PORT_OPTIONS:MDOCS}
-	@${RM} -Rf ${STAGEDIR}${PREFIX}/share/doc/atheme
-.endif
+CONTRIB_CONFIGURE_ENABLE=	contrib
+CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
+CRACKLIB_CONFIGURE_WITH=	cracklib
+LDAP_USE=	openldap=yes
+LDAP_CONFIGURE_WITH=	ldap
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_WITH=	pcre
+PERL_USES=	perl5
+PERL_CONFIGURE_WITH=	perl
 
 .include <bsd.port.mk>
