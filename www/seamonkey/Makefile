@@ -4,7 +4,7 @@
 PORTNAME=	seamonkey
 DISTVERSION=	2.46
 MOZILLA_VER=	49 # above + 3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build9/source
@@ -46,10 +46,10 @@ MOZ_PKGCONFIG_FILES=
 
 BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
 
-OPTIONS_DEFINE=	LDAP RUST
+OPTIONS_DEFINE=	LDAP LIGHTNING RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-OPTIONS_DEFAULT=CANBERRA GTK2 LDAP
+OPTIONS_DEFAULT=CANBERRA GTK2 LDAP LIGHTNING
 
 LDAP_DESC?=	LDAP support for Mailnews
 
@@ -65,6 +65,11 @@ XPI_LIBDIR=	${PREFIX}/lib/xpi
 MOZ_OPTIONS+=	--disable-ldap
 .else
 MOZ_OPTIONS+=	--enable-ldap
+.endif
+.if ${PORT_OPTIONS:MLIGHTNING}
+MOZ_OPTIONS+=	--enable-calendar
+.else
+MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-patch:

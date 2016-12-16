@@ -25,4 +25,5 @@ CANBERRA_DESC?=		Sound theme alerts
 GNOMEUI_DESC?=		libgnomeui support module
 INTEGER_SAMPLES_DESC?=	Integer audio sample format
 LIBPROXY_DESC?=		Proxy support via libproxy
+LIGHTNING_DESC?=	Calendar extension
 RUST_DESC?=		Build with components written in Rust language
