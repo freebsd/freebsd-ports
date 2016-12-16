@@ -59,8 +59,6 @@ LDAP_DESC?=	LDAP support for Mailnews
 WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MOZSRC:=	${WRKSRC}/mozilla
 
-XPI_LIBDIR=	${PREFIX}/lib/xpi
-
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap
 .else
