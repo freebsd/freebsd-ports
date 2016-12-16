@@ -10,6 +10,8 @@ DISTNAME=	STonX-0.6.7.6
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
 
+LICENSE=	GPLv2+
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		gccmakedep:devel/gccmakedep \
 		mkfontdir:x11-fonts/mkfontdir \
