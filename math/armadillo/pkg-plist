@@ -207,6 +207,8 @@ include/armadillo_bits/fn_unique.hpp
 include/armadillo_bits/fn_var.hpp
 include/armadillo_bits/fn_vectorise.hpp
 include/armadillo_bits/fn_zeros.hpp
+include/armadillo_bits/glue_atan2_bones.hpp
+include/armadillo_bits/glue_atan2_meat.hpp
 include/armadillo_bits/glue_conv_bones.hpp
 include/armadillo_bits/glue_conv_meat.hpp
 include/armadillo_bits/glue_cor_bones.hpp
@@ -219,6 +221,8 @@ include/armadillo_bits/glue_hist_bones.hpp
 include/armadillo_bits/glue_hist_meat.hpp
 include/armadillo_bits/glue_histc_bones.hpp
 include/armadillo_bits/glue_histc_meat.hpp
+include/armadillo_bits/glue_hypot_bones.hpp
+include/armadillo_bits/glue_hypot_meat.hpp
 include/armadillo_bits/glue_join_bones.hpp
 include/armadillo_bits/glue_join_meat.hpp
 include/armadillo_bits/glue_kron_bones.hpp
@@ -483,7 +487,8 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.7
-lib/libarmadillo.so.7.500.2
+lib/libarmadillo.so.7.600.1
+libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
