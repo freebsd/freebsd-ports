@@ -14,7 +14,7 @@ PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
+COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 

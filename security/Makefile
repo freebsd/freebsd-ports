@@ -822,6 +822,7 @@
     SUBDIR += pulledpork
     SUBDIR += pure-sfv
     SUBDIR += putty
+    SUBDIR += putty-nogtk
     SUBDIR += pvk
     SUBDIR += pwauth
     SUBDIR += pwman

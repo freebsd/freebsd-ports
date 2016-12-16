@@ -454,6 +454,7 @@
     SUBDIR += intel-qcu
     SUBDIR += iocage
     SUBDIR += iocage-devel
+    SUBDIR += iocell
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += iohyve

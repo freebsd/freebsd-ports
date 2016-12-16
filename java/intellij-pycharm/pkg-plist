@@ -1173,6 +1173,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/terminal/.zshrc
 %%DATADIR%%/plugins/terminal/fish/config.fish
 %%DATADIR%%/plugins/terminal/jediterm-bash.in
-%%DATADIR%%/plugins/terminal/lib/jediterm-pty-2.2.jar
+%%DATADIR%%/plugins/terminal/lib/jediterm-pty-2.2.1.jar
 %%DATADIR%%/plugins/terminal/lib/resources_en.jar
 %%DATADIR%%/plugins/terminal/lib/terminal.jar

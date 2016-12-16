@@ -4,7 +4,7 @@ PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	7.1.1_r4
 PORTREVISION?=	0
-CATEGORIES=	devel
+CATEGORIES=	devel sysutils
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
 DISTFILES=	fastboot.1?id=706e754:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}

@@ -1,0 +1,12 @@
+iocell is a zero dependency drop in jail/container manager
+amalgamating some of the best features and technologies
+FreeBSD operating system has to offer.
+
+It is geared for ease of use with a simple and easy to
+understand command syntax.
+
+iocell has been forked from iocage with the goal of keeping
+original iocage experience available, providing bugfixes
+and new features.
+
+WWW: https://github.com/bartekrutkowski/iocell
