@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161216:
+  AFFECTS: mail/thunderbird, www/seamonkey
+  AUTHOR: gecko@FreeBSD.org
+
+  ENIGMAIL is no longer provided as part of the ports after upstream
+  dropped binary components in 1.9. Go to Tools -> Add-ons Manager
+  then type "enigmail" in the search box to install.
+
+  LIGHTNING is now only built as a system addon (disabled by default)
+  using upstream build glue. Go to Tools -> Add-ons Manager to enable.
+
 20161213:
   AFFECTS: users of devel/skalibs, lang/execline, sysutils/s6
   AUTHOR: Colin Booth <colin-ports@heliocat.net>
