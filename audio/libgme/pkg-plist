@@ -1,5 +1,5 @@
 include/gme/gme.h
 lib/libgme.so
 lib/libgme.so.0
-lib/libgme.so.0.6.0
+lib/libgme.so.0.6.1
 libdata/pkgconfig/libgme.pc
