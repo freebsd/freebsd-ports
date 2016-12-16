@@ -769,6 +769,7 @@
     SUBDIR += pfstools
     SUBDIR += pgplot
     SUBDIR += pho
+    SUBDIR += photivo
     SUBDIR += photopc
     SUBDIR += phototonic
     SUBDIR += php-facedetect
