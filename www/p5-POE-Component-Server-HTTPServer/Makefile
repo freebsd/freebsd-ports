@@ -13,8 +13,6 @@ COMMENT=	POE Component to server HTTP requests
 
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
 		p5-libwww>=0:www/p5-libwww \
-		p5-libwww>=0:www/p5-libwww \
-		p5-libwww>=0:www/p5-libwww \
 		p5-HTML-Template-HashWrapper>=0:www/p5-HTML-Template-HashWrapper \
 		p5-MIME-Types>=0:mail/p5-MIME-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
