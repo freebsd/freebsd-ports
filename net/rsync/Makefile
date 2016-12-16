@@ -4,7 +4,7 @@
 PORTNAME=	rsync
 PORTVERSION=	3.1.2
 CATEGORIES=	net ipv6
-PORTREVISION=	5
+PORTREVISION=	6
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/ \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
@@ -54,7 +54,7 @@ ATIMES_DESC=	Preserve access times, adds --atimes (BROKEN)
 ACL_DESC=	Add backward-compatibility for the --acls option
 
 # define default options
-OPTIONS_DEFAULT=SSH FLAGS
+OPTIONS_DEFAULT=FLAGS ICONV SSH
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 TIMELIMIT_EXTRA_PATCHES=	${WRKSRC}/patches/time-limit.diff
