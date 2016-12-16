@@ -241,9 +241,18 @@ CXX=	${LOCALBASE}/bin/clang++34
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .if ${COMPILER_FEATURES:Mlibc++}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001508
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
 BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+.else
+CXXFLAGS+=	-nostdinc++ -isystem /usr/include/c++/v1
+LDFLAGS+=	-L${WRKDIR}
+
+_USES_configure+=	200:gcc-libc++-configure
+gcc-libc++-configure:
+	@${LN} -fs /usr/lib/libc++.so ${WRKDIR}/libstdc++.so
+.endif # OSVERSION < 1001508
 .endif
 .endif
 
