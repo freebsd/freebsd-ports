@@ -18,6 +18,8 @@ RESTRICTED=	Source recipient must acknowledge license. Reproduction or \
 		redistribution prohibited. See \
 		http://www.avagotech.com/docs/12354864
 
+BROKEN=		does not fetch
+
 USES=		zip
 
 ONLY_FOR_ARCHS=	i386 amd64
