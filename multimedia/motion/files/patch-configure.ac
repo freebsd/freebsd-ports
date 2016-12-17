@@ -1,0 +1,11 @@
+--- configure.ac.orig	2016-10-25 01:39:24 UTC
++++ configure.ac
+@@ -790,7 +790,7 @@ SUPPORTED_V4L2_old=false
+ if test "${V4L}" = "no"; then
+ 	AC_MSG_CHECKING(for V42L support)
+ 	AC_MSG_RESULT(skipping)
+-else
++elif test "${BKTR}" = "no"; then
+ 	AC_CHECK_TYPE([struct v4l2_buffer],
+ 		[SUPPORTED_V4L2=true],
+ 		[SUPPORTED_V4L2=false],
