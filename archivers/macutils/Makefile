@@ -13,6 +13,10 @@ COMMENT=	Utilities for Apple Macintosh files
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
+DEPRECATED=	Not maintained in 16 years, many missing header inclusions
+EXPIRATION_DATE=	2017-03-17
+
+CFLAGS+=	-DMAXNAMLEN=255
 BINDIR=		${STAGEDIR}${PREFIX}/bin
 DOCFILES=	README.crc README.hexbin README.macput README.unpit \
 		README.zoom README.crc.orig README.macget README.scan \
