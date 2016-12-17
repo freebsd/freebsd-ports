@@ -26,7 +26,7 @@ GH_ACCOUNT=	osmcode
 USES=		cmake compiler:c++11-lib
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF
 
-# though it builds tests, the library itself it header-only
+# though it builds tests, the library itself is header-only
 NO_ARCH=	yes
 
 PORTDOCS=	*
