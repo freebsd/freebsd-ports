@@ -18,13 +18,15 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash
 
+BROKEN_FreeBSD_9=	does not build (lack of c++11 support)
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode
 
 USES=		cmake compiler:c++11-lib
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF
 
-# though it build tests, the library itself it header-only
+# though it builds tests, the library itself it header-only
 NO_ARCH=	yes
 
 PORTDOCS=	*
