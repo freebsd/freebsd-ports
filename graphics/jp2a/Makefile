@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		jpeg tar:bzip2
