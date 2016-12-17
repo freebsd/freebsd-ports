@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.10
+PORTVERSION=	1.6.0
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -12,13 +12,17 @@ COMMENT=	Validating, recursive, and caching DNS resolver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libldns.so:dns/ldns
+
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USES+=		autoreconf cpe libtool ssl
+USES=		autoreconf cpe libtool ssl
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
@@ -40,58 +44,34 @@ MUNIN_PLUGIN_DESC=	Install Munin plugin
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
 DNSTAP_DESC=	Enable dnstap logging support
 
-.include <bsd.port.options.mk>
-
-LIB_DEPENDS+=	libexpat.so:textproc/expat2 \
-		libldns.so:dns/ldns
-
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
 
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
-CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
-BUILD_DEPENDS+=	swig:devel/swig13
-STRIP_FILES+=	.libs/_unbound.so
-.endif
+DNSTAP_CONFIGURE_ENABLE=dnstap
+DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
+			libprotobuf-c.so:devel/protobuf-c
+ECDSA_CONFIGURE_ENABLE=	ecdsa
+ECDSA_VARS=		DEPENDS_ARGS+=WITH_ECDSA=yes
+GOST_CONFIGURE_ENABLE=	gost
+GOST_VARS=		DEPENDS_ARGS+=WITH_GOST=yes
+LIBEVENT_CONFIGURE_WITH=libevent
+LIBEVENT_CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
+LIBEVENT_LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
+LIBEVENT_USES=		pkgconfig
+MUNIN_PLUGIN_SUB_FILES=	pkg-message
+PYTHON_BUILD_DEPENDS=	swig:devel/swig13
+PYTHON_CONFIGURE_ON=	--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
+PYTHON_USES=		python:2
+PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
+THREADS_CONFIGURE_WITH=	pthreads
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGOST}
 . if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
 . endif
-DEPENDS_ARGS+=	WITH_GOST=yes
-.else
-CONFIGURE_ARGS+=--disable-gost
-.endif
-
-.if ${PORT_OPTIONS:MECDSA}
-DEPENDS_ARGS+=	WITH_ECDSA=yes
-.else
-CONFIGURE_ARGS+=--disable-ecdsa
-.endif
-
-.if ${PORT_OPTIONS:MDNSTAP}
-CONFIGURE_ARGS+=--enable-dnstap
-LIB_DEPENDS+=	libprotobuf-c.so:devel/protobuf-c
-LIB_DEPENDS+=	libfstrm.so:devel/fstrm
-.endif
-
-.if ${PORT_OPTIONS:MMUNIN_PLUGIN}
-SUB_FILES+=	pkg-message
-.endif
-
-.if ${PORT_OPTIONS:MLIBEVENT}
-LIB_DEPENDS+=	libevent.so:devel/libevent2
-USES+=		pkgconfig
-CONFIGURE_ARGS+=--with-libevent
-CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)
-LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
-.else
-CONFIGURE_ARGS+=--with-libevent=no
-.endif
-
-.if empty(PORT_OPTIONS:MTHREADS)
-CONFIGURE_ARGS+=--without-pthreads
 .endif
 
 post-patch:
@@ -111,7 +91,7 @@ post-install-PYTHON-on:
 
 post-install-MUNIN_PLUGIN-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
-	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_ \
+	${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins/
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================="
@@ -121,8 +101,5 @@ post-install-MUNIN_PLUGIN-on:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
-
-regression-test: build
-	(cd ${WRKSRC} && ${MAKE} test)
 
 .include <bsd.port.mk>
