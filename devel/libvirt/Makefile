@@ -108,7 +108,7 @@ SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 .include <bsd.port.options.mk>
 
 .if !${PLIST_SUB:MXEN}
-PLIST_SUB+=     XEN="@comment "
+PLIST_SUB+=	XEN="@comment "
 .endif
 
 CONF_FILES=	\
@@ -165,7 +165,7 @@ regression-test: build
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 
 .include <bsd.port.post.mk>
