@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
 USES=		cmake pkgconfig ssl
+USE_CSTD=	c99
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
