@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XlsxWriter
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	concurrent distutils autoplist
 
 .include <bsd.port.mk>
