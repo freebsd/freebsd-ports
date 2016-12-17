@@ -9,8 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
@@ -53,7 +52,7 @@ RMTBITBANG_DESC=Support Remote-Bitbang Driver
 MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 CMSISDAP_DESC=Support for CMSIS-DAP Compliant Debugger
 
-USES=		gmake libtool makeinfo pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 INFO=		openocd
 
