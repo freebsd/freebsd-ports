@@ -3,6 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/12760/ \
 		LOCAL/sunpoet
@@ -13,12 +14,13 @@ COMMENT=	Climate Data Operators
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
-OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
+OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
+OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
 OPTIONS_SUB=	yes
 CGRIBEX_DESC=	Use CGRIBEX library for GRIB1 files
 HDF5_IMPLIES=	SZIP
 NETCDF_IMPLIES=	HDF5
+UUID_DESC=	UUID support
 
 PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
 
@@ -51,6 +53,8 @@ SZIP_CONFIGURE_WITH=	szlib
 SZIP_LIB_DEPENDS=	libsz.so:science/szip
 UDUNITS_CONFIGURE_WITH=	udunits2
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
+UUID_CONFIGURE_OFF=	ac_cv_func_uuid_create=no ac_cv_have_decl_uuid_create=no ac_cv_have_decl_uuid_generate=no ac_cv_lib_uuid_uuid_generate=no
+UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 .include <bsd.port.pre.mk>
 
