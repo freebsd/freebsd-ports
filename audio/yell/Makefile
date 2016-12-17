@@ -9,6 +9,8 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line pc speaker bell
 
+LICENSE=	BSD2CLAUSE
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	SUID
