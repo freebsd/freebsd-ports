@@ -102,6 +102,4 @@ post-install-DOCS-on:
 #         34 - mvs/depth_map_test (Failed)
 #         39 - optim/loransac_test (Failed)
 #         42 - optim/ransac_test (Failed)
-.if ${ARCH} != amd64
 do-test:	.IGNORE
-.endif
