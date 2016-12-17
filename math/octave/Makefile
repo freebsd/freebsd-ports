@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -14,10 +14,11 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gnuplot:math/gnuplot \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		${LOCALBASE}/bin/makeinfo:print/texinfo
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		gsed:textproc/gsed \
-		makeinfo:print/texinfo
+		${LOCALBASE}/bin/makeinfo:print/texinfo
 LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libarpack.so:math/arpack \
 		libcurl.so:ftp/curl \
@@ -36,7 +37,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		charsetfix fortran gmake libtool makeinfo perl5 pkgconfig readline tar:xz
+USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_TEX=	dvipsk:build
