@@ -3,6 +3,7 @@
 
 PORTNAME=	vasm
 PORTVERSION=	1.7g
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://server.owl.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	~frank/tags/
@@ -13,7 +14,6 @@ COMMENT=	Portable 6502 6800 arm c16x jagrisc m68k ppc vidcore x86 z80 assembler
 
 LEGAL_TEXT=	This archive may be redistributed without modifications and used for non-commercial purposes.
 
-NO_ARCH=	yes
 USES=		gmake pathfix
 WRKSRC=		${WRKDIR}/vasm
 
