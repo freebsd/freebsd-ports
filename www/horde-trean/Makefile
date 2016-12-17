@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trean
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 
