@@ -11,4 +11,4 @@ tarball; the idea is to copy files from Gnulib into your own source tree.
 However, there are bimonthly stable snapshots of the Gnulib codebase
 published at http://erislabs.net/ianb/projects/gnulib/
 
-WWW: http://www.gnu.org/software/gnulib/
+WWW: https://www.gnu.org/software/gnulib/
