@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 USES=		autoreconf localbase ncurses shebangfix ssl
 GNU_CONFIGURE=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 OPTIONS_SUB=	yes
 SHEBANG_FILES=	smime_keys.pl
 
