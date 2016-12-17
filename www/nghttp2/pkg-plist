@@ -20,7 +20,7 @@ lib/libnghttp2.so.14.12.2
 %%ASIO%%lib/libnghttp2_asio.so.1.0.0
 libdata/pkgconfig/libnghttp2.pc
 %%ASIO%%libdata/pkgconfig/libnghttp2_asio.pc
-%%APP%%man/man1/h2load.1.gz
-%%APP%%man/man1/nghttp.1.gz
-%%APP%%man/man1/nghttpd.1.gz
-%%APP%%man/man1/nghttpx.1.gz
+man/man1/h2load.1.gz
+man/man1/nghttp.1.gz
+man/man1/nghttpd.1.gz
+man/man1/nghttpx.1.gz
