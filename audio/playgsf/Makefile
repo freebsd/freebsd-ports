@@ -3,7 +3,7 @@
 
 PORTNAME=	playgsf
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 		LOCAL/ehaupt
@@ -27,6 +27,10 @@ PLIST_FILES=	bin/playgsf
 ONLY_FOR_ARCHS=	i386 amd64
 
 PORTSCOUT=	skipv:0.7.2
+
+post-extract:
+	# Don't use accidentally packaged static library
+	@${RM} ${WRKSRC}/libresample-0.1.3/libresample.a
 
 post-patch:
 	@${REINPLACE_CMD} \
