@@ -1,7 +1,0 @@
---- lib/Makefile.in.orig	Fri Mar 23 06:32:35 2007
-+++ lib/Makefile.in	Wed Apr 25 02:48:45 2007
-@@ -564,3 +564,3 @@
- install-am: all-am
--	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
-+	@$(MAKE) $(AM_MAKEFLAGS) install-data-am
- 
