@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight command line AIM client
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PLIST_FILES=	bin/bsflite %%EXAMPLESDIR%%/config-example
 PORTDOCS=	COPYING ChangeLog README
 
