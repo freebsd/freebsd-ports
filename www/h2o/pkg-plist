@@ -7,7 +7,7 @@ share/h2o/start_server
 %%DATADIR%%/fastcgi-cgi
 %%DATADIR%%/setuidgid
 %%DATADIR%%/status/index.html
-@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
+%%MRUBY%%%%DATADIR%%/mruby/htpasswd.rb
 %%PORTDOCS%%%%DOCSDIR%%/assets/8mbps100msec-nginx195-h2o150.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/firstpaintbench.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/remotebench.png
@@ -57,4 +57,5 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/search/oktavia-english-search.js
 %%PORTDOCS%%%%DOCSDIR%%/search/oktavia-jquery-ui.js
 %%PORTDOCS%%%%DOCSDIR%%/search/searchindex.js
+@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
 @sample %%ETCDIR%%/h2o.conf.sample
