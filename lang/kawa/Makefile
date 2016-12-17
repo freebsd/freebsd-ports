@@ -11,7 +11,9 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-USES=		gmake makeinfo readline
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
+
+USES=		gmake readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
