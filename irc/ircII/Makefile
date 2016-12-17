@@ -3,6 +3,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	20151120
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -23,7 +24,7 @@ IRCBUG_DESC=	Install ircII bug-reporting script
 EMACS_KEYS_DESC=Use emacs meta keys
 
 EMACS_KEYS_CONFIGURE_WITH=	emacs-meta-keys
-OPENSSL_USE=			OPENSSL=yes
+OPENSSL_USES=			ssl
 
 .include <bsd.port.pre.mk>
 
@@ -33,8 +34,10 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
+.if ${ICONV_PREFIX} != /usr
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
