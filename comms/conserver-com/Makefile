@@ -34,7 +34,7 @@ DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
 FREEIPMI_CONFIGURE_ON=	--with-freeipmi=${LOCALBASE}
-FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
+FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 GSSAPI_CONFIGURE_WITH=	gssapi
 GSSAPIONLY_EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
 STRIPREALM_CONFIGURE_WITH=	striprealm
