@@ -1738,5 +1738,6 @@
     SUBDIR += zsh-syntax-highlighting
     SUBDIR += zu-aspell
     SUBDIR += zu-hunspell
+    SUBDIR += zxing-cpp
 
 .include <bsd.port.subdir.mk>
