@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
-COMMENT=	Find The Longest Common Substring of Two Strings.
+COMMENT=	Find The Longest Common Substring of Two Strings
 
 USES=		perl5
 USE_PERL5=	configure
