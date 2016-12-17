@@ -3,7 +3,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	20151120
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -16,12 +16,14 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/irc
 USES=		iconv ncurses tar:bzip2
 
-OPTIONS_DEFINE=	IRCBUG EMACS_KEYS OPENSSL
-OPTIONS_DEFAULT=OPENSSL
+OPTIONS_DEFINE=	EMACS_KEYS HELP IRCBUG OPENSSL SCRIPTS
+OPTIONS_DEFAULT=EMACS_KEYS HELP OPENSSL SCRIPTS
 OPTIONS_SUB=	yes
 
-IRCBUG_DESC=	Install ircII bug-reporting script
+HELP_DESC=	Install ircII help files
 EMACS_KEYS_DESC=Use emacs meta keys
+IRCBUG_DESC=	Install ircII bug-reporting script
+SCRIPTS_DESC=	Install ircII script collection
 
 EMACS_KEYS_CONFIGURE_WITH=	emacs-meta-keys
 OPENSSL_USES=			ssl
