@@ -8,20 +8,21 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minix editline: A free readline() for UNIX
 
 LICENSE=	BSD4CLAUSE
-
-USES=		autoreconf libtool ncurses pathfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	troglobit
-
-USE_LDCONFIG=	yes
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		autoreconf libtool ncurses pathfix
+
 PORTDOCS=	*
 
+GH_ACCOUNT=	troglobit
+USE_GITHUB=	yes
+
+# Rename to libeditline.3 to avoid conflict with libedit
 post-patch:
-	# rename to libeditline.3 to avoid conflict with libedit
-	${REINPLACE_CMD} 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.am
-	cd ${WRKSRC}/man; ${MV} editline.3 libeditline.3
+	@${REINPLACE_CMD} 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.am
+	@${MV} ${WRKSRC}/man/editline.3 ${WRKSRC}/man/libeditline.3
 
 .include <bsd.port.mk>
