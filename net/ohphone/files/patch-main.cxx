@@ -1,5 +1,5 @@
---- ./main.cxx.orig	2006-04-07 02:21:49.000000000 +0800
-+++ ./main.cxx	2008-03-03 23:07:51.000000000 +0800
+--- main.cxx.orig	2006-04-06 18:21:49 UTC
++++ main.cxx
 @@ -184,6 +184,8 @@
   */
  
@@ -18,7 +18,7 @@
  #include <ptclib/vsdl.h>
  #endif
  
-@@ -554,7 +556,7 @@
+@@ -554,7 +556,7 @@ void OhPhone::Main()
              "                          :      svga256  256 colour VGA (Linux only)\n"
              "                          :      svga     full colour VGA (Linux only)\n"
  #endif
@@ -27,7 +27,7 @@
              "                          :      sdl      Use Simple DirectMedia Library\n"
  #endif
  #ifdef HAS_X11
-@@ -855,7 +857,7 @@
+@@ -855,7 +857,7 @@ BOOL MyH323EndPoint::Initialise(PConfigA
          && !(videoReceiveDevice *= "svga")
          && !(videoReceiveDevice *= "svga256")
  #endif
@@ -36,7 +36,7 @@
          && !(videoReceiveDevice *= "sdl")
  #endif
  #ifdef HAS_X11
-@@ -2065,7 +2067,7 @@
+@@ -2065,7 +2067,7 @@ BOOL MyH323EndPoint::OpenVideoChannel(H3
    if ((!isEncoding) || videoLocal)
      PAssert(!videoReceiveDevice.IsEmpty(), "video display created without device type");
  
