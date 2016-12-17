@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttyd
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	neel@neelc.org
@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
 USES=		cmake pkgconfig ssl
+USE_CSTD=	c99
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

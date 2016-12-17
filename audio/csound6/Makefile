@@ -23,7 +23,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-USES=		bison cmake:outsource localbase python:2
+USES=		alias bison cmake:outsource localbase python:2
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DBUILD_JAVA_INTERFACE:BOOL=OFF \
 		-DBUILD_P5GLOVE_OPCODES:BOOL=OFF \

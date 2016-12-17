@@ -20,10 +20,10 @@ LIB_DEPENDS=	libbdd.so:science/buddy \
 		libgmp.so:math/gmp \
 		libsigsegv.so:devel/libsigsegv
 
-USES=		autoreconf bison
+USES=		alias autoreconf bison ncurses
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${NCURSESLIB} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 MAKE_JOBS_UNSAFE=	yes
 
@@ -39,7 +39,7 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == "DragonFly" || ${OSVERSION} >= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mixfix-lexerAux
 .endif
 
@@ -64,6 +64,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/Mixfix/global.hh
+	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|g' \
+		${WRKSRC}/configure.ac
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

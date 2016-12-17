@@ -42,6 +42,15 @@
  # Extract the first word of "ranlib", so it can be a program name with args.
  set dummy ranlib; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -1899,7 +1864,7 @@ EOF
+ 
+     echo "$ac_t""oss" 1>&6
+        ;;
+-  *freebsd*) cat >> confdefs.h <<\EOF
++  *freebsd*|*dragonfly*) cat >> confdefs.h <<\EOF
+ #define HAVE_FREEBSD 1
+ EOF
+ 
 @@ -2297,4 +2262,3 @@ rm -fr confdefs* $ac_clean_files
  test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
  
