@@ -2,16 +2,14 @@
 
 PORTNAME=	gnulib
 PORTVERSION=	20140202
+DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU portability library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
-
-USES=		gmake perl5 shebangfix
+USES=		gmake makeinfo perl5 shebangfix
 SHEBANG_FILES=	check-module
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
