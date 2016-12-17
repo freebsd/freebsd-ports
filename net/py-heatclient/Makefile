@@ -1,12 +1,11 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 # $FreeBSD$
 
-PORTNAME=	heatclient
+PORTNAME=	python-heatclient
 PORTVERSION=	1.6.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack Orchestration API Client Library

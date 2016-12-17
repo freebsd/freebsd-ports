@@ -3,6 +3,7 @@
 
 PORTNAME=	keystonemiddleware
 PORTVERSION=	4.10.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=1.2.3:www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}keystoneclient>=0:net/py-keystoneclient \
+		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=0:net/py-python-keystoneclient \
 		${PYTHON_PKGNAMEPREFIX}pycadf>=0:devel/py-pycadf \
 		${PYTHON_PKGNAMEPREFIX}positional>=1.1.1:devel/py-positional \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.16.0:devel/py-oslo.utils \

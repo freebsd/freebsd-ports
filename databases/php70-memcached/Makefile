@@ -29,6 +29,6 @@ GH_TAGNAME=	c032fba
 PHP_MODNAME=	memcached
 
 SASL_CONFIGURE_ENABLE=	memcached-sasl
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 CONFLICTS_INSTALL=	haproxy-[1234567890]\*
+IGNORE=		no devel version available
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy

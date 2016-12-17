@@ -96,6 +96,7 @@
     SUBDIR += p5-cconv
     SUBDIR += pcmanx
     SUBDIR += php-cconv
+    SUBDIR += php-opencc
     SUBDIR += phpbb-tw
     SUBDIR += phpbb3-tw
     SUBDIR += py-cconv

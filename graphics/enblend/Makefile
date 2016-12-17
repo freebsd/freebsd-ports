@@ -15,7 +15,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	help2man:misc/help2man \
-		${LOCALBASE}/bin/makeinfo:print/texinfo \
 		OpenEXR>=1.0:graphics/OpenEXR
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff \

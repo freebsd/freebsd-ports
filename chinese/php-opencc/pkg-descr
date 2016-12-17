@@ -1,0 +1,6 @@
+Open Chinese Convert is an opensource project for conversion between Traditional
+Chinese and Simplified Chinese, supporting character-level conversion,
+phrase-level conversion, variant conversion and regional idioms among Mainland
+China, Taiwan and Hong kong.
+
+WWW: https://github.com/NauxLiu/opencc4php

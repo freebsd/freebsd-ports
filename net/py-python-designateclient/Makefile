@@ -1,12 +1,11 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 # $FreeBSD$
 
-PORTNAME=	designateclient
+PORTNAME=	python-designateclient
 PORTVERSION=	2.3.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack DNS-as-a-Service - Client

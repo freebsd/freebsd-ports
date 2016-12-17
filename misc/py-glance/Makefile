@@ -3,7 +3,7 @@
 
 PORTNAME=	glance
 PORTVERSION=	13.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable \
 		${PYTHON_PKGNAMEPREFIX}Paste>=0:www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
-		${PYTHON_PKGNAMEPREFIX}keystoneclient>=0:net/py-keystoneclient \
+		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=0:net/py-python-keystoneclient \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}oslo.db>=0:devel/py-oslo.db \

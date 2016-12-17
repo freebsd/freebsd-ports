@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Chart/Clicker/Data/Series/HighLow.pm
 %%SITE_PERL%%/Chart/Clicker/Data/Series/Size.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration.pm
+%%SITE_PERL%%/Chart/Clicker/Decoration/Annotation.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Glass.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Grid.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Legend.pm
@@ -53,6 +54,7 @@
 %%PERL5_MAN3%%/Chart::Clicker::Data::Series::HighLow.3.gz
 %%PERL5_MAN3%%/Chart::Clicker::Data::Series::Size.3.gz
 %%PERL5_MAN3%%/Chart::Clicker::Decoration.3.gz
+%%PERL5_MAN3%%/Chart::Clicker::Decoration::Annotation.3.gz
 %%PERL5_MAN3%%/Chart::Clicker::Decoration::Glass.3.gz
 %%PERL5_MAN3%%/Chart::Clicker::Decoration::Grid.3.gz
 %%PERL5_MAN3%%/Chart::Clicker::Decoration::Legend.3.gz
