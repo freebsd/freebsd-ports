@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-7.66-linux20130827
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
 
-RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
+RUN_DEPENDS=	${DATADIR}/data1/default.cfg:games/alienarena-data
 
 USES=		compiler:c++11-lib dos2unix gmake
 USE_CXXSTD=	c++11
@@ -49,11 +49,11 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .if ${PORT_OPTIONS:MCLIENT}
 USES+=		openal:soft,alut pkgconfig
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng16.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
+		libjpeg.so:graphics/jpeg \
+		libpng16.so:graphics/png \
+		libvorbis.so:audio/libvorbis
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libode.a:devel/ode
 USE_GL=		yes
 USE_XORG=	xxf86dga xxf86vm
