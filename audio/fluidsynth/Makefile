@@ -13,7 +13,7 @@ COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
+OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE SNDIO
 OPTIONS_DEFAULT=	JACK
 
 USE_GNOME=	glib20
@@ -49,7 +49,11 @@ PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CMAKE_OFF=	-Denable-libsndfile:BOOL=FALSE
 
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CMAKE_OFF=	-Denable-sndio:BOOL=FALSE
+
 post-patch:
+	${CP} ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
 	@${REINPLACE_CMD} -e \
 		'/Linux/s|^|#| ; \
 		 /_init_lib_suffix/s|"64"|""| ; \
