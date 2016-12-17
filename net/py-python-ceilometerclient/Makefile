@@ -1,12 +1,11 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 # $FreeBSD$
 
-PORTNAME=	ceilometerclient
+PORTNAME=	python-ceilometerclient
 PORTVERSION=	2.7.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	OpenStack Telemetry API Client Library

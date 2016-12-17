@@ -3,7 +3,7 @@
 
 PORTNAME=	keystone
 PORTVERSION=	10.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.9.6:databases/py-sqlalchemy-migrate \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.16.0:devel/py-stevedore \
 		${PYTHON_PKGNAMEPREFIX}passlib>=1.6:security/py-passlib \
-		${PYTHON_PKGNAMEPREFIX}keystoneclient>=0:net/py-keystoneclient \
+		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=0:net/py-python-keystoneclient \
 		${PYTHON_PKGNAMEPREFIX}keystonemiddleware>=0:devel/py-keystonemiddleware \
 		${PYTHON_PKGNAMEPREFIX}oslo.cache>=1.5.0:devel/py-oslo.cache \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.8.0:devel/py-oslo.concurrency \
