@@ -42,6 +42,7 @@ post-patch:
 		-e '/^LDFLAGS =/s/$$/ -s ${ICONV_LIB}/' \
 		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|PREFIX/|${PREFIX}/|' ${WRKSRC}/doc/ircII.1
 
 post-install:
 	${MV} -f ${STAGEDIR}${PREFIX}/bin/irc-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/irc
