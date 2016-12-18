@@ -6,3 +6,12 @@ man/man8/ipv6calc.8.gz
 man/man8/ipv6loganon.8.gz
 man/man8/ipv6logconv.8.gz
 man/man8/ipv6logstats.8.gz
+share/ipv6calc/tools/DBIP-generate-db.pl
+share/ipv6calc/tools/DBIP-update.sh
+share/ipv6calc/tools/GeoIP-update.sh
+share/ipv6calc/tools/IP2Location-update.sh
+share/ipv6calc/tools/ipv6calc-create-registry-list-ipv4.pl
+share/ipv6calc/tools/ipv6calc-create-registry-list-ipv6.pl
+share/ipv6calc/tools/ipv6calc-db-update.sh
+share/ipv6calc/tools/ipv6calc-registries-check-run-create.sh
+share/ipv6calc/tools/ipv6calc-update-registries.sh
