@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_http2-devel
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,8 +12,8 @@ COMMENT=	Early experience HTTP/2 modules for Apache httpd
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	nghttp2>=1.2:www/nghttp2
-LIB_DEPENDS=	libnghttp2.so:www/nghttp2
+BUILD_DEPENDS=	libnghttp2>=1.2:www/libnghttp2
+LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icing
