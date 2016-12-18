@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161218:
+  AFFECTS: users of www/nghttp2
+  AUTHOR: sunpoet@FreeBSD.org
+
+  nghttp2 has been split into 2 ports: www/libnghttp2 for core library and
+  www/nghttp2 for the rest. Please uninstall nghttp2 before you update
+  this port.
+
 20161216:
   AFFECTS: mail/thunderbird, www/seamonkey
   AUTHOR: gecko@FreeBSD.org
