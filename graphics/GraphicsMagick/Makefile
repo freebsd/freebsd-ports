@@ -3,6 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.25
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -50,7 +51,7 @@ LCMS2_CONFIGURE=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 OPENMP_CONFIGURE_OFF=	--disable-openmp --without-threads
 OPENMP_CONFIGURE_ON=	--disable-openmp-slow --enable-openmp --with-threads
-OPENMP_USES=		compiler:openmp
+OPENMP_USES=		compiler:gcc-c++11-lib
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 Q8BIT_CONFIGURE_OFF=	--with-quantum-depth=16
@@ -98,7 +99,3 @@ post-install-Q8BIT-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q8/coders ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q8/filters
 
 .include <bsd.port.mk>
-
-# The OPENMP option may select gcc as compiler but on architectures
-# that have switched to libc++ clang should be used for C++ code.
-CXX=		c++
