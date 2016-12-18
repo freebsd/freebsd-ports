@@ -1,4 +1,6 @@
+bin/bam_coverage_windows.pl
 bin/contig_draw.pl
+bin/coverage_to_topoview.pl
 bin/feature_draw.pl
 bin/frend.pl
 bin/glyph_help.pl
@@ -88,6 +90,7 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/three_letters.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/tic_tac_toe.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/toomany.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/topoview.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/trace.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/track.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/transcript.pm
@@ -112,6 +115,10 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Util.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle/Loader.pm
+%%PERL5_MAN1%%/contig_draw.pl.1.gz
+%%PERL5_MAN1%%/feature_draw.pl.1.gz
+%%PERL5_MAN1%%/frend.pl.1.gz
+%%PERL5_MAN1%%/search_overview.pl.1.gz
 %%PERL5_MAN3%%/Bio::Graphics.3.gz
 %%PERL5_MAN3%%/Bio::Graphics::ConfiguratorI.3.gz
 %%PERL5_MAN3%%/Bio::Graphics::DrawTransmembrane.3.gz
@@ -212,7 +219,3 @@ bin/search_overview.pl
 %%PERL5_MAN3%%/Bio::Graphics::Util.3.gz
 %%PERL5_MAN3%%/Bio::Graphics::Wiggle.3.gz
 %%PERL5_MAN3%%/Bio::Graphics::Wiggle::Loader.3.gz
-%%PERL5_MAN1%%/contig_draw.pl.1.gz
-%%PERL5_MAN1%%/feature_draw.pl.1.gz
-%%PERL5_MAN1%%/frend.pl.1.gz
-%%PERL5_MAN1%%/search_overview.pl.1.gz
