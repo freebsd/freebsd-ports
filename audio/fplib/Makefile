@@ -5,7 +5,6 @@ PORTNAME=	fplib
 PORTVERSION=	20121001
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last.fm fingerprint library
@@ -23,5 +22,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		cmake localbase:ldflags tar:xz
+
+GH_ACCOUNT=	lastfm
+GH_PROJECT=	Fingerprinter
+GH_TAGNAME=	b728727
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
