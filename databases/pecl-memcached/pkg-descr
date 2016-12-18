@@ -6,3 +6,4 @@ This extension uses libmemcached library to provide API for
 communicating with memcached servers.
 
 WWW: https://pecl.php.net/package/memcached
+WWW: https://github.com/php-memcached-dev/php-memcached
