@@ -27,19 +27,15 @@ SCRIPTS_DESC=	Install ircII script collection
 
 EMACS_KEYS_CONFIGURE_WITH=	emacs-meta-keys
 OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_WITH=		openssl=${OPENSSLBASE}
+OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.else
-CONFIGURE_ARGS+=	--without-openssl
-.endif
-
-.if ${ICONV_PREFIX} != /usr
+# The ordering is very specific. This must come after pre.mk or
+# ircII won't link against libssl from ports
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
