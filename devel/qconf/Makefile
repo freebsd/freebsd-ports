@@ -20,7 +20,7 @@ MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}"
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${DATADIR:S,/qconf,,} \
-		--qtdir=${QT_PREFIX} \
+		--qtdir=${PREFIX} \
 		--verbose
 
 .include <bsd.port.mk>

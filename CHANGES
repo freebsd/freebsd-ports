@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20161218:
+AUTHOR: tcberner@FreeBSD.org
+
+  QT_PREFIX has been dropped, in favour of using PREFIX directly.
+
 20160911:
 AUTHOR: amdmi3@FreeBSD.org
 

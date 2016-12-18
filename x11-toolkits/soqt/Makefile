@@ -21,7 +21,7 @@ USE_QT4=	corelib opengl moc_build
 QT_NONSTANDARD=	yes
 USE_GL=		gl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" MOC="${MOC}"
+CONFIGURE_ENV=	QTDIR="${PREFIX}" MOC="${MOC}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${LOCALBASE} \
 		--with-qt=${QT_LIBDIR} \
 		--enable-debug=no

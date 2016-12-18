@@ -29,8 +29,6 @@ _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
 QT5_VERSION?=	5.6.2
 
-QT_PREFIX?=		${LOCALBASE}
-
 _QT_RELNAME=	qt${_QT_VERSION:R:R}
 _QT_VERSION=	# empty
 .for ver in ${_QT_SUPPORTED}
@@ -51,10 +49,6 @@ IGNORE?=		can't be installed: bsd.qt.mk may only be included via USE_QT[${_QT_SU
 
 .if defined(QT_DIST)
 QT_NONSTANDARD=	yes
-
-. if ! ${.MAKEFLAGS:MPREFIX=*}
-PREFIX=			${QT_PREFIX}
-. endif
 
 MASTER_SITES=	${MASTER_SITE_QT}
 # Useless, as it must be defined before including bsd.port.pre.mk (at least
@@ -269,16 +263,14 @@ QMAKE_COMPILER=	$$(ccver="$$(${CXX} --version)"; case "$$ccver" in *clang*) echo
 # Import QMAKE_ENV and QMAKE_ARGS definitions.
 USES+=			qmake:_env
 
-PLIST_SUB+=		QT_PREFIX="${QT_PREFIX}"
-
 .for dir in INC ARCH PLUGIN LIBEXEC IMPORT \
 	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC
-QT_${dir}DIR=	${QT_PREFIX}/${QT_${dir}DIR_REL}
+QT_${dir}DIR=	${PREFIX}/${QT_${dir}DIR_REL}
 PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .endfor
 
 .for dir in BIN LIB
-QT_${dir}DIR=        ${QT_PREFIX}/${QT_${dir}DIR_REL}
+QT_${dir}DIR=        ${PREFIX}/${QT_${dir}DIR_REL}
 .  if defined(QT_DIST)
 PLIST_SUB+=                QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .  endif
@@ -291,7 +283,7 @@ PLIST_SUB+=                QT_${dir}DIR="${QT_${dir}DIR_REL}"
 Qt_Post_Include=	bsd.qt.mk
 
 .if !defined(QT_NONSTANDARD)
-CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
+CONFIGURE_ENV+=	QTDIR="${PREFIX}" QMAKE="${QMAKE}" \
 				MOC="${MOC}" RCC="${RCC}" UIC="${UIC}" \
 				QMAKESPEC="${QMAKESPEC}"
 CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
@@ -722,16 +714,16 @@ qt-post-install:
 	@${ECHO_CMD} \
 		>> ${STAGEDIR}${QT_INCDIR}/QtCore/modules/qconfig-${QT_MODNAME}.h
 .  endfor
-	@${ECHO_CMD} "${QT_PREFIX}/${QT_INCDIR_REL}/QtCore/modules/qconfig-${QT_MODNAME}.h" \
+	@${ECHO_CMD} "${PREFIX}/${QT_INCDIR_REL}/QtCore/modules/qconfig-${QT_MODNAME}.h" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo '#include <QtCore/modules/qconfig-${QT_MODNAME}.h>' >> ${QT_PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig-modules.h" \
+	@${ECHO_CMD} "@exec echo '#include <QtCore/modules/qconfig-${QT_MODNAME}.h>' >> ${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig-modules.h" \
 		>> ${TMPPLIST}
 . endif # ${QT_DEFINES:N-*}
 . if ${QT_CONFIG:N-*}
 	@${MKDIR} ${STAGEDIR}${QT_MKSPECDIR}/modules
 	${ECHO_CMD} "QT_CONFIG += ${QT_CONFIG:N-*:O:u}" \
 		> ${STAGEDIR}${QT_MKSPECDIR}/modules/qt_config_${QT_MODNAME}.pri
-	@${ECHO_CMD} "${QT_PREFIX}/${QT_MKSPECDIR_REL}/modules/qt_config_${QT_MODNAME}.pri" \
+	@${ECHO_CMD} "${PREFIX}/${QT_MKSPECDIR_REL}/modules/qt_config_${QT_MODNAME}.pri" \
 		>> ${TMPPLIST}
 . endif # ${QT_CONFIG:N-*}
 .endif # defined(QT_DIST) && ! ${_QT_VERSION:M4*}
