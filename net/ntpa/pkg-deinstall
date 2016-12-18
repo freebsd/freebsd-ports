@@ -1,0 +1,32 @@
+#! /bin/sh
+
+delnewsyslog() {
+    tmp="/etc/#ntpa$$"
+    sed -e '/^\/var\/log\/ntpa\/ntpa.log /d' /etc/newsyslog.conf >${tmp}
+    cat ${tmp} > /etc/newsyslog.conf
+    rm ${tmp}
+}
+
+newsyslog() {
+    ENTRY=`grep /var/log/ntpa/ntpa.log /etc/newsyslog.conf`
+    DEFAULT='/var/log/ntpa/ntpa.log root:ntpa       660  10    *    @T00  C  /var/run/ntpa/ntpa.pid SIGUSR2'
+    if [ -z "$ENTRY" ]; then
+        exit 0
+    elif [ "$ENTRY" = "$DEFAULT" ]; then
+        delnewsyslog
+    else
+    echo "You have changed the default ntpa entry in \"/etc/newsyslog.conf\"".
+    echo "If you deinstall ntpa permanently, you have to manually remove it"
+    fi
+}
+
+
+case $2 in
+    DEINSTALL)
+        if [ -z "${PACKAGE_BUILDING}" ]; then
+            newsyslog
+        fi
+        ;;
+    POST-DEINSTALL)
+        ;;
+esac
