@@ -168,6 +168,7 @@
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
+    SUBDIR += flashplayer
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
@@ -372,11 +373,10 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
-    SUBDIR += linux-c6-flashplugin24
     SUBDIR += linux-c6-qt47-webkit
-    SUBDIR += linux-c7-flashplugin24
     SUBDIR += linux-c7-qtwebkit
     SUBDIR += linux-firefox
+    SUBDIR += linux-flashplayer
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
     SUBDIR += lionwiki

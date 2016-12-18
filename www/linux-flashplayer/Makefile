@@ -1,32 +1,29 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	flashplugin
+PORTNAME=	flashplayer
 PORTVERSION=	24.0.0.186
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION}/
-PKGNAMEPREFIX?=	linux-c6-
+PKGNAMEPREFIX=	linux-
 DISTFILES=	flash_player_npapi_linux.i386.tar.gz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Adobe Flash Player NPAPI Plugin (beta)
+COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES?=		linux:c6
+USES=		cpe linux webplugin:linux
+CPE_VENDOR=	adobe
+CPE_PRODUCT=	flash_player
 USE_LINUX=	alsalib alsa-plugins-oss curl dri gtk2 nspr nss
+WEBPLUGIN_FILES=libflashplayer.so
 
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 STRIP=
-USES+=		cpe webplugin:linux
-CPE_VENDOR=	adobe
-CPE_PRODUCT=	flash_player
-WEBPLUGIN_FILES=libflashplayer.so
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} '/^NotShowIn=KDE/d' \
