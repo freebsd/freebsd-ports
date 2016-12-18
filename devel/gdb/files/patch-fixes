@@ -1,0 +1,11 @@
+--- gdb/compile/compile-loc2c.c.orig	2016-07-05 12:30:44.811467295 +0200
++++ gdb/compile/compile-loc2c.c	2016-07-05 12:38:46.432434206 +0200
+@@ -670,7 +670,7 @@
+       enum dwarf_location_atom op = (enum dwarf_location_atom) *op_ptr;
+       uint64_t uoffset, reg;
+       int64_t offset;
+-
++      uoffset = 0;
+       print_spaces (indent - 2, stream);
+       if (info[op_ptr - base].label)
+ 	{

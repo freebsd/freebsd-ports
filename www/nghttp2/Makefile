@@ -4,7 +4,7 @@
 PORTNAME=	nghttp2
 PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,6 +12,8 @@ COMMENT=	HTTP/2.0 C Library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK SPDY
 OPTIONS_DEFAULT=APP HPACK SPDY
@@ -73,6 +75,16 @@ post-configure:
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=--with-jemalloc
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| lib||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|$$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' ${WRKSRC}/*/Makefile.am
+
+# lib/libnghttp2.* are not available until configure phase
+post-configure:
+	@${MKDIR} ${WRKSRC}/lib/.libs/
+	@${CP} ${LOCALBASE}/lib/libnghttp2.so* ${WRKSRC}/lib/.libs/
+	@cd ${WRKSRC}/lib/.libs/ && ${AR} x ${LOCALBASE}/lib/libnghttp2.a
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nghttpx/
