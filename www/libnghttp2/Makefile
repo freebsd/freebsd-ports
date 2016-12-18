@@ -1,0 +1,28 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	nghttp2
+PORTVERSION=	1.17.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	www net
+PKGNAMEPREFIX=	lib
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	HTTP/2.0 C Library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFIGURE_ARGS=	--enable-lib-only
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		autoreconf libtool pathfix pkgconfig
+
+USE_GITHUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|doc \(contrib script\)|\1|; /^dist_doc_DATA = / s| README.rst||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '/^dist_pkgdata_SCRIPTS = / s| fetch-ocsp-response||' ${WRKSRC}/script/Makefile.am
+
+.include <bsd.port.mk>

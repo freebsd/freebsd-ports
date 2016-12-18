@@ -359,6 +359,7 @@
     SUBDIR += libhubbub
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
+    SUBDIR += libnghttp2
     SUBDIR += libsocialweb
     SUBDIR += libwww
     SUBDIR += libxul
