@@ -27,7 +27,7 @@ OPTIONS_DEFINE=		IPYTHON
 IPYTHON_DESC=		Interactive shell support
 IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython
 
-USES=		gettext python:2.7+
+USES=		gettext python:-2.7
 USE_GNOME=	intltool pygnome2 pygtk2
 USE_PYTHON=	autoplist distutils
 PLIST_FILES+=	man/man1/gourmet.1.gz
