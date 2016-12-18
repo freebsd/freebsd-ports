@@ -194,22 +194,22 @@ index ccdab18..499944f 100644
    GDB_OSABI_NETBSD_ELF,
    GDB_OSABI_OPENBSD_ELF,
 diff --git gdb/osabi.c gdb/osabi.c
-index 3581eb3..d12656e 100644
+index f7d4e74..130ffef 100644
 --- gdb/osabi.c
 +++ gdb/osabi.c
 @@ -66,6 +66,7 @@ static const struct osabi_names gdb_osabi_names[] =
    { "GNU/Linux", "linux(-gnu)?" },
-   { "FreeBSD a.out", NULL },
-   { "FreeBSD ELF", NULL },
-+  { "FreeBSD ELF kernel", NULL },
-   { "NetBSD a.out", NULL },
-   { "NetBSD ELF", NULL },
-   { "OpenBSD ELF", NULL },
+   { "FreeBSD/a.out", NULL },
+   { "FreeBSD/ELF", NULL },
++  { "FreeBSD/kernel", NULL },
+   { "NetBSD/a.out", NULL },
+   { "NetBSD/ELF", NULL },
+   { "OpenBSD/ELF", NULL },
 diff --git gdb/regcache.c gdb/regcache.c
-index 86e648a..26a0fd5 100644
+index a5c90a6..05044e5 100644
 --- gdb/regcache.c
 +++ gdb/regcache.c
-@@ -1065,6 +1065,20 @@ regcache_raw_supply (struct regcache *regcache, int regnum, const void *buf)
+@@ -1083,6 +1083,20 @@ regcache_raw_supply (struct regcache *regcache, int regnum, const void *buf)
      }
  }
  
@@ -217,11 +217,11 @@ index 86e648a..26a0fd5 100644
 +regcache_raw_supply_unsigned (struct regcache *regcache, int regnum,
 +			      ULONGEST val)
 +{
-+  void *buf;
++  gdb_byte *buf;
 +
 +  gdb_assert (regcache != NULL);
 +  gdb_assert (regnum >=0 && regnum < regcache->descr->nr_raw_registers);
-+  buf = alloca (regcache->descr->sizeof_register[regnum]);
++  buf = (gdb_byte *)alloca (regcache->descr->sizeof_register[regnum]);
 +  store_unsigned_integer (buf, regcache->descr->sizeof_register[regnum],
 +			  gdbarch_byte_order (regcache->descr->gdbarch), val);
 +  regcache_raw_supply (regcache, regnum, buf);
