@@ -5,7 +5,7 @@
  #include "../../common/Thread.h" // needed for allocAlignedMem() and freeAlignedMem()
  
 -#if defined(__APPLE__)
-+#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__DragonFly__)
  # include <stdlib.h>
  #else
  # include <malloc.h>
