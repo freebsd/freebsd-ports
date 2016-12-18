@@ -1,9 +1,9 @@
 # Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
 # $FreeBSD$
 
-PORTNAME=	bioperl-run
+PORTNAME=	BioPerl-Run
 PORTVERSION=	1.6.901
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology perl5
 PKGNAMEPREFIX=	p5-
 
@@ -13,20 +13,22 @@ COMMENT=	Wrapper modules for common bioinformatics tools
 LICENSE=	ART10 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-bioperl>=1.6.0:biology/p5-bioperl \
-		p5-IPC-Run>=0:devel/p5-IPC-Run \
-		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
-		p5-XML-Twig>=0:textproc/p5-XML-Twig \
+BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-BioPerl>=1.6.0:biology/p5-BioPerl \
+		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-File-Sort>=0:misc/p5-File-Sort \
-		p5-Config-Any>=0:devel/p5-Config-Any
+		p5-IPC-Run>=0:devel/p5-IPC-Run \
+		p5-XML-Twig>=0:textproc/p5-XML-Twig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bioperl
+GH_PROJECT=	bioperl-run
 GH_TAGNAME=	96ccd93
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	modbuild
 SHEBANG_FILES=	scripts/*
