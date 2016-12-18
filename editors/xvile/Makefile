@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8q
+PORTVERSION=	9.8s
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/ \
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	reflex:textproc/reflex
 
 USES=		pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	macros/lxvile macros/lxvile-fonts perl/vileget
-USE_XORG=	x11 xext xpm
+USE_XORG=	x11 xext xpm xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	cf_cv_crypt_works=yes
 CONFIGURE_ARGS=	--disable-imake \
