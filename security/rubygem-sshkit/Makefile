@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshkit
-PORTVERSION=	1.11.4
+PORTVERSION=	1.11.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
