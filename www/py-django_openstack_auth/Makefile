@@ -1,13 +1,12 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 # $FreeBSD$
 
-PORTNAME=	django-openstack-auth
+PORTNAME=	django_openstack_auth
 PORTVERSION=	3.0.0
 PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	django_openstack_auth-${PORTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Django authentication backend for use with OpenStack Identity
