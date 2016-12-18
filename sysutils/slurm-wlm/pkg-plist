@@ -443,7 +443,6 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/big_sys.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bluegene.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bluegene.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bull.jpg
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/burst_buffer.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/burst_buffer.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cgroup.conf.html
@@ -474,6 +473,8 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ext_sensorsplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/fair_tree.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/fonts.css
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/fonts.ttf
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/gang_scheduling.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/gres.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/gres.html
@@ -495,20 +496,18 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/job_submit_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/jobacct_gatherplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/jobcompplugins.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/jquery.min.js
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/k_function.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/knl.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/launch_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/licenses.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/linuxstyles.css
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mail.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/man_index.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/maui.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mc_support.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mc_support.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mcs.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mcs_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/meetings.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/moab.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mpi_guide.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mpiplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/multi_cluster.html
@@ -541,6 +540,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/quickstart_admin.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/reservations.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/reset.css
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/resource_limits.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/rosetta.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/route_plugin.html
@@ -562,8 +562,8 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sh5util.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sinfo.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm.conf.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm.css
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_design.pdf
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_logo.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_ug_agenda.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_ug_cfp.html
@@ -573,10 +573,8 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmdbd.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmdbd.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmstepd.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmstyles.css
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/smap.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/spank.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sponsors.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sprio.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/squeue.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/squeue_color.png
@@ -586,6 +584,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sshare.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sstat.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/strigger.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/style.css
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sview.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/switchplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/taskplugins.html
