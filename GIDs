@@ -137,7 +137,7 @@ moinmoin:*:192:
 cups:*:193:
 saned:*:194:
 radns:*:195:
-# free: 196
+nova:*:196:
 # free: 197
 # free: 198
 mcserver:*:199:
