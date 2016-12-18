@@ -13,7 +13,7 @@ COMMENT=	Program to interface with the Rio600, Rio800, and psa[play devices
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool
+USES=		alias autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

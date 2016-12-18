@@ -13,7 +13,7 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libgdbm.so:databases/gdbm
 
-USES=		gettext gmake libtool ncurses pathfix perl5 pkgconfig
+USES=		alias gettext gmake libtool ncurses pathfix perl5 pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 \

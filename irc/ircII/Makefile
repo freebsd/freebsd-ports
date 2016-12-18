@@ -3,6 +3,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	20151120
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -15,24 +16,24 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/irc
 USES=		iconv ncurses tar:bzip2
 
-OPTIONS_DEFINE=	IRCBUG EMACS_KEYS OPENSSL
-OPTIONS_DEFAULT=OPENSSL
+OPTIONS_DEFINE=	EMACS_KEYS HELP IRCBUG OPENSSL SCRIPTS
+OPTIONS_DEFAULT=EMACS_KEYS HELP OPENSSL SCRIPTS
 OPTIONS_SUB=	yes
 
-IRCBUG_DESC=	Install ircII bug-reporting script
+HELP_DESC=	Install ircII help files
 EMACS_KEYS_DESC=Use emacs meta keys
+IRCBUG_DESC=	Install ircII bug-reporting script
+SCRIPTS_DESC=	Install ircII script collection
 
 EMACS_KEYS_CONFIGURE_WITH=	emacs-meta-keys
-OPENSSL_USE=			OPENSSL=yes
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_WITH=		openssl=${OPENSSLBASE}
+OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.else
-CONFIGURE_ARGS+=	--without-openssl
-.endif
-
+# The ordering is very specific. This must come after pre.mk or
+# ircII won't link against libssl from ports
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
@@ -41,6 +42,7 @@ post-patch:
 		-e '/^LDFLAGS =/s/$$/ -s ${ICONV_LIB}/' \
 		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|PREFIX/|${PREFIX}/|' ${WRKSRC}/doc/ircII.1
 
 post-install:
 	${MV} -f ${STAGEDIR}${PREFIX}/bin/irc-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/irc
