@@ -218,7 +218,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/es/man1/dpkg-divert.1.gz
 %%NLS%%man/es/man1/dpkg-gencontrol.1.gz
-%%NLS%%man/es/man1/dpkg-gensymbols.1.gz
 %%NLS%%man/es/man1/dpkg-mergechangelogs.1.gz
 %%NLS%%man/es/man1/dpkg-name.1.gz
 %%NLS%%man/es/man1/dpkg-scansources.1.gz
@@ -273,7 +272,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/ja/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/ja/man1/dpkg-divert.1.gz
 %%NLS%%man/ja/man1/dpkg-gencontrol.1.gz
-%%NLS%%man/ja/man1/dpkg-gensymbols.1.gz
 %%NLS%%man/ja/man1/dpkg-mergechangelogs.1.gz
 %%NLS%%man/ja/man1/dpkg-name.1.gz
 %%NLS%%man/ja/man1/dpkg-scansources.1.gz
@@ -388,6 +386,7 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man1/dpkg-deb.1.gz
 %%NLS%%man/nl/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/nl/man1/dpkg-divert.1.gz
+%%NLS%%man/nl/man1/dpkg-genbuildinfo.1.gz
 %%NLS%%man/nl/man1/dpkg-genchanges.1.gz
 %%NLS%%man/nl/man1/dpkg-gencontrol.1.gz
 %%NLS%%man/nl/man1/dpkg-gensymbols.1.gz
@@ -407,6 +406,7 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man1/dpkg.1.gz
 %%NLS%%man/nl/man1/dselect.1.gz
 %%NLS%%man/nl/man1/update-alternatives.1.gz
+%%NLS%%man/nl/man5/deb-buildinfo.5.gz
 %%NLS%%man/nl/man5/deb-changelog.5.gz
 %%NLS%%man/nl/man5/deb-changes.5.gz
 %%NLS%%man/nl/man5/deb-conffiles.5.gz
@@ -415,9 +415,14 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man5/deb-old.5.gz
 %%NLS%%man/nl/man5/deb-origin.5.gz
 %%NLS%%man/nl/man5/deb-override.5.gz
+%%NLS%%man/nl/man5/deb-postinst.5.gz
+%%NLS%%man/nl/man5/deb-postrm.5.gz
+%%NLS%%man/nl/man5/deb-preinst.5.gz
+%%NLS%%man/nl/man5/deb-prerm.5.gz
 %%NLS%%man/nl/man5/deb-shlibs.5.gz
 %%NLS%%man/nl/man5/deb-split.5.gz
 %%NLS%%man/nl/man5/deb-src-control.5.gz
+%%NLS%%man/nl/man5/deb-src-files.5.gz
 %%NLS%%man/nl/man5/deb-substvars.5.gz
 %%NLS%%man/nl/man5/deb-symbols.5.gz
 %%NLS%%man/nl/man5/deb-triggers.5.gz
@@ -431,7 +436,6 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/pl/man1/dpkg-divert.1.gz
 %%NLS%%man/pl/man1/dpkg-gencontrol.1.gz
-%%NLS%%man/pl/man1/dpkg-gensymbols.1.gz
 %%NLS%%man/pl/man1/dpkg-mergechangelogs.1.gz
 %%NLS%%man/pl/man1/dpkg-name.1.gz
 %%NLS%%man/pl/man1/dpkg-scansources.1.gz
