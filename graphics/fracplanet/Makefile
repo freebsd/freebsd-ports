@@ -26,7 +26,7 @@ USE_GL=		glu
 USE_QT4=	corelib moc_build qmake_build gui opengl
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+CONFIGURE_ENV=	QTDIR="${PREFIX}"
 CONFIGURE_ARGS=	-spec ${QMAKESPEC}
 
 CXXFLAGS+=	-include ${WRKSRC}/precompiled.h

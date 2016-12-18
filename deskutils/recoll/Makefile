@@ -57,7 +57,7 @@ QT4_USE=		qt4=moc_build,qmake_build,rcc_build,uic_build \
 			qt4=corelib,gui,xml,webkit
 QT4_CONFIGURE_ENABLE=	qtgui
 QT4_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
-			QTDIR="${QT_PREFIX}"
+			QTDIR="${PREFIX}"
 QT4_VARS=		QT_NONSTANDARD=yes
 SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen \
 			pykaraoke:audio/py-karaoke

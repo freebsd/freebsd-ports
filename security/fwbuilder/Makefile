@@ -45,7 +45,7 @@ USE_QT4=	corelib \
 		uic_build \
 		xml
 
-QTDIR?=		${QT_PREFIX}
+QTDIR?=		${PREFIX}
 
 USE_OPENSSL=	yes
 USES=		autoreconf:build gmake libtool

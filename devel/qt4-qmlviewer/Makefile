@@ -22,7 +22,7 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 
 # qtlogo.png is installed by qt4-gui
 DESKTOP_ENTRIES="Qt 4 QML viewer" "" \
-		"${QT_PREFIX}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/share/pixmaps/qtlogo.png" \
 		"${PREFIX}/${QT_BINDIR_REL}/qmlviewer" \
 		"Development;Qt;" true
 
