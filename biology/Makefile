@@ -67,7 +67,7 @@
     SUBDIR += p5-Bio-NEXUS
     SUBDIR += p5-Bio-Phylo
     SUBDIR += p5-Bio-SCF
-    SUBDIR += p5-bioperl
+    SUBDIR += p5-BioPerl
     SUBDIR += p5-bioperl-run
     SUBDIR += p5-transdecoder
     SUBDIR += paml
