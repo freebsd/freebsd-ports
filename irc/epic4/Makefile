@@ -62,10 +62,6 @@ CONFIGURE_ARGS+=	--with-ssl
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
-.if ${PORT_OPTIONS:MTERMCAP}
-CONFIGURE_ARGS+=	--with-termcap
-.endif
-
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -r
 
