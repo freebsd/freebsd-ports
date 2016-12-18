@@ -93,7 +93,7 @@ ntpa_reload()
         _run_rc_notrunning
         return 1
     else
-        echo "Reloading ${name}."
+        echo "Reloading ${name} configuration."
         rc_pid=`cat ${pidfile}`
         kill -USR1 $rc_pid
     fi

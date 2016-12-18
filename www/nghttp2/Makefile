@@ -65,13 +65,6 @@ SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 CPPFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
-# Disable thread_local support for hosts without __cxa_thread_atexit()
-# See PR/192320 for details
-.if (${OSVERSION} < 1003506) || ((${OSVERSION} >= 1100000) && (${OSVERSION} < 1100122)) || (${OSVERSION} == 1100500)
-post-configure:
-	@${REINPLACE_CMD} -e '/HAVE_THREAD_LOCAL/d' ${WRKSRC}/config.h
-.endif
-
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=--with-jemalloc
 .endif
@@ -85,6 +78,11 @@ post-configure:
 	@${MKDIR} ${WRKSRC}/lib/.libs/
 	@${CP} ${LOCALBASE}/lib/libnghttp2.so* ${WRKSRC}/lib/.libs/
 	@cd ${WRKSRC}/lib/.libs/ && ${AR} x ${LOCALBASE}/lib/libnghttp2.a
+# Disable thread_local support for hosts without __cxa_thread_atexit()
+# See PR/192320 for details
+.if (${OSVERSION} < 1003506) || ((${OSVERSION} >= 1100000) && (${OSVERSION} < 1100122)) || (${OSVERSION} == 1100500)
+	@${REINPLACE_CMD} -e '/HAVE_THREAD_LOCAL/d' ${WRKSRC}/config.h
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nghttpx/

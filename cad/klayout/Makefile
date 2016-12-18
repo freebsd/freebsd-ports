@@ -35,7 +35,7 @@ do-build:
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
 		_MAKE_JOBS="${_MAKE_JOBS}" LOCALBASE="${LOCALBASE}" \
 		${SH} build.sh -platform ${PLATFORMKEYWORD} \
-		-qtbin ${QT_PREFIX}/bin \
+		-qtbin ${PREFIX}/bin \
 		-qtinc ${QT_INCDIR} \
 		-qtlib ${QT_LIBDIR} \
 		-python ${PYTHON_CMD}

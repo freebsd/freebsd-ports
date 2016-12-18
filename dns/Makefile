@@ -57,6 +57,7 @@
     SUBDIR += dnswalk
     SUBDIR += dnswall
     SUBDIR += doc
+    SUBDIR += dq
     SUBDIR += dualserver
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
