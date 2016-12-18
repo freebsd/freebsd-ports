@@ -23,8 +23,8 @@ RUN_DEPENDS=	dssi_osc_update:audio/dssi \
 		xdg-open:devel/xdg-utils \
 		lilypond:print/lilypond
 
-USES=		cmake:outsource desktop-file-utils pkgconfig shared-mime-info \
-		tar:bzip2
+USES=		alias cmake:outsource desktop-file-utils pkgconfig \
+		shared-mime-info tar:bzip2
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
