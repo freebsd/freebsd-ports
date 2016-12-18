@@ -1,12 +1,11 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	swiftclient
+PORTNAME=	python-swiftclient
 PORTVERSION=	3.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Python client library for OpenStack Object Storage (Swift)
