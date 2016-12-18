@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nova_scheduler
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nova_scheduler:
+#
+# nova_scheduler_enable="YES"
+#
+# nova_scheduler_enable (bool):
+#	Set it to "YES" to enable nova_scheduler.
+# 	Default is "NO".
+#
+# nova_scheduler_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/nova"
+#
+# nova_scheduler_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${nova_scheduler_logdir}/nova-scheduler.log"
+#
+
+. /etc/rc.subr
+
+name=nova_scheduler
+rcvar=nova_scheduler_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/nova-scheduler.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=nova_precmd
+
+load_rc_config $name
+
+: ${nova_scheduler_enable:="NO"}
+: ${nova_scheduler_logdir:="/var/log/nova"}
+: ${nova_scheduler_args:="--log-file ${nova_scheduler_logdir}/nova-scheduler.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} nova-scheduler ${nova_scheduler_args}"
+
+nova_precmd() {
+	mkdir -p ${nova_scheduler_logdir}
+}
+
+run_rc_command "$1"

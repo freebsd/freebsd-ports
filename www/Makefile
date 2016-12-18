@@ -1562,7 +1562,6 @@
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
     SUBDIR += py-django-openid-auth
-    SUBDIR += py-django-openstack-auth
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
     SUBDIR += py-django-overextends
@@ -1604,6 +1603,7 @@
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
+    SUBDIR += py-django_openstack_auth
     SUBDIR += py-django_polymorphic
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv

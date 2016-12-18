@@ -8841,3 +8841,4 @@ net/py-keystoneclient|net/py-python-keystoneclient|2016-12-17|Rename to match py
 net/py-neutronclient|net/py-python-neutronclient|2016-12-17|Rename to match pypi name
 net/py-novaclient|net/py-python-novaclient|2016-12-17|Rename to match pypi name
 net/py-openstackclient|net/py-python-openstackclient|2016-12-17|Rename to match pypi name
+www/py-django-openstack-auth|www/py-django_openstack_auth|2016-12-18|Rename to match pypi name
