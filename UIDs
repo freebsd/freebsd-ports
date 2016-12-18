@@ -142,7 +142,7 @@ moinmoin:*:192:192::0:0:MoinMoin User:/nonexistent:/usr/sbin/nologin
 cups:*:193:193::0:0:Cups Owner:/nonexistent:/usr/sbin/nologin
 saned:*:194:194::0:0:SANE Scanner Daemon:/nonexistent:/bin/sh
 radns:*:195:195::0:0:radns user:/nonexistent:/usr/sbin/nologin
-# free: 196
+nova:*:196:196::0:0:Nova daemon pseudo-user:/var/lib/nova:/usr/sbin/nologin
 # free: 197
 # free: 198
 mcserver:*:199:199::0:0:Minecraft Server:/nonexistent:/bin/sh
