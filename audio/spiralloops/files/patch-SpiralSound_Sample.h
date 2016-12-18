@@ -1,6 +1,14 @@
---- SpiralSound/Sample.h.orig	Fri Dec 22 18:39:01 2006
-+++ SpiralSound/Sample.h	Fri Dec 22 18:39:30 2006
-@@ -63,13 +63,13 @@
+--- SpiralSound/Sample.h.orig	2001-04-19 20:48:13 UTC
++++ SpiralSound/Sample.h
+@@ -21,6 +21,7 @@
+ 
+ #include <assert.h>
+ #include <iostream>
++#include <cstring>
+ #include "SpiralInfo.h"
+ 
+ static const unsigned short UMAX_LEV  = 65535;
+@@ -63,13 +64,13 @@ public:
  	void Shrink(int Length);
  	void CropTo(int NewLength);
  
@@ -16,7 +24,7 @@
  	{	
  		assert(i>=0 && i<m_Length);
  		// clip
-@@ -79,7 +79,7 @@
+@@ -79,7 +80,7 @@ public:
  		m_Data[i]=(short)v;
  	}	
  	
