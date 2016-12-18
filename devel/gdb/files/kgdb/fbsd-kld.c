@@ -69,7 +69,7 @@ static const struct program_space_data *kld_pspace_data;
 static void
 kld_pspace_data_cleanup (struct program_space *pspace, void *arg)
 {
-  struct kld_info *info = arg;
+  struct kld_info *info = (struct kld_info *)arg;
 
   xfree (info);
 }
@@ -82,7 +82,8 @@ get_kld_info (void)
 {
   struct kld_info *info;
 
-  info = program_space_data (current_program_space, kld_pspace_data);
+  info = (struct kld_info *)
+    program_space_data (current_program_space, kld_pspace_data);
   if (info != NULL)
     return info;
 
@@ -437,7 +438,7 @@ kld_special_symbol_handling (void)
 static struct so_list *
 kld_current_sos (void)
 {
-	struct so_list *head, **prev, *new;
+	struct so_list *head, **prev, *newobj;
 	struct kld_info *info;
 	CORE_ADDR kld, kernel;
 	char *path;
@@ -463,66 +464,65 @@ kld_current_sos (void)
 		if (kld == kernel)
 			continue;
 
-		new = xmalloc(sizeof(*new));
-		memset(new, 0, sizeof(*new));
+		newobj = XCNEW (struct so_list);
 
-		new->lm_info = xmalloc(sizeof(*new->lm_info));
-		new->lm_info->base_address = 0;
+		newobj->lm_info = XNEW (struct lm_info);
+		newobj->lm_info->base_address = 0;
 
 		/* Read the base filename and store it in so_original_name. */
 		target_read_string(read_pointer(kld + info->off_filename),
-		    &path, sizeof(new->so_original_name), &error);
+		    &path, sizeof(newobj->so_original_name), &error);
 		if (error != 0) {
 			warning("kld_current_sos: Can't read filename: %s\n",
 			    safe_strerror(error));
-			free_so(new);
+			free_so(newobj);
 			continue;
 		}
-		strlcpy(new->so_original_name, path,
-		    sizeof(new->so_original_name));
+		strlcpy(newobj->so_original_name, path,
+		    sizeof(newobj->so_original_name));
 		xfree(path);
 
 		/*
 		 * Try to read the pathname (if it exists) and store
 		 * it in so_name.
 		 */
-		if (find_kld_path(new->so_original_name, new->so_name,
-		    sizeof(new->so_name))) {
+		if (find_kld_path(newobj->so_original_name, newobj->so_name,
+		    sizeof(newobj->so_name))) {
 			/* we found the kld */;
 		} else if (info->off_pathname != 0) {
 			target_read_string(read_pointer(kld +
 			    info->off_pathname),
-			    &path, sizeof(new->so_name), &error);
+			    &path, sizeof(newobj->so_name), &error);
 			if (error != 0) {
 				warning(
 		    "kld_current_sos: Can't read pathname for \"%s\": %s\n",
-				    new->so_original_name,
+				    newobj->so_original_name,
 				    safe_strerror(error));
-				strlcpy(new->so_name, new->so_original_name,
-				    sizeof(new->so_name));
+				strlcpy(newobj->so_name, newobj->so_original_name,
+				    sizeof(newobj->so_name));
 			} else {
-				strlcpy(new->so_name, path,
-				    sizeof(new->so_name));
+				strlcpy(newobj->so_name, path,
+				    sizeof(newobj->so_name));
 				xfree(path);
 			}
 		} else
-			strlcpy(new->so_name, new->so_original_name,
-			    sizeof(new->so_name));
+			strlcpy(newobj->so_name, newobj->so_original_name,
+			    sizeof(newobj->so_name));
 
 		/* Read this kld's base address. */
-		new->lm_info->base_address = read_pointer(kld +
+		newobj->lm_info->base_address = read_pointer(kld +
 		    info->off_address);
-		if (new->lm_info->base_address == 0) {
+		if (newobj->lm_info->base_address == 0) {
 			warning(
 			    "kld_current_sos: Invalid address for kld \"%s\"",
-			    new->so_original_name);
-			free_so(new);
+			    newobj->so_original_name);
+			free_so(newobj);
 			continue;
 		}
 
 		/* Append to the list. */
-		*prev = new;
-		prev = &new->next;
+		*prev = newobj;
+		prev = &newobj->next;
 	}
 
 	return (head);

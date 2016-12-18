@@ -91,7 +91,7 @@ sparc64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
   int regnum;
 
   if (*this_cache)
-    return *this_cache;
+    return (struct sparc_frame_cache *)*this_cache;
 
   cache = sparc_frame_cache (this_frame, this_cache);
   gdb_assert (cache == *this_cache);
