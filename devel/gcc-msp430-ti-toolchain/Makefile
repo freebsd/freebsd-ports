@@ -30,6 +30,8 @@ COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_9=	does not patch (patch: **** can't find 1)
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc \
