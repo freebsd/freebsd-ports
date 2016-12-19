@@ -16,6 +16,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libboost_thread.so:devel/boost-libs
 
+BROKEN=		does not build (error: typedef redefinition with different types ('struct GTIFS *' vs 'struct gtiff'))
+
 USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
