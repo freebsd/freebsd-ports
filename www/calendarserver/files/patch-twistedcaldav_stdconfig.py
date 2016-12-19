@@ -1,4 +1,4 @@
---- twistedcaldav/stdconfig.py.orig	2016-03-01 19:59:08 UTC
+--- twistedcaldav/stdconfig.py.orig	2016-08-23 16:28:28 UTC
 +++ twistedcaldav/stdconfig.py
 @@ -53,7 +53,7 @@ log = Logger()
  if platform.isMacOSX():
@@ -9,12 +9,3 @@
  
  DEFAULT_SERVICE_PARAMS = {
      "xml": {
-@@ -1827,6 +1827,8 @@ config.setProvider(PListConfigProvider(D
- config.addPreUpdateHooks(PRE_UPDATE_HOOKS)
- config.addPostUpdateHooks(POST_UPDATE_HOOKS)
- 
-+# Make sure the default config is loaded and updated early on to avoid race conditions during startup. (upstream: r15635)
-+config.update() 
- 
- def _preserveConfig(configDict):
-     """
