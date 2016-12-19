@@ -58,6 +58,7 @@
     SUBDIR += njplot
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
+    SUBDIR += p5-Bio-Coordinate
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-Bio-Das-Lite
     SUBDIR += p5-Bio-GFF3
