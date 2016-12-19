@@ -1,29 +1,29 @@
 --- lib/Makefile.orig	2016-11-01 18:13:22 UTC
 +++ lib/Makefile
-@@ -90,16 +90,16 @@ libzstd.pc: libzstd.pc.in
+@@ -106,16 +106,16 @@ libzstd.pc: libzstd.pc.in
               $< >$@
  
- install: libzstd libzstd.pc
+ install: libzstd.a libzstd libzstd.pc
 -	@install -d -m 755 $(DESTDIR)$(LIBDIR)/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
--	@install -m 755 libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_VER)
+-	@install -m 755 libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)
 -	@cp -a libzstd.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)
 -	@cp -a libzstd.$(SHARED_EXT) $(DESTDIR)$(LIBDIR)
 -	@cp -a libzstd.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
--	@install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
--	@install -m 644 zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
--	@install -m 644 common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)/zstd_errors.h
--	@install -m 644 common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h   # Deprecated streaming functions
--	@install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
+-	@install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)
+-	@install -m 644 zstd.h $(DESTDIR)$(INCLUDEDIR)
+-	@install -m 644 common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
+-	@install -m 644 deprecated/zbuff.h $(DESTDIR)$(INCLUDEDIR)     # prototypes generate deprecation warnings
+-	@install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)
 +	@install -d -m 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
-+	@$(BSD_INSTALL_LIB) libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_VER)
++	@$(BSD_INSTALL_LIB) libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)
 +	@ln -sf libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR)
 +	@ln -sf libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT)
 +	@$(BSD_INSTALL_DATA) libzstd.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
-+	@$(BSD_INSTALL_LIB) libzstd.a $(DESTDIR)$(LIBDIR)/libzstd.a
-+	@$(BSD_INSTALL_DATA) zstd.h $(DESTDIR)$(INCLUDEDIR)/zstd.h
-+	@$(BSD_INSTALL_DATA) common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)/zstd_errors.h
-+	@$(BSD_INSTALL_DATA) common/zbuff.h $(DESTDIR)$(INCLUDEDIR)/zbuff.h   # Deprecated streaming functions
-+	@$(BSD_INSTALL_DATA) dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)/zdict.h
++	@$(BSD_INSTALL_LIB) libzstd.a $(DESTDIR)$(LIBDIR)
++	@$(BSD_INSTALL_DATA) zstd.h $(DESTDIR)$(INCLUDEDIR)
++	@$(BSD_INSTALL_DATA) common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
++	@$(BSD_INSTALL_DATA) deprecated/zbuff.h $(DESTDIR)$(INCLUDEDIR)     # prototypes generate deprecation warnings
++	@$(BSD_INSTALL_DATA) dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)
  	@echo zstd static and shared library installed
  
  uninstall:
