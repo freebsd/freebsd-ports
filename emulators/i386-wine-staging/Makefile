@@ -22,7 +22,6 @@ PKGNAMESUFFIX=	-staging
 .include "${SLAVEDIR}/Makefile.i386"
 .else
 MASTERDIR=	${SLAVEDIR}
-BROKEN=		The Staging patchset has not been ported to Wine >= 1.9.24
 .include "${SLAVEDIR}/Makefile.inc"
 .endif
 
