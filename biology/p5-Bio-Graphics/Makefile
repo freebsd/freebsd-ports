@@ -3,6 +3,7 @@
 
 PORTNAME=	Bio-Graphics
 PORTVERSION=	2.40
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +14,9 @@ COMMENT=	Generate GD Images of Bio::Seq Objects
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Bio-SCF>=1.01:biology/p5-Bio-SCF \
-		p5-BioPerl>=1.6.0:biology/p5-BioPerl \
+BUILD_DEPENDS=	p5-Bio-Coordinate>=1.007000:biology/p5-Bio-Coordinate \
+		p5-Bio-SCF>=1.01:biology/p5-Bio-SCF \
+		p5-BioPerl>=1.007000:biology/p5-BioPerl \
 		p5-GD>=2.30:graphics/p5-GD \
 		p5-GD-SVG>=0.32:graphics/p5-GD-SVG \
 		p5-Statistics-Descriptive>=2.6:math/p5-Statistics-Descriptive
