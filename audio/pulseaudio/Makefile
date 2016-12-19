@@ -76,7 +76,6 @@ ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 JACK_CONFIGURE_ENABLE=	jack
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-SOXR_DESC=	SoX resampler support
 SOXR_CONFIGURE_WITH=	soxr
 SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
 SPEEX_DESC=	Speex resampler and AEC support
