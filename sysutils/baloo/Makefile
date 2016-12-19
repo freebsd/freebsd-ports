@@ -8,7 +8,8 @@ CATEGORIES=	sysutils kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE framework for searching and managing user metadata
 
-CONFLICTS_INSTALL=	kde-runtime-4.12.*
+CONFLICTS_INSTALL=	kde-runtime-4.12.* \
+			kf5-baloo-5.*
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libqjson.so:devel/qjson

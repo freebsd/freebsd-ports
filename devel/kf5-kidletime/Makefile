@@ -1,4 +1,4 @@
-# Created by: Tobias Berner <tcberner@gmail.com>
+# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kidletime

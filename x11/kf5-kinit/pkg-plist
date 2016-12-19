@@ -13,6 +13,7 @@ lib/libexec/kf5/start_kdeinit_wrapper
 lib/libkdeinit5_klauncher.so
 man/ca/man8/kdeinit5.8.gz
 man/de/man8/kdeinit5.8.gz
+man/es/man8/kdeinit5.8.gz
 man/it/man8/kdeinit5.8.gz
 man/man8/kdeinit5.8.gz
 man/nl/man8/kdeinit5.8.gz

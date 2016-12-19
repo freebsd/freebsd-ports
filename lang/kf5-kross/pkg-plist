@@ -51,6 +51,7 @@ lib/libKF5KrossUi.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/script/krossqtsplugin.so
 man/ca/man1/kf5kross.1.gz
 man/de/man1/kf5kross.1.gz
+man/es/man1/kf5kross.1.gz
 man/it/man1/kf5kross.1.gz
 man/man1/kf5kross.1.gz
 man/nl/man1/kf5kross.1.gz

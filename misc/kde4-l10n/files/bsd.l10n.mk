@@ -3,6 +3,10 @@ PKGNAMEPREFIX=	${KDE4_L10N:S/@/_/}-
 DISTNAME=	${PORTNAME}-${KDE4_L10N}-${PORTVERSION}
 DIST_SUBDIR?=	KDE/${PORTVERSION}/kde-l10n
 
+CONFLICTS_INSTALL=	kf5-baloo-5.* \
+			kf5-kdelibs4support-5.* \
+			kf5-kfilemetadata-5.*
+
 USE_QT4=	uic_build moc_build qmake_build rcc_build xml
 USE_KDE=	kdelibs automoc4
 USES=		cmake gettext kde:4 tar:xz
