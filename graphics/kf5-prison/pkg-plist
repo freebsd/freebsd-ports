@@ -1,0 +1,14 @@
+include/KF5/prison/AbstractBarcode
+include/KF5/prison/Prison
+include/KF5/prison/abstractbarcode.h
+include/KF5/prison/prison.h
+include/KF5/prison/prison_export.h
+include/KF5/prison_version.h
+lib/cmake/KF5Prison/KF5PrisonConfig.cmake
+lib/cmake/KF5Prison/KF5PrisonConfigVersion.cmake
+lib/cmake/KF5Prison/KF5PrisonTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5Prison/KF5PrisonTargets.cmake
+lib/libKF5Prison.so
+lib/libKF5Prison.so.5
+lib/libKF5Prison.so.5.28.0
+%%QT_MKSPECDIR%%/modules/qt_Prison.pri

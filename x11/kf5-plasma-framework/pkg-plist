@@ -176,6 +176,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/platformcomponents/qmldir
 man/ca/man1/plasmapkg2.1.gz
 man/de/man1/plasmapkg2.1.gz
+man/es/man1/plasmapkg2.1.gz
 man/it/man1/plasmapkg2.1.gz
 man/man1/plasmapkg2.1.gz
 man/nl/man1/plasmapkg2.1.gz
@@ -355,7 +356,9 @@ share/plasma/desktoptheme/default/icons/distribute.svgz
 share/plasma/desktoptheme/default/icons/document.svgz
 share/plasma/desktoptheme/default/icons/drive.svgz
 share/plasma/desktoptheme/default/icons/edit.svgz
+share/plasma/desktoptheme/default/icons/fcitx.svgz
 share/plasma/desktoptheme/default/icons/go.svgz
+share/plasma/desktoptheme/default/icons/ime.svgz
 share/plasma/desktoptheme/default/icons/input.svgz
 share/plasma/desktoptheme/default/icons/kalarm.svgz
 share/plasma/desktoptheme/default/icons/kdeconnect.svgz

@@ -10,6 +10,6 @@ COMMENT=	KF5 models for Qt Model/View system
 
 USES=		cmake:outsource compiler:c++11-lib kde:5 tar:xz
 USE_KDE=	ecm
-USE_QT5=	buildtools_build core qmake_build
+USE_QT5=	buildtools_build core qmake_build testlib_build
 
 .include <bsd.port.mk>

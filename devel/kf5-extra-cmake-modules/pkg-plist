@@ -8,12 +8,17 @@ share/ECM/find-modules/FindLibinotify.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPng2Ico.cmake
 share/ECM/find-modules/FindPoppler.cmake
+share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
+share/ECM/find-modules/Qt5Ruleset.py
+share/ECM/find-modules/rules_engine.py
+share/ECM/find-modules/run-sip.py
+share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
@@ -44,6 +49,7 @@ share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
+share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/deployment-file.json.in

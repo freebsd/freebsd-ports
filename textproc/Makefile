@@ -365,6 +365,7 @@
     SUBDIR += kenlm
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
+    SUBDIR += kf5-syntax-highlighting
     SUBDIR += kibana3
     SUBDIR += kibana41
     SUBDIR += kibana43

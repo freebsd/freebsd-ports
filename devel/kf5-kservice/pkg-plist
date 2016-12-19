@@ -1,5 +1,5 @@
 bin/kbuildsycoca5
-etc/xdg/menus/applications.menu
+etc/xdg/menus/kf5-applications.menu
 include/KF5/KService/KAutostart
 include/KF5/KService/KDBusServiceStarter
 include/KF5/KService/KMimeTypeTrader
@@ -46,6 +46,8 @@ man/it/man8/desktoptojson.8.gz
 man/it/man8/kbuildsycoca5.8.gz
 man/de/man8/desktoptojson.8.gz
 man/de/man8/kbuildsycoca5.8.gz
+man/es/man8/desktoptojson.8.gz
+man/es/man8/kbuildsycoca5.8.gz
 man/man8/desktoptojson.8.gz
 man/man8/kbuildsycoca5.8.gz
 man/nl/man8/desktoptojson.8.gz
