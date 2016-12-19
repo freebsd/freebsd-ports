@@ -10,12 +10,14 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build
+BROKEN_FreeBSD_9=	does not configure (Your version of GCC (4.2.1) is too old for building Icinga 2 (GCC >= 4.6.0 is required).)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
