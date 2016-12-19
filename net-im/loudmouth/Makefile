@@ -11,6 +11,8 @@ MASTER_SITES=	https://mcabber.com/files/loudmouth/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
