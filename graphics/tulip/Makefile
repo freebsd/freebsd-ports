@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	4.9.0
+PORTVERSION=	4.10.0
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -11,8 +11,6 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3
-
-BROKEN_FreeBSD_9=	does not build
 
 LIB_DEPENDS=	libquazip.so:archivers/quazip \
 		libpng.so:graphics/png \
@@ -49,11 +47,13 @@ OPTIONS_DEFAULT=	QT4
 QT4_USE=		qt4=corelib,gui,network,opengl,webkit \
 			qt4=xml,xmlpatterns \
 			qt4=moc_build,qmake_build,rcc_build,uic_build
-QT4_CMAKE_ON=		-DUSE_QT5_IF_INSTALLED:BOOL=OFF
 QT5_USE=		qt5=core,gui,network,opengl,webkit,widgets \
 			qt5=xml,xmlpatterns \
 			qt5=buildtools_build,qmake_build
-QT5_CMAKE_ON=		-DUSE_QT5_IF_INSTALLED:BOOL=ON
+QT5_CMAKE_BOOL=		USE_QT5_IF_INSTALLED
+
+# Upstream contacted regarding build failures on FreeBSD 9: https://sourceforge.net/p/auber/discussion/206283/thread/489d80e8/
+BROKEN_FreeBSD_9=	/usr/local/include/bfd.h:1610:38: error: expected ',' or '...' before 'ATTRIBUTE_UNUSED'
 
 post-build:
 	@${LN} -sf logo32x32.png \

@@ -3,7 +3,7 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	textproc
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -22,10 +22,11 @@ RUN_DEPENDS=	fop:textproc/fop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA DOCS
+OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA DOCS DOXYGEN
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS+=	doxygen:devel/doxygen
+DOXYGEN_BUILD_DEPENDS+=	doxygen:devel/doxygen
+DOXYGEN_IMPLIES=	DOCS
 PHP_CMAKE_BOOL=		WITH_PHP5
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 RUBY_CMAKE_BOOL=	WITH_RUBY
@@ -101,6 +102,9 @@ post-patch:
 
 post-install:
 	${LN} -sf libzorba_simplestore.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzorba_simplestore.so.${PORTVERSION:R:R}
+.if ${PORT_OPTIONS:MDOCS} && !${PORT_OPTIONS:MDOXYGEN}
+	cd ${STAGEDIR}${DOCSDIR} && rmdir c/html code/html code cxx/html zorba/html
+.endif
 
 test:	build
 	cd ${BUILD_WRKSRC} && ${MAKE} test

@@ -500,6 +500,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Event.pm
 %%PRIV_LIB%%/Test2/Event/Bail.pm
 %%PRIV_LIB%%/Test2/Event/Diag.pm
+%%PRIV_LIB%%/Test2/Event/Encoding.pm
 %%PRIV_LIB%%/Test2/Event/Exception.pm
 %%PRIV_LIB%%/Test2/Event/Generic.pm
 %%PRIV_LIB%%/Test2/Event/Info.pm
@@ -508,6 +509,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Event/Plan.pm
 %%PRIV_LIB%%/Test2/Event/Skip.pm
 %%PRIV_LIB%%/Test2/Event/Subtest.pm
+%%PRIV_LIB%%/Test2/Event/TAP/Version.pm
 %%PRIV_LIB%%/Test2/Event/Waiting.pm
 %%PRIV_LIB%%/Test2/Formatter.pm
 %%PRIV_LIB%%/Test2/Formatter/TAP.pm
@@ -1583,6 +1585,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Event.3.gz
 %%MAN3%%/Test2::Event::Bail.3.gz
 %%MAN3%%/Test2::Event::Diag.3.gz
+%%MAN3%%/Test2::Event::Encoding.3.gz
 %%MAN3%%/Test2::Event::Exception.3.gz
 %%MAN3%%/Test2::Event::Generic.3.gz
 %%MAN3%%/Test2::Event::Info.3.gz
@@ -1591,6 +1594,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Event::Plan.3.gz
 %%MAN3%%/Test2::Event::Skip.3.gz
 %%MAN3%%/Test2::Event::Subtest.3.gz
+%%MAN3%%/Test2::Event::TAP::Version.3.gz
 %%MAN3%%/Test2::Event::Waiting.3.gz
 %%MAN3%%/Test2::Formatter.3.gz
 %%MAN3%%/Test2::Formatter::TAP.3.gz

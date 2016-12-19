@@ -370,6 +370,7 @@ share/icons/oxygen/base/128x128/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/128x128/mimetypes/application-rtf.png
 share/icons/oxygen/base/128x128/mimetypes/application-sxw.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/128x128/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.ms-excel.png
@@ -2004,6 +2005,7 @@ share/icons/oxygen/base/16x16/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/16x16/mimetypes/application-rtf.png
 share/icons/oxygen/base/16x16/mimetypes/application-sxw.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/16x16/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.ms-excel.png
@@ -3756,6 +3758,7 @@ share/icons/oxygen/base/22x22/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/22x22/mimetypes/application-rtf.png
 share/icons/oxygen/base/22x22/mimetypes/application-sxw.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/22x22/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.ms-excel.png
@@ -4436,6 +4439,7 @@ share/icons/oxygen/base/256x256/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/256x256/mimetypes/application-rtf.png
 share/icons/oxygen/base/256x256/mimetypes/application-sxw.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/256x256/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.ms-excel.png
@@ -5756,6 +5760,7 @@ share/icons/oxygen/base/32x32/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/32x32/mimetypes/application-rtf.png
 share/icons/oxygen/base/32x32/mimetypes/application-sxw.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/32x32/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.ms-excel.png
@@ -7141,6 +7146,7 @@ share/icons/oxygen/base/48x48/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/48x48/mimetypes/application-rtf.png
 share/icons/oxygen/base/48x48/mimetypes/application-sxw.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/48x48/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.ms-excel.png
@@ -7986,6 +7992,7 @@ share/icons/oxygen/base/64x64/mimetypes/application-rss+xml.png
 share/icons/oxygen/base/64x64/mimetypes/application-rtf.png
 share/icons/oxygen/base/64x64/mimetypes/application-sxw.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd-google-earth-kml.png
+share/icons/oxygen/base/64x64/mimetypes/application-vnd-rar.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.iccprofile.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.ms-access.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.ms-excel.png

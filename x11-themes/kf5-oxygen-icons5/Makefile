@@ -14,6 +14,6 @@ USE_KDE=	ecm
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	kde-oxygen-icons-kde4*
+CONFLICTS_INSTALL=	kde4-oxygen-icons-*
 
 .include <bsd.port.mk>

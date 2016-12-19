@@ -3,24 +3,29 @@
 
 PORTNAME=	kdesvn
 DISTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
+		libapr-1.so:devel/apr1 \
+		libgdbm.so:databases/gdbm \
+		libexpat.so:textproc/expat2
+RUN_DEPENDS=	keditbookmarks:x11/kde4-baseapps
 
 CONFLICTS=	qsvn-[0-9]*
 
 CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1 \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man
 
-USES=		cmake:outsource compiler:c11 kde:4 tar:xz
-USE_KDE=	kdelibs automoc4
+USES=		cmake:outsource compiler:c11 bdb kde:4 tar:xz
+USE_KDE=	automoc4 kdelibs soprano
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg sql \
 		qmake_build moc_build rcc_build uic_build linguist_build

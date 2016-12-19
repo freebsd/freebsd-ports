@@ -105,6 +105,7 @@ lib/libKF5JSApi.so.%%KDE_FRAMEWORKS_VERSION%%
 man/man1/kjs5.1.gz
 man/ca/man1/kjs5.1.gz
 man/de/man1/kjs5.1.gz
+man/es/man1/kjs5.1.gz
 man/it/man1/kjs5.1.gz
 man/nl/man1/kjs5.1.gz
 man/pt_BR/man1/kjs5.1.gz

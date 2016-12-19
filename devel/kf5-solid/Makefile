@@ -13,6 +13,11 @@ USE_KDE=	ecm
 USE_QT5=	buildtools_build concurrent core dbus gui linguisttools \
 		network qmake_build qml testlib widgets xml
 
+OPTIONS_DEFINE=		BSDISKS
+BSDISKS_DESC=		Use bsdisks instead of hald to mount drives
+BSDISKS_CMAKE_BOOL=	EXPERIMENTAL_BSDISKS
+BSDISKS_RUN_DEPENDS=	bsdisks:sysutils/bsdisks
+
 .include <bsd.port.pre.mk>
 # Flex on FreeBSD 9 and older 10 is too old
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033

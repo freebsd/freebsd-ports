@@ -12,5 +12,5 @@ include/jsoncpp/json/writer.h
 lib/libjsoncpp.a
 lib/libjsoncpp.so
 lib/libjsoncpp.so.1
-lib/libjsoncpp.so.1.7.7
+lib/libjsoncpp.so.1.8.0
 libdata/pkgconfig/jsoncpp.pc

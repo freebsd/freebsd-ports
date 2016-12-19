@@ -1,0 +1,26 @@
+The first hunk fixes the install location of the pkconfig files:
+  FreeBSD installs pkgconfig files to $LOCALBASE/libdata/pkgconfig
+  qmake uses QMAKE_PKGCONFIG_DESTDIR as relative path to $$QT_LIBDIR
+  respectively as absolute path.
+
+The second hunk stops qmake from generating la files.
+
+--- mkspecs/features/qt_module.prf.orig	2016-09-16 05:49:42 UTC
++++ mkspecs/features/qt_module.prf
+@@ -247,7 +247,7 @@ load(qt_targets)
+ # this builds on top of qt_common
+ !internal_module:!lib_bundle:if(unix|mingw) {
+     CONFIG += create_pc
+-    QMAKE_PKGCONFIG_DESTDIR = pkgconfig
++    QMAKE_PKGCONFIG_DESTDIR = ../libdata/pkgconfig
+     host_build: \
+         QMAKE_PKGCONFIG_LIBDIR = $$[QT_HOST_LIBS]
+     else: \
+@@ -267,7 +267,6 @@ load(qt_targets)
+     QMAKE_PKGCONFIG_INSTALL_REPLACE += pclib_replace
+ }
+ !lib_bundle:unix {
+-    CONFIG += create_libtool
+     host_build: \
+         QMAKE_LIBTOOL_LIBDIR = $$[QT_HOST_LIBS]
+     else: \

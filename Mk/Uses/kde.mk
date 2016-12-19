@@ -65,7 +65,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_FRAMEWORKS_VERSION?=	5.27.0
+KDE_FRAMEWORKS_VERSION?=	5.29.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Extended KDE universe applications.
@@ -189,10 +189,9 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 			coreaddons dbusaddons dnssd i18n idletime itemmodels \
-			itemviews oxygen-icons5 plotting solid sonnet \
-			threadweaver widgetsaddons windowsystem
+			itemviews oxygen-icons5 plotting prison solid sonnet \
+			syntaxhighlighting threadweaver widgetsaddons windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
-# NOT LISTED TIER1: syntaxhighlighting (new in 5.28)
 # NOT LISTED TIER1: wayland (needs graphics/wayland)
 
 _USE_FRAMEWORKS_TIER2=	auth completion crash doctools filemetadata5 \
@@ -528,6 +527,9 @@ plasma-framework_LIB=	libKF5Plasma.so
 plotting_PORT=		graphics/kf5-kplotting
 plotting_LIB=		libKF5Plotting.so
 
+prison_PORT=		graphics/kf5-prison
+prison_LIB=		libKF5Prison.so
+
 pty_PORT=		devel/kf5-kpty
 pty_LIB=		libKF5Pty.so
 
@@ -542,6 +544,9 @@ solid_LIB=		libKF5Solid.so
 
 sonnet_PORT=		textproc/kf5-sonnet
 sonnet_LIB=		libKF5SonnetCore.so
+
+syntaxhighlighting_PORT=	textproc/kf5-syntax-highlighting
+syntaxhighlighting_LIB=		libKF5SyntaxHighlighting.so
 
 texteditor_PORT=	devel/kf5-ktexteditor
 texteditor_LIB=		libKF5TextEditor.so

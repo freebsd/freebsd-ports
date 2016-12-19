@@ -8,6 +8,7 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/argparserutils.py
 %%PYTHON_SITELIBDIR%%/kapidox/argparserutils.%%PYC_SUFFIX%%
 %%PYTHON_SITELIBDIR%%/kapidox/data/Doxyfile.global
+%%PYTHON_SITELIBDIR%%/kapidox/data/DoxygenLayout.xml
 %%PYTHON_SITELIBDIR%%/kapidox/data/dependencies.md.tmpl
 %%PYTHON_SITELIBDIR%%/kapidox/data/footer.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/header.html
