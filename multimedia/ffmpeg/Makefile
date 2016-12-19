@@ -18,7 +18,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 		${LOCALBASE}/bin/as:devel/binutils
 
 HAS_CONFIGURE=	yes
-USES=		compiler:c11 cpe gmake perl5 pkgconfig tar:bzip2 shebangfix
+USES=		compiler:c11 cpe gmake localbase perl5 pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
@@ -367,7 +367,6 @@ VIDSTAB_CONFIGURE_ENABLE=	libvidstab
 # vorbis
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	libvorbis
-VORBIS_VARS=		FFMPEG_CFLAGS+="-I${LOCALBASE}/include/vorbis"
 
 # vp8
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
@@ -448,10 +447,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-avresample \
 		--enable-pthreads \
 		--disable-libsoxr \
-		--cc="${CC}" \
-		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
-		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
-		--extra-libs="-lpthread"
+		--cc="${CC}"
 
 CONFIGURE_ENV_armv6_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ARGS_armv6=		--disable-fast-unaligned
