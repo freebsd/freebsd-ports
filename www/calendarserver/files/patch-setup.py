@@ -1,6 +1,6 @@
---- setup.py.orig	2016-01-07 15:18:44 UTC
+--- setup.py.orig	2016-08-23 16:28:28 UTC
 +++ setup.py
-@@ -429,9 +429,6 @@ def doSetup():
+@@ -419,9 +419,6 @@ def doSetup():
          scripts=[
              "bin/caldavd",
          ],
