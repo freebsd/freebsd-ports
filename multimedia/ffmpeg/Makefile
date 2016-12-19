@@ -351,7 +351,9 @@ VDPAU_CONFIGURE_ENABLE=	vdpau
 # armv6
 VFP_CONFIGURE_ENABLE=	vfp
 NEON_CONFIGURE_ENABLE=	neon
+.if ! ${CFLAGS:M-march*}
 NEON_CONFIGURE_ON=	--cpu=armv7-a
+.endif
 
 # vo-amrwbenc
 VO_AMRWBENC_LIB_DEPENDS=	libvo-amrwbenc.so:audio/vo-amrwbenc
