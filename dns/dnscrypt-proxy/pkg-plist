@@ -1,4 +1,5 @@
 bin/hostip
+etc/dnscrypt-proxy.conf
 %%PLUGINS%%include/dnscrypt/plugin.h
 %%PLUGINS%%include/dnscrypt/private.h
 %%PLUGINS%%include/dnscrypt/version.h
