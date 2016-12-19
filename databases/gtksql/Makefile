@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
+BROKEN=		does not build (incomplete definition of type 'struct CharacterRange')
+
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 cairo glib20 pango
 GNU_CONFIGURE=	yes
