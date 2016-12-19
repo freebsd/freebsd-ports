@@ -12,6 +12,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free and open source photo processor
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2 \
@@ -20,11 +21,11 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfftw3.so:math/fftw3
 
-USES=		cmake compiler:c++0x desktop-file-utils dos2unix \
+USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
 		gettext-runtime jpeg pkgconfig zip
 USE_GNOME=	glib20
 USE_QT5=	qmake_build buildtools_build core gui network widgets
-DOS2UNIX_FILES=	Sources/ptImage.cpp
+DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
