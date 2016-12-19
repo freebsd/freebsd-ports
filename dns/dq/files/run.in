@@ -1,0 +1,2 @@
+#!/bin/sh
+envuidgid %%UID%% envdir %%ETCDIR%%cache/env dqcache
