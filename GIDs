@@ -139,7 +139,7 @@ saned:*:194:
 radns:*:195:
 nova:*:196:
 dq:*:197:
-# free: 198
+horizon:*:198:
 mcserver:*:199:
 sympa:*:200:
 privoxy:*:201:

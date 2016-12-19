@@ -144,7 +144,7 @@ saned:*:194:194::0:0:SANE Scanner Daemon:/nonexistent:/bin/sh
 radns:*:195:195::0:0:radns user:/nonexistent:/usr/sbin/nologin
 nova:*:196:196::0:0:Nova daemon pseudo-user:/var/lib/nova:/usr/sbin/nologin
 dq:*:197:197::0:0:dqcache user:/nonexistent:/usr/sbin/nologin
-# free: 198
+horizon:*:198:198::0:0:Horizon pseudo-user:/var/lib/horizon:/usr/sbin/nologin
 mcserver:*:199:199::0:0:Minecraft Server:/nonexistent:/bin/sh
 sympa:*:200:200::0:0:Sympa Owner:/nonexistent:/usr/sbin/nologin
 privoxy:*:201:201::0:0:Privoxy proxy user:/nonexistent:/usr/sbin/nologin
