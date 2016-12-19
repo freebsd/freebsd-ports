@@ -21,8 +21,4 @@ USES=		autoreconf libtool pathfix pkgconfig
 
 USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|doc \(contrib script\)|\1|; /^dist_doc_DATA = / s| README.rst||' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/^dist_pkgdata_SCRIPTS = / s| fetch-ocsp-response||' ${WRKSRC}/script/Makefile.am
-
 .include <bsd.port.mk>
