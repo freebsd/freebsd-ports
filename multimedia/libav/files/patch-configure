@@ -19,15 +19,6 @@
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -4644,7 +4644,7 @@ DOCDIR=\$(DESTDIR)$docdir
- MANDIR=\$(DESTDIR)$mandir
- SRC_PATH=$source_path
- CC_IDENT=$cc_ident
--ARCH=$arch
-+LIBAV_ARCH=$arch
- INTRINSICS=$intrinsics
- CC=$cc
- AS=$as
 @@ -4821,7 +4821,7 @@ pkgconfig_generate(){
      requires=${requires%, }
      enabled ${name#lib} || return 0

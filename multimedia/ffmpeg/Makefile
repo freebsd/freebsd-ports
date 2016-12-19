@@ -22,6 +22,7 @@ USES=		compiler:c11 cpe gmake localbase perl5 pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
 PORTSCOUT=	limit:^3\.
 
