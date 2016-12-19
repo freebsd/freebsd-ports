@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	consul-alerts
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Simple daemon to send notifications based on Consul health checks
 
 LICENSE=	GPLv2+
@@ -15,7 +15,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 USES=		compiler
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	AcalephStorage
+GH_ACCOUNT=	AcalephStorage aws:aws_sdk_go
+GH_PROJECT=	aws-sdk-go:aws_sdk_go
+GH_TAGNAME=	v1.5.12:aws_sdk_go
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	${PREFIX}/bin/consul-alerts
 
@@ -24,23 +27,20 @@ USE_RC_SUBR=	consul-alerts
 STRIP=
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/AcalephStorage/consul-alerts
-.for src in .buildkite .buildkite-release .gitignore .travis.yml \
-	check-handler.go consul consul-alerts.go Dockerfile \
-	event-handler.go Godeps health-handler.go leader-election.go \
-	LICENSE Makefile notifier provision README.md send-notifs.go \
-	Vagrantfile watchers.go
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/AcalephStorage/consul-alerts
-.endfor
+	@${MKDIR} ${WRKDIR}/src/github.com/AcalephStorage
+	@${MV} ${WRKSRC} \
+		${WRKDIR}/src/github.com/AcalephStorage/consul-alerts
+	@${MKDIR} ${WRKDIR}/src/github.com/aws
+	@${MV} ${WRKSRC_aws_sdk_go} \
+		${WRKDIR}/src/github.com/aws/aws-sdk-go
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/AcalephStorage/consul-alerts; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
+	@cd ${WRKDIR}/src/github.com/AcalephStorage/consul-alerts; \
+		${SETENV} ${BUILD_ENV} GOPATH=${WRKDIR} go build -v -x \
 		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/consul-alerts
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/AcalephStorage/consul-alerts/bin/consul-alerts ${STAGEDIR}${PREFIX}/bin/consul-alerts
+	${INSTALL_PROGRAM} ${WRKDIR}/src/github.com/AcalephStorage/consul-alerts/bin/consul-alerts ${STAGEDIR}${PREFIX}/bin/consul-alerts
 
 .include <bsd.port.pre.mk>
 
