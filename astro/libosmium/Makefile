@@ -26,6 +26,12 @@ GH_ACCOUNT=	osmcode
 USES=		cmake compiler:c++11-lib
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF
 
+# if/when corresponding ports appear in the tree, these will need to
+# be turned from depends
+CMAKE_ARGS+=	-DINSTALL_GDALCPP:BOOL=ON \
+		-DINSTALL_PROTOZERO:BOOL=ON \
+		-DINSTALL_UTFCPP:BOOL=ON
+
 # though it builds tests, the library itself is header-only
 NO_ARCH=	yes
 
