@@ -3,7 +3,7 @@
 PORTNAME=	colmap
 DISTVERSION=	2.1-0 # synthetic tag
 DISTVERSIONSUFFIX=	-g55fbe10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -40,17 +40,11 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
 TEST_TARGET=	test ARGS="-V"
 
-OPTIONS_DEFINE=		DOCS OPENMP
-OPTIONS_DEFAULT=	OPENMP ${MACHINE_CPU:tu}
+OPTIONS_DEFINE=		DOCS OPENMP SIMD
+OPTIONS_DEFAULT=	OPENMP SIMD
 # XXX ports/215138: exclude still broken
 OPTIONS_EXCLUDE=	${OPTIONS_EXCLUDE_${OPSYS}_${OSREL}} # not OSREL:R
 OPTIONS_EXCLUDE_FreeBSD_10.1=	OPENMP
-
-OPTIONS_GROUP=		SIMD
-OPTIONS_GROUP_SIMD=	${OPTIONS_GROUP_SIMD_${MACHINE_ARCH}}
-# Keep in sync with src/ext/VLFeat/CMakeLists.txt
-OPTIONS_GROUP_SIMD_amd64=	${OPTIONS_GROUP_SIMD_i386}
-OPTIONS_GROUP_SIMD_i386=	SSE2 AVX
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DOCS_USES=		gmake
@@ -61,15 +55,10 @@ OPENMP_CMAKE_BOOL=	OPENMP_ENABLED
 # XXX ports/199603 + ports/210337
 OPENMP_VARS=		OPENMP=gcc-
 
-.for _simd in ${OPTIONS_GROUP_SIMD}
-${_simd}_DESC=		${MMX_DESC:S/MMX/${_simd}/}
-${_simd}_CMAKE_BOOL=	HAS_${_simd}_EXTENSION
-${_simd}_CFLAGS=	-m${_simd:tl}
-.endfor
+SIMD_CMAKE_BOOL=	SIMD_ENABLED
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/Qt5OpenGL/Qt5Widgets/' \
-		-e '/CheckSSEExtensions/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/install.*test/d' \
 		${WRKSRC}/cmake/CMakeHelper.cmake
