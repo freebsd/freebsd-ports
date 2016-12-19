@@ -1,0 +1,4 @@
+Bio::Coordinate classes are used for working with various biological coordinate
+systems. See Bio::Coordinate::Collection and Bio::Collection::Pair for examples.
+
+WWW: http://search.cpan.org/dist/Bio-Coordinate/
