@@ -9,8 +9,21 @@ plus online DOCs, including RFCs in
 Getting Started
 ---------------
 
-Before you can run the server, you need to set up a configuration file
-(etc/caldavd/caldavd.plist).
+Before you can run the server, you need to set up a database and a
+configuration file (etc/caldavd/caldavd.plist).
+
+If you installed the documentation (default), you can create the database,
+assuming a running PostgreSQL server, so:
+    CREATE DATABASE caldav
+           OWNER = caldav
+           ENCODING = 'UTF8'
+           LC_COLLATE = 'C'
+           LC_CTYPE = 'C';
+and populate it with the caldav tables like so:
+    psql -h my_server -p my_port \
+        -f /usr/local/share/doc/calendarserver/current.sql \
+        -U caldav caldav
+
 If you installed the examples configuration, you could start with a test
 configuration by copying and editing from
 %%PREFIX%%/share/examples/calendarserver/ to %%PREFIX%%/etc/caldavd/

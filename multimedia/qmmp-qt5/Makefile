@@ -189,7 +189,6 @@ CUE_CMAKE_BOOL=	USE_CUE
 NULLOUT_DESC=	Support null output
 NULLOUT_CMAKE_BOOL=	USE_NULL
 
-SOXR_DESC=	Support SoX Resampler
 SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
 SOXR_CMAKE_BOOL=	USE_SOXR
 

@@ -1,11 +1,11 @@
---- src/build-system/configure.orig	2015-04-27 09:51:45.000000000 -0500
-+++ src/build-system/configure	2015-04-27 09:52:01.000000000 -0500
-@@ -1606,7 +1606,7 @@
-       | --with-muparser=* | --with-hdf5=* | --with-jni=* | --with-magic=* \
-       | --x-includes=* | --x-libraries=* | --with-3psw=* \
-       | --target=* | --with-runpath=* | --with-relative-runpath=* \
--      | --help | --no-create | --no-recursion)
-+      | --help | --no-create | --no-recursion | --localstatedir=* )
-       ;;
- 
-       * )
+--- src/build-system/configure.orig	2016-09-09 21:04:16.000000000 +0900
++++ src/build-system/configure	2016-12-02 15:04:04.258800000 +0900
+@@ -1715,7 +1715,7 @@
+       | --silent | --cache-file=* | -C | --config-cache | -n | --no-create \
+       | --no-recursion | --prefix=* | --exec-prefix=* | --bindir=* \
+       | --libdir=* | --includedir=* | --build=* | --host=* | --target=* \
+-      | --with-runpath=* | --with-relative-runpath=* \
++      | --with-runpath=* | --with-relative-runpath=* | --localstatedir=* \
+       | --with-experimental=* | --with-extra-action=* | --with-build-root=* \
+       | --with-fake-root=* | --with-build-root-sfx=* | --with-check=* \
+       | --with-check-tools=* | --with-ftds=[0-9]* | --with-fastcgi=[0-9]* \

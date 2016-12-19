@@ -438,6 +438,7 @@ SNMP_DESC?=		SNMP network protocol support
 SOCKS_DESC?=		SOCKS proxy support
 SOUND_DESC?=		Sound (audio) support
 SOUNDTOUCH_DESC?=	Sound processing support via SoundTouch
+SOXR_DESC?=		SoX resampler support via libsoxr
 SPANDSP_DESC?=		SpanDSP faxing support
 SPATIALITE_DESC?=	SpatiaLite support
 SPDY_DESC?=		SPDY network protocol support
