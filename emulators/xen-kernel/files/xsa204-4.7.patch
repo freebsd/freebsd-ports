@@ -1,0 +1,69 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Sun, 18 Dec 2016 15:42:59 +0000
+Subject: [PATCH] x86/emul: Correct the handling of eflags with SYSCALL
+
+A singlestep #DB is determined by the resulting eflags value from the
+execution of SYSCALL, not the original eflags value.
+
+By using the original eflags value, we negate the guest kernels attempt to
+protect itself from a privilege escalation by masking TF.
+
+Introduce a tf boolean and have the SYSCALL emulation recalculate it
+after the instruction is complete.
+
+This is XSA-204
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/x86_emulate/x86_emulate.c | 23 ++++++++++++++++++++---
+ 1 file changed, 20 insertions(+), 3 deletions(-)
+
+diff --git a/xen/arch/x86/x86_emulate/x86_emulate.c b/xen/arch/x86/x86_emulate/x86_emulate.c
+index bca7045..abe442e 100644
+--- a/xen/arch/x86/x86_emulate/x86_emulate.c
++++ b/xen/arch/x86/x86_emulate/x86_emulate.c
+@@ -1582,6 +1582,7 @@ x86_emulate(
+     union vex vex = {};
+     unsigned int op_bytes, def_op_bytes, ad_bytes, def_ad_bytes;
+     bool_t lock_prefix = 0;
++    bool_t tf = !!(ctxt->regs->eflags & EFLG_TF);
+     int override_seg = -1, rc = X86EMUL_OKAY;
+     struct operand src = { .reg = REG_POISON };
+     struct operand dst = { .reg = REG_POISON };
+@@ -3910,9 +3911,8 @@ x86_emulate(
+     }
+ 
+  no_writeback:
+-    /* Inject #DB if single-step tracing was enabled at instruction start. */
+-    if ( (ctxt->regs->eflags & EFLG_TF) && (rc == X86EMUL_OKAY) &&
+-         (ops->inject_hw_exception != NULL) )
++    /* Should a singlestep #DB be raised? */
++    if ( tf && (rc == X86EMUL_OKAY) && (ops->inject_hw_exception != NULL) )
+         rc = ops->inject_hw_exception(EXC_DB, -1, ctxt) ? : X86EMUL_EXCEPTION;
+ 
+     /* Commit shadow register state. */
+@@ -4143,6 +4143,23 @@ x86_emulate(
+              (rc = ops->write_segment(x86_seg_ss, &ss, ctxt)) )
+             goto done;
+ 
++        /*
++         * SYSCALL (unlike most instructions) evaluates its singlestep action
++         * based on the resulting EFLG_TF, not the starting EFLG_TF.
++         *
++         * As the #DB is raised after the CPL change and before the OS can
++         * switch stack, it is a large risk for privilege escalation.
++         *
++         * 64bit kernels should mask EFLG_TF in MSR_FMASK to avoid any
++         * vulnerability.  Running the #DB handler on an IST stack is also a
++         * mitigation.
++         *
++         * 32bit kernels have no ability to mask EFLG_TF at all.  Their only
++         * mitigation is to use a task gate for handling #DB (or to not use
++         * enable EFER.SCE to start with).
++         */
++        tf = !!(_regs.eflags & EFLG_TF);
++
+         break;
+     }
+ 
