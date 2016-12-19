@@ -469,28 +469,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
 		${WRKSRC}/ffserver.c
 	@${REINPLACE_CMD} -E \
-		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g; \
-		s|gsm/gsm.h|gsm.h|g" \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|-ldl||' \
 		-e 's|require_pkg_config opencv|require_pkg_config opencv-core|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-patch-SDL-on:
-	@${REINPLACE_CMD} -E \
-		-e 's|sdl-config|${SDL_CONFIG}|g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E \
-		-e 's|#include <SDL|#include <SDL2/SDL|' \
-		${WRKSRC}/ffplay.c \
-		${WRKSRC}/libavdevice/opengl_enc.c \
-		${WRKSRC}/libavdevice/sdl2.c
-
-post-configure-THEORA-off:
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
-		${WRKSRC}/config.mak
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
