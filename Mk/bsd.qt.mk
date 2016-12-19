@@ -170,13 +170,14 @@ CONFIGURE_ARGS+=-verbose
 
 . if ${QT_DIST} == "base" || ${_QT_VERSION:M4*}
 .  if ${_QT_VERSION:M4*}
-_EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
+_EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h \
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool
 .  else
-_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h
+_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h \
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
-		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool \
 		${_EXTRA_PATCHES_QT4} ${_EXTRA_PATCHES_QT5}
 . endif
 
@@ -682,13 +683,6 @@ qt5-pre-configure:
 # occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
-
-pre-install: qt-pre-install
-qt-pre-install:
-# Search both in CONFIGURE_WRKSRC and WRKSRC, as the former is not
-# a subdirectory of the latter for out-of-source builds.
-	@${FIND} ${WRKSRC} ${CONFIGURE_WRKSRC} -name "Makefile*" -type f | \
-		${XARGS} ${REINPLACE_CMD} -e 's,${PREFIX}/${QT_LIBDIR_REL}/pkgconfig,${PREFIX}/libdata/pkgconfig,g'
 
 post-install: qt-post-install
 qt-post-install:
