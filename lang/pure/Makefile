@@ -19,6 +19,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libpcreposix.so:devel/pcre \
 		libLLVM-${LLVM_VERSION:C/./&./}.so:devel/llvm${LLVM_VERSION}
 
+BROKEN_FreeBSD_9=	does not buld (/usr/local/lib/gcc49/include/c++/cstddef:51:11: error: '::max_align_t' has not been declared)
+
 SUB_FILES=	pkg-message
 
 USES=		gmake iconv pathfix pkgconfig
