@@ -1,0 +1,29 @@
+Please note that this is a development version of Horizon.
+
+You may serve horizon (OpenStack Dashboard) with apache web server.
+Use this snippet as reference:
+
+WSGIScriptAlias / %%PYTHON_SITELIBDIR%%/openstack_dashboard/wsgi/django.wsgi process-group=horizon
+WSGIDaemonProcess horizon user=horizon group=horizon processes=3 threads=10 display-name=%{GROUP}
+WSGIProcessGroup horizon
+Alias /static/dashboard %%PYTHON_SITELIBDIR%%/openstack_dashboard/static/dashboard
+<Directory %%PYTHON_SITELIBDIR%%/openstack_dashboard/static>
+    Require all granted
+</Directory>
+<Directory %%PYTHON_SITELIBDIR%%/openstack_dashboard/wsgi>
+    Require all granted
+</Directory>
+
+Also if you plan to use apache make sure that wsgi4 module is enabled and
+you set correct ownership for static and local libraries for openstack_dashboard:
+
+# chown -R horizon %%PYTHON_SITELIBDIR%%/openstack_dashboard/static
+# chown -R horizon %%PYTHON_SITELIBDIR%%/openstack_dashboard/local
+
+Create local_settings.py with your settings at
+%%PYTHON_SITELIBDIR%%/openstack_dashboard/local
+
+To enable django-compressor add this option to local_settings.py file:
+
+STATIC_ROOT = '%%PYTHON_SITELIBDIR%%/openstack_dashboard/static'
+
