@@ -11,6 +11,8 @@ COMMENT=	Supplicant (client) for WPA/802.1x protocols
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
 
+BROKEN=		does not build (undefined reference to `get_ie')
+
 USES=		cpe gmake readline ssl
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
