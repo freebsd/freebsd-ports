@@ -1,5 +1,5 @@
-TIMESTAMP = 1474130172
-SHA256 (microcode-20160714.tgz) = f3a9c6fc93275bf1febc26f7c397ac93ed5f109e47fb52932f6dbd5cfdbc840e
-SIZE (microcode-20160714.tgz) = 1239344
+TIMESTAMP = 1478246955
+SHA256 (microcode-20161104.tgz) = 70154ca62ff9b3da6291dfdecc90daaeb399d7290c0d308d719df16dff5ee3d1
+SIZE (microcode-20161104.tgz) = 1290125
 SHA256 (amd-ucode-2014-12-01.tar.bz2) = e8f37ed12955585a625ee7cd48d89f9a04ceb2afa36081b52cc59d08a3bb8293
 SIZE (amd-ucode-2014-12-01.tar.bz2) = 20585
