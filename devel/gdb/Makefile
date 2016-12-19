@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
-		--with-expat=yes --with-libexpat-prefix=${LOCALBASE}/lib \
+		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
 		--without-libunwind-ia64
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
