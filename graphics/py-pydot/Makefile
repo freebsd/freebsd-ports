@@ -13,7 +13,6 @@ COMMENT=	Python interface to the Graphviz Dot language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.4:devel/py-pyparsing
 RUN_DEPENDS=	dot:graphics/graphviz \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.4:devel/py-pyparsing
 
