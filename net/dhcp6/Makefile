@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dhcp6
-PORTVERSION=	20080615
-PORTREVISION=	7
+PORTVERSION=	20080615.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net ipv6
-MASTER_SITES=	SF/wide-dhcpv6/wide-dhcpv6/wide-dhcpv6-${PORTVERSION}
-DISTNAME=	wide-dhcpv6-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	KAME DHCP6 client, server, and relay
@@ -14,6 +12,9 @@ COMMENT=	KAME DHCP6 client, server, and relay
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	hrs-allbsd
+GH_PROJECT=	wide-dhcpv6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-localdbdir=/var/db

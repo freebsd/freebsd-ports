@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openbor
-PORTVERSION=	3.0.r4390
+PORTVERSION=	3.0.r4415
 CATEGORIES=	games devel
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
@@ -14,9 +14,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
 
-USES=		dos2unix gmake pkgconfig tar:xz
+USES=		gmake pkgconfig tar:xz
 USE_SDL=	gfx2
-DOS2UNIX_FILES=	Makefile
 MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \

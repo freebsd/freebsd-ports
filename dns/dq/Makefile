@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dq
-PORTVERSION=	20161128
+PORTVERSION=	20161210
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -19,6 +19,8 @@ GH_ACCOUNT=	janmojzis
 
 USERS=		dq
 GROUPS=		dq
+SUB_FILES=	run
+SUB_LIST=	ETCDIR="${ETCDIR}" UID="${USERS}" GID="${GROUPS}"
 
 do-build:
 	${MAKE_CMD} -C ${WRKSRC} compile
@@ -28,11 +30,11 @@ do-install:
 	cd ${WRKSRC}/build/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/build/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/
 	${MKDIR} ${STAGEDIR}${ETCDIR}cache/env ${STAGEDIR}${ETCDIR}cache/root/servers
-	${ECHO} 10000000 > ${STAGEDIR}${ETCDIR}cache/env/CACHESIZE
-	${ECHO} 127.0.0.1 > ${STAGEDIR}${ETCDIR}cache/env/IP
-	${ECHO} "${ETCDIR}cache/root" > ${STAGEDIR}${ETCDIR}cache/env/ROOT
-	${ECHO} envuidgid ${USERS} envdir ${ETCDIR}cache/env ${GROUPS} > ${STAGEDIR}${ETCDIR}cache/run
+	${ECHO_CMD} 10000000 > ${STAGEDIR}${ETCDIR}cache/env/CACHESIZE
+	${ECHO_CMD} 127.0.0.1 > ${STAGEDIR}${ETCDIR}cache/env/IP
+	${ECHO_CMD} "${ETCDIR}cache/root" > ${STAGEDIR}${ETCDIR}cache/env/ROOT
 	${CP} files/root-servers-list ${STAGEDIR}${ETCDIR}cache/root/servers/@
+	${CP} ${WRKDIR}/run ${STAGEDIR}${ETCDIR}cache/run
 	${INSTALL_LIB} ${WRKSRC}/build/lib/libtinynacl.a ${STAGEDIR}${PREFIX}/lib
 
 do-install-DOCS-on:
