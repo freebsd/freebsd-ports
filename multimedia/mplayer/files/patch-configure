@@ -167,12 +167,3 @@
  
  CXXFLAGS=" $CFLAGS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
  
-@@ -8375,7 +8386,7 @@ TIMER = $_timer
- EXESUF      = $_exesuf
- EXESUFS_ALL = .exe
- 
--ARCH = $arch
-+MPLAYER_ARCH = $arch
- $(mak_enable "$arch_all"    "$arch"    ARCH)
- $(mak_enable "$subarch_all" "$subarch" ARCH)
- $(mak_enable "$cpuexts_all" "$cpuexts" HAVE)

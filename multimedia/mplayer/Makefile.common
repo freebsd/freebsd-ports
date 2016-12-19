@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 gmake iconv ncurses tar:xz
+NOPRECIOUSMAKEVARS=	yes # ARCH
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc="${CC}" \

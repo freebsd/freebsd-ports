@@ -27,6 +27,7 @@ USES=		cpe gmake perl5 pkgconfig tar:bzip2 shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
 FFMPEG_SUFFIX=	0
 HAS_CONFIGURE=	yes

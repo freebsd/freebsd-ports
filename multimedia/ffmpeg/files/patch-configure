@@ -24,15 +24,6 @@
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -6562,7 +6560,7 @@ ifndef MAIN_MAKEFILE
- SRC_PATH:=\$(SRC_PATH:.%=..%)
- endif
- CC_IDENT=$cc_ident
--ARCH=$arch
-+FFMPEG_ARCH=$arch
- INTRINSICS=$intrinsics
- CC=$cc
- CXX=$cxx
 @@ -6799,7 +6797,7 @@ exec_prefix=\${prefix}
  libdir=$libdir
  includedir=$incdir

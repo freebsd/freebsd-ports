@@ -33,6 +33,7 @@ FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
 
 FFMPEG_LIB_DEPENDS=libavcodec0.so:multimedia/ffmpeg0
 FFMPEG_CONFIGURE_WITH=system-ffmpeg
+FFMPEG_VARS_OFF=NOPRECIOUSMAKEVARS=yes # ARCH
 
 FFMPEG_DISTFILES_OFF=libav-${LIBAV_VERSION}.tar.xz:libav
 FFMPEG_BUILD_DEPENDS_OFF=yasm:devel/yasm
@@ -91,11 +92,5 @@ post-patch:
 	@${REINPLACE_CMD} -Ee '/sleep 15/d; /PKG_CONFIG/\
 		s/lib(av(format|codec|util)|postproc|swscale)/&0/g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/LIBAV_ARCH/' \
-		${WRKSRC}/gst-libs/ext/libav/Makefile \
-		${WRKSRC}/gst-libs/ext/libav/common.mak \
-		${WRKSRC}/gst-libs/ext/libav/configure \
-		${WRKSRC}/gst-libs/ext/libav/libavcodec/Makefile \
-		${WRKSRC}/gst-libs/ext/libav/libavfilter/Makefile
 
 .include <bsd.port.post.mk>
