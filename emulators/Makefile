@@ -116,6 +116,7 @@
     SUBDIR += ppsspp-qt5
     SUBDIR += py-gns3-converter
     SUBDIR += py-nova
+    SUBDIR += py-unicorn
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-cheri
