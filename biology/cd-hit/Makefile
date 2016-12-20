@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cd-hit
-PORTVERSION=	4.6.4
-PORTREVISION=	1
+PORTVERSION=	4.6.6
 DISTVERSIONPREFIX=	V
 CATEGORIES=	biology
 
@@ -17,7 +16,6 @@ GH_ACCOUNT=	weizhongli
 GH_PROJECT=	cdhit
 
 USES=		compiler:openmp gmake shebangfix
-WRKSRC=		${WRKDIR}/cdhit-${PORTVERSION}
 SHEBANG_FILES=	${WRKSRC}/*.pl
 
 MAKE_FLAGS=	openmp=yes
