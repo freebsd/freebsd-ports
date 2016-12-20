@@ -18,6 +18,15 @@
  
      // Allocate memory and get pointer.
      result = malloc(alloc_size);
+@@ -20480,7 +20480,7 @@ void common_dot()
+     entity     *eOpp;       //Owner of dot effect.
+     s_collision_attack    attack;     //Attack struct.
+ 
+-    for(iIndex = 0; iIndex <= MAX_DOTS; iIndex++)                                               //Loop through all DOT indexes.
++    for(iIndex = 0; iIndex < MAX_DOTS; iIndex++)                                               //Loop through all DOT indexes.
+     {
+         iDot_time   =   self->dot_time[iIndex];                                                 //Get expire time.
+         iDot_cnt    =   self->dot_cnt[iIndex];                                                  //Get next tick time.
 @@ -34617,7 +34617,7 @@ void keyboard_setup(int player)
      strncpy(buttonnames[SDID_SPECIAL], "Special", 16);
      strncpy(buttonnames[SDID_START], "Start", 16);
