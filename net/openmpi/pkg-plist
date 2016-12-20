@@ -224,7 +224,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.12
-%%MPIDIR%%/lib/libmpi.so.12.0.4
+%%MPIDIR%%/lib/libmpi.so.12.0.5
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.1
