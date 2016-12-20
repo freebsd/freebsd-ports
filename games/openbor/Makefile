@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
 
-USES=		gmake pkgconfig tar:xz
+USES=		dos2unix gmake pkgconfig tar:xz
+DOS2UNIX_FILES=	openbor.c # XXX mixed vs. svn:eol-style
 USE_SDL=	gfx2
 MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
