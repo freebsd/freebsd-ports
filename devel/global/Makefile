@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	global
-PORTVERSION=	6.5.5
+PORTVERSION=	6.5.6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code tag system
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,7 +25,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
 post-patch:
 	@${REINPLACE_CMD} -e '/^gtags_DATA = / s|AUTHOR.*THANKS||' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
