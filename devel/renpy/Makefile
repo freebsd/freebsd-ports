@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	6.99.11
+PORTVERSION?=	6.99.12
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 
@@ -26,10 +26,8 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl
 
 CONFLICTS_INSTALL?=	${PORTNAME}6-*
 
-.ifndef PKGNAMESUFFIX
 # Upstream tends to reroll distfiles before moving under /release/
-PORTSCOUT=	site:http://www.renpy.org/dl/release/
-.endif
+PORTSCOUT?=	site:http://www.renpy.org/dl/release/
 
 USES=		python:2.7 shebangfix tar:bz2
 USE_GL=		glew
@@ -69,6 +67,9 @@ LICENSE_NAME_${lic}=	${lic} license
 LICENSE_FILE_${lic}=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_${lic}=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 . endfor
+
+post-extract:
+	@${FIND} ${WRKSRC}/lib ${WRKSRC}/renpy.app -type d -empty -delete
 
 .if !target(post-patch)
 post-patch:
