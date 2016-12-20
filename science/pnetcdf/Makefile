@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
@@ -19,7 +18,7 @@ OPTIONS_DEFAULT=OPENMPI
 
 CONFLICTS_INSTALL=	hdf-4.*
 
-CFLAGS+=	-fPIC -DPIC
+CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	ac_cv_fc_compiler_nag=no
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -35,10 +34,10 @@ OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e '/$$(INSTALL.*$$(...DIR)/ s|$$(...DIR)|$$(DESTDIR)&|'
-	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/src/lib/Makefile.in
+	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/n* ${STAGEDIR}${PREFIX}/bin/pnetcdf_version
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
