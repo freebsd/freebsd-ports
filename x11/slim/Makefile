@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Graphical login manager for X11, derived from Login.app
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
