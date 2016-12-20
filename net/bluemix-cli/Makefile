@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bluemix-cli
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 DISTNAME=	Bluemix_CLI_${PORTVERSION}_386
 CATEGORIES=	net
 MASTER_SITES=	http://public.dhe.ibm.com/cloud/${PORTNAME:C/-.*//}/cli/${PORTNAME}/
