@@ -14,6 +14,9 @@ COMMENT=	Python SQL toolkit and Object Relational Mapper 0.9.x
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
+EXPIRATION_DATE=	2017-03-01
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
