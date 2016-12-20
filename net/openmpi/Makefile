@@ -4,8 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-PORTVERSION=	1.10.4
-PORTREVISION=	1
+PORTVERSION=	1.10.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 

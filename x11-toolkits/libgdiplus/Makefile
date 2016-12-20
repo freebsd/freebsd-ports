@@ -3,22 +3,29 @@
 
 PORTNAME=	libgdiplus
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GDI+ API for System.Windows.Forms in Mono
 
+LICENSE=	MPL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
-		libcairo.so:graphics/cairo
+		libcairo.so:graphics/cairo \
+		libfreetype.so:print/freetype2 \
+		libexif.so:graphics/libexif \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool:keepla pathfix pkgconfig
+USES=		cpe gettext-runtime gmake jpeg libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xrender
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
