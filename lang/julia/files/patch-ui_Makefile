@@ -1,0 +1,17 @@
+--- ui/Makefile.orig	2016-09-20 02:54:22 UTC
++++ ui/Makefile
+@@ -66,10 +66,12 @@ else
+ CXXLD := $(LD)
+ endif
+ 
++LLVMLINK += $(shell $(LLVM_CONFIG_HOST) --ldflags --system-libs)
++
+ $(build_bindir)/julia$(EXE): $(OBJS)
+-	@$(call PRINT_LINK, $(CXXLD) $(CXXFLAGS) $(CXXLDFLAGS) $(LINK_FLAGS) $(SHIPFLAGS) $^ -o $@ -L$(build_private_libdir) -L$(build_libdir) -L$(build_shlibdir) -ljulia $(JLDFLAGS) $(CXXLDFLAGS))
++	@$(call PRINT_LINK, $(CXXLD) -v $(CXXFLAGS) $(CXXLDFLAGS) $(LINK_FLAGS) $(SHIPFLAGS) $^ -o $@ -L$(build_private_libdir) -L$(build_libdir) -L$(build_shlibdir) -ljulia $(JLDFLAGS) $(CXXLDFLAGS) $(LLVMLINK))
+ $(build_bindir)/julia-debug$(EXE): $(DOBJS)
+-	@$(call PRINT_LINK, $(CXXLD) $(CXXFLAGS) $(CXXLDFLAGS) $(LINK_FLAGS) $(DEBUGFLAGS) $^ -o $@ -L$(build_private_libdir) -L$(build_libdir) -L$(build_shlibdir) -ljulia-debug $(JLDFLAGS) $(CXXLDFLAGS))
++	@$(call PRINT_LINK, $(CXXLD) $(CXXFLAGS) $(CXXLDFLAGS) $(LINK_FLAGS) $(DEBUGFLAGS) $^ -o $@ -L$(build_private_libdir) -L$(build_libdir) -L$(build_shlibdir) -ljulia-debug $(JLDFLAGS) $(CXXLDFLAGS) $(LLVMLINK))
+ 
+ clean: | $(CLEAN_TARGETS)
+ 	rm -f *.o *.dbg.obj

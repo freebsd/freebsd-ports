@@ -143,6 +143,7 @@
     SUBDIR += jimtcl
     SUBDIR += jruby
     SUBDIR += js_of_ocaml
+    SUBDIR += julia
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
