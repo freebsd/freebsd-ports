@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	UML-Class-Simple
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	p5-Class-Inspector>=1.16:devel/p5-Class-Inspector \
 		dot:graphics/graphviz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
