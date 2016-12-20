@@ -1,0 +1,28 @@
+--- src/Makefile.orig	2016-09-20 02:54:21 UTC
++++ src/Makefile
+@@ -9,7 +9,7 @@ override CFLAGS += $(JCFLAGS)
+ ifeq ($(LLVM_VER),3.3)
+ override CXXFLAGS += $(JCXXFLAGS) -std=c++11
+ else
+-override CXXFLAGS += $(JCXXFLAGS)
++override CXXFLAGS += $(JCXXFLAGS) -stdlib=libc++ -std=c++11
+ endif
+ override CPPFLAGS += $(JCPPFLAGS)
+ 
+@@ -21,6 +21,7 @@ FLAGS := \
+ 	-D_GNU_SOURCE -I$(BUILDDIR) -I$(SRCDIR) \
+ 	-I$(SRCDIR)/flisp -I$(SRCDIR)/support \
+ 	-I$(LIBUV_INC) -I$(build_includedir) -DLIBRARY_EXPORTS \
++	-I$(LOCALBASE)/include \
+ 	-I$(JULIAHOME)/deps/valgrind
+ ifneq ($(USEMSVC), 1)
+ FLAGS += -Wall -Wno-strict-aliasing -fno-omit-frame-pointer -fvisibility=hidden -fno-common \
+@@ -75,7 +76,7 @@ else
+ ifeq ($(OS),WINNT)
+ LLVMLINK += $(shell $(LLVM_CONFIG_HOST) --ldflags) -lLLVM-$(LLVM_VER_SHORT)
+ else
+-LLVMLINK += $(shell $(LLVM_CONFIG_HOST) --ldflags) -lLLVM-$(shell $(LLVM_CONFIG_HOST) --version)
++LLVMLINK += $(shell $(LLVM_CONFIG_HOST) --ldflags --libs)
+ endif # OS == WINNT
+ endif # LLVM_USE_CMAKE == 1
+ FLAGS += -DLLVM_SHLIB
