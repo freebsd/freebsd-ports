@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	20140622%2Bbzr4027
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://launchpadlibrarian.net/179199115/
@@ -27,7 +27,6 @@ USE_GCC=	4.7
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
 BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	ice x11 xext
@@ -44,7 +43,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.${DISTVERSION:C/%2B/+/}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS DOXYGEN NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
@@ -56,7 +55,11 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 # undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
 BROKEN_FreeBSD_9=	does not link
 
-DOCS_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
+DOXYGEN_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_ALL_TARGET=	all doxygen-docs
+DOXYGEN_PORTDOCS=	doxygen
 
 post-patch:
 	${MV} ${WRKSRC}/include/boost ${WRKSRC}/include/boost.orig
