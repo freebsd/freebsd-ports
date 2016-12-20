@@ -17,10 +17,6 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
+DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.mk>
