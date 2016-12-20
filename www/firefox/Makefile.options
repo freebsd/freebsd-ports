@@ -17,8 +17,7 @@ OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
 # dtrace(1) crashes during build or fails to allocate space for probe
-OPTIONS_EXCLUDE_FreeBSD_9+=	DTRACE
-OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
+OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
 
 BUNDLED_CAIRO_DESC?=	Use bundled fork of cairo-1.9.5
 CANBERRA_DESC?=		Sound theme alerts

@@ -1,11 +1,11 @@
 --- Makefile.orig	2016-11-28 10:42:07.029535000 +0100
 +++ Makefile	2016-11-28 10:42:33.403489000 +0100
-@@ -387,7 +387,7 @@
+@@ -392,7 +392,7 @@
  	@$(CC) $(CFLAGS) -c -o $@ $<
  
  stress-ng: $(OBJS)
--	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm $(LDFLAGS) -o $@
-+	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm -lstdc++ $(LDFLAGS) -o $@
+-	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm $(LDFLAGS) -lc -o $@
++	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm -lstdc++ $(LDFLAGS) -lc -o $@
  
  #
  #  check if we can build against AppArmor

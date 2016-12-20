@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	dns
-MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
-		http://www.dns-lab.com/downloads/dnscrypt-proxy/
+MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
+		http://download.dnscrypt.org/dnscrypt-proxy/ \
+		http://dns-lab.com/downloads/dnscrypt-proxy/
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Boost privacy and security of DNS

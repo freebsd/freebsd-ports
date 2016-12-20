@@ -3,6 +3,7 @@ bin/ncmpidump
 bin/ncmpigen
 bin/ncmpivalid
 bin/ncoffsets
+bin/pnetcdf-config
 bin/pnetcdf_version
 include/pnetcdf
 include/pnetcdf.h

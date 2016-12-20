@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.11.11
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -158,8 +158,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
-USE=	pgsql=yes
-WANT=	pgsql=9.1+
+USES=		pgsql
 
 USE_RUBY=	yes
 

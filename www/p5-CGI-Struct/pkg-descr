@@ -1,5 +1,4 @@
 CGI::Struct lets you transform CGI data keys that look like perl data
 structures into actual perl data structures.
 
-
 WWW: http://search.cpan.org/dist/CGI-Struct/

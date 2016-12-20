@@ -21,7 +21,9 @@ LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
+ONLY_FOR_ARCHS_REASON=	invokes i386 asm
+
+BROKEN_FreeBSD_9_i386=	does not build (error: integer constant is too large for 'long' type)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
