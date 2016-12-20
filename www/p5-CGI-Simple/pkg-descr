@@ -4,4 +4,4 @@ parameter parsing, file upload, cookie handling and header generation.
 This module is entirely object oriented, however a complete functional
 interface is available by using the CGI::Simple::Standard module.
 
-WWW: http://search.cpan.org/dist/Cgi-Simple/
+WWW: http://search.cpan.org/dist/CGI-Simple/
