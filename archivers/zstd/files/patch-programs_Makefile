@@ -1,13 +1,17 @@
 --- programs/Makefile.orig	2016-08-31 16:09:10 UTC
 +++ programs/Makefile
-@@ -129,11 +129,11 @@ ifneq (,$(filter $(shell uname),Linux Da
+@@ -157,13 +157,13 @@ ifneq (,$(filter $(shell uname),Linux Da
  install: zstd
  	@echo Installing binaries
  	@install -d -m 755 $(DESTDIR)$(BINDIR)/ $(DESTDIR)$(MANDIR)/
--	@install -m 755 zstd$(EXT) $(DESTDIR)$(BINDIR)/zstd$(EXT)
-+	@$(BSD_INSTALL_PROGRAM) zstd$(EXT) $(DESTDIR)$(BINDIR)/zstd$(EXT)
- 	@ln -sf zstd$(EXT) $(DESTDIR)$(BINDIR)/zstdcat
- 	@ln -sf zstd$(EXT) $(DESTDIR)$(BINDIR)/unzstd
+-	@install -m 755 zstd $(DESTDIR)$(BINDIR)/zstd
++	@$(BSD_INSTALL_PROGRAM) zstd $(DESTDIR)$(BINDIR)/zstd
+ 	@ln -sf zstd $(DESTDIR)$(BINDIR)/zstdcat
+ 	@ln -sf zstd $(DESTDIR)$(BINDIR)/unzstd
+-	@install -m 755 zstdless $(DESTDIR)$(BINDIR)/zstdless
+-	@install -m 755 zstdgrep $(DESTDIR)$(BINDIR)/zstdgrep
++	@$(BSD_INSTALL_SCRIPT) zstdless $(DESTDIR)$(BINDIR)/zstdless
++	@$(BSD_INSTALL_SCRIPT) zstdgrep $(DESTDIR)$(BINDIR)/zstdgrep
  	@echo Installing man pages
 -	@install -m 644 zstd.1 $(DESTDIR)$(MANDIR)/zstd.1
 +	@$(BSD_INSTALL_MAN) zstd.1 $(DESTDIR)$(MANDIR)/zstd.1
