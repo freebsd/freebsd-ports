@@ -89,5 +89,5 @@ lib/librocksdb.a
 lib/librocksdb.so
 lib/librocksdb.so.4
 lib/librocksdb.so.4.13
-lib/librocksdb.so.4.13.4
+lib/librocksdb.so.4.13.5
 lib/librocksdb_tools.a
