@@ -2,7 +2,7 @@
 
 PORTNAME=	usrp
 PORTVERSION=	3.4.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	LOCAL/adrian
 DISTNAME=	Ettus-USRP-3.4.3
@@ -28,10 +28,11 @@ MAKE_JOBS_UNSAFE=	yes
 DOCSDIR=	share/doc/uhd
 WRKSRC=		${WRKDIR}/EttusResearch-UHD-Mirror-6047010
 
-OPTIONS_DEFINE=		USRP1 USRP2 DOCS
+OPTIONS_DEFINE=		USRP1 USRP2 DOCS DOXYGEN
 OPTIONS_DEFAULT=	USRP1 USRP2
 USRP1_DESC=	Build Ettus USRP1 firmware
 USRP2_DESC=	Build Ettus USRP2 firmware
+OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +40,7 @@ USRP2_DESC=	Build Ettus USRP2 firmware
 BROKEN_i386=	does not build on i386 FreeBSD 11.x and later
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 HAVEDOCS=	YES
@@ -48,18 +49,12 @@ HAVEDOCS=	YES
 .if ${PORT_OPTIONS:MUSRP1}
 BUILD_DEPENDS+=	sdcc:lang/sdcc
 USRP1=	YES
-PLIST_SUB+=	PUSRP1=""
-.else
-PLIST_SUB+=	PUSRP1="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUSRP2}
 BUILD_DEPENDS+=	${LOCALBASE}/zpu/bin/zpu-elf-gcc:devel/zpu-gcc \
 		${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 USRP2=	YES
-PLIST_SUB+=	PUSRP2=""
-.else
-PLIST_SUB+=	PUSRP2="@comment "
 .endif
 
 CONFIGURE_WRKSRC=	${WRKSRC}/host
