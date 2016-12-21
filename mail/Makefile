@@ -223,6 +223,7 @@
     SUBDIR += mailpile
     SUBDIR += mailscanner
     SUBDIR += mailsync
+    SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
     SUBDIR += masqmail

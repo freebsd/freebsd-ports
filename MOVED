@@ -5765,7 +5765,6 @@ deskutils/lxshortcut||2014-03-24|Has expired: Now distributed with x11/libfm-1.2
 databases/p5-Ima-DBI-Contextual||2014-03-24|Has expired: deprecated by upstream
 databases/p5-Class-DBI-Lite||2014-03-24|Has expired: deprecated by upstream
 net/AquaGatekeeper||2014-03-24|Has expired: Binary port of software abandoned by the vendor
-mail/mailutils||2014-03-24|Has expired: This port needs to be taken care of, it suffers from bit rot.  Especially with options other than GUILE, uninstall may leave files behind
 games/xflame||2014-03-24|Has expired: No more public distfiles
 games/p5-Algorithm-Pair-Best|games/p5-Algorithm-Pair-Best2|2014-03-24|Has expired: Use games/p5-Algorithm-Pair-Best2 instead
 x11-wm/hackedbox||2014-03-24|Has expired: Abandonware
