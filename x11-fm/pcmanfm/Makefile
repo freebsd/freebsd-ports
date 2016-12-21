@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -11,39 +11,29 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfm-gtk.so:x11/libfm
+LIB_DEPENDS=	libfm-gtk.so:x11/libfm \
+	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
 
-USES=		autoreconf desktop-file-utils gettext gmake libtool pkgconfig \
+USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig \
 		tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 cairo pango gdkpixbuf2 intltool intlhack
 USE_XORG=	x11
 
 CONFIGURE_ARGS=--with-gtk=2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS NEWS
-
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES_OFF=	gettext-tools
+
+post-extract:
+	${MV} ${WRKSRC}/data/pcmanfm.conf \
+		${WRKSRC}/data/pcmanfm.conf.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e '/pcmanfm.conf/ d' ${WRKSRC}/data/Makefile.am
-
-post-configure:
-# Replace locales files in right place
-	${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
-		${WRKSRC}/po/Makefile
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/
-	${INSTALL_DATA} ${WRKSRC}/data/pcmanfm.conf \
-		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/pcmanfm.conf.sample
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${REINPLACE_CMD} -e 's|pcmanfm.conf|pcmanfm.conf.sample|' \
+		${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>
