@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
@@ -55,65 +55,37 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^include(.*|include($$$$PWD/../../SQLiteStudio3/plugins.pri)|' \
 		${WRKDIR}/Plugins/DbSqliteCipher/DbSqliteCipher.pro
 
-.include <bsd.port.options.mk>
-
 PLUGIN_DIRS=
-.if ${PORT_OPTIONS:MPLUGIN_CSV_IMPORT}
-PLUGIN_DIRS     += CsvImport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_CSV_EXPORT}
-PLUGIN_DIRS     += CsvExport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_DB_SQLITE_CIPHER}
-PLUGIN_DIRS     += DbSqliteCipher
-USE_OPENSSL=	yes
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_HTML_EXPORT}
-PLUGIN_DIRS     += HtmlExport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_JSON_EXPORT}
-PLUGIN_DIRS     += JsonExport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_PDF_EXPORT}
-PLUGIN_DIRS     += PdfExport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_PRINTING}
-PLUGIN_DIRS     += Printing
-USE_QT5+=	printsupport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_REGEXP_IMPORT}
-PLUGIN_DIRS     += RegExpImport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_SQL_ENTERPRISE_FORMATTER}
-PLUGIN_DIRS     += SqlEnterpriseFormatter
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_SQL_EXPORT}
-PLUGIN_DIRS     += SqlExport
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_SQL_FORMATTER_SIMPLE}
-PLUGIN_DIRS     += SqlFormatterSimple
-.endif
-.if ${PORT_OPTIONS:MPLUGIN_XML_EXPORT}
-PLUGIN_DIRS     += XmlExport
-.endif
+PLUGIN_CSV_IMPORT_VARS=			PLUGIN_DIRS+=CsvImport
+PLUGIN_CSV_EXPORT_VARS=			PLUGIN_DIRS+=CsvExport
+PLUGIN_DB_SQLITE_CIPHER_VARS=		PLUGIN_DIRS+=DbSqliteCipher USES+=ssl
+PLUGIN_HTML_EXPORT_VARS=		PLUGIN_DIRS+=HtmlExport
+PLUGIN_JSON_EXPORT_VARS=		PLUGIN_DIRS+=JsonExport
+PLUGIN_PDF_EXPORT_VARS=			PLUGIN_DIRS+=PdfExport
+PLUGIN_PRINTING_VARS=			PLUGIN_DIRS+=Printing USE_QT5+=printsupport
+PLUGIN_REGEXP_IMPORT_VARS=		PLUGIN_DIRS+=RegExpImport
+PLUGIN_SQL_ENTERPRISE_FORMATTER_VARS=	PLUGIN_DIRS+=SqlEnterpriseFormatter
+PLUGIN_SQL_EXPORT_VARS=			PLUGIN_DIRS+=SqlExport
+PLUGIN_SQL_FORMATTER_SIMPLE_VARS=	PLUGIN_DIRS+=SqlFormatterSimple
+PLUGIN_XML_EXPORT_VARS=			PLUGIN_DIRS+=XmlExport
 
 post-configure:
 	# Fix for a suspected bug in qmake: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=210418
 	@${REINPLACE_CMD} -E 's|SUBLIBS) -L[^ ]+|SUBLIBS) |' ${WRKSRC}/sqlitestudio/Makefile
 	@${REINPLACE_CMD} -E 's|LIBS)$$|LIBS) -L${PREFIX}/lib|' ${WRKSRC}/sqlitestudio/Makefile
-.for plugin in ${PLUGIN_DIRS}
-	@cd ${WRKDIR}/Plugins/${plugin} && \
-		${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
-.endfor
+	@for plugin in ${PLUGIN_DIRS}; do \
+	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}; \
+	done;
 post-build:
-.for plugin in ${PLUGIN_DIRS}
-	@cd ${WRKDIR}/Plugins/${plugin} && \
-		${DO_MAKE_BUILD} ${ALL_TARGET}
-.endfor
+	@for plugin in ${PLUGIN_DIRS}; do \
+	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  ${DO_MAKE_BUILD} ${ALL_TARGET}; \
+	done;
 post-install:
-.for plugin in ${PLUGIN_DIRS}
-	@cd ${WRKDIR}/Plugins/${plugin} && \
-		${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-.endfor
+	@for plugin in ${PLUGIN_DIRS}; do \
+	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}; \
+	done;
 
 .include <bsd.port.mk>
