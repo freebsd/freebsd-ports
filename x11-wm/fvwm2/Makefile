@@ -3,6 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/2.6.7/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -115,6 +116,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/modules/FvwmM4/FvwmM4.c
+	@${REINPLACE_CMD} -e 's,/etc/,${LOCALBASE}/etc/,g' \
+		${WRKSRC}/bin/fvwm-menu-desktop.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/system.fvwm2rc \
