@@ -3,7 +3,7 @@
 
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -28,10 +28,10 @@ AIRFOIL_DIR=	airfoil_fit
 VSPPOD_DIR=	vsp_pod
 
 # Build options
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=		DOXYGEN EXAMPLES
 EXAMPLES_LIB_DEPENDS=	libcpptest.so:devel/cpptest
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
-DOCS_ALL_TARGET=	doc
+DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	doc
 
 # The code uses std::cbrt(). Even if one passes some additional macros for
 # libstdc++ to enable additional math functions in math.h some of them, such as
@@ -69,7 +69,7 @@ do-install-EXAMPLES-on:
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
 		${XARGS} ${STRIP_CMD}
 
-do-install-DOCS-on:
+do-install-DOXYGEN-on:
 	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
