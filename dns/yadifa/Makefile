@@ -44,6 +44,9 @@ post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
 
+pre-build:
+	@cd ${WRKSRC} && ${MAKE_CMD} features
+
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/yadifad.conf \
 		${STAGEDIR}${PREFIX}/etc/yadifad.conf.sample
