@@ -108,4 +108,10 @@ post-install-EXAMPLES-on:
 	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/bin/*_test
 	-@${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/bin/* # may fail for non-root
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
+BROKEN=		does not build on FreeBSD 10.1 (undefined reference to `__cxa_throw_bad_array_new_length')
+.endif
+
+.include <bsd.port.post.mk>
