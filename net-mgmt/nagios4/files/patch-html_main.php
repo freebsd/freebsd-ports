@@ -1,9 +1,9 @@
---- html/main.php.orig	2015-08-19 21:49:52 UTC
+--- html/main.php.orig	2016-12-07 16:31:10 UTC
 +++ html/main.php
-@@ -130,31 +130,6 @@ $this_year = '2015';
+@@ -130,31 +130,6 @@ $this_year = '2016';
  	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
  	<div class="version">Version <?php echo $this_version; ?></div>
- 	<div class="releasedate">August 19, 2015</div>
+ 	<div class="releasedate">December 07, 2016</div>
 -	<div class="checkforupdates"><a href="https://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a></div>
 -</div>
 -

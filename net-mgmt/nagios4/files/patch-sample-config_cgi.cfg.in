@@ -1,6 +1,6 @@
---- sample-config/cgi.cfg.in.orig	2014-08-12 15:00:01 UTC
+--- sample-config/cgi.cfg.in.orig	2016-12-07 16:31:10 UTC
 +++ sample-config/cgi.cfg.in
-@@ -263,7 +263,7 @@ default_statuswrl_layout=4
+@@ -277,7 +277,7 @@ default_statuswrl_layout=4
  # OS and distribution, so you may have to tweak this to
  # work on your system.
  
