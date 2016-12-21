@@ -23,7 +23,7 @@ include/mlt++/MltService.h
 include/mlt++/MltTokeniser.h
 include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
-include/mlt++/config.h
+include/mlt++/MltConfig.h
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_animation.h
 include/mlt/framework/mlt_cache.h
@@ -46,6 +46,7 @@ include/mlt/framework/mlt_properties.h
 include/mlt/framework/mlt_property.h
 include/mlt/framework/mlt_repository.h
 include/mlt/framework/mlt_service.h
+include/mlt/framework/mlt_slices.h
 include/mlt/framework/mlt_tokeniser.h
 include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
@@ -253,6 +254,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/WMA
 %%DATADIR%%/presets/consumer/avformat/WMV
 %%DATADIR%%/presets/consumer/avformat/XDCAM-HD422
+%%DATADIR%%/presets/consumer/avformat/YouTube
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_50/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080p_2398/DNxHD
@@ -291,14 +293,14 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/hdv_720_30p/HDV
 %%DATADIR%%/presets/consumer/avformat/hdv_720_50p/HDV
 %%DATADIR%%/presets/consumer/avformat/hdv_720_60p/HDV
+%%DATADIR%%/presets/consumer/avformat/intermediate/MJPEG
+%%DATADIR%%/presets/consumer/avformat/intermediate/MPEG-2
+%%DATADIR%%/presets/consumer/avformat/intermediate/MPEG-4
+%%DATADIR%%/presets/consumer/avformat/intermediate/ProRes
+%%DATADIR%%/presets/consumer/avformat/intermediate/ProRes-Kostya
 %%DATADIR%%/presets/consumer/avformat/lossless/FFV1
 %%DATADIR%%/presets/consumer/avformat/lossless/H.264
 %%DATADIR%%/presets/consumer/avformat/lossless/HuffYUV
-%%DATADIR%%/presets/consumer/avformat/lossless/MJPEG
-%%DATADIR%%/presets/consumer/avformat/lossless/MPEG-2
-%%DATADIR%%/presets/consumer/avformat/lossless/MPEG-4
-%%DATADIR%%/presets/consumer/avformat/lossless/ProRes
-%%DATADIR%%/presets/consumer/avformat/lossless/ProRes-Kostya
 %%DATADIR%%/presets/consumer/avformat/stills/BMP
 %%DATADIR%%/presets/consumer/avformat/stills/DPX
 %%DATADIR%%/presets/consumer/avformat/stills/JPEG
@@ -400,9 +402,11 @@ man/man1/melt.1.gz
 %%QT%%%%DATADIR%%/qt/filter_audiospectrum.yml
 %%QT%%%%DATADIR%%/qt/filter_audiowaveform.yml
 %%QT%%%%DATADIR%%/qt/filter_lightshow.yml
+%%QT%%%%DATADIR%%/qt/filter_qtblend.yml
 %%QT%%%%DATADIR%%/qt/producer_kdenlivetitle.yml
 %%QT%%%%DATADIR%%/qt/producer_qimage.yml
 %%QT%%%%DATADIR%%/qt/producer_qtext.yml
+%%QT%%%%DATADIR%%/qt/transition_qtblend.yml
 %%QT%%%%DATADIR%%/qt/transition_vqm.yml
 %%SAMPLERATE%%%%DATADIR%%/resample/filter_resample.yml
 %%DATADIR%%/sdl/consumer_sdl.yml
