@@ -1,0 +1,8 @@
+Command line utility for interacting with Google Drive, featuring:
+
+  - Individual file or directory upload/download
+  - Directory synchronization (similar to rsync)
+  - Google Documents support
+  - Statically linked, dependency free binary
+
+WWW: https://github.com/prasmussen/gdrive
