@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	3.4.6
+PORTVERSION=	3.6.5
 CATEGORIES=	www
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
@@ -16,19 +16,24 @@ GH_PROJECT=	${PORTNAME}-cms
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=MYSQL
+OPTIONS_SUB=	yes
+
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-USES=		shebangfix
+USES=		php:web shebangfix
 SHEBANG_FILES=	build/indexmaker.php \
 		libraries/vendor/leafo/lessphp/lessify
 
 SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
-USE_MYSQL=	yes
-USE_PHP=	gd json mbstring mysql mysqli pcre pdf session simplexml xml zip zlib
+USE_PHP=	gd json mbstring pcre pdf session simplexml xml zip zlib
 
-WANT_PHP_WEB=	yes
+MYSQL_USE=	PHP=mysqli
+PGSQL_USE=	PHP=pgsql
+
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
 
 do-install:
