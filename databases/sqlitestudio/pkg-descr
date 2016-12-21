@@ -3,7 +3,7 @@ SQLiteStudio is a SQLite database manager with the following features:
 * Powerful, yet light and fast
 * Exporting to various formats (SQL statements, CSV, HTML, XML, PDF, JSON)
 * Importing data from various formats (CSV, custom text files)
-* Numerous small additions, like formatting code, history of queries executed
+* Numerous small additions, like formatting code, history of executed queries,
   in editor windows, on-the-fly syntax checking, and more
 * Unicode support
 * Configurable colors, fonts and shortcuts

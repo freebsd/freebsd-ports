@@ -13,9 +13,6 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey
 
-BROKEN=		upstream has yet to rename distfiles, see \
-		http://download.cdn.mozilla.net/pub/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build9/linux-i686/xpi/
-
 USES=		zip gecko:seamonkey
 USE_XPI=	seamonkey linux-seamonkey
 
