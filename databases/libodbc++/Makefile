@@ -2,7 +2,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
@@ -11,9 +11,9 @@ COMMENT=	C++ class library and toolset for ODBC access to data sources
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	doxygen:devel/doxygen
+OPTIONS_DEFINE=	DOXYGEN
 
-OPTIONS_DEFINE=	DOCS
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 USES=		gmake libtool ncurses pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	progref
+DOXYGEN_PORTDOCS=	progref
 
 post-extract:
 	${RM} ${WRKSRC}/doc/progref/progref-stamp

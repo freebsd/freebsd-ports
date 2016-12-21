@@ -1080,5 +1080,16 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-wx.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-10.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-11.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-2.2.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-2.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-3.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-4.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-5.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-6.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-7.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-8.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions-9.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html

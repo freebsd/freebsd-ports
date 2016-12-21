@@ -1,0 +1,29 @@
+From 92bd4d2f83827c49b8d826d47b11c63f51e0c67e Mon Sep 17 00:00:00 2001
+From: Alberto Villa <avilla@FreeBSD.org>
+Date: Tue, 20 Dec 2016 15:15:52 +0100
+Subject: [PATCH] Use Vid.Stab CFLAGS even when building *.c files
+
+common.c build is failing as it requires a header from Vid.Stab.
+---
+ src/modules/vid.stab/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/modules/vid.stab/Makefile b/src/modules/vid.stab/Makefile
+index 7f829f84..0a9e0063 100644
+--- ./src/modules/vid.stab/Makefile
++++ ./src/modules/vid.stab/Makefile
+@@ -12,8 +12,9 @@ OBJS = factory.o \
+ CPPOBJS = filter_deshake.o
+ CPPOBJS += filter_vidstab.o
+ 
+-CXXFLAGS += -Wno-deprecated $(CFLAGS)
+-CXXFLAGS += $(shell pkg-config --cflags vidstab)
++CFLAGS += -Wno-deprecated
++CFLAGS += $(shell pkg-config --cflags vidstab)
++CXXFLAGS += $(CFLAGS)
+ 
+ LDFLAGS += -L../../mlt++ -lmlt++
+ LDFLAGS += $(shell pkg-config --libs vidstab)
+-- 
+2.11.0
+

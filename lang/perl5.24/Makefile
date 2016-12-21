@@ -31,6 +31,10 @@ OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY DTRACE
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
+.for a in aarch64 arm armeb armv6 mips mips64 mips64el mipsel mipsn32 powerpc \
+	powerpc64 sparc64
+OPTIONS_EXCLUDE_${a}=	DTRACE
+.endfor
 
 EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension

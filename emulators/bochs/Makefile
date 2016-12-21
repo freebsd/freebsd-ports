@@ -290,4 +290,10 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/docs-html && ${INSTALL_DATA} *.html \
 		${STAGEDIR}${DOCSDIR}/html)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${ARCH} == i386
+BROKEN=		does not build on i386 (../cpu.h:4513:117: error: 'regparm' parameter must be between 0 and 3 inclusive)
+.endif
+
+.include <bsd.port.post.mk>

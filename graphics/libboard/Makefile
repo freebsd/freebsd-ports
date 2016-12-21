@@ -3,6 +3,7 @@
 
 PORTNAME=	libboard
 DISTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -10,7 +11,6 @@ COMMENT=	Vector graphics C++ library
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 HAS_CONFIGURE=	yes
@@ -26,7 +26,8 @@ GH_TAGNAME=	5b38274
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOXYGEN EXAMPLES
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +43,7 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libboard.so ${STAGEDIR}${PREFIX}/lib/libboard.so.0
 	${LN} -sf libboard.so.0 ${STAGEDIR}${PREFIX}/lib/libboard.so
 
-post-install-DOCS-on:
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 	${RM} -r ${STAGEDIR}${DOCSDIR}/.svn

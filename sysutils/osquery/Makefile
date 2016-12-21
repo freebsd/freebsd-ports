@@ -10,6 +10,7 @@ MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SQL powered OS instrumentation, monitoring, and analytics
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	snappy>0:archivers/snappy \
 		rocksdb>0:databases/rocksdb \
@@ -27,6 +28,8 @@ BUILD_DEPENDS=	snappy>0:archivers/snappy \
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libgflags.so:devel/gflags \
 		libicuuc.so:devel/icu
+
+BROKEN=		does not build (error: no matching constructor for initialization of 'gflags::FlagRegisterer')
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \

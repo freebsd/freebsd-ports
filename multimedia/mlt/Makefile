@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	6.2.0
-PORTREVISION?=	3
+PORTVERSION=	6.4.1
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -18,6 +18,8 @@ SLAVE_PORT?=	no
 
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
+
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USE_GNOME=	libxml2
 USE_SDL=	image
@@ -40,15 +42,16 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README docs
 PORTEXAMPLES=	demo
 
 OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 \
-		SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
+		SAMPLERATE SOX SWFDEC VIDSTAB # OPENCV VDPAU
 OPTIONS_RADIO=  	QT
 OPTIONS_RADIO_QT=	QT4 QT5
 OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VIDSTAB
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Images and text rendering via GTK+ 2
-KDE4_DESC=	Qt extra image formats support
-QT4_DESC=	Kdenlive titles and images support via Qt 4
+KDE4_DESC=	Qt 4 extra image formats support
+QT4_DESC=	Images and Kdenlive titles support via Qt 4
+QT5_DESC=	${QT4_DESC:S/4/5/}
 SOX_DESC=	SoX audio effects support
 VIDSTAB_DESC=	Video stabilization support via Vid.Stab
 
@@ -75,8 +78,13 @@ KDE4_USES=		kde:4
 KDE4_USE=		KDE=kdelibs
 KDE4_IMPLIES=		QT4
 
+# Prepare for OpenCV 3 port.
+CONFIGURE_ARGS+=	--disable-opencv
+OPENCV_CONFIGURE_ENABLE=opencv
+
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml
-QT5_USE=                QT5=core,gui,opengl,svg,xml
+QT5_USE=		QT5=core,gui,svg,widgets,xml
+QT5_PREVENTS=		KDE4
 
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=resample
@@ -88,10 +96,10 @@ SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 SWFDEC_CONFIGURE_ENABLE=swfdec
 SWFDEC_USE=		GNOME=glib20,cairo
 
+# https://sourceforge.net/p/mlt/bugs/240/
+CONFIGURE_ARGS+=	${VDPAU_CONFIGURE_OFF}
 VDPAU_CONFIGURE_ON=	--avformat-vdpau
 VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
-# vdpau.c:239:21: error: no member named 'get_buffer' in 'struct AVCodecContext'
-VDPAU_BROKEN=		https://sourceforge.net/p/mlt/bugs/240/
 
 VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CONFIGURE_ENABLE=vid.stab

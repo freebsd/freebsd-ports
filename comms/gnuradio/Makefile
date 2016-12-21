@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -63,11 +63,11 @@ LIBSTRIP_FILES=	analog atsc audio blocks channels digital dtv fcd fec fft\
 		filter noaa pager pmt qtgui runtime trellis video-sdl\
 		vocoder wavelet wxgui
 
-OPTIONS_DEFINE=		UHD TESTING
+OPTIONS_DEFINE=		UHD TESTING DOXYGEN
 # Unfortunately building docs on i386 fails
-##OPTIONS_EXCLUDE_${i386}=	DOCS
+##OPTIONS_EXCLUDE_${i386}=	DOXYGEN
 # Yay. building docs is broken on 10 and HEAD too so turn them all off
-OPTIONS_EXCLUDE=	DOCS
+OPTIONS_EXCLUDE=	DOXYGEN
 OPTIONS_DEFAULT=	UHD
 OPTIONS_SUB=		yes
 UHD_DESC=	Include UHD support from Ettus
@@ -75,15 +75,15 @@ TESTING_DESC=	Include testing support
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			${LOCALBASE}/bin/sphinx-apidoc:textproc/py-sphinx \
 			dot:graphics/graphviz \
 			xmlto:textproc/xmlto \
 			freefont-ttf>0:x11-fonts/freefont-ttf
-DOCS_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON" \
+DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON" \
 		-DENABLE_DOCS:STRING="ON" \
 		-DENABLE_BAD_BOOST="ON"
-DOCS_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
+DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
 		-DENABLE_DOCS:STRING="OFF" \
 		-DENABLE_BAD_BOOST="ON"
 HAVE_PORTDOCS=	YES
