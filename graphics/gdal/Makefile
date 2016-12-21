@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -22,14 +22,13 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
-OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GNM GTA HDF5 \
-		JASPER KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL \
-		SPATIALITE SQLITE WEBP XERCES
+OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GTA HDF5 JASPER \
+		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL SPATIALITE \
+		SQLITE WEBP XERCES
 OPTIONS_DEFAULT=JASPER
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
 OPTIONS_SUB=	yes
-GNM_DESC=	Geographical networks support
 PCRE_DESC=	Regular expression support for SQLite
 
 CFLAGS+=	-fPIC
@@ -37,6 +36,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--enable-static=yes \
 		--with-geotiff=yes \
 		--with-gif=yes \
+		--with-gnm=yes \
 		--with-jpeg=yes \
 		--with-libjson-c=yes \
 		--with-liblzma=yes \
@@ -75,7 +75,6 @@ FREEXL_LIB_DEPENDS=	libfreexl.so:textproc/freexl
 GEOS_CONFIGURE_OFF=	--with-geos=no
 GEOS_CONFIGURE_ON=	--with-geos=${LOCALBASE}/bin/geos-config
 GEOS_LIB_DEPENDS=	libgeos.so:graphics/geos
-GNM_CONFIGURE_WITH=	gnm
 GTA_CONFIGURE_WITH=	gta
 GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 HDF5_CONFIGURE_WITH=	hdf5
@@ -134,12 +133,10 @@ post-patch:
 	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 post-install:
+	cd ${WRKSRC}/gnm/ && ${INSTALL_DATA} gnm.h gnm_api.h gnm_priv.h gnmgraph.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
-
-post-install-GNM-on:
-	cd ${WRKSRC}/gnm/ && ${INSTALL_DATA} gnm.h gnm_api.h gnm_priv.h gnmgraph.h ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.post.mk>
