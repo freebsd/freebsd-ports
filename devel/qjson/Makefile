@@ -2,6 +2,7 @@
 
 PORTNAME=	qjson
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -16,21 +17,21 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:devel/doxygen
 .endif
 
 post-build:
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 	cd ${WRKSRC}/doc && doxygen
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
