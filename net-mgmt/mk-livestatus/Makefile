@@ -4,8 +4,7 @@
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.8p15
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://mathias-kettner.de/download/ \
-		LOCAL/ohauer
+MASTER_SITES=	http://mathias-kettner.de/download/
 DIST_SUBDIR=	check_mk
 
 MAINTAINER=	ports@FreeBSD.org
