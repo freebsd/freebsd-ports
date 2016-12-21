@@ -55,4 +55,10 @@ JIT_CONFIGURE_ENABLE=	jit
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${ARCH} == i386
+BROKEN=		does not build on i386 (Seg fault (internal error) at 0x606060a)
+.endif
+
+.include <bsd.port.post.mk>
