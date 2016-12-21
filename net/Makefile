@@ -153,6 +153,7 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
+    SUBDIR += gdrive
     SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += geoipupdate
