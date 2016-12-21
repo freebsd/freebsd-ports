@@ -1,6 +1,6 @@
---- configure.orig	2015-08-19 21:49:52 UTC
+--- configure.orig	2016-12-07 16:31:10 UTC
 +++ configure
-@@ -6016,7 +6016,6 @@ cat >>confdefs.h <<_ACEOF
+@@ -4769,7 +4769,6 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -8,7 +8,7 @@
  
  
  
-@@ -6037,7 +6036,6 @@ fi
+@@ -4790,7 +4789,6 @@ fi
  
  
  
@@ -16,12 +16,3 @@
  
  
  MAIL_PROG=no
-@@ -7768,7 +7766,7 @@ $as_echo_n "checking for linker flags fo
- 			MOD_LDFLAGS="-shared"
- 			MOD_CFLAGS="-fPIC"
- 		;;
--		freebsd*)
-+		dragonfly*|freebsd*)
- 			MOD_LDFLAGS="-shared"
- 			MOD_CFLAGS="-fPIC"
- 		;;

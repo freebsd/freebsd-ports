@@ -1,4 +1,4 @@
---- html/index.php.orig	2015-08-19 21:49:52 UTC
+--- html/index.php.orig	2016-12-07 16:31:10 UTC
 +++ html/index.php
 @@ -1,6 +1,7 @@
  <?php
@@ -6,6 +6,6 @@
  // Allow specifying main window URL for permalinks, etc.
 -$url = 'main.php';
 +$url = $cfg['cgi_base_url'].'/tac.cgi';
+ 
  if (isset($_GET['corewindow'])) {
  
- 	// The default window url may have been overridden with a permalink...
