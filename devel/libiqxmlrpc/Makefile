@@ -3,7 +3,7 @@
 
 PORTNAME=	libiqxmlrpc
 PORTVERSION=	0.13.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net
 MASTER_SITES=	SF
 
@@ -14,11 +14,11 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_DEFAULT=
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CMAKE_OFF=	-Dbuild_docs=off
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CMAKE_OFF=	-Dbuild_docs=off
 
 USE_GNOME=	libxml2
 USES=		cmake tar:bzip2
