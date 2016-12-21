@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igbinary
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	converters
 MASTER_SITES=	http://pecl.php.net/get/ \
 		LOCAL/sunpoet
