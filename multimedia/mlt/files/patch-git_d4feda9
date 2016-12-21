@@ -1,0 +1,34 @@
+From d4feda920a9ea43ba5fcea4de9cb1e48cf08af90 Mon Sep 17 00:00:00 2001
+From: Alberto Villa <avilla@FreeBSD.org>
+Date: Tue, 20 Dec 2016 15:06:48 +0100
+Subject: [PATCH] Fix FreeType header inclusion
+
+As stated in freetype.h:
+
+  Please always use macros to include FreeType header files.
+  Example:
+    #include <ft2build.h>
+    #include FT_FREETYPE_H
+
+This also fixes the build on FreeBSD.
+---
+ src/modules/gtk2/producer_pango.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/modules/gtk2/producer_pango.c b/src/modules/gtk2/producer_pango.c
+index 7c5d8d2a..ef6f1a28 100644
+--- ./src/modules/gtk2/producer_pango.c
++++ ./src/modules/gtk2/producer_pango.c
+@@ -25,7 +25,8 @@
+ #include <string.h>
+ #include <gdk-pixbuf/gdk-pixbuf.h>
+ #include <pango/pangoft2.h>
+-#include <freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include <iconv.h>
+ #include <pthread.h>
+ #include <ctype.h>
+-- 
+2.11.0
+

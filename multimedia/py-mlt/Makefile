@@ -32,11 +32,10 @@ OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-L../../mlt++|-L${LOCALBASE}/lib|' \
-		-e 's|g++|${CXX} ${CXXFLAGS}|' \
 		${BUILD_WRKSRC}/build
 
 do-build:
-	@cd ${BUILD_WRKSRC} && ${SH} build
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
