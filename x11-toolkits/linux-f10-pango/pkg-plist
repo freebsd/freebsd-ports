@@ -1,5 +1,4 @@
-@comment file listing
-@unexec rm %D/etc/pango/i686-pc-linux-gnu/pango.modules
+@postunexec rm %D/etc/pango/i686-pc-linux-gnu/pango.modules
 etc/pango/pangox.aliases
 usr/bin/pango-querymodules-32
 usr/lib/libpango-1.0.so.0
@@ -33,4 +32,4 @@ usr/share/man/man1/pango-querymodules.1.gz
 usr/share/man/man1/pango-view.1.gz
 @comment deal with empty directories created by the port
 @dir etc/pango/i686-pc-linux-gnu
-@exec chroot %D /usr/bin/pango-querymodules-32 > %D/etc/pango/i686-pc-linux-gnu/pango.modules
+@postexec chroot %D /usr/bin/pango-querymodules-32 > %D/etc/pango/i686-pc-linux-gnu/pango.modules
