@@ -4674,6 +4674,7 @@
     SUBDIR += py-total-ordering
     SUBDIR += py-tox
     SUBDIR += py-trace2html
+    SUBDIR += py-traceback2
     SUBDIR += py-traitlets
     SUBDIR += py-traits
     SUBDIR += py-transaction
