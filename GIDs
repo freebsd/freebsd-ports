@@ -196,7 +196,7 @@ fcron:*:247:
 # free: 252
 _adsuck:*:253:
 # free: 254
-# free: 255
+_i2pd:*:255:
 _tor:*:256:
 _smtpd:*:257:
 _smtpq:*:258:
