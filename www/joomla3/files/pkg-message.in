@@ -20,4 +20,8 @@
  3) As of 2.5.5, php5-mysqli and php5-zip are installed. Use of mysqli for mysql
     is recommended over mysql.
 
+ 4) As of 3.6.4, php7 is also supported, and the php*-mysql extension is NOT 
+    asked for.  Also, the php*-pgsql extension is asked for as Joomla supports
+    PostgreSQL as well.
+
 ================================================================================
