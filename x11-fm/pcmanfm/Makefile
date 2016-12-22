@@ -11,15 +11,11 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-LIB_DEPENDS=	libfm-gtk.so:x11/libfm
-=======
 LIB_DEPENDS=	libfm-gtk.so:x11/libfm \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2
->>>>>>> upstream/master
 
 USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig \
 		tar:xz
