@@ -25,7 +25,7 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-DOXYGEN_PORTDOCS=	progref
+PORTDOCS=	progref
 
 post-extract:
 	${RM} ${WRKSRC}/doc/progref/progref-stamp

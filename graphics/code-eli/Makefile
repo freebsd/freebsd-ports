@@ -20,7 +20,6 @@ GH_ACCOUNT=	ddmarshall
 
 USES=		cmake:outsource compiler:c++11-lib
 PORTEXAMPLES=	AirfoilFitExample VSPPodExample test
-PORTDOCS=	html latex
 ALL_TARGET=	all
 
 # Some useful variables
@@ -32,6 +31,7 @@ OPTIONS_DEFINE=		DOXYGEN EXAMPLES
 EXAMPLES_LIB_DEPENDS=	libcpptest.so:devel/cpptest
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	doc
+DOXYGEN_PORTDOCS=	html latex
 
 # The code uses std::cbrt(). Even if one passes some additional macros for
 # libstdc++ to enable additional math functions in math.h some of them, such as
@@ -45,16 +45,15 @@ post-patch-EXAMPLES-off:
 		${WRKSRC}/CMakeLists.txt
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/eli \
-		${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} \
-		${STAGEDIR}${EXAMPLESDIR} \
-		${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/eli
 	${INSTALL_DATA} ${BUILD_WRKSRC}/include/eli/code_eli.hpp \
 		${STAGEDIR}${PREFIX}/include/eli
 	(cd ${WRKSRC}/include/eli && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/eli "*")
 
 do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} \
+		${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} \
 		${BUILD_WRKSRC}/example/${VSPPOD_DIR}/VSPPodExample \
 		${BUILD_WRKSRC}/example/${AIRFOIL_DIR}/AirfoilFitExample \
@@ -70,6 +69,7 @@ do-install-EXAMPLES-on:
 		${XARGS} ${STRIP_CMD}
 
 do-install-DOXYGEN-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
