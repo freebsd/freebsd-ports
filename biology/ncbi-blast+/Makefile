@@ -26,6 +26,8 @@ SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Requires openmp
 USE_GCC=	yes
 USE_LDCONFIG=	yes
