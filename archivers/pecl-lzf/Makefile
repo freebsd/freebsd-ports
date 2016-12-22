@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Handles LZF de/compression
 
 LICENSE=	PHP301

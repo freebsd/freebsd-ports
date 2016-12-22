@@ -1709,6 +1709,7 @@
     SUBDIR += omniORB-4.1
     SUBDIR += oniguruma4
     SUBDIR += oniguruma5
+    SUBDIR += oniguruma6
     SUBDIR += onscripter
     SUBDIR += onscripter-1byte
     SUBDIR += oozie
@@ -3283,6 +3284,7 @@
     SUBDIR += p5-Term-Size-Any
     SUBDIR += p5-Term-Size-Perl
     SUBDIR += p5-Term-Sk
+    SUBDIR += p5-Term-Table
     SUBDIR += p5-Term-Title
     SUBDIR += p5-Term-UI
     SUBDIR += p5-Term-VT102
@@ -4872,6 +4874,7 @@
     SUBDIR += qdevelop
     SUBDIR += qgit
     SUBDIR += qjson
+    SUBDIR += qjson-qt5
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qmake5

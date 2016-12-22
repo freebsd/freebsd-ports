@@ -3,7 +3,7 @@
 
 PORTNAME=	Geo-GDAL
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -29,8 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 post-install:
-# Add %%SITE_ARCH%%/Geo/GNM.pm to PLIST if GNM is enabled
-	@-${GREP} "GNM_ENABLED = yes" ${LOCALBASE}/share/gdal/GDALmake.opt && ${ECHO_CMD} "${SITE_ARCH_REL}/Geo/GNM.pm" >> ${TMPPLIST}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/*/*.so
 
 .include <bsd.port.mk>

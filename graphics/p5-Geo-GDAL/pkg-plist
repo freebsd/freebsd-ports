@@ -1,5 +1,6 @@
 %%SITE_ARCH%%/Geo/GDAL.pm
 %%SITE_ARCH%%/Geo/GDAL/Const.pm
+%%SITE_ARCH%%/Geo/GNM.pm
 %%SITE_ARCH%%/Geo/OGR.pm
 %%SITE_ARCH%%/Geo/OSR.pm
 %%SITE_ARCH%%/auto/Geo/GDAL/Const/Const.so

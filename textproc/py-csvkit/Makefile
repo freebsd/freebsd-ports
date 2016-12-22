@@ -2,6 +2,7 @@
 
 PORTNAME=	csvkit
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate-dbf>=0.1.0:textproc/py-agate-dbf \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.2:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}dbf>0.94.003:databases/py-dbf \
 		${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy09>=0.9.3:databases/py-sqlalchemy09
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.9.3:databases/py-sqlalchemy10
 
 USES=		python
 USE_PYTHON=	autoplist distutils
