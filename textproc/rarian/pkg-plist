@@ -44,5 +44,5 @@ share/librarian/manual/rar-mdf.xhtml
 share/librarian/manual/rar-skcompat.xhtml
 share/librarian/rarian-sk-cl.xml
 @dir /var/db/rarian
-@unexec rmdir /var/db/rarian/* 2>/dev/null || true
-@exec %%PREFIX%%/bin/rarian-sk-update || true
+@postunexec rmdir /var/db/rarian/* 2>/dev/null || true
+@postexec %%PREFIX%%/bin/rarian-sk-update || true
