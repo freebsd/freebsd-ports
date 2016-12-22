@@ -12,6 +12,9 @@ MASTER_SITES=	http://projects.arin.net/rwhois/ftp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2017-01-22
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

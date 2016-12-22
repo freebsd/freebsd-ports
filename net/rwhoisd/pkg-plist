@@ -38,13 +38,12 @@ sbin/rwhoisd
 %%ETCDIR%%/samples/net-fd00:1234::-32/data/network/network.txt
 %%ETCDIR%%/samples/net-fd00:1234::-32/soa
 %%ETCDIR%%/samples/net-fd00:1234::-32/schema
-%%ETCDIR%%/samples/rwhoisd.allow
-%%ETCDIR%%/samples/rwhoisd.auth_area
-%%ETCDIR%%/samples/rwhoisd.conf
-%%ETCDIR%%/samples/rwhoisd.deny
-%%ETCDIR%%/samples/rwhoisd.dir
-%%ETCDIR%%/samples/rwhoisd.root
-%%ETCDIR%%/samples/rwhoisd.x.dir
-@exec install -d -o nobody /var/log/rwhoisd /var/run/rwhoisd
-@exec for f in %%ETCFILES%%; do [ -f %D/%%ETCDIR%%/$f ] || cp -p %D/%%ETCDIR%%/samples/$f %D/%%ETCDIR%%/$f; done
-@unexec for f in %%ETCFILES%%; do cmp -s %D/%%ETCDIR%%/$f %D/%%ETCDIR%%/samples/$f && rm -f %D/%%ETCDIR%%/$f || true; done
+@sample %%ETCDIR%%/samples/rwhoisd.allow %%ETCDIR%%/rwhoisd.allow
+@sample %%ETCDIR%%/samples/rwhoisd.auth_area %%ETCDIR%%/rwhoisd.auth_area
+@sample %%ETCDIR%%/samples/rwhoisd.conf %%ETCDIR%%/rwhoisd.conf
+@sample %%ETCDIR%%/samples/rwhoisd.deny %%ETCDIR%%/rwhoisd.deny
+@sample %%ETCDIR%%/samples/rwhoisd.dir %%ETCDIR%%/rwhoisd.dir
+@sample %%ETCDIR%%/samples/rwhoisd.root %%ETCDIR%%/rwhoisd.root
+@sample %%ETCDIR%%/samples/rwhoisd.x.dir %%ETCDIR%%/rwhoisd.x.dir
+@dir(nobody,,) /var/log/rwhoisd
+@dir(nobody,,) /var/run/rwhoisd
