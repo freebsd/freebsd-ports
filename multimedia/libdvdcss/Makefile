@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.3.99
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
+
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/COPYING
 
 RESTRICTED=	CSS code may violate the DMCA
 
