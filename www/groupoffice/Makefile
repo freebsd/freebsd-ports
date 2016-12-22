@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	groupoffice
-PORTVERSION=	6.2.19
+PORTVERSION=	6.2.21
 DISTVERSIONPREFIX=	com-
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
@@ -25,6 +25,7 @@ SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		install/autoinstall.php \
 		modules/postfixadmin/scripts/vacation.pl \
 		modules/sync/z-push/install.sh \
+		modules/sync/z-push/z-push-admin.php \
 		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables \
 		vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
 
