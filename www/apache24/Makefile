@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.23
-PORTREVISION=	2
+PORTVERSION=	2.4.25
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -10,6 +9,9 @@ DIST_SUBDIR=	apache24
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
@@ -150,7 +152,7 @@ USE_GNOME=	libxml2
 
 post-extract:
 # remove possible leftover .svn directories in the sources
-	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -r
 # limit grep results ...
 	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' -o -name '*.vbs' -o -name '*.wsf' \) -delete
 # make sure the configure script contains our patches, preserve the original script for comparsion
@@ -168,7 +170,7 @@ post-patch:
 		${WRKSRC}/include/httpd.h
 	${REINPLACE_CMD} -e 's|perlbin=.*|perlbin=${PERL}|' \
 		${WRKSRC}/configure.in
-	${RM} -f ${WRKSRC}/docs/docroot/*.bak
+	${RM} ${WRKSRC}/docs/docroot/*.bak
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-configure::
