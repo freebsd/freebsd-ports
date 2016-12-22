@@ -95,10 +95,8 @@ GSSAPI_MIT_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_MIT_LIBS=	${GSSAPILIBS}
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
-HTTP2_BUILD_DEPENDS=	libnghttp2>=1.0.0:www/libnghttp2
 HTTP2_CONFIGURE_WITH=	libnghttp2
 HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
-HTTP2_RUN_DEPENDS=	libnghttp2>=1.0.0:www/libnghttp2
 HTTP2_USES=		pkgconfig
 IDN_CONFIGURE_WITH=	libidn2
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
