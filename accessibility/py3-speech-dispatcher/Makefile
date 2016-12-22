@@ -1,15 +1,17 @@
 # $FreeBSD$
 
+PORTREVISION=	0
+CATEGORIES=	accessibility audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-COMMENT=	Common interface to speech synthesis python bindings
+COMMENT=	Python bindings for Speech Dispatcher
 
 SPEECH_SLAVE=	yes
 
-MASTERDIR=	${.CURDIR}/../speech-dispatcher
+MASTERDIR=	${.CURDIR:H}/speech-dispatcher
 
 BUILD_WRKSRC=	${WRKSRC}/src/api/python
-INSTALL_WRKSRC=	${WRKSRC}/src/api/python
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 PLIST=		${.CURDIR}/pkg-plist
 
