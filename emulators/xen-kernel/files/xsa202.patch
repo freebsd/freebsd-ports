@@ -1,0 +1,75 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86: force EFLAGS.IF on when exiting to PV guests
+
+Guest kernels modifying instructions in the process of being emulated
+for another of their vCPU-s may effect EFLAGS.IF to be cleared upon
+next exiting to guest context, by converting the being emulated
+instruction to CLI (at the right point in time). Prevent any such bad
+effects by always forcing EFLAGS.IF on. And to cover hypothetical other
+similar issues, also force EFLAGS.{IOPL,NT,VM} to zero.
+
+This is XSA-202.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+
+--- a/xen/arch/x86/x86_64/compat/entry.S
++++ b/xen/arch/x86/x86_64/compat/entry.S
+@@ -109,6 +109,8 @@ compat_process_trap:
+ /* %rbx: struct vcpu, interrupts disabled */
+ ENTRY(compat_restore_all_guest)
+         ASSERT_INTERRUPTS_DISABLED
++        mov   $~(X86_EFLAGS_IOPL|X86_EFLAGS_NT|X86_EFLAGS_VM),%r11d
++        and   UREGS_eflags(%rsp),%r11d
+ .Lcr4_orig:
+         .skip .Lcr4_alt_end - .Lcr4_alt, 0x90
+ .Lcr4_orig_end:
+@@ -144,6 +146,8 @@ ENTRY(compat_restore_all_guest)
+                              (.Lcr4_orig_end - .Lcr4_orig), \
+                              (.Lcr4_alt_end - .Lcr4_alt)
+         .popsection
++        or    $X86_EFLAGS_IF,%r11
++        mov   %r11d,UREGS_eflags(%rsp)
+         RESTORE_ALL adj=8 compat=1
+ .Lft0:  iretq
+         _ASM_PRE_EXTABLE(.Lft0, handle_exception)
+--- a/xen/arch/x86/x86_64/entry.S
++++ b/xen/arch/x86/x86_64/entry.S
+@@ -40,28 +40,29 @@ restore_all_guest:
+         testw $TRAP_syscall,4(%rsp)
+         jz    iret_exit_to_guest
+ 
++        movq  24(%rsp),%r11           # RFLAGS
++        andq  $~(X86_EFLAGS_IOPL|X86_EFLAGS_NT|X86_EFLAGS_VM),%r11
++        orq   $X86_EFLAGS_IF,%r11
++
+         /* Don't use SYSRET path if the return address is not canonical. */
+         movq  8(%rsp),%rcx
+         sarq  $47,%rcx
+         incl  %ecx
+         cmpl  $1,%ecx
+-        ja    .Lforce_iret
++        movq  8(%rsp),%rcx            # RIP
++        ja    iret_exit_to_guest
+ 
+         cmpw  $FLAT_USER_CS32,16(%rsp)# CS
+-        movq  8(%rsp),%rcx            # RIP
+-        movq  24(%rsp),%r11           # RFLAGS
+         movq  32(%rsp),%rsp           # RSP
+         je    1f
+         sysretq
+ 1:      sysretl
+ 
+-.Lforce_iret:
+-        /* Mimic SYSRET behavior. */
+-        movq  8(%rsp),%rcx            # RIP
+-        movq  24(%rsp),%r11           # RFLAGS
+         ALIGN
+ /* No special register assumptions. */
+ iret_exit_to_guest:
++        andl  $~(X86_EFLAGS_IOPL|X86_EFLAGS_NT|X86_EFLAGS_VM),24(%rsp)
++        orl   $X86_EFLAGS_IF,24(%rsp)
+         addq  $8,%rsp
+ .Lft0:  iretq
+         _ASM_PRE_EXTABLE(.Lft0, handle_exception)
