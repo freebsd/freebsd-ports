@@ -3,7 +3,7 @@
 
 PORTNAME=	darkbot
 PORTVERSION=	6f6.r6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://darkbot.sourceforge.net/archive/unix/ \
@@ -16,7 +16,6 @@ COMMENT=	IRC talking bot with a fast algorithm for its database
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README
-PLIST_FILES=	bin/darkbot %%ETCDIR%%/logs/.pkgcreate man/man1/darkbot.1.gz
 NO_CDROM=	no commercial distribution
 
 OPTIONS_DEFINE=	DOCS
@@ -32,18 +31,11 @@ do-install:
 	cd ${WRKSRC}/dat; \
 	for file in *; do \
 	    ${INSTALL_DATA} $$file ${STAGEDIR}${ETCDIR}/dat/$${file}.dist; \
-	    ${CP} -np ${ETCDIR}/dat/$${file}.dist ${STAGEDIR}${ETCDIR}/dat/$$file || ${TRUE} ; \
-	    ${ECHO_CMD} "@unexec cmp -s ${ETCDIR}/dat/$$file \
-		${ETCDIR}/dat/$${file}.dist && \
-		rm -f ${ETCDIR}/dat/$$file || true" >> ${TMPPLIST}; \
-	    ${ECHO_CMD} "${ETCDIR_REL}/dat/$${file}.dist" >> ${TMPPLIST}; \
-	    ${ECHO_CMD} "@exec cp -np %D/%F %B/$$file || true" >> ${TMPPLIST}; \
 	done
 	${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/configure
 	${ECHO_CMD} 'cd ${ETCDIR} && ${SH} config' >> ${WRKSRC}/configure
 .for s in config configure AddServer Adduser
 	${INSTALL_SCRIPT} ${WRKSRC}/$s ${STAGEDIR}${ETCDIR}
-	${ECHO_CMD} ${ETCDIR_REL}/$s >> ${TMPPLIST}
 .endfor
 
 do-install-DOCS-on:
