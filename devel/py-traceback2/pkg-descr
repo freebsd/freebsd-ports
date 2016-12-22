@@ -1,0 +1,3 @@
+A backport of traceback to older supported Pythons.
+
+WWW: https://pypi.python.org/pypi/traceback2/
