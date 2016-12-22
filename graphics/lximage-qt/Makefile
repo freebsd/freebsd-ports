@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lximage-qt
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	graphics
-MASTER_SITES=	LXQT/${PORTNAME}
+#MASTER_SITES=	LXQT/${PORTNAME}
+MASTER_SITES=	https://github.com/lxde/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Image viewer and screenshot tool
@@ -19,9 +19,9 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=	cmake:outsource compiler:c++11-lib desktop-file-utils gettext-runtime \
 	localbase:ldflags lxqt pkgconfig tar:xz
 USE_GNOME=	glib20
-USE_QT5=	buildtools_build qmake_build core dbus gui printsupport \
-	svg widgets x11extras
-USE_LXQT=	libfmqt lxqt
+USE_QT5=	buildtools_build qmake_build core dbus gui linguisttools \
+	printsupport svg widgets x11extras
+USE_LXQT=	buildtools libfmqt
 USE_XORG=	ice sm x11 xcb xext xfixes
 INSTALLS_ICONS=	yes
 
