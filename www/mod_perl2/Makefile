@@ -13,6 +13,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-BSD-Resource>=0:devel/p5-BSD-Resource
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -87,9 +88,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 	-for f in `${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name \*.so` ; do \
-		${CHMOD} u+w $${f}; \
 		${STRIP_CMD} $${f}; \
-		${CHMOD} u-w $${f}; \
 	done;
 
 test:	build
