@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	speech-dispatcher
-PORTVERSION=	0.8.3
-PORTREVISION=	1
-CATEGORIES=	accessibility audio
+PORTVERSION=	0.8.6
+PORTREVISION?=	0
+CATEGORIES?=	accessibility audio
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	Common interface to speech synthesis
+COMMENT?=	Common interface to speech synthesis
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libdotconf.so:devel/dotconf \
 USE_GNOME=	glib20 intltool
 USES=		alias gettext gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-espeak-ng
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
@@ -34,9 +35,10 @@ ETCFILES=	clients/emacs.conf modules/pico-generic.conf \
 		modules/espeak-mbrola-generic.conf modules/espeak.conf \
 		modules/festival.conf modules/flite.conf modules/ibmtts.conf \
 		modules/ivona.conf modules/llia_phon-generic.conf \
-		modules/swift-generic.conf speechd.conf
+		modules/swift-generic.conf speechd.conf \
+		modules/espeak-ng.conf
 
-PORTDOCS=	ANNOUNCE AUTHORS ChangeLog FAQ NEWS README TODO
+PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README TODO
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
@@ -72,6 +74,9 @@ PULSEAUDIO_CONFIGURE_WITH=pulse
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s/tests//' \
 		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
+		${WRKSRC}/src/modules/*.c \
+		${WRKSRC}/config/modules/*.conf
 
 post-install:
 .for f in ${ETCFILES}
