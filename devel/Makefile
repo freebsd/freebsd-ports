@@ -4873,6 +4873,7 @@
     SUBDIR += qdevelop
     SUBDIR += qgit
     SUBDIR += qjson
+    SUBDIR += qjson-qt5
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qmake5
