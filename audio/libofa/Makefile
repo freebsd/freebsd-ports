@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	The Open Fingerprint Architecture Library
+COMMENT=	Open Fingerprint Architecture Library
 
 LICENSE=		APL1 GPLv2
 LICENSE_COMB=		dual
@@ -20,15 +20,14 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 
+DEPRECATED=	MusicDNS service has been discontinued
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tanob
 GH_TAGNAME=	b75e45e
 
-PROJECTHOST=	musicip-libofa
-USES=		dos2unix libtool pathfix
+USES=		dos2unix libtool localbase pathfix
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
