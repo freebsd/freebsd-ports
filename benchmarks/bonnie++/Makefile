@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.97.2
+PORTVERSION=	1.97.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 
