@@ -2,7 +2,9 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/images/Gallery_image_options.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Gallery_rx.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Gallery_template.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Gallery_templates.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Gallery_tx.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Gallery_txdrm.png
 %%PORTDOCS%%%%DOCSDIR%%/images/binary.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bsr_nfy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bsr_select.png
@@ -53,10 +55,17 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/images/wf_bsr_id.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wftextpopup.png
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual/Copying.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_image_options.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_rx.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_template.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_templates.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_tx.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/Gallery_txdrm.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/RXDRM.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/RXSSTV.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/TXDRM.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/TXSSTV.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/_copying.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/_r_x_d_r_m.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/_r_x_s_s_t_v.html
