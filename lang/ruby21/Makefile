@@ -46,9 +46,6 @@ USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	does not build
-
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC
 OPTIONS_DEFAULT=	RDOC LIBEDIT
 OPTIONS_SINGLE=		EDIT
@@ -96,7 +93,7 @@ CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .endif
 
-.if (${ARCH} == "powerpc64" || ${ARCH} == "powerpc")
+.if ${ARCH} == "powerpc64"
 USE_GCC=	yes
 .endif
 
