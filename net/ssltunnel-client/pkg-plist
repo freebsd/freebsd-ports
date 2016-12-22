@@ -1,6 +1,6 @@
 bin/pppclient
 %%PERLGTK%%bin/gpppclient
-@unexec if cmp -s %D/%%ETCDIR%%/client.conf %D/%%ETCDIR%%/client.conf.sample; then rm -f %D/%%ETCDIR%%/client.conf; fi
+@sample %D/%%ETCDIR%%/client.conf.sample
 man/man1/pppclient.1.gz
 man/man5/ssltunnelrc.5.gz
 %%ETCDIR%%/client.conf.sample
