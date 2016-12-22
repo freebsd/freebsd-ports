@@ -3,6 +3,7 @@
 
 PORTNAME=	libdvdcss
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/${PORTNAME}/${PORTVERSION}/
 
