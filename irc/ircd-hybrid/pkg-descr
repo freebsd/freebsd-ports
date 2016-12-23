@@ -2,6 +2,6 @@ A port of the ircd-hybrid IRC daemon.
 
 ircd-hybrid includes a number of improvements over a standard
 ircd-2.8 server, including compressed server<->server links, chanmode
-+e, and TS5 support.
++e, TS5 support, IPv6 support for libGeoIP
 
 WWW: http://www.ircd-hybrid.org/
