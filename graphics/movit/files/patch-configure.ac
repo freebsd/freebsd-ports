@@ -1,0 +1,11 @@
+--- configure.ac.orig	2016-11-05 10:46:12 UTC
++++ configure.ac
+@@ -17,7 +17,7 @@ PKG_CHECK_MODULES([FFTW3], [fftw3])
+ with_SDL2=no
+ with_demo_app=yes
+ PKG_CHECK_MODULES([SDL2], [sdl2], [with_SDL2=yes], [
+-  PKG_CHECK_MODULES([SDL], [sdl])
++  PKG_CHECK_MODULES([SDL], [sdl], [], [x=x])
+ ])
+ 
+ # These are only needed for the demo app.
