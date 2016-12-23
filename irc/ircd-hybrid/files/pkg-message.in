@@ -13,4 +13,4 @@ ircd_hybrid_enable="YES"
 
 into your /etc/rc.conf.  You may then start the server by running:
 
-	%%PREFIX%%/etc/rc.d/ircd-hybrid.sh start
+	%%PREFIX%%/etc/rc.d/ircd-hybrid start

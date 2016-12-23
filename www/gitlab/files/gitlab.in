@@ -38,6 +38,7 @@ stop_cmd="stop_gitlab"
 restart_cmd="restart_gitlab"
 
 gitlab_enable=${gitlab_enable:-"NO"}
+gitlab_authBackend=${gitlab_authBackend:-"http://127.0.0.1:8080"}
 
 load_rc_config $name
 
@@ -57,7 +58,7 @@ mail_room_enabled=false
 mail_room_pid_path="$pid_path/mail_room.pid"
 gitlab_workhorse_dir=$(cd $app_root/../gitlab-workhorse && pwd)
 gitlab_workhorse_pid_path="$pid_path/gitlab-workhorse.pid"
-gitlab_workhorse_options="-listenUmask 0 -listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket -authBackend http://127.0.0.1:8080 -authSocket $rails_socket -documentRoot $app_root/public"
+gitlab_workhorse_options="-listenUmask 0 -listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket -authBackend $gitlab_authBackend -authSocket $rails_socket -documentRoot $app_root/public"
 gitlab_workhorse_log="$app_root/log/gitlab-workhorse.log"
 shell_path="/bin/bash"
 

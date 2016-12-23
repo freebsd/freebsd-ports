@@ -3495,8 +3495,6 @@
 %%WWWDIR%%/lib/support/init.d/gitlab
 %%WWWDIR%%/lib/support/init.d/gitlab.default.example
 %%WWWDIR%%/lib/support/logrotate/gitlab
-%%WWWDIR%%/lib/support/nginx/gitlab
-%%WWWDIR%%/lib/support/nginx/gitlab-ssl
 %%WWWDIR%%/lib/support/nginx/registry-ssl
 %%WWWDIR%%/lib/tasks/brakeman.rake
 %%WWWDIR%%/lib/tasks/cache.rake
@@ -4673,3 +4671,5 @@
 @sample %%WWWDIR%%/config/secrets.yml.sample
 @sample %%WWWDIR%%/config/initializers/rack_attack.rb.sample
 @sample %%WWWDIR%%/config/database.yml.sample
+@sample %%WWWDIR%%/lib/support/nginx/gitlab.sample
+@sample %%WWWDIR%%/lib/support/nginx/gitlab-ssl.sample

@@ -128,11 +128,11 @@ pre-install:
 	@${ECHO} "@owner ${USER}" >> ${PLIST}
 	@${ECHO} "@group ${GROUP}" >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type f | cut -c2- \
-		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} >> ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist-chunk >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type d | cut -c2- \
-		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} -r >> ${PLIST}
 	@${RM} ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
@@ -143,7 +143,7 @@ pre-install:
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 
 do-install:
-	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTDIRNAME} ${STAGEDIR}${WEBAPPDIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${WEBAPPDIR}
 
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}/transcode

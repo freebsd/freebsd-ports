@@ -11,19 +11,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox for manipulating Ogg video files
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libogg.so:audio/libogg \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 USE_CXXSTD=	c++11
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

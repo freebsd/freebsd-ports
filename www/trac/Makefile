@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trac
-PORTVERSION=	1.0.13
+PORTVERSION=	1.2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.5:devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.6:textproc/py-genshi
 
 USES=		python:-2.7 shebangfix
-SHEBANG_FILES=	contrib/cgi-bin/trac.fcgi contrib/cgi-bin/trac.cgi \
-		trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
+SHEBANG_FILES=	trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
 		trac/tests/functional/testenv.py trac/tests/functional/compat.py \
 		trac/tests/functional/__init__.py contrib/emailfilter.py \
 		contrib/checkwiki.py contrib/htpasswd.py
@@ -46,10 +45,6 @@ TZ_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:devel/py-subversion
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi-bin/* ${STAGEDIR}${DATADIR}/cgi-bin
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins

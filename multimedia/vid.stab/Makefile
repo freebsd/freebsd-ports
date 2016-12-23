@@ -10,6 +10,8 @@ COMMENT=	Video stabilization library
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+PORTSCOUT=	skipv:before_complex_transforms
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	georgmartius
 GH_TAGNAME=	release-0.98b

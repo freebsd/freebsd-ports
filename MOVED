@@ -8625,7 +8625,6 @@ devel/poco-devel|devel/poco|2016-09-18|Has expired: older than stable devel/poco
 databases/pglogical-output|databases/pglogical|2016-09-22|databases/pglogical-output merged into databases/pglogical
 mail/gml||2016-09-23|Has expired: Deprecated upstream. Use native gmail tools to import
 net/nats|net/gnatsd|2016-09-24|Switched to upstream naming
-devel/py-unittest2||2016-09-26|Has expired: Was only required for Pythons lesser than 2.7
 graphics/evas_generic_loaders|devel/efl|2016-09-27|Merged into devel/efl
 graphics/evas_generic_loaders-gst|devel/efl|2016-09-27|Merged into devel/efl
 graphics/evas_generic_loaders-pdf|devel/efl|2016-09-27|Merged into devel/efl

@@ -49,12 +49,12 @@ RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 .endif
 
 post-extract:
-	@${MKDIR} ${WRKDIR}/${PORTDIRNAME}
-	@${TAR} xf ${WRKDIR}/igeoportal-std.war -C ${WRKDIR}/${PORTDIRNAME}
+	@${MKDIR} ${WRKDIR}/${PKGBASE}
+	@${TAR} xf ${WRKDIR}/igeoportal-std.war -C ${WRKDIR}/${PKGBASE}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WEBAPPDIR}/${PORTDIRNAME}
-	@cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WEBAPPDIR}/${PORTDIRNAME}
+	@${MKDIR} ${STAGEDIR}${WEBAPPDIR}/${PKGBASE}
+	@cd ${WRKDIR}/${PKGBASE} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WEBAPPDIR}/${PKGBASE}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

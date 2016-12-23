@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.11.2
 CATEGORIES=	x11-fm
-MASTER_SITES=	LXQT/${PORTNAME}
-DIST_SUBDIR=	lxqt
+#MASTER_SITES=	LXQT/${PORTNAME}
+MASTER_SITES=	https://github.com/lxde/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	LXQt file manager
@@ -18,9 +17,9 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 
 USES=	cmake:outsource compiler:c++11-lib desktop-file-utils \
 	gettext-runtime localbase:ldflags lxqt pkgconfig tar:xz
-USE_QT5=	buildtools_build qmake_build core dbus gui widgets \
-	x11extras
-USE_LXQT=	lxqt libfmqt
+USE_QT5=	buildtools_build qmake_build core dbus gui linguisttools \
+	widgets x11extras
+USE_LXQT=	buildtools libfmqt
 USE_GNOME=	glib20
 USE_XORG=	xcb
 

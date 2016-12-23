@@ -242,6 +242,7 @@
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/ref_man.xml.src
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/info
 lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxAuiSimpleTabArt.html
+lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDropFilesEvent.html
 lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxMouseCaptureLostEvent.html
 lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/specs.xml
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/gl.beam
@@ -301,6 +302,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDialog.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDirDialog.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDirPickerCtrl.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDisplayChangedEvent.beam
+lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDropFilesEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxEraseEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxEvtHandler.beam
@@ -541,6 +543,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDialog.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDirDialog.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDirPickerCtrl.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDisplayChangedEvent.erl
+lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDropFilesEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxEraseEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxEvtHandler.erl

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1806
+PORTVERSION=	2.1807
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -43,6 +43,7 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Declare-Constraints-Simple>=0:devel/p5-Declare-Constraints-Simple \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-String>=0:devel/p5-IO-String \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Locale-US>=0:misc/p5-Locale-US \
 		p5-Module-Refresh>=0:devel/p5-Module-Refresh \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
@@ -59,6 +60,7 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-Requires>=0.05:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
+		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI
 
 CFLAGS+=	-I.	# mop.h

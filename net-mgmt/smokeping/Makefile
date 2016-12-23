@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	\
 		--with-htdocs-dir=${PREFIX}/smokeping/htdocs \
 		--libdir=${PREFIX}/smokeping/lib
 HTDOCSDIR=	${PREFIX}/smokeping/htdocs
+MAKE_ENV=	LC_ALL=C
 
 USE_RC_SUBR=	smokeping
 

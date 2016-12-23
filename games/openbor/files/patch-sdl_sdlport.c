@@ -1,3 +1,5 @@
+Store settings under ~/.openbor instead of current directory
+
 --- sdl/sdlport.c.orig	2013-12-29 14:05:10 UTC
 +++ sdl/sdlport.c
 @@ -6,6 +6,11 @@

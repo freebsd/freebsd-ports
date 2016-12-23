@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.11.11
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -184,6 +184,8 @@ do-install:
 	${MV} ${WRKSRC}/config/resque.yml.example ${WRKSRC}/config/resque.yml.sample
 	${MV} ${WRKSRC}/config/secrets.yml.example ${WRKSRC}/config/secrets.yml.sample
 	${MV} ${WRKSRC}/config/initializers/rack_attack.rb.example ${WRKSRC}/config/initializers/rack_attack.rb.sample
+	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
+	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 	${MKDIR} ${STAGEDIR}/home/git/repositories
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets

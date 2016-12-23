@@ -1,5 +1,5 @@
---- ./src/library/tools/givtruncdomain.h.orig	2014-08-11 23:06:35.000000000 +0200
-+++ ./src/library/tools/givtruncdomain.h	2014-08-11 23:06:42.000000000 +0200
+--- src/library/tools/givtruncdomain.h.orig	2013-12-04 17:03:41 UTC
++++ src/library/tools/givtruncdomain.h
 @@ -17,7 +17,7 @@
  #ifdef __APPLE__
  #include <utility>

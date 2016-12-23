@@ -87,9 +87,8 @@ man/man1/mediatomb.1.gz
 %%DATADIR%%/web/top.html
 %%DATADIR%%/web/topleft.html
 %%DATADIR%%/web/topright.html
-@unexec if cmp -s %D/etc/mediatomb/config.xml.dist %D/%%DATADIR%%/etc/mediatomb/config.xml; then rm -f %D/etc/mediatomb/config.xml; fi
 @dir(mediatomb,mediatomb,750) etc/mediatomb
-etc/mediatomb/config.xml.dist
+@sample etc/mediatomb/config.xml.dist etc/mediatomb/config.xml
 @dir %%DATADIR%%/js
 @dir %%DATADIR%%/web/icons/nanotree/images
 @dir %%DATADIR%%/web/icons/nanotree

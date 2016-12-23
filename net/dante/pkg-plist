@@ -1,4 +1,3 @@
-@unexec %D/etc/rc.d/sockd.sh forcestop 2>/dev/null || true
 bin/socksify
 @sample etc/sockd.conf.sample
 @sample etc/socks.conf.sample

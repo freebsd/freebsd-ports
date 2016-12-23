@@ -1,6 +1,5 @@
 include/libfm-qt/appchoosercombobox.h
 include/libfm-qt/appchooserdialog.h
-include/libfm-qt/appinfo.h
 include/libfm-qt/applaunchcontext.h
 include/libfm-qt/appmenuview.h
 include/libfm-qt/appmenuview_p.h
@@ -32,9 +31,6 @@ include/libfm-qt/filemenu_p.h
 include/libfm-qt/fileoperation.h
 include/libfm-qt/fileoperationdialog.h
 include/libfm-qt/fileopsjob.h
-include/libfm-qt/fileopsjobchangeattr.h
-include/libfm-qt/fileopsjobdelete.h
-include/libfm-qt/fileopsjobxfer.h
 include/libfm-qt/filepropsdialog.h
 include/libfm-qt/filesearchdialog.h
 include/libfm-qt/fm-qt_export.h
@@ -55,12 +51,13 @@ include/libfm-qt/libfmqt.h
 include/libfm-qt/libfmqtglobals.h
 include/libfm-qt/list.h
 include/libfm-qt/mimetype.h
-include/libfm-qt/monitor.h
 include/libfm-qt/mountoperation.h
 include/libfm-qt/mountoperationpassworddialog_p.h
 include/libfm-qt/mountoperationquestiondialog_p.h
 include/libfm-qt/navhistory.h
 include/libfm-qt/path.h
+include/libfm-qt/pathbar.h
+include/libfm-qt/pathbar_p.h
 include/libfm-qt/pathedit.h
 include/libfm-qt/pathedit_p.h
 include/libfm-qt/placesmodel.h
@@ -69,7 +66,6 @@ include/libfm-qt/placesview.h
 include/libfm-qt/proxyfoldermodel.h
 include/libfm-qt/renamedialog.h
 include/libfm-qt/sidepane.h
-include/libfm-qt/simplejob.h
 include/libfm-qt/templates.h
 include/libfm-qt/terminal.h
 include/libfm-qt/thumbnailer.h
@@ -80,7 +76,7 @@ include/libfm-qt/utils.h
 include/libfm-qt/xdndworkaround.h
 lib/libfm-qt.so
 lib/libfm-qt.so.3
-lib/libfm-qt.so.3.0.0
+lib/libfm-qt.so.3.1.0
 libdata/pkgconfig/libfm-qt.pc
 share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
