@@ -5,7 +5,7 @@ Date:   Fri Jan 4 13:49:22 2013 +0100
     Bug 826985 - Support more video formats for WebRTC via libv4l2 on Linux.
 ---
  config/system-headers                                   |  1 +
- configure.in                                            |  7 +++++++
+ old-configure.in                                        |  7 +++++++
  media/webrtc/signaling/test/Makefile.in                 |  1 +
  .../modules/video_capture/linux/device_info_linux.cc    | 17 +++++++++++++++++
  .../modules/video_capture/linux/video_capture_linux.cc  | 16 +++++++++++++++-
@@ -17,18 +17,18 @@ diff --git config/system-headers config/system-headers
 index 55e4cd1..76567b3 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -627,6 +627,7 @@ libgnome/libgnome.h
+@@ -629,6 +629,7 @@ libgnome/libgnome.h
  libgnomeui/gnome-icon-lookup.h
  libgnomeui/gnome-icon-theme.h
  libgnomeui/gnome-ui-init.h
 +libv4l2.h
- lib$routines.h
  limits
  limits.h
-diff --git configure.in configure.in
+ link.h
+diff --git old-configure.in configure.in
 index 55e4cd1..76567b3 100644
---- mozilla/configure.in
-+++ mozilla/configure.in
+--- mozilla/old-configure.in
++++ mozilla/old-configure.in
 @@ -5309,6 +5309,9 @@ if test -n "$MOZ_WEBRTC"; then
      MOZ_VP8_ENCODER=1
      MOZ_VP8_ERROR_CONCEALMENT=1
@@ -145,26 +145,26 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -69,6 +72,19 @@
-             'linux/video_capture_linux.cc',
-             'linux/video_capture_linux.h',
-           ],
-+          'conditions': [
-+            ['use_libv4l2==1', {
-+              'defines': [
-+                'HAVE_LIBV4L2',
+@@ -75,6 +78,19 @@
+                 'linux/video_capture_linux.cc',
+                 'linux/video_capture_linux.h',
+               ],
++              'conditions': [
++                ['use_libv4l2==1', {
++                  'defines': [
++                    'HAVE_LIBV4L2',
++                  ],
++                  'cflags_mozilla': [
++                    '$(MOZ_LIBV4L2_CFLAGS)',
++                  ],
++                  'libraries': [
++                    '-lv4l2',
++                  ],
++                }],
 +              ],
-+              'cflags_mozilla': [
-+                '$(MOZ_LIBV4L2_CFLAGS)',
-+              ],
-+              'libraries': [
-+                '-lv4l2',
-+              ],
-+            }],
-+          ],
-         }],  # linux
-         ['OS=="mac"', {
-           'sources': [
+             }],  # linux
+             ['OS=="mac"', {
+               'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 9c16ffa..1db3794 100644
 --- mozilla/toolkit/library/moz.build
