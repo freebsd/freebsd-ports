@@ -68,6 +68,13 @@ KDE4_BRANCH?=			stable
 KDE_FRAMEWORKS_VERSION?=	5.29.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
+# Current KDE applications.
+KDE_APPLICATIONS_VERSION?=      16.12.0
+KDE_APPLICATIONS_BRANCH?=       stable
+# Upstream moves old software to Attic/. Specify the newest applications release there.
+# Only the major version is used for the comparison.
+_KDE_APPLICATIONS_ATTIC_VERSION=	15.12.3
+
 # Extended KDE universe applications.
 CALLIGRA_VERSION?=		2.9.11
 CALLIGRA_BRANCH?=		stable
@@ -86,7 +93,7 @@ KDE_PREFIX=	${LOCALBASE}
 
 # === CATEGORIES HANDLING -- SETTING DEFAULT VALUES ============================
 # Doing MASTER_SITES magic based on the category of the port
-_KDE_CATEGORIES_SUPPORTED=	kde-frameworks kde-kde4
+_KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-kde4
 .  for cat in ${_KDE_CATEGORIES_SUPPORTED}
 .    if ${CATEGORIES:M${cat}}
 .      if !defined(_KDE_CATEGORY)
@@ -110,6 +117,20 @@ CPE_VENDOR?=		kde
 PORTVERSION?=		${KDE4_VERSION}
 MASTER_SITES?=		KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
 DIST_SUBDIR?=		KDE/${KDE4_VERSION}
+.    elif  ${_KDE_CATEGORY:Mkde-applications}
+PORTVERSION?=           ${KDE_APPLICATIONS_VERSION}
+.      if ${_KDE_VERSION:M4}
+CONFLICTS_INSTALL?=     ${PORTNAME}-kf5-*
+.      else
+CONFLICTS_INSTALL?=     kde4-${PORTNAME}-* ${PORTNAME}-kde4-*
+.      endif
+# Decide where the file lies on KDE's servers: Check whether the file lies in  Attic
+.      if ${KDE_APPLICATIONS_VERSION:R:R} <= ${_KDE_APPLICATIONS_ATTIC_VERSION:R:R}
+MASTER_SITES?=          KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
+.      else
+MASTER_SITES?=          KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
+.      endif
+DIST_SUBDIR?=           KDE/applications/${KDE_APPLICATIONS_VERSION}
 .    elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf5-
