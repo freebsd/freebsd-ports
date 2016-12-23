@@ -1,4 +1,4 @@
---- debian/qgis.desktop.orig	2016-02-26 12:23:48 UTC
+--- debian/qgis.desktop.orig	2016-10-21 12:14:02 UTC
 +++ debian/qgis.desktop
 @@ -1,7 +1,9 @@
  [Desktop Entry]
