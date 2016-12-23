@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.1.6
+PORTVERSION=	19.2
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -20,8 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.1.1 patch-otp-19.1.2 patch-otp-19.1.3 \
-		patch-otp-19.1.4 patch-otp-19.1.5 patch-otp-19.1.6
+PATCHFILES=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -54,10 +53,19 @@ WX_DESC=	Enable WX application
 
 NATIVE_IMPLIES=	HIPE
 
-OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS
+OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS DTRACE
 OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
 
-ERL_RELEASE=	19.1
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+
+OPTIONS_EXCLUDE_FreeBSD_9+=	DTRACE
+OPTIONS_EXCLUDE_FreeBSD_10+=	DTRACE
+OPTIONS_EXCLUDE+=		${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
+OPTIONS_EXCLUDE_i386=		DTRACE
+
+ERL_RELEASE=	19.2
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -65,9 +73,9 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.9.1
+EI_VSN=		3.9.2
 SNMP_VSN=	5.2.4
-TOOLS_VSN=	2.8.6
+TOOLS_VSN=	2.9
 
 .include <bsd.port.options.mk>
 
@@ -239,18 +247,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.1/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.1.1
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.1
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.3.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.3.6
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.3.2
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.3
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.2
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
