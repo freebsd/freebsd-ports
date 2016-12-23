@@ -3,6 +3,7 @@
 
 PORTNAME=	mailutils
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -15,9 +16,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gmake iconv libtool makeinfo readline tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 INFO=		${PORTNAME}
@@ -25,11 +25,12 @@ INFO=		${PORTNAME}
 OPTIONS_DEFINE=		GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
 OPTIONS_DEFAULT=	BDB GNUTLS PAM
 OPTIONS_MULTI=		DB
-OPTIONS_MULTI_DB=	BDB GDBM LDAP MYSQL PGSQL TOKYOCABINET
+OPTIONS_MULTI_DB=	BDB GDBM KYOTOCABINET LDAP MYSQL PGSQL TOKYOCABINET
 OPTIONS_SUB=		yes
 
 BDB_DESC=		Berkeley DB v4.8 support (last working one)
 DB_DESC=		Database configuration
+KYOTOCABINET_DESC=	Kyoto Cabinet database support
 MH_DESC=		MH (Message Handling) system support
 TOKYOCABINET_DESC=	Tokyo Cabinet database support
 
@@ -65,6 +66,9 @@ INVALID_BDB_VER=	5+
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
 
+KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
+KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet
+
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
 
@@ -80,7 +84,8 @@ TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
 post-patch:
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|' \
 		${WRKSRC}/lib/gnu/Makefile.in
-	@${REINPLACE_CMD} -e 's,chown,#&,' ${WRKSRC}/dotlock/Makefile.in \
+	@${REINPLACE_CMD} -e '/chown/,+1s|ch|#&|' \
+		${WRKSRC}/dotlock/Makefile.in \
 		${WRKSRC}/maidag/Makefile.in
 
 .include <bsd.port.mk>
