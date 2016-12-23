@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.14
+PORTVERSION=	4.0.17
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -216,6 +216,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--with-swapdir=/var/squid/cache \
 		--without-gnutls \
 		--enable-auth \
+		--enable-zph-qos \
 		--enable-build-info \
 		--enable-loadable-modules \
 		--enable-removal-policies="lru heap" \
@@ -288,7 +289,7 @@ post-patch:
 		${change_files})
 	@(cd ${WRKSRC} && ${MV} src/mime.conf.default src/mime.conf.sample)
 
-.if !${PORT_OPTIONS:MIPV6}
+post-patch-IPV6-off:
 	@${REINPLACE_CMD} -e's/ ::1//' -e's/ fc00::\/7//' \
 		-e's/ fe80::\/10//' -e's/ 2001:DB8::2//' \
 		-e's/ 2001:DB8::a:0\/64//' \
@@ -296,7 +297,6 @@ post-patch:
 		-e'/tcp_outgoing_address 2001:db8::beef normal_service_net/d' \
 		-e'/tcp_outgoing_address 2001:db8::1/d' \
 		${WRKSRC}/src/cf.data.pre
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -306,6 +306,10 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field

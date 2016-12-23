@@ -1,4 +1,4 @@
---- src/tools.cc.orig	2015-11-01 10:44:25 UTC
+--- src/tools.cc.orig	2016-12-16 10:06:20 UTC
 +++ src/tools.cc
 @@ -603,7 +603,7 @@ no_suid(void)
      uid = geteuid();
