@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	go-for-it
-PORTVERSION=	1.4.7
-DISTVERSIONPREFIX=	release_
+PORTVERSION=	1.5
+DISTVERSIONPREFIX=	release_v
 CATEGORIES=	deskutils
 
 MAINTAINER=	neel@neelc.org
@@ -19,7 +19,7 @@ GH_ACCOUNT=	mank319
 GH_PROJECT=	Go-For-It
 
 GNU_CONFIGURE=	yes
-USES=		cmake gettext-runtime pkgconfig
+USES=		cmake gettext pkgconfig
 USE_GNOME=	cairo glib20 gtk30
 INSTALLS_ICONS=	yes
 
