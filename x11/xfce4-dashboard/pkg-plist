@@ -68,7 +68,7 @@ include/xfdashboard/libxfdashboard/windows-view.h
 include/xfdashboard/libxfdashboard/workspace-selector.h
 lib/libxfdashboard.so
 lib/libxfdashboard.so.0
-lib/libxfdashboard.so.0.600.0
+lib/libxfdashboard.so.0.600.1
 lib/xfdashboard/plugins/clock-view.so
 lib/xfdashboard/plugins/gnome-shell-search-provider.so
 lib/xfdashboard/plugins/hot-corner.so
