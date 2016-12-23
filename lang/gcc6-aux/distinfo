@@ -1,6 +1,6 @@
-TIMESTAMP = 1472132302
-SHA256 (gcc-6.2.0.tar.bz2) = 9944589fc722d3e66308c0ce5257788ebd7872982a718aa2516123940671b7c5
-SIZE (gcc-6.2.0.tar.bz2) = 99778648
+TIMESTAMP = 1482513153
+SHA256 (gcc-6.3.0.tar.bz2) = f06ae7f3f790fbf0f018f6d40e844451e6bc3b7bc96e128e63b09825c1f8b29f
+SIZE (gcc-6.3.0.tar.bz2) = 99903185
 SHA256 (ada-bootstrap.i386.freebsd.100B.tar.bz2) = 7231209f2600275f554f788ad1d036cf633c4339ebd25bd479a5bb1ddcddedf3
 SIZE (ada-bootstrap.i386.freebsd.100B.tar.bz2) = 41229192
 SHA256 (ada-bootstrap.x86_64.dragonfly.41.tar.bz2) = eb7785d8b842aee2bb04b43adfb1346b178ee4e83d8775b4e6705fd23f1586f0
