@@ -140,4 +140,4 @@ lib/libgivaro.a
 lib/libgivaro.so
 lib/libgivaro.so.0
 lib/libgivaro.so.0.6.0
-%%PORTDOCS%%%%DOCSDIR%%/givaro.html
+%%DOXYGEN%%%%DOCSDIR%%/givaro.html
