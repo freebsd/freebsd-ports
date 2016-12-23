@@ -2,7 +2,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOXYGEN
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-USES=		gmake libtool ncurses pathfix pkgconfig tar:bzip2
+USES=		gmake libtool ncurses pathfix pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-isqlxx
