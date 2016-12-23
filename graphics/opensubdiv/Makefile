@@ -3,7 +3,7 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3_0_5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mva@FreeBSD.org
@@ -27,8 +27,7 @@ CMAKE_ARGS+=	-DNO_TUTORIALS:BOOL=ON -DNO_EXAMPLES:BOOL=ON \
 		-DNO_REGRESSION:BOOL=ON -DNO_PTEX:BOOL=ON -DNO_CUDA:BOOL=ON \
 		-DNO_OPENCL:BOOL=ON -DNO_MAYA:BOOL=ON -DNO_TBB:BOOL=ON
 
-OPTIONS_DEFINE=	DOXYGEN
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +40,7 @@ PLIST_SUB+=	OPENMP="@comment "
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:devel/doxygen \
 		python2:lang/python2 \
 		rst2html:textproc/py-docutils
