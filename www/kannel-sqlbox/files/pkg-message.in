@@ -1,0 +1,7 @@
+**********************************************************************
+
+If you are upgrading kannel-sqlbox from a version prior to 1.0.1, 
+please, remove tables `send_sms` and `sent_sms` before starting it 
+and let kannel_sqlbox recreate them.
+
+**********************************************************************

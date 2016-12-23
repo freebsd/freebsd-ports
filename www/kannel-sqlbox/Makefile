@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kannel-sqlbox
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	www
 
 MAINTAINER=	dbaio@bsd.com.br
@@ -16,25 +15,28 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/kannel/gw-config.h:www/kannel
 RUN_DEPENDS=	${LOCALBASE}/sbin/bearerbox:www/kannel
+LIB_DEPENDS=	libpcreposix.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dbaio
 
-USES=	gmake
+USES=	gmake iconv ssl
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2
 
 OPTIONS_MULTI=	DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE3
 OPTIONS_DEFAULT=	MYSQL
 
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 
-PGSQL_USE=	pgsql=yes
+PGSQL_USES=	pgsql
 
 SQLITE3_USES=	sqlite:3
 
 USE_RC_SUBR=	kannel_sqlbox
+SUB_FILES=	pkg-message
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/example/sqlbox.conf.example \
