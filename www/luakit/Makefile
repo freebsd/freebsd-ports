@@ -3,7 +3,7 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2012.09.13r1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem-51
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mason-larobina
 GH_TAGNAME=	${PORTVERSION:C/r/-r/}
 
 USES=		desktop-file-utils gettext-runtime gmake lua:51 pkgconfig sqlite
@@ -48,6 +47,8 @@ post-patch:
 		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \
 		${WRKSRC}/build-utils/gentokens.lua
+	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
+		${WRKSRC}/config/window.lua
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/luakit
