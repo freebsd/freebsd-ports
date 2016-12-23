@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndpi
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.8.2016.07.13
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -26,8 +25,8 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	6fb81f1
+GH_TAGNAME=	6450ae2
 
-PLIST_SUB=	MAJOR_VER=${PORTVERSION}.0
+PLIST_SUB=	MAJOR_VER=${PORTVERSION:C/([[:digit:]])+\.([[:digit:]])+.*/\1.\2/}.0
 
 .include <bsd.port.mk>
