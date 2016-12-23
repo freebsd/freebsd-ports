@@ -26,11 +26,9 @@ SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
-=======
+
 MAKE_JOBS_UNSAFE=	yes
->>>>>>> upstream/master
 
 # Requires openmp
 USE_GCC=	yes
