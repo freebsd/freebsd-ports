@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.5
+PORTVERSION=	8.2.21
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Fast irc daemon with a number of new features
+
+LICENSE=	GPLv2
 
 INSTALL_IGNORES=	ircu-* ircd-rat* charby*
 
@@ -36,15 +38,8 @@ OPENSSL_DESC=	Enable openssl - allows use of CHALLENGE and encrypted links
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES	+=	ssl
 CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLBASE}
-.endif
-
-# User Configurable Variables
-# NICKLEN		- Nick length. Default is 9. Must be consistent across the network.
-
-.if defined(NICKLEN)
-CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
 CONFIGURE_ARGS+=	\

@@ -1,6 +1,5 @@
 bin/ircd
 bin/mkpasswd
-bin/respond
 %%ETCDIR%%/reference.conf
 lib/ircd-hybrid/modules/autoload/m_accept.la
 lib/ircd-hybrid/modules/autoload/m_accept.so
@@ -14,8 +13,6 @@ lib/ircd-hybrid/modules/autoload/m_capab.la
 lib/ircd-hybrid/modules/autoload/m_capab.so
 lib/ircd-hybrid/modules/autoload/m_certfp.la
 lib/ircd-hybrid/modules/autoload/m_certfp.so
-lib/ircd-hybrid/modules/autoload/m_challenge.la
-lib/ircd-hybrid/modules/autoload/m_challenge.so
 lib/ircd-hybrid/modules/autoload/m_close.la
 lib/ircd-hybrid/modules/autoload/m_close.so
 lib/ircd-hybrid/modules/autoload/m_connect.la
@@ -28,8 +25,6 @@ lib/ircd-hybrid/modules/autoload/m_eob.la
 lib/ircd-hybrid/modules/autoload/m_eob.so
 lib/ircd-hybrid/modules/autoload/m_etrace.la
 lib/ircd-hybrid/modules/autoload/m_etrace.so
-lib/ircd-hybrid/modules/autoload/m_gline.la
-lib/ircd-hybrid/modules/autoload/m_gline.so
 lib/ircd-hybrid/modules/autoload/m_globops.la
 lib/ircd-hybrid/modules/autoload/m_globops.so
 lib/ircd-hybrid/modules/autoload/m_hash.la
@@ -84,6 +79,8 @@ lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svshost.la
+lib/ircd-hybrid/modules/autoload/m_svshost.so
 lib/ircd-hybrid/modules/autoload/m_svsjoin.la
 lib/ircd-hybrid/modules/autoload/m_svsjoin.so
 lib/ircd-hybrid/modules/autoload/m_svskill.la
@@ -104,10 +101,10 @@ lib/ircd-hybrid/modules/autoload/m_topic.la
 lib/ircd-hybrid/modules/autoload/m_topic.so
 lib/ircd-hybrid/modules/autoload/m_trace.la
 lib/ircd-hybrid/modules/autoload/m_trace.so
-lib/ircd-hybrid/modules/autoload/m_unkline.la
-lib/ircd-hybrid/modules/autoload/m_unkline.so
 lib/ircd-hybrid/modules/autoload/m_undline.la
 lib/ircd-hybrid/modules/autoload/m_undline.so
+lib/ircd-hybrid/modules/autoload/m_unkline.la
+lib/ircd-hybrid/modules/autoload/m_unkline.so
 lib/ircd-hybrid/modules/autoload/m_unresv.la
 lib/ircd-hybrid/modules/autoload/m_unresv.so
 lib/ircd-hybrid/modules/autoload/m_unxline.la
@@ -168,18 +165,12 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/accept
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/admin
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/away
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/capab
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/challenge
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/close
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/cmode
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/connect
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/die
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/dline
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/eob
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/error
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/etrace
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/gline
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/gungline
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/hash
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/help
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/index
@@ -212,12 +203,9 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/rehash
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/restart
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/resv
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/server
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/set
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/sjoin
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/squit
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/stats
-%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/svinfo
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/time
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/topic
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/trace
@@ -234,3 +222,4 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whois
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whowas
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/xline
+@dir /var/lib
