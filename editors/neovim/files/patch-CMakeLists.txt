@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-05-09 13:04:04 UTC
+--- CMakeLists.txt.orig	2016-11-08 05:44:53 UTC
 +++ CMakeLists.txt
-@@ -213,7 +213,7 @@ else()
+@@ -221,7 +221,7 @@ else()
  
    # On FreeBSD 64 math.h uses unguarded C11 extension, which taints clang
    # 3.4.1 used there.
@@ -9,12 +9,15 @@
      add_definitions(-Wno-c11-extensions)
    endif()
  endif()
-@@ -367,7 +367,7 @@ endforeach()
+@@ -386,9 +386,9 @@ endforeach()
  
  # Find Lua interpreter
  include(LuaHelpers)
 -set(LUA_DEPENDENCIES lpeg mpack bit)
 +set(LUA_DEPENDENCIES lpeg bit)
  if(NOT LUA_PRG)
-   foreach(CURRENT_LUA_PRG luajit lua)
+-  foreach(CURRENT_LUA_PRG luajit lua5.1 lua5.2 lua)
++  foreach(CURRENT_LUA_PRG luajit)
      # If LUA_PRG is set find_program() will not search
+     unset(LUA_PRG CACHE)
+     unset(LUA_PRG_WORKS)

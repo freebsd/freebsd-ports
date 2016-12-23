@@ -1,9 +1,0 @@
---- config/config.h.in.orig	2016-06-05 14:13:28 UTC
-+++ config/config.h.in
-@@ -57,5 +57,6 @@
- 
- #cmakedefine HAVE_BE64TOH
- #cmakedefine ORDER_BIG_ENDIAN
-+#define ENDIAN_INCLUDE_FILE <@ENDIAN_INCLUDE_FILE@>
- 
- #endif  // AUTO_CONFIG_H
