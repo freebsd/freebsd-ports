@@ -2,16 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	tclreadline
-PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTVERSION=	2.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel tcl
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
-USES=		libtool tcl:tea readline
-CONFIGURE_ARGS=	--with-tcl-includes=${TCL_INCLUDEDIR}
+LICENSE=	BSD3CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	flightaware
+USES=		autoreconf libtool tcl:tea readline:port
+CONFIGURE_ARGS+=--with-tcl-includes=${TCL_INCLUDEDIR} \
+		--with-readline-includes=${LOCALBASE}/include \
+		--with-readline-library="-L${LOCALBASE}/lib -lreadline"
 USE_LDCONFIG=	yes
 TCL_PKG=	${PORTNAME}${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
