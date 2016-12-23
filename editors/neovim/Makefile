@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	neovim
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	gor@clogic.com.ua
@@ -13,7 +12,8 @@ COMMENT=	Next generation Vim
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LUA_MODLIBDIR}/bit.so:devel/lua-bitop \
-		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
+		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg \
+		gperf:devel/gperf
 LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 		libvterm.so:devel/libvterm \
 		libtermkey.so:devel/libtermkey \
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 
 USES=		cmake:outsource gettext iconv ninja lua:build pathfix pkgconfig
 USE_GITHUB=	yes
-GH_TUPLE=	tarruda:libmpack:1.0.2:libmpack
+GH_TUPLE=	tarruda:libmpack:1.0.3:libmpack
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${MANPREFIX}/man" \
@@ -42,5 +42,6 @@ pre-build:
 		-I${LUA_INCDIR} -shared lmpack.c -o \
 		${BUILD_WRKSRC}/src/nvim/mpack.so \
 		${LUA_LIBDIR}/liblua-${LUA_VER}.so)
+	@${LN} -s ${BUILD_WRKSRC}/src/nvim/mpack.so ${BUILD_WRKSRC}/runtime/mpack.so
 
 .include <bsd.port.mk>
