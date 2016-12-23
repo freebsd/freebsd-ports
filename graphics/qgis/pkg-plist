@@ -799,7 +799,7 @@ lib/qgis/plugins/libwmsprovider.so
 lib/qgis/plugins/libzonalstatisticsplugin.so
 lib/qgis/qgis_help
 %%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so
-%%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.2.18.0
+%%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.2.18.2
 man/man1/qbrowser.1.gz
 man/man1/qgis.1.gz
 share/applications/qgis.desktop
