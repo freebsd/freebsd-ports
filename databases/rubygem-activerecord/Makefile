@@ -28,7 +28,7 @@ SQLITE3_DESC=	Use native SQLite3 bindings
 
 GEM_ENV+=	LANG=en_US.UTF-8
 
-MYSQL_RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}mysql>=0:databases/ruby-mysql
+MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0:databases/rubygem-mysql2
 PGSQL_RUN_DEPENDS=	rubygem-pg>=0:databases/rubygem-pg
 SQLITE3_RUN_DEPENDS=	rubygem-sqlite3>=1.2.1:databases/rubygem-sqlite3
 
