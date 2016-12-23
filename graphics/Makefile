@@ -600,6 +600,7 @@
     SUBDIR += mirage
     SUBDIR += mitsuba
     SUBDIR += mmrecover
+    SUBDIR += movit
     SUBDIR += mozjpeg
     SUBDIR += mscgen
     SUBDIR += mtpaint
