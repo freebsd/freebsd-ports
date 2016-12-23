@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Yaml
-PORTVERSION=	2.1.2
+PORTVERSION=	2.4.4
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pear.symfony.com/get/
 PKGNAMEPREFIX=	pear-Symfony_Component_
