@@ -38,6 +38,7 @@ include/nss/nss/crmf.h
 include/nss/nss/crmft.h
 include/nss/nss/cryptohi.h
 include/nss/nss/cryptoht.h
+include/nss/nss/eccutil.h
 include/nss/nss/ecl-exp.h
 include/nss/nss/hasht.h
 include/nss/nss/jar-ds.h
