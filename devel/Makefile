@@ -3854,6 +3854,7 @@
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
     SUBDIR += pecl-raphf2
+    SUBDIR += pecl-request
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-spl_types
