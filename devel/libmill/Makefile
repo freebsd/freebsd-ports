@@ -15,5 +15,6 @@ USES=		pathfix libtool
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
