@@ -2,7 +2,7 @@
 
 PORTNAME=	partio
 PORTVERSION=	1.1.0.20150221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 
 MAINTAINER=	mva@FreeBSD.org
@@ -18,10 +18,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
 GH_TAGNAME=	1fd6747
 
-OPTIONS_DEFINE=		DOXYGEN PYTHON
+OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 PYTHON_USES=		python:2.7+
 PYTHON_BUILD_DEPENDS=	swig:devel/swig13
 
@@ -39,12 +39,12 @@ post-patch:
 	@${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY.*src\/py.*/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
-.if !${PORT_OPTIONS:MDOXYGEN}
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY.*src\/doc.*/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
 
-.if ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@(cd ${BUILD_WRKSRC}; make doc)
 .endif
