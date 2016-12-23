@@ -1,6 +1,7 @@
 @owner www
 @group www
 %%WWWDIR%%/CONTRIBUTING.md
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/announcements.php
 %%WWWDIR%%/admin/backups/.htaccess
 %%WWWDIR%%/admin/backups/index.html
@@ -141,6 +142,7 @@
 %%WWWDIR%%/admin/modules/tools/tasks.php
 %%WWWDIR%%/admin/modules/tools/warninglog.php
 %%WWWDIR%%/admin/modules/user/admin_permissions.php
+%%WWWDIR%%/admin/modules/user/awaiting_activation.php
 %%WWWDIR%%/admin/modules/user/banning.php
 %%WWWDIR%%/admin/modules/user/group_promotions.php
 %%WWWDIR%%/admin/modules/user/groups.php
@@ -510,6 +512,7 @@
 %%WWWDIR%%/inc/languages/english/admin/tools_tasks.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_warninglog.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_admin_permissions.lang.php
+%%WWWDIR%%/inc/languages/english/admin/user_awaiting_activation.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_banning.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_group_promotions.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_groups.lang.php
@@ -639,6 +642,7 @@
 %%WWWDIR%%/install/resources/upgrade34.php
 %%WWWDIR%%/install/resources/upgrade35.php
 %%WWWDIR%%/install/resources/upgrade36.php
+%%WWWDIR%%/install/resources/upgrade37.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
