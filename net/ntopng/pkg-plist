@@ -353,6 +353,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/os_stats.lua
 %%DATADIR%%/scripts/lua/page_not_found.lua
 %%DATADIR%%/scripts/lua/pid_stats.lua
+%%DATADIR%%/scripts/lua/please_wait.lua
 %%DATADIR%%/scripts/lua/popKeys.lua
 %%DATADIR%%/scripts/lua/port_details.lua
 %%DATADIR%%/scripts/lua/processes_stats.lua
