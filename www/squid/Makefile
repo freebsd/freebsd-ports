@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.22
+PORTVERSION=	3.5.23
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -222,6 +222,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--with-swapdir=/var/squid/cache \
 		--without-gnutls \
 		--enable-auth \
+		--enable-zph-qos \
 		--enable-build-info \
 		--enable-loadable-modules \
 		--enable-removal-policies="lru heap" \
@@ -316,11 +317,10 @@ post-install:
 BROKEN=		Does not build with openssl-devel
 .endif
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field
-.if ${COMPILER_VERSION} >= 35
+CXXFLAGS+=	-Wno-unknown-warning-option
 CXXFLAGS+=	-Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-dynamic-class-memaccess
-.endif
 .endif
 
 .include <bsd.port.post.mk>
