@@ -4,6 +4,7 @@
 PORTNAME=	liblxqt-l10n
 PORTVERSION=	0.11.1
 CATEGORIES=	devel
+MASTER_SITES=	LXQT/lxqt-l10n
 DISTNAME=	lxqt-l10n-${DISTVERSION}
 
 MAINTAINER=	olivierd@FreeBSD.org
