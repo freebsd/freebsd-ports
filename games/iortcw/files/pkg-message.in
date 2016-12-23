@@ -4,7 +4,7 @@ To play Return to Castle Wolfenstein:
 2. Copy your game files to ~/.wolf.  They should be in
    "~/.wine/drive_c/Program Files/Return to Castle Wolfenstein"
 3. Download patch-data-141.zip (and the language specific patch-data-* file if needed)
-   from https://github.com/iortcw/iortcw/releases/tag/1.42d
+   from https://github.com/iortcw/iortcw/releases/tag/%%DISTVERSION%%
 4. Extract all patch-data-*.zip in ~/.wolf
 5a. Start a single player game with iowolfsp
 5b. Or a multiplayer game with iowolfmp
