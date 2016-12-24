@@ -18,7 +18,6 @@ include/embb/algorithms/scan.h
 include/embb/algorithms/zip_iterator.h
 include/embb/base/atomic.h
 include/embb/base/base.h
-include/embb/base/log.h
 include/embb/base/c/atomic.h
 include/embb/base/c/base.h
 include/embb/base/c/condition_variable.h
@@ -30,8 +29,10 @@ include/embb/base/c/internal/atomic/and_assign.h
 include/embb/base/c/internal/atomic/atomic_sizes.h
 include/embb/base/c/internal/atomic/atomic_variables.h
 include/embb/base/c/internal/atomic/compare_and_swap.h
+include/embb/base/c/internal/atomic/destroy.h
 include/embb/base/c/internal/atomic/fetch_and_add.h
 include/embb/base/c/internal/atomic/generate_atomic_implementation_template.h
+include/embb/base/c/internal/atomic/init.h
 include/embb/base/c/internal/atomic/load.h
 include/embb/base/c/internal/atomic/memory_barrier.h
 include/embb/base/c/internal/atomic/or_assign.h
@@ -80,6 +81,7 @@ include/embb/base/internal/platform.h
 include/embb/base/internal/thread-inl.h
 include/embb/base/internal/thread_closures.h
 include/embb/base/internal/thread_specific_storage-inl.h
+include/embb/base/log.h
 include/embb/base/memory_allocation.h
 include/embb/base/mutex.h
 include/embb/base/thread.h
@@ -130,9 +132,11 @@ include/embb/mtapi/affinity.h
 include/embb/mtapi/c/mtapi.h
 include/embb/mtapi/c/mtapi_ext.h
 include/embb/mtapi/c/mtapi_network.h
+include/embb/mtapi/execution_policy.h
 include/embb/mtapi/group.h
 include/embb/mtapi/group_attributes.h
 include/embb/mtapi/internal/check_status.h
+include/embb/mtapi/internal/cmake_config.h
 include/embb/mtapi/job.h
 include/embb/mtapi/mtapi.h
 include/embb/mtapi/node.h
@@ -143,16 +147,6 @@ include/embb/mtapi/status_exception.h
 include/embb/mtapi/task.h
 include/embb/mtapi/task_attributes.h
 include/embb/mtapi/task_context.h
-include/embb/tasks/action.h
-include/embb/tasks/continuation.h
-include/embb/tasks/execution_policy.h
-include/embb/tasks/group.h
-include/embb/tasks/internal/cmake_config.h
-include/embb/tasks/node.h
-include/embb/tasks/queue.h
-include/embb/tasks/task.h
-include/embb/tasks/task_context.h
-include/embb/tasks/tasks.h
 include/mtapi.h
 include/mtapi_ext.h
 lib/libembb_algorithms_cpp.a
@@ -163,7 +157,6 @@ lib/libembb_dataflow_cpp.a
 lib/libembb_mtapi_c.a
 lib/libembb_mtapi_cpp.a
 lib/libembb_mtapi_network_c.a
-lib/libembb_tasks_cpp.a
 %%DOCS%%%%DOCSDIR%%/images/embb.jpg
 %%DOCS%%%%DOCSDIR%%/images/embb.pdf
 %%DOCS%%%%DOCSDIR%%/images/embb.png
@@ -189,7 +182,6 @@ lib/libembb_tasks_cpp.a
 %%DOCS%%%%DOCSDIR%%/tutorial/sty/siemens_double.sty
 %%DOCS%%%%DOCSDIR%%/tutorial/sty/siemens_single.sty
 %%DOCS%%%%DOCSDIR%%/tutorial/tutorial.tex
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/content/tasks.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/algorithms/counting/count-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/algorithms/counting/count_if-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/algorithms/counting/counting-fragmented.cc
@@ -225,7 +217,6 @@ lib/libembb_tasks_cpp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/queues-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/stack-fragmented.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/stack-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_make-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_comparator-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_connect-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_consumer-snippet.h
@@ -235,6 +226,7 @@ lib/libembb_tasks_cpp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_declare_source-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_include-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_linear-fragmented.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_make-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_network-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_nonlinear-fragmented.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_producer-snippet.h
@@ -275,6 +267,8 @@ lib/libembb_tasks_cpp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_initialize-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_main-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_register_action-snippet.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_simple_action_signature-snippet.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_simple_start_task-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_start_task-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_cpp_wait_task-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtapi/mtapi_network_c_action_function-snippet.h
@@ -298,10 +292,3 @@ lib/libembb_tasks_cpp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stl_for_each/manual-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stl_for_each/setup-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stl_for_each/stl_for_each-fragmented.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp-fragmented.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_action_signature-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_calc_direct-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_calc_task-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_get_node-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_start_task-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks_cpp_wait_task-snippet.h
