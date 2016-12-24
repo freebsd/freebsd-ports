@@ -17,10 +17,10 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.so
 lib/libwireshark.so.8
-lib/libwireshark.so.8.1.0
+lib/libwireshark.so.8.1.3
 lib/libwiretap.so
 lib/libwiretap.so.6
-lib/libwiretap.so.6.0.2
+lib/libwiretap.so.6.0.3
 %%GUI%%lib/libwscodecs.so
 %%GUI%%lib/libwscodecs.so.1
 %%GUI%%lib/libwscodecs.so.1.0.0
