@@ -35,14 +35,18 @@ SVN_REV?=	${PORTVERSION:S/r//}
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+=	svn:devel/subversion
 
+NO_CHECKSUM=	yes
+
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r${SVN_REV} ${_MASTER_SITES_svn} ${WRKSRC}
 	(cd ${WRKDIR} && ${TAR} cJvf \
 		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		--uid 0 --gid 0 ${DISTNAME})
+. ifmake makesum
 	${REINPLACE_CMD} -i '' '/^PORTVERSION=/s/r.*/r${SVN_REV}/' \
 		${MASTERDIR}/Makefile
+. endif
 . if ${USER} == ${MAINTAINER:C/@.*//}
 	-scp ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		freefall.freebsd.org:public_distfiles/
