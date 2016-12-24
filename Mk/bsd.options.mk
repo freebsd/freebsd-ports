@@ -153,13 +153,9 @@
 .if !defined(OPTIONSMKINCLUDED)
 OPTIONSMKINCLUDED=	bsd.options.mk
 
-<<<<<<< HEAD
 .include "bsd.hardening.mk"
 
-OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
-=======
 OPTIONS_NAME?=	${PKGORIGIN:S/\//_/g}
->>>>>>> upstream/master
 OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 
 _OPTIONS_FLAGS=	ALL_TARGET BROKEN CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
