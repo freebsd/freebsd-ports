@@ -1,6 +1,6 @@
---- nuitka/build/SingleExe.scons.orig	2016-04-24 12:07:33 UTC
+--- nuitka/build/SingleExe.scons.orig	2016-12-10 11:05:24 UTC
 +++ nuitka/build/SingleExe.scons
-@@ -110,9 +110,11 @@ uninstalled_python = getBoolOption("unin
+@@ -108,9 +108,11 @@ uninstalled_python = getBoolOption("unin
  # Unstriped mode: Do not remove debug symbols.
  unstripped_mode = getBoolOption("unstripped_mode", False)
  
@@ -14,21 +14,17 @@
      clang_mode = True
  
  # MinGW compiler mode, optional and interesting to Windows only.
-@@ -448,7 +450,7 @@ orig_cxx_version = env.get("CXXVERSION",
- if "g++" in (env["CXX"] or "") and "clang" not in (env["CXX"] or ""):
-     gpp_version, compiler_arch = getGccVersion()
- 
--    if gpp_version is None or int(gpp_version.replace('.', "")) < 440:
-+    if gpp_version is None or int(gpp_version.replace('.', "")) < 421:
-         env["CXX"] = None
-     elif win_target and compiler_arch != target_arch:
-         env["CXX"] = None
-@@ -594,7 +596,7 @@ if "g++" in env["CXX"] and "clang" not i
+@@ -618,11 +620,11 @@ if gcc_mode and "clang" not in the_compi
      # binary if it's not high enough. This is esp. useful under Debian which
      # allows all compiler to exist next to each other and where g++ might not be
      # good enough, but g++-4.5 would be.
--    if gpp_version < 440:
-+    if gpp_version < 421:
+-    if gcc_version < "4.4":
++    if gcc_version < "4.2.1":
          sys.exit(
              """\
- The g++ compiler %s (version %s) doesn't have the sufficient \
+ The gcc compiler %s (version %s) doesn't have the sufficient \
+-version (>= 4.4).""" % (env["CXX"], gcc_version)
++version (>= 4.2.1).""" % (env["CXX"], gcc_version)
+         )
+ 
+     # Older g++ complains about aliasing with Py_True and Py_False, but we don't
