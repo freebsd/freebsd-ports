@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print multiple pages per sheet of paper
 
+EXPLICIT_SAFESTACK=		yes
+
 USES=		tar:tgz
 ALL_TARGET=	default
 
