@@ -1,8 +1,7 @@
 bin/pppclient
 %%PERLGTK%%bin/gpppclient
-@sample %D/%%ETCDIR%%/client.conf.sample
+@sample %%ETCDIR%%/client.conf.sample
 man/man1/pppclient.1.gz
 man/man5/ssltunnelrc.5.gz
-%%ETCDIR%%/client.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/client.LISEZ-MOI
 %%PORTDOCS%%%%DOCSDIR%%/client.README
