@@ -11,7 +11,7 @@ COMMENT=	Qt network module
 LIB_DEPENDS=	libproxy.so:net/libproxy
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USE_OPENSSL=	yes
+USES=		ssl
 USE_QT5=	core qmake_build buildtools_build
 QT_DIST=	base
 HAS_CONFIGURE=	yes
