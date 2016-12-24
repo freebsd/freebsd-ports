@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	BackupPC-${PORTVERSION}
@@ -134,4 +134,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
 	${CP} ${WRKSRC}/update.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/update.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
+.endif
+
+.include <bsd.port.post.mk>
