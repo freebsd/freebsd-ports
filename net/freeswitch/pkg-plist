@@ -24,6 +24,7 @@ include/freeswitch/switch_core_video.h
 include/freeswitch/switch_cpp.h
 include/freeswitch/switch_curl.h
 include/freeswitch/switch_dso.h
+include/freeswitch/switch_estimators.h
 include/freeswitch/switch_event.h
 include/freeswitch/switch_frame.h
 include/freeswitch/switch_hashtable.h
@@ -632,6 +633,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/acl.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/alsa.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amqp.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/avmd.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/blacklist.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/callcenter.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/cdr_csv.conf.xml
@@ -689,6 +691,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/shout.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/skinny.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/smpp.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/sms_flowroute.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/sofia.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/spandsp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/switch.conf.xml
