@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.utils
-PORTVERSION=	3.18.0
+PORTVERSION=	3.21.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Oslo Utility library
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.8:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>0:devel/py-debtcollector \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs \
 		${PYTHON_PKGNAMEPREFIX}iso8601>0:devel/py-iso8601 \

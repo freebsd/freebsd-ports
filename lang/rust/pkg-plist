@@ -8,6 +8,8 @@ lib/libgetopts-%%RUST_VSN_HASH%%.so
 lib/libgraphviz-%%RUST_VSN_HASH%%.so
 lib/liblog-%%RUST_VSN_HASH%%.so
 lib/libproc_macro-%%RUST_VSN_HASH%%.so
+lib/libproc_macro_plugin-%%RUST_VSN_HASH%%.so
+lib/libproc_macro_tokens-%%RUST_VSN_HASH%%.so
 lib/librustc-%%RUST_VSN_HASH%%.so
 lib/librustc_back-%%RUST_VSN_HASH%%.so
 lib/librustc_borrowck-%%RUST_VSN_HASH%%.so
@@ -19,7 +21,6 @@ lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/librustc_llvm-%%RUST_VSN_HASH%%.so
-lib/librustc_macro-%%RUST_VSN_HASH%%.so
 lib/librustc_metadata-%%RUST_VSN_HASH%%.so
 lib/librustc_mir-%%RUST_VSN_HASH%%.so
 lib/librustc_passes-%%RUST_VSN_HASH%%.so
@@ -64,6 +65,8 @@ lib/rustlib/%%RUST_TARGET%%/lib/liblog-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libpanic_abort-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libpanic_unwind-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libproc_macro-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/libproc_macro_plugin-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/libproc_macro_tokens-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librand-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/librustc-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_back-%%RUST_VSN_HASH%%.so
@@ -77,7 +80,6 @@ lib/rustlib/%%RUST_TARGET%%/lib/librustc_errors-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_incremental-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_lint-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_llvm-%%RUST_VSN_HASH%%.so
-lib/rustlib/%%RUST_TARGET%%/lib/librustc_macro-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_metadata-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_mir-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc_passes-%%RUST_VSN_HASH%%.so

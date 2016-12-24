@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xorsearch
-DISTVERSION=	1_2_0
-PORTREVISION=	1
+DISTVERSION=	1_11_1
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.didierstevens.com/files/software/
 DISTNAME=	XORSearch_V${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Search for a given string in an XOR or ROL encoded binary file
 
 LICENSE=	PD

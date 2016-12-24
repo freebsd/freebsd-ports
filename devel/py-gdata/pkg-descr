@@ -17,4 +17,4 @@ Each of the following Google services provides a Google data API:
 The GData Python Client Library provides a library and source code that
 make it easy to access data through Google Data APIs.
 
-WWW: http://code.google.com/p/gdata-python-client/
+WWW: https://github.com/google/gdata-python-client
