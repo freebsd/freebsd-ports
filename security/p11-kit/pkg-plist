@@ -10,12 +10,12 @@ include/p11-kit-1/p11-kit/remote.h
 include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.so
 lib/libp11-kit.so.0
-lib/libp11-kit.so.0.1.0
+lib/libp11-kit.so.0.2.0
 lib/p11-kit-proxy.so
-lib/p11-kit/p11-kit-remote
-lib/p11-kit/trust-extract-compat
 lib/pkcs11/p11-kit-trust.so
 libdata/pkgconfig/p11-kit-1.pc
+libexec/p11-kit/p11-kit-remote
+libexec/p11-kit/trust-extract-compat
 share/gtk-doc/html/p11-kit/config-example.html
 share/gtk-doc/html/p11-kit/config-files.html
 share/gtk-doc/html/p11-kit/config.html
@@ -29,7 +29,6 @@ share/gtk-doc/html/p11-kit/devel.html
 share/gtk-doc/html/p11-kit/gtk-doc.css
 share/gtk-doc/html/p11-kit/home.png
 share/gtk-doc/html/p11-kit/index.html
-share/gtk-doc/html/p11-kit/index.sgml
 share/gtk-doc/html/p11-kit/left-insensitive.png
 share/gtk-doc/html/p11-kit/left.png
 share/gtk-doc/html/p11-kit/p11-kit-Deprecated.html
