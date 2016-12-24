@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.2
+PORTVERSION=	0.23.3
 CATEGORIES=	security devel
-MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
+MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
