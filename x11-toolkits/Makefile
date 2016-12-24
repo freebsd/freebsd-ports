@@ -210,7 +210,7 @@
     SUBDIR += py-gtksourceview
     SUBDIR += py-gui
     SUBDIR += py-kivy
-    SUBDIR += py-kiwi
+    SUBDIR += py-kiwi-gtk
     SUBDIR += py-qt4-gui
     SUBDIR += py-qt5-gui
     SUBDIR += py-qt5-quick
