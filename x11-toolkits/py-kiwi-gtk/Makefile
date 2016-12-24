@@ -1,11 +1,10 @@
 # Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
 
-PORTNAME=	kiwi
+PORTNAME=	kiwi-gtk
 PORTVERSION=	1.9.38
-DISTVERSIONPREFIX=	gtk-
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	CHEESESHOP/source/${DISTNAME:C/(.).*/\1/}/${PORTNAME}-gtk
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -13,20 +12,21 @@ COMMENT=	Framework and a set of enhanced widgets based on PyGTK
 
 LICENSE=	LGPL21
 
-NO_ARCH=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		gettext python uniquefiles:dirs
+NO_ARCH=	yes
 USE_GNOME=	libglade2 pygtk2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+USES=		gettext python uniquefiles:dirs
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 

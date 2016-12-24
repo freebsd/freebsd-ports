@@ -48,6 +48,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${STAGEDIR}${PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}/var/log/rwhoisd ${STAGEDIR}/var/run/rwhoisd
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

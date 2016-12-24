@@ -9,7 +9,11 @@ MASTER_SITES=	LOCAL/jbeich \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Moddable fighting game engine (aka Beats of Rage)
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD3CLAUSE GPLv2+ MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv2+ =	${_LICENSE_STORE}/GPLv2 # source/gfxlib/hq2x.c
+LICENSE_FILE_MIT=	${WRKSRC}/source/webmlib/nestegg/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
@@ -21,7 +25,8 @@ MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
 		TARGET_ARCH=${ARCH:S/i386/x86/} ARCHFLAGS="" \
 		TARGET_FINAL='${TARGET}' BUILD_MMX=""
-CFLAGS+=	-fgnu89-inline
+CFLAGS+=	-fgnu89-inline ${CFLAGS_${OPSYS}}
+CFLAGS_DragonFly=	-D_GCC_MAX_ALIGN_T # system stddef.h
 LDFLAGS+=	-Wl,--as-needed # ogg, pthread, zlib
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
@@ -64,14 +69,18 @@ SVN_REV?=	${PORTVERSION:E:S/r//}
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+=	svn:devel/subversion
 
+NO_CHECKSUM=	yes
+
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r${SVN_REV} ${_MASTER_SITES_svn} ${WRKSRC}
 	(cd ${WRKDIR} && ${TAR} cJvf \
 		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		--uid 0 --gid 0 ${DISTNAME})
+. ifmake makesum
 	${REINPLACE_CMD} -i '' '/^PORTVERSION=/s/r.*/r${SVN_REV}/' \
 		${MASTERDIR}/Makefile
+. endif
 . if ${USER} == ${MAINTAINER:C/@.*//}
 	-scp ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		freefall.freebsd.org:public_distfiles/
@@ -90,7 +99,7 @@ post-patch:
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
-		-e 's/^get_revnum/VERSION_BUILD=${SVN_REV}/' \
+		-e 's/^get_revnum$$/VERSION_BUILD=${SVN_REV}/' \
 		${WRKSRC}/version.sh
 
 do-configure:

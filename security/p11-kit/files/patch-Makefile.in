@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-12-20 16:51:38 UTC
++++ Makefile.in
+@@ -4246,7 +4246,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ # Proxy module is actually same as library, so install a link
+ @OS_WIN32_FALSE@install-exec-hook:
+-@OS_WIN32_FALSE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libp11-kit.{so,dylib}` $(DESTDIR)$(libdir)/p11-kit-proxy.so
++@OS_WIN32_FALSE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libp11-kit.so` $(DESTDIR)$(libdir)/p11-kit-proxy.so
+ @OS_WIN32_FALSE@	$(MKDIR_P) $(DESTDIR)$(p11_package_config_modules)
+ 
+ @WITH_TRUST_MODULE_TRUE@asn:

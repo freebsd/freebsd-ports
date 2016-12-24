@@ -8844,3 +8844,4 @@ www/linux-c7-flashplugin24|www/linux-flashplayer|2016-12-18|Renamed to match ups
 biology/p5-bioperl|biology/p5-BioPerl|2016-12-18|Rename to match upstream naming
 biology/p5-bioperl-run|biology/p5-BioPerl-Run|2016-12-18|Rename to match upstream naming
 databases/py-swiftclient|databases/py-python-swiftclient|2016-12-18|Rename to match pypi name
+x11-toolkits/py-kiwi|x11-toolkits/py-kiwi-gtk|2016-12-24|Rename to match PyPI naming

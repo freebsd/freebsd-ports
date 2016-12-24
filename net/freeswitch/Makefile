@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.8
-PORTREVISION=	3
+PORTVERSION=	1.6.13
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
 		http://files.freeswitch.org/releases/sounds/:sounds
@@ -17,19 +16,21 @@ LICENSE=	MPL
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
+		libspeexdsp.so:audio/speexdsp \
 		libspeex.so:audio/speex \
 		libldns.so:dns/ldns \
 		libopus.so:audio/opus \
-		libsndfile.so:audio/libsndfile
+		libsndfile.so:audio/libsndfile \
+		libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png \
+		libjbig.so:graphics/jbigkit
 
 CONFLICTS_BUILD=	xmlrpc-c-*
 
-BROKEN=			unfetchable (checksum mismatch) and attempts to strip libfreeswitch.a\
-			(returns file format not recognized)
 BROKEN_FreeBSD_9=	Fails in configure due to compiler issues
 ONLY_FOR_ARCHS=	amd64
 
-USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz
+USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz iconv libedit ssl
 USE_LDCONFIG=	yes
 
 ALL_MODULES_DESC=	Build all modules
@@ -50,6 +51,7 @@ OPTIONS_DEFAULT=	8K 16K ENGLISH
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
+ALL_MODULES_CONFLICTS_BUILD+=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
 
 GNU_CONFIGURE=		yes
@@ -70,11 +72,13 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALL_MODULES}
+USE_XORG=	x11
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		${LOCALBASE}/bin/aclocal:devel/automake
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
-		libopencv_legacy.so:graphics/opencv2 \
+		libopencv_gpu.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libhiredis.so:databases/hiredis \
 		libmemcached.so:databases/libmemcached \
 		libSoundTouch.so:audio/soundtouch \
@@ -88,7 +92,6 @@ LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
 		libvlc.so:multimedia/vlc \
 		libyaml.so:textproc/libyaml
 USE_OPENLDAP=	yes
-USE_OPENSSL=	yes
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick
 .else
