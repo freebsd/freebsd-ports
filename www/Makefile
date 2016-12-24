@@ -1834,6 +1834,7 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
+    SUBDIR += py3-cssutils
     SUBDIR += py33-requests
     SUBDIR += py34-requests
     SUBDIR += py35-requests
