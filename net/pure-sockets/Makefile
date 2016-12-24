@@ -14,17 +14,22 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 USES=		pkgconfig pure
+
 PORTDOCS=	README
 PORTEXAMPLES=	*
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PLIST_FILES=	lib/pure/sockets.pure \
 		lib/pure/sockets.so
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/sockets.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
