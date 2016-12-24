@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wammu
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dl.cihar.com/wammu/v0/ \
 		http://dl.cihar.com.nyud.net/wammu/v0/
