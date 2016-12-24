@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kickassembler
-PORTVERSION=	3.36
+PORTVERSION=	3.42
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.theweb.dk/KickAssembler/
 DISTNAME=	KickAssembler${PORTVERSION}
