@@ -10,6 +10,8 @@ MASTER_SITES=	LOCAL/bsam/${PORTNAME} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
