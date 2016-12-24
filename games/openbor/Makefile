@@ -95,7 +95,7 @@ post-patch:
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
-		-e 's/^get_revnum/VERSION_BUILD=${SVN_REV}/' \
+		-e 's/^get_revnum$$/VERSION_BUILD=${SVN_REV}/' \
 		${WRKSRC}/version.sh
 
 do-configure:
