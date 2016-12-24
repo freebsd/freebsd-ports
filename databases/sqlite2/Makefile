@@ -48,6 +48,7 @@ PLIST_SUB+=	WITH_TCLWRAPPER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET=	doc
 PORTDOCS=	*
 MAKE_ARGS+=	TCLSH=${TCLSH}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
@@ -69,12 +70,6 @@ post-patch:
 		>> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_LIBS=\"-lpthread\"" \
 		>> ${WRKSRC}/freebsd.hints
-.endif
-
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===> Building docs"
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} doc)
 .endif
 
 post-install:
