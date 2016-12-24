@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2016-05-15 12:49:15 UTC
+--- src/CMakeLists.txt.orig	2016-12-22 22:14:17 UTC
 +++ src/CMakeLists.txt
-@@ -309,11 +309,6 @@ else()
- 		set(PLATFORM_LIBS -lrt ${PLATFORM_LIBS})
+@@ -344,11 +344,6 @@ else()
+ 		endif(HAVE_LIBRT)
  	endif(APPLE)
  
 -	# This way Xxf86vm is found on OpenBSD too
@@ -12,3 +12,12 @@
  	# Prefer local iconv if installed
  	find_library(ICONV_LIBRARY iconv)
  	mark_as_advanced(ICONV_LIBRARY)
+@@ -760,7 +755,7 @@ else()
+ 		set(OTHER_FLAGS "${OTHER_FLAGS} -mthreads -fexceptions")
+ 	endif()
+ 
+-	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -ffast-math -Wall -pipe -funroll-loops")
++	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
+ 	if(APPLE)
+ 		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
+ 	else()
