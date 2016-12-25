@@ -1,10 +1,11 @@
---- gap/CMakeLists.txt.orig	2016-10-22 17:13:46 UTC
+--- gap/CMakeLists.txt.orig	2016-12-23 18:20:04 UTC
 +++ gap/CMakeLists.txt
-@@ -103,7 +103,17 @@ if(UNIX)
+@@ -103,7 +103,18 @@ if(UNIX)
      option(WITH_OSS "OSS Output Support" ON)
      option(WITH_ALSA "ALSA Output Support" OFF)
    endif()
-+  option(WITH_CDDA "CDDA Support" OFF)
++  option(WITH_A52 "ATSC A/52 Stream Decoder Support" OFF)
++  option(WITH_DCA "DTS Coherent Acoustics Decoder Support" OFF)
 +  option(WITH_JACK "JACK Sound Server Support" OFF)
 +  option(WITH_FAAD "FAAD Support" OFF)
 +  option(WITH_FLAC "FLAC Support" OFF)
@@ -18,7 +19,7 @@
  endif()
  
  # Endiannes
-@@ -256,7 +266,7 @@ if(BUILD_GAP_SHARED_LIB)
+@@ -278,7 +289,7 @@ if(BUILD_GAP_SHARED_LIB)
  endif()
  
  
@@ -27,29 +28,32 @@
    LIST(APPEND PLUGIN_SOURCES plugins/ap_flac.cpp)
    LIST(APPEND LIBRARIES ${FLAC_LIBRARIES})
    set(HAVE_FLAC 1)
-@@ -268,52 +278,52 @@ if(TREMOR_FOUND AND OGG_FOUND AND WITH_T
+@@ -291,7 +302,7 @@ if(TREMOR_FOUND AND OGG_FOUND AND WITH_T
    set(HAVE_TREMOR 1)
  endif()
  
 -if(VORBIS_FOUND AND OGG_FOUND AND NOT WITH_TREMOR)
 +if(VORBIS_FOUND AND WITH_VORBIS AND OGG_FOUND AND NOT WITH_TREMOR)
    LIST(APPEND PLUGIN_SOURCES plugins/ap_vorbis.cpp)
+   LIST(APPEND PLUGIN_HEADERS plugins/ap_vorbis.h)
    LIST(APPEND LIBRARIES ${VORBIS_LIBRARIES})
-   set(HAVE_VORBIS 1)
+@@ -299,7 +310,7 @@ if(VORBIS_FOUND AND OGG_FOUND AND NOT WI
  endif()
  
  
 -if(OGG_FOUND AND (FLAC_FOUND OR OPUS_FOUND OR VORBIS_FOUND OR TREMOR_FOUND))
 +if(OGG_FOUND AND WITH_OGG AND (FLAC_FOUND OR OPUS_FOUND OR VORBIS_FOUND OR TREMOR_FOUND))
    LIST(APPEND PLUGIN_SOURCES plugins/ap_ogg.cpp plugins/ap_ogg_decoder.cpp)
+   LIST(APPEND PLUGIN_HEADERS plugins/ap_ogg_decoder.h)
    LIST(APPEND LIBRARIES ${OGG_LIBRARIES})
-   set(HAVE_OGG 1)
+@@ -307,39 +318,39 @@ if(OGG_FOUND AND (FLAC_FOUND OR OPUS_FOU
  endif()
  
  
 -if(OPUS_FOUND AND OGG_FOUND)
 +if(OPUS_FOUND AND OGG_FOUND AND WITH_OPUS)
    LIST(APPEND PLUGIN_SOURCES plugins/ap_opus.cpp)
+   LIST(APPEND PLUGIN_HEADERS plugins/ap_opus.h)
    LIST(APPEND LIBRARIES ${OPUS_LIBRARIES})
    set(HAVE_OPUS 1)
  endif()
@@ -69,18 +73,18 @@
    set(HAVE_FAAD 1)
  endif()
  
--if(CDDA_FOUND)
-+if(CDDA_FOUND AND WITH_CDDA)
-   LIST(APPEND PLUGIN_SOURCES plugins/ap_cdda.cpp)
-   LIST(APPEND LIBRARIES ${CDDA_LIBRARIES})
-   set(HAVE_CDDA 1)
+-if(DCA_FOUND)
++if(DCA_FOUND AND WITH_DCA)
+   LIST(APPEND PLUGIN_SOURCES plugins/ap_dca.cpp)
+   LIST(APPEND LIBRARIES ${DCA_LIBRARIES})
+   set(HAVE_DCA 1)
  endif()
  
--if(SMB_FOUND)
-+if(SMB_FOUND AND WITH_SMB)
-   LIST(APPEND PLUGIN_SOURCES plugins/ap_smb.cpp)
-   LIST(APPEND LIBRARIES ${SMB_LIBRARIES})
-   set(HAVE_SMB 1)
+-if(A52_FOUND)
++if(A52_FOUND AND WITH_A52)
+   LIST(APPEND PLUGIN_SOURCES plugins/ap_a52.cpp)
+   LIST(APPEND LIBRARIES ${A52_LIBRARIES})
+   set(HAVE_A52 1)
  endif()
  
 -if(SAMPLERATE_FOUND)
@@ -88,7 +92,7 @@
    LIST(APPEND LIBRARIES ${SAMPLERATE_LIBRARIES})
    set(HAVE_SAMPLERATE 1)
  endif()
-@@ -360,7 +370,7 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windo
+@@ -380,7 +391,7 @@ if(NOT WIN32)
    endif()
  
    # Pulse Output
@@ -97,7 +101,7 @@
      add_library(gap_pulse MODULE plugins/ap_pulse.cpp)
      target_link_libraries(gap_pulse ${PULSE_LIBRARIES})
      target_include_directories(gap_pulse PRIVATE ${PROJECT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/include ${FOX_INCLUDE_DIRS})
-@@ -369,7 +379,7 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windo
+@@ -389,7 +400,7 @@ if(NOT WIN32)
    endif()
  
    # Jack Output
