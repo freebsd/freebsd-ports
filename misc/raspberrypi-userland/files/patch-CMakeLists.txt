@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-10-30 UTC
++++ CMakeLists.txt
+@@ -116,7 +116,7 @@ if(PKG_CONFIG_FOUND)
+ 	foreach(PCFILE bcm_host.pc  egl.pc  glesv2.pc  vg.pc brcmegl.pc  brcmglesv2.pc  brcmvg.pc )
+ 		configure_file("pkgconfig/${PCFILE}.in" "${PCFILE}" @ONLY)
+ 		install(FILES       "${CMAKE_CURRENT_BINARY_DIR}/${PCFILE}"
+-			DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig")
++			DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+ 	endforeach()
+ endif()
+ # Remove cache entry, if one added by command line
