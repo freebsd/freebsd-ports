@@ -1,11 +1,5 @@
-Index: src/upnp.c
-===================================================================
-RCS file: /usr/home/public/iroffer/src/upnp.c,v
-retrieving revision 1.15
-retrieving revision 1.17
-diff -u -r1.15 -r1.17
---- src/upnp.c	13 Feb 2013 20:06:15 -0000	1.15
-+++ src/upnp.c	13 Oct 2015 18:30:24 -0000	1.17
+--- src/upnp.c.orig	2013-02-13 21:06:15.000000000 +0100
++++ src/upnp.c	2016-12-25 23:05:37.702936000 +0100
 @@ -60,11 +60,15 @@
  	tostdout_write();
  	memset(&urls, 0, sizeof(struct UPNPUrls));
@@ -22,3 +16,19 @@ diff -u -r1.15 -r1.17
  	if (devlist)
  	{
  		dev = devlist;
+@@ -81,11 +85,15 @@
+ 			"UPnP device : desc: %s\n st: %s",
+ 			dev->descURL, dev->st);
+ 
++#if MINIUPNPC_API_VERSION >= 16
++		descXML = miniwget(dev->descURL, &descXMLsize, 0, 0);
++#else
+ #if MINIUPNPC_API_VERSION >= 9
+ 		descXML = miniwget(dev->descURL, &descXMLsize, 0);
+ #else
+ 		descXML = miniwget(dev->descURL, &descXMLsize);
+ #endif
++#endif
+ 		if (descXML)
+ 		{
+ 			parserootdesc (descXML, descXMLsize, &data);
