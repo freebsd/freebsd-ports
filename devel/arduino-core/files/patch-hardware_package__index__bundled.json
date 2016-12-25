@@ -1,13 +1,13 @@
---- hardware/package_index_bundled.json.orig	2016-09-21 10:09:37 UTC
+--- hardware/package_index_bundled.json.orig	2016-11-22 14:49:35 UTC
 +++ hardware/package_index_bundled.json
 @@ -17,10 +17,6 @@
            "help": {
              "online": "http://www.arduino.cc/en/Reference/HomePage"
            },
--          "url": "http://downloads.arduino.cc/cores/avr-1.6.13.tar.bz2",
--          "archiveFileName": "avr-1.6.14.tar.bz2",
--          "checksum": "SHA-256:a5f7d66c83e3d4722f4c8dab42bdbcf5af98c611ffca1802ef3d1957b894bd92",
--          "size": "4993455",
+-          "url": "http://downloads.arduino.cc/cores/avr-1.6.15.tar.bz2",
+-          "archiveFileName": "avr-1.6.15.tar.bz2",
+-          "checksum": "SHA-256:c222efcabbdf6fa63ba3d64afb8d149f83fa73693c413aa05a2ccd9f986ed2fa",
+-          "size": "4993959",
            "boards": [
              {"name": "Arduino Yún"},
              {"name": "Arduino/Genuino Uno"},
@@ -42,35 +42,35 @@
 -              "checksum": "SHA-256:2426207423d58eb0e5fc4df9493418f1cb54ba3f328fdc7c3bb582f920b9cbe7",
 -              "host": "arm-linux-gnueabihf",
 -              "archiveFileName": "avrdude-6.3.0-arduino6-armhf-pc-linux-gnu.tar.bz2",
--              "url": "http://downloads.arduino.cc/tools/avrdude-6.0.1-arduino5-armhf-pc-linux-gnu.tar.bz2"
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-armhf-pc-linux-gnu.tar.bz2"
 -            },
 -            {
 -              "size": "696273",
 -              "checksum": "SHA-256:d9a039c9e92d3dbb2011e75e6c044a1a4a2789e2fbf8386b1d580994811be084",
 -              "host": "i386-apple-darwin11",
 -              "archiveFileName": "avrdude-6.3.0-arduino6-i386-apple-darwin11.tar.bz2",
--              "url": "http://downloads.arduino.cc/tools/avrdude-6.0.1-arduino5-i386-apple-darwin11.tar.bz2"
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i386-apple-darwin11.tar.bz2"
 -            },
 -            {
 -              "size": "746653",
 -              "checksum": "SHA-256:97b4875cad6110c70101bb776f3ac37b64a2e73f036cd0b10afb6f4be96a6621",
 -              "host": "x86_64-linux-gnu",
 -              "archiveFileName": "avrdude-6.3.0-arduino6-x86_64-pc-linux-gnu.tar.bz2",
--              "url": "http://downloads.arduino.cc/tools/avrdude-6.0.1-arduino5-x86_64-pc-linux-gnu.tar.bz2"
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-x86_64-pc-linux-gnu.tar.bz2"
 -            },
 -            {
 -              "size": "733127",
 -              "checksum": "SHA-256:5f4bc4b0957b1d34cec9908b7f84a7c297b894b39fe16a4992c284b24c00d6fb",
 -              "host": "i686-linux-gnu",
 -              "archiveFileName": "avrdude-6.3.0-arduino6-i686-pc-linux-gnu.tar.bz2",
--              "url": "http://downloads.arduino.cc/tools/avrdude-6.0.1-arduino5-i686-pc-linux-gnu.tar.bz2"
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i686-pc-linux-gnu.tar.bz2"
 -            },
 -            {
 -              "size": "645859",
 -              "checksum": "SHA-256:7468a1bcdfa459d175a095b102c0de28efc466accfb104305fbcad7832659ddc",
 -              "host": "i686-mingw32",
--              "archiveFileName": "avrdude-6.3.0-arduino6-i686-mingw32.zip",
--              "url": "http://downloads.arduino.cc/tools/avrdude-6.0.1-arduino5-i686-mingw32.zip"
+-              "archiveFileName": "avrdude-6.3.0-arduino6-i686-w64-mingw32.zip",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i686-w64-mingw32.zip"
 +              "host": "%%ARCH%%-freebsd%%OSREL%%"
              }
            ]

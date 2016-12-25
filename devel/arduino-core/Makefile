@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	arduino-core
-PORTVERSION=	1.6.12
-PORTREVISION=	1
+PORTVERSION=	1.6.13
 CATEGORIES=	devel
+DIST_SUBDIR=	arduino
 
 MAINTAINER=	bsdports@kyle-evans.net
 COMMENT=	Core board support for Arduino devices
@@ -19,6 +19,9 @@ STRIP=		# No stripping, uses Elf firmware
 
 OPTIONS_DEFINE=	DOCS EXAMPLES SAMD
 OPTIONS_SUB=	yes
+.if make(makesum)
+.MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
+.endif
 
 NO_BUILD=	yes
 SAMD_DESC=	Core support for SAMD boards (Zero/MKR1000)
