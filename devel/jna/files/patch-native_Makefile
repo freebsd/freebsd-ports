@@ -1,6 +1,6 @@
---- native/Makefile.orig	2014-03-06 11:06:40.000000000 -0500
-+++ native/Makefile	2014-03-12 17:29:37.000000000 -0400
-@@ -36,6 +36,8 @@
+--- native/Makefile.orig	2016-03-16 14:37:28 UTC
++++ native/Makefile
+@@ -39,6 +39,8 @@
  # protection simply by defining HAVE_PROTECTION.  This option has been only
  # been enabled for those platforms on which it has been tested successfully.
  
@@ -9,7 +9,7 @@
  OS=$(shell uname | sed -e 's/CYGWIN.*/win32/g' \
  	                -e 's/MINGW32.*/win32/g' \
                          -e 's/SunOS.*/solaris/g' \
-@@ -245,7 +247,7 @@
+@@ -270,7 +272,7 @@ endif
  ifneq (,$(findstring bsd,$(OS)))
  ARCH=$(shell uname -m | sed 's/i.86/i386/g')
  PCFLAGS+=-fPIC

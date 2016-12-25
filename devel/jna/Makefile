@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.2
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,18 +9,18 @@ COMMENT=	Java access to native shared libraries
 
 LICENSE=	LGPL21+ APACHE20
 LICENSE_COMB=	dual
-LICENSE_FOLE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL2.1
 LICENSE_FILE_APACHE20=	${WRKSRC}/ASL2.0
 
 BROKEN_FreeBSD_9_i386=	does not build
 
-USES=		gmake
+USES=		autoreconf:build gmake libtool
 USE_ANT=	yes
 USE_JAVA=	yes
 USE_XORG=	x11 xt
 MAKE_ARGS=	-DCC="${CC}" -DLD="${LD}"
-MAKE_ENV=      ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
+MAKE_ENV=	ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	twall
