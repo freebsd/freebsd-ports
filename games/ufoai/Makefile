@@ -21,6 +21,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 BUILD_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:games/ufoai-data
 
+ALL_TARGET=	all lang
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11
@@ -66,6 +67,7 @@ PLIST_SUB+=	UFO2MAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUFORADIANT}
+ALL_TARGET+=	uforadiant
 CONFIGURE_ARGS+=--enable-uforadiant
 USE_GNOME+=	gtk20 glib20 gtksourceview2 libxml2
 LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
@@ -93,12 +95,6 @@ post-extract:
 	${REINPLACE_CMD} \
 		-e 's|-falign-loops=2 -falign-jumps=2 -falign-functions=2||' \
 		${WRKSRC}/build/modes/release.mk
-.endif
-
-post-build:
-	@cd ${WRKSRC} && ${MAKE_CMD} lang
-.if ${PORT_OPTIONS:MUFORADIANT}
-	@cd ${WRKSRC} && ${MAKE_CMD} uforadiant
 .endif
 
 do-install:
