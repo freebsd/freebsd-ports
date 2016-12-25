@@ -801,6 +801,7 @@
     SUBDIR += py35-gdbm
     SUBDIR += py35-sqlite3
     SUBDIR += py36-gdbm
+    SUBDIR += py36-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pypy-gdbm
