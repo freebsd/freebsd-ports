@@ -4,7 +4,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	DrO_o
-PORTREVISION?=	18
+PORTREVISION?=	19
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
@@ -14,7 +14,8 @@ COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 USES+=		pkgconfig tar:bzip2 waf
 
 CONFIGURE_ARGS+=	--conf-prefix=${LOCALBASE} \
-		--mandir=${MANPREFIX}/man
+		--mandir=${MANPREFIX}/man \
+		--without-plugins="ofa"
 INSTALL_TARGET=	install --without-ldconfig
 
 .if !defined(XMMS2_SLAVE)
@@ -31,7 +32,7 @@ BROKEN_aarch64=		Fails to compile: error in backend: Do not know how to split th
 
 OPTIONS_DEFINE=	AIRPLAY AO APE AVCODEC CDDA CURL ET FAAD FAM FLAC \
 		GME GVFS ICES JACK MAD MDNS MMS \
-		MODPLUG MPG123 MUSEPACK OFA PULSEAUDIO SAMBA SID \
+		MODPLUG MPG123 MUSEPACK PULSEAUDIO SAMBA SID \
 		SNDFILE SPEEX TREMOR VISUAL VOCODER VORBIS WAVPACK XML
 OPTIONS_SINGLE=	MDNS
 OPTIONS_SINGLE_MDNS=	MDNS_APPLE MDNS_AVAHI
@@ -47,7 +48,6 @@ ICES_DESC=	Playback files to an icecast server
 MDNS_DESC=	Announce XMMS2d via mDNS (Choose implementation)
 MDNS_APPLE_DESC=	Use Apple mDNS implementation
 MDNS_AVAHI_DESC=	Use Avahi mDNS implementation
-OFA_DESC=	Collect MusicDNS fingerprints
 SAMBA_DESC=	Playback files via SMB
 SID_DESC=	Playback SID files
 VISUAL_DESC=	Visualization plugins support
@@ -118,9 +118,6 @@ MPG123_CONFIGURE_OFF=	--without-plugins="mpg123"
 
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 MUSEPACK_CONFIGURE_OFF=	--without-plugins="musepack"
-
-OFA_LIB_DEPENDS=	libofa.so:audio/libofa
-OFA_CONFIGURE_OFF=	--without-plugins="ofa"
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--without-plugins="pulse"
