@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.2.0
+PORTVERSION=	6.3.0
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -28,12 +28,7 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.  A PORTVERSION of
-# Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
-# for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
+GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64 arm armv6 armv6hf
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
