@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.9.7-rc
+DISTVERSION=	0.3.0.1-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
 
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
-TOR2WEB_DESC=		Faster but non-anonymous hidden services
+TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
 OPTIONS_DEFAULT=	TRANSPARENT
@@ -88,6 +88,16 @@ CONFIGURE_ARGS+=	--enable-tor2web-mode
 CONFIGURE_ARGS+=	--enable-transparent
 .else
 CONFIGURE_ARGS+=	--disable-transparent
+.endif
+
+pre-everything::
+.if ${PORT_OPTIONS:MTOR2WEB}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Warning: The expert option 'tor2web' is chosen."
+	@${ECHO_MSG} "         With this option tor cannot be used for regular traffic,"
+	@${ECHO_MSG} "         only for non-anonymous hidden service traffic."
+	@${ECHO_MSG} "         Please make sure you understand this option."
+	@${ECHO_MSG}
 .endif
 
 post-patch:
