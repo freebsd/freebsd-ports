@@ -22,6 +22,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libjansson.so:devel/jansson \
 		libldap.so:net/openldap24-client
 
+CONFLICTS=	ccnet-server-[0-9]*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
