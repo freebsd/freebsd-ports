@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Spin
 PORTVERSION=	1.2.5.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Spin 1.2.5 (xstatic packaging standard)
+COMMENT=	Spinner component (spin)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

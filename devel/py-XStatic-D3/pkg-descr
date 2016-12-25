@@ -1,3 +1,7 @@
-D3 3.5.17 (XStatic packaging standard)
+This port is the static file package for d3 JavaScript library
+that provides a Data-Driven Documents framework.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-D3

@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-roboto-fontface
 PORTVERSION=	0.5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Roboto-fontface 0.5.0 (xstatic packaging standard)
+COMMENT=	Simple package providing the Roboto fontface (roboto-fontface)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

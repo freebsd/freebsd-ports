@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Angular-Schema-Form
 PORTVERSION=	0.8.13.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Angular-schema-form 0.8.13 (xstatic packaging standard)
+COMMENT=	Forms from a JSON schema (angular-schema-form)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

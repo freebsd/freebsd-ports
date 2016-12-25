@@ -1,3 +1,7 @@
-tv4 1.2.7 (XStatic packaging standard)
+This port is the static file package for tv4 JavaScript library
+that provides a JSON Schema validator for JavaScript.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-tv4

@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Angular
 PORTVERSION=	1.5.8.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Angular 1.5.8 (xstatic packaging standard)
+COMMENT=	JavaScript MVW Framework (angular)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

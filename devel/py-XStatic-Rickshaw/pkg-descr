@@ -1,3 +1,7 @@
-Rickshaw 1.5.0 (XStatic packaging standard)
+This port is the static file package for rickshaw JavaScript library
+that provides a JavaScript toolkit for interactive time series graphs.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-Rickshaw
