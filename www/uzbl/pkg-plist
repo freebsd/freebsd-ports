@@ -1,3 +1,7 @@
+bin/uzbl-browser
+bin/uzbl-core
+bin/uzbl-event-manager
+bin/uzbl-tabbed
 %%PYTHON_SITELIBDIR%%/uzbl-201100808-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/uzbl-201100808-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/uzbl-201100808-py%%PYTHON_VER%%.egg-info/dependency_links.txt
@@ -9,6 +13,8 @@
 %%PYTHON_SITELIBDIR%%/uzbl/arguments.pyc
 %%PYTHON_SITELIBDIR%%/uzbl/core.py
 %%PYTHON_SITELIBDIR%%/uzbl/core.pyc
+%%PYTHON_SITELIBDIR%%/uzbl/daemon.py
+%%PYTHON_SITELIBDIR%%/uzbl/daemon.pyc
 %%PYTHON_SITELIBDIR%%/uzbl/event_manager.py
 %%PYTHON_SITELIBDIR%%/uzbl/event_manager.pyc
 %%PYTHON_SITELIBDIR%%/uzbl/ext.py
@@ -43,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/uzbl/plugins/progress_bar.pyc
 %%PYTHON_SITELIBDIR%%/uzbl/xdg.py
 %%PYTHON_SITELIBDIR%%/uzbl/xdg.pyc
+man/man1/uzbl-browser.1.gz
+man/man1/uzbl-core.1.gz
+man/man1/uzbl-event-manager.1.gz
 share/appdata/uzbl.appdata.xml
 share/applications/uzbl-core.desktop
 share/applications/uzbl-tabbed.desktop
@@ -50,19 +59,13 @@ share/icons/hicolor/32x32/apps/uzbl.png
 share/icons/hicolor/48x48/apps/uzbl.png
 share/icons/hicolor/64x64/apps/uzbl.png
 share/icons/hicolor/96x96/apps/uzbl.png
-share/man/man1/uzbl-browser.1.gz
-share/man/man1/uzbl-core.1.gz
-share/man/man1/uzbl-event-manager.1.gz
 %%DATADIR%%/docs/AUTHORS
 %%DATADIR%%/docs/COMMUNITY.md
 %%DATADIR%%/docs/CONTRIBUTING.md
 %%DATADIR%%/docs/FAQ.md
 %%DATADIR%%/docs/INSTALL.md
+%%DATADIR%%/docs/KEYBINDINGS.md
 %%DATADIR%%/docs/README.event-manager.md
 %%DATADIR%%/docs/README.md
 %%DATADIR%%/docs/README.scripts.md
 %%DATADIR%%/docs/config.h
-bin/uzbl-core
-bin/uzbl-browser
-bin/uzbl-event-manager
-bin/uzbl-tabbed

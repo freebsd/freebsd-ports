@@ -1,6 +1,6 @@
---- examples/data/scripts/instance-select-wmii.sh.orig	2016-03-23 07:35:11 UTC
-+++ examples/data/scripts/instance-select-wmii.sh
-@@ -40,7 +40,7 @@ case "$action" in
+--- examples/data/scripts/instance-select-wmii.sh.orig	2016-10-29 14:53:48.987875000 +0200
++++ examples/data/scripts/instance-select-wmii.sh	2016-10-29 14:54:09.084640000 +0200
+@@ -40,7 +40,7 @@
      ;;
  "prev")
      readonly current="$( wmiir read /client/sel/ctl | head -n 1 )"
