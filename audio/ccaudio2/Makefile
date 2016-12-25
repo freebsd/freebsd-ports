@@ -20,7 +20,6 @@ LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include \
-		-DCMAKE_INSTALL_MANDIR:STRING=man
+CMAKE_ARGS=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include
 
 .include <bsd.port.mk>

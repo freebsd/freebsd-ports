@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Font-Awesome
 PORTVERSION=	4.7.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Font-awesome 4.7.0 (xstatic packaging standard)
+COMMENT=	Iconic font and CSS framework (font-awesome)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

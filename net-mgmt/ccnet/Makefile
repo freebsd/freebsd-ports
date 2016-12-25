@@ -4,6 +4,7 @@ PORTNAME=	ccnet
 PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -21,6 +22,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent2 \
 		libjansson.so:devel/jansson \
 		libldap.so:net/openldap24-client
+
+CONFLICTS=	ccnet-server-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen

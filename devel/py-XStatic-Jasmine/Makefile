@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Jasmine
 PORTVERSION=	2.4.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Jasmine 2.4.1 (xstatic packaging standard)
+COMMENT=	DOM-less simple JavaScript testing framework (jasmine)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

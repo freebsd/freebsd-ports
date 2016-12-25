@@ -29,7 +29,7 @@
 # LINUX_MOD_INSTALL_PATH.
 
 PORTNAME=	linux-kernel
-PORTVERSION=	4.7.9
+PORTVERSION=	4.9
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/linux/kernel/v4.x
 DISTNAME=	linux-${DISTVERSION}
@@ -109,20 +109,21 @@ INSTALL_TARGET+=	firmware_install
 ## For menuconfig, config, etc.
 HOST_EXTRACFLAGS+=	-DCURSES_LOC='<ncurses.h>' -DKBUILD_NO_NLS=1
 HOST_LOADLIBES+=	-Wl,-rpath=${LOCALBASE}/lib
+LINUX_ARCH?=	x86
+LINUX_SUBARCH?=	x86
 LINUX_INSTALL_PATH?=	${PREFIX}/linux-kernel
 LINUX_MOD_INSTALL_PATH?=	${LINUX_INSTALL_PATH}
 ## Pretend to be Linux (for ACPI)
 KCFLAGS+=		-D_LINUX -D__linux__
 HOST_EXTRACFLAGS+=	-I${BUILD_WRKSRC}/freebsd-build-support/include
-## Make sure ${LOCALBASE}/bin is in the PATH so Linux will build in
-## Poudriere
+## Make sure ${LOCALBASE}/bin is in the PATH for Poudriere/Synth
 MAKE_ENV+=	PATH="${BUILD_WRKSRC}/freebsd-build-support/bin:${LOCALBASE}/bin:${PATH}" \
 		HOST_EXTRACFLAGS="${HOST_EXTRACFLAGS}" \
 		HOST_LOADLIBES="${HOST_LOADLIBES}" \
 		KCFLAGS="${KCFLAGS}" \
 		BASH="${LOCALBASE}/bin/bash"
-#	-j${MAKE_JOBS_NUMBER}
-MAKE_ARGS+=	ARCH="x86" \
+MAKE_ARGS+=	ARCH="${LINUX_ARCH}" \
+		SUBARCH="${LINUX_SUBARCH}" \
 		KCONFIG_CONFIG="${LINUX_KCONFIG}" \
 		INSTALL_PATH="${STAGEDIR}${LINUX_INSTALL_PATH}" \
 		INSTALL_MOD_PATH="${STAGEDIR}${LINUX_MOD_INSTALL_PATH}" \

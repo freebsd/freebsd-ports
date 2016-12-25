@@ -19,7 +19,6 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs
 
 USES=		cmake iconv
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man
 
 PLIST_FILES=	bin/innoextract \
 		man/man1/innoextract.1.gz

@@ -1,3 +1,7 @@
-jquery-ui 1.12.0 (XStatic packaging standard)
+This port is the static file package for jquery-ui JavaScript library
+that provides a JQuery library for building user interfaces.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-jquery-ui

@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-JQuery-Migrate
 PORTVERSION=	1.2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Jquery-migrate 1.2.1 (xstatic packaging standard)
+COMMENT=	JQuery migration kit (jquery-migrate)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

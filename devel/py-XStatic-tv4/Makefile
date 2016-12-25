@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-tv4
 PORTVERSION=	1.2.7.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Tv4 1.2.7 (xstatic packaging standard)
+COMMENT=	JSON Schema validator for JavaScript (tv4)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

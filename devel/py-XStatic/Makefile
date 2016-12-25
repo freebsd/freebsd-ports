@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Xstatic base package with minimal support code
+COMMENT=	Xstatic (static packages for Python)
 
 LICENSE=	MIT
 

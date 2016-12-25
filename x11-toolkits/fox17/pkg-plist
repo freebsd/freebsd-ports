@@ -126,6 +126,7 @@ include/fox-%%MAJORVER%%/FXFile.h
 include/fox-%%MAJORVER%%/FXFileAssociations.h
 include/fox-%%MAJORVER%%/FXFileDialog.h
 include/fox-%%MAJORVER%%/FXFileList.h
+include/fox-%%MAJORVER%%/FXFileProgressDialog.h
 include/fox-%%MAJORVER%%/FXFileSelector.h
 include/fox-%%MAJORVER%%/FXFileStream.h
 include/fox-%%MAJORVER%%/FXFoldingList.h
@@ -137,14 +138,8 @@ include/fox-%%MAJORVER%%/FXGIFCursor.h
 include/fox-%%MAJORVER%%/FXGIFIcon.h
 include/fox-%%MAJORVER%%/FXGIFImage.h
 include/fox-%%MAJORVER%%/FXGLCanvas.h
-include/fox-%%MAJORVER%%/FXGLCone.h
 include/fox-%%MAJORVER%%/FXGLContext.h
-include/fox-%%MAJORVER%%/FXGLCube.h
-include/fox-%%MAJORVER%%/FXGLCylinder.h
 include/fox-%%MAJORVER%%/FXGLObject.h
-include/fox-%%MAJORVER%%/FXGLShape.h
-include/fox-%%MAJORVER%%/FXGLSphere.h
-include/fox-%%MAJORVER%%/FXGLTriangleMesh.h
 include/fox-%%MAJORVER%%/FXGLViewer.h
 include/fox-%%MAJORVER%%/FXGLVisual.h
 include/fox-%%MAJORVER%%/FXGZFileStream.h
@@ -362,11 +357,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.56
+lib/libCHART-%%MAJORVER%%.so.0.0.57
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.56
+lib/libFOX-%%MAJORVER%%.so.0.0.57
 libdata/pkgconfig/fox17.pc
 man/man1/ControlPanel-17.1.gz
 %%PORTEXAMPLES%%man/man1/PathFinder-17.1.gz

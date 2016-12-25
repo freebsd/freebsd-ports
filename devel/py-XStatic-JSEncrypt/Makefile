@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-JSEncrypt
 PORTVERSION=	2.3.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Jsencrypt 2.3.1 (xstatic packaging standard)
+COMMENT=	Javascript library to perform OpenSSL RSA (jsencrypt)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

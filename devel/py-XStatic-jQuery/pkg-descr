@@ -1,3 +1,7 @@
-jQuery 1.10.2 (XStatic packaging standard)
+This port is the static file package for jquery JavaScript library
+that provides a JavaScript library for DOM operations.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-jQuery

@@ -1,3 +1,7 @@
-roboto-fontface 0.5.0 (XStatic packaging standard)
+This port is the static file package for roboto-fontface JavaScript library
+that provides a Simple package providing the Roboto fontface.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-roboto-fontface

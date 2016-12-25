@@ -1,3 +1,7 @@
-Jasmine 2.4.1 (XStatic packaging standard)
+This port is the static file package for jasmine JavaScript library
+that provides a DOM-less simple JavaScript testing framework.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-Jasmine

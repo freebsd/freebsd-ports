@@ -30,6 +30,7 @@ SHEBANG_FILES=		scripts/cgal_create_CMakeLists \
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386 && ${OSVERSION} >= 1100000
+# clang internal error
 USE_GCC=	yes
 .endif
 

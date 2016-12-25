@@ -1,0 +1,13 @@
+--- configure.orig	2016-12-07 22:04:54 UTC
++++ configure
+@@ -18010,8 +18010,8 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $with_xft" >&5
+ $as_echo "$with_xft" >&6; }
+ if test "x$with_xft" != "xno"; then
+-XFTCFLAGS="-I/usr/include/freetype2"
+-XFTLIBS="-lXft -lfontconfig -lfreetype"
++XFTCFLAGS="`freetype-config --cflags`"
++XFTLIBS="-lXft -lfontconfig `freetype-config --libs`"
+ saved_cppflags="${CXXFLAGS}"
+ CXXFLAGS="${CXXFLAGS} -DHAVE_XFT_H=1 $XFTCFLAGS"
+ X_BASE_LIBS="${X_BASE_LIBS} $XFTLIBS"
