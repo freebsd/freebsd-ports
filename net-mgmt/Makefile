@@ -28,6 +28,7 @@
     SUBDIR += cacti
     SUBDIR += cacti-spine
     SUBDIR += ccnet
+    SUBDIR += ccnet-server
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += cdpsnarf

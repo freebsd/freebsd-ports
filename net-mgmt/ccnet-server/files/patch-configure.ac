@@ -1,0 +1,78 @@
+--- configure.ac.orig	2016-10-05 10:33:03 UTC
++++ configure.ac
+@@ -52,8 +52,16 @@ else
+   AC_MSG_RESULT(no)
+ fi
+ 
++AC_MSG_CHECKING(for BSD)
++if test `uname | grep -e BSD -e DragonFly | wc -l` = "1"; then
++  bbsd=true
++  AC_MSG_RESULT(compile in BSD)
++else
++  AC_MSG_RESULT(no)
++fi
++
+ AC_MSG_CHECKING(for Linux)
+-if test "$bmac" != "true" -a "$bwin32" != "true"; then
++if test "$bmac" != "true" -a "$bwin32" != "true" -a "$bbsd" != "true"; then
+   blinux=true
+   AC_MSG_RESULT(compile in linux)
+ else
+@@ -73,6 +81,7 @@ AM_CONDITIONAL([COMPILE_PYTHON], [test "
+ AM_CONDITIONAL([WIN32], [test "$bwin32" = "true"])
+ AM_CONDITIONAL([MACOS], [test "$bmac" = "true"])
+ AM_CONDITIONAL([LINUX], [test "$blinux" = "true"])
++AM_CONDITIONAL([BSD], [test "$bbsd" = "true"])
+ 
+ 
+ # check libraries
+@@ -132,6 +141,7 @@ if test "$bwin32" = true; then
+   LIBS=
+   LIB_RESOLV=
+   LIB_UUID=-lrpcrt4
++  LIB_KVM=
+   LIB_IPHLPAPI=-liphlpapi
+   LIB_SHELL32=-lshell32
+   LIB_PSAPI=-lpsapi
+@@ -144,11 +154,25 @@ elif test "$bmac" = true ; then
+   LIB_INTL=
+   LIB_RESOLV=-lresolv
+   LIB_UUID=
++  LIB_KVM=
+   LIB_IPHLPAPI=
+   LIB_SHELL32=
+   LIB_PSAPI=
+   MSVC_CFLAGS=
+   LIB_DIRWATCH="-framework CoreServices"
++elif test "$bbsd" = true ; then
++  LIB_WS32=
++  LIB_GDI32=
++  LIB_RT=
++  LIB_INTL=
++  LIB_RESOLV=
++  LIB_UUID=-luuid
++  LIB_KVM=-lkvm
++  LIB_IPHLPAPI=
++  LIB_SHELL32=
++  LIB_PSAPI=
++  MSVC_CFLAGS=
++  LIB_DIRWATCH=
+ else
+   LIB_WS32=
+   LIB_GDI32=
+@@ -156,6 +180,7 @@ else
+   LIB_INTL=
+   LIB_RESOLV=-lresolv
+   LIB_UUID=-luuid
++  LIB_KVM=
+   LIB_IPHLPAPI=
+   LIB_SHELL32=
+   LIB_PSAPI=
+@@ -169,6 +194,7 @@ AC_SUBST(LIB_RT)
+ AC_SUBST(LIB_INTL)
+ AC_SUBST(LIB_RESOLV)
+ AC_SUBST(LIB_UUID)
++AC_SUBST(LIB_KVM)
+ AC_SUBST(LIB_IPHLPAPI)
+ AC_SUBST(LIB_SHELL32)
+ AC_SUBST(LIB_PSAPI)
