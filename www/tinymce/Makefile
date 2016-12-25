@@ -32,11 +32,11 @@ do-install:
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
-	${ECHO} "@owner www" > ${MS_PLIST}
-	${ECHO} "@group www" >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
-	${ECHO} "@owner" >> ${MS_PLIST}
-	${ECHO} "@group" >> ${MS_PLIST}
-	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
+	@${ECHO} "@owner www" > ${MS_PLIST}
+	@${ECHO} "@group www" >> ${MS_PLIST}
+	@cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	@${ECHO} "@owner" >> ${MS_PLIST}
+	@${ECHO} "@group" >> ${MS_PLIST}
+	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>

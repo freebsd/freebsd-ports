@@ -17,10 +17,11 @@ RUN_DEPENDS=	gmake:devel/gmake
 CONFLICTS_INSTALL=	npm- npm3-
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	NODE012 NODE4
+OPTIONS_SINGLE_BACKEND=	NODE NODE4 NODE6
 OPTIONS_DEFAULT=NODE4
-NODE012_DESC=	Use www/node012 as backend
+NODE_DESC=	Use www/node as backend
 NODE4_DESC=	Use www/node4 as backend
+NODE6_DESC=	Use www/node6 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
@@ -39,8 +40,9 @@ SHEBANG_FILES=	lib/utils/completion.sh \
 		scripts/release.sh \
 		scripts/relocate.sh
 
-NODE012_RUN_DEPENDS=	node012>=0.8.0:www/node012
+NODE_RUN_DEPENDS=	node>=0.8.0:www/node
 NODE4_RUN_DEPENDS=	node4>=0.8.0:www/node4
+NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
 
 .include <bsd.port.pre.mk>
 
