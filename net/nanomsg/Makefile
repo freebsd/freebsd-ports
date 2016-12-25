@@ -23,6 +23,5 @@ DOCS_DESC=			Build and/or install HTML and manpages
 
 DOCS_BUILD_DEPENDS=		asciidoctor:textproc/rubygem-asciidoctor
 DOCS_CMAKE_BOOL=		NN_ENABLE_DOC
-DOCS_CMAKE_ON=			-DCMAKE_INSTALL_MANDIR:STRING=man
 
 .include <bsd.port.mk>

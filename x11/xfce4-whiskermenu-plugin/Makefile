@@ -15,11 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limit:^1\.6\.
 
-USES=	cmake:outsource gettext localbase pkgconfig tar:bzip2 xfce
+USES=		cmake:outsource gettext localbase pkgconfig tar:bzip2 xfce
 USE_GNOME=	gtk20 cairo
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes
-
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANDIRS}
 
 .include <bsd.port.mk>
