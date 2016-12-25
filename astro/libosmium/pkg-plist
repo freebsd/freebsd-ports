@@ -187,7 +187,3 @@ include/protozero/pbf_writer.hpp
 include/protozero/types.hpp
 include/protozero/varint.hpp
 include/protozero/version.hpp
-include/utf8.h
-include/utf8/checked.h
-include/utf8/core.h
-include/utf8/unchecked.h
