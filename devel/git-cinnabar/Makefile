@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.4.0rc2-5
-DISTVERSIONSUFFIX=	-gc6e1976 # release branch
+DISTVERSION=	0.4.0rc2-8
+DISTVERSIONSUFFIX=	-gd8de697 # release branch
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
