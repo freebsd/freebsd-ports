@@ -24,7 +24,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 PORTDOCS=	CHANGES \
-		COPYING \
 		README \
 		README.per_user_whitelisting \
 		policyd-spf.conf.commented
