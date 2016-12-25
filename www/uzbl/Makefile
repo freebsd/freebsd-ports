@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uzbl
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	www
 
@@ -12,31 +12,31 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
-LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2  \
+		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	socat:net/socat \
 		dmenu:x11/dmenu \
 		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser
 
-USES=		gmake pkgconfig python:2 desktop-file-utils
-USE_GNOME=	gtk20 pygtk2
+USES=		gmake pkgconfig python:2 desktop-file-utils gettext-runtime
+USE_XORG=	x11
+USE_GNOME=	gtk20 pygtk2 cairo
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uzbl
 
-OPTIONS_DEFINE=	DOCS
+MAKE_ENV=	PYTHON=${PYTHON_VERSION} \
+		MANDIR=${STAGEDIR}${MANPREFIX}/man
 
-MAKE_ENV+=	PYTHON=${PYTHON_VERSION}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	AUTHORS DEBUGGING.md FAQ.md HACKING.md vim
-.endif
-
 PORTDATA=	examples
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
@@ -52,14 +52,7 @@ post-build:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} {} \;
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS DEBUGGING.md FAQ.md HACKING.md
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
-.endfor
-	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${STAGEDIR}${DOCSDIR})
-.endif
-	${MKDIR} ${STAGEDIR}${DATADIR}/examples/data/dforms ${STAGEDIR}${DATADIR}/examples/config
+	@${MKDIR} ${STAGEDIR}${DATADIR}/examples/data/dforms ${STAGEDIR}${DATADIR}/examples/config
 .for f in data/bookmarks \
 	data/dforms/bbs.archlinux.org \
 	config/style.css data/uzbl.png
@@ -68,9 +61,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/config/config ${STAGEDIR}${DATADIR}/examples/config/config
 	(cd ${WRKSRC}/examples/data && \
 		${COPYTREE_BIN} scripts ${STAGEDIR}${DATADIR}/examples/data/)
-.for f in uzbl-browser.1  uzbl-core.1 uzbl-event-manager.1
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/${f}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uzbl-core
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in AUTHORS DEBUGGING.md FAQ.md HACKING.md
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uzbl-core
+	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
