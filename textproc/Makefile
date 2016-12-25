@@ -1256,6 +1256,7 @@
     SUBDIR += py-guess-language
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
+    SUBDIR += py-hunspell
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-hypua2jamo
     SUBDIR += py-jaxml
@@ -1349,6 +1350,7 @@
     SUBDIR += py3-MarkupSafe
     SUBDIR += py3-asciinema
     SUBDIR += py3-chardet
+    SUBDIR += py3-hunspell
     SUBDIR += py3-libxml2
     SUBDIR += py3-pager
     SUBDIR += pychm
