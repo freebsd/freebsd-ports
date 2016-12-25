@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-ltfat
-PORTVERSION=	2.2.0
+PORTVERSION=	2.1.2
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
