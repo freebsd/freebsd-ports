@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	3.10.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	3
@@ -12,10 +13,15 @@ COMMENT=	Node package manager
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	gmake:devel/gmake \
-		node>=0.8.0:www/node
+RUN_DEPENDS=	gmake:devel/gmake
 
 CONFLICTS_INSTALL=	npm- npm2-
+
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	NODE NODE6
+OPTIONS_DEFAULT=NODE6
+NODE_DESC=	Use www/node as backend
+NODE6_DESC=	Use www/node6 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
@@ -33,6 +39,9 @@ SHEBANG_FILES=	lib/utils/completion.sh \
 		scripts/clean-old.sh \
 		scripts/release.sh \
 		scripts/relocate.sh
+
+NODE_RUN_DEPENDS=	node>=0.8.0:www/node
+NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
 
 .include <bsd.port.pre.mk>
 
