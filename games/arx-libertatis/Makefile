@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 USES=		cmake openal tar:xz
 USE_SDL=	sdl
 USE_GL=		gl glew
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx -DSTRICT_USE=ON
+CMAKE_ARGS=	-DDATA_DIR=arx \
+		-DSTRICT_USE=ON
 
 SUB_FILES=	pkg-message
 
@@ -46,7 +47,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor

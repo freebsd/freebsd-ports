@@ -16,6 +16,4 @@ USES=		cmake:outsource compiler:c++11-lib desktop-file-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	OtterBrowser
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man
-
 .include <bsd.port.mk>
