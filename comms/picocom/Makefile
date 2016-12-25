@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	picocom
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	comms
 
 MAINTAINER=	ports@FreeBSD.org

@@ -2,42 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	xcalib
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	x11 graphics
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+MASTER_SITES=	SF/openicc/xcalib/xcalib%200.9/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Program for X11 display calibration with ICC profiles
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
-USE_XORG=	x11 xext sm xxf86vm
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		tar:bz2
+USE_XORG=	sm x11 xext xrandr xxf86vm
 
 PORTDOCS=	README README.profilers
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
-CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+	    -e 's|CFLAGS =|CFLAFS ?=|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${REINPLACE_CMD} -e 's|if(i=0)|else|g' ${WRKSRC}/xcalib.c
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.icc ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.icc ${WRKSRC}/*.icm \
+	    ${STAGEDIR}${EXAMPLESDIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
