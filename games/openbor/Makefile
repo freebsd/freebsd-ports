@@ -9,11 +9,11 @@ MASTER_SITES=	LOCAL/jbeich \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Moddable fighting game engine (aka Beats of Rage)
 
-LICENSE=	BSD3CLAUSE GPLv2+ MIT
+LICENSE=	BSD3CLAUSE GPLv2+ ISCL
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2+ =	${_LICENSE_STORE}/GPLv2 # source/gfxlib/hq2x.c
-LICENSE_FILE_MIT=	${WRKSRC}/source/webmlib/nestegg/LICENSE
+LICENSE_FILE_ISCL=	${WRKSRC}/source/webmlib/nestegg/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
