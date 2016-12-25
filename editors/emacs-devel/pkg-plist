@@ -4,6 +4,7 @@ bin/emacs
 bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
+%%DBUS%%lib/systemd/user/emacs.service
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
@@ -46,6 +47,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.22
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.23
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.24
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.25
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORDERS
@@ -197,6 +199,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.desktop
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.icon
+%%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.service
 %%DATADIR%%/%%EMACS_VER%%/etc/enriched.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/README
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/forms-d2.dat
@@ -775,7 +778,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/de-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex
-%%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex.in
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-survival.tex
@@ -2089,8 +2091,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/spam-wash.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/spam.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/spam.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gs.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/gs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/help-at-pt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/help-at-pt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/help-fns.el.gz
@@ -2296,6 +2296,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-auto.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-manual.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/romanian.el.gz
@@ -2762,8 +2764,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gw.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gw.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.elc
@@ -2853,6 +2853,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.el.gz
@@ -3963,6 +3965,8 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sysstdio.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/systime.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/systty.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/systhread.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/systhread.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/syswait.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/term.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/termcap.c
@@ -3972,6 +3976,8 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/terminfo.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/termopts.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/textprop.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/undo.c
