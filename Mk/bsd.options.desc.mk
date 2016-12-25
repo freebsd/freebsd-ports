@@ -19,6 +19,7 @@ A52_DESC?=		AC-3 support via liba52
 AAC_DESC?=		AAC/MP4 format support
 AACPLUS_DESC?=		AAC support via libaacplus
 AALIB_DESC?=		AAlib graphics library support
+ACOUSTID_DESC?=		AcoustID audio fingerprinting support
 ALAC_DESC?=		Apple Lossless audio format support
 ALSA_DESC?=		ALSA audio architecture support
 AMR_DESC?=		AMR 3GPP speech codec support (opencore)
