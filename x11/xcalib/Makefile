@@ -3,6 +3,7 @@
 
 PORTNAME=	xcalib
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	x11 graphics
 MASTER_SITES=	SF/openicc/xcalib/xcalib%200.9/
 
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' -e 's|0644|0555|g'\
 	    -e 's|CFLAGS =|CFLAFS ?=|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|if(i=0)|else|g' ${WRKSRC}/xcalib.c
