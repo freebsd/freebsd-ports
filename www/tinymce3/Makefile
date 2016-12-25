@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/jscripts/tiny_mce/license.txt
 
 CONFLICTS_INSTALL=	tinymce-[0-24-9]*
 
+DEPRECATED=	Use www/tinymce instead
+EXPIRATION_DATE=2017-01-31
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
