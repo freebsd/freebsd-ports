@@ -739,6 +739,7 @@
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += specimen
+    SUBDIR += spectrogram
     SUBDIR += speex
     SUBDIR += speexdsp
     SUBDIR += spek
