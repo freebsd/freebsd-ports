@@ -4,7 +4,9 @@
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
 CATEGORIES=	mail ipv6
-MASTER_SITES=	EXIM/exim4/:exim
+MASTER_SITES=	EXIM:exim
+MASTER_SITE_SUBDIR=	/exim4/:exim \
+			/exim4/old/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim
 DIST_SUBDIR=	exim
@@ -94,7 +96,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.87
+EXIM_VERSION=	4.87.1
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
