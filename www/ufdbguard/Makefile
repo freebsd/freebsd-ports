@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.32.3
+PORTVERSION=	1.32.4
 CATEGORIES=	www
 MASTER_SITES=	SF/ufdbguard/1.32
 

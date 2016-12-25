@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	l-smash-works
-DISTVERSION=	0.0-918 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ga1a280b
+DISTVERSION=	0.0-921 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g2f9d499
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
 
-LICENSE=	MIT
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
