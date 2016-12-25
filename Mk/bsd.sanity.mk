@@ -15,8 +15,8 @@ WARNING+=	"WITH_NEW_XORG and WITHOUT_NEW_XORG knobs were removed and have no eff
 WARNING+=	"WITH_KMS was removed and has no effect"
 .endif
 
-.if exists(${.CURDIR}/../../Mk/bsd.port.mk) || exists(${.CURDIR}/../../../Mk/bsd.port.mk)
-.if ${PKGORIGIN:C/\/.*//} != ${PKGCATEGORY}
+.if exists(${.CURDIR}/../../Mk/bsd.port.mk)
+.if ${.CURDIR:H:T} != ${PKGCATEGORY}
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
 .endif
 .else

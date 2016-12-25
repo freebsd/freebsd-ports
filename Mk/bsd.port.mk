@@ -1211,7 +1211,9 @@ USE_SUBMAKE=	yes
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
 .endfor
-PKGORIGIN?=		${.CURDIR:C/${PORTSDIR}\///}
+_PORTDIRNAME=	${.CURDIR:T}
+PORTDIRNAME?=	${_PORTDIRNAME}
+PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
