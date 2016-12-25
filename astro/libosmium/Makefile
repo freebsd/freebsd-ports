@@ -4,6 +4,7 @@
 PORTNAME=	libosmium
 PORTVERSION=	2.10.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,7 +17,9 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libboost_regex.so:devel/boost-libs \
 		libgeos.so:graphics/geos \
 		libexpat.so:textproc/expat2
-BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash
+BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash \
+		${LOCALBASE}/include/utf8.h:devel/utf8cpp
+RUN_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
 
 BROKEN_FreeBSD_9=	does not build (lack of c++11 support)
 
@@ -29,8 +32,7 @@ CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF
 # if/when corresponding ports appear in the tree, these will need to
 # be turned from depends
 CMAKE_ARGS+=	-DINSTALL_GDALCPP:BOOL=ON \
-		-DINSTALL_PROTOZERO:BOOL=ON \
-		-DINSTALL_UTFCPP:BOOL=ON
+		-DINSTALL_PROTOZERO:BOOL=ON
 
 # though it builds tests, the library itself is header-only
 NO_ARCH=	yes
@@ -41,6 +43,9 @@ OPTIONS_DEFINE=	TEST DOCS
 OPTIONS_DEFAULT=	TEST
 TEST_TEST_TARGET=	test
 TEST_CMAKE_BOOL=	BUILD_TESTING
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/include/utf8*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
