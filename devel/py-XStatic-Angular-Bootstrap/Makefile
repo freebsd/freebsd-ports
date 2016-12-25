@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Angular-Bootstrap
 PORTVERSION=	0.11.0.8
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Xstatic-angular-bootstrap
+COMMENT=	Bootstrap widgets for Angular (angular-bootstrap)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm \

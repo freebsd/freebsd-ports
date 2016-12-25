@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-mdi
 PORTVERSION=	1.4.57.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Mdi 1.4.57 (xstatic packaging standard)
+COMMENT=	Material Design Webfont (mdi)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

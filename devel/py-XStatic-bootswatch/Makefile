@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-bootswatch
 PORTVERSION=	3.3.7.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Bootswatch 3.3.7 (xstatic packaging standard)
+COMMENT=	Collection of themes for Bootstrap (bootswatch)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

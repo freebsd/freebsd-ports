@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-smart-table
 PORTVERSION=	1.4.13.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Smart-table 1.4.13 (xstatic packaging standard)
+COMMENT=	Table module for angular js (angular-smart-table)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

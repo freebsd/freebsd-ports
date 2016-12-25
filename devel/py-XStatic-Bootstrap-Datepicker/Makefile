@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-Bootstrap-Datepicker
 PORTVERSION=	1.3.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Bootstrap-datepicker 1.3.1 (xstatic packaging standard)
+COMMENT=	Datepicker for Bootstrap (bootstrap-datepicker)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}

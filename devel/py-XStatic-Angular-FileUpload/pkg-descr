@@ -1,3 +1,7 @@
-Angular-FileUpload 12.0.4 (XStatic packaging standard)
+This port is the static file package for angular-file-upload JavaScript library
+that provides a Angular File Upload support for the AngularJS framework.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
 
 WWW: http://pypi.python.org/pypi/XStatic-Angular-FileUpload

@@ -3,12 +3,13 @@
 
 PORTNAME=	XStatic-JQuery.quicksearch
 PORTVERSION=	2.0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
-COMMENT=	Jquery.quicksearch 2.0.3 (xstatic packaging standard)
+COMMENT=	JQuery plugin for searching through tables (jquery-quicksearch)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XStatic>=0:devel/py-XStatic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
