@@ -8,6 +8,8 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	IPv4 network calculations and validation
 
-USES=	pear
+LICENSE=	PHP301
+
+USES=		pear
 
 .include <bsd.port.mk>
