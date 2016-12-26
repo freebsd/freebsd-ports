@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-sigchld-handler
 .endif
 
 .if ${OSVERSION} < 1000500
-USE_GCC=		4.9+
+USE_GCC=		yes
 CONFIGURE_ENV+=		zlib_LIBS='-lz ' \
 			zlib_CFLAGS=' '
 .endif
