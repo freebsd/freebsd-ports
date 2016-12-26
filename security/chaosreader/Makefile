@@ -5,19 +5,18 @@ PORTNAME=	chaosreader
 PORTVERSION=	0.94
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}${PORTVERSION} sshkeydata0.20
 EXTRACT_ONLY=
-NO_WRKSUBDIR=	yes
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to extract data from tcpdump logs
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
 
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/sshkeydata
 SHEBANG_FILES=	chaosreader sshkeydata
 

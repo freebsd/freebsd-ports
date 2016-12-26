@@ -5,10 +5,9 @@ PORTNAME=	xteddy
 PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://webstaff.itn.liu.se/~stegu/xteddy/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://webstaff.itn.liu.se/~stegu/xteddy/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cuddlesome teddy for the X desktop
 
 LICENSE=	GPLv2
