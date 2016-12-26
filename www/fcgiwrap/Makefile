@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Simple FastCGI wrapper for CGI scripts
 
 LICENSE=	MIT
