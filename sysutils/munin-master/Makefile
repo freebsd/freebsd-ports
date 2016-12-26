@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -61,6 +62,7 @@ post-install:
 	)
 	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
+	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-master.newsyslog
 
 .include <bsd.port.pre.mk>
 

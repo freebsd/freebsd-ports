@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -84,5 +85,6 @@ post-install:
 		${INSTALL_MAN} munin-node.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
 		${INSTALL_MAN} munin.8 ${STAGEDIR}${MAN8PREFIX}/man/man8; \
 	)
+	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-node.newsyslog
 
 .include <bsd.port.mk>
