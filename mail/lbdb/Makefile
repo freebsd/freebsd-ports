@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	lbdb
-PORTVERSION=	0.39
-PORTREVISION=	2
+PORTVERSION=	0.42
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Tools for use with mutt external mail address query feature
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC]/COPYING
 
 RUN_DEPENDS=	gsed:textproc/gsed
 
@@ -69,5 +71,10 @@ RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
 
 post-patch:
 	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/m_muttalias.sh.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lbdb_dotlock
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/lbdb/fetchaddr
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/lbdb/qpto8bit
 
 .include <bsd.port.mk>
