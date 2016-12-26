@@ -1,6 +1,6 @@
---- ./examples/Makefile.in.orig	2003-01-19 18:21:17.000000000 +0100
-+++ ./examples/Makefile.in	2014-07-08 00:25:16.000000000 +0200
-@@ -125,7 +125,7 @@
+--- examples/Makefile.in.orig	2003-01-19 17:21:17 UTC
++++ examples/Makefile.in
+@@ -125,7 +125,7 @@ threaded_CFLAGS = @PTHREAD_CFLAGS@
  threaded_LDFLAGS = @PTHREAD_CFLAGS@ @PTHREAD_LIBS@
  
  echo_cpp_SOURCES = $(INCLUDE_FILES) $(INCLUDEDIR)/fcgio.h echo-cpp.cpp
