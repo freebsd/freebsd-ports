@@ -8848,3 +8848,4 @@ x11-toolkits/py-kiwi|x11-toolkits/py-kiwi-gtk|2016-12-24|Rename to match PyPI na
 www/py33-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
 www/py34-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
 www/py35-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
+net-mgmt/ccnet|net-mgmt/ccnet-client|2016-12-26|Split into -client and -server parts

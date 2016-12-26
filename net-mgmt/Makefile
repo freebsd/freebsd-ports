@@ -27,7 +27,7 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
-    SUBDIR += ccnet
+    SUBDIR += ccnet-client
     SUBDIR += ccnet-server
     SUBDIR += cdpd
     SUBDIR += cdpr
