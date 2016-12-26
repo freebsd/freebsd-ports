@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.43
-PORTREVISION=	2
+PORTVERSION=	1.4.44
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -29,7 +28,10 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
 INSTALL_TARGET=	install-strip
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
+
 USE_RC_SUBR=	lighttpd
+REQUIRE=	DAEMON
 
 OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM GEOIP IPV6 KRB5 LIBEV LUA MEMCACHED \
 		MYSQL LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
@@ -65,6 +67,9 @@ KRB5_CPPFLAGS=		${GSSAPICPPFLAGS}
 KRB5_LDFLAGS=		${GSSAPILDFLAGS}
 KRB5_LIBS=		${GSSAPILIBS}
 KRB5_USES=		gssapi:mit
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		openldap=yes
+LDAP_VARS=		REQUIRE+=slapd
 LIBEV_CONFIGURE_WITH=	libev=${LOCALBASE}
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LUA_USES=		lua
@@ -72,6 +77,9 @@ LUA_CONFIGURE_WITH=	lua
 LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHED_CONFIGURE_WITH=memcached
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USES=		mysql
+MYSQL_VARS=		REQUIRE+=mysql
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl-includes=${OPENSSLINC} --with-openssl-libs=${OPENSSLLIB}
@@ -95,43 +103,16 @@ LIGHTTPD_CONF_D_FILES=	access_log.conf \
 	simple_vhost.conf ssi.conf status.conf \
 	trigger_b4_dl.conf userdir.conf webdav.conf
 
-LIGHTTPD_LOGROOT?=	/var/log/lighttpd
-LIGHTTPD_WEBROOT?=	${PREFIX}/www/data
-LIGHTTPD_USER?=		www
-LIGHTTPD_GROUP?=	www
-
-PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
-			USER="${LIGHTTPD_USER}" \
-			GROUP="${LIGHTTPD_GROUP}" \
-			MKDIR="${MKDIR}" \
-			CHOWN="${CHOWN}"
+LOGROOT=	/var/log/lighttpd
+PLIST_SUB=	LOGROOT="${LOGROOT}"
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
 .include <bsd.port.options.mk>
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
-# Default REQUIRE to rc.d script
-_REQUIRE=	DAEMON
 
-.if ${PORT_OPTIONS:MDOCS}
-DOCS=		AUTHORS COPYING INSTALL NEWS README
-PORTDOCS=	${DOCS}
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USES+=			mysql
-CONFIGURE_ARGS+=	--with-mysql
-_REQUIRE+=		mysql
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-_REQUIRE+=		slapd
-.endif
-
-SUB_LIST+=		REQUIRE="${_REQUIRE}"
+SUB_LIST=	REQUIRE="${REQUIRE}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-std=gnu99||' \
@@ -170,13 +151,11 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
-	@${MKDIR} -m 0700 ${STAGEDIR}${LIGHTTPD_LOGROOT}
+	@${MKDIR} -m 0700 ${STAGEDIR}${LOGROOT}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-. endfor
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 test: build
 	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} \
