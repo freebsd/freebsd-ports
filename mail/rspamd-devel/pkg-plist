@@ -56,6 +56,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/asn.lua
 %%DATADIR%%/lua/clickhouse.lua
 %%DATADIR%%/lua/dcc.lua
+%%DATADIR%%/lua/dkim_signing.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/dynamic_conf.lua
 %%DATADIR%%/lua/emails.lua
@@ -79,6 +80,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/ratelimit.lua
 %%DATADIR%%/lua/replies.lua
 %%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/rmilter_headers.lua
 %%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
@@ -112,8 +114,6 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/img/asc.png
 %%DATADIR%%/www/img/desc.png
 %%DATADIR%%/www/img/rspamd_logo_navbar.png
-%%DATADIR%%/www/img/spinner.gif
-%%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
 %%DATADIR%%/www/js/d3evolution.min.js
 %%DATADIR%%/www/js/d3pie.min.js
