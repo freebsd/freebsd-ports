@@ -21,6 +21,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libcurl.so:ftp/curl
 
 DEPRECATED=	MusicDNS service has been discontinued
+EXPIRATION_DATE=	2017-03-01
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tanob

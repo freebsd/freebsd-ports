@@ -11,6 +11,7 @@ MAINTAINER=	henriknj@0xmilk.org
 COMMENT=	Utility to display battery status and temperature on the root-display
 
 DEPRECATED=	Mastersite disappeared
+EXPIRATION_DATE=	2017-03-01
 
 USES=		gmake
 USE_XORG=	x11
