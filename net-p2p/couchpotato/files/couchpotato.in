@@ -42,6 +42,9 @@ couch_pre()
 	if [ ! -d ${pidfile%/*} ]; then
 		install -d -o ${couchpotato_user} ${pidfile%/*}
 	fi
+	if [ ! -d ${couchpotato_conf%/*} ]; then
+		install -d -o ${couchpotato_user} ${couchpotato_conf%/*}
+	fi
 }
 
 run_rc_command "$1"

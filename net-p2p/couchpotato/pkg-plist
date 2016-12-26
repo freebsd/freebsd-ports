@@ -1005,4 +1005,3 @@
 %%DATADIR%%/package.json
 %%DATADIR%%/requirements-dev.txt
 %%DATADIR%%/version.py
-@dir(nobody,wheel,755) %%ETCDIR%%

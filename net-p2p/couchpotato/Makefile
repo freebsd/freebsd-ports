@@ -3,6 +3,7 @@
 
 PORTNAME=	couchpotato
 PORTVERSION=	0.0.20161225
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 
 MAINTAINER=	feld@FreeBSD.org
@@ -29,7 +30,7 @@ GH_PROJECT=	CouchPotatoServer
 GH_TAGNAME=	b538f9a
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${DATADIR} ${STAGEDIR}/${ETCDIR}
+	${MKDIR} ${STAGEDIR}/${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
