@@ -47,7 +47,7 @@ PLIST_SUB=		XYDOT=${PYTHON_VER} XY=${PYTHON_SUFFIX} \
 			XYZDOT=${PYTHON_PORTVERSION} ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS TSC
+OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS
 OPTIONS_DEFAULT=	LIBFFI PYMALLOC THREADS
 OPTIONS_RADIO=		HASH
 OPTIONS_RADIO_HASH=	FNV SIPHASH
@@ -56,7 +56,6 @@ OPTIONS_SUB=		yes
 LIBFFI_DESC=		Use libffi from ports instead of bundled version
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
-TSC_DESC=		Enable processor timestamp counter profiling
 
 HASH_DESC=		Hash Algorithm (PEP-456)
 FNV_DESC=		Modified Fowler-Noll-Vo Algorithm
@@ -84,8 +83,6 @@ PYMALLOC_CONFIGURE_WITH=	pymalloc
 
 THREADS_CONFIGURE_WITH=	threads
 THREADS_LDFLAGS=	-lpthread
-
-TSC_CONFIGURE_WITH=	tsc
 
 .include "${.CURDIR}/Makefile.version"
 .include <bsd.port.options.mk>
