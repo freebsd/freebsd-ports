@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -14,12 +13,13 @@ COMMENT=	Free and open-source general-purpose video player
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	ffmpeg>=3.2.2,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mpv-player waf-project:waf
-GH_PROJECT=	waf:waf
-GH_TAGNAME=	waf-1.8.19:waf
+GH_ACCOUNT=	mpv-player
+# Keep in sync with bootstrap.py to avoid regressions
+GH_TUPLE=	waf-project:waf:waf-1.8.12:waf
 
 WAF_CMD=	${WRKSRC_waf}/waf-light
 
@@ -27,6 +27,7 @@ USES=		compiler:c11 desktop-file-utils iconv jpeg localbase:ldflags \
 		pkgconfig python:build waf
 USE_LDCONFIG=	yes
 
+CONFIGURE_ENV=	BIN_PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--mandir=${MANPREFIX}/man \
@@ -44,9 +45,8 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--disable-wayland \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 LIBGUESS LUAJIT \
-			MANPAGES UCHARDET ZSH
-OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV ENCA MANPAGES OPENGL \
+OPTIONS_DEFINE=		ASS DOCS LCMS2 LUAJIT MANPAGES UCHARDET ZSH
+OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU X11 XINERAMA YTDL ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
@@ -57,11 +57,9 @@ OPTIONS_SUB=		yes
 ASS_DESC=	ASS/SSA subtitle and OSD rendering
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
-ENCA_DESC=	Enable encoding detection support
-LIBGUESS_DESC=	Enable high-speed character set detection support
 LUAJIT_DESC=	Use LuaJIT instead of Lua scripting language support
 YTDL_DESC=	Install youtube-dl
-UCHARDET_DESC=	Use UCHARDET instead ENCA support
+UCHARDET_DESC=	Guess subtitle encoding via uchardet
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
@@ -87,9 +85,6 @@ DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
 DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_OFF=		--disable-dvdread
 
-ENCA_LIB_DEPENDS=		libenca.so:converters/enca
-ENCA_CONFIGURE_OFF=		--disable-enca
-
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CONFIGURE_OFF=		--disable-jack
 
@@ -98,9 +93,6 @@ LCMS2_CONFIGURE_OFF=		--disable-lcms2
 
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
-
-LIBGUESS_LIB_DEPENDS=		libguess.so:textproc/libguess
-LIBGUESS_CONFIGURE_OFF=		--disable-libguess
 
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=		lua
@@ -153,6 +145,7 @@ YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
+ZSH_CONFIGURE_ENV=		BIN_PERL=${PERL}
 ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 post-patch:
