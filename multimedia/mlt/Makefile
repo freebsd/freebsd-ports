@@ -21,6 +21,9 @@ CONFLICTS_INSTALL=	freeze-[0-9]*
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
+BROKEN_FreeBSD_9_i386=	does not build (filter_glsl_manager.cpp:401: error: integer constant is too large for 'long' type)
+BROKEN_sparc64=		does not compile on sparc64 (invokes i386 asm)
+
 USE_GNOME=	libxml2
 USE_SDL=	image
 USE_XORG=	x11
@@ -111,10 +114,6 @@ VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64 (invokes i386 asm)
-.endif
-
 .if ${PORT_OPTIONS:MQT[45]}
 LIB_DEPENDS+=		libexif.so:graphics/libexif
 CONFIGURE_ARGS+=	--enable-qt \
@@ -140,20 +139,20 @@ pre-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${STAGEDIR}${MANPREFIX}/man/man1/melt.1
 	@${RM} ${WRKSRC}/docs/melt.1
-.if ${PORT_OPTIONS:MDOCS}
-. for f in ${PORTDOCS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-. for f in ${PORTEXAMPLES}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
-. endfor
-.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/melt
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt.so.${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt++.so.${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mlt/*
+
+post-install-DOCS-on:
+.for f in ${PORTDOCS}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+post-install-EXAMPLES-on:
+.for f in ${PORTEXAMPLES}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .endif # ${SLAVE_PORT} == "no"
 
