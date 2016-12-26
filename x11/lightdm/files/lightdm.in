@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: lightdm
+# REQUIRE: LOGIN cleanvar moused syscons dbus
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the LightDM:
+#
+# lightdm_enable="YES"
+#
+
+. /etc/rc.subr
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+
+name="lightdm"
+rcvar=lightdm_enable
+
+load_rc_config ${name}
+
+: ${lightdm_enable:="NO"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="--pid-file=${pidfile} > /dev/null 2>&1 &"
+
+run_rc_command "$1"

@@ -2,6 +2,7 @@
 
 PORTNAME=	openbor
 PORTVERSION=	3.0.r4420
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
