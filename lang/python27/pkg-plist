@@ -1937,7 +1937,7 @@ lib/python2.7/lib-dynload/grp.so
 lib/python2.7/lib-dynload/itertools.so
 lib/python2.7/lib-dynload/math.so
 lib/python2.7/lib-dynload/mmap.so
-lib/python2.7/lib-dynload/nis.so
+%%NO_NIS%%lib/python2.7/lib-dynload/nis.so
 lib/python2.7/lib-dynload/operator.so
 lib/python2.7/lib-dynload/ossaudiodev.so
 lib/python2.7/lib-dynload/parser.so
