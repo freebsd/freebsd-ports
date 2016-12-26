@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
