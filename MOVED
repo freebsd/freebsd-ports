@@ -8845,3 +8845,6 @@ biology/p5-bioperl|biology/p5-BioPerl|2016-12-18|Rename to match upstream naming
 biology/p5-bioperl-run|biology/p5-BioPerl-Run|2016-12-18|Rename to match upstream naming
 databases/py-swiftclient|databases/py-python-swiftclient|2016-12-18|Rename to match pypi name
 x11-toolkits/py-kiwi|x11-toolkits/py-kiwi-gtk|2016-12-24|Rename to match PyPI naming
+www/py33-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
+www/py34-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
+www/py35-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests

@@ -1835,9 +1835,7 @@
     SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
     SUBDIR += py3-cssutils
-    SUBDIR += py33-requests
-    SUBDIR += py34-requests
-    SUBDIR += py35-requests
+    SUBDIR += py3-requests
     SUBDIR += pyblosxom
     SUBDIR += pycarddav
     SUBDIR += pydio
