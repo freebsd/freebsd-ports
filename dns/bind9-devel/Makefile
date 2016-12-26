@@ -30,8 +30,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2016.12.14
-HASH=		6089c8d
+ISCVERSION=	9.12.0a.2016.12.23
+HASH=		e17d2f9
 
 USES=	cpe libedit
 
