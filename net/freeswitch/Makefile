@@ -55,7 +55,10 @@ ALL_MODULES_CONFLICTS_BUILD+=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
 
 GNU_CONFIGURE=		yes
-INSTALL_TARGET=		install-strip
+# install-strip causes `make stage' to fail:
+# libtool: install: strip --strip-debug /wrkdirs/usr/ports/net/freeswitch/work/stage/usr/local/lib/libfreeswitch.a
+# strip: file format not recognized
+# INSTALL_TARGET=		install-strip
 SHEBANG_FILES=		scripts/fsxs.in
 USE_RC_SUBR=		freeswitch
 
