@@ -1,0 +1,14 @@
+bin/cadinfo
+include/opencad/cadclasses.h
+include/opencad/cadcolors.h
+include/opencad/caddictionary.h
+include/opencad/cadfile.h
+include/opencad/cadfileio.h
+include/opencad/cadgeometry.h
+include/opencad/cadheader.h
+include/opencad/cadlayer.h
+include/opencad/cadobjects.h
+include/opencad/cadtables.h
+include/opencad/opencad.h
+include/opencad/opencad_api.h
+lib/libopencadstatic.a
