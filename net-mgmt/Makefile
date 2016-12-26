@@ -306,6 +306,7 @@
     SUBDIR += sdig
     SUBDIR += seafile
     SUBDIR += seafile-gui
+    SUBDIR += seafile-server
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
