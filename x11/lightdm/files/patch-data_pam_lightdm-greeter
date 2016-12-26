@@ -1,0 +1,18 @@
+--- data/pam/lightdm-greeter.orig	2015-08-09 23:30:00 UTC
++++ data/pam/lightdm-greeter
+@@ -1,7 +1,7 @@
+ #%PAM-1.0
+ 
+ # Load environment from /etc/environment and ~/.pam_environment
+-auth      required pam_env.so
++#auth      required pam_env.so
+ 
+ # Always let the greeter start without authentication
+ auth      required pam_permit.so
+@@ -13,5 +13,4 @@ account   required pam_permit.so
+ password  required pam_deny.so
+ 
+ # Setup session
+-session   required pam_unix.so
+-session   optional pam_systemd.so
++session   required pam_permit.so

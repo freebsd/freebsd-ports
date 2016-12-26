@@ -1,0 +1,27 @@
+--- data/pam/lightdm-autologin.orig	2015-08-09 23:30:00 UTC
++++ data/pam/lightdm-autologin
+@@ -1,20 +1,19 @@
+ #%PAM-1.0
+ 
+ # Block login if they are globally disabled
+-auth      required pam_nologin.so
++account      required pam_nologin.so
+ 
+ # Load environment from /etc/environment and ~/.pam_environment
+-auth      required pam_env.so
++#auth      required pam_env.so
+ 
+ # Allow access without authentication
+ auth      required pam_permit.so
+ 
+ # Stop autologin if account requires action
+-account   required pam_unix.so
++account   required pam_unix.so        no_warn try_first_pass
+ 
+ # Can't change password
+ password  required pam_deny.so
+ 
+ # Setup session
+-session   required pam_unix.so
+-session   optional pam_systemd.so
++session   required pam_permit.so
