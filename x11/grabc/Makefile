@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://muquit.com/muquit/software/grabc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Grab a color from screen
 
 LICENSE=	GPLv2 # specified on the website
