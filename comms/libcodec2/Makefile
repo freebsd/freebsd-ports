@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
 DEPRECATED=		Duplicate port use `audio/codec2` instead
-EXPIRATATION_DATE=	2016-12-03
+EXPIRATION_DATE=	2016-12-03
 CONFLICTS=		codec2-*
 BROKEN_powerpc64=	Does not build
 
