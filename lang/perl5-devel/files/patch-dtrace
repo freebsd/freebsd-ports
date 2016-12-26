@@ -1,6 +1,6 @@
---- Configure.orig	2016-07-14 15:08:07.000000000 -0400
-+++ Configure	2016-11-24 08:13:04.507723000 -0500
-@@ -940,6 +940,7 @@
+--- Configure.orig	2016-12-26 12:49:24 UTC
++++ Configure
+@@ -949,6 +949,7 @@ lddlflags=''
  usedl=''
  doublesize=''
  dtraceobject=''
@@ -8,7 +8,7 @@
  ebcdic=''
  fflushNULL=''
  fflushall=''
-@@ -8140,10 +8141,19 @@
+@@ -8202,10 +8203,19 @@ while $test 1 ; do
  
  	if $test -f $dtrace
  	then
@@ -29,7 +29,7 @@
  			echo " "
  			echo "Good: your $dtrace knows about the -h flag."
  		else
-@@ -8157,6 +8167,17 @@
+@@ -8219,6 +8229,17 @@ while $test 1 ; do
  EOM
  			exit 1
  		fi
@@ -47,7 +47,7 @@
  		break;
  	fi
  
-@@ -20756,7 +20777,11 @@
+@@ -20971,7 +20992,11 @@ $define)
          dtraceobject=$define
          ;;
      ' '|'')
@@ -60,7 +60,7 @@
          $cat >try.c <<EOM
  #include "perldtrace.h"
  int main(void) {
-@@ -20766,14 +20791,14 @@
+@@ -20981,14 +21006,14 @@ int main(void) {
  EOM
          dtraceobject=$undef
          if $cc -c -o try.o $optimize $ccflags try.c \
@@ -77,7 +77,7 @@
  esac
  
  : Determine if this is an EBCDIC system
-@@ -24722,6 +24747,7 @@
+@@ -24954,6 +24979,7 @@ drand01='$drand01'
  drand48_r_proto='$drand48_r_proto'
  dtrace='$dtrace'
  dtraceobject='$dtraceobject'
@@ -85,9 +85,9 @@
  dynamic_ext='$dynamic_ext'
  eagain='$eagain'
  ebcdic='$ebcdic'
---- Makefile.SH.orig	2016-11-24 15:10:33.097920000 +0100
-+++ Makefile.SH	2016-11-24 15:12:04.276966000 +0100
-@@ -389,8 +389,13 @@
+--- Makefile.SH.orig	2016-12-26 12:49:24 UTC
++++ Makefile.SH
+@@ -390,8 +390,13 @@ VG_TEST  ?= ./perl -e 1 2>/dev/null
  	;;
  esac
  
@@ -102,7 +102,7 @@
  DTRACE_H = $dtrace_h
  
  DTRACE_PERLLIB_O = $dtrace_perllib_o # "dtrace -G" output for perllib_objs
-@@ -517,10 +522,53 @@
+@@ -518,10 +523,53 @@ main_only_objs = op$(OBJ_EXT)     perl$(
  miniperl_objs_nodt = $(mini_only_objs) $(common_objs) miniperlmain$(OBJ_EXT)
  perllib_objs_nodt  = $(main_only_objs) $(common_objs)
  
@@ -153,10 +153,10 @@
 +
 +$spitshell >>$Makefile <<'!NO!SUBS!'
 +
- perltoc_pod_prereqs = extra.pods pod/perl5258delta.pod pod/perlapi.pod pod/perlintern.pod pod/perlmodlib.pod pod/perluniprops.pod
+ perltoc_pod_prereqs = extra.pods pod/perl5259delta.pod pod/perlapi.pod pod/perlintern.pod pod/perlmodlib.pod pod/perluniprops.pod
  generated_pods = pod/perltoc.pod $(perltoc_pod_prereqs)
  generated_headers = uudmap.h bitcount.h mg_data.h
-@@ -859,19 +907,32 @@
+@@ -834,19 +882,32 @@ mydtrace.h: $(DTRACE_H)
  	define)
  		$spitshell >>$Makefile <<'!NO!SUBS!'
  $(DTRACE_MINI_O): perldtrace.d $(miniperl_objs_nodt)
@@ -193,7 +193,7 @@
  !NO!SUBS!
  	case "$useshrplib" in
  	true)
-@@ -972,7 +1033,7 @@
+@@ -947,7 +1008,7 @@ lib/buildcustomize.pl: $& $(miniperl_obj
  	*)
  		if test "X$hostperl" != X; then
  			$spitshell >>$Makefile <<!GROK!THIS!
@@ -202,7 +202,7 @@
  	-@rm -f miniperl.xok
  	-@rm \$(MINIPERL_EXE)
  	\$(LNS) \$(HOST_PERL) \$(MINIPERL_EXE)
-@@ -981,7 +1042,7 @@
+@@ -956,7 +1017,7 @@ lib/buildcustomize.pl: \$& \$(miniperl_o
  !GROK!THIS!
  		else
  			$spitshell >>$Makefile <<'!NO!SUBS!'
@@ -211,7 +211,7 @@
  	-@rm -f miniperl.xok
  	$(CC) $(CLDFLAGS) -o $(MINIPERL_EXE) \
  	    $(miniperl_objs) $(libs)
-@@ -994,7 +1055,7 @@
+@@ -969,7 +1030,7 @@ lib/buildcustomize.pl: $& $(miniperl_obj
  
  	$spitshell >>$Makefile <<'!NO!SUBS!'
  
@@ -220,9 +220,9 @@
  	-@rm -f miniperl.xok
  !NO!SUBS!
  
---- Porting/Glossary.orig	2016-07-14 15:06:55.000000000 -0400
-+++ Porting/Glossary	2016-11-24 08:13:04.511723000 -0500
-@@ -2949,6 +2949,11 @@
+--- Porting/Glossary.orig	2016-12-26 12:49:24 UTC
++++ Porting/Glossary
+@@ -3031,6 +3031,11 @@ dtrace (usedtrace.U):
  dtraceobject (dtraceobject.U):
  	Whether we need to build an object file with the dtrace tool.
  
@@ -234,9 +234,9 @@
  dynamic_ext (Extensions.U):
  	This variable holds a list of XS extension files we want to
  	link dynamically into the package.  It is used by Makefile.
---- ext/XS-APItest/Makefile.PL.orig	2016-07-14 15:08:07.000000000 -0400
-+++ ext/XS-APItest/Makefile.PL	2016-11-24 08:13:04.512100000 -0500
-@@ -58,7 +58,8 @@
+--- ext/XS-APItest/Makefile.PL.orig	2016-12-26 12:49:24 UTC
++++ ext/XS-APItest/Makefile.PL
+@@ -59,7 +59,8 @@ sub MY::postamble
  DTRACE_D = ../../perldtrace.d
  
  dtrace\$(OBJ_EXT): \$(DTRACE_D) core\$(OBJ_EXT)
@@ -246,9 +246,9 @@
  POSTAMBLE
  
      return $post;
---- hints/freebsd.sh.orig	2016-07-14 15:07:39.000000000 -0400
-+++ hints/freebsd.sh	2016-11-24 08:13:04.512583000 -0500
-@@ -105,6 +105,15 @@
+--- hints/freebsd.sh.orig	2016-12-26 12:49:24 UTC
++++ hints/freebsd.sh
+@@ -105,6 +105,15 @@ case "$osvers" in
  	;;
  esac
  
