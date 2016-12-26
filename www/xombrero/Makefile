@@ -6,7 +6,7 @@ PORTVERSION=	1.6.4
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LICENSE=	ISCL
