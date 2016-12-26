@@ -4191,6 +4191,7 @@
     SUBDIR += py-dexml
     SUBDIR += py-dialog
     SUBDIR += py-diazo
+    SUBDIR += py-dill
     SUBDIR += py-dirspec
     SUBDIR += py-distorm
     SUBDIR += py-django-rq
