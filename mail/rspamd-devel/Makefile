@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.0.a1.26122016
+PORTVERSION=	1.5.0.a2.20161226
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -22,9 +22,10 @@ CONFLICTS_INSTALL=	rspamd
 RSPAMD_VERSION=	1.5.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	50a4c6d
+GH_TAGNAME=	0d4c60d
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD
+OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
@@ -42,7 +43,6 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DMANDIR=${MANPREFIX}/man \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DBUILD_PORT=yes \
-		-DFORCE_GMIME24=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DNO_SHARED=ON \
 		-DDEBUG=ON \
@@ -60,7 +60,7 @@ WITH_DEBUG=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGPERF}
+.if ${PORT_OPTIONS:MGD}
  CMAKE_ARGS+=	-DENABLE_GD=ON
  LIB_DEPENDS+=	libgd.so:graphics/gd
 .else
