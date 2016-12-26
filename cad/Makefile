@@ -49,6 +49,7 @@
     SUBDIR += layouteditor
     SUBDIR += ldraw
     SUBDIR += leocad
+    SUBDIR += libopencad
     SUBDIR += librecad
     SUBDIR += linux-eagle5
     SUBDIR += linuxcnc-devel
