@@ -13,9 +13,9 @@
 -	ldflagsStr += " -X github.com/minio/minio/cmd.ReleaseTag=" + releaseTag(version)
 -	ldflagsStr += " -X github.com/minio/minio/cmd.CommitID=" + commitID()
 -	ldflagsStr += " -X github.com/minio/minio/cmd.ShortCommitID=" + commitID()[:12]
-+	ldflagsStr = "-X github.com/minio/minio/cmd.Version=2016-10-24T21:23:47Z"
-+	ldflagsStr += " -X github.com/minio/minio/cmd.ReleaseTag=RELEASE.2016-10-24T21-23-47Z"
-+        ldflagsStr += " -X github.com/minio/minio/cmd.CommitID=048af5e5cdc1344e83231c09079828a3d289e6df"
++	ldflagsStr = "-X github.com/minio/minio/cmd.Version=2016-11-26T02:23:47Z"
++	ldflagsStr += " -X github.com/minio/minio/cmd.ReleaseTag=RELEASE.2016-12-13T17-19-42Z"
++        ldflagsStr += " -X github.com/minio/minio/cmd.CommitID=29d72b84c07f9555f83a6485fe8291e18d23811b"
  	ldflagsStr += " -X github.com/minio/minio/cmd.GOPATH=" + os.Getenv("GOPATH")
  	return ldflagsStr
  }
@@ -24,5 +24,5 @@
  
  func main() {
 -	fmt.Println(genLDFlags(time.Now().UTC().Format(time.RFC3339)))
-+	fmt.Println(genLDFlags("2016-10-24T21:23:47Z"))
++	fmt.Println(genLDFlags("2016-12-13T17-19-42Z"))
  }
