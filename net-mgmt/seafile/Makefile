@@ -2,6 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	6.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
@@ -25,6 +26,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3 \
 		bash:shells/bash
+
+CONFLICTS=	seafile-server-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
