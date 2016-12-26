@@ -52,15 +52,6 @@ create_crontab_entries() {
     fi
 }
 
-newsyslog() {
-    if ! fgrep -q '/var/log/munin/*' /etc/newsyslog.conf
-    then
-        cat >> /etc/newsyslog.conf <<EOT
-/var/log/munin/*.log munin:munin	644  7	   *	@T00  GNWZ
-EOT
-    fi
-}
-
 move_www_dir() {
     if [ -d ${PKG_PREFIX}/www/data/munin -a ! -d ${PKG_PREFIX}/www/munin ]
     then
@@ -79,7 +70,6 @@ case $2 in
     POST-INSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]
 	then
-	    newsyslog
 	    create_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN' <<EOT
 #BEGIN_MUNIN_MAIN
 MAILTO=root
