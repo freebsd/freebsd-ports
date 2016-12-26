@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -47,6 +47,7 @@ CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
 		-DENABLE_GR_CTRLPORT="YES" \
+		-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}"
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
@@ -76,7 +77,7 @@ TESTING_DESC=	Include testing support
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			${LOCALBASE}/bin/sphinx-apidoc:textproc/py-sphinx \
+			sphinx-apidoc:textproc/py-sphinx \
 			dot:graphics/graphviz \
 			xmlto:textproc/xmlto \
 			freefont-ttf>0:x11-fonts/freefont-ttf
