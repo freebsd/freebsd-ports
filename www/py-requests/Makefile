@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.1:devel/py-pytest
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS_INSTALL=	py*-requests1-*
