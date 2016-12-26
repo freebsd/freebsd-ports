@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/libs/graphics/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Type 1 font rasterization library for Unix/X11
 
 LICENSE=	LGPL20
