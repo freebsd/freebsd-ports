@@ -110,7 +110,7 @@ _ypldap:*:160:160::0:0:YP Ldap unprivileged user:/var/empty:/usr/sbin/nologin
 solr:*:161:161::0:0:Apache Solr System:/var/db/solr:/usr/sbin/nologin
 octoprint:*:162:162::0:0:OctoPrint Daemon:/usr/local/octoprint:/usr/sbin/nologin
 _iked:*:163:163::0:0:IKEv2 Daemon:/var/empty:/usr/sbin/nologin
-# free: 164
+lightdm:*:164:164::0:0:Light Display Manager:/var/lib/lightdm-data:/usr/sbin/nologin
 # free: 165
 # free: 166
 # free: 167
