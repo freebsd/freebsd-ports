@@ -70,13 +70,13 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 PGSQL_DEFAULT?=		9.3
 # Possible values: 5.6, 7.0
 PHP_DEFAULT?=		5.6
-# Possible values: 2.7, 3.3, 3.4, 3.5
+# Possible values: 2.7, 3.3, 3.4, 3.5, 3.6
 PYTHON_DEFAULT?=	2.7
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
-# Possible values: 3.3, 3.4, 3.5
+# Possible values: 3.3, 3.4, 3.5, 3.6
 PYTHON3_DEFAULT?=	3.5
-# Possible values: 2.0, 2.1, 2.2, 2.3
+# Possible values: 2.1, 2.2, 2.3
 RUBY_DEFAULT?=		2.2
 # Possible values: base, openssl, openssl-devel, libressl, libressl-devel
 .if !defined(SSL_DEFAULT)
@@ -127,7 +127,7 @@ check-makevars::
 # Make sure we have a default in the end
 SSL_DEFAULT?=	base
 .endif
-# Possible values: 8.4, 8.5, 8.6
+# Possible values: 8.4, 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
 
 # Possible values: 4, 5
