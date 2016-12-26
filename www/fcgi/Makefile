@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 PKGNAMESUFFIX=	-devkit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	FastCGI Development Kit
 
 LICENSE=	Open_Market_FastCGI_license
