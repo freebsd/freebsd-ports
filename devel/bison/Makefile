@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=--disable-yacc
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 USE_PERL5=	build
 USES=		charsetfix makeinfo perl5 tar:xz
 
