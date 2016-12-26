@@ -13,6 +13,7 @@
     SUBDIR += bnbt
     SUBDIR += btpd
     SUBDIR += btsync
+    SUBDIR += couchpotato
     SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs
