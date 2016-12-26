@@ -1,13 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/Callback_function_notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/DomainKeys_notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Note_for_SMTP_debugging.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/changelog.md
-%%PORTDOCS%%%%DOCSDIR%%/extending.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/generatedocs.sh
-%%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DKIM.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/code_generator.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentsutf8.html
@@ -26,6 +17,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shCore.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shLegacy.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/send_file_upload.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/send_multiple_file_upload.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/signed-mail.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp.phps
