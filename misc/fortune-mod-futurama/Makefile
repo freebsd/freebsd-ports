@@ -5,10 +5,9 @@ PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2
 PORTREVISION=	4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.netmeister.org/apps/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://www.netmeister.org/apps/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
 USES=		tar:bzip2

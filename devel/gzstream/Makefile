@@ -7,10 +7,12 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides zlib functionality in an iostream
 
 LICENSE=	LGPL21
+
+BROKEN=		unfetchable (apparently abandoned upstream)
 
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

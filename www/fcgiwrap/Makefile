@@ -6,12 +6,14 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple FastCGI wrapper for CGI scripts
 
 LICENSE=	MIT
 
 LIB_DEPENDS=	libfcgi.so:www/fcgi
+
+BROKEN=		unfetchable
 
 USES=		autoreconf gmake pkgconfig
 

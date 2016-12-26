@@ -5,11 +5,10 @@ PORTNAME=	fcgi
 PORTVERSION=	2.4.0
 PORTREVISION=	5
 CATEGORIES=	www
-MASTER_SITES=	http://www.fastcgi.com/dist/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://www.fastcgi.com/dist/
 PKGNAMESUFFIX=	-devkit
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FastCGI Development Kit
 
 LICENSE=	Open_Market_FastCGI_license
