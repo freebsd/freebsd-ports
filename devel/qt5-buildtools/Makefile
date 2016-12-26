@@ -21,12 +21,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MORE_WRKSRCS=	src/tools/moc \
 		src/tools/rcc
 
-post-configure:
-.for d in ${MORE_WRKSRCS}
-	@cd ${WRKSRC}/${d} && \
-		${SETENV} ${QMAKE_ENV} ${WRKSRC}/bin/qmake ${QMAKE_ARGS}
-.endfor
-
 post-build:
 .for d in ${MORE_WRKSRCS}
 	@cd ${WRKSRC}/${d} && \

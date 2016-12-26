@@ -29,10 +29,6 @@ post-patch:
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl.cpp \
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl_symbols.cpp
 
-post-configure:
-	@cd ${WRKSRC}/src/plugins/bearer/generic && \
-		${SETENV} ${QMAKE_ENV} ${WRKSRC}/bin/qmake ${QMAKE_ARGS}
-
 post-build:
 	@cd ${WRKSRC}/src/plugins/bearer/generic && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \

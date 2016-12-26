@@ -24,12 +24,6 @@ TOOLS=		qdbuscpp2xml qdbusxml2cpp
 QT_DEFINES=	DBUS
 QT_CONFIG=	dbus
 
-post-configure:
-.for t in ${TOOLS}
-	@cd ${WRKSRC}/src/tools/${t} && \
-		${SETENV} ${QMAKE_ENV} ${WRKSRC}/bin/qmake ${QMAKE_ARGS}
-.endfor
-
 post-build:
 .for t in ${TOOLS}
 	@cd ${WRKSRC}/src/tools/${t} && \
