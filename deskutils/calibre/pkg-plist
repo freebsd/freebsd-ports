@@ -1115,6 +1115,7 @@ lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
 lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/config_ui.py
 lib/calibre/calibre/gui2/viewer/documentview.py
+lib/calibre/calibre/gui2/viewer/fake_net.py
 lib/calibre/calibre/gui2/viewer/flip.py
 lib/calibre/calibre/gui2/viewer/footnote.py
 lib/calibre/calibre/gui2/viewer/gestures.py
