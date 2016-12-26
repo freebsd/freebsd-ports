@@ -15,7 +15,7 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 		libsearpc.so:devel/libsearpc \
 		libseafile.so:net-mgmt/seafile \
 		libsqlite3.so:databases/sqlite3 \
-		libccnet.so:net-mgmt/ccnet \
+		libccnet.so:net-mgmt/ccnet-client \
 		libjansson.so:devel/jansson \
 		libevent.so:devel/libevent2 \
 		libuuid.so:misc/e2fsprogs-libuuid
