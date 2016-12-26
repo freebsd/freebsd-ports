@@ -6,7 +6,7 @@ include/mpv/qthelper.hpp
 include/mpv/stream_cb.h
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.23.0
+lib/libmpv.so.1.24.0
 libdata/pkgconfig/mpv.pc
 %%MANPAGES%%man/man1/mpv.1.gz
 share/applications/mpv.desktop
