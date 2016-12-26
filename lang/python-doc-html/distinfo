@@ -1,3 +1,4 @@
+TIMESTAMP = 1482713786
 SHA256 (python/python-2.7.11-docs-html.tar.bz2) = 806917ebf99d5b572831583070e44db341405634d5cfdd795ef1e608c05221e8
 SIZE (python/python-2.7.11-docs-html.tar.bz2) = 4575554
 SHA256 (python/python-2.7.11-docs-pdf-a4.tar.bz2) = 1e47a79d5860ade96526ff7b340d1a1402886428c7e5ef809cc4a4d5f53dcbb3
@@ -30,3 +31,11 @@ SHA256 (python/python-2.7.12-docs-pdf-letter.tar.bz2) = c501cd12eb666b3dab32dd4e
 SIZE (python/python-2.7.12-docs-pdf-letter.tar.bz2) = 10741538
 SHA256 (python/python-2.7.12-docs-text.tar.bz2) = 83a39db742ccae75c2660ea816a5c71ceffb8ad67238a7cbbb31d992725e87ea
 SIZE (python/python-2.7.12-docs-text.tar.bz2) = 1610618
+SHA256 (python/python-2.7.13-docs-html.tar.bz2) = af2b5e474a5cbb950447f531137b136b98ea3bb68fbf4b1061011db29c0d9977
+SIZE (python/python-2.7.13-docs-html.tar.bz2) = 4607137
+SHA256 (python/python-2.7.13-docs-pdf-a4.tar.bz2) = 759e08e0aa3b84008d2ec20b6161e2d8a59a36b572807afe0caca9ddaf16b904
+SIZE (python/python-2.7.13-docs-pdf-a4.tar.bz2) = 10751844
+SHA256 (python/python-2.7.13-docs-pdf-letter.tar.bz2) = 30e7d3718d97f700fc62ad978a05ab952fdc6deb9bd78d166a774a250413335f
+SIZE (python/python-2.7.13-docs-pdf-letter.tar.bz2) = 10807986
+SHA256 (python/python-2.7.13-docs-text.tar.bz2) = bb6df243043bf705aa1d753cdbe73958bf1ef9c0f797c4445b230e56c9775198
+SIZE (python/python-2.7.13-docs-text.tar.bz2) = 1612293
