@@ -1,4 +1,4 @@
---- grc/scripts/gnuradio-companion.orig	2016-10-02 20:26:15 UTC
+--- grc/scripts/gnuradio-companion.orig	2015-12-27 18:10:58 UTC
 +++ grc/scripts/gnuradio-companion
 @@ -23,6 +23,9 @@ import sys
  import optparse
