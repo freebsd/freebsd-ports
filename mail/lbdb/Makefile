@@ -3,7 +3,7 @@
 
 PORTNAME=	lbdb
 PORTVERSION=	0.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -25,11 +25,19 @@ CONFIGURE_ARGS=	--enable-lbdb-dotlock \
 MAKE_ARGS=	install_prefix=${STAGEDIR}
 USES=		gmake perl5
 
-.include <bsd.port.options.mk>
-
 .if exists (/usr/bin/getent)
-WITH_GETENT=	yes
+PLIST_SUB+=	GETENT=""
+.else
+PLIST_SUB+=	GETENT="@comment "
 .endif
+
+.if exists (/usr/bin/ypcat)
+PLIST_SUB+=	YPCAT=""
+.else
+PLIST_SUB+=	YPCAT="@comment "
+.endif
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPG}
 BUILD_DEPENDS+=	gpg:security/gnupg
@@ -53,12 +61,6 @@ RUN_DEPENDS+=	evolution:mail/evolution
 PLIST_SUB+=	EVOLUTION=""
 .else
 PLIST_SUB+=	EVOLUTION="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGETENT}
-PLIST_SUB+=	GETENT=""
-.else
-PLIST_SUB+=	GETENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
