@@ -8849,3 +8849,4 @@ www/py33-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-reque
 www/py34-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
 www/py35-requests|www/py3-requests|2016-12-26|No need for 4 versions of py-requests
 net-mgmt/ccnet|net-mgmt/ccnet-client|2016-12-26|Split into -client and -server parts
+net-mgmt/seafile|net-mgmt/seafile-client|2016-12-26|Split into -client and -server parts

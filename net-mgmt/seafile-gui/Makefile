@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 		libsearpc.so:devel/libsearpc \
-		libseafile.so:net-mgmt/seafile \
+		libseafile.so:net-mgmt/seafile-client \
 		libsqlite3.so:databases/sqlite3 \
 		libccnet.so:net-mgmt/ccnet-client \
 		libjansson.so:devel/jansson \

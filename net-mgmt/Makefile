@@ -304,7 +304,7 @@
     SUBDIR += sblim-wbemcli
     SUBDIR += scli
     SUBDIR += sdig
-    SUBDIR += seafile
+    SUBDIR += seafile-client
     SUBDIR += seafile-gui
     SUBDIR += seafile-server
     SUBDIR += send
