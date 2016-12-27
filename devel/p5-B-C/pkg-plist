@@ -9,7 +9,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cc_runtime.h
 %%SITE_ARCH%%/B/Bytecode.pm
 %%SITE_ARCH%%/B/Bytecode56.pm
 %%SITE_ARCH%%/B/C.pm
-%%SITE_ARCH%%/B/C/Flags.pm
+%%SITE_ARCH%%/B/C/Config.pm
 %%SITE_ARCH%%/B/CC.pm
 %%SITE_ARCH%%/B/Disassembler.pm
 %%SITE_ARCH%%/B/Stackobj.pm
@@ -21,6 +21,9 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cc_runtime.h
 %%SITE_ARCH%%/auto/B/C/C.so
 %%SITE_ARCH%%/auto/B/Stash/Stash.so
 %%SITE_ARCH%%/auto/ByteLoader/ByteLoader.so
+%%PERL5_MAN1%%/assemble.1.gz
+%%PERL5_MAN1%%/disassemble.1.gz
+%%PERL5_MAN1%%/perlcc.1.gz
 %%PERL5_MAN3%%/B::Asmdata.3.gz
 %%PERL5_MAN3%%/B::Assembler.3.gz
 %%PERL5_MAN3%%/B::Bblock.3.gz
@@ -35,6 +38,3 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cc_runtime.h
 %%PERL5_MAN3%%/B::perloptree.3.gz
 %%PERL5_MAN3%%/BcVersions.3.gz
 %%PERL5_MAN3%%/ByteLoader.3.gz
-%%PERL5_MAN1%%/assemble.1.gz
-%%PERL5_MAN1%%/disassemble.1.gz
-%%PERL5_MAN1%%/perlcc.1.gz
