@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/n-history2.png
 %%DATADIR%%/.config/znt/n-aliases.conf
@@ -27,5 +28,6 @@
 %%DATADIR%%/znt-cd-widget
 %%DATADIR%%/znt-history-widget
 %%DATADIR%%/znt-kill-widget
+%%DATADIR%%/znt-tmux.zsh
 %%DATADIR%%/znt-usetty-wrapper
 %%DATADIR%%/zsh-navigation-tools.plugin.zsh
