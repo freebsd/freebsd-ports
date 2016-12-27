@@ -17,6 +17,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
 
+DEPRECATED=	Use rubygem-algebra instead
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} *.html *.rd ${STAGEDIR}${RUBY_MODDOCDIR}/
