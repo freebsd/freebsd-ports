@@ -50,7 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml \
 USE_GITHUB=	yes
 GH_ACCOUNT=	andresriancho
 
-USES=		gettext python tar:bzip2 shebangfix
+USES=		gettext python shebangfix
 SHEBANG_FILES=	tools/*
 NO_BUILD=	yes
 
@@ -63,8 +63,6 @@ GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>0:graphics/py-pygraphviz \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=1.1.8:www/py-webkitgtk
 
 GUI_USE=	GNOME=pygtk2
-
-.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
@@ -82,15 +80,15 @@ do-install:
 	@(cd ${WRKSRC}/${f}/ && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/${f})
 .endfor
-.if ${PORT_OPTIONS:MGUI}
+
+do-install-GUI-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/w3af_gui \
 		${STAGEDIR}${PREFIX}/bin/w3af_gui
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for d in CHANGELOG CONTRIBUTORS GPL INSTALL README TODO
-	@${INSTALL_DATA} ${WRKSRC}/doc/${d} ${STAGEDIR}${DOCSDIR}
+.for d in CHANGELOG CONTRIBUTORS INSTALL README TODO
+	${INSTALL_DATA} ${WRKSRC}/doc/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
