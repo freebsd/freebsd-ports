@@ -3,7 +3,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -45,7 +45,7 @@ USES=		tar:xz cmake desktop-file-utils execinfo \
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS
-OPTIONS_DEFAULT=GTK2 QT4
+OPTIONS_DEFAULT=GTK2 GTK3 QT4
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Enable Gtk2 IM module
