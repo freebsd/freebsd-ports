@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
 
-LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USE_GITHUB=	yes
@@ -30,7 +30,7 @@ WAND_DESC=		ImageMagick image processing support
 
 OPTIONS_DEFAULT=	GTK2 PIXBUF
 
-USES=		gettext-runtime gmake pkgconfig tar:bzip2
+USES=		gettext-runtime gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2
 HAS_CONFIGURE=	yes

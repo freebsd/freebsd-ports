@@ -11,6 +11,7 @@ MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Jq shared extension for php
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjq.so:textproc/jq
 
@@ -19,7 +20,7 @@ GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-jq
 
 IGNORE_WITH_PHP=	70
-USES=		php:ext tar:tgz
+USES=		php:ext
 
 JQ_CMD=		${LOCALBASE}/bin/jq
 

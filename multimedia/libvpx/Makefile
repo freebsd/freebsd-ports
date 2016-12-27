@@ -18,7 +18,7 @@ BUILD_DEPENDS=	yasm:devel/yasm
 USE_GITHUB=	yes
 GH_ACCOUNT=	webmproject
 
-USES=		compiler:c11 cpe gmake perl5 shebangfix tar:bzip2
+USES=		compiler:c11 cpe gmake perl5 shebangfix
 CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build

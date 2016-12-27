@@ -15,8 +15,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh 
 		jailme:sysutils/jailme
 
 WRKSRC_SUBDIR=	src-sh/warden
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_GITHUB=	yes

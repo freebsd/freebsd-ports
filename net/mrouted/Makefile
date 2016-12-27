@@ -12,7 +12,6 @@ COMMENT=	Multicast routing daemon providing DVMRP for IPv4
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2
 USE_GITHUB=	yes
 USE_RC_SUBR=	mrouted
 GH_ACCOUNT=	troglobit

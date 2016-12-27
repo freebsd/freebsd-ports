@@ -22,7 +22,7 @@ SSLEAY_RUN_DEPENDS=	p5-Net-SSLeay>0:security/p5-Net-SSLeay
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		perl5 shebangfix tar:bzip2
+USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	nikto.pl
 WRKSRC_SUBDIR=	program
