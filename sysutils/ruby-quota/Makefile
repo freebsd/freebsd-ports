@@ -22,6 +22,9 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README README.html
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
