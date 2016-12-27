@@ -26,7 +26,7 @@ RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
-USES=		gettext-runtime gmake perl5 shebangfix tar:tgz
+USES=		gettext-runtime gmake perl5 shebangfix
 EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		Bin/dbish \

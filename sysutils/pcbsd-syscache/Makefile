@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src-sh/syscache
 USE_QT5=	core network buildtools qmake
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 NO_BUILD=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 

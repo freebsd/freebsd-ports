@@ -13,7 +13,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		autoreconf gettext gmake gnome libtool pkgconfig tar:xz
+USES=		autoreconf gettext gmake gnome libtool pkgconfig
 USE_GNOME=	glib20 intltool
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
