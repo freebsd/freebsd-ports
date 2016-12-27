@@ -8,6 +8,8 @@ CATEGORIES=	misc
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in PCI devices
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD3CLAUSE GPLv2+
 LICENSE_COMB=	dual
 
