@@ -25,6 +25,9 @@ SHEBANG_FILES=	${EXAMPLES}
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 # We don't have executables in this package, but rake uses
 # INSTALL_PROG for shared libraries:
 MAKE_ARGS=	INSTALL_PROG="${INSTALL_LIB}"
