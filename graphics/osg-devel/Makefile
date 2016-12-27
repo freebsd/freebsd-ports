@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.3.9
-PORTREVISION=	2
+PORTVERSION=	3.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,167 +28,121 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=123 \
+		OSG_SHLIBVER=141 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
 PORTSCOUT=	limitw:1,odd
 
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA INVENTOR \
-		JASPER LIBLAS LUA NVTT OPENEXR PDF QT4 SDL \
+		JASPER LIBLAS LUA NVTT OPENEXR PDF SDL \
 		SVG VNC XINE XRANDR
-OPTIONS_DEFAULT=FREETYPE GIF FFMPEG XRANDR
+OPTIONS_RADIO=	QT
+OPTIONS_RADIO_QT=QT4 QT5
+OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR
 
-LIBLAS_DESC=	liblas support
 GDAL_DESC=	GDAL support
-INVENTOR_DESC=	SGI OpenInventor support
 GTA_DESC=	GTA file format support
-VNC_DESC=	LibVNCServer support
-SDL_DESC=	Use SDL (joystick support in present3d)
+INVENTOR_DESC=	SGI OpenInventor support
+LIBLAS_DESC=	liblas support
 NVTT_DESC=	Use NVidia texture tools
-LUA_DESC=	Lua script engine support
+QT_DESC=	QT toolkit support (optional)
+SDL_DESC=	Use SDL (joystick support in present3d)
+VNC_DESC=	LibVNCServer support
 
 OPTIONS_SUB=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-LIBLAS_LIB_DEPENDS=	liblas.so:devel/liblas
-FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
-GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
-GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-GSTREAMER_USE=		GNOME=glib20 GSTREAMER1=yes
-INVENTOR_LIB_DEPENDS=	libInventor.so:graphics/inventor
-JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
-XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
-GTA_LIB_DEPENDS=	libgta.so:devel/libgta
-VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+CURL_VARS=		FORCE_REQUIRE+=CURL
+CURL_VARS_OFF=		FORCE_IGNORE+=CURL
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FFMPEG_BROKEN=		does not build with ffmpeg 3.x
-SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
-PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
-SDL_USE=		SDL=sdl
+FFMPEG_VARS=		FORCE_REQUIRE+=FFmpeg
+FFMPEG_VARS_OFF=	FORCE_IGNORE+=FFmpeg
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
+FREETYPE_VARS=		FORCE_REQUIRE+=Freetype
+FREETYPE_VARS_OFF=	FORCE_IGNORE+=Freetype
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
+GDAL_VARS=		FORCE_REQUIRE+=GDAL
+GDAL_VARS_OFF=		FORCE_IGNORE+=GDAL
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
+GIF_VARS=		FORCE_REQUIRE+=GIFLIB
+GIF_VARS_OFF=		FORCE_IGNORE+=GIFLIB
+GSTREAMER_USE=		GNOME=glib20 GSTREAMER1=yes
+GSTREAMER_VARS=		FORCE_REQUIRE+=GStreamer
+GSTREAMER_VARS_OFF=	FORCE_IGNORE+=GStreamer
+GSTREAMER_BROKEN=	fails when linking gstreamer plugin, with error cannot find -lgstreamer-1.0
+GTA_LIB_DEPENDS=	libgta.so:devel/libgta
+GTA_VARS=		FORCE_REQUIRE+=GTA
+GTA_VARS_OFF=		FORCE_IGNORE+=GTA
+INVENTOR_LIB_DEPENDS=	libInventor.so:graphics/inventor
+INVENTOR_VARS=		FORCE_REQUIRE+=Inventor
+INVENTOR_VARS_OFF=	FORCE_IGNORE+=Inventor
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
+JASPER_VARS=		FORCE_REQUIRE+=Jasper
+JASPER_VARS_OFF=	FORCE_IGNORE+=Jasper
+LIBLAS_LIB_DEPENDS=	liblas.so:devel/liblas
+LIBLAS_VARS=		FORCE_REQUIRE+=LIBLAS
+LIBLAS_VARS_OFF=	FORCE_IGNORE+=LIBLAS
+LUA_USES=		lua:52
+LUA_CMAKE_ON=		-DOSG_USE_LOCAL_LUA_SOURCE:BOOL=OFF
+LUA_VARS=		FORCE_IGNORE+=Lua51 FORCE_REQUIRE+=Lua52
+LUA_VARS_OFF=		FORCE_IGNORE+="Lua51 Lua52"
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
+NVTT_VARS=		FORCE_REQUIRE+=NVTT
+NVTT_VARS_OFF=		FORCE_IGNORE+=NVTT
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
+OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
+PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+PDF_USE=		gnome=cairo
+PDF_VARS=		FORCE_REQUIRE+=Poppler-glib
+PDF_VARS_OFF=		FORCE_IGNORE+=Poppler-glib
+QT4_USE=		qt4=corelib,gui,moc_build,opengl,qmake_build,rcc_build,uic_build
+QT4_CMAKE_ON=		-DDESIRED_QT_VERSION=4
+QT4_VARS=		FORCE_REQUIRE+=Qt4
+QT4_VARS_OFF=		FORCE_IGNORE+=Qt4
+QT5_USE=		qt5=buildtools_build,core,gui,opengl,qmake_build,webkit
+QT5_CMAKE_ON=		-DDESIRED_QT_VERSION=5
+QT5_VARS=		FORCE_REQUIRE+="Qt5Widgets Qt5WebKitWidgets"
+QT5_VARS_OFF=		FORCE_IGNORE+="Qt5Widgets Qt5WebKitWidgets"
+SDL_USE=		sdl=sdl
+SDL_VARS=		FORCE_REQUIRE+=SDL
+SDL_VARS_OFF=		FORCE_IGNORE+=SDL
+SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+SVG_USE=		gnome=cairo
+SVG_VARS=		FORCE_REQUIRE+=RSVG
+SVG_VARS_OFF=		FORCE_IGNORE+=RSVG
+VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
+VNC_VARS=		FORCE_REQUIRE+=LibVNCServer
+VNC_VARS_OFF=		FORCE_IGNORE+=LibVNCServer
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
+XINE_VARS=		FORCE_REQUIRE+=Xine
+XINE_VARS_OFF=		FORCE_IGNORE+=Xine
 XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
-QT4_CMAKE_ON=		-DOSG_USE_QT=ON
-QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
-LUA_USES=		lua:52
+XRANDR_USE=		xorg=xrandr
+
+# GUI toolkits are only needed for building examples, which are not even installed
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 wxWidgets OpenAL GtkGl SDL2	# only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX		# not in ports
+FORCE_IGNORE+=	OpenVRML					# ports version too old
+FORCE_IGNORE+=	ITK						# ports version doesn't build on 10.x
+FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB		# common & lightweight
 
 .include <bsd.port.options.mk>
 
-# GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt5Widgets wxWidgets OpenAL GtkGl SDL2 # only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
-FORCE_IGNORE+=	OpenVRML                                     # ports version too old
-FORCE_IGNORE+=	ITK                                          # ports version doesn't build on 10.x
-FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100000
+# workaround for make (?) problem leading to cflags
+# lost in osgjs
+USES+=			gmake
+.endif
 
-# options that affect FIND_PACKAGE
-.if ${PORT_OPTIONS:MCURL}
-FORCE_REQUIRE+=	CURL
+.if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5}
+CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=ON
+PLIST_SUB+=		QT=""
 .else
-FORCE_IGNORE+=	CURL
-.endif
-
-.if ${PORT_OPTIONS:MFREETYPE}
-FORCE_REQUIRE+=	FreeType
-.else
-FORCE_IGNORE+=	FreeType
-.endif
-
-.if ${PORT_OPTIONS:MGDAL}
-FORCE_REQUIRE+=	GDAL
-.else
-FORCE_IGNORE+=	GDAL
-.endif
-
-.if ${PORT_OPTIONS:MGIF}
-FORCE_REQUIRE+=	GIFLIB
-.else
-FORCE_IGNORE+=	GIFLIB
-.endif
-
-.if ${PORT_OPTIONS:MINVENTOR}
-FORCE_REQUIRE+=	Inventor
-.else
-FORCE_IGNORE+=	Inventor
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-FORCE_REQUIRE+=	Jasper
-.else
-FORCE_IGNORE+=	Jasper
-.endif
-
-.if ${PORT_OPTIONS:MXINE}
-FORCE_REQUIRE+=	Xine
-.else
-FORCE_IGNORE+=	Xine
-.endif
-
-.if ${PORT_OPTIONS:MGTA}
-FORCE_REQUIRE+=	GTA
-.else
-FORCE_IGNORE+=	GTA
-.endif
-
-.if ${PORT_OPTIONS:MVNC}
-FORCE_REQUIRE+=	LibVNCServer
-.else
-FORCE_IGNORE+=	LibVNCServer
-.endif
-
-.if ${PORT_OPTIONS:MOPENEXR}
-FORCE_REQUIRE+=	OpenEXR
-.else
-FORCE_IGNORE+=	OpenEXR
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-FORCE_REQUIRE+=	FFmpeg
-.else
-FORCE_IGNORE+=	FFmpeg
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-FORCE_REQUIRE+=	SDL
-.else
-FORCE_IGNORE+=	SDL
-.endif
-
-.if ${PORT_OPTIONS:MNVTT}
-FORCE_REQUIRE+=	NVTT
-.else
-FORCE_IGNORE+=	NVTT
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-FORCE_REQUIRE+=	Lua51
-.else
-FORCE_IGNORE+=	Lua51
-.endif
-
-# options that affect PKG_CHECK_MODULES
-.if ${PORT_OPTIONS:MSVG}
-FORCE_REQUIRE+=	RSVG
-.else
-FORCE_IGNORE+=	RSVG
-.endif
-
-.if ${PORT_OPTIONS:MPDF}
-FORCE_REQUIRE+=	Poppler-glib
-.else
-FORCE_IGNORE+=	Poppler-glib
-.endif
-
-.if ${PORT_OPTIONS:MSVG} || ${PORT_OPTIONS:MPDF}
-USE_GNOME=	cairo
-.endif
-
-# other options
-.if ${PORT_OPTIONS:MXRANDR}
-USE_XORG+=	xrandr
+CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=OFF
+PLIST_SUB+=		QT="@comment "
 .endif
 
 post-patch:
