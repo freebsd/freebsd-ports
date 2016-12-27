@@ -1,4 +1,4 @@
---- configure.in.orig	2015-09-05 17:02:03 UTC
+--- configure.in.orig	2016-12-02 11:36:06 UTC
 +++ configure.in
 @@ -111,7 +111,7 @@ fi
  
@@ -18,7 +18,15 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -830,8 +830,14 @@ AC_DEFINE_UNQUOTED(HTTPD_ROOT, "${ap_pre
+@@ -597,7 +597,6 @@ AC_ARG_ENABLE(maintainer-mode,APACHE_HEL
+     if test "$GCC" = "yes"; then
+       APR_ADDTO(CFLAGS,[-Wall -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wpointer-arith])
+       APACHE_ADD_GCC_CFLAG([-std=c89])
+-      APACHE_ADD_GCC_CFLAG([-Werror])
+       APACHE_ADD_GCC_CFLAG([-Wdeclaration-after-statement])
+       APACHE_ADD_GCC_CFLAG([-Wformat])
+       APACHE_ADD_GCC_CFLAG([-Wformat-security])
+@@ -838,8 +837,14 @@ AC_DEFINE_UNQUOTED(HTTPD_ROOT, "${ap_pre
  	[Root directory of the Apache install area])
  AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
  	[Location of the config file, relative to the Apache root directory])
