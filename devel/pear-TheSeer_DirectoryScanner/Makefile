@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.netpirates.net/get/
 PKGNAMEPREFIX=	pear-TheSeer_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Recursive directory scanner and filter
 
 LICENSE=	BSD2CLAUSE

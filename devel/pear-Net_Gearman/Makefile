@@ -6,7 +6,7 @@ PORTVERSION=	0.2.3
 PORTREVISION=	3
 CATEGORIES=	devel pear
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Gearman client libraray for PHP
 
 LICENSE=	BSD2CLAUSE

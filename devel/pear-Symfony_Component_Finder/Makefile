@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.symfony.com/get/
 PKGNAMEPREFIX=	pear-Symfony_Component_
 DIST_SUBDIR=	Symfony2
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Symfony2 Finder Component
 
 LICENSE=	MIT

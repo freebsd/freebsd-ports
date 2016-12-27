@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://components.ez.no/get/
 PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Base package that all ezc components packages rely on
 
 LICENSE=	BSD3CLAUSE
