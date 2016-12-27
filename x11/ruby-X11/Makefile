@@ -19,6 +19,9 @@ NO_BUILD=	yes
 DOCS=		ChangeLog Documentation Overview TODO
 EXAMPLES=	tests/*
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:

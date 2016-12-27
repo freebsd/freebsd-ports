@@ -187,6 +187,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/fileutils.rb
 %%RUBY_LIBDIR%%/find.rb
 %%RUBY_LIBDIR%%/forwardable.rb
+%%RUBY_LIBDIR%%/forwardable/impl.rb
 %%RUBY_LIBDIR%%/getoptlong.rb
 %%RUBY_LIBDIR%%/io/console/size.rb
 %%RUBY_LIBDIR%%/ipaddr.rb
@@ -291,6 +292,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/optparse.rb
 %%RUBY_LIBDIR%%/optparse/ac.rb
 %%RUBY_LIBDIR%%/optparse/date.rb
+%%RUBY_LIBDIR%%/optparse/kwargs.rb
 %%RUBY_LIBDIR%%/optparse/shellwords.rb
 %%RUBY_LIBDIR%%/optparse/time.rb
 %%RUBY_LIBDIR%%/optparse/uri.rb
@@ -436,6 +438,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rdoc/known_classes.rb
 %%RUBY_LIBDIR%%/rdoc/markdown.rb
 %%RUBY_LIBDIR%%/rdoc/markdown/entities.rb
+%%RUBY_LIBDIR%%/rdoc/markdown/literals.rb
 %%RUBY_LIBDIR%%/rdoc/markup.rb
 %%RUBY_LIBDIR%%/rdoc/markup/attr_changer.rb
 %%RUBY_LIBDIR%%/rdoc/markup/attr_span.rb
@@ -734,7 +737,18 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/resolver/lock_specification.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/resolution_state.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/specification_provider.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/action.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_edge_no_circular.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_vertex.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/delete_edge.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/detach_vertex_named.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/log.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/set_payload.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/tag.rb
+%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/vertex.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/errors.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/gem_metadata.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/modules/specification_provider.rb
@@ -768,6 +782,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 %%RUBY_LIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
@@ -17578,23 +17595,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-precedence_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-refinements_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/unknown/cdesc-unknown.ri
-%%RUBY_LIBDIR%%/forwardable/impl.rb
-%%RUBY_LIBDIR%%/optparse/kwargs.rb
-%%RUBY_LIBDIR%%/rdoc/markdown/literals.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/resolution_state.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/specification_provider.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/action.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_edge_no_circular.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_vertex.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/delete_edge.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/detach_vertex_named.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/log.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/set_payload.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/tag.rb
-%%RUBY_LIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/vertex.rb
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 @dir %%RUBY_LIBDIR%%/racc/rdoc
 @dir %%RUBY_SITEARCHLIBDIR%%
 @dir %%RUBY_VENDORARCHLIBDIR%%

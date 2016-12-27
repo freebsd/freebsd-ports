@@ -18,6 +18,9 @@ NO_BUILD=	yes
 
 DOCS=		CHANGELOG README TODO
 
+DEPRECATED=	Use rubygem-aspectr instead
+EXPIRATION_DATE=	2017-01-28
+
 .include <bsd.port.options.mk>
 
 do-install:

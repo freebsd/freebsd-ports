@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tin
-PORTVERSION=	2.3.4
-PORTREVISION?=	4 # keep for chinese/tin
+PORTVERSION=	2.4.1
+PORTREVISION?=	0 # keep for chinese/tin
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -20,6 +20,8 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 
 MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libuu.so:converters/uulib \
 		libicuuc.so:devel/icu \

@@ -28,6 +28,9 @@ EXAMPLES=	erica.* ricaco.rb rica-example.rb
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 .include <bsd.port.options.mk>
 
 do-install:

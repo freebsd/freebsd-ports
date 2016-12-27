@@ -16,10 +16,9 @@ RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		gmake iconv libtool pkgconfig tar:bzip2 python sqlite readline
+USES=		gmake iconv libtool localbase pkgconfig tar:bzip2 python \
+		sqlite readline
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
 		--enable-aimodules --enable-shared \
 		--enable-fcdb=sqlite3
