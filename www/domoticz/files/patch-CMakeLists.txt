@@ -1,57 +1,33 @@
---- CMakeLists.txt.orig	2015-12-17 18:30:44.000000000 +0100
-+++ CMakeLists.txt	2015-12-22 17:37:43.246216000 +0100
-@@ -10,7 +10,7 @@
-     DEFINITION LUA_LIBRARIES)
- ELSE(USE_BUILTIN_LUA)
-   find_package(PkgConfig)
--  pkg_check_modules(LUA lua>=5.2)
-+  pkg_check_modules(LUA lua-5.2)
-   IF(LUA_FOUND)
-     INCLUDE_DIRECTORIES(${LUA_INCLUDE_DIRS})
-     add_definitions(-DWITH_EXTERNAL_LUA)
-@@ -132,23 +132,24 @@
+--- CMakeLists.txt.orig	2016-11-10 15:44:33 UTC
++++ CMakeLists.txt
+@@ -163,7 +163,7 @@ MACRO(ADD_PRECOMPILED_HEADER _targetName
    ENDIF(CMAKE_COMPILER_IS_GNUCXX)
  ENDMACRO()
  
 -FIND_PROGRAM(GIT_EXECUTABLE git
--  DOC "git command line client")
-+#FIND_PROGRAM(GIT_EXECUTABLE git
-+#  DOC "git command line client")
++FIND_PROGRAM(GIT_EXECUTABLE NOgitNO
+   DOC "git command line client")
  
--MACRO(Gitversion_GET_REVISION dir variable)
--  EXECUTE_PROCESS(COMMAND ${GIT_EXECUTABLE} rev-list HEAD --count
--    OUTPUT_VARIABLE ${variable}
--    OUTPUT_STRIP_TRAILING_WHITESPACE)
--ENDMACRO(Gitversion_GET_REVISION)
--
--Gitversion_GET_REVISION(. ProjectRevision)
--MATH(EXPR ProjectRevision "${ProjectRevision}+2107")
--MESSAGE(STATUS "Compiling Revision #${ProjectRevision}")
-+#MACRO(Gitversion_GET_REVISION dir variable)
-+#  EXECUTE_PROCESS(COMMAND ${GIT_EXECUTABLE} rev-list HEAD --count
-+#    OUTPUT_VARIABLE ${variable}
-+#    OUTPUT_STRIP_TRAILING_WHITESPACE)
-+#ENDMACRO(Gitversion_GET_REVISION)
-+
-+#Gitversion_GET_REVISION(. ProjectRevision)
-+#MATH(EXPR ProjectRevision "${ProjectRevision}+2107")
-+#MESSAGE(STATUS "Compiling Revision #${ProjectRevision}")
-+MESSAGE(STATUS "Compiling Revision #XXXDOMOTICZXXX")
+ MACRO(Gitversion_GET_REVISION dir variable)
+@@ -653,14 +653,13 @@ IF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_D
+   set(CMAKE_INSTALL_PREFIX "/opt/${CPACK_PACKAGE_NAME}" CACHE PATH "Install path prefix, prepended onto install directories." FORCE)
+ ENDIF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
  
- # The version number.
- set (domoticz_VERSION_MAJOR 3)
- set (domoticz_VERSION_MINOR 0)
--set (domoticz_VERSION_PATCH ${ProjectRevision})
-+set (domoticz_VERSION_PATCH XXXDOMOTICZXXX)
+-install(TARGETS domoticz DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/www DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/License.txt DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/History.txt DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/server_cert.pem DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/scripts DESTINATION ${CMAKE_INSTALL_PREFIX} USE_SOURCE_PERMISSIONS)
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Config DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/updatedomo DESTINATION ${CMAKE_INSTALL_PREFIX} PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ)
++install(TARGETS domoticz DESTINATION "XXXPREFIXXXX")
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/www DESTINATION "XXXPREFIXXXX")
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/License.txt DESTINATION "XXXPREFIXXXX")
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/History.txt DESTINATION "XXXPREFIXXXX")
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/server_cert.pem DESTINATION "XXXPREFIXXXX")
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/scripts DESTINATION "XXXPREFIXXXX" USE_SOURCE_PERMISSIONS)
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Config DESTINATION "XXXPREFIXXXX")
  
- include_directories(${CMAKE_SOURCE_DIR}/main) 
+ INCLUDE(TestBigEndian)
  
-@@ -482,7 +483,7 @@
- IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-   target_link_libraries(domoticz ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
- else()
--  target_link_libraries(domoticz -lrt ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
-+  target_link_libraries(domoticz -lrt ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} -LXXXPREFIXXX/lib pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
- ENDIF()
- 
- ADD_PRECOMPILED_HEADER(domoticz "main/stdafx.h")
