@@ -16,9 +16,7 @@ _USES_POST+=	pear
 IGNORE+=	USES=pear takes not arguments
 .endif
 
-MASTER_SITES?=	http://pear.php.net/get/ \
-		http://us.pear.php.net/get/ \
-		http://de.pear.php.net/get/
+MASTER_SITES?=	http://pear.php.net/get/
 
 EXTRACT_SUFX?=	.tgz
 DIST_SUBDIR?=	PEAR
