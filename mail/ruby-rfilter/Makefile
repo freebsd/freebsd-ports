@@ -22,6 +22,9 @@ DOCS=		NEWS README THANKS TODO doc
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-extract:
 	${FIND} ${WRKSRC} -name '*~' -delete
 
