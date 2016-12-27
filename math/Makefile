@@ -631,6 +631,7 @@
     SUBDIR += py-theano
     SUBDIR += py-ufl
     SUBDIR += py-viper
+    SUBDIR += py-yt
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
