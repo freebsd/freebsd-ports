@@ -3,7 +3,7 @@
 
 PORTNAME=	rhodecode
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode \
 		${PYTHON_PKGNAMEPREFIX}webhelpers>=1.3:www/py-webhelpers \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.7.3:textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7.10:databases/py-sqlalchemy07 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.7.10:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}whoosh>=2.4.0:textproc/py-whoosh \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel \
