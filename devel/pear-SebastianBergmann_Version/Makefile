@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Managing the version number of Git-hosted PHP projects
 
 LICENSE=	BSD3CLAUSE

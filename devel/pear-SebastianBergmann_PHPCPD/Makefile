@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 DISTNAME=	phpcpd-${PORTVERSION}
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
 LICENSE=	BSD3CLAUSE

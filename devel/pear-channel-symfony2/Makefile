@@ -6,7 +6,7 @@ PORTVERSION=	20110826
 PORTREVISION=	2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.symfony.com

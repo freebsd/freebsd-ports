@@ -9,7 +9,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR regression testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE

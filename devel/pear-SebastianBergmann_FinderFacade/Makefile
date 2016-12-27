@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Convenience wrapper for Symfony's Finder component
 
 LICENSE=	BSD3CLAUSE
