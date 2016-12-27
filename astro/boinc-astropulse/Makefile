@@ -31,25 +31,12 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-OPTIONS_DEFINE=	X11
-X11_DESC=	Build screensaver (requires net/boinc-client with X11)
-
-OPTIONS_SUB=	yes
-
-X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:net/boinc-client
-X11_USES=		jpeg
-X11_USE=		GL=gl,glu,glut \
-			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
-X11_CONFIGURE_ENABLE=	graphics
-
-X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:net/boinc-client
-
 SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
-CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
+CONFIGURE_ENV=	BOINCDIR="${NONEXISTENT}" \
 		BOINC_DIR="${NONEXISTENT}" \
 		SETI_BOINC_DIR="${SETI_WORK}"
-CONFIGURE_ARGS+=	--disable-static-client \
-			--with-boinc-platform=${ARCH}-portbld-freebsd
+CONFIGURE_ARGS=	--disable-static-client \
+		--with-boinc-platform=${ARCH}-portbld-freebsd
 
 SETI_SITE=	setiathome.berkeley.edu
 AP_BINARY=	astropulse-${PORTVERSION:S/.0/./}.${ARCH}-portbld-freebsd
@@ -61,19 +48,30 @@ SUB_LIST=	AP_BINARY=${AP_BINARY} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
-PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
+PLIST_SUB=	AP_BINARY=${AP_BINARY} \
 		SETI_SITE=${SETI_SITE} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 
+OPTIONS_DEFINE=	X11
+OPTIONS_SUB=	yes
+
+X11_DESC=		Build screensaver (requires net/boinc-client with X11)
+X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:net/boinc-client
+X11_USES=		jpeg
+X11_USE=		GL=gl,glu,glut \
+			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
+X11_CONFIGURE_ENABLE=	graphics
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:net/boinc-client
+
 do-install:
-	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
-	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
+	@${MKDIR} ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} ${WRKSRC}/${AP_BINARY} \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
+		${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
+
 do-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/ap_graphics \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
+		${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 
 .include <bsd.port.mk>
