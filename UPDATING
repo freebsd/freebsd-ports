@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161227:
+  AFFECTS: users of security/openvpn, security/openvpn-polarssl
+  AUTHOR: Matthias Andree <mandree@FreeBSD.org>
+
+  The OpenVPN ports have been updated to the new upstream release v2.4,
+  and their predecessors preserved as openvpn23 and openvpn23-polarssl,
+  respectively.  Note that for the new v2.4 release, the
+  openvpn-polarssl port has been renamed to openvpn-mbedtls to match the
+  upstream library's new name.
+
 20161218:
   AFFECTS: users of www/nghttp2
   AUTHOR: sunpoet@FreeBSD.org
