@@ -1,0 +1,145 @@
+#!/bin/sh
+#
+# openvpn.sh - load tun/tap driver and start OpenVPN daemon
+#
+# (C) Copyright 2005 - 2008, 2010 by Matthias Andree
+# based on suggestions by Matthias Grimm and Dirk Gouders
+# with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
+# and Vasil Dimov
+# softrestart feature suggested by Nick Hibma
+#
+# $FreeBSD$
+# 
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+# details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+# PROVIDE: openvpn
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# -----------------------------------------------------------------------------
+#
+# This script supports running multiple instances of openvpn.
+# To run additional instances link this script to something like
+# % ln -s openvpn openvpn_foo
+# and define additional openvpn_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/openvpn_foo
+#
+# Below NAME should be substituted with the name of this script. By default
+# it is openvpn, so read as openvpn_enable. If you linked the script to
+# openvpn_foo, then read as openvpn_foo_enable etc.
+#
+# The following variables are supported (defaults are shown).
+# You can place them in any of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
+#
+# NAME_enable="NO"	# set to YES to enable openvpn
+# NAME_if=		# driver(s) to load, set to "tun", "tap" or "tun tap"
+#			# it is OK to specify the if_ prefix.
+#
+# # optional:
+# NAME_flags=				# additional command line arguments
+# NAME_configfile="%%PREFIX%%/etc/openvpn/NAME.conf"	# --config file
+# NAME_dir="%%PREFIX%%/etc/openvpn"	# --cd directory
+#
+# You also need to set NAME_configfile and NAME_dir, if the configuration
+# file and directory where keys and certificates reside differ from the above
+# settings.
+#
+# Note that we deliberately refrain from unloading drivers.
+#
+# For further documentation, please see openvpn(8).
+#
+
+. /etc/rc.subr
+
+# service(8) does not create an authentic environment, try to guess,
+# and as of 10.3-RELEASE-p0, it will not find the indented name=
+# assignments below. So give it a default.
+# Trailing semicolon also for service(8)'s benefit:
+name="$file" ;
+
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name="$_file"
+	;;
+*/service)
+	# do not use this as $0
+	;;
+*)
+	name="$0"
+	;;
+esac
+
+# default name to "openvpn" if guessing failed
+# Trailing semicolon also for service(8)'s benefit:
+name="${name:-openvpn}" ;
+name="${name##*/}"
+rcvar=${name}_enable
+
+stop_postcmd()
+{
+	rm -f "$pidfile" || warn "Could not remove $pidfile."
+}
+
+softrestart()
+{
+    sig_reload=USR1 run_rc_command reload
+    exit $?
+}
+
+openvpn_stats()
+{
+	sig_reload=USR2
+	run_rc_command ${rc_prefix}reload $rc_extra_args
+}
+
+# reload: support SIGHUP to reparse configuration file
+# softrestart: support SIGUSR1 to reconnect without superuser privileges
+# stats: support SIGUSR2 to write statistics to the syslog
+extra_commands="reload softrestart stats"
+softrestart_cmd="softrestart"
+stats_cmd="openvpn_stats"
+
+# pidfile
+pidfile="/var/run/${name}.pid"
+
+# command and arguments
+command="%%PREFIX%%/sbin/openvpn"
+
+# run this last
+stop_postcmd="stop_postcmd"
+
+load_rc_config ${name}
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_configfile:=\"%%PREFIX%%/etc/openvpn/${name}.conf\"}"
+eval ": \${${name}_dir:=\"%%PREFIX%%/etc/openvpn\"}"
+
+configfile="$(eval echo \${${name}_configfile})"
+dir="$(eval echo \${${name}_dir})"
+interfaces="$(eval echo \${${name}_if})"
+
+required_modules=
+for i in $interfaces ; do
+    required_modules="$required_modules${required_modules:+" "}if_${i#if_}"
+done
+
+required_files=${configfile}
+
+command_args="--cd ${dir} --daemon ${name} --config ${configfile} --writepid ${pidfile}"
+
+run_rc_command "$1"

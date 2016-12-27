@@ -1,0 +1,11 @@
+--- configure.orig	2016-08-23 14:19:07 UTC
++++ configure
+@@ -17160,8 +17160,6 @@ fi
+ $as_echo "!! WARNING !! The cmoka git submodule has not been initialized or updated.  Unit testing cannot be performed." >&6; }
+    fi
+ else
+-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: !! WARNING !! CMake is NOT available.  Unit testing cannot be performed." >&5
+-$as_echo "!! WARNING !! CMake is NOT available.  Unit testing cannot be performed." >&6; }
+     if false; then
+   CMOCKA_INITIALIZED_TRUE=
+   CMOCKA_INITIALIZED_FALSE='#'
