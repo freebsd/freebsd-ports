@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.17.0
+PORTVERSION=	1.18.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	www net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,6 +12,7 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK SPDY
@@ -40,17 +40,18 @@ PORTEXAMPLES=	*
 
 USE_GITHUB=	yes
 
-APP_BUILD_DEPENDS=	libev>=4.11:devel/libev
+APP_BUILD_DEPENDS=	c-ares>=1.7.5:dns/c-ares \
+			libev>=4.11:devel/libev
 APP_CONFIGURE_ENABLE=	app
 APP_CONFIGURE_OFF=	--without-libxml2
-APP_LIB_DEPENDS=	libev.so:devel/libev
+APP_LIB_DEPENDS=	libcares.so:dns/c-ares \
+			libev.so:devel/libev
 APP_USE=		GNOME=libxml2
 APP_USES=		gnome
 ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
-ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 EXAMPLES_CONFIGURE_ENABLE=	examples
 EXAMPLES_BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
