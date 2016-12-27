@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-jdbcmysql-adapter
-PORTVERSION=	1.3.20
+PORTVERSION=	1.3.22
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
