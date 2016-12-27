@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	6.6.1
-PORTREVISION=	1
+PORTVERSION=	6.8.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -25,6 +24,8 @@ RUN_DEPENDS+=	cmake:devel/cmake
 
 PORTDATA=	*
 PORTDOCS=	*
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	BASH_COMPLETIONS X11 DOCS
 OPTIONS_DEFAULT=	X11
