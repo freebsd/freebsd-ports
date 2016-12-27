@@ -4,11 +4,10 @@
 PORTNAME=	byaccj
 PORTVERSION=	1.15
 CATEGORIES=	devel java
-MASTER_SITES=	SF \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj

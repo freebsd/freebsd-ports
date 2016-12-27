@@ -11,10 +11,11 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oyranos-cms
+GH_PROJECT=	${PORTNAME:tl}
+
 USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xfixes xmu xt
-WRKSRC=		${WRKDIR}/libxcm-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 

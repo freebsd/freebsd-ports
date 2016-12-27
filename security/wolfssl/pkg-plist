@@ -172,6 +172,7 @@ include/wolfssl/wolfcrypt/memory.h
 include/wolfssl/wolfcrypt/misc.h
 include/wolfssl/wolfcrypt/mpi_class.h
 include/wolfssl/wolfcrypt/mpi_superclass.h
+include/wolfssl/wolfcrypt/pkcs12.h
 include/wolfssl/wolfcrypt/pkcs7.h
 include/wolfssl/wolfcrypt/poly1305.h
 include/wolfssl/wolfcrypt/pwdbased.h
@@ -190,8 +191,9 @@ include/wolfssl/wolfcrypt/types.h
 include/wolfssl/wolfcrypt/visibility.h
 include/wolfssl/wolfcrypt/wc_encrypt.h
 include/wolfssl/wolfcrypt/wc_port.h
+include/wolfssl/wolfcrypt/wolfevent.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.3
-lib/libwolfssl.so.3.4.0
+lib/libwolfssl.so.3.6.0
 libdata/pkgconfig/wolfssl.pc

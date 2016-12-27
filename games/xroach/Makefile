@@ -8,8 +8,10 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cockroaches hide under your windows
+
+BROKEN=		unfetchable (apparently abandoned upstream)
 
 USE_XORG=	x11
 PLIST_FILES=	bin/xroach man/man6/xroach.6.gz

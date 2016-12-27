@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.4.2.a1.30112016
+PORTVERSION=	1.5.0.a2.20161226
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libgmime-2.6.so:mail/gmime26 \
 		libevent.so:devel/libevent2 \
 		libluajit-5.1.so:lang/luajit \
 		libfann.so:math/fann
@@ -20,15 +19,17 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
 
-RSPAMD_VERSION=	1.4.2
+RSPAMD_VERSION=	1.5.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	cdecbbc
+GH_TAGNAME=	0d4c60d
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
+OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD
+OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
+GD_DESC=		Enable libgd support for images fuzzy hashes
 
 USE_RC_SUBR=	rspamd
 
@@ -42,7 +43,6 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DMANDIR=${MANPREFIX}/man \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DBUILD_PORT=yes \
-		-DFORCE_GMIME24=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DNO_SHARED=ON \
 		-DDEBUG=ON \
@@ -59,6 +59,13 @@ DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGD}
+ CMAKE_ARGS+=	-DENABLE_GD=ON
+ LIB_DEPENDS+=	libgd.so:graphics/gd
+.else
+ CMAKE_ARGS+=	-DENABLE_GD=OFF
+.endif
 
 .if ${PORT_OPTIONS:MGPERF}
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON

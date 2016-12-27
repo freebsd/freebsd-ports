@@ -67,4 +67,4 @@ man/man8/lighttpd.8.gz
 %%KRB5%%man/man8/lighttpd-angel.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
-@dir(%%USER%%,%%GROUP%%,700) %%LOGROOT%%
+@dir(www,www,700) %%LOGROOT%%

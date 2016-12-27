@@ -6,10 +6,9 @@ PORTVERSION=	5.1.2
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SUNSITE/libs/graphics/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	SUNSITE/libs/graphics/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Type 1 font rasterization library for Unix/X11
 
 LICENSE=	LGPL20

@@ -3,7 +3,7 @@
 
 PORTNAME=	temperature.app
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.fukt.bsnet.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}

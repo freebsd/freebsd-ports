@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libpcap.so.1:net/libpcap	# avoid base libpcap
 
-USES=		tar:bzip2 ncurses scons shebangfix compiler:env python:2,build
+USES=		ncurses scons shebangfix ssl compiler:env python:2,build
 USE_GITHUB=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	xorp
 GH_ACCOUNT=	greearb
 GH_PROJECT=	${PORTNAME}.ct
@@ -48,13 +47,11 @@ TCP_RPC_DESC=	Use TCP as RPC transport (defaults to AF_LOCAL)
 TCP_RPC_MAKE_ARGS=	transport=tcp
 TCP_RPC_MAKE_ARGS_OFF=	transport=local
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/rtrmgr/config/multicast4.boot \
-	    ${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
+		${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

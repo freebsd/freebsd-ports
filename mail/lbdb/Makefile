@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	lbdb
-PORTVERSION=	0.39
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Tools for use with mutt external mail address query feature
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC]/COPYING
 
 RUN_DEPENDS=	gsed:textproc/gsed
 
@@ -25,11 +27,19 @@ CONFIGURE_ARGS=	--enable-lbdb-dotlock \
 MAKE_ARGS=	install_prefix=${STAGEDIR}
 USES=		gmake perl5
 
-.include <bsd.port.options.mk>
-
 .if exists (/usr/bin/getent)
-WITH_GETENT=	yes
+PLIST_SUB+=	GETENT=""
+.else
+PLIST_SUB+=	GETENT="@comment "
 .endif
+
+.if exists (/usr/bin/ypcat)
+PLIST_SUB+=	YPCAT=""
+.else
+PLIST_SUB+=	YPCAT="@comment "
+.endif
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPG}
 BUILD_DEPENDS+=	gpg:security/gnupg
@@ -55,17 +65,16 @@ PLIST_SUB+=	EVOLUTION=""
 PLIST_SUB+=	EVOLUTION="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGETENT}
-PLIST_SUB+=	GETENT=""
-.else
-PLIST_SUB+=	GETENT="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/m_muttalias.sh.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lbdb_dotlock
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/lbdb/fetchaddr
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/lbdb/qpto8bit
 
 .include <bsd.port.mk>

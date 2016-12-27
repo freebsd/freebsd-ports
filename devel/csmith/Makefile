@@ -3,10 +3,9 @@
 PORTNAME=	csmith
 PORTVERSION=	2.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://embed.cs.utah.edu/csmith/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Generates random C programs that conform to the C99 standard
 
 LICENSE=	BSD2CLAUSE

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sfml
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sfml-dev.org/download/sfml/${PORTVERSION}/
 DISTNAME=	SFML-${PORTVERSION}-sources
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 USES=		cmake compiler:c++11-lang dos2unix jpeg openal:al zip:infozip
 CMAKE_ARGS=	-DSFML_INSTALL_PKGCONFIG_FILES=ON
 DOS2UNIX_FILES=	CMakeLists.txt
-USE_XORG=	x11 xcb
+USE_XORG=	x11 xext xrandr
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
@@ -30,10 +30,19 @@ WRKSRC=		${WRKDIR}/SFML-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/SFML
 PORTDATA=	*
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOCS EXAMPLES DOXYGEN
 
-DOXYGEN_CMAKE_ON=	-DSFML_BUILD_DOC:BOOL=YES
+DOXYGEN_CMAKE_BOOL=	SFML_BUILD_DOC
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+
+EXAMPLES_CMAKE_BOOL=	SFML_BUILD_EXAMPLES
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changelog.txt ${WRKSRC}/readme.txt \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

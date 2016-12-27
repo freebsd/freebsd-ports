@@ -2,6 +2,6 @@
 
 MASTERDIR=	${.CURDIR}/../py-hunspell
 
-PYTHON_VERSION=	python3.5
+USES=		python:3.3+
 
 .include "${MASTERDIR}/Makefile"

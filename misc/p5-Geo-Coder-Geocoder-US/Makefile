@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Text-CSV>=0:textproc/p5-Text-CSV \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DEPRECATED=	http://geocoder.us/ disappeared in late 2015
+EXPIRATION_DATE=	2017-03-01
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

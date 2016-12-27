@@ -20,6 +20,9 @@ LICENSE_NAME=	Rayshade license
 LICENSE_FILE=	${WRKSRC}/Doc/Copyright
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+DEPRECATED=	Depends on expiring graphics/urt
+EXPIRATION_DATE=2017-04-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/librle.a:graphics/urt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}

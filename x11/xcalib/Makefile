@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' -e 's|0644|0555|g'\
-	    -e 's|CFLAGS =|CFLAFS ?=|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
+	    -e 's|CFLAGS =|CFLAGS ?=|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|if(i=0)|else|g' ${WRKSRC}/xcalib.c
 

@@ -1,0 +1,14 @@
+bin/fix_includes.py
+bin/include-what-you-use
+bin/iwyu_tool.py
+%%DATADIR%%/boost-all-private.imp
+%%DATADIR%%/boost-all.imp
+%%DATADIR%%/gcc.libc.imp
+%%DATADIR%%/gcc.stl.headers.imp
+%%DATADIR%%/gcc.symbols.imp
+%%DATADIR%%/iwyu.gcc.imp
+%%DATADIR%%/libcxx.imp
+%%DATADIR%%/qt4.imp
+%%DATADIR%%/qt5_4.imp
+%%DATADIR%%/stl.c.headers.imp
+%%DATADIR%%/third_party.imp

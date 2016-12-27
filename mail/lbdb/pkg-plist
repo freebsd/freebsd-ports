@@ -23,9 +23,8 @@ libexec/lbdb/m_palm
 libexec/lbdb/m_passwd
 libexec/lbdb/m_pine
 libexec/lbdb/m_wanderlust
-libexec/lbdb/m_yppasswd
+%%YPCAT%%libexec/lbdb/m_yppasswd
 libexec/lbdb/munge
-libexec/lbdb/munge-keeporder
 libexec/lbdb/mutt_ldap_query
 libexec/lbdb/palm_lsaddr
 libexec/lbdb/qpto8bit

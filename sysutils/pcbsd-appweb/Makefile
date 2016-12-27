@@ -17,8 +17,9 @@ RUN_DEPENDS=	syscache:sysutils/pcbsd-syscache \
 
 USE_PHP=	filter gd json session
 WRKSRC_SUBDIR=	src-webui
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_GITHUB=	yes

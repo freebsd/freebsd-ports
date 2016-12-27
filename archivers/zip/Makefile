@@ -5,14 +5,13 @@ PORTNAME=	zip
 PORTVERSION=	3.0
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION} \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Create/update ZIP files compatible with PKZIP
 
-# License is BSD-based, but not identical, so intall with documentation
+# License is BSD-based, but not identical, so install with documentation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -31,6 +30,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${p}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README* TODO WHATSNEW WHERE ${STAGEDIR}${DOCSDIR}
 

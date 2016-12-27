@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seahub
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.4
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile \
+		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
 		${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n \
@@ -60,7 +60,7 @@ SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
 SEAHUBDIR=	${SEAFILE_SERVER}/seahub
 SEALIB=		${SEAFILE_SERVER}/seafile/lib
 SITEPACKAGEDIR=	${SEAHUBDIR}/thirdpart
-SEAFILE_VER=	`${CAT} ${.CURDIR}/../../net-mgmt/seafile/Makefile | ${GREP} -Eom1 '[0-9]+\.[0-9]+\.[0-9]+'`
+SEAFILE_VER=	`${CAT} ${.CURDIR}/../../net-mgmt/seafile-server/Makefile | ${GREP} -Eom1 '[0-9]+\.[0-9]+\.[0-9]+'`
 SEAHUB_DATA_DIR=	${HAIWENDIR}/seahub-data
 
 USERS=		seafile

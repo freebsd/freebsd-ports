@@ -31,7 +31,25 @@
  build_man1dir := $(build_mandir)/man1
  build_includedir := $(build_prefix)/include
  build_sysconfdir := $(build_prefix)/etc
-@@ -400,7 +395,7 @@ JCFLAGS := -pipe $(fPIC) -fno-strict-ali
+@@ -340,7 +335,7 @@ endif
+ ifeq ($(USEIFC), 1)
+ FC := ifort
+ else
+-FC := $(CROSS_COMPILE)gfortran
++FC ?= $(CROSS_COMPILE)gfortran
+ endif
+ 
+ STDLIBCPP_FLAG :=
+@@ -393,14 +388,14 @@ SHIPFLAGS := -O3 -ggdb2 -falign-function
+ endif
+ 
+ ifeq ($(USECLANG),1)
+-CC := $(CROSS_COMPILE)clang
+-CXX := $(CROSS_COMPILE)clang++
++CC ?= $(CROSS_COMPILE)clang
++CXX ?= $(CROSS_COMPILE)clang++
+ JCFLAGS := -pipe $(fPIC) -fno-strict-aliasing -D_FILE_OFFSET_BITS=64
+ # AArch64 needs this flag to generate the .eh_frame used by libunwind
  JCPPFLAGS := -fasynchronous-unwind-tables
  JCXXFLAGS := -pipe $(fPIC) -fno-rtti -pedantic
  DEBUGFLAGS := -O0 -g -DJL_DEBUG_BUILD -fstack-protector-all

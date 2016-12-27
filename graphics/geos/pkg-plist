@@ -388,7 +388,7 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.10.0
+lib/libgeos_c.so.1.10.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so

@@ -16,11 +16,10 @@ GH_PROJECT=	libite:libite
 GH_TAGNAME=	v1.4.4:libite
 GH_SUBDIR=	libite:libite
 
-USES=		tar:bzip2
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
-MAKE_ARGS+=	prefix="${PREFIX}" sysconfdir="${PREFIX}/etc/"
+MAKE_ARGS=	prefix="${PREFIX}" sysconfdir="${PREFIX}/etc/"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pimd ${STAGEDIR}${PREFIX}/sbin/
@@ -28,6 +27,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/pimd.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pimd.in \
 		${STAGEDIR}${PREFIX}/etc/rc.d/pimd
-	${INSTALL_MAN} ${WRKSRC}/pimd.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/pimd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

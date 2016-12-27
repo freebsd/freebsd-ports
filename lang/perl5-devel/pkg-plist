@@ -520,6 +520,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/IPC.pm
 %%PRIV_LIB%%/Test2/IPC/Driver.pm
 %%PRIV_LIB%%/Test2/IPC/Driver/Files.pm
+%%PRIV_LIB%%/Test2/Tools/Tiny.pm
 %%PRIV_LIB%%/Test2/Transition.pod
 %%PRIV_LIB%%/Test2/Util.pm
 %%PRIV_LIB%%/Test2/Util/ExternalMeta.pm
@@ -979,6 +980,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5256delta.1.gz
 %%MAN1%%/perl5257delta.1.gz
 %%MAN1%%/perl5258delta.1.gz
+%%MAN1%%/perl5259delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1606,6 +1608,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::IPC.3.gz
 %%MAN3%%/Test2::IPC::Driver.3.gz
 %%MAN3%%/Test2::IPC::Driver::Files.3.gz
+%%MAN3%%/Test2::Tools::Tiny.3.gz
 %%MAN3%%/Test2::Transition.3.gz
 %%MAN3%%/Test2::Util.3.gz
 %%MAN3%%/Test2::Util::ExternalMeta.3.gz
@@ -1762,6 +1765,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5256delta.pod
 %%PRIV_LIB%%/pod/perl5257delta.pod
 %%PRIV_LIB%%/pod/perl5258delta.pod
+%%PRIV_LIB%%/pod/perl5259delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod

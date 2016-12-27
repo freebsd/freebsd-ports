@@ -1,6 +1,11 @@
 bin/munindoc
 @sample %%ETCDIR%%/munin-node.conf.sample
 @sample %%ETCDIR%%/plugin-conf.d/plugins.conf.sample
+@comment the directory exists in STAGEDIR because it is present in
+@comment BSD.local.dist but if not registered here, it will not exist in PREFIX
+@comment when the package is installed.
+@dir etc/newsyslog.conf.d
+@sample %%ETCDIR%%/munin-node.newsyslog etc/newsyslog.conf.d/munin-node
 %%SITE_PERL%%/Munin/Node/Config.pm
 %%SITE_PERL%%/Munin/Node/Configure/Debug.pm
 %%SITE_PERL%%/Munin/Node/Configure/History.pm

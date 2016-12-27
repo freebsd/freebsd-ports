@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geos
-DISTVERSION=	1.0.0rc1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.osgeo.org/gogs/geos/php-geos/archive/ \
 		LOCAL/sunpoet/${PKGNAMEPREFIX}${PORTNAME}

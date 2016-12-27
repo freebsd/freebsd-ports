@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 MAINTAINER=	erik@brlcad.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
+DEPRECATED=	Depends on expring graphics/urt
+EXPIRATION_DATE=2017-04-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:math/jama	\
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \

@@ -7,14 +7,13 @@ PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://ftp.netscape.com/pub/communicator/extras/fonts/windows/ \
 		http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/ \
-		ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/cyberbit/
+		ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/
 DISTFILES=	Cyberbit.ZIP 97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \
 		CYBERBIT.DOC CYBERCJK.DOC READMEfirst.txt ReadMe.htm
 DIST_SUBDIR=	cyberbit
 EXTRACT_ONLY=	Cyberbit.ZIP
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitstream Cyberbit is a TrueType font that covers Unicode 2.0
 
 RESTRICTED=	Redistribution not permitted; single user license only.

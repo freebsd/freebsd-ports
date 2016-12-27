@@ -3,4 +3,4 @@ in Python. It supports reading and writing of TrueType fonts,
 PostScript Type 1 fonts as well as AFM files and some MacOS-specific
 formats.
 
-WWW: https://github.com/behdad/fonttools/
+WWW: https://github.com/fonttools/fonttools

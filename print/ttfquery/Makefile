@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>0:print/py-fonttools \
 		${PYNUMPY}
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

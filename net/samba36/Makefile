@@ -18,6 +18,8 @@ LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 CONFLICTS?=		*samba3[2-5]-3.*
 
 DEPRECATED=		not supported by the upstream
+# Too many ports depend on this, so don't set an expiration date...
+# EXPIRATION_DATE=	2017-03-01
 
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
