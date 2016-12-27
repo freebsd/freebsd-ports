@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.55
+PORTVERSION=	1.56
 CATEGORIES=	java security
-MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
-		http://polydistortion.net/bc/download/ \
-		http://bouncycastle.gva.es/download/
+MASTER_SITES=	http://www.bouncycastle.org/download/ \
+		http://polydistortion.net/bc/download/
 PKGNAMESUFFIX=	15
 DISTNAME=	crypto-${DVERSION}
 
@@ -21,7 +20,10 @@ BUILD_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
 		${JAVALIBDIR}/mail.jar:java/javamail
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS ZIPSRC
+OPTIONS_DEFAULT=	ZIPSRC
+OPTIONS_SUB=	yes
+ZIPSRC_DESC=	Install bundled ZIP source files
 CONFLICTS_INSTALL=	bouncycastle-1.4*
 DVERSION=	${PORTVERSION:S/.//}
 NO_ARCH=	yes
@@ -38,23 +40,27 @@ MAKE_ARGS=	-f ant/jdk${JDKNVERSION}+.xml
 ALL_TARGET=	build-provider build zip-src
 
 JARS_SRC=	bcmail bcpkix bcprov bcpg
-JARS_DOCS=	${JARS_SRC} bctest
+JARS_DOCS=	${JARS_SRC} bctest bctls
 JARS=		${JARS_DOCS} bcprov-ext
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jar in ${JARS}
 	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}on-${DVERSION}.jar \
 	      ${STAGEDIR}${JAVAJARDIR}/${jar}.jar
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
+.if ${PORT_OPTIONS:MZIPSRC}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jar in ${JARS_SRC}
 	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/src.zip \
 	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
-		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
+.endif
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
