@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.15.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -71,8 +70,6 @@ post-extract-DOCS-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,-Testscene,&_ground,' \
-		${WRKSRC}/scenery3d/Testscene/TX_Stellarium-Testscene_ground/CMakeLists.txt
 
 post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
