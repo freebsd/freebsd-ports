@@ -3,6 +3,7 @@
 
 PORTNAME=	pyfa
 PORTVERSION=	1.19.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games python
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.6:databases/py-sqlalchemy07 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.6:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests
 
 USE_GITHUB=	yes
