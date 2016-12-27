@@ -31,7 +31,7 @@ load_rc_config $name
 : ${domoticz_group:=domoticz}
 : ${domoticz_enable:=NO}
 : ${domoticz_directory:=%%PREFIX%%/domoticz/domoticz}
-: ${domoticz_args:="-syslog -daemon -wwwbind 0.0.0.0"}
+: ${domoticz_args:="-syslog -daemon"}
 
 #: ${domoticz_args:="-syslog -dbase %%PREFIX%%/domoticz/db/domoticz.db -daemon -wwwbind 0.0.0.0 -p /var/run/domoticz.pid"}
 
