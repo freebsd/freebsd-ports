@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.6
+PORTVERSION=	4.6.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/ \
@@ -53,6 +53,7 @@ P0F_CONFIGURE_ENABLE=		p0f306
 
 .if ${PORT_OPTIONS:MDKIM}
 CONFIGURE_ARGS+=	--with-libopendkim=${LOCALBASE}
+USES+=			ssl
 .endif
 
 .if ${PORT_OPTIONS:MSPF}

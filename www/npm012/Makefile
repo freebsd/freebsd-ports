@@ -13,6 +13,9 @@ COMMENT=	Node package manager
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expiring www/node012
+EXPIRATION_DATE=2017-04-01
+
 RUN_DEPENDS=	node012>=0.12.0:www/node012
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
