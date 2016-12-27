@@ -22,7 +22,7 @@ USES=		dos2unix php
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -34,13 +34,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/$d
 	${INSTALL_DATA} ${WRKSRC}/$d/* ${STAGEDIR}${DATADIR}/$d
 .endfor
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in changelog.md README.md
-	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
-.endfor
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
