@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadubi
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	graphics editors
@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	cadubi
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/help.txt \
