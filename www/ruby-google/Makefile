@@ -27,6 +27,9 @@ RUBY_SETUP=	install.rb
 
 DOCS=		CHANGES Changelog README google.html
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
