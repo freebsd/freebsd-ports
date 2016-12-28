@@ -32,6 +32,6 @@ SWIG_BUILD_DEPENDS=	swig:devel/swig13
 SWIG_CONFIGURE_OFF=	--disable-swig
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.am -exec ${REINPLACE_CMD} 's|-Werror||; s| -ansi -pedantic||' {} \;
+	@${FIND} ${WRKSRC} -name Makefile.am -exec ${REINPLACE_CMD} -e 's|-Werror||; s| -ansi -pedantic||' {} +
 
 .include <bsd.port.mk>
