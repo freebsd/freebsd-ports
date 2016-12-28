@@ -3,7 +3,7 @@
 
 PORTNAME=	i2pd
 PORTVERSION=	2.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -31,6 +31,7 @@ GROUPS=		_i2pd
 
 PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
 SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
+SUB_FILES=	i2pd.newsyslog.conf
 
 OPTIONS_DEFINE=	AESNI UPNP DOCS
 
@@ -49,6 +50,8 @@ BROKEN=		does not build with LibreSSL (boost libressl compatibility problems)
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${WRKDIR}/i2pd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/i2pd.conf
 	@${MKDIR} ${STAGEDIR}/var/run/i2pd
 	@${MKDIR} ${STAGEDIR}/var/log/i2pd
 	@${MKDIR} ${STAGEDIR}/var/db/i2pd
