@@ -501,6 +501,7 @@
     SUBDIR += erlang-bear
     SUBDIR += erlang-certifi
     SUBDIR += erlang-cf
+    SUBDIR += erlang-cl
     SUBDIR += erlang-clique
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cuttlefish
