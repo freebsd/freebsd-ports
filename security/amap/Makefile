@@ -9,6 +9,8 @@ MASTER_SITES=	PACKETSTORM/groups/thc
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Application mapper
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	AMAP GPLv2
 LICENSE_COMB=	multi
 LICENSE_NAME_AMAP=	amap license
