@@ -28,6 +28,9 @@ BROKEN_RUBY23=	Builds but does not run
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Does not work on modern ruby
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbison ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
