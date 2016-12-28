@@ -29,6 +29,9 @@ DOCS_JA=	doc/ja/*
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${CP} -R ${WRKSRC}/lib/xmlscan ${STAGEDIR}${RUBY_SITELIBDIR}/
