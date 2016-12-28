@@ -21,6 +21,7 @@ include/aubio/io/source_wavread.h
 include/aubio/lvec.h
 include/aubio/mathutils.h
 include/aubio/musicutils.h
+include/aubio/notes/notes.h
 include/aubio/onset/onset.h
 include/aubio/onset/peakpicker.h
 include/aubio/pitch/pitch.h
@@ -52,8 +53,8 @@ include/aubio/utils/parameter.h
 include/aubio/utils/scale.h
 include/aubio/vecutils.h
 lib/libaubio.so
-lib/libaubio.so.4
-lib/libaubio.so.4.2.2
+lib/libaubio.so.5
+lib/libaubio.so.5.0.4
 libdata/pkgconfig/aubio.pc
 man/man1/aubiocut.1.gz
 man/man1/aubiomfcc.1.gz
