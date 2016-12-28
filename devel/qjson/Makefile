@@ -21,6 +21,8 @@ USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DQT4_BUILD:BOOL=TRUE
 PLIST_SUB=	QT5="@comment " NO_QT5=""
 .else
+PORTSCOUT=	ignore:1
+
 USE_QT5=	core buildtools_build qmake_build
 CMAKE_ARGS+=	-DQT4_BUILD:BOOL=FALSE
 PLIST_SUB=	QT5="" NO_QT5="@comment "
