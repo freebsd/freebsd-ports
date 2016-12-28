@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flacon
+PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,9 +13,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
-USE_GITHUB=	yes
-
 USES=		cmake desktop-file-utils pkgconfig
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	QT5
 QT5_DESC=	Build against Qt 5 instead of Qt 4
