@@ -39,10 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/openscad.pro
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
-BROKEN=		does not build (libstdc++/libc++ incompatibility in cgal/boost)
-.endif
-
 .include <bsd.port.mk>
