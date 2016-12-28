@@ -28,6 +28,9 @@ INSTALL_TARGET=	site-install
 SHEBANG_FILES=	${WRKSRC}/rssdrb.rb ${WRKSRC}/samples/rsstest.rb
 DOCS=		ChangeLog README
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/rss*.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
