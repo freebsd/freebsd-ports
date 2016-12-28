@@ -18,6 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	${RUBY} -i -pe 'gsub /rubyapi\.css/, "../rubyapi.css"' ${WRKSRC}/Properties-ja.html
 
