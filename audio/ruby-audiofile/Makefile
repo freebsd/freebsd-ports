@@ -32,6 +32,9 @@ CDDB_WRKSRC=	${WRKDIR}/example
 INSTALL_TARGET=	site-install
 REINPLACE_ARGS=	-i ""
 
+DEPRECATED=	Broken on modern versions of Ruby
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	@${REINPLACE_CMD} -E -e "s,/home/jaredj/ruby-lib/(cddb),\1,g" ${CDDB_WRKSRC}/wavcddb
 
