@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	Add SQL read/write support to agate.
+COMMENT=	Add SQL read/write support to agate
 
 LICENSE=	MIT
 
