@@ -21,6 +21,9 @@ EXAMPLES=	sample/*
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
