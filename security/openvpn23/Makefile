@@ -6,6 +6,7 @@ DISTVERSION=		2.3.14
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
+PKGNAMESUFFIX?=		23
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
