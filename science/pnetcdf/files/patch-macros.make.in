@@ -1,0 +1,31 @@
+Add DESTDIR support with modified MANDIR (prefix/share/man -> prefix/man)
+
+Obtained from:	http://trac.mcs.anl.gov/projects/parallel-netcdf/changeset/2745
+
+--- macros.make.in.orig	2016-11-24 02:55:40 UTC
++++ macros.make.in
+@@ -20,13 +20,20 @@ LN_S		= @LN_S@
+ # Installation Directories:
+ # SRCDIR	= @SRCDIR@
+ prefix		= @prefix@
+-INCDIR		= $(prefix)/include
+-LIBDIR		= $(prefix)/lib
+-BINDIR		= $(prefix)/bin
+-MANDIR		= $(prefix)/man
+ BUILDDIR	= @BUILDDIR@
+ LIBRARY		= @BUILDDIR@/src/lib/libpnetcdf.a
+ 
++ifdef DESTDIR
++INCDIR		= $(DESTDIR)/$(prefix)/include
++LIBDIR		= $(DESTDIR)/$(prefix)/lib
++BINDIR		= $(DESTDIR)/$(prefix)/bin
++MANDIR		= $(DESTDIR)/$(prefix)/man
++else
++INCDIR		= $(prefix)/include
++LIBDIR		= $(prefix)/lib
++BINDIR		= $(prefix)/bin
++MANDIR		= $(prefix)/share/man
++endif
+ 
+ # Useful tools
+ M4		= @M4@
