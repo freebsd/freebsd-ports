@@ -708,6 +708,7 @@
     SUBDIR += py-MySQLdb56
     SUBDIR += py-PyGreSQL
     SUBDIR += py-Pyrseas
+    SUBDIR += py-agate-sql
     SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-bsddb
