@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.11.11
+PORTVERSION=	0.11.13
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ WATCHDOG_DESC=	Monitor filesystem events
 WATCHDOG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchdog>=0.8:devel/py-watchdog
 
 NO_ARCH=	yes
-USES=		python
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
