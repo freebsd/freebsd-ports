@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtpass
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -9,6 +9,7 @@ MAINTAINER=	brouwer@annejan.com
 COMMENT=	Qt GUI for pass, the standard unix password manager
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	pass:sysutils/password-store
 
