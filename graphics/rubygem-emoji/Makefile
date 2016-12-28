@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emoji
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
