@@ -3,26 +3,27 @@
 
 PORTNAME=	mailutils
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
 MAINTAINER=	zeus@gnu.org.ua
-COMMENT=	Utilities and daemons for processing e-mail
+COMMENT=	Utilities, daemons, and filters for processing e-mail
 
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake iconv libtool makeinfo readline tar:xz
+USES=		gmake iconv libtool localbase makeinfo readline tar:xz
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	comsatd imap4d pop3d
 INSTALL_TARGET=	install-strip
 
 INFO=		${PORTNAME}
+PORTDOCS=	AUTHORS ChangeLog NEWS README* THANKS TODO
 
-OPTIONS_DEFINE=		GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
+OPTIONS_DEFINE=		DOCS GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
 OPTIONS_DEFAULT=	BDB GNUTLS PAM
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM KYOTOCABINET LDAP MYSQL PGSQL TOKYOCABINET
@@ -87,5 +88,9 @@ post-patch:
 		${WRKSRC}/dotlock/Makefile.in \
 		${WRKSRC}/maidag/Makefile.in
 	@${REINPLACE_CMD} -e 's,-E,& -P,' ${WRKSRC}/libmu_scm/Makefile.in
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
