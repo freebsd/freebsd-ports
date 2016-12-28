@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	6.4.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -12,9 +12,17 @@ COMMENT?=	Multimedia framework for TV broadcasting
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-SLAVE_PORT?=	no
+USES+=		alias gmake pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-gpl --enable-gpl3 --target-os=FreeBSD
 
-.if ${SLAVE_PORT} == "no"
+.ifndef(WITH_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.else
+CONFIGURE_ARGS+=--enable-debug
+.endif
+
+.ifndef(SLAVEPORT) # Master port.
 
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
@@ -27,35 +35,22 @@ BROKEN_sparc64=		does not compile on sparc64 (invokes i386 asm)
 USE_GNOME=	libxml2
 USE_SDL=	image
 USE_XORG=	x11
-USES=		alias gmake iconv pathfix pkgconfig
+USES+=		iconv pathfix
 PATHFIX_MAKEFILEIN=	Makefile
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --target-os=FreeBSD
+CONFIGURE_ARGS+=--disable-qt --swig-languages=none
 USE_LDCONFIG=	yes
-
-.ifndef(WITH_DEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.else
-CONFIGURE_ARGS+=--enable-debug
-.endif
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README docs
 PORTEXAMPLES=	demo
 
-OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 \
-		OPENGL SAMPLERATE SOX SWFDEC VIDSTAB # OPENCV VDPAU
-OPTIONS_RADIO=  	QT
-OPTIONS_RADIO_QT=	QT4 QT5
-OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 OPENGL QT4 SAMPLERATE SOX \
-		SWFDEC VIDSTAB
+OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK OPENGL \
+		SAMPLERATE SOX SWFDEC VIDSTAB # OPENCV VDPAU
+OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 OPENGL SAMPLERATE SOX SWFDEC VIDSTAB
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Images and text rendering via GTK+ 2
-KDE4_DESC=	Qt 4 extra image formats support
-QT4_DESC=	Images and Kdenlive titles support via Qt 4
-QT5_DESC=	${QT4_DESC:S/4/5/}
 SOX_DESC=	SoX audio effects support
 VIDSTAB_DESC=	Video stabilization support via Vid.Stab
 
@@ -76,12 +71,6 @@ JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 JACK_CONFIGURE_ENABLE=	jackrack
 JACK_USE=		GNOME=glib20
 
-KDE4_CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH"
-KDE4_CONFIGURE_WITH=	kde
-KDE4_USES=		kde:4
-KDE4_USE=		KDE=kdelibs
-KDE4_IMPLIES=		QT4
-
 # Prepare for OpenCV 3 port.
 CONFIGURE_ARGS+=	--disable-opencv
 OPENCV_CONFIGURE_ENABLE=opencv
@@ -89,10 +78,6 @@ OPENCV_CONFIGURE_ENABLE=opencv
 OPENGL_LIB_DEPENDS=	libmovit.so:graphics/movit
 OPENGL_USE=		GL=gl
 OPENGL_CONFIGURE_ENABLE=opengl
-
-QT4_USE=		QT4=corelib,gui,opengl,svg,xml
-QT5_USE=		QT5=core,gui,svg,widgets,xml
-QT5_PREVENTS=		KDE4
 
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=resample
@@ -112,19 +97,6 @@ VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
 VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT[45]}
-LIB_DEPENDS+=		libexif.so:graphics/libexif
-CONFIGURE_ARGS+=	--enable-qt \
-			--qt-libdir="${QT_LIBDIR}" \
-			--qt-includedir="${QT_INCDIR}"
-PLIST_SUB+=             QT=""
-.else
-CONFIGURE_ARGS+=        --disable-qt
-PLIST_SUB+=             QT="@comment "
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/src/modules/avformat/vdpau.c \
@@ -136,13 +108,12 @@ pre-configure:
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
 
-post-install:
+common-post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${STAGEDIR}${MANPREFIX}/man/man1/melt.1
 	@${RM} ${WRKSRC}/docs/melt.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/melt
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt.so.${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt++.so.${PORTVERSION}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mlt/*
 
 post-install-DOCS-on:
 .for f in ${PORTDOCS}
@@ -154,6 +125,61 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.endif # ${SLAVE_PORT} == "no"
+.else # Slave port.
+
+PORTSCOUT=	ignore:1
+
+LIB_DEPENDS+=	libmlt.so:${MASTER_PORT}
+
+PLIST?=		${.CURDIR}/pkg-plist
+
+. if ${SLAVEPORT:Mqt*} # Qt slave port.
+PKGNAMESUFFIX=	-${SLAVEPORT}
+
+COMMENT=	Qt ${SLAVEPORT:C/[^0-9]//g} plugin for the MLT multimedia framework
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	multi
+
+LIB_DEPENDS+=	libexif.so:graphics/libexif
+
+CONFIGURE_ARGS+=--enable-qt \
+		--qt-libdir="${QT_LIBDIR}" \
+		--qt-includedir="${QT_INCDIR}"
+BUILD_WRKSRC=	${WRKSRC}/src/modules/qt
+. elif ${SLAVEPORT:Mswig} # SWIG slave port.
+LANGUAGE=	${SLAVEPORT:Nswig}
+
+COMMENT=	${LANGUAGE} bindings for the MLT multimedia framework
+
+LICENSE=	LGPL21
+LICENSE_COMB=	single
+
+BUILD_DEPENDS+=	swig:devel/swig13
+
+_CFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	${_CFLAGS}
+CXXFLAGS+=	${_CFLAGS}
+CONFIGURE_ARGS+=--swig-languages=${LANGUAGE:tl}
+BUILD_WRKSRC=	${WRKSRC}/src/swig
+INSTALL_WRKSRC=	${BUILD_WRKSRC}/${LANGUAGE:tl}
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/${LANGUAGE:tl}
+. endif
+
+INSTALL_WRKSRC?=${BUILD_WRKSRC}
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+
+# Dummy placeholder target.
+common-post-install:
+	@${TRUE}
+
+.endif
+
+post-install: common-post-install
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/* 2>/dev/null || ${TRUE}
+	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/${PORTNAME} 2>/dev/null || ${TRUE}
 
 .include <bsd.port.mk>

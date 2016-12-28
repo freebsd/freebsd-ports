@@ -244,6 +244,8 @@
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mlt
+    SUBDIR += mlt-qt4
+    SUBDIR += mlt-qt5
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip

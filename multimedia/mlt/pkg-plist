@@ -72,7 +72,6 @@ lib/mlt/libmltoldfilm.so
 %%OPENGL%%lib/mlt/libmltopengl.so
 lib/mlt/libmltplus.so
 lib/mlt/libmltplusgpl.so
-%%QT%%lib/mlt/libmltqt.so
 %%SAMPLERATE%%lib/mlt/libmltresample.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
@@ -414,15 +413,6 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/uhd_2160p_60
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
-%%QT%%%%DATADIR%%/qt/filter_audiospectrum.yml
-%%QT%%%%DATADIR%%/qt/filter_audiowaveform.yml
-%%QT%%%%DATADIR%%/qt/filter_lightshow.yml
-%%QT%%%%DATADIR%%/qt/filter_qtblend.yml
-%%QT%%%%DATADIR%%/qt/producer_kdenlivetitle.yml
-%%QT%%%%DATADIR%%/qt/producer_qimage.yml
-%%QT%%%%DATADIR%%/qt/producer_qtext.yml
-%%QT%%%%DATADIR%%/qt/transition_qtblend.yml
-%%QT%%%%DATADIR%%/qt/transition_vqm.yml
 %%SAMPLERATE%%%%DATADIR%%/resample/filter_resample.yml
 %%DATADIR%%/sdl/consumer_sdl.yml
 %%DATADIR%%/sdl/consumer_sdl_audio.yml
