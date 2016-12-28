@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	attr_encrypted
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
