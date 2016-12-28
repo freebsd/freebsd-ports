@@ -18,6 +18,9 @@ SDKVER=		5.1.0
 INCDIR=		${PREFIX}/palmdev/sdk-${SDKVER}/include
 LIBDIR=		${PREFIX}/palmdev/sdk-${SDKVER}/lib
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 .include <bsd.port.pre.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
