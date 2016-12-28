@@ -145,6 +145,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/sell.xml
 %%DATADIR%%/data/graphics/gui/server.xml
 %%DATADIR%%/data/graphics/gui/shop.xml
+%%DATADIR%%/data/graphics/gui/skillrectanglelistbox.xml
 %%DATADIR%%/data/graphics/gui/slider.xml
 %%DATADIR%%/data/graphics/gui/slider_highlighted.xml
 %%DATADIR%%/data/graphics/gui/speechbrowserbox.xml
@@ -417,6 +418,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/golden-delicious/shoplistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/skilllistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/skillpopup.xml
+%%DATADIR%%/data/themes/golden-delicious/skillrectanglelistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/slider.xml
 %%DATADIR%%/data/themes/golden-delicious/slider_highlighted.xml
 %%DATADIR%%/data/themes/golden-delicious/social.xml
@@ -530,6 +532,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry/shoplistbox.xml
 %%DATADIR%%/data/themes/jewelry/skilllistbox.xml
 %%DATADIR%%/data/themes/jewelry/skillpopup.xml
+%%DATADIR%%/data/themes/jewelry/skillrectanglelistbox.xml
 %%DATADIR%%/data/themes/jewelry/slider.xml
 %%DATADIR%%/data/themes/jewelry/slider_highlighted.xml
 %%DATADIR%%/data/themes/jewelry/social.xml
