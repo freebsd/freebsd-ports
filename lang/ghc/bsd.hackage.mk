@@ -376,6 +376,7 @@ semigroupoids_port=                             math/hs-semigroupoids
 semigroups_port=                                math/hs-semigroups
 sendfile_port=                                  net/hs-sendfile
 setenv_port=                                    devel/hs-setenv
+setlocale_port=                                 devel/hs-setlocale
 SHA_port=                                       security/hs-SHA                                 # executable
 shake_port=                                     devel/hs-shake                                  # executable
 shakespeare_port=                               www/hs-shakespeare
