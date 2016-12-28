@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS ONIGURUMA
