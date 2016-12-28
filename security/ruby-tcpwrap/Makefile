@@ -31,6 +31,9 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README.en	doc/tcpwrap.html.en
 DOCS_JA=	README.ja	doc/tcpwrap.html.ja
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
