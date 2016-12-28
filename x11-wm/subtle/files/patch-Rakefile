@@ -1,0 +1,81 @@
+--- Rakefile.orig	2012-06-20 11:29:55 UTC
++++ Rakefile
+@@ -45,14 +45,14 @@ end
+ @options = {
+   "cc"         => ENV["CC"] || "gcc",
+   "destdir"    => ENV["DESTDIR"] || "",
+-  "prefix"     => "/usr",
+-  "manprefix"  => "$(prefix)/share/man",
+-  "bindir"     => "$(destdir)/$(prefix)/bin",
+-  "sysconfdir" => "$(destdir)/etc",
++  "prefix"     => ENV["PREFIX"] || "/usr",
++  "manprefix"  => "%s/man" % (ENV["MANPREFIX"] || "$(prefix)/share"),
++  "bindir"     => "$(destdir)$(prefix)/bin",
++  "sysconfdir" => "$(destdir)$(prefix)/etc",
+   "configdir"  => "$(sysconfdir)/xdg/$(PKG_NAME)",
+-  "datadir"    => "$(destdir)/$(prefix)/share/$(PKG_NAME)",
+-  "extdir"     => "$(destdir)/$(sitelibdir)/$(PKG_NAME)",
+-  "mandir"     => "$(destdir)/$(manprefix)/man1",
++  "datadir"    => "$(destdir)$(prefix)/share/$(PKG_NAME)",
++  "extdir"     => "$(destdir)$(sitelibdir)/$(PKG_NAME)",
++  "mandir"     => "$(destdir)$(manprefix)/man1",
+   "debug"      => "no",
+   "xpm"        => "yes",
+   "xft"        => "yes",
+@@ -63,7 +63,7 @@ end
+   "hdrdir"     => "",
+   "archdir"    => "",
+   "revision"   => "3224", #< Latest stable
+-  "cflags"     => "-Wall -Werror -Wpointer-arith -Wstrict-prototypes -Wunused -Wshadow -std=gnu99",
++  "cflags"     => "-Wall -Wpointer-arith -Wstrict-prototypes -Wunused -Wshadow -std=gnu99",
+   "cpppath"    => "-I. -I$(builddir) -Isrc -Isrc/shared -Isrc/subtle -idirafter$(hdrdir) -idirafter$(archdir)",
+   "ldflags"    => "-L$(libdir) $(rpath) $(LIBS) -l$(RUBY_SO_NAME)",
+   "extflags"   => "$(LDFLAGS) $(rpath) $(LIBS) -l$(RUBY_SO_NAME)",
+@@ -258,8 +258,8 @@ task(:config) do
+     make_config unless checksums
+   else
+     # Check version
+-    if 1 != RbConfig::CONFIG["MAJOR"].to_i or 9 != RbConfig::CONFIG["MINOR"].to_i
+-      fail("Ruby 1.9.0 or higher required")
++    if 2 > RbConfig::CONFIG["MAJOR"].to_i
++      fail("Ruby 2.0.0 (1.9.0 really) or higher required")
+     end
+ 
+     checksums
+@@ -396,7 +396,10 @@ task(:config) do
+       checking_for("X11/Xft/Xft.h") do
+         ret = false
+ 
++        # Work around pkg_config()'s stupidity: obtain real (full) cflags
++        cutoff = $INCFLAGS.length
+         cflags, ldflags, libs = pkg_config("xft")
++        cflags << $INCFLAGS[cutoff..-1]
+         unless libs.nil?
+           # Update flags
+           @options["cpppath"] << " %s" % [ cflags ]
+@@ -495,6 +498,7 @@ task(:config) do
+ -----------------
+ Binaries............: #{@options["bindir"]}
+ Configuration.......: #{@options["configdir"]}
++Manual pages........: #{@options["mandir"]}
+ Extension...........: #{@options["extdir"]}
+ 
+ Xpm support.........: #{@options["xpm"]}
+@@ -503,6 +507,8 @@ Xinerama support....: #{@options["xinera
+ XRandR support......: #{@options["xrandr"]}
+ XTest support.......: #{@options["xtest"]}
+ Debugging messages..: #{@options["debug"]}
++Compiler............: #{@options["cc"]} (#{
++`#{@options["cc"]} -v 2>&1`[/\w+ version [\d.]+/]})
+ 
+ EOF
+   end
+@@ -613,7 +619,7 @@ task(:install => [:config, :build]) do
+     )
+ 
+     # Update interpreter name
+-    `#{sed} -i -e 's#/usr/bin/ruby.*##{interpreter}#' \
++    `#{sed} -i '' -e 's#/usr/bin/ruby.*##{interpreter}#' \
+       #{File.join(@options["bindir"], File.basename(f))}`
+   end
+ 
