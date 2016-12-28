@@ -18,6 +18,9 @@ USES=		tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/o_dbm.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
