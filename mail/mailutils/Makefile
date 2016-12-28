@@ -42,7 +42,6 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 
 GUILE_LIB_DEPENDS=	libguile.so:lang/guile
 GUILE_CONFIGURE_WITH=	guile
-GUILE_BROKEN=		does not build: ERROR: invalid arglist syntax: (hash paren_open SCM mbox paren_close)
 
 MH_CONFIGURE_ENABLE=	mh
 
@@ -87,5 +86,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/chown/,+1s|ch|#&|' \
 		${WRKSRC}/dotlock/Makefile.in \
 		${WRKSRC}/maidag/Makefile.in
+	@${REINPLACE_CMD} -e 's,-E,& -P,' ${WRKSRC}/libmu_scm/Makefile.in
 
 .include <bsd.port.mk>
