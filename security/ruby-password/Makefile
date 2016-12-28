@@ -37,6 +37,9 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 PORTEXAMPLES=	*
 PORTDOCS=	*
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,([^[:alpha:]]+)crack.h,\1packer.h,g' \
 		${WRKSRC}/rbcrack.c ${WRKSRC}/extconf.rb

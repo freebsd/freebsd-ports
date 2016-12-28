@@ -21,6 +21,9 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/htmlrepair.rb ${STAGEDIR}${RUBY_SITELIBDIR}/

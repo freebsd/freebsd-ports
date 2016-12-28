@@ -1,0 +1,10 @@
+lib/mlt/libmltqt.so
+%%DATADIR%%/qt/filter_audiospectrum.yml
+%%DATADIR%%/qt/filter_audiowaveform.yml
+%%DATADIR%%/qt/filter_lightshow.yml
+%%DATADIR%%/qt/filter_qtblend.yml
+%%DATADIR%%/qt/producer_kdenlivetitle.yml
+%%DATADIR%%/qt/producer_qimage.yml
+%%DATADIR%%/qt/producer_qtext.yml
+%%DATADIR%%/qt/transition_qtblend.yml
+%%DATADIR%%/qt/transition_vqm.yml

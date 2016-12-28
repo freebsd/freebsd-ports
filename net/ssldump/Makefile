@@ -3,9 +3,11 @@
 
 PORTNAME=	ssldump
 PORTVERSION=	0.9b3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
-MASTER_SITES=	http://www.rtfm.com/ssldump/
+MASTER_SITES=	SF
+PATCHFILES=	2-ssldump-tls12.diff
+PATCH_SITES=	https://gist.githubusercontent.com/mtigas/5969597/raw/e62ea9ab8a66ad264ffac47c5047c8d7ba94a67f/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	SSLv3/TLS network protocol analyzer

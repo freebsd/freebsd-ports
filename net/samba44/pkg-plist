@@ -164,8 +164,6 @@ lib/samba4/libsmbconf.so
 lib/samba4/libsmbconf.so.0
 %%LDAP%%lib/samba4/libsmbldap.so
 %%LDAP%%lib/samba4/libsmbldap.so.0
-lib/samba4/libtevent-unix-util.so
-lib/samba4/libtevent-unix-util.so.0
 lib/samba4/libtevent-util.so
 lib/samba4/libtevent-util.so.0
 lib/samba4/libwbclient.so
@@ -176,7 +174,6 @@ lib/nss_wins.so.1
 lib/pam_winbind.so
 %%CUPS%%libexec/samba/smbspool_krb5_wrapper
 %%AD_DC%%lib/samba4/private/libdlz-bind9-for-torture-samba4.so
-%%AD_DC%%lib/samba4/private/libntvfs-samba4.so
 %%AD_DC%%lib/samba4/private/libposix-eadb-samba4.so
 %%AD_DC%%lib/samba4/private/libprocess-model-samba4.so
 %%AD_DC%%lib/samba4/private/libservice-samba4.so
@@ -269,6 +266,7 @@ lib/samba4/private/libsmbd-base-samba4.so
 lib/samba4/private/libsmbd-conn-samba4.so
 lib/samba4/private/libsmbd-shim-samba4.so
 %%LDAP%%lib/samba4/private/libsmbldaphelper-samba4.so
+%%NTVFS%%lib/samba4/private/libntvfs-samba4.so
 lib/samba4/private/libsmbpasswdparser-samba4.so
 lib/samba4/private/libsmbregistry-samba4.so
 lib/samba4/private/libsocket-blocking-samba4.so
@@ -339,14 +337,14 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/service/nbtd.so
 %%AD_DC%%lib/shared-modules/service/ntp_signd.so
 %%AD_DC%%lib/shared-modules/service/s3fs.so
-%%DEVELOPER%%%%AD_DC%%lib/shared-modules/service/smb.so
+%%NTVFS%%lib/shared-modules/service/smb.so
 %%AD_DC%%lib/shared-modules/service/web.so
 %%AD_DC%%lib/shared-modules/service/winbindd.so
 %%AD_DC%%lib/shared-modules/service/wrepl.so
 %%AD_DC%%lib/shared-modules/vfs/posix_eadb.so
 %%DEVELOPER%%lib/shared-modules/vfs/nfs4acl_xattr.so
 %%DEVELOPER%%lib/shared-modules/vfs/fake_dfq.so
-%%LDAP%%lib/shared-modules/idmap/rfc2307.so
+%%ADS%%lib/shared-modules/idmap/rfc2307.so
 %%MODULE_AUTH_SAMBA4%%lib/shared-modules/auth/samba4.so
 %%MODULE_AUTH_SKEL%%lib/shared-modules/auth/skel.so
 %%MODULE_AUTH_UNIX%%lib/shared-modules/auth/unix.so
@@ -585,6 +583,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/testrpc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/unix.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns.py
+%%PYTHON_SITELIBDIR%%/samba/tests/dns_tkey.py
 %%PYTHON_SITELIBDIR%%/samba/tests/docs.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dsdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/gensec.py

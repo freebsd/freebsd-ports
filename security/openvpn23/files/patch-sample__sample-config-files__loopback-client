@@ -1,0 +1,13 @@
+--- sample/sample-config-files/loopback-client.orig	2016-08-23 14:16:22 UTC
++++ sample/sample-config-files/loopback-client
+@@ -9,8 +9,8 @@
+ #  ./openvpn --config sample-config-files/loopback-client  (In one window) 
+ #  ./openvpn --config sample-config-files/loopback-server  (Simultaneously in another window) 
+ 
+-rport 16000
+-lport 16001
++rport 16100
++lport 16101
+ remote localhost
+ local localhost
+ dev null

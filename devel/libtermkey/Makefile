@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtermkey
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
@@ -18,6 +18,6 @@ USE_LDCONFIG=	yes
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.12.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.13.0
 
 .include <bsd.port.mk>

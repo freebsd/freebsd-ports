@@ -90,6 +90,8 @@ post-install:
 
 .else
 
+PORTSCOUT=	ignore:1
+
 NO_ARCH=	yes
 USES+=		python:3.3+
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher

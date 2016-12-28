@@ -31,6 +31,9 @@ MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	${REINPLACE_CMD} -E -e 's|RSTRING\(([^)]+)\)->len|RSTRING_LEN(\1)|g' ${WRKSRC}/imlib2.c
 

@@ -11,7 +11,7 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Tools for use with mutt external mail address query feature
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC]/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gsed:textproc/gsed
 

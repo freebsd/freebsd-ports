@@ -491,11 +491,15 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a134/ideque.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a135.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a135/texts.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a136.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a136/extensible-record-types.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a139.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a139/syntax-parameters.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a141.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a141/integer-division.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17/generalized-set!.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a2.scm
@@ -592,8 +596,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/133.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/134.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/135.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/136.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/139.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/14.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/141.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/23.scm

@@ -22,6 +22,9 @@ INSTALL_TARGET=	site-install
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Use devel/rubygem-gettext instead
+EXPIRATION_DATE=	2017-01-28
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/po/
 	${INSTALL_DATA} ${WRKSRC}/hello.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/

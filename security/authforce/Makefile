@@ -10,7 +10,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_CCACHE=	yes
 
@@ -19,11 +20,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	zlandau
 
-USES=		ncurses readline tar:bzip2
+USES=		localbase:ldflags ncurses readline tar:bzip2
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		authforce
 

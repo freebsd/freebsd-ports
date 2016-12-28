@@ -18,6 +18,9 @@ RUBY_NO_BUILD_DEPENDS=	yes
 
 NO_BUILD=	yes
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 post-extract:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/rbsh
 	${ECHO_CMD} 'ruby RubyShell.rb' >> ${WRKSRC}/rbsh

@@ -1,6 +1,5 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
-
+# $FreeBSD$ 
 PORTNAME=	wirble
 PORTVERSION=	0.1.3
 CATEGORIES=	devel ruby
@@ -16,6 +15,9 @@ USE_RUBY=	yes
 do-build:
 
 OPTIONS_DEFINE=	DOCS
+
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
 
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}

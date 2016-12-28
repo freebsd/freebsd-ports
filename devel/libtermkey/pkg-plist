@@ -2,7 +2,7 @@ include/termkey.h
 lib/libtermkey.a
 lib/libtermkey.so
 lib/libtermkey.so.1
-lib/libtermkey.so.1.12.0
+lib/libtermkey.so.1.13.0
 libdata/pkgconfig/termkey.pc
 man/man3/termkey_advisereadable.3.gz
 man/man3/termkey_canonicalise.3.gz

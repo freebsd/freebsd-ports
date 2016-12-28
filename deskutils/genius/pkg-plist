@@ -20,10 +20,17 @@ libexec/genius-readline-helper-fifo
 share/application-registry/genius.applications
 share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/cantor.gel
+%%DATADIR%%/examples/complex-analysis-argument-principle.gel
+%%DATADIR%%/examples/complex-analysis-mandelbrot-define.gel
+%%DATADIR%%/examples/complex-analysis-mandelbrot-set.gel
+%%DATADIR%%/examples/complex-analysis-mesh.gel
+%%DATADIR%%/examples/complex-analysis-newton-fractal.gel
+%%DATADIR%%/examples/complex-analysis-wandering-ball.gel
 %%DATADIR%%/examples/dalemb-pulse.gel
 %%DATADIR%%/examples/easy-matrix-examples.gel
 %%DATADIR%%/examples/eulers-method-exp-run.gel
 %%DATADIR%%/examples/eulers-method-graphs-exp.gel
+%%DATADIR%%/examples/explicit-fdm-heat-line.gel
 %%DATADIR%%/examples/explicit-fdm-heat.gel
 %%DATADIR%%/examples/fourier-series-animation.gel
 %%DATADIR%%/examples/fourier-series-plotting.gel
@@ -33,6 +40,8 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/newton-calc-sqrt2.gel
 %%DATADIR%%/examples/newton-sqrt2.gel
 %%DATADIR%%/examples/peano.gel
+%%DATADIR%%/examples/riemann-integral-darboux.gel
+%%DATADIR%%/examples/riemann-integral.gel
 %%DATADIR%%/examples/rsa.gel
 %%DATADIR%%/examples/shocks.gel
 %%DATADIR%%/examples/sierpinski.gel
@@ -149,6 +158,13 @@ share/gnome/help/genius/ru/figures/parametric.png
 share/gnome/help/genius/ru/figures/parametric_graph.png
 share/gnome/help/genius/ru/figures/surface_graph.png
 share/gnome/help/genius/ru/genius.xml
+share/gnome/help/genius/sv/figures/genius_window.png
+share/gnome/help/genius/sv/figures/line_plot.png
+share/gnome/help/genius/sv/figures/line_plot_graph.png
+share/gnome/help/genius/sv/figures/parametric.png
+share/gnome/help/genius/sv/figures/parametric_graph.png
+share/gnome/help/genius/sv/figures/surface_graph.png
+share/gnome/help/genius/sv/genius.xml
 share/icons/hicolor/16x16/apps/gnome-genius.png
 share/icons/hicolor/22x22/apps/gnome-genius.png
 share/icons/hicolor/24x24/apps/gnome-genius.png
@@ -178,6 +194,7 @@ share/locale/ga/LC_MESSAGES/genius.mo
 share/locale/gl/LC_MESSAGES/genius.mo
 share/locale/hi/LC_MESSAGES/genius.mo
 share/locale/hr/LC_MESSAGES/genius.mo
+share/locale/hu/LC_MESSAGES/genius.mo
 share/locale/id/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ja/LC_MESSAGES/genius.mo
@@ -213,3 +230,4 @@ share/omf/genius/genius-es.omf
 share/omf/genius/genius-fr.omf
 share/omf/genius/genius-pt_BR.omf
 share/omf/genius/genius-ru.omf
+share/omf/genius/genius-sv.omf

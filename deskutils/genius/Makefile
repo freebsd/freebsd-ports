@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	genius
-PORTVERSION=	1.0.21
+PORTVERSION=	1.0.22
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -11,14 +11,19 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
-LIB_DEPENDS=	libmpfr.so:math/mpfr
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig \
 		readline shared-mime-info tar:xz
-USE_GNOME=	gnomedocutils gnomeprefix gtksourceview2 gnomevfs2 vte intltool
+USE_GNOME=	cairo gnomedocutils gnomeprefix gtksourceview2 gnomevfs2 vte intltool
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization \
 		--disable-update-mimedb \
