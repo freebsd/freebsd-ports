@@ -196,7 +196,7 @@ PLIST_SUB+=		DEVELOPER="" NTVFS=""
 .else
 GDB_CMD=		true
 CONFIGURE_ARGS+=	--without-ntvfs-fileserver
-PLIST_SUB+=		DEVELOPER="@comment " NTVFS="@comment"
+PLIST_SUB+=		DEVELOPER="@comment " NTVFS="@comment "
 .endif
 ##############################################################################
 # XXX: That will blow up your installation
