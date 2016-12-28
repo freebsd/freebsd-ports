@@ -23,6 +23,9 @@ EXAMPLES=	hook2.rb test.rb
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
