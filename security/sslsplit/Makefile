@@ -9,6 +9,8 @@ MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
 
+EXPLICIT_SAFESTACK=		yes
+
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		gmake pkgconfig tar:bzip2 uidfix
