@@ -22,6 +22,9 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:devel/p5-Carp-Assert-More \
 		p5-libwww>=6.02:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
