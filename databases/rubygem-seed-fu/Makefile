@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed-fu
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
