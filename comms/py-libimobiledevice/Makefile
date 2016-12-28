@@ -12,6 +12,8 @@ BUILD_DEPENDS=	cython:lang/cython \
 		${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
 
+PORTSCOUT=	ignore:1
+
 USES=		python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
