@@ -36,7 +36,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 NOPIE_PORTS=	yes
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1200000 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 1100508 && ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-safestack
 .endif
 
