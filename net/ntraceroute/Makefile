@@ -3,7 +3,7 @@
 
 PORTNAME=	ntraceroute
 PORTVERSION=	6.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	NETBSD/traceroute-nanog \
 		http://mirrors.rit.edu/zi/
@@ -22,11 +22,17 @@ EXTRACT_AFTER_ARGS=	.
 
 PLIST_FILES=	sbin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1100030
+BUILD_FLAGS=	-DBYTESWAP_IP_FLAGS -DBYTESWAP_IP_LEN
+.endif
+
 do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} -lm \
+	${CC} ${BUILD_FLAGS} -o ${WRKSRC}/${PORTNAME} -lm \
 	    ${WRKSRC}/${DISTFILES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
