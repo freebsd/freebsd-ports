@@ -222,7 +222,7 @@ lib/nss_wins.so.1
 lib/pam_winbind.so
 lib/winbind_krb5_locator.so
 %%AD_DC%%lib/samba/libdlz-bind9-for-torture-samba4.so
-%%AD_DC%%lib/samba/libntvfs-samba4.so
+%%NTVFS%%lib/samba/libntvfs-samba4.so
 %%AD_DC%%lib/samba/libposix-eadb-samba4.so
 %%AD_DC%%lib/samba/libprocess-model-samba4.so
 %%AD_DC%%lib/samba/libservice-samba4.so
@@ -328,9 +328,6 @@ lib/samba/libutil-tdb-samba4.so
 lib/samba/libwinbind-client-samba4.so
 lib/samba/libwind-samba4.so.0
 lib/samba/libxattr-tdb-samba4.so
-%%DEVELOPER%%lib/samba/libnss_wrapper.so
-%%DEVELOPER%%lib/samba/libuid_wrapper.so
-%%DEVELOPER%%lib/samba/libsocket_wrapper.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9_10.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9_9.so
@@ -385,7 +382,7 @@ lib/samba/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/service/nbtd.so
 %%AD_DC%%lib/shared-modules/service/ntp_signd.so
 %%AD_DC%%lib/shared-modules/service/s3fs.so
-%%AD_DC%%lib/shared-modules/service/smb.so
+%%NTVFS%%lib/shared-modules/service/smb.so
 %%AD_DC%%lib/shared-modules/service/web.so
 %%AD_DC%%lib/shared-modules/service/winbindd.so
 %%AD_DC%%lib/shared-modules/service/wrepl.so
@@ -502,7 +499,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%PKGCONFIGDIR%%/smbclient-raw.pc
 %%PKGCONFIGDIR%%/torture.pc
 %%PKGCONFIGDIR%%/wbclient.pc
-%%DEVELOPER%%%%PYTHON_SITELIBDIR%%/samba/socket_wrapper.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_native.so
