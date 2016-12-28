@@ -1028,6 +1028,7 @@
     SUBDIR += hs-scientific
     SUBDIR += hs-securemem
     SUBDIR += hs-setenv
+    SUBDIR += hs-setlocale
     SUBDIR += hs-shake
     SUBDIR += hs-show
     SUBDIR += hs-silently
