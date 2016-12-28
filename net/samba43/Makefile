@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}43
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		1
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -19,7 +19,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.* samba44-4
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.3.11
+SAMBA4_VERSION=		4.3.13
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -157,7 +157,6 @@ CONFIGURE_ARGS+=	\
 			--with-sendfile-support \
 			--builtin-libraries=smbclient \
 			${ICONV_CONFIGURE_BASE}
-
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 .if ${ARCH} == "amd64"
 CFLAGS+=		-fno-omit-frame-pointer
@@ -192,11 +191,12 @@ GDB_CMD?=		${LOCALBASE}/bin/gdb
 BUILD_DEPENDS+=		${GDB_CMD}:devel/gdb
 RUN_DEPENDS+=		${GDB_CMD}:devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
-CONFIGURE_ARGS+=	--enable-developer --enable-selftest
-PLIST_SUB+=		DEVELOPER=""
+CONFIGURE_ARGS+=	--enable-developer --enable-selftest --with-ntvfs-fileserver --abi-check-disable
+PLIST_SUB+=		DEVELOPER="" NTVFS=""
 .else
 GDB_CMD=		true
-PLIST_SUB+=		DEVELOPER="@comment "
+CONFIGURE_ARGS+=	--without-ntvfs-fileserver
+PLIST_SUB+=		DEVELOPER="@comment " NTVFS="@comment"
 .endif
 ##############################################################################
 # XXX: That will blow up your installation
@@ -345,7 +345,7 @@ CONFIGURE_ARGS+=	--without-ads
 
 .if defined(SAMBA4_WANT_LDAP)
 USE_OPENLDAP=		yes
-#WANT_OPENLDAP_SASL=	yes
+WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
