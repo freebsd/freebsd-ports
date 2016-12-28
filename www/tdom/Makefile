@@ -9,27 +9,30 @@ MASTER_SITES=	GHC http://mirrors.rit.edu/zi/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
-TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
+LICENSE=	MPL MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/expat/COPYING
 
-OPTIONS_DEFINE=	DOCS
+TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
 USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
+CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 
-pre-configure:
-	${RM} ${WRKSRC}/generic/domalloc.?
+TEST_TARGET=	test
+TEST_ENV=	LANG=C
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-DOCS=		CHANGES LICENSE README README.AOL
+DOCS=		CHANGES README README.AOL
 HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 		expat.html expatapi.html index.html keyword-index.html \
 		tdomcmd.html tnc.html
 
-post-build test:
-	${SETENV} LANG=C ${MAKE} -C ${WRKSRC} test
+OPTIONS_DEFINE=	DOCS
 
-CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc
+pre-configure:
+	@${RM} ${WRKSRC}/generic/domalloc.?
 
 post-install:
 	${CHMOD} 755 ${STAGEDIR}${TDOMBASE}
