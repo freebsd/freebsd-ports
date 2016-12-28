@@ -21,6 +21,9 @@ USES=		iconv
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \
