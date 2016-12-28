@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161228:
+  AFFECTS: users of multimedia/mlt
+  AUTHOR: avilla@FreeBSD.org
+
+  MLT Qt plugins have been moved to their own ports, mlt-qt4 and
+  mlt-qt5. Please, uninstall multimedia/mlt before you update:
+
+  # pkg delete mlt
+
 20161227:
   AFFECTS: users of security/openvpn, security/openvpn-polarssl
   AUTHOR: Matthias Andree <mandree@FreeBSD.org>
