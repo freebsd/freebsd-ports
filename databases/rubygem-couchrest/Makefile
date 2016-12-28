@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchrest
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-mime-types>=1.15:misc/rubygem-mime-types \
 		rubygem-multi_json>=1.7:devel/rubygem-multi_json \
-		rubygem-rest-client>=1.8.0:www/rubygem-rest-client
+		rubygem-httpclient>=2.8:www/rubygem-httpclient
 
 NO_ARCH=	yes
 USE_RUBY=	yes
