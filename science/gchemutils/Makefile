@@ -10,6 +10,9 @@ DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ classes and Gtk3 widgets related to chemistry
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
@@ -20,16 +23,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
 
 PORTSCOUT=	limitw:1,even
 
-BROKEN_aarch64=	Fails to compile: error: call to abs is ambiguous
-
 USE_XORG=	x11
 USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
-		pkgconfig shared-mime-info tar:xz
+USES=		desktop-file-utils gettext gmake libtool:keepla localbase:ldflags \
+		pathfix pkgconfig shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
