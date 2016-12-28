@@ -24,6 +24,9 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS=		readme.ja.rd readme.rd
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
