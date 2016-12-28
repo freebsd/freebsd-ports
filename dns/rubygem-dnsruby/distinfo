@@ -1,2 +1,3 @@
-SHA256 (rubygem/dnsruby-1.59.2.gem) = 22b55fb116797c4676919eea6ddfdfe101e40bb9019ce4a72e21330fc0b301c8
-SIZE (rubygem/dnsruby-1.59.2.gem) = 233984
+TIMESTAMP = 1482940225
+SHA256 (rubygem/dnsruby-1.60.0.gem) = bf9bd6d5e3610e51ac83da8bbad3ee7180b62cfe2f7e3f8df2e7ba355b93a56d
+SIZE (rubygem/dnsruby-1.60.0.gem) = 244736

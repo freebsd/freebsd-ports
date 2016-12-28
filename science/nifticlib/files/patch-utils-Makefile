@@ -1,5 +1,5 @@
---- utils/Makefile.orig	2007-05-17 15:18:44.000000000 -0500
-+++ utils/Makefile	2013-10-29 15:55:12.000000000 -0500
+--- utils/Makefile.orig	2007-05-17 20:18:44 UTC
++++ utils/Makefile
 @@ -1,5 +1,5 @@
 -CC	=	gcc
 -CFLAGS	=	-ansi -pedantic

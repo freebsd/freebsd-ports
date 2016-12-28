@@ -5,21 +5,18 @@ PORTNAME=	spek
 PORTVERSION=	0.8.2
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	alexander@kojevnikov.com
 COMMENT=	Acoustic spectrum analyser
 
-LICENSE=	GPLv3
-
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-USES=		tar:xz gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils
+USES=		compiler:c++11-lib desktop-file-utils gmake pkgconfig tar:xz
 USE_GNOME=	intltool
-USE_WX=	3.0
-WX_UNICODE=	yes
+USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

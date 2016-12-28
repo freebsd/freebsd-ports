@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.6.0
+PORTVERSION=	9.7.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 BROKEN_FreeBSD_9=	does not build: g++48 internal compiler error
 BROKEN_sparc64=	does not install
 
-USES=		compiler:c++11-lib iconv localbase pkgconfig tar:xz
+USES=		compiler:c++14-lang iconv localbase pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -46,7 +46,7 @@ NLS_CONFIGURE_WITH=	gettext
 
 QT5_DESC=	Build and install GUI application (Qt 5)
 QT5_USES=	desktop-file-utils shared-mime-info
-QT5_USE=	QT5=buildtools_build,core,gui,network,quick,widgets
+QT5_USE=	QT5=buildtools_build,concurrent,core,gui,network,quick,widgets
 QT5_CONFIGURE_ENABLE=	qt
 
 .include <bsd.port.options.mk>

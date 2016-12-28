@@ -1,5 +1,5 @@
---- examples/Makefile.orig	2013-10-29 15:56:43.000000000 -0500
-+++ examples/Makefile	2013-10-29 15:56:48.000000000 -0500
+--- examples/Makefile.orig	2009-04-14 14:47:16 UTC
++++ examples/Makefile
 @@ -1,4 +1,4 @@
 -CC	=	gcc
 +CC	?=	gcc
