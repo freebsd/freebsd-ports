@@ -21,6 +21,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
 
+DEPRECATED=	Upstream no longer active
+EXPIRATION_DATE=	2017-01-28
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(require[[:space:]]+')\./mp3tag(.*),\1mp3tag\2," \
