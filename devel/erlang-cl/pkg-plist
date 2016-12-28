@@ -1,0 +1,15 @@
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl.app
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl.beam
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl10.beam
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl11.beam
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl12.beam
+lib/erlang/lib/cl-%%VERSION%%/ebin/cl13.beam
+lib/erlang/lib/cl-%%VERSION%%/ebin/clu.beam
+lib/erlang/lib/cl-%%VERSION%%/include/cl.hrl
+lib/erlang/lib/cl-%%VERSION%%/src/cl.app.src
+lib/erlang/lib/cl-%%VERSION%%/src/cl.erl
+lib/erlang/lib/cl-%%VERSION%%/src/cl10.erl
+lib/erlang/lib/cl-%%VERSION%%/src/cl11.erl
+lib/erlang/lib/cl-%%VERSION%%/src/cl12.erl
+lib/erlang/lib/cl-%%VERSION%%/src/cl13.erl
+lib/erlang/lib/cl-%%VERSION%%/src/clu.erl
