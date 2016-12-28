@@ -15,4 +15,7 @@ USE_RUBY=	yes
 USES=		gem
 GEM_NAME=	${DISTNAME}
 
+DEPRECATED=	Use www/rubygem-ruby-hmac instead
+EXPIRATION_DATE=	2017-01-28
+
 .include <bsd.port.mk>
