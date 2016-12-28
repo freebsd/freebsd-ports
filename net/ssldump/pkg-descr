@@ -5,4 +5,4 @@ decodes the records and displays them in a textual form to stdout.  If
 provided with the appropriate keying material, it will also decrypt
 the connections and display the application data traffic.
 
-WWW: http://www.rtfm.com/ssldump/
+WWW: https://sourceforge.net/projects/ssldump/
