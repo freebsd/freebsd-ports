@@ -19,6 +19,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlsplit.rb
 
+DEPRECATED=	Upstream no longer exists
+EXPIRATION_DATE=	2017-01-28
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/htmlsplit.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
