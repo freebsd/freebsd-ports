@@ -3,10 +3,10 @@
 
 PORTNAME=	formalchemy
 PORTVERSION=	1.5.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-#MASTER_SITES=	https://github.com/FormAlchemy/formalchemy
+#MASTER_SITES=	https://github.com/FormAlchemy/FormAlchemy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	FormAlchemy-${DISTVERSION}
 
 MAINTAINER=	ghostonthewire@gmail.com
 COMMENT=	Toolkit for creating HTML form elements
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FormAlchemy
-GH_TAGNAME=	v${PORTVERSION}
+GH_PROJECT=	${GH_ACCOUNT}
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.4.5:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>=0.4:textproc/py-Tempita \
