@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httest
-PORTVERSION=	2.4.17
+PORTVERSION=	2.4.18
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -33,8 +33,6 @@ USE_LDCONFIG=	yes
 PORTEXAMPLES=	*
 
 INSTALL_TARGET=	install-strip
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||; s|-llua|-llua-${LUA_VER}|g' ${WRKSRC}/configure
