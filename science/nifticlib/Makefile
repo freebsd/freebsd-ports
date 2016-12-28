@@ -3,13 +3,14 @@
 
 PORTNAME=	nifticlib
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
 
-# LICENSE=	public domain
+LICENSE=	PD
 
 USES=		gmake
 
@@ -17,7 +18,7 @@ USES=		gmake
 # nifti bins by itself.
 CONFLICTS=	afni-[0-9]* dbh-[0-9]*
 
-MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-fPIC
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin

@@ -1,6 +1,6 @@
---- Makefile.orig	2010-07-20 19:18:58.000000000 +0200
-+++ Makefile	2014-02-20 23:32:52.000000000 +0100
-@@ -17,21 +17,21 @@
+--- Makefile.orig	2010-07-20 17:18:58 UTC
++++ Makefile
+@@ -17,21 +17,21 @@ TARFILE_NAME	=	nifticlib-2.0.0
  
  
  ## Compiler  defines
@@ -17,7 +17,7 @@
 +AR		?=	ar
 +RANLIB  	?=	ranlib
 +DEPENDFLAGS	?=	-MM
-+GNU_ANSI_FLAGS	?= 	-Wall -ansi -pedantic
++GNU_ANSI_FLAGS	?= 	-ansi -pedantic
 +ANSI_FLAGS	+= 	${GNU_ANSI_FLAGS}
 +CFLAGS		+=	$(ANSI_FLAGS)
  
@@ -34,7 +34,7 @@
  
  
  ## Installation
-@@ -41,9 +41,9 @@
+@@ -41,9 +41,9 @@ INSTALL_INC_DIR	=	include
  
  
  ## Zlib defines
@@ -47,7 +47,7 @@
  
  ##############################################################
  # platform specific redefines (to use, set ARCH appropriately)
-@@ -116,33 +116,33 @@
+@@ -116,33 +116,33 @@ clean_all: clean regress_clean_all insta
  
  znz:
  	echo "arch is $(ARCH)"
@@ -87,7 +87,7 @@
  	@echo Utility programs built.
  	@echo ""
  
-@@ -152,7 +152,7 @@
+@@ -152,7 +152,7 @@ doc:
  	@echo ""
  
  regress_data:
@@ -96,7 +96,7 @@
  	@echo ""
  	@echo Regression testing data installed.
  	@echo See Testing/README_regress for details.
-@@ -167,25 +167,25 @@
+@@ -167,25 +167,25 @@ $(INSTALL_INC_DIR):
  $(INSTALL_LIB_DIR):
  	mkdir -p $@
  
@@ -126,7 +126,7 @@
  	($(CP) $(FSLIO)/*.a $(INSTALL_LIB_DIR); $(CP) $(FSLIO)/*.h $(INSTALL_INC_DIR);)
  	$(RANLIB) $(INSTALL_LIB_DIR)/*.a
  	@echo " $(FSLIO) installed."
-@@ -212,19 +212,19 @@
+@@ -212,19 +212,19 @@ fslio_clean:
  	(cd $(FSLIO); $(RM) -f *.o *.a core; $(RM) -f depend.mk;)
  
  examples_clean:
