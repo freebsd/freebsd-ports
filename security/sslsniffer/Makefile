@@ -9,6 +9,8 @@ MASTER_SITES=	http://crypto.stanford.edu/~eujin/sslsniffer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 
 USES=		ssl
