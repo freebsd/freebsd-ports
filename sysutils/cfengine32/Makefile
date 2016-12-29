@@ -17,7 +17,7 @@ CPE_VENDOR=	gnu
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-[2]* cfengine-3.[3-9]* cfengine-devel-*
+CONFLICTS=	cfengine-[2]* cfengine-3.[13-9]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
