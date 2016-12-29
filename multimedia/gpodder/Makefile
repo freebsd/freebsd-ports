@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-PORTVERSION=	3.9.2
+PORTVERSION=	3.9.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -16,8 +16,8 @@ BUILD_DEPENDS=	intltool-extract:textproc/intltool \
 		help2man:misc/help2man
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib \
-		${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:devel/py-mygpoclient \
+		${PYTHON_PKGNAMEPREFIX}podcastparser>0:devel/py-podcastparser \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}eyed3>=0:audio/py-eyed3
 
