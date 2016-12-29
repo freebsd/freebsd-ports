@@ -1,2 +1,3 @@
-SHA256 (firebirdsql-0.9.12.tar.gz) = c08bdb1d8e981086cad369cc09268648b28f8e541d5113d17c98248cdee272f5
-SIZE (firebirdsql-0.9.12.tar.gz) = 48802
+TIMESTAMP = 1482973738
+SHA256 (firebirdsql-1.0.0.tar.gz) = d7d1b8aceed318208c572209d1d8d369d19d80de86a9bf5c35ea78c2ecce7a2b
+SIZE (firebirdsql-1.0.0.tar.gz) = 51271
