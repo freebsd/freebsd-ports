@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-server
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.7
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
@@ -30,8 +30,6 @@ GH_ACCOUNT=	haiwen
 USES=		autoreconf gettext libtool localbase mysql:client \
        		pathfix pgsql pkgconfig python:-2.7 shebangfix ssl
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	tools/*.py
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
