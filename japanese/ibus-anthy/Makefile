@@ -6,13 +6,11 @@ PORTVERSION=	1.2.7
 PORTREVISION=	6
 CATEGORIES=	japanese
 PROJECTHOST=	ibus
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/ibus/ibus-anthy/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	ja-
 
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Anthy engine for IBus
-
-BROKEN=		Unfetchable (google code has gone away)
 
 BUILD_DEPENDS=	swig:devel/swig13
 LIB_DEPENDS=	libanthy.so:japanese/anthy \
