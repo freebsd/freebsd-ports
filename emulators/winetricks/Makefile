@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	winetricks
-PORTVERSION=	20161012
+PORTVERSION=	20161228
 CATEGORIES=	emulators
 
 MAINTAINER=	lifanov@FreeBSD.org

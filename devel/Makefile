@@ -4457,6 +4457,7 @@
     SUBDIR += py-plex
     SUBDIR += py-pluggy
     SUBDIR += py-ply
+    SUBDIR += py-podcastparser
     SUBDIR += py-polib
     SUBDIR += py-positional
     SUBDIR += py-posix_ipc

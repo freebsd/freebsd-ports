@@ -12,7 +12,7 @@ COMMENT=	FreeBSD Integration Service on Hyper-v
 
 IGNORE=		does not support any actual FreeBSD release
 DEPRECATED=	does not support any actual FreeBSD release
-EXPIRATION_DATE=2016-03-01
+EXPIRATION_DATE=2017-03-01
 
 ONLY_FOR_ARCHS=	amd64 i386
 
