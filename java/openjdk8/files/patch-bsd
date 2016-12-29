@@ -1,5 +1,5 @@
 --- ./common/autoconf/build-performance.m4	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/build-performance.m4	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/build-performance.m4	Wed Dec 28 10:29:21 2016 -0800
 @@ -41,6 +41,10 @@
      # Looks like a MacOSX system
      NUM_CORES=`/usr/sbin/system_profiler -detailLevel full SPHardwareDataType | grep 'Cores' | awk  '{print [$]5}'`
@@ -39,7 +39,7 @@
        CCACHE=
      else
 --- ./common/autoconf/generated-configure.sh	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/generated-configure.sh	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/generated-configure.sh	Wed Dec 28 10:29:21 2016 -0800
 @@ -646,6 +646,8 @@
  LIBM
  LIBZIP_CAN_USE_MMAP
@@ -98,12 +98,21 @@
    --with-x                use the X Window System
    --with-cups             specify prefix directory for the cups package
                            (expecting the headers under PATH/include)
+@@ -3672,7 +3681,7 @@
+ 
+ 
+ #
+-# Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2011, 2015, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
 @@ -3880,7 +3889,7 @@
  #CUSTOM_AUTOCONF_INCLUDE
  
  # Do not change or remove the following line, it is needed for consistency checks:
 -DATE_WHEN_GENERATED=1449096260
-+DATE_WHEN_GENERATED=1460430898
++DATE_WHEN_GENERATED=1482096439
  
  ###############################################################################
  #
@@ -192,6 +201,15 @@
      OPENJDK_TARGET_CPU_OSARCH="i386"
    elif test "x$OPENJDK_TARGET_OS" != xmacosx && test "x$OPENJDK_TARGET_CPU" = xx86_64; then
      # On all platforms except macosx, we replace x86_64 with amd64.
+@@ -7985,7 +8028,7 @@
+     INCLUDE_SA=false
+   fi
+   if test "x$VAR_CPU" = xppc64 ; then
+-    INCLUDE_SA=false
++    INCLUDE_SA=true
+   fi
+   if test "x$OPENJDK_TARGET_CPU" = xaarch64; then
+     INCLUDE_SA=false
 @@ -11174,6 +11217,24 @@
  
    ###############################################################################
@@ -325,7 +343,46 @@
    fi
    if test "x$OPENJDK_TARGET_OS" = xlinux; then
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
-@@ -30261,11 +30341,18 @@
+@@ -29794,6 +29874,38 @@
+   fi
+   if test "x$OPENJDK_TARGET_OS" = xbsd; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DBSD -D_ALLBSD_SOURCE"
++    if test "`uname -s`" = "OpenBSD"; then
++        { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ld requires -z wxneeded" >&5
++$as_echo_n "checking if ld requires -z wxneeded... " >&6; }
++        if test "$cross_compiling" = yes; then :
++
++              { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++
++else
++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <sys/mman.h>
++int main() { return mmap(0, 4096, PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANON, -1, 0) != MAP_FAILED; }
++_ACEOF
++if ac_fn_cxx_try_run "$LINENO"; then :
++
++              { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++              LDFLAGS_JDK="$LDFLAGS_JDK -Wl,-z,wxneeded"
++
++else
++
++              { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++fi
++rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
++  conftest.$ac_objext conftest.beam conftest.$ac_ext
++fi
++
++    fi
+   fi
+   if test "x$DEBUG_LEVEL" = xrelease; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DNDEBUG"
+@@ -30261,11 +30373,18 @@
    fi
  
    if test "x$OPENJDK_TARGET_OS" = xbsd; then
@@ -349,7 +406,7 @@
    fi
  
    if test "x$OPENJDK" = "xfalse"; then
-@@ -30301,14 +30388,18 @@
+@@ -30301,14 +30420,18 @@
    # --x-libraries for the sysroot, if that seems to be correct.
    if test "x$SYS_ROOT" != "x/"; then
      if test "x$x_includes" = xNONE; then
@@ -370,7 +427,7 @@
          x_libraries="$SYS_ROOT/usr/X11R6/lib"
        elif test "$SYS_ROOT/usr/lib64/libX11.so" && test "x$OPENJDK_TARGET_CPU_BITS" = x64; then
          x_libraries="$SYS_ROOT/usr/lib64"
-@@ -31355,6 +31446,10 @@
+@@ -31355,6 +31478,10 @@
          # A CSW package seems to be installed!
          CUPS_FOUND=yes
          CUPS_CFLAGS="-I/opt/csw/include"
@@ -381,7 +438,7 @@
        fi
        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CUPS_FOUND" >&5
  $as_echo "$CUPS_FOUND" >&6; }
-@@ -34520,7 +34615,7 @@
+@@ -34520,7 +34647,7 @@
  
    ###############################################################################
    #
@@ -390,7 +447,7 @@
    #
  
  # Check whether --with-alsa was given.
-@@ -34928,15 +35023,66 @@
+@@ -34928,15 +35055,66 @@
  
    if test "x${with_giflib}" = "xbundled"; then
      USE_EXTERNAL_LIBGIF=false
@@ -462,7 +519,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for DGifGetCode in -lgif" >&5
  $as_echo_n "checking for DGifGetCode in -lgif... " >&6; }
  if ${ac_cv_lib_gif_DGifGetCode+:} false; then :
-@@ -34974,16 +35120,96 @@
+@@ -34974,16 +35152,96 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gif_DGifGetCode" >&5
  $as_echo "$ac_cv_lib_gif_DGifGetCode" >&6; }
  if test "x$ac_cv_lib_gif_DGifGetCode" = xyes; then :
@@ -569,7 +626,7 @@
  
      USE_EXTERNAL_LIBGIF=true
    else
-@@ -34991,6 +35217,8 @@
+@@ -34991,6 +35249,8 @@
    fi
  
  
@@ -578,7 +635,7 @@
    ###############################################################################
    #
    # Check for the zlib library
-@@ -35558,6 +35786,11 @@
+@@ -35558,6 +35818,11 @@
      LIBCXX="-lstdc++"
    fi
  
@@ -590,7 +647,7 @@
  
  
  
-@@ -35631,6 +35864,10 @@
+@@ -35631,6 +35896,10 @@
      # Looks like a MacOSX system
      NUM_CORES=`/usr/sbin/system_profiler -detailLevel full SPHardwareDataType | grep 'Cores' | awk  '{print $5}'`
      FOUND_CORES=yes
@@ -601,7 +658,7 @@
    elif test "x$OPENJDK_BUILD_OS" = xaix ; then
      NUM_CORES=`/usr/sbin/prtconf | grep "^Number Of Processors" | awk '{ print $4 }'`
      FOUND_CORES=yes
-@@ -35686,6 +35923,15 @@
+@@ -35686,6 +35955,15 @@
      MEMORY_SIZE=`/usr/sbin/system_profiler -detailLevel full SPHardwareDataType | grep 'Memory' | awk  '{print $2}'`
      MEMORY_SIZE=`expr $MEMORY_SIZE \* 1024`
      FOUND_MEM=yes
@@ -617,7 +674,7 @@
    elif test "x$OPENJDK_BUILD_OS" = xwindows; then
      # Windows, but without cygwin
      MEMORY_SIZE=`wmic computersystem get totalphysicalmemory -value | grep = | cut -d "=" -f 2-`
-@@ -36093,8 +36339,8 @@
+@@ -36093,8 +36371,8 @@
      # precompiled headers.
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ccache supports precompiled headers" >&5
  $as_echo_n "checking if ccache supports precompiled headers... " >&6; }
@@ -629,7 +686,16 @@
  $as_echo "no, disabling ccache" >&6; }
        CCACHE=
 --- ./common/autoconf/jdk-options.m4	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/jdk-options.m4	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/jdk-options.m4	Wed Dec 28 10:29:21 2016 -0800
+@@ -159,7 +159,7 @@
+     INCLUDE_SA=false
+   fi
+   if test "x$VAR_CPU" = xppc64 ; then
+-    INCLUDE_SA=false
++    INCLUDE_SA=true
+   fi
+   if test "x$OPENJDK_TARGET_CPU" = xaarch64; then
+     INCLUDE_SA=false
 @@ -410,6 +410,20 @@
  
    ###############################################################################
@@ -652,7 +718,7 @@
    #
    AC_DEFUN_ONCE([JDKOPT_DETECT_INTREE_EC],
 --- ./common/autoconf/libraries.m4	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/libraries.m4	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/libraries.m4	Wed Dec 28 10:29:21 2016 -0800
 @@ -69,9 +69,15 @@
    fi
  
@@ -791,7 +857,7 @@
    AC_SUBST(LIBCXX)
  ])
 --- ./common/autoconf/platform.m4	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/platform.m4	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/platform.m4	Wed Dec 28 10:29:21 2016 -0800
 @@ -30,7 +30,7 @@
  [
    # First argument is the cpu name from the trip/quad
@@ -852,7 +918,7 @@
    elif test "x$OPENJDK_TARGET_OS" != xmacosx && test "x$OPENJDK_TARGET_CPU" = xx86_64; then
      # On all platforms except macosx, we replace x86_64 with amd64.
 --- ./common/autoconf/spec.gmk.in	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/spec.gmk.in	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/spec.gmk.in	Wed Dec 28 10:29:21 2016 -0800
 @@ -76,6 +76,7 @@
  OPENJDK_TARGET_OS:=@OPENJDK_TARGET_OS@
  OPENJDK_TARGET_OS_API:=@OPENJDK_TARGET_OS_API@
@@ -890,7 +956,7 @@
  LIBZIP_CAN_USE_MMAP:=@LIBZIP_CAN_USE_MMAP@
  MSVCR_DLL:=@MSVCR_DLL@
 --- ./common/autoconf/toolchain.m4	Thu Sep 22 12:29:25 2016 -0700
-+++ ./common/autoconf/toolchain.m4	Mon Oct 24 19:45:12 2016 -0700
++++ ./common/autoconf/toolchain.m4	Wed Dec 28 10:29:21 2016 -0800
 @@ -72,7 +72,7 @@
    else
      COMPILER_VERSION_TEST=`$COMPILER --version 2>&1 | $HEAD -n 1`
@@ -985,8 +1051,31 @@
    fi
    if test "x$OPENJDK_TARGET_OS" = xlinux; then
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
+@@ -1084,6 +1099,22 @@
+   fi
+   if test "x$OPENJDK_TARGET_OS" = xbsd; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DBSD -D_ALLBSD_SOURCE"
++    if test "`uname -s`" = "OpenBSD"; then
++        AC_MSG_CHECKING([if ld requires -z wxneeded])
++        AC_RUN_IFELSE([AC_LANG_SOURCE([[#include <sys/mman.h>
++int main() { return mmap(0, 4096, PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANON, -1, 0) != MAP_FAILED; }]])],
++            [
++              AC_MSG_RESULT([yes])
++              LDFLAGS_JDK="$LDFLAGS_JDK -Wl,-z,wxneeded"
++            ],
++            [
++              AC_MSG_RESULT([no])
++            ],
++            [
++              AC_MSG_RESULT([no])
++            ]
++        )
++    fi
+   fi
+   if test "x$DEBUG_LEVEL" = xrelease; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DNDEBUG"
 --- ./configure	Thu Sep 22 12:29:25 2016 -0700
-+++ ./configure	Mon Oct 24 19:45:12 2016 -0700
++++ ./configure	Wed Dec 28 10:29:21 2016 -0800
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -994,7 +1083,7 @@
  # Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
 --- ./make/Javadoc.gmk	Thu Sep 22 12:29:25 2016 -0700
-+++ ./make/Javadoc.gmk	Mon Oct 24 19:45:12 2016 -0700
++++ ./make/Javadoc.gmk	Wed Dec 28 10:29:21 2016 -0800
 @@ -46,8 +46,18 @@
  
  BUILD_NUMBER=$(JDK_BUILD_NUMBER)
@@ -1016,7 +1105,7 @@
      $(NEW_JAVADOC) \
      -bootclasspath $(JDK_OUTPUTDIR)/classes
 --- ./make/Main.gmk	Thu Sep 22 12:29:25 2016 -0700
-+++ ./make/Main.gmk	Mon Oct 24 19:45:12 2016 -0700
++++ ./make/Main.gmk	Wed Dec 28 10:29:21 2016 -0800
 @@ -58,7 +58,11 @@
  
  # Setup number of jobs to use. -jN is unfortunately not available for us to parse from the command line,
@@ -1030,7 +1119,7 @@
  ### Main targets
  
 --- ./make/common/MakeBase.gmk	Thu Sep 22 12:29:25 2016 -0700
-+++ ./make/common/MakeBase.gmk	Mon Oct 24 19:45:12 2016 -0700
++++ ./make/common/MakeBase.gmk	Wed Dec 28 10:29:21 2016 -0800
 @@ -338,7 +338,7 @@
      # (and causing a crash on Cygwin).
      # Default shell seems to always be /bin/sh. Must override with bash to get this to work on Solaris.
@@ -1052,7 +1141,7 @@
  
  # Make directory without forking mkdir if not needed
 --- ./make/common/NativeCompilation.gmk	Thu Sep 22 12:29:25 2016 -0700
-+++ ./make/common/NativeCompilation.gmk	Mon Oct 24 19:45:12 2016 -0700
++++ ./make/common/NativeCompilation.gmk	Wed Dec 28 10:29:21 2016 -0800
 @@ -151,9 +151,9 @@
    #   CC the compiler to use, default is $(CC)
    #   LDEXE the linker to use for linking executables, default is $(LDEXE)
@@ -1066,8 +1155,1909 @@
  
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
+--- ./hotspot/agent/make/Makefile	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/make/Makefile	Wed Dec 28 10:28:45 2016 -0800
+@@ -50,6 +50,7 @@
+ sun.jvm.hotspot.debugger.amd64 \
+ sun.jvm.hotspot.debugger.bsd \
+ sun.jvm.hotspot.debugger.bsd.amd64 \
++sun.jvm.hotspot.debugger.bsd.ppc64 \
+ sun.jvm.hotspot.debugger.bsd.x86 \
+ sun.jvm.hotspot.debugger.cdbg \
+ sun.jvm.hotspot.debugger.cdbg.basic \
+@@ -61,12 +62,15 @@
+ sun.jvm.hotspot.debugger.linux.x86 \
+ sun.jvm.hotspot.debugger.posix \
+ sun.jvm.hotspot.debugger.posix.elf \
++sun.jvm.hotspot.debugger.ppc64 \
+ sun.jvm.hotspot.debugger.proc \
+ sun.jvm.hotspot.debugger.proc.amd64 \
++sun.jvm.hotspot.debugger.proc.ppc64 \
+ sun.jvm.hotspot.debugger.proc.sparc \
+ sun.jvm.hotspot.debugger.proc.x86 \
+ sun.jvm.hotspot.debugger.remote \
+ sun.jvm.hotspot.debugger.remote.amd64 \
++sun.jvm.hotspot.debugger.remote.ppc64 \
+ sun.jvm.hotspot.debugger.remote.sparc \
+ sun.jvm.hotspot.debugger.remote.x86 \
+ sun.jvm.hotspot.debugger.sparc \
+@@ -90,12 +94,14 @@
+ sun.jvm.hotspot.runtime.amd64 \
+ sun.jvm.hotspot.runtime.bsd \
+ sun.jvm.hotspot.runtime.bsd_amd64 \
++sun.jvm.hotspot.runtime.bsd_ppc64 \
+ sun.jvm.hotspot.runtime.bsd_x86 \
+ sun.jvm.hotspot.runtime.linux \
+ sun.jvm.hotspot.runtime.linux_amd64 \
+ sun.jvm.hotspot.runtime.linux_sparc \
+ sun.jvm.hotspot.runtime.linux_x86 \
+ sun.jvm.hotspot.runtime.posix \
++sun.jvm.hotspot.runtime.ppc64 \
+ sun.jvm.hotspot.runtime.solaris_amd64 \
+ sun.jvm.hotspot.runtime.solaris_sparc \
+ sun.jvm.hotspot.runtime.solaris_x86 \
+@@ -135,6 +141,7 @@
+ sun/jvm/hotspot/debugger/amd64/*.java \
+ sun/jvm/hotspot/debugger/bsd/*.java \
+ sun/jvm/hotspot/debugger/bsd/amd64/*.java \
++sun/jvm/hotspot/debugger/bsd/ppc64/*.java \
+ sun/jvm/hotspot/debugger/bsd/x86/*.java \
+ sun/jvm/hotspot/debugger/cdbg/*.java \
+ sun/jvm/hotspot/debugger/cdbg/basic/*.java \
+@@ -145,12 +152,15 @@
+ sun/jvm/hotspot/debugger/linux/x86/*.java \
+ sun/jvm/hotspot/debugger/posix/*.java \
+ sun/jvm/hotspot/debugger/posix/elf/*.java \
++sun/jvm/hotspot/debugger/ppc64/*.java \
+ sun/jvm/hotspot/debugger/proc/*.java \
+ sun/jvm/hotspot/debugger/proc/amd64/*.java \
++sun/jvm/hotspot/debugger/proc/ppc64/*.java \
+ sun/jvm/hotspot/debugger/proc/sparc/*.java \
+ sun/jvm/hotspot/debugger/proc/x86/*.java \
+ sun/jvm/hotspot/debugger/remote/*.java \
+ sun/jvm/hotspot/debugger/remote/amd64/*.java \
++sun/jvm/hotspot/debugger/remote/ppc64/*.java \
+ sun/jvm/hotspot/debugger/remote/sparc/*.java \
+ sun/jvm/hotspot/debugger/remote/x86/*.java \
+ sun/jvm/hotspot/debugger/sparc/*.java \
+@@ -171,12 +181,14 @@
+ sun/jvm/hotspot/runtime/amd64/*.java \
+ sun/jvm/hotspot/runtime/bsd/*.java \
+ sun/jvm/hotspot/runtime/bsd_amd64/*.java \
++sun/jvm/hotspot/runtime/bsd_ppc64/*.java \
+ sun/jvm/hotspot/runtime/bsd_x86/*.java \
+ sun/jvm/hotspot/runtime/linux/*.java \
+ sun/jvm/hotspot/runtime/linux_amd64/*.java \
+ sun/jvm/hotspot/runtime/linux_sparc/*.java \
+ sun/jvm/hotspot/runtime/linux_x86/*.java \
+ sun/jvm/hotspot/runtime/posix/*.java \
++sun/jvm/hotspot/runtime/ppc64/*.java \
+ sun/jvm/hotspot/runtime/solaris_amd64/*.java \
+ sun/jvm/hotspot/runtime/solaris_sparc/*.java \
+ sun/jvm/hotspot/runtime/solaris_x86/*.java \
+--- ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Wed Dec 28 10:28:45 2016 -0800
+@@ -42,6 +42,10 @@
+ #include "sun_jvm_hotspot_debugger_sparc_SPARCThreadContext.h"
+ #endif
+ 
++#ifdef ppc64
++#include "sun_jvm_hotspot_debugger_ppc64_PPC64ThreadContext.h"
++#endif
++
+ static jfieldID p_ps_prochandle_ID = 0;
+ static jfieldID threadList_ID = 0;
+ static jfieldID loadObjectList_ID = 0;
+@@ -307,6 +311,9 @@
+ #if defined(sparc) || defined(sparcv9)
+ #define NPRGREG sun_jvm_hotspot_debugger_sparc_SPARCThreadContext_NPRGREG
+ #endif
++#ifdef ppc64
++#define NPRGREG sun_jvm_hotspot_debugger_ppc64_PPC64ThreadContext_NPRGREG
++#endif
+ 
+   array = (*env)->NewLongArray(env, NPRGREG);
+   CHECK_EXCEPTION_(0);
+@@ -407,6 +414,46 @@
+   regs[REG_INDEX(R_O7)]  = gregs.u_regs[14];
+ #endif /* sparc */
+ 
++#if defined(ppc64) || defined(ppc64le)
++#define REG_INDEX(reg) sun_jvm_hotspot_debugger_ppc64_PPC64ThreadContext_##reg
++
++  regs[REG_INDEX(LR)] = gregs.lr;
++  regs[REG_INDEX(PC)] = gregs.pc;
++  regs[REG_INDEX(R0)]  = gregs.fixreg[0];
++  regs[REG_INDEX(R1)]  = gregs.fixreg[1];
++  regs[REG_INDEX(R2)]  = gregs.fixreg[2];
++  regs[REG_INDEX(R3)]  = gregs.fixreg[3];
++  regs[REG_INDEX(R4)]  = gregs.fixreg[4];
++  regs[REG_INDEX(R5)]  = gregs.fixreg[5];
++  regs[REG_INDEX(R6)]  = gregs.fixreg[6];
++  regs[REG_INDEX(R7)]  = gregs.fixreg[7];
++  regs[REG_INDEX(R8)]  = gregs.fixreg[8];
++  regs[REG_INDEX(R9)]  = gregs.fixreg[9];
++  regs[REG_INDEX(R10)] = gregs.fixreg[10];
++  regs[REG_INDEX(R11)] = gregs.fixreg[11];
++  regs[REG_INDEX(R12)] = gregs.fixreg[12];
++  regs[REG_INDEX(R13)] = gregs.fixreg[13];
++  regs[REG_INDEX(R14)] = gregs.fixreg[14];
++  regs[REG_INDEX(R15)] = gregs.fixreg[15];
++  regs[REG_INDEX(R16)] = gregs.fixreg[16];
++  regs[REG_INDEX(R17)] = gregs.fixreg[17];
++  regs[REG_INDEX(R18)] = gregs.fixreg[18];
++  regs[REG_INDEX(R19)] = gregs.fixreg[19];
++  regs[REG_INDEX(R20)] = gregs.fixreg[20];
++  regs[REG_INDEX(R21)] = gregs.fixreg[21];
++  regs[REG_INDEX(R22)] = gregs.fixreg[22];
++  regs[REG_INDEX(R23)] = gregs.fixreg[23];
++  regs[REG_INDEX(R24)] = gregs.fixreg[24];
++  regs[REG_INDEX(R25)] = gregs.fixreg[25];
++  regs[REG_INDEX(R26)] = gregs.fixreg[26];
++  regs[REG_INDEX(R27)] = gregs.fixreg[27];
++  regs[REG_INDEX(R28)] = gregs.fixreg[28];
++  regs[REG_INDEX(R29)] = gregs.fixreg[29];
++  regs[REG_INDEX(R30)] = gregs.fixreg[30];
++  regs[REG_INDEX(R31)] = gregs.fixreg[31];
++
++#endif
++ 
+ 
+   (*env)->ReleaseLongArrayElements(env, array, regs, JNI_COMMIT);
+   return array;
+--- ./hotspot/agent/src/os/bsd/symtab.c	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/os/bsd/symtab.c	Wed Dec 28 10:28:45 2016 -0800
+@@ -211,6 +211,10 @@
+ 
+   // Reading of elf header
+   struct elf_section *scn_cache = NULL;
++#if defined(ppc64)
++  struct elf_section *opd_sect = NULL;
++  ELF_SHDR *opd = NULL;
++#endif
+   int cnt = 0;
+   ELF_SHDR* shbuf = NULL;
+   ELF_SHDR* cursct = NULL;
+@@ -258,6 +262,14 @@
+     cursct++;
+   }
+ 
++#if defined(ppc64)
++  opd_sect = find_section_by_name(".opd", fd, &ehdr, scn_cache);
++  if (opd_sect != NULL && opd_sect->c_data != NULL && opd_sect->c_shdr != NULL) {
++    // plausibility check
++    opd = opd_sect->c_shdr;
++  }
++#endif
++
+   if (!symtab_found && dynsym_found)
+      symsection = SHT_DYNSYM;
+ 
+@@ -322,6 +334,13 @@
+         symtab->symbols[j].name   = sym_name;
+         symtab->symbols[j].offset = syms->st_value - baseaddr;
+         symtab->symbols[j].size   = syms->st_size;
++#if defined(ppc64)
++        if (opd != NULL && *sym_name != '.' &&
++            (opd->sh_addr <= syms->st_value && syms->st_value <= opd->sh_addr + opd->sh_size))
++          symtab->symbols[j].offset =
++            ((ELF_ADDR*)opd_sect->c_data)[(syms->st_value - opd->sh_addr) / sizeof(ELF_ADDR*)] - baseaddr;
++        else
++#endif
+ 
+         key.data = sym_name;
+         key.size = strlen(sym_name) + 1;
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -33,6 +33,7 @@
+ import sun.jvm.hotspot.debugger.JVMDebugger;
+ import sun.jvm.hotspot.debugger.MachineDescription;
+ import sun.jvm.hotspot.debugger.MachineDescriptionAMD64;
++import sun.jvm.hotspot.debugger.MachineDescriptionPPC64;
+ import sun.jvm.hotspot.debugger.MachineDescriptionIA64;
+ import sun.jvm.hotspot.debugger.MachineDescriptionIntelX86;
+ import sun.jvm.hotspot.debugger.MachineDescriptionSPARC32Bit;
+@@ -588,6 +589,8 @@
+             machDesc = new MachineDescriptionIA64();
+         } else if (cpu.equals("amd64")) {
+             machDesc = new MachineDescriptionAMD64();
++        } else if (cpu.equals("ppc64")) {
++            machDesc = new MachineDescriptionPPC64();
+         } else if (cpu.equals("sparc")) {
+             if (LinuxDebuggerLocal.getAddressSize()==8) {
+                     machDesc = new MachineDescriptionSPARC64Bit();
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/MachineDescriptionPPC64.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,43 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger;
++
++public class MachineDescriptionPPC64 extends MachineDescriptionTwosComplement implements MachineDescription {
++  public long getAddressSize() {
++    return 8;
++  }
++
++  public boolean isLP64() {
++    return true;
++  }
++
++  public boolean isBigEndian() {
++    String endian = System.getProperty("sun.cpu.endian");
++    if (endian.equals("big"))
++      return true;
++    else
++      return false;
++  }
++}
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -30,8 +30,10 @@
+ import sun.jvm.hotspot.debugger.cdbg.*;
+ import sun.jvm.hotspot.debugger.x86.*;
+ import sun.jvm.hotspot.debugger.amd64.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
+ import sun.jvm.hotspot.debugger.bsd.x86.*;
+ import sun.jvm.hotspot.debugger.bsd.amd64.*;
++import sun.jvm.hotspot.debugger.bsd.ppc64.*;
+ import sun.jvm.hotspot.utilities.*;
+ 
+ class BsdCDebugger implements CDebugger {
+@@ -97,6 +99,13 @@
+        Address pc  = context.getRegisterAsAddress(AMD64ThreadContext.RIP);
+        if (pc == null) return null;
+        return new BsdAMD64CFrame(dbg, rbp, pc);
++    }  else if (cpu.equals("ppc64")) {
++        PPC64ThreadContext context = (PPC64ThreadContext) thread.getContext();
++        Address sp = context.getRegisterAsAddress(PPC64ThreadContext.SP);
++        if (sp == null) return null;
++        Address pc  = context.getRegisterAsAddress(PPC64ThreadContext.PC);
++        if (pc == null) return null;
++        return new BsdPPC64CFrame(dbg, sp, pc, BsdDebuggerLocal.getAddressSize());
+     } else {
+        throw new DebuggerException(cpu + " is not yet supported");
+     }
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -27,6 +27,7 @@
+ import sun.jvm.hotspot.debugger.*;
+ import sun.jvm.hotspot.debugger.bsd.amd64.*;
+ import sun.jvm.hotspot.debugger.bsd.x86.*;
++import sun.jvm.hotspot.debugger.bsd.ppc64.*;
+ 
+ class BsdThreadContextFactory {
+    static ThreadContext createThreadContext(BsdDebugger dbg) {
+@@ -35,6 +36,8 @@
+          return new BsdX86ThreadContext(dbg);
+       } else if (cpu.equals("amd64") || cpu.equals("x86_64")) {
+          return new BsdAMD64ThreadContext(dbg);
++      }  else if (cpu.equals("ppc64")) {
++          return new BsdPPC64ThreadContext(dbg);
+       } else {
+          throw new RuntimeException("cpu " + cpu + " is not yet supported");
+       }
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64CFrame.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,79 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.bsd.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.bsd.*;
++import sun.jvm.hotspot.debugger.cdbg.*;
++import sun.jvm.hotspot.debugger.cdbg.basic.*;
++
++final public class BsdPPC64CFrame extends BasicCFrame {
++  // package/class internals only
++
++  public BsdPPC64CFrame(BsdDebugger dbg, Address sp, Address pc, int address_size) {
++    super(dbg.getCDebugger());
++    this.sp = sp;
++    this.pc = pc;
++    this.dbg = dbg;
++    this.address_size=address_size;
++  }
++
++  // override base class impl to avoid ELF parsing
++  public ClosestSymbol closestSymbolToPC() {
++    // try native lookup in debugger.
++    return dbg.lookup(dbg.getAddressValue(pc()));
++  }
++
++  public Address pc() {
++    return     pc;
++  }
++
++  public Address localVariableBase() {
++    return sp;
++  }
++
++  public CFrame sender(ThreadProxy thread) {
++    if (sp == null) {
++      return null;
++    }
++
++    Address nextSP = sp.getAddressAt(0);
++    if (nextSP == null) {
++      return null;
++    }
++    Address nextPC  = sp.getAddressAt(2 * address_size);
++    if (nextPC == null) {
++      return null;
++    }
++    return new BsdPPC64CFrame(dbg, nextSP, nextPC, address_size);
++  }
++
++  public static int PPC64_STACK_BIAS = 0;
++  private static int address_size;
++  private Address pc;
++  private Address sp;
++  private BsdDebugger dbg;
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64ThreadContext.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,46 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.bsd.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.bsd.*;
++
++public class BsdPPC64ThreadContext extends PPC64ThreadContext {
++  private BsdDebugger debugger;
++
++  public BsdPPC64ThreadContext(BsdDebugger debugger) {
++    super();
++    this.debugger = debugger;
++  }
++
++  public void setRegisterAsAddress(int index, Address value) {
++    setRegister(index, debugger.getAddressValue(value));
++  }
++
++  public Address getRegisterAsAddress(int index) {
++    return debugger.newAddress(getRegister(index));
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/ppc64/PPC64ThreadContext.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,123 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.cdbg.*;
++
++/** Specifies the thread context on ppc64 platforms; only a sub-portion
++ * of the context is guaranteed to be present on all operating
++ * systems. */
++
++public abstract class PPC64ThreadContext implements ThreadContext {
++
++  // NOTE: The indices for the various registers must be maintained as
++  // listed across various operating systems. However, only a small
++  // subset of the registers' values are guaranteed to be present (and
++  // must be present for the SA's stack walking to work).
++
++  public static final int R31 = 0;
++  public static final int R30 = 1;
++  public static final int R29 = 2;
++  public static final int R28 = 3;
++  public static final int R27 = 4;
++  public static final int R26 = 5;
++  public static final int R25  = 6;
++  public static final int R24  = 7;
++  public static final int R23 = 8;
++  public static final int R22 = 9;
++  public static final int R21 = 10;
++  public static final int R20 = 11;
++  public static final int R19 = 12;
++  public static final int R18 = 13;
++  public static final int R17 = 14;
++  public static final int R16 = 15;
++  public static final int R15 = 16;
++  public static final int R14 = 17;
++  public static final int R13 = 18;
++  public static final int R12 = 19;
++  public static final int R11 = 20;
++  public static final int R10 = 21;
++  public static final int R9 = 22;
++  public static final int R8 = 23;
++  public static final int R7 = 24;
++  public static final int R6 = 25;
++  public static final int R5 = 26;
++  public static final int R4 = 27;
++  public static final int R3 = 28;
++  public static final int R2 = 29;
++  public static final int R1 = 30;
++  public static final int R0 = 31;
++  public static final int NIP = 32;
++  public static final int LR = 33;
++
++  public static final int NPRGREG = 34;
++
++  private static final String[] regNames = {
++    "r31", "r30", "r29", "r28", "r27", "r26", "r25", "r24",
++    "r23", "r22", "r21", "r20", "r19", "r18", "r17", "r16",
++    "r15", "r14", "r13", "r12", "r11", "r10", "r9",  "r8",
++    "r7",  "r6",  "r5",  "r4",  "r3",   "r2", "r1",  "r0",
++    "nip", "link"
++  };
++
++  public static final int PC = NIP;
++  public static final int SP = R1;
++
++  private long[] data;
++
++  public PPC64ThreadContext() {
++    data = new long[NPRGREG];
++  }
++
++  public int getNumRegisters() {
++    return NPRGREG;
++  }
++
++  public String getRegisterName(int index) {
++    return regNames[index];
++  }
++
++  public void setRegister(int index, long value) {
++    data[index] = value;
++  }
++
++  public long getRegister(int index) {
++    return data[index];
++  }
++
++  public CFrame getTopFrame(Debugger dbg) {
++    return null;
++  }
++
++  /** This can't be implemented in this class since we would have to
++   * tie the implementation to, for example, the debugging system */
++  public abstract void setRegisterAsAddress(int index, Address value);
++
++  /** This can't be implemented in this class since we would have to
++   * tie the implementation to, for example, the debugging system */
++  public abstract Address getRegisterAsAddress(int index);
++
++}
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -32,7 +32,9 @@
+ import sun.jvm.hotspot.debugger.cdbg.*;
+ import sun.jvm.hotspot.debugger.proc.amd64.*;
+ import sun.jvm.hotspot.debugger.proc.sparc.*;
++import sun.jvm.hotspot.debugger.proc.ppc64.*;
+ import sun.jvm.hotspot.debugger.proc.x86.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
+ import sun.jvm.hotspot.debugger.amd64.*;
+ import sun.jvm.hotspot.debugger.sparc.*;
+ import sun.jvm.hotspot.debugger.x86.*;
+@@ -86,6 +88,10 @@
+             threadFactory = new ProcAMD64ThreadFactory(this);
+             pcRegIndex = AMD64ThreadContext.RIP;
+             fpRegIndex = AMD64ThreadContext.RBP;
++        } else if (cpu.equals("ppc64")) {
++            threadFactory = new ProcPPC64ThreadFactory(this);
++            pcRegIndex = PPC64ThreadContext.PC;
++            fpRegIndex = PPC64ThreadContext.SP;
+         } else {
+           try {
+             Class tfc = Class.forName("sun.jvm.hotspot.debugger.proc." +
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64Thread.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,86 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.proc.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.proc.*;
++import sun.jvm.hotspot.utilities.*;
++
++public class ProcPPC64Thread implements ThreadProxy {
++  private ProcDebugger debugger;
++  private int         id;
++
++  public ProcPPC64Thread(ProcDebugger debugger, Address addr) {
++    this.debugger = debugger;
++
++    // FIXME: the size here should be configurable. However, making it
++    // so would produce a dependency on the "types" package from the
++    // debugger package, which is not desired.
++    this.id       = (int) addr.getCIntegerAt(0, 4, true);
++  }
++
++  public ProcPPC64Thread(ProcDebugger debugger, long id) {
++    this.debugger = debugger;
++    this.id = (int) id;
++  }
++
++  public ThreadContext getContext() throws IllegalThreadStateException {
++    ProcPPC64ThreadContext context = new ProcPPC64ThreadContext(debugger);
++    long[] regs = debugger.getThreadIntegerRegisterSet(id);
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(regs.length <= PPC64ThreadContext.NPRGREG, "size of register set is greater than " + PPC64ThreadContext.NPRGREG);
++    }
++    for (int i = 0; i < regs.length; i++) {
++      context.setRegister(i, regs[i]);
++    }
++    return context;
++  }
++
++  public boolean canSetContext() throws DebuggerException {
++    return false;
++  }
++
++  public void setContext(ThreadContext context)
++    throws IllegalThreadStateException, DebuggerException {
++    throw new DebuggerException("Unimplemented");
++  }
++
++  public String toString() {
++    return "t@" + id;
++  }
++
++  public boolean equals(Object obj) {
++    if ((obj == null) || !(obj instanceof ProcPPC64Thread)) {
++      return false;
++    }
++
++    return (((ProcPPC64Thread) obj).id == id);
++  }
++
++  public int hashCode() {
++    return id;
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadContext.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,46 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.proc.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.proc.*;
++
++public class ProcPPC64ThreadContext extends PPC64ThreadContext {
++  private ProcDebugger debugger;
++
++  public ProcPPC64ThreadContext(ProcDebugger debugger) {
++    super();
++    this.debugger = debugger;
++  }
++
++  public void setRegisterAsAddress(int index, Address value) {
++    setRegister(index, debugger.getAddressValue(value));
++  }
++
++  public Address getRegisterAsAddress(int index) {
++    return debugger.newAddress(getRegister(index));
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadFactory.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,44 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.proc.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.proc.*;
++
++public class ProcPPC64ThreadFactory implements ProcThreadFactory {
++  private ProcDebugger debugger;
++
++  public ProcPPC64ThreadFactory(ProcDebugger debugger) {
++    this.debugger = debugger;
++  }
++
++  public ThreadProxy createThreadWrapper(Address threadIdentifierAddr) {
++    return new ProcPPC64Thread(debugger, threadIdentifierAddr);
++  }
++
++  public ThreadProxy createThreadWrapper(long id) {
++    return new ProcPPC64Thread(debugger, id);
++  }
++}
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -33,6 +33,7 @@
+ import sun.jvm.hotspot.debugger.remote.sparc.*;
+ import sun.jvm.hotspot.debugger.remote.x86.*;
+ import sun.jvm.hotspot.debugger.remote.amd64.*;
++import sun.jvm.hotspot.debugger.remote.ppc64.*;
+ 
+ /** An implementation of Debugger which wraps a
+     RemoteDebugger, providing remote debugging via RMI.
+@@ -70,6 +71,11 @@
+         cachePageSize = 4096;
+         cacheNumPages = parseCacheNumPagesProperty(cacheSize / cachePageSize);
+         unalignedAccessesOkay = true;
++      } else if (cpu.equals("ppc64")) {
++        threadFactory = new RemotePPC64ThreadFactory(this);
++        cachePageSize = 4096;
++        cacheNumPages = parseCacheNumPagesProperty(cacheSize / cachePageSize);
++        unalignedAccessesOkay = true;
+       } else {
+         try {
+           Class tf = Class.forName("sun.jvm.hotspot.debugger.remote." +
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64Thread.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,53 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.remote.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.remote.*;
++import sun.jvm.hotspot.utilities.*;
++
++public class RemotePPC64Thread extends RemoteThread  {
++  public RemotePPC64Thread(RemoteDebuggerClient debugger, Address addr) {
++    super(debugger, addr);
++  }
++
++  public RemotePPC64Thread(RemoteDebuggerClient debugger, long id) {
++    super(debugger, id);
++  }
++
++  public ThreadContext getContext() throws IllegalThreadStateException {
++    RemotePPC64ThreadContext context = new RemotePPC64ThreadContext(debugger);
++    long[] regs = (addr != null)? debugger.getThreadIntegerRegisterSet(addr) :
++      debugger.getThreadIntegerRegisterSet(id);
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(regs.length == PPC64ThreadContext.NPRGREG, "size of register set must match");
++    }
++    for (int i = 0; i < regs.length; i++) {
++      context.setRegister(i, regs[i]);
++    }
++    return context;
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadContext.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,50 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.remote.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.debugger.remote.*;
++
++public class RemotePPC64ThreadContext extends PPC64ThreadContext {
++  private RemoteDebuggerClient debugger;
++
++  public RemotePPC64ThreadContext(RemoteDebuggerClient debugger) {
++    super();
++    this.debugger = debugger;
++  }
++
++  /** This can't be implemented in this class since we would have to
++      tie the implementation to, for example, the debugging system */
++  public void setRegisterAsAddress(int index, Address value) {
++    setRegister(index, debugger.getAddressValue(value));
++  }
++
++  /** This can't be implemented in this class since we would have to
++      tie the implementation to, for example, the debugging system */
++  public Address getRegisterAsAddress(int index) {
++    return debugger.newAddress(getRegister(index));
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadFactory.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,44 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.debugger.remote.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.remote.*;
++
++public class RemotePPC64ThreadFactory implements RemoteThreadFactory {
++  private RemoteDebuggerClient debugger;
++
++  public RemotePPC64ThreadFactory(RemoteDebuggerClient debugger) {
++    this.debugger = debugger;
++  }
++
++  public ThreadProxy createThreadWrapper(Address threadIdentifierAddr) {
++    return new RemotePPC64Thread(debugger, threadIdentifierAddr);
++  }
++
++  public ThreadProxy createThreadWrapper(long id) {
++    return new RemotePPC64Thread(debugger, id);
++  }
++}
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -37,6 +37,7 @@
+ import sun.jvm.hotspot.runtime.linux_sparc.LinuxSPARCJavaThreadPDAccess;
+ import sun.jvm.hotspot.runtime.bsd_x86.BsdX86JavaThreadPDAccess;
+ import sun.jvm.hotspot.runtime.bsd_amd64.BsdAMD64JavaThreadPDAccess;
++import sun.jvm.hotspot.runtime.bsd_ppc64.BsdPPC64JavaThreadPDAccess;
+ import sun.jvm.hotspot.utilities.*;
+ 
+ public class Threads {
+@@ -103,6 +104,8 @@
+                 access = new BsdX86JavaThreadPDAccess();
+             } else if (cpu.equals("amd64") || cpu.equals("x86_64")) {
+                 access = new BsdAMD64JavaThreadPDAccess();
++            } else if (cpu.equals("ppc64")) {
++                access = new BsdPPC64JavaThreadPDAccess();
+             }
+         } else if (os.equals("darwin")) {
+             if (cpu.equals("amd64") || cpu.equals("x86_64")) {
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_ppc64/BsdPPC64JavaThreadPDAccess.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,132 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.runtime.bsd_ppc64;
++
++import java.io.*;
++import java.util.*;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.runtime.*;
++import sun.jvm.hotspot.runtime.ppc64.*;
++import sun.jvm.hotspot.types.*;
++import sun.jvm.hotspot.utilities.*;
++
++public class BsdPPC64JavaThreadPDAccess implements JavaThreadPDAccess {
++  private static AddressField  osThreadField;
++
++  // Field from OSThread
++  private static CIntegerField osThreadThreadIDField;
++
++  // This is currently unneeded but is being kept in case we change
++  // the currentFrameGuess algorithm
++  private static final long GUESS_SCAN_RANGE = 128 * 1024;
++
++  static {
++    VM.registerVMInitializedObserver(new Observer() {
++        public void update(Observable o, Object data) {
++          initialize(VM.getVM().getTypeDataBase());
++        }
++      });
++  }
++
++  private static synchronized void initialize(TypeDataBase db) {
++    Type type = db.lookupType("JavaThread");
++    osThreadField           = type.getAddressField("_osthread");
++
++    Type osThreadType = db.lookupType("OSThread");
++    osThreadThreadIDField   = osThreadType.getCIntegerField("_thread_id");
++  }
++
++  public    Address getLastJavaFP(Address addr) {
++    return null;
++  }
++
++  public    Address getLastJavaPC(Address addr) {
++    return null;
++  }
++
++  public    Address getBaseOfStackPointer(Address addr) {
++    return null;
++  }
++
++  public    Frame getLastFramePD(JavaThread thread, Address addr) {
++    Address fp = thread.getLastJavaFP();
++    if (fp == null) {
++      return null; // no information
++    }
++    return new PPC64Frame(thread.getLastJavaSP(), fp);
++  }
++
++  public    RegisterMap newRegisterMap(JavaThread thread, boolean updateMap) {
++    return new PPC64RegisterMap(thread, updateMap);
++  }
++
++  public    Frame getCurrentFrameGuess(JavaThread thread, Address addr) {
++    ThreadProxy t = getThreadProxy(addr);
++    PPC64ThreadContext context = (PPC64ThreadContext) t.getContext();
++    PPC64CurrentFrameGuess guesser = new PPC64CurrentFrameGuess(context, thread);
++    if (!guesser.run(GUESS_SCAN_RANGE)) {
++      return null;
++    }
++    if (guesser.getPC() == null) {
++      return new PPC64Frame(guesser.getSP(), guesser.getFP());
++    } else {
++      return new PPC64Frame(guesser.getSP(), guesser.getFP(), guesser.getPC());
++    }
++  }
++
++  public    void printThreadIDOn(Address addr, PrintStream tty) {
++    tty.print(getThreadProxy(addr));
++  }
++
++  public    void printInfoOn(Address threadAddr, PrintStream tty) {
++    tty.print("Thread id: ");
++    printThreadIDOn(threadAddr, tty);
++//    tty.println("\nPostJavaState: " + getPostJavaState(threadAddr));
++  }
++
++  public    Address getLastSP(Address addr) {
++    ThreadProxy t = getThreadProxy(addr);
++    PPC64ThreadContext context = (PPC64ThreadContext) t.getContext();
++    return context.getRegisterAsAddress(PPC64ThreadContext.SP);
++  }
++
++  public Address getLastFP(Address addr) {
++    return getLastSP(addr).getAddressAt(0);
++  }
++
++  public    ThreadProxy getThreadProxy(Address addr) {
++    // Addr is the address of the JavaThread.
++    // Fetch the OSThread (for now and for simplicity, not making a
++    // separate "OSThread" class in this package)
++    Address osThreadAddr = osThreadField.getValue(addr);
++    // Get the address of the _thread_id from the OSThread
++    Address threadIdAddr = osThreadAddr.addOffsetTo(osThreadThreadIDField.getOffset());
++
++    JVMDebugger debugger = VM.getVM().getDebugger();
++    return debugger.getThreadForIdentifierAddress(threadIdAddr);
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64CurrentFrameGuess.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,176 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.runtime.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.debugger.ppc64.*;
++import sun.jvm.hotspot.code.*;
++import sun.jvm.hotspot.interpreter.*;
++import sun.jvm.hotspot.runtime.*;
++import sun.jvm.hotspot.runtime.ppc64.*;
++
++/** <P> Should be able to be used on all ppc64 platforms we support
++    (Linux/ppc64) to implement JavaThread's "currentFrameGuess()"
++    functionality. Input is a PPC64ThreadContext; output is SP, FP,
++    and PC for an PPC64Frame. Instantiation of the PPC64Frame is left
++    to the caller, since we may need to subclass PPC64Frame to support
++    signal handler frames on Unix platforms. </P>
++ */
++
++public class PPC64CurrentFrameGuess {
++  private PPC64ThreadContext context;
++  private JavaThread       thread;
++  private Address          spFound;
++  private Address          fpFound;
++  private Address          pcFound;
++
++  private static final boolean DEBUG = System.getProperty("sun.jvm.hotspot.runtime.ppc64.PPC64Frame.DEBUG")
++                                       != null;
++
++  public PPC64CurrentFrameGuess(PPC64ThreadContext context,
++                              JavaThread thread) {
++    this.context = context;
++    this.thread  = thread;
++  }
++
++  /** Returns false if not able to find a frame within a reasonable range. */
++  public boolean run(long regionInBytesToSearch) {
++    Address sp  = context.getRegisterAsAddress(PPC64ThreadContext.SP);
++    Address pc  = context.getRegisterAsAddress(PPC64ThreadContext.PC);
++    if (sp == null) {
++      // Bail out if no last java frame either
++      if (thread.getLastJavaSP() != null) {
++        Address javaSP = thread.getLastJavaSP();
++        Address javaFP = javaSP.getAddressAt(0);
++        setValues(javaSP, javaFP, null);
++        return true;
++      }
++      return false;
++    }
++    /* There is no frame pointer per se for the ppc64 architecture.  To mirror
++     * the behavior of the VM frame manager, we set fp to be the caller's (i.e., "sender's")
++     * stack pointer, which is the back chain value contained in our sp.
++     */
++    Address fp = sp.getAddressAt(0);
++    setValues(null, null, null); // Assume we're not going to find anything
++
++    VM vm = VM.getVM();
++    if (vm.isJavaPCDbg(pc)) {
++      if (vm.isClientCompiler()) {
++        // Topmost frame is a Java frame.
++        if (DEBUG) {
++          System.out.println("CurrentFrameGuess: choosing compiler frame: sp = " +
++                             sp + ", fp = " + fp + ", pc = " + pc);
++        }
++        setValues(sp, fp, pc);
++        return true;
++      } else {
++        if (vm.getInterpreter().contains(pc)) {
++          if (DEBUG) {
++            System.out.println("CurrentFrameGuess: choosing interpreter frame: sp = " +
++                               sp + ", fp = " + fp + ", pc = " + pc);
++          }
++          setValues(sp, fp, pc);
++          return true;
++        }
++
++        // This algorithm takes the current PC as a given and tries to
++        // find the correct corresponding SP by walking up the stack
++        // and repeatedly performing stackwalks (very inefficient).
++        for (long offset = 0;
++             offset < regionInBytesToSearch;
++             offset += vm.getAddressSize()) {
++          try {
++            Address curSP = sp.addOffsetTo(offset);
++            fp = curSP.getAddressAt(0);
++            Frame frame = new PPC64Frame(curSP, fp, pc);
++            RegisterMap map = thread.newRegisterMap(false);
++            while (frame != null) {
++              if (frame.isEntryFrame() && frame.entryFrameIsFirst()) {
++                // We were able to traverse all the way to the
++                // bottommost Java frame.
++                // This sp looks good. Keep it.
++                if (DEBUG) {
++                  System.out.println("CurrentFrameGuess: Choosing sp = " + curSP + ", pc = " + pc);
++                }
++                setValues(curSP, fp, pc);
++                return true;
++              }
++              frame = frame.sender(map);
++            }
++          } catch (Exception e) {
++            if (DEBUG) {
++              System.out.println("CurrentFrameGuess: Exception " + e + " at offset " + offset);
++            }
++            // Bad SP. Try another.
++          }
++        }
++
++        // Were not able to find a plausible SP to go with this PC.
++        // Bail out.
++        return false;
++
++      }
++    } else {
++      // If the current program counter was not known to us as a Java
++      // PC, we currently assume that we are in the run-time system
++      // and attempt to look to thread-local storage for saved java SP.
++      // Note that if this is null (because we were, in fact,
++      // in Java code, i.e., vtable stubs or similar, and the SA
++      // didn't have enough insight into the target VM to understand
++      // that) then we are going to lose the entire stack trace for
++      // the thread, which is sub-optimal. FIXME.
++
++      if (thread.getLastJavaSP() == null) {
++        if (DEBUG)
++          System.out.println("CurrentFrameGuess: last java sp is null");
++        return false; // No known Java frames on stack
++      }
++
++      Address javaSP = thread.getLastJavaSP();
++      Address javaFP = javaSP.getAddressAt(0);
++      Address javaPC = thread.getLastJavaPC();
++      if (DEBUG) {
++        System.out.println("CurrentFrameGuess: choosing last Java frame: sp = " +
++                           javaSP + ", fp = " + javaFP + ", pc = " + javaPC);
++      }
++      setValues(javaSP, javaFP, javaPC);
++      return true;
++    }
++  }
++
++  public Address getSP() { return spFound; }
++  public Address getFP() { return fpFound; }
++  /** May be null if getting values from thread-local storage; take
++      care to call the correct PPC64Frame constructor to recover this if
++      necessary */
++  public Address getPC() { return pcFound; }
++
++  private void setValues(Address sp, Address fp, Address pc) {
++    spFound = sp;
++    fpFound = fp;
++    pcFound = pc;
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64Frame.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,508 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.runtime.ppc64;
++
++import java.util.*;
++import sun.jvm.hotspot.code.*;
++import sun.jvm.hotspot.compiler.*;
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.oops.*;
++import sun.jvm.hotspot.runtime.*;
++import sun.jvm.hotspot.types.*;
++import sun.jvm.hotspot.utilities.*;
++
++/** Specialization of and implementation of abstract methods of the
++    Frame class for the ppc64 family of CPUs. */
++
++public class PPC64Frame extends Frame {
++  private static final boolean DEBUG;
++  static {
++    DEBUG = System.getProperty("sun.jvm.hotspot.runtime.ppc64.PPC64Frame.DEBUG") != null;
++  }
++
++  // All frames
++  private static final int SENDER_SP_OFFSET           =  0;
++
++  // Interpreter frames
++  private static final int INTERPRETER_FRAME_MIRROR_OFFSET    =  -3; // for native calls only
++  private static final int INTERPRETER_FRAME_SENDER_SP_OFFSET = -4;
++  private static final int INTERPRETER_FRAME_LAST_SP_OFFSET   = INTERPRETER_FRAME_SENDER_SP_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_MDX_OFFSET = INTERPRETER_FRAME_LAST_SP_OFFSET -1;
++  private static final  int INTERPRETER_FRAME_ESP_OFFSET = INTERPRETER_FRAME_MDX_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_BCX_OFFSET = INTERPRETER_FRAME_ESP_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_CACHE_OFFSET =INTERPRETER_FRAME_BCX_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_MONITORS_OFFSET = INTERPRETER_FRAME_CACHE_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_LOCALS_OFFSET = INTERPRETER_FRAME_MONITORS_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_METHOD_OFFSET = INTERPRETER_FRAME_LOCALS_OFFSET - 1;
++  private static final int INTERPRETER_FRAME_INITIAL_SP_OFFSET = INTERPRETER_FRAME_BCX_OFFSET - 1; // FIXME: probably wrong, but unused anyway
++  private static final int INTERPRETER_FRAME_MONITOR_BLOCK_TOP_OFFSET    = INTERPRETER_FRAME_INITIAL_SP_OFFSET;
++  private static final int INTERPRETER_FRAME_MONITOR_BLOCK_BOTTOM_OFFSET = INTERPRETER_FRAME_INITIAL_SP_OFFSET;
++
++  // Entry frames
++  private static       int ENTRY_FRAME_CALL_WRAPPER_OFFSET;
++
++  // Native frames
++  private static       int NATIVE_FRAME_INITIAL_PARAM_OFFSET;
++
++
++  static {
++    VM.registerVMInitializedObserver(new Observer() {
++      public void update(Observable o, Object data) {
++        initialize(VM.getVM().getTypeDataBase());
++      }
++    });
++  }
++
++  private static synchronized void initialize(TypeDataBase db) {
++    int abi_minframe_size = db.lookupIntConstant("frame::abi_minframe_size").intValue();
++    int entry_frame_locals_size = db.lookupIntConstant("frame::entry_frame_locals_size").intValue();
++    int wordLength = (int)VM.getVM().getAddressSize();
++    NATIVE_FRAME_INITIAL_PARAM_OFFSET = -abi_minframe_size/wordLength;
++    ENTRY_FRAME_CALL_WRAPPER_OFFSET = -entry_frame_locals_size/wordLength;
++  }
++
++
++  // an additional field beyond sp and pc:
++  Address raw_fp; // frame pointer
++  private Address raw_unextendedSP;
++
++  private PPC64Frame() {
++  }
++
++  private void adjustForDeopt() {
++    if ( pc != null) {
++      // Look for a deopt pc and if it is deopted convert to original pc
++      CodeBlob cb = VM.getVM().getCodeCache().findBlob(pc);
++      if (cb != null && cb.isJavaMethod()) {
++        NMethod nm = (NMethod) cb;
++        if (pc.equals(nm.deoptHandlerBegin())) {
++          if (Assert.ASSERTS_ENABLED) {
++            Assert.that(this.getUnextendedSP() != null, "null SP in Java frame");
++          }
++          // adjust pc if frame is deoptimized.
++          pc = this.getUnextendedSP().getAddressAt(nm.origPCOffset());
++          deoptimized = true;
++        }
++      }
++    }
++  }
++
++  public PPC64Frame(Address raw_sp, Address raw_fp, Address pc) {
++    this.raw_sp = raw_sp;
++    this.raw_unextendedSP = raw_sp;
++    if (raw_fp == null)
++      this.raw_fp = raw_sp.getAddressAt(0);
++    else
++      this.raw_fp = raw_fp;
++    if (pc == null)
++      this.pc = raw_sp.getAddressAt(2 * VM.getVM().getAddressSize());
++    else
++      this.pc = pc;
++    adjustUnextendedSP();
++
++    // Frame must be fully constructed before this call
++    adjustForDeopt();
++
++    if (DEBUG) {
++      System.out.println("PPC64Frame(sp, fp, pc): " + this);
++      dumpStack();
++    }
++  }
++
++  public PPC64Frame(Address raw_sp, Address raw_fp) {
++    this.raw_sp = raw_sp;
++    this.raw_unextendedSP = raw_sp;
++    if (raw_fp == null)
++      this.raw_fp = raw_sp.getAddressAt(0);
++    else
++      this.raw_fp = raw_fp;
++    this.pc = raw_sp.getAddressAt(2 * VM.getVM().getAddressSize());
++    adjustUnextendedSP();
++
++    // Frame must be fully constructed before this call
++    adjustForDeopt();
++
++    if (DEBUG) {
++      System.out.println("PPC64Frame(sp, fp): " + this);
++      dumpStack();
++    }
++  }
++
++  public PPC64Frame(Address raw_sp, Address raw_unextendedSp, Address raw_fp, Address pc) {
++    this.raw_sp = raw_sp;
++    this.raw_unextendedSP = raw_unextendedSp;
++    if (raw_fp == null)
++      this.raw_fp = raw_sp.getAddressAt(0);
++    else
++      this.raw_fp = raw_fp;
++    if (pc == null)
++      this.pc = raw_sp.getAddressAt(2 * VM.getVM().getAddressSize());
++    else
++      this.pc = pc;
++    adjustUnextendedSP();
++
++    // Frame must be fully constructed before this call
++    adjustForDeopt();
++
++    if (DEBUG) {
++      System.out.println("PPC64Frame(sp, unextendedSP, fp, pc): " + this);
++      dumpStack();
++    }
++
++  }
++
++  public Object clone() {
++    PPC64Frame frame = new PPC64Frame();
++    frame.raw_sp = raw_sp;
++    frame.raw_unextendedSP = raw_unextendedSP;
++    frame.raw_fp = raw_fp;
++    frame.pc = pc;
++    frame.deoptimized = deoptimized;
++    return frame;
++  }
++
++  public boolean equals(Object arg) {
++    if (arg == null) {
++      return false;
++    }
++
++    if (!(arg instanceof PPC64Frame)) {
++      return false;
++    }
++
++    PPC64Frame other = (PPC64Frame) arg;
++
++    return (AddressOps.equal(getSP(), other.getSP()) &&
++        AddressOps.equal(getUnextendedSP(), other.getUnextendedSP()) &&
++        AddressOps.equal(getFP(), other.getFP()) &&
++        AddressOps.equal(getPC(), other.getPC()));
++  }
++
++  public int hashCode() {
++    if (raw_sp == null) {
++      return 0;
++    }
++
++    return raw_sp.hashCode();
++  }
++
++  public String toString() {
++    return "sp: " + (getSP() == null? "null" : getSP().toString()) +
++        ", unextendedSP: " + (getUnextendedSP() == null? "null" : getUnextendedSP().toString()) +
++        ", fp: " + (getFP() == null? "null" : getFP().toString()) +
++        ", pc: " + (pc == null? "null" : pc.toString());
++  }
++
++  // accessors for the instance variables
++  public Address getFP() { return raw_fp; }
++  public Address getSP() { return raw_sp; }
++  public Address getID() { return raw_sp; }
++
++  // FIXME: not implemented yet (should be done for Solaris/PPC64)
++  public boolean isSignalHandlerFrameDbg() { return false; }
++  public int     getSignalNumberDbg()      { return 0;     }
++  public String  getSignalNameDbg()        { return null;  }
++
++  public boolean isInterpretedFrameValid() {
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(isInterpretedFrame(), "Not an interpreted frame");
++    }
++
++    // These are reasonable sanity checks
++    if (getFP() == null || getFP().andWithMask(0x3) != null) {
++      return false;
++    }
++
++    if (getSP() == null || getSP().andWithMask(0x3) != null) {
++      return false;
++    }
++
++    // These are hacks to keep us out of trouble.
++    // The problem with these is that they mask other problems
++    if (getFP().lessThanOrEqual(getSP())) {
++      // this attempts to deal with unsigned comparison above
++      return false;
++    }
++
++    if (getFP().minus(getSP()) > 4096 * VM.getVM().getAddressSize()) {
++      // stack frames shouldn't be large.
++      return false;
++    }
++
++    return true;
++  }
++
++  // FIXME: not applicable in current system
++  //  void    patch_pc(Thread* thread, address pc);
++
++  public Frame sender(RegisterMap regMap, CodeBlob cb) {
++    PPC64RegisterMap map = (PPC64RegisterMap) regMap;
++
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(map != null, "map must be set");
++    }
++
++    // Default is we done have to follow them. The sender_for_xxx will
++    // update it accordingly
++    map.setIncludeArgumentOops(false);
++
++    if (isEntryFrame())       return senderForEntryFrame(map);
++    if (isInterpretedFrame()) return senderForInterpreterFrame(map);
++
++    if(cb == null) {
++      cb = VM.getVM().getCodeCache().findBlob(getPC());
++    } else {
++      if (Assert.ASSERTS_ENABLED) {
++        Assert.that(cb.equals(VM.getVM().getCodeCache().findBlob(getPC())), "Must be the same");
++      }
++    }
++
++    if (cb != null) {
++      return senderForCompiledFrame(map, cb);
++    }
++
++    // Must be native-compiled frame, i.e. the marshaling code for native
++    // methods that exists in the core system.
++    return new PPC64Frame(getSenderSP(), getLink(), getSenderPC());
++  }
++
++  private Frame senderForEntryFrame(PPC64RegisterMap map) {
++    if (DEBUG) {
++      System.out.println("senderForEntryFrame");
++    }
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(map != null, "map must be set");
++    }
++    // Java frame called from C; skip all C frames and return top C
++    // frame of that chunk as the sender
++    PPC64JavaCallWrapper jcw = (PPC64JavaCallWrapper) getEntryFrameCallWrapper();
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(!entryFrameIsFirst(), "next Java fp must be non zero");
++      Assert.that(jcw.getLastJavaSP().greaterThan(getSP()), "must be above this frame on stack");
++    }
++    PPC64Frame fr;
++    if (jcw.getLastJavaPC() != null) {
++      fr = new PPC64Frame(jcw.getLastJavaSP(), jcw.getLastJavaFP(), jcw.getLastJavaPC());
++    } else {
++      fr = new PPC64Frame(jcw.getLastJavaSP(), jcw.getLastJavaFP());
++    }
++    map.clear();
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(map.getIncludeArgumentOops(), "should be set by clear");
++    }
++    return fr;
++  }
++
++  //------------------------------------------------------------------------------
++  // frame::adjust_unextended_sp
++  private void adjustUnextendedSP() {
++    raw_unextendedSP = getFP();
++  }
++  private Frame senderForInterpreterFrame(PPC64RegisterMap map) {
++    if (DEBUG) {
++      System.out.println("senderForInterpreterFrame");
++    }
++    Address unextendedSP = addressOfStackSlot(INTERPRETER_FRAME_SENDER_SP_OFFSET).getAddressAt(0);
++    Address sp = getSenderSP();
++
++    return new PPC64Frame(sp, unextendedSP, getLink(), getSenderPC());
++  }
++
++
++  private Frame senderForCompiledFrame(PPC64RegisterMap map, CodeBlob cb) {
++    if (DEBUG) {
++      System.out.println("senderForCompiledFrame");
++    }
++
++    //
++    // NOTE: some of this code is (unfortunately) duplicated in PPC64CurrentFrameGuess
++    //
++
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(map != null, "map must be set");
++    }
++
++    // frame owned by optimizing compiler
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(cb.getFrameSize() >= 0, "must have non-zero frame size");
++    }
++    Address senderSP = getSenderSP();
++
++    Address senderPC = getSenderPC();
++
++    if (map.getUpdateMap()) {
++      // Tell GC to use argument oopmaps for some runtime stubs that need it.
++      // For C1, the runtime stub might not have oop maps, so set this flag
++      // outside of update_register_map.
++      map.setIncludeArgumentOops(cb.callerMustGCArguments());
++
++      if (cb.getOopMaps() != null) {
++        OopMapSet.updateRegisterMap(this, cb, map, true);
++      }
++    }
++
++    return new PPC64Frame(senderSP, getLink(), senderPC);
++  }
++
++  protected boolean hasSenderPD() {
++    // FIXME
++    return true;
++  }
++
++  public long frameSize() {
++    return (getSenderSP().minus(getSP()) / VM.getVM().getAddressSize());
++  }
++
++  public Address getLink() {
++    return getSenderSP().getAddressAt(0);
++  }
++
++  public Address getUnextendedSP() { return raw_unextendedSP; }
++
++  // Return address:
++  public Address getSenderPC()     { return getSenderSP().getAddressAt(2 * VM.getVM().getAddressSize()); }
++
++  // return address of param, zero origin index.
++  // MPJ note:   Appears to be unused.
++  public Address getNativeParamAddr(int idx) {
++    return null;
++    // return addressOfStackSlot(NATIVE_FRAME_INITIAL_PARAM_OFFSET + idx);
++  }
++
++  public Address getSenderSP()     { return getFP(); }
++  public Address addressOfInterpreterFrameLocals() {
++    return addressOfStackSlot(INTERPRETER_FRAME_LOCALS_OFFSET);
++  }
++
++  private Address addressOfInterpreterFrameBCX() {
++    return addressOfStackSlot(INTERPRETER_FRAME_BCX_OFFSET);
++  }
++
++  public int getInterpreterFrameBCI() {
++    // FIXME: this is not atomic with respect to GC and is unsuitable
++    // for use in a non-debugging, or reflective, system. Need to
++    // figure out how to express this.
++    Address bcp = addressOfInterpreterFrameBCX().getAddressAt(0);
++    Address methodHandle = addressOfInterpreterFrameMethod().getAddressAt(0);
++    Method method = (Method)Metadata.instantiateWrapperFor(methodHandle);
++    return bcpToBci(bcp, method);
++  }
++
++  public Address addressOfInterpreterFrameMDX() {
++    return addressOfStackSlot(INTERPRETER_FRAME_MDX_OFFSET);
++  }
++
++  // FIXME
++  //inline int frame::interpreter_frame_monitor_size() {
++  //  return BasicObjectLock::size();
++  //}
++
++  // expression stack
++  // (the max_stack arguments are used by the GC; see class FrameClosure)
++
++  public Address addressOfInterpreterFrameExpressionStack() {
++    Address monitorEnd = interpreterFrameMonitorEnd().address();
++    return monitorEnd.addOffsetTo(-1 * VM.getVM().getAddressSize());
++  }
++
++  public int getInterpreterFrameExpressionStackDirection() { return -1; }
++
++  // top of expression stack
++  public Address addressOfInterpreterFrameTOS() {
++    return getSP();
++  }
++
++  /** Expression stack from top down */
++  public Address addressOfInterpreterFrameTOSAt(int slot) {
++    return addressOfInterpreterFrameTOS().addOffsetTo(slot * VM.getVM().getAddressSize());
++  }
++
++  public Address getInterpreterFrameSenderSP() {
++    if (Assert.ASSERTS_ENABLED) {
++      Assert.that(isInterpretedFrame(), "interpreted frame expected");
++    }
++    return addressOfStackSlot(INTERPRETER_FRAME_SENDER_SP_OFFSET).getAddressAt(0);
++  }
++
++  // Monitors
++  public BasicObjectLock interpreterFrameMonitorBegin() {
++    return new BasicObjectLock(addressOfStackSlot(INTERPRETER_FRAME_MONITOR_BLOCK_BOTTOM_OFFSET));
++  }
++
++  public BasicObjectLock interpreterFrameMonitorEnd() {
++    Address result = addressOfStackSlot(INTERPRETER_FRAME_MONITOR_BLOCK_TOP_OFFSET).getAddressAt(0);
++    if (Assert.ASSERTS_ENABLED) {
++      // make sure the pointer points inside the frame
++      Assert.that(AddressOps.gt(getFP(), result), "result must <  than frame pointer");
++      Assert.that(AddressOps.lte(getSP(), result), "result must >= than stack pointer");
++    }
++    return new BasicObjectLock(result);
++  }
++
++  public int interpreterFrameMonitorSize() {
++    return BasicObjectLock.size();
++  }
++
++  // Method
++  public Address addressOfInterpreterFrameMethod() {
++    return addressOfStackSlot(INTERPRETER_FRAME_METHOD_OFFSET);
++  }
++
++  // Constant pool cache
++  public Address addressOfInterpreterFrameCPCache() {
++    return addressOfStackSlot(INTERPRETER_FRAME_CACHE_OFFSET);
++  }
++
++  // Entry frames
++  public JavaCallWrapper getEntryFrameCallWrapper() {
++    return new PPC64JavaCallWrapper(addressOfStackSlot(ENTRY_FRAME_CALL_WRAPPER_OFFSET).getAddressAt(0));
++  }
++
++  protected Address addressOfSavedOopResult() {
++    // offset is 2 for compiler2 and 3 for compiler1
++    return getSP().addOffsetTo((VM.getVM().isClientCompiler() ? 2 : 3) *
++        VM.getVM().getAddressSize());
++  }
++
++  protected Address addressOfSavedReceiver() {
++    return getSP().addOffsetTo(-4 * VM.getVM().getAddressSize());
++  }
++
++  private void dumpStack() {
++    if (getFP() != null) {
++      for (Address addr = getSP().addOffsetTo(-5 * VM.getVM().getAddressSize());
++          AddressOps.lte(addr, getFP().addOffsetTo(5 * VM.getVM().getAddressSize()));
++          addr = addr.addOffsetTo(VM.getVM().getAddressSize())) {
++        System.out.println(addr + ": " + addr.getAddressAt(0));
++      }
++    } else {
++      for (Address addr = getSP().addOffsetTo(-5 * VM.getVM().getAddressSize());
++          AddressOps.lte(addr, getSP().addOffsetTo(20 * VM.getVM().getAddressSize()));
++          addr = addr.addOffsetTo(VM.getVM().getAddressSize())) {
++        System.out.println(addr + ": " + addr.getAddressAt(0));
++      }
++    }
++  }
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64JavaCallWrapper.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,43 @@
++/*
++ * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.runtime.ppc64;
++
++import java.util.*;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.types.*;
++import sun.jvm.hotspot.runtime.*;
++
++public class PPC64JavaCallWrapper extends JavaCallWrapper {
++
++  public PPC64JavaCallWrapper(Address addr) {
++    super(addr);
++  }
++
++  public Address getLastJavaFP() {
++    return null;
++  }
++
++}
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64RegisterMap.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -0,0 +1,51 @@
++/*
++ * Copyright (c) 20014, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ *
++ */
++
++package sun.jvm.hotspot.runtime.ppc64;
++
++import sun.jvm.hotspot.debugger.*;
++import sun.jvm.hotspot.runtime.*;
++
++public class PPC64RegisterMap extends RegisterMap {
++
++  /** This is the only public constructor */
++  public PPC64RegisterMap(JavaThread thread, boolean updateMap) {
++    super(thread, updateMap);
++  }
++
++  protected PPC64RegisterMap(RegisterMap map) {
++    super(map);
++  }
++
++  public Object clone() {
++    PPC64RegisterMap retval = new PPC64RegisterMap(this);
++    return retval;
++  }
++
++  // no PD state to clear or copy:
++  protected void clearPD() {}
++  protected void initializePD() {}
++  protected void initializeFromPD(RegisterMap map) {}
++  protected Address getLocationPD(VMReg reg) { return null; }
++}
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Wed Dec 28 10:28:45 2016 -0800
+@@ -61,7 +61,7 @@
+       return "x86";
+     } else if (cpu.equals("sparc") || cpu.equals("sparcv9")) {
+       return "sparc";
+-    } else if (cpu.equals("ia64") || cpu.equals("amd64") || cpu.equals("x86_64")) {
++    } else if (cpu.equals("ia64") || cpu.equals("amd64") || cpu.equals("x86_64") || cpu.equals("ppc64")) {
+       return cpu;
+     } else {
+       try {
 --- ./hotspot/make/bsd/Makefile	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/Makefile	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/Makefile	Wed Dec 28 10:28:45 2016 -0800
 @@ -66,6 +66,10 @@
      FORCE_TIERED=1
    endif
@@ -1080,7 +3070,7 @@
  ifdef LP64
    ifeq ("$(filter $(LP64_ARCH),$(BUILDARCH))","")
 --- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Wed Dec 28 10:28:45 2016 -0800
 @@ -1,12 +1,28 @@
  #!/bin/sh
  
@@ -1117,7 +3107,7 @@
 +    }' | sort -u ;;
 +esac
 --- ./hotspot/make/bsd/makefiles/debug.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/debug.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/debug.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -35,7 +35,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1131,7 +3121,7 @@
  VERSION = debug
  SYSDEFS += -DASSERT
 --- ./hotspot/make/bsd/makefiles/defs.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/defs.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/defs.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -29,7 +29,15 @@
  SLASH_JAVA ?= /java
  
@@ -1174,7 +3164,7 @@
  endif
  
  # On 32 bit bsd we build server and client, on 64 bit just server.
-@@ -321,6 +337,18 @@
+@@ -321,10 +337,22 @@
  ifeq ($(JVM_VARIANT_MINIMAL1),true)
    EXPORT_LIST += $(EXPORT_MINIMAL_DIR)/Xusage.txt
    EXPORT_LIST += $(EXPORT_MINIMAL_DIR)/libjvm.$(LIBRARY_SUFFIX)
@@ -1193,8 +3183,45 @@
  endif
  
  # Serviceability Binaries
+-# No SA Support for PPC, IA64, ARM or zero
++# No SA Support for IA64, ARM or zero
+ ADD_SA_BINARIES/x86   = $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX) \
+                         $(EXPORT_LIB_DIR)/sa-jdi.jar
+ 
+@@ -340,6 +368,23 @@
+   endif
+ endif
+ 
++ADD_SA_BINARIES/ppc   = $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX) \
++                        $(EXPORT_LIB_DIR)/sa-jdi.jar
++ADD_SA_BINARIES/universal = $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX) \
++                            $(EXPORT_LIB_DIR)/sa-jdi.jar
++
++ifeq ($(ENABLE_FULL_DEBUG_SYMBOLS),1)
++  ifeq ($(ZIP_DEBUGINFO_FILES),1)
++      ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.diz
++  else
++    ifeq ($(OS_VENDOR), Darwin)
++        ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX).dSYM
++    else
++        ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.debuginfo
++    endif
++  endif
++endif
++
+ ADD_SA_BINARIES/sparc = $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX) \
+                         $(EXPORT_LIB_DIR)/sa-jdi.jar
+ ADD_SA_BINARIES/universal = $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX) \
+@@ -357,7 +402,6 @@
+   endif
+ endif
+ 
+-ADD_SA_BINARIES/ppc   =
+ ADD_SA_BINARIES/ia64  =
+ ADD_SA_BINARIES/arm   =
+ ADD_SA_BINARIES/zero  =
 --- ./hotspot/make/bsd/makefiles/fastdebug.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/fastdebug.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/fastdebug.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -56,7 +56,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1208,7 +3235,7 @@
  VERSION = fastdebug
  SYSDEFS += -DASSERT -DCHECK_UNHANDLED_OOPS
 --- ./hotspot/make/bsd/makefiles/gcc.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/gcc.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/gcc.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -168,6 +168,9 @@
    CFLAGS += -DDONT_USE_PRECOMPILED_HEADER
  endif
@@ -1335,7 +3362,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/launcher.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/launcher.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,117 @@
 +#
 +# Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -1455,7 +3482,7 @@
 +	$(QUIETLY) chmod +x $@
 +
 --- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Wed Dec 28 10:28:45 2016 -0800
 @@ -21,246 +21,254 @@
  # questions.
  #
@@ -1944,7 +3971,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,266 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2213,7 +4240,7 @@
 +                # INSERT VTABLE SYMBOLS HERE
 +
 --- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Wed Dec 28 10:28:45 2016 -0800
 @@ -21,241 +21,249 @@
  # questions.
  #
@@ -2693,7 +4720,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,261 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2957,7 +4984,7 @@
 +                # INSERT VTABLE SYMBOLS HERE
 +
 --- ./hotspot/make/bsd/makefiles/optimized.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/optimized.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/optimized.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -38,6 +38,9 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -2970,7 +4997,7 @@
  
  VERSION = optimized
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/ppc64.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/ppc64.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,51 @@
 +#
 +# Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -3024,7 +5051,7 @@
 +  CFLAGS += -mcpu=power7 -mtune=power8 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
 +endif
 --- ./hotspot/make/bsd/makefiles/product.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/product.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/product.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -38,7 +38,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -3038,7 +5065,7 @@
  SYSDEFS += -DPRODUCT
  VERSION = optimized
 --- ./hotspot/make/bsd/makefiles/rules.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/rules.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/rules.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -34,7 +34,7 @@
  CC_COMPILE       = $(CC) $(CXXFLAGS) $(CFLAGS)
  CXX_COMPILE      = $(CXX) $(CXXFLAGS) $(CFLAGS)
@@ -3048,8 +5075,165 @@
  
  COMPILE.CC       = $(CC_COMPILE) -c
  GENASM.CC        = $(CC_COMPILE) -S
+--- ./hotspot/make/bsd/makefiles/sa.make	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/make/bsd/makefiles/sa.make	Wed Dec 28 10:28:45 2016 -0800
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2003, 2014, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -19,7 +19,7 @@
+ # Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ # or visit www.oracle.com if you need additional information or have any
+ # questions.
+-#  
++#
+ #
+ 
+ # This makefile (sa.make) is included from the sa.make in the
+@@ -30,34 +30,21 @@
+ 
+ include $(GAMMADIR)/make/bsd/makefiles/rules.make
+ 
++include $(GAMMADIR)/make/defs.make
++include $(GAMMADIR)/make/altsrc.make
++
+ AGENT_DIR = $(GAMMADIR)/agent
+ 
+ include $(GAMMADIR)/make/sa.files
+ 
+ -include $(HS_ALT_MAKE)/bsd/makefiles/sa.make
+ 
++
+ TOPDIR    = $(shell echo `pwd`)
+ GENERATED = $(TOPDIR)/../generated
+ 
+-# SA-JDI depends on the standard JDI classes.
+-# Default SA_CLASSPATH location:
+-DEF_SA_CLASSPATH=$(BOOT_JAVA_HOME)/lib/tools.jar
+-ifeq ($(ALT_SA_CLASSPATH),)
+-  # no alternate specified; see if default exists
+-  SA_CLASSPATH=$(shell test -f $(DEF_SA_CLASSPATH) && echo $(DEF_SA_CLASSPATH))
+-  ifeq ($(SA_CLASSPATH),)
+-    # the default doesn't exist
+-    ifeq ($(OS_VENDOR), Darwin)
+-      # A JDK from Apple doesn't have tools.jar; the JDI classes are
+-      # are in the regular classes.jar file.
+-      APPLE_JAR=$(BOOT_JAVA_HOME)/bundle/Classes/classes.jar
+-      SA_CLASSPATH=$(shell test -f $(APPLE_JAR) && echo $(APPLE_JAR))
+-    endif
+-  endif
+-else
+-  _JUNK_ := $(shell echo >&2 "INFO: ALT_SA_CLASSPATH=$(ALT_SA_CLASSPATH)")
+-  SA_CLASSPATH=$(shell test -f $(ALT_SA_CLASSPATH) && echo $(ALT_SA_CLASSPATH))
+-endif
++# tools.jar is needed by the JDI - SA binding
++SA_CLASSPATH = $(BOOT_JAVA_HOME)/lib/tools.jar
+ 
+ # TODO: if it's a modules image, check if SA module is installed.
+ MODULELIB_PATH= $(BOOT_JAVA_HOME)/lib/modules
+@@ -71,24 +58,22 @@
+ SA_PROPERTIES = $(SA_CLASSDIR)/sa.properties
+ 
+ # if $(AGENT_DIR) does not exist, we don't build SA
+-# also, we don't build SA on Itanium, PowerPC, ARM or zero.
++# also, we don't build SA on Itanium or zero.
+ 
+-all: 
++all:
+ 	if [ -d $(AGENT_DIR) -a "$(SRCARCH)" != "ia64" \
+-             -a "$(SRCARCH)" != "arm" \
+-             -a "$(SRCARCH)" != "ppc" \
+              -a "$(SRCARCH)" != "zero" ] ; then \
+ 	   $(MAKE) -f sa.make $(GENERATED)/sa-jdi.jar; \
+ 	fi
+ 
+-$(GENERATED)/sa-jdi.jar: $(AGENT_FILES)
+-	$(QUIETLY) echo "Making $@"
++$(GENERATED)/sa-jdi.jar:: $(AGENT_FILES)
++	$(QUIETLY) echo $(LOG_INFO) "Making $@"
+ 	$(QUIETLY) if [ "$(BOOT_JAVA_HOME)" = "" ]; then \
+ 	  echo "ALT_BOOTDIR, BOOTDIR or JAVA_HOME needs to be defined to build SA"; \
+ 	  exit 1; \
+ 	fi
+-	$(QUIETLY) if [ ! -f "$(SA_CLASSPATH)" -a ! -d $(MODULELIB_PATH) ] ; then \
+-	  echo "Cannot find JDI classes. Use 1.6.0 or later version of JDK."; \
++	$(QUIETLY) if [ ! -f $(SA_CLASSPATH) -a ! -d $(MODULELIB_PATH) ] ; then \
++	  echo "Missing $(SA_CLASSPATH) file. Use 1.6.0 or later version of JDK";\
+ 	  echo ""; \
+ 	  exit 1; \
+ 	fi
+@@ -114,19 +99,22 @@
+ 	$(QUIETLY) $(REMOTE) $(COMPILE.RMIC)  -classpath $(SA_CLASSDIR) -d $(SA_CLASSDIR) sun.jvm.hotspot.debugger.remote.RemoteDebuggerServer
+ 	$(QUIETLY) echo "$(SA_BUILD_VERSION_PROP)" > $(SA_PROPERTIES)
+ 	$(QUIETLY) rm -f $(SA_CLASSDIR)/sun/jvm/hotspot/utilities/soql/sa.js
+-	$(QUIETLY) cp $(AGENT_SRC_DIR)/sun/jvm/hotspot/utilities/soql/sa.js $(SA_CLASSDIR)/sun/jvm/hotspot/utilities/soql
++	$(QUIETLY) $(CP) $(AGENT_SRC_DIR)/sun/jvm/hotspot/utilities/soql/sa.js $(SA_CLASSDIR)/sun/jvm/hotspot/utilities/soql
+ 	$(QUIETLY) mkdir -p $(SA_CLASSDIR)/sun/jvm/hotspot/ui/resources
+ 	$(QUIETLY) rm -f $(SA_CLASSDIR)/sun/jvm/hotspot/ui/resources/*
+-	$(QUIETLY) cp $(AGENT_SRC_DIR)/sun/jvm/hotspot/ui/resources/*.png $(SA_CLASSDIR)/sun/jvm/hotspot/ui/resources/
+-	$(QUIETLY) cp -r $(AGENT_SRC_DIR)/images/* $(SA_CLASSDIR)/
++	$(QUIETLY) $(CP) $(AGENT_SRC_DIR)/sun/jvm/hotspot/ui/resources/*.png $(SA_CLASSDIR)/sun/jvm/hotspot/ui/resources/
++	$(QUIETLY) $(CP) -r $(AGENT_SRC_DIR)/images/* $(SA_CLASSDIR)/
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAR) cf $@ -C $(SA_CLASSDIR)/ .
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAR) uf $@ -C $(AGENT_SRC_DIR) META-INF/services/com.sun.jdi.connect.Connector
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAVAH) -classpath $(SA_CLASSDIR) -d $(GENERATED) -jni sun.jvm.hotspot.debugger.x86.X86ThreadContext
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAVAH) -classpath $(SA_CLASSDIR) -d $(GENERATED) -jni sun.jvm.hotspot.debugger.amd64.AMD64ThreadContext
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAVAH) -classpath $(SA_CLASSDIR) -d $(GENERATED) -jni sun.jvm.hotspot.debugger.sparc.SPARCThreadContext
++	$(QUIETLY) $(REMOTE) $(RUN.JAVAH) -classpath $(SA_CLASSDIR) -d $(GENERATED) -jni sun.jvm.hotspot.debugger.ppc64.PPC64ThreadContext
+ 	$(QUIETLY) $(REMOTE) $(RUN.JAVAH) -classpath $(SA_CLASSDIR) -d $(GENERATED) -jni sun.jvm.hotspot.asm.Disassembler
+ 
+ clean:
+ 	rm -rf $(SA_CLASSDIR)
+ 	rm -rf $(GENERATED)/sa-jdi.jar
+ 	rm -rf $(AGENT_FILES_LIST)
++
++-include $(HS_ALT_MAKE)/bsd/makefiles/sa-rules.make
+--- ./hotspot/make/bsd/makefiles/saproc.make	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/make/bsd/makefiles/saproc.make	Wed Dec 28 10:28:45 2016 -0800
+@@ -99,10 +99,10 @@
+ endif
+ 
+ # if $(AGENT_DIR) does not exist, we don't build SA
+-# also, we don't build SA on Itanium, PPC, ARM or zero.
++# also, we don't build SA on Itanium, ARM or zero.
+ 
+ ifneq ($(wildcard $(AGENT_DIR)),)
+-ifneq ($(filter-out ia64 arm ppc zero,$(SRCARCH)),)
++ifneq ($(filter-out ia64 arm zero,$(SRCARCH)),)
+   BUILDLIBSAPROC = $(LIBSAPROC)
+ endif
+ endif
+@@ -162,16 +162,17 @@
+ endif
+ 
+ install_saproc: $(BUILDLIBSAPROC)
+-	@echo "Copying $(LIBSAPROC) to $(DEST_SAPROC)"
++	$(QUIETLY) if [ -e $(LIBSAPROC) ] ; then             \
++	  echo "Copying $(LIBSAPROC) to $(DEST_SAPROC)";     \
+ ifeq ($(OS_VENDOR), Darwin)
+-	$(QUIETLY) test -d $(LIBSAPROC_DEBUGINFO) && \
+-	    cp -f -r $(LIBSAPROC_DEBUGINFO) $(DEST_SAPROC_DEBUGINFO)
++	$test -d $(LIBSAPROC_DEBUGINFO) && 			\
++	    cp -f -r $(LIBSAPROC_DEBUGINFO) $(DEST_SAPROC_DEBUGINFO); \
+ else
+-	$(QUIETLY) test -f $(LIBSAPROC_DEBUGINFO) && \
+-	    cp -f $(LIBSAPROC_DEBUGINFO) $(DEST_SAPROC_DEBUGINFO)
++	 test -f $(LIBSAPROC_DEBUGINFO) && 		\
++	    cp -f $(LIBSAPROC_DEBUGINFO) $(DEST_SAPROC_DEBUGINFO);   \
+ endif
+-	$(QUIETLY) test -f $(LIBSAPROC_DIZ) && \
+-	    cp -f $(LIBSAPROC_DIZ) $(DEST_SAPROC_DIZ)
+-	$(QUIETLY) cp -f $(LIBSAPROC) $(DEST_SAPROC) && echo "Done"
++	 test -f $(LIBSAPROC_DIZ) && 				\
++	    cp -f $(LIBSAPROC_DIZ) $(DEST_SAPROC_DIZ); \
++	 cp -f $(LIBSAPROC) $(DEST_SAPROC) && echo "Done"
+ 
+ .PHONY: install_saproc
 --- ./hotspot/make/bsd/makefiles/vm.make	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/vm.make	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/makefiles/vm.make	Wed Dec 28 10:28:45 2016 -0800
 @@ -107,7 +107,7 @@
  # File specific flags
  CXXFLAGS += $(CXXFLAGS/BYFILE)
@@ -3060,7 +5244,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/platform_ppc64	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/make/bsd/platform_ppc64	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,17 @@
 +os_family = bsd
 +
@@ -3079,8 +5263,50 @@
 +gnu_dis_arch = ppc64
 +
 +sysdefs = -DBSD -D_ALLBSD_SOURCE -D_GNU_SOURCE -DPPC64
+--- ./hotspot/make/sa.files	Thu Sep 22 12:50:50 2016 -0700
++++ ./hotspot/make/sa.files	Wed Dec 28 10:28:45 2016 -0800
+@@ -45,6 +45,7 @@
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/amd64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/bsd/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/bsd/amd64/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/bsd/ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/bsd/x86/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/cdbg/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/cdbg/basic/*.java \
+@@ -55,12 +56,15 @@
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/linux/sparc/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/posix/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/posix/elf/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/proc/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/proc/amd64/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/proc/ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/proc/sparc/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/proc/x86/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/remote/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/remote/amd64/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/remote/ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/remote/sparc/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/remote/x86/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/sparc/*.java \
+@@ -85,6 +89,7 @@
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/amd64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/bsd/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/bsd_amd64/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/bsd_ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/bsd_x86/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/linux/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/linux_amd64/*.java \
+@@ -96,6 +101,7 @@
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/solaris_x86/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/sparc/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/x86/*.java \
++$(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/ppc64/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/jcore/*.java \
+ $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/soql/*.java \
 --- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -277,5 +277,9 @@
  #if defined(TARGET_OS_ARCH_linux_ppc)
  #include "bytes_linux_ppc.inline.hpp"
@@ -3092,7 +5318,7 @@
  
  #endif // CPU_PPC_VM_BYTES_PPC_HPP
 --- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -307,6 +307,8 @@
    // Although AIX runs on big endian CPU, float is in most significant
    // word of an argument slot.
@@ -3103,7 +5329,7 @@
  #error "unknown OS"
  #endif
 --- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -778,6 +778,8 @@
        // Although AIX runs on big endian CPU, float is in the most
        // significant word of an argument slot.
@@ -3114,7 +5340,7 @@
  #error "unknown OS"
  #endif
 --- ./hotspot/src/cpu/x86/vm/jni_x86.h	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Wed Dec 28 10:28:45 2016 -0800
 @@ -34,7 +34,7 @@
  #ifndef __has_attribute
    #define __has_attribute(x) 0
@@ -3125,7 +5351,7 @@
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
 --- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -2266,7 +2266,7 @@
    if (!is_critical_native) {
      // reset handle block
@@ -3136,7 +5362,7 @@
      // Any exception pending?
      __ cmpptr(Address(thread, in_bytes(Thread::pending_exception_offset())), (int32_t)NULL_WORD);
 --- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -23,9 +23,12 @@
   */
  
@@ -3152,7 +5378,7 @@
  #include "asm/macroAssembler.inline.hpp"
  #include "code/debugInfoRec.hpp"
 --- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -1293,7 +1293,7 @@
  
    // reset handle block
@@ -3163,7 +5389,7 @@
    // If result was an oop then unbox and save it in the frame
    { Label L;
 --- ./hotspot/src/cpu/x86/vm/x86_32.ad	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Wed Dec 28 10:28:45 2016 -0800
 @@ -1250,6 +1250,7 @@
  
  
@@ -3173,7 +5399,7 @@
  
  #ifndef PRODUCT
 --- ./hotspot/src/os/aix/vm/os_aix.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/aix/vm/os_aix.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/aix/vm/os_aix.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -5236,6 +5236,10 @@
      return 0;
    }
@@ -3186,7 +5412,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,53 @@
 +/*
 + * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -3242,7 +5468,7 @@
 +}
 +#endif
 --- ./hotspot/src/os/bsd/vm/jsig.c	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jsig.c	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jsig.c	Wed Dec 28 10:28:45 2016 -0800
 @@ -165,9 +165,8 @@
  }
  
@@ -3256,7 +5482,7 @@
  static int call_os_sigaction(int sig, const struct sigaction  *act,
                               struct sigaction *oact) {
 --- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -50,6 +50,7 @@
      case INTERRUPT_SIGNAL:
      case SIGFPE:
@@ -3367,7 +5593,7 @@
 +  return true;
  }
 --- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Wed Dec 28 10:28:45 2016 -0800
 @@ -112,20 +112,6 @@
  #define SHUTDOWN2_SIGNAL SIGINT
  #define SHUTDOWN3_SIGNAL SIGTERM
@@ -3390,7 +5616,7 @@
  
  #endif // OS_BSD_VM_JVM_BSD_H
 --- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -30,7 +30,7 @@
  
  void OSThread::pd_initialize() {
@@ -3401,7 +5627,7 @@
  #else
    _thread_id        = NULL;
 --- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -97,16 +97,31 @@
  # include <sys/shm.h>
  #ifndef __APPLE__
@@ -3964,7 +6190,7 @@
  
  #ifndef PRODUCT
 --- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -58,12 +58,16 @@
    // For signal flags diagnostics
    static int sigflags[MAXSIGNUM];
@@ -3993,7 +6219,7 @@
    static void set_page_size(int val)                                { _page_size = val; }
  
 --- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -33,30 +33,50 @@
  #include <sys/syscall.h>
  #include <unistd.h>
@@ -4056,7 +6282,7 @@
        yes = false;
      }
 --- ./hotspot/src/os/linux/vm/os_linux.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/linux/vm/os_linux.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/linux/vm/os_linux.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -6156,6 +6156,10 @@
      return 0;
    }
@@ -4069,7 +6295,7 @@
  }
  
 --- ./hotspot/src/os/posix/vm/os_posix.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/posix/vm/os_posix.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/posix/vm/os_posix.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -53,12 +53,11 @@
    n = get_core_path(buffer, bufferSize);
  
@@ -4133,7 +6359,7 @@
  #ifdef SI_TKILL
      { SI_TKILL,     "SI_TKILL",    "Signal sent by tkill (pthread_kill)" },
 --- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -6375,6 +6375,10 @@
      return 0;
    }
@@ -4146,7 +6372,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,400 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4549,7 +6775,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4591,7 +6817,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,54 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4648,7 +6874,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,149 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -4800,7 +7026,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,666 @@
 +/*
 + * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5469,7 +7695,7 @@
 +}
 +#endif
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,35 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5507,7 +7733,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,50 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5560,7 +7786,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5602,7 +7828,7 @@
 +  os::thread_local_storage_at_put(ThreadLocalStorage::thread_index(), thread);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5641,7 +7867,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5680,7 +7906,7 @@
 +
 +void JavaThread::cache_global_variables() { }
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,83 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5766,7 +7992,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -0,0 +1,55 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5824,7 +8050,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
 --- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -594,7 +594,11 @@
            stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
        }
@@ -5838,7 +8064,7 @@
          stub = StubRoutines::handler_for_unsafe_access();
      }
 --- ./hotspot/src/share/vm/opto/node.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/opto/node.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/opto/node.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -286,6 +286,10 @@
  #ifdef _MSC_VER // the IDX_INIT hack falls foul of warning C4355
  #pragma warning( disable:4355 ) // 'this' : used in base member initializer list
@@ -5862,7 +8088,7 @@
  //------------------------------clone------------------------------------------
  // Clone a Node.
 --- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -63,6 +63,9 @@
  #endif
  
@@ -5874,7 +8100,7 @@
  # include "atomic_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/globals.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/globals.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/globals.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -94,6 +94,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "globals_aix_ppc.hpp"
@@ -5886,7 +8112,7 @@
  # include "globals_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -64,6 +64,9 @@
  #endif
  
@@ -5898,7 +8124,7 @@
  # include "orderAccess_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/os.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/os.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -424,15 +424,6 @@
      if (_native_java_library == NULL) {
        vm_exit_during_initialization("Unable to load native library", ebuf);
@@ -5916,7 +8142,7 @@
    static jboolean onLoaded = JNI_FALSE;
    if (onLoaded) {
 --- ./hotspot/src/share/vm/runtime/os.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/os.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -835,6 +835,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "os_aix_ppc.hpp"
@@ -5928,7 +8154,7 @@
  # include "os_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -63,6 +63,9 @@
  #endif
  
@@ -5940,7 +8166,7 @@
  # include "prefetch_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/thread.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/thread.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/thread.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -1732,6 +1732,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "thread_aix_ppc.hpp"
@@ -5952,7 +8178,7 @@
  # include "thread_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -75,6 +75,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "threadLS_aix_ppc.hpp"
@@ -5964,7 +8190,7 @@
  # include "threadLS_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -146,6 +146,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "vmStructs_aix_ppc.hpp"
@@ -5985,7 +8211,7 @@
    NOT_ZERO(X86_ONLY(declare_constant(frame::entry_frame_call_wrapper_offset)))      \
    declare_constant(frame::pc_return_offset)                               \
 --- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -30,6 +30,11 @@
  // This file holds compiler-dependent includes,
  // globally used constants & types, class (forward)
@@ -6018,7 +8244,7 @@
  #endif
  
 --- ./hotspot/src/share/vm/utilities/vmError.cpp	Thu Sep 22 12:50:50 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/vmError.cpp	Mon Oct 24 19:45:24 2016 -0700
++++ ./hotspot/src/share/vm/utilities/vmError.cpp	Wed Dec 28 10:28:45 2016 -0800
 @@ -22,7 +22,6 @@
   *
   */
@@ -6028,7 +8254,7 @@
  #include "compiler/compileBroker.hpp"
  #include "gc_interface/collectedHeap.hpp"
 --- ./jdk/make/CompileDemos.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/CompileDemos.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/CompileDemos.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -323,7 +323,7 @@
  $(eval $(call SetupJVMTIDemo,hprof, java_crw_demo, \
      -I$(JDK_TOPDIR)/src/share/npt -I$(JDK_TOPDIR)/src/$(OPENJDK_TARGET_OS_API_DIR)/npt \
@@ -6039,7 +8265,7 @@
  $(eval $(call SetupJVMTIDemo,minst, agent_util java_crw_demo))
  $(eval $(call SetupJVMTIDemo,mtrace, agent_util java_crw_demo))
 --- ./jdk/make/CompileJavaClasses.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/CompileJavaClasses.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/CompileJavaClasses.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -128,23 +128,32 @@
        sun/nio/fs/LinuxFileStore.java \
        sun/nio/fs/LinuxFileSystem.java \
@@ -6142,7 +8368,7 @@
      INCLUDES := $(SECURITY_PKGS), \
      EXCLUDES := $(EXCLUDES), \
 --- ./jdk/make/CompileLaunchers.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/CompileLaunchers.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/CompileLaunchers.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -49,7 +49,7 @@
    ORIGIN_ROOT := /..
  endif
@@ -6248,7 +8474,7 @@
  endif
  
 --- ./jdk/make/CopyFiles.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/CopyFiles.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/CopyFiles.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -29,6 +29,8 @@
  
  ifeq ($(OPENJDK_TARGET_OS), windows)
@@ -6292,7 +8518,7 @@
            endif
          endif
 --- ./jdk/make/Images.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/Images.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/Images.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -236,11 +236,11 @@
  endif
  
@@ -6363,7 +8589,7 @@
  
  ################################################################################
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/data/classlist/classlist.bsd	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/data/classlist/classlist.bsd	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,2559 @@
 +java/lang/Object
 +java/lang/String
@@ -8925,7 +11151,7 @@
 +sun/awt/X11/XErrorEvent
 +# eea35d9d56e0006e
 --- ./jdk/make/gendata/GendataFontConfig.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/gendata/GendataFontConfig.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/gendata/GendataFontConfig.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -73,6 +73,13 @@
    GENDATA_FONT_CONFIG_SRC_PREFIX := aix.
  endif
@@ -8941,7 +11167,7 @@
  
  $(GENDATA_FONT_CONFIG_DST)/%.src: \
 --- ./jdk/make/lib/Awt2dLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/Awt2dLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/Awt2dLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -309,7 +309,7 @@
      debug_trace.c \
      debug_util.c
@@ -9067,7 +11293,7 @@
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif
 --- ./jdk/make/lib/CoreLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/CoreLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/CoreLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -82,7 +82,7 @@
  endif
  
@@ -9155,7 +11381,7 @@
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
 --- ./jdk/make/lib/NetworkingLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/NetworkingLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/NetworkingLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -42,7 +42,7 @@
    LIBNET_EXCLUDE_FILES += linux_close.c
  endif
@@ -9185,7 +11411,7 @@
          delayimp.lib $(WIN_JAVA_LIB) advapi32.lib \
          -DELAYLOAD:secur32.dll -DELAYLOAD:iphlpapi.dll, \
 --- ./jdk/make/lib/NioLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/NioLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/NioLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -77,9 +77,28 @@
        UnixNativeDispatcher.c
  endif
@@ -9247,7 +11473,7 @@
 +  endif
  endif
 --- ./jdk/make/lib/ServiceabilityLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -34,7 +34,7 @@
  ifneq ($(OPENJDK_TARGET_OS), linux)
    LIBATTACH_EXCLUDE_FILES += LinuxVirtualMachine.c
@@ -9338,7 +11564,7 @@
      LIBHPROF_OPTIMIZATION := LOW
    endif
 --- ./jdk/make/lib/SoundLibraries.gmk	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/lib/SoundLibraries.gmk	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/lib/SoundLibraries.gmk	Mon Dec 19 15:56:12 2016 -0500
 @@ -75,6 +75,13 @@
    LIBJSOUND_CFLAGS += -DX_PLATFORM=X_AIX
  endif # OPENJDK_TARGET_OS aix
@@ -9371,7 +11597,7 @@
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
        DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
 --- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Mon Dec 19 15:56:12 2016 -0500
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9381,7 +11607,7 @@
  	local:
  		*;
 --- ./jdk/make/mapfiles/launchers/mapfile-x86	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86	Mon Dec 19 15:56:12 2016 -0500
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9391,7 +11617,7 @@
  		_start;		# exported from ctr1/crtn, the clever hacker
  		_init;		# might know about them.  However note, that
 --- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Mon Dec 19 15:56:12 2016 -0500
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -9401,7 +11627,7 @@
  	local:
  		*;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,42 @@
 +#
 +# Copyright (c) 2005, Oracle and/or its affiliates. All rights reserved.
@@ -9446,7 +11672,7 @@
 +		*;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,195 @@
 +#
 +# Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -9644,7 +11870,7 @@
 +		*;
 +};
 --- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Mon Dec 19 15:56:12 2016 -0500
 @@ -26,6 +26,9 @@
  # Define library interface.
  
@@ -9656,7 +11882,7 @@
  	    *;
  };
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-sources.ent	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/common/bsd-sources.ent	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,45 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -9704,7 +11930,7 @@
 +    <location>${root}/src/bsd/classes</location>
 +</source-folder>
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-view.ent	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/common/bsd-view.ent	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,39 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -9746,7 +11972,7 @@
 +    <excludes>${excludes}</excludes>
 +</source-folder>
 --- ./jdk/make/netbeans/common/java-data-native.ent	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/netbeans/common/java-data-native.ent	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/common/java-data-native.ent	Mon Dec 19 15:56:12 2016 -0500
 @@ -34,6 +34,7 @@
  <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
      <compilation-unit>
@@ -9756,7 +11982,7 @@
          <package-root>${root}/src/solaris/classes</package-root>
          <package-root>${root}/src/windows/classes</package-root>
 --- ./jdk/make/netbeans/common/make.xml	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/netbeans/common/make.xml	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/common/make.xml	Mon Dec 19 15:56:12 2016 -0500
 @@ -32,16 +32,21 @@
  -->
  
@@ -9792,7 +12018,7 @@
              <attribute name="target"/>
              <attribute name="dir"/>
 --- ./jdk/make/netbeans/j2se/nbproject/project.xml	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Mon Dec 19 15:56:12 2016 -0500
 @@ -34,6 +34,7 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -9826,7 +12052,7 @@
                      &unix-view;
                      &windows-view;
 --- ./jdk/make/netbeans/world/nbproject/project.xml	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/make/netbeans/world/nbproject/project.xml	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/make/netbeans/world/nbproject/project.xml	Mon Dec 19 15:56:12 2016 -0500
 @@ -34,12 +34,14 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -9859,7 +12085,7 @@
                      &unix-view;
                      &windows-view;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,97 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -9959,7 +12185,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,48 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -10010,7 +12236,7 @@
 +
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,213 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -10226,7 +12452,7 @@
 +    private static native void interrupt(int fd);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,263 @@
 +/*
 + * Copyright (c) 2011, 2015, Oracle and/or its affiliates. All rights reserved.
@@ -10492,7 +12718,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -10539,7 +12765,7 @@
 +    }
 +}
 --- ./jdk/src/bsd/doc/man/javah.1	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/bsd/doc/man/javah.1	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/doc/man/javah.1	Mon Dec 19 15:56:12 2016 -0500
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10559,7 +12785,7 @@
  \fIWindows\fR:
  
 --- ./jdk/src/bsd/doc/man/rmic.1	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmic.1	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/doc/man/rmic.1	Mon Dec 19 15:56:12 2016 -0500
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10588,7 +12814,7 @@
  .TP 0.2i    
  \(bu
 --- ./jdk/src/bsd/doc/man/rmid.1	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmid.1	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/doc/man/rmid.1	Mon Dec 19 15:56:12 2016 -0500
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -10608,7 +12834,7 @@
  .TP 0.2i    
  \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,171 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -11636,7 +13862,7 @@
 -}
 -
 --- ./jdk/src/share/bin/jli_util.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/bin/jli_util.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/bin/jli_util.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -87,7 +87,7 @@
  #define _LARGFILE64_SOURCE
  #define JLI_Lseek                       lseek64
@@ -11647,7 +13873,7 @@
  #endif
  #ifdef _AIX
 --- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -1146,7 +1146,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -11658,7 +13884,7 @@
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
 --- ./jdk/src/share/classes/sun/awt/OSInfo.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -39,6 +39,7 @@
          WINDOWS,
          LINUX,
@@ -11679,7 +13905,7 @@
                  return MACOSX;
              }
 --- ./jdk/src/share/classes/sun/font/FontUtilities.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -48,6 +48,8 @@
  
      public static boolean isLinux;
@@ -11699,7 +13925,7 @@
  
                  String t2kStr = System.getProperty("sun.java2d.font.scaler");
 --- ./jdk/src/share/classes/sun/font/SunFontManager.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -418,7 +418,7 @@
                           * registerFonts method as on-screen these JRE fonts
                           * always go through the T2K rasteriser.
@@ -11710,7 +13936,7 @@
                              registerFontDir(jreFontDirName);
                          }
 --- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -1306,7 +1306,7 @@
          String osName = AccessController.doPrivileged(
              new GetPropertyAction("os.name"));
@@ -11721,7 +13947,7 @@
                      new String[] {
                          "COMPOUND_TEXT",        // JDK historical
 --- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -1587,9 +1587,31 @@
          }
  
@@ -11757,7 +13983,7 @@
                  execCmd[n++] = "-P" + printer;
              }
 --- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -48,6 +48,7 @@
                      public Boolean run() {
                              String osname = System.getProperty("os.name");
@@ -11767,7 +13993,7 @@
                                  osname.startsWith("Linux")) {
                                  return new Boolean(System.getProperty
 --- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -90,6 +90,12 @@
                                      "libgssapi_krb5.so",
                                      "libgssapi_krb5.so.2",
@@ -11782,7 +14008,7 @@
                                  gssLibs = new String[]{
                                      "libgssapi_krb5.dylib",
 --- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Mon Dec 19 15:56:12 2016 -0500
 @@ -31,4 +31,5 @@
  #[windows]sun.tools.attach.WindowsAttachProvider
  #[linux]sun.tools.attach.LinuxAttachProvider
@@ -11790,7 +14016,7 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
  #[aix]sun.tools.attach.AixAttachProvider
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/share/lib/security/java.security-bsd	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/lib/security/java.security-bsd	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,626 @@
 +#
 +# This is the "master security properties file".
@@ -12419,7 +14645,7 @@
 +#       EE386BFB 5A899FA5 AE9F2411 7C4B1FE6 49286651 ECE65381 \
 +#       FFFFFFFF FFFFFFFF, 2}
 --- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Mon Dec 19 15:56:12 2016 -0500
 @@ -62,7 +62,7 @@
  
  #endif // End of ZLIB
@@ -12430,7 +14656,7 @@
      ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
  #else
 --- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -121,7 +121,7 @@
  }
  
@@ -12459,7 +14685,7 @@
  #define MAP_NATIVE2BE16(a) MAP_SWAP16_impl(a)
  #define MAP_NATIVE2LE32(a) (a)
 --- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -28,7 +28,7 @@
  
  
@@ -12470,7 +14696,7 @@
  #else
      return 1;
 --- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -40,7 +40,7 @@
  #endif
  #endif
@@ -12481,7 +14707,7 @@
  #define __LO(x) *(int*)&x
  #define __HIp(x) *(1+(int*)x)
 --- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -624,7 +624,7 @@
      switch(type) {
          case java_awt_image_BufferedImage_TYPE_INT_ARGB:
@@ -12510,7 +14736,7 @@
              colorOrder[1] = 1;
              colorOrder[2] = 0;
 --- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -1176,7 +1176,7 @@
  
  #define NLUT 8
@@ -12521,7 +14747,7 @@
  #else
  #define INDEXES    { 0, 1, 2, 3, 4, 5, 6, 7 }
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -12562,7 +14788,7 @@
  #endif /* _NO_LONGLONG */
  
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12603,7 +14829,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12644,7 +14870,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12685,7 +14911,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12726,7 +14952,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12767,7 +14993,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -12808,7 +15034,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -13029,7 +15255,7 @@
  
  #else  /* _LONGLONG */
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -168,7 +168,7 @@
  }
  
@@ -13311,7 +15537,7 @@
        dp[13] = t1;
        dp[14] = t2;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -13464,7 +15690,7 @@
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -13475,7 +15701,7 @@
  #else
      mlib_s32 int0, int1;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -13575,7 +15801,7 @@
          dp += SIZE;
          sp += SIZE;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -14809,7 +17035,7 @@
        dp[13] = t1;
        dp[14] = t2;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -27,9 +27,6 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -14821,7 +17047,7 @@
  #include <mlib_status.h>
  #include <mlib_sys.h>
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -29,7 +29,7 @@
  #ifdef MACOSX
  #include <unistd.h>
@@ -14842,7 +17068,7 @@
    return (void *) memalign(8, size);
  #endif /* _MSC_VER */
 --- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -136,7 +136,7 @@
  #define U_CAPI extern "C"
  
@@ -14853,7 +17079,7 @@
      #endif
  #endif
 --- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -182,7 +182,7 @@
          return 0L;
      }
@@ -14864,7 +17090,7 @@
      if (isInIntPacked) {
          inFormatter ^= DOSWAP_SH(1);
 --- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -27,6 +27,7 @@
  #include <jni.h>
  #include "management.h"
@@ -14874,7 +17100,7 @@
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
 --- ./jdk/src/solaris/back/util_md.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/back/util_md.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/back/util_md.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -51,7 +51,7 @@
  
  /* On little endian machines, convert java big endian numbers. */
@@ -14885,7 +17111,7 @@
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
 --- ./jdk/src/solaris/bin/ergo_i586.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/bin/ergo_i586.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/bin/ergo_i586.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -106,7 +106,7 @@
  
  #endif /* __solaris__ */
@@ -14905,7 +17131,7 @@
  /*
   * Routines shared by solaris-i586 and linux-i586.
 --- ./jdk/src/solaris/bin/java_md_solinux.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -14998,7 +17224,7 @@
  
  int
 --- ./jdk/src/solaris/bin/java_md_solinux.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -26,17 +26,26 @@
  #ifndef JAVA_MD_SOLINUX_H
  #define JAVA_MD_SOLINUX_H
@@ -15040,7 +17266,7 @@
  static const char *system_dir   = "/usr/java";
  static const char *user_dir     = "/java";
 --- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -82,6 +82,8 @@
  
          LINUX(LaunchMechanism.VFORK, LaunchMechanism.FORK),
@@ -15089,7 +17315,7 @@
              case AIX:
                  // There is a risk that pid will be recycled, causing us to
 --- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -234,7 +234,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -15118,7 +17344,7 @@
                !mFontConfig.fontFilesArePresent()) ||
               (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
 --- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Mon Dec 19 15:56:12 2016 -0500
 @@ -26,134 +26,134 @@
  
  # Version
@@ -15403,7 +17629,7 @@
 +filename.NanumMyeongjo=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjo.ttf
 +filename.NanumMyeongjo_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjoBold.ttf
 --- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -52,7 +52,7 @@
                      } else if (os.startsWith("SunOS")) {
                          defaultLower = 32768;
@@ -15414,7 +17640,7 @@
                          defaultUpper = 65535;
                      } else if (os.startsWith("AIX")) {
 --- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -66,7 +66,7 @@
              return createProvider("sun.nio.ch.SolarisAsynchronousChannelProvider");
          if (osname.equals("Linux"))
@@ -15425,7 +17651,7 @@
          if (osname.equals("AIX"))
              return createProvider("sun.nio.ch.AixAsynchronousChannelProvider");
 --- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -25,10 +25,14 @@
  
  package sun.nio.fs;
@@ -15460,7 +17686,7 @@
 +    }
  }
 --- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -61,6 +61,8 @@
              return createProvider("sun.nio.fs.SolarisFileSystemProvider");
          if (osname.equals("Linux"))
@@ -15471,7 +17697,7 @@
              return createProvider("sun.nio.fs.MacOSXFileSystemProvider");
          if (osname.equals("AIX"))
 --- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -161,6 +161,7 @@
  
      static boolean isBSD() {
@@ -15496,7 +17722,7 @@
      };
  
 --- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Mon Dec 19 15:56:12 2016 -0500
 @@ -273,7 +273,7 @@
              try {
                  b = s.getBytes("UTF-8");
@@ -15507,7 +17733,7 @@
              BsdVirtualMachine.write(fd, b, 0, b.length);
          }
 --- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -675,6 +675,7 @@
              return -1;
          }
@@ -15525,7 +17751,7 @@
          TRACE0("xrun_recovery: EAGAIN try again flag.\n");
          return 0;
 --- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -140,7 +140,7 @@
                                        (float) ((int) sr->samp_rates[s]),
                                        DAUDIO_PCM, /* encoding - let's only do PCM */
@@ -15536,7 +17762,7 @@
  #else
                                        (bits[b] > 8)?TRUE:FALSE  /* big endian */
 --- ./jdk/src/solaris/native/common/jni_util_md.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/common/jni_util_md.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/common/jni_util_md.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -28,6 +28,7 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -15546,7 +17772,7 @@
  jstring nativeNewStringPlatform(JNIEnv *env, const char *str) {
      return NULL;
 --- ./jdk/src/solaris/native/java/lang/java_props_md.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -151,7 +151,7 @@
      lc = setlocale(cat, NULL);
  #endif
@@ -15582,7 +17808,7 @@
      /* user properties */
      {
 --- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -36,20 +36,13 @@
  #include <stdlib.h>
  #include <ctype.h>
@@ -15624,7 +17850,7 @@
  
      if (error) {
 --- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -33,7 +33,7 @@
  #include <strings.h>
  #include <stdlib.h>
@@ -15667,7 +17893,7 @@
      /* Try once, with our static buffer. */
      memset(&hints, 0, sizeof(hints));
 --- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -62,14 +62,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
@@ -15691,7 +17917,7 @@
  #include "jvm.h"
  #include "jni_util.h"
 --- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -2222,7 +2222,7 @@
                  }
              }
@@ -15702,7 +17928,7 @@
                  index = getDefaultScopeID(env);
              }
 --- ./jdk/src/solaris/native/java/net/bsd_close.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/bsd_close.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/bsd_close.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -316,11 +316,8 @@
  }
  
@@ -15801,7 +18027,7 @@
 +#endif
  }
 --- ./jdk/src/solaris/native/java/net/net_util_md.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -45,6 +45,10 @@
  #endif
  #endif
@@ -15823,7 +18049,7 @@
      static jfieldID ni_defaultIndexID;
      if (ni_class == NULL) {
 --- ./jdk/src/solaris/native/java/net/net_util_md.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -47,7 +47,7 @@
     close subroutine does not return until the select call returns.
     ...
@@ -15834,7 +18060,7 @@
  extern int NET_Read(int s, void* buf, size_t len);
  extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
 --- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -56,7 +56,11 @@
  #endif
  
@@ -15899,7 +18125,7 @@
 -#endif /* MACOSX */
 +#endif /* _ALLBSD_SOURCE */
 --- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -255,7 +255,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -15910,7 +18136,7 @@
                  family = "lucida";
              }
 --- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -121,7 +121,7 @@
   */
  
@@ -15996,7 +18222,7 @@
      return point;
  }
 --- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -52,7 +52,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -16217,7 +18443,7 @@
      adjustStatusWindow(window);
      AWT_UNLOCK();
 --- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -45,7 +45,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -16228,7 +18454,7 @@
  #endif
  
 --- ./jdk/src/solaris/native/sun/awt/extutil.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/extutil.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/extutil.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -16245,7 +18471,7 @@
 -#endif /* __linux__ || MACOSX */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
 --- ./jdk/src/solaris/native/sun/awt/fontpath.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -23,9 +23,9 @@
   * questions.
   */
@@ -16335,7 +18561,7 @@
  #endif
               ) {
 --- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -28,11 +28,11 @@
  #include <sys/types.h>
  
@@ -16352,7 +18578,7 @@
  typedef unsigned char   jubyte;
  typedef unsigned short  jushort;
 --- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -63,9 +63,6 @@
   *    MLIB_EDGE_SRC_PADDED
   */
@@ -16458,7 +18684,7 @@
        }
        else {                                               /* aligned */
 --- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -804,7 +804,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -16469,7 +18695,7 @@
  #else
  #   define ULTRA_CHIP   "sun4u"
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -0,0 +1,42 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -16514,7 +18740,7 @@
 +    return (jdouble) -1;
 +}
 --- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -56,6 +56,9 @@
  #include <limits.h>
  #include <stdlib.h>
@@ -16647,7 +18873,7 @@
  
  JNIEXPORT jlong JNICALL
  Java_sun_management_OperatingSystemImpl_getOpenFileDescriptorCount
-@@ -421,12 +489,6 @@
+@@ -421,12 +489,8 @@
      free(fds);
  
      return nfiles;
@@ -16657,10 +18883,12 @@
 -     */
 -    // throw_internal_error(env, "Unimplemented in FreeBSD");
 -    return (100);
++#elif defined(__OpenBSD__)
++    return getdtablecount();
  #else /* solaris/linux */
      DIR *dirp;
      struct dirent dbuf;
-@@ -444,7 +506,7 @@
+@@ -444,7 +508,7 @@
  
      dirp = opendir(FD_DIR);
      if (dirp == NULL) {
@@ -16670,7 +18898,7 @@
      }
  
 --- ./jdk/src/solaris/native/sun/net/portconfig.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/net/portconfig.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/net/portconfig.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -67,6 +67,24 @@
          range->lower = net_getParam("/dev/tcp", "tcp_smallest_anon_port");
          return 0;
@@ -16697,7 +18925,7 @@
      {
          int ret;
 --- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Mon Dec 19 15:56:12 2016 -0500
 @@ -67,7 +67,7 @@
  
  
@@ -16747,7 +18975,7 @@
  
  #endif /* !SUN_NIO_CH_SCTP_H */
 --- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -58,6 +58,7 @@
   */
  jboolean loadSocketExtensionFuncs
@@ -16765,7 +18993,7 @@
      funcsLoaded = JNI_TRUE;
      return JNI_TRUE;
 --- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -31,6 +31,12 @@
  #include <dlfcn.h>
  #include <string.h>
@@ -16789,7 +19017,7 @@
              return JNI_FALSE;
          }
 --- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -54,7 +54,7 @@
      }
  
@@ -16800,7 +19028,7 @@
  #else
      void *hModule = dlopen(libName, RTLD_NOLOAD);
 --- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -37,7 +37,9 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -16812,7 +19040,7 @@
  #include <fcntl.h>
  
 --- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Mon Dec 19 15:56:12 2016 -0500
 @@ -886,7 +886,7 @@
  {
      KeySym originalKeysym = *keysym;
@@ -16823,7 +19051,7 @@
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
 --- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Thu Sep 22 13:05:53 2016 -0700
-+++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Mon Oct 24 19:45:36 2016 -0700
++++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Mon Dec 19 15:56:12 2016 -0500
 @@ -308,7 +308,7 @@
                                        DAUDIO_PCM,
                                        (bitsArray[bitIndex]==8)?FALSE:TRUE,  /* signed */
