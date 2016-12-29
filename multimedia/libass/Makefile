@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.13.4
+PORTVERSION=	0.13.5
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org

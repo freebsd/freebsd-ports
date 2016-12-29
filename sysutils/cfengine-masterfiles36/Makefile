@@ -23,7 +23,7 @@ RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-masterfiles[7-9]*
+CONFLICTS=	cfengine-masterfiles[17-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe
