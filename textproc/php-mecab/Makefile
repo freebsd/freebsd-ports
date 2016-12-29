@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rsky
 
 WRKSRC_SUBDIR=	mecab
-CONFIGURE_ARGS+=	--with-mecab=${LOCALBASE}/bin/mecab-config
-USES=		php:ext tar:tgz
+CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
+USES=		php:ext
 PHP_MODNAME=	mecab
 
 .include <bsd.port.mk>
