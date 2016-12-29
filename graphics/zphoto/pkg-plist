@@ -1,6 +1,6 @@
 bin/zphoto
-share/locale/ja/LC_MESSAGES/zphoto.mo
-share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/zphoto.mo
+%%NLS%%share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
 %%DATADIR%%/doc/images/wxzphoto-linux-mini.png
 %%DATADIR%%/doc/images/wxzphoto-linux.png
 %%DATADIR%%/doc/images/wxzphoto-mini.png
