@@ -13,14 +13,11 @@ COMMENT=	PECL extension for ctemplate library
 
 LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
-USES=		php:ext tar:xz
+USES=		php:ext localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanillahsu
 GH_PROJECT=	pecl-ctemplate
 IGNORE_WITH_PHP=	70
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-cTemplate=${LOCALBASE}
 

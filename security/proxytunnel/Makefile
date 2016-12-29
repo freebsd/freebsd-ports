@@ -8,12 +8,14 @@ CATEGORIES=	security
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+ BSD3CLAUSE MIT
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto
 
-USES=		pkgconfig gmake tar:tgz ssl
+USES=		pkgconfig gmake ssl
 USE_GITHUB=	yes
 
 PLIST_FILES=	bin/proxytunnel man/man1/proxytunnel.1.gz

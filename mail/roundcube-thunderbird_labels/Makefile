@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	roundcube>=0.5:mail/roundcube
 
-USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -34,8 +33,8 @@ x-generate-plist: build
 	    >${.CURDIR}/pkg-plist.tmp
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PLUGINDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PLUGINDIR}
+	@${MKDIR} ${STAGEDIR}${PLUGINDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PLUGINDIR}
 	cd ${STAGEDIR}${PLUGINDIR} && \
 		${MV} config.inc.php config.inc.php.sample
 
