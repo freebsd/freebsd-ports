@@ -62,7 +62,6 @@ lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/mm_malloc.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/mmintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/mwaitxintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/nmmintrin.h
-lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/pcommitintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/pkuintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/pmmintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/popcntintrin.h
