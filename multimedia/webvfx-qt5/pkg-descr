@@ -1,0 +1,8 @@
+WebVfx is a video effects framework that allows video effects
+(filters, transitions, etc.) to be authored using web technologies
+(HTML, CSS, JavaScript, WebGL, etc.) or with Qt Quick QML (a
+declarative CSS and JavaScript like language).
+
+WebVfx includes plugins for the MLT open source multimedia framework.
+
+WWW: https://www.mltframework.org/doxygen/webvfx/
