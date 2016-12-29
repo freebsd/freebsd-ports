@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twitter-text
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
