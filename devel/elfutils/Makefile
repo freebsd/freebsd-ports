@@ -5,7 +5,7 @@ PORTNAME=	elfutils
 PORTVERSION=	0.163
 PORTREVISION=	7
 CATEGORIES=	devel
-MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/${PORTVERSION}/
+MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Library for manipulating ELF files and partial implementation of binutils
