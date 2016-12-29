@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine-masterfiles
-PORTVERSION=	3.9.1
+PORTVERSION=	3.10.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
@@ -16,17 +16,17 @@ LICENSE=	GPLv3
 CPE_VENDOR=	gnu
 
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=	39
+PKGNAMESUFFIX=	310
 .endif
 
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-masterfiles[1678]*
+CONFLICTS=	cfengine-masterfiles[6-9]*
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		cpe
+USES=		cpe gmake
 HAS_CONFIGURE=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/cfengine-masterfiles
 CONFIGURE_ARGS=	--prefix=${EXAMPLESDIR}
