@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	netperfmeter
-PORTVERSION=	1.3.0
+PORTVERSION=	1.6.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.iem.uni-due.de/~dreibh/netperfmeter/download/ http://www.exp-math.uni-essen.de/~dreibh/netperfmeter/download/
+MASTER_SITES=	http://www.uni-due.de/~be0001/netperfmeter/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Network Performance Meter
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USES=		gmake
-
-PLIST_FILES=	bin/netperfmeter \
-		man/man1/netperfmeter.1.gz
-
-LICENSE=	GPLv3
+USES=		gmake shebangfix
+SHEBANG_FILES=	src/pdfmetadata
 
 .include <bsd.port.mk>
