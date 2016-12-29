@@ -22,6 +22,7 @@ CONFLICTS=	courier-0.45*
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 PATCHDIR=	/dev/null
 
 OPTIONS_DEFINE+=	GDBM
@@ -147,8 +148,6 @@ CONFIGURE_ARGS+=--without-authvchkpw
 
 .include "${.CURDIR}/Makefile.dep"
 
-do-install:	#empty
-do-build:	#empty
 .else	# !defined(PKGNAMESUFFIX)
 
 .if ${AUTHMOD} == authbase

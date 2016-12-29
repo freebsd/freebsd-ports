@@ -6,4 +6,4 @@ QJson is a Qt-based library that maps JSON data to QVariant objects
 and vice versa. JSON arrays will be mapped to QVariantList instances,
 while JSON objects will be mapped to QVariantMap.
 
-WWW: http://qjson.sourceforge.net
+WWW: http://qjson.sourceforge.net/

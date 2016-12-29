@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-progressbar
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 

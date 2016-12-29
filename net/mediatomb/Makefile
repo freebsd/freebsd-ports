@@ -97,6 +97,7 @@ LIBEXTRACTOR_CONFIGURE_ENABLE=	libextractor
 LIBEXTRACTOR_CONFIGURE_ON=	--with-extractor-h="${LOCALBASE}/include" \
 				--with-extractor-libs="${LOCALBASE}/lib"
 LIBEXTRACTOR_LIB_DEPENDS=	libextractor.so:textproc/libextractor
+LIBEXTRACTOR_BROKEN=		LIBEXTRACTOR option fails to configure (checking for EXTRACTOR_getKeywords in -lextractor... no)
 
 ID3LIB_CONFIGURE_ENABLE=	id3lib
 ID3LIB_CONFIGURE_ON=		--with-id3lib-h="${LOCALBASE}/include" \

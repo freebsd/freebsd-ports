@@ -9,11 +9,12 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Library to manage JSON objects with Qt
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flavio
 GH_TAGNAME=	${PORTVERSION}
-USES=		cmake pathfix tar:bzip2
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
 
 .if empty(PKGNAMESUFFIX)
@@ -39,17 +40,11 @@ OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-.include <bsd.port.options.mk>
-
-post-build:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-build-DOXYGEN-on:
 	cd ${WRKSRC}/doc && doxygen
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${_DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${_DOCSDIR}
-.endif
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${_DOCSDIR}
 
 .include <bsd.port.mk>

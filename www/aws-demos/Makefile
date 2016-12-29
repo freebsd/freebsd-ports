@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 		xmlada>=4.4:textproc/xmlada \
 		aws>=3.1:www/aws
 
-USES=		ada gmake python tar:bzip2
+USES=		ada gmake python
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_TAGNAME=	17.0
@@ -156,7 +156,9 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}/demos)
 .endfor
 .for prog in ${PROGS}
-	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/demos/${prog}
+	@${CHMOD} 755 ${STAGEDIR}${EXAMPLESDIR}/demos/${prog}
+	@${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/demos/${prog}
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/demos/${prog}
 .endfor
 
 .include <bsd.port.post.mk>

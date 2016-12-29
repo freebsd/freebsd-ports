@@ -23,7 +23,6 @@ FETCH_DEPENDS+=	svn:devel/subversion
 SVNROOT?=	http://porttree.googlecode.com/svn/trunk/
 SVN_REV=	52
 NO_BUILD=	yes
-NO_INSTALL=	yes
 PLIST_FILES=	bin/porttree man/man1/porttree.1.gz
 NO_ARCH=	yes
 

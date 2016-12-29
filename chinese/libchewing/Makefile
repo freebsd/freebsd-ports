@@ -15,13 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
-USES=		cmake libtool pathfix pkgconfig sqlite tar:bzip2
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	chewing
 
-CMAKE_ARGS+=	-DMAKEINFO=${LOCALBASE}/bin/makeinfo
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		cmake libtool localbase pathfix pkgconfig sqlite
+CMAKE_ARGS=	-DMAKEINFO=${LOCALBASE}/bin/makeinfo
+USE_LDCONFIG=	yes
+
 INFO=		libchewing
 
 .include <bsd.port.mk>

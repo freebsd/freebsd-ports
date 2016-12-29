@@ -9,7 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Qt-only fork of Kross, the KDE scripting framework
 
-USES=		cmake tar:bzip2
+LICENSE=	LGPL20+
+
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_QT4=	designer gui network xml qmake_build uic_build moc_build \
 		rcc_build script testlib

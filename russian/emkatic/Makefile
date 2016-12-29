@@ -13,6 +13,8 @@ COMMENT=	Emulator of Elektronika RPN programmable calculator series
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_FreeBSD_11=	does not build (Fatal: (10022) Can't find unit Serial used by Globe)
+
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 
@@ -38,21 +40,13 @@ QT4_DESC=	Build with Qt 4 interface
 
 GTK2_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 GTK2_USE=		GNOME=gtk20 FPC=gtk2
+GTK2_VARS=		LCL_PLATFORM=gtk2
 
 QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
+QT4_VARS=		LCL_PLATFORM=qt
 
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-LCL_PLATFORM=	gtk2
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-LCL_PLATFORM=	qt
-.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -61,7 +55,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-post-install-DOCS-on:
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

@@ -43,7 +43,7 @@ USES=		cmake:outsource jpeg
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} == 1001000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
 # Fails to build with GCC 4.9 in 10.1
 USE_GCC=	4.8
 LDFLAGS+=	-L${LOCALBASE}/lib/c++

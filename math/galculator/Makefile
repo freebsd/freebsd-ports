@@ -8,16 +8,14 @@ CATEGORIES=	math
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GTK-based scientific calculator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gettext gmake libtool pkgconfig tar:bzip2
+USES=		autoreconf gettext gmake libtool localbase pkgconfig
 USE_GNOME=	cairo intltool
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 
 OPTIONS_SINGLE=		GTK
