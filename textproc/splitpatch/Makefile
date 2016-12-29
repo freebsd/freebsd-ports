@@ -21,9 +21,6 @@ GH_TAGNAME=	13c5941
 
 PLIST_FILES=	bin/splitpatch man/man1/splitpatch.1.gz
 
-# avoid build date in man page
-#MAKE_ENV+=	PODCENTER=" "
-
 MAKE_JOBS_UNSAFE=yes
 
 do-install:
