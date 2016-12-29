@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redcarpet
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
