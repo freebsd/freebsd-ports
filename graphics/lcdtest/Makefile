@@ -15,13 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LCD monitor test pattern generator
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	liberation-fonts-ttf>0:x11-fonts/liberation-fonts-ttf
 
 USE_SDL=	sdl image ttf
-
-CFLAGS+=	-I${LOCALBASE}/include -DRELEASE=1.18
-LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lSDL -lSDL_image -lSDL_ttf
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
@@ -29,6 +27,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -37,8 +36,11 @@ post-patch:
 		${WRKSRC}/src/lcdtest.c
 
 do-build:
-	(cd ${WRKSRC}/src && ${CC} ${CFLAGS} -o lcdtest.o -c lcdtest.c)
-	(cd ${WRKSRC}/src && ${CC} ${LDFLAGS} -o lcdtest lcdtest.o)
+	cd ${WRKSRC}/src && \
+		${CC} ${CFLAGS} ${LDFLAGS} `sdl-config --cflags --libs` \
+			-DRELEASE=${PORTVERSION} \
+			-lSDL_image -lSDL_ttf \
+			-o lcdtest lcdtest.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
@@ -48,6 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
