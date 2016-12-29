@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yell
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 

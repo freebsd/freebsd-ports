@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-sitemap
-PORTVERSION=	0.10.0
+PORTVERSION=	0.12.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
