@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsproxy
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
