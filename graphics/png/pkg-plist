@@ -13,7 +13,7 @@ lib/libpng.so
 lib/libpng16.a
 lib/libpng16.so
 lib/libpng16.so.16
-lib/libpng16.so.16.26.0
+lib/libpng16.so.16.27.0
 libdata/pkgconfig/libpng.pc
 libdata/pkgconfig/libpng16.pc
 man/man3/libpng.3.gz
