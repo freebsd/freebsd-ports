@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cone
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -16,7 +16,7 @@ COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
-				libcourier-unicode.so:devel/courier-unicode
+		libcourier-unicode.so:devel/courier-unicode
 BUILD_DEPENDS=	gpgv:security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -35,12 +35,12 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/leaf
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mailtool
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/cone
-		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${STAGEDIR}${PREFIX}/sbin/cone-sysconftool
-		${RM} ${STAGEDIR}${PREFIX}/share/cone/rootcerts/.0
-		@${MKDIR} ${STAGEDIR}${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/leaf
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mailtool
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/cone
+	${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${STAGEDIR}${PREFIX}/sbin/cone-sysconftool
+	${RM} ${STAGEDIR}${PREFIX}/share/cone/rootcerts/.0
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
