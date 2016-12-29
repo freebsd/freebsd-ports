@@ -60,8 +60,8 @@ VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1003000
-BROKEN=		does not build on < 10.3 (undefined reference to `__cxa_throw_bad_array_new_length')
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
+BROKEN=		does not build on 10.1 (undefined reference to `__cxa_throw_bad_array_new_length')
 .endif
 
 SUB_FILES=	pkg-message
