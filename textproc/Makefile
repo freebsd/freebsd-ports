@@ -1591,6 +1591,7 @@
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
     SUBDIR += spiff
+    SUBDIR += splitpatch
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
