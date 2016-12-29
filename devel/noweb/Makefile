@@ -10,11 +10,6 @@ MASTER_SITES=	ftp://www.eecs.harvard.edu/pub/nr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, extensible literate-programming tool
 
-# The file is accessible via browser, but it times out on "make fetch"
-# This happens on both FreeBSD and DragonFly.  Interested users should
-# host the file and change the MASTER_SITES accordingly
-BROKEN=		unfetchable due to settings at host FTP server
-
 LICENSE=	noweb
 LICENSE_NAME=	noweb
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -22,6 +17,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	icont:lang/icon
 RUN_DEPENDS=	iconx:lang/icon
+
+# Master site uses extended passive mode fetch(1) does not support
+FETCH_CMD=	/usr/bin/ftp
+FETCH_ARGS=	# empty
+DISABLE_SIZE=	yes
 
 PORTSCOUT=	skipv:2.11
 
