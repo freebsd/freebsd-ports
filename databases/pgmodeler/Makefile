@@ -36,7 +36,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-BROKEN=		does not build on FreeBSD 10.1 (src/databaseexplorerwidget.cpp:1604:88: error: chosen constructor is explicit in copy-initialization)
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.post.mk>
