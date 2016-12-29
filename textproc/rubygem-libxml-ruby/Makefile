@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxml-ruby
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
