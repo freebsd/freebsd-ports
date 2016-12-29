@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2016-06-11
+DISTVERSION=	2016-11-27
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
@@ -12,6 +12,7 @@ COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD2CLAUSE
 
+MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS=
 
