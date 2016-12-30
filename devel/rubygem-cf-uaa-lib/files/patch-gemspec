@@ -1,0 +1,11 @@
+--- cf-uaa-lib.gemspec.orig	2016-12-30 14:49:03 UTC
++++ cf-uaa-lib.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<multi_json>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<httpclient>.freeze, ["~> 2.8.2.4"])
++      s.add_runtime_dependency(%q<httpclient>.freeze, [">= 2.8.2.4"])
+       s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.3.2"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 2.14.1"])
