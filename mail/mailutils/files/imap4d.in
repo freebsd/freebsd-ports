@@ -17,7 +17,6 @@ pidfile="/var/run/${name}.pid"
 
 load_rc_config ${name}
 
-imap4d_enable=${imap4d_enable:-"NO"}
-imap4d_flags=${imap4d_flags:-""}
+: ${imap4d_enable="NO"}
 
 run_rc_command "$1"
