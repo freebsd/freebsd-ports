@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyramid
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:www/py-WebTest \
 #		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
