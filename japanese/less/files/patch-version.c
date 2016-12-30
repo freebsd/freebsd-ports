@@ -1,8 +1,0 @@
---- version.c.orig	Sun Apr 16 00:26:13 2006
-+++ version.c	Sun Apr 16 00:27:48 2006
-@@ -768,4 +768,4 @@
- 		This modification make regex_cs-lwp9k be able to compile.
- */
- 
--char version[] = "382+iso262+ext3";
-+char version[] = "382+iso262+ext3+regex_cs-lwp9k";

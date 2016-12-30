@@ -30,6 +30,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skg_selectall.so
 %%QT_PLUGINDIR%%/skg_statistic.so
 %%QT_PLUGINDIR%%/skg_undoredo.so
+%%QT_PLUGINDIR%%/skrooge_add_operation.so
 %%QT_PLUGINDIR%%/skrooge_bank.so
 %%QT_PLUGINDIR%%/skrooge_budget.so
 %%QT_PLUGINDIR%%/skrooge_calculator.so
@@ -59,7 +60,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skrooge_search.so
 %%QT_PLUGINDIR%%/skrooge_tracker.so
 %%QT_PLUGINDIR%%/skrooge_unit.so
-%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
+%%SQLCIPHER%%%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
 share/applications/org.kde.skrooge.desktop
 share/config.kcfg/skgbasegui_settings.kcfg
 share/config.kcfg/skgbookmark_settings.kcfg
@@ -266,15 +267,6 @@ share/icons/breeze/actions/22/skrooge_much_more.svgz
 share/icons/breeze/actions/22/skrooge_type.svgz
 share/icons/breeze/actions/22/view-categories-expenditures.svgz
 share/icons/breeze/actions/22/view-categories-incomes.svgz
-share/icons/breeze/apps/22/skrooge.svgz
-share/icons/breeze/mimetypes/16/application-x-skg.svgz
-share/icons/breeze/mimetypes/16/application-x-skgc.svgz
-share/icons/breeze/mimetypes/22/application-x-skg.svgz
-share/icons/breeze/mimetypes/22/application-x-skgc.svgz
-share/icons/breeze/mimetypes/32/application-x-skg.svgz
-share/icons/breeze/mimetypes/32/application-x-skgc.svgz
-share/icons/breeze/mimetypes/64/application-x-skg.svgz
-share/icons/breeze/mimetypes/64/application-x-skgc.svgz
 share/icons/hicolor/128x128/actions/skg-chart-bubble.png
 share/icons/hicolor/128x128/actions/skrooge_credit_card.png
 share/icons/hicolor/128x128/actions/skrooge_less.png
@@ -376,6 +368,7 @@ share/icons/hicolor/scalable/apps/skrooge.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-skg.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-skgc.svgz
 share/knotifications5/skrooge.notifyrc
+share/kservices5/org.kde.plasma-runner-skrooge-add-operation.desktop
 share/kservices5/org.kde.skg-plugin-advice.desktop
 share/kservices5/org.kde.skg-plugin-bookmark.desktop
 share/kservices5/org.kde.skg-plugin-dashboard.desktop
@@ -719,6 +712,8 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/html/default/account_table.html
 %%DATADIR%%/html/default/account_table.qml
 %%DATADIR%%/html/default/advices_table.html
+%%DATADIR%%/html/default/alarm.html
+%%DATADIR%%/html/default/alarm.qml
 %%DATADIR%%/html/default/bank_table.html
 %%DATADIR%%/html/default/bank_table.qml
 %%DATADIR%%/html/default/bank_table_light.html
@@ -736,6 +731,8 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/html/default/highlighted_operations.qml
 %%DATADIR%%/html/default/income_vs_expenditure.qml
 %%DATADIR%%/html/default/income_vs_expenditure_table.html
+%%DATADIR%%/html/default/interests.html
+%%DATADIR%%/html/default/interests.qml
 %%DATADIR%%/html/default/personal_finance_score.html
 %%DATADIR%%/html/default/personal_finance_score.qml
 %%DATADIR%%/html/default/portfolio.html

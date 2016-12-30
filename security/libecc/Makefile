@@ -3,23 +3,24 @@
 
 PORTNAME=	libecc
 PORTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
+
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		libtool
+USES=		libtool localbase
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
-LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} 's@endian\.h@sys/&@' ${WRKSRC}/include/libecc/bitset.h
+	@${REINPLACE_CMD} 's@endian\.h@sys/&@' \
+	    ${WRKSRC}/include/libecc/bitset.h
 
 .include <bsd.port.mk>
