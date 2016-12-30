@@ -185,7 +185,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-rename.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-change-password.7c8f8db7a529.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-change-password.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-folder-perm-admin.8273386c97cb.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-folder-perm-admin.a73d294517e3.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-folder-perm-admin.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.4803dcbb740a.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.js
@@ -347,7 +347,6 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es-mx/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.210aa31910ac.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.f66480b3d021.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.f701701595f1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.js
@@ -727,15 +726,17 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/organization.f2b8e14eb3f3.js
 %%SEAHUBDIR%%/media/assets/scripts/common.40cfe3ae0e4a.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.47e68614daea.txt
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.9f9fcaac3b37.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.949967e72a2a.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.8d877df126c1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/i18n/fi/djangojs.3a52c64c31bf.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/i18n/fi/djangojs.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.37004de6ce75.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.b19b80108a06.js
 %%SEAHUBDIR%%/media/css/video-js.min.css
 %%SEAHUBDIR%%/media/js/video-js.swf
 %%SEAHUBDIR%%/media/js/video.min.js
 %%SEAHUBDIR%%/sql/oracle.sql
-%%SEAHUBDIR%%/static/scripts/i18n/fi/djangojs.js
 %%SEAHUBDIR%%/tests/seahub/forms/test_add_user_form.py
 %%SEAHUBDIR%%/tests/seahub/utils/%%USERS%%-license.txt
 %%SEAHUBDIR%%/tests/seahub/utils/test_license_parse.py
