@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hatari
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
