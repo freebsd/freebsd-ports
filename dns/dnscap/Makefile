@@ -2,21 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	dnscap
-DISTVERSION=	134
+PORTVERSION=	1.3.0
+PORTEPOCH=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://dnscap.dns-oarc.net/
+MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
 
-LICENSE=	ISCL
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+OPTIONS_DEFINE=	DOCS
+
+CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 
-PLIST_FILES=	bin/dnscap man/man1/dnscap.1.gz
+PORTDOCS=	*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dnscap ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dnscap.1 ${STAGEDIR}${PREFIX}/man/man1
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
