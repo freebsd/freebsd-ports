@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	GTK2 DOCS
 GTK2_DESC=	Enable to have the gmp3info
 
+PORTSCOUT=	skipv:0.8.5
+
 ALL_TARGET=	mp3info
 USES=		ncurses tar:tgz
 
