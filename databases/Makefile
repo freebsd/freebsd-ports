@@ -917,6 +917,7 @@
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
+    SUBDIR += rubygem-redis-actionpack4
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-seed-fu
