@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20161230:
+  AFFECTS: users of x11/xfce4-terminal
+  AUTHOR: olivierd@FreeBSD.org
+
+  The port has been updated to the latest stable version 0.8.2.
+  Please, don't active the hidden 'MiscSlimTabs' option in
+  ~/.config/xfce4/terminal/terminalrc, it requires Gtk+ > 3.20.
+
 20161228:
   AFFECTS: users of multimedia/mlt
   AUTHOR: avilla@FreeBSD.org
