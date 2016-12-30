@@ -179,6 +179,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-apiclient/appstorage-cache.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/appstorage-localstorage.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/appstorage-memory.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/bower.json
+lib/emby-server/dashboard-ui/bower_components/emby-apiclient/cameraroll.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/connectionmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/credentials.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/events.js
@@ -239,6 +240,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-checkbox/e
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-checkbox/emby-checkbox.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-collapse/emby-collapse.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-collapse/emby-collapse.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-connect/connecthelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-input/emby-input.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-input/emby-input.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-itemscontainer/emby-itemscontainer.js
@@ -256,6 +258,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-toggle/emb
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-toggle/emby-toggle.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fetchhelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/filedownloader.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/filesystem.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/focusmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/material-icons/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/material-icons/2fcrYFNaTjcS6g4U3t-Y5ewrjPiaoEww8AihgqWRJAo.woff
@@ -469,6 +472,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/subtitleeditor/
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/subtitleeditor/subtitleeditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/subtitleeditor/subtitleeditor.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/sync.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/syncjobeditor.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/syncjoblist.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/synctoggle.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/thememediaplayer.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/toast/toast.css
@@ -767,7 +772,6 @@ lib/emby-server/dashboard-ui/components/navdrawer/navdrawer.css
 lib/emby-server/dashboard-ui/components/navdrawer/navdrawer.js
 lib/emby-server/dashboard-ui/components/remotecontrol.js
 lib/emby-server/dashboard-ui/components/remotecontrolautoplay.js
-lib/emby-server/dashboard-ui/components/syncjoblist/syncjoblist.js
 lib/emby-server/dashboard-ui/components/tvproviders/schedulesdirect.js
 lib/emby-server/dashboard-ui/components/tvproviders/schedulesdirect.template.html
 lib/emby-server/dashboard-ui/components/tvproviders/xmltv.js
@@ -1055,7 +1059,6 @@ lib/emby-server/dashboard-ui/scripts/songs.js
 lib/emby-server/dashboard-ui/scripts/streamingsettings.js
 lib/emby-server/dashboard-ui/scripts/supporterkeypage.js
 lib/emby-server/dashboard-ui/scripts/syncactivity.js
-lib/emby-server/dashboard-ui/scripts/syncjob.js
 lib/emby-server/dashboard-ui/scripts/syncsettings.js
 lib/emby-server/dashboard-ui/scripts/taskbutton.js
 lib/emby-server/dashboard-ui/scripts/tvgenres.js
@@ -1129,7 +1132,6 @@ lib/emby-server/dashboard-ui/strings/zh-HK.json
 lib/emby-server/dashboard-ui/strings/zh-TW.json
 lib/emby-server/dashboard-ui/supporterkey.html
 lib/emby-server/dashboard-ui/syncactivity.html
-lib/emby-server/dashboard-ui/syncjob.html
 lib/emby-server/dashboard-ui/syncsettings.html
 lib/emby-server/dashboard-ui/themes/halloween/bg.jpg
 lib/emby-server/dashboard-ui/themes/halloween/style.css
