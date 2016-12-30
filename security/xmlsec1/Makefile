@@ -2,38 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.22
-PORTREVISION=	1
+PORTVERSION=	1.2.23
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML Security Library
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/Copyright
+
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libltdl.so:devel/libltdl
+
+USES=		libtool localbase pathfix pkgconfig ssl
+USE_GNOME=	libxml2 libxslt
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
+		--with-gcrypt="${LOCALBASE}"
+MAKE_ENV=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
+INSTALL_TARGET=	install-strip
+PORTDOCS= api authors.html bugs.html c14n.html documentation.html	\
+	download.html faq.html favicon.ico images/bart.gif		\
+	images/libxml2-logo.png images/libxslt-logo.png			\
+	images/logo.gif images/openssl-logo.png				\
+	images/xmlsec-logo.gif index.html news.html related.html	\
+	xmldsig-verifier.html xmldsig.html xmlenc.html			\
+	xmlsec-man.html
 
 OPTIONS_DEFINE=	DOCS GNUTLS NSS
 OPTIONS_SUB=	yes
+
+DOCS_MAKE_ENV=		DOCS=docs
 GNUTLS_DESC=		Enable GNUTLS support
 GNUTLS_CONFIGURE_WITH=	gnutls="${LOCALBASE}"
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 NSS_DESC=		Enable Mozilla's NSS support
 NSS_CONFIGURE_WITH=	nss="${LOCALBASE}" nspr="${LOCALBASE}"
-NSS_LIB_DEPENDS=	libnss3.so:security/nss
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig ssl
-USE_GNOME=	libxml2 libxslt
-USE_LDCONFIG=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC} DOCS=docs
-CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
+NSS_LIB_DEPENDS=	libnss3.so:security/nss \
+			libnspr4.so:devel/nspr \
+			libplds4.so:devel/nspr \
+			libplc4.so:devel/nspr
 
 .if !defined(.PARSEDIR)
 MAKE_ARGS+=	-EABS_BUILDDIR
