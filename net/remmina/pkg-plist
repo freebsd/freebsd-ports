@@ -97,4 +97,3 @@ share/icons/hicolor/scalable/apps/remmina.svg
 %%DATADIR%%/ui/remmina_preferences.glade
 %%DATADIR%%/ui/remmina_spinner.glade
 %%DATADIR%%/ui/remmina_string_list.glade
-%%DATADIR%%/ui/remmina_survey.glade
