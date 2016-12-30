@@ -3,7 +3,7 @@
 
 PORTNAME=	mailutils
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README* THANKS TODO
 
-OPTIONS_DEFINE=		DOCS GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
+OPTIONS_DEFINE=		DOCS EMACS GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
 OPTIONS_DEFAULT=	BDB GNUTLS PAM
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM KYOTOCABINET LDAP MYSQL PGSQL TOKYOCABINET
@@ -31,9 +31,13 @@ OPTIONS_SUB=		yes
 
 BDB_DESC=		Berkeley DB v4.8 support (last working one)
 DB_DESC=		Database configuration
+EMACS_DESC=		Emacs interface to MH (implies MH)
 KYOTOCABINET_DESC=	Kyoto Cabinet database support
 MH_DESC=		MH (Message Handling) system support
 TOKYOCABINET_DESC=	Tokyo Cabinet database support
+
+EMACS_USE=		EMACS=yes
+EMACS_IMPLIES=		MH
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
@@ -80,6 +84,12 @@ PGSQL_CONFIGURE_WITH=	postgres
 
 TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMH} && exists(${LOCALBASE}/bin/emacs)
+USE_EMACS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|' \
