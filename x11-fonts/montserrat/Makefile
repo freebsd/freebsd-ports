@@ -2,8 +2,8 @@
 
 PORTNAME=	montserrat
 PORTVERSION=	5.001
-CATEGORIES=	x11-fonts
 DISTVERSIONPREFIX=	v
+CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Sans-serif font inspired by the street signs of Montserrat
