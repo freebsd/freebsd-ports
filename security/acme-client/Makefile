@@ -13,7 +13,7 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
-USES=		gmake tar:tgz
+USES=		gmake tar:tgz ssl
 
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PREFIX=${STAGEDIR}/${PREFIX}
