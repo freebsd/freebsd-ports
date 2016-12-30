@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2011-06-02 07:10:47 UTC
++++ Makefile.in
+@@ -306,7 +306,7 @@ EXTRA_DIST = KNOWNBUG \
+ 	script/check_todo.sh \
+ 	script/check_whitespace.sh
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = ${prefix}/libdata/pkgconfig
+ pkgconfig_DATA = libdmtx.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
