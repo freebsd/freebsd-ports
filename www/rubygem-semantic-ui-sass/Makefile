@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	semantic-ui-sass
-PORTVERSION=	2.1.4.0
+PORTVERSION=	2.2.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
