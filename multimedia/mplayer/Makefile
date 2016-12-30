@@ -134,29 +134,7 @@ pre-everything::
 	@${ECHO_MSG} "http://www.mplayerhq.hu/"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
-		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		-e 's|/usr/local|${LOCALBASE}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|-lbz2|/usr/lib/libbz2.so|' \
-		-e 's|-lncurses|/usr/lib/libncurses.so|' \
-		-e 's|-liconv|${ICONV_LIB}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*(configure|.sh|Makefile)" -print0 | \
-		${XARGS} -x -0 -n 10 \
-		${REINPLACE_CMD} -E \
-			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
-			-e 's|[[:space:]]gcc| ${CC}|' \
-			-e 's|\$$\(CC\)|${CC}|' \
-			-e 's|/usr/X11R6|${LOCALBASE}|' \
-			-e 's|%%LOCALBASE%%|${LOCALBASE}|'
-	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
-		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
-		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
-		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+post-patch: common-post-patch
 
 post-patch-RTC-on:
 	@${REINPLACE_CMD} -e 's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' ${WRKSRC}/mplayer.c
