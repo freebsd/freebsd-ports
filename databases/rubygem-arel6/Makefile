@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arel
-PORTVERSION=	6.0.3
+PORTVERSION=	6.0.4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	6
@@ -12,7 +12,6 @@ COMMENT=	Relational Algebra for Ruby
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
