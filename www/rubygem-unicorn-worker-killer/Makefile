@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Kill unicorn workers by memory and request counts
 
-LICENSE=	GPLv2 GPLv3 RUBY
+LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
