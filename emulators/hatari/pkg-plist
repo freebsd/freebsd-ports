@@ -24,6 +24,7 @@ share/applications/hatariui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/fr/clavier-exemple.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/callgraph.png
 %%PORTDOCS%%%%DOCSDIR%%/images/callgraph.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/cpu.png
 %%PORTDOCS%%%%DOCSDIR%%/images/devices.png
 %%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
 %%PORTDOCS%%%%DOCSDIR%%/images/floppydisks.png
