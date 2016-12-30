@@ -930,6 +930,7 @@
     SUBDIR += raster3d
     SUBDIR += rawstudio
     SUBDIR += rawtherapee
+    SUBDIR += rawtherapee-devel
     SUBDIR += rayshade
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg

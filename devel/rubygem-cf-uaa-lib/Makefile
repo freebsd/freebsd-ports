@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cf-uaa-lib
-PORTVERSION=	3.4.0
+PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,8 @@ COMMENT=	Client library for CloudFoundry UAA
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-httpclient>=2.8.2.4:www/rubygem-httpclient \
+		rubygem-multi_json>=0:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes

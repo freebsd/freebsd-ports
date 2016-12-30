@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -22,7 +22,8 @@ LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
 		libfftw3f.so:math/fftw3-float \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
-USES=		cmake:outsource compiler:features desktop-file-utils dos2unix jpeg pkgconfig tar:xz
+USES=		cmake:outsource compiler:gcc-c++11-lib desktop-file-utils dos2unix \
+		jpeg pkgconfig tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
@@ -43,6 +44,10 @@ SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
 
+.if defined(PACKAGE_BUILDING)
+CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
+.endif
+
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP
@@ -50,40 +55,20 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable multicore processing using OpenMP
 OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE support)
 
+OPENMP_CMAKE_BOOL=	OPTION_OMP
+
 .include <bsd.port.pre.mk>
 
 # -------------------------------------------------------------------
-# USE_GCC must be late so the compiler feature checks work to detect
-# that the base C++ standard library switched to libc++:
-# We also must pin 4.8+ because 4.6 and 4.7 segfault on 10.0-RELEASE amd64
-# wwhen compiling improcfun.cc:
-USE_GCC=	yes
-
-.if ${COMPILER_FEATURES:Mlibc++}
-LDFLAGS+=	-L/usr/local/lib/c++
-CXXFLAGS+=	-nostdinc++ -isystem /usr/local/include/c++/v1
-CFLAGS+=	-isystem /usr/local/include/c++/v1
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
+CFLAGS+=	-O3 -fexpensive-optimizations \
 		-funroll-loops -msse
-CXXFLAGS+=	-O3 -ffast-math \
+CXXFLAGS+=	-O3 \
 		-funroll-loops -msse
 .endif
 .endif
-
-.if ${PORT_OPTIONS:MOPENMP}
-CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
-.else
-CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
-.endif
-
-#.if ${OSVERSION} >= 1100000
-#BROKEN=		rawtherapee is known to crash on -HEAD and requires debugging that the maintainer cannot provide.
-#.endif
 
 # -------------------------------------------------------------------
 

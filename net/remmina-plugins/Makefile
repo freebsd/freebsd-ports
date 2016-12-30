@@ -3,12 +3,8 @@
 
 PORTNAME?=	remmina-plugins
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.2.0-rcgit.16
-PORTREVISION=	1
+DISTVERSION=	1.2.0-rcgit.17
 CATEGORIES=	net gnome
-
-PATCH_SITES=	https://github.com/FreeRDP/Remmina/commit/
-PATCHFILES=	9b783595bd7fbfc39d1194d28110519c49dcaecc.patch:-p1
 
 MAINTAINER?=	woodsb02@FreeBSD.org
 COMMENT?=	Remmina plugin system
@@ -40,8 +36,6 @@ RDP_RUN_DEPENDS=	remmina-plugin-rdp>=0:net/remmina-plugin-rdp
 TELEP_RUN_DEPENDS=	remmina-plugin-telepathy>=0:net/remmina-plugin-telepathy
 VNC_RUN_DEPENDS=	remmina-plugin-vnc>=0:net/remmina-plugin-vnc
 XDMCP_RUN_DEPENDS=	remmina-plugin-xdmcp>=0:net/remmina-plugin-xdmcp
-
-do-patch:
 
 .include <bsd.port.mk>
 

@@ -311,8 +311,8 @@ sbin/imap4d
 @(root,mail,4755) sbin/maidag
 sbin/pop3d
 share/aclocal/mailutils.m4
-%%MH%%share/emacs/site-lisp/mailutils-mh.el
-%%MH%%share/emacs/site-lisp/mailutils-mh.elc
+%%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.el
+%%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.elc
 %%GUILE%%share/guile/site/mailutils/guile-procedures.txt
 %%GUILE%%share/guile/site/mailutils/mailutils.scm
 %%GUILE%%share/guile/site/mailutils/sieve-core.scm

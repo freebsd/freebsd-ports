@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-client
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
@@ -13,14 +13,7 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
-USES=		gmake tar:tgz
-
-OPTIONS_DEFINE=	STATIC_ACMECLIENT
-STATIC_ACMECLIENT_DESC=	Link statically with security/libressl
-
-STATIC_ACMECLIENT_USES_OFF=	ssl
-STATIC_ACMECLIENT_BUILD_DEPENDS=	${LOCALBASE}/lib/libtls.a:security/libressl
-STATIC_ACMECLIENT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-GNUmakefile
+USES=		gmake tar:tgz ssl
 
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PREFIX=${STAGEDIR}/${PREFIX}
@@ -53,11 +46,24 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MSTATIC_ACMECLIENT} == "" && empty(SSL_DEFAULT:M*libressl*)
-IGNORE=	needs LibreSSL to build. set DEFAULT_VERSIONS+=ssl=libressl \
-	and rebuild all ports that depend on openssl
-.else
-WARNING=	"Remember to deinstall libressl after building acme-client"
-.endif
+.if ! ${SSL_DEFAULT:Mlibressl*}
+BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=		-I${WRKDIR}/libressl/include
+LDFLAGS+=		-L${WRKDIR}/libressl/lib
+. ifnmake describe
+STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
+. endif
+# security/libressl ignores implicit SSP_UNSAFE, see Mk/bsd.ssp.mk
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000036 && ${ARCH} == i386
+SSP_CFLAGS?=	-fstack-protector
+CFLAGS+=	${SSP_CFLAGS}
+LDFLAGS+=	-fstack-protector
+LIBS+=		-lssp_nonshared
+. endif
+ 
+pre-configure:
+	@(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
+		. ${WRKDIR}/libressl "! -name *.so*")
+.endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>

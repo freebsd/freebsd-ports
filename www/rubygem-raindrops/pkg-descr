@@ -4,4 +4,4 @@ but should support any Rack HTTP server under Ruby 1.9, 1.8 and Rubinius on
 platforms supporting POSIX shared memory. It may also be used as a generic
 scoreboard for sharing atomic counters across multiple processes.
 
-WWW: http://raindrops.bogomips.org/
+WWW: http://bogomips.org/raindrops/

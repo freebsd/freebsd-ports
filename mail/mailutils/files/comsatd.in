@@ -17,7 +17,6 @@ pidfile="/var/run/${name}.pid"
 
 load_rc_config ${name}
 
-comsatd_enable=${comsatd_enable:-"NO"}
-comsatd_flags=${comsatd_flags:-""}
+: ${comsatd_enable="NO"}
 
 run_rc_command "$1"

@@ -5,3 +5,6 @@ TerminalWindow GtkNotebook.notebook {
         padding-top: 0;
         padding-bottom: 0;
 }
+
+Don't active the hidden MiscSlimTabs option in terminalrc. It requires
+Gtk+ >= 3.20

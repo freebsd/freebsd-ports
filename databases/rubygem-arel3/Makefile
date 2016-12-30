@@ -12,8 +12,10 @@ COMMENT=	Relational Algebra for Ruby
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+DEPRECATED=	Use devel/rubygem-arel or devel/rubygem-arel6 instead
+EXPIRATION_DATE=2017-01-31
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
