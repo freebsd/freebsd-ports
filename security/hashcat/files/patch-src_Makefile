@@ -1,56 +1,16 @@
 --- src/Makefile.orig	2016-12-02 14:00:23 UTC
 +++ src/Makefile
-@@ -101,25 +101,7 @@ BINARY_NATIVE           := $(PROG_NAME)
- ## General compiler and linker options
- ##
+@@ -163,11 +163,13 @@ LFLAGS_NATIVE           += -lpthread -ld
+ endif # Linux
  
--CFLAGS                  := -pipe -std=c99 -Iinclude/ -IOpenCL/
--CFLAGS                  += -W
--CFLAGS                  += -Wall
--CFLAGS                  += -Wextra
--CFLAGS                  += -Wfloat-equal
--CFLAGS                  += -Wundef
--CFLAGS                  += -Wshadow
--CFLAGS                  += -Wmissing-declarations
--CFLAGS                  += -Wmissing-prototypes
--CFLAGS                  += -Wpointer-arith
--CFLAGS                  += -Wstrict-prototypes
--CFLAGS                  += -Waggregate-return
--CFLAGS                  += -Wswitch-enum
--CFLAGS                  += -Wunreachable-code
--CFLAGS                  += -Winit-self
--CFLAGS                  += -Werror-implicit-function-declaration
--CFLAGS                  += -Wformat
--CFLAGS                  += -Wno-format-zero-length
--CFLAGS                  += -ftrapv
-+CFLAGS                  += -Iinclude/ -IOpenCL/
- 
- # the following compiler options produce warnings that should be fixed at some time
- 
-@@ -137,18 +119,6 @@ CFLAGS                  += -ftrapv
- 
- #CFLAGS                  += -Wstack-usage=524288
- 
--LFLAGS                  :=
--
--ifndef DEBUG
--CFLAGS                  += -O2
--LFLAGS                  += -s
--else
--CFLAGS                  += -DDEBUG -g -ggdb
--ifeq ($(DEBUG),2)
--CFLAGS                  += -fsanitize=address -fno-omit-frame-pointer
--endif
--endif
--
- ##
- ## Native compilation target
- ##
-@@ -165,7 +135,6 @@ endif # Linux
  ifeq ($(UNAME),FreeBSD)
++ifndef PORTNAME
  CFLAGS_NATIVE           := $(CFLAGS)
  CFLAGS_NATIVE           += -I$(OPENCL_HEADERS_KHRONOS)/
--CFLAGS_NATIVE           += -march=native
+ CFLAGS_NATIVE           += -march=native
  LFLAGS_NATIVE           := $(LFLAGS)
  LFLAGS_NATIVE           += -lpthread
++endif
  endif # FreeBSD
+ 
+ ifeq ($(UNAME),Darwin)
