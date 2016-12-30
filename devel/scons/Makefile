@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scons
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
