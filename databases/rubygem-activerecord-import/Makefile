@@ -1,22 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-import
-PORTVERSION=	0.13.0
+PORTVERSION=	0.16.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bulk import many records into an ActiveRecord DB
 
-LICENSE=	RUBY
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord>=3.0:databases/rubygem-activerecord
+RUN_DEPENDS=	rubygem-activerecord4>=3.2:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
-
-DEPRECATED=	Depends on deprecated databases/rubygem-activerecord
-EXPIRATION_DATE=	2017-01-07
 
 .include <bsd.port.mk>
