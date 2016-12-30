@@ -23,6 +23,8 @@ MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
+EXPLICIT_SAFESTACK=		yes
+
 # FIXME: IMHO, there really ought to be a GPL-2+ option or some such.
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
