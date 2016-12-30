@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-cookie
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
