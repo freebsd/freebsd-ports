@@ -1,11 +1,9 @@
 bin/idn2
-bin/lookup
-bin/register
 include/idn2.h
 lib/libidn2.a
 lib/libidn2.so
 lib/libidn2.so.0
-lib/libidn2.so.0.%%PORTVERSION%%
+lib/libidn2.so.0.1.0
 man/man1/idn2.1.gz
 man/man3/idn2_check_version.3.gz
 man/man3/idn2_free.3.gz
