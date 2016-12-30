@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexmock
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
