@@ -256,6 +256,7 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += vim-lite
+    SUBDIR += web-mode
     SUBDIR += with-editor
     SUBDIR += wordgrinder
     SUBDIR += xcoral
