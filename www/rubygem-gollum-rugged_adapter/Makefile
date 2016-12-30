@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-rugged_adapter
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
