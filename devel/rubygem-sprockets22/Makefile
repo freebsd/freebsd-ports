@@ -18,6 +18,9 @@ RUN_DEPENDS=	rubygem-hike>=1.2:devel/rubygem-hike \
 		rubygem-rack16>=1.0:www/rubygem-rack16 \
 		rubygem-tilt1>=1.1:devel/rubygem-tilt1
 
+DEPRECATED=	Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
+EXPIRATION_DATE=2017-01-07
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
