@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.11.13
+PORTVERSION=	0.11.14
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,14 @@ COMMENT=	Python utilities collection for building WSGI applications
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py-openssl
+
 OPTIONS_DEFINE=	EXAMPLES WATCHDOG
 WATCHDOG_DESC=	Monitor filesystem events
 WATCHDOG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchdog>=0.8:devel/py-watchdog
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}

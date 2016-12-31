@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jasmine-core
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansifilter
-PORTVERSION=	1.7
+PORTVERSION=	2.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
@@ -11,8 +11,6 @@ COMMENT=	Customizable ANSI Code Converter
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake tar:bzip2
 MAKEFILE=	makefile
