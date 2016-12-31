@@ -8940,3 +8940,5 @@ databases/rubygem-dm-devise||2016-12-31|Has expired: Not compatible with devel/r
 devel/rubygem-sprockets211||2016-12-31|Has expired: Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
 devel/p5-Parse-CPAN-Meta||2016-12-31|Has expired: Merged into devel/p5-CPAN-Meta 2.150008
 devel/jtag|devel/urjtag|2016-12-31|Has expired: development ceased 2003, superceded by devel/urjtag
+x11-toolkits/linux-f10-tk85||2016-12-31|Removed
+x11-toolkits/linux-f10-blt||2016-12-31|Removed
