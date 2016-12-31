@@ -8929,3 +8929,14 @@ x11-toolkits/linux-f10-pango||2016-12-31|Removed
 accessibility/linux-f10-atk||2016-12-31|Removed
 archivers/linux-f10-ucl||2016-12-31|Removed
 archivers/linux-f10-upx||2016-12-31|Removed
+devel/rubygem-devise-async-rails4||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+devel/rubygem-devise-async||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+net/iet||2016-12-31|Has expired: Upstream no longer active
+sysutils/geomgui||2016-12-31|Has expired: Development stopped years ago.
+sysutils/screen-legacy||2016-12-31|Has expired: Old version released 2008-08-07 no longer upline maintained.
+sysutils/ntfsprogs|sysutils/fusefs-ntfs|2016-12-31|Has expired: Superseded by sysutils/fusefs-ntfs
+www/rubygem-jekyll2|www/rubygem-jekyll|2016-12-31|Has expired: Use www/rubygem-jekyll instead
+databases/rubygem-dm-devise||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+devel/rubygem-sprockets211||2016-12-31|Has expired: Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
+devel/p5-Parse-CPAN-Meta||2016-12-31|Has expired: Merged into devel/p5-CPAN-Meta 2.150008
+devel/jtag|devel/urjtag|2016-12-31|Has expired: development ceased 2003, superceded by devel/urjtag
