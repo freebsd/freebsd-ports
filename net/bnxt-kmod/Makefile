@@ -5,7 +5,7 @@ PORTVERSION=	309078
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/shurd
 
-MAINTAINER=	shurd@freebsd.org
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Driver for Broadcom NetXtreme-C/NetXtreme-E devices
 
 LICENSE=	BSD2CLAUSE

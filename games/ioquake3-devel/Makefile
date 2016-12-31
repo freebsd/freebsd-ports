@@ -8,7 +8,7 @@ MASTER_SITES?=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
 		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
 EXTRACT_SUFX?=	.tar.xz
 
-MAINTAINER?=	kami@freebsd.org
+MAINTAINER?=	kami@FreeBSD.org
 COMMENT?=	Development GIT snapshots of ioquake3
 
 LICENSE?=	GPLv2
