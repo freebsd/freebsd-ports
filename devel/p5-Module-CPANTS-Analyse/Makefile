@@ -34,11 +34,4 @@ BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker-CPANfile>=0.06:devel/p5-ExtUtils-MakeMaker
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.133380:devel/p5-CPAN-Meta
-RUN_DEPENDS+=	p5-CPAN-Meta>=2.133380:devel/p5-CPAN-Meta
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
