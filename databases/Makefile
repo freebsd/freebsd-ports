@@ -880,7 +880,6 @@
     SUBDIR += rubygem-dm-chunked_query
     SUBDIR += rubygem-dm-constraints
     SUBDIR += rubygem-dm-core
-    SUBDIR += rubygem-dm-devise
     SUBDIR += rubygem-dm-do-adapter
     SUBDIR += rubygem-dm-migrations
     SUBDIR += rubygem-dm-mysql-adapter
