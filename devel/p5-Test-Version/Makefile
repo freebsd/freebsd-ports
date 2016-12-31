@@ -6,7 +6,6 @@ PORTVERSION=	2.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|000$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Check to see that version in modules are sane
