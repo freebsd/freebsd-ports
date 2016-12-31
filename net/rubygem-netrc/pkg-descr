@@ -1,4 +1,4 @@
 This library can read and update netrc files, preserving formatting including
 comments and whitespace.
 
-WWW: https://github.com/geemus/netrc
+WWW: https://github.com/heroku/netrc
