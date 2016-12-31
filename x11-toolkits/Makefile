@@ -124,8 +124,6 @@
     SUBDIR += linux-c7-pango
     SUBDIR += linux-c7-qt-x11
     SUBDIR += linux-c7-tk85
-    SUBDIR += linux-f10-blt
-    SUBDIR += linux-f10-tk85
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += mygui
