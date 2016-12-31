@@ -62,6 +62,7 @@ ENABLE_CAPTCHA         = true
 REQUIRE_SIGNIN_VIEW    = false
 
 [picture]
+AVATAR_UPLOAD_PATH      = /var/db/gitea/data/avatars
 DISABLE_GRAVATAR        = false
 ENABLE_FEDERATED_AVATAR = false
 
