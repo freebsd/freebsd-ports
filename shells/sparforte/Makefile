@@ -132,6 +132,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s|BDB4|BDB4 -I${PREFIX}/include/db48|" \
 		-e "s|-ldb|-L${PREFIX}/lib/db48 -ldb|" \
 		-e "s|db: db.adb|db: bdb_constants.ads db.adb|" \
+		-e "s| -fstack-protector||" \
 		${WRKSRC}/src/bdb/GNUmakefile
 	# fix areadline linkage
 	${REINPLACE_CMD} -e "s|gnatlink.*|gnatlink rl.ali -L${PREFIX}/lib -lreadline -lhistory|" \
