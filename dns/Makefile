@@ -95,7 +95,6 @@
     SUBDIR += libpsl
     SUBDIR += linux-c6-libasyncns
     SUBDIR += linux-c7-libasyncns
-    SUBDIR += linux-f10-libasyncns
     SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += mdnsd

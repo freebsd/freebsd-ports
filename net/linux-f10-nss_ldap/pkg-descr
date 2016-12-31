@@ -1,6 +1,0 @@
-This a port of the nss_ldap libraries for Linux.
-
-You'll probably need this if your system users in a LDAP
-directory are complaining their Linux programs won't run,
-and errors on the console say "getpwuid_r(): failed due
-to unknown user id".

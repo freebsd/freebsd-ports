@@ -71,10 +71,8 @@
     SUBDIR += libspectrum
     SUBDIR += linux-c6
     SUBDIR += linux-c7
-    SUBDIR += linux-f10
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-c7
-    SUBDIR += linux_base-f10
     SUBDIR += lisaem
     SUBDIR += loemu
     SUBDIR += m2000

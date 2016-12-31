@@ -451,11 +451,6 @@
     SUBDIR += linux-c7-aspell
     SUBDIR += linux-c7-expat
     SUBDIR += linux-c7-libxml2
-    SUBDIR += linux-f10-aspell
-    SUBDIR += linux-f10-expat
-    SUBDIR += linux-f10-libxml2
-    SUBDIR += linux-f10-scim-gtk
-    SUBDIR += linux-f10-scim-libs
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize
