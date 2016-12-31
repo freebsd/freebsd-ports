@@ -27,7 +27,7 @@ USES=		libtool
 
 PORTDOCS=	Release_notes_2_0.pdf
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
