@@ -20,7 +20,7 @@
 # PERL_ARCH	- Directory name of architecture dependent libraries
 #		  (value: mach).
 # PERL_PORT	- Name of the perl port that is installed
-#		  (for example: perl5.18)
+#		  (for example: perl5.24)
 # SITE_PERL	- Directory name where site specific perl packages go.
 #		  This value is added to PLIST_SUB.
 # SITE_ARCH	- Directory name where arch site specific perl packages go.
@@ -51,9 +51,7 @@ THIS_IS_OLD_PERL=	yes
 # end of remove
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.if ${PERL5_DEFAULT} == 5.18
-.include "${PORTSDIR}/lang/perl5.18/version.mk"
-.elif ${PERL5_DEFAULT} == 5.20
+.if ${PERL5_DEFAULT} == 5.20
 .include "${PORTSDIR}/lang/perl5.20/version.mk"
 .elif ${PERL5_DEFAULT} == 5.22
 .include "${PORTSDIR}/lang/perl5.22/version.mk"
@@ -97,10 +95,8 @@ PERL_ARCH?=	mach
 PERL_PORT?=	perl5.24
 .elif   ${PERL_LEVEL} >= 502200
 PERL_PORT?=	perl5.22
-.elif   ${PERL_LEVEL} >= 502000
+.else # ${PERL_LEVEL} < 502200
 PERL_PORT?=	perl5.20
-.else # ${PERL_LEVEL} < 502000
-PERL_PORT?=	perl5.18
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl
