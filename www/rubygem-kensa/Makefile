@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Heroku Add-On provider tool
 
 LICENSE=	MIT
