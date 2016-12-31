@@ -217,7 +217,6 @@
     SUBDIR += dopewars
     SUBDIR += drcreep
     SUBDIR += drm
-    SUBDIR += dsnake
     SUBDIR += duckmaze
     SUBDIR += duel
     SUBDIR += dunelegacy

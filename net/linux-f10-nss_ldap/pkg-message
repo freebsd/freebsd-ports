@@ -1,6 +1,0 @@
-###########################################################################
-
-At a minimum you need to link your ldap.conf to /compat/linux/etc/ or set
-/compat/linux/etc/ldap.conf to suit your network environment.
-
-###########################################################################

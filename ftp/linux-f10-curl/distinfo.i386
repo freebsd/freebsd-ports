@@ -1,6 +1,0 @@
-SHA256 (rpm/i386/fedora/10/curl-7.19.6-2.fc10.i386.rpm) = aefbe12d479baab90453f7d7ebc728a5452bc7f6dc9549c001816099fc25e4d4
-SIZE (rpm/i386/fedora/10/curl-7.19.6-2.fc10.i386.rpm) = 149414
-SHA256 (rpm/i386/fedora/10/libcurl-7.19.6-2.fc10.i386.rpm) = f640c29c88fbeb4f7da3b7936a3b037f61e8b3b1254f0ba17500ac95a1b09b86
-SIZE (rpm/i386/fedora/10/libcurl-7.19.6-2.fc10.i386.rpm) = 171642
-SHA256 (rpm/i386/fedora/10/curl-7.19.6-2.fc10.src.rpm) = 0de7d8415fadabc28f88ca4b210188d64d6c5ad6efc526660b1e290d0042ffa4
-SIZE (rpm/i386/fedora/10/curl-7.19.6-2.fc10.src.rpm) = 2372044

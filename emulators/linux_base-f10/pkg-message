@@ -1,6 +1,0 @@
-Some programs need linprocfs mounted on /compat/linux/proc.  Add the following
-line to /etc/fstab:
-
-linprocfs   /compat/linux/proc	linprocfs	rw	0	0
-
-Then run "mount linprocfs".

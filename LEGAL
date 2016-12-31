@@ -69,7 +69,6 @@ doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Request
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded directly from the manufacturer
-dsnake-*		games/dsnake		License prohibits any reselling
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
