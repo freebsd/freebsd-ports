@@ -12,10 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKDIR}/jspwiki/LICENSE
 
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
 APPHOME=	${LOCALBASE}/${TOMCATVER}
@@ -55,6 +57,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WEBAPPDIR}/${WEBAPP}
 	(cd ${WRKDIR}/${WEBAPP} && ${COPYTREE_SHARE} . ${STAGEDIR}${WEBAPPDIR}/${WEBAPP})
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/${PORTNAME}/|} ${STAGEDIR}${DOCSDIR}
 
