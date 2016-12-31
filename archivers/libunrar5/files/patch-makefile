@@ -1,0 +1,28 @@
+--- makefile.orig	2016-05-10 09:51:35 UTC
++++ makefile
+@@ -98,7 +98,7 @@ LINK=$(CXX)
+ WHAT=UNRAR
+ 
+ UNRAR_OBJ=filestr.o recvol.o rs.o scantree.o qopen.o
+-LIB_OBJ=filestr.o scantree.o dll.o qopen.o
++LIB_OBJ=dll.o
+ 
+ OBJECTS=rar.o strlist.o strfn.o pathfn.o smallfn.o global.o file.o filefn.o filcreat.o \
+ 	archive.o arcread.o unicode.o system.o isnt.o crypt.o crc.o rawread.o encname.o \
+@@ -131,9 +131,14 @@ sfx:	clean $(OBJECTS)
+ 
+ lib:	WHAT=RARDLL
+ lib:	CXXFLAGS+=$(LIBFLAGS)
+-lib:	clean $(OBJECTS) $(LIB_OBJ)
++lib:	$(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
+ 	@rm -f libunrar.so
+-	$(LINK) -shared -o libunrar.so $(LDFLAGS) $(OBJECTS) $(LIB_OBJ)
++	$(LINK) -shared -o libunrar.so $(LDFLAGS) $(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++
++liba:	WHAT=RARDLL
++liba:	$(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++	@rm -f libunrar.a
++	$(AR) rcs libunrar.a $(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
+ 
+ install-unrar:
+ 			install -D unrar $(DESTDIR)/bin/unrar
