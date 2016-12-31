@@ -19,7 +19,6 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/demo/* ${STAGEDIR}${EXAMPLESDIR}
 
