@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-api
-PORTVERSION=	0.5.0
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
