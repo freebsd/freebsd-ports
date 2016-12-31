@@ -1,15 +1,14 @@
-# Created by: Rene Ladan <r.c.ladan@student.tue.nl>
 # $FreeBSD$
 
 PORTNAME=	coq
 PORTVERSION=	8.4.6
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
 DISTNAME=	${PORTNAME}-${COQVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 LICENSE=	LGPL21
@@ -17,20 +16,47 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 		ocamlfind:devel/ocaml-findlib
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
-USES=		gmake
+USES=		gmake gettext-runtime
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_OCAML=	yes
-ALL_TARGET=	world
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX} \
 		--mandir ${PREFIX}/man \
 		--emacslib ${PREFIX}/share/emacs/site-lisp \
 		--opt
-MAKE_ENV=	COQINSTALLPREFIX=${DESTDIR}
+ALL_TARGET=	world
 
 BROKEN_powerpc=		does not link
+
+STRIP_FILES= \
+	lib/coq/dllcoqrun.so \
+	lib/coq/plugins/cc/cc_plugin.cmxs \
+	lib/coq/plugins/decl_mode/decl_mode_plugin.cmxs \
+	lib/coq/plugins/extraction/extraction_plugin.cmxs \
+	lib/coq/plugins/field/field_plugin.cmxs \
+	lib/coq/plugins/firstorder/ground_plugin.cmxs \
+	lib/coq/plugins/fourier/fourier_plugin.cmxs \
+	lib/coq/plugins/funind/recdef_plugin.cmxs \
+	lib/coq/plugins/micromega/micromega_plugin.cmxs \
+	lib/coq/plugins/nsatz/nsatz_plugin.cmxs \
+	lib/coq/plugins/omega/omega_plugin.cmxs \
+	lib/coq/plugins/quote/quote_plugin.cmxs \
+	lib/coq/plugins/ring/ring_plugin.cmxs \
+	lib/coq/plugins/romega/romega_plugin.cmxs \
+	lib/coq/plugins/rtauto/rtauto_plugin.cmxs \
+	lib/coq/plugins/setoid_ring/newring_plugin.cmxs \
+	lib/coq/plugins/subtac/subtac_plugin.cmxs \
+	lib/coq/plugins/syntax/ascii_syntax_plugin.cmxs \
+	lib/coq/plugins/syntax/nat_syntax_plugin.cmxs \
+	lib/coq/plugins/syntax/numbers_syntax_plugin.cmxs \
+	lib/coq/plugins/syntax/r_syntax_plugin.cmxs \
+	lib/coq/plugins/syntax/string_syntax_plugin.cmxs \
+	lib/coq/plugins/syntax/z_syntax_plugin.cmxs \
+	lib/coq/plugins/xml/xml_plugin.cmxs
 
 OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	IDE
@@ -49,14 +75,14 @@ add-plist-post:
 	@${DO_NADA}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/FreeBSD.*\.byte/s/^/#/' \
-		-e '1s:/bin/bash:/bin/sh:' \
-		-e '/^MAKE=/d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's:/bin/bash:/bin/sh:' \
-		${WRKSRC}/Makefile* ${WRKSRC}/install.sh
-	@${REINPLACE_CMD} -e '/^#COQINSTALLPREFIX/{s/^#//;s|$$|$${DESTDIR}|;}' \
-		${WRKSRC}/Makefile.build
-	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
-		${WRKSRC}/Makefile.doc
+	${REINPLACE_CMD} -e '/FreeBSD.*\.byte/s/^/#/' \
+	    -e '/^MAKE=/d' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/^#COQINSTALLPREFIX/{s/^#//;s|$$|$${DESTDIR}|;}' \
+	    ${WRKSRC}/Makefile.build
+	${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
+	    ${WRKSRC}/Makefile.doc
+
+post-install:
+	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${STRIP_FILES}
 
 .include <bsd.port.mk>
