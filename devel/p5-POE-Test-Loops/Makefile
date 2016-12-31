@@ -18,11 +18,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Test-Simple>=1.001002:devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=1.001002:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

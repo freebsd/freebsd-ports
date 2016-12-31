@@ -29,11 +29,6 @@ USE_PERL5=	modbuild
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Test-Harness>=3.29:devel/p5-Test-Harness
-RUN_DEPENDS+=	p5-Test-Harness>=3.29:devel/p5-Test-Harness
-.endif
-
 .if ${PERL_LEVEL} < 502105
 BUILD_DEPENDS+=	p5-CPAN-Meta>=2.142060:devel/p5-CPAN-Meta
 RUN_DEPENDS+=	p5-CPAN-Meta>=2.142060:devel/p5-CPAN-Meta

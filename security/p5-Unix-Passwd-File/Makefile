@@ -28,11 +28,4 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-experimental>=0:devel/p5-experimental
-RUN_DEPENDS+=	p5-experimental>=0:devel/p5-experimental
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
