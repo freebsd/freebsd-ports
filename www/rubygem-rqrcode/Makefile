@@ -5,7 +5,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for encoding QR Codes
 
 LICENSE=	MIT

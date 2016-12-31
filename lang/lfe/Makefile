@@ -4,7 +4,7 @@ PORTNAME=	lfe
 PORTVERSION=	0.9.2
 CATEGORIES=	lang
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lisp Flavored Erlang
 
 LICENSE=	APACHE20

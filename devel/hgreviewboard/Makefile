@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	hgreviewboard
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mercurial reviewboard extension
 
 LICENSE=	BSD2CLAUSE

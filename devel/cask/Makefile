@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel elisp
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project management tool for Emacs
 
 LICENSE=	GPLv3

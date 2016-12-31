@@ -5,7 +5,7 @@ PORTVERSION=	0.3.18
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Heroku API
 
 LICENSE=	MIT
