@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.wspse.de/linux/wspse/
 
-MAINTAINER=	joris@vandalon.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD to mp3c converter with a console frontend
 
 LICENSE=	GPLv2

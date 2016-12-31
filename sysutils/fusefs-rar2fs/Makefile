@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE:rar2fs http://www.rarlab.com/rar/:unrarsrc
 PKGNAMEPREFIX=	fusefs-
 DISTFILES=	rar2fs-1.15.1.tar.gz:rar2fs unrarsrc-4.2.4.tar.gz:unrarsrc
 
-MAINTAINER=	joris@vandalon.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
