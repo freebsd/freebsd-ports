@@ -1,6 +1,0 @@
-%%EMACS_SITE_LISPDIR%%/cask.el
-%%EMACS_SITE_LISPDIR%%/cask-bootstrap.el
-%%EMACS_SITE_LISPDIR%%/cask-cli.el
-%%EMACS_SITE_LISPDIR%%/templates/init.tpl
-%%EMACS_SITE_LISPDIR%%/templates/init-dev.tpl
-bin/cask
