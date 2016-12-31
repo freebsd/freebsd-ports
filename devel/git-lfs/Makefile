@@ -17,7 +17,7 @@ USES=		go
 USE_GITHUB=	yes
 PLIST_FILES=	bin/git-lfs
 
-GO_PKGNAME=	github.com/${PORTNAME/${PORTNAME}
+GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
 
 # see https://github.com/git-lfs/git-lfs/wiki/Installation
 
