@@ -3,6 +3,7 @@
 
 PORTNAME=	jsoncpp
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com
@@ -46,8 +47,8 @@ do-install:
 	${CP} ${WRKSRC}/pkg-config/jsoncpp.pc.in ${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 	@${REINPLACE_CMD} -i '' \
 		-e 's|@CMAKE_INSTALL_PREFIX@|${PREFIX}|g' \
-		-e 's|@LIBRARY_INSTALL_DIR@|lib|g' \
-		-e 's|@INCLUDE_INSTALL_DIR@|include/jsoncpp|g' \
+		-e 's|@CMAKE_INSTALL_LIBDIR@|lib|g' \
+		-e 's|@CMAKE_INSTALL_INCLUDEDIR@|include/jsoncpp|g' \
 		-e 's|@JSONCPP_VERSION@|${DISTVERSION}|g' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 
