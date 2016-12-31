@@ -8,7 +8,7 @@
 # Users who want to override these defaults can easily do so by defining
 # DEFAULT_VERSIONS in their make.conf as follows:
 #
-#   DEFAULT_VERSIONS=	perl5=5.18 ruby=2.0
+#   DEFAULT_VERSIONS=	perl5=5.20 ruby=2.0
 
 .if !defined(_INCLUDE_BSD_DEFAULT_VERSIONS_MK)
 _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
@@ -51,7 +51,7 @@ WARNING+=		"OVERRIDE_LINUX_BASE_PORT is deprecated, please use DEFAULT_VERSIONS+
 LUA_DEFAULT?=		5.2
 # Possible values: 5.1, 5.5, 5.6, 5.7, 5.5m, 10.0m, 10.1m, 5.5p, 5.6p
 MYSQL_DEFAULT?=		5.6
-# Possible values: 5.18, 5.20, 5.22, devel
+# Possible values: 5.20, 5.22, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.24
