@@ -1111,7 +1111,7 @@
     SUBDIR += p5-POE-Filter-HTTP-Parser
     SUBDIR += p5-POEx-Role-PSGIServer
     SUBDIR += p5-PSGI
-    SUBDIR += p5-ParallelUA
+    SUBDIR += p5-ParallelUserAgent
     SUBDIR += p5-Parse-HTTP-UserAgent
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-Perlanet

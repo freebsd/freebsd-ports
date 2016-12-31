@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Component-Client-UserAgent
 PORTVERSION=	0.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -16,9 +16,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
-		p5-ParallelUA>=0:www/p5-ParallelUA
+		p5-ParallelUserAgent>=0:www/p5-ParallelUserAgent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

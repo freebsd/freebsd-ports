@@ -1,16 +1,15 @@
 # Created by: ache@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=	ParallelUA
+PORTNAME=	ParallelUserAgent
 PORTVERSION=	2.57
 PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN/LWP
 PKGNAMEPREFIX=	p5-
-DISTNAME=	ParallelUserAgent-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Perl5 Parallel LWP User Agent for WWW access
+COMMENT=	Extension for LWP to allow parallel HTTP and FTP access
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
