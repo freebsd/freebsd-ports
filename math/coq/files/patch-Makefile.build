@@ -1,29 +1,11 @@
---- Makefile.build.orig	2016-01-20 16:52:18 UTC
+--- Makefile.build.orig	2016-12-08 15:13:52 UTC
 +++ Makefile.build
-@@ -56,7 +56,7 @@ CURDEPS:=$(addsuffix .d, $(CURFILES))
+@@ -101,7 +101,7 @@ TIMER=$(if $(TIMED), $(STDTIME), $(TIMEC
+ #   TIME="%C (%U user, %S sys, %e total, %M maxres)"
  
- # Variables meant to be modifiable via the command-line of make
- 
--VERBOSE=
-+VERBOSE=1
- NO_RECOMPILE_ML4=
- NO_RECALC_DEPS=
- READABLE_ML4=	# non-empty means .ml of .ml4 will be ascii instead of binary
-@@ -82,7 +82,7 @@ STDTIME=/usr/bin/time -f "$* (user: %U m
- TIMER=$(if $(TIMED), $(STDTIME), $(TIMECMD))
- 
- COQOPTS=$(COQ_XML) $(VM) $(NATIVECOMPUTE)
+ COQOPTS=$(COQ_XML) $(NATIVECOMPUTE)
 -BOOTCOQC=$(TIMER) $(COQTOPEXE) -boot $(COQOPTS) -compile
 +BOOTCOQC=$(TIMER) env CAML_LD_LIBRARY_PATH=$${PWD}/kernel/byterun $(COQTOPEXE) -boot $(COQOPTS) -compile
  
- # The SHOW and HIDE variables control whether make will echo complete commands 
- # or only abbreviated versions. 
-@@ -704,7 +704,7 @@ install-doc-no:
- .PHONY: install install-doc-all install-doc-no
- 
- #These variables are intended to be set by the caller to make
--#COQINSTALLPREFIX=
-+COQINSTALLPREFIX=${DESTDIR}
- #OLDROOT=
- 
-   # Can be changed for a local installation (to make packages).
+ LOCALINCLUDES=$(addprefix -I , $(SRCDIRS) )
+ MLINCLUDES=$(LOCALINCLUDES) -I $(MYCAMLP4LIB)

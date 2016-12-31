@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	coq
-PORTVERSION=	8.5
+PORTVERSION=	8.6
+PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
@@ -17,7 +18,6 @@ BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USES=		gmake gettext-runtime
 USE_EMACS=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango
@@ -28,8 +28,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-mandir ${PREFIX}/man \
 		-emacslib ${PREFIX}/share/emacs/site-lisp/coq \
 		-usecamlp5 \
-		-byteonly \
-		-makecmd ${MAKE_CMD}
+		-byteonly
 MAKE_ENV=	VERBOSE=1
 ALL_TARGET=	world
 
