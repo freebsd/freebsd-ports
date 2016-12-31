@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-engine-source-${GAMEVERSION}
 # Master port defines EXTRACT_SUFX unless already defined
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	kami@freebsd.org
+MAINTAINER=	kami@FreeBSD.org
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
 LICENSE?=	GPLv2
