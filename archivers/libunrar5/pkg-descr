@@ -1,0 +1,6 @@
+The UnRAR library is a minor part of the RAR archiver and contains
+the RAR uncompression algorithm. UnRAR requires a very small amount
+of memory to operate. It can be used by other programs to extract
+RAR archives.
+
+WWW: http://www.rarsoft.com/
