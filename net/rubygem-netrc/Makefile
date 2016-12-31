@@ -5,7 +5,7 @@ PORTVERSION=	0.11.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Read and update netrc files
 
 LICENSE=	MIT
