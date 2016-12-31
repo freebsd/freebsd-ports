@@ -52,6 +52,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's/"qmelt"/"melt"/' \
 		${WRKSRC}/src/jobs/meltjob.cpp
 
+pre-build:
+	@${FIND} ${WRKSRC} -name '.depend' -delete
+
 post-build-NLS-on:
 	${LRELEASE} ${WRKSRC}/src/src.pro
 
