@@ -27,11 +27,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	ICONV PROGSREISERFS NTFS DOCS
 OPTIONS_DEFAULT=	ICONV
-OPTIONS_SINGLE=	NTFS
-OPTIONS_SINGLE_NTFS=	NTFS3G NTFSPROGS
-NTFS_DESC=		Support NTFS
-NTFS3G_DESC=		Use fusefs-ntfs extensions
-NTFSPROGS_DESC=		Use ntfsprogs extensions
+NTFS_DESC=		Support NTFS via fuse-ntfs extensions
 PROGSREISERFS_DESC=	Use reiserfs extensions
 #		E2FSPROGS "Use ext2fs extensions" off \
 
@@ -46,11 +42,8 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 #CONFIGURE_ARGS+=--without-ext2fs
 #.endif
 
-NTFS3G_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
-NTFS3G_CONFIGURE_OFF=	--without-ntfs3g
-
-NTFSPROGS_LIB_DEPENDS=	libntfs.so:sysutils/ntfsprogs
-NTFS_PROGS_CONFIGURE_ARGS=	--without-ntfs
+NTFS_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
+NTFS_CONFIGURE_OFF=	--without-ntfs3g
 
 PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:sysutils/progsreiserfs
 PROGSREISERFS_CONFIGURE_OFF=	--without-reiserfs
