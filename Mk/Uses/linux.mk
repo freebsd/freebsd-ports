@@ -4,8 +4,7 @@
 #
 # Feature:	linux:args
 # Usage:	USES=linux or USES=linux:args
-# Valid args:	f10	Depend on Fedora 10 packages (deprecated)
-#		c6	Depend on CentOS 6 packages (default)
+# Valid args:	c6	Depend on CentOS 6 packages (default)
 #		c7	Depend on CentOS 7 packages
 # Additional variables:
 # USE_LINUX	List of Linux packages to depend on.
@@ -30,9 +29,7 @@ _USES_POST+=		linux
 linux_ARGS=		${LINUX_DEFAULT:S/_64//}
 .endif
 
-.if ${linux_ARGS} == f10
-LINUX_DIST_VER?=	10
-.elif ${linux_ARGS} == c6
+.if ${linux_ARGS} == c6
 LINUX_DIST_VER?=	6.8
 .elif ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.2.1511
@@ -40,21 +37,15 @@ LINUX_DIST_VER?=	7.2.1511
 IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .endif
 
-.if ${linux_ARGS} == f10
-LINUX_ARCH=		i386
-DEPRECATED=		Fedora 10 is unsupported and vulnerable
-EXPIRATION_DATE=	2016-12-31
-.else
 .if ${LINUX_DEFAULT:M*_64}
 LINUX_ARCH=		x86_64
 LINUX_ARCH32=		i386
 .if ${ARCH} != amd64 || ${OPSYS} != FreeBSD || ${OSVERSION} < 1002507 \
  || ( ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100105 )
-IGNORE=			Linux ${LINUX_DEFAULT} only supported on FreeBSD/amd64 10.3 or higher
+IGNORE=			Linux ${LINUX_DEFAULT} is only supported on FreeBSD/amd64 10.3 or higher
 .endif
 .else
 LINUX_ARCH=		i386
-.endif
 .endif
 
 linux_allegro_DEP=		linux-${linux_ARGS}-allegro>0:devel/linux-${linux_ARGS}-allegro
@@ -77,11 +68,7 @@ linux_esound_DEP=		linux-${linux_ARGS}-esound>0:audio/linux-${linux_ARGS}-esound
 linux_expat_DEP=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 linux_flac_DEP=			linux-${linux_ARGS}-flac>0:audio/linux-${linux_ARGS}-flac
 linux_fontconfig_DEP=		linux-${linux_ARGS}-fontconfig>0:x11-fonts/linux-${linux_ARGS}-fontconfig
-.if ${linux_ARGS:Mf10}
-linux_gdkpixbuf2_DEP=		linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
-.else
 linux_gdkpixbuf2_DEP=		linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
-.endif
 linux_gnutls_DEP=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
 linux_graphite2_DEP=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
 linux_gtk2_DEP=			linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
@@ -91,7 +78,7 @@ linux_jasper_DEP=		linux-${linux_ARGS}-jasper>0:graphics/linux-${linux_ARGS}-jas
 linux_jbigkit_DEP=		linux-${linux_ARGS}-jbigkit>0:graphics/linux-${linux_ARGS}-jbigkit
 linux_jpeg_DEP=			linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_ARGS}-jpeg
 linux_libasyncns_DEP=		linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
-.if ${linux_ARGS:Mf10} || ${linux_ARGS:Mc6}
+.if ${linux_ARGS:Mc6}
 linux_libaudiofile_DEP=		linux-${linux_ARGS}-libaudiofile>0:audio/linux-${linux_ARGS}-libaudiofile
 .else
 linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARGS}-audiofile
@@ -139,11 +126,7 @@ linux_scimlibs_DEP=		linux-${linux_ARGS}-scim-libs>0:textproc/linux-${linux_ARGS
 linux_sdl12_DEP=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}-sdl12
 linux_sdlimage_DEP=		linux-${linux_ARGS}-sdl_image>0:graphics/linux-${linux_ARGS}-sdl_image
 linux_sdlmixer_DEP=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
-.if ${linux_ARGS:Mf10}
-linux_sqlite3_DEP=		linux-${linux_ARGS}-sqlite3>0:databases/linux-${linux_ARGS}-sqlite3
-.else
 linux_sqlite3_DEP=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
-.endif
 linux_tcl85_DEP=		linux-${linux_ARGS}-tcl85>0:lang/linux-${linux_ARGS}-tcl85
 linux_tcp_wrappers-libs_DEP=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 linux_tiff_DEP=			linux-${linux_ARGS}-tiff>0:graphics/linux-${linux_ARGS}-tiff
@@ -169,24 +152,7 @@ RUN_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 
 DISTVERSIONSUFFIX?=	-${RPMVERSION}
 
-.if ${linux_ARGS} == f10
-
-.ifndef MASTER_SITES
-MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	releases/${LINUX_DIST_VER}/Everything/${LINUX_ARCH}/os/Packages \
-			updates/${LINUX_DIST_VER}/${LINUX_ARCH} \
-			releases/${LINUX_DIST_VER}/Everything/source/SRPMS/:SOURCE \
-			updates/${LINUX_DIST_VER}/SRPMS/:SOURCE
-.endif
-DIST_SUBDIR?=		rpm/${LINUX_ARCH}/fedora/${LINUX_DIST_VER}
-
-.if ${USE_LINUX_RPM} == noarch
-LINUX_RPM_ARCH?=	noarch
-.else
-LINUX_RPM_ARCH?=	i386
-.endif
-
-.elif ${linux_ARGS} == c6
+.if ${linux_ARGS} == c6
 
 .ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_CENTOS_LINUX}
@@ -297,7 +263,7 @@ EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - --no-same-owner --no-same-permissions
 .endif
 
-.if ${linux_ARGS} != f10 && ${USE_LINUX_RPM} != noarch
+.if ${USE_LINUX_RPM} != noarch
 PLIST?=			${PKGDIR}/pkg-plist.${LINUX_ARCH}
 .endif
 
