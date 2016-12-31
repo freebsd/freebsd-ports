@@ -11,7 +11,7 @@ MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Lightweight profiler for PHP
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BROKEN_aarch64=		Does not build: invokes x86 asm
 BROKEN_mips64=		Does not build: invokes x86 asm

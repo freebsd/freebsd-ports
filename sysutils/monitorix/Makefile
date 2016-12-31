@@ -2,7 +2,7 @@
 
 PORTNAME=	monitorix
 PORTVERSION=	3.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -14,7 +14,7 @@ COMMENT=	Web based monitoring system
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
-RUN_DEPENDS=	p5-ParallelUA>=0:www/p5-ParallelUA \
+RUN_DEPENDS=	p5-ParallelUserAgent>=0:www/p5-ParallelUserAgent \
 		p5-CGI>=0:www/p5-CGI \
 		p5-libwww>=0:www/p5-libwww \
 		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-ParallelUA>=0:www/p5-ParallelUA \
 
 USES=		perl5
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 

@@ -8853,3 +8853,4 @@ net-mgmt/seafile|net-mgmt/seafile-client|2016-12-26|Split into -client and -serv
 comms/libcodec2|audio/codec2|2016-12-26|Removed: Duplicate port use `audio/codec2` instead
 databases/py-sqlalchemy07|databases/py-sqlalchemy10|2016-12-27|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
 security/openvpn-polarssl|security/openvpn-mbedtls|2016-12-27|Slave port renamed to match the TLS library's new name.
+www/p5-ParallelUA|www/p5-ParallelUserAgent|2016-12-31|Rename to match upstream naming
