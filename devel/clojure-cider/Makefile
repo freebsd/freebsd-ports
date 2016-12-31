@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel elisp
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clojure IDE and REPL for Emacs
 
 LICENSE=	GPLv3

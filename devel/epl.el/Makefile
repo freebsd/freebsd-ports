@@ -5,7 +5,7 @@ PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	devel elisp
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Package Library
 
 LICENSE=	GPLv3

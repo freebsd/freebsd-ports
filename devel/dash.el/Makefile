@@ -4,7 +4,7 @@ PORTNAME=	dash.el
 PORTVERSION=	2.13.0
 CATEGORIES=	devel elisp
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern list library for Emacs
 
 LICENSE=	GPLv3
