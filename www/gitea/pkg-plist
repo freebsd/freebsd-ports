@@ -1,6 +1,229 @@
 @sample %%ETCDIR%%/conf/app.ini.sample
 %%ETCDIR%%/conf/app.ini.defaults
 sbin/gitea
+%%DATADIR%%/options/gitignore/Actionscript
+%%DATADIR%%/options/gitignore/Ada
+%%DATADIR%%/options/gitignore/Agda
+%%DATADIR%%/options/gitignore/Android
+%%DATADIR%%/options/gitignore/Anjuta
+%%DATADIR%%/options/gitignore/AppEngine
+%%DATADIR%%/options/gitignore/AppceleratorTitanium
+%%DATADIR%%/options/gitignore/ArchLinuxPackages
+%%DATADIR%%/options/gitignore/Archives
+%%DATADIR%%/options/gitignore/Autotools
+%%DATADIR%%/options/gitignore/BricxCC
+%%DATADIR%%/options/gitignore/C
+%%DATADIR%%/options/gitignore/C Sharp
+%%DATADIR%%/options/gitignore/C++
+%%DATADIR%%/options/gitignore/CFWheels
+%%DATADIR%%/options/gitignore/CMake
+%%DATADIR%%/options/gitignore/CUDA
+%%DATADIR%%/options/gitignore/CVS
+%%DATADIR%%/options/gitignore/CakePHP
+%%DATADIR%%/options/gitignore/ChefCookbook
+%%DATADIR%%/options/gitignore/Cloud9
+%%DATADIR%%/options/gitignore/CodeIgniter
+%%DATADIR%%/options/gitignore/CodeKit
+%%DATADIR%%/options/gitignore/CommonLisp
+%%DATADIR%%/options/gitignore/Composer
+%%DATADIR%%/options/gitignore/Concrete5
+%%DATADIR%%/options/gitignore/Coq
+%%DATADIR%%/options/gitignore/CraftCMS
+%%DATADIR%%/options/gitignore/DM
+%%DATADIR%%/options/gitignore/Dart
+%%DATADIR%%/options/gitignore/DartEditor
+%%DATADIR%%/options/gitignore/Delphi
+%%DATADIR%%/options/gitignore/Dreamweaver
+%%DATADIR%%/options/gitignore/Drupal
+%%DATADIR%%/options/gitignore/EPiServer
+%%DATADIR%%/options/gitignore/Eagle
+%%DATADIR%%/options/gitignore/Eclipse
+%%DATADIR%%/options/gitignore/EiffelStudio
+%%DATADIR%%/options/gitignore/Elisp
+%%DATADIR%%/options/gitignore/Elixir
+%%DATADIR%%/options/gitignore/Emacs
+%%DATADIR%%/options/gitignore/Ensime
+%%DATADIR%%/options/gitignore/Erlang
+%%DATADIR%%/options/gitignore/Espresso
+%%DATADIR%%/options/gitignore/ExpressionEngine
+%%DATADIR%%/options/gitignore/ExtJs
+%%DATADIR%%/options/gitignore/Fancy
+%%DATADIR%%/options/gitignore/Finale
+%%DATADIR%%/options/gitignore/FlexBuilder
+%%DATADIR%%/options/gitignore/ForceDotCom
+%%DATADIR%%/options/gitignore/FuelPHP
+%%DATADIR%%/options/gitignore/GWT
+%%DATADIR%%/options/gitignore/Gcov
+%%DATADIR%%/options/gitignore/GitBook
+%%DATADIR%%/options/gitignore/Go
+%%DATADIR%%/options/gitignore/Gradle
+%%DATADIR%%/options/gitignore/Grails
+%%DATADIR%%/options/gitignore/Haskell
+%%DATADIR%%/options/gitignore/IGORPro
+%%DATADIR%%/options/gitignore/IPythonNotebook
+%%DATADIR%%/options/gitignore/Idris
+%%DATADIR%%/options/gitignore/JDeveloper
+%%DATADIR%%/options/gitignore/Java
+%%DATADIR%%/options/gitignore/Jboss
+%%DATADIR%%/options/gitignore/Jekyll
+%%DATADIR%%/options/gitignore/JetBrains
+%%DATADIR%%/options/gitignore/Joomla
+%%DATADIR%%/options/gitignore/KDevelop4
+%%DATADIR%%/options/gitignore/Kate
+%%DATADIR%%/options/gitignore/KiCAD
+%%DATADIR%%/options/gitignore/Kohana
+%%DATADIR%%/options/gitignore/LabVIEW
+%%DATADIR%%/options/gitignore/Laravel
+%%DATADIR%%/options/gitignore/Lazarus
+%%DATADIR%%/options/gitignore/Leiningen
+%%DATADIR%%/options/gitignore/LemonStand
+%%DATADIR%%/options/gitignore/LibreOffice
+%%DATADIR%%/options/gitignore/Lilypond
+%%DATADIR%%/options/gitignore/Linux
+%%DATADIR%%/options/gitignore/Lithium
+%%DATADIR%%/options/gitignore/Lua
+%%DATADIR%%/options/gitignore/LyX
+%%DATADIR%%/options/gitignore/Magento
+%%DATADIR%%/options/gitignore/Matlab
+%%DATADIR%%/options/gitignore/Maven
+%%DATADIR%%/options/gitignore/Mercurial
+%%DATADIR%%/options/gitignore/Mercury
+%%DATADIR%%/options/gitignore/MetaProgrammingSystem
+%%DATADIR%%/options/gitignore/MicrosoftOffice
+%%DATADIR%%/options/gitignore/ModelSim
+%%DATADIR%%/options/gitignore/Momentics
+%%DATADIR%%/options/gitignore/MonoDevelop
+%%DATADIR%%/options/gitignore/Nanoc
+%%DATADIR%%/options/gitignore/NetBeans
+%%DATADIR%%/options/gitignore/Nim
+%%DATADIR%%/options/gitignore/Ninja
+%%DATADIR%%/options/gitignore/Node
+%%DATADIR%%/options/gitignore/NotepadPP
+%%DATADIR%%/options/gitignore/OCaml
+%%DATADIR%%/options/gitignore/OSX
+%%DATADIR%%/options/gitignore/Objective-C
+%%DATADIR%%/options/gitignore/Opa
+%%DATADIR%%/options/gitignore/OpenCart
+%%DATADIR%%/options/gitignore/OracleForms
+%%DATADIR%%/options/gitignore/Packer
+%%DATADIR%%/options/gitignore/Perl
+%%DATADIR%%/options/gitignore/Phalcon
+%%DATADIR%%/options/gitignore/PlayFramework
+%%DATADIR%%/options/gitignore/Plone
+%%DATADIR%%/options/gitignore/Prestashop
+%%DATADIR%%/options/gitignore/Processing
+%%DATADIR%%/options/gitignore/Python
+%%DATADIR%%/options/gitignore/Qooxdoo
+%%DATADIR%%/options/gitignore/Qt
+%%DATADIR%%/options/gitignore/R
+%%DATADIR%%/options/gitignore/ROS
+%%DATADIR%%/options/gitignore/Rails
+%%DATADIR%%/options/gitignore/Redcar
+%%DATADIR%%/options/gitignore/Redis
+%%DATADIR%%/options/gitignore/RhodesRhomobile
+%%DATADIR%%/options/gitignore/Ruby
+%%DATADIR%%/options/gitignore/Rust
+%%DATADIR%%/options/gitignore/SBT
+%%DATADIR%%/options/gitignore/SCons
+%%DATADIR%%/options/gitignore/SVN
+%%DATADIR%%/options/gitignore/Sass
+%%DATADIR%%/options/gitignore/Scala
+%%DATADIR%%/options/gitignore/Scrivener
+%%DATADIR%%/options/gitignore/Sdcc
+%%DATADIR%%/options/gitignore/SeamGen
+%%DATADIR%%/options/gitignore/SketchUp
+%%DATADIR%%/options/gitignore/SlickEdit
+%%DATADIR%%/options/gitignore/Stella
+%%DATADIR%%/options/gitignore/SublimeText
+%%DATADIR%%/options/gitignore/SugarCRM
+%%DATADIR%%/options/gitignore/Swift
+%%DATADIR%%/options/gitignore/Symfony
+%%DATADIR%%/options/gitignore/SymphonyCMS
+%%DATADIR%%/options/gitignore/SynopsysVCS
+%%DATADIR%%/options/gitignore/Tags
+%%DATADIR%%/options/gitignore/TeX
+%%DATADIR%%/options/gitignore/TextMate
+%%DATADIR%%/options/gitignore/Textpattern
+%%DATADIR%%/options/gitignore/TortoiseGit
+%%DATADIR%%/options/gitignore/TurboGears2
+%%DATADIR%%/options/gitignore/Typo3
+%%DATADIR%%/options/gitignore/Umbraco
+%%DATADIR%%/options/gitignore/Unity
+%%DATADIR%%/options/gitignore/VVVV
+%%DATADIR%%/options/gitignore/Vagrant
+%%DATADIR%%/options/gitignore/Vim
+%%DATADIR%%/options/gitignore/VirtualEnv
+%%DATADIR%%/options/gitignore/VisualStudio
+%%DATADIR%%/options/gitignore/VisualStudioCode
+%%DATADIR%%/options/gitignore/Waf
+%%DATADIR%%/options/gitignore/WebMethods
+%%DATADIR%%/options/gitignore/Windows
+%%DATADIR%%/options/gitignore/WordPress
+%%DATADIR%%/options/gitignore/Xcode
+%%DATADIR%%/options/gitignore/XilinxISE
+%%DATADIR%%/options/gitignore/Xojo
+%%DATADIR%%/options/gitignore/Yeoman
+%%DATADIR%%/options/gitignore/Yii
+%%DATADIR%%/options/gitignore/ZendFramework
+%%DATADIR%%/options/gitignore/Zephir
+%%DATADIR%%/options/label/Default
+%%DATADIR%%/options/license/Abstyles License
+%%DATADIR%%/options/license/Academic Free License v1.1
+%%DATADIR%%/options/license/Academic Free License v1.2
+%%DATADIR%%/options/license/Academic Free License v2.0
+%%DATADIR%%/options/license/Academic Free License v2.1
+%%DATADIR%%/options/license/Academic Free License v3.0
+%%DATADIR%%/options/license/Affero General Public License v1.0
+%%DATADIR%%/options/license/Apache License 1.0
+%%DATADIR%%/options/license/Apache License 1.1
+%%DATADIR%%/options/license/Apache License 2.0
+%%DATADIR%%/options/license/Artistic License 1.0
+%%DATADIR%%/options/license/Artistic License 2.0
+%%DATADIR%%/options/license/BSD 2-clause License
+%%DATADIR%%/options/license/BSD 3-clause License
+%%DATADIR%%/options/license/BSD 4-clause License
+%%DATADIR%%/options/license/Creative Commons CC0 1.0 Universal
+%%DATADIR%%/options/license/Eclipse Public License 1.0
+%%DATADIR%%/options/license/Educational Community License v1.0
+%%DATADIR%%/options/license/Educational Community License v2.0
+%%DATADIR%%/options/license/GNU Affero General Public License v3.0
+%%DATADIR%%/options/license/GNU Free Documentation License v1.1
+%%DATADIR%%/options/license/GNU Free Documentation License v1.2
+%%DATADIR%%/options/license/GNU Free Documentation License v1.3
+%%DATADIR%%/options/license/GNU General Public License v1.0
+%%DATADIR%%/options/license/GNU General Public License v2.0
+%%DATADIR%%/options/license/GNU General Public License v3.0
+%%DATADIR%%/options/license/GNU Lesser General Public License v2.1
+%%DATADIR%%/options/license/GNU Lesser General Public License v3.0
+%%DATADIR%%/options/license/GNU Library General Public License v2.0
+%%DATADIR%%/options/license/ISC license
+%%DATADIR%%/options/license/MIT License
+%%DATADIR%%/options/license/Mozilla Public License 1.0
+%%DATADIR%%/options/license/Mozilla Public License 1.1
+%%DATADIR%%/options/license/Mozilla Public License 2.0
+%%DATADIR%%/options/locale/TRANSLATORS
+%%DATADIR%%/options/locale/locale_bg-BG.ini
+%%DATADIR%%/options/locale/locale_cs-CZ.ini
+%%DATADIR%%/options/locale/locale_de-DE.ini
+%%DATADIR%%/options/locale/locale_en-US.ini
+%%DATADIR%%/options/locale/locale_es-ES.ini
+%%DATADIR%%/options/locale/locale_fi-FI.ini
+%%DATADIR%%/options/locale/locale_fr-FR.ini
+%%DATADIR%%/options/locale/locale_it-IT.ini
+%%DATADIR%%/options/locale/locale_ja-JP.ini
+%%DATADIR%%/options/locale/locale_ko-KR.ini
+%%DATADIR%%/options/locale/locale_lv-LV.ini
+%%DATADIR%%/options/locale/locale_nl-NL.ini
+%%DATADIR%%/options/locale/locale_pl-PL.ini
+%%DATADIR%%/options/locale/locale_pt-BR.ini
+%%DATADIR%%/options/locale/locale_ru-RU.ini
+%%DATADIR%%/options/locale/locale_sr-SP.ini
+%%DATADIR%%/options/locale/locale_sv-SE.ini
+%%DATADIR%%/options/locale/locale_tr-TR.ini
+%%DATADIR%%/options/locale/locale_zh-CN.ini
+%%DATADIR%%/options/locale/locale_zh-HK.ini
+%%DATADIR%%/options/locale/locale_zh-TW.ini
+%%DATADIR%%/options/readme/Default
 %%DATADIR%%/public/assets/font-awesome-4.6.3/css/font-awesome.min.css
 %%DATADIR%%/public/assets/font-awesome-4.6.3/fonts/FontAwesome.otf
 %%DATADIR%%/public/assets/font-awesome-4.6.3/fonts/fontawesome-webfont.eot
@@ -14,7 +237,6 @@ sbin/gitea
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.ttf
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.woff
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.woff2
-%%DATADIR%%/public/config.codekit
 %%DATADIR%%/public/css/github.min.css
 %%DATADIR%%/public/css/index.css
 %%DATADIR%%/public/css/semantic-2.2.1.min.css
@@ -1332,7 +1554,6 @@ sbin/gitea
 %%DATADIR%%/public/plugins/pdfjs-1.4.20/web/viewer.js
 %%DATADIR%%/public/plugins/simplemde-1.10.1/simplemde.min.css
 %%DATADIR%%/public/plugins/simplemde-1.10.1/simplemde.min.js
-%%DATADIR%%/templates/.VERSION
 %%DATADIR%%/templates/admin/auth/edit.tmpl
 %%DATADIR%%/templates/admin/auth/list.tmpl
 %%DATADIR%%/templates/admin/auth/new.tmpl
