@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MetaCPAN-Client
-PORTVERSION=	2.003000
+PORTVERSION=	2.004000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MICKEY
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay \
 		p5-Ref-Util>=0:devel/p5-Ref-Util \
 		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
-		p5-Search-Elasticsearch>=2.03:textproc/p5-Search-Elasticsearch \
+		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
