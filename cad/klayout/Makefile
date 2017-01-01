@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	klayout
-PORTVERSION=	0.24.8
+PORTVERSION=	0.24.9
 CATEGORIES=	cad
-MASTER_SITES=	http://www.klayout.org/downloads/
+MASTER_SITES=	http://www.klayout.org/downloads/source/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpython2.7.so:lang/python27
 
 USES=		compiler:c++0x execinfo gmake python:build
 USE_RUBY=	yes
@@ -35,7 +37,7 @@ do-build:
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
 		_MAKE_JOBS="${_MAKE_JOBS}" LOCALBASE="${LOCALBASE}" \
 		${SH} build.sh -platform ${PLATFORMKEYWORD} \
-		-qtbin ${PREFIX}/bin \
+		-qtbin ${QT_BINDIR} \
 		-qtinc ${QT_INCDIR} \
 		-qtlib ${QT_LIBDIR} \
 		-python ${PYTHON_CMD}
