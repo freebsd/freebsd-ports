@@ -6,6 +6,9 @@ PORTREVISION=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON=	https://github.com/boostorg/context/commit/f2ef6326b6ed
+
 BUILD_DEPENDS+=	bjam:devel/boost-jam
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS
@@ -28,6 +31,17 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 
 MAKE_ARGS+=	--without-python
 ALL_TARGET=	stage
+
+.include <bsd.port.options.mk>
+
+# XXX Avoid bsd.port.(pre|post).mk dance by only working around base compiler
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508 && ${ARCH} == aarch64 && ${CXX} == c++
+BUILD_DEPENDS+=	${CC}:devel/llvm${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+LLVM_VER?=	39
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
