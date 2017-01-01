@@ -15,8 +15,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath-2_2.so:graphics/ilmbase \
 		libhdf5.so:science/hdf5
 
-BROKEN_FreeBSD_9=	does not build (insufficient C++11 support)
-
 USE_GITHUB=	yes
 
 USES=		cmake compiler:c++11-lang

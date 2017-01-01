@@ -24,6 +24,4 @@ CXX=		clang++33
 
 CMAKE_ARGS+=	-DCMAKE_LLVM_CONFIG=llvm-config33
 
-BROKEN_FreeBSD_9=	does not build
-
 .include <bsd.port.mk>

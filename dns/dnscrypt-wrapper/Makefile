@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libevent.so:devel/libevent2
 
-BROKEN_FreeBSD_9=	does not install (too long username)
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cofyc
 

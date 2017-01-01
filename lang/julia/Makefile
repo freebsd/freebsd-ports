@@ -25,8 +25,6 @@ BUILD_DEPENDS=	llvm-config38:devel/llvm38 \
 
 ONLY_FOR_ARCHS=	amd64
 
-BROKEN_FreeBSD_9=	does not build (fatal error: 'cmath' file not found)
-
 USES=		gmake compiler:c++11-lib fortran
 USE_LDCONFIG=	yes
 

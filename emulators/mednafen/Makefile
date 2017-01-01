@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 		libvorbis.so:audio/libvorbis
 
 BROKEN_sparc64=	does not compile due to internal compiler error
-BROKEN_FreeBSD_9=	does not build
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net

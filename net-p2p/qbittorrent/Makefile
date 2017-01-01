@@ -49,8 +49,6 @@ OPTIONS_DEFAULT+=	DBUS
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-BROKEN_FreeBSD_9=	needs more C++11 support than 9.x offers
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

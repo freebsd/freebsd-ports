@@ -26,7 +26,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/Img/libtkimg1.4.6.so:graphics/libimg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-BROKEN_FreeBSD_9=	requires libusb
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
 
 WRKSRC=		${WRKDIR}/linuxcnc-${GH_TAGNAME}/src

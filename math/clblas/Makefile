@@ -18,8 +18,6 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 		libboost_program_options.so:devel/boost-libs
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-BROKEN_FreeBSD_9=	clBLAS is only supported on FreeBSD 10.1 and newer
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	clMathLibraries
 GH_PROJECT=	clBLAS

@@ -15,8 +15,6 @@ BUILD_DEPENDS=	scim:textproc/scim
 LIB_DEPENDS=	libuim.so:textproc/uim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		gmake iconv libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 

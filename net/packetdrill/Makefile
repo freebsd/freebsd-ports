@@ -9,8 +9,6 @@ COMMENT=	Network stack testing tool
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_9=	Fails in lexer
-
 USES=		bison uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net

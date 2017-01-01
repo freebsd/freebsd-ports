@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
 
-BROKEN_FreeBSD_9_i386=	does not build on FreeBSD 9.x i386
-
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS_INSTALL=	eclipse
 

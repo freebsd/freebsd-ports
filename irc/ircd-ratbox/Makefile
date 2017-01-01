@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
-BROKEN_FreeBSD_9=	does not build
 BROKEN_aarch64=		Fails to link: missing sbrk
 
 USES=		cpe libtool sqlite tar:bzip2

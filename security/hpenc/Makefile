@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	Does not build
 
-BROKEN_FreeBSD_9=	does not build
 NOT_FOR_ARCHS=		aarch64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 

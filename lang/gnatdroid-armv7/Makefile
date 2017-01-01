@@ -22,8 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_LICENSES_INSTALL= yes
 AUXPORT=	gcc6-aux
 
-BROKEN_FreeBSD_9=	BU 2.27 and F9 do not mix, try 2016Q3 branch
-
 .include "${.CURDIR}/../${AUXPORT}/Makefile.common"
 
 USES+=		ada:6 gmake

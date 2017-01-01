@@ -20,7 +20,6 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
 
 BROKEN_powerpc=	does not install: runs out of virtual memory
-BROKEN_FreeBSD_9=	does not build: lack of c++11 support
 
 USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2

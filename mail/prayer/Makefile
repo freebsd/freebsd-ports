@@ -13,8 +13,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libc-client4.so:mail/cclient
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		iconv shebangfix gmake perl5 uidfix
 USE_PERL5=	build
 

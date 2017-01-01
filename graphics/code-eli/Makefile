@@ -33,11 +33,6 @@ DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	doc
 DOXYGEN_PORTDOCS=	html latex
 
-# The code uses std::cbrt(). Even if one passes some additional macros for
-# libstdc++ to enable additional math functions in math.h some of them, such as
-# acoshl() are not defined and linking fails.
-BROKEN_FreeBSD_9=	Needs additional math functions
-
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \
 		-e 's/add_subdirectory(example)//g' \

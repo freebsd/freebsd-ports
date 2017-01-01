@@ -23,6 +23,4 @@ LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/tmate-slave
 
-BROKEN_FreeBSD_9=	Does not build
-
 .include <bsd.port.mk>

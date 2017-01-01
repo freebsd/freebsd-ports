@@ -52,8 +52,6 @@ WCCP_CONFIGURE_ENABLE=	wccp
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
-BROKEN_FreeBSD_9=	Trafficserver is only supported on FreeBSD 10.1 or newer
-
 .if ! exists(/var/cache)
 # FreeBSD 8.x
 PLIST_DIRS+=	/var/cache

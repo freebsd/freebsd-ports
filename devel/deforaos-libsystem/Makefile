@@ -29,8 +29,6 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 	gtkdoc-check:textproc/gtk-doc
 
-BROKEN_FreeBSD_9=	This port works only on FreeBSD 10 and newer
-
 post-patch:
 	${REINPLACE_CMD} 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

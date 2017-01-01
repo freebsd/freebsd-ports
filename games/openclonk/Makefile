@@ -21,8 +21,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-BROKEN_FreeBSD_9=	does not build (lack of proper c++11 support)
-
 USES=		compiler:c++14-lang cmake desktop-file-utils jpeg pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk30

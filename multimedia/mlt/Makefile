@@ -29,7 +29,6 @@ CONFLICTS_INSTALL=	freeze-[0-9]*
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-BROKEN_FreeBSD_9_i386=	does not build (filter_glsl_manager.cpp:401: error: integer constant is too large for 'long' type)
 BROKEN_sparc64=		does not compile on sparc64 (invokes i386 asm)
 
 USE_GNOME=	libxml2

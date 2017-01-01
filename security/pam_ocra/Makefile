@@ -23,10 +23,4 @@ PLIST_FILES=	lib/pam_ocra.so \
 		man/man8/pam_ocra.8.gz \
 		man/man8/ocra_tool.8.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	does not build with 9.x base OpenSSL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

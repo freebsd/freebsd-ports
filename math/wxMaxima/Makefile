@@ -13,8 +13,6 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	maxima:math/maxima
 
-BROKEN_FreeBSD_9=	does not configure
-
 CONFIGURE_ARGS=	--program-prefix= --docdir=${DOCSDIR}
 
 GH_TUPLE=	andrejv:${PORTNAME:tl}:Version-${DISTVERSION}

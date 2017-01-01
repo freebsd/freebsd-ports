@@ -28,8 +28,6 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		exiftool:graphics/p5-Image-ExifTool \
 		gmake:devel/gmake
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext jpeg pkgconfig shared-mime-info tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}

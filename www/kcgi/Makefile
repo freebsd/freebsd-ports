@@ -14,8 +14,6 @@ USES=		tar:tgz gmake
 
 OPTIONS_DEFINE=	EXAMPLES
 
-BROKEN_FreeBSD_9=	Requires capsicum
-
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	DATADIR=${EXAMPLESDIR}
 MAKEFILE=	GNUmakefile

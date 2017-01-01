@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/docs/license.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 		gsed:textproc/gsed
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 
 ALL_TARGET=	native

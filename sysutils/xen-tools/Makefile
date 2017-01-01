@@ -13,7 +13,6 @@ COMMENT=	Xen management tool, based on LibXenlight
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_10=	does not build
 
 LIB_DEPENDS=	libyajl.so:devel/yajl \

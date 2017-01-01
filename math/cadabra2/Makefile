@@ -28,8 +28,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kpeeters
 GH_TAGNAME=	85ac041
 
-BROKEN_FreeBSD_9=	does not build: fatal error: 'type_traits' file not found
-
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 

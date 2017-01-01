@@ -16,7 +16,6 @@ BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-BROKEN_FreeBSD_9=	clFFT is only supported on FreeBSD 10.1 and newer
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	only builds and is supported on amd64
 

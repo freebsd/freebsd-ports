@@ -17,8 +17,6 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libkqoauth.so:security/kqoauth \
 		libvlc.so:multimedia/vlc-qt4
 
-BROKEN_FreeBSD_9=	Does not build on FreeBSD 9
-
 USE_GITHUB=	yes
 
 DESKTOP_ENTRIES=	"${PORTNAME}" \

@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashcat
 
