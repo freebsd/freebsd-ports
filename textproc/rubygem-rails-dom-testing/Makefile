@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rails-dom-testing
-PORTVERSION=	1.0.7
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Analyse and compare DOMs using Nokogiri
-
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.2.0:devel/rubygem-activesupport4 \
 		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri \
