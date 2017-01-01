@@ -330,7 +330,6 @@
     SUBDIR += telegraf
     SUBDIR += tornova
     SUBDIR += torrus
-    SUBDIR += unifi4
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
