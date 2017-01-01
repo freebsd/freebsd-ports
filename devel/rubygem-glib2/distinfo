@@ -1,2 +1,3 @@
-SHA256 (rubygem/glib2-3.0.8.gem) = fe72fa388603427f3e93d5b7e1b10b0d92470bf64bae943f0b7c459ea79c6aeb
-SIZE (rubygem/glib2-3.0.8.gem) = 135168
+TIMESTAMP = 1483285097
+SHA256 (rubygem/glib2-3.1.0.gem) = 0bad2e823df07fcc9f3f2490ad3f1b1c157852f48564742f3a758d50085009fd
+SIZE (rubygem/glib2-3.1.0.gem) = 137216

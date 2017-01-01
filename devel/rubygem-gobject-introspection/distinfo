@@ -1,2 +1,3 @@
-SHA256 (rubygem/gobject-introspection-3.0.8.gem) = c9f8e15394fe5fb60586be5f4b4117740eed954c69c237700689fd3f067c4490
-SIZE (rubygem/gobject-introspection-3.0.8.gem) = 49664
+TIMESTAMP = 1483285103
+SHA256 (rubygem/gobject-introspection-3.1.0.gem) = 3aed6ccda1cb05523ba9a548c8b616d45ca6d3fcb25a4a213cd5915baf8cc790
+SIZE (rubygem/gobject-introspection-3.1.0.gem) = 51200
