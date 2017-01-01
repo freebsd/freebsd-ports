@@ -407,6 +407,7 @@
     SUBDIR += grub2-efi
     SUBDIR += grub2-pcbsd
     SUBDIR += gsmartcontrol
+    SUBDIR += gsh
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
     SUBDIR += gstreamer-plugins-hal
