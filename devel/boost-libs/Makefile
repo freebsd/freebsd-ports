@@ -32,10 +32,11 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 MAKE_ARGS+=	--without-python
 ALL_TARGET=	stage
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-# XXX Avoid bsd.port.(pre|post).mk dance by only working around base compiler
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508 && ${ARCH} == aarch64 && ${CXX} == c++
+# XXX CHOSEN_COMPILER_VERSION isn't supported, so check CXX hasn't changed
+.if ${ARCH} == aarch64 && ${CXX} == c++ && \
+    ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 39
 BUILD_DEPENDS+=	${CC}:devel/llvm${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
@@ -64,4 +65,4 @@ post-install:
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
