@@ -22,6 +22,9 @@ TEST_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
 
 CONFLICTS_INSTALL=	p5-Scalar-Does-0.[1-9]*
 
+DEPRECATED=	Use devel/p5-Scalar-Does instead
+EXPIRATION_DATE=2017-01-31
+
 USE_PERL5=	configure
 USES=		perl5
 
