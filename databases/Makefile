@@ -225,6 +225,7 @@
     SUBDIR += mysql57-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
+    SUBDIR += mysqldump-secure
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlreport
