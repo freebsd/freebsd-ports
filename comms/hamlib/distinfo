@@ -1,2 +1,3 @@
-SHA256 (hamlib-3.0.1.tar.gz) = 3fec97ea326d02aa8f35834c4af34194a3f544e6212f391397d788c566b44e32
-SIZE (hamlib-3.0.1.tar.gz) = 2074254
+TIMESTAMP = 1483233776
+SHA256 (hamlib-3.1.tar.gz) = 682304c3e88ff6ccfd6a5fc28b33bcc95d2d0a54321973fef015ff62570c994e
+SIZE (hamlib-3.1.tar.gz) = 2130615
