@@ -36,11 +36,8 @@ ALL_TARGET=	stage
 # XXX CHOSEN_COMPILER_VERSION isn't supported, so check CXX hasn't changed
 .if ${ARCH} == aarch64 && ${CXX} == c++ && \
     ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 39
-BUILD_DEPENDS+=	${CC}:devel/llvm${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
-CPP=		clang-cpp${LLVM_VER}
-LLVM_VER?=	39
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-no-integrated-as
 .endif
 
 do-install:
