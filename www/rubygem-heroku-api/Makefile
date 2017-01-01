@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	heroku-api
-PORTVERSION=	0.3.18
+PORTVERSION=	0.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,10 @@ COMMENT=	Heroku API
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+RUN_DEPENDS=	rubygem-excon>=0.45:devel/rubygem-excon \
+		rubygem-multi_json>=1.8:devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
