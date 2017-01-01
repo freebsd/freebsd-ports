@@ -3,7 +3,7 @@
 
 PORTNAME=	rubyinline
 PORTVERSION=	3.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInline-${PORTVERSION}
@@ -16,12 +16,15 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-zentest>=4.3:devel/rubygem-zentest
 
 GEM_NAME=	${DISTNAME}
-
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	tutorial/example1.rb \
+
+SHEBANG_FILES=	example2.rb \
+		tutorial/example1.rb \
 		tutorial/example2.rb
+SHEBANG_LANG=	ruby2
+ruby2_OLD_CMD=	/usr/local/bin/ruby17
+ruby2_CMD=	${ruby_CMD}
 
 .include <bsd.port.mk>
