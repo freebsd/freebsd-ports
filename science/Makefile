@@ -68,6 +68,7 @@
     SUBDIR += kalzium
     SUBDIR += kst2
     SUBDIR += lamprop
+    SUBDIR += libaec
     SUBDIR += libctl
     SUBDIR += libghemical
     SUBDIR += libint
