@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	2.20.2677.102.01
+PORTVERSION=	2.20.2677.102.02
 DISTVERSIONPREFIX=	v
 CATEGORIES=	japanese
 
@@ -77,7 +77,6 @@ GYP_DEFINES=	use_libprotobuf=1 \
 		compiler_host='${_CCTYPE}' \
 		compiler_target='${_CCTYPE}' \
 		use_libzinnia=1 \
-		use_fcitx=0 \
 		zinnia_model_file='${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model' \
 		ibus_mozc_icon_path='${LOCALBASE}/share/ibus-mozc/icons/product_icon.png' \
 		ibus_mozc_path='${PREFIX}/libexec/ibus-engine-mozc'
@@ -307,10 +306,9 @@ do-install-uim_mozc:
 
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-GYP_OPTIONS+=	--noqt
+GYP_OPTIONS+=	--noqt --use_fcitx
 GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0 \
-		use_fcitx=1
+		enable_gtk_renderer=0
 
 LIB_DEPENDS+=	libfcitx-core.so:chinese/fcitx
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
