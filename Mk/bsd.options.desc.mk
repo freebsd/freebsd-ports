@@ -132,6 +132,7 @@ GPERFTOOLS_DESC?=	Google gperftools support
 GPHOTO_DESC?=		Digital cameras support via libgphoto2
 GRAPHMAGICK_DESC?=	GraphicsMagick image processing support
 GRAPHVIZ_DESC?=		Graphviz graph drawing support
+GRIB_API_DESC?=		ECMWF GRIB API support
 GRASS_DESC?=		Geographic Information System (GIS) support
 GSM_DESC?=		GSM codec support
 GSSAPI_BASE_DESC?=	GSSAPI support via base system (Kerberos required)
