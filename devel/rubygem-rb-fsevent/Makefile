@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rb-fsevent
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ COMMENT=	FSEvents API with Signals catching (without RubyCocoa)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
