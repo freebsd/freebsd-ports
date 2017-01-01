@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firacode
-PORTVERSION=	1.102
+PORTVERSION=	1.204
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/tonsky/FiraCode/releases/download/${PORTVERSION}/
 DISTNAME=	FiraCode_${PORTVERSION}
@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FiraCode_${PORTVERSION}/*.otf \
+	${INSTALL_DATA} ${WRKSRC}/otf/*.otf \
 		${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
