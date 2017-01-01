@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cssutils
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -18,7 +17,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES?=		python zip
+USES?=		python
 
 PORTEXAMPLES=	*
 
