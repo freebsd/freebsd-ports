@@ -44,8 +44,6 @@ MOZ_OPTIONS+=	--enable-application=suite
 USE_MOZILLA=	# empty
 MOZ_PKGCONFIG_FILES=
 
-BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
-
 OPTIONS_DEFINE=	LDAP LIGHTNING RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3

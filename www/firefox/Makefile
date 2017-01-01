@@ -40,8 +40,6 @@ MOZILLA_NAME=	Firefox
 USE_GL=		gl
 USES=		tar:xz
 
-BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
-
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \

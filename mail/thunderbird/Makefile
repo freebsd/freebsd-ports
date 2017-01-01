@@ -38,8 +38,6 @@ USE_MOZILLA=	# empty
 USE_GL=		gl
 USES=		tar:xz
 
-BROKEN_aarch64=		Fails to link: js-dtrace.o.arJ1an: error adding symbols: File in wrong format
-
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
 	--enable-single-profile --disable-profilesharing \
 	--enable-application=mail --enable-official-branding
