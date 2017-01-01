@@ -16,6 +16,9 @@ OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
+
 # dtrace(1) crashes during build or fails to allocate space for probe
 OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
 

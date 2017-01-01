@@ -39,8 +39,6 @@ MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
-BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
-
 MOZ_OPTIONS?=	--enable-application=xulrunner
 USE_GECKO=	gecko
 CPE_PRODUCT=	firefox_esr
