@@ -1,2 +1,3 @@
-SHA256 (rubygem/gtk3-3.0.8.gem) = 76615fbb2506e1192f99135066e6832b3a5aab3198cc73c7ef6a2b76eeccaf28
-SIZE (rubygem/gtk3-3.0.8.gem) = 411136
+TIMESTAMP = 1483285160
+SHA256 (rubygem/gtk3-3.1.0.gem) = 2a5c9aafce6d3c8dcba1826cd61de0e2cca06b4070780878ba021ff5b626c055
+SIZE (rubygem/gtk3-3.1.0.gem) = 522240
