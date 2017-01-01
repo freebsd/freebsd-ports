@@ -17,8 +17,10 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-mime-types1>=1.16:misc/rubygem-mime-types1 \
 		rubygem-treetop>=1.4.8:devel/rubygem-treetop
 
-NO_ARCH=	yes
+DEPRECATED=	Use mail/rubygem-mail instead
+EXPIRATION_DATE=2017-01-07
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
