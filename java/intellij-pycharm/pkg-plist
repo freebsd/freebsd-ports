@@ -629,6 +629,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_34_64.pyd
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_35_32.cp35-win32.pyd
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_35_64.cp35-win_amd64.pyd
+%%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_36_32.cp36-win32.pyd
+%%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_36_64.cp36-win_amd64.pyd
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_cython_wrapper.py
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_dont_trace.py
 %%DATADIR%%/helpers/pydev/_pydevd_bundle/pydevd_dont_trace_files.py
