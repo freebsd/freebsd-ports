@@ -1,0 +1,6 @@
+Mysqldump-secure is a POSIX compliant open-source backup tool for MySQL
+databases with strong security in mind. It will backup every available database
+(which is readable by the specified user) as a separate file with the
+possibility to opt out via blacklisting.
+
+WWW: http://mysqldump-secure.org/
