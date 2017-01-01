@@ -6,8 +6,7 @@ PORTREVISION=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON=	https://github.com/boostorg/context/commit/f2ef6326b6ed
+BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 
 BUILD_DEPENDS+=	bjam:devel/boost-jam
 
