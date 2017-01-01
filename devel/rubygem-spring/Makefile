@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spring
-PORTVERSION=	1.7.2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,8 @@ COMMENT=	Rails application preloader
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-activesupport4>=4.2:devel/rubygem-activesupport4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
