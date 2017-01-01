@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unshield
-PORTVERSION=	0.6
-PORTREVISION=	7
+PORTVERSION=	1.4
 CATEGORIES=	archivers
-MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
@@ -13,9 +11,14 @@ COMMENT=	Extract data from InstallShield CAB files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		cmake pathfix
+
+GH_ACCOUNT=	twogood
+USE_GITHUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/CMAKE_INSTALL_DATAROOTDIR/ s|DATAROOTDIR|PREFIX|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
