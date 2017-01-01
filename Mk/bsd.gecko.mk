@@ -372,6 +372,19 @@ MOZ_OPTIONS+=	--enable-pulseaudio
 MOZ_OPTIONS+=	--disable-pulseaudio
 .endif
 
+.if ${PORT_OPTIONS:MSNDIO}
+LIB_DEPENDS+=	libsndio.so:audio/sndio
+post-patch-SNDIO-on:
+	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+		${MOZSRC}/media/libcubeb/src/moz.build \
+		${MOZSRC}/media/libcubeb/tests/moz.build \
+		${MOZSRC}/toolkit/library/moz.build
+	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
+		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
+	@${ECHO} "OS_LIBS += ['sndio']" >> \
+		${MOZSRC}/media/webrtc/signaling/test/common.build
+.endif
+
 .if ${PORT_OPTIONS:MRUST}
 BUILD_DEPENDS+=	rustc:${RUST_PORT}
 RUST_PORT?=		lang/rust
