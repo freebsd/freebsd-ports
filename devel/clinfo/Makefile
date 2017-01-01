@@ -20,8 +20,6 @@ ALL_TARGET=	#
 PLIST_FILES=	bin/clinfo \
 		man/man1/clinfo.1.gz
 
-BROKEN_FreeBSD_9=	OpenCL is only supported on FreeBSD 10 and newer
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall|-Wall -I${LOCALBASE}/include|g; \
 		s|-lOpenCL|-lOpenCL -L${LOCALBASE}/lib|g' \

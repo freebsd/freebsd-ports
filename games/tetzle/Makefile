@@ -14,8 +14,6 @@ COMMENT=	Jigsaw puzzle with tetrominoes
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		compiler:c++11-lib desktop-file-utils qmake tar:bzip2
 USE_QT5=	core gui widgets buildtools_build linguisttools_build
 USE_GL=		gl

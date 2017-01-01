@@ -95,12 +95,6 @@ PRIVSEP_PLIST_FILES=	sbin/wpa_priv
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	Does not build on FreeBSD < 10 with base SSL.  Add DEFAULT_VERSIONS+=ssl=openssl\
-			or DEFAULT_VERSIONS+=ssl=libressl to /etc/make.conf and rebuild everything that\
-			requires SSL.
-.endif
-
 .if ${PORT_OPTIONS:MNDIS} && ${PORT_OPTIONS:MPRIVSEP}
 BROKEN=	Fails to compile with both NDIS and PRIVSEP
 .endif

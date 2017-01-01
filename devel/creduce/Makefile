@@ -19,8 +19,6 @@ RUN_DEPENDS=	llvm-config38:devel/llvm38 \
 		devel/p5-Sys-Cpu>=0:devel/p5-Sys-Cpu \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
 
-BROKEN_FreeBSD_9=	does not build (configure: error: cannot compile and link test program with selected LLVM)
-
 GNU_CONFIGURE=	yes
 CONFIGURE_FLAGS=	--with-llvm=${LOCALBASE}
 CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config38 \

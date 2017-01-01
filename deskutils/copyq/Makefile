@@ -10,8 +10,6 @@ COMMENT=	Qt5 based clipboard manager
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		qmake
 USE_XORG=	x11 xfixes xtst
 USE_QT5=	core gui network svg multimedia imageformats \

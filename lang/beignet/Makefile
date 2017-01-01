@@ -30,8 +30,6 @@ CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config${LLVMVER}
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON= Beignet needs a graphics driver supported by the Intel KMS driver
 
-BROKEN_FreeBSD_9=	Beignet is only supported on FreeBSD 10.1 and newer
-
 # running tests from makefile doesn't work quite yet, so comment them out for now.
 #OPTIONS_DEFINE=	TESTS
 #TESTS_DESC=	Build and run the test suite

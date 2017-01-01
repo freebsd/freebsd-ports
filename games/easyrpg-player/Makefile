@@ -24,8 +24,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 GH_PROJECT=	Player

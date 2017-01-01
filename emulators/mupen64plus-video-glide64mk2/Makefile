@@ -9,8 +9,6 @@ COMMENT=	Glide64mk2 video plugin for Mupen64Plus
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core \
 		libboost_thread.so:devel/boost-libs
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GL=		gl
 USE_SDL=	sdl2
 

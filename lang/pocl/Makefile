@@ -21,7 +21,6 @@ RUN_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION}
 
 CONFLICTS=		freeocl[0-9]*
 
-BROKEN_FreeBSD_9=	pocl is not supported on 9.x
 BROKEN_FreeBSD_10=	pocl is not supported on 10.x
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	only tested on amd64

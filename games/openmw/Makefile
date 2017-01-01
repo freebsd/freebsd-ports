@@ -19,8 +19,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libosg.so:graphics/osg \
 		libunshield.so:archivers/unshield
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 

@@ -29,6 +29,4 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-BROKEN_FreeBSD_9=	Does not build on FreeBSD 9.x
-
 .include <bsd.port.mk>

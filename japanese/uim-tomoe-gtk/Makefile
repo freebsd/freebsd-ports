@@ -10,8 +10,6 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UIM helper program for Tomoe
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
-
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe \
 		libtomoe-gtk.so:japanese/libtomoe-gtk \
 		libuim.so:textproc/uim

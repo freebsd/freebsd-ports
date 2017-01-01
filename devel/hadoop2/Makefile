@@ -31,8 +31,6 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy
 RUN_DEPENDS=	bash:shells/bash \
 		ssid:sysutils/ssid
 
-BROKEN_FreeBSD_9=	fails to build
-
 CONFLICTS_INSTALL=	hadoop-1*
 
 USES=		cpe shebangfix

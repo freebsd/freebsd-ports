@@ -39,8 +39,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 GH_TAGNAME=	c14d6d5
 
-BROKEN_FreeBSD_9_i386=	does not build
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no

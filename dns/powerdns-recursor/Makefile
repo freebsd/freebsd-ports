@@ -56,10 +56,6 @@ GROUPS=		pdns
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	FreeBSD 9.x requires SSL from ports
-.endif
-
 .if ${OSVERSION} < 1000000 && ${ARCH} == i386
 #BUILD_DEPENDS=		${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LDFLAGS+=		-latomic

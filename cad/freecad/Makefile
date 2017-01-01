@@ -30,8 +30,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2		\
 		libmed.so:french/med			\
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
-
 USE_GITHUB=	yes
 GH_TAGNAME=	0ea7373
 

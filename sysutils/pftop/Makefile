@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
-BROKEN_FreeBSD_9=	does not build
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1100080

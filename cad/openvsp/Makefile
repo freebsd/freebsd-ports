@@ -29,8 +29,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3
 
-BROKEN_FreeBSD_9=	dependency graphics/code-eli needs additional math functions
-
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}

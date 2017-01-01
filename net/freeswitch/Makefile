@@ -27,7 +27,6 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 
 CONFLICTS_BUILD=	xmlrpc-c-*
 
-BROKEN_FreeBSD_9=	Fails in configure due to compiler issues
 ONLY_FOR_ARCHS=	amd64
 
 USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz iconv libedit ssl

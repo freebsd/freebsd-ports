@@ -14,7 +14,6 @@ LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build
-BROKEN_FreeBSD_9_i386=	does not build (internal compiler error: Floating point exception: 8)
 
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB

@@ -25,10 +25,6 @@ USE_LDCONFIG=	${LIBDIR}
 USE_RC_SUBR=	teamspeak
 SUB_FILES=	pkg-message
 
-# see release note
-# http://forum.teamspeak.com/threads/123250-TeamSpeak-3-Server-3-0-12-3-released
-BROKEN_FreeBSD_9=	No longer starts on 9.x
-
 RESTRICTED=	No redistribution
 ONLY_FOR_ARCHS=	amd64 i386
 

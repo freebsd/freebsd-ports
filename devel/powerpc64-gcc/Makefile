@@ -53,7 +53,6 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
-BROKEN_FreeBSD_9=	plist is different on 9.x that on other arches
 
 .include <bsd.port.options.mk>
 

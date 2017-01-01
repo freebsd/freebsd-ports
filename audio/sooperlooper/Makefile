@@ -23,8 +23,6 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	ladspa>0:audio/ladspa
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		gmake localbase ncurses pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

@@ -14,7 +14,6 @@ COMMENT=	Linear Programming Solver
 LICENSE=	EPL
 
 BROKEN_powerpc64=	does not build
-BROKEN_FreeBSD_9=	does not build
 
 USES=		blaslapack fortran libtool tar:tgz pathfix
 CXXFLAGS+=	-ffast-math

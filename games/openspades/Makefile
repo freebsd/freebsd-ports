@@ -18,8 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	convert:graphics/ImageMagick # for building icons
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 

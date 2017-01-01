@@ -14,8 +14,6 @@ COMMENT=	HTML to LaTeX to PDF Converter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN_FreeBSD_9=	does not build
-
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
 
 USES=		bison gmake

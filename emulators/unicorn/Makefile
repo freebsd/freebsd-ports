@@ -23,6 +23,5 @@ MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		V=1
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/tests/unit
-BROKEN_FreeBSD_9_i386=	fails to link
 
 .include <bsd.port.mk>

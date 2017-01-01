@@ -52,9 +52,6 @@ QT5_USE=		qt5=core,gui,network,opengl,webkit,widgets \
 			qt5=buildtools_build,qmake_build
 QT5_CMAKE_BOOL=		USE_QT5_IF_INSTALLED
 
-# Upstream contacted regarding build failures on FreeBSD 9: https://sourceforge.net/p/auber/discussion/206283/thread/489d80e8/
-BROKEN_FreeBSD_9=	/usr/local/include/bfd.h:1610:38: error: expected ',' or '...' before 'ATTRIBUTE_UNUSED'
-
 post-build:
 	@${LN} -sf logo32x32.png \
 		${WRKSRC}/library/tulip-gui/resources/icons/tulip.png

@@ -23,8 +23,6 @@ LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-BROKEN_FreeBSD_9=	requires C++14 compiler, 9.x lacks C++11 standard library
-
 INSTALLS_ICONS=	yes
 USES=		compiler:c++14-lang gmake iconv:wchar_t localbase pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo gtk20

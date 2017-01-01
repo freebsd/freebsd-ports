@@ -14,8 +14,6 @@ LICENSE=	APACHE20
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	heavy use of SSE instructions
 
-BROKEN_FreeBSD_9=	does not build (insufficient C++11 support)
-
 USE_GITHUB=	yes
 
 USES=		cmake

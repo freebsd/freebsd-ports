@@ -9,7 +9,6 @@ COMMENT=	Front-end to pkg(8)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_9=	does not build: requires proper c++11 support
 BROKEN_powerpc64=	does not build
 
 PLIST_FILES=	bin/${PORTNAME} \
