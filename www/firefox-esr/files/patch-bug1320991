@@ -26,30 +26,18 @@ Date:   Tue Dec 20 16:37:18 2016 -0500
 
 diff --git modules/libmar/tests/moz.build modules/libmar/tests/moz.build
 index ee72571b0c6b..9642553e8aa2 100644
---- modules/libmar/tests/moz.build
-+++ modules/libmar/tests/moz.build
-@@ -6,24 +6,7 @@
- 
- XPCSHELL_TESTS_MANIFESTS += ['unit/xpcshell.ini']
- 
--DEFINES['BIN_SUFFIX'] = CONFIG['BIN_SUFFIX']
--
- if CONFIG['OS_TARGET'] != 'Android':
--    nss_files = ['nss3']
--    if not CONFIG['MOZ_FOLD_LIBS']:
--        nss_files.extend([
--            'nssutil3',
--            'plc4',
--            'nspr4',
--            'plds4',
--        ])
--    TEST_HARNESS_FILES.xpcshell.modules.libmar.tests.unit += sorted(
--        ['!/dist/bin/%s%s%s' % (
--            CONFIG['DLL_PREFIX'],
--            name,
--            CONFIG['DLL_SUFFIX'],
--        ) for name in nss_files]
--    )
-     TEST_HARNESS_FILES.xpcshell.modules.libmar.tests.unit += [
-         '!../tool/signmar%s' % CONFIG['BIN_SUFFIX'],
-     ]
+--- modules/libmar/tests/Makefile.in
++++ modules/libmar/tests/Makefile.in
+@@ -10,12 +10,5 @@ ifneq ($(OS_TARGET),Android)
+ ifndef MOZ_PROFILE_GENERATE
+ libs::
+ 	$(INSTALL) ../tool/signmar$(BIN_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nss3$(DLL_SUFFIX) $(TESTROOT)/unit
+-ifndef MOZ_FOLD_LIBS
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nssutil3$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)plc4$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nspr4$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)plds4$(DLL_SUFFIX) $(TESTROOT)/unit
+-endif
+ endif
+ endif # Not Android
