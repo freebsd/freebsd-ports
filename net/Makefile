@@ -1010,6 +1010,7 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
+    SUBDIR += py-pysimplesoap
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pystun
@@ -1038,7 +1039,6 @@
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
-    SUBDIR += py-simplesoap
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
     SUBDIR += py-socketio-client
