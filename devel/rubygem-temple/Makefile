@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	temple
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
