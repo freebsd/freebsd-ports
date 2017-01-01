@@ -1,8 +1,6 @@
 bin/unshield
 include/libunshield.h
-lib/libunshield.a
 lib/libunshield.so
-lib/libunshield.so.0
-lib/libunshield.so.0.0.0
+lib/libunshield.so.1.4
 libdata/pkgconfig/libunshield.pc
 man/man1/unshield.1.gz
