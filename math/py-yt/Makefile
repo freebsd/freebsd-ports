@@ -22,7 +22,7 @@ RUN_DEPENDS=	isympy:math/py-sympy \
 LIB_DEPENDS=	libembree.so:graphics/embree \
 		libomp.so:devel/openmp
 
-USES=		localbase python
+USES=		dos2unix localbase python
 USE_PYTHON=	autoplist distutils
 
 post-patch:
