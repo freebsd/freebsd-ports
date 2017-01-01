@@ -2,6 +2,7 @@
 
 PORTNAME=	libunrar5
 PORTVERSION=	5.4.5
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
@@ -21,7 +22,7 @@ ALL_TARGET=	lib liba
 MAKEFILE=	makefile
 MAKE_ARGS=	AR="${AR}" \
 		CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}" \
+		CXXFLAGS="${CXXFLAGS} -fPIC" \
 		LDFLAGS="-Wl,-soname,${SONAME} -pthread ${LDFLAGS}" \
 		STRIP="${STRIP_CMD}"
 SONAME=		libunrar.so.5
