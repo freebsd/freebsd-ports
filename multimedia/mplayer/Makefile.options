@@ -53,26 +53,18 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 .endif # ${CHOSEN_COMPILER_TYPE} == clang
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/yasm:devel/yasm
-.endif
-
 CFLAGS_armv6+=	-no-integrated-as
 
-# Extra build options for debugging and optimised CFLAGS
-# ======================================================
+# Extra build options for debugging
+# =================================
 
 .if ${PORT_OPTIONS:MDEBUG}
 WITH_DEBUG=	yes
 CONFIGURE_ARGS+=	--enable-debug=3
-.else
-.if ${PORT_OPTIONS:MOCFLAGS}
-CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
-.endif #OCFLAGS
-.endif #DEBUG
+.endif
 
-# Win32 DLL codecs support on i386, mostly superseded by internal ffmpeg
-# ======================================================================
+# Win32 DLL codecs support on i386, mostly superseded by ffmpeg
+# =============================================================
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
