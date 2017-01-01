@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace-rails-ap
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
