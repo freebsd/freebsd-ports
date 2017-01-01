@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlib
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
