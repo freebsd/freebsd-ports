@@ -64,11 +64,7 @@ SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 1000000
-CPPFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
 CONFIGURE_ARGS+=--with-jemalloc
 .endif
 
