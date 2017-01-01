@@ -3,6 +3,6 @@
 
 MASTERDIR=	${.CURDIR}/../py-cssutils
 
-USES=		python:3.3+ zip
+USES=		python:3.3+
 
 .include "${MASTERDIR}/Makefile"
