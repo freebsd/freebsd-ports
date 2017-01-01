@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-LO_I18N=	sid
-LO_HAS_HELPPACK=	yes
+LO_I18N=	vec
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
