@@ -1,0 +1,11 @@
+--- winrm-fs.gemspec.orig	2017-01-01 14:12:30.411729000 -0500
++++ winrm-fs.gemspec	2017-01-01 14:24:16.959147000 -0500
+@@ -25,7 +25,7 @@
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<erubis>.freeze, ["~> 2.7"])
+-      s.add_runtime_dependency(%q<logging>.freeze, [">= 1.6.1", "~> 1.6"])
++      s.add_runtime_dependency(%q<logging>.freeze, [">= 1.6"])
+       s.add_runtime_dependency(%q<rubyzip>.freeze, ["~> 1.1"])
+       s.add_runtime_dependency(%q<winrm>.freeze, ["~> 1.5"])
+       s.add_development_dependency(%q<pry>.freeze, [">= 0"])
