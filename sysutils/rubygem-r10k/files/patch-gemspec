@@ -1,7 +1,7 @@
---- r10k.gemspec.orig	2016-03-31 19:13:04 UTC
+--- r10k.gemspec.orig	2017-01-02 08:32:03 UTC
 +++ r10k.gemspec
 @@ -23,9 +23,9 @@ Gem::Specification.new do |s|
-     s.specification_version = 3
+     s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
 -      s.add_runtime_dependency(%q<colored>.freeze, ["= 1.2"])
@@ -11,5 +11,5 @@
 +      s.add_runtime_dependency(%q<cri>.freeze, [">= 2.6.1"])
 +      s.add_runtime_dependency(%q<log4r>.freeze, [">= 1.1.10"])
        s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.10"])
-       s.add_runtime_dependency(%q<puppet_forge>.freeze, ["~> 2.1.1"])
+       s.add_runtime_dependency(%q<puppet_forge>.freeze, ["~> 2.2"])
        s.add_runtime_dependency(%q<semantic_puppet>.freeze, ["~> 0.1.0"])
