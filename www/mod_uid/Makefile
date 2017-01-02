@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/contrib/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module issuing the "correct" cookies for counting the site visitors
 
 USE_APACHE=	22

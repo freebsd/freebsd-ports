@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	news
 MASTER_SITES=	http://www.xs4all.nl/~suelette/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
 # This may be set interactively at install-time.  NNTPCache will

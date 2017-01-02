@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/sdlconsole/sdlconsole-source/sdlconsole-${PORTVERSION}
 DISTNAME=	sdlconsole-${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drop down console that can be easily added to any SDL application
 
 USES=		libtool

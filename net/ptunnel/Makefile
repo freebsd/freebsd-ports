@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uit.no/~daniels/PingTunnel/
 DISTNAME=	PingTunnel-${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunneling TCP connections over ICMP echo request and reply
 
 LICENSE=	BSD3CLAUSE
