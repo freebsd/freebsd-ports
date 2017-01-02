@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libsystem
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.defora.org/os/download/download/4392/
+MASTER_SITES=	http://www.defora.org/os/download/download/4446/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
@@ -14,13 +14,14 @@ COMMENT=	DeforaOS core system library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+
+BROKEN_FreeBSD_9=	fails to build
 
 MAKE_JOBS_UNSAFE=	yes
 
