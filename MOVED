@@ -8944,3 +8944,4 @@ x11-toolkits/linux-f10-tk85||2016-12-31|Removed
 x11-toolkits/linux-f10-blt||2016-12-31|Removed
 net-mgmt/unifi4|net-mgmt/unifi5|2017-01-01|Has expired: EoL as of 2017-01-01
 net/py-simplesoap|net/py-pysimplesoap|2017-01-01|Rename to match upstream naming
+textproc/docdiff|textproc/rubygem-docdiff|2017-01-02|Rename to match our rubygems naming
