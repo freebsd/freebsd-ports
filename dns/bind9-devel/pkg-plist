@@ -430,14 +430,14 @@ sbin/rndc-confgen
 sbin/tsig-keygen
 %%ETCDIR%%/rndc.conf.sample
 %%ETCDIR%%/bind.keys
-%%NOBASE%%etc/mtree/BIND.chroot.dist
-%%NOBASE%%etc/mtree/BIND.chroot.local.dist
-%%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
-%%NOBASE%%%%ETCDIR%%/named.root
-%%NOBASE%%%%ETCDIR%%/master/empty.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/dynamic
-%%NOBASE%%@dir %%ETCDIR%%/master
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/slave
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/working
+etc/mtree/BIND.chroot.dist
+etc/mtree/BIND.chroot.local.dist
+@sample %%ETCDIR%%/named.conf.sample
+%%ETCDIR%%/named.root
+%%ETCDIR%%/master/empty.db
+%%ETCDIR%%/master/localhost-forward.db
+%%ETCDIR%%/master/localhost-reverse.db
+@dir(bind,bind,) %%ETCDIR%%/dynamic
+@dir %%ETCDIR%%/master
+@dir(bind,bind,) %%ETCDIR%%/slave
+@dir(bind,bind,) %%ETCDIR%%/working
