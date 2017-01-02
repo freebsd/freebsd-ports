@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdf-reader
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
