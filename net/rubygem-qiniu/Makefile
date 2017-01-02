@@ -3,6 +3,7 @@
 
 PORTNAME=	qiniu
 PORTVERSION=	6.8.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Qiniu Resource (Cloud) Storage SDK for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-json>=1.8:devel/rubygem-json \
+RUN_DEPENDS=	rubygem-json1>=1.8:devel/rubygem-json1 \
 		rubygem-mime-types>=2.4.0:misc/rubygem-mime-types \
 		rubygem-rest-client>=1.8.0:www/rubygem-rest-client \
 		rubygem-ruby-hmac>=0.4:security/rubygem-ruby-hmac
