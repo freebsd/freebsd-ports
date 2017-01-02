@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	locker
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.defora.org/os/download/download/3703/
+MASTER_SITES=	http://www.defora.org/os/download/download/4424/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Locker-${PORTVERSION}
 
@@ -13,20 +12,47 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop screensaver
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on broken and expiring x11/deforaos-panel
-EXPIRATION_DATE=	2016-11-01
+LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
+				libSystem.so:devel/deforaos-libsystem \
+				libfontconfig.so:x11-fonts/fontconfig \
+				libfreetype.so:print/freetype2 \
+				libXss.so:x11/libXScrnSaver
 
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
-		libDesktop.so:x11/deforaos-libdesktop \
-		libXss.so:x11/libXScrnSaver
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:x11/deforaos-panel \
-		xsltproc:textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:x11/deforaos-panel
 
-USE_GNOME=	gtk20
-USES=		desktop-file-utils gettext pkgconfig
+USE_GNOME=	gtk20 cairo gdkpixbuf2
+USE_XORG=	x11 xext
+USES=		desktop-file-utils pkgconfig
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+LDFLAGS+=	-lXext
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+NLS_USES=		gettext
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+
+post-patch:
+	${REINPLACE_CMD} 's|-Wl,-pie||g' \
+		${WRKSRC}/tests/Makefile \
+		${WRKSRC}/tools/Makefile \
+		${WRKSRC}/src/Makefile
+
+post-patch-DOCS-off:
+	${REINPLACE_CMD} 's|data doc include|data include|' \
+		${WRKSRC}/Makefile
+
+post-patch-NLS-off:
+	${REINPLACE_CMD} 's|include po src|include src|' \
+		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* \
+		${STAGEDIR}${PREFIX}/lib/Locker/auth/* \
+		${STAGEDIR}${PREFIX}/lib/Locker/plugins/* \
+		${STAGEDIR}${PREFIX}/lib/Locker/demos/*
 
 .include <bsd.port.mk>

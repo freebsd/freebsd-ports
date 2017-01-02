@@ -15,8 +15,6 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
-BROKEN_FreeBSD_9=	does not build
-
 LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno

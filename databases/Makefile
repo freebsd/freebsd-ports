@@ -173,7 +173,6 @@
     SUBDIR += libzdb
     SUBDIR += linux-c6-sqlite3
     SUBDIR += linux-c7-sqlite3
-    SUBDIR += linux-f10-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
@@ -226,6 +225,7 @@
     SUBDIR += mysql57-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
+    SUBDIR += mysqldump-secure
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlreport
@@ -881,7 +881,6 @@
     SUBDIR += rubygem-dm-chunked_query
     SUBDIR += rubygem-dm-constraints
     SUBDIR += rubygem-dm-core
-    SUBDIR += rubygem-dm-devise
     SUBDIR += rubygem-dm-do-adapter
     SUBDIR += rubygem-dm-migrations
     SUBDIR += rubygem-dm-mysql-adapter

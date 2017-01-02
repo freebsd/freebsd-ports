@@ -30,6 +30,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}" LD=${CC}
 MAKE_ARGS=	OTHERLDFLAGS="${LDFLAGS}"
 
-BROKEN_FreeBSD_9=	Perl messes up the linking
-
 .include <bsd.port.mk>

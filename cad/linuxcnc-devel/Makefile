@@ -11,6 +11,8 @@ COMMENT=	Open Source CNC machine controller
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build, too few arguments to modbus_set_response_timeout
+
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libboost_python.so:devel/boost-python-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -26,7 +28,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/Img/libtkimg1.4.6.so:graphics/libimg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-BROKEN_FreeBSD_9=	requires libusb
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
 
 WRKSRC=		${WRKDIR}/linuxcnc-${GH_TAGNAME}/src
@@ -34,7 +35,10 @@ PATCH_WRKSRC=	${WRKDIR}/linuxcnc-${GH_TAGNAME}
 ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-realtime=uspace --enable-non-distributable=yes CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" CXXFLAGS="-I${LOCALBASE}/include" CXX=c++ CC=cc --with-locale-dir="${PREFIX}/share/locale"
+CONFIGURE_ARGS=	--with-realtime=uspace --enable-non-distributable=yes \
+		CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+		CXXFLAGS="-I${LOCALBASE}/include" CXX=c++ CC=cc \
+		--with-locale-dir="${PREFIX}/share/locale" --with-python=${PYTHON_CMD}
 MAKE_ENV=	BUILD_VERBOSE=1
 USES=		autoreconf gettext gmake ncurses pkgconfig python readline shebangfix tk
 USE_GL=		gl glu

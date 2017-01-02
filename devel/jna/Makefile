@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL2.1
 LICENSE_FILE_APACHE20=	${WRKSRC}/ASL2.0
 
-BROKEN_FreeBSD_9_i386=	does not build
-
 USES=		autoreconf:build gmake libtool
 USE_ANT=	yes
 USE_JAVA=	yes

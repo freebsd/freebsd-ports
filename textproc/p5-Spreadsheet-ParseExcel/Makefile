@@ -26,7 +26,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/Excel
 	${INSTALL_DATA} ${WRKSRC}/sample/README ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/*.pl ${STAGEDIR}${EXAMPLESDIR}

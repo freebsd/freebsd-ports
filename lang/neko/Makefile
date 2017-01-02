@@ -17,8 +17,6 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libfontconfig.so:x11-fonts/fontconfig libfreetype.so:print/freetype2 \
 		libmysqlclient.so:databases/mysql56-client
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		cmake pkgconfig sqlite:3
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango

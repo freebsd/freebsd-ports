@@ -3,6 +3,7 @@
 
 PORTNAME=	jekyll-assets
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

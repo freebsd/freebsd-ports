@@ -14,8 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 
-BROKEN_FreeBSD_9_i386=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 

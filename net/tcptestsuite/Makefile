@@ -4,7 +4,7 @@ PORTNAME=	tcptestsuite
 PORTVERSION=	0.0.2
 CATEGORIES=	net ipv6
 
-MAINTAINER=	gnn@freebsd.org
+MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Network stack test suite
 
 LICENSE=	BSD2CLAUSE

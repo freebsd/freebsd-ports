@@ -22,8 +22,6 @@ LIB_DEPENDS=	libknot.so:dns/knot2 \
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
-BROKEN_FreeBSD_9=	does not build, see PR#212215 for build failures
-
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ARGS+=	LIBDIR=${PREFIX}/lib
 MAKE_ARGS+=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig

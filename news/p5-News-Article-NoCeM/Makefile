@@ -8,7 +8,7 @@ CATEGORIES=	news perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to generate accurate NoCeM notices
 
 RUN_DEPENDS=	p5-News-Article>=0:news/p5-News-Article \

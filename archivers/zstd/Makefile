@@ -22,6 +22,4 @@ MAKE_ARGS=	MANDIR="${PREFIX}/man/man1" \
 		LIBDIR="${PREFIX}/lib" \
 		INCLUDEDIR="${PREFIX}/include"
 
-BROKEN_FreeBSD_9=	missing builtin bswap32 and bswap64
-
 .include <bsd.port.mk>

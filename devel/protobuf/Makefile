@@ -16,7 +16,6 @@ TEST_DEPENDS=	googlemock>=0:devel/googlemock \
 		googletest>=0:devel/googletest
 
 BROKEN_sparc64=	fails to compile: no atomic ops available
-BROKEN_FreeBSD_9=	does not build
 
 CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI
 GNU_CONFIGURE=	yes

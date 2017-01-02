@@ -26,8 +26,6 @@ USES=		gmake localbase pkgconfig ssl
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
 
-BROKEN_FreeBSD_9=	requires FreeBSD 10 or later
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|' ${WRKSRC}/configure ${WRKSRC}/lib/ccan/ccan/hash/hash.c
 

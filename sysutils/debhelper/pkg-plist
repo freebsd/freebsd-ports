@@ -68,6 +68,7 @@ bin/postinst-modules
 bin/postinst-systemd-dont-enable
 bin/postinst-systemd-enable
 bin/postinst-systemd-restart
+bin/postinst-systemd-restartnostart
 bin/postinst-systemd-start
 bin/postinst-ucf
 bin/postinst-usrlocal
@@ -106,5 +107,6 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Buildsystems.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Getopt.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Lib.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/build_stamp.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/python_support.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm

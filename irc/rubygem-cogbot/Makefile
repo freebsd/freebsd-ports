@@ -2,7 +2,7 @@
 
 PORTNAME=	cogbot
 PORTVERSION=	0.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-cinch>=2.3.1:irc/rubygem-cinch \
 		rubygem-nokogiri>=1.6.6.4:textproc/rubygem-nokogiri \
 		rubygem-daemons>=1.2.3:devel/rubygem-daemons \
 		rubygem-twitter>=5.15.0:net/rubygem-twitter \
-		rubygem-json>=1.8.3:devel/rubygem-json \
+		rubygem-json1>=1.8.3:devel/rubygem-json1 \
 		rubygem-yajl-ruby>=1.2.1:devel/rubygem-yajl-ruby \
 		rubygem-fortune_gem>=0.0.8:games/rubygem-fortune_gem
 

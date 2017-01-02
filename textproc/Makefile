@@ -133,7 +133,6 @@
     SUBDIR += docbook2X
     SUBDIR += docbook2mdoc
     SUBDIR += docbook2odf
-    SUBDIR += docdiff
     SUBDIR += doclifter
     SUBDIR += docproj
     SUBDIR += dom4j
@@ -451,11 +450,6 @@
     SUBDIR += linux-c7-aspell
     SUBDIR += linux-c7-expat
     SUBDIR += linux-c7-libxml2
-    SUBDIR += linux-f10-aspell
-    SUBDIR += linux-f10-expat
-    SUBDIR += linux-f10-libxml2
-    SUBDIR += linux-f10-scim-gtk
-    SUBDIR += linux-f10-scim-libs
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize
@@ -817,6 +811,7 @@
     SUBDIR += p5-Syntax-Highlight-Engine-Kate
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
     SUBDIR += p5-TOML
+    SUBDIR += p5-TOML-Parser
     SUBDIR += p5-TeX-Encode
     SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Template-Declare
@@ -1431,6 +1426,7 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
+    SUBDIR += rubygem-docdiff
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport

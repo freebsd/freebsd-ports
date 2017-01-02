@@ -8,7 +8,7 @@ CATEGORIES=	mail
 #MASTER_SITES=	http://www.inl.fr/download/
 MASTER_SITES=	LOCAL/leeym
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate statistics for spamd of Mail::SpamAssassin
 
 RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \

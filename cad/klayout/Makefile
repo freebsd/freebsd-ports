@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	klayout
-PORTVERSION=	0.24.8
+PORTVERSION=	0.24.9
 CATEGORIES=	cad
-MASTER_SITES=	http://www.klayout.org/downloads/
+MASTER_SITES=	http://www.klayout.org/downloads/source/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++0x execinfo gmake python:build
+USES=		compiler:c++0x execinfo gmake python
 USE_RUBY=	yes
 USE_QT4=	corelib designer gui network moc_build sql uic_build \
 		rcc_build qt3support xml
@@ -35,7 +35,7 @@ do-build:
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
 		_MAKE_JOBS="${_MAKE_JOBS}" LOCALBASE="${LOCALBASE}" \
 		${SH} build.sh -platform ${PLATFORMKEYWORD} \
-		-qtbin ${PREFIX}/bin \
+		-qtbin ${QT_BINDIR} \
 		-qtinc ${QT_INCDIR} \
 		-qtlib ${QT_LIBDIR} \
 		-python ${PYTHON_CMD}

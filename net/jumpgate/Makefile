@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	http://jumpgate.sourceforge.net/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP connection forwarder
 
 GNU_CONFIGURE=	yes

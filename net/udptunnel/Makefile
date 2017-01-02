@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel UDP packets over a TCP connection
 
 GNU_CONFIGURE=	yes

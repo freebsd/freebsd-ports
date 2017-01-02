@@ -8854,3 +8854,94 @@ comms/libcodec2|audio/codec2|2016-12-26|Removed: Duplicate port use `audio/codec
 databases/py-sqlalchemy07|databases/py-sqlalchemy10|2016-12-27|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
 security/openvpn-polarssl|security/openvpn-mbedtls|2016-12-27|Slave port renamed to match the TLS library's new name.
 www/p5-ParallelUA|www/p5-ParallelUserAgent|2016-12-31|Rename to match upstream naming
+lang/perl5.18||2016-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
+audio/linux-f10-sdl_mixer||2016-12-31|Removed
+audio/linux-f10-pulseaudio-libs||2016-12-31|Removed
+audio/linux-f10-freealut||2016-12-31|Removed
+audio/linux-f10-arts||2016-12-31|Removed
+audio/linux-f10-esound||2016-12-31|Removed
+audio/linux-f10-libogg||2016-12-31|Removed
+audio/linux-f10-alsa-plugins-oss||2016-12-31|Removed
+audio/linux-f10-openal||2016-12-31|Removed
+audio/linux-f10-openal-soft||2016-12-31|Removed
+audio/linux-f10-nas-libs||2016-12-31|Removed
+audio/linux-f10-alsa-lib||2016-12-31|Removed
+audio/linux-f10-libvorbis||2016-12-31|Removed
+audio/linux-f10-libaudiofile||2016-12-31|Removed
+audio/linux-f10-mikmod||2016-12-31|Removed
+databases/linux-f10-sqlite3||2016-12-31|Removed
+devel/linux-f10-dbus-glib||2016-12-31|Removed
+devel/linux-f10-sdl12||2016-12-31|Removed
+devel/linux-f10-libglade2||2016-12-31|Removed
+devel/linux-f10-devtools||2016-12-31|Removed
+devel/linux-f10-allegro||2016-12-31|Removed
+devel/linux-f10-nspr||2016-12-31|Removed
+devel/linux-f10-dbus-libs||2016-12-31|Removed
+devel/linux-f10-libsigc++20||2016-12-31|Removed
+devel/linux-f10-ncurses-base||2016-12-31|Removed
+dns/linux-f10-libasyncns||2016-12-31|Removed
+emulators/linux_base-f10||2016-12-31|Removed
+emulators/linux-f10||2016-12-31|Removed
+ftp/linux-f10-curl||2016-12-31|Removed
+games/dsnake||2016-12-31|Removed
+graphics/linux-f10-sdl_image||2016-12-31|Removed
+graphics/linux-f10-sdl_ttf||2016-12-31|Removed
+graphics/linux-f10-glew||2016-12-31|Removed
+graphics/linux-f10-ungif||2016-12-31|Removed
+graphics/linux-f10-png||2016-12-31|Removed
+graphics/linux-f10-tiff||2016-12-31|Removed
+graphics/linux-f10-dri||2016-12-31|Removed
+graphics/linux-f10-jpeg||2016-12-31|Removed
+graphics/linux-f10-libGLU||2016-12-31|Removed
+graphics/linux-f10-gdk-pixbuf||2016-12-31|Removed
+graphics/linux-f10-libmng||2016-12-31|Removed
+graphics/linux-f10-cairo||2016-12-31|Removed
+graphics/linux-f10-imlib||2016-12-31|Removed
+lang/linux-f10-tcl85||2016-12-31|Removed
+lang/linux-f10-libg2c||2016-12-31|Removed
+multimedia/linux-f10-libtheora||2016-12-31|Removed
+multimedia/linux-f10-libv4l||2016-12-31|Removed
+net/linux-f10-openldap||2016-12-31|Removed
+net/linux-f10-nss_ldap||2016-12-31|Removed
+print/linux-f10-cups-libs||2016-12-31|Removed
+security/linux-f10-gnutls||2016-12-31|Removed
+security/linux-f10-nss||2016-12-31|Removed
+security/linux-f10-openssl||2016-12-31|Removed
+security/linux-f10-libgpg-error||2016-12-31|Removed
+security/linux-f10-libtasn1||2016-12-31|Removed
+security/linux-f10-libgcrypt||2016-12-31|Removed
+security/linux-f10-libssh2||2016-12-31|Removed
+security/linux-f10-cyrus-sasl2||2016-12-31|Removed
+sysutils/linux-f10-procps||2016-12-31|Removed
+textproc/linux-f10-aspell||2016-12-31|Removed
+textproc/linux-f10-expat||2016-12-31|Removed
+textproc/linux-f10-scim-gtk||2016-12-31|Removed
+textproc/linux-f10-scim-libs||2016-12-31|Removed
+textproc/linux-f10-libxml2||2016-12-31|Removed
+x11/linux-f10-xorg-libs||2016-12-31|Removed
+x11-fonts/linux-f10-fontconfig||2016-12-31|Removed
+x11-themes/linux-f10-qtcurve-gtk2||2016-12-31|Removed
+x11-themes/linux-f10-hicolor-icon-theme||2016-12-31|Removed
+x11-toolkits/linux-f10-qt45||2016-12-31|Removed
+x11-toolkits/linux-f10-gtk2||2016-12-31|Removed
+x11-toolkits/linux-f10-openmotif||2016-12-31|Removed
+x11-toolkits/linux-f10-pango||2016-12-31|Removed
+accessibility/linux-f10-atk||2016-12-31|Removed
+archivers/linux-f10-ucl||2016-12-31|Removed
+archivers/linux-f10-upx||2016-12-31|Removed
+devel/rubygem-devise-async-rails4||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+devel/rubygem-devise-async||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+net/iet||2016-12-31|Has expired: Upstream no longer active
+sysutils/geomgui||2016-12-31|Has expired: Development stopped years ago.
+sysutils/screen-legacy||2016-12-31|Has expired: Old version released 2008-08-07 no longer upline maintained.
+sysutils/ntfsprogs|sysutils/fusefs-ntfs|2016-12-31|Has expired: Superseded by sysutils/fusefs-ntfs
+www/rubygem-jekyll2|www/rubygem-jekyll|2016-12-31|Has expired: Use www/rubygem-jekyll instead
+databases/rubygem-dm-devise||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
+devel/rubygem-sprockets211||2016-12-31|Has expired: Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
+devel/p5-Parse-CPAN-Meta||2016-12-31|Has expired: Merged into devel/p5-CPAN-Meta 2.150008
+devel/jtag|devel/urjtag|2016-12-31|Has expired: development ceased 2003, superceded by devel/urjtag
+x11-toolkits/linux-f10-tk85||2016-12-31|Removed
+x11-toolkits/linux-f10-blt||2016-12-31|Removed
+net-mgmt/unifi4|net-mgmt/unifi5|2017-01-01|Has expired: EoL as of 2017-01-01
+net/py-simplesoap|net/py-pysimplesoap|2017-01-01|Rename to match upstream naming
+textproc/docdiff|textproc/rubygem-docdiff|2017-01-02|Rename to match our rubygems naming

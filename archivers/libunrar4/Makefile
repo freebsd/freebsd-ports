@@ -7,8 +7,13 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
 
-MAINTAINER=	joris@vandalon.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to work with RAR archives
+
+DEPRECATED=	Outdated version. Please use archivers/libunrar5 instead
+EXPIRATION_DATE=	2017-03-01
+
+CONFLICTS_INSTALL=	libunrar-3* libunrar5-5*
 
 WRKSRC=		${WRKDIR}/unrar
 

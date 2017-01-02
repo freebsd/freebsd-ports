@@ -15,8 +15,6 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-BROKEN_FreeBSD_9=	does not build # revisit when ports gcc is switched to 4.9
-
 USE_GITHUB=	yes
 
 USES=		compiler:c++11-lib jpeg localbase:ldflags openal scons

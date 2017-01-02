@@ -12,8 +12,6 @@ COMMENT=	Simple disk I/0 latency measuring tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x: lack of mkostemp()
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	koct9i
 

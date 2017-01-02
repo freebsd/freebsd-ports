@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

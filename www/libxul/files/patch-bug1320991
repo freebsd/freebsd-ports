@@ -1,0 +1,43 @@
+commit 454e2dbe1b4f
+Author: Mike Shal <mshal@mozilla.com>
+Date:   Tue Dec 20 16:37:18 2016 -0500
+
+    Bug 1320991 - Support --with-system-{nss,nspr} in modules/libmar; r?glandium
+    
+    The problem with the modules/libmar/tests/moz.build file when building
+    --with-system-nspr and --with-system-nss is that the nss libraries don't
+    exist in the tree, so they fail when trying to copy into the test
+    directory.
+    
+    However, it turns out that the libraries copied into the test directory
+    aren't even used when building with an in-tree copy, because the
+    xpcshell launcher sets LD_LIBRARY_PATH to point to dist/bin. Since we
+    use the dist/bin copies anyway for an in-tree build, we can stop copying
+    them into the test directory and simultaneously fix the --with-system
+    build.
+    
+    The DEFINES can also go away since this directory doesn't actually build
+    anything.
+    
+    MozReview-Commit-ID: Bk2f28wc9ZJ
+---
+ modules/libmar/tests/moz.build | 17 -----------------
+ 1 file changed, 17 deletions(-)
+
+diff --git modules/libmar/tests/moz.build modules/libmar/tests/moz.build
+index ee72571b0c6b..9642553e8aa2 100644
+--- modules/libmar/tests/Makefile.in
++++ modules/libmar/tests/Makefile.in
+@@ -10,12 +10,5 @@ ifneq ($(OS_TARGET),Android)
+ ifndef MOZ_PROFILE_GENERATE
+ libs::
+ 	$(INSTALL) ../tool/signmar$(BIN_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nss3$(DLL_SUFFIX) $(TESTROOT)/unit
+-ifndef MOZ_FOLD_LIBS
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nssutil3$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)plc4$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)nspr4$(DLL_SUFFIX) $(TESTROOT)/unit
+-	$(INSTALL) $(DEPTH)/dist/bin/$(DLL_PREFIX)plds4$(DLL_SUFFIX) $(TESTROOT)/unit
+-endif
+ endif
+ endif # Not Android

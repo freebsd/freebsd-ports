@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 BUILD_DEPENDS=	clang39:devel/llvm39
 RUN_DEPENDS=	clang39:devel/llvm39
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		cmake:outsource ncurses python:run
 USE_GITHUB=	yes
 

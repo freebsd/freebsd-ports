@@ -28,6 +28,4 @@ QMAKE_ARGS+=	QMAKE_CXXFLAGS_CXX11=
 
 PLIST_FILES=	bin/dilay
 
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10: "unordered_set" not found
-
 .include <bsd.port.mk>

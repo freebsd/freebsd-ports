@@ -1,4 +1,4 @@
---- Makefile.orig	2014-12-28 14:23:52 UTC
+--- Makefile.orig	2017-01-01 19:28:19 UTC
 +++ Makefile
 @@ -16,8 +16,8 @@ CC           ?= $(CROSS)gcc
  
@@ -15,8 +15,8 @@
  
  ## Common
  CFLAGS       += $(MCAST_INCLUDE) $(INCLUDES) $(DEFS) $(USERCOMPILE)
--CFLAGS       += -O2 -W -Wall -Werror
-+#CFLAGS       += -O2 -W -Wall -Werror
+-CFLAGS       += -O2 -W -Wall -Wextra
++#CFLAGS       += -O2 -W -Wall -Wextra
  #CFLAGS       += -O -g
  LDLIBS        = $(EXTRA_LIBS)
  LDFLAGS      += -Wl,-Map,$@.map
@@ -25,7 +25,7 @@
  SRCS          = $(OBJS:.o=.c)
 -MANS          = $(addsuffix .8,$(EXECS))
 -DISTFILES     = README AUTHORS LICENSE ChangeLog
-+MANS          = ${EXECS:S/$/.8/}
++MANS          = $(EXECS:S/$/.8/)
 +DISTFILES     = README AUTHORS ChangeLog
  
  LINT          = splint

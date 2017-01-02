@@ -21,8 +21,6 @@ BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash \
 		${LOCALBASE}/include/utf8.h:devel/utf8cpp
 RUN_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
 
-BROKEN_FreeBSD_9=	does not build (lack of c++11 support)
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode
 

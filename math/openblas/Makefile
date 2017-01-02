@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.18
-PORTREVISION=	3
+PORTVERSION=	0.2.19
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	GH NL/lapack/timing/:lapack_tmg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		large.tgz:lapack_tmg timing.tgz:lapack_tmg
+MASTER_SITES=	NL/lapack/timing/:lapack_tmg
+DISTFILES=	large.tgz:lapack_tmg timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp

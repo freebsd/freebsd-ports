@@ -17,8 +17,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libirstlm.so:textproc/irstlm
 RUN_DEPENDS=	lmplz:textproc/kenlm
 
-BROKEN_FreeBSD_9=	does not link
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	moses-smt
 

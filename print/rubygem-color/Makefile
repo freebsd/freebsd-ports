@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	color
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 

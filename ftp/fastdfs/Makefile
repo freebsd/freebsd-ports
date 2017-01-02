@@ -11,8 +11,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon
 
-BROKEN_FreeBSD_9_i386=	does not build (/usr/local/lib/libfastcommon.so: undefined reference to `__sync_sub_and_fetch_8')
-
 USES=		perl5
 USE_LDCONFIG=	yes
 

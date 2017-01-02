@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 BROKEN_powerpc64=	does not build
-BROKEN_FreeBSD_9=	does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PurpleI2P

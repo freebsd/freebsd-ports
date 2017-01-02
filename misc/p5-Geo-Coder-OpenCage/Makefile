@@ -25,13 +25,4 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-HTTP-Tiny>=0.028:www/p5-HTTP-Tiny \
-		p5-Pod-Perldoc>=3.21:textproc/p5-Pod-Perldoc
-RUN_DEPENDS+=	p5-HTTP-Tiny>=0.028:www/p5-HTTP-Tiny \
-		p5-Pod-Perldoc>=3.21:textproc/p5-Pod-Perldoc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,8 +23,6 @@ LIB_DEPENDS=	libraw.so:graphics/libraw \
 		liblcms2.so:graphics/lcms2 \
 		libXcm.so:x11/libXcm
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		cmake gettext iconv pkgconfig tar:bzip2
 USE_GL=		yes
 USE_LDCONFIG=	yes

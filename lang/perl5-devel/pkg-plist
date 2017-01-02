@@ -109,7 +109,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Compress/Zlib.pm
 %%PRIV_LIB%%/Config/Extensions.pm
 %%PRIV_LIB%%/Config/Perl/V.pm
-%%PRIV_LIB%%/Config_heavy.pl.bak
 %%PRIV_LIB%%/DB.pm
 %%PRIV_LIB%%/DBM_Filter.pm
 %%PRIV_LIB%%/DBM_Filter/compress.pm

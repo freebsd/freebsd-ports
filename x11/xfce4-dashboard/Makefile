@@ -20,8 +20,6 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 	libcogl.so:graphics/cogl \
 	libclutter-1.0.so:graphics/clutter
 
-BROKEN_FreeBSD_9=	requires recent GPU drivers
-
 GNU_CONFIGURE=	yes
 USES=	gettext-tools gmake localbase libtool pathfix perl5 pkgconfig \
 	tar:bzip2 xfce:gtk3

@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 BROKEN_i386=		does not build: don't know how to make sample_support_i386.c
 BROKEN_powerpc64=	does not build
 BROKEN_sparc64=		does not build: don't know how to make sample_support_sparc64.c
-BROKEN_FreeBSD_9=	does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \

@@ -7,7 +7,7 @@ PORTREVISION=	19
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 
-MAINTAINER=	deischen@freebsd.org
+MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	Motif CD player
 
 LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \

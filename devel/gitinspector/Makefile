@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statistical analysis tool for git repositories
 
 LICENSE=	GPLv3

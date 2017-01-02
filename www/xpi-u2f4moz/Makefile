@@ -11,8 +11,6 @@ COMMENT=	U2F support extension for Firefox
 
 LICENSE=	LGPL21
 
-BROKEN_FreeBSD_9=	does not build
-
 CMAKE_SOURCE_PATH=	c_src
 
 FIREFOX_EXTENSIONS_DIR=	lib/firefox/browser/extensions

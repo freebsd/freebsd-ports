@@ -6,6 +6,8 @@ PORTREVISION=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
+BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
+
 BUILD_DEPENDS+=	bjam:devel/boost-jam
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS
@@ -29,6 +31,15 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 MAKE_ARGS+=	--without-python
 ALL_TARGET=	stage
 
+.include <bsd.port.pre.mk>
+
+# XXX CHOSEN_COMPILER_VERSION isn't supported, so check CXX hasn't changed
+.if ${ARCH} == aarch64 && ${CXX} == c++ && \
+    ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 39
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-no-integrated-as
+.endif
+
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
@@ -50,4 +61,4 @@ post-install:
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

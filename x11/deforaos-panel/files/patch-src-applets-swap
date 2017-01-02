@@ -1,0 +1,50 @@
+--- src/applets/swap.c.orig	2015-10-24 01:33:21.000000000 +0200
++++ src/applets/swap.c	2016-03-02 09:10:06.697330000 +0100
+@@ -19,9 +19,15 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
+-#if defined(__linux__)
++#if defined(__FreeBSD__)
++# include <sys/types.h>
++# include <sys/sysctl.h>
++# include <sys/vmmeter.h>
++# include <vm/vm_param.h>
++#elif defined(__linux__)
+ # include <sys/sysinfo.h>
+ #elif defined(__NetBSD__)
++# include <sys/param.h>
+ # include <sys/sysctl.h>
+ # include <uvm/uvm_extern.h>
+ #endif
+@@ -128,7 +134,20 @@
+ /* swap_on_timeout */
+ static gboolean _swap_on_timeout(gpointer data)
+ {
+-#if defined(__linux__)
++#if defined(__FreeBSD__)
++	Swap * swap = data;
++	int mib[] = { CTL_VM, VM_TOTAL };
++	struct vmtotal t;
++	size_t size = sizeof(t);
++	gdouble value;
++
++	if(sysctl(mib, 2, &t, &size, NULL, 0) < 0)
++		return TRUE;
++	value = t.t_rm;
++	value /= t.t_vm;
++	_swap_set(swap, value);
++	return TRUE;
++#elif defined(__linux__)
+ 	Swap * swap = data;
+ 	struct sysinfo sy;
+ 	gdouble value;
+@@ -157,7 +176,7 @@
+ 	Swap * swap = data;
+ 
+ 	/* FIXME not supported */
+-	swap->source = 0;
++	swap->timeout = 0;
+ 	return FALSE;
+ #endif
+ }

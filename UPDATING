@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170102:
+  AFFECTS: multimedia/ffmpeg
+  AUTHOR: jbeich@FreeBSD.org
+
+  OPTIMIZED_CFLAGS switched to only use vendor optimizations which
+  means -ffast-math -fno-finite-math-only are no longer applied. If
+  you did like the former behavior consider adding
+
+      # multimedia/ffmpeg/Makefile.local
+      OPTIMIZED_CFLAGS_CFLAGS += -ffast-math -fno-finite-math-only
+
+  or
+
+      # /etc/make.conf
+      .if ${.CURDIR:M*/multimedia/ffmpeg}
+      CFLAGS += -ffast-math -fno-finite-math-only
+      .endif
+
 20161230:
   AFFECTS: users of x11/xfce4-terminal
   AUTHOR: olivierd@FreeBSD.org

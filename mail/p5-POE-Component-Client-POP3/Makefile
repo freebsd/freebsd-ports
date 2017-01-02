@@ -22,7 +22,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 

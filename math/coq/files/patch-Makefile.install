@@ -1,0 +1,11 @@
+--- Makefile.install.orig	2016-12-08 15:13:52 UTC
++++ Makefile.install
+@@ -29,7 +29,7 @@ install-doc-no:
+ .PHONY: install install-doc-all install-doc-no
+ 
+ #These variables are intended to be set by the caller to make
+-#COQINSTALLPREFIX=
++COQINSTALLPREFIX=${DESTDIR}
+ #OLDROOT=
+ 
+   # Can be changed for a local installation (to make packages).

@@ -11,8 +11,6 @@ COMMENT=	Fast, secure HTTP/1.1 CGI/1.1 SSL IPv4/IPv6 webserver
 
 LICENSE=	ISCL
 
-BROKEN_FreeBSD_9=	does not build
-
 NOSTROMO_DIR?=		nostromo
 NOSTROMO_LOGDIR?=	${NOSTROMO_DIR}/logs
 NOSTROMO_LOGDIR_PERMS?=	0775

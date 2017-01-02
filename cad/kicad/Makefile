@@ -52,9 +52,6 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 
-# undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
-BROKEN_FreeBSD_9=	does not link
-
 DOXYGEN_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_IMPLIES=	DOCS

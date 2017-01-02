@@ -1966,7 +1966,6 @@
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-watch
-    SUBDIR += rubygem-jekyll2
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-atwho-rails-rails4

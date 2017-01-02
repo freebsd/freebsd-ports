@@ -12,6 +12,8 @@
 %%SITE_PERL%%/MetaCPAN/Client/Request.pm
 %%SITE_PERL%%/MetaCPAN/Client/ResultSet.pm
 %%SITE_PERL%%/MetaCPAN/Client/Role/Entity.pm
+%%SITE_PERL%%/MetaCPAN/Client/Scroll.pm
+%%SITE_PERL%%/MetaCPAN/Client/Types.pm
 %%PERL5_MAN3%%/MetaCPAN::Client.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Author.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Distribution.3.gz
@@ -26,3 +28,5 @@
 %%PERL5_MAN3%%/MetaCPAN::Client::Request.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::ResultSet.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Role::Entity.3.gz
+%%PERL5_MAN3%%/MetaCPAN::Client::Scroll.3.gz
+%%PERL5_MAN3%%/MetaCPAN::Client::Types.3.gz

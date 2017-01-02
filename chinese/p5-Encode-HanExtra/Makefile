@@ -8,7 +8,7 @@ CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extra sets of Chinese encodings
 
 LICENSE=	MIT

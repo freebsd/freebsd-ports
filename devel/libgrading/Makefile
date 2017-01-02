@@ -12,8 +12,6 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libdistance.so:devel/libdistance
 
-BROKEN_FreeBSD_9=	does not build (lack of std::to_string)
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	trombonehero
 

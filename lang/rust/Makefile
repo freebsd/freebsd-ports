@@ -27,8 +27,6 @@ BUILD_DEPENDS=		cmake:devel/cmake
 ONLY_FOR_ARCHS?=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-BROKEN_FreeBSD_9=	Only compiles on FreeBSD 10 and later
-
 DISTINFO_FILE?=	${MASTERDIR}/distinfo.${ARCH}
 
 # FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of

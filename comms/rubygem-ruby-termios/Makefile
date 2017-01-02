@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-termios
-PORTVERSION=	0.9.6
+PORTVERSION=	1.0.2
 CATEGORIES=	comms rubygems
 MASTER_SITES=	RG
 

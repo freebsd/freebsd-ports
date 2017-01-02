@@ -28,16 +28,9 @@ PORTDOCS=	*
 
 SSE2_CONFIGURE_ENABLE=	sse
 
-.include <bsd.port.pre.mk>
-
-# FreeBSD 9 does not have SOCK_CLOEXEC.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000031
-CXXFLAGS+=	-DSOCK_CLOEXEC=0
-.endif
-
 post-install:
 .for file in copydatabase delve quest
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${STAGEDIR}${PREFIX}/bin/xapian-${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

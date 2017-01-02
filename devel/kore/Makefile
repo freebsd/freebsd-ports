@@ -48,8 +48,6 @@ JSONRPC_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 DEBUG_VARS=	MAKE_ARGS+=DEBUG=1
 
-BROKEN_FreeBSD_9=	does not build
-
 post-patch:
 # Disable kore's own optimizations flags, make sure the correct flags
 # are set when LOCALBASE is not /usr/local, and allow __generic on

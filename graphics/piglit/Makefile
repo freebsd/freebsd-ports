@@ -24,8 +24,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	dumbbell
 GH_PROJECT=	piglit

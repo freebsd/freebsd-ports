@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.14.10
+PORTVERSION=	0.14.16
 CATEGORIES=	science
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
@@ -24,7 +24,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
 PORTSCOUT=	limitw:1,even
 
 USE_XORG=	x11
-USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
+USE_GNOME=	cairo gnomedocutils gtk30 intlhack libgsf libxml2
+USE_GL=		gl
 USES=		desktop-file-utils gettext gmake libtool:keepla localbase:ldflags \
 		pathfix pkgconfig shared-mime-info tar:xz
 USE_LDCONFIG=	yes

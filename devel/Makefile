@@ -1131,7 +1131,6 @@
     SUBDIR += json-glib
     SUBDIR += jsoncpp
     SUBDIR += jsonnet
-    SUBDIR += jtag
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += k8048
@@ -1502,15 +1501,6 @@
     SUBDIR += linux-c7-qt
     SUBDIR += linux-c7-sdl12
     SUBDIR += linux-c7-sdl20
-    SUBDIR += linux-f10-allegro
-    SUBDIR += linux-f10-dbus-glib
-    SUBDIR += linux-f10-dbus-libs
-    SUBDIR += linux-f10-devtools
-    SUBDIR += linux-f10-libglade2
-    SUBDIR += linux-f10-libsigc++20
-    SUBDIR += linux-f10-ncurses-base
-    SUBDIR += linux-f10-nspr
-    SUBDIR += linux-f10-sdl12
     SUBDIR += linux-kernel
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
@@ -2995,7 +2985,6 @@
     SUBDIR += p5-Params-Validate-Dependencies
     SUBDIR += p5-Params-ValidationCompiler
     SUBDIR += p5-Paranoid
-    SUBDIR += p5-Parse-CPAN-Meta
     SUBDIR += p5-Parse-CPAN-Packages
     SUBDIR += p5-Parse-CPAN-Packages-Fast
     SUBDIR += p5-Parse-ErrorString-Perl
@@ -5119,8 +5108,6 @@
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-descendants_tracker
     SUBDIR += rubygem-devise
-    SUBDIR += rubygem-devise-async
-    SUBDIR += rubygem-devise-async-rails4
     SUBDIR += rubygem-devise-rails4
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
@@ -5177,6 +5164,7 @@
     SUBDIR += rubygem-get_process_mem
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
+    SUBDIR += rubygem-gettext-setup
     SUBDIR += rubygem-gh
     SUBDIR += rubygem-gibbler
     SUBDIR += rubygem-gio2
@@ -5224,6 +5212,7 @@
     SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
+    SUBDIR += rubygem-json1
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers
@@ -5334,6 +5323,7 @@
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
+    SUBDIR += rubygem-rake-contrib
     SUBDIR += rubygem-ransack
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rash
@@ -5421,7 +5411,6 @@
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
     SUBDIR += rubygem-sprockets-sass
-    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets22
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
@@ -5658,6 +5647,7 @@
     SUBDIR += umem
     SUBDIR += umlgraph
     SUBDIR += unibilium
+    SUBDIR += unittest-cpp
     SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp

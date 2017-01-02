@@ -4,7 +4,7 @@
 PORTNAME=	openarena
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kami@freebsd.org
+MAINTAINER=	kami@FreeBSD.org
 COMMENT=	OpenArena dedicated server
 
 LICENSE=	GPLv2

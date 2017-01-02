@@ -22,6 +22,4 @@ LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/tmate man/man1/tmate.1.gz
 
-BROKEN_FreeBSD_9=	Does not build
-
 .include <bsd.port.mk>

@@ -11,8 +11,6 @@ COMMENT=	Library which provides a way to read/write CAD (DWG/DXF/DXFB) files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_9=	does not build (lack of c++11 support)
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sandyre
 

@@ -1,0 +1,18 @@
+--- src/applets/bluetooth.c.orig	2016-03-02 00:18:48.529828000 +0100
++++ src/applets/bluetooth.c	2016-03-02 00:19:04.332171000 +0100
+@@ -21,14 +21,12 @@
+ # include <bluetooth.h>
+ # include <unistd.h>
+ # include <stdio.h>
+-# include <string.h>
+-# include <errno.h>
+ #elif defined(__linux__)
+ # include <fcntl.h>
+ # include <unistd.h>
++#endif
+ # include <string.h>
+ # include <errno.h>
+-#endif
+ #include <stdlib.h>
+ #include <libintl.h>
+ #include <System.h>

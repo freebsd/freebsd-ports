@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE based filesystem with replication at the filesystem level
 
 BROKEN=		Unfetchable (google code has gone away)

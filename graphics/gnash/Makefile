@@ -25,8 +25,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-BROKEN_FreeBSD_9=	does not build (Syntax error: ";" unexpected)
-
 CONFLICTS=	gnash-devel-[0-9]*
 
 USES=		cpe tar:bzip2 compiler:features autoreconf pkgconfig gmake libtool jpeg desktop-file-utils

@@ -20,13 +20,7 @@ PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bi
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python ssl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
-IGNORE=		py-m2crypto requires OpenSSL 1.0.1e+
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/__m2crypto.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

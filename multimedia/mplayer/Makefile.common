@@ -6,7 +6,7 @@
 
 MPLAYER_PORT_VERSION=	1.3.0
 MPLAYER_SNAPSHOT_DATE=	2016-12-28
-PORTREVISION?=	0
+PORTREVISION?=	1
 MASTER_SITES=	LOCAL/riggs/mplayer
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
@@ -48,7 +48,8 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-libmpeg2 \
 		--disable-nemesi \
 		--disable-real \
-		--enable-ass-internal
+		--enable-ass-internal \
+		--yasm=''
 
 WANT_GNOME=	yes
 

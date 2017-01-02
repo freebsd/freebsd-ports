@@ -20,8 +20,6 @@ NOPIE_PORTS=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
-BROKEN_FreeBSD_9=Does not build on 9.x: compiler options unrecognized
-
 # inplace replacement to remove relative binary path in examples scripts
 post-patch:
 	@${REINPLACE_CMD} -i "" -E "s,\.\./,," ${WRKSRC}/examples/*.sh

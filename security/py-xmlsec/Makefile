@@ -18,8 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 
-BROKEN_FreeBSD_9=	does not build
-
 USES=		python:2 ssl
 USE_PYTHON=	distutils autoplist
 

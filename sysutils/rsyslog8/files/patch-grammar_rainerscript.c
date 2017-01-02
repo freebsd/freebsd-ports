@@ -1,4 +1,4 @@
---- grammar/rainerscript.c.orig	2016-05-30 10:40:35 UTC
+--- grammar/rainerscript.c.orig	2016-11-13 15:46:26 UTC
 +++ grammar/rainerscript.c
 @@ -35,6 +35,7 @@
  #include <sys/stat.h>

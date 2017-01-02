@@ -11,7 +11,6 @@ COMMENT=	Fast out-of-core learning system
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-BROKEN_FreeBSD_9=	does not build
 BROKEN_powerpc64=	Does not build
 
 USES=		compiler:c++11-lang libtool

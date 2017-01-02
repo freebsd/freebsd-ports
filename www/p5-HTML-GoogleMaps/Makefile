@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple wrapper around the Google Maps API
 
 RUN_DEPENDS=	p5-Geo-Coder-Google>=0.02:misc/p5-Geo-Coder-Google

@@ -27,7 +27,6 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-BROKEN_FreeBSD_9_i386=	Multiple code issues on i386 < 10.0-RELEASE
 BROKEN_aarch64=		Fails to compile: error: variable res is uninitialized
 
 .include <bsd.port.pre.mk>

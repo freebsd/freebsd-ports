@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	2.17.2322.102
-PORTREVISION=	3
+PORTVERSION=	2.20.2677.102.02
+DISTVERSIONPREFIX=	v
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -15,15 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ninja:devel/ninja \
 		gyp:devel/py-gyp
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
+LIB_DEPENDS=	libprotobuf.so.11:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
-GH_TUPLE=	google:${PORTNAME}:9b4c9e0 \
+GH_TUPLE=	hrs-allbsd:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION} \
 		hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
 
-USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
+USES=		compiler:c++11-lang pkgconfig gmake \
 		tar:bzip2 python:2.7,build shebangfix
 SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -44,10 +44,13 @@ LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
 LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
 USE_GNOME=	glib20 gtk20
-USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
+USE_QT5=	buildtools core gui widgets
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
+USES+=		gettext-runtime
 USE_XORG=	xcb
-USE_GNOME=	glib20 gtk20
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 USE_EMACS=	yes
 .elif ${BUILD_MOZC_LIST:Mfcitx_mozc}
@@ -71,12 +74,12 @@ BROKEN=		Does not compile: segfault
 GYP_DEFINES=	use_libprotobuf=1 \
 		channel_dev=0 \
 		enable_unittest=0 \
-		compiler_host="${_CCTYPE}" \
-		compiler_target="${_CCTYPE}" \
+		compiler_host='${_CCTYPE}' \
+		compiler_target='${_CCTYPE}' \
 		use_libzinnia=1 \
-		zinnia_model_file="${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model" \
-		ibus_mozc_icon_path="${LOCALBASE}/share/ibus-mozc/icons/product_icon.png" \
-		ibus_mozc_path="${PREFIX}/libexec/ibus-engine-mozc"
+		zinnia_model_file='${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model' \
+		ibus_mozc_icon_path='${LOCALBASE}/share/ibus-mozc/icons/product_icon.png' \
+		ibus_mozc_path='${PREFIX}/libexec/ibus-engine-mozc'
 BUILD_MODE=	Release
 BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${MAKE_CMD}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
@@ -94,8 +97,6 @@ BUILD_MOZC_CMD_BUILD=	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} ${_MAKE_JOBS}
 BUILD_GYP_CMD=	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gyp
 
 post-patch:
-	${REINPLACE_CMD} 's,-liconv,${ICONV_LIB},g' \
-	    ${BUILD_WRKSRC}/gui/qt_libraries.gypi
 	${FIND} ${BUILD_WRKSRC} \( -name '*.gyp' -o -name '*.gypi' \) -exec \
 	    ${REINPLACE_CMD} "s,'python','${PYTHON_CMD}',g" {} \;
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
@@ -133,8 +134,8 @@ GYP_DEFINES+=	use_libibus=0 \
 
 MASTER_SITES+=	LOCAL/kuriyama:zipcode
 DISTFILES+= \
-	ken_all-20160428.zip:zipcode \
-	jigyosyo-20160428.zip:zipcode
+	ken_all-20161031.zip:zipcode \
+	jigyosyo-20161031.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
@@ -146,9 +147,10 @@ post-extract-mozc_server:
 		${UNZIP_NATIVE_CMD} -L -d ${BUILD_WRKSRC}/data/dictionary_oss \
 		    ${DISTDIR}/$$F; \
 	done
-	@cd ${BUILD_WRKSRC}/data/dictionary_oss && \
-	    ${PYTHON_CMD} ${BUILD_WRKSRC}/dictionary/gen_zip_code_seed.py \
-	    --zip_code=ken_all.csv --jigyosyo=jigyosyo.csv \
+	cd ${BUILD_WRKSRC}/data/dictionary_oss && \
+	    ${SETENV} PYTHONPATH=${BUILD_WRKSRC} \
+		${PYTHON_CMD} ${BUILD_WRKSRC}/dictionary/gen_zip_code_seed.py \
+		--zip_code=ken_all.csv --jigyosyo=jigyosyo.csv \
 	    >> dictionary09.txt
 	${MV} ${WRKSRC_udic}/usage_dict.txt \
 	    ${BUILD_WRKSRC}/third_party/japanese_usage_dictionary
@@ -303,16 +305,8 @@ do-install-uim_mozc:
 .endif
 
 # fcitx_mozc
-.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" || make(makesum)
-PATCH_SITES=	http://download.fcitx-im.org/fcitx-mozc/
-PATCHFILES=	fcitx-mozc-2.17.2313.102.1.patch
-.endif
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-PATCH_DIST_STRIP=-p1
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-fcitx-eim.cc \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-surrounding_text_util.cc
-
-GYP_OPTIONS+=	--noqt
+GYP_OPTIONS+=	--noqt --use_fcitx
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=0
 
@@ -337,11 +331,6 @@ PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
 		share/locale/zh_CN/LC_MESSAGES/fcitx-mozc.mo \
 		share/locale/zh_TW/LC_MESSAGES/fcitx-mozc.mo
 PLIST_DIRS+=	%%DATADIR%%/icon ${DATADIR_REL}
-
-post-extract-fcitx_mozc:
-	${RM} ${BUILD_WRKSRC}/unix/fcitx/fcitx.gyp
-
-post-extract: post-extract-fcitx_mozc
 
 do-build-fcitx_mozc:
 	${BUILD_MOZC_CMD_BUILD} unix/fcitx/fcitx.gyp:fcitx-mozc

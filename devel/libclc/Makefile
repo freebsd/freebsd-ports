@@ -23,8 +23,6 @@ LLVMVER=	37
 
 ALL_TARGET=
 
-BROKEN_FreeBSD_9=	missing <system_error> header
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		-e 's|"python |"${PYTHON_VERSION} |g' \

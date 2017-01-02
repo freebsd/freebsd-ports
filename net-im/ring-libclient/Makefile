@@ -13,8 +13,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libring.so:net-im/ring-daemon
 
-BROKEN_FreeBSD_9=	Fails due to compiler issues
-
 USE_GITHUB=	yes
 #GH_TUPLE+=	savoirfairelinux:ring-lrc:9eaac77
 GH_TUPLE+=	savoirfairelinux:ring-lrc:cb5ee04
