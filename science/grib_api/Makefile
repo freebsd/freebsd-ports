@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.0
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
