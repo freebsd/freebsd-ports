@@ -133,7 +133,6 @@
     SUBDIR += docbook2X
     SUBDIR += docbook2mdoc
     SUBDIR += docbook2odf
-    SUBDIR += docdiff
     SUBDIR += doclifter
     SUBDIR += docproj
     SUBDIR += dom4j
@@ -1427,6 +1426,7 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
+    SUBDIR += rubygem-docdiff
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport
