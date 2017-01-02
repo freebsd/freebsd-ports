@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-01-25 23:25:32.000000000 +0100
-+++ Makefile.in	2014-01-27 13:14:16.876831395 +0100
-@@ -89,8 +89,7 @@
+--- Makefile.in.orig	2014-01-27 03:04:32 UTC
++++ Makefile.in
+@@ -89,8 +89,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/g
  	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
  	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
  	$(top_srcdir)/configure.ac
