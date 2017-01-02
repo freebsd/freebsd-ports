@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.4.9
-PORTREVISION=	2
+DISTVERSION=	2.4.13
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -17,7 +16,7 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	pam_krb5-4.*
 
-USES=		iconv libtool
+USES=		iconv libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-afs --without-keyutils --without-krb4
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -39,5 +38,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PAM_BAD_ITEM|PAM_SYMBOL_ERR|g' ${WRKSRC}/src/conv.c
 	@${REINPLACE_CMD} -e 's|PAM_AUTHTOK_RECOVER_ERR|PAM_AUTHTOK_RECOVERY_ERR|g' \
 		${WRKSRC}/src/password.c
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pam_krb5.so
 
 .include <bsd.port.mk>
