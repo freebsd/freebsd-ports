@@ -173,6 +173,7 @@
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go-amqp
+    SUBDIR += go-bapu
     SUBDIR += go-cs
     SUBDIR += go-geoip
     SUBDIR += go-httppath
