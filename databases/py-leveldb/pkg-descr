@@ -4,4 +4,4 @@ from the LevelDB API, except for:
 - Snapshots
 - All iteration except for single-step forward
 
-WWW: http://code.google.com/p/py-leveldb/
+WWW: https://pypi.python.org/pypi/leveldb
