@@ -2,7 +2,7 @@
 
 PORTNAME=	amide
 PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -34,12 +34,13 @@ VOLPACK_DESC=	Use volpack
 XMEDCON_DESC=	Use xmedcon
 
 OPTIONS_SUB=			yes
-DCMTK_CONFIGURE_ENABLE=		libdcmdata
+DCMTK_CONFIGURE_ON=		--enable-libdcmdata
+DCMTK_CONFIGURE_OFF=		--enable-libdcmdata=no
 DCMTK_LIB_DEPENDS=		libdcmdata.so:devel/dcmtk
 FAME_CONFIGURE_ENABLE=		libfame
 FAME_LIB_DEPENDS=		libfame.so:multimedia/libfame
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
-FFMPEG_LIB_DEPENDS=		libavcodec0.so:multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 GSL_CONFIGURE_ENABLE=		libgsl
 GSL_LIB_DEPENDS=		libgsl.so:math/gsl
 VOLPACK_CONFIGURE_ENABLE=	libvolpack
@@ -53,8 +54,6 @@ post-patch:
 		${WRKSRC}/amide_config.h.in
 	@${REINPLACE_CMD} \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|libavcodec|libavcodec0|g' \
-		-e 's|libavutil|libavutil0|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
