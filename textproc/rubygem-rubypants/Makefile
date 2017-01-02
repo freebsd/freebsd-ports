@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubypants
-PORTVERSION=	0.2.0
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
