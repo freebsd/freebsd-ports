@@ -1,0 +1,8 @@
+gettext-setup is a simple gem to set up i18n for Ruby projects (including
+Sinatra web apps) using gettext and fast gettext.
+
+This project sets the default locale to English. If the user has set a different
+locale in their browser preferences, and we support the user's preferred locale,
+strings and data formatting will be customized for that locale.
+
+WWW: https://github.com/puppetlabs/gettext-setup-gem
