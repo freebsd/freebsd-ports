@@ -1,11 +1,11 @@
---- concurrent-ruby-edge.gemspec.orig	2016-12-30 18:46:48 UTC
-+++ concurrent-ruby-edge.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+--- concurrent-ruby-edge.gemspec.orig	2017-01-02 04:42:34.239949000 -0500
++++ concurrent-ruby-edge.gemspec	2017-01-02 04:43:51.396752000 -0500
+@@ -23,7 +23,7 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["= 1.0.3"])
-+      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, [">= 1.0.3"])
+-      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["= 1.0.4"])
++      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, [">= 1.0.4"])
      else
-       s.add_dependency(%q<concurrent-ruby>.freeze, ["= 1.0.3"])
+       s.add_dependency(%q<concurrent-ruby>.freeze, ["= 1.0.4"])
      end
