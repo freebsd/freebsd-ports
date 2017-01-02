@@ -1,35 +1,12 @@
---- doc/Makefile.orig	2016-03-01 12:30:35.743108000 +0100
-+++ doc/Makefile	2016-03-01 12:32:36.527634000 +0100
+--- doc/Makefile.orig	2016-10-05 08:10:40 UTC
++++ doc/Makefile
 @@ -1,4 +1,4 @@
--TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.html $(OBJDIR)copy.1 $(OBJDIR)copy.html $(OBJDIR)delete.1 $(OBJDIR)delete.html $(OBJDIR)desktop.1 $(OBJDIR)desktop.html $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.html $(OBJDIR)move.1 $(OBJDIR)move.html $(OBJDIR)open.1 $(OBJDIR)open.html $(OBJDIR)properties.1 $(OBJDIR)properties.html $(OBJDIR)view.1 $(OBJDIR)view.html
-+TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)copy.1 $(OBJDIR)delete.1 $(OBJDIR)desktop.1 $(OBJDIR)desktopctl.1 $(OBJDIR)move.1 $(OBJDIR)open.1 $(OBJDIR)properties.1 $(OBJDIR)view.1
+-TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.html $(OBJDIR)browser.xml $(OBJDIR)copy.1 $(OBJDIR)copy.html $(OBJDIR)copy.xml $(OBJDIR)delete.1 $(OBJDIR)delete.html $(OBJDIR)delete.xml $(OBJDIR)desktop.1 $(OBJDIR)desktop.html $(OBJDIR)desktop.xml $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.html $(OBJDIR)desktopctl.xml $(OBJDIR)move.1 $(OBJDIR)move.html $(OBJDIR)move.xml $(OBJDIR)open.1 $(OBJDIR)open.html $(OBJDIR)open.xml $(OBJDIR)properties.1 $(OBJDIR)properties.html $(OBJDIR)properties.xml $(OBJDIR)view.1 $(OBJDIR)view.html $(OBJDIR)view.xml
++TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.xml $(OBJDIR)copy.1 $(OBJDIR)copy.xml $(OBJDIR)delete.1 $(OBJDIR)delete.xml $(OBJDIR)desktop.1 $(OBJDIR)desktop.xml $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.xml $(OBJDIR)move.1 $(OBJDIR)move.xml $(OBJDIR)open.1 $(OBJDIR)open.xml $(OBJDIR)properties.1 $(OBJDIR)properties.xml $(OBJDIR)view.1 $(OBJDIR)view.xml
  OBJDIR	=
  PREFIX	= /usr/local
  DESTDIR	=
-@@ -67,65 +67,38 @@
- clean:
- 	$(RM) -- $(browser.1_OBJS) $(browser.html_OBJS) $(copy.1_OBJS) $(copy.html_OBJS) $(delete.1_OBJS) $(delete.html_OBJS) $(desktop.1_OBJS) $(desktop.html_OBJS) $(desktopctl.1_OBJS) $(desktopctl.html_OBJS) $(move.1_OBJS) $(move.html_OBJS) $(open.1_OBJS) $(open.html_OBJS) $(properties.1_OBJS) $(properties.html_OBJS) $(view.1_OBJS) $(view.html_OBJS)
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)browser.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)browser.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)copy.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)copy.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)delete.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)delete.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)desktop.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)desktop.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)desktopctl.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)desktopctl.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)move.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)move.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)open.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)open.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)properties.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)properties.html"
- 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)view.1"
--	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)view.html"
- 
- distclean: clean
- 	$(RM) -- $(TARGETS)
+@@ -126,42 +126,24 @@ distclean: clean
  
  install: $(TARGETS)
  	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)browser.1"
