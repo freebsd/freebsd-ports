@@ -3,10 +3,12 @@
 
 PORTNAME=	bapu
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://bitbucket.org/carlostrub/bapu/get/
 PKGNAMEPREFIX=	go-
 DISTNAME=	v${PORTVERSION}
+DIST_SUBDIR=	go-bapu
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Virtual Machine Controller for Gandi.net
