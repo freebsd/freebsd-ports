@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	19.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -49,8 +49,16 @@ WX_DESC=	Enable WX application
 
 NATIVE_IMPLIES=	HIPE
 
-OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS
+OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS DTRACE
 OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
+
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+
+OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
+OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
+OPTIONS_EXCLUDE_i386=		DTRACE
 
 ERL_RELEASE=	19.2
 
@@ -185,14 +193,6 @@ MAKE_ARGS+=	ARCH=arm
 # links in the documentation.
 
 pre-configure:
-.if ${PORT_OPTIONS:MDTRACE}
-	@if ! /sbin/kldstat | ${GREP} dtraceall >/dev/null 2>&1; then \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "DTRACE option requires kernel module \"dtraceall\" to be loaded."; \
-		${ECHO_CMD}; \
-		exit 1; \
-	fi
-.endif
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
