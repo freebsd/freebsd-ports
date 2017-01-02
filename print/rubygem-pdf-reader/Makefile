@@ -22,6 +22,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES+=	bin/pdf_callbacks bin/pdf_list_callbacks bin/pdf_object bin/pdf_text
+PLIST_FILES=	bin/pdf_callbacks bin/pdf_list_callbacks bin/pdf_object bin/pdf_text
 
 .include <bsd.port.mk>
