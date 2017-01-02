@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -65,7 +65,7 @@ X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 .endif
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
@@ -214,8 +214,8 @@ JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
 .else
 JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
 .endif
-JDK_JVMDIR=	lib/${ARCH:S/armv6/arm/}
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/armv6/arm/:S/i386/x86/}
+JDK_JVMDIR=	lib/${ARCH:C/armv6.*/arm/:S/powerpc64/ppc64/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv6.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NO_CCACHE=		yes
@@ -319,7 +319,7 @@ CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
 MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "powerpc64"
 JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
@@ -368,6 +368,10 @@ CONFIGURE_ENV+=	LIBCXX="-lc++"
 
 # GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
 .if ${COMPILER_TYPE} == gcc
+.if ${ARCH} == "powerpc64"
+MAKE_ARGS+=	USE_PRECOMPILED_HEADER=1
+.endif
+.else
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
 .endif
 
