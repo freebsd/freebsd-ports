@@ -24,9 +24,8 @@ USES=		desktop-file-utils pkgconfig
 USE_XORG=	x11 xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
-=======
+
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
@@ -46,6 +45,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/keyboardctl \
 		${STAGEDIR}${PREFIX}/bin/keyboard \
 		${STAGEDIR}${PREFIX}/lib/Desktop/widget/keyboard.so
->>>>>>> upstream/master
 
 .include <bsd.port.mk>
