@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exim
-PORTVERSION=	4.87
+PORTVERSION=	4.88
 CATEGORIES=	mail
 MASTER_SITES=	EXIM
 MASTER_SITE_SUBDIR=	/exim4/ \
@@ -31,7 +31,7 @@ NO_BUILD=	yes
 .if defined(FETCH_ALL)
 . for _df in ${AVAILABLE_FORMATS}
 .  if ${_df} != ${DOCFORMAT}
-DISTFILES+=	exim-${_df}-${PORTVERSION}${EXTRACT_SUFX}:exim
+DISTFILES+=	exim-${_df}-${PORTVERSION}${EXTRACT_SUFX}
 .  endif
 . endfor
 .endif
