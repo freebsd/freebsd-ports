@@ -1,5 +1,9 @@
 bin/keyboardctl
+lib/Desktop/widget/keyboard.so
 bin/keyboard
 include/Desktop/Keyboard.h
-share/applications/keyboard.desktop
-share/locale/fr/LC_MESSAGES/Keyboard.mo
+share/applications/deforaos-keyboard.desktop
+%%NLS%%share/locale/fr/LC_MESSAGES/Keyboard.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Keyboard.mo
+%%PORTDOCS%%share/doc/Keyboard/README.md
+
