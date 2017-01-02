@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-MASTER_SITES=	http://download.igniterealtime.org/openfire/
-DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.html
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	slf4j>=1.7.7:devel/slf4j
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	igniterealtime
 
 OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
 OPTIONS_SUB=	yes
 PLUGINS_DESC=	Install bundled plugins
 
-USES=		cpe dos2unix zip
+USES=		cpe dos2unix
 DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
 USE_LDCONFIG=	yes
 USE_ANT=	yes
@@ -35,7 +37,7 @@ ALL_TARGET=	openfire
 USE_RC_SUBR=	openfire
 SUB_FILES+=	pkg-message
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_src
+WRKSRC=		${WRKDIR}/Openfire-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/target/openfire
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -86,8 +88,6 @@ do-install-PLUGINS-on:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.html README.html changelog.html \
-	    ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/documentation/docs && ${FIND} . \! -path ./javadoc\* \
 	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1 )
 
