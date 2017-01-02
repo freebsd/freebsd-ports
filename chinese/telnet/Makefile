@@ -8,7 +8,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	8bit compatible telnet client for Chinese input
 
 PLIST_FILES=	bin/zh-telnet man/man1/zh-telnet.1.gz

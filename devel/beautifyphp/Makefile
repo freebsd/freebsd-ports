@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MASTER_SITES=	SF
 DISTNAME=	beautify_php_${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP4
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear
