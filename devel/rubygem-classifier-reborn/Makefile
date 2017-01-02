@@ -10,14 +10,14 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Classifier module for Bayesian and other types of classifications
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:devel/rubygem-fast-stemmer
 
-PLIST_FILES=	bin/bayes.rb bin/summarize.rb
-
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	bin/bayes.rb bin/summarize.rb
 
 .include <bsd.port.mk>
