@@ -6,4 +6,4 @@ It supports several encodings and end-of-line characters, including ASCII (and
 other single byte encodings such as ISO-8859-*), UTF-8, EUC-JP, Shift_JIS, CR,
 LF, and CRLF.
 
-WWW: http://docdiff.sourceforge.net/
+WWW: https://github.com/hisashim/docdiff
