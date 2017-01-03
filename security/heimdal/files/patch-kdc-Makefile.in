@@ -1,4 +1,4 @@
---- kdc/Makefile.in.orig	2017-01-03 13:45:00 UTC
+--- kdc/Makefile.in.orig	2017-01-03 19:44:12 UTC
 +++ kdc/Makefile.in
 @@ -213,6 +213,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PRO
  am_digest_service_OBJECTS = digest-service.$(OBJEXT)

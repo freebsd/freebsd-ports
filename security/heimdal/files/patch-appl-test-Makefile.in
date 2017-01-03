@@ -1,4 +1,4 @@
---- appl/test/Makefile.in.orig	2017-01-03 13:45:01 UTC
+--- appl/test/Makefile.in.orig	2017-01-03 19:44:14 UTC
 +++ appl/test/Makefile.in
 @@ -170,11 +170,15 @@ am_gssapi_server_OBJECTS = gssapi_server
  	gss_common.$(OBJEXT) common.$(OBJEXT)

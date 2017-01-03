@@ -1,4 +1,4 @@
---- kpasswd/Makefile.in.orig	2017-01-03 13:45:01 UTC
+--- kpasswd/Makefile.in.orig	2017-01-03 19:44:14 UTC
 +++ kpasswd/Makefile.in
 @@ -155,9 +155,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)

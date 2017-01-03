@@ -18,7 +18,26 @@
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -28685,7 +28685,7 @@ fi
+@@ -16776,7 +16776,7 @@ fi
+ 
+ fi
+ 
+-for db_type in unknown $db_type_preference; do
++for db_type in $db_type_preference unknown; do
+     if eval test \"x\$have_${db_type}\" = xyes; then
+         break
+     fi
+@@ -16935,6 +16935,9 @@ esac
+ 
+ $as_echo "#define HAVE_NDBM 1" >>confdefs.h
+       have_ndbm=yes
++      if test "$db_type" = "unknown"; then
++      db_type=ndbm
++      fi
+     else
+ 
+       $as_unset ac_cv_func_dbm_firstkey
+@@ -28685,7 +28688,7 @@ fi
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""
