@@ -5,7 +5,7 @@ PORTNAME=	kdevplatform
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
 PORTREVISION=	1
 CATEGORIES=	devel kde
-MASTER_SITES=	KDE/${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
+MASTER_SITES=	KDE/${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}
 DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libqjson.so:devel/qjson
 
 USES=		cmake:outsource compiler:c++11-lib grantlee:4 kde:4 shebangfix \
-		tar:bz2
+		tar:xz
 USE_KDE=	kate_run kdelibs automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib designer_build gui webkit
