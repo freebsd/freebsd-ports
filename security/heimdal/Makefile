@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimdal
-PORTVERSION=	1.5.3
-PORTREVISION=	7
+PORTVERSION=	7.1.0
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -23,7 +22,6 @@ USES=		gettext gssapi:bootstrap,heimdal libtool pathfix pkgconfig \
 		readline makeinfo ssl
 USE_LDCONFIG=	${GSSAPILIBDIR}
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
 		ac_cv_header_db_h=no \
 		ac_cv_header_db3_db_h=no \
@@ -47,6 +45,7 @@ CONFIGURE_ARGS=	--with-libintl \
 		--sysconfdir="${PREFIX}/etc"
 # XXX --with-readline picks up libreadline even if found in /usr/lib.
 MAKE_ENV=	INSTALL_CATPAGES=no
+INSTALL_TARGET=	install-strip
 .if !exists(/etc/rc.d/ipropd_master)
 USE_RC_SUBR=	ipropd_master ipropd_slave
 .endif
@@ -54,7 +53,7 @@ INFO=		heimdal hx509
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	IPV6 BDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB X11
+OPTIONS_DEFINE=	IPV6 BDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB
 OPTIONS_DEFAULT=     BDB             PKINIT DIGEST KX509
 OPTIONS_SUB=	yes
 
@@ -90,11 +89,7 @@ KX509_DESC=		Enable kx509 support
 KX509_CONFIGURE_ENABLE=	kx509
 
 CRACKLIB_DESC=		Use CrackLib for password quality checking
-CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:security/cracklib
-
-X11_DESC=		Build X11 utilies
-X11_USE=		XORG=x11,xt
-X11_CONFIGURE_WITH=	x
+CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
 
 .include <bsd.port.options.mk>
 
@@ -109,14 +104,12 @@ post-extract:
 	${INSTALL_DATA} ${FILESDIR}/kpasswdd-Makefile \
 	    ${WRKSRC}/kpasswdd-cracklib/Makefile
 
-.if ${PORT_OPTIONS:MCRACKLIB}
-post-build:
+post-build-CRACKLIB-on:
 	cd ${WRKSRC}/kpasswdd-cracklib && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ${BUILD_TARGET}
 
-post-install:
+post-install-CRACKLIB-on:
 	cd ${WRKSRC}/kpasswdd-cracklib && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ${INSTALL_TARGET}
-.endif
 
 .include <bsd.port.mk>
