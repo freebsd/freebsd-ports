@@ -29,12 +29,6 @@ USES=		compiler:c++14-lang dos2unix gmake pkgconfig zip
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
-BROKEN=		does not build on FreeBSD < 10.3 (lack of futimens(2))
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/$${WX_CONFIG:T}/' \
 		-e 's,g++,$${CXX},' ${WRKSRC}/Makefile
@@ -44,4 +38,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CLOCK_MONOTONIC_RAW|CLOCK_MONOTONIC|' \
 		${WRKDIR}/zen/tick_count.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

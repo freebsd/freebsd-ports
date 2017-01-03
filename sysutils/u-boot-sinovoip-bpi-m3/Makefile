@@ -18,9 +18,6 @@ WRKSRC=		${WRKDIR}/u-boot-${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 NO_ARCH=	yes
-.if ${OSVERSION} < 1001000
-IGNORE=		requires dtc
-.endif
 
 MODEL?=		sinovoip-bpi-m3
 CONF_TARGET?=	Sinovoip_BPI_M3_defconfig

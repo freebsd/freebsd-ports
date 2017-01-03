@@ -23,16 +23,10 @@ MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
-BROKEN=	Requires FreeBSD 10.2 or higher
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's|/var/lib/titus/empty|/var/empty|' ${WRKSRC}/titus.conf.example
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/titus.conf.example ${STAGEDIR}${PREFIX}/etc/titus.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

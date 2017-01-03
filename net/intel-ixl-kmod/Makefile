@@ -31,10 +31,6 @@ PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
 
-.if ${OSVERSION} < 1001000
-IGNORE=		is not supported on FreeBSD 10.0 and older
-.endif
-
 .if ${OSVERSION} >= 1100000
 BROKEN=		does not build
 .endif

@@ -15,10 +15,4 @@ LICENSE=	BSD3CLAUSE
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=	requires FreeBSD 10.0 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

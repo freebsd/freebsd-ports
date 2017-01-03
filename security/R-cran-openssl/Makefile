@@ -22,10 +22,6 @@ post-patch:
 
 .if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=	Detected LibreSSL (missing RSA_get0_key and others)
-.else
-. if ${OSVERSION} < 1000015 && ${SSL_DEFAULT:Mbase}
-IGNORE=	Need a more recent version of OpenSSL.
-. endif
 .endif
 
 .include <bsd.port.post.mk>

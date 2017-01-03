@@ -21,10 +21,4 @@ BROKEN_aarch64=		Fails to compile: comparison of constant -1 with expression of 
 BROKEN_mips64=		Fails to configure: unrecognized command line option -std=c++11
 BROKEN_sparc64=		Fails to configure: unrecognized command line option -std=c++11
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

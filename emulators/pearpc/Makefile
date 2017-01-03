@@ -38,10 +38,6 @@ USE_GCC=	yes
 CONFIGURE_ARGS+=	--enable-cpu=generic
 .endif
 
-.if ${ARCH} == "amd64" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not build on FreeBSD < 10.x amd64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-O3|| ; \

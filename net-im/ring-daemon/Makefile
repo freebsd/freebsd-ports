@@ -59,10 +59,6 @@ OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
-BROKEN=		does not build
-.endif
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/contrib/native
 	@${MV} ${WRKDIR}/pjproject-2.4.5 ${WRKSRC}/contrib/native/

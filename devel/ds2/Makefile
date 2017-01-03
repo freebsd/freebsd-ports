@@ -26,7 +26,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1002000 || ${COMPILER_TYPE} == "gcc"
+.if ${COMPILER_TYPE} == "gcc"
 IGNORE=	builds only on greater than 10.1 and with clang
 .endif
 

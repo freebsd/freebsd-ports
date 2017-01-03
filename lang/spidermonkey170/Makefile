@@ -59,9 +59,6 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MDTRACE}
-. if ${OSVERSION} < 1000510
-BROKEN=			dtrace -G crashes with C++ object files
-. endif
 STRIP_CMD=	${TRUE}
 .endif
 

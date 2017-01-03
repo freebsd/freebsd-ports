@@ -53,10 +53,6 @@ TEST_TARGET=	unittests
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
-# Cannot be built
-IGNORE=	unsupported on FreeBSD 10.1 or older
-.endif
 # Bugs when compiled with < Clang 3.7
 #  - https://jira.mongodb.org/browse/SERVER-21217
 #  - https://jira.mongodb.org/browse/SERVER-22740

@@ -34,12 +34,6 @@ ONLY_FOR_ARCHS_REASON= Beignet needs a graphics driver supported by the Intel KM
 #OPTIONS_DEFINE=	TESTS
 #TESTS_DESC=	Build and run the test suite
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-BROKEN=		Beignet needs FreeBSD 10.2 or newer due to too old libc++ in 10.1-Release
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|llvm-dis|llvm-dis${LLVMVER}|g; \
 		s|clang |clang${LLVMVER} |g' \

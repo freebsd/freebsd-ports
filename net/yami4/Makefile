@@ -16,12 +16,6 @@ BROKEN_powerpc64=	Does not build
 
 # USES=		compiler:c++11-lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=	Does only compile with FreeBSD 10.x or higher
-.endif
-
 do-build :
 	cd ${WRKSRC}/src/core; make
 	cd ${WRKSRC}/src/cpp; make
@@ -36,4 +30,4 @@ do-install :
 	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} yami4-cpp ${STAGEDIR}${PREFIX}/include)
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.a ${STAGEDIR}${PREFIX}/lib)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
