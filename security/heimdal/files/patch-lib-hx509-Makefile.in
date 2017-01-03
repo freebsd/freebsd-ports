@@ -1,4 +1,4 @@
---- lib/hx509/Makefile.in.orig	2017-01-03 13:45:03 UTC
+--- lib/hx509/Makefile.in.orig	2017-01-03 19:44:16 UTC
 +++ lib/hx509/Makefile.in
 @@ -859,7 +859,9 @@ hxtool_LDADD = \
  	libhx509.la \

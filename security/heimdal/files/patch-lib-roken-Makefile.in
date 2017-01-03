@@ -1,4 +1,4 @@
---- lib/roken/Makefile.in.orig	2017-01-03 13:45:03 UTC
+--- lib/roken/Makefile.in.orig	2017-01-03 19:44:15 UTC
 +++ lib/roken/Makefile.in
 @@ -194,8 +194,7 @@ am__uninstall_files_from_dir = { \
           $(am__cd) "$$dir" && rm -f $$files; }; \

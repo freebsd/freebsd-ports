@@ -1,4 +1,4 @@
---- kuser/Makefile.in.orig	2017-01-03 13:45:00 UTC
+--- kuser/Makefile.in.orig	2017-01-03 19:44:13 UTC
 +++ kuser/Makefile.in
 @@ -157,9 +157,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
