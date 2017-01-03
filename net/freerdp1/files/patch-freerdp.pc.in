@@ -6,7 +6,7 @@ Index: freerdp.pc.in
  Version: @FREERDP_VERSION_FULL@
  Requires: 
 -Requires.private: winpr zlib libssl
-+Requires.private: winpr1
++Requires.private: winpr zlib
  Libs: -L${libdir} ${libs}
  Libs.private: -ldl -lpthread
  Cflags: -I${includedir}

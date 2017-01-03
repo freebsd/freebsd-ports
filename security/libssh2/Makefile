@@ -3,7 +3,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.8.0
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
 		LOCAL/sbz
@@ -48,9 +48,5 @@ post-patch:
 		${WRKSRC}/configure
 .  endif
 .endif
-
-post-build:
-	@${REINPLACE_CMD} -E -e '/Requires.private:/{s/[[:<:]]zlib[[:>:]]//;s/,,/,/;s/ ,/ /;s/,$$//;}' \
-		${WRKSRC}/libssh2.pc
 
 .include <bsd.port.post.mk>

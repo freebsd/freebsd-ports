@@ -1,8 +1,0 @@
---- ./libfreehand.pc.in.orig	2014-04-16 19:00:19.000000000 +0200
-+++ ./libfreehand.pc.in	2014-06-10 16:02:17.706475057 +0200
-@@ -9,5 +9,3 @@
- Requires: librevenge-0.0 librevenge-stream-0.0
- Libs: -L${libdir} -lfreehand-@FH_MAJOR_VERSION@.@FH_MINOR_VERSION@
- Cflags: -I${includedir}/libfreehand-@FH_MAJOR_VERSION@.@FH_MINOR_VERSION@
--
--Requires.private: zlib
