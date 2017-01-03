@@ -40,14 +40,6 @@ post-extract:
 # Adjust paths relative to extras
 	@(cd ${WRKSRC_core} && ${COPYTREE_SHARE} . ${WRKSRC})
 
-post-patch:
-# XXX C++ exception with description "regex_error" thrown in the test body.
-	@if [ ${OPSYS} = FreeBSD -a ${OSREL:R} -lt 10 ]; then \
-		${REINPLACE_CMD} -Ee '/^TEST/\
-			s/ (LOG|PLOG|UNIMPLEMENTED)/ DISABLED_\1/' \
-		${WRKSRC}/base/logging_test.cpp; \
-	fi
-
 pre-install-TEST-on: do-test
 
 .include <bsd.port.mk>
