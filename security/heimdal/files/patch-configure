@@ -1,6 +1,6 @@
---- configure.orig	2012-12-10 07:09:32.000000000 +0900
-+++ configure	2016-11-13 03:23:46.814899000 +0900
-@@ -8869,7 +8869,7 @@
+--- configure.orig	2016-12-20 04:24:03 UTC
++++ configure
+@@ -9588,7 +9588,7 @@ $as_echo_n "checking whether the $compil
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,110 +9,21 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -9567,29 +9567,6 @@
-       hardcode_shlibpath_var=no
-       ;;
- 
--    freebsd1*)
--      ld_shlibs=no
--      ;;
--
--    # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
--    # support.  Future versions do this automatically, but an explicit c++rt0.o
--    # does not break anything, and helps significantly (at the cost of a little
--    # extra space).
--    freebsd2.2*)
--      archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags /usr/lib/c++rt0.o'
--      hardcode_libdir_flag_spec='-R$libdir'
--      hardcode_direct=yes
--      hardcode_shlibpath_var=no
--      ;;
--
--    # Unfortunately, older versions of FreeBSD 2 do not have this feature.
--    freebsd2*)
--      archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
--      hardcode_direct=yes
--      hardcode_minus_L=yes
--      hardcode_shlibpath_var=no
--      ;;
--
-     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
-     freebsd* | dragonfly*)
-       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-@@ -10561,10 +10538,6 @@
-   shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
--freebsd1*)
--  dynamic_linker=no
--  ;;
--
- freebsd* | dragonfly*)
-   # DragonFly does not have aout.  When/if they implement a new
-   # versioning mechanism, adjust this.
-@@ -10572,7 +10545,6 @@
-     objformat=`/usr/bin/objformat`
-   else
-     case $host_os in
--    freebsd[123]*) objformat=aout ;;
-     *) objformat=elf ;;
-     esac
-   fi
-@@ -10590,18 +10562,6 @@
-   esac
-   shlibpath_var=LD_LIBRARY_PATH
-   case $host_os in
--  freebsd2*)
--    shlibpath_overrides_runpath=yes
--    ;;
--  freebsd3.[01]* | freebsdelf3.[01]*)
--    shlibpath_overrides_runpath=yes
--    hardcode_into_libs=yes
--    ;;
--  freebsd3.[2-9]* | freebsdelf3.[2-9]* | \
--  freebsd4.[0-5] | freebsdelf4.[0-5] | freebsd4.1.1 | freebsdelf4.1.1)
--    shlibpath_overrides_runpath=no
--    hardcode_into_libs=yes
--    ;;
-   *) # from 4.6 on, and DragonFly
-     shlibpath_overrides_runpath=yes
-     hardcode_into_libs=yes
-@@ -11661,7 +11621,7 @@
- old_striplib=
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
- $as_echo_n "checking whether stripping libraries is possible... " >&6; }
--if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
-+if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
-   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
-   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-@@ -14227,9 +14187,9 @@
- 	native_pthread_support="netbsd 3 uses explict pthread"
- 		PTHREAD_LIBADD="-lpthread"
- 	;;
--*-*-freebsd[56789]*)
-+*-*-freebsd*)
+@@ -16126,7 +16126,7 @@ case "$host" in
+     ;;
+ *-*-freebsd*)
  	native_pthread_support=yes
 -	PTHREAD_LIBADD="-pthread"
 +	PTHREAD_LIBADD="-lpthread"
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -14488,7 +14448,7 @@
- fi
- # db_create
- eval "ac_tr_func=HAVE_`echo db_create | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
--eval "ac_tr_lib=HAVE_LIB`echo $ac_res | sed -e 's/-l//' | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
-+eval "ac_tr_lib=HAVE_LIB`echo $ac_res | sed -e 's/-l//;s/[-.]/_/g' | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`"
- eval "LIB_db_create=$ac_res"
- 
- case "$ac_res" in
-@@ -28245,7 +28205,7 @@
+@@ -28685,7 +28685,7 @@ fi
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""
 -krb_cv_compile_et_cross=no
 +krb_cv_compile_et_cross=yes
- if test "${COMPILE_ET}" = "compile_et"; then
+ if test "${COMPILE_ET}" != "no"; then
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compile_et has the features we need" >&5
