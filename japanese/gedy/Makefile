@@ -3,7 +3,7 @@
 
 PORTNAME=	gedy
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 DISTNAME=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	GNOME Edy Viewer
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-gtk2>0:x11-toolkits/rubygem-gtk2 \
+		rubygem-gio2>=3.1.0:devel/rubygem-gio2 \
 		${RUBY_SITEARCHLIBDIR}/pasori.so:devel/libpafe-ruby
 
 USE_RUBY=		yes
