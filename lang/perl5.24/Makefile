@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC4
-PORTREVISION=	1
+DISTVERSION=	${PERL_VERSION}-RC5
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/S/SH/SHAY
 DIST_SUBDIR=	perl
@@ -30,7 +30,6 @@ OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY DTRACE
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
-OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
 .for a in aarch64 arm armeb armv6 mips mips64 mips64el mipsel mipsn32 powerpc \
 	powerpc64 sparc64
 OPTIONS_EXCLUDE_${a}=	DTRACE
