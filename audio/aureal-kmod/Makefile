@@ -13,7 +13,9 @@ DISTNAME=	au88x0-${PORTVERSION}_4
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Driver for Aureal Vortex based soundcards
 
-BROKEN=		Unfetchable (google code has gone away)
+BROKEN=		does not build (and fetch)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
 
 ONLY_FOR_ARCHS=	i386
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
@@ -35,10 +37,6 @@ USES=		kmod
 .include <bsd.port.pre.mk>
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra_800000_patch-au88x0.c
-
-.if ${OSVERSION} >= 1000000
-BROKEN=	does not build
-.endif
 
 pre-everything::
 .for STRAY in ${STRAYFILES}

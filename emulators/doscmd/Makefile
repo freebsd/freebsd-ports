@@ -8,6 +8,10 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOS emulator
 
+BROKEN=		does not build (accesses field of opaque structure)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
+
 ONLY_FOR_ARCHS=	i386
 
 FONTFILES=	cp437-8x8.pcf.gz cp437-8x14.pcf.gz cp437-8x16.pcf.gz
@@ -22,11 +26,6 @@ X11_MAKE_ARGS=	X11BASE=${LOCALBASE}
 X11_MAKE_ARGS_OFF=	-DNO_X
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000012
-# files/extra-patch-cwd.c will fix this, see inside
-BROKEN=		does not build (accesses field of opaque structure)
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

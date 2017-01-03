@@ -13,6 +13,10 @@ COMMENT=	Open Source (GPL) gPXE network bootloader
 
 LICENSE=	GPLv2
 
+BROKEN=	does not build on FreeBSD 10.x and later
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
+
 BUILD_DEPENDS=	syslinux:sysutils/syslinux \
 		mkisofs:sysutils/cdrtools
 
@@ -30,10 +34,6 @@ SUB_FILES=	pkg-message
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=	does not build on FreeBSD 10.x and later
-.endif
 
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=i386
