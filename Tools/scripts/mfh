@@ -55,18 +55,6 @@ ask() {
 	return 1
 }
 
-[ $# -lt 2 ] && err "$(basename $0) requires at least 2 arguments: <branch> <revnumber> [<revnumber>...]"
-branch=$1
-shift
-revs=""
-for rev in $@
-do
-  rev=${rev##r} # remove a leading "r"
-  case ${rev} in
-    ''|*[!-0-9]*) err "revision \"${rev}\" should be a number" ;;
-  esac
-done
-
 : ${svnserver:="svn+ssh://repo.FreeBSD.org"}
 
 if [ -n "$(type svn 2>/dev/null)" ]; then
@@ -76,6 +64,31 @@ elif [ -n "$(type svnlite 2>/dev/null)" ]; then
 else
 	err "Neither svn(1) nor svnlite(1) found. Please install devel/subversion."
 fi
+
+latest_branch=$("${svn}" ls ${svnserver}/ports/branches/|sed -ne '/^2.*Q./s|/$||p'|tail -1)
+
+[ $# -lt 1 ] && err "$(basename $0) requires at least 1 arguments: [<branch>] <revnumber> [<revnumber>...]"
+branch=$1
+
+# I sure hope by 2030 we'll be doing something else. Yes, famous last words.
+if expr ${branch} : '20[12][0-9]Q[1-4]' > /dev/null; then
+	shift
+	if [ ${latest_branch} != ${branch} ]; then
+		ask "/!\\ The latest branch is ${latest_branch}, do you really want to commit to ${branch}?" || exit 1
+	fi
+else
+	branch=${latest_branch}
+fi
+
+revs=""
+for rev in $@
+do
+  rev=${rev##r} # remove a leading "r"
+  case ${rev} in
+    ''|*[!-0-9]*) err "revision \"${rev}\" should be a number" ;;
+  esac
+done
+
 
 trap "rc=\$? ; rm -rf \"\${dir}\" ; exit \$rc" EXIT
 dir=$(mktemp -d /tmp/merge.XXXXXX)
