@@ -3,6 +3,7 @@
 
 PORTNAME=	spdylay
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -22,9 +23,7 @@ BROKEN_sparc64=		does not build: fails to link
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
-		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
-		ZLIB_LIBS="-L${LIBDIR} -lz"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
@@ -33,9 +32,6 @@ USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl tar:xz
 
 PORTDOCS=	*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^Requires.private: zlib$$|Libs.private: -L${LIBDIR} -lz|' ${WRKSRC}/lib/libspdylay.pc.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/spdycli ${STAGEDIR}${PREFIX}/bin/

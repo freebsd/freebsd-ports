@@ -26,7 +26,6 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost="${LOCALBASE}" \
 		--with-boost-system=boost_system
-CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

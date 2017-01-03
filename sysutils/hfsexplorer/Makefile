@@ -25,7 +25,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 OPTIONS_DEFINE= DOCS
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}-${DISTVERSION}
 
 do-configure:
 	@cd ${WRKSRC}/dist/bin && ${REINPLACE_CMD} -e 's|BASEDIR=".*"|BASEDIR="${DATADIR}/lib"|g' \

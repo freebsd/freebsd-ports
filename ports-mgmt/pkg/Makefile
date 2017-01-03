@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode
 INSTALL_TARGET=	install-strip
 PORTDOCS=	NEWS
+PORTSCOUT=	ignore:1
 
 CONFIGURE_ARGS+= \
 	--enable-pie \

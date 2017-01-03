@@ -31,8 +31,6 @@ CONFLICTS=	arpack-[0-9]*
 CONFLICTS_INSTALL?=	arpack-ng-mpich-3.*
 SLAVEDIRS=	math/arpack-ng-mpich
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 

@@ -1,8 +1,0 @@
---- libe-book.pc.in.orig	2014-06-27 10:20:12 UTC
-+++ libe-book.pc.in
-@@ -10,4 +10,4 @@ Requires: librevenge-0.0 librevenge-stre
- Libs: -L${libdir} -le-book-@EBOOK_MAJOR_VERSION@.@EBOOK_MINOR_VERSION@
- Cflags: -I${includedir}/libe-book-@EBOOK_MAJOR_VERSION@.@EBOOK_MINOR_VERSION@
- 
--Requires.private: icu-uc @REQUIRES_EXPERIMENTAL@ libxml-2.0 zlib
-+Requires.private: icu-uc @REQUIRES_EXPERIMENTAL@ libxml-2.0

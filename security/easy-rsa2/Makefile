@@ -20,6 +20,4 @@ GH_ACCOUNT=	OpenVPN
 GNU_CONFIGURE=	yes
 USES=		autoreconf
 
-WRKSRC=		${WRKDIR}/easy-rsa-${DISTVERSION}
-
 .include <bsd.port.mk>

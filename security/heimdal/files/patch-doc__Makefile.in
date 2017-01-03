@@ -1,4 +1,4 @@
---- doc/Makefile.in.orig	2017-01-03 13:44:59 UTC
+--- doc/Makefile.in.orig	2017-01-03 19:44:12 UTC
 +++ doc/Makefile.in
 @@ -501,7 +501,7 @@ texi_subst = sed -e 's,[@]dbdir[@],$(loc
  	-e 's,[@]dbtype[@],$(db_type),g' \

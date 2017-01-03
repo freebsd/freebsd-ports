@@ -17,12 +17,11 @@ RUN_DEPENDS=	glpi>=0.90:www/glpi
 USE_GITHUB=	yes
 GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
-GH_TAGNAME=	glpi090+1.3
+GH_TAGNAME=	glpi090+${FUNV_VER}
 
 USES=		gettext php:fileinfo php:simplexml php:wddx shebangfix
 GLPI_VER=	0.90
 FUNV_VER=	1.3
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-glpi090-${FUNV_VER}
 NO_BUILD=	yes
 NO_ARCH=	yes
 

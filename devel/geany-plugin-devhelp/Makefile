@@ -12,12 +12,5 @@ LIB_DEPENDS=	libwnck-1.so:x11-toolkits/libwnck \
 
 USE_GNOME=	gconf2
 
-# Workaround for 9.x which doesn't have zlib.pc
-LIBS=		-lz
-
-post-patch:
-	${REINPLACE_CMD} -e 's,zlib,,g' \
-		${WRKSRC}/configure
-
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

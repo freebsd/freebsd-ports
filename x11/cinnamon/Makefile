@@ -35,14 +35,15 @@ RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
 		py*-pillow>=0:graphics/py-pillow \
 		py*-lxml>=0:devel/py-lxml
 
-WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
-
 USES=		autoreconf compiler:c11 gettext gmake libtool \
 		pathfix pkgconfig python shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
+GH_PROJECT=	Cinnamon
+
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
 SHEBANG_FILES=	files/usr/bin/cinnamon2d
 USE_XORG=	x11 xfixes sm

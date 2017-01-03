@@ -24,8 +24,6 @@ USES=		compiler:c11 gmake pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile
 MAKE_ENV=	SFLAGS="${STRIP}" \
 		RSTTOMAN=${LOCALBASE}/bin/rst2man \
-		ZLIB_INC= \
-		ZLIB_LIB=-lz \
 		WITH_SYNCTEX=1
 
 CPPFLAGS+=	-DWITH_SYNCTEX

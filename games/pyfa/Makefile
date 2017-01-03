@@ -19,11 +19,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyfa-org
+GH_PROJECT=	Pyfa
 
 USES=		python:2 dos2unix
 DOS2UNIX_GLOB=	*.py
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/Pyfa-${PORTVERSION}
 
 PLIST_FILES=	bin/pyfa
 PORTDATA=	*

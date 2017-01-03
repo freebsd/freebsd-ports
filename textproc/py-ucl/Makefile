@@ -20,6 +20,6 @@ USE_PYTHON=	autoplist concurrent distutils
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	libucl
 
-WRKSRC=		${WRKDIR}/libucl-${PORTVERSION}/python
+WRKSRC_SUBDIR=	python
 
 .include <bsd.port.mk>

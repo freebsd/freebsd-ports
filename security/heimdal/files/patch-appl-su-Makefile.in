@@ -1,4 +1,4 @@
---- appl/su/Makefile.in.orig	2017-01-03 13:45:01 UTC
+--- appl/su/Makefile.in.orig	2017-01-03 19:44:14 UTC
 +++ appl/su/Makefile.in
 @@ -152,12 +152,16 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS)

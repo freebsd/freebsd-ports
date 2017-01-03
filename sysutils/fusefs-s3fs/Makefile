@@ -17,12 +17,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse
+GH_PROJECT=	s3fs-fuse
 
 USES=		autoreconf fuse pkgconfig
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTVERSION}
 
 PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
 

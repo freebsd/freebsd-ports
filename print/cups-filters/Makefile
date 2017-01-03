@@ -29,8 +29,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-shell=/bin/sh \
-		ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
+CONFIGURE_ARGS=	--with-shell=/bin/sh
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -27,8 +27,6 @@ USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	zlib_CFLAGS=" " \
-		zlib_LIBS="-lz"
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 

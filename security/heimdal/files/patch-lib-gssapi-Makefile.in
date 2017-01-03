@@ -1,4 +1,4 @@
---- lib/gssapi/Makefile.in.orig	2017-01-03 13:45:04 UTC
+--- lib/gssapi/Makefile.in.orig	2017-01-03 19:44:17 UTC
 +++ lib/gssapi/Makefile.in
 @@ -304,8 +304,14 @@ test_acquire_cred_DEPENDENCIES = libgssa
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1)

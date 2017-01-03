@@ -94,8 +94,6 @@ YELP_DESC=		Viewer for built-in help system
 YELP_RUN_DEPENDS=	yelp:x11/yelp
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-Wl,--as-needed|| ; \
-		 /^[[:blank:]]zlib/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Wl,--as-needed||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

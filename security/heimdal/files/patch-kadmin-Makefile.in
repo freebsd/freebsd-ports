@@ -1,4 +1,4 @@
---- kadmin/Makefile.in.orig	2017-01-03 13:45:01 UTC
+--- kadmin/Makefile.in.orig	2017-01-03 19:44:14 UTC
 +++ kadmin/Makefile.in
 @@ -166,6 +166,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)

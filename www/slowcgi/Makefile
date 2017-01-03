@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/src/usr.sbin/${GH_PROJECT}
+WRKSRC_SUBDIR=	src/usr.sbin/${GH_PROJECT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue

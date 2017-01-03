@@ -16,6 +16,8 @@ RUN_DEPENDS=	pass:sysutils/password-store
 USES=		qmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	IJhack
+GH_PROJECT=	QtPass
+
 USE_QT5=	buildtools_build core gui linguisttools_build network widgets
 USE_GL=		gl
 
@@ -27,8 +29,6 @@ DESKTOP_ENTRIES=	"QtPass" "" \
 			"${PREFIX}/share/pixmaps/qtpass.png" \
 			"${PREFIX}/bin/qtpass" \
 			"Security;Utility;" true
-
-WRKSRC=		${WRKDIR}/QtPass-${PORTVERSION}
 
 # Install the icon of the port.
 post-install:

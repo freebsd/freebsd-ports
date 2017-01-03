@@ -2,7 +2,7 @@
 
 PORTNAME=	libe-book
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libebook/${PORTNAME}-${PORTVERSION}/
 
@@ -23,7 +23,6 @@ USES=		compiler:c++11-lang gmake gperf libtool pathfix pkgconfig \
 		tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ZLIB_CFLAGS="-DWEHAVEZLIBINBASE" ZLIB_LIBS="-DWEDOHAVEIT"
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-werror --disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOST_ERROR_CODE_HEADER_ONLY

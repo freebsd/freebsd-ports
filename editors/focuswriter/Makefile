@@ -25,8 +25,6 @@ USE_QT5=	concurrent core gui multimedia network printsupport widgets \
 		buildtools_build linguisttools_build
 INSTALLS_ICONS=	yes
 
-LIBS+=		-lz
-
 PORTDATA=	*
 PORTDOCS=	CREDITS NEWS README
 
@@ -35,8 +33,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/PKGCONFIG/s/ zlib// ; \
-		/INSTALLS/s/man //' \
+	@${REINPLACE_CMD} -e '/INSTALLS/s/man //' \
 		${WRKSRC}/focuswriter.pro
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
 	@${REINPLACE_CMD} -e 's/std::lround/lround/g' \

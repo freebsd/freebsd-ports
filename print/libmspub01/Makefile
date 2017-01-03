@@ -2,7 +2,7 @@
 
 PORTNAME=	libmspub
 PORTVERSION=	0.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
@@ -23,10 +23,6 @@ USES=		compiler:c++0x libtool pathfix pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
-CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,zlib,,g" ${WRKSRC}/libmspub.pc.in
 
 .include <bsd.port.mk>
