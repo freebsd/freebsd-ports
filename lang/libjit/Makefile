@@ -30,8 +30,6 @@ BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Fails to compile: internal gcc error
 BROKEN_i386=		Segfault during build
 
-.include <bsd.port.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
 		${WRKSRC}/config.h.in
