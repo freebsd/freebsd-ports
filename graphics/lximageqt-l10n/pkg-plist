@@ -1,6 +1,7 @@
 share/lximage-qt/translations/lximage-qt_ar.qm
 share/lximage-qt/translations/lximage-qt_ca.qm
 share/lximage-qt/translations/lximage-qt_cs.qm
+share/lximage-qt/translations/lximage-qt_da.qm
 share/lximage-qt/translations/lximage-qt_de.qm
 share/lximage-qt/translations/lximage-qt_el.qm
 share/lximage-qt/translations/lximage-qt_es.qm
@@ -19,6 +20,7 @@ share/lximage-qt/translations/lximage-qt_pt.qm
 share/lximage-qt/translations/lximage-qt_pt_BR.qm
 share/lximage-qt/translations/lximage-qt_ru.qm
 share/lximage-qt/translations/lximage-qt_sv.qm
+share/lximage-qt/translations/lximage-qt_tr.qm
 share/lximage-qt/translations/lximage-qt_uk.qm
 share/lximage-qt/translations/lximage-qt_zh_CN.qm
 share/lximage-qt/translations/lximage-qt_zh_TW.qm
