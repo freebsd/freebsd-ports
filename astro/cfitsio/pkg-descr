@@ -1,10 +1,8 @@
-CFITSIO is a library of C and Fortran subroutines for reading and writing
-data files in FITS (Flexible Image Transport System) data format. CFITSIO
-simplifies the task of writing software that deals with FITS files by
-providing an easy to use set of high-level routines that insulate the
-programmer from the internal complexities of the FITS file format. At
-the same time, CFITSIO provides many advanced features that have made
-it the most widely used FITS file programming interface in the
-astronomical community.
+CFITSIO is a library of C and Fortran subroutines for reading and writing data
+files in FITS (Flexible Image Transport System) data format. CFITSIO provides
+simple high-level routines for reading and writing FITS files that insulate the
+programmer from the internal complexities of the FITS format. CFITSIO also
+provides many advanced features for manipulating and filtering the information
+in FITS files.
 
-WWW: http://heasarc.gsfc.nasa.gov/docs/software/fitsio/
+WWW: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/
