@@ -11,6 +11,10 @@ DISTNAME=	apt_0.6.46.4-0.1
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Advanced front-end for dpkg
 
+BROKEN=		does not build on 10+
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libpub.a:devel/publib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -34,10 +38,6 @@ APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		does not build
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/https.cc ${FILESDIR}/https.h ${WRKSRC}/methods/

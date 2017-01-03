@@ -10,6 +10,10 @@ MASTER_SITES=	https://googledrive.com/host/0B0OQnKtejJEMQlpoTy11SG1nN2s/
 MAINTAINER=	dpejesh@yahoo.com
 COMMENT=	FUSE kernel module
 
+IGNORE=		integrated into base
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=	2017-01-15
+
 BUILD_DEPENDS=	fusefs-libs>2.4.1:sysutils/fusefs-libs
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -31,9 +35,6 @@ SUB_FILES=	pkg-message
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9-fuse_main.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9-fuse_vfsops.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9-fuse_vnops.c
-.endif
-.if ${OSVERSION} >= 1000000
-IGNORE=		integrated into base
 .endif
 
 do-build:

@@ -10,15 +10,15 @@ DISTFILES=	# none
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Small script which copies your ssh public-key to a remote host
 
+IGNORE=		is already in the base system
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=	2017-01-15
+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/ssh-copy-id man/man1/ssh-copy-id.1.gz
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1000024
-IGNORE=		is already in the base system
-.endif
 
 pre-patch:
 .for f in ssh-copy-id ssh-copy-id.1

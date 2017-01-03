@@ -16,6 +16,10 @@ COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LICENSE=	ISCL
 
+BROKEN=		requires old CARP implementation (interface layer)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
+
 CONFLICTS=	zebra-0* quagga-0*
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
@@ -53,10 +57,6 @@ post-patch:
 		${WRKSRC}/ospfctl/ospfctl.c
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000003
-BROKEN=		requires old CARP implementation (interface layer)
-.endif
 
 do-build:
 .for subdir in ospfd ospfctl

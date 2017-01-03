@@ -12,6 +12,10 @@ COMMENT=	Server for WorldForge games
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not compile on FreeBSD 10+
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2017-01-15
+
 LIB_DEPENDS=	libAtlas-0.6.so:devel/atlas-devel \
 		libvarconf-1.0.so:devel/varconf \
 		libwfmath-1.0.so:math/wfmath \
@@ -32,10 +36,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Does not compile on FreeBSD 10+
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
