@@ -18,6 +18,8 @@ LIB_DEPENDS=	libotr.so.5:security/libotr \
 		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	irssi:irc/irssi
 
+EXPLICIT_SAFESTACK=	yes
+
 USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
