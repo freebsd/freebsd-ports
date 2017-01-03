@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4198/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Smartcard development library
 
 LICENSE=	BSD3CLAUSE
