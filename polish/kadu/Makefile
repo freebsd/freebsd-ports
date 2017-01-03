@@ -56,8 +56,6 @@ GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 			${GG7_EMOTS_DISTFILE}:additions
 
 post-patch:
-	@${REINPLACE_CMD} '/zlib/ s|^|#|' \
-		${WRKSRC}/plugins/jabber_protocol/CMakeLists.txt
 	@${REINPLACE_CMD} '/kadu_add_test/ s|^|#|' \
 		${WRKSRC}/kadu-core/plugin/CMakeLists.txt
 

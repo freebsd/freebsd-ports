@@ -43,9 +43,6 @@ post-patch:
 		-e '/as_fn_error.*gnome-doc-utils/d' \
 		-e '/DEP_MODULES=/s/"$$/ gmodule-2.0"/' \
 		${WRKSRC}/dict/configure
-	@${REINPLACE_CMD} \
-		-e '/^DEP_MODULES=/s/zlib//' \
-		${WRKSRC}/lib/configure
 
 post-patch-GNOME-off:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
