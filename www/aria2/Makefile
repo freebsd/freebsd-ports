@@ -29,8 +29,6 @@ CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-libaria2 \
 		--without-libnettle --without-libuv
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
-		ZLIB_CFLAGS=-I${INCLUDEDIR} \
-		ZLIB_LIBS="-L${LIBDIR} -lz" \
 		ac_cv_path_RST2HTML=no
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

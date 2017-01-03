@@ -22,9 +22,7 @@ BROKEN_sparc64=		does not build: fails to link
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
-		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
-		ZLIB_LIBS="-L${LIBDIR} -lz"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11

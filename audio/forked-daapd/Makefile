@@ -53,14 +53,7 @@ LASTFM_CONFIGURE_ENABLE=lastfm
 LASTFM_LIB_DEPENDS=	libcurl.so:ftp/curl
 MPD_CONFIGURE_ENABLE=	mpd
 
-.include <bsd.port.pre.mk>
-
-# Ensure FreeBSD 9 can find zlib library
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000712
-CONFIGURE_ENV+=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
-.endif
-
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,7 +23,6 @@ USES=		compiler:c++0x libtool pathfix pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
-CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
