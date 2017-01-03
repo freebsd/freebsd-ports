@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.390
+PORTVERSION=	3.410
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
