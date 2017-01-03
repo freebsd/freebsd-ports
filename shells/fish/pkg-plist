@@ -1,4 +1,4 @@
-bin/fish
+@shell bin/fish
 bin/fish_indent
 bin/fish_key_reader
 %%ETCDIR%%/config.fish
@@ -6,13 +6,44 @@ libdata/pkgconfig/fish.pc
 man/man1/fish.1.gz
 man/man1/fish_indent.1.gz
 man/man1/fish_key_reader.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/ascii_fish.png
+%%PORTDOCS%%%%DOCSDIR%%/bc_s.png
+%%PORTDOCS%%%%DOCSDIR%%/bdwn.png
+%%PORTDOCS%%%%DOCSDIR%%/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
 %%PORTDOCS%%%%DOCSDIR%%/design.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/ftv2blank.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2doc.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2folderopen.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2lastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2link.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2mlastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2mnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2node.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2plastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2pnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2splitbar.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2vertline.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/nav_f.png
+%%PORTDOCS%%%%DOCSDIR%%/nav_g.png
+%%PORTDOCS%%%%DOCSDIR%%/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/open.png
+%%PORTDOCS%%%%DOCSDIR%%/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/sync_off.png
+%%PORTDOCS%%%%DOCSDIR%%/sync_on.png
+%%PORTDOCS%%%%DOCSDIR%%/tab_a.png
+%%PORTDOCS%%%%DOCSDIR%%/tab_b.png
+%%PORTDOCS%%%%DOCSDIR%%/tab_h.png
+%%PORTDOCS%%%%DOCSDIR%%/tab_s.png
+%%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/user_doc.css
 %%DATADIR%%/__fish_build_paths.fish
@@ -68,6 +99,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/apt-zip-list.fish
 %%DATADIR%%/completions/apt.fish
 %%DATADIR%%/completions/aptitude.fish
+%%DATADIR%%/completions/arc.fish
 %%DATADIR%%/completions/arepack.fish
 %%DATADIR%%/completions/arp.fish
 %%DATADIR%%/completions/asp.fish
@@ -104,7 +136,6 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/cancel.fish
 %%DATADIR%%/completions/canto.fish
 %%DATADIR%%/completions/cargo.fish
-%%DATADIR%%/completions/case.fish
 %%DATADIR%%/completions/cat.fish
 %%DATADIR%%/completions/cd.fish
 %%DATADIR%%/completions/cdrecord.fish
@@ -124,6 +155,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/composite.fish
 %%DATADIR%%/completions/configure.fish
 %%DATADIR%%/completions/conjure.fish
+%%DATADIR%%/completions/connmanctl.fish
 %%DATADIR%%/completions/continue.fish
 %%DATADIR%%/completions/convert.fish
 %%DATADIR%%/completions/cower.fish
@@ -141,6 +173,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/date.fish
 %%DATADIR%%/completions/dcop.fish
 %%DATADIR%%/completions/dd.fish
+%%DATADIR%%/completions/defaults.fish
 %%DATADIR%%/completions/df.fish
 %%DATADIR%%/completions/diff.fish
 %%DATADIR%%/completions/diskutil.fish
@@ -180,6 +213,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/fcrontab.fish
 %%DATADIR%%/completions/fg.fish
 %%DATADIR%%/completions/fgrep.fish
+%%DATADIR%%/completions/figlet.fish
 %%DATADIR%%/completions/file.fish
 %%DATADIR%%/completions/find.fish
 %%DATADIR%%/completions/fish.fish
@@ -233,6 +267,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/ifup.fish
 %%DATADIR%%/completions/import.fish
 %%DATADIR%%/completions/invoke-rc.d.fish
+%%DATADIR%%/completions/ip.fish
 %%DATADIR%%/completions/iptables.fish
 %%DATADIR%%/completions/jobs.fish
 %%DATADIR%%/completions/journalctl.fish
@@ -277,6 +312,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/man.fish
 %%DATADIR%%/completions/mc.fish
 %%DATADIR%%/completions/md5sum.fish
+%%DATADIR%%/completions/mdbook.fish
 %%DATADIR%%/completions/meat.fish
 %%DATADIR%%/completions/mix.fish
 %%DATADIR%%/completions/mkdir.fish
@@ -301,8 +337,10 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/netcat.fish
 %%DATADIR%%/completions/netctl-auto.fish
 %%DATADIR%%/completions/netctl.fish
+%%DATADIR%%/completions/networkctl.fish
 %%DATADIR%%/completions/nextd.fish
 %%DATADIR%%/completions/nice.fish
+%%DATADIR%%/completions/ninja.fish
 %%DATADIR%%/completions/nl.fish
 %%DATADIR%%/completions/nm.fish
 %%DATADIR%%/completions/nmcli.fish
@@ -316,6 +354,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/opam.fish
 %%DATADIR%%/completions/open.fish
 %%DATADIR%%/completions/or.fish
+%%DATADIR%%/completions/p4.fish
 %%DATADIR%%/completions/pacaur.fish
 %%DATADIR%%/completions/pacman-color.fish
 %%DATADIR%%/completions/pacman-key.fish
@@ -359,11 +398,13 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/completions/psub.fish
 %%DATADIR%%/completions/pushd.fish
 %%DATADIR%%/completions/pydf.fish
+%%DATADIR%%/completions/pygmentize.fish
 %%DATADIR%%/completions/python.fish
 %%DATADIR%%/completions/python2.fish
 %%DATADIR%%/completions/python3.fish
 %%DATADIR%%/completions/quilt.fish
 %%DATADIR%%/completions/random.fish
+%%DATADIR%%/completions/ranger.fish
 %%DATADIR%%/completions/rbenv.fish
 %%DATADIR%%/completions/rc-service.fish
 %%DATADIR%%/completions/rc-update.fish
@@ -506,6 +547,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/functions/__fish_complete_ant_targets.fish
 %%DATADIR%%/functions/__fish_complete_atool_archive_contents.fish
 %%DATADIR%%/functions/__fish_complete_bittorrent.fish
+%%DATADIR%%/functions/__fish_complete_blockdevice.fish
 %%DATADIR%%/functions/__fish_complete_cd.fish
 %%DATADIR%%/functions/__fish_complete_command.fish
 %%DATADIR%%/functions/__fish_complete_convert_options.fish
@@ -577,6 +619,8 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/functions/__fish_print_make_targets.fish
 %%DATADIR%%/functions/__fish_print_modules.fish
 %%DATADIR%%/functions/__fish_print_mounted.fish
+%%DATADIR%%/functions/__fish_print_ninja_targets.fish
+%%DATADIR%%/functions/__fish_print_ninja_tools.fish
 %%DATADIR%%/functions/__fish_print_packages.fish
 %%DATADIR%%/functions/__fish_print_pacman_repos.fish
 %%DATADIR%%/functions/__fish_print_service_names.fish
@@ -594,7 +638,9 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/functions/__fish_prt_use_port.fish
 %%DATADIR%%/functions/__fish_pwd.fish
 %%DATADIR%%/functions/__fish_seen_subcommand_from.fish
+%%DATADIR%%/functions/__fish_set_locale.fish
 %%DATADIR%%/functions/__fish_sgrep.fish
+%%DATADIR%%/functions/__fish_shared_key_bindings.fish
 %%DATADIR%%/functions/__fish_svn_prompt.fish
 %%DATADIR%%/functions/__fish_systemctl_automounts.fish
 %%DATADIR%%/functions/__fish_systemctl_devices.fish
@@ -626,6 +672,8 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/functions/down-or-search.fish
 %%DATADIR%%/functions/eval.fish
 %%DATADIR%%/functions/export.fish
+%%DATADIR%%/functions/fish_clipboard_copy.fish
+%%DATADIR%%/functions/fish_clipboard_paste.fish
 %%DATADIR%%/functions/fish_config.fish
 %%DATADIR%%/functions/fish_default_key_bindings.fish
 %%DATADIR%%/functions/fish_fallback_prompt.fish
@@ -700,8 +748,8 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/man/man1/fish_config.1.gz
 %%DATADIR%%/man/man1/fish_indent.1.gz
 %%DATADIR%%/man/man1/fish_key_reader.1.gz
+%%DATADIR%%/man/man1/fish_mode_prompt.1.gz
 %%DATADIR%%/man/man1/fish_prompt.1.gz
-%%DATADIR%%/man/man1/fish_realpath.1.gz
 %%DATADIR%%/man/man1/fish_right_prompt.1.gz
 %%DATADIR%%/man/man1/fish_update_completions.1.gz
 %%DATADIR%%/man/man1/fish_vi_mode.1.gz
@@ -729,6 +777,7 @@ man/man1/fish_key_reader.1.gz
 %%DATADIR%%/man/man1/pwd.1.gz
 %%DATADIR%%/man/man1/random.1.gz
 %%DATADIR%%/man/man1/read.1.gz
+%%DATADIR%%/man/man1/realpath.1.gz
 %%DATADIR%%/man/man1/return.1.gz
 %%DATADIR%%/man/man1/set.1.gz
 %%DATADIR%%/man/man1/set_color.1.gz
