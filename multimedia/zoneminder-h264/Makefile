@@ -2,7 +2,6 @@
 
 PORTNAME=	zoneminder-h264
 PORTVERSION=	1.30.20161104
-DISTVERSIONSUFFIX=	a2f782d
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
@@ -36,10 +35,8 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
-GH_TUPLE=	zoneminder:zoneminder:a2f782d \
+GH_TUPLE=	zoneminder:ZoneMinder:a2f782d \
 		FriendsOfCake:crud:c3976f1:crud
-
-WRKSRC=		${WRKDIR}/ZoneMinder-${DISTVERSIONSUFFIX}
 
 USES=		cmake jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder

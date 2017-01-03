@@ -19,7 +19,7 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS=	marshal.c
 
-WRKSRC=		${WRKDIR}/w4py-${PORTVERSION}/WebKit/Adapters/${PORTNAME}2
+WRKSRC_SUBDIR=		WebKit/Adapters/${PORTNAME}2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/Makefile

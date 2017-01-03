@@ -18,7 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 OPTIONS_DEFINE?=DOCS MANPAGES
 OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcltk
 USES+=		tcl

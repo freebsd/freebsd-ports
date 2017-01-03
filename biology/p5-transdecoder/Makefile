@@ -26,8 +26,6 @@ SHEBANG_FILES=	sample_data/cufflinks_example/runMe.sh \
 USE_GITHUB=	yes
 GH_PROJECT=	TransDecoder
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
-
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
 

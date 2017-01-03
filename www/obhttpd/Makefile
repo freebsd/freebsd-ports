@@ -9,7 +9,7 @@ COMMENT=	OpenBSD http server
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/src/usr.sbin/${GH_PROJECT}
+WRKSRC_SUBDIR=		src/usr.sbin/${GH_PROJECT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue

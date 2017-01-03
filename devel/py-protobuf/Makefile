@@ -21,7 +21,7 @@ NO_ARCH=	yes
 TEST_TARGET=	test
 USE_PYTHON=	autoplist distutils
 USES=		python
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
+WRKSRC_SUBDIR=	python
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes

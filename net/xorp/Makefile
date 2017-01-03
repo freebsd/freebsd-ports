@@ -22,7 +22,7 @@ GH_ACCOUNT=	greearb
 GH_PROJECT=	${PORTNAME}.ct
 SHEBANG_FILES=	xrl/scripts/clnt-gen xrl/scripts/tgt-gen
 python_OLD_CMD=	.*python
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${DISTVERSIONPREFIX}${DISTVERSION}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 MAKE_ARGS=	prefix=${PREFIX} enable_boost=1
 SUB_FILES=	pkg-message
 GROUPS=		xorp

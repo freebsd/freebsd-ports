@@ -1,10 +1,11 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	linuxcnc-devel
+PORTNAME=	linuxcnc
 PORTVERSION=	20160626
 PORTREVISION=	1
 CATEGORIES=	cad
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Source CNC machine controller
@@ -30,7 +31,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
 
-WRKSRC=		${WRKDIR}/linuxcnc-${GH_TAGNAME}/src
+WRKSRC_SUBDIR=		src
 PATCH_WRKSRC=	${WRKDIR}/linuxcnc-${GH_TAGNAME}
 ALL_TARGET=	default
 
@@ -47,7 +48,6 @@ USE_XORG=	ice sm x11 xext xft xinerama xmu xrender xscrnsaver xt
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	LinuxCNC
-GH_PROJECT=	linuxcnc
 GH_TAGNAME=	fe7b155c03fe77d6eb301bcfdc3d7c1acdea73e4
 
 post-patch:

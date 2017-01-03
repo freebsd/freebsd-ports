@@ -12,7 +12,7 @@ COMMENT=	Read, modify, and write DICOM files with Python code
 
 LICENSE=	MIT
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/source
+WRKSRC_SUBDIR=	source
 
 USES=		python shebangfix
 USE_GITHUB=	yes

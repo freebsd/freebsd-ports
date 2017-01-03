@@ -23,8 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	Pylons
+GH_PROJECT=	webtest
 USES=		python
 USE_PYTHON=	autoplist distutils
-WRKSRC=		${WRKDIR}/webtest-${PORTVERSION}
 
 .include <bsd.port.mk>

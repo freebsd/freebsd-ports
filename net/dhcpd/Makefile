@@ -9,7 +9,7 @@ COMMENT=	OpenBSD dhcp daemon
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/usr.sbin/${PORTNAME}
+WRKSRC_SUBDIR=	src/usr.sbin/${PORTNAME}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue

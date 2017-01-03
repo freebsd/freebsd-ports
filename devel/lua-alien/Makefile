@@ -14,8 +14,6 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mascarenhas
 

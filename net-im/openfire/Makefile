@@ -17,6 +17,7 @@ RUN_DEPENDS=	slf4j>=1.7.7:devel/slf4j
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	igniterealtime
+GH_PROJECT=	Openfire
 
 OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
@@ -37,7 +38,6 @@ ALL_TARGET=	openfire
 USE_RC_SUBR=	openfire
 SUB_FILES+=	pkg-message
 
-WRKSRC=		${WRKDIR}/Openfire-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/target/openfire
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
