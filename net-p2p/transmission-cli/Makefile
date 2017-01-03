@@ -44,8 +44,7 @@ GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:www/transmission-
 USES+=		gmake iconv libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 LIBS+=		${ICONV_LIB}
-CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz" \
-		${ICONV_LIB:C@.+@ac_cv_func_iconv=yes@}
+CONFIGURE_ENV=	${ICONV_LIB:C@.+@ac_cv_func_iconv=yes@}
 CONFIGURE_ARGS=	--without-inotify \
 		--enable-external-b64 \
 		--enable-external-dht \

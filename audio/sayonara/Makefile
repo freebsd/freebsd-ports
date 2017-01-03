@@ -30,9 +30,5 @@ post-patch:
 		${WRKSRC}/resources/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/DESTINATION/s,/usr/,,' \
 		${WRKSRC}/src/GUI/Resources/Icons/CMakeLists.txt
-.if !exists(/usr/libdata/pkgconfig/zlib.pc)
-	@${REINPLACE_CMD} -e '/zlib/s/PKG_CHECK_MODULES/FIND_PACKAGE/' \
-		${WRKSRC}/src/Helper/Compressor/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>

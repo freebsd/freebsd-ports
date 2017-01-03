@@ -60,8 +60,6 @@ CONFIGURE_ARGS+=	--disable-sigchld-handler
 
 .if ${OSVERSION} < 1000500
 USE_GCC=		yes
-CONFIGURE_ENV+=		zlib_LIBS='-lz ' \
-			zlib_CFLAGS=' '
 .endif
 
 post-install:

@@ -14,9 +14,6 @@ LICENSE=	LGPL3
 USES=		autoreconf gmake perl5 pkgconfig
 
 GNU_CONFIGURE=	yes
-# No zlib.pc on 9.x
-CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
-
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
