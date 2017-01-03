@@ -1,6 +1,6 @@
-TIMESTAMP = 1480595731
-SHA256 (thunderbird-45.5.1.tar.bz2) = 5d384d8e686bd714864005bf69b572e371fbac3ecdb14c42b7bebca532e54f71
-SIZE (thunderbird-45.5.1.tar.bz2) = 44227854
+TIMESTAMP = 1483454284
+SHA256 (thunderbird-45.6.0.tar.bz2) = 7d2737a921a9b0f3fac5d3373d009dd6c675ee726facefc11f9280306d22a036
+SIZE (thunderbird-45.6.0.tar.bz2) = 44237731
 SHA256 (glib2-2.22.2-2.fc12.i686.rpm) = e3b459c245ec14e7248e9de4b506963a4773407f3e58835db5070d0ed02ecc99
 SIZE (glib2-2.22.2-2.fc12.i686.rpm) = 1162908
 SHA256 (gtk2-2.18.3-19.fc12.i686.rpm) = aea9cf7ffe9c8dae0faa2bf3d2aa1b2117c55dce03da72dcce8c268279ec0a4b
