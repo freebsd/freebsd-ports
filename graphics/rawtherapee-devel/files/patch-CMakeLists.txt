@@ -1,10 +1,10 @@
 # This is required so that the RPATH information for libgcc/libgomp is
 # not stripped during CMake's install phase: -- mandree
 
---- ./CMakeLists.txt.orig	2013-06-15 19:16:41.000000000 +0200
-+++ ./CMakeLists.txt	2013-06-15 19:17:02.000000000 +0200
-@@ -6,6 +6,7 @@
- endif (WIN32)
+--- CMakeLists.txt.orig	2016-12-30 15:28:53 UTC
++++ CMakeLists.txt
+@@ -12,6 +12,7 @@ if(${CMAKE_EXTRA_GENERATOR} MATCHES "Ecl
+ endif()
  
  PROJECT(RawTherapee)
 +SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
