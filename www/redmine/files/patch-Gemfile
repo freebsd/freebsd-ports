@@ -24,15 +24,14 @@
  
  # Request at least rails-html-sanitizer 1.0.3 because of security advisories 
  gem "rails-html-sanitizer", ">= 1.0.3"
-@@ -26,29 +26,12 @@ gem "rails-html-sanitizer", ">= 1.0.3"
- gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin, :jruby]
- gem "rbpdf", "~> 1.19.0"
+@@ -28,27 +28,15 @@ gem "rbpdf", "~> 1.19.0"
  
--# Optional gem for LDAP authentication
--group :ldap do
+ # Optional gem for LDAP authentication
+ group :ldap do
 -  gem "net-ldap", "~> 0.12.0"
--end
--
++  gem "net-ldap", "~> 0.15.0"
+ end
+ 
  # Optional gem for OpenID authentication
  group :openid do
 -  gem "ruby-openid", "~> 2.3.0", :require => "openid"
@@ -55,7 +54,13 @@
  platforms :jruby do
    # jruby-openssl is bundled with JRuby 1.7.0
    gem "jruby-openssl" if Object.const_defined?(:JRUBY_VERSION) && JRUBY_VERSION < '1.7.0'
-@@ -72,7 +55,7 @@ if File.exist?(database_file)
+@@ -67,12 +55,12 @@ if File.exist?(database_file)
+     adapters.each do |adapter|
+       case adapter
+       when 'mysql2'
+-        gem "mysql2", "~> 0.3.11", :platforms => [:mri, :mingw, :x64_mingw]
++        gem "mysql2", "~> 0.4.5", :platforms => [:mri, :mingw, :x64_mingw]
+         gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
        when 'mysql'
          gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
        when /postgresql/
@@ -64,7 +69,7 @@
          gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
        when /sqlite3/
          gem "sqlite3", :platforms => [:mri, :mingw, :x64_mingw]
-@@ -92,21 +75,6 @@ else
+@@ -92,21 +80,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -86,7 +91,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -116,3 +84,7 @@ end
+@@ -116,3 +89,7 @@ end
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
  end

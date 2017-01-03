@@ -1,0 +1,11 @@
+--- roadie.gemspec.orig	2017-01-02 22:36:03.020933000 -0500
++++ roadie.gemspec	2017-01-02 22:36:14.436284000 -0500
+@@ -24,7 +24,7 @@
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<nokogiri>.freeze, ["< 1.7.0", ">= 1.5.0"])
++      s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.5.0"])
+       s.add_runtime_dependency(%q<css_parser>.freeze, ["~> 1.4.5"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])
+       s.add_development_dependency(%q<rspec-collection_matchers>.freeze, ["~> 1.0"])
