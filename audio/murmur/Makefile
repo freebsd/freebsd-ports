@@ -10,6 +10,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Murmur is the server component of Mumble
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
@@ -62,10 +63,6 @@ CONFIG+=	no-bonjour
 CONFIG+=	no-pch
 .endif
 
-.if ${OSVERSION} < 1000510
-EXTRA_PATCHES=	${FILESDIR}/FreeBSD9-patch-src_SSL.cpp
-.endif
-
 post-patch:
 	@${ECHO_CMD} 'QMAKE_LFLAGS += -fstack-protector' >> ${WRKSRC}/src/murmur/murmur.pro
 
@@ -80,11 +77,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${STAGEDIR}${PREFIX}/etc/murmur.ini.sample
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${CP} ${WRKSRC}/man/murmurd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in CHANGES INSTALL LICENSE README README.Linux
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in CHANGES INSTALL README README.Linux
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
