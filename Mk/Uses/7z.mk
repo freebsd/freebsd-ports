@@ -23,11 +23,6 @@ P7ZIP_WRKDIR?=		${EXTRACT_WRKDIR}
 IGNORE=			USES=7z has invalid arguments: ${7z_ARGS:Np7zip:Npartial}
 .endif
 
-.if ! ${7z_ARGS:Mp7zip} && (${OPSYS} == FreeBSD && ${OSVERSION} < 1000009)
-# libarchive lacks 7zip reader, fallback to P7ZIP_CMD
-7z_ARGS+=		p7zip
-.endif
-
 .if ${7z_ARGS:Mp7zip}
 EXTRACT_DEPENDS+=	${P7ZIP_CMD}:archivers/p7zip
 .endif

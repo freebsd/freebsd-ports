@@ -1633,9 +1633,7 @@ MAKE_ENV+=	NO_PIE=yes
 # We prefer to pass MK_*=no but it was only supported after a certain
 # revision.  Passing WITHOUT_* may conflict with a make.conf or src.conf's
 # WITH_* value.  Note that ports *do* pull in src.conf.
-.if (${OSVERSION} >= 903510 && ${OSVERSION} < 1000000) || \
-    (${OSVERSION} >= 1003503 && ${OSVERSION} < 1100000) || \
-    ${OSVERSION} >= 1100000
+.if ${OSVERSION} >= 1003503
 # We will control debug files.  Don't let builds that use /usr/share/mk
 # split out debug symbols since the plist won't know to expect it.
 MAKE_ENV+=	MK_DEBUG_FILES=no
@@ -3150,7 +3148,7 @@ do-patch:
 .if !target(run-autotools-fixup)
 run-autotools-fixup:
 # Work around an issue where FreeBSD 10.0 is detected as FreeBSD 1.x.
-.if ${OSVERSION} >= 1000000 && !defined(WITHOUT_FBSD10_FIX)
+.if !defined(WITHOUT_FBSD10_FIX)
 	-@for f in `${FIND} ${WRKDIR} -type f \( -name config.libpath -o \
 		-name config.rpath -o -name configure -o -name libtool.m4 -o \
 		-name ltconfig -o -name libtool -o -name aclocal.m4 -o \
