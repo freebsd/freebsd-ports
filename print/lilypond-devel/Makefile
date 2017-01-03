@@ -71,12 +71,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-BROKEN=		does not build on 10.1 (undefined reference to `__cxa_throw_bad_array_new_length')
-.endif
-
 post-patch:
 	${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|isinf[ ]*(|::isinf(|g' -e 's|isnan|::isnan|g'
@@ -91,4 +85,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lilypond/${PORTVERSION}/python/midi.so
 	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${PORTVERSION} current)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
