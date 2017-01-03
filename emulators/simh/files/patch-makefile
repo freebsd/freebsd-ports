@@ -1,15 +1,54 @@
---- makefile.orig	2012-04-23 16:28:04.000000000 +0200
-+++ makefile	2016-01-19 20:21:21.371550000 +0100
-@@ -332,8 +332,10 @@
+--- makefile.orig	2016-12-01 22:43:43 UTC
++++ makefile
+@@ -110,7 +110,7 @@ ifeq ($(WIN32),)  #*nix Environments (&&
+             PCAPLIB = wpcap
+             LIBEXT = a
+           else
+-            LDSEARCH :=$(shell ldconfig -r | grep 'search directories' | awk '{print $$3}' | sed 's/:/ /g')
++##########            LDSEARCH :=$(shell ldconfig -r | grep 'search directories' | awk '{print $$3}' | sed 's/:/ /g')
+             ifneq (,$(LDSEARCH))
+               LIBPATH := $(LDSEARCH)
+             endif
+@@ -300,7 +300,7 @@ ifneq ($(DEBUG),)
+   CFLAGS_O = -O0
+   BUILD_FEATURES = - debugging support
+ else
+-  CFLAGS_O = -O2
++  CFLAGS_O ?= -O2
+   LDFLAGS_O = 
+   GCC_MAJOR_VERSION = $(firstword $(subst  ., ,$(GCC_VERSION)))
+   ifneq (3,$(GCC_MAJOR_VERSION))
+@@ -309,9 +309,9 @@ else
+     endif
+     GCC_OPTIMIZERS = $(shell $(GCC_OPTIMIZERS_CMD))
    endif
-   ifeq (,$(NO_LTO))
-     ifneq (,$(findstring -flto,$(GCC_OPTIMIZERS)))
+-  ifneq (,$(findstring $(GCC_VERSION),$(LTO_EXCLUDE_VERSIONS)))
+-    NO_LTO = 1
+-  endif
++#  ifneq (,$(findstring $(GCC_VERSION),$(LTO_EXCLUDE_VERSIONS)))
++#    NO_LTO = 1
++#  endif
+   ifneq (,$(findstring -finline-functions,$(GCC_OPTIMIZERS)))
+     CFLAGS_O += -finline-functions
+   endif
+@@ -330,12 +330,14 @@ else
+   ifneq (,$(findstring -fstrict-overflow,$(GCC_OPTIMIZERS)))
+     CFLAGS_O += -fno-strict-overflow
+   endif
+-  ifeq (,$(NO_LTO))
+-    ifneq (,$(findstring -flto,$(GCC_OPTIMIZERS)))
 -      CFLAGS_O += -flto -fwhole-program
 -      LDFLAGS_O += -flto -fwhole-program
-+      ifneq (,$(findstring -fwhole-program,$(GCC_OPTIMIZERS)))
-+        CFLAGS_O += -flto -fwhole-program
-+        LDFLAGS_O += -flto -fwhole-program
-+      endif
-     endif
-   endif
+-    endif
+-  endif
++#  ifeq (,$(NO_LTO))
++#    ifneq (,$(findstring -flto,$(GCC_OPTIMIZERS)))
++#      ifneq (,$(findstring -fwhole-program,$(GCC_OPTIMIZERS)))
++#        CFLAGS_O += -flto -fwhole-program
++#        LDFLAGS_O += -flto -fwhole-program
++#      endif
++#    endif
++#  endif
    BUILD_FEATURES = - compiler optimizations and no debugging support
+ endif
+ ifneq (3,$(GCC_MAJOR_VERSION))
