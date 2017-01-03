@@ -2,7 +2,11 @@
 %%DATADIR%%/CurlSharp.dll
 %%DATADIR%%/CurlSharp.dll.config
 %%DATADIR%%/CurlSharp.dll.mdb
-%%DATADIR%%/DDay.iCal.dll
+%%DATADIR%%/Ical.Net.Collections.dll
+%%DATADIR%%/Ical.Net.Collections.dll.mdb
+%%DATADIR%%/Ical.Net.dll
+%%DATADIR%%/Ical.Net.dll.mdb
+%%DATADIR%%/NodaTime.dll
 %%DATADIR%%/FluentMigrator.Runner.dll
 %%DATADIR%%/FluentMigrator.Runner.dll.mdb
 %%DATADIR%%/FluentMigrator.dll
@@ -151,3 +155,5 @@
 %%DATADIR%%/UI/templates.js
 %%DATADIR%%/UI/vendor.js
 %%DATADIR%%/UI/vendor.map
+%%DATADIR%%/antlr.runtime.dll
+%%DATADIR%%/antlr.runtime.dll.mdb
