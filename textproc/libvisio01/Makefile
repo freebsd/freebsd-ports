@@ -2,7 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
@@ -25,8 +25,5 @@ USE_PERL5=	build
 USE_GNOME=	libxml2
 USES=		compiler:c++0x gmake gperf libtool pathfix perl5 pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,zlib,,g" ${WRKSRC}/libvisio.pc.in
 
 .include <bsd.port.mk>

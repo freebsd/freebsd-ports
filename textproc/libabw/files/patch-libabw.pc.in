@@ -1,8 +1,0 @@
---- libabw.pc.in.orig	2014-04-16 17:04:09 UTC
-+++ libabw.pc.in
-@@ -10,4 +10,4 @@ Requires: librevenge-0.0 librevenge-stre
- Libs: -L${libdir} -labw-@ABW_MAJOR_VERSION@.@ABW_MINOR_VERSION@
- Cflags: -I${includedir}/libabw-@ABW_MAJOR_VERSION@.@ABW_MINOR_VERSION@
- 
--Requires.private: libxml-2.0 zlib
-+Requires.private: libxml-2.0

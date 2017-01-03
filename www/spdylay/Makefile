@@ -3,6 +3,7 @@
 
 PORTNAME=	spdylay
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -31,9 +32,6 @@ USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl tar:xz
 
 PORTDOCS=	*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^Requires.private: zlib$$|Libs.private: -L${LIBDIR} -lz|' ${WRKSRC}/lib/libspdylay.pc.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/spdycli ${STAGEDIR}${PREFIX}/bin/

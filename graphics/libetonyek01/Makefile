@@ -2,7 +2,7 @@
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
@@ -37,9 +37,6 @@ TEST_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cppunit.pc:devel/cppunit
 TEST_CONFIGURE_OFF=	--disable-tests
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,zlib,,g" ${WRKSRC}/libetonyek.pc.in
 
 .if ${PORT_OPTIONS:MTEST}
 post-build:
