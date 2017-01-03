@@ -22,7 +22,7 @@ USE_GNOME=	libgnomeprint libartlgpl2 pango glib20 \
 		libxslt libxml2 gdkpixbuf2
 GH_ACCOUNT=	xmlroff
 GH_PROJECT=	xmlroff
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip

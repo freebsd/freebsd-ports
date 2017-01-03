@@ -3,9 +3,9 @@
 
 PORTNAME=	ACH
 PORTVERSION=	1.0.3
+DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	www
 MASTER_SITES=	GHC
-EXTRACT_SUFX=	-alpha.tar
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free, open source tool for complex research problems
@@ -13,12 +13,12 @@ COMMENT=	Free, open source tool for complex research problems
 LICENSE=	GPLv3
 
 USE_MYSQL=	yes
-USES=		php
+USES=		php tar
 USE_GITHUB=	yes
 GH_ACCOUNT=	Burton
 GH_PROJECT=	Analysis-of-Competing-Hypotheses
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
+WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

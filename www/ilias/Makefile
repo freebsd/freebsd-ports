@@ -29,7 +29,6 @@ NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 USE_PHP=	mysql session zlib gd pdf dom xsl pcre
-WRKSRC=		${WRKDIR}/ILIAS-${PORTVERSION}
 ILIASDIR=	www/ilias
 ILIASDATADIR=	www/iliasdata
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}

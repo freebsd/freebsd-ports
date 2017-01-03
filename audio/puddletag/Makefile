@@ -23,7 +23,7 @@ GH_ACCOUNT=	keithgg
 USES=		python:2 pyqt:4
 USE_PYTHON=	autoplist distutils
 USE_PYQT=	gui_run svg_run
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/source
+WRKSRC_SUBDIR=	source
 NO_BUILD=	yes
 NO_ARCH=	yes
 

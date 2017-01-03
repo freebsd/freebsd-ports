@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 
 PLIST_FILES=	bin/micropython
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
+WRKSRC_SUBDIR=	unix
 
 SHEBANG_FILES=	../tools/make-frozen.py
 MAKE_ARGS+=	V=1

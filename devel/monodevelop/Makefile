@@ -63,7 +63,7 @@ INSTALLS_ICONS=	yes
 
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	Build parallelization not implemented
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}/main
+WRKSRC_SUBDIR=		main
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 
 post-extract:
