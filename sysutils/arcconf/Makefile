@@ -32,10 +32,6 @@ DIST_OSVER=	9
 DIST_OSVER=	10
 .endif
 
-.if ${OPSYS} != FreeBSD
-IGNORE=		installs incompatible binaries for FreeBSD
-.endif
-
 .if ${ARCH} == amd64
 DIST_EXT=	_x64
 .elif ${ARCH} == i386
