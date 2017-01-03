@@ -3,6 +3,7 @@
 
 PORTNAME=	actionpack
 PORTVERSION=	4.2.7.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-actionview>=${PORTVERSION}:devel/rubygem-actionview \
 		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
 		rubygem-rack16>=1.6:www/rubygem-rack16 \
 		rubygem-rack-test>=0.6.2:www/rubygem-rack-test \
-		rubygem-rails-dom-testing>=1.0.5:textproc/rubygem-rails-dom-testing \
+		rubygem-rails-dom-testing1>=1.0.5:textproc/rubygem-rails-dom-testing1 \
 		rubygem-rails-html-sanitizer>=1.0.2:textproc/rubygem-rails-html-sanitizer
 
 NO_ARCH=	yes
