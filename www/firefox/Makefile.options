@@ -22,9 +22,6 @@ OPTIONS_EXCLUDE+=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 
-# dtrace(1) crashes during build or fails to allocate space for probe
-OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
-
 BUNDLED_CAIRO_DESC?=	Use bundled fork of cairo-1.9.5
 CANBERRA_DESC?=		Sound theme alerts
 GNOMEUI_DESC?=		libgnomeui support module
