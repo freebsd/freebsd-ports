@@ -40,6 +40,7 @@
     SUBDIR += clang36
     SUBDIR += clang37
     SUBDIR += clang38
+    SUBDIR += cling
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += clover
