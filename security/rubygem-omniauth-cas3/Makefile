@@ -3,6 +3,7 @@
 
 PORTNAME=	omniauth-cas3
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
