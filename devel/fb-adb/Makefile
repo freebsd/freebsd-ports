@@ -68,11 +68,7 @@ NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			NDK_TMPDIR="${WRKDIR}"
 NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7 \
 			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:lang/gnatdroid-x86
-.if defined(.PARSEDIR)
 NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H:ts:}:$$PATH"
-.else
-NDK_CONFIGURE_ENV_OFF=	PATH="${LOCALBASE}/android/ARMv7/bin:${LOCALBASE}/android-x86/x86_32/bin:$$PATH"
-.endif
 NDK_CONFIGURE_OFF=	--with-android-ndk=system
 
 post-extract:

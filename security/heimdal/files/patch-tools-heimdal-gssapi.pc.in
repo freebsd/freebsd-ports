@@ -1,20 +1,10 @@
---- tools/heimdal-gssapi.pc.in.orig	2012-12-10 07:06:44.000000000 +0900
-+++ tools/heimdal-gssapi.pc.in	2014-11-24 09:40:30.000000000 +0900
-@@ -1,8 +1,8 @@
- # $Id$
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
--includedir=${prefix}/include
-+libdir=@libdir@
-+includedir=@includedir@
- 
- Name: @PACKAGE@
- Description: Heimdal is an implementation of Kerberos 5, freely available under a three clause BSD style license.
-@@ -10,5 +10,5 @@
+--- tools/heimdal-gssapi.pc.in.orig	2016-12-14 18:01:18 UTC
++++ tools/heimdal-gssapi.pc.in
+@@ -9,6 +9,6 @@ Description: Heimdal is an implementatio
+ Version: @VERSION@
  URL: http://www.pdc.kth.se/heimdal/
- #Requires: foo = 1.3.1
- #Conflicts: bar <= 4.5
--Libs: -L${libdir} -lgssapi -lheimntlm -lkrb5 @LIB_pkinit@ -lcom_err @LIB_hcrypto_appl@ -lasn1 -lwind -lroken @LIB_crypt@ @LIB_dlopen@ @LIB_door_create@ @LIBS@
-+Libs: -L${libdir} -Wl,-rpath=${libdir} -lgssapi -lheimntlm -lkrb5 @LIB_pkinit@ -lcom_err @LIB_hcrypto_appl@ -lasn1 -lwind -lroken @LIB_crypt@ @LIB_dlopen@ @LIB_door_create@ @LIBS@
+ Requires.private: heimdal-krb5
+-Libs: -L${libdir} -lgssapi
++Libs: -L${libdir} -Wl,-rpath=${libdir} -lgssapi
+ Libs.private: -lheimntlm @LIB_crypt@
  Cflags: -I${includedir}

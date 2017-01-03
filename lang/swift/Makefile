@@ -50,9 +50,6 @@ PORTDOCS=	*
 BUILD_DEPENDS+=	clang38:devel/llvm38
 EXTRA_FLAGS=	--host-cc=${LOCALBASE}/bin/clang38 --host-cxx=${LOCALBASE}/bin/clang++38
 .endif
-.if (${OSVERSION} < 1001513)
-BROKEN=		Does not build
-.endif
 .endif
 
 post-extract:

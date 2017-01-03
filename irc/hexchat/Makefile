@@ -78,10 +78,6 @@ TEXTFE_CONFIGURE_ENABLE=textfe
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
-
 .if ${PORT_OPTIONS:MCA_BUNDLE}
 CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
 .else

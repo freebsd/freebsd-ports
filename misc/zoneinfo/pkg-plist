@@ -215,6 +215,7 @@
 %%DATADIR%%/Asia/Aqtau
 %%DATADIR%%/Asia/Aqtobe
 %%DATADIR%%/Asia/Ashgabat
+%%DATADIR%%/Asia/Atyrau
 %%DATADIR%%/Asia/Baghdad
 %%DATADIR%%/Asia/Bahrain
 %%DATADIR%%/Asia/Baku
@@ -395,6 +396,7 @@
 %%DATADIR%%/Europe/Samara
 %%DATADIR%%/Europe/San_Marino
 %%DATADIR%%/Europe/Sarajevo
+%%DATADIR%%/Europe/Saratov
 %%DATADIR%%/Europe/Simferopol
 %%DATADIR%%/Europe/Skopje
 %%DATADIR%%/Europe/Sofia

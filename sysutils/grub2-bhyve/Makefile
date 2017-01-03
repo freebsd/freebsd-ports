@@ -27,12 +27,6 @@ CONFIGURE_ARGS=	--with-platform=emu CC=${CC} LEX=${LOCALBASE}/bin/flex \
 		--enable-grub-mount=no --enable-grub-mkfont=no \
 		--enable-grub-emu-sdl=no --disable-nls --disable-werror
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 1000000
-IGNORE=	for FreeBSD 10 and higher
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/libintl\.h/I_do_not_want_libintl.h/g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s/-lintl//g" ${WRKSRC}/grub-core/Makefile.in
@@ -43,6 +37,6 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grub-core/grub-emu ${STAGEDIR}${LOCALBASE}/sbin/grub-bhyve
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}

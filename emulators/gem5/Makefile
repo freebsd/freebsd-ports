@@ -23,10 +23,6 @@ USES=		gmake
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-IGNORE=	does not support FreeBSD versions < 10.0
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|sys/termios.h|termios.h|' \
 		${WRKSRC}/src/base/vnc/vncserver.cc \

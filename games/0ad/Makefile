@@ -47,10 +47,6 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000024
-BROKEN=		segfaults during build
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%CC%%|${CC}|' \

@@ -2,6 +2,7 @@
 
 PORTNAME=	hugo
 PORTVERSION=	0.18.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
@@ -56,22 +57,21 @@ GH_TUPLE=	eknkc:amber:9be5e8a:amber/src/github.com/eknkc/amber \
 OPTIONS_DEFINE=	MANPAGES
 MANPAGES_DESC=	Build and/or install manual pages
 
+OPTIONS_SUB=	MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-
-.include <bsd.port.options.mk>
 
 STRIP=		# stripping can break go binaries
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && ${SETENV} GOPATH=${WRKSRC} go build -o bin/${PORTNAME}
-.if ${PORT_OPTIONS:MMANPAGES}
+
+do-build-MANPAGES-on:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && ./bin/${PORTNAME} gen man --dir man/man1/
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/bin/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 
-.if ${PORT_OPTIONS:MMANPAGES}
+do-install-MANPAGES-on:
 .for i in hugo-benchmark.1 \
 		hugo-config.1 \
 		hugo-convert-toJSON.1 \
@@ -98,6 +98,5 @@ do-install:
 		hugo.1
 		${INSTALL_MAN} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
 .endfor
-.endif
 
 .include <bsd.port.mk>

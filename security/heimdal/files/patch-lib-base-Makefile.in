@@ -1,0 +1,11 @@
+--- lib/base/Makefile.in.orig	2017-01-03 13:45:02 UTC
++++ lib/base/Makefile.in
+@@ -705,7 +705,7 @@ heim_verbose_0 = @echo "  GEN    "$@;
+ IMPLEMENT_TLS = $(am__append_1)
+ lib_LTLIBRARIES = libheimbase.la
+ libheimbase_la_LDFLAGS = -version-info 1:0:0 $(am__append_3)
+-libheimbase_la_LIBADD = $(PTHREAD_LIBADD)
++libheimbase_la_LIBADD = $(PTHREAD_LIBADD) $(LIB_libintl)
+ include_HEADERS = heimbase.h
+ dist_libheimbase_la_SOURCES = \
+ 	array.c			\

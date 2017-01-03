@@ -14,6 +14,10 @@ COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE=		is not needed under FreeBSD 10.x or higher
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=	2017-01-15
+
 CONFLICTS=	openbsm-1.[0-9]*
 
 GNU_CONFIGURE=	yes
@@ -35,10 +39,6 @@ VARAUDIT=	/var/audit
 NEEDVARDIRS=	""
 .else
 NEEDVARDIRS=	"@comment "
-.endif
-
-.if ${OSVERSION} >= 1000000
-IGNORE=		is not needed under FreeBSD 10.x or higher
 .endif
 
 post-install:

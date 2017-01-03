@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2.99.git000
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 PKGNAMESUFFIX=	-devel
@@ -90,9 +90,14 @@ CXX=		clang++37
 
 # FIXME: At least in 3.7.0 and 3.7.1, Clang doesn't find libomp.so
 # itself. Furthermore, there may be a regression in 3.7.1 because we now
-# need to explicitely link to libm.so as well.
+# need to explicitly link to libm.so as well.
 OPENMP_FLAGS=	-L${LOCALBASE}/llvm37/lib -lm -lomp
 LDFLAGS+=	${OPENMP_FLAGS}
+
+# In cmake, the CMP0056 policy must be explicitly set to NEW to ensure
+# linker flags are passed.
+# See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
+CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 .endif
 
 post-patch:

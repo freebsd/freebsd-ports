@@ -84,10 +84,4 @@ post-install:
 	${CP} ${WRKSRC}/Resources/Configuration.json ${STAGEDIR}${ETCDIR}/orthanc.json.sample
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/plugins/libServeFolders.so.${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1001000
-IGNORE=	supported only on 10.x by upstream, not all unit tests are passed
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

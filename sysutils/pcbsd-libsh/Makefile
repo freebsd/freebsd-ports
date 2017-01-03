@@ -23,10 +23,4 @@ GH_TAGNAME=	2c5a0c
 
 PLIST_FILES=	share/pcbsd/scripts/functions.sh
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

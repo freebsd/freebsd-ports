@@ -4,3 +4,7 @@ lib/libcsv.so
 lib/libcsv.so.%%SHLIB_MAJOR%%
 %%PROFILE%%lib/libcsv_p.a
 man/man3/csv.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csvfix.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csvinfo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csvtest.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csvvalid.c

@@ -27,10 +27,4 @@ GH_ACCOUNT=	pcbsd
 GH_PROJECT=	pcbsd
 GH_TAGNAME=	3c4d2b
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

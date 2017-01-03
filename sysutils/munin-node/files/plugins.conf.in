@@ -65,7 +65,7 @@ env.mysqlshow %%LOCALBASE%%/bin/mysqlshow
 
 [postfix*]
 user root
-env.logfile /var/log/maillog
+env.logfile maillog
 
 [sendmail*]
 group wheel

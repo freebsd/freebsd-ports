@@ -48,10 +48,6 @@ QT5_PLIST_FILES=bin/android-file-transfer \
 		share/applications/android-file-transfer.desktop \
 		share/icons/hicolor/128x128/apps/android-file-transfer.png
 
-.if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
-CONFIGURE_ENV+=	PKG_CONFIG_PATH="${FILESDIR}"
-.endif
-
 post-patch-CLI-off:
 	@${REINPLACE_CMD} '/subdirectory(cli)/d' ${WRKSRC}/CMakeLists.txt
 

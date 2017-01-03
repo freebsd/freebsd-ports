@@ -69,12 +69,6 @@ TEST_ALL_TARGET=	adb_test
 pre-install-TEST-on: do-test
 
 post-patch:
-# XXX C++ exception with description "regex_error" thrown in the test body.
-	@if [ ${OPSYS} = FreeBSD -a ${OSREL:R} -lt 10 ]; then \
-		${REINPLACE_CMD} -Ee '/^TEST/\
-			s/ (LOG|PLOG|UNIMPLEMENTED)/ DISABLED_\1/' \
-		${WRKSRC}/base/logging_test.cpp; \
-	fi
 # XXX Hidden by poudriere/tinderbox, see lindev(4) for FreeBSD < 11.0
 	@if [ ! -e /dev/full ]; then \
 		${REINPLACE_CMD} -e '/TEST/s/[^ ]*ENOSPC/DISABLED_&/' \

@@ -51,10 +51,4 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOMAKE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1003000
-IGNORE=		requires FreeBSD 10.3 (futimens)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

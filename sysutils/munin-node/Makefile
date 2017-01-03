@@ -3,7 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -77,7 +77,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
 		${STAGEDIR}${ETCDIR}/munin-node.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
-		${STAGEDIR}${ETCDIR}/plugin-conf.d/plugins.conf.sample
+		${STAGEDIR}${ETCDIR}/plugins.conf.sample
 	(cd ${WRKSRC}/node/blib/bindoc; \
 		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 munin-sched.1 munindoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
 	)
