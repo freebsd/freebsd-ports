@@ -5,7 +5,7 @@
          gchar *t;
  
 -        t = g_strdup_printf ("/dev/tty%d", vt);
-+        t = g_strdup_printf ("/dev/ttyv%d", vt);
++        t = g_strdup_printf ("/dev/ttyv%d", vt-1);
          session_set_tty (session, t);
          g_free (t);
  
