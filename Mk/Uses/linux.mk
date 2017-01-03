@@ -40,9 +40,9 @@ IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .if ${LINUX_DEFAULT:M*_64}
 LINUX_ARCH=		x86_64
 LINUX_ARCH32=		i386
-.if ${ARCH} != amd64 || ${OPSYS} != FreeBSD || ${OSVERSION} < 1002507 \
+.if ${ARCH} != amd64 || ${OPSYS} != FreeBSD \
  || ( ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100105 )
-IGNORE=			Linux ${LINUX_DEFAULT} is only supported on FreeBSD/amd64 10.3 or higher
+IGNORE=			Linux ${LINUX_DEFAULT} is unsupported on pre-release versions of FreeBSD 11. Update to 11.0-RELEASE or higher.
 .endif
 .else
 LINUX_ARCH=		i386

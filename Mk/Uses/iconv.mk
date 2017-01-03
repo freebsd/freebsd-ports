@@ -41,8 +41,8 @@ ICONV_CONFIGURE_BASE=
 ICONV_INCLUDE_PATH=	/usr/include
 ICONV_LIB_PATH=		/usr/lib/libc.so
 
-.if (${OPSYS} == FreeBSD && (${OSVERSION} < 1001514 \
- || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100069))) \
+.if (${OPSYS} == FreeBSD && \
+ (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100069)) \
  || exists(${LOCALBASE}/include/iconv.h)
 BUILD_DEPENDS+=	libiconv>=1.14_9:converters/libiconv
 ICONV_INCLUDE_PATH=	${LOCALBASE}/include

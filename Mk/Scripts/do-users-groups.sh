@@ -28,7 +28,7 @@ error() {
 rm -f "${dp_UG_INSTALL}" "${dp_UG_DEINSTALL}" || :
 
 # Before FreeBSD 10.2, PW did not have -R support.
-if [ "${dp_OPSYS}" = FreeBSD ] && [ "${dp_OSVERSION}" -ge 1002000 ]; then
+if [ "${dp_OPSYS}" = FreeBSD ] ; then
 	cat >> "${dp_UG_INSTALL}" <<-eot
 	if [ -n "\${PKG_ROOTDIR}" ] && [ "\${PKG_ROOTDIR}" != "/" ]; then
 	  PW="${dp_PW} -R \${PKG_ROOTDIR}"
