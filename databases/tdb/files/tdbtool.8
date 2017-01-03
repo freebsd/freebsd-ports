@@ -1,13 +1,22 @@
 '\" t
 .\"     Title: tdbtool
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 03/29/2011
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2015-04-25
 .\"    Manual: System Administration tools
-.\"    Source: Samba 3.6
+.\"    Source: Samba 4.0
 .\"  Language: English
 .\"
-.TH "TDBTOOL" "8" "03/29/2011" "Samba 3\&.6" "System Administration tools"
+.TH "TDBTOOL" "8" "2015\-04\-25" "Samba 4\&.0" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -24,7 +33,7 @@ tdbtool \- manipulate the contents TDB files
 .HP \w'\fBtdbtool\fR\ 'u
 \fBtdbtool\fR
 .HP \w'\fBtdbtool\fR\ 'u
-\fBtdbtool\fR \fITDBFILE\fR [\fICOMMANDS\fR...]
+\fBtdbtool\fR [\-l] \fITDBFILE\fR [\fICOMMANDS\fR...]
 .SH "DESCRIPTION"
 .PP
 This tool is part of the
@@ -33,6 +42,12 @@ suite\&.
 .PP
 \fBtdbtool\fR
 a tool for displaying and altering the contents of Samba TDB (Trivial DataBase) files\&. Each of the commands listed below can be entered interactively or provided on the command line\&.
+.SH "OPTIONS"
+.PP
+\-l
+.RS 4
+This options disables any locking, by passing TDB_NOLOCK to tdb_open_ex()\&. Only use this for database files which are not used by any other process! And also only if it is otherwise not possible to open the database, e\&.g\&. databases which were created with mutex locking\&.
+.RE
 .SH "COMMANDS"
 .PP
 \fBcreate\fR \fITDBFILE\fR
@@ -133,6 +148,11 @@ Print the next record in the current database\&.
 Check the integrity of the current database\&.
 .RE
 .PP
+\fBrepack\fR
+.RS 4
+Repack a database using a temporary file to remove fragmentation\&.
+.RE
+.PP
 \fBquit\fR
 .RS 4
 Exit
@@ -144,7 +164,7 @@ The contents of the Samba TDB files are private to the implementation and should
 \fBtdbtool\fR\&.
 .SH "VERSION"
 .PP
-This man page is correct for version 3\&.0\&.25 of the Samba suite\&.
+This man page is correct for version 3\&.6 of the Samba suite\&.
 .SH "AUTHOR"
 .PP
 The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.
