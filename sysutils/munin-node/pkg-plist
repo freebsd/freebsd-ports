@@ -1,6 +1,7 @@
 bin/munindoc
 @sample %%ETCDIR%%/munin-node.conf.sample
-@sample %%ETCDIR%%/plugin-conf.d/plugins.conf.sample
+@dir %%ETCDIR%%/plugin-conf.d
+@sample %%ETCDIR%%/plugins.conf.sample %%ETCDIR%%/plugin-conf.d/plugins.conf
 @comment the directory exists in STAGEDIR because it is present in
 @comment BSD.local.dist but if not registered here, it will not exist in PREFIX
 @comment when the package is installed.
