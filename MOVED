@@ -8852,7 +8852,7 @@ net-mgmt/ccnet|net-mgmt/ccnet-client|2016-12-26|Split into -client and -server p
 net-mgmt/seafile|net-mgmt/seafile-client|2016-12-26|Split into -client and -server parts
 comms/libcodec2|audio/codec2|2016-12-26|Removed: Duplicate port use `audio/codec2` instead
 databases/py-sqlalchemy07|databases/py-sqlalchemy10|2016-12-27|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
-security/openvpn-polarssl|security/openvpn-mbedtls|2016-12-27|Slave port renamed to match the TLS library's new name.
+security/openvpn-polarssl|security/openvpn-mbedtls|2016-12-27|Slave port renamed to match the TLS library's new name
 www/p5-ParallelUA|www/p5-ParallelUserAgent|2016-12-31|Rename to match upstream naming
 lang/perl5.18||2016-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
 audio/linux-f10-sdl_mixer||2016-12-31|Removed
@@ -8932,8 +8932,8 @@ archivers/linux-f10-upx||2016-12-31|Removed
 devel/rubygem-devise-async-rails4||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
 devel/rubygem-devise-async||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
 net/iet||2016-12-31|Has expired: Upstream no longer active
-sysutils/geomgui||2016-12-31|Has expired: Development stopped years ago.
-sysutils/screen-legacy||2016-12-31|Has expired: Old version released 2008-08-07 no longer upline maintained.
+sysutils/geomgui||2016-12-31|Has expired: Development stopped years ago
+sysutils/screen-legacy||2016-12-31|Has expired: Old version released 2008-08-07 no longer upline maintained
 sysutils/ntfsprogs|sysutils/fusefs-ntfs|2016-12-31|Has expired: Superseded by sysutils/fusefs-ntfs
 www/rubygem-jekyll2|www/rubygem-jekyll|2016-12-31|Has expired: Use www/rubygem-jekyll instead
 databases/rubygem-dm-devise||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
