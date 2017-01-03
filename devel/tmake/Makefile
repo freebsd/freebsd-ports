@@ -2,25 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	tmake
-PORTVERSION=	1.13
+PORTVERSION=	2.12
 CATEGORIES=	devel perl5
-MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/ \
+MASTER_SITES=	SF \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely portable perl-based make utility
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix zip
+
+PLIST_FILES=	bin/progen bin/tmake
+PORTDATA=	*
 
 SHEBANG_FILES=	bin/progen bin/tmake
 
 post-patch:
-	@${RM} ${WRKSRC}/bin/tmake.orig ${WRKSRC}/lib/unix/generic.t.orig
+	@${RM} ${WRKSRC}/lib/make/generic.t.orig
 	@${REINPLACE_CMD} \
-		-e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|/usr/X11R6|${LOCALBASE}|g' \
+		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e '/^TMAKE_CFLAGS_RELEASE/ s| -O[0-9]||' \
 			${WRKSRC}/lib/freebsd-g++/tmake.conf
 
