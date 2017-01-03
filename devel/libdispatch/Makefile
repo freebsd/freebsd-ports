@@ -84,14 +84,6 @@ OPTIONS_DEFAULT=	CLANG
 CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
 .endif
 
-.if (${OSVERSION} < 1000706)
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not configure on powerpc-9
-.elif ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64-9
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MCLANG}
 CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/lib
 CONFIGURE_ENV+=	CC="/usr/bin/clang"

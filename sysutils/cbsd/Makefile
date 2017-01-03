@@ -27,14 +27,8 @@ PLIST_FILES+=	man/man8/cbsd.8.gz
 
 CBSD_HOME?=	${PREFIX}/cbsd
 
-.include <bsd.port.pre.mk>
-
 USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-IGNORE=	does not support FreeBSD versions < 10.0
-.endif
 
 do-install:
 	@${ECHO} "Installing in ${CBSD_HOME}"
@@ -50,4 +44,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig
 	@${LN} -sf ${CBSD_HOME}/share/bsdconfig/cbsd ${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

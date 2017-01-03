@@ -31,10 +31,6 @@ post-install:
 
 .if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=	Required CMS is disabled on LibreSSL
-.else
-. if ${OSVERSION} < 1000015 && ${SSL_DEFAULT:Mbase}
-IGNORE=	Need a more recent version of OpenSSL.
-. endif
 .endif
 
 .include <bsd.port.post.mk>

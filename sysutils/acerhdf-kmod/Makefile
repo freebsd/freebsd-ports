@@ -20,16 +20,10 @@ USE_GITHUB=	yes
 GH_PROJECT=	kmod-acerhdf
 GH_ACCOUNT=	t6
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
-IGNORE=		does not support FreeBSD versions older than 10.1
-.endif
-
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	specific to one machine
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${KMODNAME}.4 ${STAGEDIR}${MANDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

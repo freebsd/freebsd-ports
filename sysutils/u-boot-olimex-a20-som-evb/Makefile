@@ -32,12 +32,6 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%MODEL%%,${MODEL}," \
 		${WRKSRC}/include/configs/sunxi-common.h
@@ -54,4 +48,4 @@ do-install:
 		${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -81,10 +81,6 @@ PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:ftp/curl
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not build (lack of proper c++11 support)
-.endif
-
 .if defined(WITH_SYNC_DEBUG)
 CFLAGS=		# empty
 CXXFLAGS=	# empty

@@ -26,10 +26,4 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1001511
-IGNORE=		requires a recent implementation of Capsicum
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -60,10 +60,6 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${PORT_OPTIONS:MDTRACE} && ${OSVERSION} < 1000510
-BROKEN=		dtrace -G crashes with C++ object files
-.endif
-
 regression-test: build
 	@${ECHO_MSG} -n "===> Running jstests.py: "
 	@cd ${WRKSRC} && ${SETENV} TZ=PST8PDT ${PYTHON_CMD} tests/jstests.py \

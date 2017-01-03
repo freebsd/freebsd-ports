@@ -28,15 +28,12 @@ BROKEN_aarch64=		Fails to compile: error: use of unknown builtin __builtin_apply
 BROKEN_powerpc=		Fails to compile: invokes i386 asm
 BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Fails to compile: internal gcc error
+BROKEN_i386=		Segfault during build
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Segfault during build
-.endif
+.include <bsd.port.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
 		${WRKSRC}/config.h.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

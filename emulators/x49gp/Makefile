@@ -9,11 +9,12 @@ PORTREVISION=	1
 CATEGORIES=	emulators math
 MASTER_SITES=	LOCAL/shaun
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sdcard64.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	HP 49g+/50g graphics calculator emulator
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+BROKEN_i386=		does not build on i386 (error: frame pointer required, but reserved)
 
 WRKSRC=		${WRKDIR}/x49gp/x49gp-code
 HAVE_CONFIGURE=	yes
@@ -95,10 +96,4 @@ do-install:
 
 	${INSTALL_DATA} ${DISTDIR}/sdcard64.tar.gz ${STAGEDIR}${DATADIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${ARCH} == i386
-BROKEN=		does not build on i386 (error: frame pointer required, but reserved)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

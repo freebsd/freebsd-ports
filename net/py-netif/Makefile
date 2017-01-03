@@ -27,8 +27,4 @@ USE_PYTHON=	autoplist distutils
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
-IGNORE=        This module requires at least FreeBSD 10.3
-.endif
-
 .include <bsd.port.post.mk>

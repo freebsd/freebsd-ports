@@ -77,12 +77,6 @@ DISTFILES+=	${ERLANG_DOCS}:erlangorg
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-.if ${OSVERSION} < 1000000
-.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE}
-IGNORE=		support for DTrace on amd64 requires at least FreeBSD 10
-.endif
-.endif
-
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
 CFLAGS+=	-DMAP_NORESERVE=0
 .endif

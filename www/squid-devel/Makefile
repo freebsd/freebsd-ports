@@ -228,10 +228,6 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-IGNORE=		doesn't build, messes C++ headers and libs
-.endif
-
 # Authentication methods and modules:
 
 BASIC_AUTH+=	DB SMB_LM NCSA PAM POP3 RADIUS fake getpwnam
