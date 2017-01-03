@@ -13,7 +13,11 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce client
 
-RESTRICTED=	Restricted distribution
+# The LICENSE file is not included in the distfile, but Catherine Louie of
+# Perforce Support assures me that the LICENSE file on swarm also applies to
+# the binary distribution.
+# https://swarm.workshop.perforce.com/projects/perforce_software-p4/files/2016-1/LICENSE
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
