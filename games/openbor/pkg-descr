@@ -1,4 +1,11 @@
-OpenBOR is a continuation of the Beats Of Rage 2D game engine, which
-was originally created by Senile Team.
+OpenBOR is the open source continuation of Beats of Rage, a Streets of
+Rage tribute game originally developed by Senile Team. In the years
+since it has grown into arguably the single most powerful two
+dimensional sprite based engine in the world and certainly the most
+versatile. While intended to allow creation of side scrolling beat em'
+ups like Double Dragon or Final Fight, the engine is also capable of
+replicating Shumps, RPGs, platformers and the like. A built in
+scripting engine allows authors to take it even further, making
+imagination the only real limit.
 
 WWW: http://www.chronocrash.com/
