@@ -25,6 +25,9 @@ pidfile="%%WWWDIR%%/tmp/pids/thin.pid"
 
 load_rc_config $name
 
+# add /usr/local/bin to path
+export PATH=$PATH:%%PREFIX%%/bin
+
 # set defaults
 : ${redmine_enable="NO"}
 : ${redmine_flags="-a 0.0.0.0 -p 3000 -e production"}
