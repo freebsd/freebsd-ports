@@ -14,6 +14,7 @@ lib/rancid/eos.pm
 lib/rancid/exos.pm
 lib/rancid/foundry.pm
 lib/rancid/ios.pm
+lib/rancid/iosshtech.pm
 lib/rancid/iosxr.pm
 lib/rancid/junos.pm
 lib/rancid/mrv.pm
