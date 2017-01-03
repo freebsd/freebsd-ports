@@ -5,7 +5,6 @@ PORTVERSION=	2016.1.1461251
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/:tar \
 		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf
-
 EXTRACT_SUFX=
 DISTFILES=	${TAR_FILES}:tar p4api.pdf:pdf
 EXTRACT_ONLY=	${TAR_FILES}
@@ -13,7 +12,12 @@ EXTRACT_ONLY=	${TAR_FILES}
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
-RESTRICTED=	Restricted distribution
+# The LICENSE file is not included in the distfile, but Catherine Louie of
+# Perforce Support assures me that the LICENSE file on swarm also applies to
+# the binary distribution.
+# https://swarm.workshop.perforce.com/projects/perforce_software-p4/files/2016-1/LICENSE
+LICENSE=	BSD2CLAUSE
+
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
