@@ -224,4 +224,5 @@ share/icons/hicolor/64x64/apps/shotcut.png
 %%NLS%%%%DATADIR%%/translations/shotcut_ru.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_sk.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_uk.qm
-%%NLS%%%%DATADIR%%/translations/shotcut_zh.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_zh_TW.qm
