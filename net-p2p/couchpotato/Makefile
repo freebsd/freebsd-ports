@@ -3,7 +3,7 @@
 
 PORTNAME=	couchpotato
 PORTVERSION=	0.0.20161225
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p python
 
 MAINTAINER=	feld@FreeBSD.org
@@ -23,6 +23,8 @@ NO_BUILD=	yes
 
 USES=		python shebangfix
 SHEBANG_FILES=	CouchPotato.py
+
+USERS=		couchpotato
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CouchPotato
