@@ -12,6 +12,8 @@ COMMENT=	Thread-safe Python binding for LevelDB
 
 LICENSE=	BSD3CLAUSE
 
+PORTSCOUT=	skipv:0.194
+
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
