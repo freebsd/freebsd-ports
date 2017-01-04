@@ -4954,6 +4954,8 @@
     SUBDIR += renpy6
     SUBDIR += replay
     SUBDIR += rhtvision
+    SUBDIR += riscv64-binutils
+    SUBDIR += riscv64-gcc
     SUBDIR += rlog
     SUBDIR += rlvm
     SUBDIR += rlwrap
