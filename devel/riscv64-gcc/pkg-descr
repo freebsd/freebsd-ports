@@ -1,0 +1,4 @@
+GCC, the GNU Compiler Collection supporting C and C++ for targetting
+crossbuilding.
+
+WWW: https://github.com/freebsd-riscv/riscv-gcc

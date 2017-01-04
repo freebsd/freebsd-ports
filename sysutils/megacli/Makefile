@@ -4,14 +4,19 @@
 PORTNAME=	megacli
 DISTVERSION=	8-07-14
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/ \
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/\
 		http://ftp.wsisiz.edu.pl/pub/pc/drivers/lsi/
 DISTNAME=	${DISTVERSION}_MegaCLI
 
 MAINTAINER=	samflanker@gmail.com
 COMMENT=	SAS MegaRAID FreeBSD MegaCLI
 
-RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
+LICENSE=	megacli
+LICENSE_NAME=	BROADCOM
+LICENSE_TEXT=	Source recipient must acknowledge license.\
+		Reproduction or redistribution prohibited.\
+		See https://www.broadcom.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		zip
 

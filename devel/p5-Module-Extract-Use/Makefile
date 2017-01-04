@@ -1,20 +1,20 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	Test-Prereq
-PORTVERSION=	2.002
+PORTNAME=	Module-Extract-Use
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
-COMMENT=	Check if Makefile.PL has the right pre-requisites
+COMMENT=	Pull out the modules a module explicitly uses
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Extract-Use>0:devel/p5-Module-Extract-Use \
-		p5-Module-Build>=0.4220:devel/p5-Module-Build
+BUILD_DEPENDS=	p5-Test-Output>0:devel/p5-Test-Output \
+		p5-PPI>0:textproc/p5-PPI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>0:devel/p5-Test-Pod-Coverage

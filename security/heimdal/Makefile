@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	7.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -55,7 +55,7 @@ INFO=		heimdal hx509
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	IPV6 BDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB
+OPTIONS_DEFINE=	IPV6 BDB LMDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB
 OPTIONS_DEFAULT=     BDB             PKINIT DIGEST KX509
 OPTIONS_SUB=	yes
 
@@ -70,6 +70,10 @@ BDB_CONFIGURE_ON=	--disable-ndbm-db
 BDB_CONFIGURE_ENV_OFF=	ac_cv_header_db_h=yes \
 			ac_cv_func_db_create=no
 BDB_CONFIGURE_OFF=	--enable-ndbm-db
+
+LMDB_DESC=		Enable LMDB KDC backend support
+LMDB_CONFIGURE_ENABLE=	mdb_db
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 SQLITE_DESC=		Enable SQLite KDC backend support
 SQLITE_USES=		sqlite

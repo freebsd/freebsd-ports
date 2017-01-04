@@ -1050,6 +1050,7 @@
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
+    SUBDIR += rubygem-timfel-krb5
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += s2n
     SUBDIR += safesh
