@@ -3,6 +3,7 @@
 
 PORTNAME=	thin
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-daemons>=1.0.9:devel/rubygem-daemons \
 		rubygem-eventmachine>=1.0.4:devel/rubygem-eventmachine \
-		rubygem-rack>=1.0:www/rubygem-rack
+		rubygem-rack16>=1.6:www/rubygem-rack16
 
 USE_RUBY=	yes
 USES=		gem
