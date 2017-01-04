@@ -4956,6 +4956,7 @@
     SUBDIR += rhtvision
     SUBDIR += riscv64-binutils
     SUBDIR += riscv64-gcc
+    SUBDIR += riscv64-xtoolchain-gcc
     SUBDIR += rlog
     SUBDIR += rlvm
     SUBDIR += rlwrap
