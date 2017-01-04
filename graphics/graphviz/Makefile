@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.38.0
-PORTREVISION=	14
+PORTVERSION=	2.40.1
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
+
+LICENSE=	EPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
@@ -16,8 +19,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
-
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 sparc64
 
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
@@ -31,7 +32,7 @@ SHEBANG_LANG=	tcl
 tcl_OLD_CMD=	/usr/bin/tclsh
 tcl_CMD=	${TCLSH}
 
-FIX_INCLUDE=	ast_common.h \
+FIX_INCLUDE=	\
 		lib/cdt/dthdr.h \
 		lib/pathplan/tri.h lib/pathplan/pathplan.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
@@ -41,8 +42,7 @@ FIX_INCLUDE=	ast_common.h \
 		lib/gvc/gvcint.h
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
-			tclpkg/tclpathplan/demo/pathplan.tcl \
-			tclpkg/tkspline/demo/spline.tcl
+			tclpkg/tclpathplan/demo/pathplan.tcl
 PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
 
 PDOCS_TXT=	doc/Dot.ref doc/latex_suggestions.txt
@@ -85,11 +85,11 @@ NVTHREADS_DESC=	Link with threads (needed for nvidia)
 XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp,xp
 ICONV_USES=	iconv
 NLS_USES=	gettext
-PANGOCAIRO_USE=	GNOME=pango XORG=xrender,x11,xau,xdmcp
+PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
 LIBRSVG2_USE=	GNOME=librsvg2 GL=gl,glu,glut
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
-SMYRNA_USE=	GNOME=libglade2 GL=glut
+SMYRNA_USE=	GNOME=libglade2,pangox-compat GL=glut
 GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 		qt4=linguist_build,corelib,gui
 GHOSTSCRIPT_USES=ghostscript
@@ -107,7 +107,8 @@ SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 MING_LIB_DEPENDS=	libming.so:graphics/ming
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+			libgc-threaded.so:devel/boehm-gc-threaded
 
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
@@ -249,6 +250,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 
 .if ${PORT_OPTIONS:MPHP}
 SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
+PHP_VER=	70
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
@@ -289,7 +291,6 @@ post-patch:
 		-e "s|vendorarchdir|sitearchdir|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
 		-e "s|ruby-1[.]9|ruby-${RUBY_VER}|g" \
-		-e "s|Config::|RbConfig::|" \
 		-e 's|PHP_INSTALL_DIR=.*|PHP_INSTALL_DIR="${PREFIX}/lib/php/${PHP_EXT_DIR}"|' \
 		-e 's|PHP_INSTALL_DATADIR=.*|PHP_INSTALL_DATADIR="${PREFIX}/share/php"|' \
 		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
@@ -305,6 +306,11 @@ post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MPHP}
+pre-install:
+	${MKDIR} "${STAGEDIR}/${PREFIX}/share/php"
 .endif
 
 post-install: install-ldconfig-file
@@ -329,14 +335,12 @@ post-install: install-ldconfig-file
 		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
 		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl \
-		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl \
 		${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} \
 		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl.README \
 		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl.README \
 		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl.README \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl.README \
-		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl.README \
 		${STAGEDIR}${EXAMPLESDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pathplan_data
 	${INSTALL_DATA} \
