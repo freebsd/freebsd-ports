@@ -155,6 +155,7 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
+    SUBDIR += aws-sdk-cpp
     SUBDIR += awscli
     SUBDIR += b2
     SUBDIR += babeltrace
