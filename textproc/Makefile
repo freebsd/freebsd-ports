@@ -1300,6 +1300,7 @@
     SUBDIR += py-rst2html5
     SUBDIR += py-rstyoutube
     SUBDIR += py-rxp
+    SUBDIR += py-scour
     SUBDIR += py-sgrep
     SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
