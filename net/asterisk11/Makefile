@@ -32,6 +32,9 @@ CONFIGURE_ARGS+=	--with-ilbc=internal \
 			--with-crypto=${OPENSSLBASE} \
 			--with-ssl=${OPENSSLBASE}
 
+NORELRO_PORTS=	yes
+NOPIE_PORTS=	yes
+
 CPE_VENDOR=	digium
 
 SHEBANG_FILES=	agi/agi-test.agi \
