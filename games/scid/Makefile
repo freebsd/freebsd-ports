@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scid
-PORTVERSION=	4.6.2
-PORTREVISION=	1
+PORTVERSION=	4.6.4
 CATEGORIES=	games databases
 MASTER_SITES=	SF/${PORTNAME}/Scid/Scid%204.6/
 
@@ -15,7 +14,6 @@ USES=		gmake python shebangfix tk:84,85,86 zip
 SHEBANG_FILES=	tcl/lang/checklangs.tcl \
 		tcl/lang/propagatelang.tcl \
 		tcl/lang/removetoken.tcl
-WRKSRC=		${WRKDIR}/scid-src
 
 TCL_LIBRARY=	-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}
 
@@ -30,8 +28,6 @@ CONFIGURE_ARGS=	\
     TK_LIBRARY="${TCL_LIBRARY} -ltk${TK_SHLIB_VER} -lX11" \
     OPTIMIZE="${CXXFLAGS} -fno-rtti -fno-exceptions" \
     WARNINGS=""
-
-ALL_TARGET=	all strip
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|g; s|gcc|${CC}|g' \
