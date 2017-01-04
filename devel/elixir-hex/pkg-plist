@@ -49,6 +49,7 @@ lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Outdated.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Owner.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.PublicKeys.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Publish.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Retire.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Search.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.User.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.beam
@@ -107,6 +108,7 @@ lib/elixir/lib/hex/lib/mix/tasks/hex/outdated.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/owner.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/public_keys.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/publish.ex
+lib/elixir/lib/hex/lib/mix/tasks/hex/retire.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/search.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/user.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
