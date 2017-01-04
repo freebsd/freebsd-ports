@@ -2741,6 +2741,7 @@
     SUBDIR += p5-Module-Dependency
     SUBDIR += p5-Module-Depends
     SUBDIR += p5-Module-Extract
+    SUBDIR += p5-Module-Extract-Use
     SUBDIR += p5-Module-ExtractUse
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Functions
