@@ -1516,6 +1516,7 @@
     SUBDIR += rubygem-scss_lint
     SUBDIR += rubygem-shell2html
     SUBDIR += rubygem-simplecov-html
+    SUBDIR += rubygem-sixarm_ruby_unaccent
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp
     SUBDIR += rubygem-syntax
