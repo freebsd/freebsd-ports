@@ -3,6 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	38
