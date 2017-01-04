@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mumble
-PORTVERSION=	1.2.8
-PORTREVISION=	3
+PORTVERSION=	1.2.18
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
@@ -16,17 +14,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS+=	libspeex.so:audio/speex \
 		libsndfile.so:audio/libsndfile \
 		libboost_iostreams.so:devel/boost-libs \
-		libboost_python.so:devel/boost-python-libs \
 		libprotoc.so:devel/protobuf \
 		libopus.so:audio/opus
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 USES=		compiler cpe gmake pkgconfig qmake
-USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	mumble-voip
+GH_PROJECT=	mumble celt-0.7.0:mumble_celt_0_7 celt-0.11.0:mumble_celt_0_11
+GH_TAGNAME=	5a16cda:mumble_celt_0_7 e18de77:mumble_celt_0_11
+GH_SUBDIR=	celt-0.7.0-src:mumble_celt_0_7 celt-0.11.0-src:mumble_celt_0_11
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run
+USE_LDCONFIG=	yes
 
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
@@ -64,6 +66,7 @@ CONFIG+=	no-pch
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
+	@${RM} ${WRKSRC}/plugins/manual/.qmake.cache
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${STAGEDIR}${PREFIX}/bin
