@@ -1,15 +1,15 @@
---- plugin/xlib/vimdot.sh.orig	2016-09-26 23:00:07 UTC
-+++ plugin/xlib/vimdot.sh
-@@ -3,7 +3,7 @@
+--- plugin/xlib/vimdot.sh.orig	2016-12-01 06:43:36.000000000 +0100
++++ plugin/xlib/vimdot.sh	2016-12-25 20:26:20.202321000 +0100
+@@ -5,7 +5,7 @@
  
- error() { echo "$0: $*" >&2; exit 1; }
+ # Try $EDITOR first, else try vim or vi
+ editor="$EDITOR"
+-[ -x "$editor" ] || editor="/usr/bin/vim"
++[ -x "$editor" ] || editor="/usr/local/bin/vim"
+ [ -x "$editor" ] || editor="/usr/bin/vi"
+ [ -x "$editor" ] || error "EDITOR not found or not executable";
  
--editor="/usr/bin/vim"
-+editor="/usr/local/bin/vim"
- 
- if ! test -x "$editor"; then error "the \"$editor\" editor not found or not executable"; fi
- 
-@@ -23,7 +23,7 @@ digraph G {
+@@ -25,7 +25,7 @@
  
  	vim [href="http://www.vim.org/"]
  	dot [href="http://www.graphviz.org/"]

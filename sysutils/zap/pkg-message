@@ -1,3 +1,7 @@
 =============================================================
-WARNING: The command line arguments changed in version 0.3.0!
+WARNING!
+
+The command line arguments and the format of zap snapshot
+names changed in version 0.6.0! The name change means you
+will have to manually clean up old zap snapshots.
 =============================================================

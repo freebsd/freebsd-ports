@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.1
 CATEGORIES=	dns
 MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://download.dnscrypt.org/dnscrypt-proxy/ \
@@ -20,6 +20,8 @@ USERS=		_dnscrypt-proxy
 
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake
+
+USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
