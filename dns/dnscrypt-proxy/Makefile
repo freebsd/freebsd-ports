@@ -3,6 +3,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://download.dnscrypt.org/dnscrypt-proxy/ \
@@ -21,8 +22,6 @@ USERS=		_dnscrypt-proxy
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake
 
-USE_LDCONFIG=	yes
-
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README* THANKS
@@ -36,6 +35,7 @@ OPTIONS_SUB=	yes
 PLUGINS_CONFIGURE_ENABLE=	plugins
 PLUGINS_LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libldns.so:dns/ldns
+PLUGINS_USE=	LDCONFIG=${PREFIX}/lib/dnscrypt-proxy
 PLUGINS_USES=	libtool
 PLUGINS_RELAXED_DESC=	Allow loading plugins owned by other users
 PLUGINS_RELAXED_CONFIGURE_ENABLE=	relaxed-plugins-permissions
