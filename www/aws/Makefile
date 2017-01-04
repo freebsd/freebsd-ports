@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	17.0.1
+PORTVERSION=	17.1.0
 CATEGORIES=	www
 
 MAINTAINER=	marino@FreeBSD.org
@@ -20,8 +20,8 @@ RUN_DEPENDS=	xmlada>=4.4:textproc/xmlada
 USES=		ada:run gmake python shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_TAGNAME=	17.0
-GH_TUPLE=	AdaCore:templates-parser:17.0:tp/templates_parser
+GH_TAGNAME=	${PORTVERSION:R}
+GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION:R}:tp/templates_parser
 
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
@@ -61,11 +61,7 @@ CONF_ARGS+=	ZLIB=true
 CONF_ARGS+=	ASIS=true
 CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=static
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
+.include <bsd.port.options.mk>
 
 ###################
 ##  SSL Support  ##
@@ -165,4 +161,4 @@ post-install:
 	cd ${WRKSRC}/gps && ${INSTALL_DATA} *.xml aws.py \
 		${STAGEDIR}${PREFIX}/share/gps/plug-ins
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
