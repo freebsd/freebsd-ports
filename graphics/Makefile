@@ -201,6 +201,7 @@
     SUBDIR += frei0r-plugins
     SUBDIR += frei0r-plugins-gavl
     SUBDIR += frei0r-plugins-opencv
+    SUBDIR += frogr
     SUBDIR += ftgl
     SUBDIR += fujiplay
     SUBDIR += fusefs-gphotofs
