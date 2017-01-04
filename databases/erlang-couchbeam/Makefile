@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchbeam
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	erlang-
 
