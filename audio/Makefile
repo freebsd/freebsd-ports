@@ -543,6 +543,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
+    SUBDIR += nuvolaplayer
     SUBDIR += ocp
     SUBDIR += ogg2mp3
     SUBDIR += openal
