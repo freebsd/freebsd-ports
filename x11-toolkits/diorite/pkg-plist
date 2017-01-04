@@ -1,0 +1,11 @@
+bin/diorite-testgen-0.2
+include/diorite-1.0/dioriteglib-0.2.h
+include/diorite-1.0/dioritegtk-0.2.h
+lib/libdioriteglib-0.2.so
+lib/libdioritegtk-0.2.so
+libdata/pkgconfig/dioriteglib-0.2.pc
+libdata/pkgconfig/dioritegtk-0.2.pc
+share/vala/vapi/dioriteglib-0.2.deps
+share/vala/vapi/dioriteglib-0.2.vapi
+share/vala/vapi/dioritegtk-0.2.deps
+share/vala/vapi/dioritegtk-0.2.vapi
