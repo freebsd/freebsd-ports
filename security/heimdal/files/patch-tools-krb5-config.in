@@ -1,0 +1,10 @@
+--- tools/krb5-config.in.orig	2017-01-04 10:37:40.213263000 +0900
++++ tools/krb5-config.in	2017-01-04 10:37:56.622658000 +0900
+@@ -82,6 +82,7 @@
+     ;;
+   --libs)
+     do_libs=yes
++    do_lib_deps=yes
+     ;;
+   --deps)
+     do_lib_deps=yes
