@@ -1,97 +1,129 @@
-# Created by: Eric F Crist <ecrist@secure-computing.net>
+# Created by: Matthias Andree <mandree@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	openvpn
-DISTVERSION=	201647
-CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
-		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
-PKGNAMESUFFIX=	-devel
+PORTNAME=			openvpn
+DISTVERSION=		201652
+PORTREVISION?=		0
+CATEGORIES=			security net
+MASTER_SITES=		https://secure-computing.net/files/openvpn/ \
+					ftp://ftp2.secure-computing.net/pub/FreeBSD/openvpn-devel/
+PKGNAMESUFFIX=		-devel
 
-MAINTAINER=	ecrist@secure-computing.net
-COMMENT=	Secure IP/Ethernet tunnel daemon
+MAINTAINER=		ecrist@secure-computing.net
+COMMENT?=		Secure IP/Ethernet tunnel daemon
 
-LICENSE=	GPLv2
+LICENSE=		GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
+CONFLICTS_INSTALL=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]*
 
-CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]* openvpn-polarssl*
 GNU_CONFIGURE=		yes
-USES=			libtool pkgconfig shebangfix tar:xz
+WRKSRC=				${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
+USES=				cpe libtool pkgconfig shebangfix tar:xz
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
-			sample/sample-scripts/auth-pam.pl \
-			sample/sample-scripts/ucn.pl
+					sample/sample-scripts/auth-pam.pl \
+					sample/sample-scripts/ucn.pl
+CONFIGURE_ARGS+=	--enable-strict
+# avoid picking up CMAKE, we don't have cmocka in the tarballs..
+CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
 
-# let OpenVPN's configure script pick up the requisite libraries:
-CPPFLAGS+=		-I${LOCALBASE}/include
+# let OpenVPN's configure script pick up the requisite libraries,
+# but do not break the plugin build if an older version is installed
+CPPFLAGS+=		-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		PKCS11 EASYRSA LZO DOCS EXAMPLES
-OPTIONS_DEFAULT=	EASYRSA OPENSSL LZO
+# set PLUGIN_LIBDIR so that unqualified plugin paths are found:
+CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
+
+OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
+			TEST LZ4 SMALL
+OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4
 OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	OPENSSL EMBEDTLS
-LZO_DESC=		Enable the LZO compression library
+OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
 PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-EMBEDTLS_DESC=		SSL/TLS support via mbed TLS
+MBEDTLS_DESC=		SSL/TLS via mbedTLS
+X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
+SMALL_DESC=		Build a smaller executable with fewer features
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
 PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:security/pkcs11-helper
 PKCS11_CONFIGURE_ENABLE=	pkcs11
 
-EMBEDTLS_LIB_DEPENDS=	libmbedtls.so.10:security/mbedtls
-EMBEDTLS_POLARSSL_CONFIGURE_ON=	--with-crypto-library=embedtls
-EMBEDTLS_USE_OFF=	openssl=yes
-EMBEDTLS_CONFIGURE_OFF+=--with-crypto-library=openssl
+X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
-LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
-LZO_CONFIGURE_ENABLE=	lzo
+X509ALTUSERNAME_PREVENTS=	MBEDTLS
+X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with mbedTLS. Disable X509ALTUSERNAME, or use OpenSSL instead
 
-USE_RC_SUBR=	openvpn
-USE_LDCONFIG=	${PREFIX}/lib
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 
-SUB_FILES=	pkg-message
+LZ4_CONFIGURE_OFF=	--disable-lz4
+
+SMALL_CONFIGURE_ON=	--enable-small
+
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
+
+USE_RC_SUBR=		openvpn
+USE_LDCONFIG=		${PREFIX}/lib
+
+SUB_FILES=		pkg-message openvpn-client
 
 .ifdef (LOG_OPENVPN)
-CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
+CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
+
+LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
+
+PORTDOCS=		*
+PORTEXAMPLES=		*
+
+TEST_ALL_TARGET=	check
+TEST_TEST_TARGET_OFF=	check
+
+# XXX Please remove this compatibility wrapper after 2017Q2 is branched.
+.ifdef(WITHOUT_CHECK)
+WARNING+=	"${.CURDIR}: WITHOUT_CHECK is deprecated, please use WITHOUT=TEST or OPTIONS_UNSET=TEST."
+WITHOUT+=	TEST
+.endif
 
 pre-configure:
 .ifdef (LOG_OPENVPN)
-		@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
+	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
 .else
-		@${ECHO} ""
-		@${ECHO} "You may use the following build options:"
-		@${ECHO} ""
-		@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
-		@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
-		@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
+	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
+	@${ECHO} ""
 .endif
 
-post-build:
-		@# self-tests here
-.if !defined(WITHOUT_CHECK)
-		@${ECHO} ; ${ECHO} "### Note that you can skip these lengthy selftests with WITHOUT_CHECK=yes ###" ; ${ECHO}
-		cd ${WRKSRC} && ${DO_MAKE_BUILD} check
-.endif
+post-configure:
+	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
+	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
+	    ${WRKSRC}/src/plugins/down-root/Makefile
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
-		${MKDIR} ${STAGEDIR}${PREFIX}/include
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.up ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.down ${STAGEDIR}${PREFIX}/libexec/openvpn-client.down
+	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
+	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
+	${MKDIR} ${STAGEDIR}${PREFIX}/include
 
 post-install-DOCS-on:
-		${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for i in AUTHORS ChangeLog PORTS
-		${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
 post-install-EXAMPLES-on:
-		(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
-		${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
+	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
+	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
 
 .include <bsd.port.mk>

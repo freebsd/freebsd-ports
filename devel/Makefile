@@ -155,6 +155,7 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
+    SUBDIR += aws-sdk-cpp
     SUBDIR += awscli
     SUBDIR += b2
     SUBDIR += babeltrace
@@ -4956,6 +4957,7 @@
     SUBDIR += rhtvision
     SUBDIR += riscv64-binutils
     SUBDIR += riscv64-gcc
+    SUBDIR += riscv64-xtoolchain-gcc
     SUBDIR += rlog
     SUBDIR += rlvm
     SUBDIR += rlwrap

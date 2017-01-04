@@ -1300,6 +1300,7 @@
     SUBDIR += py-rst2html5
     SUBDIR += py-rstyoutube
     SUBDIR += py-rxp
+    SUBDIR += py-scour
     SUBDIR += py-sgrep
     SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
@@ -1515,6 +1516,7 @@
     SUBDIR += rubygem-scss_lint
     SUBDIR += rubygem-shell2html
     SUBDIR += rubygem-simplecov-html
+    SUBDIR += rubygem-sixarm_ruby_unaccent
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp
     SUBDIR += rubygem-syntax

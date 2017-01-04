@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	devel java
-MASTER_SITES=	https://services.gradle.org/distributions/
+MASTER_SITES=	https://services.gradle.org/distributions/ \
+		http://services.gradle.org/distributions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -18,6 +18,7 @@ LICENSE=	APACHE20
 # See https://github.com/adammurdoch/native-platform/issues/8
 LIB_DEPENDS=	libstdc++.so.6:misc/compat9x
 
+NO_ARCH=	yes
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
