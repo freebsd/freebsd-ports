@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	freebsd${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX (OpenJFX) SDK overlay for OpenJDK 8
 
 LICENSE=	GPLv2
@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
 		gradle:devel/gradle \
+		${JAVALIBDIR}/junit.jar:java/junit \
 		swt-devel>0:x11-toolkits/swt-devel
 RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
 
