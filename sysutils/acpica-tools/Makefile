@@ -29,15 +29,8 @@ MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
 BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
 BROKEN_powerpc64=	Does not build
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1001506
-BUILD_DEPENDS+=	byacc>=20160324_1:devel/byacc
-YACC=		${LOCALBASE}/bin/yacc
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${BUILD_WRKSRC}/bin/,} \
 	    ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

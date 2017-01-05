@@ -75,10 +75,6 @@ post-patch:
 BROKEN=		Does not build with openssl-devel
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000024
-CFLAGS+=	-flax-vector-conversions
-.endif
-
 do-install:
 .for b in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/../run/${b} ${STAGEDIR}${PREFIX}/bin

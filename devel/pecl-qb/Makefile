@@ -18,12 +18,4 @@ USES=		php:ext tar:tgz
 USE_GCC=	any
 IGNORE_WITH_PHP=	70
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libmissing.so:math/libmissing
-CONFIGURE_ARGS=	--with-libmissing=${LOCALBASE}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libmissing
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

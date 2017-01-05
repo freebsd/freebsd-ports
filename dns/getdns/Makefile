@@ -44,22 +44,14 @@ LIBUV_CONFIGURE_WITH=	libuv
 LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
 LIBEVENT_CONFIGURE_WITH=libevent
 
-.include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 1000000
-CONFIGURE_ARGS+=	--disable-gost
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
 		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	(cd ${WRKSRC}/spec/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
-.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.*
 
-.include <bsd.port.post.mk>
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC}/spec/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
+
+.include <bsd.port.mk>

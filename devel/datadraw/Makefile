@@ -21,14 +21,8 @@ CONFIGURE_ARGS=	--prefix=\$${DESTDIR}${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000013
-USES+=		bison
-.else
 post-patch:
 	@${REINPLACE_CMD} -e "s/bison/byacc/g" ${WRKSRC}/configure
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
