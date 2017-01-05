@@ -23,6 +23,7 @@ USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
 MAKE_ENV+=		RUBY_RDOC=${LOCALBASE}/bin/rdoc
 
+ALL_TARGET=	all rdoc
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
@@ -72,10 +73,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-common.c-22 \
 
 post-patch:
 	@${RM} ${WRKSRC}/docs/*.orig
-
-post-build:
-	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/bdb.so
