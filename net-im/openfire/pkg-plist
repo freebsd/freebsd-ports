@@ -192,9 +192,6 @@
 %%DATADIR%%/plugins/admin/webapp/style/lightbox.css
 %%DATADIR%%/plugins/admin/webapp/style/login.css
 %%DATADIR%%/plugins/admin/webapp/style/setup.css
-%%DATADIR%%/plugins/avatarResizer.jar
-%%DATADIR%%/plugins/bookmarks.jar
-%%DATADIR%%/plugins/nonSaslAuthentication.jar
 %%DATADIR%%/resources/database/openfire_db2.sql
 %%DATADIR%%/resources/database/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/openfire_mysql.sql
@@ -371,6 +368,8 @@
 %%DATADIR%%/resources/security
 %%DATADIR%%/resources/spank/WEB-INF/web.xml
 %%DATADIR%%/resources/spank/index.html
+%%PLUGINS%%%%DATADIR%%/plugins/avatarResizer.jar
+%%PLUGINS%%%%DATADIR%%/plugins/bookmarks.jar
 %%PLUGINS%%%%DATADIR%%/plugins/broadcast.jar
 %%PLUGINS%%%%DATADIR%%/plugins/callbackOnOffline.jar
 %%PLUGINS%%%%DATADIR%%/plugins/clientControl.jar
@@ -390,6 +389,7 @@
 %%PLUGINS%%%%DATADIR%%/plugins/motd.jar
 %%PLUGINS%%%%DATADIR%%/plugins/mucservice.jar
 %%PLUGINS%%%%DATADIR%%/plugins/nodejs.jar
+%%PLUGINS%%%%DATADIR%%/plugins/nonSaslAuthentication.jar
 %%PLUGINS%%%%DATADIR%%/plugins/packetFilter.jar
 %%PLUGINS%%%%DATADIR%%/plugins/presence.jar
 %%PLUGINS%%%%DATADIR%%/plugins/rayo.jar
