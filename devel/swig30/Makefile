@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	30
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
