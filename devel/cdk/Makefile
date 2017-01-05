@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdk
-DISTVERSION=	5.0-20160131
+DISTVERSION=	5.0-20161210
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cdk/
