@@ -20,7 +20,6 @@ NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	brendangregg
 GH_PROJECT=	Chaosreader
-GH_TAGNAME=	027a5e24abf399f4c1ebf199c0cd95d5888bebec
 
 PLIST_FILES=	bin/${PORTNAME}
 SHEBANG_FILES=	chaosreader
