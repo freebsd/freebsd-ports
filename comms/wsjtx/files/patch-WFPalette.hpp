@@ -1,4 +1,4 @@
---- WFPalette.hpp.orig	2017-01-05 12:39:50 UTC
+--- WFPalette.hpp.orig	2017-01-05 15:57:44 UTC
 +++ WFPalette.hpp
 @@ -5,6 +5,7 @@
  #include <QList>
