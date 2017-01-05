@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
