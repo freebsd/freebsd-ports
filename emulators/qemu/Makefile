@@ -111,6 +111,7 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 # but it shouldn't matter much
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
+		 -e '/libusb/s/ --atleast-version=1\.0\.[0-9]*//' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E \

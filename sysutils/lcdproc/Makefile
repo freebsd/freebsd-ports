@@ -90,7 +90,7 @@ LCDPROC_DRIVERS=bayrad \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSB}
-CONFIGURE_ARGS+=	--with-libusb=/usr
+CONFIGURE_ARGS+=	--enable-libusb
 PLIST_SUB+=		USB=""
 LCDPROC_DRIVERS+=IOWarrior \
 		picolcd \
@@ -117,7 +117,7 @@ PLIST_SUB+=		HID="@comment "
 . endif
 
 .else
-CONFIGURE_ARGS+=	--without-libusb --disable-libftdi --disable-libhid
+CONFIGURE_ARGS+=	--disable-libusb --disable-libftdi --disable-libhid
 PLIST_SUB+=		USB="@comment " FTDI="@comment " HID="@comment "
 .endif
 

@@ -1,16 +1,5 @@
 --- configure.ac.orig	2012-08-23 08:40:54.000000000 +0200
 +++ configure.ac	2012-08-23 11:47:20.000000000 +0200
-@@ -14,9 +14,7 @@
- LT_INIT
- AC_PROG_LIBTOOL
- 
--PKG_CHECK_MODULES(LIBUSB, libusb-1.0 >= 1.0)
--LIBS="$LIBS $LIBUSB_LIBS"
--CFLAGS="$CFLAGS $LIBUSB_CFLAGS"
-+LIBS="$LIBS -lusb"
- 
- AC_PATH_PROG(DOXYGEN,doxygen,false)
- AM_CONDITIONAL(HAVE_DOXYGEN, test $DOXYGEN != false)
 @@ -34,7 +32,7 @@
  
  dnl checks for required libraries

@@ -20,14 +20,14 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-zlib
-CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" \
-		LIBUSB_LIBS="-L/usr/lib -lusb"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*libusb/s/ >= 0\.1\.[0-9]*/-0.1/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -i '' \
 		-e 's|/bin/bash|/bin/sh|' \
 		${WRKSRC}/usb-devices

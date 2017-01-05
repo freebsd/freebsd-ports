@@ -34,8 +34,6 @@ CONFIGURE_ARGS=	--disable-udev \
 		--with-daemon-user=colord \
 		--disable-systemd-login \
 		--enable-libcolordcompat
-CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
-		USB_LIBS="-L/usr/lib -lusb"
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
@@ -56,7 +54,6 @@ post-patch:
 		-e 's|-Wignored-qualifiers||g' \
 		-e 's|-Wtype-limits||g' \
 		-e 's|-Wmissing-parameter-type||g' \
-		-e 's|LIBS="-lusb-1.0|LIBS="-lusb|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|lib/color|db/color|g' \
 		-e 's|/usr/share/color|${PREFIX}/share/color|g' \

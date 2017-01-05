@@ -17,9 +17,7 @@ LIB_DEPENDS=	libplist.so:devel/libplist \
 USES=		autoreconf cpe libtool pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	nikias_bassen
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-systemd \
-		libusb_CFLAGS="-I/usr/include" \
-		libusb_LIBS="-lusb"
+CONFIGURE_ARGS=	--without-systemd
 
 PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 		sbin/${PORTNAME}

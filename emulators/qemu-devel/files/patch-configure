@@ -130,32 +130,6 @@
  fi
  
  # Search for bswap_32 function
-@@ -3992,6 +4045,17 @@ fi
- 
- # check for libusb
- if test "$libusb" != "no" ; then
-+    cat > $TMPC << EOF
-+#include <libusb.h>
-+
-+int main(void) { return libusb_get_port_path(NULL, NULL, NULL, 0); }
-+EOF
-+    if compile_prog "-Werror" "-lusb -pthread" ; then
-+        libusb="yes"
-+        libusb_cflags=""
-+        libusb_libs=-lusb
-+        libs_softmmu="$libs_softmmu $libusb_libs"
-+    else
-     if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
-         libusb="yes"
-         libusb_cflags=$($pkg_config --cflags libusb-1.0)
-@@ -4004,6 +4068,7 @@ if test "$libusb" != "no" ; then
-         fi
-         libusb="no"
-     fi
-+    fi
- fi
- 
- # check for usbredirparser for usb network redirection support
 @@ -4769,6 +4834,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"

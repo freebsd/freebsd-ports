@@ -33,7 +33,6 @@ OPTIONS_SUB=	yes
 IMOBILE_DESC=	Apple iPhone/iPod Touch support
 
 IMOBILE_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice
-IMOBILE_CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 IMOBILE_CONFIGURE_WITH=	libimobiledevice
 
 MONO_USE=		GNOME=gtksharp20
