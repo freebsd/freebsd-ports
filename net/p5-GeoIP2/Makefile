@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
-PORTVERSION=	2.003002
+PORTVERSION=	2.003003
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -27,7 +27,9 @@ BUILD_DEPENDS=	p5-Data-Validate-IP>=0.19:net-mgmt/p5-Data-Validate-IP \
 		p5-Throwable>=0:devel/p5-Throwable \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww
+		p5-libwww>=0:www/p5-libwww \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Path-Class>=0:devel/p5-Path-Class \
