@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2.99.git000
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 PKGNAMESUFFIX=	-devel
@@ -39,15 +39,12 @@ CFLAGS+=	-I${LOCALBASE}/include -fPIC
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
-# LDFLAGS="${LDFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DCREDITSDIR="${DOCSDIR}" \
 		-DLICENCEDIR="${DOCSDIR}" \
 		-DDESKTOPDIR="${DESKTOPDIR}" \
 		-DDATADIR="${DATADIR}" \
 		-DCACHE_NAME_SUFFIX=""
-#-DCMAKE_C_FLAGS="${CFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
-#-DCMAKE_CXX_FLAGS="${CXXFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
@@ -57,7 +54,7 @@ RTDIR=		${PREFIX}/libdata/${PORTNAME}
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP NATIVE
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable multicore processing using OpenMP
-OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE support)
+OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE2 support)
 NATIVE_DESC=		Use -march=native for compilation (do not use for generic packages!)
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
@@ -70,8 +67,8 @@ CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -funroll-loops -msse
-CXXFLAGS+=	-O3 -funroll-loops -msse
+CFLAGS+=	-O3 -funroll-loops -msse2
+CXXFLAGS+=	-O3 -funroll-loops -msse2
 .endif
 .endif
 
@@ -80,18 +77,18 @@ CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="2"
 .endif
 
 .if ${ARCH} == amd64 && ${COMPILER_TYPE} == clang
-# Enable OpenMP support with Clang 3.7.
-BUILD_DEPENDS+=	clang37:devel/llvm37
-RUN_DEPENDS+=	clang37:devel/llvm37
+# Enable OpenMP support with Clang 3.9.
+BUILD_DEPENDS+=	clang39:devel/llvm39
+LIB_DEPENDS+=	libomp.so.0:devel/openmp
 
-CPP=		clang-cpp37
-CC=		clang37
-CXX=		clang++37
+CPP=		clang-cpp39
+CC=		clang39
+CXX=		clang++39
 
 # FIXME: At least in 3.7.0 and 3.7.1, Clang doesn't find libomp.so
 # itself. Furthermore, there may be a regression in 3.7.1 because we now
 # need to explicitly link to libm.so as well.
-OPENMP_FLAGS=	-L${LOCALBASE}/llvm37/lib -lm -lomp
+OPENMP_FLAGS=	-L${LOCALBASE}/lib -lm -lomp
 LDFLAGS+=	${OPENMP_FLAGS}
 
 # In cmake, the CMP0056 policy must be explicitly set to NEW to ensure
