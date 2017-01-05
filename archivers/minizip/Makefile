@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	minizip
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	archivers
 MASTER_SITES=	SF/libpng/zlib/${PORTVERSION}
 DISTNAME=	zlib-${PORTVERSION}
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Zip library and programs from Zlib distribution
 
 LICENSE=	ZLIB
 
 USES=		autoreconf libtool pathfix tar:xz
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip
