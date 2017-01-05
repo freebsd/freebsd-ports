@@ -1,4 +1,4 @@
---- volatility/renderers/xlsx.py.orig	2015-10-21 20:39:22 UTC
+--- volatility/renderers/xlsx.py.orig	2016-12-27 15:54:47 UTC
 +++ volatility/renderers/xlsx.py
 @@ -6,8 +6,8 @@ __author__ = "gleeda"
  try:

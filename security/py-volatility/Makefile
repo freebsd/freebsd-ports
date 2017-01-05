@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	volatility
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	security python
 MASTER_SITES=	http://downloads.volatilityfoundation.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl
 
-USES=		python:2 zip
+NO_ARCH=	yes
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
@@ -35,7 +35,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PYDISTUTILS_INSTALLARGS+=--install-data ${DATADIR}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
