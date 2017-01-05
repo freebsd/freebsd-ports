@@ -37,6 +37,10 @@ PLIST_FILES=	bin/${PORTNAME}
 READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 RLTTYTTER_RUN_DEPENDS=	p5-Term-ReadLine-TTYtter>=1.4:devel/p5-Term-ReadLine-TTYtter
 
+
+DEPRECATED=	Upstream no longer active, see net-im/oysttyer
+EXPIRATION_DATE=	2017-02-05
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTVERSION}.txt ${WRKSRC}
