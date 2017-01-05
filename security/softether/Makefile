@@ -12,9 +12,6 @@ COMMENT=	Softether VPN solution
 
 LICENSE=	GPLv2
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
 DOS2UNIX_FILES=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT \
 		WARNING.TXT \
@@ -35,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_OPENSSL=	yes
-USES=		dos2unix gmake iconv:wchar_t ncurses readline
+USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses readline
 USE_RC_SUBR=	softether_bridge softether_client softether_server
 SUB_FILES=	vpncmd
 MAKE_JOBS_UNSAFE=	yes
@@ -46,11 +43,6 @@ WRKSRC=		${WRKDIR}/v4.18-9570
 ALL_TARGET=	build
 
 .include <bsd.port.options.mk>
-
-# requires OpenSSL from ports
-.if ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
 
 # skip configure at all and copy the corresponding Makefile in place
 post-extract:

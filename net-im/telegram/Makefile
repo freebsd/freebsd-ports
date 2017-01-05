@@ -32,12 +32,6 @@ PLIST_FILES=	bin/telegram-cli \
 		etc/telegram-cli/server.pub
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-USE_GCC=	yes
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/telegram-cli
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/telegram-cli ${STAGEDIR}${PREFIX}/bin
@@ -46,4 +40,4 @@ do-install:
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGELOG README-LUA README.es README.md \
 		${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -102,7 +102,7 @@ EXPERIMENTAL_DESC=	Enable experimental features (TLS-Everywhere)
 
 .include <bsd.port.options.mk>
 
-.if (${OPSYS} != FreeBSD || ${OSVERSION} < 1000000)
+.if ${OPSYS} != FreeBSD
 WITH_OPENSSL_PORT=	yes
 .endif
 

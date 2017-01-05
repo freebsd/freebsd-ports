@@ -54,11 +54,4 @@ USERS=		pdns_recursor
 GROUPS=		pdns
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000 && ${ARCH} == i386
-#BUILD_DEPENDS=		${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
-LDFLAGS+=		-latomic
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

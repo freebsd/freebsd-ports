@@ -102,10 +102,6 @@ NETTLE_CONFIGURE_OFF=	--with-openssl
 BROKEN=		Does not build with openssl-devel
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002504
-CONFIGURE_ENV+=	ac_cv_lzma_has_mt=no
-.endif
-
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_func_locale_charset=no \

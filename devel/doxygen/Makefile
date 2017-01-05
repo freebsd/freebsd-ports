@@ -53,15 +53,8 @@ DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
 DOCS_IMPLIES=		LATEX
 PORTDOCS=		*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/flex
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/PERL_PATH/ s|/usr/bin/perl|${perl_CMD}|' \
 		${WRKSRC}/src/config.xml
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

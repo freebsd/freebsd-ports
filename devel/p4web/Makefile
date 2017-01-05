@@ -13,6 +13,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
+# 10.x (and higher) needs compat libs
+LIB_DEPENDS=	libstdc++.so.6:misc/compat9x
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
@@ -31,11 +34,6 @@ SUB_LIST=	P4LOG=${P4LOG}
 USE_RC_SUBR=	p4web
 
 .include <bsd.port.pre.mk>
-
-# 10.x (and higher) needs compat libs
-.if ${OSVERSION} >= 1000054
-LIB_DEPENDS+=	libstdc++.so.6:misc/compat9x
-.endif
 
 # Figure out what to install
 .if ${ARCH} == amd64
