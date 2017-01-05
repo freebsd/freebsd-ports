@@ -31,7 +31,7 @@ RUN_DEPENDS=	pear-File_Iterator>=1.3.1:devel/pear-File_Iterator \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 DEPRECATED=	Deprecated by upstream, use devel/phpunit instead
-EXPIRATION_DATE=	2016-01-31
+EXPIRATION_DATE=	2017-01-31
 
 CONFLICTS=	pear-PHPUnit-[12]*
 

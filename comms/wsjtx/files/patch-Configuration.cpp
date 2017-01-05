@@ -1,4 +1,4 @@
---- Configuration.cpp.orig	2017-01-05 12:39:49 UTC
+--- Configuration.cpp.orig	2017-01-05 15:57:44 UTC
 +++ Configuration.cpp
 @@ -2548,13 +2548,13 @@ void Configuration::impl::fill_port_comb
  

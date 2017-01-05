@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-01-05 12:39:50 UTC
+--- CMakeLists.txt.orig	2017-01-05 15:57:44 UTC
 +++ CMakeLists.txt
 @@ -1,5 +1,4 @@
  cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
@@ -13,7 +13,7 @@
 +if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  set (FREEBSD TRUE)
 +  link_directories("/usr/lib" "${LOCALBASE}/lib")
-+  include_directories("/usr/lib" "${LOCALBASE}/include")
++  include_directories("/usr/include" "${LOCALBASE}/include")
 +endif()
 +
  

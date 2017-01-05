@@ -37,4 +37,7 @@ do-extract:
 	${TAR} xf ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C${WRKDIR}
 	${TAR} xf ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/wsjtx.tgz -C${WRKDIR}
 
+BROKEN_i386=    does not build on i386 due to openmp
+
 .include <bsd.port.mk>
+
