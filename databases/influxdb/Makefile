@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.5.0:lang/go
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 armv6
 
 USE_RC_SUBR=	influxd
 
