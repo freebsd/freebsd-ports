@@ -41,7 +41,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
-USES=		cmake:outsource compiler:c11 iconv perl5 python:2.7 shebangfix
+USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \

@@ -21,8 +21,7 @@ USE_RC_SUBR=	pcscd
 SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
-		LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
+CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

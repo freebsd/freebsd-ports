@@ -22,11 +22,12 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*libusb/s/ >= 0\.1\.[0-9]*/-0.1/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/Requires/&.private/' ${WRKSRC}/ticables2.pc.in
 
 .include <bsd.port.mk>
