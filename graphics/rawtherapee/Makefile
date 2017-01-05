@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -53,7 +53,7 @@ RTDIR=		${PREFIX}/libdata/${PORTNAME}
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable multicore processing using OpenMP
-OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE support)
+OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE2 support)
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
 
@@ -64,9 +64,9 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fexpensive-optimizations \
-		-funroll-loops -msse
+		-funroll-loops -msse2
 CXXFLAGS+=	-O3 \
-		-funroll-loops -msse
+		-funroll-loops -msse2
 .endif
 .endif
 

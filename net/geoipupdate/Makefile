@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -19,5 +18,13 @@ GH_ACCOUNT=	maxmind
 
 USES=		libtool localbase pathfix autoreconf
 GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${REINPLACE_CMD} -e '/^doc_DATA =/s|conf/GeoIP.conf.default||' \
+		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e '/DEFAULT_CONFIG_FILE =/s/GeoIP.conf$$/&.sample/' \
+		${WRKSRC}/conf/Makefile.am
 
 .include <bsd.port.mk>

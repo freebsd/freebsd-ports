@@ -73,6 +73,7 @@
     SUBDIR += libzip
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
+    SUBDIR += lua51-zlib
     SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lzlib

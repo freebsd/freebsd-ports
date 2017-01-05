@@ -23,7 +23,7 @@ rcvar=couchpotato_enable
 load_rc_config ${name}
 
 : ${couchpotato_enable:=NO}
-: ${couchpotato_user:=nobody}
+: ${couchpotato_user:=couchpotato}
 : ${couchpotato_datadir=/var/db/couchpotato}
 : ${couchpotato_conf=%%ETCDIR%%/settings.conf}
 
