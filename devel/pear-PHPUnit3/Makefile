@@ -30,6 +30,9 @@ RUN_DEPENDS=	pear-File_Iterator>=1.3.1:devel/pear-File_Iterator \
 		pear-Symfony_Component_Yaml>=2.1.0:textproc/pear-Symfony_Component_Yaml \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
+DEPRECATED=	Deprecated by upstream, use devel/phpunit instead
+EXPIRATION_DATE=	2016-01-31
+
 CONFLICTS=	pear-PHPUnit-[12]*
 
 USES=		pear

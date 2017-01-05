@@ -16,12 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake localbase:ldflags
 USE_SDL=	sdl image mixer
 USE_GL=		gl
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
@@ -36,12 +33,8 @@ DESKTOP_ENTRIES="Fish Supper" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 post-patch:
 	@${REINPLACE_CMD} -e 's|std::tr1::shared_ptr|std::shared_ptr|g' ${WRKSRC}/src/*.h ${WRKSRC}/src/*.cpp
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -13,11 +13,8 @@ COMMENT=		Tool to manage keys and signatures for DNSSEC-zones
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 1000055
-BUILD_DEPENDS=	dnssec-signzone:dns/bind99
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-.endif
+BUILD_DEPENDS=		dnssec-signzone:dns/bind99
+RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 DIR_NAMED_CONF?=	/etc/namedb
 GNU_CONFIGURE=		yes
@@ -38,4 +35,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/zkt-ls.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${INSTALL_MAN} ${WRKSRC}/man/zkt-signer.8 ${STAGEDIR}${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

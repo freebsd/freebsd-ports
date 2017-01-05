@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xa65
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/unsupported/
+MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,9 +15,6 @@ LICENSE=	GPLv2
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
@@ -27,11 +24,15 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${LN} -sf xa.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/xa65.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ChangeLog README.1st TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

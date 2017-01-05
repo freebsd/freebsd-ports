@@ -26,16 +26,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${FILESDIR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/add_subdirectory(docs)/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/version.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
