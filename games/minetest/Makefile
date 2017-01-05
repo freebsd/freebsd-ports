@@ -86,10 +86,6 @@ CMAKE_ARGS+=	-DIRRLICHT_INCLUDE_DIR:STRING="${IRRLICHT_INCLUDE_DIR}"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-irrlichtdepend
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_unittest_test__serialization.cpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
