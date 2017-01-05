@@ -34,6 +34,9 @@ SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
+DEPRECATED=	Upstream support ended, see http://tinyurl.com/puppet3eol
+EXPIRATION_DATE=	2017-02-05
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
