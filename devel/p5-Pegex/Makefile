@@ -20,6 +20,8 @@ BUILD_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
