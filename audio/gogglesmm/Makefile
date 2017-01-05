@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
