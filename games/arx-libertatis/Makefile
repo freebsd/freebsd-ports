@@ -36,14 +36,7 @@ CRASHREPORTER_USE=	QT4=corelib,gui,network \
 CRASHREPORTER_CMAKE_ON=	-DBUILD_CRASHREPORTER=ON -DUSE_QT5=OFF
 CRASHREPORTER_CMAKE_OFF=-DBUILD_CRASHREPORTER=OFF
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1000705 && ${OSVERSION} < 1001503) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100046))
-# Workaround for clang 3.4 bug: it crashes when debug info is enabled
-# See http://llvm.org/bugs/show_bug.cgi?id=19031, http://llvm.org/bugs/show_bug.cgi?id=20893
-	@${REINPLACE_CMD} -e '/add_cxxflag.*-g2/ d' ${WRKSRC}/cmake/BuildType.cmake
-.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 
 post-install:
