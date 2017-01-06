@@ -3,7 +3,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	3.6.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALBASE}/var/${PORTNAME}/ \
 
 OLDCONFIG_FILE1=	bin/env
 OLDCONFIG_FILE2=	util/lg/lg.conf
-NEWERCONFIG_FILES1=	etc/rancid.conf
-NEWERCONFIG_FILES2=	etc/lg.conf
+NEWERCONFIG_FILE1=	etc/rancid.conf
+NEWERCONFIG_FILE2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
 OPTIONS_DEFINE=		COMWARE SVN
@@ -64,6 +64,8 @@ pre-everything::
 post-patch:
 .if ${PORT_OPTIONS:MCOMWARE}
 	${CAT} ${FILESDIR}/comware_types.conf >> ${WRKSRC}/etc/rancid.types.base
+	${SED} -e 's/@VERSION@/${PORTVERSION}/g' ${FILESDIR}/cmwlogin.in > ${WRKDIR}/cmwlogin
+	${SED} -e 's/@VERSION@/${PORTVERSION}/g' ${FILESDIR}/cmw.pm.in > ${WRKDIR}/cmw.pm
 .endif
 	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
@@ -74,8 +76,8 @@ post-install:
 	${LN} -s ${LOCALBASE}/libexec/${PORTNAME}/rancid-cvs ${STAGEDIR}${LOCALBASE}/bin
 	${LN} -s ${LOCALBASE}/libexec/${PORTNAME}/rancid-run ${STAGEDIR}${LOCALBASE}/bin
 .if ${PORT_OPTIONS:MCOMWARE}
-	${INSTALL_DATA} ${FILESDIR}/cmw.pm ${STAGEDIR}/${LOCALBASE}/lib/rancid
-	${INSTALL_SCRIPT} ${FILESDIR}/cmwlogin ${STAGEDIR}/${LOCALBASE}/libexec/rancid
+	${INSTALL_DATA} ${WRKDIR}/cmw.pm ${STAGEDIR}/${LOCALBASE}/lib/rancid
+	${INSTALL_SCRIPT} ${WRKDIR}/cmwlogin ${STAGEDIR}/${LOCALBASE}/libexec/rancid
 .endif
 .for file in ${NEWCONFIG_FILES}
 	@ if [ -f ${LOCALBASE}/etc/${PORTNAME}/${file} ] ; then \
