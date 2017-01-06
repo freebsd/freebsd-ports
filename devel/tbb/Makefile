@@ -3,7 +3,7 @@
 
 PORTNAME=	tbb
 PORTVERSION=	2017.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
@@ -31,20 +31,21 @@ USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
+CC_BASENAME=	${CC:C,^.*/,,}
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${CC} != ${COMPILER_TYPE}
-	@${LN} -sf FreeBSD.${COMPILER_TYPE}.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
+.if ${CC_BASENAME} != ${COMPILER_TYPE}
+	@${LN} -sf FreeBSD.${COMPILER_TYPE}.inc ${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
 .endif
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e '/^CONLY =/s/^CONLY =.*/CONLY = ${CC}/' \
-		-e '/^CPLUS =/s/^CPLUS =.*/CPLUS = ${CXX}/' \
-			${WRKSRC}/build/FreeBSD.${CC}.inc
+		-e '/^CONLY =/s|^CONLY =.*|CONLY = ${CC}|' \
+		-e '/^CPLUS =/s|^CPLUS =.*|CPLUS = ${CXX}|' \
+			${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
 
 do-install:
 	cd ${WRKSRC}; \
