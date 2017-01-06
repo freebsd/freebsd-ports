@@ -3,6 +3,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 
 MAINTAINER=	ehaupt@FreeBSD.org

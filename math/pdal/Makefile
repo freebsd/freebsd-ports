@@ -3,7 +3,7 @@
 
 PORTNAME=	pdal
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	coder@tuxfamily.org
