@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.2
 CATEGORIES=	www
 
 MAINTAINER=	junovitch@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
+GH_PROJECT=	CodeIgniter
 
 CONFLICTS=	codeigniter-1.[0-9]* codeigniter22-2.[0-9]*
 
@@ -24,7 +25,6 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=		${WRKDIR}/CodeIgniter-${PORTVERSION}
 PORTDOCS=	*
 
 # These are all user-configurable files that we'll install
