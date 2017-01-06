@@ -3,24 +3,21 @@
 
 PORTNAME=	liblastfm
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float \
-		libsamplerate.so:audio/libsamplerate
-
+USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm
 
 USES=		cmake pkgconfig
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	dbus network qtestlib sql xml \
+USE_QT4=	corelib dbus network sql xml \
 		moc_build qmake_build rcc_build
 
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=ON
@@ -28,10 +25,17 @@ CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=ON
 OPTIONS_DEFINE=		FINGERPRINT TEST
 OPTIONS_DEFAULT=	FINGERPRINT
 OPTIONS_SUB=		yes
+
 FINGERPRINT_DESC=	Build the lastfm-fingerprint library
-FINGERPRINT_CMAKE_ON=	-DBUILD_FINGERPRINT:BOOL=ON
-FINGERPRINT_CMAKE_OFF=	-DBUILD_FINGERPRINT:BOOL=OFF
-TEST_CMAKE_ON=		-DBUILD_TESTS:BOOL=ON
-TEST_CMAKE_OFF=		-DBUILD_TESTS:BOOL=OFF
+FINGERPRINT_LIB_DEPENDS=libsamplerate.so:audio/libsamplerate \
+			libfftw3f.so:math/fftw3-float
+FINGERPRINT_CMAKE_BOOL=	BUILD_FINGERPRINT
+# We only need fftw3.h from math/fftw3; no need to install
+FINGERPRINT_BUILD_DEPENDS=	${NONEXISTENT}:math/fftw3:patch
+FINGERPRINT_CMAKE_ON=	-DLIBFFTW3_INCLUDE_DIR:PATH=`${MAKE} -C ${PORTSDIR}/math/fftw3 -VWRKSRC`/api
+
+TEST_USE=		QT4=qtestlib_build
+TEST_CMAKE_BOOL=	BUILD_TESTS
+TEST_TARGET=		test
 
 .include <bsd.port.mk>
