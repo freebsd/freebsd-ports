@@ -4,9 +4,7 @@
 PORTNAME?=	ioquake3-devel
 DISTVERSION?=	GIT${GITREVISION}
 PORTREVISION?=	0
-MASTER_SITES?=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
-		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
-EXTRACT_SUFX?=	.tar.xz
+MASTER_SITES?=
 
 MAINTAINER?=	kami@FreeBSD.org
 COMMENT?=	Development GIT snapshots of ioquake3
@@ -19,12 +17,17 @@ DISTINFO_FILE?=	${.CURDIR}/../${PORTNAME}/distinfo
 PATCHDIR?=	${.CURDIR}/../${PORTNAME}/files
 PKGMESSAGE?=	${.CURDIR}/../${PORTNAME}/pkg-message
 
-GITREVISION?=	2808
+GITREVISION?=	2904
 BINSUFFIX?=	-devel
 
 IOQ3?=		CLIENT TOOLS DLRENDERER GAMELIBS OPUS OPENGL2
 IOQ3ARCH?=	${ARCH:S/i386/x86/:S/amd64/x86_64/}
 IOQ3SDL?=	sdl2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lonkamikaze
+GH_PROJECT=	ioq3-freebsd
+GH_TAGNAME=	${GITREVISION}
 
 Q3DOCS?=	README.md \
 		id-readme.txt \
