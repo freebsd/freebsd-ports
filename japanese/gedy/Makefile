@@ -3,7 +3,7 @@
 
 PORTNAME=	gedy
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 DISTNAME=	${PORTNAME}
