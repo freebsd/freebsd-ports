@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	SERVER CURL OPENAL MUMBLE VORBIS DEBUG
 OPTIONS_DEFAULT=	SERVER CURL OPENAL MUMBLE VORBIS
 SERVER_DESC=	Install dedicated server
 MUMBLE_DESC=	Enable Mumble support (no dependencies)
+USE_GL+=	gl
 .endif
 IOQ3_OPTIONS=	${IOQ3:MTOOLS} ${IOQ3:MDLRENDERER} ${IOQ3:MGAMELIBS} \
 		${IOQ3:MOPUS}
@@ -74,10 +75,12 @@ Q3GAMELIBS?=	cgame \
 		ui
 Q3ICON?=	${PREFIX}/share/pixmaps/quake3.xpm
 .if ${IOQ3:MOPENGL2}
-Q3RENDERER?=	renderer_opengl1_${IOQ3ARCH} renderer_opengl2_${IOQ3ARCH}
+Q3RENDERER?=	opengl1 opengl2
 .else
-Q3RENDERER?=	renderer_opengl1_${IOQ3ARCH}
+Q3RENDERER?=	opengl1
 .endif
+Q3RENDPREFIX?=	renderer_
+Q3RENDSUFFIX?=	_${IOQ3ARCH}
 Q3INSTALL?=
 Q3ENGINEVER?=	${DISTVERSION}
 
@@ -155,7 +158,11 @@ IOQ3_INST+=	PROGRAM;tools/${bin};bin/${bin}${BINSUFFIX}
 .endif
 .if ${PORT_OPTIONS:MDLRENDERER}
 . for renderer in ${Q3RENDERER}
-IOQ3_INST+=	LIB;${renderer}.so;${LIBDIR}/${renderer}.so
+IOQ3_INST+=	LIB;${Q3RENDPREFIX}${renderer}${Q3RENDSUFFIX}.so;${LIBDIR}/${Q3RENDPREFIX}${renderer}${Q3RENDSUFFIX}.so
+. endfor
+.else
+. for renderer in ${Q3RENDERER:Nopengl1}
+IOQ3_INST+=	PROGRAM;${Q3CLIENT}_${renderer}.${IOQ3ARCH};bin/${Q3CLIENT}_${renderer}${BINSUFFIX}
 . endfor
 .endif
 .if ${PORT_OPTIONS:MGAMELIBS}
