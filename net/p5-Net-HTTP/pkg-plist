@@ -1,7 +1,8 @@
-%%PERL5_MAN3%%/Net::HTTP.3.gz
-%%PERL5_MAN3%%/Net::HTTP::NB.3.gz
-%%PERL5_MAN3%%/Net::HTTPS.3.gz
 %%SITE_PERL%%/Net/HTTP.pm
 %%SITE_PERL%%/Net/HTTP/Methods.pm
 %%SITE_PERL%%/Net/HTTP/NB.pm
 %%SITE_PERL%%/Net/HTTPS.pm
+%%PERL5_MAN3%%/Net::HTTP.3.gz
+%%PERL5_MAN3%%/Net::HTTP::Methods.3.gz
+%%PERL5_MAN3%%/Net::HTTP::NB.3.gz
+%%PERL5_MAN3%%/Net::HTTPS.3.gz
