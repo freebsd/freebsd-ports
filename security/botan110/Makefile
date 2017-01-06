@@ -3,7 +3,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.10.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110

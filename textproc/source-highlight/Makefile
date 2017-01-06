@@ -3,7 +3,7 @@
 
 PORTNAME=	source-highlight
 PORTVERSION=	3.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 

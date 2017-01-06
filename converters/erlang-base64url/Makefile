@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	base64url
-PORTVERSION=	0.0.1
+PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	converters
 PKGNAMEPREFIX=	erlang-
@@ -14,6 +14,5 @@ LICENSE=	MIT
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	dvv
-GH_TAGNAME=	f2c64ed
 
 .include <bsd.port.mk>

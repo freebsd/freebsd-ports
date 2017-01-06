@@ -2,7 +2,7 @@
 
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.8.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460r/ \
 		http://www.ti.com/lit/ug/slau320x/:doc1 \
