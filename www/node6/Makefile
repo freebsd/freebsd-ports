@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.9.2
+PORTVERSION=	6.9.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -23,7 +23,7 @@ OPTIONS_EXCLUDE+=	DTRACE
 
 OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 
-BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation #'
 BUNDLED_SSL_USES_OFF=		ssl
 BUNDLED_SSL_CONFIGURE_OFF+=	--shared-openssl
 
@@ -74,7 +74,7 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 
 .if ${ARCH} == "armv6"
-CONFIGURE_ARGS=	--openssl-no-asm
+CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 
 .if ${COMPILER_TYPE} == gcc
@@ -83,10 +83,7 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-PLIST_SUB+=	DTRACE=""
 CONFIGURE_ARGS+=	--with-dtrace
-.else
-PLIST_SUB+=	DTRACE="@comment "
 .endif
 
 post-patch:

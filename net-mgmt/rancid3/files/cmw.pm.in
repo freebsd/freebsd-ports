@@ -2,7 +2,7 @@ package cmw;
 ##
 ## $Id: cmw.pm.in 3000 2015-01-06 18:47:49Z heas $
 ##
-## rancid 3.1.99
+## rancid @VERSION@
 ## Copyright (c) 1997-2015 by Terrapin Communications, Inc.
 ## All rights reserved.
 ##
@@ -53,7 +53,7 @@ no warnings 'uninitialized';
 require(Exporter);
 our @ISA = qw(Exporter);
 
-use rancid 3.1.99;
+use rancid @VERSION@;
 
 our $login;
 

@@ -1,0 +1,4 @@
+Ruby library for rendering safe templates which cannot affect the
+security of the server they are rendered on.
+
+WWW: http://www.liquidmarkup.org

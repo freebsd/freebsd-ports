@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
 OPTIONS_SUB=	yes
 
-BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation #'
 BUNDLED_SSL_USES_OFF=		ssl
 BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	listen
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-rb-fsevent>=0.9.4:devel/rubygem-rb-fsevent \
 		rubygem-rb-inotify>=0.9.7:devel/rubygem-rb-inotify \
-		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
+		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue \
+		rubygem-ruby_dep>=1.2:devel/rubygem-ruby_dep
 
 NO_ARCH=	yes
 USE_RUBY=	yes

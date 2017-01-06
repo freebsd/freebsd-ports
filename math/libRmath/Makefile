@@ -21,7 +21,7 @@ CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
 			--with-jpeglib=no --with-libpng=no --with-libtiff=no \
 			--with-readline=no --with-tcltk=no --with-x=no \
 			--without-libintl-prefix
-CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
+CONFIGURE_ENV+=		ac_cv_header_iconv_h=no r_cv_header_zlib_h=yes
 GNU_CONFIGURE=		yes
 RMATH_SOVERSION=	1
 USES=			fortran localbase

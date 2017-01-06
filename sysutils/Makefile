@@ -1002,6 +1002,7 @@
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += s6
+    SUBDIR += s6-rc
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += samefile

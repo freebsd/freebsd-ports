@@ -5,7 +5,7 @@ PORTNAME=	libwww
 PORTVERSION=	5.4.0
 PORTREVISION=	6
 CATEGORIES=	www devel
-MASTER_SITES=	http://www.w3.org/Library/Distribution/
+MASTER_SITES=	http://www.w3.org/Library/Distribution/old/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dbaio@bsd.com.br
