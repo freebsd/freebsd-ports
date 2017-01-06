@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.2
 CATEGORIES=	www
 
 MAINTAINER=	junovitch@FreeBSD.org

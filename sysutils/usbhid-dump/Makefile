@@ -11,8 +11,6 @@ COMMENT=	USB HID device dumping utility
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" \
-		LIBUSB_LIBS="-L/usr/lib -lusb"
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	owfs
 PORTVERSION=	3.1p1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/owfs/owfs/${PORTVERSION}
 
@@ -71,7 +72,6 @@ OWFS_USES=			fuse
 
 ZERO_CONFIGURE_ENABLE=		zero
 USB_CONFIGURE_ENABLE=		usb
-USB_LDFLAGS=			-lusb
 
 .include <bsd.port.options.mk>
 

@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	build
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
-CONFIGURE_ENV=	LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
-		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
 
 PLIST_SUB=	VER=${PORTVERSION}
 INSTALL_TARGET=	install-strip

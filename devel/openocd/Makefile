@@ -58,7 +58,8 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 INFO=		openocd
 
 post-patch:
-	chmod +x ${WRKSRC}/libusb_finder
+	@${REINPLACE_CMD} -e '/PKG_CONFIG/{/1\.0/!s/libusb/&-0.1/;}' \
+		${WRKSRC}/configure
 
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.
