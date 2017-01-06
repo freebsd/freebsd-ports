@@ -1471,6 +1471,7 @@
     SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
     SUBDIR += rubygem-liquid2
+    SUBDIR += rubygem-liquid3
     SUBDIR += rubygem-loggability
     SUBDIR += rubygem-loofah
     SUBDIR += rubygem-ltsv
