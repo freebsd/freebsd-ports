@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	winrm-fs
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-erubis>=2.7:www/rubygem-erubis \
 		rubygem-logging>=1.6.1:devel/rubygem-logging \
 		rubygem-rubyzip>=1.1:archivers/rubygem-rubyzip \
-		rubygem-winrm>=1.3.0:sysutils/rubygem-winrm
+		rubygem-winrm>=1.5:sysutils/rubygem-winrm
 
 NO_ARCH=	yes
 USE_RUBY=	yes
