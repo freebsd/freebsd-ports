@@ -13,6 +13,9 @@ AMR_NB_CONFIGURE_OFF=	--disable-libopencore_amrnb
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:audio/opencore-amr
 AMR_WB_CONFIGURE_OFF=	--disable-libopencore_amrwb
 
+ASS_LIB_DEPENDS=	libass.so:multimedia/libass
+ASS_CONFIGURE_OFF=	--disable-ass
+
 BLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 BLURAY_CONFIGURE_OFF=	--disable-bluray
 
