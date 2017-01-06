@@ -1,0 +1,93 @@
+--- configure.orig	2016-10-17 07:49:05.000000000 +0900
++++ configure	2017-01-05 18:09:44.486857000 +0900
+@@ -12141,7 +12141,7 @@
+ 
+ 
+ 
+-if test "z$RM" == "z" ; then
++if test "z$RM" = "z" ; then
+     # Extract the first word of "rm", so it can be a program name with args.
+ set dummy rm; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+@@ -13143,7 +13143,7 @@
+ fi
+ 
+ 
+-if test "z$shrext" == "z" ; then
++if test "z$shrext" = "z" ; then
+     shrext=$shrext_cmds
+ fi
+ 
+@@ -13858,6 +13858,7 @@
+ 	*-*-osf5*) openssl_exlibs=;;
+ 	*-*-openbsd*) openssl_exlibs=;;
+ 	*-*-netbsd*) openssl_exlibs=;;
++	*-*-freebsd*) openssl_exlibs=;;
+ 	#FIXME: check if lib "dl" is required
+ 	*)          openssl_exlibs=-ldl;;
+     esac
+@@ -14189,9 +14190,9 @@
+     for dir in $ac_openssl_lib_dir ; do
+ 	if test -f $dir/libcrypto.a ; then
+ 	    	    if test "z$dir" = "z/usr/lib" ; then
+-		OPENSSL_LIBS="-lcrypto -ldl"
++		OPENSSL_LIBS="-lcrypto"
+ 	    else
+-		OPENSSL_LIBS="-L$dir -lcrypto -ldl"
++		OPENSSL_LIBS="-L$dir -lcrypto "
+ 	    fi
+ 	    OPENSSL_LIBS_FOUND="yes"
+ 	    ac_found_openssl_lib_dir=$dir
+@@ -14240,7 +14241,7 @@
+ /* end confdefs.h.  */
+ 
+     	    #include <openssl/opensslv.h>
+-	    #if OPENSSL_VERSION_NUMBER >= 0x10000000L
++	    #if OPENSSL_VERSION_NUMBER >= 0x10000000L || defined(LIBRESSL_VERSION_NUMBER)
+ 		yes
+ 	    #endif
+ 
+@@ -14330,12 +14331,12 @@
+     	OPENSSL_CFLAGS="$OPENSSL_CFLAGS -DXMLSEC_OPENSSL_110=1"
+     fi
+     OPENSSL_CFLAGS="$OPENSSL_CFLAGS -DXMLSEC_CRYPTO_OPENSSL=1"
+-    XMLSEC_CRYPTO_LIST="$XMLSEC_CRYPTO_LIST openssl"
++    XMLSEC_CRYPTO_LIST="$XMLSEC_CRYPTO_LIST openssl"; CPPFLAGS="$CPPFLAGS $OPENSSL_CFLAGS"
+ else
+     XMLSEC_CRYPTO_DISABLED_LIST="$XMLSEC_CRYPTO_DISABLED_LIST openssl"
+ fi
+ 
+- if test "z$XMLSEC_NO_OPENSSL" == "z1"; then
++ if test "z$XMLSEC_NO_OPENSSL" = "z1"; then
+   XMLSEC_NO_OPENSSL_TRUE=
+   XMLSEC_NO_OPENSSL_FALSE='#'
+ else
+@@ -14357,7 +14358,7 @@
+ NSS_CFLAGS=""
+ NSS_LIBS=""
+ NSS_LIBS_LIST="-lnss3 -lsmime3"
+-NSPR_LIBS_LIST="-lnspr4 -lplds4 -lplc4"
++NSPR_LIBS_LIST="-lnspr4 -lplds4 -lplc4 -lpthread"
+ NSS_CRYPTO_LIB="$XMLSEC_PACKAGE-nss"
+ NSS_FOUND="no"
+ NSPR_PACKAGE=mozilla-nspr
+@@ -14792,15 +14793,15 @@
+     NSS_NSS_H=""
+ 
+     if test "z$with_nss" != "z" ; then
+-	NSS_CFLAGS="$NSS_CFLAGS -I$with_nss/include -I$with_nss/include/nss"
++	NSS_CFLAGS="$NSS_CFLAGS -I$with_nss/include/nss/nss -I$with_nss/include/nss"
+ 	if test "z$with_gnu_ld" = "zyes" ; then
+-	    NSS_LIBS="$NSS_LIBS -Wl,-rpath-link -Wl,$with_nss/lib -L$with_nss/lib $NSS_LIBS_LIST"
++	    NSS_LIBS="$NSS_LIBS -Wl,-rpath-link -Wl,$with_nss/lib/nss -L$with_nss/lib/nss $NSS_LIBS_LIST"
+         else
+-	    NSS_LIBS="$NSS_LIBS -L$with_nss/lib $NSS_LIBS_LIST"
++	    NSS_LIBS="$NSS_LIBS -L$with_nss/lib/nss $NSS_LIBS_LIST"
+         fi
+ 	NSS_INCLUDES_FOUND="yes"
+ 	NSS_LIBS_FOUND="yes"
+-	NSS_NSS_H="$with_nss/include/nss.h"
++	NSS_NSS_H="$with_nss/include/nss/nss/nss.h"
+     else
+ 	for dir in $ac_nss_inc_dir ; do
+ 	    if test -f $dir/nss/nss.h ; then
