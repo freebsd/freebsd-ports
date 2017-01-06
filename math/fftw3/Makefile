@@ -23,7 +23,7 @@ FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix perl5 pkgconfig
+USES=		gmake libtool makeinfo pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
