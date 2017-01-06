@@ -55,6 +55,7 @@
     SUBDIR += dhcdrop
     SUBDIR += dhcp_probe
     SUBDIR += disco
+    SUBDIR += dnsmap
     SUBDIR += docsis
     SUBDIR += driftnet
     SUBDIR += ehnt
