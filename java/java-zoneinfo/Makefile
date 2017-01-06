@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2016i
+DISTVERSION=	2016j
 CATEGORIES=	java misc
 MASTER_SITES=	LOCAL/glewis/javazi
 PKGNAMEPREFIX=	java-
