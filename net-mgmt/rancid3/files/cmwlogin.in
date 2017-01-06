@@ -2,7 +2,7 @@
 ##
 ## $Id: cmwlogin 3022 2015-01-13 20:00:00Z heas $
 ##
-## rancid 3.1.99
+## rancid @VERSION@
 ## Copyright (c) 1997-2015 by Terrapin Communications, Inc.
 ## All rights reserved.
 ##
@@ -140,7 +140,7 @@ for {set i 0} {$i < $argc} {incr i} {
 	    set do_passwd 0
 	# Version string
 	} -V* {
-	    send_user "rancid 3.1.99\n"
+	    send_user "rancid @VERSION@\n"
 	    exit 0
 	# Enable Username
 	} -w* {
