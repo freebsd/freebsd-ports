@@ -3,7 +3,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.51
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.lysator.liu.se/snes9x/${PORTVERSION}/
