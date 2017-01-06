@@ -3,6 +3,7 @@
 
 PORTNAME=	livestreamer
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	BSD2CLAUSE MIT APACHE20
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump \
-		${PYTHON_PKGNAMEPREFIX}requests1>=0:www/py-requests1 \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}futures>=0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}librtmp>=0:multimedia/py-librtmp
