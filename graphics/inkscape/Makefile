@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.91
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.global.ssl.fastly.net/media/resources/file/ \
 		LOCAL/kwm

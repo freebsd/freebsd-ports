@@ -3,7 +3,7 @@
 
 PORTNAME=	digitalcoin
 PORTVERSION=	1.0.0.0b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-p2p
 
 MAINTAINER=	myst3r10n@rocketmail.com

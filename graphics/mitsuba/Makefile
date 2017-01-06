@@ -3,7 +3,7 @@
 
 PORTNAME=	mitsuba
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.mitsuba-renderer.org/repos/mitsuba/archive/${HG_REVISION}${EXTRACT_SUFX}?dummy=
 DISTNAME=	${PORTNAME}-${HG_REVISION}

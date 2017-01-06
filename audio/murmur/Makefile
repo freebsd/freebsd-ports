@@ -3,6 +3,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.18
+PORTREVISION=	1
 CATEGORIES=	audio net
 
 MAINTAINER=	feld@FreeBSD.org

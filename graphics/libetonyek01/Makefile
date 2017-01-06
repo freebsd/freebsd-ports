@@ -2,7 +2,7 @@
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
