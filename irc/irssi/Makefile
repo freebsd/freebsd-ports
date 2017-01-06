@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.20
+PORTVERSION=	1.0.0
 PORTREVISION?=	0
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
@@ -17,10 +17,9 @@ CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
 USES=		gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT DOCS TRUECOLOR
+OPTIONS_DEFINE=	PERL PROXY SOCKS BOT DOCS TRUECOLOR
 OPTIONS_DEFAULT=	PERL
 OPTIONS_SUB=	yes
 SOCKS_DESC=	Socks proxy support
@@ -31,8 +30,6 @@ PERL_USES=	perl5
 PERL_CONFIGURE_ON=	--with-perl-lib=site
 PERL_CONFIGURE_OFF=	--with-perl=no
 PROXY_CONFIGURE_WITH=	proxy
-IPV6_CONFIGURE_ENABLE=	ipv6
-IPV6_CATEGORIES=	ipv6
 TRUECOLOR_DESC=	Truecolor (24bit) support
 TRUECOLOR_CONFIGURE_ENABLE=	true-color
 
