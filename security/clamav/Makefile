@@ -82,6 +82,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
 		--disable-dependency-tracking \
+		--disable-zlib-vcheck \
 		--enable-clamdtop
 CPPFLAGS+=	-I${LOCALBASE}/include
 
