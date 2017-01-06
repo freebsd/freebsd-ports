@@ -1,6 +1,7 @@
 https://github.com/0xd34df00d/leechcraft/commit/307be1dd37059e49eca37f77ddc4806125a8f843
 https://github.com/0xd34df00d/leechcraft/commit/53d56cafd3a1d299601d9f3bfd4ee051ae9121ba
 https://github.com/0xd34df00d/leechcraft/commit/875e3b43b7a91656f61180b2b2179137f18e6d71
+https://github.com/0xd34df00d/leechcraft/commit/14f5f8823ec7b23fdb4409f4f689e565d8995536
 
 --- plugins/musiczombie/chroma.cpp.orig	2014-07-28 18:35:44 UTC
 +++ plugins/musiczombie/chroma.cpp
@@ -32,3 +33,18 @@ https://github.com/0xd34df00d/leechcraft/commit/875e3b43b7a91656f61180b2b2179137
  			int gotFrame = false;
  			auto consumed = avcodec_decode_audio4 (codecCtx.get (), frame.get (), &gotFrame, &packet);
  
+@@ -168,7 +167,13 @@ namespace MusicZombie
+ 				data = frame->data;
+ 
+ 			auto length = std::min (remaining, frame->nb_samples * codecCtx->channels);
+-			if (!chromaprint_feed (Ctx_, data [0], length))
++			if (!chromaprint_feed (Ctx_,
++#if CHROMAPRINT_VERSION_MAJOR > 1 || CHROMAPRINT_VERSION_MINOR >= 4
++					reinterpret_cast<const int16_t*> (data [0]),
++#else
++					data [0],
++#endif
++					length))
+ 				throw std::runtime_error ("cannot feed data");
+ 
+ 			bool finished = false;
