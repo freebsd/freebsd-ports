@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.6v2
-PORTREVISION=	3
+DISTVERSION=	0.9.7v1
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION:R}
 .if defined(BUILD_PYTHON_MODULE)
@@ -17,8 +16,9 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libplplot.so:math/plplot	\
-		libpng.so:graphics/png	\
-		libps.so:print/pslib	\
+		libpng.so:graphics/png		\
+		libsz.so:science/szip		\
+		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
 USE_WX=		2.8
@@ -29,13 +29,16 @@ USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readlin
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
 #	are enabled by default)
 # TODO: add a slave port for mpich
+# TODO: create a port for Cmsvlib http://cow.physics.wisc.edu/~craigm/idl/down/cmsvlib.tar.gz
+# TODO:	create a port for Astron http://idlastro.gsfc.nasa.gov/ftp/astron.tar.gz
+# TODO:	create a port for TexToIdl http://physics.mnstate.edu/mcraig/textoidl/textoidl-2-1-2.tar
+
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
 		-DNCURSESDIR:STRING="/usr"		\
 		-DMPICH:BOOL=NO				\
 		-DMAGICK:BOOL=NO
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/gdl-${PORTVERSION:R}
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
@@ -67,7 +70,7 @@ HDF5_CMAKE_ON=		-DHDF5:BOOL=YES
 HDF5_CMAKE_OFF=		-DHDF5:BOOL=NO -DHDF:BOOL=NO
 
 LIBPROJ4_DESC=		Support cartographic processes
-LIBPROJ4_LIB_DEPENDS=	libproj4.so:math/libproj4
+LIBPROJ4_LIB_DEPENDS=	libproj.so:math/proj.4
 LIBPROJ4_CMAKE_ON=	-DLIBPROJ4:BOOL=YES
 LIBPROJ4_CMAKE_OFF=	-DLIBPROJ4:BOOL=NO
 
