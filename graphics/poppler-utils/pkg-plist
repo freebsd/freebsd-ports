@@ -3,6 +3,7 @@ bin/pdffonts
 bin/pdfimages
 bin/pdfinfo
 bin/pdfseparate
+bin/pdfsig
 bin/pdftocairo
 bin/pdftohtml
 bin/pdftoppm
@@ -14,6 +15,7 @@ man/man1/pdffonts.1.gz
 man/man1/pdfimages.1.gz
 man/man1/pdfinfo.1.gz
 man/man1/pdfseparate.1.gz
+man/man1/pdfsig.1.gz
 man/man1/pdftocairo.1.gz
 man/man1/pdftohtml.1.gz
 man/man1/pdftops.1.gz
