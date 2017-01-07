@@ -2,7 +2,9 @@
 
 PORTNAME=	scour
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	avilla@FreeBSD.org
@@ -10,11 +12,9 @@ COMMENT=	SVG scrubber
 
 LICENSE=	APACHE20
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	scour-project
-GH_TAGNAME=	v${PORTVERSION}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
