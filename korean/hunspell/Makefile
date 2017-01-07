@@ -2,7 +2,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean textproc
 
 MAINTAINER=	jkim@FreeBSD.org

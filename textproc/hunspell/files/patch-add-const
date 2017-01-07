@@ -66,25 +66,3 @@ reverting https://github.com/hunspell/hunspell/commit/dd4b14899bfb
  
    /* morphological functions */
  
---- src/win_api/hunspelldll.c.orig	2016-11-28 10:34:55 UTC
-+++ src/win_api/hunspelldll.c
-@@ -73,7 +73,7 @@ LIBHUNSPELL_DLL_EXPORTED void hunspell_f
-   pMS->free_list(slst, len);
- }
- 
--LIBHUNSPELL_DLL_EXPORTED char* hunspell_get_dic_encoding(Hunspell* pMS) {
-+LIBHUNSPELL_DLL_EXPORTED const char* hunspell_get_dic_encoding(Hunspell* pMS) {
-   return pMS->get_dic_encoding();
- }
- 
---- src/win_api/hunspelldll.h.orig	2016-11-28 10:34:55 UTC
-+++ src/win_api/hunspelldll.h
-@@ -59,7 +59,7 @@ LIBHUNSPELL_DLL_EXPORTED void hunspell_f
-                                                  char*** slst,
-                                                  int len);
- // make local copy of returned string!!
--LIBHUNSPELL_DLL_EXPORTED char* hunspell_get_dic_encoding(Hunspell* pMS);
-+LIBHUNSPELL_DLL_EXPORTED const char* hunspell_get_dic_encoding(Hunspell* pMS);
- 
- // add word to dict (word is valid until spell object is not destroyed)
- LIBHUNSPELL_DLL_EXPORTED int hunspell_add(Hunspell* pMS, char* word);
