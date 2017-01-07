@@ -14,6 +14,8 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE APACHE20 MIT ISCL
 LICENSE_COMB=	multi
 
 BROKEN=		tries to download from registry.npmjs.org during stage phase
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm
