@@ -1,4 +1,4 @@
---- gr-dtv/lib/dvbt/dvbt_reed_solomon.cc.orig	2015-08-28 14:47:45 UTC
+--- gr-dtv/lib/dvbt/dvbt_reed_solomon.cc.orig	2016-09-02 04:16:13 UTC
 +++ gr-dtv/lib/dvbt/dvbt_reed_solomon.cc
 @@ -42,7 +42,7 @@ namespace gr {
        d_p = p; d_m = m;
