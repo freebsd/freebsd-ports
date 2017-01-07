@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
@@ -32,9 +32,9 @@ TEST_DEPENDS=	p5-Declare-Constraints-Simple>=0:devel/p5-Declare-Constraints-Simp
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-URI>=0:net/p5-URI
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
-NO_ARCH=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Mouse/Mouse.so
