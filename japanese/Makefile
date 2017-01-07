@@ -242,7 +242,6 @@
     SUBDIR += ruby-romkan
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide
-    SUBDIR += rubygem-jpmobile
     SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rubygem-jpmobile4

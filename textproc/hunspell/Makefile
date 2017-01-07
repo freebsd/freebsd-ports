@@ -2,22 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
 
-LICENSE=	GPLv2 LGPL21 MPL
+LICENSE=	GPLv2+ LGPL21+ MPL
 LICENSE_COMB=	dual
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_GPLv2+ =	${_LICENSE_STORE}/GPLv2
+LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
 CONFLICTS_INSTALL=	tinker-[0-9]*
 CONFIGURE_ARGS=	--disable-nls ${ICONV_CONFIGURE_ARG} --with-readline --with-ui
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix iconv ncurses readline shebangfix perl5
+USES=		autoreconf libtool:keepla pathfix iconv ncurses \
+		readline shebangfix perl5
 USE_GITHUB=	yes
 SHEBANG_FILES=	src/tools/ispellaff2myspell
 USE_LDCONFIG=	yes
@@ -29,4 +32,10 @@ PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
 
+makepatch-clean:
+	@${RM} ${WRKSRC}/tests/suggestiontest/Makefile.orig
+
 .include <bsd.port.mk>
+
+# XXX Don't override definition in Mk/bsd.port.mk
+makepatch:	makepatch-clean
