@@ -193,10 +193,16 @@
 #	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;}
 #	PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 #	PYTHON_PLATFORM=${PYTHON_PLATFORM}
+#	PYTHON_PYOEXTENSION=${PYTHON_PYOEXTENSION}
 #	PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+#	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 #	PYTHON_VER=${PYTHON_VER}
 #	PYTHON_VERSION=${PYTHON_VERSION}
 #
+# and PYTHON2 and PYTHON3 will be set according to the Python version:
+#
+#	PYTHON2="" PYTHON3="@comment " for Python 2.x
+#	PYTHON2="@comment " PYTHON3="" for Python 3.x
 #
 # Deprecated variables, which exist for compatibility and will be removed
 # soon:
@@ -433,6 +439,13 @@ PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
 # Used for recording the installed files.
 _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 
+# PEP 0488 (https://www.python.org/dev/peps/pep-0488/)
+.if ${PYTHON_REL} < 3500
+PYTHON_PYOEXTENSION=	pyo
+.else
+PYTHON_PYOEXTENSION=	opt-1.pyc
+.endif
+
 # Ports bound to a certain python version SHOULD
 # - use the PYTHON_PKGNAMEPREFIX
 # - use directories using the PYTHON_PKGNAMEPREFIX
@@ -529,11 +542,6 @@ add-plist-pymod:
 # of TMPPLIST that end with .py[co], so that they conform
 # to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
 PYMAGICTAG=		${PYTHON_CMD} -c 'import imp; print(imp.get_tag())'
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
 _USES_stage+=	935:add-plist-python
 add-plist-python:
 	@${AWK} '\
@@ -542,7 +550,7 @@ add-plist-python:
 		/^@dirrmtry / {d = substr($$0, 11); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		{print} \
 		' \
-		pc="__pycache__" mt="$$(${PYMAGICTAG})" pyo="${PYOEXTENSION}" \
+		pc="__pycache__" mt="$$(${PYMAGICTAG})" pyo="${PYTHON_PYOEXTENSION}" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .endif # ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
@@ -591,9 +599,16 @@ PREFIX=		${PYTHONBASE}
 PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
 		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
+		PYTHON_PYOEXTENSION=${PYTHON_PYOEXTENSION} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
+		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER} \
-		PYTHON_VERSION=python${_PYTHON_VERSION}
+		PYTHON_VERSION=${PYTHON_VERSION}
+.if ${PYTHON_REL} < 3000
+PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
+.else
+PLIST_SUB+=	PYTHON2="@comment " PYTHON3=""
+.endif
 
 _USES_POST+=	python
 .endif # _INCLUDE_USES_PYTHON_MK
