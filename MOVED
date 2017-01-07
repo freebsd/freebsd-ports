@@ -8969,3 +8969,4 @@ www/rubygem-actionpack||2017-01-07|Has expired: Upstream support ended
 databases/rubygem-rubyrep||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activerecord
 databases/rubygem-activerecord-mysql-adapter||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activerecord
 databases/rubygem-dm-active_model||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activemodel
+databases/rubygem-activemodel||2017-01-07|Has expired: Upstream support ended

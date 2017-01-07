@@ -850,7 +850,6 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-sybct
     SUBDIR += ruby-tokyocabinet
-    SUBDIR += rubygem-activemodel
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
