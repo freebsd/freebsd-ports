@@ -17,21 +17,11 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:accessibility/at-spi2-core
 CONFLICTS=	at-spi-1.[0-9]*
 PORTSCOUT=	limitw:1,even
 
+NO_ARCH=	yes
 USES=		gettext gmake gnome pathfix pkgconfig python:3 tar:xz
 USE_GNOME=	intlhack py3gobject3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
-		PYVER=${PYTHON_VER:S/.//}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

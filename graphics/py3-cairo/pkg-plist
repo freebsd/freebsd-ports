@@ -1,6 +1,6 @@
 include/pycairo/py3cairo.h
-%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTVER%%.pyc
-%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTVER%%.%%PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
 libdata/pkgconfig/py3cairo.pc
