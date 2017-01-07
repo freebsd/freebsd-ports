@@ -8250,7 +8250,6 @@ databases/rubygem-activerecord41|databases/rubygem-activerecord4|2016-03-31|Has 
 textproc/rubygem-sass-rails4-rails41|textproc/rubygem-sass-rails4|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 www/rubygem-turbolinks-rails41|www/rubygem-turbolinks|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 devel/rubygem-omniauth_crowd-rails41|devel/rubygem-omniauth_crowd|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
-devel/rubygem-coffee-rails41|devel/rubygem-coffee-rails4|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 www/rubygem-railties41|www/rubygem-railties4|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 devel/rubygem-jbuilder-rails41|devel/rubygem-jbuilder|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 textproc/py-genshi-devel|textproc/py-genshi|2016-03-31|Has expired: The port is no longer updated and behind the main genshi port
