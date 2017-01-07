@@ -14,12 +14,12 @@ COMMENT=	Tool to generate (incremental) backup file list
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libnettle.so:security/nettle
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		autoreconf gmake libarchive pkgconfig
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKEFILE=	GNUmakefile

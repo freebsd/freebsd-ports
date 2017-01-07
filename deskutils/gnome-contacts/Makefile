@@ -11,24 +11,23 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Contacts manager for gnome
 
 BUILD_DEPENDS=	vala>=0.14.0:lang/vala
-LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
-		libchamplain-0.12.so:graphics/libchamplain \
+LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
-		libgee-0.8.so:devel/libgee \
-		libfolks.so:net-im/folks \
-		libnotify.so:devel/libnotify \
-		libgeocode-glib.so:net/geocode-glib \
-		libgstreamer-1.0.so:multimedia/gstreamer1 \
-		libjson-glib-1.0.so:devel/json-glib \
+		libclutter-1.0.so:graphics/clutter \
+		libcogl.so:graphics/cogl \
 		libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2 \
-		libcogl.so:graphics/cogl \
-		libclutter-1.0.so:graphics/clutter \
-		libsoup-2.4.so:devel/libsoup \
-		libsecret-1.so:security/libsecret \
+		libfolks.so:net-im/folks \
+		libgee-0.8.so:devel/libgee \
+		libgeocode-glib.so:net/geocode-glib \
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libgstreamer-1.0.so:multimedia/gstreamer1 \
+		libjson-glib-1.0.so:devel/json-glib \
+		libnotify.so:devel/libnotify \
 		libnspr4.so:devel/nspr \
-		libtelepathy-glib.so:net-im/telepathy-glib \
-		libglib-2.0.so:devel/glib20
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup \
+		libtelepathy-glib.so:net-im/telepathy-glib
 
 PORTSCOUT=	limitw:1,even
 
