@@ -12,11 +12,10 @@ COMMENT=	Amateur Radio curses based logging program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libglib-2.0.so:devel/glib20
-
 USES=		ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PANEL_LIB=-lpanel
+USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
