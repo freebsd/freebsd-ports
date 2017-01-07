@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.18.4
+PORTVERSION=	1.19.0
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -50,7 +50,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		dri2proto resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \
-		xineramaproto xinerama evieproto xkbfile xfont fontenc xkbui \
+		xineramaproto xinerama evieproto xkbfile xfont2 fontenc xkbui \
 		xxf86misc xxf86vm xaw7 xmu xpm xext pixman xtrans presentproto
 
 PLIST_FILES=	bin/Xnest \
