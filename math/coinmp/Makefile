@@ -20,7 +20,6 @@ CONFLICTS=	clp-[0-9]* ogdf-[0-9]*
 GNU_CONFIGURE=	yes
 USES=	libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig
 CXXFLAGS+=	-ffast-math
 
 OPTIONS_DEFINE=	DEBUG DOCS GLPK

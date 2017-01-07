@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2016-12-25 16:19:23 UTC
++++ Makefile.am
+@@ -2,7 +2,6 @@
+ EXTRA_DIST = \
+ 	../MySql.Data \
+ 	../Npgsql \
+-	../NPlot \
+ 	../Newtonsoft.Json
+ 
+ SUBDIRS = \

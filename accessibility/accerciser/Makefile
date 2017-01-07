@@ -18,6 +18,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas 
 RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
 		at-spi2-core>=2.1.5:accessibility/at-spi2-core
 
+NO_ARCH=	yes
 USES=		gettext gmake pkgconfig python:3 shebangfix tar:xz
 USE_GNOME=	gtk30 intlhack py3gobject3
 INSTALLS_ICONS=	yes
@@ -28,15 +29,4 @@ SHEBANG_FILES=	plugins/ipython_view.py
 
 GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
-		PYVER=${PYTHON_VER:S/.//}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

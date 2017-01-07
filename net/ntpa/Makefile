@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntpa
-PORTVERSION=	0.7.10
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://dist.innolan.net/
 

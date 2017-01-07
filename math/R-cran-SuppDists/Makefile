@@ -17,6 +17,8 @@ COMMENT=	Supplementary distributions and RNG for R
 LICENSE=		GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 BENCHMARK_SCRIPT=	R-benchmark-25.R
 USES=	cran:auto-plist

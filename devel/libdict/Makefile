@@ -14,6 +14,8 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library providing access to ``dictionary'' data structures
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 USES=		gmake
 MAKEFILE=	GNUmakefile

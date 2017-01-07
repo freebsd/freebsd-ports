@@ -254,7 +254,6 @@
     SUBDIR += libmissing
     SUBDIR += libocas
     SUBDIR += liborigin
-    SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
     SUBDIR += librsb
@@ -574,6 +573,7 @@
     SUBDIR += plplot-ada
     SUBDIR += primegen
     SUBDIR += prng
+    SUBDIR += proj.4
     SUBDIR += proofgeneral
     SUBDIR += pspp
     SUBDIR += pure-mpfr

@@ -1,4 +1,4 @@
---- gr-fcd/lib/hid/hid-libusb.c.orig	2015-04-13 14:32:43 UTC
+--- gr-fcd/lib/hid/hid-libusb.c.orig	2016-09-02 04:16:14 UTC
 +++ gr-fcd/lib/hid/hid-libusb.c
 @@ -250,8 +250,8 @@ static int get_usage(uint8_t *report_des
  }

@@ -1,6 +1,0 @@
-bin/lproj
-include/lib_proj.h
-lib/libproj4.a
-lib/libproj4.so
-lib/libproj4.so.0
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf

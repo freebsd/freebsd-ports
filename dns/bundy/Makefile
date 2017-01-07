@@ -45,20 +45,8 @@ CPPFLAGS+=	-I${WRKDIR}/boost_1_55_0
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	PYTHON_SUFFIX=cpython-${PYTHON_SUFFIX}
-
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem.sample
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,9 +20,6 @@ LIB_DEPENDS=		libjson-c.so:devel/json-c       \
 
 USES=			bison cmake:outsource pkgconfig tar
 
-PKG_CONFIG_PATH=	${PREFIX}/lib/pkgconfig/
-CONFIGURE_ENV+=		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
-
 USE_RC_SUBR=		fastd_devel
 
 PLIST_FILES=		bin/fastd-devel           \

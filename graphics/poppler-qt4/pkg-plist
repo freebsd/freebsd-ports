@@ -2,6 +2,7 @@ include/poppler/qt4/poppler-annotation.h
 include/poppler/qt4/poppler-export.h
 include/poppler/qt4/poppler-form.h
 include/poppler/qt4/poppler-link.h
+include/poppler/qt4/poppler-link-private.h
 include/poppler/qt4/poppler-media.h
 include/poppler/qt4/poppler-optcontent.h
 include/poppler/qt4/poppler-page-transition.h

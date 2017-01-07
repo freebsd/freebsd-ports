@@ -1,0 +1,15 @@
+--- cmake/ssl.cmake.orig	2016-08-12 10:55:07 UTC
++++ cmake/ssl.cmake
+@@ -179,6 +179,12 @@ MACRO (MYSQL_CHECK_SSL)
+        OPENSSL_MAJOR_VERSION STREQUAL "1"
+       )
+       SET(OPENSSL_FOUND TRUE)
++    ELSEIF(OPENSSL_INCLUDE_DIR AND
++       OPENSSL_LIBRARY   AND
++       CRYPTO_LIBRARY      AND
++       OPENSSL_MAJOR_VERSION STREQUAL "2"
++      )
++      SET(OPENSSL_FOUND TRUE)
+     ELSE()
+       SET(OPENSSL_FOUND FALSE)
+     ENDIF()
