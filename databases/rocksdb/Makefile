@@ -54,6 +54,10 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
 
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 60
+CFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||; /^dummy :=/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
