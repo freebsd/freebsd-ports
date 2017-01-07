@@ -1,0 +1,11 @@
+--- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
++++ libmysql/CMakeLists.txt
+@@ -260,7 +260,7 @@ IF(NOT DISABLE_SHARED)
+     COMPONENT SharedLibraries)
+   IF(UNIX)
+     # libtool compatability
+-    IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
++    IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|DragonFly" OR APPLE)
+       SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")
+     ELSE()
+       SET(OS_SHARED_LIB_VERSION

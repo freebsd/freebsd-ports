@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mysql
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mysql:
+# mysql_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable MySQL.
+# mysql_limits (bool):	Set to "NO" by default.
+#			Set it to yes to run `limits -e -U mysql`
+#			just before mysql starts.
+# mysql_dbdir (str):	Default to "%%MY_DBDIR%%"
+#			Base database directory.
+# mysql_confdir (str):	Default to "%%ETCDIR%%"
+#			Base configuration directory.
+# mysql_optfile (str):	Server-specific option file.
+#			Default to "${mysql_confdir}/my.cnf".
+# mysql_pidfile (str):	Custum PID file path and name.
+#			Default to "${mysql_dbdir}/${hostname}.pid".
+# mysql_args (str):	Custom additional arguments to be passed
+#			to mysqld_safe (default empty).
+#
+
+. /etc/rc.subr
+
+name="mysql"
+rcvar=mysql_enable
+
+load_rc_config $name
+
+: ${mysql_enable="NO"}
+: ${mysql_limits="NO"}
+: ${mysql_dbdir="%%MY_DBDIR%%"}
+: ${mysql_confdir="%%ETCDIR%%"}
+if [ -f "${mysql_dbdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_dbdir}/my.cnf"}
+else
+: ${mysql_optfile="${mysql_confdir}/my.cnf"}
+fi
+
+mysql_user="mysql"
+mysql_limits_args="-e -U ${mysql_user}"
+: ${hostname:=`/bin/hostname`}
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
+command="/usr/sbin/daemon"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --pid-file=${pidfile} --user=${mysql_user} ${mysql_args} %%PERFSCHEMRC%%"
+procname="%%PREFIX%%/libexec/mysqld"
+start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
+mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
+mysql_install_db_args="--defaults-extra-file=${mysql_optfile} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --mysqld-file=${procname} --user=${mysql_user}"
+
+mysql_create_auth_tables()
+{
+	eval $mysql_install_db $mysql_install_db_args >/dev/null 2>/dev/null
+}
+
+mysql_prestart()
+{
+	if [ -f "${mysql_dbdir}/my.cnf" ]; then
+		echo ""
+		echo "Please keep in mind that the default location for my.cnf has changed"
+		echo "from \"%%MY_DBDIR%%/my.cnf\" to \"%%ETCDIR%%/my.cnf\". "
+		echo "Please merge your existing my.cnf with the new default and move"
+		echo "it to \"%%ETCDIR%%/my.cnf\"."
+		echo "If you do not want to move your my.cnf to the new location then"
+		echo "you must set \"mysql_optfile\" in /etc/rc.conf to \"/var/db/mysql/my.cnf\"."
+		echo ""
+	fi
+
+	if [ ! -d "${mysql_dbdir}/mysql" ]; then
+		mysql_create_auth_tables || return 1
+	fi
+	if checkyesno mysql_limits; then
+		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
+	else
+		return 0
+	fi
+}
+
+mysql_poststart()
+{
+	local timeout=15
+	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+		timeout=$(( timeout - 1 ))
+		sleep 1
+	done
+	return 0
+}
+
+run_rc_command "$1"

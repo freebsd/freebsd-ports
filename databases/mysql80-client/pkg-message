@@ -1,0 +1,12 @@
+* * * * * * * * * * * * * * * * * * * * * * * *
+
+This is the mysql CLIENT without the server.
+for complete server and client, please install databases/mysql80-server
+
+* * * * * * * * * * * * * * * * * * * * * * * *
+
+* * * * * * * * * * * * * * * * * * * * * * * *
+
+WARNING: THIS IS STILL-IN-DEV PROJECT! USE WITH CAUTION ON PRODUCTION ENVS!
+
+* * * * * * * * * * * * * * * * * * * * * * * *

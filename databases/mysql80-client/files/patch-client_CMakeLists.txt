@@ -1,0 +1,36 @@
+--- client/CMakeLists.txt.orig	2016-08-25 12:32:09 UTC
++++ client/CMakeLists.txt
+@@ -47,6 +47,7 @@ IF(UNIX)
+   TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
+ ENDIF(UNIX)
+ 
++IF(FALSE)
+ IF(NOT WITHOUT_SERVER)
+   MYSQL_ADD_EXECUTABLE(mysql_upgrade
+     upgrade/program.cc
+@@ -57,11 +58,14 @@ ADD_COMPILE_FLAGS(
+ TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient client_base mysqlcheck_core)
+ ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs GenSysSchema)
+ ENDIF()
++ENDIF()
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
+ SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
+ ADD_DEPENDENCIES(mysqltest GenError GenClientError)
++ENDIF()
+ 
+ ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
+ TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
+@@ -113,8 +117,10 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
+ MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
+ TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysql_secure_installation mysql_secure_installation.cc)
+ TARGET_LINK_LIBRARIES(mysql_secure_installation mysqlclient)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysql_ssl_rsa_setup mysql_ssl_rsa_setup.cc path.cc logger.cc)
+ TARGET_LINK_LIBRARIES(mysql_ssl_rsa_setup mysys mysys_ssl)

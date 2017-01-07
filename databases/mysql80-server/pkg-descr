@@ -1,0 +1,15 @@
+MySQL is a very fast, multi-threaded, multi-user and robust SQL
+(Structured Query Language) database server.
+The new features in MySQL 8.0. In addition to Data Dictionnary and CTEs are:
+    Move to utf8(mb4) as MySQL's default character set
+    Language specific case insensitive collation for 21 languages (utf8)
+    Invisible index
+    Descending indexes
+    Improve usability of UUID and IPV6 manipulations
+    SQL roles - SET PERSIST for global variable values
+    Performance Schema, instrumenting data locks
+    Performance Schema, instrumenting error messages
+    Improved cost model with histograms
+
+
+WWW: http://www.mysql.com/

@@ -223,6 +223,8 @@
     SUBDIR += mysql56-server
     SUBDIR += mysql57-client
     SUBDIR += mysql57-server
+    SUBDIR += mysql80-client
+    SUBDIR += mysql80-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
     SUBDIR += mysqldump-secure
