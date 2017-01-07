@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +12,17 @@ COMMENT=	Memory forensics analysis framework
 
 LICENSE=	GPLv2
 
+IGNORE=		requires ipython 5.0.0 or higher
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core \
-		${PYTHON_PKGNAMEPREFIX}rekall_gui>=1.5.0.p:security/py-rekall_gui \
 		${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython
 
 NO_ARCH=	yes
 USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
-post-patch:
-	@${REINPLACE_CMD} 's|ipython >= 4.1.2, < 5.0|ipython|' ${WRKSRC}/setup.py
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+PYDISTUTILS_INSTALLARGS+=--install-data ${DATADIR}
+
+.include <bsd.port.post.mk>
