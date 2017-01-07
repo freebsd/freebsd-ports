@@ -200,10 +200,6 @@ WITHOUT+=			EXAMPLES
 OPTIONS_WARNINGS_UNSET+=	EXAMPLES
 .endif
 
-.if defined(DEVELOPER)
-PORT_OPTIONS+=	TEST
-.endif
-
 PORT_OPTIONS+=	IPV6
 
 # Add per arch options
