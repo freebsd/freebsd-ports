@@ -852,11 +852,9 @@
     SUBDIR += ruby-tokyocabinet
     SUBDIR += rubygem-activemodel
     SUBDIR += rubygem-activemodel4
-    SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
-    SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-activerecord-session_store
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-after_commit_queue
@@ -877,7 +875,6 @@
     SUBDIR += rubygem-dbd-pg
     SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbi
-    SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-chunked_query
     SUBDIR += rubygem-dm-constraints
@@ -889,7 +886,6 @@
     SUBDIR += rubygem-dm-pager
     SUBDIR += rubygem-dm-paperclip
     SUBDIR += rubygem-dm-postgres-adapter
-    SUBDIR += rubygem-dm-rails
     SUBDIR += rubygem-dm-serializer
     SUBDIR += rubygem-dm-timestamps
     SUBDIR += rubygem-dm-transactions
@@ -919,7 +915,6 @@
     SUBDIR += rubygem-redis-actionpack
     SUBDIR += rubygem-redis-actionpack4
     SUBDIR += rubygem-redis-namespace
-    SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby

@@ -8945,3 +8945,27 @@ x11-toolkits/linux-f10-blt||2016-12-31|Removed
 net-mgmt/unifi4|net-mgmt/unifi5|2017-01-01|Has expired: EoL as of 2017-01-01
 net/py-simplesoap|net/py-pysimplesoap|2017-01-01|Rename to match upstream naming
 textproc/docdiff|textproc/rubygem-docdiff|2017-01-02|Rename to match our rubygems naming
+databases/rubygem-dm-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-actionpack
+databases/rubygem-activerecord||2017-01-07|Has expired: Upstream support ended
+devel/rubygem-activesupport||2017-01-07|Has expired: Upstream support ended
+devel/rubygem-tzinfo03|devel/rubygem-tzinfo|2017-01-07|Has expired: Use devel/rubygem-tzinfo instead
+devel/rubygem-sprockets22|devel/rubygem-sprockets3|2017-01-07|Has expired: Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
+devel/rubygem-prototype-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-rails
+devel/rubygem-rubigen||2017-01-07|Has expired: Depends on deprecated devel/rubygem-activesupport
+devel/rubygem-coffee-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
+japanese/rubygem-jpmobile||2017-01-07|Has expired: Depends on deprecated rubygem-rails
+mail/rubygem-actionmailer||2017-01-07|Has expired: Upstream support ended
+mail/rubygem-mail25|mail/rubygem-mail|2017-01-07|Has expired: Use mail/rubygem-mail instead
+security/dradis||2017-01-07|Has expired: Depends on deprecated www/rubygem-rails
+textproc/rubygem-sass-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
+www/rubygem-rails||2017-01-07|Has expired: Upstream support ended
+www/rubygem-activeresource||2017-01-07|Has expired: Upstream support ended
+www/rubygem-responders-rails3||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
+www/rubygem-jquery-ui-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
+www/rubygem-haml-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-actionpack
+www/rubygem-jquery-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
+www/rubygem-railties||2017-01-07|Has expired: Upstream support ended
+www/rubygem-actionpack||2017-01-07|Has expired: Upstream support ended
+databases/rubygem-rubyrep||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activerecord
+databases/rubygem-activerecord-mysql-adapter||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activerecord
+databases/rubygem-dm-active_model||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activemodel
