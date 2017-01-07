@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
+PORTREVISION=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
@@ -30,15 +31,6 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 MAKE_ARGS+=	--without-python
 ALL_TARGET=	stage
 
-.include <bsd.port.pre.mk>
-
-# XXX CHOSEN_COMPILER_VERSION isn't supported, so check CXX hasn't changed
-.if ${ARCH} == aarch64 && ${CXX} == c++ && \
-    ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 39
-BUILD_DEPENDS+=	as:devel/binutils
-CFLAGS+=	-no-integrated-as
-.endif
-
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
@@ -60,4 +52,4 @@ post-install:
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
