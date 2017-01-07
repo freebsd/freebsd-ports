@@ -2,7 +2,7 @@
 
 PORTNAME=	cryptominisat
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	6yearold@gmail.com

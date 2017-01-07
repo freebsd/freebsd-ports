@@ -3,7 +3,7 @@
 
 PORTNAME=	orthanc-portgresql
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-postgresql/
 DISTNAME=	OrthancPostgreSQL-${PORTVERSION}
