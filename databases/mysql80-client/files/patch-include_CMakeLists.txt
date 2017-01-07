@@ -1,0 +1,10 @@
+--- include/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
++++ include/CMakeLists.txt
+@@ -38,6 +38,7 @@ SET(HEADERS_ABI 
+ 
+ SET(HEADERS 
+   ${HEADERS_ABI} 
++  hash.h
+   my_dbug.h 
+   m_string.h
+   my_sys.h 
