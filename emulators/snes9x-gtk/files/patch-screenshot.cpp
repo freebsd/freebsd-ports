@@ -1,6 +1,6 @@
---- ../screenshot.cpp.orig	2010-02-23 00:19:36.132640984 -0500
-+++ ../screenshot.cpp	2010-02-23 00:19:59.151074837 -0500
-@@ -182,6 +182,7 @@
+--- screenshot.cpp.orig	2016-10-15 00:20:34 UTC
++++ screenshot.cpp
+@@ -186,6 +186,7 @@
  #include "memmap.h"
  #include "display.h"
  #include "screenshot.h"
