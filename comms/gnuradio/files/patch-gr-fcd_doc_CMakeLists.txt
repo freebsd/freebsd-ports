@@ -1,4 +1,4 @@
---- gr-fcd/doc/CMakeLists.txt.orig	2015-04-13 14:32:43 UTC
+--- gr-fcd/doc/CMakeLists.txt.orig	2016-09-02 04:16:14 UTC
 +++ gr-fcd/doc/CMakeLists.txt
 @@ -17,7 +17,9 @@
  # the Free Software Foundation, Inc., 51 Franklin Street,
