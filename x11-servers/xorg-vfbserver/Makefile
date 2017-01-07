@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-vfbserver
-PORTVERSION=	1.18.4
+PORTVERSION=	1.19.0
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -47,7 +47,7 @@ USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 		bigreqsproto randrproto renderproto xextproto inputproto \
 		videoproto compositeproto recordproto \
 		fontsproto resourceproto xf86driproto glproto \
-		presentproto xineramaproto xkbfile xfont
+		presentproto xineramaproto xkbfile xfont2
 
 PLIST_FILES=	bin/Xvfb \
 		man/man1/Xvfb.1.gz
