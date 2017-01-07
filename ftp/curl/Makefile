@@ -11,6 +11,8 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
