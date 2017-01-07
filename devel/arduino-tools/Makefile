@@ -11,8 +11,6 @@ EXTRACT_ONLY=	#
 MAINTAINER=	bsdports@kyle-evans.net
 COMMENT=	Brings together all of the tool dependencies used for Arduino 1.6
 
-LICENSE=	NONE
-
 RUN_DEPENDS=	avrdude:devel/avrdude \
 		bossac:devel/bossa \
 		avr-as:devel/avr-binutils \

@@ -11,9 +11,10 @@ MAINTAINER=	takefu@airport.fm
 COMMENT=	Utilities for manipulating HTML and XML files
 
 LICENSE=	W3C
-LICENSE_NAME=	W3C Software Notice and License
+LICENSE_GROUPS=	FSF GPL OSI
+LICENSE_NAME=	W3C Software Notice and License (2002-12-31)
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gmake iconv localbase shebangfix
 GNU_CONFIGURE=	yes

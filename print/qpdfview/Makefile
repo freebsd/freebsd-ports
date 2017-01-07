@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4.16
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
 	https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/

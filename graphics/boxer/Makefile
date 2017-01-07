@@ -15,27 +15,30 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Box the figure description language
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	box:graphics/box
 
-USE_GNOME=	pygtk2
 USES=		python
+USE_GNOME=	pygtk2
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	share/pixmaps/${PORTNAME}.png
-
 PORTDOCS=	ChangeLog
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Boxer" "" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
