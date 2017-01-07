@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libre2.so:devel/re2

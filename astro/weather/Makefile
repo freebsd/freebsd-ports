@@ -13,6 +13,7 @@ COMMENT=	Utility to provide current weather conditions and forecasts
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USES=		python shebangfix tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -33,12 +34,6 @@ PYCACHE_FILE=	${PORTNAME}
 .else
 PYCACHE_DIR=	__pycache__/
 PYCACHE_FILE=	${PORTNAME}.cpython-${PYTHON_SUFFIX}
-.endif
-
-.if ${PYTHON_REL} < 3500
-PYTHON_PYOEXTENSION=	pyo
-.else
-PYTHON_PYOEXTENSION=	opt-1.pyc
 .endif
 
 do-build:

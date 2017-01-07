@@ -36,15 +36,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYTHON_SUFFIX="${PYTHON_SUFFIX}" \
-		PYOEXTENSION="${PYOEXTENSION}"
-
 .if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
 .endif

@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${PFS_BUILD}
 CONFIGURE_ARGS+=	--disable-jpeghdr --disable-matlab \
 		--with-bash=${LOCALBASE}/bin/bash
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

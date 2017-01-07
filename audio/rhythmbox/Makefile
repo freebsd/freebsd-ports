@@ -69,7 +69,6 @@ MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 			libhal.so:sysutils/hal
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USES=		python:3.3+
-PYTHON_PLIST_SUB+=	PYTVER=${PYTHON_SUFFIX} PYOEXTENSION=${PYOEXTENSION}
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 # context plugin
 # webkit is for the context plugin, which is broken because
@@ -79,12 +78,6 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 #WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{MOZILLA_PLUGINDIR|{MOZILLA_PLUGINDIR}|g' \

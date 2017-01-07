@@ -26,6 +26,7 @@ RUN_DEPENDS=	py3?-dbus>=0:devel/py3-dbus \
 CONFLICTS=	py*-json-py-[0-9]*
 PORTSCOUT=	limitw:1,even
 
+NO_ARCH=	yes
 USES=		gettext gmake gnome pathfix pkgconfig python:3 tar:xz
 USE_GNOME=	gtk30 py3gobject3 intlhack
 INSTALLS_ICONS=	yes
@@ -37,15 +38,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/orca/orca_i18n.py
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
-		PYVER=${PYTHON_VER:S/.//}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

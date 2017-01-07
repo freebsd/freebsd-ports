@@ -64,7 +64,7 @@ DOCSDIR=	${GNU_CONFIGURE_PREFIX}/docs
 PLIST_SUB+=	TARGET=${TARGET} GCC_VERSION=${GCC_VERSION} \
 		TI_VERSION=${TI_VERSION} DOC_VERSION=${DOC_VERSION}
 
-DIST_PATCH_ARGS=--forward --force --quiet --remove-empty-files --strip 1
+DIST_PATCH_ARGS=--forward --force --quiet --remove-empty-files --strip=1
 
 UNNEEDED_HOST_FILES=	lib/lib${TARGET}-sim.a
 UNNEEDED_HOST_DIRS=	lib/gcc/${TARGET}/${GCC_VERSION}/plugin/include/ada \

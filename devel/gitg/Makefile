@@ -47,22 +47,9 @@ NLS_CONFIGURE_ENABLE=	nls
 PYTHON_USES=	python:3
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USE=	GNOME=py3gobject3
-PYTHON_PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
-
-.include <bsd.port.pre.mk>
-
-.if defined(PYTHON_REL)
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|0.24.0|0.25.0|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
