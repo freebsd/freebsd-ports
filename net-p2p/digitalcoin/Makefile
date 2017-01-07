@@ -10,6 +10,8 @@ MAINTAINER=	myst3r10n@rocketmail.com
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

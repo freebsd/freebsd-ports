@@ -21,6 +21,8 @@ LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/${DISTNAME}Fonts${PORTVERSION:S|.||}/License.txt
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-02-08
 
 USES=		zip
 NO_ARCH=	yes
