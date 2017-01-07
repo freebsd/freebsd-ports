@@ -5002,7 +5002,6 @@
     SUBDIR += rubygem-activejob
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
-    SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-activesupport4
     SUBDIR += rubygem-akismet
     SUBDIR += rubygem-algebrick
@@ -5077,7 +5076,6 @@
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coercible
-    SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-rails4
     SUBDIR += rubygem-coffee-rails41
     SUBDIR += rubygem-coffee-script
@@ -5315,7 +5313,6 @@
     SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-protected_attributes
-    SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
@@ -5363,7 +5360,6 @@
     SUBDIR += rubygem-rspec-mocks
     SUBDIR += rubygem-rspec-rails
     SUBDIR += rubygem-rspec-support
-    SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-rubocop
     SUBDIR += rubygem-ruby-atmos-pure
     SUBDIR += rubygem-ruby-bugzilla
@@ -5418,7 +5414,6 @@
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
     SUBDIR += rubygem-sprockets-sass
-    SUBDIR += rubygem-sprockets22
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
@@ -5464,7 +5459,6 @@
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
-    SUBDIR += rubygem-tzinfo03
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
     SUBDIR += rubygem-uuid

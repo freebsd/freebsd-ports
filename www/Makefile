@@ -1904,9 +1904,7 @@
     SUBDIR += ruby-aws
     SUBDIR += ruby-google
     SUBDIR += rubygem-ace-rails-ap
-    SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
-    SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
@@ -1963,7 +1961,6 @@
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-haml-contrib
-    SUBDIR += rubygem-haml-rails
     SUBDIR += rubygem-haml-rails-rails4
     SUBDIR += rubygem-hamlit
     SUBDIR += rubygem-hashicorp-checkpoint
@@ -1985,11 +1982,9 @@
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-atwho-rails-rails4
-    SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-scrollto-rails
     SUBDIR += rubygem-jquery-turbolinks
-    SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jquery-ui-rails5-rails4
     SUBDIR += rubygem-jruby-rack
@@ -2041,10 +2036,8 @@
     SUBDIR += rubygem-rack14
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack16
-    SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails4
     SUBDIR += rubygem-rails_autolink
-    SUBDIR += rubygem-railties
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
@@ -2055,7 +2048,6 @@
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
-    SUBDIR += rubygem-responders-rails3
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
