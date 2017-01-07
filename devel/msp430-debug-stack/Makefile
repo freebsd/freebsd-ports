@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	msp430-debug-stack
-PORTVERSION=	3.8.0.1
-PORTREVISION=	2
+PORTVERSION=	3.9.1.2
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ti.com/lit/sw/slac460r/ \
+MASTER_SITES=	http://www.ti.com/lit/sw/slac460s/ \
 		http://www.ti.com/lit/ug/slau320x/:doc1 \
 		http://www.ti.com/lit/ug/slau656b/:doc2
-DISTFILES=	slac460r.zip \
+DISTFILES=	slac460s.zip \
 		slau320x.pdf:doc1 \
 		slau656b.pdf:doc2
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	slac460r.zip
+EXTRACT_ONLY=	slac460s.zip
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI MSP430 debugging interface library
