@@ -1,0 +1,19 @@
+--- configure.orig	2017-01-07 16:47:51 UTC
++++ configure
+@@ -13849,12 +13849,12 @@ if test "${with_ncurses+set}" = set; the
+ 
+     if $search_ncurses
+     then
+-        if test -f $withval/include/ncurses.h
++        if test -f $withval/include/ncurses/ncurses.h
+ 	then
+-	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: Found ncurses on $withval/include/ncurses.h" >&5
+-$as_echo "Found ncurses on $withval/include/ncurses.h" >&6; }
++	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: Found ncurses on $withval/include/ncurses/ncurses.h" >&5
++$as_echo "Found ncurses on $withval/include/ncurses/ncurses.h" >&6; }
+ 
+-	    CURSES_LIBS="-L$withval/lib -lncurses"
++	    CURSES_LIBS="-L$withval/lib -lncurses -ltinfo"
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lncurses" >&5
+ $as_echo_n "checking for initscr in -lncurses... " >&6; }
+ if ${ac_cv_lib_ncurses_initscr+:} false; then :

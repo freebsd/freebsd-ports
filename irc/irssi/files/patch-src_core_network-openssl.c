@@ -1,4 +1,4 @@
---- src/core/network-openssl.c.orig	2016-03-22 23:08:35 UTC
+--- src/core/network-openssl.c.orig	2017-01-03 12:47:47 UTC
 +++ src/core/network-openssl.c
 @@ -486,6 +486,7 @@ static GIOChannel *irssi_ssl_get_iochann
  		if (SSL_CTX_set_cipher_list(ctx, ciphers) != 1)
