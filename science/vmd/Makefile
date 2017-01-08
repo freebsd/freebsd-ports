@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	vmd
-DISTVERSION=	1.9.1
-PORTREVISION=	5
+DISTVERSION=	1.9.3
 CATEGORIES=	science graphics python tcl tk
-MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
-		http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
-		http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
+MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b6/:tachyon \
+		http://www.photonlimited.com/~johns/tachyon/files/0.99b6/:tachyon \
+		http://webclu.bio.wzw.tum.de/stride/:stride \
+		ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/:stride
 DISTFILES=	${VMD_DIST} \
 		${TACHYON_DIST}:tachyon \
 		${STRIDE_DIST}:stride
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Molecular visualization program
+
+LICENSE=	VMD BSD3CLAUSE STRIDE
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMERIC}
@@ -23,18 +26,37 @@ LIB_DEPENDS=	libtcl85.so:lang/tcl85 \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMERIC}
 
+LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
+LICENSE_PERMS_VMD=	auto-accept
+LICENSE_NAME_VMD=	Visaul Molecular Dynamics Software License Agreement
+LICENSE_DISTFILES_VMD=	${VMD_DIST}
+
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/lib/tachyon/Copyright
+LICENSE_DISTFILES_BSD3CLAUSE=	${TACHYON_DIST}
+
+LICENSE_TEXT_STRIDE=	${FILESDIR}/stride.txt
+LICENSE_PERMS_STRIDE=	dist-mirror pkg-mirror auto-accept
+LICENSE_NAME_STRIDE=	Stride Copyright Notice
+LICENSE_DISTFILES_STRIDE=${STRIDE_DIST}
+
 USES=		gmake perl5 python
+
 USE_PERL5=	build
-USE_GL=		glu
-USE_GCC=	any
+USE_GL=		gl glu
+USE_XORG=	x11
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-RESTRICTED=	License has restrictions
+CONFIGURE_ENV=	PYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
+		PYTHON_LIBRARY_DIR=${PYTHON_LIBDIR} \
+		NUMPY_INCLUDE_DIR=${PYTHON_SITELIBDIR}/numpy/core/include \
+		NUMPY_LIBRARY_DIR=${PYTHON_SITELIBDIR}
+INSTALL_WRKSRC=	${WRKSRC}/src
 
 VMD_DIST=	${PORTNAME}-${DISTVERSION}.src.tar.gz
-TACHYON_DIST=	tachyon-0.99b2.tar.gz
-STRIDE_DIST=	Stride_src.tar.Z
+TACHYON_DIST=	tachyon-0.99b6.tar.gz
+STRIDE_DIST=	stride.tar.gz
+STRIDE_DOC=	stride.doc
 
 .include <bsd.port.pre.mk>
 
@@ -58,7 +80,7 @@ IGNORE=	license restrictions require manual fetching of the distribution\
 .endif
 
 do-extract:
-	${MKDIR} ${WRKDIR}
+	${MKDIR} ${WRKDIR} ${WRKSRC}/lib/stride
 	${TAR} -xzf ${DISTDIR}/${VMD_DIST} -C ${WRKDIR}
 	${TAR} -xzf ${WRKSRC}/lib/surf/surf.tar.Z -C ${WRKSRC}/lib/surf
 	${TAR} -xzf ${DISTDIR}/${TACHYON_DIST} -C ${WRKSRC}/lib
@@ -68,10 +90,10 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e "s|-ltk8.5|-ltk85|" \
 		-e "s|-ltcl8.5|-ltcl85|" \
-		-e "s%\$$python_dir/lib_\$$config_arch%${PREFIX}%" \
-		-e "s|python2.5|${PYTHON_VERSION}|" \
+		-e "s|-lpython2.5|-l${PYTHON_VERSION}${PYTHON_ABIVER}|" \
 		-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|/usr/local|${LOCALBASE}|g"  \
+		-e "s|-fno-for-scope||g" \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" \
 		${WRKSRC}/configure
@@ -85,18 +107,18 @@ post-patch:
 		${WRKSRC}/lib/stride/Makefile \
 		${WRKSRC}/lib/surf/Makefile \
 		${WRKSRC}/lib/tachyon/unix/Make-arch \
-		${WRKDIR}/plugins/cionize/mcudahacks/Makefile.specialbuilds \
 		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
 		${WRKDIR}/plugins/cionize/Makefile.mine \
 		${WRKDIR}/plugins/cionize/Makefile.testing \
 		${WRKDIR}/plugins/Make-arch \
 		${WRKDIR}/plugins/molfile_plugin/f77/Makefile
 	${REINPLACE_CMD} -E "s/(CXX[[:space:]]*=[[:space:]]*)g\+\+/\1${CXX}/" \
-		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
 		${WRKDIR}/plugins/fmtool/Makefile.specialbuilds \
 		${WRKDIR}/plugins/hesstrans/src/foo/Makefile \
 		${WRKDIR}/plugins/hesstrans/src/foo/nm_gnu.mak \
 		${WRKDIR}/plugins/Make-arch
+	${REINPLACE_CMD} -e "s/return *;/return 0;/g" \
+		${WRKSRC}/lib/surf/*.c
 
 do-build:
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix \
@@ -118,13 +140,12 @@ do-build:
 		&& ${MV} ${WRKSRC}/lib/stride/stride \
 			${WRKSRC}/lib/stride/stride_${VMD_ARCH}
 
-do-install:
-	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
-	    ${MAKE_CMD} -C ${WRKSRC}/src install
+post-install:
+	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' ${STAGEDIR}${PREFIX}/bin/vmd
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/*${VMD_ARCH} \
 	    ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/molfile/*.so
-.for f in tcl/autopsf1.3/psfcheck.so tcl/hesstrans1.0/hesstrans.so \
-	  tcl/mutator1.4/libalchemify.so tcl/pmepot1.0/libpmepot.so \
+.for f in tcl/autopsf1.6/psfcheck.so tcl/hesstrans1.0/hesstrans.so \
+	  tcl/mutator1.5/libalchemify.so tcl/pmepot1.0/libpmepot.so \
 	  tcl/psfgen1.6/libpsfgen.so tcl/rnaview1.1/rnaview \
 	  tcl/signalproc1.1/specden.so tcl/signalproc1.1/fftcmds.so \
 	  tcl/signalproc1.1/sgsmooth.so tcl/volutil1.3/volutil \
@@ -133,7 +154,8 @@ do-install:
 	  tcl/libbiokit1.1/structqr tcl/libbiokit1.1/qpair \
 	  tcl/libbiokit1.1/rmsd tcl/libbiokit1.1/percid \
 	  tcl/phylotree1.2/upgmaclu tcl/stamp1.2/stamp \
-	  bin/catdcd4.0/catdcd bin/cionize1.0/cionize
+	  tcl/bossconvert1.0/Topology \
+	  bin/catdcd5.1/catdcd bin/cionize1.0/cionize
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/${f}
 .endfor
 

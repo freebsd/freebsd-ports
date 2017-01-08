@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.43
+PORTVERSION=	1.0.44
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
-		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
-		SF/pureftpd/Pure-FTPd/${PORTVERSION}
+MASTER_SITES=	https://github.com/jedisct1/${PORTNAME}/releases/download/${PORTVERSION}/ \
+		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, easy to set up, fast, and secure FTP server
@@ -107,18 +107,18 @@ pre-fetch:
 	@${ECHO_MSG} "  spanish, swedish, traditional-chinese, turkish"
 	@${ECHO_MSG} ""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|; s|$${exec_prefix}|${PREFIX}|g' ${WRKSRC}/configuration-file/pure-config.pl.in
-
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/pure-ftpd.conf ${STAGEDIR}${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${STAGEDIR}${PREFIX}/etc/pureftpd-ldap.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-mysql.conf ${STAGEDIR}${PREFIX}/etc/pureftpd-mysql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${STAGEDIR}${PREFIX}/etc/pureftpd-pgsql.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${STAGEDIR}${PREFIX}/etc/pure-ftpd.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/configuration-file/pure-config.pl ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_SCRIPT} ${FILESDIR}/pure-alwaysfail ${STAGEDIR}${PREFIX}/sbin/
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/contrib/ && ${INSTALL_SCRIPT} ${CONTRIB} ${STAGEDIR}${EXAMPLESDIR}/
 	${MKDIR} ${STAGEDIR}${PAM_DIR}/

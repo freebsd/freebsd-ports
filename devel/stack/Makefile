@@ -9,7 +9,7 @@
 # bump the version here.
 
 PORTNAME=	stack
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	devel haskell
 MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/${PORTVERSION}/:deps
@@ -25,13 +25,8 @@ BUILD_DEPENDS=	ghc>0:lang/ghc \
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
 		libgmp.so:math/gmp \
 		libffi.so:devel/libffi
-# Some (all?) GHC binaries downloaded by stack are compiled for
-# FreeBSD 8 and require that gcc and libutil.so.8 are available
-RUN_DEPENDS+=	gcc:lang/gcc
-LIB_DEPENDS+=	libutil.so.8:misc/compat8x
-
-# Needed for 'stack setup'
-RUN_DEPENDS+=	ca_root_nss>0:security/ca_root_nss \
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		gcc:lang/gcc \
 		gmake:devel/gmake
 USES=		gmake perl5
 
