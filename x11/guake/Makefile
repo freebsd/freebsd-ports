@@ -11,15 +11,15 @@ COMMENT=	Dropdown terminal made for the GNOME desktop
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gnome-common>=3.14.0:devel/gnome-common \
-		py${PYTHON_SUFFIX}-dbus>=0.84.0:devel/py-dbus \
-		py${PYTHON_SUFFIX}-notify>=0.1.1_9:devel/py-notify \
-		py${PYTHON_SUFFIX}-vte>=0.26.2_1:x11-toolkits/py-vte \
-		py${PYTHON_SUFFIX}-xdg>=0.19:devel/py-xdg
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify \
+		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg
 RUN_DEPENDS=	keybinder>=0.3.0:x11/keybinder \
-		py${PYTHON_SUFFIX}-dbus>=0.84.0:devel/py-dbus \
-		py${PYTHON_SUFFIX}-notify>=0.1.1_9:devel/py-notify \
-		py${PYTHON_SUFFIX}-vte>=0.26.2_1:x11-toolkits/py-vte \
-		py${PYTHON_SUFFIX}-xdg>=0.19:devel/py-xdg
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify \
+		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -41,6 +41,7 @@ OPTIONS_SUB=	NLS
 
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
 
+NO_ARCH=	yes
 USES=		autoreconf:build desktop-file-utils gettext gmake libtool \
 		pkgconfig python:2
 USE_GITHUB=	yes
@@ -56,8 +57,6 @@ REINPLACE_FILES+=	../../configure
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
-.include <bsd.port.pre.mk>
-
 .if exists(${LOCALBASE}/libexec/notification-daemon)
 RUN_DEPENDS+=	notification-daemon>=0.7.2_1:deskutils/notification-daemon
 .elif exists (${LOCALBASE}/bin/xfce4-notifyd-config)
@@ -66,4 +65,4 @@ RUN_DEPENDS+=	xfce4-notifyd>=0.2.4:deskutils/xfce4-notifyd
 RUN_DEPENDS+=	notify-osd>=0.9.29_4:deskutils/notify-osd
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
