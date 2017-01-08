@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -16,7 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-actionpack4>=${PORTVERSION}:www/rubygem-actionpack4 \
 		rubygem-actionview4>=${PORTVERSION}:devel/rubygem-actionview4 \
-		rubygem-activejob>=${PORTVERSION}:devel/rubygem-activejob \
+		rubygem-activejob4>=${PORTVERSION}:devel/rubygem-activejob4 \
 		rubygem-activemodel4>=${PORTVERSION}:databases/rubygem-activemodel4 \
 		rubygem-activerecord4>=${PORTVERSION}:databases/rubygem-activerecord4 \
 		rubygem-activeresource4>=4.0.0:www/rubygem-activeresource4 \

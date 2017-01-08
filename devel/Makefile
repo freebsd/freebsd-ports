@@ -5002,7 +5002,7 @@
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview4
     SUBDIR += rubygem-active_scaffold
-    SUBDIR += rubygem-activejob
+    SUBDIR += rubygem-activejob4
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
     SUBDIR += rubygem-activesupport4
