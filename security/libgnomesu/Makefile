@@ -11,13 +11,15 @@ MASTER_SITES=	http://members.chello.nl/~h.lai/libgnomesu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and frontend for running commands as root
 
-USES=		gmake gettext-tools libtool pathfix pkgconfig
+LICENSE=	LGPL20+ PD
+LICENSE_COMB=	multi
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING
+
+USES=		gmake gettext-tools libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui
-CONFIGURE_ARGS+=--disable-install-pam \
+CONFIGURE_ARGS=	--disable-install-pam \
 		--disable-setuid-error
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
@@ -28,9 +30,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/Makefile.in
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.sample ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/api.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/libgnomesu.css ${STAGEDIR}${DOCSDIR}
