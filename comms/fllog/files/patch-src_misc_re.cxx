@@ -1,6 +1,6 @@
---- src/misc/re.cxx.orig	2014-02-03 15:43:56.000000000 -0800
-+++ src/misc/re.cxx	2014-04-11 16:24:42.000000000 -0700
-@@ -120,12 +120,25 @@
+--- src/misc/re.cxx.orig	2015-08-12 21:02:27 UTC
++++ src/misc/re.cxx
+@@ -120,12 +120,25 @@ void re_t::suboff(size_t n, int* start, 
  	}
  }
  
