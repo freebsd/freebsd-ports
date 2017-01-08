@@ -1,7 +1,0 @@
-The general purpose of this library is to provide C language procedures related
-to cartographic processes. Procedures for each of the processes will be strictly
-categorized and although they may share common subfunctions they will not
-intersect in scope.
-
-WWW: http://proj4.org/
-WWW: https://github.com/OSGeo/proj.4

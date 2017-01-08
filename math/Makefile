@@ -573,7 +573,6 @@
     SUBDIR += plplot-ada
     SUBDIR += primegen
     SUBDIR += prng
-    SUBDIR += proj.4
     SUBDIR += proofgeneral
     SUBDIR += pspp
     SUBDIR += pure-mpfr
