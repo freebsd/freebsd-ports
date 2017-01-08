@@ -21,7 +21,7 @@ LIB_DEPENDS=	libomniORB4.so.1:devel/omniORB-4.1
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB-4.1:patch
 
-CONFLICTS=	py${PYTHON_SUFFIX}-orbit-2* py${PYTHON_SUFFIX}-omniorb-4.2*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}orbit-2* ${PYTHON_PKGNAMEPREFIX}omniorb-4.2*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
