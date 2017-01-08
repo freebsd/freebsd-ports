@@ -211,13 +211,6 @@ CONFIGURE_ARGS+=	-with-password-backend=SHA384
 CONFIGURE_ARGS+=	-with-password-backend=SHA512
 .endif
 
-# Compile chokes with  version of flex on FreeBSD 8 and 9
-# with "unknown flag '-'"
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
-.endif
-
 pre-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/mapilib/monetdb-mapi.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
