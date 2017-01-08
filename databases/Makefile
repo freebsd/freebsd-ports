@@ -382,6 +382,7 @@
     SUBDIR += p5-DBIx-Dump
     SUBDIR += p5-DBIx-Ease
     SUBDIR += p5-DBIx-HA
+    SUBDIR += p5-DBIx-Handler
     SUBDIR += p5-DBIx-Inspector
     SUBDIR += p5-DBIx-Introspector
     SUBDIR += p5-DBIx-Log4perl
