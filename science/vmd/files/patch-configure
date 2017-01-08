@@ -1,19 +1,19 @@
---- configure.orig	2012-02-02 16:53:54.000000000 +0900
-+++ configure	2014-08-28 16:42:38.000000000 +0900
+--- configure.orig	2016-12-01 07:11:33 UTC
++++ configure
 @@ -13,10 +13,10 @@
  $install_name = "vmd";
  
  # Directory where VMD startup script is installed, should be in users' paths.
 -$install_bin_dir="/usr/local/bin";
-+$install_bin_dir="%%PREFIX%%/bin";
++$install_bin_dir="\${DESTDIR}%%PREFIX%%/bin";
  
  # Directory where VMD files and executables are installed
 -$install_library_dir="/usr/local/lib/$install_name";
-+$install_library_dir="%%PREFIX%%/lib/$install_name";
++$install_library_dir="\${DESTDIR}%%PREFIX%%/lib/$install_name";
  
  
  # optionally override hard-coded defaults above with environment variables
-@@ -788,8 +788,8 @@
+@@ -1105,8 +1105,8 @@ if ($config_liboptix) {
  # This may be commented out if not required.
  $libtachyon_defines     = "-DVMDLIBTACHYON";
  $libtachyon_dir         = "$vmd_library_dir/tachyon";
@@ -24,12 +24,12 @@
  $libtachyon_libs        = "-ltachyon";
  @libtachyon_cc          = ();
  @libtachyon_cu          = ();
-@@ -2942,10 +2942,10 @@
+@@ -3187,10 +3187,10 @@ DEFINES     = $DEFINES
  
  # compiler and compiler directives 
  CC          = $arch_cc
 -CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
-+CFLAGS      += $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
++CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
  
  CCPP	    = $arch_ccpp
 -CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
@@ -37,72 +37,3 @@
  
  NVCC        = $arch_nvcc
  NVCCFLAGS   = $arch_nvccflags -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
-@@ -2997,38 +2997,38 @@
- 	\$(COMPILERC) \$(RCFLAGS)
- 
- install:
--	if [ ! -d "$install_library_dir" ]; then \\
--		\$(MAKEDIR) "$install_library_dir" ; \\
-+	if [ ! -d "\${DESTDIR}$install_library_dir" ]; then \\
-+		\$(MAKEDIR) "\${DESTDIR}$install_library_dir" ; \\
- 	fi ; \\
--	if [ ! -d "$install_bin_dir" ]; then \\
--		\$(MAKEDIR) "$install_bin_dir" ; \\
-+	if [ ! -d "\${DESTDIR}$install_bin_dir" ]; then \\
-+		\$(MAKEDIR) "\${DESTDIR}$install_bin_dir" ; \\
- 	fi ; \\
--	if [ ! -d "$install_library_dir"/doc ]; then \\
--		\$(MAKEDIR) "$install_library_dir"/doc; \\
-+	if [ ! -d "\${DESTDIR}$install_library_dir"/doc ]; then \\
-+		\$(MAKEDIR) "\${DESTDIR}$install_library_dir"/doc; \\
- 	fi
--	-\$(COPY) ../Announcement  "$install_library_dir"
--	-\$(COPY) ../README        "$install_library_dir"
--	-\$(COPY) ../LICENSE       "$install_library_dir"
--	-\$(COPY) $vmd_doc_dir/ug.pdf        "$install_library_dir"/doc
--	if [ -f $install_library_dir/$config_progname ]; then \\
--           \$(MOVE) "$install_library_dir/$config_progname" "$install_library_dir/OLD_$config_progname" ; \$(DELETE) "$install_library_dir/OLD_$config_progname" ; fi
--	-\$(COPY) ../$config_arch/$config_progname "$install_library_dir"
-+	-\$(COPY) ../Announcement  "\${DESTDIR}$install_library_dir"
-+	-\$(COPY) ../README        "\${DESTDIR}$install_library_dir"
-+	-\$(COPY) ../LICENSE       "\${DESTDIR}$install_library_dir"
-+	-\$(COPY) $vmd_doc_dir/ug.pdf        "\${DESTDIR}$install_library_dir"/doc
-+	if [ -f \${DESTDIR}$install_library_dir/$config_progname ]; then \\
-+           \$(MOVE) "\${DESTDIR}$install_library_dir/$config_progname" "\${DESTDIR}$install_library_dir/OLD_$config_progname" ; \$(DELETE) "\${DESTDIR}$install_library_dir/OLD_$config_progname" ; fi
-+	-\$(COPY) ../$config_arch/$config_progname "\${DESTDIR}$install_library_dir"
- 	if [ -d "../lib/redistrib/lib_$config_arch" ]; then \\
- 		\$(CD) ../lib/redistrib/lib_$config_arch; \$(TAR) -cf - ./* | \\
--		(cd "$install_library_dir" ; \$(TAR) -xf -) \\
-+		(cd "\${DESTDIR}$install_library_dir" ; \$(TAR) -xf -) \\
- 	fi ;
--	-\$(COPY) @vmd_other_exe "$install_library_dir"
-+	-\$(COPY) @vmd_other_exe "\${DESTDIR}$install_library_dir"
- 	-\$(CD) ..; \$(TAR) -cf - scripts | \\
--	(cd "$install_library_dir" ; \$(TAR) -xf -)
-+	(cd "\${DESTDIR}$install_library_dir" ; \$(TAR) -xf -)
- 	-\$(CD) $vmd_library_dir; \$(TAR) -cf - scripts | \\
--	(cd "$install_library_dir" ; \$(TAR) -xf -)
-+	(cd "\${DESTDIR}$install_library_dir" ; \$(TAR) -xf -)
- 	-\$(CD) ..; \$(TAR) -cf - python | \\
--	(cd "$install_library_dir"/scripts ; \$(TAR) -xf -)
-+	(cd "\${DESTDIR}$install_library_dir"/scripts ; \$(TAR) -xf -)
- 	-\$(CD) ..; \$(TAR) -cf - plugins | \\
--	(cd "$install_library_dir" ; \$(TAR) -xf -)
-+	(cd "\${DESTDIR}$install_library_dir" ; \$(TAR) -xf -)
- 	-\$(CD) ..; \$(TAR) -cf - shaders | \\
--	(cd "$install_library_dir" ; \$(TAR) -xf -)
--	-\$(COPY) ../data/.vmdrc ../data/.vmdsensors ../data/vmd_completion.dat "$install_library_dir"
-+	(cd "\${DESTDIR}$install_library_dir" ; \$(TAR) -xf -)
-+	-\$(COPY) ../data/.vmdrc ../data/.vmdsensors ../data/vmd_completion.dat "\${DESTDIR}$install_library_dir"
- 	\$(CD) $vmd_bin_dir ; \\
- 	if [ -f run_vmd_tmp ]; then \$(DELETE) run_vmd_tmp; fi ; \\
- 	if [ ! -x "/bin/csh" ]; then \\
-@@ -3044,7 +3044,7 @@
- 		cat $vmd_bin_csh >> run_vmd_tmp ; \\
- 	fi ; \\
- 	chmod +x run_vmd_tmp ; \\
--	\$(COPY) run_vmd_tmp "$install_bin_dir"/$install_name ; \\
-+	\$(COPY) run_vmd_tmp "\${DESTDIR}$install_bin_dir"/$install_name ; \\
- 	\$(DELETE) run_vmd_tmp
- 	\$(ECHO) Make sure "$install_bin_dir"/$install_name is in your path.
- 	\$(ECHO) "VMD installation complete.  Enjoy!"
