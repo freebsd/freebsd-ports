@@ -8971,3 +8971,4 @@ databases/rubygem-dm-active_model||2017-01-07|Has expired: Depends on deprecated
 databases/rubygem-activemodel||2017-01-07|Has expired: Upstream support ended
 math/libproj4|math/proj.4|2017-01-07|Project was renamed
 math/proj.4||2017-01-07|math/libproj4 was already duplicated as graphics/proj
+devel/rubygem-actionview|devel/rubygem-actionview4|2017-01-08|Rename to match our Rails ports naming

@@ -6,6 +6,7 @@ PORTVERSION=	4.2.7.1
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
