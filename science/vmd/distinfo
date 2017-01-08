@@ -1,6 +1,7 @@
-SHA256 (vmd-1.9.1.src.tar.gz) = 54aa88e03d86d763383e7b98592a152c9d68e78383e13af0dd2aca09b002491f
-SIZE (vmd-1.9.1.src.tar.gz) = 30748110
-SHA256 (tachyon-0.99b2.tar.gz) = 3bd8dd6ad78c6b2153e985645b385357eb42f3908a2269a7cfe7f9afa35da012
-SIZE (tachyon-0.99b2.tar.gz) = 3352908
-SHA256 (Stride_src.tar.Z) = c40f7de64947ebab7ec49511c0d264b08bc0fcbc703014bdc85d83a7389be230
-SIZE (Stride_src.tar.Z) = 100329
+TIMESTAMP = 1482469862
+SHA256 (vmd-1.9.3.src.tar.gz) = 5bdc314dc836d620fe510ed4b6c3dbe3cf66525b61680ffec4e2563cf495f128
+SIZE (vmd-1.9.3.src.tar.gz) = 43981314
+SHA256 (tachyon-0.99b6.tar.gz) = f4dcaf9c76a4f49310f56254390f9611c22e353947a1745a8c623e8bc8119b97
+SIZE (tachyon-0.99b6.tar.gz) = 2981568
+SHA256 (stride.tar.gz) = 51a8bc2988bb184bd08216124f61725225bb1a6f563bdf8cd35154cb5d621c1a
+SIZE (stride.tar.gz) = 318997
