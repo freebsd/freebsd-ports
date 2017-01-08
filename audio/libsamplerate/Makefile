@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.mega-nerd.com/SRC/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
-LICENSE=	GPLv2
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
