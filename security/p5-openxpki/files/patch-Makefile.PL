@@ -1,4 +1,4 @@
---- Makefile.PL.orig	2016-04-07 09:30:16 UTC
+--- Makefile.PL.orig	2016-12-19 13:33:07 UTC
 +++ Makefile.PL
 @@ -267,49 +267,6 @@ else {
    print STDERR "Logger is not installed. Continue anyway.\n";
@@ -56,9 +56,9 @@
      'INC'       => "-I. -I$openssl_inc_dir",
 -    'CCFLAGS'   => '-O2 -g '.$Config{ccflags},
      'PREREQ_PM' => {
- #    'Class::Accessor::Fast'  => '0.31', # Constituent of module Class::Accessor
- #					 # which is a prerequisite of Class::Accessor::Chained, see below
-@@ -420,5 +376,4 @@ WriteMakefile(
+         'Archive::Zip'                  => 0,
+         'CGI::Fast'                     => '2.10',
+@@ -392,5 +348,4 @@ WriteMakefile(
                                't/cfg.binary.openssl']},
      'XSPROTOARG' => '-noprototypes',
      'EXE_FILES' => [ 'bin/openxpkictl','bin/openxpkicmd', 'bin/openxpkiadm', 'bin/openxpkicli'],    
