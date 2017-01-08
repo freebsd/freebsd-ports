@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.g20161104
-PORTREVISION=	3
+DISTVERSION=	0.17.g20170104
 CATEGORIES=	cad
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	General purpose 3D CAD modeller
 
 LICENSE=	LGPL20+
@@ -29,9 +28,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2		\
 		libarea.so:devel/libarea		\
 		libmed.so:french/med			\
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken
+RUN_DEPENDS=	pivy>0:graphics/py-pivy
 
 USE_GITHUB=	yes
-GH_TAGNAME=	0ea7373
+GH_TAGNAME=	f6f8363
 
 USES=		compiler:c++11-lib cmake:outsource jpeg python localbase
 USE_XORG=	ice sm x11 xext xt
