@@ -44,7 +44,7 @@ CORE_SUB_FILES=		pkg-message
 CORE_VARS=		use_rc_subr=quasselcore \
 			users=quasselcore \
 			groups=quasselcore \
-			plist= # empty to allow core to override PLIST_FILES
+			plist=${NONEXISTENT} # allow core to override PLIST_FILES
 CORE_PLIST_FILES=	bin/quasselcore
 
 MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
