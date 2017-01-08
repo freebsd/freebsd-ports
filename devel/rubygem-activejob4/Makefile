@@ -5,6 +5,7 @@ PORTNAME=	activejob
 PORTVERSION=	4.2.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Job class declarations for a variety of queueing backends
