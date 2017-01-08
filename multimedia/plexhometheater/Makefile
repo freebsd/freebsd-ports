@@ -12,6 +12,7 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Media center frontend to multimedia/plexmediaserver
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 BUILD_DEPENDS=	enca:converters/enca \
 		gawk:lang/gawk \
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	enca:converters/enca \
 		nasm:devel/nasm \
 		gtk-update-icon-cache:x11-toolkits/gtk20 \
 		swig2.0:devel/swig20
-
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavahi-client.so:net/avahi-app \
 		libboost_thread.so:devel/boost-libs \
@@ -55,7 +55,6 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libvorbis.so:audio/libvorbis \
 		libxslt.so:textproc/libxslt \
 		libyajl.so:devel/yajl
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		glxinfo:graphics/mesa-demos \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \

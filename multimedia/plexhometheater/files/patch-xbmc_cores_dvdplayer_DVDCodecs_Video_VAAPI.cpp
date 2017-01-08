@@ -1,6 +1,6 @@
---- xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp.orig	2013-10-19 23:07:02.530131780 +0200
-+++ xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp	2013-10-19 23:06:38.499626784 +0200
-@@ -74,7 +74,7 @@
+--- xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp.orig	2015-05-11 07:54:22 UTC
++++ xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp
+@@ -74,7 +74,7 @@ static inline VASurfaceID GetSurfaceID(A
  
  static CDisplayPtr GetGlobalDisplay()
  {
