@@ -1,6 +1,0 @@
---- xbmc/freebsd/CMakeLists.txt.orig	2014-08-05 20:18:02.009525912 +0800
-+++ xbmc/freebsd/CMakeLists.txt	2014-08-05 20:18:40.357527987 +0800
-@@ -0,0 +1,3 @@
-+find_all_sources(. freebsd_SRCS)
-+
-+add_sources(${freebsd_SRCS})

@@ -1,0 +1,19 @@
+nio4r provides an abstract, cross-platform stateful I/O selector API for Ruby.
+I/O selectors are the heart of "reactor"-based event loops, and monitor multiple
+I/O objects for various types of readiness, e.g. ready for reading or writing.
+
+The most similar API provided by Ruby today is Kernel.select, however the select
+API requires you to pass in arrays of all of the I/O objects you're interested
+in every time. nio4r provides a more object-oriented API that lets you register
+I/O objects with a selector then handle them when they're selected for various
+types of events.
+
+nio4r is modeled after the Java NIO API, but simplified for ease-of-use.
+
+Its goals are:
+- Expose high-level interfaces for stateful IO selectors
+- Keep the API small to maximize both portability and performance across many
+  different OSes and Ruby VMs
+- Provide inherently thread-safe facilities for working with IO objects
+
+WWW: https://github.com/celluloid/nio4r

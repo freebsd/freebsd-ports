@@ -4594,6 +4594,7 @@
     SUBDIR += py-roxlib
     SUBDIR += py-rq
     SUBDIR += py-rtree
+    SUBDIR += py-rtslib-fb
     SUBDIR += py-ruamel.ordereddict
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-ruledispatch
@@ -4657,6 +4658,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-tempora
     SUBDIR += py-tempstorage
+    SUBDIR += py-tenacity
     SUBDIR += py-termcolor
     SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
@@ -4670,6 +4672,7 @@
     SUBDIR += py-tinyarray
     SUBDIR += py-tinyrpc
     SUBDIR += py-tipper
+    SUBDIR += py-tooz
     SUBDIR += py-total-ordering
     SUBDIR += py-tox
     SUBDIR += py-trace2html
@@ -4997,9 +5000,9 @@
     SUBDIR += rubygem-CFPropertyList
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-actionpack-action_caching
-    SUBDIR += rubygem-actionview
+    SUBDIR += rubygem-actionview4
     SUBDIR += rubygem-active_scaffold
-    SUBDIR += rubygem-activejob
+    SUBDIR += rubygem-activejob4
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
     SUBDIR += rubygem-activesupport4
@@ -5281,6 +5284,7 @@
     SUBDIR += rubygem-newrelic_rpm
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
+    SUBDIR += rubygem-nio4r1
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify
@@ -5336,7 +5340,6 @@
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rdoc
-    SUBDIR += rubygem-rdoc3
     SUBDIR += rubygem-readwritesettings
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-redis-activesupport

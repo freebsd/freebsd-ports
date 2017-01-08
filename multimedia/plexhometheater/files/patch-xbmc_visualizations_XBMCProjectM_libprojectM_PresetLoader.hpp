@@ -1,6 +1,6 @@
---- xbmc/visualizations/XBMCProjectM/libprojectM/PresetLoader.hpp.orig	2013-07-04 15:52:54.000000000 +0200
-+++ xbmc/visualizations/XBMCProjectM/libprojectM/PresetLoader.hpp	2013-07-04 15:53:28.000000000 +0200
-@@ -29,7 +29,7 @@
+--- xbmc/visualizations/XBMCProjectM/libprojectM/PresetLoader.hpp.orig	2015-05-11 07:54:22 UTC
++++ xbmc/visualizations/XBMCProjectM/libprojectM/PresetLoader.hpp
+@@ -29,7 +29,7 @@ class PresetLoader {
  		static const std::string MILKDROP_FILE_EXTENSION;
  		
  		/** Initializes the preset loader with the target directory specified */

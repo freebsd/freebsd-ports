@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cython:lang/cython \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2
-RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:archivers/py-lz4 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=0.7.0_1:archivers/py-lz4 \
 		${PYTHON_SITELIBDIR}/rencode/__init__.py:converters/py-rencode \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL \

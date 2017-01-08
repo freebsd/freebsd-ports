@@ -1,5 +1,5 @@
---- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2013-05-13 11:32:04.000000000 +0200
-+++ xbmc/threads/platform/pthreads/ThreadImpl.cpp	2013-05-13 11:47:27.000000000 +0200
+--- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2015-05-11 07:54:22 UTC
++++ xbmc/threads/platform/pthreads/ThreadImpl.cpp
 @@ -29,12 +29,8 @@
  #include <string.h>
  #ifdef __FreeBSD__
@@ -13,7 +13,7 @@
  
  #include <signal.h>
  
-@@ -59,11 +55,7 @@
+@@ -59,11 +55,7 @@ void CThread::TermHandler() { }
  void CThread::SetThreadInfo()
  {
  #ifdef __FreeBSD__
