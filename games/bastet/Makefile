@@ -11,33 +11,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses Tetris clone which is harder than every other Tetris
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
-USES=		gmake ncurses tar:tgz
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gmake localbase:ldflags ncurses tar:tgz
 
 PLIST_FILES=	bin/bastet man/man6/bastet.6.gz
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-.if exists(/usr/bin/clang)
-CC=		clang
-CXX=		clang++
-CPP=		clang-cpp
-.else
-.if ${ARCH} == "i386"
-CXXFLAGS+=	-fexceptions
-.else
-USE_GCC=	yes
-.endif
-.endif
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -46,9 +28,7 @@ post-patch:
 		 s| -ggdb | |' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} bastet \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} bastet.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6)
+	${INSTALL_PROGRAM} ${WRKSRC}/bastet ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/bastet.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
