@@ -4664,6 +4664,7 @@
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob
+    SUBDIR += py-testpath
     SUBDIR += py-testtools
     SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
