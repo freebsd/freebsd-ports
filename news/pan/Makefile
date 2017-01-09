@@ -4,7 +4,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.140
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		gmake iconv localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgnuregex ${ICONV_LIB}
 
