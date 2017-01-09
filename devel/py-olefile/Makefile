@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefile
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,20 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python module to read MS OLE2 files
 
-LICENSE=	MIT
+LICENSE=	BSD2CLAUSE MIT
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/olefile/LICENSE.txt
 
 NO_ARCH=	yes
-USES=		dos2unix python
+USES=		dos2unix python zip
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-# Remove files not python 3 ready and allow compile again
-post-patch:
-.if ${PYTHON_REL} >= 3000
-	${RM} ${WRKSRC}/olefile/olefile2.py
-.endif
-	${REINPLACE_CMD} "/install' in sys.argv:/,+1d" ${WRKSRC}/setup.py
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
