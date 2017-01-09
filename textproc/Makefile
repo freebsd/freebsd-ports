@@ -1268,6 +1268,7 @@
     SUBDIR += py-nltk
     SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
+    SUBDIR += py-pandocfilters
     SUBDIR += py-paragrep
     SUBDIR += py-parsimonious
     SUBDIR += py-pdfminer
