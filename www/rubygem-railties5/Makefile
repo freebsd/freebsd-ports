@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
 		rubygem-rake>=0.8.7:devel/rubygem-rake \
 		rubygem-thor>=0.18.1:devel/rubygem-thor
 
-CONFLICTS_INSTALL=	rubygem-railties-[0-9]* rubygem-railties41-[0-9]*
+CONFLICTS_INSTALL=	rubygem-railties- rubygem-railties4- rubygem-railties41-
 
 NO_ARCH=	yes
 USE_RUBY=	yes
