@@ -1,0 +1,8 @@
+Action Record
+
+In Rails, the model is handled by what's called a object-relational
+mapping layer entitled Active Record. This layer allows you to present
+the data from database rows as objects and embellish these data objects
+with business logic methods.
+
+WWW: http://rubyonrails.org/
