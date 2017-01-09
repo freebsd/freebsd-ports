@@ -12,10 +12,8 @@ COMMENT=	Memory forensics analysis framework
 
 LICENSE=	GPLv2
 
-IGNORE=		requires ipython 5.0.0 or higher
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core \
-		${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython
+		${PYTHON_PKGNAMEPREFIX}ipython>=5.0.0:devel/ipython
 
 NO_ARCH=	yes
 USES=		python:2.7 zip
