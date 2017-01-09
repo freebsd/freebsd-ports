@@ -10,6 +10,7 @@ MAINTAINER=	stb@lassitu.de
 COMMENT=	Compact self-hosted Git service
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
@@ -34,16 +35,9 @@ SQLITE=		Add SQLite as database backend
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MCERT}
-GO_TAGS+=	cert
-.endif
-.if ${PORT_OPTIONS:MPAM}
-GO_TAGS+=	pam
-.endif
-.if ${PORT_OPTIONS:MSQLITE}
-GO_TAGS+=	sqlite
-.endif
+CERT_VARS=	GO_TAGS+=cert
+PAM_VARS=	GO_TAGS+=pam
+SQLITE_VARS=	GO_TAGS+=sqlite
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
