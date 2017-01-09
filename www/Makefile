@@ -2041,6 +2041,7 @@
     SUBDIR += rubygem-rails4
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-railties4
+    SUBDIR += rubygem-railties5
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
