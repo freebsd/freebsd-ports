@@ -80,10 +80,6 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^OPTIMISE=/d' \
 		${WRKSRC}/configure.ac
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
-	${REINPLACE_CMD} -e 's/std::acosh/acosh/g ; s/std::copysign/copysign/g' \
-		${WRKSRC}/src/Orbit.cpp
-.endif
 
 post-patch-MODELCOMPILER-off: .SILENT
 	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \

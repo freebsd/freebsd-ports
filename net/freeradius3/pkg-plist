@@ -141,9 +141,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_eap_gtc.a
 %%LIBDIR%%/rlm_eap_gtc.la
 %%LIBDIR%%/rlm_eap_gtc.so
-%%EAPFAST%%%%LIBDIR%%/rlm_eap_fast.a
-%%EAPFAST%%%%LIBDIR%%/rlm_eap_fast.la
-%%EAPFAST%%%%LIBDIR%%/rlm_eap_fast.so
+%%LIBDIR%%/rlm_eap_fast.a
+%%LIBDIR%%/rlm_eap_fast.la
+%%LIBDIR%%/rlm_eap_fast.so
 %%LIBDIR%%/rlm_eap_leap.a
 %%LIBDIR%%/rlm_eap_leap.la
 %%LIBDIR%%/rlm_eap_leap.so

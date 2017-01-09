@@ -123,13 +123,6 @@ post-patch::
 		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
-# m_rootdir behaves erratically on 9.x and fails randomly,
-# but may succeed when run again. Disable for now.
-.if ${OSVERSION} < 1000000
-.for i in m_rootdir
-	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-.endfor
-.endif
 .endif
 
 # Master port stuff that is not to be seen by the slave ports.

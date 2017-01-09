@@ -163,10 +163,6 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
-CONFIGURE_ARGS+=	--enable-memalign-hack
-.endif
-
 .if ${ARCH} == armv6
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 CFLAGS+=	-no-integrated-as

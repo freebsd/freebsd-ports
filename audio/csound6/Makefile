@@ -100,13 +100,6 @@ PULSEAUDIO_DESC=	Build PulseAudio I/O module
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DUSE_PULSEAUDIO:BOOL=OFF
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING="${LOCALBASE}/bin/flex"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/-O3/s|^|#| ; \

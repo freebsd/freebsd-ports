@@ -39,14 +39,7 @@ KQUEUE_CONFIGURE_ON=	--with-kqueue
 KQUEUE_CONFIGURE_OFF=	--with-poll
 DEBUG_CONFIGURE_ENABLE=	debugging
 
-.include <bsd.port.pre.mk>
-
-# DSR needs a newer version of the netmap's API
-.if ${OSVERSION} < 903000 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1001000)
-CONFIGURE_ARGS+=	--without-dsr
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/-pg//' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,9 +26,8 @@ MAKE_ENV=	NCURSES_LINK=static
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if (${OPSYS} == FreeBSD   && ${OSVERSION} < 1000000) || \
-    (${OPSYS} == DragonFly && ${OSVERSION} < 400600)
-	${REINPLACE_CMD} -e 's|"re"|"r"|' ${WRKSRC}/src/unix.adb
+.if ${OPSYS} == DragonFly && ${OSVERSION} < 400600
+	@${REINPLACE_CMD} -e 's|"re"|"r"|' ${WRKSRC}/src/unix.adb
 .endif
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
 		${WRKSRC}/src/definitions.ads

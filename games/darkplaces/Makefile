@@ -41,10 +41,6 @@ SERVER_DESC=	Build dedicated server
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-USE_GCC=	yes # internal compiler error on base gcc
-.endif
-
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDL}
 USE_GL=		glu
 PLIST_SUB+=	CLIENT=""

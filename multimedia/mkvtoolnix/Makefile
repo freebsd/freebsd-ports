@@ -49,33 +49,7 @@ QT5_USES=	desktop-file-utils shared-mime-info
 QT5_USE=	QT5=buildtools_build,concurrent,core,gui,network,quick,widgets
 QT5_CONFIGURE_ENABLE=	qt
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ${OSVERSION} < 1000000
-	@${REINPLACE_CMD} -e 's|std::llround|llround|g' \
-		${WRKSRC}/src/common/hevc.cpp \
-		${WRKSRC}/src/common/mpeg4_p10.cpp \
-		${WRKSRC}/src/common/theora.cpp \
-		${WRKSRC}/src/extract/cuesheets.cpp \
-		${WRKSRC}/src/extract/xtr_avi.cpp \
-		${WRKSRC}/src/info/mkvinfo.cpp \
-		${WRKSRC}/src/input/r_avi.cpp \
-		${WRKSRC}/src/input/r_matroska.cpp \
-		${WRKSRC}/src/input/r_ogm.cpp \
-		${WRKSRC}/src/input/r_tta.cpp \
-		${WRKSRC}/src/merge/cluster_helper.h \
-		${WRKSRC}/src/merge/generic_packetizer.cpp \
-		${WRKSRC}/src/merge/output_control.cpp \
-		${WRKSRC}/src/merge/timestamp_factory.h \
-		${WRKSRC}/src/output/p_dirac.cpp \
-		${WRKSRC}/src/output/p_hevc.cpp \
-		${WRKSRC}/src/output/p_mpeg4_p10.cpp \
-		${WRKSRC}/src/output/p_tta.cpp \
-		${WRKSRC}/src/output/p_wavpack.cpp
-	@${REINPLACE_CMD} -e 's|std::lround|lround|g' \
-		${WRKSRC}/src/propedit/tag_target.cpp
-.endif
 	@${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
 		${WRKSRC}/configure
 

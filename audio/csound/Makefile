@@ -105,16 +105,7 @@ DOCS_DISTFILES=		Csound${PORTVERSION:R}_manual_html.zip:manual
 MAKE_ARGS+=	Word64=1
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:textproc/flex
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
 CXXLIB=		c++
-.else
-CXXLIB=		# empty
-.endif
 
 BROKEN_powerpc64=	Does not build
 

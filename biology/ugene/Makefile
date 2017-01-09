@@ -31,17 +31,15 @@ QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
 		LUPDATE="${LUPDATE}"
 ALL_TARGET=	release
 
+# Required for Google Test code
+CXXFLAGS+=	-std=c++11
+
 DOCSDIR=	${DATADIR}/manuals
 
 OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Install official UGENE documentation (PDF)
 
 .include <bsd.port.pre.mk>
-
-# Required for Google Test code
-.if ${OSVERSION} > 1000054
-CXXFLAGS+=	-std=c++11
-.endif
 
 .if ${ARCH} == amd64
 # XXX: need to manually tell the build we are on x64

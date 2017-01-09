@@ -39,16 +39,6 @@ MAKE_JOBS_UNSAFE=	yes
 HG_REVISION=	11ee1d7236f3
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
-.include <bsd.port.pre.mk>
-
-# Unfortunately, the code is not GCC 4.2.1 compatible (due to bugs in GCC
-# itself).  Use system compiler if it is Clang.
-.if ${OSVERSION} < 1000024
-CC=		clang
-CXX=		clang++
-CPP=		clang-cpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/CMAKE_SYSTEM_NAME/s,Linux,${OPSYS},' \
 		${WRKSRC}/data/cmake/MitsubaExternal.cmake \
@@ -61,4 +51,4 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/mitsuba/data/ior/CMakeFiles/ior_database.dir
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/mitsuba/data/ior/CMakeFiles
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

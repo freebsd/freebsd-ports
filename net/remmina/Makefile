@@ -49,13 +49,6 @@ SSH_CMAKE_BOOL=		WITH_LIBSSH
 TERM_USE=		gnome=vte3
 TERM_CMAKE_BOOL=	WITH_VTE
 
-.include <bsd.port.pre.mk>
-
-# utimensat(5) only available in FreeBSD from 10.3-RELEASE
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002506
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-remmina_src_remmina__file.c
-.endif
-
 post-patch:
 	# do not build plugins and locales , they are provided by separated ports
 	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' \
@@ -66,4 +59,4 @@ post-patch:
 		-e 's,FreeBSD,FreeBSD|DragonFly,' \
 		${WRKSRC}/remmina/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

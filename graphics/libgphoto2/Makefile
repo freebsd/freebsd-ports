@@ -45,8 +45,6 @@ NLS_CONFIGURE_ENABLE=	nls
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_OFF=	--with-libxml-2.0=no
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for i in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \

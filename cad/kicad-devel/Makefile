@@ -184,10 +184,8 @@ PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} < 1000000 || ${CHOSEN_COMPILER_TYPE} == gcc
-  IGNORE= builds only on greater than 10 and with clang
-.endif
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == gcc
+IGNORE=		builds only with clang
 .endif
 
 .include <bsd.port.post.mk>

@@ -46,11 +46,6 @@ PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 PORTSCOUT=	ignore:1
 .endif
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	ac_cv_prog_LEX=${LOCALBASE}/bin/flex
-.endif
-
 python_OLD_CMD=	"/usr/bin/env[[:space:]]python"
 python_CMD=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \

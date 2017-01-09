@@ -37,10 +37,4 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_USES_OFF=	gettext-tools
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000036 && ${ARCH} == i386
-LDFLAGS+=	-lssp_nonshared
-.endif
-
 .include <bsd.port.mk>

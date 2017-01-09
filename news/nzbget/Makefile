@@ -58,10 +58,6 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 CONFIGURE_ARGS+=	--disable-sigchld-handler
 .endif
 
-.if ${OSVERSION} < 1000500
-USE_GCC=		yes
-.endif
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.conf \
 		${STAGEDIR}${PREFIX}/etc/nzbget.conf.sample

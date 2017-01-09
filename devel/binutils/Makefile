@@ -82,10 +82,6 @@ PLIST_SUB+=	GOLD=""
 PLIST_SUB+=	GOLD="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CONFIGURE_ARGS+=	--disable-initfini-array
-.endif
-
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else

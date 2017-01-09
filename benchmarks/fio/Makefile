@@ -18,16 +18,6 @@ GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000013
-BUILD_DEPENDS+=	byacc>0:devel/byacc
-MAKE_ARGS+=	YACC=${LOCALBASE}/bin/yacc
-
-BUILD_DEPENDS+=	flex>0:textproc/flex
-MAKE_ARGS+=	LEX=${LOCALBASE}/bin/flex
-.endif
-
 BROKEN_powerpc64=	Does not build on powerpc64
 
 do-install:
