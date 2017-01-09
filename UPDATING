@@ -5,6 +5,40 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170109:
+  AFFECTS: users of lang/ruby22
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been updated from 2.2 to 2.3.
+
+  If you compile your own ports you may keep 2.2 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.2 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.2
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby23 lang/ruby22
+  # portmaster -R -r ruby-2.3
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby22:lang/ruby23
+  # portupgrade -x ruby-2.3.\* -fr lang/ruby23
+
 20170102:
   AFFECTS: multimedia/ffmpeg
   AUTHOR: jbeich@FreeBSD.org
