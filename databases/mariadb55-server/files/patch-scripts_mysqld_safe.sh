@@ -1,6 +1,6 @@
---- scripts/mysqld_safe.sh.orig	2007-10-08 10:39:23.000000000 +0200
-+++ scripts/mysqld_safe.sh	2007-10-08 10:40:52.000000000 +0200
-@@ -242,10 +242,10 @@
+--- scripts/mysqld_safe.sh.orig	2017-01-09 14:36:43 UTC
++++ scripts/mysqld_safe.sh
+@@ -468,10 +468,10 @@ fi
  
  if test -z "$MYSQL_HOME"
  then 
@@ -13,12 +13,12 @@
  $DATADIR/my.cnf
  IGNORING $DATADIR/my.cnf"
  
-@@ -254,7 +254,7 @@
+@@ -480,7 +480,7 @@ IGNORING $DATADIR/my.cnf"
    then
      log_error "WARNING: Found $DATADIR/my.cnf
  The data directory is a deprecated location for my.cnf, please move it to
 -$MY_BASEDIR_VERSION/my.cnf"
 +$MY_BASEDIR_VERSION/etc/my.cnf"
+     unsafe_my_cnf=1
      MYSQL_HOME=$DATADIR
    else
-     MYSQL_HOME=$MY_BASEDIR_VERSION
