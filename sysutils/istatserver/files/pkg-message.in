@@ -1,6 +1,7 @@
 ================================================================================
 
-Please copy %%PREFIX%%/etc/istat.conf-dist to %%PREFIX%%/etc/istat.conf and
-change necessary variables before starting the daemon.
+%%PREFIX%%/etc/istatserver/istatserver.conf is the daemon's configuration file.
+Please edit the "server_code" framework with a unique numeric code for your
+server.
 
 ================================================================================
