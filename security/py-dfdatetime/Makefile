@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfdatetime
-PORTVERSION=	20161101
+PORTVERSION=	20170103
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/log2timeline/dfdatetime/releases/download/${PORTVERSION}/
