@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PROVIDE: istatd
+# PROVIDE: istatserver
 # REQUIRE: LOGIN
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -12,17 +12,17 @@
 
 . /etc/rc.subr
 
-name="istatd"
-rcvar=istatd_enable
+name="istatserver"
+rcvar=istatserver_enable
 
 command=%%PREFIX%%/bin/${name}
 
 load_rc_config $name
 
-: ${istatd_enable="NO"}
-: ${istatd_config="%%PREFIX%%/etc/istat.conf"}
+: ${istatserver_enable="NO"}
+: ${istatserver_config="%%PREFIX%%/etc/istatserver/istatserver.conf"}
 
-command_args="-d -c $istatd_config"
+command_args="-d -c $istatserver_config"
 
 run_rc_command "$1"
 

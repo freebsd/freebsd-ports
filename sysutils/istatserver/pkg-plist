@@ -1,0 +1,5 @@
+bin/istatserver
+@sample etc/istatserver/istatserver.conf.sample
+@sample etc/istatserver/istatserver_generated.conf.sample
+man/man1/istatserver.1.gz
+man/man5/istatserver.conf.5.gz

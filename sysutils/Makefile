@@ -470,7 +470,7 @@
     SUBDIR += isc-cron
     SUBDIR += isomaster
     SUBDIR += isomd5sum
-    SUBDIR += istatd
+    SUBDIR += istatserver
     SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jail2

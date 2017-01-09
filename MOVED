@@ -8975,3 +8975,4 @@ devel/rubygem-actionview|devel/rubygem-actionview4|2017-01-08|Rename to match ou
 devel/rubygem-rdoc3|devel/rubygem-rdoc|2017-01-08|Has expired: Older version no longer required
 devel/rubygem-activejob|devel/rubygem-activejob4|2017-01-08|Rename to match our Rails ports naming
 www/httpie|www/py-httpie|2017-01-09|Renamed to match upstream (PyPI) name
+sysutils/istatd|sysutils/istatserver|2017-01-09|Project was renamed
