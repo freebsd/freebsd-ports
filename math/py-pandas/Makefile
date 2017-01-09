@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-PORTVERSION=	0.19.1
+PORTVERSION=	0.19.2
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES
 OPTIONS_GROUP_HTML=	LXML HTML5LIB JINJA2
 OPTIONS_GROUP_EXCEL=	XLRD XLWT OPENPYXL XLSX
-OPTIONS_RADIO_SQL=	ALCHEMY08 ALCHEMY09 ALCHEMY10
+OPTIONS_RADIO_SQL=	ALCHEMY08 ALCHEMY09 ALCHEMY10 ALCHEMY11
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
@@ -63,6 +63,7 @@ XLSX_DESC=	Write MS Excel with textproc/py-xlsxwriter
 ALCHEMY08_DESC=	Support SQL databases via databases/py-sqlalchemy08
 ALCHEMY09_DESC=	Support SQL databases via databases/py-sqlalchemy09
 ALCHEMY10_DESC=	Support SQL databases via databases/py-sqlalchemy10
+ALCHEMY11_DESC=	Support SQL databases via databases/py-sqlalchemy11
 ACCEL_DESC=	Computation Acceleration Add-ons
 STORAGE_DESC=	Data Storage Add-ons
 SQL_DESC=	SQLAlchemy ORM Add-ons
@@ -87,6 +88,7 @@ XLSX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter
 ALCHEMY08_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08
 ALCHEMY09_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy09>0:databases/py-sqlalchemy09
 ALCHEMY10_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10
+ALCHEMY11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11
 
 .include <bsd.port.options.mk>
 
@@ -106,6 +108,10 @@ USE_PYTHON=	autoplist distutils
 XUNITFILE=	${WRKDIR}/nosetests.xml
 NOSE_ENV=	http_proxy=${HTTP_PROXY}
 NOSE_ARGS=	${PORTNAME} --exe --with-xunit --xunit-file=${XUNITFILE}
+
+post-install:
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		-name '*.so' -exec ${STRIP_CMD} {} +
 
 regression-test: build
 	@(cd ${WRKSRC} && \
