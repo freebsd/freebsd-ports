@@ -83,10 +83,6 @@ CFLAGS_powerpc64=	-mminimal-toc
 CXXFLAGS+=	-flax-vector-conversions
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-EXTRA_PATCHES+=  ${FILESDIR}/extrapatch-src_gui_painting_qcolor.cpp
-.endif
-
 post-build:
 .for d in ${MORE_WRKSRCS}
 	@cd ${WRKSRC}/${d} && \

@@ -20,16 +20,7 @@ GH_ACCOUNT=	co60ca
 
 PLIST_FILES=	bin/bunnysay
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-LIB_DEPENDS+=	libc++.so.1:devel/libc++
-CFLAGS+=	-isystem${LOCALBASE}/include/c++/v1
-CXXFLAGS+=	-isystem${LOCALBASE}/include/c++/v1
-LDFLAGS+=	-L${LOCALBASE}/lib/c++
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

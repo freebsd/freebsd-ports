@@ -28,16 +28,6 @@ USE_GCC=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-post-patch:
-	# missing C99 functions in FreeBSD's math.h, use C++ instead
-	@${REINPLACE_CMD} -e 's|expl(|std::exp(|g' ${WRKSRC}/apps/snp_store/snp_store.h
-	@${REINPLACE_CMD} -e 's|logl(|std::log(|g' ${WRKSRC}/apps/snp_store/snp_store.h
-	# the other way around (use math.h instead of cmath)
-	@${REINPLACE_CMD} -e 's|std::round|round|g' ${WRKSRC}/apps/yara/mapper_writer.h
-	@${REINPLACE_CMD} -e 's|std::erfc|erfc|g' ${WRKSRC}/apps/yara/bits_matches.h
-.endif
-
 .if ${ARCH} == "i386"
 PLIST_SUB+=	RM_I386="@comment "
 .else

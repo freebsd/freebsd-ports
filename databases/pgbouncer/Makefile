@@ -41,12 +41,6 @@ PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|= pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \
 		-e "s|= pgbouncer.pid|= ${PGBOUNCER_RUNDIR}/pgbouncer.pid|g" \

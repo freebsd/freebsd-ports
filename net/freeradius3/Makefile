@@ -286,14 +286,6 @@ CONFIGURE_ARGS+=--with-udpfromto
 WITH_OPENSSL_PORT=yes
 .endif
 
-# rlm_eap_fast is currently broken under 9.x:
-# https://github.com/FreeRADIUS/freeradius-server/issues/1803
-.if ${OSVERSION} < 1000015
-PLIST_SUB+=     EAPFAST="@comment "
-.else
-PLIST_SUB+=     EAPFAST=""
-.endif
-
 .include <bsd.port.pre.mk>
 
 # if we're installing, place sample configs into ${EXAMPLESDIR}
@@ -350,9 +342,6 @@ SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
-.if ${OSVERSION} < 1000015
-	${RM} -r ${WRKSRC}/src/modules/rlm_eap/types/rlm_eap_fast
-.endif
 # never try to find execinfo.h (needed until we can enable/disable backtrace
 	@${REINPLACE_CMD} -e '/#include <execinfo.h>/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -Ee "s:tests/all.mk ::" ${WRKSRC}/src/all.mk

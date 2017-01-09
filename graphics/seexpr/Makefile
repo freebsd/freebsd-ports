@@ -27,19 +27,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DUSE_SSE41:BOOL=ON
 .endif
 
-.include <bsd.port.pre.mk>
-
-# base flex(1) v2.5.4 is not sufficient
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/<alloca\.h>/d' ${WRKSRC}/src/SeExpr/SePlatform.h
 	@${REINPLACE_CMD} -e 's, "dl",,' ${WRKSRC}/src/SeExpr/CMakeLists.txt
-.if ${OSVERSION} < 1000033
-	@${REINPLACE_CMD} -e '/COMMAND/s,flex,${LOCALBASE}/bin/&,' \
-		${WRKSRC}/src/build/macros.cmake
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,13 +31,6 @@ PORTEXAMPLES=	lsar.bash_completion unar.bash_completion
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000024
-CC=		clang
-CXX=		clang++
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/XADMaster/??ar ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/Extra/??ar.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -51,4 +44,4 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/Extra/??ar.bash_completion \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

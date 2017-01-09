@@ -36,11 +36,6 @@ CXXFLAGS+=	-msse2 -mfpmath=sse
 CXXFLAGS+=	-fopenmp
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libml.so:math/ldouble
-LDFLAGS+=	-lml
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,RGBColorspace,s&,' ${WRKSRC}/image.cc
 

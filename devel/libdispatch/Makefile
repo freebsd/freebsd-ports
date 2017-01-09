@@ -76,19 +76,6 @@ _MAN3=	dispatch.3 \
 	dispatch_walltime.3
 PLIST_FILES+=	${_MAN3:S|^|man/man3/|:S|$|.gz|}
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 1000024)
-OPTIONS_DEFINE=	CLANG
-OPTIONS_DEFAULT=	CLANG
-CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
-.endif
-
-.if ${PORT_OPTIONS:MCLANG}
-CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/lib
-CONFIGURE_ENV+=	CC="/usr/bin/clang"
-.endif
-
 #
 # Get rid of .la and static library files
 #
@@ -97,4 +84,4 @@ post-configure:
 	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
 
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -43,17 +43,9 @@ MIGRATION_CONFIGURE_ENABLE=	migration
 MIGRATION_USE=		GNOME=gconf2
 MIGRATION_DESC=		Profile migration to gsettings (pulls in gconf2)
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/configure ${WRKSRC}/config.h.in
-.if ${OSVERSION} < 1000000
-	@${REINPLACE_CMD} -e 's|-Wno-suggest-attribute=format||g ; \
-		s|-Wno-unused-but-set-variable||g' \
-		${WRKSRC}/src/Makefile.in
-EXTRA_PATCHES+=	${FILESDIR}/extra-src_terminal-screen.c
-.endif
 
 post-install:
 .for i in ca cs de el es fi fr gl hu pt_BR ru

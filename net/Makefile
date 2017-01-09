@@ -1046,6 +1046,7 @@
     SUBDIR += py-speedtest-cli
     SUBDIR += py-sshuttle
     SUBDIR += py-suds
+    SUBDIR += py-suds-jurko
     SUBDIR += py-terminado
     SUBDIR += py-tofu
     SUBDIR += py-tweepy

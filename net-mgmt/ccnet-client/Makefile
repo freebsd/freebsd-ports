@@ -37,10 +37,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ldap
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
-
 .include <bsd.port.mk>

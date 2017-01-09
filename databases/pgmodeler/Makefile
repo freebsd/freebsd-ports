@@ -33,10 +33,4 @@ pre-install:
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/tests
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-USE_GCC=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

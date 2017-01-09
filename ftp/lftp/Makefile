@@ -47,15 +47,6 @@ GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=	pkgconfig
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-. endif
-.endif
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
 		${STAGEDIR}${PREFIX}/etc/lftp.conf.sample

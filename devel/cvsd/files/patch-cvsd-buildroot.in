@@ -1,0 +1,42 @@
+--- cvsd-buildroot.in.orig	Thu Jun  1 23:57:20 2006
++++ cvsd-buildroot.in	Tue Jun  6 11:38:57 2006
+@@ -212,39 +212,6 @@
+   fi
+ done
+ 
+-# populate /dev (need root privileges for this)
+-echo $ECHO_N "creating $ROOT/dev devices... $ECHO_C"
+-DEVICES="null zero"
+-MISSINGDEVS=""
+-for d in $DEVICES
+-do
+-  if [ -r "$ROOT/dev/$d" ]
+-  then
+-    :
+-  else
+-    MISSINGDEVS="$MISSINGDEVS $d"
+-  fi
+-done
+-if [ -n "`echo $MISSINGDEVS`" ]
+-then
+-  if (cd /dev ; tar chpf - $MISSINGDEVS) | \
+-     ( cd "$ROOT/dev" ; tar xpf - > /dev/null 2>&1 )
+-  then
+-    # check if we can use the devices
+-    if ( echo TEST > "$ROOT/dev/null" && \
+-         echo TEST > "$ROOT/dev/zero" )  2> /dev/null
+-    then
+-      echo "done."
+-    else
+-      echo "FAILED (unable to use devices)"
+-    fi
+-  else
+-    echo "FAILED."
+-  fi
+-else
+-  echo "already there."
+-fi
+-
+ # update /etc/passwd
+ echo $ECHO_N "adding users to $ROOT/etc/passwd...$ECHO_C"
+ for i in $USERS

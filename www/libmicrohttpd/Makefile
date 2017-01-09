@@ -31,26 +31,21 @@ GNUTLS_CONFIGURE_ENABLE=https
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 
 PLIST_FILES=	include/microhttpd.h \
+		include/microspdy.h \
 		lib/libmicrohttpd.a \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.so.10 \
 		lib/libmicrohttpd.so.10.27.0 \
-		libdata/pkgconfig/libmicrohttpd.pc \
-		libdata/pkgconfig/libmicrospdy.pc \
-		man/man3/libmicrohttpd.3.gz
-
-.include <bsd.port.pre.mk>
-
-.if !(${SSL_DEFAULT} == base && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015)
-PLIST_FILES+=	include/microspdy.h \
 		lib/libmicrospdy.a \
 		lib/libmicrospdy.so \
 		lib/libmicrospdy.so.0 \
-		lib/libmicrospdy.so.0.0.0
-.endif
+		lib/libmicrospdy.so.0.0.0 \
+		libdata/pkgconfig/libmicrohttpd.pc \
+		libdata/pkgconfig/libmicrospdy.pc \
+		man/man3/libmicrohttpd.3.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin_PROGRAMS =|noinst_PROGRAMS +=|' \
 		${WRKSRC}/src/examples/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

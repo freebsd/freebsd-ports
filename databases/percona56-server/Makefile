@@ -105,11 +105,6 @@ BROKEN=		Does not compile on arm
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	TokuDB not supported on 32-bit platforms, see \
 			https://github.com/percona/PerconaFT/blob/master/README.md
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000000
-IGNORE=	unsupported on FreeBSD 9 or older
-.endif
-
 .endif
 
 .include <bsd.port.post.mk>

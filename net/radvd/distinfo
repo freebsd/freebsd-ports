@@ -1,2 +1,3 @@
-SHA256 (radvd-1.15.tar.gz) = ba2e16bf0b2ac0030aacb0927304603f7ebbd317fdf30a24ee6f9ba06428391d
-SIZE (radvd-1.15.tar.gz) = 185528
+TIMESTAMP = 1483864860
+SHA256 (radvd-2.15.tar.gz) = 83dd770595e6182757fd652cfc46ee462b73d8d34ba0848a1d481c4d51143607
+SIZE (radvd-2.15.tar.gz) = 214256

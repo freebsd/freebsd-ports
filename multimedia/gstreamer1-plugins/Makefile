@@ -125,11 +125,6 @@ DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
-# openssl in 9.x is too old
-.if ${GST_PLUGIN} == dtls && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=yes
-.endif
-
 post-patch:
 .if ${DIST} == bad
 # custom rule to fix opencv detection in configure
@@ -169,12 +164,6 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/uridownloader/libgsturidownloader-$$(GST_API_VERSION).la|-lgsturidownloader-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/adaptivedemux/libgstadaptivedemux-@GST_API_VERSION@.la|-lgstadaptivedemux-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-$$(GST_API_VERSION).la|-lgstbadvideo-${VERSION}|'
-.endif
-
-# workaround a crash in clang 3.3 crash llvm bug # 15840
-.if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
-     (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
-USE_GCC=	any
 .endif
 
 pre-install:

@@ -27,13 +27,7 @@ MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${ARCH} == "i386"
-CFLAGS+=	-march=pentium
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

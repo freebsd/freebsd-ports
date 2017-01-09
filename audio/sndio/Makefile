@@ -17,15 +17,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sndiod
 
-.include <bsd.port.pre.mk>
-
-# FreeBSD 9.x does not have SOCK_CLOEXEC
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CFLAGS+=	-DSOCK_CLOEXEC=0
-.endif
-
-USERS=	_sndio
-GROUPS=	_sndio
+USERS=		_sndio
+GROUPS=		_sndio
 
 # Parallel build leads to problems, but sndio is very quick to compile
 # as is so not worth fixing
@@ -38,4 +31,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/aucat \
 		${STAGEDIR}${PREFIX}/bin/midicat
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

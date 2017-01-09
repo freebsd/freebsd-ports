@@ -1,6 +1,6 @@
---- wscript.orig	2016-08-16 10:36:06 UTC
+--- wscript.orig	2017-01-08 15:44:05 UTC
 +++ wscript
-@@ -91,6 +91,9 @@ def options(ctx):
+@@ -103,6 +103,9 @@ def options(ctx):
              help_str = 'build documentation (auto)',
              help_disable_str = 'do not build documentation')
  
@@ -10,7 +10,7 @@
      ctx.add_option('--with-target-platform', type='string',
              help='set target platform for cross-compilation', dest='target_platform')
  
-@@ -323,6 +326,9 @@ def configure(ctx):
+@@ -376,6 +379,9 @@ def configure(ctx):
          # check if doxygen is installed, optional
          try:
            ctx.find_program('doxygen', var='DOXYGEN')
@@ -20,17 +20,18 @@
          except ctx.errors.ConfigurationError:
            ctx.to_log('doxygen was not found (ignoring)')
  
-@@ -358,11 +364,11 @@ def build(bld):
-         bld( source = bld.path.ant_glob('doc/*.txt') )
+@@ -428,12 +434,12 @@ def txt2man(bld):
  
+ def doxygen(bld):
      # build documentation from source files using doxygen
 -    if bld.env['DOXYGEN']:
 +    if bld.env['DOXYGEN'] and not bld.options.disable_doxygen:
          bld( name = 'doxygen', rule = 'doxygen ${SRC} > /dev/null',
                  source = 'doc/web.cfg',
+                 target = '../doc/web/html/index.html',
                  cwd = 'doc')
--        bld.install_files( '${PREFIX}' + '/share/doc/libaubio-doc',
-+        bld.install_files( '${PREFIX}' + '/share/doc/aubio',
+-        bld.install_files( '${DATAROOTDIR}' + '/doc/libaubio-doc',
++        bld.install_files( '${DATAROOTDIR}' + '/doc/aubio',
                  bld.path.ant_glob('doc/web/html/**'),
                  cwd = bld.path.find_dir ('doc/web'),
                  relative_trick = True)

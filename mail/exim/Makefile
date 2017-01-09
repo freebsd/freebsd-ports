@@ -83,12 +83,6 @@ IGNORE=	you cannot enable DMARC without SPF and DKIM support
 .if ! ${PORT_OPTIONS:MDNSSEC} || ! ${PORT_OPTIONS:MTLS}
 IGNORE=	you cannot enable DANE without DNSSEC support or without TLS support
 .endif
-# Use Openssl from the ports
-.if ${OSVERSION} < 1000000
-. if ! ${PORT_OPTIONS:MGNUTLS}
-WITH_OPENSSL_PORT=	yes
-. endif
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MSA_EXIM} || defined(FETCH_ALL)

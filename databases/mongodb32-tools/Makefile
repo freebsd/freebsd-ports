@@ -42,13 +42,6 @@ MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \
 USES=	localbase
 MY_TAGS=	-tags "${USE_MY_TAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-# Cannot be built
-IGNORE=	unsupported on FreeBSD 9 or older
-.endif
-
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT} ; \
 		${LN} -sf ${WRKSRC} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -71,4 +64,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,13 +34,7 @@ PLIST_FILES=	man/man8/ladvd.8.gz \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-CFLAGS_amd64=   -fPIC
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e 's|LICENSE||' ${WRKSRC}/doc/Makefile.am
+	@${REINPLACE_CMD} -e 's|LICENSE||' ${WRKSRC}/doc/Makefile.am
 
 .include <bsd.port.mk>

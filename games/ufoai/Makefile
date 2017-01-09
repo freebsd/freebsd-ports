@@ -79,10 +79,6 @@ CONFIGURE_ARGS+=--disable-uforadiant
 PLIST_SUB+=	UFORADIANT="@comment "
 .endif
 
-.if ${OSVERSION} < 1000024
-FAVORITE_COMPILER=	gcc
-.endif
-
 .include <bsd.port.pre.mk>
 
 post-extract:
