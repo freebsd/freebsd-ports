@@ -1905,6 +1905,7 @@
     SUBDIR += ruby-google
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actionpack4
+    SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
