@@ -11,8 +11,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libmlt.so:multimedia/mlt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
-		${LOCALBASE}/lib/libjack.so.0:audio/jack \
-		${LOCALBASE}/lib/libSDL-1.2.so.0:devel/sdl12
+		${LOCALBASE}/lib/libjack.so:audio/jack \
+		${LOCALBASE}/lib/libSDL-1.2.so:devel/sdl12
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
