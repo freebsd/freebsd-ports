@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bearssl
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.2
+PORTREVISION=	0
 CATEGORIES=	security devel
 MASTER_SITES=	https://bearssl.org/
 
