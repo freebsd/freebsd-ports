@@ -1,6 +1,6 @@
---- setupbase.py.orig
+--- setupbase.py.orig	2016-08-13 12:56:43 UTC
 +++ setupbase.py
-@@ -272,7 +272,7 @@
+@@ -203,7 +203,7 @@ def find_data_files():
      Just man pages at this point.
      """
  
