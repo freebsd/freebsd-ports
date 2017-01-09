@@ -8,6 +8,8 @@ CATEGORIES+=	www ipv6
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	w3m
 LICENSE_NAME=	w3m
 LICENSE_FILE=	${WRKSRC}/doc/README
