@@ -837,7 +837,7 @@ graylog:*:848:
 # free: 893
 # free: 894
 # free: 895
-# free: 896
+istat:*:896:
 znc:*:897:
 ufdb:*:898:
 guacamole:*:899:

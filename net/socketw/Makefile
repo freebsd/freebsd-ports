@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0.20151501
 CATEGORIES=	net
 
 MAINTAINER=	monwarez@mailoo.org
-COMMENT=	SocketW is a cross platform streaming socket C++
+COMMENT=	Cross platform C++ streaming socket library
 
 LICENSE=	GPLv2+
 

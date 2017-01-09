@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spiff
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -23,15 +23,12 @@ STRIP=		# stripping can break go binaries
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@cd ${WRKSRC} ; ${MV} ${WRKSRC}/vendor ${WRKSRC}/src
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
-		${MV} .gitignore .travis.yml Godeps LICENSE Makefile README.md \
+		${MV} .gitignore LICENSE Makefile README.md \
 		compare dynaml examples flow init_test.go scripts spiff.go \
 		spiff_test.go yaml \
 		src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
-	@${MV} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/Godeps/_workspace/src/github.com/${GH_ACCOUNT}/candiedyaml \
-		${WRKSRC}/src/github.com/${GH_ACCOUNT}
-	@${MV} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/Godeps/_workspace/src/github.com/codegangsta \
-		${WRKSRC}/src/github.com
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \

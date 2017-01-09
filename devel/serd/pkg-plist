@@ -1,0 +1,7 @@
+bin/serdi
+include/serd-0/serd/serd.h
+lib/libserd-0.so
+lib/libserd-0.so.0
+lib/libserd-0.so.0.24.0
+libdata/pkgconfig/serd-0.pc
+man/man1/serdi.1.gz
