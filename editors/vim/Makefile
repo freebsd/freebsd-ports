@@ -3,6 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	8.0.0149
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -38,6 +39,7 @@ MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=ncurses
 REINPLACE_ARGS=	-i ''
 USES=		cpe iconv ncurses pkgconfig shebangfix
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
@@ -85,32 +87,35 @@ NLS_USES=		gettext
 
 # UI
 ATHENA_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=athena
-ATHENA_PLIST_SUB=	GUI=""
+ATHENA_PLIST_SUB=	GUI="" DESKTOP="@comment "
 ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
 
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
-CONSOLE_PLIST_SUB=	GUI="@comment "
+CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
 
 GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2
-GNOME_PLIST_SUB=	GUI=""
+GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,glproto,x11,xpm,xt
+GNOME_USES=		desktop-file-utils
 
 GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2
-GTK2_PLIST_SUB=		GUI=""
+GTK2_PLIST_SUB=		GUI="" DESKTOP=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
+GTK2_USES=		desktop-file-utils
 
 GTK3_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk3
-GTK3_PLIST_SUB=		GUI=""
+GTK3_PLIST_SUB=		GUI="" DESKTOP=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
+GTK3_USES=		desktop-file-utils
 
 MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
-MOTIF_PLIST_SUB=	GUI=""
+MOTIF_PLIST_SUB=	GUI="" DESKTOP="@comment "
 MOTIF_USES=		motif
 MOTIF_USE=		XORG=ice,sm,x11,xmu,xt
 
 X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x"
-X11_PLIST_SUB=		GUI="@comment "
+X11_PLIST_SUB=		GUI="@comment " DESKTOP="@comment "
 X11_USE=		XORG=ice,sm,x11,xt
 
 # LANGUAGE BINDINGS
@@ -143,7 +148,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC}/ -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e 's| $$<| $$>|'
-	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g' ${WRKSRC}/src/auto/configure
 	@${ECHO_CMD} '#define SYS_VIMRC_FILE "'${ETCDIR}'/vimrc"' >> ${WRKSRC}/src/feature.h
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
@@ -170,8 +174,10 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#define HAVE_SYSINFO 1|/* #undef HAVE_SYSINFO */|' ${WRKSRC}/src/auto/config.h
 
 post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/ex
+	@${RM} ${STAGEDIR}${PREFIX}/bin/view
 .for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
-	${LN} -s vim ${STAGEDIR}${PREFIX}/bin/$F
+	${LN} -sf vim ${STAGEDIR}${PREFIX}/bin/$F
 .endfor
 
 post-install-DEFAULT_VIMRC-on:
