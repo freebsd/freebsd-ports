@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-prompt
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=0.60:devel/py-prompt_toolkit \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.1.0:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
-		httpie>=0.9.0:www/httpie
+		${PYTHON_PKGNAMEPREFIX}httpie>=0.9.2:www/py-httpie
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

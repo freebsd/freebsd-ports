@@ -308,7 +308,6 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
-    SUBDIR += httpie
     SUBDIR += httpsqs
     SUBDIR += httptunnel
     SUBDIR += httrack
@@ -1673,6 +1672,7 @@
     SUBDIR += py-html
     SUBDIR += py-html5lib
     SUBDIR += py-http-parser
+    SUBDIR += py-httpie
     SUBDIR += py-httplib2
     SUBDIR += py-hyper
     SUBDIR += py-imdbpy
