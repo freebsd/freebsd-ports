@@ -860,6 +860,7 @@
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-session_store
     SUBDIR += rubygem-activerecord4
+    SUBDIR += rubygem-activerecord5
     SUBDIR += rubygem-after_commit_queue
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
