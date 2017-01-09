@@ -17,32 +17,20 @@ GH_ACCOUNT=	cisco
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-openssl
-CPPFLAGS+=	-I${OPENSSLBASE}/include
-LIBS+=		-L${OPENSSLBASE}/lib
-USES=		cpe gmake pathfix pkgconfig
+USES=		cpe localbase gmake pathfix pkgconfig ssl
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
+
+ALL_TARGET=	all shared_library
+TEST_TARGET=	runtest
+TEST_ENV=	LD_LIBRARY_PATH=${WRKSRC}
 
 .if ! defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/pkg-config.*openssl/d' ${WRKSRC}/configure
-
-post-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} shared_library)
-
-check test runtest regression-test: build
-	${SETENV} LD_LIBRARY_PATH=${WRKSRC} ${MAKE_CMD} -C ${WRKSRC} runtest
 
 .include <bsd.port.pre.mk>
 
