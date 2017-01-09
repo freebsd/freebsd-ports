@@ -74,12 +74,6 @@ LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-MAKE_ARGS+=	NO_YACC=YesPlease
-CFLAGS+=	-std=c++11
-LDFLAGS:=	-Wl,-rpath=${_GCC_RUNTIME} ${LDFLAGS}
-.endif
-
 post-patch-SOUND-on:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/AppHdr.h
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/AppHdr.h

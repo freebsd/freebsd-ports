@@ -51,15 +51,4 @@ LOG_LEVEL_INFO_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=2
 LOG_LEVEL_DEBUG_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=3
 LOG_LEVEL_TRACE_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=4
 
-.include <bsd.port.options.mk>
-
-regression-test: test
-
-.if ${OSVERSION} < 1001000
-# require clang & libc++
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:lang/clang34 \
-		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
-.endif
-
 .include <bsd.port.mk>

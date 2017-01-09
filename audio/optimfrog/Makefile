@@ -14,6 +14,8 @@ LICENSE_NAME=	OptimFROG - License
 LICENSE_FILE=	${WRKSRC}/license.html	#only available as html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
+
 CONFLICTS_INSTALL?=	optimfrog-sse2-[0-9]*
 
 ONLY_FOR_ARCHS?=	amd64 i386
@@ -38,10 +40,6 @@ DISTNAME=	OptimFROG_FreeBSD_x86_SSE2_${DISTVERSION:S/.//}
 . else
 DISTNAME=	OptimFROG_FreeBSD_x86_${DISTVERSION:S/.//}
 . endif
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 
 do-install:

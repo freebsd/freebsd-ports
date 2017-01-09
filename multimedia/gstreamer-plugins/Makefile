@@ -161,12 +161,4 @@ post-patch:
 		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
-# workaround a crash in clang 3.3 crash llvm bug # 15840
-.if ${OPSYS} == FreeBSD
-.if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
-     (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
-USE_GCC=	any
-.endif
-.endif
-
 .include <bsd.port.mk>

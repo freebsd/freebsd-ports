@@ -23,13 +23,6 @@ NO_CONFIGURE=	yes
 SUB_FILES=	pkg-message Makefile
 ALL_TARGET=	bin
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS |&+|' ${WRKSRC}/s2n.mk
 	@${REINPLACE_CMD} -e 's|CRYPTO_LDFLAGS |&+|' \

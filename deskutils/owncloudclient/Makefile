@@ -40,7 +40,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1000015
+.if ${OPSYS} != FreeBSD
 WITH_OPENSSL_PORT=	yes
 
 # CMake 3.3.x will use $PATH when looking for headers and libraries by default,

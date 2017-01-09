@@ -102,9 +102,6 @@ TESTING_BUILD_DEPENDS=	cppunit-config:devel/cppunit
 LIBSTRIP_FILES+=	uhd
 LIB_DEPENDS+=	libuhd.so:comms/uhd
 .endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
 
 PATCH_FILES=	docs/doxygen/Doxyfile.in \
 		gr-fec/lib/CMakeLists.txt

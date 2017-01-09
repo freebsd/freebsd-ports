@@ -61,10 +61,6 @@ MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
-.if  ${OSVERSION} < 1000000
-# OpenSSL is pre v1.0 in FBSD9.x so the ports version needs to be used
-WITH_OPENSSL_PORT=	yes
-.endif
 
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
 			--with-ssl-include-dir=${OPENSSLINC} \

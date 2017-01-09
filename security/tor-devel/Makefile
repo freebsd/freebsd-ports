@@ -49,10 +49,6 @@ STATIC_TOR_USES_OFF=	ssl
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
-
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
 CONFIGURE_ARGS+=	--enable-gcc-hardening

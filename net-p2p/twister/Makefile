@@ -43,14 +43,8 @@ MAKE_ENV=	BOOST_INCLUDE_PATH=${LOCALBASE}/include	\
 PLIST_FILES=	bin/twisterd
 PORTDOCS=	README.md
 
-.include <bsd.port.options.mk>
-
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1000000)
-WITH_OPENSSL_PORT=	yes
-.endif
-
 post-patch:
-	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|'	\
+	@${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|'	\
 		${WRKSRC}/share/genbuild.sh
 
 pre-configure:
@@ -60,7 +54,7 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

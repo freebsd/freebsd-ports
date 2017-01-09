@@ -132,17 +132,8 @@ LDAP_VARS=	_REQUIRE+=slapd
 MYSQL_VARS=	_REQUIRE+=mysql
 PGSQL_VARS=	_REQUIRE+=postgresql
 
-.include <bsd.port.options.mk>
-
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_FILES+=	pkg-message
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000011
-USES+=		compiler:c11
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
@@ -169,4 +160,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

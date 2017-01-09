@@ -19,13 +19,6 @@ USE_GNOME=	gtk20
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-# Requires std=g++11
-USE_GCC=	yes
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile -exec \
 		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' {} \;
@@ -46,4 +39,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/praat.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

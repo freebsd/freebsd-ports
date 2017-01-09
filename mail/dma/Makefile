@@ -53,9 +53,6 @@ post-patch:
 		${WRKSRC}/dma.conf
 	@${REINPLACE_CMD} -e '/^MK_MAN/d' -e 's/^NOMAN/NO_MAN/' \
 		${WRKSRC}/bsd/dma-mbox-create/Makefile
-.if ${OSVERSION} < 1000013
-	@${REINPLACE_CMD} -e 's,^YFLAGS.*,,' ${WRKSRC}/bsd/dma/Makefile
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

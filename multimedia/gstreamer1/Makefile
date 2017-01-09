@@ -37,13 +37,6 @@ LIBCHECK_DESC=	Unit tests support
 LIBCHECK_CONFIGURE_ENABLE=	check
 LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/libcheck
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure

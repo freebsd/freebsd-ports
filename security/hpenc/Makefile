@@ -27,12 +27,6 @@ CXXFLAGS+=	-std=c++11 \
 		-I${OPENSSLINC}
 LDFLAGS+=	-pthread -lcrypto -L${OPENSSLLIB}
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000036
-WITH_OPENSSL_PORT=	yes
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hpenc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hpenc

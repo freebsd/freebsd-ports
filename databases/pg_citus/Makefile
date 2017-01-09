@@ -22,11 +22,4 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	INSTALL="${INSTALL} -c"
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-MAKE_ARGS+=	FLEX=${LOCALBASE}/bin/flex
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

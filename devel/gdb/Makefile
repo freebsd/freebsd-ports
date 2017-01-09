@@ -69,15 +69,8 @@ TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000010
-# FreeBSD 9.x and earlier do not define SIGLIBRT in <sys/signal.h>
-CFLAGS+=	-DSIGLIBRT=33
-.endif
-
-.if ${OSVERSION} > 1000010
 # The option -Wno-extended-offsetof is supported by clang only
 CFLAGS+=	-Wno-extended-offsetof
-.endif
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline

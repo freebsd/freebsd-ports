@@ -62,20 +62,12 @@ UNIXSOCKETS_CONFIGURE_OFF=	--without-unix-sockets
 
 UNIXSOCKETS_DESC=	Unix sockets support
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1002000
-USES+=		gmake
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ufdbguardd \
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ufdbguardd \
 		${STAGEDIR}${PREFIX}/bin/ufdbgclient \
 		${STAGEDIR}${PREFIX}/bin/ufdbsignal \
 		${STAGEDIR}${PREFIX}/bin/ufdbGenTable \
 		${STAGEDIR}${PREFIX}/bin/ufdbAnalyse \
 		${STAGEDIR}${PREFIX}/bin/ufdbhttpd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

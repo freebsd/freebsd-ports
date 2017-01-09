@@ -28,11 +28,4 @@ post-patch:
 		-e '/\*freebsd\*/,/;;/d' \
 		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-# Workaround for libusb not knowing LIBUSB_CLASS_APPLICATION
-.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100029) || (${OSVERSION} < 1000715)
-CFLAGS+=	-DLIBUSB_CLASS_APPLICATION=0xfe
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

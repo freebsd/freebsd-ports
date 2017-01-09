@@ -22,14 +22,4 @@ ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS+=--disable-udev
 CONFIGURE_ARGS+=--disable-glamor
 
-.include <bsd.port.options.mk>
-
-.if (${OSVERSION} >= 903000 && ${OSVERSION} < 1000000)
-RUN_DEPENDS+=	drm-kmod>=9:x11-drivers/drm-kmod
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"radeonkms"|"radeonkms_port"|g' \
-		${WRKSRC}/src/radeon_kms.c
-.endif
-
 .include <bsd.port.mk>
