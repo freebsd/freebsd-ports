@@ -4290,6 +4290,7 @@
     SUBDIR += py-ioflo
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
+    SUBDIR += py-ipykernel
     SUBDIR += py-ipython_genutils
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
