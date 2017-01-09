@@ -4382,6 +4382,7 @@
     SUBDIR += py-nagioscheck
     SUBDIR += py-natsort
     SUBDIR += py-natural
+    SUBDIR += py-nbconvert
     SUBDIR += py-nbformat
     SUBDIR += py-ncurses
     SUBDIR += py-nose
