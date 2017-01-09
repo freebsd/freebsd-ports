@@ -1,0 +1,5 @@
+Redirects any TCP connection through a SOCKS5 proxy
+
+Redirect all TCPSockets through a SOCKS5 proxy
+
+WWW: http://socksify.rubyforge.org/
