@@ -324,6 +324,7 @@
     SUBDIR += fsbackup
     SUBDIR += fsc
     SUBDIR += fstyp
+    SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
     SUBDIR += fusefs-chironfs
