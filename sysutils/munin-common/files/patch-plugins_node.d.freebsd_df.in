@@ -1,0 +1,11 @@
+--- plugins/node.d.freebsd/df.in.orig	2016-12-04 19:34:49 UTC
++++ plugins/node.d.freebsd/df.in
+@@ -24,7 +24,7 @@ if [ "$1" = "autoconf" ]; then
+ 	exit 0
+ fi
+ 
+-EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,nfs,nullfs"
++EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,nfs,nullfs,autofs"
+ 
+ if [ $(uname -s) = "GNU/kFreeBSD" ]; then
+ 	EXCLUDEDFS=$(echo $EXCLUDEDFS | sed 's/^-t /-x /; s/,/ -x /g')
