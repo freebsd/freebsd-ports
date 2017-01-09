@@ -1,0 +1,12 @@
+Serd is a lightweight C library for RDF syntax which supports reading
+and writing Turtle and NTriples.
+
+Serd (and the included serdi tool) can be used to stream abbreviated
+Turtle. Serd can serialise an unbounded amount of abbreviated
+Turtle using a fixed amount of memory, and it does so very quickly.
+
+Serd is written to the Turtle, NTriples and URI specifications, and
+includes a comprehensive test suite which includes all the tests
+from the Turtle specification.
+
+WWW: https://drobilla.net/software/serd
