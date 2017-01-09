@@ -12,14 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a PDF file from image files
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libnetpbm.so:graphics/netpbm
 
-USES=		bison gmake
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		bison gmake jpeg localbase:ldflags
 
 NOT_FOR_ARCHS=	powerpc sparc64
 NOT_FOR_ARCHS_REASON=	Only works on little endian systems
@@ -40,6 +38,8 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} tumble \
 		${STAGEDIR}${PREFIX}/bin)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README \
 		${STAGEDIR}${DOCSDIR})
