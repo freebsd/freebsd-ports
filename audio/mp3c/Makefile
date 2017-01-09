@@ -10,29 +10,22 @@ MASTER_SITES=	ftp://ftp.wspse.de/linux/wspse/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD to mp3c converter with a console frontend
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mp3info:audio/mp3info \
 		cdrecord:sysutils/cdrtools
 
 USES=		ncurses
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=${PREFIX}"
+GNU_CONFIGURE=	yes
+
+DEFAULT_CDROM_DEVICE?=	cd0
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000031
-DEFAULT_CDROM_DEVICE=	cd0
-.else
-DEFAULT_CDROM_DEVICE=	acd0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|rcd0d|${DEFAULT_CDROM_DEVICE}|g' \
@@ -42,4 +35,4 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cdrip.sh ${STAGEDIR}${LOCALBASE}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
