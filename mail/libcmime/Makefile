@@ -16,40 +16,17 @@ USES=		bison cmake pkgconfig
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	--no-warn-unused-cli
 
-OPTIONS_DEFINE=	DEBUG DOCS DOXYGEN
-OPTIONS_SUB=	yes
-DOCS_ALL_TARGET=doc
-
 PORTDOCS=	AUTHORS CHANGELOG INSTALL README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DEBUG DOCS DOXYGEN
+OPTIONS_SUB=	yes
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.33:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=	-DENABLE_DEBUG=TRUE
-.endif
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen>=1.8:devel/doxygen \
-		dot:graphics/graphviz
-CMAKE_ARGS+=	-DENABLE_DOC=TRUE
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
+DOCS_ALL_TARGET=	doc
+DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
+DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_BUILD_DEPENDS=	doxygen>=1.8:devel/doxygen \
+			dot:graphics/graphviz
+DOXYGEN_CMAKE_BOOL=	ENABLE_DOC
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|\$${CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
@@ -58,5 +35,14 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -E -e 's|STRIP_FROM_PATH        = ../src|STRIP_FROM_PATH        = ../|' \
 		${WRKSRC}/Doxyfile.cmake
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOXYGEN-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
