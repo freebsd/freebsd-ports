@@ -9,6 +9,7 @@ include/aubio/cvec.h
 include/aubio/fmat.h
 include/aubio/fvec.h
 include/aubio/io/audio_unit.h
+include/aubio/io/ioutils.h
 include/aubio/io/sink.h
 include/aubio/io/sink_apple_audio.h
 include/aubio/io/sink_sndfile.h
@@ -49,12 +50,14 @@ include/aubio/temporal/filter.h
 include/aubio/temporal/resampler.h
 include/aubio/types.h
 include/aubio/utils/hist.h
+include/aubio/utils/log.h
 include/aubio/utils/parameter.h
 include/aubio/utils/scale.h
 include/aubio/vecutils.h
+lib/libaubio.a
 lib/libaubio.so
 lib/libaubio.so.5
-lib/libaubio.so.5.0.4
+lib/libaubio.so.5.1.5
 libdata/pkgconfig/aubio.pc
 man/man1/aubiocut.1.gz
 man/man1/aubiomfcc.1.gz
@@ -80,6 +83,7 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/cvec_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/dir_0019dc9908b3707f2efe5d1d2e908f03.html
 %%DOXYGEN%%share/doc/aubio/html/dir_24909bf68f95b02474c7cd396a6ea1b7.html
+%%DOXYGEN%%share/doc/aubio/html/dir_421d137a6d6e69b3f737421a73d375f8.html
 %%DOXYGEN%%share/doc/aubio/html/dir_6c3688c2a02b4bf89699351955a39c88.html
 %%DOXYGEN%%share/doc/aubio/html/dir_7672bb780010713f2d2504f90f5cfe22.html
 %%DOXYGEN%%share/doc/aubio/html/dir_9f81523443f82c74e7139b3dddc1da52.html
@@ -116,6 +120,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/globals_c.html
 %%DOXYGEN%%share/doc/aubio/html/globals_d.html
 %%DOXYGEN%%share/doc/aubio/html/globals_defs.html
+%%DOXYGEN%%share/doc/aubio/html/globals_enum.html
+%%DOXYGEN%%share/doc/aubio/html/globals_eval.html
 %%DOXYGEN%%share/doc/aubio/html/globals_f.html
 %%DOXYGEN%%share/doc/aubio/html/globals_func.html
 %%DOXYGEN%%share/doc/aubio/html/globals_func_c.html
@@ -134,6 +140,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/io_2test-source_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/io_2test-source_multi_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/jquery.js
+%%DOXYGEN%%share/doc/aubio/html/log_8h.html
+%%DOXYGEN%%share/doc/aubio/html/log_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/lvec_8h.html
 %%DOXYGEN%%share/doc/aubio/html/lvec_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/menu.js
@@ -145,6 +153,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/nav_f.png
 %%DOXYGEN%%share/doc/aubio/html/nav_g.png
 %%DOXYGEN%%share/doc/aubio/html/nav_h.png
+%%DOXYGEN%%share/doc/aubio/html/notes_8h.html
+%%DOXYGEN%%share/doc/aubio/html/notes_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/onset_2test-onset_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/onset_8h.html
 %%DOXYGEN%%share/doc/aubio/html/onset_8h_source.html
@@ -205,6 +215,10 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/search/defines_0.js
 %%DOXYGEN%%share/doc/aubio/html/search/defines_1.html
 %%DOXYGEN%%share/doc/aubio/html/search/defines_1.js
+%%DOXYGEN%%share/doc/aubio/html/search/enums_0.html
+%%DOXYGEN%%share/doc/aubio/html/search/enums_0.js
+%%DOXYGEN%%share/doc/aubio/html/search/enumvalues_0.html
+%%DOXYGEN%%share/doc/aubio/html/search/enumvalues_0.js
 %%DOXYGEN%%share/doc/aubio/html/search/files_0.html
 %%DOXYGEN%%share/doc/aubio/html/search/files_0.js
 %%DOXYGEN%%share/doc/aubio/html/search/files_1.html
@@ -231,6 +245,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/search/files_b.js
 %%DOXYGEN%%share/doc/aubio/html/search/files_c.html
 %%DOXYGEN%%share/doc/aubio/html/search/files_c.js
+%%DOXYGEN%%share/doc/aubio/html/search/files_d.html
+%%DOXYGEN%%share/doc/aubio/html/search/files_d.js
 %%DOXYGEN%%share/doc/aubio/html/search/functions_0.html
 %%DOXYGEN%%share/doc/aubio/html/search/functions_0.js
 %%DOXYGEN%%share/doc/aubio/html/search/functions_1.html
@@ -277,6 +293,7 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/source_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/specdesc_8h.html
 %%DOXYGEN%%share/doc/aubio/html/specdesc_8h_source.html
+%%DOXYGEN%%share/doc/aubio/html/spectral_2test-fft_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/spectral_2test-filterbank_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/spectral_2test-filterbank_mel_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/spectral_2test-mfcc_8c-example.html
@@ -284,7 +301,6 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/spectral_2test-specdesc_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/spectral_2test-tss_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/splitbar.png
-%%DOXYGEN%%share/doc/aubio/html/src_2spectral_2test-fft_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/structcvec__t.html
 %%DOXYGEN%%share/doc/aubio/html/structfmat__t.html
 %%DOXYGEN%%share/doc/aubio/html/structfvec__t.html
@@ -313,6 +329,7 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/tss_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/types_8h.html
 %%DOXYGEN%%share/doc/aubio/html/types_8h_source.html
+%%DOXYGEN%%share/doc/aubio/html/utils_2test-log_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/utils_2test-parameter_8c-example.html
 %%DOXYGEN%%share/doc/aubio/html/vecutils_8h.html
 %%DOXYGEN%%share/doc/aubio/html/vecutils_8h_source.html
