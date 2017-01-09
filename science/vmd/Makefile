@@ -20,12 +20,12 @@ LICENSE=	VMD BSD3CLAUSE STRIDE
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
-		${NUMPY}
+		${PYNUMPY}
 LIB_DEPENDS=	libtcl85.so:lang/tcl85 \
 		libtk85.so:x11-toolkits/tk85 \
 		libfltk.so:x11-toolkits/fltk \
 		libnetcdf.so:science/netcdf
-RUN_DEPENDS=	${NUMPY}
+RUN_DEPENDS=	${PYNUMPY}
 
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	auto-accept
