@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	lft
-PORTVERSION=	3.73
+PORTVERSION=	3.77
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
+
+LICENSE=	VOSTROM
+LICENSE_NAME=	VOSTROM
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 
 GNU_CONFIGURE=	yes
 
