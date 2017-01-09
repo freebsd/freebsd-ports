@@ -1,3 +1,3 @@
-TIMESTAMP = 1481738476
-SHA256 (concourse-2.5.1.tar.xz) = b4b03b703bb35155f3ecbbd233c07d1c33fd17a362f4571b9e6a48bf6f101051
-SIZE (concourse-2.5.1.tar.xz) = 8627332
+TIMESTAMP = 1483709303
+SHA256 (concourse-2.6.0.tar.xz) = bccf8cf0f8835f9f2fb14effc14d0d91dff7b964a985eb63a93e3869c1fdbc42
+SIZE (concourse-2.6.0.tar.xz) = 8694628

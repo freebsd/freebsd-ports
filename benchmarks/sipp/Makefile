@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	sipp
-PORTVERSION=	3.4.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	3.5.1
 CATEGORIES=	benchmarks net
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	SIP benchmarking and testing tool
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	SIPp
-
 PLIST_FILES=	bin/sipp man/man1/sipp.1.gz
 
-USES=		gmake ncurses
+USES=		autoreconf gmake ncurses
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	OPENSSL GSL PCAP RTPSTREAM SCTP

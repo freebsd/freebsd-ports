@@ -730,18 +730,13 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .endif
 
-.if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
-.if ${PORT_OPTIONS:MSPDY}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000028
-WITH_OPENSSL_PORT=	yes
-.endif
-.endif
-.endif
-
 .if defined(WITH_HTTP_SSL)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
+.endif
+
+.if defined(NGINX_OPENSSL)
+USES+=		ssl
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SSL}

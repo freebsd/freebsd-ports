@@ -16,7 +16,7 @@ EXPLICIT_SAFESTACK=	yes
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		gettext-runtime gmake libtool ncurses pkgconfig tar:xz
+USES=		cpe gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip

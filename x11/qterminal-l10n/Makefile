@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 
 USES=	cmake:outsource lxqt tar:xz
 USE_QT5=	buildtools_build qmake_build
-USE_LXQT=	lxqt
+USE_LXQT=	buildtools lxqt
 
 CMAKE_ARGS+=	-DWITH_COMPTON_CONF:BOOL=OFF \
 	-DWITH_LIBFM_QT:BOOL=OFF \
