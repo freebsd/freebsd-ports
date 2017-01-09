@@ -14,13 +14,10 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake readline shebangfix tar:bzip2
+USES=		gmake localbase:ldflags readline shebangfix tar:bzip2
 SHEBANG_FILES=	src/bsdl2jtag
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		FTDI JEDEC NLS USB
 OPTIONS_DEFAULT=	FTDI USB
@@ -39,13 +36,6 @@ NLS_CONFIGURE_ENABLE=	nls
 USB_DESC=		USB JTAG adapters support
 USB_CONFIGURE_ON=	--with-libusb=/usr
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:textproc/flex
-CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
-.endif
-
 post-patch:
 # Suppress svn(1) binary detection
 	@${REINPLACE_CMD} -e \
@@ -54,4 +44,4 @@ post-patch:
 		 s|-I$$with_libusb"|-I$$with_libusb/include"|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
