@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	8.0.0149
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -98,16 +98,19 @@ GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,glproto,x11,xpm,xt
 GNOME_USES=		desktop-file-utils
+GNOME_VARS=		INSTALLS_ICONS=yes
 
 GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
 GTK2_USES=		desktop-file-utils
+GTK2_VARS=		INSTALLS_ICONS=yes
 
 GTK3_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk3
 GTK3_PLIST_SUB=		GUI="" DESKTOP=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
 GTK3_USES=		desktop-file-utils
+GTK3_VARS=		INSTALLS_ICONS=yes
 
 MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
 MOTIF_PLIST_SUB=	GUI="" DESKTOP="@comment "
