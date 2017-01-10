@@ -3,7 +3,7 @@
 
 PORTNAME=	closure-linter
 PORTVERSION=	2.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	closure_linter-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gflags>=0:devel/py-gflags
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gflags>=0:devel/py-python-gflags
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
