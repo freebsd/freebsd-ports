@@ -557,6 +557,9 @@
     SUBDIR += percona55-server
     SUBDIR += percona56-client
     SUBDIR += percona56-server
+    SUBDIR += percona57-client
+    SUBDIR += percona57-pam-for-mysql
+    SUBDIR += percona57-server
     SUBDIR += pg_activity
     SUBDIR += pg_citus
     SUBDIR += pg_qualstats

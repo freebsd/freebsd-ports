@@ -1,0 +1,9 @@
+--- libservices/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
++++ libservices/CMakeLists.txt
+@@ -35,4 +35,6 @@ SET(MYSQLSERVICES_SOURCES
+   mysql_keyring_service.c)
+ 
+ ADD_CONVENIENCE_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})
++IF(FALSE)
+ INSTALL(TARGETS mysqlservices DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
++ENDIF()
