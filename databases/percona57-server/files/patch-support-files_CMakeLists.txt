@@ -1,0 +1,12 @@
+--- support-files/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
++++ support-files/CMakeLists.txt
+@@ -69,7 +69,9 @@ IF(UNIX)
+     INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
+   ENDIF()
+ 
++IF(FALSE)
+   INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
++ENDIF()
+   
+   SET(bindir ${prefix}/${INSTALL_BINDIR})
+   SET(sbindir ${prefix}/${INSTALL_SBINDIR})

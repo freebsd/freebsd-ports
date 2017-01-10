@@ -1,0 +1,67 @@
+--- scripts/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
++++ scripts/CMakeLists.txt
+@@ -19,7 +19,7 @@ IF(NOT CMAKE_CROSSCOMPILING)
+  TARGET_LINK_LIBRARIES(comp_sql)
+ ENDIF()
+ 
+-
++IF(FALSE)
+ # Build mysql_fix_privilege_tables.sql (concatenate 2 sql scripts)
+ IF(NOT WIN32 OR CMAKE_CROSSCOMPILING)
+   FIND_PROGRAM(CAT_EXECUTABLE cat DOC "path to the executable")
+@@ -63,6 +63,7 @@ ADD_CUSTOM_TARGET(GenFixPrivs
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+   ${CMAKE_CURRENT_BINARY_DIR}/sql_commands_sys_schema.h
+ )
++ENDIF()
+ 
+ # If we do not have performance schema compiled in then sys will not work,
+ # so only create an empty sys database with an auto-generated file,
+@@ -143,6 +144,7 @@ IF(NOT WITHOUT_SERVER)
+   )
+ ENDIF()
+ 
++IF(FALSE)
+ IF(UNIX)
+  FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_binary_distribution 
+    "cd ${CMAKE_BINARY_DIR} && '${CMAKE_CPACK_COMMAND}' -G TGZ --config CPackConfig.cmake\n" )
+@@ -150,6 +152,7 @@ IF(UNIX)
+   COMMAND chmod +x ${CMAKE_CURRENT_BINARY_DIR}/make_binary_distribution
+ )
+ ENDIF()
++ENDIF()
+ 
+ IF(NOT WITHOUT_SERVER)
+   INSTALL(FILES
+@@ -347,6 +350,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
+           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+           SET(${var} "${${var}}-l${lib} " ) 
++        ELSEIF(lib STREQUAL "-pthread")
++          SET(${var} "${${var}}-pthread " )
+         ELSE()
+           SET(${var} "${${var}}-l${lib} " ) 
+         ENDIF()
+@@ -430,21 +435,7 @@ ELSE()
+   # On Unix, most of the files end up in the bin directory
+   SET(mysql_config_COMPONENT COMPONENT Development)
+ 
+-  IF(WITH_SYSTEMD)
+-    SET(BIN_SCRIPTS
+-      mysql_config
+-      mysqldumpslow
+-      ps_tokudb_admin
+-      )
+-  ELSE()
+-    SET(BIN_SCRIPTS
+-      mysql_config
+-      mysqldumpslow
+-      mysqld_multi
+-      mysqld_safe
+-      ps_tokudb_admin
+-      )
+-  ENDIF()
++  SET(BIN_SCRIPTS mysql_config)
+ 
+   SET(PKGCONFIG_FILE ${LIBMYSQL_OS_OUTPUT_NAME}.pc)
+   STRING(REGEX REPLACE "/mysql$" "" PKGCONFIG_DIR "${INSTALL_LIBDIR}")

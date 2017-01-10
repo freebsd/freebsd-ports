@@ -49,7 +49,7 @@ WARNING+=		"OVERRIDE_LINUX_BASE_PORT is deprecated, please use DEFAULT_VERSIONS+
 .endif
 # Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
-# Possible values: 5.1, 5.5, 5.6, 5.7, 8.0, 5.5m, 10.0m, 10.1m, 5.5p, 5.6p
+# Possible values: 5.1, 5.5, 5.6, 5.7, 8.0, 5.5m, 10.0m, 10.1m, 5.5p, 5.6p, 5.7p
 MYSQL_DEFAULT?=		5.6
 # Possible values: 5.20, 5.22, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \

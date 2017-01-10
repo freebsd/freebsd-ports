@@ -1,0 +1,6 @@
+************************************************************************
+
+Remember to run mysql_upgrade the first time you start the MySQL server
+after an upgrade from an earlier version.
+
+************************************************************************
