@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Tool which prints PID of given process name
 
+EXPLICIT_SAFESTACK=		yes
+
 CONFLICTS=	psmisc-1*
 
 PLIST_FILES=	bin/pidof
