@@ -1,11 +1,13 @@
---- src/main.h.orig	2016-07-26 23:53:18 UTC
+--- src/main.h.orig	2016-12-21 09:12:44 UTC
 +++ src/main.h
-@@ -45,7 +45,7 @@
+@@ -80,8 +80,8 @@
  #define volatile(x) (*((volatile typeof(x)*)&x))
  #endif */
  
 -#ifndef __OBJC__
-+#if !defined(__OBJC__) && !defined(__NetBSD__) && !defined(__FreeBSD__)
- #define volatile(x) (x)
+-#define volatile(x)(x)
++#if !defined(__OBJC__) || defined(__NetBSD__) || defined(__FreeBSD__)
++#define volatile(x) x
  #endif
- /* UTOX_SCALE is used as the default so that we have a lot of options for scale size.
+ 
+ #define SCALE(x) (((int)((ui_scale / 10.0) * ((double)x))) ?: 1)
