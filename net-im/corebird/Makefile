@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -20,11 +20,13 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig sqlite
+USES=		autoreconf gmake libtool pkgconfig sqlite
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
 INSTALLS_ICONS=	yes
+
+CONFIGURE_ARGS=	--disable-spellcheck # spellchecking depends on gspell >= 1.0.x
 
 OPTIONS_DEFINE=		GSTREAMER NLS
 OPTIONS_DEFAULT=	GSTREAMER
