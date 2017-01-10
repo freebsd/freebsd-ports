@@ -177,3 +177,6 @@ man/man8/mysqld.8.gz
 %%TOKUDB%%share/doc/mysql/PATENTS
 %%TOKUDB%%share/doc/mysql/README.md
 %%TOKUDB%%share/doc/mysql/README_tokudb_backup
+@dir(mysql,mysql,0750) %%ETCDIR%%/keyring
+@dir(mysql,mysql,0750) %%MY_SECDIR%%  
+@dir(mysql,mysql,0750) %%MY_TMPDIR%%

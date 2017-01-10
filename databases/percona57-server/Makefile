@@ -3,7 +3,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.7.16-10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
 		SF/boost/boost/1.59.0:boost
@@ -27,6 +27,10 @@ SLAVEDIRS=	databases/percona57-client \
 USES=		bison:build cmake compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix
 
+MY_DBDIR=	/var/db/mysql
+MY_SECDIR=	/var/db/mysql_secure
+MY_TMPDIR=	/var/db/mysql_tmpdir
+
 DATADIR=	${LOCALBASE}/share/mysql
 DOCSDIR=	${LOCALBASE}/share/doc/mysql
 
@@ -40,6 +44,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_LIBDIR="lib/mysql" \
 		-DINSTALL_MANDIR="man" \
 		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
+		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
 		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
@@ -61,6 +66,14 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
+
+SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
+PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
 
 .ifdef CLIENT_ONLY
 # Client part
@@ -110,7 +123,10 @@ MANPAGES=	my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/var/db/mysql
+	${MKDIR} ${STAGEDIR}/var/db/mysql
+	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
+	${MKDIR} ${STAGEDIR}${MY_SECDIR}
+	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
 .endif
 
 post-patch:
