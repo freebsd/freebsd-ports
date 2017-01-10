@@ -1,10 +1,9 @@
-To reduce the height of tabs, create ~/.config/gtk-3.0/gtk.css file with
-the following content:
+To reduce the height of tabs, add the hidden 'MiscSlimTabs' option
+in ~/.config/xfce4/terminal/terminalrc.
 
-TerminalWindow GtkNotebook.notebook {
-        padding-top: 0;
-        padding-bottom: 0;
-}
+MiscSlimTabs=TRUE
 
-Don't active the hidden MiscSlimTabs option in terminalrc. It requires
-Gtk+ >= 3.20
+By default this option is not defined.
+
+Keep in mind, when you change an option in Preferences window, this file
+is overwritten. 
