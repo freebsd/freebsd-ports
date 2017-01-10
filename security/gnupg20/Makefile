@@ -2,15 +2,13 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.29
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	20
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	The GNU Privacy Guard
+COMMENT=	The GNU Privacy Guard (stable version)
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -19,69 +17,58 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
 		libksba.so:security/libksba \
 		libpth.so:devel/pth
 BUILD_DEPENDS=	libgpg-error>=1.11:security/libgpg-error
-RUN_DEPENDS=	pinentry>0:security/pinentry
+RUN_DEPENDS=	pinentry:security/pinentry
 
-GNU_CONFIGURE=	YES
-USES=		cpe gmake iconv tar:bzip2
-USE_LDCONFIG=	YES
-CONFIGURE_ARGS+=	--enable-symcryptrun
 CONFLICTS=	gnupg-2.1.*
 CPE_VENDOR=	gnupg
 
-OPTIONS_DEFINE=		LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
-LDAP_DESC=		LDAP keyserver interface
-SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
-CURL_DESC=		Use the real curl library (worked around if no)
-GPGSM_DESC=		Enable GPGSM (requires LDAP)
-KDNS_DESC=		Use DNS CERT helper
-STD_SOCKET_DESC=	Use standard socket for agent
-SUID_GPG_DESC=		Install GPG with suid
-OPTIONS_DEFAULT=	CURL
-NO_OPTIONS_SORT=	YES
-OPTIONS_SUB=		YES
+USES=		cpe gmake iconv readline tar:bzip2
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-symcryptrun
+INFO=		gnupg
 
-DOCS_CONFIGURE_ENABLE=	doc
+OPTIONS_DEFINE=	LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
+OPTIONS_DEFAULT=CURL
+NO_OPTIONS_SORT=yes
+OPTIONS_SUB=	yes
+
+GPGSM_DESC=	Enable GPGSM (requires LDAP)
+LDAP_DESC=	LDAP keyserver interface
+KDNS_DESC=	Use DNS CERT helper
+SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
+STD_SOCKET_DESC=Use standard socket for agent
+SUID_GPG_DESC=	Install GPG setuid
+
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
+
 GPGSM_RUN_DEPENDS=	dirmngr:security/dirmngr
 GPGSM_CONFIGURE_ENABLE=	gpgsm
+GPGSM_IMPLIES=		LDAP
+
 KDNS_LIB_DEPENDS=	libadns.so:dns/adns
-KDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
-STD_SOCKET_CONFIGURE_ENABLE=	standard-socket
+KDNS_CONFIGURE_WITH=	adns=${LOCALBASE}
+
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
-CURL_CONFIGURE_OFF=	--without-libcurl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-INFO=		gnupg
-.endif
-
-.if ${PORT_OPTIONS:MGPGSM}
-PORT_OPTIONS+=	LDAP
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	YES
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-.if ! ${PORT_OPTIONS:MKDNS}
-CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
-.endif
-
-verify:	checksum
-	gpg2 --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
+STD_SOCKET_CONFIGURE_ENABLE=	standard-socket
 
 post-patch:
 	@${REINPLACE_CMD} -e "/#include <utmp.h>/d" \
 		${WRKSRC}/tools/symcryptrun.c
+
+post-install:
+	@${MV} ${STAGEDIR}${DATADIR}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
