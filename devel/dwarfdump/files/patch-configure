@@ -1,11 +1,11 @@
---- configure.orig	2010-02-04 22:00:43.000000000 +0000
-+++ configure	2010-02-08 13:36:07.000000000 +0000
-@@ -3508,7 +3508,7 @@
+--- configure.orig	2016-12-06 05:12:37 UTC
++++ configure
+@@ -3585,7 +3585,7 @@ fi
  done
  
  
--for ac_header in elf.h getopt.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
-+for ac_header in getopt.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
+-for ac_header in elf.h unistd.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
++for ac_header in unistd.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
