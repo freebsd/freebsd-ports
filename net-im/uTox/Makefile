@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-PORTVERSION=	0.9.8.20160729
-PORTREVISION=	2
+PORTVERSION=	0.11.1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -23,12 +22,11 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	GrayHatter
-GH_TAGNAME=	66bf323
+GH_TAGNAME=	1835eae
 
-USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
+USES=		cmake compiler:c11 desktop-file-utils localbase:ldflags openal:al	\
+		pkgconfig
 USE_XORG=	x11 xext xrender
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		DBUS
 OPTIONS_DEFAULT=	DBUS
@@ -36,15 +34,10 @@ OPTIONS_DEFAULT=	DBUS
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_MAKE_ARGS_OFF=	DBUS=0
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(GIT_V)|${DISTVERSION}-${GH_TAGNAME}|' \
-		-e 's|(DATAROOTDIR)/man|(PREFIX)/man|' ${WRKSRC}/${MAKEFILE}
-
 pre-configure:
-	@(if [ ! -e "${LOCALBASE}/lib/libtoxav.so" ]; then \
-		${ECHO_CMD} "==> ${PKGNAME} requires net-im/tox port to be built with SODIUM option enabled"; \
-		${FALSE}; \
-	fi)
+	${REINPLACE_CMD} -e 's|resolv dl||'	\
+		-e 's|/usr/include/freetype2|${LOCALBASE}/include/freetype2|'	\
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/utox
