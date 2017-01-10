@@ -4,10 +4,8 @@
 PORTNAME=	libhpack
 PORTVERSION=	0.0.20140710
 CATEGORIES=	www
-MASTER_SITES=	GH:libhpack \
-		https://raw.github.com/http2/http2-spec/master/:ec_xml
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:libhpack \
-		draft-ietf-httpbis-header-compression.xml:ec_xml
+MASTER_SITES=	https://raw.github.com/http2/http2-spec/master/:ec_xml
+DISTFILES=	draft-ietf-httpbis-header-compression.xml:ec_xml
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
