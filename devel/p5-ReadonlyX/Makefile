@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SANKO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster facility for creating read-only scalars, arrays, hashes
 
 LICENSE=	ART10 GPLv1
