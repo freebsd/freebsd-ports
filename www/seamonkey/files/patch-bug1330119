@@ -1,0 +1,13 @@
+diff --git xpcom/reflect/xptcall/md/unix/moz.build xpcom/reflect/xptcall/md/unix/moz.build
+index 019487bd69a2..a54026e70412 100644
+--- mozilla/xpcom/reflect/xptcall/md/unix/moz.build
++++ mozilla/xpcom/reflect/xptcall/md/unix/moz.build
+@@ -151,7 +151,7 @@ if CONFIG['OS_ARCH'] == 'NetBSD':
+             'xptcstubs_netbsd_m68k.cpp'
+         ]
+ 
+-if CONFIG['OS_ARCH'] == 'Linux':
++if CONFIG['OS_ARCH'] in ('Linux', 'FreeBSD', 'NetBSD', 'OpenBSD'):
+     if CONFIG['OS_TEST'] == 'aarch64':
+         SOURCES += [
+             'xptcinvoke_aarch64.cpp',
