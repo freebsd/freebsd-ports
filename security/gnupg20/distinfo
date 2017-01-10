@@ -1,4 +1,3 @@
+TIMESTAMP = 1484015814
 SHA256 (gnupg-2.0.29.tar.bz2) = 68ed6b386ba78425b05a60e8ee22785ff0fef190bdc6f1c612f19a58819d4ac9
 SIZE (gnupg-2.0.29.tar.bz2) = 4416251
-SHA256 (gnupg-2.0.29.tar.bz2.sig) = 5d825d4761c352100147f0ee00aa05ace552f47532c380b2355c4755f70888c0
-SIZE (gnupg-2.0.29.tar.bz2.sig) = 574
