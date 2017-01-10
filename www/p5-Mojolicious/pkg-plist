@@ -21,6 +21,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/EventEmitter.pm
 %%SITE_PERL%%/Mojo/Exception.pm
+%%SITE_PERL%%/Mojo/File.pm
 %%SITE_PERL%%/Mojo/Headers.pm
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
@@ -157,6 +158,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Date.3.gz
 %%PERL5_MAN3%%/Mojo::EventEmitter.3.gz
 %%PERL5_MAN3%%/Mojo::Exception.3.gz
+%%PERL5_MAN3%%/Mojo::File.3.gz
 %%PERL5_MAN3%%/Mojo::Headers.3.gz
 %%PERL5_MAN3%%/Mojo::HelloWorld.3.gz
 %%PERL5_MAN3%%/Mojo::Home.3.gz
