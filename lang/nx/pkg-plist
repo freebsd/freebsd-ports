@@ -13,13 +13,14 @@ lib/%%PKGNAME%%/lib/mkIndex.tcl
 lib/%%PKGNAME%%/lib/nx-callback.tcl
 lib/%%PKGNAME%%/lib/nx-help.tcl
 lib/%%PKGNAME%%/lib/nx-pp.tcl
+lib/%%PKGNAME%%/lib/nx-shell.tcl
 lib/%%PKGNAME%%/lib/nx-test.tcl
 lib/%%PKGNAME%%/lib/nx-traits.tcl
 lib/%%PKGNAME%%/lib/nx-volatile.tcl
 lib/%%PKGNAME%%/lib/nx-zip.tcl
 lib/%%PKGNAME%%/lib/pkgIndex.tcl
 lib/%%PKGNAME%%/lib%%PKGNAME%%.so
-lib/%%PKGNAME%%/libnsfstub2.0.0.a
+lib/%%PKGNAME%%/libnsfstub2.1.0.a
 lib/%%PKGNAME%%/nx/class-method.tcl
 lib/%%PKGNAME%%/nx/nx.tcl
 lib/%%PKGNAME%%/nx/pkgIndex.tcl
