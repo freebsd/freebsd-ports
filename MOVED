@@ -8977,3 +8977,4 @@ devel/rubygem-activejob|devel/rubygem-activejob4|2017-01-08|Rename to match our 
 www/httpie|www/py-httpie|2017-01-09|Renamed to match upstream (PyPI) name
 sysutils/istatd|sysutils/istatserver|2017-01-09|Project was renamed
 devel/py-gflags|devel/py-python-gflags|2017-01-10|Rename to match PyPI naming
+java/wildfly100|java/wildfly10|2017-01-10|Remove minor version number from port name

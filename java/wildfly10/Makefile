@@ -1,9 +1,9 @@
 # Created by: Alexander Yerenkow <yerenkow@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	wildfly100
+PORTNAME=	wildfly10
 PORTVERSION=	10.0.0
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -13,7 +13,7 @@ COMMENT=	Replacement for JBoss Application Server
 
 LICENSE=	GPLv2
 
-USE_RC_SUBR=	wildfly100
+USE_RC_SUBR=	wildfly10
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USER=		www
