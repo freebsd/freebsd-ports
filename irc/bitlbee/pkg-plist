@@ -3,6 +3,7 @@ man/man8/bitlbee.8.gz
 sbin/bitlbee
 include/bitlbee/account.h
 include/bitlbee/arc.h
+include/bitlbee/auth.h
 include/bitlbee/base64.h
 include/bitlbee/bee.h
 include/bitlbee/bitlbee.h
