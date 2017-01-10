@@ -117,5 +117,5 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/uk/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
-@postexec [ -e %D/bin/gpg ] || ln -s gpg2 %D/bin/gpg
-@postunexec [ "$(readlink %D/bin/gpg)" = "gpg2" ] && rm -f %D/bin/gpg || true
+@postexec [ -e %D/bin/gpg ] || ln -sf gpg2 %D/bin/gpg
+@postunexec [ -e %D/bin/gpg ] || rm -f %D/bin/gpg
