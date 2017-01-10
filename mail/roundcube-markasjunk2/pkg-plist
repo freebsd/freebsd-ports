@@ -10,6 +10,7 @@
 %%WWWDIR%%/drivers/email_learn.php
 %%WWWDIR%%/drivers/sa_blacklist.php
 %%WWWDIR%%/drivers/sa_detach.php
+%%WWWDIR%%/localization/bg_BG.inc
 %%WWWDIR%%/localization/ca_ES.inc
 %%WWWDIR%%/localization/cs_CZ.inc
 %%WWWDIR%%/localization/de_CH.inc
@@ -30,6 +31,7 @@
 %%WWWDIR%%/localization/pt_BR.inc
 %%WWWDIR%%/localization/ro_RO.inc
 %%WWWDIR%%/localization/ru_RU.inc
+%%WWWDIR%%/localization/sk_SK.inc
 %%WWWDIR%%/localization/tr_TR.inc
 %%WWWDIR%%/localization/zh_TW.inc
 %%WWWDIR%%/markasjunk2.js
