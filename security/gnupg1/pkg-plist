@@ -42,3 +42,4 @@ man/man1/gpgv.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
+@postunexec [ ! -e %D/bin/gpg2 ] || ln -sf gpg2 %D/bin/gpg
