@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Protocol/SocketIO.pm
+%%SITE_PERL%%/Protocol/SocketIO/Handshake.pm
 %%SITE_PERL%%/Protocol/SocketIO/Message.pm
 %%SITE_PERL%%/Protocol/SocketIO/Path.pm
-%%SITE_PERL%%/Protocol/SocketIO/Handshake.pm
 %%PERL5_MAN3%%/Protocol::SocketIO.3.gz
 %%PERL5_MAN3%%/Protocol::SocketIO::Handshake.3.gz
 %%PERL5_MAN3%%/Protocol::SocketIO::Message.3.gz
