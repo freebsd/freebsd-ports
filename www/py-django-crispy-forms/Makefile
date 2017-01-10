@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-crispy-forms
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent
 
 .include <bsd.port.mk>
