@@ -123,7 +123,7 @@
     SUBDIR += trove4j
     SUBDIR += veditor
     SUBDIR += visualvm
-    SUBDIR += wildfly100
+    SUBDIR += wildfly10
     SUBDIR += wildfly90
     SUBDIR += xdoclet
 
