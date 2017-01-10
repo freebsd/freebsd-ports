@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/adamw/squirrelmail
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webmail system which accesses mail over IMAP
 
 LICENSE=	GPLv2
