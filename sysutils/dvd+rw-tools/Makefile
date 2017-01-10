@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD burning software
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
