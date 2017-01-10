@@ -1,6 +1,6 @@
---- include/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- include/CMakeLists.txt.orig	2016-08-25 12:32:09 UTC
 +++ include/CMakeLists.txt
-@@ -38,6 +38,7 @@ SET(HEADERS_ABI 
+@@ -37,6 +37,7 @@ SET(HEADERS_ABI 
  
  SET(HEADERS 
    ${HEADERS_ABI} 
@@ -8,3 +8,95 @@
    my_dbug.h 
    m_string.h
    my_sys.h 
+@@ -64,6 +65,81 @@ SET(HEADERS 
+   thr_cond.h
+   thr_mutex.h
+   thr_rwlock.h
++  base64.h
++  c_string_less.h
++  crypt_genhash_impl.h
++  depth_first_search.h
++  dur_prop.h
++  ft_global.h
++  heap.h
++  i_callable.h
++  instance_callback.h
++  lf.h
++  mutex_lock.h
++  my_aes.h
++  my_atomic.h
++  my_base.h
++  my_bit.h
++  my_bitmap.h
++  my_check_opt.h
++  my_compare.h
++  my_compare.h.orig
++  my_default.h
++  my_icp.h
++  my_md5.h
++  my_md5_size.h
++  my_murmur3.h
++  my_rdtsc.h
++  my_rnd.h
++  my_sqlcommand.h
++  my_stacktrace.h
++  my_thread_os_id.h
++  my_time.h
++  my_timer.h
++  my_tree.h
++  my_uctype.h
++  my_user.h
++  myisam.h
++  myisam.h.orig
++  myisammrg.h
++  myisampack.h
++  mysql.h.pp
++  mysql_version.h.in
++  mysys_err.h
++  nullable.h
++  password.h
++  pfs_cond_provider.h
++  pfs_error_provider.h
++  pfs_file_provider.h
++  pfs_idle_provider.h
++  pfs_memory_provider.h
++  pfs_metadata_provider.h
++  pfs_mutex_provider.h
++  pfs_rwlock_provider.h
++  pfs_socket_provider.h
++  pfs_stage_provider.h
++  pfs_statement_provider.h
++  pfs_table_provider.h
++  pfs_thread_provider.h
++  pfs_transaction_provider.h
++  prealloced_array.h
++  priority_queue.h
++  probes_mysql.d.base
++  probes_mysql.h
++  probes_mysql_nodtrace.h
++  queues.h
++  rwlock_scoped_lock.h
++  scope_guard.h
++  service_versions.h
++  sha1.h
++  sha2.h
++  sql_chars.h
++  sql_string.h
++  str_uca_type.h
++  template_utils.h
++  thr_lock.h
++  violite.h
++  welcome_copyright_notice.h
+   ${HEADERS_GEN_CONFIGURE}
+ )
+ 
+@@ -76,5 +152,9 @@ INSTALL(DIRECTORY mysql/ DESTINATION ${I
+  PATTERN "*.h"
+  PATTERN "psi_abi*" EXCLUDE
+ )
++INSTALL(DIRECTORY atomic/ DESTINATION ${INSTALL_INCLUDEDIR}/atomic COMPONENT Development 
++ PATTERN "*.h"
++ PATTERN "psi_abi*" EXCLUDE
++)
+ 
+ 
