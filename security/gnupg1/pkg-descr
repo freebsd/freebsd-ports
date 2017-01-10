@@ -1,6 +1,10 @@
-GnuPG is a complete and free replacement for PGP. The security/gnupg
-port is the modern 2.x branch with support for newer algorithms, but
-the 1.x branch has few dependencies and is sufficient for most PGP
-operations using common algorithms.
+GnuPG is a complete and free replacement for PGP. This is the "classic"
+version, which doesn't support newer algorithms, but also has very
+few dependencies. Use security/gnupg unless you're sure you want thisone.
+
+GnuPG allows encrypting and signing your data and communication, and
+features a versatile key management system as well as access modules
+for many public key directories. GnuPG, also known as GPG, is a command
+line tool with features for easy integration with other applications.
 
 WWW: https://www.gnupg.org/
