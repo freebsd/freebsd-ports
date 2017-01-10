@@ -23,32 +23,9 @@ BUILD_DEPENDS=	libassuan>=2.4.3:security/libassuan \
 		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
-
-GNU_CONFIGURE=	YES
-USES=		compiler:c11 cpe gmake iconv pkgconfig sqlite tar:bzip2
-USE_LDCONFIG=	YES
-# libreadline.so.8 is placed in /lib, but --with-readline argument
-# will be treated as $value/lib, so try using /usr instead.
-# Otherwise, $PREFIX/lib/libreadline.so.6 will be linked when
-# devel/readline is installed.
-CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun --with-readline=/usr \
-			--disable-wks-tools
-CONFLICTS=	gnupg-2.0.* dirmngr-*
-CPE_VENDOR=	gnupg
-
 CPPFLAGS+=	-fPIC
 
-OPTIONS_DEFINE=		GNUTLS LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
-LDAP_DESC=		LDAP keyserver interface
-SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
-KDNS_DESC=		Use DNS CERT helper
-SUID_GPG_DESC=		Install GPG with suid
-OPTIONS_DEFAULT=	GNUTLS
-NO_OPTIONS_SORT=	YES
-OPTIONS_SUB=		YES
-=======
 CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
 
@@ -67,7 +44,6 @@ KDNS_DESC=	Use DNS CERT helper
 LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
->>>>>>> upstream/master
 # In jail, SUID is required to avoid warning (security.bsd.unprivileged_mlock sysctl is not used in jail).
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
