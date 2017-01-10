@@ -12,12 +12,12 @@ COMMENT=	C library for the scrypt key derivation function
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	technion
 
-MAKE_ARGS+=	CC="${CC}" LIBDIR="${PREFIX}"/lib
+MAKE_ARGS=	CC="${CC}" LIBDIR="${PREFIX}"/lib
+TEST_TARGET=	check
 
 PLIST_FILES=	include/libscrypt.h \
 		lib/libscrypt.so \
@@ -27,29 +27,18 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|?=-|+=-|; s|-O2 ||' ${WRKSRC}/Makefile
-
-.if ${ARCH} == i386 && ${COMPILER_TYPE} == gcc && ${OSVERSION} < 1000036
-	@${REINPLACE_CMD} -e 's|-lscrypt|& -lssp_nonshared|; \
-		s|\.version|&,-lssp_nonshared|' ${WRKSRC}/Makefile
-.else
 	@${REINPLACE_CMD} -e 's|-fstack-protector ||' ${WRKSRC}/Makefile
-.endif
-
 	@${REINPLACE_CMD} -e \
 		's|strcpy(mcf2, mcf);|strlcpy(mcf2, mcf, SCRYPT_MCF_LEN);|' \
 			${WRKSRC}/main.c
 
-regression-test: build
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check)
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

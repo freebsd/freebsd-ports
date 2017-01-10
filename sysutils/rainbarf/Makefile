@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SYP
 DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU/RAM/battery stats chart bar for tmux (and GNU screen)
 
 LICENSE=	ART10 GPLv1

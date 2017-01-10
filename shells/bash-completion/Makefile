@@ -6,7 +6,7 @@ PORTVERSION=	2.4
 PORTEPOCH=	1
 CATEGORIES=	shells
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
 LICENSE=	GPLv2

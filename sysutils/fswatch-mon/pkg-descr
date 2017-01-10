@@ -1,0 +1,17 @@
+fswatch is a file change monitor that receives notifications when the contents 
+of the specified files or directories are modified. fswatch implements four 
+kinds of monitors:
+
+  * A monitor based on the File System Events API of Apple OS X.
+  * A monitor based on kqueue, an event notification interface introduced in 
+    FreeBSD 4.1 and supported on most *BSD systems (including OS X).
+  * A monitor based on inotify, a Linux kernel subsystem that reports file 
+    system changes to applications.
+  * A monitor which periodically stats the file system, saves file modification 
+    times in memory and manually calculates file system changes, which can work 
+    on any operating system where stat (2) can be used.
+
+fswatch should build and work correctly on any system shipping either of the 
+aforementioned APIs.
+
+WWW: https://github.com/emcrisostomo/fswatch

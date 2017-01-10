@@ -1,11 +1,11 @@
---- Plugins/PointSprite/CMakeLists.txt.orig	2009-07-28 21:17:26.000000000 +0700
-+++ Plugins/PointSprite/CMakeLists.txt	2010-04-19 16:41:17.000000000 +0700
-@@ -25,6 +25,8 @@
+--- Plugins/PointSprite/CMakeLists.txt.orig	2016-11-14 15:41:57 UTC
++++ Plugins/PointSprite/CMakeLists.txt
+@@ -11,6 +11,8 @@ add_definitions(-D_SCL_SECURE_NO_DEPRECA
  #--------------------------------------------------
  # Find and Use ParaView
  #--------------------------------------------------
 +INCLUDE_DIRECTORIES(BEFORE ${QT_QTCORE_INCLUDE_DIR})
 +INCLUDE_DIRECTORIES(BEFORE ${QT_QTGUI_INCLUDE_DIR})
  IF (ParaView_SOURCE_DIR)
-   INCLUDE_DIRECTORIES(
-     ${PARAVIEW_INCLUDE_DIRS}
+   # we are building from within ParaView Source. The environment is already set.
+   # Nothign more to do.

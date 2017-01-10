@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paraview
-PORTVERSION=	4.3.1
-PORTREVISION=	2
+PORTVERSION=	5.2.0
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
-DISTNAME=	ParaView-v${PORTVERSION}-source
+DISTNAME=	ParaView-v${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
@@ -35,10 +34,10 @@ CONFLICTS_BUILD=	protobuf*
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguisttools_build assistant_run qt3support \
-		dbus designer gui help-tools network script \
+		corelib dbus designer gui help-tools network script \
 		sql svg xml webkit assistantclient clucene \
 		xmlpatterns xmlpatterns-tool help
-USE_GL=		yes
+USE_GL=		gl
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
@@ -63,7 +62,6 @@ MAKE_ENV=	XDG_CONFIG_HOME=${WRKDIR}
 
 SHEBANG_FILES=	Catalyst/catalyze.py VTK/Examples/SearchScript.sh \
 		VTK/Utilities/Maintenance/*.sh	\
-		Web/Applications/Parallel/server/launcher.sh \
 		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/basicbench.cxxlist	\
 		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/*.sh	\
 		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/bench_unrolling	\
@@ -81,7 +79,6 @@ GL2PS_DESC=	Install support conversion OpenGL to PostScript
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 
 VERMAJORMINOR=	${PORTVERSION:R}
-WRKSRC=		${WRKDIR}/ParaView-v${PORTVERSION}-source
 
 .include <bsd.port.options.mk>
 
