@@ -835,6 +835,7 @@
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
     SUBDIR += redeclipse-data
+    SUBDIR += redorblack
     SUBDIR += reminiscence
     SUBDIR += rescue
     SUBDIR += residualvm
