@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	The GNU Privacy Guard
+COMMENT=	The GNU Privacy Guard (modern version)
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
