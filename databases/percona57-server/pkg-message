@@ -3,4 +3,8 @@
 Remember to run mysql_upgrade the first time you start the MySQL server
 after an upgrade from an earlier version.
 
+Initial password for first time use of MySQL is saved in $HOME/.mysql_secret
+ie. when you want to use "mysql -u root -p" first you should see password
+in /root/.mysql_secret
+
 ************************************************************************
