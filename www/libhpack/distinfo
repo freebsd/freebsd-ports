@@ -1,6 +1,4 @@
 TIMESTAMP = 1483892979
-SHA256 (alobbs-libhpack-0.0.20140710-b0ade19_GH0.tar.gz) = a48edb42809d1d195602feb3d899b595cd600446870086217dae03b31c9bef7d
-SIZE (alobbs-libhpack-0.0.20140710-b0ade19_GH0.tar.gz) = 231445
 SHA256 (draft-ietf-httpbis-header-compression.xml) = 5451d3af357557b4852ec8ba45ef838ca16adb38e8b023d6a6e1173028fefac2
 SIZE (draft-ietf-httpbis-header-compression.xml) = 152574
 SHA256 (alobbs-libhpack-0.0.20140710-b0ade19_GH0.tar.gz) = a48edb42809d1d195602feb3d899b595cd600446870086217dae03b31c9bef7d
