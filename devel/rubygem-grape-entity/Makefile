@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	grape-entity
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.0
+PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,5 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PORTSCOUT=	ignore
 
 .include <bsd.port.mk>

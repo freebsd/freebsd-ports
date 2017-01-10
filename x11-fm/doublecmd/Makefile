@@ -3,6 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -105,7 +106,7 @@ GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interf
 QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
 QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 
-WCX_UNRAR_LIB_DEPENDS=	libunrar.so:archivers/libunrar
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so.5:archivers/libunrar5
 WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 

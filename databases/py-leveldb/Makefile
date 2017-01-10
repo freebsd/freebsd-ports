@@ -3,6 +3,7 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +13,16 @@ COMMENT=	Thread-safe Python binding for LevelDB
 
 LICENSE=	BSD3CLAUSE
 
+LIB_DEPENDS=	libleveldb.so:databases/leveldb
+
 PORTSCOUT=	skipv:0.194
 
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python
+USES=		localbase python
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/${PYSETUP}
+	@${RM} -r ${WRKSRC}/leveldb/ ${WRKSRC}/snappy/
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/leveldb.so

@@ -1,24 +1,22 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	gflags
-PORTVERSION=	2.0
-PORTREVISION=	3
+PORTNAME=	python-gflags
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-gflags-${PORTVERSION}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Commandline flags module for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:2.7 shebangfix
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USES=		python shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	gflags2man.py
-
-PROJECTHOST=	python-gflags
 
 .include <bsd.port.mk>

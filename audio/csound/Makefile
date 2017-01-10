@@ -105,7 +105,9 @@ DOCS_DISTFILES=		Csound${PORTVERSION:R}_manual_html.zip:manual
 MAKE_ARGS+=	Word64=1
 .endif
 
+.if ${OPSYS} == FreeBSD
 CXXLIB=		c++
+.endif
 
 BROKEN_powerpc64=	Does not build
 

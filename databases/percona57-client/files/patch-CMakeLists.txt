@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
++++ CMakeLists.txt
+@@ -613,8 +613,8 @@ ENDIF()
+ 
+ ADD_SUBDIRECTORY(extra)
+ ADD_SUBDIRECTORY(client)
+-ADD_SUBDIRECTORY(sql/share)
+ ADD_SUBDIRECTORY(libservices)
++ADD_SUBDIRECTORY(support-files)
+ 
+ IF(UNIX)
+   ADD_SUBDIRECTORY(man)
+@@ -684,14 +684,13 @@ ELSE()
+   SET(CPACK_GENERATOR "TGZ")
+ ENDIF() 
+ ADD_SUBDIRECTORY(packaging/WiX)
+-ADD_SUBDIRECTORY(packaging/solaris)
+ 
+ IF(UNIX)
+-  INSTALL(FILES Docs/mysql.info DESTINATION ${INSTALL_INFODIR} OPTIONAL COMPONENT Info)
+ ENDIF()
+ #
+ # RPM installs documentation directly from the source tree
+ #
++IF(FALSE)
+ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+   INSTALL(FILES COPYING LICENSE.mysql 
+   DESTINATION ${INSTALL_DOCREADMEDIR} 
+@@ -714,6 +713,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+     PATTERN "sp-imp-spec.txt" EXCLUDE
+   )
+ ENDIF()
++ENDIF()
+ 
+ INCLUDE(CPack)
+ 

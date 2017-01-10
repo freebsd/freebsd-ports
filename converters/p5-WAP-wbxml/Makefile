@@ -3,6 +3,7 @@
 
 PORTNAME=	WAP-wbxml
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +12,10 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Binarization of XML file
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM \
-		p5-I18N-Charset>=0:misc/p5-I18N-Charset \
-		p5-Data-Dumper>=0:devel/p5-Data-Dumper
+		p5-I18N-Charset>=0:misc/p5-I18N-Charset
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix perl5

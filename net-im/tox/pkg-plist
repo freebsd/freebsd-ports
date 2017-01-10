@@ -1,29 +1,37 @@
-bin/DHT_bootstrap
 %%DAEMON%%bin/tox-bootstrapd
 %%DAEMON%%@sample etc/tox-bootstrapd.conf.sample
 include/tox/tox.h
-include/tox/tox_old.h
 include/tox/toxav.h
 include/tox/toxdns.h
 include/tox/toxencryptsave.h
 lib/libtoxav.a
-%%SODIUM%%lib/libtoxav.so
-%%SODIUM%%lib/libtoxav.so.0
-%%SODIUM%%lib/libtoxav.so.0.0.0
+lib/libtoxav.so
 lib/libtoxcore.a
-%%SODIUM%%lib/libtoxcore.so
-%%SODIUM%%lib/libtoxcore.so.0
-%%SODIUM%%lib/libtoxcore.so.0.0.0
+lib/libtoxcore.so
+lib/libtoxcrypto.a
+lib/libtoxcrypto.so
+lib/libtoxdht.a
+lib/libtoxdht.so
 lib/libtoxdns.a
-%%SODIUM%%lib/libtoxdns.so
-%%SODIUM%%lib/libtoxdns.so.0
-%%SODIUM%%lib/libtoxdns.so.0.0.0
+lib/libtoxdns.so
 lib/libtoxencryptsave.a
-%%SODIUM%%lib/libtoxencryptsave.so
-%%SODIUM%%lib/libtoxencryptsave.so.0
-%%SODIUM%%lib/libtoxencryptsave.so.0.0.0
+lib/libtoxencryptsave.so
+lib/libtoxfriends.a
+lib/libtoxfriends.so
+lib/libtoxgroup.a
+lib/libtoxgroup.so
+lib/libtoxmessenger.a
+lib/libtoxmessenger.so
+lib/libtoxnetcrypto.a
+lib/libtoxnetcrypto.so
+lib/libtoxnetwork.a
+lib/libtoxnetwork.so
 libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
+libdata/pkgconfig/toxav.pc
+libdata/pkgconfig/toxcore.pc
+libdata/pkgconfig/toxdns.pc
+libdata/pkgconfig/toxencryptsave.pc
 %%DAEMON%%@dir(%%TOXDHT%%,nobody,755) /var/run/tox-bootstrapd
 %%DAEMON%%@dir(%%TOXDHT%%,nobody,700) /var/lib/tox-bootstrapd
 %%DAEMON%%@dir /var/lib
