@@ -4,7 +4,7 @@
 PORTNAME=	gcalcli
 PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 
 MAINTAINER=	ports@thelanman.net
@@ -13,10 +13,10 @@ COMMENT=	Google Calendar Command Line Interface
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_SITELIBDIR}/gdata/__init__.py:devel/py-gdata \
-		${PYTHON_SITELIBDIR}/gflags.py:devel/py-gflags \
-		${PYTHON_SITELIBDIR}/apiclient/__init__.py:www/py-google-api-python-client \
-		${PYTHON_SITELIBDIR}/httplib2/__init__.py:www/py-httplib2
+		${PYTHON_PKGNAMEPREFIX}gdata>=0:devel/py-gdata \
+		${PYTHON_PKGNAMEPREFIX}google-api-python-client>=0:www/py-google-api-python-client \
+		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2 \
+		${PYTHON_PKGNAMEPREFIX}python-gflags>=0:devel/py-python-gflags
 
 USES=		python:-2.7
 USE_GITHUB=	yes

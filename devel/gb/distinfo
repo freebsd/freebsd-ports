@@ -1,3 +1,5 @@
-TIMESTAMP = 1463920380
-SHA256 (constabulary-gb-v0.4.1_GH0.tar.gz) = 05842117ddbfa4672a2e1c8bf7dfce23d0dd2a18e9d72d2fb7a7845c4ea2c655
-SIZE (constabulary-gb-v0.4.1_GH0.tar.gz) = 95304
+TIMESTAMP = 1483959835
+SHA256 (constabulary-gb-v0.4.3_GH0.tar.gz) = 480ae2376d20b1c3768b6600d7f9f0c9395071a692c14ea27f9560cccfb3151e
+SIZE (constabulary-gb-v0.4.3_GH0.tar.gz) = 110841
+SHA256 (pkg-errors-645ef00_GH0.tar.gz) = b2e989515688d916216dd0a1b82cd9b18e8fb4fdf0370473996bdde41b83a41f
+SIZE (pkg-errors-645ef00_GH0.tar.gz) = 11342

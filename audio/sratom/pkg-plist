@@ -1,0 +1,6 @@
+include/sratom-0/sratom/sratom.h
+lib/libsratom-0.so
+lib/libsratom-0.so.0
+lib/libsratom-0.so.0.6.0
+libdata/pkgconfig/sratom-0.pc
+@dir lib/pkgconfig

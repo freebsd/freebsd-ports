@@ -2,13 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.48.22
-PORTREVISION=	1
+PORTVERSION=	3.48.24
 CATEGORIES=	www
-MASTER_SITES=	http://download.httrack.com/ \
-		http://mirror.httrack.com/ \
-		http://mirror.httrack.com/historical/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
@@ -28,11 +23,15 @@ USES=		alias execinfo gmake iconv libtool localbase shebangfix ssl
 PORTDATA=	*
 PORTDOCS=	*
 
+GH_TUPLE=	xroche:${PORTNAME}:a9a7aa6 \
+		xroche:coucal:afd0a56:coucal/src/coucal
+USE_GITHUB=	yes
+
 SHEBANG_FILES=	src/webhttrack
 
 ICONS_VARS=	INSTALLS_ICONS=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
@@ -42,6 +41,7 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-ldl ||' ${WRKSRC}/src/coucal/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/
@@ -51,4 +51,4 @@ post-install-DOCS-off:
 	${RM} ${STAGEDIR}${DATADIR}/html
 	${MKDIR} ${STAGEDIR}${DATADIR}/html/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

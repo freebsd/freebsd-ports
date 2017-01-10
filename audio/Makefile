@@ -416,6 +416,7 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += libxmp
+    SUBDIR += lilv
     SUBDIR += lingot
     SUBDIR += linux-c6-alsa-lib
     SUBDIR += linux-c6-alsa-plugins-oss
@@ -739,6 +740,7 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += squash
+    SUBDIR += sratom
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += stymulator
