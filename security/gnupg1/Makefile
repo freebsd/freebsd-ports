@@ -2,20 +2,20 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Minimal version of the PGP-compatible GNU Privacy Guard
+COMMENT=	The GNU Privacy Guard (minimalist "classic" version)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	gnupg
 
-USES=		charsetfix compiler cpe gmake tar:bzip2
+USES=		charsetfix compiler cpe gmake readline tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-camellia \
 		--enable-noexecstack
@@ -50,9 +50,6 @@ LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-SUID_GPG_PLIST_SUB=	GPGMODE=4555
-SUID_GPG_PLIST_SUB_OFF=	GPGMODE=
 
 .include <bsd.port.pre.mk>
 

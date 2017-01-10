@@ -1,4 +1,5 @@
-@(,,%%GPGMODE%%) bin/gpg
+%%SUID_GPG%%@(,,4555) bin/gpg
+%%NO_SUID_GPG%%bin/gpg
 bin/gpg-zip
 bin/gpgsplit
 bin/gpgv
@@ -41,4 +42,3 @@ man/man1/gpgv.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
-@postunexec [ -r %D/bin/gpg2 ] && ln -s gpg2 %D/bin/gpg || true
