@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumberjack
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
